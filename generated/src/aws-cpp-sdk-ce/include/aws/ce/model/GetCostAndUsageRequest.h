@@ -87,9 +87,19 @@ class GetCostAndUsageRequest : public CostExplorerRequest {
    * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
    * </p> <p>Valid values for <code>MatchOptions</code> for <code>Dimensions</code>
    * are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p> <p>Valid values for
-   * <code>MatchOptions</code> for <code>CostCategories</code> and <code>Tags</code>
-   * are <code>EQUALS</code>, <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>.
-   * Default values are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+   * <code>MatchOptions</code> for <code>CostCategories</code>, <code>Tags</code>,
+   * and <code>ProductAttributes</code> are <code>EQUALS</code>, <code>ABSENT</code>,
+   * and <code>CASE_SENSITIVE</code>. Default values are <code>EQUALS</code> and
+   * <code>CASE_SENSITIVE</code>.</p> <p>You can filter by product attributes with or
+   * without grouping by them. If you filter or group by product attributes, the
+   * results include only the costs of supported services, and a <code>SERVICE</code>
+   * filter is optional. For more information, see <a
+   * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ProductAttributeValues.html">ProductAttributeValues</a>.</p>
+   * <p>If you include a <code>SERVICE</code> filter, it must apply to the whole
+   * request: combine it with other filters by using <code>And</code>, and include it
+   * in every branch of an <code>Or</code>. A <code>SERVICE</code> filter inside
+   * <code>Not</code> doesn't meet this requirement, and the request fails with a
+   * <code>ValidationException</code>.</p>
    */
   inline const Expression& GetFilter() const { return m_filter; }
   inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
@@ -147,14 +157,27 @@ class GetCostAndUsageRequest : public CostExplorerRequest {
   ///@{
   /**
    * <p>You can group Amazon Web Services costs using up to two different groups,
-   * either dimensions, tag keys, cost categories, or any two group by types.</p>
-   * <p>Valid values for the <code>DIMENSION</code> type are <code>AZ</code>,
-   * <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>,
+   * either dimensions, tag keys, cost categories, product attributes, or any two
+   * group by types.</p> <p>Valid values for the <code>DIMENSION</code> type are
+   * <code>AZ</code>, <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>,
    * <code>INVOICING_ENTITY</code>, <code>LINKED_ACCOUNT</code>,
    * <code>OPERATION</code>, <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>,
    * <code>SERVICE</code>, <code>TENANCY</code>, <code>RECORD_TYPE</code>, and
    * <code>USAGE_TYPE</code>.</p> <p>When you group by the <code>TAG</code> type and
    * include a valid tag key, you get all tag values, including empty strings.</p>
+   * <p>To group by the <code>PRODUCT_ATTRIBUTE</code> type, set <code>Key</code> to
+   * a product attribute key, such as <code>model</code>. For the keys of each
+   * supported service, see <a
+   * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ProductAttributeValues.html">ProductAttributeValues</a>.
+   * The results include only the costs of supported services, and if you have no
+   * such costs, the response contains no groups.</p> <p>In the response, each group
+   * key has the format <code>key$value</code>, for example, <code>model$Claude
+   * Sonnet 5</code>. Costs that have no value for the key are in the group
+   * <code>key$</code>, for example, <code>model$</code>. Remove the
+   * <code>key$</code> prefix before you use a value in a
+   * <code>ProductAttributes</code> filter. Keys are case-sensitive: if you group by
+   * a key that doesn't exist, such as <code>Model</code>, all of your costs of
+   * supported services are in the group <code>Model$</code>.</p>
    */
   inline const Aws::Vector<GroupDefinition>& GetGroupBy() const { return m_groupBy; }
   inline bool GroupByHasBeenSet() const { return m_groupByHasBeenSet; }

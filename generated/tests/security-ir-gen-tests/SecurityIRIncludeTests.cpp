@@ -48,6 +48,8 @@
 #include <aws/security-ir/model/GetCaseAttachmentUploadUrlResult.h>
 #include <aws/security-ir/model/GetCaseRequest.h>
 #include <aws/security-ir/model/GetCaseResult.h>
+#include <aws/security-ir/model/GetFindingMetricsRequest.h>
+#include <aws/security-ir/model/GetFindingMetricsResult.h>
 #include <aws/security-ir/model/GetMembershipAccountDetailError.h>
 #include <aws/security-ir/model/GetMembershipAccountDetailItem.h>
 #include <aws/security-ir/model/GetMembershipRequest.h>

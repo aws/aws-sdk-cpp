@@ -4,58 +4,278 @@
  */
 
 #include <aws/codeconnections/model/SyncBlockerSummary.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace CodeConnections {
 namespace Model {
 
-SyncBlockerSummary::SyncBlockerSummary(JsonView jsonValue) { *this = jsonValue; }
+SyncBlockerSummary::SyncBlockerSummary(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-SyncBlockerSummary& SyncBlockerSummary::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("ResourceName")) {
-    m_resourceName = jsonValue.GetString("ResourceName");
-    m_resourceNameHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ParentResourceName")) {
-    m_parentResourceName = jsonValue.GetString("ParentResourceName");
-    m_parentResourceNameHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("LatestBlockers")) {
-    Aws::Utils::Array<JsonView> latestBlockersJsonList = jsonValue.GetArray("LatestBlockers");
-    for (unsigned latestBlockersIndex = 0; latestBlockersIndex < latestBlockersJsonList.GetLength(); ++latestBlockersIndex) {
-      m_latestBlockers.push_back(latestBlockersJsonList[latestBlockersIndex].AsObject());
+SyncBlockerSummary& SyncBlockerSummary::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "ResourceName") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_resourceName = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_resourceName = ss.str();
+                  }
+                }
+                m_resourceNameHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "ParentResourceName") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_parentResourceName = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_parentResourceName = ss.str();
+                  }
+                }
+                m_parentResourceNameHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "LatestBlockers") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_latestBlockers.push_back(SyncBlocker(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_latestBlockers.push_back(SyncBlocker(decoder));
+                    }
+                  }
+                }
+                m_latestBlockersHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("SyncBlockerSummary", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "ResourceName") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_resourceName = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_resourceName = ss.str();
+                }
+              }
+              m_resourceNameHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "ParentResourceName") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_parentResourceName = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_parentResourceName = ss.str();
+                }
+              }
+              m_parentResourceNameHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "LatestBlockers") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_latestBlockers.push_back(SyncBlocker(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_latestBlockers.push_back(SyncBlocker(decoder));
+                  }
+                }
+              }
+              m_latestBlockersHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
     }
-    m_latestBlockersHasBeenSet = true;
   }
+
   return *this;
 }
 
-JsonValue SyncBlockerSummary::Jsonize() const {
-  JsonValue payload;
+void SyncBlockerSummary::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_resourceNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_parentResourceNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_latestBlockersHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_resourceNameHasBeenSet) {
-    payload.WithString("ResourceName", m_resourceName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ResourceName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_resourceName.c_str()));
   }
 
   if (m_parentResourceNameHasBeenSet) {
-    payload.WithString("ParentResourceName", m_parentResourceName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ParentResourceName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_parentResourceName.c_str()));
   }
 
   if (m_latestBlockersHasBeenSet) {
-    Aws::Utils::Array<JsonValue> latestBlockersJsonList(m_latestBlockers.size());
-    for (unsigned latestBlockersIndex = 0; latestBlockersIndex < latestBlockersJsonList.GetLength(); ++latestBlockersIndex) {
-      latestBlockersJsonList[latestBlockersIndex].AsObject(m_latestBlockers[latestBlockersIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("LatestBlockers"));
+    encoder.WriteArrayStart(m_latestBlockers.size());
+    for (const auto& item_0 : m_latestBlockers) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("LatestBlockers", std::move(latestBlockersJsonList));
   }
-
-  return payload;
 }
 
 }  // namespace Model

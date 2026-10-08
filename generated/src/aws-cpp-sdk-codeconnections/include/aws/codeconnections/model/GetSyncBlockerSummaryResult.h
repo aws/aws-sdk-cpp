@@ -8,25 +8,25 @@
 #include <aws/codeconnections/model/SyncBlockerSummary.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
-
 namespace Aws {
 template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
 namespace Utils {
-namespace Json {
-class JsonValue;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace CodeConnections {
 namespace Model {
 class GetSyncBlockerSummaryResult {
  public:
   AWS_CODECONNECTIONS_API GetSyncBlockerSummaryResult() = default;
-  AWS_CODECONNECTIONS_API GetSyncBlockerSummaryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-  AWS_CODECONNECTIONS_API GetSyncBlockerSummaryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_CODECONNECTIONS_API GetSyncBlockerSummaryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
+  AWS_CODECONNECTIONS_API GetSyncBlockerSummaryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
 
   ///@{
   /**

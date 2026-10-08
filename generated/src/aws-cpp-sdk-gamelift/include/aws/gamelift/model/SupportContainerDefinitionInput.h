@@ -72,9 +72,9 @@ class SupportContainerDefinitionInput {
   /**
    * <p>Establishes dependencies between this container and the status of other
    * containers in the same container group. A container can have dependencies on
-   * multiple different containers. </p> <p>.</p> <p>You can use dependencies to
-   * establish a startup/shutdown sequence across the container group. For example,
-   * you might specify that <i>ContainerB</i> has a <code>START</code> dependency on
+   * multiple different containers. </p> <p>You can use dependencies to establish a
+   * startup/shutdown sequence across the container group. For example, you might
+   * specify that <i>ContainerB</i> has a <code>START</code> dependency on
    * <i>ContainerA</i>. This dependency means that <i>ContainerB</i> can't start
    * until after <i>ContainerA</i> has started. This dependency is reversed on
    * shutdown, which means that <i>ContainerB</i> must shut down before
@@ -229,8 +229,8 @@ class SupportContainerDefinitionInput {
    * don't specify a container-specific memory limit, the container shares the
    * container group's total memory allocation. </p> <p> <b>Related data type: </b>
    * <a
-   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a>TotalMemoryLimitMebibytes<code/>
-   * </p>
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a>
+   * <code>TotalMemoryLimitMebibytes</code> </p>
    */
   inline int64_t GetMemoryHardLimitMebibytes() const { return m_memoryHardLimitMebibytes; }
   inline bool MemoryHardLimitMebibytesHasBeenSet() const { return m_memoryHardLimitMebibytesHasBeenSet; }
@@ -249,12 +249,11 @@ class SupportContainerDefinitionInput {
    * <p>A set of ports that Amazon GameLift Servers can assign to processes in a
    * container. The container port configuration must have enough ports for each
    * container process that accepts inbound traffic connections. A container port
-   * configuration can have can have one or more container port ranges. Each range
-   * specifies starting and ending values as well as the supported network
-   * protocol.</p> <p>Container ports aren't directly accessed by inbound traffic.
-   * Amazon GameLift Servers maps each container port to an externally accessible
-   * connection port (see the container fleet property
-   * <code>ConnectionPortRange</code>). </p>
+   * configuration can have one or more container port ranges. Each range specifies
+   * starting and ending values as well as the supported network protocol.</p>
+   * <p>Container ports aren't directly accessed by inbound traffic. Amazon GameLift
+   * Servers maps each container port to an externally accessible connection port
+   * (see the container fleet property <code>ConnectionPortRange</code>). </p>
    */
   inline const ContainerPortConfiguration& GetPortConfiguration() const { return m_portConfiguration; }
   inline bool PortConfigurationHasBeenSet() const { return m_portConfigurationHasBeenSet; }
@@ -273,11 +272,11 @@ class SupportContainerDefinitionInput {
   ///@{
   /**
    * <p>The number of vCPU units to reserve for this container. The container can use
-   * more resources when needed, if available. If you don't reserve CPU units for
-   * this container, it shares the container group's total vCPU limit. </p> <p>
+   * more resources when needed, if available. If you don't reserve vCPU units for
+   * this container, it shares the container group's total vCPU limit.</p> <p>
    * <b>Related data type: </b> <a
    * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a>
-   * TotalCpuLimit </p>
+   * TotalVcpuLimit </p>
    */
   inline double GetVcpu() const { return m_vcpu; }
   inline bool VcpuHasBeenSet() const { return m_vcpuHasBeenSet; }

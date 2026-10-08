@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/health/Health_EXPORTS.h>
 #include <aws/health/model/EntityStatusCode.h>
 
@@ -13,10 +14,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace Health {
 namespace Model {
@@ -32,9 +32,9 @@ namespace Model {
 class EntityAggregate {
  public:
   AWS_HEALTH_API EntityAggregate() = default;
-  AWS_HEALTH_API EntityAggregate(Aws::Utils::Json::JsonView jsonValue);
-  AWS_HEALTH_API EntityAggregate& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_HEALTH_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_HEALTH_API EntityAggregate(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_HEALTH_API EntityAggregate& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_HEALTH_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -63,13 +63,13 @@ class EntityAggregate {
   /**
    * <p>The number of entities that match the criteria for the specified events.</p>
    */
-  inline int GetCount() const { return m_count; }
+  inline int64_t GetCount() const { return m_count; }
   inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
-  inline void SetCount(int value) {
+  inline void SetCount(int64_t value) {
     m_countHasBeenSet = true;
     m_count = value;
   }
-  inline EntityAggregate& WithCount(int value) {
+  inline EntityAggregate& WithCount(int64_t value) {
     SetCount(value);
     return *this;
   }
@@ -79,19 +79,19 @@ class EntityAggregate {
   /**
    * <p>The number of affected entities aggregated by the entity status codes.</p>
    */
-  inline const Aws::Map<EntityStatusCode, int>& GetStatuses() const { return m_statuses; }
+  inline const Aws::Map<EntityStatusCode, int64_t>& GetStatuses() const { return m_statuses; }
   inline bool StatusesHasBeenSet() const { return m_statusesHasBeenSet; }
-  template <typename StatusesT = Aws::Map<EntityStatusCode, int>>
+  template <typename StatusesT = Aws::Map<EntityStatusCode, int64_t>>
   void SetStatuses(StatusesT&& value) {
     m_statusesHasBeenSet = true;
     m_statuses = std::forward<StatusesT>(value);
   }
-  template <typename StatusesT = Aws::Map<EntityStatusCode, int>>
+  template <typename StatusesT = Aws::Map<EntityStatusCode, int64_t>>
   EntityAggregate& WithStatuses(StatusesT&& value) {
     SetStatuses(std::forward<StatusesT>(value));
     return *this;
   }
-  inline EntityAggregate& AddStatuses(EntityStatusCode key, int value) {
+  inline EntityAggregate& AddStatuses(EntityStatusCode key, int64_t value) {
     m_statusesHasBeenSet = true;
     m_statuses.emplace(key, value);
     return *this;
@@ -100,9 +100,9 @@ class EntityAggregate {
  private:
   Aws::String m_eventArn;
 
-  int m_count{0};
+  int64_t m_count{0};
 
-  Aws::Map<EntityStatusCode, int> m_statuses;
+  Aws::Map<EntityStatusCode, int64_t> m_statuses;
   bool m_eventArnHasBeenSet = false;
   bool m_countHasBeenSet = false;
   bool m_statusesHasBeenSet = false;

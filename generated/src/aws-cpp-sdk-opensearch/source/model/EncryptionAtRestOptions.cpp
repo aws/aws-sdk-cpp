@@ -26,6 +26,10 @@ EncryptionAtRestOptions& EncryptionAtRestOptions::operator=(JsonView jsonValue) 
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
     m_kmsKeyIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("EncryptionMode")) {
+    m_encryptionMode = EncryptionModeMapper::GetEncryptionModeForName(jsonValue.GetString("EncryptionMode"));
+    m_encryptionModeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue EncryptionAtRestOptions::Jsonize() const {
 
   if (m_kmsKeyIdHasBeenSet) {
     payload.WithString("KmsKeyId", m_kmsKeyId);
+  }
+
+  if (m_encryptionModeHasBeenSet) {
+    payload.WithString("EncryptionMode", EncryptionModeMapper::GetNameForEncryptionMode(m_encryptionMode));
   }
 
   return payload;

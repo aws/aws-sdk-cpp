@@ -3,108 +3,686 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/marketplace-agreement/model/BillingAdjustmentSummary.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace AgreementService {
 namespace Model {
 
-BillingAdjustmentSummary::BillingAdjustmentSummary(JsonView jsonValue) { *this = jsonValue; }
+BillingAdjustmentSummary::BillingAdjustmentSummary(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-BillingAdjustmentSummary& BillingAdjustmentSummary::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("billingAdjustmentRequestId")) {
-    m_billingAdjustmentRequestId = jsonValue.GetString("billingAdjustmentRequestId");
-    m_billingAdjustmentRequestIdHasBeenSet = true;
+BillingAdjustmentSummary& BillingAdjustmentSummary::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "billingAdjustmentRequestId") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_billingAdjustmentRequestId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_billingAdjustmentRequestId = ss.str();
+                  }
+                }
+                m_billingAdjustmentRequestIdHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "originalInvoiceId") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_originalInvoiceId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_originalInvoiceId = ss.str();
+                  }
+                }
+                m_originalInvoiceIdHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "adjustmentAmount") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_adjustmentAmount = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_adjustmentAmount = ss.str();
+                  }
+                }
+                m_adjustmentAmountHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "currencyCode") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_currencyCode = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_currencyCode = ss.str();
+                  }
+                }
+                m_currencyCodeHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "status") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_status = BillingAdjustmentStatusMapper::GetBillingAdjustmentStatusForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_statusHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "agreementId") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_agreementId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_agreementId = ss.str();
+                  }
+                }
+                m_agreementIdHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "createdAt") {
+                auto tag = decoder->PopNextTagVal();
+                if (tag.has_value() &&
+                    tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+                {
+                  auto dateType = decoder->PeekType();
+                  if (dateType.has_value()) {
+                    if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                      auto val = decoder->PopNextFloatVal();
+                      if (val.has_value()) {
+                        m_createdAt = Aws::Utils::DateTime(val.value());
+                      }
+                    } else {
+                      auto val = decoder->PopNextUnsignedIntVal();
+                      if (val.has_value()) {
+                        m_createdAt = Aws::Utils::DateTime(val.value());
+                      }
+                    }
+                  }
+                }
+                m_createdAtHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "updatedAt") {
+                auto tag = decoder->PopNextTagVal();
+                if (tag.has_value() &&
+                    tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+                {
+                  auto dateType = decoder->PeekType();
+                  if (dateType.has_value()) {
+                    if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                      auto val = decoder->PopNextFloatVal();
+                      if (val.has_value()) {
+                        m_updatedAt = Aws::Utils::DateTime(val.value());
+                      }
+                    } else {
+                      auto val = decoder->PopNextUnsignedIntVal();
+                      if (val.has_value()) {
+                        m_updatedAt = Aws::Utils::DateTime(val.value());
+                      }
+                    }
+                  }
+                }
+                m_updatedAtHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "agreementType") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_agreementType = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_agreementType = ss.str();
+                  }
+                }
+                m_agreementTypeHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "catalog") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_catalog = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_catalog = ss.str();
+                  }
+                }
+                m_catalogHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("BillingAdjustmentSummary", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "billingAdjustmentRequestId") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_billingAdjustmentRequestId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_billingAdjustmentRequestId = ss.str();
+                }
+              }
+              m_billingAdjustmentRequestIdHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "originalInvoiceId") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_originalInvoiceId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_originalInvoiceId = ss.str();
+                }
+              }
+              m_originalInvoiceIdHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "adjustmentAmount") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_adjustmentAmount = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_adjustmentAmount = ss.str();
+                }
+              }
+              m_adjustmentAmountHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "currencyCode") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_currencyCode = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_currencyCode = ss.str();
+                }
+              }
+              m_currencyCodeHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "status") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_status = BillingAdjustmentStatusMapper::GetBillingAdjustmentStatusForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_statusHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "agreementId") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_agreementId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_agreementId = ss.str();
+                }
+              }
+              m_agreementIdHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "createdAt") {
+              auto tag = decoder->PopNextTagVal();
+              if (tag.has_value() &&
+                  tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+              {
+                auto dateType = decoder->PeekType();
+                if (dateType.has_value()) {
+                  if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                    auto val = decoder->PopNextFloatVal();
+                    if (val.has_value()) {
+                      m_createdAt = Aws::Utils::DateTime(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_createdAt = Aws::Utils::DateTime(val.value());
+                    }
+                  }
+                }
+              }
+              m_createdAtHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "updatedAt") {
+              auto tag = decoder->PopNextTagVal();
+              if (tag.has_value() &&
+                  tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+              {
+                auto dateType = decoder->PeekType();
+                if (dateType.has_value()) {
+                  if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                    auto val = decoder->PopNextFloatVal();
+                    if (val.has_value()) {
+                      m_updatedAt = Aws::Utils::DateTime(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_updatedAt = Aws::Utils::DateTime(val.value());
+                    }
+                  }
+                }
+              }
+              m_updatedAtHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "agreementType") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_agreementType = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_agreementType = ss.str();
+                }
+              }
+              m_agreementTypeHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "catalog") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_catalog = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_catalog = ss.str();
+                }
+              }
+              m_catalogHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
+    }
   }
-  if (jsonValue.ValueExists("originalInvoiceId")) {
-    m_originalInvoiceId = jsonValue.GetString("originalInvoiceId");
-    m_originalInvoiceIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("adjustmentAmount")) {
-    m_adjustmentAmount = jsonValue.GetString("adjustmentAmount");
-    m_adjustmentAmountHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("currencyCode")) {
-    m_currencyCode = jsonValue.GetString("currencyCode");
-    m_currencyCodeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("status")) {
-    m_status = BillingAdjustmentStatusMapper::GetBillingAdjustmentStatusForName(jsonValue.GetString("status"));
-    m_statusHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("agreementId")) {
-    m_agreementId = jsonValue.GetString("agreementId");
-    m_agreementIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("createdAt")) {
-    m_createdAt = jsonValue.GetDouble("createdAt");
-    m_createdAtHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("updatedAt")) {
-    m_updatedAt = jsonValue.GetDouble("updatedAt");
-    m_updatedAtHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("agreementType")) {
-    m_agreementType = jsonValue.GetString("agreementType");
-    m_agreementTypeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("catalog")) {
-    m_catalog = jsonValue.GetString("catalog");
-    m_catalogHasBeenSet = true;
-  }
+
   return *this;
 }
 
-JsonValue BillingAdjustmentSummary::Jsonize() const {
-  JsonValue payload;
+void BillingAdjustmentSummary::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_billingAdjustmentRequestIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_originalInvoiceIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_adjustmentAmountHasBeenSet) {
+    mapSize++;
+  }
+  if (m_currencyCodeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_statusHasBeenSet) {
+    mapSize++;
+  }
+  if (m_agreementIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_createdAtHasBeenSet) {
+    mapSize++;
+  }
+  if (m_updatedAtHasBeenSet) {
+    mapSize++;
+  }
+  if (m_agreementTypeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_catalogHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_billingAdjustmentRequestIdHasBeenSet) {
-    payload.WithString("billingAdjustmentRequestId", m_billingAdjustmentRequestId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("billingAdjustmentRequestId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_billingAdjustmentRequestId.c_str()));
   }
 
   if (m_originalInvoiceIdHasBeenSet) {
-    payload.WithString("originalInvoiceId", m_originalInvoiceId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("originalInvoiceId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_originalInvoiceId.c_str()));
   }
 
   if (m_adjustmentAmountHasBeenSet) {
-    payload.WithString("adjustmentAmount", m_adjustmentAmount);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("adjustmentAmount"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_adjustmentAmount.c_str()));
   }
 
   if (m_currencyCodeHasBeenSet) {
-    payload.WithString("currencyCode", m_currencyCode);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("currencyCode"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_currencyCode.c_str()));
   }
 
   if (m_statusHasBeenSet) {
-    payload.WithString("status", BillingAdjustmentStatusMapper::GetNameForBillingAdjustmentStatus(m_status));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("status"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(BillingAdjustmentStatusMapper::GetNameForBillingAdjustmentStatus(m_status).c_str()));
   }
 
   if (m_agreementIdHasBeenSet) {
-    payload.WithString("agreementId", m_agreementId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("agreementId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_agreementId.c_str()));
   }
 
   if (m_createdAtHasBeenSet) {
-    payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("createdAt"));
+    encoder.WriteTag(1);  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+    encoder.WriteUInt(m_createdAt.Seconds());
   }
 
   if (m_updatedAtHasBeenSet) {
-    payload.WithDouble("updatedAt", m_updatedAt.SecondsWithMSPrecision());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("updatedAt"));
+    encoder.WriteTag(1);  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+    encoder.WriteUInt(m_updatedAt.Seconds());
   }
 
   if (m_agreementTypeHasBeenSet) {
-    payload.WithString("agreementType", m_agreementType);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("agreementType"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_agreementType.c_str()));
   }
 
   if (m_catalogHasBeenSet) {
-    payload.WithString("catalog", m_catalog);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("catalog"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_catalog.c_str()));
   }
-
-  return payload;
 }
 
 }  // namespace Model

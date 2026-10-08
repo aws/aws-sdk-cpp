@@ -30,4 +30,10 @@ void GetResourceDashboardRequest::AddQueryStringParameters(URI& uri) const {
     uri.AddQueryStringParameter("resourceType", ss.str());
     ss.str("");
   }
+
+  if (m_accessSystemProfileLogsHasBeenSet) {
+    ss << m_accessSystemProfileLogs;
+    uri.AddQueryStringParameter("accessSystemProfileLogs", ss.str());
+    ss.str("");
+  }
 }

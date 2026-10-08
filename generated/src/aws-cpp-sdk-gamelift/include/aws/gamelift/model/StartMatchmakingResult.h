@@ -30,7 +30,7 @@ class StartMatchmakingResult {
 
   ///@{
   /**
-   * <p>Ticket representing the matchmaking request. This object include the
+   * <p>Ticket representing the matchmaking request. This object includes the
    * information included in the request, ticket status, and match results as
    * generated during the matchmaking process.</p>
    */

@@ -18,6 +18,7 @@ namespace GroupDefinitionTypeMapper {
 static const int DIMENSION_HASH = HashingUtils::HashString("DIMENSION");
 static const int TAG_HASH = HashingUtils::HashString("TAG");
 static const int COST_CATEGORY_HASH = HashingUtils::HashString("COST_CATEGORY");
+static const int PRODUCT_ATTRIBUTE_HASH = HashingUtils::HashString("PRODUCT_ATTRIBUTE");
 
 GroupDefinitionType GetGroupDefinitionTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ GroupDefinitionType GetGroupDefinitionTypeForName(const Aws::String& name) {
     return GroupDefinitionType::TAG;
   } else if (hashCode == COST_CATEGORY_HASH) {
     return GroupDefinitionType::COST_CATEGORY;
+  } else if (hashCode == PRODUCT_ATTRIBUTE_HASH) {
+    return GroupDefinitionType::PRODUCT_ATTRIBUTE;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForGroupDefinitionType(GroupDefinitionType enumValue) {
       return "TAG";
     case GroupDefinitionType::COST_CATEGORY:
       return "COST_CATEGORY";
+    case GroupDefinitionType::PRODUCT_ATTRIBUTE:
+      return "PRODUCT_ATTRIBUTE";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

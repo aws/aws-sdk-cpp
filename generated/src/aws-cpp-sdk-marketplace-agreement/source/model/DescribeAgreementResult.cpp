@@ -6,69 +6,459 @@
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/marketplace-agreement/model/DescribeAgreementResult.h>
 
 #include <utility>
 
 using namespace Aws::AgreementService::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
+using namespace Aws::Utils::Cbor;
 using namespace Aws;
 
-DescribeAgreementResult::DescribeAgreementResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
+DescribeAgreementResult::DescribeAgreementResult(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result) { *this = result; }
 
-DescribeAgreementResult& DescribeAgreementResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+DescribeAgreementResult& DescribeAgreementResult::operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
-  JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("agreementId")) {
-    m_agreementId = jsonValue.GetString("agreementId");
-    m_agreementIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("acceptor")) {
-    m_acceptor = jsonValue.GetObject("acceptor");
-    m_acceptorHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("proposer")) {
-    m_proposer = jsonValue.GetObject("proposer");
-    m_proposerHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("startTime")) {
-    m_startTime = jsonValue.GetDouble("startTime");
-    m_startTimeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("endTime")) {
-    m_endTime = jsonValue.GetDouble("endTime");
-    m_endTimeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("acceptanceTime")) {
-    m_acceptanceTime = jsonValue.GetDouble("acceptanceTime");
-    m_acceptanceTimeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("agreementType")) {
-    m_agreementType = jsonValue.GetString("agreementType");
-    m_agreementTypeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("estimatedCharges")) {
-    m_estimatedCharges = jsonValue.GetObject("estimatedCharges");
-    m_estimatedChargesHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("proposalSummary")) {
-    m_proposalSummary = jsonValue.GetObject("proposalSummary");
-    m_proposalSummaryHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("status")) {
-    m_status = AgreementStatusMapper::GetAgreementStatusForName(jsonValue.GetString("status"));
-    m_statusHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("initialAgreementId")) {
-    m_initialAgreementId = jsonValue.GetString("initialAgreementId");
-    m_initialAgreementIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("endTimeBehavior")) {
-    m_endTimeBehavior = jsonValue.GetObject("endTimeBehavior");
-    m_endTimeBehaviorHasBeenSet = true;
+
+  const auto& cborValue = result.GetPayload();
+  const auto decoder = cborValue.GetDecoder();
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "agreementId") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_agreementId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_agreementId = ss.str();
+                  }
+                }
+                m_agreementIdHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "acceptor") {
+                m_acceptor = Acceptor(decoder);
+                m_acceptorHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "proposer") {
+                m_proposer = Proposer(decoder);
+                m_proposerHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "startTime") {
+                auto tag = decoder->PopNextTagVal();
+                if (tag.has_value() &&
+                    tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+                {
+                  auto dateType = decoder->PeekType();
+                  if (dateType.has_value()) {
+                    if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                      auto val = decoder->PopNextFloatVal();
+                      if (val.has_value()) {
+                        m_startTime = Aws::Utils::DateTime(val.value());
+                      }
+                    } else {
+                      auto val = decoder->PopNextUnsignedIntVal();
+                      if (val.has_value()) {
+                        m_startTime = Aws::Utils::DateTime(val.value());
+                      }
+                    }
+                  }
+                }
+                m_startTimeHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "endTime") {
+                auto tag = decoder->PopNextTagVal();
+                if (tag.has_value() &&
+                    tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+                {
+                  auto dateType = decoder->PeekType();
+                  if (dateType.has_value()) {
+                    if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                      auto val = decoder->PopNextFloatVal();
+                      if (val.has_value()) {
+                        m_endTime = Aws::Utils::DateTime(val.value());
+                      }
+                    } else {
+                      auto val = decoder->PopNextUnsignedIntVal();
+                      if (val.has_value()) {
+                        m_endTime = Aws::Utils::DateTime(val.value());
+                      }
+                    }
+                  }
+                }
+                m_endTimeHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "acceptanceTime") {
+                auto tag = decoder->PopNextTagVal();
+                if (tag.has_value() &&
+                    tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+                {
+                  auto dateType = decoder->PeekType();
+                  if (dateType.has_value()) {
+                    if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                      auto val = decoder->PopNextFloatVal();
+                      if (val.has_value()) {
+                        m_acceptanceTime = Aws::Utils::DateTime(val.value());
+                      }
+                    } else {
+                      auto val = decoder->PopNextUnsignedIntVal();
+                      if (val.has_value()) {
+                        m_acceptanceTime = Aws::Utils::DateTime(val.value());
+                      }
+                    }
+                  }
+                }
+                m_acceptanceTimeHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "agreementType") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_agreementType = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_agreementType = ss.str();
+                  }
+                }
+                m_agreementTypeHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "estimatedCharges") {
+                m_estimatedCharges = EstimatedCharges(decoder);
+                m_estimatedChargesHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "proposalSummary") {
+                m_proposalSummary = ProposalSummary(decoder);
+                m_proposalSummaryHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "status") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_status = AgreementStatusMapper::GetAgreementStatusForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_statusHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "initialAgreementId") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_initialAgreementId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_initialAgreementId = ss.str();
+                  }
+                }
+                m_initialAgreementIdHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "endTimeBehavior") {
+                m_endTimeBehavior = EndTimeBehavior(decoder);
+                m_endTimeBehaviorHasBeenSet = true;
+              }
+
+              else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("DescribeAgreementResult", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "agreementId") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_agreementId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_agreementId = ss.str();
+                }
+              }
+              m_agreementIdHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "acceptor") {
+              m_acceptor = Acceptor(decoder);
+              m_acceptorHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "proposer") {
+              m_proposer = Proposer(decoder);
+              m_proposerHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "startTime") {
+              auto tag = decoder->PopNextTagVal();
+              if (tag.has_value() &&
+                  tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+              {
+                auto dateType = decoder->PeekType();
+                if (dateType.has_value()) {
+                  if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                    auto val = decoder->PopNextFloatVal();
+                    if (val.has_value()) {
+                      m_startTime = Aws::Utils::DateTime(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_startTime = Aws::Utils::DateTime(val.value());
+                    }
+                  }
+                }
+              }
+              m_startTimeHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "endTime") {
+              auto tag = decoder->PopNextTagVal();
+              if (tag.has_value() &&
+                  tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+              {
+                auto dateType = decoder->PeekType();
+                if (dateType.has_value()) {
+                  if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                    auto val = decoder->PopNextFloatVal();
+                    if (val.has_value()) {
+                      m_endTime = Aws::Utils::DateTime(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_endTime = Aws::Utils::DateTime(val.value());
+                    }
+                  }
+                }
+              }
+              m_endTimeHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "acceptanceTime") {
+              auto tag = decoder->PopNextTagVal();
+              if (tag.has_value() &&
+                  tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+              {
+                auto dateType = decoder->PeekType();
+                if (dateType.has_value()) {
+                  if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                    auto val = decoder->PopNextFloatVal();
+                    if (val.has_value()) {
+                      m_acceptanceTime = Aws::Utils::DateTime(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_acceptanceTime = Aws::Utils::DateTime(val.value());
+                    }
+                  }
+                }
+              }
+              m_acceptanceTimeHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "agreementType") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_agreementType = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_agreementType = ss.str();
+                }
+              }
+              m_agreementTypeHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "estimatedCharges") {
+              m_estimatedCharges = EstimatedCharges(decoder);
+              m_estimatedChargesHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "proposalSummary") {
+              m_proposalSummary = ProposalSummary(decoder);
+              m_proposalSummaryHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "status") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_status = AgreementStatusMapper::GetAgreementStatusForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_statusHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "initialAgreementId") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_initialAgreementId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_initialAgreementId = ss.str();
+                }
+              }
+              m_initialAgreementIdHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "endTimeBehavior") {
+              m_endTimeBehavior = EndTimeBehavior(decoder);
+              m_endTimeBehaviorHasBeenSet = true;
+            }
+
+            else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
+    }
   }
 
   const auto& headers = result.GetHeaderValueCollection();

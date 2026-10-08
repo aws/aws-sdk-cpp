@@ -86,6 +86,10 @@ Finding& Finding::operator=(JsonView jsonValue) {
     m_attackScript = jsonValue.GetString("attackScript");
     m_attackScriptHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("remediationCode")) {
+    m_remediationCode = jsonValue.GetString("remediationCode");
+    m_remediationCodeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("codeRemediationTask")) {
     m_codeRemediationTask = jsonValue.GetObject("codeRemediationTask");
     m_codeRemediationTaskHasBeenSet = true;
@@ -205,6 +209,10 @@ JsonValue Finding::Jsonize() const {
 
   if (m_attackScriptHasBeenSet) {
     payload.WithString("attackScript", m_attackScript);
+  }
+
+  if (m_remediationCodeHasBeenSet) {
+    payload.WithString("remediationCode", m_remediationCode);
   }
 
   if (m_codeRemediationTaskHasBeenSet) {

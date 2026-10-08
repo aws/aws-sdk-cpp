@@ -80,7 +80,9 @@ class UpdateMatchmakingConfigurationRequest : public GameLiftRequest {
    * <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue
    * name&gt;</code>. Queues can be located in any Region. Queues are used to start
    * new Amazon GameLift Servers-hosted game sessions for matches that are created
-   * with this matchmaking configuration. If <code>FlexMatchMode</code> is set to
+   * with this matchmaking configuration. A matchmaking configuration supports only
+   * one queue; if you specify more than one ARN, the request fails with an
+   * <code>InvalidRequestException</code>. If <code>FlexMatchMode</code> is set to
    * <code>STANDALONE</code>, do not set this parameter.</p>
    */
   inline const Aws::Vector<Aws::String>& GetGameSessionQueueArns() const { return m_gameSessionQueueArns; }

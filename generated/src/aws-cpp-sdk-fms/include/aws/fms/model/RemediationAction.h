@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/fms/FMS_EXPORTS.h>
 #include <aws/fms/model/CreateNetworkAclAction.h>
 #include <aws/fms/model/CreateNetworkAclEntriesAction.h>
@@ -23,10 +24,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace FMS {
 namespace Model {
@@ -40,9 +40,9 @@ namespace Model {
 class RemediationAction {
  public:
   AWS_FMS_API RemediationAction() = default;
-  AWS_FMS_API RemediationAction(Aws::Utils::Json::JsonView jsonValue);
-  AWS_FMS_API RemediationAction& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_FMS_API RemediationAction(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_FMS_API RemediationAction& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_FMS_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

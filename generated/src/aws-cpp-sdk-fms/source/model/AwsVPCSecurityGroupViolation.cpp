@@ -3,81 +3,348 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/fms/model/AwsVPCSecurityGroupViolation.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace FMS {
 namespace Model {
 
-AwsVPCSecurityGroupViolation::AwsVPCSecurityGroupViolation(JsonView jsonValue) { *this = jsonValue; }
+AwsVPCSecurityGroupViolation::AwsVPCSecurityGroupViolation(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-AwsVPCSecurityGroupViolation& AwsVPCSecurityGroupViolation::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("ViolationTarget")) {
-    m_violationTarget = jsonValue.GetString("ViolationTarget");
-    m_violationTargetHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ViolationTargetDescription")) {
-    m_violationTargetDescription = jsonValue.GetString("ViolationTargetDescription");
-    m_violationTargetDescriptionHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("PartialMatches")) {
-    Aws::Utils::Array<JsonView> partialMatchesJsonList = jsonValue.GetArray("PartialMatches");
-    for (unsigned partialMatchesIndex = 0; partialMatchesIndex < partialMatchesJsonList.GetLength(); ++partialMatchesIndex) {
-      m_partialMatches.push_back(partialMatchesJsonList[partialMatchesIndex].AsObject());
+AwsVPCSecurityGroupViolation& AwsVPCSecurityGroupViolation::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "ViolationTarget") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_violationTarget = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_violationTarget = ss.str();
+                  }
+                }
+                m_violationTargetHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "ViolationTargetDescription") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_violationTargetDescription = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_violationTargetDescription = ss.str();
+                  }
+                }
+                m_violationTargetDescriptionHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "PartialMatches") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_partialMatches.push_back(PartialMatch(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_partialMatches.push_back(PartialMatch(decoder));
+                    }
+                  }
+                }
+                m_partialMatchesHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "PossibleSecurityGroupRemediationActions") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_possibleSecurityGroupRemediationActions.push_back(SecurityGroupRemediationAction(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_possibleSecurityGroupRemediationActions.push_back(SecurityGroupRemediationAction(decoder));
+                    }
+                  }
+                }
+                m_possibleSecurityGroupRemediationActionsHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("AwsVPCSecurityGroupViolation", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "ViolationTarget") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_violationTarget = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_violationTarget = ss.str();
+                }
+              }
+              m_violationTargetHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "ViolationTargetDescription") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_violationTargetDescription = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_violationTargetDescription = ss.str();
+                }
+              }
+              m_violationTargetDescriptionHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "PartialMatches") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_partialMatches.push_back(PartialMatch(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_partialMatches.push_back(PartialMatch(decoder));
+                  }
+                }
+              }
+              m_partialMatchesHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "PossibleSecurityGroupRemediationActions") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_possibleSecurityGroupRemediationActions.push_back(SecurityGroupRemediationAction(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_possibleSecurityGroupRemediationActions.push_back(SecurityGroupRemediationAction(decoder));
+                  }
+                }
+              }
+              m_possibleSecurityGroupRemediationActionsHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
     }
-    m_partialMatchesHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("PossibleSecurityGroupRemediationActions")) {
-    Aws::Utils::Array<JsonView> possibleSecurityGroupRemediationActionsJsonList =
-        jsonValue.GetArray("PossibleSecurityGroupRemediationActions");
-    for (unsigned possibleSecurityGroupRemediationActionsIndex = 0;
-         possibleSecurityGroupRemediationActionsIndex < possibleSecurityGroupRemediationActionsJsonList.GetLength();
-         ++possibleSecurityGroupRemediationActionsIndex) {
-      m_possibleSecurityGroupRemediationActions.push_back(
-          possibleSecurityGroupRemediationActionsJsonList[possibleSecurityGroupRemediationActionsIndex].AsObject());
-    }
-    m_possibleSecurityGroupRemediationActionsHasBeenSet = true;
-  }
+
   return *this;
 }
 
-JsonValue AwsVPCSecurityGroupViolation::Jsonize() const {
-  JsonValue payload;
+void AwsVPCSecurityGroupViolation::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_violationTargetHasBeenSet) {
+    mapSize++;
+  }
+  if (m_violationTargetDescriptionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_partialMatchesHasBeenSet) {
+    mapSize++;
+  }
+  if (m_possibleSecurityGroupRemediationActionsHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_violationTargetHasBeenSet) {
-    payload.WithString("ViolationTarget", m_violationTarget);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ViolationTarget"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_violationTarget.c_str()));
   }
 
   if (m_violationTargetDescriptionHasBeenSet) {
-    payload.WithString("ViolationTargetDescription", m_violationTargetDescription);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ViolationTargetDescription"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_violationTargetDescription.c_str()));
   }
 
   if (m_partialMatchesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> partialMatchesJsonList(m_partialMatches.size());
-    for (unsigned partialMatchesIndex = 0; partialMatchesIndex < partialMatchesJsonList.GetLength(); ++partialMatchesIndex) {
-      partialMatchesJsonList[partialMatchesIndex].AsObject(m_partialMatches[partialMatchesIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("PartialMatches"));
+    encoder.WriteArrayStart(m_partialMatches.size());
+    for (const auto& item_0 : m_partialMatches) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("PartialMatches", std::move(partialMatchesJsonList));
   }
 
   if (m_possibleSecurityGroupRemediationActionsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> possibleSecurityGroupRemediationActionsJsonList(m_possibleSecurityGroupRemediationActions.size());
-    for (unsigned possibleSecurityGroupRemediationActionsIndex = 0;
-         possibleSecurityGroupRemediationActionsIndex < possibleSecurityGroupRemediationActionsJsonList.GetLength();
-         ++possibleSecurityGroupRemediationActionsIndex) {
-      possibleSecurityGroupRemediationActionsJsonList[possibleSecurityGroupRemediationActionsIndex].AsObject(
-          m_possibleSecurityGroupRemediationActions[possibleSecurityGroupRemediationActionsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("PossibleSecurityGroupRemediationActions"));
+    encoder.WriteArrayStart(m_possibleSecurityGroupRemediationActions.size());
+    for (const auto& item_0 : m_possibleSecurityGroupRemediationActions) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("PossibleSecurityGroupRemediationActions", std::move(possibleSecurityGroupRemediationActionsJsonList));
   }
-
-  return payload;
 }
 
 }  // namespace Model

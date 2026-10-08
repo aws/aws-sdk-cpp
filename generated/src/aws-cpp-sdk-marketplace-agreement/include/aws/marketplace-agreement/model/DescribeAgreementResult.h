@@ -7,6 +7,7 @@
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/marketplace-agreement/AgreementService_EXPORTS.h>
 #include <aws/marketplace-agreement/model/Acceptor.h>
 #include <aws/marketplace-agreement/model/AgreementStatus.h>
@@ -16,23 +17,22 @@
 #include <aws/marketplace-agreement/model/Proposer.h>
 
 #include <utility>
-
 namespace Aws {
 template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
 namespace Utils {
-namespace Json {
-class JsonValue;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace AgreementService {
 namespace Model {
 class DescribeAgreementResult {
  public:
   AWS_AGREEMENTSERVICE_API DescribeAgreementResult() = default;
-  AWS_AGREEMENTSERVICE_API DescribeAgreementResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-  AWS_AGREEMENTSERVICE_API DescribeAgreementResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_AGREEMENTSERVICE_API DescribeAgreementResult(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
+  AWS_AGREEMENTSERVICE_API DescribeAgreementResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
 
   ///@{
   /**
@@ -197,11 +197,11 @@ class DescribeAgreementResult {
   /**
    * <p>The current status of the agreement.</p> <p>Statuses include:</p> <ul> <li>
    * <p> <code>ACTIVE</code> – The terms of the agreement are active.</p> </li> <li>
-   * <p> <code>CANCELLED</code> – The acceptor ended the agreement before the defined
-   * end date.</p> </li> <li> <p> <code>EXPIRED</code> – The agreement ended on the
-   * defined end date.</p> </li> <li> <p> <code>RENEWED</code> – The agreement was
-   * renewed into a new agreement (for example, an auto-renewal).</p> </li> <li> <p>
-   * <code>REPLACED</code> – The agreement was replaced using an agreement
+   * <p> <code>CANCELLED</code> ��� The acceptor ended the agreement before the
+   * defined end date.</p> </li> <li> <p> <code>EXPIRED</code> – The agreement ended
+   * on the defined end date.</p> </li> <li> <p> <code>RENEWED</code> – The agreement
+   * was renewed into a new agreement (for example, an auto-renewal).</p> </li> <li>
+   * <p> <code>REPLACED</code> – The agreement was replaced using an agreement
    * replacement offer.</p> </li> <li> <p> <code>TERMINATED</code> – The agreement
    * ended before the defined end date because of an AWS termination (for example, a
    * payment failure).</p> </li> </ul>

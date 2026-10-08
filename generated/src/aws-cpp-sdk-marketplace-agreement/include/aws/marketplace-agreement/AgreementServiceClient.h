@@ -7,7 +7,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/marketplace-agreement/AgreementServicePaginationBase.h>
 #include <aws/marketplace-agreement/AgreementServiceServiceClientModel.h>
 #include <aws/marketplace-agreement/AgreementServiceWaiter.h>
@@ -23,12 +23,12 @@ namespace AgreementService {
  * their product-related agreements, including listing, searching, creating, and
  * filtering agreements.</p>
  */
-class AWS_AGREEMENTSERVICE_API AgreementServiceClient : public Aws::Client::AWSJsonClient,
+class AWS_AGREEMENTSERVICE_API AgreementServiceClient : public Aws::Client::AWSRpcV2CborClient,
                                                         public Aws::Client::ClientWithAsyncTemplateMethods<AgreementServiceClient>,
                                                         public AgreementServicePaginationBase<AgreementServiceClient>,
                                                         public AgreementServiceWaiter<AgreementServiceClient> {
  public:
-  typedef Aws::Client::AWSJsonClient BASECLASS;
+  typedef Aws::Client::AWSRpcV2CborClient BASECLASS;
   static const char* GetServiceName();
   static const char* GetAllocationTag();
 

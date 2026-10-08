@@ -135,7 +135,11 @@ class Tenant {
 
   ///@{
   /**
-   * <p>The status of sending capability for the tenant.</p>
+   * <p>The status of sending capability for the tenant:</p> <ul> <li> <p>
+   * <code>ENABLED</code> – Sending is allowed for the tenant.</p> </li> <li> <p>
+   * <code>DISABLED</code> – Sending is prevented for the tenant.</p> </li> <li> <p>
+   * <code>REINSTATED</code> – Sending is allowed even if there are active reputation
+   * findings.</p> </li> </ul>
    */
   inline SendingStatus GetSendingStatus() const { return m_sendingStatus; }
   inline bool SendingStatusHasBeenSet() const { return m_sendingStatusHasBeenSet; }

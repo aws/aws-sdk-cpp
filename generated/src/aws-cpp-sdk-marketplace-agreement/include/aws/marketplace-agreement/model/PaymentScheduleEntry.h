@@ -5,16 +5,16 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/marketplace-agreement/AgreementService_EXPORTS.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace AgreementService {
 namespace Model {
@@ -30,9 +30,9 @@ namespace Model {
 class PaymentScheduleEntry {
  public:
   AWS_AGREEMENTSERVICE_API PaymentScheduleEntry() = default;
-  AWS_AGREEMENTSERVICE_API PaymentScheduleEntry(Aws::Utils::Json::JsonView jsonValue);
-  AWS_AGREEMENTSERVICE_API PaymentScheduleEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_AGREEMENTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_AGREEMENTSERVICE_API PaymentScheduleEntry(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_AGREEMENTSERVICE_API PaymentScheduleEntry& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_AGREEMENTSERVICE_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -84,13 +84,13 @@ class PaymentScheduleEntry {
    * <code>ChargeDateOffset</code>. This field is supported only when
    * <code>ChargeDateOffset</code> is expressed in months.</p>
    */
-  inline int GetDayOfMonth() const { return m_dayOfMonth; }
+  inline int64_t GetDayOfMonth() const { return m_dayOfMonth; }
   inline bool DayOfMonthHasBeenSet() const { return m_dayOfMonthHasBeenSet; }
-  inline void SetDayOfMonth(int value) {
+  inline void SetDayOfMonth(int64_t value) {
     m_dayOfMonthHasBeenSet = true;
     m_dayOfMonth = value;
   }
-  inline PaymentScheduleEntry& WithDayOfMonth(int value) {
+  inline PaymentScheduleEntry& WithDayOfMonth(int64_t value) {
     SetDayOfMonth(value);
     return *this;
   }
@@ -100,7 +100,7 @@ class PaymentScheduleEntry {
 
   Aws::String m_chargePercentage;
 
-  int m_dayOfMonth{0};
+  int64_t m_dayOfMonth{0};
   bool m_chargeDateOffsetHasBeenSet = false;
   bool m_chargePercentageHasBeenSet = false;
   bool m_dayOfMonthHasBeenSet = false;

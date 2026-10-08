@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Lambda {
 namespace Model {
-enum class KafkaSchemaRegistryAuthType { NOT_SET, BASIC_AUTH, CLIENT_CERTIFICATE_TLS_AUTH, SERVER_ROOT_CA_CERTIFICATE };
+enum class KafkaSchemaRegistryAuthType { NOT_SET, BASIC_AUTH, CLIENT_CERTIFICATE_TLS_AUTH, SERVER_ROOT_CA_CERTIFICATE, OAUTHBEARER_AUTH };
 
 namespace KafkaSchemaRegistryAuthTypeMapper {
 AWS_LAMBDA_API KafkaSchemaRegistryAuthType GetKafkaSchemaRegistryAuthTypeForName(const Aws::String& name);

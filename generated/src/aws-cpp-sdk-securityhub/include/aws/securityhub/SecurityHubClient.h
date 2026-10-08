@@ -605,6 +605,43 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Cancels a findings export job that is in progress. Security Hub transitions a
+   * running job to the <code>CANCELLED</code> state and returns the
+   * <code>ExportJobId</code> and its new <code>Status</code>. Canceling a job that
+   * is already in the <code>CANCELLED</code> state succeeds and returns the same
+   * result, so you can safely retry a cancel request.</p> <p>You can't cancel an
+   * export job that has already reached a terminal <code>SUCCEEDED</code> or
+   * <code>FAILED</code> state; in that case, this operation returns a
+   * <code>ConflictException</code>. If no export job matches the
+   * <code>ExportJobId</code> that you provide, this operation returns a
+   * <code>ResourceNotFoundException</code>.</p> <p>The <code>Status</code> value
+   * returned by this operation reflects the cancellation immediately, even though
+   * the job can take a short time to stop completely.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CancelExportJobV2">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CancelExportJobV2Outcome CancelExportJobV2(const Model::CancelExportJobV2Request& request) const;
+
+  /**
+   * A Callable wrapper for CancelExportJobV2 that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CancelExportJobV2RequestT = Model::CancelExportJobV2Request>
+  Model::CancelExportJobV2OutcomeCallable CancelExportJobV2Callable(const CancelExportJobV2RequestT& request) const {
+    return SubmitCallable(&SecurityHubClient::CancelExportJobV2, request);
+  }
+
+  /**
+   * An Async wrapper for CancelExportJobV2 that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename CancelExportJobV2RequestT = Model::CancelExportJobV2Request>
+  void CancelExportJobV2Async(const CancelExportJobV2RequestT& request, const CancelExportJobV2ResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityHubClient::CancelExportJobV2, request, handler, context);
+  }
+
+  /**
    * <p>Creates a custom action target in Security Hub CSPM.</p> <p>You can use
    * custom actions on findings and insights in Security Hub CSPM to trigger target
    * actions in Amazon CloudWatch Events.</p><p><h3>See Also:</h3>   <a
@@ -2145,6 +2182,43 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Returns the details of a single findings export job, including its current
+   * <code>Status</code>, the <code>Destination</code> it writes to, the
+   * <code>OutputConfiguration</code> it was started with, and its
+   * <code>StartedAt</code> and <code>EndedAt</code> timestamps. Use this operation
+   * to poll an export job that you started with <code>StartExportJobV2</code> until
+   * it reaches a terminal state (<code>SUCCEEDED</code>, <code>FAILED</code>, or
+   * <code>CANCELLED</code>).</p> <p>If the job failed, the response includes a
+   * <code>FailureCode</code> and <code>FailureMessage</code> that describe the
+   * reason. Input values such as <code>Scopes</code> and <code>Filters</code> are
+   * echoed back as they were submitted, with relative date ranges returned
+   * unresolved. If no export job matches the <code>ExportJobId</code> that you
+   * provide, this operation returns a
+   * <code>ResourceNotFoundException</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetExportJobV2">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetExportJobV2Outcome GetExportJobV2(const Model::GetExportJobV2Request& request) const;
+
+  /**
+   * A Callable wrapper for GetExportJobV2 that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetExportJobV2RequestT = Model::GetExportJobV2Request>
+  Model::GetExportJobV2OutcomeCallable GetExportJobV2Callable(const GetExportJobV2RequestT& request) const {
+    return SubmitCallable(&SecurityHubClient::GetExportJobV2, request);
+  }
+
+  /**
+   * An Async wrapper for GetExportJobV2 that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetExportJobV2RequestT = Model::GetExportJobV2Request>
+  void GetExportJobV2Async(const GetExportJobV2RequestT& request, const GetExportJobV2ResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityHubClient::GetExportJobV2, request, handler, context);
+  }
+
+  /**
    *  <p>The <i>aggregation Region</i> is now called the <i>home
    * Region</i>.</p>  <p>Returns the current configuration in the calling
    * account for cross-Region aggregation. A finding aggregator is a resource that
@@ -2935,6 +3009,42 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Returns the findings export jobs in your account as a paginated list of
+   * <code>ExportSummary</code> objects. You can filter the results by job
+   * <code>Status</code> or <code>DataType</code>.</p> <p>To page through the
+   * results, use the <code>MaxResults</code> and <code>NextToken</code> parameters.
+   * If the response includes a <code>NextToken</code> value, pass it in a subsequent
+   * request to retrieve the next page of results.</p> <p>Each
+   * <code>ExportSummary</code> reports the output <code>Format</code> of the job but
+   * not its full <code>OutputConfiguration</code>. To retrieve the filters and
+   * selected fields that a job was started with, call
+   * <code>GetExportJobV2</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListExportJobsV2">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListExportJobsV2Outcome ListExportJobsV2(const Model::ListExportJobsV2Request& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListExportJobsV2 that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListExportJobsV2RequestT = Model::ListExportJobsV2Request>
+  Model::ListExportJobsV2OutcomeCallable ListExportJobsV2Callable(const ListExportJobsV2RequestT& request = {}) const {
+    return SubmitCallable(&SecurityHubClient::ListExportJobsV2, request);
+  }
+
+  /**
+   * An Async wrapper for ListExportJobsV2 that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListExportJobsV2RequestT = Model::ListExportJobsV2Request>
+  void ListExportJobsV2Async(const ListExportJobsV2ResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                             const ListExportJobsV2RequestT& request = {}) const {
+    return SubmitAsync(&SecurityHubClient::ListExportJobsV2, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves the exposure findings tied to a specific remediation target.
    * Results are sorted by previous severity, highest first, and are
    * paginated.</p><p><h3>See Also:</h3>   <a
@@ -3301,6 +3411,62 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
                                                    const StartConfigurationPolicyDisassociationResponseReceivedHandler& handler,
                                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SecurityHubClient::StartConfigurationPolicyDisassociation, request, handler, context);
+  }
+
+  /**
+   * <p>Starts an ad hoc export job that writes Security Hub findings to an Amazon
+   * Simple Storage Service (Amazon S3) bucket that you own. Because the export runs
+   * asynchronously, this operation returns only the <code>ExportJobId</code> of the
+   * new job; it doesn't wait for the export to finish. Use
+   * <code>GetExportJobV2</code> to poll the job, and <code>ListExportJobsV2</code>
+   * to view the export jobs in your account.</p> <p>Security Hub allows only one
+   * export job in the <code>RUNNING</code> state per account at a time. If an export
+   * job is already running, this operation returns a
+   * <code>ServiceQuotaExceededException</code>. Wait for the running job to finish,
+   * or cancel it with <code>CancelExportJobV2</code>, before you start a new
+   * one.</p> <p>Specify the destination bucket and Amazon Web Services Key
+   * Management Service (Amazon Web Services KMS) key in the <code>Destination</code>
+   * parameter, and the output format (<code>CSV</code> or <code>OCSF_JSON</code>),
+   * optional filters, and field selection in the <code>OutputConfiguration</code>
+   * parameter. Before you call this operation, you must grant Security Hub
+   * permission to write to your bucket and use your Amazon Web Services KMS key by
+   * adding the bucket policy and key policy statements shown in the Examples
+   * section.</p> <p>Two identities use your Amazon Web Services KMS key, and each
+   * needs its own permission. Security Hub uses the key when it writes the export
+   * objects to your bucket. The IAM principal that calls
+   * <code>StartExportJobV2</code> must also have <code>kms:GenerateDataKey</code>
+   * and <code>kms:Decrypt</code> permissions on the key. The Examples section shows
+   * both grants.</p> <p>A delegated administrator can use the optional
+   * <code>Scopes</code> parameter to export findings for specific organizations or
+   * organizational units (OUs).</p> <p>To make the request idempotent, provide a
+   * <code>ClientToken</code>. If you retry a <code>StartExportJobV2</code> request
+   * with the same <code>ClientToken</code> and the same request parameters, Security
+   * Hub returns the <code>ExportJobId</code> of the original job instead of starting
+   * a new one. If you reuse a <code>ClientToken</code> with different request
+   * parameters, this operation returns a
+   * <code>ConflictException</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/StartExportJobV2">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartExportJobV2Outcome StartExportJobV2(const Model::StartExportJobV2Request& request) const;
+
+  /**
+   * A Callable wrapper for StartExportJobV2 that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StartExportJobV2RequestT = Model::StartExportJobV2Request>
+  Model::StartExportJobV2OutcomeCallable StartExportJobV2Callable(const StartExportJobV2RequestT& request) const {
+    return SubmitCallable(&SecurityHubClient::StartExportJobV2, request);
+  }
+
+  /**
+   * An Async wrapper for StartExportJobV2 that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename StartExportJobV2RequestT = Model::StartExportJobV2Request>
+  void StartExportJobV2Async(const StartExportJobV2RequestT& request, const StartExportJobV2ResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityHubClient::StartExportJobV2, request, handler, context);
   }
 
   /**

@@ -101,6 +101,7 @@
 #include <aws/budgets/model/NotificationState.h>
 #include <aws/budgets/model/NotificationType.h>
 #include <aws/budgets/model/NotificationWithSubscribers.h>
+#include <aws/budgets/model/ProductAttributeValues.h>
 #include <aws/budgets/model/ResourceTag.h>
 #include <aws/budgets/model/ScpActionDefinition.h>
 #include <aws/budgets/model/Spend.h>

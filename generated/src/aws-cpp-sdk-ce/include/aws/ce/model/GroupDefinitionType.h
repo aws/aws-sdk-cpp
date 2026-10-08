@@ -10,7 +10,7 @@
 namespace Aws {
 namespace CostExplorer {
 namespace Model {
-enum class GroupDefinitionType { NOT_SET, DIMENSION, TAG, COST_CATEGORY };
+enum class GroupDefinitionType { NOT_SET, DIMENSION, TAG, COST_CATEGORY, PRODUCT_ATTRIBUTE };
 
 namespace GroupDefinitionTypeMapper {
 AWS_COSTEXPLORER_API GroupDefinitionType GetGroupDefinitionTypeForName(const Aws::String& name);

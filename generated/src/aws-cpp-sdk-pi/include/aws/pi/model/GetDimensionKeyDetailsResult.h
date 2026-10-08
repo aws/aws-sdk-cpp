@@ -7,27 +7,27 @@
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/pi/PI_EXPORTS.h>
 #include <aws/pi/model/DimensionKeyDetail.h>
 
 #include <utility>
-
 namespace Aws {
 template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
 namespace Utils {
-namespace Json {
-class JsonValue;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace PI {
 namespace Model {
 class GetDimensionKeyDetailsResult {
  public:
   AWS_PI_API GetDimensionKeyDetailsResult() = default;
-  AWS_PI_API GetDimensionKeyDetailsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-  AWS_PI_API GetDimensionKeyDetailsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_PI_API GetDimensionKeyDetailsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
+  AWS_PI_API GetDimensionKeyDetailsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
 
   ///@{
   /**

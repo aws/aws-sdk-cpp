@@ -48,6 +48,10 @@ class DimensionValues {
    * <p> <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and
    * <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code> can only be used in <a
    * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html">AnomalySubscriptions</a>.</p>
+   * <p>Use <code>PRODUCT_ATTRIBUTE</code> only as the <code>Dimension</code> in
+   * <code>GetDimensionValues</code>. To filter or group by product attributes, use
+   * the <code>ProductAttributes</code> field of <code>Expression</code> or the
+   * <code>PRODUCT_ATTRIBUTE</code> group type.</p>
    */
   inline Dimension GetKey() const { return m_key; }
   inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }

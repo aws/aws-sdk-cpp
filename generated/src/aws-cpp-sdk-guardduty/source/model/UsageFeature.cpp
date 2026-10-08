@@ -28,6 +28,11 @@ static const int EC2_RUNTIME_MONITORING_HASH = HashingUtils::HashString("EC2_RUN
 static const int FARGATE_RUNTIME_MONITORING_HASH = HashingUtils::HashString("FARGATE_RUNTIME_MONITORING");
 static const int RDS_DBI_PROTECTION_PROVISIONED_HASH = HashingUtils::HashString("RDS_DBI_PROTECTION_PROVISIONED");
 static const int RDS_DBI_PROTECTION_SERVERLESS_HASH = HashingUtils::HashString("RDS_DBI_PROTECTION_SERVERLESS");
+static const int RDS_DBI_PROTECTION_LIMITLESS_HASH = HashingUtils::HashString("RDS_DBI_PROTECTION_LIMITLESS");
+static const int RDS_DATA_ACTIVITY_DBI_PROTECTION_PROVISIONED_HASH =
+    HashingUtils::HashString("RDS_DATA_ACTIVITY_DBI_PROTECTION_PROVISIONED");
+static const int RDS_DATA_ACTIVITY_DBI_PROTECTION_SERVERLESS_HASH = HashingUtils::HashString("RDS_DATA_ACTIVITY_DBI_PROTECTION_SERVERLESS");
+static const int RDS_DATA_ACTIVITY_DBI_PROTECTION_LIMITLESS_HASH = HashingUtils::HashString("RDS_DATA_ACTIVITY_DBI_PROTECTION_LIMITLESS");
 static const int AI_PROTECTION_HASH = HashingUtils::HashString("AI_PROTECTION");
 
 UsageFeature GetUsageFeatureForName(const Aws::String& name) {
@@ -58,6 +63,14 @@ UsageFeature GetUsageFeatureForName(const Aws::String& name) {
     return UsageFeature::RDS_DBI_PROTECTION_PROVISIONED;
   } else if (hashCode == RDS_DBI_PROTECTION_SERVERLESS_HASH) {
     return UsageFeature::RDS_DBI_PROTECTION_SERVERLESS;
+  } else if (hashCode == RDS_DBI_PROTECTION_LIMITLESS_HASH) {
+    return UsageFeature::RDS_DBI_PROTECTION_LIMITLESS;
+  } else if (hashCode == RDS_DATA_ACTIVITY_DBI_PROTECTION_PROVISIONED_HASH) {
+    return UsageFeature::RDS_DATA_ACTIVITY_DBI_PROTECTION_PROVISIONED;
+  } else if (hashCode == RDS_DATA_ACTIVITY_DBI_PROTECTION_SERVERLESS_HASH) {
+    return UsageFeature::RDS_DATA_ACTIVITY_DBI_PROTECTION_SERVERLESS;
+  } else if (hashCode == RDS_DATA_ACTIVITY_DBI_PROTECTION_LIMITLESS_HASH) {
+    return UsageFeature::RDS_DATA_ACTIVITY_DBI_PROTECTION_LIMITLESS;
   } else if (hashCode == AI_PROTECTION_HASH) {
     return UsageFeature::AI_PROTECTION;
   }
@@ -100,6 +113,14 @@ Aws::String GetNameForUsageFeature(UsageFeature enumValue) {
       return "RDS_DBI_PROTECTION_PROVISIONED";
     case UsageFeature::RDS_DBI_PROTECTION_SERVERLESS:
       return "RDS_DBI_PROTECTION_SERVERLESS";
+    case UsageFeature::RDS_DBI_PROTECTION_LIMITLESS:
+      return "RDS_DBI_PROTECTION_LIMITLESS";
+    case UsageFeature::RDS_DATA_ACTIVITY_DBI_PROTECTION_PROVISIONED:
+      return "RDS_DATA_ACTIVITY_DBI_PROTECTION_PROVISIONED";
+    case UsageFeature::RDS_DATA_ACTIVITY_DBI_PROTECTION_SERVERLESS:
+      return "RDS_DATA_ACTIVITY_DBI_PROTECTION_SERVERLESS";
+    case UsageFeature::RDS_DATA_ACTIVITY_DBI_PROTECTION_LIMITLESS:
+      return "RDS_DATA_ACTIVITY_DBI_PROTECTION_LIMITLESS";
     case UsageFeature::AI_PROTECTION:
       return "AI_PROTECTION";
     default:

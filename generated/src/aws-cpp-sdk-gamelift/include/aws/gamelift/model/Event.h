@@ -97,7 +97,7 @@ class Event {
    * creation activity):</b> </p> <ul> <li> <p>FLEET_BINARY_DOWNLOAD_FAILED -- The
    * build failed to download to the fleet instance.</p> </li> <li>
    * <p>FLEET_CREATION_EXTRACTING_BUILD -- The game server build was successfully
-   * downloaded to an instance, and Amazon GameLift Serversis now extracting the
+   * downloaded to an instance, and Amazon GameLift Servers is now extracting the
    * build files from the uploaded build. Failure at this stage prevents a fleet from
    * moving to ACTIVE status. Logs for this stage display a list of the files that
    * are extracted and saved on the instance. Access the logs by using the URL in
@@ -109,11 +109,11 @@ class Event {
    * successfully. Access the logs by using the URL in <i>PreSignedLogUrl</i>.</p>
    * </li> <li> <p>FLEET_CREATION_COMPLETED_INSTALLER -- The game server build files
    * were successfully installed and validation of the installation will begin
-   * soon.</p> </li> <li> <p>FLEET_CREATION_FAILED_INSTALLER -- The installed failed
+   * soon.</p> </li> <li> <p>FLEET_CREATION_FAILED_INSTALLER -- The installer failed
    * while attempting to install the build files. This event indicates that the
    * failure occurred before Amazon GameLift Servers could start validation. </p>
    * </li> <li> <p>FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was
-   * successful, and the GameLift is now verifying that the game server launch paths,
+   * successful, and GameLift is now verifying that the game server launch paths,
    * which are specified in the fleet's runtime configuration, exist. If any listed
    * launch path exists, Amazon GameLift Servers tries to launch a game server
    * process and waits for the process to report ready. Failures in this stage

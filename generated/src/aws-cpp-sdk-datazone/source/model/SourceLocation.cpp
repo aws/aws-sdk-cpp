@@ -22,6 +22,10 @@ SourceLocation& SourceLocation::operator=(JsonView jsonValue) {
     m_s3 = jsonValue.GetString("s3");
     m_s3HasBeenSet = true;
   }
+  if (jsonValue.ValueExists("s3Files")) {
+    m_s3Files = jsonValue.GetObject("s3Files");
+    m_s3FilesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue SourceLocation::Jsonize() const {
 
   if (m_s3HasBeenSet) {
     payload.WithString("s3", m_s3);
+  }
+
+  if (m_s3FilesHasBeenSet) {
+    payload.WithObject("s3Files", m_s3Files.Jsonize());
   }
 
   return payload;

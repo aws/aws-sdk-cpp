@@ -32,7 +32,7 @@ namespace Model {
  * destination order, and (2) for multi-location fleets, an alphabetic list of
  * locations.</p> </li> <li> <p>When a game session request includes player latency
  * data, Amazon GameLift Servers re-orders the queue's destinations to make
- * placements where the average player latency is lowest. It reorders based the
+ * placements where the average player latency is lowest. It reorders based on the
  * following priorities: (1) the lowest average latency across all players, (2) the
  * lowest hosting cost, (3) the queue's default destination order, and (4) for
  * multi-location fleets, an alphabetic list of locations.</p> </li>

@@ -8,6 +8,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/keyspaces/Keyspaces_EXPORTS.h>
 #include <aws/keyspaces/model/CapacitySpecificationSummary.h>
 #include <aws/keyspaces/model/CdcSpecificationSummary.h>
@@ -22,23 +23,22 @@
 #include <aws/keyspaces/model/WarmThroughputSpecificationSummary.h>
 
 #include <utility>
-
 namespace Aws {
 template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
 namespace Utils {
-namespace Json {
-class JsonValue;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace Keyspaces {
 namespace Model {
 class GetTableResult {
  public:
   AWS_KEYSPACES_API GetTableResult() = default;
-  AWS_KEYSPACES_API GetTableResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-  AWS_KEYSPACES_API GetTableResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_KEYSPACES_API GetTableResult(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
+  AWS_KEYSPACES_API GetTableResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
 
   ///@{
   /**
@@ -214,12 +214,12 @@ class GetTableResult {
   /**
    * <p>The default Time to Live settings in seconds of the specified table.</p>
    */
-  inline int GetDefaultTimeToLive() const { return m_defaultTimeToLive; }
-  inline void SetDefaultTimeToLive(int value) {
+  inline int64_t GetDefaultTimeToLive() const { return m_defaultTimeToLive; }
+  inline void SetDefaultTimeToLive(int64_t value) {
     m_defaultTimeToLiveHasBeenSet = true;
     m_defaultTimeToLive = value;
   }
-  inline GetTableResult& WithDefaultTimeToLive(int value) {
+  inline GetTableResult& WithDefaultTimeToLive(int64_t value) {
     SetDefaultTimeToLive(value);
     return *this;
   }
@@ -372,7 +372,7 @@ class GetTableResult {
 
   TimeToLive m_ttl;
 
-  int m_defaultTimeToLive{0};
+  int64_t m_defaultTimeToLive{0};
 
   Comment m_comment;
 

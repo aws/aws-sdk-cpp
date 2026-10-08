@@ -7,7 +7,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/translate/TranslatePaginationBase.h>
 #include <aws/translate/TranslateServiceClientModel.h>
 #include <aws/translate/TranslateWaiter.h>
@@ -19,12 +19,12 @@ namespace Translate {
  * <p>Provides translation of the input content from the source language to the
  * target language.</p>
  */
-class AWS_TRANSLATE_API TranslateClient : public Aws::Client::AWSJsonClient,
+class AWS_TRANSLATE_API TranslateClient : public Aws::Client::AWSRpcV2CborClient,
                                           public Aws::Client::ClientWithAsyncTemplateMethods<TranslateClient>,
                                           public TranslatePaginationBase<TranslateClient>,
                                           public TranslateWaiter<TranslateClient> {
  public:
-  typedef Aws::Client::AWSJsonClient BASECLASS;
+  typedef Aws::Client::AWSRpcV2CborClient BASECLASS;
   static const char* GetServiceName();
   static const char* GetAllocationTag();
 

@@ -7,6 +7,7 @@
 #include <aws/budgets/Budgets_EXPORTS.h>
 #include <aws/budgets/model/CostCategoryValues.h>
 #include <aws/budgets/model/ExpressionDimensionValues.h>
+#include <aws/budgets/model/ProductAttributeValues.h>
 #include <aws/budgets/model/TagValues.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -154,6 +155,25 @@ class Expression {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The filter that limits results based on the values of specific product
+   * attributes.</p>
+   */
+  inline const ProductAttributeValues& GetProductAttributes() const { return m_productAttributes; }
+  inline bool ProductAttributesHasBeenSet() const { return m_productAttributesHasBeenSet; }
+  template <typename ProductAttributesT = ProductAttributeValues>
+  void SetProductAttributes(ProductAttributesT&& value) {
+    m_productAttributesHasBeenSet = true;
+    m_productAttributes = std::forward<ProductAttributesT>(value);
+  }
+  template <typename ProductAttributesT = ProductAttributeValues>
+  Expression& WithProductAttributes(ProductAttributesT&& value) {
+    SetProductAttributes(std::forward<ProductAttributesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Expression> m_or;
 
@@ -166,12 +186,15 @@ class Expression {
   TagValues m_tags;
 
   CostCategoryValues m_costCategories;
+
+  ProductAttributeValues m_productAttributes;
   bool m_orHasBeenSet = false;
   bool m_andHasBeenSet = false;
   bool m_notHasBeenSet = false;
   bool m_dimensionsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_costCategoriesHasBeenSet = false;
+  bool m_productAttributesHasBeenSet = false;
 };
 
 }  // namespace Model

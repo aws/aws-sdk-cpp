@@ -9,25 +9,25 @@
 #include <aws/codeconnections/model/VpcConfiguration.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
-
 namespace Aws {
 template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
 namespace Utils {
-namespace Json {
-class JsonValue;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace CodeConnections {
 namespace Model {
 class GetHostResult {
  public:
   AWS_CODECONNECTIONS_API GetHostResult() = default;
-  AWS_CODECONNECTIONS_API GetHostResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-  AWS_CODECONNECTIONS_API GetHostResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_CODECONNECTIONS_API GetHostResult(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
+  AWS_CODECONNECTIONS_API GetHostResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
 
   ///@{
   /**

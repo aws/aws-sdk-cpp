@@ -41,6 +41,9 @@ Aws::String UpdateContainerGroupDefinitionRequest::SerializePayload() const {
   if (m_operatingSystemHasBeenSet) {
     mapSize++;
   }
+  if (m_removeAttributesHasBeenSet) {
+    mapSize++;
+  }
 
   encoder.WriteMapStart(mapSize);
 
@@ -86,6 +89,15 @@ Aws::String UpdateContainerGroupDefinitionRequest::SerializePayload() const {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("OperatingSystem"));
     encoder.WriteText(
         Aws::Crt::ByteCursorFromCString(ContainerOperatingSystemMapper::GetNameForContainerOperatingSystem(m_operatingSystem).c_str()));
+  }
+
+  if (m_removeAttributesHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("RemoveAttributes"));
+    encoder.WriteArrayStart(m_removeAttributes.size());
+    for (const auto& item_0 : m_removeAttributes) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(
+          ContainerGroupDefinitionRemoveAttributeMapper::GetNameForContainerGroupDefinitionRemoveAttribute(item_0).c_str()));
+    }
   }
   const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
   return str;

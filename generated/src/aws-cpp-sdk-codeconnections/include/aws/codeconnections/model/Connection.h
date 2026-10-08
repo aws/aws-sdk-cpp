@@ -8,15 +8,15 @@
 #include <aws/codeconnections/model/ConnectionStatus.h>
 #include <aws/codeconnections/model/ProviderType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace CodeConnections {
 namespace Model {
@@ -33,9 +33,9 @@ namespace Model {
 class Connection {
  public:
   AWS_CODECONNECTIONS_API Connection() = default;
-  AWS_CODECONNECTIONS_API Connection(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CODECONNECTIONS_API Connection& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CODECONNECTIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_CODECONNECTIONS_API Connection(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CODECONNECTIONS_API Connection& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CODECONNECTIONS_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

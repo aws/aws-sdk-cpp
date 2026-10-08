@@ -47,11 +47,12 @@ class StackResourceDriftInformationSummary {
    * don't currently support drift detection have a status of
    * <code>NOT_CHECKED</code>. For more information, see <a
    * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">Resource
-   * type support for imports and drift detection</a>. If you performed an
-   * <a>ContinueUpdateRollback</a> operation on a stack, any resources included in
-   * <code>ResourcesToSkip</code> will also have a status of
-   * <code>NOT_CHECKED</code>. For more information about skipping resources during
-   * rollback operations, see <a
+   * type support for imports and drift detection</a>. If you performed a
+   * <a>ContinueUpdateRollback</a> operation on a stack, resources skipped using
+   * <code>ResourcesToSkip</code> or <code>ForceRollback</code> also have a status of
+   * <code>NOT_CHECKED</code>. To detect whether a skipped resource actually differs
+   * from the template, run <a>DetectStackResourceDrift</a>. For more information
+   * about skipping resources during rollback operations, see <a
    * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html">Continue
    * rolling back an update</a> in the <i>CloudFormation User Guide</i>.</p> </li>
    * <li> <p> <code>IN_SYNC</code>: The resource's actual configuration matches its

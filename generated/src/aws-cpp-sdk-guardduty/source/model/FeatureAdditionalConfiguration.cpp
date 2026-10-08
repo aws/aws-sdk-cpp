@@ -18,6 +18,7 @@ namespace FeatureAdditionalConfigurationMapper {
 static const int EKS_ADDON_MANAGEMENT_HASH = HashingUtils::HashString("EKS_ADDON_MANAGEMENT");
 static const int ECS_FARGATE_AGENT_MANAGEMENT_HASH = HashingUtils::HashString("ECS_FARGATE_AGENT_MANAGEMENT");
 static const int EC2_AGENT_MANAGEMENT_HASH = HashingUtils::HashString("EC2_AGENT_MANAGEMENT");
+static const int RDS_DATA_RISK_HASH = HashingUtils::HashString("RDS_DATA_RISK");
 
 FeatureAdditionalConfiguration GetFeatureAdditionalConfigurationForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ FeatureAdditionalConfiguration GetFeatureAdditionalConfigurationForName(const Aw
     return FeatureAdditionalConfiguration::ECS_FARGATE_AGENT_MANAGEMENT;
   } else if (hashCode == EC2_AGENT_MANAGEMENT_HASH) {
     return FeatureAdditionalConfiguration::EC2_AGENT_MANAGEMENT;
+  } else if (hashCode == RDS_DATA_RISK_HASH) {
+    return FeatureAdditionalConfiguration::RDS_DATA_RISK;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForFeatureAdditionalConfiguration(FeatureAdditionalConfigurat
       return "ECS_FARGATE_AGENT_MANAGEMENT";
     case FeatureAdditionalConfiguration::EC2_AGENT_MANAGEMENT:
       return "EC2_AGENT_MANAGEMENT";
+    case FeatureAdditionalConfiguration::RDS_DATA_RISK:
+      return "RDS_DATA_RISK";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

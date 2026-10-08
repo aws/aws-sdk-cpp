@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/datazone/model/NotebookStatus.h>
+#include <aws/datazone/model/NotebookType.h>
 #include <aws/datazone/model/SourceLocation.h>
 
 #include <utility>
@@ -132,6 +133,21 @@ class StartNotebookImportResult {
 
   ///@{
   /**
+   * <p>The type of the imported notebook.</p>
+   */
+  inline NotebookType GetType() const { return m_type; }
+  inline void SetType(NotebookType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline StartNotebookImportResult& WithType(NotebookType value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The source location from which the notebook was imported.</p>
    */
   inline const SourceLocation& GetSourceLocation() const { return m_sourceLocation; }
@@ -210,6 +226,8 @@ class StartNotebookImportResult {
 
   Aws::String m_description;
 
+  NotebookType m_type{NotebookType::NOT_SET};
+
   SourceLocation m_sourceLocation;
 
   Aws::Utils::DateTime m_createdAt{};
@@ -224,6 +242,7 @@ class StartNotebookImportResult {
   bool m_owningProjectIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_sourceLocationHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_createdByHasBeenSet = false;

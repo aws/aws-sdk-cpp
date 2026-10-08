@@ -255,7 +255,9 @@ class AWS_CLOUDFORMATION_API CloudFormationClient : public Aws::Client::AWSXMLCl
    * rolling back an update</a> in the <i>CloudFormation User Guide</i>. For
    * information for troubleshooting a failed update rollback, see <a
    * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">Update
-   * rollback failed</a>.</p><p><h3>See Also:</h3>   <a
+   * rollback failed</a>.</p> <p> <code>ForceRollback</code> and
+   * <code>ResourcesToSkip</code> are mutually exclusive. For details, see
+   * <a>ContinueUpdateRollbackInput$ForceRollback</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ContinueUpdateRollback">AWS
    * API Reference</a></p>
    */

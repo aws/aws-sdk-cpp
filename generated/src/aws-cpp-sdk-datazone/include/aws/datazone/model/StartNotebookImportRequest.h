@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/datazone/DataZoneRequest.h>
 #include <aws/datazone/DataZone_EXPORTS.h>
+#include <aws/datazone/model/NotebookType.h>
 #include <aws/datazone/model/SourceLocation.h>
 
 #include <utility>
@@ -69,8 +70,9 @@ class StartNotebookImportRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The source location of the notebook to import. This specifies the Amazon
-   * Simple Storage Service URI of the notebook file.</p>
+   * <p>The source location of the notebook to import. Specify either a single Amazon
+   * Simple Storage Service URI, or a list of objects to import as the notebook's
+   * cells.</p>
    */
   inline const SourceLocation& GetSourceLocation() const { return m_sourceLocation; }
   inline bool SourceLocationHasBeenSet() const { return m_sourceLocationHasBeenSet; }
@@ -125,6 +127,23 @@ class StartNotebookImportRequest : public DataZoneRequest {
 
   ///@{
   /**
+   * <p>The type of the notebook to import. If not specified, defaults to
+   * <code>DATA</code>.</p>
+   */
+  inline NotebookType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(NotebookType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline StartNotebookImportRequest& WithType(NotebookType value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A unique, case-sensitive identifier to ensure idempotency of the request.
    * This field is automatically populated if not provided.</p>
    */
@@ -152,12 +171,15 @@ class StartNotebookImportRequest : public DataZoneRequest {
 
   Aws::String m_description;
 
+  NotebookType m_type{NotebookType::NOT_SET};
+
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_domainIdentifierHasBeenSet = false;
   bool m_owningProjectIdentifierHasBeenSet = false;
   bool m_sourceLocationHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

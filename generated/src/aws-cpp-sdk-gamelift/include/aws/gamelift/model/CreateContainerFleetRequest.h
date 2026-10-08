@@ -113,7 +113,7 @@ class CreateContainerFleetRequest : public GameLiftRequest {
   ///@{
   /**
    * <p>The name of a container group definition resource that describes a set of
-   * axillary software. A fleet instance has one process for executables in this
+   * auxiliary software. A fleet instance has one process for executables in this
    * container group. A per-instance container group is optional. You can update the
    * fleet to add or remove a per-instance container group at any time. You can
    * specify the container group definition's name to use the latest version.
@@ -220,7 +220,7 @@ class CreateContainerFleetRequest : public GameLiftRequest {
    * fleet instance. </p> <p>By default, Amazon GameLift Servers calculates the
    * maximum number of game server container groups that can fit on each instance.
    * This calculation is based on the CPU and memory resources of the fleet's
-   * instance type). To use the calculated maximum, don't set this parameter. If you
+   * instance type. To use the calculated maximum, don't set this parameter. If you
    * set this number manually, Amazon GameLift Servers uses your value as long as
    * it's less than the calculated maximum.</p>
    */
@@ -241,11 +241,11 @@ class CreateContainerFleetRequest : public GameLiftRequest {
    * <p>The Amazon EC2 instance type to use for all instances in the fleet. For
    * multi-location fleets, the instance type must be available in the home region
    * and all remote locations. Instance type determines the computing resources and
-   * processing power that's available to host your game servers. This includes
-   * including CPU, memory, storage, and networking capacity. </p> <p>By default,
-   * Amazon GameLift Servers uses the <code>c5.large</code> instance type. If this
-   * instance type does not have sufficient resources for your container groups, you
-   * can choose a different instance type that better fits your needs. See <a
+   * processing power that's available to host your game servers. This includes CPU,
+   * memory, storage, and networking capacity. </p> <p>By default, Amazon GameLift
+   * Servers uses the <code>c5.large</code> instance type. If this instance type does
+   * not have sufficient resources for your container groups, you can choose a
+   * different instance type that better fits your needs. See <a
    * href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud
    * Instance Types</a> for detailed descriptions of Amazon EC2 instance types.</p>
    * <p>You can't update this fleet property later.</p>
@@ -400,9 +400,9 @@ class CreateContainerFleetRequest : public GameLiftRequest {
    * you define.</p> </li> <li> <p> <code>NONE</code> -- Don't collect container
    * logs.</p> </li> </ul> <p>By default, this property is set to
    * <code>CLOUDWATCH</code>. </p> <p>Amazon GameLift Servers requires permissions to
-   * send logs other Amazon Web Services services in your account. These permissions
-   * are included in the IAM fleet role for this container fleet (see
-   * <code>FleetRoleArn)</code>.</p>
+   * send logs to other Amazon Web Services services in your account. These
+   * permissions are included in the IAM fleet role for this container fleet (see
+   * <code>FleetRoleArn</code>).</p>
    */
   inline const LogConfiguration& GetLogConfiguration() const { return m_logConfiguration; }
   inline bool LogConfigurationHasBeenSet() const { return m_logConfigurationHasBeenSet; }
@@ -421,7 +421,7 @@ class CreateContainerFleetRequest : public GameLiftRequest {
   ///@{
   /**
    * <p>A list of labels to assign to the new fleet resource. Tags are
-   * developer-defined key-value pairs. Tagging Amazon Web Services resources are
+   * developer-defined key-value pairs. Tagging Amazon Web Services resources is
    * useful for resource management, access management and cost allocation. For more
    * information, see <a
    * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
@@ -451,12 +451,12 @@ class CreateContainerFleetRequest : public GameLiftRequest {
   ///@{
   /**
    * <p>Configures player gateway for your fleet. Player gateway provides benefits
-   * such as DDoS protection by rate limiting and validating traﬃc before it reaches
-   * game servers, hiding game server IP addresses from players, and providing
-   * updated endpoints when relay endpoints become unhealthy.</p> <p> <b>How it
-   * works:</b> When enabled, game clients connect to relay endpoints instead of to
-   * your game servers. Player gateway validates player gateway tokens and routes
-   * traffic to the appropriate game server. Your game backend calls <a
+   * such as DDoS protection by rate limiting and validating traffic before it
+   * reaches game servers, hiding game server IP addresses from players, and
+   * providing updated endpoints when relay endpoints become unhealthy.</p> <p>
+   * <b>How it works:</b> When enabled, game clients connect to relay endpoints
+   * instead of to your game servers. Player gateway validates player gateway tokens
+   * and routes traffic to the appropriate game server. Your game backend calls <a
    * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetPlayerConnectionDetails.html">GetPlayerConnectionDetails</a>
    * to retrieve relay endpoints and player gateway tokens for your game clients. To
    * learn more about this topic, see <a

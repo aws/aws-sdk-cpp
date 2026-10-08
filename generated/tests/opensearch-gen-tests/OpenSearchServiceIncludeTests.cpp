@@ -205,6 +205,7 @@
 #include <aws/opensearch/model/EBSOptionsStatus.h>
 #include <aws/opensearch/model/EncryptionAtRestOptions.h>
 #include <aws/opensearch/model/EncryptionAtRestOptionsStatus.h>
+#include <aws/opensearch/model/EncryptionMode.h>
 #include <aws/opensearch/model/EngineMode.h>
 #include <aws/opensearch/model/EngineModeStatus.h>
 #include <aws/opensearch/model/EngineType.h>

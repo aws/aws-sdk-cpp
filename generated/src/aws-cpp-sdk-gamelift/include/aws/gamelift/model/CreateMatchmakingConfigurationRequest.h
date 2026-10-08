@@ -81,7 +81,9 @@ class CreateMatchmakingConfigurationRequest : public GameLiftRequest {
    * <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue
    * name&gt;</code>. Queues can be located in any Region. Queues are used to start
    * new Amazon GameLift Servers-hosted game sessions for matches that are created
-   * with this matchmaking configuration. If <code>FlexMatchMode</code> is set to
+   * with this matchmaking configuration. A matchmaking configuration supports only
+   * one queue; if you specify more than one ARN, the request fails with an
+   * <code>InvalidRequestException</code>. If <code>FlexMatchMode</code> is set to
    * <code>STANDALONE</code>, do not set this parameter. </p>
    */
   inline const Aws::Vector<Aws::String>& GetGameSessionQueueArns() const { return m_gameSessionQueueArns; }
@@ -349,7 +351,7 @@ class CreateMatchmakingConfigurationRequest : public GameLiftRequest {
   /**
    * <p>A list of labels to assign to the new matchmaking configuration resource.
    * Tags are developer-defined key-value pairs. Tagging Amazon Web Services
-   * resources are useful for resource management, access management and cost
+   * resources is useful for resource management, access management and cost
    * allocation. For more information, see <a
    * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
    * Amazon Web Services Resources</a> in the <i>Amazon Web Services General

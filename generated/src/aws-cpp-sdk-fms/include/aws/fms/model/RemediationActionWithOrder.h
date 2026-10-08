@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/fms/FMS_EXPORTS.h>
 #include <aws/fms/model/RemediationAction.h>
 
@@ -11,10 +12,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace FMS {
 namespace Model {
@@ -28,9 +28,9 @@ namespace Model {
 class RemediationActionWithOrder {
  public:
   AWS_FMS_API RemediationActionWithOrder() = default;
-  AWS_FMS_API RemediationActionWithOrder(Aws::Utils::Json::JsonView jsonValue);
-  AWS_FMS_API RemediationActionWithOrder& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_FMS_API RemediationActionWithOrder(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_FMS_API RemediationActionWithOrder& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_FMS_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -54,13 +54,13 @@ class RemediationActionWithOrder {
   /**
    * <p>The order of the remediation actions in the list.</p>
    */
-  inline int GetOrder() const { return m_order; }
+  inline int64_t GetOrder() const { return m_order; }
   inline bool OrderHasBeenSet() const { return m_orderHasBeenSet; }
-  inline void SetOrder(int value) {
+  inline void SetOrder(int64_t value) {
     m_orderHasBeenSet = true;
     m_order = value;
   }
-  inline RemediationActionWithOrder& WithOrder(int value) {
+  inline RemediationActionWithOrder& WithOrder(int64_t value) {
     SetOrder(value);
     return *this;
   }
@@ -68,7 +68,7 @@ class RemediationActionWithOrder {
  private:
   RemediationAction m_remediationAction;
 
-  int m_order{0};
+  int64_t m_order{0};
   bool m_remediationActionHasBeenSet = false;
   bool m_orderHasBeenSet = false;
 };

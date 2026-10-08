@@ -225,7 +225,7 @@ class GameSession {
    * <code>TRIGGER_ON_PROCESS_TERMINATE</code>. </p> </li> <li> <p>
    * <code>FORCE_TERMINATED</code> – The game session was stopped by calling
    * <code>TerminateGameSession</code> with the termination mode
-   * <code>FORCE_TERMINATE</code>. </p> </li> </ul> <p/>
+   * <code>FORCE_TERMINATE</code>. </p> </li> </ul>
    */
   inline GameSessionStatusReason GetStatusReason() const { return m_statusReason; }
   inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }

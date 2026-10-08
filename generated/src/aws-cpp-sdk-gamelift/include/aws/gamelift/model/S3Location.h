@@ -34,7 +34,7 @@ class S3Location {
 
   ///@{
   /**
-   * <p>An Amazon S3 bucket identifier. Thename of the S3 bucket.</p>
+   * <p>An Amazon S3 bucket identifier. The name of the S3 bucket.</p>
    * <p>Amazon GameLift Servers doesn't support uploading from Amazon S3 buckets with
    * names that contain a dot (.).</p>
    */

@@ -3,60 +3,278 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/translate/model/TextTranslationJobFilter.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace Translate {
 namespace Model {
 
-TextTranslationJobFilter::TextTranslationJobFilter(JsonView jsonValue) { *this = jsonValue; }
+TextTranslationJobFilter::TextTranslationJobFilter(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-TextTranslationJobFilter& TextTranslationJobFilter::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("JobName")) {
-    m_jobName = jsonValue.GetString("JobName");
-    m_jobNameHasBeenSet = true;
+TextTranslationJobFilter& TextTranslationJobFilter::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "JobName") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_jobName = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_jobName = ss.str();
+                  }
+                }
+                m_jobNameHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "JobStatus") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_jobStatus =
+                      JobStatusMapper::GetJobStatusForName(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_jobStatusHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "SubmittedBeforeTime") {
+                auto tag = decoder->PopNextTagVal();
+                if (tag.has_value() &&
+                    tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+                {
+                  auto dateType = decoder->PeekType();
+                  if (dateType.has_value()) {
+                    if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                      auto val = decoder->PopNextFloatVal();
+                      if (val.has_value()) {
+                        m_submittedBeforeTime = Aws::Utils::DateTime(val.value());
+                      }
+                    } else {
+                      auto val = decoder->PopNextUnsignedIntVal();
+                      if (val.has_value()) {
+                        m_submittedBeforeTime = Aws::Utils::DateTime(val.value());
+                      }
+                    }
+                  }
+                }
+                m_submittedBeforeTimeHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "SubmittedAfterTime") {
+                auto tag = decoder->PopNextTagVal();
+                if (tag.has_value() &&
+                    tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+                {
+                  auto dateType = decoder->PeekType();
+                  if (dateType.has_value()) {
+                    if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                      auto val = decoder->PopNextFloatVal();
+                      if (val.has_value()) {
+                        m_submittedAfterTime = Aws::Utils::DateTime(val.value());
+                      }
+                    } else {
+                      auto val = decoder->PopNextUnsignedIntVal();
+                      if (val.has_value()) {
+                        m_submittedAfterTime = Aws::Utils::DateTime(val.value());
+                      }
+                    }
+                  }
+                }
+                m_submittedAfterTimeHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("TextTranslationJobFilter", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "JobName") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_jobName = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_jobName = ss.str();
+                }
+              }
+              m_jobNameHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "JobStatus") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_jobStatus =
+                    JobStatusMapper::GetJobStatusForName(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_jobStatusHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "SubmittedBeforeTime") {
+              auto tag = decoder->PopNextTagVal();
+              if (tag.has_value() &&
+                  tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+              {
+                auto dateType = decoder->PeekType();
+                if (dateType.has_value()) {
+                  if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                    auto val = decoder->PopNextFloatVal();
+                    if (val.has_value()) {
+                      m_submittedBeforeTime = Aws::Utils::DateTime(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_submittedBeforeTime = Aws::Utils::DateTime(val.value());
+                    }
+                  }
+                }
+              }
+              m_submittedBeforeTimeHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "SubmittedAfterTime") {
+              auto tag = decoder->PopNextTagVal();
+              if (tag.has_value() &&
+                  tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+              {
+                auto dateType = decoder->PeekType();
+                if (dateType.has_value()) {
+                  if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                    auto val = decoder->PopNextFloatVal();
+                    if (val.has_value()) {
+                      m_submittedAfterTime = Aws::Utils::DateTime(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_submittedAfterTime = Aws::Utils::DateTime(val.value());
+                    }
+                  }
+                }
+              }
+              m_submittedAfterTimeHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
+    }
   }
-  if (jsonValue.ValueExists("JobStatus")) {
-    m_jobStatus = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("JobStatus"));
-    m_jobStatusHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("SubmittedBeforeTime")) {
-    m_submittedBeforeTime = jsonValue.GetDouble("SubmittedBeforeTime");
-    m_submittedBeforeTimeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("SubmittedAfterTime")) {
-    m_submittedAfterTime = jsonValue.GetDouble("SubmittedAfterTime");
-    m_submittedAfterTimeHasBeenSet = true;
-  }
+
   return *this;
 }
 
-JsonValue TextTranslationJobFilter::Jsonize() const {
-  JsonValue payload;
+void TextTranslationJobFilter::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_jobNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_jobStatusHasBeenSet) {
+    mapSize++;
+  }
+  if (m_submittedBeforeTimeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_submittedAfterTimeHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_jobNameHasBeenSet) {
-    payload.WithString("JobName", m_jobName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("JobName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_jobName.c_str()));
   }
 
   if (m_jobStatusHasBeenSet) {
-    payload.WithString("JobStatus", JobStatusMapper::GetNameForJobStatus(m_jobStatus));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("JobStatus"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(JobStatusMapper::GetNameForJobStatus(m_jobStatus).c_str()));
   }
 
   if (m_submittedBeforeTimeHasBeenSet) {
-    payload.WithDouble("SubmittedBeforeTime", m_submittedBeforeTime.SecondsWithMSPrecision());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("SubmittedBeforeTime"));
+    encoder.WriteTag(1);  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+    encoder.WriteUInt(m_submittedBeforeTime.Seconds());
   }
 
   if (m_submittedAfterTimeHasBeenSet) {
-    payload.WithDouble("SubmittedAfterTime", m_submittedAfterTime.SecondsWithMSPrecision());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("SubmittedAfterTime"));
+    encoder.WriteTag(1);  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+    encoder.WriteUInt(m_submittedAfterTime.Seconds());
   }
-
-  return payload;
 }
 
 }  // namespace Model

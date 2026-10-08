@@ -48,6 +48,10 @@ Expression& Expression::operator=(JsonView jsonValue) {
     m_costCategories = jsonValue.GetObject("CostCategories");
     m_costCategoriesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ProductAttributes")) {
+    m_productAttributes = jsonValue.GetObject("ProductAttributes");
+    m_productAttributesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -84,6 +88,10 @@ JsonValue Expression::Jsonize() const {
 
   if (m_costCategoriesHasBeenSet) {
     payload.WithObject("CostCategories", m_costCategories.Jsonize());
+  }
+
+  if (m_productAttributesHasBeenSet) {
+    payload.WithObject("ProductAttributes", m_productAttributes.Jsonize());
   }
 
   return payload;

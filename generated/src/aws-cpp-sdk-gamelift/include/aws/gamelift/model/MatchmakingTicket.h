@@ -242,7 +242,7 @@ class MatchmakingTicket {
   /**
    * <p>Connection information for a new game session. Once a match is made, the
    * FlexMatch engine creates a new game session for it. This information is added to
-   * the matchmaking ticket, which you can be retrieve by calling <a
+   * the matchmaking ticket, which you can retrieve by calling <a
    * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeMatchmaking.html">DescribeMatchmaking</a>
    * .</p>
    */

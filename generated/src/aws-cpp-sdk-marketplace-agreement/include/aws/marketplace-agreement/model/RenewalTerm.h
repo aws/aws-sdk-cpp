@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/marketplace-agreement/AgreementService_EXPORTS.h>
 #include <aws/marketplace-agreement/model/PriceIncrease.h>
 #include <aws/marketplace-agreement/model/RenewalTermConfiguration.h>
@@ -15,10 +16,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace AgreementService {
 namespace Model {
@@ -41,9 +41,9 @@ namespace Model {
 class RenewalTerm {
  public:
   AWS_AGREEMENTSERVICE_API RenewalTerm() = default;
-  AWS_AGREEMENTSERVICE_API RenewalTerm(Aws::Utils::Json::JsonView jsonValue);
-  AWS_AGREEMENTSERVICE_API RenewalTerm& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_AGREEMENTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_AGREEMENTSERVICE_API RenewalTerm(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_AGREEMENTSERVICE_API RenewalTerm& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_AGREEMENTSERVICE_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -130,13 +130,13 @@ class RenewalTerm {
    * agreement reaches this limit, it expires on its end date instead of
    * renewing.</p>
    */
-  inline int GetMaxRenewals() const { return m_maxRenewals; }
+  inline int64_t GetMaxRenewals() const { return m_maxRenewals; }
   inline bool MaxRenewalsHasBeenSet() const { return m_maxRenewalsHasBeenSet; }
-  inline void SetMaxRenewals(int value) {
+  inline void SetMaxRenewals(int64_t value) {
     m_maxRenewalsHasBeenSet = true;
     m_maxRenewals = value;
   }
-  inline RenewalTerm& WithMaxRenewals(int value) {
+  inline RenewalTerm& WithMaxRenewals(int64_t value) {
     SetMaxRenewals(value);
     return *this;
   }
@@ -222,7 +222,7 @@ class RenewalTerm {
 
   Aws::String m_lockoutPeriod;
 
-  int m_maxRenewals{0};
+  int64_t m_maxRenewals{0};
 
   Aws::String m_adjustmentDeadline;
 

@@ -3,31 +3,47 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/translate/model/GetTerminologyRequest.h>
 
 #include <utility>
 
 using namespace Aws::Translate::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String GetTerminologyRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_nameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_terminologyDataFormatHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_nameHasBeenSet) {
-    payload.WithString("Name", m_name);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Name"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_name.c_str()));
   }
 
   if (m_terminologyDataFormatHasBeenSet) {
-    payload.WithString("TerminologyDataFormat", TerminologyDataFormatMapper::GetNameForTerminologyDataFormat(m_terminologyDataFormat));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("TerminologyDataFormat"));
+    encoder.WriteText(
+        Aws::Crt::ByteCursorFromCString(TerminologyDataFormatMapper::GetNameForTerminologyDataFormat(m_terminologyDataFormat).c_str()));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection GetTerminologyRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSShineFrontendService_20170701.GetTerminology"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

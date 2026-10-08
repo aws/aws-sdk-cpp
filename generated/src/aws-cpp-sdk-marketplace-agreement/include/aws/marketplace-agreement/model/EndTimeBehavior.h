@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/marketplace-agreement/AgreementService_EXPORTS.h>
 #include <aws/marketplace-agreement/model/EndTimeBehaviorReasonCode.h>
 #include <aws/marketplace-agreement/model/EndTimeBehaviorType.h>
@@ -13,10 +14,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace AgreementService {
 namespace Model {
@@ -31,9 +31,9 @@ namespace Model {
 class EndTimeBehavior {
  public:
   AWS_AGREEMENTSERVICE_API EndTimeBehavior() = default;
-  AWS_AGREEMENTSERVICE_API EndTimeBehavior(Aws::Utils::Json::JsonView jsonValue);
-  AWS_AGREEMENTSERVICE_API EndTimeBehavior& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_AGREEMENTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_AGREEMENTSERVICE_API EndTimeBehavior(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_AGREEMENTSERVICE_API EndTimeBehavior& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_AGREEMENTSERVICE_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -70,10 +70,10 @@ class EndTimeBehavior {
    * <code>PROPOSER_RENEW_OPTED_OUT</code> – The proposer opted out of renewing the
    * agreement.</p> </li> <li> <p> <code>ACCEPTOR_RENEW_OPTED_OUT</code> – The
    * acceptor opted out of renewing the agreement.</p> </li> <li> <p>
-   * <code>NO_RENEWAL_TERM</code> – The accepted terms of the agreement don't include
-   * a renewal term, which is required for an agreement to renew.</p> </li> <li> <p>
-   * <code>RENEWAL_LIMIT_EXHAUSTED</code> – The agreement reached the maximum number
-   * of renewals allowed by its renewal term.</p> </li> </ul>
+   * <code>NO_RENEWAL_TERM</code> �� The accepted terms of the agreement don't
+   * include a renewal term, which is required for an agreement to renew.</p> </li>
+   * <li> <p> <code>RENEWAL_LIMIT_EXHAUSTED</code> – The agreement reached the
+   * maximum number of renewals allowed by its renewal term.</p> </li> </ul>
    */
   inline EndTimeBehaviorReasonCode GetReasonCode() const { return m_reasonCode; }
   inline bool ReasonCodeHasBeenSet() const { return m_reasonCodeHasBeenSet; }

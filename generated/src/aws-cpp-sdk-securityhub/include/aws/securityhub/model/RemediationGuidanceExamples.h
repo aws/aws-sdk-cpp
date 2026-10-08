@@ -34,7 +34,7 @@ class RemediationGuidanceExamples {
 
   ///@{
   /**
-   * <p>An AWS CLI snippet version of the example.</p>
+   * <p>An CLI snippet version of the example.</p>
    */
   inline const Aws::String& GetAwsCli() const { return m_awsCli; }
   inline bool AwsCliHasBeenSet() const { return m_awsCliHasBeenSet; }

@@ -35,9 +35,9 @@ namespace Model {
  * list does not override a queue's FilterConfiguration setting, if the queue has
  * one. Filter configurations are used to limit placements to a subset of the
  * locations in a queue's destinations. If the override list includes a location
- * that's not on in the <code>FilterConfiguration</code> allowed list, Amazon
- * GameLift Servers won't attempt to place a game session there.</p>
- * <p><h3>See Also:</h3>   <a
+ * that's not in the <code>FilterConfiguration</code> allowed list, Amazon GameLift
+ * Servers won't attempt to place a game session there.</p> <p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PriorityConfigurationOverride">AWS
  * API Reference</a></p>
  */

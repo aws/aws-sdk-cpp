@@ -7,7 +7,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/keyspaces/KeyspacesPaginationBase.h>
 #include <aws/keyspaces/KeyspacesServiceClientModel.h>
 #include <aws/keyspaces/KeyspacesWaiter.h>
@@ -40,12 +40,12 @@ namespace Keyspaces {
  * href="https://docs.aws.amazon.com/general/latest/gr/aws-apis.html">Amazon Web
  * Services APIs</a> in the <i>General Reference</i>.</p>
  */
-class AWS_KEYSPACES_API KeyspacesClient : public Aws::Client::AWSJsonClient,
+class AWS_KEYSPACES_API KeyspacesClient : public Aws::Client::AWSRpcV2CborClient,
                                           public Aws::Client::ClientWithAsyncTemplateMethods<KeyspacesClient>,
                                           public KeyspacesPaginationBase<KeyspacesClient>,
                                           public KeyspacesWaiter<KeyspacesClient> {
  public:
-  typedef Aws::Client::AWSJsonClient BASECLASS;
+  typedef Aws::Client::AWSRpcV2CborClient BASECLASS;
   static const char* GetServiceName();
   static const char* GetAllocationTag();
 

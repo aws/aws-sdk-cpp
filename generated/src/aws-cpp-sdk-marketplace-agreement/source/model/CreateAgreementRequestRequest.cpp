@@ -3,51 +3,81 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/marketplace-agreement/model/CreateAgreementRequestRequest.h>
 
 #include <utility>
 
 using namespace Aws::AgreementService::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String CreateAgreementRequestRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_clientTokenHasBeenSet) {
+    mapSize++;
+  }
+  if (m_intentHasBeenSet) {
+    mapSize++;
+  }
+  if (m_requestedTermsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_sourceAgreementIdentifierHasBeenSet) {
+    mapSize++;
+  }
+  if (m_agreementProposalIdentifierHasBeenSet) {
+    mapSize++;
+  }
+  if (m_taxConfigurationHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_clientTokenHasBeenSet) {
-    payload.WithString("clientToken", m_clientToken);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("clientToken"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_clientToken.c_str()));
   }
 
   if (m_intentHasBeenSet) {
-    payload.WithString("intent", IntentMapper::GetNameForIntent(m_intent));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("intent"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(IntentMapper::GetNameForIntent(m_intent).c_str()));
   }
 
   if (m_requestedTermsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> requestedTermsJsonList(m_requestedTerms.size());
-    for (unsigned requestedTermsIndex = 0; requestedTermsIndex < requestedTermsJsonList.GetLength(); ++requestedTermsIndex) {
-      requestedTermsJsonList[requestedTermsIndex].AsObject(m_requestedTerms[requestedTermsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("requestedTerms"));
+    encoder.WriteArrayStart(m_requestedTerms.size());
+    for (const auto& item_0 : m_requestedTerms) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("requestedTerms", std::move(requestedTermsJsonList));
   }
 
   if (m_sourceAgreementIdentifierHasBeenSet) {
-    payload.WithString("sourceAgreementIdentifier", m_sourceAgreementIdentifier);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("sourceAgreementIdentifier"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_sourceAgreementIdentifier.c_str()));
   }
 
   if (m_agreementProposalIdentifierHasBeenSet) {
-    payload.WithString("agreementProposalIdentifier", m_agreementProposalIdentifier);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("agreementProposalIdentifier"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_agreementProposalIdentifier.c_str()));
   }
 
   if (m_taxConfigurationHasBeenSet) {
-    payload.WithObject("taxConfiguration", m_taxConfiguration.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("taxConfiguration"));
+    m_taxConfiguration.CborEncode(encoder);
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection CreateAgreementRequestRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSMPCommerceService_v20200301.CreateAgreementRequest"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

@@ -84,7 +84,10 @@ class GetDimensionValuesRequest : public CostExplorerRequest {
    * <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in
    * <a
    * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/AAPI_CostCategoryRule.html">CostCategoryRule</a>.
-   * </p>
+   * </p> <p> <code>PRODUCT_ATTRIBUTE</code> returns the product attribute keys that
+   * are available for your costs of supported services, or the values of the key
+   * that you specify in <code>DimensionKey</code>. <code>PRODUCT_ATTRIBUTE</code> is
+   * supported only in the <code>COST_AND_USAGE</code> context.</p>
    */
   inline Dimension GetDimension() const { return m_dimension; }
   inline bool DimensionHasBeenSet() const { return m_dimensionHasBeenSet; }
@@ -94,6 +97,35 @@ class GetDimensionValuesRequest : public CostExplorerRequest {
   }
   inline GetDimensionValuesRequest& WithDimension(Dimension value) {
     SetDimension(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The product attribute key to return values for, such as <code>model</code>.
+   * If you omit <code>DimensionKey</code> or set it to an empty string, the response
+   * lists the product attribute keys that are available for your costs of supported
+   * services instead. For the supported services, see <a
+   * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ProductAttributeValues.html">ProductAttributeValues</a>.</p>
+   * <p>If you specify a key, the response lists the values of that key. If some of
+   * your costs have no value for the key, the response includes an empty-string
+   * value. Keys are case-sensitive, and a key that doesn't exist returns no values
+   * other than an empty string.</p> <p>You can specify <code>DimensionKey</code>
+   * only when <code>Dimension</code> is <code>PRODUCT_ATTRIBUTE</code>. If you also
+   * specify <code>SortBy</code>, <code>DimensionKey</code> is required. As a result,
+   * you can't list product attribute keys when you use <code>SortBy</code>.</p>
+   */
+  inline const Aws::String& GetDimensionKey() const { return m_dimensionKey; }
+  inline bool DimensionKeyHasBeenSet() const { return m_dimensionKeyHasBeenSet; }
+  template <typename DimensionKeyT = Aws::String>
+  void SetDimensionKey(DimensionKeyT&& value) {
+    m_dimensionKeyHasBeenSet = true;
+    m_dimensionKey = std::forward<DimensionKeyT>(value);
+  }
+  template <typename DimensionKeyT = Aws::String>
+  GetDimensionValuesRequest& WithDimensionKey(DimensionKeyT&& value) {
+    SetDimensionKey(std::forward<DimensionKeyT>(value));
     return *this;
   }
   ///@}
@@ -138,11 +170,13 @@ class GetDimensionValuesRequest : public CostExplorerRequest {
    * </li> <li> <p>OPERATION - The action performed. Examples include
    * <code>RunInstance</code> and <code>CreateBucket</code>.</p> </li> <li>
    * <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or
-   * Linux.</p> </li> <li> <p>PURCHASE_TYPE - The reservation type of the purchase
-   * that this usage is related to. Examples include On-Demand Instances and Standard
-   * Reserved Instances.</p> </li> <li> <p>RESERVATION_ID - The unique identifier for
-   * an Amazon Web Services Reservation Instance.</p> </li> <li> <p>SAVINGS_PLAN_ARN
-   * - The unique identifier for your Savings Plans.</p> </li> <li>
+   * Linux.</p> </li> <li> <p>PRODUCT_ATTRIBUTE - The product attributes of supported
+   * services, such as the model provider or the model for Amazon Bedrock.</p> </li>
+   * <li> <p>PURCHASE_TYPE - The reservation type of the purchase that this usage is
+   * related to. Examples include On-Demand Instances and Standard Reserved
+   * Instances.</p> </li> <li> <p>RESERVATION_ID - The unique identifier for an
+   * Amazon Web Services Reservation Instance.</p> </li> <li> <p>SAVINGS_PLAN_ARN -
+   * The unique identifier for your Savings Plans.</p> </li> <li>
    * <p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute).</p>
    * </li> <li> <p>SERVICE - The Amazon Web Services service such as Amazon
    * DynamoDB.</p> </li> <li> <p>TENANCY - The tenancy of a resource. Examples are
@@ -315,6 +349,8 @@ class GetDimensionValuesRequest : public CostExplorerRequest {
 
   Dimension m_dimension{Dimension::NOT_SET};
 
+  Aws::String m_dimensionKey;
+
   Context m_context{Context::NOT_SET};
 
   Expression m_filter;
@@ -329,6 +365,7 @@ class GetDimensionValuesRequest : public CostExplorerRequest {
   bool m_searchStringHasBeenSet = false;
   bool m_timePeriodHasBeenSet = false;
   bool m_dimensionHasBeenSet = false;
+  bool m_dimensionKeyHasBeenSet = false;
   bool m_contextHasBeenSet = false;
   bool m_filterHasBeenSet = false;
   bool m_sortByHasBeenSet = false;

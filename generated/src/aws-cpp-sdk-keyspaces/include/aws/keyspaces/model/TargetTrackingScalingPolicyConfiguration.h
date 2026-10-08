@@ -4,14 +4,14 @@
  */
 
 #pragma once
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/keyspaces/Keyspaces_EXPORTS.h>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace Keyspaces {
 namespace Model {
@@ -25,9 +25,9 @@ namespace Model {
 class TargetTrackingScalingPolicyConfiguration {
  public:
   AWS_KEYSPACES_API TargetTrackingScalingPolicyConfiguration() = default;
-  AWS_KEYSPACES_API TargetTrackingScalingPolicyConfiguration(Aws::Utils::Json::JsonView jsonValue);
-  AWS_KEYSPACES_API TargetTrackingScalingPolicyConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_KEYSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_KEYSPACES_API TargetTrackingScalingPolicyConfiguration(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_KEYSPACES_API TargetTrackingScalingPolicyConfiguration& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_KEYSPACES_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -54,13 +54,13 @@ class TargetTrackingScalingPolicyConfiguration {
    * in seconds between scaling activities that lets the table stabilize before
    * another scaling activity starts. </p>
    */
-  inline int GetScaleInCooldown() const { return m_scaleInCooldown; }
+  inline int64_t GetScaleInCooldown() const { return m_scaleInCooldown; }
   inline bool ScaleInCooldownHasBeenSet() const { return m_scaleInCooldownHasBeenSet; }
-  inline void SetScaleInCooldown(int value) {
+  inline void SetScaleInCooldown(int64_t value) {
     m_scaleInCooldownHasBeenSet = true;
     m_scaleInCooldown = value;
   }
-  inline TargetTrackingScalingPolicyConfiguration& WithScaleInCooldown(int value) {
+  inline TargetTrackingScalingPolicyConfiguration& WithScaleInCooldown(int64_t value) {
     SetScaleInCooldown(value);
     return *this;
   }
@@ -72,13 +72,13 @@ class TargetTrackingScalingPolicyConfiguration {
    * between scaling activities that lets the table stabilize before another scaling
    * activity starts. </p>
    */
-  inline int GetScaleOutCooldown() const { return m_scaleOutCooldown; }
+  inline int64_t GetScaleOutCooldown() const { return m_scaleOutCooldown; }
   inline bool ScaleOutCooldownHasBeenSet() const { return m_scaleOutCooldownHasBeenSet; }
-  inline void SetScaleOutCooldown(int value) {
+  inline void SetScaleOutCooldown(int64_t value) {
     m_scaleOutCooldownHasBeenSet = true;
     m_scaleOutCooldown = value;
   }
-  inline TargetTrackingScalingPolicyConfiguration& WithScaleOutCooldown(int value) {
+  inline TargetTrackingScalingPolicyConfiguration& WithScaleOutCooldown(int64_t value) {
     SetScaleOutCooldown(value);
     return *this;
   }
@@ -107,9 +107,9 @@ class TargetTrackingScalingPolicyConfiguration {
  private:
   bool m_disableScaleIn{false};
 
-  int m_scaleInCooldown{0};
+  int64_t m_scaleInCooldown{0};
 
-  int m_scaleOutCooldown{0};
+  int64_t m_scaleOutCooldown{0};
 
   double m_targetValue{0.0};
   bool m_disableScaleInHasBeenSet = false;

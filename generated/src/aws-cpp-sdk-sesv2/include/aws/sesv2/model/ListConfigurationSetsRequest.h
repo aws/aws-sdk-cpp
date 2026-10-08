@@ -37,7 +37,7 @@ class ListConfigurationSetsRequest : public SESV2Request {
   ///@{
   /**
    * <p>An object that contains filters to apply when listing configuration sets. You
-   * can filter by configuration set name.</p>
+   * can filter by a substring of the configuration set name.</p>
    */
   inline const Aws::Map<ConfigurationSetFilterKey, Aws::String>& GetFilter() const { return m_filter; }
   inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }

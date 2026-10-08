@@ -49,6 +49,7 @@
 #include <aws/gamelift/model/ContainerFleetRemoveAttribute.h>
 #include <aws/gamelift/model/ContainerFleetStatus.h>
 #include <aws/gamelift/model/ContainerGroupDefinition.h>
+#include <aws/gamelift/model/ContainerGroupDefinitionRemoveAttribute.h>
 #include <aws/gamelift/model/ContainerGroupDefinitionStatus.h>
 #include <aws/gamelift/model/ContainerGroupPortMapping.h>
 #include <aws/gamelift/model/ContainerGroupType.h>

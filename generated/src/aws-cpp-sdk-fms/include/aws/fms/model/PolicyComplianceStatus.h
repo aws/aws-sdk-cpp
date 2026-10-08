@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/fms/FMS_EXPORTS.h>
 #include <aws/fms/model/DependentServiceName.h>
 #include <aws/fms/model/EvaluationResult.h>
@@ -16,10 +17,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace FMS {
 namespace Model {
@@ -36,9 +36,9 @@ namespace Model {
 class PolicyComplianceStatus {
  public:
   AWS_FMS_API PolicyComplianceStatus() = default;
-  AWS_FMS_API PolicyComplianceStatus(Aws::Utils::Json::JsonView jsonValue);
-  AWS_FMS_API PolicyComplianceStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_FMS_API PolicyComplianceStatus(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_FMS_API PolicyComplianceStatus& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_FMS_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

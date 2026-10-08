@@ -31,6 +31,10 @@ Aws::String StartNotebookImportRequest::SerializePayload() const {
     payload.WithString("description", m_description);
   }
 
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", NotebookTypeMapper::GetNameForNotebookType(m_type));
+  }
+
   if (m_clientTokenHasBeenSet) {
     payload.WithString("clientToken", m_clientToken);
   }

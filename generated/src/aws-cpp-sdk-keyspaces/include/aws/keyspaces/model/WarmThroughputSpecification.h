@@ -4,14 +4,14 @@
  */
 
 #pragma once
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/keyspaces/Keyspaces_EXPORTS.h>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace Keyspaces {
 namespace Model {
@@ -31,9 +31,9 @@ namespace Model {
 class WarmThroughputSpecification {
  public:
   AWS_KEYSPACES_API WarmThroughputSpecification() = default;
-  AWS_KEYSPACES_API WarmThroughputSpecification(Aws::Utils::Json::JsonView jsonValue);
-  AWS_KEYSPACES_API WarmThroughputSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_KEYSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_KEYSPACES_API WarmThroughputSpecification(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_KEYSPACES_API WarmThroughputSpecification& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_KEYSPACES_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

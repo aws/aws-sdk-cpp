@@ -3,35 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/pi/model/DeletePerformanceAnalysisReportRequest.h>
 
 #include <utility>
 
 using namespace Aws::PI::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String DeletePerformanceAnalysisReportRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_serviceTypeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_identifierHasBeenSet) {
+    mapSize++;
+  }
+  if (m_analysisReportIdHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_serviceTypeHasBeenSet) {
-    payload.WithString("ServiceType", ServiceTypeMapper::GetNameForServiceType(m_serviceType));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ServiceType"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(ServiceTypeMapper::GetNameForServiceType(m_serviceType).c_str()));
   }
 
   if (m_identifierHasBeenSet) {
-    payload.WithString("Identifier", m_identifier);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Identifier"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_identifier.c_str()));
   }
 
   if (m_analysisReportIdHasBeenSet) {
-    payload.WithString("AnalysisReportId", m_analysisReportId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AnalysisReportId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_analysisReportId.c_str()));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection DeletePerformanceAnalysisReportRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "PerformanceInsightsv20180227.DeletePerformanceAnalysisReport"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

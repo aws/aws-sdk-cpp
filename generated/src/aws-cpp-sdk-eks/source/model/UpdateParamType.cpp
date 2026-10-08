@@ -60,6 +60,8 @@ static const int NetworkAccess_HASH = HashingUtils::HashString("NetworkAccess");
 static const int VendedLogs_HASH = HashingUtils::HashString("VendedLogs");
 static const int UpdatedTier_HASH = HashingUtils::HashString("UpdatedTier");
 static const int PreviousTier_HASH = HashingUtils::HashString("PreviousTier");
+static const int EnableCrossNamespace_HASH = HashingUtils::HashString("EnableCrossNamespace");
+static const int DisabledServices_HASH = HashingUtils::HashString("DisabledServices");
 static const int WarmPoolEnabled_HASH = HashingUtils::HashString("WarmPoolEnabled");
 static const int WarmPoolMaxGroupPreparedCapacity_HASH = HashingUtils::HashString("WarmPoolMaxGroupPreparedCapacity");
 static const int WarmPoolMinSize_HASH = HashingUtils::HashString("WarmPoolMinSize");
@@ -166,6 +168,10 @@ UpdateParamType GetUpdateParamTypeForName(const Aws::String& name) {
     return UpdateParamType::UpdatedTier;
   } else if (hashCode == PreviousTier_HASH) {
     return UpdateParamType::PreviousTier;
+  } else if (hashCode == EnableCrossNamespace_HASH) {
+    return UpdateParamType::EnableCrossNamespace;
+  } else if (hashCode == DisabledServices_HASH) {
+    return UpdateParamType::DisabledServices;
   } else if (hashCode == WarmPoolEnabled_HASH) {
     return UpdateParamType::WarmPoolEnabled;
   } else if (hashCode == WarmPoolMaxGroupPreparedCapacity_HASH) {
@@ -296,6 +302,10 @@ Aws::String GetNameForUpdateParamType(UpdateParamType enumValue) {
       return "UpdatedTier";
     case UpdateParamType::PreviousTier:
       return "PreviousTier";
+    case UpdateParamType::EnableCrossNamespace:
+      return "EnableCrossNamespace";
+    case UpdateParamType::DisabledServices:
+      return "DisabledServices";
     case UpdateParamType::WarmPoolEnabled:
       return "WarmPoolEnabled";
     case UpdateParamType::WarmPoolMaxGroupPreparedCapacity:

@@ -3,27 +3,39 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/fms/model/DisassociateThirdPartyFirewallRequest.h>
 
 #include <utility>
 
 using namespace Aws::FMS::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String DisassociateThirdPartyFirewallRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
 
+  // Calculate map size
+  size_t mapSize = 0;
   if (m_thirdPartyFirewallHasBeenSet) {
-    payload.WithString("ThirdPartyFirewall", ThirdPartyFirewallMapper::GetNameForThirdPartyFirewall(m_thirdPartyFirewall));
+    mapSize++;
   }
 
-  return payload.View().WriteReadable();
+  encoder.WriteMapStart(mapSize);
+
+  if (m_thirdPartyFirewallHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ThirdPartyFirewall"));
+    encoder.WriteText(
+        Aws::Crt::ByteCursorFromCString(ThirdPartyFirewallMapper::GetNameForThirdPartyFirewall(m_thirdPartyFirewall).c_str()));
+  }
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection DisassociateThirdPartyFirewallRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSFMS_20180101.DisassociateThirdPartyFirewall"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

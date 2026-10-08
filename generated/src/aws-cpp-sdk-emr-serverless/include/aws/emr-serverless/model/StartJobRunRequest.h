@@ -172,8 +172,11 @@ class StartJobRunRequest : public EMRServerlessRequest {
 
   ///@{
   /**
-   * <p>The maximum duration for the job run to run. If the job run runs beyond this
-   * duration, it will be automatically cancelled.</p>
+   * <p>The maximum duration, in minutes, for the job run. If the job run exceeds
+   * this duration, Amazon EMR Serverless cancels it automatically.</p> <p>For BATCH
+   * mode job runs, the maximum value is 10080 minutes (7 days) starting with Amazon
+   * EMR release 7.11. Setting a value of 0 to disable the timeout is no longer
+   * supported for BATCH mode job runs.</p>
    */
   inline long long GetExecutionTimeoutMinutes() const { return m_executionTimeoutMinutes; }
   inline bool ExecutionTimeoutMinutesHasBeenSet() const { return m_executionTimeoutMinutesHasBeenSet; }

@@ -3,44 +3,162 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/fms/model/NetworkAclIcmpTypeCode.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace FMS {
 namespace Model {
 
-NetworkAclIcmpTypeCode::NetworkAclIcmpTypeCode(JsonView jsonValue) { *this = jsonValue; }
+NetworkAclIcmpTypeCode::NetworkAclIcmpTypeCode(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-NetworkAclIcmpTypeCode& NetworkAclIcmpTypeCode::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("Code")) {
-    m_code = jsonValue.GetInteger("Code");
-    m_codeHasBeenSet = true;
+NetworkAclIcmpTypeCode& NetworkAclIcmpTypeCode::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "Code") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_code = static_cast<int64_t>(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextNegativeIntVal();
+                    if (val.has_value()) {
+                      m_code = static_cast<int64_t>(1 - val.value());
+                    }
+                  }
+                }
+                m_codeHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "Type") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_type = static_cast<int64_t>(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextNegativeIntVal();
+                    if (val.has_value()) {
+                      m_type = static_cast<int64_t>(1 - val.value());
+                    }
+                  }
+                }
+                m_typeHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("NetworkAclIcmpTypeCode", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "Code") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
+                  auto val = decoder->PopNextUnsignedIntVal();
+                  if (val.has_value()) {
+                    m_code = static_cast<int64_t>(val.value());
+                  }
+                } else {
+                  auto val = decoder->PopNextNegativeIntVal();
+                  if (val.has_value()) {
+                    m_code = static_cast<int64_t>(1 - val.value());
+                  }
+                }
+              }
+              m_codeHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "Type") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
+                  auto val = decoder->PopNextUnsignedIntVal();
+                  if (val.has_value()) {
+                    m_type = static_cast<int64_t>(val.value());
+                  }
+                } else {
+                  auto val = decoder->PopNextNegativeIntVal();
+                  if (val.has_value()) {
+                    m_type = static_cast<int64_t>(1 - val.value());
+                  }
+                }
+              }
+              m_typeHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
+    }
   }
-  if (jsonValue.ValueExists("Type")) {
-    m_type = jsonValue.GetInteger("Type");
-    m_typeHasBeenSet = true;
-  }
+
   return *this;
 }
 
-JsonValue NetworkAclIcmpTypeCode::Jsonize() const {
-  JsonValue payload;
+void NetworkAclIcmpTypeCode::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_codeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_typeHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_codeHasBeenSet) {
-    payload.WithInteger("Code", m_code);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Code"));
+    (m_code >= 0) ? encoder.WriteUInt(m_code) : encoder.WriteNegInt(m_code);
   }
 
   if (m_typeHasBeenSet) {
-    payload.WithInteger("Type", m_type);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Type"));
+    (m_type >= 0) ? encoder.WriteUInt(m_type) : encoder.WriteNegInt(m_type);
   }
-
-  return payload;
 }
 
 }  // namespace Model

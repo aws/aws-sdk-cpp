@@ -46,6 +46,10 @@ StartNotebookImportResult& StartNotebookImportResult::operator=(const Aws::Amazo
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("type")) {
+    m_type = NotebookTypeMapper::GetNotebookTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("sourceLocation")) {
     m_sourceLocation = jsonValue.GetObject("sourceLocation");
     m_sourceLocationHasBeenSet = true;

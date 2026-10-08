@@ -24,6 +24,7 @@ static const int MEDIAPACKAGE_ORIGIN_ENDPOINT_HASH = HashingUtils::HashString("M
 static const int MEDIACONNECT_FLOW_HASH = HashingUtils::HashString("MEDIACONNECT_FLOW");
 static const int S3_BUCKET_HASH = HashingUtils::HashString("S3_BUCKET");
 static const int MEDIATAILOR_PLAYBACK_CONFIGURATION_HASH = HashingUtils::HashString("MEDIATAILOR_PLAYBACK_CONFIGURATION");
+static const int ELEMENTAL_INFERENCE_FEED_HASH = HashingUtils::HashString("ELEMENTAL_INFERENCE_FEED");
 
 CloudWatchAlarmTemplateTargetResourceType GetCloudWatchAlarmTemplateTargetResourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -45,6 +46,8 @@ CloudWatchAlarmTemplateTargetResourceType GetCloudWatchAlarmTemplateTargetResour
     return CloudWatchAlarmTemplateTargetResourceType::S3_BUCKET;
   } else if (hashCode == MEDIATAILOR_PLAYBACK_CONFIGURATION_HASH) {
     return CloudWatchAlarmTemplateTargetResourceType::MEDIATAILOR_PLAYBACK_CONFIGURATION;
+  } else if (hashCode == ELEMENTAL_INFERENCE_FEED_HASH) {
+    return CloudWatchAlarmTemplateTargetResourceType::ELEMENTAL_INFERENCE_FEED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -77,6 +80,8 @@ Aws::String GetNameForCloudWatchAlarmTemplateTargetResourceType(CloudWatchAlarmT
       return "S3_BUCKET";
     case CloudWatchAlarmTemplateTargetResourceType::MEDIATAILOR_PLAYBACK_CONFIGURATION:
       return "MEDIATAILOR_PLAYBACK_CONFIGURATION";
+    case CloudWatchAlarmTemplateTargetResourceType::ELEMENTAL_INFERENCE_FEED:
+      return "ELEMENTAL_INFERENCE_FEED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -28,8 +28,8 @@ namespace Model {
 
 /**
  * <p>The properties that describe a container group resource. You can update all
- * properties of a container group definition properties. Updates to a container
- * group definition are saved as new versions. </p> <p> <b>Used with:</b> <a
+ * properties of a container group definition. Updates to a container group
+ * definition are saved as new versions. </p> <p> <b>Used with:</b> <a
  * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerGroupDefinition.html">CreateContainerGroupDefinition</a>
  * </p> <p> <b>Returned by:</b> <a
  * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeContainerGroupDefinition.html">DescribeContainerGroupDefinition</a>,
@@ -176,9 +176,15 @@ class ContainerGroupDefinition {
   /**
    * <p>The amount of vCPU units on a fleet instance to allocate for the container
    * group (1 vCPU is equal to 1024 CPU units). All containers in the group share
-   * these resources. You can set a limit for each container definition in the group.
-   * If individual containers have limits, this total value must be equal to or
-   * greater than the sum of the limits for each container in the group.</p>
+   * these resources. You can set a vCPU reservation for each container definition in
+   * the group. If individual containers have reservations, this total value must be
+   * equal to or greater than the sum of the reservations for each container in the
+   * group.</p> <p>For a game server container group, if this property is set, Amazon
+   * GameLift Servers uses this value to calculate how many game server container
+   * groups fit on an instance. If this property isn't set, the group's containers
+   * can use up to the instance's available vCPU, and Amazon GameLift Servers uses
+   * the sum of the containers' <code>Vcpu</code> values to calculate how many game
+   * server container groups fit on an instance.</p>
    */
   inline double GetTotalVcpuLimit() const { return m_totalVcpuLimit; }
   inline bool TotalVcpuLimitHasBeenSet() const { return m_totalVcpuLimitHasBeenSet; }
@@ -217,7 +223,7 @@ class ContainerGroupDefinition {
   /**
    * <p>The set of definitions for support containers in this group. A container
    * group definition might have zero support container definitions. Support
-   * container can be used in any type of container group.</p>
+   * containers can be used in any type of container group.</p>
    */
   inline const Aws::Vector<SupportContainerDefinition>& GetSupportContainerDefinitions() const { return m_supportContainerDefinitions; }
   inline bool SupportContainerDefinitionsHasBeenSet() const { return m_supportContainerDefinitionsHasBeenSet; }
@@ -310,10 +316,10 @@ class ContainerGroupDefinition {
    * <code>FAILED</code> status. Possible reasons include:</p> <ul> <li> <p>An
    * internal issue prevented Amazon GameLift Servers from creating the container
    * group definition resource. Delete the failed resource and call <a
-   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerGroupDefinition.html">CreateContainerGroupDefinition</a>again.
-   * </p> </li> <li> <p>An access-denied message means that you don't have
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerGroupDefinition.html">CreateContainerGroupDefinition</a>
+   * again. </p> </li> <li> <p>An access-denied message means that you don't have
    * permissions to access the container image on ECR. See <a
-   * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-iam-policy-examples.html.html">
+   * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-iam-policy-examples.html">
    * IAM permission examples</a> for help setting up required IAM permissions for
    * Amazon GameLift Servers.</p> </li> <li> <p>The <code>ImageUri</code> value for
    * at least one of the containers in the container group definition was invalid or

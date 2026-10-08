@@ -10,7 +10,13 @@
 namespace Aws {
 namespace GuardDuty {
 namespace Model {
-enum class OrgFeatureAdditionalConfiguration { NOT_SET, EKS_ADDON_MANAGEMENT, ECS_FARGATE_AGENT_MANAGEMENT, EC2_AGENT_MANAGEMENT };
+enum class OrgFeatureAdditionalConfiguration {
+  NOT_SET,
+  EKS_ADDON_MANAGEMENT,
+  ECS_FARGATE_AGENT_MANAGEMENT,
+  EC2_AGENT_MANAGEMENT,
+  RDS_DATA_RISK
+};
 
 namespace OrgFeatureAdditionalConfigurationMapper {
 AWS_GUARDDUTY_API OrgFeatureAdditionalConfiguration GetOrgFeatureAdditionalConfigurationForName(const Aws::String& name);

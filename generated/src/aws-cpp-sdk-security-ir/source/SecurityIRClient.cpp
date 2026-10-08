@@ -29,6 +29,7 @@
 #include <aws/security-ir/model/GetCaseAttachmentDownloadUrlRequest.h>
 #include <aws/security-ir/model/GetCaseAttachmentUploadUrlRequest.h>
 #include <aws/security-ir/model/GetCaseRequest.h>
+#include <aws/security-ir/model/GetFindingMetricsRequest.h>
 #include <aws/security-ir/model/GetMembershipRequest.h>
 #include <aws/security-ir/model/ListCaseEditsRequest.h>
 #include <aws/security-ir/model/ListCasesRequest.h>
@@ -355,6 +356,35 @@ GetCaseAttachmentUploadUrlOutcome SecurityIRClient::GetCaseAttachmentUploadUrl(c
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetCaseAttachmentUploadUrlOutcome(result.GetResultWithOwnership())
                             : GetCaseAttachmentUploadUrlOutcome(std::move(result.GetError()));
+}
+
+GetFindingMetricsOutcome SecurityIRClient::GetFindingMetrics(const GetFindingMetricsRequest& request) const {
+  if (!request.MembershipIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetFindingMetrics", "Required field: MembershipId, is not set");
+    return GetFindingMetricsOutcome(Aws::Client::AWSError<SecurityIRErrors>(SecurityIRErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                            "Missing required field [MembershipId]", false));
+  }
+  if (!request.StartDateHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetFindingMetrics", "Required field: StartDate, is not set");
+    return GetFindingMetricsOutcome(Aws::Client::AWSError<SecurityIRErrors>(SecurityIRErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                            "Missing required field [StartDate]", false));
+  }
+  if (!request.EndDateHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetFindingMetrics", "Required field: EndDate, is not set");
+    return GetFindingMetricsOutcome(Aws::Client::AWSError<SecurityIRErrors>(SecurityIRErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                            "Missing required field [EndDate]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/membership/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMembershipId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/finding-metrics");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetFindingMetricsOutcome(result.GetResultWithOwnership())
+                            : GetFindingMetricsOutcome(std::move(result.GetError()));
 }
 
 GetMembershipOutcome SecurityIRClient::GetMembership(const GetMembershipRequest& request) const {

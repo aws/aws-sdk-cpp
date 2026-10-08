@@ -174,7 +174,7 @@ class PutScalingPolicyRequest : public GameLiftRequest {
    * created.</p> </li> <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are
    * currently running.</p> </li> <li> <p> <b>ActiveInstances</b> -- Fleet instances
    * that are currently running at least one game session.</p> </li> <li> <p>
-   * <b>AvailableGameSessions</b> -- Additional game sessions that fleet could host
+   * <b>AvailableGameSessions</b> -- Additional game sessions that a fleet could host
    * simultaneously, given current capacity.</p> </li> <li> <p>
    * <b>AvailablePlayerSessions</b> -- Empty player slots in currently active game
    * sessions. This includes game sessions that are not currently accepting players.

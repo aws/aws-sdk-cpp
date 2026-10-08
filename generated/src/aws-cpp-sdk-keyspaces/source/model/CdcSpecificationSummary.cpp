@@ -3,44 +3,126 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/keyspaces/model/CdcSpecificationSummary.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace Keyspaces {
 namespace Model {
 
-CdcSpecificationSummary::CdcSpecificationSummary(JsonView jsonValue) { *this = jsonValue; }
+CdcSpecificationSummary::CdcSpecificationSummary(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-CdcSpecificationSummary& CdcSpecificationSummary::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("status")) {
-    m_status = CdcStatusMapper::GetCdcStatusForName(jsonValue.GetString("status"));
-    m_statusHasBeenSet = true;
+CdcSpecificationSummary& CdcSpecificationSummary::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "status") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_status =
+                      CdcStatusMapper::GetCdcStatusForName(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_statusHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "viewType") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_viewType =
+                      ViewTypeMapper::GetViewTypeForName(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_viewTypeHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("CdcSpecificationSummary", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "status") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_status =
+                    CdcStatusMapper::GetCdcStatusForName(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_statusHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "viewType") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_viewType =
+                    ViewTypeMapper::GetViewTypeForName(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_viewTypeHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
+    }
   }
-  if (jsonValue.ValueExists("viewType")) {
-    m_viewType = ViewTypeMapper::GetViewTypeForName(jsonValue.GetString("viewType"));
-    m_viewTypeHasBeenSet = true;
-  }
+
   return *this;
 }
 
-JsonValue CdcSpecificationSummary::Jsonize() const {
-  JsonValue payload;
+void CdcSpecificationSummary::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_statusHasBeenSet) {
+    mapSize++;
+  }
+  if (m_viewTypeHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_statusHasBeenSet) {
-    payload.WithString("status", CdcStatusMapper::GetNameForCdcStatus(m_status));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("status"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(CdcStatusMapper::GetNameForCdcStatus(m_status).c_str()));
   }
 
   if (m_viewTypeHasBeenSet) {
-    payload.WithString("viewType", ViewTypeMapper::GetNameForViewType(m_viewType));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("viewType"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(ViewTypeMapper::GetNameForViewType(m_viewType).c_str()));
   }
-
-  return payload;
 }
 
 }  // namespace Model

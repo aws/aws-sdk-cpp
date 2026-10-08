@@ -36,7 +36,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   if (hashCode == CONFLICT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeConnectionsErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INTERNAL_SERVER_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeConnectionsErrors::INTERNAL_SERVER), RetryableType::NOT_RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeConnectionsErrors::INTERNAL_SERVER), RetryableType::RETRYABLE);
   } else if (hashCode == RESOURCE_ALREADY_EXISTS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeConnectionsErrors::RESOURCE_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == SYNC_CONFIGURATION_STILL_EXISTS_HASH) {
@@ -61,7 +61,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == RESOURCE_UNAVAILABLE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeConnectionsErrors::RESOURCE_UNAVAILABLE), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == RETRY_LATEST_COMMIT_FAILED_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeConnectionsErrors::RETRY_LATEST_COMMIT_FAILED), RetryableType::NOT_RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeConnectionsErrors::RETRY_LATEST_COMMIT_FAILED), RetryableType::RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

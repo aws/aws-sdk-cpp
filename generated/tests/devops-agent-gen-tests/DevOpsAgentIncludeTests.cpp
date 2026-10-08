@@ -60,8 +60,11 @@
 #include <aws/devops-agent/model/CreatePrivateConnectionResult.h>
 #include <aws/devops-agent/model/CreateTriggerRequest.h>
 #include <aws/devops-agent/model/CreateTriggerResult.h>
+#include <aws/devops-agent/model/CronSchedule.h>
+#include <aws/devops-agent/model/DailyRecurrence.h>
 #include <aws/devops-agent/model/DatadogAuthorizationConfig.h>
 #include <aws/devops-agent/model/DatadogServiceDetails.h>
+#include <aws/devops-agent/model/DayOfWeek.h>
 #include <aws/devops-agent/model/DeleteAgentSpaceRequest.h>
 #include <aws/devops-agent/model/DeleteAgentSpaceResult.h>
 #include <aws/devops-agent/model/DeleteAssetFileRequest.h>
@@ -198,6 +201,8 @@
 #include <aws/devops-agent/model/MCPToolDetail.h>
 #include <aws/devops-agent/model/Message.h>
 #include <aws/devops-agent/model/MonitorAccountType.h>
+#include <aws/devops-agent/model/MonthlyRecurrence.h>
+#include <aws/devops-agent/model/NetworkAccessConfiguration.h>
 #include <aws/devops-agent/model/NewRelicApiKeyConfig.h>
 #include <aws/devops-agent/model/NewRelicRegion.h>
 #include <aws/devops-agent/model/NewRelicServiceAuthorizationConfig.h>
@@ -216,10 +221,12 @@
 #include <aws/devops-agent/model/PrivateConnectionStatus.h>
 #include <aws/devops-agent/model/PrivateConnectionSummary.h>
 #include <aws/devops-agent/model/PrivateConnectionType.h>
+#include <aws/devops-agent/model/PrivateNetworkAccess.h>
 #include <aws/devops-agent/model/Recommendation.h>
 #include <aws/devops-agent/model/RecommendationContent.h>
 #include <aws/devops-agent/model/RecommendationPriority.h>
 #include <aws/devops-agent/model/RecommendationStatus.h>
+#include <aws/devops-agent/model/Recurrence.h>
 #include <aws/devops-agent/model/ReferenceInput.h>
 #include <aws/devops-agent/model/ReferenceOutput.h>
 #include <aws/devops-agent/model/RegisterServiceRequest.h>
@@ -238,6 +245,7 @@
 #include <aws/devops-agent/model/RegisteredService.h>
 #include <aws/devops-agent/model/RegisteredServiceNowDetails.h>
 #include <aws/devops-agent/model/RegisteredSlackServiceDetails.h>
+#include <aws/devops-agent/model/ReleaseManagementConfiguration.h>
 #include <aws/devops-agent/model/RemoteAgentAPIKeyConfig.h>
 #include <aws/devops-agent/model/RemoteAgentAuthorizationConfig.h>
 #include <aws/devops-agent/model/RemoteAgentAuthorizationMethod.h>
@@ -250,6 +258,7 @@
 #include <aws/devops-agent/model/RemoteAgentSigV4ServiceDetails.h>
 #include <aws/devops-agent/model/ResourceConfigDnsResolution.h>
 #include <aws/devops-agent/model/ScheduleCondition.h>
+#include <aws/devops-agent/model/ScheduleSpec.h>
 #include <aws/devops-agent/model/SchedulerState.h>
 #include <aws/devops-agent/model/SelfManagedInput.h>
 #include <aws/devops-agent/model/SendMessageContentBlockDelta.h>
@@ -292,6 +301,7 @@
 #include <aws/devops-agent/model/TaskSortOrder.h>
 #include <aws/devops-agent/model/TaskStatus.h>
 #include <aws/devops-agent/model/TaskType.h>
+#include <aws/devops-agent/model/TimeRangeSchedule.h>
 #include <aws/devops-agent/model/ToolClassification.h>
 #include <aws/devops-agent/model/Trigger.h>
 #include <aws/devops-agent/model/TriggerCondition.h>
@@ -332,6 +342,7 @@
 #include <aws/devops-agent/model/ValidationStatus.h>
 #include <aws/devops-agent/model/Webhook.h>
 #include <aws/devops-agent/model/WebhookType.h>
+#include <aws/devops-agent/model/WeeklyRecurrence.h>
 
 using DevOpsAgentIncludeTest = ::testing::Test;
 

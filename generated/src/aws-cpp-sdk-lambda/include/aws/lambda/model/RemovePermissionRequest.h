@@ -36,7 +36,7 @@ class RemovePermissionRequest : public LambdaRequest {
   ///@{
   /**
    * <p>The name or ARN of the Lambda function, version, or alias.</p> <p
-   * class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> –
+   * class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> ��
    * <code>my-function</code> (name-only), <code>my-function:v1</code> (with
    * alias).</p> </li> <li> <p> <b>Function ARN</b> –
    * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>

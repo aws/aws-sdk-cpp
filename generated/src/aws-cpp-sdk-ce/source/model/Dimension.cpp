@@ -50,6 +50,7 @@ static const int AGREEMENT_END_DATE_TIME_BEFORE_HASH = HashingUtils::HashString(
 static const int INVOICING_ENTITY_HASH = HashingUtils::HashString("INVOICING_ENTITY");
 static const int ANOMALY_TOTAL_IMPACT_ABSOLUTE_HASH = HashingUtils::HashString("ANOMALY_TOTAL_IMPACT_ABSOLUTE");
 static const int ANOMALY_TOTAL_IMPACT_PERCENTAGE_HASH = HashingUtils::HashString("ANOMALY_TOTAL_IMPACT_PERCENTAGE");
+static const int PRODUCT_ATTRIBUTE_HASH = HashingUtils::HashString("PRODUCT_ATTRIBUTE");
 
 Dimension GetDimensionForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -123,6 +124,8 @@ Dimension GetDimensionForName(const Aws::String& name) {
     return Dimension::ANOMALY_TOTAL_IMPACT_ABSOLUTE;
   } else if (hashCode == ANOMALY_TOTAL_IMPACT_PERCENTAGE_HASH) {
     return Dimension::ANOMALY_TOTAL_IMPACT_PERCENTAGE;
+  } else if (hashCode == PRODUCT_ATTRIBUTE_HASH) {
+    return Dimension::PRODUCT_ATTRIBUTE;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -207,6 +210,8 @@ Aws::String GetNameForDimension(Dimension enumValue) {
       return "ANOMALY_TOTAL_IMPACT_ABSOLUTE";
     case Dimension::ANOMALY_TOTAL_IMPACT_PERCENTAGE:
       return "ANOMALY_TOTAL_IMPACT_PERCENTAGE";
+    case Dimension::PRODUCT_ATTRIBUTE:
+      return "PRODUCT_ATTRIBUTE";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

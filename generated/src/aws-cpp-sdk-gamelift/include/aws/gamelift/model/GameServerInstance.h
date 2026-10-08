@@ -23,7 +23,7 @@ namespace Model {
 /**
  * <p> Additional properties, including status, that describe an EC2 instance in a
  * game server group. Instance configurations are set with game server group
- * properties (see <code>DescribeGameServerGroup</code> and with the EC2 launch
+ * properties (see <code>DescribeGameServerGroup</code>) and with the EC2 launch
  * template that was used when creating the game server group. </p> <p>Retrieve
  * game server instances for a game server group by calling
  * <code>DescribeGameServerInstances</code>. </p><p><h3>See Also:</h3>   <a

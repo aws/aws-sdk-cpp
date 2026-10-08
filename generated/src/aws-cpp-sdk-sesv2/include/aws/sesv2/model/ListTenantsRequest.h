@@ -37,7 +37,7 @@ class ListTenantsRequest : public SESV2Request {
   ///@{
   /**
    * <p>An object that contains filters to apply when listing tenants. You can filter
-   * by tenant name or sending status.</p>
+   * by a substring of the tenant name or by sending status.</p>
    */
   inline const Aws::Map<ListTenantsFilterKey, Aws::String>& GetFilter() const { return m_filter; }
   inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }

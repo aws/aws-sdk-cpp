@@ -3,52 +3,184 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/fms/model/CreateNetworkAclAction.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace FMS {
 namespace Model {
 
-CreateNetworkAclAction::CreateNetworkAclAction(JsonView jsonValue) { *this = jsonValue; }
+CreateNetworkAclAction::CreateNetworkAclAction(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-CreateNetworkAclAction& CreateNetworkAclAction::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("Description")) {
-    m_description = jsonValue.GetString("Description");
-    m_descriptionHasBeenSet = true;
+CreateNetworkAclAction& CreateNetworkAclAction::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "Description") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_description = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_description = ss.str();
+                  }
+                }
+                m_descriptionHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "Vpc") {
+                m_vpc = ActionTarget(decoder);
+                m_vpcHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "FMSCanRemediate") {
+                auto val = decoder->PopNextBooleanVal();
+                if (val.has_value()) {
+                  m_fMSCanRemediate = val.value();
+                }
+                m_fMSCanRemediateHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("CreateNetworkAclAction", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "Description") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_description = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_description = ss.str();
+                }
+              }
+              m_descriptionHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "Vpc") {
+              m_vpc = ActionTarget(decoder);
+              m_vpcHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "FMSCanRemediate") {
+              auto val = decoder->PopNextBooleanVal();
+              if (val.has_value()) {
+                m_fMSCanRemediate = val.value();
+              }
+              m_fMSCanRemediateHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
+    }
   }
-  if (jsonValue.ValueExists("Vpc")) {
-    m_vpc = jsonValue.GetObject("Vpc");
-    m_vpcHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("FMSCanRemediate")) {
-    m_fMSCanRemediate = jsonValue.GetBool("FMSCanRemediate");
-    m_fMSCanRemediateHasBeenSet = true;
-  }
+
   return *this;
 }
 
-JsonValue CreateNetworkAclAction::Jsonize() const {
-  JsonValue payload;
+void CreateNetworkAclAction::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_descriptionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_vpcHasBeenSet) {
+    mapSize++;
+  }
+  if (m_fMSCanRemediateHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_descriptionHasBeenSet) {
-    payload.WithString("Description", m_description);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Description"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_description.c_str()));
   }
 
   if (m_vpcHasBeenSet) {
-    payload.WithObject("Vpc", m_vpc.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Vpc"));
+    m_vpc.CborEncode(encoder);
   }
 
   if (m_fMSCanRemediateHasBeenSet) {
-    payload.WithBool("FMSCanRemediate", m_fMSCanRemediate);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("FMSCanRemediate"));
+    encoder.WriteBool(m_fMSCanRemediate);
   }
-
-  return payload;
 }
 
 }  // namespace Model

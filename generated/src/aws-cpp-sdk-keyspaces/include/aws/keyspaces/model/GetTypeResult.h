@@ -8,28 +8,28 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/keyspaces/Keyspaces_EXPORTS.h>
 #include <aws/keyspaces/model/FieldDefinition.h>
 #include <aws/keyspaces/model/TypeStatus.h>
 
 #include <utility>
-
 namespace Aws {
 template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
 namespace Utils {
-namespace Json {
-class JsonValue;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace Keyspaces {
 namespace Model {
 class GetTypeResult {
  public:
   AWS_KEYSPACES_API GetTypeResult() = default;
-  AWS_KEYSPACES_API GetTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-  AWS_KEYSPACES_API GetTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_KEYSPACES_API GetTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
+  AWS_KEYSPACES_API GetTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
 
   ///@{
   /**
@@ -170,12 +170,12 @@ class GetTypeResult {
   /**
    * <p> The level of nesting implemented for this type. </p>
    */
-  inline int GetMaxNestingDepth() const { return m_maxNestingDepth; }
-  inline void SetMaxNestingDepth(int value) {
+  inline int64_t GetMaxNestingDepth() const { return m_maxNestingDepth; }
+  inline void SetMaxNestingDepth(int64_t value) {
     m_maxNestingDepthHasBeenSet = true;
     m_maxNestingDepth = value;
   }
-  inline GetTypeResult& WithMaxNestingDepth(int value) {
+  inline GetTypeResult& WithMaxNestingDepth(int64_t value) {
     SetMaxNestingDepth(value);
     return *this;
   }
@@ -230,7 +230,7 @@ class GetTypeResult {
 
   Aws::Vector<Aws::String> m_directParentTypes;
 
-  int m_maxNestingDepth{0};
+  int64_t m_maxNestingDepth{0};
 
   Aws::String m_keyspaceArn;
 

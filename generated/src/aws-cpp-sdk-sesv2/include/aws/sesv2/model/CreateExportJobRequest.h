@@ -53,7 +53,10 @@ class CreateExportJobRequest : public SESV2Request {
 
   ///@{
   /**
-   * <p>The destination for the export job.</p>
+   * <p>The destination for the export job. Specify only <code>DataFormat</code>. Do
+   * not include <code>S3Url</code> in this request. SES writes the export file to a
+   * location that it manages and returns the download URL in
+   * <code>GetExportJob</code>.</p>
    */
   inline const ExportDestination& GetExportDestination() const { return m_exportDestination; }
   inline bool ExportDestinationHasBeenSet() const { return m_exportDestinationHasBeenSet; }

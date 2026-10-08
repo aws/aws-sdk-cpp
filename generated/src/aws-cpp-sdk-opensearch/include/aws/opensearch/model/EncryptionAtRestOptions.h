@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/opensearch/OpenSearchService_EXPORTS.h>
+#include <aws/opensearch/model/EncryptionMode.h>
 
 #include <utility>
 
@@ -69,12 +70,36 @@ class EncryptionAtRestOptions {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The type of encryption at rest applied to the domain's data. Valid values are
+   * <code>DISK</code> and <code>NATIVE</code>. <code>DISK</code> is the default and
+   * uses volume-level encryption. <code>NATIVE</code> uses engine-native,
+   * index-level encryption and requires encryption at rest to be enabled and
+   * OpenSearch version 3.3 or later. After the mode is set to <code>NATIVE</code>,
+   * it can't be changed back to <code>DISK</code>.</p>
+   */
+  inline EncryptionMode GetEncryptionMode() const { return m_encryptionMode; }
+  inline bool EncryptionModeHasBeenSet() const { return m_encryptionModeHasBeenSet; }
+  inline void SetEncryptionMode(EncryptionMode value) {
+    m_encryptionModeHasBeenSet = true;
+    m_encryptionMode = value;
+  }
+  inline EncryptionAtRestOptions& WithEncryptionMode(EncryptionMode value) {
+    SetEncryptionMode(value);
+    return *this;
+  }
+  ///@}
  private:
   bool m_enabled{false};
 
   Aws::String m_kmsKeyId;
+
+  EncryptionMode m_encryptionMode{EncryptionMode::NOT_SET};
   bool m_enabledHasBeenSet = false;
   bool m_kmsKeyIdHasBeenSet = false;
+  bool m_encryptionModeHasBeenSet = false;
 };
 
 }  // namespace Model

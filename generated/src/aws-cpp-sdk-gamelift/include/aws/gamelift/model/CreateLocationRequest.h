@@ -53,11 +53,11 @@ class CreateLocationRequest : public GameLiftRequest {
   ///@{
   /**
    * <p>A list of labels to assign to the new resource. Tags are developer-defined
-   * key-value pairs. Tagging Amazon Web Services resources are useful for resource
+   * key-value pairs. Tagging Amazon Web Services resources is useful for resource
    * management, access management, and cost allocation. For more information, see <a
    * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
    * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
-   * Rareference</i>.</p>
+   * Reference</i>.</p>
    */
   inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
   inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }

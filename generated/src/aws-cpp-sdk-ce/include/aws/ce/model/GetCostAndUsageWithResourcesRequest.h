@@ -93,9 +93,12 @@ class GetCostAndUsageWithResourcesRequest : public CostExplorerRequest {
    * filter.</p> <p>Valid values for <code>MatchOptions</code> for
    * <code>Dimensions</code> are <code>EQUALS</code> and
    * <code>CASE_SENSITIVE</code>.</p> <p>Valid values for <code>MatchOptions</code>
-   * for <code>CostCategories</code> and <code>Tags</code> are <code>EQUALS</code>,
-   * <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>. Default values are
-   * <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+   * for <code>CostCategories</code>, <code>Tags</code>, and
+   * <code>ProductAttributes</code> are <code>EQUALS</code>, <code>ABSENT</code>, and
+   * <code>CASE_SENSITIVE</code>. Default values are <code>EQUALS</code> and
+   * <code>CASE_SENSITIVE</code>.</p> <p>If you filter or group by product
+   * attributes, the <code>SERVICE</code> filter rules are the same as for <a
+   * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetCostAndUsage.html">GetCostAndUsage</a>.</p>
    */
   inline const Expression& GetFilter() const { return m_filter; }
   inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
@@ -153,7 +156,13 @@ class GetCostAndUsageWithResourcesRequest : public CostExplorerRequest {
   ///@{
   /**
    * <p>You can group Amazon Web Services costs using up to two different groups:
-   * <code>DIMENSION</code>, <code>TAG</code>, <code>COST_CATEGORY</code>.</p>
+   * <code>DIMENSION</code>, <code>TAG</code>, <code>COST_CATEGORY</code>, and
+   * <code>PRODUCT_ATTRIBUTE</code>.</p> <p> <code>PRODUCT_ATTRIBUTE</code> groups
+   * work the same way as in <a
+   * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetCostAndUsage.html">GetCostAndUsage</a>.
+   * A <code>PRODUCT_ATTRIBUTE</code> group or a <code>ProductAttributes</code>
+   * filter doesn't meet the requirement to group by or filter by a
+   * <code>ResourceId</code>.</p>
    */
   inline const Aws::Vector<GroupDefinition>& GetGroupBy() const { return m_groupBy; }
   inline bool GroupByHasBeenSet() const { return m_groupByHasBeenSet; }

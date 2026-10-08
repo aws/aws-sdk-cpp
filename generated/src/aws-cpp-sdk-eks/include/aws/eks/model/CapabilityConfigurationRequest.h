@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/eks/EKS_EXPORTS.h>
+#include <aws/eks/model/AckConfigRequest.h>
 #include <aws/eks/model/ArgoCdConfigRequest.h>
 
 #include <utility>
@@ -50,9 +51,32 @@ class CapabilityConfigurationRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Configuration settings specific to ACK (Amazon Web Services Controllers for
+   * Kubernetes) capabilities. This field is only used when creating or updating an
+   * ACK capability.</p>
+   */
+  inline const AckConfigRequest& GetAck() const { return m_ack; }
+  inline bool AckHasBeenSet() const { return m_ackHasBeenSet; }
+  template <typename AckT = AckConfigRequest>
+  void SetAck(AckT&& value) {
+    m_ackHasBeenSet = true;
+    m_ack = std::forward<AckT>(value);
+  }
+  template <typename AckT = AckConfigRequest>
+  CapabilityConfigurationRequest& WithAck(AckT&& value) {
+    SetAck(std::forward<AckT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ArgoCdConfigRequest m_argoCd;
+
+  AckConfigRequest m_ack;
   bool m_argoCdHasBeenSet = false;
+  bool m_ackHasBeenSet = false;
 };
 
 }  // namespace Model

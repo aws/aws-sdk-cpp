@@ -86,15 +86,35 @@ class GetResourceDashboardRequest : public EMRServerlessRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Allows access to system profile logs for Lake Formation-enabled sessions.
+   * Default is false.</p>
+   */
+  inline bool GetAccessSystemProfileLogs() const { return m_accessSystemProfileLogs; }
+  inline bool AccessSystemProfileLogsHasBeenSet() const { return m_accessSystemProfileLogsHasBeenSet; }
+  inline void SetAccessSystemProfileLogs(bool value) {
+    m_accessSystemProfileLogsHasBeenSet = true;
+    m_accessSystemProfileLogs = value;
+  }
+  inline GetResourceDashboardRequest& WithAccessSystemProfileLogs(bool value) {
+    SetAccessSystemProfileLogs(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_applicationId;
 
   Aws::String m_resourceId;
 
   ResourceType m_resourceType{ResourceType::NOT_SET};
+
+  bool m_accessSystemProfileLogs{false};
   bool m_applicationIdHasBeenSet = false;
   bool m_resourceIdHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
+  bool m_accessSystemProfileLogsHasBeenSet = false;
 };
 
 }  // namespace Model

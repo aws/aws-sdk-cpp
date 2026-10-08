@@ -222,7 +222,7 @@ class FleetAttributes {
    * following:</p> <ul> <li> <p>NEW -- A new fleet resource has been defined and
    * Amazon GameLift Servers has started creating the fleet. Desired instances is set
    * to 1. </p> </li> <li> <p>DOWNLOADING/VALIDATING/BUILDING -- Amazon GameLift
-   * Servers is download the game server build, running install scripts, and then
+   * Servers is downloading the game server build, running install scripts, and then
    * validating the build files. When complete, Amazon GameLift Servers launches a
    * fleet instance. </p> </li> <li> <p>ACTIVATING -- Amazon GameLift Servers is
    * launching a game server process and testing its connectivity with the Amazon

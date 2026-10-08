@@ -3,238 +3,542 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/fms/model/ResourceViolation.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace FMS {
 namespace Model {
 
-ResourceViolation::ResourceViolation(JsonView jsonValue) { *this = jsonValue; }
+ResourceViolation::ResourceViolation(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-ResourceViolation& ResourceViolation::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("AwsVPCSecurityGroupViolation")) {
-    m_awsVPCSecurityGroupViolation = jsonValue.GetObject("AwsVPCSecurityGroupViolation");
-    m_awsVPCSecurityGroupViolationHasBeenSet = true;
+ResourceViolation& ResourceViolation::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "AwsVPCSecurityGroupViolation") {
+                m_awsVPCSecurityGroupViolation = AwsVPCSecurityGroupViolation(decoder);
+                m_awsVPCSecurityGroupViolationHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "AwsEc2NetworkInterfaceViolation") {
+                m_awsEc2NetworkInterfaceViolation = AwsEc2NetworkInterfaceViolation(decoder);
+                m_awsEc2NetworkInterfaceViolationHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "AwsEc2InstanceViolation") {
+                m_awsEc2InstanceViolation = AwsEc2InstanceViolation(decoder);
+                m_awsEc2InstanceViolationHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "NetworkFirewallMissingFirewallViolation") {
+                m_networkFirewallMissingFirewallViolation = NetworkFirewallMissingFirewallViolation(decoder);
+                m_networkFirewallMissingFirewallViolationHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "NetworkFirewallMissingSubnetViolation") {
+                m_networkFirewallMissingSubnetViolation = NetworkFirewallMissingSubnetViolation(decoder);
+                m_networkFirewallMissingSubnetViolationHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "NetworkFirewallMissingExpectedRTViolation") {
+                m_networkFirewallMissingExpectedRTViolation = NetworkFirewallMissingExpectedRTViolation(decoder);
+                m_networkFirewallMissingExpectedRTViolationHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "NetworkFirewallPolicyModifiedViolation") {
+                m_networkFirewallPolicyModifiedViolation = NetworkFirewallPolicyModifiedViolation(decoder);
+                m_networkFirewallPolicyModifiedViolationHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "NetworkFirewallInternetTrafficNotInspectedViolation") {
+                m_networkFirewallInternetTrafficNotInspectedViolation = NetworkFirewallInternetTrafficNotInspectedViolation(decoder);
+                m_networkFirewallInternetTrafficNotInspectedViolationHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "NetworkFirewallInvalidRouteConfigurationViolation") {
+                m_networkFirewallInvalidRouteConfigurationViolation = NetworkFirewallInvalidRouteConfigurationViolation(decoder);
+                m_networkFirewallInvalidRouteConfigurationViolationHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "NetworkFirewallBlackHoleRouteDetectedViolation") {
+                m_networkFirewallBlackHoleRouteDetectedViolation = NetworkFirewallBlackHoleRouteDetectedViolation(decoder);
+                m_networkFirewallBlackHoleRouteDetectedViolationHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "NetworkFirewallUnexpectedFirewallRoutesViolation") {
+                m_networkFirewallUnexpectedFirewallRoutesViolation = NetworkFirewallUnexpectedFirewallRoutesViolation(decoder);
+                m_networkFirewallUnexpectedFirewallRoutesViolationHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "NetworkFirewallUnexpectedGatewayRoutesViolation") {
+                m_networkFirewallUnexpectedGatewayRoutesViolation = NetworkFirewallUnexpectedGatewayRoutesViolation(decoder);
+                m_networkFirewallUnexpectedGatewayRoutesViolationHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "NetworkFirewallMissingExpectedRoutesViolation") {
+                m_networkFirewallMissingExpectedRoutesViolation = NetworkFirewallMissingExpectedRoutesViolation(decoder);
+                m_networkFirewallMissingExpectedRoutesViolationHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "DnsRuleGroupPriorityConflictViolation") {
+                m_dnsRuleGroupPriorityConflictViolation = DnsRuleGroupPriorityConflictViolation(decoder);
+                m_dnsRuleGroupPriorityConflictViolationHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "DnsDuplicateRuleGroupViolation") {
+                m_dnsDuplicateRuleGroupViolation = DnsDuplicateRuleGroupViolation(decoder);
+                m_dnsDuplicateRuleGroupViolationHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "DnsRuleGroupLimitExceededViolation") {
+                m_dnsRuleGroupLimitExceededViolation = DnsRuleGroupLimitExceededViolation(decoder);
+                m_dnsRuleGroupLimitExceededViolationHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "FirewallSubnetIsOutOfScopeViolation") {
+                m_firewallSubnetIsOutOfScopeViolation = FirewallSubnetIsOutOfScopeViolation(decoder);
+                m_firewallSubnetIsOutOfScopeViolationHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "RouteHasOutOfScopeEndpointViolation") {
+                m_routeHasOutOfScopeEndpointViolation = RouteHasOutOfScopeEndpointViolation(decoder);
+                m_routeHasOutOfScopeEndpointViolationHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "ThirdPartyFirewallMissingFirewallViolation") {
+                m_thirdPartyFirewallMissingFirewallViolation = ThirdPartyFirewallMissingFirewallViolation(decoder);
+                m_thirdPartyFirewallMissingFirewallViolationHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "ThirdPartyFirewallMissingSubnetViolation") {
+                m_thirdPartyFirewallMissingSubnetViolation = ThirdPartyFirewallMissingSubnetViolation(decoder);
+                m_thirdPartyFirewallMissingSubnetViolationHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "ThirdPartyFirewallMissingExpectedRouteTableViolation") {
+                m_thirdPartyFirewallMissingExpectedRouteTableViolation = ThirdPartyFirewallMissingExpectedRouteTableViolation(decoder);
+                m_thirdPartyFirewallMissingExpectedRouteTableViolationHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "FirewallSubnetMissingVPCEndpointViolation") {
+                m_firewallSubnetMissingVPCEndpointViolation = FirewallSubnetMissingVPCEndpointViolation(decoder);
+                m_firewallSubnetMissingVPCEndpointViolationHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "InvalidNetworkAclEntriesViolation") {
+                m_invalidNetworkAclEntriesViolation = InvalidNetworkAclEntriesViolation(decoder);
+                m_invalidNetworkAclEntriesViolationHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "PossibleRemediationActions") {
+                m_possibleRemediationActions = PossibleRemediationActions(decoder);
+                m_possibleRemediationActionsHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "WebACLHasIncompatibleConfigurationViolation") {
+                m_webACLHasIncompatibleConfigurationViolation = WebACLHasIncompatibleConfigurationViolation(decoder);
+                m_webACLHasIncompatibleConfigurationViolationHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "WebACLHasOutOfScopeResourcesViolation") {
+                m_webACLHasOutOfScopeResourcesViolation = WebACLHasOutOfScopeResourcesViolation(decoder);
+                m_webACLHasOutOfScopeResourcesViolationHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("ResourceViolation", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "AwsVPCSecurityGroupViolation") {
+              m_awsVPCSecurityGroupViolation = AwsVPCSecurityGroupViolation(decoder);
+              m_awsVPCSecurityGroupViolationHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "AwsEc2NetworkInterfaceViolation") {
+              m_awsEc2NetworkInterfaceViolation = AwsEc2NetworkInterfaceViolation(decoder);
+              m_awsEc2NetworkInterfaceViolationHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "AwsEc2InstanceViolation") {
+              m_awsEc2InstanceViolation = AwsEc2InstanceViolation(decoder);
+              m_awsEc2InstanceViolationHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "NetworkFirewallMissingFirewallViolation") {
+              m_networkFirewallMissingFirewallViolation = NetworkFirewallMissingFirewallViolation(decoder);
+              m_networkFirewallMissingFirewallViolationHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "NetworkFirewallMissingSubnetViolation") {
+              m_networkFirewallMissingSubnetViolation = NetworkFirewallMissingSubnetViolation(decoder);
+              m_networkFirewallMissingSubnetViolationHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "NetworkFirewallMissingExpectedRTViolation") {
+              m_networkFirewallMissingExpectedRTViolation = NetworkFirewallMissingExpectedRTViolation(decoder);
+              m_networkFirewallMissingExpectedRTViolationHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "NetworkFirewallPolicyModifiedViolation") {
+              m_networkFirewallPolicyModifiedViolation = NetworkFirewallPolicyModifiedViolation(decoder);
+              m_networkFirewallPolicyModifiedViolationHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "NetworkFirewallInternetTrafficNotInspectedViolation") {
+              m_networkFirewallInternetTrafficNotInspectedViolation = NetworkFirewallInternetTrafficNotInspectedViolation(decoder);
+              m_networkFirewallInternetTrafficNotInspectedViolationHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "NetworkFirewallInvalidRouteConfigurationViolation") {
+              m_networkFirewallInvalidRouteConfigurationViolation = NetworkFirewallInvalidRouteConfigurationViolation(decoder);
+              m_networkFirewallInvalidRouteConfigurationViolationHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "NetworkFirewallBlackHoleRouteDetectedViolation") {
+              m_networkFirewallBlackHoleRouteDetectedViolation = NetworkFirewallBlackHoleRouteDetectedViolation(decoder);
+              m_networkFirewallBlackHoleRouteDetectedViolationHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "NetworkFirewallUnexpectedFirewallRoutesViolation") {
+              m_networkFirewallUnexpectedFirewallRoutesViolation = NetworkFirewallUnexpectedFirewallRoutesViolation(decoder);
+              m_networkFirewallUnexpectedFirewallRoutesViolationHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "NetworkFirewallUnexpectedGatewayRoutesViolation") {
+              m_networkFirewallUnexpectedGatewayRoutesViolation = NetworkFirewallUnexpectedGatewayRoutesViolation(decoder);
+              m_networkFirewallUnexpectedGatewayRoutesViolationHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "NetworkFirewallMissingExpectedRoutesViolation") {
+              m_networkFirewallMissingExpectedRoutesViolation = NetworkFirewallMissingExpectedRoutesViolation(decoder);
+              m_networkFirewallMissingExpectedRoutesViolationHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "DnsRuleGroupPriorityConflictViolation") {
+              m_dnsRuleGroupPriorityConflictViolation = DnsRuleGroupPriorityConflictViolation(decoder);
+              m_dnsRuleGroupPriorityConflictViolationHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "DnsDuplicateRuleGroupViolation") {
+              m_dnsDuplicateRuleGroupViolation = DnsDuplicateRuleGroupViolation(decoder);
+              m_dnsDuplicateRuleGroupViolationHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "DnsRuleGroupLimitExceededViolation") {
+              m_dnsRuleGroupLimitExceededViolation = DnsRuleGroupLimitExceededViolation(decoder);
+              m_dnsRuleGroupLimitExceededViolationHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "FirewallSubnetIsOutOfScopeViolation") {
+              m_firewallSubnetIsOutOfScopeViolation = FirewallSubnetIsOutOfScopeViolation(decoder);
+              m_firewallSubnetIsOutOfScopeViolationHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "RouteHasOutOfScopeEndpointViolation") {
+              m_routeHasOutOfScopeEndpointViolation = RouteHasOutOfScopeEndpointViolation(decoder);
+              m_routeHasOutOfScopeEndpointViolationHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "ThirdPartyFirewallMissingFirewallViolation") {
+              m_thirdPartyFirewallMissingFirewallViolation = ThirdPartyFirewallMissingFirewallViolation(decoder);
+              m_thirdPartyFirewallMissingFirewallViolationHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "ThirdPartyFirewallMissingSubnetViolation") {
+              m_thirdPartyFirewallMissingSubnetViolation = ThirdPartyFirewallMissingSubnetViolation(decoder);
+              m_thirdPartyFirewallMissingSubnetViolationHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "ThirdPartyFirewallMissingExpectedRouteTableViolation") {
+              m_thirdPartyFirewallMissingExpectedRouteTableViolation = ThirdPartyFirewallMissingExpectedRouteTableViolation(decoder);
+              m_thirdPartyFirewallMissingExpectedRouteTableViolationHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "FirewallSubnetMissingVPCEndpointViolation") {
+              m_firewallSubnetMissingVPCEndpointViolation = FirewallSubnetMissingVPCEndpointViolation(decoder);
+              m_firewallSubnetMissingVPCEndpointViolationHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "InvalidNetworkAclEntriesViolation") {
+              m_invalidNetworkAclEntriesViolation = InvalidNetworkAclEntriesViolation(decoder);
+              m_invalidNetworkAclEntriesViolationHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "PossibleRemediationActions") {
+              m_possibleRemediationActions = PossibleRemediationActions(decoder);
+              m_possibleRemediationActionsHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "WebACLHasIncompatibleConfigurationViolation") {
+              m_webACLHasIncompatibleConfigurationViolation = WebACLHasIncompatibleConfigurationViolation(decoder);
+              m_webACLHasIncompatibleConfigurationViolationHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "WebACLHasOutOfScopeResourcesViolation") {
+              m_webACLHasOutOfScopeResourcesViolation = WebACLHasOutOfScopeResourcesViolation(decoder);
+              m_webACLHasOutOfScopeResourcesViolationHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
+    }
   }
-  if (jsonValue.ValueExists("AwsEc2NetworkInterfaceViolation")) {
-    m_awsEc2NetworkInterfaceViolation = jsonValue.GetObject("AwsEc2NetworkInterfaceViolation");
-    m_awsEc2NetworkInterfaceViolationHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("AwsEc2InstanceViolation")) {
-    m_awsEc2InstanceViolation = jsonValue.GetObject("AwsEc2InstanceViolation");
-    m_awsEc2InstanceViolationHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("NetworkFirewallMissingFirewallViolation")) {
-    m_networkFirewallMissingFirewallViolation = jsonValue.GetObject("NetworkFirewallMissingFirewallViolation");
-    m_networkFirewallMissingFirewallViolationHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("NetworkFirewallMissingSubnetViolation")) {
-    m_networkFirewallMissingSubnetViolation = jsonValue.GetObject("NetworkFirewallMissingSubnetViolation");
-    m_networkFirewallMissingSubnetViolationHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("NetworkFirewallMissingExpectedRTViolation")) {
-    m_networkFirewallMissingExpectedRTViolation = jsonValue.GetObject("NetworkFirewallMissingExpectedRTViolation");
-    m_networkFirewallMissingExpectedRTViolationHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("NetworkFirewallPolicyModifiedViolation")) {
-    m_networkFirewallPolicyModifiedViolation = jsonValue.GetObject("NetworkFirewallPolicyModifiedViolation");
-    m_networkFirewallPolicyModifiedViolationHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("NetworkFirewallInternetTrafficNotInspectedViolation")) {
-    m_networkFirewallInternetTrafficNotInspectedViolation = jsonValue.GetObject("NetworkFirewallInternetTrafficNotInspectedViolation");
-    m_networkFirewallInternetTrafficNotInspectedViolationHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("NetworkFirewallInvalidRouteConfigurationViolation")) {
-    m_networkFirewallInvalidRouteConfigurationViolation = jsonValue.GetObject("NetworkFirewallInvalidRouteConfigurationViolation");
-    m_networkFirewallInvalidRouteConfigurationViolationHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("NetworkFirewallBlackHoleRouteDetectedViolation")) {
-    m_networkFirewallBlackHoleRouteDetectedViolation = jsonValue.GetObject("NetworkFirewallBlackHoleRouteDetectedViolation");
-    m_networkFirewallBlackHoleRouteDetectedViolationHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("NetworkFirewallUnexpectedFirewallRoutesViolation")) {
-    m_networkFirewallUnexpectedFirewallRoutesViolation = jsonValue.GetObject("NetworkFirewallUnexpectedFirewallRoutesViolation");
-    m_networkFirewallUnexpectedFirewallRoutesViolationHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("NetworkFirewallUnexpectedGatewayRoutesViolation")) {
-    m_networkFirewallUnexpectedGatewayRoutesViolation = jsonValue.GetObject("NetworkFirewallUnexpectedGatewayRoutesViolation");
-    m_networkFirewallUnexpectedGatewayRoutesViolationHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("NetworkFirewallMissingExpectedRoutesViolation")) {
-    m_networkFirewallMissingExpectedRoutesViolation = jsonValue.GetObject("NetworkFirewallMissingExpectedRoutesViolation");
-    m_networkFirewallMissingExpectedRoutesViolationHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("DnsRuleGroupPriorityConflictViolation")) {
-    m_dnsRuleGroupPriorityConflictViolation = jsonValue.GetObject("DnsRuleGroupPriorityConflictViolation");
-    m_dnsRuleGroupPriorityConflictViolationHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("DnsDuplicateRuleGroupViolation")) {
-    m_dnsDuplicateRuleGroupViolation = jsonValue.GetObject("DnsDuplicateRuleGroupViolation");
-    m_dnsDuplicateRuleGroupViolationHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("DnsRuleGroupLimitExceededViolation")) {
-    m_dnsRuleGroupLimitExceededViolation = jsonValue.GetObject("DnsRuleGroupLimitExceededViolation");
-    m_dnsRuleGroupLimitExceededViolationHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("FirewallSubnetIsOutOfScopeViolation")) {
-    m_firewallSubnetIsOutOfScopeViolation = jsonValue.GetObject("FirewallSubnetIsOutOfScopeViolation");
-    m_firewallSubnetIsOutOfScopeViolationHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("RouteHasOutOfScopeEndpointViolation")) {
-    m_routeHasOutOfScopeEndpointViolation = jsonValue.GetObject("RouteHasOutOfScopeEndpointViolation");
-    m_routeHasOutOfScopeEndpointViolationHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ThirdPartyFirewallMissingFirewallViolation")) {
-    m_thirdPartyFirewallMissingFirewallViolation = jsonValue.GetObject("ThirdPartyFirewallMissingFirewallViolation");
-    m_thirdPartyFirewallMissingFirewallViolationHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ThirdPartyFirewallMissingSubnetViolation")) {
-    m_thirdPartyFirewallMissingSubnetViolation = jsonValue.GetObject("ThirdPartyFirewallMissingSubnetViolation");
-    m_thirdPartyFirewallMissingSubnetViolationHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ThirdPartyFirewallMissingExpectedRouteTableViolation")) {
-    m_thirdPartyFirewallMissingExpectedRouteTableViolation = jsonValue.GetObject("ThirdPartyFirewallMissingExpectedRouteTableViolation");
-    m_thirdPartyFirewallMissingExpectedRouteTableViolationHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("FirewallSubnetMissingVPCEndpointViolation")) {
-    m_firewallSubnetMissingVPCEndpointViolation = jsonValue.GetObject("FirewallSubnetMissingVPCEndpointViolation");
-    m_firewallSubnetMissingVPCEndpointViolationHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("InvalidNetworkAclEntriesViolation")) {
-    m_invalidNetworkAclEntriesViolation = jsonValue.GetObject("InvalidNetworkAclEntriesViolation");
-    m_invalidNetworkAclEntriesViolationHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("PossibleRemediationActions")) {
-    m_possibleRemediationActions = jsonValue.GetObject("PossibleRemediationActions");
-    m_possibleRemediationActionsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("WebACLHasIncompatibleConfigurationViolation")) {
-    m_webACLHasIncompatibleConfigurationViolation = jsonValue.GetObject("WebACLHasIncompatibleConfigurationViolation");
-    m_webACLHasIncompatibleConfigurationViolationHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("WebACLHasOutOfScopeResourcesViolation")) {
-    m_webACLHasOutOfScopeResourcesViolation = jsonValue.GetObject("WebACLHasOutOfScopeResourcesViolation");
-    m_webACLHasOutOfScopeResourcesViolationHasBeenSet = true;
-  }
+
   return *this;
 }
 
-JsonValue ResourceViolation::Jsonize() const {
-  JsonValue payload;
+void ResourceViolation::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_awsVPCSecurityGroupViolationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_awsEc2NetworkInterfaceViolationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_awsEc2InstanceViolationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_networkFirewallMissingFirewallViolationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_networkFirewallMissingSubnetViolationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_networkFirewallMissingExpectedRTViolationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_networkFirewallPolicyModifiedViolationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_networkFirewallInternetTrafficNotInspectedViolationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_networkFirewallInvalidRouteConfigurationViolationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_networkFirewallBlackHoleRouteDetectedViolationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_networkFirewallUnexpectedFirewallRoutesViolationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_networkFirewallUnexpectedGatewayRoutesViolationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_networkFirewallMissingExpectedRoutesViolationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_dnsRuleGroupPriorityConflictViolationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_dnsDuplicateRuleGroupViolationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_dnsRuleGroupLimitExceededViolationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_firewallSubnetIsOutOfScopeViolationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_routeHasOutOfScopeEndpointViolationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_thirdPartyFirewallMissingFirewallViolationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_thirdPartyFirewallMissingSubnetViolationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_thirdPartyFirewallMissingExpectedRouteTableViolationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_firewallSubnetMissingVPCEndpointViolationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_invalidNetworkAclEntriesViolationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_possibleRemediationActionsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_webACLHasIncompatibleConfigurationViolationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_webACLHasOutOfScopeResourcesViolationHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_awsVPCSecurityGroupViolationHasBeenSet) {
-    payload.WithObject("AwsVPCSecurityGroupViolation", m_awsVPCSecurityGroupViolation.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AwsVPCSecurityGroupViolation"));
+    m_awsVPCSecurityGroupViolation.CborEncode(encoder);
   }
 
   if (m_awsEc2NetworkInterfaceViolationHasBeenSet) {
-    payload.WithObject("AwsEc2NetworkInterfaceViolation", m_awsEc2NetworkInterfaceViolation.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AwsEc2NetworkInterfaceViolation"));
+    m_awsEc2NetworkInterfaceViolation.CborEncode(encoder);
   }
 
   if (m_awsEc2InstanceViolationHasBeenSet) {
-    payload.WithObject("AwsEc2InstanceViolation", m_awsEc2InstanceViolation.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AwsEc2InstanceViolation"));
+    m_awsEc2InstanceViolation.CborEncode(encoder);
   }
 
   if (m_networkFirewallMissingFirewallViolationHasBeenSet) {
-    payload.WithObject("NetworkFirewallMissingFirewallViolation", m_networkFirewallMissingFirewallViolation.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("NetworkFirewallMissingFirewallViolation"));
+    m_networkFirewallMissingFirewallViolation.CborEncode(encoder);
   }
 
   if (m_networkFirewallMissingSubnetViolationHasBeenSet) {
-    payload.WithObject("NetworkFirewallMissingSubnetViolation", m_networkFirewallMissingSubnetViolation.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("NetworkFirewallMissingSubnetViolation"));
+    m_networkFirewallMissingSubnetViolation.CborEncode(encoder);
   }
 
   if (m_networkFirewallMissingExpectedRTViolationHasBeenSet) {
-    payload.WithObject("NetworkFirewallMissingExpectedRTViolation", m_networkFirewallMissingExpectedRTViolation.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("NetworkFirewallMissingExpectedRTViolation"));
+    m_networkFirewallMissingExpectedRTViolation.CborEncode(encoder);
   }
 
   if (m_networkFirewallPolicyModifiedViolationHasBeenSet) {
-    payload.WithObject("NetworkFirewallPolicyModifiedViolation", m_networkFirewallPolicyModifiedViolation.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("NetworkFirewallPolicyModifiedViolation"));
+    m_networkFirewallPolicyModifiedViolation.CborEncode(encoder);
   }
 
   if (m_networkFirewallInternetTrafficNotInspectedViolationHasBeenSet) {
-    payload.WithObject("NetworkFirewallInternetTrafficNotInspectedViolation",
-                       m_networkFirewallInternetTrafficNotInspectedViolation.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("NetworkFirewallInternetTrafficNotInspectedViolation"));
+    m_networkFirewallInternetTrafficNotInspectedViolation.CborEncode(encoder);
   }
 
   if (m_networkFirewallInvalidRouteConfigurationViolationHasBeenSet) {
-    payload.WithObject("NetworkFirewallInvalidRouteConfigurationViolation", m_networkFirewallInvalidRouteConfigurationViolation.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("NetworkFirewallInvalidRouteConfigurationViolation"));
+    m_networkFirewallInvalidRouteConfigurationViolation.CborEncode(encoder);
   }
 
   if (m_networkFirewallBlackHoleRouteDetectedViolationHasBeenSet) {
-    payload.WithObject("NetworkFirewallBlackHoleRouteDetectedViolation", m_networkFirewallBlackHoleRouteDetectedViolation.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("NetworkFirewallBlackHoleRouteDetectedViolation"));
+    m_networkFirewallBlackHoleRouteDetectedViolation.CborEncode(encoder);
   }
 
   if (m_networkFirewallUnexpectedFirewallRoutesViolationHasBeenSet) {
-    payload.WithObject("NetworkFirewallUnexpectedFirewallRoutesViolation", m_networkFirewallUnexpectedFirewallRoutesViolation.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("NetworkFirewallUnexpectedFirewallRoutesViolation"));
+    m_networkFirewallUnexpectedFirewallRoutesViolation.CborEncode(encoder);
   }
 
   if (m_networkFirewallUnexpectedGatewayRoutesViolationHasBeenSet) {
-    payload.WithObject("NetworkFirewallUnexpectedGatewayRoutesViolation", m_networkFirewallUnexpectedGatewayRoutesViolation.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("NetworkFirewallUnexpectedGatewayRoutesViolation"));
+    m_networkFirewallUnexpectedGatewayRoutesViolation.CborEncode(encoder);
   }
 
   if (m_networkFirewallMissingExpectedRoutesViolationHasBeenSet) {
-    payload.WithObject("NetworkFirewallMissingExpectedRoutesViolation", m_networkFirewallMissingExpectedRoutesViolation.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("NetworkFirewallMissingExpectedRoutesViolation"));
+    m_networkFirewallMissingExpectedRoutesViolation.CborEncode(encoder);
   }
 
   if (m_dnsRuleGroupPriorityConflictViolationHasBeenSet) {
-    payload.WithObject("DnsRuleGroupPriorityConflictViolation", m_dnsRuleGroupPriorityConflictViolation.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("DnsRuleGroupPriorityConflictViolation"));
+    m_dnsRuleGroupPriorityConflictViolation.CborEncode(encoder);
   }
 
   if (m_dnsDuplicateRuleGroupViolationHasBeenSet) {
-    payload.WithObject("DnsDuplicateRuleGroupViolation", m_dnsDuplicateRuleGroupViolation.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("DnsDuplicateRuleGroupViolation"));
+    m_dnsDuplicateRuleGroupViolation.CborEncode(encoder);
   }
 
   if (m_dnsRuleGroupLimitExceededViolationHasBeenSet) {
-    payload.WithObject("DnsRuleGroupLimitExceededViolation", m_dnsRuleGroupLimitExceededViolation.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("DnsRuleGroupLimitExceededViolation"));
+    m_dnsRuleGroupLimitExceededViolation.CborEncode(encoder);
   }
 
   if (m_firewallSubnetIsOutOfScopeViolationHasBeenSet) {
-    payload.WithObject("FirewallSubnetIsOutOfScopeViolation", m_firewallSubnetIsOutOfScopeViolation.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("FirewallSubnetIsOutOfScopeViolation"));
+    m_firewallSubnetIsOutOfScopeViolation.CborEncode(encoder);
   }
 
   if (m_routeHasOutOfScopeEndpointViolationHasBeenSet) {
-    payload.WithObject("RouteHasOutOfScopeEndpointViolation", m_routeHasOutOfScopeEndpointViolation.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("RouteHasOutOfScopeEndpointViolation"));
+    m_routeHasOutOfScopeEndpointViolation.CborEncode(encoder);
   }
 
   if (m_thirdPartyFirewallMissingFirewallViolationHasBeenSet) {
-    payload.WithObject("ThirdPartyFirewallMissingFirewallViolation", m_thirdPartyFirewallMissingFirewallViolation.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ThirdPartyFirewallMissingFirewallViolation"));
+    m_thirdPartyFirewallMissingFirewallViolation.CborEncode(encoder);
   }
 
   if (m_thirdPartyFirewallMissingSubnetViolationHasBeenSet) {
-    payload.WithObject("ThirdPartyFirewallMissingSubnetViolation", m_thirdPartyFirewallMissingSubnetViolation.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ThirdPartyFirewallMissingSubnetViolation"));
+    m_thirdPartyFirewallMissingSubnetViolation.CborEncode(encoder);
   }
 
   if (m_thirdPartyFirewallMissingExpectedRouteTableViolationHasBeenSet) {
-    payload.WithObject("ThirdPartyFirewallMissingExpectedRouteTableViolation",
-                       m_thirdPartyFirewallMissingExpectedRouteTableViolation.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ThirdPartyFirewallMissingExpectedRouteTableViolation"));
+    m_thirdPartyFirewallMissingExpectedRouteTableViolation.CborEncode(encoder);
   }
 
   if (m_firewallSubnetMissingVPCEndpointViolationHasBeenSet) {
-    payload.WithObject("FirewallSubnetMissingVPCEndpointViolation", m_firewallSubnetMissingVPCEndpointViolation.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("FirewallSubnetMissingVPCEndpointViolation"));
+    m_firewallSubnetMissingVPCEndpointViolation.CborEncode(encoder);
   }
 
   if (m_invalidNetworkAclEntriesViolationHasBeenSet) {
-    payload.WithObject("InvalidNetworkAclEntriesViolation", m_invalidNetworkAclEntriesViolation.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("InvalidNetworkAclEntriesViolation"));
+    m_invalidNetworkAclEntriesViolation.CborEncode(encoder);
   }
 
   if (m_possibleRemediationActionsHasBeenSet) {
-    payload.WithObject("PossibleRemediationActions", m_possibleRemediationActions.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("PossibleRemediationActions"));
+    m_possibleRemediationActions.CborEncode(encoder);
   }
 
   if (m_webACLHasIncompatibleConfigurationViolationHasBeenSet) {
-    payload.WithObject("WebACLHasIncompatibleConfigurationViolation", m_webACLHasIncompatibleConfigurationViolation.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("WebACLHasIncompatibleConfigurationViolation"));
+    m_webACLHasIncompatibleConfigurationViolation.CborEncode(encoder);
   }
 
   if (m_webACLHasOutOfScopeResourcesViolationHasBeenSet) {
-    payload.WithObject("WebACLHasOutOfScopeResourcesViolation", m_webACLHasOutOfScopeResourcesViolation.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("WebACLHasOutOfScopeResourcesViolation"));
+    m_webACLHasOutOfScopeResourcesViolation.CborEncode(encoder);
   }
-
-  return payload;
 }
 
 }  // namespace Model

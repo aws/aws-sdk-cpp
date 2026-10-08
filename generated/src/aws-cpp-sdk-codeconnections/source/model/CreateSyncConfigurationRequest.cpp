@@ -4,61 +4,104 @@
  */
 
 #include <aws/codeconnections/model/CreateSyncConfigurationRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 using namespace Aws::CodeConnections::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String CreateSyncConfigurationRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_branchHasBeenSet) {
+    mapSize++;
+  }
+  if (m_configFileHasBeenSet) {
+    mapSize++;
+  }
+  if (m_repositoryLinkIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_resourceNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_roleArnHasBeenSet) {
+    mapSize++;
+  }
+  if (m_syncTypeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_publishDeploymentStatusHasBeenSet) {
+    mapSize++;
+  }
+  if (m_triggerResourceUpdateOnHasBeenSet) {
+    mapSize++;
+  }
+  if (m_pullRequestCommentHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_branchHasBeenSet) {
-    payload.WithString("Branch", m_branch);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Branch"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_branch.c_str()));
   }
 
   if (m_configFileHasBeenSet) {
-    payload.WithString("ConfigFile", m_configFile);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ConfigFile"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_configFile.c_str()));
   }
 
   if (m_repositoryLinkIdHasBeenSet) {
-    payload.WithString("RepositoryLinkId", m_repositoryLinkId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("RepositoryLinkId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_repositoryLinkId.c_str()));
   }
 
   if (m_resourceNameHasBeenSet) {
-    payload.WithString("ResourceName", m_resourceName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ResourceName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_resourceName.c_str()));
   }
 
   if (m_roleArnHasBeenSet) {
-    payload.WithString("RoleArn", m_roleArn);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("RoleArn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_roleArn.c_str()));
   }
 
   if (m_syncTypeHasBeenSet) {
-    payload.WithString("SyncType", SyncConfigurationTypeMapper::GetNameForSyncConfigurationType(m_syncType));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("SyncType"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(SyncConfigurationTypeMapper::GetNameForSyncConfigurationType(m_syncType).c_str()));
   }
 
   if (m_publishDeploymentStatusHasBeenSet) {
-    payload.WithString("PublishDeploymentStatus",
-                       PublishDeploymentStatusMapper::GetNameForPublishDeploymentStatus(m_publishDeploymentStatus));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("PublishDeploymentStatus"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(
+        PublishDeploymentStatusMapper::GetNameForPublishDeploymentStatus(m_publishDeploymentStatus).c_str()));
   }
 
   if (m_triggerResourceUpdateOnHasBeenSet) {
-    payload.WithString("TriggerResourceUpdateOn",
-                       TriggerResourceUpdateOnMapper::GetNameForTriggerResourceUpdateOn(m_triggerResourceUpdateOn));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("TriggerResourceUpdateOn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(
+        TriggerResourceUpdateOnMapper::GetNameForTriggerResourceUpdateOn(m_triggerResourceUpdateOn).c_str()));
   }
 
   if (m_pullRequestCommentHasBeenSet) {
-    payload.WithString("PullRequestComment", PullRequestCommentMapper::GetNameForPullRequestComment(m_pullRequestComment));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("PullRequestComment"));
+    encoder.WriteText(
+        Aws::Crt::ByteCursorFromCString(PullRequestCommentMapper::GetNameForPullRequestComment(m_pullRequestComment).c_str()));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection CreateSyncConfigurationRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(
-      Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.codeconnections.CodeConnections_20231201.CreateSyncConfiguration"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

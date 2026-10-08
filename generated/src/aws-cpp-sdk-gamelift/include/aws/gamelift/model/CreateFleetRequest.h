@@ -274,7 +274,7 @@ class CreateFleetRequest : public GameLiftRequest {
   ///@{
   /**
    * <p>Instructions for how to launch and run server processes on the fleet. Set
-   * runtime configuration for managed EC2 fleets. For an Anywhere fleets, set this
+   * runtime configuration for managed EC2 fleets. For an Anywhere fleet, set this
    * parameter only if the fleet is running the Amazon GameLift Servers Agent. The
    * runtime configuration defines one or more server process configurations. Each
    * server process identifies a game executable or Realtime script file and the
@@ -503,7 +503,7 @@ class CreateFleetRequest : public GameLiftRequest {
   ///@{
   /**
    * <p>A list of labels to assign to the new fleet resource. Tags are
-   * developer-defined key-value pairs. Tagging Amazon Web Services resources are
+   * developer-defined key-value pairs. Tagging Amazon Web Services resources is
    * useful for resource management, access management and cost allocation. For more
    * information, see <a
    * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
@@ -595,13 +595,14 @@ class CreateFleetRequest : public GameLiftRequest {
   ///@{
   /**
    * <p>Configures player gateway for your fleet. Player gateway provides benefits
-   * such as DDoS protection by rate limiting and validating traﬃc before it reaches
-   * game servers, hiding game server IP addresses from players, and providing
-   * updated endpoints when relay endpoints become unhealthy. Note, player gateway is
-   * only available for fleets using server SDK 5.x or later game server builds.</p>
-   * <p> <b>How it works:</b> When enabled, game clients connect to relay endpoints
-   * instead of to your game servers. Player gateway validates player gateway tokens
-   * and routes traffic to the appropriate game server. Your game backend calls <a
+   * such as DDoS protection by rate limiting and validating traffic before it
+   * reaches game servers, hiding game server IP addresses from players, and
+   * providing updated endpoints when relay endpoints become unhealthy. Note, player
+   * gateway is only available for fleets using server SDK 5.x or later game server
+   * builds.</p> <p> <b>How it works:</b> When enabled, game clients connect to relay
+   * endpoints instead of to your game servers. Player gateway validates player
+   * gateway tokens and routes traffic to the appropriate game server. Your game
+   * backend calls <a
    * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetPlayerConnectionDetails.html">GetPlayerConnectionDetails</a>
    * to retrieve relay endpoints and player gateway tokens for your game clients. To
    * learn more about this topic, see <a

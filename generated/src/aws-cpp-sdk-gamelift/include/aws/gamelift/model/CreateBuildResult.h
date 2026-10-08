@@ -32,7 +32,7 @@ class CreateBuildResult {
 
   ///@{
   /**
-   * <p>The newly created build resource, including a unique build IDs and status.
+   * <p>The newly created build resource, including a unique build ID and status.
    * </p>
    */
   inline const Build& GetBuild() const { return m_build; }

@@ -630,6 +630,10 @@
 #include <aws/glue/model/GetSessionResult.h>
 #include <aws/glue/model/GetStatementRequest.h>
 #include <aws/glue/model/GetStatementResult.h>
+#include <aws/glue/model/GetSystemLogsForJobRunRequest.h>
+#include <aws/glue/model/GetSystemLogsForJobRunResult.h>
+#include <aws/glue/model/GetSystemLogsForSessionRequest.h>
+#include <aws/glue/model/GetSystemLogsForSessionResult.h>
 #include <aws/glue/model/GetTableOptimizerRequest.h>
 #include <aws/glue/model/GetTableOptimizerResult.h>
 #include <aws/glue/model/GetTableRequest.h>

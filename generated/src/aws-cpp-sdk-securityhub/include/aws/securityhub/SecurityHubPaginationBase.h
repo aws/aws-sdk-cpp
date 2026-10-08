@@ -26,6 +26,7 @@
 #include <aws/securityhub/model/ListConfigurationPoliciesPaginationTraits.h>
 #include <aws/securityhub/model/ListConfigurationPolicyAssociationsPaginationTraits.h>
 #include <aws/securityhub/model/ListEnabledProductsForImportPaginationTraits.h>
+#include <aws/securityhub/model/ListExportJobsV2PaginationTraits.h>
 #include <aws/securityhub/model/ListExposuresByRemediationV2PaginationTraits.h>
 #include <aws/securityhub/model/ListFindingAggregatorsPaginationTraits.h>
 #include <aws/securityhub/model/ListFreeTrialStatusesV2PaginationTraits.h>
@@ -265,6 +266,18 @@ class SecurityHubPaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEnabledProductsForImportRequest,
                                              Pagination::ListEnabledProductsForImportPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListExportJobsV2 operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListExportJobsV2Request,
+                                    Pagination::ListExportJobsV2PaginationTraits<DerivedClient>>
+  ListExportJobsV2Paginator(const Model::ListExportJobsV2Request& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListExportJobsV2Request,
+                                             Pagination::ListExportJobsV2PaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                          request};
   }
 
   /**

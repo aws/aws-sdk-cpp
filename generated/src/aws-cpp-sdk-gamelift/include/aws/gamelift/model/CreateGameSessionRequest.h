@@ -149,8 +149,8 @@ class CreateGameSessionRequest : public GameLiftRequest {
    * <p>If you add a resource creation limit policy to a fleet, the
    * <code>CreateGameSession</code> operation requires a <code>CreatorId</code>.
    * Amazon GameLift Servers limits the number of game session creation requests with
-   * the same <code>CreatorId</code> in a specified time period.</p> <p>If you your
-   * fleet doesn't have a resource creation limit policy and you provide a
+   * the same <code>CreatorId</code> in a specified time period.</p> <p>If your fleet
+   * doesn't have a resource creation limit policy and you provide a
    * <code>CreatorId</code> in your <code>CreateGameSession</code> requests, Amazon
    * GameLift Servers limits requests to one request per <code>CreatorId</code> per
    * second.</p> <p>To not limit <code>CreateGameSession</code> requests with the

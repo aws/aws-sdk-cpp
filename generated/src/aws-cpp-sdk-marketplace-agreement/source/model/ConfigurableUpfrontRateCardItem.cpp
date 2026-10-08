@@ -3,59 +3,181 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/marketplace-agreement/model/ConfigurableUpfrontRateCardItem.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace AgreementService {
 namespace Model {
 
-ConfigurableUpfrontRateCardItem::ConfigurableUpfrontRateCardItem(JsonView jsonValue) { *this = jsonValue; }
+ConfigurableUpfrontRateCardItem::ConfigurableUpfrontRateCardItem(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  *this = decoder;
+}
 
-ConfigurableUpfrontRateCardItem& ConfigurableUpfrontRateCardItem::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("selector")) {
-    m_selector = jsonValue.GetObject("selector");
-    m_selectorHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("constraints")) {
-    m_constraints = jsonValue.GetObject("constraints");
-    m_constraintsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("rateCard")) {
-    Aws::Utils::Array<JsonView> rateCardJsonList = jsonValue.GetArray("rateCard");
-    for (unsigned rateCardIndex = 0; rateCardIndex < rateCardJsonList.GetLength(); ++rateCardIndex) {
-      m_rateCard.push_back(rateCardJsonList[rateCardIndex].AsObject());
+ConfigurableUpfrontRateCardItem& ConfigurableUpfrontRateCardItem::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "selector") {
+                m_selector = Selector(decoder);
+                m_selectorHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "constraints") {
+                m_constraints = Constraints(decoder);
+                m_constraintsHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "rateCard") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_rateCard.push_back(RateCardItem(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_rateCard.push_back(RateCardItem(decoder));
+                    }
+                  }
+                }
+                m_rateCardHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("ConfigurableUpfrontRateCardItem", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "selector") {
+              m_selector = Selector(decoder);
+              m_selectorHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "constraints") {
+              m_constraints = Constraints(decoder);
+              m_constraintsHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "rateCard") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_rateCard.push_back(RateCardItem(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_rateCard.push_back(RateCardItem(decoder));
+                  }
+                }
+              }
+              m_rateCardHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
     }
-    m_rateCardHasBeenSet = true;
   }
+
   return *this;
 }
 
-JsonValue ConfigurableUpfrontRateCardItem::Jsonize() const {
-  JsonValue payload;
+void ConfigurableUpfrontRateCardItem::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_selectorHasBeenSet) {
+    mapSize++;
+  }
+  if (m_constraintsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_rateCardHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_selectorHasBeenSet) {
-    payload.WithObject("selector", m_selector.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("selector"));
+    m_selector.CborEncode(encoder);
   }
 
   if (m_constraintsHasBeenSet) {
-    payload.WithObject("constraints", m_constraints.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("constraints"));
+    m_constraints.CborEncode(encoder);
   }
 
   if (m_rateCardHasBeenSet) {
-    Aws::Utils::Array<JsonValue> rateCardJsonList(m_rateCard.size());
-    for (unsigned rateCardIndex = 0; rateCardIndex < rateCardJsonList.GetLength(); ++rateCardIndex) {
-      rateCardJsonList[rateCardIndex].AsObject(m_rateCard[rateCardIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("rateCard"));
+    encoder.WriteArrayStart(m_rateCard.size());
+    for (const auto& item_0 : m_rateCard) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("rateCard", std::move(rateCardJsonList));
   }
-
-  return payload;
 }
 
 }  // namespace Model

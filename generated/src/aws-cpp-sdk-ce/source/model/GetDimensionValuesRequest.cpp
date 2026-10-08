@@ -27,6 +27,10 @@ Aws::String GetDimensionValuesRequest::SerializePayload() const {
     payload.WithString("Dimension", DimensionMapper::GetNameForDimension(m_dimension));
   }
 
+  if (m_dimensionKeyHasBeenSet) {
+    payload.WithString("DimensionKey", m_dimensionKey);
+  }
+
   if (m_contextHasBeenSet) {
     payload.WithString("Context", ContextMapper::GetNameForContext(m_context));
   }

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/fms/FMS_EXPORTS.h>
 #include <aws/fms/model/EntryType.h>
 #include <aws/fms/model/NetworkAclEntry.h>
@@ -12,10 +13,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace FMS {
 namespace Model {
@@ -28,9 +28,9 @@ namespace Model {
 class EntryDescription {
  public:
   AWS_FMS_API EntryDescription() = default;
-  AWS_FMS_API EntryDescription(Aws::Utils::Json::JsonView jsonValue);
-  AWS_FMS_API EntryDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_FMS_API EntryDescription(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_FMS_API EntryDescription& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_FMS_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -65,13 +65,13 @@ class EntryDescription {
    * by rule number. In a Firewall Manager network ACL policy, Firewall Manager
    * assigns rule numbers. </p>
    */
-  inline int GetEntryRuleNumber() const { return m_entryRuleNumber; }
+  inline int64_t GetEntryRuleNumber() const { return m_entryRuleNumber; }
   inline bool EntryRuleNumberHasBeenSet() const { return m_entryRuleNumberHasBeenSet; }
-  inline void SetEntryRuleNumber(int value) {
+  inline void SetEntryRuleNumber(int64_t value) {
     m_entryRuleNumberHasBeenSet = true;
     m_entryRuleNumber = value;
   }
-  inline EntryDescription& WithEntryRuleNumber(int value) {
+  inline EntryDescription& WithEntryRuleNumber(int64_t value) {
     SetEntryRuleNumber(value);
     return *this;
   }
@@ -97,7 +97,7 @@ class EntryDescription {
  private:
   NetworkAclEntry m_entryDetail;
 
-  int m_entryRuleNumber{0};
+  int64_t m_entryRuleNumber{0};
 
   EntryType m_entryType{EntryType::NOT_SET};
   bool m_entryDetailHasBeenSet = false;

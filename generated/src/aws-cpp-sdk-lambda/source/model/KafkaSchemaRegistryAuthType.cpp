@@ -18,6 +18,7 @@ namespace KafkaSchemaRegistryAuthTypeMapper {
 static const int BASIC_AUTH_HASH = HashingUtils::HashString("BASIC_AUTH");
 static const int CLIENT_CERTIFICATE_TLS_AUTH_HASH = HashingUtils::HashString("CLIENT_CERTIFICATE_TLS_AUTH");
 static const int SERVER_ROOT_CA_CERTIFICATE_HASH = HashingUtils::HashString("SERVER_ROOT_CA_CERTIFICATE");
+static const int OAUTHBEARER_AUTH_HASH = HashingUtils::HashString("OAUTHBEARER_AUTH");
 
 KafkaSchemaRegistryAuthType GetKafkaSchemaRegistryAuthTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ KafkaSchemaRegistryAuthType GetKafkaSchemaRegistryAuthTypeForName(const Aws::Str
     return KafkaSchemaRegistryAuthType::CLIENT_CERTIFICATE_TLS_AUTH;
   } else if (hashCode == SERVER_ROOT_CA_CERTIFICATE_HASH) {
     return KafkaSchemaRegistryAuthType::SERVER_ROOT_CA_CERTIFICATE;
+  } else if (hashCode == OAUTHBEARER_AUTH_HASH) {
+    return KafkaSchemaRegistryAuthType::OAUTHBEARER_AUTH;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForKafkaSchemaRegistryAuthType(KafkaSchemaRegistryAuthType en
       return "CLIENT_CERTIFICATE_TLS_AUTH";
     case KafkaSchemaRegistryAuthType::SERVER_ROOT_CA_CERTIFICATE:
       return "SERVER_ROOT_CA_CERTIFICATE";
+    case KafkaSchemaRegistryAuthType::OAUTHBEARER_AUTH:
+      return "OAUTHBEARER_AUTH";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

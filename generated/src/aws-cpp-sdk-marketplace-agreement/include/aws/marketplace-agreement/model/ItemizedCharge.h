@@ -5,16 +5,16 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/marketplace-agreement/AgreementService_EXPORTS.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace AgreementService {
 namespace Model {
@@ -28,9 +28,9 @@ namespace Model {
 class ItemizedCharge {
  public:
   AWS_AGREEMENTSERVICE_API ItemizedCharge() = default;
-  AWS_AGREEMENTSERVICE_API ItemizedCharge(Aws::Utils::Json::JsonView jsonValue);
-  AWS_AGREEMENTSERVICE_API ItemizedCharge& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_AGREEMENTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_AGREEMENTSERVICE_API ItemizedCharge(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_AGREEMENTSERVICE_API ItemizedCharge& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_AGREEMENTSERVICE_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -54,13 +54,13 @@ class ItemizedCharge {
   /**
    * <p>The requested quantity for this dimension.</p>
    */
-  inline int GetNewQuantity() const { return m_newQuantity; }
+  inline int64_t GetNewQuantity() const { return m_newQuantity; }
   inline bool NewQuantityHasBeenSet() const { return m_newQuantityHasBeenSet; }
-  inline void SetNewQuantity(int value) {
+  inline void SetNewQuantity(int64_t value) {
     m_newQuantityHasBeenSet = true;
     m_newQuantity = value;
   }
-  inline ItemizedCharge& WithNewQuantity(int value) {
+  inline ItemizedCharge& WithNewQuantity(int64_t value) {
     SetNewQuantity(value);
     return *this;
   }
@@ -71,13 +71,13 @@ class ItemizedCharge {
    * <p>The existing quantity for this dimension from the source agreement. This
    * value is <code>0</code> for NEW intent.</p>
    */
-  inline int GetOldQuantity() const { return m_oldQuantity; }
+  inline int64_t GetOldQuantity() const { return m_oldQuantity; }
   inline bool OldQuantityHasBeenSet() const { return m_oldQuantityHasBeenSet; }
-  inline void SetOldQuantity(int value) {
+  inline void SetOldQuantity(int64_t value) {
     m_oldQuantityHasBeenSet = true;
     m_oldQuantity = value;
   }
-  inline ItemizedCharge& WithOldQuantity(int value) {
+  inline ItemizedCharge& WithOldQuantity(int64_t value) {
     SetOldQuantity(value);
     return *this;
   }
@@ -122,9 +122,9 @@ class ItemizedCharge {
  private:
   Aws::String m_dimensionKey;
 
-  int m_newQuantity{0};
+  int64_t m_newQuantity{0};
 
-  int m_oldQuantity{0};
+  int64_t m_oldQuantity{0};
 
   Aws::String m_chargeReference;
 

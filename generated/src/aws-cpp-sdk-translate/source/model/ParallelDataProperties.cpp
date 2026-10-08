@@ -3,173 +3,1017 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/translate/model/ParallelDataProperties.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace Translate {
 namespace Model {
 
-ParallelDataProperties::ParallelDataProperties(JsonView jsonValue) { *this = jsonValue; }
+ParallelDataProperties::ParallelDataProperties(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-ParallelDataProperties& ParallelDataProperties::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("Name")) {
-    m_name = jsonValue.GetString("Name");
-    m_nameHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("Arn")) {
-    m_arn = jsonValue.GetString("Arn");
-    m_arnHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("Description")) {
-    m_description = jsonValue.GetString("Description");
-    m_descriptionHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("Status")) {
-    m_status = ParallelDataStatusMapper::GetParallelDataStatusForName(jsonValue.GetString("Status"));
-    m_statusHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("SourceLanguageCode")) {
-    m_sourceLanguageCode = jsonValue.GetString("SourceLanguageCode");
-    m_sourceLanguageCodeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("TargetLanguageCodes")) {
-    Aws::Utils::Array<JsonView> targetLanguageCodesJsonList = jsonValue.GetArray("TargetLanguageCodes");
-    for (unsigned targetLanguageCodesIndex = 0; targetLanguageCodesIndex < targetLanguageCodesJsonList.GetLength();
-         ++targetLanguageCodesIndex) {
-      m_targetLanguageCodes.push_back(targetLanguageCodesJsonList[targetLanguageCodesIndex].AsString());
+ParallelDataProperties& ParallelDataProperties::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "Name") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_name = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_name = ss.str();
+                  }
+                }
+                m_nameHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "Arn") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_arn = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_arn = ss.str();
+                  }
+                }
+                m_arnHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "Description") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_description = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_description = ss.str();
+                  }
+                }
+                m_descriptionHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "Status") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_status = ParallelDataStatusMapper::GetParallelDataStatusForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_statusHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "SourceLanguageCode") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_sourceLanguageCode = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_sourceLanguageCode = ss.str();
+                  }
+                }
+                m_sourceLanguageCodeHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "TargetLanguageCodes") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        auto peekType_1 = decoder->PeekType();
+                        if (peekType_1.has_value()) {
+                          if (peekType_1.value() == Aws::Crt::Cbor::CborType::Text) {
+                            auto val = decoder->PopNextTextVal();
+                            if (val.has_value()) {
+                              m_targetLanguageCodes.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                            }
+                          } else {
+                            decoder->ConsumeNextSingleElement();
+                            Aws::StringStream ss_1;
+                            while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                              auto nextType_1 = decoder->PeekType();
+                              if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
+                                if (nextType_1.has_value()) {
+                                  decoder->ConsumeNextSingleElement();  // consume the Break
+                                }
+                                break;
+                              }
+                              auto val = decoder->PopNextTextVal();
+                              if (val.has_value()) {
+                                ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                              }
+                            }
+                            m_targetLanguageCodes.push_back(ss_1.str());
+                            ss_1.clear();
+                          }
+                        }
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto peekType_1 = decoder->PeekType();
+                      if (peekType_1.has_value()) {
+                        if (peekType_1.value() == Aws::Crt::Cbor::CborType::Text) {
+                          auto val = decoder->PopNextTextVal();
+                          if (val.has_value()) {
+                            m_targetLanguageCodes.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                          }
+                        } else {
+                          decoder->ConsumeNextSingleElement();
+                          Aws::StringStream ss_1;
+                          while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                            auto nextType_1 = decoder->PeekType();
+                            if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
+                              if (nextType_1.has_value()) {
+                                decoder->ConsumeNextSingleElement();  // consume the Break
+                              }
+                              break;
+                            }
+                            auto val = decoder->PopNextTextVal();
+                            if (val.has_value()) {
+                              ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                            }
+                          }
+                          m_targetLanguageCodes.push_back(ss_1.str());
+                          ss_1.clear();
+                        }
+                      }
+                    }
+                  }
+                }
+                m_targetLanguageCodesHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "ParallelDataConfig") {
+                m_parallelDataConfig = ParallelDataConfig(decoder);
+                m_parallelDataConfigHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "Message") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_message = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_message = ss.str();
+                  }
+                }
+                m_messageHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "ImportedDataSize") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_importedDataSize = static_cast<int64_t>(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextNegativeIntVal();
+                    if (val.has_value()) {
+                      m_importedDataSize = static_cast<int64_t>(1 - val.value());
+                    }
+                  }
+                }
+                m_importedDataSizeHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "ImportedRecordCount") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_importedRecordCount = static_cast<int64_t>(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextNegativeIntVal();
+                    if (val.has_value()) {
+                      m_importedRecordCount = static_cast<int64_t>(1 - val.value());
+                    }
+                  }
+                }
+                m_importedRecordCountHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "FailedRecordCount") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_failedRecordCount = static_cast<int64_t>(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextNegativeIntVal();
+                    if (val.has_value()) {
+                      m_failedRecordCount = static_cast<int64_t>(1 - val.value());
+                    }
+                  }
+                }
+                m_failedRecordCountHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "SkippedRecordCount") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_skippedRecordCount = static_cast<int64_t>(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextNegativeIntVal();
+                    if (val.has_value()) {
+                      m_skippedRecordCount = static_cast<int64_t>(1 - val.value());
+                    }
+                  }
+                }
+                m_skippedRecordCountHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "EncryptionKey") {
+                m_encryptionKey = EncryptionKey(decoder);
+                m_encryptionKeyHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "CreatedAt") {
+                auto tag = decoder->PopNextTagVal();
+                if (tag.has_value() &&
+                    tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+                {
+                  auto dateType = decoder->PeekType();
+                  if (dateType.has_value()) {
+                    if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                      auto val = decoder->PopNextFloatVal();
+                      if (val.has_value()) {
+                        m_createdAt = Aws::Utils::DateTime(val.value());
+                      }
+                    } else {
+                      auto val = decoder->PopNextUnsignedIntVal();
+                      if (val.has_value()) {
+                        m_createdAt = Aws::Utils::DateTime(val.value());
+                      }
+                    }
+                  }
+                }
+                m_createdAtHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "LastUpdatedAt") {
+                auto tag = decoder->PopNextTagVal();
+                if (tag.has_value() &&
+                    tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+                {
+                  auto dateType = decoder->PeekType();
+                  if (dateType.has_value()) {
+                    if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                      auto val = decoder->PopNextFloatVal();
+                      if (val.has_value()) {
+                        m_lastUpdatedAt = Aws::Utils::DateTime(val.value());
+                      }
+                    } else {
+                      auto val = decoder->PopNextUnsignedIntVal();
+                      if (val.has_value()) {
+                        m_lastUpdatedAt = Aws::Utils::DateTime(val.value());
+                      }
+                    }
+                  }
+                }
+                m_lastUpdatedAtHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "LatestUpdateAttemptStatus") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_latestUpdateAttemptStatus = ParallelDataStatusMapper::GetParallelDataStatusForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_latestUpdateAttemptStatusHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "LatestUpdateAttemptAt") {
+                auto tag = decoder->PopNextTagVal();
+                if (tag.has_value() &&
+                    tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+                {
+                  auto dateType = decoder->PeekType();
+                  if (dateType.has_value()) {
+                    if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                      auto val = decoder->PopNextFloatVal();
+                      if (val.has_value()) {
+                        m_latestUpdateAttemptAt = Aws::Utils::DateTime(val.value());
+                      }
+                    } else {
+                      auto val = decoder->PopNextUnsignedIntVal();
+                      if (val.has_value()) {
+                        m_latestUpdateAttemptAt = Aws::Utils::DateTime(val.value());
+                      }
+                    }
+                  }
+                }
+                m_latestUpdateAttemptAtHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("ParallelDataProperties", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "Name") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_name = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_name = ss.str();
+                }
+              }
+              m_nameHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "Arn") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_arn = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_arn = ss.str();
+                }
+              }
+              m_arnHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "Description") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_description = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_description = ss.str();
+                }
+              }
+              m_descriptionHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "Status") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_status = ParallelDataStatusMapper::GetParallelDataStatusForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_statusHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "SourceLanguageCode") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_sourceLanguageCode = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_sourceLanguageCode = ss.str();
+                }
+              }
+              m_sourceLanguageCodeHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "TargetLanguageCodes") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      auto peekType_1 = decoder->PeekType();
+                      if (peekType_1.has_value()) {
+                        if (peekType_1.value() == Aws::Crt::Cbor::CborType::Text) {
+                          auto val = decoder->PopNextTextVal();
+                          if (val.has_value()) {
+                            m_targetLanguageCodes.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                          }
+                        } else {
+                          decoder->ConsumeNextSingleElement();
+                          Aws::StringStream ss_1;
+                          while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                            auto nextType_1 = decoder->PeekType();
+                            if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
+                              if (nextType_1.has_value()) {
+                                decoder->ConsumeNextSingleElement();  // consume the Break
+                              }
+                              break;
+                            }
+                            auto val = decoder->PopNextTextVal();
+                            if (val.has_value()) {
+                              ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                            }
+                          }
+                          m_targetLanguageCodes.push_back(ss_1.str());
+                          ss_1.clear();
+                        }
+                      }
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto peekType_1 = decoder->PeekType();
+                    if (peekType_1.has_value()) {
+                      if (peekType_1.value() == Aws::Crt::Cbor::CborType::Text) {
+                        auto val = decoder->PopNextTextVal();
+                        if (val.has_value()) {
+                          m_targetLanguageCodes.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                        }
+                      } else {
+                        decoder->ConsumeNextSingleElement();
+                        Aws::StringStream ss_1;
+                        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                          auto nextType_1 = decoder->PeekType();
+                          if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
+                            if (nextType_1.has_value()) {
+                              decoder->ConsumeNextSingleElement();  // consume the Break
+                            }
+                            break;
+                          }
+                          auto val = decoder->PopNextTextVal();
+                          if (val.has_value()) {
+                            ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                          }
+                        }
+                        m_targetLanguageCodes.push_back(ss_1.str());
+                        ss_1.clear();
+                      }
+                    }
+                  }
+                }
+              }
+              m_targetLanguageCodesHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "ParallelDataConfig") {
+              m_parallelDataConfig = ParallelDataConfig(decoder);
+              m_parallelDataConfigHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "Message") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_message = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_message = ss.str();
+                }
+              }
+              m_messageHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "ImportedDataSize") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
+                  auto val = decoder->PopNextUnsignedIntVal();
+                  if (val.has_value()) {
+                    m_importedDataSize = static_cast<int64_t>(val.value());
+                  }
+                } else {
+                  auto val = decoder->PopNextNegativeIntVal();
+                  if (val.has_value()) {
+                    m_importedDataSize = static_cast<int64_t>(1 - val.value());
+                  }
+                }
+              }
+              m_importedDataSizeHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "ImportedRecordCount") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
+                  auto val = decoder->PopNextUnsignedIntVal();
+                  if (val.has_value()) {
+                    m_importedRecordCount = static_cast<int64_t>(val.value());
+                  }
+                } else {
+                  auto val = decoder->PopNextNegativeIntVal();
+                  if (val.has_value()) {
+                    m_importedRecordCount = static_cast<int64_t>(1 - val.value());
+                  }
+                }
+              }
+              m_importedRecordCountHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "FailedRecordCount") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
+                  auto val = decoder->PopNextUnsignedIntVal();
+                  if (val.has_value()) {
+                    m_failedRecordCount = static_cast<int64_t>(val.value());
+                  }
+                } else {
+                  auto val = decoder->PopNextNegativeIntVal();
+                  if (val.has_value()) {
+                    m_failedRecordCount = static_cast<int64_t>(1 - val.value());
+                  }
+                }
+              }
+              m_failedRecordCountHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "SkippedRecordCount") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
+                  auto val = decoder->PopNextUnsignedIntVal();
+                  if (val.has_value()) {
+                    m_skippedRecordCount = static_cast<int64_t>(val.value());
+                  }
+                } else {
+                  auto val = decoder->PopNextNegativeIntVal();
+                  if (val.has_value()) {
+                    m_skippedRecordCount = static_cast<int64_t>(1 - val.value());
+                  }
+                }
+              }
+              m_skippedRecordCountHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "EncryptionKey") {
+              m_encryptionKey = EncryptionKey(decoder);
+              m_encryptionKeyHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "CreatedAt") {
+              auto tag = decoder->PopNextTagVal();
+              if (tag.has_value() &&
+                  tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+              {
+                auto dateType = decoder->PeekType();
+                if (dateType.has_value()) {
+                  if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                    auto val = decoder->PopNextFloatVal();
+                    if (val.has_value()) {
+                      m_createdAt = Aws::Utils::DateTime(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_createdAt = Aws::Utils::DateTime(val.value());
+                    }
+                  }
+                }
+              }
+              m_createdAtHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "LastUpdatedAt") {
+              auto tag = decoder->PopNextTagVal();
+              if (tag.has_value() &&
+                  tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+              {
+                auto dateType = decoder->PeekType();
+                if (dateType.has_value()) {
+                  if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                    auto val = decoder->PopNextFloatVal();
+                    if (val.has_value()) {
+                      m_lastUpdatedAt = Aws::Utils::DateTime(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_lastUpdatedAt = Aws::Utils::DateTime(val.value());
+                    }
+                  }
+                }
+              }
+              m_lastUpdatedAtHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "LatestUpdateAttemptStatus") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_latestUpdateAttemptStatus = ParallelDataStatusMapper::GetParallelDataStatusForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_latestUpdateAttemptStatusHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "LatestUpdateAttemptAt") {
+              auto tag = decoder->PopNextTagVal();
+              if (tag.has_value() &&
+                  tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+              {
+                auto dateType = decoder->PeekType();
+                if (dateType.has_value()) {
+                  if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                    auto val = decoder->PopNextFloatVal();
+                    if (val.has_value()) {
+                      m_latestUpdateAttemptAt = Aws::Utils::DateTime(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_latestUpdateAttemptAt = Aws::Utils::DateTime(val.value());
+                    }
+                  }
+                }
+              }
+              m_latestUpdateAttemptAtHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
     }
-    m_targetLanguageCodesHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("ParallelDataConfig")) {
-    m_parallelDataConfig = jsonValue.GetObject("ParallelDataConfig");
-    m_parallelDataConfigHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("Message")) {
-    m_message = jsonValue.GetString("Message");
-    m_messageHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ImportedDataSize")) {
-    m_importedDataSize = jsonValue.GetInt64("ImportedDataSize");
-    m_importedDataSizeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ImportedRecordCount")) {
-    m_importedRecordCount = jsonValue.GetInt64("ImportedRecordCount");
-    m_importedRecordCountHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("FailedRecordCount")) {
-    m_failedRecordCount = jsonValue.GetInt64("FailedRecordCount");
-    m_failedRecordCountHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("SkippedRecordCount")) {
-    m_skippedRecordCount = jsonValue.GetInt64("SkippedRecordCount");
-    m_skippedRecordCountHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("EncryptionKey")) {
-    m_encryptionKey = jsonValue.GetObject("EncryptionKey");
-    m_encryptionKeyHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("CreatedAt")) {
-    m_createdAt = jsonValue.GetDouble("CreatedAt");
-    m_createdAtHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("LastUpdatedAt")) {
-    m_lastUpdatedAt = jsonValue.GetDouble("LastUpdatedAt");
-    m_lastUpdatedAtHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("LatestUpdateAttemptStatus")) {
-    m_latestUpdateAttemptStatus = ParallelDataStatusMapper::GetParallelDataStatusForName(jsonValue.GetString("LatestUpdateAttemptStatus"));
-    m_latestUpdateAttemptStatusHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("LatestUpdateAttemptAt")) {
-    m_latestUpdateAttemptAt = jsonValue.GetDouble("LatestUpdateAttemptAt");
-    m_latestUpdateAttemptAtHasBeenSet = true;
-  }
+
   return *this;
 }
 
-JsonValue ParallelDataProperties::Jsonize() const {
-  JsonValue payload;
+void ParallelDataProperties::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_nameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_arnHasBeenSet) {
+    mapSize++;
+  }
+  if (m_descriptionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_statusHasBeenSet) {
+    mapSize++;
+  }
+  if (m_sourceLanguageCodeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_targetLanguageCodesHasBeenSet) {
+    mapSize++;
+  }
+  if (m_parallelDataConfigHasBeenSet) {
+    mapSize++;
+  }
+  if (m_messageHasBeenSet) {
+    mapSize++;
+  }
+  if (m_importedDataSizeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_importedRecordCountHasBeenSet) {
+    mapSize++;
+  }
+  if (m_failedRecordCountHasBeenSet) {
+    mapSize++;
+  }
+  if (m_skippedRecordCountHasBeenSet) {
+    mapSize++;
+  }
+  if (m_encryptionKeyHasBeenSet) {
+    mapSize++;
+  }
+  if (m_createdAtHasBeenSet) {
+    mapSize++;
+  }
+  if (m_lastUpdatedAtHasBeenSet) {
+    mapSize++;
+  }
+  if (m_latestUpdateAttemptStatusHasBeenSet) {
+    mapSize++;
+  }
+  if (m_latestUpdateAttemptAtHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_nameHasBeenSet) {
-    payload.WithString("Name", m_name);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Name"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_name.c_str()));
   }
 
   if (m_arnHasBeenSet) {
-    payload.WithString("Arn", m_arn);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Arn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_arn.c_str()));
   }
 
   if (m_descriptionHasBeenSet) {
-    payload.WithString("Description", m_description);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Description"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_description.c_str()));
   }
 
   if (m_statusHasBeenSet) {
-    payload.WithString("Status", ParallelDataStatusMapper::GetNameForParallelDataStatus(m_status));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Status"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(ParallelDataStatusMapper::GetNameForParallelDataStatus(m_status).c_str()));
   }
 
   if (m_sourceLanguageCodeHasBeenSet) {
-    payload.WithString("SourceLanguageCode", m_sourceLanguageCode);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("SourceLanguageCode"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_sourceLanguageCode.c_str()));
   }
 
   if (m_targetLanguageCodesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> targetLanguageCodesJsonList(m_targetLanguageCodes.size());
-    for (unsigned targetLanguageCodesIndex = 0; targetLanguageCodesIndex < targetLanguageCodesJsonList.GetLength();
-         ++targetLanguageCodesIndex) {
-      targetLanguageCodesJsonList[targetLanguageCodesIndex].AsString(m_targetLanguageCodes[targetLanguageCodesIndex]);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("TargetLanguageCodes"));
+    encoder.WriteArrayStart(m_targetLanguageCodes.size());
+    for (const auto& item_0 : m_targetLanguageCodes) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
     }
-    payload.WithArray("TargetLanguageCodes", std::move(targetLanguageCodesJsonList));
   }
 
   if (m_parallelDataConfigHasBeenSet) {
-    payload.WithObject("ParallelDataConfig", m_parallelDataConfig.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ParallelDataConfig"));
+    m_parallelDataConfig.CborEncode(encoder);
   }
 
   if (m_messageHasBeenSet) {
-    payload.WithString("Message", m_message);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Message"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_message.c_str()));
   }
 
   if (m_importedDataSizeHasBeenSet) {
-    payload.WithInt64("ImportedDataSize", m_importedDataSize);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ImportedDataSize"));
+    (m_importedDataSize >= 0) ? encoder.WriteUInt(m_importedDataSize) : encoder.WriteNegInt(m_importedDataSize);
   }
 
   if (m_importedRecordCountHasBeenSet) {
-    payload.WithInt64("ImportedRecordCount", m_importedRecordCount);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ImportedRecordCount"));
+    (m_importedRecordCount >= 0) ? encoder.WriteUInt(m_importedRecordCount) : encoder.WriteNegInt(m_importedRecordCount);
   }
 
   if (m_failedRecordCountHasBeenSet) {
-    payload.WithInt64("FailedRecordCount", m_failedRecordCount);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("FailedRecordCount"));
+    (m_failedRecordCount >= 0) ? encoder.WriteUInt(m_failedRecordCount) : encoder.WriteNegInt(m_failedRecordCount);
   }
 
   if (m_skippedRecordCountHasBeenSet) {
-    payload.WithInt64("SkippedRecordCount", m_skippedRecordCount);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("SkippedRecordCount"));
+    (m_skippedRecordCount >= 0) ? encoder.WriteUInt(m_skippedRecordCount) : encoder.WriteNegInt(m_skippedRecordCount);
   }
 
   if (m_encryptionKeyHasBeenSet) {
-    payload.WithObject("EncryptionKey", m_encryptionKey.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("EncryptionKey"));
+    m_encryptionKey.CborEncode(encoder);
   }
 
   if (m_createdAtHasBeenSet) {
-    payload.WithDouble("CreatedAt", m_createdAt.SecondsWithMSPrecision());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("CreatedAt"));
+    encoder.WriteTag(1);  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+    encoder.WriteUInt(m_createdAt.Seconds());
   }
 
   if (m_lastUpdatedAtHasBeenSet) {
-    payload.WithDouble("LastUpdatedAt", m_lastUpdatedAt.SecondsWithMSPrecision());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("LastUpdatedAt"));
+    encoder.WriteTag(1);  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+    encoder.WriteUInt(m_lastUpdatedAt.Seconds());
   }
 
   if (m_latestUpdateAttemptStatusHasBeenSet) {
-    payload.WithString("LatestUpdateAttemptStatus", ParallelDataStatusMapper::GetNameForParallelDataStatus(m_latestUpdateAttemptStatus));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("LatestUpdateAttemptStatus"));
+    encoder.WriteText(
+        Aws::Crt::ByteCursorFromCString(ParallelDataStatusMapper::GetNameForParallelDataStatus(m_latestUpdateAttemptStatus).c_str()));
   }
 
   if (m_latestUpdateAttemptAtHasBeenSet) {
-    payload.WithDouble("LatestUpdateAttemptAt", m_latestUpdateAttemptAt.SecondsWithMSPrecision());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("LatestUpdateAttemptAt"));
+    encoder.WriteTag(1);  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+    encoder.WriteUInt(m_latestUpdateAttemptAt.Seconds());
   }
-
-  return payload;
 }
 
 }  // namespace Model

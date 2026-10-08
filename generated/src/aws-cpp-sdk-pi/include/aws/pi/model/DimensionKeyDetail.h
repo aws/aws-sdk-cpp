@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/pi/PI_EXPORTS.h>
 #include <aws/pi/model/DetailStatus.h>
 
@@ -12,10 +13,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace PI {
 namespace Model {
@@ -29,9 +29,9 @@ namespace Model {
 class DimensionKeyDetail {
  public:
   AWS_PI_API DimensionKeyDetail() = default;
-  AWS_PI_API DimensionKeyDetail(Aws::Utils::Json::JsonView jsonValue);
-  AWS_PI_API DimensionKeyDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_PI_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_PI_API DimensionKeyDetail(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_PI_API DimensionKeyDetail& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_PI_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

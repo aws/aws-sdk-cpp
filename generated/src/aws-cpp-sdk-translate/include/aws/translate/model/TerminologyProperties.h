@@ -7,6 +7,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/translate/Translate_EXPORTS.h>
 #include <aws/translate/model/Directionality.h>
 #include <aws/translate/model/EncryptionKey.h>
@@ -16,10 +17,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace Translate {
 namespace Model {
@@ -32,9 +32,9 @@ namespace Model {
 class TerminologyProperties {
  public:
   AWS_TRANSLATE_API TerminologyProperties() = default;
-  AWS_TRANSLATE_API TerminologyProperties(Aws::Utils::Json::JsonView jsonValue);
-  AWS_TRANSLATE_API TerminologyProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_TRANSLATE_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_TRANSLATE_API TerminologyProperties(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_TRANSLATE_API TerminologyProperties& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_TRANSLATE_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -156,13 +156,13 @@ class TerminologyProperties {
   /**
    * <p>The size of the file used when importing a custom terminology.</p>
    */
-  inline int GetSizeBytes() const { return m_sizeBytes; }
+  inline int64_t GetSizeBytes() const { return m_sizeBytes; }
   inline bool SizeBytesHasBeenSet() const { return m_sizeBytesHasBeenSet; }
-  inline void SetSizeBytes(int value) {
+  inline void SetSizeBytes(int64_t value) {
     m_sizeBytesHasBeenSet = true;
     m_sizeBytes = value;
   }
-  inline TerminologyProperties& WithSizeBytes(int value) {
+  inline TerminologyProperties& WithSizeBytes(int64_t value) {
     SetSizeBytes(value);
     return *this;
   }
@@ -172,13 +172,13 @@ class TerminologyProperties {
   /**
    * <p>The number of terms included in the custom terminology.</p>
    */
-  inline int GetTermCount() const { return m_termCount; }
+  inline int64_t GetTermCount() const { return m_termCount; }
   inline bool TermCountHasBeenSet() const { return m_termCountHasBeenSet; }
-  inline void SetTermCount(int value) {
+  inline void SetTermCount(int64_t value) {
     m_termCountHasBeenSet = true;
     m_termCount = value;
   }
-  inline TerminologyProperties& WithTermCount(int value) {
+  inline TerminologyProperties& WithTermCount(int64_t value) {
     SetTermCount(value);
     return *this;
   }
@@ -267,13 +267,13 @@ class TerminologyProperties {
    * <p>The number of terms in the input file that Amazon Translate skipped when you
    * created or updated the terminology resource.</p>
    */
-  inline int GetSkippedTermCount() const { return m_skippedTermCount; }
+  inline int64_t GetSkippedTermCount() const { return m_skippedTermCount; }
   inline bool SkippedTermCountHasBeenSet() const { return m_skippedTermCountHasBeenSet; }
-  inline void SetSkippedTermCount(int value) {
+  inline void SetSkippedTermCount(int64_t value) {
     m_skippedTermCountHasBeenSet = true;
     m_skippedTermCount = value;
   }
-  inline TerminologyProperties& WithSkippedTermCount(int value) {
+  inline TerminologyProperties& WithSkippedTermCount(int64_t value) {
     SetSkippedTermCount(value);
     return *this;
   }
@@ -307,9 +307,9 @@ class TerminologyProperties {
 
   EncryptionKey m_encryptionKey;
 
-  int m_sizeBytes{0};
+  int64_t m_sizeBytes{0};
 
-  int m_termCount{0};
+  int64_t m_termCount{0};
 
   Aws::Utils::DateTime m_createdAt{};
 
@@ -319,7 +319,7 @@ class TerminologyProperties {
 
   Aws::String m_message;
 
-  int m_skippedTermCount{0};
+  int64_t m_skippedTermCount{0};
 
   TerminologyDataFormat m_format{TerminologyDataFormat::NOT_SET};
   bool m_nameHasBeenSet = false;

@@ -20,6 +20,8 @@
 #include <aws/glue/GlueClient.h>
 #include <aws/glue/GlueEndpointProvider.h>
 #include <aws/glue/GlueErrorMarshaller.h>
+#include <aws/glue/model/ListDataQualityRuleRecommendationRunsRequest.h>
+#include <aws/glue/model/ListDataQualityRulesetEvaluationRunsRequest.h>
 #include <aws/glue/model/ListDataQualityRulesetsRequest.h>
 #include <aws/glue/model/ListDataQualityStatisticAnnotationsRequest.h>
 #include <aws/glue/model/ListDataQualityStatisticsRequest.h>
@@ -118,8 +120,6 @@
 #include <aws/glue/model/UpdateTableRequest.h>
 #include <aws/glue/model/UpdateTriggerRequest.h>
 #include <aws/glue/model/UpdateUsageProfileRequest.h>
-#include <aws/glue/model/UpdateUserDefinedFunctionRequest.h>
-#include <aws/glue/model/UpdateWorkflowRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,20 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+ListDataQualityRuleRecommendationRunsOutcome GlueClient::ListDataQualityRuleRecommendationRuns(
+    const ListDataQualityRuleRecommendationRunsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDataQualityRuleRecommendationRunsOutcome(result.GetResultWithOwnership())
+                            : ListDataQualityRuleRecommendationRunsOutcome(std::move(result.GetError()));
+}
+
+ListDataQualityRulesetEvaluationRunsOutcome GlueClient::ListDataQualityRulesetEvaluationRuns(
+    const ListDataQualityRulesetEvaluationRunsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDataQualityRulesetEvaluationRunsOutcome(result.GetResultWithOwnership())
+                            : ListDataQualityRulesetEvaluationRunsOutcome(std::move(result.GetError()));
+}
 
 ListDataQualityRulesetsOutcome GlueClient::ListDataQualityRulesets(const ListDataQualityRulesetsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -702,15 +716,4 @@ UpdateUsageProfileOutcome GlueClient::UpdateUsageProfile(const UpdateUsageProfil
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UpdateUsageProfileOutcome(result.GetResultWithOwnership())
                             : UpdateUsageProfileOutcome(std::move(result.GetError()));
-}
-
-UpdateUserDefinedFunctionOutcome GlueClient::UpdateUserDefinedFunction(const UpdateUserDefinedFunctionRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? UpdateUserDefinedFunctionOutcome(result.GetResultWithOwnership())
-                            : UpdateUserDefinedFunctionOutcome(std::move(result.GetError()));
-}
-
-UpdateWorkflowOutcome GlueClient::UpdateWorkflow(const UpdateWorkflowRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? UpdateWorkflowOutcome(result.GetResultWithOwnership()) : UpdateWorkflowOutcome(std::move(result.GetError()));
 }

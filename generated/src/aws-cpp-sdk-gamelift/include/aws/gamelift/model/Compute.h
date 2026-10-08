@@ -27,7 +27,7 @@ namespace Model {
 
 /**
  * <p>An Amazon GameLift Servers compute resource for hosting your game servers.
- * Computes in an Amazon GameLift Servers fleet differs depending on the fleet's
+ * Computes in an Amazon GameLift Servers fleet differ depending on the fleet's
  * compute type property as follows: </p> <ul> <li> <p>For managed EC2 fleets, a
  * compute is an EC2 instance.</p> </li> <li> <p>For Anywhere fleets, a compute is
  * a computing resource that you provide and is registered to the fleet.</p> </li>

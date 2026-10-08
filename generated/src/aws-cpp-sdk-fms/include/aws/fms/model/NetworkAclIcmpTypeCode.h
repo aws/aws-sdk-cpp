@@ -4,14 +4,14 @@
  */
 
 #pragma once
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/fms/FMS_EXPORTS.h>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace FMS {
 namespace Model {
@@ -24,21 +24,21 @@ namespace Model {
 class NetworkAclIcmpTypeCode {
  public:
   AWS_FMS_API NetworkAclIcmpTypeCode() = default;
-  AWS_FMS_API NetworkAclIcmpTypeCode(Aws::Utils::Json::JsonView jsonValue);
-  AWS_FMS_API NetworkAclIcmpTypeCode& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_FMS_API NetworkAclIcmpTypeCode(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_FMS_API NetworkAclIcmpTypeCode& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_FMS_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
    * <p>ICMP code. </p>
    */
-  inline int GetCode() const { return m_code; }
+  inline int64_t GetCode() const { return m_code; }
   inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-  inline void SetCode(int value) {
+  inline void SetCode(int64_t value) {
     m_codeHasBeenSet = true;
     m_code = value;
   }
-  inline NetworkAclIcmpTypeCode& WithCode(int value) {
+  inline NetworkAclIcmpTypeCode& WithCode(int64_t value) {
     SetCode(value);
     return *this;
   }
@@ -48,21 +48,21 @@ class NetworkAclIcmpTypeCode {
   /**
    * <p>ICMP type. </p>
    */
-  inline int GetType() const { return m_type; }
+  inline int64_t GetType() const { return m_type; }
   inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-  inline void SetType(int value) {
+  inline void SetType(int64_t value) {
     m_typeHasBeenSet = true;
     m_type = value;
   }
-  inline NetworkAclIcmpTypeCode& WithType(int value) {
+  inline NetworkAclIcmpTypeCode& WithType(int64_t value) {
     SetType(value);
     return *this;
   }
   ///@}
  private:
-  int m_code{0};
+  int64_t m_code{0};
 
-  int m_type{0};
+  int64_t m_type{0};
   bool m_codeHasBeenSet = false;
   bool m_typeHasBeenSet = false;
 };

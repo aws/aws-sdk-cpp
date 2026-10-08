@@ -28,6 +28,7 @@
 #include <aws/security-ir/model/GetCaseAttachmentDownloadUrlResult.h>
 #include <aws/security-ir/model/GetCaseAttachmentUploadUrlResult.h>
 #include <aws/security-ir/model/GetCaseResult.h>
+#include <aws/security-ir/model/GetFindingMetricsResult.h>
 #include <aws/security-ir/model/GetMembershipResult.h>
 #include <aws/security-ir/model/ListCaseEditsResult.h>
 #include <aws/security-ir/model/ListCasesRequest.h>
@@ -87,6 +88,7 @@ class CreateMembershipRequest;
 class GetCaseRequest;
 class GetCaseAttachmentDownloadUrlRequest;
 class GetCaseAttachmentUploadUrlRequest;
+class GetFindingMetricsRequest;
 class GetMembershipRequest;
 class ListCaseEditsRequest;
 class ListCasesRequest;
@@ -114,6 +116,7 @@ typedef Aws::Utils::Outcome<CreateMembershipResult, SecurityIRError> CreateMembe
 typedef Aws::Utils::Outcome<GetCaseResult, SecurityIRError> GetCaseOutcome;
 typedef Aws::Utils::Outcome<GetCaseAttachmentDownloadUrlResult, SecurityIRError> GetCaseAttachmentDownloadUrlOutcome;
 typedef Aws::Utils::Outcome<GetCaseAttachmentUploadUrlResult, SecurityIRError> GetCaseAttachmentUploadUrlOutcome;
+typedef Aws::Utils::Outcome<GetFindingMetricsResult, SecurityIRError> GetFindingMetricsOutcome;
 typedef Aws::Utils::Outcome<GetMembershipResult, SecurityIRError> GetMembershipOutcome;
 typedef Aws::Utils::Outcome<ListCaseEditsResult, SecurityIRError> ListCaseEditsOutcome;
 typedef Aws::Utils::Outcome<ListCasesResult, SecurityIRError> ListCasesOutcome;
@@ -141,6 +144,7 @@ typedef std::future<CreateMembershipOutcome> CreateMembershipOutcomeCallable;
 typedef std::future<GetCaseOutcome> GetCaseOutcomeCallable;
 typedef std::future<GetCaseAttachmentDownloadUrlOutcome> GetCaseAttachmentDownloadUrlOutcomeCallable;
 typedef std::future<GetCaseAttachmentUploadUrlOutcome> GetCaseAttachmentUploadUrlOutcomeCallable;
+typedef std::future<GetFindingMetricsOutcome> GetFindingMetricsOutcomeCallable;
 typedef std::future<GetMembershipOutcome> GetMembershipOutcomeCallable;
 typedef std::future<ListCaseEditsOutcome> ListCaseEditsOutcomeCallable;
 typedef std::future<ListCasesOutcome> ListCasesOutcomeCallable;
@@ -191,6 +195,9 @@ typedef std::function<void(const SecurityIRClient*, const Model::GetCaseAttachme
 typedef std::function<void(const SecurityIRClient*, const Model::GetCaseAttachmentUploadUrlRequest&,
                            const Model::GetCaseAttachmentUploadUrlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetCaseAttachmentUploadUrlResponseReceivedHandler;
+typedef std::function<void(const SecurityIRClient*, const Model::GetFindingMetricsRequest&, const Model::GetFindingMetricsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetFindingMetricsResponseReceivedHandler;
 typedef std::function<void(const SecurityIRClient*, const Model::GetMembershipRequest&, const Model::GetMembershipOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetMembershipResponseReceivedHandler;

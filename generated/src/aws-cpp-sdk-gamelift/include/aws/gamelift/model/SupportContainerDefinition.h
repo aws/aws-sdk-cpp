@@ -234,7 +234,7 @@ class SupportContainerDefinition {
   ///@{
   /**
    * <p>A set of ports that allow access to the container from external users.
-   * Processes running in the container can bind to a one of these ports. Container
+   * Processes running in the container can bind to one of these ports. Container
    * ports aren't directly accessed by inbound traffic. Amazon GameLift Servers maps
    * these container ports to externally accessible connection ports, which are
    * assigned as needed from the container fleet's

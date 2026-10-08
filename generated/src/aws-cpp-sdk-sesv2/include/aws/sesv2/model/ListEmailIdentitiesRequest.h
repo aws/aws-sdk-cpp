@@ -39,7 +39,8 @@ class ListEmailIdentitiesRequest : public SESV2Request {
   ///@{
   /**
    * <p>An object that contains filters to apply when listing email identities. You
-   * can filter by identity name, identity type, or verification status.</p>
+   * can filter by a substring of the identity name, by identity type, or by
+   * verification status.</p>
    */
   inline const Aws::Map<IdentityFilterKey, Aws::String>& GetFilter() const { return m_filter; }
   inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }

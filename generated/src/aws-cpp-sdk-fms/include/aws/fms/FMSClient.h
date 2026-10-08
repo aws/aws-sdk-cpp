@@ -7,7 +7,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/fms/FMSPaginationBase.h>
 #include <aws/fms/FMSServiceClientModel.h>
 #include <aws/fms/FMSWaiter.h>
@@ -26,12 +26,12 @@ namespace FMS {
  * href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-security_iam_service-with-iam.html#fms-security_iam_service-with-iam-roles-service">Service
  * roles for Firewall Manager</a>. </p>
  */
-class AWS_FMS_API FMSClient : public Aws::Client::AWSJsonClient,
+class AWS_FMS_API FMSClient : public Aws::Client::AWSRpcV2CborClient,
                               public Aws::Client::ClientWithAsyncTemplateMethods<FMSClient>,
                               public FMSPaginationBase<FMSClient>,
                               public FMSWaiter<FMSClient> {
  public:
-  typedef Aws::Client::AWSJsonClient BASECLASS;
+  typedef Aws::Client::AWSRpcV2CborClient BASECLASS;
   static const char* GetServiceName();
   static const char* GetAllocationTag();
 

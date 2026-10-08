@@ -520,9 +520,16 @@ class AWS_SESV2_API SESV2Client : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Creates an export job for a data source and destination.</p> <p>You can
-   * execute this operation no more than once per second.</p><p><h3>See Also:</h3>
-   * <a
+   * <p>Creates an export job for a data source and destination.</p> <p>Export jobs
+   * run asynchronously. This operation returns a <code>JobId</code>. Call
+   * <code>GetExportJob</code> with that ID until <code>JobStatus</code> is
+   * <code>COMPLETED</code>, <code>FAILED</code>, or <code>CANCELLED</code>. When the
+   * status is <code>COMPLETED</code>, download the export file from the pre-signed
+   * URL in <code>ExportDestination.S3Url</code>. When the status is
+   * <code>FAILED</code>, see <code>FailureInfo</code>. To store a copy in your own
+   * bucket, upload the downloaded file to your bucket. Do not include
+   * <code>S3Url</code> in the request.</p> <p>You can execute this operation no more
+   * than once per second.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateExportJob">AWS
    * API Reference</a></p>
    */
@@ -1637,7 +1644,10 @@ class AWS_SESV2_API SESV2Client : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Provides information about an export job.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides information about an export job.</p> <p>When the job status is
+   * <code>COMPLETED</code>, the response includes a pre-signed URL in
+   * <code>ExportDestination.S3Url</code> that you use to download the export
+   * file.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetExportJob">AWS
    * API Reference</a></p>
    */

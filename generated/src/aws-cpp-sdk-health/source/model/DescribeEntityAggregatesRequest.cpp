@@ -3,31 +3,41 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/health/model/DescribeEntityAggregatesRequest.h>
 
 #include <utility>
 
 using namespace Aws::Health::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String DescribeEntityAggregatesRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
 
+  // Calculate map size
+  size_t mapSize = 0;
   if (m_eventArnsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> eventArnsJsonList(m_eventArns.size());
-    for (unsigned eventArnsIndex = 0; eventArnsIndex < eventArnsJsonList.GetLength(); ++eventArnsIndex) {
-      eventArnsJsonList[eventArnsIndex].AsString(m_eventArns[eventArnsIndex]);
-    }
-    payload.WithArray("eventArns", std::move(eventArnsJsonList));
+    mapSize++;
   }
 
-  return payload.View().WriteReadable();
+  encoder.WriteMapStart(mapSize);
+
+  if (m_eventArnsHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("eventArns"));
+    encoder.WriteArrayStart(m_eventArns.size());
+    for (const auto& item_0 : m_eventArns) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
+    }
+  }
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection DescribeEntityAggregatesRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSHealth_20160804.DescribeEntityAggregates"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

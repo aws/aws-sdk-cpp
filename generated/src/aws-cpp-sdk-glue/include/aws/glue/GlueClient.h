@@ -4909,6 +4909,61 @@ class AWS_GLUE_API GlueClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Retrieves the system logs for a job run.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSystemLogsForJobRun">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetSystemLogsForJobRunOutcome GetSystemLogsForJobRun(const Model::GetSystemLogsForJobRunRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetSystemLogsForJobRun that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetSystemLogsForJobRunRequestT = Model::GetSystemLogsForJobRunRequest>
+  Model::GetSystemLogsForJobRunOutcomeCallable GetSystemLogsForJobRunCallable(const GetSystemLogsForJobRunRequestT& request) const {
+    return SubmitCallable(&GlueClient::GetSystemLogsForJobRun, request);
+  }
+
+  /**
+   * An Async wrapper for GetSystemLogsForJobRun that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetSystemLogsForJobRunRequestT = Model::GetSystemLogsForJobRunRequest>
+  void GetSystemLogsForJobRunAsync(const GetSystemLogsForJobRunRequestT& request,
+                                   const GetSystemLogsForJobRunResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GlueClient::GetSystemLogsForJobRun, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the system logs for an interactive session.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSystemLogsForSession">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetSystemLogsForSessionOutcome GetSystemLogsForSession(const Model::GetSystemLogsForSessionRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetSystemLogsForSession that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetSystemLogsForSessionRequestT = Model::GetSystemLogsForSessionRequest>
+  Model::GetSystemLogsForSessionOutcomeCallable GetSystemLogsForSessionCallable(const GetSystemLogsForSessionRequestT& request) const {
+    return SubmitCallable(&GlueClient::GetSystemLogsForSession, request);
+  }
+
+  /**
+   * An Async wrapper for GetSystemLogsForSession that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetSystemLogsForSessionRequestT = Model::GetSystemLogsForSessionRequest>
+  void GetSystemLogsForSessionAsync(const GetSystemLogsForSessionRequestT& request,
+                                    const GetSystemLogsForSessionResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GlueClient::GetSystemLogsForSession, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves the <code>Table</code> definition in a Data Catalog for a specified
    * table.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTable">AWS API

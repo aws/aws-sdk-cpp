@@ -24,13 +24,13 @@ namespace Model {
 /**
  * <p>Represents a player session. Player sessions are created either for a
  * specific game session, or as part of a game session placement or matchmaking
- * request. A player session can represents a reserved player slot in a game
- * session (when status is <code>RESERVED</code>) or actual player activity in a
- * game session (when status is <code>ACTIVE</code>). A player session object,
- * including player data, is automatically passed to a game session when the player
- * connects to the game session and is validated. After the game session ends,
- * player sessions information is retained for 30 days and then removed.</p> <p>
- * <b>Related actions</b> </p> <p> <a
+ * request. A player session can represent a reserved player slot in a game session
+ * (when status is <code>RESERVED</code>) or actual player activity in a game
+ * session (when status is <code>ACTIVE</code>). A player session object, including
+ * player data, is automatically passed to a game session when the player connects
+ * to the game session and is validated. After the game session ends, player
+ * session information is retained for 30 days and then removed.</p> <p> <b>Related
+ * actions</b> </p> <p> <a
  * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
  * APIs by task</a> </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PlayerSession">AWS

@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/fms/FMS_EXPORTS.h>
 #include <aws/fms/model/NetworkFirewallStatefulRuleGroupOverride.h>
 
@@ -12,10 +13,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace FMS {
 namespace Model {
@@ -29,9 +29,9 @@ namespace Model {
 class StatefulRuleGroup {
  public:
   AWS_FMS_API StatefulRuleGroup() = default;
-  AWS_FMS_API StatefulRuleGroup(Aws::Utils::Json::JsonView jsonValue);
-  AWS_FMS_API StatefulRuleGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_FMS_API StatefulRuleGroup(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_FMS_API StatefulRuleGroup& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_FMS_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -82,13 +82,13 @@ class StatefulRuleGroup {
    * number them so there's a wide range in between, for example use 100, 200, and so
    * on. </p>
    */
-  inline int GetPriority() const { return m_priority; }
+  inline int64_t GetPriority() const { return m_priority; }
   inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
-  inline void SetPriority(int value) {
+  inline void SetPriority(int64_t value) {
     m_priorityHasBeenSet = true;
     m_priority = value;
   }
-  inline StatefulRuleGroup& WithPriority(int value) {
+  inline StatefulRuleGroup& WithPriority(int64_t value) {
     SetPriority(value);
     return *this;
   }
@@ -117,7 +117,7 @@ class StatefulRuleGroup {
 
   Aws::String m_resourceId;
 
-  int m_priority{0};
+  int64_t m_priority{0};
 
   NetworkFirewallStatefulRuleGroupOverride m_override;
   bool m_ruleGroupNameHasBeenSet = false;

@@ -7,6 +7,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/pi/PI_EXPORTS.h>
 #include <aws/pi/model/AnalysisStatus.h>
 #include <aws/pi/model/Tag.h>
@@ -15,10 +16,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace PI {
 namespace Model {
@@ -32,9 +32,9 @@ namespace Model {
 class AnalysisReportSummary {
  public:
   AWS_PI_API AnalysisReportSummary() = default;
-  AWS_PI_API AnalysisReportSummary(Aws::Utils::Json::JsonView jsonValue);
-  AWS_PI_API AnalysisReportSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_PI_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_PI_API AnalysisReportSummary(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_PI_API AnalysisReportSummary& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_PI_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

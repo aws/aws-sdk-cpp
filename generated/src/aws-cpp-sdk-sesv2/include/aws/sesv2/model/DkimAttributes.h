@@ -160,93 +160,15 @@ class DkimAttributes {
    * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
    * DKIM</a>.</p> </li> <li> <p> <code>EXTERNAL</code> – Indicates that DKIM was
    * configured for the identity by using Bring Your Own DKIM (BYODKIM).</p> </li>
-   * <li> <p> <code>AWS_SES_AF_SOUTH_1</code> – Indicates that DKIM was configured
-   * for the identity by replicating signing attributes from a parent identity in
-   * Africa (Cape Town) region using Deterministic Easy-DKIM (DEED). </p> </li> <li>
-   * <p> <code>AWS_SES_EU_NORTH_1</code> – Indicates that DKIM was configured for the
-   * identity by replicating signing attributes from a parent identity in Europe
-   * (Stockholm) region using Deterministic Easy-DKIM (DEED). </p> </li> <li> <p>
-   * <code>AWS_SES_AP_SOUTH_1</code> – Indicates that DKIM was configured for the
-   * identity by replicating signing attributes from a parent identity in Asia
-   * Pacific (Mumbai) region using Deterministic Easy-DKIM (DEED). </p> </li> <li>
-   * <p> <code>AWS_SES_AP_SOUTH_2</code> – Indicates that DKIM was configured for the
-   * identity by replicating signing attributes from a parent identity in Asia
-   * Pacific (Hyderabad) region using Deterministic Easy-DKIM (DEED). </p> </li> <li>
-   * <p> <code>AWS_SES_EU_WEST_3</code> – Indicates that DKIM was configured for the
-   * identity by replicating signing attributes from a parent identity in Europe
-   * (Paris) region using Deterministic Easy-DKIM (DEED). </p> </li> <li> <p>
-   * <code>AWS_SES_EU_WEST_2</code> – Indicates that DKIM was configured for the
-   * identity by replicating signing attributes from a parent identity in Europe
-   * (London) region using Deterministic Easy-DKIM (DEED). </p> </li> <li> <p>
-   * <code>AWS_SES_EU_SOUTH_1</code> – Indicates that DKIM was configured for the
-   * identity by replicating signing attributes from a parent identity in Europe
-   * (Milan) region using Deterministic Easy-DKIM (DEED). </p> </li> <li> <p>
-   * <code>AWS_SES_EU_WEST_1</code> – Indicates that DKIM was configured for the
-   * identity by replicating signing attributes from a parent identity in Europe
-   * (Ireland) region using Deterministic Easy-DKIM (DEED). </p> </li> <li> <p>
-   * <code>AWS_SES_AP_NORTHEAST_3</code> – Indicates that DKIM was configured for the
-   * identity by replicating signing attributes from a parent identity in Asia
-   * Pacific (Osaka) region using Deterministic Easy-DKIM (DEED). </p> </li> <li> <p>
-   * <code>AWS_SES_AP_NORTHEAST_2</code> – Indicates that DKIM was configured for the
-   * identity by replicating signing attributes from a parent identity in Asia
-   * Pacific (Seoul) region using Deterministic Easy-DKIM (DEED). </p> </li> <li> <p>
-   * <code>AWS_SES_ME_CENTRAL_1</code> – Indicates that DKIM was configured for the
-   * identity by replicating signing attributes from a parent identity in Middle East
-   * (UAE) region using Deterministic Easy-DKIM (DEED). </p> </li> <li> <p>
-   * <code>AWS_SES_ME_SOUTH_1</code> – Indicates that DKIM was configured for the
-   * identity by replicating signing attributes from a parent identity in Middle East
-   * (Bahrain) region using Deterministic Easy-DKIM (DEED). </p> </li> <li> <p>
-   * <code>AWS_SES_AP_NORTHEAST_1</code> – Indicates that DKIM was configured for the
-   * identity by replicating signing attributes from a parent identity in Asia
-   * Pacific (Tokyo) region using Deterministic Easy-DKIM (DEED). </p> </li> <li> <p>
-   * <code>AWS_SES_IL_CENTRAL_1</code> – Indicates that DKIM was configured for the
-   * identity by replicating signing attributes from a parent identity in Israel (Tel
-   * Aviv) region using Deterministic Easy-DKIM (DEED). </p> </li> <li> <p>
-   * <code>AWS_SES_SA_EAST_1</code> – Indicates that DKIM was configured for the
-   * identity by replicating signing attributes from a parent identity in South
-   * America (São Paulo) region using Deterministic Easy-DKIM (DEED). </p> </li> <li>
-   * <p> <code>AWS_SES_CA_CENTRAL_1</code> – Indicates that DKIM was configured for
-   * the identity by replicating signing attributes from a parent identity in Canada
-   * (Central) region using Deterministic Easy-DKIM (DEED). </p> </li> <li> <p>
-   * <code>AWS_SES_CA_WEST_1</code> – Indicates that DKIM was configured for the
-   * identity by replicating signing attributes from a parent identity in Canada
-   * (Calgary) region using Deterministic Easy-DKIM (DEED). </p> </li> <li> <p>
-   * <code>AWS_SES_AP_SOUTHEAST_1</code> – Indicates that DKIM was configured for the
-   * identity by replicating signing attributes from a parent identity in Asia
-   * Pacific (Singapore) region using Deterministic Easy-DKIM (DEED). </p> </li> <li>
-   * <p> <code>AWS_SES_AP_SOUTHEAST_2</code> – Indicates that DKIM was configured for
-   * the identity by replicating signing attributes from a parent identity in Asia
-   * Pacific (Sydney) region using Deterministic Easy-DKIM (DEED). </p> </li> <li>
-   * <p> <code>AWS_SES_AP_SOUTHEAST_3</code> – Indicates that DKIM was configured for
-   * the identity by replicating signing attributes from a parent identity in Asia
-   * Pacific (Jakarta) region using Deterministic Easy-DKIM (DEED). </p> </li> <li>
-   * <p> <code>AWS_SES_AP_SOUTHEAST_5</code> – Indicates that DKIM was configured for
-   * the identity by replicating signing attributes from a parent identity in Asia
-   * Pacific (Malaysia) region using Deterministic Easy-DKIM (DEED). </p> </li> <li>
-   * <p> <code>AWS_SES_EU_CENTRAL_1</code> – Indicates that DKIM was configured for
-   * the identity by replicating signing attributes from a parent identity in Europe
-   * (Frankfurt) region using Deterministic Easy-DKIM (DEED). </p> </li> <li> <p>
-   * <code>AWS_SES_EU_CENTRAL_2</code> – Indicates that DKIM was configured for the
-   * identity by replicating signing attributes from a parent identity in Europe
-   * (Zurich) region using Deterministic Easy-DKIM (DEED). </p> </li> <li> <p>
-   * <code>AWS_SES_US_EAST_1</code> – Indicates that DKIM was configured for the
-   * identity by replicating signing attributes from a parent identity in US East (N.
-   * Virginia) region using Deterministic Easy-DKIM (DEED). </p> </li> <li> <p>
-   * <code>AWS_SES_US_EAST_2</code> – Indicates that DKIM was configured for the
-   * identity by replicating signing attributes from a parent identity in US East
-   * (Ohio) region using Deterministic Easy-DKIM (DEED). </p> </li> <li> <p>
-   * <code>AWS_SES_US_WEST_1</code> – Indicates that DKIM was configured for the
-   * identity by replicating signing attributes from a parent identity in US West (N.
-   * California) region using Deterministic Easy-DKIM (DEED). </p> </li> <li> <p>
-   * <code>AWS_SES_US_WEST_2</code> – Indicates that DKIM was configured for the
-   * identity by replicating signing attributes from a parent identity in US West
-   * (Oregon) region using Deterministic Easy-DKIM (DEED). </p> </li> <li> <p>
-   * <code>AWS_SES_US_GOV_EAST_1</code> – Indicates that DKIM was configured for the
-   * identity by replicating signing attributes from a parent identity in AWS
-   * GovCloud (US-East) region using Deterministic Easy-DKIM (DEED). </p> </li> <li>
-   * <p> <code>AWS_SES_US_GOV_WEST_1</code> – Indicates that DKIM was configured for
-   * the identity by replicating signing attributes from a parent identity in AWS
-   * GovCloud (US-West) region using Deterministic Easy-DKIM (DEED). </p> </li> </ul>
+   * <li> <p> <code>AWS_SES_&lt;REGION&gt;</code> – Indicates that DKIM was
+   * configured for the identity by replicating the signing attributes of a parent
+   * identity in another Amazon Web Services Region, using <a
+   * href="https://docs.aws.amazon.com/ses/latest/dg/send-email-authentication-dkim-deed.html">Deterministic
+   * Easy-DKIM (DEED)</a>. <code>&lt;REGION&gt;</code> is the Amazon Web Services
+   * Region of the parent identity, in uppercase with each hyphen replaced by an
+   * underscore. Amazon SES uses this format for every Amazon Web Services Region in
+   * which it supports DEED. For example, a parent identity in <code>us-east-1</code>
+   * is reported as <code>AWS_SES_US_EAST_1</code>.</p> </li> </ul>
    */
   inline DkimSigningAttributesOrigin GetSigningAttributesOrigin() const { return m_signingAttributesOrigin; }
   inline bool SigningAttributesOriginHasBeenSet() const { return m_signingAttributesOriginHasBeenSet; }

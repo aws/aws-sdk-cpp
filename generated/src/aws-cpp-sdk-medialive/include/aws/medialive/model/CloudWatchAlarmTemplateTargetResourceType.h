@@ -20,7 +20,8 @@ enum class CloudWatchAlarmTemplateTargetResourceType {
   MEDIAPACKAGE_ORIGIN_ENDPOINT,
   MEDIACONNECT_FLOW,
   S3_BUCKET,
-  MEDIATAILOR_PLAYBACK_CONFIGURATION
+  MEDIATAILOR_PLAYBACK_CONFIGURATION,
+  ELEMENTAL_INFERENCE_FEED
 };
 
 namespace CloudWatchAlarmTemplateTargetResourceTypeMapper {

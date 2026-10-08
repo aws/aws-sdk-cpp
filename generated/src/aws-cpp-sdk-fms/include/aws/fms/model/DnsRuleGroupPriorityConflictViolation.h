@@ -6,16 +6,16 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/fms/FMS_EXPORTS.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace FMS {
 namespace Model {
@@ -30,9 +30,9 @@ namespace Model {
 class DnsRuleGroupPriorityConflictViolation {
  public:
   AWS_FMS_API DnsRuleGroupPriorityConflictViolation() = default;
-  AWS_FMS_API DnsRuleGroupPriorityConflictViolation(Aws::Utils::Json::JsonView jsonValue);
-  AWS_FMS_API DnsRuleGroupPriorityConflictViolation& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_FMS_API DnsRuleGroupPriorityConflictViolation(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_FMS_API DnsRuleGroupPriorityConflictViolation& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_FMS_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -75,13 +75,13 @@ class DnsRuleGroupPriorityConflictViolation {
   /**
    * <p>The priority setting of the two conflicting rule groups.</p>
    */
-  inline int GetConflictingPriority() const { return m_conflictingPriority; }
+  inline int64_t GetConflictingPriority() const { return m_conflictingPriority; }
   inline bool ConflictingPriorityHasBeenSet() const { return m_conflictingPriorityHasBeenSet; }
-  inline void SetConflictingPriority(int value) {
+  inline void SetConflictingPriority(int64_t value) {
     m_conflictingPriorityHasBeenSet = true;
     m_conflictingPriority = value;
   }
-  inline DnsRuleGroupPriorityConflictViolation& WithConflictingPriority(int value) {
+  inline DnsRuleGroupPriorityConflictViolation& WithConflictingPriority(int64_t value) {
     SetConflictingPriority(value);
     return *this;
   }
@@ -113,19 +113,19 @@ class DnsRuleGroupPriorityConflictViolation {
    * retry your operation, choose priority settings that aren't in this list for the
    * rule groups in your new DNS Firewall policy. </p>
    */
-  inline const Aws::Vector<int>& GetUnavailablePriorities() const { return m_unavailablePriorities; }
+  inline const Aws::Vector<int64_t>& GetUnavailablePriorities() const { return m_unavailablePriorities; }
   inline bool UnavailablePrioritiesHasBeenSet() const { return m_unavailablePrioritiesHasBeenSet; }
-  template <typename UnavailablePrioritiesT = Aws::Vector<int>>
+  template <typename UnavailablePrioritiesT = Aws::Vector<int64_t>>
   void SetUnavailablePriorities(UnavailablePrioritiesT&& value) {
     m_unavailablePrioritiesHasBeenSet = true;
     m_unavailablePriorities = std::forward<UnavailablePrioritiesT>(value);
   }
-  template <typename UnavailablePrioritiesT = Aws::Vector<int>>
+  template <typename UnavailablePrioritiesT = Aws::Vector<int64_t>>
   DnsRuleGroupPriorityConflictViolation& WithUnavailablePriorities(UnavailablePrioritiesT&& value) {
     SetUnavailablePriorities(std::forward<UnavailablePrioritiesT>(value));
     return *this;
   }
-  inline DnsRuleGroupPriorityConflictViolation& AddUnavailablePriorities(int value) {
+  inline DnsRuleGroupPriorityConflictViolation& AddUnavailablePriorities(int64_t value) {
     m_unavailablePrioritiesHasBeenSet = true;
     m_unavailablePriorities.push_back(value);
     return *this;
@@ -136,11 +136,11 @@ class DnsRuleGroupPriorityConflictViolation {
 
   Aws::String m_violationTargetDescription;
 
-  int m_conflictingPriority{0};
+  int64_t m_conflictingPriority{0};
 
   Aws::String m_conflictingPolicyId;
 
-  Aws::Vector<int> m_unavailablePriorities;
+  Aws::Vector<int64_t> m_unavailablePriorities;
   bool m_violationTargetHasBeenSet = false;
   bool m_violationTargetDescriptionHasBeenSet = false;
   bool m_conflictingPriorityHasBeenSet = false;

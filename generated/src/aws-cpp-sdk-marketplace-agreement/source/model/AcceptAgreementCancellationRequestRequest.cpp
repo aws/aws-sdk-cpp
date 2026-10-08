@@ -3,31 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/marketplace-agreement/model/AcceptAgreementCancellationRequestRequest.h>
 
 #include <utility>
 
 using namespace Aws::AgreementService::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String AcceptAgreementCancellationRequestRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_agreementIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_agreementCancellationRequestIdHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_agreementIdHasBeenSet) {
-    payload.WithString("agreementId", m_agreementId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("agreementId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_agreementId.c_str()));
   }
 
   if (m_agreementCancellationRequestIdHasBeenSet) {
-    payload.WithString("agreementCancellationRequestId", m_agreementCancellationRequestId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("agreementCancellationRequestId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_agreementCancellationRequestId.c_str()));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection AcceptAgreementCancellationRequestRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSMPCommerceService_v20200301.AcceptAgreementCancellationRequest"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

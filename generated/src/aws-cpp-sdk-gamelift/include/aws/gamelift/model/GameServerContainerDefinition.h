@@ -255,6 +255,34 @@ class GameServerContainerDefinition {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The number of vCPU units reserved for the game server container. The
+   * container can use more vCPU when it's available, up to the container group's
+   * total vCPU limit if one is set. If the container group has a total vCPU limit
+   * and the request doesn't set this value, Amazon GameLift Servers calculates the
+   * game server container's vCPU as the total vCPU limit minus the sum of the vCPU
+   * units reserved for the group's support containers.</p> <p>A game server
+   * container group needs either a total vCPU limit or this value. If the container
+   * group doesn't have a total vCPU limit, the group's containers can use up to the
+   * instance's available vCPU, and Amazon GameLift Servers uses the sum of the
+   * group's container <code>Vcpu</code> values to calculate how many game server
+   * container groups fit on an instance.</p> <p> <b>Related data type: </b> <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a>
+   * <code>TotalVcpuLimit</code> </p>
+   */
+  inline double GetVcpu() const { return m_vcpu; }
+  inline bool VcpuHasBeenSet() const { return m_vcpuHasBeenSet; }
+  inline void SetVcpu(double value) {
+    m_vcpuHasBeenSet = true;
+    m_vcpu = value;
+  }
+  inline GameServerContainerDefinition& WithVcpu(double value) {
+    SetVcpu(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_containerName;
 
@@ -273,6 +301,8 @@ class GameServerContainerDefinition {
   Aws::String m_serverSdkVersion;
 
   LinuxCapabilities m_linuxCapabilities;
+
+  double m_vcpu{0.0};
   bool m_containerNameHasBeenSet = false;
   bool m_dependsOnHasBeenSet = false;
   bool m_mountPointsHasBeenSet = false;
@@ -282,6 +312,7 @@ class GameServerContainerDefinition {
   bool m_resolvedImageDigestHasBeenSet = false;
   bool m_serverSdkVersionHasBeenSet = false;
   bool m_linuxCapabilitiesHasBeenSet = false;
+  bool m_vcpuHasBeenSet = false;
 };
 
 }  // namespace Model

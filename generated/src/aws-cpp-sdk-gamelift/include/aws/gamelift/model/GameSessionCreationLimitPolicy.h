@@ -22,7 +22,7 @@ namespace Model {
  * players' ability to consume available resources.</p> <p>The policy is evaluated
  * when a player tries to create a new game session. On receiving a
  * <code>CreateGameSession</code> request, Amazon GameLift Servers checks that the
- * player (identified by <code>CreatorId</code>) has created fewer than game
+ * player (identified by <code>CreatorId</code>) has created fewer than the game
  * session limit in the specified time period.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameSessionCreationLimitPolicy">AWS
  * API Reference</a></p>
@@ -41,7 +41,7 @@ class GameSessionCreationLimitPolicy {
    * players' ability to consume available resources.</p> <p>The policy evaluates
    * when a player tries to create a new game session. On receiving a
    * <code>CreateGameSession</code> request, Amazon GameLift Servers checks that the
-   * player (identified by <code>CreatorId</code>) has created fewer than game
+   * player (identified by <code>CreatorId</code>) has created fewer than the game
    * session limit in the specified time period.</p>
    */
   inline int64_t GetNewGameSessionsPerCreator() const { return m_newGameSessionsPerCreator; }

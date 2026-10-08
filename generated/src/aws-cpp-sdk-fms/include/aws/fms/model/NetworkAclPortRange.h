@@ -4,14 +4,14 @@
  */
 
 #pragma once
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/fms/FMS_EXPORTS.h>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace FMS {
 namespace Model {
@@ -25,21 +25,21 @@ namespace Model {
 class NetworkAclPortRange {
  public:
   AWS_FMS_API NetworkAclPortRange() = default;
-  AWS_FMS_API NetworkAclPortRange(Aws::Utils::Json::JsonView jsonValue);
-  AWS_FMS_API NetworkAclPortRange& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_FMS_API NetworkAclPortRange(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_FMS_API NetworkAclPortRange& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_FMS_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
    * <p>The beginning port number of the range. </p>
    */
-  inline int GetFrom() const { return m_from; }
+  inline int64_t GetFrom() const { return m_from; }
   inline bool FromHasBeenSet() const { return m_fromHasBeenSet; }
-  inline void SetFrom(int value) {
+  inline void SetFrom(int64_t value) {
     m_fromHasBeenSet = true;
     m_from = value;
   }
-  inline NetworkAclPortRange& WithFrom(int value) {
+  inline NetworkAclPortRange& WithFrom(int64_t value) {
     SetFrom(value);
     return *this;
   }
@@ -49,21 +49,21 @@ class NetworkAclPortRange {
   /**
    * <p>The ending port number of the range. </p>
    */
-  inline int GetTo() const { return m_to; }
+  inline int64_t GetTo() const { return m_to; }
   inline bool ToHasBeenSet() const { return m_toHasBeenSet; }
-  inline void SetTo(int value) {
+  inline void SetTo(int64_t value) {
     m_toHasBeenSet = true;
     m_to = value;
   }
-  inline NetworkAclPortRange& WithTo(int value) {
+  inline NetworkAclPortRange& WithTo(int64_t value) {
     SetTo(value);
     return *this;
   }
   ///@}
  private:
-  int m_from{0};
+  int64_t m_from{0};
 
-  int m_to{0};
+  int64_t m_to{0};
   bool m_fromHasBeenSet = false;
   bool m_toHasBeenSet = false;
 };

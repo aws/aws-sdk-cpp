@@ -9,6 +9,7 @@
 #include <aws/securityhub/SecurityHubClientPagination.h>
 #include <aws/securityhub/SecurityHubPaginationBase.h>
 #include <aws/securityhub/model/ListConfigurationPolicyAssociationsPaginationTraits.h>
+#include <aws/securityhub/model/ListExportJobsV2PaginationTraits.h>
 #include <aws/securityhub/model/ListOrganizationAdminAccountsPaginationTraits.h>
 #include <aws/securityhub/model/ListSecurityControlDefinitionsPaginationTraits.h>
 #include <aws/securityhub/model/ListInvitationsPaginationTraits.h>

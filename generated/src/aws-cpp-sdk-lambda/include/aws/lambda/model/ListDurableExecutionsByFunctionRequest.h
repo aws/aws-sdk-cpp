@@ -57,8 +57,9 @@ class ListDurableExecutionsByFunctionRequest : public LambdaRequest {
 
   ///@{
   /**
-   * <p>The function version or alias. If not specified, lists executions for the
-   * $LATEST version.</p>
+   * <p>The function version to filter executions by. If you don't specify a
+   * qualifier, this operation returns executions across all versions of the Lambda
+   * function.</p>
    */
   inline const Aws::String& GetQualifier() const { return m_qualifier; }
   inline bool QualifierHasBeenSet() const { return m_qualifierHasBeenSet; }

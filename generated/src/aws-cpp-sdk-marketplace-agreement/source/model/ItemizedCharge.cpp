@@ -3,68 +3,366 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/marketplace-agreement/model/ItemizedCharge.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace AgreementService {
 namespace Model {
 
-ItemizedCharge::ItemizedCharge(JsonView jsonValue) { *this = jsonValue; }
+ItemizedCharge::ItemizedCharge(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-ItemizedCharge& ItemizedCharge::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("dimensionKey")) {
-    m_dimensionKey = jsonValue.GetString("dimensionKey");
-    m_dimensionKeyHasBeenSet = true;
+ItemizedCharge& ItemizedCharge::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "dimensionKey") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_dimensionKey = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_dimensionKey = ss.str();
+                  }
+                }
+                m_dimensionKeyHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "newQuantity") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_newQuantity = static_cast<int64_t>(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextNegativeIntVal();
+                    if (val.has_value()) {
+                      m_newQuantity = static_cast<int64_t>(1 - val.value());
+                    }
+                  }
+                }
+                m_newQuantityHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "oldQuantity") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_oldQuantity = static_cast<int64_t>(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextNegativeIntVal();
+                    if (val.has_value()) {
+                      m_oldQuantity = static_cast<int64_t>(1 - val.value());
+                    }
+                  }
+                }
+                m_oldQuantityHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "chargeReference") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_chargeReference = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_chargeReference = ss.str();
+                  }
+                }
+                m_chargeReferenceHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "incrementalChargeAmount") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_incrementalChargeAmount = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_incrementalChargeAmount = ss.str();
+                  }
+                }
+                m_incrementalChargeAmountHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("ItemizedCharge", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "dimensionKey") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_dimensionKey = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_dimensionKey = ss.str();
+                }
+              }
+              m_dimensionKeyHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "newQuantity") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
+                  auto val = decoder->PopNextUnsignedIntVal();
+                  if (val.has_value()) {
+                    m_newQuantity = static_cast<int64_t>(val.value());
+                  }
+                } else {
+                  auto val = decoder->PopNextNegativeIntVal();
+                  if (val.has_value()) {
+                    m_newQuantity = static_cast<int64_t>(1 - val.value());
+                  }
+                }
+              }
+              m_newQuantityHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "oldQuantity") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
+                  auto val = decoder->PopNextUnsignedIntVal();
+                  if (val.has_value()) {
+                    m_oldQuantity = static_cast<int64_t>(val.value());
+                  }
+                } else {
+                  auto val = decoder->PopNextNegativeIntVal();
+                  if (val.has_value()) {
+                    m_oldQuantity = static_cast<int64_t>(1 - val.value());
+                  }
+                }
+              }
+              m_oldQuantityHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "chargeReference") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_chargeReference = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_chargeReference = ss.str();
+                }
+              }
+              m_chargeReferenceHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "incrementalChargeAmount") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_incrementalChargeAmount = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_incrementalChargeAmount = ss.str();
+                }
+              }
+              m_incrementalChargeAmountHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
+    }
   }
-  if (jsonValue.ValueExists("newQuantity")) {
-    m_newQuantity = jsonValue.GetInteger("newQuantity");
-    m_newQuantityHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("oldQuantity")) {
-    m_oldQuantity = jsonValue.GetInteger("oldQuantity");
-    m_oldQuantityHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("chargeReference")) {
-    m_chargeReference = jsonValue.GetString("chargeReference");
-    m_chargeReferenceHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("incrementalChargeAmount")) {
-    m_incrementalChargeAmount = jsonValue.GetString("incrementalChargeAmount");
-    m_incrementalChargeAmountHasBeenSet = true;
-  }
+
   return *this;
 }
 
-JsonValue ItemizedCharge::Jsonize() const {
-  JsonValue payload;
+void ItemizedCharge::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_dimensionKeyHasBeenSet) {
+    mapSize++;
+  }
+  if (m_newQuantityHasBeenSet) {
+    mapSize++;
+  }
+  if (m_oldQuantityHasBeenSet) {
+    mapSize++;
+  }
+  if (m_chargeReferenceHasBeenSet) {
+    mapSize++;
+  }
+  if (m_incrementalChargeAmountHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_dimensionKeyHasBeenSet) {
-    payload.WithString("dimensionKey", m_dimensionKey);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("dimensionKey"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_dimensionKey.c_str()));
   }
 
   if (m_newQuantityHasBeenSet) {
-    payload.WithInteger("newQuantity", m_newQuantity);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("newQuantity"));
+    (m_newQuantity >= 0) ? encoder.WriteUInt(m_newQuantity) : encoder.WriteNegInt(m_newQuantity);
   }
 
   if (m_oldQuantityHasBeenSet) {
-    payload.WithInteger("oldQuantity", m_oldQuantity);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("oldQuantity"));
+    (m_oldQuantity >= 0) ? encoder.WriteUInt(m_oldQuantity) : encoder.WriteNegInt(m_oldQuantity);
   }
 
   if (m_chargeReferenceHasBeenSet) {
-    payload.WithString("chargeReference", m_chargeReference);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("chargeReference"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_chargeReference.c_str()));
   }
 
   if (m_incrementalChargeAmountHasBeenSet) {
-    payload.WithString("incrementalChargeAmount", m_incrementalChargeAmount);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("incrementalChargeAmount"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_incrementalChargeAmount.c_str()));
   }
-
-  return payload;
 }
 
 }  // namespace Model

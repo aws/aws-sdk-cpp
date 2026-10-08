@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/devops-agent/DevOpsAgent_EXPORTS.h>
+#include <aws/devops-agent/model/ScheduleSpec.h>
 
 #include <utility>
 
@@ -20,7 +21,11 @@ namespace DevOpsAgent {
 namespace Model {
 
 /**
- * <p>Schedule-based condition that fires the Trigger</p><p><h3>See Also:</h3>   <a
+ * <p>Expression-based schedule condition. CreateTrigger callers using this
+ * condition supply expression and omit spec. Trigger responses always use this
+ * condition, include the persisted or derived expression, and also include spec
+ * when the trigger was created from a structured schedule.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/ScheduleCondition">AWS
  * API Reference</a></p>
  */
@@ -33,7 +38,9 @@ class ScheduleCondition {
 
   ///@{
   /**
-   * <p>The schedule expression</p>
+   * <p>EventBridge cron or rate expression. Required for existing request and
+   * response compatibility. For a structured schedule response, this is the
+   * expression derived by Backlog.</p>
    */
   inline const Aws::String& GetExpression() const { return m_expression; }
   inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
@@ -48,9 +55,32 @@ class ScheduleCondition {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Structured schedule source of truth (cron | timeRange). On CreateTrigger
+   * supply exactly one of spec or expression. Present in responses together with the
+   * derived expression for structured triggers.</p>
+   */
+  inline const ScheduleSpec& GetSpec() const { return m_spec; }
+  inline bool SpecHasBeenSet() const { return m_specHasBeenSet; }
+  template <typename SpecT = ScheduleSpec>
+  void SetSpec(SpecT&& value) {
+    m_specHasBeenSet = true;
+    m_spec = std::forward<SpecT>(value);
+  }
+  template <typename SpecT = ScheduleSpec>
+  ScheduleCondition& WithSpec(SpecT&& value) {
+    SetSpec(std::forward<SpecT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_expression;
+
+  ScheduleSpec m_spec;
   bool m_expressionHasBeenSet = false;
+  bool m_specHasBeenSet = false;
 };
 
 }  // namespace Model

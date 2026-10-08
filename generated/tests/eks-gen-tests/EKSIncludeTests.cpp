@@ -23,6 +23,8 @@
 #include <aws/eks/model/AccessPolicy.h>
 #include <aws/eks/model/AccessScope.h>
 #include <aws/eks/model/AccessScopeType.h>
+#include <aws/eks/model/AckConfigRequest.h>
+#include <aws/eks/model/AckConfigResponse.h>
 #include <aws/eks/model/ActivateCertificateAuthorityRequest.h>
 #include <aws/eks/model/ActivateCertificateAuthorityResult.h>
 #include <aws/eks/model/ActiveCertificateAuthority.h>
@@ -351,6 +353,7 @@
 #include <aws/eks/model/UpdateAccessConfigRequest.h>
 #include <aws/eks/model/UpdateAccessEntryRequest.h>
 #include <aws/eks/model/UpdateAccessEntryResult.h>
+#include <aws/eks/model/UpdateAckConfig.h>
 #include <aws/eks/model/UpdateAddonRequest.h>
 #include <aws/eks/model/UpdateAddonResult.h>
 #include <aws/eks/model/UpdateArgoCdConfig.h>

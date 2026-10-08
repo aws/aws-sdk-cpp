@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/fms/FMS_EXPORTS.h>
 #include <aws/fms/model/NetworkAclIcmpTypeCode.h>
 #include <aws/fms/model/NetworkAclPortRange.h>
@@ -14,10 +15,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace FMS {
 namespace Model {
@@ -40,9 +40,9 @@ namespace Model {
 class NetworkAclEntry {
  public:
   AWS_FMS_API NetworkAclEntry() = default;
-  AWS_FMS_API NetworkAclEntry(Aws::Utils::Json::JsonView jsonValue);
-  AWS_FMS_API NetworkAclEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_FMS_API NetworkAclEntry(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_FMS_API NetworkAclEntry& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_FMS_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

@@ -6,16 +6,16 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/pi/PI_EXPORTS.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace PI {
 namespace Model {
@@ -31,9 +31,9 @@ namespace Model {
 class ResponsePartitionKey {
  public:
   AWS_PI_API ResponsePartitionKey() = default;
-  AWS_PI_API ResponsePartitionKey(Aws::Utils::Json::JsonView jsonValue);
-  AWS_PI_API ResponsePartitionKey& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_PI_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_PI_API ResponsePartitionKey(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_PI_API ResponsePartitionKey& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_PI_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

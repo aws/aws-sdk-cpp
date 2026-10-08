@@ -37,6 +37,10 @@ Aws::String ContinueUpdateRollbackRequest::SerializePayload() const {
     ss << "ClientRequestToken=" << StringUtils::URLEncode(m_clientRequestToken.c_str()) << "&";
   }
 
+  if (m_forceRollbackHasBeenSet) {
+    ss << "ForceRollback=" << std::boolalpha << m_forceRollback << "&";
+  }
+
   ss << "Version=2010-05-15";
   return ss.str();
 }

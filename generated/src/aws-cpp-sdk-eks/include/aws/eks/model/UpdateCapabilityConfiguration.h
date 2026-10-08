@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/eks/EKS_EXPORTS.h>
+#include <aws/eks/model/UpdateAckConfig.h>
 #include <aws/eks/model/UpdateArgoCdConfig.h>
 
 #include <utility>
@@ -49,9 +50,31 @@ class UpdateCapabilityConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Configuration updates specific to ACK (Amazon Web Services Controllers for
+   * Kubernetes) capabilities.</p>
+   */
+  inline const UpdateAckConfig& GetAck() const { return m_ack; }
+  inline bool AckHasBeenSet() const { return m_ackHasBeenSet; }
+  template <typename AckT = UpdateAckConfig>
+  void SetAck(AckT&& value) {
+    m_ackHasBeenSet = true;
+    m_ack = std::forward<AckT>(value);
+  }
+  template <typename AckT = UpdateAckConfig>
+  UpdateCapabilityConfiguration& WithAck(AckT&& value) {
+    SetAck(std::forward<AckT>(value));
+    return *this;
+  }
+  ///@}
  private:
   UpdateArgoCdConfig m_argoCd;
+
+  UpdateAckConfig m_ack;
   bool m_argoCdHasBeenSet = false;
+  bool m_ackHasBeenSet = false;
 };
 
 }  // namespace Model

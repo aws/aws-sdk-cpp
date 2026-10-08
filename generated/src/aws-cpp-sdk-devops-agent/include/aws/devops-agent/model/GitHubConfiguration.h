@@ -118,6 +118,25 @@ class GitHubConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The identifier of the release management association that this repository
+   * maps to for automatic verification testing.</p>
+   */
+  inline const Aws::String& GetReleaseManagementAssociationId() const { return m_releaseManagementAssociationId; }
+  inline bool ReleaseManagementAssociationIdHasBeenSet() const { return m_releaseManagementAssociationIdHasBeenSet; }
+  template <typename ReleaseManagementAssociationIdT = Aws::String>
+  void SetReleaseManagementAssociationId(ReleaseManagementAssociationIdT&& value) {
+    m_releaseManagementAssociationIdHasBeenSet = true;
+    m_releaseManagementAssociationId = std::forward<ReleaseManagementAssociationIdT>(value);
+  }
+  template <typename ReleaseManagementAssociationIdT = Aws::String>
+  GitHubConfiguration& WithReleaseManagementAssociationId(ReleaseManagementAssociationIdT&& value) {
+    SetReleaseManagementAssociationId(std::forward<ReleaseManagementAssociationIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_repoName;
 
@@ -128,11 +147,14 @@ class GitHubConfiguration {
   GithubRepoOwnerType m_ownerType{GithubRepoOwnerType::NOT_SET};
 
   Aws::String m_instanceIdentifier;
+
+  Aws::String m_releaseManagementAssociationId;
   bool m_repoNameHasBeenSet = false;
   bool m_repoIdHasBeenSet = false;
   bool m_ownerHasBeenSet = false;
   bool m_ownerTypeHasBeenSet = false;
   bool m_instanceIdentifierHasBeenSet = false;
+  bool m_releaseManagementAssociationIdHasBeenSet = false;
 };
 
 }  // namespace Model

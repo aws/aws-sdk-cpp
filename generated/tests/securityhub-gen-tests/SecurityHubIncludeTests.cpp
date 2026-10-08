@@ -590,6 +590,8 @@
 #include <aws/securityhub/model/BatchUpdateStandardsControlAssociationsResult.h>
 #include <aws/securityhub/model/BooleanConfigurationOptions.h>
 #include <aws/securityhub/model/BooleanFilter.h>
+#include <aws/securityhub/model/CancelExportJobV2Request.h>
+#include <aws/securityhub/model/CancelExportJobV2Result.h>
 #include <aws/securityhub/model/Cell.h>
 #include <aws/securityhub/model/CidrBlockAssociation.h>
 #include <aws/securityhub/model/City.h>
@@ -731,6 +733,14 @@
 #include <aws/securityhub/model/EnablementStatus.h>
 #include <aws/securityhub/model/EnumConfigurationOptions.h>
 #include <aws/securityhub/model/EnumListConfigurationOptions.h>
+#include <aws/securityhub/model/ExportDataType.h>
+#include <aws/securityhub/model/ExportDestination.h>
+#include <aws/securityhub/model/ExportFailureCode.h>
+#include <aws/securityhub/model/ExportOutput.h>
+#include <aws/securityhub/model/ExportOutputSummary.h>
+#include <aws/securityhub/model/ExportScopes.h>
+#include <aws/securityhub/model/ExportStatus.h>
+#include <aws/securityhub/model/ExportSummary.h>
 #include <aws/securityhub/model/ExposureFinding.h>
 #include <aws/securityhub/model/ExposureImpact.h>
 #include <aws/securityhub/model/ExposureSeverity.h>
@@ -747,6 +757,10 @@
 #include <aws/securityhub/model/FindingProviderFields.h>
 #include <aws/securityhub/model/FindingProviderSeverity.h>
 #include <aws/securityhub/model/FindingScopes.h>
+#include <aws/securityhub/model/FindingsExportFormat.h>
+#include <aws/securityhub/model/FindingsOutput.h>
+#include <aws/securityhub/model/FindingsOutputSummary.h>
+#include <aws/securityhub/model/FindingsSelectableField.h>
 #include <aws/securityhub/model/FindingsTrendsCompositeFilter.h>
 #include <aws/securityhub/model/FindingsTrendsFilters.h>
 #include <aws/securityhub/model/FindingsTrendsStringField.h>
@@ -779,6 +793,8 @@
 #include <aws/securityhub/model/GetEnabledStandardsPaginationTraits.h>
 #include <aws/securityhub/model/GetEnabledStandardsRequest.h>
 #include <aws/securityhub/model/GetEnabledStandardsResult.h>
+#include <aws/securityhub/model/GetExportJobV2Request.h>
+#include <aws/securityhub/model/GetExportJobV2Result.h>
 #include <aws/securityhub/model/GetFindingAggregatorRequest.h>
 #include <aws/securityhub/model/GetFindingAggregatorResult.h>
 #include <aws/securityhub/model/GetFindingHistoryPaginationTraits.h>
@@ -875,6 +891,9 @@
 #include <aws/securityhub/model/ListEnabledProductsForImportPaginationTraits.h>
 #include <aws/securityhub/model/ListEnabledProductsForImportRequest.h>
 #include <aws/securityhub/model/ListEnabledProductsForImportResult.h>
+#include <aws/securityhub/model/ListExportJobsV2PaginationTraits.h>
+#include <aws/securityhub/model/ListExportJobsV2Request.h>
+#include <aws/securityhub/model/ListExportJobsV2Result.h>
 #include <aws/securityhub/model/ListExposuresByRemediationV2PaginationTraits.h>
 #include <aws/securityhub/model/ListExposuresByRemediationV2Request.h>
 #include <aws/securityhub/model/ListExposuresByRemediationV2Result.h>
@@ -1051,6 +1070,7 @@
 #include <aws/securityhub/model/RuleGroupVariablesPortSetsDetails.h>
 #include <aws/securityhub/model/RuleStatus.h>
 #include <aws/securityhub/model/RuleStatusV2.h>
+#include <aws/securityhub/model/S3ExportDestination.h>
 #include <aws/securityhub/model/ScopeType.h>
 #include <aws/securityhub/model/SecurityControl.h>
 #include <aws/securityhub/model/SecurityControlCustomParameter.h>
@@ -1094,6 +1114,8 @@
 #include <aws/securityhub/model/StartConfigurationPolicyAssociationResult.h>
 #include <aws/securityhub/model/StartConfigurationPolicyDisassociationRequest.h>
 #include <aws/securityhub/model/StartConfigurationPolicyDisassociationResult.h>
+#include <aws/securityhub/model/StartExportJobV2Request.h>
+#include <aws/securityhub/model/StartExportJobV2Result.h>
 #include <aws/securityhub/model/StatelessCustomActionDefinition.h>
 #include <aws/securityhub/model/StatelessCustomPublishMetricAction.h>
 #include <aws/securityhub/model/StatelessCustomPublishMetricActionDimension.h>

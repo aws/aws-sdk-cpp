@@ -41,6 +41,20 @@ class KafkaSchemaRegistryAccessConfig {
   ///@{
   /**
    * <p> The type of authentication Lambda uses to access your schema registry. </p>
+   * <ul> <li> <p> <code>BASIC_AUTH</code> – The Secrets Manager ARN of your secret
+   * key used for basic authentication with your Confluent schema registry.</p> </li>
+   * <li> <p> <code>CLIENT_CERTIFICATE_TLS_AUTH</code> – The Secrets Manager ARN of
+   * your secret key containing the certificate chain (X.509 PEM), private key
+   * (PKCS#8 PEM), and private key password (optional) used for mutual TLS
+   * authentication with your Confluent schema registry.</p> </li> <li> <p>
+   * <code>SERVER_ROOT_CA_CERTIFICATE</code> – The Secrets Manager ARN of your secret
+   * key containing the root CA certificate (X.509 PEM) used for TLS encryption with
+   * your Confluent schema registry.</p> </li> <li> <p> <code>OAUTHBEARER_AUTH</code>
+   * – The Secrets Manager ARN of your secret key containing the OAuth 2.0
+   * credentials that Lambda uses to acquire an access token for your Confluent
+   * schema registry. For the contents of the secret, see <a
+   * href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-cluster-auth.html#smaa-auth-oauth-secret">Configuring
+   * the OAuth secret</a>.</p> </li> </ul>
    */
   inline KafkaSchemaRegistryAuthType GetType() const { return m_type; }
   inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }

@@ -326,6 +326,33 @@ class AWS_SECURITYIR_API SecurityIRClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Returns finding-lifecycle metrics for a membership over a date
+   * range.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/GetFindingMetrics">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetFindingMetricsOutcome GetFindingMetrics(const Model::GetFindingMetricsRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetFindingMetrics that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetFindingMetricsRequestT = Model::GetFindingMetricsRequest>
+  Model::GetFindingMetricsOutcomeCallable GetFindingMetricsCallable(const GetFindingMetricsRequestT& request) const {
+    return SubmitCallable(&SecurityIRClient::GetFindingMetrics, request);
+  }
+
+  /**
+   * An Async wrapper for GetFindingMetrics that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetFindingMetricsRequestT = Model::GetFindingMetricsRequest>
+  void GetFindingMetricsAsync(const GetFindingMetricsRequestT& request, const GetFindingMetricsResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityIRClient::GetFindingMetrics, request, handler, context);
+  }
+
+  /**
    * <p>Returns the attributes of a membership.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/GetMembership">AWS
    * API Reference</a></p>

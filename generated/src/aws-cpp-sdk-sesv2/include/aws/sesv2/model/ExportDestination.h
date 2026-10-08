@@ -21,8 +21,13 @@ namespace SESV2 {
 namespace Model {
 
 /**
- * <p>An object that contains details about the destination of the export
- * job.</p><p><h3>See Also:</h3>   <a
+ * <p>An object that contains details about the destination of the export job.</p>
+ * <p>When you create an export job, specify only <code>DataFormat</code>. SES
+ * writes the export file to a location that it manages. After the job completes,
+ * call <code>GetExportJob</code> and use the <code>S3Url</code> that's returned to
+ * download the file. To store a copy in your own Amazon S3 bucket, upload the
+ * downloaded file to your bucket. Do not include <code>S3Url</code> in the
+ * <code>CreateExportJob</code> request.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ExportDestination">AWS
  * API Reference</a></p>
  */
@@ -54,6 +59,12 @@ class ExportDestination {
   ///@{
   /**
    * <p>An Amazon S3 pre-signed URL that points to the generated export file.</p>
+   * <p>SES sets this value. It's returned only in the <code>GetExportJob</code>
+   * response, after the export job status is <code>COMPLETED</code>. The URL expires
+   * five minutes after <code>GetExportJob</code> returns it. Call
+   * <code>GetExportJob</code> again to get a new URL. If you include this field in a
+   * <code>CreateExportJob</code> request, the request fails with a
+   * <code>BadRequestException</code>.</p>
    */
   inline const Aws::String& GetS3Url() const { return m_s3Url; }
   inline bool S3UrlHasBeenSet() const { return m_s3UrlHasBeenSet; }

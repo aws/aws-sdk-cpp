@@ -6,28 +6,28 @@
 #pragma once
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/translate/Translate_EXPORTS.h>
 #include <aws/translate/model/ParallelDataDataLocation.h>
 #include <aws/translate/model/ParallelDataProperties.h>
 
 #include <utility>
-
 namespace Aws {
 template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
 namespace Utils {
-namespace Json {
-class JsonValue;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace Translate {
 namespace Model {
 class GetParallelDataResult {
  public:
   AWS_TRANSLATE_API GetParallelDataResult() = default;
-  AWS_TRANSLATE_API GetParallelDataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-  AWS_TRANSLATE_API GetParallelDataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_TRANSLATE_API GetParallelDataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
+  AWS_TRANSLATE_API GetParallelDataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
 
   ///@{
   /**

@@ -248,7 +248,7 @@ class ContainerFleet {
 
   ///@{
   /**
-   * <p>The calculated maximum number of game server container group that can be
+   * <p>The calculated maximum number of game server container groups that can be
    * deployed on each fleet instance. The calculation depends on the resource needs
    * of the container group and the CPU and memory resources of the fleet's instance
    * type.</p>
@@ -271,8 +271,8 @@ class ContainerFleet {
   /**
    * <p>The Amazon EC2 instance type to use for all instances in the fleet. Instance
    * type determines the computing resources and processing power that's available to
-   * host your game servers. This includes including CPU, memory, storage, and
-   * networking capacity. You can't update this fleet property.</p>
+   * host your game servers. This includes CPU, memory, storage, and networking
+   * capacity. You can't update this fleet property.</p>
    */
   inline const Aws::String& GetInstanceType() const { return m_instanceType; }
   inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
@@ -424,11 +424,10 @@ class ContainerFleet {
    * been created. No fleet instances have been deployed.</p> </li> <li> <p>
    * <code>ACTIVATING</code> -- New container fleet instances are being deployed.</p>
    * </li> <li> <p> <code>ACTIVE</code> -- The container fleet has been deployed and
-   * is ready to host game sessions.</p> </li> <li> <p> <code>UPDATING</code> --
-   * Updates to the container fleet is being updated. A deployment is in
-   * progress.</p> </li> <li> <p> <code>EXPIRED</code> -- The container fleet has
-   * been expired. The fleet is scaled down to zero instances and cannot host new
-   * game sessions.</p> </li> </ul>
+   * is ready to host game sessions.</p> </li> <li> <p> <code>UPDATING</code> -- The
+   * container fleet is being updated. A deployment is in progress.</p> </li> <li>
+   * <p> <code>EXPIRED</code> -- The container fleet has been expired. The fleet is
+   * scaled down to zero instances and cannot host new game sessions.</p> </li> </ul>
    */
   inline ContainerFleetStatus GetStatus() const { return m_status; }
   inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }

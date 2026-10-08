@@ -247,6 +247,14 @@ GameServerContainerDefinition& GameServerContainerDefinition::operator=(const st
               else if (initialKeyStr == "LinuxCapabilities") {
                 m_linuxCapabilities = LinuxCapabilities(decoder);
                 m_linuxCapabilitiesHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "Vcpu") {
+                auto val = decoder->PopNextFloatVal();
+                if (val.has_value()) {
+                  m_vcpu = val.value();
+                }
+                m_vcpuHasBeenSet = true;
               } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
@@ -489,6 +497,14 @@ GameServerContainerDefinition& GameServerContainerDefinition::operator=(const st
             else if (initialKeyStr == "LinuxCapabilities") {
               m_linuxCapabilities = LinuxCapabilities(decoder);
               m_linuxCapabilitiesHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "Vcpu") {
+              auto val = decoder->PopNextFloatVal();
+              if (val.has_value()) {
+                m_vcpu = val.value();
+              }
+              m_vcpuHasBeenSet = true;
             } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
@@ -530,6 +546,9 @@ void GameServerContainerDefinition::CborEncode(Aws::Crt::Cbor::CborEncoder& enco
     mapSize++;
   }
   if (m_linuxCapabilitiesHasBeenSet) {
+    mapSize++;
+  }
+  if (m_vcpuHasBeenSet) {
     mapSize++;
   }
 
@@ -587,6 +606,11 @@ void GameServerContainerDefinition::CborEncode(Aws::Crt::Cbor::CborEncoder& enco
   if (m_linuxCapabilitiesHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("LinuxCapabilities"));
     m_linuxCapabilities.CborEncode(encoder);
+  }
+
+  if (m_vcpuHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Vcpu"));
+    encoder.WriteFloat(m_vcpu);
   }
 }
 

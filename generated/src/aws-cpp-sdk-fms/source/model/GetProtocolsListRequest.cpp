@@ -3,31 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/fms/model/GetProtocolsListRequest.h>
 
 #include <utility>
 
 using namespace Aws::FMS::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String GetProtocolsListRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_listIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_defaultListHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_listIdHasBeenSet) {
-    payload.WithString("ListId", m_listId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ListId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_listId.c_str()));
   }
 
   if (m_defaultListHasBeenSet) {
-    payload.WithBool("DefaultList", m_defaultList);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("DefaultList"));
+    encoder.WriteBool(m_defaultList);
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection GetProtocolsListRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSFMS_20180101.GetProtocolsList"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

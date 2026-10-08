@@ -22,6 +22,10 @@ ScheduleCondition& ScheduleCondition::operator=(JsonView jsonValue) {
     m_expression = jsonValue.GetString("expression");
     m_expressionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("spec")) {
+    m_spec = jsonValue.GetObject("spec");
+    m_specHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue ScheduleCondition::Jsonize() const {
 
   if (m_expressionHasBeenSet) {
     payload.WithString("expression", m_expression);
+  }
+
+  if (m_specHasBeenSet) {
+    payload.WithObject("spec", m_spec.Jsonize());
   }
 
   return payload;

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/datazone/DataZone_EXPORTS.h>
+#include <aws/datazone/model/S3FilesLocation.h>
 
 #include <utility>
 
@@ -49,9 +50,31 @@ class SourceLocation {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Simple Storage Service objects to import as the notebook's cells.
+   * One cell is created for each object, in the order in which you list them.</p>
+   */
+  inline const S3FilesLocation& GetS3Files() const { return m_s3Files; }
+  inline bool S3FilesHasBeenSet() const { return m_s3FilesHasBeenSet; }
+  template <typename S3FilesT = S3FilesLocation>
+  void SetS3Files(S3FilesT&& value) {
+    m_s3FilesHasBeenSet = true;
+    m_s3Files = std::forward<S3FilesT>(value);
+  }
+  template <typename S3FilesT = S3FilesLocation>
+  SourceLocation& WithS3Files(S3FilesT&& value) {
+    SetS3Files(std::forward<S3FilesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_s3;
+
+  S3FilesLocation m_s3Files;
   bool m_s3HasBeenSet = false;
+  bool m_s3FilesHasBeenSet = false;
 };
 
 }  // namespace Model

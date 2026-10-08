@@ -214,6 +214,8 @@
 #include <aws/glue/model/GetSessionEndpointResult.h>
 #include <aws/glue/model/GetSessionResult.h>
 #include <aws/glue/model/GetStatementResult.h>
+#include <aws/glue/model/GetSystemLogsForJobRunResult.h>
+#include <aws/glue/model/GetSystemLogsForSessionResult.h>
 #include <aws/glue/model/GetTableOptimizerResult.h>
 #include <aws/glue/model/GetTableResult.h>
 #include <aws/glue/model/GetTableVersionResult.h>
@@ -583,6 +585,8 @@ class GetSecurityConfigurationsRequest;
 class GetSessionRequest;
 class GetSessionEndpointRequest;
 class GetStatementRequest;
+class GetSystemLogsForJobRunRequest;
+class GetSystemLogsForSessionRequest;
 class GetTableRequest;
 class GetTableOptimizerRequest;
 class GetTableVersionRequest;
@@ -886,6 +890,8 @@ typedef Aws::Utils::Outcome<GetSecurityConfigurationsResult, GlueError> GetSecur
 typedef Aws::Utils::Outcome<GetSessionResult, GlueError> GetSessionOutcome;
 typedef Aws::Utils::Outcome<GetSessionEndpointResult, GlueError> GetSessionEndpointOutcome;
 typedef Aws::Utils::Outcome<GetStatementResult, GlueError> GetStatementOutcome;
+typedef Aws::Utils::Outcome<GetSystemLogsForJobRunResult, GlueError> GetSystemLogsForJobRunOutcome;
+typedef Aws::Utils::Outcome<GetSystemLogsForSessionResult, GlueError> GetSystemLogsForSessionOutcome;
 typedef Aws::Utils::Outcome<GetTableResult, GlueError> GetTableOutcome;
 typedef Aws::Utils::Outcome<GetTableOptimizerResult, GlueError> GetTableOptimizerOutcome;
 typedef Aws::Utils::Outcome<GetTableVersionResult, GlueError> GetTableVersionOutcome;
@@ -1189,6 +1195,8 @@ typedef std::future<GetSecurityConfigurationsOutcome> GetSecurityConfigurationsO
 typedef std::future<GetSessionOutcome> GetSessionOutcomeCallable;
 typedef std::future<GetSessionEndpointOutcome> GetSessionEndpointOutcomeCallable;
 typedef std::future<GetStatementOutcome> GetStatementOutcomeCallable;
+typedef std::future<GetSystemLogsForJobRunOutcome> GetSystemLogsForJobRunOutcomeCallable;
+typedef std::future<GetSystemLogsForSessionOutcome> GetSystemLogsForSessionOutcomeCallable;
 typedef std::future<GetTableOutcome> GetTableOutcomeCallable;
 typedef std::future<GetTableOptimizerOutcome> GetTableOptimizerOutcomeCallable;
 typedef std::future<GetTableVersionOutcome> GetTableVersionOutcomeCallable;
@@ -1861,6 +1869,12 @@ typedef std::function<void(const GlueClient*, const Model::GetSessionEndpointReq
 typedef std::function<void(const GlueClient*, const Model::GetStatementRequest&, const Model::GetStatementOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetStatementResponseReceivedHandler;
+typedef std::function<void(const GlueClient*, const Model::GetSystemLogsForJobRunRequest&, const Model::GetSystemLogsForJobRunOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetSystemLogsForJobRunResponseReceivedHandler;
+typedef std::function<void(const GlueClient*, const Model::GetSystemLogsForSessionRequest&, const Model::GetSystemLogsForSessionOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetSystemLogsForSessionResponseReceivedHandler;
 typedef std::function<void(const GlueClient*, const Model::GetTableRequest&, const Model::GetTableOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetTableResponseReceivedHandler;

@@ -20,7 +20,7 @@ namespace DevOpsAgent {
 namespace Model {
 
 /**
- * <p>Defines the firing condition for a Trigger</p><p><h3>See Also:</h3>   <a
+ * <p>Defines how a Trigger fires.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/TriggerCondition">AWS
  * API Reference</a></p>
  */
@@ -33,7 +33,8 @@ class TriggerCondition {
 
   ///@{
   /**
-   * <p>Time-based firing condition</p>
+   * <p>Schedule-based firing condition. On CreateTrigger supply exactly one of the
+   * schedule condition's expression or spec.</p>
    */
   inline const ScheduleCondition& GetSchedule() const { return m_schedule; }
   inline bool ScheduleHasBeenSet() const { return m_scheduleHasBeenSet; }

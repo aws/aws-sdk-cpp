@@ -717,6 +717,8 @@
 #include <aws/datazone/model/RuleType.h>
 #include <aws/datazone/model/RunStatisticsForAssets.h>
 #include <aws/datazone/model/S3Destination.h>
+#include <aws/datazone/model/S3File.h>
+#include <aws/datazone/model/S3FilesLocation.h>
 #include <aws/datazone/model/S3Permission.h>
 #include <aws/datazone/model/S3PropertiesInput.h>
 #include <aws/datazone/model/S3PropertiesOutput.h>

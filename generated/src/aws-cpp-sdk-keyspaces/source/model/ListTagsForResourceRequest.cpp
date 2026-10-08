@@ -3,35 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/keyspaces/model/ListTagsForResourceRequest.h>
 
 #include <utility>
 
 using namespace Aws::Keyspaces::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String ListTagsForResourceRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_resourceArnHasBeenSet) {
+    mapSize++;
+  }
+  if (m_nextTokenHasBeenSet) {
+    mapSize++;
+  }
+  if (m_maxResultsHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_resourceArnHasBeenSet) {
-    payload.WithString("resourceArn", m_resourceArn);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("resourceArn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_resourceArn.c_str()));
   }
 
   if (m_nextTokenHasBeenSet) {
-    payload.WithString("nextToken", m_nextToken);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("nextToken"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_nextToken.c_str()));
   }
 
   if (m_maxResultsHasBeenSet) {
-    payload.WithInteger("maxResults", m_maxResults);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("maxResults"));
+    (m_maxResults >= 0) ? encoder.WriteUInt(m_maxResults) : encoder.WriteNegInt(m_maxResults);
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection ListTagsForResourceRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "KeyspacesService.ListTagsForResource"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

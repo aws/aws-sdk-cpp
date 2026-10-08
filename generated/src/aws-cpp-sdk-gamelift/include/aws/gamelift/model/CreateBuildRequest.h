@@ -133,7 +133,7 @@ class CreateBuildRequest : public GameLiftRequest {
   ///@{
   /**
    * <p>A list of labels to assign to the new build resource. Tags are developer
-   * defined key-value pairs. Tagging Amazon Web Services resources are useful for
+   * defined key-value pairs. Tagging Amazon Web Services resources is useful for
    * resource management, access management and cost allocation. For more
    * information, see <a
    * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging

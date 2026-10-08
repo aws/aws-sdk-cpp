@@ -187,11 +187,11 @@ class GameServerContainerDefinitionInput {
    * container. The container port configuration must have enough ports for each
    * container process that accepts inbound traffic connections. For example, a game
    * server process requires a container port to allow game clients to connect to it.
-   * A container port configuration can have can have one or more container port
-   * ranges. Each range specifies starting and ending values as well as the supported
-   * network protocol.</p> <p>Container ports aren't directly accessed by inbound
-   * traffic. Amazon GameLift Servers maps each container port to an externally
-   * accessible connection port (see the container fleet property
+   * A container port configuration can have one or more container port ranges. Each
+   * range specifies starting and ending values as well as the supported network
+   * protocol.</p> <p>Container ports aren't directly accessed by inbound traffic.
+   * Amazon GameLift Servers maps each container port to an externally accessible
+   * connection port (see the container fleet property
    * <code>ConnectionPortRange</code>). </p>
    */
   inline const ContainerPortConfiguration& GetPortConfiguration() const { return m_portConfiguration; }
@@ -247,6 +247,34 @@ class GameServerContainerDefinitionInput {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The number of vCPU units reserved for the game server container. The
+   * container can use more vCPU when it's available, up to the container group's
+   * total vCPU limit if one is set. If the container group has a total vCPU limit
+   * and the request doesn't set this value, Amazon GameLift Servers calculates the
+   * game server container's vCPU as the total vCPU limit minus the sum of the vCPU
+   * units reserved for the group's support containers.</p> <p>A game server
+   * container group needs either a total vCPU limit or this value. If the container
+   * group doesn't have a total vCPU limit, the group's containers can use up to the
+   * instance's available vCPU, and Amazon GameLift Servers uses the sum of the
+   * group's container <code>Vcpu</code> values to calculate how many game server
+   * container groups fit on an instance.</p> <p> <b>Related data type: </b> <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ContainerGroupDefinition.html">ContainerGroupDefinition</a>
+   * <code>TotalVcpuLimit</code> </p>
+   */
+  inline double GetVcpu() const { return m_vcpu; }
+  inline bool VcpuHasBeenSet() const { return m_vcpuHasBeenSet; }
+  inline void SetVcpu(double value) {
+    m_vcpuHasBeenSet = true;
+    m_vcpu = value;
+  }
+  inline GameServerContainerDefinitionInput& WithVcpu(double value) {
+    SetVcpu(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_containerName;
 
@@ -263,6 +291,8 @@ class GameServerContainerDefinitionInput {
   Aws::String m_serverSdkVersion;
 
   LinuxCapabilities m_linuxCapabilities;
+
+  double m_vcpu{0.0};
   bool m_containerNameHasBeenSet = false;
   bool m_dependsOnHasBeenSet = false;
   bool m_mountPointsHasBeenSet = false;
@@ -271,6 +301,7 @@ class GameServerContainerDefinitionInput {
   bool m_portConfigurationHasBeenSet = false;
   bool m_serverSdkVersionHasBeenSet = false;
   bool m_linuxCapabilitiesHasBeenSet = false;
+  bool m_vcpuHasBeenSet = false;
 };
 
 }  // namespace Model

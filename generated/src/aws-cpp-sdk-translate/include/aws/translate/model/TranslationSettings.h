@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/translate/Translate_EXPORTS.h>
 #include <aws/translate/model/Brevity.h>
 #include <aws/translate/model/Formality.h>
@@ -13,10 +14,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace Translate {
 namespace Model {
@@ -35,9 +35,9 @@ namespace Model {
 class TranslationSettings {
  public:
   AWS_TRANSLATE_API TranslationSettings() = default;
-  AWS_TRANSLATE_API TranslationSettings(Aws::Utils::Json::JsonView jsonValue);
-  AWS_TRANSLATE_API TranslationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_TRANSLATE_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_TRANSLATE_API TranslationSettings(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_TRANSLATE_API TranslationSettings& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_TRANSLATE_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

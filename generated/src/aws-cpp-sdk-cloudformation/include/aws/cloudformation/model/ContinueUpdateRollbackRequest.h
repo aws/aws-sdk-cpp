@@ -160,6 +160,42 @@ class ContinueUpdateRollbackRequest : public CloudFormationRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether CloudFormation forces the rollback to continue by skipping
+   * resources currently in the <code>UPDATE_FAILED</code> state. Use this instead of
+   * listing each resource individually in <code>ResourcesToSkip</code>. Only
+   * resources that entered the <code>UPDATE_FAILED</code> state because a rollback
+   * failed are skipped. If you don't specify a value, the default is
+   * <code>false</code> and CloudFormation doesn't skip any resources.</p> <p>
+   * <code>ForceRollback</code> and <code>ResourcesToSkip</code> are mutually
+   * exclusive. Specifying both in the same request returns a validation error.</p>
+   *  <p>We recommend that you <a
+   * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">troubleshoot</a>
+   * resources before skipping them. CloudFormation sets the status of the skipped
+   * resources to <code>UPDATE_COMPLETE</code> and continues to roll back the stack,
+   * including resources in nested stacks. After the rollback completes, the skipped
+   * resources no longer match the resources in the stack template. Before performing
+   * another stack update, you must update the stack or resources to be consistent
+   * with each other. If you don't, subsequent stack updates might fail, and the
+   * stack will become unrecoverable.</p> <p>Drift detection reports skipped
+   * resources as <code>NOT_CHECKED</code>. For guidance, see <a
+   * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html">Continue
+   * rolling back an update</a> in the <i>CloudFormation User Guide</i>.</p>
+   *
+   */
+  inline bool GetForceRollback() const { return m_forceRollback; }
+  inline bool ForceRollbackHasBeenSet() const { return m_forceRollbackHasBeenSet; }
+  inline void SetForceRollback(bool value) {
+    m_forceRollbackHasBeenSet = true;
+    m_forceRollback = value;
+  }
+  inline ContinueUpdateRollbackRequest& WithForceRollback(bool value) {
+    SetForceRollback(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_stackName;
 
@@ -168,10 +204,13 @@ class ContinueUpdateRollbackRequest : public CloudFormationRequest {
   Aws::Vector<Aws::String> m_resourcesToSkip;
 
   Aws::String m_clientRequestToken;
+
+  bool m_forceRollback{false};
   bool m_stackNameHasBeenSet = false;
   bool m_roleARNHasBeenSet = false;
   bool m_resourcesToSkipHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = false;
+  bool m_forceRollbackHasBeenSet = false;
 };
 
 }  // namespace Model

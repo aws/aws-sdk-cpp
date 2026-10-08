@@ -347,6 +347,25 @@ class Finding {
 
   ///@{
   /**
+   * <p>The suggested fix for the finding, describing the changes recommended to
+   * remediate the vulnerability, with example code or configuration.</p>
+   */
+  inline const Aws::String& GetRemediationCode() const { return m_remediationCode; }
+  inline bool RemediationCodeHasBeenSet() const { return m_remediationCodeHasBeenSet; }
+  template <typename RemediationCodeT = Aws::String>
+  void SetRemediationCode(RemediationCodeT&& value) {
+    m_remediationCodeHasBeenSet = true;
+    m_remediationCode = std::forward<RemediationCodeT>(value);
+  }
+  template <typename RemediationCodeT = Aws::String>
+  Finding& WithRemediationCode(RemediationCodeT&& value) {
+    SetRemediationCode(std::forward<RemediationCodeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The code remediation task associated with the finding, if code remediation
    * was initiated.</p>
    */
@@ -577,6 +596,8 @@ class Finding {
 
   Aws::String m_attackScript;
 
+  Aws::String m_remediationCode;
+
   CodeRemediationTask m_codeRemediationTask;
 
   Aws::String m_lastUpdatedBy;
@@ -613,6 +634,7 @@ class Finding {
   bool m_confidenceHasBeenSet = false;
   bool m_validationStatusHasBeenSet = false;
   bool m_attackScriptHasBeenSet = false;
+  bool m_remediationCodeHasBeenSet = false;
   bool m_codeRemediationTaskHasBeenSet = false;
   bool m_lastUpdatedByHasBeenSet = false;
   bool m_customerNoteHasBeenSet = false;

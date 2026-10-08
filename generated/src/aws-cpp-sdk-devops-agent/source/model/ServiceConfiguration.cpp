@@ -94,6 +94,10 @@ ServiceConfiguration& ServiceConfiguration::operator=(JsonView jsonValue) {
     m_remoteagentsigv4 = jsonValue.GetObject("remoteagentsigv4");
     m_remoteagentsigv4HasBeenSet = true;
   }
+  if (jsonValue.ValueExists("releaseManagement")) {
+    m_releaseManagement = jsonValue.GetObject("releaseManagement");
+    m_releaseManagementHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -174,6 +178,10 @@ JsonValue ServiceConfiguration::Jsonize() const {
 
   if (m_remoteagentsigv4HasBeenSet) {
     payload.WithObject("remoteagentsigv4", m_remoteagentsigv4.Jsonize());
+  }
+
+  if (m_releaseManagementHasBeenSet) {
+    payload.WithObject("releaseManagement", m_releaseManagement.Jsonize());
   }
 
   return payload;

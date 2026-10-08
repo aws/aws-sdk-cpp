@@ -191,6 +191,7 @@
 #include <aws/ce/model/OfferingClass.h>
 #include <aws/ce/model/PaymentOption.h>
 #include <aws/ce/model/PlatformDifference.h>
+#include <aws/ce/model/ProductAttributeValues.h>
 #include <aws/ce/model/ProvideAnomalyFeedbackRequest.h>
 #include <aws/ce/model/ProvideAnomalyFeedbackResult.h>
 #include <aws/ce/model/RDSInstanceDetails.h>

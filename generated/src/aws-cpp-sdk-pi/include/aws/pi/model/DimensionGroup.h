@@ -6,16 +6,16 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/pi/PI_EXPORTS.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace PI {
 namespace Model {
@@ -40,9 +40,9 @@ namespace Model {
 class DimensionGroup {
  public:
   AWS_PI_API DimensionGroup() = default;
-  AWS_PI_API DimensionGroup(Aws::Utils::Json::JsonView jsonValue);
-  AWS_PI_API DimensionGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_PI_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_PI_API DimensionGroup(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_PI_API DimensionGroup& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_PI_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -193,13 +193,13 @@ class DimensionGroup {
   /**
    * <p>The maximum number of items to fetch for this dimension group.</p>
    */
-  inline int GetLimit() const { return m_limit; }
+  inline int64_t GetLimit() const { return m_limit; }
   inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
-  inline void SetLimit(int value) {
+  inline void SetLimit(int64_t value) {
     m_limitHasBeenSet = true;
     m_limit = value;
   }
-  inline DimensionGroup& WithLimit(int value) {
+  inline DimensionGroup& WithLimit(int64_t value) {
     SetLimit(value);
     return *this;
   }
@@ -209,7 +209,7 @@ class DimensionGroup {
 
   Aws::Vector<Aws::String> m_dimensions;
 
-  int m_limit{0};
+  int64_t m_limit{0};
   bool m_groupHasBeenSet = false;
   bool m_dimensionsHasBeenSet = false;
   bool m_limitHasBeenSet = false;

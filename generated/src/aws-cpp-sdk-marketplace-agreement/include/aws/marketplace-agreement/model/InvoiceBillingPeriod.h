@@ -4,14 +4,14 @@
  */
 
 #pragma once
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/marketplace-agreement/AgreementService_EXPORTS.h>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace AgreementService {
 namespace Model {
@@ -25,21 +25,21 @@ namespace Model {
 class InvoiceBillingPeriod {
  public:
   AWS_AGREEMENTSERVICE_API InvoiceBillingPeriod() = default;
-  AWS_AGREEMENTSERVICE_API InvoiceBillingPeriod(Aws::Utils::Json::JsonView jsonValue);
-  AWS_AGREEMENTSERVICE_API InvoiceBillingPeriod& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_AGREEMENTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_AGREEMENTSERVICE_API InvoiceBillingPeriod(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_AGREEMENTSERVICE_API InvoiceBillingPeriod& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_AGREEMENTSERVICE_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
    * <p>The billing period month. Valid range: 1-12.</p>
    */
-  inline int GetMonth() const { return m_month; }
+  inline int64_t GetMonth() const { return m_month; }
   inline bool MonthHasBeenSet() const { return m_monthHasBeenSet; }
-  inline void SetMonth(int value) {
+  inline void SetMonth(int64_t value) {
     m_monthHasBeenSet = true;
     m_month = value;
   }
-  inline InvoiceBillingPeriod& WithMonth(int value) {
+  inline InvoiceBillingPeriod& WithMonth(int64_t value) {
     SetMonth(value);
     return *this;
   }
@@ -49,21 +49,21 @@ class InvoiceBillingPeriod {
   /**
    * <p>The billing period year.</p>
    */
-  inline int GetYear() const { return m_year; }
+  inline int64_t GetYear() const { return m_year; }
   inline bool YearHasBeenSet() const { return m_yearHasBeenSet; }
-  inline void SetYear(int value) {
+  inline void SetYear(int64_t value) {
     m_yearHasBeenSet = true;
     m_year = value;
   }
-  inline InvoiceBillingPeriod& WithYear(int value) {
+  inline InvoiceBillingPeriod& WithYear(int64_t value) {
     SetYear(value);
     return *this;
   }
   ///@}
  private:
-  int m_month{0};
+  int64_t m_month{0};
 
-  int m_year{0};
+  int64_t m_year{0};
   bool m_monthHasBeenSet = false;
   bool m_yearHasBeenSet = false;
 };

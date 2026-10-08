@@ -22,6 +22,10 @@ CapabilityConfigurationResponse& CapabilityConfigurationResponse::operator=(Json
     m_argoCd = jsonValue.GetObject("argoCd");
     m_argoCdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ack")) {
+    m_ack = jsonValue.GetObject("ack");
+    m_ackHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue CapabilityConfigurationResponse::Jsonize() const {
 
   if (m_argoCdHasBeenSet) {
     payload.WithObject("argoCd", m_argoCd.Jsonize());
+  }
+
+  if (m_ackHasBeenSet) {
+    payload.WithObject("ack", m_ack.Jsonize());
   }
 
   return payload;

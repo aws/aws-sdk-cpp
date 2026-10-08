@@ -23,6 +23,13 @@ static const int SASL_SCRAM_256_AUTH_HASH = HashingUtils::HashString("SASL_SCRAM
 static const int VIRTUAL_HOST_HASH = HashingUtils::HashString("VIRTUAL_HOST");
 static const int CLIENT_CERTIFICATE_TLS_AUTH_HASH = HashingUtils::HashString("CLIENT_CERTIFICATE_TLS_AUTH");
 static const int SERVER_ROOT_CA_CERTIFICATE_HASH = HashingUtils::HashString("SERVER_ROOT_CA_CERTIFICATE");
+static const int OAUTHBEARER_AUTH_HASH = HashingUtils::HashString("OAUTHBEARER_AUTH");
+static const int OAUTHBEARER_SCOPE_HASH = HashingUtils::HashString("OAUTHBEARER_SCOPE");
+static const int OAUTHBEARER_AUDIENCE_HASH = HashingUtils::HashString("OAUTHBEARER_AUDIENCE");
+static const int OAUTHBEARER_LOGICAL_CLUSTER_HASH = HashingUtils::HashString("OAUTHBEARER_LOGICAL_CLUSTER");
+static const int OAUTHBEARER_IDENTITY_POOL_HASH = HashingUtils::HashString("OAUTHBEARER_IDENTITY_POOL");
+static const int IAM_AUTH_HASH = HashingUtils::HashString("IAM_AUTH");
+static const int IAM_OAUTHBEARER_AUTH_HASH = HashingUtils::HashString("IAM_OAUTHBEARER_AUTH");
 
 SourceAccessType GetSourceAccessTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -42,6 +49,20 @@ SourceAccessType GetSourceAccessTypeForName(const Aws::String& name) {
     return SourceAccessType::CLIENT_CERTIFICATE_TLS_AUTH;
   } else if (hashCode == SERVER_ROOT_CA_CERTIFICATE_HASH) {
     return SourceAccessType::SERVER_ROOT_CA_CERTIFICATE;
+  } else if (hashCode == OAUTHBEARER_AUTH_HASH) {
+    return SourceAccessType::OAUTHBEARER_AUTH;
+  } else if (hashCode == OAUTHBEARER_SCOPE_HASH) {
+    return SourceAccessType::OAUTHBEARER_SCOPE;
+  } else if (hashCode == OAUTHBEARER_AUDIENCE_HASH) {
+    return SourceAccessType::OAUTHBEARER_AUDIENCE;
+  } else if (hashCode == OAUTHBEARER_LOGICAL_CLUSTER_HASH) {
+    return SourceAccessType::OAUTHBEARER_LOGICAL_CLUSTER;
+  } else if (hashCode == OAUTHBEARER_IDENTITY_POOL_HASH) {
+    return SourceAccessType::OAUTHBEARER_IDENTITY_POOL;
+  } else if (hashCode == IAM_AUTH_HASH) {
+    return SourceAccessType::IAM_AUTH;
+  } else if (hashCode == IAM_OAUTHBEARER_AUTH_HASH) {
+    return SourceAccessType::IAM_OAUTHBEARER_AUTH;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -72,6 +93,20 @@ Aws::String GetNameForSourceAccessType(SourceAccessType enumValue) {
       return "CLIENT_CERTIFICATE_TLS_AUTH";
     case SourceAccessType::SERVER_ROOT_CA_CERTIFICATE:
       return "SERVER_ROOT_CA_CERTIFICATE";
+    case SourceAccessType::OAUTHBEARER_AUTH:
+      return "OAUTHBEARER_AUTH";
+    case SourceAccessType::OAUTHBEARER_SCOPE:
+      return "OAUTHBEARER_SCOPE";
+    case SourceAccessType::OAUTHBEARER_AUDIENCE:
+      return "OAUTHBEARER_AUDIENCE";
+    case SourceAccessType::OAUTHBEARER_LOGICAL_CLUSTER:
+      return "OAUTHBEARER_LOGICAL_CLUSTER";
+    case SourceAccessType::OAUTHBEARER_IDENTITY_POOL:
+      return "OAUTHBEARER_IDENTITY_POOL";
+    case SourceAccessType::IAM_AUTH:
+      return "IAM_AUTH";
+    case SourceAccessType::IAM_OAUTHBEARER_AUTH:
+      return "IAM_OAUTHBEARER_AUTH";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

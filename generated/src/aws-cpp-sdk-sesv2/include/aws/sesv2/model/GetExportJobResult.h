@@ -89,7 +89,9 @@ class GetExportJobResult {
 
   ///@{
   /**
-   * <p>The destination of the export job.</p>
+   * <p>The destination of the export job. When <code>JobStatus</code> is
+   * <code>COMPLETED</code>, this object includes <code>S3Url</code>, a pre-signed
+   * URL that you use to download the export file.</p>
    */
   inline const ExportDestination& GetExportDestination() const { return m_exportDestination; }
   template <typename ExportDestinationT = ExportDestination>

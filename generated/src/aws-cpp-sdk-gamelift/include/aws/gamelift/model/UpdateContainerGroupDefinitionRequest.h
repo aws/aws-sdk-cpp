@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/gamelift/GameLiftRequest.h>
 #include <aws/gamelift/GameLift_EXPORTS.h>
+#include <aws/gamelift/model/ContainerGroupDefinitionRemoveAttribute.h>
 #include <aws/gamelift/model/ContainerOperatingSystem.h>
 #include <aws/gamelift/model/GameServerContainerDefinitionInput.h>
 #include <aws/gamelift/model/SupportContainerDefinitionInput.h>
@@ -124,10 +125,19 @@ class UpdateContainerGroupDefinitionRequest : public GameLiftRequest {
   ///@{
   /**
    * <p>The maximum amount of vCPU units to allocate to the container group (1 vCPU
-   * is equal to 1024 CPU units). All containers in the group share this memory. If
-   * you specify vCPU limits for individual containers, the total value must be equal
-   * to or greater than the sum of the CPU limits for all containers in the
-   * group.</p>
+   * is equal to 1024 CPU units). All containers in the group share these resources.
+   * If you set vCPU reservations for individual containers, the total value must be
+   * equal to or greater than the sum of the <code>Vcpu</code> values for all
+   * containers in the group.</p> <p>For a game server container group, Amazon
+   * GameLift Servers requires either a total vCPU limit or a <code>Vcpu</code> value
+   * for the game server container. If the container group has a total vCPU limit,
+   * Amazon GameLift Servers uses this value to calculate how many game server
+   * container groups fit on an instance. If the container group doesn't have a total
+   * vCPU limit, its containers can use up to the instance's available vCPU, and
+   * Amazon GameLift Servers uses the sum of the containers' <code>Vcpu</code> values
+   * to calculate how many game server container groups fit on an instance. To remove
+   * the total vCPU limit, omit this parameter and set <code>RemoveAttributes</code>
+   * to <code>TOTAL_VCPU_LIMIT</code>.</p>
    */
   inline double GetTotalVcpuLimit() const { return m_totalVcpuLimit; }
   inline bool TotalVcpuLimitHasBeenSet() const { return m_totalVcpuLimitHasBeenSet; }
@@ -200,6 +210,34 @@ class UpdateContainerGroupDefinitionRequest : public GameLiftRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>If set, this update removes the container group's total vCPU limit, and the
+   * group's containers can use up to the instance's available vCPU. You can't remove
+   * the total vCPU limit from a per-instance container group. A game server
+   * container group needs either a total vCPU limit or a <code>Vcpu</code> value for
+   * the game server container. You can't set <code>TotalVcpuLimit</code> in the same
+   * request.</p>
+   */
+  inline const Aws::Vector<ContainerGroupDefinitionRemoveAttribute>& GetRemoveAttributes() const { return m_removeAttributes; }
+  inline bool RemoveAttributesHasBeenSet() const { return m_removeAttributesHasBeenSet; }
+  template <typename RemoveAttributesT = Aws::Vector<ContainerGroupDefinitionRemoveAttribute>>
+  void SetRemoveAttributes(RemoveAttributesT&& value) {
+    m_removeAttributesHasBeenSet = true;
+    m_removeAttributes = std::forward<RemoveAttributesT>(value);
+  }
+  template <typename RemoveAttributesT = Aws::Vector<ContainerGroupDefinitionRemoveAttribute>>
+  UpdateContainerGroupDefinitionRequest& WithRemoveAttributes(RemoveAttributesT&& value) {
+    SetRemoveAttributes(std::forward<RemoveAttributesT>(value));
+    return *this;
+  }
+  inline UpdateContainerGroupDefinitionRequest& AddRemoveAttributes(ContainerGroupDefinitionRemoveAttribute value) {
+    m_removeAttributesHasBeenSet = true;
+    m_removeAttributes.push_back(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -216,6 +254,8 @@ class UpdateContainerGroupDefinitionRequest : public GameLiftRequest {
   int m_sourceVersionNumber{0};
 
   ContainerOperatingSystem m_operatingSystem{ContainerOperatingSystem::NOT_SET};
+
+  Aws::Vector<ContainerGroupDefinitionRemoveAttribute> m_removeAttributes;
   bool m_nameHasBeenSet = false;
   bool m_gameServerContainerDefinitionHasBeenSet = false;
   bool m_supportContainerDefinitionsHasBeenSet = false;
@@ -224,6 +264,7 @@ class UpdateContainerGroupDefinitionRequest : public GameLiftRequest {
   bool m_versionDescriptionHasBeenSet = false;
   bool m_sourceVersionNumberHasBeenSet = false;
   bool m_operatingSystemHasBeenSet = false;
+  bool m_removeAttributesHasBeenSet = false;
 };
 
 }  // namespace Model

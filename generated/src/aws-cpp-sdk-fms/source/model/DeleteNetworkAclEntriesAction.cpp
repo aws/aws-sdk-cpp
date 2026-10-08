@@ -3,70 +3,255 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/fms/model/DeleteNetworkAclEntriesAction.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace FMS {
 namespace Model {
 
-DeleteNetworkAclEntriesAction::DeleteNetworkAclEntriesAction(JsonView jsonValue) { *this = jsonValue; }
+DeleteNetworkAclEntriesAction::DeleteNetworkAclEntriesAction(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  *this = decoder;
+}
 
-DeleteNetworkAclEntriesAction& DeleteNetworkAclEntriesAction::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("Description")) {
-    m_description = jsonValue.GetString("Description");
-    m_descriptionHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("NetworkAclId")) {
-    m_networkAclId = jsonValue.GetObject("NetworkAclId");
-    m_networkAclIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("NetworkAclEntriesToBeDeleted")) {
-    Aws::Utils::Array<JsonView> networkAclEntriesToBeDeletedJsonList = jsonValue.GetArray("NetworkAclEntriesToBeDeleted");
-    for (unsigned networkAclEntriesToBeDeletedIndex = 0;
-         networkAclEntriesToBeDeletedIndex < networkAclEntriesToBeDeletedJsonList.GetLength(); ++networkAclEntriesToBeDeletedIndex) {
-      m_networkAclEntriesToBeDeleted.push_back(networkAclEntriesToBeDeletedJsonList[networkAclEntriesToBeDeletedIndex].AsObject());
+DeleteNetworkAclEntriesAction& DeleteNetworkAclEntriesAction::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "Description") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_description = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_description = ss.str();
+                  }
+                }
+                m_descriptionHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "NetworkAclId") {
+                m_networkAclId = ActionTarget(decoder);
+                m_networkAclIdHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "NetworkAclEntriesToBeDeleted") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_networkAclEntriesToBeDeleted.push_back(EntryDescription(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_networkAclEntriesToBeDeleted.push_back(EntryDescription(decoder));
+                    }
+                  }
+                }
+                m_networkAclEntriesToBeDeletedHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "FMSCanRemediate") {
+                auto val = decoder->PopNextBooleanVal();
+                if (val.has_value()) {
+                  m_fMSCanRemediate = val.value();
+                }
+                m_fMSCanRemediateHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("DeleteNetworkAclEntriesAction", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "Description") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_description = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_description = ss.str();
+                }
+              }
+              m_descriptionHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "NetworkAclId") {
+              m_networkAclId = ActionTarget(decoder);
+              m_networkAclIdHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "NetworkAclEntriesToBeDeleted") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_networkAclEntriesToBeDeleted.push_back(EntryDescription(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_networkAclEntriesToBeDeleted.push_back(EntryDescription(decoder));
+                  }
+                }
+              }
+              m_networkAclEntriesToBeDeletedHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "FMSCanRemediate") {
+              auto val = decoder->PopNextBooleanVal();
+              if (val.has_value()) {
+                m_fMSCanRemediate = val.value();
+              }
+              m_fMSCanRemediateHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
     }
-    m_networkAclEntriesToBeDeletedHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("FMSCanRemediate")) {
-    m_fMSCanRemediate = jsonValue.GetBool("FMSCanRemediate");
-    m_fMSCanRemediateHasBeenSet = true;
-  }
+
   return *this;
 }
 
-JsonValue DeleteNetworkAclEntriesAction::Jsonize() const {
-  JsonValue payload;
+void DeleteNetworkAclEntriesAction::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_descriptionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_networkAclIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_networkAclEntriesToBeDeletedHasBeenSet) {
+    mapSize++;
+  }
+  if (m_fMSCanRemediateHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_descriptionHasBeenSet) {
-    payload.WithString("Description", m_description);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Description"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_description.c_str()));
   }
 
   if (m_networkAclIdHasBeenSet) {
-    payload.WithObject("NetworkAclId", m_networkAclId.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("NetworkAclId"));
+    m_networkAclId.CborEncode(encoder);
   }
 
   if (m_networkAclEntriesToBeDeletedHasBeenSet) {
-    Aws::Utils::Array<JsonValue> networkAclEntriesToBeDeletedJsonList(m_networkAclEntriesToBeDeleted.size());
-    for (unsigned networkAclEntriesToBeDeletedIndex = 0;
-         networkAclEntriesToBeDeletedIndex < networkAclEntriesToBeDeletedJsonList.GetLength(); ++networkAclEntriesToBeDeletedIndex) {
-      networkAclEntriesToBeDeletedJsonList[networkAclEntriesToBeDeletedIndex].AsObject(
-          m_networkAclEntriesToBeDeleted[networkAclEntriesToBeDeletedIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("NetworkAclEntriesToBeDeleted"));
+    encoder.WriteArrayStart(m_networkAclEntriesToBeDeleted.size());
+    for (const auto& item_0 : m_networkAclEntriesToBeDeleted) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("NetworkAclEntriesToBeDeleted", std::move(networkAclEntriesToBeDeletedJsonList));
   }
 
   if (m_fMSCanRemediateHasBeenSet) {
-    payload.WithBool("FMSCanRemediate", m_fMSCanRemediate);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("FMSCanRemediate"));
+    encoder.WriteBool(m_fMSCanRemediate);
   }
-
-  return payload;
 }
 
 }  // namespace Model
