@@ -5,6 +5,7 @@
 
 
 #include <aws/core/auth/SSOCredentialsProvider.h>
+#include <aws/core/auth/CredentialsCachingProvider.h>
 #include <aws/core/auth/ProfileCredentialsProvider.h>
 #include <aws/core/config/AWSProfileConfigLoader.h>
 #include <aws/core/internal/AWSHttpResourceClient.h>
@@ -24,44 +25,18 @@ using namespace Aws::Auth;
 using namespace Aws::Internal;
 using namespace Aws::FileSystem;
 using namespace Aws::Client;
-using Aws::Utils::Threading::ReaderLockGuard;
-
 
 static const char SSO_CREDENTIALS_PROVIDER_LOG_TAG[] = "SSOCredentialsProvider";
 
-SSOCredentialsProvider::SSOCredentialsProvider() : SSOCredentialsProvider(GetConfigProfileName(), nullptr)
+SSOCredentialsProvider::SSOFetchOnlyProvider::SSOFetchOnlyProvider(
+    Aws::String profile, std::shared_ptr<const Aws::Client::ClientConfiguration> config)
+    : m_profileToUse(profile),
+      m_bearerTokenProvider(profile),
+      m_config(std::move(config))
 {
 }
 
-SSOCredentialsProvider::SSOCredentialsProvider(const Aws::String& profile) : SSOCredentialsProvider(profile, nullptr)
-{
-}
-
-SSOCredentialsProvider::SSOCredentialsProvider(const Aws::String& profile, std::shared_ptr<const Aws::Client::ClientConfiguration> config) :
-    m_profileToUse(profile),
-    m_bearerTokenProvider(profile),
-    m_config(std::move(config))
-{
-    AWS_LOGSTREAM_INFO(SSO_CREDENTIALS_PROVIDER_LOG_TAG, "Setting sso credentials provider to read config from " << m_profileToUse);
-    if (!m_config)
-    {
-        auto defaultConfig = Aws::MakeShared<Client::ClientConfiguration>(SSO_CREDENTIALS_PROVIDER_LOG_TAG);
-        defaultConfig->scheme = Aws::Http::Scheme::HTTPS;
-        // We cannot set region to m_ssoRegion because it is not yet known at this point. But it's not obtained from the client config either way.
-        Aws::Vector<Aws::String> retryableErrors{ "TooManyRequestsException" };
-        defaultConfig->retryStrategy = Aws::MakeShared<SpecifiedRetryableErrorsRetryStrategy>(SSO_CREDENTIALS_PROVIDER_LOG_TAG, std::move(retryableErrors), 3/*maxRetries*/);
-        m_config = std::move(defaultConfig);
-    }
-}
-
-AWSCredentials SSOCredentialsProvider::GetAWSCredentials()
-{
-    RefreshIfExpired();
-    ReaderLockGuard guard(m_reloadLock);
-    return m_credentials;
-}
-
-void SSOCredentialsProvider::Reload()
+AWSCredentials SSOCredentialsProvider::SSOFetchOnlyProvider::GetAWSCredentials()
 {
     auto profile = Aws::Config::GetCachedConfigProfile(m_profileToUse);
     const auto accessToken = [&]() -> Aws::String {
@@ -84,11 +59,11 @@ void SSOCredentialsProvider::Reload()
     }();
     if (accessToken.empty()) {
         AWS_LOGSTREAM_TRACE(SSO_CREDENTIALS_PROVIDER_LOG_TAG, "Access token for SSO not available");
-        return;
+        return AWSCredentials();
     }
     if (m_expiresAt < Aws::Utils::DateTime::Now()) {
         AWS_LOGSTREAM_ERROR(SSO_CREDENTIALS_PROVIDER_LOG_TAG, "Cached Token expired at " << m_expiresAt.ToGmtString(DateFormat::ISO_8601));
-        return;
+        return AWSCredentials();
     }
     SSOCredentialsClient::SSOGetRoleCredentialsRequest request;
     request.m_ssoAccountId = profile.GetSsoAccountId();
@@ -101,34 +76,18 @@ void SSOCredentialsProvider::Reload()
     auto result = m_client->GetSSOCredentials(request);
     AWS_LOGSTREAM_TRACE(SSO_CREDENTIALS_PROVIDER_LOG_TAG, "Successfully retrieved credentials with AWS_ACCESS_KEY: " << result.creds.GetAWSAccessKeyId());
 
-    m_credentials = result.creds;
-    if (!m_credentials.IsEmpty()) {
+    AWSCredentials credentials = result.creds;
+    if (!credentials.IsEmpty()) {
         if (!profile.IsSsoSessionSet()) {
-          m_credentials.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_SSO_LEGACY);
+          credentials.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_SSO_LEGACY);
         } else {
-          m_credentials.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_SSO);
+          credentials.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_SSO);
         }
     }
+    return credentials;
 }
 
-void SSOCredentialsProvider::RefreshIfExpired()
-{
-    ReaderLockGuard guard(m_reloadLock);
-    if (!m_credentials.IsExpiredOrEmpty())
-    {
-        return;
-    }
-
-    guard.UpgradeToWriterLock();
-    if (!m_credentials.IsExpiredOrEmpty()) // double-checked lock to avoid refreshing twice
-    {
-        return;
-    }
-
-    Reload();
-}
-
-Aws::String SSOCredentialsProvider::LoadAccessTokenFile(const Aws::String& ssoAccessTokenPath)
+Aws::String SSOCredentialsProvider::SSOFetchOnlyProvider::LoadAccessTokenFile(const Aws::String& ssoAccessTokenPath)
 {
     AWS_LOGSTREAM_DEBUG(SSO_CREDENTIALS_PROVIDER_LOG_TAG, "Preparing to load token from: " << ssoAccessTokenPath);
 
@@ -166,4 +125,39 @@ Aws::String SSOCredentialsProvider::LoadAccessTokenFile(const Aws::String& ssoAc
         AWS_LOGSTREAM_INFO(SSO_CREDENTIALS_PROVIDER_LOG_TAG,"Unable to open token file on path: " << ssoAccessTokenPath);
         return "";
     }
+}
+
+SSOCredentialsProvider::SSOCredentialsProvider() : SSOCredentialsProvider(GetConfigProfileName(), nullptr)
+{
+}
+
+SSOCredentialsProvider::SSOCredentialsProvider(const Aws::String& profile) : SSOCredentialsProvider(profile, nullptr)
+{
+}
+
+SSOCredentialsProvider::SSOCredentialsProvider(const Aws::String& profile, std::shared_ptr<const Aws::Client::ClientConfiguration> config)
+{
+    AWS_LOGSTREAM_INFO(SSO_CREDENTIALS_PROVIDER_LOG_TAG, "Setting sso credentials provider to read config from " << profile);
+    if (!config)
+    {
+        auto defaultConfig = Aws::MakeShared<Client::ClientConfiguration>(SSO_CREDENTIALS_PROVIDER_LOG_TAG);
+        defaultConfig->scheme = Aws::Http::Scheme::HTTPS;
+        // We cannot set region to m_ssoRegion because it is not yet known at this point. But it's not obtained from the client config either way.
+        Aws::Vector<Aws::String> retryableErrors{ "TooManyRequestsException" };
+        defaultConfig->retryStrategy = Aws::MakeShared<SpecifiedRetryableErrorsRetryStrategy>(SSO_CREDENTIALS_PROVIDER_LOG_TAG, std::move(retryableErrors), 3/*maxRetries*/);
+        config = std::move(defaultConfig);
+    }
+
+    auto fetchOnly = Aws::MakeShared<SSOFetchOnlyProvider>(SSO_CREDENTIALS_PROVIDER_LOG_TAG, profile, config);
+    m_cachingProvider = Aws::MakeShared<CredentialsCachingProvider>(SSO_CREDENTIALS_PROVIDER_LOG_TAG, fetchOnly);
+}
+
+AWSCredentials SSOCredentialsProvider::GetAWSCredentials()
+{
+    return m_cachingProvider->GetAWSCredentials();
+}
+
+void SSOCredentialsProvider::Invalidate(const Aws::String& accessKeyId)
+{
+    m_cachingProvider->Invalidate(accessKeyId);
 }

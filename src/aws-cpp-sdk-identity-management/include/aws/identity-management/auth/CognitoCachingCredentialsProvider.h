@@ -9,13 +9,13 @@
 #include <aws/core/auth/AWSCredentialsProvider.h>
 #include <aws/identity-management/IdentityManagment_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
-#include <mutex>
 
 namespace Aws
 {
     namespace Auth
     {
         class PersistentCognitoIdentityProvider;
+        class CredentialsCachingProvider;
 
         /**
          * Credentials provider that can be used to authenticate a user with any other AWS service.
@@ -25,6 +25,9 @@ namespace Aws
         {
         public:
             AWSCredentials GetAWSCredentials() override;
+
+            // Marks the cached credentials for refresh, only if they are the ones that were rejected.
+            void Invalidate(const Aws::String& accessKeyId) override;
 
         protected:
             /**
@@ -36,17 +39,26 @@ namespace Aws
 
             virtual CognitoIdentity::Model::GetCredentialsForIdentityOutcome GetCredentialsFromCognito() const = 0;
 
-            bool IsTimeExpired(double expiry);
-
             std::shared_ptr<CognitoIdentity::CognitoIdentityClient> m_cognitoIdentityClient;
             std::shared_ptr<PersistentCognitoIdentityProvider> m_identityRepository;
 
         private:
             void OnLoginsUpdated(const PersistentCognitoIdentityProvider&);
 
-            AWSCredentials m_cachedCredentials;
-            std::atomic<double> m_expiry;
-            std::mutex m_credsMutex;
+            // Fetch-only: one GetCredentialsFromCognito() call, no cache of its own. Composed into
+            // m_cachingProvider below, which owns the refresh lifecycle. GetCredentialsFromCognito() is
+            // virtual, so this calls back into the owner rather than duplicating its dispatch.
+            class CognitoFetchOnlyProvider : public AWSCredentialsProvider
+            {
+            public:
+                explicit CognitoFetchOnlyProvider(CognitoCachingCredentialsProvider& owner);
+                AWSCredentials GetAWSCredentials() override;
+
+            private:
+                CognitoCachingCredentialsProvider& m_owner;
+            };
+
+            std::shared_ptr<CredentialsCachingProvider> m_cachingProvider;
         };
 
         /**

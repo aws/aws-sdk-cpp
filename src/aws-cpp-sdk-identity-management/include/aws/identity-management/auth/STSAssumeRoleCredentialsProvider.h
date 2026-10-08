@@ -9,8 +9,6 @@
 #include <aws/core/auth/AWSCredentialsProvider.h>
 
 #include <memory>
-#include <mutex>
-#include <atomic>
 
 namespace Aws
 {
@@ -21,6 +19,8 @@ namespace Aws
 
     namespace Auth
     {
+        class CredentialsCachingProvider;
+
         /**
          * The default credential lifetime is 15 minutes
          */
@@ -44,23 +44,34 @@ namespace Aws
              * For more information, see:
              *    http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html
              */
-            STSAssumeRoleCredentialsProvider(const Aws::String& roleArn, const Aws::String& sessionName = Aws::String(), 
-                const Aws::String& externalId = Aws::String(), int loadFrequency = DEFAULT_CREDS_LOAD_FREQ_SECONDS, 
+            STSAssumeRoleCredentialsProvider(const Aws::String& roleArn, const Aws::String& sessionName = Aws::String(),
+                const Aws::String& externalId = Aws::String(), int loadFrequency = DEFAULT_CREDS_LOAD_FREQ_SECONDS,
                 const std::shared_ptr<Aws::STS::STSClient>& stsClient = nullptr);
 
             AWSCredentials GetAWSCredentials() override;
 
-        private:
-            void LoadCredentialsFromSTS();
+            // Marks the cached credentials for refresh, only if they are the ones that were rejected.
+            void Invalidate(const Aws::String& accessKeyId) override;
 
-            std::shared_ptr<Aws::STS::STSClient> m_stsClient;
-            AWSCredentials m_cachedCredentials;
-            Aws::String m_roleArn;
-            Aws::String m_sessionName;
-            Aws::String m_externalId;
-            std::atomic<int64_t> m_expiry;
-            std::mutex m_credsMutex;
-            std::atomic<int> m_loadFrequency;
+        private:
+            // Fetch-only: one blocking AssumeRole call, no cache of its own. Composed into
+            // m_cachingProvider below, which owns the refresh lifecycle.
+            class STSFetchOnlyProvider : public AWSCredentialsProvider
+            {
+            public:
+                STSFetchOnlyProvider(std::shared_ptr<Aws::STS::STSClient> stsClient, Aws::String roleArn,
+                                     Aws::String sessionName, Aws::String externalId, int loadFrequency);
+                AWSCredentials GetAWSCredentials() override;
+
+            private:
+                std::shared_ptr<Aws::STS::STSClient> m_stsClient;
+                Aws::String m_roleArn;
+                Aws::String m_sessionName;
+                Aws::String m_externalId;
+                int m_loadFrequency;
+            };
+
+            std::shared_ptr<CredentialsCachingProvider> m_cachingProvider;
         };
     }
 }

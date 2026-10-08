@@ -6,10 +6,8 @@
 #pragma once
 
 #include <aws/core/Core_EXPORTS.h>
-#include <aws/core/platform/Environment.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/Outcome.h>
-#include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/threading/ReaderWriterLock.h>
 #include <aws/crt/Optional.h>
@@ -38,13 +36,6 @@ namespace Aws
         // Non-recoverable errors: briefly cache the failure (1-5 s) so a retry loop can't hammer the source.
         constexpr std::chrono::milliseconds CREDENTIAL_NONRECOVERABLE_CACHE_MIN = std::chrono::seconds(1);
         constexpr std::chrono::milliseconds CREDENTIAL_NONRECOVERABLE_CACHE_MAX = std::chrono::seconds(5);
-
-        // Feature gate (dark ship): off unless AWS_NEW_CREDENTIAL_REFRESH_2026 is "true".
-        inline bool IsNewCredentialsRefreshEnabled()
-        {
-            return Aws::Utils::StringUtils::ToLower(
-                Aws::Environment::GetEnv("AWS_NEW_CREDENTIAL_REFRESH_2026").c_str()) == "true";
-        }
 
         // Outcome of one credential fetch. Recoverable backs off and keeps serving the cache;
         // NonRecoverable raises immediately and is briefly cached so a retry loop cannot hammer the source.

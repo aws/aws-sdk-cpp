@@ -12,6 +12,8 @@ namespace Aws
 {
     namespace Auth
     {
+        class CredentialsCachingProvider;
+
         /**
         * General HTTP Credentials Provider (previously known as ECS credentials provider)
         * implementation that loads credentials from an arbitrary HTTP(S) endpoint specified by the environment
@@ -89,6 +91,9 @@ namespace Aws
             */
             AWSCredentials GetAWSCredentials() override;
 
+            // Marks the cached credentials for refresh, only if they are the ones that were rejected.
+            void Invalidate(const Aws::String& accessKeyId) override;
+
             static const char AWS_CONTAINER_AUTHORIZATION_TOKEN_FILE[];
             static const char AWS_CONTAINER_CREDENTIALS_RELATIVE_URI[];
             static const char AWS_CONTAINER_CREDENTIALS_FULL_URI[];
@@ -98,20 +103,26 @@ namespace Aws
             static const char AWS_EKS_CONTAINER_HOST[];
             static const char AWS_EKS_CONTAINER_HOST_IPV6[];
 
-        protected:
-            void Reload() override;
-
         private:
-            bool ExpiresSoon() const;
-            void RefreshIfExpired();
-
             Aws::String LoadTokenFromFile() const;
+
+            // Fetch-only: one blocking call to the ECS/EKS metadata endpoint, no cache of its own.
+            // Composed into m_cachingProvider below, which owns the refresh lifecycle.
+            class GeneralHTTPFetchOnlyProvider : public AWSCredentialsProvider
+            {
+            public:
+                GeneralHTTPFetchOnlyProvider(std::shared_ptr<Aws::Internal::ECSCredentialsClient> client,
+                                             Aws::String authTokenFilePath);
+                AWSCredentials GetAWSCredentials() override;
+
+            private:
+                std::shared_ptr<Aws::Internal::ECSCredentialsClient> m_ecsCredentialsClient;
+                Aws::String m_authTokenFilePath;
+            };
 
             std::shared_ptr<Aws::Internal::ECSCredentialsClient> m_ecsCredentialsClient;
             Aws::String m_authTokenFilePath;
-
-            long m_loadFrequencyMs = REFRESH_THRESHOLD;
-            Aws::Auth::AWSCredentials m_credentials;
+            std::shared_ptr<CredentialsCachingProvider> m_cachingProvider;
         };
 
         // GeneralHTTPCredentialsProvider was previously known as TaskRoleCredentialsProvider or "ECS credentials provider"
