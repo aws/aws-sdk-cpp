@@ -39,6 +39,68 @@ namespace {
     }
 }  // namespace
 
+// Fetch-only: one blocking call to the ECS/EKS metadata endpoint, no cache of its own.
+class GeneralHTTPCredentialsProvider::GeneralHTTPFetchOnlyProvider : public AWSCredentialsProvider
+{
+public:
+    GeneralHTTPFetchOnlyProvider(std::shared_ptr<Aws::Internal::ECSCredentialsClient> client, Aws::String authTokenFilePath)
+        : m_ecsCredentialsClient(std::move(client)),
+          m_authTokenFilePath(std::move(authTokenFilePath))
+    {
+    }
+
+    AWSCredentials GetAWSCredentials() override;
+
+private:
+    std::shared_ptr<Aws::Internal::ECSCredentialsClient> m_ecsCredentialsClient;
+    Aws::String m_authTokenFilePath;
+};
+
+AWSCredentials GeneralHTTPCredentialsProvider::GeneralHTTPFetchOnlyProvider::GetAWSCredentials()
+{
+    AWS_LOGSTREAM_INFO(GEN_HTTP_LOG_TAG, "Credentials have expired or will expire, attempting to re-pull from ECS IAM Service.");
+    if (!m_ecsCredentialsClient)
+    {
+        AWS_LOGSTREAM_ERROR(GEN_HTTP_LOG_TAG, "Unable to retrieve credentials: ECS Credentials client is not initialized.");
+        return AWSCredentials();
+    }
+
+    if (!m_authTokenFilePath.empty())
+    {
+        Aws::String token = ::LoadTokenFromFile(m_authTokenFilePath);
+        m_ecsCredentialsClient->SetToken(std::move(token));
+    }
+
+    auto credentialsStr = m_ecsCredentialsClient->GetECSCredentials();
+    if (credentialsStr.empty()) return AWSCredentials();
+
+    Aws::Utils::Json::JsonValue credentialsDoc(credentialsStr);
+    if (!credentialsDoc.WasParseSuccessful())
+    {
+        AWS_LOGSTREAM_ERROR(GEN_HTTP_LOG_TAG, "Failed to parse output from ECSCredentialService.");
+        return AWSCredentials();
+    }
+
+    Aws::String accessKey, secretKey, token, accountId;
+    Aws::Utils::Json::JsonView credentialsView(credentialsDoc);
+    accessKey = credentialsView.GetString("AccessKeyId");
+    secretKey = credentialsView.GetString("SecretAccessKey");
+    token = credentialsView.GetString("Token");
+    accountId = credentialsView.GetString("AccountId");
+    AWS_LOGSTREAM_DEBUG(GEN_HTTP_LOG_TAG, "Successfully pulled credentials from metadata service with access key " << accessKey);
+
+    AWSCredentials credentials;
+    credentials.SetAWSAccessKeyId(accessKey);
+    credentials.SetAWSSecretKey(secretKey);
+    credentials.SetSessionToken(token);
+    credentials.SetExpiration(Aws::Utils::DateTime(credentialsView.GetString("Expiration"), Aws::Utils::DateFormat::ISO_8601));
+    credentials.SetAccountId(accountId);
+    if (!credentials.IsEmpty()) {
+        credentials.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_HTTP);
+    }
+    return credentials;
+}
+
 const char GeneralHTTPCredentialsProvider::AWS_CONTAINER_AUTHORIZATION_TOKEN_FILE[] = "AWS_CONTAINER_AUTHORIZATION_TOKEN_FILE";
 const char GeneralHTTPCredentialsProvider::AWS_CONTAINER_CREDENTIALS_RELATIVE_URI[] = "AWS_CONTAINER_CREDENTIALS_RELATIVE_URI";
 const char GeneralHTTPCredentialsProvider::AWS_CONTAINER_CREDENTIALS_FULL_URI[]     = "AWS_CONTAINER_CREDENTIALS_FULL_URI";
@@ -217,56 +279,4 @@ void GeneralHTTPCredentialsProvider::Invalidate(const Aws::String& accessKeyId)
 Aws::String GeneralHTTPCredentialsProvider::LoadTokenFromFile() const
 {
     return ::LoadTokenFromFile(m_authTokenFilePath);
-}
-
-GeneralHTTPCredentialsProvider::GeneralHTTPFetchOnlyProvider::GeneralHTTPFetchOnlyProvider(
-    std::shared_ptr<Aws::Internal::ECSCredentialsClient> client, Aws::String authTokenFilePath)
-    : m_ecsCredentialsClient(std::move(client)),
-      m_authTokenFilePath(std::move(authTokenFilePath))
-{
-}
-
-AWSCredentials GeneralHTTPCredentialsProvider::GeneralHTTPFetchOnlyProvider::GetAWSCredentials()
-{
-    AWS_LOGSTREAM_INFO(GEN_HTTP_LOG_TAG, "Credentials have expired or will expire, attempting to re-pull from ECS IAM Service.");
-    if (!m_ecsCredentialsClient)
-    {
-        AWS_LOGSTREAM_ERROR(GEN_HTTP_LOG_TAG, "Unable to retrieve credentials: ECS Credentials client is not initialized.");
-        return AWSCredentials();
-    }
-
-    if (!m_authTokenFilePath.empty())
-    {
-        Aws::String token = ::LoadTokenFromFile(m_authTokenFilePath);
-        m_ecsCredentialsClient->SetToken(std::move(token));
-    }
-
-    auto credentialsStr = m_ecsCredentialsClient->GetECSCredentials();
-    if (credentialsStr.empty()) return AWSCredentials();
-
-    Aws::Utils::Json::JsonValue credentialsDoc(credentialsStr);
-    if (!credentialsDoc.WasParseSuccessful())
-    {
-        AWS_LOGSTREAM_ERROR(GEN_HTTP_LOG_TAG, "Failed to parse output from ECSCredentialService.");
-        return AWSCredentials();
-    }
-
-    Aws::String accessKey, secretKey, token, accountId;
-    Utils::Json::JsonView credentialsView(credentialsDoc);
-    accessKey = credentialsView.GetString("AccessKeyId");
-    secretKey = credentialsView.GetString("SecretAccessKey");
-    token = credentialsView.GetString("Token");
-    accountId = credentialsView.GetString("AccountId");
-    AWS_LOGSTREAM_DEBUG(GEN_HTTP_LOG_TAG, "Successfully pulled credentials from metadata service with access key " << accessKey);
-
-    AWSCredentials credentials;
-    credentials.SetAWSAccessKeyId(accessKey);
-    credentials.SetAWSSecretKey(secretKey);
-    credentials.SetSessionToken(token);
-    credentials.SetExpiration(Aws::Utils::DateTime(credentialsView.GetString("Expiration"), Aws::Utils::DateFormat::ISO_8601));
-    credentials.SetAccountId(accountId);
-    if (!credentials.IsEmpty()) {
-        credentials.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_HTTP);
-    }
-    return credentials;
 }

@@ -238,36 +238,43 @@ void ProfileConfigFileAWSCredentialsProvider::RefreshIfExpired()
 
 static const char* INSTANCE_LOG_TAG = "InstanceProfileCredentialsProvider";
 
-InstanceProfileCredentialsProvider::InstanceProfileFetchOnlyProvider::InstanceProfileFetchOnlyProvider(
-    std::shared_ptr<Aws::Config::AWSProfileConfigLoader> configLoader)
-    : m_ec2MetadataConfigLoader(std::move(configLoader))
+// Fetch-only: one Load() call against the EC2 instance metadata service, no cache of its own.
+class InstanceProfileCredentialsProvider::InstanceProfileFetchOnlyProvider : public AWSCredentialsProvider
 {
-}
-
-AWSCredentials InstanceProfileCredentialsProvider::InstanceProfileFetchOnlyProvider::GetAWSCredentials()
-{
-    if (!m_ec2MetadataConfigLoader)
+public:
+    explicit InstanceProfileFetchOnlyProvider(std::shared_ptr<Aws::Config::AWSProfileConfigLoader> configLoader)
+        : m_ec2MetadataConfigLoader(std::move(configLoader))
     {
-        AWS_LOGSTREAM_ERROR(INSTANCE_LOG_TAG, "EC2 Metadata config loader is a nullptr");
-        return AWSCredentials();
     }
 
-    AWS_LOGSTREAM_INFO(INSTANCE_LOG_TAG, "Attempting to pull credentials from EC2 Metadata Service.");
-    m_ec2MetadataConfigLoader->Load();
-
-    const Aws::Map<Aws::String, Aws::Config::Profile> &profiles = m_ec2MetadataConfigLoader->GetProfiles();
-    auto profileIter = profiles.find(Aws::Config::INSTANCE_PROFILE_KEY);
-    if (profileIter == profiles.end())
+    AWSCredentials GetAWSCredentials() override
     {
-        return AWSCredentials();
+        if (!m_ec2MetadataConfigLoader)
+        {
+            AWS_LOGSTREAM_ERROR(INSTANCE_LOG_TAG, "EC2 Metadata config loader is a nullptr");
+            return AWSCredentials();
+        }
+
+        AWS_LOGSTREAM_INFO(INSTANCE_LOG_TAG, "Attempting to pull credentials from EC2 Metadata Service.");
+        m_ec2MetadataConfigLoader->Load();
+
+        const Aws::Map<Aws::String, Aws::Config::Profile> &profiles = m_ec2MetadataConfigLoader->GetProfiles();
+        auto profileIter = profiles.find(Aws::Config::INSTANCE_PROFILE_KEY);
+        if (profileIter == profiles.end())
+        {
+            return AWSCredentials();
+        }
+
+        AWSCredentials credentials = profileIter->second.GetCredentials();
+        if (!credentials.IsEmpty()) {
+            credentials.AddUserAgentFeature(UserAgentFeature::CREDENTIALS_IMDS);
+        }
+        return credentials;
     }
 
-    AWSCredentials credentials = profileIter->second.GetCredentials();
-    if (!credentials.IsEmpty()) {
-        credentials.AddUserAgentFeature(UserAgentFeature::CREDENTIALS_IMDS);
-    }
-    return credentials;
-}
+private:
+    std::shared_ptr<Aws::Config::AWSProfileConfigLoader> m_ec2MetadataConfigLoader;
+};
 
 InstanceProfileCredentialsProvider::InstanceProfileCredentialsProvider(long refreshRateMs)
 {

@@ -34,28 +34,8 @@ namespace Aws {
             void Invalidate(const Aws::String& accessKeyId) override;
 
         private:
-            // Fetch-only: one SSO token read plus one GetRoleCredentials call, no cache of its own.
-            // Composed into m_cachingProvider below, which owns the refresh lifecycle.
-            class SSOFetchOnlyProvider : public AWSCredentialsProvider
-            {
-            public:
-                SSOFetchOnlyProvider(Aws::String profile, std::shared_ptr<const Aws::Client::ClientConfiguration> config);
-                AWSCredentials GetAWSCredentials() override;
-
-            private:
-                Aws::String LoadAccessTokenFile(const Aws::String& ssoAccessTokenPath);
-
-                Aws::UniquePtr<Aws::Internal::SSOCredentialsClient> m_client;
-                Aws::String m_profileToUse;
-                Aws::String m_ssoAccountId;
-                // The AWS region where the SSO directory for the given sso_start_url is hosted.
-                // This is independent of the general region configuration and MUST NOT be conflated.
-                Aws::String m_ssoRegion;
-                // The expiration time of the accessToken.
-                Aws::Utils::DateTime m_expiresAt;
-                Aws::Auth::SSOBearerTokenProvider m_bearerTokenProvider;
-                std::shared_ptr<const Aws::Client::ClientConfiguration> m_config;
-            };
+            // Fetch-only provider composed into m_cachingProvider; defined in the .cpp.
+            class SSOFetchOnlyProvider;
 
             std::shared_ptr<CredentialsCachingProvider> m_cachingProvider;
         };

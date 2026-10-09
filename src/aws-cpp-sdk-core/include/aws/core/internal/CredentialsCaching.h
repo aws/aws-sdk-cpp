@@ -182,13 +182,7 @@ namespace Aws
             // discards them, and never touches the refresh backoff.
             void Invalidate(const Aws::String& rejectedIdentifier)
             {
-                // A refresh in flight will replace the cached credentials, so there is nothing to mark.
-                std::unique_lock<std::mutex> gate(m_refreshGate, std::try_to_lock);
-                if (!gate.owns_lock())
-                {
-                    return;
-                }
-
+                // Marked even while a refresh is in flight: if that refresh fails, the rejected credentials stay cached.
                 Aws::Utils::Threading::WriterLockGuard guard(m_stateLock);
                 if (!m_cached)
                 {

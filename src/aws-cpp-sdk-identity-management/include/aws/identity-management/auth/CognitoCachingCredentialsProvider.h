@@ -45,18 +45,8 @@ namespace Aws
         private:
             void OnLoginsUpdated(const PersistentCognitoIdentityProvider&);
 
-            // Fetch-only: one GetCredentialsFromCognito() call, no cache of its own. Composed into
-            // m_cachingProvider below, which owns the refresh lifecycle. GetCredentialsFromCognito() is
-            // virtual, so this calls back into the owner rather than duplicating its dispatch.
-            class CognitoFetchOnlyProvider : public AWSCredentialsProvider
-            {
-            public:
-                explicit CognitoFetchOnlyProvider(CognitoCachingCredentialsProvider& owner);
-                AWSCredentials GetAWSCredentials() override;
-
-            private:
-                CognitoCachingCredentialsProvider& m_owner;
-            };
+            // Nested so it can call the protected GetCredentialsFromCognito(); defined in the .cpp.
+            class CognitoFetchOnlyProvider;
 
             std::shared_ptr<CredentialsCachingProvider> m_cachingProvider;
         };

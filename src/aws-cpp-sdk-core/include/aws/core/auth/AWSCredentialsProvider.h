@@ -239,17 +239,8 @@ namespace Aws
             void Invalidate(const Aws::String& accessKeyId) override;
 
         private:
-            // Fetch-only: one Load() call against the EC2 instance metadata service, no cache of its
-            // own. Composed into m_cachingProvider below, which owns the refresh lifecycle.
-            class InstanceProfileFetchOnlyProvider : public AWSCredentialsProvider
-            {
-            public:
-                explicit InstanceProfileFetchOnlyProvider(std::shared_ptr<Aws::Config::AWSProfileConfigLoader> configLoader);
-                AWSCredentials GetAWSCredentials() override;
-
-            private:
-                std::shared_ptr<Aws::Config::AWSProfileConfigLoader> m_ec2MetadataConfigLoader;
-            };
+            // Fetch-only provider composed into m_cachingProvider; defined in the .cpp.
+            class InstanceProfileFetchOnlyProvider;
 
             std::shared_ptr<CredentialsCachingProvider> m_cachingProvider;
         };

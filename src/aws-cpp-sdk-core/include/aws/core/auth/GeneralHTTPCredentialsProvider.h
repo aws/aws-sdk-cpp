@@ -106,19 +106,8 @@ namespace Aws
         private:
             Aws::String LoadTokenFromFile() const;
 
-            // Fetch-only: one blocking call to the ECS/EKS metadata endpoint, no cache of its own.
-            // Composed into m_cachingProvider below, which owns the refresh lifecycle.
-            class GeneralHTTPFetchOnlyProvider : public AWSCredentialsProvider
-            {
-            public:
-                GeneralHTTPFetchOnlyProvider(std::shared_ptr<Aws::Internal::ECSCredentialsClient> client,
-                                             Aws::String authTokenFilePath);
-                AWSCredentials GetAWSCredentials() override;
-
-            private:
-                std::shared_ptr<Aws::Internal::ECSCredentialsClient> m_ecsCredentialsClient;
-                Aws::String m_authTokenFilePath;
-            };
+            // Fetch-only provider composed into m_cachingProvider; defined in the .cpp.
+            class GeneralHTTPFetchOnlyProvider;
 
             std::shared_ptr<Aws::Internal::ECSCredentialsClient> m_ecsCredentialsClient;
             Aws::String m_authTokenFilePath;

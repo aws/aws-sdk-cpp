@@ -20,42 +20,53 @@ namespace Aws
     {
         static const char* CLASS_TAG = "STSAssumeRoleCredentialsProvider";
 
-        STSAssumeRoleCredentialsProvider::STSFetchOnlyProvider::STSFetchOnlyProvider(
-            std::shared_ptr<Aws::STS::STSClient> stsClient, Aws::String roleArn, Aws::String sessionName,
-            Aws::String externalId, int loadFrequency)
-            : m_stsClient(std::move(stsClient)), m_roleArn(std::move(roleArn)), m_sessionName(std::move(sessionName)),
-              m_externalId(std::move(externalId)), m_loadFrequency(loadFrequency)
+        // Fetch-only: one blocking AssumeRole call, no cache of its own.
+        class STSAssumeRoleCredentialsProvider::STSFetchOnlyProvider : public AWSCredentialsProvider
         {
-        }
-
-        AWSCredentials STSAssumeRoleCredentialsProvider::STSFetchOnlyProvider::GetAWSCredentials()
-        {
-            Model::AssumeRoleRequest assumeRoleRequest;
-            assumeRoleRequest.WithRoleArn(m_roleArn)
-                .WithRoleSessionName(m_sessionName)
-                .WithDurationSeconds(m_loadFrequency);
-
-            if (!m_externalId.empty())
+        public:
+            STSFetchOnlyProvider(std::shared_ptr<Aws::STS::STSClient> stsClient, Aws::String roleArn,
+                                 Aws::String sessionName, Aws::String externalId, int loadFrequency)
+                : m_stsClient(std::move(stsClient)), m_roleArn(std::move(roleArn)), m_sessionName(std::move(sessionName)),
+                  m_externalId(std::move(externalId)), m_loadFrequency(loadFrequency)
             {
-                assumeRoleRequest.SetExternalId(m_externalId);
             }
 
-            auto assumeRoleOutcome = m_stsClient->AssumeRole(assumeRoleRequest);
-            if (!assumeRoleOutcome.IsSuccess())
+            AWSCredentials GetAWSCredentials() override
             {
-                AWS_LOGSTREAM_ERROR(CLASS_TAG, "Credentials refresh failed with error " << assumeRoleOutcome.GetError().GetExceptionName()
-                        << " message: " << assumeRoleOutcome.GetError().GetMessage());
-                return AWSCredentials();
+                Model::AssumeRoleRequest assumeRoleRequest;
+                assumeRoleRequest.WithRoleArn(m_roleArn)
+                    .WithRoleSessionName(m_sessionName)
+                    .WithDurationSeconds(m_loadFrequency);
+
+                if (!m_externalId.empty())
+                {
+                    assumeRoleRequest.SetExternalId(m_externalId);
+                }
+
+                auto assumeRoleOutcome = m_stsClient->AssumeRole(assumeRoleRequest);
+                if (!assumeRoleOutcome.IsSuccess())
+                {
+                    AWS_LOGSTREAM_ERROR(CLASS_TAG, "Credentials refresh failed with error " << assumeRoleOutcome.GetError().GetExceptionName()
+                            << " message: " << assumeRoleOutcome.GetError().GetMessage());
+                    return AWSCredentials();
+                }
+
+                const auto& stsCredentials = assumeRoleOutcome.GetResult().GetCredentials();
+                AWSCredentials credentials(stsCredentials.GetAccessKeyId(), stsCredentials.GetSecretAccessKey(), stsCredentials.GetSessionToken());
+                credentials.SetExpiration(stsCredentials.GetExpiration());
+                credentials.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_STS_ASSUME_ROLE);
+                AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Credentials refreshed with new expiry " <<
+                    stsCredentials.GetExpiration().ToGmtString(DateFormat::ISO_8601));
+                return credentials;
             }
 
-            const auto& stsCredentials = assumeRoleOutcome.GetResult().GetCredentials();
-            AWSCredentials credentials(stsCredentials.GetAccessKeyId(), stsCredentials.GetSecretAccessKey(), stsCredentials.GetSessionToken());
-            credentials.SetExpiration(stsCredentials.GetExpiration());
-            credentials.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_STS_ASSUME_ROLE);
-            AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Credentials refreshed with new expiry " <<
-                stsCredentials.GetExpiration().ToGmtString(DateFormat::ISO_8601));
-            return credentials;
-        }
+        private:
+            std::shared_ptr<Aws::STS::STSClient> m_stsClient;
+            Aws::String m_roleArn;
+            Aws::String m_sessionName;
+            Aws::String m_externalId;
+            int m_loadFrequency;
+        };
 
         STSAssumeRoleCredentialsProvider::STSAssumeRoleCredentialsProvider(const Aws::String& roleArn, const Aws::String& sessionName,
             const Aws::String& externalId, int loadFrequency, const std::shared_ptr<Aws::STS::STSClient>& stsClient)
