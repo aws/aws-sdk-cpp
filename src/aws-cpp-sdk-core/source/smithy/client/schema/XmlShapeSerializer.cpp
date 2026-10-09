@@ -6,6 +6,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/utils/StringUtils.h>
+#include <smithy/client/schema/Document.h>
 #include <smithy/client/schema/InterceptingSerializer.h>
 #include <smithy/client/schema/MapSerializer.h>
 #include <smithy/client/schema/SerializableStruct.h>
@@ -78,6 +79,7 @@ class XmlShapeSerializer::Impl final : public InterceptingSerializer {
     void WriteTimestamp(const Schema& schema, const Aws::Utils::DateTime& value) override;
     void WriteBlob(const Schema& schema, const Aws::Utils::ByteBuffer& value) override;
     void WriteNull(const Schema& schema) override;
+    void WriteDocument(const Schema& schema, const Document& value) override;
 
    private:
     Impl* m_outer;
@@ -150,7 +152,12 @@ class XmlShapeSerializer::Impl final : public InterceptingSerializer {
     Aws::String m_valueName;
   };
 
-  Impl() : m_valueSerializer(this), m_structElementSerializer(this), m_structAttributeSerializer(this), m_inlineAttributeSerializer(this) {
+  explicit Impl(CodecSettings settings)
+      : m_valueSerializer(this),
+        m_structElementSerializer(this),
+        m_structAttributeSerializer(this),
+        m_inlineAttributeSerializer(this),
+        m_settings(settings) {
     m_buf.reserve(8192);
   }
 
@@ -162,6 +169,12 @@ class XmlShapeSerializer::Impl final : public InterceptingSerializer {
     }
     m_finalized = true;
     return std::move(m_buf);
+  }
+
+  void SetUnsupported(const char* message) {
+    if (m_errorMessage.empty()) {
+      m_errorMessage = message;
+    }
   }
 
   bool EnterContainer() {
@@ -281,6 +294,7 @@ class XmlShapeSerializer::Impl final : public InterceptingSerializer {
   StructAttributeSerializer m_structAttributeSerializer;
   InlineAttributeSerializer m_inlineAttributeSerializer;
   SpecificShapeSerializer m_nullSerializer;
+  CodecSettings m_settings;
 };
 
 void XmlShapeSerializer::Impl::ValueSerializer::WriteStruct(const Schema&, const SerializableStruct& value) {
@@ -355,13 +369,16 @@ void XmlShapeSerializer::Impl::ValueSerializer::WriteString(const Schema&, const
 }
 void XmlShapeSerializer::Impl::ValueSerializer::WriteTimestamp(const Schema& schema, const Aws::Utils::DateTime& value) {
   m_outer->ClosePendingTag();
-  m_outer->AppendRaw(FormatTimestampText(value, ResolveTimestampFormat(schema, TimestampFormatTrait::Format::DATE_TIME)));
+  m_outer->AppendRaw(FormatTimestampText(value, ResolveTimestampFormat(schema, m_outer->m_settings.GetDefaultTimestampFormat())));
 }
 void XmlShapeSerializer::Impl::ValueSerializer::WriteBlob(const Schema&, const Aws::Utils::ByteBuffer& value) {
   m_outer->ClosePendingTag();
   m_outer->AppendRaw(HashingUtils::Base64Encode(value));
 }
 void XmlShapeSerializer::Impl::ValueSerializer::WriteNull(const Schema&) { m_outer->ClosePendingTag(); }
+void XmlShapeSerializer::Impl::ValueSerializer::WriteDocument(const Schema&, const Document&) {
+  m_outer->SetUnsupported("document type is not supported by the REST XML protocol");
+}
 
 ShapeSerializer& XmlShapeSerializer::Impl::StructElementSerializer::Before(const Schema& schema) {
   if (Impl::IsAttribute(schema)) {
@@ -414,7 +431,7 @@ void XmlShapeSerializer::Impl::InlineAttributeSerializer::WriteString(const Sche
   WriteAttr(schema, value);
 }
 void XmlShapeSerializer::Impl::InlineAttributeSerializer::WriteTimestamp(const Schema& schema, const Aws::Utils::DateTime& value) {
-  WriteAttr(schema, FormatTimestampText(value, ResolveTimestampFormat(schema, TimestampFormatTrait::Format::DATE_TIME)));
+  WriteAttr(schema, FormatTimestampText(value, ResolveTimestampFormat(schema, m_outer->m_settings.GetDefaultTimestampFormat())));
 }
 ShapeSerializer& XmlShapeSerializer::Impl::ListItemSerializer::Before(const Schema&) {
   m_outer->WriteStartOpen(m_itemName, m_itemNamespace);
@@ -434,7 +451,7 @@ void XmlShapeSerializer::Impl::XmlMapEntrySerializer::WriteEntry(const Aws::Stri
   m_outer->WriteCloseTag(m_entryName);
 }
 
-XmlShapeSerializer::XmlShapeSerializer() : m_impl(Aws::MakeUnique<Impl>("XmlShapeSerializer")) {}
+XmlShapeSerializer::XmlShapeSerializer(CodecSettings settings) : m_impl(Aws::MakeUnique<Impl>("XmlShapeSerializer", settings)) {}
 XmlShapeSerializer::~XmlShapeSerializer() = default;
 
 void XmlShapeSerializer::WriteStruct(const Schema& schema, const SerializableStruct& value) { m_impl->WriteStruct(schema, value); }
@@ -453,5 +470,6 @@ void XmlShapeSerializer::WriteString(const Schema& schema, const Aws::String& va
 void XmlShapeSerializer::WriteTimestamp(const Schema& schema, const DateTime& value) { m_impl->WriteTimestamp(schema, value); }
 void XmlShapeSerializer::WriteBlob(const Schema& schema, const ByteBuffer& value) { m_impl->WriteBlob(schema, value); }
 void XmlShapeSerializer::WriteNull(const Schema& schema) { m_impl->WriteNull(schema); }
+void XmlShapeSerializer::WriteDocument(const Schema& schema, const Document& value) { m_impl->WriteDocument(schema, value); }
 
 XmlShapeSerializer::SerializerOutcome XmlShapeSerializer::GetPayload() { return m_impl->GetPayload(); }

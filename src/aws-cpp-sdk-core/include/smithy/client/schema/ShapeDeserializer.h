@@ -5,10 +5,12 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/crt/Optional.h>
 #include <smithy/Smithy_EXPORTS.h>
+#include <smithy/client/schema/Document.h>
 #include <smithy/client/schema/Schema.h>
 
 #include <cstdint>
 #include <functional>
+#include <memory>
 
 namespace smithy {
 namespace schema {
@@ -35,6 +37,8 @@ class SMITHY_API ShapeDeserializer {
   virtual Aws::Crt::Optional<Aws::String> ReadString(const Schema& schema) = 0;
   virtual Aws::Crt::Optional<Aws::Utils::DateTime> ReadTimestamp(const Schema& schema) = 0;
   virtual Aws::Crt::Optional<Aws::Utils::ByteBuffer> ReadBlob(const Schema& schema) = 0;
+  // Null when the member is absent, unparseable, or the protocol does not support documents.
+  virtual std::shared_ptr<const Document> ReadDocument(const Schema& schema) = 0;
 
   virtual bool IsNull() = 0;
 };

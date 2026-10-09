@@ -6,6 +6,7 @@
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/crt/Optional.h>
 #include <aws/testing/AwsCppSdkGTestSuite.h>
+#include <smithy/client/schema/Document.h>
 #include <smithy/client/schema/MapSerializer.h>
 #include <smithy/client/schema/Schema.h>
 #include <smithy/client/schema/SchemaBuilder.h>
@@ -17,6 +18,7 @@
 #include <cmath>
 #include <functional>
 #include <limits>
+#include <utility>
 
 #include "SchemaSerializerTestHelpers.h"
 
@@ -73,6 +75,45 @@ TEST_F(XmlShapeDeserializerTest, Long) {
   d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) { got = de.ReadLong(m); });
   ASSERT_TRUE(got.has_value());
   EXPECT_EQ(got.value(), 9876543210LL);
+}
+
+TEST_F(XmlShapeDeserializerTest, LongClampsPlainDigitOverflow) {
+  auto root = RootBuilder().PutMember("big", Schema::CreateLong("L")).Build();
+  const Aws::Vector<std::pair<Aws::String, int64_t>> cases = {
+      {"<Root><big>99999999999999999999</big></Root>", (std::numeric_limits<int64_t>::max)()},
+      {"<Root><big>-99999999999999999999</big></Root>", (std::numeric_limits<int64_t>::min)()},
+      {"<Root><big> 99999999999999999999</big></Root>", (std::numeric_limits<int64_t>::max)()},
+  };
+  for (const auto& c : cases) {
+    XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(c.first.data()), c.first.size()));
+    Aws::Crt::Optional<int64_t> got;
+    d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) { got = de.ReadLong(m); });
+    ASSERT_TRUE(got.has_value()) << c.first;
+    EXPECT_EQ(got.value(), c.second) << c.first;
+  }
+}
+
+TEST_F(XmlShapeDeserializerTest, LongRejectsMalformed) {
+  auto root = RootBuilder().PutMember("big", Schema::CreateLong("L")).Build();
+  const Aws::Vector<Aws::String> payloads = {"<Root><big>12abc</big></Root>", "<Root><big>1.5</big></Root>",
+                                             "<Root><big>1e30</big></Root>", "<Root><big>Infinity</big></Root>",
+                                             "<Root><big>-</big></Root>", "<Root><big>0x1A</big></Root>",
+                                             "<Root><big>99999999999999999999 </big></Root>"};
+  for (const auto& payload : payloads) {
+    XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()));
+    bool present = true;
+    d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) { present = de.ReadLong(m).has_value(); });
+    EXPECT_FALSE(present) << payload;
+  }
+}
+
+TEST_F(XmlShapeDeserializerTest, DoubleRejectsTrailingCharacters) {
+  auto root = RootBuilder().PutMember("d", Schema::CreateDouble("D")).Build();
+  const Aws::String payload = "<Root><d>1.2.3</d></Root>";
+  XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()));
+  bool present = true;
+  d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) { present = de.ReadDouble(m).has_value(); });
+  EXPECT_FALSE(present);
 }
 
 TEST_F(XmlShapeDeserializerTest, Double) {
@@ -158,6 +199,21 @@ TEST_F(XmlShapeDeserializerTest, Timestamp) {
   auto payload = Encode(root, [&](ShapeSerializer& ser) { ser.WriteTimestamp(*member, dt); });
 
   XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()));
+  Aws::Crt::Optional<Aws::Utils::DateTime> got;
+  d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) { got = de.ReadTimestamp(m); });
+  ASSERT_TRUE(got.has_value());
+  EXPECT_EQ(got.value().Seconds(), 1234567890);
+}
+
+TEST_F(XmlShapeDeserializerTest, TimestampHonorsCodecSettingsDefault) {
+  // XML's default is date-time (see the Timestamp test above); a numeric wire value only parses
+  // under an EPOCH_SECONDS setting for a member with no @timestampFormat trait -- proving the
+  // setting reached ReadTimestamp rather than a hard-coded default.
+  auto root = RootBuilder().PutMember("ts", Schema::CreateTimestamp("T")).Build();
+  const Aws::String payload = "<Root><ts>1234567890</ts></Root>";
+
+  XmlShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()),
+                         CodecSettings{TimestampFormatTrait::Format::EPOCH_SECONDS});
   Aws::Crt::Optional<Aws::Utils::DateTime> got;
   d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) { got = de.ReadTimestamp(m); });
   ASSERT_TRUE(got.has_value());
@@ -592,4 +648,11 @@ TEST_F(XmlShapeDeserializerTest, TimestampFormatTraitControlsParsing) {
     ASSERT_TRUE(got.has_value());
     EXPECT_EQ(got.value().Seconds(), 1234567890);
   }
+}
+
+TEST_F(XmlShapeDeserializerTest, ReadDocumentIsUnsupported) {
+  Aws::String xml = "<x/>";
+  XmlShapeDeserializer deser(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(xml.c_str()), xml.size()));
+  auto schema = Schema::CreateDocument("smithy.api#Document");
+  EXPECT_EQ(deser.ReadDocument(*schema), nullptr);
 }

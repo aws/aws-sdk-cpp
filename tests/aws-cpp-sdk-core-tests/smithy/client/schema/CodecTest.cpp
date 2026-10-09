@@ -2,9 +2,12 @@
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/crt/Optional.h>
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <smithy/client/schema/Codec.h>
+#include <smithy/client/schema/Document.h>
+#include <smithy/client/schema/MapSerializer.h>
 #include <smithy/client/schema/Schema.h>
 #include <smithy/client/schema/SchemaBuilder.h>
 #include <smithy/client/schema/SerializableStruct.h>
@@ -13,6 +16,7 @@
 #include <smithy/client/schema/XmlTraits.h>
 
 #include <functional>
+#include <memory>
 
 #include "SchemaSerializerTestHelpers.h"
 
@@ -259,4 +263,208 @@ TEST_F(CodecTest, CborNestedShape) {
   Foo f;
   codec.DeserializeShape(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(encoded.data()), encoded.size()), f);
   EXPECT_EQ(f.fizz.buzz, "value");
+}
+
+namespace {
+// One-member struct { "payload": <document> } that drives the Codec end-to-end. The `payload` member
+// MUST be declared on the schema (via PutMember) — the deserializer's ReadStruct routes an incoming
+// key only to a declared member.
+class DocHolder final : public SerializableStruct {
+ public:
+  const Schema& GetSchema() const override { return *m_schema; }
+
+  void SerializeMembers(ShapeSerializer& serializer) const override {
+    serializer.WriteDocument(*GetSchema().GetMember("payload").value(), *m_payload);
+  }
+
+  void From(const Schema& memberSchema, ShapeDeserializer& deserializer) override {
+    if (memberSchema.GetMemberName() == "payload") {
+      auto doc = deserializer.ReadDocument(memberSchema);
+      if (doc) {
+        m_payload = std::move(doc);
+        m_hasPayload = true;
+      }
+    }
+  }
+
+  void SetPayload(std::shared_ptr<const Document> doc) {
+    m_payload = std::move(doc);
+    m_hasPayload = true;
+  }
+  bool HasPayload() const { return m_hasPayload; }
+  const Document& GetPayload() const { return *m_payload; }
+
+ private:
+  static std::shared_ptr<const Schema> BuildSchema() {
+    return Schema::StructureBuilder("DocHolder").PutMember("payload", Schema::CreateDocument("smithy.api#Document")).Build();
+  }
+  std::shared_ptr<const Schema> m_schema{BuildSchema()};
+  std::shared_ptr<const Document> m_payload = Document::Null();
+  bool m_hasPayload = false;
+};
+}  // namespace
+
+TEST_F(CodecTest, JsonDocumentMemberRoundTrip) {
+  Aws::Map<Aws::String, std::shared_ptr<const Document>> obj;
+  obj.emplace("name", Document::FromString("hi"));
+  obj.emplace("count", Document::FromInteger(3));
+
+  DocHolder out;
+  out.SetPayload(Document::FromMap(std::move(obj)));
+
+  JsonCodec codec;
+  auto serialized = codec.Serialize(out.GetSchema(), out);
+  ASSERT_TRUE(serialized.IsSuccess());
+  const auto& body = serialized.GetResult();
+  EXPECT_NE(body.find("\"payload\":{"), Aws::String::npos);
+
+  DocHolder in;
+  codec.DeserializeShape(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(body.c_str()), body.size()), in);
+  ASSERT_TRUE(in.HasPayload());
+  EXPECT_TRUE(in.GetPayload() == out.GetPayload());
+}
+
+TEST_F(CodecTest, JsonDocumentLongRungRoundTripsKeepingTag) {
+  // JsonDocumentMemberRoundTrip only exercises the Integer rung; this pins serializer/parser agreement
+  // on a value too wide for int32.
+  Aws::Map<Aws::String, std::shared_ptr<const Document>> obj;
+  obj.emplace("big", Document::FromInteger(3000000000LL));
+
+  DocHolder out;
+  out.SetPayload(Document::FromMap(std::move(obj)));
+
+  JsonCodec codec;
+  auto serialized = codec.Serialize(out.GetSchema(), out);
+  ASSERT_TRUE(serialized.IsSuccess());
+  const auto& body = serialized.GetResult();
+  EXPECT_NE(body.find("\"big\":3000000000"), Aws::String::npos);
+
+  DocHolder in;
+  codec.DeserializeShape(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(body.c_str()), body.size()), in);
+  ASSERT_TRUE(in.HasPayload());
+  auto big = in.GetPayload().GetMember("big");
+  ASSERT_NE(big, nullptr);
+  EXPECT_EQ(big->GetType(), ShapeType::Long);
+  EXPECT_TRUE(in.GetPayload() == out.GetPayload());
+}
+
+TEST_F(CodecTest, CborDocumentMemberSerializeFails) {
+  // Documents are not supported by CBOR yet: serializing a struct with a document member fails.
+  Aws::Map<Aws::String, std::shared_ptr<const Document>> obj;
+  obj.emplace("flag", Document::FromBoolean(true));
+
+  DocHolder out;
+  out.SetPayload(Document::FromMap(std::move(obj)));
+
+  CborCodec codec;
+  auto serialized = codec.Serialize(out.GetSchema(), out);
+  ASSERT_FALSE(serialized.IsSuccess());
+  EXPECT_EQ(serialized.GetError().GetExceptionName(), "SerializationException");
+}
+
+TEST_F(CodecTest, JsonDocumentBlobRoundTripsAsBase64String) {
+  Aws::Utils::ByteBuffer blob(reinterpret_cast<const unsigned char*>("xyz"), 3);
+  Aws::Map<Aws::String, std::shared_ptr<const Document>> obj;
+  obj.emplace("bin", Document::FromBlob(blob));
+
+  DocHolder out;
+  out.SetPayload(Document::FromMap(std::move(obj)));
+
+  JsonCodec codec;
+  auto serialized = codec.Serialize(out.GetSchema(), out);
+  ASSERT_TRUE(serialized.IsSuccess());
+  const auto& body = serialized.GetResult();
+
+  DocHolder in;
+  codec.DeserializeShape(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(body.c_str()), body.size()), in);
+  ASSERT_TRUE(in.HasPayload());
+  auto bin = in.GetPayload().GetMember("bin");
+  ASSERT_NE(bin, nullptr);
+  // JSON encodes blobs as base64 strings; on read the value is a String whose AsBlob() recovers the
+  // original bytes (SEP format-specific coercion).
+  EXPECT_EQ(bin->GetType(), ShapeType::String);
+  auto recovered = bin->AsBlob();
+  ASSERT_TRUE(recovered.has_value());
+  EXPECT_EQ(*recovered, blob);
+}
+
+TEST_F(CodecTest, JsonDocumentDoubleRoundTripsWithPrecisionAndType) {
+  Aws::Map<Aws::String, std::shared_ptr<const Document>> obj;
+  obj.emplace("pi", Document::FromDouble(3.141592653589793));
+  obj.emplace("whole", Document::FromDouble(2.0));
+  DocHolder out;
+  out.SetPayload(Document::FromMap(std::move(obj)));
+
+  JsonCodec codec;
+  auto serialized = codec.Serialize(out.GetSchema(), out);
+  ASSERT_TRUE(serialized.IsSuccess());
+  const Aws::String& body = serialized.GetResult();
+
+  DocHolder in;
+  codec.DeserializeShape(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(body.c_str()), body.size()), in);
+  ASSERT_TRUE(in.HasPayload());
+  auto pi = in.GetPayload().GetMember("pi");
+  ASSERT_NE(pi, nullptr);
+  ASSERT_TRUE(pi->AsDouble().has_value());
+  EXPECT_EQ(pi->AsDouble().value(), 3.141592653589793);
+  auto whole = in.GetPayload().GetMember("whole");
+  ASSERT_NE(whole, nullptr);
+  EXPECT_EQ(whole->GetType(), ShapeType::Double);
+}
+
+TEST_F(CodecTest, CodecSettingsProtocolDefaultsMatchSep) {
+  EXPECT_EQ(CodecSettings::Json().GetDefaultTimestampFormat(), TimestampFormatTrait::Format::EPOCH_SECONDS);
+  EXPECT_EQ(CodecSettings::Xml().GetDefaultTimestampFormat(), TimestampFormatTrait::Format::DATE_TIME);
+  EXPECT_EQ(CodecSettings::Query().GetDefaultTimestampFormat(), TimestampFormatTrait::Format::DATE_TIME);
+}
+
+TEST_F(CodecTest, JsonCodecHttpDateDocumentTimestampParses) {
+  JsonCodec codec(CodecSettings{TimestampFormatTrait::Format::HTTP_DATE});
+  const Aws::String body = "{\"payload\":\"Thu, 01 Jan 1970 00:00:00 GMT\"}";
+  DocHolder in;
+  codec.DeserializeShape(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(body.c_str()), body.size()), in);
+  ASSERT_TRUE(in.HasPayload());
+  auto ts = in.GetPayload().AsTimestamp();
+  ASSERT_TRUE(ts.has_value());
+  EXPECT_EQ(ts->Seconds(), 0);
+}
+
+TEST_F(CodecTest, JsonDocumentBigIntegerBecomesDouble) {
+  const Aws::String body = "{\"payload\":9999999999999999999}";
+  JsonCodec codec;
+  DocHolder in;
+  codec.DeserializeShape(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(body.c_str()), body.size()), in);
+  ASSERT_TRUE(in.HasPayload());
+  EXPECT_EQ(in.GetPayload().GetType(), ShapeType::Double);
+}
+
+TEST_F(CodecTest, JsonDocumentInt64BoundariesStayExactOnLongRung) {
+  const Aws::Vector<Aws::String> digits = {"9223372036854775807", "-9223372036854775808"};
+  for (const auto& text : digits) {
+    const Aws::String body = "{\"payload\":" + text + "}";
+    JsonCodec codec;
+    DocHolder in;
+    codec.DeserializeShape(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(body.c_str()), body.size()), in);
+    ASSERT_TRUE(in.HasPayload()) << text;
+    EXPECT_EQ(in.GetPayload().GetType(), ShapeType::Long) << text;
+    ASSERT_TRUE(in.GetPayload().AsLong().has_value()) << text;
+    EXPECT_FALSE(in.GetPayload().AsInteger().has_value()) << text;
+    auto reserialized = codec.Serialize(in.GetSchema(), in);
+    ASSERT_TRUE(reserialized.IsSuccess()) << text;
+    EXPECT_NE(reserialized.GetResult().find(text), Aws::String::npos) << text;
+  }
+}
+
+TEST_F(CodecTest, JsonDocumentAtReaderDepthLimitStillSerializes) {
+  // The reader's cap must stay under the serializer's: a document nested inside a struct spends an
+  // extra writer level on the wrapper, so an equal pair rejects on write what it just accepted on read.
+  for (int depth : {254, 255}) {
+    Aws::String body = "{\"payload\":" + Aws::String(depth, '[') + "1" + Aws::String(depth, ']') + "}";
+    JsonCodec codec;
+    DocHolder in;
+    codec.DeserializeShape(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(body.c_str()), body.size()), in);
+    ASSERT_TRUE(in.HasPayload()) << "parse failed at depth " << depth;
+    auto reserialized = codec.Serialize(in.GetSchema(), in);
+    EXPECT_TRUE(reserialized.IsSuccess()) << "write failed at depth " << depth;
+  }
 }

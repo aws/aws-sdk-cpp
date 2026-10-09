@@ -15,6 +15,7 @@ namespace schema {
 class SchemaBuilder;
 
 enum class ShapeType : uint8_t {
+  Null,
   Boolean,
   Byte,
   Short,

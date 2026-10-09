@@ -3,13 +3,14 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
+#include <smithy/client/schema/Document.h>
 #include <smithy/client/schema/SerdeTraits.h>
 #include <smithy/client/schema/XmlShapeDeserializer.h>
 #include <smithy/client/schema/XmlTraits.h>
 
-#include <cmath>
-#include <cstdlib>
 #include <limits>
 
 using namespace smithy::schema;
@@ -17,7 +18,8 @@ using namespace Aws::Utils;
 
 class XmlShapeDeserializer::Impl final : public ShapeDeserializer {
  public:
-  explicit Impl(Aws::Crt::ByteCursor data) : m_xml(reinterpret_cast<const char*>(data.ptr), data.len) {
+  explicit Impl(Aws::Crt::ByteCursor data, CodecSettings settings)
+      : m_xml(reinterpret_cast<const char*>(data.ptr), data.len), m_settings(settings) {
     const Element root = FindRoot();
     m_tagBegin = root.tagBegin;
     m_tagEnd = root.tagEnd;
@@ -134,16 +136,7 @@ class XmlShapeDeserializer::Impl final : public ShapeDeserializer {
   }
 
   Aws::Crt::Optional<int64_t> ReadLong(const Schema&) override {
-    const Aws::String text = CurrentText();
-    if (text.empty()) {
-      return {};
-    }
-    char* end = nullptr;
-    const long long value = std::strtoll(text.c_str(), &end, 10);
-    if (end != text.c_str() + text.size()) {
-      return {};
-    }
-    return static_cast<int64_t>(value);
+    return StringUtils::ParseInt64(CurrentText());
   }
 
   Aws::Crt::Optional<float> ReadFloat(const Schema& schema) override {
@@ -165,29 +158,19 @@ class XmlShapeDeserializer::Impl final : public ShapeDeserializer {
     if (text == "-Infinity") {
       return -std::numeric_limits<double>::infinity();
     }
-    if (text.empty()) {
-      return {};
-    }
-    char* end = nullptr;
-    const double value = std::strtod(text.c_str(), &end);
-    if (end != text.c_str() + text.size()) {
-      return {};
-    }
-    return value;
+    return StringUtils::ParseDouble(text);
   }
 
   Aws::Crt::Optional<Aws::String> ReadString(const Schema&) override { return CurrentText(); }
 
   Aws::Crt::Optional<DateTime> ReadTimestamp(const Schema& schema) override {
-    const auto format = ResolveTimestampFormat(schema, TimestampFormatTrait::Format::DATE_TIME);
+    const auto format = ResolveTimestampFormat(schema, m_settings.GetDefaultTimestampFormat());
     if (format == TimestampFormatTrait::Format::EPOCH_SECONDS) {
-      const Aws::String text = CurrentText();
-      char* end = nullptr;
-      const double seconds = std::strtod(text.c_str(), &end);
-      if (text.empty() || end != text.c_str() + text.size()) {
+      const auto seconds = StringUtils::ParseDouble(CurrentText());
+      if (!seconds.has_value()) {
         return {};
       }
-      return DateTime(seconds);
+      return DateTime(*seconds);
     }
     const DateFormat df =
         format == TimestampFormatTrait::Format::HTTP_DATE ? DateFormat::RFC822 : DateFormat::ISO_8601;
@@ -199,6 +182,11 @@ class XmlShapeDeserializer::Impl final : public ShapeDeserializer {
   }
 
   Aws::Crt::Optional<ByteBuffer> ReadBlob(const Schema&) override { return HashingUtils::Base64Decode(CurrentText()); }
+
+  std::shared_ptr<const Document> ReadDocument(const Schema&) override {
+    AWS_LOGSTREAM_WARN("XmlShapeDeserializer", "document type is not supported by the REST XML protocol");
+    return nullptr;
+  }
 
   bool IsNull() override { return !m_valid; }
 
@@ -495,10 +483,11 @@ class XmlShapeDeserializer::Impl final : public ShapeDeserializer {
   bool m_flattened = false;
   Aws::String m_flatName;
   Aws::String m_attr;
+  CodecSettings m_settings;
 };
 
-XmlShapeDeserializer::XmlShapeDeserializer(Aws::Crt::ByteCursor data)
-    : m_impl(Aws::MakeUnique<Impl>("XmlShapeDeserializer", data)) {}
+XmlShapeDeserializer::XmlShapeDeserializer(Aws::Crt::ByteCursor data, CodecSettings settings)
+    : m_impl(Aws::MakeUnique<Impl>("XmlShapeDeserializer", data, settings)) {}
 XmlShapeDeserializer::~XmlShapeDeserializer() = default;
 
 bool XmlShapeDeserializer::EnterWrapperElement(const Aws::String& name) { return m_impl->EnterWrapper(name); }
@@ -513,4 +502,7 @@ Aws::Crt::Optional<double> XmlShapeDeserializer::ReadDouble(const Schema& schema
 Aws::Crt::Optional<Aws::String> XmlShapeDeserializer::ReadString(const Schema& schema) { return m_impl->ReadString(schema); }
 Aws::Crt::Optional<DateTime> XmlShapeDeserializer::ReadTimestamp(const Schema& schema) { return m_impl->ReadTimestamp(schema); }
 Aws::Crt::Optional<ByteBuffer> XmlShapeDeserializer::ReadBlob(const Schema& schema) { return m_impl->ReadBlob(schema); }
+std::shared_ptr<const smithy::schema::Document> XmlShapeDeserializer::ReadDocument(const Schema& schema) {
+  return m_impl->ReadDocument(schema);
+}
 bool XmlShapeDeserializer::IsNull() { return m_impl->IsNull(); }

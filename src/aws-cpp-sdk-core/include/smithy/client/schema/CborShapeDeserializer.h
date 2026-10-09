@@ -25,6 +25,7 @@ class SMITHY_API CborShapeDeserializer final : public ShapeDeserializer {
   Aws::Crt::Optional<Aws::String> ReadString(const Schema& schema) override;
   Aws::Crt::Optional<Aws::Utils::DateTime> ReadTimestamp(const Schema& schema) override;
   Aws::Crt::Optional<Aws::Utils::ByteBuffer> ReadBlob(const Schema& schema) override;
+  std::shared_ptr<const Document> ReadDocument(const Schema& schema) override;
 
   bool IsNull() override;
 
