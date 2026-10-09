@@ -45,7 +45,7 @@ ${className}::InvokeOperationOutcome ${className}::InvokeServiceOperation(
     }
 #end
 
-  return TracingUtils::MakeCallWithTiming<InvokeOperationOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<InvokeOperationOutcome>(request, std::move(span),
       [&]() -> InvokeOperationOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -67,7 +67,7 @@ ${className}::InvokeOperationOutcome ${className}::InvokeServiceOperation(
 
         return InvokeOperationOutcome{MakeRequest(request, endpointResolutionOutcome.GetResult(), httpMethod, #if($serviceHasNonDefaultSigner)signerName#{else}Aws::Auth::SIGV4_SIGNER#end)};
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
 }

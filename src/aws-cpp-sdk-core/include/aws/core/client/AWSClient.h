@@ -86,9 +86,7 @@ namespace Aws
         typedef Utils::Outcome<AmazonWebServiceResult<Utils::Stream::ResponseStream>, AWSError<CoreErrors>> StreamOutcome;
 
         using HttpResponseOutcomeReceivedHandler = std::function<void(HttpResponseOutcome&&)>;
-#if defined(AWS_CRT_HTTP_USE_ASYNC_IO)
         struct AWSClientAsyncRequestContext;
-#endif
 
         /**
          * Abstract AWS Client. Contains most of the functionality necessary to build an http request, get it signed, and send it across the wire.
@@ -237,16 +235,14 @@ namespace Aws
                                                     const char* signerRegionOverride = nullptr,
                                                     const char* signerServiceNameOverride = nullptr) const;
 
-#if defined(AWS_CRT_HTTP_USE_ASYNC_IO)
             void AttemptExhaustivelyAsync(const Aws::Http::URI& uri,
                                           const Aws::AmazonWebServiceRequest& request,
                                           Http::HttpMethod httpMethod,
                                           const char* signerName,
                                           HttpResponseOutcomeReceivedHandler handler,
-                                          const std::shared_ptr<Aws::Utils::Threading::Executor>& executor = nullptr,
+                                          const std::shared_ptr<Aws::Utils::Threading::Executor>& executor,
                                           const char* signerRegionOverride = nullptr,
                                           const char* signerServiceNameOverride = nullptr) const;
-#endif
 
             /**
              * Build an Http Request from the AmazonWebServiceRequest object. Signs the request, sends it across the wire
@@ -375,12 +371,11 @@ namespace Aws
              * return true if signer's clock is adjusted, false otherwise.
              */
             bool AdjustClockSkew(HttpResponseOutcome& outcome, const Aws::Utils::DateTime& timeRequestSent, const Aws::Utils::DateTime& timeResponseReceived, std::chrono::milliseconds attemptSkew) const;
-#if defined(AWS_CRT_HTTP_USE_ASYNC_IO)
             std::shared_ptr<Aws::Http::HttpRequest> StartOneAttemptAsync(const std::shared_ptr<AWSClientAsyncRequestContext>& context) const;
             Aws::Http::HttpClient::AttemptOutcome OnResponseReceivedAsync(const std::shared_ptr<AWSClientAsyncRequestContext>& context, std::shared_ptr<Aws::Http::HttpResponse> httpResponse) const;
             Aws::Http::HttpClient::AttemptOutcome OnAttemptCompleteAsync(const std::shared_ptr<AWSClientAsyncRequestContext>& context, HttpResponseOutcome&& outcome) const;
             void FinishAsync(const std::shared_ptr<AWSClientAsyncRequestContext>& context) const;
-#endif
+            static StreamOutcome ProcessUnparsedResponse(HttpResponseOutcome& httpResponseOutcome);
             void AddHeadersToRequest(const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest, const Http::HeaderValueCollection& headerValues) const;
             void AddContentBodyToRequest(const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest, const std::shared_ptr<Aws::IOStream>& body,
                                          bool needsContentMd5 = false, bool isChunked = false) const;
@@ -401,9 +396,6 @@ namespace Aws
             Aws::Vector<std::shared_ptr<smithy::interceptor::Interceptor>> m_interceptors;
             bool m_enableNewRetries;
             bool m_disableExpectHeader;
-#if defined(AWS_CRT_HTTP_USE_ASYNC_IO)
-            std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
-#endif
         };
 
         AWS_CORE_API Aws::String GetAuthorizationHeader(const Aws::Http::HttpRequest& httpRequest);

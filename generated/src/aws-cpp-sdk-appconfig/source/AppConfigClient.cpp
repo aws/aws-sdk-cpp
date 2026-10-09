@@ -215,7 +215,8 @@ AppConfigClient::InvokeOperationOutcome AppConfigClient::InvokeServiceOperation(
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
 
-  return TracingUtils::MakeCallWithTiming<InvokeOperationOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<InvokeOperationOutcome>(
+      request, std::move(span),
       [&]() -> InvokeOperationOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -229,7 +230,7 @@ AppConfigClient::InvokeOperationOutcome AppConfigClient::InvokeServiceOperation(
 
         return InvokeOperationOutcome{MakeRequest(request, endpointResolutionOutcome.GetResult(), httpMethod, Aws::Auth::SIGV4_SIGNER)};
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
 }
 
@@ -357,7 +358,8 @@ CreateHostedConfigurationVersionOutcome AppConfigClient::CreateHostedConfigurati
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<CreateHostedConfigurationVersionOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<CreateHostedConfigurationVersionOutcome>(
+      request, std::move(span),
       [&]() -> CreateHostedConfigurationVersionOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -375,7 +377,7 @@ CreateHostedConfigurationVersionOutcome AppConfigClient::CreateHostedConfigurati
         return result.IsSuccess() ? CreateHostedConfigurationVersionOutcome(result.GetResultWithOwnership())
                                   : CreateHostedConfigurationVersionOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
@@ -806,7 +808,8 @@ GetHostedConfigurationVersionOutcome AppConfigClient::GetHostedConfigurationVers
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<GetHostedConfigurationVersionOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<GetHostedConfigurationVersionOutcome>(
+      request, std::move(span),
       [&]() -> GetHostedConfigurationVersionOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -825,7 +828,7 @@ GetHostedConfigurationVersionOutcome AppConfigClient::GetHostedConfigurationVers
         return result.IsSuccess() ? GetHostedConfigurationVersionOutcome(result.GetResultWithOwnership())
                                   : GetHostedConfigurationVersionOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }

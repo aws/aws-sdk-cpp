@@ -191,7 +191,8 @@ TnbClient::InvokeOperationOutcome TnbClient::InvokeServiceOperation(
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
 
-  return TracingUtils::MakeCallWithTiming<InvokeOperationOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<InvokeOperationOutcome>(
+      request, std::move(span),
       [&]() -> InvokeOperationOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -205,7 +206,7 @@ TnbClient::InvokeOperationOutcome TnbClient::InvokeServiceOperation(
 
         return InvokeOperationOutcome{MakeRequest(request, endpointResolutionOutcome.GetResult(), httpMethod, Aws::Auth::SIGV4_SIGNER)};
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
 }
 
@@ -373,7 +374,8 @@ GetSolFunctionPackageContentOutcome TnbClient::GetSolFunctionPackageContent(cons
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<GetSolFunctionPackageContentOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<GetSolFunctionPackageContentOutcome>(
+      request, std::move(span),
       [&]() -> GetSolFunctionPackageContentOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -389,7 +391,7 @@ GetSolFunctionPackageContentOutcome TnbClient::GetSolFunctionPackageContent(cons
         return result.IsSuccess() ? GetSolFunctionPackageContentOutcome(result.GetResultWithOwnership())
                                   : GetSolFunctionPackageContentOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
@@ -417,7 +419,8 @@ GetSolFunctionPackageDescriptorOutcome TnbClient::GetSolFunctionPackageDescripto
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<GetSolFunctionPackageDescriptorOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<GetSolFunctionPackageDescriptorOutcome>(
+      request, std::move(span),
       [&]() -> GetSolFunctionPackageDescriptorOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -433,7 +436,7 @@ GetSolFunctionPackageDescriptorOutcome TnbClient::GetSolFunctionPackageDescripto
         return result.IsSuccess() ? GetSolFunctionPackageDescriptorOutcome(result.GetResultWithOwnership())
                                   : GetSolFunctionPackageDescriptorOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
@@ -514,7 +517,8 @@ GetSolNetworkPackageContentOutcome TnbClient::GetSolNetworkPackageContent(const 
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<GetSolNetworkPackageContentOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<GetSolNetworkPackageContentOutcome>(
+      request, std::move(span),
       [&]() -> GetSolNetworkPackageContentOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -530,7 +534,7 @@ GetSolNetworkPackageContentOutcome TnbClient::GetSolNetworkPackageContent(const 
         return result.IsSuccess() ? GetSolNetworkPackageContentOutcome(result.GetResultWithOwnership())
                                   : GetSolNetworkPackageContentOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
@@ -553,7 +557,8 @@ GetSolNetworkPackageDescriptorOutcome TnbClient::GetSolNetworkPackageDescriptor(
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<GetSolNetworkPackageDescriptorOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<GetSolNetworkPackageDescriptorOutcome>(
+      request, std::move(span),
       [&]() -> GetSolNetworkPackageDescriptorOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -569,7 +574,7 @@ GetSolNetworkPackageDescriptorOutcome TnbClient::GetSolNetworkPackageDescriptor(
         return result.IsSuccess() ? GetSolNetworkPackageDescriptorOutcome(result.GetResultWithOwnership())
                                   : GetSolNetworkPackageDescriptorOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }

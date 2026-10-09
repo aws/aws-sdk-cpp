@@ -4,6 +4,7 @@
  */
 
 #include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AsyncOperationState.h>
 #include <aws/core/AmazonWebServiceRequest.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/auth/AWSAuthSignerProvider.h>
@@ -120,7 +121,6 @@ namespace Aws
 {
     namespace Client
     {
-#if defined(AWS_CRT_HTTP_USE_ASYNC_IO)
         struct AWSClientAsyncRequestContext
         {
             Aws::Http::URI uri;
@@ -147,7 +147,6 @@ namespace Aws
             std::shared_ptr<Aws::Utils::Threading::Executor> executor;
             Aws::Crt::Optional<TracingUtils::ScopedMetricTimer> serviceCallTimer;
         };
-#endif
     } // namespace Client
 } // namespace Aws
 
@@ -179,12 +178,7 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
         configuration.awsChunkedBufferSize),
         m_userAgentInterceptor},
     m_enableNewRetries{Aws::Utils::StringUtils::ToLower(Aws::Environment::GetEnv("AWS_NEW_RETRIES_2026").c_str()) == "true"},
-#if defined(AWS_CRT_HTTP_USE_ASYNC_IO)
-    m_disableExpectHeader(configuration.disableExpectHeader),
-    m_executor(configuration.executor ? configuration.executor : configuration.configFactories.executorCreateFn())
-#else
     m_disableExpectHeader(configuration.disableExpectHeader)
-#endif
 {
 }
 
@@ -216,12 +210,7 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
         configuration.awsChunkedBufferSize),
         m_userAgentInterceptor},
     m_enableNewRetries{Aws::Utils::StringUtils::ToLower(Aws::Environment::GetEnv("AWS_NEW_RETRIES_2026").c_str()) == "true"},
-#if defined(AWS_CRT_HTTP_USE_ASYNC_IO)
-    m_disableExpectHeader(configuration.disableExpectHeader),
-    m_executor(configuration.executor ? configuration.executor : configuration.configFactories.executorCreateFn())
-#else
     m_disableExpectHeader(configuration.disableExpectHeader)
-#endif
 {
 }
 
@@ -745,7 +734,6 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<Aws::Http
     return HttpResponseOutcome(std::move(httpResponse));
 }
 
-#if defined(AWS_CRT_HTTP_USE_ASYNC_IO)
 void AWSClient::AttemptExhaustivelyAsync(const Aws::Http::URI& uri,
     const Aws::AmazonWebServiceRequest& request,
     Http::HttpMethod method,
@@ -775,7 +763,7 @@ void AWSClient::AttemptExhaustivelyAsync(const Aws::Http::URI& uri,
         context->signerServiceName = signerServiceNameOverride;
     }
     context->handler = std::move(handler);
-    context->executor = executor ? executor : m_executor;
+    context->executor = executor;
     context->invocationId = Aws::Utils::UUID::PseudoRandomUUID();
 
     context->httpRequest = CreateHttpRequest(uri, method, request.GetResponseStreamFactory());
@@ -1070,13 +1058,9 @@ void AWSClient::FinishAsync(const std::shared_ptr<AWSClientAsyncRequestContext>&
     Aws::Monitoring::OnFinish(this->GetServiceClientName(), request.GetServiceRequestName(), context->httpRequest, context->monitoringContexts);
     if (context->handler)
     {
-        context->executor->Submit([context]()
-        {
-            context->handler(std::move(context->outcome));
-        });
+        context->handler(std::move(context->outcome));
     }
 }
-#endif
 
 StreamOutcome AWSClient::MakeRequestWithUnparsedResponse(const Aws::Http::URI& uri,
     const Aws::AmazonWebServiceRequest& request,
@@ -1085,7 +1069,23 @@ StreamOutcome AWSClient::MakeRequestWithUnparsedResponse(const Aws::Http::URI& u
     const char* signerRegionOverride,
     const char* signerServiceNameOverride) const
 {
+    if (const auto asyncOperationState = ProtocolAsyncOperationState<StreamOutcome>::Take(request))
+    {
+        AttemptExhaustivelyAsync(uri, request, method, signerName,
+            [asyncOperationState](HttpResponseOutcome&& httpResponseOutcome)
+            {
+                asyncOperationState->Complete(ProcessUnparsedResponse(httpResponseOutcome));
+            },
+            asyncOperationState->GetExecutor(), signerRegionOverride, signerServiceNameOverride);
+        return StreamOutcome(AWSError<CoreErrors>(CoreErrors::INTERNAL_FAILURE, "", "Request continues on the async request path", false));
+    }
+
     HttpResponseOutcome httpResponseOutcome = AttemptExhaustively(uri, request, method, signerName, signerRegionOverride, signerServiceNameOverride);
+    return ProcessUnparsedResponse(httpResponseOutcome);
+}
+
+StreamOutcome AWSClient::ProcessUnparsedResponse(HttpResponseOutcome& httpResponseOutcome)
+{
     if (httpResponseOutcome.IsSuccess())
     {
         return StreamOutcome(AmazonWebServiceResult<Stream::ResponseStream>(
@@ -1169,6 +1169,23 @@ XmlOutcome AWSXMLClient::MakeRequestWithEventStream(const Aws::Http::URI& uri,
     const char* signerRegionOverride,
     const char* signerServiceNameOverride) const
 {
+    if (const auto asyncOperationState = ProtocolAsyncOperationState<XmlOutcome>::Take(request))
+    {
+        asyncOperationState->ExtendRequestLifetime();
+        AttemptExhaustivelyAsync(uri, request, method, signerName,
+            [asyncOperationState](HttpResponseOutcome&& httpOutcome)
+            {
+                if (httpOutcome.IsSuccess())
+                {
+                    asyncOperationState->Complete(XmlOutcome(AmazonWebServiceResult<XmlDocument>(XmlDocument(), httpOutcome.GetResult()->GetHeaders())));
+                    return;
+                }
+                asyncOperationState->Complete(XmlOutcome(std::move(httpOutcome)));
+            },
+            asyncOperationState->GetExecutor(), signerRegionOverride, signerServiceNameOverride);
+        return XmlOutcome(AWSError<CoreErrors>(CoreErrors::INTERNAL_FAILURE, "", "Request continues on the async request path", false));
+    }
+
     HttpResponseOutcome httpOutcome = AttemptExhaustively(uri, request, method, signerName, signerRegionOverride, signerServiceNameOverride);
     if (httpOutcome.IsSuccess())
     {

@@ -232,14 +232,15 @@ BedrockAgentClient::InvokeOperationOutcome BedrockAgentClient::InvokeServiceOper
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
 
-  return TracingUtils::MakeCallWithTiming<InvokeOperationOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<InvokeOperationOutcome>(
+      request, std::move(span),
       [&]() -> InvokeOperationOutcome {
         auto result = MakeRequestDeserialize(&request, operationName, httpMethod,
                                              [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolveUri(resolvedEndpoint); });
         return result.IsSuccess() ? InvokeOperationOutcome(result.GetResultWithOwnership())
                                   : InvokeOperationOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
 }
 AssociateAgentCollaboratorOutcome BedrockAgentClient::AssociateAgentCollaborator(const AssociateAgentCollaboratorRequest& request) const {

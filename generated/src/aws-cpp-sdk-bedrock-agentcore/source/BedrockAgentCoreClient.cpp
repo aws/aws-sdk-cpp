@@ -233,7 +233,8 @@ BedrockAgentCoreClient::InvokeOperationOutcome BedrockAgentCoreClient::InvokeSer
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
 
-  return TracingUtils::MakeCallWithTiming<InvokeOperationOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<InvokeOperationOutcome>(
+      request, std::move(span),
       [&]() -> InvokeOperationOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -247,7 +248,7 @@ BedrockAgentCoreClient::InvokeOperationOutcome BedrockAgentCoreClient::InvokeSer
 
         return InvokeOperationOutcome{MakeRequest(request, endpointResolutionOutcome.GetResult(), httpMethod, Aws::Auth::SIGV4_SIGNER)};
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
 }
 
@@ -869,7 +870,8 @@ InvokeAgentRuntimeOutcome BedrockAgentCoreClient::InvokeAgentRuntime(const Invok
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<InvokeAgentRuntimeOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<InvokeAgentRuntimeOutcome>(
+      request, std::move(span),
       [&]() -> InvokeAgentRuntimeOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -885,7 +887,7 @@ InvokeAgentRuntimeOutcome BedrockAgentCoreClient::InvokeAgentRuntime(const Invok
         return result.IsSuccess() ? InvokeAgentRuntimeOutcome(result.GetResultWithOwnership())
                                   : InvokeAgentRuntimeOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
@@ -907,7 +909,8 @@ InvokeAgentRuntimeCommandOutcome BedrockAgentCoreClient::InvokeAgentRuntimeComma
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<InvokeAgentRuntimeCommandOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<InvokeAgentRuntimeCommandOutcome>(
+      request, std::move(span),
       [&]() -> InvokeAgentRuntimeCommandOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -935,7 +938,7 @@ InvokeAgentRuntimeCommandOutcome BedrockAgentCoreClient::InvokeAgentRuntimeComma
         return result.IsSuccess() ? InvokeAgentRuntimeCommandOutcome(result.GetResultWithOwnership())
                                   : InvokeAgentRuntimeCommandOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
@@ -980,7 +983,8 @@ InvokeCodeInterpreterOutcome BedrockAgentCoreClient::InvokeCodeInterpreter(Invok
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<InvokeCodeInterpreterOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<InvokeCodeInterpreterOutcome>(
+      request, std::move(span),
       [&]() -> InvokeCodeInterpreterOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -1008,7 +1012,7 @@ InvokeCodeInterpreterOutcome BedrockAgentCoreClient::InvokeCodeInterpreter(Invok
         return result.IsSuccess() ? InvokeCodeInterpreterOutcome(result.GetResultWithOwnership())
                                   : InvokeCodeInterpreterOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
@@ -1035,7 +1039,8 @@ InvokeHarnessOutcome BedrockAgentCoreClient::InvokeHarness(InvokeHarnessRequest&
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<InvokeHarnessOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<InvokeHarnessOutcome>(
+      request, std::move(span),
       [&]() -> InvokeHarnessOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -1061,7 +1066,7 @@ InvokeHarnessOutcome BedrockAgentCoreClient::InvokeHarness(InvokeHarnessRequest&
         return result.IsSuccess() ? InvokeHarnessOutcome(result.GetResultWithOwnership())
                                   : InvokeHarnessOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }

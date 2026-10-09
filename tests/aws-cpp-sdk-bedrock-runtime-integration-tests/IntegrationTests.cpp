@@ -26,6 +26,7 @@
 #include <aws/core/platform/Environment.h>
 #include <atomic>
 #include <condition_variable>
+#include <future>
 #include <mutex>
 #include <chrono>
 #include <vector>
@@ -194,6 +195,38 @@ TEST_F(BedrockRuntimeTests, TestInvokeModel)
   Aws::StringStream ss;
   ss << outcome.GetResult().GetBody().rdbuf();
   ASSERT_FALSE(ss.str().empty());
+}
+
+TEST_F(BedrockRuntimeTests, TestConverseStreamAsync)
+{
+  auto bedrockRequest = ConverseStreamRequest{}.WithModelId("us.amazon.nova-2-lite-v1:0")
+      .AddMessages(Message{}.WithRole(ConversationRole::user)
+          .AddContent(ContentBlock{}.WithText("Why is it always next year for the Minnesota Vikings?")));
+
+  Aws::String streamedText;
+  bool messageStopReceived = false;
+  ConverseStreamHandler streamHandler;
+  streamHandler.SetContentBlockDeltaEventCallback([&](const ContentBlockDeltaEvent& event)
+  {
+    streamedText += event.GetDelta().GetText();
+  });
+  streamHandler.SetMessageStopEventCallback([&](const MessageStopEvent&)
+  {
+    messageStopReceived = true;
+  });
+  bedrockRequest.SetEventStreamHandler(streamHandler);
+
+  std::promise<bool> converseSucceeded;
+  m_client->ConverseStreamAsync(bedrockRequest,
+      [&](const BedrockRuntimeClient*, const ConverseStreamRequest&, const ConverseStreamOutcome& outcome,
+          const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)
+      {
+        EXPECT_TRUE(outcome.IsSuccess()) << outcome.GetError().GetExceptionName() << " - " << outcome.GetError().GetMessage();
+        converseSucceeded.set_value(outcome.IsSuccess());
+      });
+  ASSERT_TRUE(converseSucceeded.get_future().get());
+  EXPECT_TRUE(messageStopReceived);
+  EXPECT_FALSE(streamedText.empty());
 }
 
 TEST_F(BedrockRuntimeTests, TestInvokeModelWithBidirectionalStreamCompletesForShutdown)

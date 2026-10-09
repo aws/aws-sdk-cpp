@@ -8,6 +8,8 @@
 #include <aws/core/client/AWSAsyncOperationTemplate.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
 #include <aws/core/utils/component-registry/ComponentRegistry.h>
+#include <aws/core/client/AsyncOperationState.h>
+#include <aws/core/NoResult.h>
 
 namespace Aws
 {
@@ -40,6 +42,27 @@ namespace Client
         static const bool value = false;
     };
 
+    template<typename T>
+    struct AWS_CORE_LOCAL OperationRequestOf;
+
+    template<typename ReturnT, typename ClassT, typename RequestT>
+    struct AWS_CORE_LOCAL OperationRequestOf<ReturnT(ClassT::*)(RequestT) const>
+    {
+        using type = typename std::decay<RequestT>::type;
+    };
+
+    template<typename ClientT, typename OutcomeT>
+    struct AWS_CORE_LOCAL ProtocolOutcomeOf;
+
+    template<typename ClientT, typename ResultT, typename ErrorT>
+    struct AWS_CORE_LOCAL ProtocolOutcomeOf<ClientT, Utils::Outcome<ResultT, ErrorT>>
+    {
+        using type = typename std::conditional<
+            std::is_constructible<ResultT, AmazonWebServiceResult<Utils::Stream::ResponseStream>&&>::value && !std::is_same<ResultT, NoResult>::value,
+            Utils::Outcome<AmazonWebServiceResult<Utils::Stream::ResponseStream>, AWSError<CoreErrors>>,
+            typename ClientT::OUTCOME>::type;
+    };
+
 
     /**
      * A CRTP-base class template that is used to add template methods to call AWS Operations in parallel using ThreadExecutor
@@ -51,7 +74,8 @@ namespace Client
     public:
         ClientWithAsyncTemplateMethods()
          : m_isInitialized(true),
-           m_operationsProcessed(0)
+           m_operationsProcessed(0),
+           m_asyncIOOperationsProcessed(0)
         {
             AwsServiceClientT* pThis = static_cast<AwsServiceClientT*>(this);
             Aws::Utils::ComponentRegistry::RegisterComponent(AwsServiceClientT::GetServiceName(),
@@ -62,7 +86,8 @@ namespace Client
 
         ClientWithAsyncTemplateMethods(const ClientWithAsyncTemplateMethods& other)
          : m_isInitialized(other.m_isInitialized.load()),
-           m_operationsProcessed(0)
+           m_operationsProcessed(0),
+           m_asyncIOOperationsProcessed(0)
         {
             AwsServiceClientT* pThis = static_cast<AwsServiceClientT*>(this);
             Aws::Utils::ComponentRegistry::RegisterComponent(AwsServiceClientT::GetServiceName(),
@@ -76,6 +101,7 @@ namespace Client
             {
                 ShutdownSdkClient(static_cast<AwsServiceClientT*>(this));
                 m_operationsProcessed = 0;
+                m_asyncIOOperationsProcessed = 0;
                 m_isInitialized = other.m_isInitialized.load();
             }
 
@@ -111,6 +137,14 @@ namespace Client
                 pClient->DisableRequestProcessing();
             }
 
+            if (Aws::Client::AsyncOperationState::IsAsyncIOEnabled())
+            {
+                while (pClient->m_asyncIOOperationsProcessed.load() != 0)
+                {
+                    pClient->m_shutdownSignal.wait_for(lock, std::chrono::milliseconds(100));
+                }
+            }
+
             if (timeoutMs == -1)
             {
                 timeoutMs = pClient->m_clientConfiguration.requestTimeoutMs;
@@ -141,6 +175,14 @@ namespace Client
                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             const AwsServiceClientT* clientThis = static_cast<const AwsServiceClientT*>(this);
+            using OperationRequestT = typename OperationRequestOf<OperationFuncT>::type;
+            if (std::is_same<RequestT, OperationRequestT>::value && Aws::Client::AsyncOperationState::IsAsyncIOEnabled() && clientThis->GetHttpClient()->SupportsAsyncRequests())
+            {
+                using OutcomeT = decltype((clientThis->*operationFunc)(request));
+                SubmitAsyncIO<OutcomeT>(operationFunc, request,
+                    [clientThis, handler, context](const OperationRequestT& asyncRequest, OutcomeT&& outcome) { handler(clientThis, asyncRequest, std::move(outcome), context); });
+                return;
+            }
             Aws::Client::MakeAsyncOperation(operationFunc, clientThis, request, handler, context, clientThis->m_clientConfiguration.executor.get());
         }
 
@@ -156,6 +198,14 @@ namespace Client
                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             const AwsServiceClientT* clientThis = static_cast<const AwsServiceClientT*>(this);
+            using OperationRequestT = typename OperationRequestOf<OperationFuncT>::type;
+            if (std::is_same<RequestT, OperationRequestT>::value && Aws::Client::AsyncOperationState::IsAsyncIOEnabled() && clientThis->GetHttpClient()->SupportsAsyncRequests())
+            {
+                using OutcomeT = decltype((clientThis->*operationFunc)(request));
+                SubmitAsyncIO<OutcomeT>(operationFunc, request,
+                    [clientThis, handler, context](const OperationRequestT& asyncRequest, OutcomeT&& outcome) { handler(clientThis, asyncRequest, std::move(outcome), context); });
+                return;
+            }
             Aws::Client::MakeAsyncStreamingOperation(operationFunc, clientThis, request, handler, context, clientThis->m_clientConfiguration.executor.get());
         }
 
@@ -182,6 +232,15 @@ namespace Client
             -> std::future<decltype((static_cast<const AwsServiceClientT*>(nullptr)->*operationFunc)(request))>
         {
             const AwsServiceClientT* clientThis = static_cast<const AwsServiceClientT*>(this);
+            using OperationRequestT = typename OperationRequestOf<OperationFuncT>::type;
+            if (std::is_same<RequestT, OperationRequestT>::value && Aws::Client::AsyncOperationState::IsAsyncIOEnabled() && clientThis->GetHttpClient()->SupportsAsyncRequests())
+            {
+                using OutcomeT = decltype((clientThis->*operationFunc)(request));
+                auto promise = Aws::MakeShared<std::promise<OutcomeT>>(AwsServiceClientT::GetAllocationTag());
+                SubmitAsyncIO<OutcomeT>(operationFunc, request,
+                    [promise](const OperationRequestT&, OutcomeT&& outcome) { promise->set_value(std::move(outcome)); });
+                return promise->get_future();
+            }
             return Aws::Client::MakeCallableOperation(AwsServiceClientT::GetAllocationTag(), operationFunc, clientThis, request, clientThis->m_clientConfiguration.executor.get());
         }
 
@@ -195,6 +254,15 @@ namespace Client
             -> std::future<decltype((static_cast<const AwsServiceClientT*>(nullptr)->*operationFunc)(request))>
         {
             const AwsServiceClientT* clientThis = static_cast<const AwsServiceClientT*>(this);
+            using OperationRequestT = typename OperationRequestOf<OperationFuncT>::type;
+            if (std::is_same<RequestT, OperationRequestT>::value && Aws::Client::AsyncOperationState::IsAsyncIOEnabled() && clientThis->GetHttpClient()->SupportsAsyncRequests())
+            {
+                using OutcomeT = decltype((clientThis->*operationFunc)(request));
+                auto promise = Aws::MakeShared<std::promise<OutcomeT>>(AwsServiceClientT::GetAllocationTag());
+                SubmitAsyncIO<OutcomeT>(operationFunc, request,
+                    [promise](const OperationRequestT&, OutcomeT&& outcome) { promise->set_value(std::move(outcome)); });
+                return promise->get_future();
+            }
             return Aws::Client::MakeCallableStreamingOperation(AwsServiceClientT::GetAllocationTag(), operationFunc, clientThis, request, clientThis->m_clientConfiguration.executor.get());
         }
 
@@ -210,6 +278,40 @@ namespace Client
             const AwsServiceClientT* clientThis = static_cast<const AwsServiceClientT*>(this);
             return Aws::Client::MakeCallableOperation(AwsServiceClientT::GetAllocationTag(), operationFunc, clientThis, clientThis->m_clientConfiguration.executor.get());
         }
+    private:
+        template<typename OutcomeT, typename RequestT, typename OperationFuncT, typename DeliverT>
+        void SubmitAsyncIO(OperationFuncT operationFunc, const RequestT& request, DeliverT deliver) const
+        {
+            using IsEventStream = std::integral_constant<bool, IsEventStreamOperation<OperationFuncT>::value>;
+            const AwsServiceClientT* clientThis = static_cast<const AwsServiceClientT*>(this);
+            auto operationGuard = Aws::MakeShared<Aws::Utils::RAIICounter>(AwsServiceClientT::GetAllocationTag(), m_operationsProcessed, &m_shutdownSignal);
+            auto asyncIOOperationGuard = Aws::MakeShared<Aws::Utils::RAIICounter>(AwsServiceClientT::GetAllocationTag(), m_asyncIOOperationsProcessed, &m_shutdownSignal);
+            auto state = Aws::MakeShared<Aws::Client::OutcomeAsyncOperationState<OutcomeT, typename ProtocolOutcomeOf<AwsServiceClientT, OutcomeT>::type>>(AwsServiceClientT::GetAllocationTag(),
+                clientThis->m_clientConfiguration.executor);
+            auto pRequest = Aws::MakeShared<Aws::Client::AsyncOperationRequest<typename OperationRequestOf<OperationFuncT>::type>>(AwsServiceClientT::GetAllocationTag(), request, state);
+            ReattachEventStreamHandler(*pRequest, IsEventStream());
+            state->Bind(IsEventStream::value ? pRequest : nullptr,
+                [pRequest, deliver, operationGuard, asyncIOOperationGuard](OutcomeT&& outcome) { deliver(*pRequest, std::move(outcome)); });
+            clientThis->m_clientConfiguration.executor->Submit([clientThis, operationFunc, pRequest, state]()
+            {
+                auto outcome = (clientThis->*operationFunc)(*pRequest);
+                if (state->TryTake())
+                {
+                    state->Deliver(std::move(outcome));
+                }
+            });
+        }
+
+        template<typename RequestT>
+        static void ReattachEventStreamHandler(RequestT& request, std::true_type)
+        {
+            request.SetEventStreamHandler(request.GetEventStreamHandler());
+        }
+
+        template<typename RequestT>
+        static void ReattachEventStreamHandler(RequestT&, std::false_type)
+        {
+        }
     protected:
         template <typename OutcomeT, typename ClientT, typename AWSEndpointT, typename RequestT, typename HandlerT>
         friend class BidirectionalEventStreamingTask; // allow BidirectionalEventStreamingTask to access m_isInitialized
@@ -224,6 +326,7 @@ namespace Client
 
         std::atomic<bool> m_isInitialized;
         mutable std::atomic<size_t> m_operationsProcessed;
+        mutable std::atomic<size_t> m_asyncIOOperationsProcessed;
         mutable std::condition_variable m_shutdownSignal;
         mutable std::mutex m_shutdownMutex;
 

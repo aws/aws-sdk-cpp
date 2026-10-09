@@ -122,6 +122,8 @@ namespace Aws
                 false};
             }
 
+            virtual bool SupportsAsyncRequests() const { return false; }
+
         protected:
             bool m_bad;
 

@@ -47,6 +47,7 @@
 #include <aws/testing/TestingEnvironment.h>
 #include <aws/testing/mocks/monitoring/TestingMonitoring.h>
 #include <fstream>
+#include <future>
 #include <thread>
 
 #ifdef _MSC_VER
@@ -1579,6 +1580,89 @@ namespace
 
         auto selectObjectContentOutcome = Client->SelectObjectContent(selectObjectContentRequest);
         AWS_ASSERT_SUCCESS(selectObjectContentOutcome);
+        ASSERT_TRUE(isRecordsEventReceived);
+        ASSERT_TRUE(isStatsEventReceived);
+    }
+
+    TEST_F(BucketAndObjectOperationTest, TestObjectOperationWithEventStreamAsync)
+    {
+        GTEST_SKIP() << "Select objects is not supported on new AWS accounts";
+        const Aws::String fullBucketName = CalculateBucketName(BASE_EVENT_STREAM_TEST_BUCKET_NAME.c_str());
+        SCOPED_TRACE(Aws::String("FullBucketName ") + fullBucketName);
+        CreateBucketRequest createBucketRequest;
+        createBucketRequest.SetBucket(fullBucketName);
+        createBucketRequest.SetACL(BucketCannedACL::private_);
+        CreateBucketOutcome createBucketOutcome = CreateBucket(createBucketRequest);
+        AWS_ASSERT_SUCCESS(createBucketOutcome);
+        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName, Client));
+        TagTestBucket(fullBucketName, Client);
+
+        PutObjectRequest putObjectRequest;
+        putObjectRequest.SetBucket(fullBucketName);
+
+        std::shared_ptr<Aws::IOStream> objectStream = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG);
+        *objectStream << "Name,Number\nAlice,1\nBob,2";
+        Aws::String firstColumn = "Name\nAlice\nBob\n";
+        objectStream->flush();
+        putObjectRequest.SetBody(objectStream);
+        putObjectRequest.SetKey(TEST_EVENT_STREAM_OBJ_KEY);
+        auto objectSize = putObjectRequest.GetBody()->tellp();
+        putObjectRequest.SetContentLength(static_cast<long>(objectSize));
+        putObjectRequest.SetContentMD5(HashingUtils::Base64Encode(HashingUtils::CalculateMD5(*putObjectRequest.GetBody())));
+        putObjectRequest.SetContentType("text/csv");
+
+        PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
+        AWS_ASSERT_SUCCESS(putObjectOutcome);
+
+        ASSERT_TRUE(WaitForObjectToPropagate(fullBucketName, TEST_EVENT_STREAM_OBJ_KEY));
+
+        SelectObjectContentRequest selectObjectContentRequest;
+        selectObjectContentRequest.SetBucket(fullBucketName);
+        selectObjectContentRequest.SetKey(TEST_EVENT_STREAM_OBJ_KEY);
+        selectObjectContentRequest.SetExpressionType(ExpressionType::SQL);
+        selectObjectContentRequest.SetExpression("select s._1 from S3Object s");
+
+        CSVInput csvInput;
+        csvInput.SetFileHeaderInfo(FileHeaderInfo::NONE);
+        InputSerialization inputSerialization;
+        inputSerialization.SetCSV(csvInput);
+        selectObjectContentRequest.SetInputSerialization(inputSerialization);
+
+        CSVOutput csvOutput;
+        OutputSerialization outputSerialization;
+        outputSerialization.SetCSV(csvOutput);
+        selectObjectContentRequest.SetOutputSerialization(outputSerialization);
+
+        bool isRecordsEventReceived = false;
+        bool isStatsEventReceived = false;
+
+        SelectObjectContentHandler handler;
+        handler.SetRecordsEventCallback([&](const RecordsEvent& recordsEvent)
+        {
+            isRecordsEventReceived = true;
+            auto recordsVector = recordsEvent.GetPayload();
+            Aws::String records(recordsVector.begin(), recordsVector.end());
+            ASSERT_STREQ(firstColumn.c_str(), records.c_str());
+        });
+        handler.SetStatsEventCallback([&](const StatsEvent& statsEvent)
+        {
+            isStatsEventReceived = true;
+            ASSERT_EQ(static_cast<long long>(objectSize), statsEvent.GetDetails().GetBytesScanned());
+            ASSERT_EQ(static_cast<long long>(objectSize), statsEvent.GetDetails().GetBytesProcessed());
+            ASSERT_EQ(static_cast<long long>(firstColumn.size()), statsEvent.GetDetails().GetBytesReturned());
+        });
+
+        selectObjectContentRequest.SetEventStreamHandler(handler);
+
+        std::promise<bool> selectSucceeded;
+        Client->SelectObjectContentAsync(selectObjectContentRequest,
+            [&](const S3Client*, const SelectObjectContentRequest&, const SelectObjectContentOutcome& outcome,
+                const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)
+            {
+                AWS_EXPECT_SUCCESS(outcome);
+                selectSucceeded.set_value(outcome.IsSuccess());
+            });
+        ASSERT_TRUE(selectSucceeded.get_future().get());
         ASSERT_TRUE(isRecordsEventReceived);
         ASSERT_TRUE(isStatsEventReceived);
     }

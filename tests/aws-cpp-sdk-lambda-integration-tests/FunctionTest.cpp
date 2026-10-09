@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <fstream>
+#include <future>
 
 #include <gtest/gtest.h>
 #include <aws/testing/AwsTestHelpers.h>
@@ -23,6 +24,7 @@
 #include <aws/lambda/model/CreateFunctionRequest.h>
 #include <aws/lambda/model/ListFunctionsRequest.h>
 #include <aws/lambda/model/InvokeRequest.h>
+#include <aws/lambda/model/InvokeWithResponseStreamRequest.h>
 #include <aws/lambda/model/AddPermissionRequest.h>
 #include <aws/lambda/model/GetPolicyRequest.h>
 #include <aws/lambda/model/GetFunctionConfigurationRequest.h>
@@ -392,6 +394,44 @@ TEST_F(FunctionTest, TestInvokeSync)
     //Our 'happy case' script simply echos the input to the output, so we should get the same thing here that we
     //sent above
     auto jsonResponse = Aws::Utils::Json::JsonValue(result.GetPayload());
+    EXPECT_EQ("ThePayload", jsonResponse.View().GetString("input"));
+}
+
+TEST_F(FunctionTest, TestInvokeWithResponseStreamAsync)
+{
+    InvokeWithResponseStreamRequest invokeRequest;
+    invokeRequest.SetFunctionName(BuildResourceName(BASE_SIMPLE_FUNCTION));
+    invokeRequest.SetContentType("application/javascript");
+    std::shared_ptr<Aws::IOStream> payload = Aws::MakeShared<Aws::StringStream>("FunctionTest");
+    Aws::Utils::Json::JsonValue jsonPayload;
+    jsonPayload.WithString("input", "ThePayload");
+    *payload << jsonPayload.View().WriteReadable();
+    invokeRequest.SetBody(payload);
+
+    Aws::String streamedPayload;
+    bool isCompleteEventReceived = false;
+    InvokeWithResponseStreamHandler handler;
+    handler.SetInvokeResponseStreamUpdateCallback([&](const InvokeResponseStreamUpdate& update)
+    {
+        streamedPayload.append(update.GetPayload().begin(), update.GetPayload().end());
+    });
+    handler.SetInvokeWithResponseStreamCompleteEventCallback([&](const InvokeWithResponseStreamCompleteEvent&)
+    {
+        isCompleteEventReceived = true;
+    });
+    invokeRequest.SetEventStreamHandler(handler);
+
+    std::promise<bool> invokeSucceeded;
+    m_client->InvokeWithResponseStreamAsync(invokeRequest,
+        [&](const LambdaClient*, const InvokeWithResponseStreamRequest&, const InvokeWithResponseStreamOutcome& outcome,
+            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)
+        {
+            AWS_EXPECT_SUCCESS(outcome);
+            invokeSucceeded.set_value(outcome.IsSuccess());
+        });
+    ASSERT_TRUE(invokeSucceeded.get_future().get());
+    EXPECT_TRUE(isCompleteEventReceived);
+    auto jsonResponse = Aws::Utils::Json::JsonValue(streamedPayload);
     EXPECT_EQ("ThePayload", jsonResponse.View().GetString("input"));
 }
 

@@ -36,6 +36,8 @@ namespace smithy {
 
                 void end() override;
 
+                void releaseScope() override;
+
             private:
                 opentelemetry::trace::StatusCode convertStatusCode(TraceSpanStatus status);
 
