@@ -124,6 +124,7 @@ struct AsyncRequestState {
   std::atomic<bool> finished{false};
   std::shared_ptr<Aws::Utils::Threading::WaitGroup> latch;
   std::weak_ptr<Aws::Crt::Http::HttpClientConnection> connection;
+  std::mutex connectionMutex;
   Aws::Crt::Io::ScheduledTask timeoutTask;
 
   void Finish() {
@@ -131,7 +132,7 @@ struct AsyncRequestState {
       return;
     }
     if (onComplete) {
-      onComplete(response);
+      onComplete(std::move(response));
     }
     if (latch) {
       latch->Done();
@@ -173,7 +174,10 @@ void OnClientConnectionAvailableAsync(const std::shared_ptr<Aws::Crt::Http::Http
 
   int finalErrorCode = errorCode;
   if (connection) {
-    state->connection = connection;
+    {
+      std::lock_guard<std::mutex> lock(state->connectionMutex);
+      state->connection = connection;
+    }
     AWS_LOGSTREAM_DEBUG(CRT_HTTP_CLIENT_TAG, "Obtained connection handle " << (void*)connection.get());
 
     Aws::Crt::Http::HttpRequestOptions requestOptions{};
@@ -523,7 +527,12 @@ namespace Aws
                             {
                                 return;
                             }
-                            if (auto connection = state->connection.lock())
+                            std::shared_ptr<Aws::Crt::Http::HttpClientConnection> connection;
+                            {
+                                std::lock_guard<std::mutex> lock(state->connectionMutex);
+                                connection = state->connection.lock();
+                            }
+                            if (connection)
                             {
                                 connection->Close();
                             }
@@ -553,6 +562,7 @@ namespace Aws
                 HttpClient::OnRetryableRequestComplete complete;
                 std::function<void(const std::shared_ptr<HttpRequest>&, std::function<void(std::shared_ptr<HttpResponse>)>)> send;
                 std::function<void(std::function<void(bool)>, std::chrono::milliseconds)> schedule;
+                std::function<bool()> processingDisabled;
                 std::shared_ptr<Aws::Utils::Threading::Executor> executor;
 
                 void RunAttempt()
@@ -566,27 +576,37 @@ namespace Aws
                     }
                     send(request, [self](std::shared_ptr<HttpResponse> response)
                     {
-                        auto outcome = self->evaluate(response);
-                        if (outcome.shouldRetry)
+                        auto handleResponse = [self, response]()
                         {
-                            self->schedule([self](bool canceled)
+                            auto outcome = self->evaluate(response);
+                            if (outcome.shouldRetry)
                             {
-                                if (canceled || !self->executor->Submit([self]() { self->RunAttempt(); }))
+                                self->schedule([self](bool canceled)
                                 {
-                                    self->complete();
-                                }
-                            }, outcome.backoff);
-                        }
-                        else if (outcome.backoff.count() > 0)
-                        {
-                            self->schedule([self](bool)
+                                    if (canceled || !self->executor->Submit([self]() { self->RunAttempt(); }))
+                                    {
+                                        self->complete();
+                                    }
+                                }, outcome.backoff);
+                            }
+                            else if (outcome.backoff.count() > 0)
+                            {
+                                self->schedule([self](bool canceled)
+                                {
+                                    if (canceled || !self->executor->Submit([self]() { self->complete(); }))
+                                    {
+                                        self->complete();
+                                    }
+                                }, outcome.backoff);
+                            }
+                            else
                             {
                                 self->complete();
-                            }, outcome.backoff);
-                        }
-                        else
+                            }
+                        };
+                        if (self->processingDisabled() || !self->executor->Submit(handleResponse))
                         {
-                            self->complete();
+                            handleResponse();
                         }
                     });
                 }
@@ -616,8 +636,8 @@ namespace Aws
             latch->Add();
             attemptLoop->complete = [onComplete, latch]()
             {
-                onComplete();
                 latch->Done();
+                onComplete();
             };
 
             const CRTHttpClient* self = this;
@@ -635,11 +655,15 @@ namespace Aws
             attemptLoop->schedule = [self](std::function<void(bool)> task, std::chrono::milliseconds delay)
             {
                 self->m_bootstrap.GetNextEventLoop().Schedule(
-                    [task](Aws::Crt::Io::TaskStatus status)
+                    [self, task](Aws::Crt::Io::TaskStatus status)
                     {
-                        task(status != Aws::Crt::Io::TaskStatus::RunReady);
+                        task(status != Aws::Crt::Io::TaskStatus::RunReady || !self->IsRequestProcessingEnabled());
                     },
                     delay);
+            };
+            attemptLoop->processingDisabled = [self]()
+            {
+                return !self->IsRequestProcessingEnabled();
             };
 
             attemptLoop->RunAttempt();
@@ -672,7 +696,7 @@ namespace Aws
             sync->signal.WaitOne();
 
             // TODO: is VOX support still a thing? If so we need to add the metrics for it.
-            return sync->response;
+            return std::move(sync->response);
         }
 
         Aws::String CRTHttpClient::ResolveConnectionPoolKey(const URI& uri)

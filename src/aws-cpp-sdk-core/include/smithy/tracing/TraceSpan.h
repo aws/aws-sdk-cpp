@@ -62,6 +62,8 @@ namespace smithy {
                  */
                 virtual void end() = 0;
 
+                virtual void releaseScope() {}
+
             private:
                 Aws::String m_name;
             };

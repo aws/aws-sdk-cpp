@@ -354,7 +354,8 @@ S3Client::InvokeOperationOutcome S3Client::InvokeServiceOperation(
     }());
   }
 
-  return TracingUtils::MakeCallWithTiming<InvokeOperationOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<InvokeOperationOutcome>(
+      request, std::move(span),
       [&]() -> InvokeOperationOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -368,7 +369,7 @@ S3Client::InvokeOperationOutcome S3Client::InvokeServiceOperation(
 
         return InvokeOperationOutcome{MakeRequest(request, endpointResolutionOutcome.GetResult(), httpMethod, Aws::Auth::SIGV4_SIGNER)};
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
 }
 AbortMultipartUploadOutcome S3Client::AbortMultipartUpload(const AbortMultipartUploadRequest& request) const {
@@ -452,16 +453,12 @@ CopyObjectOutcome S3Client::CopyObject(const CopyObjectRequest& request) const {
 }
 
 CopyObjectOutcomeCallable S3Client::CopyObjectCallable(const CopyObjectRequest& request) const {
-  auto task =
-      Aws::MakeShared<std::packaged_task<CopyObjectOutcome()> >(ALLOCATION_TAG, [this, request]() { return this->CopyObject(request); });
-  auto packagedFunction = [task]() { (*task)(); };
-  m_clientConfiguration.executor->Submit(packagedFunction);
-  return task->get_future();
+  return SubmitCallable(&S3Client::CopyObject, request);
 }
 
 void S3Client::CopyObjectAsync(const CopyObjectRequest& request, const CopyObjectResponseReceivedHandler& handler,
                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const {
-  m_clientConfiguration.executor->Submit([this, request, handler, context]() { handler(this, request, CopyObject(request), context); });
+  SubmitAsync(&S3Client::CopyObject, request, handler, context);
 }
 
 CreateBucketOutcome S3Client::CreateBucket(const CreateBucketRequest& request) const {
@@ -1323,7 +1320,8 @@ GetBucketPolicyOutcome S3Client::GetBucketPolicy(const GetBucketPolicyRequest& r
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<GetBucketPolicyOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<GetBucketPolicyOutcome>(
+      request, std::move(span),
       [&]() -> GetBucketPolicyOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -1345,7 +1343,7 @@ GetBucketPolicyOutcome S3Client::GetBucketPolicy(const GetBucketPolicyRequest& r
         return result.IsSuccess() ? GetBucketPolicyOutcome(result.GetResultWithOwnership())
                                   : GetBucketPolicyOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
@@ -1486,7 +1484,8 @@ GetObjectOutcome S3Client::GetObject(const GetObjectRequest& request) const {
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<GetObjectOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<GetObjectOutcome>(
+      request, std::move(span),
       [&]() -> GetObjectOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -1505,22 +1504,18 @@ GetObjectOutcome S3Client::GetObject(const GetObjectRequest& request) const {
         auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET);
         return result.IsSuccess() ? GetObjectOutcome(result.GetResultWithOwnership()) : GetObjectOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
 GetObjectOutcomeCallable S3Client::GetObjectCallable(const GetObjectRequest& request) const {
-  auto task =
-      Aws::MakeShared<std::packaged_task<GetObjectOutcome()> >(ALLOCATION_TAG, [this, request]() { return this->GetObject(request); });
-  auto packagedFunction = [task]() { (*task)(); };
-  m_clientConfiguration.executor->Submit(packagedFunction);
-  return task->get_future();
+  return SubmitCallable(&S3Client::GetObject, request);
 }
 
 void S3Client::GetObjectAsync(const GetObjectRequest& request, const GetObjectResponseReceivedHandler& handler,
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const {
-  m_clientConfiguration.executor->Submit([this, request, handler, context]() { handler(this, request, GetObject(request), context); });
+  SubmitAsync(&S3Client::GetObject, request, handler, context);
 }
 
 GetObjectAclOutcome S3Client::GetObjectAcl(const GetObjectAclRequest& request) const {
@@ -1574,7 +1569,8 @@ GetObjectAnnotationOutcome S3Client::GetObjectAnnotation(const GetObjectAnnotati
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<GetObjectAnnotationOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<GetObjectAnnotationOutcome>(
+      request, std::move(span),
       [&]() -> GetObjectAnnotationOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -1597,7 +1593,7 @@ GetObjectAnnotationOutcome S3Client::GetObjectAnnotation(const GetObjectAnnotati
         return result.IsSuccess() ? GetObjectAnnotationOutcome(result.GetResultWithOwnership())
                                   : GetObjectAnnotationOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
@@ -1748,7 +1744,8 @@ GetObjectTorrentOutcome S3Client::GetObjectTorrent(const GetObjectTorrentRequest
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<GetObjectTorrentOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<GetObjectTorrentOutcome>(
+      request, std::move(span),
       [&]() -> GetObjectTorrentOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -1771,7 +1768,7 @@ GetObjectTorrentOutcome S3Client::GetObjectTorrent(const GetObjectTorrentRequest
         return result.IsSuccess() ? GetObjectTorrentOutcome(result.GetResultWithOwnership())
                                   : GetObjectTorrentOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
@@ -2450,16 +2447,12 @@ PutObjectOutcome S3Client::PutObject(const PutObjectRequest& request) const {
 }
 
 PutObjectOutcomeCallable S3Client::PutObjectCallable(const PutObjectRequest& request) const {
-  auto task =
-      Aws::MakeShared<std::packaged_task<PutObjectOutcome()> >(ALLOCATION_TAG, [this, request]() { return this->PutObject(request); });
-  auto packagedFunction = [task]() { (*task)(); };
-  m_clientConfiguration.executor->Submit(packagedFunction);
-  return task->get_future();
+  return SubmitCallable(&S3Client::PutObject, request);
 }
 
 void S3Client::PutObjectAsync(const PutObjectRequest& request, const PutObjectResponseReceivedHandler& handler,
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const {
-  m_clientConfiguration.executor->Submit([this, request, handler, context]() { handler(this, request, PutObject(request), context); });
+  SubmitAsync(&S3Client::PutObject, request, handler, context);
 }
 
 PutObjectAclOutcome S3Client::PutObjectAcl(const PutObjectAclRequest& request) const {
@@ -2704,7 +2697,8 @@ SelectObjectContentOutcome S3Client::SelectObjectContent(SelectObjectContentRequ
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<SelectObjectContentOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<SelectObjectContentOutcome>(
+      request, std::move(span),
       [&]() -> SelectObjectContentOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -2731,7 +2725,7 @@ SelectObjectContentOutcome S3Client::SelectObjectContent(SelectObjectContentRequ
         return result.IsSuccess() ? SelectObjectContentOutcome(result.GetResultWithOwnership())
                                   : SelectObjectContentOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }

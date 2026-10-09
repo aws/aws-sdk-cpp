@@ -68,6 +68,8 @@ namespace Aws
 
             bool IsDefaultAwsHttpClient() const override { return true; }
 
+            bool SupportsAsyncRequests() const override { return true; }
+
             Aws::Crt::Optional<Aws::Client::AWSError<Aws::Client::CoreErrors>> AcquireConnection(
                 const std::shared_ptr<HttpRequest>& request,
                 const std::function<void(std::shared_ptr<Aws::Http::Connection>, int)>& onClientConnectionAvailable) override;

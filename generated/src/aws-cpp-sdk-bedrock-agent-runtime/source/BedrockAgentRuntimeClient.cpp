@@ -192,14 +192,15 @@ BedrockAgentRuntimeClient::InvokeOperationOutcome BedrockAgentRuntimeClient::Inv
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
 
-  return TracingUtils::MakeCallWithTiming<InvokeOperationOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<InvokeOperationOutcome>(
+      request, std::move(span),
       [&]() -> InvokeOperationOutcome {
         auto result = MakeRequestDeserialize(&request, operationName, httpMethod,
                                              [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolveUri(resolvedEndpoint); });
         return result.IsSuccess() ? InvokeOperationOutcome(result.GetResultWithOwnership())
                                   : InvokeOperationOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
 }
 AgenticRetrieveStreamOutcome BedrockAgentRuntimeClient::AgenticRetrieveStream(AgenticRetrieveStreamRequest& request) const {
@@ -214,7 +215,8 @@ AgenticRetrieveStreamOutcome BedrockAgentRuntimeClient::AgenticRetrieveStream(Ag
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<AgenticRetrieveStreamOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<AgenticRetrieveStreamOutcome>(
+      request, std::move(span),
       [&]() -> AgenticRetrieveStreamOutcome {
         request.SetResponseStreamFactory([&] {
           request.GetEventStreamDecoder().Reset();
@@ -234,7 +236,7 @@ AgenticRetrieveStreamOutcome BedrockAgentRuntimeClient::AgenticRetrieveStream(Ag
         return result.IsSuccess() ? AgenticRetrieveStreamOutcome(result.GetResultWithOwnership())
                                   : AgenticRetrieveStreamOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
@@ -571,7 +573,8 @@ InvokeAgentOutcome BedrockAgentRuntimeClient::InvokeAgent(InvokeAgentRequest& re
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<InvokeAgentOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<InvokeAgentOutcome>(
+      request, std::move(span),
       [&]() -> InvokeAgentOutcome {
         request.SetResponseStreamFactory([&] {
           request.GetEventStreamDecoder().Reset();
@@ -597,7 +600,7 @@ InvokeAgentOutcome BedrockAgentRuntimeClient::InvokeAgent(InvokeAgentRequest& re
                                              });
         return result.IsSuccess() ? InvokeAgentOutcome(result.GetResultWithOwnership()) : InvokeAgentOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
@@ -623,7 +626,8 @@ InvokeFlowOutcome BedrockAgentRuntimeClient::InvokeFlow(InvokeFlowRequest& reque
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<InvokeFlowOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<InvokeFlowOutcome>(
+      request, std::move(span),
       [&]() -> InvokeFlowOutcome {
         request.SetResponseStreamFactory([&] {
           request.GetEventStreamDecoder().Reset();
@@ -646,7 +650,7 @@ InvokeFlowOutcome BedrockAgentRuntimeClient::InvokeFlow(InvokeFlowRequest& reque
                                              });
         return result.IsSuccess() ? InvokeFlowOutcome(result.GetResultWithOwnership()) : InvokeFlowOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
@@ -667,7 +671,8 @@ InvokeInlineAgentOutcome BedrockAgentRuntimeClient::InvokeInlineAgent(InvokeInli
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<InvokeInlineAgentOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<InvokeInlineAgentOutcome>(
+      request, std::move(span),
       [&]() -> InvokeInlineAgentOutcome {
         request.SetResponseStreamFactory([&] {
           request.GetEventStreamDecoder().Reset();
@@ -689,7 +694,7 @@ InvokeInlineAgentOutcome BedrockAgentRuntimeClient::InvokeInlineAgent(InvokeInli
         return result.IsSuccess() ? InvokeInlineAgentOutcome(result.GetResultWithOwnership())
                                   : InvokeInlineAgentOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
@@ -819,7 +824,8 @@ OptimizePromptOutcome BedrockAgentRuntimeClient::OptimizePrompt(OptimizePromptRe
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<OptimizePromptOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<OptimizePromptOutcome>(
+      request, std::move(span),
       [&]() -> OptimizePromptOutcome {
         request.SetResponseStreamFactory([&] {
           request.GetEventStreamDecoder().Reset();
@@ -839,7 +845,7 @@ OptimizePromptOutcome BedrockAgentRuntimeClient::OptimizePrompt(OptimizePromptRe
         return result.IsSuccess() ? OptimizePromptOutcome(result.GetResultWithOwnership())
                                   : OptimizePromptOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
@@ -903,7 +909,8 @@ RetrieveAndGenerateStreamOutcome BedrockAgentRuntimeClient::RetrieveAndGenerateS
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<RetrieveAndGenerateStreamOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<RetrieveAndGenerateStreamOutcome>(
+      request, std::move(span),
       [&]() -> RetrieveAndGenerateStreamOutcome {
         request.SetResponseStreamFactory([&] {
           request.GetEventStreamDecoder().Reset();
@@ -923,7 +930,7 @@ RetrieveAndGenerateStreamOutcome BedrockAgentRuntimeClient::RetrieveAndGenerateS
         return result.IsSuccess() ? RetrieveAndGenerateStreamOutcome(result.GetResultWithOwnership())
                                   : RetrieveAndGenerateStreamOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }

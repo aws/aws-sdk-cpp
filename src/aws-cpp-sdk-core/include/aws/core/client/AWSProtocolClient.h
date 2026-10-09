@@ -9,6 +9,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <smithy/tracing/TracingUtils.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
+#include <aws/core/client/AsyncOperationState.h>
 
 namespace Aws
 {
@@ -58,7 +59,6 @@ namespace Aws
                 return MakeRequest(uri, request, method, signerName, signerRegionOverride, signerServiceNameOverride);
             }
 
-
             OutcomeType MakeRequest(const Aws::Endpoint::AWSEndpoint& endpoint,
                                   Http::HttpMethod method = Http::HttpMethod::HTTP_POST,
                                   const char* signerName = Aws::Auth::SIGV4_SIGNER,
@@ -83,6 +83,18 @@ namespace Aws
                 const char* signerRegionOverride = nullptr,
                 const char* signerServiceNameOverride = nullptr) const
             {
+                if (const auto asyncOperationState = ProtocolAsyncOperationState<OutcomeType>::Take(request))
+                {
+                    asyncOperationState->ExtendRequestLifetime();
+                    const char* requestName = request.GetServiceRequestName();
+                    BASECLASS::AttemptExhaustivelyAsync(uri, request, method, signerName,
+                        [this, requestName, asyncOperationState](HttpResponseOutcome&& httpOutcome)
+                        {
+                            asyncOperationState->Complete(ProcessHttpResponse(httpOutcome, requestName));
+                        },
+                        asyncOperationState->GetExecutor(), signerRegionOverride, signerServiceNameOverride);
+                    return OutcomeType(AWSError<CoreErrors>(CoreErrors::INTERNAL_FAILURE, "", "Request continues on the async request path", false));
+                }
                 HttpResponseOutcome httpOutcome(BASECLASS::AttemptExhaustively(uri, request, method, signerName, signerRegionOverride, signerServiceNameOverride));
                 return ProcessHttpResponse(httpOutcome, request.GetServiceRequestName());
             }
