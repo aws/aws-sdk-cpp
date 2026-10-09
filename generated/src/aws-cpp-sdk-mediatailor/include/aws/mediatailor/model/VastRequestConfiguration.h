@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediatailor/MediaTailor_EXPORTS.h>
+#include <aws/mediatailor/model/HttpRequestCacheConfiguration.h>
 #include <aws/mediatailor/model/MethodType.h>
 #include <aws/mediatailor/model/RuntimeType.h>
 
@@ -195,6 +196,27 @@ class VastRequestConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The optional response-caching configuration for the function. When present,
+   * MediaTailor caches the responses that the function receives from the HTTP
+   * endpoint, within the time-to-live (TTL) bounds that you specify. Omit this
+   * configuration to disable response caching.</p>
+   */
+  inline const HttpRequestCacheConfiguration& GetCache() const { return m_cache; }
+  inline bool CacheHasBeenSet() const { return m_cacheHasBeenSet; }
+  template <typename CacheT = HttpRequestCacheConfiguration>
+  void SetCache(CacheT&& value) {
+    m_cacheHasBeenSet = true;
+    m_cache = std::forward<CacheT>(value);
+  }
+  template <typename CacheT = HttpRequestCacheConfiguration>
+  VastRequestConfiguration& WithCache(CacheT&& value) {
+    SetCache(std::forward<CacheT>(value));
+    return *this;
+  }
+  ///@}
  private:
   RuntimeType m_runtime{RuntimeType::NOT_SET};
 
@@ -209,6 +231,8 @@ class VastRequestConfiguration {
   Aws::String m_body;
 
   Aws::Map<Aws::String, Aws::String> m_headers;
+
+  HttpRequestCacheConfiguration m_cache;
   bool m_runtimeHasBeenSet = false;
   bool m_outputHasBeenSet = false;
   bool m_methodTypeHasBeenSet = false;
@@ -216,6 +240,7 @@ class VastRequestConfiguration {
   bool m_urlHasBeenSet = false;
   bool m_bodyHasBeenSet = false;
   bool m_headersHasBeenSet = false;
+  bool m_cacheHasBeenSet = false;
 };
 
 }  // namespace Model

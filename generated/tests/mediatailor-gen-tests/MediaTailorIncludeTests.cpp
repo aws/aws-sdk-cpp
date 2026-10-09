@@ -120,6 +120,7 @@
 #include <aws/mediatailor/model/HttpConfiguration.h>
 #include <aws/mediatailor/model/HttpPackageConfiguration.h>
 #include <aws/mediatailor/model/HttpRequest.h>
+#include <aws/mediatailor/model/HttpRequestCacheConfiguration.h>
 #include <aws/mediatailor/model/HttpRequestConfiguration.h>
 #include <aws/mediatailor/model/InsertionMode.h>
 #include <aws/mediatailor/model/KeyValuePair.h>

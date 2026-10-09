@@ -319,6 +319,9 @@
 #include <aws/deadline/model/ListLimitsPaginationTraits.h>
 #include <aws/deadline/model/ListLimitsRequest.h>
 #include <aws/deadline/model/ListLimitsResult.h>
+#include <aws/deadline/model/ListMembershipsPaginationTraits.h>
+#include <aws/deadline/model/ListMembershipsRequest.h>
+#include <aws/deadline/model/ListMembershipsResult.h>
 #include <aws/deadline/model/ListMeteredProductsPaginationTraits.h>
 #include <aws/deadline/model/ListMeteredProductsRequest.h>
 #include <aws/deadline/model/ListMeteredProductsResult.h>
@@ -379,6 +382,8 @@
 #include <aws/deadline/model/LogicalOperator.h>
 #include <aws/deadline/model/ManifestProperties.h>
 #include <aws/deadline/model/MembershipLevel.h>
+#include <aws/deadline/model/MembershipResourceType.h>
+#include <aws/deadline/model/MembershipSummary.h>
 #include <aws/deadline/model/MemoryMiBRange.h>
 #include <aws/deadline/model/MeteredProductSummary.h>
 #include <aws/deadline/model/MonitorSummary.h>

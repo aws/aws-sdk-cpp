@@ -32,6 +32,7 @@
 #include <aws/deadline/model/ListStepsPaginationTraits.h>
 #include <aws/deadline/model/ListSessionActionsPaginationTraits.h>
 #include <aws/deadline/model/ListQueueFleetAssociationsPaginationTraits.h>
+#include <aws/deadline/model/ListMembershipsPaginationTraits.h>
 #include <aws/deadline/model/ListSessionsPaginationTraits.h>
 #include <aws/deadline/model/ListSessionsForWorkerPaginationTraits.h>
 #include <aws/deadline/model/ListBudgetsPaginationTraits.h>

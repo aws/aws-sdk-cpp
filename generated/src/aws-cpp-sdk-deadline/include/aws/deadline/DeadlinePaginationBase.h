@@ -19,6 +19,7 @@
 #include <aws/deadline/model/ListJobsPaginationTraits.h>
 #include <aws/deadline/model/ListLicenseEndpointsPaginationTraits.h>
 #include <aws/deadline/model/ListLimitsPaginationTraits.h>
+#include <aws/deadline/model/ListMembershipsPaginationTraits.h>
 #include <aws/deadline/model/ListMeteredProductsPaginationTraits.h>
 #include <aws/deadline/model/ListMonitorsPaginationTraits.h>
 #include <aws/deadline/model/ListQueueEnvironmentsPaginationTraits.h>
@@ -180,6 +181,18 @@ class DeadlinePaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListLimitsRequest,
                                              Pagination::ListLimitsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};
+  }
+
+  /**
+   * Create a paginator for ListMemberships operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMembershipsRequest,
+                                    Pagination::ListMembershipsPaginationTraits<DerivedClient>>
+  ListMembershipsPaginator(const Model::ListMembershipsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMembershipsRequest,
+                                             Pagination::ListMembershipsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                         request};
   }
 
   /**

@@ -18,6 +18,7 @@
 #include <aws/meteringmarketplace/internal/MarketplaceMeteringEndpointRules.h>
 #include <aws/meteringmarketplace/model/BatchMeterUsageRequest.h>
 #include <aws/meteringmarketplace/model/BatchMeterUsageResult.h>
+#include <aws/meteringmarketplace/model/Metadata.h>
 #include <aws/meteringmarketplace/model/MeterUsageRequest.h>
 #include <aws/meteringmarketplace/model/MeterUsageResult.h>
 #include <aws/meteringmarketplace/model/RegisterUsageRequest.h>

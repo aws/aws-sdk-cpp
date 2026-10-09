@@ -5803,6 +5803,70 @@ class Capabilities {
 
   ///@{
   /**
+   * <p>The ability to perform actions using Gong connectors.</p>
+   */
+  inline CapabilityState GetGongAction() const { return m_gongAction; }
+  inline bool GongActionHasBeenSet() const { return m_gongActionHasBeenSet; }
+  inline void SetGongAction(CapabilityState value) {
+    m_gongActionHasBeenSet = true;
+    m_gongAction = value;
+  }
+  inline Capabilities& WithGongAction(CapabilityState value) {
+    SetGongAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create and update Gong actions.</p>
+   */
+  inline CapabilityState GetCreateAndUpdateGongAction() const { return m_createAndUpdateGongAction; }
+  inline bool CreateAndUpdateGongActionHasBeenSet() const { return m_createAndUpdateGongActionHasBeenSet; }
+  inline void SetCreateAndUpdateGongAction(CapabilityState value) {
+    m_createAndUpdateGongActionHasBeenSet = true;
+    m_createAndUpdateGongAction = value;
+  }
+  inline Capabilities& WithCreateAndUpdateGongAction(CapabilityState value) {
+    SetCreateAndUpdateGongAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Gong actions.</p>
+   */
+  inline CapabilityState GetShareGongAction() const { return m_shareGongAction; }
+  inline bool ShareGongActionHasBeenSet() const { return m_shareGongActionHasBeenSet; }
+  inline void SetShareGongAction(CapabilityState value) {
+    m_shareGongActionHasBeenSet = true;
+    m_shareGongAction = value;
+  }
+  inline Capabilities& WithShareGongAction(CapabilityState value) {
+    SetShareGongAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to use Gong actions.</p>
+   */
+  inline CapabilityState GetUseGongAction() const { return m_useGongAction; }
+  inline bool UseGongActionHasBeenSet() const { return m_useGongActionHasBeenSet; }
+  inline void SetUseGongAction(CapabilityState value) {
+    m_useGongActionHasBeenSet = true;
+    m_useGongAction = value;
+  }
+  inline Capabilities& WithUseGongAction(CapabilityState value) {
+    SetUseGongAction(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The ability to perform Topic-related actions.</p>
    */
   inline CapabilityState GetTopic() const { return m_topic; }
@@ -6221,6 +6285,2891 @@ class Capabilities {
   }
   inline Capabilities& WithQuickEventTrigger(CapabilityState value) {
     SetQuickEventTrigger(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create, update, and share file data sources.</p>
+   */
+  inline CapabilityState GetFileDataSource() const { return m_fileDataSource; }
+  inline bool FileDataSourceHasBeenSet() const { return m_fileDataSourceHasBeenSet; }
+  inline void SetFileDataSource(CapabilityState value) {
+    m_fileDataSourceHasBeenSet = true;
+    m_fileDataSource = value;
+  }
+  inline Capabilities& WithFileDataSource(CapabilityState value) {
+    SetFileDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create file data sources.</p>
+   */
+  inline CapabilityState GetCreateFileDataSource() const { return m_createFileDataSource; }
+  inline bool CreateFileDataSourceHasBeenSet() const { return m_createFileDataSourceHasBeenSet; }
+  inline void SetCreateFileDataSource(CapabilityState value) {
+    m_createFileDataSourceHasBeenSet = true;
+    m_createFileDataSource = value;
+  }
+  inline Capabilities& WithCreateFileDataSource(CapabilityState value) {
+    SetCreateFileDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to update file data sources.</p>
+   */
+  inline CapabilityState GetUpdateFileDataSource() const { return m_updateFileDataSource; }
+  inline bool UpdateFileDataSourceHasBeenSet() const { return m_updateFileDataSourceHasBeenSet; }
+  inline void SetUpdateFileDataSource(CapabilityState value) {
+    m_updateFileDataSourceHasBeenSet = true;
+    m_updateFileDataSource = value;
+  }
+  inline Capabilities& WithUpdateFileDataSource(CapabilityState value) {
+    SetUpdateFileDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share file data sources.</p>
+   */
+  inline CapabilityState GetShareFileDataSource() const { return m_shareFileDataSource; }
+  inline bool ShareFileDataSourceHasBeenSet() const { return m_shareFileDataSourceHasBeenSet; }
+  inline void SetShareFileDataSource(CapabilityState value) {
+    m_shareFileDataSourceHasBeenSet = true;
+    m_shareFileDataSource = value;
+  }
+  inline Capabilities& WithShareFileDataSource(CapabilityState value) {
+    SetShareFileDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create, update, and share Amazon S3 data sources.</p>
+   */
+  inline CapabilityState GetS3DataSource() const { return m_s3DataSource; }
+  inline bool S3DataSourceHasBeenSet() const { return m_s3DataSourceHasBeenSet; }
+  inline void SetS3DataSource(CapabilityState value) {
+    m_s3DataSourceHasBeenSet = true;
+    m_s3DataSource = value;
+  }
+  inline Capabilities& WithS3DataSource(CapabilityState value) {
+    SetS3DataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create Amazon S3 data sources.</p>
+   */
+  inline CapabilityState GetCreateS3DataSource() const { return m_createS3DataSource; }
+  inline bool CreateS3DataSourceHasBeenSet() const { return m_createS3DataSourceHasBeenSet; }
+  inline void SetCreateS3DataSource(CapabilityState value) {
+    m_createS3DataSourceHasBeenSet = true;
+    m_createS3DataSource = value;
+  }
+  inline Capabilities& WithCreateS3DataSource(CapabilityState value) {
+    SetCreateS3DataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to update Amazon S3 data sources.</p>
+   */
+  inline CapabilityState GetUpdateS3DataSource() const { return m_updateS3DataSource; }
+  inline bool UpdateS3DataSourceHasBeenSet() const { return m_updateS3DataSourceHasBeenSet; }
+  inline void SetUpdateS3DataSource(CapabilityState value) {
+    m_updateS3DataSourceHasBeenSet = true;
+    m_updateS3DataSource = value;
+  }
+  inline Capabilities& WithUpdateS3DataSource(CapabilityState value) {
+    SetUpdateS3DataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Amazon S3 data sources.</p>
+   */
+  inline CapabilityState GetShareS3DataSource() const { return m_shareS3DataSource; }
+  inline bool ShareS3DataSourceHasBeenSet() const { return m_shareS3DataSourceHasBeenSet; }
+  inline void SetShareS3DataSource(CapabilityState value) {
+    m_shareS3DataSourceHasBeenSet = true;
+    m_shareS3DataSource = value;
+  }
+  inline Capabilities& WithShareS3DataSource(CapabilityState value) {
+    SetShareS3DataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create, update, and share Amazon S3 Analytics data
+   * sources.</p>
+   */
+  inline CapabilityState GetS3AnalyticsDataSource() const { return m_s3AnalyticsDataSource; }
+  inline bool S3AnalyticsDataSourceHasBeenSet() const { return m_s3AnalyticsDataSourceHasBeenSet; }
+  inline void SetS3AnalyticsDataSource(CapabilityState value) {
+    m_s3AnalyticsDataSourceHasBeenSet = true;
+    m_s3AnalyticsDataSource = value;
+  }
+  inline Capabilities& WithS3AnalyticsDataSource(CapabilityState value) {
+    SetS3AnalyticsDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create Amazon S3 Analytics data sources.</p>
+   */
+  inline CapabilityState GetCreateS3AnalyticsDataSource() const { return m_createS3AnalyticsDataSource; }
+  inline bool CreateS3AnalyticsDataSourceHasBeenSet() const { return m_createS3AnalyticsDataSourceHasBeenSet; }
+  inline void SetCreateS3AnalyticsDataSource(CapabilityState value) {
+    m_createS3AnalyticsDataSourceHasBeenSet = true;
+    m_createS3AnalyticsDataSource = value;
+  }
+  inline Capabilities& WithCreateS3AnalyticsDataSource(CapabilityState value) {
+    SetCreateS3AnalyticsDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to update Amazon S3 Analytics data sources.</p>
+   */
+  inline CapabilityState GetUpdateS3AnalyticsDataSource() const { return m_updateS3AnalyticsDataSource; }
+  inline bool UpdateS3AnalyticsDataSourceHasBeenSet() const { return m_updateS3AnalyticsDataSourceHasBeenSet; }
+  inline void SetUpdateS3AnalyticsDataSource(CapabilityState value) {
+    m_updateS3AnalyticsDataSourceHasBeenSet = true;
+    m_updateS3AnalyticsDataSource = value;
+  }
+  inline Capabilities& WithUpdateS3AnalyticsDataSource(CapabilityState value) {
+    SetUpdateS3AnalyticsDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Amazon S3 Analytics data sources.</p>
+   */
+  inline CapabilityState GetShareS3AnalyticsDataSource() const { return m_shareS3AnalyticsDataSource; }
+  inline bool ShareS3AnalyticsDataSourceHasBeenSet() const { return m_shareS3AnalyticsDataSourceHasBeenSet; }
+  inline void SetShareS3AnalyticsDataSource(CapabilityState value) {
+    m_shareS3AnalyticsDataSourceHasBeenSet = true;
+    m_shareS3AnalyticsDataSource = value;
+  }
+  inline Capabilities& WithShareS3AnalyticsDataSource(CapabilityState value) {
+    SetShareS3AnalyticsDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create, update, and share Amazon S3 Tables data sources.</p>
+   */
+  inline CapabilityState GetS3TablesDataSource() const { return m_s3TablesDataSource; }
+  inline bool S3TablesDataSourceHasBeenSet() const { return m_s3TablesDataSourceHasBeenSet; }
+  inline void SetS3TablesDataSource(CapabilityState value) {
+    m_s3TablesDataSourceHasBeenSet = true;
+    m_s3TablesDataSource = value;
+  }
+  inline Capabilities& WithS3TablesDataSource(CapabilityState value) {
+    SetS3TablesDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create Amazon S3 Tables data sources.</p>
+   */
+  inline CapabilityState GetCreateS3TablesDataSource() const { return m_createS3TablesDataSource; }
+  inline bool CreateS3TablesDataSourceHasBeenSet() const { return m_createS3TablesDataSourceHasBeenSet; }
+  inline void SetCreateS3TablesDataSource(CapabilityState value) {
+    m_createS3TablesDataSourceHasBeenSet = true;
+    m_createS3TablesDataSource = value;
+  }
+  inline Capabilities& WithCreateS3TablesDataSource(CapabilityState value) {
+    SetCreateS3TablesDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to update Amazon S3 Tables data sources.</p>
+   */
+  inline CapabilityState GetUpdateS3TablesDataSource() const { return m_updateS3TablesDataSource; }
+  inline bool UpdateS3TablesDataSourceHasBeenSet() const { return m_updateS3TablesDataSourceHasBeenSet; }
+  inline void SetUpdateS3TablesDataSource(CapabilityState value) {
+    m_updateS3TablesDataSourceHasBeenSet = true;
+    m_updateS3TablesDataSource = value;
+  }
+  inline Capabilities& WithUpdateS3TablesDataSource(CapabilityState value) {
+    SetUpdateS3TablesDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Amazon S3 Tables data sources.</p>
+   */
+  inline CapabilityState GetShareS3TablesDataSource() const { return m_shareS3TablesDataSource; }
+  inline bool ShareS3TablesDataSourceHasBeenSet() const { return m_shareS3TablesDataSourceHasBeenSet; }
+  inline void SetShareS3TablesDataSource(CapabilityState value) {
+    m_shareS3TablesDataSourceHasBeenSet = true;
+    m_shareS3TablesDataSource = value;
+  }
+  inline Capabilities& WithShareS3TablesDataSource(CapabilityState value) {
+    SetShareS3TablesDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create, update, and share Amazon Athena data sources.</p>
+   */
+  inline CapabilityState GetAthenaDataSource() const { return m_athenaDataSource; }
+  inline bool AthenaDataSourceHasBeenSet() const { return m_athenaDataSourceHasBeenSet; }
+  inline void SetAthenaDataSource(CapabilityState value) {
+    m_athenaDataSourceHasBeenSet = true;
+    m_athenaDataSource = value;
+  }
+  inline Capabilities& WithAthenaDataSource(CapabilityState value) {
+    SetAthenaDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create Amazon Athena data sources.</p>
+   */
+  inline CapabilityState GetCreateAthenaDataSource() const { return m_createAthenaDataSource; }
+  inline bool CreateAthenaDataSourceHasBeenSet() const { return m_createAthenaDataSourceHasBeenSet; }
+  inline void SetCreateAthenaDataSource(CapabilityState value) {
+    m_createAthenaDataSourceHasBeenSet = true;
+    m_createAthenaDataSource = value;
+  }
+  inline Capabilities& WithCreateAthenaDataSource(CapabilityState value) {
+    SetCreateAthenaDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to update Amazon Athena data sources.</p>
+   */
+  inline CapabilityState GetUpdateAthenaDataSource() const { return m_updateAthenaDataSource; }
+  inline bool UpdateAthenaDataSourceHasBeenSet() const { return m_updateAthenaDataSourceHasBeenSet; }
+  inline void SetUpdateAthenaDataSource(CapabilityState value) {
+    m_updateAthenaDataSourceHasBeenSet = true;
+    m_updateAthenaDataSource = value;
+  }
+  inline Capabilities& WithUpdateAthenaDataSource(CapabilityState value) {
+    SetUpdateAthenaDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Amazon Athena data sources.</p>
+   */
+  inline CapabilityState GetShareAthenaDataSource() const { return m_shareAthenaDataSource; }
+  inline bool ShareAthenaDataSourceHasBeenSet() const { return m_shareAthenaDataSourceHasBeenSet; }
+  inline void SetShareAthenaDataSource(CapabilityState value) {
+    m_shareAthenaDataSourceHasBeenSet = true;
+    m_shareAthenaDataSource = value;
+  }
+  inline Capabilities& WithShareAthenaDataSource(CapabilityState value) {
+    SetShareAthenaDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create, update, and share auto-discovered Amazon RDS data
+   * sources.</p>
+   */
+  inline CapabilityState GetRdsDataSource() const { return m_rdsDataSource; }
+  inline bool RdsDataSourceHasBeenSet() const { return m_rdsDataSourceHasBeenSet; }
+  inline void SetRdsDataSource(CapabilityState value) {
+    m_rdsDataSourceHasBeenSet = true;
+    m_rdsDataSource = value;
+  }
+  inline Capabilities& WithRdsDataSource(CapabilityState value) {
+    SetRdsDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create auto-discovered Amazon RDS data sources.</p>
+   */
+  inline CapabilityState GetCreateRdsDataSource() const { return m_createRdsDataSource; }
+  inline bool CreateRdsDataSourceHasBeenSet() const { return m_createRdsDataSourceHasBeenSet; }
+  inline void SetCreateRdsDataSource(CapabilityState value) {
+    m_createRdsDataSourceHasBeenSet = true;
+    m_createRdsDataSource = value;
+  }
+  inline Capabilities& WithCreateRdsDataSource(CapabilityState value) {
+    SetCreateRdsDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to update auto-discovered Amazon RDS data sources.</p>
+   */
+  inline CapabilityState GetUpdateRdsDataSource() const { return m_updateRdsDataSource; }
+  inline bool UpdateRdsDataSourceHasBeenSet() const { return m_updateRdsDataSourceHasBeenSet; }
+  inline void SetUpdateRdsDataSource(CapabilityState value) {
+    m_updateRdsDataSourceHasBeenSet = true;
+    m_updateRdsDataSource = value;
+  }
+  inline Capabilities& WithUpdateRdsDataSource(CapabilityState value) {
+    SetUpdateRdsDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share auto-discovered Amazon RDS data sources.</p>
+   */
+  inline CapabilityState GetShareRdsDataSource() const { return m_shareRdsDataSource; }
+  inline bool ShareRdsDataSourceHasBeenSet() const { return m_shareRdsDataSourceHasBeenSet; }
+  inline void SetShareRdsDataSource(CapabilityState value) {
+    m_shareRdsDataSourceHasBeenSet = true;
+    m_shareRdsDataSource = value;
+  }
+  inline Capabilities& WithShareRdsDataSource(CapabilityState value) {
+    SetShareRdsDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create, update, and share auto-discovered Amazon Redshift data
+   * sources.</p>
+   */
+  inline CapabilityState GetRedshiftAutoDiscoveredDataSource() const { return m_redshiftAutoDiscoveredDataSource; }
+  inline bool RedshiftAutoDiscoveredDataSourceHasBeenSet() const { return m_redshiftAutoDiscoveredDataSourceHasBeenSet; }
+  inline void SetRedshiftAutoDiscoveredDataSource(CapabilityState value) {
+    m_redshiftAutoDiscoveredDataSourceHasBeenSet = true;
+    m_redshiftAutoDiscoveredDataSource = value;
+  }
+  inline Capabilities& WithRedshiftAutoDiscoveredDataSource(CapabilityState value) {
+    SetRedshiftAutoDiscoveredDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create auto-discovered Amazon Redshift data sources.</p>
+   */
+  inline CapabilityState GetCreateRedshiftAutoDiscoveredDataSource() const { return m_createRedshiftAutoDiscoveredDataSource; }
+  inline bool CreateRedshiftAutoDiscoveredDataSourceHasBeenSet() const { return m_createRedshiftAutoDiscoveredDataSourceHasBeenSet; }
+  inline void SetCreateRedshiftAutoDiscoveredDataSource(CapabilityState value) {
+    m_createRedshiftAutoDiscoveredDataSourceHasBeenSet = true;
+    m_createRedshiftAutoDiscoveredDataSource = value;
+  }
+  inline Capabilities& WithCreateRedshiftAutoDiscoveredDataSource(CapabilityState value) {
+    SetCreateRedshiftAutoDiscoveredDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to update auto-discovered Amazon Redshift data sources.</p>
+   */
+  inline CapabilityState GetUpdateRedshiftAutoDiscoveredDataSource() const { return m_updateRedshiftAutoDiscoveredDataSource; }
+  inline bool UpdateRedshiftAutoDiscoveredDataSourceHasBeenSet() const { return m_updateRedshiftAutoDiscoveredDataSourceHasBeenSet; }
+  inline void SetUpdateRedshiftAutoDiscoveredDataSource(CapabilityState value) {
+    m_updateRedshiftAutoDiscoveredDataSourceHasBeenSet = true;
+    m_updateRedshiftAutoDiscoveredDataSource = value;
+  }
+  inline Capabilities& WithUpdateRedshiftAutoDiscoveredDataSource(CapabilityState value) {
+    SetUpdateRedshiftAutoDiscoveredDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share auto-discovered Amazon Redshift data sources.</p>
+   */
+  inline CapabilityState GetShareRedshiftAutoDiscoveredDataSource() const { return m_shareRedshiftAutoDiscoveredDataSource; }
+  inline bool ShareRedshiftAutoDiscoveredDataSourceHasBeenSet() const { return m_shareRedshiftAutoDiscoveredDataSourceHasBeenSet; }
+  inline void SetShareRedshiftAutoDiscoveredDataSource(CapabilityState value) {
+    m_shareRedshiftAutoDiscoveredDataSourceHasBeenSet = true;
+    m_shareRedshiftAutoDiscoveredDataSource = value;
+  }
+  inline Capabilities& WithShareRedshiftAutoDiscoveredDataSource(CapabilityState value) {
+    SetShareRedshiftAutoDiscoveredDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create, update, and share manually configured Amazon Redshift
+   * data sources.</p>
+   */
+  inline CapabilityState GetRedshiftManualDataSource() const { return m_redshiftManualDataSource; }
+  inline bool RedshiftManualDataSourceHasBeenSet() const { return m_redshiftManualDataSourceHasBeenSet; }
+  inline void SetRedshiftManualDataSource(CapabilityState value) {
+    m_redshiftManualDataSourceHasBeenSet = true;
+    m_redshiftManualDataSource = value;
+  }
+  inline Capabilities& WithRedshiftManualDataSource(CapabilityState value) {
+    SetRedshiftManualDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create manually configured Amazon Redshift data sources.</p>
+   */
+  inline CapabilityState GetCreateRedshiftManualDataSource() const { return m_createRedshiftManualDataSource; }
+  inline bool CreateRedshiftManualDataSourceHasBeenSet() const { return m_createRedshiftManualDataSourceHasBeenSet; }
+  inline void SetCreateRedshiftManualDataSource(CapabilityState value) {
+    m_createRedshiftManualDataSourceHasBeenSet = true;
+    m_createRedshiftManualDataSource = value;
+  }
+  inline Capabilities& WithCreateRedshiftManualDataSource(CapabilityState value) {
+    SetCreateRedshiftManualDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to update manually configured Amazon Redshift data sources.</p>
+   */
+  inline CapabilityState GetUpdateRedshiftManualDataSource() const { return m_updateRedshiftManualDataSource; }
+  inline bool UpdateRedshiftManualDataSourceHasBeenSet() const { return m_updateRedshiftManualDataSourceHasBeenSet; }
+  inline void SetUpdateRedshiftManualDataSource(CapabilityState value) {
+    m_updateRedshiftManualDataSourceHasBeenSet = true;
+    m_updateRedshiftManualDataSource = value;
+  }
+  inline Capabilities& WithUpdateRedshiftManualDataSource(CapabilityState value) {
+    SetUpdateRedshiftManualDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share manually configured Amazon Redshift data sources.</p>
+   */
+  inline CapabilityState GetShareRedshiftManualDataSource() const { return m_shareRedshiftManualDataSource; }
+  inline bool ShareRedshiftManualDataSourceHasBeenSet() const { return m_shareRedshiftManualDataSourceHasBeenSet; }
+  inline void SetShareRedshiftManualDataSource(CapabilityState value) {
+    m_shareRedshiftManualDataSourceHasBeenSet = true;
+    m_shareRedshiftManualDataSource = value;
+  }
+  inline Capabilities& WithShareRedshiftManualDataSource(CapabilityState value) {
+    SetShareRedshiftManualDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create, update, and share Amazon OpenSearch Service data
+   * sources.</p>
+   */
+  inline CapabilityState GetOpenSearchDataSource() const { return m_openSearchDataSource; }
+  inline bool OpenSearchDataSourceHasBeenSet() const { return m_openSearchDataSourceHasBeenSet; }
+  inline void SetOpenSearchDataSource(CapabilityState value) {
+    m_openSearchDataSourceHasBeenSet = true;
+    m_openSearchDataSource = value;
+  }
+  inline Capabilities& WithOpenSearchDataSource(CapabilityState value) {
+    SetOpenSearchDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create Amazon OpenSearch Service data sources.</p>
+   */
+  inline CapabilityState GetCreateOpenSearchDataSource() const { return m_createOpenSearchDataSource; }
+  inline bool CreateOpenSearchDataSourceHasBeenSet() const { return m_createOpenSearchDataSourceHasBeenSet; }
+  inline void SetCreateOpenSearchDataSource(CapabilityState value) {
+    m_createOpenSearchDataSourceHasBeenSet = true;
+    m_createOpenSearchDataSource = value;
+  }
+  inline Capabilities& WithCreateOpenSearchDataSource(CapabilityState value) {
+    SetCreateOpenSearchDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to update Amazon OpenSearch Service data sources.</p>
+   */
+  inline CapabilityState GetUpdateOpenSearchDataSource() const { return m_updateOpenSearchDataSource; }
+  inline bool UpdateOpenSearchDataSourceHasBeenSet() const { return m_updateOpenSearchDataSourceHasBeenSet; }
+  inline void SetUpdateOpenSearchDataSource(CapabilityState value) {
+    m_updateOpenSearchDataSourceHasBeenSet = true;
+    m_updateOpenSearchDataSource = value;
+  }
+  inline Capabilities& WithUpdateOpenSearchDataSource(CapabilityState value) {
+    SetUpdateOpenSearchDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Amazon OpenSearch Service data sources.</p>
+   */
+  inline CapabilityState GetShareOpenSearchDataSource() const { return m_shareOpenSearchDataSource; }
+  inline bool ShareOpenSearchDataSourceHasBeenSet() const { return m_shareOpenSearchDataSourceHasBeenSet; }
+  inline void SetShareOpenSearchDataSource(CapabilityState value) {
+    m_shareOpenSearchDataSourceHasBeenSet = true;
+    m_shareOpenSearchDataSource = value;
+  }
+  inline Capabilities& WithShareOpenSearchDataSource(CapabilityState value) {
+    SetShareOpenSearchDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create, update, and share Amazon Timestream data sources.</p>
+   */
+  inline CapabilityState GetTimestreamDataSource() const { return m_timestreamDataSource; }
+  inline bool TimestreamDataSourceHasBeenSet() const { return m_timestreamDataSourceHasBeenSet; }
+  inline void SetTimestreamDataSource(CapabilityState value) {
+    m_timestreamDataSourceHasBeenSet = true;
+    m_timestreamDataSource = value;
+  }
+  inline Capabilities& WithTimestreamDataSource(CapabilityState value) {
+    SetTimestreamDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create Amazon Timestream data sources.</p>
+   */
+  inline CapabilityState GetCreateTimestreamDataSource() const { return m_createTimestreamDataSource; }
+  inline bool CreateTimestreamDataSourceHasBeenSet() const { return m_createTimestreamDataSourceHasBeenSet; }
+  inline void SetCreateTimestreamDataSource(CapabilityState value) {
+    m_createTimestreamDataSourceHasBeenSet = true;
+    m_createTimestreamDataSource = value;
+  }
+  inline Capabilities& WithCreateTimestreamDataSource(CapabilityState value) {
+    SetCreateTimestreamDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to update Amazon Timestream data sources.</p>
+   */
+  inline CapabilityState GetUpdateTimestreamDataSource() const { return m_updateTimestreamDataSource; }
+  inline bool UpdateTimestreamDataSourceHasBeenSet() const { return m_updateTimestreamDataSourceHasBeenSet; }
+  inline void SetUpdateTimestreamDataSource(CapabilityState value) {
+    m_updateTimestreamDataSourceHasBeenSet = true;
+    m_updateTimestreamDataSource = value;
+  }
+  inline Capabilities& WithUpdateTimestreamDataSource(CapabilityState value) {
+    SetUpdateTimestreamDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Amazon Timestream data sources.</p>
+   */
+  inline CapabilityState GetShareTimestreamDataSource() const { return m_shareTimestreamDataSource; }
+  inline bool ShareTimestreamDataSourceHasBeenSet() const { return m_shareTimestreamDataSourceHasBeenSet; }
+  inline void SetShareTimestreamDataSource(CapabilityState value) {
+    m_shareTimestreamDataSourceHasBeenSet = true;
+    m_shareTimestreamDataSource = value;
+  }
+  inline Capabilities& WithShareTimestreamDataSource(CapabilityState value) {
+    SetShareTimestreamDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create, update, and share Amazon Aurora data sources.</p>
+   */
+  inline CapabilityState GetAuroraDataSource() const { return m_auroraDataSource; }
+  inline bool AuroraDataSourceHasBeenSet() const { return m_auroraDataSourceHasBeenSet; }
+  inline void SetAuroraDataSource(CapabilityState value) {
+    m_auroraDataSourceHasBeenSet = true;
+    m_auroraDataSource = value;
+  }
+  inline Capabilities& WithAuroraDataSource(CapabilityState value) {
+    SetAuroraDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create Amazon Aurora data sources.</p>
+   */
+  inline CapabilityState GetCreateAuroraDataSource() const { return m_createAuroraDataSource; }
+  inline bool CreateAuroraDataSourceHasBeenSet() const { return m_createAuroraDataSourceHasBeenSet; }
+  inline void SetCreateAuroraDataSource(CapabilityState value) {
+    m_createAuroraDataSourceHasBeenSet = true;
+    m_createAuroraDataSource = value;
+  }
+  inline Capabilities& WithCreateAuroraDataSource(CapabilityState value) {
+    SetCreateAuroraDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to update Amazon Aurora data sources.</p>
+   */
+  inline CapabilityState GetUpdateAuroraDataSource() const { return m_updateAuroraDataSource; }
+  inline bool UpdateAuroraDataSourceHasBeenSet() const { return m_updateAuroraDataSourceHasBeenSet; }
+  inline void SetUpdateAuroraDataSource(CapabilityState value) {
+    m_updateAuroraDataSourceHasBeenSet = true;
+    m_updateAuroraDataSource = value;
+  }
+  inline Capabilities& WithUpdateAuroraDataSource(CapabilityState value) {
+    SetUpdateAuroraDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Amazon Aurora data sources.</p>
+   */
+  inline CapabilityState GetShareAuroraDataSource() const { return m_shareAuroraDataSource; }
+  inline bool ShareAuroraDataSourceHasBeenSet() const { return m_shareAuroraDataSourceHasBeenSet; }
+  inline void SetShareAuroraDataSource(CapabilityState value) {
+    m_shareAuroraDataSourceHasBeenSet = true;
+    m_shareAuroraDataSource = value;
+  }
+  inline Capabilities& WithShareAuroraDataSource(CapabilityState value) {
+    SetShareAuroraDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create, update, and share MySQL data sources.</p>
+   */
+  inline CapabilityState GetMySqlDataSource() const { return m_mySqlDataSource; }
+  inline bool MySqlDataSourceHasBeenSet() const { return m_mySqlDataSourceHasBeenSet; }
+  inline void SetMySqlDataSource(CapabilityState value) {
+    m_mySqlDataSourceHasBeenSet = true;
+    m_mySqlDataSource = value;
+  }
+  inline Capabilities& WithMySqlDataSource(CapabilityState value) {
+    SetMySqlDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create MySQL data sources.</p>
+   */
+  inline CapabilityState GetCreateMySqlDataSource() const { return m_createMySqlDataSource; }
+  inline bool CreateMySqlDataSourceHasBeenSet() const { return m_createMySqlDataSourceHasBeenSet; }
+  inline void SetCreateMySqlDataSource(CapabilityState value) {
+    m_createMySqlDataSourceHasBeenSet = true;
+    m_createMySqlDataSource = value;
+  }
+  inline Capabilities& WithCreateMySqlDataSource(CapabilityState value) {
+    SetCreateMySqlDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to update MySQL data sources.</p>
+   */
+  inline CapabilityState GetUpdateMySqlDataSource() const { return m_updateMySqlDataSource; }
+  inline bool UpdateMySqlDataSourceHasBeenSet() const { return m_updateMySqlDataSourceHasBeenSet; }
+  inline void SetUpdateMySqlDataSource(CapabilityState value) {
+    m_updateMySqlDataSourceHasBeenSet = true;
+    m_updateMySqlDataSource = value;
+  }
+  inline Capabilities& WithUpdateMySqlDataSource(CapabilityState value) {
+    SetUpdateMySqlDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share MySQL data sources.</p>
+   */
+  inline CapabilityState GetShareMySqlDataSource() const { return m_shareMySqlDataSource; }
+  inline bool ShareMySqlDataSourceHasBeenSet() const { return m_shareMySqlDataSourceHasBeenSet; }
+  inline void SetShareMySqlDataSource(CapabilityState value) {
+    m_shareMySqlDataSourceHasBeenSet = true;
+    m_shareMySqlDataSource = value;
+  }
+  inline Capabilities& WithShareMySqlDataSource(CapabilityState value) {
+    SetShareMySqlDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create, update, and share PostgreSQL data sources.</p>
+   */
+  inline CapabilityState GetPostgreSqlDataSource() const { return m_postgreSqlDataSource; }
+  inline bool PostgreSqlDataSourceHasBeenSet() const { return m_postgreSqlDataSourceHasBeenSet; }
+  inline void SetPostgreSqlDataSource(CapabilityState value) {
+    m_postgreSqlDataSourceHasBeenSet = true;
+    m_postgreSqlDataSource = value;
+  }
+  inline Capabilities& WithPostgreSqlDataSource(CapabilityState value) {
+    SetPostgreSqlDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create PostgreSQL data sources.</p>
+   */
+  inline CapabilityState GetCreatePostgreSqlDataSource() const { return m_createPostgreSqlDataSource; }
+  inline bool CreatePostgreSqlDataSourceHasBeenSet() const { return m_createPostgreSqlDataSourceHasBeenSet; }
+  inline void SetCreatePostgreSqlDataSource(CapabilityState value) {
+    m_createPostgreSqlDataSourceHasBeenSet = true;
+    m_createPostgreSqlDataSource = value;
+  }
+  inline Capabilities& WithCreatePostgreSqlDataSource(CapabilityState value) {
+    SetCreatePostgreSqlDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to update PostgreSQL data sources.</p>
+   */
+  inline CapabilityState GetUpdatePostgreSqlDataSource() const { return m_updatePostgreSqlDataSource; }
+  inline bool UpdatePostgreSqlDataSourceHasBeenSet() const { return m_updatePostgreSqlDataSourceHasBeenSet; }
+  inline void SetUpdatePostgreSqlDataSource(CapabilityState value) {
+    m_updatePostgreSqlDataSourceHasBeenSet = true;
+    m_updatePostgreSqlDataSource = value;
+  }
+  inline Capabilities& WithUpdatePostgreSqlDataSource(CapabilityState value) {
+    SetUpdatePostgreSqlDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share PostgreSQL data sources.</p>
+   */
+  inline CapabilityState GetSharePostgreSqlDataSource() const { return m_sharePostgreSqlDataSource; }
+  inline bool SharePostgreSqlDataSourceHasBeenSet() const { return m_sharePostgreSqlDataSourceHasBeenSet; }
+  inline void SetSharePostgreSqlDataSource(CapabilityState value) {
+    m_sharePostgreSqlDataSourceHasBeenSet = true;
+    m_sharePostgreSqlDataSource = value;
+  }
+  inline Capabilities& WithSharePostgreSqlDataSource(CapabilityState value) {
+    SetSharePostgreSqlDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create, update, and share Oracle data sources.</p>
+   */
+  inline CapabilityState GetOracleDataSource() const { return m_oracleDataSource; }
+  inline bool OracleDataSourceHasBeenSet() const { return m_oracleDataSourceHasBeenSet; }
+  inline void SetOracleDataSource(CapabilityState value) {
+    m_oracleDataSourceHasBeenSet = true;
+    m_oracleDataSource = value;
+  }
+  inline Capabilities& WithOracleDataSource(CapabilityState value) {
+    SetOracleDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create Oracle data sources.</p>
+   */
+  inline CapabilityState GetCreateOracleDataSource() const { return m_createOracleDataSource; }
+  inline bool CreateOracleDataSourceHasBeenSet() const { return m_createOracleDataSourceHasBeenSet; }
+  inline void SetCreateOracleDataSource(CapabilityState value) {
+    m_createOracleDataSourceHasBeenSet = true;
+    m_createOracleDataSource = value;
+  }
+  inline Capabilities& WithCreateOracleDataSource(CapabilityState value) {
+    SetCreateOracleDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to update Oracle data sources.</p>
+   */
+  inline CapabilityState GetUpdateOracleDataSource() const { return m_updateOracleDataSource; }
+  inline bool UpdateOracleDataSourceHasBeenSet() const { return m_updateOracleDataSourceHasBeenSet; }
+  inline void SetUpdateOracleDataSource(CapabilityState value) {
+    m_updateOracleDataSourceHasBeenSet = true;
+    m_updateOracleDataSource = value;
+  }
+  inline Capabilities& WithUpdateOracleDataSource(CapabilityState value) {
+    SetUpdateOracleDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Oracle data sources.</p>
+   */
+  inline CapabilityState GetShareOracleDataSource() const { return m_shareOracleDataSource; }
+  inline bool ShareOracleDataSourceHasBeenSet() const { return m_shareOracleDataSourceHasBeenSet; }
+  inline void SetShareOracleDataSource(CapabilityState value) {
+    m_shareOracleDataSourceHasBeenSet = true;
+    m_shareOracleDataSource = value;
+  }
+  inline Capabilities& WithShareOracleDataSource(CapabilityState value) {
+    SetShareOracleDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create, update, and share SQL Server data sources.</p>
+   */
+  inline CapabilityState GetSqlServerDataSource() const { return m_sqlServerDataSource; }
+  inline bool SqlServerDataSourceHasBeenSet() const { return m_sqlServerDataSourceHasBeenSet; }
+  inline void SetSqlServerDataSource(CapabilityState value) {
+    m_sqlServerDataSourceHasBeenSet = true;
+    m_sqlServerDataSource = value;
+  }
+  inline Capabilities& WithSqlServerDataSource(CapabilityState value) {
+    SetSqlServerDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create SQL Server data sources.</p>
+   */
+  inline CapabilityState GetCreateSqlServerDataSource() const { return m_createSqlServerDataSource; }
+  inline bool CreateSqlServerDataSourceHasBeenSet() const { return m_createSqlServerDataSourceHasBeenSet; }
+  inline void SetCreateSqlServerDataSource(CapabilityState value) {
+    m_createSqlServerDataSourceHasBeenSet = true;
+    m_createSqlServerDataSource = value;
+  }
+  inline Capabilities& WithCreateSqlServerDataSource(CapabilityState value) {
+    SetCreateSqlServerDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to update SQL Server data sources.</p>
+   */
+  inline CapabilityState GetUpdateSqlServerDataSource() const { return m_updateSqlServerDataSource; }
+  inline bool UpdateSqlServerDataSourceHasBeenSet() const { return m_updateSqlServerDataSourceHasBeenSet; }
+  inline void SetUpdateSqlServerDataSource(CapabilityState value) {
+    m_updateSqlServerDataSourceHasBeenSet = true;
+    m_updateSqlServerDataSource = value;
+  }
+  inline Capabilities& WithUpdateSqlServerDataSource(CapabilityState value) {
+    SetUpdateSqlServerDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share SQL Server data sources.</p>
+   */
+  inline CapabilityState GetShareSqlServerDataSource() const { return m_shareSqlServerDataSource; }
+  inline bool ShareSqlServerDataSourceHasBeenSet() const { return m_shareSqlServerDataSourceHasBeenSet; }
+  inline void SetShareSqlServerDataSource(CapabilityState value) {
+    m_shareSqlServerDataSourceHasBeenSet = true;
+    m_shareSqlServerDataSource = value;
+  }
+  inline Capabilities& WithShareSqlServerDataSource(CapabilityState value) {
+    SetShareSqlServerDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create, update, and share MariaDB data sources.</p>
+   */
+  inline CapabilityState GetMariaDbDataSource() const { return m_mariaDbDataSource; }
+  inline bool MariaDbDataSourceHasBeenSet() const { return m_mariaDbDataSourceHasBeenSet; }
+  inline void SetMariaDbDataSource(CapabilityState value) {
+    m_mariaDbDataSourceHasBeenSet = true;
+    m_mariaDbDataSource = value;
+  }
+  inline Capabilities& WithMariaDbDataSource(CapabilityState value) {
+    SetMariaDbDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create MariaDB data sources.</p>
+   */
+  inline CapabilityState GetCreateMariaDbDataSource() const { return m_createMariaDbDataSource; }
+  inline bool CreateMariaDbDataSourceHasBeenSet() const { return m_createMariaDbDataSourceHasBeenSet; }
+  inline void SetCreateMariaDbDataSource(CapabilityState value) {
+    m_createMariaDbDataSourceHasBeenSet = true;
+    m_createMariaDbDataSource = value;
+  }
+  inline Capabilities& WithCreateMariaDbDataSource(CapabilityState value) {
+    SetCreateMariaDbDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to update MariaDB data sources.</p>
+   */
+  inline CapabilityState GetUpdateMariaDbDataSource() const { return m_updateMariaDbDataSource; }
+  inline bool UpdateMariaDbDataSourceHasBeenSet() const { return m_updateMariaDbDataSourceHasBeenSet; }
+  inline void SetUpdateMariaDbDataSource(CapabilityState value) {
+    m_updateMariaDbDataSourceHasBeenSet = true;
+    m_updateMariaDbDataSource = value;
+  }
+  inline Capabilities& WithUpdateMariaDbDataSource(CapabilityState value) {
+    SetUpdateMariaDbDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share MariaDB data sources.</p>
+   */
+  inline CapabilityState GetShareMariaDbDataSource() const { return m_shareMariaDbDataSource; }
+  inline bool ShareMariaDbDataSourceHasBeenSet() const { return m_shareMariaDbDataSourceHasBeenSet; }
+  inline void SetShareMariaDbDataSource(CapabilityState value) {
+    m_shareMariaDbDataSourceHasBeenSet = true;
+    m_shareMariaDbDataSource = value;
+  }
+  inline Capabilities& WithShareMariaDbDataSource(CapabilityState value) {
+    SetShareMariaDbDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create, update, and share Snowflake data sources.</p>
+   */
+  inline CapabilityState GetSnowflakeDataSource() const { return m_snowflakeDataSource; }
+  inline bool SnowflakeDataSourceHasBeenSet() const { return m_snowflakeDataSourceHasBeenSet; }
+  inline void SetSnowflakeDataSource(CapabilityState value) {
+    m_snowflakeDataSourceHasBeenSet = true;
+    m_snowflakeDataSource = value;
+  }
+  inline Capabilities& WithSnowflakeDataSource(CapabilityState value) {
+    SetSnowflakeDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create Snowflake data sources.</p>
+   */
+  inline CapabilityState GetCreateSnowflakeDataSource() const { return m_createSnowflakeDataSource; }
+  inline bool CreateSnowflakeDataSourceHasBeenSet() const { return m_createSnowflakeDataSourceHasBeenSet; }
+  inline void SetCreateSnowflakeDataSource(CapabilityState value) {
+    m_createSnowflakeDataSourceHasBeenSet = true;
+    m_createSnowflakeDataSource = value;
+  }
+  inline Capabilities& WithCreateSnowflakeDataSource(CapabilityState value) {
+    SetCreateSnowflakeDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to update Snowflake data sources.</p>
+   */
+  inline CapabilityState GetUpdateSnowflakeDataSource() const { return m_updateSnowflakeDataSource; }
+  inline bool UpdateSnowflakeDataSourceHasBeenSet() const { return m_updateSnowflakeDataSourceHasBeenSet; }
+  inline void SetUpdateSnowflakeDataSource(CapabilityState value) {
+    m_updateSnowflakeDataSourceHasBeenSet = true;
+    m_updateSnowflakeDataSource = value;
+  }
+  inline Capabilities& WithUpdateSnowflakeDataSource(CapabilityState value) {
+    SetUpdateSnowflakeDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Snowflake data sources.</p>
+   */
+  inline CapabilityState GetShareSnowflakeDataSource() const { return m_shareSnowflakeDataSource; }
+  inline bool ShareSnowflakeDataSourceHasBeenSet() const { return m_shareSnowflakeDataSourceHasBeenSet; }
+  inline void SetShareSnowflakeDataSource(CapabilityState value) {
+    m_shareSnowflakeDataSourceHasBeenSet = true;
+    m_shareSnowflakeDataSource = value;
+  }
+  inline Capabilities& WithShareSnowflakeDataSource(CapabilityState value) {
+    SetShareSnowflakeDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create, update, and share Google BigQuery data sources.</p>
+   */
+  inline CapabilityState GetGoogleBigQueryDataSource() const { return m_googleBigQueryDataSource; }
+  inline bool GoogleBigQueryDataSourceHasBeenSet() const { return m_googleBigQueryDataSourceHasBeenSet; }
+  inline void SetGoogleBigQueryDataSource(CapabilityState value) {
+    m_googleBigQueryDataSourceHasBeenSet = true;
+    m_googleBigQueryDataSource = value;
+  }
+  inline Capabilities& WithGoogleBigQueryDataSource(CapabilityState value) {
+    SetGoogleBigQueryDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create Google BigQuery data sources.</p>
+   */
+  inline CapabilityState GetCreateGoogleBigQueryDataSource() const { return m_createGoogleBigQueryDataSource; }
+  inline bool CreateGoogleBigQueryDataSourceHasBeenSet() const { return m_createGoogleBigQueryDataSourceHasBeenSet; }
+  inline void SetCreateGoogleBigQueryDataSource(CapabilityState value) {
+    m_createGoogleBigQueryDataSourceHasBeenSet = true;
+    m_createGoogleBigQueryDataSource = value;
+  }
+  inline Capabilities& WithCreateGoogleBigQueryDataSource(CapabilityState value) {
+    SetCreateGoogleBigQueryDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to update Google BigQuery data sources.</p>
+   */
+  inline CapabilityState GetUpdateGoogleBigQueryDataSource() const { return m_updateGoogleBigQueryDataSource; }
+  inline bool UpdateGoogleBigQueryDataSourceHasBeenSet() const { return m_updateGoogleBigQueryDataSourceHasBeenSet; }
+  inline void SetUpdateGoogleBigQueryDataSource(CapabilityState value) {
+    m_updateGoogleBigQueryDataSourceHasBeenSet = true;
+    m_updateGoogleBigQueryDataSource = value;
+  }
+  inline Capabilities& WithUpdateGoogleBigQueryDataSource(CapabilityState value) {
+    SetUpdateGoogleBigQueryDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Google BigQuery data sources.</p>
+   */
+  inline CapabilityState GetShareGoogleBigQueryDataSource() const { return m_shareGoogleBigQueryDataSource; }
+  inline bool ShareGoogleBigQueryDataSourceHasBeenSet() const { return m_shareGoogleBigQueryDataSourceHasBeenSet; }
+  inline void SetShareGoogleBigQueryDataSource(CapabilityState value) {
+    m_shareGoogleBigQueryDataSourceHasBeenSet = true;
+    m_shareGoogleBigQueryDataSource = value;
+  }
+  inline Capabilities& WithShareGoogleBigQueryDataSource(CapabilityState value) {
+    SetShareGoogleBigQueryDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create, update, and share Databricks data sources.</p>
+   */
+  inline CapabilityState GetDatabricksDataSource() const { return m_databricksDataSource; }
+  inline bool DatabricksDataSourceHasBeenSet() const { return m_databricksDataSourceHasBeenSet; }
+  inline void SetDatabricksDataSource(CapabilityState value) {
+    m_databricksDataSourceHasBeenSet = true;
+    m_databricksDataSource = value;
+  }
+  inline Capabilities& WithDatabricksDataSource(CapabilityState value) {
+    SetDatabricksDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create Databricks data sources.</p>
+   */
+  inline CapabilityState GetCreateDatabricksDataSource() const { return m_createDatabricksDataSource; }
+  inline bool CreateDatabricksDataSourceHasBeenSet() const { return m_createDatabricksDataSourceHasBeenSet; }
+  inline void SetCreateDatabricksDataSource(CapabilityState value) {
+    m_createDatabricksDataSourceHasBeenSet = true;
+    m_createDatabricksDataSource = value;
+  }
+  inline Capabilities& WithCreateDatabricksDataSource(CapabilityState value) {
+    SetCreateDatabricksDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to update Databricks data sources.</p>
+   */
+  inline CapabilityState GetUpdateDatabricksDataSource() const { return m_updateDatabricksDataSource; }
+  inline bool UpdateDatabricksDataSourceHasBeenSet() const { return m_updateDatabricksDataSourceHasBeenSet; }
+  inline void SetUpdateDatabricksDataSource(CapabilityState value) {
+    m_updateDatabricksDataSourceHasBeenSet = true;
+    m_updateDatabricksDataSource = value;
+  }
+  inline Capabilities& WithUpdateDatabricksDataSource(CapabilityState value) {
+    SetUpdateDatabricksDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Databricks data sources.</p>
+   */
+  inline CapabilityState GetShareDatabricksDataSource() const { return m_shareDatabricksDataSource; }
+  inline bool ShareDatabricksDataSourceHasBeenSet() const { return m_shareDatabricksDataSourceHasBeenSet; }
+  inline void SetShareDatabricksDataSource(CapabilityState value) {
+    m_shareDatabricksDataSourceHasBeenSet = true;
+    m_shareDatabricksDataSource = value;
+  }
+  inline Capabilities& WithShareDatabricksDataSource(CapabilityState value) {
+    SetShareDatabricksDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create, update, and share Starburst data sources.</p>
+   */
+  inline CapabilityState GetStarburstDataSource() const { return m_starburstDataSource; }
+  inline bool StarburstDataSourceHasBeenSet() const { return m_starburstDataSourceHasBeenSet; }
+  inline void SetStarburstDataSource(CapabilityState value) {
+    m_starburstDataSourceHasBeenSet = true;
+    m_starburstDataSource = value;
+  }
+  inline Capabilities& WithStarburstDataSource(CapabilityState value) {
+    SetStarburstDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create Starburst data sources.</p>
+   */
+  inline CapabilityState GetCreateStarburstDataSource() const { return m_createStarburstDataSource; }
+  inline bool CreateStarburstDataSourceHasBeenSet() const { return m_createStarburstDataSourceHasBeenSet; }
+  inline void SetCreateStarburstDataSource(CapabilityState value) {
+    m_createStarburstDataSourceHasBeenSet = true;
+    m_createStarburstDataSource = value;
+  }
+  inline Capabilities& WithCreateStarburstDataSource(CapabilityState value) {
+    SetCreateStarburstDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to update Starburst data sources.</p>
+   */
+  inline CapabilityState GetUpdateStarburstDataSource() const { return m_updateStarburstDataSource; }
+  inline bool UpdateStarburstDataSourceHasBeenSet() const { return m_updateStarburstDataSourceHasBeenSet; }
+  inline void SetUpdateStarburstDataSource(CapabilityState value) {
+    m_updateStarburstDataSourceHasBeenSet = true;
+    m_updateStarburstDataSource = value;
+  }
+  inline Capabilities& WithUpdateStarburstDataSource(CapabilityState value) {
+    SetUpdateStarburstDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Starburst data sources.</p>
+   */
+  inline CapabilityState GetShareStarburstDataSource() const { return m_shareStarburstDataSource; }
+  inline bool ShareStarburstDataSourceHasBeenSet() const { return m_shareStarburstDataSourceHasBeenSet; }
+  inline void SetShareStarburstDataSource(CapabilityState value) {
+    m_shareStarburstDataSourceHasBeenSet = true;
+    m_shareStarburstDataSource = value;
+  }
+  inline Capabilities& WithShareStarburstDataSource(CapabilityState value) {
+    SetShareStarburstDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create, update, and share Trino data sources.</p>
+   */
+  inline CapabilityState GetTrinoDataSource() const { return m_trinoDataSource; }
+  inline bool TrinoDataSourceHasBeenSet() const { return m_trinoDataSourceHasBeenSet; }
+  inline void SetTrinoDataSource(CapabilityState value) {
+    m_trinoDataSourceHasBeenSet = true;
+    m_trinoDataSource = value;
+  }
+  inline Capabilities& WithTrinoDataSource(CapabilityState value) {
+    SetTrinoDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create Trino data sources.</p>
+   */
+  inline CapabilityState GetCreateTrinoDataSource() const { return m_createTrinoDataSource; }
+  inline bool CreateTrinoDataSourceHasBeenSet() const { return m_createTrinoDataSourceHasBeenSet; }
+  inline void SetCreateTrinoDataSource(CapabilityState value) {
+    m_createTrinoDataSourceHasBeenSet = true;
+    m_createTrinoDataSource = value;
+  }
+  inline Capabilities& WithCreateTrinoDataSource(CapabilityState value) {
+    SetCreateTrinoDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to update Trino data sources.</p>
+   */
+  inline CapabilityState GetUpdateTrinoDataSource() const { return m_updateTrinoDataSource; }
+  inline bool UpdateTrinoDataSourceHasBeenSet() const { return m_updateTrinoDataSourceHasBeenSet; }
+  inline void SetUpdateTrinoDataSource(CapabilityState value) {
+    m_updateTrinoDataSourceHasBeenSet = true;
+    m_updateTrinoDataSource = value;
+  }
+  inline Capabilities& WithUpdateTrinoDataSource(CapabilityState value) {
+    SetUpdateTrinoDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Trino data sources.</p>
+   */
+  inline CapabilityState GetShareTrinoDataSource() const { return m_shareTrinoDataSource; }
+  inline bool ShareTrinoDataSourceHasBeenSet() const { return m_shareTrinoDataSourceHasBeenSet; }
+  inline void SetShareTrinoDataSource(CapabilityState value) {
+    m_shareTrinoDataSourceHasBeenSet = true;
+    m_shareTrinoDataSource = value;
+  }
+  inline Capabilities& WithShareTrinoDataSource(CapabilityState value) {
+    SetShareTrinoDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create, update, and share Impala data sources.</p>
+   */
+  inline CapabilityState GetImpalaDataSource() const { return m_impalaDataSource; }
+  inline bool ImpalaDataSourceHasBeenSet() const { return m_impalaDataSourceHasBeenSet; }
+  inline void SetImpalaDataSource(CapabilityState value) {
+    m_impalaDataSourceHasBeenSet = true;
+    m_impalaDataSource = value;
+  }
+  inline Capabilities& WithImpalaDataSource(CapabilityState value) {
+    SetImpalaDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create Impala data sources.</p>
+   */
+  inline CapabilityState GetCreateImpalaDataSource() const { return m_createImpalaDataSource; }
+  inline bool CreateImpalaDataSourceHasBeenSet() const { return m_createImpalaDataSourceHasBeenSet; }
+  inline void SetCreateImpalaDataSource(CapabilityState value) {
+    m_createImpalaDataSourceHasBeenSet = true;
+    m_createImpalaDataSource = value;
+  }
+  inline Capabilities& WithCreateImpalaDataSource(CapabilityState value) {
+    SetCreateImpalaDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to update Impala data sources.</p>
+   */
+  inline CapabilityState GetUpdateImpalaDataSource() const { return m_updateImpalaDataSource; }
+  inline bool UpdateImpalaDataSourceHasBeenSet() const { return m_updateImpalaDataSourceHasBeenSet; }
+  inline void SetUpdateImpalaDataSource(CapabilityState value) {
+    m_updateImpalaDataSourceHasBeenSet = true;
+    m_updateImpalaDataSource = value;
+  }
+  inline Capabilities& WithUpdateImpalaDataSource(CapabilityState value) {
+    SetUpdateImpalaDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Impala data sources.</p>
+   */
+  inline CapabilityState GetShareImpalaDataSource() const { return m_shareImpalaDataSource; }
+  inline bool ShareImpalaDataSourceHasBeenSet() const { return m_shareImpalaDataSourceHasBeenSet; }
+  inline void SetShareImpalaDataSource(CapabilityState value) {
+    m_shareImpalaDataSourceHasBeenSet = true;
+    m_shareImpalaDataSource = value;
+  }
+  inline Capabilities& WithShareImpalaDataSource(CapabilityState value) {
+    SetShareImpalaDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create, update, and share Teradata data sources.</p>
+   */
+  inline CapabilityState GetTeradataDataSource() const { return m_teradataDataSource; }
+  inline bool TeradataDataSourceHasBeenSet() const { return m_teradataDataSourceHasBeenSet; }
+  inline void SetTeradataDataSource(CapabilityState value) {
+    m_teradataDataSourceHasBeenSet = true;
+    m_teradataDataSource = value;
+  }
+  inline Capabilities& WithTeradataDataSource(CapabilityState value) {
+    SetTeradataDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create Teradata data sources.</p>
+   */
+  inline CapabilityState GetCreateTeradataDataSource() const { return m_createTeradataDataSource; }
+  inline bool CreateTeradataDataSourceHasBeenSet() const { return m_createTeradataDataSourceHasBeenSet; }
+  inline void SetCreateTeradataDataSource(CapabilityState value) {
+    m_createTeradataDataSourceHasBeenSet = true;
+    m_createTeradataDataSource = value;
+  }
+  inline Capabilities& WithCreateTeradataDataSource(CapabilityState value) {
+    SetCreateTeradataDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to update Teradata data sources.</p>
+   */
+  inline CapabilityState GetUpdateTeradataDataSource() const { return m_updateTeradataDataSource; }
+  inline bool UpdateTeradataDataSourceHasBeenSet() const { return m_updateTeradataDataSourceHasBeenSet; }
+  inline void SetUpdateTeradataDataSource(CapabilityState value) {
+    m_updateTeradataDataSourceHasBeenSet = true;
+    m_updateTeradataDataSource = value;
+  }
+  inline Capabilities& WithUpdateTeradataDataSource(CapabilityState value) {
+    SetUpdateTeradataDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Teradata data sources.</p>
+   */
+  inline CapabilityState GetShareTeradataDataSource() const { return m_shareTeradataDataSource; }
+  inline bool ShareTeradataDataSourceHasBeenSet() const { return m_shareTeradataDataSourceHasBeenSet; }
+  inline void SetShareTeradataDataSource(CapabilityState value) {
+    m_shareTeradataDataSourceHasBeenSet = true;
+    m_shareTeradataDataSource = value;
+  }
+  inline Capabilities& WithShareTeradataDataSource(CapabilityState value) {
+    SetShareTeradataDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create, update, and share Presto data sources.</p>
+   */
+  inline CapabilityState GetPrestoDataSource() const { return m_prestoDataSource; }
+  inline bool PrestoDataSourceHasBeenSet() const { return m_prestoDataSourceHasBeenSet; }
+  inline void SetPrestoDataSource(CapabilityState value) {
+    m_prestoDataSourceHasBeenSet = true;
+    m_prestoDataSource = value;
+  }
+  inline Capabilities& WithPrestoDataSource(CapabilityState value) {
+    SetPrestoDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create Presto data sources.</p>
+   */
+  inline CapabilityState GetCreatePrestoDataSource() const { return m_createPrestoDataSource; }
+  inline bool CreatePrestoDataSourceHasBeenSet() const { return m_createPrestoDataSourceHasBeenSet; }
+  inline void SetCreatePrestoDataSource(CapabilityState value) {
+    m_createPrestoDataSourceHasBeenSet = true;
+    m_createPrestoDataSource = value;
+  }
+  inline Capabilities& WithCreatePrestoDataSource(CapabilityState value) {
+    SetCreatePrestoDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to update Presto data sources.</p>
+   */
+  inline CapabilityState GetUpdatePrestoDataSource() const { return m_updatePrestoDataSource; }
+  inline bool UpdatePrestoDataSourceHasBeenSet() const { return m_updatePrestoDataSourceHasBeenSet; }
+  inline void SetUpdatePrestoDataSource(CapabilityState value) {
+    m_updatePrestoDataSourceHasBeenSet = true;
+    m_updatePrestoDataSource = value;
+  }
+  inline Capabilities& WithUpdatePrestoDataSource(CapabilityState value) {
+    SetUpdatePrestoDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Presto data sources.</p>
+   */
+  inline CapabilityState GetSharePrestoDataSource() const { return m_sharePrestoDataSource; }
+  inline bool SharePrestoDataSourceHasBeenSet() const { return m_sharePrestoDataSourceHasBeenSet; }
+  inline void SetSharePrestoDataSource(CapabilityState value) {
+    m_sharePrestoDataSourceHasBeenSet = true;
+    m_sharePrestoDataSource = value;
+  }
+  inline Capabilities& WithSharePrestoDataSource(CapabilityState value) {
+    SetSharePrestoDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create, update, and share Spark data sources.</p>
+   */
+  inline CapabilityState GetSparkDataSource() const { return m_sparkDataSource; }
+  inline bool SparkDataSourceHasBeenSet() const { return m_sparkDataSourceHasBeenSet; }
+  inline void SetSparkDataSource(CapabilityState value) {
+    m_sparkDataSourceHasBeenSet = true;
+    m_sparkDataSource = value;
+  }
+  inline Capabilities& WithSparkDataSource(CapabilityState value) {
+    SetSparkDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create Spark data sources.</p>
+   */
+  inline CapabilityState GetCreateSparkDataSource() const { return m_createSparkDataSource; }
+  inline bool CreateSparkDataSourceHasBeenSet() const { return m_createSparkDataSourceHasBeenSet; }
+  inline void SetCreateSparkDataSource(CapabilityState value) {
+    m_createSparkDataSourceHasBeenSet = true;
+    m_createSparkDataSource = value;
+  }
+  inline Capabilities& WithCreateSparkDataSource(CapabilityState value) {
+    SetCreateSparkDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to update Spark data sources.</p>
+   */
+  inline CapabilityState GetUpdateSparkDataSource() const { return m_updateSparkDataSource; }
+  inline bool UpdateSparkDataSourceHasBeenSet() const { return m_updateSparkDataSourceHasBeenSet; }
+  inline void SetUpdateSparkDataSource(CapabilityState value) {
+    m_updateSparkDataSourceHasBeenSet = true;
+    m_updateSparkDataSource = value;
+  }
+  inline Capabilities& WithUpdateSparkDataSource(CapabilityState value) {
+    SetUpdateSparkDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Spark data sources.</p>
+   */
+  inline CapabilityState GetShareSparkDataSource() const { return m_shareSparkDataSource; }
+  inline bool ShareSparkDataSourceHasBeenSet() const { return m_shareSparkDataSourceHasBeenSet; }
+  inline void SetShareSparkDataSource(CapabilityState value) {
+    m_shareSparkDataSourceHasBeenSet = true;
+    m_shareSparkDataSource = value;
+  }
+  inline Capabilities& WithShareSparkDataSource(CapabilityState value) {
+    SetShareSparkDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create, update, and share Exasol data sources.</p>
+   */
+  inline CapabilityState GetExasolDataSource() const { return m_exasolDataSource; }
+  inline bool ExasolDataSourceHasBeenSet() const { return m_exasolDataSourceHasBeenSet; }
+  inline void SetExasolDataSource(CapabilityState value) {
+    m_exasolDataSourceHasBeenSet = true;
+    m_exasolDataSource = value;
+  }
+  inline Capabilities& WithExasolDataSource(CapabilityState value) {
+    SetExasolDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create Exasol data sources.</p>
+   */
+  inline CapabilityState GetCreateExasolDataSource() const { return m_createExasolDataSource; }
+  inline bool CreateExasolDataSourceHasBeenSet() const { return m_createExasolDataSourceHasBeenSet; }
+  inline void SetCreateExasolDataSource(CapabilityState value) {
+    m_createExasolDataSourceHasBeenSet = true;
+    m_createExasolDataSource = value;
+  }
+  inline Capabilities& WithCreateExasolDataSource(CapabilityState value) {
+    SetCreateExasolDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to update Exasol data sources.</p>
+   */
+  inline CapabilityState GetUpdateExasolDataSource() const { return m_updateExasolDataSource; }
+  inline bool UpdateExasolDataSourceHasBeenSet() const { return m_updateExasolDataSourceHasBeenSet; }
+  inline void SetUpdateExasolDataSource(CapabilityState value) {
+    m_updateExasolDataSourceHasBeenSet = true;
+    m_updateExasolDataSource = value;
+  }
+  inline Capabilities& WithUpdateExasolDataSource(CapabilityState value) {
+    SetUpdateExasolDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Exasol data sources.</p>
+   */
+  inline CapabilityState GetShareExasolDataSource() const { return m_shareExasolDataSource; }
+  inline bool ShareExasolDataSourceHasBeenSet() const { return m_shareExasolDataSourceHasBeenSet; }
+  inline void SetShareExasolDataSource(CapabilityState value) {
+    m_shareExasolDataSourceHasBeenSet = true;
+    m_shareExasolDataSource = value;
+  }
+  inline Capabilities& WithShareExasolDataSource(CapabilityState value) {
+    SetShareExasolDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create, update, and share Db2 data sources.</p>
+   */
+  inline CapabilityState GetDb2DataSource() const { return m_db2DataSource; }
+  inline bool Db2DataSourceHasBeenSet() const { return m_db2DataSourceHasBeenSet; }
+  inline void SetDb2DataSource(CapabilityState value) {
+    m_db2DataSourceHasBeenSet = true;
+    m_db2DataSource = value;
+  }
+  inline Capabilities& WithDb2DataSource(CapabilityState value) {
+    SetDb2DataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create Db2 data sources.</p>
+   */
+  inline CapabilityState GetCreateDb2DataSource() const { return m_createDb2DataSource; }
+  inline bool CreateDb2DataSourceHasBeenSet() const { return m_createDb2DataSourceHasBeenSet; }
+  inline void SetCreateDb2DataSource(CapabilityState value) {
+    m_createDb2DataSourceHasBeenSet = true;
+    m_createDb2DataSource = value;
+  }
+  inline Capabilities& WithCreateDb2DataSource(CapabilityState value) {
+    SetCreateDb2DataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to update Db2 data sources.</p>
+   */
+  inline CapabilityState GetUpdateDb2DataSource() const { return m_updateDb2DataSource; }
+  inline bool UpdateDb2DataSourceHasBeenSet() const { return m_updateDb2DataSourceHasBeenSet; }
+  inline void SetUpdateDb2DataSource(CapabilityState value) {
+    m_updateDb2DataSourceHasBeenSet = true;
+    m_updateDb2DataSource = value;
+  }
+  inline Capabilities& WithUpdateDb2DataSource(CapabilityState value) {
+    SetUpdateDb2DataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Db2 data sources.</p>
+   */
+  inline CapabilityState GetShareDb2DataSource() const { return m_shareDb2DataSource; }
+  inline bool ShareDb2DataSourceHasBeenSet() const { return m_shareDb2DataSourceHasBeenSet; }
+  inline void SetShareDb2DataSource(CapabilityState value) {
+    m_shareDb2DataSourceHasBeenSet = true;
+    m_shareDb2DataSource = value;
+  }
+  inline Capabilities& WithShareDb2DataSource(CapabilityState value) {
+    SetShareDb2DataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create, update, and share SAP HANA data sources.</p>
+   */
+  inline CapabilityState GetSapHanaDataSource() const { return m_sapHanaDataSource; }
+  inline bool SapHanaDataSourceHasBeenSet() const { return m_sapHanaDataSourceHasBeenSet; }
+  inline void SetSapHanaDataSource(CapabilityState value) {
+    m_sapHanaDataSourceHasBeenSet = true;
+    m_sapHanaDataSource = value;
+  }
+  inline Capabilities& WithSapHanaDataSource(CapabilityState value) {
+    SetSapHanaDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create SAP HANA data sources.</p>
+   */
+  inline CapabilityState GetCreateSapHanaDataSource() const { return m_createSapHanaDataSource; }
+  inline bool CreateSapHanaDataSourceHasBeenSet() const { return m_createSapHanaDataSourceHasBeenSet; }
+  inline void SetCreateSapHanaDataSource(CapabilityState value) {
+    m_createSapHanaDataSourceHasBeenSet = true;
+    m_createSapHanaDataSource = value;
+  }
+  inline Capabilities& WithCreateSapHanaDataSource(CapabilityState value) {
+    SetCreateSapHanaDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to update SAP HANA data sources.</p>
+   */
+  inline CapabilityState GetUpdateSapHanaDataSource() const { return m_updateSapHanaDataSource; }
+  inline bool UpdateSapHanaDataSourceHasBeenSet() const { return m_updateSapHanaDataSourceHasBeenSet; }
+  inline void SetUpdateSapHanaDataSource(CapabilityState value) {
+    m_updateSapHanaDataSourceHasBeenSet = true;
+    m_updateSapHanaDataSource = value;
+  }
+  inline Capabilities& WithUpdateSapHanaDataSource(CapabilityState value) {
+    SetUpdateSapHanaDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share SAP HANA data sources.</p>
+   */
+  inline CapabilityState GetShareSapHanaDataSource() const { return m_shareSapHanaDataSource; }
+  inline bool ShareSapHanaDataSourceHasBeenSet() const { return m_shareSapHanaDataSourceHasBeenSet; }
+  inline void SetShareSapHanaDataSource(CapabilityState value) {
+    m_shareSapHanaDataSourceHasBeenSet = true;
+    m_shareSapHanaDataSource = value;
+  }
+  inline Capabilities& WithShareSapHanaDataSource(CapabilityState value) {
+    SetShareSapHanaDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create, update, and share Denodo data sources.</p>
+   */
+  inline CapabilityState GetDenodoDataSource() const { return m_denodoDataSource; }
+  inline bool DenodoDataSourceHasBeenSet() const { return m_denodoDataSourceHasBeenSet; }
+  inline void SetDenodoDataSource(CapabilityState value) {
+    m_denodoDataSourceHasBeenSet = true;
+    m_denodoDataSource = value;
+  }
+  inline Capabilities& WithDenodoDataSource(CapabilityState value) {
+    SetDenodoDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create Denodo data sources.</p>
+   */
+  inline CapabilityState GetCreateDenodoDataSource() const { return m_createDenodoDataSource; }
+  inline bool CreateDenodoDataSourceHasBeenSet() const { return m_createDenodoDataSourceHasBeenSet; }
+  inline void SetCreateDenodoDataSource(CapabilityState value) {
+    m_createDenodoDataSourceHasBeenSet = true;
+    m_createDenodoDataSource = value;
+  }
+  inline Capabilities& WithCreateDenodoDataSource(CapabilityState value) {
+    SetCreateDenodoDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to update Denodo data sources.</p>
+   */
+  inline CapabilityState GetUpdateDenodoDataSource() const { return m_updateDenodoDataSource; }
+  inline bool UpdateDenodoDataSourceHasBeenSet() const { return m_updateDenodoDataSourceHasBeenSet; }
+  inline void SetUpdateDenodoDataSource(CapabilityState value) {
+    m_updateDenodoDataSourceHasBeenSet = true;
+    m_updateDenodoDataSource = value;
+  }
+  inline Capabilities& WithUpdateDenodoDataSource(CapabilityState value) {
+    SetUpdateDenodoDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Denodo data sources.</p>
+   */
+  inline CapabilityState GetShareDenodoDataSource() const { return m_shareDenodoDataSource; }
+  inline bool ShareDenodoDataSourceHasBeenSet() const { return m_shareDenodoDataSourceHasBeenSet; }
+  inline void SetShareDenodoDataSource(CapabilityState value) {
+    m_shareDenodoDataSourceHasBeenSet = true;
+    m_shareDenodoDataSource = value;
+  }
+  inline Capabilities& WithShareDenodoDataSource(CapabilityState value) {
+    SetShareDenodoDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create, update, and share Dremio data sources.</p>
+   */
+  inline CapabilityState GetDremioDataSource() const { return m_dremioDataSource; }
+  inline bool DremioDataSourceHasBeenSet() const { return m_dremioDataSourceHasBeenSet; }
+  inline void SetDremioDataSource(CapabilityState value) {
+    m_dremioDataSourceHasBeenSet = true;
+    m_dremioDataSource = value;
+  }
+  inline Capabilities& WithDremioDataSource(CapabilityState value) {
+    SetDremioDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create Dremio data sources.</p>
+   */
+  inline CapabilityState GetCreateDremioDataSource() const { return m_createDremioDataSource; }
+  inline bool CreateDremioDataSourceHasBeenSet() const { return m_createDremioDataSourceHasBeenSet; }
+  inline void SetCreateDremioDataSource(CapabilityState value) {
+    m_createDremioDataSourceHasBeenSet = true;
+    m_createDremioDataSource = value;
+  }
+  inline Capabilities& WithCreateDremioDataSource(CapabilityState value) {
+    SetCreateDremioDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to update Dremio data sources.</p>
+   */
+  inline CapabilityState GetUpdateDremioDataSource() const { return m_updateDremioDataSource; }
+  inline bool UpdateDremioDataSourceHasBeenSet() const { return m_updateDremioDataSourceHasBeenSet; }
+  inline void SetUpdateDremioDataSource(CapabilityState value) {
+    m_updateDremioDataSourceHasBeenSet = true;
+    m_updateDremioDataSource = value;
+  }
+  inline Capabilities& WithUpdateDremioDataSource(CapabilityState value) {
+    SetUpdateDremioDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Dremio data sources.</p>
+   */
+  inline CapabilityState GetShareDremioDataSource() const { return m_shareDremioDataSource; }
+  inline bool ShareDremioDataSourceHasBeenSet() const { return m_shareDremioDataSourceHasBeenSet; }
+  inline void SetShareDremioDataSource(CapabilityState value) {
+    m_shareDremioDataSourceHasBeenSet = true;
+    m_shareDremioDataSource = value;
+  }
+  inline Capabilities& WithShareDremioDataSource(CapabilityState value) {
+    SetShareDremioDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create, update, and share Salesforce data sources.</p>
+   */
+  inline CapabilityState GetSalesforceDataSource() const { return m_salesforceDataSource; }
+  inline bool SalesforceDataSourceHasBeenSet() const { return m_salesforceDataSourceHasBeenSet; }
+  inline void SetSalesforceDataSource(CapabilityState value) {
+    m_salesforceDataSourceHasBeenSet = true;
+    m_salesforceDataSource = value;
+  }
+  inline Capabilities& WithSalesforceDataSource(CapabilityState value) {
+    SetSalesforceDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create Salesforce data sources.</p>
+   */
+  inline CapabilityState GetCreateSalesforceDataSource() const { return m_createSalesforceDataSource; }
+  inline bool CreateSalesforceDataSourceHasBeenSet() const { return m_createSalesforceDataSourceHasBeenSet; }
+  inline void SetCreateSalesforceDataSource(CapabilityState value) {
+    m_createSalesforceDataSourceHasBeenSet = true;
+    m_createSalesforceDataSource = value;
+  }
+  inline Capabilities& WithCreateSalesforceDataSource(CapabilityState value) {
+    SetCreateSalesforceDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to update Salesforce data sources.</p>
+   */
+  inline CapabilityState GetUpdateSalesforceDataSource() const { return m_updateSalesforceDataSource; }
+  inline bool UpdateSalesforceDataSourceHasBeenSet() const { return m_updateSalesforceDataSourceHasBeenSet; }
+  inline void SetUpdateSalesforceDataSource(CapabilityState value) {
+    m_updateSalesforceDataSourceHasBeenSet = true;
+    m_updateSalesforceDataSource = value;
+  }
+  inline Capabilities& WithUpdateSalesforceDataSource(CapabilityState value) {
+    SetUpdateSalesforceDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Salesforce data sources.</p>
+   */
+  inline CapabilityState GetShareSalesforceDataSource() const { return m_shareSalesforceDataSource; }
+  inline bool ShareSalesforceDataSourceHasBeenSet() const { return m_shareSalesforceDataSourceHasBeenSet; }
+  inline void SetShareSalesforceDataSource(CapabilityState value) {
+    m_shareSalesforceDataSourceHasBeenSet = true;
+    m_shareSalesforceDataSource = value;
+  }
+  inline Capabilities& WithShareSalesforceDataSource(CapabilityState value) {
+    SetShareSalesforceDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create, update, and share Amazon QuickSight data sources.</p>
+   */
+  inline CapabilityState GetRadiantDataSource() const { return m_radiantDataSource; }
+  inline bool RadiantDataSourceHasBeenSet() const { return m_radiantDataSourceHasBeenSet; }
+  inline void SetRadiantDataSource(CapabilityState value) {
+    m_radiantDataSourceHasBeenSet = true;
+    m_radiantDataSource = value;
+  }
+  inline Capabilities& WithRadiantDataSource(CapabilityState value) {
+    SetRadiantDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create Amazon QuickSight data sources.</p>
+   */
+  inline CapabilityState GetCreateRadiantDataSource() const { return m_createRadiantDataSource; }
+  inline bool CreateRadiantDataSourceHasBeenSet() const { return m_createRadiantDataSourceHasBeenSet; }
+  inline void SetCreateRadiantDataSource(CapabilityState value) {
+    m_createRadiantDataSourceHasBeenSet = true;
+    m_createRadiantDataSource = value;
+  }
+  inline Capabilities& WithCreateRadiantDataSource(CapabilityState value) {
+    SetCreateRadiantDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to update Amazon QuickSight data sources.</p>
+   */
+  inline CapabilityState GetUpdateRadiantDataSource() const { return m_updateRadiantDataSource; }
+  inline bool UpdateRadiantDataSourceHasBeenSet() const { return m_updateRadiantDataSourceHasBeenSet; }
+  inline void SetUpdateRadiantDataSource(CapabilityState value) {
+    m_updateRadiantDataSourceHasBeenSet = true;
+    m_updateRadiantDataSource = value;
+  }
+  inline Capabilities& WithUpdateRadiantDataSource(CapabilityState value) {
+    SetUpdateRadiantDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Amazon QuickSight data sources.</p>
+   */
+  inline CapabilityState GetShareRadiantDataSource() const { return m_shareRadiantDataSource; }
+  inline bool ShareRadiantDataSourceHasBeenSet() const { return m_shareRadiantDataSourceHasBeenSet; }
+  inline void SetShareRadiantDataSource(CapabilityState value) {
+    m_shareRadiantDataSourceHasBeenSet = true;
+    m_shareRadiantDataSource = value;
+  }
+  inline Capabilities& WithShareRadiantDataSource(CapabilityState value) {
+    SetShareRadiantDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create, update, and share PayPal data sources.</p>
+   */
+  inline CapabilityState GetPayPalDataSource() const { return m_payPalDataSource; }
+  inline bool PayPalDataSourceHasBeenSet() const { return m_payPalDataSourceHasBeenSet; }
+  inline void SetPayPalDataSource(CapabilityState value) {
+    m_payPalDataSourceHasBeenSet = true;
+    m_payPalDataSource = value;
+  }
+  inline Capabilities& WithPayPalDataSource(CapabilityState value) {
+    SetPayPalDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create PayPal data sources.</p>
+   */
+  inline CapabilityState GetCreatePayPalDataSource() const { return m_createPayPalDataSource; }
+  inline bool CreatePayPalDataSourceHasBeenSet() const { return m_createPayPalDataSourceHasBeenSet; }
+  inline void SetCreatePayPalDataSource(CapabilityState value) {
+    m_createPayPalDataSourceHasBeenSet = true;
+    m_createPayPalDataSource = value;
+  }
+  inline Capabilities& WithCreatePayPalDataSource(CapabilityState value) {
+    SetCreatePayPalDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to update PayPal data sources.</p>
+   */
+  inline CapabilityState GetUpdatePayPalDataSource() const { return m_updatePayPalDataSource; }
+  inline bool UpdatePayPalDataSourceHasBeenSet() const { return m_updatePayPalDataSourceHasBeenSet; }
+  inline void SetUpdatePayPalDataSource(CapabilityState value) {
+    m_updatePayPalDataSourceHasBeenSet = true;
+    m_updatePayPalDataSource = value;
+  }
+  inline Capabilities& WithUpdatePayPalDataSource(CapabilityState value) {
+    SetUpdatePayPalDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share PayPal data sources.</p>
+   */
+  inline CapabilityState GetSharePayPalDataSource() const { return m_sharePayPalDataSource; }
+  inline bool SharePayPalDataSourceHasBeenSet() const { return m_sharePayPalDataSourceHasBeenSet; }
+  inline void SetSharePayPalDataSource(CapabilityState value) {
+    m_sharePayPalDataSourceHasBeenSet = true;
+    m_sharePayPalDataSource = value;
+  }
+  inline Capabilities& WithSharePayPalDataSource(CapabilityState value) {
+    SetSharePayPalDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create, update, and share Square data sources.</p>
+   */
+  inline CapabilityState GetSquareDataSource() const { return m_squareDataSource; }
+  inline bool SquareDataSourceHasBeenSet() const { return m_squareDataSourceHasBeenSet; }
+  inline void SetSquareDataSource(CapabilityState value) {
+    m_squareDataSourceHasBeenSet = true;
+    m_squareDataSource = value;
+  }
+  inline Capabilities& WithSquareDataSource(CapabilityState value) {
+    SetSquareDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create Square data sources.</p>
+   */
+  inline CapabilityState GetCreateSquareDataSource() const { return m_createSquareDataSource; }
+  inline bool CreateSquareDataSourceHasBeenSet() const { return m_createSquareDataSourceHasBeenSet; }
+  inline void SetCreateSquareDataSource(CapabilityState value) {
+    m_createSquareDataSourceHasBeenSet = true;
+    m_createSquareDataSource = value;
+  }
+  inline Capabilities& WithCreateSquareDataSource(CapabilityState value) {
+    SetCreateSquareDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to update Square data sources.</p>
+   */
+  inline CapabilityState GetUpdateSquareDataSource() const { return m_updateSquareDataSource; }
+  inline bool UpdateSquareDataSourceHasBeenSet() const { return m_updateSquareDataSourceHasBeenSet; }
+  inline void SetUpdateSquareDataSource(CapabilityState value) {
+    m_updateSquareDataSourceHasBeenSet = true;
+    m_updateSquareDataSource = value;
+  }
+  inline Capabilities& WithUpdateSquareDataSource(CapabilityState value) {
+    SetUpdateSquareDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Square data sources.</p>
+   */
+  inline CapabilityState GetShareSquareDataSource() const { return m_shareSquareDataSource; }
+  inline bool ShareSquareDataSourceHasBeenSet() const { return m_shareSquareDataSourceHasBeenSet; }
+  inline void SetShareSquareDataSource(CapabilityState value) {
+    m_shareSquareDataSourceHasBeenSet = true;
+    m_shareSquareDataSource = value;
+  }
+  inline Capabilities& WithShareSquareDataSource(CapabilityState value) {
+    SetShareSquareDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create, update, and share GitHub data sources.</p>
+   */
+  inline CapabilityState GetGitHubDataSource() const { return m_gitHubDataSource; }
+  inline bool GitHubDataSourceHasBeenSet() const { return m_gitHubDataSourceHasBeenSet; }
+  inline void SetGitHubDataSource(CapabilityState value) {
+    m_gitHubDataSourceHasBeenSet = true;
+    m_gitHubDataSource = value;
+  }
+  inline Capabilities& WithGitHubDataSource(CapabilityState value) {
+    SetGitHubDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create GitHub data sources.</p>
+   */
+  inline CapabilityState GetCreateGitHubDataSource() const { return m_createGitHubDataSource; }
+  inline bool CreateGitHubDataSourceHasBeenSet() const { return m_createGitHubDataSourceHasBeenSet; }
+  inline void SetCreateGitHubDataSource(CapabilityState value) {
+    m_createGitHubDataSourceHasBeenSet = true;
+    m_createGitHubDataSource = value;
+  }
+  inline Capabilities& WithCreateGitHubDataSource(CapabilityState value) {
+    SetCreateGitHubDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to update GitHub data sources.</p>
+   */
+  inline CapabilityState GetUpdateGitHubDataSource() const { return m_updateGitHubDataSource; }
+  inline bool UpdateGitHubDataSourceHasBeenSet() const { return m_updateGitHubDataSourceHasBeenSet; }
+  inline void SetUpdateGitHubDataSource(CapabilityState value) {
+    m_updateGitHubDataSourceHasBeenSet = true;
+    m_updateGitHubDataSource = value;
+  }
+  inline Capabilities& WithUpdateGitHubDataSource(CapabilityState value) {
+    SetUpdateGitHubDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share GitHub data sources.</p>
+   */
+  inline CapabilityState GetShareGitHubDataSource() const { return m_shareGitHubDataSource; }
+  inline bool ShareGitHubDataSourceHasBeenSet() const { return m_shareGitHubDataSourceHasBeenSet; }
+  inline void SetShareGitHubDataSource(CapabilityState value) {
+    m_shareGitHubDataSourceHasBeenSet = true;
+    m_shareGitHubDataSource = value;
+  }
+  inline Capabilities& WithShareGitHubDataSource(CapabilityState value) {
+    SetShareGitHubDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create, update, and share Twitter data sources.</p>
+   */
+  inline CapabilityState GetTwitterDataSource() const { return m_twitterDataSource; }
+  inline bool TwitterDataSourceHasBeenSet() const { return m_twitterDataSourceHasBeenSet; }
+  inline void SetTwitterDataSource(CapabilityState value) {
+    m_twitterDataSourceHasBeenSet = true;
+    m_twitterDataSource = value;
+  }
+  inline Capabilities& WithTwitterDataSource(CapabilityState value) {
+    SetTwitterDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create Twitter data sources.</p>
+   */
+  inline CapabilityState GetCreateTwitterDataSource() const { return m_createTwitterDataSource; }
+  inline bool CreateTwitterDataSourceHasBeenSet() const { return m_createTwitterDataSourceHasBeenSet; }
+  inline void SetCreateTwitterDataSource(CapabilityState value) {
+    m_createTwitterDataSourceHasBeenSet = true;
+    m_createTwitterDataSource = value;
+  }
+  inline Capabilities& WithCreateTwitterDataSource(CapabilityState value) {
+    SetCreateTwitterDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to update Twitter data sources.</p>
+   */
+  inline CapabilityState GetUpdateTwitterDataSource() const { return m_updateTwitterDataSource; }
+  inline bool UpdateTwitterDataSourceHasBeenSet() const { return m_updateTwitterDataSourceHasBeenSet; }
+  inline void SetUpdateTwitterDataSource(CapabilityState value) {
+    m_updateTwitterDataSourceHasBeenSet = true;
+    m_updateTwitterDataSource = value;
+  }
+  inline Capabilities& WithUpdateTwitterDataSource(CapabilityState value) {
+    SetUpdateTwitterDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Twitter data sources.</p>
+   */
+  inline CapabilityState GetShareTwitterDataSource() const { return m_shareTwitterDataSource; }
+  inline bool ShareTwitterDataSourceHasBeenSet() const { return m_shareTwitterDataSourceHasBeenSet; }
+  inline void SetShareTwitterDataSource(CapabilityState value) {
+    m_shareTwitterDataSourceHasBeenSet = true;
+    m_shareTwitterDataSource = value;
+  }
+  inline Capabilities& WithShareTwitterDataSource(CapabilityState value) {
+    SetShareTwitterDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create, update, and share Jira data sources.</p>
+   */
+  inline CapabilityState GetJiraDataSource() const { return m_jiraDataSource; }
+  inline bool JiraDataSourceHasBeenSet() const { return m_jiraDataSourceHasBeenSet; }
+  inline void SetJiraDataSource(CapabilityState value) {
+    m_jiraDataSourceHasBeenSet = true;
+    m_jiraDataSource = value;
+  }
+  inline Capabilities& WithJiraDataSource(CapabilityState value) {
+    SetJiraDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create Jira data sources.</p>
+   */
+  inline CapabilityState GetCreateJiraDataSource() const { return m_createJiraDataSource; }
+  inline bool CreateJiraDataSourceHasBeenSet() const { return m_createJiraDataSourceHasBeenSet; }
+  inline void SetCreateJiraDataSource(CapabilityState value) {
+    m_createJiraDataSourceHasBeenSet = true;
+    m_createJiraDataSource = value;
+  }
+  inline Capabilities& WithCreateJiraDataSource(CapabilityState value) {
+    SetCreateJiraDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to update Jira data sources.</p>
+   */
+  inline CapabilityState GetUpdateJiraDataSource() const { return m_updateJiraDataSource; }
+  inline bool UpdateJiraDataSourceHasBeenSet() const { return m_updateJiraDataSourceHasBeenSet; }
+  inline void SetUpdateJiraDataSource(CapabilityState value) {
+    m_updateJiraDataSourceHasBeenSet = true;
+    m_updateJiraDataSource = value;
+  }
+  inline Capabilities& WithUpdateJiraDataSource(CapabilityState value) {
+    SetUpdateJiraDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Jira data sources.</p>
+   */
+  inline CapabilityState GetShareJiraDataSource() const { return m_shareJiraDataSource; }
+  inline bool ShareJiraDataSourceHasBeenSet() const { return m_shareJiraDataSourceHasBeenSet; }
+  inline void SetShareJiraDataSource(CapabilityState value) {
+    m_shareJiraDataSourceHasBeenSet = true;
+    m_shareJiraDataSource = value;
+  }
+  inline Capabilities& WithShareJiraDataSource(CapabilityState value) {
+    SetShareJiraDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create, update, and share ServiceNow data sources.</p>
+   */
+  inline CapabilityState GetServiceNowDataSource() const { return m_serviceNowDataSource; }
+  inline bool ServiceNowDataSourceHasBeenSet() const { return m_serviceNowDataSourceHasBeenSet; }
+  inline void SetServiceNowDataSource(CapabilityState value) {
+    m_serviceNowDataSourceHasBeenSet = true;
+    m_serviceNowDataSource = value;
+  }
+  inline Capabilities& WithServiceNowDataSource(CapabilityState value) {
+    SetServiceNowDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create ServiceNow data sources.</p>
+   */
+  inline CapabilityState GetCreateServiceNowDataSource() const { return m_createServiceNowDataSource; }
+  inline bool CreateServiceNowDataSourceHasBeenSet() const { return m_createServiceNowDataSourceHasBeenSet; }
+  inline void SetCreateServiceNowDataSource(CapabilityState value) {
+    m_createServiceNowDataSourceHasBeenSet = true;
+    m_createServiceNowDataSource = value;
+  }
+  inline Capabilities& WithCreateServiceNowDataSource(CapabilityState value) {
+    SetCreateServiceNowDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to update ServiceNow data sources.</p>
+   */
+  inline CapabilityState GetUpdateServiceNowDataSource() const { return m_updateServiceNowDataSource; }
+  inline bool UpdateServiceNowDataSourceHasBeenSet() const { return m_updateServiceNowDataSourceHasBeenSet; }
+  inline void SetUpdateServiceNowDataSource(CapabilityState value) {
+    m_updateServiceNowDataSourceHasBeenSet = true;
+    m_updateServiceNowDataSource = value;
+  }
+  inline Capabilities& WithUpdateServiceNowDataSource(CapabilityState value) {
+    SetUpdateServiceNowDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share ServiceNow data sources.</p>
+   */
+  inline CapabilityState GetShareServiceNowDataSource() const { return m_shareServiceNowDataSource; }
+  inline bool ShareServiceNowDataSourceHasBeenSet() const { return m_shareServiceNowDataSourceHasBeenSet; }
+  inline void SetShareServiceNowDataSource(CapabilityState value) {
+    m_shareServiceNowDataSourceHasBeenSet = true;
+    m_shareServiceNowDataSource = value;
+  }
+  inline Capabilities& WithShareServiceNowDataSource(CapabilityState value) {
+    SetShareServiceNowDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create, update, and share Adobe Analytics data sources.</p>
+   */
+  inline CapabilityState GetAdobeAnalyticsDataSource() const { return m_adobeAnalyticsDataSource; }
+  inline bool AdobeAnalyticsDataSourceHasBeenSet() const { return m_adobeAnalyticsDataSourceHasBeenSet; }
+  inline void SetAdobeAnalyticsDataSource(CapabilityState value) {
+    m_adobeAnalyticsDataSourceHasBeenSet = true;
+    m_adobeAnalyticsDataSource = value;
+  }
+  inline Capabilities& WithAdobeAnalyticsDataSource(CapabilityState value) {
+    SetAdobeAnalyticsDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create Adobe Analytics data sources.</p>
+   */
+  inline CapabilityState GetCreateAdobeAnalyticsDataSource() const { return m_createAdobeAnalyticsDataSource; }
+  inline bool CreateAdobeAnalyticsDataSourceHasBeenSet() const { return m_createAdobeAnalyticsDataSourceHasBeenSet; }
+  inline void SetCreateAdobeAnalyticsDataSource(CapabilityState value) {
+    m_createAdobeAnalyticsDataSourceHasBeenSet = true;
+    m_createAdobeAnalyticsDataSource = value;
+  }
+  inline Capabilities& WithCreateAdobeAnalyticsDataSource(CapabilityState value) {
+    SetCreateAdobeAnalyticsDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to update Adobe Analytics data sources.</p>
+   */
+  inline CapabilityState GetUpdateAdobeAnalyticsDataSource() const { return m_updateAdobeAnalyticsDataSource; }
+  inline bool UpdateAdobeAnalyticsDataSourceHasBeenSet() const { return m_updateAdobeAnalyticsDataSourceHasBeenSet; }
+  inline void SetUpdateAdobeAnalyticsDataSource(CapabilityState value) {
+    m_updateAdobeAnalyticsDataSourceHasBeenSet = true;
+    m_updateAdobeAnalyticsDataSource = value;
+  }
+  inline Capabilities& WithUpdateAdobeAnalyticsDataSource(CapabilityState value) {
+    SetUpdateAdobeAnalyticsDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Adobe Analytics data sources.</p>
+   */
+  inline CapabilityState GetShareAdobeAnalyticsDataSource() const { return m_shareAdobeAnalyticsDataSource; }
+  inline bool ShareAdobeAnalyticsDataSourceHasBeenSet() const { return m_shareAdobeAnalyticsDataSourceHasBeenSet; }
+  inline void SetShareAdobeAnalyticsDataSource(CapabilityState value) {
+    m_shareAdobeAnalyticsDataSourceHasBeenSet = true;
+    m_shareAdobeAnalyticsDataSource = value;
+  }
+  inline Capabilities& WithShareAdobeAnalyticsDataSource(CapabilityState value) {
+    SetShareAdobeAnalyticsDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create, update, and share Google Analytics data sources.</p>
+   */
+  inline CapabilityState GetGoogleAnalyticsDataSource() const { return m_googleAnalyticsDataSource; }
+  inline bool GoogleAnalyticsDataSourceHasBeenSet() const { return m_googleAnalyticsDataSourceHasBeenSet; }
+  inline void SetGoogleAnalyticsDataSource(CapabilityState value) {
+    m_googleAnalyticsDataSourceHasBeenSet = true;
+    m_googleAnalyticsDataSource = value;
+  }
+  inline Capabilities& WithGoogleAnalyticsDataSource(CapabilityState value) {
+    SetGoogleAnalyticsDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create Google Analytics data sources.</p>
+   */
+  inline CapabilityState GetCreateGoogleAnalyticsDataSource() const { return m_createGoogleAnalyticsDataSource; }
+  inline bool CreateGoogleAnalyticsDataSourceHasBeenSet() const { return m_createGoogleAnalyticsDataSourceHasBeenSet; }
+  inline void SetCreateGoogleAnalyticsDataSource(CapabilityState value) {
+    m_createGoogleAnalyticsDataSourceHasBeenSet = true;
+    m_createGoogleAnalyticsDataSource = value;
+  }
+  inline Capabilities& WithCreateGoogleAnalyticsDataSource(CapabilityState value) {
+    SetCreateGoogleAnalyticsDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to update Google Analytics data sources.</p>
+   */
+  inline CapabilityState GetUpdateGoogleAnalyticsDataSource() const { return m_updateGoogleAnalyticsDataSource; }
+  inline bool UpdateGoogleAnalyticsDataSourceHasBeenSet() const { return m_updateGoogleAnalyticsDataSourceHasBeenSet; }
+  inline void SetUpdateGoogleAnalyticsDataSource(CapabilityState value) {
+    m_updateGoogleAnalyticsDataSourceHasBeenSet = true;
+    m_updateGoogleAnalyticsDataSource = value;
+  }
+  inline Capabilities& WithUpdateGoogleAnalyticsDataSource(CapabilityState value) {
+    SetUpdateGoogleAnalyticsDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Google Analytics data sources.</p>
+   */
+  inline CapabilityState GetShareGoogleAnalyticsDataSource() const { return m_shareGoogleAnalyticsDataSource; }
+  inline bool ShareGoogleAnalyticsDataSourceHasBeenSet() const { return m_shareGoogleAnalyticsDataSourceHasBeenSet; }
+  inline void SetShareGoogleAnalyticsDataSource(CapabilityState value) {
+    m_shareGoogleAnalyticsDataSourceHasBeenSet = true;
+    m_shareGoogleAnalyticsDataSource = value;
+  }
+  inline Capabilities& WithShareGoogleAnalyticsDataSource(CapabilityState value) {
+    SetShareGoogleAnalyticsDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create, update, and share Google Sheets data sources.</p>
+   */
+  inline CapabilityState GetGoogleSheetsDataSource() const { return m_googleSheetsDataSource; }
+  inline bool GoogleSheetsDataSourceHasBeenSet() const { return m_googleSheetsDataSourceHasBeenSet; }
+  inline void SetGoogleSheetsDataSource(CapabilityState value) {
+    m_googleSheetsDataSourceHasBeenSet = true;
+    m_googleSheetsDataSource = value;
+  }
+  inline Capabilities& WithGoogleSheetsDataSource(CapabilityState value) {
+    SetGoogleSheetsDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create Google Sheets data sources.</p>
+   */
+  inline CapabilityState GetCreateGoogleSheetsDataSource() const { return m_createGoogleSheetsDataSource; }
+  inline bool CreateGoogleSheetsDataSourceHasBeenSet() const { return m_createGoogleSheetsDataSourceHasBeenSet; }
+  inline void SetCreateGoogleSheetsDataSource(CapabilityState value) {
+    m_createGoogleSheetsDataSourceHasBeenSet = true;
+    m_createGoogleSheetsDataSource = value;
+  }
+  inline Capabilities& WithCreateGoogleSheetsDataSource(CapabilityState value) {
+    SetCreateGoogleSheetsDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to update Google Sheets data sources.</p>
+   */
+  inline CapabilityState GetUpdateGoogleSheetsDataSource() const { return m_updateGoogleSheetsDataSource; }
+  inline bool UpdateGoogleSheetsDataSourceHasBeenSet() const { return m_updateGoogleSheetsDataSourceHasBeenSet; }
+  inline void SetUpdateGoogleSheetsDataSource(CapabilityState value) {
+    m_updateGoogleSheetsDataSourceHasBeenSet = true;
+    m_updateGoogleSheetsDataSource = value;
+  }
+  inline Capabilities& WithUpdateGoogleSheetsDataSource(CapabilityState value) {
+    SetUpdateGoogleSheetsDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Google Sheets data sources.</p>
+   */
+  inline CapabilityState GetShareGoogleSheetsDataSource() const { return m_shareGoogleSheetsDataSource; }
+  inline bool ShareGoogleSheetsDataSourceHasBeenSet() const { return m_shareGoogleSheetsDataSourceHasBeenSet; }
+  inline void SetShareGoogleSheetsDataSource(CapabilityState value) {
+    m_shareGoogleSheetsDataSourceHasBeenSet = true;
+    m_shareGoogleSheetsDataSource = value;
+  }
+  inline Capabilities& WithShareGoogleSheetsDataSource(CapabilityState value) {
+    SetShareGoogleSheetsDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create, update, and share Amazon DocumentDB data sources.</p>
+   */
+  inline CapabilityState GetDocumentDbDataSource() const { return m_documentDbDataSource; }
+  inline bool DocumentDbDataSourceHasBeenSet() const { return m_documentDbDataSourceHasBeenSet; }
+  inline void SetDocumentDbDataSource(CapabilityState value) {
+    m_documentDbDataSourceHasBeenSet = true;
+    m_documentDbDataSource = value;
+  }
+  inline Capabilities& WithDocumentDbDataSource(CapabilityState value) {
+    SetDocumentDbDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create Amazon DocumentDB data sources.</p>
+   */
+  inline CapabilityState GetCreateDocumentDbDataSource() const { return m_createDocumentDbDataSource; }
+  inline bool CreateDocumentDbDataSourceHasBeenSet() const { return m_createDocumentDbDataSourceHasBeenSet; }
+  inline void SetCreateDocumentDbDataSource(CapabilityState value) {
+    m_createDocumentDbDataSourceHasBeenSet = true;
+    m_createDocumentDbDataSource = value;
+  }
+  inline Capabilities& WithCreateDocumentDbDataSource(CapabilityState value) {
+    SetCreateDocumentDbDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to update Amazon DocumentDB data sources.</p>
+   */
+  inline CapabilityState GetUpdateDocumentDbDataSource() const { return m_updateDocumentDbDataSource; }
+  inline bool UpdateDocumentDbDataSourceHasBeenSet() const { return m_updateDocumentDbDataSourceHasBeenSet; }
+  inline void SetUpdateDocumentDbDataSource(CapabilityState value) {
+    m_updateDocumentDbDataSourceHasBeenSet = true;
+    m_updateDocumentDbDataSource = value;
+  }
+  inline Capabilities& WithUpdateDocumentDbDataSource(CapabilityState value) {
+    SetUpdateDocumentDbDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Amazon DocumentDB data sources.</p>
+   */
+  inline CapabilityState GetShareDocumentDbDataSource() const { return m_shareDocumentDbDataSource; }
+  inline bool ShareDocumentDbDataSourceHasBeenSet() const { return m_shareDocumentDbDataSourceHasBeenSet; }
+  inline void SetShareDocumentDbDataSource(CapabilityState value) {
+    m_shareDocumentDbDataSourceHasBeenSet = true;
+    m_shareDocumentDbDataSource = value;
+  }
+  inline Capabilities& WithShareDocumentDbDataSource(CapabilityState value) {
+    SetShareDocumentDbDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create, update, and share MongoDB data sources.</p>
+   */
+  inline CapabilityState GetMongoDbDataSource() const { return m_mongoDbDataSource; }
+  inline bool MongoDbDataSourceHasBeenSet() const { return m_mongoDbDataSourceHasBeenSet; }
+  inline void SetMongoDbDataSource(CapabilityState value) {
+    m_mongoDbDataSourceHasBeenSet = true;
+    m_mongoDbDataSource = value;
+  }
+  inline Capabilities& WithMongoDbDataSource(CapabilityState value) {
+    SetMongoDbDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create MongoDB data sources.</p>
+   */
+  inline CapabilityState GetCreateMongoDbDataSource() const { return m_createMongoDbDataSource; }
+  inline bool CreateMongoDbDataSourceHasBeenSet() const { return m_createMongoDbDataSourceHasBeenSet; }
+  inline void SetCreateMongoDbDataSource(CapabilityState value) {
+    m_createMongoDbDataSourceHasBeenSet = true;
+    m_createMongoDbDataSource = value;
+  }
+  inline Capabilities& WithCreateMongoDbDataSource(CapabilityState value) {
+    SetCreateMongoDbDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to update MongoDB data sources.</p>
+   */
+  inline CapabilityState GetUpdateMongoDbDataSource() const { return m_updateMongoDbDataSource; }
+  inline bool UpdateMongoDbDataSourceHasBeenSet() const { return m_updateMongoDbDataSourceHasBeenSet; }
+  inline void SetUpdateMongoDbDataSource(CapabilityState value) {
+    m_updateMongoDbDataSourceHasBeenSet = true;
+    m_updateMongoDbDataSource = value;
+  }
+  inline Capabilities& WithUpdateMongoDbDataSource(CapabilityState value) {
+    SetUpdateMongoDbDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share MongoDB data sources.</p>
+   */
+  inline CapabilityState GetShareMongoDbDataSource() const { return m_shareMongoDbDataSource; }
+  inline bool ShareMongoDbDataSourceHasBeenSet() const { return m_shareMongoDbDataSourceHasBeenSet; }
+  inline void SetShareMongoDbDataSource(CapabilityState value) {
+    m_shareMongoDbDataSourceHasBeenSet = true;
+    m_shareMongoDbDataSource = value;
+  }
+  inline Capabilities& WithShareMongoDbDataSource(CapabilityState value) {
+    SetShareMongoDbDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create, update, and share MongoDB Atlas data sources.</p>
+   */
+  inline CapabilityState GetMongoAtlasDataSource() const { return m_mongoAtlasDataSource; }
+  inline bool MongoAtlasDataSourceHasBeenSet() const { return m_mongoAtlasDataSourceHasBeenSet; }
+  inline void SetMongoAtlasDataSource(CapabilityState value) {
+    m_mongoAtlasDataSourceHasBeenSet = true;
+    m_mongoAtlasDataSource = value;
+  }
+  inline Capabilities& WithMongoAtlasDataSource(CapabilityState value) {
+    SetMongoAtlasDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create MongoDB Atlas data sources.</p>
+   */
+  inline CapabilityState GetCreateMongoAtlasDataSource() const { return m_createMongoAtlasDataSource; }
+  inline bool CreateMongoAtlasDataSourceHasBeenSet() const { return m_createMongoAtlasDataSourceHasBeenSet; }
+  inline void SetCreateMongoAtlasDataSource(CapabilityState value) {
+    m_createMongoAtlasDataSourceHasBeenSet = true;
+    m_createMongoAtlasDataSource = value;
+  }
+  inline Capabilities& WithCreateMongoAtlasDataSource(CapabilityState value) {
+    SetCreateMongoAtlasDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to update MongoDB Atlas data sources.</p>
+   */
+  inline CapabilityState GetUpdateMongoAtlasDataSource() const { return m_updateMongoAtlasDataSource; }
+  inline bool UpdateMongoAtlasDataSourceHasBeenSet() const { return m_updateMongoAtlasDataSourceHasBeenSet; }
+  inline void SetUpdateMongoAtlasDataSource(CapabilityState value) {
+    m_updateMongoAtlasDataSourceHasBeenSet = true;
+    m_updateMongoAtlasDataSource = value;
+  }
+  inline Capabilities& WithUpdateMongoAtlasDataSource(CapabilityState value) {
+    SetUpdateMongoAtlasDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share MongoDB Atlas data sources.</p>
+   */
+  inline CapabilityState GetShareMongoAtlasDataSource() const { return m_shareMongoAtlasDataSource; }
+  inline bool ShareMongoAtlasDataSourceHasBeenSet() const { return m_shareMongoAtlasDataSourceHasBeenSet; }
+  inline void SetShareMongoAtlasDataSource(CapabilityState value) {
+    m_shareMongoAtlasDataSourceHasBeenSet = true;
+    m_shareMongoAtlasDataSource = value;
+  }
+  inline Capabilities& WithShareMongoAtlasDataSource(CapabilityState value) {
+    SetShareMongoAtlasDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create, update, and share Amazon DynamoDB data sources.</p>
+   */
+  inline CapabilityState GetDynamoDbDataSource() const { return m_dynamoDbDataSource; }
+  inline bool DynamoDbDataSourceHasBeenSet() const { return m_dynamoDbDataSourceHasBeenSet; }
+  inline void SetDynamoDbDataSource(CapabilityState value) {
+    m_dynamoDbDataSourceHasBeenSet = true;
+    m_dynamoDbDataSource = value;
+  }
+  inline Capabilities& WithDynamoDbDataSource(CapabilityState value) {
+    SetDynamoDbDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to create Amazon DynamoDB data sources.</p>
+   */
+  inline CapabilityState GetCreateDynamoDbDataSource() const { return m_createDynamoDbDataSource; }
+  inline bool CreateDynamoDbDataSourceHasBeenSet() const { return m_createDynamoDbDataSourceHasBeenSet; }
+  inline void SetCreateDynamoDbDataSource(CapabilityState value) {
+    m_createDynamoDbDataSourceHasBeenSet = true;
+    m_createDynamoDbDataSource = value;
+  }
+  inline Capabilities& WithCreateDynamoDbDataSource(CapabilityState value) {
+    SetCreateDynamoDbDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to update Amazon DynamoDB data sources.</p>
+   */
+  inline CapabilityState GetUpdateDynamoDbDataSource() const { return m_updateDynamoDbDataSource; }
+  inline bool UpdateDynamoDbDataSourceHasBeenSet() const { return m_updateDynamoDbDataSourceHasBeenSet; }
+  inline void SetUpdateDynamoDbDataSource(CapabilityState value) {
+    m_updateDynamoDbDataSourceHasBeenSet = true;
+    m_updateDynamoDbDataSource = value;
+  }
+  inline Capabilities& WithUpdateDynamoDbDataSource(CapabilityState value) {
+    SetUpdateDynamoDbDataSource(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ability to share Amazon DynamoDB data sources.</p>
+   */
+  inline CapabilityState GetShareDynamoDbDataSource() const { return m_shareDynamoDbDataSource; }
+  inline bool ShareDynamoDbDataSourceHasBeenSet() const { return m_shareDynamoDbDataSourceHasBeenSet; }
+  inline void SetShareDynamoDbDataSource(CapabilityState value) {
+    m_shareDynamoDbDataSourceHasBeenSet = true;
+    m_shareDynamoDbDataSource = value;
+  }
+  inline Capabilities& WithShareDynamoDbDataSource(CapabilityState value) {
+    SetShareDynamoDbDataSource(value);
     return *this;
   }
   ///@}
@@ -6955,6 +9904,14 @@ class Capabilities {
 
   CapabilityState m_useBeeAction{CapabilityState::NOT_SET};
 
+  CapabilityState m_gongAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_createAndUpdateGongAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareGongAction{CapabilityState::NOT_SET};
+
+  CapabilityState m_useGongAction{CapabilityState::NOT_SET};
+
   CapabilityState m_topic{CapabilityState::NOT_SET};
 
   CapabilityState m_editVisualWithQ{CapabilityState::NOT_SET};
@@ -7006,6 +9963,366 @@ class Capabilities {
   CapabilityState m_inboundEmailTrigger{CapabilityState::NOT_SET};
 
   CapabilityState m_quickEventTrigger{CapabilityState::NOT_SET};
+
+  CapabilityState m_fileDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_createFileDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_updateFileDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareFileDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_s3DataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_createS3DataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_updateS3DataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareS3DataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_s3AnalyticsDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_createS3AnalyticsDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_updateS3AnalyticsDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareS3AnalyticsDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_s3TablesDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_createS3TablesDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_updateS3TablesDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareS3TablesDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_athenaDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_createAthenaDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_updateAthenaDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareAthenaDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_rdsDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_createRdsDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_updateRdsDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareRdsDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_redshiftAutoDiscoveredDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_createRedshiftAutoDiscoveredDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_updateRedshiftAutoDiscoveredDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareRedshiftAutoDiscoveredDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_redshiftManualDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_createRedshiftManualDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_updateRedshiftManualDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareRedshiftManualDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_openSearchDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_createOpenSearchDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_updateOpenSearchDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareOpenSearchDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_timestreamDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_createTimestreamDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_updateTimestreamDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareTimestreamDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_auroraDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_createAuroraDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_updateAuroraDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareAuroraDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_mySqlDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_createMySqlDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_updateMySqlDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareMySqlDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_postgreSqlDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_createPostgreSqlDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_updatePostgreSqlDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_sharePostgreSqlDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_oracleDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_createOracleDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_updateOracleDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareOracleDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_sqlServerDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_createSqlServerDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_updateSqlServerDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareSqlServerDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_mariaDbDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_createMariaDbDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_updateMariaDbDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareMariaDbDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_snowflakeDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_createSnowflakeDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_updateSnowflakeDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareSnowflakeDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_googleBigQueryDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_createGoogleBigQueryDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_updateGoogleBigQueryDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareGoogleBigQueryDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_databricksDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_createDatabricksDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_updateDatabricksDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareDatabricksDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_starburstDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_createStarburstDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_updateStarburstDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareStarburstDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_trinoDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_createTrinoDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_updateTrinoDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareTrinoDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_impalaDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_createImpalaDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_updateImpalaDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareImpalaDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_teradataDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_createTeradataDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_updateTeradataDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareTeradataDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_prestoDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_createPrestoDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_updatePrestoDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_sharePrestoDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_sparkDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_createSparkDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_updateSparkDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareSparkDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_exasolDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_createExasolDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_updateExasolDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareExasolDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_db2DataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_createDb2DataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_updateDb2DataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareDb2DataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_sapHanaDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_createSapHanaDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_updateSapHanaDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareSapHanaDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_denodoDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_createDenodoDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_updateDenodoDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareDenodoDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_dremioDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_createDremioDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_updateDremioDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareDremioDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_salesforceDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_createSalesforceDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_updateSalesforceDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareSalesforceDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_radiantDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_createRadiantDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_updateRadiantDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareRadiantDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_payPalDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_createPayPalDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_updatePayPalDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_sharePayPalDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_squareDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_createSquareDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_updateSquareDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareSquareDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_gitHubDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_createGitHubDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_updateGitHubDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareGitHubDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_twitterDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_createTwitterDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_updateTwitterDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareTwitterDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_jiraDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_createJiraDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_updateJiraDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareJiraDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_serviceNowDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_createServiceNowDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_updateServiceNowDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareServiceNowDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_adobeAnalyticsDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_createAdobeAnalyticsDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_updateAdobeAnalyticsDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareAdobeAnalyticsDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_googleAnalyticsDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_createGoogleAnalyticsDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_updateGoogleAnalyticsDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareGoogleAnalyticsDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_googleSheetsDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_createGoogleSheetsDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_updateGoogleSheetsDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareGoogleSheetsDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_documentDbDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_createDocumentDbDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_updateDocumentDbDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareDocumentDbDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_mongoDbDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_createMongoDbDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_updateMongoDbDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareMongoDbDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_mongoAtlasDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_createMongoAtlasDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_updateMongoAtlasDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareMongoAtlasDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_dynamoDbDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_createDynamoDbDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_updateDynamoDbDataSource{CapabilityState::NOT_SET};
+
+  CapabilityState m_shareDynamoDbDataSource{CapabilityState::NOT_SET};
   bool m_exportToCsvHasBeenSet = false;
   bool m_exportToExcelHasBeenSet = false;
   bool m_exportToPdfHasBeenSet = false;
@@ -7371,6 +10688,10 @@ class Capabilities {
   bool m_createAndUpdateBeeActionHasBeenSet = false;
   bool m_shareBeeActionHasBeenSet = false;
   bool m_useBeeActionHasBeenSet = false;
+  bool m_gongActionHasBeenSet = false;
+  bool m_createAndUpdateGongActionHasBeenSet = false;
+  bool m_shareGongActionHasBeenSet = false;
+  bool m_useGongActionHasBeenSet = false;
   bool m_topicHasBeenSet = false;
   bool m_editVisualWithQHasBeenSet = false;
   bool m_buildCalculatedFieldWithQHasBeenSet = false;
@@ -7397,6 +10718,186 @@ class Capabilities {
   bool m_scheduleTriggerHasBeenSet = false;
   bool m_inboundEmailTriggerHasBeenSet = false;
   bool m_quickEventTriggerHasBeenSet = false;
+  bool m_fileDataSourceHasBeenSet = false;
+  bool m_createFileDataSourceHasBeenSet = false;
+  bool m_updateFileDataSourceHasBeenSet = false;
+  bool m_shareFileDataSourceHasBeenSet = false;
+  bool m_s3DataSourceHasBeenSet = false;
+  bool m_createS3DataSourceHasBeenSet = false;
+  bool m_updateS3DataSourceHasBeenSet = false;
+  bool m_shareS3DataSourceHasBeenSet = false;
+  bool m_s3AnalyticsDataSourceHasBeenSet = false;
+  bool m_createS3AnalyticsDataSourceHasBeenSet = false;
+  bool m_updateS3AnalyticsDataSourceHasBeenSet = false;
+  bool m_shareS3AnalyticsDataSourceHasBeenSet = false;
+  bool m_s3TablesDataSourceHasBeenSet = false;
+  bool m_createS3TablesDataSourceHasBeenSet = false;
+  bool m_updateS3TablesDataSourceHasBeenSet = false;
+  bool m_shareS3TablesDataSourceHasBeenSet = false;
+  bool m_athenaDataSourceHasBeenSet = false;
+  bool m_createAthenaDataSourceHasBeenSet = false;
+  bool m_updateAthenaDataSourceHasBeenSet = false;
+  bool m_shareAthenaDataSourceHasBeenSet = false;
+  bool m_rdsDataSourceHasBeenSet = false;
+  bool m_createRdsDataSourceHasBeenSet = false;
+  bool m_updateRdsDataSourceHasBeenSet = false;
+  bool m_shareRdsDataSourceHasBeenSet = false;
+  bool m_redshiftAutoDiscoveredDataSourceHasBeenSet = false;
+  bool m_createRedshiftAutoDiscoveredDataSourceHasBeenSet = false;
+  bool m_updateRedshiftAutoDiscoveredDataSourceHasBeenSet = false;
+  bool m_shareRedshiftAutoDiscoveredDataSourceHasBeenSet = false;
+  bool m_redshiftManualDataSourceHasBeenSet = false;
+  bool m_createRedshiftManualDataSourceHasBeenSet = false;
+  bool m_updateRedshiftManualDataSourceHasBeenSet = false;
+  bool m_shareRedshiftManualDataSourceHasBeenSet = false;
+  bool m_openSearchDataSourceHasBeenSet = false;
+  bool m_createOpenSearchDataSourceHasBeenSet = false;
+  bool m_updateOpenSearchDataSourceHasBeenSet = false;
+  bool m_shareOpenSearchDataSourceHasBeenSet = false;
+  bool m_timestreamDataSourceHasBeenSet = false;
+  bool m_createTimestreamDataSourceHasBeenSet = false;
+  bool m_updateTimestreamDataSourceHasBeenSet = false;
+  bool m_shareTimestreamDataSourceHasBeenSet = false;
+  bool m_auroraDataSourceHasBeenSet = false;
+  bool m_createAuroraDataSourceHasBeenSet = false;
+  bool m_updateAuroraDataSourceHasBeenSet = false;
+  bool m_shareAuroraDataSourceHasBeenSet = false;
+  bool m_mySqlDataSourceHasBeenSet = false;
+  bool m_createMySqlDataSourceHasBeenSet = false;
+  bool m_updateMySqlDataSourceHasBeenSet = false;
+  bool m_shareMySqlDataSourceHasBeenSet = false;
+  bool m_postgreSqlDataSourceHasBeenSet = false;
+  bool m_createPostgreSqlDataSourceHasBeenSet = false;
+  bool m_updatePostgreSqlDataSourceHasBeenSet = false;
+  bool m_sharePostgreSqlDataSourceHasBeenSet = false;
+  bool m_oracleDataSourceHasBeenSet = false;
+  bool m_createOracleDataSourceHasBeenSet = false;
+  bool m_updateOracleDataSourceHasBeenSet = false;
+  bool m_shareOracleDataSourceHasBeenSet = false;
+  bool m_sqlServerDataSourceHasBeenSet = false;
+  bool m_createSqlServerDataSourceHasBeenSet = false;
+  bool m_updateSqlServerDataSourceHasBeenSet = false;
+  bool m_shareSqlServerDataSourceHasBeenSet = false;
+  bool m_mariaDbDataSourceHasBeenSet = false;
+  bool m_createMariaDbDataSourceHasBeenSet = false;
+  bool m_updateMariaDbDataSourceHasBeenSet = false;
+  bool m_shareMariaDbDataSourceHasBeenSet = false;
+  bool m_snowflakeDataSourceHasBeenSet = false;
+  bool m_createSnowflakeDataSourceHasBeenSet = false;
+  bool m_updateSnowflakeDataSourceHasBeenSet = false;
+  bool m_shareSnowflakeDataSourceHasBeenSet = false;
+  bool m_googleBigQueryDataSourceHasBeenSet = false;
+  bool m_createGoogleBigQueryDataSourceHasBeenSet = false;
+  bool m_updateGoogleBigQueryDataSourceHasBeenSet = false;
+  bool m_shareGoogleBigQueryDataSourceHasBeenSet = false;
+  bool m_databricksDataSourceHasBeenSet = false;
+  bool m_createDatabricksDataSourceHasBeenSet = false;
+  bool m_updateDatabricksDataSourceHasBeenSet = false;
+  bool m_shareDatabricksDataSourceHasBeenSet = false;
+  bool m_starburstDataSourceHasBeenSet = false;
+  bool m_createStarburstDataSourceHasBeenSet = false;
+  bool m_updateStarburstDataSourceHasBeenSet = false;
+  bool m_shareStarburstDataSourceHasBeenSet = false;
+  bool m_trinoDataSourceHasBeenSet = false;
+  bool m_createTrinoDataSourceHasBeenSet = false;
+  bool m_updateTrinoDataSourceHasBeenSet = false;
+  bool m_shareTrinoDataSourceHasBeenSet = false;
+  bool m_impalaDataSourceHasBeenSet = false;
+  bool m_createImpalaDataSourceHasBeenSet = false;
+  bool m_updateImpalaDataSourceHasBeenSet = false;
+  bool m_shareImpalaDataSourceHasBeenSet = false;
+  bool m_teradataDataSourceHasBeenSet = false;
+  bool m_createTeradataDataSourceHasBeenSet = false;
+  bool m_updateTeradataDataSourceHasBeenSet = false;
+  bool m_shareTeradataDataSourceHasBeenSet = false;
+  bool m_prestoDataSourceHasBeenSet = false;
+  bool m_createPrestoDataSourceHasBeenSet = false;
+  bool m_updatePrestoDataSourceHasBeenSet = false;
+  bool m_sharePrestoDataSourceHasBeenSet = false;
+  bool m_sparkDataSourceHasBeenSet = false;
+  bool m_createSparkDataSourceHasBeenSet = false;
+  bool m_updateSparkDataSourceHasBeenSet = false;
+  bool m_shareSparkDataSourceHasBeenSet = false;
+  bool m_exasolDataSourceHasBeenSet = false;
+  bool m_createExasolDataSourceHasBeenSet = false;
+  bool m_updateExasolDataSourceHasBeenSet = false;
+  bool m_shareExasolDataSourceHasBeenSet = false;
+  bool m_db2DataSourceHasBeenSet = false;
+  bool m_createDb2DataSourceHasBeenSet = false;
+  bool m_updateDb2DataSourceHasBeenSet = false;
+  bool m_shareDb2DataSourceHasBeenSet = false;
+  bool m_sapHanaDataSourceHasBeenSet = false;
+  bool m_createSapHanaDataSourceHasBeenSet = false;
+  bool m_updateSapHanaDataSourceHasBeenSet = false;
+  bool m_shareSapHanaDataSourceHasBeenSet = false;
+  bool m_denodoDataSourceHasBeenSet = false;
+  bool m_createDenodoDataSourceHasBeenSet = false;
+  bool m_updateDenodoDataSourceHasBeenSet = false;
+  bool m_shareDenodoDataSourceHasBeenSet = false;
+  bool m_dremioDataSourceHasBeenSet = false;
+  bool m_createDremioDataSourceHasBeenSet = false;
+  bool m_updateDremioDataSourceHasBeenSet = false;
+  bool m_shareDremioDataSourceHasBeenSet = false;
+  bool m_salesforceDataSourceHasBeenSet = false;
+  bool m_createSalesforceDataSourceHasBeenSet = false;
+  bool m_updateSalesforceDataSourceHasBeenSet = false;
+  bool m_shareSalesforceDataSourceHasBeenSet = false;
+  bool m_radiantDataSourceHasBeenSet = false;
+  bool m_createRadiantDataSourceHasBeenSet = false;
+  bool m_updateRadiantDataSourceHasBeenSet = false;
+  bool m_shareRadiantDataSourceHasBeenSet = false;
+  bool m_payPalDataSourceHasBeenSet = false;
+  bool m_createPayPalDataSourceHasBeenSet = false;
+  bool m_updatePayPalDataSourceHasBeenSet = false;
+  bool m_sharePayPalDataSourceHasBeenSet = false;
+  bool m_squareDataSourceHasBeenSet = false;
+  bool m_createSquareDataSourceHasBeenSet = false;
+  bool m_updateSquareDataSourceHasBeenSet = false;
+  bool m_shareSquareDataSourceHasBeenSet = false;
+  bool m_gitHubDataSourceHasBeenSet = false;
+  bool m_createGitHubDataSourceHasBeenSet = false;
+  bool m_updateGitHubDataSourceHasBeenSet = false;
+  bool m_shareGitHubDataSourceHasBeenSet = false;
+  bool m_twitterDataSourceHasBeenSet = false;
+  bool m_createTwitterDataSourceHasBeenSet = false;
+  bool m_updateTwitterDataSourceHasBeenSet = false;
+  bool m_shareTwitterDataSourceHasBeenSet = false;
+  bool m_jiraDataSourceHasBeenSet = false;
+  bool m_createJiraDataSourceHasBeenSet = false;
+  bool m_updateJiraDataSourceHasBeenSet = false;
+  bool m_shareJiraDataSourceHasBeenSet = false;
+  bool m_serviceNowDataSourceHasBeenSet = false;
+  bool m_createServiceNowDataSourceHasBeenSet = false;
+  bool m_updateServiceNowDataSourceHasBeenSet = false;
+  bool m_shareServiceNowDataSourceHasBeenSet = false;
+  bool m_adobeAnalyticsDataSourceHasBeenSet = false;
+  bool m_createAdobeAnalyticsDataSourceHasBeenSet = false;
+  bool m_updateAdobeAnalyticsDataSourceHasBeenSet = false;
+  bool m_shareAdobeAnalyticsDataSourceHasBeenSet = false;
+  bool m_googleAnalyticsDataSourceHasBeenSet = false;
+  bool m_createGoogleAnalyticsDataSourceHasBeenSet = false;
+  bool m_updateGoogleAnalyticsDataSourceHasBeenSet = false;
+  bool m_shareGoogleAnalyticsDataSourceHasBeenSet = false;
+  bool m_googleSheetsDataSourceHasBeenSet = false;
+  bool m_createGoogleSheetsDataSourceHasBeenSet = false;
+  bool m_updateGoogleSheetsDataSourceHasBeenSet = false;
+  bool m_shareGoogleSheetsDataSourceHasBeenSet = false;
+  bool m_documentDbDataSourceHasBeenSet = false;
+  bool m_createDocumentDbDataSourceHasBeenSet = false;
+  bool m_updateDocumentDbDataSourceHasBeenSet = false;
+  bool m_shareDocumentDbDataSourceHasBeenSet = false;
+  bool m_mongoDbDataSourceHasBeenSet = false;
+  bool m_createMongoDbDataSourceHasBeenSet = false;
+  bool m_updateMongoDbDataSourceHasBeenSet = false;
+  bool m_shareMongoDbDataSourceHasBeenSet = false;
+  bool m_mongoAtlasDataSourceHasBeenSet = false;
+  bool m_createMongoAtlasDataSourceHasBeenSet = false;
+  bool m_updateMongoAtlasDataSourceHasBeenSet = false;
+  bool m_shareMongoAtlasDataSourceHasBeenSet = false;
+  bool m_dynamoDbDataSourceHasBeenSet = false;
+  bool m_createDynamoDbDataSourceHasBeenSet = false;
+  bool m_updateDynamoDbDataSourceHasBeenSet = false;
+  bool m_shareDynamoDbDataSourceHasBeenSet = false;
 };
 
 }  // namespace Model

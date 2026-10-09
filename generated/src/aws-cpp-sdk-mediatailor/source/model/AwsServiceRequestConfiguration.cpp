@@ -52,6 +52,10 @@ AwsServiceRequestConfiguration& AwsServiceRequestConfiguration::operator=(JsonVi
     }
     m_headersHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Cache")) {
+    m_cache = jsonValue.GetObject("Cache");
+    m_cacheHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("TargetService")) {
     m_targetService = jsonValue.GetString("TargetService");
     m_targetServiceHasBeenSet = true;
@@ -100,6 +104,10 @@ JsonValue AwsServiceRequestConfiguration::Jsonize() const {
       headersJsonMap.WithString(headersItem.first, headersItem.second);
     }
     payload.WithObject("Headers", std::move(headersJsonMap));
+  }
+
+  if (m_cacheHasBeenSet) {
+    payload.WithObject("Cache", m_cache.Jsonize());
   }
 
   if (m_targetServiceHasBeenSet) {

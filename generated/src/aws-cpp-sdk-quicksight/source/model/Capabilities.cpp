@@ -1554,6 +1554,22 @@ Capabilities& Capabilities::operator=(JsonView jsonValue) {
     m_useBeeAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UseBeeAction"));
     m_useBeeActionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("GongAction")) {
+    m_gongAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("GongAction"));
+    m_gongActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateAndUpdateGongAction")) {
+    m_createAndUpdateGongAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateAndUpdateGongAction"));
+    m_createAndUpdateGongActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareGongAction")) {
+    m_shareGongAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareGongAction"));
+    m_shareGongActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UseGongAction")) {
+    m_useGongAction = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UseGongAction"));
+    m_useGongActionHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Topic")) {
     m_topic = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("Topic"));
     m_topicHasBeenSet = true;
@@ -1658,6 +1674,742 @@ Capabilities& Capabilities::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("QuickEventTrigger")) {
     m_quickEventTrigger = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("QuickEventTrigger"));
     m_quickEventTriggerHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("FileDataSource")) {
+    m_fileDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("FileDataSource"));
+    m_fileDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateFileDataSource")) {
+    m_createFileDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateFileDataSource"));
+    m_createFileDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdateFileDataSource")) {
+    m_updateFileDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UpdateFileDataSource"));
+    m_updateFileDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareFileDataSource")) {
+    m_shareFileDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareFileDataSource"));
+    m_shareFileDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("S3DataSource")) {
+    m_s3DataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("S3DataSource"));
+    m_s3DataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateS3DataSource")) {
+    m_createS3DataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateS3DataSource"));
+    m_createS3DataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdateS3DataSource")) {
+    m_updateS3DataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UpdateS3DataSource"));
+    m_updateS3DataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareS3DataSource")) {
+    m_shareS3DataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareS3DataSource"));
+    m_shareS3DataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("S3AnalyticsDataSource")) {
+    m_s3AnalyticsDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("S3AnalyticsDataSource"));
+    m_s3AnalyticsDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateS3AnalyticsDataSource")) {
+    m_createS3AnalyticsDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateS3AnalyticsDataSource"));
+    m_createS3AnalyticsDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdateS3AnalyticsDataSource")) {
+    m_updateS3AnalyticsDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UpdateS3AnalyticsDataSource"));
+    m_updateS3AnalyticsDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareS3AnalyticsDataSource")) {
+    m_shareS3AnalyticsDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareS3AnalyticsDataSource"));
+    m_shareS3AnalyticsDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("S3TablesDataSource")) {
+    m_s3TablesDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("S3TablesDataSource"));
+    m_s3TablesDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateS3TablesDataSource")) {
+    m_createS3TablesDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateS3TablesDataSource"));
+    m_createS3TablesDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdateS3TablesDataSource")) {
+    m_updateS3TablesDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UpdateS3TablesDataSource"));
+    m_updateS3TablesDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareS3TablesDataSource")) {
+    m_shareS3TablesDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareS3TablesDataSource"));
+    m_shareS3TablesDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("AthenaDataSource")) {
+    m_athenaDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("AthenaDataSource"));
+    m_athenaDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateAthenaDataSource")) {
+    m_createAthenaDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateAthenaDataSource"));
+    m_createAthenaDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdateAthenaDataSource")) {
+    m_updateAthenaDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UpdateAthenaDataSource"));
+    m_updateAthenaDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareAthenaDataSource")) {
+    m_shareAthenaDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareAthenaDataSource"));
+    m_shareAthenaDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("RdsDataSource")) {
+    m_rdsDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("RdsDataSource"));
+    m_rdsDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateRdsDataSource")) {
+    m_createRdsDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateRdsDataSource"));
+    m_createRdsDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdateRdsDataSource")) {
+    m_updateRdsDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UpdateRdsDataSource"));
+    m_updateRdsDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareRdsDataSource")) {
+    m_shareRdsDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareRdsDataSource"));
+    m_shareRdsDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("RedshiftAutoDiscoveredDataSource")) {
+    m_redshiftAutoDiscoveredDataSource =
+        CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("RedshiftAutoDiscoveredDataSource"));
+    m_redshiftAutoDiscoveredDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateRedshiftAutoDiscoveredDataSource")) {
+    m_createRedshiftAutoDiscoveredDataSource =
+        CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateRedshiftAutoDiscoveredDataSource"));
+    m_createRedshiftAutoDiscoveredDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdateRedshiftAutoDiscoveredDataSource")) {
+    m_updateRedshiftAutoDiscoveredDataSource =
+        CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UpdateRedshiftAutoDiscoveredDataSource"));
+    m_updateRedshiftAutoDiscoveredDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareRedshiftAutoDiscoveredDataSource")) {
+    m_shareRedshiftAutoDiscoveredDataSource =
+        CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareRedshiftAutoDiscoveredDataSource"));
+    m_shareRedshiftAutoDiscoveredDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("RedshiftManualDataSource")) {
+    m_redshiftManualDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("RedshiftManualDataSource"));
+    m_redshiftManualDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateRedshiftManualDataSource")) {
+    m_createRedshiftManualDataSource =
+        CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateRedshiftManualDataSource"));
+    m_createRedshiftManualDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdateRedshiftManualDataSource")) {
+    m_updateRedshiftManualDataSource =
+        CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UpdateRedshiftManualDataSource"));
+    m_updateRedshiftManualDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareRedshiftManualDataSource")) {
+    m_shareRedshiftManualDataSource =
+        CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareRedshiftManualDataSource"));
+    m_shareRedshiftManualDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("OpenSearchDataSource")) {
+    m_openSearchDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("OpenSearchDataSource"));
+    m_openSearchDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateOpenSearchDataSource")) {
+    m_createOpenSearchDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateOpenSearchDataSource"));
+    m_createOpenSearchDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdateOpenSearchDataSource")) {
+    m_updateOpenSearchDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UpdateOpenSearchDataSource"));
+    m_updateOpenSearchDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareOpenSearchDataSource")) {
+    m_shareOpenSearchDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareOpenSearchDataSource"));
+    m_shareOpenSearchDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("TimestreamDataSource")) {
+    m_timestreamDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("TimestreamDataSource"));
+    m_timestreamDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateTimestreamDataSource")) {
+    m_createTimestreamDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateTimestreamDataSource"));
+    m_createTimestreamDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdateTimestreamDataSource")) {
+    m_updateTimestreamDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UpdateTimestreamDataSource"));
+    m_updateTimestreamDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareTimestreamDataSource")) {
+    m_shareTimestreamDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareTimestreamDataSource"));
+    m_shareTimestreamDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("AuroraDataSource")) {
+    m_auroraDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("AuroraDataSource"));
+    m_auroraDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateAuroraDataSource")) {
+    m_createAuroraDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateAuroraDataSource"));
+    m_createAuroraDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdateAuroraDataSource")) {
+    m_updateAuroraDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UpdateAuroraDataSource"));
+    m_updateAuroraDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareAuroraDataSource")) {
+    m_shareAuroraDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareAuroraDataSource"));
+    m_shareAuroraDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("MySqlDataSource")) {
+    m_mySqlDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("MySqlDataSource"));
+    m_mySqlDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateMySqlDataSource")) {
+    m_createMySqlDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateMySqlDataSource"));
+    m_createMySqlDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdateMySqlDataSource")) {
+    m_updateMySqlDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UpdateMySqlDataSource"));
+    m_updateMySqlDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareMySqlDataSource")) {
+    m_shareMySqlDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareMySqlDataSource"));
+    m_shareMySqlDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("PostgreSqlDataSource")) {
+    m_postgreSqlDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("PostgreSqlDataSource"));
+    m_postgreSqlDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreatePostgreSqlDataSource")) {
+    m_createPostgreSqlDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreatePostgreSqlDataSource"));
+    m_createPostgreSqlDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdatePostgreSqlDataSource")) {
+    m_updatePostgreSqlDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UpdatePostgreSqlDataSource"));
+    m_updatePostgreSqlDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("SharePostgreSqlDataSource")) {
+    m_sharePostgreSqlDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("SharePostgreSqlDataSource"));
+    m_sharePostgreSqlDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("OracleDataSource")) {
+    m_oracleDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("OracleDataSource"));
+    m_oracleDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateOracleDataSource")) {
+    m_createOracleDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateOracleDataSource"));
+    m_createOracleDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdateOracleDataSource")) {
+    m_updateOracleDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UpdateOracleDataSource"));
+    m_updateOracleDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareOracleDataSource")) {
+    m_shareOracleDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareOracleDataSource"));
+    m_shareOracleDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("SqlServerDataSource")) {
+    m_sqlServerDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("SqlServerDataSource"));
+    m_sqlServerDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateSqlServerDataSource")) {
+    m_createSqlServerDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateSqlServerDataSource"));
+    m_createSqlServerDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdateSqlServerDataSource")) {
+    m_updateSqlServerDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UpdateSqlServerDataSource"));
+    m_updateSqlServerDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareSqlServerDataSource")) {
+    m_shareSqlServerDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareSqlServerDataSource"));
+    m_shareSqlServerDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("MariaDbDataSource")) {
+    m_mariaDbDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("MariaDbDataSource"));
+    m_mariaDbDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateMariaDbDataSource")) {
+    m_createMariaDbDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateMariaDbDataSource"));
+    m_createMariaDbDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdateMariaDbDataSource")) {
+    m_updateMariaDbDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UpdateMariaDbDataSource"));
+    m_updateMariaDbDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareMariaDbDataSource")) {
+    m_shareMariaDbDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareMariaDbDataSource"));
+    m_shareMariaDbDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("SnowflakeDataSource")) {
+    m_snowflakeDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("SnowflakeDataSource"));
+    m_snowflakeDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateSnowflakeDataSource")) {
+    m_createSnowflakeDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateSnowflakeDataSource"));
+    m_createSnowflakeDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdateSnowflakeDataSource")) {
+    m_updateSnowflakeDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UpdateSnowflakeDataSource"));
+    m_updateSnowflakeDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareSnowflakeDataSource")) {
+    m_shareSnowflakeDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareSnowflakeDataSource"));
+    m_shareSnowflakeDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("GoogleBigQueryDataSource")) {
+    m_googleBigQueryDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("GoogleBigQueryDataSource"));
+    m_googleBigQueryDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateGoogleBigQueryDataSource")) {
+    m_createGoogleBigQueryDataSource =
+        CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateGoogleBigQueryDataSource"));
+    m_createGoogleBigQueryDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdateGoogleBigQueryDataSource")) {
+    m_updateGoogleBigQueryDataSource =
+        CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UpdateGoogleBigQueryDataSource"));
+    m_updateGoogleBigQueryDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareGoogleBigQueryDataSource")) {
+    m_shareGoogleBigQueryDataSource =
+        CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareGoogleBigQueryDataSource"));
+    m_shareGoogleBigQueryDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("DatabricksDataSource")) {
+    m_databricksDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("DatabricksDataSource"));
+    m_databricksDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateDatabricksDataSource")) {
+    m_createDatabricksDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateDatabricksDataSource"));
+    m_createDatabricksDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdateDatabricksDataSource")) {
+    m_updateDatabricksDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UpdateDatabricksDataSource"));
+    m_updateDatabricksDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareDatabricksDataSource")) {
+    m_shareDatabricksDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareDatabricksDataSource"));
+    m_shareDatabricksDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("StarburstDataSource")) {
+    m_starburstDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("StarburstDataSource"));
+    m_starburstDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateStarburstDataSource")) {
+    m_createStarburstDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateStarburstDataSource"));
+    m_createStarburstDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdateStarburstDataSource")) {
+    m_updateStarburstDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UpdateStarburstDataSource"));
+    m_updateStarburstDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareStarburstDataSource")) {
+    m_shareStarburstDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareStarburstDataSource"));
+    m_shareStarburstDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("TrinoDataSource")) {
+    m_trinoDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("TrinoDataSource"));
+    m_trinoDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateTrinoDataSource")) {
+    m_createTrinoDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateTrinoDataSource"));
+    m_createTrinoDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdateTrinoDataSource")) {
+    m_updateTrinoDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UpdateTrinoDataSource"));
+    m_updateTrinoDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareTrinoDataSource")) {
+    m_shareTrinoDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareTrinoDataSource"));
+    m_shareTrinoDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ImpalaDataSource")) {
+    m_impalaDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ImpalaDataSource"));
+    m_impalaDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateImpalaDataSource")) {
+    m_createImpalaDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateImpalaDataSource"));
+    m_createImpalaDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdateImpalaDataSource")) {
+    m_updateImpalaDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UpdateImpalaDataSource"));
+    m_updateImpalaDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareImpalaDataSource")) {
+    m_shareImpalaDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareImpalaDataSource"));
+    m_shareImpalaDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("TeradataDataSource")) {
+    m_teradataDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("TeradataDataSource"));
+    m_teradataDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateTeradataDataSource")) {
+    m_createTeradataDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateTeradataDataSource"));
+    m_createTeradataDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdateTeradataDataSource")) {
+    m_updateTeradataDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UpdateTeradataDataSource"));
+    m_updateTeradataDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareTeradataDataSource")) {
+    m_shareTeradataDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareTeradataDataSource"));
+    m_shareTeradataDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("PrestoDataSource")) {
+    m_prestoDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("PrestoDataSource"));
+    m_prestoDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreatePrestoDataSource")) {
+    m_createPrestoDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreatePrestoDataSource"));
+    m_createPrestoDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdatePrestoDataSource")) {
+    m_updatePrestoDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UpdatePrestoDataSource"));
+    m_updatePrestoDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("SharePrestoDataSource")) {
+    m_sharePrestoDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("SharePrestoDataSource"));
+    m_sharePrestoDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("SparkDataSource")) {
+    m_sparkDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("SparkDataSource"));
+    m_sparkDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateSparkDataSource")) {
+    m_createSparkDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateSparkDataSource"));
+    m_createSparkDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdateSparkDataSource")) {
+    m_updateSparkDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UpdateSparkDataSource"));
+    m_updateSparkDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareSparkDataSource")) {
+    m_shareSparkDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareSparkDataSource"));
+    m_shareSparkDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ExasolDataSource")) {
+    m_exasolDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ExasolDataSource"));
+    m_exasolDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateExasolDataSource")) {
+    m_createExasolDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateExasolDataSource"));
+    m_createExasolDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdateExasolDataSource")) {
+    m_updateExasolDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UpdateExasolDataSource"));
+    m_updateExasolDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareExasolDataSource")) {
+    m_shareExasolDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareExasolDataSource"));
+    m_shareExasolDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Db2DataSource")) {
+    m_db2DataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("Db2DataSource"));
+    m_db2DataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateDb2DataSource")) {
+    m_createDb2DataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateDb2DataSource"));
+    m_createDb2DataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdateDb2DataSource")) {
+    m_updateDb2DataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UpdateDb2DataSource"));
+    m_updateDb2DataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareDb2DataSource")) {
+    m_shareDb2DataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareDb2DataSource"));
+    m_shareDb2DataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("SapHanaDataSource")) {
+    m_sapHanaDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("SapHanaDataSource"));
+    m_sapHanaDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateSapHanaDataSource")) {
+    m_createSapHanaDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateSapHanaDataSource"));
+    m_createSapHanaDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdateSapHanaDataSource")) {
+    m_updateSapHanaDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UpdateSapHanaDataSource"));
+    m_updateSapHanaDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareSapHanaDataSource")) {
+    m_shareSapHanaDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareSapHanaDataSource"));
+    m_shareSapHanaDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("DenodoDataSource")) {
+    m_denodoDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("DenodoDataSource"));
+    m_denodoDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateDenodoDataSource")) {
+    m_createDenodoDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateDenodoDataSource"));
+    m_createDenodoDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdateDenodoDataSource")) {
+    m_updateDenodoDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UpdateDenodoDataSource"));
+    m_updateDenodoDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareDenodoDataSource")) {
+    m_shareDenodoDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareDenodoDataSource"));
+    m_shareDenodoDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("DremioDataSource")) {
+    m_dremioDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("DremioDataSource"));
+    m_dremioDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateDremioDataSource")) {
+    m_createDremioDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateDremioDataSource"));
+    m_createDremioDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdateDremioDataSource")) {
+    m_updateDremioDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UpdateDremioDataSource"));
+    m_updateDremioDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareDremioDataSource")) {
+    m_shareDremioDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareDremioDataSource"));
+    m_shareDremioDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("SalesforceDataSource")) {
+    m_salesforceDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("SalesforceDataSource"));
+    m_salesforceDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateSalesforceDataSource")) {
+    m_createSalesforceDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateSalesforceDataSource"));
+    m_createSalesforceDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdateSalesforceDataSource")) {
+    m_updateSalesforceDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UpdateSalesforceDataSource"));
+    m_updateSalesforceDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareSalesforceDataSource")) {
+    m_shareSalesforceDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareSalesforceDataSource"));
+    m_shareSalesforceDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("RadiantDataSource")) {
+    m_radiantDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("RadiantDataSource"));
+    m_radiantDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateRadiantDataSource")) {
+    m_createRadiantDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateRadiantDataSource"));
+    m_createRadiantDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdateRadiantDataSource")) {
+    m_updateRadiantDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UpdateRadiantDataSource"));
+    m_updateRadiantDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareRadiantDataSource")) {
+    m_shareRadiantDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareRadiantDataSource"));
+    m_shareRadiantDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("PayPalDataSource")) {
+    m_payPalDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("PayPalDataSource"));
+    m_payPalDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreatePayPalDataSource")) {
+    m_createPayPalDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreatePayPalDataSource"));
+    m_createPayPalDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdatePayPalDataSource")) {
+    m_updatePayPalDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UpdatePayPalDataSource"));
+    m_updatePayPalDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("SharePayPalDataSource")) {
+    m_sharePayPalDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("SharePayPalDataSource"));
+    m_sharePayPalDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("SquareDataSource")) {
+    m_squareDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("SquareDataSource"));
+    m_squareDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateSquareDataSource")) {
+    m_createSquareDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateSquareDataSource"));
+    m_createSquareDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdateSquareDataSource")) {
+    m_updateSquareDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UpdateSquareDataSource"));
+    m_updateSquareDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareSquareDataSource")) {
+    m_shareSquareDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareSquareDataSource"));
+    m_shareSquareDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("GitHubDataSource")) {
+    m_gitHubDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("GitHubDataSource"));
+    m_gitHubDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateGitHubDataSource")) {
+    m_createGitHubDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateGitHubDataSource"));
+    m_createGitHubDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdateGitHubDataSource")) {
+    m_updateGitHubDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UpdateGitHubDataSource"));
+    m_updateGitHubDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareGitHubDataSource")) {
+    m_shareGitHubDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareGitHubDataSource"));
+    m_shareGitHubDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("TwitterDataSource")) {
+    m_twitterDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("TwitterDataSource"));
+    m_twitterDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateTwitterDataSource")) {
+    m_createTwitterDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateTwitterDataSource"));
+    m_createTwitterDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdateTwitterDataSource")) {
+    m_updateTwitterDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UpdateTwitterDataSource"));
+    m_updateTwitterDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareTwitterDataSource")) {
+    m_shareTwitterDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareTwitterDataSource"));
+    m_shareTwitterDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("JiraDataSource")) {
+    m_jiraDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("JiraDataSource"));
+    m_jiraDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateJiraDataSource")) {
+    m_createJiraDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateJiraDataSource"));
+    m_createJiraDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdateJiraDataSource")) {
+    m_updateJiraDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UpdateJiraDataSource"));
+    m_updateJiraDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareJiraDataSource")) {
+    m_shareJiraDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareJiraDataSource"));
+    m_shareJiraDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ServiceNowDataSource")) {
+    m_serviceNowDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ServiceNowDataSource"));
+    m_serviceNowDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateServiceNowDataSource")) {
+    m_createServiceNowDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateServiceNowDataSource"));
+    m_createServiceNowDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdateServiceNowDataSource")) {
+    m_updateServiceNowDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UpdateServiceNowDataSource"));
+    m_updateServiceNowDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareServiceNowDataSource")) {
+    m_shareServiceNowDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareServiceNowDataSource"));
+    m_shareServiceNowDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("AdobeAnalyticsDataSource")) {
+    m_adobeAnalyticsDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("AdobeAnalyticsDataSource"));
+    m_adobeAnalyticsDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateAdobeAnalyticsDataSource")) {
+    m_createAdobeAnalyticsDataSource =
+        CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateAdobeAnalyticsDataSource"));
+    m_createAdobeAnalyticsDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdateAdobeAnalyticsDataSource")) {
+    m_updateAdobeAnalyticsDataSource =
+        CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UpdateAdobeAnalyticsDataSource"));
+    m_updateAdobeAnalyticsDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareAdobeAnalyticsDataSource")) {
+    m_shareAdobeAnalyticsDataSource =
+        CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareAdobeAnalyticsDataSource"));
+    m_shareAdobeAnalyticsDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("GoogleAnalyticsDataSource")) {
+    m_googleAnalyticsDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("GoogleAnalyticsDataSource"));
+    m_googleAnalyticsDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateGoogleAnalyticsDataSource")) {
+    m_createGoogleAnalyticsDataSource =
+        CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateGoogleAnalyticsDataSource"));
+    m_createGoogleAnalyticsDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdateGoogleAnalyticsDataSource")) {
+    m_updateGoogleAnalyticsDataSource =
+        CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UpdateGoogleAnalyticsDataSource"));
+    m_updateGoogleAnalyticsDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareGoogleAnalyticsDataSource")) {
+    m_shareGoogleAnalyticsDataSource =
+        CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareGoogleAnalyticsDataSource"));
+    m_shareGoogleAnalyticsDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("GoogleSheetsDataSource")) {
+    m_googleSheetsDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("GoogleSheetsDataSource"));
+    m_googleSheetsDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateGoogleSheetsDataSource")) {
+    m_createGoogleSheetsDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateGoogleSheetsDataSource"));
+    m_createGoogleSheetsDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdateGoogleSheetsDataSource")) {
+    m_updateGoogleSheetsDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UpdateGoogleSheetsDataSource"));
+    m_updateGoogleSheetsDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareGoogleSheetsDataSource")) {
+    m_shareGoogleSheetsDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareGoogleSheetsDataSource"));
+    m_shareGoogleSheetsDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("DocumentDbDataSource")) {
+    m_documentDbDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("DocumentDbDataSource"));
+    m_documentDbDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateDocumentDbDataSource")) {
+    m_createDocumentDbDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateDocumentDbDataSource"));
+    m_createDocumentDbDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdateDocumentDbDataSource")) {
+    m_updateDocumentDbDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UpdateDocumentDbDataSource"));
+    m_updateDocumentDbDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareDocumentDbDataSource")) {
+    m_shareDocumentDbDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareDocumentDbDataSource"));
+    m_shareDocumentDbDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("MongoDbDataSource")) {
+    m_mongoDbDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("MongoDbDataSource"));
+    m_mongoDbDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateMongoDbDataSource")) {
+    m_createMongoDbDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateMongoDbDataSource"));
+    m_createMongoDbDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdateMongoDbDataSource")) {
+    m_updateMongoDbDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UpdateMongoDbDataSource"));
+    m_updateMongoDbDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareMongoDbDataSource")) {
+    m_shareMongoDbDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareMongoDbDataSource"));
+    m_shareMongoDbDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("MongoAtlasDataSource")) {
+    m_mongoAtlasDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("MongoAtlasDataSource"));
+    m_mongoAtlasDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateMongoAtlasDataSource")) {
+    m_createMongoAtlasDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateMongoAtlasDataSource"));
+    m_createMongoAtlasDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdateMongoAtlasDataSource")) {
+    m_updateMongoAtlasDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UpdateMongoAtlasDataSource"));
+    m_updateMongoAtlasDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareMongoAtlasDataSource")) {
+    m_shareMongoAtlasDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareMongoAtlasDataSource"));
+    m_shareMongoAtlasDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("DynamoDbDataSource")) {
+    m_dynamoDbDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("DynamoDbDataSource"));
+    m_dynamoDbDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreateDynamoDbDataSource")) {
+    m_createDynamoDbDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("CreateDynamoDbDataSource"));
+    m_createDynamoDbDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpdateDynamoDbDataSource")) {
+    m_updateDynamoDbDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("UpdateDynamoDbDataSource"));
+    m_updateDynamoDbDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShareDynamoDbDataSource")) {
+    m_shareDynamoDbDataSource = CapabilityStateMapper::GetCapabilityStateForName(jsonValue.GetString("ShareDynamoDbDataSource"));
+    m_shareDynamoDbDataSourceHasBeenSet = true;
   }
   return *this;
 }
@@ -3183,6 +3935,22 @@ JsonValue Capabilities::Jsonize() const {
     payload.WithString("UseBeeAction", CapabilityStateMapper::GetNameForCapabilityState(m_useBeeAction));
   }
 
+  if (m_gongActionHasBeenSet) {
+    payload.WithString("GongAction", CapabilityStateMapper::GetNameForCapabilityState(m_gongAction));
+  }
+
+  if (m_createAndUpdateGongActionHasBeenSet) {
+    payload.WithString("CreateAndUpdateGongAction", CapabilityStateMapper::GetNameForCapabilityState(m_createAndUpdateGongAction));
+  }
+
+  if (m_shareGongActionHasBeenSet) {
+    payload.WithString("ShareGongAction", CapabilityStateMapper::GetNameForCapabilityState(m_shareGongAction));
+  }
+
+  if (m_useGongActionHasBeenSet) {
+    payload.WithString("UseGongAction", CapabilityStateMapper::GetNameForCapabilityState(m_useGongAction));
+  }
+
   if (m_topicHasBeenSet) {
     payload.WithString("Topic", CapabilityStateMapper::GetNameForCapabilityState(m_topic));
   }
@@ -3286,6 +4054,739 @@ JsonValue Capabilities::Jsonize() const {
 
   if (m_quickEventTriggerHasBeenSet) {
     payload.WithString("QuickEventTrigger", CapabilityStateMapper::GetNameForCapabilityState(m_quickEventTrigger));
+  }
+
+  if (m_fileDataSourceHasBeenSet) {
+    payload.WithString("FileDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_fileDataSource));
+  }
+
+  if (m_createFileDataSourceHasBeenSet) {
+    payload.WithString("CreateFileDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_createFileDataSource));
+  }
+
+  if (m_updateFileDataSourceHasBeenSet) {
+    payload.WithString("UpdateFileDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_updateFileDataSource));
+  }
+
+  if (m_shareFileDataSourceHasBeenSet) {
+    payload.WithString("ShareFileDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_shareFileDataSource));
+  }
+
+  if (m_s3DataSourceHasBeenSet) {
+    payload.WithString("S3DataSource", CapabilityStateMapper::GetNameForCapabilityState(m_s3DataSource));
+  }
+
+  if (m_createS3DataSourceHasBeenSet) {
+    payload.WithString("CreateS3DataSource", CapabilityStateMapper::GetNameForCapabilityState(m_createS3DataSource));
+  }
+
+  if (m_updateS3DataSourceHasBeenSet) {
+    payload.WithString("UpdateS3DataSource", CapabilityStateMapper::GetNameForCapabilityState(m_updateS3DataSource));
+  }
+
+  if (m_shareS3DataSourceHasBeenSet) {
+    payload.WithString("ShareS3DataSource", CapabilityStateMapper::GetNameForCapabilityState(m_shareS3DataSource));
+  }
+
+  if (m_s3AnalyticsDataSourceHasBeenSet) {
+    payload.WithString("S3AnalyticsDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_s3AnalyticsDataSource));
+  }
+
+  if (m_createS3AnalyticsDataSourceHasBeenSet) {
+    payload.WithString("CreateS3AnalyticsDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_createS3AnalyticsDataSource));
+  }
+
+  if (m_updateS3AnalyticsDataSourceHasBeenSet) {
+    payload.WithString("UpdateS3AnalyticsDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_updateS3AnalyticsDataSource));
+  }
+
+  if (m_shareS3AnalyticsDataSourceHasBeenSet) {
+    payload.WithString("ShareS3AnalyticsDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_shareS3AnalyticsDataSource));
+  }
+
+  if (m_s3TablesDataSourceHasBeenSet) {
+    payload.WithString("S3TablesDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_s3TablesDataSource));
+  }
+
+  if (m_createS3TablesDataSourceHasBeenSet) {
+    payload.WithString("CreateS3TablesDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_createS3TablesDataSource));
+  }
+
+  if (m_updateS3TablesDataSourceHasBeenSet) {
+    payload.WithString("UpdateS3TablesDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_updateS3TablesDataSource));
+  }
+
+  if (m_shareS3TablesDataSourceHasBeenSet) {
+    payload.WithString("ShareS3TablesDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_shareS3TablesDataSource));
+  }
+
+  if (m_athenaDataSourceHasBeenSet) {
+    payload.WithString("AthenaDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_athenaDataSource));
+  }
+
+  if (m_createAthenaDataSourceHasBeenSet) {
+    payload.WithString("CreateAthenaDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_createAthenaDataSource));
+  }
+
+  if (m_updateAthenaDataSourceHasBeenSet) {
+    payload.WithString("UpdateAthenaDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_updateAthenaDataSource));
+  }
+
+  if (m_shareAthenaDataSourceHasBeenSet) {
+    payload.WithString("ShareAthenaDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_shareAthenaDataSource));
+  }
+
+  if (m_rdsDataSourceHasBeenSet) {
+    payload.WithString("RdsDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_rdsDataSource));
+  }
+
+  if (m_createRdsDataSourceHasBeenSet) {
+    payload.WithString("CreateRdsDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_createRdsDataSource));
+  }
+
+  if (m_updateRdsDataSourceHasBeenSet) {
+    payload.WithString("UpdateRdsDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_updateRdsDataSource));
+  }
+
+  if (m_shareRdsDataSourceHasBeenSet) {
+    payload.WithString("ShareRdsDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_shareRdsDataSource));
+  }
+
+  if (m_redshiftAutoDiscoveredDataSourceHasBeenSet) {
+    payload.WithString("RedshiftAutoDiscoveredDataSource",
+                       CapabilityStateMapper::GetNameForCapabilityState(m_redshiftAutoDiscoveredDataSource));
+  }
+
+  if (m_createRedshiftAutoDiscoveredDataSourceHasBeenSet) {
+    payload.WithString("CreateRedshiftAutoDiscoveredDataSource",
+                       CapabilityStateMapper::GetNameForCapabilityState(m_createRedshiftAutoDiscoveredDataSource));
+  }
+
+  if (m_updateRedshiftAutoDiscoveredDataSourceHasBeenSet) {
+    payload.WithString("UpdateRedshiftAutoDiscoveredDataSource",
+                       CapabilityStateMapper::GetNameForCapabilityState(m_updateRedshiftAutoDiscoveredDataSource));
+  }
+
+  if (m_shareRedshiftAutoDiscoveredDataSourceHasBeenSet) {
+    payload.WithString("ShareRedshiftAutoDiscoveredDataSource",
+                       CapabilityStateMapper::GetNameForCapabilityState(m_shareRedshiftAutoDiscoveredDataSource));
+  }
+
+  if (m_redshiftManualDataSourceHasBeenSet) {
+    payload.WithString("RedshiftManualDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_redshiftManualDataSource));
+  }
+
+  if (m_createRedshiftManualDataSourceHasBeenSet) {
+    payload.WithString("CreateRedshiftManualDataSource",
+                       CapabilityStateMapper::GetNameForCapabilityState(m_createRedshiftManualDataSource));
+  }
+
+  if (m_updateRedshiftManualDataSourceHasBeenSet) {
+    payload.WithString("UpdateRedshiftManualDataSource",
+                       CapabilityStateMapper::GetNameForCapabilityState(m_updateRedshiftManualDataSource));
+  }
+
+  if (m_shareRedshiftManualDataSourceHasBeenSet) {
+    payload.WithString("ShareRedshiftManualDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_shareRedshiftManualDataSource));
+  }
+
+  if (m_openSearchDataSourceHasBeenSet) {
+    payload.WithString("OpenSearchDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_openSearchDataSource));
+  }
+
+  if (m_createOpenSearchDataSourceHasBeenSet) {
+    payload.WithString("CreateOpenSearchDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_createOpenSearchDataSource));
+  }
+
+  if (m_updateOpenSearchDataSourceHasBeenSet) {
+    payload.WithString("UpdateOpenSearchDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_updateOpenSearchDataSource));
+  }
+
+  if (m_shareOpenSearchDataSourceHasBeenSet) {
+    payload.WithString("ShareOpenSearchDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_shareOpenSearchDataSource));
+  }
+
+  if (m_timestreamDataSourceHasBeenSet) {
+    payload.WithString("TimestreamDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_timestreamDataSource));
+  }
+
+  if (m_createTimestreamDataSourceHasBeenSet) {
+    payload.WithString("CreateTimestreamDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_createTimestreamDataSource));
+  }
+
+  if (m_updateTimestreamDataSourceHasBeenSet) {
+    payload.WithString("UpdateTimestreamDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_updateTimestreamDataSource));
+  }
+
+  if (m_shareTimestreamDataSourceHasBeenSet) {
+    payload.WithString("ShareTimestreamDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_shareTimestreamDataSource));
+  }
+
+  if (m_auroraDataSourceHasBeenSet) {
+    payload.WithString("AuroraDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_auroraDataSource));
+  }
+
+  if (m_createAuroraDataSourceHasBeenSet) {
+    payload.WithString("CreateAuroraDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_createAuroraDataSource));
+  }
+
+  if (m_updateAuroraDataSourceHasBeenSet) {
+    payload.WithString("UpdateAuroraDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_updateAuroraDataSource));
+  }
+
+  if (m_shareAuroraDataSourceHasBeenSet) {
+    payload.WithString("ShareAuroraDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_shareAuroraDataSource));
+  }
+
+  if (m_mySqlDataSourceHasBeenSet) {
+    payload.WithString("MySqlDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_mySqlDataSource));
+  }
+
+  if (m_createMySqlDataSourceHasBeenSet) {
+    payload.WithString("CreateMySqlDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_createMySqlDataSource));
+  }
+
+  if (m_updateMySqlDataSourceHasBeenSet) {
+    payload.WithString("UpdateMySqlDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_updateMySqlDataSource));
+  }
+
+  if (m_shareMySqlDataSourceHasBeenSet) {
+    payload.WithString("ShareMySqlDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_shareMySqlDataSource));
+  }
+
+  if (m_postgreSqlDataSourceHasBeenSet) {
+    payload.WithString("PostgreSqlDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_postgreSqlDataSource));
+  }
+
+  if (m_createPostgreSqlDataSourceHasBeenSet) {
+    payload.WithString("CreatePostgreSqlDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_createPostgreSqlDataSource));
+  }
+
+  if (m_updatePostgreSqlDataSourceHasBeenSet) {
+    payload.WithString("UpdatePostgreSqlDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_updatePostgreSqlDataSource));
+  }
+
+  if (m_sharePostgreSqlDataSourceHasBeenSet) {
+    payload.WithString("SharePostgreSqlDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_sharePostgreSqlDataSource));
+  }
+
+  if (m_oracleDataSourceHasBeenSet) {
+    payload.WithString("OracleDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_oracleDataSource));
+  }
+
+  if (m_createOracleDataSourceHasBeenSet) {
+    payload.WithString("CreateOracleDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_createOracleDataSource));
+  }
+
+  if (m_updateOracleDataSourceHasBeenSet) {
+    payload.WithString("UpdateOracleDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_updateOracleDataSource));
+  }
+
+  if (m_shareOracleDataSourceHasBeenSet) {
+    payload.WithString("ShareOracleDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_shareOracleDataSource));
+  }
+
+  if (m_sqlServerDataSourceHasBeenSet) {
+    payload.WithString("SqlServerDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_sqlServerDataSource));
+  }
+
+  if (m_createSqlServerDataSourceHasBeenSet) {
+    payload.WithString("CreateSqlServerDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_createSqlServerDataSource));
+  }
+
+  if (m_updateSqlServerDataSourceHasBeenSet) {
+    payload.WithString("UpdateSqlServerDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_updateSqlServerDataSource));
+  }
+
+  if (m_shareSqlServerDataSourceHasBeenSet) {
+    payload.WithString("ShareSqlServerDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_shareSqlServerDataSource));
+  }
+
+  if (m_mariaDbDataSourceHasBeenSet) {
+    payload.WithString("MariaDbDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_mariaDbDataSource));
+  }
+
+  if (m_createMariaDbDataSourceHasBeenSet) {
+    payload.WithString("CreateMariaDbDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_createMariaDbDataSource));
+  }
+
+  if (m_updateMariaDbDataSourceHasBeenSet) {
+    payload.WithString("UpdateMariaDbDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_updateMariaDbDataSource));
+  }
+
+  if (m_shareMariaDbDataSourceHasBeenSet) {
+    payload.WithString("ShareMariaDbDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_shareMariaDbDataSource));
+  }
+
+  if (m_snowflakeDataSourceHasBeenSet) {
+    payload.WithString("SnowflakeDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_snowflakeDataSource));
+  }
+
+  if (m_createSnowflakeDataSourceHasBeenSet) {
+    payload.WithString("CreateSnowflakeDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_createSnowflakeDataSource));
+  }
+
+  if (m_updateSnowflakeDataSourceHasBeenSet) {
+    payload.WithString("UpdateSnowflakeDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_updateSnowflakeDataSource));
+  }
+
+  if (m_shareSnowflakeDataSourceHasBeenSet) {
+    payload.WithString("ShareSnowflakeDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_shareSnowflakeDataSource));
+  }
+
+  if (m_googleBigQueryDataSourceHasBeenSet) {
+    payload.WithString("GoogleBigQueryDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_googleBigQueryDataSource));
+  }
+
+  if (m_createGoogleBigQueryDataSourceHasBeenSet) {
+    payload.WithString("CreateGoogleBigQueryDataSource",
+                       CapabilityStateMapper::GetNameForCapabilityState(m_createGoogleBigQueryDataSource));
+  }
+
+  if (m_updateGoogleBigQueryDataSourceHasBeenSet) {
+    payload.WithString("UpdateGoogleBigQueryDataSource",
+                       CapabilityStateMapper::GetNameForCapabilityState(m_updateGoogleBigQueryDataSource));
+  }
+
+  if (m_shareGoogleBigQueryDataSourceHasBeenSet) {
+    payload.WithString("ShareGoogleBigQueryDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_shareGoogleBigQueryDataSource));
+  }
+
+  if (m_databricksDataSourceHasBeenSet) {
+    payload.WithString("DatabricksDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_databricksDataSource));
+  }
+
+  if (m_createDatabricksDataSourceHasBeenSet) {
+    payload.WithString("CreateDatabricksDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_createDatabricksDataSource));
+  }
+
+  if (m_updateDatabricksDataSourceHasBeenSet) {
+    payload.WithString("UpdateDatabricksDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_updateDatabricksDataSource));
+  }
+
+  if (m_shareDatabricksDataSourceHasBeenSet) {
+    payload.WithString("ShareDatabricksDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_shareDatabricksDataSource));
+  }
+
+  if (m_starburstDataSourceHasBeenSet) {
+    payload.WithString("StarburstDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_starburstDataSource));
+  }
+
+  if (m_createStarburstDataSourceHasBeenSet) {
+    payload.WithString("CreateStarburstDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_createStarburstDataSource));
+  }
+
+  if (m_updateStarburstDataSourceHasBeenSet) {
+    payload.WithString("UpdateStarburstDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_updateStarburstDataSource));
+  }
+
+  if (m_shareStarburstDataSourceHasBeenSet) {
+    payload.WithString("ShareStarburstDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_shareStarburstDataSource));
+  }
+
+  if (m_trinoDataSourceHasBeenSet) {
+    payload.WithString("TrinoDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_trinoDataSource));
+  }
+
+  if (m_createTrinoDataSourceHasBeenSet) {
+    payload.WithString("CreateTrinoDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_createTrinoDataSource));
+  }
+
+  if (m_updateTrinoDataSourceHasBeenSet) {
+    payload.WithString("UpdateTrinoDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_updateTrinoDataSource));
+  }
+
+  if (m_shareTrinoDataSourceHasBeenSet) {
+    payload.WithString("ShareTrinoDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_shareTrinoDataSource));
+  }
+
+  if (m_impalaDataSourceHasBeenSet) {
+    payload.WithString("ImpalaDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_impalaDataSource));
+  }
+
+  if (m_createImpalaDataSourceHasBeenSet) {
+    payload.WithString("CreateImpalaDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_createImpalaDataSource));
+  }
+
+  if (m_updateImpalaDataSourceHasBeenSet) {
+    payload.WithString("UpdateImpalaDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_updateImpalaDataSource));
+  }
+
+  if (m_shareImpalaDataSourceHasBeenSet) {
+    payload.WithString("ShareImpalaDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_shareImpalaDataSource));
+  }
+
+  if (m_teradataDataSourceHasBeenSet) {
+    payload.WithString("TeradataDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_teradataDataSource));
+  }
+
+  if (m_createTeradataDataSourceHasBeenSet) {
+    payload.WithString("CreateTeradataDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_createTeradataDataSource));
+  }
+
+  if (m_updateTeradataDataSourceHasBeenSet) {
+    payload.WithString("UpdateTeradataDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_updateTeradataDataSource));
+  }
+
+  if (m_shareTeradataDataSourceHasBeenSet) {
+    payload.WithString("ShareTeradataDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_shareTeradataDataSource));
+  }
+
+  if (m_prestoDataSourceHasBeenSet) {
+    payload.WithString("PrestoDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_prestoDataSource));
+  }
+
+  if (m_createPrestoDataSourceHasBeenSet) {
+    payload.WithString("CreatePrestoDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_createPrestoDataSource));
+  }
+
+  if (m_updatePrestoDataSourceHasBeenSet) {
+    payload.WithString("UpdatePrestoDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_updatePrestoDataSource));
+  }
+
+  if (m_sharePrestoDataSourceHasBeenSet) {
+    payload.WithString("SharePrestoDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_sharePrestoDataSource));
+  }
+
+  if (m_sparkDataSourceHasBeenSet) {
+    payload.WithString("SparkDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_sparkDataSource));
+  }
+
+  if (m_createSparkDataSourceHasBeenSet) {
+    payload.WithString("CreateSparkDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_createSparkDataSource));
+  }
+
+  if (m_updateSparkDataSourceHasBeenSet) {
+    payload.WithString("UpdateSparkDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_updateSparkDataSource));
+  }
+
+  if (m_shareSparkDataSourceHasBeenSet) {
+    payload.WithString("ShareSparkDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_shareSparkDataSource));
+  }
+
+  if (m_exasolDataSourceHasBeenSet) {
+    payload.WithString("ExasolDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_exasolDataSource));
+  }
+
+  if (m_createExasolDataSourceHasBeenSet) {
+    payload.WithString("CreateExasolDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_createExasolDataSource));
+  }
+
+  if (m_updateExasolDataSourceHasBeenSet) {
+    payload.WithString("UpdateExasolDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_updateExasolDataSource));
+  }
+
+  if (m_shareExasolDataSourceHasBeenSet) {
+    payload.WithString("ShareExasolDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_shareExasolDataSource));
+  }
+
+  if (m_db2DataSourceHasBeenSet) {
+    payload.WithString("Db2DataSource", CapabilityStateMapper::GetNameForCapabilityState(m_db2DataSource));
+  }
+
+  if (m_createDb2DataSourceHasBeenSet) {
+    payload.WithString("CreateDb2DataSource", CapabilityStateMapper::GetNameForCapabilityState(m_createDb2DataSource));
+  }
+
+  if (m_updateDb2DataSourceHasBeenSet) {
+    payload.WithString("UpdateDb2DataSource", CapabilityStateMapper::GetNameForCapabilityState(m_updateDb2DataSource));
+  }
+
+  if (m_shareDb2DataSourceHasBeenSet) {
+    payload.WithString("ShareDb2DataSource", CapabilityStateMapper::GetNameForCapabilityState(m_shareDb2DataSource));
+  }
+
+  if (m_sapHanaDataSourceHasBeenSet) {
+    payload.WithString("SapHanaDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_sapHanaDataSource));
+  }
+
+  if (m_createSapHanaDataSourceHasBeenSet) {
+    payload.WithString("CreateSapHanaDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_createSapHanaDataSource));
+  }
+
+  if (m_updateSapHanaDataSourceHasBeenSet) {
+    payload.WithString("UpdateSapHanaDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_updateSapHanaDataSource));
+  }
+
+  if (m_shareSapHanaDataSourceHasBeenSet) {
+    payload.WithString("ShareSapHanaDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_shareSapHanaDataSource));
+  }
+
+  if (m_denodoDataSourceHasBeenSet) {
+    payload.WithString("DenodoDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_denodoDataSource));
+  }
+
+  if (m_createDenodoDataSourceHasBeenSet) {
+    payload.WithString("CreateDenodoDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_createDenodoDataSource));
+  }
+
+  if (m_updateDenodoDataSourceHasBeenSet) {
+    payload.WithString("UpdateDenodoDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_updateDenodoDataSource));
+  }
+
+  if (m_shareDenodoDataSourceHasBeenSet) {
+    payload.WithString("ShareDenodoDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_shareDenodoDataSource));
+  }
+
+  if (m_dremioDataSourceHasBeenSet) {
+    payload.WithString("DremioDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_dremioDataSource));
+  }
+
+  if (m_createDremioDataSourceHasBeenSet) {
+    payload.WithString("CreateDremioDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_createDremioDataSource));
+  }
+
+  if (m_updateDremioDataSourceHasBeenSet) {
+    payload.WithString("UpdateDremioDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_updateDremioDataSource));
+  }
+
+  if (m_shareDremioDataSourceHasBeenSet) {
+    payload.WithString("ShareDremioDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_shareDremioDataSource));
+  }
+
+  if (m_salesforceDataSourceHasBeenSet) {
+    payload.WithString("SalesforceDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_salesforceDataSource));
+  }
+
+  if (m_createSalesforceDataSourceHasBeenSet) {
+    payload.WithString("CreateSalesforceDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_createSalesforceDataSource));
+  }
+
+  if (m_updateSalesforceDataSourceHasBeenSet) {
+    payload.WithString("UpdateSalesforceDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_updateSalesforceDataSource));
+  }
+
+  if (m_shareSalesforceDataSourceHasBeenSet) {
+    payload.WithString("ShareSalesforceDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_shareSalesforceDataSource));
+  }
+
+  if (m_radiantDataSourceHasBeenSet) {
+    payload.WithString("RadiantDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_radiantDataSource));
+  }
+
+  if (m_createRadiantDataSourceHasBeenSet) {
+    payload.WithString("CreateRadiantDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_createRadiantDataSource));
+  }
+
+  if (m_updateRadiantDataSourceHasBeenSet) {
+    payload.WithString("UpdateRadiantDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_updateRadiantDataSource));
+  }
+
+  if (m_shareRadiantDataSourceHasBeenSet) {
+    payload.WithString("ShareRadiantDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_shareRadiantDataSource));
+  }
+
+  if (m_payPalDataSourceHasBeenSet) {
+    payload.WithString("PayPalDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_payPalDataSource));
+  }
+
+  if (m_createPayPalDataSourceHasBeenSet) {
+    payload.WithString("CreatePayPalDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_createPayPalDataSource));
+  }
+
+  if (m_updatePayPalDataSourceHasBeenSet) {
+    payload.WithString("UpdatePayPalDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_updatePayPalDataSource));
+  }
+
+  if (m_sharePayPalDataSourceHasBeenSet) {
+    payload.WithString("SharePayPalDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_sharePayPalDataSource));
+  }
+
+  if (m_squareDataSourceHasBeenSet) {
+    payload.WithString("SquareDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_squareDataSource));
+  }
+
+  if (m_createSquareDataSourceHasBeenSet) {
+    payload.WithString("CreateSquareDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_createSquareDataSource));
+  }
+
+  if (m_updateSquareDataSourceHasBeenSet) {
+    payload.WithString("UpdateSquareDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_updateSquareDataSource));
+  }
+
+  if (m_shareSquareDataSourceHasBeenSet) {
+    payload.WithString("ShareSquareDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_shareSquareDataSource));
+  }
+
+  if (m_gitHubDataSourceHasBeenSet) {
+    payload.WithString("GitHubDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_gitHubDataSource));
+  }
+
+  if (m_createGitHubDataSourceHasBeenSet) {
+    payload.WithString("CreateGitHubDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_createGitHubDataSource));
+  }
+
+  if (m_updateGitHubDataSourceHasBeenSet) {
+    payload.WithString("UpdateGitHubDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_updateGitHubDataSource));
+  }
+
+  if (m_shareGitHubDataSourceHasBeenSet) {
+    payload.WithString("ShareGitHubDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_shareGitHubDataSource));
+  }
+
+  if (m_twitterDataSourceHasBeenSet) {
+    payload.WithString("TwitterDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_twitterDataSource));
+  }
+
+  if (m_createTwitterDataSourceHasBeenSet) {
+    payload.WithString("CreateTwitterDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_createTwitterDataSource));
+  }
+
+  if (m_updateTwitterDataSourceHasBeenSet) {
+    payload.WithString("UpdateTwitterDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_updateTwitterDataSource));
+  }
+
+  if (m_shareTwitterDataSourceHasBeenSet) {
+    payload.WithString("ShareTwitterDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_shareTwitterDataSource));
+  }
+
+  if (m_jiraDataSourceHasBeenSet) {
+    payload.WithString("JiraDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_jiraDataSource));
+  }
+
+  if (m_createJiraDataSourceHasBeenSet) {
+    payload.WithString("CreateJiraDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_createJiraDataSource));
+  }
+
+  if (m_updateJiraDataSourceHasBeenSet) {
+    payload.WithString("UpdateJiraDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_updateJiraDataSource));
+  }
+
+  if (m_shareJiraDataSourceHasBeenSet) {
+    payload.WithString("ShareJiraDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_shareJiraDataSource));
+  }
+
+  if (m_serviceNowDataSourceHasBeenSet) {
+    payload.WithString("ServiceNowDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_serviceNowDataSource));
+  }
+
+  if (m_createServiceNowDataSourceHasBeenSet) {
+    payload.WithString("CreateServiceNowDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_createServiceNowDataSource));
+  }
+
+  if (m_updateServiceNowDataSourceHasBeenSet) {
+    payload.WithString("UpdateServiceNowDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_updateServiceNowDataSource));
+  }
+
+  if (m_shareServiceNowDataSourceHasBeenSet) {
+    payload.WithString("ShareServiceNowDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_shareServiceNowDataSource));
+  }
+
+  if (m_adobeAnalyticsDataSourceHasBeenSet) {
+    payload.WithString("AdobeAnalyticsDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_adobeAnalyticsDataSource));
+  }
+
+  if (m_createAdobeAnalyticsDataSourceHasBeenSet) {
+    payload.WithString("CreateAdobeAnalyticsDataSource",
+                       CapabilityStateMapper::GetNameForCapabilityState(m_createAdobeAnalyticsDataSource));
+  }
+
+  if (m_updateAdobeAnalyticsDataSourceHasBeenSet) {
+    payload.WithString("UpdateAdobeAnalyticsDataSource",
+                       CapabilityStateMapper::GetNameForCapabilityState(m_updateAdobeAnalyticsDataSource));
+  }
+
+  if (m_shareAdobeAnalyticsDataSourceHasBeenSet) {
+    payload.WithString("ShareAdobeAnalyticsDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_shareAdobeAnalyticsDataSource));
+  }
+
+  if (m_googleAnalyticsDataSourceHasBeenSet) {
+    payload.WithString("GoogleAnalyticsDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_googleAnalyticsDataSource));
+  }
+
+  if (m_createGoogleAnalyticsDataSourceHasBeenSet) {
+    payload.WithString("CreateGoogleAnalyticsDataSource",
+                       CapabilityStateMapper::GetNameForCapabilityState(m_createGoogleAnalyticsDataSource));
+  }
+
+  if (m_updateGoogleAnalyticsDataSourceHasBeenSet) {
+    payload.WithString("UpdateGoogleAnalyticsDataSource",
+                       CapabilityStateMapper::GetNameForCapabilityState(m_updateGoogleAnalyticsDataSource));
+  }
+
+  if (m_shareGoogleAnalyticsDataSourceHasBeenSet) {
+    payload.WithString("ShareGoogleAnalyticsDataSource",
+                       CapabilityStateMapper::GetNameForCapabilityState(m_shareGoogleAnalyticsDataSource));
+  }
+
+  if (m_googleSheetsDataSourceHasBeenSet) {
+    payload.WithString("GoogleSheetsDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_googleSheetsDataSource));
+  }
+
+  if (m_createGoogleSheetsDataSourceHasBeenSet) {
+    payload.WithString("CreateGoogleSheetsDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_createGoogleSheetsDataSource));
+  }
+
+  if (m_updateGoogleSheetsDataSourceHasBeenSet) {
+    payload.WithString("UpdateGoogleSheetsDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_updateGoogleSheetsDataSource));
+  }
+
+  if (m_shareGoogleSheetsDataSourceHasBeenSet) {
+    payload.WithString("ShareGoogleSheetsDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_shareGoogleSheetsDataSource));
+  }
+
+  if (m_documentDbDataSourceHasBeenSet) {
+    payload.WithString("DocumentDbDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_documentDbDataSource));
+  }
+
+  if (m_createDocumentDbDataSourceHasBeenSet) {
+    payload.WithString("CreateDocumentDbDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_createDocumentDbDataSource));
+  }
+
+  if (m_updateDocumentDbDataSourceHasBeenSet) {
+    payload.WithString("UpdateDocumentDbDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_updateDocumentDbDataSource));
+  }
+
+  if (m_shareDocumentDbDataSourceHasBeenSet) {
+    payload.WithString("ShareDocumentDbDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_shareDocumentDbDataSource));
+  }
+
+  if (m_mongoDbDataSourceHasBeenSet) {
+    payload.WithString("MongoDbDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_mongoDbDataSource));
+  }
+
+  if (m_createMongoDbDataSourceHasBeenSet) {
+    payload.WithString("CreateMongoDbDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_createMongoDbDataSource));
+  }
+
+  if (m_updateMongoDbDataSourceHasBeenSet) {
+    payload.WithString("UpdateMongoDbDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_updateMongoDbDataSource));
+  }
+
+  if (m_shareMongoDbDataSourceHasBeenSet) {
+    payload.WithString("ShareMongoDbDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_shareMongoDbDataSource));
+  }
+
+  if (m_mongoAtlasDataSourceHasBeenSet) {
+    payload.WithString("MongoAtlasDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_mongoAtlasDataSource));
+  }
+
+  if (m_createMongoAtlasDataSourceHasBeenSet) {
+    payload.WithString("CreateMongoAtlasDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_createMongoAtlasDataSource));
+  }
+
+  if (m_updateMongoAtlasDataSourceHasBeenSet) {
+    payload.WithString("UpdateMongoAtlasDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_updateMongoAtlasDataSource));
+  }
+
+  if (m_shareMongoAtlasDataSourceHasBeenSet) {
+    payload.WithString("ShareMongoAtlasDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_shareMongoAtlasDataSource));
+  }
+
+  if (m_dynamoDbDataSourceHasBeenSet) {
+    payload.WithString("DynamoDbDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_dynamoDbDataSource));
+  }
+
+  if (m_createDynamoDbDataSourceHasBeenSet) {
+    payload.WithString("CreateDynamoDbDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_createDynamoDbDataSource));
+  }
+
+  if (m_updateDynamoDbDataSourceHasBeenSet) {
+    payload.WithString("UpdateDynamoDbDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_updateDynamoDbDataSource));
+  }
+
+  if (m_shareDynamoDbDataSourceHasBeenSet) {
+    payload.WithString("ShareDynamoDbDataSource", CapabilityStateMapper::GetNameForCapabilityState(m_shareDynamoDbDataSource));
   }
 
   return payload;

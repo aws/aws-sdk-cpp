@@ -52,6 +52,10 @@ HttpRequestConfiguration& HttpRequestConfiguration::operator=(JsonView jsonValue
     }
     m_headersHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Cache")) {
+    m_cache = jsonValue.GetObject("Cache");
+    m_cacheHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -92,6 +96,10 @@ JsonValue HttpRequestConfiguration::Jsonize() const {
       headersJsonMap.WithString(headersItem.first, headersItem.second);
     }
     payload.WithObject("Headers", std::move(headersJsonMap));
+  }
+
+  if (m_cacheHasBeenSet) {
+    payload.WithObject("Cache", m_cache.Jsonize());
   }
 
   return payload;

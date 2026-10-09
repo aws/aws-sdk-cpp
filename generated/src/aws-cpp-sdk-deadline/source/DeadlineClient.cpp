@@ -102,6 +102,7 @@
 #include <aws/deadline/model/ListJobsRequest.h>
 #include <aws/deadline/model/ListLicenseEndpointsRequest.h>
 #include <aws/deadline/model/ListLimitsRequest.h>
+#include <aws/deadline/model/ListMembershipsRequest.h>
 #include <aws/deadline/model/ListMeteredProductsRequest.h>
 #include <aws/deadline/model/ListMonitorsRequest.h>
 #include <aws/deadline/model/ListQueueEnvironmentsRequest.h>
@@ -2259,6 +2260,23 @@ ListLimitsOutcome DeadlineClient::ListLimits(const ListLimitsRequest& request) c
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListLimitsOutcome(result.GetResultWithOwnership()) : ListLimitsOutcome(std::move(result.GetError()));
+}
+
+ListMembershipsOutcome DeadlineClient::ListMemberships(const ListMembershipsRequest& request) const {
+  if (!request.PrincipalIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListMemberships", "Required field: PrincipalId, is not set");
+    return ListMembershipsOutcome(Aws::Client::AWSError<DeadlineErrors>(DeadlineErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                        "Missing required field [PrincipalId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2023-10-12/memberships");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListMembershipsOutcome(result.GetResultWithOwnership())
+                            : ListMembershipsOutcome(std::move(result.GetError()));
 }
 
 ListMeteredProductsOutcome DeadlineClient::ListMeteredProducts(const ListMeteredProductsRequest& request) const {

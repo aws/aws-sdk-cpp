@@ -38,6 +38,10 @@ ResolveCustomerResult& ResolveCustomerResult::operator=(const Aws::AmazonWebServ
     m_licenseArn = jsonValue.GetString("LicenseArn");
     m_licenseArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Metadata")) {
+    m_metadata = jsonValue.GetObject("Metadata");
+    m_metadataHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

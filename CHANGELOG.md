@@ -1,3 +1,12 @@
+# 1.11.909 (2026-10-09)
+
+## Service Updates
+* **Marketplace Metering**: AWS Marketplace Metering Service adds AgreementId to ResolveCustomer API response.
+* **MediaTailor**: Add caching settings to http functions
+* **QuickSight**: Adds granular custom permissions for the Gong action connector (GongAction, CreateAndUpdateGongAction, ShareGongAction, UseGongAction) and for create, update, and share operations on 45 data source connectors, such as Amazon S3 and Snowflake, through the Custom Permissions APIs.
+* **SecurityAgent**: Adds a test scope field to specify whether a pentest targets a web application or a generative AI application.
+* **deadline**: The new ListMemberships API enables users to discover their memberships across Deadline Cloud resources, enabling scoped users of Deadline resources to discover and interact with the resources they have been provided scoped access to.
+
 # 1.11.908 (2026-10-08)
 
 ## Service Updates

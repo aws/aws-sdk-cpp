@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediatailor/MediaTailor_EXPORTS.h>
+#include <aws/mediatailor/model/HttpRequestCacheConfiguration.h>
 #include <aws/mediatailor/model/MethodType.h>
 #include <aws/mediatailor/model/RuntimeType.h>
 
@@ -195,6 +196,27 @@ class AwsServiceRequestConfiguration {
 
   ///@{
   /**
+   * <p>The optional response-caching configuration for the function. When present,
+   * MediaTailor caches the responses that the function receives from the AWS
+   * service, within the time-to-live (TTL) bounds that you specify. Omit this
+   * configuration to disable response caching.</p>
+   */
+  inline const HttpRequestCacheConfiguration& GetCache() const { return m_cache; }
+  inline bool CacheHasBeenSet() const { return m_cacheHasBeenSet; }
+  template <typename CacheT = HttpRequestCacheConfiguration>
+  void SetCache(CacheT&& value) {
+    m_cacheHasBeenSet = true;
+    m_cache = std::forward<CacheT>(value);
+  }
+  template <typename CacheT = HttpRequestCacheConfiguration>
+  AwsServiceRequestConfiguration& WithCache(CacheT&& value) {
+    SetCache(std::forward<CacheT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The AWS service to call. Valid value: <code>elemental-inference</code> (AWS
    * Elemental Inference).</p>
    */
@@ -246,6 +268,8 @@ class AwsServiceRequestConfiguration {
 
   Aws::Map<Aws::String, Aws::String> m_headers;
 
+  HttpRequestCacheConfiguration m_cache;
+
   Aws::String m_targetService;
 
   Aws::String m_targetRegion;
@@ -256,6 +280,7 @@ class AwsServiceRequestConfiguration {
   bool m_urlHasBeenSet = false;
   bool m_bodyHasBeenSet = false;
   bool m_headersHasBeenSet = false;
+  bool m_cacheHasBeenSet = false;
   bool m_targetServiceHasBeenSet = false;
   bool m_targetRegionHasBeenSet = false;
 };

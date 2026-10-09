@@ -2323,6 +2323,33 @@ class AWS_DEADLINE_API DeadlineClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Lists the Deadline Cloud resource memberships associated with a specified IAM
+   * Identity Center principal, optionally filtered by the requested resource
+   * types.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListMemberships">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListMembershipsOutcome ListMemberships(const Model::ListMembershipsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListMemberships that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListMembershipsRequestT = Model::ListMembershipsRequest>
+  Model::ListMembershipsOutcomeCallable ListMembershipsCallable(const ListMembershipsRequestT& request) const {
+    return SubmitCallable(&DeadlineClient::ListMemberships, request);
+  }
+
+  /**
+   * An Async wrapper for ListMemberships that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListMembershipsRequestT = Model::ListMembershipsRequest>
+  void ListMembershipsAsync(const ListMembershipsRequestT& request, const ListMembershipsResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DeadlineClient::ListMemberships, request, handler, context);
+  }
+
+  /**
    * <p>Lists metered products.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListMeteredProducts">AWS
    * API Reference</a></p>

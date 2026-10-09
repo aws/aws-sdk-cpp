@@ -343,6 +343,8 @@
 #include <aws/securityagent/model/Task.h>
 #include <aws/securityagent/model/TaskExecutionStatus.h>
 #include <aws/securityagent/model/TaskSummary.h>
+#include <aws/securityagent/model/TestScope.h>
+#include <aws/securityagent/model/TestScopeType.h>
 #include <aws/securityagent/model/Threat.h>
 #include <aws/securityagent/model/ThreatActor.h>
 #include <aws/securityagent/model/ThreatAnchorShape.h>

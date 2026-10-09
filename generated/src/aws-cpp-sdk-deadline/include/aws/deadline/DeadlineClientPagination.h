@@ -18,6 +18,7 @@
 #include <aws/deadline/model/ListJobsPaginationTraits.h>
 #include <aws/deadline/model/ListLicenseEndpointsPaginationTraits.h>
 #include <aws/deadline/model/ListLimitsPaginationTraits.h>
+#include <aws/deadline/model/ListMembershipsPaginationTraits.h>
 #include <aws/deadline/model/ListMeteredProductsPaginationTraits.h>
 #include <aws/deadline/model/ListMonitorsPaginationTraits.h>
 #include <aws/deadline/model/ListQueueEnvironmentsPaginationTraits.h>
@@ -67,6 +68,8 @@ using ListLicenseEndpointsPaginator = Aws::Utils::Pagination::Paginator<Deadline
                                                                         Pagination::ListLicenseEndpointsPaginationTraits<DeadlineClient>>;
 using ListLimitsPaginator =
     Aws::Utils::Pagination::Paginator<DeadlineClient, Model::ListLimitsRequest, Pagination::ListLimitsPaginationTraits<DeadlineClient>>;
+using ListMembershipsPaginator = Aws::Utils::Pagination::Paginator<DeadlineClient, Model::ListMembershipsRequest,
+                                                                   Pagination::ListMembershipsPaginationTraits<DeadlineClient>>;
 using ListMeteredProductsPaginator = Aws::Utils::Pagination::Paginator<DeadlineClient, Model::ListMeteredProductsRequest,
                                                                        Pagination::ListMeteredProductsPaginationTraits<DeadlineClient>>;
 using ListMonitorsPaginator =
