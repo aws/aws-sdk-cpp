@@ -199,7 +199,8 @@ NeptunedataClient::InvokeOperationOutcome NeptunedataClient::InvokeServiceOperat
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
 
-  return TracingUtils::MakeCallWithTiming<InvokeOperationOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<InvokeOperationOutcome>(
+      request, std::move(span),
       [&]() -> InvokeOperationOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -213,7 +214,7 @@ NeptunedataClient::InvokeOperationOutcome NeptunedataClient::InvokeServiceOperat
 
         return InvokeOperationOutcome{MakeRequest(request, endpointResolutionOutcome.GetResult(), httpMethod, Aws::Auth::SIGV4_SIGNER)};
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
 }
 
@@ -400,7 +401,8 @@ ExecuteGremlinExplainQueryOutcome NeptunedataClient::ExecuteGremlinExplainQuery(
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ExecuteGremlinExplainQueryOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<ExecuteGremlinExplainQueryOutcome>(
+      request, std::move(span),
       [&]() -> ExecuteGremlinExplainQueryOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -414,7 +416,7 @@ ExecuteGremlinExplainQueryOutcome NeptunedataClient::ExecuteGremlinExplainQuery(
         return result.IsSuccess() ? ExecuteGremlinExplainQueryOutcome(result.GetResultWithOwnership())
                                   : ExecuteGremlinExplainQueryOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
@@ -431,7 +433,8 @@ ExecuteGremlinProfileQueryOutcome NeptunedataClient::ExecuteGremlinProfileQuery(
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ExecuteGremlinProfileQueryOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<ExecuteGremlinProfileQueryOutcome>(
+      request, std::move(span),
       [&]() -> ExecuteGremlinProfileQueryOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -445,7 +448,7 @@ ExecuteGremlinProfileQueryOutcome NeptunedataClient::ExecuteGremlinProfileQuery(
         return result.IsSuccess() ? ExecuteGremlinProfileQueryOutcome(result.GetResultWithOwnership())
                                   : ExecuteGremlinProfileQueryOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
@@ -474,7 +477,8 @@ ExecuteOpenCypherExplainQueryOutcome NeptunedataClient::ExecuteOpenCypherExplain
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ExecuteOpenCypherExplainQueryOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<ExecuteOpenCypherExplainQueryOutcome>(
+      request, std::move(span),
       [&]() -> ExecuteOpenCypherExplainQueryOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -488,7 +492,7 @@ ExecuteOpenCypherExplainQueryOutcome NeptunedataClient::ExecuteOpenCypherExplain
         return result.IsSuccess() ? ExecuteOpenCypherExplainQueryOutcome(result.GetResultWithOwnership())
                                   : ExecuteOpenCypherExplainQueryOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
