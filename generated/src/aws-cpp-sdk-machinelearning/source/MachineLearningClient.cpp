@@ -178,7 +178,8 @@ AddTagsOutcome MachineLearningClient::AddTags(const AddTagsRequest& request) con
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<AddTagsOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<AddTagsOutcome>(
+      request, std::move(span),
       [&]() -> AddTagsOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -190,7 +191,7 @@ AddTagsOutcome MachineLearningClient::AddTags(const AddTagsRequest& request) con
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
         return result.IsSuccess() ? AddTagsOutcome(result.GetResultWithOwnership()) : AddTagsOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
@@ -206,7 +207,8 @@ CreateBatchPredictionOutcome MachineLearningClient::CreateBatchPrediction(const 
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<CreateBatchPredictionOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<CreateBatchPredictionOutcome>(
+      request, std::move(span),
       [&]() -> CreateBatchPredictionOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -219,7 +221,7 @@ CreateBatchPredictionOutcome MachineLearningClient::CreateBatchPrediction(const 
         return result.IsSuccess() ? CreateBatchPredictionOutcome(result.GetResultWithOwnership())
                                   : CreateBatchPredictionOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
@@ -235,7 +237,8 @@ CreateDataSourceFromRDSOutcome MachineLearningClient::CreateDataSourceFromRDS(co
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<CreateDataSourceFromRDSOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<CreateDataSourceFromRDSOutcome>(
+      request, std::move(span),
       [&]() -> CreateDataSourceFromRDSOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -248,7 +251,7 @@ CreateDataSourceFromRDSOutcome MachineLearningClient::CreateDataSourceFromRDS(co
         return result.IsSuccess() ? CreateDataSourceFromRDSOutcome(result.GetResultWithOwnership())
                                   : CreateDataSourceFromRDSOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
@@ -265,7 +268,8 @@ CreateDataSourceFromRedshiftOutcome MachineLearningClient::CreateDataSourceFromR
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<CreateDataSourceFromRedshiftOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<CreateDataSourceFromRedshiftOutcome>(
+      request, std::move(span),
       [&]() -> CreateDataSourceFromRedshiftOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -278,7 +282,7 @@ CreateDataSourceFromRedshiftOutcome MachineLearningClient::CreateDataSourceFromR
         return result.IsSuccess() ? CreateDataSourceFromRedshiftOutcome(result.GetResultWithOwnership())
                                   : CreateDataSourceFromRedshiftOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
@@ -294,7 +298,8 @@ CreateDataSourceFromS3Outcome MachineLearningClient::CreateDataSourceFromS3(cons
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<CreateDataSourceFromS3Outcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<CreateDataSourceFromS3Outcome>(
+      request, std::move(span),
       [&]() -> CreateDataSourceFromS3Outcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -307,7 +312,7 @@ CreateDataSourceFromS3Outcome MachineLearningClient::CreateDataSourceFromS3(cons
         return result.IsSuccess() ? CreateDataSourceFromS3Outcome(result.GetResultWithOwnership())
                                   : CreateDataSourceFromS3Outcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
@@ -323,7 +328,8 @@ CreateEvaluationOutcome MachineLearningClient::CreateEvaluation(const CreateEval
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<CreateEvaluationOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<CreateEvaluationOutcome>(
+      request, std::move(span),
       [&]() -> CreateEvaluationOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -336,7 +342,7 @@ CreateEvaluationOutcome MachineLearningClient::CreateEvaluation(const CreateEval
         return result.IsSuccess() ? CreateEvaluationOutcome(result.GetResultWithOwnership())
                                   : CreateEvaluationOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
@@ -352,7 +358,8 @@ CreateMLModelOutcome MachineLearningClient::CreateMLModel(const CreateMLModelReq
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<CreateMLModelOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<CreateMLModelOutcome>(
+      request, std::move(span),
       [&]() -> CreateMLModelOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -365,7 +372,7 @@ CreateMLModelOutcome MachineLearningClient::CreateMLModel(const CreateMLModelReq
         return result.IsSuccess() ? CreateMLModelOutcome(result.GetResultWithOwnership())
                                   : CreateMLModelOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
@@ -381,7 +388,8 @@ CreateRealtimeEndpointOutcome MachineLearningClient::CreateRealtimeEndpoint(cons
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<CreateRealtimeEndpointOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<CreateRealtimeEndpointOutcome>(
+      request, std::move(span),
       [&]() -> CreateRealtimeEndpointOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -394,7 +402,7 @@ CreateRealtimeEndpointOutcome MachineLearningClient::CreateRealtimeEndpoint(cons
         return result.IsSuccess() ? CreateRealtimeEndpointOutcome(result.GetResultWithOwnership())
                                   : CreateRealtimeEndpointOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
@@ -410,7 +418,8 @@ DeleteBatchPredictionOutcome MachineLearningClient::DeleteBatchPrediction(const 
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<DeleteBatchPredictionOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<DeleteBatchPredictionOutcome>(
+      request, std::move(span),
       [&]() -> DeleteBatchPredictionOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -423,7 +432,7 @@ DeleteBatchPredictionOutcome MachineLearningClient::DeleteBatchPrediction(const 
         return result.IsSuccess() ? DeleteBatchPredictionOutcome(result.GetResultWithOwnership())
                                   : DeleteBatchPredictionOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
@@ -439,7 +448,8 @@ DeleteDataSourceOutcome MachineLearningClient::DeleteDataSource(const DeleteData
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<DeleteDataSourceOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<DeleteDataSourceOutcome>(
+      request, std::move(span),
       [&]() -> DeleteDataSourceOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -452,7 +462,7 @@ DeleteDataSourceOutcome MachineLearningClient::DeleteDataSource(const DeleteData
         return result.IsSuccess() ? DeleteDataSourceOutcome(result.GetResultWithOwnership())
                                   : DeleteDataSourceOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
@@ -468,7 +478,8 @@ DeleteEvaluationOutcome MachineLearningClient::DeleteEvaluation(const DeleteEval
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<DeleteEvaluationOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<DeleteEvaluationOutcome>(
+      request, std::move(span),
       [&]() -> DeleteEvaluationOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -481,7 +492,7 @@ DeleteEvaluationOutcome MachineLearningClient::DeleteEvaluation(const DeleteEval
         return result.IsSuccess() ? DeleteEvaluationOutcome(result.GetResultWithOwnership())
                                   : DeleteEvaluationOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
@@ -497,7 +508,8 @@ DeleteMLModelOutcome MachineLearningClient::DeleteMLModel(const DeleteMLModelReq
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<DeleteMLModelOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<DeleteMLModelOutcome>(
+      request, std::move(span),
       [&]() -> DeleteMLModelOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -510,7 +522,7 @@ DeleteMLModelOutcome MachineLearningClient::DeleteMLModel(const DeleteMLModelReq
         return result.IsSuccess() ? DeleteMLModelOutcome(result.GetResultWithOwnership())
                                   : DeleteMLModelOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
@@ -526,7 +538,8 @@ DeleteRealtimeEndpointOutcome MachineLearningClient::DeleteRealtimeEndpoint(cons
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<DeleteRealtimeEndpointOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<DeleteRealtimeEndpointOutcome>(
+      request, std::move(span),
       [&]() -> DeleteRealtimeEndpointOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -539,7 +552,7 @@ DeleteRealtimeEndpointOutcome MachineLearningClient::DeleteRealtimeEndpoint(cons
         return result.IsSuccess() ? DeleteRealtimeEndpointOutcome(result.GetResultWithOwnership())
                                   : DeleteRealtimeEndpointOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
@@ -555,7 +568,8 @@ DeleteTagsOutcome MachineLearningClient::DeleteTags(const DeleteTagsRequest& req
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<DeleteTagsOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<DeleteTagsOutcome>(
+      request, std::move(span),
       [&]() -> DeleteTagsOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -567,7 +581,7 @@ DeleteTagsOutcome MachineLearningClient::DeleteTags(const DeleteTagsRequest& req
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
         return result.IsSuccess() ? DeleteTagsOutcome(result.GetResultWithOwnership()) : DeleteTagsOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
@@ -583,7 +597,8 @@ DescribeBatchPredictionsOutcome MachineLearningClient::DescribeBatchPredictions(
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<DescribeBatchPredictionsOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<DescribeBatchPredictionsOutcome>(
+      request, std::move(span),
       [&]() -> DescribeBatchPredictionsOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -596,7 +611,7 @@ DescribeBatchPredictionsOutcome MachineLearningClient::DescribeBatchPredictions(
         return result.IsSuccess() ? DescribeBatchPredictionsOutcome(result.GetResultWithOwnership())
                                   : DescribeBatchPredictionsOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
@@ -612,7 +627,8 @@ DescribeDataSourcesOutcome MachineLearningClient::DescribeDataSources(const Desc
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<DescribeDataSourcesOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<DescribeDataSourcesOutcome>(
+      request, std::move(span),
       [&]() -> DescribeDataSourcesOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -625,7 +641,7 @@ DescribeDataSourcesOutcome MachineLearningClient::DescribeDataSources(const Desc
         return result.IsSuccess() ? DescribeDataSourcesOutcome(result.GetResultWithOwnership())
                                   : DescribeDataSourcesOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
@@ -641,7 +657,8 @@ DescribeEvaluationsOutcome MachineLearningClient::DescribeEvaluations(const Desc
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<DescribeEvaluationsOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<DescribeEvaluationsOutcome>(
+      request, std::move(span),
       [&]() -> DescribeEvaluationsOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -654,7 +671,7 @@ DescribeEvaluationsOutcome MachineLearningClient::DescribeEvaluations(const Desc
         return result.IsSuccess() ? DescribeEvaluationsOutcome(result.GetResultWithOwnership())
                                   : DescribeEvaluationsOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
@@ -670,7 +687,8 @@ DescribeMLModelsOutcome MachineLearningClient::DescribeMLModels(const DescribeML
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<DescribeMLModelsOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<DescribeMLModelsOutcome>(
+      request, std::move(span),
       [&]() -> DescribeMLModelsOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -683,7 +701,7 @@ DescribeMLModelsOutcome MachineLearningClient::DescribeMLModels(const DescribeML
         return result.IsSuccess() ? DescribeMLModelsOutcome(result.GetResultWithOwnership())
                                   : DescribeMLModelsOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
@@ -699,7 +717,8 @@ DescribeTagsOutcome MachineLearningClient::DescribeTags(const DescribeTagsReques
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<DescribeTagsOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<DescribeTagsOutcome>(
+      request, std::move(span),
       [&]() -> DescribeTagsOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -712,7 +731,7 @@ DescribeTagsOutcome MachineLearningClient::DescribeTags(const DescribeTagsReques
         return result.IsSuccess() ? DescribeTagsOutcome(result.GetResultWithOwnership())
                                   : DescribeTagsOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
@@ -728,7 +747,8 @@ GetBatchPredictionOutcome MachineLearningClient::GetBatchPrediction(const GetBat
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<GetBatchPredictionOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<GetBatchPredictionOutcome>(
+      request, std::move(span),
       [&]() -> GetBatchPredictionOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -741,7 +761,7 @@ GetBatchPredictionOutcome MachineLearningClient::GetBatchPrediction(const GetBat
         return result.IsSuccess() ? GetBatchPredictionOutcome(result.GetResultWithOwnership())
                                   : GetBatchPredictionOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
@@ -757,7 +777,8 @@ GetDataSourceOutcome MachineLearningClient::GetDataSource(const GetDataSourceReq
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<GetDataSourceOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<GetDataSourceOutcome>(
+      request, std::move(span),
       [&]() -> GetDataSourceOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -770,7 +791,7 @@ GetDataSourceOutcome MachineLearningClient::GetDataSource(const GetDataSourceReq
         return result.IsSuccess() ? GetDataSourceOutcome(result.GetResultWithOwnership())
                                   : GetDataSourceOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
@@ -786,7 +807,8 @@ GetEvaluationOutcome MachineLearningClient::GetEvaluation(const GetEvaluationReq
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<GetEvaluationOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<GetEvaluationOutcome>(
+      request, std::move(span),
       [&]() -> GetEvaluationOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -799,7 +821,7 @@ GetEvaluationOutcome MachineLearningClient::GetEvaluation(const GetEvaluationReq
         return result.IsSuccess() ? GetEvaluationOutcome(result.GetResultWithOwnership())
                                   : GetEvaluationOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
@@ -815,7 +837,8 @@ GetMLModelOutcome MachineLearningClient::GetMLModel(const GetMLModelRequest& req
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<GetMLModelOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<GetMLModelOutcome>(
+      request, std::move(span),
       [&]() -> GetMLModelOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -827,7 +850,7 @@ GetMLModelOutcome MachineLearningClient::GetMLModel(const GetMLModelRequest& req
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
         return result.IsSuccess() ? GetMLModelOutcome(result.GetResultWithOwnership()) : GetMLModelOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
@@ -843,7 +866,8 @@ PredictOutcome MachineLearningClient::Predict(const PredictRequest& request) con
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<PredictOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<PredictOutcome>(
+      request, std::move(span),
       [&]() -> PredictOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -855,7 +879,7 @@ PredictOutcome MachineLearningClient::Predict(const PredictRequest& request) con
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
         return result.IsSuccess() ? PredictOutcome(result.GetResultWithOwnership()) : PredictOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
@@ -871,7 +895,8 @@ UpdateBatchPredictionOutcome MachineLearningClient::UpdateBatchPrediction(const 
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<UpdateBatchPredictionOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<UpdateBatchPredictionOutcome>(
+      request, std::move(span),
       [&]() -> UpdateBatchPredictionOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -884,7 +909,7 @@ UpdateBatchPredictionOutcome MachineLearningClient::UpdateBatchPrediction(const 
         return result.IsSuccess() ? UpdateBatchPredictionOutcome(result.GetResultWithOwnership())
                                   : UpdateBatchPredictionOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
@@ -900,7 +925,8 @@ UpdateDataSourceOutcome MachineLearningClient::UpdateDataSource(const UpdateData
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<UpdateDataSourceOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<UpdateDataSourceOutcome>(
+      request, std::move(span),
       [&]() -> UpdateDataSourceOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -913,7 +939,7 @@ UpdateDataSourceOutcome MachineLearningClient::UpdateDataSource(const UpdateData
         return result.IsSuccess() ? UpdateDataSourceOutcome(result.GetResultWithOwnership())
                                   : UpdateDataSourceOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
@@ -929,7 +955,8 @@ UpdateEvaluationOutcome MachineLearningClient::UpdateEvaluation(const UpdateEval
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<UpdateEvaluationOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<UpdateEvaluationOutcome>(
+      request, std::move(span),
       [&]() -> UpdateEvaluationOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -942,7 +969,7 @@ UpdateEvaluationOutcome MachineLearningClient::UpdateEvaluation(const UpdateEval
         return result.IsSuccess() ? UpdateEvaluationOutcome(result.GetResultWithOwnership())
                                   : UpdateEvaluationOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
@@ -958,7 +985,8 @@ UpdateMLModelOutcome MachineLearningClient::UpdateMLModel(const UpdateMLModelReq
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<UpdateMLModelOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<UpdateMLModelOutcome>(
+      request, std::move(span),
       [&]() -> UpdateMLModelOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -971,7 +999,7 @@ UpdateMLModelOutcome MachineLearningClient::UpdateMLModel(const UpdateMLModelReq
         return result.IsSuccess() ? UpdateMLModelOutcome(result.GetResultWithOwnership())
                                   : UpdateMLModelOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
