@@ -136,6 +136,9 @@ namespace Aws
                 const char* requestName = "",
                 const char* signerRegionOverride = nullptr,
                 const char* signerServiceNameOverride = nullptr) const;
+
+        private:
+            XmlOutcome ProcessHttpResponse(HttpResponseOutcome& httpOutcome, const char* requestName) const;
         };
 
     } // namespace Client

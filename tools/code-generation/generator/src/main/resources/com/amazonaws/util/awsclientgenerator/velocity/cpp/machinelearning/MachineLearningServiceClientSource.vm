@@ -60,7 +60,7 @@ ${operation.name}Outcome ${className}::${operation.name}(const ${operation.reque
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + "." + request.GetServiceRequestName(),
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<${operation.name}Outcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<${operation.name}Outcome>(request, std::move(span),
     [&]() -> ${operation.name}Outcome{
 #if($serviceModel.endpointRules)
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationEndpointPrepareCommonBody.vm")
@@ -80,7 +80,7 @@ ${operation.name}Outcome ${className}::${operation.name}(const ${operation.reque
 #end##-#if($serviceModel.endpointRules)
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
-    *meter,
+    meter,
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 

@@ -28,6 +28,11 @@ namespace Aws
         class URI;
     } // namespace Http
 
+    namespace Client
+    {
+        class AsyncOperationState;
+    } // namespace Client
+
     class AmazonWebServiceRequest;
 
     /**
@@ -238,6 +243,8 @@ namespace Aws
         RetryContext GetRetryContext() const { return m_retryContext; }
 
         void SetRetryContext(const RetryContext& context) const { m_retryContext = context; }
+
+        virtual std::shared_ptr<Client::AsyncOperationState> GetAsyncOperationState() const { return nullptr; }
 
         virtual Aws::Vector<smithy::AuthSchemeOption> GetRequestSpecificSupportedAuth() const { return {}; }
 

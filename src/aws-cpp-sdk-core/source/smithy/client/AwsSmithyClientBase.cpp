@@ -11,6 +11,7 @@
 #include <smithy/tracing/TracingUtils.h>
 
 #include <aws/core/client/AWSErrorMarshaller.h>
+#include <aws/core/client/AsyncOperationState.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/internal/ClockSkew.h>
 #include <aws/core/client/RetryStrategy.h>
@@ -24,9 +25,6 @@
 #include <aws/core/utils/stream/ResponseStream.h>
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/threading/SameThreadExecutor.h>
-#if defined(AWS_CRT_HTTP_USE_ASYNC_IO)
-#include <aws/core/utils/threading/Semaphore.h>
-#endif
 #include <aws/crt/Variant.h>
 #include <smithy/identity/auth/built-in/GenericAuthSchemeResolver.h>
 #include <smithy/identity/auth/built-in/SigV4aAuthSchemeOption.h>
@@ -44,18 +42,6 @@ namespace smithy {
 }
 
 namespace {
-#if defined(AWS_CRT_HTTP_USE_ASYNC_IO)
-class SmithySyncInlineExecutor : public Aws::Utils::Threading::Executor
-{
-protected:
-    bool SubmitToThread(std::function<void()>&& task) override
-    {
-        task();
-        return true;
-    }
-};
-#endif
-
 void AddHeadersToRequest(const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest,
     const Aws::Http::HeaderValueCollection& headerValues)
 {
@@ -287,6 +273,26 @@ void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* c
                                            AuthResolvedCallback&& authCallback,
                                            std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor) const
 {
+    const auto pRequestCtx = CreateRequestContext(request, requestName, method, std::move(endpointCallback), std::move(responseHandler), std::move(authCallback), std::move(pExecutor));
+    if (!pRequestCtx)
+    {
+        return;
+    }
+#if defined(AWS_CRT_HTTP_USE_ASYNC_IO)
+    RunAttemptsAsync(pRequestCtx);
+#else
+    RunAttemptsBlocking(pRequestCtx);
+#endif
+}
+
+std::shared_ptr<AwsSmithyClientAsyncRequestContext> AwsSmithyClientBase::CreateRequestContext(Aws::AmazonWebServiceRequest const* const request,
+                                                                                              const char* requestName,
+                                                                                              Aws::Http::HttpMethod method,
+                                                                                              EndpointUpdateCallback&& endpointCallback,
+                                                                                              ResponseHandlerFunc&& responseHandler,
+                                                                                              AuthResolvedCallback&& authCallback,
+                                                                                              std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor) const
+{
     if (!pExecutor)
     {
         pExecutor = m_clientConfig->executor;
@@ -295,7 +301,7 @@ void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* c
     {
         assert(!"Missing a mandatory response handler!");
         AWS_LOGSTREAM_FATAL(AWS_SMITHY_CLIENT_LOG, "Unable to continue AWSClient request: response handler is missing!");
-        return;
+        return nullptr;
     }
     auto authResolver = request->GetRequestSpecificSupportedAuth().empty() ? nullptr : Aws::MakeShared<GenericAuthSchemeResolver<>>(AWS_SMITHY_CLIENT_LOG, request->GetRequestSpecificSupportedAuth());
     std::shared_ptr<AwsSmithyClientAsyncRequestContext> pRequestCtx =
@@ -308,13 +314,13 @@ void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* c
           {
               responseHandler(std::move(outcome));
           } );
-        return;
+        return nullptr;
     }
 
     pRequestCtx->m_method = method;
     ResponseHandlerFunc modifiedResponseHandler = [&](HttpResponseOutcome&& outcome){
         auto capturedOutcome = std::make_shared<HttpResponseOutcome>(std::move(outcome));
-        pExecutor->Submit([capturedOutcome, &responseHandler]()
+        pExecutor->Submit([capturedOutcome, responseHandler]()
         {
             responseHandler(std::move(*capturedOutcome));
         });
@@ -325,7 +331,7 @@ void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* c
         std::move(modifiedResponseHandler),
         std::move(endpointCallback)))
     {
-        return;
+        return nullptr;
     }
     pRequestCtx->m_requestInfo.attempt = 1;
     pRequestCtx->m_attemptSkew = m_clientSkew->Load();
@@ -336,7 +342,38 @@ void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* c
     pRequestCtx->m_interceptorContext = Aws::MakeShared<InterceptorContext>(AWS_SMITHY_CLIENT_LOG, *request);
     pRequestCtx->m_responseHandler = std::move(responseHandler);
     pRequestCtx->m_authResolvedCallback = std::move(authCallback);
+    return pRequestCtx;
+}
 
+#if defined(AWS_CRT_HTTP_USE_ASYNC_IO)
+void AwsSmithyClientBase::RunAttemptsAsync(const std::shared_ptr<AwsSmithyClientAsyncRequestContext>& pRequestCtx) const
+{
+    const AwsSmithyClientBase* self = this;
+    auto prepareAttempt = [self, pRequestCtx]() -> std::shared_ptr<Aws::Http::HttpRequest>
+    {
+        return self->AttemptOneRequestAsync(pRequestCtx);
+    };
+    auto evaluateAttempt = [self, pRequestCtx](std::shared_ptr<Aws::Http::HttpResponse> httpResponse) -> Aws::Http::HttpClient::AttemptOutcome
+    {
+        return self->HandleAsyncReply(pRequestCtx, std::move(httpResponse));
+    };
+    auto onComplete = [pRequestCtx]()
+    {
+        pRequestCtx->m_responseHandler(std::move(pRequestCtx->m_outcome));
+    };
+
+    pRequestCtx->m_outcome = HttpResponseOutcome(ClientError(CoreErrors::USER_CANCELLED, "", "Request cancelled before completion", false/*retryable*/));
+    auto error = m_httpClient->MakeRequestAsync(prepareAttempt, evaluateAttempt, onComplete, pRequestCtx->m_pExecutor);
+    if (error.has_value())
+    {
+        pRequestCtx->m_outcome = HttpResponseOutcome(*error);
+        onComplete();
+    }
+}
+#endif
+
+void AwsSmithyClientBase::RunAttemptsBlocking(const std::shared_ptr<AwsSmithyClientAsyncRequestContext>& pRequestCtx) const
+{
     const AwsSmithyClientBase* self = this;
     auto prepareAttempt = [self, pRequestCtx]() -> std::shared_ptr<Aws::Http::HttpRequest>
     {
@@ -354,15 +391,6 @@ void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* c
         });
     };
 
-#if defined(AWS_CRT_HTTP_USE_ASYNC_IO)
-    pRequestCtx->m_outcome = HttpResponseOutcome(ClientError(CoreErrors::USER_CANCELLED, "", "Request cancelled before completion", false/*retryable*/));
-    auto error = m_httpClient->MakeRequestAsync(prepareAttempt, evaluateAttempt, onComplete, pRequestCtx->m_pExecutor);
-    if (error.has_value())
-    {
-        pRequestCtx->m_outcome = HttpResponseOutcome(*error);
-        onComplete();
-    }
-#else
     for (std::shared_ptr<Aws::Http::HttpRequest> httpRequest = prepareAttempt(); httpRequest; httpRequest = prepareAttempt())
     {
         auto httpResponse = TracingUtils::MakeCallWithTiming<std::shared_ptr<Aws::Http::HttpResponse>>(
@@ -385,7 +413,6 @@ void AwsSmithyClientBase::MakeRequestAsync(Aws::AmazonWebServiceRequest const* c
         m_httpClient->RetryRequestSleep(outcome.backoff);
     }
     onComplete();
-#endif
 }
 
 void AwsSmithyClientBase::UpdateAuthSchemeFromEndpoint(const Aws::Endpoint::AWSEndpoint& endpoint, smithy::AuthSchemeOption& authscheme) const
@@ -743,28 +770,6 @@ AwsSmithyClientBase::MakeRequestSync(Aws::AmazonWebServiceRequest const * const 
                                      EndpointUpdateCallback&& endpointCallback,
                                      AuthResolvedCallback&& authCallback = nullptr) const
 {
-#if defined(AWS_CRT_HTTP_USE_ASYNC_IO)
-    struct SyncState
-    {
-        HttpResponseOutcome outcome = ClientError(CoreErrors::INTERNAL_FAILURE, "", "Response handler was not called", false);
-        Aws::Utils::Threading::Semaphore signal{0, 1};
-    };
-    auto state = Aws::MakeShared<SyncState>(AWS_SMITHY_CLIENT_LOG);
-
-    std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor = Aws::MakeShared<SmithySyncInlineExecutor>(AWS_SMITHY_CLIENT_LOG);
-    assert(pExecutor);
-
-    ResponseHandlerFunc responseHandler = [state](HttpResponseOutcome&& asyncOutcome)
-    {
-        state->outcome = std::move(asyncOutcome);
-        state->signal.Release();
-    };
-
-    this->MakeRequestAsync(request, requestName, method, std::move(endpointCallback), std::move(responseHandler), std::move(authCallback), pExecutor);
-    state->signal.WaitOne();
-
-    return std::move(state->outcome);
-#else
     std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor = Aws::MakeShared<Aws::Utils::Threading::SameThreadExecutor>(AWS_SMITHY_CLIENT_LOG);
     assert(pExecutor);
 
@@ -776,12 +781,14 @@ AwsSmithyClientBase::MakeRequestSync(Aws::AmazonWebServiceRequest const * const 
 
     pExecutor->Submit([&]()
     {
-        this->MakeRequestAsync(request, requestName, method, std::move(endpointCallback), std::move(responseHandler), std::move(authCallback), pExecutor);
+        if (const auto pRequestCtx = CreateRequestContext(request, requestName, method, std::move(endpointCallback), std::move(responseHandler), std::move(authCallback), pExecutor))
+        {
+            RunAttemptsBlocking(pRequestCtx);
+        }
     });
     pExecutor->WaitUntilStopped();
 
     return outcome;
-#endif
 }
 
 void AwsSmithyClientBase::DisableRequestProcessing()
@@ -800,8 +807,23 @@ AwsSmithyClientBase::StreamOutcome AwsSmithyClientBase::MakeRequestWithUnparsedR
                                 EndpointUpdateCallback&& endpointCallback
                                 ) const
 {
-    auto httpResponseOutcome = MakeRequestSync(request, requestName, method, std::move(endpointCallback));
+    if (const auto asyncOperationState = request ? Aws::Client::ProtocolAsyncOperationState<StreamOutcome>::Take(*request) : nullptr)
+    {
+        MakeRequestAsync(request, requestName, method, std::move(endpointCallback),
+            [asyncOperationState](HttpResponseOutcome&& httpResponseOutcome)
+            {
+                asyncOperationState->Complete(ProcessUnparsedResponse(httpResponseOutcome));
+            },
+            nullptr, m_clientConfig->executor);
+        return StreamOutcome(ClientError(CoreErrors::INTERNAL_FAILURE, "", "Request continues on the async request path", false));
+    }
 
+    auto httpResponseOutcome = MakeRequestSync(request, requestName, method, std::move(endpointCallback));
+    return ProcessUnparsedResponse(httpResponseOutcome);
+}
+
+AwsSmithyClientBase::StreamOutcome AwsSmithyClientBase::ProcessUnparsedResponse(HttpResponseOutcome& httpResponseOutcome)
+{
     if (httpResponseOutcome.IsSuccess())
     {
         return  StreamOutcome(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>(

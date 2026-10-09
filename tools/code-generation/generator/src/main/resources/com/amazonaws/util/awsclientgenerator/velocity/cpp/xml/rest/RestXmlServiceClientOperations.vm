@@ -40,7 +40,11 @@ ${operation.name}Outcome ${className}::${operation.name}(${constText}${operation
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + "." + request.GetServiceRequestName(),
     {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
+#if($operation.result.shape.hasStreamMembers() || $operation.result.shape.hasEventStreamMembers())
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<${operation.name}Outcome>(request, std::move(span),
+#else
   return TracingUtils::MakeCallWithTiming<${operation.name}Outcome>(
+#end
     [&]()-> ${operation.name}Outcome {
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationEndpointPrepareCommonBody.vm")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/UriRequestQueryParams.vm")
@@ -88,7 +92,11 @@ ${operation.name}Outcome ${className}::${operation.name}(${constText}${operation
 #end
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+#if($operation.result.shape.hasStreamMembers() || $operation.result.shape.hasEventStreamMembers())
+    meter,
+#else
     *meter,
+#end
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 #end
 }
