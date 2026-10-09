@@ -20,10 +20,17 @@ using namespace Aws::Utils;
 static const char* LOG_TAG = "CognitoCachingCredentialsProvider";
 static const char* MEM_TAG = "CognitoCachingCredentialsProvider";
 
-CognitoCachingCredentialsProvider::CognitoFetchOnlyProvider::CognitoFetchOnlyProvider(CognitoCachingCredentialsProvider& owner)
-    : m_owner(owner)
+// Fetch-only: one GetCredentialsFromCognito() call, no cache of its own. GetCredentialsFromCognito() is
+// virtual, so this calls back into the owner rather than duplicating its dispatch.
+class CognitoCachingCredentialsProvider::CognitoFetchOnlyProvider : public AWSCredentialsProvider
 {
-}
+public:
+    explicit CognitoFetchOnlyProvider(CognitoCachingCredentialsProvider& owner) : m_owner(owner) {}
+    AWSCredentials GetAWSCredentials() override;
+
+private:
+    CognitoCachingCredentialsProvider& m_owner;
+};
 
 AWSCredentials CognitoCachingCredentialsProvider::CognitoFetchOnlyProvider::GetAWSCredentials()
 {

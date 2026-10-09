@@ -28,13 +28,33 @@ using namespace Aws::Client;
 
 static const char SSO_CREDENTIALS_PROVIDER_LOG_TAG[] = "SSOCredentialsProvider";
 
-SSOCredentialsProvider::SSOFetchOnlyProvider::SSOFetchOnlyProvider(
-    Aws::String profile, std::shared_ptr<const Aws::Client::ClientConfiguration> config)
-    : m_profileToUse(profile),
-      m_bearerTokenProvider(profile),
-      m_config(std::move(config))
+// Fetch-only: one SSO token read plus one GetRoleCredentials call, no cache of its own.
+class SSOCredentialsProvider::SSOFetchOnlyProvider : public AWSCredentialsProvider
 {
-}
+public:
+    SSOFetchOnlyProvider(Aws::String profile, std::shared_ptr<const Aws::Client::ClientConfiguration> config)
+        : m_profileToUse(profile),
+          m_bearerTokenProvider(profile),
+          m_config(std::move(config))
+    {
+    }
+
+    AWSCredentials GetAWSCredentials() override;
+
+private:
+    Aws::String LoadAccessTokenFile(const Aws::String& ssoAccessTokenPath);
+
+    Aws::UniquePtr<Aws::Internal::SSOCredentialsClient> m_client;
+    Aws::String m_profileToUse;
+    Aws::String m_ssoAccountId;
+    // The AWS region where the SSO directory for the given sso_start_url is hosted.
+    // This is independent of the general region configuration and MUST NOT be conflated.
+    Aws::String m_ssoRegion;
+    // The expiration time of the accessToken.
+    Aws::Utils::DateTime m_expiresAt;
+    Aws::Auth::SSOBearerTokenProvider m_bearerTokenProvider;
+    std::shared_ptr<const Aws::Client::ClientConfiguration> m_config;
+};
 
 AWSCredentials SSOCredentialsProvider::SSOFetchOnlyProvider::GetAWSCredentials()
 {
@@ -102,7 +122,7 @@ Aws::String SSOCredentialsProvider::SSOFetchOnlyProvider::LoadAccessTokenFile(co
             AWS_LOGSTREAM_ERROR(SSO_CREDENTIALS_PROVIDER_LOG_TAG, "Failed to parse token file: " << ssoAccessTokenPath);
             return "";
         }
-        Utils::Json::JsonView tokenView(tokenDoc);
+        Aws::Utils::Json::JsonView tokenView(tokenDoc);
         Aws::String tmpAccessToken, expirationStr;
         tmpAccessToken = tokenView.GetString("accessToken");
         expirationStr = tokenView.GetString("expiresAt");

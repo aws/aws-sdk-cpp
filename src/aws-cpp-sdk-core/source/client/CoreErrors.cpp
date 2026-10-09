@@ -94,6 +94,9 @@ void CoreErrorsMapper::InitCoreErrorsMapper()
     s_CoreErrorsMapper->emplace("RequestTimeTooSkewed", AWSError<CoreErrors>(CoreErrors::REQUEST_TIME_TOO_SKEWED, true));
     s_CoreErrorsMapper->emplace("RequestTimeoutException", AWSError<CoreErrors>(CoreErrors::REQUEST_TIMEOUT, true));
     s_CoreErrorsMapper->emplace("RequestTimeout", AWSError<CoreErrors>(CoreErrors::REQUEST_TIMEOUT, true));
+    // Retried because AWSClient invalidates the rejected credentials and re-signs each attempt.
+    s_CoreErrorsMapper->emplace("ExpiredToken", AWSError<CoreErrors>(CoreErrors::EXPIRED_TOKEN, true));
+    s_CoreErrorsMapper->emplace("InvalidToken", AWSError<CoreErrors>(CoreErrors::INVALID_TOKEN, true));
     if (newRetriesEnabled) {
         s_CoreErrorsMapper->emplace("TooManyRequestsException", AWSError<CoreErrors>(CoreErrors::THROTTLING, RetryableType::RETRYABLE_THROTTLING));
         s_CoreErrorsMapper->emplace("ProvisionedThroughputExceededException", AWSError<CoreErrors>(CoreErrors::THROTTLING, RetryableType::RETRYABLE_THROTTLING));

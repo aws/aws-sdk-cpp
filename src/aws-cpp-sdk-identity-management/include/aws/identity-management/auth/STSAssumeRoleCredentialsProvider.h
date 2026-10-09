@@ -54,22 +54,8 @@ namespace Aws
             void Invalidate(const Aws::String& accessKeyId) override;
 
         private:
-            // Fetch-only: one blocking AssumeRole call, no cache of its own. Composed into
-            // m_cachingProvider below, which owns the refresh lifecycle.
-            class STSFetchOnlyProvider : public AWSCredentialsProvider
-            {
-            public:
-                STSFetchOnlyProvider(std::shared_ptr<Aws::STS::STSClient> stsClient, Aws::String roleArn,
-                                     Aws::String sessionName, Aws::String externalId, int loadFrequency);
-                AWSCredentials GetAWSCredentials() override;
-
-            private:
-                std::shared_ptr<Aws::STS::STSClient> m_stsClient;
-                Aws::String m_roleArn;
-                Aws::String m_sessionName;
-                Aws::String m_externalId;
-                int m_loadFrequency;
-            };
+            // Fetch-only provider composed into m_cachingProvider; defined in the .cpp.
+            class STSFetchOnlyProvider;
 
             std::shared_ptr<CredentialsCachingProvider> m_cachingProvider;
         };

@@ -49,21 +49,8 @@ class AWS_CORE_API CrtCredentialsProvider : public AWSCredentialsProvider {
 
   static AWSCredentials ExtractCredentialsFromCrt(const Aws::Crt::Auth::Credentials& crtCredentials);
 
-  // Fetch-only: one blocking call into the CRT provider, no cache of its own. Composed into
-  // m_cachingProvider below, which owns the refresh lifecycle.
-  class CrtFetchOnlyProvider : public AWSCredentialsProvider
-  {
-  public:
-      CrtFetchOnlyProvider(std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider> credentialsProvider,
-                           std::chrono::milliseconds providerFuturesTimeoutMs,
-                           Aws::Client::UserAgentFeature userAgentFeature);
-      AWSCredentials GetAWSCredentials() override;
-
-  private:
-      std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider> m_credentialsProvider;
-      std::chrono::milliseconds m_providerFuturesTimeoutMs;
-      Aws::Client::UserAgentFeature m_userAgentFeature;
-  };
+  // Nested so it can call the private ExtractCredentialsFromCrt(); defined in the .cpp.
+  class CrtFetchOnlyProvider;
 
   std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider> m_credentialsProvider;
   std::shared_ptr<CredentialsCachingProvider> m_cachingProvider;

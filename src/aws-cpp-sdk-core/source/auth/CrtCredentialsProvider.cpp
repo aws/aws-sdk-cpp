@@ -26,6 +26,19 @@ struct RefreshState {
 };
 }  // namespace
 
+// Fetch-only: one blocking call into the CRT provider, no cache of its own.
+class CrtCredentialsProvider::CrtFetchOnlyProvider : public AWSCredentialsProvider {
+ public:
+  CrtFetchOnlyProvider(std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider> credentialsProvider,
+                       std::chrono::milliseconds providerFuturesTimeoutMs, Aws::Client::UserAgentFeature userAgentFeature);
+  AWSCredentials GetAWSCredentials() override;
+
+ private:
+  std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider> m_credentialsProvider;
+  std::chrono::milliseconds m_providerFuturesTimeoutMs;
+  Aws::Client::UserAgentFeature m_userAgentFeature;
+};
+
 CrtCredentialsProvider::CrtFetchOnlyProvider::CrtFetchOnlyProvider(
     std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider> credentialsProvider,
     std::chrono::milliseconds providerFuturesTimeoutMs, Aws::Client::UserAgentFeature userAgentFeature)
