@@ -78,6 +78,8 @@ public:
     // inline. Off by default so existing inline-completion tests are unaffected.
     void SetCompleteAsynchronously(bool completeAsynchronously) { m_completeAsynchronously = completeAsynchronously; }
 
+    bool SupportsAsyncRequests() const override { return true; }
+
     Aws::Crt::Optional<Aws::Client::AWSError<Aws::Client::CoreErrors>> MakeRequestAsync(
         const Aws::Http::HttpClient::PrepareAttempt& prepareAttempt,
         const Aws::Http::HttpClient::EvaluateAttempt& evaluateAttempt,

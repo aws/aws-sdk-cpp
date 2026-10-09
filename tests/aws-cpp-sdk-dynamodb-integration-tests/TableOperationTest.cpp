@@ -39,6 +39,7 @@
 #include <aws/core/utils/UUID.h>
 
 #include <algorithm>
+#include <future>
 #include <utility>
 
 using namespace Aws::Auth;
@@ -1643,3 +1644,25 @@ TEST_F(TableOperationTest, TestWriteDataApi) {
 
 } // anonymous namespace
 
+TEST_F(TableOperationTest, AsyncHandlerHoldingTheLastClientReferenceCompletes)
+{
+    GTEST_FLAG_SET(death_test_style, "threadsafe");
+    EXPECT_EXIT(
+        {
+            Aws::Client::ClientConfiguration config;
+            config.region = "us-east-1";
+            auto destroyed = std::make_shared<std::promise<void>>();
+            std::shared_ptr<DynamoDBClient> client(Aws::New<DynamoDBClient>(ALLOCATION_TAG, config), [destroyed](DynamoDBClient* toDelete) {
+                Aws::Delete(toDelete);
+                destroyed->set_value();
+            });
+
+            client->ListTablesAsync([client](const DynamoDBClient*, const ListTablesRequest&, const ListTablesOutcome&,
+                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) {});
+            client.reset();
+
+            const auto status = destroyed->get_future().wait_for(std::chrono::seconds(30));
+            std::_Exit(status == std::future_status::ready ? 0 : 1);
+        },
+        ::testing::ExitedWithCode(0), "");
+}
