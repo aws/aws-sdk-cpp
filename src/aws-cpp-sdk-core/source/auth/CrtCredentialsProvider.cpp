@@ -44,6 +44,11 @@ class CrtCredentialsProvider::CrtRetrieveProvider : public AWSCredentialsProvide
 
 CrtCredentialsProvider::CrtCredentialsProvider(
     const std::function<std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider>()>& credentialsProviderFactory,
+    std::chrono::milliseconds providerFuturesTimeoutMs, Aws::Client::UserAgentFeature userAgentFeature, const Aws::String& providerName)
+    : CrtCredentialsProvider(credentialsProviderFactory, providerFuturesTimeoutMs, userAgentFeature, providerName, true) {}
+
+CrtCredentialsProvider::CrtCredentialsProvider(
+    const std::function<std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider>()>& credentialsProviderFactory,
     std::chrono::milliseconds providerFuturesTimeoutMs, Aws::Client::UserAgentFeature userAgentFeature, const Aws::String& providerName,
     bool staticStability)
     : m_credentialsProvider{credentialsProviderFactory()},

@@ -262,7 +262,7 @@ AWSCredentials InstanceProfileCredentialsProvider::GetAWSCredentials()
 {
     if (m_ec2MetadataConfigLoader)
     {
-        AWSCredentials credentials = LoaderCache()->GetAWSCredentials();
+        AWSCredentials credentials = m_ec2MetadataConfigLoader->GetCredentials();
         if (!credentials.IsEmpty()) {
             credentials.AddUserAgentFeature(UserAgentFeature::CREDENTIALS_IMDS);
         }
@@ -280,7 +280,7 @@ void InstanceProfileCredentialsProvider::Invalidate(const Aws::String& accessKey
 {
     if (m_ec2MetadataConfigLoader)
     {
-        LoaderCache()->Invalidate(accessKeyId);
+        m_ec2MetadataConfigLoader->Invalidate(accessKeyId);
     }
 }
 
@@ -288,16 +288,10 @@ void InstanceProfileCredentialsProvider::Reload()
 {
     if (m_ec2MetadataConfigLoader)
     {
-        const auto cache = LoaderCache();
-        cache->Invalidate(cache->GetAWSCredentials().GetAWSAccessKeyId());
-        cache->GetAWSCredentials();
+        m_ec2MetadataConfigLoader->Invalidate(m_ec2MetadataConfigLoader->GetCredentials().GetAWSAccessKeyId());
+        m_ec2MetadataConfigLoader->GetCredentials();
     }
     AWSCredentialsProvider::Reload();
-}
-
-std::shared_ptr<Aws::Internal::CredentialsCachingProvider> InstanceProfileCredentialsProvider::LoaderCache() const
-{
-    return static_cast<Aws::Config::EC2InstanceProfileConfigLoader&>(*m_ec2MetadataConfigLoader).m_cachingProvider;
 }
 
 static const char PROCESS_LOG_TAG[] = "ProcessCredentialsProvider";

@@ -66,7 +66,17 @@ namespace Aws
 
         bool EC2InstanceProfileConfigLoader::LoadInternal()
         {
-            return !m_cachingProvider->GetAWSCredentials().IsEmpty();
+            return !GetCredentials().IsEmpty();
+        }
+
+        AWSCredentials EC2InstanceProfileConfigLoader::GetCredentials() const
+        {
+            return m_cachingProvider->GetAWSCredentials();
+        }
+
+        void EC2InstanceProfileConfigLoader::Invalidate(const Aws::String& accessKeyId)
+        {
+            m_cachingProvider->Invalidate(accessKeyId);
         }
 
         bool EC2InstanceProfileConfigLoader::RetrieveCredentials()
