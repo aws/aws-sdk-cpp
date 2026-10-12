@@ -27,20 +27,11 @@ struct RefreshState {
 };
 }  // namespace
 
-// CrtRetrieveProvider retrieves credentials through the owner's Reload().
-class CrtCredentialsProvider::CrtRetrieveProvider : public AWSCredentialsProvider {
- public:
-  explicit CrtRetrieveProvider(CrtCredentialsProvider& owner) : m_owner(owner) {}
-
-  AWSCredentials GetAWSCredentials() override {
-    m_owner.m_credentials = AWSCredentials{};
-    m_owner.Reload();
-    return m_owner.m_credentials;
-  }
-
- private:
-  CrtCredentialsProvider& m_owner;
-};
+AWSCredentials CrtCredentialsProvider::RetrieveForCache() {
+  m_credentials = AWSCredentials{};
+  Reload();
+  return m_credentials;
+}
 
 CrtCredentialsProvider::CrtCredentialsProvider(
     const std::function<std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider>()>& credentialsProviderFactory,
@@ -55,7 +46,7 @@ CrtCredentialsProvider::CrtCredentialsProvider(
       m_providerFuturesTimeoutMs{providerFuturesTimeoutMs},
       m_userAgentFeature{userAgentFeature},
       m_providerName{providerName},
-      m_cachingProvider{Aws::MakeShared<Aws::Internal::CredentialsCachingProvider>(CRT_CREDS_PROVIDER_TAG, Aws::MakeShared<CrtRetrieveProvider>(CRT_CREDS_PROVIDER_TAG, *this), staticStability)} {
+      m_cachingProvider{Aws::MakeShared<Aws::Internal::CredentialsCachingProvider>(CRT_CREDS_PROVIDER_TAG, [this]() { return RetrieveForCache(); }, staticStability)} {
   if (m_credentialsProvider && m_credentialsProvider->IsValid()) {
     m_state = STATE::INITIALIZED;
   }

@@ -19,7 +19,6 @@ namespace Aws
         class STSClient;
     }
 
-    namespace Internal { class CredentialsCachingProvider; }
     namespace Auth
     {
         /**
@@ -58,8 +57,6 @@ namespace Aws
 
         private:
             void LoadCredentialsFromSTS();
-            // STSRetrieveProvider retrieves credentials for m_cachingProvider.
-            class STSRetrieveProvider;
 
             std::shared_ptr<Aws::STS::STSClient> m_stsClient;
             AWSCredentials m_cachedCredentials;
@@ -69,7 +66,9 @@ namespace Aws
             std::atomic<int64_t> m_expiry;
             std::mutex m_credsMutex;
             std::atomic<int> m_loadFrequency;
-            std::shared_ptr<Aws::Internal::CredentialsCachingProvider> m_cachingProvider;
+            // RetrieveForCache forces LoadCredentialsFromSTS() to fetch and returns the credentials with their expiration.
+            AWSCredentials RetrieveForCache();
+            std::shared_ptr<AWSCredentialsProvider> m_cachingProvider;
         };
     }
 }

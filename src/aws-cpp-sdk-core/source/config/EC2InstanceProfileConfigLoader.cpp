@@ -24,27 +24,17 @@ namespace Aws
 
         static const char* const EC2_INSTANCE_PROFILE_LOG_TAG = "Aws::Config::EC2InstanceProfileConfigLoader";
 
-        // IMDSRetrieveProvider retrieves credentials through the owner's RetrieveCredentials().
-        class EC2InstanceProfileConfigLoader::IMDSRetrieveProvider : public AWSCredentialsProvider
+        AWSCredentials EC2InstanceProfileConfigLoader::RetrieveForCache()
         {
-        public:
-            explicit IMDSRetrieveProvider(EC2InstanceProfileConfigLoader& owner) : m_owner(owner) {}
-
-            AWSCredentials GetAWSCredentials() override
+            if (!RetrieveCredentials())
             {
-                if (!m_owner.RetrieveCredentials())
-                {
-                    return AWSCredentials();
-                }
-                return m_owner.m_profiles[INSTANCE_PROFILE_KEY].GetCredentials();
+                return AWSCredentials();
             }
-
-        private:
-            EC2InstanceProfileConfigLoader& m_owner;
-        };
+            return m_profiles[INSTANCE_PROFILE_KEY].GetCredentials();
+        }
 
         EC2InstanceProfileConfigLoader::EC2InstanceProfileConfigLoader(const std::shared_ptr<Aws::Internal::EC2MetadataClient>& client) :
-            m_cachingProvider(Aws::MakeShared<Aws::Internal::CredentialsCachingProvider>(EC2_INSTANCE_PROFILE_LOG_TAG, Aws::MakeShared<IMDSRetrieveProvider>(EC2_INSTANCE_PROFILE_LOG_TAG, *this)))
+            m_cachingProvider(Aws::MakeShared<Aws::Internal::CredentialsCachingProvider>(EC2_INSTANCE_PROFILE_LOG_TAG, [this]() { return RetrieveForCache(); }))
         {
             if(client == nullptr)
             {
@@ -58,7 +48,7 @@ namespace Aws
         }
         
         EC2InstanceProfileConfigLoader::EC2InstanceProfileConfigLoader(const Aws::Client::ClientConfiguration::CredentialProviderConfiguration& credentialConfig) :
-            m_cachingProvider(Aws::MakeShared<Aws::Internal::CredentialsCachingProvider>(EC2_INSTANCE_PROFILE_LOG_TAG, Aws::MakeShared<IMDSRetrieveProvider>(EC2_INSTANCE_PROFILE_LOG_TAG, *this)))
+            m_cachingProvider(Aws::MakeShared<Aws::Internal::CredentialsCachingProvider>(EC2_INSTANCE_PROFILE_LOG_TAG, [this]() { return RetrieveForCache(); }))
         {
             Aws::Internal::InitEC2MetadataClient(credentialConfig);
             m_ec2metadataClient = Aws::Internal::GetEC2MetadataClient();

@@ -20,27 +20,17 @@ using namespace Aws::Utils;
 static const char* LOG_TAG = "CognitoCachingCredentialsProvider";
 static const char* MEM_TAG = "CognitoCachingCredentialsProvider";
 
-// CognitoRetrieveProvider retrieves credentials through the owner's RetrieveCredentials().
-class CognitoCachingCredentialsProvider::CognitoRetrieveProvider : public AWSCredentialsProvider
+AWSCredentials CognitoCachingCredentialsProvider::RetrieveForCache()
 {
-public:
-    explicit CognitoRetrieveProvider(CognitoCachingCredentialsProvider& owner) : m_owner(owner) {}
-
-    AWSCredentials GetAWSCredentials() override
+    m_cachedCredentials = AWSCredentials("", "");
+    m_expiry.store(0.0);
+    AWSCredentials credentials = RetrieveCredentials();
+    if (!credentials.IsEmpty())
     {
-        m_owner.m_cachedCredentials = AWSCredentials("", "");
-        m_owner.m_expiry.store(0.0);
-        AWSCredentials credentials = m_owner.RetrieveCredentials();
-        if (!credentials.IsEmpty())
-        {
-            credentials.SetExpiration(DateTime(m_owner.m_expiry.load()));
-        }
-        return credentials;
+        credentials.SetExpiration(DateTime(m_expiry.load()));
     }
-
-private:
-    CognitoCachingCredentialsProvider& m_owner;
-};
+    return credentials;
+}
 
 CognitoCachingCredentialsProvider::CognitoCachingCredentialsProvider
         (const std::shared_ptr<PersistentCognitoIdentityProvider>& identityRepository, const std::shared_ptr<CognitoIdentityClient>& cognitoIdentityClient) :
@@ -49,7 +39,7 @@ CognitoCachingCredentialsProvider::CognitoCachingCredentialsProvider
         m_identityRepository(identityRepository),
         m_cachedCredentials("", ""),
         m_expiry(0.0),
-        m_cachingProvider(Aws::MakeShared<Aws::Internal::CredentialsCachingProvider>(MEM_TAG, Aws::MakeShared<CognitoRetrieveProvider>(MEM_TAG, *this)))
+        m_cachingProvider(Aws::MakeShared<Aws::Internal::CredentialsCachingProvider>(MEM_TAG, [this]() { return RetrieveForCache(); }))
 {
     m_identityRepository->SetLoginsUpdatedCallback(std::bind(&CognitoCachingCredentialsProvider::OnLoginsUpdated, this, std::placeholders::_1));
 }

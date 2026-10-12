@@ -17,22 +17,12 @@ using namespace Aws::Auth;
 
 static const char GEN_HTTP_LOG_TAG[] = "GeneralHTTPCredentialsProvider";
 
-// GeneralHTTPRetrieveProvider retrieves credentials through the owner's Reload().
-class GeneralHTTPCredentialsProvider::GeneralHTTPRetrieveProvider : public AWSCredentialsProvider
+AWSCredentials GeneralHTTPCredentialsProvider::RetrieveForCache()
 {
-public:
-    explicit GeneralHTTPRetrieveProvider(GeneralHTTPCredentialsProvider& owner) : m_owner(owner) {}
-
-    AWSCredentials GetAWSCredentials() override
-    {
-        m_owner.m_credentials = AWSCredentials();
-        m_owner.Reload();
-        return m_owner.m_credentials;
-    }
-
-private:
-    GeneralHTTPCredentialsProvider& m_owner;
-};
+    m_credentials = AWSCredentials();
+    Reload();
+    return m_credentials;
+}
 
 const char GeneralHTTPCredentialsProvider::AWS_CONTAINER_AUTHORIZATION_TOKEN_FILE[] = "AWS_CONTAINER_AUTHORIZATION_TOKEN_FILE";
 const char GeneralHTTPCredentialsProvider::AWS_CONTAINER_CREDENTIALS_RELATIVE_URI[] = "AWS_CONTAINER_CREDENTIALS_RELATIVE_URI";
@@ -172,7 +162,7 @@ GeneralHTTPCredentialsProvider::GeneralHTTPCredentialsProvider(const Aws::String
                                                                long refreshRateMs,
                                                                ShouldCreateFunc shouldCreateFunc) :
     m_authTokenFilePath(authTokenFilePath),
-    m_cachingProvider(Aws::MakeShared<Aws::Internal::CredentialsCachingProvider>(GEN_HTTP_LOG_TAG, Aws::MakeShared<GeneralHTTPRetrieveProvider>(GEN_HTTP_LOG_TAG, *this)))
+    m_cachingProvider(Aws::MakeShared<Aws::Internal::CredentialsCachingProvider>(GEN_HTTP_LOG_TAG, [this]() { return RetrieveForCache(); }))
 {
     if (shouldCreateFunc(relativeUri, absoluteUri, authToken))
     {
@@ -188,7 +178,7 @@ GeneralHTTPCredentialsProvider::GeneralHTTPCredentialsProvider(const Aws::String
 GeneralHTTPCredentialsProvider::GeneralHTTPCredentialsProvider(
         const std::shared_ptr<Aws::Internal::ECSCredentialsClient>& client, long refreshRateMs) :
     m_ecsCredentialsClient(client),
-    m_cachingProvider(Aws::MakeShared<Aws::Internal::CredentialsCachingProvider>(GEN_HTTP_LOG_TAG, Aws::MakeShared<GeneralHTTPRetrieveProvider>(GEN_HTTP_LOG_TAG, *this)))
+    m_cachingProvider(Aws::MakeShared<Aws::Internal::CredentialsCachingProvider>(GEN_HTTP_LOG_TAG, [this]() { return RetrieveForCache(); }))
 {
     AWS_LOGSTREAM_INFO(GEN_HTTP_LOG_TAG, "Creating GeneralHTTPCredentialsProvider with a pre-allocated client " << refreshRateMs);
 }

@@ -13,7 +13,6 @@
 
 namespace Aws
 {
-    namespace Internal { class CredentialsCachingProvider; }
     namespace Auth
     {
         class PersistentCognitoIdentityProvider;
@@ -50,13 +49,13 @@ namespace Aws
             void OnLoginsUpdated(const PersistentCognitoIdentityProvider&);
             // RetrieveCredentials loads credentials from Cognito into m_cachedCredentials.
             AWSCredentials RetrieveCredentials();
-            // CognitoRetrieveProvider retrieves credentials for m_cachingProvider.
-            class CognitoRetrieveProvider;
 
             AWSCredentials m_cachedCredentials;
             std::atomic<double> m_expiry;
             std::mutex m_credsMutex;
-            std::shared_ptr<Aws::Internal::CredentialsCachingProvider> m_cachingProvider;
+            // RetrieveForCache forces RetrieveCredentials() to fetch and returns the credentials with their expiration.
+            AWSCredentials RetrieveForCache();
+            std::shared_ptr<AWSCredentialsProvider> m_cachingProvider;
         };
 
         /**

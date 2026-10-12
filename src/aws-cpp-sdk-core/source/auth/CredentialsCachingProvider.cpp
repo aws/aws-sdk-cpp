@@ -26,14 +26,14 @@ namespace Aws
 
 static const char CREDENTIALS_CACHING_PROVIDER_LOG_TAG[] = "CredentialsCachingProvider";
 
-CredentialsCachingProvider::CredentialsCachingProvider(std::shared_ptr<AWSCredentialsProvider> delegate, bool staticStability)
-    : m_delegate(std::move(delegate)),
+CredentialsCachingProvider::CredentialsCachingProvider(RetrieveFunction retrieve, bool staticStability)
+    : m_retrieve(std::move(retrieve)),
       m_cachingState(Aws::MakeShared<Aws::Internal::CredentialsCachingStateImpl>(CREDENTIALS_CACHING_PROVIDER_LOG_TAG,
           [this]() -> Aws::Internal::RefreshResult<AWSCredentials> {
-              AWSCredentials credentials = m_delegate->GetAWSCredentials();
+              AWSCredentials credentials = m_retrieve();
               if (credentials.IsEmpty())
               {
-                  return Aws::Internal::RefreshResult<AWSCredentials>::Recoverable("wrapped provider returned no credentials");
+                  return Aws::Internal::RefreshResult<AWSCredentials>::Recoverable("credential source returned no credentials");
               }
               return Aws::Internal::RefreshResult<AWSCredentials>::Success(credentials, credentials.GetExpiration());
           },

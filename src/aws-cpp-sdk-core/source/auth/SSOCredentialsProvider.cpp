@@ -30,22 +30,12 @@ using Aws::Utils::Threading::ReaderLockGuard;
 
 static const char SSO_CREDENTIALS_PROVIDER_LOG_TAG[] = "SSOCredentialsProvider";
 
-// SSORetrieveProvider retrieves credentials through the owner's Reload().
-class SSOCredentialsProvider::SSORetrieveProvider : public AWSCredentialsProvider
+AWSCredentials SSOCredentialsProvider::RetrieveForCache()
 {
-public:
-    explicit SSORetrieveProvider(SSOCredentialsProvider& owner) : m_owner(owner) {}
-
-    AWSCredentials GetAWSCredentials() override
-    {
-        m_owner.m_credentials = AWSCredentials();
-        m_owner.Reload();
-        return m_owner.m_credentials;
-    }
-
-private:
-    SSOCredentialsProvider& m_owner;
-};
+    m_credentials = AWSCredentials();
+    Reload();
+    return m_credentials;
+}
 
 SSOCredentialsProvider::SSOCredentialsProvider() : SSOCredentialsProvider(GetConfigProfileName(), nullptr)
 {
@@ -59,7 +49,7 @@ SSOCredentialsProvider::SSOCredentialsProvider(const Aws::String& profile, std::
     m_profileToUse(profile),
     m_bearerTokenProvider(profile),
     m_config(std::move(config)),
-    m_cachingProvider(Aws::MakeShared<Aws::Internal::CredentialsCachingProvider>(SSO_CREDENTIALS_PROVIDER_LOG_TAG, Aws::MakeShared<SSORetrieveProvider>(SSO_CREDENTIALS_PROVIDER_LOG_TAG, *this)))
+    m_cachingProvider(Aws::MakeShared<Aws::Internal::CredentialsCachingProvider>(SSO_CREDENTIALS_PROVIDER_LOG_TAG, [this]() { return RetrieveForCache(); }))
 {
     AWS_LOGSTREAM_INFO(SSO_CREDENTIALS_PROVIDER_LOG_TAG, "Setting sso credentials provider to read config from " << m_profileToUse);
     if (!m_config)

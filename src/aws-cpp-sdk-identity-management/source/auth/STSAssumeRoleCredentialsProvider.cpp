@@ -22,35 +22,25 @@ namespace Aws
         //60 seconds;
         static const int ACCOUNT_FOR_LATENCY = 60;
 
-        // STSRetrieveProvider retrieves credentials through the owner's LoadCredentialsFromSTS().
-        class STSAssumeRoleCredentialsProvider::STSRetrieveProvider : public AWSCredentialsProvider
+        AWSCredentials STSAssumeRoleCredentialsProvider::RetrieveForCache()
         {
-        public:
-            explicit STSRetrieveProvider(STSAssumeRoleCredentialsProvider& owner) : m_owner(owner) {}
-
-            AWSCredentials GetAWSCredentials() override
+            m_cachedCredentials = AWSCredentials();
+            m_expiry = 0;
+            LoadCredentialsFromSTS();
+            AWSCredentials credentials = m_cachedCredentials;
+            if (!credentials.IsEmpty())
             {
-                m_owner.m_cachedCredentials = AWSCredentials();
-                m_owner.m_expiry = 0;
-                m_owner.LoadCredentialsFromSTS();
-                AWSCredentials credentials = m_owner.m_cachedCredentials;
-                if (!credentials.IsEmpty())
-                {
-                    credentials.SetExpiration(DateTime(m_owner.m_expiry.load()));
-                }
-                return credentials;
+                credentials.SetExpiration(DateTime(m_expiry.load()));
             }
-
-        private:
-            STSAssumeRoleCredentialsProvider& m_owner;
-        };
+            return credentials;
+        }
 
         STSAssumeRoleCredentialsProvider::STSAssumeRoleCredentialsProvider(const Aws::String& roleArn, const Aws::String& sessionName,
             const Aws::String& externalId, int loadFrequency, const std::shared_ptr<Aws::STS::STSClient>& stsClient) :
             m_stsClient(stsClient == nullptr ? Aws::MakeShared<Aws::STS::STSClient>(CLASS_TAG) : stsClient),
             m_roleArn(roleArn), m_sessionName(sessionName), m_externalId(externalId),
             m_expiry(0), m_loadFrequency(loadFrequency),
-            m_cachingProvider(Aws::MakeShared<Aws::Internal::CredentialsCachingProvider>(CLASS_TAG, Aws::MakeShared<STSRetrieveProvider>(CLASS_TAG, *this)))
+            m_cachingProvider(Aws::MakeShared<Aws::Internal::CredentialsCachingProvider>(CLASS_TAG, [this]() { return RetrieveForCache(); }))
         {
             if (sessionName.empty())
             {   

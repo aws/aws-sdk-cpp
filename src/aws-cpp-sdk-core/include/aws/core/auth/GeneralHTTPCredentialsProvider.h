@@ -10,7 +10,6 @@
 
 namespace Aws
 {
-    namespace Internal { class CredentialsCachingProvider; }
     namespace Auth
     {
         /**
@@ -108,8 +107,6 @@ namespace Aws
             void Reload() override;
 
         private:
-            // GeneralHTTPRetrieveProvider retrieves credentials for m_cachingProvider.
-            class GeneralHTTPRetrieveProvider;
 
             Aws::String LoadTokenFromFile() const;
 
@@ -117,7 +114,9 @@ namespace Aws
             Aws::String m_authTokenFilePath;
 
             Aws::Auth::AWSCredentials m_credentials;
-            std::shared_ptr<Aws::Internal::CredentialsCachingProvider> m_cachingProvider;
+            // RetrieveForCache clears m_credentials, runs Reload(), and returns what it loaded.
+            AWSCredentials RetrieveForCache();
+            std::shared_ptr<AWSCredentialsProvider> m_cachingProvider;
         };
 
         // GeneralHTTPCredentialsProvider was previously known as TaskRoleCredentialsProvider or "ECS credentials provider"

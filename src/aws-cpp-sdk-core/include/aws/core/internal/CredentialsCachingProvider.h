@@ -8,6 +8,7 @@
 #include <aws/core/Core_EXPORTS.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
 #include <aws/core/utils/DateTime.h>
+#include <functional>
 #include <memory>
 
 namespace Aws
@@ -22,10 +23,12 @@ namespace Aws
         class AWS_CORE_API CredentialsCachingProvider final : public Aws::Auth::AWSCredentialsProvider
         {
         public:
+            using RetrieveFunction = std::function<Aws::Auth::AWSCredentials()>;
+
             /**
              * CredentialsCachingProvider serves expired credentials after a failed refresh only when staticStability is set.
              */
-            explicit CredentialsCachingProvider(std::shared_ptr<Aws::Auth::AWSCredentialsProvider> delegate, bool staticStability = true);
+            explicit CredentialsCachingProvider(RetrieveFunction retrieve, bool staticStability = true);
 
             Aws::Auth::AWSCredentials GetAWSCredentials() override;
 
@@ -35,7 +38,7 @@ namespace Aws
             void Invalidate(const Aws::String& accessKeyId) override;
 
         private:
-            std::shared_ptr<Aws::Auth::AWSCredentialsProvider> m_delegate;
+            RetrieveFunction m_retrieve;
             std::shared_ptr<CredentialsCachingStateImpl> m_cachingState;
         };
     } // namespace Internal

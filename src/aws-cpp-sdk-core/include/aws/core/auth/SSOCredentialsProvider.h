@@ -12,7 +12,6 @@
 #include <memory>
 
 namespace Aws {
-    namespace Internal { class CredentialsCachingProvider; }
     namespace Auth {
         /**
          * To support usage of SSO credentials
@@ -51,11 +50,11 @@ namespace Aws {
             Aws::Auth::SSOBearerTokenProvider m_bearerTokenProvider;
             // The client configuration to use
             std::shared_ptr<const Aws::Client::ClientConfiguration> m_config;
-            std::shared_ptr<Aws::Internal::CredentialsCachingProvider> m_cachingProvider;
+            // RetrieveForCache clears m_credentials, runs Reload(), and returns what it loaded.
+            AWSCredentials RetrieveForCache();
+            std::shared_ptr<AWSCredentialsProvider> m_cachingProvider;
 
             void Reload() override;
-            // SSORetrieveProvider retrieves credentials for m_cachingProvider.
-            class SSORetrieveProvider;
             Aws::String LoadAccessTokenFile(const Aws::String& ssoAccessTokenPath);
         };
     } // namespace Auth
