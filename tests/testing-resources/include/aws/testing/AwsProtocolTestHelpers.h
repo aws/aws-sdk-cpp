@@ -239,12 +239,14 @@ public:
     return joined;
   }
 
+  // Output tests pass their result assertions as this callback with no expected request, so it always runs.
   void ValidateRequestSent(const std::function<void (const ExpectedRequest& expected, const Aws::ProtocolMock::Model::Request& receivedRequest)>& bodyCompare = ValidateBody) const {
-    ValidateRequestSent(ExpectedRequest(), bodyCompare);
+    ValidateRequestSent(ExpectedRequest(), bodyCompare, true);
   }
 
   void ValidateRequestSent(const ExpectedRequest& expected = ExpectedRequest(),
-                          const std::function<void (const ExpectedRequest& expected, const Aws::ProtocolMock::Model::Request& receivedRequest)>& bodyCompare = ValidateBody) const {
+                          const std::function<void (const ExpectedRequest& expected, const Aws::ProtocolMock::Model::Request& receivedRequest)>& bodyCompare = ValidateBody,
+                          bool alwaysCompareBody = false) const {
 
     auto requestsReceivedOutcome = mockClient.GetRequestsReceived();
     AWS_ASSERT_SUCCESS(requestsReceivedOutcome);
@@ -255,7 +257,7 @@ public:
       EXPECT_STREQ(expected.method.c_str(), receivedRequest.GetMethod().c_str());
     }
     // A Smithy vector with no "body" asserts only headers/uri, not the body.
-    if (!expected.body.empty()) {
+    if (alwaysCompareBody || !expected.body.empty()) {
       bodyCompare(expected, receivedRequest);
     }
     if (!expected.uri.empty()) {

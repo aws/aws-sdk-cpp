@@ -10,7 +10,9 @@ import json
 import os
 import pathlib
 import re
+import shutil
 import sys
+import tempfile
 from concurrent.futures import ProcessPoolExecutor, wait, FIRST_COMPLETED, ALL_COMPLETED
 from subprocess import list2cmdline, run
 
@@ -87,12 +89,66 @@ class ProtocolTestsGen(object):
         :param max_workers:
         :return:
         """
-        if self._generate_test_clients(executor, max_workers) == 0:
-            result = self._generate_tests(executor, max_workers)
-            if result == 0:
-                format_directories([self.generated_test_clients_dir, self.generated_tests_dir])
-            return result
-        return -1
+        # Event-stream operations are not supported by the protocol-test clients yet: generate from a copy of the
+        # client models with those operations removed. No C2J protocol test case exercises them.
+        filtered_models_dir = tempfile.mkdtemp(prefix="protocol-test-models-")
+        try:
+            self._write_models_without_event_streams(self.client_models_dir, filtered_models_dir)
+            self.client_models_dir = filtered_models_dir
+            self.c2j_client_generator.path_to_api_definitions = filtered_models_dir
+            if self._generate_test_clients(executor, max_workers) == 0:
+                result = self._generate_tests(executor, max_workers)
+                if result == 0:
+                    format_directories([self.generated_test_clients_dir, self.generated_tests_dir])
+                return result
+            return -1
+        finally:
+            shutil.rmtree(filtered_models_dir, ignore_errors=True)
+
+    def _write_models_without_event_streams(self, models_dir: str, output_dir: str):
+        """Copy the c2j client models to output_dir, dropping operations whose input or output has an event stream
+        member, and the shapes only those operations used."""
+        for filename in os.listdir(models_dir):
+            source = os.path.join(models_dir, filename)
+            if not os.path.isfile(source):
+                continue
+            with open(source, "r") as file_content:
+                model = json.load(file_content)
+            shapes = model.get("shapes", {})
+
+            def has_event_stream(shape_ref: dict) -> bool:
+                shape = shapes.get((shape_ref or {}).get("shape"), {})
+                return any(shapes.get(member.get("shape"), {}).get("eventstream")
+                           for member in shape.get("members", {}).values())
+
+            operations = model.get("operations", {})
+            event_stream_ops = [name for name, op in operations.items()
+                                if has_event_stream(op.get("input")) or has_event_stream(op.get("output"))]
+            if not event_stream_ops:
+                shutil.copy2(source, os.path.join(output_dir, filename))
+                continue
+
+            for name in event_stream_ops:
+                del operations[name]
+            model["shapes"] = {name: shapes[name] for name in self._reachable_shapes(operations, shapes)}
+            with open(os.path.join(output_dir, filename), "w") as file_content:
+                json.dump(model, file_content, indent=4)
+            print(f"Skipping event stream operations in {filename}: {', '.join(sorted(event_stream_ops))}")
+
+    @staticmethod
+    def _reachable_shapes(operations: dict, shapes: dict) -> set:
+        pending = [ref.get("shape") for op in operations.values()
+                   for ref in [op.get("input"), op.get("output")] + op.get("errors", []) if ref]
+        reachable = set()
+        while pending:
+            name = pending.pop()
+            if name in reachable or name not in shapes:
+                continue
+            reachable.add(name)
+            shape = shapes[name]
+            refs = list(shape.get("members", {}).values()) + [shape.get(key) for key in ("member", "key", "value")]
+            pending.extend(ref.get("shape") for ref in refs if ref)
+        return reachable
 
     def _generate_test_clients(self, executor: ProcessPoolExecutor, max_workers: int):
         self.c2j_client_generator.build_generator(self.c2j_client_generator.path_to_generator)
