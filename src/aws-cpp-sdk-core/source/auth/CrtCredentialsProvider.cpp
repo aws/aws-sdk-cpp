@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/auth/CrtCredentialsProvider.h>
-#include <aws/core/auth/CredentialsCachingProvider.h>
+#include <aws/core/internal/CredentialsCachingProvider.h>
 #include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/threading/ReaderWriterLock.h>
@@ -42,7 +42,7 @@ CrtCredentialsProvider::CrtCredentialsProvider(
     const std::function<std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider>()>& credentialsProviderFactory,
     std::chrono::milliseconds providerFuturesTimeoutMs, Aws::Client::UserAgentFeature userAgentFeature, const Aws::String& providerName)
     : m_credentialsProvider{credentialsProviderFactory()},
-      m_cachingProvider{Aws::MakeShared<CredentialsCachingProvider>(CRT_CREDS_PROVIDER_TAG, Aws::MakeShared<CrtRetrieveProvider>(CRT_CREDS_PROVIDER_TAG, *this))},
+      m_cachingProvider{Aws::MakeShared<Aws::Internal::CredentialsCachingProvider>(CRT_CREDS_PROVIDER_TAG, Aws::MakeShared<CrtRetrieveProvider>(CRT_CREDS_PROVIDER_TAG, *this))},
       m_providerFuturesTimeoutMs{providerFuturesTimeoutMs},
       m_userAgentFeature{userAgentFeature},
       m_providerName{providerName} {

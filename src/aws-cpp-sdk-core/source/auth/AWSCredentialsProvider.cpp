@@ -5,7 +5,7 @@
 
 
 #include <aws/core/auth/AWSCredentialsProvider.h>
-#include <aws/core/auth/CredentialsCachingProvider.h>
+#include <aws/core/internal/CredentialsCachingProvider.h>
 
 #include <aws/core/config/AWSProfileConfigLoader.h>
 #include <aws/core/client/ClientConfiguration.h>
@@ -252,7 +252,7 @@ private:
 
 InstanceProfileCredentialsProvider::InstanceProfileCredentialsProvider(long refreshRateMs) :
     m_ec2MetadataConfigLoader(Aws::MakeShared<Aws::Config::EC2InstanceProfileConfigLoader>(INSTANCE_LOG_TAG)),
-    m_cachingProvider(Aws::MakeShared<CredentialsCachingProvider>(INSTANCE_LOG_TAG, Aws::MakeShared<InstanceProfileRetrieveProvider>(INSTANCE_LOG_TAG, *this)))
+    m_cachingProvider(Aws::MakeShared<Aws::Internal::CredentialsCachingProvider>(INSTANCE_LOG_TAG, Aws::MakeShared<InstanceProfileRetrieveProvider>(INSTANCE_LOG_TAG, *this)))
 {
     AWS_LOGSTREAM_INFO(INSTANCE_LOG_TAG, "Creating Instance with default EC2MetadataClient and refresh rate " << refreshRateMs);
 }
@@ -260,14 +260,14 @@ InstanceProfileCredentialsProvider::InstanceProfileCredentialsProvider(long refr
 
 InstanceProfileCredentialsProvider::InstanceProfileCredentialsProvider(const std::shared_ptr<Aws::Config::EC2InstanceProfileConfigLoader>& loader, long refreshRateMs) :
     m_ec2MetadataConfigLoader(loader),
-    m_cachingProvider(Aws::MakeShared<CredentialsCachingProvider>(INSTANCE_LOG_TAG, Aws::MakeShared<InstanceProfileRetrieveProvider>(INSTANCE_LOG_TAG, *this)))
+    m_cachingProvider(Aws::MakeShared<Aws::Internal::CredentialsCachingProvider>(INSTANCE_LOG_TAG, Aws::MakeShared<InstanceProfileRetrieveProvider>(INSTANCE_LOG_TAG, *this)))
 {
     AWS_LOGSTREAM_INFO(INSTANCE_LOG_TAG, "Creating Instance with injected EC2MetadataClient and refresh rate " << refreshRateMs);
 }
 
 InstanceProfileCredentialsProvider::InstanceProfileCredentialsProvider(const Aws::Client::ClientConfiguration::CredentialProviderConfiguration& credentialConfig, long refreshRateMs) :
     m_ec2MetadataConfigLoader(Aws::MakeShared<Aws::Config::EC2InstanceProfileConfigLoader>(INSTANCE_LOG_TAG, credentialConfig)),
-    m_cachingProvider(Aws::MakeShared<CredentialsCachingProvider>(INSTANCE_LOG_TAG, Aws::MakeShared<InstanceProfileRetrieveProvider>(INSTANCE_LOG_TAG, *this)))
+    m_cachingProvider(Aws::MakeShared<Aws::Internal::CredentialsCachingProvider>(INSTANCE_LOG_TAG, Aws::MakeShared<InstanceProfileRetrieveProvider>(INSTANCE_LOG_TAG, *this)))
 {
     AWS_UNREFERENCED_PARAM(refreshRateMs);
     AWS_LOGSTREAM_INFO(INSTANCE_LOG_TAG, "Creating Instance with IMDS timeout: " << credentialConfig.imdsConfig.metadataServiceTimeout << "s, attempts: " << credentialConfig.imdsConfig.metadataServiceNumAttempts);

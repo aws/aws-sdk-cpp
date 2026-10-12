@@ -21,9 +21,8 @@ class Credentials;
 }  // namespace Aws
 
 namespace Aws {
+namespace Internal { class CredentialsCachingProvider; }
 namespace Auth {
-class CredentialsCachingProvider;
-
 /**
  * A utility class for wrapping a cached crt credentials provider.
  */
@@ -57,7 +56,7 @@ class AWS_CORE_API CrtCredentialsProvider : public AWSCredentialsProvider {
   class CrtRetrieveProvider;
 
   std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider> m_credentialsProvider;
-  std::shared_ptr<CredentialsCachingProvider> m_cachingProvider;
+  std::shared_ptr<Aws::Internal::CredentialsCachingProvider> m_cachingProvider;
   std::chrono::milliseconds m_providerFuturesTimeoutMs;
   Aws::Client::UserAgentFeature m_userAgentFeature;
   Aws::String m_providerName;

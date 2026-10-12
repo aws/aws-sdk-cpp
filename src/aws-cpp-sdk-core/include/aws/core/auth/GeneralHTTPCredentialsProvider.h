@@ -10,10 +10,9 @@
 
 namespace Aws
 {
+    namespace Internal { class CredentialsCachingProvider; }
     namespace Auth
     {
-        class CredentialsCachingProvider;
-
         /**
         * General HTTP Credentials Provider (previously known as ECS credentials provider)
         * implementation that loads credentials from an arbitrary HTTP(S) endpoint specified by the environment
@@ -119,7 +118,7 @@ namespace Aws
             std::shared_ptr<Aws::Internal::ECSCredentialsClient> m_ecsCredentialsClient;
             Aws::String m_authTokenFilePath;
 
-            std::shared_ptr<CredentialsCachingProvider> m_cachingProvider;
+            std::shared_ptr<Aws::Internal::CredentialsCachingProvider> m_cachingProvider;
         };
 
         // GeneralHTTPCredentialsProvider was previously known as TaskRoleCredentialsProvider or "ECS credentials provider"

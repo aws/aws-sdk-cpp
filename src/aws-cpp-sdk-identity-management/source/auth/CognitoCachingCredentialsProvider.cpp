@@ -5,7 +5,7 @@
 
 #include <aws/identity-management/auth/CognitoCachingCredentialsProvider.h>
 #include <aws/identity-management/auth/PersistentCognitoIdentityProvider.h>
-#include <aws/core/auth/CredentialsCachingProvider.h>
+#include <aws/core/internal/CredentialsCachingProvider.h>
 #include <aws/cognito-identity/model/GetCredentialsForIdentityRequest.h>
 #include <aws/cognito-identity/model/GetIdRequest.h>
 #include <aws/core/utils/Outcome.h>
@@ -73,7 +73,7 @@ CognitoCachingCredentialsProvider::CognitoCachingCredentialsProvider
 {
     m_identityRepository->SetLoginsUpdatedCallback(std::bind(&CognitoCachingCredentialsProvider::OnLoginsUpdated, this, std::placeholders::_1));
     auto retrieveProvider = Aws::MakeShared<CognitoRetrieveProvider>(MEM_TAG, *this);
-    m_cachingProvider = Aws::MakeShared<CredentialsCachingProvider>(MEM_TAG, retrieveProvider);
+    m_cachingProvider = Aws::MakeShared<Aws::Internal::CredentialsCachingProvider>(MEM_TAG, retrieveProvider);
 }
 
 AWSCredentials CognitoCachingCredentialsProvider::GetAWSCredentials()

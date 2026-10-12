@@ -12,18 +12,19 @@
 
 namespace Aws
 {
-    namespace Internal { class CredentialsCachingStateImpl; }
-    namespace Auth
+    namespace Internal
     {
+        class CredentialsCachingStateImpl;
+
         /**
          * CredentialsCachingProvider caches another provider's credentials and refreshes them per the refresh lifecycle.
          */
-        class AWS_CORE_API CredentialsCachingProvider final : public AWSCredentialsProvider
+        class AWS_CORE_API CredentialsCachingProvider final : public Aws::Auth::AWSCredentialsProvider
         {
         public:
-            explicit CredentialsCachingProvider(std::shared_ptr<AWSCredentialsProvider> delegate);
+            explicit CredentialsCachingProvider(std::shared_ptr<Aws::Auth::AWSCredentialsProvider> delegate);
 
-            AWSCredentials GetAWSCredentials() override;
+            Aws::Auth::AWSCredentials GetAWSCredentials() override;
 
             /**
              * Invalidate marks the cached credentials for refresh if they match accessKeyId.
@@ -31,8 +32,8 @@ namespace Aws
             void Invalidate(const Aws::String& accessKeyId) override;
 
         private:
-            std::shared_ptr<AWSCredentialsProvider> m_delegate;
-            std::shared_ptr<Aws::Internal::CredentialsCachingStateImpl> m_cachingState;
+            std::shared_ptr<Aws::Auth::AWSCredentialsProvider> m_delegate;
+            std::shared_ptr<CredentialsCachingStateImpl> m_cachingState;
         };
-    } // namespace Auth
+    } // namespace Internal
 } // namespace Aws

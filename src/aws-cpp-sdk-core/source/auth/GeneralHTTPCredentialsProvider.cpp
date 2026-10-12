@@ -5,7 +5,7 @@
 
 
 #include <aws/core/auth/GeneralHTTPCredentialsProvider.h>
-#include <aws/core/auth/CredentialsCachingProvider.h>
+#include <aws/core/internal/CredentialsCachingProvider.h>
 
 #include <aws/crt/Api.h>
 #include <aws/core/platform/Environment.h>
@@ -167,7 +167,7 @@ GeneralHTTPCredentialsProvider::GeneralHTTPCredentialsProvider(const Aws::String
                                                                long refreshRateMs,
                                                                ShouldCreateFunc shouldCreateFunc) :
     m_authTokenFilePath(authTokenFilePath),
-    m_cachingProvider(Aws::MakeShared<CredentialsCachingProvider>(GEN_HTTP_LOG_TAG, Aws::MakeShared<GeneralHTTPRetrieveProvider>(GEN_HTTP_LOG_TAG, *this)))
+    m_cachingProvider(Aws::MakeShared<Aws::Internal::CredentialsCachingProvider>(GEN_HTTP_LOG_TAG, Aws::MakeShared<GeneralHTTPRetrieveProvider>(GEN_HTTP_LOG_TAG, *this)))
 {
     if (shouldCreateFunc(relativeUri, absoluteUri, authToken))
     {
@@ -183,7 +183,7 @@ GeneralHTTPCredentialsProvider::GeneralHTTPCredentialsProvider(const Aws::String
 GeneralHTTPCredentialsProvider::GeneralHTTPCredentialsProvider(
         const std::shared_ptr<Aws::Internal::ECSCredentialsClient>& client, long refreshRateMs) :
     m_ecsCredentialsClient(client),
-    m_cachingProvider(Aws::MakeShared<CredentialsCachingProvider>(GEN_HTTP_LOG_TAG, Aws::MakeShared<GeneralHTTPRetrieveProvider>(GEN_HTTP_LOG_TAG, *this)))
+    m_cachingProvider(Aws::MakeShared<Aws::Internal::CredentialsCachingProvider>(GEN_HTTP_LOG_TAG, Aws::MakeShared<GeneralHTTPRetrieveProvider>(GEN_HTTP_LOG_TAG, *this)))
 {
     AWS_LOGSTREAM_INFO(GEN_HTTP_LOG_TAG, "Creating GeneralHTTPCredentialsProvider with a pre-allocated client " << refreshRateMs);
 }

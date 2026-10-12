@@ -19,10 +19,9 @@ namespace Aws
         class STSClient;
     }
 
+    namespace Internal { class CredentialsCachingProvider; }
     namespace Auth
     {
-        class CredentialsCachingProvider;
-
         /**
          * The default credential lifetime is 15 minutes
          */
@@ -68,7 +67,7 @@ namespace Aws
             Aws::String m_sessionName;
             Aws::String m_externalId;
             std::atomic<int> m_loadFrequency;
-            std::shared_ptr<CredentialsCachingProvider> m_cachingProvider;
+            std::shared_ptr<Aws::Internal::CredentialsCachingProvider> m_cachingProvider;
         };
     }
 }

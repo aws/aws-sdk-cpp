@@ -26,10 +26,9 @@ namespace Aws
     {
         struct ClientConfiguration;
     }
+    namespace Internal { class CredentialsCachingProvider; }
     namespace Auth
     {
-        class CredentialsCachingProvider;
-
         constexpr int REFRESH_THRESHOLD = 1000 * 60 * 5;
 
         constexpr int AWS_CREDENTIAL_PROVIDER_EXPIRATION_GRACE_PERIOD = 5 * 1000;
@@ -249,7 +248,7 @@ namespace Aws
             class InstanceProfileRetrieveProvider;
 
             std::shared_ptr<Aws::Config::AWSProfileConfigLoader> m_ec2MetadataConfigLoader;
-            std::shared_ptr<CredentialsCachingProvider> m_cachingProvider;
+            std::shared_ptr<Aws::Internal::CredentialsCachingProvider> m_cachingProvider;
         };
 
         /**

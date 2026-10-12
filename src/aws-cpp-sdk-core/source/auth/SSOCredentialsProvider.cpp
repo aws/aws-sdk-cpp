@@ -5,7 +5,7 @@
 
 
 #include <aws/core/auth/SSOCredentialsProvider.h>
-#include <aws/core/auth/CredentialsCachingProvider.h>
+#include <aws/core/internal/CredentialsCachingProvider.h>
 #include <aws/core/auth/ProfileCredentialsProvider.h>
 #include <aws/core/config/AWSProfileConfigLoader.h>
 #include <aws/core/internal/AWSHttpResourceClient.h>
@@ -54,7 +54,7 @@ SSOCredentialsProvider::SSOCredentialsProvider(const Aws::String& profile, std::
     m_profileToUse(profile),
     m_bearerTokenProvider(profile),
     m_config(std::move(config)),
-    m_cachingProvider(Aws::MakeShared<CredentialsCachingProvider>(SSO_CREDENTIALS_PROVIDER_LOG_TAG, Aws::MakeShared<SSORetrieveProvider>(SSO_CREDENTIALS_PROVIDER_LOG_TAG, *this)))
+    m_cachingProvider(Aws::MakeShared<Aws::Internal::CredentialsCachingProvider>(SSO_CREDENTIALS_PROVIDER_LOG_TAG, Aws::MakeShared<SSORetrieveProvider>(SSO_CREDENTIALS_PROVIDER_LOG_TAG, *this)))
 {
     AWS_LOGSTREAM_INFO(SSO_CREDENTIALS_PROVIDER_LOG_TAG, "Setting sso credentials provider to read config from " << m_profileToUse);
     if (!m_config)

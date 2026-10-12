@@ -3,12 +3,13 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/auth/CredentialsCachingProvider.h>
+#include <aws/core/internal/CredentialsCachingProvider.h>
 #include <aws/core/internal/CredentialsCaching.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 
 using namespace Aws::Auth;
+using namespace Aws::Internal;
 using namespace Aws::Utils;
 
 namespace Aws

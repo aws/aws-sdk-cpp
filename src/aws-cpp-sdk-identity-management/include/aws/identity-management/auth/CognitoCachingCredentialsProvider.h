@@ -13,11 +13,10 @@
 
 namespace Aws
 {
+    namespace Internal { class CredentialsCachingProvider; }
     namespace Auth
     {
         class PersistentCognitoIdentityProvider;
-        class CredentialsCachingProvider;
-
         /**
          * Credentials provider that can be used to authenticate a user with any other AWS service.
          * This credentials provider can be passed to any other Aws Client.
@@ -53,7 +52,7 @@ namespace Aws
             // CognitoRetrieveProvider retrieves credentials for m_cachingProvider.
             class CognitoRetrieveProvider;
 
-            std::shared_ptr<CredentialsCachingProvider> m_cachingProvider;
+            std::shared_ptr<Aws::Internal::CredentialsCachingProvider> m_cachingProvider;
         };
 
         /**

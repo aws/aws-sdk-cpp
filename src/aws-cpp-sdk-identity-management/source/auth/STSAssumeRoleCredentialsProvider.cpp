@@ -4,7 +4,7 @@
  */
 
 #include <aws/identity-management/auth/STSAssumeRoleCredentialsProvider.h>
-#include <aws/core/auth/CredentialsCachingProvider.h>
+#include <aws/core/internal/CredentialsCachingProvider.h>
 #include <aws/sts/model/AssumeRoleRequest.h>
 #include <aws/sts/STSClient.h>
 #include <aws/core/utils/logging/LogMacros.h>
@@ -37,7 +37,7 @@ namespace Aws
             m_stsClient(stsClient == nullptr ? Aws::MakeShared<Aws::STS::STSClient>(CLASS_TAG) : stsClient),
             m_roleArn(roleArn), m_sessionName(sessionName), m_externalId(externalId),
             m_loadFrequency(loadFrequency),
-            m_cachingProvider(Aws::MakeShared<CredentialsCachingProvider>(CLASS_TAG, Aws::MakeShared<STSRetrieveProvider>(CLASS_TAG, *this)))
+            m_cachingProvider(Aws::MakeShared<Aws::Internal::CredentialsCachingProvider>(CLASS_TAG, Aws::MakeShared<STSRetrieveProvider>(CLASS_TAG, *this)))
         {
             if (sessionName.empty())
             {   
