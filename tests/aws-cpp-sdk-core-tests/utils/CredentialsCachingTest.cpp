@@ -63,6 +63,7 @@ namespace
         auto calls = std::make_shared<int>(0);
         Cache cache([next, calls]() { ++*calls; return *next; },
                     [](const Creds& credentials) { return credentials.akid; },
+                    true,
                     [now]() { return *now; },
                     []() { return JITTER; });
         cache.GetCredentials();
@@ -115,6 +116,7 @@ TEST_F(CredentialsCachingTest, RunsSepTestCases)
                         return *next;
                     },
                     [](const Creds& credentials) { return credentials.akid; },
+                    true,
                     [now]() { return *now; },
                     []() { return JITTER; });
 

@@ -26,7 +26,7 @@ namespace Aws
 
 static const char CREDENTIALS_CACHING_PROVIDER_LOG_TAG[] = "CredentialsCachingProvider";
 
-CredentialsCachingProvider::CredentialsCachingProvider(std::shared_ptr<AWSCredentialsProvider> delegate)
+CredentialsCachingProvider::CredentialsCachingProvider(std::shared_ptr<AWSCredentialsProvider> delegate, bool staticStability)
     : m_delegate(std::move(delegate)),
       m_cachingState(Aws::MakeShared<Aws::Internal::CredentialsCachingStateImpl>(CREDENTIALS_CACHING_PROVIDER_LOG_TAG,
           [this]() -> Aws::Internal::RefreshResult<AWSCredentials> {
@@ -37,7 +37,8 @@ CredentialsCachingProvider::CredentialsCachingProvider(std::shared_ptr<AWSCreden
               }
               return Aws::Internal::RefreshResult<AWSCredentials>::Success(credentials, credentials.GetExpiration());
           },
-          [](const AWSCredentials& credentials) { return credentials.GetAWSAccessKeyId(); }))
+          [](const AWSCredentials& credentials) { return credentials.GetAWSAccessKeyId(); },
+          staticStability))
 {
 }
 

@@ -22,7 +22,10 @@ namespace Aws
         class AWS_CORE_API CredentialsCachingProvider final : public Aws::Auth::AWSCredentialsProvider
         {
         public:
-            explicit CredentialsCachingProvider(std::shared_ptr<Aws::Auth::AWSCredentialsProvider> delegate);
+            /**
+             * CredentialsCachingProvider serves expired credentials after a failed refresh only when staticStability is set.
+             */
+            explicit CredentialsCachingProvider(std::shared_ptr<Aws::Auth::AWSCredentialsProvider> delegate, bool staticStability = true);
 
             Aws::Auth::AWSCredentials GetAWSCredentials() override;
 

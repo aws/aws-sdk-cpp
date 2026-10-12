@@ -72,9 +72,10 @@ namespace Aws
 
             explicit CredentialsCachingState(RetrieveFunction retrieve,
                                              IdentifierFunction identifier,
+                                             bool staticStability = true,
                                              ClockFunction clock = &Aws::Utils::DateTime::Now,
                                              JitterFunction jitter = &CredentialsCachingState::DefaultJitter)
-                : m_retrieve(std::move(retrieve)), m_identifier(std::move(identifier)),
+                : m_retrieve(std::move(retrieve)), m_identifier(std::move(identifier)), m_staticStability(staticStability),
                   m_clock(std::move(clock)), m_jitter(std::move(jitter))
             {
             }
@@ -204,7 +205,7 @@ namespace Aws
                     return Aws::Utils::Outcome<CredentialsT, Aws::String>(result.errorMessage);
                 }
 
-                if (m_cached)
+                if (m_cached && m_staticStability)
                 {
                     const std::chrono::milliseconds backoff = Jitter(std::chrono::minutes(5), std::chrono::minutes(10));
                     m_cached->nextRefreshAllowedAtMs = nowMs + backoff.count();
@@ -212,6 +213,10 @@ namespace Aws
                         << (result.errorMessage.empty() ? Aws::String("the credential source returned expired credentials") : result.errorMessage)
                         << ". The SDK will continue using cached credentials. A refresh of these credentials will be attempted again after "
                         << std::chrono::duration_cast<std::chrono::seconds>(backoff).count() << " seconds.");
+                    return Aws::Utils::Outcome<CredentialsT, Aws::String>(m_cached->credentials);
+                }
+                if (m_cached && nowMs < m_cached->expiration.Millis())
+                {
                     return Aws::Utils::Outcome<CredentialsT, Aws::String>(m_cached->credentials);
                 }
                 return Aws::Utils::Outcome<CredentialsT, Aws::String>(
@@ -271,6 +276,7 @@ namespace Aws
 
             RetrieveFunction m_retrieve;
             IdentifierFunction m_identifier;
+            bool m_staticStability;
             ClockFunction m_clock;
             JitterFunction m_jitter;
 

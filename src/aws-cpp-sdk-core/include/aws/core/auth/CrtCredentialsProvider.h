@@ -30,7 +30,7 @@ class AWS_CORE_API CrtCredentialsProvider : public AWSCredentialsProvider {
  public:
   explicit CrtCredentialsProvider(const std::function<std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider>()>& credentialsProviderFactory,
                                   std::chrono::milliseconds providerFuturesTimeoutMs, Aws::Client::UserAgentFeature userAgentFeature,
-                                  const Aws::String& providerName);
+                                  const Aws::String& providerName, bool staticStability = true);
   virtual ~CrtCredentialsProvider();
 
   /**
