@@ -30,6 +30,7 @@
 #include <aws/json-rpc-10/model/NoInputAndNoOutputRequest.h>
 #include <aws/json-rpc-10/model/NoInputAndOutputRequest.h>
 #include <aws/json-rpc-10/model/PutWithContentEncodingRequest.h>
+#include <aws/json-rpc-10/model/QueryIncompatibleOperationRequest.h>
 #include <aws/json-rpc-10/model/SimpleScalarPropertiesRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
@@ -240,6 +241,12 @@ PutWithContentEncodingOutcome JSONRPC10Client::PutWithContentEncoding(const PutW
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? PutWithContentEncodingOutcome(result.GetResultWithOwnership())
                             : PutWithContentEncodingOutcome(std::move(result.GetError()));
+}
+
+QueryIncompatibleOperationOutcome JSONRPC10Client::QueryIncompatibleOperation(const QueryIncompatibleOperationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? QueryIncompatibleOperationOutcome(result.GetResultWithOwnership())
+                            : QueryIncompatibleOperationOutcome(std::move(result.GetError()));
 }
 
 SimpleScalarPropertiesOutcome JSONRPC10Client::SimpleScalarProperties(const SimpleScalarPropertiesRequest& request) const {

@@ -25,7 +25,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, AwsJson10SupportsNaNFloatInputs) {
   expectedRq.method = "POST";
   expectedRq.body = "ewogICAgImZsb2F0VmFsdWUiOiAiTmFOIiwKICAgICJkb3VibGVWYWx1ZSI6ICJOYU4iCn0=";
   expectedRq.uri = "/";
-  expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.0)"}, {"X-Amz-Target", R"(JsonRpc10.SimpleScalarProperties)"}};
+  expectedRq.headers = {{"X-Amz-Target", R"(JsonRpc10.SimpleScalarProperties)"}, {"Content-Type", R"(application/x-amz-json-1.0)"}};
   ValidateRequestSent(expectedRq);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
@@ -44,7 +44,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, AwsJson10SupportsInfinityFloatInputs) 
   expectedRq.method = "POST";
   expectedRq.body = "ewogICAgImZsb2F0VmFsdWUiOiAiSW5maW5pdHkiLAogICAgImRvdWJsZVZhbHVlIjogIkluZmluaXR5Igp9";
   expectedRq.uri = "/";
-  expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.0)"}, {"X-Amz-Target", R"(JsonRpc10.SimpleScalarProperties)"}};
+  expectedRq.headers = {{"X-Amz-Target", R"(JsonRpc10.SimpleScalarProperties)"}, {"Content-Type", R"(application/x-amz-json-1.0)"}};
   ValidateRequestSent(expectedRq);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
@@ -63,7 +63,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, AwsJson10SupportsNegativeInfinityFloat
   expectedRq.method = "POST";
   expectedRq.body = "ewogICAgImZsb2F0VmFsdWUiOiAiLUluZmluaXR5IiwKICAgICJkb3VibGVWYWx1ZSI6ICItSW5maW5pdHkiCn0=";
   expectedRq.uri = "/";
-  expectedRq.headers = {{"Content-Type", R"(application/x-amz-json-1.0)"}, {"X-Amz-Target", R"(JsonRpc10.SimpleScalarProperties)"}};
+  expectedRq.headers = {{"X-Amz-Target", R"(JsonRpc10.SimpleScalarProperties)"}, {"Content-Type", R"(application/x-amz-json-1.0)"}};
   ValidateRequestSent(expectedRq);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

@@ -35,6 +35,7 @@
 #include <aws/rest-xml-protocol/model/FlattenedXmlMapWithXmlNamespaceRequest.h>
 #include <aws/rest-xml-protocol/model/FractionalSecondsRequest.h>
 #include <aws/rest-xml-protocol/model/GreetingWithErrorsRequest.h>
+#include <aws/rest-xml-protocol/model/HttpEmptyPrefixHeadersRequest.h>
 #include <aws/rest-xml-protocol/model/HttpEnumPayloadRequest.h>
 #include <aws/rest-xml-protocol/model/HttpPayloadTraitsRequest.h>
 #include <aws/rest-xml-protocol/model/HttpPayloadWithMemberXmlNameRequest.h>
@@ -66,6 +67,7 @@
 #include <aws/rest-xml-protocol/model/RecursiveShapesRequest.h>
 #include <aws/rest-xml-protocol/model/SimpleScalarPropertiesRequest.h>
 #include <aws/rest-xml-protocol/model/TimestampFormatHeadersRequest.h>
+#include <aws/rest-xml-protocol/model/XmlAttributesInMiddleRequest.h>
 #include <aws/rest-xml-protocol/model/XmlAttributesOnPayloadRequest.h>
 #include <aws/rest-xml-protocol/model/XmlAttributesRequest.h>
 #include <aws/rest-xml-protocol/model/XmlBlobsRequest.h>
@@ -431,6 +433,17 @@ GreetingWithErrorsOutcome RestXmlProtocolClient::GreetingWithErrors(const Greeti
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
   return result.IsSuccess() ? GreetingWithErrorsOutcome(result.GetResultWithOwnership())
                             : GreetingWithErrorsOutcome(std::move(result.GetError()));
+}
+
+HttpEmptyPrefixHeadersOutcome RestXmlProtocolClient::HttpEmptyPrefixHeaders(const HttpEmptyPrefixHeadersRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/HttpEmptyPrefixHeaders");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? HttpEmptyPrefixHeadersOutcome(result.GetResultWithOwnership())
+                            : HttpEmptyPrefixHeadersOutcome(std::move(result.GetError()));
 }
 
 HttpEnumPayloadOutcome RestXmlProtocolClient::HttpEnumPayload(const HttpEnumPayloadRequest& request) const {
@@ -950,6 +963,17 @@ XmlAttributesOutcome RestXmlProtocolClient::XmlAttributes(const XmlAttributesReq
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
   return result.IsSuccess() ? XmlAttributesOutcome(result.GetResultWithOwnership()) : XmlAttributesOutcome(std::move(result.GetError()));
+}
+
+XmlAttributesInMiddleOutcome RestXmlProtocolClient::XmlAttributesInMiddle(const XmlAttributesInMiddleRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/XmlAttributesInMiddle");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? XmlAttributesInMiddleOutcome(result.GetResultWithOwnership())
+                            : XmlAttributesInMiddleOutcome(std::move(result.GetError()));
 }
 
 XmlAttributesOnPayloadOutcome RestXmlProtocolClient::XmlAttributesOnPayload(const XmlAttributesOnPayloadRequest& request) const {
