@@ -19,14 +19,27 @@ namespace Aws
     namespace Auth
     {
         static const char* CLASS_TAG = "STSAssumeRoleCredentialsProvider";
+        //60 seconds;
+        static const int ACCOUNT_FOR_LATENCY = 60;
 
-        // STSRetrieveProvider retrieves credentials through the owner's RetrieveCredentials().
+        // STSRetrieveProvider retrieves credentials through the owner's LoadCredentialsFromSTS().
         class STSAssumeRoleCredentialsProvider::STSRetrieveProvider : public AWSCredentialsProvider
         {
         public:
             explicit STSRetrieveProvider(STSAssumeRoleCredentialsProvider& owner) : m_owner(owner) {}
 
-            AWSCredentials GetAWSCredentials() override { return m_owner.RetrieveCredentials(); }
+            AWSCredentials GetAWSCredentials() override
+            {
+                m_owner.m_cachedCredentials = AWSCredentials();
+                m_owner.m_expiry = 0;
+                m_owner.LoadCredentialsFromSTS();
+                AWSCredentials credentials = m_owner.m_cachedCredentials;
+                if (!credentials.IsEmpty())
+                {
+                    credentials.SetExpiration(DateTime(m_owner.m_expiry.load()));
+                }
+                return credentials;
+            }
 
         private:
             STSAssumeRoleCredentialsProvider& m_owner;
@@ -36,7 +49,7 @@ namespace Aws
             const Aws::String& externalId, int loadFrequency, const std::shared_ptr<Aws::STS::STSClient>& stsClient) :
             m_stsClient(stsClient == nullptr ? Aws::MakeShared<Aws::STS::STSClient>(CLASS_TAG) : stsClient),
             m_roleArn(roleArn), m_sessionName(sessionName), m_externalId(externalId),
-            m_loadFrequency(loadFrequency),
+            m_expiry(0), m_loadFrequency(loadFrequency),
             m_cachingProvider(Aws::MakeShared<Aws::Internal::CredentialsCachingProvider>(CLASS_TAG, Aws::MakeShared<STSRetrieveProvider>(CLASS_TAG, *this)))
         {
             if (sessionName.empty())
@@ -58,35 +71,47 @@ namespace Aws
             m_cachingProvider->Invalidate(accessKeyId);
         }
 
-        AWSCredentials STSAssumeRoleCredentialsProvider::RetrieveCredentials()
+        void STSAssumeRoleCredentialsProvider::LoadCredentialsFromSTS()
         {
-            Model::AssumeRoleRequest assumeRoleRequest;
-            assumeRoleRequest.WithRoleArn(m_roleArn)
-                .WithRoleSessionName(m_sessionName)
-                .WithDurationSeconds(m_loadFrequency);
+            //standard check lock check
+            auto diffSeconds = static_cast<int>(DateTime::Now().SecondsWithMSPrecision() - DateTime(m_expiry.load()).SecondsWithMSPrecision());
+            if (diffSeconds > 0 - ACCOUNT_FOR_LATENCY)
+            {
+                AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Credentials have expired with diff of " << diffSeconds << " since last credentials pull.");
+                AWS_LOGSTREAM_TRACE(CLASS_TAG, "Grabbing lock.");
+                std::lock_guard<std::mutex> locker(m_credsMutex);
+                AWS_LOGSTREAM_TRACE(CLASS_TAG, "Lock acquired. Checking expiration again.");
+                diffSeconds = static_cast<int>(DateTime::Now().SecondsWithMSPrecision() - DateTime(m_expiry.load()).SecondsWithMSPrecision());
+                if (diffSeconds > 0 - ACCOUNT_FOR_LATENCY)
+                {
+                    AWS_LOGSTREAM_INFO(CLASS_TAG, "Credentials have expired with diff of " << diffSeconds << " since last credentials pull.");
+                    Model::AssumeRoleRequest assumeRoleRequest;
+                    assumeRoleRequest.WithRoleArn(m_roleArn)
+                        .WithRoleSessionName(m_sessionName)
+                        .WithDurationSeconds(m_loadFrequency);
 
-            if (!m_externalId.empty())
-            {
-                assumeRoleRequest.SetExternalId(m_externalId);
-            }
+                    if (!m_externalId.empty())
+                    {
+                        assumeRoleRequest.SetExternalId(m_externalId);
+                    }
 
-            auto assumeRoleOutcome = m_stsClient->AssumeRole(assumeRoleRequest);
-            if (assumeRoleOutcome.IsSuccess())
-            {
-                const auto& stsCredentials = assumeRoleOutcome.GetResult().GetCredentials();
-                AWSCredentials credentials(stsCredentials.GetAccessKeyId(), stsCredentials.GetSecretAccessKey(), stsCredentials.GetSessionToken());
-                credentials.SetExpiration(stsCredentials.GetExpiration());
-                credentials.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_STS_ASSUME_ROLE);
-                AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Credentials refreshed with new expiry " << 
-                    stsCredentials.GetExpiration().ToGmtString(DateFormat::ISO_8601));
-                return credentials;
-            }
-            else
-            {
-                AWS_LOGSTREAM_ERROR(CLASS_TAG, "Credentials refresh failed with error " << assumeRoleOutcome.GetError().GetExceptionName()
-                        << " message: " << assumeRoleOutcome.GetError().GetMessage());
-            }
-            return AWSCredentials();
+                    auto assumeRoleOutcome = m_stsClient->AssumeRole(assumeRoleRequest);
+                    if (assumeRoleOutcome.IsSuccess())
+                    {
+                        const auto& stsCredentials = assumeRoleOutcome.GetResult().GetCredentials();
+                        m_cachedCredentials = AWSCredentials(stsCredentials.GetAccessKeyId(), stsCredentials.GetSecretAccessKey(), stsCredentials.GetSessionToken());
+                        m_cachedCredentials.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_STS_ASSUME_ROLE);
+                        m_expiry = stsCredentials.GetExpiration().Millis();
+                        AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Credentials refreshed with new expiry " << 
+                            DateTime(m_expiry.load()).ToGmtString(DateFormat::ISO_8601));
+                    }
+                    else
+                    {
+                        AWS_LOGSTREAM_ERROR(CLASS_TAG, "Credentials refresh failed with error " << assumeRoleOutcome.GetError().GetExceptionName()
+                                << " message: " << assumeRoleOutcome.GetError().GetMessage());
+                    }
+                }
+            }            
         }
     }
 }

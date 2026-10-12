@@ -48,10 +48,14 @@ namespace Aws
 
         private:
             void OnLoginsUpdated(const PersistentCognitoIdentityProvider&);
-
+            // RetrieveCredentials loads credentials from Cognito into m_cachedCredentials.
+            AWSCredentials RetrieveCredentials();
             // CognitoRetrieveProvider retrieves credentials for m_cachingProvider.
             class CognitoRetrieveProvider;
 
+            AWSCredentials m_cachedCredentials;
+            std::atomic<double> m_expiry;
+            std::mutex m_credsMutex;
             std::shared_ptr<Aws::Internal::CredentialsCachingProvider> m_cachingProvider;
         };
 

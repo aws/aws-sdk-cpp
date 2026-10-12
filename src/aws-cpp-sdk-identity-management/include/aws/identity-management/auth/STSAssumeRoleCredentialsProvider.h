@@ -57,15 +57,17 @@ namespace Aws
             void Invalidate(const Aws::String& accessKeyId) override;
 
         private:
-            // RetrieveCredentials makes one AssumeRole call to STS.
-            AWSCredentials RetrieveCredentials();
+            void LoadCredentialsFromSTS();
             // STSRetrieveProvider retrieves credentials for m_cachingProvider.
             class STSRetrieveProvider;
 
             std::shared_ptr<Aws::STS::STSClient> m_stsClient;
+            AWSCredentials m_cachedCredentials;
             Aws::String m_roleArn;
             Aws::String m_sessionName;
             Aws::String m_externalId;
+            std::atomic<int64_t> m_expiry;
+            std::mutex m_credsMutex;
             std::atomic<int> m_loadFrequency;
             std::shared_ptr<Aws::Internal::CredentialsCachingProvider> m_cachingProvider;
         };

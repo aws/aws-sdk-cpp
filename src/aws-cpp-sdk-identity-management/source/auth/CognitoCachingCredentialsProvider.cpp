@@ -20,60 +20,38 @@ using namespace Aws::Utils;
 static const char* LOG_TAG = "CognitoCachingCredentialsProvider";
 static const char* MEM_TAG = "CognitoCachingCredentialsProvider";
 
-// CognitoRetrieveProvider retrieves credentials through the owner's GetCredentialsFromCognito().
+// CognitoRetrieveProvider retrieves credentials through the owner's RetrieveCredentials().
 class CognitoCachingCredentialsProvider::CognitoRetrieveProvider : public AWSCredentialsProvider
 {
 public:
     explicit CognitoRetrieveProvider(CognitoCachingCredentialsProvider& owner) : m_owner(owner) {}
-    AWSCredentials GetAWSCredentials() override;
+
+    AWSCredentials GetAWSCredentials() override
+    {
+        m_owner.m_cachedCredentials = AWSCredentials("", "");
+        m_owner.m_expiry.store(0.0);
+        AWSCredentials credentials = m_owner.RetrieveCredentials();
+        if (!credentials.IsEmpty())
+        {
+            credentials.SetExpiration(DateTime(m_owner.m_expiry.load()));
+        }
+        return credentials;
+    }
 
 private:
     CognitoCachingCredentialsProvider& m_owner;
 };
 
-AWSCredentials CognitoCachingCredentialsProvider::CognitoRetrieveProvider::GetAWSCredentials()
-{
-    AWS_LOGSTREAM_INFO(LOG_TAG, "Expiry expired on cognito credentials attempting to pull new credentials.");
-    auto getCredentialsForIdentityOutcome = m_owner.GetCredentialsFromCognito();
-    if (!getCredentialsForIdentityOutcome.IsSuccess())
-    {
-        auto error = getCredentialsForIdentityOutcome.GetError();
-        AWS_LOGSTREAM_ERROR(LOG_TAG, "Failed to pull credentials from cognito. Error: " <<
-                                     error.GetExceptionName() << "  Message: " << error.GetMessage());
-        return AWSCredentials();
-    }
-
-    AWS_LOGSTREAM_INFO(LOG_TAG, "Successfully obtained cognito credentials");
-    const auto& cognitoCreds = getCredentialsForIdentityOutcome.GetResult().GetCredentials();
-
-    //If we went from anonymous to authenticated on a different machine than the original
-    //login, then we need to swap out the identity id to be the parent id.
-    const auto& parentIdentityId = getCredentialsForIdentityOutcome.GetResult().GetIdentityId();
-
-    if (m_owner.m_identityRepository->GetIdentityId() != parentIdentityId)
-    {
-        AWS_LOGSTREAM_INFO(LOG_TAG, "A parent identity was from cognito which is different from the anonymous identity. Swapping that out now.");
-        m_owner.m_identityRepository->PersistIdentityId(parentIdentityId);
-    }
-
-    AWSCredentials credentials;
-    credentials.SetAWSAccessKeyId(cognitoCreds.GetAccessKeyId());
-    credentials.SetAWSSecretKey(cognitoCreds.GetSecretKey());
-    credentials.SetSessionToken(cognitoCreds.GetSessionToken());
-    credentials.SetExpiration(cognitoCreds.GetExpiration());
-    AWS_LOGSTREAM_INFO(LOG_TAG, "Credentials will expire next at " << cognitoCreds.GetExpiration().ToGmtString(DateFormat::ISO_8601));
-    return credentials;
-}
-
 CognitoCachingCredentialsProvider::CognitoCachingCredentialsProvider
         (const std::shared_ptr<PersistentCognitoIdentityProvider>& identityRepository, const std::shared_ptr<CognitoIdentityClient>& cognitoIdentityClient) :
         m_cognitoIdentityClient(cognitoIdentityClient != nullptr ? cognitoIdentityClient :
                                 Aws::MakeShared<CognitoIdentityClient>(MEM_TAG, Aws::MakeShared<AnonymousAWSCredentialsProvider>(MEM_TAG))),
-        m_identityRepository(identityRepository)
+        m_identityRepository(identityRepository),
+        m_cachedCredentials("", ""),
+        m_expiry(0.0),
+        m_cachingProvider(Aws::MakeShared<Aws::Internal::CredentialsCachingProvider>(MEM_TAG, Aws::MakeShared<CognitoRetrieveProvider>(MEM_TAG, *this)))
 {
     m_identityRepository->SetLoginsUpdatedCallback(std::bind(&CognitoCachingCredentialsProvider::OnLoginsUpdated, this, std::placeholders::_1));
-    auto retrieveProvider = Aws::MakeShared<CognitoRetrieveProvider>(MEM_TAG, *this);
-    m_cachingProvider = Aws::MakeShared<Aws::Internal::CredentialsCachingProvider>(MEM_TAG, retrieveProvider);
 }
 
 AWSCredentials CognitoCachingCredentialsProvider::GetAWSCredentials()
@@ -84,6 +62,50 @@ AWSCredentials CognitoCachingCredentialsProvider::GetAWSCredentials()
 void CognitoCachingCredentialsProvider::Invalidate(const Aws::String& accessKeyId)
 {
     m_cachingProvider->Invalidate(accessKeyId);
+}
+
+AWSCredentials CognitoCachingCredentialsProvider::RetrieveCredentials()
+{
+    if (IsTimeExpired(m_expiry.load()))
+    {
+        AWS_LOGSTREAM_TRACE(LOG_TAG, "Expiry expired, attempting to acquire lock and refresh credentials.");
+        std::lock_guard<std::mutex> locker(m_credsMutex);
+        AWS_LOGSTREAM_TRACE(LOG_TAG, "Lock acquired, checking if the expiry is still expired.");
+        if (IsTimeExpired(m_expiry.load()))
+        {
+            AWS_LOGSTREAM_INFO(LOG_TAG, "Expiry expired on cognito credentials attempting to pull new credentials.");
+            auto getCredentialsForIdentityOutcome = GetCredentialsFromCognito();
+            if (getCredentialsForIdentityOutcome.IsSuccess())
+            {
+                AWS_LOGSTREAM_INFO(LOG_TAG, "Successfully obtained cognito credentials");
+                const auto& cognitoCreds = getCredentialsForIdentityOutcome.GetResult().GetCredentials();
+
+                //If we went from anonymous to authenticated on a different machine than the original
+                //login, then we need to swap out the identity id to be the parent id.
+                const auto& parentIdentityId = getCredentialsForIdentityOutcome.GetResult().GetIdentityId();
+
+                if (m_identityRepository->GetIdentityId() != parentIdentityId)
+                {
+                    AWS_LOGSTREAM_INFO(LOG_TAG, "A parent identity was from cognito which is different from the anonymous identity. Swapping that out now.");
+                    m_identityRepository->PersistIdentityId(parentIdentityId);
+                }
+
+                m_cachedCredentials.SetAWSAccessKeyId(cognitoCreds.GetAccessKeyId());
+                m_cachedCredentials.SetAWSSecretKey(cognitoCreds.GetSecretKey());
+                m_cachedCredentials.SetSessionToken(cognitoCreds.GetSessionToken());
+                m_expiry = cognitoCreds.GetExpiration().SecondsWithMSPrecision();
+                AWS_LOGSTREAM_INFO(LOG_TAG, "Credentials will expire next at " << m_expiry.load());
+            }
+            else
+            {
+                auto error = getCredentialsForIdentityOutcome.GetError();
+                AWS_LOGSTREAM_ERROR(LOG_TAG, "Failed to pull credentials from cognito. Error: " <<
+                                             error.GetExceptionName() << "  Message: " << error.GetMessage());
+            }
+        }
+    }
+
+    return m_cachedCredentials;
 }
 
 bool CognitoCachingCredentialsProvider::IsTimeExpired(double expiry)
@@ -97,11 +119,12 @@ bool CognitoCachingCredentialsProvider::IsTimeExpired(double expiry)
 void CognitoCachingCredentialsProvider::OnLoginsUpdated(const PersistentCognitoIdentityProvider&)
 {
     AWS_LOGSTREAM_INFO(LOG_TAG, "Logins Updated in the identity repository, resetting the expiry to force a refresh on the next run.");
+    m_expiry.store(DateTime().SecondsWithMSPrecision());
     m_cachingProvider->Invalidate(m_cachingProvider->GetAWSCredentials().GetAWSAccessKeyId());
 }
 
 
-GetCredentialsForIdentityOutcome RetrieveCredentialsFromCognito(const CognitoIdentityClient& cognitoIdentityClient,
+GetCredentialsForIdentityOutcome FetchCredentialsFromCognito(const CognitoIdentityClient& cognitoIdentityClient,
                                                              PersistentCognitoIdentityProvider& identityRepository,
                                                              const char* logTag, bool includeLogins)
 {
@@ -178,7 +201,7 @@ CognitoCachingAnonymousCredentialsProvider::CognitoCachingAnonymousCredentialsPr
 
 GetCredentialsForIdentityOutcome CognitoCachingAnonymousCredentialsProvider::GetCredentialsFromCognito() const
 {
-    return RetrieveCredentialsFromCognito(*m_cognitoIdentityClient, *m_identityRepository, ANON_LOG_TAG, false);
+    return FetchCredentialsFromCognito(*m_cognitoIdentityClient, *m_identityRepository, ANON_LOG_TAG, false);
 }
 
 static const char* AUTH_LOG_TAG = "CognitoCachingAuthenticatedCredentialsProvider";
@@ -191,5 +214,5 @@ CognitoCachingAuthenticatedCredentialsProvider::CognitoCachingAuthenticatedCrede
 
 GetCredentialsForIdentityOutcome CognitoCachingAuthenticatedCredentialsProvider::GetCredentialsFromCognito() const
 {
-    return RetrieveCredentialsFromCognito(*m_cognitoIdentityClient, *m_identityRepository, AUTH_LOG_TAG, true);
+    return FetchCredentialsFromCognito(*m_cognitoIdentityClient, *m_identityRepository, AUTH_LOG_TAG, true);
 }
