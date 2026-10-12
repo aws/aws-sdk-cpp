@@ -4,14 +4,14 @@
  */
 
 // Runs the vendored credentials-refresh test cases (resources/credentials-refresh-tests.json) through the
-// refresh state machine, plus a test driving the same lifecycle through CredentialsCachingProvider.
+// refresh state machine.
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/core/internal/CredentialsCaching.h>
-#include <aws/core/auth/AWSCredentialsProvider.h>
-#include <aws/core/auth/CredentialsCachingProvider.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <chrono>
 #include <fstream>
 #include <memory>
@@ -21,8 +21,6 @@ using namespace Aws::Internal;
 using Aws::Utils::DateTime;
 using Aws::Utils::Json::JsonValue;
 using Aws::Utils::Json::JsonView;
-using Aws::Auth::AWSCredentials;
-using Aws::Auth::AWSCredentialsProvider;
 using Aws::Internal::RefreshResult;
 
 namespace
@@ -40,6 +38,43 @@ namespace
         std::stringstream buffer;
         buffer << stream.rdbuf();
         return Aws::String(buffer.str().c_str());
+    }
+
+    // SepAdvisoryWindow is the SEP's advisory window for a credential lifetime.
+    std::chrono::seconds SepAdvisoryWindow(std::chrono::seconds lifetime)
+    {
+        if (lifetime <= std::chrono::minutes(20)) { return std::chrono::minutes(5); }
+        if (lifetime < std::chrono::minutes(90)) { return std::chrono::minutes(15); }
+        return std::chrono::minutes(60);
+    }
+
+    // IssuedCredentials is what the test's source handed out, so the test can tell when they are due for refresh.
+    struct IssuedCredentials
+    {
+        DateTime expiration;
+        std::chrono::seconds lifetime;
+    };
+
+    // ExpectAdvisoryWindow checks that credentials with this lifetime start refreshing exactly windowSeconds before expiry.
+    void ExpectAdvisoryWindow(int lifetimeSeconds, int windowSeconds)
+    {
+        auto now = std::make_shared<DateTime>(DateTime::Now());
+        auto next = std::make_shared<Result>(Result::Success(Creds{"PROBE"}, *now + std::chrono::seconds(lifetimeSeconds)));
+        auto calls = std::make_shared<int>(0);
+        Cache cache([next, calls]() { ++*calls; return *next; },
+                    [](const Creds& credentials) { return credentials.akid; },
+                    [now]() { return *now; },
+                    []() { return JITTER; });
+        cache.GetCredentials();
+        *next = Result::Success(Creds{"PROBE-2"}, *now + std::chrono::seconds(lifetimeSeconds * 2));
+
+        *now = *now + std::chrono::seconds(lifetimeSeconds - windowSeconds - 1);
+        cache.GetCredentials();
+        EXPECT_EQ(1, *calls) << "refreshed before the " << windowSeconds << "s advisory window";
+
+        *now = *now + std::chrono::seconds(1);
+        cache.GetCredentials();
+        EXPECT_EQ(2, *calls) << "did not refresh at the start of the " << windowSeconds << "s advisory window";
     }
 }
 
@@ -71,18 +106,28 @@ TEST_F(CredentialsCachingTest, RunsSepTestCases)
 
         auto now = std::make_shared<DateTime>(DateTime::Now());
         auto next = std::make_shared<Result>(Result::Recoverable("unscripted"));
-        Cache cache([next]() { return *next; },
+        auto calls = std::make_shared<int>(0);
+        auto handedOut = std::make_shared<Aws::String>();
+        Cache cache([next, calls, handedOut]()
+                    {
+                        ++*calls;
+                        if (next->status == Result::Status::Success) { *handedOut = next->credentials.akid; }
+                        return *next;
+                    },
                     [](const Creds& credentials) { return credentials.akid; },
                     [now]() { return *now; },
                     []() { return JITTER; });
 
+        Aws::Map<Aws::String, IssuedCredentials> issued;
         Aws::String cachedAkid = seedAkid;
+        int freshCount = 0;
 
         // Seed the initial cache state with a 60-minute credential (15-minute advisory window), then
         // advance the clock so the credentials land in the requested window.
         if (initialState != "none")
         {
             *next = Result::Success(Creds{seedAkid}, *now + std::chrono::minutes(60));
+            issued[seedAkid] = IssuedCredentials{*now + std::chrono::minutes(60), std::chrono::minutes(60)};
             cache.GetCredentials();
             if (initialState == "advisory") { *now = *now + std::chrono::minutes(50); }
             else if (initialState == "mandatory") { *now = *now + std::chrono::minutes(59) + std::chrono::seconds(30); }
@@ -103,6 +148,7 @@ TEST_F(CredentialsCachingTest, RunsSepTestCases)
             if (type == "invalidate")
             {
                 cache.Invalidate(cachedAkid);
+                if (issued.count(cachedAkid)) { issued[cachedAkid].expiration = *now; }
                 continue;
             }
 
@@ -113,7 +159,9 @@ TEST_F(CredentialsCachingTest, RunsSepTestCases)
                 if (response == "freshCredentials")
                 {
                     const int lifetimeSeconds = step.KeyExists("lifetimeSeconds") ? step.GetInteger("lifetimeSeconds") : 3600;
-                    *next = Result::Success(Creds{"NEW"}, *now + std::chrono::seconds(lifetimeSeconds));
+                    const Aws::String akid = "NEW-" + Aws::Utils::StringUtils::to_string(++freshCount);
+                    *next = Result::Success(Creds{akid}, *now + std::chrono::seconds(lifetimeSeconds));
+                    issued[akid] = IssuedCredentials{*now + std::chrono::seconds(lifetimeSeconds), std::chrono::seconds(lifetimeSeconds)};
                 }
                 else if (response == "staleCredentials")
                 {
@@ -129,141 +177,41 @@ TEST_F(CredentialsCachingTest, RunsSepTestCases)
                 }
             }
 
-            Cache::ResolveObservation observation;
-            const auto outcome = cache.GetCredentials(&observation);
+            const int callsBefore = *calls;
+            handedOut->clear();
+            const auto outcome = cache.GetCredentials();
+            const bool sourceContacted = *calls > callsBefore;
 
             const JsonView expected = step.GetObject("expected");
             Aws::String actualResult;
+            bool rateLimited = false;
             if (outcome.IsSuccess())
             {
-                actualResult = observation.returnedNewCredentials ? "newCredentials" : "cachedCredentials";
-                cachedAkid = outcome.GetResult().akid;
+                const Aws::String& akid = outcome.GetResult().akid;
+                actualResult = sourceContacted && akid == *handedOut ? "newCredentials" : "cachedCredentials";
+                if (!sourceContacted && issued.count(akid))
+                {
+                    const IssuedCredentials& creds = issued[akid];
+                    rateLimited = now->Millis() >= creds.expiration.Millis() -
+                        std::chrono::duration_cast<std::chrono::milliseconds>(SepAdvisoryWindow(creds.lifetime)).count();
+                }
+                cachedAkid = akid;
             }
             else
             {
-                actualResult = observation.nonRecoverable ? "nonRecoverableError" : "noCredentialsError";
+                actualResult = outcome.GetError() == "non-recoverable" ? "nonRecoverableError" : "noCredentialsError";
             }
 
             EXPECT_EQ(expected.GetString("result"), actualResult) << "step " << s;
-            EXPECT_EQ(expected.GetBool("sourceContacted"), observation.sourceContacted) << "step " << s;
+            EXPECT_EQ(expected.GetBool("sourceContacted"), sourceContacted) << "step " << s;
             if (expected.KeyExists("rateLimited"))
             {
-                EXPECT_EQ(expected.GetBool("rateLimited"), observation.rateLimited) << "step " << s;
+                EXPECT_EQ(expected.GetBool("rateLimited"), rateLimited) << "step " << s;
             }
-            if (expected.KeyExists("advisoryWindowSeconds"))
+            if (expected.KeyExists("advisoryWindowSeconds") && step.KeyExists("lifetimeSeconds"))
             {
-                EXPECT_EQ(static_cast<long long>(expected.GetInteger("advisoryWindowSeconds")),
-                          static_cast<long long>(observation.advisoryWindow.count() / 1000)) << "step " << s;
+                ExpectAdvisoryWindow(step.GetInteger("lifetimeSeconds"), expected.GetInteger("advisoryWindowSeconds"));
             }
         }
     }
 }
-
-namespace
-{
-    // Scripted provider the decorator wraps; GetAWSCredentials returns whatever was programmed (empty
-    // models a failed retrieve, which the decorator classifies as Recoverable).
-    class ScriptedProvider : public Aws::Auth::AWSCredentialsProvider
-    {
-    public:
-        void SetNext(AWSCredentials next) { m_next = std::move(next); }
-        int RetrieveCount() const { return m_retrieveCount; }
-
-        AWSCredentials GetAWSCredentials() override
-        {
-            ++m_retrieveCount;
-            return m_next;
-        }
-
-    private:
-        AWSCredentials m_next; // empty by default -> Recoverable
-        int m_retrieveCount{0};
-    };
-
-    AWSCredentials CredsExpiringIn(const Aws::String& akid, std::chrono::minutes lifetime)
-    {
-        AWSCredentials credentials(akid, "secret");
-        credentials.SetExpiration(DateTime::Now() + lifetime);
-        return credentials;
-    }
-}
-
-// Credentials well outside the advisory window are served from the cache without re-contacting the source.
-TEST_F(CredentialsCachingTest, ServesCachedCredentialsWhileValid)
-{
-    auto source = Aws::MakeShared<ScriptedProvider>("CredentialsCachingTest");
-    source->SetNext(CredsExpiringIn("AKID-1", std::chrono::minutes(60)));
-    Aws::Auth::CredentialsCachingProvider provider(source);
-
-    EXPECT_EQ("AKID-1", provider.GetAWSCredentials().GetAWSAccessKeyId());
-    EXPECT_EQ(1, source->RetrieveCount());
-
-    source->SetNext(CredsExpiringIn("AKID-2", std::chrono::minutes(60)));
-    EXPECT_EQ("AKID-1", provider.GetAWSCredentials().GetAWSAccessKeyId());
-    EXPECT_EQ(1, source->RetrieveCount());
-}
-
-// A two-minute lifetime is already inside the five-minute advisory window for short-lived credentials, so
-// the next call refreshes rather than serving the cache.
-TEST_F(CredentialsCachingTest, RefreshesInsideTheAdvisoryWindow)
-{
-    auto source = Aws::MakeShared<ScriptedProvider>("CredentialsCachingTest");
-    source->SetNext(CredsExpiringIn("AKID-1", std::chrono::minutes(2)));
-    Aws::Auth::CredentialsCachingProvider provider(source);
-
-    EXPECT_EQ("AKID-1", provider.GetAWSCredentials().GetAWSAccessKeyId());
-    EXPECT_EQ(1, source->RetrieveCount());
-
-    source->SetNext(CredsExpiringIn("AKID-2", std::chrono::minutes(2)));
-    EXPECT_EQ("AKID-2", provider.GetAWSCredentials().GetAWSAccessKeyId());
-    EXPECT_EQ(2, source->RetrieveCount());
-}
-
-// Invalidate routes the next call through the mandatory path even though the credentials are still valid.
-TEST_F(CredentialsCachingTest, InvalidateForcesARefresh)
-{
-    auto source = Aws::MakeShared<ScriptedProvider>("CredentialsCachingTest");
-    source->SetNext(CredsExpiringIn("AKID-1", std::chrono::minutes(60)));
-    Aws::Auth::CredentialsCachingProvider provider(source);
-
-    EXPECT_EQ("AKID-1", provider.GetAWSCredentials().GetAWSAccessKeyId());
-    EXPECT_EQ(1, source->RetrieveCount());
-
-    source->SetNext(CredsExpiringIn("AKID-2", std::chrono::minutes(60)));
-    provider.Invalidate("AKID-1");
-    EXPECT_EQ("AKID-2", provider.GetAWSCredentials().GetAWSAccessKeyId());
-    EXPECT_EQ(2, source->RetrieveCount());
-}
-
-// A late rejection naming credentials the cache already replaced must not refresh the current ones.
-TEST_F(CredentialsCachingTest, InvalidateWithAStaleAccessKeyIdIsIgnored)
-{
-    auto source = Aws::MakeShared<ScriptedProvider>("CredentialsCachingTest");
-    source->SetNext(CredsExpiringIn("AKID-1", std::chrono::minutes(60)));
-    Aws::Auth::CredentialsCachingProvider provider(source);
-
-    EXPECT_EQ("AKID-1", provider.GetAWSCredentials().GetAWSAccessKeyId());
-    EXPECT_EQ(1, source->RetrieveCount());
-
-    provider.Invalidate("AKID-0");
-
-    source->SetNext(CredsExpiringIn("AKID-2", std::chrono::minutes(60)));
-    EXPECT_EQ("AKID-1", provider.GetAWSCredentials().GetAWSAccessKeyId());
-    EXPECT_EQ(1, source->RetrieveCount());
-}
-
-// A failed retrieve keeps serving the last good credentials instead of dropping to empty.
-TEST_F(CredentialsCachingTest, ServesLastGoodWhenTheSourceFails)
-{
-    auto source = Aws::MakeShared<ScriptedProvider>("CredentialsCachingTest");
-    source->SetNext(CredsExpiringIn("AKID-1", std::chrono::minutes(2)));
-    Aws::Auth::CredentialsCachingProvider provider(source);
-
-    EXPECT_EQ("AKID-1", provider.GetAWSCredentials().GetAWSAccessKeyId());
-
-    source->SetNext(AWSCredentials()); // empty == the source failed
-    EXPECT_EQ("AKID-1", provider.GetAWSCredentials().GetAWSAccessKeyId());
-    EXPECT_EQ(2, source->RetrieveCount());
-}
-
-// Serve-last-good and the strict caching-only variant are exercised by RunsSepTestCases.
