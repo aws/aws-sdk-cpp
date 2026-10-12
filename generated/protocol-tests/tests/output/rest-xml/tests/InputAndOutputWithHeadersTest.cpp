@@ -7,6 +7,9 @@
 #include <aws/rest-xml-protocol/model/InputAndOutputWithHeadersRequest.h>
 #include <aws/testing/AwsProtocolTestHelpers.h>
 
+#include <cmath>
+#include <limits>
+
 using InputAndOutputWithHeaders = AWS_PROTOCOL_TEST_SUITE;
 using RestXmlProtocolClient = Aws::RestXmlProtocol::RestXmlProtocolClient;
 using namespace Aws::RestXmlProtocol::Model;

@@ -18,6 +18,12 @@ PREFIX_DIR="$1"
 
 # The build cleanup removes the core libraries from the build tree; load them from the install directory.
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:${PREFIX_DIR}/al2-install/lib64/"
+# The test binaries' RUNPATH points at the workspace they were built in; add this workspace's copies of the
+# protocol-test client and test-helper libraries.
+for dir in "${PREFIX_DIR}"/al2-build/generated/protocol-tests/test-clients/* "${PREFIX_DIR}/al2-build/tests/testing-resources"; do
+  LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${dir}"
+done
+export LD_LIBRARY_PATH
 # Mock server dependency.
 python3 -c 'import flask' 2>/dev/null || python3 -m pip install --user flask
 python3 "${PREFIX_DIR}/aws-sdk-cpp/tools/scripts/run_protocol_tests.py" --build_dir "${PREFIX_DIR}/al2-build"

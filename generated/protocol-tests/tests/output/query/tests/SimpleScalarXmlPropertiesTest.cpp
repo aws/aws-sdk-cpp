@@ -7,6 +7,9 @@
 #include <aws/query-protocol/model/SimpleScalarXmlPropertiesRequest.h>
 #include <aws/testing/AwsProtocolTestHelpers.h>
 
+#include <cmath>
+#include <limits>
+
 using SimpleScalarXmlProperties = AWS_PROTOCOL_TEST_SUITE;
 using QueryProtocolClient = Aws::QueryProtocol::QueryProtocolClient;
 using namespace Aws::QueryProtocol::Model;
