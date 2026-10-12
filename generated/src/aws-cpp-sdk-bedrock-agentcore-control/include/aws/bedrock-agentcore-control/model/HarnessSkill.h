@@ -90,7 +90,7 @@ class HarnessSkill {
 
   ///@{
   /**
-   * <p>AWS Skills baked into the harness's underlying Runtime.</p>
+   * <p>Amazon Web Services Skills baked into the harness's underlying Runtime.</p>
    */
   inline const HarnessSkillAwsSkillsSource& GetAwsSkills() const { return m_awsSkills; }
   inline bool AwsSkillsHasBeenSet() const { return m_awsSkillsHasBeenSet; }

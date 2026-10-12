@@ -23,6 +23,7 @@
 #include <aws/lambda-core/model/CreateNetworkConnectorRequest.h>
 #include <aws/lambda-core/model/DeleteNetworkConnectorRequest.h>
 #include <aws/lambda-core/model/GetNetworkConnectorRequest.h>
+#include <aws/lambda-core/model/ListNetworkConnectorVersionsRequest.h>
 #include <aws/lambda-core/model/ListNetworkConnectorsRequest.h>
 #include <aws/lambda-core/model/UpdateNetworkConnectorRequest.h>
 #include <smithy/tracing/TracingUtils.h>
@@ -224,6 +225,26 @@ GetNetworkConnectorOutcome LambdaCoreClient::GetNetworkConnector(const GetNetwor
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? GetNetworkConnectorOutcome(result.GetResultWithOwnership())
                             : GetNetworkConnectorOutcome(std::move(result.GetError()));
+}
+
+ListNetworkConnectorVersionsOutcome LambdaCoreClient::ListNetworkConnectorVersions(
+    const ListNetworkConnectorVersionsRequest& request) const {
+  if (!request.IdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListNetworkConnectorVersions", "Required field: Identifier, is not set");
+    return ListNetworkConnectorVersionsOutcome(Aws::Client::AWSError<LambdaCoreErrors>(
+        LambdaCoreErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Identifier]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2026-04-04/network-connectors/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListNetworkConnectorVersionsOutcome(result.GetResultWithOwnership())
+                            : ListNetworkConnectorVersionsOutcome(std::move(result.GetError()));
 }
 
 ListNetworkConnectorsOutcome LambdaCoreClient::ListNetworkConnectors(const ListNetworkConnectorsRequest& request) const {

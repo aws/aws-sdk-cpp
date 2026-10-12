@@ -1,0 +1,50 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/glue/model/BatchGetDataQualityResultV2Result.h>
+
+#include <utility>
+
+using namespace Aws::Glue::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+using namespace Aws;
+
+BatchGetDataQualityResultV2Result::BatchGetDataQualityResultV2Result(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  *this = result;
+}
+
+BatchGetDataQualityResultV2Result& BatchGetDataQualityResultV2Result::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
+  JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("Results")) {
+    Aws::Utils::Array<JsonView> resultsJsonList = jsonValue.GetArray("Results");
+    for (unsigned resultsIndex = 0; resultsIndex < resultsJsonList.GetLength(); ++resultsIndex) {
+      m_results.push_back(resultsJsonList[resultsIndex].AsObject());
+    }
+    m_resultsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ResultsNotFound")) {
+    Aws::Utils::Array<JsonView> resultsNotFoundJsonList = jsonValue.GetArray("ResultsNotFound");
+    for (unsigned resultsNotFoundIndex = 0; resultsNotFoundIndex < resultsNotFoundJsonList.GetLength(); ++resultsNotFoundIndex) {
+      m_resultsNotFound.push_back(resultsNotFoundJsonList[resultsNotFoundIndex].AsString());
+    }
+    m_resultsNotFoundHasBeenSet = true;
+  }
+
+  const auto& headers = result.GetHeaderValueCollection();
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if (requestIdIter != headers.end()) {
+    m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
+  }
+
+  return *this;
+}

@@ -94,6 +94,7 @@
 #include <aws/sagemaker/model/CreateStudioLifecycleConfigResult.h>
 #include <aws/sagemaker/model/CreateTrainingJobResult.h>
 #include <aws/sagemaker/model/CreateTrainingPlanResult.h>
+#include <aws/sagemaker/model/CreateTrainingSessionResult.h>
 #include <aws/sagemaker/model/CreateTransformJobResult.h>
 #include <aws/sagemaker/model/CreateTrialComponentResult.h>
 #include <aws/sagemaker/model/CreateTrialResult.h>
@@ -121,6 +122,7 @@
 #include <aws/sagemaker/model/DeletePartnerAppResult.h>
 #include <aws/sagemaker/model/DeletePipelineResult.h>
 #include <aws/sagemaker/model/DeleteTagsResult.h>
+#include <aws/sagemaker/model/DeleteTrainingSessionResult.h>
 #include <aws/sagemaker/model/DeleteTrialComponentResult.h>
 #include <aws/sagemaker/model/DeleteTrialResult.h>
 #include <aws/sagemaker/model/DeleteWorkforceResult.h>
@@ -195,6 +197,7 @@
 #include <aws/sagemaker/model/DescribeTrainingJobResult.h>
 #include <aws/sagemaker/model/DescribeTrainingPlanExtensionHistoryResult.h>
 #include <aws/sagemaker/model/DescribeTrainingPlanResult.h>
+#include <aws/sagemaker/model/DescribeTrainingSessionResult.h>
 #include <aws/sagemaker/model/DescribeTransformJobResult.h>
 #include <aws/sagemaker/model/DescribeTrialComponentResult.h>
 #include <aws/sagemaker/model/DescribeTrialResult.h>
@@ -362,6 +365,8 @@
 #include <aws/sagemaker/model/ListTrainingJobsResult.h>
 #include <aws/sagemaker/model/ListTrainingPlansRequest.h>
 #include <aws/sagemaker/model/ListTrainingPlansResult.h>
+#include <aws/sagemaker/model/ListTrainingSessionsRequest.h>
+#include <aws/sagemaker/model/ListTrainingSessionsResult.h>
 #include <aws/sagemaker/model/ListTransformJobsRequest.h>
 #include <aws/sagemaker/model/ListTransformJobsResult.h>
 #include <aws/sagemaker/model/ListTrialComponentsRequest.h>
@@ -396,6 +401,7 @@
 #include <aws/sagemaker/model/StopJobResult.h>
 #include <aws/sagemaker/model/StopMlflowTrackingServerResult.h>
 #include <aws/sagemaker/model/StopPipelineExecutionResult.h>
+#include <aws/sagemaker/model/StopTrainingSessionResult.h>
 #include <aws/sagemaker/model/UpdateActionResult.h>
 #include <aws/sagemaker/model/UpdateAppImageConfigResult.h>
 #include <aws/sagemaker/model/UpdateArtifactResult.h>
@@ -547,6 +553,7 @@ class CreateSpaceRequest;
 class CreateStudioLifecycleConfigRequest;
 class CreateTrainingJobRequest;
 class CreateTrainingPlanRequest;
+class CreateTrainingSessionRequest;
 class CreateTransformJobRequest;
 class CreateTrialRequest;
 class CreateTrialComponentRequest;
@@ -610,6 +617,7 @@ class DeleteSpaceRequest;
 class DeleteStudioLifecycleConfigRequest;
 class DeleteTagsRequest;
 class DeleteTrainingJobRequest;
+class DeleteTrainingSessionRequest;
 class DeleteTrialRequest;
 class DeleteTrialComponentRequest;
 class DeleteUserProfileRequest;
@@ -686,6 +694,7 @@ class DescribeSubscribedWorkteamRequest;
 class DescribeTrainingJobRequest;
 class DescribeTrainingPlanRequest;
 class DescribeTrainingPlanExtensionHistoryRequest;
+class DescribeTrainingSessionRequest;
 class DescribeTransformJobRequest;
 class DescribeTrialRequest;
 class DescribeTrialComponentRequest;
@@ -787,6 +796,7 @@ class ListTagsRequest;
 class ListTrainingJobsRequest;
 class ListTrainingJobsForHyperParameterTuningJobRequest;
 class ListTrainingPlansRequest;
+class ListTrainingSessionsRequest;
 class ListTransformJobsRequest;
 class ListTrialComponentsRequest;
 class ListTrialsRequest;
@@ -829,6 +839,7 @@ class StopOptimizationJobRequest;
 class StopPipelineExecutionRequest;
 class StopProcessingJobRequest;
 class StopTrainingJobRequest;
+class StopTrainingSessionRequest;
 class StopTransformJobRequest;
 class UpdateActionRequest;
 class UpdateAppImageConfigRequest;
@@ -954,6 +965,7 @@ typedef Aws::Utils::Outcome<CreateSpaceResult, SageMakerError> CreateSpaceOutcom
 typedef Aws::Utils::Outcome<CreateStudioLifecycleConfigResult, SageMakerError> CreateStudioLifecycleConfigOutcome;
 typedef Aws::Utils::Outcome<CreateTrainingJobResult, SageMakerError> CreateTrainingJobOutcome;
 typedef Aws::Utils::Outcome<CreateTrainingPlanResult, SageMakerError> CreateTrainingPlanOutcome;
+typedef Aws::Utils::Outcome<CreateTrainingSessionResult, SageMakerError> CreateTrainingSessionOutcome;
 typedef Aws::Utils::Outcome<CreateTransformJobResult, SageMakerError> CreateTransformJobOutcome;
 typedef Aws::Utils::Outcome<CreateTrialResult, SageMakerError> CreateTrialOutcome;
 typedef Aws::Utils::Outcome<CreateTrialComponentResult, SageMakerError> CreateTrialComponentOutcome;
@@ -1017,6 +1029,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteSpaceOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteStudioLifecycleConfigOutcome;
 typedef Aws::Utils::Outcome<DeleteTagsResult, SageMakerError> DeleteTagsOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteTrainingJobOutcome;
+typedef Aws::Utils::Outcome<DeleteTrainingSessionResult, SageMakerError> DeleteTrainingSessionOutcome;
 typedef Aws::Utils::Outcome<DeleteTrialResult, SageMakerError> DeleteTrialOutcome;
 typedef Aws::Utils::Outcome<DeleteTrialComponentResult, SageMakerError> DeleteTrialComponentOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> DeleteUserProfileOutcome;
@@ -1093,6 +1106,7 @@ typedef Aws::Utils::Outcome<DescribeSubscribedWorkteamResult, SageMakerError> De
 typedef Aws::Utils::Outcome<DescribeTrainingJobResult, SageMakerError> DescribeTrainingJobOutcome;
 typedef Aws::Utils::Outcome<DescribeTrainingPlanResult, SageMakerError> DescribeTrainingPlanOutcome;
 typedef Aws::Utils::Outcome<DescribeTrainingPlanExtensionHistoryResult, SageMakerError> DescribeTrainingPlanExtensionHistoryOutcome;
+typedef Aws::Utils::Outcome<DescribeTrainingSessionResult, SageMakerError> DescribeTrainingSessionOutcome;
 typedef Aws::Utils::Outcome<DescribeTransformJobResult, SageMakerError> DescribeTransformJobOutcome;
 typedef Aws::Utils::Outcome<DescribeTrialResult, SageMakerError> DescribeTrialOutcome;
 typedef Aws::Utils::Outcome<DescribeTrialComponentResult, SageMakerError> DescribeTrialComponentOutcome;
@@ -1196,6 +1210,7 @@ typedef Aws::Utils::Outcome<ListTrainingJobsResult, SageMakerError> ListTraining
 typedef Aws::Utils::Outcome<ListTrainingJobsForHyperParameterTuningJobResult, SageMakerError>
     ListTrainingJobsForHyperParameterTuningJobOutcome;
 typedef Aws::Utils::Outcome<ListTrainingPlansResult, SageMakerError> ListTrainingPlansOutcome;
+typedef Aws::Utils::Outcome<ListTrainingSessionsResult, SageMakerError> ListTrainingSessionsOutcome;
 typedef Aws::Utils::Outcome<ListTransformJobsResult, SageMakerError> ListTransformJobsOutcome;
 typedef Aws::Utils::Outcome<ListTrialComponentsResult, SageMakerError> ListTrialComponentsOutcome;
 typedef Aws::Utils::Outcome<ListTrialsResult, SageMakerError> ListTrialsOutcome;
@@ -1238,6 +1253,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StopOptimizationJobOu
 typedef Aws::Utils::Outcome<StopPipelineExecutionResult, SageMakerError> StopPipelineExecutionOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StopProcessingJobOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StopTrainingJobOutcome;
+typedef Aws::Utils::Outcome<StopTrainingSessionResult, SageMakerError> StopTrainingSessionOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StopTransformJobOutcome;
 typedef Aws::Utils::Outcome<UpdateActionResult, SageMakerError> UpdateActionOutcome;
 typedef Aws::Utils::Outcome<UpdateAppImageConfigResult, SageMakerError> UpdateAppImageConfigOutcome;
@@ -1363,6 +1379,7 @@ typedef std::future<CreateSpaceOutcome> CreateSpaceOutcomeCallable;
 typedef std::future<CreateStudioLifecycleConfigOutcome> CreateStudioLifecycleConfigOutcomeCallable;
 typedef std::future<CreateTrainingJobOutcome> CreateTrainingJobOutcomeCallable;
 typedef std::future<CreateTrainingPlanOutcome> CreateTrainingPlanOutcomeCallable;
+typedef std::future<CreateTrainingSessionOutcome> CreateTrainingSessionOutcomeCallable;
 typedef std::future<CreateTransformJobOutcome> CreateTransformJobOutcomeCallable;
 typedef std::future<CreateTrialOutcome> CreateTrialOutcomeCallable;
 typedef std::future<CreateTrialComponentOutcome> CreateTrialComponentOutcomeCallable;
@@ -1426,6 +1443,7 @@ typedef std::future<DeleteSpaceOutcome> DeleteSpaceOutcomeCallable;
 typedef std::future<DeleteStudioLifecycleConfigOutcome> DeleteStudioLifecycleConfigOutcomeCallable;
 typedef std::future<DeleteTagsOutcome> DeleteTagsOutcomeCallable;
 typedef std::future<DeleteTrainingJobOutcome> DeleteTrainingJobOutcomeCallable;
+typedef std::future<DeleteTrainingSessionOutcome> DeleteTrainingSessionOutcomeCallable;
 typedef std::future<DeleteTrialOutcome> DeleteTrialOutcomeCallable;
 typedef std::future<DeleteTrialComponentOutcome> DeleteTrialComponentOutcomeCallable;
 typedef std::future<DeleteUserProfileOutcome> DeleteUserProfileOutcomeCallable;
@@ -1502,6 +1520,7 @@ typedef std::future<DescribeSubscribedWorkteamOutcome> DescribeSubscribedWorktea
 typedef std::future<DescribeTrainingJobOutcome> DescribeTrainingJobOutcomeCallable;
 typedef std::future<DescribeTrainingPlanOutcome> DescribeTrainingPlanOutcomeCallable;
 typedef std::future<DescribeTrainingPlanExtensionHistoryOutcome> DescribeTrainingPlanExtensionHistoryOutcomeCallable;
+typedef std::future<DescribeTrainingSessionOutcome> DescribeTrainingSessionOutcomeCallable;
 typedef std::future<DescribeTransformJobOutcome> DescribeTransformJobOutcomeCallable;
 typedef std::future<DescribeTrialOutcome> DescribeTrialOutcomeCallable;
 typedef std::future<DescribeTrialComponentOutcome> DescribeTrialComponentOutcomeCallable;
@@ -1603,6 +1622,7 @@ typedef std::future<ListTagsOutcome> ListTagsOutcomeCallable;
 typedef std::future<ListTrainingJobsOutcome> ListTrainingJobsOutcomeCallable;
 typedef std::future<ListTrainingJobsForHyperParameterTuningJobOutcome> ListTrainingJobsForHyperParameterTuningJobOutcomeCallable;
 typedef std::future<ListTrainingPlansOutcome> ListTrainingPlansOutcomeCallable;
+typedef std::future<ListTrainingSessionsOutcome> ListTrainingSessionsOutcomeCallable;
 typedef std::future<ListTransformJobsOutcome> ListTransformJobsOutcomeCallable;
 typedef std::future<ListTrialComponentsOutcome> ListTrialComponentsOutcomeCallable;
 typedef std::future<ListTrialsOutcome> ListTrialsOutcomeCallable;
@@ -1645,6 +1665,7 @@ typedef std::future<StopOptimizationJobOutcome> StopOptimizationJobOutcomeCallab
 typedef std::future<StopPipelineExecutionOutcome> StopPipelineExecutionOutcomeCallable;
 typedef std::future<StopProcessingJobOutcome> StopProcessingJobOutcomeCallable;
 typedef std::future<StopTrainingJobOutcome> StopTrainingJobOutcomeCallable;
+typedef std::future<StopTrainingSessionOutcome> StopTrainingSessionOutcomeCallable;
 typedef std::future<StopTransformJobOutcome> StopTransformJobOutcomeCallable;
 typedef std::future<UpdateActionOutcome> UpdateActionOutcomeCallable;
 typedef std::future<UpdateAppImageConfigOutcome> UpdateAppImageConfigOutcomeCallable;
@@ -1938,6 +1959,9 @@ typedef std::function<void(const SageMakerClient*, const Model::CreateTrainingJo
 typedef std::function<void(const SageMakerClient*, const Model::CreateTrainingPlanRequest&, const Model::CreateTrainingPlanOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateTrainingPlanResponseReceivedHandler;
+typedef std::function<void(const SageMakerClient*, const Model::CreateTrainingSessionRequest&, const Model::CreateTrainingSessionOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateTrainingSessionResponseReceivedHandler;
 typedef std::function<void(const SageMakerClient*, const Model::CreateTransformJobRequest&, const Model::CreateTransformJobOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateTransformJobResponseReceivedHandler;
@@ -2135,6 +2159,9 @@ typedef std::function<void(const SageMakerClient*, const Model::DeleteTagsReques
 typedef std::function<void(const SageMakerClient*, const Model::DeleteTrainingJobRequest&, const Model::DeleteTrainingJobOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteTrainingJobResponseReceivedHandler;
+typedef std::function<void(const SageMakerClient*, const Model::DeleteTrainingSessionRequest&, const Model::DeleteTrainingSessionOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteTrainingSessionResponseReceivedHandler;
 typedef std::function<void(const SageMakerClient*, const Model::DeleteTrialRequest&, const Model::DeleteTrialOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteTrialResponseReceivedHandler;
@@ -2375,6 +2402,9 @@ typedef std::function<void(const SageMakerClient*, const Model::DescribeTraining
                            const Model::DescribeTrainingPlanExtensionHistoryOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeTrainingPlanExtensionHistoryResponseReceivedHandler;
+typedef std::function<void(const SageMakerClient*, const Model::DescribeTrainingSessionRequest&,
+                           const Model::DescribeTrainingSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeTrainingSessionResponseReceivedHandler;
 typedef std::function<void(const SageMakerClient*, const Model::DescribeTransformJobRequest&, const Model::DescribeTransformJobOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeTransformJobResponseReceivedHandler;
@@ -2691,6 +2721,9 @@ typedef std::function<void(const SageMakerClient*, const Model::ListTrainingJobs
 typedef std::function<void(const SageMakerClient*, const Model::ListTrainingPlansRequest&, const Model::ListTrainingPlansOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListTrainingPlansResponseReceivedHandler;
+typedef std::function<void(const SageMakerClient*, const Model::ListTrainingSessionsRequest&, const Model::ListTrainingSessionsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListTrainingSessionsResponseReceivedHandler;
 typedef std::function<void(const SageMakerClient*, const Model::ListTransformJobsRequest&, const Model::ListTransformJobsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListTransformJobsResponseReceivedHandler;
@@ -2821,6 +2854,9 @@ typedef std::function<void(const SageMakerClient*, const Model::StopProcessingJo
 typedef std::function<void(const SageMakerClient*, const Model::StopTrainingJobRequest&, const Model::StopTrainingJobOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StopTrainingJobResponseReceivedHandler;
+typedef std::function<void(const SageMakerClient*, const Model::StopTrainingSessionRequest&, const Model::StopTrainingSessionOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StopTrainingSessionResponseReceivedHandler;
 typedef std::function<void(const SageMakerClient*, const Model::StopTransformJobRequest&, const Model::StopTransformJobOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StopTransformJobResponseReceivedHandler;

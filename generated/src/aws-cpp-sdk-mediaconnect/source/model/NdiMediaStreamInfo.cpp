@@ -34,6 +34,10 @@ NdiMediaStreamInfo& NdiMediaStreamInfo::operator=(JsonView jsonValue) {
     m_scanMode = ScanModeMapper::GetScanModeForName(jsonValue.GetString("scanMode"));
     m_scanModeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("color")) {
+    m_color = jsonValue.GetObject("color");
+    m_colorHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("frameResolution")) {
     m_frameResolution = jsonValue.GetObject("frameResolution");
     m_frameResolutionHasBeenSet = true;
@@ -70,6 +74,10 @@ JsonValue NdiMediaStreamInfo::Jsonize() const {
 
   if (m_scanModeHasBeenSet) {
     payload.WithString("scanMode", ScanModeMapper::GetNameForScanMode(m_scanMode));
+  }
+
+  if (m_colorHasBeenSet) {
+    payload.WithObject("color", m_color.Jsonize());
   }
 
   if (m_frameResolutionHasBeenSet) {

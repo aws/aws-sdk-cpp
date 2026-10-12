@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/lambda-core/LambdaCoreClient.h>
+#include <aws/lambda-core/model/ListNetworkConnectorVersionsPaginationTraits.h>
 #include <aws/lambda-core/model/ListNetworkConnectorsPaginationTraits.h>
 
 namespace Aws {
@@ -14,6 +15,9 @@ namespace LambdaCore {
 using ListNetworkConnectorsPaginator =
     Aws::Utils::Pagination::Paginator<LambdaCoreClient, Model::ListNetworkConnectorsRequest,
                                       Pagination::ListNetworkConnectorsPaginationTraits<LambdaCoreClient>>;
+using ListNetworkConnectorVersionsPaginator =
+    Aws::Utils::Pagination::Paginator<LambdaCoreClient, Model::ListNetworkConnectorVersionsRequest,
+                                      Pagination::ListNetworkConnectorVersionsPaginationTraits<LambdaCoreClient>>;
 
 }  // namespace LambdaCore
 }  // namespace Aws

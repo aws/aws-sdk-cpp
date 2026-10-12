@@ -42,6 +42,14 @@ NetworkConnectorSummary& NetworkConnectorSummary::operator=(JsonView jsonValue) 
     m_lastModified = jsonValue.GetString("LastModified");
     m_lastModifiedHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("LatestVersionArn")) {
+    m_latestVersionArn = jsonValue.GetString("LatestVersionArn");
+    m_latestVersionArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("LatestVersion")) {
+    m_latestVersion = jsonValue.GetInt64("LatestVersion");
+    m_latestVersionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -70,6 +78,14 @@ JsonValue NetworkConnectorSummary::Jsonize() const {
 
   if (m_lastModifiedHasBeenSet) {
     payload.WithString("LastModified", m_lastModified.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if (m_latestVersionArnHasBeenSet) {
+    payload.WithString("LatestVersionArn", m_latestVersionArn);
+  }
+
+  if (m_latestVersionHasBeenSet) {
+    payload.WithInt64("LatestVersion", m_latestVersion);
   }
 
   return payload;

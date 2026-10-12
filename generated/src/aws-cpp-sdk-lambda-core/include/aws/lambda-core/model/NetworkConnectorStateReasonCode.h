@@ -18,6 +18,7 @@ enum class NetworkConnectorStateReasonCode {
   InternalError,
   InvalidSecurityGroup,
   InvalidSubnet,
+  SecurityGroupsPerInterfaceLimitExceeded,
   SubnetOutOfIPAddresses
 };
 

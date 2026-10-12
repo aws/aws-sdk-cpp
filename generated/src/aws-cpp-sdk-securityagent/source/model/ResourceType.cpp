@@ -17,6 +17,7 @@ namespace ResourceTypeMapper {
 
 static const int CODE_REPOSITORY_HASH = HashingUtils::HashString("CODE_REPOSITORY");
 static const int DOCUMENT_HASH = HashingUtils::HashString("DOCUMENT");
+static const int PROJECT_HASH = HashingUtils::HashString("PROJECT");
 
 ResourceType GetResourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ ResourceType GetResourceTypeForName(const Aws::String& name) {
     return ResourceType::CODE_REPOSITORY;
   } else if (hashCode == DOCUMENT_HASH) {
     return ResourceType::DOCUMENT;
+  } else if (hashCode == PROJECT_HASH) {
+    return ResourceType::PROJECT;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForResourceType(ResourceType enumValue) {
       return "CODE_REPOSITORY";
     case ResourceType::DOCUMENT:
       return "DOCUMENT";
+    case ResourceType::PROJECT:
+      return "PROJECT";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -232,7 +232,7 @@ class GetDataQualityResultResult {
   ///@{
   /**
    * <p>A list of <code>DataQualityRuleResult</code> objects representing the results
-   * for each rule. </p>
+   * for each rule.</p>
    */
   inline const Aws::Vector<DataQualityRuleResult>& GetRuleResults() const { return m_ruleResults; }
   template <typename RuleResultsT = Aws::Vector<DataQualityRuleResult>>
@@ -256,7 +256,7 @@ class GetDataQualityResultResult {
   ///@{
   /**
    * <p>A list of <code>DataQualityAnalyzerResult</code> objects representing the
-   * results for each analyzer. </p>
+   * results for each analyzer.</p>
    */
   inline const Aws::Vector<DataQualityAnalyzerResult>& GetAnalyzerResults() const { return m_analyzerResults; }
   template <typename AnalyzerResultsT = Aws::Vector<DataQualityAnalyzerResult>>
@@ -280,7 +280,8 @@ class GetDataQualityResultResult {
   ///@{
   /**
    * <p>A list of <code>DataQualityObservation</code> objects representing the
-   * observations generated after evaluating the rules and analyzers. </p>
+   * anomaly detection observations generated after evaluating the rules and
+   * analyzers.</p>
    */
   inline const Aws::Vector<DataQualityObservation>& GetObservations() const { return m_observations; }
   template <typename ObservationsT = Aws::Vector<DataQualityObservation>>

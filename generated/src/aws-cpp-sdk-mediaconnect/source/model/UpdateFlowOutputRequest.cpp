@@ -111,5 +111,9 @@ Aws::String UpdateFlowOutputRequest::SerializePayload() const {
                        NdiOutputTimecodeSourceMapper::GetNameForNdiOutputTimecodeSource(m_ndiOutputTimecodeSource));
   }
 
+  if (m_ndiAudioReferenceLevelHasBeenSet) {
+    payload.WithInteger("ndiAudioReferenceLevel", m_ndiAudioReferenceLevel);
+  }
+
   return payload.View().WriteReadable();
 }

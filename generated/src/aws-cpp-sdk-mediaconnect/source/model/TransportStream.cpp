@@ -26,6 +26,10 @@ TransportStream& TransportStream::operator=(JsonView jsonValue) {
     m_codec = jsonValue.GetString("codec");
     m_codecHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("color")) {
+    m_color = jsonValue.GetObject("color");
+    m_colorHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("frameRate")) {
     m_frameRate = jsonValue.GetString("frameRate");
     m_frameRateHasBeenSet = true;
@@ -62,6 +66,10 @@ JsonValue TransportStream::Jsonize() const {
 
   if (m_codecHasBeenSet) {
     payload.WithString("codec", m_codec);
+  }
+
+  if (m_colorHasBeenSet) {
+    payload.WithObject("color", m_color.Jsonize());
   }
 
   if (m_frameRateHasBeenSet) {

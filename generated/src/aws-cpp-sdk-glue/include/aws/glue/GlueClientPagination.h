@@ -36,6 +36,7 @@
 #include <aws/glue/model/ListCrawlersPaginationTraits.h>
 #include <aws/glue/model/ListCustomEntityTypesPaginationTraits.h>
 #include <aws/glue/model/ListDataQualityResultsPaginationTraits.h>
+#include <aws/glue/model/ListDataQualityResultsV2PaginationTraits.h>
 #include <aws/glue/model/ListDataQualityRuleRecommendationRunsPaginationTraits.h>
 #include <aws/glue/model/ListDataQualityRulesetEvaluationRunsPaginationTraits.h>
 #include <aws/glue/model/ListDataQualityRulesetsPaginationTraits.h>
@@ -126,6 +127,9 @@ using ListCustomEntityTypesPaginator = Aws::Utils::Pagination::Paginator<GlueCli
                                                                          Pagination::ListCustomEntityTypesPaginationTraits<GlueClient>>;
 using ListDataQualityResultsPaginator = Aws::Utils::Pagination::Paginator<GlueClient, Model::ListDataQualityResultsRequest,
                                                                           Pagination::ListDataQualityResultsPaginationTraits<GlueClient>>;
+using ListDataQualityResultsV2Paginator =
+    Aws::Utils::Pagination::Paginator<GlueClient, Model::ListDataQualityResultsV2Request,
+                                      Pagination::ListDataQualityResultsV2PaginationTraits<GlueClient>>;
 using ListDataQualityRuleRecommendationRunsPaginator =
     Aws::Utils::Pagination::Paginator<GlueClient, Model::ListDataQualityRuleRecommendationRunsRequest,
                                       Pagination::ListDataQualityRuleRecommendationRunsPaginationTraits<GlueClient>>;

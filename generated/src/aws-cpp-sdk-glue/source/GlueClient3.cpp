@@ -20,6 +20,10 @@
 #include <aws/glue/GlueClient.h>
 #include <aws/glue/GlueEndpointProvider.h>
 #include <aws/glue/GlueErrorMarshaller.h>
+#include <aws/glue/model/UpdateTableOptimizerRequest.h>
+#include <aws/glue/model/UpdateTableRequest.h>
+#include <aws/glue/model/UpdateTriggerRequest.h>
+#include <aws/glue/model/UpdateUsageProfileRequest.h>
 #include <aws/glue/model/UpdateUserDefinedFunctionRequest.h>
 #include <aws/glue/model/UpdateWorkflowRequest.h>
 #include <smithy/tracing/TracingUtils.h>
@@ -33,6 +37,28 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+UpdateTableOutcome GlueClient::UpdateTable(const UpdateTableRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateTableOutcome(result.GetResultWithOwnership()) : UpdateTableOutcome(std::move(result.GetError()));
+}
+
+UpdateTableOptimizerOutcome GlueClient::UpdateTableOptimizer(const UpdateTableOptimizerRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateTableOptimizerOutcome(result.GetResultWithOwnership())
+                            : UpdateTableOptimizerOutcome(std::move(result.GetError()));
+}
+
+UpdateTriggerOutcome GlueClient::UpdateTrigger(const UpdateTriggerRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateTriggerOutcome(result.GetResultWithOwnership()) : UpdateTriggerOutcome(std::move(result.GetError()));
+}
+
+UpdateUsageProfileOutcome GlueClient::UpdateUsageProfile(const UpdateUsageProfileRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateUsageProfileOutcome(result.GetResultWithOwnership())
+                            : UpdateUsageProfileOutcome(std::move(result.GetError()));
+}
 
 UpdateUserDefinedFunctionOutcome GlueClient::UpdateUserDefinedFunction(const UpdateUserDefinedFunctionRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);

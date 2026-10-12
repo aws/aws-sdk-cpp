@@ -370,6 +370,7 @@
 #include <aws/sagemaker-runtime/SageMakerRuntimeClient.h>
 #include <aws/sagemaker/SageMakerClient.h>
 #include <aws/sagemakerjobruntime/SagemakerJobRuntimeClient.h>
+#include <aws/sagemakertrainingsessionruntime/SageMakerTrainingSessionRuntimeClient.h>
 #include <aws/savingsplans/SavingsPlansClient.h>
 #include <aws/scheduler/SchedulerClient.h>
 #include <aws/schemas/SchemasClient.h>

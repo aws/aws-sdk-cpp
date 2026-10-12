@@ -388,6 +388,24 @@ class PhoneNumberInformation {
 
   ///@{
   /**
+   * <p>The pricing model.</p>
+   */
+  inline const Aws::String& GetPricingTier() const { return m_pricingTier; }
+  inline bool PricingTierHasBeenSet() const { return m_pricingTierHasBeenSet; }
+  template <typename PricingTierT = Aws::String>
+  void SetPricingTier(PricingTierT&& value) {
+    m_pricingTierHasBeenSet = true;
+    m_pricingTier = std::forward<PricingTierT>(value);
+  }
+  template <typename PricingTierT = Aws::String>
+  PhoneNumberInformation& WithPricingTier(PricingTierT&& value) {
+    SetPricingTier(std::forward<PricingTierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The time when the phone number was created, in <a
    * href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
    */
@@ -443,6 +461,8 @@ class PhoneNumberInformation {
 
   MessagingLimits m_messagingLimits;
 
+  Aws::String m_pricingTier;
+
   Aws::Utils::DateTime m_createdTimestamp{};
   bool m_phoneNumberArnHasBeenSet = false;
   bool m_phoneNumberIdHasBeenSet = false;
@@ -463,6 +483,7 @@ class PhoneNumberInformation {
   bool m_poolIdHasBeenSet = false;
   bool m_registrationIdHasBeenSet = false;
   bool m_messagingLimitsHasBeenSet = false;
+  bool m_pricingTierHasBeenSet = false;
   bool m_createdTimestampHasBeenSet = false;
 };
 

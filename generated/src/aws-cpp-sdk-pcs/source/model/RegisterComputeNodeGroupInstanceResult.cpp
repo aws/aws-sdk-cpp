@@ -56,6 +56,10 @@ RegisterComputeNodeGroupInstanceResult& RegisterComputeNodeGroupInstanceResult::
     m_nodeLifecycleActions = jsonValue.GetObject("nodeLifecycleActions");
     m_nodeLifecycleActionsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("schedulerVersion")) {
+    m_schedulerVersion = jsonValue.GetString("schedulerVersion");
+    m_schedulerVersionHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

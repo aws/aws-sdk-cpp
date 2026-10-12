@@ -27,5 +27,9 @@ Aws::String BatchCreateMemoryRecordsRequest::SerializePayload() const {
     payload.WithString("clientToken", m_clientToken);
   }
 
+  if (m_recordExpirySpecificationHasBeenSet) {
+    payload.WithObject("recordExpirySpecification", m_recordExpirySpecification.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

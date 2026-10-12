@@ -88,6 +88,7 @@
 #include <aws/sagemaker/model/ListTrainingJobsForHyperParameterTuningJobPaginationTraits.h>
 #include <aws/sagemaker/model/ListTrainingJobsPaginationTraits.h>
 #include <aws/sagemaker/model/ListTrainingPlansPaginationTraits.h>
+#include <aws/sagemaker/model/ListTrainingSessionsPaginationTraits.h>
 #include <aws/sagemaker/model/ListTransformJobsPaginationTraits.h>
 #include <aws/sagemaker/model/ListTrialComponentsPaginationTraits.h>
 #include <aws/sagemaker/model/ListTrialsPaginationTraits.h>
@@ -299,6 +300,8 @@ using ListTrainingJobsForHyperParameterTuningJobPaginator =
                                       Pagination::ListTrainingJobsForHyperParameterTuningJobPaginationTraits<SageMakerClient>>;
 using ListTrainingPlansPaginator = Aws::Utils::Pagination::Paginator<SageMakerClient, Model::ListTrainingPlansRequest,
                                                                      Pagination::ListTrainingPlansPaginationTraits<SageMakerClient>>;
+using ListTrainingSessionsPaginator = Aws::Utils::Pagination::Paginator<SageMakerClient, Model::ListTrainingSessionsRequest,
+                                                                        Pagination::ListTrainingSessionsPaginationTraits<SageMakerClient>>;
 using ListTransformJobsPaginator = Aws::Utils::Pagination::Paginator<SageMakerClient, Model::ListTransformJobsRequest,
                                                                      Pagination::ListTransformJobsPaginationTraits<SageMakerClient>>;
 using ListTrialComponentsPaginator = Aws::Utils::Pagination::Paginator<SageMakerClient, Model::ListTrialComponentsRequest,

@@ -33,7 +33,8 @@ enum class ResourceType {
   AWS_CloudWatch_OTelEnrichment,
   AWS_MSK_Cluster,
   AWS_S3_Bucket,
-  AWS_Bedrock_KnowledgeBase
+  AWS_Bedrock_KnowledgeBase,
+  AWS_XRay_TransactionSearchConfig
 };
 
 namespace ResourceTypeMapper {

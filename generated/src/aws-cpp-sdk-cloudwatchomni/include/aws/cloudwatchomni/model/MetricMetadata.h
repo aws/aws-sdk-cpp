@@ -93,14 +93,16 @@ class MetricMetadata {
 
   ///@{
   /**
-   * <p>Per-metric qualifying attributes the console uses to query this metric's
-   * telemetry. These are the RAW, store-matching values keyed by their OTel names
-   * (&quot;service.name&quot;, &quot;service.namespace&quot;,
-   * &quot;cloud.provider&quot;, &quot;cloud.account.id&quot;,
-   * &quot;cloud.region&quot;, &quot;instrumentation_scope&quot;) — deliberately NOT
-   * the node's normalized/merged identity, so the query selectors match the emitted
-   * series. A merged node can carry different values per metric, which is why they
-   * live here rather than on the node.</p>
+   * <p>Per-metric qualifying attributes used to query this metric's telemetry. Keys
+   * are the metric store's own label names, not bare OTel attribute names: service
+   * identity arrives as &quot;@resource.service.name&quot; and
+   * &quot;@resource.service.namespace&quot;, and the instrumentation scope as
+   * &quot;@instrumentation.@name&quot;, while span-derived metrics label the service
+   * as a bare &quot;service.name&quot;. Cloud provider, account and region are not
+   * repeated per metric — read those from the node. Values are RAW, deliberately NOT
+   * the node's normalized or merged identity, so a selector built from them matches
+   * the emitted series. A merged node can carry different values per metric, which
+   * is why these live here rather than on the node.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const { return m_attributes; }
   inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }

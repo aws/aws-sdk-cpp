@@ -98,6 +98,21 @@ class GetAccountUsageResult {
   ///@}
 
   ///@{
+
+  inline const UsageMetric& GetMonthlyAccountGraderHours() const { return m_monthlyAccountGraderHours; }
+  template <typename MonthlyAccountGraderHoursT = UsageMetric>
+  void SetMonthlyAccountGraderHours(MonthlyAccountGraderHoursT&& value) {
+    m_monthlyAccountGraderHoursHasBeenSet = true;
+    m_monthlyAccountGraderHours = std::forward<MonthlyAccountGraderHoursT>(value);
+  }
+  template <typename MonthlyAccountGraderHoursT = UsageMetric>
+  GetAccountUsageResult& WithMonthlyAccountGraderHours(MonthlyAccountGraderHoursT&& value) {
+    SetMonthlyAccountGraderHours(std::forward<MonthlyAccountGraderHoursT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
   /**
    * <p>The start time of the usage tracking period</p>
    */
@@ -156,6 +171,8 @@ class GetAccountUsageResult {
 
   UsageMetric m_monthlyAccountOnDemandHours;
 
+  UsageMetric m_monthlyAccountGraderHours;
+
   Aws::Utils::DateTime m_usagePeriodStartTime{};
 
   Aws::Utils::DateTime m_usagePeriodEndTime{};
@@ -166,6 +183,7 @@ class GetAccountUsageResult {
   bool m_monthlyAccountEvaluationHoursHasBeenSet = false;
   bool m_monthlyAccountSystemLearningHoursHasBeenSet = false;
   bool m_monthlyAccountOnDemandHoursHasBeenSet = false;
+  bool m_monthlyAccountGraderHoursHasBeenSet = false;
   bool m_usagePeriodStartTimeHasBeenSet = false;
   bool m_usagePeriodEndTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

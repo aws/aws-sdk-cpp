@@ -34,6 +34,10 @@ MCPServerAuthorizationConfig& MCPServerAuthorizationConfig::operator=(JsonView j
     m_bearerToken = jsonValue.GetObject("bearerToken");
     m_bearerTokenHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("customHeaders")) {
+    m_customHeaders = jsonValue.GetObject("customHeaders");
+    m_customHeadersHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("authorizationDiscovery")) {
     m_authorizationDiscovery = jsonValue.GetObject("authorizationDiscovery");
     m_authorizationDiscoveryHasBeenSet = true;
@@ -58,6 +62,10 @@ JsonValue MCPServerAuthorizationConfig::Jsonize() const {
 
   if (m_bearerTokenHasBeenSet) {
     payload.WithObject("bearerToken", m_bearerToken.Jsonize());
+  }
+
+  if (m_customHeadersHasBeenSet) {
+    payload.WithObject("customHeaders", m_customHeaders.Jsonize());
   }
 
   if (m_authorizationDiscoveryHasBeenSet) {

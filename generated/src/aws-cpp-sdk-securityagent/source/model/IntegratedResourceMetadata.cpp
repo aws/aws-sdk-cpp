@@ -38,6 +38,10 @@ IntegratedResourceMetadata& IntegratedResourceMetadata::operator=(JsonView jsonV
     m_azureDevOpsRepository = jsonValue.GetObject("azureDevOpsRepository");
     m_azureDevOpsRepositoryHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("jiraProject")) {
+    m_jiraProject = jsonValue.GetObject("jiraProject");
+    m_jiraProjectHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +66,10 @@ JsonValue IntegratedResourceMetadata::Jsonize() const {
 
   if (m_azureDevOpsRepositoryHasBeenSet) {
     payload.WithObject("azureDevOpsRepository", m_azureDevOpsRepository.Jsonize());
+  }
+
+  if (m_jiraProjectHasBeenSet) {
+    payload.WithObject("jiraProject", m_jiraProject.Jsonize());
   }
 
   return payload;

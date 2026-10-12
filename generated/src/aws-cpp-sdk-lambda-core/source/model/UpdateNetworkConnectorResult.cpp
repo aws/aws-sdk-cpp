@@ -34,6 +34,14 @@ UpdateNetworkConnectorResult& UpdateNetworkConnectorResult::operator=(const Aws:
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("VersionArn")) {
+    m_versionArn = jsonValue.GetString("VersionArn");
+    m_versionArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Version")) {
+    m_version = jsonValue.GetInt64("Version");
+    m_versionHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("OperatorRole")) {
     m_operatorRole = jsonValue.GetString("OperatorRole");
     m_operatorRoleHasBeenSet = true;

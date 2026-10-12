@@ -57,6 +57,10 @@ SenderIdInformation& SenderIdInformation::operator=(JsonView jsonValue) {
     m_messagingLimits = jsonValue.GetObject("MessagingLimits");
     m_messagingLimitsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("PricingTier")) {
+    m_pricingTier = jsonValue.GetString("PricingTier");
+    m_pricingTierHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -101,6 +105,10 @@ JsonValue SenderIdInformation::Jsonize() const {
 
   if (m_messagingLimitsHasBeenSet) {
     payload.WithObject("MessagingLimits", m_messagingLimits.Jsonize());
+  }
+
+  if (m_pricingTierHasBeenSet) {
+    payload.WithString("PricingTier", m_pricingTier);
   }
 
   return payload;

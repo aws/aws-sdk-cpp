@@ -129,6 +129,10 @@ Finding& Finding::operator=(JsonView jsonValue) {
     m_originalFindingId = jsonValue.GetString("originalFindingId");
     m_originalFindingIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("linkedIssue")) {
+    m_linkedIssue = jsonValue.GetObject("linkedIssue");
+    m_linkedIssueHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetString("createdAt");
     m_createdAtHasBeenSet = true;
@@ -254,6 +258,10 @@ JsonValue Finding::Jsonize() const {
 
   if (m_originalFindingIdHasBeenSet) {
     payload.WithString("originalFindingId", m_originalFindingId);
+  }
+
+  if (m_linkedIssueHasBeenSet) {
+    payload.WithObject("linkedIssue", m_linkedIssue.Jsonize());
   }
 
   if (m_createdAtHasBeenSet) {

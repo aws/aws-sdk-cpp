@@ -21,8 +21,8 @@ namespace BedrockAgentCoreControl {
 namespace Model {
 
 /**
- * <p>Passed to show that AWS Skills should be included.</p><p><h3>See Also:</h3>
- * <a
+ * <p>Passed to show that Amazon Web Services Skills should be
+ * included.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/HarnessSkillAwsSkillsSource">AWS
  * API Reference</a></p>
  */

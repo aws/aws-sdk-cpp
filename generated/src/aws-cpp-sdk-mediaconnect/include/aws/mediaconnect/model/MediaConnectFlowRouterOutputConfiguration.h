@@ -22,7 +22,13 @@ namespace Model {
 
 /**
  * <p>Configuration settings for connecting a router output to a MediaConnect flow
- * source.</p><p><h3>See Also:</h3>   <a
+ * source.</p> <p>To connect the router output to the flow source, provide both
+ * <code>flowArn</code> and <code>flowSourceArn</code>. To disconnect it, call the
+ * update operation and omit both fields while keeping this configuration
+ * object.</p>  <p>You can't change <code>destinationTransitEncryption</code>
+ * while the router output is connected to a flow source. To change it, first
+ * disconnect the router output, then update the encryption.</p> <p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/MediaConnectFlowRouterOutputConfiguration">AWS
  * API Reference</a></p>
  */

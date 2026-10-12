@@ -132,6 +132,7 @@
 #include <aws/devops-agent/model/IdcAuthConfiguration.h>
 #include <aws/devops-agent/model/IdentityCenterServiceException.h>
 #include <aws/devops-agent/model/IdpAuthConfiguration.h>
+#include <aws/devops-agent/model/IncludedData.h>
 #include <aws/devops-agent/model/IpAddressType.h>
 #include <aws/devops-agent/model/JournalRecord.h>
 #include <aws/devops-agent/model/ListAgentSpacesPaginationTraits.h>
@@ -188,6 +189,7 @@
 #include <aws/devops-agent/model/MCPServerAuthorizationMethod.h>
 #include <aws/devops-agent/model/MCPServerBearerTokenConfig.h>
 #include <aws/devops-agent/model/MCPServerConfiguration.h>
+#include <aws/devops-agent/model/MCPServerCustomHeadersConfig.h>
 #include <aws/devops-agent/model/MCPServerDatadogConfiguration.h>
 #include <aws/devops-agent/model/MCPServerDetails.h>
 #include <aws/devops-agent/model/MCPServerGrafanaConfiguration.h>

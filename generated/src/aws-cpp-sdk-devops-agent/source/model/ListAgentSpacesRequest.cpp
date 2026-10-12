@@ -30,4 +30,10 @@ void ListAgentSpacesRequest::AddQueryStringParameters(URI& uri) const {
     uri.AddQueryStringParameter("nextToken", ss.str());
     ss.str("");
   }
+
+  if (m_includedDataHasBeenSet) {
+    ss << IncludedDataMapper::GetNameForIncludedData(m_includedData);
+    uri.AddQueryStringParameter("includedData", ss.str());
+    ss.str("");
+  }
 }

@@ -50,6 +50,10 @@ GetIntegrationResult& GetIntegrationResult::operator=(const Aws::AmazonWebServic
     m_targetUrl = jsonValue.GetString("targetUrl");
     m_targetUrlHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("siteUrl")) {
+    m_siteUrl = jsonValue.GetString("siteUrl");
+    m_siteUrlHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("webhookUrl")) {
     m_webhookUrl = jsonValue.GetString("webhookUrl");
     m_webhookUrlHasBeenSet = true;

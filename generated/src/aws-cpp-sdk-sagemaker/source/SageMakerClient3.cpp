@@ -20,6 +20,9 @@
 #include <aws/sagemaker/SageMakerClient.h>
 #include <aws/sagemaker/SageMakerEndpointProvider.h>
 #include <aws/sagemaker/SageMakerErrorMarshaller.h>
+#include <aws/sagemaker/model/ListNotebookInstancesRequest.h>
+#include <aws/sagemaker/model/ListOptimizationJobsRequest.h>
+#include <aws/sagemaker/model/ListPartnerAppsRequest.h>
 #include <aws/sagemaker/model/ListPipelineExecutionStepsRequest.h>
 #include <aws/sagemaker/model/ListPipelineExecutionsRequest.h>
 #include <aws/sagemaker/model/ListPipelineParametersForExecutionRequest.h>
@@ -36,6 +39,7 @@
 #include <aws/sagemaker/model/ListTrainingJobsForHyperParameterTuningJobRequest.h>
 #include <aws/sagemaker/model/ListTrainingJobsRequest.h>
 #include <aws/sagemaker/model/ListTrainingPlansRequest.h>
+#include <aws/sagemaker/model/ListTrainingSessionsRequest.h>
 #include <aws/sagemaker/model/ListTransformJobsRequest.h>
 #include <aws/sagemaker/model/ListTrialComponentsRequest.h>
 #include <aws/sagemaker/model/ListTrialsRequest.h>
@@ -78,6 +82,7 @@
 #include <aws/sagemaker/model/StopPipelineExecutionRequest.h>
 #include <aws/sagemaker/model/StopProcessingJobRequest.h>
 #include <aws/sagemaker/model/StopTrainingJobRequest.h>
+#include <aws/sagemaker/model/StopTrainingSessionRequest.h>
 #include <aws/sagemaker/model/StopTransformJobRequest.h>
 #include <aws/sagemaker/model/UpdateActionRequest.h>
 #include <aws/sagemaker/model/UpdateAppImageConfigRequest.h>
@@ -115,11 +120,6 @@
 #include <aws/sagemaker/model/UpdatePartnerAppRequest.h>
 #include <aws/sagemaker/model/UpdatePipelineExecutionRequest.h>
 #include <aws/sagemaker/model/UpdatePipelineRequest.h>
-#include <aws/sagemaker/model/UpdatePipelineVersionRequest.h>
-#include <aws/sagemaker/model/UpdateProjectRequest.h>
-#include <aws/sagemaker/model/UpdateSpaceRequest.h>
-#include <aws/sagemaker/model/UpdateTrainingJobRequest.h>
-#include <aws/sagemaker/model/UpdateTrialRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,24 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+ListNotebookInstancesOutcome SageMakerClient::ListNotebookInstances(const ListNotebookInstancesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListNotebookInstancesOutcome(result.GetResultWithOwnership())
+                            : ListNotebookInstancesOutcome(std::move(result.GetError()));
+}
+
+ListOptimizationJobsOutcome SageMakerClient::ListOptimizationJobs(const ListOptimizationJobsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListOptimizationJobsOutcome(result.GetResultWithOwnership())
+                            : ListOptimizationJobsOutcome(std::move(result.GetError()));
+}
+
+ListPartnerAppsOutcome SageMakerClient::ListPartnerApps(const ListPartnerAppsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPartnerAppsOutcome(result.GetResultWithOwnership())
+                            : ListPartnerAppsOutcome(std::move(result.GetError()));
+}
 
 ListPipelineExecutionStepsOutcome SageMakerClient::ListPipelineExecutionSteps(const ListPipelineExecutionStepsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -224,6 +242,12 @@ ListTrainingPlansOutcome SageMakerClient::ListTrainingPlans(const ListTrainingPl
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListTrainingPlansOutcome(result.GetResultWithOwnership())
                             : ListTrainingPlansOutcome(std::move(result.GetError()));
+}
+
+ListTrainingSessionsOutcome SageMakerClient::ListTrainingSessions(const ListTrainingSessionsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTrainingSessionsOutcome(result.GetResultWithOwnership())
+                            : ListTrainingSessionsOutcome(std::move(result.GetError()));
 }
 
 ListTransformJobsOutcome SageMakerClient::ListTransformJobs(const ListTransformJobsRequest& request) const {
@@ -474,6 +498,12 @@ StopTrainingJobOutcome SageMakerClient::StopTrainingJob(const StopTrainingJobReq
                             : StopTrainingJobOutcome(std::move(result.GetError()));
 }
 
+StopTrainingSessionOutcome SageMakerClient::StopTrainingSession(const StopTrainingSessionRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopTrainingSessionOutcome(result.GetResultWithOwnership())
+                            : StopTrainingSessionOutcome(std::move(result.GetError()));
+}
+
 StopTransformJobOutcome SageMakerClient::StopTransformJob(const StopTransformJobRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? StopTransformJobOutcome(result.GetResultWithOwnership())
@@ -688,31 +718,4 @@ UpdatePipelineExecutionOutcome SageMakerClient::UpdatePipelineExecution(const Up
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UpdatePipelineExecutionOutcome(result.GetResultWithOwnership())
                             : UpdatePipelineExecutionOutcome(std::move(result.GetError()));
-}
-
-UpdatePipelineVersionOutcome SageMakerClient::UpdatePipelineVersion(const UpdatePipelineVersionRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? UpdatePipelineVersionOutcome(result.GetResultWithOwnership())
-                            : UpdatePipelineVersionOutcome(std::move(result.GetError()));
-}
-
-UpdateProjectOutcome SageMakerClient::UpdateProject(const UpdateProjectRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? UpdateProjectOutcome(result.GetResultWithOwnership()) : UpdateProjectOutcome(std::move(result.GetError()));
-}
-
-UpdateSpaceOutcome SageMakerClient::UpdateSpace(const UpdateSpaceRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? UpdateSpaceOutcome(result.GetResultWithOwnership()) : UpdateSpaceOutcome(std::move(result.GetError()));
-}
-
-UpdateTrainingJobOutcome SageMakerClient::UpdateTrainingJob(const UpdateTrainingJobRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? UpdateTrainingJobOutcome(result.GetResultWithOwnership())
-                            : UpdateTrainingJobOutcome(std::move(result.GetError()));
-}
-
-UpdateTrialOutcome SageMakerClient::UpdateTrial(const UpdateTrialRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? UpdateTrialOutcome(result.GetResultWithOwnership()) : UpdateTrialOutcome(std::move(result.GetError()));
 }

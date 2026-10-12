@@ -7,10 +7,14 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/devops-agent/DevOpsAgentRequest.h>
 #include <aws/devops-agent/DevOpsAgent_EXPORTS.h>
+#include <aws/devops-agent/model/IncludedData.h>
 
 #include <utility>
 
 namespace Aws {
+namespace Http {
+class URI;
+}  // namespace Http
 namespace DevOpsAgent {
 namespace Model {
 
@@ -32,6 +36,8 @@ class GetAgentSpaceRequest : public DevOpsAgentRequest {
 
   AWS_DEVOPSAGENT_API Aws::String SerializePayload() const override;
 
+  AWS_DEVOPSAGENT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
   ///@{
   /**
    * <p>The unique identifier of the AgentSpace</p>
@@ -49,9 +55,28 @@ class GetAgentSpaceRequest : public DevOpsAgentRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>How much data to include in the response.</p>
+   */
+  inline IncludedData GetIncludedData() const { return m_includedData; }
+  inline bool IncludedDataHasBeenSet() const { return m_includedDataHasBeenSet; }
+  inline void SetIncludedData(IncludedData value) {
+    m_includedDataHasBeenSet = true;
+    m_includedData = value;
+  }
+  inline GetAgentSpaceRequest& WithIncludedData(IncludedData value) {
+    SetIncludedData(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_agentSpaceId;
+
+  IncludedData m_includedData{IncludedData::NOT_SET};
   bool m_agentSpaceIdHasBeenSet = false;
+  bool m_includedDataHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -203,6 +203,24 @@ class SenderIdInformation {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The pricing model.</p>
+   */
+  inline const Aws::String& GetPricingTier() const { return m_pricingTier; }
+  inline bool PricingTierHasBeenSet() const { return m_pricingTierHasBeenSet; }
+  template <typename PricingTierT = Aws::String>
+  void SetPricingTier(PricingTierT&& value) {
+    m_pricingTierHasBeenSet = true;
+    m_pricingTier = std::forward<PricingTierT>(value);
+  }
+  template <typename PricingTierT = Aws::String>
+  SenderIdInformation& WithPricingTier(PricingTierT&& value) {
+    SetPricingTier(std::forward<PricingTierT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_senderIdArn;
 
@@ -221,6 +239,8 @@ class SenderIdInformation {
   Aws::String m_registrationId;
 
   MessagingLimits m_messagingLimits;
+
+  Aws::String m_pricingTier;
   bool m_senderIdArnHasBeenSet = false;
   bool m_senderIdHasBeenSet = false;
   bool m_isoCountryCodeHasBeenSet = false;
@@ -230,6 +250,7 @@ class SenderIdInformation {
   bool m_registeredHasBeenSet = false;
   bool m_registrationIdHasBeenSet = false;
   bool m_messagingLimitsHasBeenSet = false;
+  bool m_pricingTierHasBeenSet = false;
 };
 
 }  // namespace Model

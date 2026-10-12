@@ -45,6 +45,10 @@ MemoryRecordSummary& MemoryRecordSummary::operator=(JsonView jsonValue) {
     m_score = jsonValue.GetDouble("score");
     m_scoreHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("timestamp")) {
+    m_timestamp = jsonValue.GetDouble("timestamp");
+    m_timestampHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("metadata")) {
     Aws::Map<Aws::String, JsonView> metadataJsonMap = jsonValue.GetObject("metadata").GetAllObjects();
     for (auto& metadataItem : metadataJsonMap) {
@@ -84,6 +88,10 @@ JsonValue MemoryRecordSummary::Jsonize() const {
 
   if (m_scoreHasBeenSet) {
     payload.WithDouble("score", m_score);
+  }
+
+  if (m_timestampHasBeenSet) {
+    payload.WithDouble("timestamp", m_timestamp.SecondsWithMSPrecision());
   }
 
   if (m_metadataHasBeenSet) {

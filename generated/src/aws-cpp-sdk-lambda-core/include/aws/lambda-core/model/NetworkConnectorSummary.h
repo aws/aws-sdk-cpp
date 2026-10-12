@@ -74,7 +74,9 @@ class NetworkConnectorSummary {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The unique identifier of the network connector.</p>
+   */
   inline const Aws::String& GetId() const { return m_id; }
   inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
   template <typename IdT = Aws::String>
@@ -138,6 +140,43 @@ class NetworkConnectorSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The qualified ARN of the connector's latest version, including the immutable
+   * version suffix.</p>
+   */
+  inline const Aws::String& GetLatestVersionArn() const { return m_latestVersionArn; }
+  inline bool LatestVersionArnHasBeenSet() const { return m_latestVersionArnHasBeenSet; }
+  template <typename LatestVersionArnT = Aws::String>
+  void SetLatestVersionArn(LatestVersionArnT&& value) {
+    m_latestVersionArnHasBeenSet = true;
+    m_latestVersionArn = std::forward<LatestVersionArnT>(value);
+  }
+  template <typename LatestVersionArnT = Aws::String>
+  NetworkConnectorSummary& WithLatestVersionArn(LatestVersionArnT&& value) {
+    SetLatestVersionArn(std::forward<LatestVersionArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The version number of the connector's latest version. Each configuration
+   * update creates a new immutable version; this attribute exposes the most recent
+   * one.</p>
+   */
+  inline long long GetLatestVersion() const { return m_latestVersion; }
+  inline bool LatestVersionHasBeenSet() const { return m_latestVersionHasBeenSet; }
+  inline void SetLatestVersion(long long value) {
+    m_latestVersionHasBeenSet = true;
+    m_latestVersion = value;
+  }
+  inline NetworkConnectorSummary& WithLatestVersion(long long value) {
+    SetLatestVersion(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
@@ -150,12 +189,18 @@ class NetworkConnectorSummary {
   NetworkConnectorState m_state{NetworkConnectorState::NOT_SET};
 
   Aws::Utils::DateTime m_lastModified{};
+
+  Aws::String m_latestVersionArn;
+
+  long long m_latestVersion{0};
   bool m_arnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_typeHasBeenSet = false;
   bool m_stateHasBeenSet = false;
   bool m_lastModifiedHasBeenSet = false;
+  bool m_latestVersionArnHasBeenSet = false;
+  bool m_latestVersionHasBeenSet = false;
 };
 
 }  // namespace Model

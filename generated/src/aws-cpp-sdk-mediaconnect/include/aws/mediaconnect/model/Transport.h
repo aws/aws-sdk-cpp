@@ -350,6 +350,25 @@ class Transport {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The audio reference level of the NDI receiver, in decibels relative to full
+   * scale (dBFS). Common values are <code>-20</code> (NDI and SMPTE) and
+   * <code>-18</code> (EBU). For NDI outputs, this field is always present and
+   * defaults to <code>-20</code>.</p>
+   */
+  inline int GetNdiAudioReferenceLevel() const { return m_ndiAudioReferenceLevel; }
+  inline bool NdiAudioReferenceLevelHasBeenSet() const { return m_ndiAudioReferenceLevelHasBeenSet; }
+  inline void SetNdiAudioReferenceLevel(int value) {
+    m_ndiAudioReferenceLevelHasBeenSet = true;
+    m_ndiAudioReferenceLevel = value;
+  }
+  inline Transport& WithNdiAudioReferenceLevel(int value) {
+    SetNdiAudioReferenceLevel(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_cidrAllowList;
 
@@ -384,6 +403,8 @@ class Transport {
   NdiSourceSettings m_ndiSourceSettings;
 
   NdiOutputTimecodeSource m_ndiOutputTimecodeSource{NdiOutputTimecodeSource::NOT_SET};
+
+  int m_ndiAudioReferenceLevel{0};
   bool m_cidrAllowListHasBeenSet = false;
   bool m_maxBitrateHasBeenSet = false;
   bool m_maxLatencyHasBeenSet = false;
@@ -401,6 +422,7 @@ class Transport {
   bool m_ndiProgramNameHasBeenSet = false;
   bool m_ndiSourceSettingsHasBeenSet = false;
   bool m_ndiOutputTimecodeSourceHasBeenSet = false;
+  bool m_ndiAudioReferenceLevelHasBeenSet = false;
 };
 
 }  // namespace Model

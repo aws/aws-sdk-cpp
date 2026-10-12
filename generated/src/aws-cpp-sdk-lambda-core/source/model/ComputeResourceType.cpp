@@ -16,11 +16,14 @@ namespace Model {
 namespace ComputeResourceTypeMapper {
 
 static const int MicroVm_HASH = HashingUtils::HashString("MicroVm");
+static const int WebFunction_HASH = HashingUtils::HashString("WebFunction");
 
 ComputeResourceType GetComputeResourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == MicroVm_HASH) {
     return ComputeResourceType::MicroVm;
+  } else if (hashCode == WebFunction_HASH) {
+    return ComputeResourceType::WebFunction;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +40,8 @@ Aws::String GetNameForComputeResourceType(ComputeResourceType enumValue) {
       return {};
     case ComputeResourceType::MicroVm:
       return "MicroVm";
+    case ComputeResourceType::WebFunction:
+      return "WebFunction";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

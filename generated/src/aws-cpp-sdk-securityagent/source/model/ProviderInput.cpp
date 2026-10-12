@@ -42,6 +42,10 @@ ProviderInput& ProviderInput::operator=(JsonView jsonValue) {
     m_bitbucketDataCenter = jsonValue.GetObject("bitbucketDataCenter");
     m_bitbucketDataCenterHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("jira")) {
+    m_jira = jsonValue.GetObject("jira");
+    m_jiraHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -70,6 +74,10 @@ JsonValue ProviderInput::Jsonize() const {
 
   if (m_bitbucketDataCenterHasBeenSet) {
     payload.WithObject("bitbucketDataCenter", m_bitbucketDataCenter.Jsonize());
+  }
+
+  if (m_jiraHasBeenSet) {
+    payload.WithObject("jira", m_jira.Jsonize());
   }
 
   return payload;

@@ -63,8 +63,8 @@ class NetworkConnectorVpcEgressConfiguration {
 
   ///@{
   /**
-   * <p>The IDs of the VPC security groups to attach to the ENIs. Specify 0 to 5
-   * security groups. All security groups must be in the same VPC as the subnets.</p>
+   * <p>The IDs of the VPC security groups to attach to the ENIs. All security groups
+   * must be in the same VPC as the subnets.</p>
    */
   inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const { return m_securityGroupIds; }
   inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
@@ -105,8 +105,9 @@ class NetworkConnectorVpcEgressConfiguration {
 
   ///@{
   /**
-   * <p>The types of Lambda compute resources that can use this connector. Currently,
-   * only <code>MicroVm</code> is supported.</p>
+   * <p>The types of Lambda compute resources that can use this connector. Valid
+   * values are <code>MicroVm</code> and <code>WebFunction</code>. Specify exactly
+   * one value.</p>
    */
   inline const Aws::Vector<ComputeResourceType>& GetAssociatedComputeResourceTypes() const { return m_associatedComputeResourceTypes; }
   inline bool AssociatedComputeResourceTypesHasBeenSet() const { return m_associatedComputeResourceTypesHasBeenSet; }

@@ -34,6 +34,14 @@ CreateNetworkConnectorResult& CreateNetworkConnectorResult::operator=(const Aws:
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("VersionArn")) {
+    m_versionArn = jsonValue.GetString("VersionArn");
+    m_versionArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Version")) {
+    m_version = jsonValue.GetInt64("Version");
+    m_versionHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Configuration")) {
     m_configuration = jsonValue.GetObject("Configuration");
     m_configurationHasBeenSet = true;

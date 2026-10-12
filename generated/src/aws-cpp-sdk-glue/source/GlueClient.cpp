@@ -30,6 +30,7 @@
 #include <aws/glue/model/BatchGetCrawlersRequest.h>
 #include <aws/glue/model/BatchGetCustomEntityTypesRequest.h>
 #include <aws/glue/model/BatchGetDataQualityResultRequest.h>
+#include <aws/glue/model/BatchGetDataQualityResultV2Request.h>
 #include <aws/glue/model/BatchGetDataQualityRulesetEvaluationRunRequest.h>
 #include <aws/glue/model/BatchGetDevEndpointsRequest.h>
 #include <aws/glue/model/BatchGetIterableFormsRequest.h>
@@ -119,7 +120,6 @@
 #include <aws/glue/model/DeleteWorkflowRequest.h>
 #include <aws/glue/model/DescribeConnectionTypeRequest.h>
 #include <aws/glue/model/DescribeEntityRequest.h>
-#include <aws/glue/model/DescribeInboundIntegrationsRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -327,6 +327,12 @@ BatchGetDataQualityResultOutcome GlueClient::BatchGetDataQualityResult(const Bat
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? BatchGetDataQualityResultOutcome(result.GetResultWithOwnership())
                             : BatchGetDataQualityResultOutcome(std::move(result.GetError()));
+}
+
+BatchGetDataQualityResultV2Outcome GlueClient::BatchGetDataQualityResultV2(const BatchGetDataQualityResultV2Request& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchGetDataQualityResultV2Outcome(result.GetResultWithOwnership())
+                            : BatchGetDataQualityResultV2Outcome(std::move(result.GetError()));
 }
 
 BatchGetDataQualityRulesetEvaluationRunOutcome GlueClient::BatchGetDataQualityRulesetEvaluationRun(
@@ -848,10 +854,4 @@ DescribeConnectionTypeOutcome GlueClient::DescribeConnectionType(const DescribeC
 DescribeEntityOutcome GlueClient::DescribeEntity(const DescribeEntityRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeEntityOutcome(result.GetResultWithOwnership()) : DescribeEntityOutcome(std::move(result.GetError()));
-}
-
-DescribeInboundIntegrationsOutcome GlueClient::DescribeInboundIntegrations(const DescribeInboundIntegrationsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeInboundIntegrationsOutcome(result.GetResultWithOwnership())
-                            : DescribeInboundIntegrationsOutcome(std::move(result.GetError()));
 }

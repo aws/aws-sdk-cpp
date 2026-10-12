@@ -66,6 +66,8 @@
 #include <aws/glue/model/BatchGetCustomEntityTypesResult.h>
 #include <aws/glue/model/BatchGetDataQualityResultRequest.h>
 #include <aws/glue/model/BatchGetDataQualityResultResult.h>
+#include <aws/glue/model/BatchGetDataQualityResultV2Request.h>
+#include <aws/glue/model/BatchGetDataQualityResultV2Result.h>
 #include <aws/glue/model/BatchGetDataQualityRulesetEvaluationRunRequest.h>
 #include <aws/glue/model/BatchGetDataQualityRulesetEvaluationRunResult.h>
 #include <aws/glue/model/BatchGetDevEndpointsRequest.h>
@@ -281,8 +283,10 @@
 #include <aws/glue/model/DataOperation.h>
 #include <aws/glue/model/DataQualityAggregatedMetrics.h>
 #include <aws/glue/model/DataQualityAnalyzerResult.h>
+#include <aws/glue/model/DataQualityConfigurationV2.h>
 #include <aws/glue/model/DataQualityEncryption.h>
 #include <aws/glue/model/DataQualityEncryptionMode.h>
+#include <aws/glue/model/DataQualityEngine.h>
 #include <aws/glue/model/DataQualityEvaluationRunAdditionalRunOptions.h>
 #include <aws/glue/model/DataQualityGlueTable.h>
 #include <aws/glue/model/DataQualityMetricValues.h>
@@ -291,6 +295,9 @@
 #include <aws/glue/model/DataQualityResult.h>
 #include <aws/glue/model/DataQualityResultDescription.h>
 #include <aws/glue/model/DataQualityResultFilterCriteria.h>
+#include <aws/glue/model/DataQualityResultV2Item.h>
+#include <aws/glue/model/DataQualityResultsV2Description.h>
+#include <aws/glue/model/DataQualityResultsV2FilterCriteria.h>
 #include <aws/glue/model/DataQualityRuleRecommendationRunAdditionalRunOptions.h>
 #include <aws/glue/model/DataQualityRuleRecommendationRunDescription.h>
 #include <aws/glue/model/DataQualityRuleRecommendationRunFilter.h>
@@ -303,6 +310,7 @@
 #include <aws/glue/model/DataQualityRulesetFilterCriteria.h>
 #include <aws/glue/model/DataQualityRulesetListDetails.h>
 #include <aws/glue/model/DataQualityTargetTable.h>
+#include <aws/glue/model/DataQualityTelemetry.h>
 #include <aws/glue/model/DataSource.h>
 #include <aws/glue/model/Database.h>
 #include <aws/glue/model/DatabaseAttributes.h>
@@ -536,6 +544,8 @@
 #include <aws/glue/model/GetDataQualityModelResultResult.h>
 #include <aws/glue/model/GetDataQualityResultRequest.h>
 #include <aws/glue/model/GetDataQualityResultResult.h>
+#include <aws/glue/model/GetDataQualityResultV2Request.h>
+#include <aws/glue/model/GetDataQualityResultV2Result.h>
 #include <aws/glue/model/GetDataQualityRuleRecommendationRunRequest.h>
 #include <aws/glue/model/GetDataQualityRuleRecommendationRunResult.h>
 #include <aws/glue/model/GetDataQualityRulesetEvaluationRunRequest.h>
@@ -793,6 +803,9 @@
 #include <aws/glue/model/ListDataQualityResultsPaginationTraits.h>
 #include <aws/glue/model/ListDataQualityResultsRequest.h>
 #include <aws/glue/model/ListDataQualityResultsResult.h>
+#include <aws/glue/model/ListDataQualityResultsV2PaginationTraits.h>
+#include <aws/glue/model/ListDataQualityResultsV2Request.h>
+#include <aws/glue/model/ListDataQualityResultsV2Result.h>
 #include <aws/glue/model/ListDataQualityRuleRecommendationRunsPaginationTraits.h>
 #include <aws/glue/model/ListDataQualityRuleRecommendationRunsRequest.h>
 #include <aws/glue/model/ListDataQualityRuleRecommendationRunsResult.h>
@@ -937,6 +950,8 @@
 #include <aws/glue/model/PropertyLocation.h>
 #include <aws/glue/model/PropertyPredicate.h>
 #include <aws/glue/model/PropertyType.h>
+#include <aws/glue/model/PublishDataQualityResultV2Request.h>
+#include <aws/glue/model/PublishDataQualityResultV2Result.h>
 #include <aws/glue/model/PutAssetRequest.h>
 #include <aws/glue/model/PutAssetResult.h>
 #include <aws/glue/model/PutAssetTypeRequest.h>
@@ -961,6 +976,7 @@
 #include <aws/glue/model/QuerySchemaVersionMetadataResult.h>
 #include <aws/glue/model/QuerySessionContext.h>
 #include <aws/glue/model/QuoteChar.h>
+#include <aws/glue/model/RLSProperties.h>
 #include <aws/glue/model/Recipe.h>
 #include <aws/glue/model/RecipeAction.h>
 #include <aws/glue/model/RecipeReference.h>

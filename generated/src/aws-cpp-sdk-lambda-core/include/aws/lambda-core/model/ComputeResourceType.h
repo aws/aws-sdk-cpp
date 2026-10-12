@@ -10,7 +10,7 @@
 namespace Aws {
 namespace LambdaCore {
 namespace Model {
-enum class ComputeResourceType { NOT_SET, MicroVm };
+enum class ComputeResourceType { NOT_SET, MicroVm, WebFunction };
 
 namespace ComputeResourceTypeMapper {
 AWS_LAMBDACORE_API ComputeResourceType GetComputeResourceTypeForName(const Aws::String& name);

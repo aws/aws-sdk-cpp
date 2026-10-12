@@ -96,6 +96,7 @@
 #include <aws/sagemaker/model/CreateStudioLifecycleConfigRequest.h>
 #include <aws/sagemaker/model/CreateTrainingJobRequest.h>
 #include <aws/sagemaker/model/CreateTrainingPlanRequest.h>
+#include <aws/sagemaker/model/CreateTrainingSessionRequest.h>
 #include <aws/sagemaker/model/CreateTransformJobRequest.h>
 #include <aws/sagemaker/model/CreateTrialComponentRequest.h>
 #include <aws/sagemaker/model/CreateTrialRequest.h>
@@ -119,7 +120,6 @@
 #include <aws/sagemaker/model/DeleteContextRequest.h>
 #include <aws/sagemaker/model/DeleteDataQualityJobDefinitionRequest.h>
 #include <aws/sagemaker/model/DeleteDeviceFleetRequest.h>
-#include <aws/sagemaker/model/DeleteDomainRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -724,6 +724,12 @@ CreateTrainingPlanOutcome SageMakerClient::CreateTrainingPlan(const CreateTraini
                             : CreateTrainingPlanOutcome(std::move(result.GetError()));
 }
 
+CreateTrainingSessionOutcome SageMakerClient::CreateTrainingSession(const CreateTrainingSessionRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateTrainingSessionOutcome(result.GetResultWithOwnership())
+                            : CreateTrainingSessionOutcome(std::move(result.GetError()));
+}
+
 CreateTransformJobOutcome SageMakerClient::CreateTransformJob(const CreateTransformJobRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateTransformJobOutcome(result.GetResultWithOwnership())
@@ -855,9 +861,4 @@ DeleteDeviceFleetOutcome SageMakerClient::DeleteDeviceFleet(const DeleteDeviceFl
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteDeviceFleetOutcome(result.GetResultWithOwnership())
                             : DeleteDeviceFleetOutcome(std::move(result.GetError()));
-}
-
-DeleteDomainOutcome SageMakerClient::DeleteDomain(const DeleteDomainRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DeleteDomainOutcome(result.GetResultWithOwnership()) : DeleteDomainOutcome(std::move(result.GetError()));
 }

@@ -711,6 +711,8 @@
 #include <aws/bedrock-agentcore-control/model/RateConfig.h>
 #include <aws/bedrock-agentcore-control/model/RatingScale.h>
 #include <aws/bedrock-agentcore-control/model/ReasoningConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/RecordExpiryAction.h>
+#include <aws/bedrock-agentcore-control/model/RecordExpirySpecification.h>
 #include <aws/bedrock-agentcore-control/model/RecordingConfig.h>
 #include <aws/bedrock-agentcore-control/model/ReflectionConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/RegistryAuthorizerType.h>

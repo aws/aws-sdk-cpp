@@ -68,7 +68,9 @@ class GetNetworkConnectorResult {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The unique identifier of the network connector.</p>
+   */
   inline const Aws::String& GetId() const { return m_id; }
   template <typename IdT = Aws::String>
   void SetId(IdT&& value) {
@@ -84,8 +86,32 @@ class GetNetworkConnectorResult {
 
   ///@{
   /**
-   * <p>The version number of the connector configuration, incremented on each
-   * update.</p>
+   * <p>The qualified ARN of the specific connector version returned by this request,
+   * including the immutable version suffix. This is populated only when you supply a
+   * version-qualified identifier. On a standard (unqualified) request, this field is
+   * not populated; the connector's latest active version is returned instead through
+   * the <code>LatestVersionArn</code> and <code>LatestVersion</code> fields
+   * described below.</p>
+   */
+  inline const Aws::String& GetVersionArn() const { return m_versionArn; }
+  template <typename VersionArnT = Aws::String>
+  void SetVersionArn(VersionArnT&& value) {
+    m_versionArnHasBeenSet = true;
+    m_versionArn = std::forward<VersionArnT>(value);
+  }
+  template <typename VersionArnT = Aws::String>
+  GetNetworkConnectorResult& WithVersionArn(VersionArnT&& value) {
+    SetVersionArn(std::forward<VersionArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The version number of the network connector. On a standard (unqualified)
+   * request, this is the connector's current version; each configuration update
+   * increments it. When you supply a version-qualified identifier, this is the
+   * specific version you requested.</p>
    */
   inline long long GetVersion() const { return m_version; }
   inline void SetVersion(long long value) {
@@ -94,6 +120,44 @@ class GetNetworkConnectorResult {
   }
   inline GetNetworkConnectorResult& WithVersion(long long value) {
     SetVersion(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The qualified ARN of the connector's latest active version, including the
+   * immutable version suffix. This field is returned only on a standard
+   * (unqualified) request; when you supply a version-qualified identifier it is not
+   * returned, and <code>VersionArn</code> is returned instead.</p>
+   */
+  inline const Aws::String& GetLatestVersionArn() const { return m_latestVersionArn; }
+  template <typename LatestVersionArnT = Aws::String>
+  void SetLatestVersionArn(LatestVersionArnT&& value) {
+    m_latestVersionArnHasBeenSet = true;
+    m_latestVersionArn = std::forward<LatestVersionArnT>(value);
+  }
+  template <typename LatestVersionArnT = Aws::String>
+  GetNetworkConnectorResult& WithLatestVersionArn(LatestVersionArnT&& value) {
+    SetLatestVersionArn(std::forward<LatestVersionArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The version number of the connector's latest active version. Each
+   * configuration update creates a new immutable version; this attribute exposes the
+   * most recent one. This field is returned only on a standard (unqualified)
+   * request.</p>
+   */
+  inline long long GetLatestVersion() const { return m_latestVersion; }
+  inline void SetLatestVersion(long long value) {
+    m_latestVersionHasBeenSet = true;
+    m_latestVersion = value;
+  }
+  inline GetNetworkConnectorResult& WithLatestVersion(long long value) {
+    SetLatestVersion(value);
     return *this;
   }
   ///@}
@@ -272,7 +336,13 @@ class GetNetworkConnectorResult {
 
   Aws::String m_id;
 
+  Aws::String m_versionArn;
+
   long long m_version{0};
+
+  Aws::String m_latestVersionArn;
+
+  long long m_latestVersion{0};
 
   NetworkConnectorConfiguration m_configuration;
 
@@ -297,7 +367,10 @@ class GetNetworkConnectorResult {
   bool m_arnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_idHasBeenSet = false;
+  bool m_versionArnHasBeenSet = false;
   bool m_versionHasBeenSet = false;
+  bool m_latestVersionArnHasBeenSet = false;
+  bool m_latestVersionHasBeenSet = false;
   bool m_configurationHasBeenSet = false;
   bool m_operatorRoleHasBeenSet = false;
   bool m_stateHasBeenSet = false;

@@ -34,9 +34,21 @@ GetNetworkConnectorResult& GetNetworkConnectorResult::operator=(const Aws::Amazo
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("VersionArn")) {
+    m_versionArn = jsonValue.GetString("VersionArn");
+    m_versionArnHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Version")) {
     m_version = jsonValue.GetInt64("Version");
     m_versionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("LatestVersionArn")) {
+    m_latestVersionArn = jsonValue.GetString("LatestVersionArn");
+    m_latestVersionArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("LatestVersion")) {
+    m_latestVersion = jsonValue.GetInt64("LatestVersion");
+    m_latestVersionHasBeenSet = true;
   }
   if (jsonValue.ValueExists("Configuration")) {
     m_configuration = jsonValue.GetObject("Configuration");

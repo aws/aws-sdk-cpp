@@ -203,6 +203,7 @@
 #include <aws/sagemaker/model/BedrockProvisionedModelThroughputMetadata.h>
 #include <aws/sagemaker/model/BestObjectiveNotImproving.h>
 #include <aws/sagemaker/model/Bias.h>
+#include <aws/sagemaker/model/BillableTokenUsage.h>
 #include <aws/sagemaker/model/BlueGreenUpdatePolicy.h>
 #include <aws/sagemaker/model/BooleanOperator.h>
 #include <aws/sagemaker/model/CacheHitResult.h>
@@ -475,6 +476,8 @@
 #include <aws/sagemaker/model/CreateTrainingJobResult.h>
 #include <aws/sagemaker/model/CreateTrainingPlanRequest.h>
 #include <aws/sagemaker/model/CreateTrainingPlanResult.h>
+#include <aws/sagemaker/model/CreateTrainingSessionRequest.h>
+#include <aws/sagemaker/model/CreateTrainingSessionResult.h>
 #include <aws/sagemaker/model/CreateTransformJobRequest.h>
 #include <aws/sagemaker/model/CreateTransformJobResult.h>
 #include <aws/sagemaker/model/CreateTrialComponentRequest.h>
@@ -592,6 +595,8 @@
 #include <aws/sagemaker/model/DeleteTagsRequest.h>
 #include <aws/sagemaker/model/DeleteTagsResult.h>
 #include <aws/sagemaker/model/DeleteTrainingJobRequest.h>
+#include <aws/sagemaker/model/DeleteTrainingSessionRequest.h>
+#include <aws/sagemaker/model/DeleteTrainingSessionResult.h>
 #include <aws/sagemaker/model/DeleteTrialComponentRequest.h>
 #include <aws/sagemaker/model/DeleteTrialComponentResult.h>
 #include <aws/sagemaker/model/DeleteTrialRequest.h>
@@ -750,6 +755,8 @@
 #include <aws/sagemaker/model/DescribeTrainingPlanExtensionHistoryResult.h>
 #include <aws/sagemaker/model/DescribeTrainingPlanRequest.h>
 #include <aws/sagemaker/model/DescribeTrainingPlanResult.h>
+#include <aws/sagemaker/model/DescribeTrainingSessionRequest.h>
+#include <aws/sagemaker/model/DescribeTrainingSessionResult.h>
 #include <aws/sagemaker/model/DescribeTransformJobRequest.h>
 #include <aws/sagemaker/model/DescribeTransformJobResult.h>
 #include <aws/sagemaker/model/DescribeTrialComponentRequest.h>
@@ -1312,6 +1319,9 @@
 #include <aws/sagemaker/model/ListTrainingPlansPaginationTraits.h>
 #include <aws/sagemaker/model/ListTrainingPlansRequest.h>
 #include <aws/sagemaker/model/ListTrainingPlansResult.h>
+#include <aws/sagemaker/model/ListTrainingSessionsPaginationTraits.h>
+#include <aws/sagemaker/model/ListTrainingSessionsRequest.h>
+#include <aws/sagemaker/model/ListTrainingSessionsResult.h>
 #include <aws/sagemaker/model/ListTransformJobsPaginationTraits.h>
 #include <aws/sagemaker/model/ListTransformJobsRequest.h>
 #include <aws/sagemaker/model/ListTransformJobsResult.h>
@@ -1335,6 +1345,7 @@
 #include <aws/sagemaker/model/ListWorkteamsRequest.h>
 #include <aws/sagemaker/model/ListWorkteamsResult.h>
 #include <aws/sagemaker/model/ListWorkteamsSortByOptions.h>
+#include <aws/sagemaker/model/LoraConfig.h>
 #include <aws/sagemaker/model/MIGProfileType.h>
 #include <aws/sagemaker/model/MLflowConfiguration.h>
 #include <aws/sagemaker/model/MaintenanceStatus.h>
@@ -1810,6 +1821,8 @@
 #include <aws/sagemaker/model/StopPipelineExecutionResult.h>
 #include <aws/sagemaker/model/StopProcessingJobRequest.h>
 #include <aws/sagemaker/model/StopTrainingJobRequest.h>
+#include <aws/sagemaker/model/StopTrainingSessionRequest.h>
+#include <aws/sagemaker/model/StopTrainingSessionResult.h>
 #include <aws/sagemaker/model/StopTransformJobRequest.h>
 #include <aws/sagemaker/model/StoppingCondition.h>
 #include <aws/sagemaker/model/StorageType.h>
@@ -1877,6 +1890,12 @@
 #include <aws/sagemaker/model/TrainingProgressInfo.h>
 #include <aws/sagemaker/model/TrainingRepositoryAccessMode.h>
 #include <aws/sagemaker/model/TrainingRepositoryAuthConfig.h>
+#include <aws/sagemaker/model/TrainingSessionDetail.h>
+#include <aws/sagemaker/model/TrainingSessionModelConfig.h>
+#include <aws/sagemaker/model/TrainingSessionOutputConfig.h>
+#include <aws/sagemaker/model/TrainingSessionS3Location.h>
+#include <aws/sagemaker/model/TrainingSessionStatus.h>
+#include <aws/sagemaker/model/TrainingSessionSummary.h>
 #include <aws/sagemaker/model/TrainingSpecification.h>
 #include <aws/sagemaker/model/TransformDataSource.h>
 #include <aws/sagemaker/model/TransformInput.h>

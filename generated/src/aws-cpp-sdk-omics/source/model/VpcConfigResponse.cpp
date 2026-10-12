@@ -36,6 +36,10 @@ VpcConfigResponse& VpcConfigResponse::operator=(JsonView jsonValue) {
     m_vpcId = jsonValue.GetString("vpcId");
     m_vpcIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("vpcOwnerAccountId")) {
+    m_vpcOwnerAccountId = jsonValue.GetString("vpcOwnerAccountId");
+    m_vpcOwnerAccountIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -60,6 +64,10 @@ JsonValue VpcConfigResponse::Jsonize() const {
 
   if (m_vpcIdHasBeenSet) {
     payload.WithString("vpcId", m_vpcId);
+  }
+
+  if (m_vpcOwnerAccountIdHasBeenSet) {
+    payload.WithString("vpcOwnerAccountId", m_vpcOwnerAccountId);
   }
 
   return payload;

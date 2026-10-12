@@ -62,6 +62,7 @@
 #include <aws/mediaconnect/model/BridgePlacement.h>
 #include <aws/mediaconnect/model/BridgeSource.h>
 #include <aws/mediaconnect/model/BridgeState.h>
+#include <aws/mediaconnect/model/ColorInformation.h>
 #include <aws/mediaconnect/model/Colorimetry.h>
 #include <aws/mediaconnect/model/ConnectionStatus.h>
 #include <aws/mediaconnect/model/ContentQualityAnalysisFeatureConfiguration.h>
@@ -414,7 +415,10 @@
 #include <aws/mediaconnect/model/UpdateRouterNetworkInterfaceResult.h>
 #include <aws/mediaconnect/model/UpdateRouterOutputRequest.h>
 #include <aws/mediaconnect/model/UpdateRouterOutputResult.h>
+#include <aws/mediaconnect/model/VideoColorimetry.h>
+#include <aws/mediaconnect/model/VideoMatrixCoefficients.h>
 #include <aws/mediaconnect/model/VideoMonitoringSetting.h>
+#include <aws/mediaconnect/model/VideoTransferCharacteristics.h>
 #include <aws/mediaconnect/model/VpcInterface.h>
 #include <aws/mediaconnect/model/VpcInterfaceAttachment.h>
 #include <aws/mediaconnect/model/VpcInterfaceRequest.h>

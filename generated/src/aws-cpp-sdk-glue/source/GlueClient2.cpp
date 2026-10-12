@@ -20,6 +20,9 @@
 #include <aws/glue/GlueClient.h>
 #include <aws/glue/GlueEndpointProvider.h>
 #include <aws/glue/GlueErrorMarshaller.h>
+#include <aws/glue/model/ListCustomEntityTypesRequest.h>
+#include <aws/glue/model/ListDataQualityResultsRequest.h>
+#include <aws/glue/model/ListDataQualityResultsV2Request.h>
 #include <aws/glue/model/ListDataQualityRuleRecommendationRunsRequest.h>
 #include <aws/glue/model/ListDataQualityRulesetEvaluationRunsRequest.h>
 #include <aws/glue/model/ListDataQualityRulesetsRequest.h>
@@ -46,6 +49,7 @@
 #include <aws/glue/model/ListUsageProfilesRequest.h>
 #include <aws/glue/model/ListWorkflowsRequest.h>
 #include <aws/glue/model/ModifyIntegrationRequest.h>
+#include <aws/glue/model/PublishDataQualityResultV2Request.h>
 #include <aws/glue/model/PutAssetRequest.h>
 #include <aws/glue/model/PutAssetTypeRequest.h>
 #include <aws/glue/model/PutAttachmentRequest.h>
@@ -116,10 +120,6 @@
 #include <aws/glue/model/UpdateRegistryRequest.h>
 #include <aws/glue/model/UpdateSchemaRequest.h>
 #include <aws/glue/model/UpdateSourceControlFromJobRequest.h>
-#include <aws/glue/model/UpdateTableOptimizerRequest.h>
-#include <aws/glue/model/UpdateTableRequest.h>
-#include <aws/glue/model/UpdateTriggerRequest.h>
-#include <aws/glue/model/UpdateUsageProfileRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,24 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+ListCustomEntityTypesOutcome GlueClient::ListCustomEntityTypes(const ListCustomEntityTypesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListCustomEntityTypesOutcome(result.GetResultWithOwnership())
+                            : ListCustomEntityTypesOutcome(std::move(result.GetError()));
+}
+
+ListDataQualityResultsOutcome GlueClient::ListDataQualityResults(const ListDataQualityResultsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDataQualityResultsOutcome(result.GetResultWithOwnership())
+                            : ListDataQualityResultsOutcome(std::move(result.GetError()));
+}
+
+ListDataQualityResultsV2Outcome GlueClient::ListDataQualityResultsV2(const ListDataQualityResultsV2Request& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDataQualityResultsV2Outcome(result.GetResultWithOwnership())
+                            : ListDataQualityResultsV2Outcome(std::move(result.GetError()));
+}
 
 ListDataQualityRuleRecommendationRunsOutcome GlueClient::ListDataQualityRuleRecommendationRuns(
     const ListDataQualityRuleRecommendationRunsRequest& request) const {
@@ -282,6 +300,12 @@ ModifyIntegrationOutcome GlueClient::ModifyIntegration(const ModifyIntegrationRe
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ModifyIntegrationOutcome(result.GetResultWithOwnership())
                             : ModifyIntegrationOutcome(std::move(result.GetError()));
+}
+
+PublishDataQualityResultV2Outcome GlueClient::PublishDataQualityResultV2(const PublishDataQualityResultV2Request& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PublishDataQualityResultV2Outcome(result.GetResultWithOwnership())
+                            : PublishDataQualityResultV2Outcome(std::move(result.GetError()));
 }
 
 PutAssetOutcome GlueClient::PutAsset(const PutAssetRequest& request) const {
@@ -694,26 +718,4 @@ UpdateSourceControlFromJobOutcome GlueClient::UpdateSourceControlFromJob(const U
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UpdateSourceControlFromJobOutcome(result.GetResultWithOwnership())
                             : UpdateSourceControlFromJobOutcome(std::move(result.GetError()));
-}
-
-UpdateTableOutcome GlueClient::UpdateTable(const UpdateTableRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? UpdateTableOutcome(result.GetResultWithOwnership()) : UpdateTableOutcome(std::move(result.GetError()));
-}
-
-UpdateTableOptimizerOutcome GlueClient::UpdateTableOptimizer(const UpdateTableOptimizerRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? UpdateTableOptimizerOutcome(result.GetResultWithOwnership())
-                            : UpdateTableOptimizerOutcome(std::move(result.GetError()));
-}
-
-UpdateTriggerOutcome GlueClient::UpdateTrigger(const UpdateTriggerRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? UpdateTriggerOutcome(result.GetResultWithOwnership()) : UpdateTriggerOutcome(std::move(result.GetError()));
-}
-
-UpdateUsageProfileOutcome GlueClient::UpdateUsageProfile(const UpdateUsageProfileRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? UpdateUsageProfileOutcome(result.GetResultWithOwnership())
-                            : UpdateUsageProfileOutcome(std::move(result.GetError()));
 }

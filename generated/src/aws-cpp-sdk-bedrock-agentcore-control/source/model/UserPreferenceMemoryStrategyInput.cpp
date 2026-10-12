@@ -38,6 +38,10 @@ UserPreferenceMemoryStrategyInput& UserPreferenceMemoryStrategyInput::operator=(
     m_memoryRecordSchema = jsonValue.GetObject("memoryRecordSchema");
     m_memoryRecordSchemaHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("recordExpirySpecification")) {
+    m_recordExpirySpecification = jsonValue.GetObject("recordExpirySpecification");
+    m_recordExpirySpecificationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -63,6 +67,10 @@ JsonValue UserPreferenceMemoryStrategyInput::Jsonize() const {
 
   if (m_memoryRecordSchemaHasBeenSet) {
     payload.WithObject("memoryRecordSchema", m_memoryRecordSchema.Jsonize());
+  }
+
+  if (m_recordExpirySpecificationHasBeenSet) {
+    payload.WithObject("recordExpirySpecification", m_recordExpirySpecification.Jsonize());
   }
 
   return payload;

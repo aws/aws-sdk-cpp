@@ -8,6 +8,7 @@
 #include <aws/devops-agent/model/MCPServerAPIKeyConfig.h>
 #include <aws/devops-agent/model/MCPServerAuthorizationDiscoveryConfig.h>
 #include <aws/devops-agent/model/MCPServerBearerTokenConfig.h>
+#include <aws/devops-agent/model/MCPServerCustomHeadersConfig.h>
 #include <aws/devops-agent/model/MCPServerOAuth3LOConfig.h>
 #include <aws/devops-agent/model/MCPServerOAuthClientCredentialsConfig.h>
 
@@ -111,6 +112,24 @@ class MCPServerAuthorizationConfig {
 
   ///@{
   /**
+   * <p>MCP server configuration with one or more custom authentication headers.</p>
+   */
+  inline const MCPServerCustomHeadersConfig& GetCustomHeaders() const { return m_customHeaders; }
+  inline bool CustomHeadersHasBeenSet() const { return m_customHeadersHasBeenSet; }
+  template <typename CustomHeadersT = MCPServerCustomHeadersConfig>
+  void SetCustomHeaders(CustomHeadersT&& value) {
+    m_customHeadersHasBeenSet = true;
+    m_customHeaders = std::forward<CustomHeadersT>(value);
+  }
+  template <typename CustomHeadersT = MCPServerCustomHeadersConfig>
+  MCPServerAuthorizationConfig& WithCustomHeaders(CustomHeadersT&& value) {
+    SetCustomHeaders(std::forward<CustomHeadersT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>MCP server authorization discovery configuration.</p>
    */
   inline const MCPServerAuthorizationDiscoveryConfig& GetAuthorizationDiscovery() const { return m_authorizationDiscovery; }
@@ -135,11 +154,14 @@ class MCPServerAuthorizationConfig {
 
   MCPServerBearerTokenConfig m_bearerToken;
 
+  MCPServerCustomHeadersConfig m_customHeaders;
+
   MCPServerAuthorizationDiscoveryConfig m_authorizationDiscovery;
   bool m_oAuthClientCredentialsHasBeenSet = false;
   bool m_oAuth3LOHasBeenSet = false;
   bool m_apiKeyHasBeenSet = false;
   bool m_bearerTokenHasBeenSet = false;
+  bool m_customHeadersHasBeenSet = false;
   bool m_authorizationDiscoveryHasBeenSet = false;
 };
 

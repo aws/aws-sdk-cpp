@@ -38,6 +38,10 @@ ProviderResourceCapabilities& ProviderResourceCapabilities::operator=(JsonView j
     m_azureDevOps = jsonValue.GetObject("azureDevOps");
     m_azureDevOpsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("jira")) {
+    m_jira = jsonValue.GetObject("jira");
+    m_jiraHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +66,10 @@ JsonValue ProviderResourceCapabilities::Jsonize() const {
 
   if (m_azureDevOpsHasBeenSet) {
     payload.WithObject("azureDevOps", m_azureDevOps.Jsonize());
+  }
+
+  if (m_jiraHasBeenSet) {
+    payload.WithObject("jira", m_jira.Jsonize());
   }
 
   return payload;

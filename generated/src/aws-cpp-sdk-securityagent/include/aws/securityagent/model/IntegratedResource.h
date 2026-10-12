@@ -10,6 +10,7 @@
 #include <aws/securityagent/model/ConfluenceDocumentResource.h>
 #include <aws/securityagent/model/GitHubRepositoryResource.h>
 #include <aws/securityagent/model/GitLabRepositoryResource.h>
+#include <aws/securityagent/model/JiraProjectResource.h>
 
 #include <utility>
 
@@ -120,6 +121,24 @@ class IntegratedResource {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Jira project resource information.</p>
+   */
+  inline const JiraProjectResource& GetJiraProject() const { return m_jiraProject; }
+  inline bool JiraProjectHasBeenSet() const { return m_jiraProjectHasBeenSet; }
+  template <typename JiraProjectT = JiraProjectResource>
+  void SetJiraProject(JiraProjectT&& value) {
+    m_jiraProjectHasBeenSet = true;
+    m_jiraProject = std::forward<JiraProjectT>(value);
+  }
+  template <typename JiraProjectT = JiraProjectResource>
+  IntegratedResource& WithJiraProject(JiraProjectT&& value) {
+    SetJiraProject(std::forward<JiraProjectT>(value));
+    return *this;
+  }
+  ///@}
  private:
   GitHubRepositoryResource m_githubRepository;
 
@@ -130,11 +149,14 @@ class IntegratedResource {
   ConfluenceDocumentResource m_confluenceDocument;
 
   AzureDevOpsRepositoryResource m_azureDevOpsRepository;
+
+  JiraProjectResource m_jiraProject;
   bool m_githubRepositoryHasBeenSet = false;
   bool m_gitlabRepositoryHasBeenSet = false;
   bool m_bitbucketRepositoryHasBeenSet = false;
   bool m_confluenceDocumentHasBeenSet = false;
   bool m_azureDevOpsRepositoryHasBeenSet = false;
+  bool m_jiraProjectHasBeenSet = false;
 };
 
 }  // namespace Model

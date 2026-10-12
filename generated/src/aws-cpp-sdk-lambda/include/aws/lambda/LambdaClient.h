@@ -24,7 +24,12 @@ namespace Lambda {
  * and logging. With Lambda, you can run code for virtually any type of application
  * or backend service. For more information about the Lambda service, see <a
  * href="https://docs.aws.amazon.com/lambda/latest/dg/welcome.html">What is
- * Lambda</a> in the <b>Lambda Developer Guide</b>.</p> <p>The <i>Lambda API
+ * Lambda</a> in the <b>Lambda Developer Guide</b>.</p> <p>Lambda Event Functions,
+ * previously known as Lambda functions, run your code in response to events and
+ * API calls. Event Functions is a documentation name only. In this API, the Amazon
+ * Web Services SDKs, and the CLI, Event Functions are still called
+ * <i>functions</i>, for example in <code>CreateFunction</code> and
+ * <code>Invoke</code>. You don't need to change any code.</p> <p>The <i>Lambda API
  * Reference</i> provides information about each of the API methods, including
  * details about the parameters in each API request and response. </p> <p/> <p>You
  * can use Software Development Kits (SDKs), Integrated Development Environment
@@ -244,10 +249,10 @@ class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient,
   /**
    * <p>Creates an <a
    * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a>
-   * for a Lambda function version. Use aliases to provide clients with a function
-   * identifier that you can update to invoke a different version.</p> <p>You can
-   * also map an alias to split invocation requests between two versions. Use the
-   * <code>RoutingConfig</code> parameter to specify a second version and the
+   * for a Lambda Event Function version. Use aliases to provide clients with a
+   * function identifier that you can update to invoke a different version.</p>
+   * <p>You can also map an alias to split invocation requests between two versions.
+   * Use the <code>RoutingConfig</code> parameter to specify a second version and the
    * percentage of invocation requests that it receives.</p><p><h3>See Also:</h3>
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateAlias">AWS
@@ -274,8 +279,8 @@ class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Creates a capacity provider that manages compute resources for Lambda
-   * functions</p><p><h3>See Also:</h3>   <a
+   * <p>Creates a capacity provider that manages compute resources for Lambda Event
+   * Functions</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateCapacityProvider">AWS
    * API Reference</a></p>
    */
@@ -333,10 +338,10 @@ class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Creates a mapping between an event source and an Lambda function. Lambda
-   * reads items from the event source and invokes the function.</p> <p>For details
-   * about how to configure different event sources, see the following topics. </p>
-   * <ul> <li> <p> <a
+   * <p>Creates a mapping between an event source and an Lambda Event Function.
+   * Lambda reads items from the event source and invokes the function.</p> <p>For
+   * details about how to configure different event sources, see the following
+   * topics. </p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html#services-dynamodb-eventsourcemapping">
    * Amazon DynamoDB Streams</a> </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html#services-kinesis-eventsourcemapping">
@@ -409,7 +414,7 @@ class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Creates a Lambda function. To create a function, you need a <a
+   * <p>Creates a Lambda Event Function. To create a function, you need a <a
    * href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html">deployment
    * package</a> and an <a
    * href="https://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role">execution
@@ -517,7 +522,7 @@ class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Deletes a Lambda function <a
+   * <p>Deletes a Lambda Event Function <a
    * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteAlias">AWS
@@ -632,8 +637,8 @@ class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Deletes a Lambda function. To delete a specific function version, use the
-   * <code>Qualifier</code> parameter. Otherwise, all versions and aliases are
+   * <p>Deletes a Lambda Event Function. To delete a specific function version, use
+   * the <code>Qualifier</code> parameter. Otherwise, all versions and aliases are
    * deleted. This doesn't require the user to have explicit permissions for
    * <a>DeleteAlias</a>.</p>  <p>A deleted Lambda function cannot be recovered.
    * Ensure that you specify the correct function name and version before
@@ -901,7 +906,7 @@ class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Returns details about a Lambda function <a
+   * <p>Returns details about a Lambda Event Function <a
    * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAlias">AWS API
@@ -1198,10 +1203,10 @@ class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Returns the version-specific settings of a Lambda function or version. The
-   * output includes only options that can vary between versions of a function. To
-   * modify these settings, use <a>UpdateFunctionConfiguration</a>.</p> <p>To get all
-   * of a function's details, including function-level settings, use
+   * <p>Returns the version-specific settings of a Lambda Event Function or version.
+   * The output includes only options that can vary between versions of a function.
+   * To modify these settings, use <a>UpdateFunctionConfiguration</a>.</p> <p>To get
+   * all of a function's details, including function-level settings, use
    * <a>GetFunction</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConfiguration">AWS
    * API Reference</a></p>
@@ -1551,9 +1556,9 @@ class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Invokes a Lambda function. You can invoke a function synchronously (and wait
-   * for the response), or asynchronously. By default, Lambda invokes your function
-   * synchronously (i.e. the<code>InvocationType</code> is
+   * <p>Invokes a Lambda Event Function. You can invoke a function synchronously (and
+   * wait for the response), or asynchronously. By default, Lambda invokes your
+   * function synchronously (i.e. the<code>InvocationType</code> is
    * <code>RequestResponse</code>). To invoke a function asynchronously, set
    * <code>InvocationType</code> to <code>Event</code>. Lambda passes the
    * <code>ClientContext</code> object to your function for synchronous invocations
@@ -1621,8 +1626,8 @@ class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Configure your Lambda functions to stream response payloads back to clients.
-   * For more information, see <a
+   * <p>Configure your Lambda Event Functions to stream response payloads back to
+   * clients. For more information, see <a
    * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-response-streaming.html">Configuring
    * a Lambda function to stream responses</a>.</p> <p>This operation requires
    * permission for the <a
@@ -1659,7 +1664,7 @@ class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient,
   /**
    * <p>Returns a list of <a
    * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">aliases</a>
-   * for a Lambda function.</p><p><h3>See Also:</h3>   <a
+   * for a Lambda Event Function.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListAliases">AWS
    * API Reference</a></p>
    */
@@ -1894,8 +1899,8 @@ class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Returns a list of Lambda functions, with the version-specific configuration
-   * of each. Lambda returns up to 50 functions per call.</p> <p>Set
+   * <p>Returns a list of Lambda Event Functions, with the version-specific
+   * configuration of each. Lambda returns up to 50 functions per call.</p> <p>Set
    * <code>FunctionVersion</code> to <code>ALL</code> to include all published
    * versions of each function in addition to the unpublished version.</p>
    * <p>The <code>ListFunctions</code> operation returns a subset of the
@@ -2704,7 +2709,7 @@ class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Updates the configuration of a Lambda function <a
+   * <p>Updates the configuration of a Lambda Event Function <a
    * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateAlias">AWS
@@ -2864,7 +2869,7 @@ class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Updates a Lambda function's code. If code signing is enabled for the
+   * <p>Updates a Lambda Event Function's code. If code signing is enabled for the
    * function, the code package must be signed by a trusted publisher. For more
    * information, see <a
    * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-codesigning.html">Configuring
@@ -2910,11 +2915,11 @@ class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Modify the version-specific settings of a Lambda function.</p> <p>When you
-   * update a function, Lambda provisions an instance of the function and its
-   * supporting resources. If your function connects to a VPC, this process can take
-   * a minute. During this time, you can't modify the function, but you can still
-   * invoke it. The <code>LastUpdateStatus</code>,
+   * <p>Modifies the version-specific settings of a Lambda Event Function.</p>
+   * <p>When you update a function, Lambda provisions an instance of the function and
+   * its supporting resources. If your function connects to a VPC, this process can
+   * take a minute. During this time, you can't modify the function, but you can
+   * still invoke it. The <code>LastUpdateStatus</code>,
    * <code>LastUpdateStatusReason</code>, and <code>LastUpdateStatusReasonCode</code>
    * fields in the response from <a>GetFunctionConfiguration</a> indicate when the
    * update is complete and the function is processing events with the new

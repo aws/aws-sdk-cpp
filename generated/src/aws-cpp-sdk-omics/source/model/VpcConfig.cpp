@@ -32,6 +32,10 @@ VpcConfig& VpcConfig::operator=(JsonView jsonValue) {
     }
     m_subnetIdsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("vpcOwnerAccountId")) {
+    m_vpcOwnerAccountId = jsonValue.GetString("vpcOwnerAccountId");
+    m_vpcOwnerAccountIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -52,6 +56,10 @@ JsonValue VpcConfig::Jsonize() const {
       subnetIdsJsonList[subnetIdsIndex].AsString(m_subnetIds[subnetIdsIndex]);
     }
     payload.WithArray("subnetIds", std::move(subnetIdsJsonList));
+  }
+
+  if (m_vpcOwnerAccountIdHasBeenSet) {
+    payload.WithString("vpcOwnerAccountId", m_vpcOwnerAccountId);
   }
 
   return payload;

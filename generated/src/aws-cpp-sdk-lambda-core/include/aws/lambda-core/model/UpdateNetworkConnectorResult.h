@@ -66,7 +66,9 @@ class UpdateNetworkConnectorResult {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The unique identifier of the network connector.</p>
+   */
   inline const Aws::String& GetId() const { return m_id; }
   template <typename IdT = Aws::String>
   void SetId(IdT&& value) {
@@ -76,6 +78,41 @@ class UpdateNetworkConnectorResult {
   template <typename IdT = Aws::String>
   UpdateNetworkConnectorResult& WithId(IdT&& value) {
     SetId(std::forward<IdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The qualified ARN of the connector version resulting from this update,
+   * including the immutable version suffix.</p>
+   */
+  inline const Aws::String& GetVersionArn() const { return m_versionArn; }
+  template <typename VersionArnT = Aws::String>
+  void SetVersionArn(VersionArnT&& value) {
+    m_versionArnHasBeenSet = true;
+    m_versionArn = std::forward<VersionArnT>(value);
+  }
+  template <typename VersionArnT = Aws::String>
+  UpdateNetworkConnectorResult& WithVersionArn(VersionArnT&& value) {
+    SetVersionArn(std::forward<VersionArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The version number of the connector version resulting from this update. A
+   * configuration change creates a new, incremented version; a no-op update returns
+   * the current version number.</p>
+   */
+  inline long long GetVersion() const { return m_version; }
+  inline void SetVersion(long long value) {
+    m_versionHasBeenSet = true;
+    m_version = value;
+  }
+  inline UpdateNetworkConnectorResult& WithVersion(long long value) {
+    SetVersion(value);
     return *this;
   }
   ///@}
@@ -204,6 +241,10 @@ class UpdateNetworkConnectorResult {
 
   Aws::String m_id;
 
+  Aws::String m_versionArn;
+
+  long long m_version{0};
+
   Aws::String m_operatorRole;
 
   NetworkConnectorConfiguration m_configuration;
@@ -221,6 +262,8 @@ class UpdateNetworkConnectorResult {
   bool m_arnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_idHasBeenSet = false;
+  bool m_versionArnHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
   bool m_operatorRoleHasBeenSet = false;
   bool m_configurationHasBeenSet = false;
   bool m_stateHasBeenSet = false;

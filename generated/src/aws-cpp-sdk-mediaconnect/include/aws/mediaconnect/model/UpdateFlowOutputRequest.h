@@ -471,6 +471,25 @@ class UpdateFlowOutputRequest : public MediaConnectRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The audio reference level of the NDI receiver, in decibels relative to full
+   * scale (dBFS). Common values are <code>-20</code> (NDI and SMPTE) and
+   * <code>-18</code> (EBU). If you don't specify this field, MediaConnect leaves the
+   * value unchanged.</p>
+   */
+  inline int GetNdiAudioReferenceLevel() const { return m_ndiAudioReferenceLevel; }
+  inline bool NdiAudioReferenceLevelHasBeenSet() const { return m_ndiAudioReferenceLevelHasBeenSet; }
+  inline void SetNdiAudioReferenceLevel(int value) {
+    m_ndiAudioReferenceLevelHasBeenSet = true;
+    m_ndiAudioReferenceLevel = value;
+  }
+  inline UpdateFlowOutputRequest& WithNdiAudioReferenceLevel(int value) {
+    SetNdiAudioReferenceLevel(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_cidrAllowList;
 
@@ -517,6 +536,8 @@ class UpdateFlowOutputRequest : public MediaConnectRequest {
   FlowTransitEncryption m_routerIntegrationTransitEncryption;
 
   NdiOutputTimecodeSource m_ndiOutputTimecodeSource{NdiOutputTimecodeSource::NOT_SET};
+
+  int m_ndiAudioReferenceLevel{0};
   bool m_cidrAllowListHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_destinationHasBeenSet = false;
@@ -540,6 +561,7 @@ class UpdateFlowOutputRequest : public MediaConnectRequest {
   bool m_routerIntegrationStateHasBeenSet = false;
   bool m_routerIntegrationTransitEncryptionHasBeenSet = false;
   bool m_ndiOutputTimecodeSourceHasBeenSet = false;
+  bool m_ndiAudioReferenceLevelHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -22,6 +22,10 @@ NdiSourceSettings& NdiSourceSettings::operator=(JsonView jsonValue) {
     m_sourceName = jsonValue.GetString("sourceName");
     m_sourceNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("audioReferenceLevel")) {
+    m_audioReferenceLevel = jsonValue.GetInteger("audioReferenceLevel");
+    m_audioReferenceLevelHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue NdiSourceSettings::Jsonize() const {
 
   if (m_sourceNameHasBeenSet) {
     payload.WithString("sourceName", m_sourceName);
+  }
+
+  if (m_audioReferenceLevelHasBeenSet) {
+    payload.WithInteger("audioReferenceLevel", m_audioReferenceLevel);
   }
 
   return payload;

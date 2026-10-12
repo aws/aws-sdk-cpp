@@ -2850,6 +2850,41 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Creates a training session in Amazon SageMaker. A training session provisions
+   * compute resources for fine-tuning a foundation model using Low-Rank Adaptation
+   * (LoRA). After the session is created, you can submit training operations and
+   * sample inference requests through the Amazon SageMaker Training Session Runtime
+   * API.</p> <p>The following operations are related to
+   * <code>CreateTrainingSession</code>:</p> <ul> <li> <p>
+   * <code>DescribeTrainingSession</code> </p> </li> <li> <p>
+   * <code>ListTrainingSessions</code> </p> </li> <li> <p>
+   * <code>StopTrainingSession</code> </p> </li> <li> <p>
+   * <code>DeleteTrainingSession</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrainingSession">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateTrainingSessionOutcome CreateTrainingSession(const Model::CreateTrainingSessionRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateTrainingSession that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateTrainingSessionRequestT = Model::CreateTrainingSessionRequest>
+  Model::CreateTrainingSessionOutcomeCallable CreateTrainingSessionCallable(const CreateTrainingSessionRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::CreateTrainingSession, request);
+  }
+
+  /**
+   * An Async wrapper for CreateTrainingSession that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateTrainingSessionRequestT = Model::CreateTrainingSessionRequest>
+  void CreateTrainingSessionAsync(const CreateTrainingSessionRequestT& request, const CreateTrainingSessionResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::CreateTrainingSession, request, handler, context);
+  }
+
+  /**
    * <p>Starts a transform job. A transform job uses a trained model to get
    * inferences on a dataset and saves these results to an Amazon S3 location that
    * you specify.</p> <p>To perform batch transformations, you create a transform job
@@ -4696,6 +4731,38 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
   void DeleteTrainingJobAsync(const DeleteTrainingJobRequestT& request, const DeleteTrainingJobResponseReceivedHandler& handler,
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SageMakerClient::DeleteTrainingJob, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a training session. You must stop a running session before deleting
+   * it. Use the <code>StopTrainingSession</code> operation to stop the session
+   * first.</p> <p>The following operations are related to
+   * <code>DeleteTrainingSession</code>:</p> <ul> <li> <p>
+   * <code>CreateTrainingSession</code> </p> </li> <li> <p>
+   * <code>DescribeTrainingSession</code> </p> </li> <li> <p>
+   * <code>StopTrainingSession</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteTrainingSession">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteTrainingSessionOutcome DeleteTrainingSession(const Model::DeleteTrainingSessionRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteTrainingSession that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteTrainingSessionRequestT = Model::DeleteTrainingSessionRequest>
+  Model::DeleteTrainingSessionOutcomeCallable DeleteTrainingSessionCallable(const DeleteTrainingSessionRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::DeleteTrainingSession, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteTrainingSession that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteTrainingSessionRequestT = Model::DeleteTrainingSessionRequest>
+  void DeleteTrainingSessionAsync(const DeleteTrainingSessionRequestT& request, const DeleteTrainingSessionResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::DeleteTrainingSession, request, handler, context);
   }
 
   /**
@@ -6858,6 +6925,40 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
                                                  const DescribeTrainingPlanExtensionHistoryResponseReceivedHandler& handler,
                                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SageMakerClient::DescribeTrainingPlanExtensionHistory, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves detailed information about a training session, including its
+   * current status, model configuration, Low-Rank Adaptation (LoRA) parameters, and
+   * timestamps.</p> <p>The following operations are related to
+   * <code>DescribeTrainingSession</code>:</p> <ul> <li> <p>
+   * <code>CreateTrainingSession</code> </p> </li> <li> <p>
+   * <code>ListTrainingSessions</code> </p> </li> <li> <p>
+   * <code>StopTrainingSession</code> </p> </li> <li> <p>
+   * <code>DeleteTrainingSession</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTrainingSession">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeTrainingSessionOutcome DescribeTrainingSession(const Model::DescribeTrainingSessionRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeTrainingSession that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeTrainingSessionRequestT = Model::DescribeTrainingSessionRequest>
+  Model::DescribeTrainingSessionOutcomeCallable DescribeTrainingSessionCallable(const DescribeTrainingSessionRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::DescribeTrainingSession, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeTrainingSession that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeTrainingSessionRequestT = Model::DescribeTrainingSessionRequest>
+  void DescribeTrainingSessionAsync(const DescribeTrainingSessionRequestT& request,
+                                    const DescribeTrainingSessionResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::DescribeTrainingSession, request, handler, context);
   }
 
   /**
@@ -9737,6 +9838,38 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Lists training sessions in your account. You can filter results by creation
+   * time, name, and status. The operation paginates results. To retrieve additional
+   * results, use the <code>NextToken</code> parameter.</p> <p>The following
+   * operations are related to <code>ListTrainingSessions</code>:</p> <ul> <li> <p>
+   * <code>CreateTrainingSession</code> </p> </li> <li> <p>
+   * <code>DescribeTrainingSession</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrainingSessions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListTrainingSessionsOutcome ListTrainingSessions(const Model::ListTrainingSessionsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListTrainingSessions that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListTrainingSessionsRequestT = Model::ListTrainingSessionsRequest>
+  Model::ListTrainingSessionsOutcomeCallable ListTrainingSessionsCallable(const ListTrainingSessionsRequestT& request = {}) const {
+    return SubmitCallable(&SageMakerClient::ListTrainingSessions, request);
+  }
+
+  /**
+   * An Async wrapper for ListTrainingSessions that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListTrainingSessionsRequestT = Model::ListTrainingSessionsRequest>
+  void ListTrainingSessionsAsync(const ListTrainingSessionsResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                 const ListTrainingSessionsRequestT& request = {}) const {
+    return SubmitAsync(&SageMakerClient::ListTrainingSessions, request, handler, context);
+  }
+
+  /**
    * <p>Lists transform jobs.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTransformJobs">AWS
    * API Reference</a></p>
@@ -10969,6 +11102,39 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
   void StopTrainingJobAsync(const StopTrainingJobRequestT& request, const StopTrainingJobResponseReceivedHandler& handler,
                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SageMakerClient::StopTrainingJob, request, handler, context);
+  }
+
+  /**
+   * <p>Stops a running training session and sets the session status to
+   * <code>Stopping</code>. After the session stops, the status changes to
+   * <code>Stopped</code>. To delete a stopped session, use the
+   * <code>DeleteTrainingSession</code> operation.</p> <p>The following operations
+   * are related to <code>StopTrainingSession</code>:</p> <ul> <li> <p>
+   * <code>CreateTrainingSession</code> </p> </li> <li> <p>
+   * <code>DescribeTrainingSession</code> </p> </li> <li> <p>
+   * <code>DeleteTrainingSession</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopTrainingSession">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StopTrainingSessionOutcome StopTrainingSession(const Model::StopTrainingSessionRequest& request) const;
+
+  /**
+   * A Callable wrapper for StopTrainingSession that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StopTrainingSessionRequestT = Model::StopTrainingSessionRequest>
+  Model::StopTrainingSessionOutcomeCallable StopTrainingSessionCallable(const StopTrainingSessionRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::StopTrainingSession, request);
+  }
+
+  /**
+   * An Async wrapper for StopTrainingSession that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename StopTrainingSessionRequestT = Model::StopTrainingSessionRequest>
+  void StopTrainingSessionAsync(const StopTrainingSessionRequestT& request, const StopTrainingSessionResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::StopTrainingSession, request, handler, context);
   }
 
   /**

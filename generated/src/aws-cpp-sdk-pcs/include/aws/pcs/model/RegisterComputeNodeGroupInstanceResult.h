@@ -159,6 +159,24 @@ class RegisterComputeNodeGroupInstanceResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The scheduler version that the cluster is running. A compute node uses this
+   * value to run the matching scheduler version.</p>
+   */
+  inline const Aws::String& GetSchedulerVersion() const { return m_schedulerVersion; }
+  template <typename SchedulerVersionT = Aws::String>
+  void SetSchedulerVersion(SchedulerVersionT&& value) {
+    m_schedulerVersionHasBeenSet = true;
+    m_schedulerVersion = std::forward<SchedulerVersionT>(value);
+  }
+  template <typename SchedulerVersionT = Aws::String>
+  RegisterComputeNodeGroupInstanceResult& WithSchedulerVersion(SchedulerVersionT&& value) {
+    SetSchedulerVersion(std::forward<SchedulerVersionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -189,6 +207,8 @@ class RegisterComputeNodeGroupInstanceResult {
 
   NodeLifecycleActions m_nodeLifecycleActions;
 
+  Aws::String m_schedulerVersion;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_nodeIDHasBeenSet = false;
@@ -198,6 +218,7 @@ class RegisterComputeNodeGroupInstanceResult {
   bool m_computeNodeGroupIdHasBeenSet = false;
   bool m_computeNodeGroupNameHasBeenSet = false;
   bool m_nodeLifecycleActionsHasBeenSet = false;
+  bool m_schedulerVersionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

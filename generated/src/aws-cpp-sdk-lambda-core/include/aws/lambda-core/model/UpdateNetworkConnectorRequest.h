@@ -31,7 +31,10 @@ class UpdateNetworkConnectorRequest : public LambdaCoreRequest {
   AWS_LAMBDACORE_API Aws::String SerializePayload() const override;
 
   ///@{
-
+  /**
+   * <p>The identifier of the network connector to update. You can specify the
+   * connector ID, name, or full ARN.</p>
+   */
   inline const Aws::String& GetIdentifier() const { return m_identifier; }
   inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
   template <typename IdentifierT = Aws::String>

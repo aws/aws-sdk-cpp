@@ -129,6 +129,10 @@ Table& Table::operator=(JsonView jsonValue) {
     m_status = Aws::MakeShared<TableStatus>("Table", jsonValue.GetObject("Status"));
     m_statusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("RLSProperties")) {
+    m_rLSProperties = jsonValue.GetObject("RLSProperties");
+    m_rLSPropertiesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -245,6 +249,10 @@ JsonValue Table::Jsonize() const {
 
   if (m_statusHasBeenSet) {
     payload.WithObject("Status", m_status->Jsonize());
+  }
+
+  if (m_rLSPropertiesHasBeenSet) {
+    payload.WithObject("RLSProperties", m_rLSProperties.Jsonize());
   }
 
   return payload;

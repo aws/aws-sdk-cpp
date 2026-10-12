@@ -10,7 +10,7 @@
 namespace Aws {
 namespace MediaConnect {
 namespace Model {
-enum class RouterOutputTier { NOT_SET, OUTPUT_100, OUTPUT_50, OUTPUT_20 };
+enum class RouterOutputTier { NOT_SET, OUTPUT_100, OUTPUT_50, OUTPUT_20, OUTPUT_500, OUTPUT_250 };
 
 namespace RouterOutputTierMapper {
 AWS_MEDIACONNECT_API RouterOutputTier GetRouterOutputTierForName(const Aws::String& name);

@@ -23,6 +23,9 @@ Aws::String UpdateSpaceRequest::SerializePayload() const {
   if (m_nameHasBeenSet) {
     mapSize++;
   }
+  if (m_agentCoreEvaluationRoleArnHasBeenSet) {
+    mapSize++;
+  }
   if (m_encryptionConfigurationHasBeenSet) {
     mapSize++;
   }
@@ -37,6 +40,11 @@ Aws::String UpdateSpaceRequest::SerializePayload() const {
   if (m_nameHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("name"));
     encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_name.c_str()));
+  }
+
+  if (m_agentCoreEvaluationRoleArnHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("agentCoreEvaluationRoleArn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_agentCoreEvaluationRoleArn.c_str()));
   }
 
   if (m_encryptionConfigurationHasBeenSet) {

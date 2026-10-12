@@ -64,7 +64,9 @@ class CreateNetworkConnectorResult {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The unique identifier of the network connector.</p>
+   */
   inline const Aws::String& GetId() const { return m_id; }
   template <typename IdT = Aws::String>
   void SetId(IdT&& value) {
@@ -74,6 +76,40 @@ class CreateNetworkConnectorResult {
   template <typename IdT = Aws::String>
   CreateNetworkConnectorResult& WithId(IdT&& value) {
     SetId(std::forward<IdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The qualified ARN of the connector version created by this request, including
+   * the immutable version suffix.</p>
+   */
+  inline const Aws::String& GetVersionArn() const { return m_versionArn; }
+  template <typename VersionArnT = Aws::String>
+  void SetVersionArn(VersionArnT&& value) {
+    m_versionArnHasBeenSet = true;
+    m_versionArn = std::forward<VersionArnT>(value);
+  }
+  template <typename VersionArnT = Aws::String>
+  CreateNetworkConnectorResult& WithVersionArn(VersionArnT&& value) {
+    SetVersionArn(std::forward<VersionArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The version number assigned to the connector. A newly created connector
+   * starts at version 1.</p>
+   */
+  inline long long GetVersion() const { return m_version; }
+  inline void SetVersion(long long value) {
+    m_versionHasBeenSet = true;
+    m_version = value;
+  }
+  inline CreateNetworkConnectorResult& WithVersion(long long value) {
+    SetVersion(value);
     return *this;
   }
   ///@}
@@ -152,6 +188,10 @@ class CreateNetworkConnectorResult {
 
   Aws::String m_id;
 
+  Aws::String m_versionArn;
+
+  long long m_version{0};
+
   NetworkConnectorConfiguration m_configuration;
 
   Aws::String m_operatorRole;
@@ -163,6 +203,8 @@ class CreateNetworkConnectorResult {
   bool m_arnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_idHasBeenSet = false;
+  bool m_versionArnHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
   bool m_configurationHasBeenSet = false;
   bool m_operatorRoleHasBeenSet = false;
   bool m_stateHasBeenSet = false;

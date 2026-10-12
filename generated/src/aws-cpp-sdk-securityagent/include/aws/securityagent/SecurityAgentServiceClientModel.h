@@ -26,6 +26,8 @@
 #include <aws/securityagent/model/BatchDeletePentestsResult.h>
 #include <aws/securityagent/model/BatchDeleteSecurityRequirementsResult.h>
 #include <aws/securityagent/model/BatchDeleteThreatModelsResult.h>
+#include <aws/securityagent/model/BatchDisassociateFindingIssueResult.h>
+#include <aws/securityagent/model/BatchExportFindingsResult.h>
 #include <aws/securityagent/model/BatchGetAgentSpacesResult.h>
 #include <aws/securityagent/model/BatchGetArtifactMetadataResult.h>
 #include <aws/securityagent/model/BatchGetCodeReviewJobTasksResult.h>
@@ -159,6 +161,8 @@ class BatchDeleteCodeReviewsRequest;
 class BatchDeletePentestsRequest;
 class BatchDeleteSecurityRequirementsRequest;
 class BatchDeleteThreatModelsRequest;
+class BatchDisassociateFindingIssueRequest;
+class BatchExportFindingsRequest;
 class BatchGetAgentSpacesRequest;
 class BatchGetArtifactMetadataRequest;
 class BatchGetCodeReviewJobTasksRequest;
@@ -256,6 +260,8 @@ typedef Aws::Utils::Outcome<BatchDeleteCodeReviewsResult, SecurityAgentError> Ba
 typedef Aws::Utils::Outcome<BatchDeletePentestsResult, SecurityAgentError> BatchDeletePentestsOutcome;
 typedef Aws::Utils::Outcome<BatchDeleteSecurityRequirementsResult, SecurityAgentError> BatchDeleteSecurityRequirementsOutcome;
 typedef Aws::Utils::Outcome<BatchDeleteThreatModelsResult, SecurityAgentError> BatchDeleteThreatModelsOutcome;
+typedef Aws::Utils::Outcome<BatchDisassociateFindingIssueResult, SecurityAgentError> BatchDisassociateFindingIssueOutcome;
+typedef Aws::Utils::Outcome<BatchExportFindingsResult, SecurityAgentError> BatchExportFindingsOutcome;
 typedef Aws::Utils::Outcome<BatchGetAgentSpacesResult, SecurityAgentError> BatchGetAgentSpacesOutcome;
 typedef Aws::Utils::Outcome<BatchGetArtifactMetadataResult, SecurityAgentError> BatchGetArtifactMetadataOutcome;
 typedef Aws::Utils::Outcome<BatchGetCodeReviewJobTasksResult, SecurityAgentError> BatchGetCodeReviewJobTasksOutcome;
@@ -353,6 +359,8 @@ typedef std::future<BatchDeleteCodeReviewsOutcome> BatchDeleteCodeReviewsOutcome
 typedef std::future<BatchDeletePentestsOutcome> BatchDeletePentestsOutcomeCallable;
 typedef std::future<BatchDeleteSecurityRequirementsOutcome> BatchDeleteSecurityRequirementsOutcomeCallable;
 typedef std::future<BatchDeleteThreatModelsOutcome> BatchDeleteThreatModelsOutcomeCallable;
+typedef std::future<BatchDisassociateFindingIssueOutcome> BatchDisassociateFindingIssueOutcomeCallable;
+typedef std::future<BatchExportFindingsOutcome> BatchExportFindingsOutcomeCallable;
 typedef std::future<BatchGetAgentSpacesOutcome> BatchGetAgentSpacesOutcomeCallable;
 typedef std::future<BatchGetArtifactMetadataOutcome> BatchGetArtifactMetadataOutcomeCallable;
 typedef std::future<BatchGetCodeReviewJobTasksOutcome> BatchGetCodeReviewJobTasksOutcomeCallable;
@@ -467,6 +475,13 @@ typedef std::function<void(const SecurityAgentClient*, const Model::BatchDeleteS
 typedef std::function<void(const SecurityAgentClient*, const Model::BatchDeleteThreatModelsRequest&,
                            const Model::BatchDeleteThreatModelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     BatchDeleteThreatModelsResponseReceivedHandler;
+typedef std::function<void(const SecurityAgentClient*, const Model::BatchDisassociateFindingIssueRequest&,
+                           const Model::BatchDisassociateFindingIssueOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    BatchDisassociateFindingIssueResponseReceivedHandler;
+typedef std::function<void(const SecurityAgentClient*, const Model::BatchExportFindingsRequest&, const Model::BatchExportFindingsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    BatchExportFindingsResponseReceivedHandler;
 typedef std::function<void(const SecurityAgentClient*, const Model::BatchGetAgentSpacesRequest&, const Model::BatchGetAgentSpacesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     BatchGetAgentSpacesResponseReceivedHandler;

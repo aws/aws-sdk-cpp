@@ -29,7 +29,13 @@ class DeleteNetworkConnectorRequest : public LambdaCoreRequest {
   AWS_LAMBDACORE_API Aws::String SerializePayload() const override;
 
   ///@{
-
+  /**
+   * <p>The identifier of the network connector to delete. Provide an unqualified ARN
+   * (or an ID or name) to delete the entire connector and all of its versions, or a
+   * version-qualified ARN — one that includes the immutable version suffix — to
+   * delete a specific historical version. You can't delete the latest version with a
+   * version-qualified identifier; delete the connector instead.</p>
+   */
   inline const Aws::String& GetIdentifier() const { return m_identifier; }
   inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
   template <typename IdentifierT = Aws::String>

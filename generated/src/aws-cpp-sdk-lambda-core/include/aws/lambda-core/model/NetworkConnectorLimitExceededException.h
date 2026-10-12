@@ -20,9 +20,11 @@ namespace LambdaCore {
 namespace Model {
 
 /**
- * <p>The account has reached the maximum number of network connectors allowed.
- * Delete unused connectors or request a limit increase through Service
- * Quotas.</p><p><h3>See Also:</h3>   <a
+ * <p>The request would exceed a network connector limit. For
+ * <code>CreateNetworkConnector</code>, the account has reached the maximum number
+ * of network connectors allowed. For <code>UpdateNetworkConnector</code>, the
+ * connector has reached the maximum number of versions allowed.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-core-2026-04-30/NetworkConnectorLimitExceededException">AWS
  * API Reference</a></p>
  */
@@ -53,7 +55,7 @@ class NetworkConnectorLimitExceededException {
 
   ///@{
   /**
-   * <p>A human-readable description of the error.</p>
+   * <p>The account has reached the maximum number of network connectors allowed.</p>
    */
   inline const Aws::String& GetMessage() const { return m_message; }
   inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }

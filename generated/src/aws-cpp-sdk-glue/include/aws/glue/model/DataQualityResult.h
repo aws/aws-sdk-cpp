@@ -242,7 +242,7 @@ class DataQualityResult {
   ///@{
   /**
    * <p>A list of <code>DataQualityRuleResult</code> objects representing the results
-   * for each rule. </p>
+   * for each rule.</p>
    */
   inline const Aws::Vector<DataQualityRuleResult>& GetRuleResults() const { return m_ruleResults; }
   inline bool RuleResultsHasBeenSet() const { return m_ruleResultsHasBeenSet; }
@@ -267,7 +267,7 @@ class DataQualityResult {
   ///@{
   /**
    * <p>A list of <code>DataQualityAnalyzerResult</code> objects representing the
-   * results for each analyzer. </p>
+   * results for each analyzer.</p>
    */
   inline const Aws::Vector<DataQualityAnalyzerResult>& GetAnalyzerResults() const { return m_analyzerResults; }
   inline bool AnalyzerResultsHasBeenSet() const { return m_analyzerResultsHasBeenSet; }
@@ -292,7 +292,8 @@ class DataQualityResult {
   ///@{
   /**
    * <p>A list of <code>DataQualityObservation</code> objects representing the
-   * observations generated after evaluating the rules and analyzers. </p>
+   * anomaly detection observations generated after evaluating the rules and
+   * analyzers.</p>
    */
   inline const Aws::Vector<DataQualityObservation>& GetObservations() const { return m_observations; }
   inline bool ObservationsHasBeenSet() const { return m_observationsHasBeenSet; }

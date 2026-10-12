@@ -36,8 +36,8 @@ class HarnessHookTarget {
 
   ///@{
   /**
-   * <p>A Lambda hook target that invokes an AWS Lambda function synchronously and
-   * waits for its response.</p>
+   * <p>A Lambda hook target that invokes an Amazon Web Services Lambda function
+   * synchronously and waits for its response.</p>
    */
   inline const HarnessHookLambdaTarget& GetLambda() const { return m_lambda; }
   inline bool LambdaHasBeenSet() const { return m_lambdaHasBeenSet; }

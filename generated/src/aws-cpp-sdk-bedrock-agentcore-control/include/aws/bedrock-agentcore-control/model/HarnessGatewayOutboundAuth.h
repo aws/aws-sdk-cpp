@@ -70,7 +70,10 @@ class HarnessGatewayOutboundAuth {
 
   ///@{
   /**
-   * <p>Use OAuth credentials for outbound authentication to the gateway.</p>
+   * <p>Use OAuth credentials for outbound authentication to the gateway.</p> <p>The
+   * <code>AUTHORIZATION_CODE</code> grant type is not supported for outbound
+   * authentication from a harness to an AgentCore Gateway, even when
+   * <code>defaultReturnUrl</code> is specified.</p>
    */
   inline const OAuthCredentialProvider& GetOauth() const { return m_oauth; }
   inline bool OauthHasBeenSet() const { return m_oauthHasBeenSet; }

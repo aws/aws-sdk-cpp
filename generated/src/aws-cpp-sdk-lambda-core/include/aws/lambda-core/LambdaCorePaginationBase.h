@@ -7,6 +7,7 @@
 
 #include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
+#include <aws/lambda-core/model/ListNetworkConnectorVersionsPaginationTraits.h>
 #include <aws/lambda-core/model/ListNetworkConnectorsPaginationTraits.h>
 
 #include <memory>
@@ -26,6 +27,18 @@ class LambdaCorePaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListNetworkConnectorsRequest,
                                              Pagination::ListNetworkConnectorsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListNetworkConnectorVersions operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListNetworkConnectorVersionsRequest,
+                                    Pagination::ListNetworkConnectorVersionsPaginationTraits<DerivedClient>>
+  ListNetworkConnectorVersionsPaginator(const Model::ListNetworkConnectorVersionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListNetworkConnectorVersionsRequest,
+                                             Pagination::ListNetworkConnectorVersionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 };

@@ -39,6 +39,13 @@ RegisteredMCPServerDetails& RegisteredMCPServerDetails::operator=(JsonView jsonV
     m_apiKeyHeader = jsonValue.GetString("apiKeyHeader");
     m_apiKeyHeaderHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("customHeaderNames")) {
+    Aws::Utils::Array<JsonView> customHeaderNamesJsonList = jsonValue.GetArray("customHeaderNames");
+    for (unsigned customHeaderNamesIndex = 0; customHeaderNamesIndex < customHeaderNamesJsonList.GetLength(); ++customHeaderNamesIndex) {
+      m_customHeaderNames.push_back(customHeaderNamesJsonList[customHeaderNamesIndex].AsString());
+    }
+    m_customHeaderNamesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -64,6 +71,14 @@ JsonValue RegisteredMCPServerDetails::Jsonize() const {
 
   if (m_apiKeyHeaderHasBeenSet) {
     payload.WithString("apiKeyHeader", m_apiKeyHeader);
+  }
+
+  if (m_customHeaderNamesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> customHeaderNamesJsonList(m_customHeaderNames.size());
+    for (unsigned customHeaderNamesIndex = 0; customHeaderNamesIndex < customHeaderNamesJsonList.GetLength(); ++customHeaderNamesIndex) {
+      customHeaderNamesJsonList[customHeaderNamesIndex].AsString(m_customHeaderNames[customHeaderNamesIndex]);
+    }
+    payload.WithArray("customHeaderNames", std::move(customHeaderNamesJsonList));
   }
 
   return payload;

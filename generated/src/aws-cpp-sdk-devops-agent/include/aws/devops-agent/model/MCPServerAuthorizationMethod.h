@@ -10,7 +10,7 @@
 namespace Aws {
 namespace DevOpsAgent {
 namespace Model {
-enum class MCPServerAuthorizationMethod { NOT_SET, oauth_client_credentials, oauth_3lo, api_key, bearer_token };
+enum class MCPServerAuthorizationMethod { NOT_SET, oauth_client_credentials, oauth_3lo, api_key, bearer_token, custom_headers };
 
 namespace MCPServerAuthorizationMethodMapper {
 AWS_DEVOPSAGENT_API MCPServerAuthorizationMethod GetMCPServerAuthorizationMethodForName(const Aws::String& name);

@@ -149,6 +149,23 @@ class GetIntegrationResult {
 
   ///@{
   /**
+   * <p>The Atlassian Cloud site URL for Atlassian integrations.</p>
+   */
+  inline const Aws::String& GetSiteUrl() const { return m_siteUrl; }
+  template <typename SiteUrlT = Aws::String>
+  void SetSiteUrl(SiteUrlT&& value) {
+    m_siteUrlHasBeenSet = true;
+    m_siteUrl = std::forward<SiteUrlT>(value);
+  }
+  template <typename SiteUrlT = Aws::String>
+  GetIntegrationResult& WithSiteUrl(SiteUrlT&& value) {
+    SetSiteUrl(std::forward<SiteUrlT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The payload URL of the integration's webhook, once it has been created. The
    * signing secret is never returned on a read.</p>
    */
@@ -214,6 +231,8 @@ class GetIntegrationResult {
 
   Aws::String m_targetUrl;
 
+  Aws::String m_siteUrl;
+
   Aws::String m_webhookUrl;
 
   Aws::String m_privateConnectionName;
@@ -227,6 +246,7 @@ class GetIntegrationResult {
   bool m_displayNameHasBeenSet = false;
   bool m_kmsKeyIdHasBeenSet = false;
   bool m_targetUrlHasBeenSet = false;
+  bool m_siteUrlHasBeenSet = false;
   bool m_webhookUrlHasBeenSet = false;
   bool m_privateConnectionNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

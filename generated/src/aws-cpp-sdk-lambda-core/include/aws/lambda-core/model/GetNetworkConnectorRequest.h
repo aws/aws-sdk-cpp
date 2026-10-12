@@ -29,7 +29,13 @@ class GetNetworkConnectorRequest : public LambdaCoreRequest {
   AWS_LAMBDACORE_API Aws::String SerializePayload() const override;
 
   ///@{
-
+  /**
+   * <p>The identifier of the network connector to retrieve. You can specify the
+   * connector ID, name, or ARN. Provide an unqualified ARN (or an ID or name) to
+   * retrieve the connector's latest version, or a version-qualified ARN — one that
+   * includes the immutable version suffix — to retrieve a specific historical
+   * version.</p>
+   */
   inline const Aws::String& GetIdentifier() const { return m_identifier; }
   inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
   template <typename IdentifierT = Aws::String>

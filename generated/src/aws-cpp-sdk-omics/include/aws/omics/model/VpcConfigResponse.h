@@ -98,15 +98,37 @@ class VpcConfigResponse {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Web Services account ID of the cross-account VPC owner for
+   * RAM-shared VPC configurations.</p>
+   */
+  inline const Aws::String& GetVpcOwnerAccountId() const { return m_vpcOwnerAccountId; }
+  inline bool VpcOwnerAccountIdHasBeenSet() const { return m_vpcOwnerAccountIdHasBeenSet; }
+  template <typename VpcOwnerAccountIdT = Aws::String>
+  void SetVpcOwnerAccountId(VpcOwnerAccountIdT&& value) {
+    m_vpcOwnerAccountIdHasBeenSet = true;
+    m_vpcOwnerAccountId = std::forward<VpcOwnerAccountIdT>(value);
+  }
+  template <typename VpcOwnerAccountIdT = Aws::String>
+  VpcConfigResponse& WithVpcOwnerAccountId(VpcOwnerAccountIdT&& value) {
+    SetVpcOwnerAccountId(std::forward<VpcOwnerAccountIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_securityGroupIds;
 
   Aws::Vector<Aws::String> m_subnetIds;
 
   Aws::String m_vpcId;
+
+  Aws::String m_vpcOwnerAccountId;
   bool m_securityGroupIdsHasBeenSet = false;
   bool m_subnetIdsHasBeenSet = false;
   bool m_vpcIdHasBeenSet = false;
+  bool m_vpcOwnerAccountIdHasBeenSet = false;
 };
 
 }  // namespace Model

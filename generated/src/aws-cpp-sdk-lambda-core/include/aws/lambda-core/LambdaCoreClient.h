@@ -16,15 +16,30 @@
 namespace Aws {
 namespace LambdaCore {
 /**
- * <p>AWS Lambda Core is a set of APIs for managing shared infrastructure resources
- * used by AWS Lambda. The Lambda Core API provides operations for creating and
- * managing network connectors that enable Lambda MicroVMs to access resources in
- * your Amazon Virtual Private Cloud (Amazon VPC).</p> <p>Network connectors
- * provision elastic network interfaces (ENIs) in your VPC subnets, providing a
- * managed network path from Lambda compute environments to private resources such
- * as Amazon RDS databases, Amazon ElastiCache clusters, and internal APIs. You
- * create a network connector once and attach it to one or more Lambda MicroVMs at
- * run time.</p>
+ * <p><fullname>Lambda</fullname> <p> <b>Overview</b> </p> <p>AWS Lambda Core is a
+ * set of APIs for managing shared infrastructure resources used by Lambda. The
+ * Lambda Core API provides operations for creating and managing network connectors
+ * that enable Lambda compute resources to access resources in your Amazon Virtual
+ * Private Cloud (Amazon VPC).</p> <p>Network connectors provision elastic network
+ * interfaces (ENIs) in your VPC subnets, providing a managed network path from
+ * Lambda compute environments to private resources such as Amazon RDS databases,
+ * Amazon ElastiCache clusters, and internal APIs. You create a network connector
+ * once and attach it to one or more Lambda compute resources at run time.</p>
+ * <p>The <i>Lambda Core API Reference</i> provides information about each of the
+ * API methods, including details about the parameters in each API request and
+ * response.</p> <p/> <p>You can use Software Development Kits (SDKs), Integrated
+ * Development Environment (IDE) Toolkits, and command line tools to access the
+ * API. For installation instructions, see <a
+ * href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.</p>
+ * <p>For a list of Region-specific endpoints that Lambda supports, see <a
+ * href="https://docs.aws.amazon.com/general/latest/gr/lambda-service.html">Lambda
+ * endpoints and quotas</a> in the <i>Amazon Web Services General Reference.</i>
+ * </p> <p>When making the API calls, you will need to authenticate your request by
+ * providing a signature. Lambda supports signature version 4. For more
+ * information, see <a
+ * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+ * Version 4 signing process</a> in the <i>Amazon Web Services General
+ * Reference.</i> </p></p>
  */
 class AWS_LAMBDACORE_API LambdaCoreClient : public Aws::Client::AWSJsonClient,
                                             public Aws::Client::ClientWithAsyncTemplateMethods<LambdaCoreClient>,
@@ -95,9 +110,10 @@ class AWS_LAMBDACORE_API LambdaCoreClient : public Aws::Client::AWSJsonClient,
    * starts in <code>PENDING</code> state while ENIs are provisioned in your VPC
    * (provisioning typically takes up to 10 minutes). Use
    * <code>GetNetworkConnector</code> to poll the connector state until it reaches
-   * <code>ACTIVE</code>. Once active, you can attach the connector to Lambda
-   * MicroVMs at run time using the <code>egressNetworkConnectors</code> parameter on
-   * <code>RunMicroVm</code>.</p> <p>This operation is idempotent when you provide a
+   * <code>ACTIVE</code>. Once active, you can attach the connector to supported
+   * Lambda compute resources — such as MicroVMs and WebFunctions — at run time. For
+   * how to attach a connector, see the documentation for the specific compute
+   * type.</p> <p>This operation is idempotent when you provide a
    * <code>ClientToken</code> — if you retry a request that completed successfully
    * using the same client token, the operation returns the existing connector
    * without creating a duplicate.</p><p><h3>See Also:</h3>   <a
@@ -135,8 +151,12 @@ class AWS_LAMBDACORE_API LambdaCoreClient : public Aws::Client::AWSJsonClient,
    * calling delete on a connector that is already deleting or has been deleted
    * succeeds without error. You can delete connectors in <code>ACTIVE</code> or
    * <code>FAILED</code> states. Before deleting a connector, ensure that no Lambda
-   * MicroVMs are using it, as they will lose VPC egress connectivity
-   * immediately.</p><p><h3>See Also:</h3>   <a
+   * compute resources are using it, as they will lose VPC egress connectivity
+   * immediately.</p> <p>Deleting with an unqualified identifier removes the
+   * connector and all of its versions. To remove a single historical version, supply
+   * its version-qualified ARN; the connector and its remaining versions are
+   * unaffected. You can't delete the latest version on its own — delete the
+   * connector to remove it.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-core-2026-04-30/DeleteNetworkConnector">AWS
    * API Reference</a></p>
    */
@@ -196,6 +216,44 @@ class AWS_LAMBDACORE_API LambdaCoreClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Returns a paginated list of the versions of a network connector. Each
+   * configuration update creates a new immutable version; this operation lists those
+   * versions for the connector you specify. You can optionally filter results by
+   * version state. Use the <code>Marker</code> parameter from a previous response to
+   * retrieve the next page of results.</p> <p>Each item in the response includes the
+   * version-qualified ARN, version number, current state, and last modified
+   * timestamp for that version. To retrieve the current (latest) configuration of
+   * the connector, use <code>GetNetworkConnector</code>; to inspect a specific
+   * version, call <code>GetNetworkConnector</code> with a version-qualified
+   * identifier.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-core-2026-04-30/ListNetworkConnectorVersions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListNetworkConnectorVersionsOutcome ListNetworkConnectorVersions(
+      const Model::ListNetworkConnectorVersionsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListNetworkConnectorVersions that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListNetworkConnectorVersionsRequestT = Model::ListNetworkConnectorVersionsRequest>
+  Model::ListNetworkConnectorVersionsOutcomeCallable ListNetworkConnectorVersionsCallable(
+      const ListNetworkConnectorVersionsRequestT& request) const {
+    return SubmitCallable(&LambdaCoreClient::ListNetworkConnectorVersions, request);
+  }
+
+  /**
+   * An Async wrapper for ListNetworkConnectorVersions that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListNetworkConnectorVersionsRequestT = Model::ListNetworkConnectorVersionsRequest>
+  void ListNetworkConnectorVersionsAsync(const ListNetworkConnectorVersionsRequestT& request,
+                                         const ListNetworkConnectorVersionsResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LambdaCoreClient::ListNetworkConnectorVersions, request, handler, context);
+  }
+
+  /**
    * <p>Returns a paginated list of network connectors in your account for the
    * current Region. You can optionally filter results by connector state. Use the
    * <code>Marker</code> parameter from a previous response to retrieve the next page
@@ -239,7 +297,11 @@ class AWS_LAMBDACORE_API LambdaCoreClient : public Aws::Client::AWSJsonClient,
    * <code>InProgress</code> to <code>Successful</code> or <code>Failed</code>. If
    * the update fails, the <code>LastUpdateStatusReasonCode</code> field provides a
    * specific error code for troubleshooting. This operation is idempotent when you
-   * provide a <code>ClientToken</code>.</p><p><h3>See Also:</h3>   <a
+   * provide a <code>ClientToken</code>.</p> <p>Each successful configuration change
+   * creates a new immutable version. A connector can have a limited number of
+   * versions; once that limit is reached, further updates fail with
+   * <code>NetworkConnectorLimitExceededException</code> until you delete older
+   * versions.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-core-2026-04-30/UpdateNetworkConnector">AWS
    * API Reference</a></p>
    */

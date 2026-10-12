@@ -239,7 +239,13 @@ class RouterOutput {
 
   ///@{
   /**
-   * <p>The tier level of the router output.</p>
+   * <p>The tier level for the router output. The tier sets the maximum bitrate, in
+   * Mbps, for the router output. Valid values include the following:</p> <ul> <li>
+   * <p> <code>OUTPUT_20</code> – 20 Mbps</p> </li> <li> <p> <code>OUTPUT_50</code> –
+   * 50 Mbps</p> </li> <li> <p> <code>OUTPUT_100</code> – 100 Mbps</p> </li> <li> <p>
+   * <code>OUTPUT_250</code> – 250 Mbps</p> </li> <li> <p> <code>OUTPUT_500</code> –
+   * 500 Mbps</p> </li> </ul> <p>The 250 Mbps and 500 Mbps tiers are high-bitrate
+   * tiers that support TR-07 (JPEG XS) workflows.</p>
    */
   inline RouterOutputTier GetTier() const { return m_tier; }
   inline bool TierHasBeenSet() const { return m_tierHasBeenSet; }

@@ -388,6 +388,8 @@
 #include <aws/bedrock-agentcore/model/RecommendationStatus.h>
 #include <aws/bedrock-agentcore/model/RecommendationSummary.h>
 #include <aws/bedrock-agentcore/model/RecommendationType.h>
+#include <aws/bedrock-agentcore/model/RecordExpiryAction.h>
+#include <aws/bedrock-agentcore/model/RecordExpirySpecification.h>
 #include <aws/bedrock-agentcore/model/RegistryRecordStatus.h>
 #include <aws/bedrock-agentcore/model/RegistryRecordSummary.h>
 #include <aws/bedrock-agentcore/model/ResourceContent.h>

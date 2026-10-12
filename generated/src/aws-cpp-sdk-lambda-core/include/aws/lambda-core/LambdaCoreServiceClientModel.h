@@ -22,6 +22,7 @@
 #include <aws/lambda-core/model/CreateNetworkConnectorResult.h>
 #include <aws/lambda-core/model/DeleteNetworkConnectorResult.h>
 #include <aws/lambda-core/model/GetNetworkConnectorResult.h>
+#include <aws/lambda-core/model/ListNetworkConnectorVersionsResult.h>
 #include <aws/lambda-core/model/ListNetworkConnectorsRequest.h>
 #include <aws/lambda-core/model/ListNetworkConnectorsResult.h>
 #include <aws/lambda-core/model/UpdateNetworkConnectorResult.h>
@@ -61,6 +62,7 @@ namespace Model {
 class CreateNetworkConnectorRequest;
 class DeleteNetworkConnectorRequest;
 class GetNetworkConnectorRequest;
+class ListNetworkConnectorVersionsRequest;
 class ListNetworkConnectorsRequest;
 class UpdateNetworkConnectorRequest;
 /* End of service model forward declarations required in LambdaCoreClient header */
@@ -69,6 +71,7 @@ class UpdateNetworkConnectorRequest;
 typedef Aws::Utils::Outcome<CreateNetworkConnectorResult, LambdaCoreError> CreateNetworkConnectorOutcome;
 typedef Aws::Utils::Outcome<DeleteNetworkConnectorResult, LambdaCoreError> DeleteNetworkConnectorOutcome;
 typedef Aws::Utils::Outcome<GetNetworkConnectorResult, LambdaCoreError> GetNetworkConnectorOutcome;
+typedef Aws::Utils::Outcome<ListNetworkConnectorVersionsResult, LambdaCoreError> ListNetworkConnectorVersionsOutcome;
 typedef Aws::Utils::Outcome<ListNetworkConnectorsResult, LambdaCoreError> ListNetworkConnectorsOutcome;
 typedef Aws::Utils::Outcome<UpdateNetworkConnectorResult, LambdaCoreError> UpdateNetworkConnectorOutcome;
 /* End of service model Outcome class definitions */
@@ -77,6 +80,7 @@ typedef Aws::Utils::Outcome<UpdateNetworkConnectorResult, LambdaCoreError> Updat
 typedef std::future<CreateNetworkConnectorOutcome> CreateNetworkConnectorOutcomeCallable;
 typedef std::future<DeleteNetworkConnectorOutcome> DeleteNetworkConnectorOutcomeCallable;
 typedef std::future<GetNetworkConnectorOutcome> GetNetworkConnectorOutcomeCallable;
+typedef std::future<ListNetworkConnectorVersionsOutcome> ListNetworkConnectorVersionsOutcomeCallable;
 typedef std::future<ListNetworkConnectorsOutcome> ListNetworkConnectorsOutcomeCallable;
 typedef std::future<UpdateNetworkConnectorOutcome> UpdateNetworkConnectorOutcomeCallable;
 /* End of service model Outcome callable definitions */
@@ -94,6 +98,10 @@ typedef std::function<void(const LambdaCoreClient*, const Model::DeleteNetworkCo
 typedef std::function<void(const LambdaCoreClient*, const Model::GetNetworkConnectorRequest&, const Model::GetNetworkConnectorOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetNetworkConnectorResponseReceivedHandler;
+typedef std::function<void(const LambdaCoreClient*, const Model::ListNetworkConnectorVersionsRequest&,
+                           const Model::ListNetworkConnectorVersionsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListNetworkConnectorVersionsResponseReceivedHandler;
 typedef std::function<void(const LambdaCoreClient*, const Model::ListNetworkConnectorsRequest&, const Model::ListNetworkConnectorsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListNetworkConnectorsResponseReceivedHandler;

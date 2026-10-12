@@ -10,7 +10,7 @@
 namespace Aws {
 namespace SecurityAgent {
 namespace Model {
-enum class ProviderType { NOT_SET, SOURCE_CODE, DOCUMENTATION };
+enum class ProviderType { NOT_SET, SOURCE_CODE, DOCUMENTATION, ISSUE_TRACKING };
 
 namespace ProviderTypeMapper {
 AWS_SECURITYAGENT_API ProviderType GetProviderTypeForName(const Aws::String& name);

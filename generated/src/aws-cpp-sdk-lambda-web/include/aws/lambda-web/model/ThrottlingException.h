@@ -20,8 +20,9 @@ namespace LambdaWeb {
 namespace Model {
 
 /**
- * <p>The request was throttled. Reduce the frequency of requests and try
- * again.</p><p><h3>See Also:</h3>   <a
+ * <p>The request was denied because it exceeded the request rate that Lambda
+ * allows for your account. Reduce the frequency of requests and retry with
+ * exponential backoff.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-web-2025-03-07/ThrottlingException">AWS
  * API Reference</a></p>
  */

@@ -23,5 +23,9 @@ Aws::String BatchUpdateMemoryRecordsRequest::SerializePayload() const {
     payload.WithArray("records", std::move(recordsJsonList));
   }
 
+  if (m_recordExpirySpecificationHasBeenSet) {
+    payload.WithObject("recordExpirySpecification", m_recordExpirySpecification.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

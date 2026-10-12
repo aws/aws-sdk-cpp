@@ -18,6 +18,8 @@ namespace RouterOutputTierMapper {
 static const int OUTPUT_100_HASH = HashingUtils::HashString("OUTPUT_100");
 static const int OUTPUT_50_HASH = HashingUtils::HashString("OUTPUT_50");
 static const int OUTPUT_20_HASH = HashingUtils::HashString("OUTPUT_20");
+static const int OUTPUT_500_HASH = HashingUtils::HashString("OUTPUT_500");
+static const int OUTPUT_250_HASH = HashingUtils::HashString("OUTPUT_250");
 
 RouterOutputTier GetRouterOutputTierForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +29,10 @@ RouterOutputTier GetRouterOutputTierForName(const Aws::String& name) {
     return RouterOutputTier::OUTPUT_50;
   } else if (hashCode == OUTPUT_20_HASH) {
     return RouterOutputTier::OUTPUT_20;
+  } else if (hashCode == OUTPUT_500_HASH) {
+    return RouterOutputTier::OUTPUT_500;
+  } else if (hashCode == OUTPUT_250_HASH) {
+    return RouterOutputTier::OUTPUT_250;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +53,10 @@ Aws::String GetNameForRouterOutputTier(RouterOutputTier enumValue) {
       return "OUTPUT_50";
     case RouterOutputTier::OUTPUT_20:
       return "OUTPUT_20";
+    case RouterOutputTier::OUTPUT_500:
+      return "OUTPUT_500";
+    case RouterOutputTier::OUTPUT_250:
+      return "OUTPUT_250";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

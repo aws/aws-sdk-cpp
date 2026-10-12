@@ -7,6 +7,7 @@
 #include <aws/bedrock-agentcore/BedrockAgentCoreRequest.h>
 #include <aws/bedrock-agentcore/BedrockAgentCore_EXPORTS.h>
 #include <aws/bedrock-agentcore/model/MemoryRecordUpdateInput.h>
+#include <aws/bedrock-agentcore/model/RecordExpirySpecification.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -72,12 +73,46 @@ class BatchUpdateMemoryRecordsRequest : public BedrockAgentCoreRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The record expiry (long-term memory time-to-live) applied to every record
+   * updated by this request. Set <code>recordExpiryDurationDays</code> to configure
+   * or overwrite the number of days after which the records expire, or set
+   * <code>action</code> to <code>REMOVE</code> to clear a previously configured
+   * expiry so that the records no longer expire.</p> <p>When you do not provide this
+   * value, the service determines each record's expiry from its current state:</p>
+   * <ul> <li> <p>If the record already has an expiry configured, the service resets
+   * and reapplies the expiry based on the last applied
+   * <code>recordExpiryDurationDays</code>.</p> </li> <li> <p>If the record does not
+   * have an expiry configured, no expiry is applied and the record remains
+   * non-expiring. This is the outcome regardless of whether the record's strategy
+   * configures an expiry.</p> </li> </ul> <p>Providing an explicit
+   * <code>recordExpiryDurationDays</code> always takes precedence: it overwrites an
+   * existing expiry, or sets one on a record that previously had none.</p>
+   */
+  inline const RecordExpirySpecification& GetRecordExpirySpecification() const { return m_recordExpirySpecification; }
+  inline bool RecordExpirySpecificationHasBeenSet() const { return m_recordExpirySpecificationHasBeenSet; }
+  template <typename RecordExpirySpecificationT = RecordExpirySpecification>
+  void SetRecordExpirySpecification(RecordExpirySpecificationT&& value) {
+    m_recordExpirySpecificationHasBeenSet = true;
+    m_recordExpirySpecification = std::forward<RecordExpirySpecificationT>(value);
+  }
+  template <typename RecordExpirySpecificationT = RecordExpirySpecification>
+  BatchUpdateMemoryRecordsRequest& WithRecordExpirySpecification(RecordExpirySpecificationT&& value) {
+    SetRecordExpirySpecification(std::forward<RecordExpirySpecificationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_memoryId;
 
   Aws::Vector<MemoryRecordUpdateInput> m_records;
+
+  RecordExpirySpecification m_recordExpirySpecification;
   bool m_memoryIdHasBeenSet = false;
   bool m_recordsHasBeenSet = false;
+  bool m_recordExpirySpecificationHasBeenSet = false;
 };
 
 }  // namespace Model

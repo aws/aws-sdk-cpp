@@ -82,10 +82,9 @@ class Metadata {
 
   ///@{
   /**
-   * <p>Per-signal LOGS query selectors: a LIST of blocks the console ORs, each an
-   * AND of exact store column -&gt; raw values. Node-level (edges carry only
-   * traces). Populated when the request sets includeMetadata; derived labels
-   * (logSourceType) are added by the service projection, not stored here.</p>
+   * <p>LOGS query selectors: a list of blocks to OR together, each block an AND of
+   * exact store column to raw value. Present on node metadata only — edges carry
+   * trace selectors. Returned when the request sets includeMetadata.</p>
    */
   inline const Aws::Vector<LogMetadata>& GetLogs() const { return m_logs; }
   inline bool LogsHasBeenSet() const { return m_logsHasBeenSet; }
@@ -109,9 +108,8 @@ class Metadata {
 
   ///@{
   /**
-   * <p>Per-signal TRACES query selectors (same block shape as logs). Present on both
-   * node and edge metadata. serviceName is derived at the service projection, not
-   * stored here.</p>
+   * <p>TRACES query selectors, same block shape as the logs selectors. Present on
+   * both node and edge metadata. Returned when the request sets includeMetadata.</p>
    */
   inline const Aws::Vector<TraceMetadata>& GetTraces() const { return m_traces; }
   inline bool TracesHasBeenSet() const { return m_tracesHasBeenSet; }

@@ -71,6 +71,7 @@
 #include <aws/sagemaker/model/ListSubscribedWorkteamsPaginationTraits.h>
 #include <aws/sagemaker/model/ListCodeRepositoriesPaginationTraits.h>
 #include <aws/sagemaker/model/ListPipelinesPaginationTraits.h>
+#include <aws/sagemaker/model/ListTrainingSessionsPaginationTraits.h>
 #include <aws/sagemaker/model/ListPipelineExecutionStepsPaginationTraits.h>
 #include <aws/sagemaker/model/ListTrainingPlansPaginationTraits.h>
 #include <aws/sagemaker/model/ListHyperParameterTuningJobsPaginationTraits.h>

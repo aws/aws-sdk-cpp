@@ -23,7 +23,14 @@ namespace Model {
 
 /**
  * <p>Configuration settings for connecting a router input to a MediaLive channel
- * output.</p><p><h3>See Also:</h3>   <a
+ * output.</p> <p>To connect the router input to the MediaLive channel output,
+ * provide all three of <code>mediaLiveChannelArn</code>,
+ * <code>mediaLivePipelineId</code>, and <code>mediaLiveChannelOutputName</code>.
+ * To disconnect it, call the update operation and omit all three fields while
+ * keeping this configuration object.</p>  <p>You can't change
+ * <code>sourceTransitDecryption</code> while the router input is connected to a
+ * MediaLive channel output. To change it, first disconnect the router input, then
+ * update the decryption.</p> <p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/MediaLiveChannelRouterInputConfiguration">AWS
  * API Reference</a></p>
  */

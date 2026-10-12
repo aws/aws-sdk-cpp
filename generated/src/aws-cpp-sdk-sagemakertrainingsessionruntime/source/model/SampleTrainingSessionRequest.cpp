@@ -1,0 +1,34 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/sagemakertrainingsessionruntime/model/SampleTrainingSessionRequest.h>
+
+#include <utility>
+
+using namespace Aws::SageMakerTrainingSessionRuntime::Model;
+using namespace Aws::Utils::Stream;
+using namespace Aws::Utils;
+using namespace Aws;
+
+Aws::Http::HeaderValueCollection SampleTrainingSessionRequest::GetRequestSpecificHeaders() const {
+  Aws::Http::HeaderValueCollection headers;
+  Aws::StringStream ss;
+  if (m_acceptHasBeenSet) {
+    ss << m_accept;
+    headers.emplace("accept", ss.str());
+    ss.str("");
+  }
+
+  if (m_modelPackageArnHasBeenSet) {
+    ss << m_modelPackageArn;
+    headers.emplace("x-amzn-sagemaker-model-package", ss.str());
+    ss.str("");
+  }
+
+  return headers;
+}

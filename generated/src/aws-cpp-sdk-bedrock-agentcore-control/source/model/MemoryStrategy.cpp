@@ -62,6 +62,10 @@ MemoryStrategy& MemoryStrategy::operator=(JsonView jsonValue) {
     m_memoryRecordSchema = jsonValue.GetObject("memoryRecordSchema");
     m_memoryRecordSchemaHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("recordExpiryDurationDays")) {
+    m_recordExpiryDurationDays = jsonValue.GetInteger("recordExpiryDurationDays");
+    m_recordExpiryDurationDaysHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -111,6 +115,10 @@ JsonValue MemoryStrategy::Jsonize() const {
 
   if (m_memoryRecordSchemaHasBeenSet) {
     payload.WithObject("memoryRecordSchema", m_memoryRecordSchema.Jsonize());
+  }
+
+  if (m_recordExpiryDurationDaysHasBeenSet) {
+    payload.WithInteger("recordExpiryDurationDays", m_recordExpiryDurationDays);
   }
 
   return payload;

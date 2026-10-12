@@ -90,6 +90,10 @@ Transport& Transport::operator=(JsonView jsonValue) {
         NdiOutputTimecodeSourceMapper::GetNdiOutputTimecodeSourceForName(jsonValue.GetString("ndiOutputTimecodeSource"));
     m_ndiOutputTimecodeSourceHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ndiAudioReferenceLevel")) {
+    m_ndiAudioReferenceLevel = jsonValue.GetInteger("ndiAudioReferenceLevel");
+    m_ndiAudioReferenceLevelHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -167,6 +171,10 @@ JsonValue Transport::Jsonize() const {
   if (m_ndiOutputTimecodeSourceHasBeenSet) {
     payload.WithString("ndiOutputTimecodeSource",
                        NdiOutputTimecodeSourceMapper::GetNameForNdiOutputTimecodeSource(m_ndiOutputTimecodeSource));
+  }
+
+  if (m_ndiAudioReferenceLevelHasBeenSet) {
+    payload.WithInteger("ndiAudioReferenceLevel", m_ndiAudioReferenceLevel);
   }
 
   return payload;

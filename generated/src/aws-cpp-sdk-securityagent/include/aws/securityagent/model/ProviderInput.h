@@ -11,6 +11,7 @@
 #include <aws/securityagent/model/ConfluenceIntegrationInput.h>
 #include <aws/securityagent/model/GitHubIntegrationInput.h>
 #include <aws/securityagent/model/GitLabIntegrationInput.h>
+#include <aws/securityagent/model/JiraIntegrationInput.h>
 
 #include <utility>
 
@@ -144,6 +145,24 @@ class ProviderInput {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The configuration for a Jira integration.</p>
+   */
+  inline const JiraIntegrationInput& GetJira() const { return m_jira; }
+  inline bool JiraHasBeenSet() const { return m_jiraHasBeenSet; }
+  template <typename JiraT = JiraIntegrationInput>
+  void SetJira(JiraT&& value) {
+    m_jiraHasBeenSet = true;
+    m_jira = std::forward<JiraT>(value);
+  }
+  template <typename JiraT = JiraIntegrationInput>
+  ProviderInput& WithJira(JiraT&& value) {
+    SetJira(std::forward<JiraT>(value));
+    return *this;
+  }
+  ///@}
  private:
   GitHubIntegrationInput m_github;
 
@@ -156,12 +175,15 @@ class ProviderInput {
   AzureDevOpsIntegrationInput m_azureDevOps;
 
   BitbucketDataCenterIntegrationInput m_bitbucketDataCenter;
+
+  JiraIntegrationInput m_jira;
   bool m_githubHasBeenSet = false;
   bool m_gitlabHasBeenSet = false;
   bool m_bitbucketHasBeenSet = false;
   bool m_confluenceHasBeenSet = false;
   bool m_azureDevOpsHasBeenSet = false;
   bool m_bitbucketDataCenterHasBeenSet = false;
+  bool m_jiraHasBeenSet = false;
 };
 
 }  // namespace Model

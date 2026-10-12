@@ -10,7 +10,7 @@
 namespace Aws {
 namespace MediaConnect {
 namespace Model {
-enum class RouterInputTier { NOT_SET, INPUT_100, INPUT_50, INPUT_20 };
+enum class RouterInputTier { NOT_SET, INPUT_100, INPUT_50, INPUT_20, INPUT_500, INPUT_250 };
 
 namespace RouterInputTierMapper {
 AWS_MEDIACONNECT_API RouterInputTier GetRouterInputTierForName(const Aws::String& name);

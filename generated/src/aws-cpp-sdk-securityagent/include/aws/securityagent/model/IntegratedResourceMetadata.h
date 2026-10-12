@@ -10,6 +10,7 @@
 #include <aws/securityagent/model/ConfluenceDocumentMetadata.h>
 #include <aws/securityagent/model/GitHubRepositoryMetadata.h>
 #include <aws/securityagent/model/GitLabRepositoryMetadata.h>
+#include <aws/securityagent/model/JiraProjectMetadata.h>
 
 #include <utility>
 
@@ -119,6 +120,24 @@ class IntegratedResourceMetadata {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Jira project metadata.</p>
+   */
+  inline const JiraProjectMetadata& GetJiraProject() const { return m_jiraProject; }
+  inline bool JiraProjectHasBeenSet() const { return m_jiraProjectHasBeenSet; }
+  template <typename JiraProjectT = JiraProjectMetadata>
+  void SetJiraProject(JiraProjectT&& value) {
+    m_jiraProjectHasBeenSet = true;
+    m_jiraProject = std::forward<JiraProjectT>(value);
+  }
+  template <typename JiraProjectT = JiraProjectMetadata>
+  IntegratedResourceMetadata& WithJiraProject(JiraProjectT&& value) {
+    SetJiraProject(std::forward<JiraProjectT>(value));
+    return *this;
+  }
+  ///@}
  private:
   GitHubRepositoryMetadata m_githubRepository;
 
@@ -129,11 +148,14 @@ class IntegratedResourceMetadata {
   ConfluenceDocumentMetadata m_confluenceDocument;
 
   AzureDevOpsRepositoryMetadata m_azureDevOpsRepository;
+
+  JiraProjectMetadata m_jiraProject;
   bool m_githubRepositoryHasBeenSet = false;
   bool m_gitlabRepositoryHasBeenSet = false;
   bool m_bitbucketRepositoryHasBeenSet = false;
   bool m_confluenceDocumentHasBeenSet = false;
   bool m_azureDevOpsRepositoryHasBeenSet = false;
+  bool m_jiraProjectHasBeenSet = false;
 };
 
 }  // namespace Model

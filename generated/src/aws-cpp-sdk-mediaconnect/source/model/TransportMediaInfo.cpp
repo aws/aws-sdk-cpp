@@ -25,6 +25,10 @@ TransportMediaInfo& TransportMediaInfo::operator=(JsonView jsonValue) {
     }
     m_programsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("tsId")) {
+    m_tsId = jsonValue.GetInteger("tsId");
+    m_tsIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -37,6 +41,10 @@ JsonValue TransportMediaInfo::Jsonize() const {
       programsJsonList[programsIndex].AsObject(m_programs[programsIndex].Jsonize());
     }
     payload.WithArray("programs", std::move(programsJsonList));
+  }
+
+  if (m_tsIdHasBeenSet) {
+    payload.WithInteger("tsId", m_tsId);
   }
 
   return payload;

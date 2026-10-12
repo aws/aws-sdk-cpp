@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
+#include <aws/mediaconnect/model/ColorInformation.h>
 #include <aws/mediaconnect/model/FrameResolution.h>
 
 #include <utility>
@@ -63,6 +64,24 @@ class TransportStream {
   template <typename CodecT = Aws::String>
   TransportStream& WithCodec(CodecT&& value) {
     SetCodec(std::forward<CodecT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The color signaling of the video stream.</p>
+   */
+  inline const ColorInformation& GetColor() const { return m_color; }
+  inline bool ColorHasBeenSet() const { return m_colorHasBeenSet; }
+  template <typename ColorT = ColorInformation>
+  void SetColor(ColorT&& value) {
+    m_colorHasBeenSet = true;
+    m_color = std::forward<ColorT>(value);
+  }
+  template <typename ColorT = ColorInformation>
+  TransportStream& WithColor(ColorT&& value) {
+    SetColor(std::forward<ColorT>(value));
     return *this;
   }
   ///@}
@@ -173,6 +192,8 @@ class TransportStream {
 
   Aws::String m_codec;
 
+  ColorInformation m_color;
+
   Aws::String m_frameRate;
 
   FrameResolution m_frameResolution;
@@ -186,6 +207,7 @@ class TransportStream {
   Aws::String m_streamType;
   bool m_channelsHasBeenSet = false;
   bool m_codecHasBeenSet = false;
+  bool m_colorHasBeenSet = false;
   bool m_frameRateHasBeenSet = false;
   bool m_frameResolutionHasBeenSet = false;
   bool m_pidHasBeenSet = false;

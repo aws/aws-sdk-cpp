@@ -64,7 +64,9 @@ class DeleteNetworkConnectorResult {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The unique identifier of the network connector.</p>
+   */
   inline const Aws::String& GetId() const { return m_id; }
   template <typename IdT = Aws::String>
   void SetId(IdT&& value) {
@@ -74,6 +76,39 @@ class DeleteNetworkConnectorResult {
   template <typename IdT = Aws::String>
   DeleteNetworkConnectorResult& WithId(IdT&& value) {
     SetId(std::forward<IdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The qualified ARN of the connector version affected by this request,
+   * including the immutable version suffix.</p>
+   */
+  inline const Aws::String& GetVersionArn() const { return m_versionArn; }
+  template <typename VersionArnT = Aws::String>
+  void SetVersionArn(VersionArnT&& value) {
+    m_versionArnHasBeenSet = true;
+    m_versionArn = std::forward<VersionArnT>(value);
+  }
+  template <typename VersionArnT = Aws::String>
+  DeleteNetworkConnectorResult& WithVersionArn(VersionArnT&& value) {
+    SetVersionArn(std::forward<VersionArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The version number of the connector version affected by this request.</p>
+   */
+  inline long long GetVersion() const { return m_version; }
+  inline void SetVersion(long long value) {
+    m_versionHasBeenSet = true;
+    m_version = value;
+  }
+  inline DeleteNetworkConnectorResult& WithVersion(long long value) {
+    SetVersion(value);
     return *this;
   }
   ///@}
@@ -153,6 +188,10 @@ class DeleteNetworkConnectorResult {
 
   Aws::String m_id;
 
+  Aws::String m_versionArn;
+
+  long long m_version{0};
+
   NetworkConnectorConfiguration m_configuration;
 
   Aws::String m_operatorRole;
@@ -164,6 +203,8 @@ class DeleteNetworkConnectorResult {
   bool m_arnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_idHasBeenSet = false;
+  bool m_versionArnHasBeenSet = false;
+  bool m_versionHasBeenSet = false;
   bool m_configurationHasBeenSet = false;
   bool m_operatorRoleHasBeenSet = false;
   bool m_stateHasBeenSet = false;

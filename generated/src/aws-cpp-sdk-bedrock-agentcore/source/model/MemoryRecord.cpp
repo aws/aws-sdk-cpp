@@ -41,12 +41,20 @@ MemoryRecord& MemoryRecord::operator=(JsonView jsonValue) {
     m_createdAt = jsonValue.GetDouble("createdAt");
     m_createdAtHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("timestamp")) {
+    m_timestamp = jsonValue.GetDouble("timestamp");
+    m_timestampHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("metadata")) {
     Aws::Map<Aws::String, JsonView> metadataJsonMap = jsonValue.GetObject("metadata").GetAllObjects();
     for (auto& metadataItem : metadataJsonMap) {
       m_metadata[metadataItem.first] = metadataItem.second.AsObject();
     }
     m_metadataHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("expiresAt")) {
+    m_expiresAt = jsonValue.GetDouble("expiresAt");
+    m_expiresAtHasBeenSet = true;
   }
   return *this;
 }
@@ -78,12 +86,20 @@ JsonValue MemoryRecord::Jsonize() const {
     payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
   }
 
+  if (m_timestampHasBeenSet) {
+    payload.WithDouble("timestamp", m_timestamp.SecondsWithMSPrecision());
+  }
+
   if (m_metadataHasBeenSet) {
     JsonValue metadataJsonMap;
     for (auto& metadataItem : m_metadata) {
       metadataJsonMap.WithObject(metadataItem.first, metadataItem.second.Jsonize());
     }
     payload.WithObject("metadata", std::move(metadataJsonMap));
+  }
+
+  if (m_expiresAtHasBeenSet) {
+    payload.WithDouble("expiresAt", m_expiresAt.SecondsWithMSPrecision());
   }
 
   return payload;

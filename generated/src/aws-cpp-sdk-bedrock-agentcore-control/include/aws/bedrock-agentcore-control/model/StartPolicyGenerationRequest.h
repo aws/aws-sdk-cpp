@@ -114,9 +114,10 @@ class StartPolicyGenerationRequest : public BedrockAgentCoreControlRequest {
   ///@{
   /**
    * <p>A unique, case-sensitive identifier to ensure the idempotency of the request.
-   * The AWS SDK automatically generates this token, so you don't need to provide it
-   * in most cases. If you retry a request with the same client token, the service
-   * returns the same response without starting a duplicate generation.</p>
+   * The Amazon Web Services SDK automatically generates this token, so you don't
+   * need to provide it in most cases. If you retry a request with the same client
+   * token, the service returns the same response without starting a duplicate
+   * generation.</p>
    */
   inline const Aws::String& GetClientToken() const { return m_clientToken; }
   inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }

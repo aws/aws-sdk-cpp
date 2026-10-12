@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/devops-agent/DevOpsAgent_EXPORTS.h>
 #include <aws/devops-agent/model/MCPServerAuthorizationMethod.h>
 
@@ -121,6 +122,31 @@ class RegisteredMCPServerDetails {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The configured custom authentication header names when the MCP server uses
+   * custom-header authentication. Secret values are not returned.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetCustomHeaderNames() const { return m_customHeaderNames; }
+  inline bool CustomHeaderNamesHasBeenSet() const { return m_customHeaderNamesHasBeenSet; }
+  template <typename CustomHeaderNamesT = Aws::Vector<Aws::String>>
+  void SetCustomHeaderNames(CustomHeaderNamesT&& value) {
+    m_customHeaderNamesHasBeenSet = true;
+    m_customHeaderNames = std::forward<CustomHeaderNamesT>(value);
+  }
+  template <typename CustomHeaderNamesT = Aws::Vector<Aws::String>>
+  RegisteredMCPServerDetails& WithCustomHeaderNames(CustomHeaderNamesT&& value) {
+    SetCustomHeaderNames(std::forward<CustomHeaderNamesT>(value));
+    return *this;
+  }
+  template <typename CustomHeaderNamesT = Aws::String>
+  RegisteredMCPServerDetails& AddCustomHeaderNames(CustomHeaderNamesT&& value) {
+    m_customHeaderNamesHasBeenSet = true;
+    m_customHeaderNames.emplace_back(std::forward<CustomHeaderNamesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -131,11 +157,14 @@ class RegisteredMCPServerDetails {
   Aws::String m_description;
 
   Aws::String m_apiKeyHeader;
+
+  Aws::Vector<Aws::String> m_customHeaderNames;
   bool m_nameHasBeenSet = false;
   bool m_endpointHasBeenSet = false;
   bool m_authorizationMethodHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_apiKeyHeaderHasBeenSet = false;
+  bool m_customHeaderNamesHasBeenSet = false;
 };
 
 }  // namespace Model

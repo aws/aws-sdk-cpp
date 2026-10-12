@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/devops-agent/DevOpsAgentRequest.h>
 #include <aws/devops-agent/DevOpsAgent_EXPORTS.h>
+#include <aws/devops-agent/model/IncludedData.h>
 
 #include <utility>
 
@@ -70,12 +71,31 @@ class ListAgentSpacesRequest : public DevOpsAgentRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>How much data to include in the response.</p>
+   */
+  inline IncludedData GetIncludedData() const { return m_includedData; }
+  inline bool IncludedDataHasBeenSet() const { return m_includedDataHasBeenSet; }
+  inline void SetIncludedData(IncludedData value) {
+    m_includedDataHasBeenSet = true;
+    m_includedData = value;
+  }
+  inline ListAgentSpacesRequest& WithIncludedData(IncludedData value) {
+    SetIncludedData(value);
+    return *this;
+  }
+  ///@}
  private:
   int m_maxResults{0};
 
   Aws::String m_nextToken;
+
+  IncludedData m_includedData{IncludedData::NOT_SET};
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
+  bool m_includedDataHasBeenSet = false;
 };
 
 }  // namespace Model

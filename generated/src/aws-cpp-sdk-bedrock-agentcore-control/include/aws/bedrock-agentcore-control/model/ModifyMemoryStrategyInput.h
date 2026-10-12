@@ -7,6 +7,7 @@
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/MemoryRecordSchema.h>
 #include <aws/bedrock-agentcore-control/model/ModifyStrategyConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/RecordExpirySpecification.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -129,6 +130,29 @@ class ModifyMemoryStrategyInput {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Updates or removes the record expiry (long-term memory time-to-live) for this
+   * strategy. Set <code>recordExpiryDurationDays</code> to configure or update the
+   * number of days after which records expire, or set <code>action</code> to
+   * <code>REMOVE</code> to remove a previously configured time-to-live so that newer
+   * records no longer expire. The change applies only to records created after the
+   * update.</p>
+   */
+  inline const RecordExpirySpecification& GetRecordExpirySpecification() const { return m_recordExpirySpecification; }
+  inline bool RecordExpirySpecificationHasBeenSet() const { return m_recordExpirySpecificationHasBeenSet; }
+  template <typename RecordExpirySpecificationT = RecordExpirySpecification>
+  void SetRecordExpirySpecification(RecordExpirySpecificationT&& value) {
+    m_recordExpirySpecificationHasBeenSet = true;
+    m_recordExpirySpecification = std::forward<RecordExpirySpecificationT>(value);
+  }
+  template <typename RecordExpirySpecificationT = RecordExpirySpecification>
+  ModifyMemoryStrategyInput& WithRecordExpirySpecification(RecordExpirySpecificationT&& value) {
+    SetRecordExpirySpecification(std::forward<RecordExpirySpecificationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_memoryStrategyId;
 
@@ -139,11 +163,14 @@ class ModifyMemoryStrategyInput {
   ModifyStrategyConfiguration m_configuration;
 
   MemoryRecordSchema m_memoryRecordSchema;
+
+  RecordExpirySpecification m_recordExpirySpecification;
   bool m_memoryStrategyIdHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_namespaceTemplatesHasBeenSet = false;
   bool m_configurationHasBeenSet = false;
   bool m_memoryRecordSchemaHasBeenSet = false;
+  bool m_recordExpirySpecificationHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -37,8 +37,8 @@ class DeleteMemoryRequest : public BedrockAgentCoreControlRequest {
   ///@{
   /**
    * <p>A client token is used for keeping track of idempotent requests. It can
-   * contain a session id which can be around 250 chars, combined with a unique AWS
-   * identifier.</p>
+   * contain a session id which can be around 250 chars, combined with a unique
+   * Amazon Web Services identifier.</p>
    */
   inline const Aws::String& GetClientToken() const { return m_clientToken; }
   inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }

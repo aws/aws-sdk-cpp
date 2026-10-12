@@ -71,6 +71,26 @@ class UpdateSpaceRequest : public CloudWatchOmniRequest {
 
   ///@{
   /**
+   * <p>The ARN of the IAM role used by AgentCore online evaluation. Must be in the
+   * caller's account. Omit if the space does not use AgentCore online
+   * evaluation.</p>
+   */
+  inline const Aws::String& GetAgentCoreEvaluationRoleArn() const { return m_agentCoreEvaluationRoleArn; }
+  inline bool AgentCoreEvaluationRoleArnHasBeenSet() const { return m_agentCoreEvaluationRoleArnHasBeenSet; }
+  template <typename AgentCoreEvaluationRoleArnT = Aws::String>
+  void SetAgentCoreEvaluationRoleArn(AgentCoreEvaluationRoleArnT&& value) {
+    m_agentCoreEvaluationRoleArnHasBeenSet = true;
+    m_agentCoreEvaluationRoleArn = std::forward<AgentCoreEvaluationRoleArnT>(value);
+  }
+  template <typename AgentCoreEvaluationRoleArnT = Aws::String>
+  UpdateSpaceRequest& WithAgentCoreEvaluationRoleArn(AgentCoreEvaluationRoleArnT&& value) {
+    SetAgentCoreEvaluationRoleArn(std::forward<AgentCoreEvaluationRoleArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>How to encrypt the space's data at rest. Omit to leave encryption unchanged.
    * Pass <code>encryptionStrategy</code> AWS_OWNED to stop using a customer managed
    * key and revert to service owned encryption.</p>
@@ -93,9 +113,12 @@ class UpdateSpaceRequest : public CloudWatchOmniRequest {
 
   Aws::String m_name;
 
+  Aws::String m_agentCoreEvaluationRoleArn;
+
   EncryptionConfiguration m_encryptionConfiguration;
   bool m_spaceIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
+  bool m_agentCoreEvaluationRoleArnHasBeenSet = false;
   bool m_encryptionConfigurationHasBeenSet = false;
 };
 

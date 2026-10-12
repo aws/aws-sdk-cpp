@@ -18,6 +18,8 @@ namespace RouterInputTierMapper {
 static const int INPUT_100_HASH = HashingUtils::HashString("INPUT_100");
 static const int INPUT_50_HASH = HashingUtils::HashString("INPUT_50");
 static const int INPUT_20_HASH = HashingUtils::HashString("INPUT_20");
+static const int INPUT_500_HASH = HashingUtils::HashString("INPUT_500");
+static const int INPUT_250_HASH = HashingUtils::HashString("INPUT_250");
 
 RouterInputTier GetRouterInputTierForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +29,10 @@ RouterInputTier GetRouterInputTierForName(const Aws::String& name) {
     return RouterInputTier::INPUT_50;
   } else if (hashCode == INPUT_20_HASH) {
     return RouterInputTier::INPUT_20;
+  } else if (hashCode == INPUT_500_HASH) {
+    return RouterInputTier::INPUT_500;
+  } else if (hashCode == INPUT_250_HASH) {
+    return RouterInputTier::INPUT_250;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +53,10 @@ Aws::String GetNameForRouterInputTier(RouterInputTier enumValue) {
       return "INPUT_50";
     case RouterInputTier::INPUT_20:
       return "INPUT_20";
+    case RouterInputTier::INPUT_500:
+      return "INPUT_500";
+    case RouterInputTier::INPUT_250:
+      return "INPUT_250";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

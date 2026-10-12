@@ -25,6 +25,9 @@
 #include <aws/lambda-core/model/GetNetworkConnectorRequest.h>
 #include <aws/lambda-core/model/GetNetworkConnectorResult.h>
 #include <aws/lambda-core/model/InvalidParameterValueException.h>
+#include <aws/lambda-core/model/ListNetworkConnectorVersionsPaginationTraits.h>
+#include <aws/lambda-core/model/ListNetworkConnectorVersionsRequest.h>
+#include <aws/lambda-core/model/ListNetworkConnectorVersionsResult.h>
 #include <aws/lambda-core/model/ListNetworkConnectorsPaginationTraits.h>
 #include <aws/lambda-core/model/ListNetworkConnectorsRequest.h>
 #include <aws/lambda-core/model/ListNetworkConnectorsResult.h>
@@ -36,6 +39,7 @@
 #include <aws/lambda-core/model/NetworkConnectorStateReasonCode.h>
 #include <aws/lambda-core/model/NetworkConnectorSummary.h>
 #include <aws/lambda-core/model/NetworkConnectorType.h>
+#include <aws/lambda-core/model/NetworkConnectorVersionSummary.h>
 #include <aws/lambda-core/model/NetworkConnectorVpcEgressConfiguration.h>
 #include <aws/lambda-core/model/NetworkProtocol.h>
 #include <aws/lambda-core/model/ResourceConflictException.h>

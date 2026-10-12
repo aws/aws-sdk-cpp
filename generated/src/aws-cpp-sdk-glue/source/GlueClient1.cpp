@@ -20,6 +20,7 @@
 #include <aws/glue/GlueClient.h>
 #include <aws/glue/GlueEndpointProvider.h>
 #include <aws/glue/GlueErrorMarshaller.h>
+#include <aws/glue/model/DescribeInboundIntegrationsRequest.h>
 #include <aws/glue/model/DescribeIntegrationsRequest.h>
 #include <aws/glue/model/DisassociateGlossaryTermsRequest.h>
 #include <aws/glue/model/GetAssetRequest.h>
@@ -49,6 +50,7 @@
 #include <aws/glue/model/GetDataQualityModelRequest.h>
 #include <aws/glue/model/GetDataQualityModelResultRequest.h>
 #include <aws/glue/model/GetDataQualityResultRequest.h>
+#include <aws/glue/model/GetDataQualityResultV2Request.h>
 #include <aws/glue/model/GetDataQualityRuleRecommendationRunRequest.h>
 #include <aws/glue/model/GetDataQualityRulesetEvaluationRunRequest.h>
 #include <aws/glue/model/GetDataQualityRulesetRequest.h>
@@ -118,8 +120,6 @@
 #include <aws/glue/model/ListConnectionTypesRequest.h>
 #include <aws/glue/model/ListCrawlersRequest.h>
 #include <aws/glue/model/ListCrawlsRequest.h>
-#include <aws/glue/model/ListCustomEntityTypesRequest.h>
-#include <aws/glue/model/ListDataQualityResultsRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,12 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DescribeInboundIntegrationsOutcome GlueClient::DescribeInboundIntegrations(const DescribeInboundIntegrationsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeInboundIntegrationsOutcome(result.GetResultWithOwnership())
+                            : DescribeInboundIntegrationsOutcome(std::move(result.GetError()));
+}
 
 DescribeIntegrationsOutcome GlueClient::DescribeIntegrations(const DescribeIntegrationsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -297,6 +303,12 @@ GetDataQualityResultOutcome GlueClient::GetDataQualityResult(const GetDataQualit
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetDataQualityResultOutcome(result.GetResultWithOwnership())
                             : GetDataQualityResultOutcome(std::move(result.GetError()));
+}
+
+GetDataQualityResultV2Outcome GlueClient::GetDataQualityResultV2(const GetDataQualityResultV2Request& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDataQualityResultV2Outcome(result.GetResultWithOwnership())
+                            : GetDataQualityResultV2Outcome(std::move(result.GetError()));
 }
 
 GetDataQualityRuleRecommendationRunOutcome GlueClient::GetDataQualityRuleRecommendationRun(
@@ -686,16 +698,4 @@ ListCrawlersOutcome GlueClient::ListCrawlers(const ListCrawlersRequest& request)
 ListCrawlsOutcome GlueClient::ListCrawls(const ListCrawlsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListCrawlsOutcome(result.GetResultWithOwnership()) : ListCrawlsOutcome(std::move(result.GetError()));
-}
-
-ListCustomEntityTypesOutcome GlueClient::ListCustomEntityTypes(const ListCustomEntityTypesRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ListCustomEntityTypesOutcome(result.GetResultWithOwnership())
-                            : ListCustomEntityTypesOutcome(std::move(result.GetError()));
-}
-
-ListDataQualityResultsOutcome GlueClient::ListDataQualityResults(const ListDataQualityResultsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ListDataQualityResultsOutcome(result.GetResultWithOwnership())
-                            : ListDataQualityResultsOutcome(std::move(result.GetError()));
 }

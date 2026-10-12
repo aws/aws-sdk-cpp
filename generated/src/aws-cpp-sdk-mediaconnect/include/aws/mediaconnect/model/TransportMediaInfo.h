@@ -56,9 +56,29 @@ class TransportMediaInfo {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The transport stream ID (TSID) of the source, from the Program Association
+   * Table (PAT).</p>
+   */
+  inline int GetTsId() const { return m_tsId; }
+  inline bool TsIdHasBeenSet() const { return m_tsIdHasBeenSet; }
+  inline void SetTsId(int value) {
+    m_tsIdHasBeenSet = true;
+    m_tsId = value;
+  }
+  inline TransportMediaInfo& WithTsId(int value) {
+    SetTsId(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<TransportStreamProgram> m_programs;
+
+  int m_tsId{0};
   bool m_programsHasBeenSet = false;
+  bool m_tsIdHasBeenSet = false;
 };
 
 }  // namespace Model

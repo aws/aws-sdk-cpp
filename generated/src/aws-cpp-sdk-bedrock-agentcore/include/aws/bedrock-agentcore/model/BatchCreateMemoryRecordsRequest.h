@@ -7,6 +7,7 @@
 #include <aws/bedrock-agentcore/BedrockAgentCoreRequest.h>
 #include <aws/bedrock-agentcore/BedrockAgentCore_EXPORTS.h>
 #include <aws/bedrock-agentcore/model/MemoryRecordCreateInput.h>
+#include <aws/bedrock-agentcore/model/RecordExpirySpecification.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -92,15 +93,41 @@ class BatchCreateMemoryRecordsRequest : public BedrockAgentCoreRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The record expiry (long-term memory time-to-live) applied to every record
+   * created by this request. Set <code>recordExpiryDurationDays</code> to the number
+   * of days after which the records expire. Only the expiry provided here is
+   * applied; the records' strategy association has no effect on their expiry. If you
+   * do not provide this value, the records do not expire. The <code>REMOVE</code>
+   * action does not apply when creating records.</p>
+   */
+  inline const RecordExpirySpecification& GetRecordExpirySpecification() const { return m_recordExpirySpecification; }
+  inline bool RecordExpirySpecificationHasBeenSet() const { return m_recordExpirySpecificationHasBeenSet; }
+  template <typename RecordExpirySpecificationT = RecordExpirySpecification>
+  void SetRecordExpirySpecification(RecordExpirySpecificationT&& value) {
+    m_recordExpirySpecificationHasBeenSet = true;
+    m_recordExpirySpecification = std::forward<RecordExpirySpecificationT>(value);
+  }
+  template <typename RecordExpirySpecificationT = RecordExpirySpecification>
+  BatchCreateMemoryRecordsRequest& WithRecordExpirySpecification(RecordExpirySpecificationT&& value) {
+    SetRecordExpirySpecification(std::forward<RecordExpirySpecificationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_memoryId;
 
   Aws::Vector<MemoryRecordCreateInput> m_records;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+
+  RecordExpirySpecification m_recordExpirySpecification;
   bool m_memoryIdHasBeenSet = false;
   bool m_recordsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
+  bool m_recordExpirySpecificationHasBeenSet = false;
 };
 
 }  // namespace Model

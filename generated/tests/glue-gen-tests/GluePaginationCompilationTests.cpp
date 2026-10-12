@@ -36,6 +36,7 @@
 #include <aws/glue/model/ListCrawlersPaginationTraits.h>
 #include <aws/glue/model/ListDataQualityResultsPaginationTraits.h>
 #include <aws/glue/model/ListUsageProfilesPaginationTraits.h>
+#include <aws/glue/model/ListDataQualityResultsV2PaginationTraits.h>
 #include <aws/glue/model/GetCrawlersPaginationTraits.h>
 #include <aws/glue/model/ListGlossariesPaginationTraits.h>
 #include <aws/glue/model/ListJobsPaginationTraits.h>

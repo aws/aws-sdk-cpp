@@ -21,6 +21,7 @@ static const int InsufficientRolePermissions_HASH = HashingUtils::HashString("In
 static const int InternalError_HASH = HashingUtils::HashString("InternalError");
 static const int InvalidSecurityGroup_HASH = HashingUtils::HashString("InvalidSecurityGroup");
 static const int InvalidSubnet_HASH = HashingUtils::HashString("InvalidSubnet");
+static const int SecurityGroupsPerInterfaceLimitExceeded_HASH = HashingUtils::HashString("SecurityGroupsPerInterfaceLimitExceeded");
 static const int SubnetOutOfIPAddresses_HASH = HashingUtils::HashString("SubnetOutOfIPAddresses");
 
 NetworkConnectorLastUpdateStatusReasonCode GetNetworkConnectorLastUpdateStatusReasonCodeForName(const Aws::String& name) {
@@ -37,6 +38,8 @@ NetworkConnectorLastUpdateStatusReasonCode GetNetworkConnectorLastUpdateStatusRe
     return NetworkConnectorLastUpdateStatusReasonCode::InvalidSecurityGroup;
   } else if (hashCode == InvalidSubnet_HASH) {
     return NetworkConnectorLastUpdateStatusReasonCode::InvalidSubnet;
+  } else if (hashCode == SecurityGroupsPerInterfaceLimitExceeded_HASH) {
+    return NetworkConnectorLastUpdateStatusReasonCode::SecurityGroupsPerInterfaceLimitExceeded;
   } else if (hashCode == SubnetOutOfIPAddresses_HASH) {
     return NetworkConnectorLastUpdateStatusReasonCode::SubnetOutOfIPAddresses;
   }
@@ -65,6 +68,8 @@ Aws::String GetNameForNetworkConnectorLastUpdateStatusReasonCode(NetworkConnecto
       return "InvalidSecurityGroup";
     case NetworkConnectorLastUpdateStatusReasonCode::InvalidSubnet:
       return "InvalidSubnet";
+    case NetworkConnectorLastUpdateStatusReasonCode::SecurityGroupsPerInterfaceLimitExceeded:
+      return "SecurityGroupsPerInterfaceLimitExceeded";
     case NetworkConnectorLastUpdateStatusReasonCode::SubnetOutOfIPAddresses:
       return "SubnetOutOfIPAddresses";
     default:

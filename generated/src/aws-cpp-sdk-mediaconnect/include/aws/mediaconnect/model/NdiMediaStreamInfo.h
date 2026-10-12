@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
+#include <aws/mediaconnect/model/ColorInformation.h>
 #include <aws/mediaconnect/model/FrameResolution.h>
 #include <aws/mediaconnect/model/ScanMode.h>
 
@@ -108,6 +109,25 @@ class NdiMediaStreamInfo {
 
   ///@{
   /**
+   * <p> The color signaling of the video stream. Used when the
+   * <code>streamType</code> is <code>Video</code>. </p>
+   */
+  inline const ColorInformation& GetColor() const { return m_color; }
+  inline bool ColorHasBeenSet() const { return m_colorHasBeenSet; }
+  template <typename ColorT = ColorInformation>
+  void SetColor(ColorT&& value) {
+    m_colorHasBeenSet = true;
+    m_color = std::forward<ColorT>(value);
+  }
+  template <typename ColorT = ColorInformation>
+  NdiMediaStreamInfo& WithColor(ColorT&& value) {
+    SetColor(std::forward<ColorT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p> The width and height dimensions of the video frame in pixels. Used when the
    * <code>streamType</code> is <code>Video</code>. </p>
    */
@@ -186,6 +206,8 @@ class NdiMediaStreamInfo {
 
   ScanMode m_scanMode{ScanMode::NOT_SET};
 
+  ColorInformation m_color;
+
   FrameResolution m_frameResolution;
 
   Aws::String m_frameRate;
@@ -197,6 +219,7 @@ class NdiMediaStreamInfo {
   bool m_codecHasBeenSet = false;
   bool m_streamIdHasBeenSet = false;
   bool m_scanModeHasBeenSet = false;
+  bool m_colorHasBeenSet = false;
   bool m_frameResolutionHasBeenSet = false;
   bool m_frameRateHasBeenSet = false;
   bool m_channelsHasBeenSet = false;

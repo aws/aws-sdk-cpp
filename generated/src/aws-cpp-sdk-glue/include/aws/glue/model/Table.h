@@ -13,6 +13,7 @@
 #include <aws/glue/model/Column.h>
 #include <aws/glue/model/FederatedTable.h>
 #include <aws/glue/model/IcebergTableMetadata.h>
+#include <aws/glue/model/RLSProperties.h>
 #include <aws/glue/model/StorageDescriptor.h>
 #include <aws/glue/model/TableIdentifier.h>
 #include <aws/glue/model/ViewDefinition.h>
@@ -536,6 +537,25 @@ class Table {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A <code>RLSProperties</code> structure that describes the default row-level
+   * security policy of the table.</p>
+   */
+  inline const RLSProperties& GetRLSProperties() const { return m_rLSProperties; }
+  inline bool RLSPropertiesHasBeenSet() const { return m_rLSPropertiesHasBeenSet; }
+  template <typename RLSPropertiesT = RLSProperties>
+  void SetRLSProperties(RLSPropertiesT&& value) {
+    m_rLSPropertiesHasBeenSet = true;
+    m_rLSProperties = std::forward<RLSPropertiesT>(value);
+  }
+  template <typename RLSPropertiesT = RLSProperties>
+  Table& WithRLSProperties(RLSPropertiesT&& value) {
+    SetRLSProperties(std::forward<RLSPropertiesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -588,6 +608,8 @@ class Table {
   IcebergTableMetadata m_icebergTableMetadata;
 
   std::shared_ptr<TableStatus> m_status;
+
+  RLSProperties m_rLSProperties;
   bool m_nameHasBeenSet = false;
   bool m_databaseNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
@@ -614,6 +636,7 @@ class Table {
   bool m_isMaterializedViewHasBeenSet = false;
   bool m_icebergTableMetadataHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_rLSPropertiesHasBeenSet = false;
 };
 
 }  // namespace Model

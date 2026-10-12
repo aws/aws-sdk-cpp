@@ -12,6 +12,7 @@
 #include <aws/securityagent/model/CodeRemediationTask.h>
 #include <aws/securityagent/model/ConfidenceLevel.h>
 #include <aws/securityagent/model/FindingStatus.h>
+#include <aws/securityagent/model/LinkedIssue.h>
 #include <aws/securityagent/model/RiskLevel.h>
 #include <aws/securityagent/model/ValidationStatus.h>
 #include <aws/securityagent/model/VerificationScript.h>
@@ -528,6 +529,25 @@ class Finding {
 
   ///@{
   /**
+   * <p>The issue in a third-party issue tracker that this finding has been exported
+   * to.</p>
+   */
+  inline const LinkedIssue& GetLinkedIssue() const { return m_linkedIssue; }
+  inline bool LinkedIssueHasBeenSet() const { return m_linkedIssueHasBeenSet; }
+  template <typename LinkedIssueT = LinkedIssue>
+  void SetLinkedIssue(LinkedIssueT&& value) {
+    m_linkedIssueHasBeenSet = true;
+    m_linkedIssue = std::forward<LinkedIssueT>(value);
+  }
+  template <typename LinkedIssueT = LinkedIssue>
+  Finding& WithLinkedIssue(LinkedIssueT&& value) {
+    SetLinkedIssue(std::forward<LinkedIssueT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The date and time the finding was created, in UTC format.</p>
    */
   inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -614,6 +634,8 @@ class Finding {
 
   Aws::String m_originalFindingId;
 
+  LinkedIssue m_linkedIssue;
+
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::Utils::DateTime m_updatedAt{};
@@ -643,6 +665,7 @@ class Finding {
   bool m_alignmentRationaleHasBeenSet = false;
   bool m_revalidationJobIdsHasBeenSet = false;
   bool m_originalFindingIdHasBeenSet = false;
+  bool m_linkedIssueHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };

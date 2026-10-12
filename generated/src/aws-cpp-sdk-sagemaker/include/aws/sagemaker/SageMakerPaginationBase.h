@@ -89,6 +89,7 @@
 #include <aws/sagemaker/model/ListTrainingJobsForHyperParameterTuningJobPaginationTraits.h>
 #include <aws/sagemaker/model/ListTrainingJobsPaginationTraits.h>
 #include <aws/sagemaker/model/ListTrainingPlansPaginationTraits.h>
+#include <aws/sagemaker/model/ListTrainingSessionsPaginationTraits.h>
 #include <aws/sagemaker/model/ListTransformJobsPaginationTraits.h>
 #include <aws/sagemaker/model/ListTrialComponentsPaginationTraits.h>
 #include <aws/sagemaker/model/ListTrialsPaginationTraits.h>
@@ -1065,6 +1066,18 @@ class SageMakerPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTrainingPlansRequest,
                                              Pagination::ListTrainingPlansPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListTrainingSessions operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTrainingSessionsRequest,
+                                    Pagination::ListTrainingSessionsPaginationTraits<DerivedClient>>
+  ListTrainingSessionsPaginator(const Model::ListTrainingSessionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTrainingSessionsRequest,
+                                             Pagination::ListTrainingSessionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

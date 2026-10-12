@@ -26,6 +26,8 @@
 #include <aws/securityagent/model/BatchDeletePentestsRequest.h>
 #include <aws/securityagent/model/BatchDeleteSecurityRequirementsRequest.h>
 #include <aws/securityagent/model/BatchDeleteThreatModelsRequest.h>
+#include <aws/securityagent/model/BatchDisassociateFindingIssueRequest.h>
+#include <aws/securityagent/model/BatchExportFindingsRequest.h>
 #include <aws/securityagent/model/BatchGetAgentSpacesRequest.h>
 #include <aws/securityagent/model/BatchGetArtifactMetadataRequest.h>
 #include <aws/securityagent/model/BatchGetCodeReviewJobTasksRequest.h>
@@ -334,6 +336,29 @@ BatchDeleteThreatModelsOutcome SecurityAgentClient::BatchDeleteThreatModels(cons
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? BatchDeleteThreatModelsOutcome(result.GetResultWithOwnership())
                             : BatchDeleteThreatModelsOutcome(std::move(result.GetError()));
+}
+
+BatchDisassociateFindingIssueOutcome SecurityAgentClient::BatchDisassociateFindingIssue(
+    const BatchDisassociateFindingIssueRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/BatchDisassociateFindingIssue");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchDisassociateFindingIssueOutcome(result.GetResultWithOwnership())
+                            : BatchDisassociateFindingIssueOutcome(std::move(result.GetError()));
+}
+
+BatchExportFindingsOutcome SecurityAgentClient::BatchExportFindings(const BatchExportFindingsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/BatchExportFindings");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchExportFindingsOutcome(result.GetResultWithOwnership())
+                            : BatchExportFindingsOutcome(std::move(result.GetError()));
 }
 
 BatchGetAgentSpacesOutcome SecurityAgentClient::BatchGetAgentSpaces(const BatchGetAgentSpacesRequest& request) const {

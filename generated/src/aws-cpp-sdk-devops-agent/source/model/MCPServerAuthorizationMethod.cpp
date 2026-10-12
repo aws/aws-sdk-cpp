@@ -19,6 +19,7 @@ static const int oauth_client_credentials_HASH = HashingUtils::HashString("oauth
 static const int oauth_3lo_HASH = HashingUtils::HashString("oauth-3lo");
 static const int api_key_HASH = HashingUtils::HashString("api-key");
 static const int bearer_token_HASH = HashingUtils::HashString("bearer-token");
+static const int custom_headers_HASH = HashingUtils::HashString("custom-headers");
 
 MCPServerAuthorizationMethod GetMCPServerAuthorizationMethodForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -30,6 +31,8 @@ MCPServerAuthorizationMethod GetMCPServerAuthorizationMethodForName(const Aws::S
     return MCPServerAuthorizationMethod::api_key;
   } else if (hashCode == bearer_token_HASH) {
     return MCPServerAuthorizationMethod::bearer_token;
+  } else if (hashCode == custom_headers_HASH) {
+    return MCPServerAuthorizationMethod::custom_headers;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -52,6 +55,8 @@ Aws::String GetNameForMCPServerAuthorizationMethod(MCPServerAuthorizationMethod 
       return "api-key";
     case MCPServerAuthorizationMethod::bearer_token:
       return "bearer-token";
+    case MCPServerAuthorizationMethod::custom_headers:
+      return "custom-headers";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

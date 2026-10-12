@@ -17,6 +17,7 @@ namespace ProviderTypeMapper {
 
 static const int SOURCE_CODE_HASH = HashingUtils::HashString("SOURCE_CODE");
 static const int DOCUMENTATION_HASH = HashingUtils::HashString("DOCUMENTATION");
+static const int ISSUE_TRACKING_HASH = HashingUtils::HashString("ISSUE_TRACKING");
 
 ProviderType GetProviderTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ ProviderType GetProviderTypeForName(const Aws::String& name) {
     return ProviderType::SOURCE_CODE;
   } else if (hashCode == DOCUMENTATION_HASH) {
     return ProviderType::DOCUMENTATION;
+  } else if (hashCode == ISSUE_TRACKING_HASH) {
+    return ProviderType::ISSUE_TRACKING;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForProviderType(ProviderType enumValue) {
       return "SOURCE_CODE";
     case ProviderType::DOCUMENTATION:
       return "DOCUMENTATION";
+    case ProviderType::ISSUE_TRACKING:
+      return "ISSUE_TRACKING";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {
