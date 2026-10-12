@@ -368,12 +368,12 @@ TEST_F(S3UnitTest, TemporarilyUnavailableIsRetryable) {
   auto mockRequest = Aws::MakeShared<Standard::StandardHttpRequest>(
     ALLOCATION_TAG, "https://mock.example/bucket/key", HttpMethod::HTTP_PUT);
   mockRequest->SetResponseStreamFactory([]() -> IOStream* {
-    return Aws::New<StringStream>(ALLOCATION_TAG,
-      "<Error><Code>TemporarilyUnavailable</Code>"
-      "<Message>Storage service is temporarily not available.</Message></Error>",
-      std::ios_base::in | std::ios_base::binary);
+    return Aws::New<StringStream>(ALLOCATION_TAG);
   });
   auto mockResponse = Aws::MakeShared<Standard::StandardHttpResponse>(ALLOCATION_TAG, mockRequest);
+  mockResponse->GetResponseBody()
+    << "<Error><Code>TemporarilyUnavailable</Code>"
+       "<Message>Storage service is temporarily not available.</Message></Error>";
   mockResponse->SetResponseCode(HttpResponseCode::SERVICE_UNAVAILABLE);
 
   const auto error = S3ErrorMarshaller().BuildAWSError(mockResponse);
