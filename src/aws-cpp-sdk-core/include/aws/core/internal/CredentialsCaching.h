@@ -8,6 +8,7 @@
 #include <aws/core/Core_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/Outcome.h>
+#include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/threading/ReaderWriterLock.h>
 #include <aws/crt/Optional.h>
@@ -205,7 +206,12 @@ namespace Aws
 
                 if (m_cached)
                 {
-                    m_cached->nextRefreshAllowedAtMs = nowMs + Jitter(std::chrono::minutes(5), std::chrono::minutes(10)).count();
+                    const std::chrono::milliseconds backoff = Jitter(std::chrono::minutes(5), std::chrono::minutes(10));
+                    m_cached->nextRefreshAllowedAtMs = nowMs + backoff.count();
+                    AWS_LOGSTREAM_WARN("CredentialsCachingState", "Credential refresh failed: "
+                        << (result.errorMessage.empty() ? Aws::String("the credential source returned expired credentials") : result.errorMessage)
+                        << ". The SDK will continue using cached credentials. A refresh of these credentials will be attempted again after "
+                        << std::chrono::duration_cast<std::chrono::seconds>(backoff).count() << " seconds.");
                     return Aws::Utils::Outcome<CredentialsT, Aws::String>(m_cached->credentials);
                 }
                 return Aws::Utils::Outcome<CredentialsT, Aws::String>(

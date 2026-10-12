@@ -13,18 +13,17 @@
 
 namespace Aws {
     namespace Auth {
-        class CredentialsCachingProvider;
-
         /**
          * To support usage of SSO credentials
          */
+        class CredentialsCachingProvider;
+
         class AWS_CORE_API SSOCredentialsProvider : public AWSCredentialsProvider
         {
         public:
             SSOCredentialsProvider();
             explicit SSOCredentialsProvider(const Aws::String& profile);
             explicit SSOCredentialsProvider(const Aws::String& profile, std::shared_ptr<const Aws::Client::ClientConfiguration> config);
-
             /**
              * Retrieves the credentials if found, otherwise returns empty credential set.
              */
@@ -36,10 +35,29 @@ namespace Aws {
             void Invalidate(const Aws::String& accessKeyId) override;
 
         private:
+            Aws::UniquePtr<Aws::Internal::SSOCredentialsClient> m_client;
+
+            // Profile description variables
+            Aws::String m_profileToUse;
+
+            // The AWS account ID that temporary AWS credentials are resolved for.
+            Aws::String m_ssoAccountId;
+            // The AWS region where the SSO directory for the given sso_start_url is hosted.
+            // This is independent of the general region configuration and MUST NOT be conflated.
+            Aws::String m_ssoRegion;
+            // The expiration time of the accessToken.
+            Aws::Utils::DateTime m_expiresAt;
+            // The SSO Token Provider
+            Aws::Auth::SSOBearerTokenProvider m_bearerTokenProvider;
+            // The client configuration to use
+            std::shared_ptr<const Aws::Client::ClientConfiguration> m_config;
+            std::shared_ptr<CredentialsCachingProvider> m_cachingProvider;
+
+            // RetrieveCredentials loads credentials with the cached SSO token and GetRoleCredentials.
+            AWSCredentials RetrieveCredentials();
             // SSORetrieveProvider retrieves credentials for m_cachingProvider.
             class SSORetrieveProvider;
-
-            std::shared_ptr<CredentialsCachingProvider> m_cachingProvider;
+            Aws::String LoadAccessTokenFile(const Aws::String& ssoAccessTokenPath);
         };
     } // namespace Auth
 } // namespace Aws

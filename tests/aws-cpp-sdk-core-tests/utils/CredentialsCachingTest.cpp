@@ -147,8 +147,9 @@ TEST_F(CredentialsCachingTest, RunsSepTestCases)
             }
             if (type == "invalidate")
             {
-                cache.Invalidate(cachedAkid);
-                if (issued.count(cachedAkid)) { issued[cachedAkid].expiration = *now; }
+                const Aws::String rejectedAkid = step.GetString("rejectedAccessKeyId");
+                cache.Invalidate(rejectedAkid);
+                if (rejectedAkid == cachedAkid && issued.count(cachedAkid)) { issued[cachedAkid].expiration = *now; }
                 continue;
             }
 

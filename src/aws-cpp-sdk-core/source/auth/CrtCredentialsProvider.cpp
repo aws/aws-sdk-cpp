@@ -6,6 +6,7 @@
 #include <aws/core/auth/CredentialsCachingProvider.h>
 #include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/memory/AWSMemory.h>
+#include <aws/core/utils/threading/ReaderWriterLock.h>
 #include <aws/crt/auth/Credentials.h>
 
 #include <condition_variable>
@@ -13,6 +14,7 @@
 
 using namespace Aws::Auth;
 using namespace Aws::Utils;
+using namespace Aws::Utils::Threading;
 
 namespace {
 const char* CRT_CREDS_PROVIDER_TAG = "CrtCredentialsProvider";
@@ -25,27 +27,47 @@ struct RefreshState {
 };
 }  // namespace
 
-// CrtRetrieveProvider retrieves credentials from the CRT provider.
+// CrtRetrieveProvider retrieves credentials through the owner's RetrieveCredentials().
 class CrtCredentialsProvider::CrtRetrieveProvider : public AWSCredentialsProvider {
  public:
-  CrtRetrieveProvider(std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider> credentialsProvider,
-                       std::chrono::milliseconds providerFuturesTimeoutMs, Aws::Client::UserAgentFeature userAgentFeature);
-  AWSCredentials GetAWSCredentials() override;
+  explicit CrtRetrieveProvider(CrtCredentialsProvider& owner) : m_owner(owner) {}
+
+  AWSCredentials GetAWSCredentials() override { return m_owner.RetrieveCredentials(); }
 
  private:
-  std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider> m_credentialsProvider;
-  std::chrono::milliseconds m_providerFuturesTimeoutMs;
-  Aws::Client::UserAgentFeature m_userAgentFeature;
+  CrtCredentialsProvider& m_owner;
 };
 
-CrtCredentialsProvider::CrtRetrieveProvider::CrtRetrieveProvider(
-    std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider> credentialsProvider,
-    std::chrono::milliseconds providerFuturesTimeoutMs, Aws::Client::UserAgentFeature userAgentFeature)
-    : m_credentialsProvider{std::move(credentialsProvider)},
+CrtCredentialsProvider::CrtCredentialsProvider(
+    const std::function<std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider>()>& credentialsProviderFactory,
+    std::chrono::milliseconds providerFuturesTimeoutMs, Aws::Client::UserAgentFeature userAgentFeature, const Aws::String& providerName)
+    : m_credentialsProvider{credentialsProviderFactory()},
+      m_cachingProvider{Aws::MakeShared<CredentialsCachingProvider>(CRT_CREDS_PROVIDER_TAG, Aws::MakeShared<CrtRetrieveProvider>(CRT_CREDS_PROVIDER_TAG, *this))},
       m_providerFuturesTimeoutMs{providerFuturesTimeoutMs},
-      m_userAgentFeature{userAgentFeature} {}
+      m_userAgentFeature{userAgentFeature},
+      m_providerName{providerName} {
+  if (m_credentialsProvider && m_credentialsProvider->IsValid()) {
+    m_state = STATE::INITIALIZED;
+  }
+}
 
-AWSCredentials CrtCredentialsProvider::CrtRetrieveProvider::GetAWSCredentials() {
+CrtCredentialsProvider::~CrtCredentialsProvider() = default;
+
+AWSCredentials CrtCredentialsProvider::GetAWSCredentials() {
+  if (m_state != STATE::INITIALIZED) {
+    return AWSCredentials{};
+  }
+  return m_cachingProvider->GetAWSCredentials();
+}
+
+void CrtCredentialsProvider::Invalidate(const Aws::String& accessKeyId) {
+  if (m_state != STATE::INITIALIZED) {
+    return;
+  }
+  m_cachingProvider->Invalidate(accessKeyId);
+}
+
+AWSCredentials CrtCredentialsProvider::RetrieveCredentials() {
   auto state = Aws::MakeShared<RefreshState>(CRT_CREDS_PROVIDER_TAG);
 
   m_credentialsProvider->GetCredentials([state](const std::shared_ptr<Crt::Auth::Credentials>& crtCredentials, int errorCode) -> void {
@@ -71,35 +93,6 @@ AWSCredentials CrtCredentialsProvider::CrtRetrieveProvider::GetAWSCredentials() 
     credentials.AddUserAgentFeature(m_userAgentFeature);
   }
   return credentials;
-}
-
-CrtCredentialsProvider::CrtCredentialsProvider(
-    const std::function<std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider>()>& credentialsProviderFactory,
-    std::chrono::milliseconds providerFuturesTimeoutMs, Aws::Client::UserAgentFeature userAgentFeature, const Aws::String& providerName)
-    : m_credentialsProvider{credentialsProviderFactory()},
-      m_providerName{providerName} {
-  if (m_credentialsProvider && m_credentialsProvider->IsValid()) {
-    m_state = STATE::INITIALIZED;
-    auto retrieveProvider = Aws::MakeShared<CrtRetrieveProvider>(CRT_CREDS_PROVIDER_TAG, m_credentialsProvider,
-                                                            providerFuturesTimeoutMs, userAgentFeature);
-    m_cachingProvider = Aws::MakeShared<CredentialsCachingProvider>(CRT_CREDS_PROVIDER_TAG, retrieveProvider);
-  }
-}
-
-CrtCredentialsProvider::~CrtCredentialsProvider() = default;
-
-AWSCredentials CrtCredentialsProvider::GetAWSCredentials() {
-  if (m_state != STATE::INITIALIZED) {
-    return AWSCredentials{};
-  }
-  return m_cachingProvider->GetAWSCredentials();
-}
-
-void CrtCredentialsProvider::Invalidate(const Aws::String& accessKeyId) {
-  if (m_state != STATE::INITIALIZED) {
-    return;
-  }
-  m_cachingProvider->Invalidate(accessKeyId);
 }
 
 AWSCredentials CrtCredentialsProvider::ExtractCredentialsFromCrt(const Aws::Crt::Auth::Credentials& crtCredentials) {

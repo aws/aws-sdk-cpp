@@ -51,12 +51,15 @@ class AWS_CORE_API CrtCredentialsProvider : public AWSCredentialsProvider {
   };
 
   static AWSCredentials ExtractCredentialsFromCrt(const Aws::Crt::Auth::Credentials& crtCredentials);
-
+  // RetrieveCredentials makes one blocking call into the CRT provider.
+  AWSCredentials RetrieveCredentials();
   // CrtRetrieveProvider retrieves credentials for m_cachingProvider.
   class CrtRetrieveProvider;
 
   std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider> m_credentialsProvider;
   std::shared_ptr<CredentialsCachingProvider> m_cachingProvider;
+  std::chrono::milliseconds m_providerFuturesTimeoutMs;
+  Aws::Client::UserAgentFeature m_userAgentFeature;
   Aws::String m_providerName;
   STATE m_state{STATE::NOT_INITIALIZED};
 };
