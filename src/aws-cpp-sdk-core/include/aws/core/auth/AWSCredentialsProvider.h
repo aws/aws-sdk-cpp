@@ -76,8 +76,7 @@ namespace Aws
             virtual AWSCredentials GetAWSCredentials() = 0;
 
             /**
-             * Called when a target service rejected the credentials that signed a request. Caching providers
-             * override this to mark theirs for refresh; an override must not discard them.
+             * Invalidate tells a caching provider that a service rejected the credentials with this access key ID.
              */
             virtual void Invalidate(const Aws::String& /*rejectedAccessKeyId*/) {}
 
@@ -235,12 +234,12 @@ namespace Aws
             */
             AWSCredentials GetAWSCredentials() override;
 
-            // Marks the cached credentials for refresh, only if they are the ones that were rejected.
+            // Invalidate marks the cached credentials for refresh if they match accessKeyId.
             void Invalidate(const Aws::String& accessKeyId) override;
 
         private:
-            // Fetch-only provider composed into m_cachingProvider; defined in the .cpp.
-            class InstanceProfileFetchOnlyProvider;
+            // InstanceProfileRetrieveProvider retrieves credentials for m_cachingProvider.
+            class InstanceProfileRetrieveProvider;
 
             std::shared_ptr<CredentialsCachingProvider> m_cachingProvider;
         };

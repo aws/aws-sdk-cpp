@@ -9,6 +9,8 @@
 #include <aws/core/auth/AWSCredentialsProvider.h>
 
 #include <memory>
+#include <mutex>
+#include <atomic>
 
 namespace Aws
 {
@@ -50,12 +52,12 @@ namespace Aws
 
             AWSCredentials GetAWSCredentials() override;
 
-            // Marks the cached credentials for refresh, only if they are the ones that were rejected.
+            // Invalidate marks the cached credentials for refresh if they match accessKeyId.
             void Invalidate(const Aws::String& accessKeyId) override;
 
         private:
-            // Fetch-only provider composed into m_cachingProvider; defined in the .cpp.
-            class STSFetchOnlyProvider;
+            // STSRetrieveProvider retrieves credentials for m_cachingProvider.
+            class STSRetrieveProvider;
 
             std::shared_ptr<CredentialsCachingProvider> m_cachingProvider;
         };

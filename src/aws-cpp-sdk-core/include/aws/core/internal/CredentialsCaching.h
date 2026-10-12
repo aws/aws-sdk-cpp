@@ -21,25 +21,24 @@ namespace Aws
 {
     namespace Internal
     {
-        // Refresh windows. Advisory scales with lifetime; mandatory is fixed at 1 min before expiry.
+        // CREDENTIAL_MANDATORY_WINDOW is how long before expiry a refresh blocks the caller.
         constexpr std::chrono::milliseconds CREDENTIAL_MANDATORY_WINDOW = std::chrono::minutes(1);
-        constexpr std::chrono::milliseconds CREDENTIAL_ADVISORY_WINDOW_SHORT = std::chrono::minutes(5);   // lifetime <= 20 min
-        constexpr std::chrono::milliseconds CREDENTIAL_ADVISORY_WINDOW_MEDIUM = std::chrono::minutes(15); // 20 min < lifetime < 90 min
-        constexpr std::chrono::milliseconds CREDENTIAL_ADVISORY_WINDOW_LONG = std::chrono::minutes(60);   // lifetime >= 90 min
+        // CREDENTIAL_ADVISORY_WINDOW_SHORT, _MEDIUM, and _LONG apply to lifetimes up to 20 min, under 90 min, and longer.
+        constexpr std::chrono::milliseconds CREDENTIAL_ADVISORY_WINDOW_SHORT = std::chrono::minutes(5);
+        constexpr std::chrono::milliseconds CREDENTIAL_ADVISORY_WINDOW_MEDIUM = std::chrono::minutes(15);
+        constexpr std::chrono::milliseconds CREDENTIAL_ADVISORY_WINDOW_LONG = std::chrono::minutes(60);
         constexpr std::chrono::milliseconds CREDENTIAL_ADVISORY_LIFETIME_LOW = std::chrono::minutes(20);
         constexpr std::chrono::milliseconds CREDENTIAL_ADVISORY_LIFETIME_HIGH = std::chrono::minutes(90);
 
-        // Backoff after a failed refresh: jittered 5-10 min before retrying the source.
+        // CREDENTIALS_REFRESH_BACKOFF_MIN and _MAX bound the jittered wait after a failed refresh.
         constexpr std::chrono::milliseconds CREDENTIALS_REFRESH_BACKOFF_MIN = std::chrono::minutes(5);
         constexpr std::chrono::milliseconds CREDENTIALS_REFRESH_BACKOFF_MAX = std::chrono::minutes(10);
 
-        // Non-recoverable errors: briefly cache the failure (1-5 s) so a retry loop can't hammer the source.
+        // CREDENTIAL_NONRECOVERABLE_CACHE_MIN and _MAX bound how long a non-recoverable error is cached.
         constexpr std::chrono::milliseconds CREDENTIAL_NONRECOVERABLE_CACHE_MIN = std::chrono::seconds(1);
         constexpr std::chrono::milliseconds CREDENTIAL_NONRECOVERABLE_CACHE_MAX = std::chrono::seconds(5);
 
-        // Outcome of one credential fetch. Recoverable backs off and keeps serving the cache;
-        // NonRecoverable raises immediately and is briefly cached so a retry loop cannot hammer the source.
-        // Construct through Success(), Recoverable(), or NonRecoverable().
+        // RefreshResult is the outcome of one credential retrieve, built with Success(), Recoverable(), or NonRecoverable().
         template<typename CredentialsT>
         class RefreshResult
         {
@@ -67,7 +66,7 @@ namespace Aws
 
             Status status;
             CredentialsT credentials;
-            Aws::Crt::Optional<Aws::Utils::DateTime> expiration; // engaged only when status == Success
+            Aws::Crt::Optional<Aws::Utils::DateTime> expiration;
             Aws::String errorMessage;
 
         private:
@@ -77,38 +76,36 @@ namespace Aws
                   expiration(std::move(expiration)), errorMessage(std::move(errorMessage)) {}
         };
 
-        // Internal credential cache, owned by CredentialsCachingProvider. One fetch in flight at a time;
-        // a failed fetch never discards cached credentials.
+        // CredentialsCachingState caches credentials and runs the refresh lifecycle for CredentialsCachingProvider.
         template<typename CredentialsT>
         class AWS_CORE_LOCAL CredentialsCachingState
         {
         public:
-            using FetchFunction = std::function<RefreshResult<CredentialsT>()>;
+            using RetrieveFunction = std::function<RefreshResult<CredentialsT>()>;
             using ClockFunction = std::function<Aws::Utils::DateTime()>;
-            using JitterFunction = std::function<double()>; // uniform sample in [0, 1)
+            using JitterFunction = std::function<double()>;
             using IdentifierFunction = std::function<Aws::String(const CredentialsT&)>;
 
-            // Per-call observation of the resolution flow.
+            // ResolveObservation records what one GetCredentials() call did.
             struct ResolveObservation
             {
-                bool sourceContacted{false};        // the credential source was contacted on this call
-                bool rateLimited{false};            // the refresh backoff was in effect at the start of the call
-                bool returnedNewCredentials{false}; // the returned credentials were newly fetched this call
-                bool nonRecoverable{false};         // the raised error was non-recoverable
-                std::chrono::milliseconds advisoryWindow{0}; // advisory window in effect for the returned creds
+                bool sourceContacted{false};
+                bool rateLimited{false};
+                bool returnedNewCredentials{false};
+                bool nonRecoverable{false};
+                std::chrono::milliseconds advisoryWindow{0};
             };
 
-            explicit CredentialsCachingState(FetchFunction fetch,
+            explicit CredentialsCachingState(RetrieveFunction retrieve,
                                              IdentifierFunction identifier,
                                              ClockFunction clock = &Aws::Utils::DateTime::Now,
                                              JitterFunction jitter = &CredentialsCachingState::DefaultJitter)
-                : m_fetch(std::move(fetch)), m_identifier(std::move(identifier)),
+                : m_retrieve(std::move(retrieve)), m_identifier(std::move(identifier)),
                   m_clock(std::move(clock)), m_jitter(std::move(jitter))
             {
             }
 
-            // Resolve credentials through the cache. Returns cached (serving last-good on a failed refresh),
-            // or an error when nothing is cached or the error is non-recoverable.
+            // GetCredentials returns cached credentials, refreshing them first when a refresh is due.
             Aws::Utils::Outcome<CredentialsT, Aws::String> GetCredentials(ResolveObservation* observation = nullptr)
             {
                 ResolveObservation local;
@@ -129,7 +126,7 @@ namespace Aws
                                      : Phase::NoCredentials;
                     rateLimited = IsRateLimitedLocked(nowMs);
                     nonRecoverableCached = NonRecoverableCachedLocked(nowMs);
-                    if (nonRecoverableCached) { cachedError = m_cachedErrorMessage; } // copy only when it's returned
+                    if (nonRecoverableCached) { cachedError = m_cachedErrorMessage; }
                     if (m_cached)
                     {
                         cachedCredentials = m_cached->credentials;
@@ -137,11 +134,9 @@ namespace Aws
                     }
                 }
 
-                // rateLimited only matters once a refresh is due; report it as such.
                 const bool needsRefresh = state == Phase::Advisory || state == Phase::Mandatory || state == Phase::Expired;
                 obs.rateLimited = needsRefresh && rateLimited;
 
-                // A cached non-recoverable error is still live: re-raise it without contacting the source.
                 if (nonRecoverableCached)
                 {
                     obs.nonRecoverable = true;
@@ -154,9 +149,8 @@ namespace Aws
                     return Aws::Utils::Outcome<CredentialsT, Aws::String>(cachedCredentials);
                 case Action::RefreshNonBlocking:
                 {
-                    // Advisory: do not block. If another caller is already refreshing, serve the cache.
-                    std::unique_lock<std::mutex> gate(m_refreshGate, std::try_to_lock);
-                    if (!gate.owns_lock())
+                    std::unique_lock<std::mutex> lock(m_refreshLock, std::try_to_lock);
+                    if (!lock.owns_lock())
                     {
                         Aws::Utils::Threading::ReaderLockGuard guard(m_stateLock);
                         if (m_cached)
@@ -166,57 +160,52 @@ namespace Aws
                         }
                         return Aws::Utils::Outcome<CredentialsT, Aws::String>(cachedCredentials);
                     }
-                    return RefreshUnderGate(obs);
+                    return RefreshUnderLock(obs);
                 }
-                case Action::FetchBlocking:
+                case Action::RetrieveBlocking:
                 default:
                 {
-                    // Initial fetch or mandatory/expired: one caller performs the refresh, others wait.
-                    std::unique_lock<std::mutex> gate(m_refreshGate);
-                    return RefreshUnderGate(obs);
+                    std::unique_lock<std::mutex> lock(m_refreshLock);
+                    return RefreshUnderLock(obs);
                 }
                 }
             }
 
-            // Expires the cached credentials so the next GetCredentials() takes the mandatory path. Never
-            // discards them, and never touches the refresh backoff.
+            // Invalidate expires the cached credentials if they match rejectedIdentifier, keeping them and the backoff.
             void Invalidate(const Aws::String& rejectedIdentifier)
             {
-                // Marked even while a refresh is in flight: if that refresh fails, the rejected credentials stay cached.
                 Aws::Utils::Threading::WriterLockGuard guard(m_stateLock);
                 if (!m_cached)
                 {
                     return;
                 }
-                // A concurrent refresh already replaced them, so the rejection is stale.
                 if (m_identifier(m_cached->credentials) != rejectedIdentifier)
                 {
                     return;
                 }
-                m_cached->expiration = m_clock(); // route the next GetCredentials() through the mandatory path
+                m_cached->expiration = m_clock();
             }
 
         private:
-            // Where the cached credentials sit relative to their refresh windows.
+            // Phase is where the cached credentials sit relative to their refresh windows.
             enum class Phase
             {
-                NoCredentials, // nothing cached yet; the first caller fetches while others block
-                Valid,         // not yet due for refresh; return cached
-                Advisory,      // soft window; refresh is due, but concurrent callers keep serving cached creds
-                Mandatory,     // hard window; block the caller for a refresh
-                Expired        // past expiration; treated like Mandatory
+                NoCredentials,
+                Valid,
+                Advisory,
+                Mandatory,
+                Expired
             };
 
-            // What a GetCredentials() call should do, given the phase and whether a failed refresh is still
-            // within its backoff window.
+            // Action is what a GetCredentials() call does for a given phase and backoff state.
             enum class Action
             {
-                ReturnCached,       // Valid, or a needs-refresh state that is currently rate-limited
-                RefreshNonBlocking, // Advisory: refresh without blocking; if one is in flight, serve cache
-                FetchBlocking       // NoCredentials (initial fetch) or Mandatory/Expired: block the caller
+                ReturnCached,
+                RefreshNonBlocking,
+                RetrieveBlocking
             };
 
-            // Advisory window for a given credential lifetime.
+            // ComputeAdvisoryWindow returns the advisory window for a credential lifetime.
             static std::chrono::milliseconds ComputeAdvisoryWindow(std::chrono::milliseconds lifetime)
             {
                 if (lifetime <= CREDENTIAL_ADVISORY_LIFETIME_LOW)
@@ -230,8 +219,7 @@ namespace Aws
                 return CREDENTIAL_ADVISORY_WINDOW_LONG;
             }
 
-            // Classify the phase at `now`. Advisory is clamped >= mandatory so the mandatory boundary never
-            // precedes the advisory one.
+            // ClassifyPhase returns the phase at now, treating an advisory window shorter than the mandatory one as mandatory.
             static Phase ClassifyPhase(bool hasCredentials,
                                        const Aws::Utils::DateTime& now,
                                        const Aws::Utils::DateTime& expiration,
@@ -267,18 +255,17 @@ namespace Aws
                 return Phase::Valid;
             }
 
+            // DecideAction picks the action for a phase, skipping the refresh while the backoff is active.
             static Action DecideAction(Phase state, bool refreshRateLimited)
             {
-                // Initial fetch always attempts, regardless of backoff: there is nothing cached to serve yet.
                 if (state == Phase::NoCredentials)
                 {
-                    return Action::FetchBlocking;
+                    return Action::RetrieveBlocking;
                 }
                 if (state == Phase::Valid)
                 {
                     return Action::ReturnCached;
                 }
-                // A refresh is due; honor the backoff so a failing source is contacted at most once per window.
                 if (refreshRateLimited)
                 {
                     return Action::ReturnCached;
@@ -287,10 +274,10 @@ namespace Aws
                 {
                     return Action::RefreshNonBlocking;
                 }
-                return Action::FetchBlocking; // Mandatory or Expired
+                return Action::RetrieveBlocking;
             }
 
-            // Scale a uniform sample jitter01 in [0, 1) onto [lo, hi). Returns lo when hi <= lo.
+            // ScaleJitter maps jitter01 in [0, 1) onto [lo, hi), returning lo when hi <= lo.
             static std::chrono::milliseconds ScaleJitter(std::chrono::milliseconds lo,
                                                          std::chrono::milliseconds hi,
                                                          double jitter01)
@@ -302,13 +289,13 @@ namespace Aws
                 return lo + std::chrono::milliseconds(static_cast<int64_t>(jitter01 * static_cast<double>(span)));
             }
 
-            // Backoff after a failed refresh: uniform 5-10 min.
+            // ComputeRefreshBackoff returns the jittered wait after a failed refresh.
             static std::chrono::milliseconds ComputeRefreshBackoff(double jitter01)
             {
                 return ScaleJitter(CREDENTIALS_REFRESH_BACKOFF_MIN, CREDENTIALS_REFRESH_BACKOFF_MAX, jitter01);
             }
 
-            // Short cache of a non-recoverable error: uniform 1-5 s.
+            // ComputeNonRecoverableCacheDuration returns how long a non-recoverable error stays cached.
             static std::chrono::milliseconds ComputeNonRecoverableCacheDuration(double jitter01)
             {
                 return ScaleJitter(CREDENTIAL_NONRECOVERABLE_CACHE_MIN, CREDENTIAL_NONRECOVERABLE_CACHE_MAX, jitter01);
@@ -331,16 +318,13 @@ namespace Aws
                 return m_hasCachedError && nowMs < m_cachedErrorExpiresAtMs;
             }
 
-            // One refresh attempt; must hold m_refreshGate. The fetch runs without the state lock so
-            // concurrent readers keep getting the cached credentials.
-            Aws::Utils::Outcome<CredentialsT, Aws::String> RefreshUnderGate(ResolveObservation& obs)
+            // RefreshUnderLock runs one refresh attempt and must be called with m_refreshLock held.
+            Aws::Utils::Outcome<CredentialsT, Aws::String> RefreshUnderLock(ResolveObservation& obs)
             {
                 {
-                    // Re-check: another caller may have refreshed (or set the backoff) while we waited.
                     const Aws::Utils::DateTime now = m_clock();
                     const int64_t nowMs = now.Millis();
                     Aws::Utils::Threading::ReaderLockGuard guard(m_stateLock);
-                    // Honor a cached non-recoverable error even with nothing cached (it doesn't populate m_cached).
                     if (NonRecoverableCachedLocked(nowMs))
                     {
                         obs.nonRecoverable = true;
@@ -363,7 +347,7 @@ namespace Aws
                     }
                 }
 
-                const RefreshResult<CredentialsT> result = m_fetch();
+                const RefreshResult<CredentialsT> result = m_retrieve();
                 obs.sourceContacted = true;
                 const int64_t nowMs = m_clock().Millis();
 
@@ -387,7 +371,6 @@ namespace Aws
 
                 if (result.status == RefreshResult<CredentialsT>::Status::NonRecoverable)
                 {
-                    // Raise immediately, but briefly cache the error so a retry loop can't hammer the source.
                     m_hasCachedError = true;
                     m_cachedErrorMessage = result.errorMessage;
                     m_cachedErrorExpiresAtMs = nowMs + ComputeNonRecoverableCacheDuration(m_jitter()).count();
@@ -395,7 +378,6 @@ namespace Aws
                     return Aws::Utils::Outcome<CredentialsT, Aws::String>(result.errorMessage);
                 }
 
-                // Recoverable failure (or a success already expired): back off and serve last-good if any.
                 m_nextRefreshAllowedAtMs = nowMs + ComputeRefreshBackoff(m_jitter()).count();
                 if (m_cached)
                 {
@@ -406,12 +388,12 @@ namespace Aws
                     result.errorMessage.empty() ? Aws::String("NoCredentialsError") : result.errorMessage);
             }
 
-            FetchFunction m_fetch;
+            RetrieveFunction m_retrieve;
             IdentifierFunction m_identifier;
             ClockFunction m_clock;
             JitterFunction m_jitter;
 
-            // Cached credentials plus their derived timing. Held in an Optional so empty == no credentials.
+            // CachedCredentials holds the cached credentials and their refresh timing.
             struct CachedCredentials
             {
                 CredentialsT credentials;
@@ -419,11 +401,11 @@ namespace Aws
                 std::chrono::milliseconds advisoryWindow{CREDENTIAL_ADVISORY_WINDOW_MEDIUM};
             };
 
-            mutable Aws::Utils::Threading::ReaderWriterLock m_stateLock; // guards the cached fields below
-            std::mutex m_refreshGate;                                    // one refresh in flight at a time
+            mutable Aws::Utils::Threading::ReaderWriterLock m_stateLock;
+            std::mutex m_refreshLock;
 
-            Aws::Crt::Optional<CachedCredentials> m_cached;          // empty == no credentials cached yet
-            int64_t m_nextRefreshAllowedAtMs{0};   // 0 = not rate-limited
+            Aws::Crt::Optional<CachedCredentials> m_cached;
+            int64_t m_nextRefreshAllowedAtMs{0};
             bool m_hasCachedError{false};
             Aws::String m_cachedErrorMessage;
             int64_t m_cachedErrorExpiresAtMs{0};

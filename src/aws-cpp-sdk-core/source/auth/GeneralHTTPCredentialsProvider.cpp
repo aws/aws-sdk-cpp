@@ -39,11 +39,11 @@ namespace {
     }
 }  // namespace
 
-// Fetch-only: one blocking call to the ECS/EKS metadata endpoint, no cache of its own.
-class GeneralHTTPCredentialsProvider::GeneralHTTPFetchOnlyProvider : public AWSCredentialsProvider
+// GeneralHTTPRetrieveProvider retrieves credentials from the ECS or EKS metadata endpoint.
+class GeneralHTTPCredentialsProvider::GeneralHTTPRetrieveProvider : public AWSCredentialsProvider
 {
 public:
-    GeneralHTTPFetchOnlyProvider(std::shared_ptr<Aws::Internal::ECSCredentialsClient> client, Aws::String authTokenFilePath)
+    GeneralHTTPRetrieveProvider(std::shared_ptr<Aws::Internal::ECSCredentialsClient> client, Aws::String authTokenFilePath)
         : m_ecsCredentialsClient(std::move(client)),
           m_authTokenFilePath(std::move(authTokenFilePath))
     {
@@ -56,7 +56,7 @@ private:
     Aws::String m_authTokenFilePath;
 };
 
-AWSCredentials GeneralHTTPCredentialsProvider::GeneralHTTPFetchOnlyProvider::GetAWSCredentials()
+AWSCredentials GeneralHTTPCredentialsProvider::GeneralHTTPRetrieveProvider::GetAWSCredentials()
 {
     AWS_LOGSTREAM_INFO(GEN_HTTP_LOG_TAG, "Credentials have expired or will expire, attempting to re-pull from ECS IAM Service.");
     if (!m_ecsCredentialsClient)
@@ -240,10 +240,9 @@ GeneralHTTPCredentialsProvider::GeneralHTTPCredentialsProvider(const Aws::String
                                                                ShouldCreateFunc shouldCreateFunc) :
     m_authTokenFilePath(authTokenFilePath)
 {
-    AWS_UNREFERENCED_PARAM(refreshRateMs);
     if (shouldCreateFunc(relativeUri, absoluteUri, authToken))
     {
-        AWS_LOGSTREAM_INFO(GEN_HTTP_LOG_TAG, "Creating GeneralHTTPCredentialsProvider");
+        AWS_LOGSTREAM_INFO(GEN_HTTP_LOG_TAG, "Creating GeneralHTTPCredentialsProvider with refresh rate " << refreshRateMs);
         if (!relativeUri.empty()) {
             m_ecsCredentialsClient = Aws::MakeShared<Aws::Internal::ECSCredentialsClient>(GEN_HTTP_LOG_TAG, relativeUri.c_str(), AWS_ECS_CONTAINER_HOST, authToken.c_str());
         } else if (!absoluteUri.empty()) {
@@ -251,19 +250,18 @@ GeneralHTTPCredentialsProvider::GeneralHTTPCredentialsProvider(const Aws::String
         }
     }
 
-    auto fetchOnly = Aws::MakeShared<GeneralHTTPFetchOnlyProvider>(GEN_HTTP_LOG_TAG, m_ecsCredentialsClient, m_authTokenFilePath);
-    m_cachingProvider = Aws::MakeShared<CredentialsCachingProvider>(GEN_HTTP_LOG_TAG, fetchOnly);
+    auto retrieveProvider = Aws::MakeShared<GeneralHTTPRetrieveProvider>(GEN_HTTP_LOG_TAG, m_ecsCredentialsClient, m_authTokenFilePath);
+    m_cachingProvider = Aws::MakeShared<CredentialsCachingProvider>(GEN_HTTP_LOG_TAG, retrieveProvider);
 }
 
 GeneralHTTPCredentialsProvider::GeneralHTTPCredentialsProvider(
         const std::shared_ptr<Aws::Internal::ECSCredentialsClient>& client, long refreshRateMs) :
     m_ecsCredentialsClient(client)
 {
-    AWS_UNREFERENCED_PARAM(refreshRateMs);
-    AWS_LOGSTREAM_INFO(GEN_HTTP_LOG_TAG, "Creating GeneralHTTPCredentialsProvider with a pre-allocated client");
+    AWS_LOGSTREAM_INFO(GEN_HTTP_LOG_TAG, "Creating GeneralHTTPCredentialsProvider with a pre-allocated client " << refreshRateMs);
 
-    auto fetchOnly = Aws::MakeShared<GeneralHTTPFetchOnlyProvider>(GEN_HTTP_LOG_TAG, m_ecsCredentialsClient, m_authTokenFilePath);
-    m_cachingProvider = Aws::MakeShared<CredentialsCachingProvider>(GEN_HTTP_LOG_TAG, fetchOnly);
+    auto retrieveProvider = Aws::MakeShared<GeneralHTTPRetrieveProvider>(GEN_HTTP_LOG_TAG, m_ecsCredentialsClient, m_authTokenFilePath);
+    m_cachingProvider = Aws::MakeShared<CredentialsCachingProvider>(GEN_HTTP_LOG_TAG, retrieveProvider);
 }
 
 AWSCredentials GeneralHTTPCredentialsProvider::GetAWSCredentials()

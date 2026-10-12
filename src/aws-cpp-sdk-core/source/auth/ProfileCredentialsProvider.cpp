@@ -112,3 +112,5 @@ Aws::String ProfileCredentialsProvider::GetCredentialsProfileFilename() {
 Aws::String ProfileCredentialsProvider::GetProfileDirectory() { return ProfileCredentialsProviderImp::GetProfileDirectory(); }
 
 AWSCredentials ProfileCredentialsProvider::GetAWSCredentials() { return m_impl->GetAWSCredentials(); }
+
+void ProfileCredentialsProvider::Invalidate(const Aws::String& accessKeyId) { m_impl->Invalidate(accessKeyId); }

@@ -91,7 +91,7 @@ namespace Aws
             */
             AWSCredentials GetAWSCredentials() override;
 
-            // Marks the cached credentials for refresh, only if they are the ones that were rejected.
+            // Invalidate marks the cached credentials for refresh if they match accessKeyId.
             void Invalidate(const Aws::String& accessKeyId) override;
 
             static const char AWS_CONTAINER_AUTHORIZATION_TOKEN_FILE[];
@@ -106,8 +106,8 @@ namespace Aws
         private:
             Aws::String LoadTokenFromFile() const;
 
-            // Fetch-only provider composed into m_cachingProvider; defined in the .cpp.
-            class GeneralHTTPFetchOnlyProvider;
+            // GeneralHTTPRetrieveProvider retrieves credentials for m_cachingProvider.
+            class GeneralHTTPRetrieveProvider;
 
             std::shared_ptr<Aws::Internal::ECSCredentialsClient> m_ecsCredentialsClient;
             Aws::String m_authTokenFilePath;

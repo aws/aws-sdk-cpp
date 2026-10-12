@@ -16,9 +16,7 @@ namespace Aws
     namespace Auth
     {
         /**
-         * Caches an AWSCredentialsProvider's credentials: advisory/mandatory refresh windows, jittered
-         * backoff, a single in-flight fetch, and serving the last-good credentials when a fetch fails.
-         * Empty credentials from the wrapped provider mark a failed fetch.
+         * CredentialsCachingProvider caches another provider's credentials and refreshes them per the refresh lifecycle.
          */
         class AWS_CORE_API CredentialsCachingProvider final : public AWSCredentialsProvider
         {
@@ -28,7 +26,7 @@ namespace Aws
 
             AWSCredentials GetAWSCredentials() override;
 
-            // Marks the cached credentials for refresh, only if they are the ones that were rejected.
+            // Invalidate marks the cached credentials for refresh if they match accessKeyId.
             void Invalidate(const Aws::String& accessKeyId) override;
 
         private:

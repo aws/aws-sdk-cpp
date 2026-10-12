@@ -71,7 +71,7 @@ static const char AWS_CLIENT_LOG_TAG[] = "AWSClient";
 static const char AWS_LAMBDA_FUNCTION_NAME[] = "AWS_LAMBDA_FUNCTION_NAME";
 static const char X_AMZN_TRACE_ID[] = "_X_AMZN_TRACE_ID";
 
-// Error codes a target service uses to reject the credentials themselves.
+// EXPIRED_TOKEN_ERROR_CODE and INVALID_TOKEN_ERROR_CODE trigger InvalidateCredentials.
 static const char EXPIRED_TOKEN_ERROR_CODE[] = "ExpiredToken";
 static const char INVALID_TOKEN_ERROR_CODE[] = "InvalidToken";
 
@@ -277,7 +277,7 @@ static DateTime GetServerTimeFromError(const AWSError<CoreErrors> error)
     }
 }
 
-void AWSClient::NotifyCredentialsRejected(const AWSError<CoreErrors>& error, const Aws::String& accessKeyId) const
+void AWSClient::InvalidateCredentials(const AWSError<CoreErrors>& error, const Aws::String& accessKeyId) const
 {
     if (accessKeyId.empty())
     {
@@ -387,7 +387,7 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
             break;
         }
         lastError = outcome.GetError();
-        NotifyCredentialsRejected(outcome.GetError(), httpRequest->GetSigningAccessKey());
+        InvalidateCredentials(outcome.GetError(), httpRequest->GetSigningAccessKey());
 
         DateTime serverTime = GetServerTimeFromError(outcome.GetError());
         auto clockSkew = DateTime::Diff(serverTime, DateTime::Now());
@@ -568,7 +568,7 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
             break;
         }
         lastError = outcome.GetError();
-        NotifyCredentialsRejected(outcome.GetError(), httpRequest->GetSigningAccessKey());
+        InvalidateCredentials(outcome.GetError(), httpRequest->GetSigningAccessKey());
 
         DateTime serverTime = GetServerTimeFromError(outcome.GetError());
         auto clockSkew = DateTime::Diff(serverTime, DateTime::Now());
@@ -978,6 +978,7 @@ Http::HttpClient::AttemptOutcome AWSClient::OnAttemptCompleteAsync(const std::sh
     }
 
     context->lastError = outcome.GetError();
+    InvalidateCredentials(outcome.GetError(), context->httpRequest->GetSigningAccessKey());
 
     DateTime serverTime = GetServerTimeFromError(outcome.GetError());
     auto clockSkew = DateTime::Diff(serverTime, DateTime::Now());

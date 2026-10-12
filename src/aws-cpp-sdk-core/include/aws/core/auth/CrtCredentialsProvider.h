@@ -49,8 +49,8 @@ class AWS_CORE_API CrtCredentialsProvider : public AWSCredentialsProvider {
 
   static AWSCredentials ExtractCredentialsFromCrt(const Aws::Crt::Auth::Credentials& crtCredentials);
 
-  // Nested so it can call the private ExtractCredentialsFromCrt(); defined in the .cpp.
-  class CrtFetchOnlyProvider;
+  // CrtRetrieveProvider retrieves credentials for m_cachingProvider.
+  class CrtRetrieveProvider;
 
   std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider> m_credentialsProvider;
   std::shared_ptr<CredentialsCachingProvider> m_cachingProvider;

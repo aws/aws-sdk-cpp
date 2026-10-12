@@ -29,6 +29,9 @@ namespace Aws
              */
             virtual AWSCredentials GetAWSCredentials() override;
 
+            // Invalidate forwards to the provider that supplied the current credentials.
+            void Invalidate(const Aws::String& accessKeyId) override;
+
             /**
              * Gets all providers stored in this chain.
              */

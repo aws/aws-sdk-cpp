@@ -87,7 +87,7 @@ TEST_F(CredentialsCachingTest, RunsSepTestCases)
             if (initialState == "advisory") { *now = *now + std::chrono::minutes(50); }
             else if (initialState == "mandatory") { *now = *now + std::chrono::minutes(59) + std::chrono::seconds(30); }
             else if (initialState == "expired") { *now = *now + std::chrono::minutes(61); }
-            // "valid": leave the clock at the fetch time.
+            // "valid": leave the clock at the retrieve time.
         }
 
         for (size_t s = 0; s < allSteps.GetLength(); ++s)
@@ -162,22 +162,22 @@ TEST_F(CredentialsCachingTest, RunsSepTestCases)
 namespace
 {
     // Scripted provider the decorator wraps; GetAWSCredentials returns whatever was programmed (empty
-    // models a failed fetch, which the decorator classifies as Recoverable).
+    // models a failed retrieve, which the decorator classifies as Recoverable).
     class ScriptedProvider : public Aws::Auth::AWSCredentialsProvider
     {
     public:
         void SetNext(AWSCredentials next) { m_next = std::move(next); }
-        int FetchCount() const { return m_fetchCount; }
+        int RetrieveCount() const { return m_retrieveCount; }
 
         AWSCredentials GetAWSCredentials() override
         {
-            ++m_fetchCount;
+            ++m_retrieveCount;
             return m_next;
         }
 
     private:
         AWSCredentials m_next; // empty by default -> Recoverable
-        int m_fetchCount{0};
+        int m_retrieveCount{0};
     };
 
     AWSCredentials CredsExpiringIn(const Aws::String& akid, std::chrono::minutes lifetime)
@@ -196,11 +196,11 @@ TEST_F(CredentialsCachingTest, ServesCachedCredentialsWhileValid)
     Aws::Auth::CredentialsCachingProvider provider(source);
 
     EXPECT_EQ("AKID-1", provider.GetAWSCredentials().GetAWSAccessKeyId());
-    EXPECT_EQ(1, source->FetchCount());
+    EXPECT_EQ(1, source->RetrieveCount());
 
     source->SetNext(CredsExpiringIn("AKID-2", std::chrono::minutes(60)));
     EXPECT_EQ("AKID-1", provider.GetAWSCredentials().GetAWSAccessKeyId());
-    EXPECT_EQ(1, source->FetchCount());
+    EXPECT_EQ(1, source->RetrieveCount());
 }
 
 // A two-minute lifetime is already inside the five-minute advisory window for short-lived credentials, so
@@ -212,11 +212,11 @@ TEST_F(CredentialsCachingTest, RefreshesInsideTheAdvisoryWindow)
     Aws::Auth::CredentialsCachingProvider provider(source);
 
     EXPECT_EQ("AKID-1", provider.GetAWSCredentials().GetAWSAccessKeyId());
-    EXPECT_EQ(1, source->FetchCount());
+    EXPECT_EQ(1, source->RetrieveCount());
 
     source->SetNext(CredsExpiringIn("AKID-2", std::chrono::minutes(2)));
     EXPECT_EQ("AKID-2", provider.GetAWSCredentials().GetAWSAccessKeyId());
-    EXPECT_EQ(2, source->FetchCount());
+    EXPECT_EQ(2, source->RetrieveCount());
 }
 
 // Invalidate routes the next call through the mandatory path even though the credentials are still valid.
@@ -227,12 +227,12 @@ TEST_F(CredentialsCachingTest, InvalidateForcesARefresh)
     Aws::Auth::CredentialsCachingProvider provider(source);
 
     EXPECT_EQ("AKID-1", provider.GetAWSCredentials().GetAWSAccessKeyId());
-    EXPECT_EQ(1, source->FetchCount());
+    EXPECT_EQ(1, source->RetrieveCount());
 
     source->SetNext(CredsExpiringIn("AKID-2", std::chrono::minutes(60)));
     provider.Invalidate("AKID-1");
     EXPECT_EQ("AKID-2", provider.GetAWSCredentials().GetAWSAccessKeyId());
-    EXPECT_EQ(2, source->FetchCount());
+    EXPECT_EQ(2, source->RetrieveCount());
 }
 
 // A late rejection naming credentials the cache already replaced must not refresh the current ones.
@@ -243,16 +243,16 @@ TEST_F(CredentialsCachingTest, InvalidateWithAStaleAccessKeyIdIsIgnored)
     Aws::Auth::CredentialsCachingProvider provider(source);
 
     EXPECT_EQ("AKID-1", provider.GetAWSCredentials().GetAWSAccessKeyId());
-    EXPECT_EQ(1, source->FetchCount());
+    EXPECT_EQ(1, source->RetrieveCount());
 
     provider.Invalidate("AKID-0");
 
     source->SetNext(CredsExpiringIn("AKID-2", std::chrono::minutes(60)));
     EXPECT_EQ("AKID-1", provider.GetAWSCredentials().GetAWSAccessKeyId());
-    EXPECT_EQ(1, source->FetchCount());
+    EXPECT_EQ(1, source->RetrieveCount());
 }
 
-// A failed fetch keeps serving the last good credentials instead of dropping to empty.
+// A failed retrieve keeps serving the last good credentials instead of dropping to empty.
 TEST_F(CredentialsCachingTest, ServesLastGoodWhenTheSourceFails)
 {
     auto source = Aws::MakeShared<ScriptedProvider>("CredentialsCachingTest");
@@ -263,7 +263,7 @@ TEST_F(CredentialsCachingTest, ServesLastGoodWhenTheSourceFails)
 
     source->SetNext(AWSCredentials()); // empty == the source failed
     EXPECT_EQ("AKID-1", provider.GetAWSCredentials().GetAWSAccessKeyId());
-    EXPECT_EQ(2, source->FetchCount());
+    EXPECT_EQ(2, source->RetrieveCount());
 }
 
 // Serve-last-good and the strict caching-only variant are exercised by RunsSepTestCases.

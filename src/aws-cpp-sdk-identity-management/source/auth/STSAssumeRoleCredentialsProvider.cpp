@@ -20,11 +20,11 @@ namespace Aws
     {
         static const char* CLASS_TAG = "STSAssumeRoleCredentialsProvider";
 
-        // Fetch-only: one blocking AssumeRole call, no cache of its own.
-        class STSAssumeRoleCredentialsProvider::STSFetchOnlyProvider : public AWSCredentialsProvider
+        // STSRetrieveProvider retrieves credentials with one AssumeRole call.
+        class STSAssumeRoleCredentialsProvider::STSRetrieveProvider : public AWSCredentialsProvider
         {
         public:
-            STSFetchOnlyProvider(std::shared_ptr<Aws::STS::STSClient> stsClient, Aws::String roleArn,
+            STSRetrieveProvider(std::shared_ptr<Aws::STS::STSClient> stsClient, Aws::String roleArn,
                                  Aws::String sessionName, Aws::String externalId, int loadFrequency)
                 : m_stsClient(std::move(stsClient)), m_roleArn(std::move(roleArn)), m_sessionName(std::move(sessionName)),
                   m_externalId(std::move(externalId)), m_loadFrequency(loadFrequency)
@@ -81,8 +81,8 @@ namespace Aws
             }
             AWS_LOGSTREAM_INFO(CLASS_TAG, "Role ARN set to: " << roleArn << ". Session Name set to: " << resolvedSessionName);
 
-            auto fetchOnly = Aws::MakeShared<STSFetchOnlyProvider>(CLASS_TAG, resolvedStsClient, roleArn, resolvedSessionName, externalId, loadFrequency);
-            m_cachingProvider = Aws::MakeShared<CredentialsCachingProvider>(CLASS_TAG, fetchOnly);
+            auto retrieveProvider = Aws::MakeShared<STSRetrieveProvider>(CLASS_TAG, resolvedStsClient, roleArn, resolvedSessionName, externalId, loadFrequency);
+            m_cachingProvider = Aws::MakeShared<CredentialsCachingProvider>(CLASS_TAG, retrieveProvider);
         }
 
         AWSCredentials STSAssumeRoleCredentialsProvider::GetAWSCredentials()

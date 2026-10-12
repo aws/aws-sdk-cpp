@@ -25,10 +25,10 @@ struct RefreshState {
 };
 }  // namespace
 
-// Fetch-only: one blocking call into the CRT provider, no cache of its own.
-class CrtCredentialsProvider::CrtFetchOnlyProvider : public AWSCredentialsProvider {
+// CrtRetrieveProvider retrieves credentials from the CRT provider.
+class CrtCredentialsProvider::CrtRetrieveProvider : public AWSCredentialsProvider {
  public:
-  CrtFetchOnlyProvider(std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider> credentialsProvider,
+  CrtRetrieveProvider(std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider> credentialsProvider,
                        std::chrono::milliseconds providerFuturesTimeoutMs, Aws::Client::UserAgentFeature userAgentFeature);
   AWSCredentials GetAWSCredentials() override;
 
@@ -38,14 +38,14 @@ class CrtCredentialsProvider::CrtFetchOnlyProvider : public AWSCredentialsProvid
   Aws::Client::UserAgentFeature m_userAgentFeature;
 };
 
-CrtCredentialsProvider::CrtFetchOnlyProvider::CrtFetchOnlyProvider(
+CrtCredentialsProvider::CrtRetrieveProvider::CrtRetrieveProvider(
     std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider> credentialsProvider,
     std::chrono::milliseconds providerFuturesTimeoutMs, Aws::Client::UserAgentFeature userAgentFeature)
     : m_credentialsProvider{std::move(credentialsProvider)},
       m_providerFuturesTimeoutMs{providerFuturesTimeoutMs},
       m_userAgentFeature{userAgentFeature} {}
 
-AWSCredentials CrtCredentialsProvider::CrtFetchOnlyProvider::GetAWSCredentials() {
+AWSCredentials CrtCredentialsProvider::CrtRetrieveProvider::GetAWSCredentials() {
   auto state = Aws::MakeShared<RefreshState>(CRT_CREDS_PROVIDER_TAG);
 
   m_credentialsProvider->GetCredentials([state](const std::shared_ptr<Crt::Auth::Credentials>& crtCredentials, int errorCode) -> void {
@@ -80,9 +80,9 @@ CrtCredentialsProvider::CrtCredentialsProvider(
       m_providerName{providerName} {
   if (m_credentialsProvider && m_credentialsProvider->IsValid()) {
     m_state = STATE::INITIALIZED;
-    auto fetchOnly = Aws::MakeShared<CrtFetchOnlyProvider>(CRT_CREDS_PROVIDER_TAG, m_credentialsProvider,
+    auto retrieveProvider = Aws::MakeShared<CrtRetrieveProvider>(CRT_CREDS_PROVIDER_TAG, m_credentialsProvider,
                                                             providerFuturesTimeoutMs, userAgentFeature);
-    m_cachingProvider = Aws::MakeShared<CredentialsCachingProvider>(CRT_CREDS_PROVIDER_TAG, fetchOnly);
+    m_cachingProvider = Aws::MakeShared<CredentialsCachingProvider>(CRT_CREDS_PROVIDER_TAG, retrieveProvider);
   }
 }
 

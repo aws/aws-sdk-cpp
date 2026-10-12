@@ -9,6 +9,7 @@
 #include <aws/core/auth/AWSCredentialsProvider.h>
 #include <aws/identity-management/IdentityManagment_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
+#include <mutex>
 
 namespace Aws
 {
@@ -26,7 +27,7 @@ namespace Aws
         public:
             AWSCredentials GetAWSCredentials() override;
 
-            // Marks the cached credentials for refresh, only if they are the ones that were rejected.
+            // Invalidate marks the cached credentials for refresh if they match accessKeyId.
             void Invalidate(const Aws::String& accessKeyId) override;
 
         protected:
@@ -39,14 +40,16 @@ namespace Aws
 
             virtual CognitoIdentity::Model::GetCredentialsForIdentityOutcome GetCredentialsFromCognito() const = 0;
 
+            bool IsTimeExpired(double expiry);
+
             std::shared_ptr<CognitoIdentity::CognitoIdentityClient> m_cognitoIdentityClient;
             std::shared_ptr<PersistentCognitoIdentityProvider> m_identityRepository;
 
         private:
             void OnLoginsUpdated(const PersistentCognitoIdentityProvider&);
 
-            // Nested so it can call the protected GetCredentialsFromCognito(); defined in the .cpp.
-            class CognitoFetchOnlyProvider;
+            // CognitoRetrieveProvider retrieves credentials for m_cachingProvider.
+            class CognitoRetrieveProvider;
 
             std::shared_ptr<CredentialsCachingProvider> m_cachingProvider;
         };

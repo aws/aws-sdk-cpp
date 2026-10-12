@@ -28,11 +28,11 @@ using namespace Aws::Client;
 
 static const char SSO_CREDENTIALS_PROVIDER_LOG_TAG[] = "SSOCredentialsProvider";
 
-// Fetch-only: one SSO token read plus one GetRoleCredentials call, no cache of its own.
-class SSOCredentialsProvider::SSOFetchOnlyProvider : public AWSCredentialsProvider
+// SSORetrieveProvider retrieves credentials with the cached SSO token and GetRoleCredentials.
+class SSOCredentialsProvider::SSORetrieveProvider : public AWSCredentialsProvider
 {
 public:
-    SSOFetchOnlyProvider(Aws::String profile, std::shared_ptr<const Aws::Client::ClientConfiguration> config)
+    SSORetrieveProvider(Aws::String profile, std::shared_ptr<const Aws::Client::ClientConfiguration> config)
         : m_profileToUse(profile),
           m_bearerTokenProvider(profile),
           m_config(std::move(config))
@@ -56,7 +56,7 @@ private:
     std::shared_ptr<const Aws::Client::ClientConfiguration> m_config;
 };
 
-AWSCredentials SSOCredentialsProvider::SSOFetchOnlyProvider::GetAWSCredentials()
+AWSCredentials SSOCredentialsProvider::SSORetrieveProvider::GetAWSCredentials()
 {
     auto profile = Aws::Config::GetCachedConfigProfile(m_profileToUse);
     const auto accessToken = [&]() -> Aws::String {
@@ -107,7 +107,7 @@ AWSCredentials SSOCredentialsProvider::SSOFetchOnlyProvider::GetAWSCredentials()
     return credentials;
 }
 
-Aws::String SSOCredentialsProvider::SSOFetchOnlyProvider::LoadAccessTokenFile(const Aws::String& ssoAccessTokenPath)
+Aws::String SSOCredentialsProvider::SSORetrieveProvider::LoadAccessTokenFile(const Aws::String& ssoAccessTokenPath)
 {
     AWS_LOGSTREAM_DEBUG(SSO_CREDENTIALS_PROVIDER_LOG_TAG, "Preparing to load token from: " << ssoAccessTokenPath);
 
@@ -168,8 +168,8 @@ SSOCredentialsProvider::SSOCredentialsProvider(const Aws::String& profile, std::
         config = std::move(defaultConfig);
     }
 
-    auto fetchOnly = Aws::MakeShared<SSOFetchOnlyProvider>(SSO_CREDENTIALS_PROVIDER_LOG_TAG, profile, config);
-    m_cachingProvider = Aws::MakeShared<CredentialsCachingProvider>(SSO_CREDENTIALS_PROVIDER_LOG_TAG, fetchOnly);
+    auto retrieveProvider = Aws::MakeShared<SSORetrieveProvider>(SSO_CREDENTIALS_PROVIDER_LOG_TAG, profile, config);
+    m_cachingProvider = Aws::MakeShared<CredentialsCachingProvider>(SSO_CREDENTIALS_PROVIDER_LOG_TAG, retrieveProvider);
 }
 
 AWSCredentials SSOCredentialsProvider::GetAWSCredentials()

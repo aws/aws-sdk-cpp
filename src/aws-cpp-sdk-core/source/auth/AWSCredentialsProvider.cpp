@@ -238,11 +238,11 @@ void ProfileConfigFileAWSCredentialsProvider::RefreshIfExpired()
 
 static const char* INSTANCE_LOG_TAG = "InstanceProfileCredentialsProvider";
 
-// Fetch-only: one Load() call against the EC2 instance metadata service, no cache of its own.
-class InstanceProfileCredentialsProvider::InstanceProfileFetchOnlyProvider : public AWSCredentialsProvider
+// InstanceProfileRetrieveProvider loads credentials from the EC2 instance metadata service.
+class InstanceProfileCredentialsProvider::InstanceProfileRetrieveProvider : public AWSCredentialsProvider
 {
 public:
-    explicit InstanceProfileFetchOnlyProvider(std::shared_ptr<Aws::Config::AWSProfileConfigLoader> configLoader)
+    explicit InstanceProfileRetrieveProvider(std::shared_ptr<Aws::Config::AWSProfileConfigLoader> configLoader)
         : m_ec2MetadataConfigLoader(std::move(configLoader))
     {
     }
@@ -255,7 +255,7 @@ public:
             return AWSCredentials();
         }
 
-        AWS_LOGSTREAM_INFO(INSTANCE_LOG_TAG, "Attempting to pull credentials from EC2 Metadata Service.");
+        AWS_LOGSTREAM_INFO(INSTANCE_LOG_TAG, "Credentials have expired attempting to re-pull from EC2 Metadata Service.");
         m_ec2MetadataConfigLoader->Load();
 
         const Aws::Map<Aws::String, Aws::Config::Profile> &profiles = m_ec2MetadataConfigLoader->GetProfiles();
@@ -278,29 +278,27 @@ private:
 
 InstanceProfileCredentialsProvider::InstanceProfileCredentialsProvider(long refreshRateMs)
 {
-    AWS_UNREFERENCED_PARAM(refreshRateMs);
-    AWS_LOGSTREAM_INFO(INSTANCE_LOG_TAG, "Creating Instance with default EC2MetadataClient");
-    auto fetchOnly = Aws::MakeShared<InstanceProfileFetchOnlyProvider>(INSTANCE_LOG_TAG,
+    AWS_LOGSTREAM_INFO(INSTANCE_LOG_TAG, "Creating Instance with default EC2MetadataClient and refresh rate " << refreshRateMs);
+    auto retrieveProvider = Aws::MakeShared<InstanceProfileRetrieveProvider>(INSTANCE_LOG_TAG,
         Aws::MakeShared<Aws::Config::EC2InstanceProfileConfigLoader>(INSTANCE_LOG_TAG));
-    m_cachingProvider = Aws::MakeShared<CredentialsCachingProvider>(INSTANCE_LOG_TAG, fetchOnly);
+    m_cachingProvider = Aws::MakeShared<CredentialsCachingProvider>(INSTANCE_LOG_TAG, retrieveProvider);
 }
 
 
 InstanceProfileCredentialsProvider::InstanceProfileCredentialsProvider(const std::shared_ptr<Aws::Config::EC2InstanceProfileConfigLoader>& loader, long refreshRateMs)
 {
-    AWS_UNREFERENCED_PARAM(refreshRateMs);
-    AWS_LOGSTREAM_INFO(INSTANCE_LOG_TAG, "Creating Instance with injected EC2MetadataClient");
-    auto fetchOnly = Aws::MakeShared<InstanceProfileFetchOnlyProvider>(INSTANCE_LOG_TAG, loader);
-    m_cachingProvider = Aws::MakeShared<CredentialsCachingProvider>(INSTANCE_LOG_TAG, fetchOnly);
+    AWS_LOGSTREAM_INFO(INSTANCE_LOG_TAG, "Creating Instance with injected EC2MetadataClient and refresh rate " << refreshRateMs);
+    auto retrieveProvider = Aws::MakeShared<InstanceProfileRetrieveProvider>(INSTANCE_LOG_TAG, loader);
+    m_cachingProvider = Aws::MakeShared<CredentialsCachingProvider>(INSTANCE_LOG_TAG, retrieveProvider);
 }
 
 InstanceProfileCredentialsProvider::InstanceProfileCredentialsProvider(const Aws::Client::ClientConfiguration::CredentialProviderConfiguration& credentialConfig, long refreshRateMs)
 {
     AWS_UNREFERENCED_PARAM(refreshRateMs);
     AWS_LOGSTREAM_INFO(INSTANCE_LOG_TAG, "Creating Instance with IMDS timeout: " << credentialConfig.imdsConfig.metadataServiceTimeout << "s, attempts: " << credentialConfig.imdsConfig.metadataServiceNumAttempts);
-    auto fetchOnly = Aws::MakeShared<InstanceProfileFetchOnlyProvider>(INSTANCE_LOG_TAG,
+    auto retrieveProvider = Aws::MakeShared<InstanceProfileRetrieveProvider>(INSTANCE_LOG_TAG,
         Aws::MakeShared<Aws::Config::EC2InstanceProfileConfigLoader>(INSTANCE_LOG_TAG, credentialConfig));
-    m_cachingProvider = Aws::MakeShared<CredentialsCachingProvider>(INSTANCE_LOG_TAG, fetchOnly);
+    m_cachingProvider = Aws::MakeShared<CredentialsCachingProvider>(INSTANCE_LOG_TAG, retrieveProvider);
 }
 
 AWSCredentials InstanceProfileCredentialsProvider::GetAWSCredentials()
