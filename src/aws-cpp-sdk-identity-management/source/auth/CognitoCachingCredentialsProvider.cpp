@@ -101,7 +101,7 @@ void CognitoCachingCredentialsProvider::OnLoginsUpdated(const PersistentCognitoI
 }
 
 
-GetCredentialsForIdentityOutcome FetchCredentialsFromCognito(const CognitoIdentityClient& cognitoIdentityClient,
+GetCredentialsForIdentityOutcome RetrieveCredentialsFromCognito(const CognitoIdentityClient& cognitoIdentityClient,
                                                              PersistentCognitoIdentityProvider& identityRepository,
                                                              const char* logTag, bool includeLogins)
 {
@@ -178,7 +178,7 @@ CognitoCachingAnonymousCredentialsProvider::CognitoCachingAnonymousCredentialsPr
 
 GetCredentialsForIdentityOutcome CognitoCachingAnonymousCredentialsProvider::GetCredentialsFromCognito() const
 {
-    return FetchCredentialsFromCognito(*m_cognitoIdentityClient, *m_identityRepository, ANON_LOG_TAG, false);
+    return RetrieveCredentialsFromCognito(*m_cognitoIdentityClient, *m_identityRepository, ANON_LOG_TAG, false);
 }
 
 static const char* AUTH_LOG_TAG = "CognitoCachingAuthenticatedCredentialsProvider";
@@ -191,5 +191,5 @@ CognitoCachingAuthenticatedCredentialsProvider::CognitoCachingAuthenticatedCrede
 
 GetCredentialsForIdentityOutcome CognitoCachingAuthenticatedCredentialsProvider::GetCredentialsFromCognito() const
 {
-    return FetchCredentialsFromCognito(*m_cognitoIdentityClient, *m_identityRepository, AUTH_LOG_TAG, true);
+    return RetrieveCredentialsFromCognito(*m_cognitoIdentityClient, *m_identityRepository, AUTH_LOG_TAG, true);
 }

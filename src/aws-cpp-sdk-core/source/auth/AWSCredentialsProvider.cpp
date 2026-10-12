@@ -238,36 +238,21 @@ void ProfileConfigFileAWSCredentialsProvider::RefreshIfExpired()
 
 static const char* INSTANCE_LOG_TAG = "InstanceProfileCredentialsProvider";
 
-// InstanceProfileRetrieveProvider retrieves credentials through the owner's RetrieveCredentials().
-class InstanceProfileCredentialsProvider::InstanceProfileRetrieveProvider : public AWSCredentialsProvider
-{
-public:
-    explicit InstanceProfileRetrieveProvider(InstanceProfileCredentialsProvider& owner) : m_owner(owner) {}
-
-    AWSCredentials GetAWSCredentials() override { return m_owner.RetrieveCredentials(); }
-
-private:
-    InstanceProfileCredentialsProvider& m_owner;
-};
-
 InstanceProfileCredentialsProvider::InstanceProfileCredentialsProvider(long refreshRateMs) :
-    m_ec2MetadataConfigLoader(Aws::MakeShared<Aws::Config::EC2InstanceProfileConfigLoader>(INSTANCE_LOG_TAG)),
-    m_cachingProvider(Aws::MakeShared<Aws::Internal::CredentialsCachingProvider>(INSTANCE_LOG_TAG, Aws::MakeShared<InstanceProfileRetrieveProvider>(INSTANCE_LOG_TAG, *this)))
+    m_ec2MetadataConfigLoader(Aws::MakeShared<Aws::Config::EC2InstanceProfileConfigLoader>(INSTANCE_LOG_TAG))
 {
     AWS_LOGSTREAM_INFO(INSTANCE_LOG_TAG, "Creating Instance with default EC2MetadataClient and refresh rate " << refreshRateMs);
 }
 
 
 InstanceProfileCredentialsProvider::InstanceProfileCredentialsProvider(const std::shared_ptr<Aws::Config::EC2InstanceProfileConfigLoader>& loader, long refreshRateMs) :
-    m_ec2MetadataConfigLoader(loader),
-    m_cachingProvider(Aws::MakeShared<Aws::Internal::CredentialsCachingProvider>(INSTANCE_LOG_TAG, Aws::MakeShared<InstanceProfileRetrieveProvider>(INSTANCE_LOG_TAG, *this)))
+    m_ec2MetadataConfigLoader(loader)
 {
     AWS_LOGSTREAM_INFO(INSTANCE_LOG_TAG, "Creating Instance with injected EC2MetadataClient and refresh rate " << refreshRateMs);
 }
 
 InstanceProfileCredentialsProvider::InstanceProfileCredentialsProvider(const Aws::Client::ClientConfiguration::CredentialProviderConfiguration& credentialConfig, long refreshRateMs) :
-    m_ec2MetadataConfigLoader(Aws::MakeShared<Aws::Config::EC2InstanceProfileConfigLoader>(INSTANCE_LOG_TAG, credentialConfig)),
-    m_cachingProvider(Aws::MakeShared<Aws::Internal::CredentialsCachingProvider>(INSTANCE_LOG_TAG, Aws::MakeShared<InstanceProfileRetrieveProvider>(INSTANCE_LOG_TAG, *this)))
+    m_ec2MetadataConfigLoader(Aws::MakeShared<Aws::Config::EC2InstanceProfileConfigLoader>(INSTANCE_LOG_TAG, credentialConfig))
 {
     AWS_UNREFERENCED_PARAM(refreshRateMs);
     AWS_LOGSTREAM_INFO(INSTANCE_LOG_TAG, "Creating Instance with IMDS timeout: " << credentialConfig.imdsConfig.metadataServiceTimeout << "s, attempts: " << credentialConfig.imdsConfig.metadataServiceNumAttempts);
@@ -275,28 +260,13 @@ InstanceProfileCredentialsProvider::InstanceProfileCredentialsProvider(const Aws
 
 AWSCredentials InstanceProfileCredentialsProvider::GetAWSCredentials()
 {
-    return m_cachingProvider->GetAWSCredentials();
-}
-
-AWSCredentials InstanceProfileCredentialsProvider::RetrieveCredentials()
-{
-    AWS_LOGSTREAM_INFO(INSTANCE_LOG_TAG, "Credentials have expired attempting to re-pull from EC2 Metadata Service.");
     if (m_ec2MetadataConfigLoader)
     {
-        if (!m_ec2MetadataConfigLoader->Load())
-        {
-            return AWSCredentials();
+        AWSCredentials credentials = LoaderCache()->GetAWSCredentials();
+        if (!credentials.IsEmpty()) {
+            credentials.AddUserAgentFeature(UserAgentFeature::CREDENTIALS_IMDS);
         }
-        const Aws::Map<Aws::String, Aws::Config::Profile> &profiles = m_ec2MetadataConfigLoader->GetProfiles();
-        auto profileIter = profiles.find(Aws::Config::INSTANCE_PROFILE_KEY);
-
-        if (profileIter != profiles.end()) {
-            AWSCredentials credentials = profileIter->second.GetCredentials();
-            if (!credentials.IsEmpty()) {
-                credentials.AddUserAgentFeature(UserAgentFeature::CREDENTIALS_IMDS);
-            }
-            return credentials;
-        }
+        return credentials;
     }
     else
     {
@@ -308,14 +278,26 @@ AWSCredentials InstanceProfileCredentialsProvider::RetrieveCredentials()
 
 void InstanceProfileCredentialsProvider::Invalidate(const Aws::String& accessKeyId)
 {
-    m_cachingProvider->Invalidate(accessKeyId);
+    if (m_ec2MetadataConfigLoader)
+    {
+        LoaderCache()->Invalidate(accessKeyId);
+    }
 }
 
 void InstanceProfileCredentialsProvider::Reload()
 {
-    m_cachingProvider->Invalidate(m_cachingProvider->GetAWSCredentials().GetAWSAccessKeyId());
-    m_cachingProvider->GetAWSCredentials();
+    if (m_ec2MetadataConfigLoader)
+    {
+        const auto cache = LoaderCache();
+        cache->Invalidate(cache->GetAWSCredentials().GetAWSAccessKeyId());
+        cache->GetAWSCredentials();
+    }
     AWSCredentialsProvider::Reload();
+}
+
+std::shared_ptr<Aws::Internal::CredentialsCachingProvider> InstanceProfileCredentialsProvider::LoaderCache() const
+{
+    return static_cast<Aws::Config::EC2InstanceProfileConfigLoader&>(*m_ec2MetadataConfigLoader).m_cachingProvider;
 }
 
 static const char PROCESS_LOG_TAG[] = "ProcessCredentialsProvider";

@@ -17,6 +17,12 @@ namespace Aws
     namespace Internal
     {
         class EC2MetadataClient;
+        class CredentialsCachingProvider;
+    }
+
+    namespace Auth
+    {
+        class InstanceProfileCredentialsProvider;
     }
 
     namespace Config
@@ -44,7 +50,15 @@ namespace Aws
         protected:
             virtual bool LoadInternal() override;
         private:
+            friend class Aws::Auth::InstanceProfileCredentialsProvider;
+
+            // RetrieveCredentials makes one IMDS call and stores the credentials in m_profiles on success.
+            bool RetrieveCredentials();
+            // IMDSRetrieveProvider retrieves credentials for m_cachingProvider.
+            class IMDSRetrieveProvider;
+
             std::shared_ptr<Aws::Internal::EC2MetadataClient> m_ec2metadataClient;
+            std::shared_ptr<Aws::Internal::CredentialsCachingProvider> m_cachingProvider;
         };
     }
 }

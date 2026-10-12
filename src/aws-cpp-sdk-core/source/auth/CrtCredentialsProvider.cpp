@@ -27,12 +27,16 @@ struct RefreshState {
 };
 }  // namespace
 
-// CrtRetrieveProvider retrieves credentials through the owner's RetrieveCredentials().
+// CrtRetrieveProvider retrieves credentials through the owner's Reload().
 class CrtCredentialsProvider::CrtRetrieveProvider : public AWSCredentialsProvider {
  public:
   explicit CrtRetrieveProvider(CrtCredentialsProvider& owner) : m_owner(owner) {}
 
-  AWSCredentials GetAWSCredentials() override { return m_owner.RetrieveCredentials(); }
+  AWSCredentials GetAWSCredentials() override {
+    m_owner.m_credentials = AWSCredentials{};
+    m_owner.Reload();
+    return m_owner.m_credentials;
+  }
 
  private:
   CrtCredentialsProvider& m_owner;
@@ -43,10 +47,10 @@ CrtCredentialsProvider::CrtCredentialsProvider(
     std::chrono::milliseconds providerFuturesTimeoutMs, Aws::Client::UserAgentFeature userAgentFeature, const Aws::String& providerName,
     bool staticStability)
     : m_credentialsProvider{credentialsProviderFactory()},
-      m_cachingProvider{Aws::MakeShared<Aws::Internal::CredentialsCachingProvider>(CRT_CREDS_PROVIDER_TAG, Aws::MakeShared<CrtRetrieveProvider>(CRT_CREDS_PROVIDER_TAG, *this), staticStability)},
       m_providerFuturesTimeoutMs{providerFuturesTimeoutMs},
       m_userAgentFeature{userAgentFeature},
-      m_providerName{providerName} {
+      m_providerName{providerName},
+      m_cachingProvider{Aws::MakeShared<Aws::Internal::CredentialsCachingProvider>(CRT_CREDS_PROVIDER_TAG, Aws::MakeShared<CrtRetrieveProvider>(CRT_CREDS_PROVIDER_TAG, *this), staticStability)} {
   if (m_credentialsProvider && m_credentialsProvider->IsValid()) {
     m_state = STATE::INITIALIZED;
   }
@@ -68,7 +72,7 @@ void CrtCredentialsProvider::Invalidate(const Aws::String& accessKeyId) {
   m_cachingProvider->Invalidate(accessKeyId);
 }
 
-AWSCredentials CrtCredentialsProvider::RetrieveCredentials() {
+void CrtCredentialsProvider::Reload() {
   auto state = Aws::MakeShared<RefreshState>(CRT_CREDS_PROVIDER_TAG);
 
   m_credentialsProvider->GetCredentials([state](const std::shared_ptr<Crt::Auth::Credentials>& crtCredentials, int errorCode) -> void {
@@ -93,7 +97,7 @@ AWSCredentials CrtCredentialsProvider::RetrieveCredentials() {
   if (!credentials.IsEmpty()) {
     credentials.AddUserAgentFeature(m_userAgentFeature);
   }
-  return credentials;
+  m_credentials = std::move(credentials);
 }
 
 AWSCredentials CrtCredentialsProvider::ExtractCredentialsFromCrt(const Aws::Crt::Auth::Credentials& crtCredentials) {

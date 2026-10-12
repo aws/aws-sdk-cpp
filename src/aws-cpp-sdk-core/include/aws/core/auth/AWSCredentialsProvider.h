@@ -242,13 +242,10 @@ namespace Aws
             void Reload() override;
 
         private:
-            // RetrieveCredentials loads credentials from the EC2 instance metadata service.
-            AWSCredentials RetrieveCredentials();
-            // InstanceProfileRetrieveProvider retrieves credentials for m_cachingProvider.
-            class InstanceProfileRetrieveProvider;
+            // LoaderCache returns the credentials cache owned by m_ec2MetadataConfigLoader.
+            std::shared_ptr<Aws::Internal::CredentialsCachingProvider> LoaderCache() const;
 
             std::shared_ptr<Aws::Config::AWSProfileConfigLoader> m_ec2MetadataConfigLoader;
-            std::shared_ptr<Aws::Internal::CredentialsCachingProvider> m_cachingProvider;
         };
 
         /**

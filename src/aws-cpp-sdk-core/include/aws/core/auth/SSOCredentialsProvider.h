@@ -35,6 +35,7 @@ namespace Aws {
 
         private:
             Aws::UniquePtr<Aws::Internal::SSOCredentialsClient> m_client;
+            Aws::Auth::AWSCredentials m_credentials;
 
             // Profile description variables
             Aws::String m_profileToUse;
@@ -52,8 +53,7 @@ namespace Aws {
             std::shared_ptr<const Aws::Client::ClientConfiguration> m_config;
             std::shared_ptr<Aws::Internal::CredentialsCachingProvider> m_cachingProvider;
 
-            // RetrieveCredentials loads credentials with the cached SSO token and GetRoleCredentials.
-            AWSCredentials RetrieveCredentials();
+            void Reload() override;
             // SSORetrieveProvider retrieves credentials for m_cachingProvider.
             class SSORetrieveProvider;
             Aws::String LoadAccessTokenFile(const Aws::String& ssoAccessTokenPath);

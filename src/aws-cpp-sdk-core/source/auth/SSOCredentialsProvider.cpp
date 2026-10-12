@@ -30,13 +30,18 @@ using Aws::Utils::Threading::ReaderLockGuard;
 
 static const char SSO_CREDENTIALS_PROVIDER_LOG_TAG[] = "SSOCredentialsProvider";
 
-// SSORetrieveProvider retrieves credentials through the owner's RetrieveCredentials().
+// SSORetrieveProvider retrieves credentials through the owner's Reload().
 class SSOCredentialsProvider::SSORetrieveProvider : public AWSCredentialsProvider
 {
 public:
     explicit SSORetrieveProvider(SSOCredentialsProvider& owner) : m_owner(owner) {}
 
-    AWSCredentials GetAWSCredentials() override { return m_owner.RetrieveCredentials(); }
+    AWSCredentials GetAWSCredentials() override
+    {
+        m_owner.m_credentials = AWSCredentials();
+        m_owner.Reload();
+        return m_owner.m_credentials;
+    }
 
 private:
     SSOCredentialsProvider& m_owner;
@@ -78,7 +83,7 @@ void SSOCredentialsProvider::Invalidate(const Aws::String& accessKeyId)
     m_cachingProvider->Invalidate(accessKeyId);
 }
 
-AWSCredentials SSOCredentialsProvider::RetrieveCredentials()
+void SSOCredentialsProvider::Reload()
 {
     auto profile = Aws::Config::GetCachedConfigProfile(m_profileToUse);
     const auto accessToken = [&]() -> Aws::String {
@@ -101,11 +106,11 @@ AWSCredentials SSOCredentialsProvider::RetrieveCredentials()
     }();
     if (accessToken.empty()) {
         AWS_LOGSTREAM_TRACE(SSO_CREDENTIALS_PROVIDER_LOG_TAG, "Access token for SSO not available");
-        return AWSCredentials();
+        return;
     }
     if (m_expiresAt < Aws::Utils::DateTime::Now()) {
         AWS_LOGSTREAM_ERROR(SSO_CREDENTIALS_PROVIDER_LOG_TAG, "Cached Token expired at " << m_expiresAt.ToGmtString(DateFormat::ISO_8601));
-        return AWSCredentials();
+        return;
     }
     SSOCredentialsClient::SSOGetRoleCredentialsRequest request;
     request.m_ssoAccountId = profile.GetSsoAccountId();
@@ -118,15 +123,14 @@ AWSCredentials SSOCredentialsProvider::RetrieveCredentials()
     auto result = m_client->GetSSOCredentials(request);
     AWS_LOGSTREAM_TRACE(SSO_CREDENTIALS_PROVIDER_LOG_TAG, "Successfully retrieved credentials with AWS_ACCESS_KEY: " << result.creds.GetAWSAccessKeyId());
 
-    AWSCredentials credentials = result.creds;
-    if (!credentials.IsEmpty()) {
+    m_credentials = result.creds;
+    if (!m_credentials.IsEmpty()) {
         if (!profile.IsSsoSessionSet()) {
-          credentials.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_SSO_LEGACY);
+          m_credentials.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_SSO_LEGACY);
         } else {
-          credentials.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_SSO);
+          m_credentials.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_SSO);
         }
     }
-    return credentials;
 }
 
 Aws::String SSOCredentialsProvider::LoadAccessTokenFile(const Aws::String& ssoAccessTokenPath)

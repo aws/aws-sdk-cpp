@@ -17,13 +17,18 @@ using namespace Aws::Auth;
 
 static const char GEN_HTTP_LOG_TAG[] = "GeneralHTTPCredentialsProvider";
 
-// GeneralHTTPRetrieveProvider retrieves credentials through the owner's RetrieveCredentials().
+// GeneralHTTPRetrieveProvider retrieves credentials through the owner's Reload().
 class GeneralHTTPCredentialsProvider::GeneralHTTPRetrieveProvider : public AWSCredentialsProvider
 {
 public:
     explicit GeneralHTTPRetrieveProvider(GeneralHTTPCredentialsProvider& owner) : m_owner(owner) {}
 
-    AWSCredentials GetAWSCredentials() override { return m_owner.RetrieveCredentials(); }
+    AWSCredentials GetAWSCredentials() override
+    {
+        m_owner.m_credentials = AWSCredentials();
+        m_owner.Reload();
+        return m_owner.m_credentials;
+    }
 
 private:
     GeneralHTTPCredentialsProvider& m_owner;
@@ -218,13 +223,13 @@ Aws::String GeneralHTTPCredentialsProvider::LoadTokenFromFile() const
       }
 }
 
-AWSCredentials GeneralHTTPCredentialsProvider::RetrieveCredentials()
+void GeneralHTTPCredentialsProvider::Reload()
 {
     AWS_LOGSTREAM_INFO(GEN_HTTP_LOG_TAG, "Credentials have expired or will expire, attempting to re-pull from ECS IAM Service.");
     if (!m_ecsCredentialsClient)
     {
         AWS_LOGSTREAM_ERROR(GEN_HTTP_LOG_TAG, "Unable to retrieve credentials: ECS Credentials client is not initialized.");
-        return AWSCredentials();
+        return;
     }
 
     if (!m_authTokenFilePath.empty())
@@ -234,13 +239,13 @@ AWSCredentials GeneralHTTPCredentialsProvider::RetrieveCredentials()
     }
 
     auto credentialsStr = m_ecsCredentialsClient->GetECSCredentials();
-    if (credentialsStr.empty()) return AWSCredentials();
+    if (credentialsStr.empty()) return;
 
     Aws::Utils::Json::JsonValue credentialsDoc(credentialsStr);
     if (!credentialsDoc.WasParseSuccessful())
     {
         AWS_LOGSTREAM_ERROR(GEN_HTTP_LOG_TAG, "Failed to parse output from ECSCredentialService.");
-        return AWSCredentials();
+        return;
     }
 
     Aws::String accessKey, secretKey, token, accountId;
@@ -251,21 +256,13 @@ AWSCredentials GeneralHTTPCredentialsProvider::RetrieveCredentials()
     accountId = credentialsView.GetString("AccountId");
     AWS_LOGSTREAM_DEBUG(GEN_HTTP_LOG_TAG, "Successfully pulled credentials from metadata service with access key " << accessKey);
 
-    AWSCredentials credentials;
-    credentials.SetAWSAccessKeyId(accessKey);
-    credentials.SetAWSSecretKey(secretKey);
-    credentials.SetSessionToken(token);
-    credentials.SetExpiration(Aws::Utils::DateTime(credentialsView.GetString("Expiration"), Aws::Utils::DateFormat::ISO_8601));
-    credentials.SetAccountId(accountId);
-    if (!credentials.IsEmpty()) {
-        credentials.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_HTTP);
+    m_credentials.SetAWSAccessKeyId(accessKey);
+    m_credentials.SetAWSSecretKey(secretKey);
+    m_credentials.SetSessionToken(token);
+    m_credentials.SetExpiration(Aws::Utils::DateTime(credentialsView.GetString("Expiration"), Aws::Utils::DateFormat::ISO_8601));
+    m_credentials.SetAccountId(accountId);
+    if (!m_credentials.IsEmpty()) {
+        m_credentials.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_HTTP);
     }
-    return credentials;
-}
-
-void GeneralHTTPCredentialsProvider::Reload()
-{
-    m_cachingProvider->Invalidate(m_cachingProvider->GetAWSCredentials().GetAWSAccessKeyId());
-    m_cachingProvider->GetAWSCredentials();
     AWSCredentialsProvider::Reload();
 }

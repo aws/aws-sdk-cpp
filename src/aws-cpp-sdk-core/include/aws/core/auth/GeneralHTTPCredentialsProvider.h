@@ -108,8 +108,6 @@ namespace Aws
             void Reload() override;
 
         private:
-            // RetrieveCredentials loads credentials from the container credentials endpoint.
-            AWSCredentials RetrieveCredentials();
             // GeneralHTTPRetrieveProvider retrieves credentials for m_cachingProvider.
             class GeneralHTTPRetrieveProvider;
 
@@ -118,6 +116,7 @@ namespace Aws
             std::shared_ptr<Aws::Internal::ECSCredentialsClient> m_ecsCredentialsClient;
             Aws::String m_authTokenFilePath;
 
+            Aws::Auth::AWSCredentials m_credentials;
             std::shared_ptr<Aws::Internal::CredentialsCachingProvider> m_cachingProvider;
         };
 

@@ -6,6 +6,7 @@
 #include <aws/core/config/AWSProfileConfigLoader.h>
 #include <aws/core/internal/AWSHttpResourceClient.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
+#include <aws/core/internal/CredentialsCachingProvider.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSList.h>
 #include <aws/core/utils/logging/LogMacros.h>
@@ -23,7 +24,27 @@ namespace Aws
 
         static const char* const EC2_INSTANCE_PROFILE_LOG_TAG = "Aws::Config::EC2InstanceProfileConfigLoader";
 
-        EC2InstanceProfileConfigLoader::EC2InstanceProfileConfigLoader(const std::shared_ptr<Aws::Internal::EC2MetadataClient>& client)
+        // IMDSRetrieveProvider retrieves credentials through the owner's RetrieveCredentials().
+        class EC2InstanceProfileConfigLoader::IMDSRetrieveProvider : public AWSCredentialsProvider
+        {
+        public:
+            explicit IMDSRetrieveProvider(EC2InstanceProfileConfigLoader& owner) : m_owner(owner) {}
+
+            AWSCredentials GetAWSCredentials() override
+            {
+                if (!m_owner.RetrieveCredentials())
+                {
+                    return AWSCredentials();
+                }
+                return m_owner.m_profiles[INSTANCE_PROFILE_KEY].GetCredentials();
+            }
+
+        private:
+            EC2InstanceProfileConfigLoader& m_owner;
+        };
+
+        EC2InstanceProfileConfigLoader::EC2InstanceProfileConfigLoader(const std::shared_ptr<Aws::Internal::EC2MetadataClient>& client) :
+            m_cachingProvider(Aws::MakeShared<Aws::Internal::CredentialsCachingProvider>(EC2_INSTANCE_PROFILE_LOG_TAG, Aws::MakeShared<IMDSRetrieveProvider>(EC2_INSTANCE_PROFILE_LOG_TAG, *this)))
         {
             if(client == nullptr)
             {
@@ -36,13 +57,19 @@ namespace Aws
             }
         }
         
-        EC2InstanceProfileConfigLoader::EC2InstanceProfileConfigLoader(const Aws::Client::ClientConfiguration::CredentialProviderConfiguration& credentialConfig)
+        EC2InstanceProfileConfigLoader::EC2InstanceProfileConfigLoader(const Aws::Client::ClientConfiguration::CredentialProviderConfiguration& credentialConfig) :
+            m_cachingProvider(Aws::MakeShared<Aws::Internal::CredentialsCachingProvider>(EC2_INSTANCE_PROFILE_LOG_TAG, Aws::MakeShared<IMDSRetrieveProvider>(EC2_INSTANCE_PROFILE_LOG_TAG, *this)))
         {
             Aws::Internal::InitEC2MetadataClient(credentialConfig);
             m_ec2metadataClient = Aws::Internal::GetEC2MetadataClient();
         }
 
         bool EC2InstanceProfileConfigLoader::LoadInternal()
+        {
+            return !m_cachingProvider->GetAWSCredentials().IsEmpty();
+        }
+
+        bool EC2InstanceProfileConfigLoader::RetrieveCredentials()
         {
             if (!m_ec2metadataClient) {
                 AWS_LOGSTREAM_FATAL(EC2_INSTANCE_PROFILE_LOG_TAG, "EC2MetadataClient is a nullptr!");
