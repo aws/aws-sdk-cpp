@@ -2,6 +2,7 @@
 #include <aws/core/auth/AWSCredentials.h>
 #include <aws/core/client/RetryStrategy.h>
 #include <aws/core/client/DefaultRetryStrategy.h>
+#include <aws/core/client/DefaultRetryStrategy.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/s3/S3EndpointProvider.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -363,6 +364,32 @@ public:
 };
 
 //Set http error and error in body in a way to hit generic xml error marshaller, which sets the exception name
+TEST_F(S3UnitTest, TemporarilyUnavailableIsRetryable) {
+  auto mockRequest = Aws::MakeShared<Standard::StandardHttpRequest>(
+    ALLOCATION_TAG, "https://mock.example/bucket/key", HttpMethod::HTTP_PUT);
+  mockRequest->SetResponseStreamFactory([]() -> IOStream* {
+    return Aws::New<StringStream>(ALLOCATION_TAG,
+      "<Error><Code>TemporarilyUnavailable</Code>"
+      "<Message>Storage service is temporarily not available.</Message></Error>",
+      std::ios_base::in | std::ios_base::binary);
+  });
+  auto mockResponse = Aws::MakeShared<Standard::StandardHttpResponse>(ALLOCATION_TAG, mockRequest);
+  mockResponse->SetResponseCode(HttpResponseCode::SERVICE_UNAVAILABLE);
+
+  const auto error = S3ErrorMarshaller().BuildAWSError(mockResponse);
+  EXPECT_EQ(CoreErrors::SERVICE_UNAVAILABLE, error.GetErrorType());
+  EXPECT_EQ("TemporarilyUnavailable", error.GetExceptionName());
+  EXPECT_TRUE(error.ShouldRetry());
+  EXPECT_TRUE(DefaultRetryStrategy().ShouldRetry(error, 0));
+}
+
+TEST_F(S3UnitTest, UnknownS3ErrorRemainsNonRetryable) {
+  const auto error = S3ErrorMapper::GetErrorForName("UnknownStorageError");
+  EXPECT_EQ(CoreErrors::UNKNOWN, error.GetErrorType());
+  EXPECT_FALSE(error.ShouldRetry());
+  EXPECT_FALSE(S3ErrorMapper::GetErrorForName("NoSuchKey").ShouldRetry());
+}
+
 TEST_F(S3UnitTest, S3EmbeddedErrorTestNonOKResponse) {
 
   auto mockRequest = Aws::MakeShared<Standard::StandardHttpRequest>(ALLOCATION_TAG, "mockuri", HttpMethod::HTTP_GET);

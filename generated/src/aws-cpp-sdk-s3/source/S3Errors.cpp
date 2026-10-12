@@ -42,6 +42,8 @@ static const int ANNOTATION_NAME_TOO_LONG_HASH = HashingUtils::HashString("Annot
 static const int OBJECT_NOT_IN_ACTIVE_TIER_HASH = HashingUtils::HashString("ObjectNotInActiveTierError");
 static const int BUCKET_ALREADY_EXISTS_HASH = HashingUtils::HashString("BucketAlreadyExists");
 static const int INVALID_OBJECT_STATE_HASH = HashingUtils::HashString("InvalidObjectState");
+// Wasabi returns this code for transient storage-service failures.
+static const int TEMPORARILY_UNAVAILABLE_HASH = HashingUtils::HashString("TemporarilyUnavailable");
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
@@ -84,6 +86,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(S3Errors::BUCKET_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INVALID_OBJECT_STATE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(S3Errors::INVALID_OBJECT_STATE), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == TEMPORARILY_UNAVAILABLE_HASH)
+  {
+    return AWSError<CoreErrors>(CoreErrors::SERVICE_UNAVAILABLE, RetryableType::RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
