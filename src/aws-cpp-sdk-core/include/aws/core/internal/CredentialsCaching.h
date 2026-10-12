@@ -88,16 +88,16 @@ namespace Aws
                     Aws::Utils::Threading::ReaderLockGuard guard(m_stateLock);
                     if (m_cached)
                     {
-                        if (!m_cached->RefreshNeeded(nowMs))
+                        if (!RefreshNeeded(*m_cached, nowMs))
                         {
                             return Aws::Utils::Outcome<CredentialsT, Aws::String>(m_cached->credentials);
                         }
-                        if (m_cached->RateLimited(nowMs))
+                        if (RateLimited(*m_cached, nowMs))
                         {
                             return Aws::Utils::Outcome<CredentialsT, Aws::String>(m_cached->credentials);
                         }
                         cachedCredentials = m_cached->credentials;
-                        advisory = !m_cached->MandatoryRefreshNeeded(nowMs);
+                        advisory = !MandatoryRefreshNeeded(*m_cached, nowMs);
                     }
                 }
 
@@ -131,21 +131,6 @@ namespace Aws
                 Aws::Utils::DateTime expiration;
                 std::chrono::milliseconds advisoryWindow{std::chrono::minutes(15)};
                 int64_t nextRefreshAllowedAtMs{0};
-
-                bool RefreshNeeded(int64_t nowMs) const
-                {
-                    return nowMs >= expiration.Millis() - advisoryWindow.count();
-                }
-
-                bool MandatoryRefreshNeeded(int64_t nowMs) const
-                {
-                    return nowMs >= expiration.Millis() - std::chrono::milliseconds(std::chrono::minutes(1)).count();
-                }
-
-                bool RateLimited(int64_t nowMs) const
-                {
-                    return nextRefreshAllowedAtMs != 0 && nowMs < nextRefreshAllowedAtMs;
-                }
             };
 
             // CachedError holds a non-recoverable error and when it stops being served.
@@ -179,7 +164,7 @@ namespace Aws
                 {
                     const int64_t nowMs = m_clock().Millis();
                     Aws::Utils::Threading::ReaderLockGuard guard(m_stateLock);
-                    if (m_cached && !m_cached->RefreshNeeded(nowMs))
+                    if (m_cached && !RefreshNeeded(*m_cached, nowMs))
                     {
                         return Aws::Utils::Outcome<CredentialsT, Aws::String>(m_cached->credentials);
                     }
@@ -187,7 +172,7 @@ namespace Aws
                     {
                         return Aws::Utils::Outcome<CredentialsT, Aws::String>(m_cachedError->message);
                     }
-                    if (m_cached && m_cached->RateLimited(nowMs))
+                    if (m_cached && RateLimited(*m_cached, nowMs))
                     {
                         return Aws::Utils::Outcome<CredentialsT, Aws::String>(m_cached->credentials);
                     }
@@ -225,6 +210,24 @@ namespace Aws
                 }
                 return Aws::Utils::Outcome<CredentialsT, Aws::String>(
                     result.errorMessage.empty() ? Aws::String("NoCredentialsError") : result.errorMessage);
+            }
+
+            // RefreshNeeded returns whether cached is inside its advisory window.
+            static bool RefreshNeeded(const CachedCredentials& cached, int64_t nowMs)
+            {
+                return nowMs >= cached.expiration.Millis() - cached.advisoryWindow.count();
+            }
+
+            // MandatoryRefreshNeeded returns whether cached is inside its mandatory window.
+            static bool MandatoryRefreshNeeded(const CachedCredentials& cached, int64_t nowMs)
+            {
+                return nowMs >= cached.expiration.Millis() - std::chrono::milliseconds(std::chrono::minutes(1)).count();
+            }
+
+            // RateLimited returns whether a failed refresh's backoff is still active for cached.
+            static bool RateLimited(const CachedCredentials& cached, int64_t nowMs)
+            {
+                return cached.nextRefreshAllowedAtMs != 0 && nowMs < cached.nextRefreshAllowedAtMs;
             }
 
             // NonRecoverableErrCached returns whether a non-recoverable error is cached and not yet expired.

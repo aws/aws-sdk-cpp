@@ -30,7 +30,9 @@ namespace Aws {
              */
             AWSCredentials GetAWSCredentials() override;
 
-            // Invalidate marks the cached credentials for refresh if they match accessKeyId.
+            /**
+             * Invalidate marks the cached credentials for refresh if they match accessKeyId.
+             */
             void Invalidate(const Aws::String& accessKeyId) override;
 
         private:

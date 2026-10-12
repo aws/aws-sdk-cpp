@@ -91,7 +91,9 @@ namespace Aws
             */
             AWSCredentials GetAWSCredentials() override;
 
-            // Invalidate marks the cached credentials for refresh if they match accessKeyId.
+            /**
+             * Invalidate marks the cached credentials for refresh if they match accessKeyId.
+             */
             void Invalidate(const Aws::String& accessKeyId) override;
 
             static const char AWS_CONTAINER_AUTHORIZATION_TOKEN_FILE[];
@@ -102,6 +104,9 @@ namespace Aws
             static const char AWS_ECS_CONTAINER_HOST[];
             static const char AWS_EKS_CONTAINER_HOST[];
             static const char AWS_EKS_CONTAINER_HOST_IPV6[];
+
+        protected:
+            void Reload() override;
 
         private:
             Aws::String LoadTokenFromFile() const;

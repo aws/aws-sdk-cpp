@@ -311,6 +311,13 @@ void InstanceProfileCredentialsProvider::Invalidate(const Aws::String& accessKey
     m_cachingProvider->Invalidate(accessKeyId);
 }
 
+void InstanceProfileCredentialsProvider::Reload()
+{
+    m_cachingProvider->Invalidate(m_cachingProvider->GetAWSCredentials().GetAWSAccessKeyId());
+    m_cachingProvider->GetAWSCredentials();
+    AWSCredentialsProvider::Reload();
+}
+
 static const char PROCESS_LOG_TAG[] = "ProcessCredentialsProvider";
 ProcessCredentialsProvider::ProcessCredentialsProvider() :
     m_profileToUse(Aws::Auth::GetConfigProfileName())

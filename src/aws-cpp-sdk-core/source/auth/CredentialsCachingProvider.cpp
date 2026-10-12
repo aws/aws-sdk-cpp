@@ -6,6 +6,7 @@
 #include <aws/core/auth/CredentialsCachingProvider.h>
 #include <aws/core/internal/CredentialsCaching.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 
 using namespace Aws::Auth;
 using namespace Aws::Utils;
@@ -26,7 +27,7 @@ static const char CREDENTIALS_CACHING_PROVIDER_LOG_TAG[] = "CredentialsCachingPr
 
 CredentialsCachingProvider::CredentialsCachingProvider(std::shared_ptr<AWSCredentialsProvider> delegate)
     : m_delegate(std::move(delegate)),
-      m_cachingState(new Aws::Internal::CredentialsCachingStateImpl(
+      m_cachingState(Aws::MakeShared<Aws::Internal::CredentialsCachingStateImpl>(CREDENTIALS_CACHING_PROVIDER_LOG_TAG,
           [this]() -> Aws::Internal::RefreshResult<AWSCredentials> {
               AWSCredentials credentials = m_delegate->GetAWSCredentials();
               if (credentials.IsEmpty())
@@ -38,8 +39,6 @@ CredentialsCachingProvider::CredentialsCachingProvider(std::shared_ptr<AWSCreden
           [](const AWSCredentials& credentials) { return credentials.GetAWSAccessKeyId(); }))
 {
 }
-
-CredentialsCachingProvider::~CredentialsCachingProvider() = default;
 
 AWSCredentials CredentialsCachingProvider::GetAWSCredentials()
 {

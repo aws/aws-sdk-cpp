@@ -22,16 +22,17 @@ namespace Aws
         {
         public:
             explicit CredentialsCachingProvider(std::shared_ptr<AWSCredentialsProvider> delegate);
-            ~CredentialsCachingProvider() override;
 
             AWSCredentials GetAWSCredentials() override;
 
-            // Invalidate marks the cached credentials for refresh if they match accessKeyId.
+            /**
+             * Invalidate marks the cached credentials for refresh if they match accessKeyId.
+             */
             void Invalidate(const Aws::String& accessKeyId) override;
 
         private:
             std::shared_ptr<AWSCredentialsProvider> m_delegate;
-            std::unique_ptr<Aws::Internal::CredentialsCachingStateImpl> m_cachingState;
+            std::shared_ptr<Aws::Internal::CredentialsCachingStateImpl> m_cachingState;
         };
     } // namespace Auth
 } // namespace Aws

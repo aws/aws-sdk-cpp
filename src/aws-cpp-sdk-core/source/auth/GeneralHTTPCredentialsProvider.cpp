@@ -278,3 +278,10 @@ Aws::String GeneralHTTPCredentialsProvider::LoadTokenFromFile() const
 {
     return ::LoadTokenFromFile(m_authTokenFilePath);
 }
+
+void GeneralHTTPCredentialsProvider::Reload()
+{
+    m_cachingProvider->Invalidate(m_cachingProvider->GetAWSCredentials().GetAWSAccessKeyId());
+    m_cachingProvider->GetAWSCredentials();
+    AWSCredentialsProvider::Reload();
+}
