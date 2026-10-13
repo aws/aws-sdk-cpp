@@ -5,9 +5,11 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <smithy/client/schema/CborShapeSerializer.h>
+#include <smithy/client/schema/Document.h>
 #include <smithy/client/schema/MapSerializer.h>
 #include <smithy/client/schema/Schema.h>
 #include <smithy/client/schema/SchemaBuilder.h>
+#include <smithy/client/schema/SerdeTraits.h>
 
 #include <cstring>
 #include <functional>
@@ -1035,4 +1037,36 @@ TEST_F(CborShapeSerializerTest, UnionAsStructure) {
   expected += '\xFF';  // end union
   expected += '\xFF';  // end outer
   EXPECT_EQ(payload, expected);
+}
+
+TEST_F(CborShapeSerializerTest, DocumentIsUnsupported) {
+  CborShapeSerializer s;
+  auto member = Schema::CreateMember("doc", ShapeType::Document);
+  s.WriteDocument(*member, *Document::FromString("x"));
+  auto outcome = s.GetPayload();
+  ASSERT_FALSE(outcome.IsSuccess());
+  EXPECT_EQ(outcome.GetError().GetExceptionName(), "SerializationException");
+}
+
+TEST_F(CborShapeSerializerTest, TimestampIgnoresTimestampFormatTrait) {
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto plain = Schema::CreateMember("t", ShapeType::Timestamp);
+  auto dated = Schema::CreateMember(
+      "t", ShapeType::Timestamp,
+      {{TimestampFormatTrait::KEY(), Aws::MakeShared<TimestampFormatTrait>("Test", TimestampFormatTrait::Format::DATE_TIME)}});
+  const Aws::Utils::DateTime dt(1234567890.0);
+
+  CborShapeSerializer a;
+  LambdaStruct ra(*root, [&](ShapeSerializer& ser) { ser.WriteTimestamp(*plain, dt); });
+  a.WriteStruct(*root, ra);
+
+  CborShapeSerializer b;
+  LambdaStruct rb(*root, [&](ShapeSerializer& ser) { ser.WriteTimestamp(*dated, dt); });
+  b.WriteStruct(*root, rb);
+
+  const auto aOut = a.GetPayload();
+  const auto bOut = b.GetPayload();
+  ASSERT_TRUE(aOut.IsSuccess());
+  ASSERT_TRUE(bOut.IsSuccess());
+  EXPECT_EQ(aOut.GetResult(), bOut.GetResult());  // trait ignored -> identical bytes
 }

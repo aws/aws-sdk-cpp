@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/common/byte_buf.h>
+#include <aws/crt/Optional.h>
 
 
 namespace Aws
@@ -172,6 +173,20 @@ namespace Aws
              * convert to double
              */
             static double ConvertToDouble(const char* source);
+
+
+            /**
+             * Parses the entire string as a base-10 int64. Returns empty if the string is empty or has
+             * characters after the number. Out-of-range values saturate, matching ConvertToInt64.
+             */
+            static Aws::Crt::Optional<int64_t> ParseInt64(const Aws::String& source);
+
+
+            /**
+             * Parses the entire string as a double. Returns empty if the string is empty or has
+             * characters after the number.
+             */
+            static Aws::Crt::Optional<double> ParseDouble(const Aws::String& source);
 
 
 #ifdef _WIN32

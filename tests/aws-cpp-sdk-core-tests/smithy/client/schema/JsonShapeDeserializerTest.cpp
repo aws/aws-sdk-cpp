@@ -3,9 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/crt/Optional.h>
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <smithy/client/schema/Codec.h>
+#include <smithy/client/schema/Document.h>
 #include <smithy/client/schema/JsonShapeDeserializer.h>
 #include <smithy/client/schema/JsonShapeSerializer.h>
 #include <smithy/client/schema/JsonTraits.h>
@@ -17,6 +20,7 @@
 #include <cmath>
 #include <functional>
 #include <limits>
+#include <memory>
 
 #include "SchemaSerializerTestHelpers.h"
 
@@ -488,5 +492,258 @@ TEST_F(JsonShapeDeserializerTest, TimestampFormatTraitControlsParsing) {
     d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) { got = de.ReadTimestamp(m); });
     ASSERT_TRUE(got.has_value());
     EXPECT_EQ(got.value().Seconds(), 1234567890);
+  }
+}
+
+TEST_F(JsonShapeDeserializerTest, TimestampHonorsCodecSettingsDefault) {
+  auto root = Schema::StructureBuilder("Root").PutMember("t", Schema::CreateTimestamp("T")).Build();
+  {  // default epoch: numeric wire value read as epoch seconds
+    const Aws::String wire = "{\"t\":0}";
+    JsonShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(wire.data()), wire.size()));
+    Aws::Crt::Optional<Aws::Utils::DateTime> got;
+    d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) { got = de.ReadTimestamp(m); });
+    ASSERT_TRUE(got.has_value());
+    EXPECT_EQ(got->Seconds(), 0);
+  }
+  {  // HTTP_DATE setting drives the typed-read fallback (the only value that changes ReadTimestamp's branch)
+    const Aws::String wire = "{\"t\":\"Thu, 01 Jan 1970 00:00:00 GMT\"}";
+    JsonShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(wire.data()), wire.size()),
+                            CodecSettings{TimestampFormatTrait::Format::HTTP_DATE});
+    Aws::Crt::Optional<Aws::Utils::DateTime> got;
+    d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) { got = de.ReadTimestamp(m); });
+    ASSERT_TRUE(got.has_value());
+    EXPECT_EQ(got->Seconds(), 0);
+  }
+}
+
+TEST_F(JsonShapeDeserializerTest, ReadDocumentBuildsNestedTree) {
+  Aws::String json = "{\"n\":1,\"d\":2.5,\"b\":true,\"nil\":null,\"list\":[\"x\",false]}";
+  JsonShapeDeserializer deser(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(json.c_str()), json.size()));
+  auto schema = Schema::CreateDocument("smithy.api#Document");
+  auto doc = deser.ReadDocument(*schema);
+  ASSERT_NE(doc, nullptr);
+
+  Aws::Vector<std::shared_ptr<const Document>> list;
+  list.push_back(Document::FromString("x"));
+  list.push_back(Document::FromBoolean(false));
+  Aws::Map<Aws::String, std::shared_ptr<const Document>> expected;
+  expected.emplace("n", Document::FromInteger(1));
+  expected.emplace("d", Document::FromDouble(2.5));
+  expected.emplace("b", Document::FromBoolean(true));
+  expected.emplace("nil", Document::Null());
+  expected.emplace("list", Document::FromList(std::move(list)));
+  // Content equality across implementations: a JSON-built tree equals a plain-built tree.
+  EXPECT_TRUE(*doc == *Document::FromMap(std::move(expected)));
+}
+
+TEST_F(JsonShapeDeserializerTest, ReadDocumentIntegerVsDouble) {
+  Aws::String json = "[7,7.0,3000000000]";
+  JsonShapeDeserializer deser(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(json.c_str()), json.size()));
+  auto schema = Schema::CreateDocument("smithy.api#Document");
+  auto doc = deser.ReadDocument(*schema);
+  ASSERT_NE(doc, nullptr);
+  auto list = doc->AsList();
+  ASSERT_NE(list, nullptr);
+  ASSERT_EQ(list->size(), 3u);
+  EXPECT_EQ((*list)[0]->GetType(), ShapeType::Integer);
+  EXPECT_EQ((*list)[1]->GetType(), ShapeType::Double);
+  EXPECT_EQ((*list)[2]->GetType(), ShapeType::Long);
+}
+
+TEST_F(JsonShapeDeserializerTest, ReadDocumentAcceptsNestingAtDepthLimit) {
+  // The cap admits MAX_DOCUMENT_DEPTH - 1 containers.
+  Aws::String json(255, '[');
+  json += "1";
+  json.append(255, ']');
+  JsonShapeDeserializer deser(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(json.c_str()), json.size()));
+  auto schema = Schema::CreateDocument("smithy.api#Document");
+  EXPECT_NE(deser.ReadDocument(*schema), nullptr);
+}
+
+TEST_F(JsonShapeDeserializerTest, ReadDocumentRejectsExcessiveNesting) {
+  // Locks the MAX_DOCUMENT_DEPTH guard: nesting past the cap yields nullptr, not a crash.
+  Aws::String json(256, '[');
+  json += "1";
+  json.append(256, ']');
+  JsonShapeDeserializer deser(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(json.c_str()), json.size()));
+  auto schema = Schema::CreateDocument("smithy.api#Document");
+  EXPECT_EQ(deser.ReadDocument(*schema), nullptr);
+}
+
+TEST_F(JsonShapeDeserializerTest, ReadDocumentRequiresColonAfterKey) {
+  auto schema = Schema::CreateDocument("smithy.api#Document");
+  const Aws::String valid = "{\"a\" : 1}";
+  JsonShapeDeserializer ok(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(valid.data()), valid.size()));
+  auto doc = ok.ReadDocument(*schema);
+  ASSERT_NE(doc, nullptr);
+  ASSERT_NE(doc->GetMember("a"), nullptr);
+  EXPECT_EQ(doc->GetMember("a")->AsLong().value(), 1);
+
+  const Aws::String missing = "{\"a\" 1}";
+  JsonShapeDeserializer bad(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(missing.data()), missing.size()));
+  EXPECT_EQ(bad.ReadDocument(*schema), nullptr);
+}
+
+TEST_F(JsonShapeDeserializerTest, ReadDocumentFailureConsumesValueSoTrailingMemberSurvives) {
+  auto root = Schema::StructureBuilder("Root")
+                  .PutMember("doc", Schema::CreateDocument("smithy.api#Document"))
+                  .PutMember("name", Schema::CreateString("S"))
+                  .Build();
+  // First three fail outright; the rest would otherwise return a truncated or malformed-but-present document.
+  const Aws::Vector<Aws::String> payloads = {
+      "{\"doc\":" + Aws::String(300, '[') + "1" + Aws::String(300, ']') + ",\"name\":\"bob\"}",
+      "{\"doc\":[1.2.3],\"name\":\"bob\"}",
+      "{\"doc\":{1:2},\"name\":\"bob\"}",
+      "{\"doc\":[1,2 3],\"name\":\"bob\"}",
+      "{\"doc\":{\"a\":1 \"b\":2},\"name\":\"bob\"}",
+      "{\"doc\":[1:2],\"name\":\"bob\"}",
+      "{\"doc\":{\"a\" 1},\"name\":\"bob\"}",
+  };
+  for (const auto& json : payloads) {
+    JsonShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(json.data()), json.size()));
+    bool docPresent = true;
+    Aws::String name;
+    d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) {
+      if (m.GetMemberName() == "doc") {
+        docPresent = de.ReadDocument(m) != nullptr;
+      } else {
+        auto v = de.ReadString(m);
+        if (v.has_value()) {
+          name = v.value();
+        }
+      }
+    });
+    EXPECT_FALSE(docPresent) << json;
+    EXPECT_EQ(name, "bob") << json;
+  }
+}
+
+TEST_F(JsonShapeDeserializerTest, ReadLongRejectsNonFiniteAndOutOfRange) {
+  auto root = Schema::StructureBuilder("Root").PutMember("n", Schema::CreateLong("L")).Build();
+  const Aws::Vector<Aws::String> wires = {"{\"n\":1e30}", "{\"n\":1e400}"};
+  for (const auto& wire : wires) {
+    JsonShapeDeserializer d(
+        Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(wire.data()), wire.size()));
+    bool present = true;
+    d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) { present = de.ReadLong(m).has_value(); });
+    EXPECT_FALSE(present) << wire;
+  }
+}
+
+TEST_F(JsonShapeDeserializerTest, ReadLongClampsPlainDigitOverflow) {
+  auto root = Schema::StructureBuilder("Root").PutMember("n", Schema::CreateLong("L")).Build();
+  const Aws::String wire = "{\"n\":99999999999999999999}";  // > INT64_MAX, no exponent
+  JsonShapeDeserializer d(
+      Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(wire.data()), wire.size()));
+  Aws::Crt::Optional<int64_t> got;
+  d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) { got = de.ReadLong(m); });
+  // A plain-integer overflow clamps to INT64_MAX rather than dropping.
+  ASSERT_TRUE(got.has_value());
+  EXPECT_EQ(got.value(), 9223372036854775807LL);
+}
+
+TEST_F(JsonShapeDeserializerTest, ReadDocumentOverflowIntegerBecomesDouble) {
+  Aws::String json = "9999999999999999999";  // > INT64_MAX
+  JsonShapeDeserializer d(
+      Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(json.data()), json.size()));
+  auto schema = Schema::CreateDocument("smithy.api#Document");
+  auto doc = d.ReadDocument(*schema);
+  ASSERT_NE(doc, nullptr);
+  EXPECT_EQ(doc->GetType(), ShapeType::Double);  // magnitude preserved as double, not clamped to Long
+}
+
+TEST_F(JsonShapeDeserializerTest, DocumentJsonCoercesBase64AndIsoAndRejectsMalformed) {
+  Aws::String json = "{\"b\":\"aGk=\",\"t\":\"2023-11-14T22:13:20Z\",\"bad\":\"!!!not-base64!!!\"}";
+  JsonShapeDeserializer d(
+      Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(json.data()), json.size()),
+      CodecSettings{TimestampFormatTrait::Format::DATE_TIME});
+  auto schema = Schema::CreateDocument("smithy.api#Document");
+  auto doc = d.ReadDocument(*schema);
+  ASSERT_NE(doc, nullptr);
+  auto b = doc->GetMember("b");
+  ASSERT_NE(b, nullptr);
+  auto blob = b->AsBlob();
+  ASSERT_TRUE(blob.has_value());
+  EXPECT_EQ(blob->GetLength(), 2u);  // "hi"
+  auto t = doc->GetMember("t");
+  ASSERT_NE(t, nullptr);
+  EXPECT_TRUE(t->AsTimestamp().has_value());  // ISO-8601 under a string-based default
+  auto bad = doc->GetMember("bad");
+  ASSERT_NE(bad, nullptr);
+  EXPECT_FALSE(bad->AsBlob().has_value());  // malformed base64 -> absent, not present-empty
+}
+
+TEST_F(JsonShapeDeserializerTest, DocumentJsonEmptyStringBlobIsPresentEmpty) {
+  Aws::String json = "{\"e\":\"\"}";
+  JsonShapeDeserializer d(
+      Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(json.data()), json.size()));
+  auto schema = Schema::CreateDocument("smithy.api#Document");
+  auto doc = d.ReadDocument(*schema);
+  ASSERT_NE(doc, nullptr);
+  auto e = doc->GetMember("e");
+  ASSERT_NE(e, nullptr);
+  auto blob = e->AsBlob();
+  ASSERT_TRUE(blob.has_value());     // legitimately-empty string -> present blob
+  EXPECT_EQ(blob->GetLength(), 0u);  // ...of length 0 (distinct from malformed -> absent)
+}
+
+TEST_F(JsonShapeDeserializerTest, DocumentTimestampHonorsConfiguredHttpDate) {
+  Aws::String json = "\"Thu, 01 Jan 1970 00:00:00 GMT\"";
+  JsonShapeDeserializer d(
+      Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(json.data()), json.size()),
+      CodecSettings{TimestampFormatTrait::Format::HTTP_DATE});
+  auto schema = Schema::CreateDocument("smithy.api#Document");
+  auto doc = d.ReadDocument(*schema);
+  ASSERT_NE(doc, nullptr);
+  auto ts = doc->AsTimestamp();
+  ASSERT_TRUE(ts.has_value());
+  EXPECT_EQ(ts->Seconds(), 0);
+}
+
+TEST_F(JsonShapeDeserializerTest, DocumentTimestampCoercesUnderDateTimeFormat) {
+  Aws::String json = "\"1970-01-01T00:00:00Z\"";
+  JsonShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(json.data()), json.size()),
+                          CodecSettings{TimestampFormatTrait::Format::DATE_TIME});
+  auto schema = Schema::CreateDocument("smithy.api#Document");
+  auto doc = d.ReadDocument(*schema);
+  ASSERT_NE(doc, nullptr);
+  EXPECT_TRUE(doc->AsTimestamp().has_value());  // ISO-8601 under a string-based (DATE_TIME) default
+}
+
+TEST_F(JsonShapeDeserializerTest, DocumentStringTimestampGatedByConfiguredFormat) {
+  auto schema = Schema::CreateDocument("smithy.api#Document");
+  const Aws::String iso = "\"2009-02-13T23:31:30Z\"";
+  {  // epoch (numeric) default: a string does NOT coerce to timestamp (SEP format-gating)
+    JsonShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(iso.data()), iso.size()));
+    auto doc = d.ReadDocument(*schema);
+    ASSERT_NE(doc, nullptr);
+    EXPECT_FALSE(doc->AsTimestamp().has_value());
+  }
+  {  // date-time (string-based) default: the string coerces
+    JsonShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(iso.data()), iso.size()),
+                            CodecSettings{TimestampFormatTrait::Format::DATE_TIME});
+    auto doc = d.ReadDocument(*schema);
+    ASSERT_NE(doc, nullptr);
+    ASSERT_TRUE(doc->AsTimestamp().has_value());
+    EXPECT_EQ(doc->AsTimestamp()->Seconds(), 1234567890);
+  }
+}
+
+TEST_F(JsonShapeDeserializerTest, DocumentNumberTimestampGatedByConfiguredFormat) {
+  auto schema = Schema::CreateDocument("smithy.api#Document");
+  const Aws::String num = "1234567890";
+  {  // epoch default: a number coerces as epoch seconds
+    JsonShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(num.data()), num.size()));
+    auto doc = d.ReadDocument(*schema);
+    ASSERT_NE(doc, nullptr);
+    ASSERT_TRUE(doc->AsTimestamp().has_value());
+    EXPECT_EQ(doc->AsTimestamp()->Seconds(), 1234567890);
+  }
+  {  // date-time (string-based) default: a number does NOT coerce
+    JsonShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(num.data()), num.size()),
+                            CodecSettings{TimestampFormatTrait::Format::DATE_TIME});
+    auto doc = d.ReadDocument(*schema);
+    ASSERT_NE(doc, nullptr);
+    EXPECT_FALSE(doc->AsTimestamp().has_value());
   }
 }

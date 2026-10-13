@@ -60,6 +60,10 @@ class SMITHY_API InterceptingSerializer : public ShapeSerializer {
     Before(schema).WriteNull(schema);
     After(schema);
   }
+  void WriteDocument(const Schema& schema, const Document& value) override {
+    Before(schema).WriteDocument(schema, value);
+    After(schema);
+  }
 
  protected:
   virtual ShapeSerializer& Before(const Schema& schema) = 0;

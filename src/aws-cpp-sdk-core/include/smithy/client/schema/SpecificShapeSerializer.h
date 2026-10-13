@@ -24,6 +24,7 @@ class SMITHY_API SpecificShapeSerializer : public ShapeSerializer {
   void WriteTimestamp(const Schema&, const Aws::Utils::DateTime&) override {}
   void WriteBlob(const Schema&, const Aws::Utils::ByteBuffer&) override {}
   void WriteNull(const Schema&) override {}
+  void WriteDocument(const Schema&, const Document&) override {}
 };
 
 }  // namespace schema
