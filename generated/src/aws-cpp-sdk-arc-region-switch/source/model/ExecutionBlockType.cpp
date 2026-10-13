@@ -33,6 +33,7 @@ static const int AuroraServerlessScaling_HASH = HashingUtils::HashString("Aurora
 static const int AuroraProvisionedScaling_HASH = HashingUtils::HashString("AuroraProvisionedScaling");
 static const int NeptuneGlobalDatabase_HASH = HashingUtils::HashString("NeptuneGlobalDatabase");
 static const int RdsSwitchoverReadReplica_HASH = HashingUtils::HashString("RdsSwitchoverReadReplica");
+static const int SSMSendCommand_HASH = HashingUtils::HashString("SSMSendCommand");
 
 ExecutionBlockType GetExecutionBlockTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -72,6 +73,8 @@ ExecutionBlockType GetExecutionBlockTypeForName(const Aws::String& name) {
     return ExecutionBlockType::NeptuneGlobalDatabase;
   } else if (hashCode == RdsSwitchoverReadReplica_HASH) {
     return ExecutionBlockType::RdsSwitchoverReadReplica;
+  } else if (hashCode == SSMSendCommand_HASH) {
+    return ExecutionBlockType::SSMSendCommand;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -122,6 +125,8 @@ Aws::String GetNameForExecutionBlockType(ExecutionBlockType enumValue) {
       return "NeptuneGlobalDatabase";
     case ExecutionBlockType::RdsSwitchoverReadReplica:
       return "RdsSwitchoverReadReplica";
+    case ExecutionBlockType::SSMSendCommand:
+      return "SSMSendCommand";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -26,6 +26,10 @@ AuthConfig& AuthConfig::operator=(JsonView jsonValue) {
     m_credentialProviderIdentifier = jsonValue.GetString("CredentialProviderIdentifier");
     m_credentialProviderIdentifierHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AudienceOverride")) {
+    m_audienceOverride = jsonValue.GetString("AudienceOverride");
+    m_audienceOverrideHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue AuthConfig::Jsonize() const {
 
   if (m_credentialProviderIdentifierHasBeenSet) {
     payload.WithString("CredentialProviderIdentifier", m_credentialProviderIdentifier);
+  }
+
+  if (m_audienceOverrideHasBeenSet) {
+    payload.WithString("AudienceOverride", m_audienceOverride);
   }
 
   return payload;

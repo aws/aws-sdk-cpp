@@ -34,6 +34,10 @@ RegistryMapping& RegistryMapping::operator=(JsonView jsonValue) {
     m_ecrAccountId = jsonValue.GetString("ecrAccountId");
     m_ecrAccountIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("credentialArn")) {
+    m_credentialArn = jsonValue.GetString("credentialArn");
+    m_credentialArnHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +58,10 @@ JsonValue RegistryMapping::Jsonize() const {
 
   if (m_ecrAccountIdHasBeenSet) {
     payload.WithString("ecrAccountId", m_ecrAccountId);
+  }
+
+  if (m_credentialArnHasBeenSet) {
+    payload.WithString("credentialArn", m_credentialArn);
   }
 
   return payload;

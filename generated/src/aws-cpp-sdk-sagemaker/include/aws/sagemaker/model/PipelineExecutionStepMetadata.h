@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
+#include <aws/sagemaker/model/AthenaStepMetadata.h>
 #include <aws/sagemaker/model/AutoMLJobStepMetadata.h>
 #include <aws/sagemaker/model/BedrockCustomModelDeploymentMetadata.h>
 #include <aws/sagemaker/model/BedrockCustomModelMetadata.h>
@@ -12,11 +13,14 @@
 #include <aws/sagemaker/model/BedrockProvisionedModelThroughputMetadata.h>
 #include <aws/sagemaker/model/CallbackStepMetadata.h>
 #include <aws/sagemaker/model/ClarifyCheckStepMetadata.h>
+#include <aws/sagemaker/model/CleanupStepMetadata.h>
 #include <aws/sagemaker/model/ConditionStepMetadata.h>
+#include <aws/sagemaker/model/EMRServerlessStepMetadata.h>
 #include <aws/sagemaker/model/EMRStepMetadata.h>
 #include <aws/sagemaker/model/EndpointConfigStepMetadata.h>
 #include <aws/sagemaker/model/EndpointStepMetadata.h>
 #include <aws/sagemaker/model/FailStepMetadata.h>
+#include <aws/sagemaker/model/ForEachStepMetadata.h>
 #include <aws/sagemaker/model/InferenceComponentMetadata.h>
 #include <aws/sagemaker/model/JobStepMetadata.h>
 #include <aws/sagemaker/model/LambdaStepMetadata.h>
@@ -238,6 +242,25 @@ class PipelineExecutionStepMetadata {
   template <typename EMRT = EMRStepMetadata>
   PipelineExecutionStepMetadata& WithEMR(EMRT&& value) {
     SetEMR(std::forward<EMRT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The configurations and outcomes of an Amazon EMR Serverless step
+   * execution.</p>
+   */
+  inline const EMRServerlessStepMetadata& GetEMRServerless() const { return m_eMRServerless; }
+  inline bool EMRServerlessHasBeenSet() const { return m_eMRServerlessHasBeenSet; }
+  template <typename EMRServerlessT = EMRServerlessStepMetadata>
+  void SetEMRServerless(EMRServerlessT&& value) {
+    m_eMRServerlessHasBeenSet = true;
+    m_eMRServerless = std::forward<EMRServerlessT>(value);
+  }
+  template <typename EMRServerlessT = EMRServerlessStepMetadata>
+  PipelineExecutionStepMetadata& WithEMRServerless(EMRServerlessT&& value) {
+    SetEMRServerless(std::forward<EMRServerlessT>(value));
     return *this;
   }
   ///@}
@@ -505,6 +528,60 @@ class PipelineExecutionStepMetadata {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The metadata for the Athena step execution.</p>
+   */
+  inline const AthenaStepMetadata& GetAthena() const { return m_athena; }
+  inline bool AthenaHasBeenSet() const { return m_athenaHasBeenSet; }
+  template <typename AthenaT = AthenaStepMetadata>
+  void SetAthena(AthenaT&& value) {
+    m_athenaHasBeenSet = true;
+    m_athena = std::forward<AthenaT>(value);
+  }
+  template <typename AthenaT = AthenaStepMetadata>
+  PipelineExecutionStepMetadata& WithAthena(AthenaT&& value) {
+    SetAthena(std::forward<AthenaT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The metadata for the cleanup step execution.</p>
+   */
+  inline const CleanupStepMetadata& GetCleanup() const { return m_cleanup; }
+  inline bool CleanupHasBeenSet() const { return m_cleanupHasBeenSet; }
+  template <typename CleanupT = CleanupStepMetadata>
+  void SetCleanup(CleanupT&& value) {
+    m_cleanupHasBeenSet = true;
+    m_cleanup = std::forward<CleanupT>(value);
+  }
+  template <typename CleanupT = CleanupStepMetadata>
+  PipelineExecutionStepMetadata& WithCleanup(CleanupT&& value) {
+    SetCleanup(std::forward<CleanupT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The metadata for the ForEach step execution.</p>
+   */
+  inline const ForEachStepMetadata& GetForEach() const { return m_forEach; }
+  inline bool ForEachHasBeenSet() const { return m_forEachHasBeenSet; }
+  template <typename ForEachT = ForEachStepMetadata>
+  void SetForEach(ForEachT&& value) {
+    m_forEachHasBeenSet = true;
+    m_forEach = std::forward<ForEachT>(value);
+  }
+  template <typename ForEachT = ForEachStepMetadata>
+  PipelineExecutionStepMetadata& WithForEach(ForEachT&& value) {
+    SetForEach(std::forward<ForEachT>(value));
+    return *this;
+  }
+  ///@}
  private:
   TrainingJobStepMetadata m_trainingJob;
 
@@ -525,6 +602,8 @@ class PipelineExecutionStepMetadata {
   LambdaStepMetadata m_lambda;
 
   EMRStepMetadata m_eMR;
+
+  EMRServerlessStepMetadata m_eMRServerless;
 
   QualityCheckStepMetadata m_qualityCheck;
 
@@ -551,6 +630,12 @@ class PipelineExecutionStepMetadata {
   LineageMetadata m_lineage;
 
   JobStepMetadata m_job;
+
+  AthenaStepMetadata m_athena;
+
+  CleanupStepMetadata m_cleanup;
+
+  ForEachStepMetadata m_forEach;
   bool m_trainingJobHasBeenSet = false;
   bool m_processingJobHasBeenSet = false;
   bool m_transformJobHasBeenSet = false;
@@ -561,6 +646,7 @@ class PipelineExecutionStepMetadata {
   bool m_callbackHasBeenSet = false;
   bool m_lambdaHasBeenSet = false;
   bool m_eMRHasBeenSet = false;
+  bool m_eMRServerlessHasBeenSet = false;
   bool m_qualityCheckHasBeenSet = false;
   bool m_clarifyCheckHasBeenSet = false;
   bool m_failHasBeenSet = false;
@@ -574,6 +660,9 @@ class PipelineExecutionStepMetadata {
   bool m_inferenceComponentHasBeenSet = false;
   bool m_lineageHasBeenSet = false;
   bool m_jobHasBeenSet = false;
+  bool m_athenaHasBeenSet = false;
+  bool m_cleanupHasBeenSet = false;
+  bool m_forEachHasBeenSet = false;
 };
 
 }  // namespace Model

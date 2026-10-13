@@ -26,6 +26,10 @@ PriceWithCurrency& PriceWithCurrency::operator=(JsonView jsonValue) {
     m_currency = jsonValue.GetString("Currency");
     m_currencyHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("PriceType")) {
+    m_priceType = PriceTypeMapper::GetPriceTypeForName(jsonValue.GetString("PriceType"));
+    m_priceTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue PriceWithCurrency::Jsonize() const {
 
   if (m_currencyHasBeenSet) {
     payload.WithString("Currency", m_currency);
+  }
+
+  if (m_priceTypeHasBeenSet) {
+    payload.WithString("PriceType", PriceTypeMapper::GetNameForPriceType(m_priceType));
   }
 
   return payload;

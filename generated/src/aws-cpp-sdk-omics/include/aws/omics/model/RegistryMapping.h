@@ -105,6 +105,32 @@ class RegistryMapping {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager
+   * secret that holds the credentials for the upstream registry. You must specify
+   * this value when Amazon Elastic Container Registry (Amazon ECR) doesn't support
+   * pull through cache for the upstream registry. HealthOmics supports only some of
+   * these registries. The workflow role must have permission to call the
+   * <code>secretsmanager:GetSecretValue</code> operation on the secret. For more
+   * information about the supported registries, see <a
+   * href="https://docs.aws.amazon.com/omics/latest/dev/workflows-ecr.html">Container
+   * images</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
+   */
+  inline const Aws::String& GetCredentialArn() const { return m_credentialArn; }
+  inline bool CredentialArnHasBeenSet() const { return m_credentialArnHasBeenSet; }
+  template <typename CredentialArnT = Aws::String>
+  void SetCredentialArn(CredentialArnT&& value) {
+    m_credentialArnHasBeenSet = true;
+    m_credentialArn = std::forward<CredentialArnT>(value);
+  }
+  template <typename CredentialArnT = Aws::String>
+  RegistryMapping& WithCredentialArn(CredentialArnT&& value) {
+    SetCredentialArn(std::forward<CredentialArnT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_upstreamRegistryUrl;
 
@@ -113,10 +139,13 @@ class RegistryMapping {
   Aws::String m_upstreamRepositoryPrefix;
 
   Aws::String m_ecrAccountId;
+
+  Aws::String m_credentialArn;
   bool m_upstreamRegistryUrlHasBeenSet = false;
   bool m_ecrRepositoryPrefixHasBeenSet = false;
   bool m_upstreamRepositoryPrefixHasBeenSet = false;
   bool m_ecrAccountIdHasBeenSet = false;
+  bool m_credentialArnHasBeenSet = false;
 };
 
 }  // namespace Model

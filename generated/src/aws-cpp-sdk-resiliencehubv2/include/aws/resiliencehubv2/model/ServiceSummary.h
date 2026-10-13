@@ -12,6 +12,7 @@
 #include <aws/resiliencehubv2/model/AssessmentStatus.h>
 #include <aws/resiliencehubv2/model/AssociatedSystem.h>
 #include <aws/resiliencehubv2/model/DependencyDiscoveryConfig.h>
+#include <aws/resiliencehubv2/model/DevOpsAgentConnectionStatus.h>
 
 #include <utility>
 
@@ -145,6 +146,45 @@ class ServiceSummary {
   }
   inline ServiceSummary& WithAssessmentStatus(AssessmentStatus value) {
     SetAssessmentStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The DevOps Agent connection status for the service. Valid values:</p> <ul>
+   * <li> <p>CONNECTING - The service is being connected to the Agent Space.</p>
+   * </li> <li> <p>CONNECTED - The service is connected to the Agent Space.</p> </li>
+   * <li> <p>DISCONNECTED - The service is not connected to an Agent Space.</p> </li>
+   * <li> <p>FAILED - The connection attempt failed.</p> </li> </ul>
+   */
+  inline DevOpsAgentConnectionStatus GetDevOpsAgentStatus() const { return m_devOpsAgentStatus; }
+  inline bool DevOpsAgentStatusHasBeenSet() const { return m_devOpsAgentStatusHasBeenSet; }
+  inline void SetDevOpsAgentStatus(DevOpsAgentConnectionStatus value) {
+    m_devOpsAgentStatusHasBeenSet = true;
+    m_devOpsAgentStatus = value;
+  }
+  inline ServiceSummary& WithDevOpsAgentStatus(DevOpsAgentConnectionStatus value) {
+    SetDevOpsAgentStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ARN of the DevOps Agent Agent Space linked to the service, when the
+   * service is linked to one.</p>
+   */
+  inline const Aws::String& GetDevOpsAgentSpaceArn() const { return m_devOpsAgentSpaceArn; }
+  inline bool DevOpsAgentSpaceArnHasBeenSet() const { return m_devOpsAgentSpaceArnHasBeenSet; }
+  template <typename DevOpsAgentSpaceArnT = Aws::String>
+  void SetDevOpsAgentSpaceArn(DevOpsAgentSpaceArnT&& value) {
+    m_devOpsAgentSpaceArnHasBeenSet = true;
+    m_devOpsAgentSpaceArn = std::forward<DevOpsAgentSpaceArnT>(value);
+  }
+  template <typename DevOpsAgentSpaceArnT = Aws::String>
+  ServiceSummary& WithDevOpsAgentSpaceArn(DevOpsAgentSpaceArnT&& value) {
+    SetDevOpsAgentSpaceArn(std::forward<DevOpsAgentSpaceArnT>(value));
     return *this;
   }
   ///@}
@@ -319,6 +359,10 @@ class ServiceSummary {
 
   AssessmentStatus m_assessmentStatus{AssessmentStatus::NOT_SET};
 
+  DevOpsAgentConnectionStatus m_devOpsAgentStatus{DevOpsAgentConnectionStatus::NOT_SET};
+
+  Aws::String m_devOpsAgentSpaceArn;
+
   int m_openFindingsCount{0};
 
   int m_resolvedFindingsCount{0};
@@ -342,6 +386,8 @@ class ServiceSummary {
   bool m_regionsHasBeenSet = false;
   bool m_policyArnHasBeenSet = false;
   bool m_assessmentStatusHasBeenSet = false;
+  bool m_devOpsAgentStatusHasBeenSet = false;
+  bool m_devOpsAgentSpaceArnHasBeenSet = false;
   bool m_openFindingsCountHasBeenSet = false;
   bool m_resolvedFindingsCountHasBeenSet = false;
   bool m_dependencyDiscoveryHasBeenSet = false;

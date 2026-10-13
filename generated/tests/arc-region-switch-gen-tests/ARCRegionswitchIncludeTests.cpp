@@ -141,6 +141,11 @@
 #include <aws/arc-region-switch/model/Service.h>
 #include <aws/arc-region-switch/model/ServiceQuotaWarningStatus.h>
 #include <aws/arc-region-switch/model/ServiceQuotaWarningSummary.h>
+#include <aws/arc-region-switch/model/SsmDocumentConfig.h>
+#include <aws/arc-region-switch/model/SsmSendCommandConfiguration.h>
+#include <aws/arc-region-switch/model/SsmSendCommandUngraceful.h>
+#include <aws/arc-region-switch/model/SsmSendCommandUngracefulBehavior.h>
+#include <aws/arc-region-switch/model/SsmTarget.h>
 #include <aws/arc-region-switch/model/StartPlanExecutionRequest.h>
 #include <aws/arc-region-switch/model/StartPlanExecutionResult.h>
 #include <aws/arc-region-switch/model/Step.h>

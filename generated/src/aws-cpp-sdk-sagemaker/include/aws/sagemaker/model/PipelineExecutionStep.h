@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/CacheHitResult.h>
+#include <aws/sagemaker/model/IterationContext.h>
 #include <aws/sagemaker/model/PipelineExecutionStepMetadata.h>
 #include <aws/sagemaker/model/SelectiveExecutionResult.h>
 #include <aws/sagemaker/model/StepStatus.h>
@@ -233,6 +234,25 @@ class PipelineExecutionStep {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The context for the iteration of a ForEach step that generated this step
+   * execution.</p>
+   */
+  inline const IterationContext& GetIterationContext() const { return m_iterationContext; }
+  inline bool IterationContextHasBeenSet() const { return m_iterationContextHasBeenSet; }
+  template <typename IterationContextT = IterationContext>
+  void SetIterationContext(IterationContextT&& value) {
+    m_iterationContextHasBeenSet = true;
+    m_iterationContext = std::forward<IterationContextT>(value);
+  }
+  template <typename IterationContextT = IterationContext>
+  PipelineExecutionStep& WithIterationContext(IterationContextT&& value) {
+    SetIterationContext(std::forward<IterationContextT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_stepName;
 
@@ -255,6 +275,8 @@ class PipelineExecutionStep {
   int m_attemptCount{0};
 
   SelectiveExecutionResult m_selectiveExecutionResult;
+
+  IterationContext m_iterationContext;
   bool m_stepNameHasBeenSet = false;
   bool m_stepDisplayNameHasBeenSet = false;
   bool m_stepDescriptionHasBeenSet = false;
@@ -266,6 +288,7 @@ class PipelineExecutionStep {
   bool m_metadataHasBeenSet = false;
   bool m_attemptCountHasBeenSet = false;
   bool m_selectiveExecutionResultHasBeenSet = false;
+  bool m_iterationContextHasBeenSet = false;
 };
 
 }  // namespace Model

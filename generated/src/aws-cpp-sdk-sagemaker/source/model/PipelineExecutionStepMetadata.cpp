@@ -58,6 +58,10 @@ PipelineExecutionStepMetadata& PipelineExecutionStepMetadata::operator=(JsonView
     m_eMR = jsonValue.GetObject("EMR");
     m_eMRHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("EMRServerless")) {
+    m_eMRServerless = jsonValue.GetObject("EMRServerless");
+    m_eMRServerlessHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("QualityCheck")) {
     m_qualityCheck = jsonValue.GetObject("QualityCheck");
     m_qualityCheckHasBeenSet = true;
@@ -110,6 +114,18 @@ PipelineExecutionStepMetadata& PipelineExecutionStepMetadata::operator=(JsonView
     m_job = jsonValue.GetObject("Job");
     m_jobHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Athena")) {
+    m_athena = jsonValue.GetObject("Athena");
+    m_athenaHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Cleanup")) {
+    m_cleanup = jsonValue.GetObject("Cleanup");
+    m_cleanupHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ForEach")) {
+    m_forEach = jsonValue.GetObject("ForEach");
+    m_forEachHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -154,6 +170,10 @@ JsonValue PipelineExecutionStepMetadata::Jsonize() const {
 
   if (m_eMRHasBeenSet) {
     payload.WithObject("EMR", m_eMR.Jsonize());
+  }
+
+  if (m_eMRServerlessHasBeenSet) {
+    payload.WithObject("EMRServerless", m_eMRServerless.Jsonize());
   }
 
   if (m_qualityCheckHasBeenSet) {
@@ -206,6 +226,18 @@ JsonValue PipelineExecutionStepMetadata::Jsonize() const {
 
   if (m_jobHasBeenSet) {
     payload.WithObject("Job", m_job.Jsonize());
+  }
+
+  if (m_athenaHasBeenSet) {
+    payload.WithObject("Athena", m_athena.Jsonize());
+  }
+
+  if (m_cleanupHasBeenSet) {
+    payload.WithObject("Cleanup", m_cleanup.Jsonize());
+  }
+
+  if (m_forEachHasBeenSet) {
+    payload.WithObject("ForEach", m_forEach.Jsonize());
   }
 
   return payload;

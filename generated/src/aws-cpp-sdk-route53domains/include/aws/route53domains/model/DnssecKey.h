@@ -58,45 +58,6 @@ class DnssecKey {
 
   ///@{
   /**
-   * <p>Defines the type of key. It can be either a KSK (key-signing-key, value 257)
-   * or ZSK (zone-signing-key, value 256). Using KSK is always encouraged. Only use
-   * ZSK if your DNS provider isn't Route 53 and you don’t have KSK available.</p>
-   * <p>If you have KSK and ZSK keys, always use KSK to create a delegations signer
-   * (DS) record. If you have ZSK keys only – use ZSK to create a DS record.</p>
-   */
-  inline int GetFlags() const { return m_flags; }
-  inline bool FlagsHasBeenSet() const { return m_flagsHasBeenSet; }
-  inline void SetFlags(int value) {
-    m_flagsHasBeenSet = true;
-    m_flags = value;
-  }
-  inline DnssecKey& WithFlags(int value) {
-    SetFlags(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The base64-encoded public key part of the key pair that is passed to the
-   * registry .</p>
-   */
-  inline const Aws::String& GetPublicKey() const { return m_publicKey; }
-  inline bool PublicKeyHasBeenSet() const { return m_publicKeyHasBeenSet; }
-  template <typename PublicKeyT = Aws::String>
-  void SetPublicKey(PublicKeyT&& value) {
-    m_publicKeyHasBeenSet = true;
-    m_publicKey = std::forward<PublicKeyT>(value);
-  }
-  template <typename PublicKeyT = Aws::String>
-  DnssecKey& WithPublicKey(PublicKeyT&& value) {
-    SetPublicKey(std::forward<PublicKeyT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p> The number of the DS digest algorithm according to an IANA assignment.</p>
    * <p>For more information, see <a
    * href="https://www.iana.org/assignments/ds-rr-types/ds-rr-types.xhtml">IANA</a>
@@ -174,10 +135,6 @@ class DnssecKey {
  private:
   int m_algorithm{0};
 
-  int m_flags{0};
-
-  Aws::String m_publicKey;
-
   int m_digestType{0};
 
   Aws::String m_digest;
@@ -186,8 +143,6 @@ class DnssecKey {
 
   Aws::String m_id;
   bool m_algorithmHasBeenSet = false;
-  bool m_flagsHasBeenSet = false;
-  bool m_publicKeyHasBeenSet = false;
   bool m_digestTypeHasBeenSet = false;
   bool m_digestHasBeenSet = false;
   bool m_keyTagHasBeenSet = false;

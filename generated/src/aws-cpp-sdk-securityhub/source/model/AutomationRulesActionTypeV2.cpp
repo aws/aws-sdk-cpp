@@ -17,6 +17,7 @@ namespace AutomationRulesActionTypeV2Mapper {
 
 static const int FINDING_FIELDS_UPDATE_HASH = HashingUtils::HashString("FINDING_FIELDS_UPDATE");
 static const int EXTERNAL_INTEGRATION_HASH = HashingUtils::HashString("EXTERNAL_INTEGRATION");
+static const int RESOURCE_FIELDS_UPDATE_HASH = HashingUtils::HashString("RESOURCE_FIELDS_UPDATE");
 
 AutomationRulesActionTypeV2 GetAutomationRulesActionTypeV2ForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ AutomationRulesActionTypeV2 GetAutomationRulesActionTypeV2ForName(const Aws::Str
     return AutomationRulesActionTypeV2::FINDING_FIELDS_UPDATE;
   } else if (hashCode == EXTERNAL_INTEGRATION_HASH) {
     return AutomationRulesActionTypeV2::EXTERNAL_INTEGRATION;
+  } else if (hashCode == RESOURCE_FIELDS_UPDATE_HASH) {
+    return AutomationRulesActionTypeV2::RESOURCE_FIELDS_UPDATE;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForAutomationRulesActionTypeV2(AutomationRulesActionTypeV2 en
       return "FINDING_FIELDS_UPDATE";
     case AutomationRulesActionTypeV2::EXTERNAL_INTEGRATION:
       return "EXTERNAL_INTEGRATION";
+    case AutomationRulesActionTypeV2::RESOURCE_FIELDS_UPDATE:
+      return "RESOURCE_FIELDS_UPDATE";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

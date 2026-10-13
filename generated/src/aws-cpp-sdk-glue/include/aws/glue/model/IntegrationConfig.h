@@ -98,15 +98,45 @@ class IntegrationConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>An optional custom namespace for the integration's target. Supply this
+   * parameter only when the target is an Amazon S3 Tables table bucket; it is not
+   * accepted for other target types. The integration replicates data into the
+   * namespace you specify, reusing it if it already exists. If you omit this
+   * parameter, the target namespace defaults to <code>zetl_</code> followed by the
+   * integration ID, with hyphens converted to underscores.</p> <p>The value is
+   * immutable after the integration is created; <code>ModifyIntegration</code>
+   * rejects changes to it. It must be a valid Amazon S3 Tables namespace name: 1 to
+   * 255 characters using lowercase letters, numbers, and underscores, with no
+   * leading or trailing underscore and no reserved <code>aws</code> prefix.</p>
+   */
+  inline const Aws::String& GetTargetNamespace() const { return m_targetNamespace; }
+  inline bool TargetNamespaceHasBeenSet() const { return m_targetNamespaceHasBeenSet; }
+  template <typename TargetNamespaceT = Aws::String>
+  void SetTargetNamespace(TargetNamespaceT&& value) {
+    m_targetNamespaceHasBeenSet = true;
+    m_targetNamespace = std::forward<TargetNamespaceT>(value);
+  }
+  template <typename TargetNamespaceT = Aws::String>
+  IntegrationConfig& WithTargetNamespace(TargetNamespaceT&& value) {
+    SetTargetNamespace(std::forward<TargetNamespaceT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_refreshInterval;
 
   Aws::Map<Aws::String, Aws::String> m_sourceProperties;
 
   bool m_continuousSync{false};
+
+  Aws::String m_targetNamespace;
   bool m_refreshIntervalHasBeenSet = false;
   bool m_sourcePropertiesHasBeenSet = false;
   bool m_continuousSyncHasBeenSet = false;
+  bool m_targetNamespaceHasBeenSet = false;
 };
 
 }  // namespace Model

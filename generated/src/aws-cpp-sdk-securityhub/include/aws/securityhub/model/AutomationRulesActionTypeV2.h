@@ -10,7 +10,7 @@
 namespace Aws {
 namespace SecurityHub {
 namespace Model {
-enum class AutomationRulesActionTypeV2 { NOT_SET, FINDING_FIELDS_UPDATE, EXTERNAL_INTEGRATION };
+enum class AutomationRulesActionTypeV2 { NOT_SET, FINDING_FIELDS_UPDATE, EXTERNAL_INTEGRATION, RESOURCE_FIELDS_UPDATE };
 
 namespace AutomationRulesActionTypeV2Mapper {
 AWS_SECURITYHUB_API AutomationRulesActionTypeV2 GetAutomationRulesActionTypeV2ForName(const Aws::String& name);

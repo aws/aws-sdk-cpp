@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53domains/Route53Domains_EXPORTS.h>
+#include <aws/route53domains/model/PriceType.h>
 
 #include <utility>
 
@@ -64,12 +65,34 @@ class PriceWithCurrency {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether the domain has standard or premium pricing. A value of
+   * <code>STANDARD</code> means the domain is priced at the regular rate for its
+   * TLD. A value of <code>REGISTRY_PREMIUM</code> means the domain has registry
+   * premium pricing, which may be different than the standard rate.</p>
+   */
+  inline PriceType GetPriceType() const { return m_priceType; }
+  inline bool PriceTypeHasBeenSet() const { return m_priceTypeHasBeenSet; }
+  inline void SetPriceType(PriceType value) {
+    m_priceTypeHasBeenSet = true;
+    m_priceType = value;
+  }
+  inline PriceWithCurrency& WithPriceType(PriceType value) {
+    SetPriceType(value);
+    return *this;
+  }
+  ///@}
  private:
   double m_price{0.0};
 
   Aws::String m_currency;
+
+  PriceType m_priceType{PriceType::NOT_SET};
   bool m_priceHasBeenSet = false;
   bool m_currencyHasBeenSet = false;
+  bool m_priceTypeHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -54,6 +54,10 @@ Resource& Resource::operator=(JsonView jsonValue) {
     m_lFTagExpression = jsonValue.GetObject("LFTagExpression");
     m_lFTagExpressionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("RLSPolicy")) {
+    m_rLSPolicy = jsonValue.GetObject("RLSPolicy");
+    m_rLSPolicyHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -94,6 +98,10 @@ JsonValue Resource::Jsonize() const {
 
   if (m_lFTagExpressionHasBeenSet) {
     payload.WithObject("LFTagExpression", m_lFTagExpression.Jsonize());
+  }
+
+  if (m_rLSPolicyHasBeenSet) {
+    payload.WithObject("RLSPolicy", m_rLSPolicy.Jsonize());
   }
 
   return payload;

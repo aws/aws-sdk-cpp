@@ -34,12 +34,15 @@ static const int finding_info_related_events_traits_category_HASH = HashingUtils
 static const int finding_info_related_events_uid_HASH = HashingUtils::HashString("finding_info.related_events.uid");
 static const int finding_info_related_events_product_uid_HASH = HashingUtils::HashString("finding_info.related_events.product.uid");
 static const int finding_info_related_events_title_HASH = HashingUtils::HashString("finding_info.related_events.title");
+static const int impact_HASH = HashingUtils::HashString("impact");
+static const int likelihood_HASH = HashingUtils::HashString("likelihood");
 static const int metadata_product_name_HASH = HashingUtils::HashString("metadata.product.name");
 static const int metadata_product_uid_HASH = HashingUtils::HashString("metadata.product.uid");
 static const int metadata_product_vendor_name_HASH = HashingUtils::HashString("metadata.product.vendor_name");
 static const int remediation_desc_HASH = HashingUtils::HashString("remediation.desc");
 static const int remediation_references_HASH = HashingUtils::HashString("remediation.references");
 static const int resources_cloud_partition_HASH = HashingUtils::HashString("resources.cloud_partition");
+static const int resources_criticality_HASH = HashingUtils::HashString("resources.criticality");
 static const int resources_name_HASH = HashingUtils::HashString("resources.name");
 static const int resources_owner_account_uid_HASH = HashingUtils::HashString("resources.owner.account.uid");
 static const int resources_owner_org_uid_HASH = HashingUtils::HashString("resources.owner.org.uid");
@@ -135,6 +138,10 @@ OcsfStringField GetOcsfStringFieldForName(const Aws::String& name) {
     return OcsfStringField::finding_info_related_events_product_uid;
   } else if (hashCode == finding_info_related_events_title_HASH) {
     return OcsfStringField::finding_info_related_events_title;
+  } else if (hashCode == impact_HASH) {
+    return OcsfStringField::impact;
+  } else if (hashCode == likelihood_HASH) {
+    return OcsfStringField::likelihood;
   } else if (hashCode == metadata_product_name_HASH) {
     return OcsfStringField::metadata_product_name;
   } else if (hashCode == metadata_product_uid_HASH) {
@@ -147,6 +154,8 @@ OcsfStringField GetOcsfStringFieldForName(const Aws::String& name) {
     return OcsfStringField::remediation_references;
   } else if (hashCode == resources_cloud_partition_HASH) {
     return OcsfStringField::resources_cloud_partition;
+  } else if (hashCode == resources_criticality_HASH) {
+    return OcsfStringField::resources_criticality;
   } else if (hashCode == resources_name_HASH) {
     return OcsfStringField::resources_name;
   } else if (hashCode == resources_owner_account_uid_HASH) {
@@ -301,6 +310,10 @@ Aws::String GetNameForOcsfStringField(OcsfStringField enumValue) {
       return "finding_info.related_events.product.uid";
     case OcsfStringField::finding_info_related_events_title:
       return "finding_info.related_events.title";
+    case OcsfStringField::impact:
+      return "impact";
+    case OcsfStringField::likelihood:
+      return "likelihood";
     case OcsfStringField::metadata_product_name:
       return "metadata.product.name";
     case OcsfStringField::metadata_product_uid:
@@ -313,6 +326,8 @@ Aws::String GetNameForOcsfStringField(OcsfStringField enumValue) {
       return "remediation.references";
     case OcsfStringField::resources_cloud_partition:
       return "resources.cloud_partition";
+    case OcsfStringField::resources_criticality:
+      return "resources.criticality";
     case OcsfStringField::resources_name:
       return "resources.name";
     case OcsfStringField::resources_owner_account_uid:

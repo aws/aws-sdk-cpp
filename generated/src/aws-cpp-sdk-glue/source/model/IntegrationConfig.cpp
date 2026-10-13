@@ -33,6 +33,10 @@ IntegrationConfig& IntegrationConfig::operator=(JsonView jsonValue) {
     m_continuousSync = jsonValue.GetBool("ContinuousSync");
     m_continuousSyncHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("TargetNamespace")) {
+    m_targetNamespace = jsonValue.GetString("TargetNamespace");
+    m_targetNamespaceHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -53,6 +57,10 @@ JsonValue IntegrationConfig::Jsonize() const {
 
   if (m_continuousSyncHasBeenSet) {
     payload.WithBool("ContinuousSync", m_continuousSync);
+  }
+
+  if (m_targetNamespaceHasBeenSet) {
+    payload.WithString("TargetNamespace", m_targetNamespace);
   }
 
   return payload;

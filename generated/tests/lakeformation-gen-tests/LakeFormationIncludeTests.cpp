@@ -24,6 +24,8 @@
 #include <aws/lakeformation/model/ApplicationStatus.h>
 #include <aws/lakeformation/model/AssumeDecoratedRoleWithSAMLRequest.h>
 #include <aws/lakeformation/model/AssumeDecoratedRoleWithSAMLResult.h>
+#include <aws/lakeformation/model/AttachRLSPolicyRequest.h>
+#include <aws/lakeformation/model/AttachRLSPolicyResult.h>
 #include <aws/lakeformation/model/AuditContext.h>
 #include <aws/lakeformation/model/BatchGrantPermissionsRequest.h>
 #include <aws/lakeformation/model/BatchGrantPermissionsResult.h>
@@ -34,6 +36,7 @@
 #include <aws/lakeformation/model/CancelTransactionRequest.h>
 #include <aws/lakeformation/model/CancelTransactionResult.h>
 #include <aws/lakeformation/model/CatalogResource.h>
+#include <aws/lakeformation/model/Column.h>
 #include <aws/lakeformation/model/ColumnLFTag.h>
 #include <aws/lakeformation/model/ColumnWildcard.h>
 #include <aws/lakeformation/model/CommitTransactionRequest.h>
@@ -50,6 +53,8 @@
 #include <aws/lakeformation/model/CreateLakeFormationIdentityCenterConfigurationResult.h>
 #include <aws/lakeformation/model/CreateLakeFormationOptInRequest.h>
 #include <aws/lakeformation/model/CreateLakeFormationOptInResult.h>
+#include <aws/lakeformation/model/CreateRLSPolicyRequest.h>
+#include <aws/lakeformation/model/CreateRLSPolicyResult.h>
 #include <aws/lakeformation/model/CredentialsScope.h>
 #include <aws/lakeformation/model/DataCellsFilter.h>
 #include <aws/lakeformation/model/DataCellsFilterResource.h>
@@ -71,6 +76,8 @@
 #include <aws/lakeformation/model/DeleteObjectInput.h>
 #include <aws/lakeformation/model/DeleteObjectsOnCancelRequest.h>
 #include <aws/lakeformation/model/DeleteObjectsOnCancelResult.h>
+#include <aws/lakeformation/model/DeleteRLSPolicyRequest.h>
+#include <aws/lakeformation/model/DeleteRLSPolicyResult.h>
 #include <aws/lakeformation/model/DeregisterResourceRequest.h>
 #include <aws/lakeformation/model/DeregisterResourceResult.h>
 #include <aws/lakeformation/model/DescribeLakeFormationIdentityCenterConfigurationRequest.h>
@@ -79,6 +86,8 @@
 #include <aws/lakeformation/model/DescribeResourceResult.h>
 #include <aws/lakeformation/model/DescribeTransactionRequest.h>
 #include <aws/lakeformation/model/DescribeTransactionResult.h>
+#include <aws/lakeformation/model/DetachRLSPolicyRequest.h>
+#include <aws/lakeformation/model/DetachRLSPolicyResult.h>
 #include <aws/lakeformation/model/DetailsMap.h>
 #include <aws/lakeformation/model/EnableStatus.h>
 #include <aws/lakeformation/model/ErrorDetail.h>
@@ -105,6 +114,8 @@
 #include <aws/lakeformation/model/GetQueryStateResult.h>
 #include <aws/lakeformation/model/GetQueryStatisticsRequest.h>
 #include <aws/lakeformation/model/GetQueryStatisticsResult.h>
+#include <aws/lakeformation/model/GetRLSPolicyRequest.h>
+#include <aws/lakeformation/model/GetRLSPolicyResult.h>
 #include <aws/lakeformation/model/GetResourceLFTagsRequest.h>
 #include <aws/lakeformation/model/GetResourceLFTagsResult.h>
 #include <aws/lakeformation/model/GetTableObjectsPaginationTraits.h>
@@ -146,6 +157,12 @@
 #include <aws/lakeformation/model/ListPermissionsPaginationTraits.h>
 #include <aws/lakeformation/model/ListPermissionsRequest.h>
 #include <aws/lakeformation/model/ListPermissionsResult.h>
+#include <aws/lakeformation/model/ListRLSPoliciesPaginationTraits.h>
+#include <aws/lakeformation/model/ListRLSPoliciesRequest.h>
+#include <aws/lakeformation/model/ListRLSPoliciesResult.h>
+#include <aws/lakeformation/model/ListRLSPolicyAttachmentsPaginationTraits.h>
+#include <aws/lakeformation/model/ListRLSPolicyAttachmentsRequest.h>
+#include <aws/lakeformation/model/ListRLSPolicyAttachmentsResult.h>
 #include <aws/lakeformation/model/ListResourcesPaginationTraits.h>
 #include <aws/lakeformation/model/ListResourcesRequest.h>
 #include <aws/lakeformation/model/ListResourcesResult.h>
@@ -168,6 +185,9 @@
 #include <aws/lakeformation/model/QueryPlanningContext.h>
 #include <aws/lakeformation/model/QuerySessionContext.h>
 #include <aws/lakeformation/model/QueryStateString.h>
+#include <aws/lakeformation/model/RLSPolicy.h>
+#include <aws/lakeformation/model/RLSPolicyAttachment.h>
+#include <aws/lakeformation/model/RLSPolicyResource.h>
 #include <aws/lakeformation/model/RedshiftConnect.h>
 #include <aws/lakeformation/model/RedshiftScopeUnion.h>
 #include <aws/lakeformation/model/RegisterResourceRequest.h>
@@ -213,6 +233,8 @@
 #include <aws/lakeformation/model/UpdateLFTagResult.h>
 #include <aws/lakeformation/model/UpdateLakeFormationIdentityCenterConfigurationRequest.h>
 #include <aws/lakeformation/model/UpdateLakeFormationIdentityCenterConfigurationResult.h>
+#include <aws/lakeformation/model/UpdateRLSPolicyRequest.h>
+#include <aws/lakeformation/model/UpdateRLSPolicyResult.h>
 #include <aws/lakeformation/model/UpdateResourceRequest.h>
 #include <aws/lakeformation/model/UpdateResourceResult.h>
 #include <aws/lakeformation/model/UpdateTableObjectsRequest.h>

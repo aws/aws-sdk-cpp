@@ -80,9 +80,9 @@ class UpdateLocationHdfsRequest : public DataSyncRequest {
    * operations such as opening, closing, and renaming files and directories. The
    * NameNode contains the information to map blocks of data to the DataNodes.</p>
    * <p>The number of NameNodes you can specify depends on the task mode:</p> <ul>
-   * <li> <p>Enhanced mode – You can specify multiple NameNodes for HDFS High
-   * Availability (HA) configurations.</p> </li> <li> <p>Basic mode – You can specify
-   * only one NameNode.</p> </li> </ul>
+   * <li> <p> <b>Enhanced mode</b> – You can specify multiple NameNodes for HDFS High
+   * Availability (HA) configurations.</p> </li> <li> <p> <b>Basic mode</b> – You can
+   * specify only one NameNode.</p> </li> </ul>
    */
   inline const Aws::Vector<HdfsNameNode>& GetNameNodes() const { return m_nameNodes; }
   inline bool NameNodesHasBeenSet() const { return m_nameNodesHasBeenSet; }

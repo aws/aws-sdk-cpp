@@ -205,11 +205,7 @@ class CreateRegistryRecordRequest : public AgentRegistryControlRequest {
 
   ///@{
   /**
-   * <p>The custom metadata to attach to the registry record. Each key must match a
-   * property defined in the registry's custom metadata schema. Values can be strings
-   * (maximum 128 characters) or native JSON booleans (<code>true</code> or
-   * <code>false</code>). Values are validated against the schema at creation
-   * time.</p>
+   * <p>The custom metadata for the record. Values are strings or JSON booleans.</p>
    */
   inline Aws::Utils::DocumentView GetCustomMetadata() const { return m_customMetadata; }
   inline bool CustomMetadataHasBeenSet() const { return m_customMetadataHasBeenSet; }

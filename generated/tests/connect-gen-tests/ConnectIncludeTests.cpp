@@ -191,6 +191,8 @@
 #include <aws/connect/model/ContactField.h>
 #include <aws/connect/model/ContactFilter.h>
 #include <aws/connect/model/ContactFlow.h>
+#include <aws/connect/model/ContactFlowAliasInfo.h>
+#include <aws/connect/model/ContactFlowAliasSummary.h>
 #include <aws/connect/model/ContactFlowAttributeAndCondition.h>
 #include <aws/connect/model/ContactFlowAttributeFilter.h>
 #include <aws/connect/model/ContactFlowModule.h>
@@ -236,6 +238,8 @@
 #include <aws/connect/model/CreateAuthCodeRequest.h>
 #include <aws/connect/model/CreateAuthCodeResult.h>
 #include <aws/connect/model/CreateCaseActionDefinition.h>
+#include <aws/connect/model/CreateContactFlowAliasRequest.h>
+#include <aws/connect/model/CreateContactFlowAliasResult.h>
 #include <aws/connect/model/CreateContactFlowModuleAliasRequest.h>
 #include <aws/connect/model/CreateContactFlowModuleAliasResult.h>
 #include <aws/connect/model/CreateContactFlowModuleRequest.h>
@@ -354,6 +358,8 @@
 #include <aws/connect/model/DeleteContactDataRequest.h>
 #include <aws/connect/model/DeleteContactDataResult.h>
 #include <aws/connect/model/DeleteContactEvaluationRequest.h>
+#include <aws/connect/model/DeleteContactFlowAliasRequest.h>
+#include <aws/connect/model/DeleteContactFlowAliasResult.h>
 #include <aws/connect/model/DeleteContactFlowModuleAliasRequest.h>
 #include <aws/connect/model/DeleteContactFlowModuleAliasResult.h>
 #include <aws/connect/model/DeleteContactFlowModuleRequest.h>
@@ -421,6 +427,8 @@
 #include <aws/connect/model/DescribeAuthenticationProfileResult.h>
 #include <aws/connect/model/DescribeContactEvaluationRequest.h>
 #include <aws/connect/model/DescribeContactEvaluationResult.h>
+#include <aws/connect/model/DescribeContactFlowAliasRequest.h>
+#include <aws/connect/model/DescribeContactFlowAliasResult.h>
 #include <aws/connect/model/DescribeContactFlowModuleAliasRequest.h>
 #include <aws/connect/model/DescribeContactFlowModuleAliasResult.h>
 #include <aws/connect/model/DescribeContactFlowModuleRequest.h>
@@ -800,6 +808,9 @@
 #include <aws/connect/model/ListContactEvaluationsPaginationTraits.h>
 #include <aws/connect/model/ListContactEvaluationsRequest.h>
 #include <aws/connect/model/ListContactEvaluationsResult.h>
+#include <aws/connect/model/ListContactFlowAliasesPaginationTraits.h>
+#include <aws/connect/model/ListContactFlowAliasesRequest.h>
+#include <aws/connect/model/ListContactFlowAliasesResult.h>
 #include <aws/connect/model/ListContactFlowModuleAliasesPaginationTraits.h>
 #include <aws/connect/model/ListContactFlowModuleAliasesRequest.h>
 #include <aws/connect/model/ListContactFlowModuleAliasesResult.h>
@@ -1467,6 +1478,8 @@
 #include <aws/connect/model/UpdateContactAttributesResult.h>
 #include <aws/connect/model/UpdateContactEvaluationRequest.h>
 #include <aws/connect/model/UpdateContactEvaluationResult.h>
+#include <aws/connect/model/UpdateContactFlowAliasRequest.h>
+#include <aws/connect/model/UpdateContactFlowAliasResult.h>
 #include <aws/connect/model/UpdateContactFlowContentRequest.h>
 #include <aws/connect/model/UpdateContactFlowContentResult.h>
 #include <aws/connect/model/UpdateContactFlowMetadataRequest.h>

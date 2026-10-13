@@ -20,6 +20,7 @@ static const int Stopping_HASH = HashingUtils::HashString("Stopping");
 static const int Stopped_HASH = HashingUtils::HashString("Stopped");
 static const int Failed_HASH = HashingUtils::HashString("Failed");
 static const int Succeeded_HASH = HashingUtils::HashString("Succeeded");
+static const int CompletedWithFailures_HASH = HashingUtils::HashString("CompletedWithFailures");
 
 PipelineExecutionStatus GetPipelineExecutionStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -33,6 +34,8 @@ PipelineExecutionStatus GetPipelineExecutionStatusForName(const Aws::String& nam
     return PipelineExecutionStatus::Failed;
   } else if (hashCode == Succeeded_HASH) {
     return PipelineExecutionStatus::Succeeded;
+  } else if (hashCode == CompletedWithFailures_HASH) {
+    return PipelineExecutionStatus::CompletedWithFailures;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -57,6 +60,8 @@ Aws::String GetNameForPipelineExecutionStatus(PipelineExecutionStatus enumValue)
       return "Failed";
     case PipelineExecutionStatus::Succeeded:
       return "Succeeded";
+    case PipelineExecutionStatus::CompletedWithFailures:
+      return "CompletedWithFailures";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

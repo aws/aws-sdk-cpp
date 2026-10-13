@@ -120,6 +120,7 @@
 #include <aws/sagemaker/model/AthenaDatasetDefinition.h>
 #include <aws/sagemaker/model/AthenaResultCompressionType.h>
 #include <aws/sagemaker/model/AthenaResultFormat.h>
+#include <aws/sagemaker/model/AthenaStepMetadata.h>
 #include <aws/sagemaker/model/AttachClusterNodeNetworkInterfaceRequest.h>
 #include <aws/sagemaker/model/AttachClusterNodeNetworkInterfaceResult.h>
 #include <aws/sagemaker/model/AttachClusterNodeVolumeRequest.h>
@@ -247,6 +248,9 @@
 #include <aws/sagemaker/model/ClarifyTextConfig.h>
 #include <aws/sagemaker/model/ClarifyTextGranularity.h>
 #include <aws/sagemaker/model/ClarifyTextLanguage.h>
+#include <aws/sagemaker/model/CleanupFailure.h>
+#include <aws/sagemaker/model/CleanupFailureErrorCode.h>
+#include <aws/sagemaker/model/CleanupStepMetadata.h>
 #include <aws/sagemaker/model/ClusterAccountingDatabase.h>
 #include <aws/sagemaker/model/ClusterAutoPatchConfig.h>
 #include <aws/sagemaker/model/ClusterAutoPatchConfigDetails.h>
@@ -802,6 +806,7 @@
 #include <aws/sagemaker/model/DynamicScalingConfiguration.h>
 #include <aws/sagemaker/model/EFSFileSystem.h>
 #include <aws/sagemaker/model/EFSFileSystemConfig.h>
+#include <aws/sagemaker/model/EMRServerlessStepMetadata.h>
 #include <aws/sagemaker/model/EMRStepMetadata.h>
 #include <aws/sagemaker/model/EbsStorageSettings.h>
 #include <aws/sagemaker/model/Ec2CapacityReservation.h>
@@ -888,6 +893,9 @@
 #include <aws/sagemaker/model/FlowDefinitionOutputConfig.h>
 #include <aws/sagemaker/model/FlowDefinitionStatus.h>
 #include <aws/sagemaker/model/FlowDefinitionSummary.h>
+#include <aws/sagemaker/model/ForEachSelectorResult.h>
+#include <aws/sagemaker/model/ForEachStatus.h>
+#include <aws/sagemaker/model/ForEachStepMetadata.h>
 #include <aws/sagemaker/model/Framework.h>
 #include <aws/sagemaker/model/GenerativeAiSettings.h>
 #include <aws/sagemaker/model/GetDeviceFleetReportRequest.h>
@@ -1024,6 +1032,7 @@
 #include <aws/sagemaker/model/IntegerParameterRange.h>
 #include <aws/sagemaker/model/IntegerParameterRangeSpecification.h>
 #include <aws/sagemaker/model/IsTrackingServerActive.h>
+#include <aws/sagemaker/model/IterationContext.h>
 #include <aws/sagemaker/model/Job.h>
 #include <aws/sagemaker/model/JobCategory.h>
 #include <aws/sagemaker/model/JobConfigSchemaVersionSummary.h>

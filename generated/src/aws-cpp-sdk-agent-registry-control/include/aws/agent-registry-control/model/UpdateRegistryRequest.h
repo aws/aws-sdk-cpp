@@ -131,11 +131,9 @@ class UpdateRegistryRequest : public AgentRegistryControlRequest {
 
   ///@{
   /**
-   * <p>Updated custom metadata schema configuration for the registry. Omit to leave
-   * the existing schema unchanged. Schema evolution is additive only: you can add
-   * properties and enum values, but you cannot remove properties, change property
-   * types or formats, add or remove enum constraints, or remove record type
-   * overrides.</p>
+   * <p>The new custom metadata schema configuration, which replaces the current one.
+   * You can add fields and allowed values, but you can't remove a field or an
+   * allowed value, or change a field's type.</p>
    */
   inline const UpdatedCustomMetadataSchemaConfiguration& GetCustomMetadataSchemaConfiguration() const {
     return m_customMetadataSchemaConfiguration;

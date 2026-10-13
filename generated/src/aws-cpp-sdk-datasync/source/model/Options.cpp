@@ -79,6 +79,10 @@ Options& Options::operator=(JsonView jsonValue) {
     m_objectTags = ObjectTagsMapper::GetObjectTagsForName(jsonValue.GetString("ObjectTags"));
     m_objectTagsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ObjectMetadata")) {
+    m_objectMetadata = ObjectMetadataMapper::GetObjectMetadataForName(jsonValue.GetString("ObjectMetadata"));
+    m_objectMetadataHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -144,6 +148,10 @@ JsonValue Options::Jsonize() const {
 
   if (m_objectTagsHasBeenSet) {
     payload.WithString("ObjectTags", ObjectTagsMapper::GetNameForObjectTags(m_objectTags));
+  }
+
+  if (m_objectMetadataHasBeenSet) {
+    payload.WithString("ObjectMetadata", ObjectMetadataMapper::GetNameForObjectMetadata(m_objectMetadata));
   }
 
   return payload;

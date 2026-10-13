@@ -59,6 +59,9 @@ Aws::String CreateStackRequest::SerializePayload() const {
   if (m_agentAccessConfigHasBeenSet) {
     mapSize++;
   }
+  if (m_storageConnectorAuthenticationHasBeenSet) {
+    mapSize++;
+  }
 
   encoder.WriteMapStart(mapSize);
 
@@ -146,6 +149,12 @@ Aws::String CreateStackRequest::SerializePayload() const {
   if (m_agentAccessConfigHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("AgentAccessConfig"));
     m_agentAccessConfig.CborEncode(encoder);
+  }
+
+  if (m_storageConnectorAuthenticationHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("StorageConnectorAuthentication"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(
+        StorageConnectorAuthenticationMapper::GetNameForStorageConnectorAuthentication(m_storageConnectorAuthentication).c_str()));
   }
   const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
   return str;

@@ -12,6 +12,7 @@
 #include <aws/appstream/model/ContentRedirection.h>
 #include <aws/appstream/model/StackAttribute.h>
 #include <aws/appstream/model/StorageConnector.h>
+#include <aws/appstream/model/StorageConnectorAuthentication.h>
 #include <aws/appstream/model/StreamingExperienceSettings.h>
 #include <aws/appstream/model/UserSetting.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -328,6 +329,27 @@ class UpdateStackRequest : public AppStreamRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether users' cloud storage authentication persists across
+   * streaming sessions. When you specify FORCE_REAUTHENTICATION, WorkSpaces
+   * Applications removes the stored authentication for the stack's OneDrive and
+   * Google Drive connectors when a user's session ends. The user links their cloud
+   * storage again on their next session. To clear this attribute, add
+   * STORAGE_CONNECTOR_AUTHENTICATION to AttributesToDelete.</p>
+   */
+  inline StorageConnectorAuthentication GetStorageConnectorAuthentication() const { return m_storageConnectorAuthentication; }
+  inline bool StorageConnectorAuthenticationHasBeenSet() const { return m_storageConnectorAuthenticationHasBeenSet; }
+  inline void SetStorageConnectorAuthentication(StorageConnectorAuthentication value) {
+    m_storageConnectorAuthenticationHasBeenSet = true;
+    m_storageConnectorAuthentication = value;
+  }
+  inline UpdateStackRequest& WithStorageConnectorAuthentication(StorageConnectorAuthentication value) {
+    SetStorageConnectorAuthentication(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_displayName;
 
@@ -356,6 +378,8 @@ class UpdateStackRequest : public AppStreamRequest {
   ContentRedirection m_contentRedirection;
 
   AgentAccessConfigForUpdate m_agentAccessConfig;
+
+  StorageConnectorAuthentication m_storageConnectorAuthentication{StorageConnectorAuthentication::NOT_SET};
   bool m_displayNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_nameHasBeenSet = false;
@@ -370,6 +394,7 @@ class UpdateStackRequest : public AppStreamRequest {
   bool m_streamingExperienceSettingsHasBeenSet = false;
   bool m_contentRedirectionHasBeenSet = false;
   bool m_agentAccessConfigHasBeenSet = false;
+  bool m_storageConnectorAuthenticationHasBeenSet = false;
 };
 
 }  // namespace Model

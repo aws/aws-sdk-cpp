@@ -10,7 +10,7 @@
 namespace Aws {
 namespace AppIntegrationsService {
 namespace Model {
-enum class AuthType { NOT_SET, API_KEY };
+enum class AuthType { NOT_SET, API_KEY, CONNECT_JWT };
 
 namespace AuthTypeMapper {
 AWS_APPINTEGRATIONSSERVICE_API AuthType GetAuthTypeForName(const Aws::String& name);

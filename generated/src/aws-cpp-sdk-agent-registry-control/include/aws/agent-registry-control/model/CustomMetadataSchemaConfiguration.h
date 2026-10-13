@@ -22,9 +22,10 @@ namespace AgentRegistryControl {
 namespace Model {
 
 /**
- * <p>Configuration that defines a typed metadata schema for a registry. Specify at
- * least one of a default schema or per-record-type schema overrides. You can
- * provide both.</p><p><h3>See Also:</h3>   <a
+ * <p>The custom metadata fields that records in the registry can carry.
+ * <code>defaultSchema</code> defines the common attributes for every record type,
+ * and <code>recordTypeSchemaOverrides</code> adds fields for individual record
+ * types.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/agent-registry-control-2025-12-01/CustomMetadataSchemaConfiguration">AWS
  * API Reference</a></p>
  */
@@ -37,10 +38,8 @@ class CustomMetadataSchemaConfiguration {
 
   ///@{
   /**
-   * <p>The default JSON Schema that applies to record types without a specific
-   * override. Supported property types are <code>string</code>, <code>string</code>
-   * with an <code>enum</code> constraint, <code>string</code> with a
-   * <code>uri</code> format, and <code>boolean</code>.</p>
+   * <p>A JSON Schema with the common attributes: fields that records of every record
+   * type can carry.</p>
    */
   inline const Aws::String& GetDefaultSchema() const { return m_defaultSchema; }
   inline bool DefaultSchemaHasBeenSet() const { return m_defaultSchemaHasBeenSet; }
@@ -58,11 +57,9 @@ class CustomMetadataSchemaConfiguration {
 
   ///@{
   /**
-   * <p>A list of per-record-type schema overrides. When a record's type matches an
-   * override, that override's schema is used instead of the default schema for
-   * validation. If you don't specify an override for a record type, the default
-   * schema applies. If no default schema exists, custom metadata on records of that
-   * type is rejected.</p>
+   * <p>The fields for individual record types. Records of a record type can carry
+   * the common attributes defined in <code>defaultSchema</code> plus that record
+   * type's fields.</p>
    */
   inline const Aws::Vector<RecordTypeSchemaOverride>& GetRecordTypeSchemaOverrides() const { return m_recordTypeSchemaOverrides; }
   inline bool RecordTypeSchemaOverridesHasBeenSet() const { return m_recordTypeSchemaOverridesHasBeenSet; }

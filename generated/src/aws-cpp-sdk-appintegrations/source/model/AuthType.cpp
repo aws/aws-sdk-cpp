@@ -16,11 +16,14 @@ namespace Model {
 namespace AuthTypeMapper {
 
 static const int API_KEY_HASH = HashingUtils::HashString("API_KEY");
+static const int CONNECT_JWT_HASH = HashingUtils::HashString("CONNECT_JWT");
 
 AuthType GetAuthTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == API_KEY_HASH) {
     return AuthType::API_KEY;
+  } else if (hashCode == CONNECT_JWT_HASH) {
+    return AuthType::CONNECT_JWT;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +40,8 @@ Aws::String GetNameForAuthType(AuthType enumValue) {
       return {};
     case AuthType::API_KEY:
       return "API_KEY";
+    case AuthType::CONNECT_JWT:
+      return "CONNECT_JWT";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

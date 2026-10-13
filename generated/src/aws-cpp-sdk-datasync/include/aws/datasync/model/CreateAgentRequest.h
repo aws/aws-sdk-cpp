@@ -108,7 +108,11 @@ class CreateAgentRequest : public DataSyncRequest {
    * service endpoint</a> that you're using. For example, a VPC endpoint ID looks
    * like <code>vpce-01234d5aff67890e1</code>.</p>  <p>The VPC service
    * endpoint you use must include the DataSync service name (for example,
-   * <code>com.amazonaws.us-east-2.datasync</code>).</p>
+   * <code>com.amazonaws.us-east-2.datasync</code>).</p>  <p>The endpoint
+   * ID is informational. DataSync doesn't verify it or use it to connect to your
+   * agent. For more information, see <a
+   * href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#vpc-endpoint-multiple-subnets">Using
+   * a single VPC service endpoint across multiple subnets</a>.</p>
    */
   inline const Aws::String& GetVpcEndpointId() const { return m_vpcEndpointId; }
   inline bool VpcEndpointIdHasBeenSet() const { return m_vpcEndpointIdHasBeenSet; }
@@ -126,8 +130,17 @@ class CreateAgentRequest : public DataSyncRequest {
 
   ///@{
   /**
-   * <p>Specifies the ARN of the subnet where your VPC service endpoint is located.
-   * You can only specify one ARN.</p>
+   * <p>Specifies the ARN of the subnet where DataSync creates the <a
+   * href="https://docs.aws.amazon.com/datasync/latest/userguide/required-network-interfaces.html">network
+   * interfaces</a> that handle data transfer traffic for your tasks. You can only
+   * specify one ARN.</p> <p>The subnet doesn't have to be the subnet that contains
+   * your VPC service endpoint. The subnet can be one that another Amazon Web
+   * Services account shared with you through <a
+   * href="https://docs.aws.amazon.com/ram/latest/userguide/what-is.html">RAM</a>, in
+   * which case the ARN must specify the account that owns the subnet. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#vpc-endpoint-multiple-subnets">Using
+   * a single VPC service endpoint across multiple subnets</a>.</p>
    */
   inline const Aws::Vector<Aws::String>& GetSubnetArns() const { return m_subnetArns; }
   inline bool SubnetArnsHasBeenSet() const { return m_subnetArnsHasBeenSet; }
@@ -153,7 +166,10 @@ class CreateAgentRequest : public DataSyncRequest {
   /**
    * <p>Specifies the Amazon Resource Name (ARN) of the security group that allows
    * traffic between your agent and VPC service endpoint. You can only specify one
-   * ARN.</p>
+   * ARN.</p> <p>The ARN must specify your own account, even when the security group
+   * was shared with you from the account that owns the VPC. The security group must
+   * belong to the same VPC as the subnet that you specify in
+   * <code>SubnetArns</code>.</p>
    */
   inline const Aws::Vector<Aws::String>& GetSecurityGroupArns() const { return m_securityGroupArns; }
   inline bool SecurityGroupArnsHasBeenSet() const { return m_securityGroupArnsHasBeenSet; }

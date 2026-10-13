@@ -10,7 +10,7 @@
 namespace Aws {
 namespace DataSync {
 namespace Model {
-enum class NfsVersion { NOT_SET, AUTOMATIC, NFS3, NFS4_0, NFS4_1 };
+enum class NfsVersion { NOT_SET, AUTOMATIC, NFS3, NFS4_0, NFS4_1, NFS4_2 };
 
 namespace NfsVersionMapper {
 AWS_DATASYNC_API NfsVersion GetNfsVersionForName(const Aws::String& name);

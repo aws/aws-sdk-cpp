@@ -87,6 +87,13 @@
 #include <aws/resiliencehubv2/model/DependencyInsightsErrorCode.h>
 #include <aws/resiliencehubv2/model/DependencyInsightsStatus.h>
 #include <aws/resiliencehubv2/model/DependencySummary.h>
+#include <aws/resiliencehubv2/model/DevOpsAgentConfidence.h>
+#include <aws/resiliencehubv2/model/DevOpsAgentConfiguration.h>
+#include <aws/resiliencehubv2/model/DevOpsAgentConfigurationView.h>
+#include <aws/resiliencehubv2/model/DevOpsAgentConnectionStatus.h>
+#include <aws/resiliencehubv2/model/DevOpsAgentInvestigation.h>
+#include <aws/resiliencehubv2/model/DevOpsAgentInvestigationStatus.h>
+#include <aws/resiliencehubv2/model/DevOpsAgentVerdict.h>
 #include <aws/resiliencehubv2/model/DisasterRecoverySource.h>
 #include <aws/resiliencehubv2/model/EdgePropertySummary.h>
 #include <aws/resiliencehubv2/model/EffectivePolicyValues.h>

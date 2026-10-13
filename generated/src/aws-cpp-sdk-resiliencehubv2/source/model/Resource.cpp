@@ -34,6 +34,22 @@ Resource& Resource::operator=(JsonView jsonValue) {
     m_resourceType = jsonValue.GetString("resourceType");
     m_resourceTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("availabilityZoneId")) {
+    m_availabilityZoneId = jsonValue.GetString("availabilityZoneId");
+    m_availabilityZoneIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("availabilityZoneName")) {
+    m_availabilityZoneName = jsonValue.GetString("availabilityZoneName");
+    m_availabilityZoneNameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("containmentParentId")) {
+    m_containmentParentId = jsonValue.GetString("containmentParentId");
+    m_containmentParentIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("logicalResourceGroupId")) {
+    m_logicalResourceGroupId = jsonValue.GetString("logicalResourceGroupId");
+    m_logicalResourceGroupIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +70,22 @@ JsonValue Resource::Jsonize() const {
 
   if (m_resourceTypeHasBeenSet) {
     payload.WithString("resourceType", m_resourceType);
+  }
+
+  if (m_availabilityZoneIdHasBeenSet) {
+    payload.WithString("availabilityZoneId", m_availabilityZoneId);
+  }
+
+  if (m_availabilityZoneNameHasBeenSet) {
+    payload.WithString("availabilityZoneName", m_availabilityZoneName);
+  }
+
+  if (m_containmentParentIdHasBeenSet) {
+    payload.WithString("containmentParentId", m_containmentParentId);
+  }
+
+  if (m_logicalResourceGroupIdHasBeenSet) {
+    payload.WithString("logicalResourceGroupId", m_logicalResourceGroupId);
   }
 
   return payload;

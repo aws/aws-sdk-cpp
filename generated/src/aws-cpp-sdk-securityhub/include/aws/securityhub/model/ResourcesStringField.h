@@ -31,7 +31,8 @@ enum class ResourcesStringField {
   DiscoveryType,
   ResourceInfo_AIDetails_HostResourceGuid,
   ResourceInfo_AIDetails_HostResourceType,
-  ResourceInfo_AIDetails_CanonicalId
+  ResourceInfo_AIDetails_CanonicalId,
+  ResourceCriticality
 };
 
 namespace ResourcesStringFieldMapper {

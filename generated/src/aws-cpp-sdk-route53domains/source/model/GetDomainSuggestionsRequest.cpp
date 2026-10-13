@@ -27,6 +27,10 @@ Aws::String GetDomainSuggestionsRequest::SerializePayload() const {
     payload.WithBool("OnlyAvailable", m_onlyAvailable);
   }
 
+  if (m_onlyStandardPricesHasBeenSet) {
+    payload.WithBool("OnlyStandardPrices", m_onlyStandardPrices);
+  }
+
   return payload.View().WriteReadable();
 }
 

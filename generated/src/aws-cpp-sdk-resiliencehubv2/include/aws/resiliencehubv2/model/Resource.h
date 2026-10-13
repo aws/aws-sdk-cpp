@@ -103,6 +103,84 @@ class Resource {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Availability Zone ID of the Availability Zone that hosts the resource,
+   * such as use1-az1. The Availability Zone ID is consistent across Amazon Web
+   * Services (AWS) accounts, unlike the Availability Zone name.</p>
+   */
+  inline const Aws::String& GetAvailabilityZoneId() const { return m_availabilityZoneId; }
+  inline bool AvailabilityZoneIdHasBeenSet() const { return m_availabilityZoneIdHasBeenSet; }
+  template <typename AvailabilityZoneIdT = Aws::String>
+  void SetAvailabilityZoneId(AvailabilityZoneIdT&& value) {
+    m_availabilityZoneIdHasBeenSet = true;
+    m_availabilityZoneId = std::forward<AvailabilityZoneIdT>(value);
+  }
+  template <typename AvailabilityZoneIdT = Aws::String>
+  Resource& WithAvailabilityZoneId(AvailabilityZoneIdT&& value) {
+    SetAvailabilityZoneId(std::forward<AvailabilityZoneIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the Availability Zone that hosts the resource, such as
+   * us-west-2a.</p>
+   */
+  inline const Aws::String& GetAvailabilityZoneName() const { return m_availabilityZoneName; }
+  inline bool AvailabilityZoneNameHasBeenSet() const { return m_availabilityZoneNameHasBeenSet; }
+  template <typename AvailabilityZoneNameT = Aws::String>
+  void SetAvailabilityZoneName(AvailabilityZoneNameT&& value) {
+    m_availabilityZoneNameHasBeenSet = true;
+    m_availabilityZoneName = std::forward<AvailabilityZoneNameT>(value);
+  }
+  template <typename AvailabilityZoneNameT = Aws::String>
+  Resource& WithAvailabilityZoneName(AvailabilityZoneNameT&& value) {
+    SetAvailabilityZoneName(std::forward<AvailabilityZoneNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The identifier of the single parent resource that contains this resource,
+   * used to represent containment relationships in the resource topology. A resource
+   * has at most one containment parent.</p>
+   */
+  inline const Aws::String& GetContainmentParentId() const { return m_containmentParentId; }
+  inline bool ContainmentParentIdHasBeenSet() const { return m_containmentParentIdHasBeenSet; }
+  template <typename ContainmentParentIdT = Aws::String>
+  void SetContainmentParentId(ContainmentParentIdT&& value) {
+    m_containmentParentIdHasBeenSet = true;
+    m_containmentParentId = std::forward<ContainmentParentIdT>(value);
+  }
+  template <typename ContainmentParentIdT = Aws::String>
+  Resource& WithContainmentParentId(ContainmentParentIdT&& value) {
+    SetContainmentParentId(std::forward<ContainmentParentIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The identifier of the logical resource group that this resource belongs to.
+   * Resources that share this identifier are managed as a single unit.</p>
+   */
+  inline const Aws::String& GetLogicalResourceGroupId() const { return m_logicalResourceGroupId; }
+  inline bool LogicalResourceGroupIdHasBeenSet() const { return m_logicalResourceGroupIdHasBeenSet; }
+  template <typename LogicalResourceGroupIdT = Aws::String>
+  void SetLogicalResourceGroupId(LogicalResourceGroupIdT&& value) {
+    m_logicalResourceGroupIdHasBeenSet = true;
+    m_logicalResourceGroupId = std::forward<LogicalResourceGroupIdT>(value);
+  }
+  template <typename LogicalResourceGroupIdT = Aws::String>
+  Resource& WithLogicalResourceGroupId(LogicalResourceGroupIdT&& value) {
+    SetLogicalResourceGroupId(std::forward<LogicalResourceGroupIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_identifier;
 
@@ -111,10 +189,22 @@ class Resource {
   Aws::String m_awsAccountId;
 
   Aws::String m_resourceType;
+
+  Aws::String m_availabilityZoneId;
+
+  Aws::String m_availabilityZoneName;
+
+  Aws::String m_containmentParentId;
+
+  Aws::String m_logicalResourceGroupId;
   bool m_identifierHasBeenSet = false;
   bool m_awsRegionHasBeenSet = false;
   bool m_awsAccountIdHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
+  bool m_availabilityZoneIdHasBeenSet = false;
+  bool m_availabilityZoneNameHasBeenSet = false;
+  bool m_containmentParentIdHasBeenSet = false;
+  bool m_logicalResourceGroupIdHasBeenSet = false;
 };
 
 }  // namespace Model

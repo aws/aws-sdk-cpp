@@ -20,8 +20,8 @@ namespace Route53Domains {
 namespace Model {
 
 /**
- * <p> Customer's consent for the owner change request. </p><p><h3>See Also:</h3>
- * <a
+ * <p> The maximum amount that you agree to pay for an operation, and the currency
+ * for that amount. </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/Consent">AWS
  * API Reference</a></p>
  */
@@ -34,7 +34,7 @@ class Consent {
 
   ///@{
   /**
-   * <p> Maximum amount the customer agreed to accept. </p>
+   * <p> The maximum amount that you agree to accept. </p>
    */
   inline double GetMaxPrice() const { return m_maxPrice; }
   inline bool MaxPriceHasBeenSet() const { return m_maxPriceHasBeenSet; }
@@ -50,7 +50,7 @@ class Consent {
 
   ///@{
   /**
-   * <p> Currency for the <code>MaxPrice</code>. </p>
+   * <p> The currency for the <code>MaxPrice</code>. </p>
    */
   inline const Aws::String& GetCurrency() const { return m_currency; }
   inline bool CurrencyHasBeenSet() const { return m_currencyHasBeenSet; }

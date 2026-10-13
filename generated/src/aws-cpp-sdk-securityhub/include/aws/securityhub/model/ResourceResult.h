@@ -8,8 +8,10 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
+#include <aws/securityhub/model/CriticalitySource.h>
 #include <aws/securityhub/model/DiscoveryType.h>
 #include <aws/securityhub/model/ResourceCategory.h>
+#include <aws/securityhub/model/ResourceCriticality.h>
 #include <aws/securityhub/model/ResourceFindingsSummary.h>
 #include <aws/securityhub/model/ResourceInfo.h>
 #include <aws/securityhub/model/ResourceSubCategory.h>
@@ -443,6 +445,46 @@ class ResourceResult {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The criticality assigned to a resource.</p>
+   */
+  inline ResourceCriticality GetResourceCriticality() const { return m_resourceCriticality; }
+  inline bool ResourceCriticalityHasBeenSet() const { return m_resourceCriticalityHasBeenSet; }
+  inline void SetResourceCriticality(ResourceCriticality value) {
+    m_resourceCriticalityHasBeenSet = true;
+    m_resourceCriticality = value;
+  }
+  inline ResourceResult& WithResourceCriticality(ResourceCriticality value) {
+    SetResourceCriticality(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The sources of criticalities determined from a resource.</p>
+   */
+  inline const Aws::Vector<CriticalitySource>& GetCriticalitySources() const { return m_criticalitySources; }
+  inline bool CriticalitySourcesHasBeenSet() const { return m_criticalitySourcesHasBeenSet; }
+  template <typename CriticalitySourcesT = Aws::Vector<CriticalitySource>>
+  void SetCriticalitySources(CriticalitySourcesT&& value) {
+    m_criticalitySourcesHasBeenSet = true;
+    m_criticalitySources = std::forward<CriticalitySourcesT>(value);
+  }
+  template <typename CriticalitySourcesT = Aws::Vector<CriticalitySource>>
+  ResourceResult& WithCriticalitySources(CriticalitySourcesT&& value) {
+    SetCriticalitySources(std::forward<CriticalitySourcesT>(value));
+    return *this;
+  }
+  template <typename CriticalitySourcesT = CriticalitySource>
+  ResourceResult& AddCriticalitySources(CriticalitySourcesT&& value) {
+    m_criticalitySourcesHasBeenSet = true;
+    m_criticalitySources.emplace_back(std::forward<CriticalitySourcesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_resourceGuid;
 
@@ -485,6 +527,10 @@ class ResourceResult {
   DiscoveryType m_discoveryType{DiscoveryType::NOT_SET};
 
   ResourceInfo m_resourceInfo;
+
+  ResourceCriticality m_resourceCriticality{ResourceCriticality::NOT_SET};
+
+  Aws::Vector<CriticalitySource> m_criticalitySources;
   bool m_resourceGuidHasBeenSet = false;
   bool m_resourceIdHasBeenSet = false;
   bool m_accountIdHasBeenSet = false;
@@ -506,6 +552,8 @@ class ResourceResult {
   bool m_resourceSubCategoryHasBeenSet = false;
   bool m_discoveryTypeHasBeenSet = false;
   bool m_resourceInfoHasBeenSet = false;
+  bool m_resourceCriticalityHasBeenSet = false;
+  bool m_criticalitySourcesHasBeenSet = false;
 };
 
 }  // namespace Model

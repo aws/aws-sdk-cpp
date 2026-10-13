@@ -131,6 +131,7 @@
 #include <aws/datasync/model/Mtime.h>
 #include <aws/datasync/model/NfsMountOptions.h>
 #include <aws/datasync/model/NfsVersion.h>
+#include <aws/datasync/model/ObjectMetadata.h>
 #include <aws/datasync/model/ObjectStorageServerProtocol.h>
 #include <aws/datasync/model/ObjectTags.h>
 #include <aws/datasync/model/ObjectVersionIds.h>

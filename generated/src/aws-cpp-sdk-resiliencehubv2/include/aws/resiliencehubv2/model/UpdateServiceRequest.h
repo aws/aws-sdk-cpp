@@ -10,6 +10,7 @@
 #include <aws/resiliencehubv2/Resiliencehubv2_EXPORTS.h>
 #include <aws/resiliencehubv2/model/AssociatedSystem.h>
 #include <aws/resiliencehubv2/model/DependencyDiscoveryInput.h>
+#include <aws/resiliencehubv2/model/DevOpsAgentConfiguration.h>
 #include <aws/resiliencehubv2/model/PermissionModel.h>
 #include <aws/resiliencehubv2/model/ServiceReportConfiguration.h>
 
@@ -176,6 +177,26 @@ class UpdateServiceRequest : public Resiliencehubv2Request {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The optional DevOps Agent integration configuration to set, replace, or
+   * disconnect for the service. If you omit this field, the existing DevOps Agent
+   * linkage stays unchanged.</p>
+   */
+  inline const DevOpsAgentConfiguration& GetDevOpsAgentConfiguration() const { return m_devOpsAgentConfiguration; }
+  inline bool DevOpsAgentConfigurationHasBeenSet() const { return m_devOpsAgentConfigurationHasBeenSet; }
+  template <typename DevOpsAgentConfigurationT = DevOpsAgentConfiguration>
+  void SetDevOpsAgentConfiguration(DevOpsAgentConfigurationT&& value) {
+    m_devOpsAgentConfigurationHasBeenSet = true;
+    m_devOpsAgentConfiguration = std::forward<DevOpsAgentConfigurationT>(value);
+  }
+  template <typename DevOpsAgentConfigurationT = DevOpsAgentConfiguration>
+  UpdateServiceRequest& WithDevOpsAgentConfiguration(DevOpsAgentConfigurationT&& value) {
+    SetDevOpsAgentConfiguration(std::forward<DevOpsAgentConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_serviceArn;
 
@@ -192,6 +213,8 @@ class UpdateServiceRequest : public Resiliencehubv2Request {
   DependencyDiscoveryInput m_dependencyDiscovery{DependencyDiscoveryInput::NOT_SET};
 
   ServiceReportConfiguration m_reportConfiguration;
+
+  DevOpsAgentConfiguration m_devOpsAgentConfiguration;
   bool m_serviceArnHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_associatedSystemsHasBeenSet = false;
@@ -200,6 +223,7 @@ class UpdateServiceRequest : public Resiliencehubv2Request {
   bool m_permissionModelHasBeenSet = false;
   bool m_dependencyDiscoveryHasBeenSet = false;
   bool m_reportConfigurationHasBeenSet = false;
+  bool m_devOpsAgentConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

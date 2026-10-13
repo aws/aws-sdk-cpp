@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53domains/Route53DomainsRequest.h>
 #include <aws/route53domains/Route53Domains_EXPORTS.h>
+#include <aws/route53domains/model/Consent.h>
 #include <aws/route53domains/model/ContactDetail.h>
 
 #include <utility>
@@ -293,6 +294,28 @@ class RegisterDomainRequest : public Route53DomainsRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the maximum price that you agree to pay to register the domain
+   * name. This element is required if the domain has registry premium pricing, and
+   * optional if the domain is priced at the standard rate for its TLD. If you
+   * include it and the registration price is more than <code>MaxPrice</code>, the
+   * request fails.</p>
+   */
+  inline const Consent& GetConsent() const { return m_consent; }
+  inline bool ConsentHasBeenSet() const { return m_consentHasBeenSet; }
+  template <typename ConsentT = Consent>
+  void SetConsent(ConsentT&& value) {
+    m_consentHasBeenSet = true;
+    m_consent = std::forward<ConsentT>(value);
+  }
+  template <typename ConsentT = Consent>
+  RegisterDomainRequest& WithConsent(ConsentT&& value) {
+    SetConsent(std::forward<ConsentT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_domainName;
 
@@ -317,6 +340,8 @@ class RegisterDomainRequest : public Route53DomainsRequest {
   ContactDetail m_billingContact;
 
   bool m_privacyProtectBillingContact{false};
+
+  Consent m_consent;
   bool m_domainNameHasBeenSet = false;
   bool m_idnLangCodeHasBeenSet = false;
   bool m_durationInYearsHasBeenSet = false;
@@ -329,6 +354,7 @@ class RegisterDomainRequest : public Route53DomainsRequest {
   bool m_privacyProtectTechContactHasBeenSet = false;
   bool m_billingContactHasBeenSet = false;
   bool m_privacyProtectBillingContactHasBeenSet = false;
+  bool m_consentHasBeenSet = false;
 };
 
 }  // namespace Model

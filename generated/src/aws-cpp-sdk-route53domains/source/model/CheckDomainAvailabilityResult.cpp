@@ -26,6 +26,10 @@ CheckDomainAvailabilityResult& CheckDomainAvailabilityResult::operator=(const Aw
     m_availability = DomainAvailabilityMapper::GetDomainAvailabilityForName(jsonValue.GetString("Availability"));
     m_availabilityHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Price")) {
+    m_price = jsonValue.GetObject("Price");
+    m_priceHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -448,6 +448,15 @@ Stack& Stack::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& deco
               else if (initialKeyStr == "AgentAccessConfig") {
                 m_agentAccessConfig = AgentAccessConfig(decoder);
                 m_agentAccessConfigHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "StorageConnectorAuthentication") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_storageConnectorAuthentication = StorageConnectorAuthenticationMapper::GetStorageConnectorAuthenticationForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_storageConnectorAuthenticationHasBeenSet = true;
               } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
@@ -893,6 +902,15 @@ Stack& Stack::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& deco
             else if (initialKeyStr == "AgentAccessConfig") {
               m_agentAccessConfig = AgentAccessConfig(decoder);
               m_agentAccessConfigHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "StorageConnectorAuthentication") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_storageConnectorAuthentication = StorageConnectorAuthenticationMapper::GetStorageConnectorAuthenticationForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_storageConnectorAuthenticationHasBeenSet = true;
             } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
@@ -955,6 +973,9 @@ void Stack::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
     mapSize++;
   }
   if (m_agentAccessConfigHasBeenSet) {
+    mapSize++;
+  }
+  if (m_storageConnectorAuthenticationHasBeenSet) {
     mapSize++;
   }
 
@@ -1054,6 +1075,12 @@ void Stack::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
   if (m_agentAccessConfigHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("AgentAccessConfig"));
     m_agentAccessConfig.CborEncode(encoder);
+  }
+
+  if (m_storageConnectorAuthenticationHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("StorageConnectorAuthentication"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(
+        StorageConnectorAuthenticationMapper::GetNameForStorageConnectorAuthentication(m_storageConnectorAuthentication).c_str()));
   }
 }
 

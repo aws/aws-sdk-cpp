@@ -90,6 +90,7 @@
 #include <aws/connect/model/SearchContactFlowModulesPaginationTraits.h>
 #include <aws/connect/model/SearchUsersPaginationTraits.h>
 #include <aws/connect/model/ListEntitySecurityProfilesPaginationTraits.h>
+#include <aws/connect/model/ListContactFlowAliasesPaginationTraits.h>
 #include <aws/connect/model/ListTrafficDistributionGroupUsersPaginationTraits.h>
 #include <aws/connect/model/SearchHoursOfOperationOverridesPaginationTraits.h>
 #include <aws/connect/model/ListQuickConnectsPaginationTraits.h>

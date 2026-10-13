@@ -17,6 +17,7 @@
 #include <aws/connect/model/ListBotsPaginationTraits.h>
 #include <aws/connect/model/ListChildHoursOfOperationsPaginationTraits.h>
 #include <aws/connect/model/ListContactEvaluationsPaginationTraits.h>
+#include <aws/connect/model/ListContactFlowAliasesPaginationTraits.h>
 #include <aws/connect/model/ListContactFlowModuleAliasesPaginationTraits.h>
 #include <aws/connect/model/ListContactFlowModuleVersionsPaginationTraits.h>
 #include <aws/connect/model/ListContactFlowModulesPaginationTraits.h>
@@ -246,6 +247,18 @@ class ConnectPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListContactEvaluationsRequest,
                                              Pagination::ListContactEvaluationsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListContactFlowAliases operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListContactFlowAliasesRequest,
+                                    Pagination::ListContactFlowAliasesPaginationTraits<DerivedClient>>
+  ListContactFlowAliasesPaginator(const Model::ListContactFlowAliasesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListContactFlowAliasesRequest,
+                                             Pagination::ListContactFlowAliasesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

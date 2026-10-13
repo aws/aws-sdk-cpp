@@ -21,6 +21,7 @@ static const int DONT_KNOW_HASH = HashingUtils::HashString("DONT_KNOW");
 static const int DOMAIN_IN_OWN_ACCOUNT_HASH = HashingUtils::HashString("DOMAIN_IN_OWN_ACCOUNT");
 static const int DOMAIN_IN_ANOTHER_ACCOUNT_HASH = HashingUtils::HashString("DOMAIN_IN_ANOTHER_ACCOUNT");
 static const int PREMIUM_DOMAIN_HASH = HashingUtils::HashString("PREMIUM_DOMAIN");
+static const int PENDING_HASH = HashingUtils::HashString("PENDING");
 
 Transferable GetTransferableForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -36,6 +37,8 @@ Transferable GetTransferableForName(const Aws::String& name) {
     return Transferable::DOMAIN_IN_ANOTHER_ACCOUNT;
   } else if (hashCode == PREMIUM_DOMAIN_HASH) {
     return Transferable::PREMIUM_DOMAIN;
+  } else if (hashCode == PENDING_HASH) {
+    return Transferable::PENDING;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -62,6 +65,8 @@ Aws::String GetNameForTransferable(Transferable enumValue) {
       return "DOMAIN_IN_ANOTHER_ACCOUNT";
     case Transferable::PREMIUM_DOMAIN:
       return "PREMIUM_DOMAIN";
+    case Transferable::PENDING:
+      return "PENDING";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {
