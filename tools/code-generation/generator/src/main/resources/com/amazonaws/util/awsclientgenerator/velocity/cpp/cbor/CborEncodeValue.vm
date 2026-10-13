@@ -46,7 +46,7 @@ for(const auto& item_${recursionDepth} : ${value}) {
 #end
 }
 #elseif($shapeMember.blob)
-encoder.WriteBytes(Aws::Crt::ByteCursorFromCString(reinterpret_cast<const char*>(${value}.GetUnderlyingData())));
+encoder.WriteBytes(Aws::Crt::ByteCursorFromArray(${value}.GetUnderlyingData(), ${value}.GetLength()));
 #elseif($shapeMember.string)
 encoder.WriteText(Aws::Crt::ByteCursorFromCString(${value}.c_str()));
 #elseif($shapeMember.boolean)

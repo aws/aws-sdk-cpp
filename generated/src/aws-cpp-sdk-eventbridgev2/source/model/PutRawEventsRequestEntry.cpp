@@ -332,7 +332,7 @@ void PutRawEventsRequestEntry::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) 
 
   if (m_dataHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("Data"));
-    encoder.WriteBytes(Aws::Crt::ByteCursorFromCString(reinterpret_cast<const char*>(m_data.GetUnderlyingData())));
+    encoder.WriteBytes(Aws::Crt::ByteCursorFromArray(m_data.GetUnderlyingData(), m_data.GetLength()));
   }
 
   if (m_metadataHasBeenSet) {
