@@ -22,6 +22,7 @@
 #include <aws/lakeformation/LakeFormationErrorMarshaller.h>
 #include <aws/lakeformation/model/AddLFTagsToResourceRequest.h>
 #include <aws/lakeformation/model/AssumeDecoratedRoleWithSAMLRequest.h>
+#include <aws/lakeformation/model/AttachRLSPolicyRequest.h>
 #include <aws/lakeformation/model/BatchGrantPermissionsRequest.h>
 #include <aws/lakeformation/model/BatchRevokePermissionsRequest.h>
 #include <aws/lakeformation/model/CancelTransactionRequest.h>
@@ -31,16 +32,19 @@
 #include <aws/lakeformation/model/CreateLFTagRequest.h>
 #include <aws/lakeformation/model/CreateLakeFormationIdentityCenterConfigurationRequest.h>
 #include <aws/lakeformation/model/CreateLakeFormationOptInRequest.h>
+#include <aws/lakeformation/model/CreateRLSPolicyRequest.h>
 #include <aws/lakeformation/model/DeleteDataCellsFilterRequest.h>
 #include <aws/lakeformation/model/DeleteLFTagExpressionRequest.h>
 #include <aws/lakeformation/model/DeleteLFTagRequest.h>
 #include <aws/lakeformation/model/DeleteLakeFormationIdentityCenterConfigurationRequest.h>
 #include <aws/lakeformation/model/DeleteLakeFormationOptInRequest.h>
 #include <aws/lakeformation/model/DeleteObjectsOnCancelRequest.h>
+#include <aws/lakeformation/model/DeleteRLSPolicyRequest.h>
 #include <aws/lakeformation/model/DeregisterResourceRequest.h>
 #include <aws/lakeformation/model/DescribeLakeFormationIdentityCenterConfigurationRequest.h>
 #include <aws/lakeformation/model/DescribeResourceRequest.h>
 #include <aws/lakeformation/model/DescribeTransactionRequest.h>
+#include <aws/lakeformation/model/DetachRLSPolicyRequest.h>
 #include <aws/lakeformation/model/ExtendTransactionRequest.h>
 #include <aws/lakeformation/model/GetDataCellsFilterRequest.h>
 #include <aws/lakeformation/model/GetDataLakePrincipalRequest.h>
@@ -50,6 +54,7 @@
 #include <aws/lakeformation/model/GetLFTagRequest.h>
 #include <aws/lakeformation/model/GetQueryStateRequest.h>
 #include <aws/lakeformation/model/GetQueryStatisticsRequest.h>
+#include <aws/lakeformation/model/GetRLSPolicyRequest.h>
 #include <aws/lakeformation/model/GetResourceLFTagsRequest.h>
 #include <aws/lakeformation/model/GetTableObjectsRequest.h>
 #include <aws/lakeformation/model/GetTemporaryDataLocationCredentialsRequest.h>
@@ -63,6 +68,8 @@
 #include <aws/lakeformation/model/ListLFTagsRequest.h>
 #include <aws/lakeformation/model/ListLakeFormationOptInsRequest.h>
 #include <aws/lakeformation/model/ListPermissionsRequest.h>
+#include <aws/lakeformation/model/ListRLSPoliciesRequest.h>
+#include <aws/lakeformation/model/ListRLSPolicyAttachmentsRequest.h>
 #include <aws/lakeformation/model/ListResourcesRequest.h>
 #include <aws/lakeformation/model/ListTableStorageOptimizersRequest.h>
 #include <aws/lakeformation/model/ListTransactionsRequest.h>
@@ -78,6 +85,7 @@
 #include <aws/lakeformation/model/UpdateLFTagExpressionRequest.h>
 #include <aws/lakeformation/model/UpdateLFTagRequest.h>
 #include <aws/lakeformation/model/UpdateLakeFormationIdentityCenterConfigurationRequest.h>
+#include <aws/lakeformation/model/UpdateRLSPolicyRequest.h>
 #include <aws/lakeformation/model/UpdateResourceRequest.h>
 #include <aws/lakeformation/model/UpdateTableObjectsRequest.h>
 #include <aws/lakeformation/model/UpdateTableStorageOptimizerRequest.h>
@@ -259,6 +267,17 @@ AssumeDecoratedRoleWithSAMLOutcome LakeFormationClient::AssumeDecoratedRoleWithS
                             : AssumeDecoratedRoleWithSAMLOutcome(std::move(result.GetError()));
 }
 
+AttachRLSPolicyOutcome LakeFormationClient::AttachRLSPolicy(const AttachRLSPolicyRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/AttachRLSPolicy");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AttachRLSPolicyOutcome(result.GetResultWithOwnership())
+                            : AttachRLSPolicyOutcome(std::move(result.GetError()));
+}
+
 BatchGrantPermissionsOutcome LakeFormationClient::BatchGrantPermissions(const BatchGrantPermissionsRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -358,6 +377,17 @@ CreateLakeFormationOptInOutcome LakeFormationClient::CreateLakeFormationOptIn(co
                             : CreateLakeFormationOptInOutcome(std::move(result.GetError()));
 }
 
+CreateRLSPolicyOutcome LakeFormationClient::CreateRLSPolicy(const CreateRLSPolicyRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/CreateRLSPolicy");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRLSPolicyOutcome(result.GetResultWithOwnership())
+                            : CreateRLSPolicyOutcome(std::move(result.GetError()));
+}
+
 DeleteDataCellsFilterOutcome LakeFormationClient::DeleteDataCellsFilter(const DeleteDataCellsFilterRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -424,6 +454,17 @@ DeleteObjectsOnCancelOutcome LakeFormationClient::DeleteObjectsOnCancel(const De
                             : DeleteObjectsOnCancelOutcome(std::move(result.GetError()));
 }
 
+DeleteRLSPolicyOutcome LakeFormationClient::DeleteRLSPolicy(const DeleteRLSPolicyRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteRLSPolicy");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteRLSPolicyOutcome(result.GetResultWithOwnership())
+                            : DeleteRLSPolicyOutcome(std::move(result.GetError()));
+}
+
 DeregisterResourceOutcome LakeFormationClient::DeregisterResource(const DeregisterResourceRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -467,6 +508,17 @@ DescribeTransactionOutcome LakeFormationClient::DescribeTransaction(const Descri
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeTransactionOutcome(result.GetResultWithOwnership())
                             : DescribeTransactionOutcome(std::move(result.GetError()));
+}
+
+DetachRLSPolicyOutcome LakeFormationClient::DetachRLSPolicy(const DetachRLSPolicyRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/DetachRLSPolicy");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DetachRLSPolicyOutcome(result.GetResultWithOwnership())
+                            : DetachRLSPolicyOutcome(std::move(result.GetError()));
 }
 
 ExtendTransactionOutcome LakeFormationClient::ExtendTransaction(const ExtendTransactionRequest& request) const {
@@ -565,6 +617,16 @@ GetQueryStatisticsOutcome LakeFormationClient::GetQueryStatistics(const GetQuery
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetQueryStatisticsOutcome(result.GetResultWithOwnership())
                             : GetQueryStatisticsOutcome(std::move(result.GetError()));
+}
+
+GetRLSPolicyOutcome LakeFormationClient::GetRLSPolicy(const GetRLSPolicyRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/GetRLSPolicy");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetRLSPolicyOutcome(result.GetResultWithOwnership()) : GetRLSPolicyOutcome(std::move(result.GetError()));
 }
 
 GetResourceLFTagsOutcome LakeFormationClient::GetResourceLFTags(const GetResourceLFTagsRequest& request) const {
@@ -733,6 +795,28 @@ ListPermissionsOutcome LakeFormationClient::ListPermissions(const ListPermission
                             : ListPermissionsOutcome(std::move(result.GetError()));
 }
 
+ListRLSPoliciesOutcome LakeFormationClient::ListRLSPolicies(const ListRLSPoliciesRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/ListRLSPolicies");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRLSPoliciesOutcome(result.GetResultWithOwnership())
+                            : ListRLSPoliciesOutcome(std::move(result.GetError()));
+}
+
+ListRLSPolicyAttachmentsOutcome LakeFormationClient::ListRLSPolicyAttachments(const ListRLSPolicyAttachmentsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/ListRLSPolicyAttachments");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRLSPolicyAttachmentsOutcome(result.GetResultWithOwnership())
+                            : ListRLSPolicyAttachmentsOutcome(std::move(result.GetError()));
+}
+
 ListResourcesOutcome LakeFormationClient::ListResources(const ListResourcesRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -895,6 +979,17 @@ UpdateLakeFormationIdentityCenterConfigurationOutcome LakeFormationClient::Updat
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UpdateLakeFormationIdentityCenterConfigurationOutcome(result.GetResultWithOwnership())
                             : UpdateLakeFormationIdentityCenterConfigurationOutcome(std::move(result.GetError()));
+}
+
+UpdateRLSPolicyOutcome LakeFormationClient::UpdateRLSPolicy(const UpdateRLSPolicyRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateRLSPolicy");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateRLSPolicyOutcome(result.GetResultWithOwnership())
+                            : UpdateRLSPolicyOutcome(std::move(result.GetError()));
 }
 
 UpdateResourceOutcome LakeFormationClient::UpdateResource(const UpdateResourceRequest& request) const {

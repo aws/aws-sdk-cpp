@@ -10,7 +10,7 @@
 namespace Aws {
 namespace SageMaker {
 namespace Model {
-enum class PipelineExecutionStatus { NOT_SET, Executing, Stopping, Stopped, Failed, Succeeded };
+enum class PipelineExecutionStatus { NOT_SET, Executing, Stopping, Stopped, Failed, Succeeded, CompletedWithFailures };
 
 namespace PipelineExecutionStatusMapper {
 AWS_SAGEMAKER_API PipelineExecutionStatus GetPipelineExecutionStatusForName(const Aws::String& name);

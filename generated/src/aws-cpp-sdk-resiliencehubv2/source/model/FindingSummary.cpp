@@ -54,6 +54,10 @@ FindingSummary& FindingSummary::operator=(JsonView jsonValue) {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
     m_updatedAtHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("investigationDeepLink")) {
+    m_investigationDeepLink = jsonValue.GetString("investigationDeepLink");
+    m_investigationDeepLinkHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -94,6 +98,10 @@ JsonValue FindingSummary::Jsonize() const {
 
   if (m_updatedAtHasBeenSet) {
     payload.WithDouble("updatedAt", m_updatedAt.SecondsWithMSPrecision());
+  }
+
+  if (m_investigationDeepLinkHasBeenSet) {
+    payload.WithString("investigationDeepLink", m_investigationDeepLink);
   }
 
   return payload;

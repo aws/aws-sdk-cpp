@@ -524,23 +524,36 @@ static const int c8a_medium_HASH = HashingUtils::HashString("c8a.medium");
 static const int c8a_large_HASH = HashingUtils::HashString("c8a.large");
 static const int c8a_xlarge_HASH = HashingUtils::HashString("c8a.xlarge");
 static const int c8a_2xlarge_HASH = HashingUtils::HashString("c8a.2xlarge");
+static const int c8a_4xlarge_HASH = HashingUtils::HashString("c8a.4xlarge");
+static const int c8a_8xlarge_HASH = HashingUtils::HashString("c8a.8xlarge");
 static const int c8i_large_HASH = HashingUtils::HashString("c8i.large");
 static const int c8i_xlarge_HASH = HashingUtils::HashString("c8i.xlarge");
 static const int c8i_2xlarge_HASH = HashingUtils::HashString("c8i.2xlarge");
+static const int c8i_4xlarge_HASH = HashingUtils::HashString("c8i.4xlarge");
+static const int c8i_8xlarge_HASH = HashingUtils::HashString("c8i.8xlarge");
 static const int c9g_medium_HASH = HashingUtils::HashString("c9g.medium");
 static const int c9g_large_HASH = HashingUtils::HashString("c9g.large");
 static const int c9g_xlarge_HASH = HashingUtils::HashString("c9g.xlarge");
 static const int c9g_2xlarge_HASH = HashingUtils::HashString("c9g.2xlarge");
+static const int c9g_4xlarge_HASH = HashingUtils::HashString("c9g.4xlarge");
+static const int c9g_8xlarge_HASH = HashingUtils::HashString("c9g.8xlarge");
 static const int m8a_medium_HASH = HashingUtils::HashString("m8a.medium");
 static const int m8a_large_HASH = HashingUtils::HashString("m8a.large");
 static const int m8a_xlarge_HASH = HashingUtils::HashString("m8a.xlarge");
 static const int m8a_2xlarge_HASH = HashingUtils::HashString("m8a.2xlarge");
+static const int m8a_4xlarge_HASH = HashingUtils::HashString("m8a.4xlarge");
+static const int m8a_8xlarge_HASH = HashingUtils::HashString("m8a.8xlarge");
 static const int m8i_large_HASH = HashingUtils::HashString("m8i.large");
 static const int m8i_xlarge_HASH = HashingUtils::HashString("m8i.xlarge");
 static const int m8i_2xlarge_HASH = HashingUtils::HashString("m8i.2xlarge");
+static const int m8i_4xlarge_HASH = HashingUtils::HashString("m8i.4xlarge");
+static const int m8i_8xlarge_HASH = HashingUtils::HashString("m8i.8xlarge");
+static const int m9g_medium_HASH = HashingUtils::HashString("m9g.medium");
 static const int m9g_large_HASH = HashingUtils::HashString("m9g.large");
 static const int m9g_xlarge_HASH = HashingUtils::HashString("m9g.xlarge");
 static const int m9g_2xlarge_HASH = HashingUtils::HashString("m9g.2xlarge");
+static const int m9g_4xlarge_HASH = HashingUtils::HashString("m9g.4xlarge");
+static const int m9g_8xlarge_HASH = HashingUtils::HashString("m9g.8xlarge");
 
 /*
 The if-else chains in this file are converted into a jump table by the compiler,
@@ -2091,6 +2104,12 @@ static bool GetEnumForNameHelper4(int hashCode, EC2InstanceType& enumValue) {
   } else if (hashCode == c8a_2xlarge_HASH) {
     enumValue = EC2InstanceType::c8a_2xlarge;
     return true;
+  } else if (hashCode == c8a_4xlarge_HASH) {
+    enumValue = EC2InstanceType::c8a_4xlarge;
+    return true;
+  } else if (hashCode == c8a_8xlarge_HASH) {
+    enumValue = EC2InstanceType::c8a_8xlarge;
+    return true;
   } else if (hashCode == c8i_large_HASH) {
     enumValue = EC2InstanceType::c8i_large;
     return true;
@@ -2099,6 +2118,12 @@ static bool GetEnumForNameHelper4(int hashCode, EC2InstanceType& enumValue) {
     return true;
   } else if (hashCode == c8i_2xlarge_HASH) {
     enumValue = EC2InstanceType::c8i_2xlarge;
+    return true;
+  } else if (hashCode == c8i_4xlarge_HASH) {
+    enumValue = EC2InstanceType::c8i_4xlarge;
+    return true;
+  } else if (hashCode == c8i_8xlarge_HASH) {
+    enumValue = EC2InstanceType::c8i_8xlarge;
     return true;
   } else if (hashCode == c9g_medium_HASH) {
     enumValue = EC2InstanceType::c9g_medium;
@@ -2112,6 +2137,12 @@ static bool GetEnumForNameHelper4(int hashCode, EC2InstanceType& enumValue) {
   } else if (hashCode == c9g_2xlarge_HASH) {
     enumValue = EC2InstanceType::c9g_2xlarge;
     return true;
+  } else if (hashCode == c9g_4xlarge_HASH) {
+    enumValue = EC2InstanceType::c9g_4xlarge;
+    return true;
+  } else if (hashCode == c9g_8xlarge_HASH) {
+    enumValue = EC2InstanceType::c9g_8xlarge;
+    return true;
   } else if (hashCode == m8a_medium_HASH) {
     enumValue = EC2InstanceType::m8a_medium;
     return true;
@@ -2124,6 +2155,12 @@ static bool GetEnumForNameHelper4(int hashCode, EC2InstanceType& enumValue) {
   } else if (hashCode == m8a_2xlarge_HASH) {
     enumValue = EC2InstanceType::m8a_2xlarge;
     return true;
+  } else if (hashCode == m8a_4xlarge_HASH) {
+    enumValue = EC2InstanceType::m8a_4xlarge;
+    return true;
+  } else if (hashCode == m8a_8xlarge_HASH) {
+    enumValue = EC2InstanceType::m8a_8xlarge;
+    return true;
   } else if (hashCode == m8i_large_HASH) {
     enumValue = EC2InstanceType::m8i_large;
     return true;
@@ -2133,6 +2170,15 @@ static bool GetEnumForNameHelper4(int hashCode, EC2InstanceType& enumValue) {
   } else if (hashCode == m8i_2xlarge_HASH) {
     enumValue = EC2InstanceType::m8i_2xlarge;
     return true;
+  } else if (hashCode == m8i_4xlarge_HASH) {
+    enumValue = EC2InstanceType::m8i_4xlarge;
+    return true;
+  } else if (hashCode == m8i_8xlarge_HASH) {
+    enumValue = EC2InstanceType::m8i_8xlarge;
+    return true;
+  } else if (hashCode == m9g_medium_HASH) {
+    enumValue = EC2InstanceType::m9g_medium;
+    return true;
   } else if (hashCode == m9g_large_HASH) {
     enumValue = EC2InstanceType::m9g_large;
     return true;
@@ -2141,6 +2187,12 @@ static bool GetEnumForNameHelper4(int hashCode, EC2InstanceType& enumValue) {
     return true;
   } else if (hashCode == m9g_2xlarge_HASH) {
     enumValue = EC2InstanceType::m9g_2xlarge;
+    return true;
+  } else if (hashCode == m9g_4xlarge_HASH) {
+    enumValue = EC2InstanceType::m9g_4xlarge;
+    return true;
+  } else if (hashCode == m9g_8xlarge_HASH) {
+    enumValue = EC2InstanceType::m9g_8xlarge;
     return true;
   }
   return false;
@@ -3699,6 +3751,12 @@ static bool GetNameForEnumHelper4(EC2InstanceType enumValue, Aws::String& value)
     case EC2InstanceType::c8a_2xlarge:
       value = "c8a.2xlarge";
       return true;
+    case EC2InstanceType::c8a_4xlarge:
+      value = "c8a.4xlarge";
+      return true;
+    case EC2InstanceType::c8a_8xlarge:
+      value = "c8a.8xlarge";
+      return true;
     case EC2InstanceType::c8i_large:
       value = "c8i.large";
       return true;
@@ -3707,6 +3765,12 @@ static bool GetNameForEnumHelper4(EC2InstanceType enumValue, Aws::String& value)
       return true;
     case EC2InstanceType::c8i_2xlarge:
       value = "c8i.2xlarge";
+      return true;
+    case EC2InstanceType::c8i_4xlarge:
+      value = "c8i.4xlarge";
+      return true;
+    case EC2InstanceType::c8i_8xlarge:
+      value = "c8i.8xlarge";
       return true;
     case EC2InstanceType::c9g_medium:
       value = "c9g.medium";
@@ -3720,6 +3784,12 @@ static bool GetNameForEnumHelper4(EC2InstanceType enumValue, Aws::String& value)
     case EC2InstanceType::c9g_2xlarge:
       value = "c9g.2xlarge";
       return true;
+    case EC2InstanceType::c9g_4xlarge:
+      value = "c9g.4xlarge";
+      return true;
+    case EC2InstanceType::c9g_8xlarge:
+      value = "c9g.8xlarge";
+      return true;
     case EC2InstanceType::m8a_medium:
       value = "m8a.medium";
       return true;
@@ -3732,6 +3802,12 @@ static bool GetNameForEnumHelper4(EC2InstanceType enumValue, Aws::String& value)
     case EC2InstanceType::m8a_2xlarge:
       value = "m8a.2xlarge";
       return true;
+    case EC2InstanceType::m8a_4xlarge:
+      value = "m8a.4xlarge";
+      return true;
+    case EC2InstanceType::m8a_8xlarge:
+      value = "m8a.8xlarge";
+      return true;
     case EC2InstanceType::m8i_large:
       value = "m8i.large";
       return true;
@@ -3741,6 +3817,15 @@ static bool GetNameForEnumHelper4(EC2InstanceType enumValue, Aws::String& value)
     case EC2InstanceType::m8i_2xlarge:
       value = "m8i.2xlarge";
       return true;
+    case EC2InstanceType::m8i_4xlarge:
+      value = "m8i.4xlarge";
+      return true;
+    case EC2InstanceType::m8i_8xlarge:
+      value = "m8i.8xlarge";
+      return true;
+    case EC2InstanceType::m9g_medium:
+      value = "m9g.medium";
+      return true;
     case EC2InstanceType::m9g_large:
       value = "m9g.large";
       return true;
@@ -3749,6 +3834,12 @@ static bool GetNameForEnumHelper4(EC2InstanceType enumValue, Aws::String& value)
       return true;
     case EC2InstanceType::m9g_2xlarge:
       value = "m9g.2xlarge";
+      return true;
+    case EC2InstanceType::m9g_4xlarge:
+      value = "m9g.4xlarge";
+      return true;
+    case EC2InstanceType::m9g_8xlarge:
+      value = "m9g.8xlarge";
       return true;
     default:
       return false;

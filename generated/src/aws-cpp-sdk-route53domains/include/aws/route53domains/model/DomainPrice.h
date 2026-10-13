@@ -21,8 +21,8 @@ namespace Route53Domains {
 namespace Model {
 
 /**
- * <p>Information about the domain price associated with a TLD.</p><p><h3>See
- * Also:</h3>   <a
+ * <p>Information about the prices associated with a TLD or a domain
+ * name.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DomainPrice">AWS
  * API Reference</a></p>
  */
@@ -35,7 +35,7 @@ class DomainPrice {
 
   ///@{
   /**
-   * <p>The name of the TLD for which the prices apply.</p>
+   * <p>The TLD or domain name that the prices apply to.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }

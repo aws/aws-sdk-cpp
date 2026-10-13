@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53domains/Route53Domains_EXPORTS.h>
 #include <aws/route53domains/model/DomainTransferability.h>
+#include <aws/route53domains/model/PriceWithCurrency.h>
 
 #include <utility>
 
@@ -71,6 +72,28 @@ class CheckDomainTransferabilityResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The price to transfer the domain name to Route 53, in the currency that
+   * <code>Currency</code> specifies. If the domain has registry premium pricing,
+   * this price is different from the standard rate for the TLD that
+   * <code>ListPrices</code> returns. Use <code>PriceType</code> to determine which
+   * rate applies.</p> <p>This element is returned only when Route 53 can determine
+   * whether the domain is transferable.</p>
+   */
+  inline const PriceWithCurrency& GetPrice() const { return m_price; }
+  template <typename PriceT = PriceWithCurrency>
+  void SetPrice(PriceT&& value) {
+    m_priceHasBeenSet = true;
+    m_price = std::forward<PriceT>(value);
+  }
+  template <typename PriceT = PriceWithCurrency>
+  CheckDomainTransferabilityResult& WithPrice(PriceT&& value) {
+    SetPrice(std::forward<PriceT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -91,10 +114,13 @@ class CheckDomainTransferabilityResult {
 
   Aws::String m_message;
 
+  PriceWithCurrency m_price;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_transferabilityHasBeenSet = false;
   bool m_messageHasBeenSet = false;
+  bool m_priceHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

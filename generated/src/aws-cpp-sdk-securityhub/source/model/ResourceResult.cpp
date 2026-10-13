@@ -108,6 +108,18 @@ ResourceResult& ResourceResult::operator=(JsonView jsonValue) {
     m_resourceInfo = jsonValue.GetObject("ResourceInfo");
     m_resourceInfoHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ResourceCriticality")) {
+    m_resourceCriticality = ResourceCriticalityMapper::GetResourceCriticalityForName(jsonValue.GetString("ResourceCriticality"));
+    m_resourceCriticalityHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CriticalitySources")) {
+    Aws::Utils::Array<JsonView> criticalitySourcesJsonList = jsonValue.GetArray("CriticalitySources");
+    for (unsigned criticalitySourcesIndex = 0; criticalitySourcesIndex < criticalitySourcesJsonList.GetLength();
+         ++criticalitySourcesIndex) {
+      m_criticalitySources.push_back(criticalitySourcesJsonList[criticalitySourcesIndex].AsObject());
+    }
+    m_criticalitySourcesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -206,6 +218,19 @@ JsonValue ResourceResult::Jsonize() const {
 
   if (m_resourceInfoHasBeenSet) {
     payload.WithObject("ResourceInfo", m_resourceInfo.Jsonize());
+  }
+
+  if (m_resourceCriticalityHasBeenSet) {
+    payload.WithString("ResourceCriticality", ResourceCriticalityMapper::GetNameForResourceCriticality(m_resourceCriticality));
+  }
+
+  if (m_criticalitySourcesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> criticalitySourcesJsonList(m_criticalitySources.size());
+    for (unsigned criticalitySourcesIndex = 0; criticalitySourcesIndex < criticalitySourcesJsonList.GetLength();
+         ++criticalitySourcesIndex) {
+      criticalitySourcesJsonList[criticalitySourcesIndex].AsObject(m_criticalitySources[criticalitySourcesIndex].Jsonize());
+    }
+    payload.WithArray("CriticalitySources", std::move(criticalitySourcesJsonList));
   }
 
   return payload;

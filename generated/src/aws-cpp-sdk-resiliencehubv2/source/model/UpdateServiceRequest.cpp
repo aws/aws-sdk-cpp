@@ -55,5 +55,9 @@ Aws::String UpdateServiceRequest::SerializePayload() const {
     payload.WithObject("reportConfiguration", m_reportConfiguration.Jsonize());
   }
 
+  if (m_devOpsAgentConfigurationHasBeenSet) {
+    payload.WithObject("devOpsAgentConfiguration", m_devOpsAgentConfiguration.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

@@ -29,7 +29,8 @@ enum class ExecutionBlockType {
   AuroraServerlessScaling,
   AuroraProvisionedScaling,
   NeptuneGlobalDatabase,
-  RdsSwitchoverReadReplica
+  RdsSwitchoverReadReplica,
+  SSMSendCommand
 };
 
 namespace ExecutionBlockTypeMapper {

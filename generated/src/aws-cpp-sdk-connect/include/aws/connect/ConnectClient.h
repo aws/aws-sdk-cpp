@@ -1328,6 +1328,34 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Creates a named alias that points to a specific version of a
+   * flow.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContactFlowAlias">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateContactFlowAliasOutcome CreateContactFlowAlias(const Model::CreateContactFlowAliasRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateContactFlowAlias that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateContactFlowAliasRequestT = Model::CreateContactFlowAliasRequest>
+  Model::CreateContactFlowAliasOutcomeCallable CreateContactFlowAliasCallable(const CreateContactFlowAliasRequestT& request) const {
+    return SubmitCallable(&ConnectClient::CreateContactFlowAlias, request);
+  }
+
+  /**
+   * An Async wrapper for CreateContactFlowAlias that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateContactFlowAliasRequestT = Model::CreateContactFlowAliasRequest>
+  void CreateContactFlowAliasAsync(const CreateContactFlowAliasRequestT& request,
+                                   const CreateContactFlowAliasResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::CreateContactFlowAlias, request, handler, context);
+  }
+
+  /**
    * <p>Creates a flow module for the specified Connect Customer instance.
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContactFlowModule">AWS
@@ -1420,9 +1448,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
    * <p>Publishes a new version of the flow provided. Versions are immutable and
    * monotonically increasing. If the <code>FlowContentSha256</code> provided is
    * different from the <code>FlowContentSha256</code> of the <code>$LATEST</code>
-   * published flow content, then an error is returned. This API only supports
-   * creating versions for flows of type <code>Campaign</code>.</p><p><h3>See
-   * Also:</h3>   <a
+   * published flow content, then an error is returned.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateContactFlowVersion">AWS
    * API Reference</a></p>
    */
@@ -2602,6 +2628,34 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   void DeleteContactFlowAsync(const DeleteContactFlowRequestT& request, const DeleteContactFlowResponseReceivedHandler& handler,
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ConnectClient::DeleteContactFlow, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes an alias from a flow without deleting the version that the alias
+   * points to.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlowAlias">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteContactFlowAliasOutcome DeleteContactFlowAlias(const Model::DeleteContactFlowAliasRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteContactFlowAlias that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteContactFlowAliasRequestT = Model::DeleteContactFlowAliasRequest>
+  Model::DeleteContactFlowAliasOutcomeCallable DeleteContactFlowAliasCallable(const DeleteContactFlowAliasRequestT& request) const {
+    return SubmitCallable(&ConnectClient::DeleteContactFlowAlias, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteContactFlowAlias that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteContactFlowAliasRequestT = Model::DeleteContactFlowAliasRequest>
+  void DeleteContactFlowAliasAsync(const DeleteContactFlowAliasRequestT& request,
+                                   const DeleteContactFlowAliasResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::DeleteContactFlowAlias, request, handler, context);
   }
 
   /**
@@ -3833,6 +3887,34 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   void DescribeContactFlowAsync(const DescribeContactFlowRequestT& request, const DescribeContactFlowResponseReceivedHandler& handler,
                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ConnectClient::DescribeContactFlow, request, handler, context);
+  }
+
+  /**
+   * <p>Returns information about a specific flow alias, including the version that
+   * it points to.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContactFlowAlias">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeContactFlowAliasOutcome DescribeContactFlowAlias(const Model::DescribeContactFlowAliasRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeContactFlowAlias that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeContactFlowAliasRequestT = Model::DescribeContactFlowAliasRequest>
+  Model::DescribeContactFlowAliasOutcomeCallable DescribeContactFlowAliasCallable(const DescribeContactFlowAliasRequestT& request) const {
+    return SubmitCallable(&ConnectClient::DescribeContactFlowAlias, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeContactFlowAlias that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeContactFlowAliasRequestT = Model::DescribeContactFlowAliasRequest>
+  void DescribeContactFlowAliasAsync(const DescribeContactFlowAliasRequestT& request,
+                                     const DescribeContactFlowAliasResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::DescribeContactFlowAlias, request, handler, context);
   }
 
   /**
@@ -6278,6 +6360,34 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
                                    const ListContactEvaluationsResponseReceivedHandler& handler,
                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ConnectClient::ListContactEvaluations, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the aliases associated with a flow, including the version that each
+   * alias points to.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactFlowAliases">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListContactFlowAliasesOutcome ListContactFlowAliases(const Model::ListContactFlowAliasesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListContactFlowAliases that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListContactFlowAliasesRequestT = Model::ListContactFlowAliasesRequest>
+  Model::ListContactFlowAliasesOutcomeCallable ListContactFlowAliasesCallable(const ListContactFlowAliasesRequestT& request) const {
+    return SubmitCallable(&ConnectClient::ListContactFlowAliases, request);
+  }
+
+  /**
+   * An Async wrapper for ListContactFlowAliases that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListContactFlowAliasesRequestT = Model::ListContactFlowAliasesRequest>
+  void ListContactFlowAliasesAsync(const ListContactFlowAliasesRequestT& request,
+                                   const ListContactFlowAliasesResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::ListContactFlowAliases, request, handler, context);
   }
 
   /**
@@ -10500,6 +10610,34 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
                                     const UpdateContactEvaluationResponseReceivedHandler& handler,
                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ConnectClient::UpdateContactEvaluation, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the name, description, or flow version associated with an
+   * alias.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactFlowAlias">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateContactFlowAliasOutcome UpdateContactFlowAlias(const Model::UpdateContactFlowAliasRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateContactFlowAlias that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateContactFlowAliasRequestT = Model::UpdateContactFlowAliasRequest>
+  Model::UpdateContactFlowAliasOutcomeCallable UpdateContactFlowAliasCallable(const UpdateContactFlowAliasRequestT& request) const {
+    return SubmitCallable(&ConnectClient::UpdateContactFlowAlias, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateContactFlowAlias that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateContactFlowAliasRequestT = Model::UpdateContactFlowAliasRequest>
+  void UpdateContactFlowAliasAsync(const UpdateContactFlowAliasRequestT& request,
+                                   const UpdateContactFlowAliasResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::UpdateContactFlowAlias, request, handler, context);
   }
 
   /**

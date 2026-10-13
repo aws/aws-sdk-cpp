@@ -63,6 +63,10 @@ Aws::String RegisterDomainRequest::SerializePayload() const {
     payload.WithBool("PrivacyProtectBillingContact", m_privacyProtectBillingContact);
   }
 
+  if (m_consentHasBeenSet) {
+    payload.WithObject("Consent", m_consent.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

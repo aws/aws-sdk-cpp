@@ -17,7 +17,8 @@ enum class Transferable {
   DONT_KNOW,
   DOMAIN_IN_OWN_ACCOUNT,
   DOMAIN_IN_ANOTHER_ACCOUNT,
-  PREMIUM_DOMAIN
+  PREMIUM_DOMAIN,
+  PENDING
 };
 
 namespace TransferableMapper {

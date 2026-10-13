@@ -30,6 +30,14 @@ ContactFlowVersionSummary& ContactFlowVersionSummary::operator=(JsonView jsonVal
     m_version = jsonValue.GetInt64("Version");
     m_versionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("LastModifiedTime")) {
+    m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
+    m_lastModifiedTimeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("LastModifiedRegion")) {
+    m_lastModifiedRegion = jsonValue.GetString("LastModifiedRegion");
+    m_lastModifiedRegionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +54,14 @@ JsonValue ContactFlowVersionSummary::Jsonize() const {
 
   if (m_versionHasBeenSet) {
     payload.WithInt64("Version", m_version);
+  }
+
+  if (m_lastModifiedTimeHasBeenSet) {
+    payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
+  }
+
+  if (m_lastModifiedRegionHasBeenSet) {
+    payload.WithString("LastModifiedRegion", m_lastModifiedRegion);
   }
 
   return payload;

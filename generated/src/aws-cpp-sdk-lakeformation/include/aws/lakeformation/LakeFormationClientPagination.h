@@ -14,6 +14,8 @@
 #include <aws/lakeformation/model/ListLFTagsPaginationTraits.h>
 #include <aws/lakeformation/model/ListLakeFormationOptInsPaginationTraits.h>
 #include <aws/lakeformation/model/ListPermissionsPaginationTraits.h>
+#include <aws/lakeformation/model/ListRLSPoliciesPaginationTraits.h>
+#include <aws/lakeformation/model/ListRLSPolicyAttachmentsPaginationTraits.h>
 #include <aws/lakeformation/model/ListResourcesPaginationTraits.h>
 #include <aws/lakeformation/model/ListTableStorageOptimizersPaginationTraits.h>
 #include <aws/lakeformation/model/ListTransactionsPaginationTraits.h>
@@ -45,6 +47,11 @@ using ListPermissionsPaginator = Aws::Utils::Pagination::Paginator<LakeFormation
                                                                    Pagination::ListPermissionsPaginationTraits<LakeFormationClient>>;
 using ListResourcesPaginator = Aws::Utils::Pagination::Paginator<LakeFormationClient, Model::ListResourcesRequest,
                                                                  Pagination::ListResourcesPaginationTraits<LakeFormationClient>>;
+using ListRLSPoliciesPaginator = Aws::Utils::Pagination::Paginator<LakeFormationClient, Model::ListRLSPoliciesRequest,
+                                                                   Pagination::ListRLSPoliciesPaginationTraits<LakeFormationClient>>;
+using ListRLSPolicyAttachmentsPaginator =
+    Aws::Utils::Pagination::Paginator<LakeFormationClient, Model::ListRLSPolicyAttachmentsRequest,
+                                      Pagination::ListRLSPolicyAttachmentsPaginationTraits<LakeFormationClient>>;
 using ListTableStorageOptimizersPaginator =
     Aws::Utils::Pagination::Paginator<LakeFormationClient, Model::ListTableStorageOptimizersRequest,
                                       Pagination::ListTableStorageOptimizersPaginationTraits<LakeFormationClient>>;

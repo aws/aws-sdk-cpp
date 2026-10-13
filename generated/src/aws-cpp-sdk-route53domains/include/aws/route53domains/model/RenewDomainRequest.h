@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/route53domains/Route53DomainsRequest.h>
 #include <aws/route53domains/Route53Domains_EXPORTS.h>
+#include <aws/route53domains/model/Consent.h>
 
 #include <utility>
 
@@ -89,15 +90,40 @@ class RenewDomainRequest : public Route53DomainsRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the maximum price that you agree to pay to renew the domain name.
+   * This element is required if the domain has registry premium pricing, and
+   * optional if the domain is priced at the standard rate for its TLD. If you
+   * include it and the renewal price is more than <code>MaxPrice</code>, the request
+   * fails.</p>
+   */
+  inline const Consent& GetConsent() const { return m_consent; }
+  inline bool ConsentHasBeenSet() const { return m_consentHasBeenSet; }
+  template <typename ConsentT = Consent>
+  void SetConsent(ConsentT&& value) {
+    m_consentHasBeenSet = true;
+    m_consent = std::forward<ConsentT>(value);
+  }
+  template <typename ConsentT = Consent>
+  RenewDomainRequest& WithConsent(ConsentT&& value) {
+    SetConsent(std::forward<ConsentT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_domainName;
 
   int m_durationInYears{0};
 
   int m_currentExpiryYear{0};
+
+  Consent m_consent;
   bool m_domainNameHasBeenSet = false;
   bool m_durationInYearsHasBeenSet = false;
   bool m_currentExpiryYearHasBeenSet = false;
+  bool m_consentHasBeenSet = false;
 };
 
 }  // namespace Model

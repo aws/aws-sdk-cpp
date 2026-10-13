@@ -35,6 +35,7 @@
 #include <aws/route53domains/model/GetContactReachabilityStatusRequest.h>
 #include <aws/route53domains/model/GetContactReachabilityStatusResult.h>
 #include <aws/route53domains/model/GetDomainDetailResult.h>
+#include <aws/route53domains/model/GetDomainPricesResult.h>
 #include <aws/route53domains/model/GetDomainSuggestionsResult.h>
 #include <aws/route53domains/model/GetOperationDetailResult.h>
 #include <aws/route53domains/model/ListDomainsRequest.h>
@@ -105,6 +106,7 @@ class EnableDomainAutoRenewRequest;
 class EnableDomainTransferLockRequest;
 class GetContactReachabilityStatusRequest;
 class GetDomainDetailRequest;
+class GetDomainPricesRequest;
 class GetDomainSuggestionsRequest;
 class GetOperationDetailRequest;
 class ListDomainsRequest;
@@ -145,6 +147,7 @@ typedef Aws::Utils::Outcome<EnableDomainAutoRenewResult, Route53DomainsError> En
 typedef Aws::Utils::Outcome<EnableDomainTransferLockResult, Route53DomainsError> EnableDomainTransferLockOutcome;
 typedef Aws::Utils::Outcome<GetContactReachabilityStatusResult, Route53DomainsError> GetContactReachabilityStatusOutcome;
 typedef Aws::Utils::Outcome<GetDomainDetailResult, Route53DomainsError> GetDomainDetailOutcome;
+typedef Aws::Utils::Outcome<GetDomainPricesResult, Route53DomainsError> GetDomainPricesOutcome;
 typedef Aws::Utils::Outcome<GetDomainSuggestionsResult, Route53DomainsError> GetDomainSuggestionsOutcome;
 typedef Aws::Utils::Outcome<GetOperationDetailResult, Route53DomainsError> GetOperationDetailOutcome;
 typedef Aws::Utils::Outcome<ListDomainsResult, Route53DomainsError> ListDomainsOutcome;
@@ -183,6 +186,7 @@ typedef std::future<EnableDomainAutoRenewOutcome> EnableDomainAutoRenewOutcomeCa
 typedef std::future<EnableDomainTransferLockOutcome> EnableDomainTransferLockOutcomeCallable;
 typedef std::future<GetContactReachabilityStatusOutcome> GetContactReachabilityStatusOutcomeCallable;
 typedef std::future<GetDomainDetailOutcome> GetDomainDetailOutcomeCallable;
+typedef std::future<GetDomainPricesOutcome> GetDomainPricesOutcomeCallable;
 typedef std::future<GetDomainSuggestionsOutcome> GetDomainSuggestionsOutcomeCallable;
 typedef std::future<GetOperationDetailOutcome> GetOperationDetailOutcomeCallable;
 typedef std::future<ListDomainsOutcome> ListDomainsOutcomeCallable;
@@ -256,6 +260,9 @@ typedef std::function<void(const Route53DomainsClient*, const Model::GetContactR
 typedef std::function<void(const Route53DomainsClient*, const Model::GetDomainDetailRequest&, const Model::GetDomainDetailOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetDomainDetailResponseReceivedHandler;
+typedef std::function<void(const Route53DomainsClient*, const Model::GetDomainPricesRequest&, const Model::GetDomainPricesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetDomainPricesResponseReceivedHandler;
 typedef std::function<void(const Route53DomainsClient*, const Model::GetDomainSuggestionsRequest&,
                            const Model::GetDomainSuggestionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetDomainSuggestionsResponseReceivedHandler;

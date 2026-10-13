@@ -29,6 +29,7 @@ static const int ACCESS_ENDPOINTS_HASH = HashingUtils::HashString("ACCESS_ENDPOI
 static const int STREAMING_EXPERIENCE_SETTINGS_HASH = HashingUtils::HashString("STREAMING_EXPERIENCE_SETTINGS");
 static const int CONTENT_REDIRECTION_HASH = HashingUtils::HashString("CONTENT_REDIRECTION");
 static const int AGENT_ACCESS_CONFIG_HASH = HashingUtils::HashString("AGENT_ACCESS_CONFIG");
+static const int STORAGE_CONNECTOR_AUTHENTICATION_HASH = HashingUtils::HashString("STORAGE_CONNECTOR_AUTHENTICATION");
 
 StackAttribute GetStackAttributeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -60,6 +61,8 @@ StackAttribute GetStackAttributeForName(const Aws::String& name) {
     return StackAttribute::CONTENT_REDIRECTION;
   } else if (hashCode == AGENT_ACCESS_CONFIG_HASH) {
     return StackAttribute::AGENT_ACCESS_CONFIG;
+  } else if (hashCode == STORAGE_CONNECTOR_AUTHENTICATION_HASH) {
+    return StackAttribute::STORAGE_CONNECTOR_AUTHENTICATION;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -102,6 +105,8 @@ Aws::String GetNameForStackAttribute(StackAttribute enumValue) {
       return "CONTENT_REDIRECTION";
     case StackAttribute::AGENT_ACCESS_CONFIG:
       return "AGENT_ACCESS_CONFIG";
+    case StackAttribute::STORAGE_CONNECTOR_AUTHENTICATION:
+      return "STORAGE_CONNECTOR_AUTHENTICATION";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

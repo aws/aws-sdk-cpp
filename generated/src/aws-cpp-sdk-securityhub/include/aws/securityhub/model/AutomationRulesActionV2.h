@@ -7,6 +7,7 @@
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/securityhub/model/AutomationRulesActionTypeV2.h>
 #include <aws/securityhub/model/AutomationRulesFindingFieldsUpdateV2.h>
+#include <aws/securityhub/model/AutomationRulesResourceFieldsUpdateV2.h>
 #include <aws/securityhub/model/ExternalIntegrationConfiguration.h>
 
 #include <utility>
@@ -86,15 +87,37 @@ class AutomationRulesActionV2 {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The changes to be applied to resource fields when an automation rule is
+   * triggered.</p>
+   */
+  inline const AutomationRulesResourceFieldsUpdateV2& GetResourceFieldsUpdate() const { return m_resourceFieldsUpdate; }
+  inline bool ResourceFieldsUpdateHasBeenSet() const { return m_resourceFieldsUpdateHasBeenSet; }
+  template <typename ResourceFieldsUpdateT = AutomationRulesResourceFieldsUpdateV2>
+  void SetResourceFieldsUpdate(ResourceFieldsUpdateT&& value) {
+    m_resourceFieldsUpdateHasBeenSet = true;
+    m_resourceFieldsUpdate = std::forward<ResourceFieldsUpdateT>(value);
+  }
+  template <typename ResourceFieldsUpdateT = AutomationRulesResourceFieldsUpdateV2>
+  AutomationRulesActionV2& WithResourceFieldsUpdate(ResourceFieldsUpdateT&& value) {
+    SetResourceFieldsUpdate(std::forward<ResourceFieldsUpdateT>(value));
+    return *this;
+  }
+  ///@}
  private:
   AutomationRulesActionTypeV2 m_type{AutomationRulesActionTypeV2::NOT_SET};
 
   AutomationRulesFindingFieldsUpdateV2 m_findingFieldsUpdate;
 
   ExternalIntegrationConfiguration m_externalIntegrationConfiguration;
+
+  AutomationRulesResourceFieldsUpdateV2 m_resourceFieldsUpdate;
   bool m_typeHasBeenSet = false;
   bool m_findingFieldsUpdateHasBeenSet = false;
   bool m_externalIntegrationConfigurationHasBeenSet = false;
+  bool m_resourceFieldsUpdateHasBeenSet = false;
 };
 
 }  // namespace Model

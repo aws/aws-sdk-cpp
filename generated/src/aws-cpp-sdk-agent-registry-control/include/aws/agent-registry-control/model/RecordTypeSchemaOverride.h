@@ -21,8 +21,8 @@ namespace AgentRegistryControl {
 namespace Model {
 
 /**
- * <p>A schema override for a specific record type within a custom metadata schema
- * configuration.</p><p><h3>See Also:</h3>   <a
+ * <p>The custom metadata fields for one record type, in addition to the common
+ * attributes defined in <code>defaultSchema</code>.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/agent-registry-control-2025-12-01/RecordTypeSchemaOverride">AWS
  * API Reference</a></p>
  */
@@ -35,7 +35,7 @@ class RecordTypeSchemaOverride {
 
   ///@{
   /**
-   * <p>The record type that this schema override applies to.</p>
+   * <p>The record type these fields apply to.</p>
    */
   inline RecordType GetRecordType() const { return m_recordType; }
   inline bool RecordTypeHasBeenSet() const { return m_recordTypeHasBeenSet; }
@@ -51,8 +51,7 @@ class RecordTypeSchemaOverride {
 
   ///@{
   /**
-   * <p>The JSON Schema for the specified record type. Must follow the same
-   * structural rules as the default schema.</p>
+   * <p>A JSON Schema with the fields for this record type.</p>
    */
   inline const Aws::String& GetSchema() const { return m_schema; }
   inline bool SchemaHasBeenSet() const { return m_schemaHasBeenSet; }

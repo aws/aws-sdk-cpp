@@ -30,6 +30,10 @@ AutomationRulesActionV2& AutomationRulesActionV2::operator=(JsonView jsonValue) 
     m_externalIntegrationConfiguration = jsonValue.GetObject("ExternalIntegrationConfiguration");
     m_externalIntegrationConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ResourceFieldsUpdate")) {
+    m_resourceFieldsUpdate = jsonValue.GetObject("ResourceFieldsUpdate");
+    m_resourceFieldsUpdateHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +50,10 @@ JsonValue AutomationRulesActionV2::Jsonize() const {
 
   if (m_externalIntegrationConfigurationHasBeenSet) {
     payload.WithObject("ExternalIntegrationConfiguration", m_externalIntegrationConfiguration.Jsonize());
+  }
+
+  if (m_resourceFieldsUpdateHasBeenSet) {
+    payload.WithObject("ResourceFieldsUpdate", m_resourceFieldsUpdate.Jsonize());
   }
 
   return payload;

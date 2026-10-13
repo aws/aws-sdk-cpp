@@ -110,8 +110,8 @@ class UpdateDomainContactRequest : public Route53DomainsRequest {
 
   ///@{
   /**
-   * <p> Customer's consent for the owner change request. Required if the domain is
-   * not free (consent price is more than $0.00).</p>
+   * <p> The maximum amount that you agree to pay for the owner change. Required if
+   * the domain is not free (consent price is more than USD $0.00).</p>
    */
   inline const Consent& GetConsent() const { return m_consent; }
   inline bool ConsentHasBeenSet() const { return m_consentHasBeenSet; }

@@ -9,6 +9,7 @@
 #include <aws/datasync/model/Gid.h>
 #include <aws/datasync/model/LogLevel.h>
 #include <aws/datasync/model/Mtime.h>
+#include <aws/datasync/model/ObjectMetadata.h>
 #include <aws/datasync/model/ObjectTags.h>
 #include <aws/datasync/model/OverwriteMode.h>
 #include <aws/datasync/model/PosixPermissions.h>
@@ -440,6 +441,26 @@ class Options {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether you want DataSync to <code>PRESERVE</code> object metadata
+   * (default behavior) when transferring between object storage systems. If you want
+   * your DataSync task to ignore object metadata, specify the <code>NONE</code>
+   * value.</p>  <p>Even if you specify <code>NONE</code>, metadata for the
+   * last modified time is still preserved.</p>
+   */
+  inline ObjectMetadata GetObjectMetadata() const { return m_objectMetadata; }
+  inline bool ObjectMetadataHasBeenSet() const { return m_objectMetadataHasBeenSet; }
+  inline void SetObjectMetadata(ObjectMetadata value) {
+    m_objectMetadataHasBeenSet = true;
+    m_objectMetadata = value;
+  }
+  inline Options& WithObjectMetadata(ObjectMetadata value) {
+    SetObjectMetadata(value);
+    return *this;
+  }
+  ///@}
  private:
   VerifyMode m_verifyMode{VerifyMode::NOT_SET};
 
@@ -470,6 +491,8 @@ class Options {
   SmbSecurityDescriptorCopyFlags m_securityDescriptorCopyFlags{SmbSecurityDescriptorCopyFlags::NOT_SET};
 
   ObjectTags m_objectTags{ObjectTags::NOT_SET};
+
+  ObjectMetadata m_objectMetadata{ObjectMetadata::NOT_SET};
   bool m_verifyModeHasBeenSet = false;
   bool m_overwriteModeHasBeenSet = false;
   bool m_atimeHasBeenSet = false;
@@ -485,6 +508,7 @@ class Options {
   bool m_transferModeHasBeenSet = false;
   bool m_securityDescriptorCopyFlagsHasBeenSet = false;
   bool m_objectTagsHasBeenSet = false;
+  bool m_objectMetadataHasBeenSet = false;
 };
 
 }  // namespace Model

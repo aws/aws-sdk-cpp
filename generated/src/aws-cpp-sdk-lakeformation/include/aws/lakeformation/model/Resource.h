@@ -12,6 +12,7 @@
 #include <aws/lakeformation/model/LFTagExpressionResource.h>
 #include <aws/lakeformation/model/LFTagKeyResource.h>
 #include <aws/lakeformation/model/LFTagPolicyResource.h>
+#include <aws/lakeformation/model/RLSPolicyResource.h>
 #include <aws/lakeformation/model/TableResource.h>
 #include <aws/lakeformation/model/TableWithColumnsResource.h>
 
@@ -211,6 +212,25 @@ class Resource {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A row-level security policy resource. Specify this when granting or revoking
+   * permissions on a row-level security policy.</p>
+   */
+  inline const RLSPolicyResource& GetRLSPolicy() const { return m_rLSPolicy; }
+  inline bool RLSPolicyHasBeenSet() const { return m_rLSPolicyHasBeenSet; }
+  template <typename RLSPolicyT = RLSPolicyResource>
+  void SetRLSPolicy(RLSPolicyT&& value) {
+    m_rLSPolicyHasBeenSet = true;
+    m_rLSPolicy = std::forward<RLSPolicyT>(value);
+  }
+  template <typename RLSPolicyT = RLSPolicyResource>
+  Resource& WithRLSPolicy(RLSPolicyT&& value) {
+    SetRLSPolicy(std::forward<RLSPolicyT>(value));
+    return *this;
+  }
+  ///@}
  private:
   CatalogResource m_catalog;
 
@@ -229,6 +249,8 @@ class Resource {
   LFTagPolicyResource m_lFTagPolicy;
 
   LFTagExpressionResource m_lFTagExpression;
+
+  RLSPolicyResource m_rLSPolicy;
   bool m_catalogHasBeenSet = false;
   bool m_databaseHasBeenSet = false;
   bool m_tableHasBeenSet = false;
@@ -238,6 +260,7 @@ class Resource {
   bool m_lFTagHasBeenSet = false;
   bool m_lFTagPolicyHasBeenSet = false;
   bool m_lFTagExpressionHasBeenSet = false;
+  bool m_rLSPolicyHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -26,6 +26,10 @@ DomainSuggestion& DomainSuggestion::operator=(JsonView jsonValue) {
     m_availability = jsonValue.GetString("Availability");
     m_availabilityHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Price")) {
+    m_price = jsonValue.GetObject("Price");
+    m_priceHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue DomainSuggestion::Jsonize() const {
 
   if (m_availabilityHasBeenSet) {
     payload.WithString("Availability", m_availability);
+  }
+
+  if (m_priceHasBeenSet) {
+    payload.WithObject("Price", m_price.Jsonize());
   }
 
   return payload;

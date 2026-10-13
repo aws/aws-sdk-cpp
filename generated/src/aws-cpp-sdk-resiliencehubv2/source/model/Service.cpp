@@ -115,6 +115,10 @@ Service& Service::operator=(JsonView jsonValue) {
     m_accountId = jsonValue.GetString("accountId");
     m_accountIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("devOpsAgentConfiguration")) {
+    m_devOpsAgentConfiguration = jsonValue.GetObject("devOpsAgentConfiguration");
+    m_devOpsAgentConfigurationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetDouble("createdAt");
     m_createdAtHasBeenSet = true;
@@ -227,6 +231,10 @@ JsonValue Service::Jsonize() const {
 
   if (m_accountIdHasBeenSet) {
     payload.WithString("accountId", m_accountId);
+  }
+
+  if (m_devOpsAgentConfigurationHasBeenSet) {
+    payload.WithObject("devOpsAgentConfiguration", m_devOpsAgentConfiguration.Jsonize());
   }
 
   if (m_createdAtHasBeenSet) {

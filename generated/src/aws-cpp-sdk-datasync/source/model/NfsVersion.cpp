@@ -19,6 +19,7 @@ static const int AUTOMATIC_HASH = HashingUtils::HashString("AUTOMATIC");
 static const int NFS3_HASH = HashingUtils::HashString("NFS3");
 static const int NFS4_0_HASH = HashingUtils::HashString("NFS4_0");
 static const int NFS4_1_HASH = HashingUtils::HashString("NFS4_1");
+static const int NFS4_2_HASH = HashingUtils::HashString("NFS4_2");
 
 NfsVersion GetNfsVersionForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -30,6 +31,8 @@ NfsVersion GetNfsVersionForName(const Aws::String& name) {
     return NfsVersion::NFS4_0;
   } else if (hashCode == NFS4_1_HASH) {
     return NfsVersion::NFS4_1;
+  } else if (hashCode == NFS4_2_HASH) {
+    return NfsVersion::NFS4_2;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -52,6 +55,8 @@ Aws::String GetNameForNfsVersion(NfsVersion enumValue) {
       return "NFS4_0";
     case NfsVersion::NFS4_1:
       return "NFS4_1";
+    case NfsVersion::NFS4_2:
+      return "NFS4_2";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -9,8 +9,10 @@
 #include <aws/lakeformation/LakeFormationClientPagination.h>
 #include <aws/lakeformation/LakeFormationPaginationBase.h>
 #include <aws/lakeformation/model/ListDataCellsFilterPaginationTraits.h>
+#include <aws/lakeformation/model/ListRLSPolicyAttachmentsPaginationTraits.h>
 #include <aws/lakeformation/model/ListLakeFormationOptInsPaginationTraits.h>
 #include <aws/lakeformation/model/SearchDatabasesByLFTagsPaginationTraits.h>
+#include <aws/lakeformation/model/ListRLSPoliciesPaginationTraits.h>
 #include <aws/lakeformation/model/GetTableObjectsPaginationTraits.h>
 #include <aws/lakeformation/model/ListResourcesPaginationTraits.h>
 #include <aws/lakeformation/model/ListLFTagsPaginationTraits.h>

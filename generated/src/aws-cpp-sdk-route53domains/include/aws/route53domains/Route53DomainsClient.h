@@ -550,6 +550,38 @@ class AWS_ROUTE53DOMAINS_API Route53DomainsClient : public Aws::Client::AWSJsonC
   }
 
   /**
+   * <p>Returns the following prices for the specified domain:</p> <ul> <li>
+   * <p>Registration</p> </li> <li> <p>Transfer</p> </li> <li> <p>Owner change</p>
+   * </li> <li> <p>Renewal</p> </li> <li> <p>Restoration</p> </li> </ul> <p>For most
+   * domains, the prices match the standard prices for the TLD that the <a
+   * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ListPrices.html">ListPrices</a>
+   * operation returns. For a premium domain, the registry sets the price
+   * individually. Premium prices might differ from the standard prices and can
+   * change over time.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetDomainPrices">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetDomainPricesOutcome GetDomainPrices(const Model::GetDomainPricesRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetDomainPrices that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetDomainPricesRequestT = Model::GetDomainPricesRequest>
+  Model::GetDomainPricesOutcomeCallable GetDomainPricesCallable(const GetDomainPricesRequestT& request) const {
+    return SubmitCallable(&Route53DomainsClient::GetDomainPrices, request);
+  }
+
+  /**
+   * An Async wrapper for GetDomainPrices that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetDomainPricesRequestT = Model::GetDomainPricesRequest>
+  void GetDomainPricesAsync(const GetDomainPricesRequestT& request, const GetDomainPricesResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&Route53DomainsClient::GetDomainPrices, request, handler, context);
+  }
+
+  /**
    * <p>The GetDomainSuggestions operation returns a list of suggested domain
    * names.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetDomainSuggestions">AWS
@@ -663,8 +695,12 @@ class AWS_ROUTE53DOMAINS_API Route53DomainsClient : public Aws::Client::AWSJsonC
   /**
    * <p>Lists the following prices for either all the TLDs supported by Route 53, or
    * the specified TLD:</p> <ul> <li> <p>Registration</p> </li> <li> <p>Transfer</p>
-   * </li> <li> <p>Owner change</p> </li> <li> <p>Domain renewal</p> </li> <li>
-   * <p>Domain restoration</p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </li> <li> <p>Owner change</p> </li> <li> <p>Renewal</p> </li> <li>
+   * <p>Restoration</p> </li> </ul>  <p>The prices that <code>ListPrices</code>
+   * returns are the standard rates for a TLD. <code>ListPrices</code> doesn't return
+   * registry premium prices, which apply to individual domain names rather than to a
+   * TLD. To get accurate pricing for a specific domain name, including premium
+   * prices, call <code>GetDomainPrices</code>.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListPrices">AWS
    * API Reference</a></p>
    */

@@ -265,6 +265,7 @@
 #include <aws/appstream/model/StopImageBuilderRequest.h>
 #include <aws/appstream/model/StopImageBuilderResult.h>
 #include <aws/appstream/model/StorageConnector.h>
+#include <aws/appstream/model/StorageConnectorAuthentication.h>
 #include <aws/appstream/model/StorageConnectorType.h>
 #include <aws/appstream/model/StreamView.h>
 #include <aws/appstream/model/StreamingExperienceSettings.h>

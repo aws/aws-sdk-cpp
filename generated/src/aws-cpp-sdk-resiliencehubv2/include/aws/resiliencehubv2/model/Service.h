@@ -14,6 +14,7 @@
 #include <aws/resiliencehubv2/model/AssessmentStatus.h>
 #include <aws/resiliencehubv2/model/AssociatedSystem.h>
 #include <aws/resiliencehubv2/model/DependencyDiscoveryConfig.h>
+#include <aws/resiliencehubv2/model/DevOpsAgentConfigurationView.h>
 #include <aws/resiliencehubv2/model/EffectivePolicyValues.h>
 #include <aws/resiliencehubv2/model/PermissionModel.h>
 #include <aws/resiliencehubv2/model/ResourceDiscoveryStatus.h>
@@ -438,6 +439,24 @@ class Service {
 
   ///@{
   /**
+   * <p>The current DevOps Agent integration state for the service.</p>
+   */
+  inline const DevOpsAgentConfigurationView& GetDevOpsAgentConfiguration() const { return m_devOpsAgentConfiguration; }
+  inline bool DevOpsAgentConfigurationHasBeenSet() const { return m_devOpsAgentConfigurationHasBeenSet; }
+  template <typename DevOpsAgentConfigurationT = DevOpsAgentConfigurationView>
+  void SetDevOpsAgentConfiguration(DevOpsAgentConfigurationT&& value) {
+    m_devOpsAgentConfigurationHasBeenSet = true;
+    m_devOpsAgentConfiguration = std::forward<DevOpsAgentConfigurationT>(value);
+  }
+  template <typename DevOpsAgentConfigurationT = DevOpsAgentConfigurationView>
+  Service& WithDevOpsAgentConfiguration(DevOpsAgentConfigurationT&& value) {
+    SetDevOpsAgentConfiguration(std::forward<DevOpsAgentConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The timestamp when the service was created.</p>
    */
   inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -516,6 +535,8 @@ class Service {
 
   Aws::String m_accountId;
 
+  DevOpsAgentConfigurationView m_devOpsAgentConfiguration;
+
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::Utils::DateTime m_updatedAt{};
@@ -541,6 +562,7 @@ class Service {
   bool m_organizationIdHasBeenSet = false;
   bool m_ouIdHasBeenSet = false;
   bool m_accountIdHasBeenSet = false;
+  bool m_devOpsAgentConfigurationHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };

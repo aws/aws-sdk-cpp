@@ -27,7 +27,8 @@ enum class ResourceGroupByField {
   ResourceSubCategory,
   DiscoveryType,
   ResourceInfo_AIDetails_HostResourceType,
-  ResourceInfo_AIDetails_CanonicalId
+  ResourceInfo_AIDetails_CanonicalId,
+  ResourceCriticality
 };
 
 namespace ResourceGroupByFieldMapper {

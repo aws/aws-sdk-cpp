@@ -48,6 +48,15 @@ ServiceSummary& ServiceSummary::operator=(JsonView jsonValue) {
     m_assessmentStatus = AssessmentStatusMapper::GetAssessmentStatusForName(jsonValue.GetString("assessmentStatus"));
     m_assessmentStatusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("devOpsAgentStatus")) {
+    m_devOpsAgentStatus =
+        DevOpsAgentConnectionStatusMapper::GetDevOpsAgentConnectionStatusForName(jsonValue.GetString("devOpsAgentStatus"));
+    m_devOpsAgentStatusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("devOpsAgentSpaceArn")) {
+    m_devOpsAgentSpaceArn = jsonValue.GetString("devOpsAgentSpaceArn");
+    m_devOpsAgentSpaceArnHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("openFindingsCount")) {
     m_openFindingsCount = jsonValue.GetInteger("openFindingsCount");
     m_openFindingsCountHasBeenSet = true;
@@ -120,6 +129,14 @@ JsonValue ServiceSummary::Jsonize() const {
 
   if (m_assessmentStatusHasBeenSet) {
     payload.WithString("assessmentStatus", AssessmentStatusMapper::GetNameForAssessmentStatus(m_assessmentStatus));
+  }
+
+  if (m_devOpsAgentStatusHasBeenSet) {
+    payload.WithString("devOpsAgentStatus", DevOpsAgentConnectionStatusMapper::GetNameForDevOpsAgentConnectionStatus(m_devOpsAgentStatus));
+  }
+
+  if (m_devOpsAgentSpaceArnHasBeenSet) {
+    payload.WithString("devOpsAgentSpaceArn", m_devOpsAgentSpaceArn);
   }
 
   if (m_openFindingsCountHasBeenSet) {

@@ -62,6 +62,10 @@ PipelineExecutionStep& PipelineExecutionStep::operator=(JsonView jsonValue) {
     m_selectiveExecutionResult = jsonValue.GetObject("SelectiveExecutionResult");
     m_selectiveExecutionResultHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("IterationContext")) {
+    m_iterationContext = jsonValue.GetObject("IterationContext");
+    m_iterationContextHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -110,6 +114,10 @@ JsonValue PipelineExecutionStep::Jsonize() const {
 
   if (m_selectiveExecutionResultHasBeenSet) {
     payload.WithObject("SelectiveExecutionResult", m_selectiveExecutionResult.Jsonize());
+  }
+
+  if (m_iterationContextHasBeenSet) {
+    payload.WithObject("IterationContext", m_iterationContext.Jsonize());
   }
 
   return payload;

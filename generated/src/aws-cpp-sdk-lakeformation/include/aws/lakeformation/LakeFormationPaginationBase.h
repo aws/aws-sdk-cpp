@@ -15,6 +15,8 @@
 #include <aws/lakeformation/model/ListLFTagsPaginationTraits.h>
 #include <aws/lakeformation/model/ListLakeFormationOptInsPaginationTraits.h>
 #include <aws/lakeformation/model/ListPermissionsPaginationTraits.h>
+#include <aws/lakeformation/model/ListRLSPoliciesPaginationTraits.h>
+#include <aws/lakeformation/model/ListRLSPolicyAttachmentsPaginationTraits.h>
 #include <aws/lakeformation/model/ListResourcesPaginationTraits.h>
 #include <aws/lakeformation/model/ListTableStorageOptimizersPaginationTraits.h>
 #include <aws/lakeformation/model/ListTransactionsPaginationTraits.h>
@@ -132,6 +134,30 @@ class LakeFormationPaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResourcesRequest,
                                              Pagination::ListResourcesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                        request};
+  }
+
+  /**
+   * Create a paginator for ListRLSPolicies operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRLSPoliciesRequest,
+                                    Pagination::ListRLSPoliciesPaginationTraits<DerivedClient>>
+  ListRLSPoliciesPaginator(const Model::ListRLSPoliciesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRLSPoliciesRequest,
+                                             Pagination::ListRLSPoliciesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                         request};
+  }
+
+  /**
+   * Create a paginator for ListRLSPolicyAttachments operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRLSPolicyAttachmentsRequest,
+                                    Pagination::ListRLSPolicyAttachmentsPaginationTraits<DerivedClient>>
+  ListRLSPolicyAttachmentsPaginator(const Model::ListRLSPolicyAttachmentsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRLSPolicyAttachmentsRequest,
+                                             Pagination::ListRLSPolicyAttachmentsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
   }
 
   /**

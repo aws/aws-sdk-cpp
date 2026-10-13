@@ -61,6 +61,8 @@
 #include <aws/route53domains/model/GetContactReachabilityStatusResult.h>
 #include <aws/route53domains/model/GetDomainDetailRequest.h>
 #include <aws/route53domains/model/GetDomainDetailResult.h>
+#include <aws/route53domains/model/GetDomainPricesRequest.h>
+#include <aws/route53domains/model/GetDomainPricesResult.h>
 #include <aws/route53domains/model/GetDomainSuggestionsRequest.h>
 #include <aws/route53domains/model/GetDomainSuggestionsResult.h>
 #include <aws/route53domains/model/GetOperationDetailRequest.h>
@@ -83,6 +85,7 @@
 #include <aws/route53domains/model/OperationSummary.h>
 #include <aws/route53domains/model/OperationType.h>
 #include <aws/route53domains/model/Operator.h>
+#include <aws/route53domains/model/PriceType.h>
 #include <aws/route53domains/model/PriceWithCurrency.h>
 #include <aws/route53domains/model/PushDomainRequest.h>
 #include <aws/route53domains/model/ReachabilityStatus.h>

@@ -308,6 +308,25 @@ class Finding {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A deep link to an interactive DevOps Agent investigation seeded with this
+   * finding. This value is null until DevOps Agent creates an investigation.</p>
+   */
+  inline const Aws::String& GetInvestigationDeepLink() const { return m_investigationDeepLink; }
+  inline bool InvestigationDeepLinkHasBeenSet() const { return m_investigationDeepLinkHasBeenSet; }
+  template <typename InvestigationDeepLinkT = Aws::String>
+  void SetInvestigationDeepLink(InvestigationDeepLinkT&& value) {
+    m_investigationDeepLinkHasBeenSet = true;
+    m_investigationDeepLink = std::forward<InvestigationDeepLinkT>(value);
+  }
+  template <typename InvestigationDeepLinkT = Aws::String>
+  Finding& WithInvestigationDeepLink(InvestigationDeepLinkT&& value) {
+    SetInvestigationDeepLink(std::forward<InvestigationDeepLinkT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_findingId;
 
@@ -336,6 +355,8 @@ class Finding {
   Aws::Vector<TestingRecommendation> m_testingRecommendations;
 
   Aws::Utils::DateTime m_updatedAt{};
+
+  Aws::String m_investigationDeepLink;
   bool m_findingIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
@@ -350,6 +371,7 @@ class Finding {
   bool m_observabilityRecommendationsHasBeenSet = false;
   bool m_testingRecommendationsHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
+  bool m_investigationDeepLinkHasBeenSet = false;
 };
 
 }  // namespace Model

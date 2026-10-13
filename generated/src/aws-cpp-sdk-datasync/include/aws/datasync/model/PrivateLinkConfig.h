@@ -37,7 +37,10 @@ class PrivateLinkConfig {
 
   ///@{
   /**
-   * <p>Specifies the ID of the VPC endpoint that your agent connects to.</p>
+   * <p>Specifies the ID of the VPC service endpoint that's recorded for your agent.
+   * The endpoint ID is informational and isn't verified by DataSync. Your agent
+   * communicates through the private IP address in <code>PrivateLinkEndpoint</code>,
+   * which is set when you activate the agent.</p>
    */
   inline const Aws::String& GetVpcEndpointId() const { return m_vpcEndpointId; }
   inline bool VpcEndpointIdHasBeenSet() const { return m_vpcEndpointIdHasBeenSet; }
@@ -75,8 +78,10 @@ class PrivateLinkConfig {
 
   ///@{
   /**
-   * <p>Specifies the ARN of the subnet where your VPC endpoint is located. You can
-   * only specify one ARN.</p>
+   * <p>Specifies the ARN of the subnet where DataSync creates the network interfaces
+   * that handle data transfer traffic for your tasks. You can only specify one
+   * ARN.</p> <p>The subnet doesn't have to be the subnet that contains your VPC
+   * endpoint.</p>
    */
   inline const Aws::Vector<Aws::String>& GetSubnetArns() const { return m_subnetArns; }
   inline bool SubnetArnsHasBeenSet() const { return m_subnetArnsHasBeenSet; }

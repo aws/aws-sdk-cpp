@@ -124,6 +124,10 @@ TestRun& TestRun::operator=(JsonView jsonValue) {
     m_accountTargeting = AccountTargetingMapper::GetAccountTargetingForName(jsonValue.GetString("accountTargeting"));
     m_accountTargetingHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("devOpsAgentInvestigation")) {
+    m_devOpsAgentInvestigation = jsonValue.GetObject("devOpsAgentInvestigation");
+    m_devOpsAgentInvestigationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -236,6 +240,10 @@ JsonValue TestRun::Jsonize() const {
 
   if (m_accountTargetingHasBeenSet) {
     payload.WithString("accountTargeting", AccountTargetingMapper::GetNameForAccountTargeting(m_accountTargeting));
+  }
+
+  if (m_devOpsAgentInvestigationHasBeenSet) {
+    payload.WithObject("devOpsAgentInvestigation", m_devOpsAgentInvestigation.Jsonize());
   }
 
   return payload;

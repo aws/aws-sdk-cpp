@@ -22,6 +22,10 @@ Criteria& Criteria::operator=(JsonView jsonValue) {
     m_ocsfFindingCriteria = jsonValue.GetObject("OcsfFindingCriteria");
     m_ocsfFindingCriteriaHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ResourceCriteria")) {
+    m_resourceCriteria = jsonValue.GetObject("ResourceCriteria");
+    m_resourceCriteriaHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue Criteria::Jsonize() const {
 
   if (m_ocsfFindingCriteriaHasBeenSet) {
     payload.WithObject("OcsfFindingCriteria", m_ocsfFindingCriteria.Jsonize());
+  }
+
+  if (m_resourceCriteriaHasBeenSet) {
+    payload.WithObject("ResourceCriteria", m_resourceCriteria.Jsonize());
   }
 
   return payload;

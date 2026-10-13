@@ -22,14 +22,6 @@ DnssecKey& DnssecKey::operator=(JsonView jsonValue) {
     m_algorithm = jsonValue.GetInteger("Algorithm");
     m_algorithmHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("Flags")) {
-    m_flags = jsonValue.GetInteger("Flags");
-    m_flagsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("PublicKey")) {
-    m_publicKey = jsonValue.GetString("PublicKey");
-    m_publicKeyHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("DigestType")) {
     m_digestType = jsonValue.GetInteger("DigestType");
     m_digestTypeHasBeenSet = true;
@@ -54,14 +46,6 @@ JsonValue DnssecKey::Jsonize() const {
 
   if (m_algorithmHasBeenSet) {
     payload.WithInteger("Algorithm", m_algorithm);
-  }
-
-  if (m_flagsHasBeenSet) {
-    payload.WithInteger("Flags", m_flags);
-  }
-
-  if (m_publicKeyHasBeenSet) {
-    payload.WithString("PublicKey", m_publicKey);
   }
 
   if (m_digestTypeHasBeenSet) {

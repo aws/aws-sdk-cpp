@@ -59,6 +59,10 @@ Aws::String CreateServiceRequest::SerializePayload() const {
     payload.WithString("kmsKeyId", m_kmsKeyId);
   }
 
+  if (m_devOpsAgentConfigurationHasBeenSet) {
+    payload.WithObject("devOpsAgentConfiguration", m_devOpsAgentConfiguration.Jsonize());
+  }
+
   if (m_tagsHasBeenSet) {
     JsonValue tagsJsonMap;
     for (auto& tagsItem : m_tags) {

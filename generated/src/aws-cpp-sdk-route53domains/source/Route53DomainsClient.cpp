@@ -34,6 +34,7 @@
 #include <aws/route53domains/model/EnableDomainTransferLockRequest.h>
 #include <aws/route53domains/model/GetContactReachabilityStatusRequest.h>
 #include <aws/route53domains/model/GetDomainDetailRequest.h>
+#include <aws/route53domains/model/GetDomainPricesRequest.h>
 #include <aws/route53domains/model/GetDomainSuggestionsRequest.h>
 #include <aws/route53domains/model/GetOperationDetailRequest.h>
 #include <aws/route53domains/model/ListDomainsRequest.h>
@@ -292,6 +293,12 @@ GetDomainDetailOutcome Route53DomainsClient::GetDomainDetail(const GetDomainDeta
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetDomainDetailOutcome(result.GetResultWithOwnership())
                             : GetDomainDetailOutcome(std::move(result.GetError()));
+}
+
+GetDomainPricesOutcome Route53DomainsClient::GetDomainPrices(const GetDomainPricesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDomainPricesOutcome(result.GetResultWithOwnership())
+                            : GetDomainPricesOutcome(std::move(result.GetError()));
 }
 
 GetDomainSuggestionsOutcome Route53DomainsClient::GetDomainSuggestions(const GetDomainSuggestionsRequest& request) const {

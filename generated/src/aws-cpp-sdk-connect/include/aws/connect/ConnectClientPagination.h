@@ -17,6 +17,7 @@
 #include <aws/connect/model/ListBotsPaginationTraits.h>
 #include <aws/connect/model/ListChildHoursOfOperationsPaginationTraits.h>
 #include <aws/connect/model/ListContactEvaluationsPaginationTraits.h>
+#include <aws/connect/model/ListContactFlowAliasesPaginationTraits.h>
 #include <aws/connect/model/ListContactFlowModuleAliasesPaginationTraits.h>
 #include <aws/connect/model/ListContactFlowModuleVersionsPaginationTraits.h>
 #include <aws/connect/model/ListContactFlowModulesPaginationTraits.h>
@@ -131,6 +132,9 @@ using ListChildHoursOfOperationsPaginator =
 using ListContactEvaluationsPaginator =
     Aws::Utils::Pagination::Paginator<ConnectClient, Model::ListContactEvaluationsRequest,
                                       Pagination::ListContactEvaluationsPaginationTraits<ConnectClient>>;
+using ListContactFlowAliasesPaginator =
+    Aws::Utils::Pagination::Paginator<ConnectClient, Model::ListContactFlowAliasesRequest,
+                                      Pagination::ListContactFlowAliasesPaginationTraits<ConnectClient>>;
 using ListContactFlowModuleAliasesPaginator =
     Aws::Utils::Pagination::Paginator<ConnectClient, Model::ListContactFlowModuleAliasesRequest,
                                       Pagination::ListContactFlowModuleAliasesPaginationTraits<ConnectClient>>;

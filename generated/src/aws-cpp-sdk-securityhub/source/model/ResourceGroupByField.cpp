@@ -31,6 +31,7 @@ static const int ResourceSubCategory_HASH = HashingUtils::HashString("ResourceSu
 static const int DiscoveryType_HASH = HashingUtils::HashString("DiscoveryType");
 static const int ResourceInfo_AIDetails_HostResourceType_HASH = HashingUtils::HashString("ResourceInfo.AIDetails.HostResourceType");
 static const int ResourceInfo_AIDetails_CanonicalId_HASH = HashingUtils::HashString("ResourceInfo.AIDetails.CanonicalId");
+static const int ResourceCriticality_HASH = HashingUtils::HashString("ResourceCriticality");
 
 ResourceGroupByField GetResourceGroupByFieldForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -66,6 +67,8 @@ ResourceGroupByField GetResourceGroupByFieldForName(const Aws::String& name) {
     return ResourceGroupByField::ResourceInfo_AIDetails_HostResourceType;
   } else if (hashCode == ResourceInfo_AIDetails_CanonicalId_HASH) {
     return ResourceGroupByField::ResourceInfo_AIDetails_CanonicalId;
+  } else if (hashCode == ResourceCriticality_HASH) {
+    return ResourceGroupByField::ResourceCriticality;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -112,6 +115,8 @@ Aws::String GetNameForResourceGroupByField(ResourceGroupByField enumValue) {
       return "ResourceInfo.AIDetails.HostResourceType";
     case ResourceGroupByField::ResourceInfo_AIDetails_CanonicalId:
       return "ResourceInfo.AIDetails.CanonicalId";
+    case ResourceGroupByField::ResourceCriticality:
+      return "ResourceCriticality";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

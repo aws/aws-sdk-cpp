@@ -86,8 +86,9 @@ class GetDomainSuggestionsRequest : public Route53DomainsRequest {
    * domain names that are available. If <code>OnlyAvailable</code> is
    * <code>false</code>, Route 53 returns domain names without checking whether
    * they're available to be registered. To determine whether the domain is
-   * available, you can call <code>checkDomainAvailability</code> for each
-   * suggestion.</p>
+   * available, call <code>checkDomainAvailability</code> for each suggestion.</p>
+   * <p>If <code>OnlyAvailable</code> is <code>false</code>, Route 53 does not return
+   * pricing information for the suggested domain names.</p>
    */
   inline bool GetOnlyAvailable() const { return m_onlyAvailable; }
   inline bool OnlyAvailableHasBeenSet() const { return m_onlyAvailableHasBeenSet; }
@@ -100,15 +101,37 @@ class GetDomainSuggestionsRequest : public Route53DomainsRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>If <code>true</code>, Route 53 returns only domain names that are priced at
+   * the standard registration rate for their TLD. If <code>false</code>, Route 53
+   * includes domain names with premium pricing in the suggestions list. The default
+   * is <code>true</code>.</p>
+   */
+  inline bool GetOnlyStandardPrices() const { return m_onlyStandardPrices; }
+  inline bool OnlyStandardPricesHasBeenSet() const { return m_onlyStandardPricesHasBeenSet; }
+  inline void SetOnlyStandardPrices(bool value) {
+    m_onlyStandardPricesHasBeenSet = true;
+    m_onlyStandardPrices = value;
+  }
+  inline GetDomainSuggestionsRequest& WithOnlyStandardPrices(bool value) {
+    SetOnlyStandardPrices(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_domainName;
 
   int m_suggestionCount{0};
 
   bool m_onlyAvailable{false};
+
+  bool m_onlyStandardPrices{false};
   bool m_domainNameHasBeenSet = false;
   bool m_suggestionCountHasBeenSet = false;
   bool m_onlyAvailableHasBeenSet = false;
+  bool m_onlyStandardPricesHasBeenSet = false;
 };
 
 }  // namespace Model

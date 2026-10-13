@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/resiliencehubv2/Resiliencehubv2_EXPORTS.h>
 #include <aws/resiliencehubv2/model/AccountTargeting.h>
+#include <aws/resiliencehubv2/model/DevOpsAgentInvestigation.h>
 #include <aws/resiliencehubv2/model/ExperimentDetails.h>
 #include <aws/resiliencehubv2/model/LoggingConfiguration.h>
 #include <aws/resiliencehubv2/model/PermissionModel.h>
@@ -469,6 +470,25 @@ class TestRun {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The DevOps Agent investigation result for the test run, present when the
+   * integration is enabled for the service.</p>
+   */
+  inline const DevOpsAgentInvestigation& GetDevOpsAgentInvestigation() const { return m_devOpsAgentInvestigation; }
+  inline bool DevOpsAgentInvestigationHasBeenSet() const { return m_devOpsAgentInvestigationHasBeenSet; }
+  template <typename DevOpsAgentInvestigationT = DevOpsAgentInvestigation>
+  void SetDevOpsAgentInvestigation(DevOpsAgentInvestigationT&& value) {
+    m_devOpsAgentInvestigationHasBeenSet = true;
+    m_devOpsAgentInvestigation = std::forward<DevOpsAgentInvestigationT>(value);
+  }
+  template <typename DevOpsAgentInvestigationT = DevOpsAgentInvestigation>
+  TestRun& WithDevOpsAgentInvestigation(DevOpsAgentInvestigationT&& value) {
+    SetDevOpsAgentInvestigation(std::forward<DevOpsAgentInvestigationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_testRunId;
 
@@ -513,6 +533,8 @@ class TestRun {
   Aws::Vector<Aws::String> m_regions;
 
   AccountTargeting m_accountTargeting{AccountTargeting::NOT_SET};
+
+  DevOpsAgentInvestigation m_devOpsAgentInvestigation;
   bool m_testRunIdHasBeenSet = false;
   bool m_testIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
@@ -535,6 +557,7 @@ class TestRun {
   bool m_permissionModelHasBeenSet = false;
   bool m_regionsHasBeenSet = false;
   bool m_accountTargetingHasBeenSet = false;
+  bool m_devOpsAgentInvestigationHasBeenSet = false;
 };
 
 }  // namespace Model

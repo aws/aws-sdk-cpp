@@ -152,6 +152,34 @@ class AWS_LAKEFORMATION_API LakeFormationClient : public Aws::Client::AWSJsonCli
   }
 
   /**
+   * <p>Attaches a row-level security policy to a resource for a principal. When the
+   * principal queries the resource, Lake Formation applies the policy's filter
+   * expression so that only the permitted rows are returned.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/AttachRLSPolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::AttachRLSPolicyOutcome AttachRLSPolicy(const Model::AttachRLSPolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for AttachRLSPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename AttachRLSPolicyRequestT = Model::AttachRLSPolicyRequest>
+  Model::AttachRLSPolicyOutcomeCallable AttachRLSPolicyCallable(const AttachRLSPolicyRequestT& request) const {
+    return SubmitCallable(&LakeFormationClient::AttachRLSPolicy, request);
+  }
+
+  /**
+   * An Async wrapper for AttachRLSPolicy that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename AttachRLSPolicyRequestT = Model::AttachRLSPolicyRequest>
+  void AttachRLSPolicyAsync(const AttachRLSPolicyRequestT& request, const AttachRLSPolicyResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LakeFormationClient::AttachRLSPolicy, request, handler, context);
+  }
+
+  /**
    * <p>Batch operation to grant permissions to the principal.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/BatchGrantPermissions">AWS
@@ -408,6 +436,35 @@ class AWS_LAKEFORMATION_API LakeFormationClient : public Aws::Client::AWSJsonCli
   }
 
   /**
+   * <p>Creates a row-level security (RLS) policy. A row-level security policy
+   * defines a filter expression that Lake Formation evaluates to determine which
+   * rows of a table a principal is allowed to see. The policy is created
+   * independently of any resource, and is later associated with a resource and
+   * principal using <code>AttachRLSPolicy</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/CreateRLSPolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateRLSPolicyOutcome CreateRLSPolicy(const Model::CreateRLSPolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateRLSPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename CreateRLSPolicyRequestT = Model::CreateRLSPolicyRequest>
+  Model::CreateRLSPolicyOutcomeCallable CreateRLSPolicyCallable(const CreateRLSPolicyRequestT& request) const {
+    return SubmitCallable(&LakeFormationClient::CreateRLSPolicy, request);
+  }
+
+  /**
+   * An Async wrapper for CreateRLSPolicy that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename CreateRLSPolicyRequestT = Model::CreateRLSPolicyRequest>
+  void CreateRLSPolicyAsync(const CreateRLSPolicyRequestT& request, const CreateRLSPolicyResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LakeFormationClient::CreateRLSPolicy, request, handler, context);
+  }
+
+  /**
    * <p>Deletes a data cell filter.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeleteDataCellsFilter">AWS
    * API Reference</a></p>
@@ -586,6 +643,33 @@ class AWS_LAKEFORMATION_API LakeFormationClient : public Aws::Client::AWSJsonCli
   }
 
   /**
+   * <p>Deletes a row-level security policy. Any active attachments of the policy are
+   * automatically removed as part of the deletion, so you do not need to detach the
+   * policy first.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeleteRLSPolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteRLSPolicyOutcome DeleteRLSPolicy(const Model::DeleteRLSPolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteRLSPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DeleteRLSPolicyRequestT = Model::DeleteRLSPolicyRequest>
+  Model::DeleteRLSPolicyOutcomeCallable DeleteRLSPolicyCallable(const DeleteRLSPolicyRequestT& request) const {
+    return SubmitCallable(&LakeFormationClient::DeleteRLSPolicy, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteRLSPolicy that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DeleteRLSPolicyRequestT = Model::DeleteRLSPolicyRequest>
+  void DeleteRLSPolicyAsync(const DeleteRLSPolicyRequestT& request, const DeleteRLSPolicyResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LakeFormationClient::DeleteRLSPolicy, request, handler, context);
+  }
+
+  /**
    * <p>Deregisters the resource as managed by the Data Catalog.</p> <p>When you
    * deregister a path, Lake Formation removes the path from the inline policy
    * attached to your service-linked role.</p><p><h3>See Also:</h3>   <a
@@ -697,6 +781,33 @@ class AWS_LAKEFORMATION_API LakeFormationClient : public Aws::Client::AWSJsonCli
   void DescribeTransactionAsync(const DescribeTransactionRequestT& request, const DescribeTransactionResponseReceivedHandler& handler,
                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&LakeFormationClient::DescribeTransaction, request, handler, context);
+  }
+
+  /**
+   * <p>Detaches a row-level security policy from a resource for a principal. After
+   * the policy is detached, its filter expression is no longer applied to the
+   * principal's queries on that resource.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DetachRLSPolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DetachRLSPolicyOutcome DetachRLSPolicy(const Model::DetachRLSPolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for DetachRLSPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DetachRLSPolicyRequestT = Model::DetachRLSPolicyRequest>
+  Model::DetachRLSPolicyOutcomeCallable DetachRLSPolicyCallable(const DetachRLSPolicyRequestT& request) const {
+    return SubmitCallable(&LakeFormationClient::DetachRLSPolicy, request);
+  }
+
+  /**
+   * An Async wrapper for DetachRLSPolicy that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DetachRLSPolicyRequestT = Model::DetachRLSPolicyRequest>
+  void DetachRLSPolicyAsync(const DetachRLSPolicyRequestT& request, const DetachRLSPolicyResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LakeFormationClient::DetachRLSPolicy, request, handler, context);
   }
 
   /**
@@ -949,6 +1060,32 @@ class AWS_LAKEFORMATION_API LakeFormationClient : public Aws::Client::AWSJsonCli
   void GetQueryStatisticsAsync(const GetQueryStatisticsRequestT& request, const GetQueryStatisticsResponseReceivedHandler& handler,
                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&LakeFormationClient::GetQueryStatistics, request, handler, context);
+  }
+
+  /**
+   * <p>Returns the definition of a row-level security policy, including its
+   * attachment columns and filter expression.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetRLSPolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetRLSPolicyOutcome GetRLSPolicy(const Model::GetRLSPolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetRLSPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetRLSPolicyRequestT = Model::GetRLSPolicyRequest>
+  Model::GetRLSPolicyOutcomeCallable GetRLSPolicyCallable(const GetRLSPolicyRequestT& request) const {
+    return SubmitCallable(&LakeFormationClient::GetRLSPolicy, request);
+  }
+
+  /**
+   * An Async wrapper for GetRLSPolicy that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetRLSPolicyRequestT = Model::GetRLSPolicyRequest>
+  void GetRLSPolicyAsync(const GetRLSPolicyRequestT& request, const GetRLSPolicyResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LakeFormationClient::GetRLSPolicy, request, handler, context);
   }
 
   /**
@@ -1347,6 +1484,63 @@ class AWS_LAKEFORMATION_API LakeFormationClient : public Aws::Client::AWSJsonCli
                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                             const ListPermissionsRequestT& request = {}) const {
     return SubmitAsync(&LakeFormationClient::ListPermissions, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the row-level security policies in the Data Catalog.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListRLSPolicies">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListRLSPoliciesOutcome ListRLSPolicies(const Model::ListRLSPoliciesRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListRLSPolicies that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListRLSPoliciesRequestT = Model::ListRLSPoliciesRequest>
+  Model::ListRLSPoliciesOutcomeCallable ListRLSPoliciesCallable(const ListRLSPoliciesRequestT& request = {}) const {
+    return SubmitCallable(&LakeFormationClient::ListRLSPolicies, request);
+  }
+
+  /**
+   * An Async wrapper for ListRLSPolicies that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListRLSPoliciesRequestT = Model::ListRLSPoliciesRequest>
+  void ListRLSPoliciesAsync(const ListRLSPoliciesResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                            const ListRLSPoliciesRequestT& request = {}) const {
+    return SubmitAsync(&LakeFormationClient::ListRLSPolicies, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the row-level security policy attachments in the Data Catalog. You can
+   * filter the results by resource, principal, or policy name.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListRLSPolicyAttachments">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListRLSPolicyAttachmentsOutcome ListRLSPolicyAttachments(const Model::ListRLSPolicyAttachmentsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListRLSPolicyAttachments that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListRLSPolicyAttachmentsRequestT = Model::ListRLSPolicyAttachmentsRequest>
+  Model::ListRLSPolicyAttachmentsOutcomeCallable ListRLSPolicyAttachmentsCallable(
+      const ListRLSPolicyAttachmentsRequestT& request = {}) const {
+    return SubmitCallable(&LakeFormationClient::ListRLSPolicyAttachments, request);
+  }
+
+  /**
+   * An Async wrapper for ListRLSPolicyAttachments that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListRLSPolicyAttachmentsRequestT = Model::ListRLSPolicyAttachmentsRequest>
+  void ListRLSPolicyAttachmentsAsync(const ListRLSPolicyAttachmentsResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                     const ListRLSPolicyAttachmentsRequestT& request = {}) const {
+    return SubmitAsync(&LakeFormationClient::ListRLSPolicyAttachments, request, handler, context);
   }
 
   /**
@@ -1803,6 +1997,32 @@ class AWS_LAKEFORMATION_API LakeFormationClient : public Aws::Client::AWSJsonCli
       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
       const UpdateLakeFormationIdentityCenterConfigurationRequestT& request = {}) const {
     return SubmitAsync(&LakeFormationClient::UpdateLakeFormationIdentityCenterConfiguration, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the filter expression of an existing row-level security policy. The
+   * change applies to all attachments of the policy.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/UpdateRLSPolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateRLSPolicyOutcome UpdateRLSPolicy(const Model::UpdateRLSPolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateRLSPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename UpdateRLSPolicyRequestT = Model::UpdateRLSPolicyRequest>
+  Model::UpdateRLSPolicyOutcomeCallable UpdateRLSPolicyCallable(const UpdateRLSPolicyRequestT& request) const {
+    return SubmitCallable(&LakeFormationClient::UpdateRLSPolicy, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateRLSPolicy that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename UpdateRLSPolicyRequestT = Model::UpdateRLSPolicyRequest>
+  void UpdateRLSPolicyAsync(const UpdateRLSPolicyRequestT& request, const UpdateRLSPolicyResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LakeFormationClient::UpdateRLSPolicy, request, handler, context);
   }
 
   /**

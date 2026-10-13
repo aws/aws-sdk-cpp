@@ -56,6 +56,7 @@
 #include <aws/securityhub/model/AutomationRulesFindingFilters.h>
 #include <aws/securityhub/model/AutomationRulesMetadata.h>
 #include <aws/securityhub/model/AutomationRulesMetadataV2.h>
+#include <aws/securityhub/model/AutomationRulesResourceFieldsUpdateV2.h>
 #include <aws/securityhub/model/AvailabilityZone.h>
 #include <aws/securityhub/model/AwsAmazonMqBrokerDetails.h>
 #include <aws/securityhub/model/AwsAmazonMqBrokerEncryptionOptionsDetails.h>
@@ -642,6 +643,8 @@
 #include <aws/securityhub/model/CreateTicketV2Request.h>
 #include <aws/securityhub/model/CreateTicketV2Result.h>
 #include <aws/securityhub/model/Criteria.h>
+#include <aws/securityhub/model/CriticalitySource.h>
+#include <aws/securityhub/model/CriticalitySourceType.h>
 #include <aws/securityhub/model/CspmConnectorProviderName.h>
 #include <aws/securityhub/model/CspmConnectorStatus.h>
 #include <aws/securityhub/model/CspmConnectorSummary.h>
@@ -1015,6 +1018,7 @@
 #include <aws/securityhub/model/Resource.h>
 #include <aws/securityhub/model/ResourceCategory.h>
 #include <aws/securityhub/model/ResourceConflictException.h>
+#include <aws/securityhub/model/ResourceCriticality.h>
 #include <aws/securityhub/model/ResourceDetails.h>
 #include <aws/securityhub/model/ResourceFindingsSummary.h>
 #include <aws/securityhub/model/ResourceGroupByField.h>

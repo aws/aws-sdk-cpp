@@ -27,6 +27,10 @@ Aws::String RenewDomainRequest::SerializePayload() const {
     payload.WithInteger("CurrentExpiryYear", m_currentExpiryYear);
   }
 
+  if (m_consentHasBeenSet) {
+    payload.WithObject("Consent", m_consent.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

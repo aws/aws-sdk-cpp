@@ -25,10 +25,13 @@ static const int compliance_control_HASH = HashingUtils::HashString("compliance.
 static const int finding_info_title_HASH = HashingUtils::HashString("finding_info.title");
 static const int finding_info_related_events_traits_category_HASH = HashingUtils::HashString("finding_info.related_events.traits.category");
 static const int finding_info_types_HASH = HashingUtils::HashString("finding_info.types");
+static const int impact_HASH = HashingUtils::HashString("impact");
+static const int likelihood_HASH = HashingUtils::HashString("likelihood");
 static const int metadata_product_name_HASH = HashingUtils::HashString("metadata.product.name");
 static const int metadata_product_uid_HASH = HashingUtils::HashString("metadata.product.uid");
 static const int resources_type_HASH = HashingUtils::HashString("resources.type");
 static const int resources_cloud_partition_HASH = HashingUtils::HashString("resources.cloud_partition");
+static const int resources_criticality_HASH = HashingUtils::HashString("resources.criticality");
 static const int resources_name_HASH = HashingUtils::HashString("resources.name");
 static const int resources_owner_account_uid_HASH = HashingUtils::HashString("resources.owner.account.uid");
 static const int resources_owner_org_uid_HASH = HashingUtils::HashString("resources.owner.org.uid");
@@ -69,6 +72,10 @@ GroupByField GetGroupByFieldForName(const Aws::String& name) {
     return GroupByField::finding_info_related_events_traits_category;
   } else if (hashCode == finding_info_types_HASH) {
     return GroupByField::finding_info_types;
+  } else if (hashCode == impact_HASH) {
+    return GroupByField::impact;
+  } else if (hashCode == likelihood_HASH) {
+    return GroupByField::likelihood;
   } else if (hashCode == metadata_product_name_HASH) {
     return GroupByField::metadata_product_name;
   } else if (hashCode == metadata_product_uid_HASH) {
@@ -77,6 +84,8 @@ GroupByField GetGroupByFieldForName(const Aws::String& name) {
     return GroupByField::resources_type;
   } else if (hashCode == resources_cloud_partition_HASH) {
     return GroupByField::resources_cloud_partition;
+  } else if (hashCode == resources_criticality_HASH) {
+    return GroupByField::resources_criticality;
   } else if (hashCode == resources_name_HASH) {
     return GroupByField::resources_name;
   } else if (hashCode == resources_owner_account_uid_HASH) {
@@ -145,6 +154,10 @@ Aws::String GetNameForGroupByField(GroupByField enumValue) {
       return "finding_info.related_events.traits.category";
     case GroupByField::finding_info_types:
       return "finding_info.types";
+    case GroupByField::impact:
+      return "impact";
+    case GroupByField::likelihood:
+      return "likelihood";
     case GroupByField::metadata_product_name:
       return "metadata.product.name";
     case GroupByField::metadata_product_uid:
@@ -153,6 +166,8 @@ Aws::String GetNameForGroupByField(GroupByField enumValue) {
       return "resources.type";
     case GroupByField::resources_cloud_partition:
       return "resources.cloud_partition";
+    case GroupByField::resources_criticality:
+      return "resources.criticality";
     case GroupByField::resources_name:
       return "resources.name";
     case GroupByField::resources_owner_account_uid:
