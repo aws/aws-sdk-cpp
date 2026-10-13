@@ -203,7 +203,7 @@ void Document::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
 
   if (m_contentHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("Content"));
-    encoder.WriteBytes(Aws::Crt::ByteCursorFromCString(reinterpret_cast<const char*>(m_content.GetUnderlyingData())));
+    encoder.WriteBytes(Aws::Crt::ByteCursorFromArray(m_content.GetUnderlyingData(), m_content.GetLength()));
   }
 
   if (m_contentTypeHasBeenSet) {

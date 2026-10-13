@@ -182,7 +182,7 @@ void TerminologyData::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
 
   if (m_fileHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("File"));
-    encoder.WriteBytes(Aws::Crt::ByteCursorFromCString(reinterpret_cast<const char*>(m_file.GetUnderlyingData())));
+    encoder.WriteBytes(Aws::Crt::ByteCursorFromArray(m_file.GetUnderlyingData(), m_file.GetLength()));
   }
 
   if (m_formatHasBeenSet) {

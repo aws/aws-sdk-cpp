@@ -99,7 +99,7 @@ Aws::String SimpleScalarPropertiesRequest::SerializePayload() const {
 
   if (m_blobValueHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("blobValue"));
-    encoder.WriteBytes(Aws::Crt::ByteCursorFromCString(reinterpret_cast<const char*>(m_blobValue.GetUnderlyingData())));
+    encoder.WriteBytes(Aws::Crt::ByteCursorFromArray(m_blobValue.GetUnderlyingData(), m_blobValue.GetLength()));
   }
 
   const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);

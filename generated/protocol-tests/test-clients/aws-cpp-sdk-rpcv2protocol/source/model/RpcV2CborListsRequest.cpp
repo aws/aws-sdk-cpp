@@ -132,7 +132,7 @@ Aws::String RpcV2CborListsRequest::SerializePayload() const {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("blobList"));
     encoder.WriteArrayStart(m_blobList.size());
     for (const auto& item_0 : m_blobList) {
-      encoder.WriteBytes(Aws::Crt::ByteCursorFromCString(reinterpret_cast<const char*>(item_0.GetUnderlyingData())));
+      encoder.WriteBytes(Aws::Crt::ByteCursorFromArray(item_0.GetUnderlyingData(), item_0.GetLength()));
     }
   }
 

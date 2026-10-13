@@ -58,7 +58,7 @@ Aws::String UpdateScriptRequest::SerializePayload() const {
 
   if (m_zipFileHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("ZipFile"));
-    encoder.WriteBytes(Aws::Crt::ByteCursorFromCString(reinterpret_cast<const char*>(m_zipFile.GetUnderlyingData())));
+    encoder.WriteBytes(Aws::Crt::ByteCursorFromArray(m_zipFile.GetUnderlyingData(), m_zipFile.GetLength()));
   }
   const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
   return str;

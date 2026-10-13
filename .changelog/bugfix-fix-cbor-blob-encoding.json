@@ -1,0 +1,6 @@
+{
+  "type": "bugfix",
+  "category": "aws-cpp-sdk-core",
+  "contributor": "pulimsr",
+  "description": "Fix CBOR blob serialization to use the buffer length instead of strlen"
+}
