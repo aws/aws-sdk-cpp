@@ -1,0 +1,6 @@
+{
+  "type": "bugfix",
+  "category": "smithy-cpp-codegen",
+  "contributor": "sbaluja",
+  "description": "Add ListSharedChannelGroups to map of LEGACY_SDK_RESULT_OPERATIONS for naming (SdkResult suffix)"
+}
