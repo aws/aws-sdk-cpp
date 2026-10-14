@@ -89,8 +89,9 @@ class ProtocolTestsGen(object):
         :param max_workers:
         :return:
         """
-        # Event-stream operations are not supported by the protocol-test clients yet: generate from a copy of the
-        # client models with those operations removed. No C2J protocol test case exercises them.
+        # Input-only event-stream operations (streamed request, plain response) are not supported by the C2J client
+        # generator, and no AWS service models one: generate from a temporary copy of the client models with those
+        # operations removed. No C2J protocol test case exercises them; the committed api-descriptions are unchanged.
         filtered_models_dir = tempfile.mkdtemp(prefix="protocol-test-models-")
         try:
             self._write_models_without_event_streams(self.client_models_dir, filtered_models_dir)
@@ -106,8 +107,8 @@ class ProtocolTestsGen(object):
             shutil.rmtree(filtered_models_dir, ignore_errors=True)
 
     def _write_models_without_event_streams(self, models_dir: str, output_dir: str):
-        """Copy the c2j client models to output_dir, dropping operations whose input or output has an event stream
-        member, and the shapes only those operations used."""
+        """Copy the c2j client models to output_dir, dropping operations whose input has an event stream member but
+        whose output does not (input-only event streams), and the shapes only those operations used."""
         for filename in os.listdir(models_dir):
             source = os.path.join(models_dir, filename)
             if not os.path.isfile(source):
@@ -123,7 +124,7 @@ class ProtocolTestsGen(object):
 
             operations = model.get("operations", {})
             event_stream_ops = [name for name, op in operations.items()
-                                if has_event_stream(op.get("input")) or has_event_stream(op.get("output"))]
+                                if has_event_stream(op.get("input")) and not has_event_stream(op.get("output"))]
             if not event_stream_ops:
                 shutil.copy2(source, os.path.join(output_dir, filename))
                 continue
@@ -133,7 +134,7 @@ class ProtocolTestsGen(object):
             model["shapes"] = {name: shapes[name] for name in self._reachable_shapes(operations, shapes)}
             with open(os.path.join(output_dir, filename), "w") as file_content:
                 json.dump(model, file_content, indent=4)
-            print(f"Skipping event stream operations in {filename}: {', '.join(sorted(event_stream_ops))}")
+            print(f"Skipping input-only event stream operations in {filename}: {', '.join(sorted(event_stream_ops))}")
 
     @staticmethod
     def _reachable_shapes(operations: dict, shapes: dict) -> set:
