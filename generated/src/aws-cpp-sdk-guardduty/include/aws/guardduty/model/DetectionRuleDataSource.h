@@ -10,7 +10,7 @@
 namespace Aws {
 namespace GuardDuty {
 namespace Model {
-enum class DetectionRuleDataSource { NOT_SET, CloudTrailManagementEvent };
+enum class DetectionRuleDataSource { NOT_SET, CloudTrailManagementEvent, RuntimeMonitoring };
 
 namespace DetectionRuleDataSourceMapper {
 AWS_GUARDDUTY_API DetectionRuleDataSource GetDetectionRuleDataSourceForName(const Aws::String& name);

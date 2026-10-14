@@ -9,6 +9,7 @@
 #include <aws/awstransfer/model/Domain.h>
 #include <aws/awstransfer/model/EndpointDetails.h>
 #include <aws/awstransfer/model/EndpointType.h>
+#include <aws/awstransfer/model/HostKeyStorageType.h>
 #include <aws/awstransfer/model/IdentityProviderDetails.h>
 #include <aws/awstransfer/model/IdentityProviderType.h>
 #include <aws/awstransfer/model/IpAddressType.h>
@@ -548,6 +549,26 @@ class CreateServerRequest : public TransferRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether the host key is stored by Transfer Family
+   * (<code>SERVICE_MANAGED</code>) or in Secrets Manager
+   * (<code>SECRETS_MANAGER</code>). When you specify <code>SECRETS_MANAGER</code>,
+   * Transfer Family stores the private host key material in an Secrets Manager
+   * secret.</p>
+   */
+  inline HostKeyStorageType GetHostKeyStorageType() const { return m_hostKeyStorageType; }
+  inline bool HostKeyStorageTypeHasBeenSet() const { return m_hostKeyStorageTypeHasBeenSet; }
+  inline void SetHostKeyStorageType(HostKeyStorageType value) {
+    m_hostKeyStorageTypeHasBeenSet = true;
+    m_hostKeyStorageType = value;
+  }
+  inline CreateServerRequest& WithHostKeyStorageType(HostKeyStorageType value) {
+    SetHostKeyStorageType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_certificate;
 
@@ -584,6 +605,8 @@ class CreateServerRequest : public TransferRequest {
   S3StorageOptions m_s3StorageOptions;
 
   IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
+
+  HostKeyStorageType m_hostKeyStorageType{HostKeyStorageType::NOT_SET};
   bool m_certificateHasBeenSet = false;
   bool m_domainHasBeenSet = false;
   bool m_endpointDetailsHasBeenSet = false;
@@ -602,6 +625,7 @@ class CreateServerRequest : public TransferRequest {
   bool m_structuredLogDestinationsHasBeenSet = false;
   bool m_s3StorageOptionsHasBeenSet = false;
   bool m_ipAddressTypeHasBeenSet = false;
+  bool m_hostKeyStorageTypeHasBeenSet = false;
 };
 
 }  // namespace Model

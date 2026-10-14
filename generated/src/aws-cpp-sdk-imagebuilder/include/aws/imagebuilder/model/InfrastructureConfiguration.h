@@ -10,6 +10,7 @@
 #include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 #include <aws/imagebuilder/model/InstanceMetadataOptions.h>
 #include <aws/imagebuilder/model/Logging.h>
+#include <aws/imagebuilder/model/ParentInstanceConfiguration.h>
 #include <aws/imagebuilder/model/Placement.h>
 
 #include <utility>
@@ -376,6 +377,43 @@ class InfrastructureConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether Image Builder terminates build and test instances when
+   * image creation ends without a failure.</p>
+   */
+  inline bool GetTerminateInstanceOnCompletion() const { return m_terminateInstanceOnCompletion; }
+  inline bool TerminateInstanceOnCompletionHasBeenSet() const { return m_terminateInstanceOnCompletionHasBeenSet; }
+  inline void SetTerminateInstanceOnCompletion(bool value) {
+    m_terminateInstanceOnCompletionHasBeenSet = true;
+    m_terminateInstanceOnCompletion = value;
+  }
+  inline InfrastructureConfiguration& WithTerminateInstanceOnCompletion(bool value) {
+    SetTerminateInstanceOnCompletion(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon EC2 Auto Scaling group that Image Builder takes the build instance
+   * from, instead of launching a new instance. This applies only to the build
+   * phase.</p>
+   */
+  inline const ParentInstanceConfiguration& GetParentInstance() const { return m_parentInstance; }
+  inline bool ParentInstanceHasBeenSet() const { return m_parentInstanceHasBeenSet; }
+  template <typename ParentInstanceT = ParentInstanceConfiguration>
+  void SetParentInstance(ParentInstanceT&& value) {
+    m_parentInstanceHasBeenSet = true;
+    m_parentInstance = std::forward<ParentInstanceT>(value);
+  }
+  template <typename ParentInstanceT = ParentInstanceConfiguration>
+  InfrastructureConfiguration& WithParentInstance(ParentInstanceT&& value) {
+    SetParentInstance(std::forward<ParentInstanceT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
@@ -410,6 +448,10 @@ class InfrastructureConfiguration {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Placement m_placement;
+
+  bool m_terminateInstanceOnCompletion{false};
+
+  ParentInstanceConfiguration m_parentInstance;
   bool m_arnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
@@ -427,6 +469,8 @@ class InfrastructureConfiguration {
   bool m_instanceMetadataOptionsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_placementHasBeenSet = false;
+  bool m_terminateInstanceOnCompletionHasBeenSet = false;
+  bool m_parentInstanceHasBeenSet = false;
 };
 
 }  // namespace Model

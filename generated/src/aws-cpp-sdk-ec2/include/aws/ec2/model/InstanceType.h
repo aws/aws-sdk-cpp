@@ -1439,7 +1439,16 @@ enum class InstanceType {
   r9gd_24xlarge,
   r9gd_48xlarge,
   r9gd_metal_48xl,
-  m9g_medium
+  m9g_medium,
+  t8i_nano,
+  t8i_micro,
+  t8i_small,
+  t8i_medium,
+  i8g_metal_48xl,
+  r8gb_48xlarge,
+  r8gb_metal_48xl,
+  m9gd_medium,
+  trn2u_48xlarge
 };
 
 namespace InstanceTypeMapper {

@@ -39,8 +39,10 @@ class StreamRecord {
   ///@{
   /**
    * <p>The approximate date and time when the stream record was created, in <a
-   * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
-   * format and rounded down to the closest second.</p>
+   * href="http://www.epochconverter.com/">UNIX epoch time</a> format and rounded
+   * down to the closest second. Some tools and SDKs may convert this value to a
+   * different format, such as <a
+   * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>.</p>
    */
   inline const Aws::Utils::DateTime& GetApproximateCreationDateTime() const { return m_approximateCreationDateTime; }
   inline bool ApproximateCreationDateTimeHasBeenSet() const { return m_approximateCreationDateTimeHasBeenSet; }

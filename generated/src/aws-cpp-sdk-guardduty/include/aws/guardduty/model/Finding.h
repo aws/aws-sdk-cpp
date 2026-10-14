@@ -319,6 +319,24 @@ class Finding {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The name of the custom detection rule that generated this finding.</p>
+   */
+  inline const Aws::String& GetCustomDetectionRuleName() const { return m_customDetectionRuleName; }
+  inline bool CustomDetectionRuleNameHasBeenSet() const { return m_customDetectionRuleNameHasBeenSet; }
+  template <typename CustomDetectionRuleNameT = Aws::String>
+  void SetCustomDetectionRuleName(CustomDetectionRuleNameT&& value) {
+    m_customDetectionRuleNameHasBeenSet = true;
+    m_customDetectionRuleName = std::forward<CustomDetectionRuleNameT>(value);
+  }
+  template <typename CustomDetectionRuleNameT = Aws::String>
+  Finding& WithCustomDetectionRuleName(CustomDetectionRuleNameT&& value) {
+    SetCustomDetectionRuleName(std::forward<CustomDetectionRuleNameT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_accountId;
 
@@ -351,6 +369,8 @@ class Finding {
   Aws::String m_updatedAt;
 
   Aws::String m_associatedAttackSequenceArn;
+
+  Aws::String m_customDetectionRuleName;
   bool m_accountIdHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_confidenceHasBeenSet = false;
@@ -367,6 +387,7 @@ class Finding {
   bool m_typeHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_associatedAttackSequenceArnHasBeenSet = false;
+  bool m_customDetectionRuleNameHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -20,8 +20,8 @@ namespace ARCRegionswitch {
 namespace Model {
 
 /**
- * <p>Configuration for handling failures when performing operations on Aurora
- * global databases.</p><p><h3>See Also:</h3>   <a
+ * <p>Configuration for an Aurora global database execution block in ungraceful
+ * mode.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/GlobalAuroraUngraceful">AWS
  * API Reference</a></p>
  */
@@ -34,7 +34,9 @@ class GlobalAuroraUngraceful {
 
   ///@{
   /**
-   * <p>The settings for ungraceful execution.</p>
+   * <p>The ungraceful behavior. The only valid value is <code>failover</code>, which
+   * calls <code>FailoverGlobalCluster</code> with <code>AllowDataLoss</code> set to
+   * <code>true</code> and might cause data loss.</p>
    */
   inline GlobalAuroraUngracefulBehavior GetUngraceful() const { return m_ungraceful; }
   inline bool UngracefulHasBeenSet() const { return m_ungracefulHasBeenSet; }

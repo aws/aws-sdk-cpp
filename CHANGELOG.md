@@ -1,3 +1,23 @@
+# 1.11.912 (2026-10-14)
+
+## SDK Highlights
+* **Bug Fix**: Fix CBOR blob serialization to use the buffer length instead of strlen
+* **Bug Fix**: Add ListSharedChannelGroups to map of LEGACY_SDK_RESULT_OPERATIONS for naming (SdkResult suffix)
+* **Feature**: New document type backed by schema serde
+
+## Service Updates
+* **ARC Region switch**: Features - Adds support for an optional payload to invoke the Lambda function with as part of the Custom action Lambda execution block
+* **Bedrock AgentCore Control**: This release supports scoping Amazon Bedrock AgentCore Gateway rate limits by request header or request body field.
+* **CloudFront**: This release adds a new "IpAddressType" field to "VPCOriginEndpointConfig", allowing customers to specify whether their VPC origin accepts IPv4-only or dualstack connections.
+* **DynamoDB Streams**: Add support for a new iterator type (AT TIMESTAMP) for DynamoDB Streams GetShardIterator API that allows reading from a specific point in time from the stream.
+* **EC2**: Adds T8i instance sizes to the InstanceType enum. T8i instances are low-cost burstable instances powered by custom sixth generation Intel Xeon 6 processors, available exclusively on AWS, and built on the latest sixth generation AWS Nitro cards
+* **GuardDuty**: Releasing support for Custom Detection Rule Runtime Monitoring
+* **Lambda**: AWS Lambda now supports an optional X-Ray trace header for chained invocations in durable executions, enabling child invocations to be linked to the initiating span.
+* **Marketplace Metering**: Documentation update - added a Get started pointer to the AWS Marketplace AI Metering Agent Skill in the BatchMeterUsage API reference. No API or behavior change.
+* **Organizations**: With dual-stack enabled, all requests now resolve to the endpoint in the partition's primary Region (for example, organizations.us-east-1.api.aws) and are signed for that Region. Previously, requests from other Regions resolved to a nonexistent endpoint. No API changes.
+* **Transfer**: AWS Transfer Family now lets you store SFTP server host keys in AWS Secrets Manager in your own AWS account. This gives you greater control over your server identity and helps simplify server migrations and failover.
+* **imagebuilder**: This release adds parentInstance to infrastructure configurations, so builds can use an already-running instance from an Amazon EC2 Auto Scaling group. It also adds terminateInstanceOnCompletion, which keeps build and test instances running after image creation ends.
+
 # 1.11.911 (2026-10-13)
 
 ## Service Updates

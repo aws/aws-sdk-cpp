@@ -85,15 +85,44 @@ class Lambdas {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The JSON payload to send to the Lambda function invocation. If you don't
+   * specify a payload, Region switch invokes the function with only the execution
+   * metadata.</p> <p>If you provide a JSON object, Region switch merges execution
+   * metadata keys (<code>InvokedBy</code>, <code>PlanArn</code>,
+   * <code>ExecutionId</code>, <code>StepName</code>) into the top level. If one of
+   * your keys has the same name as a metadata key, your key takes precedence.</p>
+   * <p>If you provide any other JSON type (string, number, boolean, or array),
+   * Region switch forwards it to the Lambda function unchanged, without adding
+   * metadata.</p>
+   */
+  inline const Aws::String& GetPayload() const { return m_payload; }
+  inline bool PayloadHasBeenSet() const { return m_payloadHasBeenSet; }
+  template <typename PayloadT = Aws::String>
+  void SetPayload(PayloadT&& value) {
+    m_payloadHasBeenSet = true;
+    m_payload = std::forward<PayloadT>(value);
+  }
+  template <typename PayloadT = Aws::String>
+  Lambdas& WithPayload(PayloadT&& value) {
+    SetPayload(std::forward<PayloadT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_crossAccountRole;
 
   Aws::String m_externalId;
 
   Aws::String m_arn;
+
+  Aws::String m_payload;
   bool m_crossAccountRoleHasBeenSet = false;
   bool m_externalIdHasBeenSet = false;
   bool m_arnHasBeenSet = false;
+  bool m_payloadHasBeenSet = false;
 };
 
 }  // namespace Model

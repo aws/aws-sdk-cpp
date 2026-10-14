@@ -101,6 +101,10 @@ Aws::String CreateServerRequest::SerializePayload() const {
     payload.WithString("IpAddressType", IpAddressTypeMapper::GetNameForIpAddressType(m_ipAddressType));
   }
 
+  if (m_hostKeyStorageTypeHasBeenSet) {
+    payload.WithString("HostKeyStorageType", HostKeyStorageTypeMapper::GetNameForHostKeyStorageType(m_hostKeyStorageType));
+  }
+
   return payload.View().WriteReadable();
 }
 

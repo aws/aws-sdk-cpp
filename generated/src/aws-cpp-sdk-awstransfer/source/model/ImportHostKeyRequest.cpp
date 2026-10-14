@@ -35,6 +35,14 @@ Aws::String ImportHostKeyRequest::SerializePayload() const {
     payload.WithArray("Tags", std::move(tagsJsonList));
   }
 
+  if (m_storageTypeHasBeenSet) {
+    payload.WithString("StorageType", HostKeyStorageTypeMapper::GetNameForHostKeyStorageType(m_storageType));
+  }
+
+  if (m_kmsKeyHasBeenSet) {
+    payload.WithString("KmsKey", m_kmsKey);
+  }
+
   return payload.View().WriteReadable();
 }
 

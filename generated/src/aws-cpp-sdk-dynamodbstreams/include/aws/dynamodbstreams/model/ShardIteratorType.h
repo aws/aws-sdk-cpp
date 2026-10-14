@@ -10,7 +10,7 @@
 namespace Aws {
 namespace DynamoDBStreams {
 namespace Model {
-enum class ShardIteratorType { NOT_SET, TRIM_HORIZON, LATEST, AT_SEQUENCE_NUMBER, AFTER_SEQUENCE_NUMBER };
+enum class ShardIteratorType { NOT_SET, TRIM_HORIZON, LATEST, AT_SEQUENCE_NUMBER, AFTER_SEQUENCE_NUMBER, AT_TIMESTAMP };
 
 namespace ShardIteratorTypeMapper {
 AWS_DYNAMODBSTREAMS_API ShardIteratorType GetShardIteratorTypeForName(const Aws::String& name);

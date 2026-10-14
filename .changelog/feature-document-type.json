@@ -1,6 +1,0 @@
-{
-  "type": "feature",
-  "category": "aws-cpp-sdk-core",
-  "contributor": "sbaluja",
-  "description": "New document type backed by schema serde"
-}

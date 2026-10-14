@@ -89,8 +89,13 @@ class GlobalAuroraConfiguration {
 
   ///@{
   /**
-   * <p>The behavior for a global database, that is, only allow switchover or also
-   * allow failover.</p>
+   * <p>The default behavior for the Aurora global database execution block. Valid
+   * values:</p> <ul> <li> <p> <code>switchoverOnly</code> - Calls
+   * <code>SwitchoverGlobalCluster</code> for a zero-data-loss switchover during
+   * graceful execution.</p> </li> <li> <p> <code>failover</code> - Calls
+   * <code>FailoverGlobalCluster</code> with <code>AllowDataLoss</code> set to
+   * <code>true</code>. This operation might cause data loss, including during
+   * graceful execution.</p> </li> </ul>
    */
   inline GlobalAuroraDefaultBehavior GetBehavior() const { return m_behavior; }
   inline bool BehaviorHasBeenSet() const { return m_behaviorHasBeenSet; }
@@ -106,7 +111,8 @@ class GlobalAuroraConfiguration {
 
   ///@{
   /**
-   * <p>The settings for ungraceful execution.</p>
+   * <p>The behavior to use when the plan runs in ungraceful mode. If you omit this
+   * value, Region switch uses the value of <code>behavior</code>.</p>
    */
   inline const GlobalAuroraUngraceful& GetUngraceful() const { return m_ungraceful; }
   inline bool UngracefulHasBeenSet() const { return m_ungracefulHasBeenSet; }

@@ -7,6 +7,7 @@
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/cloudfront/model/OriginProtocolPolicy.h>
 #include <aws/cloudfront/model/OriginSslProtocols.h>
+#include <aws/cloudfront/model/VpcIpAddressType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -136,6 +137,24 @@ class VpcOriginEndpointConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The IP address type of the CloudFront VPC origin endpoint configuration.
+   * Valid values are <code>ipv4</code> and <code>dualstack</code>. IPv6-only is not
+   * supported for VPC origins.</p>
+   */
+  inline VpcIpAddressType GetIpAddressType() const { return m_ipAddressType; }
+  inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+  inline void SetIpAddressType(VpcIpAddressType value) {
+    m_ipAddressTypeHasBeenSet = true;
+    m_ipAddressType = value;
+  }
+  inline VpcOriginEndpointConfig& WithIpAddressType(VpcIpAddressType value) {
+    SetIpAddressType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -148,12 +167,15 @@ class VpcOriginEndpointConfig {
   OriginProtocolPolicy m_originProtocolPolicy{OriginProtocolPolicy::NOT_SET};
 
   OriginSslProtocols m_originSslProtocols;
+
+  VpcIpAddressType m_ipAddressType{VpcIpAddressType::NOT_SET};
   bool m_nameHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_hTTPPortHasBeenSet = false;
   bool m_hTTPSPortHasBeenSet = false;
   bool m_originProtocolPolicyHasBeenSet = false;
   bool m_originSslProtocolsHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
 };
 
 }  // namespace Model

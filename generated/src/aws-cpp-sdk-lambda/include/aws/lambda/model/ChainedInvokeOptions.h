@@ -68,12 +68,39 @@ class ChainedInvokeOptions {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The optional X-Ray trace header to use when starting the chained invocation.
+   * If you omit this value, the child invocation inherits the parent durable
+   * execution's trace header.</p> <p>Specify this value on the <code>START</code>
+   * update for the chained invocation operation. For more information about the
+   * header format, see <a
+   * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing
+   * header</a> in the <i>X-Ray Developer Guide</i>.</p>
+   */
+  inline const Aws::String& GetXAmznTraceId() const { return m_xAmznTraceId; }
+  inline bool XAmznTraceIdHasBeenSet() const { return m_xAmznTraceIdHasBeenSet; }
+  template <typename XAmznTraceIdT = Aws::String>
+  void SetXAmznTraceId(XAmznTraceIdT&& value) {
+    m_xAmznTraceIdHasBeenSet = true;
+    m_xAmznTraceId = std::forward<XAmznTraceIdT>(value);
+  }
+  template <typename XAmznTraceIdT = Aws::String>
+  ChainedInvokeOptions& WithXAmznTraceId(XAmznTraceIdT&& value) {
+    SetXAmznTraceId(std::forward<XAmznTraceIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_functionName;
 
   Aws::String m_tenantId;
+
+  Aws::String m_xAmznTraceId;
   bool m_functionNameHasBeenSet = false;
   bool m_tenantIdHasBeenSet = false;
+  bool m_xAmznTraceIdHasBeenSet = false;
 };
 
 }  // namespace Model

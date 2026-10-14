@@ -591,6 +591,7 @@
 #include <aws/cloudfront/model/ViewerMtlsConfig.h>
 #include <aws/cloudfront/model/ViewerMtlsMode.h>
 #include <aws/cloudfront/model/ViewerProtocolPolicy.h>
+#include <aws/cloudfront/model/VpcIpAddressType.h>
 #include <aws/cloudfront/model/VpcOrigin.h>
 #include <aws/cloudfront/model/VpcOriginConfig.h>
 #include <aws/cloudfront/model/VpcOriginEndpointConfig.h>

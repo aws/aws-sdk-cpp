@@ -31,6 +31,10 @@ Aws::String GetShardIteratorRequest::SerializePayload() const {
     payload.WithString("SequenceNumber", m_sequenceNumber);
   }
 
+  if (m_timestampHasBeenSet) {
+    payload.WithDouble("Timestamp", m_timestamp.SecondsWithMSPrecision());
+  }
+
   return payload.View().WriteReadable();
 }
 

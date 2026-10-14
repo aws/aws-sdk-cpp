@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dynamodbstreams/DynamoDBStreamsRequest.h>
 #include <aws/dynamodbstreams/DynamoDBStreams_EXPORTS.h>
@@ -84,7 +85,10 @@ class GetShardIteratorRequest : public DynamoDBStreamsRequest {
    * limit on data retention. Stream records whose age exceeds this limit are subject
    * to removal (trimming) from the stream.</p> </li> <li> <p> <code>LATEST</code> -
    * Start reading just after the most recent stream record in the shard, so that you
-   * always read the most recent data in the shard.</p> </li> </ul>
+   * always read the most recent data in the shard.</p> </li> <li> <p>
+   * <code>AT_TIMESTAMP</code> - Start reading from the position denoted by a
+   * specific timestamp, provided in the parameter <code>Timestamp</code>.</p> </li>
+   * </ul>
    */
   inline ShardIteratorType GetShardIteratorType() const { return m_shardIteratorType; }
   inline bool ShardIteratorTypeHasBeenSet() const { return m_shardIteratorTypeHasBeenSet; }
@@ -116,6 +120,33 @@ class GetShardIteratorRequest : public DynamoDBStreamsRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp of the stream record from which to start reading. Used with
+   * shard iterator type <code>AT_TIMESTAMP</code>. A timestamp is the Unix epoch
+   * date with precision in milliseconds. For example, <code>1791316726.480</code>.
+   * The iterator points to the first stream record whose
+   * <code>ApproximateCreationDateTime</code> is at or after the specified timestamp.
+   * If no record with that exact timestamp exists, the iterator points to the next
+   * (later) record. If the timestamp is older than the current trim horizon, the
+   * iterator points to the oldest untrimmed stream record
+   * (<code>TRIM_HORIZON</code>). If the timestamp is in the future, the request
+   * returns a <code>ValidationException</code>.</p>
+   */
+  inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }
+  inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
+  template <typename TimestampT = Aws::Utils::DateTime>
+  void SetTimestamp(TimestampT&& value) {
+    m_timestampHasBeenSet = true;
+    m_timestamp = std::forward<TimestampT>(value);
+  }
+  template <typename TimestampT = Aws::Utils::DateTime>
+  GetShardIteratorRequest& WithTimestamp(TimestampT&& value) {
+    SetTimestamp(std::forward<TimestampT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_streamArn;
 
@@ -124,10 +155,13 @@ class GetShardIteratorRequest : public DynamoDBStreamsRequest {
   ShardIteratorType m_shardIteratorType{ShardIteratorType::NOT_SET};
 
   Aws::String m_sequenceNumber;
+
+  Aws::Utils::DateTime m_timestamp{};
   bool m_streamArnHasBeenSet = false;
   bool m_shardIdHasBeenSet = false;
   bool m_shardIteratorTypeHasBeenSet = false;
   bool m_sequenceNumberHasBeenSet = false;
+  bool m_timestampHasBeenSet = false;
 };
 
 }  // namespace Model

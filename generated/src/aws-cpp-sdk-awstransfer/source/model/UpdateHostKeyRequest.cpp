@@ -27,6 +27,14 @@ Aws::String UpdateHostKeyRequest::SerializePayload() const {
     payload.WithString("Description", m_description);
   }
 
+  if (m_storageTypeHasBeenSet) {
+    payload.WithString("StorageType", HostKeyStorageTypeMapper::GetNameForHostKeyStorageType(m_storageType));
+  }
+
+  if (m_kmsKeyHasBeenSet) {
+    payload.WithString("KmsKey", m_kmsKey);
+  }
+
   return payload.View().WriteReadable();
 }
 

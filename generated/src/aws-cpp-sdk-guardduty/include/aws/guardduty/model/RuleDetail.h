@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
 #include <aws/guardduty/model/DetectionRuleDataSource.h>
+#include <aws/guardduty/model/DetectionRuleRuntimeMonitoringDetails.h>
 #include <aws/guardduty/model/DetectionRuleSeverity.h>
 #include <aws/guardduty/model/RuleDefinition.h>
 #include <aws/guardduty/model/RuleLanguage.h>
@@ -248,6 +249,26 @@ class RuleDetail {
 
   ///@{
   /**
+   * <p>Runtime Monitoring-specific details for the rule, including the platforms on
+   * which the rule can run and the minimum GuardDuty agent version required on
+   * each.</p>
+   */
+  inline const DetectionRuleRuntimeMonitoringDetails& GetRuntimeMonitoringDetails() const { return m_runtimeMonitoringDetails; }
+  inline bool RuntimeMonitoringDetailsHasBeenSet() const { return m_runtimeMonitoringDetailsHasBeenSet; }
+  template <typename RuntimeMonitoringDetailsT = DetectionRuleRuntimeMonitoringDetails>
+  void SetRuntimeMonitoringDetails(RuntimeMonitoringDetailsT&& value) {
+    m_runtimeMonitoringDetailsHasBeenSet = true;
+    m_runtimeMonitoringDetails = std::forward<RuntimeMonitoringDetailsT>(value);
+  }
+  template <typename RuntimeMonitoringDetailsT = DetectionRuleRuntimeMonitoringDetails>
+  RuleDetail& WithRuntimeMonitoringDetails(RuntimeMonitoringDetailsT&& value) {
+    SetRuntimeMonitoringDetails(std::forward<RuntimeMonitoringDetailsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The timestamp when the rule was created.</p>
    */
   inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -306,6 +327,8 @@ class RuleDetail {
 
   RuleSchema m_schema{RuleSchema::NOT_SET};
 
+  DetectionRuleRuntimeMonitoringDetails m_runtimeMonitoringDetails;
+
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::Utils::DateTime m_updatedAt{};
@@ -321,6 +344,7 @@ class RuleDetail {
   bool m_definitionHasBeenSet = false;
   bool m_languageHasBeenSet = false;
   bool m_schemaHasBeenSet = false;
+  bool m_runtimeMonitoringDetailsHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };
