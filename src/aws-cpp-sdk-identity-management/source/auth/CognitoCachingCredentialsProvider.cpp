@@ -5,6 +5,7 @@
 
 #include <aws/identity-management/auth/CognitoCachingCredentialsProvider.h>
 #include <aws/identity-management/auth/PersistentCognitoIdentityProvider.h>
+#include <aws/core/internal/CredentialsCachingProvider.h>
 #include <aws/cognito-identity/model/GetCredentialsForIdentityRequest.h>
 #include <aws/cognito-identity/model/GetIdRequest.h>
 #include <aws/core/utils/Outcome.h>
@@ -19,18 +20,41 @@ using namespace Aws::Utils;
 static const char* LOG_TAG = "CognitoCachingCredentialsProvider";
 static const char* MEM_TAG = "CognitoCachingCredentialsProvider";
 
+AWSCredentials CognitoCachingCredentialsProvider::RetrieveForCache()
+{
+    m_cachedCredentials = AWSCredentials("", "");
+    m_expiry.store(0.0);
+    AWSCredentials credentials = RetrieveCredentials();
+    if (!credentials.IsEmpty())
+    {
+        credentials.SetExpiration(DateTime(m_expiry.load()));
+    }
+    return credentials;
+}
+
 CognitoCachingCredentialsProvider::CognitoCachingCredentialsProvider
         (const std::shared_ptr<PersistentCognitoIdentityProvider>& identityRepository, const std::shared_ptr<CognitoIdentityClient>& cognitoIdentityClient) :
         m_cognitoIdentityClient(cognitoIdentityClient != nullptr ? cognitoIdentityClient :
                                 Aws::MakeShared<CognitoIdentityClient>(MEM_TAG, Aws::MakeShared<AnonymousAWSCredentialsProvider>(MEM_TAG))),
         m_identityRepository(identityRepository),
         m_cachedCredentials("", ""),
-        m_expiry(0.0)
+        m_expiry(0.0),
+        m_cachingProvider(Aws::MakeShared<Aws::Internal::CredentialsCachingProvider>(MEM_TAG, [this]() { return RetrieveForCache(); }))
 {
     m_identityRepository->SetLoginsUpdatedCallback(std::bind(&CognitoCachingCredentialsProvider::OnLoginsUpdated, this, std::placeholders::_1));
 }
 
 AWSCredentials CognitoCachingCredentialsProvider::GetAWSCredentials()
+{
+    return m_cachingProvider->GetAWSCredentials();
+}
+
+void CognitoCachingCredentialsProvider::Invalidate(const Aws::String& accessKeyId)
+{
+    m_cachingProvider->Invalidate(accessKeyId);
+}
+
+AWSCredentials CognitoCachingCredentialsProvider::RetrieveCredentials()
 {
     if (IsTimeExpired(m_expiry.load()))
     {
@@ -86,6 +110,7 @@ void CognitoCachingCredentialsProvider::OnLoginsUpdated(const PersistentCognitoI
 {
     AWS_LOGSTREAM_INFO(LOG_TAG, "Logins Updated in the identity repository, resetting the expiry to force a refresh on the next run.");
     m_expiry.store(DateTime().SecondsWithMSPrecision());
+    m_cachingProvider->Invalidate(m_cachingProvider->GetAWSCredentials().GetAWSAccessKeyId());
 }
 
 

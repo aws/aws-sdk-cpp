@@ -5,6 +5,7 @@
 
 
 #include <aws/core/auth/AWSCredentialsProvider.h>
+#include <aws/core/internal/CredentialsCachingProvider.h>
 
 #include <aws/core/config/AWSProfileConfigLoader.h>
 #include <aws/core/client/ClientConfiguration.h>
@@ -238,43 +239,34 @@ void ProfileConfigFileAWSCredentialsProvider::RefreshIfExpired()
 static const char* INSTANCE_LOG_TAG = "InstanceProfileCredentialsProvider";
 
 InstanceProfileCredentialsProvider::InstanceProfileCredentialsProvider(long refreshRateMs) :
-    m_ec2MetadataConfigLoader(Aws::MakeShared<Aws::Config::EC2InstanceProfileConfigLoader>(INSTANCE_LOG_TAG)),
-    m_loadFrequencyMs(refreshRateMs)
+    m_ec2MetadataConfigLoader(Aws::MakeShared<Aws::Config::EC2InstanceProfileConfigLoader>(INSTANCE_LOG_TAG))
 {
     AWS_LOGSTREAM_INFO(INSTANCE_LOG_TAG, "Creating Instance with default EC2MetadataClient and refresh rate " << refreshRateMs);
 }
 
 
 InstanceProfileCredentialsProvider::InstanceProfileCredentialsProvider(const std::shared_ptr<Aws::Config::EC2InstanceProfileConfigLoader>& loader, long refreshRateMs) :
-    m_ec2MetadataConfigLoader(loader),
-    m_loadFrequencyMs(refreshRateMs)
+    m_ec2MetadataConfigLoader(loader)
 {
     AWS_LOGSTREAM_INFO(INSTANCE_LOG_TAG, "Creating Instance with injected EC2MetadataClient and refresh rate " << refreshRateMs);
 }
 
 InstanceProfileCredentialsProvider::InstanceProfileCredentialsProvider(const Aws::Client::ClientConfiguration::CredentialProviderConfiguration& credentialConfig, long refreshRateMs) :
-    m_ec2MetadataConfigLoader(Aws::MakeShared<Aws::Config::EC2InstanceProfileConfigLoader>(INSTANCE_LOG_TAG, credentialConfig)),
-    m_loadFrequencyMs(refreshRateMs)
+    m_ec2MetadataConfigLoader(Aws::MakeShared<Aws::Config::EC2InstanceProfileConfigLoader>(INSTANCE_LOG_TAG, credentialConfig))
 {
+    AWS_UNREFERENCED_PARAM(refreshRateMs);
     AWS_LOGSTREAM_INFO(INSTANCE_LOG_TAG, "Creating Instance with IMDS timeout: " << credentialConfig.imdsConfig.metadataServiceTimeout << "s, attempts: " << credentialConfig.imdsConfig.metadataServiceNumAttempts);
 }
 
 AWSCredentials InstanceProfileCredentialsProvider::GetAWSCredentials()
 {
-    RefreshIfExpired();
-    ReaderLockGuard guard(m_reloadLock);
     if (m_ec2MetadataConfigLoader)
     {
-        const Aws::Map<Aws::String, Aws::Config::Profile> &profiles = m_ec2MetadataConfigLoader->GetProfiles();
-        auto profileIter = profiles.find(Aws::Config::INSTANCE_PROFILE_KEY);
-
-        if (profileIter != profiles.end()) {
-            AWSCredentials credentials = profileIter->second.GetCredentials();
-            if (!credentials.IsEmpty()) {
-                credentials.AddUserAgentFeature(UserAgentFeature::CREDENTIALS_IMDS);
-            }
-            return credentials;
+        AWSCredentials credentials = m_ec2MetadataConfigLoader->GetCredentials();
+        if (!credentials.IsEmpty()) {
+            credentials.AddUserAgentFeature(UserAgentFeature::CREDENTIALS_IMDS);
         }
+        return credentials;
     }
     else
     {
@@ -284,54 +276,22 @@ AWSCredentials InstanceProfileCredentialsProvider::GetAWSCredentials()
     return AWSCredentials();
 }
 
-bool InstanceProfileCredentialsProvider::ExpiresSoon() const
+void InstanceProfileCredentialsProvider::Invalidate(const Aws::String& accessKeyId)
 {
-    auto profileIter = m_ec2MetadataConfigLoader->GetProfiles().find(Aws::Config::INSTANCE_PROFILE_KEY);
-    AWSCredentials credentials;
-
-    if(profileIter != m_ec2MetadataConfigLoader->GetProfiles().end())
+    if (m_ec2MetadataConfigLoader)
     {
-        credentials = profileIter->second.GetCredentials();
+        m_ec2MetadataConfigLoader->Invalidate(accessKeyId);
     }
-
-    return credentials.ExpiresSoon(AWS_CREDENTIAL_PROVIDER_EXPIRATION_GRACE_PERIOD);
 }
 
 void InstanceProfileCredentialsProvider::Reload()
 {
-    AWS_LOGSTREAM_INFO(INSTANCE_LOG_TAG, "Credentials have expired attempting to re-pull from EC2 Metadata Service.");
-    if (m_ec2MetadataConfigLoader) {
-        m_ec2MetadataConfigLoader->Load();
-        AWSCredentialsProvider::Reload();
-    } else {
-        AWS_LOGSTREAM_ERROR(INSTANCE_LOG_TAG, "EC2 Metadata config loader is a nullptr");
-    }
-}
-
-void InstanceProfileCredentialsProvider::RefreshIfExpired()
-{
-    AWS_LOGSTREAM_DEBUG(INSTANCE_LOG_TAG, "Checking if latest credential pull has expired.");
-    ReaderLockGuard guard(m_reloadLock);
-    auto profileIter = m_ec2MetadataConfigLoader->GetProfiles().find(Aws::Config::INSTANCE_PROFILE_KEY);
-    AWSCredentials credentials;
-
-    if(profileIter != m_ec2MetadataConfigLoader->GetProfiles().end())
+    if (m_ec2MetadataConfigLoader)
     {
-        credentials = profileIter->second.GetCredentials();
-
-        if (!credentials.IsEmpty() && !IsTimeToRefresh(m_loadFrequencyMs) && !ExpiresSoon())
-        {
-            return;
-        }
-
-        guard.UpgradeToWriterLock();
-        if (!credentials.IsEmpty() && !IsTimeToRefresh(m_loadFrequencyMs) && !ExpiresSoon()) // double-checked lock to avoid refreshing twice
-        {
-            return;
-        }
+        m_ec2MetadataConfigLoader->Invalidate(m_ec2MetadataConfigLoader->GetCredentials().GetAWSAccessKeyId());
+        m_ec2MetadataConfigLoader->GetCredentials();
     }
-
-    Reload();
+    AWSCredentialsProvider::Reload();
 }
 
 static const char PROCESS_LOG_TAG[] = "ProcessCredentialsProvider";

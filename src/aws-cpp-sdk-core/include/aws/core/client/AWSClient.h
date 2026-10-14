@@ -375,6 +375,10 @@ namespace Aws
              * return true if signer's clock is adjusted, false otherwise.
              */
             bool AdjustClockSkew(HttpResponseOutcome& outcome, const Aws::Utils::DateTime& timeRequestSent, const Aws::Utils::DateTime& timeResponseReceived, std::chrono::milliseconds attemptSkew) const;
+            /**
+             * InvalidateCredentials invalidates the provider's credentials when a service rejects them as expired or invalid.
+             */
+            void InvalidateCredentials(const AWSError<CoreErrors>& error, const Aws::String& accessKeyId) const;
 #if defined(AWS_CRT_HTTP_USE_ASYNC_IO)
             std::shared_ptr<Aws::Http::HttpRequest> StartOneAttemptAsync(const std::shared_ptr<AWSClientAsyncRequestContext>& context) const;
             Aws::Http::HttpClient::AttemptOutcome OnResponseReceivedAsync(const std::shared_ptr<AWSClientAsyncRequestContext>& context, std::shared_ptr<Aws::Http::HttpResponse> httpResponse) const;
