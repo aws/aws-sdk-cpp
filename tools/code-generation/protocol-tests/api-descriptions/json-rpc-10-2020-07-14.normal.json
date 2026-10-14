@@ -114,6 +114,14 @@
       "input":{"shape":"PutWithContentEncodingInput"},
       "requestcompression":{"encodings":["gzip"]}
     },
+    "QueryIncompatibleOperation":{
+      "name":"QueryIncompatibleOperation",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "idempotent":true
+    },
     "SimpleScalarProperties":{
       "name":"SimpleScalarProperties",
       "http":{
@@ -153,8 +161,7 @@
     },
     "ContentTypeParametersOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "Double":{
       "type":"double",
@@ -162,13 +169,11 @@
     },
     "EmptyInputAndEmptyOutputInput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "EmptyInputAndEmptyOutputOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "EndpointWithHostLabelOperationInput":{
       "type":"structure",
@@ -196,8 +201,7 @@
     },
     "FooError":{
       "type":"structure",
-      "members":{
-      },
+      "members":{},
       "documentation":"<p>This error has test cases that test some of the dark corners of Amazon service framework history. It should only be implemented by clients.</p>",
       "exception":true,
       "fault":true
@@ -267,8 +271,7 @@
     },
     "NoInputAndOutputOutput":{
       "type":"structure",
-      "members":{
-      }
+      "members":{}
     },
     "PutWithContentEncodingInput":{
       "type":"structure",

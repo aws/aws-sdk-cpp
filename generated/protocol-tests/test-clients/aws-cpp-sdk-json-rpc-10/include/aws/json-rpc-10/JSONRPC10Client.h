@@ -350,6 +350,33 @@ class AWS_JSONRPC10_API JSONRPC10Client : public Aws::Client::AWSJsonClient,
   /**
    *
    */
+  virtual Model::QueryIncompatibleOperationOutcome QueryIncompatibleOperation(
+      const Model::QueryIncompatibleOperationRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for QueryIncompatibleOperation that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename QueryIncompatibleOperationRequestT = Model::QueryIncompatibleOperationRequest>
+  Model::QueryIncompatibleOperationOutcomeCallable QueryIncompatibleOperationCallable(
+      const QueryIncompatibleOperationRequestT& request = {}) const {
+    return SubmitCallable(&JSONRPC10Client::QueryIncompatibleOperation, request);
+  }
+
+  /**
+   * An Async wrapper for QueryIncompatibleOperation that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename QueryIncompatibleOperationRequestT = Model::QueryIncompatibleOperationRequest>
+  void QueryIncompatibleOperationAsync(const QueryIncompatibleOperationResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                       const QueryIncompatibleOperationRequestT& request = {}) const {
+    return SubmitAsync(&JSONRPC10Client::QueryIncompatibleOperation, request, handler, context);
+  }
+
+  /**
+   *
+   */
   virtual Model::SimpleScalarPropertiesOutcome SimpleScalarProperties(const Model::SimpleScalarPropertiesRequest& request = {}) const;
 
   /**

@@ -11,13 +11,13 @@ using QueryCompatibleOperation = AWS_PROTOCOL_TEST_SUITE;
 using QueryCompatibleJSONRPC10Client = Aws::QueryCompatibleJSONRPC10::QueryCompatibleJSONRPC10Client;
 using namespace Aws::QueryCompatibleJSONRPC10::Model;
 
-AWS_PROTOCOL_TEST(QueryCompatibleOperation, QueryCompatibleAwsJson10CborNoCustomCodeError) {
+AWS_PROTOCOL_TEST(QueryCompatibleOperation, QueryCompatibleAwsJson10NoCustomCodeError) {
   QueryCompatibleJSONRPC10Client client(mockCredentials, mockConfig);
 
   OutputResponse mockRs;
   mockRs.statusCode = 400;
   mockRs.headers = {{"Content-Type", R"(application/x-amz-json-1.0)"}};
-  mockRs.body = "ewogICAgIl9fdHlwZSI6ICJhd3MucHJvdG9jb2x0ZXN0cy5qc29uMTAjTm9DdXN0b21Db2RlRXJyb3IiLAogICAgIk1lc3NhZ2UiOiAiSGkiCn0=";
+  mockRs.body = "ewogICAgIl9fdHlwZSI6ICJhd3MucHJvdG9jb2x0ZXN0cy5qc29uMTAjTm9DdXN0b21Db2RlRXJyb3IiLAogICAgIm1lc3NhZ2UiOiAiSGkiCn0=";
   SetMockResponse(mockRs);
 
   QueryCompatibleOperationRequest request;

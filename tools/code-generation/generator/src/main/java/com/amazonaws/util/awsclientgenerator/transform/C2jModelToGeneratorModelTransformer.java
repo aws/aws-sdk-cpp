@@ -373,6 +373,7 @@ public class C2jModelToGeneratorModelTransformer {
              * Decide event payload type, should be one of them: "blob" | "string" | "structure" | null
              */
             if (shape.isEvent()) {
+                shape.setEventPayloadExplicit(shape.hasEventPayloadMembers());
                 if (!shape.getMembers().values().stream().anyMatch(member -> !member.isEventHeader())) {
                     // Header only event
                     shape.setEventPayloadType(null);

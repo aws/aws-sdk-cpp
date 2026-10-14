@@ -12,10 +12,12 @@ import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Service
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Shape;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.ShapeMember;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppViewHelper;
+import com.amazonaws.util.awsclientgenerator.domainmodels.protocol_test.ProtocolTestCase;
 import com.amazonaws.util.awsclientgenerator.domainmodels.protocol_test.ProtocolTestModel;
 import com.amazonaws.util.awsclientgenerator.domainmodels.protocol_test.ProtocolTestSuite;
 import com.amazonaws.util.awsclientgenerator.generators.ClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.exceptions.SourceGenerationFailedException;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.google.common.collect.ImmutableSet;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
@@ -173,7 +175,30 @@ public class CppProtocolTestGenerator implements ClientGenerator {
                 .collect(Collectors.toSet());
 
         set.addAll(requestShapes);
+        // NaN / Infinity test values are emitted as std::isnan and std::numeric_limits.
+        if (testSuite.getCases().stream().anyMatch(CppProtocolTestGenerator::hasNonFiniteFloat)) {
+            set.add("<cmath>");
+            set.add("<limits>");
+        }
         set.removeAll(HEADERS_TO_NOT_INCLUDE);
         return set.stream().sorted().collect(Collectors.toList());
+    }
+
+    private static boolean hasNonFiniteFloat(ProtocolTestCase testCase) {
+        // The model's Optional fields may themselves be null (deserialized), so unwrap defensively.
+        List<JsonNode> values = new ArrayList<>();
+        Optional<ProtocolTestCase.Input> input = testCase.getInput();
+        if (input != null && input.isPresent()) {
+            values.add(input.get().getParams());
+        }
+        Optional<ProtocolTestCase.Output> output = testCase.getOutput();
+        if (output != null && output.isPresent()) {
+            Optional<ProtocolTestCase.Output.SuccessResult> success = output.get().getSuccessResult();
+            if (success != null && success.isPresent() && success.get().getResult() != null) {
+                success.get().getResult().ifPresent(values::add);
+            }
+        }
+        return values.stream().filter(Objects::nonNull).map(JsonNode::toString)
+                .anyMatch(json -> json.contains("\"NaN\"") || json.contains("\"Infinity\"") || json.contains("\"-Infinity\""));
     }
 }

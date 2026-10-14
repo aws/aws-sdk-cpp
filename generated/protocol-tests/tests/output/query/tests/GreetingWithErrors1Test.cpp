@@ -11,16 +11,16 @@ using GreetingWithErrors1 = AWS_PROTOCOL_TEST_SUITE;
 using QueryProtocolClient = Aws::QueryProtocol::QueryProtocolClient;
 using namespace Aws::QueryProtocol::Model;
 
-AWS_PROTOCOL_TEST(GreetingWithErrors1, QueryCustomizedError) {
+AWS_PROTOCOL_TEST(GreetingWithErrors1, QueryComplexError) {
   QueryProtocolClient client(mockCredentials, mockConfig);
 
   OutputResponse mockRs;
-  mockRs.statusCode = 402;
+  mockRs.statusCode = 400;
   mockRs.headers = {{"Content-Type", R"(text/xml)"}};
   mockRs.body =
-      "PEVycm9yUmVzcG9uc2U+CiAgIDxFcnJvcj4KICAgICAgPFR5cGU+"
-      "U2VuZGVyPC9UeXBlPgogICAgICA8Q29kZT5DdXN0b21pemVkPC9Db2RlPgogICAgICA8TWVzc2FnZT5IaTwvTWVzc2FnZT4KICAgPC9FcnJvcj4KICAgPFJlcXVlc3RJZD5m"
-      "b28taWQ8L1JlcXVlc3RJZD4KPC9FcnJvclJlc3BvbnNlPgo=";
+      "PEVycm9yUmVzcG9uc2U+CiAgIDxFcnJvcj4KICAgICAgPFR5cGU+U2VuZGVyPC9UeXBlPgogICAgICA8Q29kZT5Db21wbGV4RXJyb3I8L0NvZGU+"
+      "CiAgICAgIDxUb3BMZXZlbD5Ub3AgbGV2ZWw8L1RvcExldmVsPgogICAgICA8TmVzdGVkPgogICAgICAgICAgPEZvbz5iYXI8L0Zvbz4KICAgICAgPC9OZXN0ZWQ+"
+      "CiAgIDwvRXJyb3I+CiAgIDxSZXF1ZXN0SWQ+Zm9vLWlkPC9SZXF1ZXN0SWQ+CjwvRXJyb3JSZXNwb25zZT4K";
   SetMockResponse(mockRs);
 
   GreetingWithErrorsRequest request;

@@ -5,6 +5,8 @@
 
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
+#include <aws/core/client/AWSClientBidirectionalStreaming.h>
+#include <aws/core/client/AWSClientEventStreamingAsyncTask.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
 #include <aws/core/http/HttpClient.h>
@@ -12,6 +14,7 @@
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/Outcome.h>
+#include <aws/core/utils/event/EventStream.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
 #include <aws/core/utils/logging/LogMacros.h>
@@ -28,6 +31,8 @@
 #include <aws/rest-json-protocol/model/DocumentTypeAsMapValueRequest.h>
 #include <aws/rest-json-protocol/model/DocumentTypeAsPayloadRequest.h>
 #include <aws/rest-json-protocol/model/DocumentTypeRequest.h>
+#include <aws/rest-json-protocol/model/DuplexStreamRequest.h>
+#include <aws/rest-json-protocol/model/DuplexStreamWithInitialMessagesRequest.h>
 #include <aws/rest-json-protocol/model/EmptyInputAndEmptyOutputRequest.h>
 #include <aws/rest-json-protocol/model/EndpointOperationRequest.h>
 #include <aws/rest-json-protocol/model/EndpointWithHostLabelOperationRequest.h>
@@ -66,6 +71,8 @@
 #include <aws/rest-json-protocol/model/NullAndEmptyHeadersServerRequest.h>
 #include <aws/rest-json-protocol/model/OmitsNullSerializesEmptyStringRequest.h>
 #include <aws/rest-json-protocol/model/OmitsSerializingEmptyListsRequest.h>
+#include <aws/rest-json-protocol/model/OutputStreamRequest.h>
+#include <aws/rest-json-protocol/model/OutputStreamWithInitialResponseRequest.h>
 #include <aws/rest-json-protocol/model/PostUnionWithJsonNameRequest.h>
 #include <aws/rest-json-protocol/model/PutWithContentEncodingRequest.h>
 #include <aws/rest-json-protocol/model/QueryIdempotencyTokenAutoFillRequest.h>
@@ -350,6 +357,163 @@ DocumentTypeAsPayloadOutcome RestJsonProtocolClient::DocumentTypeAsPayload(const
                             : DocumentTypeAsPayloadOutcome(std::move(result.GetError()));
 }
 
+void RestJsonProtocolClient::DuplexStreamAsync(Model::DuplexStreamRequest& request,
+                                               const DuplexStreamStreamReadyHandler& streamReadyHandler,
+                                               const DuplexStreamResponseReceivedHandler& handler,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const {
+  AWS_ASYNC_OPERATION_GUARD(DuplexStream);
+  if (!m_endpointProvider) {
+    handler(this, request,
+            DuplexStreamOutcome(Aws::Client::AWSError<RestJsonProtocolErrors>(RestJsonProtocolErrors::INTERNAL_FAILURE, "INTERNAL_FAILURE",
+                                                                              "Endpoint provider is not initialized", false)),
+            handlerContext);
+    return;
+  }
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+      [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+      TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+  if (!endpointResolutionOutcome.IsSuccess()) {
+    handler(this, request,
+            DuplexStreamOutcome(Aws::Client::AWSError<CoreErrors>(CoreErrors::ENDPOINT_RESOLUTION_FAILURE, "ENDPOINT_RESOLUTION_FAILURE",
+                                                                  endpointResolutionOutcome.GetError().GetMessage(), false)),
+            handlerContext);
+    return;
+  }
+  endpointResolutionOutcome.GetResult().AddPathSegments("/DuplexStream");
+
+#if AWS_SDK_USE_CRT_HTTP
+  // Push-based WriteData path (CRT HTTP client only)
+  auto writeDataStreamBuf = Aws::MakeShared<Aws::Utils::Stream::HttpWriteDataStreamBuf>(ALLOCATION_TAG, GetHttpClient(), 8 * 1024,
+                                                                                        m_clientConfiguration.requestTimeoutMs);
+  auto signer = GetSignerByName(Aws::Auth::EVENTSTREAM_SIGV4_SIGNER);
+
+  auto eventEncoderStream = Aws::MakeShared<Model::EventStream>(ALLOCATION_TAG, writeDataStreamBuf);
+  eventEncoderStream->SetSigner(signer);
+
+  auto requestCopy = Aws::MakeShared<DuplexStreamRequest>(ALLOCATION_TAG, request);
+  request.SetStream(eventEncoderStream);
+
+  auto& endpoint = endpointResolutionOutcome.GetResult();
+  auto httpRequest =
+      CreateHttpRequest(endpoint.GetURI(), Aws::Http::HttpMethod::HTTP_POST, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+  httpRequest->SetEventStreamRequest(true);
+  httpRequest->SetHasEventStreamResponse(true);
+  BuildHttpRequest(*requestCopy, httpRequest);
+
+  if (!signer->SignRequest(*httpRequest, nullptr, nullptr, true)) {
+    handler(this, request,
+            DuplexStreamOutcome(Aws::Client::AWSError<CoreErrors>(CoreErrors::CLIENT_SIGNING_FAILURE, "", "Failed to sign request", false)),
+            handlerContext);
+    return;
+  }
+  eventEncoderStream->SetSignatureSeed(Aws::Client::GetAuthorizationHeader(*httpRequest));
+
+  Aws::Client::SubmitBidirectionalStreamingRequest<RestJsonProtocolClient, DuplexStreamOutcome, DuplexStreamRequest, Model::EventStream>(
+      this, request, requestCopy, eventEncoderStream, writeDataStreamBuf, httpRequest, m_clientConfiguration.executor.get(),
+      streamReadyHandler, handler, handlerContext);
+#else
+  // Pull-based path (curl/WinHTTP)
+  auto eventEncoderStream = Aws::MakeShared<Model::EventStream>(ALLOCATION_TAG);
+  eventEncoderStream->SetSigner(GetSignerByName(Aws::Auth::EVENTSTREAM_SIGV4_SIGNER));
+  auto requestCopy = Aws::MakeShared<DuplexStreamRequest>("DuplexStream", request);
+  requestCopy->SetStream(eventEncoderStream);
+  request.SetStream(eventEncoderStream);
+
+  auto asyncTask = CreateBidirectionalEventStreamTask<DuplexStreamOutcome>(this, endpointResolutionOutcome.GetResultWithOwnership(),
+                                                                           requestCopy, handler, handlerContext, eventEncoderStream);
+  auto sem = asyncTask.GetSemaphore();
+  m_clientConfiguration.executor->Submit(std::move(asyncTask));
+  sem->WaitOne();
+  streamReadyHandler(*eventEncoderStream);
+#endif
+}
+void RestJsonProtocolClient::DuplexStreamWithInitialMessagesAsync(
+    Model::DuplexStreamWithInitialMessagesRequest& request, const DuplexStreamWithInitialMessagesStreamReadyHandler& streamReadyHandler,
+    const DuplexStreamWithInitialMessagesResponseReceivedHandler& handler,
+    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext) const {
+  AWS_ASYNC_OPERATION_GUARD(DuplexStreamWithInitialMessages);
+  if (!m_endpointProvider) {
+    handler(this, request,
+            DuplexStreamWithInitialMessagesOutcome(Aws::Client::AWSError<RestJsonProtocolErrors>(
+                RestJsonProtocolErrors::INTERNAL_FAILURE, "INTERNAL_FAILURE", "Endpoint provider is not initialized", false)),
+            handlerContext);
+    return;
+  }
+  if (!request.InitialRequestMemberHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DuplexStreamWithInitialMessages", "Required field: InitialRequestMember, is not set");
+    handler(this, request,
+            DuplexStreamWithInitialMessagesOutcome(Aws::Client::AWSError<RestJsonProtocolErrors>(
+                RestJsonProtocolErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InitialRequestMember]", false)),
+            handlerContext);
+    return;
+  }
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+      [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+      TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+  if (!endpointResolutionOutcome.IsSuccess()) {
+    handler(this, request,
+            DuplexStreamWithInitialMessagesOutcome(
+                Aws::Client::AWSError<CoreErrors>(CoreErrors::ENDPOINT_RESOLUTION_FAILURE, "ENDPOINT_RESOLUTION_FAILURE",
+                                                  endpointResolutionOutcome.GetError().GetMessage(), false)),
+            handlerContext);
+    return;
+  }
+  endpointResolutionOutcome.GetResult().AddPathSegments("/DuplexStreamWithInitialMessages");
+
+#if AWS_SDK_USE_CRT_HTTP
+  // Push-based WriteData path (CRT HTTP client only)
+  auto writeDataStreamBuf = Aws::MakeShared<Aws::Utils::Stream::HttpWriteDataStreamBuf>(ALLOCATION_TAG, GetHttpClient(), 8 * 1024,
+                                                                                        m_clientConfiguration.requestTimeoutMs);
+  auto signer = GetSignerByName(Aws::Auth::EVENTSTREAM_SIGV4_SIGNER);
+
+  auto eventEncoderStream = Aws::MakeShared<Model::EventStream>(ALLOCATION_TAG, writeDataStreamBuf);
+  eventEncoderStream->SetSigner(signer);
+
+  auto requestCopy = Aws::MakeShared<DuplexStreamWithInitialMessagesRequest>(ALLOCATION_TAG, request);
+  request.SetStream(eventEncoderStream);
+
+  auto& endpoint = endpointResolutionOutcome.GetResult();
+  auto httpRequest =
+      CreateHttpRequest(endpoint.GetURI(), Aws::Http::HttpMethod::HTTP_POST, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+  httpRequest->SetEventStreamRequest(true);
+  httpRequest->SetHasEventStreamResponse(true);
+  BuildHttpRequest(*requestCopy, httpRequest);
+
+  if (!signer->SignRequest(*httpRequest, nullptr, nullptr, true)) {
+    handler(this, request,
+            DuplexStreamWithInitialMessagesOutcome(
+                Aws::Client::AWSError<CoreErrors>(CoreErrors::CLIENT_SIGNING_FAILURE, "", "Failed to sign request", false)),
+            handlerContext);
+    return;
+  }
+  eventEncoderStream->SetSignatureSeed(Aws::Client::GetAuthorizationHeader(*httpRequest));
+
+  Aws::Client::SubmitBidirectionalStreamingRequest<RestJsonProtocolClient, DuplexStreamWithInitialMessagesOutcome,
+                                                   DuplexStreamWithInitialMessagesRequest, Model::EventStream>(
+      this, request, requestCopy, eventEncoderStream, writeDataStreamBuf, httpRequest, m_clientConfiguration.executor.get(),
+      streamReadyHandler, handler, handlerContext);
+#else
+  // Pull-based path (curl/WinHTTP)
+  auto eventEncoderStream = Aws::MakeShared<Model::EventStream>(ALLOCATION_TAG);
+  eventEncoderStream->SetSigner(GetSignerByName(Aws::Auth::EVENTSTREAM_SIGV4_SIGNER));
+  auto requestCopy = Aws::MakeShared<DuplexStreamWithInitialMessagesRequest>("DuplexStreamWithInitialMessages", request);
+  requestCopy->SetStream(eventEncoderStream);
+  request.SetStream(eventEncoderStream);
+
+  auto asyncTask = CreateBidirectionalEventStreamTask<DuplexStreamWithInitialMessagesOutcome>(
+      this, endpointResolutionOutcome.GetResultWithOwnership(), requestCopy, handler, handlerContext, eventEncoderStream);
+  auto sem = asyncTask.GetSemaphore();
+  m_clientConfiguration.executor->Submit(std::move(asyncTask));
+  sem->WaitOne();
+  streamReadyHandler(*eventEncoderStream);
+#endif
+}
 EmptyInputAndEmptyOutputOutcome RestJsonProtocolClient::EmptyInputAndEmptyOutput(const EmptyInputAndEmptyOutputRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -936,6 +1100,93 @@ OmitsSerializingEmptyListsOutcome RestJsonProtocolClient::OmitsSerializingEmptyL
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? OmitsSerializingEmptyListsOutcome(result.GetResultWithOwnership())
                             : OmitsSerializingEmptyListsOutcome(std::move(result.GetError()));
+}
+
+OutputStreamOutcome RestJsonProtocolClient::OutputStream(OutputStreamRequest& request) const {
+  AWS_OPERATION_GUARD(OutputStream);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, OutputStream, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, OutputStream, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, OutputStream, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".OutputStream",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<OutputStreamOutcome>(
+      [&]() -> OutputStreamOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, OutputStream, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/OutputStream");
+        request.SetResponseStreamFactory([&] {
+          request.GetEventStreamDecoder().Reset();
+          return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder());
+        });
+        if (!request.GetHeadersReceivedEventHandler()) {
+          request.SetHeadersReceivedEventHandler([&request](const Http::HttpRequest*, Http::HttpResponse* response) {
+            AWS_CHECK_PTR("OutputStream", response);
+            if (const auto initialResponseHandler = request.GetEventStreamHandler().GetInitialResponseCallbackEx()) {
+              initialResponseHandler({response->GetHeaders()}, Utils::Event::InitialResponseType::ON_RESPONSE);
+            }
+          });
+        }
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? OutputStreamOutcome(result.GetResultWithOwnership())
+                                  : OutputStreamOutcome(std::move(result.GetError()));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+OutputStreamWithInitialResponseOutcome RestJsonProtocolClient::OutputStreamWithInitialResponse(
+    OutputStreamWithInitialResponseRequest& request) const {
+  AWS_OPERATION_GUARD(OutputStreamWithInitialResponse);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, OutputStreamWithInitialResponse, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, OutputStreamWithInitialResponse, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, OutputStreamWithInitialResponse, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".OutputStreamWithInitialResponse",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<OutputStreamWithInitialResponseOutcome>(
+      [&]() -> OutputStreamWithInitialResponseOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, OutputStreamWithInitialResponse, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/OutputStreamWithInitialResponse");
+        request.SetResponseStreamFactory([&] {
+          request.GetEventStreamDecoder().Reset();
+          return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder());
+        });
+        if (!request.GetHeadersReceivedEventHandler()) {
+          request.SetHeadersReceivedEventHandler([&request](const Http::HttpRequest*, Http::HttpResponse* response) {
+            AWS_CHECK_PTR("OutputStreamWithInitialResponse", response);
+            if (const auto initialResponseHandler = request.GetEventStreamHandler().GetInitialResponseCallbackEx()) {
+              initialResponseHandler({response->GetHeaders()}, Utils::Event::InitialResponseType::ON_RESPONSE);
+            }
+          });
+        }
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? OutputStreamWithInitialResponseOutcome(result.GetResultWithOwnership())
+                                  : OutputStreamWithInitialResponseOutcome(std::move(result.GetError()));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
 PostUnionWithJsonNameOutcome RestJsonProtocolClient::PostUnionWithJsonName(const PostUnionWithJsonNameRequest& request) const {

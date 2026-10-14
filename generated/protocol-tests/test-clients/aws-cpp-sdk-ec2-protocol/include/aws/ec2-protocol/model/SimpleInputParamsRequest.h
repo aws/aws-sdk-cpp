@@ -199,6 +199,54 @@ class SimpleInputParamsRequest : public EC2ProtocolRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const Aws::String& GetDistinctQueryName() const { return m_distinctQueryName; }
+  inline bool DistinctQueryNameHasBeenSet() const { return m_distinctQueryNameHasBeenSet; }
+  template <typename DistinctQueryNameT = Aws::String>
+  void SetDistinctQueryName(DistinctQueryNameT&& value) {
+    m_distinctQueryNameHasBeenSet = true;
+    m_distinctQueryName = std::forward<DistinctQueryNameT>(value);
+  }
+  template <typename DistinctQueryNameT = Aws::String>
+  SimpleInputParamsRequest& WithDistinctQueryName(DistinctQueryNameT&& value) {
+    SetDistinctQueryName(std::forward<DistinctQueryNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetDistinctQueryAndXmlName() const { return m_distinctQueryAndXmlName; }
+  inline bool DistinctQueryAndXmlNameHasBeenSet() const { return m_distinctQueryAndXmlNameHasBeenSet; }
+  template <typename DistinctQueryAndXmlNameT = Aws::String>
+  void SetDistinctQueryAndXmlName(DistinctQueryAndXmlNameT&& value) {
+    m_distinctQueryAndXmlNameHasBeenSet = true;
+    m_distinctQueryAndXmlName = std::forward<DistinctQueryAndXmlNameT>(value);
+  }
+  template <typename DistinctQueryAndXmlNameT = Aws::String>
+  SimpleInputParamsRequest& WithDistinctQueryAndXmlName(DistinctQueryAndXmlNameT&& value) {
+    SetDistinctQueryAndXmlName(std::forward<DistinctQueryAndXmlNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetDistinctXmlName() const { return m_distinctXmlName; }
+  inline bool DistinctXmlNameHasBeenSet() const { return m_distinctXmlNameHasBeenSet; }
+  template <typename DistinctXmlNameT = Aws::String>
+  void SetDistinctXmlName(DistinctXmlNameT&& value) {
+    m_distinctXmlNameHasBeenSet = true;
+    m_distinctXmlName = std::forward<DistinctXmlNameT>(value);
+  }
+  template <typename DistinctXmlNameT = Aws::String>
+  SimpleInputParamsRequest& WithDistinctXmlName(DistinctXmlNameT&& value) {
+    SetDistinctXmlName(std::forward<DistinctXmlNameT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_foo;
 
@@ -221,6 +269,12 @@ class SimpleInputParamsRequest : public EC2ProtocolRequest {
   Aws::String m_hasQueryAndXmlName;
 
   Aws::String m_usesXmlName;
+
+  Aws::String m_distinctQueryName;
+
+  Aws::String m_distinctQueryAndXmlName;
+
+  Aws::String m_distinctXmlName;
   bool m_fooHasBeenSet = false;
   bool m_barHasBeenSet = false;
   bool m_bazHasBeenSet = false;
@@ -232,6 +286,9 @@ class SimpleInputParamsRequest : public EC2ProtocolRequest {
   bool m_hasQueryNameHasBeenSet = false;
   bool m_hasQueryAndXmlNameHasBeenSet = false;
   bool m_usesXmlNameHasBeenSet = false;
+  bool m_distinctQueryNameHasBeenSet = false;
+  bool m_distinctQueryAndXmlNameHasBeenSet = false;
+  bool m_distinctXmlNameHasBeenSet = false;
 };
 
 }  // namespace Model
