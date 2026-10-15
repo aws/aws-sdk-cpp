@@ -3,64 +3,116 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/http/URI.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/rest-xml-protocol/model/XmlEnumsRequest.h>
+#include <smithy/client/schema/ClientProtocol.h>
+#include <smithy/client/schema/DocumentConversion.h>
+#include <smithy/client/schema/HttpTraits.h>
+#include <smithy/client/schema/MapSerializer.h>
+#include <smithy/client/schema/Schema.h>
+#include <smithy/client/schema/SchemaBuilder.h>
+#include <smithy/client/schema/SerdeTraits.h>
+#include <smithy/client/schema/SerializableStruct.h>
+#include <smithy/client/schema/ShapeSerializer.h>
+#include <smithy/client/schema/XmlTraits.h>
 
+#include <numeric>
 #include <utility>
 
 using namespace Aws::RestXmlProtocol::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+using namespace Aws::Http;
 
-Aws::String XmlEnumsRequest::SerializePayload() const {
-  XmlDocument payloadDoc = XmlDocument::CreateWithRootNode("XmlEnumsRequest");
+namespace {
+class XmlEnumsRequestSerializable final : public smithy::schema::SerializableStruct {
+ public:
+  explicit XmlEnumsRequestSerializable(const XmlEnumsRequest& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
+  void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
+  void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
+  static std::shared_ptr<const smithy::schema::Schema> BuildSchema();
 
-  XmlNode parentNode = payloadDoc.GetRootElement();
+ private:
+  const XmlEnumsRequest& m_obj;
+  const std::shared_ptr<const smithy::schema::Schema> m_schema;
+};
 
-  Aws::StringStream ss;
-  if (m_fooEnum1HasBeenSet) {
-    XmlNode fooEnum1Node = parentNode.CreateChildElement("fooEnum1");
-    fooEnum1Node.SetText(FooEnumMapper::GetNameForFooEnum(m_fooEnum1));
+void XmlEnumsRequestSerializable::SerializeMembers(smithy::schema::ShapeSerializer& serializer) const {
+  if (m_obj.FooEnum1HasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("fooEnum1").value();
+    serializer.WriteString(memberSchema, FooEnumMapper::GetNameForFooEnum(m_obj.GetFooEnum1()));
   }
-
-  if (m_fooEnum2HasBeenSet) {
-    XmlNode fooEnum2Node = parentNode.CreateChildElement("fooEnum2");
-    fooEnum2Node.SetText(FooEnumMapper::GetNameForFooEnum(m_fooEnum2));
+  if (m_obj.FooEnum2HasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("fooEnum2").value();
+    serializer.WriteString(memberSchema, FooEnumMapper::GetNameForFooEnum(m_obj.GetFooEnum2()));
   }
-
-  if (m_fooEnum3HasBeenSet) {
-    XmlNode fooEnum3Node = parentNode.CreateChildElement("fooEnum3");
-    fooEnum3Node.SetText(FooEnumMapper::GetNameForFooEnum(m_fooEnum3));
+  if (m_obj.FooEnum3HasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("fooEnum3").value();
+    serializer.WriteString(memberSchema, FooEnumMapper::GetNameForFooEnum(m_obj.GetFooEnum3()));
   }
-
-  if (m_fooEnumListHasBeenSet) {
-    XmlNode fooEnumListParentNode = parentNode.CreateChildElement("fooEnumList");
-    for (const auto& item : m_fooEnumList) {
-      XmlNode fooEnumListNode = fooEnumListParentNode.CreateChildElement("member");
-      fooEnumListNode.SetText(FooEnumMapper::GetNameForFooEnum(item));
-    }
+  if (m_obj.FooEnumListHasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("fooEnumList").value();
+    serializer.WriteList(memberSchema, m_obj.GetFooEnumList().size(), [&](smithy::schema::ShapeSerializer& listSerializer0) {
+      const smithy::schema::Schema& itemSchema0 = *memberSchema.GetMemberTarget().value()->GetMember("member").value();
+      for (const auto& item0 : m_obj.GetFooEnumList()) {
+        listSerializer0.WriteString(itemSchema0, FooEnumMapper::GetNameForFooEnum(item0));
+      }
+    });
   }
-
-  if (m_fooEnumSetHasBeenSet) {
-    XmlNode fooEnumSetParentNode = parentNode.CreateChildElement("fooEnumSet");
-    for (const auto& item : m_fooEnumSet) {
-      XmlNode fooEnumSetNode = fooEnumSetParentNode.CreateChildElement("member");
-      fooEnumSetNode.SetText(FooEnumMapper::GetNameForFooEnum(item));
-    }
+  if (m_obj.FooEnumSetHasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("fooEnumSet").value();
+    serializer.WriteList(memberSchema, m_obj.GetFooEnumSet().size(), [&](smithy::schema::ShapeSerializer& listSerializer0) {
+      const smithy::schema::Schema& itemSchema0 = *memberSchema.GetMemberTarget().value()->GetMember("member").value();
+      for (const auto& item0 : m_obj.GetFooEnumSet()) {
+        listSerializer0.WriteString(itemSchema0, FooEnumMapper::GetNameForFooEnum(item0));
+      }
+    });
   }
-
-  if (m_fooEnumMapHasBeenSet) {
-    XmlNode fooEnumMapParentNode = parentNode.CreateChildElement("fooEnumMap");
-    for (const auto& mapItem : m_fooEnumMap) {
-      XmlNode fooEnumMapMapEntryNode = fooEnumMapParentNode.CreateChildElement("entry");
-      XmlNode fooEnumMapKeyNode = fooEnumMapMapEntryNode.CreateChildElement("key");
-      fooEnumMapKeyNode.SetText(mapItem.first);
-      XmlNode fooEnumMapValueNode = fooEnumMapMapEntryNode.CreateChildElement("value");
-      fooEnumMapValueNode.SetText(FooEnumMapper::GetNameForFooEnum(mapItem.second));
-    }
+  if (m_obj.FooEnumMapHasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("fooEnumMap").value();
+    serializer.WriteMap(memberSchema, m_obj.GetFooEnumMap().size(), [&](smithy::schema::MapSerializer& mapSerializer0) {
+      const smithy::schema::Schema& valueSchema0 = *memberSchema.GetMemberTarget().value()->GetMember("value").value();
+      for (const auto& entry0 : m_obj.GetFooEnumMap()) {
+        mapSerializer0.WriteEntry(entry0.first, [&](smithy::schema::ShapeSerializer& valueSerializer0) {
+          valueSerializer0.WriteString(valueSchema0, FooEnumMapper::GetNameForFooEnum(entry0.second));
+        });
+      }
+    });
   }
+}
 
-  return payloadDoc.ConvertToString();
+std::shared_ptr<const smithy::schema::Schema> XmlEnumsRequestSerializable::BuildSchema() {
+  return smithy::schema::Schema::StructureBuilder("XmlEnumsRequest")
+      .PutMember("fooEnum1", smithy::schema::Schema::CreateEnum("fooEnum1"))
+      .PutMember("fooEnum2", smithy::schema::Schema::CreateEnum("fooEnum2"))
+      .PutMember("fooEnum3", smithy::schema::Schema::CreateEnum("fooEnum3"))
+      .PutMember(
+          "fooEnumList",
+          smithy::schema::Schema::ListBuilder("FooEnumList").PutMember("member", smithy::schema::Schema::CreateEnum("member")).Build())
+      .PutMember(
+          "fooEnumSet",
+          smithy::schema::Schema::ListBuilder("FooEnumSet").PutMember("member", smithy::schema::Schema::CreateEnum("member")).Build())
+      .PutMember("fooEnumMap", smithy::schema::Schema::MapBuilder("FooEnumMap")
+                                   .PutMember("key", smithy::schema::Schema::CreateString("key"))
+                                   .PutMember("value", smithy::schema::Schema::CreateEnum("value"))
+                                   .Build())
+      .Build();
+}
+
+}  // namespace
+
+Aws::UniquePtr<smithy::schema::SerializableStruct> XmlEnumsRequest::GetSchemaSerdeInput() const {
+  return Aws::MakeUnique<XmlEnumsRequestSerializable>("XmlEnumsRequestSerializable", *this);
+}
+
+Aws::String XmlEnumsRequest::SerializePayload() const { return {}; }
+smithy::schema::OperationRequestContext XmlEnumsRequest::GetSchemaSerdeContext() const {
+  return {"XmlEnums", "2019-12-16", "/XmlEnums", ""};
 }

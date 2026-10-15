@@ -35,6 +35,8 @@ class KitchenSinkOperationRequest : public JsonProtocolRequest {
   inline virtual const char* GetServiceRequestName() const override { return "KitchenSinkOperation"; }
 
   AWS_JSONPROTOCOL_API Aws::String SerializePayload() const override;
+  AWS_JSONPROTOCOL_API smithy::schema::OperationRequestContext GetSchemaSerdeContext() const override;
+  AWS_JSONPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeInput() const override;
 
   AWS_JSONPROTOCOL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
@@ -503,22 +505,6 @@ class KitchenSinkOperationRequest : public JsonProtocolRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-
-  inline const Aws::String& GetRequestId() const { return m_requestId; }
-  inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-  template <typename RequestIdT = Aws::String>
-  void SetRequestId(RequestIdT&& value) {
-    m_requestIdHasBeenSet = true;
-    m_requestId = std::forward<RequestIdT>(value);
-  }
-  template <typename RequestIdT = Aws::String>
-  KitchenSinkOperationRequest& WithRequestId(RequestIdT&& value) {
-    SetRequestId(std::forward<RequestIdT>(value));
-    return *this;
-  }
-  ///@}
  private:
   Aws::Utils::ByteBuffer m_blob{};
 
@@ -571,8 +557,6 @@ class KitchenSinkOperationRequest : public JsonProtocolRequest {
   Aws::Utils::DateTime m_timestamp{};
 
   Aws::Utils::DateTime m_unixTimestamp{};
-
-  Aws::String m_requestId;
   bool m_blobHasBeenSet = false;
   bool m_booleanHasBeenSet = false;
   bool m_doubleHasBeenSet = false;
@@ -599,7 +583,6 @@ class KitchenSinkOperationRequest : public JsonProtocolRequest {
   bool m_structWithJsonNameHasBeenSet = false;
   bool m_timestampHasBeenSet = false;
   bool m_unixTimestampHasBeenSet = false;
-  bool m_requestIdHasBeenSet = false;
 };
 
 }  // namespace Model

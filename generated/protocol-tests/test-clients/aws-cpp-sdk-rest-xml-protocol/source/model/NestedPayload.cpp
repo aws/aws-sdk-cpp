@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/rest-xml-protocol/model/NestedPayload.h>
@@ -19,37 +20,9 @@ namespace Model {
 
 NestedPayload::NestedPayload(const XmlNode& xmlNode) { *this = xmlNode; }
 
-NestedPayload& NestedPayload::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+NestedPayload& NestedPayload::operator=(const XmlNode&) { return *this; }
 
-  if (!resultNode.IsNull()) {
-    XmlNode greetingNode = resultNode.FirstChild("greeting");
-    if (!greetingNode.IsNull()) {
-      m_greeting = Aws::Utils::Xml::DecodeEscapedXmlText(greetingNode.GetText());
-      m_greetingHasBeenSet = true;
-    }
-    XmlNode nameNode = resultNode.FirstChild("name");
-    if (!nameNode.IsNull()) {
-      m_name = Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText());
-      m_nameHasBeenSet = true;
-    }
-  }
-
-  return *this;
-}
-
-void NestedPayload::AddToNode(XmlNode& parentNode) const {
-  Aws::StringStream ss;
-  if (m_greetingHasBeenSet) {
-    XmlNode greetingNode = parentNode.CreateChildElement("greeting");
-    greetingNode.SetText(m_greeting);
-  }
-
-  if (m_nameHasBeenSet) {
-    XmlNode nameNode = parentNode.CreateChildElement("name");
-    nameNode.SetText(m_name);
-  }
-}
+void NestedPayload::AddToNode(XmlNode&) const {}
 
 }  // namespace Model
 }  // namespace RestXmlProtocol

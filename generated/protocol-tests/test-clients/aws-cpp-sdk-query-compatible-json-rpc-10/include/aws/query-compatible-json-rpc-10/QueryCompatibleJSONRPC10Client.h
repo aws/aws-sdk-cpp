@@ -4,22 +4,29 @@
  */
 
 #pragma once
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/query-compatible-json-rpc-10/QueryCompatibleJSONRPC10ErrorMarshaller.h>
 #include <aws/query-compatible-json-rpc-10/QueryCompatibleJSONRPC10ServiceClientModel.h>
 #include <aws/query-compatible-json-rpc-10/QueryCompatibleJSONRPC10_EXPORTS.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <smithy/identity/auth/built-in/GenericAuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
 
 namespace Aws {
 namespace QueryCompatibleJSONRPC10 {
+AWS_QUERYCOMPATIBLEJSONRPC10_API extern const char SERVICE_NAME[];
 class AWS_QUERYCOMPATIBLEJSONRPC10_API QueryCompatibleJSONRPC10Client
-    : public Aws::Client::AWSJsonClient,
-      public Aws::Client::ClientWithAsyncTemplateMethods<QueryCompatibleJSONRPC10Client> {
+    : Aws::Client::ClientWithAsyncTemplateMethods<QueryCompatibleJSONRPC10Client>,
+      public smithy::client::AwsSmithyClientT<
+          Aws::QueryCompatibleJSONRPC10::SERVICE_NAME, Aws::QueryCompatibleJSONRPC10::QueryCompatibleJSONRPC10ClientConfiguration,
+          smithy::AuthSchemeResolverBase<>, Aws::Crt::Variant<smithy::SigV4AuthScheme>, QueryCompatibleJSONRPC10EndpointProviderBase,
+          smithy::client::JsonOutcomeSerializer, smithy::client::JsonOutcome, Aws::Client::QueryCompatibleJSONRPC10ErrorMarshaller> {
  public:
-  typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
   static const char* GetAllocationTag();
+  inline const char* GetServiceClientName() const override { return "Query Compatible JSON RPC 10"; }
 
   typedef QueryCompatibleJSONRPC10ClientConfiguration ClientConfigurationType;
   typedef QueryCompatibleJSONRPC10EndpointProvider EndpointProviderType;
@@ -104,14 +111,11 @@ class AWS_QUERYCOMPATIBLEJSONRPC10_API QueryCompatibleJSONRPC10Client
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<QueryCompatibleJSONRPC10Client>;
-  void init(const QueryCompatibleJSONRPC10ClientConfiguration& clientConfiguration);
 
-  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, QueryCompatibleJSONRPC10Error> InvokeOperationOutcome;
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>, QueryCompatibleJSONRPC10Error>
+      InvokeOperationOutcome;
 
   InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
-
-  QueryCompatibleJSONRPC10ClientConfiguration m_clientConfiguration;
-  std::shared_ptr<QueryCompatibleJSONRPC10EndpointProviderBase> m_endpointProvider;
 };
 
 }  // namespace QueryCompatibleJSONRPC10

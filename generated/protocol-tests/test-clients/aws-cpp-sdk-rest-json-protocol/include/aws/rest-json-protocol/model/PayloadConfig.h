@@ -16,6 +16,8 @@ class JsonView;
 namespace RestJsonProtocol {
 namespace Model {
 
+/**
+ */
 class PayloadConfig {
  public:
   AWS_RESTJSONPROTOCOL_API PayloadConfig() = default;

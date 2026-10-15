@@ -18,12 +18,13 @@ class XmlNode;
 namespace RestXmlProtocol {
 namespace Model {
 
+/**
+ */
 class ComplexNestedErrorData {
  public:
   AWS_RESTXMLPROTOCOL_API ComplexNestedErrorData() = default;
   AWS_RESTXMLPROTOCOL_API ComplexNestedErrorData(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_RESTXMLPROTOCOL_API ComplexNestedErrorData& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_RESTXMLPROTOCOL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

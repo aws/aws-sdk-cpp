@@ -4,11 +4,21 @@
  */
 
 #include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/rest-json-protocol/model/HttpChecksumRequiredResult.h>
+#include <smithy/client/schema/DocumentConversion.h>
+#include <smithy/client/schema/HttpTraits.h>
+#include <smithy/client/schema/JsonTraits.h>
+#include <smithy/client/schema/Schema.h>
+#include <smithy/client/schema/SchemaBuilder.h>
+#include <smithy/client/schema/SerdeTraits.h>
+#include <smithy/client/schema/SerializableStruct.h>
+#include <smithy/client/schema/ShapeDeserializer.h>
 
 #include <utility>
 
@@ -21,11 +31,7 @@ HttpChecksumRequiredResult::HttpChecksumRequiredResult(const Aws::AmazonWebServi
 
 HttpChecksumRequiredResult& HttpChecksumRequiredResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
-  JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("foo")) {
-    m_foo = jsonValue.GetString("foo");
-    m_fooHasBeenSet = true;
-  }
+  AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
@@ -35,4 +41,42 @@ HttpChecksumRequiredResult& HttpChecksumRequiredResult::operator=(const Aws::Ama
   }
 
   return *this;
+}
+
+namespace {
+class HttpChecksumRequiredResultDeserializable final : public smithy::schema::SerializableStruct {
+ public:
+  explicit HttpChecksumRequiredResultDeserializable(HttpChecksumRequiredResult& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
+  void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
+  void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
+  static std::shared_ptr<const smithy::schema::Schema> BuildSchema();
+
+ private:
+  HttpChecksumRequiredResult& m_obj;
+  const std::shared_ptr<const smithy::schema::Schema> m_schema;
+};
+
+void HttpChecksumRequiredResultDeserializable::From(const smithy::schema::Schema& memberSchema,
+                                                    smithy::schema::ShapeDeserializer& deserializer) {
+  const Aws::String memberName = memberSchema.GetMemberName();
+  if (memberName == "foo") {
+    auto value0 = deserializer.ReadString(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetFoo(*value0);
+    }
+    return;
+  }
+}
+
+std::shared_ptr<const smithy::schema::Schema> HttpChecksumRequiredResultDeserializable::BuildSchema() {
+  return smithy::schema::Schema::StructureBuilder("HttpChecksumRequiredResult")
+      .PutMember("foo", smithy::schema::Schema::CreateString("foo"))
+      .Build();
+}
+
+}  // namespace
+
+Aws::UniquePtr<smithy::schema::SerializableStruct> HttpChecksumRequiredResult::GetSchemaSerdeOutput() {
+  return Aws::MakeUnique<HttpChecksumRequiredResultDeserializable>("HttpChecksumRequiredResultDeserializable", *this);
 }

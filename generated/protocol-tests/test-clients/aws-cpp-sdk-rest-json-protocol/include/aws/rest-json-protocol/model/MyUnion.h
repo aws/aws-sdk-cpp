@@ -28,8 +28,8 @@ namespace RestJsonProtocol {
 namespace Model {
 
 /**
- * <p>A union with a representative set of types for members.</p><p><h3>See
- * Also:</h3>   <a
+ * A union with a representative set of types for members.<p><h3>See Also:</h3>
+ * <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/MyUnion">AWS
  * API Reference</a></p>
  */

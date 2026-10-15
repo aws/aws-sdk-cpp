@@ -19,6 +19,8 @@ class JsonView;
 namespace RestJsonProtocol {
 namespace Model {
 
+/**
+ */
 class HeadersAndImplicitPayloadEvent {
  public:
   AWS_RESTJSONPROTOCOL_API HeadersAndImplicitPayloadEvent() = default;

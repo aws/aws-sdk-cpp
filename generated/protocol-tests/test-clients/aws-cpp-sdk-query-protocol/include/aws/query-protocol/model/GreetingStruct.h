@@ -19,14 +19,15 @@ class XmlNode;
 namespace QueryProtocol {
 namespace Model {
 
+/**
+ */
 class GreetingStruct {
  public:
   AWS_QUERYPROTOCOL_API GreetingStruct() = default;
   AWS_QUERYPROTOCOL_API GreetingStruct(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_QUERYPROTOCOL_API GreetingStruct& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_QUERYPROTOCOL_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-  AWS_QUERYPROTOCOL_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
+  AWS_QUERYPROTOCOL_API void OutputToStream(Aws::OStream& ostream, const char* location) const;
 
   ///@{
 

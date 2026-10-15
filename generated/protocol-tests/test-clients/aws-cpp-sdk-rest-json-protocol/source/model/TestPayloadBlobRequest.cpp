@@ -14,15 +14,3 @@ using namespace Aws::RestJsonProtocol::Model;
 using namespace Aws::Utils::Stream;
 using namespace Aws::Utils;
 using namespace Aws;
-
-Aws::Http::HeaderValueCollection TestPayloadBlobRequest::GetRequestSpecificHeaders() const {
-  Aws::Http::HeaderValueCollection headers;
-  Aws::StringStream ss;
-  if (m_requestIdHasBeenSet) {
-    ss << m_requestId;
-    headers.emplace("x-amzn-requestid", ss.str());
-    ss.str("");
-  }
-
-  return headers;
-}

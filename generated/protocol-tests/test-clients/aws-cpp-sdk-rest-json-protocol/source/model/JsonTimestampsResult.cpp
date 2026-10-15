@@ -4,11 +4,21 @@
  */
 
 #include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/rest-json-protocol/model/JsonTimestampsResult.h>
+#include <smithy/client/schema/DocumentConversion.h>
+#include <smithy/client/schema/HttpTraits.h>
+#include <smithy/client/schema/JsonTraits.h>
+#include <smithy/client/schema/Schema.h>
+#include <smithy/client/schema/SchemaBuilder.h>
+#include <smithy/client/schema/SerdeTraits.h>
+#include <smithy/client/schema/SerializableStruct.h>
+#include <smithy/client/schema/ShapeDeserializer.h>
 
 #include <utility>
 
@@ -21,35 +31,7 @@ JsonTimestampsResult::JsonTimestampsResult(const Aws::AmazonWebServiceResult<Jso
 
 JsonTimestampsResult& JsonTimestampsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
-  JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("normal")) {
-    m_normal = jsonValue.GetDouble("normal");
-    m_normalHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("dateTime")) {
-    m_dateTime = jsonValue.GetString("dateTime");
-    m_dateTimeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("dateTimeOnTarget")) {
-    m_dateTimeOnTarget = jsonValue.GetString("dateTimeOnTarget");
-    m_dateTimeOnTargetHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("epochSeconds")) {
-    m_epochSeconds = jsonValue.GetDouble("epochSeconds");
-    m_epochSecondsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("epochSecondsOnTarget")) {
-    m_epochSecondsOnTarget = jsonValue.GetDouble("epochSecondsOnTarget");
-    m_epochSecondsOnTargetHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("httpDate")) {
-    m_httpDate = jsonValue.GetString("httpDate");
-    m_httpDateHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("httpDateOnTarget")) {
-    m_httpDateOnTarget = jsonValue.GetString("httpDateOnTarget");
-    m_httpDateOnTargetHasBeenSet = true;
-  }
+  AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
@@ -59,4 +41,107 @@ JsonTimestampsResult& JsonTimestampsResult::operator=(const Aws::AmazonWebServic
   }
 
   return *this;
+}
+
+namespace {
+class JsonTimestampsResultDeserializable final : public smithy::schema::SerializableStruct {
+ public:
+  explicit JsonTimestampsResultDeserializable(JsonTimestampsResult& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
+  void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
+  void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
+  static std::shared_ptr<const smithy::schema::Schema> BuildSchema();
+
+ private:
+  JsonTimestampsResult& m_obj;
+  const std::shared_ptr<const smithy::schema::Schema> m_schema;
+};
+
+void JsonTimestampsResultDeserializable::From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) {
+  const Aws::String memberName = memberSchema.GetMemberName();
+  if (memberName == "normal") {
+    auto value0 = deserializer.ReadTimestamp(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetNormal(*value0);
+    }
+    return;
+  }
+  if (memberName == "dateTime") {
+    auto value0 = deserializer.ReadTimestamp(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetDateTime(*value0);
+    }
+    return;
+  }
+  if (memberName == "dateTimeOnTarget") {
+    auto value0 = deserializer.ReadTimestamp(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetDateTimeOnTarget(*value0);
+    }
+    return;
+  }
+  if (memberName == "epochSeconds") {
+    auto value0 = deserializer.ReadTimestamp(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetEpochSeconds(*value0);
+    }
+    return;
+  }
+  if (memberName == "epochSecondsOnTarget") {
+    auto value0 = deserializer.ReadTimestamp(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetEpochSecondsOnTarget(*value0);
+    }
+    return;
+  }
+  if (memberName == "httpDate") {
+    auto value0 = deserializer.ReadTimestamp(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetHttpDate(*value0);
+    }
+    return;
+  }
+  if (memberName == "httpDateOnTarget") {
+    auto value0 = deserializer.ReadTimestamp(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetHttpDateOnTarget(*value0);
+    }
+    return;
+  }
+}
+
+std::shared_ptr<const smithy::schema::Schema> JsonTimestampsResultDeserializable::BuildSchema() {
+  return smithy::schema::Schema::StructureBuilder("JsonTimestampsResult")
+      .PutMember("normal", smithy::schema::Schema::CreateTimestamp("normal"))
+      .PutMember(
+          "dateTime", smithy::schema::Schema::CreateTimestamp("dateTime"),
+          {{smithy::schema::TimestampFormatTrait::KEY(), Aws::MakeShared<smithy::schema::TimestampFormatTrait>(
+                                                             "SchemaSerdeTrait", smithy::schema::TimestampFormatTrait::Format::DATE_TIME)}})
+      .PutMember(
+          "dateTimeOnTarget", smithy::schema::Schema::CreateTimestamp("dateTimeOnTarget"),
+          {{smithy::schema::TimestampFormatTrait::KEY(), Aws::MakeShared<smithy::schema::TimestampFormatTrait>(
+                                                             "SchemaSerdeTrait", smithy::schema::TimestampFormatTrait::Format::DATE_TIME)}})
+      .PutMember("epochSeconds", smithy::schema::Schema::CreateTimestamp("epochSeconds"),
+                 {{smithy::schema::TimestampFormatTrait::KEY(),
+                   Aws::MakeShared<smithy::schema::TimestampFormatTrait>("SchemaSerdeTrait",
+                                                                         smithy::schema::TimestampFormatTrait::Format::EPOCH_SECONDS)}})
+      .PutMember("epochSecondsOnTarget", smithy::schema::Schema::CreateTimestamp("epochSecondsOnTarget"),
+                 {{smithy::schema::TimestampFormatTrait::KEY(),
+                   Aws::MakeShared<smithy::schema::TimestampFormatTrait>("SchemaSerdeTrait",
+                                                                         smithy::schema::TimestampFormatTrait::Format::EPOCH_SECONDS)}})
+      .PutMember(
+          "httpDate", smithy::schema::Schema::CreateTimestamp("httpDate"),
+          {{smithy::schema::TimestampFormatTrait::KEY(), Aws::MakeShared<smithy::schema::TimestampFormatTrait>(
+                                                             "SchemaSerdeTrait", smithy::schema::TimestampFormatTrait::Format::HTTP_DATE)}})
+      .PutMember(
+          "httpDateOnTarget", smithy::schema::Schema::CreateTimestamp("httpDateOnTarget"),
+          {{smithy::schema::TimestampFormatTrait::KEY(), Aws::MakeShared<smithy::schema::TimestampFormatTrait>(
+                                                             "SchemaSerdeTrait", smithy::schema::TimestampFormatTrait::Format::HTTP_DATE)}})
+      .Build();
+}
+
+}  // namespace
+
+Aws::UniquePtr<smithy::schema::SerializableStruct> JsonTimestampsResult::GetSchemaSerdeOutput() {
+  return Aws::MakeUnique<JsonTimestampsResultDeserializable>("JsonTimestampsResultDeserializable", *this);
 }

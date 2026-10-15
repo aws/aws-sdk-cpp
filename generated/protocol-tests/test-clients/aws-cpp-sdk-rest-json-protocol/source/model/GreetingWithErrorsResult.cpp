@@ -4,11 +4,21 @@
  */
 
 #include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/rest-json-protocol/model/GreetingWithErrorsResult.h>
+#include <smithy/client/schema/DocumentConversion.h>
+#include <smithy/client/schema/HttpTraits.h>
+#include <smithy/client/schema/JsonTraits.h>
+#include <smithy/client/schema/Schema.h>
+#include <smithy/client/schema/SchemaBuilder.h>
+#include <smithy/client/schema/SerdeTraits.h>
+#include <smithy/client/schema/SerializableStruct.h>
+#include <smithy/client/schema/ShapeDeserializer.h>
 
 #include <utility>
 
@@ -24,12 +34,6 @@ GreetingWithErrorsResult& GreetingWithErrorsResult::operator=(const Aws::AmazonW
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();
-  const auto& greetingIter = headers.find("x-greeting");
-  if (greetingIter != headers.end()) {
-    m_greeting = greetingIter->second;
-    m_greetingHasBeenSet = true;
-  }
-
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
@@ -37,4 +41,44 @@ GreetingWithErrorsResult& GreetingWithErrorsResult::operator=(const Aws::AmazonW
   }
 
   return *this;
+}
+
+namespace {
+class GreetingWithErrorsResultDeserializable final : public smithy::schema::SerializableStruct {
+ public:
+  explicit GreetingWithErrorsResultDeserializable(GreetingWithErrorsResult& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
+  void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
+  void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
+  static std::shared_ptr<const smithy::schema::Schema> BuildSchema();
+
+ private:
+  GreetingWithErrorsResult& m_obj;
+  const std::shared_ptr<const smithy::schema::Schema> m_schema;
+};
+
+void GreetingWithErrorsResultDeserializable::From(const smithy::schema::Schema& memberSchema,
+                                                  smithy::schema::ShapeDeserializer& deserializer) {
+  const Aws::String memberName = memberSchema.GetMemberName();
+  if (memberName == "greeting") {
+    auto value0 = deserializer.ReadString(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetGreeting(*value0);
+    }
+    return;
+  }
+}
+
+std::shared_ptr<const smithy::schema::Schema> GreetingWithErrorsResultDeserializable::BuildSchema() {
+  return smithy::schema::Schema::StructureBuilder("GreetingWithErrorsResult")
+      .PutMember(
+          "greeting", smithy::schema::Schema::CreateString("greeting"),
+          {{smithy::schema::HttpHeaderTrait::KEY(), Aws::MakeShared<smithy::schema::HttpHeaderTrait>("SchemaSerdeTrait", "X-Greeting")}})
+      .Build();
+}
+
+}  // namespace
+
+Aws::UniquePtr<smithy::schema::SerializableStruct> GreetingWithErrorsResult::GetSchemaSerdeOutput() {
+  return Aws::MakeUnique<GreetingWithErrorsResultDeserializable>("GreetingWithErrorsResultDeserializable", *this);
 }

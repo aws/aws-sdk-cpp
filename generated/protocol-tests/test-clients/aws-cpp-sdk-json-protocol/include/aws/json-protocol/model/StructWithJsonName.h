@@ -19,6 +19,8 @@ class JsonView;
 namespace JsonProtocol {
 namespace Model {
 
+/**
+ */
 class StructWithJsonName {
  public:
   AWS_JSONPROTOCOL_API StructWithJsonName() = default;

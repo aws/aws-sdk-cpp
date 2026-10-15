@@ -24,6 +24,7 @@ class QueryCompatibleOperationRequest : public QueryCompatibleJSONRPC10Request {
   inline virtual const char* GetServiceRequestName() const override { return "QueryCompatibleOperation"; }
 
   AWS_QUERYCOMPATIBLEJSONRPC10_API Aws::String SerializePayload() const override;
+  AWS_QUERYCOMPATIBLEJSONRPC10_API smithy::schema::OperationRequestContext GetSchemaSerdeContext() const override;
 
   AWS_QUERYCOMPATIBLEJSONRPC10_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 };

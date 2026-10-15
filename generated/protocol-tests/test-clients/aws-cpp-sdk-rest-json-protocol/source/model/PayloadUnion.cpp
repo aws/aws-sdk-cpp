@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/rest-json-protocol/model/PayloadUnion.h>
 
 #include <utility>
@@ -17,21 +20,10 @@ namespace Model {
 
 PayloadUnion::PayloadUnion(JsonView jsonValue) { *this = jsonValue; }
 
-PayloadUnion& PayloadUnion::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("unionMember")) {
-    m_unionMember = jsonValue.GetString("unionMember");
-    m_unionMemberHasBeenSet = true;
-  }
-  return *this;
-}
+PayloadUnion& PayloadUnion::operator=(JsonView) { return *this; }
 
 JsonValue PayloadUnion::Jsonize() const {
   JsonValue payload;
-
-  if (m_unionMemberHasBeenSet) {
-    payload.WithString("unionMember", m_unionMember);
-  }
-
   return payload;
 }
 

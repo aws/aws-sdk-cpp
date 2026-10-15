@@ -4,21 +4,29 @@
  */
 
 #pragma once
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/rest-json-protocol/RestJsonProtocolErrorMarshaller.h>
 #include <aws/rest-json-protocol/RestJsonProtocolServiceClientModel.h>
 #include <aws/rest-json-protocol/RestJsonProtocol_EXPORTS.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <smithy/identity/auth/built-in/GenericAuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
 
 namespace Aws {
 namespace RestJsonProtocol {
-class AWS_RESTJSONPROTOCOL_API RestJsonProtocolClient : public Aws::Client::AWSJsonClient,
-                                                        public Aws::Client::ClientWithAsyncTemplateMethods<RestJsonProtocolClient> {
+AWS_RESTJSONPROTOCOL_API extern const char SERVICE_NAME[];
+class AWS_RESTJSONPROTOCOL_API RestJsonProtocolClient
+    : Aws::Client::ClientWithAsyncTemplateMethods<RestJsonProtocolClient>,
+      public smithy::client::AwsSmithyClientT<
+          Aws::RestJsonProtocol::SERVICE_NAME, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration, smithy::AuthSchemeResolverBase<>,
+          Aws::Crt::Variant<smithy::SigV4AuthScheme>, RestJsonProtocolEndpointProviderBase, smithy::client::JsonOutcomeSerializer,
+          smithy::client::JsonOutcome, Aws::Client::RestJsonProtocolErrorMarshaller> {
  public:
-  typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
   static const char* GetAllocationTag();
+  inline const char* GetServiceClientName() const override { return "Rest Json Protocol"; }
 
   typedef RestJsonProtocolClientConfiguration ClientConfigurationType;
   typedef RestJsonProtocolEndpointProvider EndpointProviderType;
@@ -1989,16 +1997,12 @@ class AWS_RESTJSONPROTOCOL_API RestJsonProtocolClient : public Aws::Client::AWSJ
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<RestJsonProtocolClient>;
-  void init(const RestJsonProtocolClientConfiguration& clientConfiguration);
 
-  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, RestJsonProtocolError> InvokeOperationOutcome;
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>, RestJsonProtocolError> InvokeOperationOutcome;
 
   InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
-                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                const std::function<void(Aws::Endpoint::AWSEndpoint&)>& resolveUri,
                                                 Aws::Http::HttpMethod httpMethod) const;
-
-  RestJsonProtocolClientConfiguration m_clientConfiguration;
-  std::shared_ptr<RestJsonProtocolEndpointProviderBase> m_endpointProvider;
 };
 
 }  // namespace RestJsonProtocol

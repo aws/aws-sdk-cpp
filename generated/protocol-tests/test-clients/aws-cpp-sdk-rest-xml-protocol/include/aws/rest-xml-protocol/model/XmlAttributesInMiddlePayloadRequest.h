@@ -18,12 +18,13 @@ class XmlNode;
 namespace RestXmlProtocol {
 namespace Model {
 
+/**
+ */
 class XmlAttributesInMiddlePayloadRequest {
  public:
   AWS_RESTXMLPROTOCOL_API XmlAttributesInMiddlePayloadRequest() = default;
   AWS_RESTXMLPROTOCOL_API XmlAttributesInMiddlePayloadRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_RESTXMLPROTOCOL_API XmlAttributesInMiddlePayloadRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_RESTXMLPROTOCOL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

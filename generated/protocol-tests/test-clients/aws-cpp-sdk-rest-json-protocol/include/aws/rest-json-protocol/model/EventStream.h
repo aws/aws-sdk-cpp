@@ -5,7 +5,6 @@
 
 #pragma once
 #include <aws/core/utils/event/EventStream.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/stream/HttpWriteDataStreamBuf.h>
 #include <aws/rest-json-protocol/RestJsonProtocol_EXPORTS.h>
 #include <aws/rest-json-protocol/model/BlobPayloadEvent.h>
@@ -22,6 +21,8 @@ namespace Aws {
 namespace RestJsonProtocol {
 namespace Model {
 
+/**
+ */
 class AWS_RESTJSONPROTOCOL_API EventStream : public Aws::Utils::Event::EventEncoderStream {
  public:
   EventStream() = default;
@@ -86,8 +87,8 @@ class AWS_RESTJSONPROTOCOL_API EventStream : public Aws::Utils::Event::EventEnco
     Aws::Utils::Event::Message msg;
     msg.InsertEventHeader(":message-type", Aws::String("event"));
     msg.InsertEventHeader(":event-type", Aws::String("headersAndImplicitPayload"));
-    msg.InsertEventHeader(":content-type", Aws::String("application/json"));
-    msg.WriteEventPayload(value.Jsonize().View().WriteCompact());
+    msg.InsertEventHeader(":content-type", Aws::String("text/plain"));
+    msg.WriteEventPayload(value.GetPayload());
     WriteEvent(msg);
     return *this;
   }

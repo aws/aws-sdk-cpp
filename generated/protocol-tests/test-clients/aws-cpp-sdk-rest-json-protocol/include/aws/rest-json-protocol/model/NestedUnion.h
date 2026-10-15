@@ -20,8 +20,7 @@ namespace RestJsonProtocol {
 namespace Model {
 
 /**
- * <p>A union used to test unions nested inside unions.</p><p><h3>See Also:</h3>
- * <a
+ * A union used to test unions nested inside unions.<p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/NestedUnion">AWS
  * API Reference</a></p>
  */

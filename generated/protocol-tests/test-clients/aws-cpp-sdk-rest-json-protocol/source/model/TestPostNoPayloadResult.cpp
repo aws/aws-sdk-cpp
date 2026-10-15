@@ -4,11 +4,21 @@
  */
 
 #include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/rest-json-protocol/model/TestPostNoPayloadResult.h>
+#include <smithy/client/schema/DocumentConversion.h>
+#include <smithy/client/schema/HttpTraits.h>
+#include <smithy/client/schema/JsonTraits.h>
+#include <smithy/client/schema/Schema.h>
+#include <smithy/client/schema/SchemaBuilder.h>
+#include <smithy/client/schema/SerdeTraits.h>
+#include <smithy/client/schema/SerializableStruct.h>
+#include <smithy/client/schema/ShapeDeserializer.h>
 
 #include <utility>
 
@@ -24,12 +34,6 @@ TestPostNoPayloadResult& TestPostNoPayloadResult::operator=(const Aws::AmazonWeb
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();
-  const auto& testIdIter = headers.find("x-amz-test-id");
-  if (testIdIter != headers.end()) {
-    m_testId = testIdIter->second;
-    m_testIdHasBeenSet = true;
-  }
-
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
@@ -37,4 +41,44 @@ TestPostNoPayloadResult& TestPostNoPayloadResult::operator=(const Aws::AmazonWeb
   }
 
   return *this;
+}
+
+namespace {
+class TestPostNoPayloadResultDeserializable final : public smithy::schema::SerializableStruct {
+ public:
+  explicit TestPostNoPayloadResultDeserializable(TestPostNoPayloadResult& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
+  void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
+  void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
+  static std::shared_ptr<const smithy::schema::Schema> BuildSchema();
+
+ private:
+  TestPostNoPayloadResult& m_obj;
+  const std::shared_ptr<const smithy::schema::Schema> m_schema;
+};
+
+void TestPostNoPayloadResultDeserializable::From(const smithy::schema::Schema& memberSchema,
+                                                 smithy::schema::ShapeDeserializer& deserializer) {
+  const Aws::String memberName = memberSchema.GetMemberName();
+  if (memberName == "testId") {
+    auto value0 = deserializer.ReadString(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetTestId(*value0);
+    }
+    return;
+  }
+}
+
+std::shared_ptr<const smithy::schema::Schema> TestPostNoPayloadResultDeserializable::BuildSchema() {
+  return smithy::schema::Schema::StructureBuilder("TestPostNoPayloadResult")
+      .PutMember(
+          "testId", smithy::schema::Schema::CreateString("testId"),
+          {{smithy::schema::HttpHeaderTrait::KEY(), Aws::MakeShared<smithy::schema::HttpHeaderTrait>("SchemaSerdeTrait", "X-Amz-Test-Id")}})
+      .Build();
+}
+
+}  // namespace
+
+Aws::UniquePtr<smithy::schema::SerializableStruct> TestPostNoPayloadResult::GetSchemaSerdeOutput() {
+  return Aws::MakeUnique<TestPostNoPayloadResultDeserializable>("TestPostNoPayloadResultDeserializable", *this);
 }

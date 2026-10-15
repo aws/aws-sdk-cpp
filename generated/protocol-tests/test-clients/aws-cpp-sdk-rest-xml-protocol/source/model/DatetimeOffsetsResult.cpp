@@ -4,10 +4,21 @@
  */
 
 #include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/rest-xml-protocol/model/DatetimeOffsetsResult.h>
+#include <smithy/client/schema/DocumentConversion.h>
+#include <smithy/client/schema/HttpTraits.h>
+#include <smithy/client/schema/Schema.h>
+#include <smithy/client/schema/SchemaBuilder.h>
+#include <smithy/client/schema/SerdeTraits.h>
+#include <smithy/client/schema/SerializableStruct.h>
+#include <smithy/client/schema/ShapeDeserializer.h>
+#include <smithy/client/schema/XmlTraits.h>
 
 #include <utility>
 
@@ -20,17 +31,7 @@ DatetimeOffsetsResult::DatetimeOffsetsResult(const Aws::AmazonWebServiceResult<X
 
 DatetimeOffsetsResult& DatetimeOffsetsResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   m_HttpResponseCode = result.GetResponseCode();
-  const XmlDocument& xmlDocument = result.GetPayload();
-  XmlNode resultNode = xmlDocument.GetRootElement();
-
-  if (!resultNode.IsNull()) {
-    XmlNode datetimeNode = resultNode.FirstChild("datetime");
-    if (!datetimeNode.IsNull()) {
-      m_datetime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(datetimeNode.GetText()).c_str()).c_str(),
-                            Aws::Utils::DateFormat::ISO_8601);
-      m_datetimeHasBeenSet = true;
-    }
-  }
+  AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
@@ -40,4 +41,45 @@ DatetimeOffsetsResult& DatetimeOffsetsResult::operator=(const Aws::AmazonWebServ
   }
 
   return *this;
+}
+
+namespace {
+class DatetimeOffsetsResultDeserializable final : public smithy::schema::SerializableStruct {
+ public:
+  explicit DatetimeOffsetsResultDeserializable(DatetimeOffsetsResult& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
+  void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
+  void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
+  static std::shared_ptr<const smithy::schema::Schema> BuildSchema();
+
+ private:
+  DatetimeOffsetsResult& m_obj;
+  const std::shared_ptr<const smithy::schema::Schema> m_schema;
+};
+
+void DatetimeOffsetsResultDeserializable::From(const smithy::schema::Schema& memberSchema,
+                                               smithy::schema::ShapeDeserializer& deserializer) {
+  const Aws::String memberName = memberSchema.GetMemberName();
+  if (memberName == "datetime") {
+    auto value0 = deserializer.ReadTimestamp(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetDatetime(*value0);
+    }
+    return;
+  }
+}
+
+std::shared_ptr<const smithy::schema::Schema> DatetimeOffsetsResultDeserializable::BuildSchema() {
+  return smithy::schema::Schema::StructureBuilder("DatetimeOffsetsResult")
+      .PutMember(
+          "datetime", smithy::schema::Schema::CreateTimestamp("datetime"),
+          {{smithy::schema::TimestampFormatTrait::KEY(), Aws::MakeShared<smithy::schema::TimestampFormatTrait>(
+                                                             "SchemaSerdeTrait", smithy::schema::TimestampFormatTrait::Format::DATE_TIME)}})
+      .Build();
+}
+
+}  // namespace
+
+Aws::UniquePtr<smithy::schema::SerializableStruct> DatetimeOffsetsResult::GetSchemaSerdeOutput() {
+  return Aws::MakeUnique<DatetimeOffsetsResultDeserializable>("DatetimeOffsetsResultDeserializable", *this);
 }

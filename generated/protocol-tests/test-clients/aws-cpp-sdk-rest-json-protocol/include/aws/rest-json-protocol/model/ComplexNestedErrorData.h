@@ -19,6 +19,8 @@ class JsonView;
 namespace RestJsonProtocol {
 namespace Model {
 
+/**
+ */
 class ComplexNestedErrorData {
  public:
   AWS_RESTJSONPROTOCOL_API ComplexNestedErrorData() = default;

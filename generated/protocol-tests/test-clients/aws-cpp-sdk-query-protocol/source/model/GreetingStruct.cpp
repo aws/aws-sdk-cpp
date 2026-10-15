@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/query-protocol/model/GreetingStruct.h>
@@ -19,31 +22,11 @@ namespace Model {
 
 GreetingStruct::GreetingStruct(const XmlNode& xmlNode) { *this = xmlNode; }
 
-GreetingStruct& GreetingStruct::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+GreetingStruct& GreetingStruct::operator=(const XmlNode&) { return *this; }
 
-  if (!resultNode.IsNull()) {
-    XmlNode hiNode = resultNode.FirstChild("hi");
-    if (!hiNode.IsNull()) {
-      m_hi = Aws::Utils::Xml::DecodeEscapedXmlText(hiNode.GetText());
-      m_hiHasBeenSet = true;
-    }
-  }
+void GreetingStruct::OutputToStream(Aws::OStream&, const char*, unsigned, const char*) const {}
 
-  return *this;
-}
-
-void GreetingStruct::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
-  if (m_hiHasBeenSet) {
-    oStream << location << index << locationValue << ".hi=" << StringUtils::URLEncode(m_hi.c_str()) << "&";
-  }
-}
-
-void GreetingStruct::OutputToStream(Aws::OStream& oStream, const char* location) const {
-  if (m_hiHasBeenSet) {
-    oStream << location << ".hi=" << StringUtils::URLEncode(m_hi.c_str()) << "&";
-  }
-}
+void GreetingStruct::OutputToStream(Aws::OStream&, const char*) const {}
 
 }  // namespace Model
 }  // namespace QueryProtocol

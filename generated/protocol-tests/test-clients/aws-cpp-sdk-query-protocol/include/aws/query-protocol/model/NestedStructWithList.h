@@ -20,14 +20,15 @@ class XmlNode;
 namespace QueryProtocol {
 namespace Model {
 
+/**
+ */
 class NestedStructWithList {
  public:
   AWS_QUERYPROTOCOL_API NestedStructWithList() = default;
   AWS_QUERYPROTOCOL_API NestedStructWithList(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_QUERYPROTOCOL_API NestedStructWithList& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_QUERYPROTOCOL_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-  AWS_QUERYPROTOCOL_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
+  AWS_QUERYPROTOCOL_API void OutputToStream(Aws::OStream& ostream, const char* location) const;
 
   ///@{
 

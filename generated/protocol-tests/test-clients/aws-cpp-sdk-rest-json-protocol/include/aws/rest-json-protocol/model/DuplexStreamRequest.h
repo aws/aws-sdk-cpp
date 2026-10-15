@@ -35,6 +35,7 @@ class DuplexStreamRequest : public RestJsonProtocolRequest {
   // This request is sent by encoding its data in event-streams which is sent as IOStream via GetBody()
   AWS_RESTJSONPROTOCOL_API Aws::String SerializePayload() const override { return {}; }
   AWS_RESTJSONPROTOCOL_API std::shared_ptr<Aws::IOStream> GetBody() const override;
+
   /**
    * Underlying Event Stream Decoder.
    */
@@ -62,7 +63,6 @@ class DuplexStreamRequest : public RestJsonProtocolRequest {
   }
 
   ///@{
-
   AWS_RESTJSONPROTOCOL_API std::shared_ptr<EventStream> GetStream() const { return m_stream; }
   AWS_RESTJSONPROTOCOL_API void SetStream(const std::shared_ptr<EventStream>& value) {
     m_streamHasBeenSet = true;
@@ -72,7 +72,6 @@ class DuplexStreamRequest : public RestJsonProtocolRequest {
     SetStream(value);
     return *this;
   }
-
   ///@}
  private:
   std::shared_ptr<EventStream> m_stream;

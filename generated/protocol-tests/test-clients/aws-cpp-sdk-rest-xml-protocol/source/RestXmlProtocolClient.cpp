@@ -84,6 +84,10 @@
 #include <aws/rest-xml-protocol/model/XmlNamespacesRequest.h>
 #include <aws/rest-xml-protocol/model/XmlTimestampsRequest.h>
 #include <aws/rest-xml-protocol/model/XmlUnionsRequest.h>
+#include <smithy/client/schema/ClientProtocol.h>
+#include <smithy/identity/resolver/built-in/AwsCredentialsProviderIdentityResolver.h>
+#include <smithy/identity/resolver/built-in/DefaultAwsCredentialIdentityResolver.h>
+#include <smithy/identity/resolver/built-in/SimpleAwsCredentialIdentityResolver.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -107,120 +111,119 @@ const char* RestXmlProtocolClient::GetAllocationTag() { return ALLOCATION_TAG; }
 
 RestXmlProtocolClient::RestXmlProtocolClient(const RestXmlProtocol::RestXmlProtocolClientConfiguration& clientConfiguration,
                                              std::shared_ptr<RestXmlProtocolEndpointProviderBase> endpointProvider)
-    : BASECLASS(
-          clientConfiguration,
-          Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
-              ALLOCATION_TAG,
-              Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
-              SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-          Aws::MakeShared<RestXmlProtocolErrorMarshaller>(ALLOCATION_TAG)),
-      m_clientConfiguration(clientConfiguration),
-      m_endpointProvider(endpointProvider ? std::move(endpointProvider)
-                                          : Aws::MakeShared<RestXmlProtocolEndpointProvider>(ALLOCATION_TAG)) {
-  init(m_clientConfiguration);
+    : AwsSmithyClientT(clientConfiguration, GetServiceName(), "Rest Xml Protocol", Aws::Http::CreateHttpClient(clientConfiguration),
+                       Aws::MakeShared<RestXmlProtocolErrorMarshaller>(ALLOCATION_TAG),
+                       endpointProvider ? endpointProvider : Aws::MakeShared<RestXmlProtocolEndpointProvider>(ALLOCATION_TAG),
+                       Aws::MakeShared<smithy::GenericAuthSchemeResolver<>>(
+                           ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption})),
+                       {
+                           {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
+                            smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region,
+                                                    clientConfiguration.ResolveCredentialProviderConfig()}},
+                       }) {
+  SetClientProtocol(Aws::MakeShared<smithy::schema::RestXmlProtocol>(ALLOCATION_TAG));
 }
 
 RestXmlProtocolClient::RestXmlProtocolClient(const AWSCredentials& credentials,
                                              std::shared_ptr<RestXmlProtocolEndpointProviderBase> endpointProvider,
                                              const RestXmlProtocol::RestXmlProtocolClientConfiguration& clientConfiguration)
-    : BASECLASS(clientConfiguration,
-                Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
-                    ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials), SERVICE_NAME,
-                    Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-                Aws::MakeShared<RestXmlProtocolErrorMarshaller>(ALLOCATION_TAG)),
-      m_clientConfiguration(clientConfiguration),
-      m_endpointProvider(endpointProvider ? std::move(endpointProvider)
-                                          : Aws::MakeShared<RestXmlProtocolEndpointProvider>(ALLOCATION_TAG)) {
-  init(m_clientConfiguration);
+    : AwsSmithyClientT(
+          clientConfiguration, GetServiceName(), "Rest Xml Protocol", Aws::Http::CreateHttpClient(clientConfiguration),
+          Aws::MakeShared<RestXmlProtocolErrorMarshaller>(ALLOCATION_TAG),
+          endpointProvider ? endpointProvider : Aws::MakeShared<RestXmlProtocolEndpointProvider>(ALLOCATION_TAG),
+          Aws::MakeShared<smithy::GenericAuthSchemeResolver<>>(
+              ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption})),
+          {
+              {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
+               smithy::SigV4AuthScheme{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials),
+                                       GetServiceName(), clientConfiguration.region}},
+          }) {
+  SetClientProtocol(Aws::MakeShared<smithy::schema::RestXmlProtocol>(ALLOCATION_TAG));
 }
 
 RestXmlProtocolClient::RestXmlProtocolClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
                                              std::shared_ptr<RestXmlProtocolEndpointProviderBase> endpointProvider,
                                              const RestXmlProtocol::RestXmlProtocolClientConfiguration& clientConfiguration)
-    : BASECLASS(clientConfiguration,
-                Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
-                                                                      Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-                Aws::MakeShared<RestXmlProtocolErrorMarshaller>(ALLOCATION_TAG)),
-      m_clientConfiguration(clientConfiguration),
-      m_endpointProvider(endpointProvider ? std::move(endpointProvider)
-                                          : Aws::MakeShared<RestXmlProtocolEndpointProvider>(ALLOCATION_TAG)) {
-  init(m_clientConfiguration);
+    : AwsSmithyClientT(
+          clientConfiguration, GetServiceName(), "Rest Xml Protocol", Aws::Http::CreateHttpClient(clientConfiguration),
+          Aws::MakeShared<RestXmlProtocolErrorMarshaller>(ALLOCATION_TAG),
+          endpointProvider ? endpointProvider : Aws::MakeShared<RestXmlProtocolEndpointProvider>(ALLOCATION_TAG),
+          Aws::MakeShared<smithy::GenericAuthSchemeResolver<>>(
+              ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption})),
+          {
+              {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
+               smithy::SigV4AuthScheme{Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider),
+                                       GetServiceName(), clientConfiguration.region}},
+          }) {
+  SetClientProtocol(Aws::MakeShared<smithy::schema::RestXmlProtocol>(ALLOCATION_TAG));
 }
 
 /* Legacy constructors due deprecation */
 RestXmlProtocolClient::RestXmlProtocolClient(const Aws::Client::ClientConfiguration& clientConfiguration)
-    : BASECLASS(
-          clientConfiguration,
-          Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
-              ALLOCATION_TAG,
-              Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
-              SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-          Aws::MakeShared<RestXmlProtocolErrorMarshaller>(ALLOCATION_TAG)),
-      m_clientConfiguration(clientConfiguration),
-      m_endpointProvider(Aws::MakeShared<RestXmlProtocolEndpointProvider>(ALLOCATION_TAG)) {
-  init(m_clientConfiguration);
+    : AwsSmithyClientT(clientConfiguration, GetServiceName(), "Rest Xml Protocol", Aws::Http::CreateHttpClient(clientConfiguration),
+                       Aws::MakeShared<RestXmlProtocolErrorMarshaller>(ALLOCATION_TAG),
+                       Aws::MakeShared<RestXmlProtocolEndpointProvider>(ALLOCATION_TAG),
+                       Aws::MakeShared<smithy::GenericAuthSchemeResolver<>>(
+                           ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption})),
+                       {
+                           {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
+                            smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region,
+                                                    clientConfiguration.ResolveCredentialProviderConfig()}},
+                       }) {
+  SetClientProtocol(Aws::MakeShared<smithy::schema::RestXmlProtocol>(ALLOCATION_TAG));
 }
 
 RestXmlProtocolClient::RestXmlProtocolClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
-    : BASECLASS(clientConfiguration,
-                Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
-                    ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials), SERVICE_NAME,
-                    Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-                Aws::MakeShared<RestXmlProtocolErrorMarshaller>(ALLOCATION_TAG)),
-      m_clientConfiguration(clientConfiguration),
-      m_endpointProvider(Aws::MakeShared<RestXmlProtocolEndpointProvider>(ALLOCATION_TAG)) {
-  init(m_clientConfiguration);
+    : AwsSmithyClientT(
+          clientConfiguration, GetServiceName(), "Rest Xml Protocol", Aws::Http::CreateHttpClient(clientConfiguration),
+          Aws::MakeShared<RestXmlProtocolErrorMarshaller>(ALLOCATION_TAG), Aws::MakeShared<RestXmlProtocolEndpointProvider>(ALLOCATION_TAG),
+          Aws::MakeShared<smithy::GenericAuthSchemeResolver<>>(
+              ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption})),
+          {
+              {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
+               smithy::SigV4AuthScheme{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials),
+                                       GetServiceName(), clientConfiguration.region}},
+          }) {
+  SetClientProtocol(Aws::MakeShared<smithy::schema::RestXmlProtocol>(ALLOCATION_TAG));
 }
 
 RestXmlProtocolClient::RestXmlProtocolClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
                                              const Aws::Client::ClientConfiguration& clientConfiguration)
-    : BASECLASS(clientConfiguration,
-                Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
-                                                                      Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-                Aws::MakeShared<RestXmlProtocolErrorMarshaller>(ALLOCATION_TAG)),
-      m_clientConfiguration(clientConfiguration),
-      m_endpointProvider(Aws::MakeShared<RestXmlProtocolEndpointProvider>(ALLOCATION_TAG)) {
-  init(m_clientConfiguration);
+    : AwsSmithyClientT(
+          clientConfiguration, GetServiceName(), "Rest Xml Protocol", Aws::Http::CreateHttpClient(clientConfiguration),
+          Aws::MakeShared<RestXmlProtocolErrorMarshaller>(ALLOCATION_TAG), Aws::MakeShared<RestXmlProtocolEndpointProvider>(ALLOCATION_TAG),
+          Aws::MakeShared<smithy::GenericAuthSchemeResolver<>>(
+              ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption})),
+          {
+              {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
+               smithy::SigV4AuthScheme{Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider),
+                                       GetServiceName(), clientConfiguration.region}},
+          }) {
+  SetClientProtocol(Aws::MakeShared<smithy::schema::RestXmlProtocol>(ALLOCATION_TAG));
 }
-
 /* End of legacy constructors due deprecation */
+
 RestXmlProtocolClient::~RestXmlProtocolClient() { ShutdownSdkClient(this, -1); }
 
 std::shared_ptr<RestXmlProtocolEndpointProviderBase>& RestXmlProtocolClient::accessEndpointProvider() { return m_endpointProvider; }
-
-void RestXmlProtocolClient::init(const RestXmlProtocol::RestXmlProtocolClientConfiguration& config) {
-  AWSClient::SetServiceClientName("Rest Xml Protocol");
-  if (!m_clientConfiguration.executor) {
-    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
-      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
-      m_isInitialized = false;
-      return;
-    }
-    m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
-  }
-  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config, "restxml");
-}
 
 void RestXmlProtocolClient::OverrideEndpoint(const Aws::String& endpoint) {
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_clientConfiguration.endpointOverride = endpoint;
   m_endpointProvider->OverrideEndpoint(endpoint);
 }
-
 RestXmlProtocolClient::InvokeOperationOutcome RestXmlProtocolClient::InvokeServiceOperation(
-    const AmazonWebServiceRequest& request, const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+    const AmazonWebServiceRequest& request, const std::function<void(Aws::Endpoint::AWSEndpoint&)>& resolveUri,
     Aws::Http::HttpMethod httpMethod) const {
   auto operationName = request.GetServiceRequestName();
   auto serviceName = GetServiceClientName();
 
   AWS_OPERATION_GUARD_DYNAMIC(operationName);
 
-  AWS_OPERATION_CHECK_PTR_DYNAMIC(m_endpointProvider, operationName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR_DYNAMIC(m_telemetryProvider, operationName, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  AWS_OPERATION_CHECK_PTR_DYNAMIC(m_clientConfiguration.telemetryProvider, operationName, CoreErrors, CoreErrors::NOT_INITIALIZED);
 
-  auto tracer = m_telemetryProvider->getTracer(serviceName, {});
-  auto meter = m_telemetryProvider->getMeter(serviceName, {});
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(serviceName, {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(serviceName, {});
   AWS_OPERATION_CHECK_PTR_DYNAMIC(meter, operationName, CoreErrors, CoreErrors::NOT_INITIALIZED);
 
   auto span = tracer->CreateSpan(Aws::String(serviceName) + "." + operationName,
@@ -231,56 +234,71 @@ RestXmlProtocolClient::InvokeOperationOutcome RestXmlProtocolClient::InvokeServi
 
   return TracingUtils::MakeCallWithTiming<InvokeOperationOutcome>(
       [&]() -> InvokeOperationOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
-
-        AWS_OPERATION_CHECK_SUCCESS_DYNAMIC(endpointResolutionOutcome, operationName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                            endpointResolutionOutcome.GetError().GetMessage());
-
-        resolveUri(endpointResolutionOutcome);
-
-        return InvokeOperationOutcome{MakeRequest(request, endpointResolutionOutcome.GetResult(), httpMethod, Aws::Auth::SIGV4_SIGNER)};
+        auto result = MakeRequestDeserialize(&request, operationName, httpMethod,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolveUri(resolvedEndpoint); });
+        return result.IsSuccess() ? InvokeOperationOutcome(result.GetResultWithOwnership())
+                                  : InvokeOperationOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
 }
 AllQueryStringTypesOutcome RestXmlProtocolClient::AllQueryStringTypes(const AllQueryStringTypesRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/AllQueryStringTypesInput");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
-  return result.IsSuccess() ? AllQueryStringTypesOutcome(result.GetResultWithOwnership())
-                            : AllQueryStringTypesOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/AllQueryStringTypesInput");
+      },
+      Aws::Http::HttpMethod::HTTP_GET);
+  if (!result.IsSuccess()) {
+    return AllQueryStringTypesOutcome(std::move(result.GetError()));
+  }
+  return AllQueryStringTypesOutcome(result.GetResultWithOwnership());
 }
 
 BodyWithXmlNameOutcome RestXmlProtocolClient::BodyWithXmlName(const BodyWithXmlNameRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/BodyWithXmlName");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
-  return result.IsSuccess() ? BodyWithXmlNameOutcome(result.GetResultWithOwnership())
-                            : BodyWithXmlNameOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/BodyWithXmlName");
+      },
+      Aws::Http::HttpMethod::HTTP_PUT);
+  if (!result.IsSuccess()) {
+    return BodyWithXmlNameOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return BodyWithXmlNameOutcome(
+      BuildOperationResult<BodyWithXmlNameResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 ConstantAndVariableQueryStringOutcome RestXmlProtocolClient::ConstantAndVariableQueryString(
     const ConstantAndVariableQueryStringRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    Aws::StringStream ss;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/ConstantAndVariableQueryString");
-    ss.str("?foo=bar");
-    endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
-  return result.IsSuccess() ? ConstantAndVariableQueryStringOutcome(result.GetResultWithOwnership())
-                            : ConstantAndVariableQueryStringOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        Aws::StringStream ss;
+        resolvedEndpoint.AddPathSegments("/ConstantAndVariableQueryString");
+        ss.str("?foo=bar");
+        resolvedEndpoint.SetQueryString(ss.str());
+      },
+      Aws::Http::HttpMethod::HTTP_GET);
+  if (!result.IsSuccess()) {
+    return ConstantAndVariableQueryStringOutcome(std::move(result.GetError()));
+  }
+  return ConstantAndVariableQueryStringOutcome(result.GetResultWithOwnership());
 }
 
 ConstantQueryStringOutcome RestXmlProtocolClient::ConstantQueryString(const ConstantQueryStringRequest& request) const {
@@ -290,62 +308,104 @@ ConstantQueryStringOutcome RestXmlProtocolClient::ConstantQueryString(const Cons
         RestXmlProtocolErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Hello]", false));
   }
 
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    Aws::StringStream ss;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/ConstantQueryString/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHello());
-    ss.str("?foo=bar&hello");
-    endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
-  return result.IsSuccess() ? ConstantQueryStringOutcome(result.GetResultWithOwnership())
-                            : ConstantQueryStringOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        Aws::StringStream ss;
+        resolvedEndpoint.AddPathSegments("/ConstantQueryString/");
+        resolvedEndpoint.AddPathSegment(request.GetHello());
+        ss.str("?foo=bar&hello");
+        resolvedEndpoint.SetQueryString(ss.str());
+      },
+      Aws::Http::HttpMethod::HTTP_GET);
+  if (!result.IsSuccess()) {
+    return ConstantQueryStringOutcome(std::move(result.GetError()));
+  }
+  return ConstantQueryStringOutcome(result.GetResultWithOwnership());
 }
 
 ContentTypeParametersOutcome RestXmlProtocolClient::ContentTypeParameters(const ContentTypeParametersRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/ContentTypeParameters");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
-  return result.IsSuccess() ? ContentTypeParametersOutcome(result.GetResultWithOwnership())
-                            : ContentTypeParametersOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/ContentTypeParameters");
+      },
+      Aws::Http::HttpMethod::HTTP_PUT);
+  if (!result.IsSuccess()) {
+    return ContentTypeParametersOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return ContentTypeParametersOutcome(
+      BuildOperationResult<ContentTypeParametersResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 DatetimeOffsetsOutcome RestXmlProtocolClient::DatetimeOffsets(const DatetimeOffsetsRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/DatetimeOffsets");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DatetimeOffsetsOutcome(result.GetResultWithOwnership())
-                            : DatetimeOffsetsOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/DatetimeOffsets");
+      },
+      Aws::Http::HttpMethod::HTTP_POST);
+  if (!result.IsSuccess()) {
+    return DatetimeOffsetsOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return DatetimeOffsetsOutcome(
+      BuildOperationResult<DatetimeOffsetsResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 EmptyInputAndEmptyOutputOutcome RestXmlProtocolClient::EmptyInputAndEmptyOutput(const EmptyInputAndEmptyOutputRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/EmptyInputAndEmptyOutput");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? EmptyInputAndEmptyOutputOutcome(result.GetResultWithOwnership())
-                            : EmptyInputAndEmptyOutputOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/EmptyInputAndEmptyOutput");
+      },
+      Aws::Http::HttpMethod::HTTP_POST);
+  if (!result.IsSuccess()) {
+    return EmptyInputAndEmptyOutputOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return EmptyInputAndEmptyOutputOutcome(
+      BuildOperationResult<EmptyInputAndEmptyOutputResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 EndpointOperationOutcome RestXmlProtocolClient::EndpointOperation(const EndpointOperationRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/EndpointOperation");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? EndpointOperationOutcome(result.GetResultWithOwnership())
-                            : EndpointOperationOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/EndpointOperation");
+      },
+      Aws::Http::HttpMethod::HTTP_POST);
+  if (!result.IsSuccess()) {
+    return EndpointOperationOutcome(std::move(result.GetError()));
+  }
+  return EndpointOperationOutcome(result.GetResultWithOwnership());
 }
 
 EndpointWithHostLabelHeaderOperationOutcome RestXmlProtocolClient::EndpointWithHostLabelHeaderOperation(
@@ -356,113 +416,195 @@ EndpointWithHostLabelHeaderOperationOutcome RestXmlProtocolClient::EndpointWithH
         RestXmlProtocolErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
   }
 
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/EndpointWithHostLabelHeaderOperation");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? EndpointWithHostLabelHeaderOperationOutcome(result.GetResultWithOwnership())
-                            : EndpointWithHostLabelHeaderOperationOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/EndpointWithHostLabelHeaderOperation");
+      },
+      Aws::Http::HttpMethod::HTTP_POST);
+  if (!result.IsSuccess()) {
+    return EndpointWithHostLabelHeaderOperationOutcome(std::move(result.GetError()));
+  }
+  return EndpointWithHostLabelHeaderOperationOutcome(result.GetResultWithOwnership());
 }
 
 EndpointWithHostLabelOperationOutcome RestXmlProtocolClient::EndpointWithHostLabelOperation(
     const EndpointWithHostLabelOperationRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/EndpointWithHostLabelOperation");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? EndpointWithHostLabelOperationOutcome(result.GetResultWithOwnership())
-                            : EndpointWithHostLabelOperationOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/EndpointWithHostLabelOperation");
+      },
+      Aws::Http::HttpMethod::HTTP_POST);
+  if (!result.IsSuccess()) {
+    return EndpointWithHostLabelOperationOutcome(std::move(result.GetError()));
+  }
+  return EndpointWithHostLabelOperationOutcome(result.GetResultWithOwnership());
 }
 
 FlattenedXmlMapOutcome RestXmlProtocolClient::FlattenedXmlMap(const FlattenedXmlMapRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/FlattenedXmlMap");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? FlattenedXmlMapOutcome(result.GetResultWithOwnership())
-                            : FlattenedXmlMapOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/FlattenedXmlMap");
+      },
+      Aws::Http::HttpMethod::HTTP_POST);
+  if (!result.IsSuccess()) {
+    return FlattenedXmlMapOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return FlattenedXmlMapOutcome(
+      BuildOperationResult<FlattenedXmlMapResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 FlattenedXmlMapWithXmlNameOutcome RestXmlProtocolClient::FlattenedXmlMapWithXmlName(
     const FlattenedXmlMapWithXmlNameRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/FlattenedXmlMapWithXmlName");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? FlattenedXmlMapWithXmlNameOutcome(result.GetResultWithOwnership())
-                            : FlattenedXmlMapWithXmlNameOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/FlattenedXmlMapWithXmlName");
+      },
+      Aws::Http::HttpMethod::HTTP_POST);
+  if (!result.IsSuccess()) {
+    return FlattenedXmlMapWithXmlNameOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return FlattenedXmlMapWithXmlNameOutcome(
+      BuildOperationResult<FlattenedXmlMapWithXmlNameResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 FlattenedXmlMapWithXmlNamespaceOutcome RestXmlProtocolClient::FlattenedXmlMapWithXmlNamespace(
     const FlattenedXmlMapWithXmlNamespaceRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/FlattenedXmlMapWithXmlNamespace");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? FlattenedXmlMapWithXmlNamespaceOutcome(result.GetResultWithOwnership())
-                            : FlattenedXmlMapWithXmlNamespaceOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/FlattenedXmlMapWithXmlNamespace");
+      },
+      Aws::Http::HttpMethod::HTTP_POST);
+  if (!result.IsSuccess()) {
+    return FlattenedXmlMapWithXmlNamespaceOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return FlattenedXmlMapWithXmlNamespaceOutcome(
+      BuildOperationResult<FlattenedXmlMapWithXmlNamespaceResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 FractionalSecondsOutcome RestXmlProtocolClient::FractionalSeconds(const FractionalSecondsRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/FractionalSeconds");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? FractionalSecondsOutcome(result.GetResultWithOwnership())
-                            : FractionalSecondsOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/FractionalSeconds");
+      },
+      Aws::Http::HttpMethod::HTTP_POST);
+  if (!result.IsSuccess()) {
+    return FractionalSecondsOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return FractionalSecondsOutcome(
+      BuildOperationResult<FractionalSecondsResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 GreetingWithErrorsOutcome RestXmlProtocolClient::GreetingWithErrors(const GreetingWithErrorsRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/GreetingWithErrors");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
-  return result.IsSuccess() ? GreetingWithErrorsOutcome(result.GetResultWithOwnership())
-                            : GreetingWithErrorsOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/GreetingWithErrors");
+      },
+      Aws::Http::HttpMethod::HTTP_PUT);
+  if (!result.IsSuccess()) {
+    return GreetingWithErrorsOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return GreetingWithErrorsOutcome(
+      BuildOperationResult<GreetingWithErrorsResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 HttpEmptyPrefixHeadersOutcome RestXmlProtocolClient::HttpEmptyPrefixHeaders(const HttpEmptyPrefixHeadersRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/HttpEmptyPrefixHeaders");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
-  return result.IsSuccess() ? HttpEmptyPrefixHeadersOutcome(result.GetResultWithOwnership())
-                            : HttpEmptyPrefixHeadersOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/HttpEmptyPrefixHeaders");
+      },
+      Aws::Http::HttpMethod::HTTP_GET);
+  if (!result.IsSuccess()) {
+    return HttpEmptyPrefixHeadersOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return HttpEmptyPrefixHeadersOutcome(
+      BuildOperationResult<HttpEmptyPrefixHeadersResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 HttpEnumPayloadOutcome RestXmlProtocolClient::HttpEnumPayload(const HttpEnumPayloadRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/EnumPayload");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? HttpEnumPayloadOutcome(result.GetResultWithOwnership())
-                            : HttpEnumPayloadOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/EnumPayload");
+      },
+      Aws::Http::HttpMethod::HTTP_POST);
+  if (!result.IsSuccess()) {
+    return HttpEnumPayloadOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return HttpEnumPayloadOutcome(
+      BuildOperationResult<HttpEnumPayloadResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 HttpPayloadTraitsOutcome RestXmlProtocolClient::HttpPayloadTraits(const HttpPayloadTraitsRequest& request) const {
   AWS_OPERATION_GUARD(HttpPayloadTraits);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, HttpPayloadTraits, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, HttpPayloadTraits, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, HttpPayloadTraits, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, HttpPayloadTraits, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + "." + request.GetServiceRequestName(),
                                  {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -471,15 +613,9 @@ HttpPayloadTraitsOutcome RestXmlProtocolClient::HttpPayloadTraits(const HttpPayl
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<HttpPayloadTraitsOutcome>(
       [&]() -> HttpPayloadTraitsOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, HttpPayloadTraits, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/HttpPayloadTraits");
-        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        auto result = MakeRequestWithUnparsedResponse(
+            &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/HttpPayloadTraits"); });
         return result.IsSuccess() ? HttpPayloadTraitsOutcome(result.GetResultWithOwnership())
                                   : HttpPayloadTraitsOutcome(std::move(result.GetError()));
       },
@@ -490,82 +626,152 @@ HttpPayloadTraitsOutcome RestXmlProtocolClient::HttpPayloadTraits(const HttpPayl
 
 HttpPayloadWithMemberXmlNameOutcome RestXmlProtocolClient::HttpPayloadWithMemberXmlName(
     const HttpPayloadWithMemberXmlNameRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/HttpPayloadWithMemberXmlName");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
-  return result.IsSuccess() ? HttpPayloadWithMemberXmlNameOutcome(result.GetResultWithOwnership())
-                            : HttpPayloadWithMemberXmlNameOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/HttpPayloadWithMemberXmlName");
+      },
+      Aws::Http::HttpMethod::HTTP_PUT);
+  if (!result.IsSuccess()) {
+    return HttpPayloadWithMemberXmlNameOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return HttpPayloadWithMemberXmlNameOutcome(
+      BuildOperationResult<HttpPayloadWithMemberXmlNameResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 HttpPayloadWithStructureOutcome RestXmlProtocolClient::HttpPayloadWithStructure(const HttpPayloadWithStructureRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/HttpPayloadWithStructure");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
-  return result.IsSuccess() ? HttpPayloadWithStructureOutcome(result.GetResultWithOwnership())
-                            : HttpPayloadWithStructureOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/HttpPayloadWithStructure");
+      },
+      Aws::Http::HttpMethod::HTTP_PUT);
+  if (!result.IsSuccess()) {
+    return HttpPayloadWithStructureOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return HttpPayloadWithStructureOutcome(
+      BuildOperationResult<HttpPayloadWithStructureResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 HttpPayloadWithUnionOutcome RestXmlProtocolClient::HttpPayloadWithUnion(const HttpPayloadWithUnionRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/HttpPayloadWithUnion");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
-  return result.IsSuccess() ? HttpPayloadWithUnionOutcome(result.GetResultWithOwnership())
-                            : HttpPayloadWithUnionOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/HttpPayloadWithUnion");
+      },
+      Aws::Http::HttpMethod::HTTP_PUT);
+  if (!result.IsSuccess()) {
+    return HttpPayloadWithUnionOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return HttpPayloadWithUnionOutcome(
+      BuildOperationResult<HttpPayloadWithUnionResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 HttpPayloadWithXmlNameOutcome RestXmlProtocolClient::HttpPayloadWithXmlName(const HttpPayloadWithXmlNameRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/HttpPayloadWithXmlName");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
-  return result.IsSuccess() ? HttpPayloadWithXmlNameOutcome(result.GetResultWithOwnership())
-                            : HttpPayloadWithXmlNameOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/HttpPayloadWithXmlName");
+      },
+      Aws::Http::HttpMethod::HTTP_PUT);
+  if (!result.IsSuccess()) {
+    return HttpPayloadWithXmlNameOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return HttpPayloadWithXmlNameOutcome(
+      BuildOperationResult<HttpPayloadWithXmlNameResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 HttpPayloadWithXmlNamespaceOutcome RestXmlProtocolClient::HttpPayloadWithXmlNamespace(
     const HttpPayloadWithXmlNamespaceRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/HttpPayloadWithXmlNamespace");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
-  return result.IsSuccess() ? HttpPayloadWithXmlNamespaceOutcome(result.GetResultWithOwnership())
-                            : HttpPayloadWithXmlNamespaceOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/HttpPayloadWithXmlNamespace");
+      },
+      Aws::Http::HttpMethod::HTTP_PUT);
+  if (!result.IsSuccess()) {
+    return HttpPayloadWithXmlNamespaceOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return HttpPayloadWithXmlNamespaceOutcome(
+      BuildOperationResult<HttpPayloadWithXmlNamespaceResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 HttpPayloadWithXmlNamespaceAndPrefixOutcome RestXmlProtocolClient::HttpPayloadWithXmlNamespaceAndPrefix(
     const HttpPayloadWithXmlNamespaceAndPrefixRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/HttpPayloadWithXmlNamespaceAndPrefix");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
-  return result.IsSuccess() ? HttpPayloadWithXmlNamespaceAndPrefixOutcome(result.GetResultWithOwnership())
-                            : HttpPayloadWithXmlNamespaceAndPrefixOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/HttpPayloadWithXmlNamespaceAndPrefix");
+      },
+      Aws::Http::HttpMethod::HTTP_PUT);
+  if (!result.IsSuccess()) {
+    return HttpPayloadWithXmlNamespaceAndPrefixOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return HttpPayloadWithXmlNamespaceAndPrefixOutcome(
+      BuildOperationResult<HttpPayloadWithXmlNamespaceAndPrefixResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 HttpPrefixHeadersOutcome RestXmlProtocolClient::HttpPrefixHeaders(const HttpPrefixHeadersRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/HttpPrefixHeaders");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
-  return result.IsSuccess() ? HttpPrefixHeadersOutcome(result.GetResultWithOwnership())
-                            : HttpPrefixHeadersOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/HttpPrefixHeaders");
+      },
+      Aws::Http::HttpMethod::HTTP_GET);
+  if (!result.IsSuccess()) {
+    return HttpPrefixHeadersOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return HttpPrefixHeadersOutcome(
+      BuildOperationResult<HttpPrefixHeadersResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 HttpRequestWithFloatLabelsOutcome RestXmlProtocolClient::HttpRequestWithFloatLabels(
@@ -581,16 +787,22 @@ HttpRequestWithFloatLabelsOutcome RestXmlProtocolClient::HttpRequestWithFloatLab
         RestXmlProtocolErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Double]", false));
   }
 
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/FloatHttpLabels/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFloat());
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDouble());
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
-  return result.IsSuccess() ? HttpRequestWithFloatLabelsOutcome(result.GetResultWithOwnership())
-                            : HttpRequestWithFloatLabelsOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/FloatHttpLabels/");
+        resolvedEndpoint.AddPathSegment(request.GetFloat());
+        resolvedEndpoint.AddPathSegment(request.GetDouble());
+      },
+      Aws::Http::HttpMethod::HTTP_GET);
+  if (!result.IsSuccess()) {
+    return HttpRequestWithFloatLabelsOutcome(std::move(result.GetError()));
+  }
+  return HttpRequestWithFloatLabelsOutcome(result.GetResultWithOwnership());
 }
 
 HttpRequestWithGreedyLabelInPathOutcome RestXmlProtocolClient::HttpRequestWithGreedyLabelInPath(
@@ -606,17 +818,23 @@ HttpRequestWithGreedyLabelInPathOutcome RestXmlProtocolClient::HttpRequestWithGr
         RestXmlProtocolErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Baz]", false));
   }
 
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/HttpRequestWithGreedyLabelInPath/foo/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFoo());
-    endpointResolutionOutcome.GetResult().AddPathSegments("/baz/");
-    endpointResolutionOutcome.GetResult().AddPathSegments(request.GetBaz());
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
-  return result.IsSuccess() ? HttpRequestWithGreedyLabelInPathOutcome(result.GetResultWithOwnership())
-                            : HttpRequestWithGreedyLabelInPathOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/HttpRequestWithGreedyLabelInPath/foo/");
+        resolvedEndpoint.AddPathSegment(request.GetFoo());
+        resolvedEndpoint.AddPathSegments("/baz/");
+        resolvedEndpoint.AddPathSegments(request.GetBaz());
+      },
+      Aws::Http::HttpMethod::HTTP_GET);
+  if (!result.IsSuccess()) {
+    return HttpRequestWithGreedyLabelInPathOutcome(std::move(result.GetError()));
+  }
+  return HttpRequestWithGreedyLabelInPathOutcome(result.GetResultWithOwnership());
 }
 
 HttpRequestWithLabelsOutcome RestXmlProtocolClient::HttpRequestWithLabels(const HttpRequestWithLabelsRequest& request) const {
@@ -661,22 +879,28 @@ HttpRequestWithLabelsOutcome RestXmlProtocolClient::HttpRequestWithLabels(const 
         RestXmlProtocolErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Timestamp]", false));
   }
 
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/HttpRequestWithLabels/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetString());
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetShort());
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInteger());
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLong());
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFloat());
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDouble());
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBoolean());
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTimestamp().ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
-  return result.IsSuccess() ? HttpRequestWithLabelsOutcome(result.GetResultWithOwnership())
-                            : HttpRequestWithLabelsOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/HttpRequestWithLabels/");
+        resolvedEndpoint.AddPathSegment(request.GetString());
+        resolvedEndpoint.AddPathSegment(request.GetShort());
+        resolvedEndpoint.AddPathSegment(request.GetInteger());
+        resolvedEndpoint.AddPathSegment(request.GetLong());
+        resolvedEndpoint.AddPathSegment(request.GetFloat());
+        resolvedEndpoint.AddPathSegment(request.GetDouble());
+        resolvedEndpoint.AddPathSegment(request.GetBoolean());
+        resolvedEndpoint.AddPathSegment(request.GetTimestamp().ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+      },
+      Aws::Http::HttpMethod::HTTP_GET);
+  if (!result.IsSuccess()) {
+    return HttpRequestWithLabelsOutcome(std::move(result.GetError()));
+  }
+  return HttpRequestWithLabelsOutcome(result.GetResultWithOwnership());
 }
 
 HttpRequestWithLabelsAndTimestampFormatOutcome RestXmlProtocolClient::HttpRequestWithLabelsAndTimestampFormat(
@@ -717,40 +941,56 @@ HttpRequestWithLabelsAndTimestampFormatOutcome RestXmlProtocolClient::HttpReques
         RestXmlProtocolErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TargetDateTime]", false));
   }
 
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/HttpRequestWithLabelsAndTimestampFormat/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMemberEpochSeconds().Seconds());
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMemberHttpDate().ToGmtString(Aws::Utils::DateFormat::RFC822));
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMemberDateTime().ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDefaultFormat().ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTargetEpochSeconds().Seconds());
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTargetHttpDate().ToGmtString(Aws::Utils::DateFormat::RFC822));
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTargetDateTime().ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
-  return result.IsSuccess() ? HttpRequestWithLabelsAndTimestampFormatOutcome(result.GetResultWithOwnership())
-                            : HttpRequestWithLabelsAndTimestampFormatOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/HttpRequestWithLabelsAndTimestampFormat/");
+        resolvedEndpoint.AddPathSegment(request.GetMemberEpochSeconds().Seconds());
+        resolvedEndpoint.AddPathSegment(request.GetMemberHttpDate().ToGmtString(Aws::Utils::DateFormat::RFC822));
+        resolvedEndpoint.AddPathSegment(request.GetMemberDateTime().ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+        resolvedEndpoint.AddPathSegment(request.GetDefaultFormat().ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+        resolvedEndpoint.AddPathSegment(request.GetTargetEpochSeconds().Seconds());
+        resolvedEndpoint.AddPathSegment(request.GetTargetHttpDate().ToGmtString(Aws::Utils::DateFormat::RFC822));
+        resolvedEndpoint.AddPathSegment(request.GetTargetDateTime().ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+      },
+      Aws::Http::HttpMethod::HTTP_GET);
+  if (!result.IsSuccess()) {
+    return HttpRequestWithLabelsAndTimestampFormatOutcome(std::move(result.GetError()));
+  }
+  return HttpRequestWithLabelsAndTimestampFormatOutcome(result.GetResultWithOwnership());
 }
 
 HttpResponseCodeOutcome RestXmlProtocolClient::HttpResponseCode(const HttpResponseCodeRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/HttpResponseCode");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
-  return result.IsSuccess() ? HttpResponseCodeOutcome(result.GetResultWithOwnership())
-                            : HttpResponseCodeOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/HttpResponseCode");
+      },
+      Aws::Http::HttpMethod::HTTP_PUT);
+  if (!result.IsSuccess()) {
+    return HttpResponseCodeOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return HttpResponseCodeOutcome(
+      BuildOperationResult<HttpResponseCodeResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 HttpStringPayloadOutcome RestXmlProtocolClient::HttpStringPayload(const HttpStringPayloadRequest& request) const {
   AWS_OPERATION_GUARD(HttpStringPayload);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, HttpStringPayload, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, HttpStringPayload, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, HttpStringPayload, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, HttpStringPayload, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + "." + request.GetServiceRequestName(),
                                  {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
@@ -759,15 +999,9 @@ HttpStringPayloadOutcome RestXmlProtocolClient::HttpStringPayload(const HttpStri
                                  smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<HttpStringPayloadOutcome>(
       [&]() -> HttpStringPayloadOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, HttpStringPayload, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                    endpointResolutionOutcome.GetError().GetMessage());
-        endpointResolutionOutcome.GetResult().AddPathSegments("/StringPayload");
-        auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        auto result = MakeRequestWithUnparsedResponse(
+            &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
+            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/StringPayload"); });
         return result.IsSuccess() ? HttpStringPayloadOutcome(result.GetResultWithOwnership())
                                   : HttpStringPayloadOutcome(std::move(result.GetError()));
       },
@@ -778,353 +1012,660 @@ HttpStringPayloadOutcome RestXmlProtocolClient::HttpStringPayload(const HttpStri
 
 IgnoreQueryParamsInResponseOutcome RestXmlProtocolClient::IgnoreQueryParamsInResponse(
     const IgnoreQueryParamsInResponseRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/IgnoreQueryParamsInResponse");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
-  return result.IsSuccess() ? IgnoreQueryParamsInResponseOutcome(result.GetResultWithOwnership())
-                            : IgnoreQueryParamsInResponseOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/IgnoreQueryParamsInResponse");
+      },
+      Aws::Http::HttpMethod::HTTP_GET);
+  if (!result.IsSuccess()) {
+    return IgnoreQueryParamsInResponseOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return IgnoreQueryParamsInResponseOutcome(
+      BuildOperationResult<IgnoreQueryParamsInResponseResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 InputAndOutputWithHeadersOutcome RestXmlProtocolClient::InputAndOutputWithHeaders(const InputAndOutputWithHeadersRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/InputAndOutputWithHeaders");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? InputAndOutputWithHeadersOutcome(result.GetResultWithOwnership())
-                            : InputAndOutputWithHeadersOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/InputAndOutputWithHeaders");
+      },
+      Aws::Http::HttpMethod::HTTP_POST);
+  if (!result.IsSuccess()) {
+    return InputAndOutputWithHeadersOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return InputAndOutputWithHeadersOutcome(
+      BuildOperationResult<InputAndOutputWithHeadersResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 NestedXmlMapWithXmlNameOutcome RestXmlProtocolClient::NestedXmlMapWithXmlName(const NestedXmlMapWithXmlNameRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/NestedXmlMapWithXmlName");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? NestedXmlMapWithXmlNameOutcome(result.GetResultWithOwnership())
-                            : NestedXmlMapWithXmlNameOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/NestedXmlMapWithXmlName");
+      },
+      Aws::Http::HttpMethod::HTTP_POST);
+  if (!result.IsSuccess()) {
+    return NestedXmlMapWithXmlNameOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return NestedXmlMapWithXmlNameOutcome(
+      BuildOperationResult<NestedXmlMapWithXmlNameResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 NestedXmlMapsOutcome RestXmlProtocolClient::NestedXmlMaps(const NestedXmlMapsRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/NestedXmlMaps");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? NestedXmlMapsOutcome(result.GetResultWithOwnership()) : NestedXmlMapsOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/NestedXmlMaps");
+      },
+      Aws::Http::HttpMethod::HTTP_POST);
+  if (!result.IsSuccess()) {
+    return NestedXmlMapsOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return NestedXmlMapsOutcome(BuildOperationResult<NestedXmlMapsResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 NoInputAndNoOutputOutcome RestXmlProtocolClient::NoInputAndNoOutput(const NoInputAndNoOutputRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/NoInputAndNoOutput");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? NoInputAndNoOutputOutcome(result.GetResultWithOwnership())
-                            : NoInputAndNoOutputOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/NoInputAndNoOutput");
+      },
+      Aws::Http::HttpMethod::HTTP_POST);
+  if (!result.IsSuccess()) {
+    return NoInputAndNoOutputOutcome(std::move(result.GetError()));
+  }
+  return NoInputAndNoOutputOutcome(result.GetResultWithOwnership());
 }
 
 NoInputAndOutputOutcome RestXmlProtocolClient::NoInputAndOutput(const NoInputAndOutputRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/NoInputAndOutputOutput");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? NoInputAndOutputOutcome(result.GetResultWithOwnership())
-                            : NoInputAndOutputOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/NoInputAndOutputOutput");
+      },
+      Aws::Http::HttpMethod::HTTP_POST);
+  if (!result.IsSuccess()) {
+    return NoInputAndOutputOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return NoInputAndOutputOutcome(
+      BuildOperationResult<NoInputAndOutputResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 NullAndEmptyHeadersClientOutcome RestXmlProtocolClient::NullAndEmptyHeadersClient(const NullAndEmptyHeadersClientRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/NullAndEmptyHeadersClient");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
-  return result.IsSuccess() ? NullAndEmptyHeadersClientOutcome(result.GetResultWithOwnership())
-                            : NullAndEmptyHeadersClientOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/NullAndEmptyHeadersClient");
+      },
+      Aws::Http::HttpMethod::HTTP_GET);
+  if (!result.IsSuccess()) {
+    return NullAndEmptyHeadersClientOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return NullAndEmptyHeadersClientOutcome(
+      BuildOperationResult<NullAndEmptyHeadersClientResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 NullAndEmptyHeadersServerOutcome RestXmlProtocolClient::NullAndEmptyHeadersServer(const NullAndEmptyHeadersServerRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/NullAndEmptyHeadersServer");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
-  return result.IsSuccess() ? NullAndEmptyHeadersServerOutcome(result.GetResultWithOwnership())
-                            : NullAndEmptyHeadersServerOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/NullAndEmptyHeadersServer");
+      },
+      Aws::Http::HttpMethod::HTTP_GET);
+  if (!result.IsSuccess()) {
+    return NullAndEmptyHeadersServerOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return NullAndEmptyHeadersServerOutcome(
+      BuildOperationResult<NullAndEmptyHeadersServerResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 OmitsNullSerializesEmptyStringOutcome RestXmlProtocolClient::OmitsNullSerializesEmptyString(
     const OmitsNullSerializesEmptyStringRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/OmitsNullSerializesEmptyString");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
-  return result.IsSuccess() ? OmitsNullSerializesEmptyStringOutcome(result.GetResultWithOwnership())
-                            : OmitsNullSerializesEmptyStringOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/OmitsNullSerializesEmptyString");
+      },
+      Aws::Http::HttpMethod::HTTP_GET);
+  if (!result.IsSuccess()) {
+    return OmitsNullSerializesEmptyStringOutcome(std::move(result.GetError()));
+  }
+  return OmitsNullSerializesEmptyStringOutcome(result.GetResultWithOwnership());
 }
 
 PutWithContentEncodingOutcome RestXmlProtocolClient::PutWithContentEncoding(const PutWithContentEncodingRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/requestcompression/putcontentwithencoding");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? PutWithContentEncodingOutcome(result.GetResultWithOwnership())
-                            : PutWithContentEncodingOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/requestcompression/putcontentwithencoding");
+      },
+      Aws::Http::HttpMethod::HTTP_POST);
+  if (!result.IsSuccess()) {
+    return PutWithContentEncodingOutcome(std::move(result.GetError()));
+  }
+  return PutWithContentEncodingOutcome(result.GetResultWithOwnership());
 }
 
 QueryIdempotencyTokenAutoFillOutcome RestXmlProtocolClient::QueryIdempotencyTokenAutoFill(
     const QueryIdempotencyTokenAutoFillRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/QueryIdempotencyTokenAutoFill");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? QueryIdempotencyTokenAutoFillOutcome(result.GetResultWithOwnership())
-                            : QueryIdempotencyTokenAutoFillOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/QueryIdempotencyTokenAutoFill");
+      },
+      Aws::Http::HttpMethod::HTTP_POST);
+  if (!result.IsSuccess()) {
+    return QueryIdempotencyTokenAutoFillOutcome(std::move(result.GetError()));
+  }
+  return QueryIdempotencyTokenAutoFillOutcome(result.GetResultWithOwnership());
 }
 
 QueryParamsAsStringListMapOutcome RestXmlProtocolClient::QueryParamsAsStringListMap(
     const QueryParamsAsStringListMapRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/StringListMap");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? QueryParamsAsStringListMapOutcome(result.GetResultWithOwnership())
-                            : QueryParamsAsStringListMapOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/StringListMap");
+      },
+      Aws::Http::HttpMethod::HTTP_POST);
+  if (!result.IsSuccess()) {
+    return QueryParamsAsStringListMapOutcome(std::move(result.GetError()));
+  }
+  return QueryParamsAsStringListMapOutcome(result.GetResultWithOwnership());
 }
 
 QueryPrecedenceOutcome RestXmlProtocolClient::QueryPrecedence(const QueryPrecedenceRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/Precedence");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? QueryPrecedenceOutcome(result.GetResultWithOwnership())
-                            : QueryPrecedenceOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/Precedence");
+      },
+      Aws::Http::HttpMethod::HTTP_POST);
+  if (!result.IsSuccess()) {
+    return QueryPrecedenceOutcome(std::move(result.GetError()));
+  }
+  return QueryPrecedenceOutcome(result.GetResultWithOwnership());
 }
 
 RecursiveShapesOutcome RestXmlProtocolClient::RecursiveShapes(const RecursiveShapesRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/RecursiveShapes");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
-  return result.IsSuccess() ? RecursiveShapesOutcome(result.GetResultWithOwnership())
-                            : RecursiveShapesOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/RecursiveShapes");
+      },
+      Aws::Http::HttpMethod::HTTP_PUT);
+  if (!result.IsSuccess()) {
+    return RecursiveShapesOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return RecursiveShapesOutcome(
+      BuildOperationResult<RecursiveShapesResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 SimpleScalarPropertiesOutcome RestXmlProtocolClient::SimpleScalarProperties(const SimpleScalarPropertiesRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/SimpleScalarProperties");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
-  return result.IsSuccess() ? SimpleScalarPropertiesOutcome(result.GetResultWithOwnership())
-                            : SimpleScalarPropertiesOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/SimpleScalarProperties");
+      },
+      Aws::Http::HttpMethod::HTTP_PUT);
+  if (!result.IsSuccess()) {
+    return SimpleScalarPropertiesOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return SimpleScalarPropertiesOutcome(
+      BuildOperationResult<SimpleScalarPropertiesResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 TimestampFormatHeadersOutcome RestXmlProtocolClient::TimestampFormatHeaders(const TimestampFormatHeadersRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/TimestampFormatHeaders");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? TimestampFormatHeadersOutcome(result.GetResultWithOwnership())
-                            : TimestampFormatHeadersOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/TimestampFormatHeaders");
+      },
+      Aws::Http::HttpMethod::HTTP_POST);
+  if (!result.IsSuccess()) {
+    return TimestampFormatHeadersOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return TimestampFormatHeadersOutcome(
+      BuildOperationResult<TimestampFormatHeadersResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 XmlAttributesOutcome RestXmlProtocolClient::XmlAttributes(const XmlAttributesRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/XmlAttributes");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
-  return result.IsSuccess() ? XmlAttributesOutcome(result.GetResultWithOwnership()) : XmlAttributesOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/XmlAttributes");
+      },
+      Aws::Http::HttpMethod::HTTP_PUT);
+  if (!result.IsSuccess()) {
+    return XmlAttributesOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return XmlAttributesOutcome(BuildOperationResult<XmlAttributesResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 XmlAttributesInMiddleOutcome RestXmlProtocolClient::XmlAttributesInMiddle(const XmlAttributesInMiddleRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/XmlAttributesInMiddle");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
-  return result.IsSuccess() ? XmlAttributesInMiddleOutcome(result.GetResultWithOwnership())
-                            : XmlAttributesInMiddleOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/XmlAttributesInMiddle");
+      },
+      Aws::Http::HttpMethod::HTTP_PUT);
+  if (!result.IsSuccess()) {
+    return XmlAttributesInMiddleOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return XmlAttributesInMiddleOutcome(
+      BuildOperationResult<XmlAttributesInMiddleResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 XmlAttributesOnPayloadOutcome RestXmlProtocolClient::XmlAttributesOnPayload(const XmlAttributesOnPayloadRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/XmlAttributesOnPayload");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
-  return result.IsSuccess() ? XmlAttributesOnPayloadOutcome(result.GetResultWithOwnership())
-                            : XmlAttributesOnPayloadOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/XmlAttributesOnPayload");
+      },
+      Aws::Http::HttpMethod::HTTP_PUT);
+  if (!result.IsSuccess()) {
+    return XmlAttributesOnPayloadOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return XmlAttributesOnPayloadOutcome(
+      BuildOperationResult<XmlAttributesOnPayloadResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 XmlBlobsOutcome RestXmlProtocolClient::XmlBlobs(const XmlBlobsRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/XmlBlobs");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? XmlBlobsOutcome(result.GetResultWithOwnership()) : XmlBlobsOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/XmlBlobs");
+      },
+      Aws::Http::HttpMethod::HTTP_POST);
+  if (!result.IsSuccess()) {
+    return XmlBlobsOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return XmlBlobsOutcome(BuildOperationResult<XmlBlobsResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 XmlEmptyBlobsOutcome RestXmlProtocolClient::XmlEmptyBlobs(const XmlEmptyBlobsRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/XmlEmptyBlobs");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? XmlEmptyBlobsOutcome(result.GetResultWithOwnership()) : XmlEmptyBlobsOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/XmlEmptyBlobs");
+      },
+      Aws::Http::HttpMethod::HTTP_POST);
+  if (!result.IsSuccess()) {
+    return XmlEmptyBlobsOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return XmlEmptyBlobsOutcome(BuildOperationResult<XmlEmptyBlobsResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 XmlEmptyListsOutcome RestXmlProtocolClient::XmlEmptyLists(const XmlEmptyListsRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/XmlEmptyLists");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
-  return result.IsSuccess() ? XmlEmptyListsOutcome(result.GetResultWithOwnership()) : XmlEmptyListsOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/XmlEmptyLists");
+      },
+      Aws::Http::HttpMethod::HTTP_PUT);
+  if (!result.IsSuccess()) {
+    return XmlEmptyListsOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return XmlEmptyListsOutcome(BuildOperationResult<XmlEmptyListsResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 XmlEmptyMapsOutcome RestXmlProtocolClient::XmlEmptyMaps(const XmlEmptyMapsRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/XmlEmptyMaps");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? XmlEmptyMapsOutcome(result.GetResultWithOwnership()) : XmlEmptyMapsOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/XmlEmptyMaps");
+      },
+      Aws::Http::HttpMethod::HTTP_POST);
+  if (!result.IsSuccess()) {
+    return XmlEmptyMapsOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return XmlEmptyMapsOutcome(BuildOperationResult<XmlEmptyMapsResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 XmlEmptyStringsOutcome RestXmlProtocolClient::XmlEmptyStrings(const XmlEmptyStringsRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/XmlEmptyStrings");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
-  return result.IsSuccess() ? XmlEmptyStringsOutcome(result.GetResultWithOwnership())
-                            : XmlEmptyStringsOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/XmlEmptyStrings");
+      },
+      Aws::Http::HttpMethod::HTTP_PUT);
+  if (!result.IsSuccess()) {
+    return XmlEmptyStringsOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return XmlEmptyStringsOutcome(
+      BuildOperationResult<XmlEmptyStringsResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 XmlEnumsOutcome RestXmlProtocolClient::XmlEnums(const XmlEnumsRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/XmlEnums");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
-  return result.IsSuccess() ? XmlEnumsOutcome(result.GetResultWithOwnership()) : XmlEnumsOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/XmlEnums");
+      },
+      Aws::Http::HttpMethod::HTTP_PUT);
+  if (!result.IsSuccess()) {
+    return XmlEnumsOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return XmlEnumsOutcome(BuildOperationResult<XmlEnumsResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 XmlIntEnumsOutcome RestXmlProtocolClient::XmlIntEnums(const XmlIntEnumsRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/XmlIntEnums");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
-  return result.IsSuccess() ? XmlIntEnumsOutcome(result.GetResultWithOwnership()) : XmlIntEnumsOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/XmlIntEnums");
+      },
+      Aws::Http::HttpMethod::HTTP_PUT);
+  if (!result.IsSuccess()) {
+    return XmlIntEnumsOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return XmlIntEnumsOutcome(BuildOperationResult<XmlIntEnumsResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 XmlListsOutcome RestXmlProtocolClient::XmlLists(const XmlListsRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/XmlLists");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
-  return result.IsSuccess() ? XmlListsOutcome(result.GetResultWithOwnership()) : XmlListsOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/XmlLists");
+      },
+      Aws::Http::HttpMethod::HTTP_PUT);
+  if (!result.IsSuccess()) {
+    return XmlListsOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return XmlListsOutcome(BuildOperationResult<XmlListsResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 XmlMapWithXmlNamespaceOutcome RestXmlProtocolClient::XmlMapWithXmlNamespace(const XmlMapWithXmlNamespaceRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/XmlMapWithXmlNamespace");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? XmlMapWithXmlNamespaceOutcome(result.GetResultWithOwnership())
-                            : XmlMapWithXmlNamespaceOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/XmlMapWithXmlNamespace");
+      },
+      Aws::Http::HttpMethod::HTTP_POST);
+  if (!result.IsSuccess()) {
+    return XmlMapWithXmlNamespaceOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return XmlMapWithXmlNamespaceOutcome(
+      BuildOperationResult<XmlMapWithXmlNamespaceResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 XmlMapsOutcome RestXmlProtocolClient::XmlMaps(const XmlMapsRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/XmlMaps");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? XmlMapsOutcome(result.GetResultWithOwnership()) : XmlMapsOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/XmlMaps");
+      },
+      Aws::Http::HttpMethod::HTTP_POST);
+  if (!result.IsSuccess()) {
+    return XmlMapsOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return XmlMapsOutcome(BuildOperationResult<XmlMapsResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 XmlMapsXmlNameOutcome RestXmlProtocolClient::XmlMapsXmlName(const XmlMapsXmlNameRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/XmlMapsXmlName");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? XmlMapsXmlNameOutcome(result.GetResultWithOwnership()) : XmlMapsXmlNameOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/XmlMapsXmlName");
+      },
+      Aws::Http::HttpMethod::HTTP_POST);
+  if (!result.IsSuccess()) {
+    return XmlMapsXmlNameOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return XmlMapsXmlNameOutcome(
+      BuildOperationResult<XmlMapsXmlNameResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 XmlNamespacesOutcome RestXmlProtocolClient::XmlNamespaces(const XmlNamespacesRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/XmlNamespaces");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? XmlNamespacesOutcome(result.GetResultWithOwnership()) : XmlNamespacesOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/XmlNamespaces");
+      },
+      Aws::Http::HttpMethod::HTTP_POST);
+  if (!result.IsSuccess()) {
+    return XmlNamespacesOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return XmlNamespacesOutcome(BuildOperationResult<XmlNamespacesResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 XmlTimestampsOutcome RestXmlProtocolClient::XmlTimestamps(const XmlTimestampsRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/XmlTimestamps");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? XmlTimestampsOutcome(result.GetResultWithOwnership()) : XmlTimestampsOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/XmlTimestamps");
+      },
+      Aws::Http::HttpMethod::HTTP_POST);
+  if (!result.IsSuccess()) {
+    return XmlTimestampsOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return XmlTimestampsOutcome(BuildOperationResult<XmlTimestampsResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 XmlUnionsOutcome RestXmlProtocolClient::XmlUnions(const XmlUnionsRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/XmlUnions");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
-  return result.IsSuccess() ? XmlUnionsOutcome(result.GetResultWithOwnership()) : XmlUnionsOutcome(std::move(result.GetError()));
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        // An HTTP-binding ClientProtocol places the path, labels and constant query from the request's URI pattern.
+        if (GetClientProtocol() && !request.GetSchemaSerdeContext().uriPattern.empty()) {
+          return;
+        }
+        resolvedEndpoint.AddPathSegments("/XmlUnions");
+      },
+      Aws::Http::HttpMethod::HTTP_PUT);
+  if (!result.IsSuccess()) {
+    return XmlUnionsOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return XmlUnionsOutcome(BuildOperationResult<XmlUnionsResult>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }

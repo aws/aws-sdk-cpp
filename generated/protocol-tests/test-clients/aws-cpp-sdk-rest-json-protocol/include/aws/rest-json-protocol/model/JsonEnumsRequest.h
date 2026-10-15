@@ -30,8 +30,8 @@ class JsonEnumsRequest : public RestJsonProtocolRequest {
   inline virtual const char* GetServiceRequestName() const override { return "JsonEnums"; }
 
   AWS_RESTJSONPROTOCOL_API Aws::String SerializePayload() const override;
-
-  AWS_RESTJSONPROTOCOL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+  AWS_RESTJSONPROTOCOL_API smithy::schema::OperationRequestContext GetSchemaSerdeContext() const override;
+  AWS_RESTJSONPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeInput() const override;
 
   ///@{
 
@@ -137,22 +137,6 @@ class JsonEnumsRequest : public RestJsonProtocolRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-
-  inline const Aws::String& GetRequestId() const { return m_requestId; }
-  inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-  template <typename RequestIdT = Aws::String>
-  void SetRequestId(RequestIdT&& value) {
-    m_requestIdHasBeenSet = true;
-    m_requestId = std::forward<RequestIdT>(value);
-  }
-  template <typename RequestIdT = Aws::String>
-  JsonEnumsRequest& WithRequestId(RequestIdT&& value) {
-    SetRequestId(std::forward<RequestIdT>(value));
-    return *this;
-  }
-  ///@}
  private:
   FooEnum m_fooEnum1{FooEnum::NOT_SET};
 
@@ -165,15 +149,12 @@ class JsonEnumsRequest : public RestJsonProtocolRequest {
   Aws::Vector<FooEnum> m_fooEnumSet;
 
   Aws::Map<Aws::String, FooEnum> m_fooEnumMap;
-
-  Aws::String m_requestId;
   bool m_fooEnum1HasBeenSet = false;
   bool m_fooEnum2HasBeenSet = false;
   bool m_fooEnum3HasBeenSet = false;
   bool m_fooEnumListHasBeenSet = false;
   bool m_fooEnumSetHasBeenSet = false;
   bool m_fooEnumMapHasBeenSet = false;
-  bool m_requestIdHasBeenSet = false;
 };
 
 }  // namespace Model

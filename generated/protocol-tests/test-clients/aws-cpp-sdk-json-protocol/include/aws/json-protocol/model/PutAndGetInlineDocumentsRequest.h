@@ -5,7 +5,6 @@
 
 #pragma once
 #include <aws/core/utils/Document.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/json-protocol/JsonProtocolRequest.h>
 #include <aws/json-protocol/JsonProtocol_EXPORTS.h>
 
@@ -28,6 +27,8 @@ class PutAndGetInlineDocumentsRequest : public JsonProtocolRequest {
   inline virtual const char* GetServiceRequestName() const override { return "PutAndGetInlineDocuments"; }
 
   AWS_JSONPROTOCOL_API Aws::String SerializePayload() const override;
+  AWS_JSONPROTOCOL_API smithy::schema::OperationRequestContext GetSchemaSerdeContext() const override;
+  AWS_JSONPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeInput() const override;
 
   AWS_JSONPROTOCOL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
@@ -46,28 +47,9 @@ class PutAndGetInlineDocumentsRequest : public JsonProtocolRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-
-  inline const Aws::String& GetRequestId() const { return m_requestId; }
-  inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-  template <typename RequestIdT = Aws::String>
-  void SetRequestId(RequestIdT&& value) {
-    m_requestIdHasBeenSet = true;
-    m_requestId = std::forward<RequestIdT>(value);
-  }
-  template <typename RequestIdT = Aws::String>
-  PutAndGetInlineDocumentsRequest& WithRequestId(RequestIdT&& value) {
-    SetRequestId(std::forward<RequestIdT>(value));
-    return *this;
-  }
-  ///@}
  private:
   Aws::Utils::Document m_inlineDocument;
-
-  Aws::String m_requestId;
   bool m_inlineDocumentHasBeenSet = false;
-  bool m_requestIdHasBeenSet = false;
 };
 
 }  // namespace Model

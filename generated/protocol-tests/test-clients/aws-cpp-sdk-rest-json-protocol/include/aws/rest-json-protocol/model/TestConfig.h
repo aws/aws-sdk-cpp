@@ -16,6 +16,8 @@ class JsonView;
 namespace RestJsonProtocol {
 namespace Model {
 
+/**
+ */
 class TestConfig {
  public:
   AWS_RESTJSONPROTOCOL_API TestConfig() = default;

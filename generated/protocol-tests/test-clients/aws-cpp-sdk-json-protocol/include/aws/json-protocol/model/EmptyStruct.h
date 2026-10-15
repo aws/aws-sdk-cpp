@@ -16,6 +16,8 @@ class JsonView;
 namespace JsonProtocol {
 namespace Model {
 
+/**
+ */
 class EmptyStruct {
  public:
   AWS_JSONPROTOCOL_API EmptyStruct() = default;

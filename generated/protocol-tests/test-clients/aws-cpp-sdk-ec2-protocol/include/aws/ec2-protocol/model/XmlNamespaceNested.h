@@ -20,14 +20,15 @@ class XmlNode;
 namespace EC2Protocol {
 namespace Model {
 
+/**
+ */
 class XmlNamespaceNested {
  public:
   AWS_EC2PROTOCOL_API XmlNamespaceNested() = default;
   AWS_EC2PROTOCOL_API XmlNamespaceNested(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_EC2PROTOCOL_API XmlNamespaceNested& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_EC2PROTOCOL_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-  AWS_EC2PROTOCOL_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
+  AWS_EC2PROTOCOL_API void OutputToStream(Aws::OStream& ostream, const char* location) const;
 
   ///@{
 

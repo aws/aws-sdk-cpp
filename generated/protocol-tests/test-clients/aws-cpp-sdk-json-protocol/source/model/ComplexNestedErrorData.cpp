@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/json-protocol/model/ComplexNestedErrorData.h>
 
 #include <utility>
@@ -17,21 +20,10 @@ namespace Model {
 
 ComplexNestedErrorData::ComplexNestedErrorData(JsonView jsonValue) { *this = jsonValue; }
 
-ComplexNestedErrorData& ComplexNestedErrorData::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("Foo")) {
-    m_foo = jsonValue.GetString("Foo");
-    m_fooHasBeenSet = true;
-  }
-  return *this;
-}
+ComplexNestedErrorData& ComplexNestedErrorData::operator=(JsonView) { return *this; }
 
 JsonValue ComplexNestedErrorData::Jsonize() const {
   JsonValue payload;
-
-  if (m_fooHasBeenSet) {
-    payload.WithString("Foo", m_foo);
-  }
-
   return payload;
 }
 

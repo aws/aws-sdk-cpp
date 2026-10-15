@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/query-protocol/model/NestedStructWithList.h>
@@ -19,44 +22,11 @@ namespace Model {
 
 NestedStructWithList::NestedStructWithList(const XmlNode& xmlNode) { *this = xmlNode; }
 
-NestedStructWithList& NestedStructWithList::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+NestedStructWithList& NestedStructWithList::operator=(const XmlNode&) { return *this; }
 
-  if (!resultNode.IsNull()) {
-    XmlNode listArgNode = resultNode.FirstChild("ListArg");
-    if (!listArgNode.IsNull()) {
-      XmlNode listArgMember = listArgNode.FirstChild("member");
-      m_listArgHasBeenSet = !listArgMember.IsNull();
-      while (!listArgMember.IsNull()) {
-        m_listArg.push_back(listArgMember.GetText());
-        listArgMember = listArgMember.NextNode("member");
-      }
+void NestedStructWithList::OutputToStream(Aws::OStream&, const char*, unsigned, const char*) const {}
 
-      m_listArgHasBeenSet = true;
-    }
-  }
-
-  return *this;
-}
-
-void NestedStructWithList::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
-  if (m_listArgHasBeenSet) {
-    unsigned listArgIdx = 1;
-    for (auto& item : m_listArg) {
-      oStream << location << index << locationValue << ".ListArg.member." << listArgIdx++ << "=" << StringUtils::URLEncode(item.c_str())
-              << "&";
-    }
-  }
-}
-
-void NestedStructWithList::OutputToStream(Aws::OStream& oStream, const char* location) const {
-  if (m_listArgHasBeenSet) {
-    unsigned listArgIdx = 1;
-    for (auto& item : m_listArg) {
-      oStream << location << ".ListArg.member." << listArgIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
-    }
-  }
-}
+void NestedStructWithList::OutputToStream(Aws::OStream&, const char*) const {}
 
 }  // namespace Model
 }  // namespace QueryProtocol

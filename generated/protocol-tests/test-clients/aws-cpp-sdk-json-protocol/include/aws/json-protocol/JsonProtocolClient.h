@@ -4,21 +4,29 @@
  */
 
 #pragma once
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/json-protocol/JsonProtocolErrorMarshaller.h>
 #include <aws/json-protocol/JsonProtocolServiceClientModel.h>
 #include <aws/json-protocol/JsonProtocol_EXPORTS.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/client/serializer/JsonOutcomeSerializer.h>
+#include <smithy/identity/auth/built-in/GenericAuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
 
 namespace Aws {
 namespace JsonProtocol {
-class AWS_JSONPROTOCOL_API JsonProtocolClient : public Aws::Client::AWSJsonClient,
-                                                public Aws::Client::ClientWithAsyncTemplateMethods<JsonProtocolClient> {
+AWS_JSONPROTOCOL_API extern const char SERVICE_NAME[];
+class AWS_JSONPROTOCOL_API JsonProtocolClient
+    : Aws::Client::ClientWithAsyncTemplateMethods<JsonProtocolClient>,
+      public smithy::client::AwsSmithyClientT<Aws::JsonProtocol::SERVICE_NAME, Aws::JsonProtocol::JsonProtocolClientConfiguration,
+                                              smithy::AuthSchemeResolverBase<>, Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+                                              JsonProtocolEndpointProviderBase, smithy::client::JsonOutcomeSerializer,
+                                              smithy::client::JsonOutcome, Aws::Client::JsonProtocolErrorMarshaller> {
  public:
-  typedef Aws::Client::AWSJsonClient BASECLASS;
   static const char* GetServiceName();
   static const char* GetAllocationTag();
+  inline const char* GetServiceClientName() const override { return "Json Protocol"; }
 
   typedef JsonProtocolClientConfiguration ClientConfigurationType;
   typedef JsonProtocolEndpointProvider EndpointProviderType;
@@ -546,14 +554,10 @@ class AWS_JSONPROTOCOL_API JsonProtocolClient : public Aws::Client::AWSJsonClien
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<JsonProtocolClient>;
-  void init(const JsonProtocolClientConfiguration& clientConfiguration);
 
-  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, JsonProtocolError> InvokeOperationOutcome;
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>, JsonProtocolError> InvokeOperationOutcome;
 
   InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
-
-  JsonProtocolClientConfiguration m_clientConfiguration;
-  std::shared_ptr<JsonProtocolEndpointProviderBase> m_endpointProvider;
 };
 
 }  // namespace JsonProtocol

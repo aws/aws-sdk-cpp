@@ -19,6 +19,8 @@ class JsonView;
 namespace RestJsonProtocol {
 namespace Model {
 
+/**
+ */
 class StructureListMember {
  public:
   AWS_RESTJSONPROTOCOL_API StructureListMember() = default;

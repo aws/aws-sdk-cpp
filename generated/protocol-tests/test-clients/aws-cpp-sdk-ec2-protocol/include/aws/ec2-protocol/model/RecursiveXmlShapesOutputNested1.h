@@ -21,14 +21,15 @@ namespace EC2Protocol {
 namespace Model {
 class RecursiveXmlShapesOutputNested2;
 
+/**
+ */
 class RecursiveXmlShapesOutputNested1 {
  public:
   AWS_EC2PROTOCOL_API RecursiveXmlShapesOutputNested1() = default;
   AWS_EC2PROTOCOL_API RecursiveXmlShapesOutputNested1(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_EC2PROTOCOL_API RecursiveXmlShapesOutputNested1& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_EC2PROTOCOL_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-  AWS_EC2PROTOCOL_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
+  AWS_EC2PROTOCOL_API void OutputToStream(Aws::OStream& ostream, const char* location) const;
 
   ///@{
 

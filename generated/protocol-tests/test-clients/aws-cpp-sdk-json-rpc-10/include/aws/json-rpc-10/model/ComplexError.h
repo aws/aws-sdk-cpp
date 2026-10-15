@@ -21,7 +21,7 @@ namespace JSONRPC10 {
 namespace Model {
 
 /**
- * <p>This error is thrown when a request is invalid.</p><p><h3>See Also:</h3>   <a
+ * This error is thrown when a request is invalid.<p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/json-rpc-10-2020-07-14/ComplexError">AWS
  * API Reference</a></p>
  */

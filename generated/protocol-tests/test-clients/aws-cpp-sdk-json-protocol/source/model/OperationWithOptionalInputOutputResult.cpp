@@ -4,11 +4,21 @@
  */
 
 #include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/json-protocol/model/OperationWithOptionalInputOutputResult.h>
+#include <smithy/client/schema/DocumentConversion.h>
+#include <smithy/client/schema/HttpTraits.h>
+#include <smithy/client/schema/JsonTraits.h>
+#include <smithy/client/schema/Schema.h>
+#include <smithy/client/schema/SchemaBuilder.h>
+#include <smithy/client/schema/SerdeTraits.h>
+#include <smithy/client/schema/SerializableStruct.h>
+#include <smithy/client/schema/ShapeDeserializer.h>
 
 #include <utility>
 
@@ -24,11 +34,7 @@ OperationWithOptionalInputOutputResult::OperationWithOptionalInputOutputResult(c
 OperationWithOptionalInputOutputResult& OperationWithOptionalInputOutputResult::operator=(
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
-  JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("Value")) {
-    m_value = jsonValue.GetString("Value");
-    m_valueHasBeenSet = true;
-  }
+  AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
@@ -38,4 +44,44 @@ OperationWithOptionalInputOutputResult& OperationWithOptionalInputOutputResult::
   }
 
   return *this;
+}
+
+namespace {
+class OperationWithOptionalInputOutputResultDeserializable final : public smithy::schema::SerializableStruct {
+ public:
+  explicit OperationWithOptionalInputOutputResultDeserializable(OperationWithOptionalInputOutputResult& obj)
+      : m_obj(obj), m_schema(BuildSchema()) {}
+  const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
+  void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
+  void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
+  static std::shared_ptr<const smithy::schema::Schema> BuildSchema();
+
+ private:
+  OperationWithOptionalInputOutputResult& m_obj;
+  const std::shared_ptr<const smithy::schema::Schema> m_schema;
+};
+
+void OperationWithOptionalInputOutputResultDeserializable::From(const smithy::schema::Schema& memberSchema,
+                                                                smithy::schema::ShapeDeserializer& deserializer) {
+  const Aws::String memberName = memberSchema.GetMemberName();
+  if (memberName == "Value") {
+    auto value0 = deserializer.ReadString(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetValue(*value0);
+    }
+    return;
+  }
+}
+
+std::shared_ptr<const smithy::schema::Schema> OperationWithOptionalInputOutputResultDeserializable::BuildSchema() {
+  return smithy::schema::Schema::StructureBuilder("OperationWithOptionalInputOutputResult")
+      .PutMember("Value", smithy::schema::Schema::CreateString("Value"))
+      .Build();
+}
+
+}  // namespace
+
+Aws::UniquePtr<smithy::schema::SerializableStruct> OperationWithOptionalInputOutputResult::GetSchemaSerdeOutput() {
+  return Aws::MakeUnique<OperationWithOptionalInputOutputResultDeserializable>("OperationWithOptionalInputOutputResultDeserializable",
+                                                                               *this);
 }

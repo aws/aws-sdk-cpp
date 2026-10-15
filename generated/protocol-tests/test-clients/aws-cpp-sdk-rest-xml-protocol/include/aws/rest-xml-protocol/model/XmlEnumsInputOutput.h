@@ -1,0 +1,159 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/rest-xml-protocol/RestXmlProtocol_EXPORTS.h>
+#include <aws/rest-xml-protocol/model/FooEnum.h>
+
+#include <utility>
+
+namespace Aws {
+namespace Utils {
+namespace Xml {
+class XmlNode;
+}  // namespace Xml
+}  // namespace Utils
+namespace RestXmlProtocol {
+namespace Model {
+
+/**
+ */
+class XmlEnumsInputOutput {
+ public:
+  AWS_RESTXMLPROTOCOL_API XmlEnumsInputOutput() = default;
+  AWS_RESTXMLPROTOCOL_API XmlEnumsInputOutput(const Aws::Utils::Xml::XmlNode& xmlNode);
+  AWS_RESTXMLPROTOCOL_API XmlEnumsInputOutput& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+  AWS_RESTXMLPROTOCOL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+
+  ///@{
+
+  inline FooEnum GetFooEnum1() const { return m_fooEnum1; }
+  inline bool FooEnum1HasBeenSet() const { return m_fooEnum1HasBeenSet; }
+  inline void SetFooEnum1(FooEnum value) {
+    m_fooEnum1HasBeenSet = true;
+    m_fooEnum1 = value;
+  }
+  inline XmlEnumsInputOutput& WithFooEnum1(FooEnum value) {
+    SetFooEnum1(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline FooEnum GetFooEnum2() const { return m_fooEnum2; }
+  inline bool FooEnum2HasBeenSet() const { return m_fooEnum2HasBeenSet; }
+  inline void SetFooEnum2(FooEnum value) {
+    m_fooEnum2HasBeenSet = true;
+    m_fooEnum2 = value;
+  }
+  inline XmlEnumsInputOutput& WithFooEnum2(FooEnum value) {
+    SetFooEnum2(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline FooEnum GetFooEnum3() const { return m_fooEnum3; }
+  inline bool FooEnum3HasBeenSet() const { return m_fooEnum3HasBeenSet; }
+  inline void SetFooEnum3(FooEnum value) {
+    m_fooEnum3HasBeenSet = true;
+    m_fooEnum3 = value;
+  }
+  inline XmlEnumsInputOutput& WithFooEnum3(FooEnum value) {
+    SetFooEnum3(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::Vector<FooEnum>& GetFooEnumList() const { return m_fooEnumList; }
+  inline bool FooEnumListHasBeenSet() const { return m_fooEnumListHasBeenSet; }
+  template <typename FooEnumListT = Aws::Vector<FooEnum>>
+  void SetFooEnumList(FooEnumListT&& value) {
+    m_fooEnumListHasBeenSet = true;
+    m_fooEnumList = std::forward<FooEnumListT>(value);
+  }
+  template <typename FooEnumListT = Aws::Vector<FooEnum>>
+  XmlEnumsInputOutput& WithFooEnumList(FooEnumListT&& value) {
+    SetFooEnumList(std::forward<FooEnumListT>(value));
+    return *this;
+  }
+  inline XmlEnumsInputOutput& AddFooEnumList(FooEnum value) {
+    m_fooEnumListHasBeenSet = true;
+    m_fooEnumList.push_back(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::Vector<FooEnum>& GetFooEnumSet() const { return m_fooEnumSet; }
+  inline bool FooEnumSetHasBeenSet() const { return m_fooEnumSetHasBeenSet; }
+  template <typename FooEnumSetT = Aws::Vector<FooEnum>>
+  void SetFooEnumSet(FooEnumSetT&& value) {
+    m_fooEnumSetHasBeenSet = true;
+    m_fooEnumSet = std::forward<FooEnumSetT>(value);
+  }
+  template <typename FooEnumSetT = Aws::Vector<FooEnum>>
+  XmlEnumsInputOutput& WithFooEnumSet(FooEnumSetT&& value) {
+    SetFooEnumSet(std::forward<FooEnumSetT>(value));
+    return *this;
+  }
+  inline XmlEnumsInputOutput& AddFooEnumSet(FooEnum value) {
+    m_fooEnumSetHasBeenSet = true;
+    m_fooEnumSet.push_back(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::Map<Aws::String, FooEnum>& GetFooEnumMap() const { return m_fooEnumMap; }
+  inline bool FooEnumMapHasBeenSet() const { return m_fooEnumMapHasBeenSet; }
+  template <typename FooEnumMapT = Aws::Map<Aws::String, FooEnum>>
+  void SetFooEnumMap(FooEnumMapT&& value) {
+    m_fooEnumMapHasBeenSet = true;
+    m_fooEnumMap = std::forward<FooEnumMapT>(value);
+  }
+  template <typename FooEnumMapT = Aws::Map<Aws::String, FooEnum>>
+  XmlEnumsInputOutput& WithFooEnumMap(FooEnumMapT&& value) {
+    SetFooEnumMap(std::forward<FooEnumMapT>(value));
+    return *this;
+  }
+  inline XmlEnumsInputOutput& AddFooEnumMap(Aws::String key, FooEnum value) {
+    m_fooEnumMapHasBeenSet = true;
+    m_fooEnumMap.emplace(key, value);
+    return *this;
+  }
+  ///@}
+ private:
+  FooEnum m_fooEnum1{FooEnum::NOT_SET};
+
+  FooEnum m_fooEnum2{FooEnum::NOT_SET};
+
+  FooEnum m_fooEnum3{FooEnum::NOT_SET};
+
+  Aws::Vector<FooEnum> m_fooEnumList;
+
+  Aws::Vector<FooEnum> m_fooEnumSet;
+
+  Aws::Map<Aws::String, FooEnum> m_fooEnumMap;
+  bool m_fooEnum1HasBeenSet = false;
+  bool m_fooEnum2HasBeenSet = false;
+  bool m_fooEnum3HasBeenSet = false;
+  bool m_fooEnumListHasBeenSet = false;
+  bool m_fooEnumSetHasBeenSet = false;
+  bool m_fooEnumMapHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace RestXmlProtocol
+}  // namespace Aws

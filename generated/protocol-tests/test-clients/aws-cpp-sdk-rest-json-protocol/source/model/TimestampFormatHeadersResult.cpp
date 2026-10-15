@@ -4,11 +4,21 @@
  */
 
 #include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/rest-json-protocol/model/TimestampFormatHeadersResult.h>
+#include <smithy/client/schema/DocumentConversion.h>
+#include <smithy/client/schema/HttpTraits.h>
+#include <smithy/client/schema/JsonTraits.h>
+#include <smithy/client/schema/Schema.h>
+#include <smithy/client/schema/SchemaBuilder.h>
+#include <smithy/client/schema/SerdeTraits.h>
+#include <smithy/client/schema/SerializableStruct.h>
+#include <smithy/client/schema/ShapeDeserializer.h>
 
 #include <utility>
 
@@ -24,80 +34,6 @@ TimestampFormatHeadersResult& TimestampFormatHeadersResult::operator=(const Aws:
   AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();
-  const auto& memberEpochSecondsIter = headers.find("x-memberepochseconds");
-  if (memberEpochSecondsIter != headers.end()) {
-    m_memberEpochSeconds = DateTime(StringUtils::ConvertToDouble(memberEpochSecondsIter->second.c_str()));
-    if (!m_memberEpochSeconds.WasParseSuccessful()) {
-      AWS_LOGSTREAM_WARN("RestJsonProtocol::TimestampFormatHeadersResult",
-                         "Failed to parse memberEpochSeconds header as an "
-                         "$CppViewHelper.computeTimestampFormatInHeader($memberEntry.value.shape) timestamp: "
-                             << memberEpochSecondsIter->second.c_str());
-    }
-    m_memberEpochSecondsHasBeenSet = true;
-  }
-
-  const auto& memberHttpDateIter = headers.find("x-memberhttpdate");
-  if (memberHttpDateIter != headers.end()) {
-    m_memberHttpDate = DateTime(memberHttpDateIter->second.c_str(), Aws::Utils::DateFormat::RFC822);
-    if (!m_memberHttpDate.WasParseSuccessful()) {
-      AWS_LOGSTREAM_WARN("RestJsonProtocol::TimestampFormatHeadersResult",
-                         "Failed to parse memberHttpDate header as an RFC822 timestamp: " << memberHttpDateIter->second.c_str());
-    }
-    m_memberHttpDateHasBeenSet = true;
-  }
-
-  const auto& memberDateTimeIter = headers.find("x-memberdatetime");
-  if (memberDateTimeIter != headers.end()) {
-    m_memberDateTime = DateTime(memberDateTimeIter->second.c_str(), Aws::Utils::DateFormat::ISO_8601);
-    if (!m_memberDateTime.WasParseSuccessful()) {
-      AWS_LOGSTREAM_WARN("RestJsonProtocol::TimestampFormatHeadersResult",
-                         "Failed to parse memberDateTime header as an ISO_8601 timestamp: " << memberDateTimeIter->second.c_str());
-    }
-    m_memberDateTimeHasBeenSet = true;
-  }
-
-  const auto& defaultFormatIter = headers.find("x-defaultformat");
-  if (defaultFormatIter != headers.end()) {
-    m_defaultFormat = DateTime(defaultFormatIter->second.c_str(), Aws::Utils::DateFormat::RFC822);
-    if (!m_defaultFormat.WasParseSuccessful()) {
-      AWS_LOGSTREAM_WARN("RestJsonProtocol::TimestampFormatHeadersResult",
-                         "Failed to parse defaultFormat header as an RFC822 timestamp: " << defaultFormatIter->second.c_str());
-    }
-    m_defaultFormatHasBeenSet = true;
-  }
-
-  const auto& targetEpochSecondsIter = headers.find("x-targetepochseconds");
-  if (targetEpochSecondsIter != headers.end()) {
-    m_targetEpochSeconds = DateTime(StringUtils::ConvertToDouble(targetEpochSecondsIter->second.c_str()));
-    if (!m_targetEpochSeconds.WasParseSuccessful()) {
-      AWS_LOGSTREAM_WARN("RestJsonProtocol::TimestampFormatHeadersResult",
-                         "Failed to parse targetEpochSeconds header as an "
-                         "$CppViewHelper.computeTimestampFormatInHeader($memberEntry.value.shape) timestamp: "
-                             << targetEpochSecondsIter->second.c_str());
-    }
-    m_targetEpochSecondsHasBeenSet = true;
-  }
-
-  const auto& targetHttpDateIter = headers.find("x-targethttpdate");
-  if (targetHttpDateIter != headers.end()) {
-    m_targetHttpDate = DateTime(targetHttpDateIter->second.c_str(), Aws::Utils::DateFormat::RFC822);
-    if (!m_targetHttpDate.WasParseSuccessful()) {
-      AWS_LOGSTREAM_WARN("RestJsonProtocol::TimestampFormatHeadersResult",
-                         "Failed to parse targetHttpDate header as an RFC822 timestamp: " << targetHttpDateIter->second.c_str());
-    }
-    m_targetHttpDateHasBeenSet = true;
-  }
-
-  const auto& targetDateTimeIter = headers.find("x-targetdatetime");
-  if (targetDateTimeIter != headers.end()) {
-    m_targetDateTime = DateTime(targetDateTimeIter->second.c_str(), Aws::Utils::DateFormat::ISO_8601);
-    if (!m_targetDateTime.WasParseSuccessful()) {
-      AWS_LOGSTREAM_WARN("RestJsonProtocol::TimestampFormatHeadersResult",
-                         "Failed to parse targetDateTime header as an ISO_8601 timestamp: " << targetDateTimeIter->second.c_str());
-    }
-    m_targetDateTimeHasBeenSet = true;
-  }
-
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if (requestIdIter != headers.end()) {
     m_requestId = requestIdIter->second;
@@ -105,4 +41,122 @@ TimestampFormatHeadersResult& TimestampFormatHeadersResult::operator=(const Aws:
   }
 
   return *this;
+}
+
+namespace {
+class TimestampFormatHeadersResultDeserializable final : public smithy::schema::SerializableStruct {
+ public:
+  explicit TimestampFormatHeadersResultDeserializable(TimestampFormatHeadersResult& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
+  void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
+  void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
+  static std::shared_ptr<const smithy::schema::Schema> BuildSchema();
+
+ private:
+  TimestampFormatHeadersResult& m_obj;
+  const std::shared_ptr<const smithy::schema::Schema> m_schema;
+};
+
+void TimestampFormatHeadersResultDeserializable::From(const smithy::schema::Schema& memberSchema,
+                                                      smithy::schema::ShapeDeserializer& deserializer) {
+  const Aws::String memberName = memberSchema.GetMemberName();
+  if (memberName == "memberEpochSeconds") {
+    auto value0 = deserializer.ReadTimestamp(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetMemberEpochSeconds(*value0);
+    }
+    return;
+  }
+  if (memberName == "memberHttpDate") {
+    auto value0 = deserializer.ReadTimestamp(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetMemberHttpDate(*value0);
+    }
+    return;
+  }
+  if (memberName == "memberDateTime") {
+    auto value0 = deserializer.ReadTimestamp(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetMemberDateTime(*value0);
+    }
+    return;
+  }
+  if (memberName == "defaultFormat") {
+    auto value0 = deserializer.ReadTimestamp(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetDefaultFormat(*value0);
+    }
+    return;
+  }
+  if (memberName == "targetEpochSeconds") {
+    auto value0 = deserializer.ReadTimestamp(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetTargetEpochSeconds(*value0);
+    }
+    return;
+  }
+  if (memberName == "targetHttpDate") {
+    auto value0 = deserializer.ReadTimestamp(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetTargetHttpDate(*value0);
+    }
+    return;
+  }
+  if (memberName == "targetDateTime") {
+    auto value0 = deserializer.ReadTimestamp(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetTargetDateTime(*value0);
+    }
+    return;
+  }
+}
+
+std::shared_ptr<const smithy::schema::Schema> TimestampFormatHeadersResultDeserializable::BuildSchema() {
+  return smithy::schema::Schema::StructureBuilder("TimestampFormatHeadersResult")
+      .PutMember("memberEpochSeconds", smithy::schema::Schema::CreateTimestamp("memberEpochSeconds"),
+                 {{smithy::schema::TimestampFormatTrait::KEY(),
+                   Aws::MakeShared<smithy::schema::TimestampFormatTrait>("SchemaSerdeTrait",
+                                                                         smithy::schema::TimestampFormatTrait::Format::EPOCH_SECONDS)},
+                  {smithy::schema::HttpHeaderTrait::KEY(),
+                   Aws::MakeShared<smithy::schema::HttpHeaderTrait>("SchemaSerdeTrait", "X-memberEpochSeconds")}})
+      .PutMember(
+          "memberHttpDate", smithy::schema::Schema::CreateTimestamp("memberHttpDate"),
+          {{smithy::schema::TimestampFormatTrait::KEY(), Aws::MakeShared<smithy::schema::TimestampFormatTrait>(
+                                                             "SchemaSerdeTrait", smithy::schema::TimestampFormatTrait::Format::HTTP_DATE)},
+           {smithy::schema::HttpHeaderTrait::KEY(),
+            Aws::MakeShared<smithy::schema::HttpHeaderTrait>("SchemaSerdeTrait", "X-memberHttpDate")}})
+      .PutMember(
+          "memberDateTime", smithy::schema::Schema::CreateTimestamp("memberDateTime"),
+          {{smithy::schema::TimestampFormatTrait::KEY(), Aws::MakeShared<smithy::schema::TimestampFormatTrait>(
+                                                             "SchemaSerdeTrait", smithy::schema::TimestampFormatTrait::Format::DATE_TIME)},
+           {smithy::schema::HttpHeaderTrait::KEY(),
+            Aws::MakeShared<smithy::schema::HttpHeaderTrait>("SchemaSerdeTrait", "X-memberDateTime")}})
+      .PutMember("defaultFormat", smithy::schema::Schema::CreateTimestamp("defaultFormat"),
+                 {{smithy::schema::HttpHeaderTrait::KEY(),
+                   Aws::MakeShared<smithy::schema::HttpHeaderTrait>("SchemaSerdeTrait", "X-defaultFormat")}})
+      .PutMember("targetEpochSeconds", smithy::schema::Schema::CreateTimestamp("targetEpochSeconds"),
+                 {{smithy::schema::TimestampFormatTrait::KEY(),
+                   Aws::MakeShared<smithy::schema::TimestampFormatTrait>("SchemaSerdeTrait",
+                                                                         smithy::schema::TimestampFormatTrait::Format::EPOCH_SECONDS)},
+                  {smithy::schema::HttpHeaderTrait::KEY(),
+                   Aws::MakeShared<smithy::schema::HttpHeaderTrait>("SchemaSerdeTrait", "X-targetEpochSeconds")}})
+      .PutMember(
+          "targetHttpDate", smithy::schema::Schema::CreateTimestamp("targetHttpDate"),
+          {{smithy::schema::TimestampFormatTrait::KEY(), Aws::MakeShared<smithy::schema::TimestampFormatTrait>(
+                                                             "SchemaSerdeTrait", smithy::schema::TimestampFormatTrait::Format::HTTP_DATE)},
+           {smithy::schema::HttpHeaderTrait::KEY(),
+            Aws::MakeShared<smithy::schema::HttpHeaderTrait>("SchemaSerdeTrait", "X-targetHttpDate")}})
+      .PutMember(
+          "targetDateTime", smithy::schema::Schema::CreateTimestamp("targetDateTime"),
+          {{smithy::schema::TimestampFormatTrait::KEY(), Aws::MakeShared<smithy::schema::TimestampFormatTrait>(
+                                                             "SchemaSerdeTrait", smithy::schema::TimestampFormatTrait::Format::DATE_TIME)},
+           {smithy::schema::HttpHeaderTrait::KEY(),
+            Aws::MakeShared<smithy::schema::HttpHeaderTrait>("SchemaSerdeTrait", "X-targetDateTime")}})
+      .Build();
+}
+
+}  // namespace
+
+Aws::UniquePtr<smithy::schema::SerializableStruct> TimestampFormatHeadersResult::GetSchemaSerdeOutput() {
+  return Aws::MakeUnique<TimestampFormatHeadersResultDeserializable>("TimestampFormatHeadersResultDeserializable", *this);
 }

@@ -45,6 +45,10 @@
 #include <aws/ec2-protocol/model/XmlListsRequest.h>
 #include <aws/ec2-protocol/model/XmlNamespacesRequest.h>
 #include <aws/ec2-protocol/model/XmlTimestampsRequest.h>
+#include <smithy/client/schema/ClientProtocol.h>
+#include <smithy/identity/resolver/built-in/AwsCredentialsProviderIdentityResolver.h>
+#include <smithy/identity/resolver/built-in/DefaultAwsCredentialIdentityResolver.h>
+#include <smithy/identity/resolver/built-in/SimpleAwsCredentialIdentityResolver.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -68,99 +72,106 @@ const char* EC2ProtocolClient::GetAllocationTag() { return ALLOCATION_TAG; }
 
 EC2ProtocolClient::EC2ProtocolClient(const EC2Protocol::EC2ProtocolClientConfiguration& clientConfiguration,
                                      std::shared_ptr<EC2ProtocolEndpointProviderBase> endpointProvider)
-    : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                                 Aws::MakeShared<DefaultAWSCredentialsProviderChain>(
-                                                     ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
-                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-                Aws::MakeShared<EC2ProtocolErrorMarshaller>(ALLOCATION_TAG)),
-      m_clientConfiguration(clientConfiguration),
-      m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<EC2ProtocolEndpointProvider>(ALLOCATION_TAG)) {
-  init(m_clientConfiguration);
+    : AwsSmithyClientT(clientConfiguration, GetServiceName(), "EC2 Protocol", Aws::Http::CreateHttpClient(clientConfiguration),
+                       Aws::MakeShared<EC2ProtocolErrorMarshaller>(ALLOCATION_TAG),
+                       endpointProvider ? endpointProvider : Aws::MakeShared<EC2ProtocolEndpointProvider>(ALLOCATION_TAG),
+                       Aws::MakeShared<smithy::GenericAuthSchemeResolver<>>(
+                           ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption})),
+                       {
+                           {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
+                            smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region,
+                                                    clientConfiguration.ResolveCredentialProviderConfig()}},
+                       }) {
+  SetClientProtocol(Aws::MakeShared<smithy::schema::Ec2QueryProtocol>(ALLOCATION_TAG));
 }
 
 EC2ProtocolClient::EC2ProtocolClient(const AWSCredentials& credentials, std::shared_ptr<EC2ProtocolEndpointProviderBase> endpointProvider,
                                      const EC2Protocol::EC2ProtocolClientConfiguration& clientConfiguration)
-    : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-                Aws::MakeShared<EC2ProtocolErrorMarshaller>(ALLOCATION_TAG)),
-      m_clientConfiguration(clientConfiguration),
-      m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<EC2ProtocolEndpointProvider>(ALLOCATION_TAG)) {
-  init(m_clientConfiguration);
+    : AwsSmithyClientT(
+          clientConfiguration, GetServiceName(), "EC2 Protocol", Aws::Http::CreateHttpClient(clientConfiguration),
+          Aws::MakeShared<EC2ProtocolErrorMarshaller>(ALLOCATION_TAG),
+          endpointProvider ? endpointProvider : Aws::MakeShared<EC2ProtocolEndpointProvider>(ALLOCATION_TAG),
+          Aws::MakeShared<smithy::GenericAuthSchemeResolver<>>(
+              ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption})),
+          {
+              {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
+               smithy::SigV4AuthScheme{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials),
+                                       GetServiceName(), clientConfiguration.region}},
+          }) {
+  SetClientProtocol(Aws::MakeShared<smithy::schema::Ec2QueryProtocol>(ALLOCATION_TAG));
 }
 
 EC2ProtocolClient::EC2ProtocolClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
                                      std::shared_ptr<EC2ProtocolEndpointProviderBase> endpointProvider,
                                      const EC2Protocol::EC2ProtocolClientConfiguration& clientConfiguration)
-    : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
-                                                 Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-                Aws::MakeShared<EC2ProtocolErrorMarshaller>(ALLOCATION_TAG)),
-      m_clientConfiguration(clientConfiguration),
-      m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<EC2ProtocolEndpointProvider>(ALLOCATION_TAG)) {
-  init(m_clientConfiguration);
+    : AwsSmithyClientT(
+          clientConfiguration, GetServiceName(), "EC2 Protocol", Aws::Http::CreateHttpClient(clientConfiguration),
+          Aws::MakeShared<EC2ProtocolErrorMarshaller>(ALLOCATION_TAG),
+          endpointProvider ? endpointProvider : Aws::MakeShared<EC2ProtocolEndpointProvider>(ALLOCATION_TAG),
+          Aws::MakeShared<smithy::GenericAuthSchemeResolver<>>(
+              ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption})),
+          {
+              {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
+               smithy::SigV4AuthScheme{Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider),
+                                       GetServiceName(), clientConfiguration.region}},
+          }) {
+  SetClientProtocol(Aws::MakeShared<smithy::schema::Ec2QueryProtocol>(ALLOCATION_TAG));
 }
 
 /* Legacy constructors due deprecation */
 EC2ProtocolClient::EC2ProtocolClient(const Aws::Client::ClientConfiguration& clientConfiguration)
-    : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                                 Aws::MakeShared<DefaultAWSCredentialsProviderChain>(
-                                                     ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
-                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-                Aws::MakeShared<EC2ProtocolErrorMarshaller>(ALLOCATION_TAG)),
-      m_clientConfiguration(clientConfiguration),
-      m_endpointProvider(Aws::MakeShared<EC2ProtocolEndpointProvider>(ALLOCATION_TAG)) {
-  init(m_clientConfiguration);
+    : AwsSmithyClientT(clientConfiguration, GetServiceName(), "EC2 Protocol", Aws::Http::CreateHttpClient(clientConfiguration),
+                       Aws::MakeShared<EC2ProtocolErrorMarshaller>(ALLOCATION_TAG),
+                       Aws::MakeShared<EC2ProtocolEndpointProvider>(ALLOCATION_TAG),
+                       Aws::MakeShared<smithy::GenericAuthSchemeResolver<>>(
+                           ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption})),
+                       {
+                           {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
+                            smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region,
+                                                    clientConfiguration.ResolveCredentialProviderConfig()}},
+                       }) {
+  SetClientProtocol(Aws::MakeShared<smithy::schema::Ec2QueryProtocol>(ALLOCATION_TAG));
 }
 
 EC2ProtocolClient::EC2ProtocolClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
-    : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-                Aws::MakeShared<EC2ProtocolErrorMarshaller>(ALLOCATION_TAG)),
-      m_clientConfiguration(clientConfiguration),
-      m_endpointProvider(Aws::MakeShared<EC2ProtocolEndpointProvider>(ALLOCATION_TAG)) {
-  init(m_clientConfiguration);
+    : AwsSmithyClientT(
+          clientConfiguration, GetServiceName(), "EC2 Protocol", Aws::Http::CreateHttpClient(clientConfiguration),
+          Aws::MakeShared<EC2ProtocolErrorMarshaller>(ALLOCATION_TAG), Aws::MakeShared<EC2ProtocolEndpointProvider>(ALLOCATION_TAG),
+          Aws::MakeShared<smithy::GenericAuthSchemeResolver<>>(
+              ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption})),
+          {
+              {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
+               smithy::SigV4AuthScheme{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials),
+                                       GetServiceName(), clientConfiguration.region}},
+          }) {
+  SetClientProtocol(Aws::MakeShared<smithy::schema::Ec2QueryProtocol>(ALLOCATION_TAG));
 }
 
 EC2ProtocolClient::EC2ProtocolClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
                                      const Aws::Client::ClientConfiguration& clientConfiguration)
-    : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
-                                                 Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-                Aws::MakeShared<EC2ProtocolErrorMarshaller>(ALLOCATION_TAG)),
-      m_clientConfiguration(clientConfiguration),
-      m_endpointProvider(Aws::MakeShared<EC2ProtocolEndpointProvider>(ALLOCATION_TAG)) {
-  init(m_clientConfiguration);
+    : AwsSmithyClientT(
+          clientConfiguration, GetServiceName(), "EC2 Protocol", Aws::Http::CreateHttpClient(clientConfiguration),
+          Aws::MakeShared<EC2ProtocolErrorMarshaller>(ALLOCATION_TAG), Aws::MakeShared<EC2ProtocolEndpointProvider>(ALLOCATION_TAG),
+          Aws::MakeShared<smithy::GenericAuthSchemeResolver<>>(
+              ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption})),
+          {
+              {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
+               smithy::SigV4AuthScheme{Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider),
+                                       GetServiceName(), clientConfiguration.region}},
+          }) {
+  SetClientProtocol(Aws::MakeShared<smithy::schema::Ec2QueryProtocol>(ALLOCATION_TAG));
 }
-
 /* End of legacy constructors due deprecation */
+
 EC2ProtocolClient::~EC2ProtocolClient() { ShutdownSdkClient(this, -1); }
 
 std::shared_ptr<EC2ProtocolEndpointProviderBase>& EC2ProtocolClient::accessEndpointProvider() { return m_endpointProvider; }
-
-void EC2ProtocolClient::init(const EC2Protocol::EC2ProtocolClientConfiguration& config) {
-  AWSClient::SetServiceClientName("EC2 Protocol");
-  if (!m_clientConfiguration.executor) {
-    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
-      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
-      m_isInitialized = false;
-      return;
-    }
-    m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
-  }
-  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config, "ec2query");
-}
 
 void EC2ProtocolClient::OverrideEndpoint(const Aws::String& endpoint) {
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_clientConfiguration.endpointOverride = endpoint;
   m_endpointProvider->OverrideEndpoint(endpoint);
 }
-
 EC2ProtocolClient::InvokeOperationOutcome EC2ProtocolClient::InvokeServiceOperation(const AmazonWebServiceRequest& request,
                                                                                     Aws::Http::HttpMethod httpMethod) const {
   auto operationName = request.GetServiceRequestName();
@@ -168,11 +179,10 @@ EC2ProtocolClient::InvokeOperationOutcome EC2ProtocolClient::InvokeServiceOperat
 
   AWS_OPERATION_GUARD_DYNAMIC(operationName);
 
-  AWS_OPERATION_CHECK_PTR_DYNAMIC(m_endpointProvider, operationName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR_DYNAMIC(m_telemetryProvider, operationName, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  AWS_OPERATION_CHECK_PTR_DYNAMIC(m_clientConfiguration.telemetryProvider, operationName, CoreErrors, CoreErrors::NOT_INITIALIZED);
 
-  auto tracer = m_telemetryProvider->getTracer(serviceName, {});
-  auto meter = m_telemetryProvider->getMeter(serviceName, {});
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(serviceName, {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(serviceName, {});
   AWS_OPERATION_CHECK_PTR_DYNAMIC(meter, operationName, CoreErrors, CoreErrors::NOT_INITIALIZED);
 
   auto span = tracer->CreateSpan(Aws::String(serviceName) + "." + operationName,
@@ -183,158 +193,273 @@ EC2ProtocolClient::InvokeOperationOutcome EC2ProtocolClient::InvokeServiceOperat
 
   return TracingUtils::MakeCallWithTiming<InvokeOperationOutcome>(
       [&]() -> InvokeOperationOutcome {
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
-
-        AWS_OPERATION_CHECK_SUCCESS_DYNAMIC(endpointResolutionOutcome, operationName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
-                                            endpointResolutionOutcome.GetError().GetMessage());
-
-        return InvokeOperationOutcome{MakeRequest(request, endpointResolutionOutcome.GetResult(), httpMethod, Aws::Auth::SIGV4_SIGNER)};
+        auto result =
+            MakeRequestDeserialize(&request, operationName, httpMethod,
+                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); });
+        return result.IsSuccess() ? InvokeOperationOutcome(result.GetResultWithOwnership())
+                                  : InvokeOperationOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
 }
 DatetimeOffsetsOutcome EC2ProtocolClient::DatetimeOffsets(const DatetimeOffsetsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DatetimeOffsetsOutcome(result.GetResultWithOwnership())
-                            : DatetimeOffsetsOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return DatetimeOffsetsOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return DatetimeOffsetsOutcome(
+      BuildOperationResult<DatetimeOffsetsResponse>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 EmptyInputAndEmptyOutputOutcome EC2ProtocolClient::EmptyInputAndEmptyOutput(const EmptyInputAndEmptyOutputRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? EmptyInputAndEmptyOutputOutcome(result.GetResultWithOwnership())
-                            : EmptyInputAndEmptyOutputOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return EmptyInputAndEmptyOutputOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return EmptyInputAndEmptyOutputOutcome(
+      BuildOperationResult<EmptyInputAndEmptyOutputResponse>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 EndpointOperationOutcome EC2ProtocolClient::EndpointOperation(const EndpointOperationRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? EndpointOperationOutcome(result.GetResultWithOwnership())
-                            : EndpointOperationOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return EndpointOperationOutcome(std::move(result.GetError()));
+  }
+  return EndpointOperationOutcome(result.GetResultWithOwnership());
 }
 
 EndpointWithHostLabelOperationOutcome EC2ProtocolClient::EndpointWithHostLabelOperation(
     const EndpointWithHostLabelOperationRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? EndpointWithHostLabelOperationOutcome(result.GetResultWithOwnership())
-                            : EndpointWithHostLabelOperationOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return EndpointWithHostLabelOperationOutcome(std::move(result.GetError()));
+  }
+  return EndpointWithHostLabelOperationOutcome(result.GetResultWithOwnership());
 }
 
 FractionalSecondsOutcome EC2ProtocolClient::FractionalSeconds(const FractionalSecondsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? FractionalSecondsOutcome(result.GetResultWithOwnership())
-                            : FractionalSecondsOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return FractionalSecondsOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return FractionalSecondsOutcome(
+      BuildOperationResult<FractionalSecondsResponse>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 GreetingWithErrorsOutcome EC2ProtocolClient::GreetingWithErrors(const GreetingWithErrorsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? GreetingWithErrorsOutcome(result.GetResultWithOwnership())
-                            : GreetingWithErrorsOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return GreetingWithErrorsOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return GreetingWithErrorsOutcome(
+      BuildOperationResult<GreetingWithErrorsResponse>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 HostWithPathOperationOutcome EC2ProtocolClient::HostWithPathOperation(const HostWithPathOperationRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? HostWithPathOperationOutcome(result.GetResultWithOwnership())
-                            : HostWithPathOperationOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return HostWithPathOperationOutcome(std::move(result.GetError()));
+  }
+  return HostWithPathOperationOutcome(result.GetResultWithOwnership());
 }
 
 IgnoresWrappingXmlNameOutcome EC2ProtocolClient::IgnoresWrappingXmlName(const IgnoresWrappingXmlNameRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? IgnoresWrappingXmlNameOutcome(result.GetResultWithOwnership())
-                            : IgnoresWrappingXmlNameOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return IgnoresWrappingXmlNameOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return IgnoresWrappingXmlNameOutcome(
+      BuildOperationResult<IgnoresWrappingXmlNameResponse>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 NestedStructuresOutcome EC2ProtocolClient::NestedStructures(const NestedStructuresRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? NestedStructuresOutcome(result.GetResultWithOwnership())
-                            : NestedStructuresOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return NestedStructuresOutcome(std::move(result.GetError()));
+  }
+  return NestedStructuresOutcome(result.GetResultWithOwnership());
 }
 
 NoInputAndOutputOutcome EC2ProtocolClient::NoInputAndOutput(const NoInputAndOutputRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? NoInputAndOutputOutcome(result.GetResultWithOwnership())
-                            : NoInputAndOutputOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return NoInputAndOutputOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return NoInputAndOutputOutcome(
+      BuildOperationResult<NoInputAndOutputResponse>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 PutWithContentEncodingOutcome EC2ProtocolClient::PutWithContentEncoding(const PutWithContentEncodingRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? PutWithContentEncodingOutcome(result.GetResultWithOwnership())
-                            : PutWithContentEncodingOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return PutWithContentEncodingOutcome(std::move(result.GetError()));
+  }
+  return PutWithContentEncodingOutcome(result.GetResultWithOwnership());
 }
 
 QueryIdempotencyTokenAutoFillOutcome EC2ProtocolClient::QueryIdempotencyTokenAutoFill(
     const QueryIdempotencyTokenAutoFillRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? QueryIdempotencyTokenAutoFillOutcome(result.GetResultWithOwnership())
-                            : QueryIdempotencyTokenAutoFillOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return QueryIdempotencyTokenAutoFillOutcome(std::move(result.GetError()));
+  }
+  return QueryIdempotencyTokenAutoFillOutcome(result.GetResultWithOwnership());
 }
 
 QueryListsOutcome EC2ProtocolClient::QueryLists(const QueryListsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? QueryListsOutcome(result.GetResultWithOwnership()) : QueryListsOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return QueryListsOutcome(std::move(result.GetError()));
+  }
+  return QueryListsOutcome(result.GetResultWithOwnership());
 }
 
 QueryTimestampsOutcome EC2ProtocolClient::QueryTimestamps(const QueryTimestampsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? QueryTimestampsOutcome(result.GetResultWithOwnership())
-                            : QueryTimestampsOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return QueryTimestampsOutcome(std::move(result.GetError()));
+  }
+  return QueryTimestampsOutcome(result.GetResultWithOwnership());
 }
 
 RecursiveXmlShapesOutcome EC2ProtocolClient::RecursiveXmlShapes(const RecursiveXmlShapesRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? RecursiveXmlShapesOutcome(result.GetResultWithOwnership())
-                            : RecursiveXmlShapesOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return RecursiveXmlShapesOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return RecursiveXmlShapesOutcome(
+      BuildOperationResult<RecursiveXmlShapesResponse>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 SimpleInputParamsOutcome EC2ProtocolClient::SimpleInputParams(const SimpleInputParamsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? SimpleInputParamsOutcome(result.GetResultWithOwnership())
-                            : SimpleInputParamsOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return SimpleInputParamsOutcome(std::move(result.GetError()));
+  }
+  return SimpleInputParamsOutcome(result.GetResultWithOwnership());
 }
 
 SimpleScalarXmlPropertiesOutcome EC2ProtocolClient::SimpleScalarXmlProperties(const SimpleScalarXmlPropertiesRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? SimpleScalarXmlPropertiesOutcome(result.GetResultWithOwnership())
-                            : SimpleScalarXmlPropertiesOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return SimpleScalarXmlPropertiesOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return SimpleScalarXmlPropertiesOutcome(
+      BuildOperationResult<SimpleScalarXmlPropertiesResponse>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 XmlBlobsOutcome EC2ProtocolClient::XmlBlobs(const XmlBlobsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? XmlBlobsOutcome(result.GetResultWithOwnership()) : XmlBlobsOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return XmlBlobsOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return XmlBlobsOutcome(BuildOperationResult<XmlBlobsResponse>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 XmlEmptyBlobsOutcome EC2ProtocolClient::XmlEmptyBlobs(const XmlEmptyBlobsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? XmlEmptyBlobsOutcome(result.GetResultWithOwnership()) : XmlEmptyBlobsOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return XmlEmptyBlobsOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return XmlEmptyBlobsOutcome(
+      BuildOperationResult<XmlEmptyBlobsResponse>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 XmlEmptyListsOutcome EC2ProtocolClient::XmlEmptyLists(const XmlEmptyListsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? XmlEmptyListsOutcome(result.GetResultWithOwnership()) : XmlEmptyListsOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return XmlEmptyListsOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return XmlEmptyListsOutcome(
+      BuildOperationResult<XmlEmptyListsResponse>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 XmlEnumsOutcome EC2ProtocolClient::XmlEnums(const XmlEnumsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? XmlEnumsOutcome(result.GetResultWithOwnership()) : XmlEnumsOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return XmlEnumsOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return XmlEnumsOutcome(BuildOperationResult<XmlEnumsResponse>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 XmlIntEnumsOutcome EC2ProtocolClient::XmlIntEnums(const XmlIntEnumsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? XmlIntEnumsOutcome(result.GetResultWithOwnership()) : XmlIntEnumsOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return XmlIntEnumsOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return XmlIntEnumsOutcome(BuildOperationResult<XmlIntEnumsResponse>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 XmlListsOutcome EC2ProtocolClient::XmlLists(const XmlListsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? XmlListsOutcome(result.GetResultWithOwnership()) : XmlListsOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return XmlListsOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return XmlListsOutcome(BuildOperationResult<XmlListsResponse>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 XmlNamespacesOutcome EC2ProtocolClient::XmlNamespaces(const XmlNamespacesRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? XmlNamespacesOutcome(result.GetResultWithOwnership()) : XmlNamespacesOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return XmlNamespacesOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return XmlNamespacesOutcome(
+      BuildOperationResult<XmlNamespacesResponse>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }
 
 XmlTimestampsOutcome EC2ProtocolClient::XmlTimestamps(const XmlTimestampsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? XmlTimestampsOutcome(result.GetResultWithOwnership()) : XmlTimestampsOutcome(std::move(result.GetError()));
+  if (!result.IsSuccess()) {
+    return XmlTimestampsOutcome(std::move(result.GetError()));
+  }
+  // Client-driven, protocol-agnostic response deserialization when the result is a schema-serde shape
+  // and this client owns a ClientProtocol; otherwise the legacy result construction. Selected at
+  // compile time (see AwsSmithyClientT::BuildOperationResult / detail::HasSchemaSerdeOutput).
+  return XmlTimestampsOutcome(
+      BuildOperationResult<XmlTimestampsResponse>(result.GetResultWithOwnership(), request.GetSchemaSerdeContext()));
 }

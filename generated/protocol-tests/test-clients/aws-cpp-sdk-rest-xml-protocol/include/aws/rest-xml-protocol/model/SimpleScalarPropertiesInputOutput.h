@@ -1,0 +1,207 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/rest-xml-protocol/RestXmlProtocol_EXPORTS.h>
+
+#include <utility>
+
+namespace Aws {
+namespace Utils {
+namespace Xml {
+class XmlNode;
+}  // namespace Xml
+}  // namespace Utils
+namespace RestXmlProtocol {
+namespace Model {
+
+/**
+ */
+class SimpleScalarPropertiesInputOutput {
+ public:
+  AWS_RESTXMLPROTOCOL_API SimpleScalarPropertiesInputOutput() = default;
+  AWS_RESTXMLPROTOCOL_API SimpleScalarPropertiesInputOutput(const Aws::Utils::Xml::XmlNode& xmlNode);
+  AWS_RESTXMLPROTOCOL_API SimpleScalarPropertiesInputOutput& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+  AWS_RESTXMLPROTOCOL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
+
+  ///@{
+
+  inline const Aws::String& GetFoo() const { return m_foo; }
+  inline bool FooHasBeenSet() const { return m_fooHasBeenSet; }
+  template <typename FooT = Aws::String>
+  void SetFoo(FooT&& value) {
+    m_fooHasBeenSet = true;
+    m_foo = std::forward<FooT>(value);
+  }
+  template <typename FooT = Aws::String>
+  SimpleScalarPropertiesInputOutput& WithFoo(FooT&& value) {
+    SetFoo(std::forward<FooT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetStringValue() const { return m_stringValue; }
+  inline bool StringValueHasBeenSet() const { return m_stringValueHasBeenSet; }
+  template <typename StringValueT = Aws::String>
+  void SetStringValue(StringValueT&& value) {
+    m_stringValueHasBeenSet = true;
+    m_stringValue = std::forward<StringValueT>(value);
+  }
+  template <typename StringValueT = Aws::String>
+  SimpleScalarPropertiesInputOutput& WithStringValue(StringValueT&& value) {
+    SetStringValue(std::forward<StringValueT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline bool GetTrueBooleanValue() const { return m_trueBooleanValue; }
+  inline bool TrueBooleanValueHasBeenSet() const { return m_trueBooleanValueHasBeenSet; }
+  inline void SetTrueBooleanValue(bool value) {
+    m_trueBooleanValueHasBeenSet = true;
+    m_trueBooleanValue = value;
+  }
+  inline SimpleScalarPropertiesInputOutput& WithTrueBooleanValue(bool value) {
+    SetTrueBooleanValue(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline bool GetFalseBooleanValue() const { return m_falseBooleanValue; }
+  inline bool FalseBooleanValueHasBeenSet() const { return m_falseBooleanValueHasBeenSet; }
+  inline void SetFalseBooleanValue(bool value) {
+    m_falseBooleanValueHasBeenSet = true;
+    m_falseBooleanValue = value;
+  }
+  inline SimpleScalarPropertiesInputOutput& WithFalseBooleanValue(bool value) {
+    SetFalseBooleanValue(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline int GetByteValue() const { return m_byteValue; }
+  inline bool ByteValueHasBeenSet() const { return m_byteValueHasBeenSet; }
+  inline void SetByteValue(int value) {
+    m_byteValueHasBeenSet = true;
+    m_byteValue = value;
+  }
+  inline SimpleScalarPropertiesInputOutput& WithByteValue(int value) {
+    SetByteValue(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline int GetShortValue() const { return m_shortValue; }
+  inline bool ShortValueHasBeenSet() const { return m_shortValueHasBeenSet; }
+  inline void SetShortValue(int value) {
+    m_shortValueHasBeenSet = true;
+    m_shortValue = value;
+  }
+  inline SimpleScalarPropertiesInputOutput& WithShortValue(int value) {
+    SetShortValue(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline int GetIntegerValue() const { return m_integerValue; }
+  inline bool IntegerValueHasBeenSet() const { return m_integerValueHasBeenSet; }
+  inline void SetIntegerValue(int value) {
+    m_integerValueHasBeenSet = true;
+    m_integerValue = value;
+  }
+  inline SimpleScalarPropertiesInputOutput& WithIntegerValue(int value) {
+    SetIntegerValue(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline long long GetLongValue() const { return m_longValue; }
+  inline bool LongValueHasBeenSet() const { return m_longValueHasBeenSet; }
+  inline void SetLongValue(long long value) {
+    m_longValueHasBeenSet = true;
+    m_longValue = value;
+  }
+  inline SimpleScalarPropertiesInputOutput& WithLongValue(long long value) {
+    SetLongValue(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline double GetFloatValue() const { return m_floatValue; }
+  inline bool FloatValueHasBeenSet() const { return m_floatValueHasBeenSet; }
+  inline void SetFloatValue(double value) {
+    m_floatValueHasBeenSet = true;
+    m_floatValue = value;
+  }
+  inline SimpleScalarPropertiesInputOutput& WithFloatValue(double value) {
+    SetFloatValue(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline double GetDoubleValue() const { return m_doubleValue; }
+  inline bool DoubleValueHasBeenSet() const { return m_doubleValueHasBeenSet; }
+  inline void SetDoubleValue(double value) {
+    m_doubleValueHasBeenSet = true;
+    m_doubleValue = value;
+  }
+  inline SimpleScalarPropertiesInputOutput& WithDoubleValue(double value) {
+    SetDoubleValue(value);
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_foo;
+
+  Aws::String m_stringValue;
+
+  bool m_trueBooleanValue{false};
+
+  bool m_falseBooleanValue{false};
+
+  int m_byteValue{0};
+
+  int m_shortValue{0};
+
+  int m_integerValue{0};
+
+  long long m_longValue{0};
+
+  double m_floatValue{0.0};
+
+  double m_doubleValue{0.0};
+  bool m_fooHasBeenSet = false;
+  bool m_stringValueHasBeenSet = false;
+  bool m_trueBooleanValueHasBeenSet = false;
+  bool m_falseBooleanValueHasBeenSet = false;
+  bool m_byteValueHasBeenSet = false;
+  bool m_shortValueHasBeenSet = false;
+  bool m_integerValueHasBeenSet = false;
+  bool m_longValueHasBeenSet = false;
+  bool m_floatValueHasBeenSet = false;
+  bool m_doubleValueHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace RestXmlProtocol
+}  // namespace Aws

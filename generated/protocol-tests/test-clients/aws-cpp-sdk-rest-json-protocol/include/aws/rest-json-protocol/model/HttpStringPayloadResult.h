@@ -31,10 +31,8 @@ class HttpStringPayloadResult {
   AWS_RESTJSONPROTOCOL_API HttpStringPayloadResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
 
   ///@{
-
   inline Aws::IOStream& GetPayload() const { return m_payload.GetUnderlyingStream(); }
   inline void ReplaceBody(Aws::IOStream* body) { m_payload = Aws::Utils::Stream::ResponseStream(body); }
-
   ///@}
 
   ///@{
@@ -54,7 +52,7 @@ class HttpStringPayloadResult {
   inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
-  Aws::Utils::Stream::ResponseStream m_payload;
+  Aws::Utils::Stream::ResponseStream m_payload{};
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;

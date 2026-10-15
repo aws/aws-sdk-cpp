@@ -20,7 +20,7 @@ namespace RestXmlProtocol {
 namespace Model {
 
 /**
- * <p>This error is thrown when a request is invalid.</p><p><h3>See Also:</h3>   <a
+ * This error is thrown when a request is invalid.<p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/ComplexError">AWS
  * API Reference</a></p>
  */
@@ -29,7 +29,6 @@ class ComplexError {
   AWS_RESTXMLPROTOCOL_API ComplexError() = default;
   AWS_RESTXMLPROTOCOL_API ComplexError(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_RESTXMLPROTOCOL_API ComplexError& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_RESTXMLPROTOCOL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
   ///@{

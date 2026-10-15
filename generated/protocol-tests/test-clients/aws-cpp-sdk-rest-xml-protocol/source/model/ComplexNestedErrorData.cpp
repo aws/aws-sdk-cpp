@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/rest-xml-protocol/model/ComplexNestedErrorData.h>
@@ -19,27 +20,9 @@ namespace Model {
 
 ComplexNestedErrorData::ComplexNestedErrorData(const XmlNode& xmlNode) { *this = xmlNode; }
 
-ComplexNestedErrorData& ComplexNestedErrorData::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+ComplexNestedErrorData& ComplexNestedErrorData::operator=(const XmlNode&) { return *this; }
 
-  if (!resultNode.IsNull()) {
-    XmlNode fooNode = resultNode.FirstChild("Foo");
-    if (!fooNode.IsNull()) {
-      m_foo = Aws::Utils::Xml::DecodeEscapedXmlText(fooNode.GetText());
-      m_fooHasBeenSet = true;
-    }
-  }
-
-  return *this;
-}
-
-void ComplexNestedErrorData::AddToNode(XmlNode& parentNode) const {
-  Aws::StringStream ss;
-  if (m_fooHasBeenSet) {
-    XmlNode fooNode = parentNode.CreateChildElement("Foo");
-    fooNode.SetText(m_foo);
-  }
-}
+void ComplexNestedErrorData::AddToNode(XmlNode&) const {}
 
 }  // namespace Model
 }  // namespace RestXmlProtocol

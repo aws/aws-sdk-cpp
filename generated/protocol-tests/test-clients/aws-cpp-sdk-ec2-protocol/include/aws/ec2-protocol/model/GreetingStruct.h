@@ -19,14 +19,15 @@ class XmlNode;
 namespace EC2Protocol {
 namespace Model {
 
+/**
+ */
 class GreetingStruct {
  public:
   AWS_EC2PROTOCOL_API GreetingStruct() = default;
   AWS_EC2PROTOCOL_API GreetingStruct(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_EC2PROTOCOL_API GreetingStruct& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_EC2PROTOCOL_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-  AWS_EC2PROTOCOL_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
+  AWS_EC2PROTOCOL_API void OutputToStream(Aws::OStream& ostream, const char* location) const;
 
   ///@{
 

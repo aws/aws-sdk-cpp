@@ -3,18 +3,57 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/http/URI.h>
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/ec2-protocol/model/XmlEmptyBlobsRequest.h>
+#include <smithy/client/schema/ClientProtocol.h>
+#include <smithy/client/schema/DocumentConversion.h>
+#include <smithy/client/schema/HttpTraits.h>
+#include <smithy/client/schema/MapSerializer.h>
+#include <smithy/client/schema/Schema.h>
+#include <smithy/client/schema/SchemaBuilder.h>
+#include <smithy/client/schema/SerdeTraits.h>
+#include <smithy/client/schema/SerializableStruct.h>
+#include <smithy/client/schema/ShapeSerializer.h>
+#include <smithy/client/schema/XmlTraits.h>
+
+#include <numeric>
 
 using namespace Aws::EC2Protocol::Model;
 using namespace Aws::Utils;
 
-Aws::String XmlEmptyBlobsRequest::SerializePayload() const {
-  Aws::StringStream ss;
-  ss << "Action=XmlEmptyBlobs&";
-  ss << "Version=2020-01-08";
-  return ss.str();
+namespace {
+class XmlEmptyBlobsRequestSerializable final : public smithy::schema::SerializableStruct {
+ public:
+  explicit XmlEmptyBlobsRequestSerializable(const XmlEmptyBlobsRequest&) : m_schema(BuildSchema()) {}
+  const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
+  void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
+  void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
+  static std::shared_ptr<const smithy::schema::Schema> BuildSchema();
+
+ private:
+  const std::shared_ptr<const smithy::schema::Schema> m_schema;
+};
+
+void XmlEmptyBlobsRequestSerializable::SerializeMembers(smithy::schema::ShapeSerializer&) const {}
+
+std::shared_ptr<const smithy::schema::Schema> XmlEmptyBlobsRequestSerializable::BuildSchema() {
+  return smithy::schema::Schema::StructureBuilder("XmlEmptyBlobsRequest").Build();
 }
+
+}  // namespace
+
+Aws::UniquePtr<smithy::schema::SerializableStruct> XmlEmptyBlobsRequest::GetSchemaSerdeInput() const {
+  return Aws::MakeUnique<XmlEmptyBlobsRequestSerializable>("XmlEmptyBlobsRequestSerializable", *this);
+}
+
+Aws::String XmlEmptyBlobsRequest::SerializePayload() const { return {}; }
+smithy::schema::OperationRequestContext XmlEmptyBlobsRequest::GetSchemaSerdeContext() const { return {"XmlEmptyBlobs", "2020-01-08"}; }
 
 void XmlEmptyBlobsRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

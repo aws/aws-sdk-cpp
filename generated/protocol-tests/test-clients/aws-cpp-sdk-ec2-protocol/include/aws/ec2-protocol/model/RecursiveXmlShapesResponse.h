@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/ec2-protocol/EC2Protocol_EXPORTS.h>
 #include <aws/ec2-protocol/model/RecursiveXmlShapesOutputNested1.h>
 #include <aws/ec2-protocol/model/ResponseMetadata.h>
@@ -20,6 +21,13 @@ namespace Xml {
 class XmlDocument;
 }  // namespace Xml
 }  // namespace Utils
+}  // namespace Aws
+namespace smithy {
+namespace schema {
+class SerializableStruct;
+}
+}  // namespace smithy
+namespace Aws {
 namespace EC2Protocol {
 namespace Model {
 class RecursiveXmlShapesResponse {
@@ -27,6 +35,7 @@ class RecursiveXmlShapesResponse {
   AWS_EC2PROTOCOL_API RecursiveXmlShapesResponse() = default;
   AWS_EC2PROTOCOL_API RecursiveXmlShapesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
   AWS_EC2PROTOCOL_API RecursiveXmlShapesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_EC2PROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeOutput();
 
   ///@{
 

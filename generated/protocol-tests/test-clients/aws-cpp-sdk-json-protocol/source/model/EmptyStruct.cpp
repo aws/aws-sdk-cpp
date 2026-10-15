@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/json-protocol/model/EmptyStruct.h>
 
 #include <utility>
@@ -17,14 +20,10 @@ namespace Model {
 
 EmptyStruct::EmptyStruct(JsonView jsonValue) { *this = jsonValue; }
 
-EmptyStruct& EmptyStruct::operator=(JsonView jsonValue) {
-  AWS_UNREFERENCED_PARAM(jsonValue);
-  return *this;
-}
+EmptyStruct& EmptyStruct::operator=(JsonView) { return *this; }
 
 JsonValue EmptyStruct::Jsonize() const {
   JsonValue payload;
-
   return payload;
 }
 

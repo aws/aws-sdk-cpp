@@ -8,8 +8,17 @@
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/rest-json-protocol/model/JsonBlobsResult.h>
+#include <smithy/client/schema/DocumentConversion.h>
+#include <smithy/client/schema/HttpTraits.h>
+#include <smithy/client/schema/JsonTraits.h>
+#include <smithy/client/schema/Schema.h>
+#include <smithy/client/schema/SchemaBuilder.h>
+#include <smithy/client/schema/SerdeTraits.h>
+#include <smithy/client/schema/SerializableStruct.h>
+#include <smithy/client/schema/ShapeDeserializer.h>
 
 #include <utility>
 
@@ -22,11 +31,7 @@ JsonBlobsResult::JsonBlobsResult(const Aws::AmazonWebServiceResult<JsonValue>& r
 
 JsonBlobsResult& JsonBlobsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
-  JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("data")) {
-    m_data = HashingUtils::Base64Decode(jsonValue.GetString("data"));
-    m_dataHasBeenSet = true;
-  }
+  AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
@@ -36,4 +41,39 @@ JsonBlobsResult& JsonBlobsResult::operator=(const Aws::AmazonWebServiceResult<Js
   }
 
   return *this;
+}
+
+namespace {
+class JsonBlobsResultDeserializable final : public smithy::schema::SerializableStruct {
+ public:
+  explicit JsonBlobsResultDeserializable(JsonBlobsResult& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
+  void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
+  void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
+  static std::shared_ptr<const smithy::schema::Schema> BuildSchema();
+
+ private:
+  JsonBlobsResult& m_obj;
+  const std::shared_ptr<const smithy::schema::Schema> m_schema;
+};
+
+void JsonBlobsResultDeserializable::From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) {
+  const Aws::String memberName = memberSchema.GetMemberName();
+  if (memberName == "data") {
+    auto value0 = deserializer.ReadBlob(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetData(*value0);
+    }
+    return;
+  }
+}
+
+std::shared_ptr<const smithy::schema::Schema> JsonBlobsResultDeserializable::BuildSchema() {
+  return smithy::schema::Schema::StructureBuilder("JsonBlobsResult").PutMember("data", smithy::schema::Schema::CreateBlob("data")).Build();
+}
+
+}  // namespace
+
+Aws::UniquePtr<smithy::schema::SerializableStruct> JsonBlobsResult::GetSchemaSerdeOutput() {
+  return Aws::MakeUnique<JsonBlobsResultDeserializable>("JsonBlobsResultDeserializable", *this);
 }

@@ -19,14 +19,15 @@ class XmlNode;
 namespace QueryProtocol {
 namespace Model {
 
+/**
+ */
 class StructArg {
  public:
   AWS_QUERYPROTOCOL_API StructArg() = default;
   AWS_QUERYPROTOCOL_API StructArg(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_QUERYPROTOCOL_API StructArg& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_QUERYPROTOCOL_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-  AWS_QUERYPROTOCOL_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
+  AWS_QUERYPROTOCOL_API void OutputToStream(Aws::OStream& ostream, const char* location) const;
 
   ///@{
 

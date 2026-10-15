@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/ec2-protocol/model/StructureListMember.h>
@@ -19,43 +22,11 @@ namespace Model {
 
 StructureListMember::StructureListMember(const XmlNode& xmlNode) { *this = xmlNode; }
 
-StructureListMember& StructureListMember::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+StructureListMember& StructureListMember::operator=(const XmlNode&) { return *this; }
 
-  if (!resultNode.IsNull()) {
-    XmlNode aNode = resultNode.FirstChild("value");
-    if (!aNode.IsNull()) {
-      m_a = Aws::Utils::Xml::DecodeEscapedXmlText(aNode.GetText());
-      m_aHasBeenSet = true;
-    }
-    XmlNode bNode = resultNode.FirstChild("other");
-    if (!bNode.IsNull()) {
-      m_b = Aws::Utils::Xml::DecodeEscapedXmlText(bNode.GetText());
-      m_bHasBeenSet = true;
-    }
-  }
+void StructureListMember::OutputToStream(Aws::OStream&, const char*, unsigned, const char*) const {}
 
-  return *this;
-}
-
-void StructureListMember::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
-  if (m_aHasBeenSet) {
-    oStream << location << index << locationValue << ".a=" << StringUtils::URLEncode(m_a.c_str()) << "&";
-  }
-
-  if (m_bHasBeenSet) {
-    oStream << location << index << locationValue << ".b=" << StringUtils::URLEncode(m_b.c_str()) << "&";
-  }
-}
-
-void StructureListMember::OutputToStream(Aws::OStream& oStream, const char* location) const {
-  if (m_aHasBeenSet) {
-    oStream << location << ".a=" << StringUtils::URLEncode(m_a.c_str()) << "&";
-  }
-  if (m_bHasBeenSet) {
-    oStream << location << ".b=" << StringUtils::URLEncode(m_b.c_str()) << "&";
-  }
-}
+void StructureListMember::OutputToStream(Aws::OStream&, const char*) const {}
 
 }  // namespace Model
 }  // namespace EC2Protocol

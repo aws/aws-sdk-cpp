@@ -4,10 +4,22 @@
  */
 
 #include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/memory/AWSMemory.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/query-protocol/model/IgnoresWrappingXmlNameResult.h>
+#include <smithy/client/schema/DocumentConversion.h>
+#include <smithy/client/schema/HttpTraits.h>
+#include <smithy/client/schema/Schema.h>
+#include <smithy/client/schema/SchemaBuilder.h>
+#include <smithy/client/schema/SerdeTraits.h>
+#include <smithy/client/schema/SerializableStruct.h>
+#include <smithy/client/schema/ShapeDeserializer.h>
+#include <smithy/client/schema/XmlTraits.h>
 
 #include <utility>
 
@@ -23,19 +35,6 @@ IgnoresWrappingXmlNameResult& IgnoresWrappingXmlNameResult::operator=(const Aws:
   m_HttpResponseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "IgnoresWrappingXmlNameResult")) {
-    resultNode = rootNode.FirstChild("IgnoresWrappingXmlNameResult");
-  }
-
-  if (!resultNode.IsNull()) {
-    XmlNode fooNode = resultNode.FirstChild("foo");
-    if (!fooNode.IsNull()) {
-      m_foo = Aws::Utils::Xml::DecodeEscapedXmlText(fooNode.GetText());
-      m_fooHasBeenSet = true;
-    }
-  }
-
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
@@ -44,4 +43,42 @@ IgnoresWrappingXmlNameResult& IgnoresWrappingXmlNameResult::operator=(const Aws:
                         "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
+}
+
+namespace {
+class IgnoresWrappingXmlNameResultDeserializable final : public smithy::schema::SerializableStruct {
+ public:
+  explicit IgnoresWrappingXmlNameResultDeserializable(IgnoresWrappingXmlNameResult& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
+  void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
+  void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
+  static std::shared_ptr<const smithy::schema::Schema> BuildSchema();
+
+ private:
+  IgnoresWrappingXmlNameResult& m_obj;
+  const std::shared_ptr<const smithy::schema::Schema> m_schema;
+};
+
+void IgnoresWrappingXmlNameResultDeserializable::From(const smithy::schema::Schema& memberSchema,
+                                                      smithy::schema::ShapeDeserializer& deserializer) {
+  const Aws::String memberName = memberSchema.GetMemberName();
+  if (memberName == "foo") {
+    auto value0 = deserializer.ReadString(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetFoo(*value0);
+    }
+    return;
+  }
+}
+
+std::shared_ptr<const smithy::schema::Schema> IgnoresWrappingXmlNameResultDeserializable::BuildSchema() {
+  return smithy::schema::Schema::StructureBuilder("IgnoresWrappingXmlNameResult")
+      .PutMember("foo", smithy::schema::Schema::CreateString("foo"))
+      .Build();
+}
+
+}  // namespace
+
+Aws::UniquePtr<smithy::schema::SerializableStruct> IgnoresWrappingXmlNameResult::GetSchemaSerdeOutput() {
+  return Aws::MakeUnique<IgnoresWrappingXmlNameResultDeserializable>("IgnoresWrappingXmlNameResultDeserializable", *this);
 }

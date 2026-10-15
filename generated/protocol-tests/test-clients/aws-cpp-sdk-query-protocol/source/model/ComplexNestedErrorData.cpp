@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/query-protocol/model/ComplexNestedErrorData.h>
@@ -19,31 +22,11 @@ namespace Model {
 
 ComplexNestedErrorData::ComplexNestedErrorData(const XmlNode& xmlNode) { *this = xmlNode; }
 
-ComplexNestedErrorData& ComplexNestedErrorData::operator=(const XmlNode& xmlNode) {
-  XmlNode resultNode = xmlNode;
+ComplexNestedErrorData& ComplexNestedErrorData::operator=(const XmlNode&) { return *this; }
 
-  if (!resultNode.IsNull()) {
-    XmlNode fooNode = resultNode.FirstChild("Foo");
-    if (!fooNode.IsNull()) {
-      m_foo = Aws::Utils::Xml::DecodeEscapedXmlText(fooNode.GetText());
-      m_fooHasBeenSet = true;
-    }
-  }
+void ComplexNestedErrorData::OutputToStream(Aws::OStream&, const char*, unsigned, const char*) const {}
 
-  return *this;
-}
-
-void ComplexNestedErrorData::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
-  if (m_fooHasBeenSet) {
-    oStream << location << index << locationValue << ".Foo=" << StringUtils::URLEncode(m_foo.c_str()) << "&";
-  }
-}
-
-void ComplexNestedErrorData::OutputToStream(Aws::OStream& oStream, const char* location) const {
-  if (m_fooHasBeenSet) {
-    oStream << location << ".Foo=" << StringUtils::URLEncode(m_foo.c_str()) << "&";
-  }
-}
+void ComplexNestedErrorData::OutputToStream(Aws::OStream&, const char*) const {}
 
 }  // namespace Model
 }  // namespace QueryProtocol

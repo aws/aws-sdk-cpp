@@ -3,95 +3,120 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/http/URI.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/rest-xml-protocol/model/SimpleScalarPropertiesRequest.h>
+#include <smithy/client/schema/ClientProtocol.h>
+#include <smithy/client/schema/DocumentConversion.h>
+#include <smithy/client/schema/HttpTraits.h>
+#include <smithy/client/schema/MapSerializer.h>
+#include <smithy/client/schema/Schema.h>
+#include <smithy/client/schema/SchemaBuilder.h>
+#include <smithy/client/schema/SerdeTraits.h>
+#include <smithy/client/schema/SerializableStruct.h>
+#include <smithy/client/schema/ShapeSerializer.h>
+#include <smithy/client/schema/XmlTraits.h>
 
+#include <numeric>
 #include <utility>
 
 using namespace Aws::RestXmlProtocol::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
+using namespace Aws::Http;
 
-Aws::String SimpleScalarPropertiesRequest::SerializePayload() const {
-  XmlDocument payloadDoc = XmlDocument::CreateWithRootNode("SimpleScalarPropertiesRequest");
+namespace {
+class SimpleScalarPropertiesRequestSerializable final : public smithy::schema::SerializableStruct {
+ public:
+  explicit SimpleScalarPropertiesRequestSerializable(const SimpleScalarPropertiesRequest& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
+  void SerializeMembers(smithy::schema::ShapeSerializer& serializer) const override;
+  void From(const smithy::schema::Schema&, smithy::schema::ShapeDeserializer&) override {}
+  static std::shared_ptr<const smithy::schema::Schema> BuildSchema();
 
-  XmlNode parentNode = payloadDoc.GetRootElement();
+ private:
+  const SimpleScalarPropertiesRequest& m_obj;
+  const std::shared_ptr<const smithy::schema::Schema> m_schema;
+};
 
-  Aws::StringStream ss;
-  if (m_stringValueHasBeenSet) {
-    XmlNode stringValueNode = parentNode.CreateChildElement("stringValue");
-    stringValueNode.SetText(m_stringValue);
+void SimpleScalarPropertiesRequestSerializable::SerializeMembers(smithy::schema::ShapeSerializer& serializer) const {
+  if (m_obj.FooHasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("foo").value();
+    serializer.WriteString(memberSchema, m_obj.GetFoo());
   }
-
-  if (m_trueBooleanValueHasBeenSet) {
-    XmlNode trueBooleanValueNode = parentNode.CreateChildElement("trueBooleanValue");
-    ss << std::boolalpha << m_trueBooleanValue;
-    trueBooleanValueNode.SetText(ss.str());
-    ss.str("");
+  if (m_obj.StringValueHasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("stringValue").value();
+    serializer.WriteString(memberSchema, m_obj.GetStringValue());
   }
-
-  if (m_falseBooleanValueHasBeenSet) {
-    XmlNode falseBooleanValueNode = parentNode.CreateChildElement("falseBooleanValue");
-    ss << std::boolalpha << m_falseBooleanValue;
-    falseBooleanValueNode.SetText(ss.str());
-    ss.str("");
+  if (m_obj.TrueBooleanValueHasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("trueBooleanValue").value();
+    serializer.WriteBoolean(memberSchema, m_obj.GetTrueBooleanValue());
   }
-
-  if (m_byteValueHasBeenSet) {
-    XmlNode byteValueNode = parentNode.CreateChildElement("byteValue");
-    ss << m_byteValue;
-    byteValueNode.SetText(ss.str());
-    ss.str("");
+  if (m_obj.FalseBooleanValueHasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("falseBooleanValue").value();
+    serializer.WriteBoolean(memberSchema, m_obj.GetFalseBooleanValue());
   }
-
-  if (m_shortValueHasBeenSet) {
-    XmlNode shortValueNode = parentNode.CreateChildElement("shortValue");
-    ss << m_shortValue;
-    shortValueNode.SetText(ss.str());
-    ss.str("");
+  if (m_obj.ByteValueHasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("byteValue").value();
+    serializer.WriteInteger(memberSchema, m_obj.GetByteValue());
   }
-
-  if (m_integerValueHasBeenSet) {
-    XmlNode integerValueNode = parentNode.CreateChildElement("integerValue");
-    ss << m_integerValue;
-    integerValueNode.SetText(ss.str());
-    ss.str("");
+  if (m_obj.ShortValueHasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("shortValue").value();
+    serializer.WriteInteger(memberSchema, m_obj.GetShortValue());
   }
-
-  if (m_longValueHasBeenSet) {
-    XmlNode longValueNode = parentNode.CreateChildElement("longValue");
-    ss << m_longValue;
-    longValueNode.SetText(ss.str());
-    ss.str("");
+  if (m_obj.IntegerValueHasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("integerValue").value();
+    serializer.WriteInteger(memberSchema, m_obj.GetIntegerValue());
   }
-
-  if (m_floatValueHasBeenSet) {
-    XmlNode floatValueNode = parentNode.CreateChildElement("floatValue");
-    ss << m_floatValue;
-    floatValueNode.SetText(ss.str());
-    ss.str("");
+  if (m_obj.LongValueHasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("longValue").value();
+    serializer.WriteLong(memberSchema, m_obj.GetLongValue());
   }
-
-  if (m_doubleValueHasBeenSet) {
-    XmlNode doubleValueNode = parentNode.CreateChildElement("DoubleDribble");
-    ss << m_doubleValue;
-    doubleValueNode.SetText(ss.str());
-    ss.str("");
+  if (m_obj.FloatValueHasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("floatValue").value();
+    serializer.WriteDouble(memberSchema, m_obj.GetFloatValue());
   }
+  if (m_obj.DoubleValueHasBeenSet()) {
+    const smithy::schema::Schema& memberSchema = *m_schema->GetMember("doubleValue").value();
+    serializer.WriteDouble(memberSchema, m_obj.GetDoubleValue());
+  }
+}
 
-  return payloadDoc.ConvertToString();
+std::shared_ptr<const smithy::schema::Schema> SimpleScalarPropertiesRequestSerializable::BuildSchema() {
+  return smithy::schema::Schema::StructureBuilder("SimpleScalarPropertiesRequest")
+      .PutMember("foo", smithy::schema::Schema::CreateString("foo"),
+                 {{smithy::schema::HttpHeaderTrait::KEY(), Aws::MakeShared<smithy::schema::HttpHeaderTrait>("SchemaSerdeTrait", "X-Foo")}})
+      .PutMember("stringValue", smithy::schema::Schema::CreateString("stringValue"))
+      .PutMember("trueBooleanValue", smithy::schema::Schema::CreateBoolean("trueBooleanValue"))
+      .PutMember("falseBooleanValue", smithy::schema::Schema::CreateBoolean("falseBooleanValue"))
+      .PutMember("byteValue", smithy::schema::Schema::CreateInteger("byteValue"))
+      .PutMember("shortValue", smithy::schema::Schema::CreateInteger("shortValue"))
+      .PutMember("integerValue", smithy::schema::Schema::CreateInteger("integerValue"))
+      .PutMember("longValue", smithy::schema::Schema::CreateLong("longValue"))
+      .PutMember("floatValue", smithy::schema::Schema::CreateDouble("floatValue"))
+      .PutMember(
+          "doubleValue", smithy::schema::Schema::CreateDouble("doubleValue"),
+          {{smithy::schema::XmlNameTrait::KEY(), Aws::MakeShared<smithy::schema::XmlNameTrait>("SchemaSerdeTrait", "DoubleDribble")}})
+      .Build();
+}
+
+}  // namespace
+
+Aws::UniquePtr<smithy::schema::SerializableStruct> SimpleScalarPropertiesRequest::GetSchemaSerdeInput() const {
+  return Aws::MakeUnique<SimpleScalarPropertiesRequestSerializable>("SimpleScalarPropertiesRequestSerializable", *this);
+}
+
+Aws::String SimpleScalarPropertiesRequest::SerializePayload() const { return {}; }
+smithy::schema::OperationRequestContext SimpleScalarPropertiesRequest::GetSchemaSerdeContext() const {
+  return {"SimpleScalarProperties", "2019-12-16", "/SimpleScalarProperties", ""};
 }
 
 Aws::Http::HeaderValueCollection SimpleScalarPropertiesRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  Aws::StringStream ss;
-  if (m_fooHasBeenSet) {
-    ss << m_foo;
-    headers.emplace("x-foo", ss.str());
-    ss.str("");
-  }
-
   return headers;
 }

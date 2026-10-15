@@ -26,8 +26,8 @@ namespace JSONRPC10 {
 namespace Model {
 
 /**
- * <p>A union with a representative set of types for members.</p><p><h3>See
- * Also:</h3>   <a
+ * A union with a representative set of types for members.<p><h3>See Also:</h3>
+ * <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/json-rpc-10-2020-07-14/MyUnion">AWS
  * API Reference</a></p>
  */

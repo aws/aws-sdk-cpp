@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -20,24 +21,17 @@ namespace Model {
 
 DuplexStreamWithInitialMessagesInitialResponse::DuplexStreamWithInitialMessagesInitialResponse(JsonView jsonValue) { *this = jsonValue; }
 
-DuplexStreamWithInitialMessagesInitialResponse& DuplexStreamWithInitialMessagesInitialResponse::operator=(JsonView jsonValue) {
-  AWS_UNREFERENCED_PARAM(jsonValue);
-  return *this;
-}
-
-DuplexStreamWithInitialMessagesInitialResponse::DuplexStreamWithInitialMessagesInitialResponse(const Http::HeaderValueCollection& headers)
-    : DuplexStreamWithInitialMessagesInitialResponse() {
-  const auto& initialResponseMemberIter = headers.find("initial-response-member");
-  if (initialResponseMemberIter != headers.end()) {
-    m_initialResponseMember = initialResponseMemberIter->second;
-    m_initialResponseMemberHasBeenSet = true;
-  }
-}
+DuplexStreamWithInitialMessagesInitialResponse& DuplexStreamWithInitialMessagesInitialResponse::operator=(JsonView) { return *this; }
 
 JsonValue DuplexStreamWithInitialMessagesInitialResponse::Jsonize() const {
   JsonValue payload;
-
   return payload;
+}
+
+DuplexStreamWithInitialMessagesInitialResponse::DuplexStreamWithInitialMessagesInitialResponse(
+    const Http::HeaderValueCollection& responseHeaders)
+    : DuplexStreamWithInitialMessagesInitialResponse() {
+  AWS_UNREFERENCED_PARAM(responseHeaders);
 }
 
 }  // namespace Model

@@ -27,6 +27,8 @@ class OutputStreamWithInitialResponseRequest : public RestJsonProtocolRequest {
 
   inline virtual bool HasEventStreamResponse() const override { return true; }
   AWS_RESTJSONPROTOCOL_API Aws::String SerializePayload() const override;
+  AWS_RESTJSONPROTOCOL_API smithy::schema::OperationRequestContext GetSchemaSerdeContext() const override;
+  AWS_RESTJSONPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeInput() const override;
 
   /**
    * Underlying Event Stream Decoder.

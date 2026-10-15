@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
@@ -20,24 +21,17 @@ namespace Model {
 
 OutputStreamWithInitialResponseInitialResponse::OutputStreamWithInitialResponseInitialResponse(JsonView jsonValue) { *this = jsonValue; }
 
-OutputStreamWithInitialResponseInitialResponse& OutputStreamWithInitialResponseInitialResponse::operator=(JsonView jsonValue) {
-  AWS_UNREFERENCED_PARAM(jsonValue);
-  return *this;
-}
-
-OutputStreamWithInitialResponseInitialResponse::OutputStreamWithInitialResponseInitialResponse(const Http::HeaderValueCollection& headers)
-    : OutputStreamWithInitialResponseInitialResponse() {
-  const auto& initialResponseMemberIter = headers.find("initial-response-member");
-  if (initialResponseMemberIter != headers.end()) {
-    m_initialResponseMember = initialResponseMemberIter->second;
-    m_initialResponseMemberHasBeenSet = true;
-  }
-}
+OutputStreamWithInitialResponseInitialResponse& OutputStreamWithInitialResponseInitialResponse::operator=(JsonView) { return *this; }
 
 JsonValue OutputStreamWithInitialResponseInitialResponse::Jsonize() const {
   JsonValue payload;
-
   return payload;
+}
+
+OutputStreamWithInitialResponseInitialResponse::OutputStreamWithInitialResponseInitialResponse(
+    const Http::HeaderValueCollection& responseHeaders)
+    : OutputStreamWithInitialResponseInitialResponse() {
+  AWS_UNREFERENCED_PARAM(responseHeaders);
 }
 
 }  // namespace Model

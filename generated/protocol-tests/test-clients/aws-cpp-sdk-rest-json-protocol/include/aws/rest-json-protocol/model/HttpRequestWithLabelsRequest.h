@@ -28,6 +28,8 @@ class HttpRequestWithLabelsRequest : public RestJsonProtocolRequest {
   inline virtual const char* GetServiceRequestName() const override { return "HttpRequestWithLabels"; }
 
   AWS_RESTJSONPROTOCOL_API Aws::String SerializePayload() const override;
+  AWS_RESTJSONPROTOCOL_API smithy::schema::OperationRequestContext GetSchemaSerdeContext() const override;
+  AWS_RESTJSONPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeInput() const override;
 
   ///@{
 
@@ -117,7 +119,7 @@ class HttpRequestWithLabelsRequest : public RestJsonProtocolRequest {
 
   ///@{
   /**
-   * <p>Serialized in the path as true or false.</p>
+   * Serialized in the path as true or false.
    */
   inline bool GetBoolean() const { return m_boolean; }
   inline bool BooleanHasBeenSet() const { return m_booleanHasBeenSet; }
@@ -133,8 +135,8 @@ class HttpRequestWithLabelsRequest : public RestJsonProtocolRequest {
 
   ///@{
   /**
-   * <p>Note that this member has no format, so it's serialized as an RFC 3399
-   * date-time.</p>
+   * Note that this member has no format, so it's serialized as an RFC 3399
+   * date-time.
    */
   inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }
   inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }

@@ -24,6 +24,7 @@ class NoInputAndOutputRequest : public JSONRPC10Request {
   inline virtual const char* GetServiceRequestName() const override { return "NoInputAndOutput"; }
 
   AWS_JSONRPC10_API Aws::String SerializePayload() const override;
+  AWS_JSONRPC10_API smithy::schema::OperationRequestContext GetSchemaSerdeContext() const override;
 
   AWS_JSONRPC10_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 };

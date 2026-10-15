@@ -4,10 +4,22 @@
  */
 
 #include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/memory/AWSMemory.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/query-protocol/model/FlattenedXmlMapWithXmlNameResult.h>
+#include <smithy/client/schema/DocumentConversion.h>
+#include <smithy/client/schema/HttpTraits.h>
+#include <smithy/client/schema/Schema.h>
+#include <smithy/client/schema/SchemaBuilder.h>
+#include <smithy/client/schema/SerdeTraits.h>
+#include <smithy/client/schema/SerializableStruct.h>
+#include <smithy/client/schema/ShapeDeserializer.h>
+#include <smithy/client/schema/XmlTraits.h>
 
 #include <utility>
 
@@ -25,27 +37,6 @@ FlattenedXmlMapWithXmlNameResult& FlattenedXmlMapWithXmlNameResult::operator=(co
   m_HttpResponseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "FlattenedXmlMapWithXmlNameResult")) {
-    resultNode = rootNode.FirstChild("FlattenedXmlMapWithXmlNameResult");
-  }
-
-  if (!resultNode.IsNull()) {
-    XmlNode myMapNode = resultNode.FirstChild("KVP");
-    if (!myMapNode.IsNull()) {
-      XmlNode kVPEntry = myMapNode;
-      m_myMapHasBeenSet = !kVPEntry.IsNull();
-      while (!kVPEntry.IsNull()) {
-        XmlNode keyNode = kVPEntry.FirstChild("K");
-        XmlNode valueNode = kVPEntry.FirstChild("V");
-        m_myMap[keyNode.GetText()] = valueNode.GetText();
-        kVPEntry = kVPEntry.NextNode("KVP");
-      }
-
-      m_myMapHasBeenSet = true;
-    }
-  }
-
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
@@ -54,4 +45,58 @@ FlattenedXmlMapWithXmlNameResult& FlattenedXmlMapWithXmlNameResult::operator=(co
                         "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
+}
+
+namespace {
+class FlattenedXmlMapWithXmlNameResultDeserializable final : public smithy::schema::SerializableStruct {
+ public:
+  explicit FlattenedXmlMapWithXmlNameResultDeserializable(FlattenedXmlMapWithXmlNameResult& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
+  void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
+  void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
+  static std::shared_ptr<const smithy::schema::Schema> BuildSchema();
+
+ private:
+  FlattenedXmlMapWithXmlNameResult& m_obj;
+  const std::shared_ptr<const smithy::schema::Schema> m_schema;
+};
+
+void FlattenedXmlMapWithXmlNameResultDeserializable::From(const smithy::schema::Schema& memberSchema,
+                                                          smithy::schema::ShapeDeserializer& deserializer) {
+  const Aws::String memberName = memberSchema.GetMemberName();
+  if (memberName == "myMap") {
+    Aws::Map<Aws::String, Aws::String> map0;
+    deserializer.ReadMap(memberSchema, [&](const Aws::String& key0, smithy::schema::ShapeDeserializer& valueDeserializer0) {
+      const smithy::schema::Schema& valueSchema0 = *memberSchema.GetMemberTarget().value()->GetMember("value").value();
+      auto value1 = valueDeserializer0.ReadString(valueSchema0);
+      if (value1.has_value()) {
+        map0[key0] = *value1;
+      }
+    });
+    m_obj.SetMyMap(std::move(map0));
+    return;
+  }
+}
+
+std::shared_ptr<const smithy::schema::Schema> FlattenedXmlMapWithXmlNameResultDeserializable::BuildSchema() {
+  return smithy::schema::Schema::StructureBuilder("FlattenedXmlMapWithXmlNameResult")
+      .PutMember(
+          "myMap",
+          smithy::schema::Schema::MapBuilder("FlattenedXmlMapWithXmlNameOutputMap")
+              .PutMember("key", smithy::schema::Schema::CreateString("key"),
+                         {{smithy::schema::XmlNameTrait::KEY(), Aws::MakeShared<smithy::schema::XmlNameTrait>("SchemaSerdeTrait", "K")}})
+              .PutMember("value", smithy::schema::Schema::CreateString("value"),
+                         {{smithy::schema::XmlNameTrait::KEY(), Aws::MakeShared<smithy::schema::XmlNameTrait>("SchemaSerdeTrait", "V")}})
+              .Build(),
+          {{smithy::schema::XmlNameTrait::KEY(), Aws::MakeShared<smithy::schema::XmlNameTrait>("SchemaSerdeTrait", "KVP")},
+           {smithy::schema::XmlFlattenedTrait::KEY(), Aws::MakeShared<smithy::schema::XmlFlattenedTrait>("SchemaSerdeTrait")},
+           {smithy::schema::XmlMapKeyNameTrait::KEY(), Aws::MakeShared<smithy::schema::XmlMapKeyNameTrait>("SchemaSerdeTrait", "K")},
+           {smithy::schema::XmlMapValueNameTrait::KEY(), Aws::MakeShared<smithy::schema::XmlMapValueNameTrait>("SchemaSerdeTrait", "V")}})
+      .Build();
+}
+
+}  // namespace
+
+Aws::UniquePtr<smithy::schema::SerializableStruct> FlattenedXmlMapWithXmlNameResult::GetSchemaSerdeOutput() {
+  return Aws::MakeUnique<FlattenedXmlMapWithXmlNameResultDeserializable>("FlattenedXmlMapWithXmlNameResultDeserializable", *this);
 }

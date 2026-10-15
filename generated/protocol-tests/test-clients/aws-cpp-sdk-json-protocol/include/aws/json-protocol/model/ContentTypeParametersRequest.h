@@ -24,6 +24,8 @@ class ContentTypeParametersRequest : public JsonProtocolRequest {
   inline virtual const char* GetServiceRequestName() const override { return "ContentTypeParameters"; }
 
   AWS_JSONPROTOCOL_API Aws::String SerializePayload() const override;
+  AWS_JSONPROTOCOL_API smithy::schema::OperationRequestContext GetSchemaSerdeContext() const override;
+  AWS_JSONPROTOCOL_API Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeInput() const override;
 
   AWS_JSONPROTOCOL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 

@@ -4,10 +4,21 @@
  */
 
 #include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/rest-xml-protocol/model/XmlIntEnumsResult.h>
+#include <smithy/client/schema/DocumentConversion.h>
+#include <smithy/client/schema/HttpTraits.h>
+#include <smithy/client/schema/Schema.h>
+#include <smithy/client/schema/SchemaBuilder.h>
+#include <smithy/client/schema/SerdeTraits.h>
+#include <smithy/client/schema/SerializableStruct.h>
+#include <smithy/client/schema/ShapeDeserializer.h>
+#include <smithy/client/schema/XmlTraits.h>
 
 #include <utility>
 
@@ -20,65 +31,7 @@ XmlIntEnumsResult::XmlIntEnumsResult(const Aws::AmazonWebServiceResult<XmlDocume
 
 XmlIntEnumsResult& XmlIntEnumsResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
   m_HttpResponseCode = result.GetResponseCode();
-  const XmlDocument& xmlDocument = result.GetPayload();
-  XmlNode resultNode = xmlDocument.GetRootElement();
-
-  if (!resultNode.IsNull()) {
-    XmlNode intEnum1Node = resultNode.FirstChild("intEnum1");
-    if (!intEnum1Node.IsNull()) {
-      m_intEnum1 =
-          StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(intEnum1Node.GetText()).c_str()).c_str());
-      m_intEnum1HasBeenSet = true;
-    }
-    XmlNode intEnum2Node = resultNode.FirstChild("intEnum2");
-    if (!intEnum2Node.IsNull()) {
-      m_intEnum2 =
-          StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(intEnum2Node.GetText()).c_str()).c_str());
-      m_intEnum2HasBeenSet = true;
-    }
-    XmlNode intEnum3Node = resultNode.FirstChild("intEnum3");
-    if (!intEnum3Node.IsNull()) {
-      m_intEnum3 =
-          StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(intEnum3Node.GetText()).c_str()).c_str());
-      m_intEnum3HasBeenSet = true;
-    }
-    XmlNode intEnumListNode = resultNode.FirstChild("intEnumList");
-    if (!intEnumListNode.IsNull()) {
-      XmlNode intEnumListMember = intEnumListNode.FirstChild("member");
-      m_intEnumListHasBeenSet = !intEnumListMember.IsNull();
-      while (!intEnumListMember.IsNull()) {
-        m_intEnumList.push_back(StringUtils::ConvertToInt32(StringUtils::Trim(intEnumListMember.GetText().c_str()).c_str()));
-        intEnumListMember = intEnumListMember.NextNode("member");
-      }
-
-      m_intEnumListHasBeenSet = true;
-    }
-    XmlNode intEnumSetNode = resultNode.FirstChild("intEnumSet");
-    if (!intEnumSetNode.IsNull()) {
-      XmlNode intEnumSetMember = intEnumSetNode.FirstChild("member");
-      m_intEnumSetHasBeenSet = !intEnumSetMember.IsNull();
-      while (!intEnumSetMember.IsNull()) {
-        m_intEnumSet.push_back(StringUtils::ConvertToInt32(StringUtils::Trim(intEnumSetMember.GetText().c_str()).c_str()));
-        intEnumSetMember = intEnumSetMember.NextNode("member");
-      }
-
-      m_intEnumSetHasBeenSet = true;
-    }
-    XmlNode intEnumMapNode = resultNode.FirstChild("intEnumMap");
-
-    if (!intEnumMapNode.IsNull()) {
-      XmlNode intEnumMapEntry = intEnumMapNode.FirstChild("entry");
-      m_intEnumMapHasBeenSet = !intEnumMapEntry.IsNull();
-      while (!intEnumMapEntry.IsNull()) {
-        XmlNode keyNode = intEnumMapEntry.FirstChild("key");
-        XmlNode valueNode = intEnumMapEntry.FirstChild("value");
-        m_intEnumMap[keyNode.GetText()] = StringUtils::ConvertToInt32(StringUtils::Trim(valueNode.GetText().c_str()).c_str());
-        intEnumMapEntry = intEnumMapEntry.NextNode("entry");
-      }
-
-      m_intEnumMapHasBeenSet = true;
-    }
-  }
+  AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
@@ -88,4 +41,103 @@ XmlIntEnumsResult& XmlIntEnumsResult::operator=(const Aws::AmazonWebServiceResul
   }
 
   return *this;
+}
+
+namespace {
+class XmlIntEnumsResultDeserializable final : public smithy::schema::SerializableStruct {
+ public:
+  explicit XmlIntEnumsResultDeserializable(XmlIntEnumsResult& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
+  void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
+  void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
+  static std::shared_ptr<const smithy::schema::Schema> BuildSchema();
+
+ private:
+  XmlIntEnumsResult& m_obj;
+  const std::shared_ptr<const smithy::schema::Schema> m_schema;
+};
+
+void XmlIntEnumsResultDeserializable::From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) {
+  const Aws::String memberName = memberSchema.GetMemberName();
+  if (memberName == "intEnum1") {
+    auto value0 = deserializer.ReadInteger(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetIntEnum1(*value0);
+    }
+    return;
+  }
+  if (memberName == "intEnum2") {
+    auto value0 = deserializer.ReadInteger(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetIntEnum2(*value0);
+    }
+    return;
+  }
+  if (memberName == "intEnum3") {
+    auto value0 = deserializer.ReadInteger(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetIntEnum3(*value0);
+    }
+    return;
+  }
+  if (memberName == "intEnumList") {
+    Aws::Vector<int> list0;
+    deserializer.ReadList(memberSchema, [&](smithy::schema::ShapeDeserializer& itemDeserializer0) {
+      const smithy::schema::Schema& itemSchema0 = *memberSchema.GetMemberTarget().value()->GetMember("member").value();
+      auto value1 = itemDeserializer0.ReadInteger(itemSchema0);
+      if (value1.has_value()) {
+        list0.push_back(*value1);
+      }
+    });
+    m_obj.SetIntEnumList(std::move(list0));
+    return;
+  }
+  if (memberName == "intEnumSet") {
+    Aws::Vector<int> list0;
+    deserializer.ReadList(memberSchema, [&](smithy::schema::ShapeDeserializer& itemDeserializer0) {
+      const smithy::schema::Schema& itemSchema0 = *memberSchema.GetMemberTarget().value()->GetMember("member").value();
+      auto value1 = itemDeserializer0.ReadInteger(itemSchema0);
+      if (value1.has_value()) {
+        list0.push_back(*value1);
+      }
+    });
+    m_obj.SetIntEnumSet(std::move(list0));
+    return;
+  }
+  if (memberName == "intEnumMap") {
+    Aws::Map<Aws::String, int> map0;
+    deserializer.ReadMap(memberSchema, [&](const Aws::String& key0, smithy::schema::ShapeDeserializer& valueDeserializer0) {
+      const smithy::schema::Schema& valueSchema0 = *memberSchema.GetMemberTarget().value()->GetMember("value").value();
+      auto value1 = valueDeserializer0.ReadInteger(valueSchema0);
+      if (value1.has_value()) {
+        map0[key0] = *value1;
+      }
+    });
+    m_obj.SetIntEnumMap(std::move(map0));
+    return;
+  }
+}
+
+std::shared_ptr<const smithy::schema::Schema> XmlIntEnumsResultDeserializable::BuildSchema() {
+  return smithy::schema::Schema::StructureBuilder("XmlIntEnumsResult")
+      .PutMember("intEnum1", smithy::schema::Schema::CreateIntEnum("intEnum1"))
+      .PutMember("intEnum2", smithy::schema::Schema::CreateIntEnum("intEnum2"))
+      .PutMember("intEnum3", smithy::schema::Schema::CreateIntEnum("intEnum3"))
+      .PutMember("intEnumList", smithy::schema::Schema::ListBuilder("IntegerEnumList")
+                                    .PutMember("member", smithy::schema::Schema::CreateIntEnum("member"))
+                                    .Build())
+      .PutMember("intEnumSet", smithy::schema::Schema::ListBuilder("IntegerEnumSet")
+                                   .PutMember("member", smithy::schema::Schema::CreateIntEnum("member"))
+                                   .Build())
+      .PutMember("intEnumMap", smithy::schema::Schema::MapBuilder("IntegerEnumMap")
+                                   .PutMember("key", smithy::schema::Schema::CreateString("key"))
+                                   .PutMember("value", smithy::schema::Schema::CreateIntEnum("value"))
+                                   .Build())
+      .Build();
+}
+
+}  // namespace
+
+Aws::UniquePtr<smithy::schema::SerializableStruct> XmlIntEnumsResult::GetSchemaSerdeOutput() {
+  return Aws::MakeUnique<XmlIntEnumsResultDeserializable>("XmlIntEnumsResultDeserializable", *this);
 }

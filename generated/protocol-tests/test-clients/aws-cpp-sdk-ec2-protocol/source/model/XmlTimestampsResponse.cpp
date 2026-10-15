@@ -4,10 +4,22 @@
  */
 
 #include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/memory/AWSMemory.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/ec2-protocol/model/XmlTimestampsResponse.h>
+#include <smithy/client/schema/DocumentConversion.h>
+#include <smithy/client/schema/HttpTraits.h>
+#include <smithy/client/schema/Schema.h>
+#include <smithy/client/schema/SchemaBuilder.h>
+#include <smithy/client/schema/SerdeTraits.h>
+#include <smithy/client/schema/SerializableStruct.h>
+#include <smithy/client/schema/ShapeDeserializer.h>
+#include <smithy/client/schema/XmlTraits.h>
 
 #include <utility>
 
@@ -23,65 +35,116 @@ XmlTimestampsResponse& XmlTimestampsResponse::operator=(const Aws::AmazonWebServ
   m_HttpResponseCode = result.GetResponseCode();
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "XmlTimestampsResponse")) {
-    resultNode = rootNode.FirstChild("XmlTimestampsResponse");
-  }
-
-  if (!resultNode.IsNull()) {
-    XmlNode normalNode = resultNode.FirstChild("normal");
-    if (!normalNode.IsNull()) {
-      m_normal = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(normalNode.GetText()).c_str()).c_str(),
-                          Aws::Utils::DateFormat::ISO_8601);
-      m_normalHasBeenSet = true;
-    }
-    XmlNode dateTimeNode = resultNode.FirstChild("dateTime");
-    if (!dateTimeNode.IsNull()) {
-      m_dateTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dateTimeNode.GetText()).c_str()).c_str(),
-                            Aws::Utils::DateFormat::ISO_8601);
-      m_dateTimeHasBeenSet = true;
-    }
-    XmlNode dateTimeOnTargetNode = resultNode.FirstChild("dateTimeOnTarget");
-    if (!dateTimeOnTargetNode.IsNull()) {
-      m_dateTimeOnTarget =
-          DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dateTimeOnTargetNode.GetText()).c_str()).c_str(),
-                   Aws::Utils::DateFormat::ISO_8601);
-      m_dateTimeOnTargetHasBeenSet = true;
-    }
-    XmlNode epochSecondsNode = resultNode.FirstChild("epochSeconds");
-    if (!epochSecondsNode.IsNull()) {
-      m_epochSeconds = DateTime(StringUtils::ConvertToDouble(
-          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(epochSecondsNode.GetText()).c_str()).c_str()));
-      m_epochSecondsHasBeenSet = true;
-    }
-    XmlNode epochSecondsOnTargetNode = resultNode.FirstChild("epochSecondsOnTarget");
-    if (!epochSecondsOnTargetNode.IsNull()) {
-      m_epochSecondsOnTarget = DateTime(StringUtils::ConvertToDouble(
-          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(epochSecondsOnTargetNode.GetText()).c_str()).c_str()));
-      m_epochSecondsOnTargetHasBeenSet = true;
-    }
-    XmlNode httpDateNode = resultNode.FirstChild("httpDate");
-    if (!httpDateNode.IsNull()) {
-      m_httpDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(httpDateNode.GetText()).c_str()).c_str(),
-                            Aws::Utils::DateFormat::RFC822);
-      m_httpDateHasBeenSet = true;
-    }
-    XmlNode httpDateOnTargetNode = resultNode.FirstChild("httpDateOnTarget");
-    if (!httpDateOnTargetNode.IsNull()) {
-      m_httpDateOnTarget =
-          DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(httpDateOnTargetNode.GetText()).c_str()).c_str(),
-                   Aws::Utils::DateFormat::RFC822);
-      m_httpDateOnTargetHasBeenSet = true;
-    }
-  }
-
   if (!rootNode.IsNull()) {
     XmlNode requestIdNode = rootNode.FirstChild("requestId");
     if (!requestIdNode.IsNull()) {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
       m_responseMetadataHasBeenSet = true;
     }
-    AWS_LOGSTREAM_DEBUG("Aws::EC2Protocol::Model::XmlTimestampsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
   }
   return *this;
+}
+
+namespace {
+class XmlTimestampsResponseDeserializable final : public smithy::schema::SerializableStruct {
+ public:
+  explicit XmlTimestampsResponseDeserializable(XmlTimestampsResponse& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
+  void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
+  void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
+  static std::shared_ptr<const smithy::schema::Schema> BuildSchema();
+
+ private:
+  XmlTimestampsResponse& m_obj;
+  const std::shared_ptr<const smithy::schema::Schema> m_schema;
+};
+
+void XmlTimestampsResponseDeserializable::From(const smithy::schema::Schema& memberSchema,
+                                               smithy::schema::ShapeDeserializer& deserializer) {
+  const Aws::String memberName = memberSchema.GetMemberName();
+  if (memberName == "normal") {
+    auto value0 = deserializer.ReadTimestamp(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetNormal(*value0);
+    }
+    return;
+  }
+  if (memberName == "dateTime") {
+    auto value0 = deserializer.ReadTimestamp(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetDateTime(*value0);
+    }
+    return;
+  }
+  if (memberName == "dateTimeOnTarget") {
+    auto value0 = deserializer.ReadTimestamp(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetDateTimeOnTarget(*value0);
+    }
+    return;
+  }
+  if (memberName == "epochSeconds") {
+    auto value0 = deserializer.ReadTimestamp(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetEpochSeconds(*value0);
+    }
+    return;
+  }
+  if (memberName == "epochSecondsOnTarget") {
+    auto value0 = deserializer.ReadTimestamp(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetEpochSecondsOnTarget(*value0);
+    }
+    return;
+  }
+  if (memberName == "httpDate") {
+    auto value0 = deserializer.ReadTimestamp(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetHttpDate(*value0);
+    }
+    return;
+  }
+  if (memberName == "httpDateOnTarget") {
+    auto value0 = deserializer.ReadTimestamp(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetHttpDateOnTarget(*value0);
+    }
+    return;
+  }
+}
+
+std::shared_ptr<const smithy::schema::Schema> XmlTimestampsResponseDeserializable::BuildSchema() {
+  return smithy::schema::Schema::StructureBuilder("XmlTimestampsResponse")
+      .PutMember("normal", smithy::schema::Schema::CreateTimestamp("normal"))
+      .PutMember(
+          "dateTime", smithy::schema::Schema::CreateTimestamp("dateTime"),
+          {{smithy::schema::TimestampFormatTrait::KEY(), Aws::MakeShared<smithy::schema::TimestampFormatTrait>(
+                                                             "SchemaSerdeTrait", smithy::schema::TimestampFormatTrait::Format::DATE_TIME)}})
+      .PutMember(
+          "dateTimeOnTarget", smithy::schema::Schema::CreateTimestamp("dateTimeOnTarget"),
+          {{smithy::schema::TimestampFormatTrait::KEY(), Aws::MakeShared<smithy::schema::TimestampFormatTrait>(
+                                                             "SchemaSerdeTrait", smithy::schema::TimestampFormatTrait::Format::DATE_TIME)}})
+      .PutMember("epochSeconds", smithy::schema::Schema::CreateTimestamp("epochSeconds"),
+                 {{smithy::schema::TimestampFormatTrait::KEY(),
+                   Aws::MakeShared<smithy::schema::TimestampFormatTrait>("SchemaSerdeTrait",
+                                                                         smithy::schema::TimestampFormatTrait::Format::EPOCH_SECONDS)}})
+      .PutMember("epochSecondsOnTarget", smithy::schema::Schema::CreateTimestamp("epochSecondsOnTarget"),
+                 {{smithy::schema::TimestampFormatTrait::KEY(),
+                   Aws::MakeShared<smithy::schema::TimestampFormatTrait>("SchemaSerdeTrait",
+                                                                         smithy::schema::TimestampFormatTrait::Format::EPOCH_SECONDS)}})
+      .PutMember(
+          "httpDate", smithy::schema::Schema::CreateTimestamp("httpDate"),
+          {{smithy::schema::TimestampFormatTrait::KEY(), Aws::MakeShared<smithy::schema::TimestampFormatTrait>(
+                                                             "SchemaSerdeTrait", smithy::schema::TimestampFormatTrait::Format::HTTP_DATE)}})
+      .PutMember(
+          "httpDateOnTarget", smithy::schema::Schema::CreateTimestamp("httpDateOnTarget"),
+          {{smithy::schema::TimestampFormatTrait::KEY(), Aws::MakeShared<smithy::schema::TimestampFormatTrait>(
+                                                             "SchemaSerdeTrait", smithy::schema::TimestampFormatTrait::Format::HTTP_DATE)}})
+      .Build();
+}
+
+}  // namespace
+
+Aws::UniquePtr<smithy::schema::SerializableStruct> XmlTimestampsResponse::GetSchemaSerdeOutput() {
+  return Aws::MakeUnique<XmlTimestampsResponseDeserializable>("XmlTimestampsResponseDeserializable", *this);
 }

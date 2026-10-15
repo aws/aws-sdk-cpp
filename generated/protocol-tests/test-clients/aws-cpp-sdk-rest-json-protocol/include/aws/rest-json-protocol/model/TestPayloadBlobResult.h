@@ -32,10 +32,22 @@ class TestPayloadBlobResult {
   AWS_RESTJSONPROTOCOL_API TestPayloadBlobResult& operator=(Aws::AmazonWebServiceResult<Aws::Utils::Stream::ResponseStream>&& result);
 
   ///@{
-
   inline Aws::IOStream& GetData() const { return m_data.GetUnderlyingStream(); }
   inline void ReplaceBody(Aws::IOStream* body) { m_data = Aws::Utils::Stream::ResponseStream(body); }
+  ///@}
+  ///@{
 
+  inline const Aws::String& GetContentType() const { return m_contentType; }
+  template <typename ContentTypeT = Aws::String>
+  void SetContentType(ContentTypeT&& value) {
+    m_contentTypeHasBeenSet = true;
+    m_contentType = std::forward<ContentTypeT>(value);
+  }
+  template <typename ContentTypeT = Aws::String>
+  TestPayloadBlobResult& WithContentType(ContentTypeT&& value) {
+    SetContentType(std::forward<ContentTypeT>(value));
+    return *this;
+  }
   ///@}
 
   ///@{
@@ -56,10 +68,12 @@ class TestPayloadBlobResult {
 
  private:
   Aws::Utils::Stream::ResponseStream m_data{};
+  Aws::String m_contentType;
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_dataHasBeenSet = false;
+  bool m_contentTypeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

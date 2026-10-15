@@ -20,14 +20,15 @@ class XmlNode;
 namespace QueryProtocol {
 namespace Model {
 
+/**
+ */
 class XmlNamespaceNested {
  public:
   AWS_QUERYPROTOCOL_API XmlNamespaceNested() = default;
   AWS_QUERYPROTOCOL_API XmlNamespaceNested(const Aws::Utils::Xml::XmlNode& xmlNode);
   AWS_QUERYPROTOCOL_API XmlNamespaceNested& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
   AWS_QUERYPROTOCOL_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-  AWS_QUERYPROTOCOL_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
+  AWS_QUERYPROTOCOL_API void OutputToStream(Aws::OStream& ostream, const char* location) const;
 
   ///@{
 

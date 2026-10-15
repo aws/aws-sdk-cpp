@@ -3,7 +3,10 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/rest-json-protocol/model/RecursiveShapesInputOutputNested1.h>
 #include <aws/rest-json-protocol/model/RecursiveShapesInputOutputNested2.h>
 
@@ -18,29 +21,10 @@ namespace Model {
 
 RecursiveShapesInputOutputNested1::RecursiveShapesInputOutputNested1(JsonView jsonValue) { *this = jsonValue; }
 
-RecursiveShapesInputOutputNested1& RecursiveShapesInputOutputNested1::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("foo")) {
-    m_foo = jsonValue.GetString("foo");
-    m_fooHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("nested")) {
-    m_nested = Aws::MakeShared<RecursiveShapesInputOutputNested2>("RecursiveShapesInputOutputNested1", jsonValue.GetObject("nested"));
-    m_nestedHasBeenSet = true;
-  }
-  return *this;
-}
+RecursiveShapesInputOutputNested1& RecursiveShapesInputOutputNested1::operator=(JsonView) { return *this; }
 
 JsonValue RecursiveShapesInputOutputNested1::Jsonize() const {
   JsonValue payload;
-
-  if (m_fooHasBeenSet) {
-    payload.WithString("foo", m_foo);
-  }
-
-  if (m_nestedHasBeenSet) {
-    payload.WithObject("nested", m_nested->Jsonize());
-  }
-
   return payload;
 }
 

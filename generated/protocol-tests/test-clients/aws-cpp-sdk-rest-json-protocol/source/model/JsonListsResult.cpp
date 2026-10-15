@@ -4,11 +4,21 @@
  */
 
 #include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/rest-json-protocol/model/JsonListsResult.h>
+#include <smithy/client/schema/DocumentConversion.h>
+#include <smithy/client/schema/HttpTraits.h>
+#include <smithy/client/schema/JsonTraits.h>
+#include <smithy/client/schema/Schema.h>
+#include <smithy/client/schema/SchemaBuilder.h>
+#include <smithy/client/schema/SerdeTraits.h>
+#include <smithy/client/schema/SerializableStruct.h>
+#include <smithy/client/schema/ShapeDeserializer.h>
 
 #include <utility>
 
@@ -21,76 +31,7 @@ JsonListsResult::JsonListsResult(const Aws::AmazonWebServiceResult<JsonValue>& r
 
 JsonListsResult& JsonListsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
-  JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("stringList")) {
-    Aws::Utils::Array<JsonView> stringListJsonList = jsonValue.GetArray("stringList");
-    for (unsigned stringListIndex = 0; stringListIndex < stringListJsonList.GetLength(); ++stringListIndex) {
-      m_stringList.push_back(stringListJsonList[stringListIndex].AsString());
-    }
-    m_stringListHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("stringSet")) {
-    Aws::Utils::Array<JsonView> stringSetJsonList = jsonValue.GetArray("stringSet");
-    for (unsigned stringSetIndex = 0; stringSetIndex < stringSetJsonList.GetLength(); ++stringSetIndex) {
-      m_stringSet.push_back(stringSetJsonList[stringSetIndex].AsString());
-    }
-    m_stringSetHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("integerList")) {
-    Aws::Utils::Array<JsonView> integerListJsonList = jsonValue.GetArray("integerList");
-    for (unsigned integerListIndex = 0; integerListIndex < integerListJsonList.GetLength(); ++integerListIndex) {
-      m_integerList.push_back(integerListJsonList[integerListIndex].AsInteger());
-    }
-    m_integerListHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("booleanList")) {
-    Aws::Utils::Array<JsonView> booleanListJsonList = jsonValue.GetArray("booleanList");
-    for (unsigned booleanListIndex = 0; booleanListIndex < booleanListJsonList.GetLength(); ++booleanListIndex) {
-      m_booleanList.push_back(booleanListJsonList[booleanListIndex].AsBool());
-    }
-    m_booleanListHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("timestampList")) {
-    Aws::Utils::Array<JsonView> timestampListJsonList = jsonValue.GetArray("timestampList");
-    for (unsigned timestampListIndex = 0; timestampListIndex < timestampListJsonList.GetLength(); ++timestampListIndex) {
-      m_timestampList.push_back(timestampListJsonList[timestampListIndex].AsDouble());
-    }
-    m_timestampListHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("enumList")) {
-    Aws::Utils::Array<JsonView> enumListJsonList = jsonValue.GetArray("enumList");
-    for (unsigned enumListIndex = 0; enumListIndex < enumListJsonList.GetLength(); ++enumListIndex) {
-      m_enumList.push_back(FooEnumMapper::GetFooEnumForName(enumListJsonList[enumListIndex].AsString()));
-    }
-    m_enumListHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("intEnumList")) {
-    Aws::Utils::Array<JsonView> intEnumListJsonList = jsonValue.GetArray("intEnumList");
-    for (unsigned intEnumListIndex = 0; intEnumListIndex < intEnumListJsonList.GetLength(); ++intEnumListIndex) {
-      m_intEnumList.push_back(intEnumListJsonList[intEnumListIndex].AsInteger());
-    }
-    m_intEnumListHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("nestedStringList")) {
-    Aws::Utils::Array<JsonView> nestedStringListJsonList = jsonValue.GetArray("nestedStringList");
-    for (unsigned nestedStringListIndex = 0; nestedStringListIndex < nestedStringListJsonList.GetLength(); ++nestedStringListIndex) {
-      Aws::Utils::Array<JsonView> stringList2JsonList = nestedStringListJsonList[nestedStringListIndex].AsArray();
-      Aws::Vector<Aws::String> stringList2List;
-      stringList2List.reserve((size_t)stringList2JsonList.GetLength());
-      for (unsigned stringList2Index = 0; stringList2Index < stringList2JsonList.GetLength(); ++stringList2Index) {
-        stringList2List.push_back(stringList2JsonList[stringList2Index].AsString());
-      }
-      m_nestedStringList.push_back(std::move(stringList2List));
-    }
-    m_nestedStringListHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("myStructureList")) {
-    Aws::Utils::Array<JsonView> myStructureListJsonList = jsonValue.GetArray("myStructureList");
-    for (unsigned myStructureListIndex = 0; myStructureListIndex < myStructureListJsonList.GetLength(); ++myStructureListIndex) {
-      m_structureList.push_back(myStructureListJsonList[myStructureListIndex].AsObject());
-    }
-    m_structureListHasBeenSet = true;
-  }
+  AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
@@ -100,4 +41,217 @@ JsonListsResult& JsonListsResult::operator=(const Aws::AmazonWebServiceResult<Js
   }
 
   return *this;
+}
+
+namespace {
+class JsonListsResult_StructureListMemberSchemaSerdeDeser final : public smithy::schema::SerializableStruct {
+ public:
+  explicit JsonListsResult_StructureListMemberSchemaSerdeDeser(StructureListMember& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
+  void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
+  void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
+  static std::shared_ptr<const smithy::schema::Schema> BuildSchema();
+
+ private:
+  StructureListMember& m_obj;
+  const std::shared_ptr<const smithy::schema::Schema> m_schema;
+};
+
+class JsonListsResultDeserializable final : public smithy::schema::SerializableStruct {
+ public:
+  explicit JsonListsResultDeserializable(JsonListsResult& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
+  void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
+  void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
+  static std::shared_ptr<const smithy::schema::Schema> BuildSchema();
+
+ private:
+  JsonListsResult& m_obj;
+  const std::shared_ptr<const smithy::schema::Schema> m_schema;
+};
+
+void JsonListsResult_StructureListMemberSchemaSerdeDeser::From(const smithy::schema::Schema& memberSchema,
+                                                               smithy::schema::ShapeDeserializer& deserializer) {
+  const Aws::String memberName = memberSchema.GetMemberName();
+  if (memberName == "a") {
+    auto value0 = deserializer.ReadString(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetA(*value0);
+    }
+    return;
+  }
+  if (memberName == "b") {
+    auto value0 = deserializer.ReadString(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetB(*value0);
+    }
+    return;
+  }
+}
+
+std::shared_ptr<const smithy::schema::Schema> JsonListsResult_StructureListMemberSchemaSerdeDeser::BuildSchema() {
+  return smithy::schema::Schema::StructureBuilder("StructureListMember")
+      .PutMember("a", smithy::schema::Schema::CreateString("a"),
+                 {{smithy::schema::JsonNameTrait::KEY(), Aws::MakeShared<smithy::schema::JsonNameTrait>("SchemaSerdeTrait", "value")}})
+      .PutMember("b", smithy::schema::Schema::CreateString("b"),
+                 {{smithy::schema::JsonNameTrait::KEY(), Aws::MakeShared<smithy::schema::JsonNameTrait>("SchemaSerdeTrait", "other")}})
+      .Build();
+}
+
+void JsonListsResultDeserializable::From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) {
+  const Aws::String memberName = memberSchema.GetMemberName();
+  if (memberName == "stringList") {
+    Aws::Vector<Aws::String> list0;
+    deserializer.ReadList(memberSchema, [&](smithy::schema::ShapeDeserializer& itemDeserializer0) {
+      const smithy::schema::Schema& itemSchema0 = *memberSchema.GetMemberTarget().value()->GetMember("member").value();
+      auto value1 = itemDeserializer0.ReadString(itemSchema0);
+      if (value1.has_value()) {
+        list0.push_back(*value1);
+      }
+    });
+    m_obj.SetStringList(std::move(list0));
+    return;
+  }
+  if (memberName == "stringSet") {
+    Aws::Vector<Aws::String> list0;
+    deserializer.ReadList(memberSchema, [&](smithy::schema::ShapeDeserializer& itemDeserializer0) {
+      const smithy::schema::Schema& itemSchema0 = *memberSchema.GetMemberTarget().value()->GetMember("member").value();
+      auto value1 = itemDeserializer0.ReadString(itemSchema0);
+      if (value1.has_value()) {
+        list0.push_back(*value1);
+      }
+    });
+    m_obj.SetStringSet(std::move(list0));
+    return;
+  }
+  if (memberName == "integerList") {
+    Aws::Vector<int> list0;
+    deserializer.ReadList(memberSchema, [&](smithy::schema::ShapeDeserializer& itemDeserializer0) {
+      const smithy::schema::Schema& itemSchema0 = *memberSchema.GetMemberTarget().value()->GetMember("member").value();
+      auto value1 = itemDeserializer0.ReadInteger(itemSchema0);
+      if (value1.has_value()) {
+        list0.push_back(*value1);
+      }
+    });
+    m_obj.SetIntegerList(std::move(list0));
+    return;
+  }
+  if (memberName == "booleanList") {
+    Aws::Vector<bool> list0;
+    deserializer.ReadList(memberSchema, [&](smithy::schema::ShapeDeserializer& itemDeserializer0) {
+      const smithy::schema::Schema& itemSchema0 = *memberSchema.GetMemberTarget().value()->GetMember("member").value();
+      auto value1 = itemDeserializer0.ReadBoolean(itemSchema0);
+      if (value1.has_value()) {
+        list0.push_back(*value1);
+      }
+    });
+    m_obj.SetBooleanList(std::move(list0));
+    return;
+  }
+  if (memberName == "timestampList") {
+    Aws::Vector<Aws::Utils::DateTime> list0;
+    deserializer.ReadList(memberSchema, [&](smithy::schema::ShapeDeserializer& itemDeserializer0) {
+      const smithy::schema::Schema& itemSchema0 = *memberSchema.GetMemberTarget().value()->GetMember("member").value();
+      auto value1 = itemDeserializer0.ReadTimestamp(itemSchema0);
+      if (value1.has_value()) {
+        list0.push_back(*value1);
+      }
+    });
+    m_obj.SetTimestampList(std::move(list0));
+    return;
+  }
+  if (memberName == "enumList") {
+    Aws::Vector<FooEnum> list0;
+    deserializer.ReadList(memberSchema, [&](smithy::schema::ShapeDeserializer& itemDeserializer0) {
+      const smithy::schema::Schema& itemSchema0 = *memberSchema.GetMemberTarget().value()->GetMember("member").value();
+      auto value1 = itemDeserializer0.ReadString(itemSchema0);
+      if (value1.has_value()) {
+        list0.push_back(FooEnumMapper::GetFooEnumForName(*value1));
+      }
+    });
+    m_obj.SetEnumList(std::move(list0));
+    return;
+  }
+  if (memberName == "intEnumList") {
+    Aws::Vector<int> list0;
+    deserializer.ReadList(memberSchema, [&](smithy::schema::ShapeDeserializer& itemDeserializer0) {
+      const smithy::schema::Schema& itemSchema0 = *memberSchema.GetMemberTarget().value()->GetMember("member").value();
+      auto value1 = itemDeserializer0.ReadInteger(itemSchema0);
+      if (value1.has_value()) {
+        list0.push_back(*value1);
+      }
+    });
+    m_obj.SetIntEnumList(std::move(list0));
+    return;
+  }
+  if (memberName == "nestedStringList") {
+    Aws::Vector<Aws::Vector<Aws::String>> list0;
+    deserializer.ReadList(memberSchema, [&](smithy::schema::ShapeDeserializer& itemDeserializer0) {
+      const smithy::schema::Schema& itemSchema0 = *memberSchema.GetMemberTarget().value()->GetMember("member").value();
+      Aws::Vector<Aws::String> list1;
+      itemDeserializer0.ReadList(itemSchema0, [&](smithy::schema::ShapeDeserializer& itemDeserializer1) {
+        const smithy::schema::Schema& itemSchema1 = *itemSchema0.GetMemberTarget().value()->GetMember("member").value();
+        auto value2 = itemDeserializer1.ReadString(itemSchema1);
+        if (value2.has_value()) {
+          list1.push_back(*value2);
+        }
+      });
+      list0.push_back(std::move(list1));
+    });
+    m_obj.SetNestedStringList(std::move(list0));
+    return;
+  }
+  if (memberName == "structureList") {
+    Aws::Vector<StructureListMember> list0;
+    deserializer.ReadList(memberSchema, [&](smithy::schema::ShapeDeserializer& itemDeserializer0) {
+      StructureListMember nested1;
+      JsonListsResult_StructureListMemberSchemaSerdeDeser{nested1}.Deserialize(itemDeserializer0);
+      list0.push_back(std::move(nested1));
+    });
+    m_obj.SetStructureList(std::move(list0));
+    return;
+  }
+}
+
+std::shared_ptr<const smithy::schema::Schema> JsonListsResultDeserializable::BuildSchema() {
+  return smithy::schema::Schema::StructureBuilder("JsonListsResult")
+      .PutMember(
+          "stringList",
+          smithy::schema::Schema::ListBuilder("StringList").PutMember("member", smithy::schema::Schema::CreateString("member")).Build())
+      .PutMember(
+          "stringSet",
+          smithy::schema::Schema::ListBuilder("StringSet").PutMember("member", smithy::schema::Schema::CreateString("member")).Build())
+      .PutMember(
+          "integerList",
+          smithy::schema::Schema::ListBuilder("IntegerList").PutMember("member", smithy::schema::Schema::CreateInteger("member")).Build())
+      .PutMember(
+          "booleanList",
+          smithy::schema::Schema::ListBuilder("BooleanList").PutMember("member", smithy::schema::Schema::CreateBoolean("member")).Build())
+      .PutMember("timestampList", smithy::schema::Schema::ListBuilder("TimestampList")
+                                      .PutMember("member", smithy::schema::Schema::CreateTimestamp("member"))
+                                      .Build())
+      .PutMember(
+          "enumList",
+          smithy::schema::Schema::ListBuilder("FooEnumList").PutMember("member", smithy::schema::Schema::CreateEnum("member")).Build())
+      .PutMember("intEnumList", smithy::schema::Schema::ListBuilder("IntegerEnumList")
+                                    .PutMember("member", smithy::schema::Schema::CreateIntEnum("member"))
+                                    .Build())
+      .PutMember("nestedStringList", smithy::schema::Schema::ListBuilder("NestedStringList")
+                                         .PutMember("member", smithy::schema::Schema::ListBuilder("StringList")
+                                                                  .PutMember("member", smithy::schema::Schema::CreateString("member"))
+                                                                  .Build())
+                                         .Build())
+      .PutMember(
+          "structureList",
+          smithy::schema::Schema::ListBuilder("StructureList")
+              .PutMember("member", JsonListsResult_StructureListMemberSchemaSerdeDeser::BuildSchema())
+              .Build(),
+          {{smithy::schema::JsonNameTrait::KEY(), Aws::MakeShared<smithy::schema::JsonNameTrait>("SchemaSerdeTrait", "myStructureList")}})
+      .Build();
+}
+
+}  // namespace
+
+Aws::UniquePtr<smithy::schema::SerializableStruct> JsonListsResult::GetSchemaSerdeOutput() {
+  return Aws::MakeUnique<JsonListsResultDeserializable>("JsonListsResultDeserializable", *this);
 }

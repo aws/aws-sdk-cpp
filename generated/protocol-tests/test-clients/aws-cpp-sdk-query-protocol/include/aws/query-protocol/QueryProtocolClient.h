@@ -4,25 +4,32 @@
  */
 
 #pragma once
-#include <aws/core/AmazonSerializableWebServiceRequest.h>
-#include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/query-protocol/QueryProtocolErrorMarshaller.h>
 #include <aws/query-protocol/QueryProtocolServiceClientModel.h>
 #include <aws/query-protocol/QueryProtocol_EXPORTS.h>
+#include <smithy/client/AwsSmithyClient.h>
+#include <smithy/client/serializer/XmlOutcomeSerializer.h>
+#include <smithy/identity/auth/built-in/GenericAuthSchemeResolver.h>
+#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
 
 namespace Aws {
 namespace QueryProtocol {
+AWS_QUERYPROTOCOL_API extern const char SERVICE_NAME[];
 /**
  * <p>A query service that sends query requests and XML responses.</p>
  */
-class AWS_QUERYPROTOCOL_API QueryProtocolClient : public Aws::Client::AWSXMLClient,
-                                                  public Aws::Client::ClientWithAsyncTemplateMethods<QueryProtocolClient> {
+class AWS_QUERYPROTOCOL_API QueryProtocolClient
+    : Aws::Client::ClientWithAsyncTemplateMethods<QueryProtocolClient>,
+      public smithy::client::AwsSmithyClientT<Aws::QueryProtocol::SERVICE_NAME, Aws::QueryProtocol::QueryProtocolClientConfiguration,
+                                              smithy::AuthSchemeResolverBase<>, Aws::Crt::Variant<smithy::SigV4AuthScheme>,
+                                              QueryProtocolEndpointProviderBase, smithy::client::XmlOutcomeSerializer,
+                                              smithy::client::XmlOutcome, Aws::Client::QueryProtocolErrorMarshaller> {
  public:
-  typedef Aws::Client::AWSXMLClient BASECLASS;
   static const char* GetServiceName();
   static const char* GetAllocationTag();
+  inline const char* GetServiceClientName() const override { return "Query Protocol"; }
 
   typedef QueryProtocolClientConfiguration ClientConfigurationType;
   typedef QueryProtocolEndpointProvider EndpointProviderType;
@@ -79,7 +86,8 @@ class AWS_QUERYPROTOCOL_API QueryProtocolClient : public Aws::Client::AWSXMLClie
   /**
    * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
    */
-  Aws::String ConvertRequestToPresignedUrl(const Aws::AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const;
+  virtual Aws::String ConvertRequestToPresignedUrl(const Aws::AmazonSerializableWebServiceRequest& requestToConvert,
+                                                   const char* region) const;
 
   /**
    *
@@ -973,14 +981,10 @@ class AWS_QUERYPROTOCOL_API QueryProtocolClient : public Aws::Client::AWSXMLClie
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<QueryProtocolClient>;
-  void init(const QueryProtocolClientConfiguration& clientConfiguration);
 
-  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, QueryProtocolError> InvokeOperationOutcome;
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>, QueryProtocolError> InvokeOperationOutcome;
 
   InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
-
-  QueryProtocolClientConfiguration m_clientConfiguration;
-  std::shared_ptr<QueryProtocolEndpointProviderBase> m_endpointProvider;
 };
 
 }  // namespace QueryProtocol

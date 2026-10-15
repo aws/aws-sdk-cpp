@@ -4,11 +4,21 @@
  */
 
 #include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/rest-json-protocol/model/HttpResponseCodeResult.h>
+#include <smithy/client/schema/DocumentConversion.h>
+#include <smithy/client/schema/HttpTraits.h>
+#include <smithy/client/schema/JsonTraits.h>
+#include <smithy/client/schema/Schema.h>
+#include <smithy/client/schema/SchemaBuilder.h>
+#include <smithy/client/schema/SerdeTraits.h>
+#include <smithy/client/schema/SerializableStruct.h>
+#include <smithy/client/schema/ShapeDeserializer.h>
 
 #include <utility>
 
@@ -30,7 +40,45 @@ HttpResponseCodeResult& HttpResponseCodeResult::operator=(const Aws::AmazonWebSe
     m_requestIdHasBeenSet = true;
   }
 
-  m_status = static_cast<int>(result.GetResponseCode());
-  m_statusHasBeenSet = true;
   return *this;
+}
+
+namespace {
+class HttpResponseCodeResultDeserializable final : public smithy::schema::SerializableStruct {
+ public:
+  explicit HttpResponseCodeResultDeserializable(HttpResponseCodeResult& obj) : m_obj(obj), m_schema(BuildSchema()) {}
+  const smithy::schema::Schema& GetSchema() const override { return *m_schema; }
+  void SerializeMembers(smithy::schema::ShapeSerializer&) const override {}
+  void From(const smithy::schema::Schema& memberSchema, smithy::schema::ShapeDeserializer& deserializer) override;
+  static std::shared_ptr<const smithy::schema::Schema> BuildSchema();
+
+ private:
+  HttpResponseCodeResult& m_obj;
+  const std::shared_ptr<const smithy::schema::Schema> m_schema;
+};
+
+void HttpResponseCodeResultDeserializable::From(const smithy::schema::Schema& memberSchema,
+                                                smithy::schema::ShapeDeserializer& deserializer) {
+  const Aws::String memberName = memberSchema.GetMemberName();
+  if (memberName == "Status") {
+    auto value0 = deserializer.ReadInteger(memberSchema);
+    if (value0.has_value()) {
+      m_obj.SetStatus(*value0);
+    }
+    return;
+  }
+}
+
+std::shared_ptr<const smithy::schema::Schema> HttpResponseCodeResultDeserializable::BuildSchema() {
+  return smithy::schema::Schema::StructureBuilder("HttpResponseCodeResult")
+      .PutMember(
+          "Status", smithy::schema::Schema::CreateInteger("Status"),
+          {{smithy::schema::HttpResponseCodeTrait::KEY(), Aws::MakeShared<smithy::schema::HttpResponseCodeTrait>("SchemaSerdeTrait")}})
+      .Build();
+}
+
+}  // namespace
+
+Aws::UniquePtr<smithy::schema::SerializableStruct> HttpResponseCodeResult::GetSchemaSerdeOutput() {
+  return Aws::MakeUnique<HttpResponseCodeResultDeserializable>("HttpResponseCodeResultDeserializable", *this);
 }
