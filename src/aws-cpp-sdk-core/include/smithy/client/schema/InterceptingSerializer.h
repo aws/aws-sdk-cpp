@@ -44,6 +44,22 @@ class SMITHY_API InterceptingSerializer : public ShapeSerializer {
     Before(schema).WriteDouble(schema, value);
     After(schema);
   }
+  void WriteByte(const Schema& schema, int8_t value) override {
+    Before(schema).WriteByte(schema, value);
+    After(schema);
+  }
+  void WriteShort(const Schema& schema, int16_t value) override {
+    Before(schema).WriteShort(schema, value);
+    After(schema);
+  }
+  void WriteBigInteger(const Schema& schema, const Aws::Crt::BigInteger& value) override {
+    Before(schema).WriteBigInteger(schema, value);
+    After(schema);
+  }
+  void WriteBigDecimal(const Schema& schema, const Aws::Crt::BigDecimal& value) override {
+    Before(schema).WriteBigDecimal(schema, value);
+    After(schema);
+  }
   void WriteString(const Schema& schema, const Aws::String& value) override {
     Before(schema).WriteString(schema, value);
     After(schema);

@@ -7,11 +7,13 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/Optional.h>
 #include <smithy/client/schema/Schema.h>
 #include <smithy/client/schema/Trait.h>
 #include <smithy/client/schema/TraitKey.h>
 
 #include <cstdint>
+#include <limits>
 
 namespace smithy {
 namespace schema {
@@ -45,6 +47,15 @@ inline TimestampFormatTrait::Format ResolveTimestampFormat(const Schema& schema,
                                                            TimestampFormatTrait::Format protocolDefault) {
   const auto trait = schema.GetTrait(TimestampFormatTrait::KEY());
   return trait ? trait->GetFormat() : protocolDefault;
+}
+
+// Narrows a decoded integer to T, yielding empty when the value is outside T's range rather than wrapping it.
+template <typename T>
+Aws::Crt::Optional<T> NarrowInteger(const Aws::Crt::Optional<int64_t>& value) {
+  if (!value.has_value() || *value < std::numeric_limits<T>::min() || *value > std::numeric_limits<T>::max()) {
+    return {};
+  }
+  return static_cast<T>(*value);
 }
 
 inline Aws::String EpochSecondsText(const Aws::Utils::DateTime& value) {

@@ -302,6 +302,38 @@ class DocHolder final : public SerializableStruct {
   std::shared_ptr<const Document> m_payload = Document::Null();
   bool m_hasPayload = false;
 };
+
+void BigNumberRoundTrip(const Codec& codec, const std::shared_ptr<const Schema>& root) {
+  auto big = root->GetMember("big").value();
+  auto dec = root->GetMember("dec").value();
+  const auto bigValue = MakeBigInteger("-123456789012345678901234567890");
+  const auto decValue = MakeBigDecimal("-12345678901234567890.123456789");
+
+  LambdaStruct shape(*root, [&](ShapeSerializer& ser) {
+    ser.WriteBigInteger(*big, bigValue);
+    ser.WriteBigDecimal(*dec, decValue);
+  });
+  auto payload = codec.Serialize(*root, shape);
+  ASSERT_TRUE(payload.IsSuccess());
+  const Aws::String bytes = payload.GetResult();
+
+  auto d = codec.CreateDeserializer(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(bytes.data()), bytes.size()));
+  ASSERT_NE(d, nullptr);
+  Aws::Crt::Optional<Aws::Crt::BigInteger> gotBig;
+  Aws::Crt::Optional<Aws::Crt::BigDecimal> gotDec;
+  d->ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) {
+    if (m.GetMemberName() == "big") {
+      gotBig = de.ReadBigInteger(m);
+    } else if (m.GetMemberName() == "dec") {
+      gotDec = de.ReadBigDecimal(m);
+    }
+  });
+  ASSERT_TRUE(gotBig.has_value());
+  EXPECT_TRUE(gotBig.value() == bigValue);
+  ASSERT_TRUE(gotDec.has_value());
+  EXPECT_TRUE(gotDec.value() == decValue);
+}
+
 }  // namespace
 
 TEST_F(CodecTest, JsonDocumentMemberRoundTrip) {
@@ -467,4 +499,14 @@ TEST_F(CodecTest, JsonDocumentAtReaderDepthLimitStillSerializes) {
     auto reserialized = codec.Serialize(in.GetSchema(), in);
     EXPECT_TRUE(reserialized.IsSuccess()) << "write failed at depth " << depth;
   }
+}
+
+
+TEST_F(CodecTest, CborBigNumberRoundTrip) {
+  auto root = Schema::StructureBuilder("Root")
+                  .PutMember("big", Schema::CreateBigInteger("BI"))
+                  .PutMember("dec", Schema::CreateBigDecimal("BD"))
+                  .Build();
+  CborCodec codec;
+  BigNumberRoundTrip(codec, root);
 }
