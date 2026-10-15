@@ -3,6 +3,8 @@
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/BigDecimal.h>
+#include <aws/crt/BigInteger.h>
 #include <aws/crt/Optional.h>
 #include <smithy/Smithy_EXPORTS.h>
 #include <smithy/client/schema/Schema.h>
@@ -32,6 +34,10 @@ class SMITHY_API ShapeDeserializer {
   virtual Aws::Crt::Optional<int64_t> ReadLong(const Schema& schema) = 0;
   virtual Aws::Crt::Optional<float> ReadFloat(const Schema& schema) = 0;
   virtual Aws::Crt::Optional<double> ReadDouble(const Schema& schema) = 0;
+  virtual Aws::Crt::Optional<int8_t> ReadByte(const Schema& schema) = 0;
+  virtual Aws::Crt::Optional<int16_t> ReadShort(const Schema& schema) = 0;
+  virtual Aws::Crt::Optional<Aws::Crt::BigInteger> ReadBigInteger(const Schema& schema) = 0;
+  virtual Aws::Crt::Optional<Aws::Crt::BigDecimal> ReadBigDecimal(const Schema& schema) = 0;
   virtual Aws::Crt::Optional<Aws::String> ReadString(const Schema& schema) = 0;
   virtual Aws::Crt::Optional<Aws::Utils::DateTime> ReadTimestamp(const Schema& schema) = 0;
   virtual Aws::Crt::Optional<Aws::Utils::ByteBuffer> ReadBlob(const Schema& schema) = 0;

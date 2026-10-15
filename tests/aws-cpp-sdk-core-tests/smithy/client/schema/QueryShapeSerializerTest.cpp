@@ -314,3 +314,125 @@ TEST_F(QueryShapeSerializerTest, TimestampFormatTraitControlsWireForm) {
     EXPECT_NE(out.GetResult().find("%3A"), Aws::String::npos);
   }
 }
+
+TEST_F(QueryShapeSerializerTest, BigIntegerBeyondInt64) {
+  QueryShapeSerializer s;
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto member = Schema::CreateMember("big", ShapeType::BigInteger);
+  auto value = MakeBigInteger("123456789012345678901234567890");
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteBigInteger(*member, value); });
+  s.WriteStruct(*root, rootStruct);
+  auto outcome = s.GetPayload();
+  ASSERT_TRUE(outcome.IsSuccess());
+  EXPECT_EQ(outcome.GetResult(), "big=123456789012345678901234567890");
+}
+
+TEST_F(QueryShapeSerializerTest, BigDecimalValues) {
+  QueryShapeSerializer s;
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto simple = Schema::CreateMember("simple", ShapeType::BigDecimal);
+  auto small = Schema::CreateMember("small", ShapeType::BigDecimal);
+  auto negative = Schema::CreateMember("negative", ShapeType::BigDecimal);
+  auto zero = Schema::CreateMember("zero", ShapeType::BigDecimal);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) {
+    ser.WriteBigDecimal(*simple, MakeBigDecimal("1.5"));
+    ser.WriteBigDecimal(*small, MakeBigDecimal("0.100000000000000000000001"));
+    ser.WriteBigDecimal(*negative, MakeBigDecimal("-12345678901234567890.123456789"));
+    ser.WriteBigDecimal(*zero, Aws::Crt::BigDecimal());
+  });
+  s.WriteStruct(*root, rootStruct);
+  auto outcome = s.GetPayload();
+  ASSERT_TRUE(outcome.IsSuccess());
+  EXPECT_EQ(outcome.GetResult(), "simple=15e-1&small=100000000000000000000001e-24&negative=-12345678901234567890123456789e-9&zero=0e0");
+}
+
+TEST_F(QueryShapeSerializerTest, BigNumberXmlNameOverridesMemberName) {
+  QueryShapeSerializer s;
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto member = Schema::CreateMember("internalName", ShapeType::BigInteger,
+                                     {{XmlNameTrait::KEY(), Aws::MakeShared<XmlNameTrait>("Schema", "WireName")}});
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteBigInteger(*member, MakeBigInteger("5")); });
+  s.WriteStruct(*root, rootStruct);
+  EXPECT_EQ(s.GetPayload().GetResult(), "WireName=5");
+}
+
+TEST_F(QueryShapeSerializerTest, ListOfBigNumbers) {
+  QueryShapeSerializer s;
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto ints = Schema::CreateMember("ints", ShapeType::List);
+  auto decs = Schema::CreateMember("decs", ShapeType::List);
+  auto intElem = Schema::CreateMember("member", ShapeType::BigInteger);
+  auto decElem = Schema::CreateMember("member", ShapeType::BigDecimal);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) {
+    ser.WriteList(*ints, 2, [&](ShapeSerializer& lser) {
+      lser.WriteBigInteger(*intElem, MakeBigInteger("123456789012345678901234567890"));
+      lser.WriteBigInteger(*intElem, MakeBigInteger("-1"));
+    });
+    ser.WriteList(*decs, 1, [&](ShapeSerializer& lser) { lser.WriteBigDecimal(*decElem, MakeBigDecimal("1.5")); });
+  });
+  s.WriteStruct(*root, rootStruct);
+  EXPECT_EQ(s.GetPayload().GetResult(), "ints.member.1=123456789012345678901234567890&ints.member.2=-1&decs.member.1=15e-1");
+}
+
+TEST_F(QueryShapeSerializerTest, FlattenedListOfBigIntegers) {
+  QueryShapeSerializer s;
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto list = Schema::CreateMember("nums", ShapeType::List, {{XmlFlattenedTrait::KEY(), Aws::MakeShared<XmlFlattenedTrait>("Schema")}});
+  auto elem = Schema::CreateMember("member", ShapeType::BigInteger);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) {
+    ser.WriteList(*list, 2, [&](ShapeSerializer& lser) {
+      lser.WriteBigInteger(*elem, MakeBigInteger("1"));
+      lser.WriteBigInteger(*elem, MakeBigInteger("2"));
+    });
+  });
+  s.WriteStruct(*root, rootStruct);
+  EXPECT_EQ(s.GetPayload().GetResult(), "nums.1=1&nums.2=2");
+}
+
+TEST_F(QueryShapeSerializerTest, MapOfBigNumbers) {
+  QueryShapeSerializer s;
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto ints = Schema::CreateMember("ints", ShapeType::Map);
+  auto decs = Schema::CreateMember("decs", ShapeType::Map);
+  auto intVal = Schema::CreateMember("value", ShapeType::BigInteger);
+  auto decVal = Schema::CreateMember("value", ShapeType::BigDecimal);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) {
+    ser.WriteMap(*ints, 1, [&](MapSerializer& mapSer) {
+      mapSer.WriteEntry("a",
+                        [&](ShapeSerializer& vser) { vser.WriteBigInteger(*intVal, MakeBigInteger("123456789012345678901234567890")); });
+    });
+    ser.WriteMap(*decs, 1, [&](MapSerializer& mapSer) {
+      mapSer.WriteEntry("b", [&](ShapeSerializer& vser) { vser.WriteBigDecimal(*decVal, MakeBigDecimal("0.100000000000000000000001")); });
+    });
+  });
+  s.WriteStruct(*root, rootStruct);
+  EXPECT_EQ(s.GetPayload().GetResult(),
+            "ints.entry.1.key=a&ints.entry.1.value=123456789012345678901234567890"
+            "&decs.entry.1.key=b&decs.entry.1.value=100000000000000000000001e-24");
+}
+
+TEST_F(QueryShapeSerializerTest, Ec2BigNumberCapitalizesMemberName) {
+  QueryShapeSerializer s(QueryShapeSerializer::Flavor::Ec2Query);
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto big = Schema::CreateMember("bigValue", ShapeType::BigInteger);
+  auto dec = Schema::CreateMember("decValue", ShapeType::BigDecimal);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) {
+    ser.WriteBigInteger(*big, MakeBigInteger("123456789012345678901234567890"));
+    ser.WriteBigDecimal(*dec, MakeBigDecimal("1.5"));
+  });
+  s.WriteStruct(*root, rootStruct);
+  EXPECT_EQ(s.GetPayload().GetResult(), "BigValue=123456789012345678901234567890&DecValue=15e-1");
+}
+
+TEST_F(QueryShapeSerializerTest, ByteAndShortAreNumbers) {
+  QueryShapeSerializer s;
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto b = Schema::CreateMember("b", ShapeType::Byte);
+  auto sh = Schema::CreateMember("s", ShapeType::Short);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) {
+    ser.WriteByte(*b, 65);
+    ser.WriteShort(*sh, -32768);
+  });
+  s.WriteStruct(*root, rootStruct);
+  EXPECT_EQ(s.GetPayload().GetResult(), "b=65&s=-32768");
+}

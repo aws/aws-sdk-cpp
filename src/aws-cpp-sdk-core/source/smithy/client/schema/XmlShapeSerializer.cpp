@@ -74,6 +74,10 @@ class XmlShapeSerializer::Impl final : public InterceptingSerializer {
     void WriteLong(const Schema& schema, int64_t value) override;
     void WriteFloat(const Schema& schema, float value) override;
     void WriteDouble(const Schema& schema, double value) override;
+    void WriteByte(const Schema& schema, int8_t value) override;
+    void WriteShort(const Schema& schema, int16_t value) override;
+    void WriteBigInteger(const Schema& schema, const Aws::Crt::BigInteger& value) override;
+    void WriteBigDecimal(const Schema& schema, const Aws::Crt::BigDecimal& value) override;
     void WriteString(const Schema& schema, const Aws::String& value) override;
     void WriteTimestamp(const Schema& schema, const Aws::Utils::DateTime& value) override;
     void WriteBlob(const Schema& schema, const Aws::Utils::ByteBuffer& value) override;
@@ -114,6 +118,10 @@ class XmlShapeSerializer::Impl final : public InterceptingSerializer {
     void WriteLong(const Schema& schema, int64_t value) override;
     void WriteFloat(const Schema& schema, float value) override;
     void WriteDouble(const Schema& schema, double value) override;
+    void WriteByte(const Schema& schema, int8_t value) override;
+    void WriteShort(const Schema& schema, int16_t value) override;
+    void WriteBigInteger(const Schema& schema, const Aws::Crt::BigInteger& value) override;
+    void WriteBigDecimal(const Schema& schema, const Aws::Crt::BigDecimal& value) override;
     void WriteString(const Schema& schema, const Aws::String& value) override;
     void WriteTimestamp(const Schema& schema, const Aws::Utils::DateTime& value) override;
 
@@ -349,6 +357,24 @@ void XmlShapeSerializer::Impl::ValueSerializer::WriteDouble(const Schema&, doubl
     m_outer->AppendRaw(value > 0 ? "Infinity" : "-Infinity");
   }
 }
+void XmlShapeSerializer::Impl::ValueSerializer::WriteByte(const Schema&, int8_t value) {
+  m_outer->ClosePendingTag();
+  m_outer->AppendRaw(StringUtils::to_string(static_cast<int>(value)));
+}
+void XmlShapeSerializer::Impl::ValueSerializer::WriteShort(const Schema&, int16_t value) {
+  m_outer->ClosePendingTag();
+  m_outer->AppendRaw(StringUtils::to_string(static_cast<int>(value)));
+}
+void XmlShapeSerializer::Impl::ValueSerializer::WriteBigInteger(const Schema&, const Aws::Crt::BigInteger& value) {
+  m_outer->ClosePendingTag();
+  const auto text = value.ToString();
+  m_outer->AppendRaw(Aws::String(text.data(), text.size()));
+}
+void XmlShapeSerializer::Impl::ValueSerializer::WriteBigDecimal(const Schema&, const Aws::Crt::BigDecimal& value) {
+  m_outer->ClosePendingTag();
+  const auto text = value.ToString();
+  m_outer->AppendRaw(Aws::String(text.data(), text.size()));
+}
 void XmlShapeSerializer::Impl::ValueSerializer::WriteString(const Schema&, const Aws::String& value) {
   m_outer->ClosePendingTag();
   m_outer->AppendEscaped(value);
@@ -410,6 +436,20 @@ void XmlShapeSerializer::Impl::InlineAttributeSerializer::WriteFloat(const Schem
 void XmlShapeSerializer::Impl::InlineAttributeSerializer::WriteDouble(const Schema& schema, double value) {
   WriteAttr(schema, StringUtils::to_string(value));
 }
+void XmlShapeSerializer::Impl::InlineAttributeSerializer::WriteByte(const Schema& schema, int8_t value) {
+  WriteAttr(schema, StringUtils::to_string(static_cast<int>(value)));
+}
+void XmlShapeSerializer::Impl::InlineAttributeSerializer::WriteShort(const Schema& schema, int16_t value) {
+  WriteAttr(schema, StringUtils::to_string(static_cast<int>(value)));
+}
+void XmlShapeSerializer::Impl::InlineAttributeSerializer::WriteBigInteger(const Schema& schema, const Aws::Crt::BigInteger& value) {
+  const auto text = value.ToString();
+  WriteAttr(schema, Aws::String(text.data(), text.size()));
+}
+void XmlShapeSerializer::Impl::InlineAttributeSerializer::WriteBigDecimal(const Schema& schema, const Aws::Crt::BigDecimal& value) {
+  const auto text = value.ToString();
+  WriteAttr(schema, Aws::String(text.data(), text.size()));
+}
 void XmlShapeSerializer::Impl::InlineAttributeSerializer::WriteString(const Schema& schema, const Aws::String& value) {
   WriteAttr(schema, value);
 }
@@ -449,6 +489,14 @@ void XmlShapeSerializer::WriteInteger(const Schema& schema, int value) { m_impl-
 void XmlShapeSerializer::WriteLong(const Schema& schema, int64_t value) { m_impl->WriteLong(schema, value); }
 void XmlShapeSerializer::WriteFloat(const Schema& schema, float value) { m_impl->WriteFloat(schema, value); }
 void XmlShapeSerializer::WriteDouble(const Schema& schema, double value) { m_impl->WriteDouble(schema, value); }
+void XmlShapeSerializer::WriteByte(const Schema& schema, int8_t value) { m_impl->WriteByte(schema, value); }
+void XmlShapeSerializer::WriteShort(const Schema& schema, int16_t value) { m_impl->WriteShort(schema, value); }
+void XmlShapeSerializer::WriteBigInteger(const Schema& schema, const Aws::Crt::BigInteger& value) {
+  m_impl->WriteBigInteger(schema, value);
+}
+void XmlShapeSerializer::WriteBigDecimal(const Schema& schema, const Aws::Crt::BigDecimal& value) {
+  m_impl->WriteBigDecimal(schema, value);
+}
 void XmlShapeSerializer::WriteString(const Schema& schema, const Aws::String& value) { m_impl->WriteString(schema, value); }
 void XmlShapeSerializer::WriteTimestamp(const Schema& schema, const DateTime& value) { m_impl->WriteTimestamp(schema, value); }
 void XmlShapeSerializer::WriteBlob(const Schema& schema, const ByteBuffer& value) { m_impl->WriteBlob(schema, value); }

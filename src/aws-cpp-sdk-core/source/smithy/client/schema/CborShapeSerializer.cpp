@@ -39,6 +39,10 @@ class CborShapeSerializer::Impl final : public ShapeSerializer {
   void WriteLong(const Schema&, int64_t value) override { WriteIntValue(value); }
   void WriteFloat(const Schema&, float value) override { m_encoder.WriteFloat(value); }
   void WriteDouble(const Schema&, double value) override { m_encoder.WriteFloat(value); }
+  void WriteByte(const Schema&, int8_t value) override { WriteIntValue(value); }
+  void WriteShort(const Schema&, int16_t value) override { WriteIntValue(value); }
+  void WriteBigInteger(const Schema&, const Aws::Crt::BigInteger& value) override { m_encoder.WriteBigInteger(value); }
+  void WriteBigDecimal(const Schema&, const Aws::Crt::BigDecimal& value) override { m_encoder.WriteBigDecimal(value); }
   void WriteString(const Schema&, const Aws::String& value) override { WriteText(value); }
   void WriteTimestamp(const Schema&, const DateTime& value) override {
     m_encoder.WriteTag(1);
@@ -102,6 +106,22 @@ class CborShapeSerializer::Impl final : public ShapeSerializer {
       m_outer->WriteMemberKey(s);
       m_outer->WriteDouble(s, v);
     }
+    void WriteByte(const Schema& s, int8_t v) override {
+      m_outer->WriteMemberKey(s);
+      m_outer->WriteByte(s, v);
+    }
+    void WriteShort(const Schema& s, int16_t v) override {
+      m_outer->WriteMemberKey(s);
+      m_outer->WriteShort(s, v);
+    }
+    void WriteBigInteger(const Schema& s, const Aws::Crt::BigInteger& v) override {
+      m_outer->WriteMemberKey(s);
+      m_outer->WriteBigInteger(s, v);
+    }
+    void WriteBigDecimal(const Schema& s, const Aws::Crt::BigDecimal& v) override {
+      m_outer->WriteMemberKey(s);
+      m_outer->WriteBigDecimal(s, v);
+    }
     void WriteString(const Schema& s, const Aws::String& v) override {
       m_outer->WriteMemberKey(s);
       m_outer->WriteString(s, v);
@@ -135,6 +155,10 @@ class CborShapeSerializer::Impl final : public ShapeSerializer {
     void WriteLong(const Schema& s, int64_t v) override { m_outer->WriteLong(s, v); }
     void WriteFloat(const Schema& s, float v) override { m_outer->WriteFloat(s, v); }
     void WriteDouble(const Schema& s, double v) override { m_outer->WriteDouble(s, v); }
+    void WriteByte(const Schema& s, int8_t v) override { m_outer->WriteByte(s, v); }
+    void WriteShort(const Schema& s, int16_t v) override { m_outer->WriteShort(s, v); }
+    void WriteBigInteger(const Schema& s, const Aws::Crt::BigInteger& v) override { m_outer->WriteBigInteger(s, v); }
+    void WriteBigDecimal(const Schema& s, const Aws::Crt::BigDecimal& v) override { m_outer->WriteBigDecimal(s, v); }
     void WriteString(const Schema& s, const Aws::String& v) override { m_outer->WriteString(s, v); }
     void WriteTimestamp(const Schema& s, const DateTime& v) override { m_outer->WriteTimestamp(s, v); }
     void WriteBlob(const Schema& s, const ByteBuffer& v) override { m_outer->WriteBlob(s, v); }
@@ -184,6 +208,14 @@ void CborShapeSerializer::WriteInteger(const Schema& schema, int value) { m_impl
 void CborShapeSerializer::WriteLong(const Schema& schema, int64_t value) { m_impl->WriteLong(schema, value); }
 void CborShapeSerializer::WriteFloat(const Schema& schema, float value) { m_impl->WriteFloat(schema, value); }
 void CborShapeSerializer::WriteDouble(const Schema& schema, double value) { m_impl->WriteDouble(schema, value); }
+void CborShapeSerializer::WriteByte(const Schema& schema, int8_t value) { m_impl->WriteByte(schema, value); }
+void CborShapeSerializer::WriteShort(const Schema& schema, int16_t value) { m_impl->WriteShort(schema, value); }
+void CborShapeSerializer::WriteBigInteger(const Schema& schema, const Aws::Crt::BigInteger& value) {
+  m_impl->WriteBigInteger(schema, value);
+}
+void CborShapeSerializer::WriteBigDecimal(const Schema& schema, const Aws::Crt::BigDecimal& value) {
+  m_impl->WriteBigDecimal(schema, value);
+}
 void CborShapeSerializer::WriteString(const Schema& schema, const Aws::String& value) { m_impl->WriteString(schema, value); }
 void CborShapeSerializer::WriteTimestamp(const Schema& schema, const DateTime& value) { m_impl->WriteTimestamp(schema, value); }
 void CborShapeSerializer::WriteBlob(const Schema& schema, const ByteBuffer& value) { m_impl->WriteBlob(schema, value); }

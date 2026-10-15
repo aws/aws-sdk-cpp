@@ -3,6 +3,8 @@
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/BigDecimal.h>
+#include <aws/crt/BigInteger.h>
 #include <smithy/Smithy_EXPORTS.h>
 #include <smithy/client/schema/Schema.h>
 
@@ -30,6 +32,10 @@ class SMITHY_API ShapeSerializer {
   virtual void WriteLong(const Schema& schema, int64_t value) = 0;
   virtual void WriteFloat(const Schema& schema, float value) = 0;
   virtual void WriteDouble(const Schema& schema, double value) = 0;
+  virtual void WriteByte(const Schema& schema, int8_t value) = 0;
+  virtual void WriteShort(const Schema& schema, int16_t value) = 0;
+  virtual void WriteBigInteger(const Schema& schema, const Aws::Crt::BigInteger& value) = 0;
+  virtual void WriteBigDecimal(const Schema& schema, const Aws::Crt::BigDecimal& value) = 0;
   virtual void WriteString(const Schema& schema, const Aws::String& value) = 0;
   virtual void WriteTimestamp(const Schema& schema, const Aws::Utils::DateTime& value) = 0;
   virtual void WriteBlob(const Schema& schema, const Aws::Utils::ByteBuffer& value) = 0;

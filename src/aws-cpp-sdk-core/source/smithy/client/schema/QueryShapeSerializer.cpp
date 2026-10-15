@@ -60,6 +60,16 @@ class QueryShapeSerializer::Impl final : public ShapeSerializer {
   void WriteLong(const Schema&, int64_t value) override { EmitField(StringUtils::to_string(value)); }
   void WriteFloat(const Schema&, float value) override { EmitField(FormatFloatingPoint(value)); }
   void WriteDouble(const Schema&, double value) override { EmitField(FormatFloatingPoint(value)); }
+  void WriteByte(const Schema&, int8_t value) override { EmitField(StringUtils::to_string(static_cast<int>(value))); }
+  void WriteShort(const Schema&, int16_t value) override { EmitField(StringUtils::to_string(static_cast<int>(value))); }
+  void WriteBigInteger(const Schema&, const Aws::Crt::BigInteger& value) override {
+    const auto text = value.ToString();
+    EmitField(Aws::String(text.data(), text.size()));
+  }
+  void WriteBigDecimal(const Schema&, const Aws::Crt::BigDecimal& value) override {
+    const auto text = value.ToString();
+    EmitField(Aws::String(text.data(), text.size()));
+  }
   void WriteString(const Schema&, const Aws::String& value) override { EmitField(StringUtils::URLEncode(value.c_str())); }
   void WriteTimestamp(const Schema& schema, const DateTime& value) override {
     EmitField(StringUtils::URLEncode(
@@ -116,6 +126,22 @@ class QueryShapeSerializer::Impl final : public ShapeSerializer {
     void WriteDouble(const Schema& s, double v) override {
       m_outer->m_prefix = ChildKey(s);
       m_outer->WriteDouble(s, v);
+    }
+    void WriteByte(const Schema& s, int8_t v) override {
+      m_outer->m_prefix = ChildKey(s);
+      m_outer->WriteByte(s, v);
+    }
+    void WriteShort(const Schema& s, int16_t v) override {
+      m_outer->m_prefix = ChildKey(s);
+      m_outer->WriteShort(s, v);
+    }
+    void WriteBigInteger(const Schema& s, const Aws::Crt::BigInteger& v) override {
+      m_outer->m_prefix = ChildKey(s);
+      m_outer->WriteBigInteger(s, v);
+    }
+    void WriteBigDecimal(const Schema& s, const Aws::Crt::BigDecimal& v) override {
+      m_outer->m_prefix = ChildKey(s);
+      m_outer->WriteBigDecimal(s, v);
     }
     void WriteString(const Schema& s, const Aws::String& v) override {
       m_outer->m_prefix = ChildKey(s);
@@ -174,6 +200,22 @@ class QueryShapeSerializer::Impl final : public ShapeSerializer {
     void WriteDouble(const Schema& s, double v) override {
       m_outer->m_prefix = ItemKey();
       m_outer->WriteDouble(s, v);
+    }
+    void WriteByte(const Schema& s, int8_t v) override {
+      m_outer->m_prefix = ItemKey();
+      m_outer->WriteByte(s, v);
+    }
+    void WriteShort(const Schema& s, int16_t v) override {
+      m_outer->m_prefix = ItemKey();
+      m_outer->WriteShort(s, v);
+    }
+    void WriteBigInteger(const Schema& s, const Aws::Crt::BigInteger& v) override {
+      m_outer->m_prefix = ItemKey();
+      m_outer->WriteBigInteger(s, v);
+    }
+    void WriteBigDecimal(const Schema& s, const Aws::Crt::BigDecimal& v) override {
+      m_outer->m_prefix = ItemKey();
+      m_outer->WriteBigDecimal(s, v);
     }
     void WriteString(const Schema& s, const Aws::String& v) override {
       m_outer->m_prefix = ItemKey();
@@ -346,6 +388,14 @@ void QueryShapeSerializer::WriteInteger(const Schema& schema, int value) { m_imp
 void QueryShapeSerializer::WriteLong(const Schema& schema, int64_t value) { m_impl->WriteLong(schema, value); }
 void QueryShapeSerializer::WriteFloat(const Schema& schema, float value) { m_impl->WriteFloat(schema, value); }
 void QueryShapeSerializer::WriteDouble(const Schema& schema, double value) { m_impl->WriteDouble(schema, value); }
+void QueryShapeSerializer::WriteByte(const Schema& schema, int8_t value) { m_impl->WriteByte(schema, value); }
+void QueryShapeSerializer::WriteShort(const Schema& schema, int16_t value) { m_impl->WriteShort(schema, value); }
+void QueryShapeSerializer::WriteBigInteger(const Schema& schema, const Aws::Crt::BigInteger& value) {
+  m_impl->WriteBigInteger(schema, value);
+}
+void QueryShapeSerializer::WriteBigDecimal(const Schema& schema, const Aws::Crt::BigDecimal& value) {
+  m_impl->WriteBigDecimal(schema, value);
+}
 void QueryShapeSerializer::WriteString(const Schema& schema, const Aws::String& value) { m_impl->WriteString(schema, value); }
 void QueryShapeSerializer::WriteTimestamp(const Schema& schema, const DateTime& value) { m_impl->WriteTimestamp(schema, value); }
 void QueryShapeSerializer::WriteBlob(const Schema& schema, const ByteBuffer& value) { m_impl->WriteBlob(schema, value); }

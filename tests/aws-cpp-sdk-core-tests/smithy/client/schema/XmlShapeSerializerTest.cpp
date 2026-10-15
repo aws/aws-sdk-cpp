@@ -511,3 +511,132 @@ TEST_F(XmlShapeSerializerTest, TimestampFormatTraitControlsWireForm) {
     EXPECT_EQ(payload.find("2009-02-13T23:31:30Z"), Aws::String::npos);
   }
 }
+
+TEST_F(XmlShapeSerializerTest, BigIntegerBeyondInt64) {
+  XmlShapeSerializer s;
+  auto root = Schema::StructureBuilder("Root", {{XmlNameTrait::KEY(), Aws::MakeShared<XmlNameTrait>("Schema", "Root")}}).Build();
+  auto member = Schema::CreateMember("big", ShapeType::BigInteger);
+  auto value = MakeBigInteger("123456789012345678901234567890");
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteBigInteger(*member, value); });
+  s.WriteStruct(*root, rootStruct);
+  auto outcome = s.GetPayload();
+  ASSERT_TRUE(outcome.IsSuccess());
+  EXPECT_EQ(outcome.GetResult(), "<Root><big>123456789012345678901234567890</big></Root>");
+}
+
+TEST_F(XmlShapeSerializerTest, BigDecimalValues) {
+  XmlShapeSerializer s;
+  auto root = Schema::StructureBuilder("Root", {{XmlNameTrait::KEY(), Aws::MakeShared<XmlNameTrait>("Schema", "Root")}}).Build();
+  auto simple = Schema::CreateMember("simple", ShapeType::BigDecimal);
+  auto small = Schema::CreateMember("small", ShapeType::BigDecimal);
+  auto negative = Schema::CreateMember("negative", ShapeType::BigDecimal);
+  auto zero = Schema::CreateMember("zero", ShapeType::BigDecimal);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) {
+    ser.WriteBigDecimal(*simple, MakeBigDecimal("1.5"));
+    ser.WriteBigDecimal(*small, MakeBigDecimal("0.100000000000000000000001"));
+    ser.WriteBigDecimal(*negative, MakeBigDecimal("-12345678901234567890.123456789"));
+    ser.WriteBigDecimal(*zero, Aws::Crt::BigDecimal());
+  });
+  s.WriteStruct(*root, rootStruct);
+  EXPECT_EQ(s.GetPayload().GetResult(),
+            "<Root><simple>15e-1</simple><small>100000000000000000000001e-24</small>"
+            "<negative>-12345678901234567890123456789e-9</negative><zero>0e0</zero></Root>");
+}
+
+TEST_F(XmlShapeSerializerTest, BigNumberXmlNameOverridesMemberName) {
+  XmlShapeSerializer s;
+  auto root = Schema::StructureBuilder("Root", {{XmlNameTrait::KEY(), Aws::MakeShared<XmlNameTrait>("Schema", "Root")}}).Build();
+  auto member = Schema::CreateMember("big", ShapeType::BigInteger, {{XmlNameTrait::KEY(), Aws::MakeShared<XmlNameTrait>("Schema", "Big")}});
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteBigInteger(*member, MakeBigInteger("5")); });
+  s.WriteStruct(*root, rootStruct);
+  EXPECT_EQ(s.GetPayload().GetResult(), "<Root><Big>5</Big></Root>");
+}
+
+TEST_F(XmlShapeSerializerTest, BigNumberAttributes) {
+  XmlShapeSerializer s;
+  auto root = Schema::StructureBuilder("Root", {{XmlNameTrait::KEY(), Aws::MakeShared<XmlNameTrait>("Schema", "Root")}}).Build();
+  auto intAttr =
+      Schema::CreateMember("id", ShapeType::BigInteger, {{XmlAttributeTrait::KEY(), Aws::MakeShared<XmlAttributeTrait>("Schema")}});
+  auto decAttr =
+      Schema::CreateMember("scale", ShapeType::BigDecimal, {{XmlAttributeTrait::KEY(), Aws::MakeShared<XmlAttributeTrait>("Schema")}});
+  auto element = Schema::CreateMember("name", ShapeType::String);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) {
+    ser.WriteBigInteger(*intAttr, MakeBigInteger("123456789012345678901234567890"));
+    ser.WriteBigDecimal(*decAttr, MakeBigDecimal("-0.25"));
+    ser.WriteString(*element, "x");
+  });
+  s.WriteStruct(*root, rootStruct);
+  EXPECT_EQ(s.GetPayload().GetResult(), "<Root id=\"123456789012345678901234567890\" scale=\"-25e-2\"><name>x</name></Root>");
+}
+
+TEST_F(XmlShapeSerializerTest, ListOfBigNumbers) {
+  XmlShapeSerializer s;
+  auto root = Schema::StructureBuilder("Root", {{XmlNameTrait::KEY(), Aws::MakeShared<XmlNameTrait>("Schema", "Root")}}).Build();
+  auto ints = Schema::CreateMember("ints", ShapeType::List);
+  auto decs = Schema::CreateMember("decs", ShapeType::List);
+  auto intElem = Schema::CreateMember("member", ShapeType::BigInteger);
+  auto decElem = Schema::CreateMember("member", ShapeType::BigDecimal);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) {
+    ser.WriteList(*ints, 2, [&](ShapeSerializer& lser) {
+      lser.WriteBigInteger(*intElem, MakeBigInteger("123456789012345678901234567890"));
+      lser.WriteBigInteger(*intElem, MakeBigInteger("-1"));
+    });
+    ser.WriteList(*decs, 1, [&](ShapeSerializer& lser) { lser.WriteBigDecimal(*decElem, MakeBigDecimal("1.5")); });
+  });
+  s.WriteStruct(*root, rootStruct);
+  EXPECT_EQ(s.GetPayload().GetResult(),
+            "<Root><ints><member>123456789012345678901234567890</member><member>-1</member></ints>"
+            "<decs><member>15e-1</member></decs></Root>");
+}
+
+TEST_F(XmlShapeSerializerTest, FlattenedListOfBigIntegers) {
+  XmlShapeSerializer s;
+  auto root = Schema::StructureBuilder("Root", {{XmlNameTrait::KEY(), Aws::MakeShared<XmlNameTrait>("Schema", "Root")}}).Build();
+  auto list = Schema::CreateMember("nums", ShapeType::List, {{XmlFlattenedTrait::KEY(), Aws::MakeShared<XmlFlattenedTrait>("Schema")}});
+  auto elem = Schema::CreateMember("member", ShapeType::BigInteger);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) {
+    ser.WriteList(*list, 2, [&](ShapeSerializer& lser) {
+      lser.WriteBigInteger(*elem, MakeBigInteger("1"));
+      lser.WriteBigInteger(*elem, MakeBigInteger("2"));
+    });
+  });
+  s.WriteStruct(*root, rootStruct);
+  EXPECT_EQ(s.GetPayload().GetResult(), "<Root><nums>1</nums><nums>2</nums></Root>");
+}
+
+TEST_F(XmlShapeSerializerTest, MapOfBigNumbers) {
+  XmlShapeSerializer s;
+  auto root = Schema::StructureBuilder("Root", {{XmlNameTrait::KEY(), Aws::MakeShared<XmlNameTrait>("Schema", "Root")}}).Build();
+  auto ints = Schema::CreateMember("ints", ShapeType::Map);
+  auto decs = Schema::CreateMember("decs", ShapeType::Map);
+  auto intVal = Schema::CreateMember("value", ShapeType::BigInteger);
+  auto decVal = Schema::CreateMember("value", ShapeType::BigDecimal);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) {
+    ser.WriteMap(*ints, 1, [&](MapSerializer& mapSer) {
+      mapSer.WriteEntry("a",
+                        [&](ShapeSerializer& vser) { vser.WriteBigInteger(*intVal, MakeBigInteger("123456789012345678901234567890")); });
+    });
+    ser.WriteMap(*decs, 1, [&](MapSerializer& mapSer) {
+      mapSer.WriteEntry("b", [&](ShapeSerializer& vser) { vser.WriteBigDecimal(*decVal, MakeBigDecimal("0.100000000000000000000001")); });
+    });
+  });
+  s.WriteStruct(*root, rootStruct);
+  EXPECT_EQ(s.GetPayload().GetResult(),
+            "<Root><ints><entry><key>a</key><value>123456789012345678901234567890</value></entry></ints>"
+            "<decs><entry><key>b</key><value>100000000000000000000001e-24</value></entry></decs></Root>");
+}
+
+TEST_F(XmlShapeSerializerTest, ByteAndShortAreNumbers) {
+  XmlShapeSerializer s;
+  auto root = Schema::StructureBuilder("Root", {{XmlNameTrait::KEY(), Aws::MakeShared<XmlNameTrait>("Schema", "Root")}}).Build();
+  auto attr = Schema::CreateMember("b", ShapeType::Byte, {{XmlAttributeTrait::KEY(), Aws::MakeShared<XmlAttributeTrait>("Schema")}});
+  auto element = Schema::CreateMember("e", ShapeType::Byte);
+  auto sh = Schema::CreateMember("s", ShapeType::Short);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) {
+    ser.WriteByte(*attr, 65);
+    ser.WriteByte(*element, -128);
+    ser.WriteShort(*sh, 32767);
+  });
+  s.WriteStruct(*root, rootStruct);
+  EXPECT_EQ(s.GetPayload().GetResult(), "<Root b=\"65\"><e>-128</e><s>32767</s></Root>");
+}

@@ -494,3 +494,104 @@ TEST_F(JsonShapeSerializerTest, TimestampFormatTraitControlsWireForm) {
     EXPECT_EQ(payload.find("\"t\":\""), Aws::String::npos);
   }
 }
+
+TEST_F(JsonShapeSerializerTest, BigIntegerBeyondInt64) {
+  JsonShapeSerializer s;
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto member = Schema::CreateMember("big", ShapeType::BigInteger);
+  auto value = MakeBigInteger("123456789012345678901234567890");
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteBigInteger(*member, value); });
+  s.WriteStruct(*root, rootStruct);
+  auto outcome = s.GetPayload();
+  ASSERT_TRUE(outcome.IsSuccess());
+  EXPECT_EQ(outcome.GetResult(), "{\"big\":123456789012345678901234567890}");
+}
+
+TEST_F(JsonShapeSerializerTest, BigDecimalSimple) {
+  JsonShapeSerializer s;
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto member = Schema::CreateMember("dec", ShapeType::BigDecimal);
+  auto value = MakeBigDecimal("1.5");
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteBigDecimal(*member, value); });
+  s.WriteStruct(*root, rootStruct);
+  EXPECT_EQ(s.GetPayload().GetResult(), "{\"dec\":15e-1}");
+}
+
+TEST_F(JsonShapeSerializerTest, BigNumberJsonNameOverridesMemberName) {
+  JsonShapeSerializer s;
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto member =
+      Schema::CreateMember("big", ShapeType::BigInteger, {{JsonNameTrait::KEY(), Aws::MakeShared<JsonNameTrait>("Schema", "BIG")}});
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteBigInteger(*member, MakeBigInteger("7")); });
+  s.WriteStruct(*root, rootStruct);
+  EXPECT_EQ(s.GetPayload().GetResult(), "{\"BIG\":7}");
+}
+
+TEST_F(JsonShapeSerializerTest, ListOfBigNumbers) {
+  JsonShapeSerializer s;
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto ints = Schema::CreateMember("ints", ShapeType::List);
+  auto decs = Schema::CreateMember("decs", ShapeType::List);
+  auto intElem = Schema::CreateMember("member", ShapeType::BigInteger);
+  auto decElem = Schema::CreateMember("member", ShapeType::BigDecimal);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) {
+    ser.WriteList(*ints, 3, [&](ShapeSerializer& lser) {
+      lser.WriteBigInteger(*intElem, MakeBigInteger("1"));
+      lser.WriteBigInteger(*intElem, MakeBigInteger("123456789012345678901234567890"));
+      lser.WriteBigInteger(*intElem, MakeBigInteger("-123456789012345678901234567890"));
+    });
+    ser.WriteList(*decs, 2, [&](ShapeSerializer& lser) {
+      lser.WriteBigDecimal(*decElem, MakeBigDecimal("1.5"));
+      lser.WriteBigDecimal(*decElem, MakeBigDecimal("-0.25"));
+    });
+  });
+  s.WriteStruct(*root, rootStruct);
+  EXPECT_EQ(s.GetPayload().GetResult(),
+            "{\"ints\":[1,123456789012345678901234567890,-123456789012345678901234567890],\"decs\":[15e-1,-25e-2]}");
+}
+
+TEST_F(JsonShapeSerializerTest, MapOfBigNumbers) {
+  JsonShapeSerializer s;
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto ints = Schema::CreateMember("ints", ShapeType::Map);
+  auto decs = Schema::CreateMember("decs", ShapeType::Map);
+  auto intVal = Schema::CreateMember("value", ShapeType::BigInteger);
+  auto decVal = Schema::CreateMember("value", ShapeType::BigDecimal);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) {
+    ser.WriteMap(*ints, 2, [&](MapSerializer& mapSer) {
+      mapSer.WriteEntry("a",
+                        [&](ShapeSerializer& vser) { vser.WriteBigInteger(*intVal, MakeBigInteger("123456789012345678901234567890")); });
+      mapSer.WriteEntry("b", [&](ShapeSerializer& vser) { vser.WriteBigInteger(*intVal, MakeBigInteger("0")); });
+    });
+    ser.WriteMap(*decs, 1, [&](MapSerializer& mapSer) {
+      mapSer.WriteEntry("c", [&](ShapeSerializer& vser) { vser.WriteBigDecimal(*decVal, MakeBigDecimal("0.100000000000000000000001")); });
+    });
+  });
+  s.WriteStruct(*root, rootStruct);
+  EXPECT_EQ(s.GetPayload().GetResult(),
+            "{\"ints\":{\"a\":123456789012345678901234567890,\"b\":0},\"decs\":{\"c\":100000000000000000000001e-24}}");
+}
+
+TEST_F(JsonShapeSerializerTest, BigNumberAsRootValue) {
+  JsonShapeSerializer s;
+  auto schema = Schema::CreateBigInteger("Big");
+  s.WriteBigInteger(*schema, MakeBigInteger("123456789012345678901234567890"));
+  EXPECT_EQ(s.GetPayload().GetResult(), "123456789012345678901234567890");
+}
+
+TEST_F(JsonShapeSerializerTest, ByteAndShortAreNumbers) {
+  JsonShapeSerializer s;
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto byteMin = Schema::CreateMember("byteMin", ShapeType::Byte);
+  auto byteMax = Schema::CreateMember("byteMax", ShapeType::Byte);
+  auto shortMin = Schema::CreateMember("shortMin", ShapeType::Short);
+  auto shortMax = Schema::CreateMember("shortMax", ShapeType::Short);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) {
+    ser.WriteByte(*byteMin, -128);
+    ser.WriteByte(*byteMax, 65);
+    ser.WriteShort(*shortMin, -32768);
+    ser.WriteShort(*shortMax, 32767);
+  });
+  s.WriteStruct(*root, rootStruct);
+  EXPECT_EQ(s.GetPayload().GetResult(), "{\"byteMin\":-128,\"byteMax\":65,\"shortMin\":-32768,\"shortMax\":32767}");
+}

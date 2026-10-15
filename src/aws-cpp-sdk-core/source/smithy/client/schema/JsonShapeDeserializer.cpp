@@ -178,6 +178,27 @@ class JsonShapeDeserializer::Impl final : public ShapeDeserializer {
     return value;
   }
 
+  Aws::Crt::Optional<int8_t> ReadByte(const Schema& schema) override { return NarrowInteger<int8_t>(ReadLong(schema)); }
+  Aws::Crt::Optional<int16_t> ReadShort(const Schema& schema) override { return NarrowInteger<int16_t>(ReadLong(schema)); }
+
+  Aws::Crt::Optional<Aws::Crt::BigInteger> ReadBigInteger(const Schema&) override {
+    if (!IsNumberStart(PeekNonWs())) {
+      SkipValue();
+      return {};
+    }
+    const Aws::String token = ReadNumberToken();
+    return Aws::Crt::BigInteger::FromString(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(token.data()), token.size()));
+  }
+
+  Aws::Crt::Optional<Aws::Crt::BigDecimal> ReadBigDecimal(const Schema&) override {
+    if (!IsNumberStart(PeekNonWs())) {
+      SkipValue();
+      return {};
+    }
+    const Aws::String token = ReadNumberToken();
+    return Aws::Crt::BigDecimal::FromString(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(token.data()), token.size()));
+  }
+
   Aws::Crt::Optional<Aws::String> ReadString(const Schema&) override {
     if (PeekNonWs() != '"') {
       SkipValue();
@@ -473,6 +494,14 @@ Aws::Crt::Optional<int> JsonShapeDeserializer::ReadInteger(const Schema& schema)
 Aws::Crt::Optional<int64_t> JsonShapeDeserializer::ReadLong(const Schema& schema) { return m_impl->ReadLong(schema); }
 Aws::Crt::Optional<float> JsonShapeDeserializer::ReadFloat(const Schema& schema) { return m_impl->ReadFloat(schema); }
 Aws::Crt::Optional<double> JsonShapeDeserializer::ReadDouble(const Schema& schema) { return m_impl->ReadDouble(schema); }
+Aws::Crt::Optional<int8_t> JsonShapeDeserializer::ReadByte(const Schema& schema) { return m_impl->ReadByte(schema); }
+Aws::Crt::Optional<int16_t> JsonShapeDeserializer::ReadShort(const Schema& schema) { return m_impl->ReadShort(schema); }
+Aws::Crt::Optional<Aws::Crt::BigInteger> JsonShapeDeserializer::ReadBigInteger(const Schema& schema) {
+  return m_impl->ReadBigInteger(schema);
+}
+Aws::Crt::Optional<Aws::Crt::BigDecimal> JsonShapeDeserializer::ReadBigDecimal(const Schema& schema) {
+  return m_impl->ReadBigDecimal(schema);
+}
 Aws::Crt::Optional<Aws::String> JsonShapeDeserializer::ReadString(const Schema& schema) { return m_impl->ReadString(schema); }
 Aws::Crt::Optional<DateTime> JsonShapeDeserializer::ReadTimestamp(const Schema& schema) { return m_impl->ReadTimestamp(schema); }
 Aws::Crt::Optional<ByteBuffer> JsonShapeDeserializer::ReadBlob(const Schema& schema) { return m_impl->ReadBlob(schema); }

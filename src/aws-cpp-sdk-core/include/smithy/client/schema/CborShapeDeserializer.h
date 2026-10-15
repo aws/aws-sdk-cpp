@@ -22,6 +22,10 @@ class SMITHY_API CborShapeDeserializer final : public ShapeDeserializer {
   Aws::Crt::Optional<int64_t> ReadLong(const Schema& schema) override;
   Aws::Crt::Optional<float> ReadFloat(const Schema& schema) override;
   Aws::Crt::Optional<double> ReadDouble(const Schema& schema) override;
+  Aws::Crt::Optional<int8_t> ReadByte(const Schema& schema) override;
+  Aws::Crt::Optional<int16_t> ReadShort(const Schema& schema) override;
+  Aws::Crt::Optional<Aws::Crt::BigInteger> ReadBigInteger(const Schema& schema) override;
+  Aws::Crt::Optional<Aws::Crt::BigDecimal> ReadBigDecimal(const Schema& schema) override;
   Aws::Crt::Optional<Aws::String> ReadString(const Schema& schema) override;
   Aws::Crt::Optional<Aws::Utils::DateTime> ReadTimestamp(const Schema& schema) override;
   Aws::Crt::Optional<Aws::Utils::ByteBuffer> ReadBlob(const Schema& schema) override;

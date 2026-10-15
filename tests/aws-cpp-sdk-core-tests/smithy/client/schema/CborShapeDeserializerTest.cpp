@@ -525,3 +525,230 @@ TEST_F(CborShapeDeserializerTest, DeserializesNestedIntoClass) {
 
   EXPECT_EQ(f.fizz.buzz, "value");
 }
+
+namespace {
+
+Aws::Crt::ByteCursor CursorOf(const unsigned char* data, size_t len) { return Aws::Crt::ByteCursorFromArray(data, len); }
+
+}  // namespace
+
+TEST_F(CborShapeDeserializerTest, BigIntegerRoundTrip) {
+  auto root = Schema::StructureBuilder("Root").PutMember("big", Schema::CreateBigInteger("BI")).Build();
+  auto big = root->GetMember("big").value();
+  const char* const values[] = {"0",
+                                "42",
+                                "-1000",
+                                "18446744073709551615",
+                                "-18446744073709551616",
+                                "18446744073709551616",
+                                "-18446744073709551617",
+                                "123456789012345678901234567890",
+                                "-123456789012345678901234567890"};
+  for (const char* text : values) {
+    SCOPED_TRACE(text);
+    const auto value = MakeBigInteger(text);
+    auto payload = Encode(root, [&](ShapeSerializer& ser) { ser.WriteBigInteger(*big, value); });
+
+    CborShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()));
+    Aws::Crt::Optional<Aws::Crt::BigInteger> got;
+    d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) { got = de.ReadBigInteger(m); });
+    ASSERT_TRUE(got.has_value());
+    EXPECT_TRUE(got.value() == value);
+    EXPECT_EQ(got.value().ToString(), value.ToString());
+  }
+}
+
+TEST_F(CborShapeDeserializerTest, BigDecimalRoundTrip) {
+  auto root = Schema::StructureBuilder("Root").PutMember("dec", Schema::CreateBigDecimal("BD")).Build();
+  auto dec = root->GetMember("dec").value();
+  const char* const values[] = {
+      "0", "1.5", "1.50", "-0.5", "0.100000000000000000000001", "-12345678901234567890.123456789", "123456789012345678901234567890"};
+  for (const char* text : values) {
+    SCOPED_TRACE(text);
+    const auto value = MakeBigDecimal(text);
+    auto payload = Encode(root, [&](ShapeSerializer& ser) { ser.WriteBigDecimal(*dec, value); });
+
+    CborShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()));
+    Aws::Crt::Optional<Aws::Crt::BigDecimal> got;
+    d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) { got = de.ReadBigDecimal(m); });
+    ASSERT_TRUE(got.has_value());
+    EXPECT_TRUE(got.value() == value);
+    EXPECT_EQ(got.value().ToString(), value.ToString());
+  }
+}
+
+TEST_F(CborShapeDeserializerTest, BigIntegerFromWireForms) {
+  auto scalar = Schema::CreateBigInteger("BI");
+  struct Case {
+    Aws::String bytes;
+    const char* expected;
+  };
+  const Case cases[] = {
+      {Aws::String("\x18\x2A", 2), "42"},
+      {Aws::String("\x39\x03\xE7", 3), "-1000"},
+      {Aws::String("\xC2\x49\x01\x00\x00\x00\x00\x00\x00\x00\x00", 11), "18446744073709551616"},
+      {Aws::String("\xC3\x49\x01\x00\x00\x00\x00\x00\x00\x00\x00", 11), "-18446744073709551617"},
+      // a tag 2 value that would have fit in a UInt is still accepted
+      {Aws::String("\xC2\x41\x2A", 3), "42"},
+  };
+  for (const auto& c : cases) {
+    SCOPED_TRACE(c.expected);
+    CborShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(c.bytes.data()), c.bytes.size()));
+    auto got = d.ReadBigInteger(*scalar);
+    ASSERT_TRUE(got.has_value());
+    EXPECT_EQ(got.value().ToString(), c.expected);
+  }
+}
+
+TEST_F(CborShapeDeserializerTest, BigDecimalFromWireForm) {
+  auto scalar = Schema::CreateBigDecimal("BD");
+  // tag 4 [-1, 15]
+  const unsigned char data[] = {0xC4, 0x82, 0x20, 0x0F};
+  CborShapeDeserializer d(CursorOf(data, sizeof(data)));
+  auto got = d.ReadBigDecimal(*scalar);
+  ASSERT_TRUE(got.has_value());
+  EXPECT_EQ(got.value().ToString(), "15e-1");
+}
+
+TEST_F(CborShapeDeserializerTest, BigNumbersInListAndMap) {
+  auto intsBuilder = Schema::ListBuilder("Ints");
+  auto decsBuilder = Schema::MapBuilder("Decs");
+  auto root = Schema::StructureBuilder("Root").PutMember("ints", intsBuilder).PutMember("decs", decsBuilder).Build();
+  auto ints = root->GetMember("ints").value();
+  auto decs = root->GetMember("decs").value();
+  auto intElem = Schema::CreateMember("member", ShapeType::BigInteger);
+  auto decVal = Schema::CreateMember("value", ShapeType::BigDecimal);
+  auto payload = Encode(root, [&](ShapeSerializer& ser) {
+    ser.WriteList(*ints, 2, [&](ShapeSerializer& lser) {
+      lser.WriteBigInteger(*intElem, MakeBigInteger("123456789012345678901234567890"));
+      lser.WriteBigInteger(*intElem, MakeBigInteger("-7"));
+    });
+    ser.WriteMap(*decs, 1, [&](MapSerializer& mapSer) {
+      mapSer.WriteEntry("k",
+                        [&](ShapeSerializer& vser) { vser.WriteBigDecimal(*decVal, MakeBigDecimal("-12345678901234567890.123456789")); });
+    });
+  });
+
+  CborShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()));
+  Aws::Vector<Aws::String> intValues;
+  Aws::Map<Aws::String, Aws::String> decValues;
+  d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) {
+    if (m.GetMemberName() == "ints") {
+      de.ReadList(m, [&](ShapeDeserializer& ede) {
+        auto v = ede.ReadBigInteger(*intElem);
+        ASSERT_TRUE(v.has_value());
+        intValues.emplace_back(v.value().ToString().c_str());
+      });
+    } else if (m.GetMemberName() == "decs") {
+      de.ReadMap(m, [&](const Aws::String& key, ShapeDeserializer& vde) {
+        auto v = vde.ReadBigDecimal(*decVal);
+        ASSERT_TRUE(v.has_value());
+        decValues[key] = v.value().ToString().c_str();
+      });
+    }
+  });
+  ASSERT_EQ(intValues.size(), 2u);
+  EXPECT_EQ(intValues[0], "123456789012345678901234567890");
+  EXPECT_EQ(intValues[1], "-7");
+  ASSERT_EQ(decValues.size(), 1u);
+  EXPECT_EQ(decValues["k"], "-12345678901234567890123456789e-9");
+}
+
+TEST_F(CborShapeDeserializerTest, BigIntegerRejectsWrongTypes) {
+  auto scalar = Schema::CreateBigInteger("BI");
+  const Aws::String inputs[] = {
+      Aws::String("\x61\x61", 2),                              // text "a"
+      Aws::String("\xF5", 1),                                  // true
+      Aws::String("\xFB\x3F\xF8\x00\x00\x00\x00\x00\x00", 9),  // double 1.5
+      Aws::String("\xC4\x82\x20\x0F", 4),                      // decimal fraction
+      Aws::String("\x82\x01\x02", 3),                          // array
+  };
+  for (const auto& input : inputs) {
+    SCOPED_TRACE(static_cast<unsigned char>(input[0]));
+    CborShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(input.data()), input.size()));
+    EXPECT_FALSE(d.ReadBigInteger(*scalar).has_value());
+  }
+}
+
+TEST_F(CborShapeDeserializerTest, BigIntegerRejectsEmptyPayload) {
+  auto scalar = Schema::CreateBigInteger("BI");
+  const unsigned char empty[1] = {0};
+  CborShapeDeserializer d(CursorOf(empty, 0));
+  EXPECT_FALSE(d.ReadBigInteger(*scalar).has_value());
+}
+
+TEST_F(CborShapeDeserializerTest, BigDecimalRejectsWrongTypes) {
+  auto scalar = Schema::CreateBigDecimal("BD");
+  const Aws::String inputs[] = {
+      Aws::String("\x0F", 1),          // plain uint
+      Aws::String("\x61\x61", 2),      // text "a"
+      Aws::String("\xC2\x41\x2A", 3),  // bignum
+      Aws::String("\xC4\x81\x01", 3),  // decimal fraction with a single element
+      Aws::String("\xC4\x61\x61", 3),  // decimal fraction holding text
+  };
+  for (const auto& input : inputs) {
+    SCOPED_TRACE(static_cast<unsigned char>(input[0]));
+    CborShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(input.data()), input.size()));
+    EXPECT_FALSE(d.ReadBigDecimal(*scalar).has_value());
+  }
+}
+
+TEST_F(CborShapeDeserializerTest, BigNumberNullMemberIsSkipped) {
+  auto root = Schema::StructureBuilder("Root").PutMember("n", Schema::CreateBigInteger("BI")).Build();
+  // {"n": null}
+  const unsigned char data[] = {0xBF, 0x61, 0x6E, 0xF6, 0xFF};
+  CborShapeDeserializer d(CursorOf(data, sizeof(data)));
+  int calls = 0;
+  d.ReadStruct(*root, [&](const Schema&, ShapeDeserializer&) { ++calls; });
+  EXPECT_EQ(calls, 0);
+}
+
+TEST_F(CborShapeDeserializerTest, ByteAndShortRanges) {
+  auto root = Schema::StructureBuilder("Root")
+                  .PutMember("b", Schema::CreateByte("B"))
+                  .PutMember("s", Schema::CreateShort("S"))
+                  .PutMember("after", Schema::CreateInteger("I"))
+                  .Build();
+  auto bMember = root->GetMember("b").value();
+  auto sMember = root->GetMember("s").value();
+  auto afterMember = root->GetMember("after").value();
+  struct Case {
+    int64_t byteWire;
+    bool byteOk;
+    int64_t shortWire;
+    bool shortOk;
+  };
+  const Case cases[] = {
+      {-128, true, -32768, true},
+      {127, true, 32767, true},
+      {128, false, 32768, false},
+      {-129, false, -32769, false},
+  };
+  for (const auto& c : cases) {
+    SCOPED_TRACE(c.byteWire);
+    auto payload = Encode(root, [&](ShapeSerializer& ser) {
+      ser.WriteLong(*bMember, c.byteWire);
+      ser.WriteLong(*sMember, c.shortWire);
+      ser.WriteInteger(*afterMember, 1);
+    });
+    CborShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()));
+    Aws::Crt::Optional<int8_t> b;
+    Aws::Crt::Optional<int16_t> s;
+    Aws::Crt::Optional<int> after;
+    d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) {
+      if (m.GetMemberName() == "b") {
+        b = de.ReadByte(m);
+      } else if (m.GetMemberName() == "s") {
+        s = de.ReadShort(m);
+      } else {
+        after = de.ReadInteger(m);
+      }
+    });
+    ASSERT_EQ(b.has_value(), c.byteOk);
+    ASSERT_EQ(s.has_value(), c.shortOk);
+    if (c.byteOk) EXPECT_EQ(b.value(), c.byteWire);
+    if (c.shortOk) EXPECT_EQ(s.value(), c.shortWire);
+    ASSERT_TRUE(after.has_value());
+    EXPECT_EQ(after.value(), 1);
+  }
+}

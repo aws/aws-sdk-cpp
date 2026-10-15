@@ -593,3 +593,212 @@ TEST_F(XmlShapeDeserializerTest, TimestampFormatTraitControlsParsing) {
     EXPECT_EQ(got.value().Seconds(), 1234567890);
   }
 }
+
+namespace {
+
+Aws::Crt::ByteCursor CursorOf(const Aws::String& payload) {
+  return Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size());
+}
+
+}  // namespace
+
+TEST_F(XmlShapeDeserializerTest, BigIntegerValues) {
+  auto root = RootBuilder().PutMember("big", Schema::CreateBigInteger("BI")).Build();
+  struct Case {
+    const char* text;
+    const char* expected;
+  };
+  const Case cases[] = {
+      {"0", "0"},
+      {"42", "42"},
+      {"-42", "-42"},
+      {"18446744073709551616", "18446744073709551616"},
+      {"123456789012345678901234567890", "123456789012345678901234567890"},
+  };
+  for (const auto& c : cases) {
+    SCOPED_TRACE(c.text);
+    const Aws::String payload = Aws::String("<Root><big>") + c.text + "</big></Root>";
+    XmlShapeDeserializer d(CursorOf(payload));
+    Aws::Crt::Optional<Aws::Crt::BigInteger> got;
+    d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) { got = de.ReadBigInteger(m); });
+    ASSERT_TRUE(got.has_value());
+    EXPECT_EQ(got.value().ToString(), c.expected);
+  }
+}
+
+TEST_F(XmlShapeDeserializerTest, BigDecimalValues) {
+  auto root = RootBuilder().PutMember("dec", Schema::CreateBigDecimal("BD")).Build();
+  struct Case {
+    const char* text;
+    const char* expected;
+  };
+  const Case cases[] = {
+      {"1.5", "15e-1"},
+      {"15e-1", "15e-1"},
+      {"-0.25", "-25e-2"},
+      {"123456789012345678901234567890.5", "1234567890123456789012345678905e-1"},
+  };
+  for (const auto& c : cases) {
+    SCOPED_TRACE(c.text);
+    const Aws::String payload = Aws::String("<Root><dec>") + c.text + "</dec></Root>";
+    XmlShapeDeserializer d(CursorOf(payload));
+    Aws::Crt::Optional<Aws::Crt::BigDecimal> got;
+    d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) { got = de.ReadBigDecimal(m); });
+    ASSERT_TRUE(got.has_value());
+    EXPECT_EQ(got.value().ToString(), c.expected);
+  }
+}
+
+TEST_F(XmlShapeDeserializerTest, BigNumberAttributes) {
+  auto root =
+      RootBuilder()
+          .PutMember("id", Schema::CreateBigInteger("BI"), {{XmlAttributeTrait::KEY(), Aws::MakeShared<XmlAttributeTrait>("Test")}})
+          .PutMember("scale", Schema::CreateBigDecimal("BD"), {{XmlAttributeTrait::KEY(), Aws::MakeShared<XmlAttributeTrait>("Test")}})
+          .Build();
+  auto id = root->GetMember("id").value();
+  auto scale = root->GetMember("scale").value();
+  auto payload = Encode(root, [&](ShapeSerializer& ser) {
+    ser.WriteBigInteger(*id, MakeBigInteger("123456789012345678901234567890"));
+    ser.WriteBigDecimal(*scale, MakeBigDecimal("-0.25"));
+  });
+  EXPECT_NE(payload.find("id=\"123456789012345678901234567890\""), Aws::String::npos);
+
+  XmlShapeDeserializer d(CursorOf(payload));
+  Aws::String gotId, gotScale;
+  d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) {
+    if (m.GetMemberName() == "id") {
+      auto v = de.ReadBigInteger(m);
+      ASSERT_TRUE(v.has_value());
+      gotId = v.value().ToString().c_str();
+    } else {
+      auto v = de.ReadBigDecimal(m);
+      ASSERT_TRUE(v.has_value());
+      gotScale = v.value().ToString().c_str();
+    }
+  });
+  EXPECT_EQ(gotId, "123456789012345678901234567890");
+  EXPECT_EQ(gotScale, "-25e-2");
+}
+
+TEST_F(XmlShapeDeserializerTest, BigNumbersInListAndMap) {
+  auto intsBuilder = Schema::ListBuilder("Ints");
+  auto decsBuilder = Schema::MapBuilder("Decs");
+  auto root = RootBuilder().PutMember("ints", intsBuilder).PutMember("decs", decsBuilder).Build();
+  auto ints = root->GetMember("ints").value();
+  auto decs = root->GetMember("decs").value();
+  auto intElem = Schema::CreateMember("member", ShapeType::BigInteger);
+  auto decVal = Schema::CreateMember("value", ShapeType::BigDecimal);
+  auto payload = Encode(root, [&](ShapeSerializer& ser) {
+    ser.WriteList(*ints, 2, [&](ShapeSerializer& lser) {
+      lser.WriteBigInteger(*intElem, MakeBigInteger("123456789012345678901234567890"));
+      lser.WriteBigInteger(*intElem, MakeBigInteger("-7"));
+    });
+    ser.WriteMap(*decs, 1, [&](MapSerializer& mapSer) {
+      mapSer.WriteEntry("k",
+                        [&](ShapeSerializer& vser) { vser.WriteBigDecimal(*decVal, MakeBigDecimal("-12345678901234567890.123456789")); });
+    });
+  });
+
+  XmlShapeDeserializer d(CursorOf(payload));
+  Aws::Vector<Aws::String> intValues;
+  Aws::Map<Aws::String, Aws::String> decValues;
+  d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) {
+    if (m.GetMemberName() == "ints") {
+      de.ReadList(m, [&](ShapeDeserializer& ede) {
+        auto v = ede.ReadBigInteger(*intElem);
+        ASSERT_TRUE(v.has_value());
+        intValues.emplace_back(v.value().ToString().c_str());
+      });
+    } else if (m.GetMemberName() == "decs") {
+      de.ReadMap(m, [&](const Aws::String& key, ShapeDeserializer& vde) {
+        auto v = vde.ReadBigDecimal(*decVal);
+        ASSERT_TRUE(v.has_value());
+        decValues[key] = v.value().ToString().c_str();
+      });
+    }
+  });
+  ASSERT_EQ(intValues.size(), 2u);
+  EXPECT_EQ(intValues[0], "123456789012345678901234567890");
+  EXPECT_EQ(intValues[1], "-7");
+  ASSERT_EQ(decValues.size(), 1u);
+  EXPECT_EQ(decValues["k"], "-12345678901234567890123456789e-9");
+}
+
+TEST_F(XmlShapeDeserializerTest, BigIntegerRejectsMalformedText) {
+  auto root = RootBuilder().PutMember("big", Schema::CreateBigInteger("BI")).Build();
+  const char* const inputs[] = {"12x", "abc", "1.5", "", " ", "1e3", "--1", "0x10"};
+  for (const char* input : inputs) {
+    SCOPED_TRACE(input);
+    const Aws::String payload = Aws::String("<Root><big>") + input + "</big></Root>";
+    XmlShapeDeserializer d(CursorOf(payload));
+    bool delivered = false;
+    Aws::Crt::Optional<Aws::Crt::BigInteger> got;
+    d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) {
+      delivered = true;
+      got = de.ReadBigInteger(m);
+    });
+    EXPECT_TRUE(delivered);
+    EXPECT_FALSE(got.has_value());
+  }
+}
+
+TEST_F(XmlShapeDeserializerTest, BigDecimalRejectsMalformedText) {
+  auto root = RootBuilder().PutMember("dec", Schema::CreateBigDecimal("BD")).Build();
+  const char* const inputs[] = {"12x", "abc", "", " ", "1.", "1e", "1.5.5", "NaN"};
+  for (const char* input : inputs) {
+    SCOPED_TRACE(input);
+    const Aws::String payload = Aws::String("<Root><dec>") + input + "</dec></Root>";
+    XmlShapeDeserializer d(CursorOf(payload));
+    bool delivered = false;
+    Aws::Crt::Optional<Aws::Crt::BigDecimal> got;
+    d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) {
+      delivered = true;
+      got = de.ReadBigDecimal(m);
+    });
+    EXPECT_TRUE(delivered);
+    EXPECT_FALSE(got.has_value());
+  }
+}
+
+TEST_F(XmlShapeDeserializerTest, ByteAndShortRanges) {
+  auto root = RootBuilder()
+                  .PutMember("b", Schema::CreateByte("B"))
+                  .PutMember("s", Schema::CreateShort("S"))
+                  .PutMember("after", Schema::CreateInteger("I"))
+                  .Build();
+  struct Case {
+    const char* xml;
+    bool byteOk;
+    int byteValue;
+    bool shortOk;
+    int shortValue;
+  };
+  const Case cases[] = {
+      {"<Root><b>-128</b><s>-32768</s><after>1</after></Root>", true, -128, true, -32768},
+      {"<Root><b>127</b><s>32767</s><after>1</after></Root>", true, 127, true, 32767},
+      {"<Root><b>128</b><s>32768</s><after>1</after></Root>", false, 0, false, 0},
+      {"<Root><b>-129</b><s>-32769</s><after>1</after></Root>", false, 0, false, 0},
+  };
+  for (const auto& c : cases) {
+    SCOPED_TRACE(c.xml);
+    XmlShapeDeserializer d(CursorOf(c.xml));
+    Aws::Crt::Optional<int8_t> b;
+    Aws::Crt::Optional<int16_t> s;
+    Aws::Crt::Optional<int> after;
+    d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) {
+      if (m.GetMemberName() == "b") {
+        b = de.ReadByte(m);
+      } else if (m.GetMemberName() == "s") {
+        s = de.ReadShort(m);
+      } else {
+        after = de.ReadInteger(m);
+      }
+    });
+    ASSERT_EQ(b.has_value(), c.byteOk);
+    ASSERT_EQ(s.has_value(), c.shortOk);
+    if (c.byteOk) EXPECT_EQ(b.value(), c.byteValue);
+    if (c.shortOk) EXPECT_EQ(s.value(), c.shortValue);
+    ASSERT_TRUE(after.has_value());
+    EXPECT_EQ(after.value(), 1);
+  }
+}

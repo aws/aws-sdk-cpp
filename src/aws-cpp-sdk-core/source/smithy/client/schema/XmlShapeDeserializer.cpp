@@ -176,6 +176,24 @@ class XmlShapeDeserializer::Impl final : public ShapeDeserializer {
     return value;
   }
 
+  Aws::Crt::Optional<int8_t> ReadByte(const Schema& schema) override { return NarrowInteger<int8_t>(ReadLong(schema)); }
+  Aws::Crt::Optional<int16_t> ReadShort(const Schema& schema) override { return NarrowInteger<int16_t>(ReadLong(schema)); }
+  Aws::Crt::Optional<Aws::Crt::BigInteger> ReadBigInteger(const Schema&) override {
+    const Aws::String text = CurrentText();
+    if (text.empty()) {
+      return {};
+    }
+    return Aws::Crt::BigInteger::FromString(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(text.data()), text.size()));
+  }
+
+  Aws::Crt::Optional<Aws::Crt::BigDecimal> ReadBigDecimal(const Schema&) override {
+    const Aws::String text = CurrentText();
+    if (text.empty()) {
+      return {};
+    }
+    return Aws::Crt::BigDecimal::FromString(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(text.data()), text.size()));
+  }
+
   Aws::Crt::Optional<Aws::String> ReadString(const Schema&) override { return CurrentText(); }
 
   Aws::Crt::Optional<DateTime> ReadTimestamp(const Schema& schema) override {
@@ -510,6 +528,14 @@ Aws::Crt::Optional<int> XmlShapeDeserializer::ReadInteger(const Schema& schema) 
 Aws::Crt::Optional<int64_t> XmlShapeDeserializer::ReadLong(const Schema& schema) { return m_impl->ReadLong(schema); }
 Aws::Crt::Optional<float> XmlShapeDeserializer::ReadFloat(const Schema& schema) { return m_impl->ReadFloat(schema); }
 Aws::Crt::Optional<double> XmlShapeDeserializer::ReadDouble(const Schema& schema) { return m_impl->ReadDouble(schema); }
+Aws::Crt::Optional<int8_t> XmlShapeDeserializer::ReadByte(const Schema& schema) { return m_impl->ReadByte(schema); }
+Aws::Crt::Optional<int16_t> XmlShapeDeserializer::ReadShort(const Schema& schema) { return m_impl->ReadShort(schema); }
+Aws::Crt::Optional<Aws::Crt::BigInteger> XmlShapeDeserializer::ReadBigInteger(const Schema& schema) {
+  return m_impl->ReadBigInteger(schema);
+}
+Aws::Crt::Optional<Aws::Crt::BigDecimal> XmlShapeDeserializer::ReadBigDecimal(const Schema& schema) {
+  return m_impl->ReadBigDecimal(schema);
+}
 Aws::Crt::Optional<Aws::String> XmlShapeDeserializer::ReadString(const Schema& schema) { return m_impl->ReadString(schema); }
 Aws::Crt::Optional<DateTime> XmlShapeDeserializer::ReadTimestamp(const Schema& schema) { return m_impl->ReadTimestamp(schema); }
 Aws::Crt::Optional<ByteBuffer> XmlShapeDeserializer::ReadBlob(const Schema& schema) { return m_impl->ReadBlob(schema); }

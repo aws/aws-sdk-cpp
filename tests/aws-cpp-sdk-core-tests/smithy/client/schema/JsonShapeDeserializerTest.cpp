@@ -490,3 +490,195 @@ TEST_F(JsonShapeDeserializerTest, TimestampFormatTraitControlsParsing) {
     EXPECT_EQ(got.value().Seconds(), 1234567890);
   }
 }
+
+namespace {
+
+Aws::Crt::ByteCursor CursorOf(const Aws::String& payload) {
+  return Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size());
+}
+
+}  // namespace
+
+TEST_F(JsonShapeDeserializerTest, BigIntegerValues) {
+  auto scalar = Schema::CreateBigInteger("BI");
+  struct Case {
+    const char* json;
+    const char* expected;
+  };
+  const Case cases[] = {
+      {"0", "0"},
+      {"-0", "0"},
+      {"42", "42"},
+      {"-42", "-42"},
+      {"18446744073709551616", "18446744073709551616"},
+      {"-18446744073709551617", "-18446744073709551617"},
+      {"-123456789012345678901234567890", "-123456789012345678901234567890"},
+  };
+  for (const auto& c : cases) {
+    SCOPED_TRACE(c.json);
+    JsonShapeDeserializer d(CursorOf(c.json));
+    auto got = d.ReadBigInteger(*scalar);
+    ASSERT_TRUE(got.has_value());
+    EXPECT_EQ(got.value().ToString(), c.expected);
+  }
+}
+
+TEST_F(JsonShapeDeserializerTest, BigDecimalValues) {
+  auto scalar = Schema::CreateBigDecimal("BD");
+  struct Case {
+    const char* json;
+    const char* expected;
+  };
+  const Case cases[] = {
+      {"1.5", "15e-1"},
+      {"15e-1", "15e-1"},
+      {"1E3", "1e3"},
+      {"-0.25", "-25e-2"},
+      {"123456789012345678901234567890", "123456789012345678901234567890e0"},
+      {"123456789012345678901234567890.5", "1234567890123456789012345678905e-1"},
+  };
+  for (const auto& c : cases) {
+    SCOPED_TRACE(c.json);
+    JsonShapeDeserializer d(CursorOf(c.json));
+    auto got = d.ReadBigDecimal(*scalar);
+    ASSERT_TRUE(got.has_value());
+    EXPECT_EQ(got.value().ToString(), c.expected);
+  }
+}
+
+TEST_F(JsonShapeDeserializerTest, BigNumbersInListAndMap) {
+  auto intsBuilder = Schema::ListBuilder("Ints");
+  auto decsBuilder = Schema::MapBuilder("Decs");
+  auto root = Schema::StructureBuilder("Root").PutMember("ints", intsBuilder).PutMember("decs", decsBuilder).Build();
+  auto ints = root->GetMember("ints").value();
+  auto decs = root->GetMember("decs").value();
+  auto intElem = Schema::CreateMember("member", ShapeType::BigInteger);
+  auto decVal = Schema::CreateMember("value", ShapeType::BigDecimal);
+  auto payload = Encode(root, [&](ShapeSerializer& ser) {
+    ser.WriteList(*ints, 2, [&](ShapeSerializer& lser) {
+      lser.WriteBigInteger(*intElem, MakeBigInteger("123456789012345678901234567890"));
+      lser.WriteBigInteger(*intElem, MakeBigInteger("-7"));
+    });
+    ser.WriteMap(*decs, 1, [&](MapSerializer& mapSer) {
+      mapSer.WriteEntry("k",
+                        [&](ShapeSerializer& vser) { vser.WriteBigDecimal(*decVal, MakeBigDecimal("-12345678901234567890.123456789")); });
+    });
+  });
+
+  JsonShapeDeserializer d(CursorOf(payload));
+  Aws::Vector<Aws::String> intValues;
+  Aws::Map<Aws::String, Aws::String> decValues;
+  d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) {
+    if (m.GetMemberName() == "ints") {
+      de.ReadList(m, [&](ShapeDeserializer& ede) {
+        auto v = ede.ReadBigInteger(*intElem);
+        ASSERT_TRUE(v.has_value());
+        intValues.emplace_back(v.value().ToString().c_str());
+      });
+    } else if (m.GetMemberName() == "decs") {
+      de.ReadMap(m, [&](const Aws::String& key, ShapeDeserializer& vde) {
+        auto v = vde.ReadBigDecimal(*decVal);
+        ASSERT_TRUE(v.has_value());
+        decValues[key] = v.value().ToString().c_str();
+      });
+    }
+  });
+  ASSERT_EQ(intValues.size(), 2u);
+  EXPECT_EQ(intValues[0], "123456789012345678901234567890");
+  EXPECT_EQ(intValues[1], "-7");
+  ASSERT_EQ(decValues.size(), 1u);
+  EXPECT_EQ(decValues["k"], "-12345678901234567890123456789e-9");
+}
+
+TEST_F(JsonShapeDeserializerTest, BigIntegerRejectsMalformedInput) {
+  auto scalar = Schema::CreateBigInteger("BI");
+  const char* const inputs[] = {"\"abc\"", "\"123\"", "1.5", "true", "[1]", "{}", "-", "1e3"};
+  for (const char* input : inputs) {
+    SCOPED_TRACE(input);
+    JsonShapeDeserializer d(CursorOf(input));
+    EXPECT_FALSE(d.ReadBigInteger(*scalar).has_value());
+  }
+}
+
+TEST_F(JsonShapeDeserializerTest, BigDecimalRejectsMalformedInput) {
+  auto scalar = Schema::CreateBigDecimal("BD");
+  const char* const inputs[] = {"\"abc\"", "\"1.5\"", "true", "[1]", "{}", "-", "1.", "1e", "1.5.5"};
+  for (const char* input : inputs) {
+    SCOPED_TRACE(input);
+    JsonShapeDeserializer d(CursorOf(input));
+    EXPECT_FALSE(d.ReadBigDecimal(*scalar).has_value());
+  }
+}
+
+TEST_F(JsonShapeDeserializerTest, MalformedBigNumberDoesNotDerailFollowingMembers) {
+  auto root = Schema::StructureBuilder("Root")
+                  .PutMember("a", Schema::CreateBigInteger("BI1"))
+                  .PutMember("b", Schema::CreateBigInteger("BI2"))
+                  .PutMember("c", Schema::CreateBigDecimal("BD"))
+                  .PutMember("d", Schema::CreateBigInteger("BI3"))
+                  .Build();
+  const Aws::String payload = "{\"a\":\"abc\",\"b\":1.5,\"c\":\"x\",\"d\":123456789012345678901234567890}";
+  JsonShapeDeserializer d(CursorOf(payload));
+  Aws::Map<Aws::String, bool> parsed;
+  Aws::String dValue;
+  d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) {
+    if (m.GetMemberName() == "c") {
+      parsed[m.GetMemberName()] = de.ReadBigDecimal(m).has_value();
+      return;
+    }
+    auto v = de.ReadBigInteger(m);
+    parsed[m.GetMemberName()] = v.has_value();
+    if (v.has_value() && m.GetMemberName() == "d") {
+      dValue = v.value().ToString().c_str();
+    }
+  });
+  EXPECT_FALSE(parsed.at("a"));
+  EXPECT_FALSE(parsed.at("b"));
+  EXPECT_FALSE(parsed.at("c"));
+  EXPECT_TRUE(parsed.at("d"));
+  EXPECT_EQ(dValue, "123456789012345678901234567890");
+}
+
+TEST_F(JsonShapeDeserializerTest, ByteAndShortRanges) {
+  auto root = Schema::StructureBuilder("Root")
+                  .PutMember("b", Schema::CreateByte("B"))
+                  .PutMember("s", Schema::CreateShort("S"))
+                  .PutMember("after", Schema::CreateInteger("I"))
+                  .Build();
+  struct Case {
+    const char* json;
+    bool byteOk;
+    int byteValue;
+    bool shortOk;
+    int shortValue;
+  };
+  const Case cases[] = {
+      {"{\"b\":-128,\"s\":-32768,\"after\":1}", true, -128, true, -32768},
+      {"{\"b\":127,\"s\":32767,\"after\":1}", true, 127, true, 32767},
+      {"{\"b\":128,\"s\":32768,\"after\":1}", false, 0, false, 0},
+      {"{\"b\":-129,\"s\":-32769,\"after\":1}", false, 0, false, 0},
+  };
+  for (const auto& c : cases) {
+    SCOPED_TRACE(c.json);
+    JsonShapeDeserializer d(CursorOf(c.json));
+    Aws::Crt::Optional<int8_t> b;
+    Aws::Crt::Optional<int16_t> s;
+    Aws::Crt::Optional<int> after;
+    d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) {
+      if (m.GetMemberName() == "b") {
+        b = de.ReadByte(m);
+      } else if (m.GetMemberName() == "s") {
+        s = de.ReadShort(m);
+      } else {
+        after = de.ReadInteger(m);
+      }
+    });
+    ASSERT_EQ(b.has_value(), c.byteOk);
+    ASSERT_EQ(s.has_value(), c.shortOk);
+    if (c.byteOk) EXPECT_EQ(b.value(), c.byteValue);
+    if (c.shortOk) EXPECT_EQ(s.value(), c.shortValue);
+    // An out-of-range value is consumed, so the next member still reads.
+    ASSERT_TRUE(after.has_value());
+    EXPECT_EQ(after.value(), 1);
+  }
+}

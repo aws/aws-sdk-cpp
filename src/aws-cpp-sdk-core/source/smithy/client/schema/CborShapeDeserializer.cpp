@@ -4,6 +4,7 @@
  */
 #include <aws/crt/cbor/Cbor.h>
 #include <smithy/client/schema/CborShapeDeserializer.h>
+#include <smithy/client/schema/SerdeTraits.h>
 
 using namespace smithy::schema;
 using namespace Aws::Utils;
@@ -135,6 +136,12 @@ class CborShapeDeserializer::Impl final : public ShapeDeserializer {
     return static_cast<double>(longVal.value());
   }
 
+  Aws::Crt::Optional<int8_t> ReadByte(const Schema& schema) override { return NarrowInteger<int8_t>(ReadLong(schema)); }
+  Aws::Crt::Optional<int16_t> ReadShort(const Schema& schema) override { return NarrowInteger<int16_t>(ReadLong(schema)); }
+  Aws::Crt::Optional<Aws::Crt::BigInteger> ReadBigInteger(const Schema&) override { return m_decoder.PopNextBigIntegerVal(); }
+
+  Aws::Crt::Optional<Aws::Crt::BigDecimal> ReadBigDecimal(const Schema&) override { return m_decoder.PopNextBigDecimalVal(); }
+
   Aws::Crt::Optional<Aws::String> ReadString(const Schema&) override { return ReadText(); }
 
   Aws::Crt::Optional<DateTime> ReadTimestamp(const Schema& schema) override {
@@ -256,6 +263,14 @@ Aws::Crt::Optional<int> CborShapeDeserializer::ReadInteger(const Schema& schema)
 Aws::Crt::Optional<int64_t> CborShapeDeserializer::ReadLong(const Schema& schema) { return m_impl->ReadLong(schema); }
 Aws::Crt::Optional<float> CborShapeDeserializer::ReadFloat(const Schema& schema) { return m_impl->ReadFloat(schema); }
 Aws::Crt::Optional<double> CborShapeDeserializer::ReadDouble(const Schema& schema) { return m_impl->ReadDouble(schema); }
+Aws::Crt::Optional<int8_t> CborShapeDeserializer::ReadByte(const Schema& schema) { return m_impl->ReadByte(schema); }
+Aws::Crt::Optional<int16_t> CborShapeDeserializer::ReadShort(const Schema& schema) { return m_impl->ReadShort(schema); }
+Aws::Crt::Optional<Aws::Crt::BigInteger> CborShapeDeserializer::ReadBigInteger(const Schema& schema) {
+  return m_impl->ReadBigInteger(schema);
+}
+Aws::Crt::Optional<Aws::Crt::BigDecimal> CborShapeDeserializer::ReadBigDecimal(const Schema& schema) {
+  return m_impl->ReadBigDecimal(schema);
+}
 Aws::Crt::Optional<Aws::String> CborShapeDeserializer::ReadString(const Schema& schema) { return m_impl->ReadString(schema); }
 Aws::Crt::Optional<DateTime> CborShapeDeserializer::ReadTimestamp(const Schema& schema) { return m_impl->ReadTimestamp(schema); }
 Aws::Crt::Optional<ByteBuffer> CborShapeDeserializer::ReadBlob(const Schema& schema) { return m_impl->ReadBlob(schema); }

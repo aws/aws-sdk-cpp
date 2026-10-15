@@ -4,6 +4,9 @@
  */
 #pragma once
 
+#include <aws/crt/BigDecimal.h>
+#include <aws/crt/BigInteger.h>
+#include <aws/crt/Types.h>
 #include <smithy/client/schema/Schema.h>
 #include <smithy/client/schema/SerializableStruct.h>
 #include <smithy/client/schema/ShapeDeserializer.h>
@@ -35,6 +38,18 @@ class LambdaStruct final : public SerializableStruct {
   const Schema& m_schema;
   std::function<void(ShapeSerializer&)> m_members;
 };
+
+// Parses a decimal literal for tests; yields zero on a malformed literal so the
+// comparison against the expected text fails instead of crashing.
+inline Aws::Crt::BigInteger MakeBigInteger(const char* text) {
+  auto parsed = Aws::Crt::BigInteger::FromString(Aws::Crt::ByteCursorFromCString(text));
+  return parsed.has_value() ? parsed.value() : Aws::Crt::BigInteger();
+}
+
+inline Aws::Crt::BigDecimal MakeBigDecimal(const char* text) {
+  auto parsed = Aws::Crt::BigDecimal::FromString(Aws::Crt::ByteCursorFromCString(text));
+  return parsed.has_value() ? parsed.value() : Aws::Crt::BigDecimal();
+}
 
 }  // namespace schema
 }  // namespace smithy

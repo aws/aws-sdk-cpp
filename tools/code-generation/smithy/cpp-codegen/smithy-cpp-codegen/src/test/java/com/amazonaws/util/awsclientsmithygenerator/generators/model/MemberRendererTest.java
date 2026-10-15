@@ -7,6 +7,8 @@ package com.amazonaws.util.awsclientsmithygenerator.generators.model;
 import com.amazonaws.util.awsclientsmithygenerator.generators.CppWriter;
 import org.junit.jupiter.api.Test;
 import software.amazon.smithy.model.Model;
+import software.amazon.smithy.model.shapes.BigDecimalShape;
+import software.amazon.smithy.model.shapes.BigIntegerShape;
 import software.amazon.smithy.model.shapes.BooleanShape;
 import software.amazon.smithy.model.shapes.IntegerShape;
 import software.amazon.smithy.model.shapes.ListShape;
@@ -457,5 +459,100 @@ class MemberRendererTest {
         String out = writer.toString();
         assertTrue(out.contains("bool m_responseMetadataHasBeenSet = false;"),
             "injected ResponseMetadata flag stays false in a result context: " + out);
+    }
+
+    @Test
+    void renderPublicSection_bigIntegerMember_getterIsConstRefAndSetterForwards() {
+        BigIntegerShape big = BigIntegerShape.builder().id("com.example#Big").build();
+        StructureShape shape = StructureShape.builder()
+            .id("com.example#MyShape").addMember("Amount", big.getId()).build();
+        Model model = Model.builder().addShapes(big, shape).build();
+        CppWriter writer = new CppWriter();
+        MemberRenderer.forStructure(model, shape, "MyShape").renderPublicAccessors(writer);
+        String output = writer.toString();
+        assertTrue(output.contains("inline const Aws::Crt::BigInteger& GetAmount() const { return m_amount; }"), output);
+        assertTrue(output.contains("inline bool AmountHasBeenSet() const { return m_amountHasBeenSet; }"), output);
+        assertTrue(output.contains("template <typename AmountT = Aws::Crt::BigInteger>"), output);
+        assertTrue(output.contains("void SetAmount(AmountT&& value)"), output);
+        assertTrue(output.contains("m_amount = std::forward<AmountT>(value);"), output);
+        assertFalse(output.contains("inline Aws::Crt::BigInteger GetAmount()"), "must not be a by-value getter: " + output);
+    }
+
+    @Test
+    void renderPublicSection_bigDecimalList_addForwardsElement() {
+        BigDecimalShape big = BigDecimalShape.builder().id("com.example#Dec").build();
+        ListShape list = ListShape.builder().id("com.example#DecList")
+            .member(MemberShape.builder().id("com.example#DecList$member").target(big.getId()).build()).build();
+        StructureShape shape = StructureShape.builder()
+            .id("com.example#MyShape").addMember("Amounts", list.getId()).build();
+        Model model = Model.builder().addShapes(big, list, shape).build();
+        CppWriter writer = new CppWriter();
+        MemberRenderer.forStructure(model, shape, "MyShape").renderPublicAccessors(writer);
+        String output = writer.toString();
+        assertTrue(output.contains("inline const Aws::Vector<Aws::Crt::BigDecimal>& GetAmounts() const"), output);
+        assertTrue(output.contains("template <typename AmountsT = Aws::Crt::BigDecimal>"), output);
+        assertTrue(output.contains("MyShape& AddAmounts(AmountsT&& value)"), output);
+        assertTrue(output.contains("m_amounts.emplace_back(std::forward<AmountsT>(value));"), output);
+    }
+
+    @Test
+    void renderPublicSection_bigIntegerMap_addForwardsKeyAndValue() {
+        StringShape str = StringShape.builder().id("com.example#String").build();
+        BigIntegerShape big = BigIntegerShape.builder().id("com.example#Big").build();
+        MapShape map = MapShape.builder().id("com.example#BigMap")
+            .key(MemberShape.builder().id("com.example#BigMap$key").target(str.getId()).build())
+            .value(MemberShape.builder().id("com.example#BigMap$value").target(big.getId()).build()).build();
+        StructureShape shape = StructureShape.builder()
+            .id("com.example#MyShape").addMember("Totals", map.getId()).build();
+        Model model = Model.builder().addShapes(str, big, map, shape).build();
+        CppWriter writer = new CppWriter();
+        MemberRenderer.forStructure(model, shape, "MyShape").renderPublicAccessors(writer);
+        String output = writer.toString();
+        assertTrue(output.contains(
+            "template <typename TotalsKeyT = Aws::String, typename TotalsValueT = Aws::Crt::BigInteger>"), output);
+        assertTrue(output.contains("m_totals.emplace(std::forward<TotalsKeyT>(key), std::forward<TotalsValueT>(value));"),
+            output);
+    }
+
+    @Test
+    void renderPrivateSection_bigNumberMembers_areValueInitializedWithHasBeenSetFlags() {
+        BigIntegerShape bi = BigIntegerShape.builder().id("com.example#Big").build();
+        BigDecimalShape bd = BigDecimalShape.builder().id("com.example#Dec").build();
+        StructureShape shape = StructureShape.builder().id("com.example#MyShape")
+            .addMember("Amount", bi.getId()).addMember("Price", bd.getId()).build();
+        Model model = Model.builder().addShapes(bi, bd, shape).build();
+        CppWriter writer = new CppWriter();
+        MemberRenderer.forStructure(model, shape, null).renderPrivateSection(writer);
+        String output = writer.toString();
+        assertTrue(output.contains("Aws::Crt::BigInteger m_amount{};"), output);
+        assertTrue(output.contains("Aws::Crt::BigDecimal m_price{};"), output);
+        assertTrue(output.contains("bool m_amountHasBeenSet = false;"), output);
+        assertTrue(output.contains("bool m_priceHasBeenSet = false;"), output);
+    }
+
+    @Test
+    void renderPrivateSection_bigNumberDefaultTrait_isIgnoredLikeOtherTypes() {
+        BigIntegerShape bi = BigIntegerShape.builder().id("com.example#Big").build();
+        BigDecimalShape bd = BigDecimalShape.builder().id("com.example#Dec").build();
+        IntegerShape integer = IntegerShape.builder().id("com.example#Int").build();
+        StructureShape shape = StructureShape.builder().id("com.example#MyShape")
+            .addMember("Amount", bi.getId(),
+                b -> b.addTrait(new software.amazon.smithy.model.traits.DefaultTrait(
+                    software.amazon.smithy.model.node.Node.from(0))))
+            .addMember("Price", bd.getId(),
+                b -> b.addTrait(new software.amazon.smithy.model.traits.DefaultTrait(
+                    software.amazon.smithy.model.node.Node.from(1.5))))
+            .addMember("Count", integer.getId(),
+                b -> b.addTrait(new software.amazon.smithy.model.traits.DefaultTrait(
+                    software.amazon.smithy.model.node.Node.from(5))))
+            .build();
+        Model model = Model.builder().addShapes(bi, bd, integer, shape).build();
+        CppWriter writer = new CppWriter();
+        MemberRenderer.forStructure(model, shape, null).renderPrivateSection(writer);
+        String output = writer.toString();
+        // @default is not rendered for any type: bignums value-initialize to zero, ints keep 0.
+        assertTrue(output.contains("Aws::Crt::BigInteger m_amount{};"), output);
+        assertTrue(output.contains("Aws::Crt::BigDecimal m_price{};"), output);
+        assertTrue(output.contains("int m_count{0};"), output);
     }
 }

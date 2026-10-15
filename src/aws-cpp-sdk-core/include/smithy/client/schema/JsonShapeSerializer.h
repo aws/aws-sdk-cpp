@@ -25,6 +25,10 @@ class SMITHY_API JsonShapeSerializer final : public ShapeSerializer {
   void WriteLong(const Schema& schema, int64_t value) override;
   void WriteFloat(const Schema& schema, float value) override;
   void WriteDouble(const Schema& schema, double value) override;
+  void WriteByte(const Schema& schema, int8_t value) override;
+  void WriteShort(const Schema& schema, int16_t value) override;
+  void WriteBigInteger(const Schema& schema, const Aws::Crt::BigInteger& value) override;
+  void WriteBigDecimal(const Schema& schema, const Aws::Crt::BigDecimal& value) override;
   void WriteString(const Schema& schema, const Aws::String& value) override;
   void WriteTimestamp(const Schema& schema, const Aws::Utils::DateTime& value) override;
   void WriteBlob(const Schema& schema, const Aws::Utils::ByteBuffer& value) override;

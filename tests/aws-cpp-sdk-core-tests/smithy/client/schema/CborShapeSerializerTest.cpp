@@ -9,6 +9,7 @@
 #include <smithy/client/schema/Schema.h>
 #include <smithy/client/schema/SchemaBuilder.h>
 
+#include <cstdlib>
 #include <cstring>
 #include <functional>
 
@@ -20,6 +21,41 @@ class CborShapeSerializerTest : public Aws::Testing::AwsCppSdkGTestSuite {};
 
 namespace {
 Aws::String Bytes(const char* data, size_t len) { return Aws::String(data, len); }
+
+// Parses space separated hex octets, e.g. "BF 61 6E FF".
+Aws::String Hex(const char* octets) {
+  Aws::String out;
+  const char* p = octets;
+  while (*p) {
+    if (*p == ' ') {
+      ++p;
+      continue;
+    }
+    out += static_cast<char>(std::strtoul(Aws::String(p, 2).c_str(), nullptr, 16));
+    p += 2;
+  }
+  return out;
+}
+
+Aws::String EncodeBigInteger(const char* decimal) {
+  CborShapeSerializer s;
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto member = Schema::CreateMember("n", ShapeType::BigInteger);
+  auto value = MakeBigInteger(decimal);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteBigInteger(*member, value); });
+  s.WriteStruct(*root, rootStruct);
+  return s.GetPayload().GetResult();
+}
+
+Aws::String EncodeBigDecimal(const char* decimal) {
+  CborShapeSerializer s;
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto member = Schema::CreateMember("n", ShapeType::BigDecimal);
+  auto value = MakeBigDecimal(decimal);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteBigDecimal(*member, value); });
+  s.WriteStruct(*root, rootStruct);
+  return s.GetPayload().GetResult();
+}
 }  // namespace
 
 TEST_F(CborShapeSerializerTest, EmptyStructure) {
@@ -1035,4 +1071,96 @@ TEST_F(CborShapeSerializerTest, UnionAsStructure) {
   expected += '\xFF';  // end union
   expected += '\xFF';  // end outer
   EXPECT_EQ(payload, expected);
+}
+
+// RFC 8949: bignums within [-2^64, 2^64 - 1] use major type 0 / 1, others use tag 2 / 3 over a byte string
+// holding the big-endian magnitude (n for tag 2, -1 - n for tag 3).
+
+TEST_F(CborShapeSerializerTest, BigIntegerSmallIsPlainUInt) {
+  // BF + text("n") + uint 42 (0x18 0x2A) + FF
+  EXPECT_EQ(EncodeBigInteger("42"), Hex("BF 61 6E 18 2A FF"));
+}
+
+TEST_F(CborShapeSerializerTest, BigIntegerTwoPow64UsesTag2) {
+  // tag 2, byte string of 9 bytes: 01 00 00 00 00 00 00 00 00
+  EXPECT_EQ(EncodeBigInteger("18446744073709551616"), Hex("BF 61 6E C2 49 01 00 00 00 00 00 00 00 00 FF"));
+}
+
+TEST_F(CborShapeSerializerTest, BigIntegerBelowMinusTwoPow64UsesTag3) {
+  // -2^64 - 1 => magnitude -1 - n = 2^64 = 01 00 00 00 00 00 00 00 00
+  EXPECT_EQ(EncodeBigInteger("-18446744073709551617"), Hex("BF 61 6E C3 49 01 00 00 00 00 00 00 00 00 FF"));
+}
+
+TEST_F(CborShapeSerializerTest, BigDecimalSimpleUsesTag4) {
+  // 1.5 = 15e-1 => tag 4, array(2) [exponent -1 (0x20), mantissa 15 (0x0F)]
+  EXPECT_EQ(EncodeBigDecimal("1.5"), Hex("BF 61 6E C4 82 20 0F FF"));
+}
+
+TEST_F(CborShapeSerializerTest, ListOfBigNumbers) {
+  CborShapeSerializer s;
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto ints = Schema::CreateMember("i", ShapeType::List);
+  auto decs = Schema::CreateMember("d", ShapeType::List);
+  auto intElem = Schema::CreateMember("member", ShapeType::BigInteger);
+  auto decElem = Schema::CreateMember("member", ShapeType::BigDecimal);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) {
+    ser.WriteList(*ints, 2, [&](ShapeSerializer& lser) {
+      lser.WriteBigInteger(*intElem, MakeBigInteger("7"));
+      lser.WriteBigInteger(*intElem, MakeBigInteger("18446744073709551616"));
+    });
+    ser.WriteList(*decs, 1, [&](ShapeSerializer& lser) { lser.WriteBigDecimal(*decElem, MakeBigDecimal("1.5")); });
+  });
+  s.WriteStruct(*root, rootStruct);
+  // BF "i" array(2) 07 tag2(2^64) "d" array(1) tag4[-1, 15] FF
+  EXPECT_EQ(s.GetPayload().GetResult(), Hex("BF 61 69 82 07 C2 49 01 00 00 00 00 00 00 00 00 61 64 81 C4 82 20 0F FF"));
+}
+
+TEST_F(CborShapeSerializerTest, MapOfBigNumbers) {
+  CborShapeSerializer s;
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto ints = Schema::CreateMember("i", ShapeType::Map);
+  auto decs = Schema::CreateMember("d", ShapeType::Map);
+  auto intVal = Schema::CreateMember("value", ShapeType::BigInteger);
+  auto decVal = Schema::CreateMember("value", ShapeType::BigDecimal);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) {
+    ser.WriteMap(*ints, 1, [&](MapSerializer& mapSer) {
+      mapSer.WriteEntry("a", [&](ShapeSerializer& vser) { vser.WriteBigInteger(*intVal, MakeBigInteger("-18446744073709551617")); });
+    });
+    ser.WriteMap(*decs, 1, [&](MapSerializer& mapSer) {
+      mapSer.WriteEntry("b", [&](ShapeSerializer& vser) { vser.WriteBigDecimal(*decVal, MakeBigDecimal("1.5")); });
+    });
+  });
+  s.WriteStruct(*root, rootStruct);
+  // BF "i" map(1) "a" tag3(2^64) "d" map(1) "b" tag4[-1, 15] FF
+  EXPECT_EQ(s.GetPayload().GetResult(), Hex("BF 61 69 A1 61 61 C3 49 01 00 00 00 00 00 00 00 00 61 64 A1 61 62 C4 82 20 0F FF"));
+}
+
+TEST_F(CborShapeSerializerTest, ByteAndShortUseIntegerEncoding) {
+  struct Case {
+    ShapeType type;
+    int value;
+    const char* expected;
+  };
+  // BF + text("n") + value + FF
+  const Case cases[] = {
+      {ShapeType::Byte, 127, "BF 61 6E 18 7F FF"},
+      {ShapeType::Byte, -128, "BF 61 6E 38 7F FF"},
+      {ShapeType::Short, 32767, "BF 61 6E 19 7F FF FF"},
+      {ShapeType::Short, -32768, "BF 61 6E 39 7F FF FF"},
+  };
+  for (const auto& c : cases) {
+    SCOPED_TRACE(c.value);
+    CborShapeSerializer s;
+    auto root = Schema::StructureBuilder("Root").Build();
+    auto member = Schema::CreateMember("n", c.type);
+    LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) {
+      if (c.type == ShapeType::Byte) {
+        ser.WriteByte(*member, static_cast<int8_t>(c.value));
+      } else {
+        ser.WriteShort(*member, static_cast<int16_t>(c.value));
+      }
+    });
+    s.WriteStruct(*root, rootStruct);
+    EXPECT_EQ(s.GetPayload().GetResult(), Hex(c.expected));
+  }
 }

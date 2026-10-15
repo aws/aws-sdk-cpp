@@ -84,6 +84,12 @@ public final class CppTypeMapper {
         if (shape.isLongShape()) {
             return "long long";
         }
+        if (shape.isByteShape()) {
+            return "int8_t";
+        }
+        if (shape.isShortShape()) {
+            return "int16_t";
+        }
         if (shape.isBooleanShape()) {
             return "bool";
         }
@@ -120,6 +126,12 @@ public final class CppTypeMapper {
         if (shape.isDocumentShape()) {
             return "Aws::Utils::Document";
         }
+        if (shape.isBigIntegerShape()) {
+            return "Aws::Crt::BigInteger";
+        }
+        if (shape.isBigDecimalShape()) {
+            return "Aws::Crt::BigDecimal";
+        }
         throw new UnsupportedOperationException(
             "Unsupported shape type " + shape.getType() + " for shape " + shape.getId());
     }
@@ -149,7 +161,7 @@ public final class CppTypeMapper {
         if (isEnum(shape)) {
             return Optional.of(cppShapeName(shape) + "::NOT_SET");
         }
-        if (shape.isIntegerShape() || shape.isLongShape()) {
+        if (shape.isIntegerShape() || shape.isLongShape() || shape.isByteShape() || shape.isShortShape()) {
             return Optional.of("0");
         }
         if (shape.isBooleanShape()) {
@@ -158,20 +170,32 @@ public final class CppTypeMapper {
         if (shape.isDoubleShape() || shape.isFloatShape()) {
             return Optional.of("0.0");
         }
-        if (shape.isTimestampShape() || shape.isBlobShape()) {
+        if (shape.isTimestampShape() || shape.isBlobShape() || isArbitraryPrecision(shape)) {
             return Optional.of("");  // produces Type m_field{};  (value-initialization)
         }
         return Optional.empty();
     }
 
     /**
-     * Returns true if the shape maps to a C++ primitive type (int, long long, bool, double).
+     * Returns true if the shape is a {@code bigInteger} or {@code bigDecimal}, which map to
+     * {@code Aws::Crt::BigInteger} / {@code Aws::Crt::BigDecimal}. Unlike the scalar primitives these
+     * are class types, so accessors take them by const reference.
+     *
+     * @param shape the shape to check
+     * @return true if the shape is an arbitrary-precision number
+     */
+    public static boolean isArbitraryPrecision(Shape shape) {
+        return shape.isBigIntegerShape() || shape.isBigDecimalShape();
+    }
+
+    /**
+     * Returns true if the shape maps to a C++ primitive type (int8_t, int16_t, int, long long, bool, double).
      *
      * @param shape the shape to check
      * @return true if the shape is a primitive type
      */
     public static boolean isPrimitive(Shape shape) {
-        return shape.isIntegerShape() || shape.isLongShape()
+        return shape.isIntegerShape() || shape.isLongShape() || shape.isByteShape() || shape.isShortShape()
             || shape.isBooleanShape() || shape.isDoubleShape() || shape.isFloatShape();
     }
 
@@ -192,21 +216,24 @@ public final class CppTypeMapper {
      *
      * <p>Primitive types (int, long, bool, double, float) have meaningful default
      * values, so the SDK needs a separate boolean to distinguish "not set" from
-     * "set to the default value."
+     * "set to the default value." {@code bigInteger} and {@code bigDecimal} default-construct to
+     * zero, which is likewise indistinguishable from an explicitly set zero.
      *
      * @param shape the shape to check
      * @return true if a hasBeenSet flag is needed
      */
     public static boolean needsHasBeenSetFlag(Shape shape) {
-        return shape.isIntegerShape() || shape.isLongShape()
-            || shape.isBooleanShape() || shape.isDoubleShape() || shape.isFloatShape();
+        return shape.isIntegerShape() || shape.isLongShape() || shape.isByteShape() || shape.isShortShape()
+            || shape.isBooleanShape() || shape.isDoubleShape() || shape.isFloatShape()
+            || isArbitraryPrecision(shape);
     }
 
     /**
      * Returns the {@code #include} path for a shape used as a member type.
      *
      * <p>Structure and enum shapes from the same service produce relative model includes.
-     * Core types (string, blob, timestamp, etc.) produce aws/core/ includes.
+     * Core types (string, blob, timestamp, etc.) produce aws/core/ includes; bigInteger and
+     * bigDecimal produce the aws-crt-cpp headers.
      * Primitives (int, bool, double) need no include and return empty.
      *
      * @param shape       the member's target shape
@@ -227,6 +254,12 @@ public final class CppTypeMapper {
         }
         if (shape.isTimestampShape()) {
             return Optional.of("<aws/core/utils/DateTime.h>");
+        }
+        if (shape.isBigIntegerShape()) {
+            return Optional.of("<aws/crt/BigInteger.h>");
+        }
+        if (shape.isBigDecimalShape()) {
+            return Optional.of("<aws/crt/BigDecimal.h>");
         }
         if (shape.isListShape()) {
             return Optional.of("<aws/core/utils/memory/stl/AWSVector.h>");
