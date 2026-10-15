@@ -6,7 +6,7 @@
 #include <smithy/client/AwsSmithyClientBase.h>
 
 #include <cctype>
-#include <string>
+#include <cstdlib>
 #include <smithy/client/AwsSmithyClientAsyncRequestContext.h>
 #include <smithy/client/features/RecursionDetection.h>
 #include <smithy/client/features/RequestPayloadCompression.h>
@@ -163,7 +163,8 @@ Aws::String PercentDecode(const Aws::String& value)
     for (size_t i = 0; i < value.size(); ++i) {
         if (value[i] == '%' && i + 2 < value.size() && isxdigit(static_cast<unsigned char>(value[i + 1])) &&
             isxdigit(static_cast<unsigned char>(value[i + 2]))) {
-            out += static_cast<char>(std::stoi(value.substr(i + 1, 2), nullptr, 16));
+            const char hex[3] = {value[i + 1], value[i + 2], '\0'};
+            out += static_cast<char>(std::strtol(hex, nullptr, 16));
             i += 2;
         } else {
             out += value[i];
