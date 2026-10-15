@@ -553,6 +553,7 @@ namespace Aws
                 HttpClient::OnRetryableRequestComplete complete;
                 std::function<void(const std::shared_ptr<HttpRequest>&, std::function<void(std::shared_ptr<HttpResponse>)>)> send;
                 std::function<void(std::function<void(bool)>, std::chrono::milliseconds)> schedule;
+                std::function<bool()> processingDisabled;
                 std::shared_ptr<Aws::Utils::Threading::Executor> executor;
 
                 void RunAttempt()
@@ -566,24 +567,14 @@ namespace Aws
                     }
                     send(request, [self](std::shared_ptr<HttpResponse> response)
                     {
-                        if (!self->executor->Submit([self, response]()
+                        auto handleResponse = [self, response]()
                         {
                             auto outcome = self->evaluate(response);
                             if (outcome.shouldRetry)
                             {
                                 self->schedule([self](bool canceled)
                                 {
-                                    if (!self->executor->Submit([self, canceled]()
-                                    {
-                                        if (canceled)
-                                        {
-                                            self->complete();
-                                        }
-                                        else
-                                        {
-                                            self->RunAttempt();
-                                        }
-                                    }))
+                                    if (canceled || !self->executor->Submit([self]() { self->RunAttempt(); }))
                                     {
                                         self->complete();
                                     }
@@ -591,9 +582,9 @@ namespace Aws
                             }
                             else if (outcome.backoff.count() > 0)
                             {
-                                self->schedule([self](bool)
+                                self->schedule([self](bool canceled)
                                 {
-                                    if (!self->executor->Submit([self]() { self->complete(); }))
+                                    if (canceled || !self->executor->Submit([self]() { self->complete(); }))
                                     {
                                         self->complete();
                                     }
@@ -603,9 +594,10 @@ namespace Aws
                             {
                                 self->complete();
                             }
-                        }))
+                        };
+                        if (self->processingDisabled() || !self->executor->Submit(handleResponse))
                         {
-                            self->complete();
+                            handleResponse();
                         }
                     });
                 }
@@ -659,6 +651,10 @@ namespace Aws
                         task(status != Aws::Crt::Io::TaskStatus::RunReady || !self->IsRequestProcessingEnabled());
                     },
                     delay);
+            };
+            attemptLoop->processingDisabled = [self]()
+            {
+                return !self->IsRequestProcessingEnabled();
             };
 
             attemptLoop->RunAttempt();

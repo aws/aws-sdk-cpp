@@ -291,7 +291,12 @@ namespace Client
             auto pRequest = Aws::MakeShared<Aws::Client::AsyncOperationRequest<typename OperationRequestOf<OperationFuncT>::type>>(AwsServiceClientT::GetAllocationTag(), request, state);
             ReattachEventStreamHandler(*pRequest, IsEventStream());
             state->Bind(IsEventStream::value ? pRequest : nullptr,
-                [pRequest, deliver, operationGuard, asyncIOOperationGuard](OutcomeT&& outcome) { deliver(*pRequest, std::move(outcome)); });
+                [pRequest, deliver, operationGuard, asyncIOOperationGuard](OutcomeT&& outcome) mutable
+                {
+                    operationGuard.reset();
+                    asyncIOOperationGuard.reset();
+                    deliver(*pRequest, std::move(outcome));
+                });
             clientThis->m_clientConfiguration.executor->Submit([clientThis, operationFunc, pRequest, state]()
             {
                 auto outcome = (clientThis->*operationFunc)(*pRequest);
