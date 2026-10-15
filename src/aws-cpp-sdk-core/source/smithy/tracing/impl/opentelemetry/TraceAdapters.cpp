@@ -50,6 +50,10 @@ void OtelSpanAdapter::end() {
     otelSpan->End();
 }
 
+void OtelSpanAdapter::releaseScope() {
+    opentelemetry::trace::Scope released(std::move(otelScope));
+}
+
 opentelemetry::trace::StatusCode OtelSpanAdapter::convertStatusCode(TraceSpanStatus status) {
     if (status == TraceSpanStatus::OK) {
         return opentelemetry::trace::StatusCode::kOk;

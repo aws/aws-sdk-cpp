@@ -50,7 +50,7 @@ ${operation.name}Outcome ${className}::${operation.name}(${constText}${operation
    return Aws::MakeShared<ServiceSpecificParameters>(ALLOCATION_TAG, serviceSpecificParameters);
   }());
 #end
-  return TracingUtils::MakeCallWithTiming<${operation.name}Outcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<${operation.name}Outcome>(request, std::move(span),
       [&]()-> ${operation.name}Outcome {
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyServiceClientOperationsEndpointPrepareCommonBody.vm")
 #if($operation.hasPreSignedUrl)
@@ -79,7 +79,7 @@ ${operation.name}Outcome ${className}::${operation.name}(${constText}${operation
 #end
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
-    *meter,
+    meter,
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 #end
 }

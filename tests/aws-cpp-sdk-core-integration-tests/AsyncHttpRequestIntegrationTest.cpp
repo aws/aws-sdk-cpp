@@ -109,6 +109,62 @@ TEST_F(AsyncHttpRequestIntegrationTest, AsynchronousGet)
     EXPECT_EQ(HttpResponseCode::OK, asyncResponse->GetResponseCode());
 }
 
+class RejectingExecutor : public Aws::Utils::Threading::Executor
+{
+protected:
+    bool SubmitToThread(std::function<void()>&&) override
+    {
+        return false;
+    }
+};
+
+TEST_F(AsyncHttpRequestIntegrationTest, AsynchronousGetEvaluatesResponseWhenExecutorRejects)
+{
+    std::mutex mutex;
+    std::condition_variable cv;
+    bool done = false;
+    std::shared_ptr<HttpResponse> asyncResponse;
+
+    auto client = CreateHttpClient(ClientConfiguration());
+    auto request = CreateHttpRequest(Aws::String(ENDPOINT), HttpMethod::HTTP_GET,
+                                     Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+
+    bool requestSent = false;
+    auto error = client->MakeRequestAsync(
+        [&]() -> std::shared_ptr<HttpRequest>
+        {
+            if (requestSent)
+            {
+                return nullptr;
+            }
+            requestSent = true;
+            return request;
+        },
+        [&](std::shared_ptr<HttpResponse> response) -> Aws::Http::HttpClient::AttemptOutcome
+        {
+            std::lock_guard<std::mutex> lock(mutex);
+            asyncResponse = std::move(response);
+            return {};
+        },
+        [&]()
+        {
+            std::lock_guard<std::mutex> lock(mutex);
+            done = true;
+            cv.notify_one();
+        },
+        Aws::MakeShared<RejectingExecutor>("AsyncHttpRequestIntegrationTest"));
+
+    ASSERT_FALSE(error.has_value()) << error->GetMessage();
+
+    std::unique_lock<std::mutex> lock(mutex);
+    ASSERT_TRUE(cv.wait_for(lock, std::chrono::seconds(30), [&] { return done; }))
+        << "async GET did not complete within 30 seconds";
+
+    ASSERT_NE(nullptr, asyncResponse) << "the response was not evaluated when the executor rejected it";
+    ASSERT_FALSE(asyncResponse->HasClientError()) << "async GET returned a client error";
+    EXPECT_EQ(HttpResponseCode::OK, asyncResponse->GetResponseCode());
+}
+
 TEST_F(AsyncHttpRequestIntegrationTest, AsynchronousRetryLoopReattemptsAndSchedulesBackoff)
 {
     std::mutex mutex;

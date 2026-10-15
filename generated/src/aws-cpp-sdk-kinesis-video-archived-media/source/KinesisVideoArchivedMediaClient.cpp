@@ -171,7 +171,8 @@ KinesisVideoArchivedMediaClient::InvokeOperationOutcome KinesisVideoArchivedMedi
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
 
-  return TracingUtils::MakeCallWithTiming<InvokeOperationOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<InvokeOperationOutcome>(
+      request, std::move(span),
       [&]() -> InvokeOperationOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -185,7 +186,7 @@ KinesisVideoArchivedMediaClient::InvokeOperationOutcome KinesisVideoArchivedMedi
 
         return InvokeOperationOutcome{MakeRequest(request, endpointResolutionOutcome.GetResult(), httpMethod, Aws::Auth::SIGV4_SIGNER)};
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
 }
 
@@ -201,7 +202,8 @@ GetClipOutcome KinesisVideoArchivedMediaClient::GetClip(const GetClipRequest& re
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<GetClipOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<GetClipOutcome>(
+      request, std::move(span),
       [&]() -> GetClipOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -214,7 +216,7 @@ GetClipOutcome KinesisVideoArchivedMediaClient::GetClip(const GetClipRequest& re
         auto result = MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
         return result.IsSuccess() ? GetClipOutcome(result.GetResultWithOwnership()) : GetClipOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
@@ -266,7 +268,8 @@ GetMediaForFragmentListOutcome KinesisVideoArchivedMediaClient::GetMediaForFragm
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<GetMediaForFragmentListOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<GetMediaForFragmentListOutcome>(
+      request, std::move(span),
       [&]() -> GetMediaForFragmentListOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -280,7 +283,7 @@ GetMediaForFragmentListOutcome KinesisVideoArchivedMediaClient::GetMediaForFragm
         return result.IsSuccess() ? GetMediaForFragmentListOutcome(result.GetResultWithOwnership())
                                   : GetMediaForFragmentListOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }

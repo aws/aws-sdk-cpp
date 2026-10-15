@@ -4,6 +4,7 @@
  */
 
 #include <aws/core/client/AWSXmlClient.h>
+#include <aws/core/client/AsyncOperationState.h>
 #include <aws/core/AmazonWebServiceRequest.h>
 #include <aws/core/auth/AWSAuthSignerProvider.h>
 #include <aws/core/client/AWSError.h>
@@ -103,7 +104,24 @@ XmlOutcome AWSXMLClient::MakeRequest(const Aws::Http::URI& uri,
     const char* signerRegionOverride,
     const char* signerServiceNameOverride) const
 {
+    if (const auto asyncOperationState = ProtocolAsyncOperationState<XmlOutcome>::Take(request))
+    {
+        const char* requestName = request.GetServiceRequestName();
+        BASECLASS::AttemptExhaustivelyAsync(uri, request, method, signerName,
+            [this, requestName, asyncOperationState](HttpResponseOutcome&& httpOutcome)
+            {
+                asyncOperationState->Complete(ProcessHttpResponse(httpOutcome, requestName));
+            },
+            asyncOperationState->GetExecutor(), signerRegionOverride, signerServiceNameOverride);
+        return AWSError<CoreErrors>(CoreErrors::INTERNAL_FAILURE, "", "Request continues on the async request path", false);
+    }
+
     HttpResponseOutcome httpOutcome(BASECLASS::AttemptExhaustively(uri, request, method, signerName, signerRegionOverride, signerServiceNameOverride));
+    return ProcessHttpResponse(httpOutcome, request.GetServiceRequestName());
+}
+
+XmlOutcome AWSXMLClient::ProcessHttpResponse(HttpResponseOutcome& httpOutcome, const char* requestName) const
+{
     if (!httpOutcome.IsSuccess())
     {
         return smithy::components::tracing::TracingUtils::MakeCallWithTiming<XmlOutcome>(
@@ -112,7 +130,7 @@ XmlOutcome AWSXMLClient::MakeRequest(const Aws::Http::URI& uri,
             },
             TracingUtils::SMITHY_CLIENT_DESERIALIZATION_METRIC,
             *m_telemetryProvider->getMeter(this->GetServiceClientName(), {}),
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, requestName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
     }
 
     if (httpOutcome.GetResult()->GetResponseBody().tellp() > 0)
@@ -132,7 +150,7 @@ XmlOutcome AWSXMLClient::MakeRequest(const Aws::Http::URI& uri,
             },
             TracingUtils::SMITHY_CLIENT_DESERIALIZATION_METRIC,
             *m_telemetryProvider->getMeter(this->GetServiceClientName(), {}),
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, requestName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
     }
 
     return XmlOutcome(AmazonWebServiceResult<XmlDocument>(XmlDocument(), httpOutcome.GetResult()->GetHeaders()));
