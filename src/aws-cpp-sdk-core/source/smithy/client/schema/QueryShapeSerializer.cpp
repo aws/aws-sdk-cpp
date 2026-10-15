@@ -36,7 +36,14 @@ class QueryShapeSerializer::Impl final : public ShapeSerializer {
     ExitContainer();
   }
 
-  void WriteList(const Schema& schema, size_t, const std::function<void(ShapeSerializer&)>& consumer) override {
+  void WriteList(const Schema& schema, size_t size, const std::function<void(ShapeSerializer&)>& consumer) override {
+    // awsQuery sends an empty list as a bare key ("ListArg="); ec2 omits it.
+    if (size == 0) {
+      if (!m_ec2) {
+        EmitField("");
+      }
+      return;
+    }
     if (!EnterContainer()) {
       return;
     }

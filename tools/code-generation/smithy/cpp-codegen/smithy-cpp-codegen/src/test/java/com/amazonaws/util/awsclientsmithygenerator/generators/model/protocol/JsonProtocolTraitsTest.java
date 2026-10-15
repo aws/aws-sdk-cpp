@@ -95,7 +95,7 @@ class JsonProtocolTraitsTest {
     void serdeMethodImpls_emitEmptyJsonBodies() {
         String out = render(w -> json.writeSerdeMethodImpls(w, "Nested"));
         assertTrue(out.contains("Nested::Nested(JsonView jsonValue) { *this = jsonValue; }"), out);
-        assertTrue(out.contains("Nested& Nested::operator=(JsonView jsonValue) {"), out);
+        assertTrue(out.contains("Nested& Nested::operator=(JsonView) {"), out);
         assertTrue(out.contains("JsonValue Nested::Jsonize() const {"), out);
         assertTrue(out.contains("JsonValue payload;"), out);
         assertTrue(out.contains("return payload;"), out);
@@ -120,7 +120,10 @@ class JsonProtocolTraitsTest {
 
     @Test
     void resultSerdeDecls_useJsonValuePayload() {
-        String out = render(w -> json.writeResultSerdeDecls(w, "AWS_EXAMPLE_API", "DoThingResult"));
+        software.amazon.smithy.model.shapes.StructureShape emptyResult =
+            software.amazon.smithy.model.shapes.StructureShape.builder().id("com.example#DoThingResult").build();
+        software.amazon.smithy.model.Model emptyModel = software.amazon.smithy.model.Model.builder().addShape(emptyResult).build();
+        String out = render(w -> json.writeResultSerdeDecls(w, "AWS_EXAMPLE_API", "DoThingResult", emptyResult, emptyModel));
         assertTrue(out.contains("AWS_EXAMPLE_API DoThingResult(const "
             + "Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);"), out);
         assertTrue(out.contains("AWS_EXAMPLE_API DoThingResult& operator=(const "

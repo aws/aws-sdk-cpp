@@ -47,6 +47,35 @@ void ClientProtocol::DeserializeResponse(const OperationRequestContext&, Aws::Cr
   output.Deserialize(*deserializer);
 }
 
+HttpRequestOutcome ClientProtocol::SerializeHttpRequest(const OperationRequestContext& operation, const SerializableStruct& input) const {
+  auto payload = SerializeRequest(operation, input.GetSchema(), input);
+  if (!payload.IsSuccess()) {
+    return payload.GetError();
+  }
+  HttpRequestParts parts;
+  if (!payload.GetResult().empty()) {
+    parts.body = payload.GetResultWithOwnership();
+    parts.contentType = GetContentType();
+  }
+  return parts;
+}
+
+void ClientProtocol::DeserializeHttpResponse(const OperationRequestContext& operation, int, const Aws::Http::HeaderValueCollection&,
+                                             Aws::Crt::ByteCursor body, SerializableStruct& output) const {
+  DeserializeResponse(operation, body, output);
+}
+
+HttpRequestOutcome HttpBindingProtocol::SerializeHttpRequest(const OperationRequestContext& operation,
+                                                             const SerializableStruct& input) const {
+  return SerializeHttpBindings(operation, input, *this, AllowsEmptyStructPayload());
+}
+
+void HttpBindingProtocol::DeserializeHttpResponse(const OperationRequestContext&, int statusCode,
+                                                  const Aws::Http::HeaderValueCollection& headers, Aws::Crt::ByteCursor body,
+                                                  SerializableStruct& output) const {
+  DeserializeHttpBindings(statusCode, headers, body, output, *this);
+}
+
 Aws::String RestJsonProtocol::GetProtocolId() const { return "aws.protocols#restJson1"; }
 Aws::String RestJsonProtocol::GetContentType() const { return "application/json"; }
 ClientProtocol::SerializerOutcome RestJsonProtocol::SerializeInput(const Schema& schema, const SerializableStruct& input) const {

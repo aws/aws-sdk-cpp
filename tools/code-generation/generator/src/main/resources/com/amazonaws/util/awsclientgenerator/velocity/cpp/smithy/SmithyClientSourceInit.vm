@@ -1,5 +1,23 @@
 #set($clientConfiguration = ${serviceNamespace} + "::" + ${metadata.classNamePrefix} + "ClientConfiguration")
 #set($s3_express_auth = "sigv4-s3express")
+## Resolve the schema-serde ClientProtocol C++ type from the wire protocol. The client owns this and
+## drives protocol-agnostic (de)serialization; generated shapes name no protocol. Empty for protocols
+## whose runtime ClientProtocol is not mapped, in which case no protocol is set (legacy path).
+#set($clientProtocolCppType = "")
+#if($metadata.protocol == "query")#set($clientProtocolCppType = "smithy::schema::AwsQueryProtocol")
+#elseif($metadata.protocol == "ec2")#set($clientProtocolCppType = "smithy::schema::Ec2QueryProtocol")
+#elseif($metadata.protocol == "rest-xml")#set($clientProtocolCppType = "smithy::schema::RestXmlProtocol")
+#elseif($metadata.protocol == "rest-json")#set($clientProtocolCppType = "smithy::schema::RestJsonProtocol")
+#elseif($metadata.protocol == "json" && $metadata.jsonVersion == "1.0")#set($clientProtocolCppType = "smithy::schema::AwsJson10Protocol")
+#elseif($metadata.protocol == "json")#set($clientProtocolCppType = "smithy::schema::AwsJson11Protocol")
+#end
+## Emits the client-owned protocol wiring in a constructor body. Self-gates: no-op for S3 (special
+## client path) and for unmapped protocols.
+#macro(emitClientProtocolInit)
+#if($clientProtocolCppType != "" && $serviceModel.metadata.serviceId != "S3")
+  SetClientProtocol(Aws::MakeShared<${clientProtocolCppType}>(ALLOCATION_TAG));
+#end
+#end
 #if($serviceModel.hasBearerAuth())
 ##BEARER TOKEN AUTH PROVIDER C-TOR
 ${className}::${className}(const Aws::UnorderedMap<Aws::String, Aws::Crt::Variant<${AuthSchemeVariants}>> authSchemeMap,
@@ -14,6 +32,7 @@ ${className}::${className}(const Aws::UnorderedMap<Aws::String, Aws::Crt::Varian
       Aws::MakeShared<smithy::${AuthSchemeResolver}<>>(ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({$AuthSchemeOptions})),
       authSchemeMap)
 {
+#emitClientProtocolInit()
 }
 
 #if ($serviceModel.shouldCreateLegacyBearerConstructor) ##We don't want this legacy constructor for newly migrated smithy clients
@@ -84,7 +103,9 @@ ${className}::${className}(const ${clientConfiguration}& clientConfiguration,
 #end
 #end
         })
-{}
+{
+#emitClientProtocolInit()
+}
 
 ${className}::${className}(const AWSCredentials& credentials,
                            std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase> endpointProvider,
@@ -132,7 +153,9 @@ ${className}::${className}(const AWSCredentials& credentials,
 #end
 #end
         })
-{}
+{
+#emitClientProtocolInit()
+}
 
 ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
                            std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase> endpointProvider,
@@ -174,7 +197,9 @@ ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& creden
 #end
 #end
         })
-{}
+{
+#emitClientProtocolInit()
+}
 
 /* Legacy constructors due deprecation */
 #if($serviceModel.metadata.serviceId == "S3")
@@ -204,7 +229,9 @@ ${className}::${className}(const Aws::Client::ClientConfiguration& clientConfigu
                   };
             }()
         })
-{}
+{
+#emitClientProtocolInit()
+}
 
 ${className}::${className}(
         const Aws::Auth::AWSCredentials& credentials,
@@ -234,7 +261,9 @@ ${className}::${className}(
                   };
             }()
         })
-{}
+{
+#emitClientProtocolInit()
+}
 
 ${className}::${className}(
         const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
@@ -264,7 +293,9 @@ ${className}::${className}(
                   };
             }()
         })
-{}
+{
+#emitClientProtocolInit()
+}
 
 ${className}& ${className}::operator=(const ${className} &rhs) = default;
 
@@ -312,7 +343,9 @@ ${className}::${className}(const Aws::Client::ClientConfiguration& clientConfigu
     #end
 #end
       })
-{}
+{
+#emitClientProtocolInit()
+}
 
 ${className}::${className}(const AWSCredentials& credentials,
                            const Aws::Client::ClientConfiguration& clientConfiguration) :
@@ -341,7 +374,9 @@ ${className}::${className}(const AWSCredentials& credentials,
 #end
 #end
         })
-{}
+{
+#emitClientProtocolInit()
+}
 
 ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
                            const Aws::Client::ClientConfiguration& clientConfiguration) :
@@ -368,7 +403,9 @@ ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& creden
 #end
 #end
         })
-{}
+{
+#emitClientProtocolInit()
+}
 #end
 #end
 /* End of legacy constructors due deprecation */

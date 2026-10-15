@@ -77,8 +77,12 @@ public interface ProtocolTraits {
     void writeSerdeMethodDecls(CppWriter writer, String exportMacro, String className,
                                Runnable beforeSerializeMethod);
 
-    /** Emits a result class's {@code AmazonWebServiceResult<...>} ctor and {@code operator=} declarations. */
-    void writeResultSerdeDecls(CppWriter writer, String exportMacro, String className);
+    /**
+     * Emits a result class's {@code AmazonWebServiceResult<...>} ctor and {@code operator=} declarations,
+     * plus (for all-scalar-body results) the client-driven {@code GetSchemaSerdeOutput()} hook. {@code
+     * shape}/{@code model} gate the schema-serde hook.
+     */
+    void writeResultSerdeDecls(CppWriter writer, String exportMacro, String className, StructureShape shape, Model model);
 
     // ------------------------------------------------------------------
     // Source side
@@ -113,6 +117,120 @@ public interface ProtocolTraits {
                 writer.write("$L = static_cast<int>(result.GetResponseCode());", field);
                 writer.write("$LHasBeenSet = true;", field);
             }
+        }
+    }
+
+    /**
+     * Emits the header-bound result member deserialization plus the top-level {@code x-amzn-requestid},
+     * matching C2J's result source: scalars / enums / timestamps parse from the header text, list headers
+     * only mark has-been-set (C2J parity), and an {@code @httpPrefixHeaders} map collects every header
+     * carrying the prefix. Called from inside the result {@code operator=}, after the body and before the
+     * status-code members. Emits nothing when the result has neither.
+     */
+    default void writeResultHeaderMembers(CppWriter writer, StructureShape shape, Model model) {
+        writeResultHeaderMembers(writer, shape, model, true);
+    }
+
+    /**
+     * {@link #writeResultHeaderMembers(CppWriter, StructureShape, Model)}; with {@code includeMembers} false
+     * only the top-level request id is read (the HTTP-binding protocol deserializes the bound members).
+     */
+    default void writeResultHeaderMembers(CppWriter writer, StructureShape shape, Model model, boolean includeMembers) {
+        boolean requestId = resultHasTopLevelRequestId() && shape.getAllMembers().keySet().stream()
+            .noneMatch(name -> CppNames.capitalize(name).equals("RequestId"));
+        boolean hasHeaders = includeMembers && shape.getAllMembers().values().stream().anyMatch(m ->
+            m.hasTrait(software.amazon.smithy.model.traits.HttpHeaderTrait.class)
+                || m.hasTrait(software.amazon.smithy.model.traits.HttpPrefixHeadersTrait.class));
+        if (!requestId && !hasHeaders) {
+            return;
+        }
+        writer.write("");
+        writer.write("const auto& headers = result.GetHeaderValueCollection();");
+        for (java.util.Map.Entry<String, MemberShape> entry : includeMembers
+                ? shape.getAllMembers().entrySet() : java.util.Collections.<String, MemberShape>emptyMap().entrySet()) {
+            String name = entry.getKey();
+            MemberShape member = entry.getValue();
+            String field = CppNames.fieldName(name);
+            java.util.Optional<software.amazon.smithy.model.traits.HttpHeaderTrait> header =
+                member.getTrait(software.amazon.smithy.model.traits.HttpHeaderTrait.class);
+            if (header.isPresent()) {
+                String iter = name + "Iter";
+                writer.write("const auto& $L = headers.find(\"$L\");", iter,
+                    header.get().getValue().toLowerCase(java.util.Locale.ROOT));
+                writer.openBlock("if ($L != headers.end()) {", "}", iter, () -> {
+                    String parsed = headerValueExpr(member, model, iter + "->second");
+                    if (parsed != null) {
+                        writer.write("$L = $L;", field, parsed);
+                    }
+                    writer.write("$LHasBeenSet = true;", field);
+                });
+                writer.write("");
+                continue;
+            }
+            java.util.Optional<software.amazon.smithy.model.traits.HttpPrefixHeadersTrait> prefix =
+                member.getTrait(software.amazon.smithy.model.traits.HttpPrefixHeadersTrait.class);
+            if (prefix.isPresent()) {
+                String lowered = prefix.get().getValue().toLowerCase(java.util.Locale.ROOT);
+                writer.write("std::size_t prefixSize = sizeof(\"$L\") - 1;  // subtract the NULL terminator out", lowered);
+                writer.openBlock("for (const auto& item : headers) {", "}", () -> {
+                    writer.write("std::size_t foundPrefix = item.first.find(\"$L\");", lowered);
+                    writer.write("");
+                    writer.openBlock("if (foundPrefix != std::string::npos) {", "}", () -> {
+                        writer.write("$L[item.first.substr(prefixSize)] = item.second;", field);
+                        writer.write("$LHasBeenSet = true;", field);
+                    });
+                });
+                writer.write("");
+            }
+        }
+        if (requestId) {
+            writer.write("const auto& requestIdIter = headers.find(\"x-amzn-requestid\");");
+            writer.openBlock("if (requestIdIter != headers.end()) {", "}", () -> {
+                writer.write("m_requestId = requestIdIter->second;");
+                writer.write("m_requestIdHasBeenSet = true;");
+            });
+            writer.write("");
+        }
+    }
+
+    /**
+     * The C++ expression parsing a header's text ({@code text}, an {@code Aws::String}) into the member's
+     * type, or {@code null} when C2J only marks the member set (list headers / blobs).
+     */
+    private static String headerValueExpr(MemberShape member, Model model, String text) {
+        software.amazon.smithy.model.shapes.Shape target = model.expectShape(member.getTarget());
+        if (com.amazonaws.util.awsclientsmithygenerator.generators.model.CppTypeMapper.isEnum(target)) {
+            String enumType = com.amazonaws.util.awsclientsmithygenerator.generators.model.CppTypeMapper.cppShapeName(target);
+            return enumType + "Mapper::Get" + enumType + "ForName(" + text + ")";
+        }
+        switch (target.getType()) {
+            case STRING:
+                return text;
+            case BYTE:
+            case SHORT:
+            case INTEGER:
+            case INT_ENUM:
+                return "Aws::Utils::StringUtils::ConvertToInt32(" + text + ".c_str())";
+            case LONG:
+                return "Aws::Utils::StringUtils::ConvertToInt64(" + text + ".c_str())";
+            case FLOAT:
+            case DOUBLE:
+                return "Aws::Utils::StringUtils::ConvertToDouble(" + text + ".c_str())";
+            case BOOLEAN:
+                return "Aws::Utils::StringUtils::ConvertToBool(" + text + ".c_str())";
+            case TIMESTAMP: {
+                String format = member.getMemberTrait(model, software.amazon.smithy.model.traits.TimestampFormatTrait.class)
+                    .map(software.amazon.smithy.model.traits.TimestampFormatTrait::getValue)
+                    .orElse(software.amazon.smithy.model.traits.TimestampFormatTrait.HTTP_DATE);
+                if (software.amazon.smithy.model.traits.TimestampFormatTrait.EPOCH_SECONDS.equals(format)) {
+                    return "Aws::Utils::DateTime(Aws::Utils::StringUtils::ConvertToDouble(" + text + ".c_str()))";
+                }
+                String dateFormat = software.amazon.smithy.model.traits.TimestampFormatTrait.DATE_TIME.equals(format)
+                    ? "ISO_8601" : "RFC822";
+                return "Aws::Utils::DateTime(" + text + ".c_str(), Aws::Utils::DateFormat::" + dateFormat + ")";
+            }
+            default:
+                return null;
         }
     }
 
@@ -190,6 +308,17 @@ public interface ProtocolTraits {
     default void writeGetRequestSpecificHeadersImpl(CppWriter writer, String className,
                                                     StructureShape shape, OperationShape operation,
                                                     ServiceShape service, Model model) {
+        writeGetRequestSpecificHeadersImpl(writer, className, shape, operation, service, model, true);
+    }
+
+    /**
+     * {@link #writeGetRequestSpecificHeadersImpl(CppWriter, String, StructureShape, OperationShape, ServiceShape, Model)};
+     * with {@code includeMembers} false only the constant headers are emitted (the HTTP-binding protocol
+     * serializes the header-bound members).
+     */
+    default void writeGetRequestSpecificHeadersImpl(CppWriter writer, String className,
+                                                    StructureShape shape, OperationShape operation,
+                                                    ServiceShape service, Model model, boolean includeMembers) {
         writer.openBlock("Aws::Http::HeaderValueCollection $L::GetRequestSpecificHeaders() const {", "}",
             className, () -> {
             writer.write("Aws::Http::HeaderValueCollection headers;");
@@ -206,14 +335,52 @@ public interface ProtocolTraits {
             // C2J declares the stringstream once after `headers` whenever the request has >=1
             // header member. RPC protocols route HTTP-binding members to the body, so they emit
             // neither the stringstream nor member serialization.
-            if (serializesHttpBindingMembers() && RequestBindings.hasHeaderMembers(shape, model)) {
+            if (includeMembers && serializesHttpBindingMembers() && RequestBindings.hasHeaderMembers(shape, model)) {
                 writer.write("Aws::StringStream ss;");
             }
-            if (serializesHttpBindingMembers()) {
+            if (includeMembers && serializesHttpBindingMembers()) {
                 RequestHeaderSerializer.render(writer, shape, model);
             }
             writer.write("return headers;");
         });
+    }
+
+    /**
+     * The {@code AddQueryStringParameters} body for a request whose query members the HTTP-binding
+     * protocol serializes: the declaration stays (public API parity) but adds nothing.
+     */
+    default void writeEmptyAddQueryStringParametersImpl(CppWriter writer, String className) {
+        writer.write("void $L::AddQueryStringParameters(Aws::Http::URI&) const {}", className);
+    }
+
+    /**
+     * True when the request's HTTP bindings (path, query, headers, payload) are placed by the runtime
+     * {@code HttpBindingProtocol} from the schema: a REST protocol, an {@code @http} operation with a
+     * regular (non-streaming, non-event-stream) body, and every member schema-serde-capable.
+     */
+    default boolean bindsRequestViaSchemaSerde(StructureShape shape, OperationShape operation, Model model) {
+        return (protocol() == Protocol.REST_JSON || protocol() == Protocol.REST_XML)
+            && operation.hasTrait(software.amazon.smithy.model.traits.HttpTrait.class)
+            && RequestBindings.emitsSerializePayload(operation, model)
+            && RequestBindings.allMembersSchemaSerializable(shape, model);
+    }
+
+    /** True when every result member (headers, status, payload, body) is deserialized by the runtime {@code HttpBindingProtocol}. */
+    default boolean bindsResultViaSchemaSerde(StructureShape shape, Model model) {
+        return (protocol() == Protocol.REST_JSON || protocol() == Protocol.REST_XML)
+            && RequestBindings.resultAllMembersSchemaDeserializable(shape, model);
+    }
+
+    /** The operation's {@code @http} URI pattern (e.g. {@code /items/{id}?x=y}). */
+    static String uriPattern(OperationShape operation) {
+        return operation.getTrait(software.amazon.smithy.model.traits.HttpTrait.class)
+            .map(t -> t.getUri().toString()).orElse("");
+    }
+
+    /** The operation's {@code @endpoint} host prefix, or empty. */
+    static String hostPrefix(OperationShape operation) {
+        return operation.getTrait(software.amazon.smithy.model.traits.EndpointTrait.class)
+            .map(t -> t.getHostPrefix().toString()).orElse("");
     }
 
     default void writeAddQueryStringParametersImpl(CppWriter writer, String className,

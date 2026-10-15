@@ -19,6 +19,7 @@ from subprocess import list2cmdline, run
 from codegen.format_util import format_directories
 from codegen.legacy_c2j_cpp_gen import LegacyC2jCppGen
 from codegen.model_utils import SERVICE_MODEL_FILENAME_PATTERN, ServiceModel, ModelUtils
+from codegen.smithy_cpp_gen import PROTOCOL_TEST_SMITHY_CLIENTS
 
 PROTOCOL_TESTS_BASE_DIR = "tools/code-generation/protocol-tests"
 PROTOCOL_TESTS_CLIENT_MODELS = PROTOCOL_TESTS_BASE_DIR + "/api-descriptions"
@@ -71,7 +72,14 @@ class ProtocolTestsGen(object):
             pathlib.Path(f"{sdk_root_dir}/{PROTOCOL_TESTS_GENERATED_CLIENTS_DIR}").resolve())
         self.generated_tests_dir = str(pathlib.Path(f"{sdk_root_dir}/{PROTOCOL_GENERATED_TESTS_DIR}").resolve())
 
-        self.c2j_client_generator = LegacyC2jCppGen(args, dict())
+        # With --use-smithy-models, the Smithy plugin generates the models of the protocol-test clients it has
+        # a projection for; C2J generates only their client shell (as smithy clients). Other clients stay full C2J.
+        self.use_smithy_models = bool(args.get("use_smithy_models"))
+        skip_model_services = set(PROTOCOL_TEST_SMITHY_CLIENTS) if self.use_smithy_models else set()
+        # client package -> operations its client shell is generated with (event-stream operations removed)
+        self.client_operations = dict()
+
+        self.c2j_client_generator = LegacyC2jCppGen(args, dict(), skip_model_services=skip_model_services)
         self.c2j_client_generator.path_to_api_definitions = self.client_models_dir
         self.c2j_client_generator.path_to_endpoint_rules = str(
             pathlib.Path(f"{sdk_root_dir}/{PROTOCOL_TESTS_BASE_DIR}").resolve())
@@ -125,6 +133,8 @@ class ProtocolTestsGen(object):
             operations = model.get("operations", {})
             event_stream_ops = [name for name, op in operations.items()
                                 if has_event_stream(op.get("input")) and not has_event_stream(op.get("output"))]
+            package = SERVICE_MODEL_FILENAME_PATTERN.match(filename).group("service")
+            self.client_operations[package] = sorted(set(operations) - set(event_stream_ops))
             if not event_stream_ops:
                 shutil.copy2(source, os.path.join(output_dir, filename))
                 continue
@@ -216,6 +226,8 @@ class ProtocolTestsGen(object):
                 continue
 
             use_smithy = ModelUtils.is_smithy_enabled(service_model_name, self.client_models_dir, filename)
+            if self.use_smithy_models and service_model_name in PROTOCOL_TEST_SMITHY_CLIENTS:
+                use_smithy = True
             service_models[service_model_name] = ServiceModel(service_model_name, filename,
                                                               PROTOCOL_TESTS_ENDPOINT_RULES, None, use_smithy)
         service_models[PROTOCOL_TESTS_MOCK_TEST_CLIENT].endpoint_rule_set = PROTOCOL_TESTS_MOCK_TEST_RULES

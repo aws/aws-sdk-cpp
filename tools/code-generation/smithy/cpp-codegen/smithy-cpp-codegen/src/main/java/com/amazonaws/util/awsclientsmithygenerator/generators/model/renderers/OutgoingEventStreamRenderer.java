@@ -16,6 +16,7 @@ import software.amazon.smithy.model.shapes.MemberShape;
 import software.amazon.smithy.model.shapes.Shape;
 import software.amazon.smithy.model.shapes.StructureShape;
 import software.amazon.smithy.model.shapes.UnionShape;
+import software.amazon.smithy.model.traits.ErrorTrait;
 import software.amazon.smithy.model.traits.EventHeaderTrait;
 import software.amazon.smithy.model.traits.EventPayloadTrait;
 
@@ -58,7 +59,7 @@ public final class OutgoingEventStreamRenderer implements ShapeRenderer {
             includes.add("<aws/" + ctx.smithyServiceName() + "/" + ctx.classNamePrefix() + "_EXPORTS.h>");
             includes.add("<aws/core/utils/event/EventStream.h>");
             includes.add("<aws/core/utils/stream/HttpWriteDataStreamBuf.h>");
-            for (MemberShape event : union.getAllMembers().values()) {
+            for (MemberShape event : eventMembers(union)) {
                 includes.add("<aws/" + ctx.smithyServiceName() + "/model/" + event.getTarget().getName() + ".h>");
             }
             IncludeSets.emitAngleIncludes(writer, includes);
@@ -76,7 +77,7 @@ public final class OutgoingEventStreamRenderer implements ShapeRenderer {
                 writer.write("explicit $L(std::shared_ptr<Aws::Utils::Stream::HttpWriteDataStreamBuf> streambuf)",
                     className);
                 writer.write("    : Aws::Utils::Event::EventEncoderStream(std::move(streambuf)) {}");
-                for (MemberShape event : union.getAllMembers().values()) {
+                for (MemberShape event : eventMembers(union)) {
                     writeEventWriter(writer, className, event);
                 }
             });
@@ -126,6 +127,13 @@ public final class OutgoingEventStreamRenderer implements ShapeRenderer {
     private void writeEventHeaders(CppWriter writer, String wireKey) {
         writer.write("msg.InsertEventHeader(\":message-type\", Aws::String(\"event\"));");
         writer.write("msg.InsertEventHeader(\":event-type\", Aws::String(\"$L\"));", wireKey);
+    }
+
+    /** Union members a client can send: {@code @error} members are server-sent exceptions, which C2J omits. */
+    private List<MemberShape> eventMembers(UnionShape union) {
+        return union.getAllMembers().values().stream()
+            .filter(m -> !ctx.model().expectShape(m.getTarget()).hasTrait(ErrorTrait.class))
+            .collect(java.util.stream.Collectors.toList());
     }
 
     /**

@@ -24,6 +24,11 @@
 #include <aws/core/http/HttpClientFactory.h>
 #include <smithy/identity/signer/built-in/SignerProperties.h>
 #include <smithy/client/AwsLegacyClient.h>
+#include <smithy/client/schema/ClientProtocol.h>
+#include <smithy/client/schema/OperationRequestContext.h>
+#include <smithy/client/schema/SerializableStruct.h>
+
+#include <type_traits>
 
 namespace smithy {
   namespace client {
@@ -35,6 +40,27 @@ namespace smithy {
 namespace smithy {
 namespace client
 {
+    namespace detail {
+        // Compile-time detector: does a result type expose the schema-serde output hook? Used to pick
+        // the client-driven (protocol) response path vs. the legacy result ctor, without the C2J
+        // op-method template needing to know which results are schema-serde.
+        template <typename T, typename = void>
+        struct HasSchemaSerdeOutput : std::false_type {};
+        template <typename T>
+        struct HasSchemaSerdeOutput<T, decltype(void(std::declval<T&>().GetSchemaSerdeOutput()))> : std::true_type {};
+
+        // The response body bytes handed to ClientProtocol::DeserializeResponse, recovered from the parsed
+        // transport payload (XmlDocument / JsonValue) until the outcome serializers hand over raw bytes.
+        template <typename PayloadT>
+        auto ResponseBodyBytes(const PayloadT& payload, int) -> decltype(payload.ConvertToString()) {
+            return payload.ConvertToString();
+        }
+        template <typename PayloadT>
+        auto ResponseBodyBytes(const PayloadT& payload, long) -> decltype(payload.View().WriteCompact()) {
+            return payload.View().WriteCompact();
+        }
+    }  // namespace detail
+
     template<const char* ServiceNameT,
              typename ServiceClientConfigurationT,
              typename ServiceAuthSchemeResolverT,
@@ -235,6 +261,36 @@ namespace client
 
         GetContextEndpointParametersOutcome GetContextEndpointParameters(const AwsSmithyClientAsyncRequestContext& ctx) const override {
           return GetContextEndpointParametersImpl(ctx);
+        }
+
+        // Build a typed operation result from the transport result. When the result is a schema-serde
+        // shape AND this client owns a ClientProtocol, deserialization is client-driven and
+        // protocol-agnostic: the protocol peels any response envelope and fills the shape via its
+        // adapter. Otherwise this is the legacy result construction. Selected at compile time by
+        // detail::HasSchemaSerdeOutput, so the shared op-method template stays protocol-neutral.
+        template <typename ResultT, typename AwsResultT>
+        ResultT BuildOperationResult(AwsResultT&& awsResult, const smithy::schema::OperationRequestContext& operation,
+                                     std::true_type) const {
+          ResultT typed(awsResult);
+          const auto& protocol = this->GetClientProtocol();
+          if (protocol) {
+            const Aws::String rawBody = detail::ResponseBodyBytes(awsResult.GetPayload(), 0);
+            protocol->DeserializeHttpResponse(
+                operation, static_cast<int>(awsResult.GetResponseCode()), awsResult.GetHeaderValueCollection(),
+                Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(rawBody.data()), rawBody.size()),
+                *typed.GetSchemaSerdeOutput());
+          }
+          return typed;
+        }
+        template <typename ResultT, typename AwsResultT>
+        ResultT BuildOperationResult(AwsResultT&& awsResult, const smithy::schema::OperationRequestContext& /*operation*/,
+                                     std::false_type) const {
+          return ResultT(std::forward<AwsResultT>(awsResult));
+        }
+        template <typename ResultT, typename AwsResultT>
+        ResultT BuildOperationResult(AwsResultT&& awsResult, const smithy::schema::OperationRequestContext& operation) const {
+          return BuildOperationResult<ResultT>(std::forward<AwsResultT>(awsResult), operation,
+                                               detail::HasSchemaSerdeOutput<ResultT>{});
         }
 
         ResponseT MakeRequestDeserialize(Aws::AmazonWebServiceRequest const * const request,

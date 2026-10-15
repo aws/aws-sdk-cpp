@@ -52,6 +52,10 @@ public final class ProtocolResolver {
             this.serializeMethodName = serializeMethodName;
         }
 
+        // NOTE: the per-protocol ClientProtocol C++ type (getClientProtocolCppType) was removed: shapes
+        // no longer name a concrete protocol. The client owns the ClientProtocol and drives serde; the
+        // generated shape exposes only its agnostic adapter (GetSchemaSerdeInput/Output).
+
         /** Returns the C++ namespace for serde utilities (e.g., {@code Aws::Utils::Json}). */
         public String getSerdeNamespace() {
             return serdeNamespace;

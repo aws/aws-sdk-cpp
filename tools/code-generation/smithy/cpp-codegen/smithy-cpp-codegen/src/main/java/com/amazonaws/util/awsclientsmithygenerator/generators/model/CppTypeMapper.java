@@ -254,11 +254,23 @@ public final class CppTypeMapper {
      * @return sorted list of include lines (e.g., {@code ["<aws/core/utils/DateTime.h>", ...]})
      */
     public static List<String> getIncludesForShape(Shape structureShape, Model model, String projectName) {
+        return getIncludesForShape(structureShape, model, projectName, true);
+    }
+
+    /**
+     * As {@link #getIncludesForShape(Shape, Model, String)}, for a class that is rendered from
+     * {@code structureShape} but is not that shape's own class when {@code renderedAsShape} is false: an
+     * operation's request/result class ({@code <Op>Request}/{@code <Op>Result}) whose input/output shape is
+     * also used as data (e.g. {@code KitchenSink}). Such a class is referenced by nothing, so a member
+     * targeting the shape is neither a self-reference nor recursive: it needs the shape's own header.
+     */
+    public static List<String> getIncludesForShape(Shape structureShape, Model model, String projectName,
+                                                   boolean renderedAsShape) {
         Set<String> includes = new TreeSet<>();
-        ShapeId selfId = structureShape.getId();
+        ShapeId selfId = renderedAsShape ? structureShape.getId() : null;
         for (MemberShape member : structureShape.getAllMembers().values()) {
             Shape target = model.expectShape(member.getTarget());
-            if (isRecursiveStructMember(structureShape, target, model)) {
+            if (renderedAsShape && isRecursiveStructMember(structureShape, target, model)) {
                 // A recursive member is stored as std::shared_ptr<T>. A mutually-referenced T is
                 // forward-declared, so the header needs the allocator header (for the inline
                 // MakeShared setter) not T's own. A directly self-referential member needs neither.
@@ -288,7 +300,7 @@ public final class CppTypeMapper {
      */
     private static void addMemberInclude(Set<String> includes, Shape shape, ShapeId selfId,
                                          Model model, String projectName) {
-        if (!shape.getId().equals(selfId)) {
+        if (selfId == null || !shape.getId().equals(selfId)) {
             getIncludeForMemberType(shape, model, projectName).ifPresent(includes::add);
         }
     }

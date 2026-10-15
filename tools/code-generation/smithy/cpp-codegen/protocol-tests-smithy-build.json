@@ -1,0 +1,167 @@
+{
+    "version": "1.0",
+    "projections": {
+        "ec2-protocol": {
+            "imports": [
+                "/Users/pulimsr/Desktop/sdk/aws-sdk-cpp/tools/code-generation/smithy/cpp-codegen/build/protocol-test-models/ec2-protocol.json"
+            ],
+            "transforms": [
+                {
+                    "name": "excludeShapesBySelector",
+                    "args": {
+                        "selector": "operation :not([id|name = 'DatetimeOffsets', 'EmptyInputAndEmptyOutput', 'EndpointOperation', 'EndpointWithHostLabelOperation', 'FractionalSeconds', 'GreetingWithErrors', 'HostWithPathOperation', 'IgnoresWrappingXmlName', 'NestedStructures', 'NoInputAndOutput', 'PutWithContentEncoding', 'QueryIdempotencyTokenAutoFill', 'QueryLists', 'QueryTimestamps', 'RecursiveXmlShapes', 'SimpleInputParams', 'SimpleScalarXmlProperties', 'XmlBlobs', 'XmlEmptyBlobs', 'XmlEmptyLists', 'XmlEnums', 'XmlIntEnums', 'XmlLists', 'XmlNamespaces', 'XmlTimestamps'])"
+                    }
+                },
+                {
+                    "name": "removeUnusedShapes",
+                    "args": {}
+                }
+            ],
+            "plugins": {
+                "smithy-cpp-codegen-models": {
+                    "c2jMap": "{}",
+                    "namespaceMappings": "{}"
+                }
+            }
+        },
+        "json-protocol": {
+            "imports": [
+                "/Users/pulimsr/Desktop/sdk/aws-sdk-cpp/tools/code-generation/smithy/cpp-codegen/build/protocol-test-models/json-protocol.json"
+            ],
+            "transforms": [
+                {
+                    "name": "excludeShapesBySelector",
+                    "args": {
+                        "selector": "operation :not([id|name = 'ContentTypeParameters', 'DatetimeOffsets', 'EmptyOperation', 'EndpointOperation', 'EndpointWithHostLabelOperation', 'FractionalSeconds', 'GreetingWithErrors', 'HostWithPathOperation', 'JsonEnums', 'JsonIntEnums', 'JsonUnions', 'KitchenSinkOperation', 'NullOperation', 'OperationWithOptionalInputOutput', 'PutAndGetInlineDocuments', 'PutWithContentEncoding', 'SimpleScalarProperties', 'SparseNullsOperation'])"
+                    }
+                },
+                {
+                    "name": "removeUnusedShapes",
+                    "args": {}
+                }
+            ],
+            "plugins": {
+                "smithy-cpp-codegen-models": {
+                    "c2jMap": "{}",
+                    "namespaceMappings": "{}"
+                }
+            }
+        },
+        "json-rpc-10": {
+            "imports": [
+                "/Users/pulimsr/Desktop/sdk/aws-sdk-cpp/tools/code-generation/smithy/cpp-codegen/build/protocol-test-models/json-rpc-10.json"
+            ],
+            "transforms": [
+                {
+                    "name": "excludeShapesBySelector",
+                    "args": {
+                        "selector": "operation :not([id|name = 'ContentTypeParameters', 'EmptyInputAndEmptyOutput', 'EndpointOperation', 'EndpointWithHostLabelOperation', 'GreetingWithErrors', 'HostWithPathOperation', 'JsonUnions', 'NoInputAndNoOutput', 'NoInputAndOutput', 'PutWithContentEncoding', 'QueryIncompatibleOperation', 'SimpleScalarProperties'])"
+                    }
+                },
+                {
+                    "name": "removeUnusedShapes",
+                    "args": {}
+                }
+            ],
+            "plugins": {
+                "smithy-cpp-codegen-models": {
+                    "c2jMap": "{}",
+                    "namespaceMappings": "{}"
+                }
+            }
+        },
+        "query-compatible-json-rpc-10": {
+            "imports": [
+                "/Users/pulimsr/Desktop/sdk/aws-sdk-cpp/tools/code-generation/smithy/cpp-codegen/build/protocol-test-models/query-compatible-json-rpc-10.json"
+            ],
+            "transforms": [
+                {
+                    "name": "excludeShapesBySelector",
+                    "args": {
+                        "selector": "operation :not([id|name = 'QueryCompatibleOperation'])"
+                    }
+                },
+                {
+                    "name": "removeUnusedShapes",
+                    "args": {}
+                }
+            ],
+            "plugins": {
+                "smithy-cpp-codegen-models": {
+                    "c2jMap": "{}",
+                    "namespaceMappings": "{}"
+                }
+            }
+        },
+        "query-protocol": {
+            "imports": [
+                "/Users/pulimsr/Desktop/sdk/aws-sdk-cpp/tools/code-generation/smithy/cpp-codegen/build/protocol-test-models/query-protocol.json"
+            ],
+            "transforms": [
+                {
+                    "name": "excludeShapesBySelector",
+                    "args": {
+                        "selector": "operation :not([id|name = 'DatetimeOffsets', 'EmptyInputAndEmptyOutput', 'EndpointOperation', 'EndpointWithHostLabelOperation', 'FlattenedXmlMap', 'FlattenedXmlMapWithXmlName', 'FlattenedXmlMapWithXmlNamespace', 'FractionalSeconds', 'GreetingWithErrors', 'HostWithPathOperation', 'IgnoresWrappingXmlName', 'NestedStructures', 'NoInputAndNoOutput', 'NoInputAndOutput', 'PutWithContentEncoding', 'QueryIdempotencyTokenAutoFill', 'QueryLists', 'QueryMaps', 'QueryTimestamps', 'RecursiveXmlShapes', 'SimpleInputParams', 'SimpleScalarXmlProperties', 'XmlBlobs', 'XmlEmptyBlobs', 'XmlEmptyLists', 'XmlEmptyMaps', 'XmlEnums', 'XmlIntEnums', 'XmlLists', 'XmlMaps', 'XmlMapsXmlName', 'XmlNamespaces', 'XmlTimestamps'])"
+                    }
+                },
+                {
+                    "name": "removeUnusedShapes",
+                    "args": {}
+                }
+            ],
+            "plugins": {
+                "smithy-cpp-codegen-models": {
+                    "c2jMap": "{}",
+                    "namespaceMappings": "{}"
+                }
+            }
+        },
+        "rest-json-protocol": {
+            "imports": [
+                "/Users/pulimsr/Desktop/sdk/aws-sdk-cpp/tools/code-generation/smithy/cpp-codegen/build/protocol-test-models/rest-json-protocol.json"
+            ],
+            "transforms": [
+                {
+                    "name": "excludeShapesBySelector",
+                    "args": {
+                        "selector": "operation :not([id|name = 'AllQueryStringTypes', 'ConstantAndVariableQueryString', 'ConstantQueryString', 'ContentTypeParameters', 'DatetimeOffsets', 'DocumentType', 'DocumentTypeAsMapValue', 'DocumentTypeAsPayload', 'DuplexStream', 'DuplexStreamWithInitialMessages', 'EmptyInputAndEmptyOutput', 'EndpointOperation', 'EndpointWithHostLabelOperation', 'FractionalSeconds', 'GreetingWithErrors', 'HostWithPathOperation', 'HttpChecksumRequired', 'HttpEmptyPrefixHeaders', 'HttpEnumPayload', 'HttpPayloadTraits', 'HttpPayloadWithStructure', 'HttpPayloadWithUnion', 'HttpPrefixHeaders', 'HttpPrefixHeadersInResponse', 'HttpQueryParamsOnlyOperation', 'HttpRequestWithFloatLabels', 'HttpRequestWithGreedyLabelInPath', 'HttpRequestWithLabels', 'HttpRequestWithLabelsAndTimestampFormat', 'HttpRequestWithRegexLiteral', 'HttpResponseCode', 'HttpStringPayload', 'IgnoreQueryParamsInResponse', 'InputAndOutputWithHeaders', 'JsonBlobs', 'JsonEnums', 'JsonIntEnums', 'JsonLists', 'JsonMaps', 'JsonTimestamps', 'JsonUnions', 'MediaTypeHeader', 'NoInputAndNoOutput', 'NoInputAndOutput', 'NullAndEmptyHeadersClient', 'NullAndEmptyHeadersServer', 'OmitsNullSerializesEmptyString', 'OmitsSerializingEmptyLists', 'OutputStream', 'OutputStreamWithInitialResponse', 'PostUnionWithJsonName', 'PutWithContentEncoding', 'QueryIdempotencyTokenAutoFill', 'QueryParamsAsStringListMap', 'QueryPrecedence', 'RecursiveShapes', 'ResponseCodeHttpFallback', 'ResponseCodeRequired', 'SimpleScalarProperties', 'SparseJsonLists', 'SparseJsonMaps', 'TestBodyStructure', 'TestGetNoInputNoPayload', 'TestGetNoPayload', 'TestPayloadBlob', 'TestPayloadStructure', 'TestPostNoInputNoPayload', 'TestPostNoPayload', 'TimestampFormatHeaders', 'UnitInputAndOutput'])"
+                    }
+                },
+                {
+                    "name": "removeUnusedShapes",
+                    "args": {}
+                }
+            ],
+            "plugins": {
+                "smithy-cpp-codegen-models": {
+                    "c2jMap": "{}",
+                    "namespaceMappings": "{}"
+                }
+            }
+        },
+        "rest-xml-protocol": {
+            "imports": [
+                "/Users/pulimsr/Desktop/sdk/aws-sdk-cpp/tools/code-generation/smithy/cpp-codegen/build/protocol-test-models/rest-xml-protocol.json"
+            ],
+            "transforms": [
+                {
+                    "name": "excludeShapesBySelector",
+                    "args": {
+                        "selector": "operation :not([id|name = 'AllQueryStringTypes', 'BodyWithXmlName', 'ConstantAndVariableQueryString', 'ConstantQueryString', 'ContentTypeParameters', 'DatetimeOffsets', 'EmptyInputAndEmptyOutput', 'EndpointOperation', 'EndpointWithHostLabelHeaderOperation', 'EndpointWithHostLabelOperation', 'FlattenedXmlMap', 'FlattenedXmlMapWithXmlName', 'FlattenedXmlMapWithXmlNamespace', 'FractionalSeconds', 'GreetingWithErrors', 'HttpEmptyPrefixHeaders', 'HttpEnumPayload', 'HttpPayloadTraits', 'HttpPayloadWithMemberXmlName', 'HttpPayloadWithStructure', 'HttpPayloadWithUnion', 'HttpPayloadWithXmlName', 'HttpPayloadWithXmlNamespace', 'HttpPayloadWithXmlNamespaceAndPrefix', 'HttpPrefixHeaders', 'HttpRequestWithFloatLabels', 'HttpRequestWithGreedyLabelInPath', 'HttpRequestWithLabels', 'HttpRequestWithLabelsAndTimestampFormat', 'HttpResponseCode', 'HttpStringPayload', 'IgnoreQueryParamsInResponse', 'InputAndOutputWithHeaders', 'NestedXmlMapWithXmlName', 'NestedXmlMaps', 'NoInputAndNoOutput', 'NoInputAndOutput', 'NullAndEmptyHeadersClient', 'NullAndEmptyHeadersServer', 'OmitsNullSerializesEmptyString', 'PutWithContentEncoding', 'QueryIdempotencyTokenAutoFill', 'QueryParamsAsStringListMap', 'QueryPrecedence', 'RecursiveShapes', 'SimpleScalarProperties', 'TimestampFormatHeaders', 'XmlAttributes', 'XmlAttributesInMiddle', 'XmlAttributesOnPayload', 'XmlBlobs', 'XmlEmptyBlobs', 'XmlEmptyLists', 'XmlEmptyMaps', 'XmlEmptyStrings', 'XmlEnums', 'XmlIntEnums', 'XmlLists', 'XmlMapWithXmlNamespace', 'XmlMaps', 'XmlMapsXmlName', 'XmlNamespaces', 'XmlTimestamps', 'XmlUnions'])"
+                    }
+                },
+                {
+                    "name": "removeUnusedShapes",
+                    "args": {}
+                }
+            ],
+            "plugins": {
+                "smithy-cpp-codegen-models": {
+                    "c2jMap": "{}",
+                    "namespaceMappings": "{}"
+                }
+            }
+        }
+    },
+    "outputDirectory": "output"
+}

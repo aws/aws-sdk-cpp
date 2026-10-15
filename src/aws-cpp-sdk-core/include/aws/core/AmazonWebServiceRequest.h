@@ -15,11 +15,15 @@
 #include <aws/core/http/HttpRequest.h>
 #include <aws/core/http/HttpTypes.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/stream/ResponseStream.h>
 #include <aws/core/endpoint/internal/AWSEndpointAttribute.h>
+#include <smithy/client/schema/OperationRequestContext.h>
 #include <smithy/identity/auth/AuthSchemeOption.h>
+
+namespace smithy { namespace schema { class SerializableStruct; } }
 
 namespace Aws
 {
@@ -248,6 +252,23 @@ namespace Aws
          * @return true of a request has a user set checksum
          */
         inline virtual bool ChecksumAlgorithmIsSet() const { return false; }
+
+        ///@{
+        /**
+         * Schema-serde hooks for protocol-agnostic, client-driven serialization.
+         *
+         * A schema-serde request returns a freshly-built {@link smithy::schema::SerializableStruct}
+         * adapter over itself (schema + members, no protocol) and the per-operation context (Action /
+         * Version) the protocol may need. When both are present the smithy client marshals the body via
+         * the client-owned {@code ClientProtocol}, so swapping the protocol needs no change to the shape.
+         *
+         * Default: {@code nullptr} / empty — the request is NOT schema-serde and the marshaller falls
+         * back to the legacy {@code GetBody()} / {@code SerializePayload()} path. Only smithy-generated
+         * schema-serde shapes override these.
+         */
+        virtual Aws::UniquePtr<smithy::schema::SerializableStruct> GetSchemaSerdeInput() const;
+        virtual smithy::schema::OperationRequestContext GetSchemaSerdeContext() const { return {}; }
+        ///@}
     protected:
         /**
          * Default does nothing. Override this to convert what would otherwise be the payload of the

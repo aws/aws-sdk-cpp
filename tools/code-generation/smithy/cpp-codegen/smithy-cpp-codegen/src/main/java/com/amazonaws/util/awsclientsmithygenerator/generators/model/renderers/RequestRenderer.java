@@ -97,7 +97,7 @@ public final class RequestRenderer implements ShapeRenderer {
             // Request headers do NOT include <aws/core/http/URI.h> even with URI-taking methods
             // (DumpBodyToUrl / AddQueryStringParameters): AmazonWebServiceRequest.h forward-declares
             // Aws::Http::URI, sufficient for a reference param. Matches C2J.
-            List<String> memberIncludes = CppTypeMapper.getIncludesForShape(includeShape, ctx.model(), ctx.smithyServiceName());
+            List<String> memberIncludes = CppTypeMapper.getIncludesForShape(includeShape, ctx.model(), ctx.smithyServiceName(), false);
             includes.addAll(memberIncludes);
             IncludeSets.emitAngleIncludes(writer, includes);
 
@@ -252,7 +252,9 @@ public final class RequestRenderer implements ShapeRenderer {
                 eventStreamMember.ifPresent(m ->
                     renderEventStreamMemberAccessor(writer, className, rawShape, m));
 
-                boolean hasAnyMember = !shape.getAllMembers().isEmpty() || eventStreamMember.isPresent();
+                // A streaming response always needs the handler/decoder members, even with an empty input.
+                boolean hasAnyMember = !shape.getAllMembers().isEmpty() || eventStreamMember.isPresent()
+                    || streamingResponse;
                 if (hasAnyMember) {
                     writer.dedent();
                     writer.write("private:");
@@ -679,10 +681,15 @@ public final class RequestRenderer implements ShapeRenderer {
                     writer.write("return Aws::Client::CompressionAlgorithm::GZIP;"));
             } else {
                 writer.write("");
+                // A schema-serde request's legacy body is an empty stub (null stream); the smithy client
+                // applies the size threshold to the protocol-built body before asking for the algorithm.
                 writer.write("const auto& body = AmazonSerializableWebServiceRequest::GetBody();");
-                writer.write("body->seekg(0, body->end);");
-                writer.write("size_t bodySize = body->tellg();");
-                writer.write("body->seekg(0, body->beg);");
+                writer.write("size_t bodySize = 0;");
+                writer.openBlock("if (body) {", "}", () -> {
+                    writer.write("body->seekg(0, body->end);");
+                    writer.write("bodySize = body->tellg();");
+                    writer.write("body->seekg(0, body->beg);");
+                });
                 writer.openBlock("if (bodySize < config.requestMinCompressionSizeBytes) {", "}", () ->
                     writer.write("return Aws::Client::CompressionAlgorithm::NONE;"));
                 writer.openBlock("else {", "}", () ->

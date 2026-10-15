@@ -20,6 +20,21 @@ SMITHY_NAMPESPACE_MAPPING_FILE = "tools/code-generation/smithy/mapping/smithy-na
 SMITHY_API_DESCRIPTIONS_DIR = "tools/code-generation/smithy/api-descriptions"
 BDD_BYTECODER_FILE = "crt/aws-crt-cpp/crt/aws-c-sdkutils/compiler/bdd-bytecoder.py"
 ENDPOINT_BDD_TRAIT = "smithy.rules#endpointBdd"
+PROTOCOL_TESTS_GENERATED_CLIENTS_DIR = "generated/protocol-tests/test-clients"
+
+# Protocol-test client packages whose models the Smithy plugin generates, from
+# tools/code-generation/protocol-tests/smithy-models/<package>.json (SmithyC2jProtocolTests' Smithy model for the client).
+PROTOCOL_TEST_SMITHY_CLIENTS = [
+    "ec2-protocol",
+    "json-protocol",
+    "json-rpc-10",
+    "query-compatible-json-rpc-10",
+    "query-protocol",
+    "rest-json-protocol",
+    "rest-xml-protocol",
+    # Not the rpcv2-cbor clients (rpcv2protocol, (non-)query-compatible-rpcv2-protocol): the smithy client has no
+    # CBOR outcome serializer yet (smithy/client/serializer/), so they stay full C2J clients.
+]
 
 
 def bdd_endpoint_services():
@@ -90,6 +105,50 @@ class SmithyCppGen(object):
             )
             return 0
         return -1
+
+    def generate_protocol_tests(self, operations: dict):
+        """Generate the models of the protocol-test clients with the Smithy plugin and copy them into the
+        C2J-generated test-client packages (C2J generates only the client shell for those packages).
+
+        :param operations: package -> operations of its C2J client shell; the plugin generates exactly these
+        """
+        smithy_codegen_command = [
+            "./gradlew",
+            "smithyBuild",
+            "-PprotocolTests",
+            "-PprotocolTestOperations=" + json.dumps(operations)
+        ]
+        try:
+            if self.debug:
+                print(f"RUNNING: {' '.join(smithy_codegen_command)}\nFROM: {SMITHY_GENERATOR_LOCATION}")
+            process = subprocess.run(
+                smithy_codegen_command,
+                timeout=6*60,
+                check=True,
+                capture_output=True,
+                text=True,
+                cwd=SMITHY_GENERATOR_LOCATION
+            )
+            if self.debug:
+                print(process.stdout)
+        except subprocess.CalledProcessError as e:
+            print(f"Command failed: {e.returncode}\nError: {e.stdout}\n{e.stderr}")
+            return -1
+
+        output_dir = os.path.abspath(os.path.join(SMITHY_GENERATOR_LOCATION, "output"))
+        for package, package_operations in operations.items():
+            models_dir = os.path.join(output_dir, package, "smithy-cpp-codegen-models")
+            # The C2J client shell calls every operation's request class, so each one must be generated.
+            missing = [op for op in package_operations if not os.path.isfile(
+                os.path.join(models_dir, "include", "aws", package, "model", f"{op}Request.h"))]
+            if missing:
+                print(f"ERROR: Smithy models for protocol-test client {package} are missing operations: {missing}")
+                return -1
+            target_dir = os.path.abspath(os.path.join(PROTOCOL_TESTS_GENERATED_CLIENTS_DIR, f"aws-cpp-sdk-{package}"))
+            shutil.copytree(models_dir, target_dir, dirs_exist_ok=True)
+            print(f"Generated Smithy models for {package}")
+        shutil.rmtree(output_dir)
+        return 0
 
     def _generate_pagination(self, smithy_services: List[str], smithy_c2j_data: str):
         smithy_codegen_command = [

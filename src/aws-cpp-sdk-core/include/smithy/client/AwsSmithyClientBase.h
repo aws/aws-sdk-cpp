@@ -74,6 +74,7 @@ namespace Aws
 }
 
 namespace smithy {
+namespace schema { class ClientProtocol; struct HttpRequestParts; }
 namespace client
 {
     class AwsSmithyClientAsyncRequestContext;
@@ -175,6 +176,15 @@ namespace client
         inline virtual const char* GetServiceClientName() const { return m_serviceName.c_str(); }
         inline virtual const std::shared_ptr<Aws::Http::HttpClient>& GetHttpClient() { return m_httpClient; }
 
+        /**
+         * The wire protocol this client drives serialization through. When set (and the request is a
+         * schema-serde shape), the marshaller builds the request body via this protocol instead of the
+         * legacy per-shape {@code SerializePayload()}. Runtime-swappable: changing it changes the wire
+         * format with no change to any generated shape. Null on non-schema-serde clients (legacy path).
+         */
+        void SetClientProtocol(const std::shared_ptr<smithy::schema::ClientProtocol>& protocol) { m_clientProtocol = protocol; }
+        const std::shared_ptr<smithy::schema::ClientProtocol>& GetClientProtocol() const { return m_clientProtocol; }
+
     protected:
         template <typename OutcomeT, typename ClientT, typename RequestT, typename HandlerT>
         friend class SmithyBidirectionalEventStreamingTask;
@@ -248,7 +258,11 @@ namespace client
         Aws::Vector<std::shared_ptr<smithy::interceptor::Interceptor>> m_interceptors{};
         std::shared_ptr<smithy::client::UserAgentInterceptor> m_userAgentInterceptor;
         mutable std::shared_ptr<Aws::Internal::ClientSkew> m_clientSkew;
+        // Client-owned wire protocol for schema-serde shapes; null on legacy (C2J-serde) clients.
+        std::shared_ptr<smithy::schema::ClientProtocol> m_clientProtocol;
     private:
+        // Applies a protocol's HTTP-bound request parts (path, query, host prefix, headers, Content-Type).
+        void ApplyHttpRequestParts(const smithy::schema::HttpRequestParts& parts, Aws::Http::HttpRequest& httpRequest) const;
         void UpdateAuthSchemeFromEndpoint(const Aws::Endpoint::AWSEndpoint& endpoint, AuthSchemeOption& authscheme) const;
 
         bool ResolveIdentityAuth(

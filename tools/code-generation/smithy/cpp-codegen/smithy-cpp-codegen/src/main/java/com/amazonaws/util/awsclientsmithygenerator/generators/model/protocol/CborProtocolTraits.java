@@ -77,7 +77,8 @@ public final class CborProtocolTraits implements ProtocolTraits {
     }
 
     @Override
-    public void writeResultSerdeDecls(CppWriter writer, String exportMacro, String className) {
+    public void writeResultSerdeDecls(CppWriter writer, String exportMacro, String className,
+                                      StructureShape shape, Model model) {
         writer.write("$L $L(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);",
             exportMacro, className);
         writer.write("$L $L& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);",
@@ -95,6 +96,22 @@ public final class CborProtocolTraits implements ProtocolTraits {
             // All source kinds share one include set. RPC CBOR request sources never run the shared
             // @httpQuery/@httpHeader serializers, so REQUEST_SOURCE carries the same set as the rest.
             case REQUEST_SOURCE:
+                return List.of(
+                    "aws/crt/cbor/Cbor.h",
+                    "aws/core/utils/cbor/CborValue.h",
+                    "aws/core/utils/UnreferencedParam.h",
+                    "aws/core/utils/memory/stl/AWSStringStream.h",
+                    "aws/core/utils/HashingUtils.h",
+                    "aws/core/utils/memory/AWSMemory.h",
+                    "smithy/client/schema/Schema.h",
+                    "smithy/client/schema/HttpTraits.h",
+                    "smithy/client/schema/SchemaBuilder.h",
+                    "smithy/client/schema/SerializableStruct.h",
+                    "smithy/client/schema/MapSerializer.h",
+                    "smithy/client/schema/ShapeSerializer.h",
+                    "smithy/client/schema/SerdeTraits.h",
+                    "smithy/client/schema/ClientProtocol.h",
+                    "utility");
             case SUBOBJECT_SOURCE:
             case RESULT_SOURCE:
             case STREAMING_RESULT_SOURCE:
@@ -158,6 +175,9 @@ public final class CborProtocolTraits implements ProtocolTraits {
         writer.write("");
         writer.openBlock("$L& $L::operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result) {",
             "}", className, className, () -> {
+            // Body deserialization is a placeholder stub (pending schema serde); result is only read for
+            // status-code members.
+            writer.write("AWS_UNREFERENCED_PARAM(result);");
             writeResultStatusCodeMembers(writer, shape, model);
             writer.write("return *this;");
         });
@@ -188,6 +208,13 @@ public final class CborProtocolTraits implements ProtocolTraits {
                                         StructureShape shape, OperationShape operation, Model model) {
         if (RequestBindings.emitsSerializePayload(operation, model)) {
             writer.write("$L Aws::String SerializePayload() const override;", exportMacro);
+            boolean hasRequest = !operation.getInputShape().equals(UnitTypeTrait.UNIT);
+            if (hasRequest) {
+                SchemaSerdeRenderer.writeOperationContextDecl(writer, exportMacro);
+            }
+            if (hasRequest && RequestBindings.allBodyMembersSchemaSerializableScalar(shape, model)) {
+                SchemaSerdeRenderer.writeSchemaSerdeMethodDecls(writer, exportMacro);
+            }
         }
         // CBOR always emits GetRequestSpecificHeaders: it attaches protocol headers
         // (content-type / smithy-protocol / accept) regardless of member bindings.
@@ -206,7 +233,10 @@ public final class CborProtocolTraits implements ProtocolTraits {
                                         ServiceShape service, Model model) {
         boolean hasRequest = !operation.getInputShape().equals(UnitTypeTrait.UNIT);
         if (RequestBindings.emitsSerializePayload(operation, model)) {
-            if (hasRequest) {
+            if (hasRequest && RequestBindings.allBodyMembersSchemaSerializableScalar(shape, model)) {
+                SchemaSerdeRenderer.writeSerializePayload(writer, className, shape, model,
+                    SchemaSerdeRenderer::cborMemberTraits);
+            } else if (hasRequest) {
                 writer.openBlock("Aws::String $L::SerializePayload() const {", "}", className, () -> {
                     writer.write("Aws::Crt::Cbor::CborEncoder encoder;");
                     writer.write("");
@@ -221,6 +251,9 @@ public final class CborProtocolTraits implements ProtocolTraits {
                 });
             } else {
                 writer.write("Aws::String $L::SerializePayload() const { return {}; }", className);
+            }
+            if (hasRequest) {
+                SchemaSerdeRenderer.writeOperationContext(writer, className, operation.getId().getName(), service.getVersion());
             }
             writer.write("");
         }

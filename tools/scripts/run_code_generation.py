@@ -14,7 +14,7 @@ from codegen.include_tests_util import IncludeTestsUtil
 from codegen.model_utils import ModelUtils
 from codegen.protocol_tests_gen import ProtocolTestsGen
 from codegen.smoke_tests_gen import SmokeTestsGen
-from codegen.smithy_cpp_gen import SmithyCppGen
+from codegen.smithy_cpp_gen import SmithyCppGen, PROTOCOL_TESTS_GENERATED_CLIENTS_DIR, PROTOCOL_TEST_SMITHY_CLIENTS
 from codegen.format_util import format_directories
 from codegen.install_test_gen import InstallTestGen
 
@@ -208,6 +208,15 @@ def main():
             if protocol_tests_generator.generate(executor, max_workers) != 0:
                 print("ERROR: Failed to generate protocol test(s)!")
                 return -1
+
+            # C2J generated only the client shells of the Smithy-backed protocol-test clients; add their models.
+            if args.get("use_smithy_models"):
+                operations = {client: protocol_tests_generator.client_operations[client]
+                              for client in PROTOCOL_TEST_SMITHY_CLIENTS}
+                if SmithyCppGen(args["debug"]).generate_protocol_tests(operations) != 0:
+                    print("ERROR: Failed to generate protocol-test Smithy models!")
+                    return -1
+                format_directories([PROTOCOL_TESTS_GENERATED_CLIENTS_DIR])
 
     # generate code using smithy for all discoverable clients
     # clients_to_build check is present because user can generate only defaults or partitions or protocol-tests

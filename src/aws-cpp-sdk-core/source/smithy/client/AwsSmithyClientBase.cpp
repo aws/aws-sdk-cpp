@@ -4,11 +4,20 @@
  */
 
 #include <smithy/client/AwsSmithyClientBase.h>
+
+#include <cctype>
+#include <string>
 #include <smithy/client/AwsSmithyClientAsyncRequestContext.h>
 #include <smithy/client/features/RecursionDetection.h>
 #include <smithy/client/features/RequestPayloadCompression.h>
+#include <smithy/client/schema/ClientProtocol.h>
+#include <smithy/client/schema/HttpBinding.h>
+#include <smithy/client/schema/Schema.h>
+#include <smithy/client/schema/SerializableStruct.h>
 #include <smithy/identity/signer/built-in/SignerProperties.h>
 #include <smithy/tracing/TracingUtils.h>
+
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <aws/core/client/AWSErrorMarshaller.h>
 #include <aws/core/client/CoreErrors.h>
@@ -145,6 +154,59 @@ void AwsSmithyClientBase::baseMoveAssign(AwsSmithyClientBase&& other) {
   m_userAgentInterceptor = std::move(other.m_userAgentInterceptor);
 }
 
+namespace {
+// Decodes only %XX escapes; unlike form decoding, '+' stays literal (it is a valid path character).
+Aws::String PercentDecode(const Aws::String& value)
+{
+    Aws::String out;
+    out.reserve(value.size());
+    for (size_t i = 0; i < value.size(); ++i) {
+        if (value[i] == '%' && i + 2 < value.size() && isxdigit(static_cast<unsigned char>(value[i + 1])) &&
+            isxdigit(static_cast<unsigned char>(value[i + 2]))) {
+            out += static_cast<char>(std::stoi(value.substr(i + 1, 2), nullptr, 16));
+            i += 2;
+        } else {
+            out += value[i];
+        }
+    }
+    return out;
+}
+}  // namespace
+
+void AwsSmithyClientBase::ApplyHttpRequestParts(const smithy::schema::HttpRequestParts& parts, Aws::Http::HttpRequest& httpRequest) const
+{
+    Aws::Http::URI& requestUri = httpRequest.GetUri();
+    if (!parts.path.empty()) {
+        // parts.path is already RFC 3986 encoded; URI re-encodes per segment when rendered, so hand it the
+        // decoded segments with RFC 3986 encoding on (round-trips to the same bytes).
+        requestUri.SetRfc3986Encoded(true);
+        for (const auto& segment : Aws::Utils::StringUtils::Split(parts.path, '/')) {
+            requestUri.AddPathSegment(PercentDecode(segment));
+        }
+        if (parts.path.size() > 1 && parts.path.back() == '/') {
+            requestUri.AddPathSegments("/");
+        }
+    }
+    if (!parts.query.empty()) {
+        const Aws::String existing = requestUri.GetQueryString();
+        requestUri.SetQueryString(existing.empty() || existing == "?" ? parts.query : existing + "&" + parts.query);
+    }
+    if (!parts.hostPrefix.empty() && m_clientConfig->enableHostPrefixInjection) {
+        requestUri.SetAuthority(parts.hostPrefix + requestUri.GetAuthority());
+    }
+    bool modeledContentType = false;
+    for (const auto& header : parts.headers) {
+        httpRequest.SetHeaderValue(header.first, header.second);
+        modeledContentType = modeledContentType || Aws::Utils::StringUtils::ToLower(header.first.c_str()) == Aws::Http::CONTENT_TYPE_HEADER;
+    }
+    if (!parts.contentType.empty()) {
+        httpRequest.SetHeaderValue(Aws::Http::CONTENT_TYPE_HEADER, parts.contentType);
+    } else if (!parts.body && !modeledContentType) {
+        // A body-less message carries no Content-Type (the service base request defaults one).
+        httpRequest.DeleteHeader(Aws::Http::CONTENT_TYPE_HEADER);
+    }
+}
+
 std::shared_ptr<Aws::Http::HttpRequest>
 AwsSmithyClientBase::BuildHttpRequest(const std::shared_ptr<AwsSmithyClientAsyncRequestContext>& pRequestCtx,
                                       const Aws::Http::URI& uri,
@@ -183,13 +245,50 @@ AwsSmithyClientBase::BuildHttpRequest(const std::shared_ptr<AwsSmithyClientAsync
         }
         else
         {
-            //Check if compression is required
-            Aws::Client::CompressionAlgorithm selectedCompressionAlgorithm = pRequest->GetSelectedCompressionAlgorithm(m_clientConfig->requestCompressionConfig);
-            if (Aws::Client::CompressionAlgorithm::NONE != selectedCompressionAlgorithm) {
-                RequestPayloadCompression::AddCompressedContentBodyToRequest(pRequest, httpRequest, selectedCompressionAlgorithm, m_httpClient);
+            // Protocol-agnostic, client-driven serialization: when this client owns a ClientProtocol and
+            // the request is a schema-serde shape, the body is built by the protocol from the shape's
+            // schema + members. Swapping the protocol changes the wire format with no shape change. The
+            // shape never names a protocol. Falls back to the legacy per-shape GetBody() otherwise.
+            auto schemaSerdeInput = pRequest->GetSchemaSerdeInput();
+            if (m_clientProtocol && schemaSerdeInput) {
+                // The protocol owns where every member travels: for HTTP-binding protocols that is the path,
+                // query string, host prefix, headers and body; RPC protocols produce only the body.
+                auto partsOutcome = m_clientProtocol->SerializeHttpRequest(pRequest->GetSchemaSerdeContext(), *schemaSerdeInput);
+                if (!partsOutcome.IsSuccess()) {
+                    AWS_LOGSTREAM_ERROR(AWS_SMITHY_CLIENT_LOG,
+                                        "schema-serde request serialization failed: " << partsOutcome.GetError().GetMessage());
+                    return nullptr;
+                }
+                const smithy::schema::HttpRequestParts& parts = partsOutcome.GetResult();
+                ApplyHttpRequestParts(parts, *httpRequest);
+                std::shared_ptr<Aws::IOStream> body;
+                if (parts.body) {
+                    body = Aws::MakeShared<Aws::StringStream>(AWS_SMITHY_CLIENT_LOG);
+                    *body << *parts.body;
+                }
+                // The request's own size check sees only its (empty) legacy body, so apply the minimum
+                // size to the protocol-built payload here and let the request pick the algorithm.
+                Aws::Client::CompressionAlgorithm selectedCompressionAlgorithm = Aws::Client::CompressionAlgorithm::NONE;
+                Aws::Client::RequestCompressionConfig compressionConfig = m_clientConfig->requestCompressionConfig;
+                if (body && parts.body->size() >= compressionConfig.requestMinCompressionSizeBytes) {
+                    compressionConfig.requestMinCompressionSizeBytes = 0;
+                    selectedCompressionAlgorithm = pRequest->GetSelectedCompressionAlgorithm(compressionConfig);
+                }
+                if (Aws::Client::CompressionAlgorithm::NONE != selectedCompressionAlgorithm) {
+                    RequestPayloadCompression::AddCompressedContentBodyToRequest(pRequest, body, httpRequest, selectedCompressionAlgorithm, m_httpClient);
+                } else {
+                    Utils::AddContentBodyToRequest(httpRequest, body, m_httpClient,
+                                                   pRequest->ShouldComputeContentMd5(), pRequest->IsStreaming() && pRequest->IsChunked());
+                }
             } else {
-                Utils::AddContentBodyToRequest(httpRequest, pRequest->GetBody(), m_httpClient,
-                                               pRequest->ShouldComputeContentMd5(), pRequest->IsStreaming() && pRequest->IsChunked());
+                //Check if compression is required
+                Aws::Client::CompressionAlgorithm selectedCompressionAlgorithm = pRequest->GetSelectedCompressionAlgorithm(m_clientConfig->requestCompressionConfig);
+                if (Aws::Client::CompressionAlgorithm::NONE != selectedCompressionAlgorithm) {
+                    RequestPayloadCompression::AddCompressedContentBodyToRequest(pRequest, httpRequest, selectedCompressionAlgorithm, m_httpClient);
+                } else {
+                    Utils::AddContentBodyToRequest(httpRequest, pRequest->GetBody(), m_httpClient,
+                                                   pRequest->ShouldComputeContentMd5(), pRequest->IsStreaming() && pRequest->IsChunked());
+                }
             }
         }
 
