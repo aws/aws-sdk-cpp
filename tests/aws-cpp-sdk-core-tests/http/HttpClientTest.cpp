@@ -387,8 +387,19 @@ TEST_F(CURLHttpClientTest, TestHttpRequestWorksFine)
 #endif // ENABLE_HTTP_CLIENT_TESTING
 #endif // NO_HTTP_CLIENT
 
+#endif  // DISABLE_DNS_REQUIRED_TESTS
+
+// Test ToCrtHttpRequest conversion (no network required)
+#include <aws/testing/AwsCppSdkGTestSuite.h>
+#include <aws/core/http/standard/StandardHttpRequest.h>
+#include <aws/crt/http/HttpRequestResponse.h>
+
+class HttpRequestConversionTest : public Aws::Testing::AwsCppSdkGTestSuite
+{
+};
+
 // Test that ToCrtHttpRequest produces origin-form request-target (path + query only)
-TEST_F(HttpClientTest, TestToCrtHttpRequestOriginForm)
+TEST_F(HttpRequestConversionTest, ToCrtHttpRequestOriginForm)
 {
     // Test with HTTP scheme and non-default port
     {
@@ -456,5 +467,3 @@ TEST_F(HttpClientTest, TestToCrtHttpRequestOriginForm)
         EXPECT_FALSE(path.find("http://") == 0);
     }
 }
-
-#endif  // DISABLE_DNS_REQUIRED_TESTS

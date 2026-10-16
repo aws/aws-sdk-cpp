@@ -1,6 +1,0 @@
-{
-  "type": "bugfix",
-  "category": "aws-cpp-sdk-core",
-  "contributor": "hippi345",
-  "description": "Fix S3CrtClient to send origin-form request-target (path + query only) instead of absolute-form, preventing false-positive open-proxy detection"
-}
