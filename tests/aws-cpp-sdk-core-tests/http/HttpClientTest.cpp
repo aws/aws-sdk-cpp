@@ -11,6 +11,7 @@
 #include <aws/core/http/standard/StandardHttpRequest.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/crt/http/HttpRequestResponse.h>
 #include <future>
 #include <chrono>
 
@@ -385,4 +386,75 @@ TEST_F(CURLHttpClientTest, TestHttpRequestWorksFine)
 #endif // ENABLE_CURL_CLIENT
 #endif // ENABLE_HTTP_CLIENT_TESTING
 #endif // NO_HTTP_CLIENT
+
+// Test that ToCrtHttpRequest produces origin-form request-target (path + query only)
+TEST_F(HttpClientTest, TestToCrtHttpRequestOriginForm)
+{
+    // Test with HTTP scheme and non-default port
+    {
+        Aws::Http::URI uri("http://example.com:9000/bucket/key?uploadId=abc&partNumber=1");
+        Aws::Http::Standard::StandardHttpRequest request(uri, Aws::Http::HttpMethod::HTTP_PUT);
+        
+        auto crtRequest = request.ToCrtHttpRequest();
+        ASSERT_NE(nullptr, crtRequest);
+        
+        // The path should be origin-form: /path?query
+        // NOT absolute-form: http://example.com:9000/path?query
+        auto pathOpt = crtRequest->GetPath();
+        ASSERT_TRUE(pathOpt.has_value());
+        Aws::String path(reinterpret_cast<const char*>(pathOpt->ptr), pathOpt->len);
+        EXPECT_EQ("/bucket/key?uploadId=abc&partNumber=1", path);
+        EXPECT_FALSE(path.find("http://") == 0);
+        EXPECT_FALSE(path.find("https://") == 0);
+    }
+    
+    // Test with HTTPS scheme and default port
+    {
+        Aws::Http::URI uri("https://s3.amazonaws.com/my-bucket/my-key");
+        Aws::Http::Standard::StandardHttpRequest request(uri, Aws::Http::HttpMethod::HTTP_GET);
+        
+        auto crtRequest = request.ToCrtHttpRequest();
+        ASSERT_NE(nullptr, crtRequest);
+        
+        auto pathOpt = crtRequest->GetPath();
+        ASSERT_TRUE(pathOpt.has_value());
+        Aws::String path(reinterpret_cast<const char*>(pathOpt->ptr), pathOpt->len);
+        EXPECT_EQ("/my-bucket/my-key", path);
+        EXPECT_FALSE(path.find("http://") == 0);
+        EXPECT_FALSE(path.find("https://") == 0);
+    }
+    
+    // Test with query string
+    {
+        Aws::Http::URI uri("https://storage.example.com:443/path/to/file?query=value&foo=bar");
+        Aws::Http::Standard::StandardHttpRequest request(uri, Aws::Http::HttpMethod::HTTP_POST);
+        
+        auto crtRequest = request.ToCrtHttpRequest();
+        ASSERT_NE(nullptr, crtRequest);
+        
+        auto pathOpt = crtRequest->GetPath();
+        ASSERT_TRUE(pathOpt.has_value());
+        Aws::String path(reinterpret_cast<const char*>(pathOpt->ptr), pathOpt->len);
+        EXPECT_EQ("/path/to/file?query=value&foo=bar", path);
+        EXPECT_FALSE(path.find("http://") == 0);
+        EXPECT_FALSE(path.find("https://") == 0);
+    }
+    
+    // Test with root path
+    {
+        Aws::Http::URI uri("http://localhost:8080/");
+        Aws::Http::Standard::StandardHttpRequest request(uri, Aws::Http::HttpMethod::HTTP_HEAD);
+        
+        auto crtRequest = request.ToCrtHttpRequest();
+        ASSERT_NE(nullptr, crtRequest);
+        
+        auto pathOpt = crtRequest->GetPath();
+        ASSERT_TRUE(pathOpt.has_value());
+        Aws::String path(reinterpret_cast<const char*>(pathOpt->ptr), pathOpt->len);
+        // Root path should be "/"
+        EXPECT_EQ("/", path);
+        EXPECT_FALSE(path.find("http://") == 0);
+    }
+}
+
 #endif  // DISABLE_DNS_REQUIRED_TESTS
