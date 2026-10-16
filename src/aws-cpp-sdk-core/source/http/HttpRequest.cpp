@@ -70,15 +70,6 @@ namespace Aws
             // CRT sigv4 don't any encoding if double encoding is off, need to encode the path before passing to CRT.
             const URI& uri = m_uri;
             Aws::StringStream ss;
-            Aws::StringStream port;
-            if (uri.GetScheme() == Scheme::HTTP && uri.GetPort() != HTTP_DEFAULT_PORT)
-            {
-                port << ":" << uri.GetPort();
-            }
-            else if (uri.GetScheme() == Scheme::HTTPS && uri.GetPort() != HTTPS_DEFAULT_PORT)
-            {
-                port << ":" << uri.GetPort();
-            }
 
             // Note: GetURLEncodedPathRFC3986 does legacy mode by default, which
             // leaves some reserved delimeter characters unencoded (things like
@@ -88,8 +79,11 @@ namespace Aws
             // practice however CRT will never support legacy mode and will
             // always need modern encoding, so be explicit here about which mode
             // we use.
-            ss << SchemeMapper::ToString(uri.GetScheme()) << SEPARATOR << uri.GetAuthority() << port.str()
-                << ((uri.GetPath() == "/") ? "" : uri.GetURLEncodedPath())
+            
+            // Set path to origin-form (path + query only) per RFC 9112 §3.2.1.
+            // aws-c-http converts to absolute-form only when sending through a
+            // forward proxy via aws_http_rewrite_uri_for_proxy_request.
+            ss << (uri.GetPath().empty() ? "/" : uri.GetURLEncodedPath())
                 << uri.GetQueryString();
 
             request->SetPath(Aws::Crt::ByteCursorFromCString(ss.str().c_str()));
