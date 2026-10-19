@@ -100,7 +100,7 @@ static void writePutEventsResponseBody(Aws::IOStream& body, const Aws::String& e
     encoder.WriteUInt(0);
 
     auto encodedData = encoder.GetEncodedData();
-    body.write(reinterpret_cast<const char*>(encodedData.ptr), encodedData.len);
+    body.write(reinterpret_cast<const char*>(encodedData.ptr), static_cast<std::streamsize>(encodedData.len));
   } else {
     body << "{\"Entries\":[{\"EventId\":\"" + eventIdToReply + "\"}],\"FailedEntryCount\":0}";
   }
