@@ -190,7 +190,7 @@ namespace
                 JsonValue jsonValue(*body);
                 for (const auto& login : jsonValue.View().GetObject("Logins").GetAllObjects())
                 {
-                    logins[login.first] = login.second.AsString();
+                    logins.emplace(login.first, login.second.AsString());
                 }
                 return logins;
             }
