@@ -1142,13 +1142,19 @@ class AWS_CLOUDWATCH_API CloudWatchClient : public Aws::Client::AWSRpcV2CborClie
    * graph of one or more Amazon CloudWatch metrics as a bitmap image. You can then
    * embed this image into your services and products, such as wiki pages, reports,
    * and documents. You could also retrieve images regularly, such as every minute,
-   * and create your own custom live dashboard.</p> <p>The graph you retrieve can
-   * include all CloudWatch metric graph features, including metric math and
-   * horizontal and vertical annotations.</p> <p>There is a limit of 20 transactions
-   * per second for this API. Each <code>GetMetricWidgetImage</code> action has the
-   * following limits:</p> <ul> <li> <p>As many as 100 metrics in the graph.</p>
-   * </li> <li> <p>Up to 100 KB uncompressed payload.</p> </li> </ul><p><h3>See
-   * Also:</h3>   <a
+   * and create your own custom live dashboard.</p>  <p>
+   * <code>GetMetricWidgetImage</code> is not available in the Amazon Web Services
+   * GovCloud (US) Regions. In those Regions, calls to this operation fail. For the
+   * list of Amazon CloudWatch features that are not available in Amazon Web Services
+   * GovCloud (US), see <a
+   * href="https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-cw.html">Amazon
+   * CloudWatch in Amazon Web Services GovCloud (US)</a>.</p>  <p>The graph
+   * you retrieve can include all CloudWatch metric graph features, including metric
+   * math and horizontal and vertical annotations.</p> <p>There is a limit of 20
+   * transactions per second for this API. Each <code>GetMetricWidgetImage</code>
+   * action has the following limits:</p> <ul> <li> <p>As many as 100 metrics in the
+   * graph.</p> </li> <li> <p>Up to 100 KB uncompressed payload.</p> </li>
+   * </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricWidgetImage">AWS
    * API Reference</a></p>
    */

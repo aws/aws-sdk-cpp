@@ -23,6 +23,15 @@ Aws::String DescribeDeliveriesRequest::SerializePayload() const {
     payload.WithInteger("limit", m_limit);
   }
 
+  if (m_deliverySourceNamesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> deliverySourceNamesJsonList(m_deliverySourceNames.size());
+    for (unsigned deliverySourceNamesIndex = 0; deliverySourceNamesIndex < deliverySourceNamesJsonList.GetLength();
+         ++deliverySourceNamesIndex) {
+      deliverySourceNamesJsonList[deliverySourceNamesIndex].AsString(m_deliverySourceNames[deliverySourceNamesIndex]);
+    }
+    payload.WithArray("deliverySourceNames", std::move(deliverySourceNamesJsonList));
+  }
+
   return payload.View().WriteReadable();
 }
 

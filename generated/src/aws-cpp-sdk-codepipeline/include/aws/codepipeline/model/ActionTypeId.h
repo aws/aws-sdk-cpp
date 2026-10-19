@@ -60,7 +60,7 @@ class ActionTypeId {
    * structure: <code>AWS</code>, <code>ThirdParty</code>, and <code>Custom</code>.
    * For more information, see <a
    * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers">Valid
-   * Action Types and Providers in CodePipeline</a>.</p>
+   * Action Types and Providers in CodePipeline </a>.</p>
    */
   inline ActionOwner GetOwner() const { return m_owner; }
   inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
@@ -81,7 +81,7 @@ class ActionTypeId {
    * type might have a provider of CodeDeploy, which would be specified as
    * <code>CodeDeploy</code>. For more information, see <a
    * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers">Valid
-   * Action Types and Providers in CodePipeline</a>.</p>
+   * Action Types and Providers in CodePipeline </a>.</p>
    */
   inline const Aws::String& GetProvider() const { return m_provider; }
   inline bool ProviderHasBeenSet() const { return m_providerHasBeenSet; }

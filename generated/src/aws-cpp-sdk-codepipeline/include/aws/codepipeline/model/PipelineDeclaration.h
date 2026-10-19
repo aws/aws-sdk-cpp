@@ -189,7 +189,7 @@ class PipelineDeclaration {
 
   ///@{
   /**
-   * <p>CodePipeline provides the following pipeline types, which differ in
+   * <p> CodePipeline provides the following pipeline types, which differ in
    * characteristics and price, so that you can tailor your pipeline features and
    * cost to the needs of your applications.</p> <ul> <li> <p>V1 type pipelines have
    * a JSON structure that contains standard pipeline, stage, and action-level

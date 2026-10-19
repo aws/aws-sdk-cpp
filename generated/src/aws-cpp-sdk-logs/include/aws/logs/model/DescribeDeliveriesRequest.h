@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/logs/CloudWatchLogsRequest.h>
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
 
@@ -62,12 +63,40 @@ class DescribeDeliveriesRequest : public CloudWatchLogsRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>An array of delivery source names that filters the results to deliveries
+   * associated with any specified delivery source.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetDeliverySourceNames() const { return m_deliverySourceNames; }
+  inline bool DeliverySourceNamesHasBeenSet() const { return m_deliverySourceNamesHasBeenSet; }
+  template <typename DeliverySourceNamesT = Aws::Vector<Aws::String>>
+  void SetDeliverySourceNames(DeliverySourceNamesT&& value) {
+    m_deliverySourceNamesHasBeenSet = true;
+    m_deliverySourceNames = std::forward<DeliverySourceNamesT>(value);
+  }
+  template <typename DeliverySourceNamesT = Aws::Vector<Aws::String>>
+  DescribeDeliveriesRequest& WithDeliverySourceNames(DeliverySourceNamesT&& value) {
+    SetDeliverySourceNames(std::forward<DeliverySourceNamesT>(value));
+    return *this;
+  }
+  template <typename DeliverySourceNamesT = Aws::String>
+  DescribeDeliveriesRequest& AddDeliverySourceNames(DeliverySourceNamesT&& value) {
+    m_deliverySourceNamesHasBeenSet = true;
+    m_deliverySourceNames.emplace_back(std::forward<DeliverySourceNamesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_nextToken;
 
   int m_limit{0};
+
+  Aws::Vector<Aws::String> m_deliverySourceNames;
   bool m_nextTokenHasBeenSet = false;
   bool m_limitHasBeenSet = false;
+  bool m_deliverySourceNamesHasBeenSet = false;
 };
 
 }  // namespace Model

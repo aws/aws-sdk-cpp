@@ -42,7 +42,7 @@ class ConditionExpression {
    * <p>A specific condition to apply to a recipe action. For more information, see
    * <a
    * href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe
-   * structure</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
+   * structure</a> in the <i> Glue DataBrew Developer Guide</i>.</p>
    */
   inline const Aws::String& GetCondition() const { return m_condition; }
   inline bool ConditionHasBeenSet() const { return m_conditionHasBeenSet; }

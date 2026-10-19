@@ -16,7 +16,7 @@
 namespace Aws {
 namespace ManagedGrafana {
 /**
- * <p>Amazon Managed Grafana is a fully managed and secure data visualization
+ * <p> Amazon Managed Grafana is a fully managed and secure data visualization
  * service that you can use to instantly query, correlate, and visualize
  * operational metrics, logs, and traces from multiple sources. Amazon Managed
  * Grafana makes it easy to deploy, operate, and scale Grafana, a widely deployed
@@ -152,7 +152,7 @@ class AWS_MANAGEDGRAFANA_API ManagedGrafanaClient : public Aws::Client::AWSJsonC
   /**
    * <p>Creates a Grafana API key for the workspace. This key can be used to
    * authenticate requests sent to the workspace's HTTP API. See <a
-   * href="https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html</a>
+   * href="https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html"/>
    * for available APIs and example requests.</p>  <p>In workspaces compatible
    * with Grafana version 9 or above, use workspace service accounts instead of API
    * keys. API keys will be removed in a future release.</p> <p><h3>See
@@ -190,10 +190,10 @@ class AWS_MANAGEDGRAFANA_API ManagedGrafanaClient : public Aws::Client::AWSJsonC
    * create service accounts for workspaces that are compatible with Grafana version
    * 9 and above.</p>  <p>For more information about service accounts, see <a
    * href="https://docs.aws.amazon.com/grafana/latest/userguide/service-accounts.html">Service
-   * accounts</a> in the <i>Amazon Managed Grafana User Guide</i>.</p> <p>For more
+   * accounts</a> in the <i> Amazon Managed Grafana User Guide</i>.</p> <p>For more
    * information about the Grafana HTTP APIs, see <a
    * href="https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">Using
-   * Grafana HTTP APIs</a> in the <i>Amazon Managed Grafana User Guide</i>.</p>
+   * Grafana HTTP APIs</a> in the <i> Amazon Managed Grafana User Guide</i>.</p>
    * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/CreateWorkspaceServiceAccount">AWS
    * API Reference</a></p>

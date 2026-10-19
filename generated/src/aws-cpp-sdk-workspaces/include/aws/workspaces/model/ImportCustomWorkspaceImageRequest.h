@@ -11,6 +11,7 @@
 #include <aws/workspaces/model/CustomImageProtocol.h>
 #include <aws/workspaces/model/ImageComputeType.h>
 #include <aws/workspaces/model/ImageSourceIdentifier.h>
+#include <aws/workspaces/model/ImageValidationMode.h>
 #include <aws/workspaces/model/OSVersion.h>
 #include <aws/workspaces/model/Platform.h>
 #include <aws/workspaces/model/Tag.h>
@@ -199,6 +200,22 @@ class ImportCustomWorkspaceImageRequest : public WorkSpacesRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The image validation mode for the WorkSpace image import.</p>
+   */
+  inline ImageValidationMode GetImageValidationMode() const { return m_imageValidationMode; }
+  inline bool ImageValidationModeHasBeenSet() const { return m_imageValidationModeHasBeenSet; }
+  inline void SetImageValidationMode(ImageValidationMode value) {
+    m_imageValidationModeHasBeenSet = true;
+    m_imageValidationMode = value;
+  }
+  inline ImportCustomWorkspaceImageRequest& WithImageValidationMode(ImageValidationMode value) {
+    SetImageValidationMode(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_imageName;
 
@@ -217,6 +234,8 @@ class ImportCustomWorkspaceImageRequest : public WorkSpacesRequest {
   OSVersion m_osVersion{OSVersion::NOT_SET};
 
   Aws::Vector<Tag> m_tags;
+
+  ImageValidationMode m_imageValidationMode{ImageValidationMode::NOT_SET};
   bool m_imageNameHasBeenSet = false;
   bool m_imageDescriptionHasBeenSet = false;
   bool m_computeTypeHasBeenSet = false;
@@ -226,6 +245,7 @@ class ImportCustomWorkspaceImageRequest : public WorkSpacesRequest {
   bool m_platformHasBeenSet = false;
   bool m_osVersionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_imageValidationModeHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -176,7 +176,8 @@ SageMakerTrainingSessionRuntimeClient::InvokeOperationOutcome SageMakerTrainingS
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
 
-  return TracingUtils::MakeCallWithTiming<InvokeOperationOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<InvokeOperationOutcome>(
+      request, std::move(span),
       [&]() -> InvokeOperationOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -190,7 +191,7 @@ SageMakerTrainingSessionRuntimeClient::InvokeOperationOutcome SageMakerTrainingS
 
         return InvokeOperationOutcome{MakeRequest(request, endpointResolutionOutcome.GetResult(), httpMethod, Aws::Auth::SIGV4_SIGNER)};
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
 }
 
@@ -309,7 +310,8 @@ SampleTrainingSessionOutcome SageMakerTrainingSessionRuntimeClient::SampleTraini
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<SampleTrainingSessionOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<SampleTrainingSessionOutcome>(
+      request, std::move(span),
       [&]() -> SampleTrainingSessionOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -325,7 +327,7 @@ SampleTrainingSessionOutcome SageMakerTrainingSessionRuntimeClient::SampleTraini
         return result.IsSuccess() ? SampleTrainingSessionOutcome(result.GetResultWithOwnership())
                                   : SampleTrainingSessionOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
@@ -349,7 +351,8 @@ SampleTrainingSessionWithResponseStreamOutcome SageMakerTrainingSessionRuntimeCl
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<SampleTrainingSessionWithResponseStreamOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<SampleTrainingSessionWithResponseStreamOutcome>(
+      request, std::move(span),
       [&]() -> SampleTrainingSessionWithResponseStreamOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -365,7 +368,7 @@ SampleTrainingSessionWithResponseStreamOutcome SageMakerTrainingSessionRuntimeCl
         return result.IsSuccess() ? SampleTrainingSessionWithResponseStreamOutcome(result.GetResultWithOwnership())
                                   : SampleTrainingSessionWithResponseStreamOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }

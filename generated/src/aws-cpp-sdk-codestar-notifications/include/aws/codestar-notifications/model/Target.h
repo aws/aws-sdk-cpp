@@ -36,10 +36,12 @@ class Target {
   ///@{
   /**
    * <p>The target type. Can be an Amazon Q Developer in chat applications topic or
-   * Amazon Q Developer in chat applications client.</p> <ul> <li> <p>Amazon Q
+   * Amazon Q Developer in chat applications client.</p> <ul> <li> <p> Amazon Q
    * Developer in chat applications topics are specified as <code>SNS</code>.</p>
-   * </li> <li> <p>Amazon Q Developer in chat applications clients are specified as
-   * <code>AWSChatbotSlack</code>.</p> </li> </ul>
+   * </li> <li> <p> Amazon Q Developer in chat applications clients are specified as
+   * <code>AWSChatbotSlack</code>.</p> </li> <li> <p> Amazon Q Developer in chat
+   * applications clients for Microsoft Teams are specified as
+   * <code>AWSChatbotMicrosoftTeams</code>.</p> </li> </ul>
    */
   inline const Aws::String& GetTargetType() const { return m_targetType; }
   inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }

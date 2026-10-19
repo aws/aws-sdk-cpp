@@ -30,4 +30,10 @@ void GetAttachedFileRequest::AddQueryStringParameters(URI& uri) const {
     uri.AddQueryStringParameter("associatedResourceArn", ss.str());
     ss.str("");
   }
+
+  if (m_urlContentDispositionHasBeenSet) {
+    ss << ContentDispositionMapper::GetNameForContentDisposition(m_urlContentDisposition);
+    uri.AddQueryStringParameter("urlContentDisposition", ss.str());
+    ss.str("");
+  }
 }

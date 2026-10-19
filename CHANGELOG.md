@@ -1,3 +1,40 @@
+# 1.11.913 (2026-10-19)
+
+## SDK Highlights
+* **Feature**: Codegen true async path for CRT HTTP based clients
+
+## Service Updates
+* **Amplify**: Documentation update release for AWS service
+* **Bedrock Agent Runtime**: Adds support for applying a Retrieval Instruction, optionally by version, to AgenticRetrieveStream requests for Amazon Bedrock Knowledge Bases, and reports the applied instruction and version on the trace.
+* **Bedrock Agent**: Adds Retrieval Instructions for Amazon Bedrock Knowledge Bases. Create, get, update, delete, list, and version customer-authored instructions that guide how a knowledge base retrieves and answers, with content review before use.
+* **Bedrock AgentCore**: Adds the Builtin.FailureAnalysis evaluator for batch evaluations. GetBatchEvaluation now returns insightResults that group session failures into insights with root causes and suggested fixes.
+* **CloudWatch Logs**: Amazon CloudWatch Logs now supports filtering DescribeDeliverySources by resourceArns, DescribeDeliveryDestinations by names, and DescribeDeliveries by deliverySourceNames.
+* **CloudWatch**: This release adds ActionConfiguration to PutMetricAlarm, PutCompositeAlarm and PutLogAlarm. It allows customers to include an alarm's tags in its notifications and alarm state change events
+* **CodeCommit**: Documentation update release for AWS service
+* **CodeConnections**: Documentation update release for AWS service
+* **CodeDeploy**: Adds support for suspending Amazon EC2 Auto Scaling processes during CodeDeploy EC2 in-place deployments. Use ec2DeploymentOptions to choose which processes are suspended and resumed.
+* **CodePipeline**: Documentation update release for AWS service
+* **Connect**: Amazon Connect GetAttachedFile API now supports an optional UrlContentDisposition parameter. Set it to INLINE to get a pre-signed URL that displays the file in the browser, so agents can preview email attachments without downloading them. ATTACHMENT (download) remains the default.
+* **ControlTower**: Documentation update release for AWS service
+* **DataBrew**: Documentation update release for AWS service
+* **DataZone**: Adds SDK and CLI support for the Iceberg REST catalog connection types already available in Amazon SageMaker Unified Studio - ICEBERGRESTCATALOG, SNOWFLAKEICEBERGRESTCATALOG, and DATABRICKSICEBERGRESTCATALOG.
+* **DevOps Agent**: Documentation update release for AWS service
+* **DynamoDB**: Enable account endpoint generation for existing CN and GovCloud regions
+* **ECS**: Adds support for configurable envoy application log levels. Customers can now debug network connectivity issues with their task's sidecar envoys.
+* **EMR containers**: Documentation update release for AWS service
+* **GuardDuty**: Adding a new Expected Bucket Owner optional field for GuardDuty publishing destination APIs
+* **IoT Wireless**: Documentation update release for AWS service
+* **ObservabilityAdmin**: Adding support for EKS Container Insights Telemetry Rules
+* **OpenSearch**: Amazon OpenSearch Service adds a new TLS security policy to support FIPS policy and post-quantum cryptography
+* **SocialMessaging**: Adding support for WhatsApp Direct Send.
+* **Timestream InfluxDB**: Adds four new parameters to the InfluxDBv3Enterprise parameter group for Amazon Timestream for InfluxDB. The new parameters are upgradePachaTree, walBufferSize, snapshotSize, and snapshotDuration.
+* **WorkSpaces**: Adds optional imageValidationMode enum to ImportCustomWorkspaceImageRequest. This allows customers to opt-in to having prevalidation run in the service account instead of customer account.
+* **Workspaces Instances**: ModifyVolume is a new public API for WorkSpaces Core Managed Instances. Customers can change the size, type, IOPS, or throughput of an existing managed volume online, with no stop required. Customers track progress by calling EC2 DescribeVolumesModifications directly.
+* **XRay**: Adds support for encrypting the Transaction Search spans log group with a customer managed AWS KMS key. Pass the key ARN in the new CloudWatchLogsConfiguration.SpansLogGroupKmsKeyId field of UpdateTraceSegmentDestination. X-Ray applies the key when it creates the log group.
+* **codestar notifications**: Documentation update release for AWS service
+* **drs**: Documentation update release for AWS service
+* **grafana**: Documentation update release for AWS service
+
 # 1.11.912 (2026-10-14)
 
 ## SDK Highlights

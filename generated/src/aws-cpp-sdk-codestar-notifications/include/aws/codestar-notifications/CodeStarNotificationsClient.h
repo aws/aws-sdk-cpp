@@ -42,8 +42,8 @@ namespace CodeStarNotifications {
  * notification rule in your account. </p> </li> <li> <p> <a>UntagResource</a>,
  * which removes a tag from a notification rule in your account. </p> </li> </ul>
  * <p> For information about how to use CodeStar Notifications, see the <a
- * href="https://docs.aws.amazon.com/dtconsole/latest/userguide/what-is-dtconsole.html">Amazon
- * Web Services Developer Tools Console User Guide</a>. </p>
+ * href="https://docs.aws.amazon.com/dtconsole/latest/userguide/what-is-dtconsole.html">
+ * Amazon Web Services Developer Tools Console User Guide</a>. </p>
  */
 class AWS_CODESTARNOTIFICATIONS_API CodeStarNotificationsClient
     : public Aws::Client::AWSJsonClient,

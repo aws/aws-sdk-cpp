@@ -55,7 +55,7 @@ class UpdateWorkspaceAuthenticationRequest : public ManagedGrafanaRequest {
    * to authenticate users for using the Grafana console within a workspace. For more
    * information, see <a
    * href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User
-   * authentication in Amazon Managed Grafana</a>.</p>
+   * authentication in Amazon Managed Grafana </a>.</p>
    */
   inline const Aws::Vector<AuthenticationProviderTypes>& GetAuthenticationProviders() const { return m_authenticationProviders; }
   inline bool AuthenticationProvidersHasBeenSet() const { return m_authenticationProvidersHasBeenSet; }

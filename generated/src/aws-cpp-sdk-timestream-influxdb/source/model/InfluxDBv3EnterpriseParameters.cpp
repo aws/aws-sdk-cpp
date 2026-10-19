@@ -234,6 +234,22 @@ InfluxDBv3EnterpriseParameters& InfluxDBv3EnterpriseParameters::operator=(JsonVi
     m_catalogSyncInterval = jsonValue.GetObject("catalogSyncInterval");
     m_catalogSyncIntervalHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("upgradePachaTree")) {
+    m_upgradePachaTree = jsonValue.GetBool("upgradePachaTree");
+    m_upgradePachaTreeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("walBufferSize")) {
+    m_walBufferSize = jsonValue.GetInt64("walBufferSize");
+    m_walBufferSizeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("snapshotSize")) {
+    m_snapshotSize = jsonValue.GetObject("snapshotSize");
+    m_snapshotSizeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("snapshotDuration")) {
+    m_snapshotDuration = jsonValue.GetObject("snapshotDuration");
+    m_snapshotDurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -454,6 +470,22 @@ JsonValue InfluxDBv3EnterpriseParameters::Jsonize() const {
 
   if (m_catalogSyncIntervalHasBeenSet) {
     payload.WithObject("catalogSyncInterval", m_catalogSyncInterval.Jsonize());
+  }
+
+  if (m_upgradePachaTreeHasBeenSet) {
+    payload.WithBool("upgradePachaTree", m_upgradePachaTree);
+  }
+
+  if (m_walBufferSizeHasBeenSet) {
+    payload.WithInt64("walBufferSize", m_walBufferSize);
+  }
+
+  if (m_snapshotSizeHasBeenSet) {
+    payload.WithObject("snapshotSize", m_snapshotSize.Jsonize());
+  }
+
+  if (m_snapshotDurationHasBeenSet) {
+    payload.WithObject("snapshotDuration", m_snapshotDuration.Jsonize());
   }
 
   return payload;

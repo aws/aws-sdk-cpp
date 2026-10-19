@@ -21,7 +21,7 @@ namespace EMRContainers {
 namespace Model {
 
 /**
- * <p>Lake Formation related configuration inputs for the security
+ * <p> Lake Formation related configuration inputs for the security
  * configuration.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/LakeFormationConfiguration">AWS
  * API Reference</a></p>

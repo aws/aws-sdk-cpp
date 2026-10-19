@@ -54,8 +54,8 @@ class NetworkAccessConfiguration {
    * <code>pl-<i>1a2b3c4d</i> </code>.</p> <p>For more information about prefix
    * lists, see <a
    * href="https://docs.aws.amazon.com/vpc/latest/userguide/managed-prefix-lists.html">Group
-   * CIDR blocks using managed prefix lists</a>in the <i>Amazon Virtual Private Cloud
-   * User Guide</i>.</p>
+   * CIDR blocks using managed prefix lists</a>in the <i> Amazon Virtual Private
+   * Cloud User Guide</i>.</p>
    */
   inline const Aws::Vector<Aws::String>& GetPrefixListIds() const { return m_prefixListIds; }
   inline bool PrefixListIdsHasBeenSet() const { return m_prefixListIdsHasBeenSet; }
@@ -87,7 +87,7 @@ class NetworkAccessConfiguration {
    * <p>VPC endpoint IDs have the format <code>vpce-<i>1a2b3c4d</i> </code>.</p>
    * <p>For more information about creating an interface VPC endpoint, see <a
    * href="https://docs.aws.amazon.com/grafana/latest/userguide/VPC-endpoints">Interface
-   * VPC endpoints</a> in the <i>Amazon Managed Grafana User Guide</i>.</p>
+   * VPC endpoints</a> in the <i> Amazon Managed Grafana User Guide</i>.</p>
    * <p>The only VPC endpoints that can be specified here are interface VPC endpoints
    * for Grafana workspaces (using the
    * <code>com.amazonaws.[region].grafana-workspace</code> service endpoint). Other

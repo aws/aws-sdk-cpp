@@ -11,6 +11,7 @@
 #include <aws/codedeploy/model/BlueGreenDeploymentConfiguration.h>
 #include <aws/codedeploy/model/ComputePlatform.h>
 #include <aws/codedeploy/model/DeploymentStyle.h>
+#include <aws/codedeploy/model/EC2DeploymentOptions.h>
 #include <aws/codedeploy/model/EC2TagFilter.h>
 #include <aws/codedeploy/model/EC2TagSet.h>
 #include <aws/codedeploy/model/ECSService.h>
@@ -497,6 +498,22 @@ class DeploymentGroupInfo {
   ///@}
 
   ///@{
+
+  inline const EC2DeploymentOptions& GetEc2DeploymentOptions() const { return m_ec2DeploymentOptions; }
+  inline bool Ec2DeploymentOptionsHasBeenSet() const { return m_ec2DeploymentOptionsHasBeenSet; }
+  template <typename Ec2DeploymentOptionsT = EC2DeploymentOptions>
+  void SetEc2DeploymentOptions(Ec2DeploymentOptionsT&& value) {
+    m_ec2DeploymentOptionsHasBeenSet = true;
+    m_ec2DeploymentOptions = std::forward<Ec2DeploymentOptionsT>(value);
+  }
+  template <typename Ec2DeploymentOptionsT = EC2DeploymentOptions>
+  DeploymentGroupInfo& WithEc2DeploymentOptions(Ec2DeploymentOptionsT&& value) {
+    SetEc2DeploymentOptions(std::forward<Ec2DeploymentOptionsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
   /**
    * <p>Indicates whether the deployment group was configured to have CodeDeploy
    * install a termination hook into an Auto Scaling group.</p> <p>For more
@@ -561,6 +578,8 @@ class DeploymentGroupInfo {
 
   Aws::Vector<ECSService> m_ecsServices;
 
+  EC2DeploymentOptions m_ec2DeploymentOptions;
+
   bool m_terminationHookEnabled{false};
   bool m_applicationNameHasBeenSet = false;
   bool m_deploymentGroupIdHasBeenSet = false;
@@ -584,6 +603,7 @@ class DeploymentGroupInfo {
   bool m_onPremisesTagSetHasBeenSet = false;
   bool m_computePlatformHasBeenSet = false;
   bool m_ecsServicesHasBeenSet = false;
+  bool m_ec2DeploymentOptionsHasBeenSet = false;
   bool m_terminationHookEnabledHasBeenSet = false;
 };
 

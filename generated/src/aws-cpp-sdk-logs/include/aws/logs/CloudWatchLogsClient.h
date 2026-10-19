@@ -3845,7 +3845,7 @@ class AWS_CLOUDWATCHLOGS_API CloudWatchLogsClient : public Aws::Client::AWSJsonC
    * <code>logs:CreateLogStream </code> actions</p> </li> <li> <p> <b>Supported
    * principals</b> - Policy only applies when operations are invoked by Amazon Web
    * Services service principals (not IAM users, roles, or cross-account
-   * principals</p> </li> <li> <p> <b>Policy limits</b> - An account can have a
+   * principals)</p> </li> <li> <p> <b>Policy limits</b> - An account can have a
    * maximum of 10 policies without resourceARN and one per LogGroup resourceARN</p>
    * </li> </ul>  <p>Resource policies with actions invoked by non-Amazon
    * Web Services service principals (such as IAM users, roles, or other Amazon Web

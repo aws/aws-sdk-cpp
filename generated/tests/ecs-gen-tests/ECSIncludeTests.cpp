@@ -377,6 +377,8 @@
 #include <aws/ecs/model/ServiceConnectAccessLoggingFormat.h>
 #include <aws/ecs/model/ServiceConnectClientAlias.h>
 #include <aws/ecs/model/ServiceConnectConfiguration.h>
+#include <aws/ecs/model/ServiceConnectContainerConfiguration.h>
+#include <aws/ecs/model/ServiceConnectContainerLogLevel.h>
 #include <aws/ecs/model/ServiceConnectIncludeQueryParameters.h>
 #include <aws/ecs/model/ServiceConnectService.h>
 #include <aws/ecs/model/ServiceConnectServiceResource.h>

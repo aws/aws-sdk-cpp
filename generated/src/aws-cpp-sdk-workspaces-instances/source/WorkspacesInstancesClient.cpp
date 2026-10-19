@@ -31,6 +31,7 @@
 #include <aws/workspaces-instances/model/ListRegionsRequest.h>
 #include <aws/workspaces-instances/model/ListTagsForResourceRequest.h>
 #include <aws/workspaces-instances/model/ListWorkspaceInstancesRequest.h>
+#include <aws/workspaces-instances/model/ModifyVolumeRequest.h>
 #include <aws/workspaces-instances/model/TagResourceRequest.h>
 #include <aws/workspaces-instances/model/UntagResourceRequest.h>
 #include <smithy/tracing/TracingUtils.h>
@@ -254,6 +255,11 @@ ListWorkspaceInstancesOutcome WorkspacesInstancesClient::ListWorkspaceInstances(
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListWorkspaceInstancesOutcome(result.GetResultWithOwnership())
                             : ListWorkspaceInstancesOutcome(std::move(result.GetError()));
+}
+
+ModifyVolumeOutcome WorkspacesInstancesClient::ModifyVolume(const ModifyVolumeRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyVolumeOutcome(result.GetResultWithOwnership()) : ModifyVolumeOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome WorkspacesInstancesClient::TagResource(const TagResourceRequest& request) const {

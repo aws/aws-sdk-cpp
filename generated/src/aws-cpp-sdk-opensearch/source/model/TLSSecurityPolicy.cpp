@@ -19,6 +19,7 @@ static const int Policy_Min_TLS_1_0_2019_07_HASH = HashingUtils::HashString("Pol
 static const int Policy_Min_TLS_1_2_2019_07_HASH = HashingUtils::HashString("Policy-Min-TLS-1-2-2019-07");
 static const int Policy_Min_TLS_1_2_PFS_2023_10_HASH = HashingUtils::HashString("Policy-Min-TLS-1-2-PFS-2023-10");
 static const int Policy_Min_TLS_1_2_RFC9151_FIPS_2024_08_HASH = HashingUtils::HashString("Policy-Min-TLS-1-2-RFC9151-FIPS-2024-08");
+static const int Policy_Min_TLS_1_2_FIPS_PQ_2026_10_HASH = HashingUtils::HashString("Policy-Min-TLS-1-2-FIPS-PQ-2026-10");
 
 TLSSecurityPolicy GetTLSSecurityPolicyForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -30,6 +31,8 @@ TLSSecurityPolicy GetTLSSecurityPolicyForName(const Aws::String& name) {
     return TLSSecurityPolicy::Policy_Min_TLS_1_2_PFS_2023_10;
   } else if (hashCode == Policy_Min_TLS_1_2_RFC9151_FIPS_2024_08_HASH) {
     return TLSSecurityPolicy::Policy_Min_TLS_1_2_RFC9151_FIPS_2024_08;
+  } else if (hashCode == Policy_Min_TLS_1_2_FIPS_PQ_2026_10_HASH) {
+    return TLSSecurityPolicy::Policy_Min_TLS_1_2_FIPS_PQ_2026_10;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -52,6 +55,8 @@ Aws::String GetNameForTLSSecurityPolicy(TLSSecurityPolicy enumValue) {
       return "Policy-Min-TLS-1-2-PFS-2023-10";
     case TLSSecurityPolicy::Policy_Min_TLS_1_2_RFC9151_FIPS_2024_08:
       return "Policy-Min-TLS-1-2-RFC9151-FIPS-2024-08";
+    case TLSSecurityPolicy::Policy_Min_TLS_1_2_FIPS_PQ_2026_10:
+      return "Policy-Min-TLS-1-2-FIPS-PQ-2026-10";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

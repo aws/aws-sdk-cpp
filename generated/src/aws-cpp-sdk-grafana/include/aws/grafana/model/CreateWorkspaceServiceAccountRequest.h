@@ -53,7 +53,7 @@ class CreateWorkspaceServiceAccountRequest : public ManagedGrafanaRequest {
    * <p>The permission level to use for this service account.</p>  <p>For more
    * information about the roles and the permissions each has, see <a
    * href="https://docs.aws.amazon.com/grafana/latest/userguide/Grafana-user-roles.html">User
-   * roles</a> in the <i>Amazon Managed Grafana User Guide</i>.</p>
+   * roles</a> in the <i> Amazon Managed Grafana User Guide</i>.</p>
    */
   inline Role GetGrafanaRole() const { return m_grafanaRole; }
   inline bool GrafanaRoleHasBeenSet() const { return m_grafanaRoleHasBeenSet; }

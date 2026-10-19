@@ -16,16 +16,16 @@
 namespace Aws {
 namespace CodeCommit {
 /**
- * <fullname>CodeCommit</fullname> <p>This is the <i>CodeCommit API Reference</i>.
- * This reference provides descriptions of the operations and data types for
- * CodeCommit API along with usage examples.</p> <p>You can use the CodeCommit API
- * to work with the following objects:</p> <p>Repositories, by calling the
- * following:</p> <ul> <li> <p> <a>BatchGetRepositories</a>, which returns
- * information about one or more repositories associated with your Amazon Web
- * Services account.</p> </li> <li> <p> <a>CreateRepository</a>, which creates an
- * CodeCommit repository.</p> </li> <li> <p> <a>DeleteRepository</a>, which deletes
- * an CodeCommit repository.</p> </li> <li> <p> <a>GetRepository</a>, which returns
- * information about a specified repository.</p> </li> <li> <p>
+ * <fullname> CodeCommit </fullname> <p>This is the <i> CodeCommit API
+ * Reference</i>. This reference provides descriptions of the operations and data
+ * types for CodeCommit API along with usage examples.</p> <p>You can use the
+ * CodeCommit API to work with the following objects:</p> <p>Repositories, by
+ * calling the following:</p> <ul> <li> <p> <a>BatchGetRepositories</a>, which
+ * returns information about one or more repositories associated with your Amazon
+ * Web Services account.</p> </li> <li> <p> <a>CreateRepository</a>, which creates
+ * an CodeCommit repository.</p> </li> <li> <p> <a>DeleteRepository</a>, which
+ * deletes an CodeCommit repository.</p> </li> <li> <p> <a>GetRepository</a>, which
+ * returns information about a specified repository.</p> </li> <li> <p>
  * <a>ListRepositories</a>, which lists all CodeCommit repositories associated with
  * your Amazon Web Services account.</p> </li> <li> <p>
  * <a>UpdateRepositoryDescription</a>, which sets or updates the description of the
@@ -178,8 +178,8 @@ namespace CodeCommit {
  * <a>TestRepositoryTriggers</a>, which tests the functionality of a repository
  * trigger by sending data to the trigger target.</p> </li> </ul> <p>For
  * information about how to use CodeCommit, see the <a
- * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">CodeCommit
- * User Guide</a>.</p>
+ * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">
+ * CodeCommit User Guide</a>.</p>
  */
 class AWS_CODECOMMIT_API CodeCommitClient : public Aws::Client::AWSJsonClient,
                                             public Aws::Client::ClientWithAsyncTemplateMethods<CodeCommitClient>,
@@ -1714,9 +1714,9 @@ class AWS_CODECOMMIT_API CodeCommitClient : public Aws::Client::AWSJsonClient,
    * <p>Gets information about Amazon Web Servicestags for a specified Amazon
    * Resource Name (ARN) in CodeCommit. For a list of valid resources in CodeCommit,
    * see <a
-   * href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit
-   * Resources and Operations</a> in the<i> CodeCommit User Guide</i>.</p><p><h3>See
-   * Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">
+   * CodeCommit Resources and Operations</a> in the<i> CodeCommit User
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListTagsForResource">AWS
    * API Reference</a></p>
    */
@@ -2120,9 +2120,9 @@ class AWS_CODECOMMIT_API CodeCommitClient : public Aws::Client::AWSJsonClient,
   /**
    * <p>Adds or updates tags for a resource in CodeCommit. For a list of valid
    * resources in CodeCommit, see <a
-   * href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit
-   * Resources and Operations</a> in the <i>CodeCommit User Guide</i>.</p><p><h3>See
-   * Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">
+   * CodeCommit Resources and Operations</a> in the <i> CodeCommit User
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/TagResource">AWS
    * API Reference</a></p>
    */
@@ -2179,9 +2179,9 @@ class AWS_CODECOMMIT_API CodeCommitClient : public Aws::Client::AWSJsonClient,
   /**
    * <p>Removes tags for a resource in CodeCommit. For a list of valid resources in
    * CodeCommit, see <a
-   * href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit
-   * Resources and Operations</a> in the <i>CodeCommit User Guide</i>.</p><p><h3>See
-   * Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">
+   * CodeCommit Resources and Operations</a> in the <i> CodeCommit User
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UntagResource">AWS
    * API Reference</a></p>
    */

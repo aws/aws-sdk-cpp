@@ -140,6 +140,46 @@ class TemplateSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The source of the template. A value of AUTO_GENERATED indicates that the
+   * template was created automatically from a message that you sent. This field is
+   * not present for templates that you created manually.</p>
+   */
+  inline const Aws::String& GetTemplateSource() const { return m_templateSource; }
+  inline bool TemplateSourceHasBeenSet() const { return m_templateSourceHasBeenSet; }
+  template <typename TemplateSourceT = Aws::String>
+  void SetTemplateSource(TemplateSourceT&& value) {
+    m_templateSourceHasBeenSet = true;
+    m_templateSource = std::forward<TemplateSourceT>(value);
+  }
+  template <typename TemplateSourceT = Aws::String>
+  TemplateSummary& WithTemplateSource(TemplateSourceT&& value) {
+    SetTemplateSource(std::forward<TemplateSourceT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The category that the template content actually belongs to, when it differs
+   * from the template's current category. This field is present only when the
+   * template has been flagged as miscategorized.</p>
+   */
+  inline const Aws::String& GetCorrectCategory() const { return m_correctCategory; }
+  inline bool CorrectCategoryHasBeenSet() const { return m_correctCategoryHasBeenSet; }
+  template <typename CorrectCategoryT = Aws::String>
+  void SetCorrectCategory(CorrectCategoryT&& value) {
+    m_correctCategoryHasBeenSet = true;
+    m_correctCategory = std::forward<CorrectCategoryT>(value);
+  }
+  template <typename CorrectCategoryT = Aws::String>
+  TemplateSummary& WithCorrectCategory(CorrectCategoryT&& value) {
+    SetCorrectCategory(std::forward<CorrectCategoryT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_templateName;
 
@@ -152,12 +192,18 @@ class TemplateSummary {
   Aws::String m_templateLanguage;
 
   Aws::String m_templateCategory;
+
+  Aws::String m_templateSource;
+
+  Aws::String m_correctCategory;
   bool m_templateNameHasBeenSet = false;
   bool m_metaTemplateIdHasBeenSet = false;
   bool m_templateStatusHasBeenSet = false;
   bool m_templateQualityScoreHasBeenSet = false;
   bool m_templateLanguageHasBeenSet = false;
   bool m_templateCategoryHasBeenSet = false;
+  bool m_templateSourceHasBeenSet = false;
+  bool m_correctCategoryHasBeenSet = false;
 };
 
 }  // namespace Model

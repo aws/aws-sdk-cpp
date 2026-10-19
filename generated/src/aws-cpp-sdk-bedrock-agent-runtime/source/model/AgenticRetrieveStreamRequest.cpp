@@ -43,6 +43,10 @@ Aws::String AgenticRetrieveStreamRequest::SerializePayload() const {
     payload.WithObject("policyConfiguration", m_policyConfiguration.Jsonize());
   }
 
+  if (m_retrievalInstructionConfigurationHasBeenSet) {
+    payload.WithObject("retrievalInstructionConfiguration", m_retrievalInstructionConfiguration.Jsonize());
+  }
+
   if (m_retrieversHasBeenSet) {
     Aws::Utils::Array<JsonValue> retrieversJsonList(m_retrievers.size());
     for (unsigned retrieversIndex = 0; retrieversIndex < retrieversJsonList.GetLength(); ++retrieversIndex) {

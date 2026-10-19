@@ -24,7 +24,7 @@ namespace Model {
  * information about how Amplify applies an optimal cache configuration for your
  * app based on the type of content that is being served, see <a
  * href="https://docs.aws.amazon.com/amplify/latest/userguide/managing-cache-configuration">Managing
- * cache configuration</a> in the <i>Amplify User guide</i>.</p><p><h3>See
+ * cache configuration</a> in the <i> Amplify User guide</i>.</p><p><h3>See
  * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CacheConfig">AWS
  * API Reference</a></p>

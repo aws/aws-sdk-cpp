@@ -15,7 +15,8 @@ enum class TLSSecurityPolicy {
   Policy_Min_TLS_1_0_2019_07,
   Policy_Min_TLS_1_2_2019_07,
   Policy_Min_TLS_1_2_PFS_2023_10,
-  Policy_Min_TLS_1_2_RFC9151_FIPS_2024_08
+  Policy_Min_TLS_1_2_RFC9151_FIPS_2024_08,
+  Policy_Min_TLS_1_2_FIPS_PQ_2026_10
 };
 
 namespace TLSSecurityPolicyMapper {

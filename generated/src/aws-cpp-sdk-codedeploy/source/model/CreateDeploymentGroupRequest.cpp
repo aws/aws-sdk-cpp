@@ -115,6 +115,10 @@ Aws::String CreateDeploymentGroupRequest::SerializePayload() const {
     payload.WithArray("tags", std::move(tagsJsonList));
   }
 
+  if (m_ec2DeploymentOptionsHasBeenSet) {
+    payload.WithObject("ec2DeploymentOptions", m_ec2DeploymentOptions.Jsonize());
+  }
+
   if (m_terminationHookEnabledHasBeenSet) {
     payload.WithBool("terminationHookEnabled", m_terminationHookEnabled);
   }

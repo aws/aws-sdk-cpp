@@ -91,11 +91,11 @@ class UpdateWorkspaceRequest : public ManagedGrafanaRequest {
    * <code>workspaceRoleArn</code> that the workspace will use for accessing Amazon
    * Web Services resources.</p> <p>For more information on the role and permissions
    * needed, see <a
-   * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon
-   * Managed Grafana permissions and policies for Amazon Web Services data sources
-   * and notification channels</a> </p>  <p>Do not use this to convert a
-   * <code>CUSTOMER_MANAGED</code> workspace to <code>SERVICE_MANAGED</code>. Do not
-   * include this parameter if you want to leave the workspace as
+   * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">
+   * Amazon Managed Grafana permissions and policies for Amazon Web Services data
+   * sources and notification channels</a> </p>  <p>Do not use this to convert
+   * a <code>CUSTOMER_MANAGED</code> workspace to <code>SERVICE_MANAGED</code>. Do
+   * not include this parameter if you want to leave the workspace as
    * <code>SERVICE_MANAGED</code>.</p> <p>You can convert a
    * <code>CUSTOMER_MANAGED</code> workspace to <code>SERVICE_MANAGED</code> using
    * the Amazon Managed Grafana console. For more information, see <a

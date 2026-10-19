@@ -17,12 +17,14 @@
 #include <aws/monitoring/CloudWatchWaiter.h>
 #include <aws/monitoring/CloudWatch_EXPORTS.h>
 #include <aws/monitoring/internal/CloudWatchEndpointRules.h>
+#include <aws/monitoring/model/ActionConfiguration.h>
 #include <aws/monitoring/model/ActionsSuppressedBy.h>
 #include <aws/monitoring/model/AlarmContributor.h>
 #include <aws/monitoring/model/AlarmHistoryItem.h>
 #include <aws/monitoring/model/AlarmMuteRuleStatus.h>
 #include <aws/monitoring/model/AlarmMuteRuleSummary.h>
 #include <aws/monitoring/model/AlarmPromQLCriteria.h>
+#include <aws/monitoring/model/AlarmTagsPropagation.h>
 #include <aws/monitoring/model/AlarmType.h>
 #include <aws/monitoring/model/AnomalyDetector.h>
 #include <aws/monitoring/model/AnomalyDetectorConfiguration.h>

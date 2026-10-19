@@ -1009,6 +1009,81 @@ class InfluxDBv3EnterpriseParameters {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether to migrate the cluster from the Parquet storage engine to
+   * PachaTree. This action cannot be reversed. To create a new cluster on Parquet,
+   * set this to false.</p>
+   */
+  inline bool GetUpgradePachaTree() const { return m_upgradePachaTree; }
+  inline bool UpgradePachaTreeHasBeenSet() const { return m_upgradePachaTreeHasBeenSet; }
+  inline void SetUpgradePachaTree(bool value) {
+    m_upgradePachaTreeHasBeenSet = true;
+    m_upgradePachaTree = value;
+  }
+  inline InfluxDBv3EnterpriseParameters& WithUpgradePachaTree(bool value) {
+    SetUpgradePachaTree(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The maximum size, in bytes, of the in-memory WAL buffer before a flush is
+   * triggered regardless of the flush interval. Increase this value if WAL files are
+   * flushed before the interval elapses.</p>
+   */
+  inline long long GetWalBufferSize() const { return m_walBufferSize; }
+  inline bool WalBufferSizeHasBeenSet() const { return m_walBufferSizeHasBeenSet; }
+  inline void SetWalBufferSize(long long value) {
+    m_walBufferSizeHasBeenSet = true;
+    m_walBufferSize = value;
+  }
+  inline InfluxDBv3EnterpriseParameters& WithWalBufferSize(long long value) {
+    SetWalBufferSize(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The maximum size of the active snapshot bucket before it is rotated for
+   * snapshotting.</p>
+   */
+  inline const PercentOrAbsoluteLong& GetSnapshotSize() const { return m_snapshotSize; }
+  inline bool SnapshotSizeHasBeenSet() const { return m_snapshotSizeHasBeenSet; }
+  template <typename SnapshotSizeT = PercentOrAbsoluteLong>
+  void SetSnapshotSize(SnapshotSizeT&& value) {
+    m_snapshotSizeHasBeenSet = true;
+    m_snapshotSize = std::forward<SnapshotSizeT>(value);
+  }
+  template <typename SnapshotSizeT = PercentOrAbsoluteLong>
+  InfluxDBv3EnterpriseParameters& WithSnapshotSize(SnapshotSizeT&& value) {
+    SetSnapshotSize(std::forward<SnapshotSizeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The time-based trigger that controls how often the ingester creates
+   * snapshots. This value is also used on query nodes as the bucket rotation
+   * interval for the replica buffer.</p>
+   */
+  inline const Duration& GetSnapshotDuration() const { return m_snapshotDuration; }
+  inline bool SnapshotDurationHasBeenSet() const { return m_snapshotDurationHasBeenSet; }
+  template <typename SnapshotDurationT = Duration>
+  void SetSnapshotDuration(SnapshotDurationT&& value) {
+    m_snapshotDurationHasBeenSet = true;
+    m_snapshotDuration = std::forward<SnapshotDurationT>(value);
+  }
+  template <typename SnapshotDurationT = Duration>
+  InfluxDBv3EnterpriseParameters& WithSnapshotDuration(SnapshotDurationT&& value) {
+    SetSnapshotDuration(std::forward<SnapshotDurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   int m_queryFileLimit{0};
 
@@ -1117,6 +1192,14 @@ class InfluxDBv3EnterpriseParameters {
   Duration m_replicationInterval;
 
   Duration m_catalogSyncInterval;
+
+  bool m_upgradePachaTree{false};
+
+  long long m_walBufferSize{0};
+
+  PercentOrAbsoluteLong m_snapshotSize;
+
+  Duration m_snapshotDuration;
   bool m_queryFileLimitHasBeenSet = false;
   bool m_queryLogSizeHasBeenSet = false;
   bool m_logFilterHasBeenSet = false;
@@ -1171,6 +1254,10 @@ class InfluxDBv3EnterpriseParameters {
   bool m_distinctValueCacheDisableFromHistoryHasBeenSet = false;
   bool m_replicationIntervalHasBeenSet = false;
   bool m_catalogSyncIntervalHasBeenSet = false;
+  bool m_upgradePachaTreeHasBeenSet = false;
+  bool m_walBufferSizeHasBeenSet = false;
+  bool m_snapshotSizeHasBeenSet = false;
+  bool m_snapshotDurationHasBeenSet = false;
 };
 
 }  // namespace Model

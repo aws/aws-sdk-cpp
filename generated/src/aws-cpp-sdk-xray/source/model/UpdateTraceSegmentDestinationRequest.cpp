@@ -19,5 +19,9 @@ Aws::String UpdateTraceSegmentDestinationRequest::SerializePayload() const {
     payload.WithString("Destination", TraceSegmentDestinationMapper::GetNameForTraceSegmentDestination(m_destination));
   }
 
+  if (m_cloudWatchLogsConfigurationHasBeenSet) {
+    payload.WithObject("CloudWatchLogsConfiguration", m_cloudWatchLogsConfiguration.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

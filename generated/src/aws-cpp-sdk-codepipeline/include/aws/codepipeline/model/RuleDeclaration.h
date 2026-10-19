@@ -32,8 +32,8 @@ namespace Model {
  * conditions</a> and <a
  * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts-how-it-works-conditions.html">How
  * do stage conditions work?</a>. For more information about rules, see the <a
- * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/rule-reference.html">CodePipeline
- * rule reference</a>.</p><p><h3>See Also:</h3>   <a
+ * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/rule-reference.html">
+ * CodePipeline rule reference</a>.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/RuleDeclaration">AWS
  * API Reference</a></p>
  */

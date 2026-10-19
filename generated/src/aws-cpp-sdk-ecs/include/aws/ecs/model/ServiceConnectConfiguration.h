@@ -9,6 +9,7 @@
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/ecs/model/LogConfiguration.h>
 #include <aws/ecs/model/ServiceConnectAccessLogConfiguration.h>
+#include <aws/ecs/model/ServiceConnectContainerConfiguration.h>
 #include <aws/ecs/model/ServiceConnectService.h>
 
 #include <utility>
@@ -156,6 +157,37 @@ class ServiceConnectConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The settings for the Service Connect proxy container that Amazon ECS adds to
+   * each task in this service. Each object in the list sets exactly one setting, and
+   * each setting can appear only once in the list.</p> <p>Your changes to these
+   * settings apply only to tasks that Amazon ECS launches after you update the
+   * service. Your running tasks keep their existing settings until Amazon ECS
+   * replaces them. If you update the <code>serviceConnectConfiguration</code> of
+   * your service and don't include <code>containerConfigurations</code>, the proxy
+   * container settings return to their defaults.</p>
+   */
+  inline const Aws::Vector<ServiceConnectContainerConfiguration>& GetContainerConfigurations() const { return m_containerConfigurations; }
+  inline bool ContainerConfigurationsHasBeenSet() const { return m_containerConfigurationsHasBeenSet; }
+  template <typename ContainerConfigurationsT = Aws::Vector<ServiceConnectContainerConfiguration>>
+  void SetContainerConfigurations(ContainerConfigurationsT&& value) {
+    m_containerConfigurationsHasBeenSet = true;
+    m_containerConfigurations = std::forward<ContainerConfigurationsT>(value);
+  }
+  template <typename ContainerConfigurationsT = Aws::Vector<ServiceConnectContainerConfiguration>>
+  ServiceConnectConfiguration& WithContainerConfigurations(ContainerConfigurationsT&& value) {
+    SetContainerConfigurations(std::forward<ContainerConfigurationsT>(value));
+    return *this;
+  }
+  template <typename ContainerConfigurationsT = ServiceConnectContainerConfiguration>
+  ServiceConnectConfiguration& AddContainerConfigurations(ContainerConfigurationsT&& value) {
+    m_containerConfigurationsHasBeenSet = true;
+    m_containerConfigurations.emplace_back(std::forward<ContainerConfigurationsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   bool m_enabled{false};
 
@@ -166,11 +198,14 @@ class ServiceConnectConfiguration {
   LogConfiguration m_logConfiguration;
 
   ServiceConnectAccessLogConfiguration m_accessLogConfiguration;
+
+  Aws::Vector<ServiceConnectContainerConfiguration> m_containerConfigurations;
   bool m_enabledHasBeenSet = false;
   bool m_namespaceHasBeenSet = false;
   bool m_servicesHasBeenSet = false;
   bool m_logConfigurationHasBeenSet = false;
   bool m_accessLogConfigurationHasBeenSet = false;
+  bool m_containerConfigurationsHasBeenSet = false;
 };
 
 }  // namespace Model

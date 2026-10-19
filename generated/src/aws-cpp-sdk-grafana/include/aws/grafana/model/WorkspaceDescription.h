@@ -306,9 +306,9 @@ class WorkspaceDescription {
    * permissions for data sources and notification channels</a>. For more information
    * about the roles and permissions that must be managed for customer managed
    * workspaces, see <a
-   * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon
-   * Managed Grafana permissions and policies for Amazon Web Services data sources
-   * and notification channels</a> </p>
+   * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">
+   * Amazon Managed Grafana permissions and policies for Amazon Web Services data
+   * sources and notification channels</a> </p>
    */
   inline PermissionType GetPermissionType() const { return m_permissionType; }
   inline bool PermissionTypeHasBeenSet() const { return m_permissionTypeHasBeenSet; }
@@ -379,8 +379,8 @@ class WorkspaceDescription {
   ///@{
   /**
    * <p>Specifies whether this workspace has a full Grafana Enterprise license.</p>
-   *  <p>Amazon Managed Grafana workspaces no longer support Grafana Enterprise
-   * free trials.</p>
+   *  <p> Amazon Managed Grafana workspaces no longer support Grafana
+   * Enterprise free trials.</p>
    */
   inline LicenseType GetLicenseType() const { return m_licenseType; }
   inline bool LicenseTypeHasBeenSet() const { return m_licenseTypeHasBeenSet; }
@@ -397,7 +397,7 @@ class WorkspaceDescription {
   ///@{
   /**
    * <p>Specifies whether this workspace has already fully used its free trial for
-   * Grafana Enterprise.</p>  <p>Amazon Managed Grafana workspaces no longer
+   * Grafana Enterprise.</p>  <p> Amazon Managed Grafana workspaces no longer
    * support Grafana Enterprise free trials.</p>
    */
   inline bool GetFreeTrialConsumed() const { return m_freeTrialConsumed; }
@@ -437,9 +437,9 @@ class WorkspaceDescription {
   ///@{
   /**
    * <p>If this workspace is currently in the free trial period for Grafana
-   * Enterprise, this value specifies when that free trial ends.</p>  <p>Amazon
-   * Managed Grafana workspaces no longer support Grafana Enterprise free trials.</p>
-   *
+   * Enterprise, this value specifies when that free trial ends.</p>  <p>
+   * Amazon Managed Grafana workspaces no longer support Grafana Enterprise free
+   * trials.</p>
    */
   inline const Aws::Utils::DateTime& GetFreeTrialExpiration() const { return m_freeTrialExpiration; }
   inline bool FreeTrialExpirationHasBeenSet() const { return m_freeTrialExpirationHasBeenSet; }

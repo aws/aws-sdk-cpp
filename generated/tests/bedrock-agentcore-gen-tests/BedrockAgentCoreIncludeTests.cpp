@@ -156,6 +156,7 @@
 #include <aws/bedrock-agentcore/model/FailureSubCategoryCluster.h>
 #include <aws/bedrock-agentcore/model/FilterInput.h>
 #include <aws/bedrock-agentcore/model/FilterValue.h>
+#include <aws/bedrock-agentcore/model/FindingTargetType.h>
 #include <aws/bedrock-agentcore/model/GatewayFilter.h>
 #include <aws/bedrock-agentcore/model/GetABTestRequest.h>
 #include <aws/bedrock-agentcore/model/GetABTestResult.h>
@@ -253,6 +254,9 @@
 #include <aws/bedrock-agentcore/model/InlineMemoryContent.h>
 #include <aws/bedrock-agentcore/model/InputContentBlock.h>
 #include <aws/bedrock-agentcore/model/Insight.h>
+#include <aws/bedrock-agentcore/model/InsightResult.h>
+#include <aws/bedrock-agentcore/model/InsightRootCause.h>
+#include <aws/bedrock-agentcore/model/InsightType.h>
 #include <aws/bedrock-agentcore/model/InsightsFailureCategory.h>
 #include <aws/bedrock-agentcore/model/InsightsFailureSignal.h>
 #include <aws/bedrock-agentcore/model/InstrumentBalanceToken.h>
@@ -405,6 +409,7 @@
 #include <aws/bedrock-agentcore/model/RootCauseCluster.h>
 #include <aws/bedrock-agentcore/model/S3FilesConfiguration.h>
 #include <aws/bedrock-agentcore/model/S3Location.h>
+#include <aws/bedrock-agentcore/model/SampleSession.h>
 #include <aws/bedrock-agentcore/model/SaveBrowserSessionProfileRequest.h>
 #include <aws/bedrock-agentcore/model/SaveBrowserSessionProfileResult.h>
 #include <aws/bedrock-agentcore/model/ScreenshotArguments.h>
@@ -417,6 +422,7 @@
 #include <aws/bedrock-agentcore/model/ServerDefinition.h>
 #include <aws/bedrock-agentcore/model/SessionFilter.h>
 #include <aws/bedrock-agentcore/model/SessionFilterConfig.h>
+#include <aws/bedrock-agentcore/model/SessionFinding.h>
 #include <aws/bedrock-agentcore/model/SessionLimits.h>
 #include <aws/bedrock-agentcore/model/SessionMetadataShape.h>
 #include <aws/bedrock-agentcore/model/SessionStatus.h>

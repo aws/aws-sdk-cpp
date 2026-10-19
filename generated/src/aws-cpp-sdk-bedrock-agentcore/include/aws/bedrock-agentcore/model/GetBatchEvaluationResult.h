@@ -12,6 +12,7 @@
 #include <aws/bedrock-agentcore/model/ExecutionSummaryClusteringResultContent.h>
 #include <aws/bedrock-agentcore/model/FailureAnalysisResultContent.h>
 #include <aws/bedrock-agentcore/model/Insight.h>
+#include <aws/bedrock-agentcore/model/InsightResult.h>
 #include <aws/bedrock-agentcore/model/OutputConfig.h>
 #include <aws/bedrock-agentcore/model/UserIntentClusteringResultContent.h>
 #include <aws/core/http/HttpResponse.h>
@@ -222,6 +223,33 @@ class GetBatchEvaluationResult {
 
   ///@{
   /**
+   * <p>The insights generated when the batch evaluation includes the
+   * <code>Builtin.FailureAnalysis</code> evaluator. Each insight groups related
+   * failures found across the evaluated sessions. An empty list means that no
+   * failures were found. If the analysis fails, this field is omitted and
+   * <code>errorDetails</code> describes the error.</p>
+   */
+  inline const Aws::Vector<InsightResult>& GetInsightResults() const { return m_insightResults; }
+  template <typename InsightResultsT = Aws::Vector<InsightResult>>
+  void SetInsightResults(InsightResultsT&& value) {
+    m_insightResultsHasBeenSet = true;
+    m_insightResults = std::forward<InsightResultsT>(value);
+  }
+  template <typename InsightResultsT = Aws::Vector<InsightResult>>
+  GetBatchEvaluationResult& WithInsightResults(InsightResultsT&& value) {
+    SetInsightResults(std::forward<InsightResultsT>(value));
+    return *this;
+  }
+  template <typename InsightResultsT = InsightResult>
+  GetBatchEvaluationResult& AddInsightResults(InsightResultsT&& value) {
+    m_insightResultsHasBeenSet = true;
+    m_insightResults.emplace_back(std::forward<InsightResultsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The failure analysis results from insights, containing categorized failure
    * clusters with root causes and recommendations.</p>
    */
@@ -385,6 +413,8 @@ class GetBatchEvaluationResult {
 
   EvaluationJobResults m_evaluationResults;
 
+  Aws::Vector<InsightResult> m_insightResults;
+
   FailureAnalysisResultContent m_failureAnalysisResult;
 
   UserIntentClusteringResultContent m_userIntentResult;
@@ -411,6 +441,7 @@ class GetBatchEvaluationResult {
   bool m_dataSourceConfigHasBeenSet = false;
   bool m_outputConfigHasBeenSet = false;
   bool m_evaluationResultsHasBeenSet = false;
+  bool m_insightResultsHasBeenSet = false;
   bool m_failureAnalysisResultHasBeenSet = false;
   bool m_userIntentResultHasBeenSet = false;
   bool m_executionSummaryResultHasBeenSet = false;

@@ -113,9 +113,9 @@ class CreateWorkspaceRequest : public ManagedGrafanaRequest {
    * <code>CUSTOMER_MANAGED</code> permission type when creating a workspace with the
    * API, CLI or Amazon Web Services CloudFormation. </p>  <p>For more
    * information, see <a
-   * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon
-   * Managed Grafana permissions and policies for Amazon Web Services data sources
-   * and notification channels</a>.</p>
+   * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">
+   * Amazon Managed Grafana permissions and policies for Amazon Web Services data
+   * sources and notification channels</a>.</p>
    */
   inline PermissionType GetPermissionType() const { return m_permissionType; }
   inline bool PermissionTypeHasBeenSet() const { return m_permissionTypeHasBeenSet; }
@@ -290,7 +290,7 @@ class CreateWorkspaceRequest : public ManagedGrafanaRequest {
    * to authenticate users for using the Grafana console within a workspace. For more
    * information, see <a
    * href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User
-   * authentication in Amazon Managed Grafana</a>.</p>
+   * authentication in Amazon Managed Grafana </a>.</p>
    */
   inline const Aws::Vector<AuthenticationProviderTypes>& GetAuthenticationProviders() const { return m_authenticationProviders; }
   inline bool AuthenticationProvidersHasBeenSet() const { return m_authenticationProvidersHasBeenSet; }

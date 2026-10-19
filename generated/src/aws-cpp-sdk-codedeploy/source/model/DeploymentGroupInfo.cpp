@@ -124,6 +124,10 @@ DeploymentGroupInfo& DeploymentGroupInfo::operator=(JsonView jsonValue) {
     }
     m_ecsServicesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ec2DeploymentOptions")) {
+    m_ec2DeploymentOptions = jsonValue.GetObject("ec2DeploymentOptions");
+    m_ec2DeploymentOptionsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("terminationHookEnabled")) {
     m_terminationHookEnabled = jsonValue.GetBool("terminationHookEnabled");
     m_terminationHookEnabledHasBeenSet = true;
@@ -244,6 +248,10 @@ JsonValue DeploymentGroupInfo::Jsonize() const {
       ecsServicesJsonList[ecsServicesIndex].AsObject(m_ecsServices[ecsServicesIndex].Jsonize());
     }
     payload.WithArray("ecsServices", std::move(ecsServicesJsonList));
+  }
+
+  if (m_ec2DeploymentOptionsHasBeenSet) {
+    payload.WithObject("ec2DeploymentOptions", m_ec2DeploymentOptions.Jsonize());
   }
 
   if (m_terminationHookEnabledHasBeenSet) {

@@ -55,6 +55,10 @@ Aws::String ImportCustomWorkspaceImageRequest::SerializePayload() const {
     payload.WithArray("Tags", std::move(tagsJsonList));
   }
 
+  if (m_imageValidationModeHasBeenSet) {
+    payload.WithString("ImageValidationMode", ImageValidationModeMapper::GetNameForImageValidationMode(m_imageValidationMode));
+  }
+
   return payload.View().WriteReadable();
 }
 

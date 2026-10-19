@@ -41,6 +41,14 @@ ServiceConnectConfiguration& ServiceConnectConfiguration::operator=(JsonView jso
     m_accessLogConfiguration = jsonValue.GetObject("accessLogConfiguration");
     m_accessLogConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("containerConfigurations")) {
+    Aws::Utils::Array<JsonView> containerConfigurationsJsonList = jsonValue.GetArray("containerConfigurations");
+    for (unsigned containerConfigurationsIndex = 0; containerConfigurationsIndex < containerConfigurationsJsonList.GetLength();
+         ++containerConfigurationsIndex) {
+      m_containerConfigurations.push_back(containerConfigurationsJsonList[containerConfigurationsIndex].AsObject());
+    }
+    m_containerConfigurationsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -69,6 +77,16 @@ JsonValue ServiceConnectConfiguration::Jsonize() const {
 
   if (m_accessLogConfigurationHasBeenSet) {
     payload.WithObject("accessLogConfiguration", m_accessLogConfiguration.Jsonize());
+  }
+
+  if (m_containerConfigurationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> containerConfigurationsJsonList(m_containerConfigurations.size());
+    for (unsigned containerConfigurationsIndex = 0; containerConfigurationsIndex < containerConfigurationsJsonList.GetLength();
+         ++containerConfigurationsIndex) {
+      containerConfigurationsJsonList[containerConfigurationsIndex].AsObject(
+          m_containerConfigurations[containerConfigurationsIndex].Jsonize());
+    }
+    payload.WithArray("containerConfigurations", std::move(containerConfigurationsJsonList));
   }
 
   return payload;

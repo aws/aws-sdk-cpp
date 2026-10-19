@@ -42,6 +42,14 @@ TemplateSummary& TemplateSummary::operator=(JsonView jsonValue) {
     m_templateCategory = jsonValue.GetString("templateCategory");
     m_templateCategoryHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("templateSource")) {
+    m_templateSource = jsonValue.GetString("templateSource");
+    m_templateSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("correctCategory")) {
+    m_correctCategory = jsonValue.GetString("correctCategory");
+    m_correctCategoryHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -70,6 +78,14 @@ JsonValue TemplateSummary::Jsonize() const {
 
   if (m_templateCategoryHasBeenSet) {
     payload.WithString("templateCategory", m_templateCategory);
+  }
+
+  if (m_templateSourceHasBeenSet) {
+    payload.WithString("templateSource", m_templateSource);
+  }
+
+  if (m_correctCategoryHasBeenSet) {
+    payload.WithString("correctCategory", m_correctCategory);
   }
 
   return payload;

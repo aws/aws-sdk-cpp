@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/xray/XRayRequest.h>
 #include <aws/xray/XRay_EXPORTS.h>
+#include <aws/xray/model/CloudWatchLogsConfiguration.h>
 #include <aws/xray/model/TraceSegmentDestination.h>
 
 #include <utility>
@@ -43,9 +44,32 @@ class UpdateTraceSegmentDestinationRequest : public XRayRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> Specifies settings for the CloudWatch Logs log groups that X-Ray creates for
+   * Transaction Search. Specify this only when <code>Destination</code> is
+   * <code>CloudWatchLogs</code>. </p>
+   */
+  inline const CloudWatchLogsConfiguration& GetCloudWatchLogsConfiguration() const { return m_cloudWatchLogsConfiguration; }
+  inline bool CloudWatchLogsConfigurationHasBeenSet() const { return m_cloudWatchLogsConfigurationHasBeenSet; }
+  template <typename CloudWatchLogsConfigurationT = CloudWatchLogsConfiguration>
+  void SetCloudWatchLogsConfiguration(CloudWatchLogsConfigurationT&& value) {
+    m_cloudWatchLogsConfigurationHasBeenSet = true;
+    m_cloudWatchLogsConfiguration = std::forward<CloudWatchLogsConfigurationT>(value);
+  }
+  template <typename CloudWatchLogsConfigurationT = CloudWatchLogsConfiguration>
+  UpdateTraceSegmentDestinationRequest& WithCloudWatchLogsConfiguration(CloudWatchLogsConfigurationT&& value) {
+    SetCloudWatchLogsConfiguration(std::forward<CloudWatchLogsConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   TraceSegmentDestination m_destination{TraceSegmentDestination::NOT_SET};
+
+  CloudWatchLogsConfiguration m_cloudWatchLogsConfiguration;
   bool m_destinationHasBeenSet = false;
+  bool m_cloudWatchLogsConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

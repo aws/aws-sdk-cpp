@@ -19,6 +19,8 @@
 #include <aws/bedrock-agent/model/CreateKnowledgeBaseRequest.h>
 #include <aws/bedrock-agent/model/CreatePromptRequest.h>
 #include <aws/bedrock-agent/model/CreatePromptVersionRequest.h>
+#include <aws/bedrock-agent/model/CreateRetrievalInstructionRequest.h>
+#include <aws/bedrock-agent/model/CreateRetrievalInstructionVersionRequest.h>
 #include <aws/bedrock-agent/model/CreateVpcConfigurationRequest.h>
 #include <aws/bedrock-agent/model/DeleteAgentActionGroupRequest.h>
 #include <aws/bedrock-agent/model/DeleteAgentAliasRequest.h>
@@ -32,6 +34,7 @@
 #include <aws/bedrock-agent/model/DeleteKnowledgeBaseRequest.h>
 #include <aws/bedrock-agent/model/DeletePromptRequest.h>
 #include <aws/bedrock-agent/model/DeleteResourcePolicyRequest.h>
+#include <aws/bedrock-agent/model/DeleteRetrievalInstructionRequest.h>
 #include <aws/bedrock-agent/model/DeleteVpcConfigurationRequest.h>
 #include <aws/bedrock-agent/model/DisassociateAgentCollaboratorRequest.h>
 #include <aws/bedrock-agent/model/DisassociateAgentKnowledgeBaseRequest.h>
@@ -50,6 +53,7 @@
 #include <aws/bedrock-agent/model/GetKnowledgeBaseRequest.h>
 #include <aws/bedrock-agent/model/GetPromptRequest.h>
 #include <aws/bedrock-agent/model/GetResourcePolicyRequest.h>
+#include <aws/bedrock-agent/model/GetRetrievalInstructionRequest.h>
 #include <aws/bedrock-agent/model/GetVpcConfigurationRequest.h>
 #include <aws/bedrock-agent/model/IngestKnowledgeBaseDocumentsRequest.h>
 #include <aws/bedrock-agent/model/ListAgentActionGroupsRequest.h>
@@ -66,6 +70,8 @@
 #include <aws/bedrock-agent/model/ListKnowledgeBaseDocumentsRequest.h>
 #include <aws/bedrock-agent/model/ListKnowledgeBasesRequest.h>
 #include <aws/bedrock-agent/model/ListPromptsRequest.h>
+#include <aws/bedrock-agent/model/ListRetrievalInstructionVersionsRequest.h>
+#include <aws/bedrock-agent/model/ListRetrievalInstructionsRequest.h>
 #include <aws/bedrock-agent/model/ListTagsForResourceRequest.h>
 #include <aws/bedrock-agent/model/ListVpcConfigurationsRequest.h>
 #include <aws/bedrock-agent/model/PrepareAgentRequest.h>
@@ -85,6 +91,7 @@
 #include <aws/bedrock-agent/model/UpdateFlowRequest.h>
 #include <aws/bedrock-agent/model/UpdateKnowledgeBaseRequest.h>
 #include <aws/bedrock-agent/model/UpdatePromptRequest.h>
+#include <aws/bedrock-agent/model/UpdateRetrievalInstructionRequest.h>
 #include <aws/bedrock-agent/model/ValidateFlowDefinitionRequest.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/client/CoreErrors.h>
@@ -434,6 +441,32 @@ CreatePromptVersionOutcome BedrockAgentClient::CreatePromptVersion(const CreateP
   return result.IsSuccess() ? CreatePromptVersionOutcome(result.GetResultWithOwnership())
                             : CreatePromptVersionOutcome(std::move(result.GetError()));
 }
+CreateRetrievalInstructionOutcome BedrockAgentClient::CreateRetrievalInstruction(const CreateRetrievalInstructionRequest& request) const {
+  auto result = InvokeServiceOperation(
+      request, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) { resolvedEndpoint.AddPathSegments("/retrievalinstructions/"); },
+      Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRetrievalInstructionOutcome(result.GetResultWithOwnership())
+                            : CreateRetrievalInstructionOutcome(std::move(result.GetError()));
+}
+CreateRetrievalInstructionVersionOutcome BedrockAgentClient::CreateRetrievalInstructionVersion(
+    const CreateRetrievalInstructionVersionRequest& request) const {
+  if (!request.RetrievalInstructionIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CreateRetrievalInstructionVersion", "Required field: RetrievalInstructionId, is not set");
+    return CreateRetrievalInstructionVersionOutcome(Aws::Client::AWSError<BedrockAgentErrors>(
+        BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RetrievalInstructionId]", false));
+  }
+
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        resolvedEndpoint.AddPathSegments("/retrievalinstructions/");
+        resolvedEndpoint.AddPathSegment(request.GetRetrievalInstructionId());
+        resolvedEndpoint.AddPathSegments("/versions");
+      },
+      Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateRetrievalInstructionVersionOutcome(result.GetResultWithOwnership())
+                            : CreateRetrievalInstructionVersionOutcome(std::move(result.GetError()));
+}
 CreateVpcConfigurationOutcome BedrockAgentClient::CreateVpcConfiguration(const CreateVpcConfigurationRequest& request) const {
   if (!request.KnowledgeBaseIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("CreateVpcConfiguration", "Required field: KnowledgeBaseId, is not set");
@@ -710,6 +743,23 @@ DeleteResourcePolicyOutcome BedrockAgentClient::DeleteResourcePolicy(const Delet
       Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? DeleteResourcePolicyOutcome(result.GetResultWithOwnership())
                             : DeleteResourcePolicyOutcome(std::move(result.GetError()));
+}
+DeleteRetrievalInstructionOutcome BedrockAgentClient::DeleteRetrievalInstruction(const DeleteRetrievalInstructionRequest& request) const {
+  if (!request.RetrievalInstructionIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteRetrievalInstruction", "Required field: RetrievalInstructionId, is not set");
+    return DeleteRetrievalInstructionOutcome(Aws::Client::AWSError<BedrockAgentErrors>(
+        BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RetrievalInstructionId]", false));
+  }
+
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        resolvedEndpoint.AddPathSegments("/retrievalinstructions/");
+        resolvedEndpoint.AddPathSegment(request.GetRetrievalInstructionId());
+      },
+      Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteRetrievalInstructionOutcome(result.GetResultWithOwnership())
+                            : DeleteRetrievalInstructionOutcome(std::move(result.GetError()));
 }
 DeleteVpcConfigurationOutcome BedrockAgentClient::DeleteVpcConfiguration(const DeleteVpcConfigurationRequest& request) const {
   if (!request.KnowledgeBaseIdHasBeenSet()) {
@@ -1146,6 +1196,23 @@ GetResourcePolicyOutcome BedrockAgentClient::GetResourcePolicy(const GetResource
   return result.IsSuccess() ? GetResourcePolicyOutcome(result.GetResultWithOwnership())
                             : GetResourcePolicyOutcome(std::move(result.GetError()));
 }
+GetRetrievalInstructionOutcome BedrockAgentClient::GetRetrievalInstruction(const GetRetrievalInstructionRequest& request) const {
+  if (!request.RetrievalInstructionIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetRetrievalInstruction", "Required field: RetrievalInstructionId, is not set");
+    return GetRetrievalInstructionOutcome(Aws::Client::AWSError<BedrockAgentErrors>(
+        BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RetrievalInstructionId]", false));
+  }
+
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        resolvedEndpoint.AddPathSegments("/retrievalinstructions/");
+        resolvedEndpoint.AddPathSegment(request.GetRetrievalInstructionId());
+      },
+      Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRetrievalInstructionOutcome(result.GetResultWithOwnership())
+                            : GetRetrievalInstructionOutcome(std::move(result.GetError()));
+}
 GetVpcConfigurationOutcome BedrockAgentClient::GetVpcConfiguration(const GetVpcConfigurationRequest& request) const {
   if (!request.KnowledgeBaseIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetVpcConfiguration", "Required field: KnowledgeBaseId, is not set");
@@ -1435,6 +1502,32 @@ ListPromptsOutcome BedrockAgentClient::ListPrompts(const ListPromptsRequest& req
       request, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) { resolvedEndpoint.AddPathSegments("/prompts/"); },
       Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListPromptsOutcome(result.GetResultWithOwnership()) : ListPromptsOutcome(std::move(result.GetError()));
+}
+ListRetrievalInstructionVersionsOutcome BedrockAgentClient::ListRetrievalInstructionVersions(
+    const ListRetrievalInstructionVersionsRequest& request) const {
+  if (!request.RetrievalInstructionIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListRetrievalInstructionVersions", "Required field: RetrievalInstructionId, is not set");
+    return ListRetrievalInstructionVersionsOutcome(Aws::Client::AWSError<BedrockAgentErrors>(
+        BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RetrievalInstructionId]", false));
+  }
+
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        resolvedEndpoint.AddPathSegments("/retrievalinstructions/");
+        resolvedEndpoint.AddPathSegment(request.GetRetrievalInstructionId());
+        resolvedEndpoint.AddPathSegments("/versions");
+      },
+      Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRetrievalInstructionVersionsOutcome(result.GetResultWithOwnership())
+                            : ListRetrievalInstructionVersionsOutcome(std::move(result.GetError()));
+}
+ListRetrievalInstructionsOutcome BedrockAgentClient::ListRetrievalInstructions(const ListRetrievalInstructionsRequest& request) const {
+  auto result = InvokeServiceOperation(
+      request, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) { resolvedEndpoint.AddPathSegments("/retrievalinstructions/"); },
+      Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRetrievalInstructionsOutcome(result.GetResultWithOwnership())
+                            : ListRetrievalInstructionsOutcome(std::move(result.GetError()));
 }
 ListTagsForResourceOutcome BedrockAgentClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
   if (!request.ResourceArnHasBeenSet()) {
@@ -1843,6 +1936,23 @@ UpdatePromptOutcome BedrockAgentClient::UpdatePrompt(const UpdatePromptRequest& 
       },
       Aws::Http::HttpMethod::HTTP_PUT);
   return result.IsSuccess() ? UpdatePromptOutcome(result.GetResultWithOwnership()) : UpdatePromptOutcome(std::move(result.GetError()));
+}
+UpdateRetrievalInstructionOutcome BedrockAgentClient::UpdateRetrievalInstruction(const UpdateRetrievalInstructionRequest& request) const {
+  if (!request.RetrievalInstructionIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateRetrievalInstruction", "Required field: RetrievalInstructionId, is not set");
+    return UpdateRetrievalInstructionOutcome(Aws::Client::AWSError<BedrockAgentErrors>(
+        BedrockAgentErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RetrievalInstructionId]", false));
+  }
+
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        resolvedEndpoint.AddPathSegments("/retrievalinstructions/");
+        resolvedEndpoint.AddPathSegment(request.GetRetrievalInstructionId());
+      },
+      Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateRetrievalInstructionOutcome(result.GetResultWithOwnership())
+                            : UpdateRetrievalInstructionOutcome(std::move(result.GetError()));
 }
 ValidateFlowDefinitionOutcome BedrockAgentClient::ValidateFlowDefinition(const ValidateFlowDefinitionRequest& request) const {
   auto result = InvokeServiceOperation(

@@ -111,6 +111,10 @@ Aws::String UpdateDeploymentGroupRequest::SerializePayload() const {
     payload.WithObject("onPremisesTagSet", m_onPremisesTagSet.Jsonize());
   }
 
+  if (m_ec2DeploymentOptionsHasBeenSet) {
+    payload.WithObject("ec2DeploymentOptions", m_ec2DeploymentOptions.Jsonize());
+  }
+
   if (m_terminationHookEnabledHasBeenSet) {
     payload.WithBool("terminationHookEnabled", m_terminationHookEnabled);
   }

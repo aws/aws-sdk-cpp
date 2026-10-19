@@ -55,7 +55,7 @@ class UpdateRepositoryEncryptionKeyRequest : public CodeCommitRequest {
    * KMS console, or use the KMS APIs to programmatically retrieve a key ID. For more
    * information about acceptable values for keyID, see <a
    * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Decrypt.html#KMS-Decrypt-request-KeyId">KeyId</a>
-   * in the Decrypt API description in the <i>Key Management Service API
+   * in the Decrypt API description in the <i> Key Management Service API
    * Reference</i>.</p>
    */
   inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }

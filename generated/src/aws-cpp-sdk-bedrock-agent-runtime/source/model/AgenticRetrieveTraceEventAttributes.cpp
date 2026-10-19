@@ -25,6 +25,10 @@ AgenticRetrieveTraceEventAttributes& AgenticRetrieveTraceEventAttributes::operat
     }
     m_actionsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("appliedInstruction")) {
+    m_appliedInstruction = jsonValue.GetObject("appliedInstruction");
+    m_appliedInstructionHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("failures")) {
     Aws::Utils::Array<JsonView> failuresJsonList = jsonValue.GetArray("failures");
     for (unsigned failuresIndex = 0; failuresIndex < failuresJsonList.GetLength(); ++failuresIndex) {
@@ -77,6 +81,10 @@ JsonValue AgenticRetrieveTraceEventAttributes::Jsonize() const {
       actionsJsonList[actionsIndex].AsObject(m_actions[actionsIndex].Jsonize());
     }
     payload.WithArray("actions", std::move(actionsJsonList));
+  }
+
+  if (m_appliedInstructionHasBeenSet) {
+    payload.WithObject("appliedInstruction", m_appliedInstruction.Jsonize());
   }
 
   if (m_failuresHasBeenSet) {

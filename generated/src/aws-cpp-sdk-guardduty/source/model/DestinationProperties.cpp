@@ -26,6 +26,10 @@ DestinationProperties& DestinationProperties::operator=(JsonView jsonValue) {
     m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
     m_kmsKeyArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("expectedBucketOwner")) {
+    m_expectedBucketOwner = jsonValue.GetString("expectedBucketOwner");
+    m_expectedBucketOwnerHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue DestinationProperties::Jsonize() const {
 
   if (m_kmsKeyArnHasBeenSet) {
     payload.WithString("kmsKeyArn", m_kmsKeyArn);
+  }
+
+  if (m_expectedBucketOwnerHasBeenSet) {
+    payload.WithString("expectedBucketOwner", m_expectedBucketOwner);
   }
 
   return payload;

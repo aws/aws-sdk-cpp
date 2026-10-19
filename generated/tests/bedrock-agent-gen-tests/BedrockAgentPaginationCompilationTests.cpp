@@ -18,11 +18,13 @@
 #include <aws/bedrock-agent/model/ListFlowAliasesPaginationTraits.h>
 #include <aws/bedrock-agent/model/ListFlowsPaginationTraits.h>
 #include <aws/bedrock-agent/model/ListAgentsPaginationTraits.h>
+#include <aws/bedrock-agent/model/ListRetrievalInstructionVersionsPaginationTraits.h>
 #include <aws/bedrock-agent/model/ListIngestionJobsPaginationTraits.h>
 #include <aws/bedrock-agent/model/ListFlowVersionsPaginationTraits.h>
 #include <aws/bedrock-agent/model/ListAgentAliasesPaginationTraits.h>
 #include <aws/bedrock-agent/model/ListVpcConfigurationsPaginationTraits.h>
 #include <aws/bedrock-agent/model/ListPromptsPaginationTraits.h>
+#include <aws/bedrock-agent/model/ListRetrievalInstructionsPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 

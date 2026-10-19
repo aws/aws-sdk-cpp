@@ -68,6 +68,13 @@ GetBatchEvaluationResult& GetBatchEvaluationResult::operator=(const Aws::AmazonW
     m_evaluationResults = jsonValue.GetObject("evaluationResults");
     m_evaluationResultsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("insightResults")) {
+    Aws::Utils::Array<JsonView> insightResultsJsonList = jsonValue.GetArray("insightResults");
+    for (unsigned insightResultsIndex = 0; insightResultsIndex < insightResultsJsonList.GetLength(); ++insightResultsIndex) {
+      m_insightResults.push_back(insightResultsJsonList[insightResultsIndex].AsObject());
+    }
+    m_insightResultsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("failureAnalysisResult")) {
     m_failureAnalysisResult = jsonValue.GetObject("failureAnalysisResult");
     m_failureAnalysisResultHasBeenSet = true;
