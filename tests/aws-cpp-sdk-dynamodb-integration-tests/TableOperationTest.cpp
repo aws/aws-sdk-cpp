@@ -39,6 +39,7 @@
 #include <aws/core/utils/UUID.h>
 
 #include <algorithm>
+#include <future>
 #include <utility>
 
 using namespace Aws::Auth;
@@ -1643,3 +1644,43 @@ TEST_F(TableOperationTest, TestWriteDataApi) {
 
 } // anonymous namespace
 
+TEST_F(TableOperationTest, AsyncHandlerHoldingTheLastClientReferenceCompletes)
+{
+    Aws::Client::ClientConfiguration config;
+    config.region = "us-east-1";
+    auto destroyed = std::make_shared<std::promise<void>>();
+    std::shared_ptr<DynamoDBClient> client(Aws::New<DynamoDBClient>(ALLOCATION_TAG, config), [destroyed](DynamoDBClient* toDelete) {
+        Aws::Delete(toDelete);
+        destroyed->set_value();
+    });
+
+    client->ListTablesAsync([client](const DynamoDBClient*, const ListTablesRequest&, const ListTablesOutcome&,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) {});
+    client.reset();
+
+    ASSERT_EQ(std::future_status::ready, destroyed->get_future().wait_for(std::chrono::seconds(30)));
+}
+
+TEST_F(TableOperationTest, AsyncHandlerDestroyingTheClientOwnerCompletes)
+{
+    struct Session
+    {
+        std::shared_ptr<DynamoDBClient> client;
+    };
+
+    Aws::Client::ClientConfiguration config;
+    config.region = "us-east-1";
+    auto destroyed = std::make_shared<std::promise<void>>();
+    auto* session = Aws::New<Session>(ALLOCATION_TAG);
+    session->client = std::shared_ptr<DynamoDBClient>(Aws::New<DynamoDBClient>(ALLOCATION_TAG, config), [destroyed](DynamoDBClient* toDelete) {
+        Aws::Delete(toDelete);
+        destroyed->set_value();
+    });
+
+    session->client->ListTablesAsync([session](const DynamoDBClient*, const ListTablesRequest&, const ListTablesOutcome&,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) {
+        Aws::Delete(session);
+    });
+
+    ASSERT_EQ(std::future_status::ready, destroyed->get_future().wait_for(std::chrono::seconds(30)));
+}

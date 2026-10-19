@@ -174,6 +174,7 @@ namespace client
         virtual void EnableRequestProcessing();
         inline virtual const char* GetServiceClientName() const { return m_serviceName.c_str(); }
         inline virtual const std::shared_ptr<Aws::Http::HttpClient>& GetHttpClient() { return m_httpClient; }
+        const std::shared_ptr<Aws::Http::HttpClient>& GetHttpClient() const { return m_httpClient; }
 
     protected:
         template <typename OutcomeT, typename ClientT, typename RequestT, typename HandlerT>
@@ -250,6 +251,16 @@ namespace client
         mutable std::shared_ptr<Aws::Internal::ClientSkew> m_clientSkew;
     private:
         void UpdateAuthSchemeFromEndpoint(const Aws::Endpoint::AWSEndpoint& endpoint, AuthSchemeOption& authscheme) const;
+        static StreamOutcome ProcessUnparsedResponse(HttpResponseOutcome& httpResponseOutcome);
+        std::shared_ptr<AwsSmithyClientAsyncRequestContext> CreateRequestContext(Aws::AmazonWebServiceRequest const * const request,
+                                                                                const char* requestName,
+                                                                                Aws::Http::HttpMethod method,
+                                                                                EndpointUpdateCallback&& endpointCallback,
+                                                                                ResponseHandlerFunc&& responseHandler,
+                                                                                AuthResolvedCallback&& authCallback,
+                                                                                std::shared_ptr<Aws::Utils::Threading::Executor> pExecutor) const;
+        void RunAttemptsAsync(const std::shared_ptr<AwsSmithyClientAsyncRequestContext>& pRequestCtx) const;
+        void RunAttemptsBlocking(const std::shared_ptr<AwsSmithyClientAsyncRequestContext>& pRequestCtx) const;
 
         bool ResolveIdentityAuth(
             std::shared_ptr<AwsSmithyClientAsyncRequestContext>& pRequestCtx,
