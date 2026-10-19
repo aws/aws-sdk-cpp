@@ -3,14 +3,19 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <gtest/gtest.h>
-#include <aws/identity-management/auth/PersistentCognitoIdentityProvider.h>
-#include <aws/identity-management/auth/CognitoCachingCredentialsProvider.h>
+#include <aws/core/client/AWSJsonClient.h>
+#include <aws/core/client/AWSRpcV2CborClient.h>
 #include <aws/core/http/standard/StandardHttpResponse.h>
+#include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/crt/cbor/Cbor.h>
+#include <aws/identity-management/auth/CognitoCachingCredentialsProvider.h>
+#include <aws/identity-management/auth/PersistentCognitoIdentityProvider.h>
 #include <aws/testing/mocks/http/MockHttpClient.h>
+#include <gtest/gtest.h>
 
 #include <fstream>
+#include <type_traits>
 
 using namespace Aws::Auth;
 using namespace Aws::CognitoIdentity;
@@ -27,6 +32,18 @@ static const char* ACCESS_KEY_ID_1 = "SomeAccessKeyId1";
 static const char* SECRET_KEY_ID_1 = "SomeSecretKeyId1";
 static const char* LOGIN_KEY = "LoginOpenIdProvider";
 static const char* LOGIN_ID = "OpenIdSample";
+
+// Use the client's base class to identify if it's using CBOR, so mocked payloads match its wire format.
+static const bool COGNITO_USES_CBOR = std::is_same<CognitoIdentityClient::BASECLASS, Aws::Client::AWSRpcV2CborClient>::value;
+
+static void WriteCborText(Aws::Crt::Cbor::CborEncoder& encoder, const char* value) {
+  encoder.WriteText(Aws::Crt::ByteCursorFromCString(value));
+}
+
+static void WriteEncodedData(Aws::IOStream& stream, Aws::Crt::Cbor::CborEncoder& encoder) {
+  auto encodedData = encoder.GetEncodedData();
+  stream.write(reinterpret_cast<const char*>(encodedData.ptr), encodedData.len);
+}
 
 class MockPersistentCognitoIdentityProvider : public PersistentCognitoIdentityProvider
 {
@@ -122,14 +139,85 @@ namespace
 
         void AddMockGetIdResultToStream(Aws::IOStream& stream, const char* identity = IDENTITY_1)
         {
+          if (COGNITO_USES_CBOR) {
+            Aws::Crt::Cbor::CborEncoder encoder;
+            encoder.WriteMapStart(1);
+            WriteCborText(encoder, "IdentityId");
+            WriteCborText(encoder, identity);
+            WriteEncodedData(stream, encoder);
+            return;
+          }
+
             stream << "{ \"IdentityId\" : \"" << identity << "\" }";
         }
 
         void AddMockGetCredentialsForIdentityToStream(Aws::IOStream& stream, const char* identityId = IDENTITY_1,
             const char* accessKey = ACCESS_KEY_ID_1, const char* secretKey = SECRET_KEY_ID_1, const char* expiry = A_HUNDRED_YEARS_FROM_THE_MOMENT_I_WROTE_THIS)
         {
+          if (COGNITO_USES_CBOR) {
+            Aws::Crt::Cbor::CborEncoder encoder;
+            encoder.WriteMapStart(2);
+            WriteCborText(encoder, "IdentityId");
+            WriteCborText(encoder, identityId);
+            WriteCborText(encoder, "Credentials");
+            encoder.WriteMapStart(3);
+            WriteCborText(encoder, "AccessKeyId");
+            WriteCborText(encoder, accessKey);
+            WriteCborText(encoder, "SecretKey");
+            WriteCborText(encoder, secretKey);
+            WriteCborText(encoder, "Expiration");
+            encoder.WriteTag(1);  // epoch-based date/time, see https://www.rfc-editor.org/rfc/rfc8949.html#tags
+            encoder.WriteFloat(StringUtils::ConvertToDouble(expiry));
+            WriteEncodedData(stream, encoder);
+            return;
+          }
+
             stream << "{ \"IdentityId\" : \"" << identityId << "\", \"Credentials\" : { \"AccessKeyId\" : \"" << accessKey
                 << "\", \"SecretKey\" : \"" << secretKey << "\", \"Expiration\" : " << expiry << " } }";
+        }
+
+        // Returns the "Logins" map sent in a request body, decoding it according to the client's protocol.
+        Aws::Map<Aws::String, Aws::String> GetLoginsFromRequestBody(const std::shared_ptr<Aws::IOStream>& body) {
+          Aws::Map<Aws::String, Aws::String> logins;
+          body->seekg(0, body->beg);
+
+          if (!COGNITO_USES_CBOR) {
+            JsonValue jsonValue(*body);
+            for (const auto& login : jsonValue.View().GetObject("Logins").GetAllObjects()) {
+              logins.emplace(login.first, login.second.AsString());
+            }
+            return logins;
+          }
+
+          Aws::String payload((std::istreambuf_iterator<char>(*body)), std::istreambuf_iterator<char>());
+          Aws::Crt::Cbor::CborDecoder decoder(
+              Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()));
+          auto toString = [](const Aws::Crt::ByteCursor& cursor) {
+            return Aws::String(reinterpret_cast<const char*>(cursor.ptr), cursor.len);
+          };
+
+          auto mapSize = decoder.PopNextMapStart();
+          EXPECT_TRUE(mapSize.has_value());
+          for (uint64_t i = 0; mapSize.has_value() && i < mapSize.value(); ++i) {
+            auto key = decoder.PopNextTextVal();
+            EXPECT_TRUE(key.has_value());
+            if (!key.has_value() || toString(key.value()) != "Logins") {
+              decoder.ConsumeNextWholeDataItem();
+              continue;
+            }
+
+            auto loginsSize = decoder.PopNextMapStart();
+            EXPECT_TRUE(loginsSize.has_value());
+            for (uint64_t j = 0; loginsSize.has_value() && j < loginsSize.value(); ++j) {
+              auto provider = decoder.PopNextTextVal();
+              auto token = decoder.PopNextTextVal();
+              EXPECT_TRUE(provider.has_value() && token.has_value());
+              if (provider.has_value() && token.has_value()) {
+                logins[toString(provider.value())] = toString(token.value());
+              }
+            }
+          }
+          return logins;
         }
     };
 
@@ -272,9 +360,8 @@ namespace
         ASSERT_TRUE(mockIdentityRepository->IsLoginsPersisted());
         ASSERT_EQ(2u, mockHttpClient->GetAllRequestsMade().size());
 
-        mockHttpClient->GetAllRequestsMade()[0].GetContentBody()->seekg(0, mockHttpClient->GetAllRequestsMade()[0].GetContentBody()->beg);
-        JsonValue jsonValue(*mockHttpClient->GetAllRequestsMade()[0].GetContentBody());
-        ASSERT_EQ(LOGIN_ID, jsonValue.View().GetObject("Logins").GetAllObjects()[LOGIN_KEY].AsString());
+        auto requestLogins = GetLoginsFromRequestBody(mockHttpClient->GetAllRequestsMade()[0].GetContentBody());
+        ASSERT_EQ(LOGIN_ID, requestLogins[LOGIN_KEY]);
 
         //now make sure the caching worked;
         credentials = cognitoCachingAuthenticatedCredentialsProvider.GetAWSCredentials();
@@ -319,9 +406,8 @@ namespace
         ASSERT_FALSE(mockIdentityRepository->IsLoginsPersisted());
         ASSERT_EQ(2u, mockHttpClient->GetAllRequestsMade().size());
 
-        mockHttpClient->GetAllRequestsMade()[0].GetContentBody()->seekg(0, mockHttpClient->GetAllRequestsMade()[0].GetContentBody()->beg);
-        JsonValue jsonValue(*mockHttpClient->GetAllRequestsMade()[0].GetContentBody());
-        ASSERT_EQ(0u, jsonValue.View().GetObject("Logins").GetAllObjects().size());
+        auto requestLogins = GetLoginsFromRequestBody(mockHttpClient->GetAllRequestsMade()[0].GetContentBody());
+        ASSERT_EQ(0u, requestLogins.size());
 
         //make sure the caching worked;
         credentials = cognitoCachingAuthenticatedCredentialsProvider.GetAWSCredentials();
@@ -366,9 +452,8 @@ namespace
         ASSERT_TRUE(mockIdentityRepository->IsLoginsPersisted());
         ASSERT_EQ(1u, mockHttpClient->GetAllRequestsMade().size());
 
-        mockHttpClient->GetAllRequestsMade()[0].GetContentBody()->seekg(0, mockHttpClient->GetAllRequestsMade()[0].GetContentBody()->beg);
-        jsonValue = JsonValue(*mockHttpClient->GetAllRequestsMade()[0].GetContentBody());
-        ASSERT_EQ(LOGIN_ID, jsonValue.View().GetObject("Logins").GetAllObjects()[LOGIN_KEY].AsString());
+        requestLogins = GetLoginsFromRequestBody(mockHttpClient->GetAllRequestsMade()[0].GetContentBody());
+        ASSERT_EQ(LOGIN_ID, requestLogins[LOGIN_KEY]);
 
         //now make sure the caching worked;
         credentials = cognitoCachingAuthenticatedCredentialsProvider.GetAWSCredentials();
