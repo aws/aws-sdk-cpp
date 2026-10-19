@@ -1,0 +1,6 @@
+{
+  "type": "removal",
+  "category": "aws-cpp-sdk-finspace, aws-cpp-sdk-finspace-data, aws-cpp-sdk-tnb",
+  "contributor": "sbaluja",
+  "description": "Remove deprecated services: Amazon FinSpace (finspace), FinSpace Data (finspace-data), AWS Telco Network Builder (tnb)"
+}

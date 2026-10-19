@@ -80,7 +80,6 @@ public final class ServiceNameUtil {
         Map.entry("cloudcontrol", "CloudControlApi"),
         Map.entry("ecrpublic", "ECRPublic"),
         Map.entry("evs", "EVS"),
-        Map.entry("finspacedata", "FinSpaceData"),
         Map.entry("fis", "FIS"),
         Map.entry("identitystore", "IdentityStore"),
         Map.entry("inspectorscan", "inspectorscan"),
