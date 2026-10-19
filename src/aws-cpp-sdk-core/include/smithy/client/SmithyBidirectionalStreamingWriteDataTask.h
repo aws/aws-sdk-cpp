@@ -71,7 +71,7 @@ class AWS_CORE_LOCAL SmithyBidirectionalStreamingWriteDataTask final {
         m_request.get(), m_request->GetServiceRequestName(), pExecutor, authResolver);
     ctx->m_method = Aws::Http::HttpMethod::HTTP_POST;
 
-    bool resolvedIdenity = m_client->ResolveIdentityAuth(
+    bool resolvedIdentity = m_client->ResolveIdentityAuth(
         ctx,
         [](AwsSmithyClientBase::HttpResponseOutcome&& outcome) {
           if (!outcome.IsSuccess()) {
@@ -80,7 +80,7 @@ class AWS_CORE_LOCAL SmithyBidirectionalStreamingWriteDataTask final {
         },
         EndpointUpdateCallback(m_endpointCallback));
 
-    if (!resolvedIdenity) {
+    if (!resolvedIdentity) {
       m_handler(m_client, *m_request,
           OutcomeT(Aws::Client::AWSError<Aws::Client::CoreErrors>(
               Aws::Client::CoreErrors::CLIENT_SIGNING_FAILURE, "", "Failed to resolve identity", false)),
