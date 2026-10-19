@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/client/AWSJsonClient.h>
 #include <aws/core/client/AWSRpcV2CborClient.h>
 #include <aws/core/http/standard/StandardHttpResponse.h>
 #include <aws/core/utils/StringUtils.h>
