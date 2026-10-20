@@ -8,6 +8,8 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/crt/cbor/Cbor.h>
 #include <aws/monitoring/CloudWatch_EXPORTS.h>
+#include <aws/monitoring/model/AnomalyDetectorAdaptationSpeed.h>
+#include <aws/monitoring/model/AnomalyDetectorOutlierFilteringStrength.h>
 #include <aws/monitoring/model/Range.h>
 
 #include <utility>
@@ -83,12 +85,64 @@ class AnomalyDetectorConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The speed at which the anomaly detection model adapts to sustained changes in
+   * the metric's baseline. Faster adaptation lets the model track shifting workloads
+   * sooner, but increases the chance that the model treats a real, lasting change as
+   * normal.</p> <p>Valid values:</p> <ul> <li> <p> <code>FAST</code> - The model
+   * adapts quickly to sustained changes in the baseline.</p> </li> <li> <p>
+   * <code>NORMAL</code> - The model adapts at a moderate pace. This is the default
+   * value.</p> </li> <li> <p> <code>SLOW</code> - The model adapts slowly, reducing
+   * the risk of treating a real change as normal.</p> </li> </ul>
+   */
+  inline AnomalyDetectorAdaptationSpeed GetAdaptationSpeed() const { return m_adaptationSpeed; }
+  inline bool AdaptationSpeedHasBeenSet() const { return m_adaptationSpeedHasBeenSet; }
+  inline void SetAdaptationSpeed(AnomalyDetectorAdaptationSpeed value) {
+    m_adaptationSpeedHasBeenSet = true;
+    m_adaptationSpeed = value;
+  }
+  inline AnomalyDetectorConfiguration& WithAdaptationSpeed(AnomalyDetectorAdaptationSpeed value) {
+    SetAdaptationSpeed(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The aggressiveness with which CloudWatch filters outliers from the metric
+   * data that the anomaly detection model uses. Stronger filtering excludes more
+   * extreme values, which can produce a tighter band of expected values but may also
+   * suppress legitimate spikes.</p> <p>Valid values:</p> <ul> <li> <p>
+   * <code>MINIMAL</code> - Excludes only the most extreme outliers.</p> </li> <li>
+   * <p> <code>MODERATE</code> - Excludes a moderate range of outliers. This is the
+   * default value.</p> </li> <li> <p> <code>STRICT</code> - Excludes a wider range
+   * of outliers, which can suppress legitimate spikes.</p> </li> </ul>
+   */
+  inline AnomalyDetectorOutlierFilteringStrength GetOutlierFilteringStrength() const { return m_outlierFilteringStrength; }
+  inline bool OutlierFilteringStrengthHasBeenSet() const { return m_outlierFilteringStrengthHasBeenSet; }
+  inline void SetOutlierFilteringStrength(AnomalyDetectorOutlierFilteringStrength value) {
+    m_outlierFilteringStrengthHasBeenSet = true;
+    m_outlierFilteringStrength = value;
+  }
+  inline AnomalyDetectorConfiguration& WithOutlierFilteringStrength(AnomalyDetectorOutlierFilteringStrength value) {
+    SetOutlierFilteringStrength(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Range> m_excludedTimeRanges;
 
   Aws::String m_metricTimezone;
+
+  AnomalyDetectorAdaptationSpeed m_adaptationSpeed{AnomalyDetectorAdaptationSpeed::NOT_SET};
+
+  AnomalyDetectorOutlierFilteringStrength m_outlierFilteringStrength{AnomalyDetectorOutlierFilteringStrength::NOT_SET};
   bool m_excludedTimeRangesHasBeenSet = false;
   bool m_metricTimezoneHasBeenSet = false;
+  bool m_adaptationSpeedHasBeenSet = false;
+  bool m_outlierFilteringStrengthHasBeenSet = false;
 };
 
 }  // namespace Model

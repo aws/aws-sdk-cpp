@@ -38,11 +38,14 @@
 #include <aws/rds/model/AutomationMode.h>
 #include <aws/rds/model/AvailabilityZone.h>
 #include <aws/rds/model/AvailableAdditionalStorageVolumesOption.h>
+#include <aws/rds/model/AvailableCapacityPerAvailabilityZone.h>
 #include <aws/rds/model/AvailableProcessorFeature.h>
 #include <aws/rds/model/BacktrackDBClusterRequest.h>
 #include <aws/rds/model/BacktrackDBClusterResult.h>
 #include <aws/rds/model/BlueGreenDeployment.h>
 #include <aws/rds/model/BlueGreenDeploymentTask.h>
+#include <aws/rds/model/CancelDBCapacityReservationRequest.h>
+#include <aws/rds/model/CancelDBCapacityReservationResult.h>
 #include <aws/rds/model/CancelExportTaskRequest.h>
 #include <aws/rds/model/CancelExportTaskResult.h>
 #include <aws/rds/model/Certificate.h>
@@ -69,6 +72,8 @@
 #include <aws/rds/model/CreateBlueGreenDeploymentResult.h>
 #include <aws/rds/model/CreateCustomDBEngineVersionRequest.h>
 #include <aws/rds/model/CreateCustomDBEngineVersionResult.h>
+#include <aws/rds/model/CreateDBCapacityReservationRequest.h>
+#include <aws/rds/model/CreateDBCapacityReservationResult.h>
 #include <aws/rds/model/CreateDBClusterEndpointRequest.h>
 #include <aws/rds/model/CreateDBClusterEndpointResult.h>
 #include <aws/rds/model/CreateDBClusterParameterGroupRequest.h>
@@ -107,6 +112,9 @@
 #include <aws/rds/model/CreateTenantDatabaseResult.h>
 #include <aws/rds/model/CustomDBEngineVersionAMI.h>
 #include <aws/rds/model/CustomEngineVersionStatus.h>
+#include <aws/rds/model/DBCapacityReservation.h>
+#include <aws/rds/model/DBCapacityReservationCommitmentInfo.h>
+#include <aws/rds/model/DBCapacityReservationState.h>
 #include <aws/rds/model/DBCluster.h>
 #include <aws/rds/model/DBClusterAssociatedRole.h>
 #include <aws/rds/model/DBClusterAutomatedBackup.h>
@@ -194,6 +202,9 @@
 #include <aws/rds/model/DescribeCertificatesPaginationTraits.h>
 #include <aws/rds/model/DescribeCertificatesRequest.h>
 #include <aws/rds/model/DescribeCertificatesResult.h>
+#include <aws/rds/model/DescribeDBCapacityReservationsPaginationTraits.h>
+#include <aws/rds/model/DescribeDBCapacityReservationsRequest.h>
+#include <aws/rds/model/DescribeDBCapacityReservationsResult.h>
 #include <aws/rds/model/DescribeDBClusterAutomatedBackupsPaginationTraits.h>
 #include <aws/rds/model/DescribeDBClusterAutomatedBackupsRequest.h>
 #include <aws/rds/model/DescribeDBClusterAutomatedBackupsResult.h>
@@ -333,6 +344,7 @@
 #include <aws/rds/model/EC2SecurityGroup.h>
 #include <aws/rds/model/EnableHttpEndpointRequest.h>
 #include <aws/rds/model/EnableHttpEndpointResult.h>
+#include <aws/rds/model/EndDateType.h>
 #include <aws/rds/model/Endpoint.h>
 #include <aws/rds/model/EndpointNetworkType.h>
 #include <aws/rds/model/EngineDefaults.h>
@@ -379,6 +391,8 @@
 #include <aws/rds/model/ModifyCurrentDBClusterCapacityResult.h>
 #include <aws/rds/model/ModifyCustomDBEngineVersionRequest.h>
 #include <aws/rds/model/ModifyCustomDBEngineVersionResult.h>
+#include <aws/rds/model/ModifyDBCapacityReservationRequest.h>
+#include <aws/rds/model/ModifyDBCapacityReservationResult.h>
 #include <aws/rds/model/ModifyDBClusterEndpointRequest.h>
 #include <aws/rds/model/ModifyDBClusterEndpointResult.h>
 #include <aws/rds/model/ModifyDBClusterParameterGroupRequest.h>

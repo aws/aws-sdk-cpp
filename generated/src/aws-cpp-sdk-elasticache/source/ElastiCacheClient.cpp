@@ -86,6 +86,7 @@
 #include <aws/elasticache/model/ModifyServerlessCacheRequest.h>
 #include <aws/elasticache/model/ModifyUserGroupRequest.h>
 #include <aws/elasticache/model/ModifyUserRequest.h>
+#include <aws/elasticache/model/PrepareMigrationRequest.h>
 #include <aws/elasticache/model/PurchaseReservedCacheNodesOfferingRequest.h>
 #include <aws/elasticache/model/RebalanceSlotsInGlobalReplicationGroupRequest.h>
 #include <aws/elasticache/model/RebootCacheClusterRequest.h>
@@ -93,6 +94,7 @@
 #include <aws/elasticache/model/ResetCacheParameterGroupRequest.h>
 #include <aws/elasticache/model/RevokeCacheSecurityGroupIngressRequest.h>
 #include <aws/elasticache/model/StartMigrationRequest.h>
+#include <aws/elasticache/model/StopMigrationRequest.h>
 #include <aws/elasticache/model/TestFailoverRequest.h>
 #include <aws/elasticache/model/TestMigrationRequest.h>
 #include <smithy/tracing/TracingUtils.h>
@@ -673,6 +675,12 @@ ModifyUserGroupOutcome ElastiCacheClient::ModifyUserGroup(const ModifyUserGroupR
                             : ModifyUserGroupOutcome(std::move(result.GetError()));
 }
 
+PrepareMigrationOutcome ElastiCacheClient::PrepareMigration(const PrepareMigrationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PrepareMigrationOutcome(result.GetResultWithOwnership())
+                            : PrepareMigrationOutcome(std::move(result.GetError()));
+}
+
 PurchaseReservedCacheNodesOfferingOutcome ElastiCacheClient::PurchaseReservedCacheNodesOffering(
     const PurchaseReservedCacheNodesOfferingRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -715,6 +723,11 @@ RevokeCacheSecurityGroupIngressOutcome ElastiCacheClient::RevokeCacheSecurityGro
 StartMigrationOutcome ElastiCacheClient::StartMigration(const StartMigrationRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? StartMigrationOutcome(result.GetResultWithOwnership()) : StartMigrationOutcome(std::move(result.GetError()));
+}
+
+StopMigrationOutcome ElastiCacheClient::StopMigration(const StopMigrationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopMigrationOutcome(result.GetResultWithOwnership()) : StopMigrationOutcome(std::move(result.GetError()));
 }
 
 TestFailoverOutcome ElastiCacheClient::TestFailover(const TestFailoverRequest& request) const {

@@ -36,6 +36,24 @@ class StartMigrationRequest : public ElastiCacheRequest {
  public:
   ///@{
   /**
+   * <p>The name of the serverless cache to which data is being migrated.</p>
+   */
+  inline const Aws::String& GetServerlessCacheName() const { return m_serverlessCacheName; }
+  inline bool ServerlessCacheNameHasBeenSet() const { return m_serverlessCacheNameHasBeenSet; }
+  template <typename ServerlessCacheNameT = Aws::String>
+  void SetServerlessCacheName(ServerlessCacheNameT&& value) {
+    m_serverlessCacheNameHasBeenSet = true;
+    m_serverlessCacheName = std::forward<ServerlessCacheNameT>(value);
+  }
+  template <typename ServerlessCacheNameT = Aws::String>
+  StartMigrationRequest& WithServerlessCacheName(ServerlessCacheNameT&& value) {
+    SetServerlessCacheName(std::forward<ServerlessCacheNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The ID of the replication group to which data should be migrated.</p>
    */
   inline const Aws::String& GetReplicationGroupId() const { return m_replicationGroupId; }
@@ -54,8 +72,10 @@ class StartMigrationRequest : public ElastiCacheRequest {
 
   ///@{
   /**
-   * <p>List of endpoints from which data should be migrated. For Valkey or Redis OSS
-   * (cluster mode disabled), the list should have only one element.</p>
+   * <p>The list of endpoints from which to migrate data. For Valkey or Redis OSS
+   * (cluster mode disabled), the list should have only one element. For serverless
+   * cache migrations, ElastiCache uses the endpoint that you provided in
+   * <code>PrepareMigration</code>.</p>
    */
   inline const Aws::Vector<CustomerNodeEndpoint>& GetCustomerNodeEndpointList() const { return m_customerNodeEndpointList; }
   inline bool CustomerNodeEndpointListHasBeenSet() const { return m_customerNodeEndpointListHasBeenSet; }
@@ -76,12 +96,56 @@ class StartMigrationRequest : public ElastiCacheRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether ElastiCache automatically attempts to complete the
+   * migration after data sync is established.</p>
+   */
+  inline bool GetAutoCutover() const { return m_autoCutover; }
+  inline bool AutoCutoverHasBeenSet() const { return m_autoCutoverHasBeenSet; }
+  inline void SetAutoCutover(bool value) {
+    m_autoCutoverHasBeenSet = true;
+    m_autoCutover = value;
+  }
+  inline StartMigrationRequest& WithAutoCutover(bool value) {
+    SetAutoCutover(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether ElastiCache deletes existing data in the serverless cache
+   * before migration begins. After <code>StopMigration</code>,
+   * <code>StartMigration</code> requires this option to restart the data sync.</p>
+   */
+  inline bool GetClearTargetCacheData() const { return m_clearTargetCacheData; }
+  inline bool ClearTargetCacheDataHasBeenSet() const { return m_clearTargetCacheDataHasBeenSet; }
+  inline void SetClearTargetCacheData(bool value) {
+    m_clearTargetCacheDataHasBeenSet = true;
+    m_clearTargetCacheData = value;
+  }
+  inline StartMigrationRequest& WithClearTargetCacheData(bool value) {
+    SetClearTargetCacheData(value);
+    return *this;
+  }
+  ///@}
  private:
+  Aws::String m_serverlessCacheName;
+
   Aws::String m_replicationGroupId;
 
   Aws::Vector<CustomerNodeEndpoint> m_customerNodeEndpointList;
+
+  bool m_autoCutover{false};
+
+  bool m_clearTargetCacheData{false};
+  bool m_serverlessCacheNameHasBeenSet = false;
   bool m_replicationGroupIdHasBeenSet = false;
   bool m_customerNodeEndpointListHasBeenSet = false;
+  bool m_autoCutoverHasBeenSet = false;
+  bool m_clearTargetCacheDataHasBeenSet = false;
 };
 
 }  // namespace Model

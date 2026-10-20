@@ -30,6 +30,10 @@ ConfiguredTableSummary& ConfiguredTableSummary::operator=(JsonView jsonValue) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("tableType")) {
+    m_tableType = TableReferenceTypeMapper::GetTableReferenceTypeForName(jsonValue.GetString("tableType"));
+    m_tableTypeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("createTime")) {
     m_createTime = jsonValue.GetDouble("createTime");
     m_createTimeHasBeenSet = true;
@@ -75,6 +79,10 @@ JsonValue ConfiguredTableSummary::Jsonize() const {
 
   if (m_nameHasBeenSet) {
     payload.WithString("name", m_name);
+  }
+
+  if (m_tableTypeHasBeenSet) {
+    payload.WithString("tableType", TableReferenceTypeMapper::GetNameForTableReferenceType(m_tableType));
   }
 
   if (m_createTimeHasBeenSet) {

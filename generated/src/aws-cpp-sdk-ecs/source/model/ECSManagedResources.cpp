@@ -51,6 +51,14 @@ ECSManagedResources& ECSManagedResources::operator=(JsonView jsonValue) {
     }
     m_logGroupsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("gatewayConnections")) {
+    Aws::Utils::Array<JsonView> gatewayConnectionsJsonList = jsonValue.GetArray("gatewayConnections");
+    for (unsigned gatewayConnectionsIndex = 0; gatewayConnectionsIndex < gatewayConnectionsJsonList.GetLength();
+         ++gatewayConnectionsIndex) {
+      m_gatewayConnections.push_back(gatewayConnectionsJsonList[gatewayConnectionsIndex].AsObject());
+    }
+    m_gatewayConnectionsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -92,6 +100,15 @@ JsonValue ECSManagedResources::Jsonize() const {
       logGroupsJsonList[logGroupsIndex].AsObject(m_logGroups[logGroupsIndex].Jsonize());
     }
     payload.WithArray("logGroups", std::move(logGroupsJsonList));
+  }
+
+  if (m_gatewayConnectionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> gatewayConnectionsJsonList(m_gatewayConnections.size());
+    for (unsigned gatewayConnectionsIndex = 0; gatewayConnectionsIndex < gatewayConnectionsJsonList.GetLength();
+         ++gatewayConnectionsIndex) {
+      gatewayConnectionsJsonList[gatewayConnectionsIndex].AsObject(m_gatewayConnections[gatewayConnectionsIndex].Jsonize());
+    }
+    payload.WithArray("gatewayConnections", std::move(gatewayConnectionsJsonList));
   }
 
   return payload;

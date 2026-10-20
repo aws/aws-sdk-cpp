@@ -508,7 +508,9 @@ class TableDescription {
 
   ///@{
   /**
-   * <p>Represents replicas of the table.</p>
+   * <p>Represents replicas of the table.</p> <p>After a successful disassociation,
+   * this list is absent or empty. To confirm disassociation, also verify that
+   * <code>TableStatus</code> is <code>ACTIVE</code>.</p>
    */
   inline const Aws::Vector<ReplicaDescription>& GetReplicas() const { return m_replicas; }
   inline bool ReplicasHasBeenSet() const { return m_replicasHasBeenSet; }
@@ -663,6 +665,24 @@ class TableDescription {
   }
   inline TableDescription& WithDeletionProtectionEnabled(bool value) {
     SetDeletionProtectionEnabled(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether disassociation protection is enabled (<code>true</code>) or
+   * disabled (<code>false</code>) for the local global table replica. Protection is
+   * enabled by default.</p>
+   */
+  inline bool GetDisassociationProtectionEnabled() const { return m_disassociationProtectionEnabled; }
+  inline bool DisassociationProtectionEnabledHasBeenSet() const { return m_disassociationProtectionEnabledHasBeenSet; }
+  inline void SetDisassociationProtectionEnabled(bool value) {
+    m_disassociationProtectionEnabledHasBeenSet = true;
+    m_disassociationProtectionEnabled = value;
+  }
+  inline TableDescription& WithDisassociationProtectionEnabled(bool value) {
+    SetDisassociationProtectionEnabled(value);
     return *this;
   }
   ///@}
@@ -824,6 +844,8 @@ class TableDescription {
 
   bool m_deletionProtectionEnabled{false};
 
+  bool m_disassociationProtectionEnabled{false};
+
   OnDemandThroughput m_onDemandThroughput;
 
   TableWarmThroughputDescription m_warmThroughput;
@@ -856,6 +878,7 @@ class TableDescription {
   bool m_archivalSummaryHasBeenSet = false;
   bool m_tableClassSummaryHasBeenSet = false;
   bool m_deletionProtectionEnabledHasBeenSet = false;
+  bool m_disassociationProtectionEnabledHasBeenSet = false;
   bool m_onDemandThroughputHasBeenSet = false;
   bool m_warmThroughputHasBeenSet = false;
   bool m_multiRegionConsistencyHasBeenSet = false;

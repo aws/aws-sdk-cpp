@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock/Bedrock_EXPORTS.h>
 #include <aws/bedrock/model/GuardrailContextualGroundingFilter.h>
+#include <aws/bedrock/model/GuardrailContextualGroundingTier.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
@@ -56,9 +57,30 @@ class GuardrailContextualGroundingPolicy {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The tier that your guardrail uses for contextual grounding.</p>
+   */
+  inline const GuardrailContextualGroundingTier& GetTier() const { return m_tier; }
+  inline bool TierHasBeenSet() const { return m_tierHasBeenSet; }
+  template <typename TierT = GuardrailContextualGroundingTier>
+  void SetTier(TierT&& value) {
+    m_tierHasBeenSet = true;
+    m_tier = std::forward<TierT>(value);
+  }
+  template <typename TierT = GuardrailContextualGroundingTier>
+  GuardrailContextualGroundingPolicy& WithTier(TierT&& value) {
+    SetTier(std::forward<TierT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<GuardrailContextualGroundingFilter> m_filters;
+
+  GuardrailContextualGroundingTier m_tier;
   bool m_filtersHasBeenSet = false;
+  bool m_tierHasBeenSet = false;
 };
 
 }  // namespace Model

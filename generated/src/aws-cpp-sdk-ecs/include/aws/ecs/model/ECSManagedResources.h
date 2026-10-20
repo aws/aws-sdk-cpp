@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecs/ECS_EXPORTS.h>
+#include <aws/ecs/model/GatewayConnection.h>
 #include <aws/ecs/model/ManagedAutoScaling.h>
 #include <aws/ecs/model/ManagedIngressPath.h>
 #include <aws/ecs/model/ManagedLogGroup.h>
@@ -151,6 +152,32 @@ class ECSManagedResources {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The gateway-managed connections for the service revision, including the
+   * gateway routes and infrastructure that a gateway created for the service's
+   * connector.</p>
+   */
+  inline const Aws::Vector<GatewayConnection>& GetGatewayConnections() const { return m_gatewayConnections; }
+  inline bool GatewayConnectionsHasBeenSet() const { return m_gatewayConnectionsHasBeenSet; }
+  template <typename GatewayConnectionsT = Aws::Vector<GatewayConnection>>
+  void SetGatewayConnections(GatewayConnectionsT&& value) {
+    m_gatewayConnectionsHasBeenSet = true;
+    m_gatewayConnections = std::forward<GatewayConnectionsT>(value);
+  }
+  template <typename GatewayConnectionsT = Aws::Vector<GatewayConnection>>
+  ECSManagedResources& WithGatewayConnections(GatewayConnectionsT&& value) {
+    SetGatewayConnections(std::forward<GatewayConnectionsT>(value));
+    return *this;
+  }
+  template <typename GatewayConnectionsT = GatewayConnection>
+  ECSManagedResources& AddGatewayConnections(GatewayConnectionsT&& value) {
+    m_gatewayConnectionsHasBeenSet = true;
+    m_gatewayConnections.emplace_back(std::forward<GatewayConnectionsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<ManagedIngressPath> m_ingressPaths;
 
@@ -161,11 +188,14 @@ class ECSManagedResources {
   Aws::Vector<ManagedSecurityGroup> m_serviceSecurityGroups;
 
   Aws::Vector<ManagedLogGroup> m_logGroups;
+
+  Aws::Vector<GatewayConnection> m_gatewayConnections;
   bool m_ingressPathsHasBeenSet = false;
   bool m_autoScalingHasBeenSet = false;
   bool m_metricAlarmsHasBeenSet = false;
   bool m_serviceSecurityGroupsHasBeenSet = false;
   bool m_logGroupsHasBeenSet = false;
+  bool m_gatewayConnectionsHasBeenSet = false;
 };
 
 }  // namespace Model

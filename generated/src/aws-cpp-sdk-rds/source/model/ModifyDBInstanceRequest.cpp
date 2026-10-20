@@ -302,6 +302,10 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const {
     }
   }
 
+  if (m_dBCapacityReservationIdentifierHasBeenSet) {
+    ss << "DBCapacityReservationIdentifier=" << StringUtils::URLEncode(m_dBCapacityReservationIdentifier.c_str()) << "&";
+  }
+
   if (m_tagSpecificationsHasBeenSet) {
     if (m_tagSpecifications.empty()) {
       ss << "TagSpecifications=&";

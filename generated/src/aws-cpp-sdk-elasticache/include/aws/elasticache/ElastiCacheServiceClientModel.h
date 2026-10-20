@@ -24,6 +24,7 @@
 #include <aws/elasticache/model/AuthorizeCacheSecurityGroupIngressResult.h>
 #include <aws/elasticache/model/BatchApplyUpdateActionResult.h>
 #include <aws/elasticache/model/BatchStopUpdateActionResult.h>
+#include <aws/elasticache/model/CompleteMigrationRequest.h>
 #include <aws/elasticache/model/CompleteMigrationResult.h>
 #include <aws/elasticache/model/CopyServerlessCacheSnapshotResult.h>
 #include <aws/elasticache/model/CopySnapshotResult.h>
@@ -101,13 +102,16 @@
 #include <aws/elasticache/model/ModifyServerlessCacheResult.h>
 #include <aws/elasticache/model/ModifyUserGroupResult.h>
 #include <aws/elasticache/model/ModifyUserResult.h>
+#include <aws/elasticache/model/PrepareMigrationResult.h>
 #include <aws/elasticache/model/PurchaseReservedCacheNodesOfferingResult.h>
 #include <aws/elasticache/model/RebalanceSlotsInGlobalReplicationGroupResult.h>
 #include <aws/elasticache/model/RebootCacheClusterResult.h>
 #include <aws/elasticache/model/RemoveTagsFromResourceResult.h>
 #include <aws/elasticache/model/ResetCacheParameterGroupResult.h>
 #include <aws/elasticache/model/RevokeCacheSecurityGroupIngressResult.h>
+#include <aws/elasticache/model/StartMigrationRequest.h>
 #include <aws/elasticache/model/StartMigrationResult.h>
+#include <aws/elasticache/model/StopMigrationResult.h>
 #include <aws/elasticache/model/TestFailoverResult.h>
 #include <aws/elasticache/model/TestMigrationResult.h>
 /* End of service model headers required in ElastiCacheClient header */
@@ -209,6 +213,7 @@ class ModifyReplicationGroupShardConfigurationRequest;
 class ModifyServerlessCacheRequest;
 class ModifyUserRequest;
 class ModifyUserGroupRequest;
+class PrepareMigrationRequest;
 class PurchaseReservedCacheNodesOfferingRequest;
 class RebalanceSlotsInGlobalReplicationGroupRequest;
 class RebootCacheClusterRequest;
@@ -216,6 +221,7 @@ class RemoveTagsFromResourceRequest;
 class ResetCacheParameterGroupRequest;
 class RevokeCacheSecurityGroupIngressRequest;
 class StartMigrationRequest;
+class StopMigrationRequest;
 class TestFailoverRequest;
 class TestMigrationRequest;
 /* End of service model forward declarations required in ElastiCacheClient header */
@@ -290,6 +296,7 @@ typedef Aws::Utils::Outcome<ModifyReplicationGroupShardConfigurationResult, Elas
 typedef Aws::Utils::Outcome<ModifyServerlessCacheResult, ElastiCacheError> ModifyServerlessCacheOutcome;
 typedef Aws::Utils::Outcome<ModifyUserResult, ElastiCacheError> ModifyUserOutcome;
 typedef Aws::Utils::Outcome<ModifyUserGroupResult, ElastiCacheError> ModifyUserGroupOutcome;
+typedef Aws::Utils::Outcome<PrepareMigrationResult, ElastiCacheError> PrepareMigrationOutcome;
 typedef Aws::Utils::Outcome<PurchaseReservedCacheNodesOfferingResult, ElastiCacheError> PurchaseReservedCacheNodesOfferingOutcome;
 typedef Aws::Utils::Outcome<RebalanceSlotsInGlobalReplicationGroupResult, ElastiCacheError> RebalanceSlotsInGlobalReplicationGroupOutcome;
 typedef Aws::Utils::Outcome<RebootCacheClusterResult, ElastiCacheError> RebootCacheClusterOutcome;
@@ -297,6 +304,7 @@ typedef Aws::Utils::Outcome<RemoveTagsFromResourceResult, ElastiCacheError> Remo
 typedef Aws::Utils::Outcome<ResetCacheParameterGroupResult, ElastiCacheError> ResetCacheParameterGroupOutcome;
 typedef Aws::Utils::Outcome<RevokeCacheSecurityGroupIngressResult, ElastiCacheError> RevokeCacheSecurityGroupIngressOutcome;
 typedef Aws::Utils::Outcome<StartMigrationResult, ElastiCacheError> StartMigrationOutcome;
+typedef Aws::Utils::Outcome<StopMigrationResult, ElastiCacheError> StopMigrationOutcome;
 typedef Aws::Utils::Outcome<TestFailoverResult, ElastiCacheError> TestFailoverOutcome;
 typedef Aws::Utils::Outcome<TestMigrationResult, ElastiCacheError> TestMigrationOutcome;
 /* End of service model Outcome class definitions */
@@ -368,6 +376,7 @@ typedef std::future<ModifyReplicationGroupShardConfigurationOutcome> ModifyRepli
 typedef std::future<ModifyServerlessCacheOutcome> ModifyServerlessCacheOutcomeCallable;
 typedef std::future<ModifyUserOutcome> ModifyUserOutcomeCallable;
 typedef std::future<ModifyUserGroupOutcome> ModifyUserGroupOutcomeCallable;
+typedef std::future<PrepareMigrationOutcome> PrepareMigrationOutcomeCallable;
 typedef std::future<PurchaseReservedCacheNodesOfferingOutcome> PurchaseReservedCacheNodesOfferingOutcomeCallable;
 typedef std::future<RebalanceSlotsInGlobalReplicationGroupOutcome> RebalanceSlotsInGlobalReplicationGroupOutcomeCallable;
 typedef std::future<RebootCacheClusterOutcome> RebootCacheClusterOutcomeCallable;
@@ -375,6 +384,7 @@ typedef std::future<RemoveTagsFromResourceOutcome> RemoveTagsFromResourceOutcome
 typedef std::future<ResetCacheParameterGroupOutcome> ResetCacheParameterGroupOutcomeCallable;
 typedef std::future<RevokeCacheSecurityGroupIngressOutcome> RevokeCacheSecurityGroupIngressOutcomeCallable;
 typedef std::future<StartMigrationOutcome> StartMigrationOutcomeCallable;
+typedef std::future<StopMigrationOutcome> StopMigrationOutcomeCallable;
 typedef std::future<TestFailoverOutcome> TestFailoverOutcomeCallable;
 typedef std::future<TestMigrationOutcome> TestMigrationOutcomeCallable;
 /* End of service model Outcome callable definitions */
@@ -599,6 +609,9 @@ typedef std::function<void(const ElastiCacheClient*, const Model::ModifyUserRequ
 typedef std::function<void(const ElastiCacheClient*, const Model::ModifyUserGroupRequest&, const Model::ModifyUserGroupOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ModifyUserGroupResponseReceivedHandler;
+typedef std::function<void(const ElastiCacheClient*, const Model::PrepareMigrationRequest&, const Model::PrepareMigrationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    PrepareMigrationResponseReceivedHandler;
 typedef std::function<void(const ElastiCacheClient*, const Model::PurchaseReservedCacheNodesOfferingRequest&,
                            const Model::PurchaseReservedCacheNodesOfferingOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -623,6 +636,9 @@ typedef std::function<void(const ElastiCacheClient*, const Model::RevokeCacheSec
 typedef std::function<void(const ElastiCacheClient*, const Model::StartMigrationRequest&, const Model::StartMigrationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartMigrationResponseReceivedHandler;
+typedef std::function<void(const ElastiCacheClient*, const Model::StopMigrationRequest&, const Model::StopMigrationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StopMigrationResponseReceivedHandler;
 typedef std::function<void(const ElastiCacheClient*, const Model::TestFailoverRequest&, const Model::TestFailoverOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     TestFailoverResponseReceivedHandler;

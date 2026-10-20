@@ -30,6 +30,10 @@ TableReference& TableReference::operator=(JsonView jsonValue) {
     m_athena = jsonValue.GetObject("athena");
     m_athenaHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("databricks")) {
+    m_databricks = jsonValue.GetObject("databricks");
+    m_databricksHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +50,10 @@ JsonValue TableReference::Jsonize() const {
 
   if (m_athenaHasBeenSet) {
     payload.WithObject("athena", m_athena.Jsonize());
+  }
+
+  if (m_databricksHasBeenSet) {
+    payload.WithObject("databricks", m_databricks.Jsonize());
   }
 
   return payload;

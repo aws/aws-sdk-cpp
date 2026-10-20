@@ -1,6 +1,0 @@
-{
-  "type": "bugfix",
-  "category": "aws-cpp-sdk-eventbridge-tests",
-  "contributor": "Madrigal",
-  "description": "Make EventBridge unit tests work with both JSON and RPC v2 CBOR protocols"
-}

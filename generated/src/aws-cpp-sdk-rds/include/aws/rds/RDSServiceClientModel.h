@@ -24,6 +24,7 @@
 #include <aws/rds/model/ApplyPendingMaintenanceActionResult.h>
 #include <aws/rds/model/AuthorizeDBSecurityGroupIngressResult.h>
 #include <aws/rds/model/BacktrackDBClusterResult.h>
+#include <aws/rds/model/CancelDBCapacityReservationResult.h>
 #include <aws/rds/model/CancelExportTaskResult.h>
 #include <aws/rds/model/CopyDBClusterParameterGroupResult.h>
 #include <aws/rds/model/CopyDBClusterSnapshotResult.h>
@@ -32,6 +33,7 @@
 #include <aws/rds/model/CopyOptionGroupResult.h>
 #include <aws/rds/model/CreateBlueGreenDeploymentResult.h>
 #include <aws/rds/model/CreateCustomDBEngineVersionResult.h>
+#include <aws/rds/model/CreateDBCapacityReservationResult.h>
 #include <aws/rds/model/CreateDBClusterEndpointResult.h>
 #include <aws/rds/model/CreateDBClusterParameterGroupResult.h>
 #include <aws/rds/model/CreateDBClusterResult.h>
@@ -74,6 +76,8 @@
 #include <aws/rds/model/DescribeBlueGreenDeploymentsResult.h>
 #include <aws/rds/model/DescribeCertificatesRequest.h>
 #include <aws/rds/model/DescribeCertificatesResult.h>
+#include <aws/rds/model/DescribeDBCapacityReservationsRequest.h>
+#include <aws/rds/model/DescribeDBCapacityReservationsResult.h>
 #include <aws/rds/model/DescribeDBClusterAutomatedBackupsRequest.h>
 #include <aws/rds/model/DescribeDBClusterAutomatedBackupsResult.h>
 #include <aws/rds/model/DescribeDBClusterBacktracksResult.h>
@@ -161,6 +165,7 @@
 #include <aws/rds/model/ModifyCertificatesResult.h>
 #include <aws/rds/model/ModifyCurrentDBClusterCapacityResult.h>
 #include <aws/rds/model/ModifyCustomDBEngineVersionResult.h>
+#include <aws/rds/model/ModifyDBCapacityReservationResult.h>
 #include <aws/rds/model/ModifyDBClusterEndpointResult.h>
 #include <aws/rds/model/ModifyDBClusterParameterGroupResult.h>
 #include <aws/rds/model/ModifyDBClusterResult.h>
@@ -250,6 +255,7 @@ class AddTagsToResourceRequest;
 class ApplyPendingMaintenanceActionRequest;
 class AuthorizeDBSecurityGroupIngressRequest;
 class BacktrackDBClusterRequest;
+class CancelDBCapacityReservationRequest;
 class CancelExportTaskRequest;
 class CopyDBClusterParameterGroupRequest;
 class CopyDBClusterSnapshotRequest;
@@ -258,6 +264,7 @@ class CopyDBSnapshotRequest;
 class CopyOptionGroupRequest;
 class CreateBlueGreenDeploymentRequest;
 class CreateCustomDBEngineVersionRequest;
+class CreateDBCapacityReservationRequest;
 class CreateDBClusterRequest;
 class CreateDBClusterEndpointRequest;
 class CreateDBClusterParameterGroupRequest;
@@ -301,6 +308,7 @@ class DeregisterDBProxyTargetsRequest;
 class DescribeAccountAttributesRequest;
 class DescribeBlueGreenDeploymentsRequest;
 class DescribeCertificatesRequest;
+class DescribeDBCapacityReservationsRequest;
 class DescribeDBClusterAutomatedBackupsRequest;
 class DescribeDBClusterBacktracksRequest;
 class DescribeDBClusterEndpointsRequest;
@@ -355,6 +363,7 @@ class ModifyActivityStreamRequest;
 class ModifyCertificatesRequest;
 class ModifyCurrentDBClusterCapacityRequest;
 class ModifyCustomDBEngineVersionRequest;
+class ModifyDBCapacityReservationRequest;
 class ModifyDBClusterRequest;
 class ModifyDBClusterEndpointRequest;
 class ModifyDBClusterParameterGroupRequest;
@@ -417,6 +426,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, RDSError> AddTagsToResourceOutcome;
 typedef Aws::Utils::Outcome<ApplyPendingMaintenanceActionResult, RDSError> ApplyPendingMaintenanceActionOutcome;
 typedef Aws::Utils::Outcome<AuthorizeDBSecurityGroupIngressResult, RDSError> AuthorizeDBSecurityGroupIngressOutcome;
 typedef Aws::Utils::Outcome<BacktrackDBClusterResult, RDSError> BacktrackDBClusterOutcome;
+typedef Aws::Utils::Outcome<CancelDBCapacityReservationResult, RDSError> CancelDBCapacityReservationOutcome;
 typedef Aws::Utils::Outcome<CancelExportTaskResult, RDSError> CancelExportTaskOutcome;
 typedef Aws::Utils::Outcome<CopyDBClusterParameterGroupResult, RDSError> CopyDBClusterParameterGroupOutcome;
 typedef Aws::Utils::Outcome<CopyDBClusterSnapshotResult, RDSError> CopyDBClusterSnapshotOutcome;
@@ -425,6 +435,7 @@ typedef Aws::Utils::Outcome<CopyDBSnapshotResult, RDSError> CopyDBSnapshotOutcom
 typedef Aws::Utils::Outcome<CopyOptionGroupResult, RDSError> CopyOptionGroupOutcome;
 typedef Aws::Utils::Outcome<CreateBlueGreenDeploymentResult, RDSError> CreateBlueGreenDeploymentOutcome;
 typedef Aws::Utils::Outcome<CreateCustomDBEngineVersionResult, RDSError> CreateCustomDBEngineVersionOutcome;
+typedef Aws::Utils::Outcome<CreateDBCapacityReservationResult, RDSError> CreateDBCapacityReservationOutcome;
 typedef Aws::Utils::Outcome<CreateDBClusterResult, RDSError> CreateDBClusterOutcome;
 typedef Aws::Utils::Outcome<CreateDBClusterEndpointResult, RDSError> CreateDBClusterEndpointOutcome;
 typedef Aws::Utils::Outcome<CreateDBClusterParameterGroupResult, RDSError> CreateDBClusterParameterGroupOutcome;
@@ -468,6 +479,7 @@ typedef Aws::Utils::Outcome<DeregisterDBProxyTargetsResult, RDSError> Deregister
 typedef Aws::Utils::Outcome<DescribeAccountAttributesResult, RDSError> DescribeAccountAttributesOutcome;
 typedef Aws::Utils::Outcome<DescribeBlueGreenDeploymentsResult, RDSError> DescribeBlueGreenDeploymentsOutcome;
 typedef Aws::Utils::Outcome<DescribeCertificatesResult, RDSError> DescribeCertificatesOutcome;
+typedef Aws::Utils::Outcome<DescribeDBCapacityReservationsResult, RDSError> DescribeDBCapacityReservationsOutcome;
 typedef Aws::Utils::Outcome<DescribeDBClusterAutomatedBackupsResult, RDSError> DescribeDBClusterAutomatedBackupsOutcome;
 typedef Aws::Utils::Outcome<DescribeDBClusterBacktracksResult, RDSError> DescribeDBClusterBacktracksOutcome;
 typedef Aws::Utils::Outcome<DescribeDBClusterEndpointsResult, RDSError> DescribeDBClusterEndpointsOutcome;
@@ -522,6 +534,7 @@ typedef Aws::Utils::Outcome<ModifyActivityStreamResult, RDSError> ModifyActivity
 typedef Aws::Utils::Outcome<ModifyCertificatesResult, RDSError> ModifyCertificatesOutcome;
 typedef Aws::Utils::Outcome<ModifyCurrentDBClusterCapacityResult, RDSError> ModifyCurrentDBClusterCapacityOutcome;
 typedef Aws::Utils::Outcome<ModifyCustomDBEngineVersionResult, RDSError> ModifyCustomDBEngineVersionOutcome;
+typedef Aws::Utils::Outcome<ModifyDBCapacityReservationResult, RDSError> ModifyDBCapacityReservationOutcome;
 typedef Aws::Utils::Outcome<ModifyDBClusterResult, RDSError> ModifyDBClusterOutcome;
 typedef Aws::Utils::Outcome<ModifyDBClusterEndpointResult, RDSError> ModifyDBClusterEndpointOutcome;
 typedef Aws::Utils::Outcome<ModifyDBClusterParameterGroupResult, RDSError> ModifyDBClusterParameterGroupOutcome;
@@ -584,6 +597,7 @@ typedef std::future<AddTagsToResourceOutcome> AddTagsToResourceOutcomeCallable;
 typedef std::future<ApplyPendingMaintenanceActionOutcome> ApplyPendingMaintenanceActionOutcomeCallable;
 typedef std::future<AuthorizeDBSecurityGroupIngressOutcome> AuthorizeDBSecurityGroupIngressOutcomeCallable;
 typedef std::future<BacktrackDBClusterOutcome> BacktrackDBClusterOutcomeCallable;
+typedef std::future<CancelDBCapacityReservationOutcome> CancelDBCapacityReservationOutcomeCallable;
 typedef std::future<CancelExportTaskOutcome> CancelExportTaskOutcomeCallable;
 typedef std::future<CopyDBClusterParameterGroupOutcome> CopyDBClusterParameterGroupOutcomeCallable;
 typedef std::future<CopyDBClusterSnapshotOutcome> CopyDBClusterSnapshotOutcomeCallable;
@@ -592,6 +606,7 @@ typedef std::future<CopyDBSnapshotOutcome> CopyDBSnapshotOutcomeCallable;
 typedef std::future<CopyOptionGroupOutcome> CopyOptionGroupOutcomeCallable;
 typedef std::future<CreateBlueGreenDeploymentOutcome> CreateBlueGreenDeploymentOutcomeCallable;
 typedef std::future<CreateCustomDBEngineVersionOutcome> CreateCustomDBEngineVersionOutcomeCallable;
+typedef std::future<CreateDBCapacityReservationOutcome> CreateDBCapacityReservationOutcomeCallable;
 typedef std::future<CreateDBClusterOutcome> CreateDBClusterOutcomeCallable;
 typedef std::future<CreateDBClusterEndpointOutcome> CreateDBClusterEndpointOutcomeCallable;
 typedef std::future<CreateDBClusterParameterGroupOutcome> CreateDBClusterParameterGroupOutcomeCallable;
@@ -635,6 +650,7 @@ typedef std::future<DeregisterDBProxyTargetsOutcome> DeregisterDBProxyTargetsOut
 typedef std::future<DescribeAccountAttributesOutcome> DescribeAccountAttributesOutcomeCallable;
 typedef std::future<DescribeBlueGreenDeploymentsOutcome> DescribeBlueGreenDeploymentsOutcomeCallable;
 typedef std::future<DescribeCertificatesOutcome> DescribeCertificatesOutcomeCallable;
+typedef std::future<DescribeDBCapacityReservationsOutcome> DescribeDBCapacityReservationsOutcomeCallable;
 typedef std::future<DescribeDBClusterAutomatedBackupsOutcome> DescribeDBClusterAutomatedBackupsOutcomeCallable;
 typedef std::future<DescribeDBClusterBacktracksOutcome> DescribeDBClusterBacktracksOutcomeCallable;
 typedef std::future<DescribeDBClusterEndpointsOutcome> DescribeDBClusterEndpointsOutcomeCallable;
@@ -689,6 +705,7 @@ typedef std::future<ModifyActivityStreamOutcome> ModifyActivityStreamOutcomeCall
 typedef std::future<ModifyCertificatesOutcome> ModifyCertificatesOutcomeCallable;
 typedef std::future<ModifyCurrentDBClusterCapacityOutcome> ModifyCurrentDBClusterCapacityOutcomeCallable;
 typedef std::future<ModifyCustomDBEngineVersionOutcome> ModifyCustomDBEngineVersionOutcomeCallable;
+typedef std::future<ModifyDBCapacityReservationOutcome> ModifyDBCapacityReservationOutcomeCallable;
 typedef std::future<ModifyDBClusterOutcome> ModifyDBClusterOutcomeCallable;
 typedef std::future<ModifyDBClusterEndpointOutcome> ModifyDBClusterEndpointOutcomeCallable;
 typedef std::future<ModifyDBClusterParameterGroupOutcome> ModifyDBClusterParameterGroupOutcomeCallable;
@@ -771,6 +788,9 @@ typedef std::function<void(const RDSClient*, const Model::AuthorizeDBSecurityGro
 typedef std::function<void(const RDSClient*, const Model::BacktrackDBClusterRequest&, const Model::BacktrackDBClusterOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     BacktrackDBClusterResponseReceivedHandler;
+typedef std::function<void(const RDSClient*, const Model::CancelDBCapacityReservationRequest&,
+                           const Model::CancelDBCapacityReservationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CancelDBCapacityReservationResponseReceivedHandler;
 typedef std::function<void(const RDSClient*, const Model::CancelExportTaskRequest&, const Model::CancelExportTaskOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CancelExportTaskResponseReceivedHandler;
@@ -795,6 +815,9 @@ typedef std::function<void(const RDSClient*, const Model::CreateBlueGreenDeploym
 typedef std::function<void(const RDSClient*, const Model::CreateCustomDBEngineVersionRequest&,
                            const Model::CreateCustomDBEngineVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateCustomDBEngineVersionResponseReceivedHandler;
+typedef std::function<void(const RDSClient*, const Model::CreateDBCapacityReservationRequest&,
+                           const Model::CreateDBCapacityReservationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateDBCapacityReservationResponseReceivedHandler;
 typedef std::function<void(const RDSClient*, const Model::CreateDBClusterRequest&, const Model::CreateDBClusterOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateDBClusterResponseReceivedHandler;
@@ -929,6 +952,10 @@ typedef std::function<void(const RDSClient*, const Model::DescribeBlueGreenDeplo
 typedef std::function<void(const RDSClient*, const Model::DescribeCertificatesRequest&, const Model::DescribeCertificatesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeCertificatesResponseReceivedHandler;
+typedef std::function<void(const RDSClient*, const Model::DescribeDBCapacityReservationsRequest&,
+                           const Model::DescribeDBCapacityReservationsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeDBCapacityReservationsResponseReceivedHandler;
 typedef std::function<void(const RDSClient*, const Model::DescribeDBClusterAutomatedBackupsRequest&,
                            const Model::DescribeDBClusterAutomatedBackupsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -1106,6 +1133,9 @@ typedef std::function<void(const RDSClient*, const Model::ModifyCurrentDBCluster
 typedef std::function<void(const RDSClient*, const Model::ModifyCustomDBEngineVersionRequest&,
                            const Model::ModifyCustomDBEngineVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ModifyCustomDBEngineVersionResponseReceivedHandler;
+typedef std::function<void(const RDSClient*, const Model::ModifyDBCapacityReservationRequest&,
+                           const Model::ModifyDBCapacityReservationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ModifyDBCapacityReservationResponseReceivedHandler;
 typedef std::function<void(const RDSClient*, const Model::ModifyDBClusterRequest&, const Model::ModifyDBClusterOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ModifyDBClusterResponseReceivedHandler;

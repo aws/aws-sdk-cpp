@@ -12,6 +12,7 @@
 #include <aws/elasticache/model/CacheUsageLimits.h>
 #include <aws/elasticache/model/ConnectionType.h>
 #include <aws/elasticache/model/Endpoint.h>
+#include <aws/elasticache/model/MigrationSummary.h>
 #include <aws/elasticache/model/NetworkType.h>
 #include <aws/elasticache/model/StorageEncryptionType.h>
 
@@ -418,6 +419,24 @@ class ServerlessCache {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Provides a summary of the migration status for the serverless cache.</p>
+   */
+  inline const MigrationSummary& GetMigration() const { return m_migration; }
+  inline bool MigrationHasBeenSet() const { return m_migrationHasBeenSet; }
+  template <typename MigrationT = MigrationSummary>
+  void SetMigration(MigrationT&& value) {
+    m_migrationHasBeenSet = true;
+    m_migration = std::forward<MigrationT>(value);
+  }
+  template <typename MigrationT = MigrationSummary>
+  ServerlessCache& WithMigration(MigrationT&& value) {
+    SetMigration(std::forward<MigrationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_serverlessCacheName;
 
@@ -458,6 +477,8 @@ class ServerlessCache {
   NetworkType m_networkType{NetworkType::NOT_SET};
 
   ConnectionType m_connectionType{ConnectionType::NOT_SET};
+
+  MigrationSummary m_migration;
   bool m_serverlessCacheNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_createTimeHasBeenSet = false;
@@ -478,6 +499,7 @@ class ServerlessCache {
   bool m_dailySnapshotTimeHasBeenSet = false;
   bool m_networkTypeHasBeenSet = false;
   bool m_connectionTypeHasBeenSet = false;
+  bool m_migrationHasBeenSet = false;
 };
 
 }  // namespace Model

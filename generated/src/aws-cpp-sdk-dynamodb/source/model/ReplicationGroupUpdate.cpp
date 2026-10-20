@@ -30,6 +30,10 @@ ReplicationGroupUpdate& ReplicationGroupUpdate::operator=(JsonView jsonValue) {
     m_delete = jsonValue.GetObject("Delete");
     m_deleteHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Disassociate")) {
+    m_disassociate = jsonValue.GetObject("Disassociate");
+    m_disassociateHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +50,10 @@ JsonValue ReplicationGroupUpdate::Jsonize() const {
 
   if (m_deleteHasBeenSet) {
     payload.WithObject("Delete", m_delete.Jsonize());
+  }
+
+  if (m_disassociateHasBeenSet) {
+    payload.WithObject("Disassociate", m_disassociate.Jsonize());
   }
 
   return payload;

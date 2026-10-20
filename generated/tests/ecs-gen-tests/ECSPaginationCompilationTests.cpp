@@ -8,12 +8,15 @@
 
 #include <aws/ecs/ECSClientPagination.h>
 #include <aws/ecs/ECSPaginationBase.h>
+#include <aws/ecs/model/ListGatewayClusterAssociationsPaginationTraits.h>
 #include <aws/ecs/model/ListTaskDefinitionsPaginationTraits.h>
 #include <aws/ecs/model/ListAttributesPaginationTraits.h>
 #include <aws/ecs/model/ListClustersPaginationTraits.h>
 #include <aws/ecs/model/ListContainerInstancesPaginationTraits.h>
+#include <aws/ecs/model/ListGatewayRoutesPaginationTraits.h>
 #include <aws/ecs/model/ListTaskDefinitionFamiliesPaginationTraits.h>
 #include <aws/ecs/model/ListServicesByNamespacePaginationTraits.h>
+#include <aws/ecs/model/ListGatewaysPaginationTraits.h>
 #include <aws/ecs/model/ListTasksPaginationTraits.h>
 #include <aws/ecs/model/ListServicesPaginationTraits.h>
 #include <aws/ecs/model/ListAccountSettingsPaginationTraits.h>

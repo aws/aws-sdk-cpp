@@ -1004,6 +1004,44 @@ class RestoreDBInstanceFromDBSnapshotRequest : public RDSRequest {
 
   ///@{
   /**
+   * <p>The identifier or the name of the DB capacity reservation to associate with
+   * this DB instance. You can specify the identifier, which has the prefix
+   * <code>dbcr-</code>, or the reservation name. When you specify this parameter,
+   * the DB instance uses reserved capacity from the specified reservation.</p> <p>If
+   * you specify <code>AvailabilityZone</code>, Amazon RDS places the DB instance in
+   * that Availability Zone, and the reservation must cover it.</p>
+   * <p>Constraints:</p> <ul> <li> <p>The reservation must reserve capacity for the
+   * DB instance class and the database engine of the DB instance.</p> </li> <li>
+   * <p>If the reservation reserves capacity for a specific license model, the
+   * license model of the DB instance must match it.</p> </li> <li> <p>The
+   * reservation must be in the <code>active</code> state, and it must not be past
+   * its end date.</p> </li> <li> <p>If you specify <code>AvailabilityZone</code>, it
+   * must be one of the Availability Zones of the reservation.</p> </li> <li> <p>For
+   * a Multi-AZ DB instance, the reservation must cover two or more Availability
+   * Zones. A Multi-AZ DB instance uses one unit of reserved capacity in each of two
+   * Availability Zones. If the reservation covers more than two Availability Zones,
+   * Amazon RDS chooses the two that the DB instance uses.</p> </li> <li> <p>The
+   * reservation must have available capacity in each Availability Zone that the DB
+   * instance uses.</p> </li> <li> <p>The DB subnet group must be in a VPC with
+   * default tenancy.</p> </li> <li> <p>The DB subnet group must cover each
+   * Availability Zone that the DB instance uses.</p> </li> </ul>
+   */
+  inline const Aws::String& GetDBCapacityReservationIdentifier() const { return m_dBCapacityReservationIdentifier; }
+  inline bool DBCapacityReservationIdentifierHasBeenSet() const { return m_dBCapacityReservationIdentifierHasBeenSet; }
+  template <typename DBCapacityReservationIdentifierT = Aws::String>
+  void SetDBCapacityReservationIdentifier(DBCapacityReservationIdentifierT&& value) {
+    m_dBCapacityReservationIdentifierHasBeenSet = true;
+    m_dBCapacityReservationIdentifier = std::forward<DBCapacityReservationIdentifierT>(value);
+  }
+  template <typename DBCapacityReservationIdentifierT = Aws::String>
+  RestoreDBInstanceFromDBSnapshotRequest& WithDBCapacityReservationIdentifier(DBCapacityReservationIdentifierT&& value) {
+    SetDBCapacityReservationIdentifier(std::forward<DBCapacityReservationIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Specifies whether to enable a dedicated log volume (DLV) for the DB
    * instance.</p>
    */
@@ -1269,6 +1307,8 @@ class RestoreDBInstanceFromDBSnapshotRequest : public RDSRequest {
 
   Aws::String m_preferredBackupWindow;
 
+  Aws::String m_dBCapacityReservationIdentifier;
+
   bool m_dedicatedLogVolume{false};
 
   Aws::String m_cACertificateIdentifier;
@@ -1323,6 +1363,7 @@ class RestoreDBInstanceFromDBSnapshotRequest : public RDSRequest {
   bool m_dBClusterSnapshotIdentifierHasBeenSet = false;
   bool m_backupRetentionPeriodHasBeenSet = false;
   bool m_preferredBackupWindowHasBeenSet = false;
+  bool m_dBCapacityReservationIdentifierHasBeenSet = false;
   bool m_dedicatedLogVolumeHasBeenSet = false;
   bool m_cACertificateIdentifierHasBeenSet = false;
   bool m_engineLifecycleSupportHasBeenSet = false;

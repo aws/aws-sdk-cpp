@@ -160,7 +160,8 @@ class CreateFileSystemResult {
    * <code>AVAILABLE</code> (the file system is available for use),
    * <code>CREATING</code> (the file system is being created), <code>DELETING</code>
    * (the file system is being deleted), <code>DELETED</code> (the file system has
-   * been deleted), <code>ERROR</code> (the file system is in an error state), or
+   * been deleted), <code>ERROR</code> (the file system is in an error state),
+   * <code>MISCONFIGURED</code> (the file system has a misconfiguration), or
    * <code>UPDATING</code> (the file system is being updated).</p>
    */
   inline LifeCycleState GetStatus() const { return m_status; }

@@ -27,7 +27,9 @@
 #include <aws/monitoring/model/AlarmTagsPropagation.h>
 #include <aws/monitoring/model/AlarmType.h>
 #include <aws/monitoring/model/AnomalyDetector.h>
+#include <aws/monitoring/model/AnomalyDetectorAdaptationSpeed.h>
 #include <aws/monitoring/model/AnomalyDetectorConfiguration.h>
+#include <aws/monitoring/model/AnomalyDetectorOutlierFilteringStrength.h>
 #include <aws/monitoring/model/AnomalyDetectorStateValue.h>
 #include <aws/monitoring/model/AnomalyDetectorType.h>
 #include <aws/monitoring/model/AssociateDatasetKmsKeyRequest.h>

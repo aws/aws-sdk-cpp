@@ -1,6 +1,0 @@
-{
-  "type": "bugfix",
-  "category": "aws-cpp-sdk-core",
-  "contributor": "Madrigal",
-  "description": "Fix cspell failures: correct typos and add allowed words"
-}
