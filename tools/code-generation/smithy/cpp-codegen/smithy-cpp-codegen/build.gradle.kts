@@ -31,3 +31,11 @@ dependencies {
 tasks.test {
     useJUnitPlatform()
 }
+
+// Bundle the shared Service ID SEP identifier table (single source of truth, also consumed by the
+// C2J generator) onto the classpath so ServiceNamespaceTable can load it as a resource.
+tasks.named<ProcessResources>("processResources") {
+    from("$projectDir/../../../shared") {
+        include("service-namespace-table.json")
+    }
+}
