@@ -115,6 +115,10 @@ public:
   }
 
   static void ValidateBody(const ExpectedRequest& expected, const Aws::ProtocolMock::Model::Request& receivedRequest) {
+    // A Smithy vector with no "body" asserts only headers/uri, not the body.
+    if (expected.body.empty()) {
+      return;
+    }
     const auto expectedBodyBuf = Aws::Utils::HashingUtils::Base64Decode(expected.body);
     const auto receivedBodyBuf = Aws::Utils::HashingUtils::Base64Decode(receivedRequest.GetBody());
     auto expectedBodyStr = Aws::String(reinterpret_cast<char*>(expectedBodyBuf.GetUnderlyingData()), expectedBodyBuf.GetLength());
@@ -163,6 +167,10 @@ public:
   }
 
   static void ValidateXmlBody(const ExpectedRequest& expected, const Aws::ProtocolMock::Model::Request& receivedRequest) {
+    // A Smithy vector with no "body" asserts only headers/uri, not the body.
+    if (expected.body.empty()) {
+      return;
+    }
     const auto expectedBodyBuf = Aws::Utils::HashingUtils::Base64Decode(expected.body);
     const auto receivedBodyBuf = Aws::Utils::HashingUtils::Base64Decode(receivedRequest.GetBody());
     const Aws::String expectedBodyStr(reinterpret_cast<char*>(expectedBodyBuf.GetUnderlyingData()), expectedBodyBuf.GetLength());
@@ -181,6 +189,10 @@ public:
 #endif
 
   static void ValidateFormUrlEncodedBody(const ExpectedRequest& expected, const Aws::ProtocolMock::Model::Request& receivedRequest) {
+    // A Smithy vector with no "body" asserts only headers/uri, not the body.
+    if (expected.body.empty()) {
+      return;
+    }
     const auto expectedBodyBuf = Aws::Utils::HashingUtils::Base64Decode(expected.body);
     const auto receivedBodyBuf = Aws::Utils::HashingUtils::Base64Decode(receivedRequest.GetBody());
     const Aws::String expectedBodyStr(reinterpret_cast<char*>(expectedBodyBuf.GetUnderlyingData()), expectedBodyBuf.GetLength());
@@ -235,15 +247,14 @@ public:
     });
   }
 
-  // Output tests pass their result assertions as this callback with no expected request, so it always runs.
   void ValidateRequestSent(const std::function<void (const ExpectedRequest& expected, const Aws::ProtocolMock::Model::Request& receivedRequest)>& bodyCompare = ValidateBody) const {
-    ValidateRequestSent(ExpectedRequest(), bodyCompare, true);
+    ValidateRequestSent(ExpectedRequest(), bodyCompare);
   }
 
-  void ValidateRequestSent(const ExpectedRequest& expected = ExpectedRequest(),
-                           const std::function<void(const ExpectedRequest& expected,
-                                                    const Aws::ProtocolMock::Model::Request& receivedRequest)>& bodyCompare = ValidateBody,
-                           bool alwaysCompareBody = false) const {
+  void ValidateRequestSent(
+      const ExpectedRequest& expected = ExpectedRequest(),
+      const std::function<void(const ExpectedRequest& expected, const Aws::ProtocolMock::Model::Request& receivedRequest)>& bodyCompare =
+          ValidateBody) const {
     auto requestsReceivedOutcome = mockClient.GetRequestsReceived();
     AWS_ASSERT_SUCCESS(requestsReceivedOutcome);
     ASSERT_EQ(1u, requestsReceivedOutcome.GetResult().GetRequests().size());
@@ -252,10 +263,7 @@ public:
     if (!expected.method.empty()) {
       EXPECT_STREQ(expected.method.c_str(), receivedRequest.GetMethod().c_str());
     }
-    // A Smithy vector with no "body" asserts only headers/uri, not the body.
-    if (alwaysCompareBody || !expected.body.empty()) {
-      bodyCompare(expected, receivedRequest);
-    }
+    bodyCompare(expected, receivedRequest);
     if (!expected.uri.empty()) {
       CompareUri(expected.uri, receivedRequest.GetUri());
     }
