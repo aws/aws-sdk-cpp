@@ -1,3 +1,24 @@
+# 1.11.914 (2026-10-20)
+
+## SDK Highlights
+* **Bug Fix**: Make CognitoCachingCredentialsProviderTest work with both JSON and RPC v2 CBOR responses
+* **Bug Fix**: Make EventBridge unit tests work with both JSON and RPC v2 CBOR protocols
+* **Bug Fix**: Fix cspell failures: correct typos and add allowed words
+* **Removal**: Remove deprecated services: Amazon FinSpace (finspace), FinSpace Data (finspace-data), AWS Telco Network Builder (tnb)
+
+## Service Updates
+* **Bedrock**: Amazon Bedrock Guardrails now supports a configurable tier for the contextual grounding policy via a new tier option. Select the Standard tier for grounding that better supports conversations and reasoning, with expanded language coverage.
+* **CleanRooms**: This release allows customers and their partners to easily collaborate with data stored in Databricks, without having to move or share their underlying data among collaborators.
+* **CloudWatch**: Amazon CloudWatch now supports two new anomaly detector settings. AdaptationSpeed (FAST, NORMAL, SLOW) controls how fast the model adapts to baseline changes, and OutlierFilteringStrength (MINIMAL, MODERATE, STRICT) controls how aggressively outliers are filtered.
+* **CloudWatchOmni**: Updating max value for maxResults in SearchPrincipals API
+* **DynamoDB**: Adds support for disassociating a replica from an Amazon DynamoDB multi-Region eventual consistency global table, so you can keep it as a single-Region table with its existing data. Also adds disassociation protection, on by default, to help prevent accidental disassociation.
+* **ECS**: ECS Service Gateway makes it easier for developers to deploy ECS services without having to worry about complex ingress networking constructs.
+* **ElastiCache**: LiveMigration enables customers to migrate from self-hosted EC2 Redis and Valkey clusters to ElastiCache Serverless with near-zero downtime. Customers control the migration through three API-driven phases (prepare, start, complete) that handle traffic proxying, data replication, and cutover.
+* **Marketplace Catalog**: Adds ListEntities filter, sort, and summary support for the ExpressPrivateOfferConfiguration entity type, including filtering by ProductId.
+* **RDS**: Amazon RDS now supports On-Demand Capacity Reservations for DB instances.
+* **S3Files**: S3 Files adds support for the "Misconfigured" file system status.
+* **Workspaces Instances**: Documentation update release for AWS service
+
 # 1.11.913 (2026-10-19)
 
 ## SDK Highlights

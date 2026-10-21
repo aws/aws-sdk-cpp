@@ -140,6 +140,11 @@ ServerlessCache& ServerlessCache::operator=(const XmlNode& xmlNode) {
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(connectionTypeNode.GetText()).c_str()));
       m_connectionTypeHasBeenSet = true;
     }
+    XmlNode migrationNode = resultNode.FirstChild("Migration");
+    if (!migrationNode.IsNull()) {
+      m_migration = migrationNode;
+      m_migrationHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -244,6 +249,12 @@ void ServerlessCache::OutputToStream(Aws::OStream& oStream, const char* location
     oStream << location << index << locationValue
             << ".ConnectionType=" << StringUtils::URLEncode(ConnectionTypeMapper::GetNameForConnectionType(m_connectionType)) << "&";
   }
+
+  if (m_migrationHasBeenSet) {
+    Aws::StringStream migrationLocationAndMemberSs;
+    migrationLocationAndMemberSs << location << index << locationValue << ".Migration";
+    m_migration.OutputToStream(oStream, migrationLocationAndMemberSs.str().c_str());
+  }
 }
 
 void ServerlessCache::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -322,6 +333,11 @@ void ServerlessCache::OutputToStream(Aws::OStream& oStream, const char* location
   if (m_connectionTypeHasBeenSet) {
     oStream << location << ".ConnectionType=" << StringUtils::URLEncode(ConnectionTypeMapper::GetNameForConnectionType(m_connectionType))
             << "&";
+  }
+  if (m_migrationHasBeenSet) {
+    Aws::String migrationLocationAndMember(location);
+    migrationLocationAndMember += ".Migration";
+    m_migration.OutputToStream(oStream, migrationLocationAndMember.c_str());
   }
 }
 

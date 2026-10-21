@@ -21,6 +21,10 @@ Aws::String StopDBInstanceRequest::SerializePayload() const {
     ss << "DBSnapshotIdentifier=" << StringUtils::URLEncode(m_dBSnapshotIdentifier.c_str()) << "&";
   }
 
+  if (m_detachFromDBCapacityReservationHasBeenSet) {
+    ss << "DetachFromDBCapacityReservation=" << std::boolalpha << m_detachFromDBCapacityReservation << "&";
+  }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }

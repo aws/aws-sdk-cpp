@@ -158,6 +158,14 @@ Aws::String CreateServiceRequest::SerializePayload() const {
     payload.WithArray("vpcLatticeConfigurations", std::move(vpcLatticeConfigurationsJsonList));
   }
 
+  if (m_gatewayConnectorsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> gatewayConnectorsJsonList(m_gatewayConnectors.size());
+    for (unsigned gatewayConnectorsIndex = 0; gatewayConnectorsIndex < gatewayConnectorsJsonList.GetLength(); ++gatewayConnectorsIndex) {
+      gatewayConnectorsJsonList[gatewayConnectorsIndex].AsObject(m_gatewayConnectors[gatewayConnectorsIndex].Jsonize());
+    }
+    payload.WithArray("gatewayConnectors", std::move(gatewayConnectorsJsonList));
+  }
+
   if (m_monitoringHasBeenSet) {
     payload.WithObject("monitoring", m_monitoring.Jsonize());
   }

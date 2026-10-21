@@ -224,18 +224,18 @@ class AWS_ELASTICACHE_API ElastiCacheClient : public Aws::Client::AWSXMLClient,
   }
 
   /**
-   * <p>Complete the migration of data.</p><p><h3>See Also:</h3>   <a
+   * <p>Completes the migration of data.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CompleteMigration">AWS
    * API Reference</a></p>
    */
-  virtual Model::CompleteMigrationOutcome CompleteMigration(const Model::CompleteMigrationRequest& request) const;
+  virtual Model::CompleteMigrationOutcome CompleteMigration(const Model::CompleteMigrationRequest& request = {}) const;
 
   /**
    * A Callable wrapper for CompleteMigration that returns a future to the operation so that it can be executed in parallel to other
    * requests.
    */
   template <typename CompleteMigrationRequestT = Model::CompleteMigrationRequest>
-  Model::CompleteMigrationOutcomeCallable CompleteMigrationCallable(const CompleteMigrationRequestT& request) const {
+  Model::CompleteMigrationOutcomeCallable CompleteMigrationCallable(const CompleteMigrationRequestT& request = {}) const {
     return SubmitCallable(&ElastiCacheClient::CompleteMigration, request);
   }
 
@@ -244,8 +244,9 @@ class AWS_ELASTICACHE_API ElastiCacheClient : public Aws::Client::AWSXMLClient,
    * has finished.
    */
   template <typename CompleteMigrationRequestT = Model::CompleteMigrationRequest>
-  void CompleteMigrationAsync(const CompleteMigrationRequestT& request, const CompleteMigrationResponseReceivedHandler& handler,
-                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+  void CompleteMigrationAsync(const CompleteMigrationResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                              const CompleteMigrationRequestT& request = {}) const {
     return SubmitAsync(&ElastiCacheClient::CompleteMigration, request, handler, context);
   }
 
@@ -2192,6 +2193,34 @@ class AWS_ELASTICACHE_API ElastiCacheClient : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p>Prepares the serverless cache for data migration by validating the
+   * configuration and setting up the migration resources.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/PrepareMigration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PrepareMigrationOutcome PrepareMigration(const Model::PrepareMigrationRequest& request) const;
+
+  /**
+   * A Callable wrapper for PrepareMigration that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename PrepareMigrationRequestT = Model::PrepareMigrationRequest>
+  Model::PrepareMigrationOutcomeCallable PrepareMigrationCallable(const PrepareMigrationRequestT& request) const {
+    return SubmitCallable(&ElastiCacheClient::PrepareMigration, request);
+  }
+
+  /**
+   * An Async wrapper for PrepareMigration that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename PrepareMigrationRequestT = Model::PrepareMigrationRequest>
+  void PrepareMigrationAsync(const PrepareMigrationRequestT& request, const PrepareMigrationResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ElastiCacheClient::PrepareMigration, request, handler, context);
+  }
+
+  /**
    * <p>Allows you to purchase a reserved cache node offering. Reserved nodes are not
    * eligible for cancellation and are non-refundable. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/reserved-nodes.html">Managing
@@ -2387,17 +2416,17 @@ class AWS_ELASTICACHE_API ElastiCacheClient : public Aws::Client::AWSXMLClient,
   }
 
   /**
-   * <p>Start the migration of data.</p><p><h3>See Also:</h3>   <a
+   * <p>Starts the migration of data.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/StartMigration">AWS
    * API Reference</a></p>
    */
-  virtual Model::StartMigrationOutcome StartMigration(const Model::StartMigrationRequest& request) const;
+  virtual Model::StartMigrationOutcome StartMigration(const Model::StartMigrationRequest& request = {}) const;
 
   /**
    * A Callable wrapper for StartMigration that returns a future to the operation so that it can be executed in parallel to other requests.
    */
   template <typename StartMigrationRequestT = Model::StartMigrationRequest>
-  Model::StartMigrationOutcomeCallable StartMigrationCallable(const StartMigrationRequestT& request) const {
+  Model::StartMigrationOutcomeCallable StartMigrationCallable(const StartMigrationRequestT& request = {}) const {
     return SubmitCallable(&ElastiCacheClient::StartMigration, request);
   }
 
@@ -2406,9 +2435,38 @@ class AWS_ELASTICACHE_API ElastiCacheClient : public Aws::Client::AWSXMLClient,
    * finished.
    */
   template <typename StartMigrationRequestT = Model::StartMigrationRequest>
-  void StartMigrationAsync(const StartMigrationRequestT& request, const StartMigrationResponseReceivedHandler& handler,
-                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+  void StartMigrationAsync(const StartMigrationResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                           const StartMigrationRequestT& request = {}) const {
     return SubmitAsync(&ElastiCacheClient::StartMigration, request, handler, context);
+  }
+
+  /**
+   * <p>Stops an ongoing data sync between the source and the serverless cache. The
+   * migration remains open and the data sync can be restarted. This operation is
+   * valid only while the migration is syncing; during cutover it returns
+   * <code>InvalidServerlessCacheStateFault</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/StopMigration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StopMigrationOutcome StopMigration(const Model::StopMigrationRequest& request) const;
+
+  /**
+   * A Callable wrapper for StopMigration that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename StopMigrationRequestT = Model::StopMigrationRequest>
+  Model::StopMigrationOutcomeCallable StopMigrationCallable(const StopMigrationRequestT& request) const {
+    return SubmitCallable(&ElastiCacheClient::StopMigration, request);
+  }
+
+  /**
+   * An Async wrapper for StopMigration that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename StopMigrationRequestT = Model::StopMigrationRequest>
+  void StopMigrationAsync(const StopMigrationRequestT& request, const StopMigrationResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ElastiCacheClient::StopMigration, request, handler, context);
   }
 
   /**

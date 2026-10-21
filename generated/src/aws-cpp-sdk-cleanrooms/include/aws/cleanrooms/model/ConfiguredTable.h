@@ -9,6 +9,7 @@
 #include <aws/cleanrooms/model/ConfiguredTableAnalysisRuleType.h>
 #include <aws/cleanrooms/model/SelectedAnalysisMethod.h>
 #include <aws/cleanrooms/model/TableReference.h>
+#include <aws/cleanrooms/model/TableReferenceType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -124,6 +125,23 @@ class ConfiguredTable {
   template <typename TableReferenceT = TableReference>
   ConfiguredTable& WithTableReference(TableReferenceT&& value) {
     SetTableReference(std::forward<TableReferenceT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Type of the Configured Table DataSource, example: Glue, Snowflake, Athena,
+   * Databricks</p>
+   */
+  inline TableReferenceType GetTableType() const { return m_tableType; }
+  inline bool TableTypeHasBeenSet() const { return m_tableTypeHasBeenSet; }
+  inline void SetTableType(TableReferenceType value) {
+    m_tableTypeHasBeenSet = true;
+    m_tableType = value;
+  }
+  inline ConfiguredTable& WithTableType(TableReferenceType value) {
+    SetTableType(value);
     return *this;
   }
   ///@}
@@ -266,6 +284,8 @@ class ConfiguredTable {
 
   TableReference m_tableReference;
 
+  TableReferenceType m_tableType{TableReferenceType::NOT_SET};
+
   Aws::Utils::DateTime m_createTime{};
 
   Aws::Utils::DateTime m_updateTime{};
@@ -282,6 +302,7 @@ class ConfiguredTable {
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_tableReferenceHasBeenSet = false;
+  bool m_tableTypeHasBeenSet = false;
   bool m_createTimeHasBeenSet = false;
   bool m_updateTimeHasBeenSet = false;
   bool m_analysisRuleTypesHasBeenSet = false;

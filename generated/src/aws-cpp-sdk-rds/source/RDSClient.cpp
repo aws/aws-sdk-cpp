@@ -27,6 +27,7 @@
 #include <aws/rds/model/ApplyPendingMaintenanceActionRequest.h>
 #include <aws/rds/model/AuthorizeDBSecurityGroupIngressRequest.h>
 #include <aws/rds/model/BacktrackDBClusterRequest.h>
+#include <aws/rds/model/CancelDBCapacityReservationRequest.h>
 #include <aws/rds/model/CancelExportTaskRequest.h>
 #include <aws/rds/model/CopyDBClusterParameterGroupRequest.h>
 #include <aws/rds/model/CopyDBClusterSnapshotRequest.h>
@@ -35,6 +36,7 @@
 #include <aws/rds/model/CopyOptionGroupRequest.h>
 #include <aws/rds/model/CreateBlueGreenDeploymentRequest.h>
 #include <aws/rds/model/CreateCustomDBEngineVersionRequest.h>
+#include <aws/rds/model/CreateDBCapacityReservationRequest.h>
 #include <aws/rds/model/CreateDBClusterEndpointRequest.h>
 #include <aws/rds/model/CreateDBClusterParameterGroupRequest.h>
 #include <aws/rds/model/CreateDBClusterRequest.h>
@@ -78,6 +80,7 @@
 #include <aws/rds/model/DescribeAccountAttributesRequest.h>
 #include <aws/rds/model/DescribeBlueGreenDeploymentsRequest.h>
 #include <aws/rds/model/DescribeCertificatesRequest.h>
+#include <aws/rds/model/DescribeDBCapacityReservationsRequest.h>
 #include <aws/rds/model/DescribeDBClusterAutomatedBackupsRequest.h>
 #include <aws/rds/model/DescribeDBClusterBacktracksRequest.h>
 #include <aws/rds/model/DescribeDBClusterEndpointsRequest.h>
@@ -132,6 +135,7 @@
 #include <aws/rds/model/ModifyCertificatesRequest.h>
 #include <aws/rds/model/ModifyCurrentDBClusterCapacityRequest.h>
 #include <aws/rds/model/ModifyCustomDBEngineVersionRequest.h>
+#include <aws/rds/model/ModifyDBCapacityReservationRequest.h>
 #include <aws/rds/model/ModifyDBClusterEndpointRequest.h>
 #include <aws/rds/model/ModifyDBClusterParameterGroupRequest.h>
 #include <aws/rds/model/ModifyDBClusterRequest.h>
@@ -397,6 +401,12 @@ BacktrackDBClusterOutcome RDSClient::BacktrackDBCluster(const BacktrackDBCluster
                             : BacktrackDBClusterOutcome(std::move(result.GetError()));
 }
 
+CancelDBCapacityReservationOutcome RDSClient::CancelDBCapacityReservation(const CancelDBCapacityReservationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelDBCapacityReservationOutcome(result.GetResultWithOwnership())
+                            : CancelDBCapacityReservationOutcome(std::move(result.GetError()));
+}
+
 CancelExportTaskOutcome RDSClient::CancelExportTask(const CancelExportTaskRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CancelExportTaskOutcome(result.GetResultWithOwnership())
@@ -474,6 +484,12 @@ CreateCustomDBEngineVersionOutcome RDSClient::CreateCustomDBEngineVersion(const 
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateCustomDBEngineVersionOutcome(result.GetResultWithOwnership())
                             : CreateCustomDBEngineVersionOutcome(std::move(result.GetError()));
+}
+
+CreateDBCapacityReservationOutcome RDSClient::CreateDBCapacityReservation(const CreateDBCapacityReservationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDBCapacityReservationOutcome(result.GetResultWithOwnership())
+                            : CreateDBCapacityReservationOutcome(std::move(result.GetError()));
 }
 
 CreateDBClusterOutcome RDSClient::CreateDBCluster(const CreateDBClusterRequest& request) const {
@@ -764,6 +780,13 @@ DescribeCertificatesOutcome RDSClient::DescribeCertificates(const DescribeCertif
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeCertificatesOutcome(result.GetResultWithOwnership())
                             : DescribeCertificatesOutcome(std::move(result.GetError()));
+}
+
+DescribeDBCapacityReservationsOutcome RDSClient::DescribeDBCapacityReservations(
+    const DescribeDBCapacityReservationsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeDBCapacityReservationsOutcome(result.GetResultWithOwnership())
+                            : DescribeDBCapacityReservationsOutcome(std::move(result.GetError()));
 }
 
 DescribeDBClusterAutomatedBackupsOutcome RDSClient::DescribeDBClusterAutomatedBackups(
@@ -1100,6 +1123,12 @@ ModifyCustomDBEngineVersionOutcome RDSClient::ModifyCustomDBEngineVersion(const 
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ModifyCustomDBEngineVersionOutcome(result.GetResultWithOwnership())
                             : ModifyCustomDBEngineVersionOutcome(std::move(result.GetError()));
+}
+
+ModifyDBCapacityReservationOutcome RDSClient::ModifyDBCapacityReservation(const ModifyDBCapacityReservationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyDBCapacityReservationOutcome(result.GetResultWithOwnership())
+                            : ModifyDBCapacityReservationOutcome(std::move(result.GetError()));
 }
 
 ModifyDBClusterOutcome RDSClient::ModifyDBCluster(const ModifyDBClusterRequest& request) const {

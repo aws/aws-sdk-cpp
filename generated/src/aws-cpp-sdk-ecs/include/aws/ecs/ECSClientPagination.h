@@ -10,6 +10,9 @@
 #include <aws/ecs/model/ListAttributesPaginationTraits.h>
 #include <aws/ecs/model/ListClustersPaginationTraits.h>
 #include <aws/ecs/model/ListContainerInstancesPaginationTraits.h>
+#include <aws/ecs/model/ListGatewayClusterAssociationsPaginationTraits.h>
+#include <aws/ecs/model/ListGatewayRoutesPaginationTraits.h>
+#include <aws/ecs/model/ListGatewaysPaginationTraits.h>
 #include <aws/ecs/model/ListServicesByNamespacePaginationTraits.h>
 #include <aws/ecs/model/ListServicesPaginationTraits.h>
 #include <aws/ecs/model/ListTaskDefinitionFamiliesPaginationTraits.h>
@@ -27,6 +30,13 @@ using ListClustersPaginator =
     Aws::Utils::Pagination::Paginator<ECSClient, Model::ListClustersRequest, Pagination::ListClustersPaginationTraits<ECSClient>>;
 using ListContainerInstancesPaginator = Aws::Utils::Pagination::Paginator<ECSClient, Model::ListContainerInstancesRequest,
                                                                           Pagination::ListContainerInstancesPaginationTraits<ECSClient>>;
+using ListGatewayClusterAssociationsPaginator =
+    Aws::Utils::Pagination::Paginator<ECSClient, Model::ListGatewayClusterAssociationsRequest,
+                                      Pagination::ListGatewayClusterAssociationsPaginationTraits<ECSClient>>;
+using ListGatewayRoutesPaginator =
+    Aws::Utils::Pagination::Paginator<ECSClient, Model::ListGatewayRoutesRequest, Pagination::ListGatewayRoutesPaginationTraits<ECSClient>>;
+using ListGatewaysPaginator =
+    Aws::Utils::Pagination::Paginator<ECSClient, Model::ListGatewaysRequest, Pagination::ListGatewaysPaginationTraits<ECSClient>>;
 using ListServicesPaginator =
     Aws::Utils::Pagination::Paginator<ECSClient, Model::ListServicesRequest, Pagination::ListServicesPaginationTraits<ECSClient>>;
 using ListServicesByNamespacePaginator = Aws::Utils::Pagination::Paginator<ECSClient, Model::ListServicesByNamespaceRequest,

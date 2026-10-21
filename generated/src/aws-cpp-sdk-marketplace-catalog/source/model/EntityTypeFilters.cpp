@@ -50,6 +50,10 @@ EntityTypeFilters& EntityTypeFilters::operator=(JsonView jsonValue) {
     m_offerSetFilters = jsonValue.GetObject("OfferSetFilters");
     m_offerSetFiltersHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ExpressPrivateOfferConfigurationFilters")) {
+    m_expressPrivateOfferConfigurationFilters = jsonValue.GetObject("ExpressPrivateOfferConfigurationFilters");
+    m_expressPrivateOfferConfigurationFiltersHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -86,6 +90,10 @@ JsonValue EntityTypeFilters::Jsonize() const {
 
   if (m_offerSetFiltersHasBeenSet) {
     payload.WithObject("OfferSetFilters", m_offerSetFilters.Jsonize());
+  }
+
+  if (m_expressPrivateOfferConfigurationFiltersHasBeenSet) {
+    payload.WithObject("ExpressPrivateOfferConfigurationFilters", m_expressPrivateOfferConfigurationFilters.Jsonize());
   }
 
   return payload;

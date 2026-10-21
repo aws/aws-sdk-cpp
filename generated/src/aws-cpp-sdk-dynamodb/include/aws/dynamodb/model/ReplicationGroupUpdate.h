@@ -7,6 +7,7 @@
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/dynamodb/model/CreateReplicationGroupMemberAction.h>
 #include <aws/dynamodb/model/DeleteReplicationGroupMemberAction.h>
+#include <aws/dynamodb/model/DisassociateReplicationGroupMemberAction.h>
 #include <aws/dynamodb/model/UpdateReplicationGroupMemberAction.h>
 
 #include <utility>
@@ -29,10 +30,15 @@ namespace Model {
  * <code>UpdateTable</code> action in the destination Region.</p> </li> <li> <p>An
  * existing replica to be deleted. The request invokes the
  * <code>DeleteTableReplica</code> action in the destination Region, deleting the
- * replica and all if its items in the destination Region.</p> </li> </ul>
- * <p>When you manually remove a table or global table replica, you do not
- * automatically remove any associated scalable targets, scaling policies, or
- * CloudWatch alarms.</p> <p><h3>See Also:</h3>   <a
+ * replica and all if its items in the destination Region.</p> </li> <li> <p>The
+ * local replica to be disassociated from a global table and retained as a
+ * standalone regional table.</p> </li> </ul> <p>Each
+ * <code>ReplicationGroupUpdate</code> contains exactly one action. A
+ * <code>Disassociate</code> action must be the only replica update in the request;
+ * including other updates causes the request to fail.</p>  <p>When you
+ * manually remove a table or global table replica, you do not automatically remove
+ * any associated scalable targets, scaling policies, or CloudWatch alarms.</p>
+ * <p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ReplicationGroupUpdate">AWS
  * API Reference</a></p>
  */
@@ -96,15 +102,37 @@ class ReplicationGroupUpdate {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The parameters for disassociating the local replica from the global table and
+   * retaining it as a standalone regional table.</p>
+   */
+  inline const DisassociateReplicationGroupMemberAction& GetDisassociate() const { return m_disassociate; }
+  inline bool DisassociateHasBeenSet() const { return m_disassociateHasBeenSet; }
+  template <typename DisassociateT = DisassociateReplicationGroupMemberAction>
+  void SetDisassociate(DisassociateT&& value) {
+    m_disassociateHasBeenSet = true;
+    m_disassociate = std::forward<DisassociateT>(value);
+  }
+  template <typename DisassociateT = DisassociateReplicationGroupMemberAction>
+  ReplicationGroupUpdate& WithDisassociate(DisassociateT&& value) {
+    SetDisassociate(std::forward<DisassociateT>(value));
+    return *this;
+  }
+  ///@}
  private:
   CreateReplicationGroupMemberAction m_create;
 
   UpdateReplicationGroupMemberAction m_update;
 
   DeleteReplicationGroupMemberAction m_delete;
+
+  DisassociateReplicationGroupMemberAction m_disassociate;
   bool m_createHasBeenSet = false;
   bool m_updateHasBeenSet = false;
   bool m_deleteHasBeenSet = false;
+  bool m_disassociateHasBeenSet = false;
 };
 
 }  // namespace Model

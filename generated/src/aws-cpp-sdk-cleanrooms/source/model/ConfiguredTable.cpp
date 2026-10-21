@@ -38,6 +38,10 @@ ConfiguredTable& ConfiguredTable::operator=(JsonView jsonValue) {
     m_tableReference = jsonValue.GetObject("tableReference");
     m_tableReferenceHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("tableType")) {
+    m_tableType = TableReferenceTypeMapper::GetTableReferenceTypeForName(jsonValue.GetString("tableType"));
+    m_tableTypeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("createTime")) {
     m_createTime = jsonValue.GetDouble("createTime");
     m_createTimeHasBeenSet = true;
@@ -98,6 +102,10 @@ JsonValue ConfiguredTable::Jsonize() const {
 
   if (m_tableReferenceHasBeenSet) {
     payload.WithObject("tableReference", m_tableReference.Jsonize());
+  }
+
+  if (m_tableTypeHasBeenSet) {
+    payload.WithString("tableType", TableReferenceTypeMapper::GetNameForTableReferenceType(m_tableType));
   }
 
   if (m_createTimeHasBeenSet) {

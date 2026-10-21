@@ -84,6 +84,14 @@
 #include <aws/marketplace-catalog/model/EntityTypeSort.h>
 #include <aws/marketplace-catalog/model/ErrorDetail.h>
 #include <aws/marketplace-catalog/model/ErrorScope.h>
+#include <aws/marketplace-catalog/model/ExpressPrivateOfferConfigurationEntityIdFilter.h>
+#include <aws/marketplace-catalog/model/ExpressPrivateOfferConfigurationFilters.h>
+#include <aws/marketplace-catalog/model/ExpressPrivateOfferConfigurationProductIdFilter.h>
+#include <aws/marketplace-catalog/model/ExpressPrivateOfferConfigurationSort.h>
+#include <aws/marketplace-catalog/model/ExpressPrivateOfferConfigurationSortBy.h>
+#include <aws/marketplace-catalog/model/ExpressPrivateOfferConfigurationStateFilter.h>
+#include <aws/marketplace-catalog/model/ExpressPrivateOfferConfigurationStateString.h>
+#include <aws/marketplace-catalog/model/ExpressPrivateOfferConfigurationSummary.h>
 #include <aws/marketplace-catalog/model/FailureCode.h>
 #include <aws/marketplace-catalog/model/Filter.h>
 #include <aws/marketplace-catalog/model/FrameworkFilters.h>

@@ -251,6 +251,10 @@ Aws::String RestoreDBInstanceFromS3Request::SerializePayload() const {
     ss << "MasterUserSecretKmsKeyId=" << StringUtils::URLEncode(m_masterUserSecretKmsKeyId.c_str()) << "&";
   }
 
+  if (m_dBCapacityReservationIdentifierHasBeenSet) {
+    ss << "DBCapacityReservationIdentifier=" << StringUtils::URLEncode(m_dBCapacityReservationIdentifier.c_str()) << "&";
+  }
+
   if (m_dedicatedLogVolumeHasBeenSet) {
     ss << "DedicatedLogVolume=" << std::boolalpha << m_dedicatedLogVolume << "&";
   }

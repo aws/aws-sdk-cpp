@@ -9,6 +9,7 @@
 #include <aws/marketplace-catalog/model/AmiProductSummary.h>
 #include <aws/marketplace-catalog/model/ContainerProductSummary.h>
 #include <aws/marketplace-catalog/model/DataProductSummary.h>
+#include <aws/marketplace-catalog/model/ExpressPrivateOfferConfigurationSummary.h>
 #include <aws/marketplace-catalog/model/MachineLearningProductSummary.h>
 #include <aws/marketplace-catalog/model/OfferSetSummary.h>
 #include <aws/marketplace-catalog/model/OfferSummary.h>
@@ -297,6 +298,27 @@ class EntitySummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>An object that contains summary information about the express private offer
+   * configuration.</p>
+   */
+  inline const ExpressPrivateOfferConfigurationSummary& GetExpressPrivateOfferConfigurationSummary() const {
+    return m_expressPrivateOfferConfigurationSummary;
+  }
+  inline bool ExpressPrivateOfferConfigurationSummaryHasBeenSet() const { return m_expressPrivateOfferConfigurationSummaryHasBeenSet; }
+  template <typename ExpressPrivateOfferConfigurationSummaryT = ExpressPrivateOfferConfigurationSummary>
+  void SetExpressPrivateOfferConfigurationSummary(ExpressPrivateOfferConfigurationSummaryT&& value) {
+    m_expressPrivateOfferConfigurationSummaryHasBeenSet = true;
+    m_expressPrivateOfferConfigurationSummary = std::forward<ExpressPrivateOfferConfigurationSummaryT>(value);
+  }
+  template <typename ExpressPrivateOfferConfigurationSummaryT = ExpressPrivateOfferConfigurationSummary>
+  EntitySummary& WithExpressPrivateOfferConfigurationSummary(ExpressPrivateOfferConfigurationSummaryT&& value) {
+    SetExpressPrivateOfferConfigurationSummary(std::forward<ExpressPrivateOfferConfigurationSummaryT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -325,6 +347,8 @@ class EntitySummary {
   MachineLearningProductSummary m_machineLearningProductSummary;
 
   OfferSetSummary m_offerSetSummary;
+
+  ExpressPrivateOfferConfigurationSummary m_expressPrivateOfferConfigurationSummary;
   bool m_nameHasBeenSet = false;
   bool m_entityTypeHasBeenSet = false;
   bool m_entityIdHasBeenSet = false;
@@ -339,6 +363,7 @@ class EntitySummary {
   bool m_resaleAuthorizationSummaryHasBeenSet = false;
   bool m_machineLearningProductSummaryHasBeenSet = false;
   bool m_offerSetSummaryHasBeenSet = false;
+  bool m_expressPrivateOfferConfigurationSummaryHasBeenSet = false;
 };
 
 }  // namespace Model

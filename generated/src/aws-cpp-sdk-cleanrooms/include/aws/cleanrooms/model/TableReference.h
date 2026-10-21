@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
 #include <aws/cleanrooms/model/AthenaTableReference.h>
+#include <aws/cleanrooms/model/DatabricksTableReference.h>
 #include <aws/cleanrooms/model/GlueTableReference.h>
 #include <aws/cleanrooms/model/SnowflakeTableReference.h>
 
@@ -90,15 +91,37 @@ class TableReference {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> If present, a reference to the Databricks table referred to by this table
+   * reference.</p>
+   */
+  inline const DatabricksTableReference& GetDatabricks() const { return m_databricks; }
+  inline bool DatabricksHasBeenSet() const { return m_databricksHasBeenSet; }
+  template <typename DatabricksT = DatabricksTableReference>
+  void SetDatabricks(DatabricksT&& value) {
+    m_databricksHasBeenSet = true;
+    m_databricks = std::forward<DatabricksT>(value);
+  }
+  template <typename DatabricksT = DatabricksTableReference>
+  TableReference& WithDatabricks(DatabricksT&& value) {
+    SetDatabricks(std::forward<DatabricksT>(value));
+    return *this;
+  }
+  ///@}
  private:
   GlueTableReference m_glue;
 
   SnowflakeTableReference m_snowflake;
 
   AthenaTableReference m_athena;
+
+  DatabricksTableReference m_databricks;
   bool m_glueHasBeenSet = false;
   bool m_snowflakeHasBeenSet = false;
   bool m_athenaHasBeenSet = false;
+  bool m_databricksHasBeenSet = false;
 };
 
 }  // namespace Model

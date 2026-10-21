@@ -13,6 +13,10 @@ using namespace Aws::Utils;
 Aws::String StartMigrationRequest::SerializePayload() const {
   Aws::StringStream ss;
   ss << "Action=StartMigration&";
+  if (m_serverlessCacheNameHasBeenSet) {
+    ss << "ServerlessCacheName=" << StringUtils::URLEncode(m_serverlessCacheName.c_str()) << "&";
+  }
+
   if (m_replicationGroupIdHasBeenSet) {
     ss << "ReplicationGroupId=" << StringUtils::URLEncode(m_replicationGroupId.c_str()) << "&";
   }
@@ -27,6 +31,14 @@ Aws::String StartMigrationRequest::SerializePayload() const {
         customerNodeEndpointListCount++;
       }
     }
+  }
+
+  if (m_autoCutoverHasBeenSet) {
+    ss << "AutoCutover=" << std::boolalpha << m_autoCutover << "&";
+  }
+
+  if (m_clearTargetCacheDataHasBeenSet) {
+    ss << "ClearTargetCacheData=" << std::boolalpha << m_clearTargetCacheData << "&";
   }
 
   ss << "Version=2015-02-02";

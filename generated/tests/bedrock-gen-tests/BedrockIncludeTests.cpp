@@ -337,6 +337,9 @@
 #include <aws/bedrock/model/GuardrailContextualGroundingFilterType.h>
 #include <aws/bedrock/model/GuardrailContextualGroundingPolicy.h>
 #include <aws/bedrock/model/GuardrailContextualGroundingPolicyConfig.h>
+#include <aws/bedrock/model/GuardrailContextualGroundingTier.h>
+#include <aws/bedrock/model/GuardrailContextualGroundingTierConfig.h>
+#include <aws/bedrock/model/GuardrailContextualGroundingTierName.h>
 #include <aws/bedrock/model/GuardrailCrossRegionConfig.h>
 #include <aws/bedrock/model/GuardrailCrossRegionDetails.h>
 #include <aws/bedrock/model/GuardrailFilterStrength.h>

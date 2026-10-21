@@ -17,6 +17,10 @@ Aws::String CompleteMigrationRequest::SerializePayload() const {
     ss << "ReplicationGroupId=" << StringUtils::URLEncode(m_replicationGroupId.c_str()) << "&";
   }
 
+  if (m_serverlessCacheNameHasBeenSet) {
+    ss << "ServerlessCacheName=" << StringUtils::URLEncode(m_serverlessCacheName.c_str()) << "&";
+  }
+
   if (m_forceHasBeenSet) {
     ss << "Force=" << std::boolalpha << m_force << "&";
   }

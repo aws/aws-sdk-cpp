@@ -267,6 +267,10 @@ Aws::String CreateDBInstanceReadReplicaRequest::SerializePayload() const {
     }
   }
 
+  if (m_dBCapacityReservationIdentifierHasBeenSet) {
+    ss << "DBCapacityReservationIdentifier=" << StringUtils::URLEncode(m_dBCapacityReservationIdentifier.c_str()) << "&";
+  }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }

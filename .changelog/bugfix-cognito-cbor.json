@@ -1,6 +1,0 @@
-{
-  "type": "bugfix",
-  "category": "aws-cpp-sdk-identity-management",
-  "contributor": "Madrigal",
-  "description": "Make CognitoCachingCredentialsProviderTest work with both JSON and RPC v2 CBOR responses"
-}

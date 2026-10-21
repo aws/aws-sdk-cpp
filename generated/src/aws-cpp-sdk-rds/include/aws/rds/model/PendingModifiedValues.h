@@ -466,6 +466,27 @@ class PendingModifiedValues {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The identifier of the DB capacity reservation that the DB instance uses after
+   * a pending modification completes. Amazon RDS returns this value when a
+   * <code>ModifyDBInstance</code> request changes the DB capacity reservation, and
+   * the change hasn't been applied yet.</p>
+   */
+  inline const Aws::String& GetDBCapacityReservationIdentifier() const { return m_dBCapacityReservationIdentifier; }
+  inline bool DBCapacityReservationIdentifierHasBeenSet() const { return m_dBCapacityReservationIdentifierHasBeenSet; }
+  template <typename DBCapacityReservationIdentifierT = Aws::String>
+  void SetDBCapacityReservationIdentifier(DBCapacityReservationIdentifierT&& value) {
+    m_dBCapacityReservationIdentifierHasBeenSet = true;
+    m_dBCapacityReservationIdentifier = std::forward<DBCapacityReservationIdentifierT>(value);
+  }
+  template <typename DBCapacityReservationIdentifierT = Aws::String>
+  PendingModifiedValues& WithDBCapacityReservationIdentifier(DBCapacityReservationIdentifierT&& value) {
+    SetDBCapacityReservationIdentifier(std::forward<DBCapacityReservationIdentifierT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_dBInstanceClass;
 
@@ -512,6 +533,8 @@ class PendingModifiedValues {
   Aws::String m_engine;
 
   Aws::Vector<AdditionalStorageVolume> m_additionalStorageVolumes;
+
+  Aws::String m_dBCapacityReservationIdentifier;
   bool m_dBInstanceClassHasBeenSet = false;
   bool m_allocatedStorageHasBeenSet = false;
   bool m_masterUserPasswordHasBeenSet = false;
@@ -535,6 +558,7 @@ class PendingModifiedValues {
   bool m_dedicatedLogVolumeHasBeenSet = false;
   bool m_engineHasBeenSet = false;
   bool m_additionalStorageVolumesHasBeenSet = false;
+  bool m_dBCapacityReservationIdentifierHasBeenSet = false;
 };
 
 }  // namespace Model

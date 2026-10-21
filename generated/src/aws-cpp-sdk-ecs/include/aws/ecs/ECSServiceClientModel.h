@@ -19,12 +19,14 @@
 /* End of generic header includes */
 
 /* Service model headers required in ECSClient header */
+#include <aws/ecs/model/AssociateGatewayWithClusterResult.h>
 #include <aws/ecs/model/ContinueServiceDeploymentResult.h>
 #include <aws/ecs/model/CreateCapacityProviderResult.h>
 #include <aws/ecs/model/CreateClusterRequest.h>
 #include <aws/ecs/model/CreateClusterResult.h>
 #include <aws/ecs/model/CreateDaemonResult.h>
 #include <aws/ecs/model/CreateExpressGatewayServiceResult.h>
+#include <aws/ecs/model/CreateGatewayResult.h>
 #include <aws/ecs/model/CreateServiceResult.h>
 #include <aws/ecs/model/CreateTaskSetResult.h>
 #include <aws/ecs/model/DeleteAccountSettingResult.h>
@@ -34,6 +36,7 @@
 #include <aws/ecs/model/DeleteDaemonResult.h>
 #include <aws/ecs/model/DeleteDaemonTaskDefinitionResult.h>
 #include <aws/ecs/model/DeleteExpressGatewayServiceResult.h>
+#include <aws/ecs/model/DeleteGatewayResult.h>
 #include <aws/ecs/model/DeleteServiceResult.h>
 #include <aws/ecs/model/DeleteTaskDefinitionsResult.h>
 #include <aws/ecs/model/DeleteTaskSetResult.h>
@@ -49,12 +52,16 @@
 #include <aws/ecs/model/DescribeDaemonRevisionsResult.h>
 #include <aws/ecs/model/DescribeDaemonTaskDefinitionResult.h>
 #include <aws/ecs/model/DescribeExpressGatewayServiceResult.h>
+#include <aws/ecs/model/DescribeGatewayResourcesResult.h>
+#include <aws/ecs/model/DescribeGatewayResult.h>
+#include <aws/ecs/model/DescribeGatewayRouteResult.h>
 #include <aws/ecs/model/DescribeServiceDeploymentsResult.h>
 #include <aws/ecs/model/DescribeServiceRevisionsResult.h>
 #include <aws/ecs/model/DescribeServicesResult.h>
 #include <aws/ecs/model/DescribeTaskDefinitionResult.h>
 #include <aws/ecs/model/DescribeTaskSetsResult.h>
 #include <aws/ecs/model/DescribeTasksResult.h>
+#include <aws/ecs/model/DisassociateGatewayFromClusterResult.h>
 #include <aws/ecs/model/DiscoverPollEndpointRequest.h>
 #include <aws/ecs/model/DiscoverPollEndpointResult.h>
 #include <aws/ecs/model/ExecuteCommandResult.h>
@@ -71,6 +78,12 @@
 #include <aws/ecs/model/ListDaemonTaskDefinitionsResult.h>
 #include <aws/ecs/model/ListDaemonsRequest.h>
 #include <aws/ecs/model/ListDaemonsResult.h>
+#include <aws/ecs/model/ListGatewayClusterAssociationsRequest.h>
+#include <aws/ecs/model/ListGatewayClusterAssociationsResult.h>
+#include <aws/ecs/model/ListGatewayRoutesRequest.h>
+#include <aws/ecs/model/ListGatewayRoutesResult.h>
+#include <aws/ecs/model/ListGatewaysRequest.h>
+#include <aws/ecs/model/ListGatewaysResult.h>
 #include <aws/ecs/model/ListServiceDeploymentsResult.h>
 #include <aws/ecs/model/ListServicesByNamespaceResult.h>
 #include <aws/ecs/model/ListServicesRequest.h>
@@ -108,6 +121,7 @@
 #include <aws/ecs/model/UpdateContainerInstancesStateResult.h>
 #include <aws/ecs/model/UpdateDaemonResult.h>
 #include <aws/ecs/model/UpdateExpressGatewayServiceResult.h>
+#include <aws/ecs/model/UpdateGatewayResult.h>
 #include <aws/ecs/model/UpdateServicePrimaryTaskSetResult.h>
 #include <aws/ecs/model/UpdateServiceResult.h>
 #include <aws/ecs/model/UpdateTaskProtectionResult.h>
@@ -145,11 +159,13 @@ using ECSEndpointProvider = Aws::ECS::Endpoint::ECSEndpointProvider;
 
 namespace Model {
 /* Service model forward declarations required in ECSClient header */
+class AssociateGatewayWithClusterRequest;
 class ContinueServiceDeploymentRequest;
 class CreateCapacityProviderRequest;
 class CreateClusterRequest;
 class CreateDaemonRequest;
 class CreateExpressGatewayServiceRequest;
+class CreateGatewayRequest;
 class CreateServiceRequest;
 class CreateTaskSetRequest;
 class DeleteAccountSettingRequest;
@@ -159,6 +175,7 @@ class DeleteClusterRequest;
 class DeleteDaemonRequest;
 class DeleteDaemonTaskDefinitionRequest;
 class DeleteExpressGatewayServiceRequest;
+class DeleteGatewayRequest;
 class DeleteServiceRequest;
 class DeleteTaskDefinitionsRequest;
 class DeleteTaskSetRequest;
@@ -172,12 +189,16 @@ class DescribeDaemonDeploymentsRequest;
 class DescribeDaemonRevisionsRequest;
 class DescribeDaemonTaskDefinitionRequest;
 class DescribeExpressGatewayServiceRequest;
+class DescribeGatewayRequest;
+class DescribeGatewayResourcesRequest;
+class DescribeGatewayRouteRequest;
 class DescribeServiceDeploymentsRequest;
 class DescribeServiceRevisionsRequest;
 class DescribeServicesRequest;
 class DescribeTaskDefinitionRequest;
 class DescribeTaskSetsRequest;
 class DescribeTasksRequest;
+class DisassociateGatewayFromClusterRequest;
 class DiscoverPollEndpointRequest;
 class ExecuteCommandRequest;
 class GetTaskProtectionRequest;
@@ -188,6 +209,9 @@ class ListContainerInstancesRequest;
 class ListDaemonDeploymentsRequest;
 class ListDaemonTaskDefinitionsRequest;
 class ListDaemonsRequest;
+class ListGatewayClusterAssociationsRequest;
+class ListGatewayRoutesRequest;
+class ListGatewaysRequest;
 class ListServiceDeploymentsRequest;
 class ListServicesRequest;
 class ListServicesByNamespaceRequest;
@@ -218,6 +242,7 @@ class UpdateContainerAgentRequest;
 class UpdateContainerInstancesStateRequest;
 class UpdateDaemonRequest;
 class UpdateExpressGatewayServiceRequest;
+class UpdateGatewayRequest;
 class UpdateServiceRequest;
 class UpdateServicePrimaryTaskSetRequest;
 class UpdateTaskProtectionRequest;
@@ -225,11 +250,13 @@ class UpdateTaskSetRequest;
 /* End of service model forward declarations required in ECSClient header */
 
 /* Service model Outcome class definitions */
+typedef Aws::Utils::Outcome<AssociateGatewayWithClusterResult, ECSError> AssociateGatewayWithClusterOutcome;
 typedef Aws::Utils::Outcome<ContinueServiceDeploymentResult, ECSError> ContinueServiceDeploymentOutcome;
 typedef Aws::Utils::Outcome<CreateCapacityProviderResult, ECSError> CreateCapacityProviderOutcome;
 typedef Aws::Utils::Outcome<CreateClusterResult, ECSError> CreateClusterOutcome;
 typedef Aws::Utils::Outcome<CreateDaemonResult, ECSError> CreateDaemonOutcome;
 typedef Aws::Utils::Outcome<CreateExpressGatewayServiceResult, ECSError> CreateExpressGatewayServiceOutcome;
+typedef Aws::Utils::Outcome<CreateGatewayResult, ECSError> CreateGatewayOutcome;
 typedef Aws::Utils::Outcome<CreateServiceResult, ECSError> CreateServiceOutcome;
 typedef Aws::Utils::Outcome<CreateTaskSetResult, ECSError> CreateTaskSetOutcome;
 typedef Aws::Utils::Outcome<DeleteAccountSettingResult, ECSError> DeleteAccountSettingOutcome;
@@ -239,6 +266,7 @@ typedef Aws::Utils::Outcome<DeleteClusterResult, ECSError> DeleteClusterOutcome;
 typedef Aws::Utils::Outcome<DeleteDaemonResult, ECSError> DeleteDaemonOutcome;
 typedef Aws::Utils::Outcome<DeleteDaemonTaskDefinitionResult, ECSError> DeleteDaemonTaskDefinitionOutcome;
 typedef Aws::Utils::Outcome<DeleteExpressGatewayServiceResult, ECSError> DeleteExpressGatewayServiceOutcome;
+typedef Aws::Utils::Outcome<DeleteGatewayResult, ECSError> DeleteGatewayOutcome;
 typedef Aws::Utils::Outcome<DeleteServiceResult, ECSError> DeleteServiceOutcome;
 typedef Aws::Utils::Outcome<DeleteTaskDefinitionsResult, ECSError> DeleteTaskDefinitionsOutcome;
 typedef Aws::Utils::Outcome<DeleteTaskSetResult, ECSError> DeleteTaskSetOutcome;
@@ -252,12 +280,16 @@ typedef Aws::Utils::Outcome<DescribeDaemonDeploymentsResult, ECSError> DescribeD
 typedef Aws::Utils::Outcome<DescribeDaemonRevisionsResult, ECSError> DescribeDaemonRevisionsOutcome;
 typedef Aws::Utils::Outcome<DescribeDaemonTaskDefinitionResult, ECSError> DescribeDaemonTaskDefinitionOutcome;
 typedef Aws::Utils::Outcome<DescribeExpressGatewayServiceResult, ECSError> DescribeExpressGatewayServiceOutcome;
+typedef Aws::Utils::Outcome<DescribeGatewayResult, ECSError> DescribeGatewayOutcome;
+typedef Aws::Utils::Outcome<DescribeGatewayResourcesResult, ECSError> DescribeGatewayResourcesOutcome;
+typedef Aws::Utils::Outcome<DescribeGatewayRouteResult, ECSError> DescribeGatewayRouteOutcome;
 typedef Aws::Utils::Outcome<DescribeServiceDeploymentsResult, ECSError> DescribeServiceDeploymentsOutcome;
 typedef Aws::Utils::Outcome<DescribeServiceRevisionsResult, ECSError> DescribeServiceRevisionsOutcome;
 typedef Aws::Utils::Outcome<DescribeServicesResult, ECSError> DescribeServicesOutcome;
 typedef Aws::Utils::Outcome<DescribeTaskDefinitionResult, ECSError> DescribeTaskDefinitionOutcome;
 typedef Aws::Utils::Outcome<DescribeTaskSetsResult, ECSError> DescribeTaskSetsOutcome;
 typedef Aws::Utils::Outcome<DescribeTasksResult, ECSError> DescribeTasksOutcome;
+typedef Aws::Utils::Outcome<DisassociateGatewayFromClusterResult, ECSError> DisassociateGatewayFromClusterOutcome;
 typedef Aws::Utils::Outcome<DiscoverPollEndpointResult, ECSError> DiscoverPollEndpointOutcome;
 typedef Aws::Utils::Outcome<ExecuteCommandResult, ECSError> ExecuteCommandOutcome;
 typedef Aws::Utils::Outcome<GetTaskProtectionResult, ECSError> GetTaskProtectionOutcome;
@@ -268,6 +300,9 @@ typedef Aws::Utils::Outcome<ListContainerInstancesResult, ECSError> ListContaine
 typedef Aws::Utils::Outcome<ListDaemonDeploymentsResult, ECSError> ListDaemonDeploymentsOutcome;
 typedef Aws::Utils::Outcome<ListDaemonTaskDefinitionsResult, ECSError> ListDaemonTaskDefinitionsOutcome;
 typedef Aws::Utils::Outcome<ListDaemonsResult, ECSError> ListDaemonsOutcome;
+typedef Aws::Utils::Outcome<ListGatewayClusterAssociationsResult, ECSError> ListGatewayClusterAssociationsOutcome;
+typedef Aws::Utils::Outcome<ListGatewayRoutesResult, ECSError> ListGatewayRoutesOutcome;
+typedef Aws::Utils::Outcome<ListGatewaysResult, ECSError> ListGatewaysOutcome;
 typedef Aws::Utils::Outcome<ListServiceDeploymentsResult, ECSError> ListServiceDeploymentsOutcome;
 typedef Aws::Utils::Outcome<ListServicesResult, ECSError> ListServicesOutcome;
 typedef Aws::Utils::Outcome<ListServicesByNamespaceResult, ECSError> ListServicesByNamespaceOutcome;
@@ -298,6 +333,7 @@ typedef Aws::Utils::Outcome<UpdateContainerAgentResult, ECSError> UpdateContaine
 typedef Aws::Utils::Outcome<UpdateContainerInstancesStateResult, ECSError> UpdateContainerInstancesStateOutcome;
 typedef Aws::Utils::Outcome<UpdateDaemonResult, ECSError> UpdateDaemonOutcome;
 typedef Aws::Utils::Outcome<UpdateExpressGatewayServiceResult, ECSError> UpdateExpressGatewayServiceOutcome;
+typedef Aws::Utils::Outcome<UpdateGatewayResult, ECSError> UpdateGatewayOutcome;
 typedef Aws::Utils::Outcome<UpdateServiceResult, ECSError> UpdateServiceOutcome;
 typedef Aws::Utils::Outcome<UpdateServicePrimaryTaskSetResult, ECSError> UpdateServicePrimaryTaskSetOutcome;
 typedef Aws::Utils::Outcome<UpdateTaskProtectionResult, ECSError> UpdateTaskProtectionOutcome;
@@ -305,11 +341,13 @@ typedef Aws::Utils::Outcome<UpdateTaskSetResult, ECSError> UpdateTaskSetOutcome;
 /* End of service model Outcome class definitions */
 
 /* Service model Outcome callable definitions */
+typedef std::future<AssociateGatewayWithClusterOutcome> AssociateGatewayWithClusterOutcomeCallable;
 typedef std::future<ContinueServiceDeploymentOutcome> ContinueServiceDeploymentOutcomeCallable;
 typedef std::future<CreateCapacityProviderOutcome> CreateCapacityProviderOutcomeCallable;
 typedef std::future<CreateClusterOutcome> CreateClusterOutcomeCallable;
 typedef std::future<CreateDaemonOutcome> CreateDaemonOutcomeCallable;
 typedef std::future<CreateExpressGatewayServiceOutcome> CreateExpressGatewayServiceOutcomeCallable;
+typedef std::future<CreateGatewayOutcome> CreateGatewayOutcomeCallable;
 typedef std::future<CreateServiceOutcome> CreateServiceOutcomeCallable;
 typedef std::future<CreateTaskSetOutcome> CreateTaskSetOutcomeCallable;
 typedef std::future<DeleteAccountSettingOutcome> DeleteAccountSettingOutcomeCallable;
@@ -319,6 +357,7 @@ typedef std::future<DeleteClusterOutcome> DeleteClusterOutcomeCallable;
 typedef std::future<DeleteDaemonOutcome> DeleteDaemonOutcomeCallable;
 typedef std::future<DeleteDaemonTaskDefinitionOutcome> DeleteDaemonTaskDefinitionOutcomeCallable;
 typedef std::future<DeleteExpressGatewayServiceOutcome> DeleteExpressGatewayServiceOutcomeCallable;
+typedef std::future<DeleteGatewayOutcome> DeleteGatewayOutcomeCallable;
 typedef std::future<DeleteServiceOutcome> DeleteServiceOutcomeCallable;
 typedef std::future<DeleteTaskDefinitionsOutcome> DeleteTaskDefinitionsOutcomeCallable;
 typedef std::future<DeleteTaskSetOutcome> DeleteTaskSetOutcomeCallable;
@@ -332,12 +371,16 @@ typedef std::future<DescribeDaemonDeploymentsOutcome> DescribeDaemonDeploymentsO
 typedef std::future<DescribeDaemonRevisionsOutcome> DescribeDaemonRevisionsOutcomeCallable;
 typedef std::future<DescribeDaemonTaskDefinitionOutcome> DescribeDaemonTaskDefinitionOutcomeCallable;
 typedef std::future<DescribeExpressGatewayServiceOutcome> DescribeExpressGatewayServiceOutcomeCallable;
+typedef std::future<DescribeGatewayOutcome> DescribeGatewayOutcomeCallable;
+typedef std::future<DescribeGatewayResourcesOutcome> DescribeGatewayResourcesOutcomeCallable;
+typedef std::future<DescribeGatewayRouteOutcome> DescribeGatewayRouteOutcomeCallable;
 typedef std::future<DescribeServiceDeploymentsOutcome> DescribeServiceDeploymentsOutcomeCallable;
 typedef std::future<DescribeServiceRevisionsOutcome> DescribeServiceRevisionsOutcomeCallable;
 typedef std::future<DescribeServicesOutcome> DescribeServicesOutcomeCallable;
 typedef std::future<DescribeTaskDefinitionOutcome> DescribeTaskDefinitionOutcomeCallable;
 typedef std::future<DescribeTaskSetsOutcome> DescribeTaskSetsOutcomeCallable;
 typedef std::future<DescribeTasksOutcome> DescribeTasksOutcomeCallable;
+typedef std::future<DisassociateGatewayFromClusterOutcome> DisassociateGatewayFromClusterOutcomeCallable;
 typedef std::future<DiscoverPollEndpointOutcome> DiscoverPollEndpointOutcomeCallable;
 typedef std::future<ExecuteCommandOutcome> ExecuteCommandOutcomeCallable;
 typedef std::future<GetTaskProtectionOutcome> GetTaskProtectionOutcomeCallable;
@@ -348,6 +391,9 @@ typedef std::future<ListContainerInstancesOutcome> ListContainerInstancesOutcome
 typedef std::future<ListDaemonDeploymentsOutcome> ListDaemonDeploymentsOutcomeCallable;
 typedef std::future<ListDaemonTaskDefinitionsOutcome> ListDaemonTaskDefinitionsOutcomeCallable;
 typedef std::future<ListDaemonsOutcome> ListDaemonsOutcomeCallable;
+typedef std::future<ListGatewayClusterAssociationsOutcome> ListGatewayClusterAssociationsOutcomeCallable;
+typedef std::future<ListGatewayRoutesOutcome> ListGatewayRoutesOutcomeCallable;
+typedef std::future<ListGatewaysOutcome> ListGatewaysOutcomeCallable;
 typedef std::future<ListServiceDeploymentsOutcome> ListServiceDeploymentsOutcomeCallable;
 typedef std::future<ListServicesOutcome> ListServicesOutcomeCallable;
 typedef std::future<ListServicesByNamespaceOutcome> ListServicesByNamespaceOutcomeCallable;
@@ -378,6 +424,7 @@ typedef std::future<UpdateContainerAgentOutcome> UpdateContainerAgentOutcomeCall
 typedef std::future<UpdateContainerInstancesStateOutcome> UpdateContainerInstancesStateOutcomeCallable;
 typedef std::future<UpdateDaemonOutcome> UpdateDaemonOutcomeCallable;
 typedef std::future<UpdateExpressGatewayServiceOutcome> UpdateExpressGatewayServiceOutcomeCallable;
+typedef std::future<UpdateGatewayOutcome> UpdateGatewayOutcomeCallable;
 typedef std::future<UpdateServiceOutcome> UpdateServiceOutcomeCallable;
 typedef std::future<UpdateServicePrimaryTaskSetOutcome> UpdateServicePrimaryTaskSetOutcomeCallable;
 typedef std::future<UpdateTaskProtectionOutcome> UpdateTaskProtectionOutcomeCallable;
@@ -388,6 +435,9 @@ typedef std::future<UpdateTaskSetOutcome> UpdateTaskSetOutcomeCallable;
 class ECSClient;
 
 /* Service model async handlers definitions */
+typedef std::function<void(const ECSClient*, const Model::AssociateGatewayWithClusterRequest&,
+                           const Model::AssociateGatewayWithClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    AssociateGatewayWithClusterResponseReceivedHandler;
 typedef std::function<void(const ECSClient*, const Model::ContinueServiceDeploymentRequest&, const Model::ContinueServiceDeploymentOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ContinueServiceDeploymentResponseReceivedHandler;
@@ -403,6 +453,9 @@ typedef std::function<void(const ECSClient*, const Model::CreateDaemonRequest&, 
 typedef std::function<void(const ECSClient*, const Model::CreateExpressGatewayServiceRequest&,
                            const Model::CreateExpressGatewayServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateExpressGatewayServiceResponseReceivedHandler;
+typedef std::function<void(const ECSClient*, const Model::CreateGatewayRequest&, const Model::CreateGatewayOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateGatewayResponseReceivedHandler;
 typedef std::function<void(const ECSClient*, const Model::CreateServiceRequest&, const Model::CreateServiceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateServiceResponseReceivedHandler;
@@ -430,6 +483,9 @@ typedef std::function<void(const ECSClient*, const Model::DeleteDaemonTaskDefini
 typedef std::function<void(const ECSClient*, const Model::DeleteExpressGatewayServiceRequest&,
                            const Model::DeleteExpressGatewayServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteExpressGatewayServiceResponseReceivedHandler;
+typedef std::function<void(const ECSClient*, const Model::DeleteGatewayRequest&, const Model::DeleteGatewayOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteGatewayResponseReceivedHandler;
 typedef std::function<void(const ECSClient*, const Model::DeleteServiceRequest&, const Model::DeleteServiceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteServiceResponseReceivedHandler;
@@ -471,6 +527,15 @@ typedef std::function<void(const ECSClient*, const Model::DescribeExpressGateway
                            const Model::DescribeExpressGatewayServiceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeExpressGatewayServiceResponseReceivedHandler;
+typedef std::function<void(const ECSClient*, const Model::DescribeGatewayRequest&, const Model::DescribeGatewayOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeGatewayResponseReceivedHandler;
+typedef std::function<void(const ECSClient*, const Model::DescribeGatewayResourcesRequest&, const Model::DescribeGatewayResourcesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeGatewayResourcesResponseReceivedHandler;
+typedef std::function<void(const ECSClient*, const Model::DescribeGatewayRouteRequest&, const Model::DescribeGatewayRouteOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeGatewayRouteResponseReceivedHandler;
 typedef std::function<void(const ECSClient*, const Model::DescribeServiceDeploymentsRequest&,
                            const Model::DescribeServiceDeploymentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeServiceDeploymentsResponseReceivedHandler;
@@ -489,6 +554,10 @@ typedef std::function<void(const ECSClient*, const Model::DescribeTaskSetsReques
 typedef std::function<void(const ECSClient*, const Model::DescribeTasksRequest&, const Model::DescribeTasksOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeTasksResponseReceivedHandler;
+typedef std::function<void(const ECSClient*, const Model::DisassociateGatewayFromClusterRequest&,
+                           const Model::DisassociateGatewayFromClusterOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DisassociateGatewayFromClusterResponseReceivedHandler;
 typedef std::function<void(const ECSClient*, const Model::DiscoverPollEndpointRequest&, const Model::DiscoverPollEndpointOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DiscoverPollEndpointResponseReceivedHandler;
@@ -519,6 +588,16 @@ typedef std::function<void(const ECSClient*, const Model::ListDaemonTaskDefiniti
 typedef std::function<void(const ECSClient*, const Model::ListDaemonsRequest&, const Model::ListDaemonsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListDaemonsResponseReceivedHandler;
+typedef std::function<void(const ECSClient*, const Model::ListGatewayClusterAssociationsRequest&,
+                           const Model::ListGatewayClusterAssociationsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListGatewayClusterAssociationsResponseReceivedHandler;
+typedef std::function<void(const ECSClient*, const Model::ListGatewayRoutesRequest&, const Model::ListGatewayRoutesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListGatewayRoutesResponseReceivedHandler;
+typedef std::function<void(const ECSClient*, const Model::ListGatewaysRequest&, const Model::ListGatewaysOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListGatewaysResponseReceivedHandler;
 typedef std::function<void(const ECSClient*, const Model::ListServiceDeploymentsRequest&, const Model::ListServiceDeploymentsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListServiceDeploymentsResponseReceivedHandler;
@@ -612,6 +691,9 @@ typedef std::function<void(const ECSClient*, const Model::UpdateDaemonRequest&, 
 typedef std::function<void(const ECSClient*, const Model::UpdateExpressGatewayServiceRequest&,
                            const Model::UpdateExpressGatewayServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateExpressGatewayServiceResponseReceivedHandler;
+typedef std::function<void(const ECSClient*, const Model::UpdateGatewayRequest&, const Model::UpdateGatewayOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateGatewayResponseReceivedHandler;
 typedef std::function<void(const ECSClient*, const Model::UpdateServiceRequest&, const Model::UpdateServiceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateServiceResponseReceivedHandler;

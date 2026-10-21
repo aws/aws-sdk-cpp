@@ -87,6 +87,25 @@ AnomalyDetectorConfiguration& AnomalyDetectorConfiguration::operator=(const std:
                   }
                 }
                 m_metricTimezoneHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "AdaptationSpeed") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_adaptationSpeed = AnomalyDetectorAdaptationSpeedMapper::GetAnomalyDetectorAdaptationSpeedForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_adaptationSpeedHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "OutlierFilteringStrength") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_outlierFilteringStrength =
+                      AnomalyDetectorOutlierFilteringStrengthMapper::GetAnomalyDetectorOutlierFilteringStrengthForName(
+                          Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_outlierFilteringStrengthHasBeenSet = true;
               } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
@@ -171,6 +190,25 @@ AnomalyDetectorConfiguration& AnomalyDetectorConfiguration::operator=(const std:
                 }
               }
               m_metricTimezoneHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "AdaptationSpeed") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_adaptationSpeed = AnomalyDetectorAdaptationSpeedMapper::GetAnomalyDetectorAdaptationSpeedForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_adaptationSpeedHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "OutlierFilteringStrength") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_outlierFilteringStrength =
+                    AnomalyDetectorOutlierFilteringStrengthMapper::GetAnomalyDetectorOutlierFilteringStrengthForName(
+                        Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_outlierFilteringStrengthHasBeenSet = true;
             } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
@@ -193,6 +231,12 @@ void AnomalyDetectorConfiguration::CborEncode(Aws::Crt::Cbor::CborEncoder& encod
   if (m_metricTimezoneHasBeenSet) {
     mapSize++;
   }
+  if (m_adaptationSpeedHasBeenSet) {
+    mapSize++;
+  }
+  if (m_outlierFilteringStrengthHasBeenSet) {
+    mapSize++;
+  }
 
   encoder.WriteMapStart(mapSize);
 
@@ -207,6 +251,19 @@ void AnomalyDetectorConfiguration::CborEncode(Aws::Crt::Cbor::CborEncoder& encod
   if (m_metricTimezoneHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("MetricTimezone"));
     encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_metricTimezone.c_str()));
+  }
+
+  if (m_adaptationSpeedHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AdaptationSpeed"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(
+        AnomalyDetectorAdaptationSpeedMapper::GetNameForAnomalyDetectorAdaptationSpeed(m_adaptationSpeed).c_str()));
+  }
+
+  if (m_outlierFilteringStrengthHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("OutlierFilteringStrength"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(
+        AnomalyDetectorOutlierFilteringStrengthMapper::GetNameForAnomalyDetectorOutlierFilteringStrength(m_outlierFilteringStrength)
+            .c_str()));
   }
 }
 

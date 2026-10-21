@@ -8,6 +8,7 @@
 #include <aws/cleanrooms/model/AnalysisMethod.h>
 #include <aws/cleanrooms/model/ConfiguredTableAnalysisRuleType.h>
 #include <aws/cleanrooms/model/SelectedAnalysisMethod.h>
+#include <aws/cleanrooms/model/TableReferenceType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -87,6 +88,23 @@ class ConfiguredTableSummary {
   template <typename NameT = Aws::String>
   ConfiguredTableSummary& WithName(NameT&& value) {
     SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Type of the Configured Table DataSource, example: Glue, Snowflake, Athena,
+   * Databricks</p>
+   */
+  inline TableReferenceType GetTableType() const { return m_tableType; }
+  inline bool TableTypeHasBeenSet() const { return m_tableTypeHasBeenSet; }
+  inline void SetTableType(TableReferenceType value) {
+    m_tableTypeHasBeenSet = true;
+    m_tableType = value;
+  }
+  inline ConfiguredTableSummary& WithTableType(TableReferenceType value) {
+    SetTableType(value);
     return *this;
   }
   ///@}
@@ -199,6 +217,8 @@ class ConfiguredTableSummary {
 
   Aws::String m_name;
 
+  TableReferenceType m_tableType{TableReferenceType::NOT_SET};
+
   Aws::Utils::DateTime m_createTime{};
 
   Aws::Utils::DateTime m_updateTime{};
@@ -211,6 +231,7 @@ class ConfiguredTableSummary {
   bool m_idHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
+  bool m_tableTypeHasBeenSet = false;
   bool m_createTimeHasBeenSet = false;
   bool m_updateTimeHasBeenSet = false;
   bool m_analysisRuleTypesHasBeenSet = false;

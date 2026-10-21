@@ -141,6 +141,10 @@ TableDescription& TableDescription::operator=(JsonView jsonValue) {
     m_deletionProtectionEnabled = jsonValue.GetBool("DeletionProtectionEnabled");
     m_deletionProtectionEnabledHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("DisassociationProtectionEnabled")) {
+    m_disassociationProtectionEnabled = jsonValue.GetBool("DisassociationProtectionEnabled");
+    m_disassociationProtectionEnabledHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("OnDemandThroughput")) {
     m_onDemandThroughput = jsonValue.GetObject("OnDemandThroughput");
     m_onDemandThroughputHasBeenSet = true;
@@ -295,6 +299,10 @@ JsonValue TableDescription::Jsonize() const {
 
   if (m_deletionProtectionEnabledHasBeenSet) {
     payload.WithBool("DeletionProtectionEnabled", m_deletionProtectionEnabled);
+  }
+
+  if (m_disassociationProtectionEnabledHasBeenSet) {
+    payload.WithBool("DisassociationProtectionEnabled", m_disassociationProtectionEnabled);
   }
 
   if (m_onDemandThroughputHasBeenSet) {

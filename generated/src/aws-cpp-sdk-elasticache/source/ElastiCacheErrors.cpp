@@ -22,6 +22,7 @@ static const int SNAPSHOT_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("
 static const int RESERVED_CACHE_NODES_OFFERING_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ReservedCacheNodesOfferingNotFound");
 static const int CACHE_SUBNET_GROUP_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("CacheSubnetGroupQuotaExceeded");
 static const int DEFAULT_USER_ASSOCIATED_TO_USER_GROUP_FAULT_HASH = HashingUtils::HashString("DefaultUserAssociatedToUserGroup");
+static const int MIGRATION_HEALTH_FAULT_HASH = HashingUtils::HashString("MigrationHealthFault");
 static const int REPLICATION_GROUP_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("ReplicationGroupAlreadyExists");
 static const int DEFAULT_USER_REQUIRED_HASH = HashingUtils::HashString("DefaultUserRequired");
 static const int INVALID_SUBNET_HASH = HashingUtils::HashString("InvalidSubnet");
@@ -33,6 +34,7 @@ static const int USER_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("UserNotFo
 static const int INVALID_K_M_S_KEY_FAULT_HASH = HashingUtils::HashString("InvalidKMSKeyFault");
 static const int CACHE_SUBNET_GROUP_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("CacheSubnetGroupAlreadyExists");
 static const int CACHE_SUBNET_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("CacheSubnetQuotaExceededFault");
+static const int SERVERLESS_CACHE_NOT_UNDER_MIGRATION_FAULT_HASH = HashingUtils::HashString("ServerlessCacheNotUnderMigrationFault");
 static const int SNAPSHOT_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("SnapshotNotFoundFault");
 static const int SNAPSHOT_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("SnapshotQuotaExceededFault");
 static const int SERVICE_UPDATE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ServiceUpdateNotFoundFault");
@@ -51,6 +53,8 @@ static const int USER_GROUP_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString
 static const int TAG_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("TagNotFound");
 static const int CACHE_CLUSTER_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("CacheClusterNotFound");
 static const int NODE_QUOTA_FOR_CLUSTER_EXCEEDED_FAULT_HASH = HashingUtils::HashString("NodeQuotaForClusterExceeded");
+static const int SERVERLESS_CACHE_ALREADY_UNDER_MIGRATION_FAULT_HASH =
+    HashingUtils::HashString("ServerlessCacheAlreadyUnderMigrationFault");
 static const int REPLICATION_GROUP_NOT_UNDER_MIGRATION_FAULT_HASH = HashingUtils::HashString("ReplicationGroupNotUnderMigrationFault");
 static const int CACHE_SECURITY_GROUP_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("CacheSecurityGroupNotFound");
 static const int SUBNET_IN_USE_HASH = HashingUtils::HashString("SubnetInUse");
@@ -117,6 +121,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == DEFAULT_USER_ASSOCIATED_TO_USER_GROUP_FAULT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElastiCacheErrors::DEFAULT_USER_ASSOCIATED_TO_USER_GROUP_FAULT),
                                 RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == MIGRATION_HEALTH_FAULT_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElastiCacheErrors::MIGRATION_HEALTH_FAULT), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == REPLICATION_GROUP_ALREADY_EXISTS_FAULT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElastiCacheErrors::REPLICATION_GROUP_ALREADY_EXISTS_FAULT),
                                 RetryableType::NOT_RETRYABLE);
@@ -143,6 +149,9 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
                                 RetryableType::NOT_RETRYABLE);
   } else if (hashCode == CACHE_SUBNET_QUOTA_EXCEEDED_FAULT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElastiCacheErrors::CACHE_SUBNET_QUOTA_EXCEEDED_FAULT),
+                                RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == SERVERLESS_CACHE_NOT_UNDER_MIGRATION_FAULT_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElastiCacheErrors::SERVERLESS_CACHE_NOT_UNDER_MIGRATION_FAULT),
                                 RetryableType::NOT_RETRYABLE);
   } else if (hashCode == SNAPSHOT_NOT_FOUND_FAULT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElastiCacheErrors::SNAPSHOT_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
@@ -183,6 +192,9 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElastiCacheErrors::CACHE_CLUSTER_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == NODE_QUOTA_FOR_CLUSTER_EXCEEDED_FAULT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElastiCacheErrors::NODE_QUOTA_FOR_CLUSTER_EXCEEDED_FAULT),
+                                RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == SERVERLESS_CACHE_ALREADY_UNDER_MIGRATION_FAULT_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElastiCacheErrors::SERVERLESS_CACHE_ALREADY_UNDER_MIGRATION_FAULT),
                                 RetryableType::NOT_RETRYABLE);
   } else if (hashCode == REPLICATION_GROUP_NOT_UNDER_MIGRATION_FAULT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElastiCacheErrors::REPLICATION_GROUP_NOT_UNDER_MIGRATION_FAULT),

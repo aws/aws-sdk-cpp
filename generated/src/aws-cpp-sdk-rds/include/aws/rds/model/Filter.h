@@ -26,8 +26,9 @@ namespace Model {
  * resources by specific criteria, such as IDs. The filters supported by a describe
  * operation are documented with the describe operation.</p>  <p>Currently,
  * wildcards are not supported in filters.</p>  <p>The following actions can
- * be filtered:</p> <ul> <li> <p> <code>DescribeDBClusterBacktracks</code> </p>
- * </li> <li> <p> <code>DescribeDBClusterEndpoints</code> </p> </li> <li> <p>
+ * be filtered:</p> <ul> <li> <p> <code>DescribeDBCapacityReservations</code> </p>
+ * </li> <li> <p> <code>DescribeDBClusterBacktracks</code> </p> </li> <li> <p>
+ * <code>DescribeDBClusterEndpoints</code> </p> </li> <li> <p>
  * <code>DescribeDBClusters</code> </p> </li> <li> <p>
  * <code>DescribeDBInstances</code> </p> </li> <li> <p>
  * <code>DescribeDBRecommendations</code> </p> </li> <li> <p>

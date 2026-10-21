@@ -8,6 +8,7 @@
 #include <aws/rds/RDSClient.h>
 #include <aws/rds/model/DescribeBlueGreenDeploymentsPaginationTraits.h>
 #include <aws/rds/model/DescribeCertificatesPaginationTraits.h>
+#include <aws/rds/model/DescribeDBCapacityReservationsPaginationTraits.h>
 #include <aws/rds/model/DescribeDBClusterAutomatedBackupsPaginationTraits.h>
 #include <aws/rds/model/DescribeDBClusterBacktracksPaginationTraits.h>
 #include <aws/rds/model/DescribeDBClusterEndpointsPaginationTraits.h>
@@ -57,6 +58,9 @@ using DescribeBlueGreenDeploymentsPaginator =
                                       Pagination::DescribeBlueGreenDeploymentsPaginationTraits<RDSClient>>;
 using DescribeCertificatesPaginator = Aws::Utils::Pagination::Paginator<RDSClient, Model::DescribeCertificatesRequest,
                                                                         Pagination::DescribeCertificatesPaginationTraits<RDSClient>>;
+using DescribeDBCapacityReservationsPaginator =
+    Aws::Utils::Pagination::Paginator<RDSClient, Model::DescribeDBCapacityReservationsRequest,
+                                      Pagination::DescribeDBCapacityReservationsPaginationTraits<RDSClient>>;
 using DescribeDBClusterAutomatedBackupsPaginator =
     Aws::Utils::Pagination::Paginator<RDSClient, Model::DescribeDBClusterAutomatedBackupsRequest,
                                       Pagination::DescribeDBClusterAutomatedBackupsPaginationTraits<RDSClient>>;
