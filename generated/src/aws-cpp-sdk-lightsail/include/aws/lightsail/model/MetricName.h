@@ -38,7 +38,14 @@ enum class MetricName {
   FreeableMemory,
   SwapUsage,
   BurstCapacityTime,
-  BurstCapacityPercentage
+  BurstCapacityPercentage,
+  DiskReadOps,
+  DiskWriteOps,
+  DiskReadBytes,
+  DiskWriteBytes,
+  DiskTotalReadTime,
+  DiskTotalWriteTime,
+  DiskQueueLength
 };
 
 namespace MetricNameMapper {

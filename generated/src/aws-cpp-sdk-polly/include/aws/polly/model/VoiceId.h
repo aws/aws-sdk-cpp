@@ -117,7 +117,17 @@ enum class VoiceId {
   Florian,
   Lennart,
   Lorenzo,
-  Tiffany
+  Tiffany,
+  Arjun,
+  Carlos,
+  Carolina,
+  Curtis,
+  Hyunduk,
+  Kenneth,
+  Kiara,
+  Leo,
+  Nate,
+  Tina
 };
 
 namespace VoiceIdMapper {

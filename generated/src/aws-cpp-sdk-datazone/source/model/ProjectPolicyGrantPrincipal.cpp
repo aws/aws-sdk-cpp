@@ -22,6 +22,10 @@ ProjectPolicyGrantPrincipal& ProjectPolicyGrantPrincipal::operator=(JsonView jso
     m_projectDesignation = ProjectDesignationMapper::GetProjectDesignationForName(jsonValue.GetString("projectDesignation"));
     m_projectDesignationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("userCreatedDesignationId")) {
+    m_userCreatedDesignationId = jsonValue.GetString("userCreatedDesignationId");
+    m_userCreatedDesignationIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("projectIdentifier")) {
     m_projectIdentifier = jsonValue.GetString("projectIdentifier");
     m_projectIdentifierHasBeenSet = true;
@@ -38,6 +42,10 @@ JsonValue ProjectPolicyGrantPrincipal::Jsonize() const {
 
   if (m_projectDesignationHasBeenSet) {
     payload.WithString("projectDesignation", ProjectDesignationMapper::GetNameForProjectDesignation(m_projectDesignation));
+  }
+
+  if (m_userCreatedDesignationIdHasBeenSet) {
+    payload.WithString("userCreatedDesignationId", m_userCreatedDesignationId);
   }
 
   if (m_projectIdentifierHasBeenSet) {

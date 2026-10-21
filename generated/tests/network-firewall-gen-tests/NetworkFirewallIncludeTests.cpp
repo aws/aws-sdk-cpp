@@ -69,6 +69,7 @@
 #include <aws/network-firewall/model/CreateVpcEndpointAssociationRequest.h>
 #include <aws/network-firewall/model/CreateVpcEndpointAssociationResult.h>
 #include <aws/network-firewall/model/CustomAction.h>
+#include <aws/network-firewall/model/DNSExpiryExceptionPolicy.h>
 #include <aws/network-firewall/model/DeleteContainerAssociationRequest.h>
 #include <aws/network-firewall/model/DeleteContainerAssociationResult.h>
 #include <aws/network-firewall/model/DeleteFirewallPolicyRequest.h>
@@ -139,6 +140,8 @@
 #include <aws/network-firewall/model/Firewall.h>
 #include <aws/network-firewall/model/FirewallMetadata.h>
 #include <aws/network-firewall/model/FirewallPolicy.h>
+#include <aws/network-firewall/model/FirewallPolicyError.h>
+#include <aws/network-firewall/model/FirewallPolicyErrorCode.h>
 #include <aws/network-firewall/model/FirewallPolicyMetadata.h>
 #include <aws/network-firewall/model/FirewallPolicyResponse.h>
 #include <aws/network-firewall/model/FirewallStatus.h>
@@ -246,6 +249,8 @@
 #include <aws/network-firewall/model/ResourceManagedType.h>
 #include <aws/network-firewall/model/ResourceStatus.h>
 #include <aws/network-firewall/model/RevocationCheckAction.h>
+#include <aws/network-firewall/model/Route53ResolvedIPValidation.h>
+#include <aws/network-firewall/model/Route53ResolvedIPValidationAction.h>
 #include <aws/network-firewall/model/RuleDefinition.h>
 #include <aws/network-firewall/model/RuleGroup.h>
 #include <aws/network-firewall/model/RuleGroupMetadata.h>

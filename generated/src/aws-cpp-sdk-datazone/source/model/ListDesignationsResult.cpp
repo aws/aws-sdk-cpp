@@ -8,27 +8,30 @@
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
-#include <aws/healthlake/model/UpdateProfileWithAgentResult.h>
+#include <aws/datazone/model/ListDesignationsResult.h>
 
 #include <utility>
 
-using namespace Aws::HealthLake::Model;
+using namespace Aws::DataZone::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateProfileWithAgentResult::UpdateProfileWithAgentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
+ListDesignationsResult::ListDesignationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
 
-UpdateProfileWithAgentResult& UpdateProfileWithAgentResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+ListDesignationsResult& ListDesignationsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("AgentResponse")) {
-    m_agentResponse = jsonValue.GetObject("AgentResponse");
-    m_agentResponseHasBeenSet = true;
+  if (jsonValue.ValueExists("items")) {
+    Aws::Utils::Array<JsonView> itemsJsonList = jsonValue.GetArray("items");
+    for (unsigned itemsIndex = 0; itemsIndex < itemsJsonList.GetLength(); ++itemsIndex) {
+      m_items.push_back(itemsJsonList[itemsIndex].AsObject());
+    }
+    m_itemsHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("ConversationId")) {
-    m_conversationId = jsonValue.GetString("ConversationId");
-    m_conversationIdHasBeenSet = true;
+  if (jsonValue.ValueExists("nextToken")) {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

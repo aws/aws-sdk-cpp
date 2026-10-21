@@ -38,6 +38,15 @@ CmafGroupSettings& CmafGroupSettings::operator=(JsonView jsonValue) {
     m_codecSpecification = CmafCodecSpecificationMapper::GetCmafCodecSpecificationForName(jsonValue.GetString("codecSpecification"));
     m_codecSpecificationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("dashAdaptationSetGrouping")) {
+    Aws::Utils::Array<JsonView> dashAdaptationSetGroupingJsonList = jsonValue.GetArray("dashAdaptationSetGrouping");
+    for (unsigned dashAdaptationSetGroupingIndex = 0; dashAdaptationSetGroupingIndex < dashAdaptationSetGroupingJsonList.GetLength();
+         ++dashAdaptationSetGroupingIndex) {
+      m_dashAdaptationSetGrouping.push_back(DashAdaptationSetGroupingMapper::GetDashAdaptationSetGroupingForName(
+          dashAdaptationSetGroupingJsonList[dashAdaptationSetGroupingIndex].AsString()));
+    }
+    m_dashAdaptationSetGroupingHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("dashIFrameTrickPlayNameModifier")) {
     m_dashIFrameTrickPlayNameModifier = jsonValue.GetString("dashIFrameTrickPlayNameModifier");
     m_dashIFrameTrickPlayNameModifierHasBeenSet = true;
@@ -175,6 +184,17 @@ JsonValue CmafGroupSettings::Jsonize() const {
 
   if (m_codecSpecificationHasBeenSet) {
     payload.WithString("codecSpecification", CmafCodecSpecificationMapper::GetNameForCmafCodecSpecification(m_codecSpecification));
+  }
+
+  if (m_dashAdaptationSetGroupingHasBeenSet) {
+    Aws::Utils::Array<JsonValue> dashAdaptationSetGroupingJsonList(m_dashAdaptationSetGrouping.size());
+    for (unsigned dashAdaptationSetGroupingIndex = 0; dashAdaptationSetGroupingIndex < dashAdaptationSetGroupingJsonList.GetLength();
+         ++dashAdaptationSetGroupingIndex) {
+      dashAdaptationSetGroupingJsonList[dashAdaptationSetGroupingIndex].AsString(
+          DashAdaptationSetGroupingMapper::GetNameForDashAdaptationSetGrouping(
+              m_dashAdaptationSetGrouping[dashAdaptationSetGroupingIndex]));
+    }
+    payload.WithArray("dashAdaptationSetGrouping", std::move(dashAdaptationSetGroupingJsonList));
   }
 
   if (m_dashIFrameTrickPlayNameModifierHasBeenSet) {

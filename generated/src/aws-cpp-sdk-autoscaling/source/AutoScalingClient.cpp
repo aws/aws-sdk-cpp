@@ -26,6 +26,7 @@
 #include <aws/autoscaling/model/DeleteTagsRequest.h>
 #include <aws/autoscaling/model/DeleteWarmPoolRequest.h>
 #include <aws/autoscaling/model/DescribeAccountLimitsRequest.h>
+#include <aws/autoscaling/model/DescribeAccountSettingsRequest.h>
 #include <aws/autoscaling/model/DescribeAdjustmentTypesRequest.h>
 #include <aws/autoscaling/model/DescribeAutoScalingGroupsRequest.h>
 #include <aws/autoscaling/model/DescribeAutoScalingInstancesRequest.h>
@@ -57,6 +58,7 @@
 #include <aws/autoscaling/model/ExitStandbyRequest.h>
 #include <aws/autoscaling/model/GetPredictiveScalingForecastRequest.h>
 #include <aws/autoscaling/model/LaunchInstancesRequest.h>
+#include <aws/autoscaling/model/PutAccountSettingRequest.h>
 #include <aws/autoscaling/model/PutLifecycleHookRequest.h>
 #include <aws/autoscaling/model/PutNotificationConfigurationRequest.h>
 #include <aws/autoscaling/model/PutScalingPolicyRequest.h>
@@ -378,6 +380,12 @@ DescribeAccountLimitsOutcome AutoScalingClient::DescribeAccountLimits(const Desc
                             : DescribeAccountLimitsOutcome(std::move(result.GetError()));
 }
 
+DescribeAccountSettingsOutcome AutoScalingClient::DescribeAccountSettings(const DescribeAccountSettingsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAccountSettingsOutcome(result.GetResultWithOwnership())
+                            : DescribeAccountSettingsOutcome(std::move(result.GetError()));
+}
+
 DescribeAdjustmentTypesOutcome AutoScalingClient::DescribeAdjustmentTypes(const DescribeAdjustmentTypesRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeAdjustmentTypesOutcome(result.GetResultWithOwnership())
@@ -567,6 +575,12 @@ LaunchInstancesOutcome AutoScalingClient::LaunchInstances(const LaunchInstancesR
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? LaunchInstancesOutcome(result.GetResultWithOwnership())
                             : LaunchInstancesOutcome(std::move(result.GetError()));
+}
+
+PutAccountSettingOutcome AutoScalingClient::PutAccountSetting(const PutAccountSettingRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutAccountSettingOutcome(result.GetResultWithOwnership())
+                            : PutAccountSettingOutcome(std::move(result.GetError()));
 }
 
 PutLifecycleHookOutcome AutoScalingClient::PutLifecycleHook(const PutLifecycleHookRequest& request) const {

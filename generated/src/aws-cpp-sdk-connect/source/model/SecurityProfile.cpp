@@ -84,6 +84,10 @@ SecurityProfile& SecurityProfile::operator=(JsonView jsonValue) {
     m_granularAccessControlConfiguration = jsonValue.GetObject("GranularAccessControlConfiguration");
     m_granularAccessControlConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Type")) {
+    m_type = SecurityProfileTypeMapper::GetSecurityProfileTypeForName(jsonValue.GetString("Type"));
+    m_typeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -159,6 +163,10 @@ JsonValue SecurityProfile::Jsonize() const {
 
   if (m_granularAccessControlConfigurationHasBeenSet) {
     payload.WithObject("GranularAccessControlConfiguration", m_granularAccessControlConfiguration.Jsonize());
+  }
+
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", SecurityProfileTypeMapper::GetNameForSecurityProfileType(m_type));
   }
 
   return payload;

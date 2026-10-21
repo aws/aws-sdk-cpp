@@ -23,6 +23,8 @@ static const int SHARPEN_HASH = HashingUtils::HashString("SHARPEN");
 static const int CONSERVE_HASH = HashingUtils::HashString("CONSERVE");
 static const int SPATIAL_HASH = HashingUtils::HashString("SPATIAL");
 static const int TEMPORAL_HASH = HashingUtils::HashString("TEMPORAL");
+static const int PERCEPTUAL_HASH = HashingUtils::HashString("PERCEPTUAL");
+static const int NONE_HASH = HashingUtils::HashString("NONE");
 
 NoiseReducerFilter GetNoiseReducerFilterForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -42,6 +44,10 @@ NoiseReducerFilter GetNoiseReducerFilterForName(const Aws::String& name) {
     return NoiseReducerFilter::SPATIAL;
   } else if (hashCode == TEMPORAL_HASH) {
     return NoiseReducerFilter::TEMPORAL;
+  } else if (hashCode == PERCEPTUAL_HASH) {
+    return NoiseReducerFilter::PERCEPTUAL;
+  } else if (hashCode == NONE_HASH) {
+    return NoiseReducerFilter::NONE;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -72,6 +78,10 @@ Aws::String GetNameForNoiseReducerFilter(NoiseReducerFilter enumValue) {
       return "SPATIAL";
     case NoiseReducerFilter::TEMPORAL:
       return "TEMPORAL";
+    case NoiseReducerFilter::PERCEPTUAL:
+      return "PERCEPTUAL";
+    case NoiseReducerFilter::NONE:
+      return "NONE";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

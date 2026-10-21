@@ -84,6 +84,11 @@ InstanceStatus& InstanceStatus::operator=(const XmlNode& xmlNode) {
       m_applicationStatus = applicationStatusNode;
       m_applicationStatusHasBeenSet = true;
     }
+    XmlNode performanceStatusNode = resultNode.FirstChild("performanceStatus");
+    if (!performanceStatusNode.IsNull()) {
+      m_performanceStatus = performanceStatusNode;
+      m_performanceStatusHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -150,6 +155,12 @@ void InstanceStatus::OutputToStream(Aws::OStream& oStream, const char* location,
     applicationStatusLocationAndMemberSs << location << index << locationValue << ".ApplicationStatus";
     m_applicationStatus.OutputToStream(oStream, applicationStatusLocationAndMemberSs.str().c_str());
   }
+
+  if (m_performanceStatusHasBeenSet) {
+    Aws::StringStream performanceStatusLocationAndMemberSs;
+    performanceStatusLocationAndMemberSs << location << index << locationValue << ".PerformanceStatus";
+    m_performanceStatus.OutputToStream(oStream, performanceStatusLocationAndMemberSs.str().c_str());
+  }
 }
 
 void InstanceStatus::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -202,6 +213,11 @@ void InstanceStatus::OutputToStream(Aws::OStream& oStream, const char* location)
     Aws::String applicationStatusLocationAndMember(location);
     applicationStatusLocationAndMember += ".ApplicationStatus";
     m_applicationStatus.OutputToStream(oStream, applicationStatusLocationAndMember.c_str());
+  }
+  if (m_performanceStatusHasBeenSet) {
+    Aws::String performanceStatusLocationAndMember(location);
+    performanceStatusLocationAndMember += ".PerformanceStatus";
+    m_performanceStatus.OutputToStream(oStream, performanceStatusLocationAndMember.c_str());
   }
 }
 

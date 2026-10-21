@@ -9,6 +9,7 @@
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 #include <aws/network-firewall/model/CustomAction.h>
 #include <aws/network-firewall/model/PolicyVariables.h>
+#include <aws/network-firewall/model/Route53ResolvedIPValidation.h>
 #include <aws/network-firewall/model/StatefulEngineOptions.h>
 #include <aws/network-firewall/model/StatefulRuleGroupReference.h>
 #include <aws/network-firewall/model/StatelessRuleGroupReference.h>
@@ -295,6 +296,31 @@ class FirewallPolicy {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The settings that enable resolved IP validation for the policy. Resolved IP
+   * validation verifies that a connection's destination IP address is one that the
+   * Amazon Route 53 Resolver returned in a DNS response for a domain. The response
+   * must come from a VPC that's associated with the Route 53 Resolver DNS Firewall
+   * rule group that you specify. This checks how the destination IP address was
+   * obtained, instead of relying only on the domain that the client asserts in its
+   * TLS Server Name Indication (SNI) or HTTP <code>Host</code> header. For more
+   * information, see <a>Route53ResolvedIPValidation</a>.</p>
+   */
+  inline const Route53ResolvedIPValidation& GetRoute53ResolvedIPValidation() const { return m_route53ResolvedIPValidation; }
+  inline bool Route53ResolvedIPValidationHasBeenSet() const { return m_route53ResolvedIPValidationHasBeenSet; }
+  template <typename Route53ResolvedIPValidationT = Route53ResolvedIPValidation>
+  void SetRoute53ResolvedIPValidation(Route53ResolvedIPValidationT&& value) {
+    m_route53ResolvedIPValidationHasBeenSet = true;
+    m_route53ResolvedIPValidation = std::forward<Route53ResolvedIPValidationT>(value);
+  }
+  template <typename Route53ResolvedIPValidationT = Route53ResolvedIPValidation>
+  FirewallPolicy& WithRoute53ResolvedIPValidation(Route53ResolvedIPValidationT&& value) {
+    SetRoute53ResolvedIPValidation(std::forward<Route53ResolvedIPValidationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<StatelessRuleGroupReference> m_statelessRuleGroupReferences;
 
@@ -315,6 +341,8 @@ class FirewallPolicy {
   PolicyVariables m_policyVariables;
 
   bool m_enableTLSSessionHolding{false};
+
+  Route53ResolvedIPValidation m_route53ResolvedIPValidation;
   bool m_statelessRuleGroupReferencesHasBeenSet = false;
   bool m_statelessDefaultActionsHasBeenSet = false;
   bool m_statelessFragmentDefaultActionsHasBeenSet = false;
@@ -325,6 +353,7 @@ class FirewallPolicy {
   bool m_tLSInspectionConfigurationArnHasBeenSet = false;
   bool m_policyVariablesHasBeenSet = false;
   bool m_enableTLSSessionHoldingHasBeenSet = false;
+  bool m_route53ResolvedIPValidationHasBeenSet = false;
 };
 
 }  // namespace Model

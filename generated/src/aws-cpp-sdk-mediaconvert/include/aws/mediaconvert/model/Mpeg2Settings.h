@@ -628,6 +628,44 @@ class Mpeg2Settings {
 
   ///@{
   /**
+   * Optional. Specify the duration, in milliseconds, of the sliding window over
+   * which MediaConvert enforces your Peak bitrate. When you specify a Peak bitrate
+   * but omit this value, MediaConvert uses a default sliding window of 1000.
+   */
+  inline int GetSlidingWindowMs() const { return m_slidingWindowMs; }
+  inline bool SlidingWindowMsHasBeenSet() const { return m_slidingWindowMsHasBeenSet; }
+  inline void SetSlidingWindowMs(int value) {
+    m_slidingWindowMsHasBeenSet = true;
+    m_slidingWindowMs = value;
+  }
+  inline Mpeg2Settings& WithSlidingWindowMs(int value) {
+    SetSlidingWindowMs(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * Optional. Specify an instantaneous peak bitrate ceiling, in bits/second, that
+   * MediaConvert enforces over the sliding window set by Peak bitrate window. For
+   * example, enter fifty megabits per second as 50000000. Applies in the VBR and CBR
+   * rate control modes. When you specify a value below Max bitrate, MediaConvert
+   * raises it to Max bitrate.
+   */
+  inline int GetSlidingWindowPeakBitrate() const { return m_slidingWindowPeakBitrate; }
+  inline bool SlidingWindowPeakBitrateHasBeenSet() const { return m_slidingWindowPeakBitrateHasBeenSet; }
+  inline void SetSlidingWindowPeakBitrate(int value) {
+    m_slidingWindowPeakBitrateHasBeenSet = true;
+    m_slidingWindowPeakBitrate = value;
+  }
+  inline Mpeg2Settings& WithSlidingWindowPeakBitrate(int value) {
+    SetSlidingWindowPeakBitrate(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * Ignore this setting unless your input frame rate is 23.976 or 24 frames per
    * second (fps). Enable slow PAL to create a 25 fps output. When you enable slow
    * PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio
@@ -823,6 +861,10 @@ class Mpeg2Settings {
 
   Mpeg2SceneChangeDetect m_sceneChangeDetect{Mpeg2SceneChangeDetect::NOT_SET};
 
+  int m_slidingWindowMs{0};
+
+  int m_slidingWindowPeakBitrate{0};
+
   Mpeg2SlowPal m_slowPal{Mpeg2SlowPal::NOT_SET};
 
   int m_softness{0};
@@ -862,6 +904,8 @@ class Mpeg2Settings {
   bool m_rateControlModeHasBeenSet = false;
   bool m_scanTypeConversionModeHasBeenSet = false;
   bool m_sceneChangeDetectHasBeenSet = false;
+  bool m_slidingWindowMsHasBeenSet = false;
+  bool m_slidingWindowPeakBitrateHasBeenSet = false;
   bool m_slowPalHasBeenSet = false;
   bool m_softnessHasBeenSet = false;
   bool m_spatialAdaptiveQuantizationHasBeenSet = false;

@@ -14,6 +14,7 @@
 #include <aws/ec2/model/AnalysisLoadBalancerTarget.h>
 #include <aws/ec2/model/AnalysisRouteTableRoute.h>
 #include <aws/ec2/model/AnalysisSecurityGroupRule.h>
+#include <aws/ec2/model/AnalysisTransitGatewayPolicyTableEntry.h>
 #include <aws/ec2/model/FirewallStatefulRule.h>
 #include <aws/ec2/model/FirewallStatelessRule.h>
 #include <aws/ec2/model/PortRange.h>
@@ -974,6 +975,44 @@ class Explanation {
 
   ///@{
   /**
+   * <p>The transit gateway policy table.</p>
+   */
+  inline const AnalysisComponent& GetTransitGatewayPolicyTable() const { return m_transitGatewayPolicyTable; }
+  inline bool TransitGatewayPolicyTableHasBeenSet() const { return m_transitGatewayPolicyTableHasBeenSet; }
+  template <typename TransitGatewayPolicyTableT = AnalysisComponent>
+  void SetTransitGatewayPolicyTable(TransitGatewayPolicyTableT&& value) {
+    m_transitGatewayPolicyTableHasBeenSet = true;
+    m_transitGatewayPolicyTable = std::forward<TransitGatewayPolicyTableT>(value);
+  }
+  template <typename TransitGatewayPolicyTableT = AnalysisComponent>
+  Explanation& WithTransitGatewayPolicyTable(TransitGatewayPolicyTableT&& value) {
+    SetTransitGatewayPolicyTable(std::forward<TransitGatewayPolicyTableT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The transit gateway policy table entry.</p>
+   */
+  inline const AnalysisTransitGatewayPolicyTableEntry& GetTransitGatewayPolicyTableEntry() const {
+    return m_transitGatewayPolicyTableEntry;
+  }
+  inline bool TransitGatewayPolicyTableEntryHasBeenSet() const { return m_transitGatewayPolicyTableEntryHasBeenSet; }
+  template <typename TransitGatewayPolicyTableEntryT = AnalysisTransitGatewayPolicyTableEntry>
+  void SetTransitGatewayPolicyTableEntry(TransitGatewayPolicyTableEntryT&& value) {
+    m_transitGatewayPolicyTableEntryHasBeenSet = true;
+    m_transitGatewayPolicyTableEntry = std::forward<TransitGatewayPolicyTableEntryT>(value);
+  }
+  template <typename TransitGatewayPolicyTableEntryT = AnalysisTransitGatewayPolicyTableEntry>
+  Explanation& WithTransitGatewayPolicyTableEntry(TransitGatewayPolicyTableEntryT&& value) {
+    SetTransitGatewayPolicyTableEntry(std::forward<TransitGatewayPolicyTableEntryT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The transit gateway attachment.</p>
    */
   inline const AnalysisComponent& GetTransitGatewayAttachment() const { return m_transitGatewayAttachment; }
@@ -1160,6 +1199,10 @@ class Explanation {
 
   TransitGatewayRouteTableRoute m_transitGatewayRouteTableRoute;
 
+  AnalysisComponent m_transitGatewayPolicyTable;
+
+  AnalysisTransitGatewayPolicyTableEntry m_transitGatewayPolicyTableEntry;
+
   AnalysisComponent m_transitGatewayAttachment;
 
   Aws::String m_componentAccount;
@@ -1218,6 +1261,8 @@ class Explanation {
   bool m_transitGatewayHasBeenSet = false;
   bool m_transitGatewayRouteTableHasBeenSet = false;
   bool m_transitGatewayRouteTableRouteHasBeenSet = false;
+  bool m_transitGatewayPolicyTableHasBeenSet = false;
+  bool m_transitGatewayPolicyTableEntryHasBeenSet = false;
   bool m_transitGatewayAttachmentHasBeenSet = false;
   bool m_componentAccountHasBeenSet = false;
   bool m_componentRegionHasBeenSet = false;

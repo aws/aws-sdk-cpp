@@ -77,9 +77,40 @@ class RulesSourceList {
 
   ///@{
   /**
-   * <p>The protocols you want to inspect. Specify <code>TLS_SNI</code> for
-   * <code>HTTPS</code>. Specify <code>HTTP_HOST</code> for <code>HTTP</code>. You
-   * can specify either or both. </p>
+   * <p>The types of matching to perform against the domains in <code>Targets</code>.
+   * You can specify any combination of the following:</p> <ul> <li> <p>
+   * <code>AWS_ROUTE_53_RESOLVED_DOMAIN</code> – Match the domain against the domain
+   * that the Amazon Route 53 Resolver resolved the connection's destination IP
+   * address for.</p> </li> <li> <p> <code>HTTP_HOST</code> – Match the domain
+   * against the <code>Host</code> header of HTTP traffic.</p> </li> <li> <p>
+   * <code>TLS_SNI</code> – Match the domain against the Server Name Indication (SNI)
+   * of HTTPS traffic.</p> </li> </ul> <p> <code>AWS_ROUTE_53_RESOLVED_DOMAIN</code>
+   * matches on how the destination IP address was resolved, rather than on the
+   * domain that the client asserts in its TLS SNI or HTTP <code>Host</code> header.
+   * This target type takes effect when you configure resolved IP validation on the
+   * firewall policy. For more information, see
+   * <a>Route53ResolvedIPValidation</a>.</p> <p>Whether you include
+   * <code>AWS_ROUTE_53_RESOLVED_DOMAIN</code> changes what the generated rules
+   * match, together with <code>GeneratedRulesType</code>:</p> <ul> <li> <p>Combining
+   * <code>AWS_ROUTE_53_RESOLVED_DOMAIN</code> with <code>TLS_SNI</code> or
+   * <code>HTTP_HOST</code> in an <code>ALLOWLIST</code> requires both conditions to
+   * match. The SNI or <code>Host</code> header must match the domain, <b>and</b> the
+   * Route 53 Resolver must have resolved the destination IP address for that domain.
+   * Network Firewall allows traffic only in that case. Traffic that matches one
+   * condition, such as a spoofed <code>Host</code> header sent to an unresolved IP
+   * address, is not allowed.</p> </li> <li> <p>In a <code>DENYLIST</code>, or when
+   * <code>AWS_ROUTE_53_RESOLVED_DOMAIN</code> is the only target type, Network
+   * Firewall evaluates each condition independently: a match on either the domain
+   * (SNI or <code>Host</code>) or the resolved destination IP address triggers the
+   * rule.</p> </li> <li> <p>When you don't include
+   * <code>AWS_ROUTE_53_RESOLVED_DOMAIN</code>, the generated rules match only on the
+   * SNI or <code>Host</code> header, without checking how the destination IP address
+   * was resolved.</p> </li> </ul> <p>An <code>ALLOWLIST</code> whose only target
+   * type is <code>AWS_ROUTE_53_RESOLVED_DOMAIN</code> is additive: it allows
+   * matching traffic but doesn't generate a default rule that drops non-matching
+   * traffic. Only the <code>TLS_SNI</code> and <code>HTTP_HOST</code> target types
+   * generate that default drop. To allow only the resolved domains and drop all
+   * other traffic, include a protocol target type as well.</p>
    */
   inline const Aws::Vector<TargetType>& GetTargetTypes() const { return m_targetTypes; }
   inline bool TargetTypesHasBeenSet() const { return m_targetTypesHasBeenSet; }

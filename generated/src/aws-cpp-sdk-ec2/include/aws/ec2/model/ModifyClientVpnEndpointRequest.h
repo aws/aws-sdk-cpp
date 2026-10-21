@@ -377,7 +377,8 @@ class ModifyClientVpnEndpointRequest : public EC2Request {
   /**
    * <p>The device posture options for the Client VPN endpoint. Specifying this
    * parameter replaces the entire device posture configuration for the endpoint. To
-   * remove all device trust providers, specify an empty list.</p>
+   * disable device posture and remove all device trust providers, specify
+   * <code>false</code> for <code>Enabled</code>.</p>
    */
   inline const DevicePostureOptions& GetDevicePostureOptions() const { return m_devicePostureOptions; }
   inline bool DevicePostureOptionsHasBeenSet() const { return m_devicePostureOptionsHasBeenSet; }

@@ -30,6 +30,8 @@
 #include <aws/autoscaling/model/DeleteWarmPoolResult.h>
 #include <aws/autoscaling/model/DescribeAccountLimitsRequest.h>
 #include <aws/autoscaling/model/DescribeAccountLimitsResult.h>
+#include <aws/autoscaling/model/DescribeAccountSettingsRequest.h>
+#include <aws/autoscaling/model/DescribeAccountSettingsResult.h>
 #include <aws/autoscaling/model/DescribeAdjustmentTypesRequest.h>
 #include <aws/autoscaling/model/DescribeAdjustmentTypesResult.h>
 #include <aws/autoscaling/model/DescribeAutoScalingGroupsRequest.h>
@@ -72,6 +74,7 @@
 #include <aws/autoscaling/model/ExitStandbyResult.h>
 #include <aws/autoscaling/model/GetPredictiveScalingForecastResult.h>
 #include <aws/autoscaling/model/LaunchInstancesResult.h>
+#include <aws/autoscaling/model/PutAccountSettingResult.h>
 #include <aws/autoscaling/model/PutLifecycleHookResult.h>
 #include <aws/autoscaling/model/PutScalingPolicyResult.h>
 #include <aws/autoscaling/model/PutWarmPoolResult.h>
@@ -134,6 +137,7 @@ class DeleteScheduledActionRequest;
 class DeleteTagsRequest;
 class DeleteWarmPoolRequest;
 class DescribeAccountLimitsRequest;
+class DescribeAccountSettingsRequest;
 class DescribeAdjustmentTypesRequest;
 class DescribeAutoScalingGroupsRequest;
 class DescribeAutoScalingInstancesRequest;
@@ -165,6 +169,7 @@ class ExecutePolicyRequest;
 class ExitStandbyRequest;
 class GetPredictiveScalingForecastRequest;
 class LaunchInstancesRequest;
+class PutAccountSettingRequest;
 class PutLifecycleHookRequest;
 class PutNotificationConfigurationRequest;
 class PutScalingPolicyRequest;
@@ -203,6 +208,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, AutoScalingError> DeleteScheduledActi
 typedef Aws::Utils::Outcome<Aws::NoResult, AutoScalingError> DeleteTagsOutcome;
 typedef Aws::Utils::Outcome<DeleteWarmPoolResult, AutoScalingError> DeleteWarmPoolOutcome;
 typedef Aws::Utils::Outcome<DescribeAccountLimitsResult, AutoScalingError> DescribeAccountLimitsOutcome;
+typedef Aws::Utils::Outcome<DescribeAccountSettingsResult, AutoScalingError> DescribeAccountSettingsOutcome;
 typedef Aws::Utils::Outcome<DescribeAdjustmentTypesResult, AutoScalingError> DescribeAdjustmentTypesOutcome;
 typedef Aws::Utils::Outcome<DescribeAutoScalingGroupsResult, AutoScalingError> DescribeAutoScalingGroupsOutcome;
 typedef Aws::Utils::Outcome<DescribeAutoScalingInstancesResult, AutoScalingError> DescribeAutoScalingInstancesOutcome;
@@ -234,6 +240,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, AutoScalingError> ExecutePolicyOutcom
 typedef Aws::Utils::Outcome<ExitStandbyResult, AutoScalingError> ExitStandbyOutcome;
 typedef Aws::Utils::Outcome<GetPredictiveScalingForecastResult, AutoScalingError> GetPredictiveScalingForecastOutcome;
 typedef Aws::Utils::Outcome<LaunchInstancesResult, AutoScalingError> LaunchInstancesOutcome;
+typedef Aws::Utils::Outcome<PutAccountSettingResult, AutoScalingError> PutAccountSettingOutcome;
 typedef Aws::Utils::Outcome<PutLifecycleHookResult, AutoScalingError> PutLifecycleHookOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, AutoScalingError> PutNotificationConfigurationOutcome;
 typedef Aws::Utils::Outcome<PutScalingPolicyResult, AutoScalingError> PutScalingPolicyOutcome;
@@ -272,6 +279,7 @@ typedef std::future<DeleteScheduledActionOutcome> DeleteScheduledActionOutcomeCa
 typedef std::future<DeleteTagsOutcome> DeleteTagsOutcomeCallable;
 typedef std::future<DeleteWarmPoolOutcome> DeleteWarmPoolOutcomeCallable;
 typedef std::future<DescribeAccountLimitsOutcome> DescribeAccountLimitsOutcomeCallable;
+typedef std::future<DescribeAccountSettingsOutcome> DescribeAccountSettingsOutcomeCallable;
 typedef std::future<DescribeAdjustmentTypesOutcome> DescribeAdjustmentTypesOutcomeCallable;
 typedef std::future<DescribeAutoScalingGroupsOutcome> DescribeAutoScalingGroupsOutcomeCallable;
 typedef std::future<DescribeAutoScalingInstancesOutcome> DescribeAutoScalingInstancesOutcomeCallable;
@@ -303,6 +311,7 @@ typedef std::future<ExecutePolicyOutcome> ExecutePolicyOutcomeCallable;
 typedef std::future<ExitStandbyOutcome> ExitStandbyOutcomeCallable;
 typedef std::future<GetPredictiveScalingForecastOutcome> GetPredictiveScalingForecastOutcomeCallable;
 typedef std::future<LaunchInstancesOutcome> LaunchInstancesOutcomeCallable;
+typedef std::future<PutAccountSettingOutcome> PutAccountSettingOutcomeCallable;
 typedef std::future<PutLifecycleHookOutcome> PutLifecycleHookOutcomeCallable;
 typedef std::future<PutNotificationConfigurationOutcome> PutNotificationConfigurationOutcomeCallable;
 typedef std::future<PutScalingPolicyOutcome> PutScalingPolicyOutcomeCallable;
@@ -387,6 +396,9 @@ typedef std::function<void(const AutoScalingClient*, const Model::DeleteWarmPool
 typedef std::function<void(const AutoScalingClient*, const Model::DescribeAccountLimitsRequest&, const Model::DescribeAccountLimitsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeAccountLimitsResponseReceivedHandler;
+typedef std::function<void(const AutoScalingClient*, const Model::DescribeAccountSettingsRequest&,
+                           const Model::DescribeAccountSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeAccountSettingsResponseReceivedHandler;
 typedef std::function<void(const AutoScalingClient*, const Model::DescribeAdjustmentTypesRequest&,
                            const Model::DescribeAdjustmentTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeAdjustmentTypesResponseReceivedHandler;
@@ -489,6 +501,9 @@ typedef std::function<void(const AutoScalingClient*, const Model::GetPredictiveS
 typedef std::function<void(const AutoScalingClient*, const Model::LaunchInstancesRequest&, const Model::LaunchInstancesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     LaunchInstancesResponseReceivedHandler;
+typedef std::function<void(const AutoScalingClient*, const Model::PutAccountSettingRequest&, const Model::PutAccountSettingOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    PutAccountSettingResponseReceivedHandler;
 typedef std::function<void(const AutoScalingClient*, const Model::PutLifecycleHookRequest&, const Model::PutLifecycleHookOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutLifecycleHookResponseReceivedHandler;

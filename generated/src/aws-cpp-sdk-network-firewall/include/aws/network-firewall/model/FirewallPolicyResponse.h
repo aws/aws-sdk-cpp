@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 #include <aws/network-firewall/model/EncryptionConfiguration.h>
+#include <aws/network-firewall/model/FirewallPolicyError.h>
 #include <aws/network-firewall/model/ResourceStatus.h>
 #include <aws/network-firewall/model/Tag.h>
 
@@ -135,6 +136,27 @@ class FirewallPolicyResponse {
 
   ///@{
   /**
+   * <p>Additional detail about the firewall policy's current status, when
+   * applicable. For example, while an Amazon Route 53 Resolver DNS Firewall rule
+   * group change is in progress, the status is <code>UPDATING</code> and this
+   * message is "A DNS Firewall rule group change is in progress."</p>
+   */
+  inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
+  inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
+  template <typename StatusMessageT = Aws::String>
+  void SetStatusMessage(StatusMessageT&& value) {
+    m_statusMessageHasBeenSet = true;
+    m_statusMessage = std::forward<StatusMessageT>(value);
+  }
+  template <typename StatusMessageT = Aws::String>
+  FirewallPolicyResponse& WithStatusMessage(StatusMessageT&& value) {
+    SetStatusMessage(std::forward<StatusMessageT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The key:value pairs to associate with the resource.</p>
    */
   inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
@@ -246,6 +268,34 @@ class FirewallPolicyResponse {
 
   ///@{
   /**
+   * <p>Any configuration errors that apply to the firewall policy. Network Firewall
+   * detects these errors asynchronously, after you create or update the policy, so
+   * an error can appear after the request that caused it has already succeeded. Each
+   * entry describes the problem and how to resolve it, and Network Firewall clears
+   * it automatically after you resolve the problem.</p>
+   */
+  inline const Aws::Vector<FirewallPolicyError>& GetErrors() const { return m_errors; }
+  inline bool ErrorsHasBeenSet() const { return m_errorsHasBeenSet; }
+  template <typename ErrorsT = Aws::Vector<FirewallPolicyError>>
+  void SetErrors(ErrorsT&& value) {
+    m_errorsHasBeenSet = true;
+    m_errors = std::forward<ErrorsT>(value);
+  }
+  template <typename ErrorsT = Aws::Vector<FirewallPolicyError>>
+  FirewallPolicyResponse& WithErrors(ErrorsT&& value) {
+    SetErrors(std::forward<ErrorsT>(value));
+    return *this;
+  }
+  template <typename ErrorsT = FirewallPolicyError>
+  FirewallPolicyResponse& AddErrors(ErrorsT&& value) {
+    m_errorsHasBeenSet = true;
+    m_errors.emplace_back(std::forward<ErrorsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The last time that the firewall policy was changed.</p>
    */
   inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
@@ -272,6 +322,8 @@ class FirewallPolicyResponse {
 
   ResourceStatus m_firewallPolicyStatus{ResourceStatus::NOT_SET};
 
+  Aws::String m_statusMessage;
+
   Aws::Vector<Tag> m_tags;
 
   int m_consumedStatelessRuleCapacity{0};
@@ -284,18 +336,22 @@ class FirewallPolicyResponse {
 
   EncryptionConfiguration m_encryptionConfiguration;
 
+  Aws::Vector<FirewallPolicyError> m_errors;
+
   Aws::Utils::DateTime m_lastModifiedTime{};
   bool m_firewallPolicyNameHasBeenSet = false;
   bool m_firewallPolicyArnHasBeenSet = false;
   bool m_firewallPolicyIdHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_firewallPolicyStatusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_consumedStatelessRuleCapacityHasBeenSet = false;
   bool m_consumedStatefulRuleCapacityHasBeenSet = false;
   bool m_consumedStatefulDomainCapacityHasBeenSet = false;
   bool m_numberOfAssociationsHasBeenSet = false;
   bool m_encryptionConfigurationHasBeenSet = false;
+  bool m_errorsHasBeenSet = false;
   bool m_lastModifiedTimeHasBeenSet = false;
 };
 

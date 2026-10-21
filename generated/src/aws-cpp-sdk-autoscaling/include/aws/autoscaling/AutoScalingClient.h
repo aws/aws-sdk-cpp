@@ -813,6 +813,37 @@ class AWS_AUTOSCALING_API AutoScalingClient : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p> Describes the current Amazon EC2 Auto Scaling account settings for your
+   * account. Account settings are a framework that allows you to enable or disable
+   * features for your account. The framework also gives you visibility into features
+   * that will be enforced by a given date, providing a time window to prepare for
+   * backwards-incompatible changes. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAccountSettings">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeAccountSettingsOutcome DescribeAccountSettings(const Model::DescribeAccountSettingsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeAccountSettings that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeAccountSettingsRequestT = Model::DescribeAccountSettingsRequest>
+  Model::DescribeAccountSettingsOutcomeCallable DescribeAccountSettingsCallable(const DescribeAccountSettingsRequestT& request = {}) const {
+    return SubmitCallable(&AutoScalingClient::DescribeAccountSettings, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeAccountSettings that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeAccountSettingsRequestT = Model::DescribeAccountSettingsRequest>
+  void DescribeAccountSettingsAsync(const DescribeAccountSettingsResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                    const DescribeAccountSettingsRequestT& request = {}) const {
+    return SubmitAsync(&AutoScalingClient::DescribeAccountSettings, request, handler, context);
+  }
+
+  /**
    * <p>Describes the available adjustment types for step scaling and simple scaling
    * policies.</p> <p>The following adjustment types are supported:</p> <ul> <li> <p>
    * <code>ChangeInCapacity</code> </p> </li> <li> <p> <code>ExactCapacity</code>
@@ -1898,6 +1929,39 @@ class AWS_AUTOSCALING_API AutoScalingClient : public Aws::Client::AWSXMLClient,
   void LaunchInstancesAsync(const LaunchInstancesRequestT& request, const LaunchInstancesResponseReceivedHandler& handler,
                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&AutoScalingClient::LaunchInstances, request, handler, context);
+  }
+
+  /**
+   * <p> Modifies an account setting for your account. You can use this operation to
+   * opt in or opt out of features provided through account settings when permitted.
+   * Account settings give you control over features that might have
+   * backwards-incompatible changes. When Amazon EC2 Auto Scaling introduces such
+   * changes, account settings allow you to test and adopt new features. Some account
+   * settings are enforced after a specified date. This means that after the
+   * enforcement date, you can no longer modify the setting. </p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutAccountSetting">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutAccountSettingOutcome PutAccountSetting(const Model::PutAccountSettingRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutAccountSetting that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename PutAccountSettingRequestT = Model::PutAccountSettingRequest>
+  Model::PutAccountSettingOutcomeCallable PutAccountSettingCallable(const PutAccountSettingRequestT& request) const {
+    return SubmitCallable(&AutoScalingClient::PutAccountSetting, request);
+  }
+
+  /**
+   * An Async wrapper for PutAccountSetting that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename PutAccountSettingRequestT = Model::PutAccountSettingRequest>
+  void PutAccountSettingAsync(const PutAccountSettingRequestT& request, const PutAccountSettingResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&AutoScalingClient::PutAccountSetting, request, handler, context);
   }
 
   /**

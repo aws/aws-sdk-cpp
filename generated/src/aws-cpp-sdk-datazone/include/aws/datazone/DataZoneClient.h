@@ -666,6 +666,34 @@ class AWS_DATAZONE_API DataZoneClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Creates a new user-defined designation with a Cedar permit policy. The
+   * designation defines a named role that can be assigned to project
+   * members.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateDesignation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateDesignationOutcome CreateDesignation(const Model::CreateDesignationRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateDesignation that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateDesignationRequestT = Model::CreateDesignationRequest>
+  Model::CreateDesignationOutcomeCallable CreateDesignationCallable(const CreateDesignationRequestT& request) const {
+    return SubmitCallable(&DataZoneClient::CreateDesignation, request);
+  }
+
+  /**
+   * An Async wrapper for CreateDesignation that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename CreateDesignationRequestT = Model::CreateDesignationRequest>
+  void CreateDesignationAsync(const CreateDesignationRequestT& request, const CreateDesignationResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DataZoneClient::CreateDesignation, request, handler, context);
+  }
+
+  /**
    * <p>Creates an Amazon DataZone domain.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateDomain">AWS
    * API Reference</a></p>
@@ -1485,6 +1513,33 @@ class AWS_DATAZONE_API DataZoneClient : public Aws::Client::AWSJsonClient,
   void DeleteDataSourceAsync(const DeleteDataSourceRequestT& request, const DeleteDataSourceResponseReceivedHandler& handler,
                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&DataZoneClient::DeleteDataSource, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a designation. Managed designations cannot be deleted. This operation
+   * is idempotent.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteDesignation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteDesignationOutcome DeleteDesignation(const Model::DeleteDesignationRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteDesignation that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteDesignationRequestT = Model::DeleteDesignationRequest>
+  Model::DeleteDesignationOutcomeCallable DeleteDesignationCallable(const DeleteDesignationRequestT& request) const {
+    return SubmitCallable(&DataZoneClient::DeleteDesignation, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteDesignation that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DeleteDesignationRequestT = Model::DeleteDesignationRequest>
+  void DeleteDesignationAsync(const DeleteDesignationRequestT& request, const DeleteDesignationResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DataZoneClient::DeleteDesignation, request, handler, context);
   }
 
   /**
@@ -2394,6 +2449,32 @@ class AWS_DATAZONE_API DataZoneClient : public Aws::Client::AWSJsonClient,
   void GetDataSourceRunAsync(const GetDataSourceRunRequestT& request, const GetDataSourceRunResponseReceivedHandler& handler,
                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&DataZoneClient::GetDataSourceRun, request, handler, context);
+  }
+
+  /**
+   * <p>Gets the details of a designation, including its Cedar policy.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetDesignation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetDesignationOutcome GetDesignation(const Model::GetDesignationRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetDesignation that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetDesignationRequestT = Model::GetDesignationRequest>
+  Model::GetDesignationOutcomeCallable GetDesignationCallable(const GetDesignationRequestT& request) const {
+    return SubmitCallable(&DataZoneClient::GetDesignation, request);
+  }
+
+  /**
+   * An Async wrapper for GetDesignation that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetDesignationRequestT = Model::GetDesignationRequest>
+  void GetDesignationAsync(const GetDesignationRequestT& request, const GetDesignationResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DataZoneClient::GetDesignation, request, handler, context);
   }
 
   /**
@@ -3469,6 +3550,34 @@ class AWS_DATAZONE_API DataZoneClient : public Aws::Client::AWSJsonClient,
   void ListDataSourcesAsync(const ListDataSourcesRequestT& request, const ListDataSourcesResponseReceivedHandler& handler,
                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&DataZoneClient::ListDataSources, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the designations in a domain. Returns system-managed designations
+   * first, followed by user-created designations sorted alphabetically by
+   * name.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListDesignations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListDesignationsOutcome ListDesignations(const Model::ListDesignationsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListDesignations that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListDesignationsRequestT = Model::ListDesignationsRequest>
+  Model::ListDesignationsOutcomeCallable ListDesignationsCallable(const ListDesignationsRequestT& request) const {
+    return SubmitCallable(&DataZoneClient::ListDesignations, request);
+  }
+
+  /**
+   * An Async wrapper for ListDesignations that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListDesignationsRequestT = Model::ListDesignationsRequest>
+  void ListDesignationsAsync(const ListDesignationsRequestT& request, const ListDesignationsResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DataZoneClient::ListDesignations, request, handler, context);
   }
 
   /**
@@ -5046,6 +5155,33 @@ class AWS_DATAZONE_API DataZoneClient : public Aws::Client::AWSJsonClient,
   void UpdateDataSourceAsync(const UpdateDataSourceRequestT& request, const UpdateDataSourceResponseReceivedHandler& handler,
                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&DataZoneClient::UpdateDataSource, request, handler, context);
+  }
+
+  /**
+   * <p>Updates an existing designation. Managed designations cannot be
+   * modified.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateDesignation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateDesignationOutcome UpdateDesignation(const Model::UpdateDesignationRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateDesignation that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateDesignationRequestT = Model::UpdateDesignationRequest>
+  Model::UpdateDesignationOutcomeCallable UpdateDesignationCallable(const UpdateDesignationRequestT& request) const {
+    return SubmitCallable(&DataZoneClient::UpdateDesignation, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateDesignation that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename UpdateDesignationRequestT = Model::UpdateDesignationRequest>
+  void UpdateDesignationAsync(const UpdateDesignationRequestT& request, const UpdateDesignationResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DataZoneClient::UpdateDesignation, request, handler, context);
   }
 
   /**

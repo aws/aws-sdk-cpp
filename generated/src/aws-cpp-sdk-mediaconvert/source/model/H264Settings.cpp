@@ -184,6 +184,14 @@ H264Settings& H264Settings::operator=(JsonView jsonValue) {
     m_slices = jsonValue.GetInteger("slices");
     m_slicesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("slidingWindowMs")) {
+    m_slidingWindowMs = jsonValue.GetInteger("slidingWindowMs");
+    m_slidingWindowMsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("slidingWindowPeakBitrate")) {
+    m_slidingWindowPeakBitrate = jsonValue.GetInteger("slidingWindowPeakBitrate");
+    m_slidingWindowPeakBitrateHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("slowPal")) {
     m_slowPal = H264SlowPalMapper::GetH264SlowPalForName(jsonValue.GetString("slowPal"));
     m_slowPalHasBeenSet = true;
@@ -390,6 +398,14 @@ JsonValue H264Settings::Jsonize() const {
 
   if (m_slicesHasBeenSet) {
     payload.WithInteger("slices", m_slices);
+  }
+
+  if (m_slidingWindowMsHasBeenSet) {
+    payload.WithInteger("slidingWindowMs", m_slidingWindowMs);
+  }
+
+  if (m_slidingWindowPeakBitrateHasBeenSet) {
+    payload.WithInteger("slidingWindowPeakBitrate", m_slidingWindowPeakBitrate);
   }
 
   if (m_slowPalHasBeenSet) {

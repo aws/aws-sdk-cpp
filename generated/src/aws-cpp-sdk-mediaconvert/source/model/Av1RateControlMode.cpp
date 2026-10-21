@@ -15,11 +15,14 @@ namespace MediaConvert {
 namespace Model {
 namespace Av1RateControlModeMapper {
 
+static const int CBR_HASH = HashingUtils::HashString("CBR");
 static const int QVBR_HASH = HashingUtils::HashString("QVBR");
 
 Av1RateControlMode GetAv1RateControlModeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == QVBR_HASH) {
+  if (hashCode == CBR_HASH) {
+    return Av1RateControlMode::CBR;
+  } else if (hashCode == QVBR_HASH) {
     return Av1RateControlMode::QVBR;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
@@ -35,6 +38,8 @@ Aws::String GetNameForAv1RateControlMode(Av1RateControlMode enumValue) {
   switch (enumValue) {
     case Av1RateControlMode::NOT_SET:
       return {};
+    case Av1RateControlMode::CBR:
+      return "CBR";
     case Av1RateControlMode::QVBR:
       return "QVBR";
     default:

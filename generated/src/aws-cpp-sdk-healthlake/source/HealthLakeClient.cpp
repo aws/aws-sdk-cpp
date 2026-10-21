@@ -12,6 +12,7 @@
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/Outcome.h>
+#include <aws/core/utils/event/EventStream.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
 #include <aws/core/utils/logging/LogMacros.h>
@@ -354,8 +355,47 @@ UpdateFHIRDatastoreOutcome HealthLakeClient::UpdateFHIRDatastore(const UpdateFHI
                             : UpdateFHIRDatastoreOutcome(std::move(result.GetError()));
 }
 
-UpdateProfileWithAgentOutcome HealthLakeClient::UpdateProfileWithAgent(const UpdateProfileWithAgentRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? UpdateProfileWithAgentOutcome(result.GetResultWithOwnership())
-                            : UpdateProfileWithAgentOutcome(std::move(result.GetError()));
+UpdateProfileWithAgentOutcome HealthLakeClient::UpdateProfileWithAgent(UpdateProfileWithAgentRequest& request) const {
+  AWS_OPERATION_GUARD(UpdateProfileWithAgent);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateProfileWithAgent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, UpdateProfileWithAgent, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, UpdateProfileWithAgent, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UpdateProfileWithAgent",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<UpdateProfileWithAgentOutcome>(
+      request, std::move(span),
+      [&]() -> UpdateProfileWithAgentOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateProfileWithAgent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("datatransformation.");
+        AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), UpdateProfileWithAgentOutcome(addPrefixErr.value()));
+        request.SetResponseStreamFactory([&] {
+          request.GetEventStreamDecoder().Reset();
+          return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder());
+        });
+        if (!request.GetHeadersReceivedEventHandler()) {
+          request.SetHeadersReceivedEventHandler([&request](const Http::HttpRequest*, Http::HttpResponse* response) {
+            AWS_CHECK_PTR("UpdateProfileWithAgent", response);
+            if (const auto initialResponseHandler = request.GetEventStreamHandler().GetInitialResponseCallbackEx()) {
+              initialResponseHandler({response->GetHeaders()}, Utils::Event::InitialResponseType::ON_RESPONSE);
+            }
+          });
+        }
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? UpdateProfileWithAgentOutcome(result.GetResultWithOwnership())
+                                  : UpdateProfileWithAgentOutcome(std::move(result.GetError()));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }

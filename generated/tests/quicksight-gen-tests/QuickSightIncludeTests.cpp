@@ -1371,6 +1371,7 @@
 #include <aws/quicksight/model/OAuthClientAuthenticationType.h>
 #include <aws/quicksight/model/OAuthClientCredentials.h>
 #include <aws/quicksight/model/OAuthParameters.h>
+#include <aws/quicksight/model/OneDriveClientCredentials.h>
 #include <aws/quicksight/model/OneDriveParameters.h>
 #include <aws/quicksight/model/OracleParameters.h>
 #include <aws/quicksight/model/OtherCategories.h>
@@ -1654,12 +1655,14 @@
 #include <aws/quicksight/model/SemanticTable.h>
 #include <aws/quicksight/model/SemanticType.h>
 #include <aws/quicksight/model/SeriesItem.h>
+#include <aws/quicksight/model/ServiceAccountCredentials.h>
 #include <aws/quicksight/model/ServiceNowParameters.h>
 #include <aws/quicksight/model/ServiceType.h>
 #include <aws/quicksight/model/SessionLifetimeInMinutesInvalidException.h>
 #include <aws/quicksight/model/SessionTag.h>
 #include <aws/quicksight/model/SetParameterValueConfiguration.h>
 #include <aws/quicksight/model/ShapeConditionalFormat.h>
+#include <aws/quicksight/model/SharePointClientCredentials.h>
 #include <aws/quicksight/model/SharePointParameters.h>
 #include <aws/quicksight/model/SharedColumnSemanticMetadata.h>
 #include <aws/quicksight/model/SharedViewConfigurations.h>

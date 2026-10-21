@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/datazone/model/Member.h>
 #include <aws/datazone/model/UserDesignation.h>
@@ -66,12 +67,35 @@ class ProjectMembershipAssignment {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the user-created designation to assign to this member when creating
+   * the project. Required when <code>designation</code> is
+   * <code>USER_CREATED_DESIGNATION</code>; must not be provided otherwise.</p>
+   */
+  inline const Aws::String& GetUserCreatedDesignationId() const { return m_userCreatedDesignationId; }
+  inline bool UserCreatedDesignationIdHasBeenSet() const { return m_userCreatedDesignationIdHasBeenSet; }
+  template <typename UserCreatedDesignationIdT = Aws::String>
+  void SetUserCreatedDesignationId(UserCreatedDesignationIdT&& value) {
+    m_userCreatedDesignationIdHasBeenSet = true;
+    m_userCreatedDesignationId = std::forward<UserCreatedDesignationIdT>(value);
+  }
+  template <typename UserCreatedDesignationIdT = Aws::String>
+  ProjectMembershipAssignment& WithUserCreatedDesignationId(UserCreatedDesignationIdT&& value) {
+    SetUserCreatedDesignationId(std::forward<UserCreatedDesignationIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Member m_member;
 
   UserDesignation m_designation{UserDesignation::NOT_SET};
+
+  Aws::String m_userCreatedDesignationId;
   bool m_memberHasBeenSet = false;
   bool m_designationHasBeenSet = false;
+  bool m_userCreatedDesignationIdHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace MediaConvert {
 namespace Model {
-enum class Av1RateControlMode { NOT_SET, QVBR };
+enum class Av1RateControlMode { NOT_SET, CBR, QVBR };
 
 namespace Av1RateControlModeMapper {
 AWS_MEDIACONVERT_API Av1RateControlMode GetAv1RateControlModeForName(const Aws::String& name);

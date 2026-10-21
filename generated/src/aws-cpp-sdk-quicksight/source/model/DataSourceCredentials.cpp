@@ -42,6 +42,18 @@ DataSourceCredentials& DataSourceCredentials::operator=(JsonView jsonValue) {
     m_oAuthClientCredentials = jsonValue.GetObject("OAuthClientCredentials");
     m_oAuthClientCredentialsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ServiceAccountCredentials")) {
+    m_serviceAccountCredentials = jsonValue.GetObject("ServiceAccountCredentials");
+    m_serviceAccountCredentialsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("SharePointClientCredentials")) {
+    m_sharePointClientCredentials = jsonValue.GetObject("SharePointClientCredentials");
+    m_sharePointClientCredentialsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("OneDriveClientCredentials")) {
+    m_oneDriveClientCredentials = jsonValue.GetObject("OneDriveClientCredentials");
+    m_oneDriveClientCredentialsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -70,6 +82,18 @@ JsonValue DataSourceCredentials::Jsonize() const {
 
   if (m_oAuthClientCredentialsHasBeenSet) {
     payload.WithObject("OAuthClientCredentials", m_oAuthClientCredentials.Jsonize());
+  }
+
+  if (m_serviceAccountCredentialsHasBeenSet) {
+    payload.WithObject("ServiceAccountCredentials", m_serviceAccountCredentials.Jsonize());
+  }
+
+  if (m_sharePointClientCredentialsHasBeenSet) {
+    payload.WithObject("SharePointClientCredentials", m_sharePointClientCredentials.Jsonize());
+  }
+
+  if (m_oneDriveClientCredentialsHasBeenSet) {
+    payload.WithObject("OneDriveClientCredentials", m_oneDriveClientCredentials.Jsonize());
   }
 
   return payload;

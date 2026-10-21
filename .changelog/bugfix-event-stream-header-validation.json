@@ -1,6 +1,0 @@
-{
-  "type": "bugfix",
-  "category": "aws-cpp-sdk-core",
-  "contributor": "pulimsr",
-  "description": "Validate event stream header names (up to 255 bytes) and string and byte-buffer header values (up to 32,767 bytes) when encoding. Headers that exceed these limits now fail the event with an error instead of being dropped."
-}

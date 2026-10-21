@@ -26,6 +26,10 @@ ProjectMember& ProjectMember::operator=(JsonView jsonValue) {
     m_designation = UserDesignationMapper::GetUserDesignationForName(jsonValue.GetString("designation"));
     m_designationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("userCreatedDesignationId")) {
+    m_userCreatedDesignationId = jsonValue.GetString("userCreatedDesignationId");
+    m_userCreatedDesignationIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue ProjectMember::Jsonize() const {
 
   if (m_designationHasBeenSet) {
     payload.WithString("designation", UserDesignationMapper::GetNameForUserDesignation(m_designation));
+  }
+
+  if (m_userCreatedDesignationIdHasBeenSet) {
+    payload.WithString("userCreatedDesignationId", m_userCreatedDesignationId);
   }
 
   return payload;

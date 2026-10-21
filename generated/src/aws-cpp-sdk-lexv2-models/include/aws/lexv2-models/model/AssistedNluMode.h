@@ -10,7 +10,7 @@
 namespace Aws {
 namespace LexModelsV2 {
 namespace Model {
-enum class AssistedNluMode { NOT_SET, Primary, Fallback };
+enum class AssistedNluMode { NOT_SET, Primary, Fallback, DialogManager };
 
 namespace AssistedNluModeMapper {
 AWS_LEXMODELSV2_API AssistedNluMode GetAssistedNluModeForName(const Aws::String& name);

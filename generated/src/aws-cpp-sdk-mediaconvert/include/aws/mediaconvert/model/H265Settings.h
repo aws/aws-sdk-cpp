@@ -881,6 +881,44 @@ class H265Settings {
 
   ///@{
   /**
+   * Optional. Specify the duration, in milliseconds, of the sliding window over
+   * which MediaConvert enforces your Peak bitrate. When you specify a Peak bitrate
+   * but omit this value, MediaConvert uses a default sliding window of 1000.
+   */
+  inline int GetSlidingWindowMs() const { return m_slidingWindowMs; }
+  inline bool SlidingWindowMsHasBeenSet() const { return m_slidingWindowMsHasBeenSet; }
+  inline void SetSlidingWindowMs(int value) {
+    m_slidingWindowMsHasBeenSet = true;
+    m_slidingWindowMs = value;
+  }
+  inline H265Settings& WithSlidingWindowMs(int value) {
+    SetSlidingWindowMs(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * Optional. Specify an instantaneous peak bitrate ceiling, in bits/second, that
+   * MediaConvert enforces over the sliding window set by Peak bitrate window. For
+   * example, enter fifty megabits per second as 50000000. Applies in the VBR, CBR,
+   * and QVBR rate control modes. When you specify a value below Max bitrate,
+   * MediaConvert raises it to Max bitrate.
+   */
+  inline int GetSlidingWindowPeakBitrate() const { return m_slidingWindowPeakBitrate; }
+  inline bool SlidingWindowPeakBitrateHasBeenSet() const { return m_slidingWindowPeakBitrateHasBeenSet; }
+  inline void SetSlidingWindowPeakBitrate(int value) {
+    m_slidingWindowPeakBitrateHasBeenSet = true;
+    m_slidingWindowPeakBitrate = value;
+  }
+  inline H265Settings& WithSlidingWindowPeakBitrate(int value) {
+    SetSlidingWindowPeakBitrate(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * Ignore this setting unless your input frame rate is 23.976 or 24 frames per
    * second (fps). Enable slow PAL to create a 25 fps output. When you enable slow
    * PAL, MediaConvert relabels the video frames to 25 fps and resamples your audio
@@ -1211,6 +1249,10 @@ class H265Settings {
 
   int m_slices{0};
 
+  int m_slidingWindowMs{0};
+
+  int m_slidingWindowPeakBitrate{0};
+
   H265SlowPal m_slowPal{H265SlowPal::NOT_SET};
 
   H265SpatialAdaptiveQuantization m_spatialAdaptiveQuantization{H265SpatialAdaptiveQuantization::NOT_SET};
@@ -1273,6 +1315,8 @@ class H265Settings {
   bool m_scanTypeConversionModeHasBeenSet = false;
   bool m_sceneChangeDetectHasBeenSet = false;
   bool m_slicesHasBeenSet = false;
+  bool m_slidingWindowMsHasBeenSet = false;
+  bool m_slidingWindowPeakBitrateHasBeenSet = false;
   bool m_slowPalHasBeenSet = false;
   bool m_spatialAdaptiveQuantizationHasBeenSet = false;
   bool m_telecineHasBeenSet = false;

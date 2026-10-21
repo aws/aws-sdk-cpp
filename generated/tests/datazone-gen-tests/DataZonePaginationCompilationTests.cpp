@@ -41,6 +41,7 @@
 #include <aws/datazone/model/ListProjectsPaginationTraits.h>
 #include <aws/datazone/model/ListEnvironmentProfilesPaginationTraits.h>
 #include <aws/datazone/model/ListSubscriptionsPaginationTraits.h>
+#include <aws/datazone/model/ListDesignationsPaginationTraits.h>
 #include <aws/datazone/model/ListProjectProfilesPaginationTraits.h>
 #include <aws/datazone/model/SearchTypesPaginationTraits.h>
 #include <aws/datazone/model/ListAccountsInAccountPoolPaginationTraits.h>

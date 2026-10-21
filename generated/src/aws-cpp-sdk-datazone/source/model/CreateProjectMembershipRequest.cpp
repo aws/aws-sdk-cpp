@@ -23,5 +23,9 @@ Aws::String CreateProjectMembershipRequest::SerializePayload() const {
     payload.WithString("designation", UserDesignationMapper::GetNameForUserDesignation(m_designation));
   }
 
+  if (m_userCreatedDesignationIdHasBeenSet) {
+    payload.WithString("userCreatedDesignationId", m_userCreatedDesignationId);
+  }
+
   return payload.View().WriteReadable();
 }

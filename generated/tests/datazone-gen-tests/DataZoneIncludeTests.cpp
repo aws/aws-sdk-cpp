@@ -130,6 +130,8 @@
 #include <aws/datazone/model/CreateDataProductRevisionResult.h>
 #include <aws/datazone/model/CreateDataSourceRequest.h>
 #include <aws/datazone/model/CreateDataSourceResult.h>
+#include <aws/datazone/model/CreateDesignationRequest.h>
+#include <aws/datazone/model/CreateDesignationResult.h>
 #include <aws/datazone/model/CreateDomainRequest.h>
 #include <aws/datazone/model/CreateDomainResult.h>
 #include <aws/datazone/model/CreateDomainUnitPolicyGrantDetail.h>
@@ -215,6 +217,8 @@
 #include <aws/datazone/model/DeleteDataProductResult.h>
 #include <aws/datazone/model/DeleteDataSourceRequest.h>
 #include <aws/datazone/model/DeleteDataSourceResult.h>
+#include <aws/datazone/model/DeleteDesignationRequest.h>
+#include <aws/datazone/model/DeleteDesignationResult.h>
 #include <aws/datazone/model/DeleteDomainRequest.h>
 #include <aws/datazone/model/DeleteDomainResult.h>
 #include <aws/datazone/model/DeleteDomainUnitRequest.h>
@@ -257,6 +261,8 @@
 #include <aws/datazone/model/DeploymentProperties.h>
 #include <aws/datazone/model/DeploymentStatus.h>
 #include <aws/datazone/model/DeploymentType.h>
+#include <aws/datazone/model/DesignationSummary.h>
+#include <aws/datazone/model/DesignationType.h>
 #include <aws/datazone/model/DetailedGlossaryTerm.h>
 #include <aws/datazone/model/DisassociateEnvironmentRoleRequest.h>
 #include <aws/datazone/model/DisassociateEnvironmentRoleResult.h>
@@ -329,6 +335,8 @@
 #include <aws/datazone/model/GetDataSourceResult.h>
 #include <aws/datazone/model/GetDataSourceRunRequest.h>
 #include <aws/datazone/model/GetDataSourceRunResult.h>
+#include <aws/datazone/model/GetDesignationRequest.h>
+#include <aws/datazone/model/GetDesignationResult.h>
 #include <aws/datazone/model/GetDomainRequest.h>
 #include <aws/datazone/model/GetDomainResult.h>
 #include <aws/datazone/model/GetDomainUnitRequest.h>
@@ -490,6 +498,9 @@
 #include <aws/datazone/model/ListDataSourcesPaginationTraits.h>
 #include <aws/datazone/model/ListDataSourcesRequest.h>
 #include <aws/datazone/model/ListDataSourcesResult.h>
+#include <aws/datazone/model/ListDesignationsPaginationTraits.h>
+#include <aws/datazone/model/ListDesignationsRequest.h>
+#include <aws/datazone/model/ListDesignationsResult.h>
 #include <aws/datazone/model/ListDomainUnitsForParentPaginationTraits.h>
 #include <aws/datazone/model/ListDomainUnitsForParentRequest.h>
 #include <aws/datazone/model/ListDomainUnitsForParentResult.h>
@@ -836,6 +847,8 @@
 #include <aws/datazone/model/UpdateConnectionResult.h>
 #include <aws/datazone/model/UpdateDataSourceRequest.h>
 #include <aws/datazone/model/UpdateDataSourceResult.h>
+#include <aws/datazone/model/UpdateDesignationRequest.h>
+#include <aws/datazone/model/UpdateDesignationResult.h>
 #include <aws/datazone/model/UpdateDomainRequest.h>
 #include <aws/datazone/model/UpdateDomainResult.h>
 #include <aws/datazone/model/UpdateDomainUnitRequest.h>

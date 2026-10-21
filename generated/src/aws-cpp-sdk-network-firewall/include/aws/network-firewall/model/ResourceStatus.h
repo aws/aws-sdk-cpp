@@ -10,7 +10,7 @@
 namespace Aws {
 namespace NetworkFirewall {
 namespace Model {
-enum class ResourceStatus { NOT_SET, ACTIVE, DELETING, ERROR_ };
+enum class ResourceStatus { NOT_SET, ACTIVE, DELETING, ERROR_, UPDATING };
 
 namespace ResourceStatusMapper {
 AWS_NETWORKFIREWALL_API ResourceStatus GetResourceStatusForName(const Aws::String& name);

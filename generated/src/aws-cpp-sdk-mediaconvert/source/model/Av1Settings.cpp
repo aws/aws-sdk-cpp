@@ -26,6 +26,10 @@ Av1Settings& Av1Settings::operator=(JsonView jsonValue) {
     m_bitDepth = Av1BitDepthMapper::GetAv1BitDepthForName(jsonValue.GetString("bitDepth"));
     m_bitDepthHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("bitrate")) {
+    m_bitrate = jsonValue.GetInteger("bitrate");
+    m_bitrateHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("filmGrainSynthesis")) {
     m_filmGrainSynthesis = Av1FilmGrainSynthesisMapper::GetAv1FilmGrainSynthesisForName(jsonValue.GetString("filmGrainSynthesis"));
     m_filmGrainSynthesisHasBeenSet = true;
@@ -75,9 +79,21 @@ Av1Settings& Av1Settings::operator=(JsonView jsonValue) {
     m_rateControlMode = Av1RateControlModeMapper::GetAv1RateControlModeForName(jsonValue.GetString("rateControlMode"));
     m_rateControlModeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("sceneChangeDetect")) {
+    m_sceneChangeDetect = Av1SceneChangeDetectMapper::GetAv1SceneChangeDetectForName(jsonValue.GetString("sceneChangeDetect"));
+    m_sceneChangeDetectHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("slices")) {
     m_slices = jsonValue.GetInteger("slices");
     m_slicesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("slidingWindowMs")) {
+    m_slidingWindowMs = jsonValue.GetInteger("slidingWindowMs");
+    m_slidingWindowMsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("slidingWindowPeakBitrate")) {
+    m_slidingWindowPeakBitrate = jsonValue.GetInteger("slidingWindowPeakBitrate");
+    m_slidingWindowPeakBitrateHasBeenSet = true;
   }
   if (jsonValue.ValueExists("spatialAdaptiveQuantization")) {
     m_spatialAdaptiveQuantization =
@@ -96,6 +112,10 @@ JsonValue Av1Settings::Jsonize() const {
 
   if (m_bitDepthHasBeenSet) {
     payload.WithString("bitDepth", Av1BitDepthMapper::GetNameForAv1BitDepth(m_bitDepth));
+  }
+
+  if (m_bitrateHasBeenSet) {
+    payload.WithInteger("bitrate", m_bitrate);
   }
 
   if (m_filmGrainSynthesisHasBeenSet) {
@@ -148,8 +168,20 @@ JsonValue Av1Settings::Jsonize() const {
     payload.WithString("rateControlMode", Av1RateControlModeMapper::GetNameForAv1RateControlMode(m_rateControlMode));
   }
 
+  if (m_sceneChangeDetectHasBeenSet) {
+    payload.WithString("sceneChangeDetect", Av1SceneChangeDetectMapper::GetNameForAv1SceneChangeDetect(m_sceneChangeDetect));
+  }
+
   if (m_slicesHasBeenSet) {
     payload.WithInteger("slices", m_slices);
+  }
+
+  if (m_slidingWindowMsHasBeenSet) {
+    payload.WithInteger("slidingWindowMs", m_slidingWindowMs);
+  }
+
+  if (m_slidingWindowPeakBitrateHasBeenSet) {
+    payload.WithInteger("slidingWindowPeakBitrate", m_slidingWindowPeakBitrate);
   }
 
   if (m_spatialAdaptiveQuantizationHasBeenSet) {

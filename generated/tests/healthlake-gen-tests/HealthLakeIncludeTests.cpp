@@ -17,10 +17,10 @@
 #include <aws/healthlake/HealthLakeWaiter.h>
 #include <aws/healthlake/HealthLake_EXPORTS.h>
 #include <aws/healthlake/internal/HealthLakeEndpointRules.h>
+#include <aws/healthlake/model/AgentErrorType.h>
 #include <aws/healthlake/model/AgentInputMessage.h>
 #include <aws/healthlake/model/AgentInputMessageType.h>
-#include <aws/healthlake/model/AgentOutputMessage.h>
-#include <aws/healthlake/model/AgentOutputMessageType.h>
+#include <aws/healthlake/model/AgentOutputMessageStream.h>
 #include <aws/healthlake/model/AnalyticsConfiguration.h>
 #include <aws/healthlake/model/AnalyticsStatus.h>
 #include <aws/healthlake/model/AuthorizationStrategy.h>
@@ -53,13 +53,16 @@
 #include <aws/healthlake/model/DescribeFHIRExportJobResult.h>
 #include <aws/healthlake/model/DescribeFHIRImportJobRequest.h>
 #include <aws/healthlake/model/DescribeFHIRImportJobResult.h>
+#include <aws/healthlake/model/EndOfOutputEvent.h>
 #include <aws/healthlake/model/ErrorCategory.h>
 #include <aws/healthlake/model/ErrorCause.h>
+#include <aws/healthlake/model/ErrorEvent.h>
 #include <aws/healthlake/model/ExistingVersionedProfileSource.h>
 #include <aws/healthlake/model/ExportJobProperties.h>
 #include <aws/healthlake/model/FHIRVersion.h>
 #include <aws/healthlake/model/GetDataTransformationProfileRequest.h>
 #include <aws/healthlake/model/GetDataTransformationProfileResult.h>
+#include <aws/healthlake/model/HeartbeatEvent.h>
 #include <aws/healthlake/model/IdentityProviderConfiguration.h>
 #include <aws/healthlake/model/ImportJobProperties.h>
 #include <aws/healthlake/model/InputDataConfig.h>
@@ -93,6 +96,7 @@
 #include <aws/healthlake/model/PreloadDataType.h>
 #include <aws/healthlake/model/ProfileConfiguration.h>
 #include <aws/healthlake/model/ProfileMappingSource.h>
+#include <aws/healthlake/model/ProgressEvent.h>
 #include <aws/healthlake/model/PublishDataTransformationProfileRequest.h>
 #include <aws/healthlake/model/PublishDataTransformationProfileResult.h>
 #include <aws/healthlake/model/RestoreConfiguration.h>
@@ -113,6 +117,7 @@
 #include <aws/healthlake/model/TagResourceRequest.h>
 #include <aws/healthlake/model/TagResourceResult.h>
 #include <aws/healthlake/model/TargetFormat.h>
+#include <aws/healthlake/model/TextMessageEvent.h>
 #include <aws/healthlake/model/TransformationInputDataConfig.h>
 #include <aws/healthlake/model/TransformationJobProgressReport.h>
 #include <aws/healthlake/model/TransformationJobProperties.h>
@@ -125,8 +130,9 @@
 #include <aws/healthlake/model/UpdateDataTransformationProfileResult.h>
 #include <aws/healthlake/model/UpdateFHIRDatastoreRequest.h>
 #include <aws/healthlake/model/UpdateFHIRDatastoreResult.h>
+#include <aws/healthlake/model/UpdateProfileWithAgentHandler.h>
+#include <aws/healthlake/model/UpdateProfileWithAgentInitialResponse.h>
 #include <aws/healthlake/model/UpdateProfileWithAgentRequest.h>
-#include <aws/healthlake/model/UpdateProfileWithAgentResult.h>
 #include <aws/healthlake/model/ValidationLevel.h>
 
 using HealthLakeIncludeTest = ::testing::Test;

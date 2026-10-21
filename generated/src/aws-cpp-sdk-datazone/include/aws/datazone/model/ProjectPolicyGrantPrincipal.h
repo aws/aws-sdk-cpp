@@ -51,6 +51,26 @@ class ProjectPolicyGrantPrincipal {
 
   ///@{
   /**
+   * <p>The ID of the user-created designation granted to the project principal.
+   * Required when <code>projectDesignation</code> is
+   * <code>USER_CREATED_DESIGNATION</code>; must not be provided otherwise.</p>
+   */
+  inline const Aws::String& GetUserCreatedDesignationId() const { return m_userCreatedDesignationId; }
+  inline bool UserCreatedDesignationIdHasBeenSet() const { return m_userCreatedDesignationIdHasBeenSet; }
+  template <typename UserCreatedDesignationIdT = Aws::String>
+  void SetUserCreatedDesignationId(UserCreatedDesignationIdT&& value) {
+    m_userCreatedDesignationIdHasBeenSet = true;
+    m_userCreatedDesignationId = std::forward<UserCreatedDesignationIdT>(value);
+  }
+  template <typename UserCreatedDesignationIdT = Aws::String>
+  ProjectPolicyGrantPrincipal& WithUserCreatedDesignationId(UserCreatedDesignationIdT&& value) {
+    SetUserCreatedDesignationId(std::forward<UserCreatedDesignationIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The project ID of the project policy grant principal.</p>
    */
   inline const Aws::String& GetProjectIdentifier() const { return m_projectIdentifier; }
@@ -87,10 +107,13 @@ class ProjectPolicyGrantPrincipal {
  private:
   ProjectDesignation m_projectDesignation{ProjectDesignation::NOT_SET};
 
+  Aws::String m_userCreatedDesignationId;
+
   Aws::String m_projectIdentifier;
 
   ProjectGrantFilter m_projectGrantFilter;
   bool m_projectDesignationHasBeenSet = false;
+  bool m_userCreatedDesignationIdHasBeenSet = false;
   bool m_projectIdentifierHasBeenSet = false;
   bool m_projectGrantFilterHasBeenSet = false;
 };

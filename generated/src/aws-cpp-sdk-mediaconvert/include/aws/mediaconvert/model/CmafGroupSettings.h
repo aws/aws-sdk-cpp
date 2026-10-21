@@ -27,6 +27,7 @@
 #include <aws/mediaconvert/model/CmafWriteDASHManifest.h>
 #include <aws/mediaconvert/model/CmafWriteHLSManifest.h>
 #include <aws/mediaconvert/model/CmafWriteSegmentTimelineInRepresentation.h>
+#include <aws/mediaconvert/model/DashAdaptationSetGrouping.h>
 #include <aws/mediaconvert/model/DashManifestStyle.h>
 #include <aws/mediaconvert/model/DestinationSettings.h>
 
@@ -136,6 +137,31 @@ class CmafGroupSettings {
   }
   inline CmafGroupSettings& WithCodecSpecification(CmafCodecSpecification value) {
     SetCodecSpecification(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * Specify additional criteria for partitioning video outputs into separate
+   * AdaptationSets. These criteria are applied on top of the grouping produced by
+   * DashManifestStyle.
+   */
+  inline const Aws::Vector<DashAdaptationSetGrouping>& GetDashAdaptationSetGrouping() const { return m_dashAdaptationSetGrouping; }
+  inline bool DashAdaptationSetGroupingHasBeenSet() const { return m_dashAdaptationSetGroupingHasBeenSet; }
+  template <typename DashAdaptationSetGroupingT = Aws::Vector<DashAdaptationSetGrouping>>
+  void SetDashAdaptationSetGrouping(DashAdaptationSetGroupingT&& value) {
+    m_dashAdaptationSetGroupingHasBeenSet = true;
+    m_dashAdaptationSetGrouping = std::forward<DashAdaptationSetGroupingT>(value);
+  }
+  template <typename DashAdaptationSetGroupingT = Aws::Vector<DashAdaptationSetGrouping>>
+  CmafGroupSettings& WithDashAdaptationSetGrouping(DashAdaptationSetGroupingT&& value) {
+    SetDashAdaptationSetGrouping(std::forward<DashAdaptationSetGroupingT>(value));
+    return *this;
+  }
+  inline CmafGroupSettings& AddDashAdaptationSetGrouping(DashAdaptationSetGrouping value) {
+    m_dashAdaptationSetGroupingHasBeenSet = true;
+    m_dashAdaptationSetGrouping.push_back(value);
     return *this;
   }
   ///@}
@@ -677,6 +703,8 @@ class CmafGroupSettings {
 
   CmafCodecSpecification m_codecSpecification{CmafCodecSpecification::NOT_SET};
 
+  Aws::Vector<DashAdaptationSetGrouping> m_dashAdaptationSetGrouping;
+
   Aws::String m_dashIFrameTrickPlayNameModifier;
 
   DashManifestStyle m_dashManifestStyle{DashManifestStyle::NOT_SET};
@@ -730,6 +758,7 @@ class CmafGroupSettings {
   bool m_baseUrlHasBeenSet = false;
   bool m_clientCacheHasBeenSet = false;
   bool m_codecSpecificationHasBeenSet = false;
+  bool m_dashAdaptationSetGroupingHasBeenSet = false;
   bool m_dashIFrameTrickPlayNameModifierHasBeenSet = false;
   bool m_dashManifestStyleHasBeenSet = false;
   bool m_destinationHasBeenSet = false;

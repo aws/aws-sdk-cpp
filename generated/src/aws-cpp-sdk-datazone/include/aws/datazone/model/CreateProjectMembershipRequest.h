@@ -100,6 +100,26 @@ class CreateProjectMembershipRequest : public DataZoneRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the user-created designation to assign to the project member.
+   * Required when <code>designation</code> is <code>USER_CREATED_DESIGNATION</code>;
+   * must not be provided otherwise.</p>
+   */
+  inline const Aws::String& GetUserCreatedDesignationId() const { return m_userCreatedDesignationId; }
+  inline bool UserCreatedDesignationIdHasBeenSet() const { return m_userCreatedDesignationIdHasBeenSet; }
+  template <typename UserCreatedDesignationIdT = Aws::String>
+  void SetUserCreatedDesignationId(UserCreatedDesignationIdT&& value) {
+    m_userCreatedDesignationIdHasBeenSet = true;
+    m_userCreatedDesignationId = std::forward<UserCreatedDesignationIdT>(value);
+  }
+  template <typename UserCreatedDesignationIdT = Aws::String>
+  CreateProjectMembershipRequest& WithUserCreatedDesignationId(UserCreatedDesignationIdT&& value) {
+    SetUserCreatedDesignationId(std::forward<UserCreatedDesignationIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_domainIdentifier;
 
@@ -108,10 +128,13 @@ class CreateProjectMembershipRequest : public DataZoneRequest {
   Member m_member;
 
   UserDesignation m_designation{UserDesignation::NOT_SET};
+
+  Aws::String m_userCreatedDesignationId;
   bool m_domainIdentifierHasBeenSet = false;
   bool m_projectIdentifierHasBeenSet = false;
   bool m_memberHasBeenSet = false;
   bool m_designationHasBeenSet = false;
+  bool m_userCreatedDesignationIdHasBeenSet = false;
 };
 
 }  // namespace Model

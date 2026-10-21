@@ -39,6 +39,7 @@
 #include <aws/datazone/model/CreateDataProductRequest.h>
 #include <aws/datazone/model/CreateDataProductRevisionRequest.h>
 #include <aws/datazone/model/CreateDataSourceRequest.h>
+#include <aws/datazone/model/CreateDesignationRequest.h>
 #include <aws/datazone/model/CreateDomainRequest.h>
 #include <aws/datazone/model/CreateDomainUnitRequest.h>
 #include <aws/datazone/model/CreateEnvironmentActionRequest.h>
@@ -67,6 +68,7 @@
 #include <aws/datazone/model/DeleteDataExportConfigurationRequest.h>
 #include <aws/datazone/model/DeleteDataProductRequest.h>
 #include <aws/datazone/model/DeleteDataSourceRequest.h>
+#include <aws/datazone/model/DeleteDesignationRequest.h>
 #include <aws/datazone/model/DeleteDomainRequest.h>
 #include <aws/datazone/model/DeleteDomainUnitRequest.h>
 #include <aws/datazone/model/DeleteEnvironmentActionRequest.h>
@@ -99,6 +101,7 @@
 #include <aws/datazone/model/GetDataProductRequest.h>
 #include <aws/datazone/model/GetDataSourceRequest.h>
 #include <aws/datazone/model/GetDataSourceRunRequest.h>
+#include <aws/datazone/model/GetDesignationRequest.h>
 #include <aws/datazone/model/GetDomainRequest.h>
 #include <aws/datazone/model/GetDomainUnitRequest.h>
 #include <aws/datazone/model/GetEnvironmentActionRequest.h>
@@ -138,6 +141,7 @@
 #include <aws/datazone/model/ListDataSourceRunActivitiesRequest.h>
 #include <aws/datazone/model/ListDataSourceRunsRequest.h>
 #include <aws/datazone/model/ListDataSourcesRequest.h>
+#include <aws/datazone/model/ListDesignationsRequest.h>
 #include <aws/datazone/model/ListDomainUnitsForParentRequest.h>
 #include <aws/datazone/model/ListDomainsRequest.h>
 #include <aws/datazone/model/ListEntityOwnersRequest.h>
@@ -192,6 +196,7 @@
 #include <aws/datazone/model/UpdateAssetFilterRequest.h>
 #include <aws/datazone/model/UpdateConnectionRequest.h>
 #include <aws/datazone/model/UpdateDataSourceRequest.h>
+#include <aws/datazone/model/UpdateDesignationRequest.h>
 #include <aws/datazone/model/UpdateDomainRequest.h>
 #include <aws/datazone/model/UpdateDomainUnitRequest.h>
 #include <aws/datazone/model/UpdateEnvironmentActionRequest.h>
@@ -859,6 +864,25 @@ CreateDataSourceOutcome DataZoneClient::CreateDataSource(const CreateDataSourceR
                             : CreateDataSourceOutcome(std::move(result.GetError()));
 }
 
+CreateDesignationOutcome DataZoneClient::CreateDesignation(const CreateDesignationRequest& request) const {
+  if (!request.DomainIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CreateDesignation", "Required field: DomainIdentifier, is not set");
+    return CreateDesignationOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                          "Missing required field [DomainIdentifier]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v2/domains/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/designations");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDesignationOutcome(result.GetResultWithOwnership())
+                            : CreateDesignationOutcome(std::move(result.GetError()));
+}
+
 CreateDomainOutcome DataZoneClient::CreateDomain(const CreateDomainRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -1445,6 +1469,31 @@ DeleteDataSourceOutcome DataZoneClient::DeleteDataSource(const DeleteDataSourceR
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? DeleteDataSourceOutcome(result.GetResultWithOwnership())
                             : DeleteDataSourceOutcome(std::move(result.GetError()));
+}
+
+DeleteDesignationOutcome DataZoneClient::DeleteDesignation(const DeleteDesignationRequest& request) const {
+  if (!request.DomainIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteDesignation", "Required field: DomainIdentifier, is not set");
+    return DeleteDesignationOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                          "Missing required field [DomainIdentifier]", false));
+  }
+  if (!request.IdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteDesignation", "Required field: Identifier, is not set");
+    return DeleteDesignationOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                          "Missing required field [Identifier]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v2/domains/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/designations/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteDesignationOutcome(result.GetResultWithOwnership())
+                            : DeleteDesignationOutcome(std::move(result.GetError()));
 }
 
 DeleteDomainOutcome DataZoneClient::DeleteDomain(const DeleteDomainRequest& request) const {
@@ -2268,6 +2317,30 @@ GetDataSourceRunOutcome DataZoneClient::GetDataSourceRun(const GetDataSourceRunR
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? GetDataSourceRunOutcome(result.GetResultWithOwnership())
                             : GetDataSourceRunOutcome(std::move(result.GetError()));
+}
+
+GetDesignationOutcome DataZoneClient::GetDesignation(const GetDesignationRequest& request) const {
+  if (!request.DomainIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetDesignation", "Required field: DomainIdentifier, is not set");
+    return GetDesignationOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                       "Missing required field [DomainIdentifier]", false));
+  }
+  if (!request.IdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetDesignation", "Required field: Identifier, is not set");
+    return GetDesignationOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                       "Missing required field [Identifier]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v2/domains/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/designations/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDesignationOutcome(result.GetResultWithOwnership()) : GetDesignationOutcome(std::move(result.GetError()));
 }
 
 GetDomainOutcome DataZoneClient::GetDomain(const GetDomainRequest& request) const {
@@ -3266,6 +3339,25 @@ ListDataSourcesOutcome DataZoneClient::ListDataSources(const ListDataSourcesRequ
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListDataSourcesOutcome(result.GetResultWithOwnership())
                             : ListDataSourcesOutcome(std::move(result.GetError()));
+}
+
+ListDesignationsOutcome DataZoneClient::ListDesignations(const ListDesignationsRequest& request) const {
+  if (!request.DomainIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListDesignations", "Required field: DomainIdentifier, is not set");
+    return ListDesignationsOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                         "Missing required field [DomainIdentifier]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v2/domains/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/designations");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListDesignationsOutcome(result.GetResultWithOwnership())
+                            : ListDesignationsOutcome(std::move(result.GetError()));
 }
 
 ListDomainUnitsForParentOutcome DataZoneClient::ListDomainUnitsForParent(const ListDomainUnitsForParentRequest& request) const {
@@ -4511,6 +4603,31 @@ UpdateDataSourceOutcome DataZoneClient::UpdateDataSource(const UpdateDataSourceR
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
   return result.IsSuccess() ? UpdateDataSourceOutcome(result.GetResultWithOwnership())
                             : UpdateDataSourceOutcome(std::move(result.GetError()));
+}
+
+UpdateDesignationOutcome DataZoneClient::UpdateDesignation(const UpdateDesignationRequest& request) const {
+  if (!request.DomainIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateDesignation", "Required field: DomainIdentifier, is not set");
+    return UpdateDesignationOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                          "Missing required field [DomainIdentifier]", false));
+  }
+  if (!request.IdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateDesignation", "Required field: Identifier, is not set");
+    return UpdateDesignationOutcome(Aws::Client::AWSError<DataZoneErrors>(DataZoneErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                          "Missing required field [Identifier]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v2/domains/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/designations/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateDesignationOutcome(result.GetResultWithOwnership())
+                            : UpdateDesignationOutcome(std::move(result.GetError()));
 }
 
 UpdateDomainOutcome DataZoneClient::UpdateDomain(const UpdateDomainRequest& request) const {

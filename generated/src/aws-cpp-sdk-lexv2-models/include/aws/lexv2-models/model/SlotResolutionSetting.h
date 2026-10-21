@@ -36,8 +36,9 @@ class SlotResolutionSetting {
   /**
    * <p>Specifies whether assisted slot resolution is turned on for the slot or not.
    * If the value is <code>EnhancedFallback</code>, assisted slot resolution is
-   * activated when Amazon Lex defaults to the <code>AMAZON.FallbackIntent</code>. If
-   * the value is <code>Default</code>, assisted slot resolution is turned off.</p>
+   * activated when Amazon Lex V2 defaults to the <code>AMAZON.FallbackIntent</code>.
+   * If the value is <code>Default</code>, assisted slot resolution is turned
+   * off.</p>
    */
   inline SlotResolutionStrategy GetSlotResolutionStrategy() const { return m_slotResolutionStrategy; }
   inline bool SlotResolutionStrategyHasBeenSet() const { return m_slotResolutionStrategyHasBeenSet; }

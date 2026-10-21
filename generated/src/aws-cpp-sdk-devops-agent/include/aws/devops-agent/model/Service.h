@@ -16,6 +16,7 @@ enum class Service {
   slack,
   azure,
   azuredevops,
+  msteams,
   dynatrace,
   servicenow,
   pagerduty,
