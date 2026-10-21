@@ -50,7 +50,6 @@ namespace Aws {
             Aws::Auth::SSOBearerTokenProvider m_bearerTokenProvider;
             // The client configuration to use
             std::shared_ptr<const Aws::Client::ClientConfiguration> m_config;
-            // RetrieveForCache clears m_credentials, runs Reload(), and returns what it loaded.
             AWSCredentials RetrieveForCache();
             std::shared_ptr<AWSCredentialsProvider> m_cachingProvider;
 

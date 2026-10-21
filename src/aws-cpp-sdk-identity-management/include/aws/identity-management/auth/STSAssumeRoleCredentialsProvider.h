@@ -66,7 +66,6 @@ namespace Aws
             std::atomic<int64_t> m_expiry;
             std::mutex m_credsMutex;
             std::atomic<int> m_loadFrequency;
-            // RetrieveForCache forces LoadCredentialsFromSTS() to fetch and returns the credentials with their expiration.
             AWSCredentials RetrieveForCache();
             std::shared_ptr<AWSCredentialsProvider> m_cachingProvider;
         };

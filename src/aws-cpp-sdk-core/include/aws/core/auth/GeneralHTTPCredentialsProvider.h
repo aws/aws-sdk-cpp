@@ -107,14 +107,12 @@ namespace Aws
             void Reload() override;
 
         private:
-
             Aws::String LoadTokenFromFile() const;
 
             std::shared_ptr<Aws::Internal::ECSCredentialsClient> m_ecsCredentialsClient;
             Aws::String m_authTokenFilePath;
 
             Aws::Auth::AWSCredentials m_credentials;
-            // RetrieveForCache clears m_credentials, runs Reload(), and returns what it loaded.
             AWSCredentials RetrieveForCache();
             std::shared_ptr<AWSCredentialsProvider> m_cachingProvider;
         };

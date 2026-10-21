@@ -43,7 +43,6 @@ class AWS_CORE_API CrtCredentialsProvider : public AWSCredentialsProvider {
   void Invalidate(const Aws::String& accessKeyId) override;
 
  protected:
-  // CrtCredentialsProvider with staticStability false serves cached credentials only until they expire.
   CrtCredentialsProvider(const std::function<std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider>()>& credentialsProviderFactory,
                          std::chrono::milliseconds providerFuturesTimeoutMs, Aws::Client::UserAgentFeature userAgentFeature,
                          const Aws::String& providerName, bool staticStability);
@@ -62,7 +61,6 @@ class AWS_CORE_API CrtCredentialsProvider : public AWSCredentialsProvider {
   std::chrono::milliseconds m_providerFuturesTimeoutMs;
   Aws::Client::UserAgentFeature m_userAgentFeature;
   Aws::String m_providerName;
-  // RetrieveForCache clears m_credentials, runs Reload(), and returns what it loaded.
   AWSCredentials RetrieveForCache();
   std::shared_ptr<AWSCredentialsProvider> m_cachingProvider;
   STATE m_state{STATE::NOT_INITIALIZED};

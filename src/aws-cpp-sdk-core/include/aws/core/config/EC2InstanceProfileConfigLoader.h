@@ -52,18 +52,12 @@ namespace Aws
         private:
             friend class Aws::Auth::InstanceProfileCredentialsProvider;
 
-            // RetrieveCredentials makes one IMDS call and stores the credentials in m_profiles on success.
             bool RetrieveCredentials();
-            // GetCredentials returns the cached credentials, refreshing them first when a refresh is due.
             Aws::Auth::AWSCredentials GetCredentials() const;
-            // Invalidate marks the cached credentials for refresh if they match accessKeyId.
             void Invalidate(const Aws::String& accessKeyId);
 
             std::shared_ptr<Aws::Internal::EC2MetadataClient> m_ec2metadataClient;
-            // RetrieveForCache makes one IMDS call and returns the credentials, or empty credentials on failure.
             Aws::Auth::AWSCredentials RetrieveForCache();
-
-            // m_cachingProvider lives in the loader so direct users of the loader also get the refresh lifecycle.
             std::shared_ptr<Aws::Auth::AWSCredentialsProvider> m_cachingProvider;
         };
     }

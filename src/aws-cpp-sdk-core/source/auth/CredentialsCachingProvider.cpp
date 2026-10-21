@@ -36,7 +36,6 @@ CredentialsCachingProvider::CredentialsCachingProvider(RetrieveFunction retrieve
                   return Aws::Internal::RefreshResult<AWSCredentials>::Recoverable("credential source returned no credentials");
               }
               Aws::Utils::DateTime expiration = credentials.GetExpiration();
-              // A missing or unparseable expiration means the credentials never expire, matching the AWSCredentials default.
               if (!expiration.WasParseSuccessful())
               {
                   expiration = Aws::Utils::DateTime((std::chrono::time_point<std::chrono::system_clock>::max)());
