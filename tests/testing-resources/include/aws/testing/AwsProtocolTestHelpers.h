@@ -5,21 +5,21 @@
 
 #pragma once
 
-#include <aws/testing/Testing_EXPORTS.h>
+#include <aws/core/auth/AWSCredentials.h>
+#include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/protocol-mock/ProtocolMockClient.h>
+#include <aws/protocol-mock/model/Request.h>
+#include <aws/protocol-mock/model/SetNextResponseRequest.h>
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/testing/AwsTestHelpers.h>
+#include <aws/testing/Testing_EXPORTS.h>
 
-#include <aws/core/auth/AWSCredentials.h>
-#include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/HashingUtils.h>
-#include <aws/core/client/ClientConfiguration.h>
-
-#include <aws/protocol-mock/ProtocolMockClient.h>
-#include <aws/protocol-mock/model/SetNextResponseRequest.h>
-#include <aws/protocol-mock/model/Request.h>
 #include <cstdint>
+#include <numeric>
 #include <utility>
 
 #ifdef AWS_PROTOCOL_TEST_USE_TINYXML2
@@ -229,14 +229,10 @@ public:
 
   static Aws::String CanonicalizeHeaderValue(const Aws::String& value) {
     const Aws::Vector<Aws::String> parts = Aws::Utils::StringUtils::Split(value, ',');
-    Aws::String joined;
-    for (const auto& part : parts) {
-      if (!joined.empty()) {
-        joined += ",";
-      }
-      joined += Aws::Utils::StringUtils::Trim(part.c_str());
-    }
-    return joined;
+    return std::accumulate(parts.begin(), parts.end(), Aws::String(), [](const Aws::String& joined, const Aws::String& part) {
+      const Aws::String trimmed = Aws::Utils::StringUtils::Trim(part.c_str());
+      return joined.empty() ? trimmed : joined + "," + trimmed;
+    });
   }
 
   // Output tests pass their result assertions as this callback with no expected request, so it always runs.
@@ -245,9 +241,9 @@ public:
   }
 
   void ValidateRequestSent(const ExpectedRequest& expected = ExpectedRequest(),
-                          const std::function<void (const ExpectedRequest& expected, const Aws::ProtocolMock::Model::Request& receivedRequest)>& bodyCompare = ValidateBody,
-                          bool alwaysCompareBody = false) const {
-
+                           const std::function<void(const ExpectedRequest& expected,
+                                                    const Aws::ProtocolMock::Model::Request& receivedRequest)>& bodyCompare = ValidateBody,
+                           bool alwaysCompareBody = false) const {
     auto requestsReceivedOutcome = mockClient.GetRequestsReceived();
     AWS_ASSERT_SUCCESS(requestsReceivedOutcome);
     ASSERT_EQ(1u, requestsReceivedOutcome.GetResult().GetRequests().size());
