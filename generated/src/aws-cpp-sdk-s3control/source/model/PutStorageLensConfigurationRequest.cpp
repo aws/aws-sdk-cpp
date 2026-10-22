@@ -34,7 +34,7 @@ Aws::String PutStorageLensConfigurationRequest::SerializePayload() const {
     }
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToCompactString();
 }
 
 Aws::Http::HeaderValueCollection PutStorageLensConfigurationRequest::GetRequestSpecificHeaders() const {

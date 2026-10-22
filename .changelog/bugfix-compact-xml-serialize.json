@@ -1,0 +1,6 @@
+{
+  "type": "bugfix",
+  "category": "aws-cpp-sdk-core",
+  "contributor": "Madrigal",
+  "description": "Serialize XML request payloads without pretty-printing whitespace, via the new XmlDocument::ConvertToCompactString(). This shrinks S3, S3 CRT, S3 Control, CloudFront, and Route 53 request bodies; a CompleteMultipartUpload with 9,331 parts drops from 1.04 MiB to 0.79 MiB, staying under the 1 MiB body limit of some S3-compatible services ([#3891](https://github.com/aws/aws-sdk-cpp/issues/3891)). XmlDocument::ConvertToString() still pretty-prints."
+}
