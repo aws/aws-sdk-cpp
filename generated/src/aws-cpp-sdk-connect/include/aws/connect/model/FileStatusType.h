@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Connect {
 namespace Model {
-enum class FileStatusType { NOT_SET, APPROVED, REJECTED, PROCESSING, FAILED };
+enum class FileStatusType { NOT_SET, APPROVED, REJECTED, PROCESSING, FAILED, DRAFTING };
 
 namespace FileStatusTypeMapper {
 AWS_CONNECT_API FileStatusType GetFileStatusTypeForName(const Aws::String& name);

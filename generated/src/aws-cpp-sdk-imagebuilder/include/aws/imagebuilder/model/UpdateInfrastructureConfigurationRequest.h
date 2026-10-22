@@ -12,6 +12,7 @@
 #include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
 #include <aws/imagebuilder/model/InstanceMetadataOptions.h>
 #include <aws/imagebuilder/model/Logging.h>
+#include <aws/imagebuilder/model/ParentInstanceConfiguration.h>
 #include <aws/imagebuilder/model/Placement.h>
 
 #include <utility>
@@ -224,6 +225,24 @@ class UpdateInfrastructureConfigurationRequest : public ImagebuilderRequest {
 
   ///@{
   /**
+   * <p>Specifies whether Image Builder terminates build and test instances when
+   * image creation ends without a failure (success, cancellation, or expiration).
+   * Defaults to <code>true</code>.</p>
+   */
+  inline bool GetTerminateInstanceOnCompletion() const { return m_terminateInstanceOnCompletion; }
+  inline bool TerminateInstanceOnCompletionHasBeenSet() const { return m_terminateInstanceOnCompletionHasBeenSet; }
+  inline void SetTerminateInstanceOnCompletion(bool value) {
+    m_terminateInstanceOnCompletionHasBeenSet = true;
+    m_terminateInstanceOnCompletion = value;
+  }
+  inline UpdateInfrastructureConfigurationRequest& WithTerminateInstanceOnCompletion(bool value) {
+    SetTerminateInstanceOnCompletion(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The Amazon Resource Name (ARN) of the SNS topic to which Image Builder sends
    * image build event notifications. Specify a standard topic. Image Builder doesn't
    * support FIFO topics. Image Builder validates the topic when you create or update
@@ -324,6 +343,31 @@ class UpdateInfrastructureConfigurationRequest : public ImagebuilderRequest {
 
   ///@{
   /**
+   * <p>The Amazon EC2 Auto Scaling group that Image Builder takes the build instance
+   * from, instead of launching a new instance. This applies only to the build
+   * phase.</p> <p>To use this feature, the execution role for the build must have
+   * permissions to describe the Auto Scaling group, tag the instance while it's
+   * still in the group, and detach it from the group. For more information, see <a
+   * href="https://docs.aws.amazon.com/imagebuilder/latest/userguide/infra-config-parent-instance.html">Build
+   * on an instance from an Auto Scaling group</a> in the <i>EC2 Image Builder User
+   * Guide</i>.</p>
+   */
+  inline const ParentInstanceConfiguration& GetParentInstance() const { return m_parentInstance; }
+  inline bool ParentInstanceHasBeenSet() const { return m_parentInstanceHasBeenSet; }
+  template <typename ParentInstanceT = ParentInstanceConfiguration>
+  void SetParentInstance(ParentInstanceT&& value) {
+    m_parentInstanceHasBeenSet = true;
+    m_parentInstance = std::forward<ParentInstanceT>(value);
+  }
+  template <typename ParentInstanceT = ParentInstanceConfiguration>
+  UpdateInfrastructureConfigurationRequest& WithParentInstance(ParentInstanceT&& value) {
+    SetParentInstance(std::forward<ParentInstanceT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A unique, case-sensitive identifier you provide to ensure that the operation
    * runs no more than one time. If you retry a request with the same client token,
    * Image Builder returns the original response without running the operation again.
@@ -363,6 +407,8 @@ class UpdateInfrastructureConfigurationRequest : public ImagebuilderRequest {
 
   bool m_terminateInstanceOnFailure{false};
 
+  bool m_terminateInstanceOnCompletion{false};
+
   Aws::String m_snsTopicArn;
 
   Aws::Map<Aws::String, Aws::String> m_resourceTags;
@@ -370,6 +416,8 @@ class UpdateInfrastructureConfigurationRequest : public ImagebuilderRequest {
   InstanceMetadataOptions m_instanceMetadataOptions;
 
   Placement m_placement;
+
+  ParentInstanceConfiguration m_parentInstance;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_infrastructureConfigurationArnHasBeenSet = false;
@@ -381,10 +429,12 @@ class UpdateInfrastructureConfigurationRequest : public ImagebuilderRequest {
   bool m_loggingHasBeenSet = false;
   bool m_keyPairHasBeenSet = false;
   bool m_terminateInstanceOnFailureHasBeenSet = false;
+  bool m_terminateInstanceOnCompletionHasBeenSet = false;
   bool m_snsTopicArnHasBeenSet = false;
   bool m_resourceTagsHasBeenSet = false;
   bool m_instanceMetadataOptionsHasBeenSet = false;
   bool m_placementHasBeenSet = false;
+  bool m_parentInstanceHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

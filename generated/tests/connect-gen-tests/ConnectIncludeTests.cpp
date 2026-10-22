@@ -228,6 +228,7 @@
 #include <aws/connect/model/ContactSearchSummarySegmentAttributeValue.h>
 #include <aws/connect/model/ContactState.h>
 #include <aws/connect/model/ContentAttributes.h>
+#include <aws/connect/model/ContentDisposition.h>
 #include <aws/connect/model/ControlPlaneAttributeFilter.h>
 #include <aws/connect/model/ControlPlaneTagFilter.h>
 #include <aws/connect/model/ControlPlaneUserAttributeFilter.h>
@@ -1337,6 +1338,7 @@
 #include <aws/connect/model/SecurityProfileSearchCriteria.h>
 #include <aws/connect/model/SecurityProfileSearchSummary.h>
 #include <aws/connect/model/SecurityProfileSummary.h>
+#include <aws/connect/model/SecurityProfileType.h>
 #include <aws/connect/model/SecurityProfilesSearchFilter.h>
 #include <aws/connect/model/SegmentAttributeValue.h>
 #include <aws/connect/model/SendChatIntegrationEventRequest.h>

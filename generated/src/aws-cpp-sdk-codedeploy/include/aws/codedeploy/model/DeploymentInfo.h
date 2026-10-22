@@ -14,6 +14,7 @@
 #include <aws/codedeploy/model/DeploymentOverview.h>
 #include <aws/codedeploy/model/DeploymentStatus.h>
 #include <aws/codedeploy/model/DeploymentStyle.h>
+#include <aws/codedeploy/model/EC2DeploymentOptions.h>
 #include <aws/codedeploy/model/ErrorInformation.h>
 #include <aws/codedeploy/model/FileExistsBehavior.h>
 #include <aws/codedeploy/model/LoadBalancerInfo.h>
@@ -649,6 +650,22 @@ class DeploymentInfo {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const EC2DeploymentOptions& GetEc2DeploymentOptions() const { return m_ec2DeploymentOptions; }
+  inline bool Ec2DeploymentOptionsHasBeenSet() const { return m_ec2DeploymentOptionsHasBeenSet; }
+  template <typename Ec2DeploymentOptionsT = EC2DeploymentOptions>
+  void SetEc2DeploymentOptions(Ec2DeploymentOptionsT&& value) {
+    m_ec2DeploymentOptionsHasBeenSet = true;
+    m_ec2DeploymentOptions = std::forward<Ec2DeploymentOptionsT>(value);
+  }
+  template <typename Ec2DeploymentOptionsT = EC2DeploymentOptions>
+  DeploymentInfo& WithEc2DeploymentOptions(Ec2DeploymentOptionsT&& value) {
+    SetEc2DeploymentOptions(std::forward<Ec2DeploymentOptionsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_applicationName;
 
@@ -711,6 +728,8 @@ class DeploymentInfo {
   RelatedDeployments m_relatedDeployments;
 
   AlarmConfiguration m_overrideAlarmConfiguration;
+
+  EC2DeploymentOptions m_ec2DeploymentOptions;
   bool m_applicationNameHasBeenSet = false;
   bool m_deploymentGroupNameHasBeenSet = false;
   bool m_deploymentConfigNameHasBeenSet = false;
@@ -742,6 +761,7 @@ class DeploymentInfo {
   bool m_externalIdHasBeenSet = false;
   bool m_relatedDeploymentsHasBeenSet = false;
   bool m_overrideAlarmConfigurationHasBeenSet = false;
+  bool m_ec2DeploymentOptionsHasBeenSet = false;
 };
 
 }  // namespace Model

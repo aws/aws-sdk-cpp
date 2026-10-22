@@ -10,7 +10,7 @@
 namespace Aws {
 namespace S3Files {
 namespace Model {
-enum class LifeCycleState { NOT_SET, available, creating, deleting, deleted, error, updating };
+enum class LifeCycleState { NOT_SET, available, creating, deleting, deleted, error, updating, misconfigured };
 
 namespace LifeCycleStateMapper {
 AWS_S3FILES_API LifeCycleState GetLifeCycleStateForName(const Aws::String& name);

@@ -164,7 +164,7 @@ class CreateBranchRequest : public AmplifyRequest {
    * interact with the correct version of server-side assets, regardless of when a
    * deployment occurs. For more information about skew protection, see <a
    * href="https://docs.aws.amazon.com/amplify/latest/userguide/skew-protection.html">Skew
-   * protection for Amplify deployments</a> in the <i>Amplify User Guide</i>.</p>
+   * protection for Amplify deployments</a> in the <i> Amplify User Guide</i>.</p>
    */
   inline bool GetEnableSkewProtection() const { return m_enableSkewProtection; }
   inline bool EnableSkewProtectionHasBeenSet() const { return m_enableSkewProtectionHasBeenSet; }
@@ -419,7 +419,7 @@ class CreateBranchRequest : public AmplifyRequest {
    * securely access specific Amazon Web Services resources based on the role's
    * permissions. For more information about the SSR Compute role, see <a
    * href="https://docs.aws.amazon.com/amplify/latest/userguide/amplify-SSR-compute-role.html">Adding
-   * an SSR Compute role</a> in the <i>Amplify User Guide</i>.</p>
+   * an SSR Compute role</a> in the <i> Amplify User Guide</i>.</p>
    */
   inline const Aws::String& GetComputeRoleArn() const { return m_computeRoleArn; }
   inline bool ComputeRoleArnHasBeenSet() const { return m_computeRoleArnHasBeenSet; }

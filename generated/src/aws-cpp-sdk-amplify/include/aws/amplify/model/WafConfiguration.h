@@ -26,7 +26,7 @@ namespace Model {
  * integration with WAF. For more information about using WAF protections for an
  * Amplify application, see <a
  * href="https://docs.aws.amazon.com/amplify/latest/userguide/WAF-integration.html">Firewall
- * support for hosted sites</a> in the <i>Amplify User Guide</i>. </p><p><h3>See
+ * support for hosted sites</a> in the <i> Amplify User Guide</i>. </p><p><h3>See
  * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/WafConfiguration">AWS
  * API Reference</a></p>

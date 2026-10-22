@@ -16,7 +16,7 @@
 namespace Aws {
 namespace CodeConnections {
 /**
- * <fullname>AWS CodeConnections</fullname> <p>This Amazon Web Services
+ * <p><fullname>AWS CodeConnections</fullname> <p>This Amazon Web Services
  * CodeConnections API Reference provides descriptions and usage examples of the
  * operations and data types for the Amazon Web Services CodeConnections API. You
  * can use the connections API to work with connections and installations.</p> <p>
@@ -55,7 +55,7 @@ namespace CodeConnections {
  * Services CodeConnections.</p> </li> </ul> <p>For information about how to use
  * Amazon Web Services CodeConnections, see the <a
  * href="https://docs.aws.amazon.com/dtconsole/latest/userguide/welcome-connections.html">Developer
- * Tools User Guide</a>.</p>
+ * Tools User Guide</a>.</p></p>
  */
 class AWS_CODECONNECTIONS_API CodeConnectionsClient : public Aws::Client::AWSRpcV2CborClient,
                                                       public Aws::Client::ClientWithAsyncTemplateMethods<CodeConnectionsClient>,

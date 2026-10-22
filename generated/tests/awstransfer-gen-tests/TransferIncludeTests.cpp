@@ -128,6 +128,7 @@
 #include <aws/awstransfer/model/FileLocation.h>
 #include <aws/awstransfer/model/HomeDirectoryMapEntry.h>
 #include <aws/awstransfer/model/HomeDirectoryType.h>
+#include <aws/awstransfer/model/HostKeyStorageType.h>
 #include <aws/awstransfer/model/IdentityCenterConfig.h>
 #include <aws/awstransfer/model/IdentityProviderDetails.h>
 #include <aws/awstransfer/model/IdentityProviderType.h>

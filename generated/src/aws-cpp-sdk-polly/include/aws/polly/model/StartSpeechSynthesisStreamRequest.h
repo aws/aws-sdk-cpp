@@ -172,7 +172,7 @@ class StartSpeechSynthesisStreamRequest : public PollyRequest {
   /**
    * <p>The voice to use in synthesis. To get a list of available voice IDs, use the
    * <a
-   * href="https://docs.aws.amazon.com/polly/latest/API/API_DescribeVoices.html">DescribeVoices</a>
+   * href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a>
    * operation.</p>
    */
   inline VoiceId GetVoiceId() const { return m_voiceId; }

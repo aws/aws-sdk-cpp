@@ -160,6 +160,11 @@ PendingModifiedValues& PendingModifiedValues::operator=(const XmlNode& xmlNode) 
 
       m_additionalStorageVolumesHasBeenSet = true;
     }
+    XmlNode dBCapacityReservationIdentifierNode = resultNode.FirstChild("DBCapacityReservationIdentifier");
+    if (!dBCapacityReservationIdentifierNode.IsNull()) {
+      m_dBCapacityReservationIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(dBCapacityReservationIdentifierNode.GetText());
+      m_dBCapacityReservationIdentifierHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -275,6 +280,11 @@ void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* lo
       item.OutputToStream(oStream, additionalStorageVolumesSs.str().c_str());
     }
   }
+
+  if (m_dBCapacityReservationIdentifierHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".DBCapacityReservationIdentifier=" << StringUtils::URLEncode(m_dBCapacityReservationIdentifier.c_str()) << "&";
+  }
 }
 
 void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -360,6 +370,9 @@ void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* lo
       additionalStorageVolumesSs << location << ".AdditionalStorageVolumes.member." << additionalStorageVolumesIdx++;
       item.OutputToStream(oStream, additionalStorageVolumesSs.str().c_str());
     }
+  }
+  if (m_dBCapacityReservationIdentifierHasBeenSet) {
+    oStream << location << ".DBCapacityReservationIdentifier=" << StringUtils::URLEncode(m_dBCapacityReservationIdentifier.c_str()) << "&";
   }
 }
 

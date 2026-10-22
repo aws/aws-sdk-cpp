@@ -66,6 +66,12 @@ VpcOriginSummary& VpcOriginSummary::operator=(const XmlNode& xmlNode) {
       m_originEndpointArn = Aws::Utils::Xml::DecodeEscapedXmlText(originEndpointArnNode.GetText());
       m_originEndpointArnHasBeenSet = true;
     }
+    XmlNode ipAddressTypeNode = resultNode.FirstChild("IpAddressType");
+    if (!ipAddressTypeNode.IsNull()) {
+      m_ipAddressType = VpcIpAddressTypeMapper::GetVpcIpAddressTypeForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipAddressTypeNode.GetText()).c_str()));
+      m_ipAddressTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -111,6 +117,11 @@ void VpcOriginSummary::AddToNode(XmlNode& parentNode) const {
   if (m_originEndpointArnHasBeenSet) {
     XmlNode originEndpointArnNode = parentNode.CreateChildElement("OriginEndpointArn");
     originEndpointArnNode.SetText(m_originEndpointArn);
+  }
+
+  if (m_ipAddressTypeHasBeenSet) {
+    XmlNode ipAddressTypeNode = parentNode.CreateChildElement("IpAddressType");
+    ipAddressTypeNode.SetText(VpcIpAddressTypeMapper::GetNameForVpcIpAddressType(m_ipAddressType));
   }
 }
 

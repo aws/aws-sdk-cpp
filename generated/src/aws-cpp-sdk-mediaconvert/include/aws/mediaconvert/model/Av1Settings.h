@@ -13,6 +13,7 @@
 #include <aws/mediaconvert/model/Av1FramerateConversionAlgorithm.h>
 #include <aws/mediaconvert/model/Av1QvbrSettings.h>
 #include <aws/mediaconvert/model/Av1RateControlMode.h>
+#include <aws/mediaconvert/model/Av1SceneChangeDetect.h>
 #include <aws/mediaconvert/model/Av1SpatialAdaptiveQuantization.h>
 #include <aws/mediaconvert/model/FrameMetricType.h>
 
@@ -70,6 +71,23 @@ class Av1Settings {
   }
   inline Av1Settings& WithBitDepth(Av1BitDepth value) {
     SetBitDepth(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * Specify the average bitrate in bits per second. Required when Rate control mode
+   * is CBR.
+   */
+  inline int GetBitrate() const { return m_bitrate; }
+  inline bool BitrateHasBeenSet() const { return m_bitrateHasBeenSet; }
+  inline void SetBitrate(int value) {
+    m_bitrateHasBeenSet = true;
+    m_bitrate = value;
+  }
+  inline Av1Settings& WithBitrate(int value) {
+    SetBitrate(value);
     return *this;
   }
   ///@}
@@ -283,7 +301,7 @@ class Av1Settings {
 
   ///@{
   /**
-   * Settings for quality-defined variable bitrate encoding with the H.265 codec. Use
+   * Settings for quality-defined variable bitrate encoding with the AV1 codec. Use
    * these settings only when you set QVBR for Rate control mode.
    */
   inline const Av1QvbrSettings& GetQvbrSettings() const { return m_qvbrSettings; }
@@ -302,8 +320,8 @@ class Av1Settings {
 
   ///@{
   /**
-   * 'With AV1 outputs, for rate control mode, MediaConvert supports only
-   * quality-defined variable bitrate (QVBR). You can''t use CBR or VBR.'
+   * 'With AV1 outputs, for rate control mode, MediaConvert supports quality-defined
+   * variable bitrate (QVBR) and constant bitrate (CBR). You can''t use VBR.'
    */
   inline Av1RateControlMode GetRateControlMode() const { return m_rateControlMode; }
   inline bool RateControlModeHasBeenSet() const { return m_rateControlModeHasBeenSet; }
@@ -313,6 +331,27 @@ class Av1Settings {
   }
   inline Av1Settings& WithRateControlMode(Av1RateControlMode value) {
     SetRateControlMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * Optional. Use this setting to have the service insert I-frames at scene changes
+   * that it automatically detects. For AV1, scene change detection is disabled by
+   * default. Choose Enabled to insert I-frames at detected scene changes, which can
+   * improve video quality. If this output uses QVBR, you can instead choose
+   * Transition detection for further video quality improvement. For more information
+   * about QVBR, see https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr.
+   */
+  inline Av1SceneChangeDetect GetSceneChangeDetect() const { return m_sceneChangeDetect; }
+  inline bool SceneChangeDetectHasBeenSet() const { return m_sceneChangeDetectHasBeenSet; }
+  inline void SetSceneChangeDetect(Av1SceneChangeDetect value) {
+    m_sceneChangeDetectHasBeenSet = true;
+    m_sceneChangeDetect = value;
+  }
+  inline Av1Settings& WithSceneChangeDetect(Av1SceneChangeDetect value) {
+    SetSceneChangeDetect(value);
     return *this;
   }
   ///@}
@@ -332,6 +371,44 @@ class Av1Settings {
   }
   inline Av1Settings& WithSlices(int value) {
     SetSlices(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * Optional. Specify the duration, in milliseconds, of the sliding window over
+   * which MediaConvert enforces your Peak bitrate. When you specify a Peak bitrate
+   * but omit this value, MediaConvert uses a default sliding window of 1000.
+   */
+  inline int GetSlidingWindowMs() const { return m_slidingWindowMs; }
+  inline bool SlidingWindowMsHasBeenSet() const { return m_slidingWindowMsHasBeenSet; }
+  inline void SetSlidingWindowMs(int value) {
+    m_slidingWindowMsHasBeenSet = true;
+    m_slidingWindowMs = value;
+  }
+  inline Av1Settings& WithSlidingWindowMs(int value) {
+    SetSlidingWindowMs(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * Optional. Specify an instantaneous peak bitrate ceiling, in bits/second, that
+   * MediaConvert enforces over the sliding window set by Peak bitrate window. For
+   * example, enter fifty megabits per second as 50000000. Applies in the QVBR rate
+   * control mode. When you specify a value below Max bitrate, MediaConvert raises it
+   * to Max bitrate.
+   */
+  inline int GetSlidingWindowPeakBitrate() const { return m_slidingWindowPeakBitrate; }
+  inline bool SlidingWindowPeakBitrateHasBeenSet() const { return m_slidingWindowPeakBitrateHasBeenSet; }
+  inline void SetSlidingWindowPeakBitrate(int value) {
+    m_slidingWindowPeakBitrateHasBeenSet = true;
+    m_slidingWindowPeakBitrate = value;
+  }
+  inline Av1Settings& WithSlidingWindowPeakBitrate(int value) {
+    SetSlidingWindowPeakBitrate(value);
     return *this;
   }
   ///@}
@@ -369,6 +446,8 @@ class Av1Settings {
 
   Av1BitDepth m_bitDepth{Av1BitDepth::NOT_SET};
 
+  int m_bitrate{0};
+
   Av1FilmGrainSynthesis m_filmGrainSynthesis{Av1FilmGrainSynthesis::NOT_SET};
 
   Av1FramerateControl m_framerateControl{Av1FramerateControl::NOT_SET};
@@ -391,11 +470,18 @@ class Av1Settings {
 
   Av1RateControlMode m_rateControlMode{Av1RateControlMode::NOT_SET};
 
+  Av1SceneChangeDetect m_sceneChangeDetect{Av1SceneChangeDetect::NOT_SET};
+
   int m_slices{0};
+
+  int m_slidingWindowMs{0};
+
+  int m_slidingWindowPeakBitrate{0};
 
   Av1SpatialAdaptiveQuantization m_spatialAdaptiveQuantization{Av1SpatialAdaptiveQuantization::NOT_SET};
   bool m_adaptiveQuantizationHasBeenSet = false;
   bool m_bitDepthHasBeenSet = false;
+  bool m_bitrateHasBeenSet = false;
   bool m_filmGrainSynthesisHasBeenSet = false;
   bool m_framerateControlHasBeenSet = false;
   bool m_framerateConversionAlgorithmHasBeenSet = false;
@@ -407,7 +493,10 @@ class Av1Settings {
   bool m_perFrameMetricsHasBeenSet = false;
   bool m_qvbrSettingsHasBeenSet = false;
   bool m_rateControlModeHasBeenSet = false;
+  bool m_sceneChangeDetectHasBeenSet = false;
   bool m_slicesHasBeenSet = false;
+  bool m_slidingWindowMsHasBeenSet = false;
+  bool m_slidingWindowPeakBitrateHasBeenSet = false;
   bool m_spatialAdaptiveQuantizationHasBeenSet = false;
 };
 

@@ -39,6 +39,7 @@
 #include <aws/datazone/model/CreateDataProductResult.h>
 #include <aws/datazone/model/CreateDataProductRevisionResult.h>
 #include <aws/datazone/model/CreateDataSourceResult.h>
+#include <aws/datazone/model/CreateDesignationResult.h>
 #include <aws/datazone/model/CreateDomainResult.h>
 #include <aws/datazone/model/CreateDomainUnitResult.h>
 #include <aws/datazone/model/CreateEnvironmentActionResult.h>
@@ -66,6 +67,7 @@
 #include <aws/datazone/model/DeleteDataExportConfigurationResult.h>
 #include <aws/datazone/model/DeleteDataProductResult.h>
 #include <aws/datazone/model/DeleteDataSourceResult.h>
+#include <aws/datazone/model/DeleteDesignationResult.h>
 #include <aws/datazone/model/DeleteDomainResult.h>
 #include <aws/datazone/model/DeleteDomainUnitResult.h>
 #include <aws/datazone/model/DeleteEnvironmentBlueprintConfigurationResult.h>
@@ -92,6 +94,7 @@
 #include <aws/datazone/model/GetDataProductResult.h>
 #include <aws/datazone/model/GetDataSourceResult.h>
 #include <aws/datazone/model/GetDataSourceRunResult.h>
+#include <aws/datazone/model/GetDesignationResult.h>
 #include <aws/datazone/model/GetDomainResult.h>
 #include <aws/datazone/model/GetDomainUnitResult.h>
 #include <aws/datazone/model/GetEnvironmentActionResult.h>
@@ -131,6 +134,7 @@
 #include <aws/datazone/model/ListDataSourceRunActivitiesResult.h>
 #include <aws/datazone/model/ListDataSourceRunsResult.h>
 #include <aws/datazone/model/ListDataSourcesResult.h>
+#include <aws/datazone/model/ListDesignationsResult.h>
 #include <aws/datazone/model/ListDomainUnitsForParentResult.h>
 #include <aws/datazone/model/ListDomainsRequest.h>
 #include <aws/datazone/model/ListDomainsResult.h>
@@ -186,6 +190,7 @@
 #include <aws/datazone/model/UpdateAssetFilterResult.h>
 #include <aws/datazone/model/UpdateConnectionResult.h>
 #include <aws/datazone/model/UpdateDataSourceResult.h>
+#include <aws/datazone/model/UpdateDesignationResult.h>
 #include <aws/datazone/model/UpdateDomainResult.h>
 #include <aws/datazone/model/UpdateDomainUnitResult.h>
 #include <aws/datazone/model/UpdateEnvironmentActionResult.h>
@@ -256,6 +261,7 @@ class CreateConnectionRequest;
 class CreateDataProductRequest;
 class CreateDataProductRevisionRequest;
 class CreateDataSourceRequest;
+class CreateDesignationRequest;
 class CreateDomainRequest;
 class CreateDomainUnitRequest;
 class CreateEnvironmentRequest;
@@ -284,6 +290,7 @@ class DeleteConnectionRequest;
 class DeleteDataExportConfigurationRequest;
 class DeleteDataProductRequest;
 class DeleteDataSourceRequest;
+class DeleteDesignationRequest;
 class DeleteDomainRequest;
 class DeleteDomainUnitRequest;
 class DeleteEnvironmentRequest;
@@ -316,6 +323,7 @@ class GetDataExportConfigurationRequest;
 class GetDataProductRequest;
 class GetDataSourceRequest;
 class GetDataSourceRunRequest;
+class GetDesignationRequest;
 class GetDomainRequest;
 class GetDomainUnitRequest;
 class GetEnvironmentRequest;
@@ -355,6 +363,7 @@ class ListDataProductRevisionsRequest;
 class ListDataSourceRunActivitiesRequest;
 class ListDataSourceRunsRequest;
 class ListDataSourcesRequest;
+class ListDesignationsRequest;
 class ListDomainUnitsForParentRequest;
 class ListDomainsRequest;
 class ListEntityOwnersRequest;
@@ -409,6 +418,7 @@ class UpdateAccountPoolRequest;
 class UpdateAssetFilterRequest;
 class UpdateConnectionRequest;
 class UpdateDataSourceRequest;
+class UpdateDesignationRequest;
 class UpdateDomainRequest;
 class UpdateDomainUnitRequest;
 class UpdateEnvironmentRequest;
@@ -449,6 +459,7 @@ typedef Aws::Utils::Outcome<CreateConnectionResult, DataZoneError> CreateConnect
 typedef Aws::Utils::Outcome<CreateDataProductResult, DataZoneError> CreateDataProductOutcome;
 typedef Aws::Utils::Outcome<CreateDataProductRevisionResult, DataZoneError> CreateDataProductRevisionOutcome;
 typedef Aws::Utils::Outcome<CreateDataSourceResult, DataZoneError> CreateDataSourceOutcome;
+typedef Aws::Utils::Outcome<CreateDesignationResult, DataZoneError> CreateDesignationOutcome;
 typedef Aws::Utils::Outcome<CreateDomainResult, DataZoneError> CreateDomainOutcome;
 typedef Aws::Utils::Outcome<CreateDomainUnitResult, DataZoneError> CreateDomainUnitOutcome;
 typedef Aws::Utils::Outcome<CreateEnvironmentResult, DataZoneError> CreateEnvironmentOutcome;
@@ -477,6 +488,7 @@ typedef Aws::Utils::Outcome<DeleteConnectionResult, DataZoneError> DeleteConnect
 typedef Aws::Utils::Outcome<DeleteDataExportConfigurationResult, DataZoneError> DeleteDataExportConfigurationOutcome;
 typedef Aws::Utils::Outcome<DeleteDataProductResult, DataZoneError> DeleteDataProductOutcome;
 typedef Aws::Utils::Outcome<DeleteDataSourceResult, DataZoneError> DeleteDataSourceOutcome;
+typedef Aws::Utils::Outcome<DeleteDesignationResult, DataZoneError> DeleteDesignationOutcome;
 typedef Aws::Utils::Outcome<DeleteDomainResult, DataZoneError> DeleteDomainOutcome;
 typedef Aws::Utils::Outcome<DeleteDomainUnitResult, DataZoneError> DeleteDomainUnitOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, DataZoneError> DeleteEnvironmentOutcome;
@@ -509,6 +521,7 @@ typedef Aws::Utils::Outcome<GetDataExportConfigurationResult, DataZoneError> Get
 typedef Aws::Utils::Outcome<GetDataProductResult, DataZoneError> GetDataProductOutcome;
 typedef Aws::Utils::Outcome<GetDataSourceResult, DataZoneError> GetDataSourceOutcome;
 typedef Aws::Utils::Outcome<GetDataSourceRunResult, DataZoneError> GetDataSourceRunOutcome;
+typedef Aws::Utils::Outcome<GetDesignationResult, DataZoneError> GetDesignationOutcome;
 typedef Aws::Utils::Outcome<GetDomainResult, DataZoneError> GetDomainOutcome;
 typedef Aws::Utils::Outcome<GetDomainUnitResult, DataZoneError> GetDomainUnitOutcome;
 typedef Aws::Utils::Outcome<GetEnvironmentResult, DataZoneError> GetEnvironmentOutcome;
@@ -548,6 +561,7 @@ typedef Aws::Utils::Outcome<ListDataProductRevisionsResult, DataZoneError> ListD
 typedef Aws::Utils::Outcome<ListDataSourceRunActivitiesResult, DataZoneError> ListDataSourceRunActivitiesOutcome;
 typedef Aws::Utils::Outcome<ListDataSourceRunsResult, DataZoneError> ListDataSourceRunsOutcome;
 typedef Aws::Utils::Outcome<ListDataSourcesResult, DataZoneError> ListDataSourcesOutcome;
+typedef Aws::Utils::Outcome<ListDesignationsResult, DataZoneError> ListDesignationsOutcome;
 typedef Aws::Utils::Outcome<ListDomainUnitsForParentResult, DataZoneError> ListDomainUnitsForParentOutcome;
 typedef Aws::Utils::Outcome<ListDomainsResult, DataZoneError> ListDomainsOutcome;
 typedef Aws::Utils::Outcome<ListEntityOwnersResult, DataZoneError> ListEntityOwnersOutcome;
@@ -602,6 +616,7 @@ typedef Aws::Utils::Outcome<UpdateAccountPoolResult, DataZoneError> UpdateAccoun
 typedef Aws::Utils::Outcome<UpdateAssetFilterResult, DataZoneError> UpdateAssetFilterOutcome;
 typedef Aws::Utils::Outcome<UpdateConnectionResult, DataZoneError> UpdateConnectionOutcome;
 typedef Aws::Utils::Outcome<UpdateDataSourceResult, DataZoneError> UpdateDataSourceOutcome;
+typedef Aws::Utils::Outcome<UpdateDesignationResult, DataZoneError> UpdateDesignationOutcome;
 typedef Aws::Utils::Outcome<UpdateDomainResult, DataZoneError> UpdateDomainOutcome;
 typedef Aws::Utils::Outcome<UpdateDomainUnitResult, DataZoneError> UpdateDomainUnitOutcome;
 typedef Aws::Utils::Outcome<UpdateEnvironmentResult, DataZoneError> UpdateEnvironmentOutcome;
@@ -642,6 +657,7 @@ typedef std::future<CreateConnectionOutcome> CreateConnectionOutcomeCallable;
 typedef std::future<CreateDataProductOutcome> CreateDataProductOutcomeCallable;
 typedef std::future<CreateDataProductRevisionOutcome> CreateDataProductRevisionOutcomeCallable;
 typedef std::future<CreateDataSourceOutcome> CreateDataSourceOutcomeCallable;
+typedef std::future<CreateDesignationOutcome> CreateDesignationOutcomeCallable;
 typedef std::future<CreateDomainOutcome> CreateDomainOutcomeCallable;
 typedef std::future<CreateDomainUnitOutcome> CreateDomainUnitOutcomeCallable;
 typedef std::future<CreateEnvironmentOutcome> CreateEnvironmentOutcomeCallable;
@@ -670,6 +686,7 @@ typedef std::future<DeleteConnectionOutcome> DeleteConnectionOutcomeCallable;
 typedef std::future<DeleteDataExportConfigurationOutcome> DeleteDataExportConfigurationOutcomeCallable;
 typedef std::future<DeleteDataProductOutcome> DeleteDataProductOutcomeCallable;
 typedef std::future<DeleteDataSourceOutcome> DeleteDataSourceOutcomeCallable;
+typedef std::future<DeleteDesignationOutcome> DeleteDesignationOutcomeCallable;
 typedef std::future<DeleteDomainOutcome> DeleteDomainOutcomeCallable;
 typedef std::future<DeleteDomainUnitOutcome> DeleteDomainUnitOutcomeCallable;
 typedef std::future<DeleteEnvironmentOutcome> DeleteEnvironmentOutcomeCallable;
@@ -702,6 +719,7 @@ typedef std::future<GetDataExportConfigurationOutcome> GetDataExportConfiguratio
 typedef std::future<GetDataProductOutcome> GetDataProductOutcomeCallable;
 typedef std::future<GetDataSourceOutcome> GetDataSourceOutcomeCallable;
 typedef std::future<GetDataSourceRunOutcome> GetDataSourceRunOutcomeCallable;
+typedef std::future<GetDesignationOutcome> GetDesignationOutcomeCallable;
 typedef std::future<GetDomainOutcome> GetDomainOutcomeCallable;
 typedef std::future<GetDomainUnitOutcome> GetDomainUnitOutcomeCallable;
 typedef std::future<GetEnvironmentOutcome> GetEnvironmentOutcomeCallable;
@@ -741,6 +759,7 @@ typedef std::future<ListDataProductRevisionsOutcome> ListDataProductRevisionsOut
 typedef std::future<ListDataSourceRunActivitiesOutcome> ListDataSourceRunActivitiesOutcomeCallable;
 typedef std::future<ListDataSourceRunsOutcome> ListDataSourceRunsOutcomeCallable;
 typedef std::future<ListDataSourcesOutcome> ListDataSourcesOutcomeCallable;
+typedef std::future<ListDesignationsOutcome> ListDesignationsOutcomeCallable;
 typedef std::future<ListDomainUnitsForParentOutcome> ListDomainUnitsForParentOutcomeCallable;
 typedef std::future<ListDomainsOutcome> ListDomainsOutcomeCallable;
 typedef std::future<ListEntityOwnersOutcome> ListEntityOwnersOutcomeCallable;
@@ -795,6 +814,7 @@ typedef std::future<UpdateAccountPoolOutcome> UpdateAccountPoolOutcomeCallable;
 typedef std::future<UpdateAssetFilterOutcome> UpdateAssetFilterOutcomeCallable;
 typedef std::future<UpdateConnectionOutcome> UpdateConnectionOutcomeCallable;
 typedef std::future<UpdateDataSourceOutcome> UpdateDataSourceOutcomeCallable;
+typedef std::future<UpdateDesignationOutcome> UpdateDesignationOutcomeCallable;
 typedef std::future<UpdateDomainOutcome> UpdateDomainOutcomeCallable;
 typedef std::future<UpdateDomainUnitOutcome> UpdateDomainUnitOutcomeCallable;
 typedef std::future<UpdateEnvironmentOutcome> UpdateEnvironmentOutcomeCallable;
@@ -876,6 +896,9 @@ typedef std::function<void(const DataZoneClient*, const Model::CreateDataProduct
 typedef std::function<void(const DataZoneClient*, const Model::CreateDataSourceRequest&, const Model::CreateDataSourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateDataSourceResponseReceivedHandler;
+typedef std::function<void(const DataZoneClient*, const Model::CreateDesignationRequest&, const Model::CreateDesignationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateDesignationResponseReceivedHandler;
 typedef std::function<void(const DataZoneClient*, const Model::CreateDomainRequest&, const Model::CreateDomainOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateDomainResponseReceivedHandler;
@@ -961,6 +984,9 @@ typedef std::function<void(const DataZoneClient*, const Model::DeleteDataProduct
 typedef std::function<void(const DataZoneClient*, const Model::DeleteDataSourceRequest&, const Model::DeleteDataSourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteDataSourceResponseReceivedHandler;
+typedef std::function<void(const DataZoneClient*, const Model::DeleteDesignationRequest&, const Model::DeleteDesignationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteDesignationResponseReceivedHandler;
 typedef std::function<void(const DataZoneClient*, const Model::DeleteDomainRequest&, const Model::DeleteDomainOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteDomainResponseReceivedHandler;
@@ -1058,6 +1084,9 @@ typedef std::function<void(const DataZoneClient*, const Model::GetDataSourceRequ
 typedef std::function<void(const DataZoneClient*, const Model::GetDataSourceRunRequest&, const Model::GetDataSourceRunOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetDataSourceRunResponseReceivedHandler;
+typedef std::function<void(const DataZoneClient*, const Model::GetDesignationRequest&, const Model::GetDesignationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetDesignationResponseReceivedHandler;
 typedef std::function<void(const DataZoneClient*, const Model::GetDomainRequest&, const Model::GetDomainOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetDomainResponseReceivedHandler;
@@ -1177,6 +1206,9 @@ typedef std::function<void(const DataZoneClient*, const Model::ListDataSourceRun
 typedef std::function<void(const DataZoneClient*, const Model::ListDataSourcesRequest&, const Model::ListDataSourcesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListDataSourcesResponseReceivedHandler;
+typedef std::function<void(const DataZoneClient*, const Model::ListDesignationsRequest&, const Model::ListDesignationsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListDesignationsResponseReceivedHandler;
 typedef std::function<void(const DataZoneClient*, const Model::ListDomainUnitsForParentRequest&,
                            const Model::ListDomainUnitsForParentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListDomainUnitsForParentResponseReceivedHandler;
@@ -1341,6 +1373,9 @@ typedef std::function<void(const DataZoneClient*, const Model::UpdateConnectionR
 typedef std::function<void(const DataZoneClient*, const Model::UpdateDataSourceRequest&, const Model::UpdateDataSourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateDataSourceResponseReceivedHandler;
+typedef std::function<void(const DataZoneClient*, const Model::UpdateDesignationRequest&, const Model::UpdateDesignationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateDesignationResponseReceivedHandler;
 typedef std::function<void(const DataZoneClient*, const Model::UpdateDomainRequest&, const Model::UpdateDomainOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateDomainResponseReceivedHandler;

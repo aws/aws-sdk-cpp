@@ -25,7 +25,7 @@ namespace Model {
  * customizing the build instance size when you create or update an Amplify app.
  * For more information about customizable build instances, see <a
  * href="https://docs.aws.amazon.com/amplify/latest/userguide/custom-build-instance.html">Custom
- * build instances</a> in the <i>Amplify User Guide</i>.</p><p><h3>See Also:</h3>
+ * build instances</a> in the <i> Amplify User Guide</i>.</p><p><h3>See Also:</h3>
  * <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/JobConfig">AWS
  * API Reference</a></p>

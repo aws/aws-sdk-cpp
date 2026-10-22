@@ -164,8 +164,6 @@
 #include <aws/eventbridgev2/EventBridgeV2Client.h>
 #include <aws/events/CloudWatchEventsClient.h>
 #include <aws/evs/EVSClient.h>
-#include <aws/finspace-data/FinSpaceDataClient.h>
-#include <aws/finspace/FinspaceClient.h>
 #include <aws/firehose/FirehoseClient.h>
 #include <aws/fis/FISClient.h>
 #include <aws/fms/FMSClient.h>
@@ -421,7 +419,6 @@
 #include <aws/timestream-influxdb/TimestreamInfluxDBClient.h>
 #include <aws/timestream-query/TimestreamQueryClient.h>
 #include <aws/timestream-write/TimestreamWriteClient.h>
-#include <aws/tnb/TnbClient.h>
 #include <aws/transcribe/TranscribeServiceClient.h>
 #include <aws/transcribestreaming/TranscribeStreamingServiceClient.h>
 #include <aws/translate/TranslateClient.h>

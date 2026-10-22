@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
+#include <aws/connect/model/SecurityProfileType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -121,6 +122,23 @@ class SecurityProfileSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The type of the security profile: <code>AWS_MANAGED</code> or
+   * <code>CUSTOMER_MANAGED</code>.</p>
+   */
+  inline SecurityProfileType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(SecurityProfileType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline SecurityProfileSummary& WithType(SecurityProfileType value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -131,11 +149,14 @@ class SecurityProfileSummary {
   Aws::Utils::DateTime m_lastModifiedTime{};
 
   Aws::String m_lastModifiedRegion;
+
+  SecurityProfileType m_type{SecurityProfileType::NOT_SET};
   bool m_idHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_lastModifiedTimeHasBeenSet = false;
   bool m_lastModifiedRegionHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
 };
 
 }  // namespace Model

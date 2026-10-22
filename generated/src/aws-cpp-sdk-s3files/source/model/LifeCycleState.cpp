@@ -21,6 +21,7 @@ static const int deleting_HASH = HashingUtils::HashString("deleting");
 static const int deleted_HASH = HashingUtils::HashString("deleted");
 static const int error_HASH = HashingUtils::HashString("error");
 static const int updating_HASH = HashingUtils::HashString("updating");
+static const int misconfigured_HASH = HashingUtils::HashString("misconfigured");
 
 LifeCycleState GetLifeCycleStateForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -36,6 +37,8 @@ LifeCycleState GetLifeCycleStateForName(const Aws::String& name) {
     return LifeCycleState::error;
   } else if (hashCode == updating_HASH) {
     return LifeCycleState::updating;
+  } else if (hashCode == misconfigured_HASH) {
+    return LifeCycleState::misconfigured;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -62,6 +65,8 @@ Aws::String GetNameForLifeCycleState(LifeCycleState enumValue) {
       return "error";
     case LifeCycleState::updating:
       return "updating";
+    case LifeCycleState::misconfigured:
+      return "misconfigured";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

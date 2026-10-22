@@ -55,8 +55,11 @@ class NluImprovementSpecification {
   ///@{
   /**
    * <p>Specifies the mode for Assisted NLU operation. Use <code>Primary</code> to
-   * make Assisted NLU the primary intent recognition method, or
-   * <code>Fallback</code> to use it only when standard NLU confidence is low.</p>
+   * make Assisted NLU the primary intent recognition method, <code>Fallback</code>
+   * to use it only when standard NLU confidence is low, or
+   * <code>DialogManager</code> to use a large language model to manage the
+   * conversation, including intent recognition, slot elicitation, and
+   * confirmation.</p>
    */
   inline AssistedNluMode GetAssistedNluMode() const { return m_assistedNluMode; }
   inline bool AssistedNluModeHasBeenSet() const { return m_assistedNluModeHasBeenSet; }

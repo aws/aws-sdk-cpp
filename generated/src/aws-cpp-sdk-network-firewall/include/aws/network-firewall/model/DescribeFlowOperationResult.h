@@ -50,7 +50,7 @@ class DescribeFlowOperationResult {
 
   ///@{
   /**
-   * <p>The ID of the Availability Zone where the firewall is located. For example,
+   * <p>The name of the Availability Zone where the firewall is located. For example,
    * <code>us-east-2a</code>.</p> <p>Defines the scope a flow operation. You can use
    * up to 20 filters to configure a single flow operation.</p>
    */
@@ -63,6 +63,24 @@ class DescribeFlowOperationResult {
   template <typename AvailabilityZoneT = Aws::String>
   DescribeFlowOperationResult& WithAvailabilityZone(AvailabilityZoneT&& value) {
     SetAvailabilityZone(std::forward<AvailabilityZoneT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the Availability Zone where the firewall is located. For example,
+   * <code>use2-az1</code>.</p>
+   */
+  inline const Aws::String& GetAvailabilityZoneId() const { return m_availabilityZoneId; }
+  template <typename AvailabilityZoneIdT = Aws::String>
+  void SetAvailabilityZoneId(AvailabilityZoneIdT&& value) {
+    m_availabilityZoneIdHasBeenSet = true;
+    m_availabilityZoneId = std::forward<AvailabilityZoneIdT>(value);
+  }
+  template <typename AvailabilityZoneIdT = Aws::String>
+  DescribeFlowOperationResult& WithAvailabilityZoneId(AvailabilityZoneIdT&& value) {
+    SetAvailabilityZoneId(std::forward<AvailabilityZoneIdT>(value));
     return *this;
   }
   ///@}
@@ -229,6 +247,8 @@ class DescribeFlowOperationResult {
 
   Aws::String m_availabilityZone;
 
+  Aws::String m_availabilityZoneId;
+
   Aws::String m_vpcEndpointAssociationArn;
 
   Aws::String m_vpcEndpointId;
@@ -249,6 +269,7 @@ class DescribeFlowOperationResult {
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_firewallArnHasBeenSet = false;
   bool m_availabilityZoneHasBeenSet = false;
+  bool m_availabilityZoneIdHasBeenSet = false;
   bool m_vpcEndpointAssociationArnHasBeenSet = false;
   bool m_vpcEndpointIdHasBeenSet = false;
   bool m_flowOperationIdHasBeenSet = false;

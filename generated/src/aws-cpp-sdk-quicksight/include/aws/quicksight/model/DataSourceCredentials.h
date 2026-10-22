@@ -9,6 +9,9 @@
 #include <aws/quicksight/model/CredentialPair.h>
 #include <aws/quicksight/model/KeyPairCredentials.h>
 #include <aws/quicksight/model/OAuthClientCredentials.h>
+#include <aws/quicksight/model/OneDriveClientCredentials.h>
+#include <aws/quicksight/model/ServiceAccountCredentials.h>
+#include <aws/quicksight/model/SharePointClientCredentials.h>
 #include <aws/quicksight/model/WebProxyCredentials.h>
 
 #include <utility>
@@ -153,6 +156,63 @@ class DataSourceCredentials {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The service account credentials for connecting to a data source that uses
+   * Google Workspace domain-wide delegation.</p>
+   */
+  inline const ServiceAccountCredentials& GetServiceAccountCredentials() const { return m_serviceAccountCredentials; }
+  inline bool ServiceAccountCredentialsHasBeenSet() const { return m_serviceAccountCredentialsHasBeenSet; }
+  template <typename ServiceAccountCredentialsT = ServiceAccountCredentials>
+  void SetServiceAccountCredentials(ServiceAccountCredentialsT&& value) {
+    m_serviceAccountCredentialsHasBeenSet = true;
+    m_serviceAccountCredentials = std::forward<ServiceAccountCredentialsT>(value);
+  }
+  template <typename ServiceAccountCredentialsT = ServiceAccountCredentials>
+  DataSourceCredentials& WithServiceAccountCredentials(ServiceAccountCredentialsT&& value) {
+    SetServiceAccountCredentials(std::forward<ServiceAccountCredentialsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The client credentials for connecting to a Microsoft SharePoint data source
+   * using two-legged OAuth (2LO) certificate-based authentication.</p>
+   */
+  inline const SharePointClientCredentials& GetSharePointClientCredentials() const { return m_sharePointClientCredentials; }
+  inline bool SharePointClientCredentialsHasBeenSet() const { return m_sharePointClientCredentialsHasBeenSet; }
+  template <typename SharePointClientCredentialsT = SharePointClientCredentials>
+  void SetSharePointClientCredentials(SharePointClientCredentialsT&& value) {
+    m_sharePointClientCredentialsHasBeenSet = true;
+    m_sharePointClientCredentials = std::forward<SharePointClientCredentialsT>(value);
+  }
+  template <typename SharePointClientCredentialsT = SharePointClientCredentials>
+  DataSourceCredentials& WithSharePointClientCredentials(SharePointClientCredentialsT&& value) {
+    SetSharePointClientCredentials(std::forward<SharePointClientCredentialsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The client credentials for connecting to a Microsoft OneDrive data source
+   * using two-legged OAuth (2LO) certificate-based authentication.</p>
+   */
+  inline const OneDriveClientCredentials& GetOneDriveClientCredentials() const { return m_oneDriveClientCredentials; }
+  inline bool OneDriveClientCredentialsHasBeenSet() const { return m_oneDriveClientCredentialsHasBeenSet; }
+  template <typename OneDriveClientCredentialsT = OneDriveClientCredentials>
+  void SetOneDriveClientCredentials(OneDriveClientCredentialsT&& value) {
+    m_oneDriveClientCredentialsHasBeenSet = true;
+    m_oneDriveClientCredentials = std::forward<OneDriveClientCredentialsT>(value);
+  }
+  template <typename OneDriveClientCredentialsT = OneDriveClientCredentials>
+  DataSourceCredentials& WithOneDriveClientCredentials(OneDriveClientCredentialsT&& value) {
+    SetOneDriveClientCredentials(std::forward<OneDriveClientCredentialsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   CredentialPair m_credentialPair;
 
@@ -165,12 +225,21 @@ class DataSourceCredentials {
   WebProxyCredentials m_webProxyCredentials;
 
   OAuthClientCredentials m_oAuthClientCredentials;
+
+  ServiceAccountCredentials m_serviceAccountCredentials;
+
+  SharePointClientCredentials m_sharePointClientCredentials;
+
+  OneDriveClientCredentials m_oneDriveClientCredentials;
   bool m_credentialPairHasBeenSet = false;
   bool m_copySourceArnHasBeenSet = false;
   bool m_secretArnHasBeenSet = false;
   bool m_keyPairCredentialsHasBeenSet = false;
   bool m_webProxyCredentialsHasBeenSet = false;
   bool m_oAuthClientCredentialsHasBeenSet = false;
+  bool m_serviceAccountCredentialsHasBeenSet = false;
+  bool m_sharePointClientCredentialsHasBeenSet = false;
+  bool m_oneDriveClientCredentialsHasBeenSet = false;
 };
 
 }  // namespace Model

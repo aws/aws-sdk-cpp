@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/bedrock-agent-runtime/model/AgenticRetrieveAction.h>
+#include <aws/bedrock-agent-runtime/model/AgenticRetrieveAppliedInstruction.h>
 #include <aws/bedrock-agent-runtime/model/AgenticRetrieveFailure.h>
 #include <aws/bedrock-agent-runtime/model/AgenticRetrieveSourceMetadata.h>
 #include <aws/bedrock-agent-runtime/model/AgenticRetrieveStatus.h>
@@ -60,6 +61,25 @@ class AgenticRetrieveTraceEventAttributes {
   AgenticRetrieveTraceEventAttributes& AddActions(ActionsT&& value) {
     m_actionsHasBeenSet = true;
     m_actions.emplace_back(std::forward<ActionsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The agent reports the retrieval instruction applied to this request on the
+   * first planning step.</p>
+   */
+  inline const AgenticRetrieveAppliedInstruction& GetAppliedInstruction() const { return m_appliedInstruction; }
+  inline bool AppliedInstructionHasBeenSet() const { return m_appliedInstructionHasBeenSet; }
+  template <typename AppliedInstructionT = AgenticRetrieveAppliedInstruction>
+  void SetAppliedInstruction(AppliedInstructionT&& value) {
+    m_appliedInstructionHasBeenSet = true;
+    m_appliedInstruction = std::forward<AppliedInstructionT>(value);
+  }
+  template <typename AppliedInstructionT = AgenticRetrieveAppliedInstruction>
+  AgenticRetrieveTraceEventAttributes& WithAppliedInstruction(AppliedInstructionT&& value) {
+    SetAppliedInstruction(std::forward<AppliedInstructionT>(value));
     return *this;
   }
   ///@}
@@ -212,6 +232,8 @@ class AgenticRetrieveTraceEventAttributes {
  private:
   Aws::Vector<AgenticRetrieveAction> m_actions;
 
+  AgenticRetrieveAppliedInstruction m_appliedInstruction;
+
   Aws::Vector<AgenticRetrieveFailure> m_failures;
 
   Aws::String m_message;
@@ -226,6 +248,7 @@ class AgenticRetrieveTraceEventAttributes {
 
   Aws::Vector<AgenticRetrieveWarning> m_warnings;
   bool m_actionsHasBeenSet = false;
+  bool m_appliedInstructionHasBeenSet = false;
   bool m_failuresHasBeenSet = false;
   bool m_messageHasBeenSet = false;
   bool m_retrievalMetadataHasBeenSet = false;

@@ -24,6 +24,13 @@ static const int StatusCheckFailed_System_HASH = HashingUtils::HashString("Statu
 static const int BurstCapacityTime_HASH = HashingUtils::HashString("BurstCapacityTime");
 static const int BurstCapacityPercentage_HASH = HashingUtils::HashString("BurstCapacityPercentage");
 static const int MetadataNoToken_HASH = HashingUtils::HashString("MetadataNoToken");
+static const int DiskReadOps_HASH = HashingUtils::HashString("DiskReadOps");
+static const int DiskWriteOps_HASH = HashingUtils::HashString("DiskWriteOps");
+static const int DiskReadBytes_HASH = HashingUtils::HashString("DiskReadBytes");
+static const int DiskWriteBytes_HASH = HashingUtils::HashString("DiskWriteBytes");
+static const int DiskTotalReadTime_HASH = HashingUtils::HashString("DiskTotalReadTime");
+static const int DiskTotalWriteTime_HASH = HashingUtils::HashString("DiskTotalWriteTime");
+static const int DiskQueueLength_HASH = HashingUtils::HashString("DiskQueueLength");
 
 InstanceMetricName GetInstanceMetricNameForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -45,6 +52,20 @@ InstanceMetricName GetInstanceMetricNameForName(const Aws::String& name) {
     return InstanceMetricName::BurstCapacityPercentage;
   } else if (hashCode == MetadataNoToken_HASH) {
     return InstanceMetricName::MetadataNoToken;
+  } else if (hashCode == DiskReadOps_HASH) {
+    return InstanceMetricName::DiskReadOps;
+  } else if (hashCode == DiskWriteOps_HASH) {
+    return InstanceMetricName::DiskWriteOps;
+  } else if (hashCode == DiskReadBytes_HASH) {
+    return InstanceMetricName::DiskReadBytes;
+  } else if (hashCode == DiskWriteBytes_HASH) {
+    return InstanceMetricName::DiskWriteBytes;
+  } else if (hashCode == DiskTotalReadTime_HASH) {
+    return InstanceMetricName::DiskTotalReadTime;
+  } else if (hashCode == DiskTotalWriteTime_HASH) {
+    return InstanceMetricName::DiskTotalWriteTime;
+  } else if (hashCode == DiskQueueLength_HASH) {
+    return InstanceMetricName::DiskQueueLength;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -77,6 +98,20 @@ Aws::String GetNameForInstanceMetricName(InstanceMetricName enumValue) {
       return "BurstCapacityPercentage";
     case InstanceMetricName::MetadataNoToken:
       return "MetadataNoToken";
+    case InstanceMetricName::DiskReadOps:
+      return "DiskReadOps";
+    case InstanceMetricName::DiskWriteOps:
+      return "DiskWriteOps";
+    case InstanceMetricName::DiskReadBytes:
+      return "DiskReadBytes";
+    case InstanceMetricName::DiskWriteBytes:
+      return "DiskWriteBytes";
+    case InstanceMetricName::DiskTotalReadTime:
+      return "DiskTotalReadTime";
+    case InstanceMetricName::DiskTotalWriteTime:
+      return "DiskTotalWriteTime";
+    case InstanceMetricName::DiskQueueLength:
+      return "DiskQueueLength";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

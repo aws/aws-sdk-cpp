@@ -1443,6 +1443,15 @@ static const int r9gd_24xlarge_HASH = HashingUtils::HashString("r9gd.24xlarge");
 static const int r9gd_48xlarge_HASH = HashingUtils::HashString("r9gd.48xlarge");
 static const int r9gd_metal_48xl_HASH = HashingUtils::HashString("r9gd.metal-48xl");
 static const int m9g_medium_HASH = HashingUtils::HashString("m9g.medium");
+static const int t8i_nano_HASH = HashingUtils::HashString("t8i.nano");
+static const int t8i_micro_HASH = HashingUtils::HashString("t8i.micro");
+static const int t8i_small_HASH = HashingUtils::HashString("t8i.small");
+static const int t8i_medium_HASH = HashingUtils::HashString("t8i.medium");
+static const int i8g_metal_48xl_HASH = HashingUtils::HashString("i8g.metal-48xl");
+static const int r8gb_48xlarge_HASH = HashingUtils::HashString("r8gb.48xlarge");
+static const int r8gb_metal_48xl_HASH = HashingUtils::HashString("r8gb.metal-48xl");
+static const int m9gd_medium_HASH = HashingUtils::HashString("m9gd.medium");
+static const int trn2u_48xlarge_HASH = HashingUtils::HashString("trn2u.48xlarge");
 
 /*
 The if-else chains in this file are converted into a jump table by the compiler,
@@ -5777,6 +5786,33 @@ static bool GetEnumForNameHelper11(int hashCode, InstanceType& enumValue) {
     return true;
   } else if (hashCode == m9g_medium_HASH) {
     enumValue = InstanceType::m9g_medium;
+    return true;
+  } else if (hashCode == t8i_nano_HASH) {
+    enumValue = InstanceType::t8i_nano;
+    return true;
+  } else if (hashCode == t8i_micro_HASH) {
+    enumValue = InstanceType::t8i_micro;
+    return true;
+  } else if (hashCode == t8i_small_HASH) {
+    enumValue = InstanceType::t8i_small;
+    return true;
+  } else if (hashCode == t8i_medium_HASH) {
+    enumValue = InstanceType::t8i_medium;
+    return true;
+  } else if (hashCode == i8g_metal_48xl_HASH) {
+    enumValue = InstanceType::i8g_metal_48xl;
+    return true;
+  } else if (hashCode == r8gb_48xlarge_HASH) {
+    enumValue = InstanceType::r8gb_48xlarge;
+    return true;
+  } else if (hashCode == r8gb_metal_48xl_HASH) {
+    enumValue = InstanceType::r8gb_metal_48xl;
+    return true;
+  } else if (hashCode == m9gd_medium_HASH) {
+    enumValue = InstanceType::m9gd_medium;
+    return true;
+  } else if (hashCode == trn2u_48xlarge_HASH) {
+    enumValue = InstanceType::trn2u_48xlarge;
     return true;
   }
   return false;
@@ -10133,6 +10169,33 @@ static bool GetNameForEnumHelper11(InstanceType enumValue, Aws::String& value) {
       return true;
     case InstanceType::m9g_medium:
       value = "m9g.medium";
+      return true;
+    case InstanceType::t8i_nano:
+      value = "t8i.nano";
+      return true;
+    case InstanceType::t8i_micro:
+      value = "t8i.micro";
+      return true;
+    case InstanceType::t8i_small:
+      value = "t8i.small";
+      return true;
+    case InstanceType::t8i_medium:
+      value = "t8i.medium";
+      return true;
+    case InstanceType::i8g_metal_48xl:
+      value = "i8g.metal-48xl";
+      return true;
+    case InstanceType::r8gb_48xlarge:
+      value = "r8gb.48xlarge";
+      return true;
+    case InstanceType::r8gb_metal_48xl:
+      value = "r8gb.metal-48xl";
+      return true;
+    case InstanceType::m9gd_medium:
+      value = "m9gd.medium";
+      return true;
+    case InstanceType::trn2u_48xlarge:
+      value = "trn2u.48xlarge";
       return true;
     default:
       return false;

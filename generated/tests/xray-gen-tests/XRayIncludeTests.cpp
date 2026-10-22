@@ -27,6 +27,7 @@
 #include <aws/xray/model/BatchGetTracesResult.h>
 #include <aws/xray/model/CancelTraceRetrievalRequest.h>
 #include <aws/xray/model/CancelTraceRetrievalResult.h>
+#include <aws/xray/model/CloudWatchLogsConfiguration.h>
 #include <aws/xray/model/CreateGroupRequest.h>
 #include <aws/xray/model/CreateGroupResult.h>
 #include <aws/xray/model/CreateSamplingRuleRequest.h>

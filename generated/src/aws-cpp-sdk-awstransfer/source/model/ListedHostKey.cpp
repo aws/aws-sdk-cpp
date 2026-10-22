@@ -42,6 +42,14 @@ ListedHostKey& ListedHostKey::operator=(JsonView jsonValue) {
     m_dateImported = jsonValue.GetDouble("DateImported");
     m_dateImportedHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("StorageType")) {
+    m_storageType = HostKeyStorageTypeMapper::GetHostKeyStorageTypeForName(jsonValue.GetString("StorageType"));
+    m_storageTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("SecretId")) {
+    m_secretId = jsonValue.GetString("SecretId");
+    m_secretIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -70,6 +78,14 @@ JsonValue ListedHostKey::Jsonize() const {
 
   if (m_dateImportedHasBeenSet) {
     payload.WithDouble("DateImported", m_dateImported.SecondsWithMSPrecision());
+  }
+
+  if (m_storageTypeHasBeenSet) {
+    payload.WithString("StorageType", HostKeyStorageTypeMapper::GetNameForHostKeyStorageType(m_storageType));
+  }
+
+  if (m_secretIdHasBeenSet) {
+    payload.WithString("SecretId", m_secretId);
   }
 
   return payload;

@@ -103,6 +103,8 @@ static const int INVALID_DEPLOYMENT_STYLE_HASH = HashingUtils::HashString("Inval
 static const int INVALID_ZONAL_DEPLOYMENT_CONFIGURATION_HASH = HashingUtils::HashString("InvalidZonalDeploymentConfigurationException");
 static const int INVALID_APPLICATION_NAME_HASH = HashingUtils::HashString("InvalidApplicationNameException");
 static const int BATCH_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("BatchLimitExceededException");
+static const int INVALID_AUTO_SCALING_GROUP_PROCESS_TO_SUSPEND_HASH =
+    HashingUtils::HashString("InvalidAutoScalingGroupProcessToSuspendException");
 static const int LIFECYCLE_HOOK_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LifecycleHookLimitExceededException");
 static const int INVALID_TAGS_TO_ADD_HASH = HashingUtils::HashString("InvalidTagsToAddException");
 static const int INVALID_IAM_USER_ARN_HASH = HashingUtils::HashString("InvalidIamUserArnException");
@@ -314,6 +316,9 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_APPLICATION_NAME), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == BATCH_LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::BATCH_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == INVALID_AUTO_SCALING_GROUP_PROCESS_TO_SUSPEND_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::INVALID_AUTO_SCALING_GROUP_PROCESS_TO_SUSPEND),
+                                RetryableType::NOT_RETRYABLE);
   } else if (hashCode == LIFECYCLE_HOOK_LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeDeployErrors::LIFECYCLE_HOOK_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INVALID_TAGS_TO_ADD_HASH) {

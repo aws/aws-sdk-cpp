@@ -26,6 +26,10 @@ ChainedInvokeOptions& ChainedInvokeOptions::operator=(JsonView jsonValue) {
     m_tenantId = jsonValue.GetString("TenantId");
     m_tenantIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("XAmznTraceId")) {
+    m_xAmznTraceId = jsonValue.GetString("XAmznTraceId");
+    m_xAmznTraceIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue ChainedInvokeOptions::Jsonize() const {
 
   if (m_tenantIdHasBeenSet) {
     payload.WithString("TenantId", m_tenantId);
+  }
+
+  if (m_xAmznTraceIdHasBeenSet) {
+    payload.WithString("XAmznTraceId", m_xAmznTraceId);
   }
 
   return payload;

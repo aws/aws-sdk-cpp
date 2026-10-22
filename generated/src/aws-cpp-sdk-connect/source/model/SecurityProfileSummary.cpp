@@ -38,6 +38,10 @@ SecurityProfileSummary& SecurityProfileSummary::operator=(JsonView jsonValue) {
     m_lastModifiedRegion = jsonValue.GetString("LastModifiedRegion");
     m_lastModifiedRegionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Type")) {
+    m_type = SecurityProfileTypeMapper::GetSecurityProfileTypeForName(jsonValue.GetString("Type"));
+    m_typeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +66,10 @@ JsonValue SecurityProfileSummary::Jsonize() const {
 
   if (m_lastModifiedRegionHasBeenSet) {
     payload.WithString("LastModifiedRegion", m_lastModifiedRegion);
+  }
+
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", SecurityProfileTypeMapper::GetNameForSecurityProfileType(m_type));
   }
 
   return payload;

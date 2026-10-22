@@ -10,7 +10,7 @@
 namespace Aws {
 namespace DataZone {
 namespace Model {
-enum class ProjectDesignation { NOT_SET, OWNER, CONTRIBUTOR, PROJECT_CATALOG_STEWARD };
+enum class ProjectDesignation { NOT_SET, OWNER, CONTRIBUTOR, PROJECT_CATALOG_STEWARD, USER_CREATED_DESIGNATION };
 
 namespace ProjectDesignationMapper {
 AWS_DATAZONE_API ProjectDesignation GetProjectDesignationForName(const Aws::String& name);

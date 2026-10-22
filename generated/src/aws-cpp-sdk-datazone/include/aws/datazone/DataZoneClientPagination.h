@@ -15,6 +15,7 @@
 #include <aws/datazone/model/ListDataSourceRunActivitiesPaginationTraits.h>
 #include <aws/datazone/model/ListDataSourceRunsPaginationTraits.h>
 #include <aws/datazone/model/ListDataSourcesPaginationTraits.h>
+#include <aws/datazone/model/ListDesignationsPaginationTraits.h>
 #include <aws/datazone/model/ListDomainUnitsForParentPaginationTraits.h>
 #include <aws/datazone/model/ListDomainsPaginationTraits.h>
 #include <aws/datazone/model/ListEntityOwnersPaginationTraits.h>
@@ -71,6 +72,8 @@ using ListDataSourceRunsPaginator = Aws::Utils::Pagination::Paginator<DataZoneCl
                                                                       Pagination::ListDataSourceRunsPaginationTraits<DataZoneClient>>;
 using ListDataSourcesPaginator = Aws::Utils::Pagination::Paginator<DataZoneClient, Model::ListDataSourcesRequest,
                                                                    Pagination::ListDataSourcesPaginationTraits<DataZoneClient>>;
+using ListDesignationsPaginator = Aws::Utils::Pagination::Paginator<DataZoneClient, Model::ListDesignationsRequest,
+                                                                    Pagination::ListDesignationsPaginationTraits<DataZoneClient>>;
 using ListDomainsPaginator =
     Aws::Utils::Pagination::Paginator<DataZoneClient, Model::ListDomainsRequest, Pagination::ListDomainsPaginationTraits<DataZoneClient>>;
 using ListDomainUnitsForParentPaginator =

@@ -49,6 +49,14 @@ DescribedHostKey& DescribedHostKey::operator=(JsonView jsonValue) {
     }
     m_tagsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("StorageType")) {
+    m_storageType = HostKeyStorageTypeMapper::GetHostKeyStorageTypeForName(jsonValue.GetString("StorageType"));
+    m_storageTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("SecretId")) {
+    m_secretId = jsonValue.GetString("SecretId");
+    m_secretIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -85,6 +93,14 @@ JsonValue DescribedHostKey::Jsonize() const {
       tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
     }
     payload.WithArray("Tags", std::move(tagsJsonList));
+  }
+
+  if (m_storageTypeHasBeenSet) {
+    payload.WithString("StorageType", HostKeyStorageTypeMapper::GetNameForHostKeyStorageType(m_storageType));
+  }
+
+  if (m_secretIdHasBeenSet) {
+    payload.WithString("SecretId", m_secretId);
   }
 
   return payload;

@@ -90,6 +90,39 @@ class AWS_ECS_API ECSClient : public Aws::Client::AWSJsonClient,
   virtual ~ECSClient();
 
   /**
+   * <p>Associates a gateway with an Amazon ECS cluster. After a cluster is
+   * associated with a gateway, services in that cluster can use the gateway for
+   * ingress. No changes take effect until you update a service in the cluster to use
+   * the gateway. A single cluster can be associated with up to 5
+   * gateways.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/AssociateGatewayWithCluster">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::AssociateGatewayWithClusterOutcome AssociateGatewayWithCluster(
+      const Model::AssociateGatewayWithClusterRequest& request) const;
+
+  /**
+   * A Callable wrapper for AssociateGatewayWithCluster that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename AssociateGatewayWithClusterRequestT = Model::AssociateGatewayWithClusterRequest>
+  Model::AssociateGatewayWithClusterOutcomeCallable AssociateGatewayWithClusterCallable(
+      const AssociateGatewayWithClusterRequestT& request) const {
+    return SubmitCallable(&ECSClient::AssociateGatewayWithCluster, request);
+  }
+
+  /**
+   * An Async wrapper for AssociateGatewayWithCluster that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename AssociateGatewayWithClusterRequestT = Model::AssociateGatewayWithClusterRequest>
+  void AssociateGatewayWithClusterAsync(const AssociateGatewayWithClusterRequestT& request,
+                                        const AssociateGatewayWithClusterResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ECSClient::AssociateGatewayWithCluster, request, handler, context);
+  }
+
+  /**
    * <p>Continues or rolls back an Amazon ECS service deployment that is paused at a
    * lifecycle hook.</p> <p>When a service deployment reaches a lifecycle stage that
    * has a <code>PAUSE</code> hook configured, the deployment pauses and waits for an
@@ -268,6 +301,40 @@ class AWS_ECS_API ECSClient : public Aws::Client::AWSJsonClient,
                                         const CreateExpressGatewayServiceResponseReceivedHandler& handler,
                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ECSClient::CreateExpressGatewayService, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a gateway. A gateway defines and dynamically manages ingress paths
+   * for your Amazon ECS services, handling traffic routing and infrastructure across
+   * multiple services while optimizing infrastructure usage.
+   * <code>CreateGateway</code> is a synchronous operation and the gateway is
+   * returned with a status of <code>ACTIVE</code>. The load balancers and other
+   * infrastructure that a gateway manages aren't created until a service in an
+   * associated cluster begins using the gateway.</p> <p>To use this operation, you
+   * must have the <code>iam:PassRole</code> permission for the infrastructure role
+   * that you specify in <code>infrastructureRoleArn</code>.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateGateway">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateGatewayOutcome CreateGateway(const Model::CreateGatewayRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateGateway that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename CreateGatewayRequestT = Model::CreateGatewayRequest>
+  Model::CreateGatewayOutcomeCallable CreateGatewayCallable(const CreateGatewayRequestT& request) const {
+    return SubmitCallable(&ECSClient::CreateGateway, request);
+  }
+
+  /**
+   * An Async wrapper for CreateGateway that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename CreateGatewayRequestT = Model::CreateGatewayRequest>
+  void CreateGatewayAsync(const CreateGatewayRequestT& request, const CreateGatewayResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ECSClient::CreateGateway, request, handler, context);
   }
 
   /**
@@ -701,6 +768,37 @@ class AWS_ECS_API ECSClient : public Aws::Client::AWSJsonClient,
                                         const DeleteExpressGatewayServiceResponseReceivedHandler& handler,
                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ECSClient::DeleteExpressGatewayService, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a gateway. Before you can delete a gateway, deletion protection must
+   * be disabled and the gateway must not have any cluster associations that are in
+   * the <code>ACTIVE</code> or <code>DISASSOCIATING</code> state. If associations
+   * exist, the operation fails; disassociate all clusters first.
+   * <code>DeleteGateway</code> is a synchronous operation. After you delete a
+   * gateway, subsequent requests for it return a
+   * <code>GatewayNotFoundException</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteGateway">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteGatewayOutcome DeleteGateway(const Model::DeleteGatewayRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteGateway that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DeleteGatewayRequestT = Model::DeleteGatewayRequest>
+  Model::DeleteGatewayOutcomeCallable DeleteGatewayCallable(const DeleteGatewayRequestT& request) const {
+    return SubmitCallable(&ECSClient::DeleteGateway, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteGateway that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DeleteGatewayRequestT = Model::DeleteGatewayRequest>
+  void DeleteGatewayAsync(const DeleteGatewayRequestT& request, const DeleteGatewayResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ECSClient::DeleteGateway, request, handler, context);
   }
 
   /**
@@ -1157,6 +1255,95 @@ class AWS_ECS_API ECSClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Describes a gateway, including its configuration, status, and the
+   * type-specific infrastructure settings that it uses.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeGateway">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeGatewayOutcome DescribeGateway(const Model::DescribeGatewayRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeGateway that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DescribeGatewayRequestT = Model::DescribeGatewayRequest>
+  Model::DescribeGatewayOutcomeCallable DescribeGatewayCallable(const DescribeGatewayRequestT& request) const {
+    return SubmitCallable(&ECSClient::DescribeGateway, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeGateway that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DescribeGatewayRequestT = Model::DescribeGatewayRequest>
+  void DescribeGatewayAsync(const DescribeGatewayRequestT& request, const DescribeGatewayResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ECSClient::DescribeGateway, request, handler, context);
+  }
+
+  /**
+   * <p>Returns the infrastructure that a gateway has created and manages, so that
+   * you can follow the traffic path from top-level shared resources, such as load
+   * balancers, to the service-specific resources represented as gateway routes.
+   * Responses include only the Amazon Resource Names (ARNs) of gateway-managed
+   * infrastructure. For the current state of a resource, describe it with the
+   * corresponding Amazon Web Services service (Elastic Load Balancing, Amazon EC2,
+   * or Amazon Web Services Certificate Manager). The results are
+   * paginated.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeGatewayResources">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeGatewayResourcesOutcome DescribeGatewayResources(const Model::DescribeGatewayResourcesRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeGatewayResources that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeGatewayResourcesRequestT = Model::DescribeGatewayResourcesRequest>
+  Model::DescribeGatewayResourcesOutcomeCallable DescribeGatewayResourcesCallable(const DescribeGatewayResourcesRequestT& request) const {
+    return SubmitCallable(&ECSClient::DescribeGatewayResources, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeGatewayResources that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeGatewayResourcesRequestT = Model::DescribeGatewayResourcesRequest>
+  void DescribeGatewayResourcesAsync(const DescribeGatewayResourcesRequestT& request,
+                                     const DescribeGatewayResourcesResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ECSClient::DescribeGatewayResources, request, handler, context);
+  }
+
+  /**
+   * <p>Describes a gateway route, including its status, the service it routes
+   * traffic to, and the service-specific infrastructure, such as target groups and
+   * listener rules, that the gateway manages for it.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeGatewayRoute">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeGatewayRouteOutcome DescribeGatewayRoute(const Model::DescribeGatewayRouteRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeGatewayRoute that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeGatewayRouteRequestT = Model::DescribeGatewayRouteRequest>
+  Model::DescribeGatewayRouteOutcomeCallable DescribeGatewayRouteCallable(const DescribeGatewayRouteRequestT& request) const {
+    return SubmitCallable(&ECSClient::DescribeGatewayRoute, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeGatewayRoute that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeGatewayRouteRequestT = Model::DescribeGatewayRouteRequest>
+  void DescribeGatewayRouteAsync(const DescribeGatewayRouteRequestT& request, const DescribeGatewayRouteResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ECSClient::DescribeGatewayRoute, request, handler, context);
+  }
+
+  /**
    * <p>Describes one or more of your service deployments.</p> <p>A service
    * deployment happens when you release a software update for the service. For more
    * information, see <a
@@ -1340,6 +1527,40 @@ class AWS_ECS_API ECSClient : public Aws::Client::AWSJsonClient,
   void DescribeTasksAsync(const DescribeTasksRequestT& request, const DescribeTasksResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ECSClient::DescribeTasks, request, handler, context);
+  }
+
+  /**
+   * <p>Removes the association between a gateway and an Amazon ECS cluster. The
+   * association remains in the <code>DISASSOCIATING</code> state until you remove
+   * all of the gateway routes for the cluster by updating the associated services.
+   * You can use <code>ListGatewayRoutes</code> with a cluster filter to determine
+   * which routes are preventing disassociation. No infrastructure changes are made
+   * until the affected services are updated.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DisassociateGatewayFromCluster">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DisassociateGatewayFromClusterOutcome DisassociateGatewayFromCluster(
+      const Model::DisassociateGatewayFromClusterRequest& request) const;
+
+  /**
+   * A Callable wrapper for DisassociateGatewayFromCluster that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DisassociateGatewayFromClusterRequestT = Model::DisassociateGatewayFromClusterRequest>
+  Model::DisassociateGatewayFromClusterOutcomeCallable DisassociateGatewayFromClusterCallable(
+      const DisassociateGatewayFromClusterRequestT& request) const {
+    return SubmitCallable(&ECSClient::DisassociateGatewayFromCluster, request);
+  }
+
+  /**
+   * An Async wrapper for DisassociateGatewayFromCluster that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DisassociateGatewayFromClusterRequestT = Model::DisassociateGatewayFromClusterRequest>
+  void DisassociateGatewayFromClusterAsync(const DisassociateGatewayFromClusterRequestT& request,
+                                           const DisassociateGatewayFromClusterResponseReceivedHandler& handler,
+                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ECSClient::DisassociateGatewayFromCluster, request, handler, context);
   }
 
   /**
@@ -1633,6 +1854,99 @@ class AWS_ECS_API ECSClient : public Aws::Client::AWSJsonClient,
                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                         const ListDaemonsRequestT& request = {}) const {
     return SubmitAsync(&ECSClient::ListDaemons, request, handler, context);
+  }
+
+  /**
+   * <p>Returns a list of the associations between gateways and clusters. You can
+   * filter the results by gateway, cluster, and status. The results are paginated.
+   * We recommend that you use pagination to ensure that the operation returns
+   * quickly and successfully.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListGatewayClusterAssociations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListGatewayClusterAssociationsOutcome ListGatewayClusterAssociations(
+      const Model::ListGatewayClusterAssociationsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListGatewayClusterAssociations that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListGatewayClusterAssociationsRequestT = Model::ListGatewayClusterAssociationsRequest>
+  Model::ListGatewayClusterAssociationsOutcomeCallable ListGatewayClusterAssociationsCallable(
+      const ListGatewayClusterAssociationsRequestT& request = {}) const {
+    return SubmitCallable(&ECSClient::ListGatewayClusterAssociations, request);
+  }
+
+  /**
+   * An Async wrapper for ListGatewayClusterAssociations that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename ListGatewayClusterAssociationsRequestT = Model::ListGatewayClusterAssociationsRequest>
+  void ListGatewayClusterAssociationsAsync(const ListGatewayClusterAssociationsResponseReceivedHandler& handler,
+                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                           const ListGatewayClusterAssociationsRequestT& request = {}) const {
+    return SubmitAsync(&ECSClient::ListGatewayClusterAssociations, request, handler, context);
+  }
+
+  /**
+   * <p>Returns a list of gateway routes. A gateway route represents the association
+   * between a service and a gateway and the service-specific infrastructure the
+   * gateway manages for it. You can filter the results by gateway, cluster, service,
+   * container port name, and status. The results are paginated. We recommend that
+   * you use pagination to ensure that the operation returns quickly and
+   * successfully.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListGatewayRoutes">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListGatewayRoutesOutcome ListGatewayRoutes(const Model::ListGatewayRoutesRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListGatewayRoutes that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListGatewayRoutesRequestT = Model::ListGatewayRoutesRequest>
+  Model::ListGatewayRoutesOutcomeCallable ListGatewayRoutesCallable(const ListGatewayRoutesRequestT& request = {}) const {
+    return SubmitCallable(&ECSClient::ListGatewayRoutes, request);
+  }
+
+  /**
+   * An Async wrapper for ListGatewayRoutes that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListGatewayRoutesRequestT = Model::ListGatewayRoutesRequest>
+  void ListGatewayRoutesAsync(const ListGatewayRoutesResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                              const ListGatewayRoutesRequestT& request = {}) const {
+    return SubmitAsync(&ECSClient::ListGatewayRoutes, request, handler, context);
+  }
+
+  /**
+   * <p>Returns a list of gateways in your account. You can filter the results by
+   * gateway name and status. The results are paginated. We recommend that you use
+   * pagination to ensure that the operation returns quickly and
+   * successfully.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListGateways">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListGatewaysOutcome ListGateways(const Model::ListGatewaysRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListGateways that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListGatewaysRequestT = Model::ListGatewaysRequest>
+  Model::ListGatewaysOutcomeCallable ListGatewaysCallable(const ListGatewaysRequestT& request = {}) const {
+    return SubmitCallable(&ECSClient::ListGateways, request);
+  }
+
+  /**
+   * An Async wrapper for ListGateways that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListGatewaysRequestT = Model::ListGatewaysRequest>
+  void ListGatewaysAsync(const ListGatewaysResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                         const ListGatewaysRequestT& request = {}) const {
+    return SubmitAsync(&ECSClient::ListGateways, request, handler, context);
   }
 
   /**
@@ -2705,6 +3019,44 @@ class AWS_ECS_API ECSClient : public Aws::Client::AWSJsonClient,
                                         const UpdateExpressGatewayServiceResponseReceivedHandler& handler,
                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ECSClient::UpdateExpressGatewayService, request, handler, context);
+  }
+
+  /**
+   * <p>Modifies the configuration of a gateway. You can change only the properties
+   * that can be applied without interrupting traffic, and the configuration variant
+   * that you provide must match the gateway's type. <code>UpdateGateway</code> is an
+   * asynchronous operation: the changes are applied to each load balancer the
+   * gateway manages, and the gateway reports a status of
+   * <code>UPDATE_IN_PROGRESS</code> until the update completes. If Amazon ECS can't
+   * update one or more resources, it makes a best effort to update the rest and the
+   * gateway status changes to <code>UPDATE_FAILED</code>. Use
+   * <code>DescribeGateway</code> to inspect the gateway's <code>statusReason</code>
+   * and failures list, which gives the ARN of each load balancer that was not
+   * updated and the operation, error code, and message for each failure.</p> <p>If
+   * you specify <code>infrastructureRoleArn</code>, you must have the
+   * <code>iam:PassRole</code> permission for that role.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateGateway">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateGatewayOutcome UpdateGateway(const Model::UpdateGatewayRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateGateway that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename UpdateGatewayRequestT = Model::UpdateGatewayRequest>
+  Model::UpdateGatewayOutcomeCallable UpdateGatewayCallable(const UpdateGatewayRequestT& request) const {
+    return SubmitCallable(&ECSClient::UpdateGateway, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateGateway that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename UpdateGatewayRequestT = Model::UpdateGatewayRequest>
+  void UpdateGatewayAsync(const UpdateGatewayRequestT& request, const UpdateGatewayResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ECSClient::UpdateGateway, request, handler, context);
   }
 
   /**

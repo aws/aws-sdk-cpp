@@ -22,6 +22,7 @@
 #include <aws/autoscaling/model/AcceleratorName.h>
 #include <aws/autoscaling/model/AcceleratorTotalMemoryMiBRequest.h>
 #include <aws/autoscaling/model/AcceleratorType.h>
+#include <aws/autoscaling/model/AccountSetting.h>
 #include <aws/autoscaling/model/Activity.h>
 #include <aws/autoscaling/model/AdjustmentType.h>
 #include <aws/autoscaling/model/Alarm.h>
@@ -74,6 +75,8 @@
 #include <aws/autoscaling/model/DeletionProtection.h>
 #include <aws/autoscaling/model/DescribeAccountLimitsRequest.h>
 #include <aws/autoscaling/model/DescribeAccountLimitsResult.h>
+#include <aws/autoscaling/model/DescribeAccountSettingsRequest.h>
+#include <aws/autoscaling/model/DescribeAccountSettingsResult.h>
 #include <aws/autoscaling/model/DescribeAdjustmentTypesRequest.h>
 #include <aws/autoscaling/model/DescribeAdjustmentTypesResult.h>
 #include <aws/autoscaling/model/DescribeAutoScalingGroupsPaginationTraits.h>
@@ -214,6 +217,8 @@
 #include <aws/autoscaling/model/PredictiveScalingPredefinedMetricPair.h>
 #include <aws/autoscaling/model/PredictiveScalingPredefinedScalingMetric.h>
 #include <aws/autoscaling/model/ProcessType.h>
+#include <aws/autoscaling/model/PutAccountSettingRequest.h>
+#include <aws/autoscaling/model/PutAccountSettingResult.h>
 #include <aws/autoscaling/model/PutLifecycleHookRequest.h>
 #include <aws/autoscaling/model/PutLifecycleHookResult.h>
 #include <aws/autoscaling/model/PutNotificationConfigurationRequest.h>

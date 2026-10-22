@@ -23,6 +23,14 @@ Aws::String DescribeDeliveryDestinationsRequest::SerializePayload() const {
     payload.WithInteger("limit", m_limit);
   }
 
+  if (m_namesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> namesJsonList(m_names.size());
+    for (unsigned namesIndex = 0; namesIndex < namesJsonList.GetLength(); ++namesIndex) {
+      namesJsonList[namesIndex].AsString(m_names[namesIndex]);
+    }
+    payload.WithArray("names", std::move(namesJsonList));
+  }
+
   return payload.View().WriteReadable();
 }
 

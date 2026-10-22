@@ -38,6 +38,10 @@ FirewallPolicyResponse& FirewallPolicyResponse::operator=(JsonView jsonValue) {
     m_firewallPolicyStatus = ResourceStatusMapper::GetResourceStatusForName(jsonValue.GetString("FirewallPolicyStatus"));
     m_firewallPolicyStatusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("StatusMessage")) {
+    m_statusMessage = jsonValue.GetString("StatusMessage");
+    m_statusMessageHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Tags")) {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
@@ -64,6 +68,13 @@ FirewallPolicyResponse& FirewallPolicyResponse::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("EncryptionConfiguration")) {
     m_encryptionConfiguration = jsonValue.GetObject("EncryptionConfiguration");
     m_encryptionConfigurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Errors")) {
+    Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("Errors");
+    for (unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex) {
+      m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
+    }
+    m_errorsHasBeenSet = true;
   }
   if (jsonValue.ValueExists("LastModifiedTime")) {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
@@ -95,6 +106,10 @@ JsonValue FirewallPolicyResponse::Jsonize() const {
     payload.WithString("FirewallPolicyStatus", ResourceStatusMapper::GetNameForResourceStatus(m_firewallPolicyStatus));
   }
 
+  if (m_statusMessageHasBeenSet) {
+    payload.WithString("StatusMessage", m_statusMessage);
+  }
+
   if (m_tagsHasBeenSet) {
     Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
     for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
@@ -121,6 +136,14 @@ JsonValue FirewallPolicyResponse::Jsonize() const {
 
   if (m_encryptionConfigurationHasBeenSet) {
     payload.WithObject("EncryptionConfiguration", m_encryptionConfiguration.Jsonize());
+  }
+
+  if (m_errorsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> errorsJsonList(m_errors.size());
+    for (unsigned errorsIndex = 0; errorsIndex < errorsJsonList.GetLength(); ++errorsIndex) {
+      errorsJsonList[errorsIndex].AsObject(m_errors[errorsIndex].Jsonize());
+    }
+    payload.WithArray("Errors", std::move(errorsJsonList));
   }
 
   if (m_lastModifiedTimeHasBeenSet) {

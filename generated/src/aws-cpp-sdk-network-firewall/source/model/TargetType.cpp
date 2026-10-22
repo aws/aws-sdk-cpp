@@ -17,6 +17,7 @@ namespace TargetTypeMapper {
 
 static const int TLS_SNI_HASH = HashingUtils::HashString("TLS_SNI");
 static const int HTTP_HOST_HASH = HashingUtils::HashString("HTTP_HOST");
+static const int AWS_ROUTE_53_RESOLVED_DOMAIN_HASH = HashingUtils::HashString("AWS_ROUTE_53_RESOLVED_DOMAIN");
 
 TargetType GetTargetTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ TargetType GetTargetTypeForName(const Aws::String& name) {
     return TargetType::TLS_SNI;
   } else if (hashCode == HTTP_HOST_HASH) {
     return TargetType::HTTP_HOST;
+  } else if (hashCode == AWS_ROUTE_53_RESOLVED_DOMAIN_HASH) {
+    return TargetType::AWS_ROUTE_53_RESOLVED_DOMAIN;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForTargetType(TargetType enumValue) {
       return "TLS_SNI";
     case TargetType::HTTP_HOST:
       return "HTTP_HOST";
+    case TargetType::AWS_ROUTE_53_RESOLVED_DOMAIN:
+      return "AWS_ROUTE_53_RESOLVED_DOMAIN";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

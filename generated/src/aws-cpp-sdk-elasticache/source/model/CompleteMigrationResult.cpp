@@ -34,6 +34,11 @@ CompleteMigrationResult& CompleteMigrationResult::operator=(const Aws::AmazonWeb
       m_replicationGroup = replicationGroupNode;
       m_replicationGroupHasBeenSet = true;
     }
+    XmlNode serverlessCacheNode = resultNode.FirstChild("ServerlessCache");
+    if (!serverlessCacheNode.IsNull()) {
+      m_serverlessCache = serverlessCacheNode;
+      m_serverlessCacheHasBeenSet = true;
+    }
   }
 
   if (!rootNode.IsNull()) {

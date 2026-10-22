@@ -56,6 +56,12 @@ VpcOriginEndpointConfig& VpcOriginEndpointConfig::operator=(const XmlNode& xmlNo
       m_originSslProtocols = originSslProtocolsNode;
       m_originSslProtocolsHasBeenSet = true;
     }
+    XmlNode ipAddressTypeNode = resultNode.FirstChild("IpAddressType");
+    if (!ipAddressTypeNode.IsNull()) {
+      m_ipAddressType = VpcIpAddressTypeMapper::GetVpcIpAddressTypeForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipAddressTypeNode.GetText()).c_str()));
+      m_ipAddressTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -95,6 +101,11 @@ void VpcOriginEndpointConfig::AddToNode(XmlNode& parentNode) const {
   if (m_originSslProtocolsHasBeenSet) {
     XmlNode originSslProtocolsNode = parentNode.CreateChildElement("OriginSslProtocols");
     m_originSslProtocols.AddToNode(originSslProtocolsNode);
+  }
+
+  if (m_ipAddressTypeHasBeenSet) {
+    XmlNode ipAddressTypeNode = parentNode.CreateChildElement("IpAddressType");
+    ipAddressTypeNode.SetText(VpcIpAddressTypeMapper::GetNameForVpcIpAddressType(m_ipAddressType));
   }
 }
 

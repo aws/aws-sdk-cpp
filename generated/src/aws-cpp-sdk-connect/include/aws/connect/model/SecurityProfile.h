@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/GranularAccessControlConfiguration.h>
+#include <aws/connect/model/SecurityProfileType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -302,6 +303,23 @@ class SecurityProfile {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The type of the security profile: <code>AWS_MANAGED</code> or
+   * <code>CUSTOMER_MANAGED</code>.</p>
+   */
+  inline SecurityProfileType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(SecurityProfileType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline SecurityProfile& WithType(SecurityProfileType value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -328,6 +346,8 @@ class SecurityProfile {
   Aws::String m_allowedAccessControlHierarchyGroupId;
 
   GranularAccessControlConfiguration m_granularAccessControlConfiguration;
+
+  SecurityProfileType m_type{SecurityProfileType::NOT_SET};
   bool m_idHasBeenSet = false;
   bool m_organizationResourceIdHasBeenSet = false;
   bool m_arnHasBeenSet = false;
@@ -341,6 +361,7 @@ class SecurityProfile {
   bool m_hierarchyRestrictedResourcesHasBeenSet = false;
   bool m_allowedAccessControlHierarchyGroupIdHasBeenSet = false;
   bool m_granularAccessControlConfigurationHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/monitoring/CloudWatchRequest.h>
 #include <aws/monitoring/CloudWatch_EXPORTS.h>
+#include <aws/monitoring/model/ActionConfiguration.h>
 #include <aws/monitoring/model/ComparisonOperator.h>
 #include <aws/monitoring/model/ScheduledQueryConfiguration.h>
 #include <aws/monitoring/model/Tag.h>
@@ -396,6 +397,26 @@ class PutLogAlarmRequest : public CloudWatchRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Settings that change the content of the notifications and events that the
+   * alarm sends when its state changes. These settings apply to the alarm's actions,
+   * whichever state triggers them.</p>
+   */
+  inline const ActionConfiguration& GetActionConfiguration() const { return m_actionConfiguration; }
+  inline bool ActionConfigurationHasBeenSet() const { return m_actionConfigurationHasBeenSet; }
+  template <typename ActionConfigurationT = ActionConfiguration>
+  void SetActionConfiguration(ActionConfigurationT&& value) {
+    m_actionConfigurationHasBeenSet = true;
+    m_actionConfiguration = std::forward<ActionConfigurationT>(value);
+  }
+  template <typename ActionConfigurationT = ActionConfiguration>
+  PutLogAlarmRequest& WithActionConfiguration(ActionConfigurationT&& value) {
+    SetActionConfiguration(std::forward<ActionConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_alarmName;
 
@@ -428,6 +449,8 @@ class PutLogAlarmRequest : public CloudWatchRequest {
   Aws::Vector<Tag> m_tags;
 
   WarmUpConfiguration m_warmUpConfiguration;
+
+  ActionConfiguration m_actionConfiguration;
   bool m_alarmNameHasBeenSet = false;
   bool m_alarmDescriptionHasBeenSet = false;
   bool m_scheduledQueryConfigurationHasBeenSet = false;
@@ -444,6 +467,7 @@ class PutLogAlarmRequest : public CloudWatchRequest {
   bool m_treatMissingDataHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_warmUpConfigurationHasBeenSet = false;
+  bool m_actionConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

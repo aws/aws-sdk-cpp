@@ -35,8 +35,8 @@ class NotificationConfig {
 
   ///@{
   /**
-   * <p>Notebook run states that trigger notifications. Ordering is not
-   * significant.</p>
+   * <p>The notebook run states that trigger notifications. You can specify up to 7
+   * states, and the ordering of the states is not significant.</p>
    */
   inline const Aws::Vector<NotifyOnState>& GetNotifyOn() const { return m_notifyOn; }
   inline bool NotifyOnHasBeenSet() const { return m_notifyOnHasBeenSet; }

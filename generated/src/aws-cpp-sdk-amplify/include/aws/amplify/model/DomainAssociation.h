@@ -161,12 +161,12 @@ class DomainAssociation {
    * imported. This occurs during the creation of a custom domain or when a custom
    * domain is updated to use a custom certificate.</p> </dd>
    * <dt>PENDING_DEPLOYMENT</dt> <dd> <p>Indicates that the subdomain or certificate
-   * changes are being propagated.</p> </dd> <dt>AWAITING_APP_CNAME</dt> <dd>
-   * <p>Amplify is waiting for CNAME records corresponding to subdomains to be
+   * changes are being propagated.</p> </dd> <dt>AWAITING_APP_CNAME</dt> <dd> <p>
+   * Amplify is waiting for CNAME records corresponding to subdomains to be
    * propagated. If your custom domain is on Route 53, Amplify handles this for you
    * automatically. For more information about custom domains, see <a
    * href="https://docs.aws.amazon.com/amplify/latest/userguide/custom-domains.html">Setting
-   * up custom domains</a> in the <i>Amplify Hosting User Guide</i>. </p> </dd>
+   * up custom domains</a> in the <i> Amplify Hosting User Guide</i>. </p> </dd>
    * <dt>UPDATE_COMPLETE</dt> <dd> <p>The certificate has been associated with a
    * domain.</p> </dd> <dt>UPDATE_FAILED</dt> <dd> <p>The certificate has failed to
    * be provisioned or associated, and there is no existing active certificate to

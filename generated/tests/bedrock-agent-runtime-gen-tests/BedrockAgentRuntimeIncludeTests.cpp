@@ -33,6 +33,7 @@
 #include <aws/bedrock-agent-runtime/model/AgentCollaboratorOutputPayload.h>
 #include <aws/bedrock-agent-runtime/model/AgenticRetrieveAction.h>
 #include <aws/bedrock-agent-runtime/model/AgenticRetrieveActionDetails.h>
+#include <aws/bedrock-agent-runtime/model/AgenticRetrieveAppliedInstruction.h>
 #include <aws/bedrock-agent-runtime/model/AgenticRetrieveBedrockGuardrailConfiguration.h>
 #include <aws/bedrock-agent-runtime/model/AgenticRetrieveBedrockRerankingConfiguration.h>
 #include <aws/bedrock-agent-runtime/model/AgenticRetrieveBedrockRerankingModelConfiguration.h>
@@ -43,6 +44,7 @@
 #include <aws/bedrock-agent-runtime/model/AgenticRetrieveFullDocExpansionDetails.h>
 #include <aws/bedrock-agent-runtime/model/AgenticRetrieveGeneratedResponse.h>
 #include <aws/bedrock-agent-runtime/model/AgenticRetrieveGuardrailWarning.h>
+#include <aws/bedrock-agent-runtime/model/AgenticRetrieveInstructionConfiguration.h>
 #include <aws/bedrock-agent-runtime/model/AgenticRetrieveMemoryConfiguration.h>
 #include <aws/bedrock-agent-runtime/model/AgenticRetrieveMemoryMetadataFilter.h>
 #include <aws/bedrock-agent-runtime/model/AgenticRetrieveMemoryMetadataFilterLeft.h>

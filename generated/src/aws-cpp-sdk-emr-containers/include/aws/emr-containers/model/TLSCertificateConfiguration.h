@@ -52,7 +52,7 @@ class TLSCertificateConfiguration {
 
   ///@{
   /**
-   * <p>Secrets Manager ARN that contains the public TLS certificate contents, used
+   * <p> Secrets Manager ARN that contains the public TLS certificate contents, used
    * for communication between the user job and the system job.</p>
    */
   inline const Aws::String& GetPublicCertificateSecretArn() const { return m_publicCertificateSecretArn; }
@@ -71,7 +71,7 @@ class TLSCertificateConfiguration {
 
   ///@{
   /**
-   * <p>Secrets Manager ARN that contains the private TLS certificate contents, used
+   * <p> Secrets Manager ARN that contains the private TLS certificate contents, used
    * for communication between the user job and the system job.</p>
    */
   inline const Aws::String& GetPrivateCertificateSecretArn() const { return m_privateCertificateSecretArn; }

@@ -222,8 +222,8 @@ class UpdateTableRequest : public DynamoDBRequest {
 
   ///@{
   /**
-   * <p>A list of replica update actions (create, delete, or update) for the
-   * table.</p>
+   * <p>A list of replica update actions (create, delete, update, or disassociate)
+   * for the table.</p>
    */
   inline const Aws::Vector<ReplicationGroupUpdate>& GetReplicaUpdates() const { return m_replicaUpdates; }
   inline bool ReplicaUpdatesHasBeenSet() const { return m_replicaUpdatesHasBeenSet; }
@@ -407,6 +407,28 @@ class UpdateTableRequest : public DynamoDBRequest {
 
   ///@{
   /**
+   * <p>Specifies whether disassociation protection is enabled (<code>true</code>) or
+   * disabled (<code>false</code>) for the local replica of a multi-Region eventual
+   * consistency (MREC) global table using Version 2019.11.21.</p> <p>Disassociation
+   * protection is enabled by default. If you omit this parameter, the existing
+   * setting is unchanged. This setting is independent of
+   * <code>DeletionProtectionEnabled</code>.</p> <p>You can't combine this change
+   * with any other change in the same <code>UpdateTable</code> request.</p>
+   */
+  inline bool GetDisassociationProtectionEnabled() const { return m_disassociationProtectionEnabled; }
+  inline bool DisassociationProtectionEnabledHasBeenSet() const { return m_disassociationProtectionEnabledHasBeenSet; }
+  inline void SetDisassociationProtectionEnabled(bool value) {
+    m_disassociationProtectionEnabledHasBeenSet = true;
+    m_disassociationProtectionEnabled = value;
+  }
+  inline UpdateTableRequest& WithDisassociationProtectionEnabled(bool value) {
+    SetDisassociationProtectionEnabled(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A list of vector indexes to be added to or removed from the table. You can
    * add or remove one vector index for each <code>UpdateTable</code> operation.</p>
    * <p>To add a vector index, specify <code>IndexName</code>,
@@ -464,6 +486,8 @@ class UpdateTableRequest : public DynamoDBRequest {
 
   GlobalTableSettingsReplicationMode m_globalTableSettingsReplicationMode{GlobalTableSettingsReplicationMode::NOT_SET};
 
+  bool m_disassociationProtectionEnabled{false};
+
   Aws::Vector<VectorIndexUpdate> m_vectorIndexUpdates;
   bool m_attributeDefinitionsHasBeenSet = false;
   bool m_tableNameHasBeenSet = false;
@@ -480,6 +504,7 @@ class UpdateTableRequest : public DynamoDBRequest {
   bool m_onDemandThroughputHasBeenSet = false;
   bool m_warmThroughputHasBeenSet = false;
   bool m_globalTableSettingsReplicationModeHasBeenSet = false;
+  bool m_disassociationProtectionEnabledHasBeenSet = false;
   bool m_vectorIndexUpdatesHasBeenSet = false;
 };
 

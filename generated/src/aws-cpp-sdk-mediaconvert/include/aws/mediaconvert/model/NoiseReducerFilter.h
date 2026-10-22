@@ -10,7 +10,7 @@
 namespace Aws {
 namespace MediaConvert {
 namespace Model {
-enum class NoiseReducerFilter { NOT_SET, BILATERAL, MEAN, GAUSSIAN, LANCZOS, SHARPEN, CONSERVE, SPATIAL, TEMPORAL };
+enum class NoiseReducerFilter { NOT_SET, BILATERAL, MEAN, GAUSSIAN, LANCZOS, SHARPEN, CONSERVE, SPATIAL, TEMPORAL, PERCEPTUAL, NONE };
 
 namespace NoiseReducerFilterMapper {
 AWS_MEDIACONVERT_API NoiseReducerFilter GetNoiseReducerFilterForName(const Aws::String& name);

@@ -15,6 +15,7 @@
 #include <aws/rds/model/DescribeEngineDefaultClusterParametersPaginationTraits.h>
 #include <aws/rds/model/DescribeTenantDatabasesPaginationTraits.h>
 #include <aws/rds/model/DownloadDBLogFilePortionPaginationTraits.h>
+#include <aws/rds/model/DescribeDBCapacityReservationsPaginationTraits.h>
 #include <aws/rds/model/DescribeExportTasksPaginationTraits.h>
 #include <aws/rds/model/DescribeDBClustersPaginationTraits.h>
 #include <aws/rds/model/DescribeDBClusterSnapshotsPaginationTraits.h>

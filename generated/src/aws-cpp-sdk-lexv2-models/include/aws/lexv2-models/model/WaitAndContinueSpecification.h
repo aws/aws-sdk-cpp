@@ -36,7 +36,8 @@ class WaitAndContinueSpecification {
   ///@{
   /**
    * <p>The response that Amazon Lex sends to indicate that the bot is waiting for
-   * the conversation to continue.</p>
+   * the conversation to continue. Required unless the bot locale's
+   * <code>assistedNluMode</code> is <code>DialogManager</code>.</p>
    */
   inline const ResponseSpecification& GetWaitingResponse() const { return m_waitingResponse; }
   inline bool WaitingResponseHasBeenSet() const { return m_waitingResponseHasBeenSet; }
@@ -55,7 +56,8 @@ class WaitAndContinueSpecification {
   ///@{
   /**
    * <p>The response that Amazon Lex sends to indicate that the bot is ready to
-   * continue the conversation.</p>
+   * continue the conversation. Required unless the bot locale's
+   * <code>assistedNluMode</code> is <code>DialogManager</code>.</p>
    */
   inline const ResponseSpecification& GetContinueResponse() const { return m_continueResponse; }
   inline bool ContinueResponseHasBeenSet() const { return m_continueResponseHasBeenSet; }

@@ -23,6 +23,14 @@ Aws::String DescribeDeliverySourcesRequest::SerializePayload() const {
     payload.WithInteger("limit", m_limit);
   }
 
+  if (m_resourceArnsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> resourceArnsJsonList(m_resourceArns.size());
+    for (unsigned resourceArnsIndex = 0; resourceArnsIndex < resourceArnsJsonList.GetLength(); ++resourceArnsIndex) {
+      resourceArnsJsonList[resourceArnsIndex].AsString(m_resourceArns[resourceArnsIndex]);
+    }
+    payload.WithArray("resourceArns", std::move(resourceArnsJsonList));
+  }
+
   return payload.View().WriteReadable();
 }
 

@@ -53,6 +53,7 @@
 #include <aws/observabilityadmin/model/DeleteTelemetryPipelineResult.h>
 #include <aws/observabilityadmin/model/DeleteTelemetryRuleForOrganizationRequest.h>
 #include <aws/observabilityadmin/model/DeleteTelemetryRuleRequest.h>
+#include <aws/observabilityadmin/model/DeletionProtection.h>
 #include <aws/observabilityadmin/model/DestinationLogsConfiguration.h>
 #include <aws/observabilityadmin/model/DestinationMetricsConfiguration.h>
 #include <aws/observabilityadmin/model/DestinationType.h>

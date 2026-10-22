@@ -59,7 +59,7 @@ class CreateScheduleRequest : public GlueDataBrewRequest {
    * <p>The date or dates and time or times when the jobs are to be run. For more
    * information, see <a
    * href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron
-   * expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
+   * expressions</a> in the <i> Glue DataBrew Developer Guide</i>.</p>
    */
   inline const Aws::String& GetCronExpression() const { return m_cronExpression; }
   inline bool CronExpressionHasBeenSet() const { return m_cronExpressionHasBeenSet; }

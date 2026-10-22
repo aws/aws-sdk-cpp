@@ -87,6 +87,8 @@
 #include <aws/workspaces-instances/model/ListWorkspaceInstancesResult.h>
 #include <aws/workspaces-instances/model/ManagedInstanceRequest.h>
 #include <aws/workspaces-instances/model/MarketTypeEnum.h>
+#include <aws/workspaces-instances/model/ModifyVolumeRequest.h>
+#include <aws/workspaces-instances/model/ModifyVolumeResult.h>
 #include <aws/workspaces-instances/model/NestedVirtualizationEnum.h>
 #include <aws/workspaces-instances/model/Placement.h>
 #include <aws/workspaces-instances/model/PlatformTypeEnum.h>
@@ -112,6 +114,7 @@
 #include <aws/workspaces-instances/model/ValidationException.h>
 #include <aws/workspaces-instances/model/ValidationExceptionField.h>
 #include <aws/workspaces-instances/model/ValidationExceptionReason.h>
+#include <aws/workspaces-instances/model/VolumeModificationRateExceededException.h>
 #include <aws/workspaces-instances/model/VolumeTypeEnum.h>
 #include <aws/workspaces-instances/model/WorkspaceInstance.h>
 #include <aws/workspaces-instances/model/WorkspaceInstanceError.h>

@@ -98,6 +98,10 @@ Aws::String UpdateTableRequest::SerializePayload() const {
         GlobalTableSettingsReplicationModeMapper::GetNameForGlobalTableSettingsReplicationMode(m_globalTableSettingsReplicationMode));
   }
 
+  if (m_disassociationProtectionEnabledHasBeenSet) {
+    payload.WithBool("DisassociationProtectionEnabled", m_disassociationProtectionEnabled);
+  }
+
   if (m_vectorIndexUpdatesHasBeenSet) {
     Aws::Utils::Array<JsonValue> vectorIndexUpdatesJsonList(m_vectorIndexUpdates.size());
     for (unsigned vectorIndexUpdatesIndex = 0; vectorIndexUpdatesIndex < vectorIndexUpdatesJsonList.GetLength();

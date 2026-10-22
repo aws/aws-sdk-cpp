@@ -7,6 +7,7 @@
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntimeRequest.h>
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/bedrock-agent-runtime/model/AgenticRetrieveConfiguration.h>
+#include <aws/bedrock-agent-runtime/model/AgenticRetrieveInstructionConfiguration.h>
 #include <aws/bedrock-agent-runtime/model/AgenticRetrieveMemoryConfiguration.h>
 #include <aws/bedrock-agent-runtime/model/AgenticRetrieveMessage.h>
 #include <aws/bedrock-agent-runtime/model/AgenticRetrievePolicyConfiguration.h>
@@ -183,6 +184,26 @@ class AgenticRetrieveStreamRequest : public BedrockAgentRuntimeRequest {
 
   ///@{
   /**
+   * <p>A retrieval instruction to apply to this request.</p>
+   */
+  inline const AgenticRetrieveInstructionConfiguration& GetRetrievalInstructionConfiguration() const {
+    return m_retrievalInstructionConfiguration;
+  }
+  inline bool RetrievalInstructionConfigurationHasBeenSet() const { return m_retrievalInstructionConfigurationHasBeenSet; }
+  template <typename RetrievalInstructionConfigurationT = AgenticRetrieveInstructionConfiguration>
+  void SetRetrievalInstructionConfiguration(RetrievalInstructionConfigurationT&& value) {
+    m_retrievalInstructionConfigurationHasBeenSet = true;
+    m_retrievalInstructionConfiguration = std::forward<RetrievalInstructionConfigurationT>(value);
+  }
+  template <typename RetrievalInstructionConfigurationT = AgenticRetrieveInstructionConfiguration>
+  AgenticRetrieveStreamRequest& WithRetrievalInstructionConfiguration(RetrievalInstructionConfigurationT&& value) {
+    SetRetrievalInstructionConfiguration(std::forward<RetrievalInstructionConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The list of retrievers to use for agentic retrieval.</p>
    */
   inline const Aws::Vector<AgenticRetriever>& GetRetrievers() const { return m_retrievers; }
@@ -237,6 +258,8 @@ class AgenticRetrieveStreamRequest : public BedrockAgentRuntimeRequest {
 
   AgenticRetrievePolicyConfiguration m_policyConfiguration;
 
+  AgenticRetrieveInstructionConfiguration m_retrievalInstructionConfiguration;
+
   Aws::Vector<AgenticRetriever> m_retrievers;
 
   UserContext m_userContext;
@@ -249,6 +272,7 @@ class AgenticRetrieveStreamRequest : public BedrockAgentRuntimeRequest {
   bool m_messagesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_policyConfigurationHasBeenSet = false;
+  bool m_retrievalInstructionConfigurationHasBeenSet = false;
   bool m_retrieversHasBeenSet = false;
   bool m_userContextHasBeenSet = false;
 };

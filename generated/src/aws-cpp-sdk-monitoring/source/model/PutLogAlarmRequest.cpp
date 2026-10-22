@@ -65,6 +65,9 @@ Aws::String PutLogAlarmRequest::SerializePayload() const {
   if (m_warmUpConfigurationHasBeenSet) {
     mapSize++;
   }
+  if (m_actionConfigurationHasBeenSet) {
+    mapSize++;
+  }
 
   encoder.WriteMapStart(mapSize);
 
@@ -159,6 +162,11 @@ Aws::String PutLogAlarmRequest::SerializePayload() const {
   if (m_warmUpConfigurationHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("WarmUpConfiguration"));
     m_warmUpConfiguration.CborEncode(encoder);
+  }
+
+  if (m_actionConfigurationHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ActionConfiguration"));
+    m_actionConfiguration.CborEncode(encoder);
   }
   const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
   return str;

@@ -9,6 +9,7 @@
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/rds/model/DescribeBlueGreenDeploymentsPaginationTraits.h>
 #include <aws/rds/model/DescribeCertificatesPaginationTraits.h>
+#include <aws/rds/model/DescribeDBCapacityReservationsPaginationTraits.h>
 #include <aws/rds/model/DescribeDBClusterAutomatedBackupsPaginationTraits.h>
 #include <aws/rds/model/DescribeDBClusterBacktracksPaginationTraits.h>
 #include <aws/rds/model/DescribeDBClusterEndpointsPaginationTraits.h>
@@ -79,6 +80,18 @@ class RDSPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeCertificatesRequest,
                                              Pagination::DescribeCertificatesPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for DescribeDBCapacityReservations operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeDBCapacityReservationsRequest,
+                                    Pagination::DescribeDBCapacityReservationsPaginationTraits<DerivedClient>>
+  DescribeDBCapacityReservationsPaginator(const Model::DescribeDBCapacityReservationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeDBCapacityReservationsRequest,
+                                             Pagination::DescribeDBCapacityReservationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

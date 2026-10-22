@@ -19,10 +19,6 @@ Aws::String UpdateProfileWithAgentRequest::SerializePayload() const {
     payload.WithString("ProfileId", m_profileId);
   }
 
-  if (m_sourceFormatHasBeenSet) {
-    payload.WithString("SourceFormat", SourceFormatMapper::GetNameForSourceFormat(m_sourceFormat));
-  }
-
   if (m_inputMessageHasBeenSet) {
     payload.WithObject("InputMessage", m_inputMessage.Jsonize());
   }

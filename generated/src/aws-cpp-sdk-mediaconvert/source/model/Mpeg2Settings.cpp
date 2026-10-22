@@ -137,6 +137,14 @@ Mpeg2Settings& Mpeg2Settings::operator=(JsonView jsonValue) {
     m_sceneChangeDetect = Mpeg2SceneChangeDetectMapper::GetMpeg2SceneChangeDetectForName(jsonValue.GetString("sceneChangeDetect"));
     m_sceneChangeDetectHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("slidingWindowMs")) {
+    m_slidingWindowMs = jsonValue.GetInteger("slidingWindowMs");
+    m_slidingWindowMsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("slidingWindowPeakBitrate")) {
+    m_slidingWindowPeakBitrate = jsonValue.GetInteger("slidingWindowPeakBitrate");
+    m_slidingWindowPeakBitrateHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("slowPal")) {
     m_slowPal = Mpeg2SlowPalMapper::GetMpeg2SlowPalForName(jsonValue.GetString("slowPal"));
     m_slowPalHasBeenSet = true;
@@ -287,6 +295,14 @@ JsonValue Mpeg2Settings::Jsonize() const {
 
   if (m_sceneChangeDetectHasBeenSet) {
     payload.WithString("sceneChangeDetect", Mpeg2SceneChangeDetectMapper::GetNameForMpeg2SceneChangeDetect(m_sceneChangeDetect));
+  }
+
+  if (m_slidingWindowMsHasBeenSet) {
+    payload.WithInteger("slidingWindowMs", m_slidingWindowMs);
+  }
+
+  if (m_slidingWindowPeakBitrateHasBeenSet) {
+    payload.WithInteger("slidingWindowPeakBitrate", m_slidingWindowPeakBitrate);
   }
 
   if (m_slowPalHasBeenSet) {

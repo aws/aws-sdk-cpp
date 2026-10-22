@@ -51,7 +51,7 @@ class ListFlowOperationsRequest : public NetworkFirewallRequest {
 
   ///@{
   /**
-   * <p>The ID of the Availability Zone where the firewall is located. For example,
+   * <p>The name of the Availability Zone where the firewall is located. For example,
    * <code>us-east-2a</code>.</p> <p>Defines the scope a flow operation. You can use
    * up to 20 filters to configure a single flow operation.</p>
    */
@@ -65,6 +65,29 @@ class ListFlowOperationsRequest : public NetworkFirewallRequest {
   template <typename AvailabilityZoneT = Aws::String>
   ListFlowOperationsRequest& WithAvailabilityZone(AvailabilityZoneT&& value) {
     SetAvailabilityZone(std::forward<AvailabilityZoneT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the Availability Zone where the firewall is located. For example,
+   * <code>use2-az1</code>. Availability Zone IDs are the same in every Amazon Web
+   * Services account, so use this parameter when you coordinate resources across
+   * accounts. Specify either <code>AvailabilityZone</code> or
+   * <code>AvailabilityZoneId</code>, not both. If you specify both, the request
+   * fails.</p>
+   */
+  inline const Aws::String& GetAvailabilityZoneId() const { return m_availabilityZoneId; }
+  inline bool AvailabilityZoneIdHasBeenSet() const { return m_availabilityZoneIdHasBeenSet; }
+  template <typename AvailabilityZoneIdT = Aws::String>
+  void SetAvailabilityZoneId(AvailabilityZoneIdT&& value) {
+    m_availabilityZoneIdHasBeenSet = true;
+    m_availabilityZoneId = std::forward<AvailabilityZoneIdT>(value);
+  }
+  template <typename AvailabilityZoneIdT = Aws::String>
+  ListFlowOperationsRequest& WithAvailabilityZoneId(AvailabilityZoneIdT&& value) {
+    SetAvailabilityZoneId(std::forward<AvailabilityZoneIdT>(value));
     return *this;
   }
   ///@}
@@ -167,6 +190,8 @@ class ListFlowOperationsRequest : public NetworkFirewallRequest {
 
   Aws::String m_availabilityZone;
 
+  Aws::String m_availabilityZoneId;
+
   Aws::String m_vpcEndpointAssociationArn;
 
   Aws::String m_vpcEndpointId;
@@ -178,6 +203,7 @@ class ListFlowOperationsRequest : public NetworkFirewallRequest {
   int m_maxResults{0};
   bool m_firewallArnHasBeenSet = false;
   bool m_availabilityZoneHasBeenSet = false;
+  bool m_availabilityZoneIdHasBeenSet = false;
   bool m_vpcEndpointAssociationArnHasBeenSet = false;
   bool m_vpcEndpointIdHasBeenSet = false;
   bool m_flowOperationTypeHasBeenSet = false;

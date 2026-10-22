@@ -105,6 +105,11 @@ PathComponent& PathComponent::operator=(const XmlNode& xmlNode) {
       m_transitGatewayRouteTableRoute = transitGatewayRouteTableRouteNode;
       m_transitGatewayRouteTableRouteHasBeenSet = true;
     }
+    XmlNode transitGatewayPolicyTableEntryNode = resultNode.FirstChild("transitGatewayPolicyTableEntry");
+    if (!transitGatewayPolicyTableEntryNode.IsNull()) {
+      m_transitGatewayPolicyTableEntry = transitGatewayPolicyTableEntryNode;
+      m_transitGatewayPolicyTableEntryHasBeenSet = true;
+    }
     XmlNode explanationsNode = resultNode.FirstChild("explanationSet");
     if (!explanationsNode.IsNull()) {
       XmlNode explanationsMember = explanationsNode.FirstChild("item");
@@ -233,6 +238,12 @@ void PathComponent::OutputToStream(Aws::OStream& oStream, const char* location, 
     m_transitGatewayRouteTableRoute.OutputToStream(oStream, transitGatewayRouteTableRouteLocationAndMemberSs.str().c_str());
   }
 
+  if (m_transitGatewayPolicyTableEntryHasBeenSet) {
+    Aws::StringStream transitGatewayPolicyTableEntryLocationAndMemberSs;
+    transitGatewayPolicyTableEntryLocationAndMemberSs << location << index << locationValue << ".TransitGatewayPolicyTableEntry";
+    m_transitGatewayPolicyTableEntry.OutputToStream(oStream, transitGatewayPolicyTableEntryLocationAndMemberSs.str().c_str());
+  }
+
   if (m_explanationsHasBeenSet) {
     unsigned explanationsIdx = 1;
     for (auto& item : m_explanations) {
@@ -341,6 +352,11 @@ void PathComponent::OutputToStream(Aws::OStream& oStream, const char* location) 
     Aws::String transitGatewayRouteTableRouteLocationAndMember(location);
     transitGatewayRouteTableRouteLocationAndMember += ".TransitGatewayRouteTableRoute";
     m_transitGatewayRouteTableRoute.OutputToStream(oStream, transitGatewayRouteTableRouteLocationAndMember.c_str());
+  }
+  if (m_transitGatewayPolicyTableEntryHasBeenSet) {
+    Aws::String transitGatewayPolicyTableEntryLocationAndMember(location);
+    transitGatewayPolicyTableEntryLocationAndMember += ".TransitGatewayPolicyTableEntry";
+    m_transitGatewayPolicyTableEntry.OutputToStream(oStream, transitGatewayPolicyTableEntryLocationAndMember.c_str());
   }
   if (m_explanationsHasBeenSet) {
     unsigned explanationsIdx = 1;

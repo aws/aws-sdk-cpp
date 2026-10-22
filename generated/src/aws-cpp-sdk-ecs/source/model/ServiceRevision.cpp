@@ -123,6 +123,13 @@ ServiceRevision& ServiceRevision::operator=(JsonView jsonValue) {
     m_overrides = jsonValue.GetObject("overrides");
     m_overridesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("gatewayConnectors")) {
+    Aws::Utils::Array<JsonView> gatewayConnectorsJsonList = jsonValue.GetArray("gatewayConnectors");
+    for (unsigned gatewayConnectorsIndex = 0; gatewayConnectorsIndex < gatewayConnectorsJsonList.GetLength(); ++gatewayConnectorsIndex) {
+      m_gatewayConnectors.push_back(gatewayConnectorsJsonList[gatewayConnectorsIndex].AsObject());
+    }
+    m_gatewayConnectorsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("monitoring")) {
     m_monitoring = jsonValue.GetObject("monitoring");
     m_monitoringHasBeenSet = true;
@@ -244,6 +251,14 @@ JsonValue ServiceRevision::Jsonize() const {
 
   if (m_overridesHasBeenSet) {
     payload.WithObject("overrides", m_overrides.Jsonize());
+  }
+
+  if (m_gatewayConnectorsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> gatewayConnectorsJsonList(m_gatewayConnectors.size());
+    for (unsigned gatewayConnectorsIndex = 0; gatewayConnectorsIndex < gatewayConnectorsJsonList.GetLength(); ++gatewayConnectorsIndex) {
+      gatewayConnectorsJsonList[gatewayConnectorsIndex].AsObject(m_gatewayConnectors[gatewayConnectorsIndex].Jsonize());
+    }
+    payload.WithArray("gatewayConnectors", std::move(gatewayConnectorsJsonList));
   }
 
   if (m_monitoringHasBeenSet) {

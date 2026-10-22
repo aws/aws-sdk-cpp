@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/logs/CloudWatchLogsRequest.h>
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
 
@@ -62,12 +63,40 @@ class DescribeDeliveryDestinationsRequest : public CloudWatchLogsRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>An array of delivery destination names that filters the results to delivery
+   * destinations with any specified name.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetNames() const { return m_names; }
+  inline bool NamesHasBeenSet() const { return m_namesHasBeenSet; }
+  template <typename NamesT = Aws::Vector<Aws::String>>
+  void SetNames(NamesT&& value) {
+    m_namesHasBeenSet = true;
+    m_names = std::forward<NamesT>(value);
+  }
+  template <typename NamesT = Aws::Vector<Aws::String>>
+  DescribeDeliveryDestinationsRequest& WithNames(NamesT&& value) {
+    SetNames(std::forward<NamesT>(value));
+    return *this;
+  }
+  template <typename NamesT = Aws::String>
+  DescribeDeliveryDestinationsRequest& AddNames(NamesT&& value) {
+    m_namesHasBeenSet = true;
+    m_names.emplace_back(std::forward<NamesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_nextToken;
 
   int m_limit{0};
+
+  Aws::Vector<Aws::String> m_names;
   bool m_nextTokenHasBeenSet = false;
   bool m_limitHasBeenSet = false;
+  bool m_namesHasBeenSet = false;
 };
 
 }  // namespace Model

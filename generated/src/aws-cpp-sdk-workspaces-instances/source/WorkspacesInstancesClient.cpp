@@ -31,6 +31,7 @@
 #include <aws/workspaces-instances/model/ListRegionsRequest.h>
 #include <aws/workspaces-instances/model/ListTagsForResourceRequest.h>
 #include <aws/workspaces-instances/model/ListWorkspaceInstancesRequest.h>
+#include <aws/workspaces-instances/model/ModifyVolumeRequest.h>
 #include <aws/workspaces-instances/model/TagResourceRequest.h>
 #include <aws/workspaces-instances/model/UntagResourceRequest.h>
 #include <smithy/tracing/TracingUtils.h>
@@ -173,7 +174,8 @@ WorkspacesInstancesClient::InvokeOperationOutcome WorkspacesInstancesClient::Inv
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
 
-  return TracingUtils::MakeCallWithTiming<InvokeOperationOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<InvokeOperationOutcome>(
+      request, std::move(span),
       [&]() -> InvokeOperationOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -188,7 +190,7 @@ WorkspacesInstancesClient::InvokeOperationOutcome WorkspacesInstancesClient::Inv
 
         return InvokeOperationOutcome{MakeRequest(request, endpointResolutionOutcome.GetResult(), httpMethod, Aws::Auth::SIGV4_SIGNER)};
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
 }
 
@@ -253,6 +255,11 @@ ListWorkspaceInstancesOutcome WorkspacesInstancesClient::ListWorkspaceInstances(
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListWorkspaceInstancesOutcome(result.GetResultWithOwnership())
                             : ListWorkspaceInstancesOutcome(std::move(result.GetError()));
+}
+
+ModifyVolumeOutcome WorkspacesInstancesClient::ModifyVolume(const ModifyVolumeRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyVolumeOutcome(result.GetResultWithOwnership()) : ModifyVolumeOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome WorkspacesInstancesClient::TagResource(const TagResourceRequest& request) const {

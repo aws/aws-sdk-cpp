@@ -14,6 +14,7 @@
 
 #include <aws/crt/Variant.h>
 
+#include <aws/core/client/AsyncOperationState.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -54,6 +55,8 @@ namespace client
             ErrorMarshallerT>>
     {
     public:
+        using OUTCOME = ResponseT;
+
         static_assert(std::is_base_of<Aws::Client::AWSErrorMarshaller, ErrorMarshallerT>::value, "MarshallerT must be derived from class Aws::Client::AWSErrorMarshaller");
 
         explicit AwsSmithyClientT(const ServiceClientConfigurationT& clientConfig,
@@ -243,6 +246,17 @@ namespace client
                                      EndpointUpdateCallback&& endpointCallback,
                                      AuthResolvedCallback&& authCallback = nullptr) const
         {
+          if (const auto asyncOperationState = request ? Aws::Client::ProtocolAsyncOperationState<ResponseT>::Take(*request) : nullptr)
+          {
+            asyncOperationState->ExtendRequestLifetime();
+            AwsSmithyClientBase::MakeRequestAsync(request, requestName, method, std::move(endpointCallback),
+                [this, requestName, asyncOperationState](HttpResponseOutcome&& httpResponseOutcome)
+                {
+                  asyncOperationState->Complete(m_serializer->Deserialize(std::move(httpResponseOutcome), GetServiceClientName(), requestName));
+                },
+                std::move(authCallback), m_clientConfiguration.executor);
+            return ResponseT(Aws::Client::AWSError<Aws::Client::CoreErrors>(Aws::Client::CoreErrors::INTERNAL_FAILURE, "", "Request continues on the async request path", false));
+          }
           auto httpResponseOutcome = MakeRequestSync(request, requestName, method, std::move(endpointCallback), std::move(authCallback));
           return m_serializer->Deserialize(std::move(httpResponseOutcome), GetServiceClientName(), requestName);
         }

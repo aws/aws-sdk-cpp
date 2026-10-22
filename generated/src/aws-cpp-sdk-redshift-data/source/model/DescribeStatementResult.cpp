@@ -86,6 +86,10 @@ DescribeStatementResult& DescribeStatementResult::operator=(const Aws::AmazonWeb
     m_redshiftQueryId = jsonValue.GetInt64("RedshiftQueryId");
     m_redshiftQueryIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("RedshiftQueryUuid")) {
+    m_redshiftQueryUuid = jsonValue.GetString("RedshiftQueryUuid");
+    m_redshiftQueryUuidHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("QueryParameters")) {
     Aws::Utils::Array<JsonView> queryParametersJsonList = jsonValue.GetArray("QueryParameters");
     for (unsigned queryParametersIndex = 0; queryParametersIndex < queryParametersJsonList.GetLength(); ++queryParametersIndex) {

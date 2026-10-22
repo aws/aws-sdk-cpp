@@ -12,6 +12,7 @@
 #include <aws/ecs/model/CapacityProviderStrategyItem.h>
 #include <aws/ecs/model/DeploymentConfiguration.h>
 #include <aws/ecs/model/DeploymentController.h>
+#include <aws/ecs/model/GatewayConnector.h>
 #include <aws/ecs/model/LaunchType.h>
 #include <aws/ecs/model/LoadBalancer.h>
 #include <aws/ecs/model/MonitoringConfiguration.h>
@@ -758,6 +759,31 @@ class CreateServiceRequest : public ECSRequest {
 
   ///@{
   /**
+   * <p>The gateway connectors that attach the service to a gateway ingress path. You
+   * can specify at most one gateway connector.</p>
+   */
+  inline const Aws::Vector<GatewayConnector>& GetGatewayConnectors() const { return m_gatewayConnectors; }
+  inline bool GatewayConnectorsHasBeenSet() const { return m_gatewayConnectorsHasBeenSet; }
+  template <typename GatewayConnectorsT = Aws::Vector<GatewayConnector>>
+  void SetGatewayConnectors(GatewayConnectorsT&& value) {
+    m_gatewayConnectorsHasBeenSet = true;
+    m_gatewayConnectors = std::forward<GatewayConnectorsT>(value);
+  }
+  template <typename GatewayConnectorsT = Aws::Vector<GatewayConnector>>
+  CreateServiceRequest& WithGatewayConnectors(GatewayConnectorsT&& value) {
+    SetGatewayConnectors(std::forward<GatewayConnectorsT>(value));
+    return *this;
+  }
+  template <typename GatewayConnectorsT = GatewayConnector>
+  CreateServiceRequest& AddGatewayConnectors(GatewayConnectorsT&& value) {
+    m_gatewayConnectorsHasBeenSet = true;
+    m_gatewayConnectors.emplace_back(std::forward<GatewayConnectorsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The optional monitoring configuration for the service, which defines the
    * resolution for the service-level <code>CPUUtilization</code> and
    * <code>MemoryUtilization</code> Amazon CloudWatch metrics. When not specified,
@@ -829,6 +855,8 @@ class CreateServiceRequest : public ECSRequest {
 
   Aws::Vector<VpcLatticeConfiguration> m_vpcLatticeConfigurations;
 
+  Aws::Vector<GatewayConnector> m_gatewayConnectors;
+
   MonitoringConfiguration m_monitoring;
   bool m_clusterHasBeenSet = false;
   bool m_serviceNameHasBeenSet = false;
@@ -856,6 +884,7 @@ class CreateServiceRequest : public ECSRequest {
   bool m_serviceConnectConfigurationHasBeenSet = false;
   bool m_volumeConfigurationsHasBeenSet = false;
   bool m_vpcLatticeConfigurationsHasBeenSet = false;
+  bool m_gatewayConnectorsHasBeenSet = false;
   bool m_monitoringHasBeenSet = false;
 };
 

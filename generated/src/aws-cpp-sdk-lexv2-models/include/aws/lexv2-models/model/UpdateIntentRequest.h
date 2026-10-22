@@ -405,7 +405,7 @@ class UpdateIntentRequest : public LexModelsV2Request {
   ///@{
   /**
    * <p>Specifies the configuration of the built-in <code>Amazon.QnAIntent</code>.
-   * The <code>AMAZON.QnAIntent</code> intent is called when Amazon Lex can't
+   * The <code>AMAZON.QnAIntent</code> intent is called when Amazon Lex V2 can't
    * determine another intent to invoke. If you specify this field, you can't specify
    * the <code>kendraConfiguration</code> field.</p>
    */

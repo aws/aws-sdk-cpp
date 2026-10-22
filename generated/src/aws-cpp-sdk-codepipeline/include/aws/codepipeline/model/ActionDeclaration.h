@@ -95,14 +95,14 @@ class ActionDeclaration {
    * <p>The action's configuration. These are key-value pairs that specify input
    * values for an action. For more information, see <a
    * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Action
-   * Structure Requirements in CodePipeline</a>. For the list of configuration
+   * Structure Requirements in CodePipeline </a>. For the list of configuration
    * properties for the CloudFormation action type in CodePipeline, see <a
    * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-action-reference.html">Configuration
-   * Properties Reference</a> in the <i>CloudFormation User Guide</i>. For template
+   * Properties Reference</a> in the <i> CloudFormation User Guide</i>. For template
    * snippets with examples, see <a
    * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/continuous-delivery-codepipeline-parameter-override-functions.html">Using
-   * Parameter Override Functions with CodePipeline Pipelines</a> in the
-   * <i>CloudFormation User Guide</i>.</p> <p>The values can be represented in either
+   * Parameter Override Functions with CodePipeline Pipelines</a> in the <i>
+   * CloudFormation User Guide</i>.</p> <p>The values can be represented in either
    * JSON or YAML format. For example, the JSON configuration item format is as
    * follows: </p> <p> <i>JSON:</i> </p> <p> <code>"Configuration" : { Key : Value
    * },</code> </p>

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/awstransfer/TransferRequest.h>
 #include <aws/awstransfer/Transfer_EXPORTS.h>
+#include <aws/awstransfer/model/HostKeyStorageType.h>
 #include <aws/awstransfer/model/Tag.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -111,6 +112,49 @@ class ImportHostKeyRequest : public TransferRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether the host key is stored by Transfer Family
+   * (<code>SERVICE_MANAGED</code>) or in Secrets Manager
+   * (<code>SECRETS_MANAGER</code>). When you specify <code>SECRETS_MANAGER</code>,
+   * Transfer Family stores the private host key material in an Secrets Manager
+   * secret.</p>
+   */
+  inline HostKeyStorageType GetStorageType() const { return m_storageType; }
+  inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
+  inline void SetStorageType(HostKeyStorageType value) {
+    m_storageTypeHasBeenSet = true;
+    m_storageType = value;
+  }
+  inline ImportHostKeyRequest& WithStorageType(HostKeyStorageType value) {
+    SetStorageType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the Secrets
+   * Manager secret that stores the host key. If you specify a customer managed key,
+   * its key policy must allow the <code>AWSServiceRoleForTransfer</code>
+   * service-linked role to decrypt the secret. If you don't specify a value,
+   * Transfer Family uses the Amazon Web Services managed key for Secrets
+   * Manager.</p>
+   */
+  inline const Aws::String& GetKmsKey() const { return m_kmsKey; }
+  inline bool KmsKeyHasBeenSet() const { return m_kmsKeyHasBeenSet; }
+  template <typename KmsKeyT = Aws::String>
+  void SetKmsKey(KmsKeyT&& value) {
+    m_kmsKeyHasBeenSet = true;
+    m_kmsKey = std::forward<KmsKeyT>(value);
+  }
+  template <typename KmsKeyT = Aws::String>
+  ImportHostKeyRequest& WithKmsKey(KmsKeyT&& value) {
+    SetKmsKey(std::forward<KmsKeyT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_serverId;
 
@@ -119,10 +163,16 @@ class ImportHostKeyRequest : public TransferRequest {
   Aws::String m_description;
 
   Aws::Vector<Tag> m_tags;
+
+  HostKeyStorageType m_storageType{HostKeyStorageType::NOT_SET};
+
+  Aws::String m_kmsKey;
   bool m_serverIdHasBeenSet = false;
   bool m_hostKeyBodyHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_storageTypeHasBeenSet = false;
+  bool m_kmsKeyHasBeenSet = false;
 };
 
 }  // namespace Model

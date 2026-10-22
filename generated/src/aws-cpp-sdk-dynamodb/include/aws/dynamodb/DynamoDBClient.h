@@ -2270,18 +2270,38 @@ class AWS_DYNAMODB_API DynamoDBClient
   }
 
   /**
-   * <p>Modifies the provisioned throughput settings, global secondary indexes, or
-   * DynamoDB Streams settings for a given table.</p> <p>You can only perform one of
-   * the following operations at once:</p> <ul> <li> <p>Modify the provisioned
-   * throughput settings of the table.</p> </li> <li> <p>Remove a global secondary
-   * index from the table.</p> </li> <li> <p>Create a new global secondary index on
-   * the table. After the index begins backfilling, you can use
-   * <code>UpdateTable</code> to perform other operations.</p> </li> </ul> <p>
+   * <p>Modifies the provisioned throughput settings, global secondary indexes,
+   * DynamoDB Streams settings, or global table replica settings for a given
+   * table.</p> <p>You can only perform one of the following operations at once:</p>
+   * <ul> <li> <p>Modify the provisioned throughput settings of the table.</p> </li>
+   * <li> <p>Remove a global secondary index from the table.</p> </li> <li> <p>Create
+   * a new global secondary index on the table. After the index begins backfilling,
+   * you can use <code>UpdateTable</code> to perform other operations.</p> </li> <li>
+   * <p>Enable or disable disassociation protection for the local global table
+   * replica.</p> </li> <li> <p>Disassociate the local global table replica and keep
+   * it as a standalone regional table. The <code>Disassociate</code> action must be
+   * the only replica update in the request. If the request includes any other
+   * update, <code>UpdateTable</code> fails with a <code>ValidationException</code>
+   * and the disassociation does not start.</p> </li> </ul> <p>
    * <code>UpdateTable</code> is an asynchronous operation; while it's executing, the
    * table status changes from <code>ACTIVE</code> to <code>UPDATING</code>. While
    * it's <code>UPDATING</code>, you can't issue another <code>UpdateTable</code>
-   * request. When the table returns to the <code>ACTIVE</code> state, the
-   * <code>UpdateTable</code> operation is complete.</p><p><h3>See Also:</h3>   <a
+   * request. Use <code>DescribeTable</code> to monitor the table's status.</p> <p>To
+   * use this operation to disassociate a local replica, you must have the
+   * <code>dynamodb:UpdateTable</code> and
+   * <code>dynamodb:DisassociateTableReplica</code> IAM permissions on the local
+   * replica. Send disassociation and disassociation protection requests to the
+   * replica's Region using credentials for the account that owns the replica. For
+   * prerequisites and the procedure, see <a
+   * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables-disassociate.html">Disassociating
+   * a global table replica</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+   * <p>To confirm successful disassociation, call <code>DescribeTable</code> in the
+   * replica's Region and verify that <code>TableStatus</code> is <code>ACTIVE</code>
+   * and <code>Replicas</code> is absent or empty. If <code>TableStatus</code>
+   * returns to <code>ACTIVE</code> but the response still includes a
+   * <code>Replicas</code> list, the disassociation did not complete. Check
+   * <code>ReplicaStatus</code> for a replication-permission or encryption-access
+   * problem, resolve it, and retry.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTable">AWS
    * API Reference</a></p>
    */

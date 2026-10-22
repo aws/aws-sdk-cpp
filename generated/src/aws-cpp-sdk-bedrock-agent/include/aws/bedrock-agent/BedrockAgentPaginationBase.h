@@ -19,6 +19,8 @@
 #include <aws/bedrock-agent/model/ListKnowledgeBaseDocumentsPaginationTraits.h>
 #include <aws/bedrock-agent/model/ListKnowledgeBasesPaginationTraits.h>
 #include <aws/bedrock-agent/model/ListPromptsPaginationTraits.h>
+#include <aws/bedrock-agent/model/ListRetrievalInstructionVersionsPaginationTraits.h>
+#include <aws/bedrock-agent/model/ListRetrievalInstructionsPaginationTraits.h>
 #include <aws/bedrock-agent/model/ListVpcConfigurationsPaginationTraits.h>
 #include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
@@ -193,6 +195,30 @@ class BedrockAgentPaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPromptsRequest,
                                              Pagination::ListPromptsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
+  }
+
+  /**
+   * Create a paginator for ListRetrievalInstructions operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRetrievalInstructionsRequest,
+                                    Pagination::ListRetrievalInstructionsPaginationTraits<DerivedClient>>
+  ListRetrievalInstructionsPaginator(const Model::ListRetrievalInstructionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRetrievalInstructionsRequest,
+                                             Pagination::ListRetrievalInstructionsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListRetrievalInstructionVersions operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRetrievalInstructionVersionsRequest,
+                                    Pagination::ListRetrievalInstructionVersionsPaginationTraits<DerivedClient>>
+  ListRetrievalInstructionVersionsPaginator(const Model::ListRetrievalInstructionVersionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRetrievalInstructionVersionsRequest,
+                                             Pagination::ListRetrievalInstructionVersionsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
   }
 
   /**

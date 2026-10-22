@@ -198,6 +198,7 @@
 #include <aws/elasticache/model/LogDeliveryConfigurationStatus.h>
 #include <aws/elasticache/model/LogFormat.h>
 #include <aws/elasticache/model/LogType.h>
+#include <aws/elasticache/model/MigrationSummary.h>
 #include <aws/elasticache/model/ModifyCacheClusterRequest.h>
 #include <aws/elasticache/model/ModifyCacheClusterResult.h>
 #include <aws/elasticache/model/ModifyCacheParameterGroupRequest.h>
@@ -233,6 +234,8 @@
 #include <aws/elasticache/model/PendingAutomaticFailoverStatus.h>
 #include <aws/elasticache/model/PendingLogDeliveryConfiguration.h>
 #include <aws/elasticache/model/PendingModifiedValues.h>
+#include <aws/elasticache/model/PrepareMigrationRequest.h>
+#include <aws/elasticache/model/PrepareMigrationResult.h>
 #include <aws/elasticache/model/ProcessedUpdateAction.h>
 #include <aws/elasticache/model/PurchaseReservedCacheNodesOfferingRequest.h>
 #include <aws/elasticache/model/PurchaseReservedCacheNodesOfferingResult.h>
@@ -256,6 +259,7 @@
 #include <aws/elasticache/model/RevokeCacheSecurityGroupIngressRequest.h>
 #include <aws/elasticache/model/RevokeCacheSecurityGroupIngressResult.h>
 #include <aws/elasticache/model/ScaleConfig.h>
+#include <aws/elasticache/model/SecretManagerAuthConfig.h>
 #include <aws/elasticache/model/SecurityGroupMembership.h>
 #include <aws/elasticache/model/ServerlessCache.h>
 #include <aws/elasticache/model/ServerlessCacheConfiguration.h>
@@ -267,9 +271,13 @@
 #include <aws/elasticache/model/SlaMet.h>
 #include <aws/elasticache/model/SlotMigration.h>
 #include <aws/elasticache/model/Snapshot.h>
+#include <aws/elasticache/model/SourceAuthenticationConfiguration.h>
+#include <aws/elasticache/model/SourceTlsConfiguration.h>
 #include <aws/elasticache/model/SourceType.h>
 #include <aws/elasticache/model/StartMigrationRequest.h>
 #include <aws/elasticache/model/StartMigrationResult.h>
+#include <aws/elasticache/model/StopMigrationRequest.h>
+#include <aws/elasticache/model/StopMigrationResult.h>
 #include <aws/elasticache/model/StorageEncryptionType.h>
 #include <aws/elasticache/model/Subnet.h>
 #include <aws/elasticache/model/SubnetOutpost.h>
@@ -279,6 +287,7 @@
 #include <aws/elasticache/model/TestMigrationRequest.h>
 #include <aws/elasticache/model/TestMigrationResult.h>
 #include <aws/elasticache/model/TimeRangeFilter.h>
+#include <aws/elasticache/model/TlsMode.h>
 #include <aws/elasticache/model/TransitEncryptionMode.h>
 #include <aws/elasticache/model/UnprocessedUpdateAction.h>
 #include <aws/elasticache/model/UpdateAction.h>

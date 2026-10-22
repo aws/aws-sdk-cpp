@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/crt/cbor/Cbor.h>
 #include <aws/monitoring/CloudWatch_EXPORTS.h>
+#include <aws/monitoring/model/ActionConfiguration.h>
 #include <aws/monitoring/model/ActionsSuppressedBy.h>
 #include <aws/monitoring/model/StateValue.h>
 
@@ -411,6 +412,26 @@ class CompositeAlarm {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Settings that change the content of the notifications and events that the
+   * alarm sends when its state changes. These settings apply to the alarm's actions,
+   * whichever state triggers them.</p>
+   */
+  inline const ActionConfiguration& GetActionConfiguration() const { return m_actionConfiguration; }
+  inline bool ActionConfigurationHasBeenSet() const { return m_actionConfigurationHasBeenSet; }
+  template <typename ActionConfigurationT = ActionConfiguration>
+  void SetActionConfiguration(ActionConfigurationT&& value) {
+    m_actionConfigurationHasBeenSet = true;
+    m_actionConfiguration = std::forward<ActionConfigurationT>(value);
+  }
+  template <typename ActionConfigurationT = ActionConfiguration>
+  CompositeAlarm& WithActionConfiguration(ActionConfigurationT&& value) {
+    SetActionConfiguration(std::forward<ActionConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   bool m_actionsEnabled{false};
 
@@ -449,6 +470,8 @@ class CompositeAlarm {
   int64_t m_actionsSuppressorWaitPeriod{0};
 
   int64_t m_actionsSuppressorExtensionPeriod{0};
+
+  ActionConfiguration m_actionConfiguration;
   bool m_actionsEnabledHasBeenSet = false;
   bool m_alarmActionsHasBeenSet = false;
   bool m_alarmArnHasBeenSet = false;
@@ -468,6 +491,7 @@ class CompositeAlarm {
   bool m_actionsSuppressorHasBeenSet = false;
   bool m_actionsSuppressorWaitPeriodHasBeenSet = false;
   bool m_actionsSuppressorExtensionPeriodHasBeenSet = false;
+  bool m_actionConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

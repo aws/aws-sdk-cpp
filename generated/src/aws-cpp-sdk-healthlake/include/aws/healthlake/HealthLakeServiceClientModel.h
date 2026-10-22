@@ -19,6 +19,7 @@
 /* End of generic header includes */
 
 /* Service model headers required in HealthLakeClient header */
+#include <aws/core/NoResult.h>
 #include <aws/healthlake/model/CreateDataTransformationProfileResult.h>
 #include <aws/healthlake/model/CreateFHIRDatastoreResult.h>
 #include <aws/healthlake/model/DeleteDataTransformationProfileResult.h>
@@ -46,7 +47,6 @@
 #include <aws/healthlake/model/UntagResourceResult.h>
 #include <aws/healthlake/model/UpdateDataTransformationProfileResult.h>
 #include <aws/healthlake/model/UpdateFHIRDatastoreResult.h>
-#include <aws/healthlake/model/UpdateProfileWithAgentResult.h>
 /* End of service model headers required in HealthLakeClient header */
 
 namespace Aws {
@@ -134,7 +134,7 @@ typedef Aws::Utils::Outcome<TagResourceResult, HealthLakeError> TagResourceOutco
 typedef Aws::Utils::Outcome<UntagResourceResult, HealthLakeError> UntagResourceOutcome;
 typedef Aws::Utils::Outcome<UpdateDataTransformationProfileResult, HealthLakeError> UpdateDataTransformationProfileOutcome;
 typedef Aws::Utils::Outcome<UpdateFHIRDatastoreResult, HealthLakeError> UpdateFHIRDatastoreOutcome;
-typedef Aws::Utils::Outcome<UpdateProfileWithAgentResult, HealthLakeError> UpdateProfileWithAgentOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, HealthLakeError> UpdateProfileWithAgentOutcome;
 /* End of service model Outcome class definitions */
 
 /* Service model Outcome callable definitions */

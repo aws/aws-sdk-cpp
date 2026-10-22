@@ -146,6 +146,10 @@ DeploymentInfo& DeploymentInfo::operator=(JsonView jsonValue) {
     m_overrideAlarmConfiguration = jsonValue.GetObject("overrideAlarmConfiguration");
     m_overrideAlarmConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ec2DeploymentOptions")) {
+    m_ec2DeploymentOptions = jsonValue.GetObject("ec2DeploymentOptions");
+    m_ec2DeploymentOptionsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -279,6 +283,10 @@ JsonValue DeploymentInfo::Jsonize() const {
 
   if (m_overrideAlarmConfigurationHasBeenSet) {
     payload.WithObject("overrideAlarmConfiguration", m_overrideAlarmConfiguration.Jsonize());
+  }
+
+  if (m_ec2DeploymentOptionsHasBeenSet) {
+    payload.WithObject("ec2DeploymentOptions", m_ec2DeploymentOptions.Jsonize());
   }
 
   return payload;

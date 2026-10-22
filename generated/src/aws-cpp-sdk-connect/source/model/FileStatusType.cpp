@@ -19,6 +19,7 @@ static const int APPROVED_HASH = HashingUtils::HashString("APPROVED");
 static const int REJECTED_HASH = HashingUtils::HashString("REJECTED");
 static const int PROCESSING_HASH = HashingUtils::HashString("PROCESSING");
 static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+static const int DRAFTING_HASH = HashingUtils::HashString("DRAFTING");
 
 FileStatusType GetFileStatusTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -30,6 +31,8 @@ FileStatusType GetFileStatusTypeForName(const Aws::String& name) {
     return FileStatusType::PROCESSING;
   } else if (hashCode == FAILED_HASH) {
     return FileStatusType::FAILED;
+  } else if (hashCode == DRAFTING_HASH) {
+    return FileStatusType::DRAFTING;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -52,6 +55,8 @@ Aws::String GetNameForFileStatusType(FileStatusType enumValue) {
       return "PROCESSING";
     case FileStatusType::FAILED:
       return "FAILED";
+    case FileStatusType::DRAFTING:
+      return "DRAFTING";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

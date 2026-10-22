@@ -30,6 +30,10 @@ Lambdas& Lambdas::operator=(JsonView jsonValue) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("payload")) {
+    m_payload = jsonValue.GetString("payload");
+    m_payloadHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +50,10 @@ JsonValue Lambdas::Jsonize() const {
 
   if (m_arnHasBeenSet) {
     payload.WithString("arn", m_arn);
+  }
+
+  if (m_payloadHasBeenSet) {
+    payload.WithString("payload", m_payload);
   }
 
   return payload;

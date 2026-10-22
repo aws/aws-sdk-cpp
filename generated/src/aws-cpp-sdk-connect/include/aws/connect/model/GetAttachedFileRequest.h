@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connect/ConnectRequest.h>
 #include <aws/connect/Connect_EXPORTS.h>
+#include <aws/connect/model/ContentDisposition.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -113,6 +114,25 @@ class GetAttachedFileRequest : public ConnectRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies how a browser handles the file at the pre-signed URL. The valid
+   * values are the following:</p> <dl> <dt>INLINE</dt> <dd> <p>Displays the file in
+   * the browser.</p> </dd> <dt>ATTACHMENT</dt> <dd> <p>Downloads the file. This is
+   * the default.</p> </dd> </dl>
+   */
+  inline ContentDisposition GetUrlContentDisposition() const { return m_urlContentDisposition; }
+  inline bool UrlContentDispositionHasBeenSet() const { return m_urlContentDispositionHasBeenSet; }
+  inline void SetUrlContentDisposition(ContentDisposition value) {
+    m_urlContentDispositionHasBeenSet = true;
+    m_urlContentDisposition = value;
+  }
+  inline GetAttachedFileRequest& WithUrlContentDisposition(ContentDisposition value) {
+    SetUrlContentDisposition(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_instanceId;
 
@@ -121,10 +141,13 @@ class GetAttachedFileRequest : public ConnectRequest {
   int m_urlExpiryInSeconds{0};
 
   Aws::String m_associatedResourceArn;
+
+  ContentDisposition m_urlContentDisposition{ContentDisposition::NOT_SET};
   bool m_instanceIdHasBeenSet = false;
   bool m_fileIdHasBeenSet = false;
   bool m_urlExpiryInSecondsHasBeenSet = false;
   bool m_associatedResourceArnHasBeenSet = false;
+  bool m_urlContentDispositionHasBeenSet = false;
 };
 
 }  // namespace Model

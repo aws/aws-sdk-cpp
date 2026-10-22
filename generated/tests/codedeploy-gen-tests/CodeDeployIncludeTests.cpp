@@ -26,6 +26,7 @@
 #include <aws/codedeploy/model/AutoRollbackConfiguration.h>
 #include <aws/codedeploy/model/AutoRollbackEvent.h>
 #include <aws/codedeploy/model/AutoScalingGroup.h>
+#include <aws/codedeploy/model/AutoScalingGroupProcess.h>
 #include <aws/codedeploy/model/BatchGetApplicationRevisionsRequest.h>
 #include <aws/codedeploy/model/BatchGetApplicationRevisionsResult.h>
 #include <aws/codedeploy/model/BatchGetApplicationsRequest.h>
@@ -77,6 +78,7 @@
 #include <aws/codedeploy/model/DeploymentWaitType.h>
 #include <aws/codedeploy/model/DeregisterOnPremisesInstanceRequest.h>
 #include <aws/codedeploy/model/Diagnostics.h>
+#include <aws/codedeploy/model/EC2DeploymentOptions.h>
 #include <aws/codedeploy/model/EC2TagFilter.h>
 #include <aws/codedeploy/model/EC2TagFilterType.h>
 #include <aws/codedeploy/model/EC2TagSet.h>

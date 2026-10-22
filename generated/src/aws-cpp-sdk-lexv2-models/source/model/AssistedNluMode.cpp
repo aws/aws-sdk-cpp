@@ -17,6 +17,7 @@ namespace AssistedNluModeMapper {
 
 static const int Primary_HASH = HashingUtils::HashString("Primary");
 static const int Fallback_HASH = HashingUtils::HashString("Fallback");
+static const int DialogManager_HASH = HashingUtils::HashString("DialogManager");
 
 AssistedNluMode GetAssistedNluModeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ AssistedNluMode GetAssistedNluModeForName(const Aws::String& name) {
     return AssistedNluMode::Primary;
   } else if (hashCode == Fallback_HASH) {
     return AssistedNluMode::Fallback;
+  } else if (hashCode == DialogManager_HASH) {
+    return AssistedNluMode::DialogManager;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForAssistedNluMode(AssistedNluMode enumValue) {
       return "Primary";
     case AssistedNluMode::Fallback:
       return "Fallback";
+    case AssistedNluMode::DialogManager:
+      return "DialogManager";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

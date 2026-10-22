@@ -165,10 +165,15 @@
 #include <aws/guardduty/model/Detection.h>
 #include <aws/guardduty/model/DetectionRuleConfigurationStatus.h>
 #include <aws/guardduty/model/DetectionRuleDataSource.h>
+#include <aws/guardduty/model/DetectionRuleEc2Requirements.h>
+#include <aws/guardduty/model/DetectionRuleEcsFargateRequirements.h>
+#include <aws/guardduty/model/DetectionRuleEksRequirements.h>
 #include <aws/guardduty/model/DetectionRuleFilter.h>
 #include <aws/guardduty/model/DetectionRuleFilterCondition.h>
 #include <aws/guardduty/model/DetectionRuleOrgConfiguration.h>
 #include <aws/guardduty/model/DetectionRuleOrgConfigurationSummary.h>
+#include <aws/guardduty/model/DetectionRuleRuntimeMonitoringDetails.h>
+#include <aws/guardduty/model/DetectionRuleRuntimePlatforms.h>
 #include <aws/guardduty/model/DetectionRuleSeverity.h>
 #include <aws/guardduty/model/DetectionSource.h>
 #include <aws/guardduty/model/DetectorAdditionalConfiguration.h>

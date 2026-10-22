@@ -70,12 +70,48 @@ class DestinationProperties {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The 12-digit Amazon Web Services account ID of the account that owns the
+   * Amazon S3 bucket specified in the <code>DestinationArn</code> parameter.</p>
+   * <p>When you provide this value, GuardDuty verifies that the specified account
+   * owns the bucket before it exports findings. If the account ID doesn't match the
+   * actual owner of the bucket, GuardDuty doesn't export findings to that bucket.
+   * This helps prevent GuardDuty from exporting your findings to a bucket that a
+   * different Amazon Web Services account owns (for example, if the original bucket
+   * was deleted and its name was later claimed by another account). If you don't
+   * specify this value, GuardDuty doesn't perform this verification. GuardDuty
+   * strongly recommends that you provide the expected bucket owner when
+   * possible.</p> <p>When you update a publishing destination, omitting this field
+   * leaves the currently stored value unchanged. This field appears in the response
+   * only if it was provided when the publishing destination was created or
+   * updated.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_exportfindings.html#guardduty-exportfindings-expected-bucket-owner">Verifying
+   * the Amazon S3 bucket owner</a> in the <i>Amazon GuardDuty User Guide</i>.</p>
+   */
+  inline const Aws::String& GetExpectedBucketOwner() const { return m_expectedBucketOwner; }
+  inline bool ExpectedBucketOwnerHasBeenSet() const { return m_expectedBucketOwnerHasBeenSet; }
+  template <typename ExpectedBucketOwnerT = Aws::String>
+  void SetExpectedBucketOwner(ExpectedBucketOwnerT&& value) {
+    m_expectedBucketOwnerHasBeenSet = true;
+    m_expectedBucketOwner = std::forward<ExpectedBucketOwnerT>(value);
+  }
+  template <typename ExpectedBucketOwnerT = Aws::String>
+  DestinationProperties& WithExpectedBucketOwner(ExpectedBucketOwnerT&& value) {
+    SetExpectedBucketOwner(std::forward<ExpectedBucketOwnerT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_destinationArn;
 
   Aws::String m_kmsKeyArn;
+
+  Aws::String m_expectedBucketOwner;
   bool m_destinationArnHasBeenSet = false;
   bool m_kmsKeyArnHasBeenSet = false;
+  bool m_expectedBucketOwnerHasBeenSet = false;
 };
 
 }  // namespace Model

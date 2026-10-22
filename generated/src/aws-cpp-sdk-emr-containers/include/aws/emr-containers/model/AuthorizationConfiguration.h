@@ -35,7 +35,7 @@ class AuthorizationConfiguration {
 
   ///@{
   /**
-   * <p>Lake Formation related configuration inputs for the security
+   * <p> Lake Formation related configuration inputs for the security
    * configuration.</p>
    */
   inline const LakeFormationConfiguration& GetLakeFormationConfiguration() const { return m_lakeFormationConfiguration; }

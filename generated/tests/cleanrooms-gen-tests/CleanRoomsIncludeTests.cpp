@@ -171,6 +171,9 @@
 #include <aws/cleanrooms/model/CreatePrivacyBudgetTemplateResult.h>
 #include <aws/cleanrooms/model/CustomMLMemberAbility.h>
 #include <aws/cleanrooms/model/DataEncryptionMetadata.h>
+#include <aws/cleanrooms/model/DatabricksConnectionType.h>
+#include <aws/cleanrooms/model/DatabricksDeltaSharingConnection.h>
+#include <aws/cleanrooms/model/DatabricksTableReference.h>
 #include <aws/cleanrooms/model/DeleteAnalysisTemplateRequest.h>
 #include <aws/cleanrooms/model/DeleteAnalysisTemplateResult.h>
 #include <aws/cleanrooms/model/DeleteCollaborationRequest.h>
@@ -510,6 +513,7 @@
 #include <aws/cleanrooms/model/SyntheticDataGenerationPaymentConfig.h>
 #include <aws/cleanrooms/model/SyntheticDataParameters.h>
 #include <aws/cleanrooms/model/TableReference.h>
+#include <aws/cleanrooms/model/TableReferenceType.h>
 #include <aws/cleanrooms/model/TagResourceRequest.h>
 #include <aws/cleanrooms/model/TagResourceResult.h>
 #include <aws/cleanrooms/model/TargetProtectedJobStatus.h>

@@ -172,7 +172,7 @@ class Schedule {
   /**
    * <p>The dates and times when the job is to run. For more information, see <a
    * href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron
-   * expressions</a> in the <i>Glue DataBrew Developer Guide</i>.</p>
+   * expressions</a> in the <i> Glue DataBrew Developer Guide</i>.</p>
    */
   inline const Aws::String& GetCronExpression() const { return m_cronExpression; }
   inline bool CronExpressionHasBeenSet() const { return m_cronExpressionHasBeenSet; }

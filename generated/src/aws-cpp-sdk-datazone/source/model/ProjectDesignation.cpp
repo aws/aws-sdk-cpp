@@ -18,6 +18,7 @@ namespace ProjectDesignationMapper {
 static const int OWNER_HASH = HashingUtils::HashString("OWNER");
 static const int CONTRIBUTOR_HASH = HashingUtils::HashString("CONTRIBUTOR");
 static const int PROJECT_CATALOG_STEWARD_HASH = HashingUtils::HashString("PROJECT_CATALOG_STEWARD");
+static const int USER_CREATED_DESIGNATION_HASH = HashingUtils::HashString("USER_CREATED_DESIGNATION");
 
 ProjectDesignation GetProjectDesignationForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ ProjectDesignation GetProjectDesignationForName(const Aws::String& name) {
     return ProjectDesignation::CONTRIBUTOR;
   } else if (hashCode == PROJECT_CATALOG_STEWARD_HASH) {
     return ProjectDesignation::PROJECT_CATALOG_STEWARD;
+  } else if (hashCode == USER_CREATED_DESIGNATION_HASH) {
+    return ProjectDesignation::USER_CREATED_DESIGNATION;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForProjectDesignation(ProjectDesignation enumValue) {
       return "CONTRIBUTOR";
     case ProjectDesignation::PROJECT_CATALOG_STEWARD:
       return "PROJECT_CATALOG_STEWARD";
+    case ProjectDesignation::USER_CREATED_DESIGNATION:
+      return "USER_CREATED_DESIGNATION";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

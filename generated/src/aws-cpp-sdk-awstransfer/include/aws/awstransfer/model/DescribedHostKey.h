@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/awstransfer/Transfer_EXPORTS.h>
+#include <aws/awstransfer/model/HostKeyStorageType.h>
 #include <aws/awstransfer/model/Tag.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -171,6 +172,43 @@ class DescribedHostKey {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether the host key is stored by Transfer Family
+   * (<code>SERVICE_MANAGED</code>) or in Secrets Manager
+   * (<code>SECRETS_MANAGER</code>).</p>
+   */
+  inline HostKeyStorageType GetStorageType() const { return m_storageType; }
+  inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
+  inline void SetStorageType(HostKeyStorageType value) {
+    m_storageTypeHasBeenSet = true;
+    m_storageType = value;
+  }
+  inline DescribedHostKey& WithStorageType(HostKeyStorageType value) {
+    SetStorageType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ARN of the Secrets Manager secret that stores the host key material, when
+   * <code>StorageType</code> is <code>SECRETS_MANAGER</code>.</p>
+   */
+  inline const Aws::String& GetSecretId() const { return m_secretId; }
+  inline bool SecretIdHasBeenSet() const { return m_secretIdHasBeenSet; }
+  template <typename SecretIdT = Aws::String>
+  void SetSecretId(SecretIdT&& value) {
+    m_secretIdHasBeenSet = true;
+    m_secretId = std::forward<SecretIdT>(value);
+  }
+  template <typename SecretIdT = Aws::String>
+  DescribedHostKey& WithSecretId(SecretIdT&& value) {
+    SetSecretId(std::forward<SecretIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
@@ -185,6 +223,10 @@ class DescribedHostKey {
   Aws::Utils::DateTime m_dateImported{};
 
   Aws::Vector<Tag> m_tags;
+
+  HostKeyStorageType m_storageType{HostKeyStorageType::NOT_SET};
+
+  Aws::String m_secretId;
   bool m_arnHasBeenSet = false;
   bool m_hostKeyIdHasBeenSet = false;
   bool m_hostKeyFingerprintHasBeenSet = false;
@@ -192,6 +234,8 @@ class DescribedHostKey {
   bool m_typeHasBeenSet = false;
   bool m_dateImportedHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_storageTypeHasBeenSet = false;
+  bool m_secretIdHasBeenSet = false;
 };
 
 }  // namespace Model

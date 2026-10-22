@@ -52,6 +52,24 @@ class CompleteMigrationRequest : public ElastiCacheRequest {
 
   ///@{
   /**
+   * <p>The name of the serverless cache to which data is being migrated.</p>
+   */
+  inline const Aws::String& GetServerlessCacheName() const { return m_serverlessCacheName; }
+  inline bool ServerlessCacheNameHasBeenSet() const { return m_serverlessCacheNameHasBeenSet; }
+  template <typename ServerlessCacheNameT = Aws::String>
+  void SetServerlessCacheName(ServerlessCacheNameT&& value) {
+    m_serverlessCacheNameHasBeenSet = true;
+    m_serverlessCacheName = std::forward<ServerlessCacheNameT>(value);
+  }
+  template <typename ServerlessCacheNameT = Aws::String>
+  CompleteMigrationRequest& WithServerlessCacheName(ServerlessCacheNameT&& value) {
+    SetServerlessCacheName(std::forward<ServerlessCacheNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Forces the migration to stop without ensuring that data is in sync. It is
    * recommended to use this option only to abort the migration and not recommended
    * when application wants to continue migration to ElastiCache.</p>
@@ -70,8 +88,11 @@ class CompleteMigrationRequest : public ElastiCacheRequest {
  private:
   Aws::String m_replicationGroupId;
 
+  Aws::String m_serverlessCacheName;
+
   bool m_force{false};
   bool m_replicationGroupIdHasBeenSet = false;
+  bool m_serverlessCacheNameHasBeenSet = false;
   bool m_forceHasBeenSet = false;
 };
 

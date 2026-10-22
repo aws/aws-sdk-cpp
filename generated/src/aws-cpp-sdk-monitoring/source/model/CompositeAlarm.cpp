@@ -644,6 +644,11 @@ CompositeAlarm& CompositeAlarm::operator=(const std::shared_ptr<Aws::Crt::Cbor::
                   }
                 }
                 m_actionsSuppressorExtensionPeriodHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "ActionConfiguration") {
+                m_actionConfiguration = ActionConfiguration(decoder);
+                m_actionConfigurationHasBeenSet = true;
               } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
@@ -1284,6 +1289,11 @@ CompositeAlarm& CompositeAlarm::operator=(const std::shared_ptr<Aws::Crt::Cbor::
                 }
               }
               m_actionsSuppressorExtensionPeriodHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "ActionConfiguration") {
+              m_actionConfiguration = ActionConfiguration(decoder);
+              m_actionConfigurationHasBeenSet = true;
             } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
@@ -1355,6 +1365,9 @@ void CompositeAlarm::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
     mapSize++;
   }
   if (m_actionsSuppressorExtensionPeriodHasBeenSet) {
+    mapSize++;
+  }
+  if (m_actionConfigurationHasBeenSet) {
     mapSize++;
   }
 
@@ -1468,6 +1481,11 @@ void CompositeAlarm::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("ActionsSuppressorExtensionPeriod"));
     (m_actionsSuppressorExtensionPeriod >= 0) ? encoder.WriteUInt(m_actionsSuppressorExtensionPeriod)
                                               : encoder.WriteNegInt(m_actionsSuppressorExtensionPeriod);
+  }
+
+  if (m_actionConfigurationHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ActionConfiguration"));
+    m_actionConfiguration.CborEncode(encoder);
   }
 }
 

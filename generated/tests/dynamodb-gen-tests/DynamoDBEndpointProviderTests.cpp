@@ -74,7 +74,7 @@ protected:
 };
 
 Aws::UniquePtrSafeDeleted<Aws::Vector<DynamoDBEndpointProviderEndpointTestCase>> DynamoDBEndpointProviderTests::TEST_CASES;
-const size_t DynamoDBEndpointProviderTests::TEST_CASES_SZ = 548;
+const size_t DynamoDBEndpointProviderTests::TEST_CASES_SZ = 433;
 
 Aws::Vector<DynamoDBEndpointProviderEndpointTestCase> DynamoDBEndpointProviderTests::getTestCase() {
 
@@ -530,28 +530,7 @@ Aws::Vector<DynamoDBEndpointProviderEndpointTestCase> DynamoDBEndpointProviderTe
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Missing Region"} // expect
   },
   /*TEST CASE 51*/
-  {"{UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true),
-     EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
-  },
-  /*TEST CASE 52*/
-  {"{UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
-  },
-  /*TEST CASE 53*/
-  {"{UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true),
-     EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Dualstack and custom endpoint are not supported"} // expect
-  },
-  /*TEST CASE 54*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}", // documentation
+  {"{AccountId=111111111111, Region=us-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=false, Endpoint=https://example.com}", // documentation
     {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
      EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
@@ -560,10 +539,31 @@ Aws::Vector<DynamoDBEndpointProviderEndpointTestCase> DynamoDBEndpointProviderTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
+  /*TEST CASE 52*/
+  {"{AccountId=111111111111, Region=us-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=true, Endpoint=https://example.com}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true),
+     EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Dualstack and custom endpoint are not supported"} // expect
+  },
+  /*TEST CASE 53*/
+  {"{AccountId=111111111111, Region=us-east-1, AccountIdEndpointMode=preferred, UseFIPS=true, UseDualStack=false, Endpoint=https://example.com}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
+  },
+  /*TEST CASE 54*/
+  {"{AccountId=111111111111, Region=us-east-1, AccountIdEndpointMode=preferred, UseFIPS=true, UseDualStack=true, Endpoint=https://example.com}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true),
+     EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
+  },
   /*TEST CASE 55*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}", // documentation
+  {"{AccountId=111111111111, Region=us-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=false, Endpoint=https://example.com}", // documentation
     {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
+     EpParam("AccountIdEndpointMode", "disabled")}, // params
     {}, // tags
     {{/*epUrl*/"https://example.com",
        {/*authScheme*/}, 
@@ -571,39 +571,30 @@ Aws::Vector<DynamoDBEndpointProviderEndpointTestCase> DynamoDBEndpointProviderTe
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 56*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"),
-     EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
+  {"{AccountId=111111111111, Region=us-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=true, Endpoint=https://example.com}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true),
+     EpParam("AccountIdEndpointMode", "disabled")}, // params
     {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Dualstack and custom endpoint are not supported"} // expect
   },
   /*TEST CASE 57*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-west-2:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"),
-     EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
+  {"{AccountId=111111111111, Region=us-east-1, AccountIdEndpointMode=disabled, UseFIPS=true, UseDualStack=false, Endpoint=https://example.com}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "disabled")}, // params
     {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
   },
   /*TEST CASE 58*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("ResourceArn", "arn:aws:s3:us-west-2:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"),
-     EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
+  {"{AccountId=111111111111, Region=us-east-1, AccountIdEndpointMode=disabled, UseFIPS=true, UseDualStack=true, Endpoint=https://example.com}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true),
+     EpParam("AccountIdEndpointMode", "disabled")}, // params
     {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
   },
   /*TEST CASE 59*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-west-2:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-west-2:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"),
-     EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-west-2:333333333333:table/table_name"})}, // params
+  {"{AccountId=111111111111, Region=us-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=false, Endpoint=https://example.com}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "required")}, // params
     {}, // tags
     {{/*epUrl*/"https://example.com",
        {/*authScheme*/}, 
@@ -611,580 +602,82 @@ Aws::Vector<DynamoDBEndpointProviderEndpointTestCase> DynamoDBEndpointProviderTe
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 60*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:s3:us-east-1:333333333333:stream/testStream], AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("ResourceArn", "arn:aws:s3:us-west-2:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"),
-     EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:s3:us-east-1:333333333333:stream/testStream"})}, // params
+  {"{AccountId=111111111111, Region=us-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=true, Endpoint=https://example.com}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true),
+     EpParam("AccountIdEndpointMode", "required")}, // params
     {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Dualstack and custom endpoint are not supported"} // expect
   },
   /*TEST CASE 61*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", ""), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "preferred")}, // params
+  {"{AccountId=111111111111, Region=us-east-1, AccountIdEndpointMode=required, UseFIPS=true, UseDualStack=false, Endpoint=https://example.com}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "required")}, // params
     {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
   },
   /*TEST CASE 62*/
-  {"{UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Endpoint", "https://example.com"),
-     EpParam("Region", "us-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred")}, // params
+  {"{AccountId=111111111111, Region=us-east-1, AccountIdEndpointMode=required, UseFIPS=true, UseDualStack=true, Endpoint=https://example.com}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true),
+     EpParam("AccountIdEndpointMode", "required")}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
   },
   /*TEST CASE 63*/
-  {"{UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Endpoint", "https://example.com"),
-     EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
+  {"{Endpoint=https://dynamodb.cn-north-1.api.amazonwebservices.com.cn, Region=cn-north-1, AccountIdEndpointMode=preferred}", // documentation
+    {EpParam("Endpoint", "https://dynamodb.cn-north-1.api.amazonwebservices.com.cn"), EpParam("Region", "cn-north-1"), EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
+    {{/*No endpoint expected*/}, /*error*/"Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html"} // expect
   },
   /*TEST CASE 64*/
-  {"{UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"),
-     EpParam("Region", "us-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred")}, // params
+  {"{Endpoint=https://dynamodb.us-gov-east-1.api.aws, Region=us-gov-east-1, AccountIdEndpointMode=preferred}", // documentation
+    {EpParam("Endpoint", "https://dynamodb.us-gov-east-1.api.aws"), EpParam("Region", "us-gov-east-1"), EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Dualstack and custom endpoint are not supported"} // expect
+    {{/*No endpoint expected*/}, /*error*/"Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html"} // expect
   },
   /*TEST CASE 65*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"),
-     EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
+  {"{Endpoint=https://dynamodb.us-east-1.api.aws, Region=us-east-1, AccountIdEndpointMode=preferred}", // documentation
+    {EpParam("Endpoint", "https://dynamodb.us-east-1.api.aws"), EpParam("Region", "us-east-1"), EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
+    {{/*No endpoint expected*/}, /*error*/"Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html"} // expect
   },
   /*TEST CASE 66*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-west-2:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"),
-     EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
+  {"{Endpoint=https://111111111111.ddb.us-east-1.api.aws, Region=us-east-1, AccountIdEndpointMode=preferred}", // documentation
+    {EpParam("Endpoint", "https://111111111111.ddb.us-east-1.api.aws"), EpParam("Region", "us-east-1"), EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
-    {{/*epUrl*/"https://example.com",
+    {{/*epUrl*/"https://111111111111.ddb.us-east-1.api.aws",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 67*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("ResourceArn", "arn:aws:s3:us-west-2:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
+  {"{Endpoint=https://vpce-1a2b3c4d-5e6f.dynamodb.us-east-1.vpce.api.aws, Region=us-east-1, AccountIdEndpointMode=preferred}", // documentation
+    {EpParam("Endpoint", "https://vpce-1a2b3c4d-5e6f.dynamodb.us-east-1.vpce.api.aws"), EpParam("Region", "us-east-1"), EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
-    {{/*epUrl*/"https://example.com",
+    {{/*epUrl*/"https://vpce-1a2b3c4d-5e6f.dynamodb.us-east-1.vpce.api.aws",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 68*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("ResourceArn", ""), EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "preferred")}, // params
+  {"{Endpoint=https://dynamodb.eu-west-1.api.aws, Region=eu-west-1, AccountIdEndpointMode=preferred}", // documentation
+    {EpParam("Endpoint", "https://dynamodb.eu-west-1.api.aws"), EpParam("Region", "eu-west-1"), EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
+    {{/*No endpoint expected*/}, /*error*/"Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html"} // expect
   },
   /*TEST CASE 69*/
-  {"{UseFIPS=true, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("UseFIPS", true), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred"),
-     EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
+  {"{Endpoint=https://dynamodb.us-west-2.api.aws, Region=us-west-2, AccountIdEndpointMode=preferred}", // documentation
+    {EpParam("Endpoint", "https://dynamodb.us-west-2.api.aws"), EpParam("Region", "us-west-2"), EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
+    {{/*No endpoint expected*/}, /*error*/"Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html"} // expect
   },
   /*TEST CASE 70*/
-  {"{UseFIPS=true, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("UseFIPS", true), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"),
-     EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
+  {"{Endpoint=https://dynamodb.us-east-1.api.aws/, Region=us-east-1, AccountIdEndpointMode=preferred}", // documentation
+    {EpParam("Endpoint", "https://dynamodb.us-east-1.api.aws/"), EpParam("Region", "us-east-1"), EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
+    {{/*No endpoint expected*/}, /*error*/"Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html"} // expect
   },
   /*TEST CASE 71*/
-  {"{UseFIPS=false, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred"),
-     EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Dualstack and custom endpoint are not supported"} // expect
-  },
-  /*TEST CASE 72*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"),
-     EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 73*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"),
-     EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 74*/
-  {"{UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 75*/
-  {"{UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true),
-     EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
-  },
-  /*TEST CASE 76*/
-  {"{UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
-  },
-  /*TEST CASE 77*/
-  {"{UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true),
-     EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Dualstack and custom endpoint are not supported"} // expect
-  },
-  /*TEST CASE 78*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 79*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "disabled"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 80*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"),
-     EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 81*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-west-2:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"),
-     EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 82*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("ResourceArn", "arn:aws:s3:us-west-2:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"),
-     EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 83*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-west-2:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-west-2:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"),
-     EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-west-2:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 84*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:s3:us-east-1:333333333333:stream/testStream], AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("ResourceArn", "arn:aws:s3:us-west-2:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"),
-     EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:s3:us-east-1:333333333333:stream/testStream"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 85*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", ""), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 86*/
-  {"{UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Endpoint", "https://example.com"),
-     EpParam("Region", "us-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
-  },
-  /*TEST CASE 87*/
-  {"{UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Endpoint", "https://example.com"),
-     EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
-  },
-  /*TEST CASE 88*/
-  {"{UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"),
-     EpParam("Region", "us-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Dualstack and custom endpoint are not supported"} // expect
-  },
-  /*TEST CASE 89*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"),
-     EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 90*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-west-2:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"),
-     EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 91*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("ResourceArn", "arn:aws:s3:us-west-2:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 92*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("ResourceArn", ""), EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 93*/
-  {"{UseFIPS=true, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("UseFIPS", true), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "disabled"),
-     EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
-  },
-  /*TEST CASE 94*/
-  {"{UseFIPS=true, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("UseFIPS", true), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled"),
-     EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
-  },
-  /*TEST CASE 95*/
-  {"{UseFIPS=false, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "disabled"),
-     EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Dualstack and custom endpoint are not supported"} // expect
-  },
-  /*TEST CASE 96*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled"),
-     EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 97*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"),
-     EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 98*/
-  {"{UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 99*/
-  {"{UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true),
-     EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
-  },
-  /*TEST CASE 100*/
-  {"{UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
-  },
-  /*TEST CASE 101*/
-  {"{UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true),
-     EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Dualstack and custom endpoint are not supported"} // expect
-  },
-  /*TEST CASE 102*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 103*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 104*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"),
-     EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 105*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-west-2:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"),
-     EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 106*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("ResourceArn", "arn:aws:s3:us-west-2:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"),
-     EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 107*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-west-2:333333333333:table/table_name], AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-west-2:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"),
-     EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-west-2:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 108*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:s3:us-east-1:333333333333:stream/testStream], AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("ResourceArn", "arn:aws:s3:us-west-2:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"),
-     EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:s3:us-east-1:333333333333:stream/testStream"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 109*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", ""), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 110*/
-  {"{UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Endpoint", "https://example.com"),
-     EpParam("Region", "us-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
-  },
-  /*TEST CASE 111*/
-  {"{UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Endpoint", "https://example.com"),
-     EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
-  },
-  /*TEST CASE 112*/
-  {"{UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"),
-     EpParam("Region", "us-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Dualstack and custom endpoint are not supported"} // expect
-  },
-  /*TEST CASE 113*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"),
-     EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 114*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-west-2:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"),
-     EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 115*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("ResourceArn", "arn:aws:s3:us-west-2:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 116*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("ResourceArn", ""), EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 117*/
-  {"{UseFIPS=true, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("UseFIPS", true), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required"),
-     EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
-  },
-  /*TEST CASE 118*/
-  {"{UseFIPS=true, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("UseFIPS", true), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required"),
-     EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
-  },
-  /*TEST CASE 119*/
-  {"{UseFIPS=false, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required"),
-     EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Dualstack and custom endpoint are not supported"} // expect
-  },
-  /*TEST CASE 120*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required"),
-     EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 121*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"),
-     EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 122*/
-  {"{UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com}", // documentation
-    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 123*/
-  {"{UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=local}", // documentation
-    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Region", "local"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and local endpoint are not supported"} // expect
-  },
-  /*TEST CASE 124*/
-  {"{UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=local}", // documentation
-    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Region", "local"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and local endpoint are not supported"} // expect
-  },
-  /*TEST CASE 125*/
-  {"{UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=local}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "local"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Dualstack and local endpoint are not supported"} // expect
-  },
-  /*TEST CASE 126*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=local}", // documentation
+  {"{AccountId=111111111111, Region=local, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=false}", // documentation
     {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "local"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
     {{/*epUrl*/"http://localhost:8000",
@@ -1192,201 +685,26 @@ Aws::Vector<DynamoDBEndpointProviderEndpointTestCase> DynamoDBEndpointProviderTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 127*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=local}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "local"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"),
-     EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 128*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=local}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "local"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 129*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=local}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-west-2:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "local"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 130*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=local}", // documentation
-    {EpParam("ResourceArn", "arn:aws:s3:us-west-2:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "local"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 131*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-west-2:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=local}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-west-2:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "local"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-west-2:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 132*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:s3:us-east-1:333333333333:stream/testStream], AccountIdEndpointMode=preferred, Region=local}", // documentation
-    {EpParam("ResourceArn", "arn:aws:s3:us-west-2:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "local"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:s3:us-east-1:333333333333:stream/testStream"})}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 133*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=preferred, Region=local}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", ""), EpParam("Region", "local"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 134*/
-  {"{UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=local}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Region", "local"), EpParam("UseDualStack", true),
-     EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and local endpoint are not supported"} // expect
-  },
-  /*TEST CASE 135*/
-  {"{UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=local}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Region", "local"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and local endpoint are not supported"} // expect
-  },
-  /*TEST CASE 136*/
-  {"{UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=local}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "local"), EpParam("UseDualStack", true),
-     EpParam("AccountIdEndpointMode", "preferred")}, // params
+  /*TEST CASE 72*/
+  {"{AccountId=111111111111, Region=local, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "local"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Dualstack and local endpoint are not supported"} // expect
   },
-  /*TEST CASE 137*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=local}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "local"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 138*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=local}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-west-2:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "local"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 139*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=preferred, Region=local}", // documentation
-    {EpParam("ResourceArn", "arn:aws:s3:us-west-2:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("Region", "local"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 140*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=, AccountIdEndpointMode=preferred, Region=local}", // documentation
-    {EpParam("ResourceArn", ""), EpParam("UseFIPS", false), EpParam("Region", "local"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 141*/
-  {"{UseFIPS=true, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=local}", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "local"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
+  /*TEST CASE 73*/
+  {"{AccountId=111111111111, Region=local, AccountIdEndpointMode=preferred, UseFIPS=true, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Region", "local"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and local endpoint are not supported"} // expect
   },
-  /*TEST CASE 142*/
-  {"{UseFIPS=true, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=local}", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "local"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
+  /*TEST CASE 74*/
+  {"{AccountId=111111111111, Region=local, AccountIdEndpointMode=preferred, UseFIPS=true, UseDualStack=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Region", "local"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and local endpoint are not supported"} // expect
   },
-  /*TEST CASE 143*/
-  {"{UseFIPS=false, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=local}", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "local"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Dualstack and local endpoint are not supported"} // expect
-  },
-  /*TEST CASE 144*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=local}", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "local"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 145*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=local}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "local"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 146*/
-  {"{UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=preferred, Region=local}", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "local"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 147*/
-  {"{UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=local}", // documentation
-    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Region", "local"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and local endpoint are not supported"} // expect
-  },
-  /*TEST CASE 148*/
-  {"{UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=local}", // documentation
-    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Region", "local"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and local endpoint are not supported"} // expect
-  },
-  /*TEST CASE 149*/
-  {"{UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=local}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "local"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Dualstack and local endpoint are not supported"} // expect
-  },
-  /*TEST CASE 150*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=local}", // documentation
+  /*TEST CASE 75*/
+  {"{AccountId=111111111111, Region=local, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=false}", // documentation
     {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "local"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
     {}, // tags
     {{/*epUrl*/"http://localhost:8000",
@@ -1394,201 +712,26 @@ Aws::Vector<DynamoDBEndpointProviderEndpointTestCase> DynamoDBEndpointProviderTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 151*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=local}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "local"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled"),
-     EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 152*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=local}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "local"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 153*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=local}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-west-2:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "local"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 154*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=local}", // documentation
-    {EpParam("ResourceArn", "arn:aws:s3:us-west-2:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "local"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 155*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-west-2:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=local}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-west-2:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "local"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-west-2:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 156*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:s3:us-east-1:333333333333:stream/testStream], AccountIdEndpointMode=disabled, Region=local}", // documentation
-    {EpParam("ResourceArn", "arn:aws:s3:us-west-2:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "local"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:s3:us-east-1:333333333333:stream/testStream"})}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 157*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=disabled, Region=local}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", ""), EpParam("Region", "local"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 158*/
-  {"{UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=local}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Region", "local"), EpParam("UseDualStack", true),
-     EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and local endpoint are not supported"} // expect
-  },
-  /*TEST CASE 159*/
-  {"{UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=local}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Region", "local"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and local endpoint are not supported"} // expect
-  },
-  /*TEST CASE 160*/
-  {"{UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=local}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "local"), EpParam("UseDualStack", true),
-     EpParam("AccountIdEndpointMode", "disabled")}, // params
+  /*TEST CASE 76*/
+  {"{AccountId=111111111111, Region=local, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "local"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "disabled")}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Dualstack and local endpoint are not supported"} // expect
   },
-  /*TEST CASE 161*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=local}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "local"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 162*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=local}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-west-2:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "local"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 163*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=disabled, Region=local}", // documentation
-    {EpParam("ResourceArn", "arn:aws:s3:us-west-2:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("Region", "local"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 164*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=, AccountIdEndpointMode=disabled, Region=local}", // documentation
-    {EpParam("ResourceArn", ""), EpParam("UseFIPS", false), EpParam("Region", "local"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 165*/
-  {"{UseFIPS=true, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=local}", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "local"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "disabled"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
+  /*TEST CASE 77*/
+  {"{AccountId=111111111111, Region=local, AccountIdEndpointMode=disabled, UseFIPS=true, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Region", "local"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and local endpoint are not supported"} // expect
   },
-  /*TEST CASE 166*/
-  {"{UseFIPS=true, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=local}", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "local"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
+  /*TEST CASE 78*/
+  {"{AccountId=111111111111, Region=local, AccountIdEndpointMode=disabled, UseFIPS=true, UseDualStack=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Region", "local"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "disabled")}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and local endpoint are not supported"} // expect
   },
-  /*TEST CASE 167*/
-  {"{UseFIPS=false, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=local}", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "local"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "disabled"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Dualstack and local endpoint are not supported"} // expect
-  },
-  /*TEST CASE 168*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=local}", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "local"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 169*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=local}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "local"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "disabled"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 170*/
-  {"{UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=disabled, Region=local}", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "local"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 171*/
-  {"{UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=required, Region=local}", // documentation
-    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Region", "local"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and local endpoint are not supported"} // expect
-  },
-  /*TEST CASE 172*/
-  {"{UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=required, Region=local}", // documentation
-    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Region", "local"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and local endpoint are not supported"} // expect
-  },
-  /*TEST CASE 173*/
-  {"{UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=required, Region=local}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "local"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Dualstack and local endpoint are not supported"} // expect
-  },
-  /*TEST CASE 174*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=required, Region=local}", // documentation
+  /*TEST CASE 79*/
+  {"{AccountId=111111111111, Region=local, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=false}", // documentation
     {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "local"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
     {}, // tags
     {{/*epUrl*/"http://localhost:8000",
@@ -1596,210 +739,51 @@ Aws::Vector<DynamoDBEndpointProviderEndpointTestCase> DynamoDBEndpointProviderTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 175*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=local}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "local"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required"),
-     EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 176*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=local}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "local"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 177*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=local}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-west-2:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "local"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 178*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=local}", // documentation
-    {EpParam("ResourceArn", "arn:aws:s3:us-west-2:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "local"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 179*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-west-2:333333333333:table/table_name], AccountIdEndpointMode=required, Region=local}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-west-2:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "local"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-west-2:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 180*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:s3:us-east-1:333333333333:stream/testStream], AccountIdEndpointMode=required, Region=local}", // documentation
-    {EpParam("ResourceArn", "arn:aws:s3:us-west-2:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "local"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:s3:us-east-1:333333333333:stream/testStream"})}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 181*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=required, Region=local}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", ""), EpParam("Region", "local"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 182*/
-  {"{UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=local}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Region", "local"), EpParam("UseDualStack", true),
-     EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and local endpoint are not supported"} // expect
-  },
-  /*TEST CASE 183*/
-  {"{UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=local}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Region", "local"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and local endpoint are not supported"} // expect
-  },
-  /*TEST CASE 184*/
-  {"{UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=local}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "local"), EpParam("UseDualStack", true),
-     EpParam("AccountIdEndpointMode", "required")}, // params
+  /*TEST CASE 80*/
+  {"{AccountId=111111111111, Region=local, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "local"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required")}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Dualstack and local endpoint are not supported"} // expect
   },
-  /*TEST CASE 185*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=local}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "local"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 186*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=required, Region=local}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-west-2:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "local"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 187*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=required, Region=local}", // documentation
-    {EpParam("ResourceArn", "arn:aws:s3:us-west-2:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("Region", "local"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 188*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=, AccountIdEndpointMode=required, Region=local}", // documentation
-    {EpParam("ResourceArn", ""), EpParam("UseFIPS", false), EpParam("Region", "local"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 189*/
-  {"{UseFIPS=true, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=local}", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "local"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
+  /*TEST CASE 81*/
+  {"{AccountId=111111111111, Region=local, AccountIdEndpointMode=required, UseFIPS=true, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Region", "local"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and local endpoint are not supported"} // expect
   },
-  /*TEST CASE 190*/
-  {"{UseFIPS=true, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=local}", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "local"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
+  /*TEST CASE 82*/
+  {"{AccountId=111111111111, Region=local, AccountIdEndpointMode=required, UseFIPS=true, UseDualStack=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Region", "local"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required")}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and local endpoint are not supported"} // expect
   },
-  /*TEST CASE 191*/
-  {"{UseFIPS=false, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=local}", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "local"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
+  /*TEST CASE 83*/
+  {"{UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", false), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Dualstack and local endpoint are not supported"} // expect
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Missing Region"} // expect
   },
-  /*TEST CASE 192*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=local}", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "local"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
+  /*TEST CASE 84*/
+  {"{Region=us-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:not_an_account:table/table_name}", // documentation
+    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:not_an_account:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
+    {{/*epUrl*/"https://dynamodb.us-east-1.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 193*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=local}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "local"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
+  /*TEST CASE 85*/
+  {"{Region=us-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
+    {{/*epUrl*/"https://dynamodb.us-east-1.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 194*/
-  {"{UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=required, Region=local}", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "local"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 195*/
-  {"{UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-east-1}", // documentation
-    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb-fips.us-east-1.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 196*/
-  {"{UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-east-1}", // documentation
-    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb-fips.us-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 197*/
-  {"{UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-east-1}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://111111111111.ddb.us-east-1.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 198*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-east-1}", // documentation
+  /*TEST CASE 86*/
+  {"{AccountId=111111111111, Region=us-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=false}", // documentation
     {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
     {{/*epUrl*/"https://111111111111.ddb.us-east-1.amazonaws.com",
@@ -1807,8 +791,81 @@ Aws::Vector<DynamoDBEndpointProviderEndpointTestCase> DynamoDBEndpointProviderTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 199*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-east-1}", // documentation
+  /*TEST CASE 87*/
+  {"{AccountId=, Region=us-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", ""), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Credentials-sourced account ID parameter is invalid"} // expect
+  },
+  /*TEST CASE 88*/
+  {"{ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, Region=us-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://222222222222.ddb.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 89*/
+  {"{ResourceArn=, Region=us-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", ""), EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 90*/
+  {"{ResourceArnList=[], Region=us-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{})}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 91*/
+  {"{ResourceArn=arn:aws:dynamodb:af-south-1:222222222222:table/table_name, Region=us-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws:dynamodb:af-south-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 92*/
+  {"{ResourceArn=arn:aws:s3:us-east-1:222222222222:stream/testStream, Region=us-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws:s3:us-east-1:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 93*/
+  {"{ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], Region=us-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
+    {}, // tags
+    {{/*epUrl*/"https://333333333333.ddb.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 94*/
+  {"{ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], Region=us-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
+    {}, // tags
+    {{/*epUrl*/"https://222222222222.ddb.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 95*/
+  {"{AccountId=111111111111, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], Region=us-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=false}", // documentation
     {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"),
      EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
     {}, // tags
@@ -1817,8 +874,8 @@ Aws::Vector<DynamoDBEndpointProviderEndpointTestCase> DynamoDBEndpointProviderTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 200*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-east-1}", // documentation
+  /*TEST CASE 96*/
+  {"{AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], Region=us-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=false}", // documentation
     {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"),
      EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
     {}, // tags
@@ -1827,9 +884,9 @@ Aws::Vector<DynamoDBEndpointProviderEndpointTestCase> DynamoDBEndpointProviderTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 201*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-west-2:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"),
+  /*TEST CASE 97*/
+  {"{AccountId=111111111111, ResourceArn=arn:aws:dynamodb:af-south-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], Region=us-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws:dynamodb:af-south-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"),
      EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
     {}, // tags
     {{/*epUrl*/"https://333333333333.ddb.us-east-1.amazonaws.com",
@@ -1837,9 +894,9 @@ Aws::Vector<DynamoDBEndpointProviderEndpointTestCase> DynamoDBEndpointProviderTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 202*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:s3:us-west-2:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"),
+  /*TEST CASE 98*/
+  {"{AccountId=111111111111, ResourceArn=arn:aws:s3:us-east-1:222222222222:stream/testStream, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], Region=us-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws:s3:us-east-1:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"),
      EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
     {}, // tags
     {{/*epUrl*/"https://333333333333.ddb.us-east-1.amazonaws.com",
@@ -1847,19 +904,19 @@ Aws::Vector<DynamoDBEndpointProviderEndpointTestCase> DynamoDBEndpointProviderTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 203*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-west-2:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-west-2:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-west-2:333333333333:table/table_name"})}, // params
+  /*TEST CASE 99*/
+  {"{AccountId=111111111111, ResourceArn=arn:aws:s3:af-south-1:222222222222:stream/testStream, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], Region=us-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws:s3:af-south-1:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
     {}, // tags
-    {{/*epUrl*/"https://111111111111.ddb.us-east-1.amazonaws.com",
+    {{/*epUrl*/"https://333333333333.ddb.us-east-1.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 204*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:s3:us-east-1:333333333333:stream/testStream], AccountIdEndpointMode=preferred, Region=us-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:s3:us-west-2:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"),
+  /*TEST CASE 100*/
+  {"{AccountId=111111111111, ResourceArn=arn:aws:s3:af-south-1:222222222222:stream/testStream, ResourceArnList=[arn:aws:s3:us-east-1:333333333333:stream/testStream], Region=us-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws:s3:af-south-1:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"),
      EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:s3:us-east-1:333333333333:stream/testStream"})}, // params
     {}, // tags
     {{/*epUrl*/"https://111111111111.ddb.us-east-1.amazonaws.com",
@@ -1867,34 +924,47 @@ Aws::Vector<DynamoDBEndpointProviderEndpointTestCase> DynamoDBEndpointProviderTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 205*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=preferred, Region=us-east-1}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", ""), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Credentials-sourced account ID parameter is invalid"} // expect
-  },
-  /*TEST CASE 206*/
-  {"{UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true),
+  /*TEST CASE 101*/
+  {"{ResourceArn=arn:aws:s3:af-south-1:222222222222:stream/testStream, Region=us-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws:s3:af-south-1:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
      EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
-    {{/*epUrl*/"https://dynamodb-fips.us-east-1.api.aws",
+    {{/*epUrl*/"https://dynamodb.us-east-1.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 207*/
-  {"{UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "preferred")}, // params
+  /*TEST CASE 102*/
+  {"{AccountId=111111111111, ResourceArn=arn:aws:dynamodb:af-south-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:af-south-1:333333333333:table/table_name], Region=us-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws:dynamodb:af-south-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:af-south-1:333333333333:table/table_name"})}, // params
     {}, // tags
-    {{/*epUrl*/"https://dynamodb-fips.us-east-1.amazonaws.com",
+    {{/*epUrl*/"https://111111111111.ddb.us-east-1.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 208*/
-  {"{UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-east-1}", // documentation
+  /*TEST CASE 103*/
+  {"{AccountId=111111111111, ResourceArn=arn:aws:s3:us-east-1:222222222222:stream/testStream, ResourceArnList=[arn:aws:s3:us-east-1:333333333333:stream/testStream], Region=us-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws:s3:us-east-1:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:s3:us-east-1:333333333333:stream/testStream"})}, // params
+    {}, // tags
+    {{/*epUrl*/"https://111111111111.ddb.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 104*/
+  {"{AccountId=111111111111, Region=us-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://111111111111.ddb.us-east-1.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 105*/
+  {"{ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, Region=us-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=true}", // documentation
     {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true),
      EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
@@ -1903,65 +973,8 @@ Aws::Vector<DynamoDBEndpointProviderEndpointTestCase> DynamoDBEndpointProviderTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 209*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://222222222222.ddb.us-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 210*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-west-2:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb.us-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 211*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=preferred, Region=us-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:s3:us-west-2:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb.us-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 212*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=, AccountIdEndpointMode=preferred, Region=us-east-1}", // documentation
-    {EpParam("ResourceArn", ""), EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb.us-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 213*/
-  {"{UseFIPS=true, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-east-1}", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb-fips.us-east-1.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 214*/
-  {"{UseFIPS=true, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-east-1}", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb-fips.us-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 215*/
-  {"{UseFIPS=false, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-east-1}", // documentation
+  /*TEST CASE 106*/
+  {"{ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], Region=us-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=true}", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
     {}, // tags
     {{/*epUrl*/"https://333333333333.ddb.us-east-1.api.aws",
@@ -1969,416 +982,73 @@ Aws::Vector<DynamoDBEndpointProviderEndpointTestCase> DynamoDBEndpointProviderTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 216*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-east-1}", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://333333333333.ddb.us-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 217*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://222222222222.ddb.us-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 218*/
-  {"{UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=preferred, Region=us-east-1}", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb.us-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 219*/
-  {"{UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=required, Region=us-east-1}", // documentation
-    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
-  },
-  /*TEST CASE 220*/
-  {"{UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=required, Region=us-east-1}", // documentation
-    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
-  },
-  /*TEST CASE 221*/
-  {"{UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=required, Region=us-east-1}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://111111111111.ddb.us-east-1.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 222*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=required, Region=us-east-1}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://111111111111.ddb.us-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 223*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=us-east-1}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required"),
-     EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://333333333333.ddb.us-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 224*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=us-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://222222222222.ddb.us-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 225*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=us-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-west-2:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://333333333333.ddb.us-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 226*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=us-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:s3:us-west-2:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://333333333333.ddb.us-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 227*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-west-2:333333333333:table/table_name], AccountIdEndpointMode=required, Region=us-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-west-2:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-west-2:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://111111111111.ddb.us-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 228*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:s3:us-east-1:333333333333:stream/testStream], AccountIdEndpointMode=required, Region=us-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:s3:us-west-2:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:s3:us-east-1:333333333333:stream/testStream"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://111111111111.ddb.us-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 229*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=required, Region=us-east-1}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", ""), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Credentials-sourced account ID parameter is invalid"} // expect
-  },
-  /*TEST CASE 230*/
-  {"{UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true),
-     EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
-  },
-  /*TEST CASE 231*/
-  {"{UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
-  },
-  /*TEST CASE 232*/
-  {"{UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true),
-     EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://222222222222.ddb.us-east-1.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 233*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://222222222222.ddb.us-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 234*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-west-2:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"AccountIdEndpointMode is required but no AccountID was provided or able to be loaded"} // expect
-  },
-  /*TEST CASE 235*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=required, Region=us-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:s3:us-west-2:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"AccountIdEndpointMode is required but no AccountID was provided or able to be loaded"} // expect
-  },
-  /*TEST CASE 236*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=, AccountIdEndpointMode=required, Region=us-east-1}", // documentation
-    {EpParam("ResourceArn", ""), EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"AccountIdEndpointMode is required but no AccountID was provided or able to be loaded"} // expect
-  },
-  /*TEST CASE 237*/
-  {"{UseFIPS=true, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=us-east-1}", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
-  },
-  /*TEST CASE 238*/
-  {"{UseFIPS=true, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=us-east-1}", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
-  },
-  /*TEST CASE 239*/
-  {"{UseFIPS=false, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=us-east-1}", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://333333333333.ddb.us-east-1.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 240*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=us-east-1}", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://333333333333.ddb.us-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 241*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=us-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://222222222222.ddb.us-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 242*/
-  {"{UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=required, Region=us-east-1}", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"AccountIdEndpointMode is required but no AccountID was provided or able to be loaded"} // expect
-  },
-  /*TEST CASE 243*/
-  {"{UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=required, Region=cn-north-1}", // documentation
-    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
-  },
-  /*TEST CASE 244*/
-  {"{UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=required, Region=cn-north-1}", // documentation
-    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
-  },
-  /*TEST CASE 245*/
-  {"{UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=required, Region=cn-north-1}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition"} // expect
-  },
-  /*TEST CASE 246*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=required, Region=cn-north-1}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition"} // expect
-  },
-  /*TEST CASE 247*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=cn-north-1}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required"),
-     EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition"} // expect
-  },
-  /*TEST CASE 248*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=cn-north-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "cn-north-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition"} // expect
-  },
-  /*TEST CASE 249*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=cn-north-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-west-2:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "cn-north-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition"} // expect
-  },
-  /*TEST CASE 250*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=cn-north-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:s3:us-west-2:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "cn-north-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition"} // expect
-  },
-  /*TEST CASE 251*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-west-2:333333333333:table/table_name], AccountIdEndpointMode=required, Region=cn-north-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-west-2:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "cn-north-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-west-2:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition"} // expect
-  },
-  /*TEST CASE 252*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:s3:us-east-1:333333333333:stream/testStream], AccountIdEndpointMode=required, Region=cn-north-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:s3:us-west-2:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "cn-north-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:s3:us-east-1:333333333333:stream/testStream"})}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition"} // expect
-  },
-  /*TEST CASE 253*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=required, Region=cn-north-1}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", ""), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition"} // expect
-  },
-  /*TEST CASE 254*/
-  {"{UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=cn-north-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true),
-     EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
-  },
-  /*TEST CASE 255*/
-  {"{UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=cn-north-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
-  },
-  /*TEST CASE 256*/
-  {"{UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=cn-north-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true),
-     EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition"} // expect
-  },
-  /*TEST CASE 257*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=cn-north-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition"} // expect
-  },
-  /*TEST CASE 258*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=required, Region=cn-north-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-west-2:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition"} // expect
-  },
-  /*TEST CASE 259*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=required, Region=cn-north-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:s3:us-west-2:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition"} // expect
-  },
-  /*TEST CASE 260*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=, AccountIdEndpointMode=required, Region=cn-north-1}", // documentation
-    {EpParam("ResourceArn", ""), EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition"} // expect
-  },
-  /*TEST CASE 261*/
-  {"{UseFIPS=true, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=cn-north-1}", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
-  },
-  /*TEST CASE 262*/
-  {"{UseFIPS=true, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=cn-north-1}", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
-  },
-  /*TEST CASE 263*/
-  {"{UseFIPS=false, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=cn-north-1}", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition"} // expect
-  },
-  /*TEST CASE 264*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=cn-north-1}", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition"} // expect
-  },
-  /*TEST CASE 265*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=required, Region=cn-north-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition"} // expect
-  },
-  /*TEST CASE 266*/
-  {"{UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=required, Region=cn-north-1}", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition"} // expect
-  },
-  /*TEST CASE 267*/
-  {"{UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=us-east-1}", // documentation
-    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb-fips.us-east-1.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 268*/
-  {"{UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=us-east-1}", // documentation
-    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
+  /*TEST CASE 107*/
+  {"{AccountId=111111111111, Region=us-east-1, AccountIdEndpointMode=preferred, UseFIPS=true, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
     {{/*epUrl*/"https://dynamodb-fips.us-east-1.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 269*/
-  {"{UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=us-east-1}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "disabled")}, // params
+  /*TEST CASE 108*/
+  {"{ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, Region=us-east-1, AccountIdEndpointMode=preferred, UseFIPS=true, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
-    {{/*epUrl*/"https://dynamodb.us-east-1.api.aws",
+    {{/*epUrl*/"https://dynamodb-fips.us-east-1.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 270*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=us-east-1}", // documentation
+  /*TEST CASE 109*/
+  {"{ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], Region=us-east-1, AccountIdEndpointMode=preferred, UseFIPS=true, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb-fips.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 110*/
+  {"{AccountId=111111111111, Region=us-east-1, AccountIdEndpointMode=preferred, UseFIPS=true, UseDualStack=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb-fips.us-east-1.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 111*/
+  {"{ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, Region=us-east-1, AccountIdEndpointMode=preferred, UseFIPS=true, UseDualStack=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true),
+     EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb-fips.us-east-1.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 112*/
+  {"{ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], Region=us-east-1, AccountIdEndpointMode=preferred, UseFIPS=true, UseDualStack=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb-fips.us-east-1.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 113*/
+  {"{Region=us-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 114*/
+  {"{AccountId=111111111111, Region=us-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=false}", // documentation
     {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
     {}, // tags
     {{/*epUrl*/"https://dynamodb.us-east-1.amazonaws.com",
@@ -2386,68 +1056,8 @@ Aws::Vector<DynamoDBEndpointProviderEndpointTestCase> DynamoDBEndpointProviderTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 271*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=us-east-1}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled"),
-     EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb.us-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 272*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=us-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb.us-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 273*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=us-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-west-2:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb.us-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 274*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=us-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:s3:us-west-2:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb.us-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 275*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-west-2:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=us-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-west-2:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-west-2:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb.us-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 276*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:s3:us-east-1:333333333333:stream/testStream], AccountIdEndpointMode=disabled, Region=us-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:s3:us-west-2:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:s3:us-east-1:333333333333:stream/testStream"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb.us-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 277*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=disabled, Region=us-east-1}", // documentation
+  /*TEST CASE 115*/
+  {"{AccountId=, Region=us-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=false}", // documentation
     {EpParam("UseFIPS", false), EpParam("AccountId", ""), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
     {}, // tags
     {{/*epUrl*/"https://dynamodb.us-east-1.amazonaws.com",
@@ -2455,38 +1065,8 @@ Aws::Vector<DynamoDBEndpointProviderEndpointTestCase> DynamoDBEndpointProviderTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 278*/
-  {"{UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=us-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true),
-     EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb-fips.us-east-1.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 279*/
-  {"{UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=us-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb-fips.us-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 280*/
-  {"{UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=us-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true),
-     EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb.us-east-1.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 281*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=us-east-1}", // documentation
+  /*TEST CASE 116*/
+  {"{ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, Region=us-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=false}", // documentation
     {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
      EpParam("AccountIdEndpointMode", "disabled")}, // params
     {}, // tags
@@ -2495,28 +1075,8 @@ Aws::Vector<DynamoDBEndpointProviderEndpointTestCase> DynamoDBEndpointProviderTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 282*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=us-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-west-2:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb.us-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 283*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=disabled, Region=us-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:s3:us-west-2:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb.us-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 284*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=, AccountIdEndpointMode=disabled, Region=us-east-1}", // documentation
+  /*TEST CASE 117*/
+  {"{ResourceArn=, Region=us-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=false}", // documentation
     {EpParam("ResourceArn", ""), EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
     {}, // tags
     {{/*epUrl*/"https://dynamodb.us-east-1.amazonaws.com",
@@ -2524,35 +1084,37 @@ Aws::Vector<DynamoDBEndpointProviderEndpointTestCase> DynamoDBEndpointProviderTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 285*/
-  {"{UseFIPS=true, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=us-east-1}", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "disabled"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
+  /*TEST CASE 118*/
+  {"{ResourceArnList=[], Region=us-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{})}, // params
     {}, // tags
-    {{/*epUrl*/"https://dynamodb-fips.us-east-1.api.aws",
+    {{/*epUrl*/"https://dynamodb.us-east-1.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 286*/
-  {"{UseFIPS=true, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=us-east-1}", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
+  /*TEST CASE 119*/
+  {"{ResourceArn=arn:aws:dynamodb:af-south-1:222222222222:table/table_name, Region=us-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws:dynamodb:af-south-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "disabled")}, // params
     {}, // tags
-    {{/*epUrl*/"https://dynamodb-fips.us-east-1.amazonaws.com",
+    {{/*epUrl*/"https://dynamodb.us-east-1.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 287*/
-  {"{UseFIPS=false, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=us-east-1}", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "disabled"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
+  /*TEST CASE 120*/
+  {"{ResourceArn=arn:aws:s3:us-east-1:222222222222:stream/testStream, Region=us-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws:s3:us-east-1:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "disabled")}, // params
     {}, // tags
-    {{/*epUrl*/"https://dynamodb.us-east-1.api.aws",
+    {{/*epUrl*/"https://dynamodb.us-east-1.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 288*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=us-east-1}", // documentation
+  /*TEST CASE 121*/
+  {"{ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], Region=us-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=false}", // documentation
     {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
     {}, // tags
     {{/*epUrl*/"https://dynamodb.us-east-1.amazonaws.com",
@@ -2560,8 +1122,8 @@ Aws::Vector<DynamoDBEndpointProviderEndpointTestCase> DynamoDBEndpointProviderTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 289*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=disabled, Region=us-east-1}", // documentation
+  /*TEST CASE 122*/
+  {"{ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], Region=us-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=false}", // documentation
     {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
      EpParam("AccountIdEndpointMode", "disabled"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
     {}, // tags
@@ -2570,26 +1132,476 @@ Aws::Vector<DynamoDBEndpointProviderEndpointTestCase> DynamoDBEndpointProviderTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 290*/
-  {"{UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=disabled, Region=us-east-1}", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
+  /*TEST CASE 123*/
+  {"{AccountId=111111111111, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], Region=us-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled"),
+     EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
     {}, // tags
     {{/*epUrl*/"https://dynamodb.us-east-1.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 291*/
-  {"{UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=cn-north-1}", // documentation
-    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred")}, // params
+  /*TEST CASE 124*/
+  {"{AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], Region=us-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
     {}, // tags
-    {{/*epUrl*/"https://dynamodb-fips.cn-north-1.api.amazonwebservices.com.cn",
+    {{/*epUrl*/"https://dynamodb.us-east-1.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 292*/
-  {"{UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=cn-north-1}", // documentation
+  /*TEST CASE 125*/
+  {"{AccountId=111111111111, ResourceArn=arn:aws:dynamodb:af-south-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], Region=us-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws:dynamodb:af-south-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 126*/
+  {"{AccountId=111111111111, ResourceArn=arn:aws:s3:us-east-1:222222222222:stream/testStream, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], Region=us-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws:s3:us-east-1:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 127*/
+  {"{AccountId=111111111111, ResourceArn=arn:aws:s3:af-south-1:222222222222:stream/testStream, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], Region=us-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws:s3:af-south-1:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 128*/
+  {"{AccountId=111111111111, ResourceArn=arn:aws:s3:af-south-1:222222222222:stream/testStream, ResourceArnList=[arn:aws:s3:us-east-1:333333333333:stream/testStream], Region=us-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws:s3:af-south-1:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:s3:us-east-1:333333333333:stream/testStream"})}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 129*/
+  {"{ResourceArn=arn:aws:s3:af-south-1:222222222222:stream/testStream, Region=us-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws:s3:af-south-1:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 130*/
+  {"{AccountId=111111111111, ResourceArn=arn:aws:dynamodb:af-south-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:af-south-1:333333333333:table/table_name], Region=us-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws:dynamodb:af-south-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:af-south-1:333333333333:table/table_name"})}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 131*/
+  {"{AccountId=111111111111, ResourceArn=arn:aws:s3:us-east-1:222222222222:stream/testStream, ResourceArnList=[arn:aws:s3:us-east-1:333333333333:stream/testStream], Region=us-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws:s3:us-east-1:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:s3:us-east-1:333333333333:stream/testStream"})}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 132*/
+  {"{AccountId=111111111111, Region=us-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb.us-east-1.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 133*/
+  {"{ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, Region=us-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true),
+     EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb.us-east-1.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 134*/
+  {"{ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], Region=us-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "disabled"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb.us-east-1.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 135*/
+  {"{AccountId=111111111111, Region=us-east-1, AccountIdEndpointMode=disabled, UseFIPS=true, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb-fips.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 136*/
+  {"{ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, Region=us-east-1, AccountIdEndpointMode=disabled, UseFIPS=true, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb-fips.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 137*/
+  {"{ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], Region=us-east-1, AccountIdEndpointMode=disabled, UseFIPS=true, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb-fips.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 138*/
+  {"{AccountId=111111111111, Region=us-east-1, AccountIdEndpointMode=disabled, UseFIPS=true, UseDualStack=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb-fips.us-east-1.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 139*/
+  {"{ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, Region=us-east-1, AccountIdEndpointMode=disabled, UseFIPS=true, UseDualStack=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true),
+     EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb-fips.us-east-1.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 140*/
+  {"{ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], Region=us-east-1, AccountIdEndpointMode=disabled, UseFIPS=true, UseDualStack=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "disabled"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb-fips.us-east-1.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 141*/
+  {"{Region=us-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"AccountIdEndpointMode is required but no AccountID was provided or able to be loaded"} // expect
+  },
+  /*TEST CASE 142*/
+  {"{AccountId=111111111111, Region=us-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://111111111111.ddb.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 143*/
+  {"{AccountId=, Region=us-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", ""), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Credentials-sourced account ID parameter is invalid"} // expect
+  },
+  /*TEST CASE 144*/
+  {"{ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, Region=us-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://222222222222.ddb.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 145*/
+  {"{ResourceArn=, Region=us-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", ""), EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"AccountIdEndpointMode is required but no AccountID was provided or able to be loaded"} // expect
+  },
+  /*TEST CASE 146*/
+  {"{ResourceArnList=[], Region=us-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{})}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"AccountIdEndpointMode is required but no AccountID was provided or able to be loaded"} // expect
+  },
+  /*TEST CASE 147*/
+  {"{ResourceArn=arn:aws:dynamodb:af-south-1:222222222222:table/table_name, Region=us-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws:dynamodb:af-south-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"AccountIdEndpointMode is required but no AccountID was provided or able to be loaded"} // expect
+  },
+  /*TEST CASE 148*/
+  {"{ResourceArn=arn:aws:s3:us-east-1:222222222222:stream/testStream, Region=us-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws:s3:us-east-1:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"AccountIdEndpointMode is required but no AccountID was provided or able to be loaded"} // expect
+  },
+  /*TEST CASE 149*/
+  {"{ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], Region=us-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
+    {}, // tags
+    {{/*epUrl*/"https://333333333333.ddb.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 150*/
+  {"{ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], Region=us-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
+    {}, // tags
+    {{/*epUrl*/"https://222222222222.ddb.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 151*/
+  {"{AccountId=111111111111, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], Region=us-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required"),
+     EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
+    {}, // tags
+    {{/*epUrl*/"https://333333333333.ddb.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 152*/
+  {"{AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], Region=us-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
+    {}, // tags
+    {{/*epUrl*/"https://222222222222.ddb.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 153*/
+  {"{AccountId=111111111111, ResourceArn=arn:aws:dynamodb:af-south-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], Region=us-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws:dynamodb:af-south-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
+    {}, // tags
+    {{/*epUrl*/"https://333333333333.ddb.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 154*/
+  {"{AccountId=111111111111, ResourceArn=arn:aws:s3:us-east-1:222222222222:stream/testStream, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], Region=us-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws:s3:us-east-1:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
+    {}, // tags
+    {{/*epUrl*/"https://333333333333.ddb.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 155*/
+  {"{AccountId=111111111111, ResourceArn=arn:aws:s3:af-south-1:222222222222:stream/testStream, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], Region=us-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws:s3:af-south-1:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
+    {}, // tags
+    {{/*epUrl*/"https://333333333333.ddb.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 156*/
+  {"{AccountId=111111111111, ResourceArn=arn:aws:s3:af-south-1:222222222222:stream/testStream, ResourceArnList=[arn:aws:s3:us-east-1:333333333333:stream/testStream], Region=us-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws:s3:af-south-1:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:s3:us-east-1:333333333333:stream/testStream"})}, // params
+    {}, // tags
+    {{/*epUrl*/"https://111111111111.ddb.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 157*/
+  {"{ResourceArn=arn:aws:s3:af-south-1:222222222222:stream/testStream, Region=us-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws:s3:af-south-1:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"AccountIdEndpointMode is required but no AccountID was provided or able to be loaded"} // expect
+  },
+  /*TEST CASE 158*/
+  {"{AccountId=111111111111, ResourceArn=arn:aws:dynamodb:af-south-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:af-south-1:333333333333:table/table_name], Region=us-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws:dynamodb:af-south-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:af-south-1:333333333333:table/table_name"})}, // params
+    {}, // tags
+    {{/*epUrl*/"https://111111111111.ddb.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 159*/
+  {"{AccountId=111111111111, ResourceArn=arn:aws:s3:us-east-1:222222222222:stream/testStream, ResourceArnList=[arn:aws:s3:us-east-1:333333333333:stream/testStream], Region=us-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws:s3:us-east-1:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:s3:us-east-1:333333333333:stream/testStream"})}, // params
+    {}, // tags
+    {{/*epUrl*/"https://111111111111.ddb.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 160*/
+  {"{AccountId=111111111111, Region=us-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://111111111111.ddb.us-east-1.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 161*/
+  {"{ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, Region=us-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true),
+     EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://222222222222.ddb.us-east-1.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 162*/
+  {"{ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], Region=us-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
+    {}, // tags
+    {{/*epUrl*/"https://333333333333.ddb.us-east-1.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 163*/
+  {"{AccountId=111111111111, Region=us-east-1, AccountIdEndpointMode=required, UseFIPS=true, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
+  },
+  /*TEST CASE 164*/
+  {"{ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, Region=us-east-1, AccountIdEndpointMode=required, UseFIPS=true, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
+  },
+  /*TEST CASE 165*/
+  {"{ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], Region=us-east-1, AccountIdEndpointMode=required, UseFIPS=true, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
+  },
+  /*TEST CASE 166*/
+  {"{AccountId=111111111111, Region=us-east-1, AccountIdEndpointMode=required, UseFIPS=true, UseDualStack=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
+  },
+  /*TEST CASE 167*/
+  {"{ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, Region=us-east-1, AccountIdEndpointMode=required, UseFIPS=true, UseDualStack=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true),
+     EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
+  },
+  /*TEST CASE 168*/
+  {"{ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], Region=us-east-1, AccountIdEndpointMode=required, UseFIPS=true, UseDualStack=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
+  },
+  /*TEST CASE 169*/
+  {"{Region=us-new-1, AccountIdEndpointMode=preferred, AccountId=111111111111, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-new-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://111111111111.ddb.us-new-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 170*/
+  {"{AccountId=111111111111, Region=cn-north-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://111111111111.ddb.cn-north-1.amazonaws.com.cn",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 171*/
+  {"{ResourceArn=arn:aws-cn:dynamodb:cn-north-1:222222222222:table/table_name, Region=cn-north-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws-cn:dynamodb:cn-north-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://222222222222.ddb.cn-north-1.amazonaws.com.cn",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 172*/
+  {"{ResourceArnList=[arn:aws-cn:dynamodb:cn-north-1:333333333333:table/table_name], Region=cn-north-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws-cn:dynamodb:cn-north-1:333333333333:table/table_name"})}, // params
+    {}, // tags
+    {{/*epUrl*/"https://333333333333.ddb.cn-north-1.amazonaws.com.cn",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 173*/
+  {"{AccountId=111111111111, Region=cn-north-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://111111111111.ddb.cn-north-1.api.amazonwebservices.com.cn",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 174*/
+  {"{ResourceArn=arn:aws-cn:dynamodb:cn-north-1:222222222222:table/table_name, Region=cn-north-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-cn:dynamodb:cn-north-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true),
+     EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://222222222222.ddb.cn-north-1.api.amazonwebservices.com.cn",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 175*/
+  {"{ResourceArnList=[arn:aws-cn:dynamodb:cn-north-1:333333333333:table/table_name], Region=cn-north-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws-cn:dynamodb:cn-north-1:333333333333:table/table_name"})}, // params
+    {}, // tags
+    {{/*epUrl*/"https://333333333333.ddb.cn-north-1.api.amazonwebservices.com.cn",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 176*/
+  {"{AccountId=111111111111, Region=cn-north-1, AccountIdEndpointMode=preferred, UseFIPS=true, UseDualStack=false}", // documentation
     {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
     {{/*epUrl*/"https://dynamodb-fips.cn-north-1.amazonaws.com.cn",
@@ -2597,106 +1609,9 @@ Aws::Vector<DynamoDBEndpointProviderEndpointTestCase> DynamoDBEndpointProviderTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 293*/
-  {"{UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=cn-north-1}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb.cn-north-1.api.amazonwebservices.com.cn",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 294*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=cn-north-1}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb.cn-north-1.amazonaws.com.cn",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 295*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=cn-north-1}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"),
-     EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb.cn-north-1.amazonaws.com.cn",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 296*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=cn-north-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "cn-north-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb.cn-north-1.amazonaws.com.cn",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 297*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=cn-north-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-west-2:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "cn-north-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb.cn-north-1.amazonaws.com.cn",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 298*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=cn-north-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:s3:us-west-2:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "cn-north-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb.cn-north-1.amazonaws.com.cn",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 299*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-west-2:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=cn-north-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-west-2:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "cn-north-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-west-2:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb.cn-north-1.amazonaws.com.cn",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 300*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:s3:us-east-1:333333333333:stream/testStream], AccountIdEndpointMode=preferred, Region=cn-north-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:s3:us-west-2:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "cn-north-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:s3:us-east-1:333333333333:stream/testStream"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb.cn-north-1.amazonaws.com.cn",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 301*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=preferred, Region=cn-north-1}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", ""), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb.cn-north-1.amazonaws.com.cn",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 302*/
-  {"{UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=cn-north-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true),
-     EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb-fips.cn-north-1.api.amazonwebservices.com.cn",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 303*/
-  {"{UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=cn-north-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false),
+  /*TEST CASE 177*/
+  {"{ResourceArn=arn:aws-cn:dynamodb:cn-north-1:222222222222:table/table_name, Region=cn-north-1, AccountIdEndpointMode=preferred, UseFIPS=true, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws-cn:dynamodb:cn-north-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false),
      EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
     {{/*epUrl*/"https://dynamodb-fips.cn-north-1.amazonaws.com.cn",
@@ -2704,350 +1619,316 @@ Aws::Vector<DynamoDBEndpointProviderEndpointTestCase> DynamoDBEndpointProviderTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 304*/
-  {"{UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=cn-north-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true),
-     EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb.cn-north-1.api.amazonwebservices.com.cn",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 305*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=cn-north-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb.cn-north-1.amazonaws.com.cn",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 306*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=cn-north-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-west-2:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb.cn-north-1.amazonaws.com.cn",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 307*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=preferred, Region=cn-north-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:s3:us-west-2:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb.cn-north-1.amazonaws.com.cn",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 308*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=, AccountIdEndpointMode=preferred, Region=cn-north-1}", // documentation
-    {EpParam("ResourceArn", ""), EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb.cn-north-1.amazonaws.com.cn",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 309*/
-  {"{UseFIPS=true, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=cn-north-1}", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb-fips.cn-north-1.api.amazonwebservices.com.cn",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 310*/
-  {"{UseFIPS=true, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=cn-north-1}", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
+  /*TEST CASE 178*/
+  {"{ResourceArnList=[arn:aws-cn:dynamodb:cn-north-1:333333333333:table/table_name], Region=cn-north-1, AccountIdEndpointMode=preferred, UseFIPS=true, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws-cn:dynamodb:cn-north-1:333333333333:table/table_name"})}, // params
     {}, // tags
     {{/*epUrl*/"https://dynamodb-fips.cn-north-1.amazonaws.com.cn",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 311*/
-  {"{UseFIPS=false, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=cn-north-1}", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
+  /*TEST CASE 179*/
+  {"{AccountId=111111111111, Region=cn-north-1, AccountIdEndpointMode=preferred, UseFIPS=true, UseDualStack=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb-fips.cn-north-1.api.amazonwebservices.com.cn",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 180*/
+  {"{ResourceArn=arn:aws-cn:dynamodb:cn-north-1:222222222222:table/table_name, Region=cn-north-1, AccountIdEndpointMode=preferred, UseFIPS=true, UseDualStack=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-cn:dynamodb:cn-north-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true),
+     EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb-fips.cn-north-1.api.amazonwebservices.com.cn",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 181*/
+  {"{ResourceArnList=[arn:aws-cn:dynamodb:cn-north-1:333333333333:table/table_name], Region=cn-north-1, AccountIdEndpointMode=preferred, UseFIPS=true, UseDualStack=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws-cn:dynamodb:cn-north-1:333333333333:table/table_name"})}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb-fips.cn-north-1.api.amazonwebservices.com.cn",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 182*/
+  {"{AccountId=111111111111, Region=cn-north-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb.cn-north-1.amazonaws.com.cn",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 183*/
+  {"{ResourceArn=arn:aws-cn:dynamodb:cn-north-1:222222222222:table/table_name, Region=cn-north-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws-cn:dynamodb:cn-north-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb.cn-north-1.amazonaws.com.cn",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 184*/
+  {"{ResourceArnList=[arn:aws-cn:dynamodb:cn-north-1:333333333333:table/table_name], Region=cn-north-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws-cn:dynamodb:cn-north-1:333333333333:table/table_name"})}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb.cn-north-1.amazonaws.com.cn",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 185*/
+  {"{AccountId=111111111111, Region=cn-north-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "disabled")}, // params
     {}, // tags
     {{/*epUrl*/"https://dynamodb.cn-north-1.api.amazonwebservices.com.cn",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 312*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=cn-north-1}", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
+  /*TEST CASE 186*/
+  {"{ResourceArn=arn:aws-cn:dynamodb:cn-north-1:222222222222:table/table_name, Region=cn-north-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-cn:dynamodb:cn-north-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true),
+     EpParam("AccountIdEndpointMode", "disabled")}, // params
     {}, // tags
-    {{/*epUrl*/"https://dynamodb.cn-north-1.amazonaws.com.cn",
+    {{/*epUrl*/"https://dynamodb.cn-north-1.api.amazonwebservices.com.cn",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 313*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=cn-north-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
+  /*TEST CASE 187*/
+  {"{ResourceArnList=[arn:aws-cn:dynamodb:cn-north-1:333333333333:table/table_name], Region=cn-north-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "disabled"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws-cn:dynamodb:cn-north-1:333333333333:table/table_name"})}, // params
     {}, // tags
-    {{/*epUrl*/"https://dynamodb.cn-north-1.amazonaws.com.cn",
+    {{/*epUrl*/"https://dynamodb.cn-north-1.api.amazonwebservices.com.cn",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 314*/
-  {"{UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=preferred, Region=cn-north-1}", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
+  /*TEST CASE 188*/
+  {"{AccountId=111111111111, Region=cn-north-1, AccountIdEndpointMode=disabled, UseFIPS=true, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
     {}, // tags
-    {{/*epUrl*/"https://dynamodb.cn-north-1.amazonaws.com.cn",
+    {{/*epUrl*/"https://dynamodb-fips.cn-north-1.amazonaws.com.cn",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 315*/
-  {"{UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-iso-east-1}", // documentation
-    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred")}, // params
+  /*TEST CASE 189*/
+  {"{ResourceArn=arn:aws-cn:dynamodb:cn-north-1:222222222222:table/table_name, Region=cn-north-1, AccountIdEndpointMode=disabled, UseFIPS=true, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws-cn:dynamodb:cn-north-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "disabled")}, // params
     {}, // tags
-    {{/*epUrl*/"https://dynamodb-fips.us-iso-east-1.api.aws.ic.gov",
+    {{/*epUrl*/"https://dynamodb-fips.cn-north-1.amazonaws.com.cn",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 316*/
-  {"{UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-iso-east-1}", // documentation
-    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
+  /*TEST CASE 190*/
+  {"{ResourceArnList=[arn:aws-cn:dynamodb:cn-north-1:333333333333:table/table_name], Region=cn-north-1, AccountIdEndpointMode=disabled, UseFIPS=true, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws-cn:dynamodb:cn-north-1:333333333333:table/table_name"})}, // params
     {}, // tags
-    {{/*epUrl*/"https://dynamodb-fips.us-iso-east-1.c2s.ic.gov",
+    {{/*epUrl*/"https://dynamodb-fips.cn-north-1.amazonaws.com.cn",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 317*/
-  {"{UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-iso-east-1}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred")}, // params
+  /*TEST CASE 191*/
+  {"{AccountId=111111111111, Region=cn-north-1, AccountIdEndpointMode=disabled, UseFIPS=true, UseDualStack=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "disabled")}, // params
     {}, // tags
-    {{/*epUrl*/"https://dynamodb.us-iso-east-1.api.aws.ic.gov",
+    {{/*epUrl*/"https://dynamodb-fips.cn-north-1.api.amazonwebservices.com.cn",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 318*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-iso-east-1}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
+  /*TEST CASE 192*/
+  {"{ResourceArn=arn:aws-cn:dynamodb:cn-north-1:222222222222:table/table_name, Region=cn-north-1, AccountIdEndpointMode=disabled, UseFIPS=true, UseDualStack=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-cn:dynamodb:cn-north-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true),
+     EpParam("AccountIdEndpointMode", "disabled")}, // params
     {}, // tags
-    {{/*epUrl*/"https://dynamodb.us-iso-east-1.c2s.ic.gov",
+    {{/*epUrl*/"https://dynamodb-fips.cn-north-1.api.amazonwebservices.com.cn",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 319*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-iso-east-1}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"),
-     EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
+  /*TEST CASE 193*/
+  {"{ResourceArnList=[arn:aws-cn:dynamodb:cn-north-1:333333333333:table/table_name], Region=cn-north-1, AccountIdEndpointMode=disabled, UseFIPS=true, UseDualStack=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "disabled"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws-cn:dynamodb:cn-north-1:333333333333:table/table_name"})}, // params
     {}, // tags
-    {{/*epUrl*/"https://dynamodb.us-iso-east-1.c2s.ic.gov",
+    {{/*epUrl*/"https://dynamodb-fips.cn-north-1.api.amazonwebservices.com.cn",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 320*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-iso-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-iso-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
+  /*TEST CASE 194*/
+  {"{AccountId=111111111111, Region=cn-north-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
     {}, // tags
-    {{/*epUrl*/"https://dynamodb.us-iso-east-1.c2s.ic.gov",
+    {{/*epUrl*/"https://111111111111.ddb.cn-north-1.amazonaws.com.cn",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 321*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-iso-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-west-2:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-iso-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
+  /*TEST CASE 195*/
+  {"{ResourceArn=arn:aws-cn:dynamodb:cn-north-1:222222222222:table/table_name, Region=cn-north-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws-cn:dynamodb:cn-north-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "required")}, // params
     {}, // tags
-    {{/*epUrl*/"https://dynamodb.us-iso-east-1.c2s.ic.gov",
+    {{/*epUrl*/"https://222222222222.ddb.cn-north-1.amazonaws.com.cn",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 322*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-iso-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:s3:us-west-2:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-iso-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
+  /*TEST CASE 196*/
+  {"{ResourceArnList=[arn:aws-cn:dynamodb:cn-north-1:333333333333:table/table_name], Region=cn-north-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws-cn:dynamodb:cn-north-1:333333333333:table/table_name"})}, // params
     {}, // tags
-    {{/*epUrl*/"https://dynamodb.us-iso-east-1.c2s.ic.gov",
+    {{/*epUrl*/"https://333333333333.ddb.cn-north-1.amazonaws.com.cn",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 323*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-west-2:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-iso-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-west-2:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-iso-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-west-2:333333333333:table/table_name"})}, // params
+  /*TEST CASE 197*/
+  {"{AccountId=111111111111, Region=cn-north-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required")}, // params
     {}, // tags
-    {{/*epUrl*/"https://dynamodb.us-iso-east-1.c2s.ic.gov",
+    {{/*epUrl*/"https://111111111111.ddb.cn-north-1.api.amazonwebservices.com.cn",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 324*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:s3:us-east-1:333333333333:stream/testStream], AccountIdEndpointMode=preferred, Region=us-iso-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:s3:us-west-2:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-iso-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:s3:us-east-1:333333333333:stream/testStream"})}, // params
+  /*TEST CASE 198*/
+  {"{ResourceArn=arn:aws-cn:dynamodb:cn-north-1:222222222222:table/table_name, Region=cn-north-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-cn:dynamodb:cn-north-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true),
+     EpParam("AccountIdEndpointMode", "required")}, // params
     {}, // tags
-    {{/*epUrl*/"https://dynamodb.us-iso-east-1.c2s.ic.gov",
+    {{/*epUrl*/"https://222222222222.ddb.cn-north-1.api.amazonwebservices.com.cn",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 325*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=preferred, Region=us-iso-east-1}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", ""), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
+  /*TEST CASE 199*/
+  {"{ResourceArnList=[arn:aws-cn:dynamodb:cn-north-1:333333333333:table/table_name], Region=cn-north-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws-cn:dynamodb:cn-north-1:333333333333:table/table_name"})}, // params
     {}, // tags
-    {{/*epUrl*/"https://dynamodb.us-iso-east-1.c2s.ic.gov",
+    {{/*epUrl*/"https://333333333333.ddb.cn-north-1.api.amazonwebservices.com.cn",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 326*/
-  {"{UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-iso-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", true),
-     EpParam("AccountIdEndpointMode", "preferred")}, // params
+  /*TEST CASE 200*/
+  {"{AccountId=111111111111, Region=cn-north-1, AccountIdEndpointMode=required, UseFIPS=true, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
     {}, // tags
-    {{/*epUrl*/"https://dynamodb-fips.us-iso-east-1.api.aws.ic.gov",
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
+  },
+  /*TEST CASE 201*/
+  {"{ResourceArn=arn:aws-cn:dynamodb:cn-north-1:222222222222:table/table_name, Region=cn-north-1, AccountIdEndpointMode=required, UseFIPS=true, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws-cn:dynamodb:cn-north-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
+  },
+  /*TEST CASE 202*/
+  {"{ResourceArnList=[arn:aws-cn:dynamodb:cn-north-1:333333333333:table/table_name], Region=cn-north-1, AccountIdEndpointMode=required, UseFIPS=true, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws-cn:dynamodb:cn-north-1:333333333333:table/table_name"})}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
+  },
+  /*TEST CASE 203*/
+  {"{AccountId=111111111111, Region=cn-north-1, AccountIdEndpointMode=required, UseFIPS=true, UseDualStack=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
+  },
+  /*TEST CASE 204*/
+  {"{ResourceArn=arn:aws-cn:dynamodb:cn-north-1:222222222222:table/table_name, Region=cn-north-1, AccountIdEndpointMode=required, UseFIPS=true, UseDualStack=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-cn:dynamodb:cn-north-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true),
+     EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
+  },
+  /*TEST CASE 205*/
+  {"{ResourceArnList=[arn:aws-cn:dynamodb:cn-north-1:333333333333:table/table_name], Region=cn-north-1, AccountIdEndpointMode=required, UseFIPS=true, UseDualStack=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws-cn:dynamodb:cn-north-1:333333333333:table/table_name"})}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
+  },
+  /*TEST CASE 206*/
+  {"{Region=cn-new-1, AccountIdEndpointMode=preferred, AccountId=111111111111, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "cn-new-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb.cn-new-1.amazonaws.com.cn",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 327*/
-  {"{UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-iso-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "preferred")}, // params
+  /*TEST CASE 207*/
+  {"{AccountId=111111111111, Region=us-gov-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
-    {{/*epUrl*/"https://dynamodb-fips.us-iso-east-1.c2s.ic.gov",
+    {{/*epUrl*/"https://111111111111.ddb.us-gov-east-1.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 328*/
-  {"{UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-iso-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", true),
-     EpParam("AccountIdEndpointMode", "preferred")}, // params
+  /*TEST CASE 208*/
+  {"{ResourceArn=arn:aws-us-gov:dynamodb:us-gov-east-1:222222222222:table/table_name, Region=us-gov-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws-us-gov:dynamodb:us-gov-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "us-gov-east-1"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
-    {{/*epUrl*/"https://dynamodb.us-iso-east-1.api.aws.ic.gov",
+    {{/*epUrl*/"https://222222222222.ddb.us-gov-east-1.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 329*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-iso-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "preferred")}, // params
+  /*TEST CASE 209*/
+  {"{ResourceArnList=[arn:aws-us-gov:dynamodb:us-gov-east-1:333333333333:table/table_name], Region=us-gov-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws-us-gov:dynamodb:us-gov-east-1:333333333333:table/table_name"})}, // params
     {}, // tags
-    {{/*epUrl*/"https://dynamodb.us-iso-east-1.c2s.ic.gov",
+    {{/*epUrl*/"https://333333333333.ddb.us-gov-east-1.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 330*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-iso-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-west-2:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "preferred")}, // params
+  /*TEST CASE 210*/
+  {"{AccountId=111111111111, Region=us-gov-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
-    {{/*epUrl*/"https://dynamodb.us-iso-east-1.c2s.ic.gov",
+    {{/*epUrl*/"https://111111111111.ddb.us-gov-east-1.api.aws",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 331*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=preferred, Region=us-iso-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:s3:us-west-2:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "preferred")}, // params
+  /*TEST CASE 211*/
+  {"{ResourceArn=arn:aws-us-gov:dynamodb:us-gov-east-1:222222222222:table/table_name, Region=us-gov-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-us-gov:dynamodb:us-gov-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "us-gov-east-1"),
+     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
-    {{/*epUrl*/"https://dynamodb.us-iso-east-1.c2s.ic.gov",
+    {{/*epUrl*/"https://222222222222.ddb.us-gov-east-1.api.aws",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 332*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=, AccountIdEndpointMode=preferred, Region=us-iso-east-1}", // documentation
-    {EpParam("ResourceArn", ""), EpParam("UseFIPS", false), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
+  /*TEST CASE 212*/
+  {"{ResourceArnList=[arn:aws-us-gov:dynamodb:us-gov-east-1:333333333333:table/table_name], Region=us-gov-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws-us-gov:dynamodb:us-gov-east-1:333333333333:table/table_name"})}, // params
     {}, // tags
-    {{/*epUrl*/"https://dynamodb.us-iso-east-1.c2s.ic.gov",
+    {{/*epUrl*/"https://333333333333.ddb.us-gov-east-1.api.aws",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 333*/
-  {"{UseFIPS=true, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-iso-east-1}", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb-fips.us-iso-east-1.api.aws.ic.gov",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 334*/
-  {"{UseFIPS=true, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-iso-east-1}", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb-fips.us-iso-east-1.c2s.ic.gov",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 335*/
-  {"{UseFIPS=false, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-iso-east-1}", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb.us-iso-east-1.api.aws.ic.gov",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 336*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-iso-east-1}", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb.us-iso-east-1.c2s.ic.gov",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 337*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-iso-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb.us-iso-east-1.c2s.ic.gov",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 338*/
-  {"{UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=preferred, Region=us-iso-east-1}", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb.us-iso-east-1.c2s.ic.gov",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 339*/
-  {"{UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-gov-east-1}", // documentation
-    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb-fips.us-gov-east-1.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 340*/
-  {"{UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-gov-east-1}", // documentation
+  /*TEST CASE 213*/
+  {"{AccountId=111111111111, Region=us-gov-east-1, AccountIdEndpointMode=preferred, UseFIPS=true, UseDualStack=false}", // documentation
     {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
     {{/*epUrl*/"https://dynamodb.us-gov-east-1.amazonaws.com",
@@ -3055,630 +1936,726 @@ Aws::Vector<DynamoDBEndpointProviderEndpointTestCase> DynamoDBEndpointProviderTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 341*/
-  {"{UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-gov-east-1}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb.us-gov-east-1.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 342*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-gov-east-1}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
+  /*TEST CASE 214*/
+  {"{ResourceArn=arn:aws-us-gov:dynamodb:us-gov-east-1:222222222222:table/table_name, Region=us-gov-east-1, AccountIdEndpointMode=preferred, UseFIPS=true, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws-us-gov:dynamodb:us-gov-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Region", "us-gov-east-1"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
     {{/*epUrl*/"https://dynamodb.us-gov-east-1.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 343*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-gov-east-1}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"),
-     EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
+  /*TEST CASE 215*/
+  {"{ResourceArnList=[arn:aws-us-gov:dynamodb:us-gov-east-1:333333333333:table/table_name], Region=us-gov-east-1, AccountIdEndpointMode=preferred, UseFIPS=true, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws-us-gov:dynamodb:us-gov-east-1:333333333333:table/table_name"})}, // params
     {}, // tags
     {{/*epUrl*/"https://dynamodb.us-gov-east-1.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 344*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-gov-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-gov-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb.us-gov-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 345*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-gov-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-west-2:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-gov-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb.us-gov-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 346*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-gov-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:s3:us-west-2:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-gov-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb.us-gov-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 347*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-west-2:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-gov-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-west-2:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-gov-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-west-2:333333333333:table/table_name"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb.us-gov-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 348*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, ResourceArnList=[arn:aws:s3:us-east-1:333333333333:stream/testStream], AccountIdEndpointMode=preferred, Region=us-gov-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:s3:us-west-2:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-gov-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:s3:us-east-1:333333333333:stream/testStream"})}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb.us-gov-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 349*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=preferred, Region=us-gov-east-1}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", ""), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb.us-gov-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 350*/
-  {"{UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-gov-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true),
-     EpParam("AccountIdEndpointMode", "preferred")}, // params
+  /*TEST CASE 216*/
+  {"{AccountId=111111111111, Region=us-gov-east-1, AccountIdEndpointMode=preferred, UseFIPS=true, UseDualStack=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
     {{/*epUrl*/"https://dynamodb-fips.us-gov-east-1.api.aws",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 351*/
-  {"{UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-gov-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb.us-gov-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 352*/
-  {"{UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-gov-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true),
-     EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb.us-gov-east-1.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 353*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-gov-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb.us-gov-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 354*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-gov-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-west-2:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb.us-gov-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 355*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=preferred, Region=us-gov-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:s3:us-west-2:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb.us-gov-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 356*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=, AccountIdEndpointMode=preferred, Region=us-gov-east-1}", // documentation
-    {EpParam("ResourceArn", ""), EpParam("UseFIPS", false), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://dynamodb.us-gov-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 357*/
-  {"{UseFIPS=true, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-gov-east-1}", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
+  /*TEST CASE 217*/
+  {"{ResourceArn=arn:aws-us-gov:dynamodb:us-gov-east-1:222222222222:table/table_name, Region=us-gov-east-1, AccountIdEndpointMode=preferred, UseFIPS=true, UseDualStack=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-us-gov:dynamodb:us-gov-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Region", "us-gov-east-1"),
+     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
     {{/*epUrl*/"https://dynamodb-fips.us-gov-east-1.api.aws",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 358*/
-  {"{UseFIPS=true, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-gov-east-1}", // documentation
-    {EpParam("UseFIPS", true), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
+  /*TEST CASE 218*/
+  {"{ResourceArnList=[arn:aws-us-gov:dynamodb:us-gov-east-1:333333333333:table/table_name], Region=us-gov-east-1, AccountIdEndpointMode=preferred, UseFIPS=true, UseDualStack=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws-us-gov:dynamodb:us-gov-east-1:333333333333:table/table_name"})}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb-fips.us-gov-east-1.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 219*/
+  {"{AccountId=111111111111, Region=us-gov-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
     {}, // tags
     {{/*epUrl*/"https://dynamodb.us-gov-east-1.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 359*/
-  {"{UseFIPS=false, UseDualStack=true, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-gov-east-1}", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
+  /*TEST CASE 220*/
+  {"{ResourceArn=arn:aws-us-gov:dynamodb:us-gov-east-1:222222222222:table/table_name, Region=us-gov-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws-us-gov:dynamodb:us-gov-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "us-gov-east-1"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb.us-gov-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 221*/
+  {"{ResourceArnList=[arn:aws-us-gov:dynamodb:us-gov-east-1:333333333333:table/table_name], Region=us-gov-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws-us-gov:dynamodb:us-gov-east-1:333333333333:table/table_name"})}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb.us-gov-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 222*/
+  {"{AccountId=111111111111, Region=us-gov-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "disabled")}, // params
     {}, // tags
     {{/*epUrl*/"https://dynamodb.us-gov-east-1.api.aws",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 360*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-gov-east-1}", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
+  /*TEST CASE 223*/
+  {"{ResourceArn=arn:aws-us-gov:dynamodb:us-gov-east-1:222222222222:table/table_name, Region=us-gov-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-us-gov:dynamodb:us-gov-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "us-gov-east-1"),
+     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb.us-gov-east-1.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 224*/
+  {"{ResourceArnList=[arn:aws-us-gov:dynamodb:us-gov-east-1:333333333333:table/table_name], Region=us-gov-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "disabled"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws-us-gov:dynamodb:us-gov-east-1:333333333333:table/table_name"})}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb.us-gov-east-1.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 225*/
+  {"{AccountId=111111111111, Region=us-gov-east-1, AccountIdEndpointMode=disabled, UseFIPS=true, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
     {}, // tags
     {{/*epUrl*/"https://dynamodb.us-gov-east-1.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 361*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, ResourceArnList=[arn:aws:dynamodb:us-east-1:333333333333:table/table_name], AccountIdEndpointMode=preferred, Region=us-gov-east-1}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws:dynamodb:us-east-1:333333333333:table/table_name"})}, // params
+  /*TEST CASE 226*/
+  {"{ResourceArn=arn:aws-us-gov:dynamodb:us-gov-east-1:222222222222:table/table_name, Region=us-gov-east-1, AccountIdEndpointMode=disabled, UseFIPS=true, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws-us-gov:dynamodb:us-gov-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Region", "us-gov-east-1"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
     {}, // tags
     {{/*epUrl*/"https://dynamodb.us-gov-east-1.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 362*/
-  {"{UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=preferred, Region=us-gov-east-1}", // documentation
-    {EpParam("UseFIPS", false), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
+  /*TEST CASE 227*/
+  {"{ResourceArnList=[arn:aws-us-gov:dynamodb:us-gov-east-1:333333333333:table/table_name], Region=us-gov-east-1, AccountIdEndpointMode=disabled, UseFIPS=true, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws-us-gov:dynamodb:us-gov-east-1:333333333333:table/table_name"})}, // params
     {}, // tags
     {{/*epUrl*/"https://dynamodb.us-gov-east-1.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 363*/
-  {"{Endpoint=https://dynamodb.cn-north-1.api.amazonwebservices.com.cn, Region=cn-north-1}", // documentation
-    {EpParam("Endpoint", "https://dynamodb.cn-north-1.api.amazonwebservices.com.cn"), EpParam("Region", "cn-north-1")}, // params
+  /*TEST CASE 228*/
+  {"{AccountId=111111111111, Region=us-gov-east-1, AccountIdEndpointMode=disabled, UseFIPS=true, UseDualStack=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb-fips.us-gov-east-1.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 229*/
+  {"{ResourceArn=arn:aws-us-gov:dynamodb:us-gov-east-1:222222222222:table/table_name, Region=us-gov-east-1, AccountIdEndpointMode=disabled, UseFIPS=true, UseDualStack=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-us-gov:dynamodb:us-gov-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Region", "us-gov-east-1"),
+     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb-fips.us-gov-east-1.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 230*/
+  {"{ResourceArnList=[arn:aws-us-gov:dynamodb:us-gov-east-1:333333333333:table/table_name], Region=us-gov-east-1, AccountIdEndpointMode=disabled, UseFIPS=true, UseDualStack=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "disabled"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws-us-gov:dynamodb:us-gov-east-1:333333333333:table/table_name"})}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb-fips.us-gov-east-1.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 231*/
+  {"{AccountId=111111111111, Region=us-gov-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://111111111111.ddb.us-gov-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 232*/
+  {"{ResourceArn=arn:aws-us-gov:dynamodb:us-gov-east-1:222222222222:table/table_name, Region=us-gov-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws-us-gov:dynamodb:us-gov-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "us-gov-east-1"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://222222222222.ddb.us-gov-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 233*/
+  {"{ResourceArnList=[arn:aws-us-gov:dynamodb:us-gov-east-1:333333333333:table/table_name], Region=us-gov-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws-us-gov:dynamodb:us-gov-east-1:333333333333:table/table_name"})}, // params
+    {}, // tags
+    {{/*epUrl*/"https://333333333333.ddb.us-gov-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 234*/
+  {"{AccountId=111111111111, Region=us-gov-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://111111111111.ddb.us-gov-east-1.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 235*/
+  {"{ResourceArn=arn:aws-us-gov:dynamodb:us-gov-east-1:222222222222:table/table_name, Region=us-gov-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-us-gov:dynamodb:us-gov-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "us-gov-east-1"),
+     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://222222222222.ddb.us-gov-east-1.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 236*/
+  {"{ResourceArnList=[arn:aws-us-gov:dynamodb:us-gov-east-1:333333333333:table/table_name], Region=us-gov-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws-us-gov:dynamodb:us-gov-east-1:333333333333:table/table_name"})}, // params
+    {}, // tags
+    {{/*epUrl*/"https://333333333333.ddb.us-gov-east-1.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 237*/
+  {"{AccountId=111111111111, Region=us-gov-east-1, AccountIdEndpointMode=required, UseFIPS=true, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
+  },
+  /*TEST CASE 238*/
+  {"{ResourceArn=arn:aws-us-gov:dynamodb:us-gov-east-1:222222222222:table/table_name, Region=us-gov-east-1, AccountIdEndpointMode=required, UseFIPS=true, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws-us-gov:dynamodb:us-gov-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Region", "us-gov-east-1"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
+  },
+  /*TEST CASE 239*/
+  {"{ResourceArnList=[arn:aws-us-gov:dynamodb:us-gov-east-1:333333333333:table/table_name], Region=us-gov-east-1, AccountIdEndpointMode=required, UseFIPS=true, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws-us-gov:dynamodb:us-gov-east-1:333333333333:table/table_name"})}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
+  },
+  /*TEST CASE 240*/
+  {"{AccountId=111111111111, Region=us-gov-east-1, AccountIdEndpointMode=required, UseFIPS=true, UseDualStack=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
+  },
+  /*TEST CASE 241*/
+  {"{ResourceArn=arn:aws-us-gov:dynamodb:us-gov-east-1:222222222222:table/table_name, Region=us-gov-east-1, AccountIdEndpointMode=required, UseFIPS=true, UseDualStack=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-us-gov:dynamodb:us-gov-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Region", "us-gov-east-1"),
+     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
+  },
+  /*TEST CASE 242*/
+  {"{ResourceArnList=[arn:aws-us-gov:dynamodb:us-gov-east-1:333333333333:table/table_name], Region=us-gov-east-1, AccountIdEndpointMode=required, UseFIPS=true, UseDualStack=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws-us-gov:dynamodb:us-gov-east-1:333333333333:table/table_name"})}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
+  },
+  /*TEST CASE 243*/
+  {"{Region=us-gov-new-1, AccountIdEndpointMode=preferred, AccountId=111111111111, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-gov-new-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb.us-gov-new-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 244*/
+  {"{AccountId=111111111111, Region=us-iso-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb.us-iso-east-1.c2s.ic.gov",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 245*/
+  {"{ResourceArn=arn:aws-iso:dynamodb:us-iso-east-1:222222222222:table/table_name, Region=us-iso-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws-iso:dynamodb:us-iso-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "us-iso-east-1"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb.us-iso-east-1.c2s.ic.gov",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 246*/
+  {"{ResourceArnList=[arn:aws-iso:dynamodb:us-iso-east-1:333333333333:table/table_name], Region=us-iso-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws-iso:dynamodb:us-iso-east-1:333333333333:table/table_name"})}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb.us-iso-east-1.c2s.ic.gov",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 247*/
+  {"{AccountId=111111111111, Region=us-iso-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb.us-iso-east-1.api.aws.ic.gov",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 248*/
+  {"{ResourceArn=arn:aws-iso:dynamodb:us-iso-east-1:222222222222:table/table_name, Region=us-iso-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-iso:dynamodb:us-iso-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "us-iso-east-1"),
+     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb.us-iso-east-1.api.aws.ic.gov",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 249*/
+  {"{ResourceArnList=[arn:aws-iso:dynamodb:us-iso-east-1:333333333333:table/table_name], Region=us-iso-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws-iso:dynamodb:us-iso-east-1:333333333333:table/table_name"})}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb.us-iso-east-1.api.aws.ic.gov",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 250*/
+  {"{AccountId=111111111111, Region=us-iso-east-1, AccountIdEndpointMode=preferred, UseFIPS=true, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb-fips.us-iso-east-1.c2s.ic.gov",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 251*/
+  {"{ResourceArn=arn:aws-iso:dynamodb:us-iso-east-1:222222222222:table/table_name, Region=us-iso-east-1, AccountIdEndpointMode=preferred, UseFIPS=true, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws-iso:dynamodb:us-iso-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Region", "us-iso-east-1"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb-fips.us-iso-east-1.c2s.ic.gov",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 252*/
+  {"{ResourceArnList=[arn:aws-iso:dynamodb:us-iso-east-1:333333333333:table/table_name], Region=us-iso-east-1, AccountIdEndpointMode=preferred, UseFIPS=true, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws-iso:dynamodb:us-iso-east-1:333333333333:table/table_name"})}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb-fips.us-iso-east-1.c2s.ic.gov",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 253*/
+  {"{AccountId=111111111111, Region=us-iso-east-1, AccountIdEndpointMode=preferred, UseFIPS=true, UseDualStack=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb-fips.us-iso-east-1.api.aws.ic.gov",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 254*/
+  {"{ResourceArn=arn:aws-iso:dynamodb:us-iso-east-1:222222222222:table/table_name, Region=us-iso-east-1, AccountIdEndpointMode=preferred, UseFIPS=true, UseDualStack=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-iso:dynamodb:us-iso-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Region", "us-iso-east-1"),
+     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb-fips.us-iso-east-1.api.aws.ic.gov",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 255*/
+  {"{ResourceArnList=[arn:aws-iso:dynamodb:us-iso-east-1:333333333333:table/table_name], Region=us-iso-east-1, AccountIdEndpointMode=preferred, UseFIPS=true, UseDualStack=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws-iso:dynamodb:us-iso-east-1:333333333333:table/table_name"})}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb-fips.us-iso-east-1.api.aws.ic.gov",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 256*/
+  {"{AccountId=111111111111, Region=us-iso-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb.us-iso-east-1.c2s.ic.gov",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 257*/
+  {"{ResourceArn=arn:aws-iso:dynamodb:us-iso-east-1:222222222222:table/table_name, Region=us-iso-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws-iso:dynamodb:us-iso-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "us-iso-east-1"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb.us-iso-east-1.c2s.ic.gov",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 258*/
+  {"{ResourceArnList=[arn:aws-iso:dynamodb:us-iso-east-1:333333333333:table/table_name], Region=us-iso-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws-iso:dynamodb:us-iso-east-1:333333333333:table/table_name"})}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb.us-iso-east-1.c2s.ic.gov",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 259*/
+  {"{AccountId=111111111111, Region=us-iso-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb.us-iso-east-1.api.aws.ic.gov",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 260*/
+  {"{ResourceArn=arn:aws-iso:dynamodb:us-iso-east-1:222222222222:table/table_name, Region=us-iso-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-iso:dynamodb:us-iso-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "us-iso-east-1"),
+     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb.us-iso-east-1.api.aws.ic.gov",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 261*/
+  {"{ResourceArnList=[arn:aws-iso:dynamodb:us-iso-east-1:333333333333:table/table_name], Region=us-iso-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "disabled"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws-iso:dynamodb:us-iso-east-1:333333333333:table/table_name"})}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb.us-iso-east-1.api.aws.ic.gov",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 262*/
+  {"{AccountId=111111111111, Region=us-iso-east-1, AccountIdEndpointMode=disabled, UseFIPS=true, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb-fips.us-iso-east-1.c2s.ic.gov",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 263*/
+  {"{ResourceArn=arn:aws-iso:dynamodb:us-iso-east-1:222222222222:table/table_name, Region=us-iso-east-1, AccountIdEndpointMode=disabled, UseFIPS=true, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws-iso:dynamodb:us-iso-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Region", "us-iso-east-1"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb-fips.us-iso-east-1.c2s.ic.gov",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 264*/
+  {"{ResourceArnList=[arn:aws-iso:dynamodb:us-iso-east-1:333333333333:table/table_name], Region=us-iso-east-1, AccountIdEndpointMode=disabled, UseFIPS=true, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws-iso:dynamodb:us-iso-east-1:333333333333:table/table_name"})}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb-fips.us-iso-east-1.c2s.ic.gov",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 265*/
+  {"{AccountId=111111111111, Region=us-iso-east-1, AccountIdEndpointMode=disabled, UseFIPS=true, UseDualStack=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb-fips.us-iso-east-1.api.aws.ic.gov",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 266*/
+  {"{ResourceArn=arn:aws-iso:dynamodb:us-iso-east-1:222222222222:table/table_name, Region=us-iso-east-1, AccountIdEndpointMode=disabled, UseFIPS=true, UseDualStack=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-iso:dynamodb:us-iso-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Region", "us-iso-east-1"),
+     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb-fips.us-iso-east-1.api.aws.ic.gov",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 267*/
+  {"{ResourceArnList=[arn:aws-iso:dynamodb:us-iso-east-1:333333333333:table/table_name], Region=us-iso-east-1, AccountIdEndpointMode=disabled, UseFIPS=true, UseDualStack=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "disabled"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws-iso:dynamodb:us-iso-east-1:333333333333:table/table_name"})}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb-fips.us-iso-east-1.api.aws.ic.gov",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 268*/
+  {"{AccountId=111111111111, Region=us-iso-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this region"} // expect
+  },
+  /*TEST CASE 269*/
+  {"{ResourceArn=arn:aws-iso:dynamodb:us-iso-east-1:222222222222:table/table_name, Region=us-iso-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws-iso:dynamodb:us-iso-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "us-iso-east-1"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this region"} // expect
+  },
+  /*TEST CASE 270*/
+  {"{ResourceArnList=[arn:aws-iso:dynamodb:us-iso-east-1:333333333333:table/table_name], Region=us-iso-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws-iso:dynamodb:us-iso-east-1:333333333333:table/table_name"})}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this region"} // expect
+  },
+  /*TEST CASE 271*/
+  {"{AccountId=111111111111, Region=us-iso-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this region"} // expect
+  },
+  /*TEST CASE 272*/
+  {"{ResourceArn=arn:aws-iso:dynamodb:us-iso-east-1:222222222222:table/table_name, Region=us-iso-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-iso:dynamodb:us-iso-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Region", "us-iso-east-1"),
+     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this region"} // expect
+  },
+  /*TEST CASE 273*/
+  {"{ResourceArnList=[arn:aws-iso:dynamodb:us-iso-east-1:333333333333:table/table_name], Region=us-iso-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws-iso:dynamodb:us-iso-east-1:333333333333:table/table_name"})}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this region"} // expect
+  },
+  /*TEST CASE 274*/
+  {"{AccountId=111111111111, Region=us-iso-east-1, AccountIdEndpointMode=required, UseFIPS=true, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
+  },
+  /*TEST CASE 275*/
+  {"{ResourceArn=arn:aws-iso:dynamodb:us-iso-east-1:222222222222:table/table_name, Region=us-iso-east-1, AccountIdEndpointMode=required, UseFIPS=true, UseDualStack=false}", // documentation
+    {EpParam("ResourceArn", "arn:aws-iso:dynamodb:us-iso-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Region", "us-iso-east-1"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
+  },
+  /*TEST CASE 276*/
+  {"{ResourceArnList=[arn:aws-iso:dynamodb:us-iso-east-1:333333333333:table/table_name], Region=us-iso-east-1, AccountIdEndpointMode=required, UseFIPS=true, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws-iso:dynamodb:us-iso-east-1:333333333333:table/table_name"})}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
+  },
+  /*TEST CASE 277*/
+  {"{AccountId=111111111111, Region=us-iso-east-1, AccountIdEndpointMode=required, UseFIPS=true, UseDualStack=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
+  },
+  /*TEST CASE 278*/
+  {"{ResourceArn=arn:aws-iso:dynamodb:us-iso-east-1:222222222222:table/table_name, Region=us-iso-east-1, AccountIdEndpointMode=required, UseFIPS=true, UseDualStack=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-iso:dynamodb:us-iso-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Region", "us-iso-east-1"),
+     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
+  },
+  /*TEST CASE 279*/
+  {"{ResourceArnList=[arn:aws-iso:dynamodb:us-iso-east-1:333333333333:table/table_name], Region=us-iso-east-1, AccountIdEndpointMode=required, UseFIPS=true, UseDualStack=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required"), EpParam("ResourceArnList", Aws::Vector<Aws::String>{"arn:aws-iso:dynamodb:us-iso-east-1:333333333333:table/table_name"})}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
+  },
+  /*TEST CASE 280*/
+  {"{Region=us-iso-new-1, AccountIdEndpointMode=preferred, AccountId=111111111111, UseFIPS=false, UseDualStack=false}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Region", "us-iso-new-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://dynamodb.us-iso-new-1.c2s.ic.gov",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 281*/
+  {"{AccountId=111111111111, Region=us-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=false, Endpoint=https://example.com, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://example.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 282*/
+  {"{AccountId=111111111111, Region=us-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=true, Endpoint=https://example.com, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
+     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Dualstack and custom endpoint are not supported"} // expect
+  },
+  /*TEST CASE 283*/
+  {"{AccountId=111111111111, Region=us-east-1, AccountIdEndpointMode=preferred, UseFIPS=true, UseDualStack=false, Endpoint=https://example.com, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
+  },
+  /*TEST CASE 284*/
+  {"{AccountId=111111111111, Region=us-east-1, AccountIdEndpointMode=preferred, UseFIPS=true, UseDualStack=true, Endpoint=https://example.com, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
+     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
+  },
+  /*TEST CASE 285*/
+  {"{AccountId=111111111111, Region=us-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=false, Endpoint=https://example.com, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://example.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 286*/
+  {"{AccountId=111111111111, Region=us-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=true, Endpoint=https://example.com, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
+     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Dualstack and custom endpoint are not supported"} // expect
+  },
+  /*TEST CASE 287*/
+  {"{AccountId=111111111111, Region=us-east-1, AccountIdEndpointMode=disabled, UseFIPS=true, UseDualStack=false, Endpoint=https://example.com, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
+  },
+  /*TEST CASE 288*/
+  {"{AccountId=111111111111, Region=us-east-1, AccountIdEndpointMode=disabled, UseFIPS=true, UseDualStack=true, Endpoint=https://example.com, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
+     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
+  },
+  /*TEST CASE 289*/
+  {"{AccountId=111111111111, Region=us-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=false, Endpoint=https://example.com, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://example.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 290*/
+  {"{AccountId=111111111111, Region=us-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=true, Endpoint=https://example.com, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
+     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Dualstack and custom endpoint are not supported"} // expect
+  },
+  /*TEST CASE 291*/
+  {"{AccountId=111111111111, Region=us-east-1, AccountIdEndpointMode=required, UseFIPS=true, UseDualStack=false, Endpoint=https://example.com, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
+  },
+  /*TEST CASE 292*/
+  {"{AccountId=111111111111, Region=us-east-1, AccountIdEndpointMode=required, UseFIPS=true, UseDualStack=true, Endpoint=https://example.com, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
+     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
+  },
+  /*TEST CASE 293*/
+  {"{Endpoint=https://dynamodb.cn-north-1.api.amazonwebservices.com.cn, Region=cn-north-1, AccountIdEndpointMode=preferred, IsSearchOperation=true}", // documentation
+    {EpParam("Endpoint", "https://dynamodb.cn-north-1.api.amazonwebservices.com.cn"), EpParam("IsSearchOperation", true), EpParam("Region", "cn-north-1"), EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html"} // expect
   },
-  /*TEST CASE 364*/
-  {"{Endpoint=https://dynamodb.us-gov-east-1.api.aws, Region=us-gov-east-1}", // documentation
-    {EpParam("Endpoint", "https://dynamodb.us-gov-east-1.api.aws"), EpParam("Region", "us-gov-east-1")}, // params
+  /*TEST CASE 294*/
+  {"{Endpoint=https://dynamodb.us-gov-east-1.api.aws, Region=us-gov-east-1, AccountIdEndpointMode=preferred, IsSearchOperation=true}", // documentation
+    {EpParam("Endpoint", "https://dynamodb.us-gov-east-1.api.aws"), EpParam("IsSearchOperation", true), EpParam("Region", "us-gov-east-1"), EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html"} // expect
   },
-  /*TEST CASE 365*/
-  {"{Endpoint=https://dynamodb.us-east-1.api.aws, Region=us-east-1}", // documentation
-    {EpParam("Endpoint", "https://dynamodb.us-east-1.api.aws"), EpParam("Region", "us-east-1")}, // params
+  /*TEST CASE 295*/
+  {"{Endpoint=https://dynamodb.us-east-1.api.aws, Region=us-east-1, AccountIdEndpointMode=preferred, IsSearchOperation=true}", // documentation
+    {EpParam("Endpoint", "https://dynamodb.us-east-1.api.aws"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html"} // expect
   },
-  /*TEST CASE 366*/
-  {"{Endpoint=https://111111111111.ddb.us-east-1.api.aws, Region=us-east-1}", // documentation
-    {EpParam("Endpoint", "https://111111111111.ddb.us-east-1.api.aws"), EpParam("Region", "us-east-1")}, // params
+  /*TEST CASE 296*/
+  {"{Endpoint=https://111111111111.ddb.us-east-1.api.aws, Region=us-east-1, AccountIdEndpointMode=preferred, IsSearchOperation=true}", // documentation
+    {EpParam("Endpoint", "https://111111111111.ddb.us-east-1.api.aws"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
     {{/*epUrl*/"https://111111111111.ddb.us-east-1.api.aws",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 367*/
-  {"{Endpoint=https://vpce-1a2b3c4d-5e6f.dynamodb.us-east-1.vpce.api.aws, Region=us-east-1}", // documentation
-    {EpParam("Endpoint", "https://vpce-1a2b3c4d-5e6f.dynamodb.us-east-1.vpce.api.aws"), EpParam("Region", "us-east-1")}, // params
+  /*TEST CASE 297*/
+  {"{Endpoint=https://vpce-1a2b3c4d-5e6f.dynamodb.us-east-1.vpce.api.aws, Region=us-east-1, AccountIdEndpointMode=preferred, IsSearchOperation=true}", // documentation
+    {EpParam("Endpoint", "https://vpce-1a2b3c4d-5e6f.dynamodb.us-east-1.vpce.api.aws"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
     {{/*epUrl*/"https://vpce-1a2b3c4d-5e6f.dynamodb.us-east-1.vpce.api.aws",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 368*/
-  {"{Endpoint=https://dynamodb.eu-west-1.api.aws, Region=eu-west-1}", // documentation
-    {EpParam("Endpoint", "https://dynamodb.eu-west-1.api.aws"), EpParam("Region", "eu-west-1")}, // params
+  /*TEST CASE 298*/
+  {"{Endpoint=https://dynamodb.eu-west-1.api.aws, Region=eu-west-1, AccountIdEndpointMode=preferred, IsSearchOperation=true}", // documentation
+    {EpParam("Endpoint", "https://dynamodb.eu-west-1.api.aws"), EpParam("IsSearchOperation", true), EpParam("Region", "eu-west-1"), EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html"} // expect
   },
-  /*TEST CASE 369*/
-  {"{Endpoint=https://dynamodb.us-west-2.api.aws, Region=us-west-2}", // documentation
-    {EpParam("Endpoint", "https://dynamodb.us-west-2.api.aws"), EpParam("Region", "us-west-2")}, // params
+  /*TEST CASE 299*/
+  {"{Endpoint=https://dynamodb.us-west-2.api.aws, Region=us-west-2, AccountIdEndpointMode=preferred, IsSearchOperation=true}", // documentation
+    {EpParam("Endpoint", "https://dynamodb.us-west-2.api.aws"), EpParam("IsSearchOperation", true), EpParam("Region", "us-west-2"), EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html"} // expect
   },
-  /*TEST CASE 370*/
-  {"{Endpoint=https://dynamodb.us-east-1.api.aws/, Region=us-east-1}", // documentation
-    {EpParam("Endpoint", "https://dynamodb.us-east-1.api.aws/"), EpParam("Region", "us-east-1")}, // params
+  /*TEST CASE 300*/
+  {"{Endpoint=https://dynamodb.us-east-1.api.aws/, Region=us-east-1, AccountIdEndpointMode=preferred, IsSearchOperation=true}", // documentation
+    {EpParam("Endpoint", "https://dynamodb.us-east-1.api.aws/"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html"} // expect
   },
-  /*TEST CASE 371*/
-  {"{UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
-  },
-  /*TEST CASE 372*/
-  {"{UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
-  },
-  /*TEST CASE 373*/
-  {"{UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Dualstack and custom endpoint are not supported"} // expect
-  },
-  /*TEST CASE 374*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 375*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", ""), EpParam("Endpoint", "https://example.com"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 376*/
-  {"{UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Endpoint", "https://example.com"),
-     EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
-  },
-  /*TEST CASE 377*/
-  {"{UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Endpoint", "https://example.com"),
-     EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
-  },
-  /*TEST CASE 378*/
-  {"{UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"),
-     EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Dualstack and custom endpoint are not supported"} // expect
-  },
-  /*TEST CASE 379*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"),
-     EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 380*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-west-2:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"),
-     EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 381*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:s3:us-west-2:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("IsSearchOperation", true),
-     EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 382*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", ""), EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 383*/
-  {"{UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 384*/
-  {"{UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
-  },
-  /*TEST CASE 385*/
-  {"{UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
-  },
-  /*TEST CASE 386*/
-  {"{UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Dualstack and custom endpoint are not supported"} // expect
-  },
-  /*TEST CASE 387*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 388*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", ""), EpParam("Endpoint", "https://example.com"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 389*/
-  {"{UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Endpoint", "https://example.com"),
-     EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
-  },
-  /*TEST CASE 390*/
-  {"{UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Endpoint", "https://example.com"),
-     EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
-  },
-  /*TEST CASE 391*/
-  {"{UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"),
-     EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Dualstack and custom endpoint are not supported"} // expect
-  },
-  /*TEST CASE 392*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"),
-     EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 393*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-west-2:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"),
-     EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 394*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:s3:us-west-2:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("IsSearchOperation", true),
-     EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 395*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", ""), EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 396*/
-  {"{UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 397*/
-  {"{UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
-  },
-  /*TEST CASE 398*/
-  {"{UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
-  },
-  /*TEST CASE 399*/
-  {"{UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Dualstack and custom endpoint are not supported"} // expect
-  },
-  /*TEST CASE 400*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("Endpoint", "https://example.com"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 401*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", ""), EpParam("Endpoint", "https://example.com"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 402*/
-  {"{UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Endpoint", "https://example.com"),
-     EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
-  },
-  /*TEST CASE 403*/
-  {"{UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("Endpoint", "https://example.com"),
-     EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
-  },
-  /*TEST CASE 404*/
-  {"{UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"),
-     EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Dualstack and custom endpoint are not supported"} // expect
-  },
-  /*TEST CASE 405*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"),
-     EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 406*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-west-2:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"),
-     EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 407*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:s3:us-west-2:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("IsSearchOperation", true),
-     EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 408*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", ""), EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 409*/
-  {"{UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://example.com"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://example.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 410*/
-  {"{UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=local, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "local"), EpParam("UseDualStack", true),
-     EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and local endpoint are not supported"} // expect
-  },
-  /*TEST CASE 411*/
-  {"{UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=local, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "local"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and local endpoint are not supported"} // expect
-  },
-  /*TEST CASE 412*/
-  {"{UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=local, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "local"), EpParam("UseDualStack", true),
-     EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Dualstack and local endpoint are not supported"} // expect
-  },
-  /*TEST CASE 413*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=local, IsSearchOperation=true}", // documentation
+  /*TEST CASE 301*/
+  {"{AccountId=111111111111, Region=local, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=false, IsSearchOperation=true}", // documentation
     {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "local"), EpParam("UseDualStack", false),
      EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
@@ -3687,107 +2664,29 @@ Aws::Vector<DynamoDBEndpointProviderEndpointTestCase> DynamoDBEndpointProviderTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 414*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=preferred, Region=local, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", ""), EpParam("IsSearchOperation", true), EpParam("Region", "local"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 415*/
-  {"{UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=local, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("IsSearchOperation", true), EpParam("Region", "local"),
-     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and local endpoint are not supported"} // expect
-  },
-  /*TEST CASE 416*/
-  {"{UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=local, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("IsSearchOperation", true), EpParam("Region", "local"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and local endpoint are not supported"} // expect
-  },
-  /*TEST CASE 417*/
-  {"{UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=local, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "local"),
-     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Dualstack and local endpoint are not supported"} // expect
-  },
-  /*TEST CASE 418*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=local, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "local"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 419*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=local, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-west-2:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "local"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 420*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=preferred, Region=local, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:s3:us-west-2:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "local"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 421*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=, AccountIdEndpointMode=preferred, Region=local, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", ""), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "local"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 422*/
-  {"{UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=preferred, Region=local, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "local"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 423*/
-  {"{UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=local, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "local"), EpParam("UseDualStack", true),
-     EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and local endpoint are not supported"} // expect
-  },
-  /*TEST CASE 424*/
-  {"{UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=local, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "local"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and local endpoint are not supported"} // expect
-  },
-  /*TEST CASE 425*/
-  {"{UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=local, IsSearchOperation=true}", // documentation
+  /*TEST CASE 302*/
+  {"{AccountId=111111111111, Region=local, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=true, IsSearchOperation=true}", // documentation
     {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "local"), EpParam("UseDualStack", true),
-     EpParam("AccountIdEndpointMode", "disabled")}, // params
+     EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Dualstack and local endpoint are not supported"} // expect
   },
-  /*TEST CASE 426*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=local, IsSearchOperation=true}", // documentation
+  /*TEST CASE 303*/
+  {"{AccountId=111111111111, Region=local, AccountIdEndpointMode=preferred, UseFIPS=true, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "local"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and local endpoint are not supported"} // expect
+  },
+  /*TEST CASE 304*/
+  {"{AccountId=111111111111, Region=local, AccountIdEndpointMode=preferred, UseFIPS=true, UseDualStack=true, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "local"), EpParam("UseDualStack", true),
+     EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and local endpoint are not supported"} // expect
+  },
+  /*TEST CASE 305*/
+  {"{AccountId=111111111111, Region=local, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=false, IsSearchOperation=true}", // documentation
     {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "local"), EpParam("UseDualStack", false),
      EpParam("AccountIdEndpointMode", "disabled")}, // params
     {}, // tags
@@ -3796,107 +2695,29 @@ Aws::Vector<DynamoDBEndpointProviderEndpointTestCase> DynamoDBEndpointProviderTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 427*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=disabled, Region=local, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", ""), EpParam("IsSearchOperation", true), EpParam("Region", "local"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 428*/
-  {"{UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=local, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("IsSearchOperation", true), EpParam("Region", "local"),
-     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and local endpoint are not supported"} // expect
-  },
-  /*TEST CASE 429*/
-  {"{UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=local, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("IsSearchOperation", true), EpParam("Region", "local"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and local endpoint are not supported"} // expect
-  },
-  /*TEST CASE 430*/
-  {"{UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=local, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "local"),
-     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Dualstack and local endpoint are not supported"} // expect
-  },
-  /*TEST CASE 431*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=local, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "local"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 432*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=local, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-west-2:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "local"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 433*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=disabled, Region=local, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:s3:us-west-2:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "local"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 434*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=, AccountIdEndpointMode=disabled, Region=local, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", ""), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "local"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 435*/
-  {"{UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=disabled, Region=local, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "local"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 436*/
-  {"{UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=required, Region=local, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "local"), EpParam("UseDualStack", true),
-     EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and local endpoint are not supported"} // expect
-  },
-  /*TEST CASE 437*/
-  {"{UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=required, Region=local, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "local"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and local endpoint are not supported"} // expect
-  },
-  /*TEST CASE 438*/
-  {"{UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=required, Region=local, IsSearchOperation=true}", // documentation
+  /*TEST CASE 306*/
+  {"{AccountId=111111111111, Region=local, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=true, IsSearchOperation=true}", // documentation
     {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "local"), EpParam("UseDualStack", true),
-     EpParam("AccountIdEndpointMode", "required")}, // params
+     EpParam("AccountIdEndpointMode", "disabled")}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Dualstack and local endpoint are not supported"} // expect
   },
-  /*TEST CASE 439*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=required, Region=local, IsSearchOperation=true}", // documentation
+  /*TEST CASE 307*/
+  {"{AccountId=111111111111, Region=local, AccountIdEndpointMode=disabled, UseFIPS=true, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "local"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and local endpoint are not supported"} // expect
+  },
+  /*TEST CASE 308*/
+  {"{AccountId=111111111111, Region=local, AccountIdEndpointMode=disabled, UseFIPS=true, UseDualStack=true, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "local"), EpParam("UseDualStack", true),
+     EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and local endpoint are not supported"} // expect
+  },
+  /*TEST CASE 309*/
+  {"{AccountId=111111111111, Region=local, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=false, IsSearchOperation=true}", // documentation
     {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "local"), EpParam("UseDualStack", false),
      EpParam("AccountIdEndpointMode", "required")}, // params
     {}, // tags
@@ -3905,174 +2726,36 @@ Aws::Vector<DynamoDBEndpointProviderEndpointTestCase> DynamoDBEndpointProviderTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 440*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=required, Region=local, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", ""), EpParam("IsSearchOperation", true), EpParam("Region", "local"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 441*/
-  {"{UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=local, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("IsSearchOperation", true), EpParam("Region", "local"),
-     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and local endpoint are not supported"} // expect
-  },
-  /*TEST CASE 442*/
-  {"{UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=local, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("IsSearchOperation", true), EpParam("Region", "local"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and local endpoint are not supported"} // expect
-  },
-  /*TEST CASE 443*/
-  {"{UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=local, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "local"),
-     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required")}, // params
+  /*TEST CASE 310*/
+  {"{AccountId=111111111111, Region=local, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=true, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "local"), EpParam("UseDualStack", true),
+     EpParam("AccountIdEndpointMode", "required")}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Dualstack and local endpoint are not supported"} // expect
   },
-  /*TEST CASE 444*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=local, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "local"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
+  /*TEST CASE 311*/
+  {"{AccountId=111111111111, Region=local, AccountIdEndpointMode=required, UseFIPS=true, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "local"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "required")}, // params
     {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and local endpoint are not supported"} // expect
   },
-  /*TEST CASE 445*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=required, Region=local, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-west-2:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "local"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
+  /*TEST CASE 312*/
+  {"{AccountId=111111111111, Region=local, AccountIdEndpointMode=required, UseFIPS=true, UseDualStack=true, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "local"), EpParam("UseDualStack", true),
+     EpParam("AccountIdEndpointMode", "required")}, // params
     {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and local endpoint are not supported"} // expect
   },
-  /*TEST CASE 446*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=required, Region=local, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:s3:us-west-2:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "local"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
+  /*TEST CASE 313*/
+  {"{UseFIPS=false, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Missing Region"} // expect
   },
-  /*TEST CASE 447*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=, AccountIdEndpointMode=required, Region=local, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", ""), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "local"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 448*/
-  {"{UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=required, Region=local, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "local"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*epUrl*/"http://localhost:8000",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 449*/
-  {"{UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true),
-     EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://search-dynamodb-fips.us-east-1.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 450*/
-  {"{UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://search-dynamodb-fips.us-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 451*/
-  {"{UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true),
-     EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://111111111111.search-ddb.us-east-1.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 452*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://111111111111.search-ddb.us-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 453*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=preferred, Region=us-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", ""), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Credentials-sourced account ID parameter is invalid"} // expect
-  },
-  /*TEST CASE 454*/
-  {"{UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://search-dynamodb-fips.us-east-1.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 455*/
-  {"{UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://search-dynamodb-fips.us-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 456*/
-  {"{UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://222222222222.search-ddb.us-east-1.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 457*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://222222222222.search-ddb.us-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 458*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-west-2:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
+  /*TEST CASE 314*/
+  {"{Region=us-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:not_an_account:table/table_name, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:not_an_account:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
      EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
     {{/*epUrl*/"https://search-dynamodb.us-east-1.amazonaws.com",
@@ -4080,28 +2763,8 @@ Aws::Vector<DynamoDBEndpointProviderEndpointTestCase> DynamoDBEndpointProviderTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 459*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=preferred, Region=us-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:s3:us-west-2:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://search-dynamodb.us-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 460*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=, AccountIdEndpointMode=preferred, Region=us-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", ""), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://search-dynamodb.us-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 461*/
-  {"{UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=preferred, Region=us-east-1, IsSearchOperation=true}", // documentation
+  /*TEST CASE 315*/
+  {"{Region=us-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=false, IsSearchOperation=true}", // documentation
     {EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
     {{/*epUrl*/"https://search-dynamodb.us-east-1.amazonaws.com",
@@ -4109,32 +2772,280 @@ Aws::Vector<DynamoDBEndpointProviderEndpointTestCase> DynamoDBEndpointProviderTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 462*/
-  {"{UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=required, Region=us-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true),
-     EpParam("AccountIdEndpointMode", "required")}, // params
+  /*TEST CASE 316*/
+  {"{AccountId=111111111111, Region=us-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
+    {{/*epUrl*/"https://111111111111.search-ddb.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 463*/
-  {"{UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=required, Region=us-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "required")}, // params
+  /*TEST CASE 317*/
+  {"{AccountId=, Region=us-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", ""), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
+    {{/*No endpoint expected*/}, /*error*/"Credentials-sourced account ID parameter is invalid"} // expect
   },
-  /*TEST CASE 464*/
-  {"{UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=required, Region=us-east-1, IsSearchOperation=true}", // documentation
+  /*TEST CASE 318*/
+  {"{ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, Region=us-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://222222222222.search-ddb.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 319*/
+  {"{ResourceArn=, Region=us-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", ""), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://search-dynamodb.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 320*/
+  {"{ResourceArn=arn:aws:dynamodb:af-south-1:222222222222:table/table_name, Region=us-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws:dynamodb:af-south-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://search-dynamodb.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 321*/
+  {"{ResourceArn=arn:aws:s3:us-east-1:222222222222:stream/testStream, Region=us-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws:s3:us-east-1:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://search-dynamodb.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 322*/
+  {"{ResourceArn=arn:aws:s3:af-south-1:222222222222:stream/testStream, Region=us-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws:s3:af-south-1:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://search-dynamodb.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 323*/
+  {"{AccountId=111111111111, Region=us-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=true, IsSearchOperation=true}", // documentation
     {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true),
-     EpParam("AccountIdEndpointMode", "required")}, // params
+     EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
     {{/*epUrl*/"https://111111111111.search-ddb.us-east-1.api.aws",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 465*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=required, Region=us-east-1, IsSearchOperation=true}", // documentation
+  /*TEST CASE 324*/
+  {"{ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, Region=us-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=true, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
+     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://222222222222.search-ddb.us-east-1.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 325*/
+  {"{AccountId=111111111111, Region=us-east-1, AccountIdEndpointMode=preferred, UseFIPS=true, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://search-dynamodb-fips.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 326*/
+  {"{ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, Region=us-east-1, AccountIdEndpointMode=preferred, UseFIPS=true, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://search-dynamodb-fips.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 327*/
+  {"{AccountId=111111111111, Region=us-east-1, AccountIdEndpointMode=preferred, UseFIPS=true, UseDualStack=true, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true),
+     EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://search-dynamodb-fips.us-east-1.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 328*/
+  {"{ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, Region=us-east-1, AccountIdEndpointMode=preferred, UseFIPS=true, UseDualStack=true, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
+     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://search-dynamodb-fips.us-east-1.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 329*/
+  {"{Region=us-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://search-dynamodb.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 330*/
+  {"{AccountId=111111111111, Region=us-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://search-dynamodb.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 331*/
+  {"{AccountId=, Region=us-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", ""), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://search-dynamodb.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 332*/
+  {"{ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, Region=us-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://search-dynamodb.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 333*/
+  {"{ResourceArn=, Region=us-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", ""), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://search-dynamodb.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 334*/
+  {"{ResourceArn=arn:aws:dynamodb:af-south-1:222222222222:table/table_name, Region=us-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws:dynamodb:af-south-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://search-dynamodb.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 335*/
+  {"{ResourceArn=arn:aws:s3:us-east-1:222222222222:stream/testStream, Region=us-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws:s3:us-east-1:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://search-dynamodb.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 336*/
+  {"{ResourceArn=arn:aws:s3:af-south-1:222222222222:stream/testStream, Region=us-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws:s3:af-south-1:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://search-dynamodb.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 337*/
+  {"{AccountId=111111111111, Region=us-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=true, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true),
+     EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://search-dynamodb.us-east-1.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 338*/
+  {"{ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, Region=us-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=true, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
+     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://search-dynamodb.us-east-1.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 339*/
+  {"{AccountId=111111111111, Region=us-east-1, AccountIdEndpointMode=disabled, UseFIPS=true, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://search-dynamodb-fips.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 340*/
+  {"{ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, Region=us-east-1, AccountIdEndpointMode=disabled, UseFIPS=true, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://search-dynamodb-fips.us-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 341*/
+  {"{AccountId=111111111111, Region=us-east-1, AccountIdEndpointMode=disabled, UseFIPS=true, UseDualStack=true, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true),
+     EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://search-dynamodb-fips.us-east-1.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 342*/
+  {"{ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, Region=us-east-1, AccountIdEndpointMode=disabled, UseFIPS=true, UseDualStack=true, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
+     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://search-dynamodb-fips.us-east-1.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 343*/
+  {"{Region=us-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"AccountIdEndpointMode is required but no AccountID was provided or able to be loaded"} // expect
+  },
+  /*TEST CASE 344*/
+  {"{AccountId=111111111111, Region=us-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=false, IsSearchOperation=true}", // documentation
     {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
      EpParam("AccountIdEndpointMode", "required")}, // params
     {}, // tags
@@ -4143,39 +3054,15 @@ Aws::Vector<DynamoDBEndpointProviderEndpointTestCase> DynamoDBEndpointProviderTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 466*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=required, Region=us-east-1, IsSearchOperation=true}", // documentation
+  /*TEST CASE 345*/
+  {"{AccountId=, Region=us-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=false, IsSearchOperation=true}", // documentation
     {EpParam("UseFIPS", false), EpParam("AccountId", ""), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
      EpParam("AccountIdEndpointMode", "required")}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Credentials-sourced account ID parameter is invalid"} // expect
   },
-  /*TEST CASE 467*/
-  {"{UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
-  },
-  /*TEST CASE 468*/
-  {"{UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
-  },
-  /*TEST CASE 469*/
-  {"{UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://222222222222.search-ddb.us-east-1.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 470*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1, IsSearchOperation=true}", // documentation
+  /*TEST CASE 346*/
+  {"{ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, Region=us-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=false, IsSearchOperation=true}", // documentation
     {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
      EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
     {}, // tags
@@ -4184,264 +3071,134 @@ Aws::Vector<DynamoDBEndpointProviderEndpointTestCase> DynamoDBEndpointProviderTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 471*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-west-2:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"AccountIdEndpointMode is required but no AccountID was provided or able to be loaded"} // expect
-  },
-  /*TEST CASE 472*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=required, Region=us-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:s3:us-west-2:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"AccountIdEndpointMode is required but no AccountID was provided or able to be loaded"} // expect
-  },
-  /*TEST CASE 473*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=, AccountIdEndpointMode=required, Region=us-east-1, IsSearchOperation=true}", // documentation
+  /*TEST CASE 347*/
+  {"{ResourceArn=, Region=us-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=false, IsSearchOperation=true}", // documentation
     {EpParam("ResourceArn", ""), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
      EpParam("AccountIdEndpointMode", "required")}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"AccountIdEndpointMode is required but no AccountID was provided or able to be loaded"} // expect
   },
-  /*TEST CASE 474*/
-  {"{UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=required, Region=us-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
+  /*TEST CASE 348*/
+  {"{ResourceArn=arn:aws:dynamodb:af-south-1:222222222222:table/table_name, Region=us-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws:dynamodb:af-south-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"AccountIdEndpointMode is required but no AccountID was provided or able to be loaded"} // expect
   },
-  /*TEST CASE 475*/
-  {"{UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=required, Region=cn-north-1, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true),
-     EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
-  },
-  /*TEST CASE 476*/
-  {"{UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=required, Region=cn-north-1, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
-  },
-  /*TEST CASE 477*/
-  {"{UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=required, Region=cn-north-1, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true),
-     EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition"} // expect
-  },
-  /*TEST CASE 478*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=required, Region=cn-north-1, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition"} // expect
-  },
-  /*TEST CASE 479*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=required, Region=cn-north-1, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", ""), EpParam("IsSearchOperation", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition"} // expect
-  },
-  /*TEST CASE 480*/
-  {"{UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=cn-north-1, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("IsSearchOperation", true), EpParam("Region", "cn-north-1"),
-     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
-  },
-  /*TEST CASE 481*/
-  {"{UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=cn-north-1, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("IsSearchOperation", true), EpParam("Region", "cn-north-1"),
+  /*TEST CASE 349*/
+  {"{ResourceArn=arn:aws:s3:us-east-1:222222222222:stream/testStream, Region=us-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws:s3:us-east-1:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
      EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
     {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
+    {{/*No endpoint expected*/}, /*error*/"AccountIdEndpointMode is required but no AccountID was provided or able to be loaded"} // expect
   },
-  /*TEST CASE 482*/
-  {"{UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=cn-north-1, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "cn-north-1"),
-     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition"} // expect
-  },
-  /*TEST CASE 483*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=cn-north-1, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "cn-north-1"),
+  /*TEST CASE 350*/
+  {"{ResourceArn=arn:aws:s3:af-south-1:222222222222:stream/testStream, Region=us-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws:s3:af-south-1:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
      EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
     {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition"} // expect
+    {{/*No endpoint expected*/}, /*error*/"AccountIdEndpointMode is required but no AccountID was provided or able to be loaded"} // expect
   },
-  /*TEST CASE 484*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=required, Region=cn-north-1, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-west-2:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "cn-north-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition"} // expect
-  },
-  /*TEST CASE 485*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=required, Region=cn-north-1, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:s3:us-west-2:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "cn-north-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition"} // expect
-  },
-  /*TEST CASE 486*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=, AccountIdEndpointMode=required, Region=cn-north-1, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", ""), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition"} // expect
-  },
-  /*TEST CASE 487*/
-  {"{UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=required, Region=cn-north-1, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition"} // expect
-  },
-  /*TEST CASE 488*/
-  {"{UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=us-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true),
-     EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://search-dynamodb-fips.us-east-1.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 489*/
-  {"{UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=us-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://search-dynamodb-fips.us-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 490*/
-  {"{UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=us-east-1, IsSearchOperation=true}", // documentation
+  /*TEST CASE 351*/
+  {"{AccountId=111111111111, Region=us-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=true, IsSearchOperation=true}", // documentation
     {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true),
-     EpParam("AccountIdEndpointMode", "disabled")}, // params
+     EpParam("AccountIdEndpointMode", "required")}, // params
     {}, // tags
-    {{/*epUrl*/"https://search-dynamodb.us-east-1.api.aws",
+    {{/*epUrl*/"https://111111111111.search-ddb.us-east-1.api.aws",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 491*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=us-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://search-dynamodb.us-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 492*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=disabled, Region=us-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", ""), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://search-dynamodb.us-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 493*/
-  {"{UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=us-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://search-dynamodb-fips.us-east-1.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 494*/
-  {"{UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=us-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://search-dynamodb-fips.us-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 495*/
-  {"{UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=us-east-1, IsSearchOperation=true}", // documentation
+  /*TEST CASE 352*/
+  {"{ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, Region=us-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=true, IsSearchOperation=true}", // documentation
     {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "disabled")}, // params
+     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required")}, // params
     {}, // tags
-    {{/*epUrl*/"https://search-dynamodb.us-east-1.api.aws",
+    {{/*epUrl*/"https://222222222222.search-ddb.us-east-1.api.aws",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 496*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=us-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
+  /*TEST CASE 353*/
+  {"{AccountId=111111111111, Region=us-east-1, AccountIdEndpointMode=required, UseFIPS=true, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "required")}, // params
     {}, // tags
-    {{/*epUrl*/"https://search-dynamodb.us-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
   },
-  /*TEST CASE 497*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=us-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-west-2:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
+  /*TEST CASE 354*/
+  {"{ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, Region=us-east-1, AccountIdEndpointMode=required, UseFIPS=true, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
     {}, // tags
-    {{/*epUrl*/"https://search-dynamodb.us-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
   },
-  /*TEST CASE 498*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=disabled, Region=us-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:s3:us-west-2:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
+  /*TEST CASE 355*/
+  {"{AccountId=111111111111, Region=us-east-1, AccountIdEndpointMode=required, UseFIPS=true, UseDualStack=true, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", true),
+     EpParam("AccountIdEndpointMode", "required")}, // params
     {}, // tags
-    {{/*epUrl*/"https://search-dynamodb.us-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
   },
-  /*TEST CASE 499*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=, AccountIdEndpointMode=disabled, Region=us-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", ""), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "disabled")}, // params
+  /*TEST CASE 356*/
+  {"{ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, Region=us-east-1, AccountIdEndpointMode=required, UseFIPS=true, UseDualStack=true, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"),
+     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required")}, // params
     {}, // tags
-    {{/*epUrl*/"https://search-dynamodb.us-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
   },
-  /*TEST CASE 500*/
-  {"{UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=disabled, Region=us-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://search-dynamodb.us-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 501*/
-  {"{UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=cn-north-1, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true),
+  /*TEST CASE 357*/
+  {"{Region=us-new-1, AccountIdEndpointMode=preferred, AccountId=111111111111, UseFIPS=false, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-new-1"), EpParam("UseDualStack", false),
      EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
-    {{/*epUrl*/"https://search-dynamodb-fips.cn-north-1.api.amazonwebservices.com.cn",
+    {{/*epUrl*/"https://111111111111.search-ddb.us-new-1.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 502*/
-  {"{UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=cn-north-1, IsSearchOperation=true}", // documentation
+  /*TEST CASE 358*/
+  {"{AccountId=111111111111, Region=cn-north-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://111111111111.search-ddb.cn-north-1.amazonaws.com.cn",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 359*/
+  {"{ResourceArn=arn:aws-cn:dynamodb:cn-north-1:222222222222:table/table_name, Region=cn-north-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-cn:dynamodb:cn-north-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "cn-north-1"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://222222222222.search-ddb.cn-north-1.amazonaws.com.cn",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 360*/
+  {"{AccountId=111111111111, Region=cn-north-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=true, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true),
+     EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://111111111111.search-ddb.cn-north-1.api.amazonwebservices.com.cn",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 361*/
+  {"{ResourceArn=arn:aws-cn:dynamodb:cn-north-1:222222222222:table/table_name, Region=cn-north-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=true, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-cn:dynamodb:cn-north-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "cn-north-1"),
+     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://222222222222.search-ddb.cn-north-1.api.amazonwebservices.com.cn",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 362*/
+  {"{AccountId=111111111111, Region=cn-north-1, AccountIdEndpointMode=preferred, UseFIPS=true, UseDualStack=false, IsSearchOperation=true}", // documentation
     {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false),
      EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
@@ -4450,49 +3207,9 @@ Aws::Vector<DynamoDBEndpointProviderEndpointTestCase> DynamoDBEndpointProviderTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 503*/
-  {"{UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=cn-north-1, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true),
-     EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://search-dynamodb.cn-north-1.api.amazonwebservices.com.cn",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 504*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=cn-north-1, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://search-dynamodb.cn-north-1.amazonaws.com.cn",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 505*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=preferred, Region=cn-north-1, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", ""), EpParam("IsSearchOperation", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://search-dynamodb.cn-north-1.amazonaws.com.cn",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 506*/
-  {"{UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=cn-north-1, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("IsSearchOperation", true), EpParam("Region", "cn-north-1"),
-     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://search-dynamodb-fips.cn-north-1.api.amazonwebservices.com.cn",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 507*/
-  {"{UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=cn-north-1, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("IsSearchOperation", true), EpParam("Region", "cn-north-1"),
+  /*TEST CASE 363*/
+  {"{ResourceArn=arn:aws-cn:dynamodb:cn-north-1:222222222222:table/table_name, Region=cn-north-1, AccountIdEndpointMode=preferred, UseFIPS=true, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-cn:dynamodb:cn-north-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("IsSearchOperation", true), EpParam("Region", "cn-north-1"),
      EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
     {{/*epUrl*/"https://search-dynamodb-fips.cn-north-1.amazonaws.com.cn",
@@ -4500,206 +3217,226 @@ Aws::Vector<DynamoDBEndpointProviderEndpointTestCase> DynamoDBEndpointProviderTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 508*/
-  {"{UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=cn-north-1, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "cn-north-1"),
+  /*TEST CASE 364*/
+  {"{AccountId=111111111111, Region=cn-north-1, AccountIdEndpointMode=preferred, UseFIPS=true, UseDualStack=true, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true),
+     EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://search-dynamodb-fips.cn-north-1.api.amazonwebservices.com.cn",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 365*/
+  {"{ResourceArn=arn:aws-cn:dynamodb:cn-north-1:222222222222:table/table_name, Region=cn-north-1, AccountIdEndpointMode=preferred, UseFIPS=true, UseDualStack=true, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-cn:dynamodb:cn-north-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("IsSearchOperation", true), EpParam("Region", "cn-north-1"),
      EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://search-dynamodb-fips.cn-north-1.api.amazonwebservices.com.cn",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 366*/
+  {"{AccountId=111111111111, Region=cn-north-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://search-dynamodb.cn-north-1.amazonaws.com.cn",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 367*/
+  {"{ResourceArn=arn:aws-cn:dynamodb:cn-north-1:222222222222:table/table_name, Region=cn-north-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-cn:dynamodb:cn-north-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "cn-north-1"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://search-dynamodb.cn-north-1.amazonaws.com.cn",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 368*/
+  {"{AccountId=111111111111, Region=cn-north-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=true, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true),
+     EpParam("AccountIdEndpointMode", "disabled")}, // params
     {}, // tags
     {{/*epUrl*/"https://search-dynamodb.cn-north-1.api.amazonwebservices.com.cn",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 509*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=cn-north-1, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "cn-north-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
+  /*TEST CASE 369*/
+  {"{ResourceArn=arn:aws-cn:dynamodb:cn-north-1:222222222222:table/table_name, Region=cn-north-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=true, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-cn:dynamodb:cn-north-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "cn-north-1"),
+     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "disabled")}, // params
     {}, // tags
-    {{/*epUrl*/"https://search-dynamodb.cn-north-1.amazonaws.com.cn",
+    {{/*epUrl*/"https://search-dynamodb.cn-north-1.api.amazonwebservices.com.cn",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 510*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=cn-north-1, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-west-2:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "cn-north-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
+  /*TEST CASE 370*/
+  {"{AccountId=111111111111, Region=cn-north-1, AccountIdEndpointMode=disabled, UseFIPS=true, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "disabled")}, // params
     {}, // tags
-    {{/*epUrl*/"https://search-dynamodb.cn-north-1.amazonaws.com.cn",
+    {{/*epUrl*/"https://search-dynamodb-fips.cn-north-1.amazonaws.com.cn",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 511*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=preferred, Region=cn-north-1, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:s3:us-west-2:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "cn-north-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
+  /*TEST CASE 371*/
+  {"{ResourceArn=arn:aws-cn:dynamodb:cn-north-1:222222222222:table/table_name, Region=cn-north-1, AccountIdEndpointMode=disabled, UseFIPS=true, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-cn:dynamodb:cn-north-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("IsSearchOperation", true), EpParam("Region", "cn-north-1"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
     {}, // tags
-    {{/*epUrl*/"https://search-dynamodb.cn-north-1.amazonaws.com.cn",
+    {{/*epUrl*/"https://search-dynamodb-fips.cn-north-1.amazonaws.com.cn",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 512*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=, AccountIdEndpointMode=preferred, Region=cn-north-1, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", ""), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false),
+  /*TEST CASE 372*/
+  {"{AccountId=111111111111, Region=cn-north-1, AccountIdEndpointMode=disabled, UseFIPS=true, UseDualStack=true, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true),
+     EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://search-dynamodb-fips.cn-north-1.api.amazonwebservices.com.cn",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 373*/
+  {"{ResourceArn=arn:aws-cn:dynamodb:cn-north-1:222222222222:table/table_name, Region=cn-north-1, AccountIdEndpointMode=disabled, UseFIPS=true, UseDualStack=true, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-cn:dynamodb:cn-north-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("IsSearchOperation", true), EpParam("Region", "cn-north-1"),
+     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://search-dynamodb-fips.cn-north-1.api.amazonwebservices.com.cn",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 374*/
+  {"{AccountId=111111111111, Region=cn-north-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://111111111111.search-ddb.cn-north-1.amazonaws.com.cn",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 375*/
+  {"{ResourceArn=arn:aws-cn:dynamodb:cn-north-1:222222222222:table/table_name, Region=cn-north-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-cn:dynamodb:cn-north-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "cn-north-1"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://222222222222.search-ddb.cn-north-1.amazonaws.com.cn",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 376*/
+  {"{AccountId=111111111111, Region=cn-north-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=true, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true),
+     EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://111111111111.search-ddb.cn-north-1.api.amazonwebservices.com.cn",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 377*/
+  {"{ResourceArn=arn:aws-cn:dynamodb:cn-north-1:222222222222:table/table_name, Region=cn-north-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=true, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-cn:dynamodb:cn-north-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "cn-north-1"),
+     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://222222222222.search-ddb.cn-north-1.api.amazonwebservices.com.cn",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 378*/
+  {"{AccountId=111111111111, Region=cn-north-1, AccountIdEndpointMode=required, UseFIPS=true, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
+  },
+  /*TEST CASE 379*/
+  {"{ResourceArn=arn:aws-cn:dynamodb:cn-north-1:222222222222:table/table_name, Region=cn-north-1, AccountIdEndpointMode=required, UseFIPS=true, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-cn:dynamodb:cn-north-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("IsSearchOperation", true), EpParam("Region", "cn-north-1"),
+     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
+  },
+  /*TEST CASE 380*/
+  {"{AccountId=111111111111, Region=cn-north-1, AccountIdEndpointMode=required, UseFIPS=true, UseDualStack=true, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", true),
+     EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
+  },
+  /*TEST CASE 381*/
+  {"{ResourceArn=arn:aws-cn:dynamodb:cn-north-1:222222222222:table/table_name, Region=cn-north-1, AccountIdEndpointMode=required, UseFIPS=true, UseDualStack=true, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-cn:dynamodb:cn-north-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("IsSearchOperation", true), EpParam("Region", "cn-north-1"),
+     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
+  },
+  /*TEST CASE 382*/
+  {"{Region=cn-new-1, AccountIdEndpointMode=preferred, AccountId=111111111111, UseFIPS=false, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "cn-new-1"), EpParam("UseDualStack", false),
      EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
-    {{/*epUrl*/"https://search-dynamodb.cn-north-1.amazonaws.com.cn",
+    {{/*epUrl*/"https://search-dynamodb.cn-new-1.amazonaws.com.cn",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 513*/
-  {"{UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=preferred, Region=cn-north-1, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://search-dynamodb.cn-north-1.amazonaws.com.cn",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 514*/
-  {"{UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-iso-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", true),
+  /*TEST CASE 383*/
+  {"{AccountId=111111111111, Region=us-gov-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false),
      EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
-    {{/*epUrl*/"https://search-dynamodb-fips.us-iso-east-1.api.aws.ic.gov",
+    {{/*epUrl*/"https://111111111111.search-ddb.us-gov-east-1.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 515*/
-  {"{UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-iso-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false),
+  /*TEST CASE 384*/
+  {"{ResourceArn=arn:aws-us-gov:dynamodb:us-gov-east-1:222222222222:table/table_name, Region=us-gov-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-us-gov:dynamodb:us-gov-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true),
+     EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://222222222222.search-ddb.us-gov-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 385*/
+  {"{AccountId=111111111111, Region=us-gov-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=true, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true),
      EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
-    {{/*epUrl*/"https://search-dynamodb-fips.us-iso-east-1.c2s.ic.gov",
+    {{/*epUrl*/"https://111111111111.search-ddb.us-gov-east-1.api.aws",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 516*/
-  {"{UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-iso-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", true),
-     EpParam("AccountIdEndpointMode", "preferred")}, // params
+  /*TEST CASE 386*/
+  {"{ResourceArn=arn:aws-us-gov:dynamodb:us-gov-east-1:222222222222:table/table_name, Region=us-gov-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=true, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-us-gov:dynamodb:us-gov-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true),
+     EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
-    {{/*epUrl*/"https://search-dynamodb.us-iso-east-1.api.aws.ic.gov",
+    {{/*epUrl*/"https://222222222222.search-ddb.us-gov-east-1.api.aws",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 517*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-iso-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://search-dynamodb.us-iso-east-1.c2s.ic.gov",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 518*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=preferred, Region=us-iso-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", ""), EpParam("IsSearchOperation", true), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://search-dynamodb.us-iso-east-1.c2s.ic.gov",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 519*/
-  {"{UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-iso-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("IsSearchOperation", true), EpParam("Region", "us-iso-east-1"),
-     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://search-dynamodb-fips.us-iso-east-1.api.aws.ic.gov",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 520*/
-  {"{UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-iso-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("IsSearchOperation", true), EpParam("Region", "us-iso-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://search-dynamodb-fips.us-iso-east-1.c2s.ic.gov",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 521*/
-  {"{UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-iso-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "us-iso-east-1"),
-     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://search-dynamodb.us-iso-east-1.api.aws.ic.gov",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 522*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-iso-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "us-iso-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://search-dynamodb.us-iso-east-1.c2s.ic.gov",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 523*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-iso-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-west-2:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "us-iso-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://search-dynamodb.us-iso-east-1.c2s.ic.gov",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 524*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=preferred, Region=us-iso-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:s3:us-west-2:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "us-iso-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://search-dynamodb.us-iso-east-1.c2s.ic.gov",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 525*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=, AccountIdEndpointMode=preferred, Region=us-iso-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", ""), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://search-dynamodb.us-iso-east-1.c2s.ic.gov",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 526*/
-  {"{UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=preferred, Region=us-iso-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://search-dynamodb.us-iso-east-1.c2s.ic.gov",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 527*/
-  {"{UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-gov-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true),
-     EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://search-dynamodb-fips.us-gov-east-1.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 528*/
-  {"{UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-gov-east-1, IsSearchOperation=true}", // documentation
+  /*TEST CASE 387*/
+  {"{AccountId=111111111111, Region=us-gov-east-1, AccountIdEndpointMode=preferred, UseFIPS=true, UseDualStack=false, IsSearchOperation=true}", // documentation
     {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false),
      EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
@@ -4708,168 +3445,419 @@ Aws::Vector<DynamoDBEndpointProviderEndpointTestCase> DynamoDBEndpointProviderTe
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 529*/
-  {"{UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-gov-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true),
-     EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://search-dynamodb.us-gov-east-1.api.aws",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 530*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-gov-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false),
-     EpParam("AccountIdEndpointMode", "preferred")}, // params
+  /*TEST CASE 388*/
+  {"{ResourceArn=arn:aws-us-gov:dynamodb:us-gov-east-1:222222222222:table/table_name, Region=us-gov-east-1, AccountIdEndpointMode=preferred, UseFIPS=true, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-us-gov:dynamodb:us-gov-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("IsSearchOperation", true),
+     EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
     {{/*epUrl*/"https://search-dynamodb.us-gov-east-1.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 531*/
-  {"{UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=preferred, Region=us-gov-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", false), EpParam("AccountId", ""), EpParam("IsSearchOperation", true), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false),
+  /*TEST CASE 389*/
+  {"{AccountId=111111111111, Region=us-gov-east-1, AccountIdEndpointMode=preferred, UseFIPS=true, UseDualStack=true, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true),
      EpParam("AccountIdEndpointMode", "preferred")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://search-dynamodb.us-gov-east-1.amazonaws.com",
-       {/*authScheme*/}, 
-       {/*properties*/},
-       {/*headers*/}}, {/*No error*/}} // expect
-  },
-  /*TEST CASE 532*/
-  {"{UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-gov-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("IsSearchOperation", true), EpParam("Region", "us-gov-east-1"),
-     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
     {{/*epUrl*/"https://search-dynamodb-fips.us-gov-east-1.api.aws",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 533*/
-  {"{UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-gov-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("IsSearchOperation", true), EpParam("Region", "us-gov-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
+  /*TEST CASE 390*/
+  {"{ResourceArn=arn:aws-us-gov:dynamodb:us-gov-east-1:222222222222:table/table_name, Region=us-gov-east-1, AccountIdEndpointMode=preferred, UseFIPS=true, UseDualStack=true, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-us-gov:dynamodb:us-gov-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("IsSearchOperation", true),
+     EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://search-dynamodb-fips.us-gov-east-1.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 391*/
+  {"{AccountId=111111111111, Region=us-gov-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "disabled")}, // params
     {}, // tags
     {{/*epUrl*/"https://search-dynamodb.us-gov-east-1.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 534*/
-  {"{UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-gov-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "us-gov-east-1"),
-     EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred")}, // params
+  /*TEST CASE 392*/
+  {"{ResourceArn=arn:aws-us-gov:dynamodb:us-gov-east-1:222222222222:table/table_name, Region=us-gov-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-us-gov:dynamodb:us-gov-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true),
+     EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://search-dynamodb.us-gov-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 393*/
+  {"{AccountId=111111111111, Region=us-gov-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=true, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true),
+     EpParam("AccountIdEndpointMode", "disabled")}, // params
     {}, // tags
     {{/*epUrl*/"https://search-dynamodb.us-gov-east-1.api.aws",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 535*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-gov-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "us-gov-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
+  /*TEST CASE 394*/
+  {"{ResourceArn=arn:aws-us-gov:dynamodb:us-gov-east-1:222222222222:table/table_name, Region=us-gov-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=true, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-us-gov:dynamodb:us-gov-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true),
+     EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://search-dynamodb.us-gov-east-1.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 395*/
+  {"{AccountId=111111111111, Region=us-gov-east-1, AccountIdEndpointMode=disabled, UseFIPS=true, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "disabled")}, // params
     {}, // tags
     {{/*epUrl*/"https://search-dynamodb.us-gov-east-1.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 536*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-gov-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:dynamodb:us-west-2:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "us-gov-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
+  /*TEST CASE 396*/
+  {"{ResourceArn=arn:aws-us-gov:dynamodb:us-gov-east-1:222222222222:table/table_name, Region=us-gov-east-1, AccountIdEndpointMode=disabled, UseFIPS=true, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-us-gov:dynamodb:us-gov-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("IsSearchOperation", true),
+     EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
     {}, // tags
     {{/*epUrl*/"https://search-dynamodb.us-gov-east-1.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 537*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=preferred, Region=us-gov-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", "arn:aws:s3:us-west-2:222222222222:stream/testStream"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "us-gov-east-1"),
-     EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
+  /*TEST CASE 397*/
+  {"{AccountId=111111111111, Region=us-gov-east-1, AccountIdEndpointMode=disabled, UseFIPS=true, UseDualStack=true, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true),
+     EpParam("AccountIdEndpointMode", "disabled")}, // params
     {}, // tags
-    {{/*epUrl*/"https://search-dynamodb.us-gov-east-1.amazonaws.com",
+    {{/*epUrl*/"https://search-dynamodb-fips.us-gov-east-1.api.aws",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 538*/
-  {"{UseFIPS=false, UseDualStack=false, ResourceArn=, AccountIdEndpointMode=preferred, Region=us-gov-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("ResourceArn", ""), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false),
+  /*TEST CASE 398*/
+  {"{ResourceArn=arn:aws-us-gov:dynamodb:us-gov-east-1:222222222222:table/table_name, Region=us-gov-east-1, AccountIdEndpointMode=disabled, UseFIPS=true, UseDualStack=true, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-us-gov:dynamodb:us-gov-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("IsSearchOperation", true),
+     EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://search-dynamodb-fips.us-gov-east-1.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 399*/
+  {"{AccountId=111111111111, Region=us-gov-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://111111111111.search-ddb.us-gov-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 400*/
+  {"{ResourceArn=arn:aws-us-gov:dynamodb:us-gov-east-1:222222222222:table/table_name, Region=us-gov-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-us-gov:dynamodb:us-gov-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true),
+     EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://222222222222.search-ddb.us-gov-east-1.amazonaws.com",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 401*/
+  {"{AccountId=111111111111, Region=us-gov-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=true, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true),
+     EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://111111111111.search-ddb.us-gov-east-1.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 402*/
+  {"{ResourceArn=arn:aws-us-gov:dynamodb:us-gov-east-1:222222222222:table/table_name, Region=us-gov-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=true, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-us-gov:dynamodb:us-gov-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true),
+     EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://222222222222.search-ddb.us-gov-east-1.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 403*/
+  {"{AccountId=111111111111, Region=us-gov-east-1, AccountIdEndpointMode=required, UseFIPS=true, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
+  },
+  /*TEST CASE 404*/
+  {"{ResourceArn=arn:aws-us-gov:dynamodb:us-gov-east-1:222222222222:table/table_name, Region=us-gov-east-1, AccountIdEndpointMode=required, UseFIPS=true, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-us-gov:dynamodb:us-gov-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("IsSearchOperation", true),
+     EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
+  },
+  /*TEST CASE 405*/
+  {"{AccountId=111111111111, Region=us-gov-east-1, AccountIdEndpointMode=required, UseFIPS=true, UseDualStack=true, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true),
+     EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
+  },
+  /*TEST CASE 406*/
+  {"{ResourceArn=arn:aws-us-gov:dynamodb:us-gov-east-1:222222222222:table/table_name, Region=us-gov-east-1, AccountIdEndpointMode=required, UseFIPS=true, UseDualStack=true, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-us-gov:dynamodb:us-gov-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("IsSearchOperation", true),
+     EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
+  },
+  /*TEST CASE 407*/
+  {"{Region=us-gov-new-1, AccountIdEndpointMode=preferred, AccountId=111111111111, UseFIPS=false, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-gov-new-1"), EpParam("UseDualStack", false),
      EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
-    {{/*epUrl*/"https://search-dynamodb.us-gov-east-1.amazonaws.com",
+    {{/*epUrl*/"https://search-dynamodb.us-gov-new-1.amazonaws.com",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 539*/
-  {"{UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=preferred, Region=us-gov-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("UseFIPS", false), EpParam("IsSearchOperation", true), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
+  /*TEST CASE 408*/
+  {"{AccountId=111111111111, Region=us-iso-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
-    {{/*epUrl*/"https://search-dynamodb.us-gov-east-1.amazonaws.com",
+    {{/*epUrl*/"https://search-dynamodb.us-iso-east-1.c2s.ic.gov",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 540*/
-  {"{Endpoint=https://dynamodb.cn-north-1.api.amazonwebservices.com.cn, Region=cn-north-1, IsSearchOperation=true}", // documentation
-    {EpParam("Endpoint", "https://dynamodb.cn-north-1.api.amazonwebservices.com.cn"), EpParam("IsSearchOperation", true), EpParam("Region", "cn-north-1")}, // params
+  /*TEST CASE 409*/
+  {"{ResourceArn=arn:aws-iso:dynamodb:us-iso-east-1:222222222222:table/table_name, Region=us-iso-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-iso:dynamodb:us-iso-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true),
+     EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html"} // expect
-  },
-  /*TEST CASE 541*/
-  {"{Endpoint=https://dynamodb.us-gov-east-1.api.aws, Region=us-gov-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("Endpoint", "https://dynamodb.us-gov-east-1.api.aws"), EpParam("IsSearchOperation", true), EpParam("Region", "us-gov-east-1")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html"} // expect
-  },
-  /*TEST CASE 542*/
-  {"{Endpoint=https://dynamodb.us-east-1.api.aws, Region=us-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("Endpoint", "https://dynamodb.us-east-1.api.aws"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1")}, // params
-    {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html"} // expect
-  },
-  /*TEST CASE 543*/
-  {"{Endpoint=https://111111111111.ddb.us-east-1.api.aws, Region=us-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("Endpoint", "https://111111111111.ddb.us-east-1.api.aws"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1")}, // params
-    {}, // tags
-    {{/*epUrl*/"https://111111111111.ddb.us-east-1.api.aws",
+    {{/*epUrl*/"https://search-dynamodb.us-iso-east-1.c2s.ic.gov",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 544*/
-  {"{Endpoint=https://vpce-1a2b3c4d-5e6f.dynamodb.us-east-1.vpce.api.aws, Region=us-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("Endpoint", "https://vpce-1a2b3c4d-5e6f.dynamodb.us-east-1.vpce.api.aws"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1")}, // params
+  /*TEST CASE 410*/
+  {"{AccountId=111111111111, Region=us-iso-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=true, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", true),
+     EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
-    {{/*epUrl*/"https://vpce-1a2b3c4d-5e6f.dynamodb.us-east-1.vpce.api.aws",
+    {{/*epUrl*/"https://search-dynamodb.us-iso-east-1.api.aws.ic.gov",
        {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 545*/
-  {"{Endpoint=https://dynamodb.eu-west-1.api.aws, Region=eu-west-1, IsSearchOperation=true}", // documentation
-    {EpParam("Endpoint", "https://dynamodb.eu-west-1.api.aws"), EpParam("IsSearchOperation", true), EpParam("Region", "eu-west-1")}, // params
+  /*TEST CASE 411*/
+  {"{ResourceArn=arn:aws-iso:dynamodb:us-iso-east-1:222222222222:table/table_name, Region=us-iso-east-1, AccountIdEndpointMode=preferred, UseFIPS=false, UseDualStack=true, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-iso:dynamodb:us-iso-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true),
+     EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html"} // expect
+    {{/*epUrl*/"https://search-dynamodb.us-iso-east-1.api.aws.ic.gov",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 546*/
-  {"{Endpoint=https://dynamodb.us-west-2.api.aws, Region=us-west-2, IsSearchOperation=true}", // documentation
-    {EpParam("Endpoint", "https://dynamodb.us-west-2.api.aws"), EpParam("IsSearchOperation", true), EpParam("Region", "us-west-2")}, // params
+  /*TEST CASE 412*/
+  {"{AccountId=111111111111, Region=us-iso-east-1, AccountIdEndpointMode=preferred, UseFIPS=true, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html"} // expect
+    {{/*epUrl*/"https://search-dynamodb-fips.us-iso-east-1.c2s.ic.gov",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
   },
-  /*TEST CASE 547*/
-  {"{Endpoint=https://dynamodb.us-east-1.api.aws/, Region=us-east-1, IsSearchOperation=true}", // documentation
-    {EpParam("Endpoint", "https://dynamodb.us-east-1.api.aws/"), EpParam("IsSearchOperation", true), EpParam("Region", "us-east-1")}, // params
+  /*TEST CASE 413*/
+  {"{ResourceArn=arn:aws-iso:dynamodb:us-iso-east-1:222222222222:table/table_name, Region=us-iso-east-1, AccountIdEndpointMode=preferred, UseFIPS=true, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-iso:dynamodb:us-iso-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("IsSearchOperation", true),
+     EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "preferred")}, // params
     {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html"} // expect
+    {{/*epUrl*/"https://search-dynamodb-fips.us-iso-east-1.c2s.ic.gov",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 414*/
+  {"{AccountId=111111111111, Region=us-iso-east-1, AccountIdEndpointMode=preferred, UseFIPS=true, UseDualStack=true, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", true),
+     EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://search-dynamodb-fips.us-iso-east-1.api.aws.ic.gov",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 415*/
+  {"{ResourceArn=arn:aws-iso:dynamodb:us-iso-east-1:222222222222:table/table_name, Region=us-iso-east-1, AccountIdEndpointMode=preferred, UseFIPS=true, UseDualStack=true, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-iso:dynamodb:us-iso-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("IsSearchOperation", true),
+     EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://search-dynamodb-fips.us-iso-east-1.api.aws.ic.gov",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 416*/
+  {"{AccountId=111111111111, Region=us-iso-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://search-dynamodb.us-iso-east-1.c2s.ic.gov",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 417*/
+  {"{ResourceArn=arn:aws-iso:dynamodb:us-iso-east-1:222222222222:table/table_name, Region=us-iso-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-iso:dynamodb:us-iso-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true),
+     EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://search-dynamodb.us-iso-east-1.c2s.ic.gov",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 418*/
+  {"{AccountId=111111111111, Region=us-iso-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=true, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", true),
+     EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://search-dynamodb.us-iso-east-1.api.aws.ic.gov",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 419*/
+  {"{ResourceArn=arn:aws-iso:dynamodb:us-iso-east-1:222222222222:table/table_name, Region=us-iso-east-1, AccountIdEndpointMode=disabled, UseFIPS=false, UseDualStack=true, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-iso:dynamodb:us-iso-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true),
+     EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://search-dynamodb.us-iso-east-1.api.aws.ic.gov",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 420*/
+  {"{AccountId=111111111111, Region=us-iso-east-1, AccountIdEndpointMode=disabled, UseFIPS=true, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://search-dynamodb-fips.us-iso-east-1.c2s.ic.gov",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 421*/
+  {"{ResourceArn=arn:aws-iso:dynamodb:us-iso-east-1:222222222222:table/table_name, Region=us-iso-east-1, AccountIdEndpointMode=disabled, UseFIPS=true, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-iso:dynamodb:us-iso-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("IsSearchOperation", true),
+     EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://search-dynamodb-fips.us-iso-east-1.c2s.ic.gov",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 422*/
+  {"{AccountId=111111111111, Region=us-iso-east-1, AccountIdEndpointMode=disabled, UseFIPS=true, UseDualStack=true, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", true),
+     EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://search-dynamodb-fips.us-iso-east-1.api.aws.ic.gov",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 423*/
+  {"{ResourceArn=arn:aws-iso:dynamodb:us-iso-east-1:222222222222:table/table_name, Region=us-iso-east-1, AccountIdEndpointMode=disabled, UseFIPS=true, UseDualStack=true, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-iso:dynamodb:us-iso-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("IsSearchOperation", true),
+     EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "disabled")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://search-dynamodb-fips.us-iso-east-1.api.aws.ic.gov",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 424*/
+  {"{AccountId=111111111111, Region=us-iso-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this region"} // expect
+  },
+  /*TEST CASE 425*/
+  {"{ResourceArn=arn:aws-iso:dynamodb:us-iso-east-1:222222222222:table/table_name, Region=us-iso-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-iso:dynamodb:us-iso-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true),
+     EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this region"} // expect
+  },
+  /*TEST CASE 426*/
+  {"{AccountId=111111111111, Region=us-iso-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=true, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", true),
+     EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this region"} // expect
+  },
+  /*TEST CASE 427*/
+  {"{ResourceArn=arn:aws-iso:dynamodb:us-iso-east-1:222222222222:table/table_name, Region=us-iso-east-1, AccountIdEndpointMode=required, UseFIPS=false, UseDualStack=true, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-iso:dynamodb:us-iso-east-1:222222222222:table/table_name"), EpParam("UseFIPS", false), EpParam("IsSearchOperation", true),
+     EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this region"} // expect
+  },
+  /*TEST CASE 428*/
+  {"{AccountId=111111111111, Region=us-iso-east-1, AccountIdEndpointMode=required, UseFIPS=true, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
+  },
+  /*TEST CASE 429*/
+  {"{ResourceArn=arn:aws-iso:dynamodb:us-iso-east-1:222222222222:table/table_name, Region=us-iso-east-1, AccountIdEndpointMode=required, UseFIPS=true, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-iso:dynamodb:us-iso-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("IsSearchOperation", true),
+     EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", false), EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
+  },
+  /*TEST CASE 430*/
+  {"{AccountId=111111111111, Region=us-iso-east-1, AccountIdEndpointMode=required, UseFIPS=true, UseDualStack=true, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", true), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", true),
+     EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
+  },
+  /*TEST CASE 431*/
+  {"{ResourceArn=arn:aws-iso:dynamodb:us-iso-east-1:222222222222:table/table_name, Region=us-iso-east-1, AccountIdEndpointMode=required, UseFIPS=true, UseDualStack=true, IsSearchOperation=true}", // documentation
+    {EpParam("ResourceArn", "arn:aws-iso:dynamodb:us-iso-east-1:222222222222:table/table_name"), EpParam("UseFIPS", true), EpParam("IsSearchOperation", true),
+     EpParam("Region", "us-iso-east-1"), EpParam("UseDualStack", true), EpParam("AccountIdEndpointMode", "required")}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"} // expect
+  },
+  /*TEST CASE 432*/
+  {"{Region=us-iso-new-1, AccountIdEndpointMode=preferred, AccountId=111111111111, UseFIPS=false, UseDualStack=false, IsSearchOperation=true}", // documentation
+    {EpParam("UseFIPS", false), EpParam("AccountId", "111111111111"), EpParam("IsSearchOperation", true), EpParam("Region", "us-iso-new-1"), EpParam("UseDualStack", false),
+     EpParam("AccountIdEndpointMode", "preferred")}, // params
+    {}, // tags
+    {{/*epUrl*/"https://search-dynamodb.us-iso-new-1.c2s.ic.gov",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
   }
   };
   return test_cases;

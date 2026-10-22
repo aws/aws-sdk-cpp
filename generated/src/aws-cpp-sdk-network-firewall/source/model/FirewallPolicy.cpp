@@ -83,6 +83,10 @@ FirewallPolicy& FirewallPolicy::operator=(JsonView jsonValue) {
     m_enableTLSSessionHolding = jsonValue.GetBool("EnableTLSSessionHolding");
     m_enableTLSSessionHoldingHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Route53ResolvedIPValidation")) {
+    m_route53ResolvedIPValidation = jsonValue.GetObject("Route53ResolvedIPValidation");
+    m_route53ResolvedIPValidationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -161,6 +165,10 @@ JsonValue FirewallPolicy::Jsonize() const {
 
   if (m_enableTLSSessionHoldingHasBeenSet) {
     payload.WithBool("EnableTLSSessionHolding", m_enableTLSSessionHolding);
+  }
+
+  if (m_route53ResolvedIPValidationHasBeenSet) {
+    payload.WithObject("Route53ResolvedIPValidation", m_route53ResolvedIPValidation.Jsonize());
   }
 
   return payload;

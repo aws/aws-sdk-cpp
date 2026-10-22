@@ -66,6 +66,10 @@ RuleDetail& RuleDetail::operator=(JsonView jsonValue) {
     m_schema = RuleSchemaMapper::GetRuleSchemaForName(jsonValue.GetString("schema"));
     m_schemaHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("runtimeMonitoringDetails")) {
+    m_runtimeMonitoringDetails = jsonValue.GetObject("runtimeMonitoringDetails");
+    m_runtimeMonitoringDetailsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetDouble("createdAt");
     m_createdAtHasBeenSet = true;
@@ -126,6 +130,10 @@ JsonValue RuleDetail::Jsonize() const {
 
   if (m_schemaHasBeenSet) {
     payload.WithString("schema", RuleSchemaMapper::GetNameForRuleSchema(m_schema));
+  }
+
+  if (m_runtimeMonitoringDetailsHasBeenSet) {
+    payload.WithObject("runtimeMonitoringDetails", m_runtimeMonitoringDetails.Jsonize());
   }
 
   if (m_createdAtHasBeenSet) {

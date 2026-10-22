@@ -99,6 +99,10 @@
 #include <aws/bedrock-agent/model/CreatePromptResult.h>
 #include <aws/bedrock-agent/model/CreatePromptVersionRequest.h>
 #include <aws/bedrock-agent/model/CreatePromptVersionResult.h>
+#include <aws/bedrock-agent/model/CreateRetrievalInstructionRequest.h>
+#include <aws/bedrock-agent/model/CreateRetrievalInstructionResult.h>
+#include <aws/bedrock-agent/model/CreateRetrievalInstructionVersionRequest.h>
+#include <aws/bedrock-agent/model/CreateRetrievalInstructionVersionResult.h>
 #include <aws/bedrock-agent/model/CreateVpcConfigurationRequest.h>
 #include <aws/bedrock-agent/model/CreateVpcConfigurationResult.h>
 #include <aws/bedrock-agent/model/CreationMode.h>
@@ -144,6 +148,8 @@
 #include <aws/bedrock-agent/model/DeletePromptResult.h>
 #include <aws/bedrock-agent/model/DeleteResourcePolicyRequest.h>
 #include <aws/bedrock-agent/model/DeleteResourcePolicyResult.h>
+#include <aws/bedrock-agent/model/DeleteRetrievalInstructionRequest.h>
+#include <aws/bedrock-agent/model/DeleteRetrievalInstructionResult.h>
 #include <aws/bedrock-agent/model/DeleteVpcConfigurationRequest.h>
 #include <aws/bedrock-agent/model/DeleteVpcConfigurationResult.h>
 #include <aws/bedrock-agent/model/DeletionProtectionConfiguration.h>
@@ -222,6 +228,8 @@
 #include <aws/bedrock-agent/model/GetPromptResult.h>
 #include <aws/bedrock-agent/model/GetResourcePolicyRequest.h>
 #include <aws/bedrock-agent/model/GetResourcePolicyResult.h>
+#include <aws/bedrock-agent/model/GetRetrievalInstructionRequest.h>
+#include <aws/bedrock-agent/model/GetRetrievalInstructionResult.h>
 #include <aws/bedrock-agent/model/GetVpcConfigurationRequest.h>
 #include <aws/bedrock-agent/model/GetVpcConfigurationResult.h>
 #include <aws/bedrock-agent/model/GuardrailConfiguration.h>
@@ -309,6 +317,12 @@
 #include <aws/bedrock-agent/model/ListPromptsPaginationTraits.h>
 #include <aws/bedrock-agent/model/ListPromptsRequest.h>
 #include <aws/bedrock-agent/model/ListPromptsResult.h>
+#include <aws/bedrock-agent/model/ListRetrievalInstructionVersionsPaginationTraits.h>
+#include <aws/bedrock-agent/model/ListRetrievalInstructionVersionsRequest.h>
+#include <aws/bedrock-agent/model/ListRetrievalInstructionVersionsResult.h>
+#include <aws/bedrock-agent/model/ListRetrievalInstructionsPaginationTraits.h>
+#include <aws/bedrock-agent/model/ListRetrievalInstructionsRequest.h>
+#include <aws/bedrock-agent/model/ListRetrievalInstructionsResult.h>
 #include <aws/bedrock-agent/model/ListTagsForResourceRequest.h>
 #include <aws/bedrock-agent/model/ListTagsForResourceResult.h>
 #include <aws/bedrock-agent/model/ListVpcConfigurationsPaginationTraits.h>
@@ -421,6 +435,14 @@
 #include <aws/bedrock-agent/model/RetrievalFlowNodeConfiguration.h>
 #include <aws/bedrock-agent/model/RetrievalFlowNodeS3Configuration.h>
 #include <aws/bedrock-agent/model/RetrievalFlowNodeServiceConfiguration.h>
+#include <aws/bedrock-agent/model/RetrievalInstructionContent.h>
+#include <aws/bedrock-agent/model/RetrievalInstructionFailureReason.h>
+#include <aws/bedrock-agent/model/RetrievalInstructionFailureReasonCode.h>
+#include <aws/bedrock-agent/model/RetrievalInstructionFieldName.h>
+#include <aws/bedrock-agent/model/RetrievalInstructionLastTransitionStatus.h>
+#include <aws/bedrock-agent/model/RetrievalInstructionStatus.h>
+#include <aws/bedrock-agent/model/RetrievalInstructionSummary.h>
+#include <aws/bedrock-agent/model/RetrievalInstructionVersionSummary.h>
 #include <aws/bedrock-agent/model/S3Content.h>
 #include <aws/bedrock-agent/model/S3DataSourceConfiguration.h>
 #include <aws/bedrock-agent/model/S3Identifier.h>
@@ -503,6 +525,8 @@
 #include <aws/bedrock-agent/model/UpdateKnowledgeBaseResult.h>
 #include <aws/bedrock-agent/model/UpdatePromptRequest.h>
 #include <aws/bedrock-agent/model/UpdatePromptResult.h>
+#include <aws/bedrock-agent/model/UpdateRetrievalInstructionRequest.h>
+#include <aws/bedrock-agent/model/UpdateRetrievalInstructionResult.h>
 #include <aws/bedrock-agent/model/UrlConfiguration.h>
 #include <aws/bedrock-agent/model/ValidateFlowDefinitionRequest.h>
 #include <aws/bedrock-agent/model/ValidateFlowDefinitionResult.h>

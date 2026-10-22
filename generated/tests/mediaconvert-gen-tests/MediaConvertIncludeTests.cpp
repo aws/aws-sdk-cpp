@@ -88,6 +88,7 @@
 #include <aws/mediaconvert/model/Av1FramerateConversionAlgorithm.h>
 #include <aws/mediaconvert/model/Av1QvbrSettings.h>
 #include <aws/mediaconvert/model/Av1RateControlMode.h>
+#include <aws/mediaconvert/model/Av1SceneChangeDetect.h>
 #include <aws/mediaconvert/model/Av1Settings.h>
 #include <aws/mediaconvert/model/Av1SpatialAdaptiveQuantization.h>
 #include <aws/mediaconvert/model/AvailBlanking.h>
@@ -193,6 +194,7 @@
 #include <aws/mediaconvert/model/CreateQueueResult.h>
 #include <aws/mediaconvert/model/CreateResourceShareRequest.h>
 #include <aws/mediaconvert/model/CreateResourceShareResult.h>
+#include <aws/mediaconvert/model/DashAdaptationSetGrouping.h>
 #include <aws/mediaconvert/model/DashAdditionalManifest.h>
 #include <aws/mediaconvert/model/DashIsoEncryptionSettings.h>
 #include <aws/mediaconvert/model/DashIsoGroupAudioChannelConfigSchemeIdUri.h>

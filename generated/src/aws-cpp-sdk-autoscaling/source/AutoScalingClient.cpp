@@ -26,6 +26,7 @@
 #include <aws/autoscaling/model/DeleteTagsRequest.h>
 #include <aws/autoscaling/model/DeleteWarmPoolRequest.h>
 #include <aws/autoscaling/model/DescribeAccountLimitsRequest.h>
+#include <aws/autoscaling/model/DescribeAccountSettingsRequest.h>
 #include <aws/autoscaling/model/DescribeAdjustmentTypesRequest.h>
 #include <aws/autoscaling/model/DescribeAutoScalingGroupsRequest.h>
 #include <aws/autoscaling/model/DescribeAutoScalingInstancesRequest.h>
@@ -57,6 +58,7 @@
 #include <aws/autoscaling/model/ExitStandbyRequest.h>
 #include <aws/autoscaling/model/GetPredictiveScalingForecastRequest.h>
 #include <aws/autoscaling/model/LaunchInstancesRequest.h>
+#include <aws/autoscaling/model/PutAccountSettingRequest.h>
 #include <aws/autoscaling/model/PutLifecycleHookRequest.h>
 #include <aws/autoscaling/model/PutNotificationConfigurationRequest.h>
 #include <aws/autoscaling/model/PutScalingPolicyRequest.h>
@@ -242,7 +244,8 @@ AutoScalingClient::InvokeOperationOutcome AutoScalingClient::InvokeServiceOperat
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
 
-  return TracingUtils::MakeCallWithTiming<InvokeOperationOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<InvokeOperationOutcome>(
+      request, std::move(span),
       [&]() -> InvokeOperationOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -254,7 +257,7 @@ AutoScalingClient::InvokeOperationOutcome AutoScalingClient::InvokeServiceOperat
 
         return InvokeOperationOutcome{MakeRequest(request, endpointResolutionOutcome.GetResult(), httpMethod, Aws::Auth::SIGV4_SIGNER)};
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
 }
 AttachInstancesOutcome AutoScalingClient::AttachInstances(const AttachInstancesRequest& request) const {
@@ -375,6 +378,12 @@ DescribeAccountLimitsOutcome AutoScalingClient::DescribeAccountLimits(const Desc
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeAccountLimitsOutcome(result.GetResultWithOwnership())
                             : DescribeAccountLimitsOutcome(std::move(result.GetError()));
+}
+
+DescribeAccountSettingsOutcome AutoScalingClient::DescribeAccountSettings(const DescribeAccountSettingsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeAccountSettingsOutcome(result.GetResultWithOwnership())
+                            : DescribeAccountSettingsOutcome(std::move(result.GetError()));
 }
 
 DescribeAdjustmentTypesOutcome AutoScalingClient::DescribeAdjustmentTypes(const DescribeAdjustmentTypesRequest& request) const {
@@ -566,6 +575,12 @@ LaunchInstancesOutcome AutoScalingClient::LaunchInstances(const LaunchInstancesR
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? LaunchInstancesOutcome(result.GetResultWithOwnership())
                             : LaunchInstancesOutcome(std::move(result.GetError()));
+}
+
+PutAccountSettingOutcome AutoScalingClient::PutAccountSetting(const PutAccountSettingRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? PutAccountSettingOutcome(result.GetResultWithOwnership())
+                            : PutAccountSettingOutcome(std::move(result.GetError()));
 }
 
 PutLifecycleHookOutcome AutoScalingClient::PutLifecycleHook(const PutLifecycleHookRequest& request) const {

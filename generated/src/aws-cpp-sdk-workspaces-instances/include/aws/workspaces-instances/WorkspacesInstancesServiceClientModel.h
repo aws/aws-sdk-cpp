@@ -33,6 +33,7 @@
 #include <aws/workspaces-instances/model/ListTagsForResourceResult.h>
 #include <aws/workspaces-instances/model/ListWorkspaceInstancesRequest.h>
 #include <aws/workspaces-instances/model/ListWorkspaceInstancesResult.h>
+#include <aws/workspaces-instances/model/ModifyVolumeResult.h>
 #include <aws/workspaces-instances/model/TagResourceResult.h>
 #include <aws/workspaces-instances/model/UntagResourceResult.h>
 /* End of service model headers required in WorkspacesInstancesClient header */
@@ -79,6 +80,7 @@ class ListInstanceTypesRequest;
 class ListRegionsRequest;
 class ListTagsForResourceRequest;
 class ListWorkspaceInstancesRequest;
+class ModifyVolumeRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
 /* End of service model forward declarations required in WorkspacesInstancesClient header */
@@ -95,6 +97,7 @@ typedef Aws::Utils::Outcome<ListInstanceTypesResult, WorkspacesInstancesError> L
 typedef Aws::Utils::Outcome<ListRegionsResult, WorkspacesInstancesError> ListRegionsOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, WorkspacesInstancesError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<ListWorkspaceInstancesResult, WorkspacesInstancesError> ListWorkspaceInstancesOutcome;
+typedef Aws::Utils::Outcome<ModifyVolumeResult, WorkspacesInstancesError> ModifyVolumeOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, WorkspacesInstancesError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, WorkspacesInstancesError> UntagResourceOutcome;
 /* End of service model Outcome class definitions */
@@ -111,6 +114,7 @@ typedef std::future<ListInstanceTypesOutcome> ListInstanceTypesOutcomeCallable;
 typedef std::future<ListRegionsOutcome> ListRegionsOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<ListWorkspaceInstancesOutcome> ListWorkspaceInstancesOutcomeCallable;
+typedef std::future<ModifyVolumeOutcome> ModifyVolumeOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 /* End of service model Outcome callable definitions */
@@ -152,6 +156,9 @@ typedef std::function<void(const WorkspacesInstancesClient*, const Model::ListTa
 typedef std::function<void(const WorkspacesInstancesClient*, const Model::ListWorkspaceInstancesRequest&,
                            const Model::ListWorkspaceInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListWorkspaceInstancesResponseReceivedHandler;
+typedef std::function<void(const WorkspacesInstancesClient*, const Model::ModifyVolumeRequest&, const Model::ModifyVolumeOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ModifyVolumeResponseReceivedHandler;
 typedef std::function<void(const WorkspacesInstancesClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     TagResourceResponseReceivedHandler;

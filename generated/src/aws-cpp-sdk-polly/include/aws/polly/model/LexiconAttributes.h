@@ -38,8 +38,10 @@ class LexiconAttributes {
 
   ///@{
   /**
-   * <p>Phonetic alphabet used in the lexicon. Valid values are <code>ipa</code> and
-   * <code>x-sampa</code>.</p>
+   * <p>Phonetic alphabet used in the lexicon. Valid values are <code>ipa</code>,
+   * <code>x-sampa</code>, <code>x-amazon-pinyin</code>,
+   * <code>x-amazon-jyutping</code>, <code>x-amazon-pron-kana</code>, and
+   * <code>x-amazon-yomigana</code>.</p>
    */
   inline const Aws::String& GetAlphabet() const { return m_alphabet; }
   inline bool AlphabetHasBeenSet() const { return m_alphabetHasBeenSet; }

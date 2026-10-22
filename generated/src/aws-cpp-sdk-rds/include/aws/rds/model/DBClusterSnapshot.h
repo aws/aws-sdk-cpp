@@ -336,7 +336,13 @@ class DBClusterSnapshot {
 
   ///@{
   /**
-   * <p>Indicates whether the DB cluster snapshot is encrypted.</p>
+   * <p>Specifies whether the DB cluster snapshot is encrypted with an Amazon Web
+   * Services managed key or a customer managed key.</p> <p>If the DB cluster
+   * snapshot is encrypted with an Amazon Web Services owned key, this value is
+   * <code>false</code> and <code>StorageEncryptionType</code> is
+   * <code>sse-rds</code>. In that case, the data at rest is still encrypted. To
+   * determine how the data at rest is protected, use
+   * <code>StorageEncryptionType</code>.</p>
    */
   inline bool GetStorageEncrypted() const { return m_storageEncrypted; }
   inline bool StorageEncryptedHasBeenSet() const { return m_storageEncryptedHasBeenSet; }

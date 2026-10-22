@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/logs/CloudWatchLogsRequest.h>
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
 
@@ -62,12 +63,40 @@ class DescribeDeliverySourcesRequest : public CloudWatchLogsRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>An array of Amazon Resource Names (ARNs) that filters the results to delivery
+   * sources associated with any specified ARN.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetResourceArns() const { return m_resourceArns; }
+  inline bool ResourceArnsHasBeenSet() const { return m_resourceArnsHasBeenSet; }
+  template <typename ResourceArnsT = Aws::Vector<Aws::String>>
+  void SetResourceArns(ResourceArnsT&& value) {
+    m_resourceArnsHasBeenSet = true;
+    m_resourceArns = std::forward<ResourceArnsT>(value);
+  }
+  template <typename ResourceArnsT = Aws::Vector<Aws::String>>
+  DescribeDeliverySourcesRequest& WithResourceArns(ResourceArnsT&& value) {
+    SetResourceArns(std::forward<ResourceArnsT>(value));
+    return *this;
+  }
+  template <typename ResourceArnsT = Aws::String>
+  DescribeDeliverySourcesRequest& AddResourceArns(ResourceArnsT&& value) {
+    m_resourceArnsHasBeenSet = true;
+    m_resourceArns.emplace_back(std::forward<ResourceArnsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_nextToken;
 
   int m_limit{0};
+
+  Aws::Vector<Aws::String> m_resourceArns;
   bool m_nextTokenHasBeenSet = false;
   bool m_limitHasBeenSet = false;
+  bool m_resourceArnsHasBeenSet = false;
 };
 
 }  // namespace Model

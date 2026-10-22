@@ -63,6 +63,10 @@ Aws::String CreateDeploymentRequest::SerializePayload() const {
     payload.WithObject("overrideAlarmConfiguration", m_overrideAlarmConfiguration.Jsonize());
   }
 
+  if (m_ec2DeploymentOptionsHasBeenSet) {
+    payload.WithObject("ec2DeploymentOptions", m_ec2DeploymentOptions.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

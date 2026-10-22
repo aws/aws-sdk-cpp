@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
+#include <aws/mediaconvert/model/DashAdaptationSetGrouping.h>
 #include <aws/mediaconvert/model/DashAdditionalManifest.h>
 #include <aws/mediaconvert/model/DashIsoEncryptionSettings.h>
 #include <aws/mediaconvert/model/DashIsoGroupAudioChannelConfigSchemeIdUri.h>
@@ -117,6 +118,31 @@ class DashIsoGroupSettings {
   template <typename BaseUrlT = Aws::String>
   DashIsoGroupSettings& WithBaseUrl(BaseUrlT&& value) {
     SetBaseUrl(std::forward<BaseUrlT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * Specify additional criteria for partitioning video outputs into separate
+   * AdaptationSets. These criteria are applied on top of the grouping produced by
+   * DashManifestStyle.
+   */
+  inline const Aws::Vector<DashAdaptationSetGrouping>& GetDashAdaptationSetGrouping() const { return m_dashAdaptationSetGrouping; }
+  inline bool DashAdaptationSetGroupingHasBeenSet() const { return m_dashAdaptationSetGroupingHasBeenSet; }
+  template <typename DashAdaptationSetGroupingT = Aws::Vector<DashAdaptationSetGrouping>>
+  void SetDashAdaptationSetGrouping(DashAdaptationSetGroupingT&& value) {
+    m_dashAdaptationSetGroupingHasBeenSet = true;
+    m_dashAdaptationSetGrouping = std::forward<DashAdaptationSetGroupingT>(value);
+  }
+  template <typename DashAdaptationSetGroupingT = Aws::Vector<DashAdaptationSetGrouping>>
+  DashIsoGroupSettings& WithDashAdaptationSetGrouping(DashAdaptationSetGroupingT&& value) {
+    SetDashAdaptationSetGrouping(std::forward<DashAdaptationSetGroupingT>(value));
+    return *this;
+  }
+  inline DashIsoGroupSettings& AddDashAdaptationSetGrouping(DashAdaptationSetGrouping value) {
+    m_dashAdaptationSetGroupingHasBeenSet = true;
+    m_dashAdaptationSetGrouping.push_back(value);
     return *this;
   }
   ///@}
@@ -568,6 +594,8 @@ class DashIsoGroupSettings {
 
   Aws::String m_baseUrl;
 
+  Aws::Vector<DashAdaptationSetGrouping> m_dashAdaptationSetGrouping;
+
   Aws::String m_dashIFrameTrickPlayNameModifier;
 
   DashManifestStyle m_dashManifestStyle{DashManifestStyle::NOT_SET};
@@ -610,6 +638,7 @@ class DashIsoGroupSettings {
   bool m_additionalManifestsHasBeenSet = false;
   bool m_audioChannelConfigSchemeIdUriHasBeenSet = false;
   bool m_baseUrlHasBeenSet = false;
+  bool m_dashAdaptationSetGroupingHasBeenSet = false;
   bool m_dashIFrameTrickPlayNameModifierHasBeenSet = false;
   bool m_dashManifestStyleHasBeenSet = false;
   bool m_destinationHasBeenSet = false;

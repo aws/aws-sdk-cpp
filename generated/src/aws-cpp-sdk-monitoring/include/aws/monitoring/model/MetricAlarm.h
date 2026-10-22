@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/crt/cbor/Cbor.h>
 #include <aws/monitoring/CloudWatch_EXPORTS.h>
+#include <aws/monitoring/model/ActionConfiguration.h>
 #include <aws/monitoring/model/ComparisonOperator.h>
 #include <aws/monitoring/model/Dimension.h>
 #include <aws/monitoring/model/EvaluationCriteria.h>
@@ -692,6 +693,26 @@ class MetricAlarm {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Settings that change the content of the notifications and events that the
+   * alarm sends when its state changes. These settings apply to the alarm's actions,
+   * whichever state triggers them.</p>
+   */
+  inline const ActionConfiguration& GetActionConfiguration() const { return m_actionConfiguration; }
+  inline bool ActionConfigurationHasBeenSet() const { return m_actionConfigurationHasBeenSet; }
+  template <typename ActionConfigurationT = ActionConfiguration>
+  void SetActionConfiguration(ActionConfigurationT&& value) {
+    m_actionConfigurationHasBeenSet = true;
+    m_actionConfiguration = std::forward<ActionConfigurationT>(value);
+  }
+  template <typename ActionConfigurationT = ActionConfiguration>
+  MetricAlarm& WithActionConfiguration(ActionConfigurationT&& value) {
+    SetActionConfiguration(std::forward<ActionConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_alarmName;
 
@@ -758,6 +779,8 @@ class MetricAlarm {
   EvaluationCriteria m_evaluationCriteria;
 
   int64_t m_evaluationInterval{0};
+
+  ActionConfiguration m_actionConfiguration;
   bool m_alarmNameHasBeenSet = false;
   bool m_alarmArnHasBeenSet = false;
   bool m_alarmDescriptionHasBeenSet = false;
@@ -791,6 +814,7 @@ class MetricAlarm {
   bool m_warmUpConfigurationHasBeenSet = false;
   bool m_evaluationCriteriaHasBeenSet = false;
   bool m_evaluationIntervalHasBeenSet = false;
+  bool m_actionConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

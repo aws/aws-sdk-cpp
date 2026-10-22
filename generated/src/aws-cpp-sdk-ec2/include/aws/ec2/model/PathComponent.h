@@ -14,6 +14,7 @@
 #include <aws/ec2/model/AnalysisPacketHeader.h>
 #include <aws/ec2/model/AnalysisRouteTableRoute.h>
 #include <aws/ec2/model/AnalysisSecurityGroupRule.h>
+#include <aws/ec2/model/AnalysisTransitGatewayPolicyTableEntry.h>
 #include <aws/ec2/model/Explanation.h>
 #include <aws/ec2/model/FirewallStatefulRule.h>
 #include <aws/ec2/model/FirewallStatelessRule.h>
@@ -320,6 +321,26 @@ class PathComponent {
 
   ///@{
   /**
+   * <p>The entry in a transit gateway policy table.</p>
+   */
+  inline const AnalysisTransitGatewayPolicyTableEntry& GetTransitGatewayPolicyTableEntry() const {
+    return m_transitGatewayPolicyTableEntry;
+  }
+  inline bool TransitGatewayPolicyTableEntryHasBeenSet() const { return m_transitGatewayPolicyTableEntryHasBeenSet; }
+  template <typename TransitGatewayPolicyTableEntryT = AnalysisTransitGatewayPolicyTableEntry>
+  void SetTransitGatewayPolicyTableEntry(TransitGatewayPolicyTableEntryT&& value) {
+    m_transitGatewayPolicyTableEntryHasBeenSet = true;
+    m_transitGatewayPolicyTableEntry = std::forward<TransitGatewayPolicyTableEntryT>(value);
+  }
+  template <typename TransitGatewayPolicyTableEntryT = AnalysisTransitGatewayPolicyTableEntry>
+  PathComponent& WithTransitGatewayPolicyTableEntry(TransitGatewayPolicyTableEntryT&& value) {
+    SetTransitGatewayPolicyTableEntry(std::forward<TransitGatewayPolicyTableEntryT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The explanation codes.</p>
    */
   inline const Aws::Vector<Explanation>& GetExplanations() const { return m_explanations; }
@@ -444,6 +465,8 @@ class PathComponent {
 
   TransitGatewayRouteTableRoute m_transitGatewayRouteTableRoute;
 
+  AnalysisTransitGatewayPolicyTableEntry m_transitGatewayPolicyTableEntry;
+
   Aws::Vector<Explanation> m_explanations;
 
   AnalysisComponent m_elasticLoadBalancerListener;
@@ -468,6 +491,7 @@ class PathComponent {
   bool m_additionalDetailsHasBeenSet = false;
   bool m_transitGatewayHasBeenSet = false;
   bool m_transitGatewayRouteTableRouteHasBeenSet = false;
+  bool m_transitGatewayPolicyTableEntryHasBeenSet = false;
   bool m_explanationsHasBeenSet = false;
   bool m_elasticLoadBalancerListenerHasBeenSet = false;
   bool m_firewallStatelessRuleHasBeenSet = false;

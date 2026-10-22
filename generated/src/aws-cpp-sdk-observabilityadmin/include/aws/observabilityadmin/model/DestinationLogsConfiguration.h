@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/observabilityadmin/ObservabilityAdmin_EXPORTS.h>
+#include <aws/observabilityadmin/model/DeletionProtection.h>
 #include <aws/observabilityadmin/model/LogGroupNameConfiguration.h>
 #include <aws/observabilityadmin/model/LogsBackupConfiguration.h>
 #include <aws/observabilityadmin/model/LogsEncryptionConfiguration.h>
@@ -113,6 +114,33 @@ class DestinationLogsConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether this centralization rule enables deletion protection on the
+   * destination log groups that it creates. If you don't specify this setting, the
+   * rule doesn't enable deletion protection on the log groups that it creates. If
+   * you specify a backup Region in <code>BackupConfiguration</code>, the setting
+   * also applies to the log groups that the rule creates in the backup Region.</p>
+   * <p>When you set this to <code>ENABLED</code>, the rule enables deletion
+   * protection only on log groups that it creates after you enable the setting. It
+   * does not add deletion protection to log groups the rule created before you
+   * enabled the setting.</p> <p>If you remove this setting from the rule or delete
+   * the rule, deletion protection stays enabled on log groups that already have it.
+   * To delete one of these log groups, first disable deletion protection on the log
+   * group in the destination account.</p>
+   */
+  inline DeletionProtection GetLogGroupDeletionProtection() const { return m_logGroupDeletionProtection; }
+  inline bool LogGroupDeletionProtectionHasBeenSet() const { return m_logGroupDeletionProtectionHasBeenSet; }
+  inline void SetLogGroupDeletionProtection(DeletionProtection value) {
+    m_logGroupDeletionProtectionHasBeenSet = true;
+    m_logGroupDeletionProtection = value;
+  }
+  inline DestinationLogsConfiguration& WithLogGroupDeletionProtection(DeletionProtection value) {
+    SetLogGroupDeletionProtection(value);
+    return *this;
+  }
+  ///@}
  private:
   LogsEncryptionConfiguration m_logsEncryptionConfiguration;
 
@@ -121,10 +149,13 @@ class DestinationLogsConfiguration {
   LogGroupNameConfiguration m_logGroupNameConfiguration;
 
   TagPropagationConfiguration m_tagPropagationConfiguration;
+
+  DeletionProtection m_logGroupDeletionProtection{DeletionProtection::NOT_SET};
   bool m_logsEncryptionConfigurationHasBeenSet = false;
   bool m_backupConfigurationHasBeenSet = false;
   bool m_logGroupNameConfigurationHasBeenSet = false;
   bool m_tagPropagationConfigurationHasBeenSet = false;
+  bool m_logGroupDeletionProtectionHasBeenSet = false;
 };
 
 }  // namespace Model

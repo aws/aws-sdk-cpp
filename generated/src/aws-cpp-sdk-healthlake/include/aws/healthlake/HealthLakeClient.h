@@ -802,14 +802,14 @@ class AWS_HEALTHLAKE_API HealthLakeClient : public Aws::Client::AWSJsonClient,
    * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/UpdateProfileWithAgent">AWS
    * API Reference</a></p>
    */
-  virtual Model::UpdateProfileWithAgentOutcome UpdateProfileWithAgent(const Model::UpdateProfileWithAgentRequest& request) const;
+  virtual Model::UpdateProfileWithAgentOutcome UpdateProfileWithAgent(Model::UpdateProfileWithAgentRequest& request) const;
 
   /**
    * A Callable wrapper for UpdateProfileWithAgent that returns a future to the operation so that it can be executed in parallel to other
    * requests.
    */
   template <typename UpdateProfileWithAgentRequestT = Model::UpdateProfileWithAgentRequest>
-  Model::UpdateProfileWithAgentOutcomeCallable UpdateProfileWithAgentCallable(const UpdateProfileWithAgentRequestT& request) const {
+  Model::UpdateProfileWithAgentOutcomeCallable UpdateProfileWithAgentCallable(UpdateProfileWithAgentRequestT& request) const {
     return SubmitCallable(&HealthLakeClient::UpdateProfileWithAgent, request);
   }
 
@@ -818,8 +818,7 @@ class AWS_HEALTHLAKE_API HealthLakeClient : public Aws::Client::AWSJsonClient,
    * operation has finished.
    */
   template <typename UpdateProfileWithAgentRequestT = Model::UpdateProfileWithAgentRequest>
-  void UpdateProfileWithAgentAsync(const UpdateProfileWithAgentRequestT& request,
-                                   const UpdateProfileWithAgentResponseReceivedHandler& handler,
+  void UpdateProfileWithAgentAsync(UpdateProfileWithAgentRequestT& request, const UpdateProfileWithAgentResponseReceivedHandler& handler,
                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&HealthLakeClient::UpdateProfileWithAgent, request, handler, context);
   }

@@ -48,7 +48,7 @@ public class ShapeUtil {
      *
      */
     private static final Map<String, Set<String>> LEGACY_SDK_RESULT_OPERATIONS = Map.of(
-        "medialive", Set.of("ListChannelPlacementGroups", "ListClusters", "ListNetworks", "ListNodes", "DescribeChannelPlacementGroup", "DescribeCluster", "DescribeNode")
+        "medialive", Set.of("ListChannelPlacementGroups", "ListClusters", "ListNetworks", "ListNodes", "DescribeChannelPlacementGroup", "DescribeCluster", "DescribeNode", "ListSharedChannelGroups")
     );
     
     /**

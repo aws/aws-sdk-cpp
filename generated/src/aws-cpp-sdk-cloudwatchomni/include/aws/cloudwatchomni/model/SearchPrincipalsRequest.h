@@ -69,9 +69,7 @@ class SearchPrincipalsRequest : public CloudWatchOmniRequest {
 
   ///@{
   /**
-   * <p>The maximum number of results to return. Defaults to 10. Valid only when
-   * searchQuery is *; other searches reject this parameter and return at most 10
-   * results.</p>
+   * <p>The maximum number of results to return. Defaults to 100.</p>
    */
   inline int GetMaxResults() const { return m_maxResults; }
   inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
@@ -87,9 +85,8 @@ class SearchPrincipalsRequest : public CloudWatchOmniRequest {
 
   ///@{
   /**
-   * <p>A token to retrieve the next page of results. Valid only when searchQuery is
-   * *; other searches do not paginate and reject this parameter. Tokens expire after
-   * 24 hours.</p>
+   * <p>A token to retrieve the next page of results. Supply the same searchQuery
+   * used on the request that returned it. Tokens expire after 24 hours.</p>
    */
   inline const Aws::String& GetNextToken() const { return m_nextToken; }
   inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }

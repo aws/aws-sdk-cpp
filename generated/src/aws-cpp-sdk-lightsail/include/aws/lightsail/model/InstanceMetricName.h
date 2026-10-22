@@ -20,7 +20,14 @@ enum class InstanceMetricName {
   StatusCheckFailed_System,
   BurstCapacityTime,
   BurstCapacityPercentage,
-  MetadataNoToken
+  MetadataNoToken,
+  DiskReadOps,
+  DiskWriteOps,
+  DiskReadBytes,
+  DiskWriteBytes,
+  DiskTotalReadTime,
+  DiskTotalWriteTime,
+  DiskQueueLength
 };
 
 namespace InstanceMetricNameMapper {

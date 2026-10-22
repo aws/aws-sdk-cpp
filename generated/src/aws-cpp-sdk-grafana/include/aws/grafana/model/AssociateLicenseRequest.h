@@ -51,7 +51,7 @@ class AssociateLicenseRequest : public ManagedGrafanaRequest {
 
   ///@{
   /**
-   * <p>The type of license to associate with the workspace.</p>  <p>Amazon
+   * <p>The type of license to associate with the workspace.</p>  <p> Amazon
    * Managed Grafana workspaces no longer support Grafana Enterprise free trials.</p>
    *
    */

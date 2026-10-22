@@ -378,6 +378,49 @@ class AWS_WORKSPACESINSTANCES_API WorkspacesInstancesClient : public Aws::Client
   }
 
   /**
+   * <p>Modifies the size, volume type, IOPS (input/output operations per second), or
+   * throughput of a volume. When you modify a volume, you must specify at least one
+   * of these parameters. You can modify a volume only after any previous
+   * modification for that volume has finished.</p> <p>To track the progress of a
+   * modification, use the Amazon EC2 <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVolumesModifications.html">DescribeVolumesModifications</a>
+   * operation. For more information, see <a
+   * href="https://docs.aws.amazon.com/ebs/latest/userguide/monitoring-volume-modifications.html">Monitor
+   * the progress of Amazon EBS volume modifications</a> in the <i>Amazon EBS User
+   * Guide</i>.</p> <p>After you increase the size of a volume, you must extend the
+   * partition and file system to use the new storage capacity. For more information,
+   * see <a
+   * href="https://docs.aws.amazon.com/ebs/latest/userguide/recognize-expanded-volume-linux.html">Extend
+   * the file system after resizing an Amazon EBS volume</a> in the <i>Amazon EBS
+   * User Guide</i>, which covers both <a
+   * href="https://docs.aws.amazon.com/ebs/latest/userguide/recognize-expanded-volume-linux.html#extend-linux">Linux</a>
+   * and <a
+   * href="https://docs.aws.amazon.com/ebs/latest/userguide/recognize-expanded-volume-linux.html#extend-windows">Windows</a>
+   * instances.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-instances-2022-07-26/ModifyVolume">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ModifyVolumeOutcome ModifyVolume(const Model::ModifyVolumeRequest& request) const;
+
+  /**
+   * A Callable wrapper for ModifyVolume that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ModifyVolumeRequestT = Model::ModifyVolumeRequest>
+  Model::ModifyVolumeOutcomeCallable ModifyVolumeCallable(const ModifyVolumeRequestT& request) const {
+    return SubmitCallable(&WorkspacesInstancesClient::ModifyVolume, request);
+  }
+
+  /**
+   * An Async wrapper for ModifyVolume that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ModifyVolumeRequestT = Model::ModifyVolumeRequest>
+  void ModifyVolumeAsync(const ModifyVolumeRequestT& request, const ModifyVolumeResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&WorkspacesInstancesClient::ModifyVolume, request, handler, context);
+  }
+
+  /**
    * <p>Adds tags to a WorkSpace Instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-instances-2022-07-26/TagResource">AWS
    * API Reference</a></p>

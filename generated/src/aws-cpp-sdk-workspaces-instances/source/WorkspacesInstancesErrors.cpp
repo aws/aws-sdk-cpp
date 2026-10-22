@@ -17,6 +17,7 @@ namespace WorkspacesInstancesErrorMapper {
 
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
+static const int VOLUME_MODIFICATION_RATE_EXCEEDED_HASH = HashingUtils::HashString("VolumeModificationRateExceededException");
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName) {
@@ -26,6 +27,9 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkspacesInstancesErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkspacesInstancesErrors::SERVICE_QUOTA_EXCEEDED), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == VOLUME_MODIFICATION_RATE_EXCEEDED_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkspacesInstancesErrors::VOLUME_MODIFICATION_RATE_EXCEEDED),
+                                RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INTERNAL_SERVER_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkspacesInstancesErrors::INTERNAL_SERVER), RetryableType::RETRYABLE);
   }

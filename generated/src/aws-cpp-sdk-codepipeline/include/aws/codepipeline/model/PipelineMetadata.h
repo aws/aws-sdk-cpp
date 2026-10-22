@@ -102,8 +102,8 @@ class PipelineMetadata {
    * you migrate (update) your pipeline to use CloudWatch Events. To learn more, see
    * <a
    * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/update-change-detection.html">Migrate
-   * polling pipelines to use event-based change detection</a> in the <i>CodePipeline
-   * User Guide</i>.</p>
+   * polling pipelines to use event-based change detection</a> in the <i>
+   * CodePipeline User Guide</i>.</p>
    */
   inline const Aws::Utils::DateTime& GetPollingDisabledAt() const { return m_pollingDisabledAt; }
   inline bool PollingDisabledAtHasBeenSet() const { return m_pollingDisabledAtHasBeenSet; }

@@ -343,6 +343,10 @@ Aws::String CreateDBInstanceRequest::SerializePayload() const {
     }
   }
 
+  if (m_dBCapacityReservationIdentifierHasBeenSet) {
+    ss << "DBCapacityReservationIdentifier=" << StringUtils::URLEncode(m_dBCapacityReservationIdentifier.c_str()) << "&";
+  }
+
   if (m_masterUserAuthenticationTypeHasBeenSet) {
     ss << "MasterUserAuthenticationType="
        << StringUtils::URLEncode(MasterUserAuthenticationTypeMapper::GetNameForMasterUserAuthenticationType(m_masterUserAuthenticationType))

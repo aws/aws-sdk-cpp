@@ -2041,9 +2041,15 @@ class AWS_TRANSFER_API TransferClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Updates the description for the host key that's specified by the
-   * <code>ServerId</code> and <code>HostKeyId</code> parameters.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Updates the host key that's specified by the <code>ServerId</code> and
+   * <code>HostKeyId</code> parameters. You can update the description of the host
+   * key, change where the host key is stored by specifying the
+   * <code>StorageType</code>, and specify the KMS key used to encrypt the host key
+   * when it's stored in Secrets Manager.</p> <p>To change a host key's storage type
+   * from <code>SERVICE_MANAGED</code> to <code>SECRETS_MANAGER</code>, you must have
+   * the <code>transfer:ExportHostKey</code> permission.
+   * <code>transfer:ExportHostKey</code> is a permission-only action that has no
+   * corresponding API operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateHostKey">AWS
    * API Reference</a></p>
    */

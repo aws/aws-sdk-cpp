@@ -98,6 +98,14 @@ InfrastructureConfiguration& InfrastructureConfiguration::operator=(JsonView jso
     m_placement = jsonValue.GetObject("placement");
     m_placementHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("terminateInstanceOnCompletion")) {
+    m_terminateInstanceOnCompletion = jsonValue.GetBool("terminateInstanceOnCompletion");
+    m_terminateInstanceOnCompletionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("parentInstance")) {
+    m_parentInstance = jsonValue.GetObject("parentInstance");
+    m_parentInstanceHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -186,6 +194,14 @@ JsonValue InfrastructureConfiguration::Jsonize() const {
 
   if (m_placementHasBeenSet) {
     payload.WithObject("placement", m_placement.Jsonize());
+  }
+
+  if (m_terminateInstanceOnCompletionHasBeenSet) {
+    payload.WithBool("terminateInstanceOnCompletion", m_terminateInstanceOnCompletion);
+  }
+
+  if (m_parentInstanceHasBeenSet) {
+    payload.WithObject("parentInstance", m_parentInstance.Jsonize());
   }
 
   return payload;

@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
+#include <aws/connect/model/SecurityProfileType.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -147,6 +148,23 @@ class SecurityProfileSearchSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The type of the security profile: <code>AWS_MANAGED</code> or
+   * <code>CUSTOMER_MANAGED</code>.</p>
+   */
+  inline SecurityProfileType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(SecurityProfileType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline SecurityProfileSearchSummary& WithType(SecurityProfileType value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -159,12 +177,15 @@ class SecurityProfileSearchSummary {
   Aws::String m_description;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+
+  SecurityProfileType m_type{SecurityProfileType::NOT_SET};
   bool m_idHasBeenSet = false;
   bool m_organizationResourceIdHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_securityProfileNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
 };
 
 }  // namespace Model

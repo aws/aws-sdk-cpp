@@ -54,10 +54,12 @@ class TargetSummary {
 
   ///@{
   /**
-   * <p>The type of the target (for example, <code>SNS</code>).</p> <ul> <li>
-   * <p>Amazon Q Developer in chat applications topics are specified as
-   * <code>SNS</code>.</p> </li> <li> <p>Amazon Q Developer in chat applications
-   * clients are specified as <code>AWSChatbotSlack</code>.</p> </li> </ul>
+   * <p>The type of the target (for example, <code>SNS</code>).</p> <ul> <li> <p>
+   * Amazon Q Developer in chat applications topics are specified as
+   * <code>SNS</code>.</p> </li> <li> <p> Amazon Q Developer in chat applications
+   * clients for Slack are specified as <code>AWSChatbotSlack</code>.</p> </li> <li>
+   * <p> Amazon Q Developer in chat applications clients for Microsoft Teams are
+   * specified as <code>AWSChatbotMicrosoftTeams</code>.</p> </li> </ul>
    */
   inline const Aws::String& GetTargetType() const { return m_targetType; }
   inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }

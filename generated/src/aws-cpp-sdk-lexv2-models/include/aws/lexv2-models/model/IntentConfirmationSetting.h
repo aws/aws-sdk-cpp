@@ -45,7 +45,9 @@ class IntentConfirmationSetting {
    * <code>OrderPizza</code> intent, you might want to confirm that the order is
    * correct before placing it. For other intents, such as intents that simply
    * respond to user questions, you might not need to ask the user for confirmation
-   * before providing the information. </p>
+   * before providing the information. </p> <p>Required unless the bot locale's
+   * <code>assistedNluMode</code> is <code>DialogManager</code>, in which case Amazon
+   * Lex generates the confirmation prompt.</p>
    */
   inline const PromptSpecification& GetPromptSpecification() const { return m_promptSpecification; }
   inline bool PromptSpecificationHasBeenSet() const { return m_promptSpecificationHasBeenSet; }

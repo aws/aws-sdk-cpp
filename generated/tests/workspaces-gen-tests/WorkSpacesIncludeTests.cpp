@@ -206,6 +206,7 @@
 #include <aws/workspaces/model/ImageResourceAssociation.h>
 #include <aws/workspaces/model/ImageSourceIdentifier.h>
 #include <aws/workspaces/model/ImageType.h>
+#include <aws/workspaces/model/ImageValidationMode.h>
 #include <aws/workspaces/model/ImportClientBrandingRequest.h>
 #include <aws/workspaces/model/ImportClientBrandingResult.h>
 #include <aws/workspaces/model/ImportCustomWorkspaceImageRequest.h>

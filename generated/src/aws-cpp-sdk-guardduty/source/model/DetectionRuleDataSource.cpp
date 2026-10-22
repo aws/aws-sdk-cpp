@@ -16,11 +16,14 @@ namespace Model {
 namespace DetectionRuleDataSourceMapper {
 
 static const int CloudTrailManagementEvent_HASH = HashingUtils::HashString("CloudTrailManagementEvent");
+static const int RuntimeMonitoring_HASH = HashingUtils::HashString("RuntimeMonitoring");
 
 DetectionRuleDataSource GetDetectionRuleDataSourceForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == CloudTrailManagementEvent_HASH) {
     return DetectionRuleDataSource::CloudTrailManagementEvent;
+  } else if (hashCode == RuntimeMonitoring_HASH) {
+    return DetectionRuleDataSource::RuntimeMonitoring;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +40,8 @@ Aws::String GetNameForDetectionRuleDataSource(DetectionRuleDataSource enumValue)
       return {};
     case DetectionRuleDataSource::CloudTrailManagementEvent:
       return "CloudTrailManagementEvent";
+    case DetectionRuleDataSource::RuntimeMonitoring:
+      return "RuntimeMonitoring";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

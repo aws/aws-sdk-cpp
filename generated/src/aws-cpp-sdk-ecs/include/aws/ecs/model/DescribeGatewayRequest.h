@@ -1,0 +1,57 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ecs/ECSRequest.h>
+#include <aws/ecs/ECS_EXPORTS.h>
+
+#include <utility>
+
+namespace Aws {
+namespace ECS {
+namespace Model {
+
+/**
+ */
+class DescribeGatewayRequest : public ECSRequest {
+ public:
+  AWS_ECS_API DescribeGatewayRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DescribeGateway"; }
+
+  AWS_ECS_API Aws::String SerializePayload() const override;
+
+  AWS_ECS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
+  /**
+   * <p>The name or Amazon Resource Name (ARN) of the gateway to describe.</p>
+   */
+  inline const Aws::String& GetGateway() const { return m_gateway; }
+  inline bool GatewayHasBeenSet() const { return m_gatewayHasBeenSet; }
+  template <typename GatewayT = Aws::String>
+  void SetGateway(GatewayT&& value) {
+    m_gatewayHasBeenSet = true;
+    m_gateway = std::forward<GatewayT>(value);
+  }
+  template <typename GatewayT = Aws::String>
+  DescribeGatewayRequest& WithGateway(GatewayT&& value) {
+    SetGateway(std::forward<GatewayT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_gateway;
+  bool m_gatewayHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace ECS
+}  // namespace Aws

@@ -23,7 +23,7 @@ namespace Model {
  * <p>The types of drift that can be detected for an enabled baseline.</p> <ul>
  * <li> <p> Amazon Web Services Control Tower detects inheritance drift on the
  * enabled baselines that target OUs: <code>AWSControlTowerBaseline</code> and
- * <code>BackupBaseline</code>. </p> </li> <li> <p>Amazon Web Services Control
+ * <code>BackupBaseline</code>. </p> </li> <li> <p> Amazon Web Services Control
  * Tower does not detect drift on the baselines that apply to your landing zone:
  * <code>IdentityCenterBaseline</code>, <code>AuditBaseline</code>,
  * <code>LogArchiveBaseline</code>, <code>BackupCentralVaultBaseline</code>, or

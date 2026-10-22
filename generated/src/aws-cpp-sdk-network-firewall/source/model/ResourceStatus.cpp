@@ -18,6 +18,7 @@ namespace ResourceStatusMapper {
 static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
 static const int DELETING_HASH = HashingUtils::HashString("DELETING");
 static const int ERROR__HASH = HashingUtils::HashString("ERROR");
+static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
 
 ResourceStatus GetResourceStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ ResourceStatus GetResourceStatusForName(const Aws::String& name) {
     return ResourceStatus::DELETING;
   } else if (hashCode == ERROR__HASH) {
     return ResourceStatus::ERROR_;
+  } else if (hashCode == UPDATING_HASH) {
+    return ResourceStatus::UPDATING;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForResourceStatus(ResourceStatus enumValue) {
       return "DELETING";
     case ResourceStatus::ERROR_:
       return "ERROR";
+    case ResourceStatus::UPDATING:
+      return "UPDATING";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

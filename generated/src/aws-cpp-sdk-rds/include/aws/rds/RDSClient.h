@@ -349,6 +349,49 @@ class AWS_RDS_API RDSClient : public Aws::Client::AWSXMLClient, public Aws::Clie
   }
 
   /**
+   * <p>Cancels a DB capacity reservation. Amazon RDS changes the state of the
+   * reservation to <code>cancelled</code> and stops reporting available capacity for
+   * it. Amazon RDS then releases the reserved capacity.</p> <p>A DB instance that
+   * uses the reservation keeps running. It continues on unreserved capacity, and
+   * Amazon RDS doesn't stop it or modify it. However, Amazon RDS no longer reserves
+   * capacity for the DB instance. If Amazon RDS later moves the DB instance to
+   * different hardware, for example during hardware maintenance, that move can fail
+   * when the Amazon Web Services Region has insufficient capacity for the DB
+   * instance class.</p> <p>You can't cancel a reservation in the <code>active</code>
+   * state during a capacity commitment. The response of
+   * <code>DescribeDBCapacityReservations</code> reports the end of the commitment in
+   * <code>CommitmentInfo</code>.</p> <p>Constraints:</p> <ul> <li> <p>The
+   * reservation must be in the <code>active</code>, <code>assessing</code>, or
+   * <code>delayed</code> state.</p> </li> <li> <p>The reservation must not be past
+   * its end date.</p> </li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CancelDBCapacityReservation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CancelDBCapacityReservationOutcome CancelDBCapacityReservation(
+      const Model::CancelDBCapacityReservationRequest& request) const;
+
+  /**
+   * A Callable wrapper for CancelDBCapacityReservation that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename CancelDBCapacityReservationRequestT = Model::CancelDBCapacityReservationRequest>
+  Model::CancelDBCapacityReservationOutcomeCallable CancelDBCapacityReservationCallable(
+      const CancelDBCapacityReservationRequestT& request) const {
+    return SubmitCallable(&RDSClient::CancelDBCapacityReservation, request);
+  }
+
+  /**
+   * An Async wrapper for CancelDBCapacityReservation that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CancelDBCapacityReservationRequestT = Model::CancelDBCapacityReservationRequest>
+  void CancelDBCapacityReservationAsync(const CancelDBCapacityReservationRequestT& request,
+                                        const CancelDBCapacityReservationResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&RDSClient::CancelDBCapacityReservation, request, handler, context);
+  }
+
+  /**
    * <p>Cancels an export task in progress that is exporting a snapshot or cluster to
    * Amazon S3. Any data that has already been written to the S3 bucket isn't
    * removed.</p><p><h3>See Also:</h3>   <a
@@ -626,6 +669,75 @@ class AWS_RDS_API RDSClient : public Aws::Client::AWSXMLClient, public Aws::Clie
                                         const CreateCustomDBEngineVersionResponseReceivedHandler& handler,
                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&RDSClient::CreateCustomDBEngineVersion, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a DB capacity reservation. A DB capacity reservation reserves compute
+   * and memory capacity for DB instances of one DB instance class and one database
+   * engine. Amazon RDS reserves that capacity in each Availability Zone that you
+   * specify.</p> <p>Amazon RDS reserves the same amount of capacity in every
+   * Availability Zone in the request. You set that amount with
+   * <code>CapacityPerAvailabilityZone</code>, and you set the Availability Zones
+   * with <code>AvailabilityZones</code>. The total reserved capacity is
+   * <code>CapacityPerAvailabilityZone</code> multiplied by the number of
+   * Availability Zones.</p> <p>Specify <code>StartDate</code> and
+   * <code>CommitmentDuration</code> together to create a future-dated reservation. A
+   * future-dated reservation reserves capacity for a period that starts later.
+   * Amazon RDS holds that capacity for the length of the commitment.</p> <p>A
+   * future-dated reservation has the following additional constraints:</p> <ul> <li>
+   * <p> <code>DBInstanceClass</code> must be a <code>db.c</code>, <code>db.m</code>,
+   * <code>db.r</code>, <code>db.t</code>, or <code>db.x</code> DB instance class.
+   * The letter after <code>db.</code> gives the DB instance class family. For
+   * example, <code>db.x2g.xlarge</code> qualifies, and <code>db.z1d.xlarge</code>
+   * doesn't.</p> </li> <li> <p>If <code>DBInstanceClass</code> is a
+   * <code>db.m</code> or <code>db.r</code> DB instance class, it must be from
+   * generation 7 or later. The digit after the family letter gives the generation.
+   * For example, <code>db.m7g.xlarge</code> qualifies, and <code>db.m5.xlarge</code>
+   * doesn't. A <code>db.c</code>, <code>db.t</code>, or <code>db.x</code> DB
+   * instance class has no generation requirement.</p> </li> <li> <p>The reserved
+   * capacity must total at least 32 vCPUs in each Availability Zone. Multiply
+   * <code>CapacityPerAvailabilityZone</code> by the number of vCPUs of the DB
+   * instance class. The product must be 32 or more.</p> </li> <li> <p>
+   * <code>CommitmentDuration</code> must be at least 14 days. For a
+   * <code>db.x</code> DB instance class, it must be at least 84 days.</p> </li> <li>
+   * <p> <code>StartDate</code> must be from 5 to 120 days in the future.</p> </li>
+   * </ul> <p>Therefore, a DB instance class with 2 vCPUs needs a
+   * <code>CapacityPerAvailabilityZone</code> of 16 or more, a class with 4 vCPUs
+   * needs 8 or more, a class with 8 vCPUs needs 4 or more, and a class with 16 vCPUs
+   * needs 2 or more. For the number of vCPUs of each DB instance class, see <a
+   * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+   * instance classes</a> in the <i>Amazon RDS User Guide</i>.</p>  <p>You
+   * can't modify a future-dated reservation before it starts. You can't cancel a
+   * future-dated reservation in the <code>scheduled</code> state. You can't cancel a
+   * reservation in the <code>active</code> state during its capacity commitment.
+   * Therefore, you can't cancel a future-dated reservation from the time that Amazon
+   * RDS schedules it until the commitment ends.</p> <p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBCapacityReservation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateDBCapacityReservationOutcome CreateDBCapacityReservation(
+      const Model::CreateDBCapacityReservationRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateDBCapacityReservation that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename CreateDBCapacityReservationRequestT = Model::CreateDBCapacityReservationRequest>
+  Model::CreateDBCapacityReservationOutcomeCallable CreateDBCapacityReservationCallable(
+      const CreateDBCapacityReservationRequestT& request) const {
+    return SubmitCallable(&RDSClient::CreateDBCapacityReservation, request);
+  }
+
+  /**
+   * An Async wrapper for CreateDBCapacityReservation that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateDBCapacityReservationRequestT = Model::CreateDBCapacityReservationRequest>
+  void CreateDBCapacityReservationAsync(const CreateDBCapacityReservationRequestT& request,
+                                        const CreateDBCapacityReservationResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&RDSClient::CreateDBCapacityReservation, request, handler, context);
   }
 
   /**
@@ -2058,6 +2170,40 @@ class AWS_RDS_API RDSClient : public Aws::Client::AWSXMLClient, public Aws::Clie
                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                  const DescribeCertificatesRequestT& request = {}) const {
     return SubmitAsync(&RDSClient::DescribeCertificates, request, handler, context);
+  }
+
+  /**
+   * <p>Describes one or more DB capacity reservations. A DB capacity reservation
+   * reserves capacity for Amazon RDS DB instances in one or more Availability
+   * Zones.</p> <p>If you don't specify a
+   * <code>DBCapacityReservationIdentifier</code>, this operation returns information
+   * about all DB capacity reservations for your Amazon Web Services account.</p>
+   * <p>This operation supports pagination.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBCapacityReservations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeDBCapacityReservationsOutcome DescribeDBCapacityReservations(
+      const Model::DescribeDBCapacityReservationsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeDBCapacityReservations that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DescribeDBCapacityReservationsRequestT = Model::DescribeDBCapacityReservationsRequest>
+  Model::DescribeDBCapacityReservationsOutcomeCallable DescribeDBCapacityReservationsCallable(
+      const DescribeDBCapacityReservationsRequestT& request = {}) const {
+    return SubmitCallable(&RDSClient::DescribeDBCapacityReservations, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeDBCapacityReservations that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DescribeDBCapacityReservationsRequestT = Model::DescribeDBCapacityReservationsRequest>
+  void DescribeDBCapacityReservationsAsync(const DescribeDBCapacityReservationsResponseReceivedHandler& handler,
+                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                           const DescribeDBCapacityReservationsRequestT& request = {}) const {
+    return SubmitAsync(&RDSClient::DescribeDBCapacityReservations, request, handler, context);
   }
 
   /**
@@ -3866,6 +4012,43 @@ class AWS_RDS_API RDSClient : public Aws::Client::AWSXMLClient, public Aws::Clie
                                         const ModifyCustomDBEngineVersionResponseReceivedHandler& handler,
                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&RDSClient::ModifyCustomDBEngineVersion, request, handler, context);
+  }
+
+  /**
+   * <p>Modifies a DB capacity reservation. You can change the reserved capacity in
+   * each Availability Zone of the reservation, and you can change the end date of
+   * the reservation. You can't change the Availability Zones of an existing
+   * reservation.</p> <p>The reservation must be in the <code>active</code> state. A
+   * future-dated reservation that hasn't started isn't modifiable, and neither is a
+   * reservation that Amazon RDS is already modifying.</p> <p>You must specify
+   * <code>CapacityPerAvailabilityZone</code>, <code>EndDateType</code>, or
+   * <code>EndDate</code>. A request that specifies none of the three changes
+   * nothing, and Amazon RDS rejects it.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBCapacityReservation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ModifyDBCapacityReservationOutcome ModifyDBCapacityReservation(
+      const Model::ModifyDBCapacityReservationRequest& request) const;
+
+  /**
+   * A Callable wrapper for ModifyDBCapacityReservation that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ModifyDBCapacityReservationRequestT = Model::ModifyDBCapacityReservationRequest>
+  Model::ModifyDBCapacityReservationOutcomeCallable ModifyDBCapacityReservationCallable(
+      const ModifyDBCapacityReservationRequestT& request) const {
+    return SubmitCallable(&RDSClient::ModifyDBCapacityReservation, request);
+  }
+
+  /**
+   * An Async wrapper for ModifyDBCapacityReservation that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ModifyDBCapacityReservationRequestT = Model::ModifyDBCapacityReservationRequest>
+  void ModifyDBCapacityReservationAsync(const ModifyDBCapacityReservationRequestT& request,
+                                        const ModifyDBCapacityReservationResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&RDSClient::ModifyDBCapacityReservation, request, handler, context);
   }
 
   /**

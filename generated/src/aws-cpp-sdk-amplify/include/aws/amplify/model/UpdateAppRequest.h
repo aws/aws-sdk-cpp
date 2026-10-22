@@ -122,7 +122,7 @@ class UpdateAppRequest : public AmplifyRequest {
    * specific Amazon Web Services resources based on the role's permissions. For more
    * information about the SSR Compute role, see <a
    * href="https://docs.aws.amazon.com/amplify/latest/userguide/amplify-SSR-compute-role.html">Adding
-   * an SSR Compute role</a> in the <i>Amplify User Guide</i>.</p>
+   * an SSR Compute role</a> in the <i> Amplify User Guide</i>.</p>
    */
   inline const Aws::String& GetComputeRoleArn() const { return m_computeRoleArn; }
   inline bool ComputeRoleArnHasBeenSet() const { return m_computeRoleArnHasBeenSet; }

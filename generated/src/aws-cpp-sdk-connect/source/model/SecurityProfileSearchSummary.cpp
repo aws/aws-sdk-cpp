@@ -45,6 +45,10 @@ SecurityProfileSearchSummary& SecurityProfileSearchSummary::operator=(JsonView j
     }
     m_tagsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Type")) {
+    m_type = SecurityProfileTypeMapper::GetSecurityProfileTypeForName(jsonValue.GetString("Type"));
+    m_typeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -77,6 +81,10 @@ JsonValue SecurityProfileSearchSummary::Jsonize() const {
       tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
     }
     payload.WithObject("Tags", std::move(tagsJsonMap));
+  }
+
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", SecurityProfileTypeMapper::GetNameForSecurityProfileType(m_type));
   }
 
   return payload;

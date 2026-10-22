@@ -201,6 +201,9 @@
 #include <aws/devops-agent/model/MCPServerSigV4ServiceDetails.h>
 #include <aws/devops-agent/model/MCPServerSplunkConfiguration.h>
 #include <aws/devops-agent/model/MCPToolDetail.h>
+#include <aws/devops-agent/model/MSTeamsChannel.h>
+#include <aws/devops-agent/model/MSTeamsConfiguration.h>
+#include <aws/devops-agent/model/MSTeamsTransmissionTarget.h>
 #include <aws/devops-agent/model/Message.h>
 #include <aws/devops-agent/model/MonitorAccountType.h>
 #include <aws/devops-agent/model/MonthlyRecurrence.h>

@@ -95,6 +95,9 @@ Aws::String PutMetricAlarmRequest::SerializePayload() const {
   if (m_evaluationIntervalHasBeenSet) {
     mapSize++;
   }
+  if (m_actionConfigurationHasBeenSet) {
+    mapSize++;
+  }
 
   encoder.WriteMapStart(mapSize);
 
@@ -245,6 +248,11 @@ Aws::String PutMetricAlarmRequest::SerializePayload() const {
   if (m_evaluationIntervalHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("EvaluationInterval"));
     (m_evaluationInterval >= 0) ? encoder.WriteUInt(m_evaluationInterval) : encoder.WriteNegInt(m_evaluationInterval);
+  }
+
+  if (m_actionConfigurationHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ActionConfiguration"));
+    m_actionConfiguration.CborEncode(encoder);
   }
   const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
   return str;

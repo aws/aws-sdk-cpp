@@ -94,6 +94,7 @@
 #include <aws/ec2/model/AnalysisRouteTableRoute.h>
 #include <aws/ec2/model/AnalysisSecurityGroupRule.h>
 #include <aws/ec2/model/AnalysisStatus.h>
+#include <aws/ec2/model/AnalysisTransitGatewayPolicyTableEntry.h>
 #include <aws/ec2/model/ApplianceModeSupportValue.h>
 #include <aws/ec2/model/ApplicationStatus.h>
 #include <aws/ec2/model/ApplicationStatusCheckAssociationObject.h>
@@ -2546,6 +2547,7 @@
 #include <aws/ec2/model/PeeringTgwInfo.h>
 #include <aws/ec2/model/PerformanceFactorReference.h>
 #include <aws/ec2/model/PerformanceFactorReferenceRequest.h>
+#include <aws/ec2/model/PerformanceStatusSummary.h>
 #include <aws/ec2/model/PeriodType.h>
 #include <aws/ec2/model/PermissionGroup.h>
 #include <aws/ec2/model/Phase1DHGroupNumbersListValue.h>

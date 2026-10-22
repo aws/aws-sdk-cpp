@@ -15,6 +15,7 @@
     "Presign",
     "queryxml",
     "retryable",
+    "serde",
     "payloadless",
     "Subclassing",
     "BASECLASS",
@@ -90,6 +91,7 @@
     "cmake",
     "DCMAKE",
     "AUTORUN",
+    "CPPSTD",
     "DEPS",
     "STREQUAL",
     "RPATH",
@@ -218,6 +220,7 @@
     // MSVC
     "msvc",
     "MSFT",
+    "wdupenv",
     "LPDWORD",
     "DATAW",
     "mkgmtime",
@@ -325,6 +328,14 @@
     // in DefaultRateLimiter
     "renormalize",
     // parameters defined in tinyxml2
-    "uval"
+    "uval",
+    // variables and functions defined in platform/aix/Time.cpp
+    "msummlen",
+    "tmstr",
+    "ytmp",
+    "dtmp",
+    "ytmpe",
+    "dtmpe",
+    "isleapyear"
   ]
 }

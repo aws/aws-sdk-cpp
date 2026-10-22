@@ -25,6 +25,10 @@ GuardrailContextualGroundingPolicy& GuardrailContextualGroundingPolicy::operator
     }
     m_filtersHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("tier")) {
+    m_tier = jsonValue.GetObject("tier");
+    m_tierHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -37,6 +41,10 @@ JsonValue GuardrailContextualGroundingPolicy::Jsonize() const {
       filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());
     }
     payload.WithArray("filters", std::move(filtersJsonList));
+  }
+
+  if (m_tierHasBeenSet) {
+    payload.WithObject("tier", m_tier.Jsonize());
   }
 
   return payload;

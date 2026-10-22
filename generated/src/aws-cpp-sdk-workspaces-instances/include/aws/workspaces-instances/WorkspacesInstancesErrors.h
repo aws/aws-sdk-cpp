@@ -46,7 +46,8 @@ enum class WorkspacesInstancesErrors {
 
   CONFLICT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL_SERVER,
-  SERVICE_QUOTA_EXCEEDED
+  SERVICE_QUOTA_EXCEEDED,
+  VOLUME_MODIFICATION_RATE_EXCEEDED
 };
 
 class AWS_WORKSPACESINSTANCES_API WorkspacesInstancesError : public Aws::Client::AWSError<WorkspacesInstancesErrors> {

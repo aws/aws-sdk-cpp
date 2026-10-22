@@ -43,7 +43,7 @@ class CreateRepositoryRequest : public CodeCommitRequest {
    * cannot include certain characters. For more information about the limits on
    * repository names, see <a
    * href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a>
-   * in the <i>CodeCommit User Guide</i>. The suffix .git is prohibited.</p>
+   * in the <i> CodeCommit User Guide</i>. The suffix .git is prohibited.</p>
    */
   inline const Aws::String& GetRepositoryName() const { return m_repositoryName; }
   inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
@@ -112,7 +112,7 @@ class CreateRepositoryRequest : public CodeCommitRequest {
    * KMS console, or use the KMS APIs to programmatically retrieve a key ID. For more
    * information about acceptable values for kmsKeyID, see <a
    * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Decrypt.html#KMS-Decrypt-request-KeyId">KeyId</a>
-   * in the Decrypt API description in the <i>Key Management Service API
+   * in the Decrypt API description in the <i> Key Management Service API
    * Reference</i>.</p> <p>If no key is specified, the default
    * <code>aws/codecommit</code> Amazon Web Services managed key is used.</p>
    */

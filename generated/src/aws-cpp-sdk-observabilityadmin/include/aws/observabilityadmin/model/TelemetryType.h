@@ -10,7 +10,7 @@
 namespace Aws {
 namespace ObservabilityAdmin {
 namespace Model {
-enum class TelemetryType { NOT_SET, Logs, Metrics, Traces };
+enum class TelemetryType { NOT_SET, Logs, Metrics, Traces, Insights };
 
 namespace TelemetryTypeMapper {
 AWS_OBSERVABILITYADMIN_API TelemetryType GetTelemetryTypeForName(const Aws::String& name);

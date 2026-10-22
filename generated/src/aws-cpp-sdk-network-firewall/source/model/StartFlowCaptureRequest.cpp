@@ -23,6 +23,10 @@ Aws::String StartFlowCaptureRequest::SerializePayload() const {
     payload.WithString("AvailabilityZone", m_availabilityZone);
   }
 
+  if (m_availabilityZoneIdHasBeenSet) {
+    payload.WithString("AvailabilityZoneId", m_availabilityZoneId);
+  }
+
   if (m_vpcEndpointAssociationArnHasBeenSet) {
     payload.WithString("VpcEndpointAssociationArn", m_vpcEndpointAssociationArn);
   }

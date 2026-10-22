@@ -1,21 +1,29 @@
-﻿/**
+/**
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/auth/AWSCredentials.h>
+#include <aws/core/client/AWSJsonClient.h>
+#include <aws/core/client/AWSRpcV2CborClient.h>
+#include <aws/core/http/HttpClientFactory.h>
+#include <aws/core/http/standard/StandardHttpResponse.h>
+#include <aws/crt/cbor/Cbor.h>
+#include <aws/eventbridge/EventBridgeClient.h>
+#include <aws/eventbridge/model/PutEventsRequest.h>
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/testing/AwsTestHelpers.h>
 #include <aws/testing/mocks/http/MockHttpClient.h>
 
-#include <aws/core/auth/AWSCredentials.h>
-#include <aws/core/http/standard/StandardHttpResponse.h>
-#include <aws/core/http/HttpClientFactory.h>
-
-#include <aws/eventbridge/EventBridgeClient.h>
-#include <aws/eventbridge/model/PutEventsRequest.h>
-
+#include <type_traits>
 
 static const char* ALLOCATION_TAG = "AwsSdkMisuseTest";
+
+// These tests support both the AWS JSON 1.1 and the Smithy RPC v2 CBOR wire
+// protocols, adapting to whichever one the generated EventBridge client uses.
+// The mocked success response must be encoded in that protocol, otherwise
+// deserialization crashes before the test body can run.
+static constexpr bool EventBridgeUsesCbor = std::is_base_of<Aws::Client::AWSRpcV2CborClient, Aws::EventBridge::EventBridgeClient>::value;
 
 // Using EventBridge test because it already has some unit tests implemented
 #if !defined(USE_AWS_MEMORY_MANAGEMENT)
@@ -62,15 +70,38 @@ static Aws::EventBridge::Model::PutEventsRequest buildEventBridgeRequest()
     return request;
 }
 
-static std::shared_ptr<Aws::Http::Standard::StandardHttpResponse> buildEventBridgeGoodResponse(const Aws::String& eventIdToReply)
-{
-    const Aws::String goodReply = "{\"Entries\":[{\"EventId\":\"" + eventIdToReply + "\"}],\"FailedEntryCount\":0}";
-    std::shared_ptr<Aws::Http::HttpRequest> requestTmp = CreateHttpRequest(Aws::Http::URI("dummy"), Aws::Http::HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-    std::shared_ptr<Aws::Http::Standard::StandardHttpResponse> goodResponse =
-            Aws::MakeShared<Aws::Http::Standard::StandardHttpResponse>(ALLOCATION_TAG, requestTmp);
-    goodResponse->SetResponseCode(Aws::Http::HttpResponseCode::OK);
-    goodResponse->GetResponseBody() << goodReply;
-    return goodResponse;
+// Encodes a PutEvents response body equivalent to
+// { "Entries": [ { "EventId": <eventIdToReply> } ], "FailedEntryCount": 0 }
+// in whichever wire protocol the generated EventBridge client uses.
+static void writePutEventsResponseBody(Aws::IOStream& body, const Aws::String& eventIdToReply) {
+  if (EventBridgeUsesCbor) {
+    Aws::Crt::Cbor::CborEncoder encoder;
+    encoder.WriteMapStart(2);
+
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Entries"));
+    encoder.WriteArrayStart(1);
+    encoder.WriteMapStart(1);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("EventId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(eventIdToReply.c_str()));
+
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("FailedEntryCount"));
+    encoder.WriteUInt(0);
+
+    auto encodedData = encoder.GetEncodedData();
+    body.write(reinterpret_cast<const char*>(encodedData.ptr), static_cast<std::streamsize>(encodedData.len));
+  } else {
+    body << "{\"Entries\":[{\"EventId\":\"" + eventIdToReply + "\"}],\"FailedEntryCount\":0}";
+  }
+}
+
+static std::shared_ptr<Aws::Http::Standard::StandardHttpResponse> buildEventBridgeGoodResponse(const Aws::String& eventIdToReply) {
+  std::shared_ptr<Aws::Http::HttpRequest> requestTmp =
+      CreateHttpRequest(Aws::Http::URI("dummy"), Aws::Http::HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+  std::shared_ptr<Aws::Http::Standard::StandardHttpResponse> goodResponse =
+      Aws::MakeShared<Aws::Http::Standard::StandardHttpResponse>(ALLOCATION_TAG, requestTmp);
+  goodResponse->SetResponseCode(Aws::Http::HttpResponseCode::OK);
+  writePutEventsResponseBody(goodResponse->GetResponseBody(), eventIdToReply);
+  return goodResponse;
 }
 
 TEST_F(AwsSdkMisuseTest, MissingCurlyBracesTest)

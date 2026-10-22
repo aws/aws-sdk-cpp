@@ -22,6 +22,7 @@
 #include <aws/imagebuilder/model/Ami.h>
 #include <aws/imagebuilder/model/AmiDistributionConfiguration.h>
 #include <aws/imagebuilder/model/AutoDisablePolicy.h>
+#include <aws/imagebuilder/model/AutoScalingGroupConfiguration.h>
 #include <aws/imagebuilder/model/BuildType.h>
 #include <aws/imagebuilder/model/CancelImageCreationRequest.h>
 #include <aws/imagebuilder/model/CancelImageCreationResult.h>
@@ -266,6 +267,7 @@
 #include <aws/imagebuilder/model/OutputResources.h>
 #include <aws/imagebuilder/model/Ownership.h>
 #include <aws/imagebuilder/model/PackageVulnerabilityDetails.h>
+#include <aws/imagebuilder/model/ParentInstanceConfiguration.h>
 #include <aws/imagebuilder/model/PipelineExecutionStartCondition.h>
 #include <aws/imagebuilder/model/PipelineLoggingConfiguration.h>
 #include <aws/imagebuilder/model/PipelineStatus.h>

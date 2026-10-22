@@ -252,8 +252,8 @@ class WorkspaceSummary {
   ///@{
   /**
    * <p>Specifies whether this workspace has a full Grafana Enterprise license.</p>
-   *  <p>Amazon Managed Grafana workspaces no longer support Grafana Enterprise
-   * free trials.</p>
+   *  <p> Amazon Managed Grafana workspaces no longer support Grafana
+   * Enterprise free trials.</p>
    */
   inline LicenseType GetLicenseType() const { return m_licenseType; }
   inline bool LicenseTypeHasBeenSet() const { return m_licenseTypeHasBeenSet; }

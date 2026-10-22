@@ -8,6 +8,7 @@
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/elasticache/model/ReplicationGroup.h>
 #include <aws/elasticache/model/ResponseMetadata.h>
+#include <aws/elasticache/model/ServerlessCache.h>
 
 #include <utility>
 
@@ -44,6 +45,24 @@ class StartMigrationResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Provides the details of the serverless cache to which ElastiCache is
+   * migrating data.</p>
+   */
+  inline const ServerlessCache& GetServerlessCache() const { return m_serverlessCache; }
+  template <typename ServerlessCacheT = ServerlessCache>
+  void SetServerlessCache(ServerlessCacheT&& value) {
+    m_serverlessCacheHasBeenSet = true;
+    m_serverlessCache = std::forward<ServerlessCacheT>(value);
+  }
+  template <typename ServerlessCacheT = ServerlessCache>
+  StartMigrationResult& WithServerlessCache(ServerlessCacheT&& value) {
+    SetServerlessCache(std::forward<ServerlessCacheT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
   template <typename ResponseMetadataT = ResponseMetadata>
@@ -62,9 +81,12 @@ class StartMigrationResult {
  private:
   ReplicationGroup m_replicationGroup;
 
+  ServerlessCache m_serverlessCache;
+
   ResponseMetadata m_responseMetadata;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_replicationGroupHasBeenSet = false;
+  bool m_serverlessCacheHasBeenSet = false;
   bool m_responseMetadataHasBeenSet = false;
 };
 

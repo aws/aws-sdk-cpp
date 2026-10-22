@@ -38,6 +38,12 @@ namespace Aws
             EventEncoderStream& EventEncoderStream::WriteEvent(const Aws::Utils::Event::Message& msg)
             {
                 auto bits = m_encoder.EncodeAndSign(msg);
+                if (bits.empty())
+                {
+                    AWS_LOGSTREAM_ERROR("EventEncoderStream::WriteEvent", "Failed to encode or sign event.");
+                    setstate(std::ios_base::failbit);
+                    return *this;
+                }
 
                 AWS_LOGSTREAM_TRACE("EventEncoderStream::WriteEvent", "Encoded event (base64 encoded): " <<
                                     Aws::Utils::HashingUtils::Base64Encode(Aws::Utils::ByteBuffer(bits.data(), bits.size())));

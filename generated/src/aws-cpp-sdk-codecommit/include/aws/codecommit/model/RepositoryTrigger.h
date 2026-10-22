@@ -122,8 +122,9 @@ class RepositoryTrigger {
   ///@{
   /**
    * <p>The repository events that cause the trigger to run actions in another
-   * service, such as sending a notification through Amazon SNS. </p>  <p>The
-   * valid value "all" cannot be used with any other values.</p>
+   * service, such as sending a notification through Amazon SNS. <pre><code>
+   * &lt;/p&gt; &lt;note&gt; &lt;p&gt;The valid value &quot;all&quot; cannot be used
+   * with any other values.&lt;/p&gt; &lt;/note&gt; </code></pre>
    */
   inline const Aws::Vector<RepositoryTriggerEventEnum>& GetEvents() const { return m_events; }
   inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }

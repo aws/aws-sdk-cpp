@@ -82,6 +82,10 @@ Finding& Finding::operator=(JsonView jsonValue) {
     m_associatedAttackSequenceArn = jsonValue.GetString("associatedAttackSequenceArn");
     m_associatedAttackSequenceArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("customDetectionRuleName")) {
+    m_customDetectionRuleName = jsonValue.GetString("customDetectionRuleName");
+    m_customDetectionRuleNameHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -150,6 +154,10 @@ JsonValue Finding::Jsonize() const {
 
   if (m_associatedAttackSequenceArnHasBeenSet) {
     payload.WithString("associatedAttackSequenceArn", m_associatedAttackSequenceArn);
+  }
+
+  if (m_customDetectionRuleNameHasBeenSet) {
+    payload.WithString("customDetectionRuleName", m_customDetectionRuleName);
   }
 
   return payload;

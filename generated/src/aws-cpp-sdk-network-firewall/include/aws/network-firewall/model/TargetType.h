@@ -10,7 +10,7 @@
 namespace Aws {
 namespace NetworkFirewall {
 namespace Model {
-enum class TargetType { NOT_SET, TLS_SNI, HTTP_HOST };
+enum class TargetType { NOT_SET, TLS_SNI, HTTP_HOST, AWS_ROUTE_53_RESOLVED_DOMAIN };
 
 namespace TargetTypeMapper {
 AWS_NETWORKFIREWALL_API TargetType GetTargetTypeForName(const Aws::String& name);

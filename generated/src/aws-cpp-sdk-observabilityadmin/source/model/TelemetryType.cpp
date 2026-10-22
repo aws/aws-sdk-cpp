@@ -18,6 +18,7 @@ namespace TelemetryTypeMapper {
 static const int Logs_HASH = HashingUtils::HashString("Logs");
 static const int Metrics_HASH = HashingUtils::HashString("Metrics");
 static const int Traces_HASH = HashingUtils::HashString("Traces");
+static const int Insights_HASH = HashingUtils::HashString("Insights");
 
 TelemetryType GetTelemetryTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ TelemetryType GetTelemetryTypeForName(const Aws::String& name) {
     return TelemetryType::Metrics;
   } else if (hashCode == Traces_HASH) {
     return TelemetryType::Traces;
+  } else if (hashCode == Insights_HASH) {
+    return TelemetryType::Insights;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForTelemetryType(TelemetryType enumValue) {
       return "Metrics";
     case TelemetryType::Traces:
       return "Traces";
+    case TelemetryType::Insights:
+      return "Insights";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

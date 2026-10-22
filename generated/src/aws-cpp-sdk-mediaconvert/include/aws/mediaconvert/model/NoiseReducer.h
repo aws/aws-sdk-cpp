@@ -46,7 +46,13 @@ class NoiseReducer {
    * preserves edges while reducing noise. * Mean (softest), Gaussian, Lanczos, and
    * Sharpen (sharpest) do convolution filtering. * Conserve does min/max noise
    * reduction. * Spatial does frequency-domain filtering based on JND principles. *
-   * Temporal optimizes video quality for complex motion.
+   * Temporal optimizes video quality for complex motion. * Perceptual exploits
+   * perceptual masking, avoiding encoding bits spent on imperceptible detail. * None
+   * disables noise reduction, including the perceptual filter that MediaConvert
+   * otherwise applies by default for AVC, HEVC, AV1, MPEG-2, VP8, and VP9 outputs.
+   * MediaConvert doesn't apply that default to mezzanine and archival outputs
+   * (AVC-Intra, XAVC, Apple ProRes, VC3, Uncompressed), to frame capture outputs, or
+   * to outputs that use Dolby Vision, which doesn't support any noise reducer.
    */
   inline NoiseReducerFilter GetFilter() const { return m_filter; }
   inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }

@@ -4,11 +4,12 @@
  */
 
 #pragma once
+#include <aws/core/utils/event/EventStreamDecoder.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/healthlake/HealthLakeRequest.h>
 #include <aws/healthlake/HealthLake_EXPORTS.h>
 #include <aws/healthlake/model/AgentInputMessage.h>
-#include <aws/healthlake/model/SourceFormat.h>
+#include <aws/healthlake/model/UpdateProfileWithAgentHandler.h>
 
 #include <utility>
 
@@ -32,9 +33,36 @@ class UpdateProfileWithAgentRequest : public HealthLakeRequest {
   // so we can not get operation's name from response.
   inline virtual const char* GetServiceRequestName() const override { return "UpdateProfileWithAgent"; }
 
+  inline virtual bool HasEventStreamResponse() const override { return true; }
   AWS_HEALTHLAKE_API Aws::String SerializePayload() const override;
 
   AWS_HEALTHLAKE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  /**
+   * Underlying Event Stream Decoder.
+   */
+  inline Aws::Utils::Event::EventStreamDecoder& GetEventStreamDecoder() { return m_decoder; }
+
+  /**
+   * Underlying Event Stream Handler which is used to define callback functions.
+   */
+  inline UpdateProfileWithAgentHandler& GetEventStreamHandler() { return m_handler; }
+
+  /**
+   * Underlying Event Stream Handler which is used to define callback functions.
+   */
+  inline void SetEventStreamHandler(const UpdateProfileWithAgentHandler& value) {
+    m_handler = value;
+    m_decoder.ResetEventStreamHandler(&m_handler);
+  }
+
+  /**
+   * Underlying Event Stream Handler which is used to define callback functions.
+   */
+  inline UpdateProfileWithAgentRequest& WithEventStreamHandler(const UpdateProfileWithAgentHandler& value) {
+    SetEventStreamHandler(value);
+    return *this;
+  }
 
   ///@{
   /**
@@ -50,22 +78,6 @@ class UpdateProfileWithAgentRequest : public HealthLakeRequest {
   template <typename ProfileIdT = Aws::String>
   UpdateProfileWithAgentRequest& WithProfileId(ProfileIdT&& value) {
     SetProfileId(std::forward<ProfileIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The source data format for the transformation.</p>
-   */
-  inline SourceFormat GetSourceFormat() const { return m_sourceFormat; }
-  inline bool SourceFormatHasBeenSet() const { return m_sourceFormatHasBeenSet; }
-  inline void SetSourceFormat(SourceFormat value) {
-    m_sourceFormatHasBeenSet = true;
-    m_sourceFormat = value;
-  }
-  inline UpdateProfileWithAgentRequest& WithSourceFormat(SourceFormat value) {
-    SetSourceFormat(value);
     return *this;
   }
   ///@}
@@ -109,13 +121,13 @@ class UpdateProfileWithAgentRequest : public HealthLakeRequest {
  private:
   Aws::String m_profileId;
 
-  SourceFormat m_sourceFormat{SourceFormat::NOT_SET};
-
   AgentInputMessage m_inputMessage;
 
   Aws::String m_conversationId;
+  UpdateProfileWithAgentHandler m_handler;
+  Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
+
   bool m_profileIdHasBeenSet = false;
-  bool m_sourceFormatHasBeenSet = false;
   bool m_inputMessageHasBeenSet = false;
   bool m_conversationIdHasBeenSet = false;
 };

@@ -17,6 +17,10 @@ Aws::String StartDBInstanceRequest::SerializePayload() const {
     ss << "DBInstanceIdentifier=" << StringUtils::URLEncode(m_dBInstanceIdentifier.c_str()) << "&";
   }
 
+  if (m_dBCapacityReservationIdentifierHasBeenSet) {
+    ss << "DBCapacityReservationIdentifier=" << StringUtils::URLEncode(m_dBCapacityReservationIdentifier.c_str()) << "&";
+  }
+
   ss << "Version=2014-10-31";
   return ss.str();
 }

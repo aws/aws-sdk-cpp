@@ -58,6 +58,10 @@ SubStatementData& SubStatementData::operator=(JsonView jsonValue) {
     m_redshiftQueryId = jsonValue.GetInt64("RedshiftQueryId");
     m_redshiftQueryIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("RedshiftQueryUuid")) {
+    m_redshiftQueryUuid = jsonValue.GetString("RedshiftQueryUuid");
+    m_redshiftQueryUuidHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("HasResultSet")) {
     m_hasResultSet = jsonValue.GetBool("HasResultSet");
     m_hasResultSetHasBeenSet = true;
@@ -106,6 +110,10 @@ JsonValue SubStatementData::Jsonize() const {
 
   if (m_redshiftQueryIdHasBeenSet) {
     payload.WithInt64("RedshiftQueryId", m_redshiftQueryId);
+  }
+
+  if (m_redshiftQueryUuidHasBeenSet) {
+    payload.WithString("RedshiftQueryUuid", m_redshiftQueryUuid);
   }
 
   if (m_hasResultSetHasBeenSet) {

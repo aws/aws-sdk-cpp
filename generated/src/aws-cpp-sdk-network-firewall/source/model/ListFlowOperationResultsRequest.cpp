@@ -35,6 +35,10 @@ Aws::String ListFlowOperationResultsRequest::SerializePayload() const {
     payload.WithString("AvailabilityZone", m_availabilityZone);
   }
 
+  if (m_availabilityZoneIdHasBeenSet) {
+    payload.WithString("AvailabilityZoneId", m_availabilityZoneId);
+  }
+
   if (m_vpcEndpointIdHasBeenSet) {
     payload.WithString("VpcEndpointId", m_vpcEndpointId);
   }

@@ -35,7 +35,10 @@ enum class ConnectionType {
   AMAZON_Q,
   MLFLOW,
   VPC,
-  GIT
+  GIT,
+  ICEBERGRESTCATALOG,
+  SNOWFLAKEICEBERGRESTCATALOG,
+  DATABRICKSICEBERGRESTCATALOG
 };
 
 namespace ConnectionTypeMapper {

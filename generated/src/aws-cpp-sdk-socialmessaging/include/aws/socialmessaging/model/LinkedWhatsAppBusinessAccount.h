@@ -190,6 +190,47 @@ class LinkedWhatsAppBusinessAccount {
 
   ///@{
   /**
+   * <p>The Direct Send enforcement status for the WhatsApp Business Account.
+   * Enforcement applies when an account repeatedly sends messages in a category that
+   * does not match the content. This field is not present when no enforcement is
+   * active.</p>
+   */
+  inline const Aws::String& GetDirectSendEnforcementStatus() const { return m_directSendEnforcementStatus; }
+  inline bool DirectSendEnforcementStatusHasBeenSet() const { return m_directSendEnforcementStatusHasBeenSet; }
+  template <typename DirectSendEnforcementStatusT = Aws::String>
+  void SetDirectSendEnforcementStatus(DirectSendEnforcementStatusT&& value) {
+    m_directSendEnforcementStatusHasBeenSet = true;
+    m_directSendEnforcementStatus = std::forward<DirectSendEnforcementStatusT>(value);
+  }
+  template <typename DirectSendEnforcementStatusT = Aws::String>
+  LinkedWhatsAppBusinessAccount& WithDirectSendEnforcementStatus(DirectSendEnforcementStatusT&& value) {
+    SetDirectSendEnforcementStatus(std::forward<DirectSendEnforcementStatusT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The time when the current Direct Send enforcement is expected to lift. This
+   * field is not present for permanent enforcement or when no enforcement is
+   * active.</p>
+   */
+  inline const Aws::Utils::DateTime& GetDirectSendEnforcementStatusExpiresAt() const { return m_directSendEnforcementStatusExpiresAt; }
+  inline bool DirectSendEnforcementStatusExpiresAtHasBeenSet() const { return m_directSendEnforcementStatusExpiresAtHasBeenSet; }
+  template <typename DirectSendEnforcementStatusExpiresAtT = Aws::Utils::DateTime>
+  void SetDirectSendEnforcementStatusExpiresAt(DirectSendEnforcementStatusExpiresAtT&& value) {
+    m_directSendEnforcementStatusExpiresAtHasBeenSet = true;
+    m_directSendEnforcementStatusExpiresAt = std::forward<DirectSendEnforcementStatusExpiresAtT>(value);
+  }
+  template <typename DirectSendEnforcementStatusExpiresAtT = Aws::Utils::DateTime>
+  LinkedWhatsAppBusinessAccount& WithDirectSendEnforcementStatusExpiresAt(DirectSendEnforcementStatusExpiresAtT&& value) {
+    SetDirectSendEnforcementStatusExpiresAt(std::forward<DirectSendEnforcementStatusExpiresAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The Meta Conversions API dataset ID associated with this WhatsApp Business
    * Account. This value is a numeric string of 10 to 20 digits. This field is not
    * present when no dataset has been created for this account.</p>
@@ -248,6 +289,10 @@ class LinkedWhatsAppBusinessAccount {
 
   Aws::String m_marketingMessagesOnboardingStatus;
 
+  Aws::String m_directSendEnforcementStatus;
+
+  Aws::Utils::DateTime m_directSendEnforcementStatusExpiresAt{};
+
   Aws::String m_datasetId;
 
   Aws::Vector<WhatsAppPhoneNumberSummary> m_phoneNumbers;
@@ -259,6 +304,8 @@ class LinkedWhatsAppBusinessAccount {
   bool m_wabaNameHasBeenSet = false;
   bool m_eventDestinationsHasBeenSet = false;
   bool m_marketingMessagesOnboardingStatusHasBeenSet = false;
+  bool m_directSendEnforcementStatusHasBeenSet = false;
+  bool m_directSendEnforcementStatusExpiresAtHasBeenSet = false;
   bool m_datasetIdHasBeenSet = false;
   bool m_phoneNumbersHasBeenSet = false;
 };

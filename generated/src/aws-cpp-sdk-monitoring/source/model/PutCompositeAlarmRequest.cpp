@@ -50,6 +50,9 @@ Aws::String PutCompositeAlarmRequest::SerializePayload() const {
   if (m_actionsSuppressorExtensionPeriodHasBeenSet) {
     mapSize++;
   }
+  if (m_actionConfigurationHasBeenSet) {
+    mapSize++;
+  }
 
   encoder.WriteMapStart(mapSize);
 
@@ -120,6 +123,11 @@ Aws::String PutCompositeAlarmRequest::SerializePayload() const {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("ActionsSuppressorExtensionPeriod"));
     (m_actionsSuppressorExtensionPeriod >= 0) ? encoder.WriteUInt(m_actionsSuppressorExtensionPeriod)
                                               : encoder.WriteNegInt(m_actionsSuppressorExtensionPeriod);
+  }
+
+  if (m_actionConfigurationHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ActionConfiguration"));
+    m_actionConfiguration.CborEncode(encoder);
   }
   const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
   return str;

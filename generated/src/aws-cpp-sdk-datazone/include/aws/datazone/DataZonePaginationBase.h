@@ -16,6 +16,7 @@
 #include <aws/datazone/model/ListDataSourceRunActivitiesPaginationTraits.h>
 #include <aws/datazone/model/ListDataSourceRunsPaginationTraits.h>
 #include <aws/datazone/model/ListDataSourcesPaginationTraits.h>
+#include <aws/datazone/model/ListDesignationsPaginationTraits.h>
 #include <aws/datazone/model/ListDomainUnitsForParentPaginationTraits.h>
 #include <aws/datazone/model/ListDomainsPaginationTraits.h>
 #include <aws/datazone/model/ListEntityOwnersPaginationTraits.h>
@@ -162,6 +163,18 @@ class DataZonePaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataSourcesRequest,
                                              Pagination::ListDataSourcesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
+  }
+
+  /**
+   * Create a paginator for ListDesignations operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDesignationsRequest,
+                                    Pagination::ListDesignationsPaginationTraits<DerivedClient>>
+  ListDesignationsPaginator(const Model::ListDesignationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDesignationsRequest,
+                                             Pagination::ListDesignationsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                          request};
   }
 
   /**

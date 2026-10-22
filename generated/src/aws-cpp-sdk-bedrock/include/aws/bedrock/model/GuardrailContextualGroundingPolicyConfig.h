@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock/Bedrock_EXPORTS.h>
 #include <aws/bedrock/model/GuardrailContextualGroundingFilterConfig.h>
+#include <aws/bedrock/model/GuardrailContextualGroundingTierConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
@@ -57,9 +58,30 @@ class GuardrailContextualGroundingPolicyConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The tier that your guardrail uses for contextual grounding.</p>
+   */
+  inline const GuardrailContextualGroundingTierConfig& GetTierConfig() const { return m_tierConfig; }
+  inline bool TierConfigHasBeenSet() const { return m_tierConfigHasBeenSet; }
+  template <typename TierConfigT = GuardrailContextualGroundingTierConfig>
+  void SetTierConfig(TierConfigT&& value) {
+    m_tierConfigHasBeenSet = true;
+    m_tierConfig = std::forward<TierConfigT>(value);
+  }
+  template <typename TierConfigT = GuardrailContextualGroundingTierConfig>
+  GuardrailContextualGroundingPolicyConfig& WithTierConfig(TierConfigT&& value) {
+    SetTierConfig(std::forward<TierConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<GuardrailContextualGroundingFilterConfig> m_filtersConfig;
+
+  GuardrailContextualGroundingTierConfig m_tierConfig;
   bool m_filtersConfigHasBeenSet = false;
+  bool m_tierConfigHasBeenSet = false;
 };
 
 }  // namespace Model

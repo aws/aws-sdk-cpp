@@ -119,6 +119,8 @@
 #include <aws/dynamodb/model/DestinationStatus.h>
 #include <aws/dynamodb/model/DisableKinesisStreamingDestinationRequest.h>
 #include <aws/dynamodb/model/DisableKinesisStreamingDestinationResult.h>
+#include <aws/dynamodb/model/DisassociateReplicationGroupMemberAction.h>
+#include <aws/dynamodb/model/DisassociationMode.h>
 #include <aws/dynamodb/model/EnableKinesisStreamingConfiguration.h>
 #include <aws/dynamodb/model/EnableKinesisStreamingDestinationRequest.h>
 #include <aws/dynamodb/model/EnableKinesisStreamingDestinationResult.h>
