@@ -102,60 +102,60 @@ TEST_F(XmlSerializerTest, TestXmlSerializeNewlines)
     ASSERT_TRUE(doc.GetErrorMessage().empty());
 }
 
-TEST_F(XmlSerializerTest, TestXmlSerializeCompact)
-{
-    XmlDocument doc = XmlDocument::CreateWithRootNode("ToDo");
-    XmlNode rootElement = doc.GetRootElement();
-    XmlNode item1 = rootElement.CreateChildElement("Item");
-    item1.SetAttributeValue("priority", "1");
-    item1.SetText("Go to the <bold>Toy store!</bold>");
-    XmlNode item2 = rootElement.CreateChildElement("Item");
-    item2.SetAttributeValue("priority", "2");
-    item2.SetText("Do bills");
-    XmlNode nested = rootElement.CreateChildElement("Nested");
-    nested.CreateChildElement("Inner").SetText("x");
+TEST_F(XmlSerializerTest, TestXmlSerializeCompact) {
+  XmlDocument doc = XmlDocument::CreateWithRootNode("ToDo");
+  XmlNode rootElement = doc.GetRootElement();
+  XmlNode item1 = rootElement.CreateChildElement("Item");
+  item1.SetAttributeValue("priority", "1");
+  item1.SetText("Go to the <bold>Toy store!</bold>");
+  XmlNode item2 = rootElement.CreateChildElement("Item");
+  item2.SetAttributeValue("priority", "2");
+  item2.SetText("Do bills");
+  XmlNode nested = rootElement.CreateChildElement("Nested");
+  nested.CreateChildElement("Inner").SetText("x");
 
-    Aws::String serializedXml = doc.ConvertToCompactString();
+  Aws::String serializedXml = doc.ConvertToCompactString();
 
-    Aws::String toCompare = "<?xml version=\"1.0\"?>"
-        "<ToDo>"
-        "<Item priority=\"1\">Go to the &lt;bold&gt;Toy store!&lt;/bold&gt;</Item>"
-        "<Item priority=\"2\">Do bills</Item>"
-        "<Nested><Inner>x</Inner></Nested>"
-        "</ToDo>";
-    ASSERT_EQ(toCompare, serializedXml);
-    ASSERT_TRUE(doc.GetErrorMessage().empty());
+  Aws::String toCompare =
+      "<?xml version=\"1.0\"?>"
+      "<ToDo>"
+      "<Item priority=\"1\">Go to the &lt;bold&gt;Toy store!&lt;/bold&gt;</Item>"
+      "<Item priority=\"2\">Do bills</Item>"
+      "<Nested><Inner>x</Inner></Nested>"
+      "</ToDo>";
+  ASSERT_EQ(toCompare, serializedXml);
+  ASSERT_TRUE(doc.GetErrorMessage().empty());
 
-    // The existing method keeps pretty-printing.
-    ASSERT_NE(doc.ConvertToString(), serializedXml);
+  // The existing method keeps pretty-printing.
+  ASSERT_NE(doc.ConvertToString(), serializedXml);
 }
 
-TEST_F(XmlSerializerTest, TestXmlSerializeCompactNewlines)
-{
-    XmlDocument doc = XmlDocument::CreateWithRootNode("Newlines");
-    XmlNode rootElement = doc.GetRootElement();
-    XmlNode itemLF = rootElement.CreateChildElement("LF");
-    itemLF.SetText("a\n+\n");
-    XmlNode itemCR = rootElement.CreateChildElement("CR");
-    itemCR.SetText("b\r-\r");
-    XmlNode itemSpaces = rootElement.CreateChildElement("Spaces");
-    itemSpaces.SetText("  padded  ");
-    Aws::String serializedXml = doc.ConvertToCompactString();
+TEST_F(XmlSerializerTest, TestXmlSerializeCompactNewlines) {
+  XmlDocument doc = XmlDocument::CreateWithRootNode("Newlines");
+  XmlNode rootElement = doc.GetRootElement();
+  XmlNode itemLF = rootElement.CreateChildElement("LF");
+  itemLF.SetText("a\n+\n");
+  XmlNode itemCR = rootElement.CreateChildElement("CR");
+  itemCR.SetText("b\r-\r");
+  XmlNode itemSpaces = rootElement.CreateChildElement("Spaces");
+  itemSpaces.SetText("  padded  ");
+  Aws::String serializedXml = doc.ConvertToCompactString();
 
-    // Whitespace inside text content is preserved; only formatting between elements is dropped.
-    Aws::String toCompare = "<?xml version=\"1.0\"?>"
-        "<Newlines>"
-        "<LF>a&#xA;+&#xA;</LF>"
-        "<CR>b&#xD;-&#xD;</CR>"
-        "<Spaces>  padded  </Spaces>"
-        "</Newlines>";
-    ASSERT_EQ(toCompare, serializedXml);
+  // Whitespace inside text content is preserved; only formatting between elements is dropped.
+  Aws::String toCompare =
+      "<?xml version=\"1.0\"?>"
+      "<Newlines>"
+      "<LF>a&#xA;+&#xA;</LF>"
+      "<CR>b&#xD;-&#xD;</CR>"
+      "<Spaces>  padded  </Spaces>"
+      "</Newlines>";
+  ASSERT_EQ(toCompare, serializedXml);
 
-    XmlDocument reparsed = XmlDocument::CreateFromXmlString(serializedXml);
-    ASSERT_TRUE(reparsed.WasParseSuccessful());
-    ASSERT_EQ("a\n+\n", DecodeEscapedXmlText(reparsed.GetRootElement().FirstChild("LF").GetText()));
-    ASSERT_EQ("b\r-\r", DecodeEscapedXmlText(reparsed.GetRootElement().FirstChild("CR").GetText()));
-    ASSERT_EQ("  padded  ", DecodeEscapedXmlText(reparsed.GetRootElement().FirstChild("Spaces").GetText()));
+  XmlDocument reparsed = XmlDocument::CreateFromXmlString(serializedXml);
+  ASSERT_TRUE(reparsed.WasParseSuccessful());
+  ASSERT_EQ("a\n+\n", DecodeEscapedXmlText(reparsed.GetRootElement().FirstChild("LF").GetText()));
+  ASSERT_EQ("b\r-\r", DecodeEscapedXmlText(reparsed.GetRootElement().FirstChild("CR").GetText()));
+  ASSERT_EQ("  padded  ", DecodeEscapedXmlText(reparsed.GetRootElement().FirstChild("Spaces").GetText()));
 }
 
 TEST_F(XmlSerializerTest, TestXmlHasChildren)

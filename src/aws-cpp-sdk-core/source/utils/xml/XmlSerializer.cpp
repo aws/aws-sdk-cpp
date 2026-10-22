@@ -284,15 +284,14 @@ Aws::String XmlDocument::ConvertToString() const
     return printer.CStr();
 }
 
-Aws::String XmlDocument::ConvertToCompactString() const
-{
-    if (!m_doc) return "";
+Aws::String XmlDocument::ConvertToCompactString() const {
+  if (!m_doc) return "";
 
-    Aws::External::tinyxml2::XMLPrinter printer(nullptr, true /*compact*/);
-    printer.PushHeader(false, true);
-    m_doc->Accept(&printer);
+  Aws::External::tinyxml2::XMLPrinter printer(nullptr, true /*compact*/);
+  printer.PushHeader(false, true);
+  m_doc->Accept(&printer);
 
-    return printer.CStr();
+  return printer.CStr();
 }
 
 XmlDocument XmlDocument::CreateFromXmlStream(Aws::IOStream& xmlStream)
