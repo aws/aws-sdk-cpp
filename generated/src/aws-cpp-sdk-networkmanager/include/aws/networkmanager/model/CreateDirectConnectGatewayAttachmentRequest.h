@@ -9,6 +9,8 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/networkmanager/NetworkManagerRequest.h>
 #include <aws/networkmanager/NetworkManager_EXPORTS.h>
+#include <aws/networkmanager/model/NatGatewaySupportValue.h>
+#include <aws/networkmanager/model/NatRuleRequest.h>
 #include <aws/networkmanager/model/Tag.h>
 
 #include <utility>
@@ -114,6 +116,68 @@ class CreateDirectConnectGatewayAttachmentRequest : public NetworkManagerRequest
 
   ///@{
   /**
+   * <p>Specifies whether to enable NAT gateway support on the Direct Connect gateway
+   * attachment. To enable NAT gateway support, you must also specify at least one
+   * NAT rule. If you don't specify a value, NAT gateway support is disabled. Only
+   * the core network owner can configure NAT on an attachment.</p>
+   */
+  inline NatGatewaySupportValue GetNatGatewaySupport() const { return m_natGatewaySupport; }
+  inline bool NatGatewaySupportHasBeenSet() const { return m_natGatewaySupportHasBeenSet; }
+  inline void SetNatGatewaySupport(NatGatewaySupportValue value) {
+    m_natGatewaySupportHasBeenSet = true;
+    m_natGatewaySupport = value;
+  }
+  inline CreateDirectConnectGatewayAttachmentRequest& WithNatGatewaySupport(NatGatewaySupportValue value) {
+    SetNatGatewaySupport(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether the core network installs system routes for the NAT CIDR
+   * blocks of the attachment's NAT rules. System routes have a route type of
+   * <code>SYSTEM</code>. NAT is applied to traffic whether or not this option is
+   * enabled. The default is <code>true</code>.</p>
+   */
+  inline bool GetNatSystemRouteSupport() const { return m_natSystemRouteSupport; }
+  inline bool NatSystemRouteSupportHasBeenSet() const { return m_natSystemRouteSupportHasBeenSet; }
+  inline void SetNatSystemRouteSupport(bool value) {
+    m_natSystemRouteSupportHasBeenSet = true;
+    m_natSystemRouteSupport = value;
+  }
+  inline CreateDirectConnectGatewayAttachmentRequest& WithNatSystemRouteSupport(bool value) {
+    SetNatSystemRouteSupport(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The NAT rules for the Direct Connect gateway attachment, up to 50 rules.</p>
+   */
+  inline const Aws::Vector<NatRuleRequest>& GetNatGatewayRules() const { return m_natGatewayRules; }
+  inline bool NatGatewayRulesHasBeenSet() const { return m_natGatewayRulesHasBeenSet; }
+  template <typename NatGatewayRulesT = Aws::Vector<NatRuleRequest>>
+  void SetNatGatewayRules(NatGatewayRulesT&& value) {
+    m_natGatewayRulesHasBeenSet = true;
+    m_natGatewayRules = std::forward<NatGatewayRulesT>(value);
+  }
+  template <typename NatGatewayRulesT = Aws::Vector<NatRuleRequest>>
+  CreateDirectConnectGatewayAttachmentRequest& WithNatGatewayRules(NatGatewayRulesT&& value) {
+    SetNatGatewayRules(std::forward<NatGatewayRulesT>(value));
+    return *this;
+  }
+  template <typename NatGatewayRulesT = NatRuleRequest>
+  CreateDirectConnectGatewayAttachmentRequest& AddNatGatewayRules(NatGatewayRulesT&& value) {
+    m_natGatewayRulesHasBeenSet = true;
+    m_natGatewayRules.emplace_back(std::forward<NatGatewayRulesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The key value tags to apply to the Direct Connect gateway attachment during
    * creation.</p>
    */
@@ -163,6 +227,12 @@ class CreateDirectConnectGatewayAttachmentRequest : public NetworkManagerRequest
 
   Aws::Vector<Aws::String> m_edgeLocations;
 
+  NatGatewaySupportValue m_natGatewaySupport{NatGatewaySupportValue::NOT_SET};
+
+  bool m_natSystemRouteSupport{false};
+
+  Aws::Vector<NatRuleRequest> m_natGatewayRules;
+
   Aws::Vector<Tag> m_tags;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
@@ -170,6 +240,9 @@ class CreateDirectConnectGatewayAttachmentRequest : public NetworkManagerRequest
   bool m_directConnectGatewayArnHasBeenSet = false;
   bool m_routingPolicyLabelHasBeenSet = false;
   bool m_edgeLocationsHasBeenSet = false;
+  bool m_natGatewaySupportHasBeenSet = false;
+  bool m_natSystemRouteSupportHasBeenSet = false;
+  bool m_natGatewayRulesHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };

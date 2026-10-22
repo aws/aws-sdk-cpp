@@ -52,6 +52,7 @@
 #include <aws/connect/model/ListQueuesPaginationTraits.h>
 #include <aws/connect/model/ListQuickConnectsPaginationTraits.h>
 #include <aws/connect/model/ListRealtimeContactAnalysisSegmentsV2PaginationTraits.h>
+#include <aws/connect/model/ListReplicationFindingsPaginationTraits.h>
 #include <aws/connect/model/ListRoutingProfileManualAssignmentQueuesPaginationTraits.h>
 #include <aws/connect/model/ListRoutingProfileQueuesPaginationTraits.h>
 #include <aws/connect/model/ListRoutingProfilesPaginationTraits.h>
@@ -221,6 +222,9 @@ using ListQuickConnectsPaginator = Aws::Utils::Pagination::Paginator<ConnectClie
 using ListRealtimeContactAnalysisSegmentsV2Paginator =
     Aws::Utils::Pagination::Paginator<ConnectClient, Model::ListRealtimeContactAnalysisSegmentsV2Request,
                                       Pagination::ListRealtimeContactAnalysisSegmentsV2PaginationTraits<ConnectClient>>;
+using ListReplicationFindingsPaginator =
+    Aws::Utils::Pagination::Paginator<ConnectClient, Model::ListReplicationFindingsRequest,
+                                      Pagination::ListReplicationFindingsPaginationTraits<ConnectClient>>;
 using ListRoutingProfileManualAssignmentQueuesPaginator =
     Aws::Utils::Pagination::Paginator<ConnectClient, Model::ListRoutingProfileManualAssignmentQueuesRequest,
                                       Pagination::ListRoutingProfileManualAssignmentQueuesPaginationTraits<ConnectClient>>;

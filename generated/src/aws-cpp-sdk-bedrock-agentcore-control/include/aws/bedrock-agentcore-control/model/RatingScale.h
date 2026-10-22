@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/CategoricalScaleDefinition.h>
+#include <aws/bedrock-agentcore-control/model/EvaluationDimension.h>
 #include <aws/bedrock-agentcore-control/model/NumericalScaleDefinition.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -83,12 +84,41 @@ class RatingScale {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> A list of dimensions that lets an LLM-as-a-judge evaluator score several
+   * dimensions of the same target in a single evaluation. Each dimension has its own
+   * instruction and rating scale, and produces its own result. </p>
+   */
+  inline const Aws::Vector<EvaluationDimension>& GetMultiDimensional() const { return m_multiDimensional; }
+  inline bool MultiDimensionalHasBeenSet() const { return m_multiDimensionalHasBeenSet; }
+  template <typename MultiDimensionalT = Aws::Vector<EvaluationDimension>>
+  void SetMultiDimensional(MultiDimensionalT&& value) {
+    m_multiDimensionalHasBeenSet = true;
+    m_multiDimensional = std::forward<MultiDimensionalT>(value);
+  }
+  template <typename MultiDimensionalT = Aws::Vector<EvaluationDimension>>
+  RatingScale& WithMultiDimensional(MultiDimensionalT&& value) {
+    SetMultiDimensional(std::forward<MultiDimensionalT>(value));
+    return *this;
+  }
+  template <typename MultiDimensionalT = EvaluationDimension>
+  RatingScale& AddMultiDimensional(MultiDimensionalT&& value) {
+    m_multiDimensionalHasBeenSet = true;
+    m_multiDimensional.emplace_back(std::forward<MultiDimensionalT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<NumericalScaleDefinition> m_numerical;
 
   Aws::Vector<CategoricalScaleDefinition> m_categorical;
+
+  Aws::Vector<EvaluationDimension> m_multiDimensional;
   bool m_numericalHasBeenSet = false;
   bool m_categoricalHasBeenSet = false;
+  bool m_multiDimensionalHasBeenSet = false;
 };
 
 }  // namespace Model

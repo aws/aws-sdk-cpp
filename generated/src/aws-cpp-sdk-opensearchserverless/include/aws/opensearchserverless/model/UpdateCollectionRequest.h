@@ -9,6 +9,7 @@
 #include <aws/opensearchserverless/OpenSearchServerlessRequest.h>
 #include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
 #include <aws/opensearchserverless/model/DeletionProtection.h>
+#include <aws/opensearchserverless/model/EncryptionConfig.h>
 #include <aws/opensearchserverless/model/VectorOptions.h>
 
 #include <utility>
@@ -106,6 +107,22 @@ class UpdateCollectionRequest : public OpenSearchServerlessRequest {
   ///@}
 
   ///@{
+
+  inline const EncryptionConfig& GetEncryptionConfig() const { return m_encryptionConfig; }
+  inline bool EncryptionConfigHasBeenSet() const { return m_encryptionConfigHasBeenSet; }
+  template <typename EncryptionConfigT = EncryptionConfig>
+  void SetEncryptionConfig(EncryptionConfigT&& value) {
+    m_encryptionConfigHasBeenSet = true;
+    m_encryptionConfig = std::forward<EncryptionConfigT>(value);
+  }
+  template <typename EncryptionConfigT = EncryptionConfig>
+  UpdateCollectionRequest& WithEncryptionConfig(EncryptionConfigT&& value) {
+    SetEncryptionConfig(std::forward<EncryptionConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
   /**
    * <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
    */
@@ -131,11 +148,14 @@ class UpdateCollectionRequest : public OpenSearchServerlessRequest {
 
   DeletionProtection m_deletionProtection{DeletionProtection::NOT_SET};
 
+  EncryptionConfig m_encryptionConfig;
+
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_idHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_vectorOptionsHasBeenSet = false;
   bool m_deletionProtectionHasBeenSet = false;
+  bool m_encryptionConfigHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

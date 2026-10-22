@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Glue {
 namespace Model {
-enum class WorkerType { NOT_SET, Standard, G_1X, G_2X, G_025X, G_4X, G_8X, Z_2X };
+enum class WorkerType { NOT_SET, Standard, G_1X, G_2X, G_4X, G_8X, G_025X, Z_2X, G_12X, G_16X, R_1X, R_2X, R_4X, R_8X };
 
 namespace WorkerTypeMapper {
 AWS_GLUE_API WorkerType GetWorkerTypeForName(const Aws::String& name);

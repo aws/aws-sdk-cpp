@@ -91,7 +91,27 @@ class ListCoreNetworkRoutingInformationRequest : public NetworkManagerRequest {
 
   ///@{
   /**
-   * <p>Filters to apply based on next hop information.</p>
+   * <p>Filters to apply based on next hop information. Each filter value must
+   * exactly match the corresponding next hop value. Values for the same filter are
+   * joined with OR, and different filters are joined with AND. The following filters
+   * are supported:</p> <ul> <li> <p> <code>core-network-attachment-id</code>: The ID
+   * of the core network attachment for the next hop, for example
+   * <code>attachment-0123456789abcdef0</code>.</p> </li> <li> <p>
+   * <code>segment-name</code>: The name of the segment for the next hop.</p> </li>
+   * <li> <p> <code>edge-location</code>: The edge location for the next hop, for
+   * example <code>us-east-1</code>.</p> </li> <li> <p> <code>resource-id</code>: The
+   * ID of the resource for the next hop.</p> </li> <li> <p>
+   * <code>resource-type</code>: The type of resource for the next hop. The possible
+   * values are <code>vpc</code>, <code>vpn</code>, <code>connect-peer</code>,
+   * <code>direct-connect-gateway</code>, <code>transit-gateway-route-table</code>,
+   * <code>attachment</code>, and <code>blackhole</code>.</p> </li> <li> <p>
+   * <code>ip-address</code>: The IP address of the next hop. For a Site-to-Site VPN
+   * next hop, this is the outside IP address of the AWS side of the VPN tunnel. For
+   * a Connect peer next hop, this is the core network BGP address of the Connect
+   * peer. The value must be a single IPv4 or IPv6 address.</p> </li> </ul> <p>You
+   * can specify up to 10 filter values in total across <code>NextHopFilters</code>
+   * and the other match parameters in the request. Each filter value can be up to
+   * 256 characters.</p>
    */
   inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetNextHopFilters() const { return m_nextHopFilters; }
   inline bool NextHopFiltersHasBeenSet() const { return m_nextHopFiltersHasBeenSet; }
@@ -109,6 +129,105 @@ class ListCoreNetworkRoutingInformationRequest : public NetworkManagerRequest {
   ListCoreNetworkRoutingInformationRequest& AddNextHopFilters(NextHopFiltersKeyT&& key, NextHopFiltersValueT&& value) {
     m_nextHopFiltersHasBeenSet = true;
     m_nextHopFilters.emplace(std::forward<NextHopFiltersKeyT>(key), std::forward<NextHopFiltersValueT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Exact prefix values to match when filtering routing information.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetExactPrefixMatches() const { return m_exactPrefixMatches; }
+  inline bool ExactPrefixMatchesHasBeenSet() const { return m_exactPrefixMatchesHasBeenSet; }
+  template <typename ExactPrefixMatchesT = Aws::Vector<Aws::String>>
+  void SetExactPrefixMatches(ExactPrefixMatchesT&& value) {
+    m_exactPrefixMatchesHasBeenSet = true;
+    m_exactPrefixMatches = std::forward<ExactPrefixMatchesT>(value);
+  }
+  template <typename ExactPrefixMatchesT = Aws::Vector<Aws::String>>
+  ListCoreNetworkRoutingInformationRequest& WithExactPrefixMatches(ExactPrefixMatchesT&& value) {
+    SetExactPrefixMatches(std::forward<ExactPrefixMatchesT>(value));
+    return *this;
+  }
+  template <typename ExactPrefixMatchesT = Aws::String>
+  ListCoreNetworkRoutingInformationRequest& AddExactPrefixMatches(ExactPrefixMatchesT&& value) {
+    m_exactPrefixMatchesHasBeenSet = true;
+    m_exactPrefixMatches.emplace_back(std::forward<ExactPrefixMatchesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Filters routing information based on the longest prefix that matches each
+   * provided IP address.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetLongestPrefixMatches() const { return m_longestPrefixMatches; }
+  inline bool LongestPrefixMatchesHasBeenSet() const { return m_longestPrefixMatchesHasBeenSet; }
+  template <typename LongestPrefixMatchesT = Aws::Vector<Aws::String>>
+  void SetLongestPrefixMatches(LongestPrefixMatchesT&& value) {
+    m_longestPrefixMatchesHasBeenSet = true;
+    m_longestPrefixMatches = std::forward<LongestPrefixMatchesT>(value);
+  }
+  template <typename LongestPrefixMatchesT = Aws::Vector<Aws::String>>
+  ListCoreNetworkRoutingInformationRequest& WithLongestPrefixMatches(LongestPrefixMatchesT&& value) {
+    SetLongestPrefixMatches(std::forward<LongestPrefixMatchesT>(value));
+    return *this;
+  }
+  template <typename LongestPrefixMatchesT = Aws::String>
+  ListCoreNetworkRoutingInformationRequest& AddLongestPrefixMatches(LongestPrefixMatchesT&& value) {
+    m_longestPrefixMatchesHasBeenSet = true;
+    m_longestPrefixMatches.emplace_back(std::forward<LongestPrefixMatchesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Prefix values to filter routing information whose prefix is a subnet of the
+   * prefixes provided.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetSubnetOfMatches() const { return m_subnetOfMatches; }
+  inline bool SubnetOfMatchesHasBeenSet() const { return m_subnetOfMatchesHasBeenSet; }
+  template <typename SubnetOfMatchesT = Aws::Vector<Aws::String>>
+  void SetSubnetOfMatches(SubnetOfMatchesT&& value) {
+    m_subnetOfMatchesHasBeenSet = true;
+    m_subnetOfMatches = std::forward<SubnetOfMatchesT>(value);
+  }
+  template <typename SubnetOfMatchesT = Aws::Vector<Aws::String>>
+  ListCoreNetworkRoutingInformationRequest& WithSubnetOfMatches(SubnetOfMatchesT&& value) {
+    SetSubnetOfMatches(std::forward<SubnetOfMatchesT>(value));
+    return *this;
+  }
+  template <typename SubnetOfMatchesT = Aws::String>
+  ListCoreNetworkRoutingInformationRequest& AddSubnetOfMatches(SubnetOfMatchesT&& value) {
+    m_subnetOfMatchesHasBeenSet = true;
+    m_subnetOfMatches.emplace_back(std::forward<SubnetOfMatchesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Prefix values to filter routing information whose prefix is a supernet of the
+   * prefixes provided.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetSupernetOfMatches() const { return m_supernetOfMatches; }
+  inline bool SupernetOfMatchesHasBeenSet() const { return m_supernetOfMatchesHasBeenSet; }
+  template <typename SupernetOfMatchesT = Aws::Vector<Aws::String>>
+  void SetSupernetOfMatches(SupernetOfMatchesT&& value) {
+    m_supernetOfMatchesHasBeenSet = true;
+    m_supernetOfMatches = std::forward<SupernetOfMatchesT>(value);
+  }
+  template <typename SupernetOfMatchesT = Aws::Vector<Aws::String>>
+  ListCoreNetworkRoutingInformationRequest& WithSupernetOfMatches(SupernetOfMatchesT&& value) {
+    SetSupernetOfMatches(std::forward<SupernetOfMatchesT>(value));
+    return *this;
+  }
+  template <typename SupernetOfMatchesT = Aws::String>
+  ListCoreNetworkRoutingInformationRequest& AddSupernetOfMatches(SupernetOfMatchesT&& value) {
+    m_supernetOfMatchesHasBeenSet = true;
+    m_supernetOfMatches.emplace_back(std::forward<SupernetOfMatchesT>(value));
     return *this;
   }
   ///@}
@@ -253,6 +372,14 @@ class ListCoreNetworkRoutingInformationRequest : public NetworkManagerRequest {
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_nextHopFilters;
 
+  Aws::Vector<Aws::String> m_exactPrefixMatches;
+
+  Aws::Vector<Aws::String> m_longestPrefixMatches;
+
+  Aws::Vector<Aws::String> m_subnetOfMatches;
+
+  Aws::Vector<Aws::String> m_supernetOfMatches;
+
   Aws::Vector<Aws::String> m_localPreferenceMatches;
 
   Aws::Vector<Aws::String> m_exactAsPathMatches;
@@ -268,6 +395,10 @@ class ListCoreNetworkRoutingInformationRequest : public NetworkManagerRequest {
   bool m_segmentNameHasBeenSet = false;
   bool m_edgeLocationHasBeenSet = false;
   bool m_nextHopFiltersHasBeenSet = false;
+  bool m_exactPrefixMatchesHasBeenSet = false;
+  bool m_longestPrefixMatchesHasBeenSet = false;
+  bool m_subnetOfMatchesHasBeenSet = false;
+  bool m_supernetOfMatchesHasBeenSet = false;
   bool m_localPreferenceMatchesHasBeenSet = false;
   bool m_exactAsPathMatchesHasBeenSet = false;
   bool m_medMatchesHasBeenSet = false;

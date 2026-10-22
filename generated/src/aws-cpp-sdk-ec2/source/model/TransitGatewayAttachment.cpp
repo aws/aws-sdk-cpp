@@ -82,6 +82,12 @@ TransitGatewayAttachment& TransitGatewayAttachment::operator=(const XmlNode& xml
 
       m_tagsHasBeenSet = true;
     }
+    XmlNode natGatewaySupportNode = resultNode.FirstChild("natGatewaySupport");
+    if (!natGatewaySupportNode.IsNull()) {
+      m_natGatewaySupport = TransitGatewayAttachmentNatGatewaySupportStateMapper::GetTransitGatewayAttachmentNatGatewaySupportStateForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(natGatewaySupportNode.GetText()).c_str()));
+      m_natGatewaySupportHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -143,6 +149,14 @@ void TransitGatewayAttachment::OutputToStream(Aws::OStream& oStream, const char*
       item.OutputToStream(oStream, tagsSs.str().c_str());
     }
   }
+
+  if (m_natGatewaySupportHasBeenSet) {
+    oStream << location << index << locationValue << ".NatGatewaySupport="
+            << StringUtils::URLEncode(
+                   TransitGatewayAttachmentNatGatewaySupportStateMapper::GetNameForTransitGatewayAttachmentNatGatewaySupportState(
+                       m_natGatewaySupport))
+            << "&";
+  }
 }
 
 void TransitGatewayAttachment::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -188,6 +202,13 @@ void TransitGatewayAttachment::OutputToStream(Aws::OStream& oStream, const char*
       tagsSs << location << ".TagSet." << tagsIdx++;
       item.OutputToStream(oStream, tagsSs.str().c_str());
     }
+  }
+  if (m_natGatewaySupportHasBeenSet) {
+    oStream << location << ".NatGatewaySupport="
+            << StringUtils::URLEncode(
+                   TransitGatewayAttachmentNatGatewaySupportStateMapper::GetNameForTransitGatewayAttachmentNatGatewaySupportState(
+                       m_natGatewaySupport))
+            << "&";
   }
 }
 

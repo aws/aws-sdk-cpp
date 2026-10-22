@@ -70,8 +70,9 @@ class UpdateCollectionGroupRequest : public OpenSearchServerlessRequest {
 
   ///@{
   /**
-   * <p>Updated capacity limits for the collection group, in OpenSearch Compute Units
-   * (OCUs).</p>
+   * <p>The updated capacity limits for the collection group, in OpenSearch Compute
+   * Units (OCUs). Updates to capacity limits are not incremental. Any field not
+   * specified resets to its default value.</p>
    */
   inline const CollectionGroupCapacityLimits& GetCapacityLimits() const { return m_capacityLimits; }
   inline bool CapacityLimitsHasBeenSet() const { return m_capacityLimitsHasBeenSet; }

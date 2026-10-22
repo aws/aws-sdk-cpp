@@ -9,6 +9,8 @@
 #include <aws/opensearchserverless/model/ListAccessPoliciesPaginationTraits.h>
 #include <aws/opensearchserverless/model/ListCollectionGroupsPaginationTraits.h>
 #include <aws/opensearchserverless/model/ListCollectionsPaginationTraits.h>
+#include <aws/opensearchserverless/model/ListIngestionJobsPaginationTraits.h>
+#include <aws/opensearchserverless/model/ListIngestionStreamsPaginationTraits.h>
 #include <aws/opensearchserverless/model/ListLifecyclePoliciesPaginationTraits.h>
 #include <aws/opensearchserverless/model/ListSecurityConfigsPaginationTraits.h>
 #include <aws/opensearchserverless/model/ListSecurityPoliciesPaginationTraits.h>
@@ -25,6 +27,12 @@ using ListCollectionGroupsPaginator =
                                       Pagination::ListCollectionGroupsPaginationTraits<OpenSearchServerlessClient>>;
 using ListCollectionsPaginator = Aws::Utils::Pagination::Paginator<OpenSearchServerlessClient, Model::ListCollectionsRequest,
                                                                    Pagination::ListCollectionsPaginationTraits<OpenSearchServerlessClient>>;
+using ListIngestionJobsPaginator =
+    Aws::Utils::Pagination::Paginator<OpenSearchServerlessClient, Model::ListIngestionJobsRequest,
+                                      Pagination::ListIngestionJobsPaginationTraits<OpenSearchServerlessClient>>;
+using ListIngestionStreamsPaginator =
+    Aws::Utils::Pagination::Paginator<OpenSearchServerlessClient, Model::ListIngestionStreamsRequest,
+                                      Pagination::ListIngestionStreamsPaginationTraits<OpenSearchServerlessClient>>;
 using ListLifecyclePoliciesPaginator =
     Aws::Utils::Pagination::Paginator<OpenSearchServerlessClient, Model::ListLifecyclePoliciesRequest,
                                       Pagination::ListLifecyclePoliciesPaginationTraits<OpenSearchServerlessClient>>;

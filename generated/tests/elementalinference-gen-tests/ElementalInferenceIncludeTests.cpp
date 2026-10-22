@@ -28,6 +28,8 @@
 #include <aws/elementalinference/model/CreateFeedRequest.h>
 #include <aws/elementalinference/model/CreateFeedResult.h>
 #include <aws/elementalinference/model/CreateOutput.h>
+#include <aws/elementalinference/model/CreateScheduleActionRequest.h>
+#include <aws/elementalinference/model/CreateScheduleActionResult.h>
 #include <aws/elementalinference/model/CroppingConfig.h>
 #include <aws/elementalinference/model/DataSourceConfiguration.h>
 #include <aws/elementalinference/model/DataSourceSport.h>
@@ -36,6 +38,8 @@
 #include <aws/elementalinference/model/DeleteFeedPolicyRequest.h>
 #include <aws/elementalinference/model/DeleteFeedRequest.h>
 #include <aws/elementalinference/model/DeleteFeedResult.h>
+#include <aws/elementalinference/model/DeleteScheduleActionRequest.h>
+#include <aws/elementalinference/model/DeleteScheduleActionResult.h>
 #include <aws/elementalinference/model/DictionaryLanguage.h>
 #include <aws/elementalinference/model/DictionaryStatus.h>
 #include <aws/elementalinference/model/DictionarySummary.h>
@@ -48,6 +52,7 @@
 #include <aws/elementalinference/model/FeedStatus.h>
 #include <aws/elementalinference/model/FeedSummary.h>
 #include <aws/elementalinference/model/FilterName.h>
+#include <aws/elementalinference/model/FixedModeScheduleActionStartSettings.h>
 #include <aws/elementalinference/model/FixtureSummary.h>
 #include <aws/elementalinference/model/GetDictionaryRequest.h>
 #include <aws/elementalinference/model/GetDictionaryResult.h>
@@ -64,6 +69,9 @@
 #include <aws/elementalinference/model/ListFeedsPaginationTraits.h>
 #include <aws/elementalinference/model/ListFeedsRequest.h>
 #include <aws/elementalinference/model/ListFeedsResult.h>
+#include <aws/elementalinference/model/ListScheduleActionsPaginationTraits.h>
+#include <aws/elementalinference/model/ListScheduleActionsRequest.h>
+#include <aws/elementalinference/model/ListScheduleActionsResult.h>
 #include <aws/elementalinference/model/ListTagsForResourceRequest.h>
 #include <aws/elementalinference/model/ListTagsForResourceResult.h>
 #include <aws/elementalinference/model/OutputConfig.h>
@@ -71,6 +79,13 @@
 #include <aws/elementalinference/model/ProfanityFilterMode.h>
 #include <aws/elementalinference/model/PutFeedPolicyRequest.h>
 #include <aws/elementalinference/model/PutFeedPolicyResult.h>
+#include <aws/elementalinference/model/RemoveClippingDataSourceConfiguration.h>
+#include <aws/elementalinference/model/ScheduleAction.h>
+#include <aws/elementalinference/model/ScheduleActionError.h>
+#include <aws/elementalinference/model/ScheduleActionErrorCode.h>
+#include <aws/elementalinference/model/ScheduleActionOperation.h>
+#include <aws/elementalinference/model/ScheduleActionStartConfiguration.h>
+#include <aws/elementalinference/model/ScheduleActionStatus.h>
 #include <aws/elementalinference/model/SearchFilter.h>
 #include <aws/elementalinference/model/SearchFixturesPaginationTraits.h>
 #include <aws/elementalinference/model/SearchFixturesRequest.h>
@@ -81,11 +96,13 @@
 #include <aws/elementalinference/model/TemplateGroup.h>
 #include <aws/elementalinference/model/TranscriptionLanguage.h>
 #include <aws/elementalinference/model/UntagResourceRequest.h>
+#include <aws/elementalinference/model/UpdateClippingDataSourceConfiguration.h>
 #include <aws/elementalinference/model/UpdateDictionaryRequest.h>
 #include <aws/elementalinference/model/UpdateDictionaryResult.h>
 #include <aws/elementalinference/model/UpdateFeedRequest.h>
 #include <aws/elementalinference/model/UpdateFeedResult.h>
 #include <aws/elementalinference/model/UpdateOutput.h>
+#include <aws/elementalinference/model/UpdateOutputStatus.h>
 
 using ElementalInferenceIncludeTest = ::testing::Test;
 

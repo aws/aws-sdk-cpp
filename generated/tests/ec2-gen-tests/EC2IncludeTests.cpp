@@ -1820,6 +1820,8 @@
 #include <aws/ec2/model/GetSpotPlacementScoresResponse.h>
 #include <aws/ec2/model/GetSubnetCidrReservationsRequest.h>
 #include <aws/ec2/model/GetSubnetCidrReservationsResponse.h>
+#include <aws/ec2/model/GetTransitGatewayAttachmentNatConfigurationRequest.h>
+#include <aws/ec2/model/GetTransitGatewayAttachmentNatConfigurationResponse.h>
 #include <aws/ec2/model/GetTransitGatewayAttachmentPropagationsPaginationTraits.h>
 #include <aws/ec2/model/GetTransitGatewayAttachmentPropagationsRequest.h>
 #include <aws/ec2/model/GetTransitGatewayAttachmentPropagationsResponse.h>
@@ -2387,6 +2389,8 @@
 #include <aws/ec2/model/ModifyTrafficMirrorFilterRuleResponse.h>
 #include <aws/ec2/model/ModifyTrafficMirrorSessionRequest.h>
 #include <aws/ec2/model/ModifyTrafficMirrorSessionResponse.h>
+#include <aws/ec2/model/ModifyTransitGatewayAttachmentNatConfigurationRequest.h>
+#include <aws/ec2/model/ModifyTransitGatewayAttachmentNatConfigurationResponse.h>
 #include <aws/ec2/model/ModifyTransitGatewayMeteringPolicyRequest.h>
 #include <aws/ec2/model/ModifyTransitGatewayMeteringPolicyResponse.h>
 #include <aws/ec2/model/ModifyTransitGatewayOptions.h>
@@ -2993,6 +2997,9 @@
 #include <aws/ec2/model/TransitGatewayAttachment.h>
 #include <aws/ec2/model/TransitGatewayAttachmentAssociation.h>
 #include <aws/ec2/model/TransitGatewayAttachmentBgpConfiguration.h>
+#include <aws/ec2/model/TransitGatewayAttachmentNatGatewaySupportState.h>
+#include <aws/ec2/model/TransitGatewayAttachmentNatGatewaySupportValue.h>
+#include <aws/ec2/model/TransitGatewayAttachmentNatSystemRouteSupportValue.h>
 #include <aws/ec2/model/TransitGatewayAttachmentPropagation.h>
 #include <aws/ec2/model/TransitGatewayAttachmentResourceType.h>
 #include <aws/ec2/model/TransitGatewayAttachmentState.h>
@@ -3023,6 +3030,9 @@
 #include <aws/ec2/model/TransitGatewayMulticastGroup.h>
 #include <aws/ec2/model/TransitGatewayMulticastRegisteredGroupMembers.h>
 #include <aws/ec2/model/TransitGatewayMulticastRegisteredGroupSources.h>
+#include <aws/ec2/model/TransitGatewayNatRule.h>
+#include <aws/ec2/model/TransitGatewayNatRuleRequest.h>
+#include <aws/ec2/model/TransitGatewayNatRuleState.h>
 #include <aws/ec2/model/TransitGatewayOptions.h>
 #include <aws/ec2/model/TransitGatewayPeeringAttachment.h>
 #include <aws/ec2/model/TransitGatewayPeeringAttachmentOptions.h>

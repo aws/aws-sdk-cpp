@@ -12,7 +12,9 @@
 #include <aws/opensearchserverless/model/ListAccessPoliciesPaginationTraits.h>
 #include <aws/opensearchserverless/model/ListCollectionsPaginationTraits.h>
 #include <aws/opensearchserverless/model/ListSecurityConfigsPaginationTraits.h>
+#include <aws/opensearchserverless/model/ListIngestionJobsPaginationTraits.h>
 #include <aws/opensearchserverless/model/ListCollectionGroupsPaginationTraits.h>
+#include <aws/opensearchserverless/model/ListIngestionStreamsPaginationTraits.h>
 #include <aws/opensearchserverless/model/ListLifecyclePoliciesPaginationTraits.h>
 #include <aws/opensearchserverless/model/ListSecurityPoliciesPaginationTraits.h>
 

@@ -30,6 +30,10 @@ Aws::String UpdateConnectorRequest::SerializePayload() const {
     payload.WithObject("connectorConfiguration", std::move(connectorConfigurationJsonMap));
   }
 
+  if (m_skipHealthValidationHasBeenSet) {
+    payload.WithBool("skipHealthValidation", m_skipHealthValidation);
+  }
+
   return payload.View().WriteReadable();
 }
 

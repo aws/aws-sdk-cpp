@@ -32,6 +32,13 @@ RatingScale& RatingScale::operator=(JsonView jsonValue) {
     }
     m_categoricalHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("multiDimensional")) {
+    Aws::Utils::Array<JsonView> multiDimensionalJsonList = jsonValue.GetArray("multiDimensional");
+    for (unsigned multiDimensionalIndex = 0; multiDimensionalIndex < multiDimensionalJsonList.GetLength(); ++multiDimensionalIndex) {
+      m_multiDimensional.push_back(multiDimensionalJsonList[multiDimensionalIndex].AsObject());
+    }
+    m_multiDimensionalHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -52,6 +59,14 @@ JsonValue RatingScale::Jsonize() const {
       categoricalJsonList[categoricalIndex].AsObject(m_categorical[categoricalIndex].Jsonize());
     }
     payload.WithArray("categorical", std::move(categoricalJsonList));
+  }
+
+  if (m_multiDimensionalHasBeenSet) {
+    Aws::Utils::Array<JsonValue> multiDimensionalJsonList(m_multiDimensional.size());
+    for (unsigned multiDimensionalIndex = 0; multiDimensionalIndex < multiDimensionalJsonList.GetLength(); ++multiDimensionalIndex) {
+      multiDimensionalJsonList[multiDimensionalIndex].AsObject(m_multiDimensional[multiDimensionalIndex].Jsonize());
+    }
+    payload.WithArray("multiDimensional", std::move(multiDimensionalJsonList));
   }
 
   return payload;

@@ -30,6 +30,10 @@ EvaluationResultContent& EvaluationResultContent::operator=(JsonView jsonValue) 
     m_evaluatorName = jsonValue.GetString("evaluatorName");
     m_evaluatorNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("evaluationDimensionName")) {
+    m_evaluationDimensionName = jsonValue.GetString("evaluationDimensionName");
+    m_evaluationDimensionNameHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("explanation")) {
     m_explanation = jsonValue.GetString("explanation");
     m_explanationHasBeenSet = true;
@@ -82,6 +86,10 @@ JsonValue EvaluationResultContent::Jsonize() const {
 
   if (m_evaluatorNameHasBeenSet) {
     payload.WithString("evaluatorName", m_evaluatorName);
+  }
+
+  if (m_evaluationDimensionNameHasBeenSet) {
+    payload.WithString("evaluationDimensionName", m_evaluationDimensionName);
   }
 
   if (m_explanationHasBeenSet) {

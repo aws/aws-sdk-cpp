@@ -98,6 +98,7 @@
 #include <aws/connect/model/ListEvaluationFormVersionsPaginationTraits.h>
 #include <aws/connect/model/ListLambdaFunctionsPaginationTraits.h>
 #include <aws/connect/model/ListPhoneNumbersPaginationTraits.h>
+#include <aws/connect/model/ListReplicationFindingsPaginationTraits.h>
 #include <aws/connect/model/ListChildHoursOfOperationsPaginationTraits.h>
 #include <aws/connect/model/SearchAgentStatusesPaginationTraits.h>
 #include <aws/connect/model/SearchVocabulariesPaginationTraits.h>

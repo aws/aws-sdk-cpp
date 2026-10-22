@@ -10,7 +10,7 @@
 namespace Aws {
 namespace KafkaConnect {
 namespace Model {
-enum class ConnectorState { NOT_SET, RUNNING, CREATING, UPDATING, DELETING, FAILED, RESTARTING };
+enum class ConnectorState { NOT_SET, RUNNING, CREATING, UPDATING, DELETING, FAILED, PAUSED, RESTARTING, PAUSING, RESUMING };
 
 namespace ConnectorStateMapper {
 AWS_KAFKACONNECT_API ConnectorState GetConnectorStateForName(const Aws::String& name);

@@ -6,6 +6,7 @@
 #include <aws/connect/ConnectClient.h>
 #include <aws/connect/ConnectEndpointProvider.h>
 #include <aws/connect/ConnectErrorMarshaller.h>
+#include <aws/connect/model/UpdateWorkspacePageRequest.h>
 #include <aws/connect/model/UpdateWorkspaceThemeRequest.h>
 #include <aws/connect/model/UpdateWorkspaceVisibilityRequest.h>
 #include <aws/core/auth/AWSAuthSigner.h>
@@ -33,6 +34,37 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+UpdateWorkspacePageOutcome ConnectClient::UpdateWorkspacePage(const UpdateWorkspacePageRequest& request) const {
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateWorkspacePage", "Required field: InstanceId, is not set");
+    return UpdateWorkspacePageOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                           "Missing required field [InstanceId]", false));
+  }
+  if (!request.WorkspaceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateWorkspacePage", "Required field: WorkspaceId, is not set");
+    return UpdateWorkspacePageOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                           "Missing required field [WorkspaceId]", false));
+  }
+  if (!request.PageHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateWorkspacePage", "Required field: Page, is not set");
+    return UpdateWorkspacePageOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                           "Missing required field [Page]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/pages/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPage());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateWorkspacePageOutcome(result.GetResultWithOwnership())
+                            : UpdateWorkspacePageOutcome(std::move(result.GetError()));
+}
 
 UpdateWorkspaceThemeOutcome ConnectClient::UpdateWorkspaceTheme(const UpdateWorkspaceThemeRequest& request) const {
   if (!request.InstanceIdHasBeenSet()) {

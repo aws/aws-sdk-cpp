@@ -1,0 +1,144 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/continuum/Continuum_EXPORTS.h>
+#include <aws/continuum/model/EnvironmentStatus.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
+#include <utility>
+
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace Continuum {
+namespace Model {
+
+/**
+ * <p>Summary of an environment returned in list responses.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/continuum-2022-07-26/EnvironmentListEntry">AWS
+ * API Reference</a></p>
+ */
+class EnvironmentListEntry {
+ public:
+  AWS_CONTINUUM_API EnvironmentListEntry() = default;
+  AWS_CONTINUUM_API EnvironmentListEntry(Aws::Utils::Json::JsonView jsonValue);
+  AWS_CONTINUUM_API EnvironmentListEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_CONTINUUM_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p>The unique identifier of the environment.</p>
+   */
+  inline const Aws::String& GetEnvironmentId() const { return m_environmentId; }
+  inline bool EnvironmentIdHasBeenSet() const { return m_environmentIdHasBeenSet; }
+  template <typename EnvironmentIdT = Aws::String>
+  void SetEnvironmentId(EnvironmentIdT&& value) {
+    m_environmentIdHasBeenSet = true;
+    m_environmentId = std::forward<EnvironmentIdT>(value);
+  }
+  template <typename EnvironmentIdT = Aws::String>
+  EnvironmentListEntry& WithEnvironmentId(EnvironmentIdT&& value) {
+    SetEnvironmentId(std::forward<EnvironmentIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ARN of the environment.</p>
+   */
+  inline const Aws::String& GetEnvironmentArn() const { return m_environmentArn; }
+  inline bool EnvironmentArnHasBeenSet() const { return m_environmentArnHasBeenSet; }
+  template <typename EnvironmentArnT = Aws::String>
+  void SetEnvironmentArn(EnvironmentArnT&& value) {
+    m_environmentArnHasBeenSet = true;
+    m_environmentArn = std::forward<EnvironmentArnT>(value);
+  }
+  template <typename EnvironmentArnT = Aws::String>
+  EnvironmentListEntry& WithEnvironmentArn(EnvironmentArnT&& value) {
+    SetEnvironmentArn(std::forward<EnvironmentArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The customer-visible name of the environment.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  EnvironmentListEntry& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The current operational status of the environment.</p>
+   */
+  inline EnvironmentStatus GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  inline void SetStatus(EnvironmentStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline EnvironmentListEntry& WithStatus(EnvironmentStatus value) {
+    SetStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp when the environment was created. Preserve the existing
+   * EnvironmentSummary.createdAt date-time wire format.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+  inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  void SetCreatedAt(CreatedAtT&& value) {
+    m_createdAtHasBeenSet = true;
+    m_createdAt = std::forward<CreatedAtT>(value);
+  }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  EnvironmentListEntry& WithCreatedAt(CreatedAtT&& value) {
+    SetCreatedAt(std::forward<CreatedAtT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_environmentId;
+
+  Aws::String m_environmentArn;
+
+  Aws::String m_name;
+
+  EnvironmentStatus m_status{EnvironmentStatus::NOT_SET};
+
+  Aws::Utils::DateTime m_createdAt{};
+  bool m_environmentIdHasBeenSet = false;
+  bool m_environmentArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace Continuum
+}  // namespace Aws

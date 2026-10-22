@@ -184,6 +184,35 @@ class AWS_ELEMENTALINFERENCE_API ElementalInferenceClient : public Aws::Client::
   }
 
   /**
+   * <p>Creates a schedule action on a feed. A schedule action applies configuration
+   * changes to the feed at a time that you specify, in the same way as an UpdateFeed
+   * request. </p> <p>Elemental Inference validates the targets of the action when
+   * you create it.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/CreateScheduleAction">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateScheduleActionOutcome CreateScheduleAction(const Model::CreateScheduleActionRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateScheduleAction that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateScheduleActionRequestT = Model::CreateScheduleActionRequest>
+  Model::CreateScheduleActionOutcomeCallable CreateScheduleActionCallable(const CreateScheduleActionRequestT& request) const {
+    return SubmitCallable(&ElementalInferenceClient::CreateScheduleAction, request);
+  }
+
+  /**
+   * An Async wrapper for CreateScheduleAction that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateScheduleActionRequestT = Model::CreateScheduleActionRequest>
+  void CreateScheduleActionAsync(const CreateScheduleActionRequestT& request, const CreateScheduleActionResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ElementalInferenceClient::CreateScheduleAction, request, handler, context);
+  }
+
+  /**
    * <p>Deletes the specified dictionary. You cannot delete a dictionary that is
    * referenced by a feed. You must first remove the dictionary reference from the
    * feed's subtitling configuration. </p><p><h3>See Also:</h3>   <a
@@ -266,6 +295,36 @@ class AWS_ELEMENTALINFERENCE_API ElementalInferenceClient : public Aws::Client::
   void DeleteFeedPolicyAsync(const DeleteFeedPolicyRequestT& request, const DeleteFeedPolicyResponseReceivedHandler& handler,
                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ElementalInferenceClient::DeleteFeedPolicy, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a schedule action from a feed. A deleted action never runs.</p>
+   * <p>You can delete only an action whose status is PENDING. Deleting an action
+   * doesn't reverse changes that the action already made to the feed. When you
+   * delete or archive a feed, Elemental Inference deletes all the schedule actions
+   * on that feed. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/DeleteScheduleAction">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteScheduleActionOutcome DeleteScheduleAction(const Model::DeleteScheduleActionRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteScheduleAction that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteScheduleActionRequestT = Model::DeleteScheduleActionRequest>
+  Model::DeleteScheduleActionOutcomeCallable DeleteScheduleActionCallable(const DeleteScheduleActionRequestT& request) const {
+    return SubmitCallable(&ElementalInferenceClient::DeleteScheduleAction, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteScheduleAction that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteScheduleActionRequestT = Model::DeleteScheduleActionRequest>
+  void DeleteScheduleActionAsync(const DeleteScheduleActionRequestT& request, const DeleteScheduleActionResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ElementalInferenceClient::DeleteScheduleAction, request, handler, context);
   }
 
   /**
@@ -479,6 +538,36 @@ class AWS_ELEMENTALINFERENCE_API ElementalInferenceClient : public Aws::Client::
                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                       const ListFeedsRequestT& request = {}) const {
     return SubmitAsync(&ElementalInferenceClient::ListFeeds, request, handler, context);
+  }
+
+  /**
+   * <p>Displays a list of the schedule actions on a feed, including the status of
+   * each action and, for a failed action, information about why it failed. </p>
+   * <p>Elemental Inference keeps an action whose status is COMPLETED or FAILED for
+   * about 48 hours after its scheduled time, and then deletes it automatically.
+   * </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/ListScheduleActions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListScheduleActionsOutcome ListScheduleActions(const Model::ListScheduleActionsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListScheduleActions that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListScheduleActionsRequestT = Model::ListScheduleActionsRequest>
+  Model::ListScheduleActionsOutcomeCallable ListScheduleActionsCallable(const ListScheduleActionsRequestT& request) const {
+    return SubmitCallable(&ElementalInferenceClient::ListScheduleActions, request);
+  }
+
+  /**
+   * An Async wrapper for ListScheduleActions that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListScheduleActionsRequestT = Model::ListScheduleActionsRequest>
+  void ListScheduleActionsAsync(const ListScheduleActionsRequestT& request, const ListScheduleActionsResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ElementalInferenceClient::ListScheduleActions, request, handler, context);
   }
 
   /**

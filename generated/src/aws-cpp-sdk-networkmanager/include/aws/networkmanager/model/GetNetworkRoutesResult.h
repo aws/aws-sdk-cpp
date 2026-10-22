@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/networkmanager/NetworkManager_EXPORTS.h>
+#include <aws/networkmanager/model/CoreNetworkNetworkFunctionGroupIdentifier.h>
 #include <aws/networkmanager/model/CoreNetworkSegmentEdgeIdentifier.h>
 #include <aws/networkmanager/model/NetworkRoute.h>
 #include <aws/networkmanager/model/RouteTableType.h>
@@ -62,6 +63,28 @@ class GetNetworkRoutesResult {
   template <typename CoreNetworkSegmentEdgeT = CoreNetworkSegmentEdgeIdentifier>
   GetNetworkRoutesResult& WithCoreNetworkSegmentEdge(CoreNetworkSegmentEdgeT&& value) {
     SetCoreNetworkSegmentEdge(std::forward<CoreNetworkSegmentEdgeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Describes the network function group route table that the routes are from.
+   * This field is present only when you specify
+   * <code>CoreNetworkNetworkFunctionGroup</code> in
+   * <code>RouteTableIdentifier</code>.</p>
+   */
+  inline const CoreNetworkNetworkFunctionGroupIdentifier& GetCoreNetworkNetworkFunctionGroup() const {
+    return m_coreNetworkNetworkFunctionGroup;
+  }
+  template <typename CoreNetworkNetworkFunctionGroupT = CoreNetworkNetworkFunctionGroupIdentifier>
+  void SetCoreNetworkNetworkFunctionGroup(CoreNetworkNetworkFunctionGroupT&& value) {
+    m_coreNetworkNetworkFunctionGroupHasBeenSet = true;
+    m_coreNetworkNetworkFunctionGroup = std::forward<CoreNetworkNetworkFunctionGroupT>(value);
+  }
+  template <typename CoreNetworkNetworkFunctionGroupT = CoreNetworkNetworkFunctionGroupIdentifier>
+  GetNetworkRoutesResult& WithCoreNetworkNetworkFunctionGroup(CoreNetworkNetworkFunctionGroupT&& value) {
+    SetCoreNetworkNetworkFunctionGroup(std::forward<CoreNetworkNetworkFunctionGroupT>(value));
     return *this;
   }
   ///@}
@@ -122,6 +145,23 @@ class GetNetworkRoutesResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The token for the next page of results.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  GetNetworkRoutesResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -142,19 +182,25 @@ class GetNetworkRoutesResult {
 
   CoreNetworkSegmentEdgeIdentifier m_coreNetworkSegmentEdge;
 
+  CoreNetworkNetworkFunctionGroupIdentifier m_coreNetworkNetworkFunctionGroup;
+
   RouteTableType m_routeTableType{RouteTableType::NOT_SET};
 
   Aws::Utils::DateTime m_routeTableTimestamp{};
 
   Aws::Vector<NetworkRoute> m_networkRoutes;
 
+  Aws::String m_nextToken;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_routeTableArnHasBeenSet = false;
   bool m_coreNetworkSegmentEdgeHasBeenSet = false;
+  bool m_coreNetworkNetworkFunctionGroupHasBeenSet = false;
   bool m_routeTableTypeHasBeenSet = false;
   bool m_routeTableTimestampHasBeenSet = false;
   bool m_networkRoutesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

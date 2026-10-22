@@ -34,7 +34,7 @@ class PrefixListAssociation {
 
   ///@{
   /**
-   * <p>The core network id in the association.</p>
+   * <p>The ID of the core network in the association.</p>
    */
   inline const Aws::String& GetCoreNetworkId() const { return m_coreNetworkId; }
   inline bool CoreNetworkIdHasBeenSet() const { return m_coreNetworkIdHasBeenSet; }

@@ -9,6 +9,8 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/networkmanager/NetworkManagerRequest.h>
 #include <aws/networkmanager/NetworkManager_EXPORTS.h>
+#include <aws/networkmanager/model/NatGatewaySupportValue.h>
+#include <aws/networkmanager/model/NatRuleRequest.h>
 #include <aws/networkmanager/model/Tag.h>
 
 #include <utility>
@@ -89,6 +91,71 @@ class CreateSiteToSiteVpnAttachmentRequest : public NetworkManagerRequest {
 
   ///@{
   /**
+   * <p>Specifies whether to enable NAT gateway support on the Site-to-Site VPN
+   * attachment. To enable NAT gateway support, you must also specify at least one
+   * NAT rule. If you don't specify a value, NAT gateway support is disabled. Only
+   * the core network owner can configure NAT on an attachment.</p>
+   */
+  inline NatGatewaySupportValue GetNatGatewaySupport() const { return m_natGatewaySupport; }
+  inline bool NatGatewaySupportHasBeenSet() const { return m_natGatewaySupportHasBeenSet; }
+  inline void SetNatGatewaySupport(NatGatewaySupportValue value) {
+    m_natGatewaySupportHasBeenSet = true;
+    m_natGatewaySupport = value;
+  }
+  inline CreateSiteToSiteVpnAttachmentRequest& WithNatGatewaySupport(NatGatewaySupportValue value) {
+    SetNatGatewaySupport(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether the core network installs system routes for the NAT CIDR
+   * blocks of the attachment's NAT rules. System routes have a route type of
+   * <code>SYSTEM</code>. NAT is applied to traffic whether or not this option is
+   * enabled. The default is <code>true</code> for VPN connections that use BGP and
+   * <code>false</code> for VPN connections that use static routing. If the VPN
+   * connection uses static routing, you must specify <code>false</code> or omit this
+   * parameter.</p>
+   */
+  inline bool GetNatSystemRouteSupport() const { return m_natSystemRouteSupport; }
+  inline bool NatSystemRouteSupportHasBeenSet() const { return m_natSystemRouteSupportHasBeenSet; }
+  inline void SetNatSystemRouteSupport(bool value) {
+    m_natSystemRouteSupportHasBeenSet = true;
+    m_natSystemRouteSupport = value;
+  }
+  inline CreateSiteToSiteVpnAttachmentRequest& WithNatSystemRouteSupport(bool value) {
+    SetNatSystemRouteSupport(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The NAT rules for the Site-to-Site VPN attachment, up to 50 rules.</p>
+   */
+  inline const Aws::Vector<NatRuleRequest>& GetNatGatewayRules() const { return m_natGatewayRules; }
+  inline bool NatGatewayRulesHasBeenSet() const { return m_natGatewayRulesHasBeenSet; }
+  template <typename NatGatewayRulesT = Aws::Vector<NatRuleRequest>>
+  void SetNatGatewayRules(NatGatewayRulesT&& value) {
+    m_natGatewayRulesHasBeenSet = true;
+    m_natGatewayRules = std::forward<NatGatewayRulesT>(value);
+  }
+  template <typename NatGatewayRulesT = Aws::Vector<NatRuleRequest>>
+  CreateSiteToSiteVpnAttachmentRequest& WithNatGatewayRules(NatGatewayRulesT&& value) {
+    SetNatGatewayRules(std::forward<NatGatewayRulesT>(value));
+    return *this;
+  }
+  template <typename NatGatewayRulesT = NatRuleRequest>
+  CreateSiteToSiteVpnAttachmentRequest& AddNatGatewayRules(NatGatewayRulesT&& value) {
+    m_natGatewayRulesHasBeenSet = true;
+    m_natGatewayRules.emplace_back(std::forward<NatGatewayRulesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The tags associated with the request.</p>
    */
   inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
@@ -135,12 +202,21 @@ class CreateSiteToSiteVpnAttachmentRequest : public NetworkManagerRequest {
 
   Aws::String m_routingPolicyLabel;
 
+  NatGatewaySupportValue m_natGatewaySupport{NatGatewaySupportValue::NOT_SET};
+
+  bool m_natSystemRouteSupport{false};
+
+  Aws::Vector<NatRuleRequest> m_natGatewayRules;
+
   Aws::Vector<Tag> m_tags;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_coreNetworkIdHasBeenSet = false;
   bool m_vpnConnectionArnHasBeenSet = false;
   bool m_routingPolicyLabelHasBeenSet = false;
+  bool m_natGatewaySupportHasBeenSet = false;
+  bool m_natSystemRouteSupportHasBeenSet = false;
+  bool m_natGatewayRulesHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };

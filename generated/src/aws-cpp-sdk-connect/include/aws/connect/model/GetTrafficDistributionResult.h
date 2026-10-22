@@ -9,6 +9,7 @@
 #include <aws/connect/model/SignInConfig.h>
 #include <aws/connect/model/TelephonyConfig.h>
 #include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -120,6 +121,25 @@ class GetTrafficDistributionResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The timestamp of the most recent failover for the traffic distribution group.
+   * This value is updated each time <code>UpdateTrafficDistribution</code> is called
+   * to change the traffic distribution.</p>
+   */
+  inline const Aws::Utils::DateTime& GetLastFailoverTime() const { return m_lastFailoverTime; }
+  template <typename LastFailoverTimeT = Aws::Utils::DateTime>
+  void SetLastFailoverTime(LastFailoverTimeT&& value) {
+    m_lastFailoverTimeHasBeenSet = true;
+    m_lastFailoverTime = std::forward<LastFailoverTimeT>(value);
+  }
+  template <typename LastFailoverTimeT = Aws::Utils::DateTime>
+  GetTrafficDistributionResult& WithLastFailoverTime(LastFailoverTimeT&& value) {
+    SetLastFailoverTime(std::forward<LastFailoverTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -146,6 +166,8 @@ class GetTrafficDistributionResult {
 
   AgentConfig m_agentConfig;
 
+  Aws::Utils::DateTime m_lastFailoverTime{};
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_telephonyConfigHasBeenSet = false;
@@ -153,6 +175,7 @@ class GetTrafficDistributionResult {
   bool m_arnHasBeenSet = false;
   bool m_signInConfigHasBeenSet = false;
   bool m_agentConfigHasBeenSet = false;
+  bool m_lastFailoverTimeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

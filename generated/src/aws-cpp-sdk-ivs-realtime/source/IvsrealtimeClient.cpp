@@ -51,6 +51,7 @@
 #include <aws/ivs-realtime/model/ListStagesRequest.h>
 #include <aws/ivs-realtime/model/ListStorageConfigurationsRequest.h>
 #include <aws/ivs-realtime/model/ListTagsForResourceRequest.h>
+#include <aws/ivs-realtime/model/RevokeConnectionTokenRequest.h>
 #include <aws/ivs-realtime/model/StartCompositionRequest.h>
 #include <aws/ivs-realtime/model/StartParticipantReplicationRequest.h>
 #include <aws/ivs-realtime/model/StopCompositionRequest.h>
@@ -552,6 +553,17 @@ ListTagsForResourceOutcome IvsrealtimeClient::ListTagsForResource(const ListTags
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
                             : ListTagsForResourceOutcome(std::move(result.GetError()));
+}
+
+RevokeConnectionTokenOutcome IvsrealtimeClient::RevokeConnectionToken(const RevokeConnectionTokenRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/RevokeConnectionToken");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RevokeConnectionTokenOutcome(result.GetResultWithOwnership())
+                            : RevokeConnectionTokenOutcome(std::move(result.GetError()));
 }
 
 StartCompositionOutcome IvsrealtimeClient::StartComposition(const StartCompositionRequest& request) const {
