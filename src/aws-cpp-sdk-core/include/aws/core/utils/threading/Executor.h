@@ -8,7 +8,6 @@
 #define AWS_EXECUTOR_H
 
 #include <aws/core/Core_EXPORTS.h>
-
 #include <functional>
 
 namespace Aws
