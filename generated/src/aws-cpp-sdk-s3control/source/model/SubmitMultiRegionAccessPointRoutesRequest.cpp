@@ -29,7 +29,7 @@ Aws::String SubmitMultiRegionAccessPointRoutesRequest::SerializePayload() const 
     }
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToCompactString();
 }
 
 Aws::Http::HeaderValueCollection SubmitMultiRegionAccessPointRoutesRequest::GetRequestSpecificHeaders() const {
