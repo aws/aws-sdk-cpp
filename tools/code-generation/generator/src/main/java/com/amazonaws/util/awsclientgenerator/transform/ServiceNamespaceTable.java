@@ -16,15 +16,16 @@ import java.util.Collections;
 import java.util.Map;
 
 /**
- * Static, checked-in table that preserves the C++ SDK service namespaces released before
- * Revision 2 of the Service ID SEP (seps/accepted/shared/service-id.md) that diverge from the
- * namespace derived from the service's codegen id ("serviceId").
+ * Static, checked-in table that preserves the C++ SDK service namespaces that diverge from the
+ * namespace derived from the service's {@code "serviceId"} (so previously released names stay
+ * stable).
  *
- * <p>The table is keyed by the exact, untransformed "serviceId" and is loaded from the shared
- * data file {@code service-namespace-table.json}, which is the single source of truth shared
- * with the Smithy generator. The SEP forbids keying on a docgen id, an endpoint prefix, or a
- * model file name, and forbids deriving the preserved value from any of those; the values here
- * are frozen literals, not computed from model metadata at generation time.
+ * <p>The table is keyed by the exact, untransformed {@code "serviceId"} and is loaded from the
+ * shared data file {@code service-namespace-table.json}, which is the single source of truth
+ * shared with the Smithy generator. Identifiers are derived from {@code "serviceId"} only, never
+ * from the display-name fields ({@code serviceAbbreviation}/{@code serviceFullName}), the endpoint
+ * prefix, or the model file name; the values here are frozen literals, not computed from model
+ * metadata at generation time.
  */
 public final class ServiceNamespaceTable {
 

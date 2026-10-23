@@ -21,8 +21,8 @@
             <resource>
                 <directory>src/main/resources</directory>
             </resource>
-            <!-- Shared Service ID SEP identifier table, single source of truth shared with the
-                 Smithy generator. Bundled onto the classpath so ServiceNamespaceTable can load it. -->
+            <!-- Shared service-id -> namespace identifier table, single source of truth shared with
+                 the Smithy generator. Bundled onto the classpath so ServiceNamespaceTable can load it. -->
             <resource>
                 <directory>../shared</directory>
                 <includes>

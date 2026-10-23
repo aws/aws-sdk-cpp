@@ -52,10 +52,10 @@ public class C2jModelToGeneratorModelTransformer {
         UNSUPPORTEDHTMLTAGS.add("</important>");
     }
 
-    // SEP exception: a few ancient models carry no "serviceId" at all, so their namespace cannot
-    // be keyed by one (the Service ID SEP forbids keying on a docgen id, endpoint prefix, or model
-    // file name). Their already-released namespaces are therefore preserved by model (service)
-    // name. Every other preserved namespace lives in the shared, serviceId-keyed identifier table
+    // A few ancient models carry no "serviceId" at all, so their namespace cannot be keyed by one
+    // (identifiers must not be keyed on a display name, endpoint prefix, or model file name). Their
+    // already-released namespaces are therefore preserved by model (service) name. Every other
+    // preserved namespace lives in the shared, serviceId-keyed identifier table
     // (service-namespace-table.json via ServiceNamespaceTable).
     private static final Map<String, String> SERVICE_ID_LESS_NAMESPACES = new HashMap<>();
     static {
@@ -268,10 +268,10 @@ public class C2jModelToGeneratorModelTransformer {
         metadata.setGlobalEndpoint(c2jMetadata.getGlobalEndpoint());
         metadata.setTimestampFormat(c2jMetadata.getTimestampFormat());
 
-        // Service namespace is derived from the codegen id ("serviceId") ONLY, per Revision 2 of
-        // the Service ID SEP. Docgen ids (serviceAbbreviation / serviceFullName) MUST NOT be read
-        // to derive it. Names released before that revision that diverge from the serviceId-derived
-        // name are preserved via the static, serviceId-keyed identifier table (ServiceNamespaceTable).
+        // Service namespace is derived from the service id ("serviceId") ONLY. The display-name
+        // fields (serviceAbbreviation / serviceFullName) MUST NOT be read to derive it. Names that
+        // diverge from the serviceId-derived name are preserved via the static, serviceId-keyed
+        // identifier table (ServiceNamespaceTable).
         metadata.setNamespace(deriveNamespace(c2jMetadata, this.c2jServiceModel.getServiceName()));
 
         metadata.setServiceId(c2jMetadata.getServiceId() != null ? c2jMetadata.getServiceId() : c2jMetadata.getEndpointPrefix());
@@ -978,20 +978,20 @@ public class C2jModelToGeneratorModelTransformer {
     }
 
     /**
-     * Derive the service namespace from the codegen id ("serviceId") only, consulting the frozen,
+     * Derive the service namespace from the service id ("serviceId") only, consulting the frozen,
      * serviceId-keyed identifier table (ServiceNamespaceTable) for already-released names that
-     * diverge from it. See the Service ID SEP (seps/accepted/shared/service-id.md).
+     * diverge from it.
      *
      * @param c2jMetadata      the raw C2J metadata for the service
      * @param serviceModelName the model (service) name, used only for S3-CRT and for the two
-     *                         serviceId-less SEP exceptions; never used to derive a tabled value
+     *                         serviceId-less exceptions; never used to derive a tabled value
      */
     String deriveNamespace(C2jMetadata c2jMetadata, String serviceModelName) {
         // S3-CRT is a projection of s3 with no model of its own.
         if ("S3-CRT".equalsIgnoreCase(serviceModelName)) {
             return "S3Crt";
         }
-        // SEP exception: pre-serviceId models (see SERVICE_ID_LESS_NAMESPACES).
+        // Exception: pre-serviceId models (see SERVICE_ID_LESS_NAMESPACES).
         String serviceIdLess = SERVICE_ID_LESS_NAMESPACES.get(serviceModelName);
         if (serviceIdLess != null) {
             return serviceIdLess;
@@ -1007,7 +1007,7 @@ public class C2jModelToGeneratorModelTransformer {
             return preserved;
         }
         String derived = sanitizeServiceAbbreviation(serviceId);
-        // SEP uniqueness guard: a serviceId-derived name must never collide with a preserved one.
+        // Uniqueness guard: a serviceId-derived name must never collide with a preserved one.
         if (ServiceNamespaceTable.isReservedNamespace(derived)) {
             throw new SourceGenerationFailedException(String.format(
                     "Derived namespace '%s' for serviceId '%s' collides with a reserved namespace "

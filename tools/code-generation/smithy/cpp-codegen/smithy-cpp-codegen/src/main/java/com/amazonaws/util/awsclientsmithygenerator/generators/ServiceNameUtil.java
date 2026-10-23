@@ -16,10 +16,10 @@ public final class ServiceNameUtil {
     private static final String S3_CRT_PROJECTION_PREFIX = "s3-crt";
     private static final String S3_CRT_NAMESPACE = "S3Crt";
     
-    // SEP exception: legacy services with NO serviceId in their C2J model (generated as Smithy
-    // "mock" projections). They cannot be keyed by serviceId, so their already-released namespaces
-    // are preserved here, keyed by the normalized (sanitized, lower-cased) sdkId. Every other
-    // preserved namespace lives in the shared, serviceId-keyed table (ServiceNamespaceTable).
+    // Legacy services with NO serviceId in their C2J model (generated as Smithy "mock" projections).
+    // They cannot be keyed by serviceId, so their already-released namespaces are preserved here,
+    // keyed by the normalized (sanitized, lower-cased) sdkId. Every other preserved namespace lives
+    // in the shared, serviceId-keyed table (ServiceNamespaceTable).
     private static final Map<String, String> SERVICE_ID_LESS_NAMESPACES = Map.ofEntries(
         Map.entry("importexport", "ImportExport"),
         Map.entry("simpledb", "SimpleDB")
@@ -31,9 +31,9 @@ public final class ServiceNameUtil {
             return S3_CRT_NAMESPACE;
         }
 
-        // Namespace is derived from the codegen id (sdkId == C2J serviceId) ONLY, per Revision 2 of
-        // the Service ID SEP. Docgen ids (smithy.api#title) MUST NOT be read. Pre-rev2 names that
-        // diverge from the sdkId-derived name are preserved via the shared identifier table.
+        // Namespace is derived from the service id (sdkId == C2J serviceId) ONLY. The display name
+        // (smithy.api#title) MUST NOT be read. Names that diverge from the sdkId-derived name are
+        // preserved via the shared identifier table.
         String serviceId = service.getTrait(ServiceTrait.class)
             .map(ServiceTrait::getSdkId)
             .orElse(service.getId().getName());
@@ -41,19 +41,19 @@ public final class ServiceNameUtil {
         String sanitized = sanitizeServiceAbbreviation(serviceId);
         String key = sanitized.toLowerCase();
 
-        // SEP exception: serviceId-less legacy (mock) services.
+        // Exception: serviceId-less legacy (mock) services.
         String exception = SERVICE_ID_LESS_NAMESPACES.get(key);
         if (exception != null) {
             return exception;
         }
 
-        // Preserved divergent name from the shared Service ID SEP table (keyed by serviceId).
+        // Preserved divergent name from the shared, serviceId-keyed table.
         String preserved = ServiceNamespaceTable.getByNormalizedKey(key);
         if (preserved != null) {
             return preserved;
         }
 
-        // SEP uniqueness guard: a sdkId-derived name must never collide with a preserved one.
+        // Uniqueness guard: a sdkId-derived name must never collide with a preserved one.
         if (ServiceNamespaceTable.isReservedNamespace(sanitized)) {
             throw new IllegalStateException(String.format(
                 "Derived namespace '%s' for serviceId '%s' collides with a reserved namespace in %s",
