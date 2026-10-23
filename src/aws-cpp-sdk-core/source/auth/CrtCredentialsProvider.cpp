@@ -36,17 +36,18 @@ AWSCredentials CrtCredentialsProvider::RetrieveForCache() {
 CrtCredentialsProvider::CrtCredentialsProvider(
     const std::function<std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider>()>& credentialsProviderFactory,
     std::chrono::milliseconds providerFuturesTimeoutMs, Aws::Client::UserAgentFeature userAgentFeature, const Aws::String& providerName)
-    : CrtCredentialsProvider(credentialsProviderFactory, providerFuturesTimeoutMs, userAgentFeature, providerName, true) {}
+    : CrtCredentialsProvider(credentialsProviderFactory, providerFuturesTimeoutMs, userAgentFeature, providerName,
+                             Aws::Internal::RefreshFailurePolicy::StaticStability) {}
 
 CrtCredentialsProvider::CrtCredentialsProvider(
     const std::function<std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider>()>& credentialsProviderFactory,
     std::chrono::milliseconds providerFuturesTimeoutMs, Aws::Client::UserAgentFeature userAgentFeature, const Aws::String& providerName,
-    bool staticStability)
+    Aws::Internal::RefreshFailurePolicy failurePolicy)
     : m_credentialsProvider{credentialsProviderFactory()},
       m_providerFuturesTimeoutMs{providerFuturesTimeoutMs},
       m_userAgentFeature{userAgentFeature},
       m_providerName{providerName},
-      m_cachingProvider{Aws::MakeShared<Aws::Internal::CredentialsCachingProvider>(CRT_CREDS_PROVIDER_TAG, [this]() { return RetrieveForCache(); }, staticStability)} {
+      m_cachingProvider{Aws::MakeShared<Aws::Internal::CredentialsCachingProvider>(CRT_CREDS_PROVIDER_TAG, [this]() { return RetrieveForCache(); }, failurePolicy)} {
   if (m_credentialsProvider && m_credentialsProvider->IsValid()) {
     m_state = STATE::INITIALIZED;
   }

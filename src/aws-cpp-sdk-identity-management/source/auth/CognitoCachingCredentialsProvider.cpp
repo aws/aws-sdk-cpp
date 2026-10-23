@@ -110,7 +110,12 @@ void CognitoCachingCredentialsProvider::OnLoginsUpdated(const PersistentCognitoI
 {
     AWS_LOGSTREAM_INFO(LOG_TAG, "Logins Updated in the identity repository, resetting the expiry to force a refresh on the next run.");
     m_expiry.store(DateTime().SecondsWithMSPrecision());
-    m_cachingProvider->Invalidate(m_cachingProvider->GetAWSCredentials().GetAWSAccessKeyId());
+    Aws::String accessKeyId;
+    {
+        std::lock_guard<std::mutex> locker(m_credsMutex);
+        accessKeyId = m_cachedCredentials.GetAWSAccessKeyId();
+    }
+    m_cachingProvider->Invalidate(accessKeyId);
 }
 
 

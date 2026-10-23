@@ -7,6 +7,7 @@
 
 #include <aws/core/Core_EXPORTS.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
+#include <aws/core/internal/CredentialsCachingProvider.h>
 
 #include <atomic>
 #include <memory>
@@ -45,7 +46,7 @@ class AWS_CORE_API CrtCredentialsProvider : public AWSCredentialsProvider {
  protected:
   CrtCredentialsProvider(const std::function<std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider>()>& credentialsProviderFactory,
                          std::chrono::milliseconds providerFuturesTimeoutMs, Aws::Client::UserAgentFeature userAgentFeature,
-                         const Aws::String& providerName, bool staticStability);
+                         const Aws::String& providerName, Aws::Internal::RefreshFailurePolicy failurePolicy);
 
  private:
   enum class STATE {

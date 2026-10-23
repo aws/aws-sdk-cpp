@@ -18,6 +18,15 @@ namespace Aws
         class CredentialsCachingStateImpl;
 
         /**
+         * RefreshFailurePolicy picks what CredentialsCachingProvider serves after a failed refresh.
+         */
+        enum class RefreshFailurePolicy
+        {
+            StaticStability,
+            ServeUntilExpiry
+        };
+
+        /**
          * CredentialsCachingProvider caches another provider's credentials and refreshes them per the refresh lifecycle.
          */
         class AWS_CORE_API CredentialsCachingProvider final : public Aws::Auth::AWSCredentialsProvider
@@ -25,10 +34,8 @@ namespace Aws
         public:
             using RetrieveFunction = std::function<Aws::Auth::AWSCredentials()>;
 
-            /**
-             * CredentialsCachingProvider serves expired credentials after a failed refresh only when staticStability is set.
-             */
-            explicit CredentialsCachingProvider(RetrieveFunction retrieve, bool staticStability = true);
+            explicit CredentialsCachingProvider(RetrieveFunction retrieve,
+                                                RefreshFailurePolicy failurePolicy = RefreshFailurePolicy::StaticStability);
 
             Aws::Auth::AWSCredentials GetAWSCredentials() override;
 

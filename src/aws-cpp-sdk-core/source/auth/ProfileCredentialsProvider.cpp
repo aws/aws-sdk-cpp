@@ -7,6 +7,7 @@
 #include <aws/core/auth/ProfileCredentialsProvider.h>
 #include <aws/core/client/UserAgent.h>
 #include <aws/core/config/ConfigAndCredentialsCacheManager.h>
+#include <aws/core/internal/CredentialsCachingProvider.h>
 #include <aws/core/platform/Environment.h>
 #include <aws/core/platform/FileSystem.h>
 #include <aws/crt/auth/Credentials.h>
@@ -58,6 +59,12 @@ bool UsesCredentialProcess(const Aws::String& profileName) {
                              !credentials.GetCredentials().GetAWSAccessKeyId().empty() || !credentials.GetCredentials().GetAWSSecretKey().empty();
   return hasProcess && !hasRoleArn && !hasStaticKeys;
 }
+
+// FailurePolicyFor serves credential_process credentials only until they expire.
+Aws::Internal::RefreshFailurePolicy FailurePolicyFor(const Aws::String& profileName) {
+  return UsesCredentialProcess(profileName) ? Aws::Internal::RefreshFailurePolicy::ServeUntilExpiry
+                                            : Aws::Internal::RefreshFailurePolicy::StaticStability;
+}
 }  // namespace
 
 class ProfileCredentialsProvider::ProfileCredentialsProviderImp : public CrtCredentialsProvider {
@@ -69,7 +76,7 @@ class ProfileCredentialsProvider::ProfileCredentialsProviderImp : public CrtCred
               return CredentialsProvider::CreateCredentialsProviderProfile(config);
             },
             std::chrono::milliseconds(DEFAULT_REFRESH_RATE_MS), UserAgentFeature::CREDENTIALS_PROFILE, "ProfileCredentialsProvider",
-            !UsesCredentialProcess(GetConfigProfileName())) {}
+            FailurePolicyFor(GetConfigProfileName())) {}
 
   ProfileCredentialsProviderImp(const Aws::Client::ClientConfiguration::CredentialProviderConfiguration& credentialsConfig)
       : CrtCredentialsProvider(
@@ -78,7 +85,7 @@ class ProfileCredentialsProvider::ProfileCredentialsProviderImp : public CrtCred
             },
             std::chrono::milliseconds(DEFAULT_REFRESH_RATE_MS), UserAgentFeature::CREDENTIALS_PROFILE,
             "ProfileCredentialsProvider",
-            !UsesCredentialProcess(credentialsConfig.profile.empty() ? GetConfigProfileName() : credentialsConfig.profile)) {}
+            FailurePolicyFor(credentialsConfig.profile.empty() ? GetConfigProfileName() : credentialsConfig.profile)) {}
 
   static Aws::String GetCredentialsProfileFilename() {
     auto credentialsFileNameFromVar = Aws::Environment::GetEnv(PROFILE_AWS_CREDENTIALS_FILE);

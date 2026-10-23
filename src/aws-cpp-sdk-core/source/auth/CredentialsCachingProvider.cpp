@@ -24,9 +24,31 @@ namespace Aws
     }
 }
 
+namespace
+{
+    // ServeUntilExpiryStrategy serves cached credentials after a failed refresh only until they expire.
+    class ServeUntilExpiryStrategy : public RefreshFailureStrategy
+    {
+    public:
+        Aws::Crt::Optional<BackoffRange> Backoff() const override
+        {
+            return Aws::Crt::Optional<BackoffRange>();
+        }
+    };
+
+    std::shared_ptr<const RefreshFailureStrategy> MakeFailureStrategy(const char* tag, RefreshFailurePolicy failurePolicy)
+    {
+        if (failurePolicy == RefreshFailurePolicy::ServeUntilExpiry)
+        {
+            return Aws::MakeShared<ServeUntilExpiryStrategy>(tag);
+        }
+        return Aws::MakeShared<StaticStabilityStrategy>(tag);
+    }
+}
+
 static const char CREDENTIALS_CACHING_PROVIDER_LOG_TAG[] = "CredentialsCachingProvider";
 
-CredentialsCachingProvider::CredentialsCachingProvider(RetrieveFunction retrieve, bool staticStability)
+CredentialsCachingProvider::CredentialsCachingProvider(RetrieveFunction retrieve, RefreshFailurePolicy failurePolicy)
     : m_retrieve(std::move(retrieve)),
       m_cachingState(Aws::MakeShared<Aws::Internal::CredentialsCachingStateImpl>(CREDENTIALS_CACHING_PROVIDER_LOG_TAG,
           [this]() -> Aws::Internal::RefreshResult<AWSCredentials> {
@@ -43,7 +65,7 @@ CredentialsCachingProvider::CredentialsCachingProvider(RetrieveFunction retrieve
               return Aws::Internal::RefreshResult<AWSCredentials>::Success(credentials, expiration);
           },
           [](const AWSCredentials& credentials) { return credentials.GetAWSAccessKeyId(); },
-          staticStability))
+          MakeFailureStrategy(CREDENTIALS_CACHING_PROVIDER_LOG_TAG, failurePolicy)))
 {
 }
 

@@ -269,20 +269,24 @@ static DateTime GetServerTimeFromError(const AWSError<CoreErrors> error)
 
 void AWSClient::InvalidateCredentials(const AWSError<CoreErrors>& error, const Aws::String& accessKeyId) const
 {
-    if (accessKeyId.empty())
-    {
-        return;
-    }
     const Aws::String& errorCode = error.GetExceptionName();
     if (errorCode != EXPIRED_TOKEN_ERROR_CODE && errorCode != INVALID_TOKEN_ERROR_CODE)
     {
         return;
     }
-    const auto provider = GetCredentialsProvider();
-    if (provider)
+    if (accessKeyId.empty())
     {
-        provider->Invalidate(accessKeyId);
+        AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Not invalidating credentials after " << errorCode << ": the request was not signed with an access key.");
+        return;
     }
+    const auto provider = GetCredentialsProvider();
+    if (!provider)
+    {
+        AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Not invalidating credentials after " << errorCode << ": the client has no credentials provider.");
+        return;
+    }
+    AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Invalidating credentials after " << errorCode << ".");
+    provider->Invalidate(accessKeyId);
 }
 
 bool AWSClient::AdjustClockSkew(HttpResponseOutcome& outcome, const Aws::Utils::DateTime& timeRequestSent, const Aws::Utils::DateTime& timeResponseReceived, std::chrono::milliseconds attemptSkew) const

@@ -11,10 +11,16 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <atomic>
 #include <chrono>
+#include <condition_variable>
 #include <fstream>
+#include <future>
 #include <memory>
+#include <mutex>
 #include <sstream>
 
 using namespace Aws::Internal;
@@ -31,6 +37,11 @@ namespace
 
     // Fixed jitter so the pinned durations are exact: backoff = 420 s, non-recoverable cache = 2.6 s.
     const double JITTER = 0.4;
+
+    std::shared_ptr<const RefreshFailureStrategy> StaticStability()
+    {
+        return Aws::MakeShared<StaticStabilityStrategy>("CredentialsCachingTest");
+    }
 
     Aws::String ReadFileContents(const char* path)
     {
@@ -63,7 +74,7 @@ namespace
         auto calls = std::make_shared<int>(0);
         Cache cache([next, calls]() { ++*calls; return *next; },
                     [](const Creds& credentials) { return credentials.akid; },
-                    true,
+                    StaticStability(),
                     [now]() { return *now; },
                     []() { return JITTER; });
         cache.GetCredentials();
@@ -76,6 +87,70 @@ namespace
         *now = *now + std::chrono::seconds(1);
         cache.GetCredentials();
         EXPECT_EQ(2, *calls) << "did not refresh at the start of the " << windowSeconds << "s advisory window";
+    }
+
+    const int CONCURRENT_CALLERS = 8;
+    const std::chrono::seconds CALLER_TIMEOUT{5};
+
+    // BlockingSource hands out next, and once blocking is set, holds each retrieve until Release() is called.
+    class BlockingSource
+    {
+    public:
+        Result Retrieve()
+        {
+            ++calls;
+            std::unique_lock<std::mutex> lock(m_mutex);
+            if (blocking)
+            {
+                m_entered = true;
+                m_cv.notify_all();
+                m_cv.wait(lock, [this]() { return m_released; });
+            }
+            return next;
+        }
+
+        bool WaitUntilEntered()
+        {
+            std::unique_lock<std::mutex> lock(m_mutex);
+            return m_cv.wait_for(lock, CALLER_TIMEOUT, [this]() { return m_entered; });
+        }
+
+        void Release()
+        {
+            std::lock_guard<std::mutex> lock(m_mutex);
+            m_released = true;
+            m_cv.notify_all();
+        }
+
+        std::atomic<int> calls{0};
+        bool blocking = false;
+        Result next = Result::Recoverable("unscripted");
+
+    private:
+        std::mutex m_mutex;
+        std::condition_variable m_cv;
+        bool m_entered = false;
+        bool m_released = false;
+    };
+
+    // SeedCache caches 60-minute SEED credentials, then moves the clock forward by elapsed and makes the source block.
+    void SeedCache(Cache& cache, BlockingSource& source, DateTime& now, std::chrono::seconds elapsed)
+    {
+        source.next = Result::Success(Creds{"SEED"}, now + std::chrono::minutes(60));
+        cache.GetCredentials();
+        now = now + elapsed;
+        source.next = Result::Success(Creds{"NEW"}, now + std::chrono::minutes(60));
+        source.blocking = true;
+    }
+
+    Aws::Vector<std::future<Aws::Utils::Outcome<Creds, Aws::String>>> StartCallers(Cache& cache)
+    {
+        Aws::Vector<std::future<Aws::Utils::Outcome<Creds, Aws::String>>> callers;
+        for (int i = 0; i < CONCURRENT_CALLERS; ++i)
+        {
+            callers.push_back(std::async(std::launch::async, [&cache]() { return cache.GetCredentials(); }));
+        }
+        return callers;
     }
 }
 
@@ -116,7 +191,7 @@ TEST_F(CredentialsCachingTest, RunsSepTestCases)
                         return *next;
                     },
                     [](const Creds& credentials) { return credentials.akid; },
-                    true,
+                    StaticStability(),
                     [now]() { return *now; },
                     []() { return JITTER; });
 
@@ -217,4 +292,67 @@ TEST_F(CredentialsCachingTest, RunsSepTestCases)
             }
         }
     }
+}
+
+TEST_F(CredentialsCachingTest, ConcurrentAdvisoryCallersDoNotWaitForRefresh)
+{
+    BlockingSource source;
+    DateTime now = DateTime::Now();
+    Cache cache([&source]() { return source.Retrieve(); },
+                [](const Creds& credentials) { return credentials.akid; },
+                StaticStability(),
+                [&now]() { return now; },
+                []() { return JITTER; });
+    SeedCache(cache, source, now, std::chrono::minutes(50));
+
+    auto refresher = std::async(std::launch::async, [&cache]() { return cache.GetCredentials(); });
+    ASSERT_TRUE(source.WaitUntilEntered());
+
+    auto callers = StartCallers(cache);
+    for (auto& caller : callers)
+    {
+        if (caller.wait_for(CALLER_TIMEOUT) != std::future_status::ready)
+        {
+            source.Release();
+            FAIL() << "an advisory caller waited for the in-flight refresh";
+        }
+        const auto outcome = caller.get();
+        ASSERT_TRUE(outcome.IsSuccess());
+        EXPECT_EQ("SEED", outcome.GetResult().akid);
+    }
+
+    source.Release();
+    const auto refreshed = refresher.get();
+    ASSERT_TRUE(refreshed.IsSuccess());
+    EXPECT_EQ("NEW", refreshed.GetResult().akid);
+    EXPECT_EQ(2, source.calls.load());
+}
+
+TEST_F(CredentialsCachingTest, ConcurrentMandatoryCallersShareOneRefresh)
+{
+    BlockingSource source;
+    DateTime now = DateTime::Now();
+    Cache cache([&source]() { return source.Retrieve(); },
+                [](const Creds& credentials) { return credentials.akid; },
+                StaticStability(),
+                [&now]() { return now; },
+                []() { return JITTER; });
+    SeedCache(cache, source, now, std::chrono::minutes(59) + std::chrono::seconds(30));
+
+    auto callers = StartCallers(cache);
+    ASSERT_TRUE(source.WaitUntilEntered());
+    for (auto& caller : callers)
+    {
+        EXPECT_EQ(std::future_status::timeout, caller.wait_for(std::chrono::milliseconds(50)))
+            << "a mandatory caller returned before the refresh finished";
+    }
+
+    source.Release();
+    for (auto& caller : callers)
+    {
+        const auto outcome = caller.get();
+        ASSERT_TRUE(outcome.IsSuccess());
+        EXPECT_EQ("NEW", outcome.GetResult().akid);
+    }
+    EXPECT_EQ(2, source.calls.load());
 }

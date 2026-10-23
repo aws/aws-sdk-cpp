@@ -15,6 +15,7 @@
 #include <chrono>
 #include <cstdint>
 #include <functional>
+#include <memory>
 #include <mutex>
 #include <random>
 
@@ -22,6 +23,18 @@ namespace Aws
 {
     namespace Internal
     {
+        // Credential Refresh SEP timing values.
+        const std::chrono::minutes CREDENTIALS_MANDATORY_REFRESH_WINDOW{1};
+        const std::chrono::minutes CREDENTIALS_SHORT_LIFETIME{20};
+        const std::chrono::minutes CREDENTIALS_MEDIUM_LIFETIME{90};
+        const std::chrono::minutes CREDENTIALS_SHORT_ADVISORY_WINDOW{5};
+        const std::chrono::minutes CREDENTIALS_MEDIUM_ADVISORY_WINDOW{15};
+        const std::chrono::minutes CREDENTIALS_LONG_ADVISORY_WINDOW{60};
+        const std::chrono::minutes CREDENTIALS_REFRESH_BACKOFF_MIN{5};
+        const std::chrono::minutes CREDENTIALS_REFRESH_BACKOFF_MAX{10};
+        const std::chrono::seconds CREDENTIALS_ERROR_CACHE_MIN{1};
+        const std::chrono::seconds CREDENTIALS_ERROR_CACHE_MAX{5};
+
         // RefreshResult is the outcome of one credential retrieve, built with Success(), Recoverable(), or NonRecoverable().
         template<typename CredentialsT>
         class RefreshResult
@@ -60,6 +73,33 @@ namespace Aws
                   expiration(std::move(expiration)), errorMessage(std::move(errorMessage)) {}
         };
 
+        // RefreshFailureStrategy decides how long cached credentials are served after a failed refresh.
+        class AWS_CORE_LOCAL RefreshFailureStrategy
+        {
+        public:
+            // BackoffRange bounds the jittered wait before the next refresh attempt.
+            struct BackoffRange
+            {
+                std::chrono::milliseconds min;
+                std::chrono::milliseconds max;
+            };
+
+            virtual ~RefreshFailureStrategy() = default;
+
+            // Backoff returns the range to back off within while serving cached credentials, or none to serve them only until they expire.
+            virtual Aws::Crt::Optional<BackoffRange> Backoff() const = 0;
+        };
+
+        // StaticStabilityStrategy keeps serving cached credentials, even expired, and backs off before the next refresh attempt.
+        class AWS_CORE_LOCAL StaticStabilityStrategy : public RefreshFailureStrategy
+        {
+        public:
+            Aws::Crt::Optional<BackoffRange> Backoff() const override
+            {
+                return BackoffRange{CREDENTIALS_REFRESH_BACKOFF_MIN, CREDENTIALS_REFRESH_BACKOFF_MAX};
+            }
+        };
+
         // CredentialsCachingState caches credentials and runs the refresh lifecycle for CredentialsCachingProvider.
         template<typename CredentialsT>
         class AWS_CORE_LOCAL CredentialsCachingState
@@ -72,10 +112,10 @@ namespace Aws
 
             explicit CredentialsCachingState(RetrieveFunction retrieve,
                                              IdentifierFunction identifier,
-                                             bool staticStability = true,
+                                             std::shared_ptr<const RefreshFailureStrategy> failureStrategy,
                                              ClockFunction clock = &Aws::Utils::DateTime::Now,
                                              JitterFunction jitter = &CredentialsCachingState::DefaultJitter)
-                : m_retrieve(std::move(retrieve)), m_identifier(std::move(identifier)), m_staticStability(staticStability),
+                : m_retrieve(std::move(retrieve)), m_identifier(std::move(identifier)), m_failureStrategy(std::move(failureStrategy)),
                   m_clock(std::move(clock)), m_jitter(std::move(jitter))
             {
             }
@@ -131,7 +171,7 @@ namespace Aws
             {
                 CredentialsT credentials;
                 Aws::Utils::DateTime expiration;
-                std::chrono::milliseconds advisoryWindow{std::chrono::minutes(15)};
+                std::chrono::milliseconds advisoryWindow{CREDENTIALS_MEDIUM_ADVISORY_WINDOW};
                 int64_t nextRefreshAllowedAtMs{0};
             };
 
@@ -200,14 +240,15 @@ namespace Aws
                 {
                     CachedError error;
                     error.message = result.errorMessage;
-                    error.expiresAtMs = nowMs + Jitter(std::chrono::seconds(1), std::chrono::seconds(5)).count();
+                    error.expiresAtMs = nowMs + Jitter(CREDENTIALS_ERROR_CACHE_MIN, CREDENTIALS_ERROR_CACHE_MAX).count();
                     m_cachedError = std::move(error);
                     return Aws::Utils::Outcome<CredentialsT, Aws::String>(result.errorMessage);
                 }
 
-                if (m_cached && m_staticStability)
+                const Aws::Crt::Optional<RefreshFailureStrategy::BackoffRange> backoffRange = m_failureStrategy->Backoff();
+                if (m_cached && backoffRange)
                 {
-                    const std::chrono::milliseconds backoff = Jitter(std::chrono::minutes(5), std::chrono::minutes(10));
+                    const std::chrono::milliseconds backoff = Jitter(backoffRange->min, backoffRange->max);
                     m_cached->nextRefreshAllowedAtMs = nowMs + backoff.count();
                     AWS_LOGSTREAM_WARN("CredentialsCachingState", "Credential refresh failed: "
                         << (result.errorMessage.empty() ? Aws::String("the credential source returned expired credentials") : result.errorMessage)
@@ -232,7 +273,7 @@ namespace Aws
             // MandatoryRefreshNeeded returns whether cached is inside its mandatory window.
             static bool MandatoryRefreshNeeded(const CachedCredentials& cached, int64_t nowMs)
             {
-                return nowMs >= cached.expiration.Millis() - std::chrono::milliseconds(std::chrono::minutes(1)).count();
+                return nowMs >= cached.expiration.Millis() - std::chrono::milliseconds(CREDENTIALS_MANDATORY_REFRESH_WINDOW).count();
             }
 
             // RateLimited returns whether a failed refresh's backoff is still active for cached.
@@ -250,15 +291,15 @@ namespace Aws
             // AdvisoryWindowFor returns the advisory window for a credential lifetime.
             static std::chrono::milliseconds AdvisoryWindowFor(std::chrono::milliseconds lifetime)
             {
-                if (lifetime <= std::chrono::minutes(20))
+                if (lifetime <= CREDENTIALS_SHORT_LIFETIME)
                 {
-                    return std::chrono::minutes(5);
+                    return CREDENTIALS_SHORT_ADVISORY_WINDOW;
                 }
-                if (lifetime < std::chrono::minutes(90))
+                if (lifetime < CREDENTIALS_MEDIUM_LIFETIME)
                 {
-                    return std::chrono::minutes(15);
+                    return CREDENTIALS_MEDIUM_ADVISORY_WINDOW;
                 }
-                return std::chrono::minutes(60);
+                return CREDENTIALS_LONG_ADVISORY_WINDOW;
             }
 
             // Jitter returns a random duration in [lo, hi).
@@ -276,7 +317,7 @@ namespace Aws
 
             RetrieveFunction m_retrieve;
             IdentifierFunction m_identifier;
-            bool m_staticStability;
+            std::shared_ptr<const RefreshFailureStrategy> m_failureStrategy;
             ClockFunction m_clock;
             JitterFunction m_jitter;
 
