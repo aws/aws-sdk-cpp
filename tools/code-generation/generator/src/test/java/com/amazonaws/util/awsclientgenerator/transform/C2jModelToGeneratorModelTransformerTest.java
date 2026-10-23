@@ -77,12 +77,19 @@ public class C2jModelToGeneratorModelTransformerTest {
         c2jMetadata.setServiceFullName("Amazon AWS Service Abbr Full Name");
         c2jMetadata.setSignatureVersion("v4");
         c2jMetadata.setTargetPrefix("ServiceAbbr.");
+        // The namespace is derived from serviceId only (serviceAbbreviation / serviceFullName are
+        // no longer read), so the model must carry a serviceId. A deliberately "dirty" serviceId
+        // (distinct from the serviceAbbreviation above) verifies sanitizeServiceAbbreviation runs
+        // AND that the transformer reads serviceId, not the abbreviation:
+        // "AWS My Cool-Service_X" -> strip " -_/", "Amazon", "AWS" -> "MyCoolServiceX".
+        c2jMetadata.setServiceId("AWS My Cool-Service_X");
         c2jMetadata.setUid("service-9089-34-54");
         c2jServiceModel.setMetadata(c2jMetadata);
         C2jModelToGeneratorModelTransformer c2jModelToGeneratorModelTransformer = new C2jModelToGeneratorModelTransformer(c2jServiceModel, true);
         Metadata metadata = c2jModelToGeneratorModelTransformer.convertMetadata();
         assertTrue(metadata.isStandalone());
         assertTrue(metadata.isApigateway());
+        assertEquals("MyCoolServiceX", metadata.getNamespace());
         assertEquals("service-abbr.execute-api", metadata.getEndpointPrefix());
         assertEquals("application-json", metadata.findFirstSupportedProtocol());
     }

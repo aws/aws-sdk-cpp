@@ -16,7 +16,6 @@ from typing import List
 
 SMITHY_GENERATOR_LOCATION = "tools/code-generation/smithy/cpp-codegen"
 SMITHY_TO_C2J_MAP_FILE = "tools/code-generation/smithy/cpp-codegen/smithy2c2j_service_map.json"
-SMITHY_NAMPESPACE_MAPPING_FILE = "tools/code-generation/smithy/mapping/smithy-namespace-mapping.json"
 SMITHY_API_DESCRIPTIONS_DIR = "tools/code-generation/smithy/api-descriptions"
 BDD_BYTECODER_FILE = "crt/aws-crt-cpp/crt/aws-c-sdkutils/compiler/bdd-bytecoder.py"
 ENDPOINT_BDD_TRAIT = "smithy.rules#endpointBdd"
@@ -63,8 +62,6 @@ class SmithyCppGen(object):
         with open(os.path.abspath(SMITHY_TO_C2J_MAP_FILE), 'r') as file:
             self.smithy_c2j_data = json.load(file)
             self.c2j_smithy_data = {value: key for key, value in self.smithy_c2j_data.items()}
-        with open(os.path.abspath(SMITHY_NAMPESPACE_MAPPING_FILE), 'r') as file:
-            self.smithy_namespace_mappings = json.load(file)
 
     def generate(self, clients_to_build: set):
         """Generate Smithy-based code for SDK clients"""
@@ -96,8 +93,7 @@ class SmithyCppGen(object):
             "./gradlew",
             "build",
             "-PservicesFilter=" + ",".join(smithy_services),
-            "-Pc2jMap=" + smithy_c2j_data,
-            "-PnamespaceMappings=" + json.dumps(self.smithy_namespace_mappings)
+            "-Pc2jMap=" + smithy_c2j_data
         ]
         if self.use_smithy_models:
             smithy_codegen_command.append("-PgenerateModels=true")
