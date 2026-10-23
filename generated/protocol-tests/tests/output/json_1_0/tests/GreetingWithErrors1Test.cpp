@@ -11,15 +11,12 @@ using GreetingWithErrors1 = AWS_PROTOCOL_TEST_SUITE;
 using JSONRPC10Client = Aws::JSONRPC10::JSONRPC10Client;
 using namespace Aws::JSONRPC10::Model;
 
-AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson10ComplexError) {
+AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson10FooErrorUsingXAmznErrorType) {
   JSONRPC10Client client(mockCredentials, mockConfig);
 
   OutputResponse mockRs;
-  mockRs.statusCode = 400;
-  mockRs.headers = {{"Content-Type", R"(application/x-amz-json-1.0)"}};
-  mockRs.body =
-      "ewogICAgIl9fdHlwZSI6ICJhd3MucHJvdG9jb2x0ZXN0cy5qc29uMTAjQ29tcGxleEVycm9yIiwKICAgICJUb3BMZXZlbCI6ICJUb3AgbGV2ZWwiLAogICAgIk5lc3RlZCI6"
-      "IHsKICAgICAgICAiRm9vIjogImJhciIKICAgIH0KfQ==";
+  mockRs.statusCode = 500;
+  mockRs.headers = {{"X-Amzn-Errortype", R"(FooError)"}};
   SetMockResponse(mockRs);
 
   GreetingWithErrorsRequest request;
@@ -28,13 +25,153 @@ AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson10ComplexError) {
   ASSERT_FALSE(outcome.IsSuccess());
 }
 
-AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson10EmptyComplexError) {
+AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson10FooErrorUsingXAmznErrorTypeWithUri) {
   JSONRPC10Client client(mockCredentials, mockConfig);
 
   OutputResponse mockRs;
-  mockRs.statusCode = 400;
+  mockRs.statusCode = 500;
+  mockRs.headers = {{"X-Amzn-Errortype", R"(FooError:http://internal.amazon.com/coral/com.amazon.coral.validate/)"}};
+  SetMockResponse(mockRs);
+
+  GreetingWithErrorsRequest request;
+
+  auto outcome = client.GreetingWithErrors(request);
+  ASSERT_FALSE(outcome.IsSuccess());
+}
+
+AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson10FooErrorUsingXAmznErrorTypeWithUriAndNamespace) {
+  JSONRPC10Client client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 500;
+  mockRs.headers = {
+      {"X-Amzn-Errortype", R"(aws.protocoltests.json10#FooError:http://internal.amazon.com/coral/com.amazon.coral.validate/)"}};
+  SetMockResponse(mockRs);
+
+  GreetingWithErrorsRequest request;
+
+  auto outcome = client.GreetingWithErrors(request);
+  ASSERT_FALSE(outcome.IsSuccess());
+}
+
+AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson10FooErrorUsingCode) {
+  JSONRPC10Client client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 500;
   mockRs.headers = {{"Content-Type", R"(application/x-amz-json-1.0)"}};
-  mockRs.body = "ewogICAgIl9fdHlwZSI6ICJhd3MucHJvdG9jb2x0ZXN0cy5qc29uMTAjQ29tcGxleEVycm9yIgp9";
+  mockRs.body = "ewogICAgImNvZGUiOiAiRm9vRXJyb3IiCn0=";
+  SetMockResponse(mockRs);
+
+  GreetingWithErrorsRequest request;
+
+  auto outcome = client.GreetingWithErrors(request);
+  ASSERT_FALSE(outcome.IsSuccess());
+}
+
+AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson10FooErrorUsingCodeAndNamespace) {
+  JSONRPC10Client client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 500;
+  mockRs.headers = {{"Content-Type", R"(application/x-amz-json-1.0)"}};
+  mockRs.body = "ewogICAgImNvZGUiOiAiYXdzLnByb3RvY29sdGVzdHMuanNvbjEwI0Zvb0Vycm9yIgp9";
+  SetMockResponse(mockRs);
+
+  GreetingWithErrorsRequest request;
+
+  auto outcome = client.GreetingWithErrors(request);
+  ASSERT_FALSE(outcome.IsSuccess());
+}
+
+AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson10FooErrorUsingCodeUriAndNamespace) {
+  JSONRPC10Client client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 500;
+  mockRs.headers = {{"Content-Type", R"(application/x-amz-json-1.0)"}};
+  mockRs.body =
+      "ewogICAgImNvZGUiOiAiYXdzLnByb3RvY29sdGVzdHMuanNvbjEwI0Zvb0Vycm9yOmh0dHA6Ly9pbnRlcm5hbC5hbWF6b24uY29tL2NvcmFsL2NvbS5hbWF6b24uY29yYWwu"
+      "dmFsaWRhdGUvIgp9";
+  SetMockResponse(mockRs);
+
+  GreetingWithErrorsRequest request;
+
+  auto outcome = client.GreetingWithErrors(request);
+  ASSERT_FALSE(outcome.IsSuccess());
+}
+
+AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson10FooErrorWithDunderType) {
+  JSONRPC10Client client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 500;
+  mockRs.headers = {{"Content-Type", R"(application/x-amz-json-1.0)"}};
+  mockRs.body = "ewogICAgIl9fdHlwZSI6ICJGb29FcnJvciIKfQ==";
+  SetMockResponse(mockRs);
+
+  GreetingWithErrorsRequest request;
+
+  auto outcome = client.GreetingWithErrors(request);
+  ASSERT_FALSE(outcome.IsSuccess());
+}
+
+AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson10FooErrorWithDunderTypeAndNamespace) {
+  JSONRPC10Client client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 500;
+  mockRs.headers = {{"Content-Type", R"(application/x-amz-json-1.0)"}};
+  mockRs.body = "ewogICAgIl9fdHlwZSI6ICJhd3MucHJvdG9jb2x0ZXN0cy5qc29uMTAjRm9vRXJyb3IiCn0=";
+  SetMockResponse(mockRs);
+
+  GreetingWithErrorsRequest request;
+
+  auto outcome = client.GreetingWithErrors(request);
+  ASSERT_FALSE(outcome.IsSuccess());
+}
+
+AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson10FooErrorWithDunderTypeAndDifferentNamespace) {
+  JSONRPC10Client client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 500;
+  mockRs.headers = {{"Content-Type", R"(application/x-amz-json-1.0)"}};
+  mockRs.body = "ewogICAgIl9fdHlwZSI6ICJhd3MuZGlmZmVyZW50Lm5hbWVzcGFjZSNGb29FcnJvciIKfQ==";
+  SetMockResponse(mockRs);
+
+  GreetingWithErrorsRequest request;
+
+  auto outcome = client.GreetingWithErrors(request);
+  ASSERT_FALSE(outcome.IsSuccess());
+}
+
+AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson10FooErrorWithDunderTypeUriAndNamespace) {
+  JSONRPC10Client client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 500;
+  mockRs.headers = {{"Content-Type", R"(application/x-amz-json-1.0)"}};
+  mockRs.body =
+      "ewogICAgIl9fdHlwZSI6ICJhd3MucHJvdG9jb2x0ZXN0cy5qc29uMTAjRm9vRXJyb3I6aHR0cDovL2ludGVybmFsLmFtYXpvbi5jb20vY29yYWwvY29tLmFtYXpvbi5jb3Jh"
+      "bC52YWxpZGF0ZS8iCn0=";
+  SetMockResponse(mockRs);
+
+  GreetingWithErrorsRequest request;
+
+  auto outcome = client.GreetingWithErrors(request);
+  ASSERT_FALSE(outcome.IsSuccess());
+}
+
+AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson10FooErrorWithNestedTypeProperty) {
+  JSONRPC10Client client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 500;
+  mockRs.headers = {{"Content-Type", R"(application/x-amz-json-1.0)"}};
+  mockRs.body =
+      "ewogICAgIl9fdHlwZSI6ICJhd3MucHJvdG9jb2x0ZXN0cy5qc29uMTAjRm9vRXJyb3IiLAogICAgIkVycm9yRGV0YWlscyI6IFsKICAgICAgewogICAgICAgICAgIl9fdHlw"
+      "ZSI6ICJjb20uYW1hem9uLmludGVybmFsI0Vycm9yRGV0YWlscyIsCiAgICAgICAgICAicmVhc29uIjogIlNvbWUgcmVhc29uIgogICAgICB9CiAgICBdCn0=";
   SetMockResponse(mockRs);
 
   GreetingWithErrorsRequest request;

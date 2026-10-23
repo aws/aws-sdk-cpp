@@ -117,6 +117,17 @@
         {"shape":"ValidationException"}
       ]
     },
+    "RpcV2CborUnions":{
+      "name":"RpcV2CborUnions",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"RpcV2CborUnionInputOutput"},
+      "output":{"shape":"RpcV2CborUnionInputOutput"},
+      "documentation":"<p>This operation uses unions for inputs and outputs.</p>",
+      "idempotent":true
+    },
     "SimpleScalarProperties":{
       "name":"SimpleScalarProperties",
       "http":{
@@ -322,6 +333,13 @@
         "blobList":{"shape":"BlobList"}
       }
     },
+    "RpcV2CborNestedUnion":{
+      "type":"structure",
+      "members":{
+        "stringValue":{"shape":"String"}
+      },
+      "union":true
+    },
     "RpcV2CborSparseMapsInputOutput":{
       "type":"structure",
       "members":{
@@ -330,6 +348,21 @@
         "sparseBooleanMap":{"shape":"SparseBooleanMap"},
         "sparseStringMap":{"shape":"SparseStringMap"},
         "sparseSetMap":{"shape":"SparseSetMap"}
+      }
+    },
+    "RpcV2CborUnion":{
+      "type":"structure",
+      "members":{
+        "stringValue":{"shape":"String"},
+        "unionValue":{"shape":"RpcV2CborNestedUnion"}
+      },
+      "union":true
+    },
+    "RpcV2CborUnionInputOutput":{
+      "type":"structure",
+      "members":{
+        "contents":{"shape":"RpcV2CborUnion"},
+        "otherValue":{"shape":"String"}
       }
     },
     "SimpleScalarStructure":{

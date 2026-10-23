@@ -35,7 +35,7 @@ using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
 namespace Aws {
 namespace QueryCompatibleJSONRPC10 {
-const char SERVICE_NAME[] = "query-compatible-jsonrpc10";
+const char SERVICE_NAME[] = "querycompatiblejsonrpc10";
 const char ALLOCATION_TAG[] = "QueryCompatibleJSONRPC10Client";
 }  // namespace QueryCompatibleJSONRPC10
 }  // namespace Aws
@@ -137,7 +137,7 @@ void QueryCompatibleJSONRPC10Client::init(const QueryCompatibleJSONRPC10::QueryC
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_endpointProvider->InitBuiltInParameters(config, "query-compatible-jsonrpc10");
+  m_endpointProvider->InitBuiltInParameters(config, "querycompatiblejsonrpc10");
 }
 
 void QueryCompatibleJSONRPC10Client::OverrideEndpoint(const Aws::String& endpoint) {

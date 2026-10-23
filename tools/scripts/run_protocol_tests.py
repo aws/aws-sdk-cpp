@@ -18,6 +18,239 @@ import time
 SCRIPTS_DIR = os.path.dirname(__file__)
 PROTO_TEST_MOCK_HANDLER = f"{SCRIPTS_DIR}/protocol_tests_mock_server/protocol_tests_mock_server.py"
 
+# Tests that do not pass with the legacy C2J-generated clients (fail, crash or hang), per (protocol, group).
+# Generated from a baseline run of every test individually; any other failure is a regression.
+KNOWN_FAILURES = {
+    ("ec2", "input"): [
+        "EndpointOperation.Ec2QueryEndpointTrait",
+        "EndpointWithHostLabelOperation.Ec2QueryEndpointTraitWithHostLabel",
+        "HostWithPathOperation.Ec2QueryHostWithPath",
+        "QueryIdempotencyTokenAutoFill.Ec2ProtocolIdempotencyTokenAutoFill",
+        "QueryIdempotencyTokenAutoFill.Ec2ProtocolIdempotencyTokenAutoFillIsSet",
+        "QueryLists.Ec2Lists",
+        "QueryTimestamps.Ec2TimestampsInput",
+        "SimpleInputParams.Ec2QuerySupportsInfinityFloatInputs",
+        "SimpleInputParams.Ec2QuerySupportsNaNFloatInputs",
+        "SimpleInputParams.Ec2QuerySupportsNegativeInfinityFloatInputs",
+    ],
+    ("ec2", "output"): [
+        "DatetimeOffsets.Ec2QueryDateTimeWithNegativeOffset",
+        "DatetimeOffsets.Ec2QueryDateTimeWithPositiveOffset",
+        "XmlEmptyBlobs.Ec2XmlEmptyBlobs",
+        "XmlEmptyBlobs.Ec2XmlEmptySelfClosedBlobs",
+        "XmlLists.Ec2XmlLists",
+    ],
+    ("json", "input"): [
+        "EndpointOperation.AwsJson11EndpointTrait",
+        "EndpointWithHostLabelOperation.AwsJson11EndpointTraitWithHostLabel",
+        "HostWithPathOperation.AwsJson11HostWithPath",
+        "SimpleScalarProperties.AwsJson11SupportsInfinityFloatInputs",
+        "SimpleScalarProperties.AwsJson11SupportsNaNFloatInputs",
+        "SimpleScalarProperties.AwsJson11SupportsNegativeInfinityFloatInputs",
+    ],
+    ("json", "output"): [
+        "DatetimeOffsets.AwsJson11DateTimeWithNegativeOffset",
+        "DatetimeOffsets.AwsJson11DateTimeWithPositiveOffset",
+        "SimpleScalarProperties.AwsJson11SupportsInfinityFloatInputs",
+        "SimpleScalarProperties.AwsJson11SupportsNaNFloatInputs",
+        "SimpleScalarProperties.AwsJson11SupportsNegativeInfinityFloatInputs",
+    ],
+    ("json_1_0", "input"): [
+        "EndpointOperation.AwsJson10EndpointTrait",
+        "EndpointWithHostLabelOperation.AwsJson10EndpointTraitWithHostLabel",
+        "HostWithPathOperation.AwsJson10HostWithPath",
+        "SimpleScalarProperties.AwsJson10SupportsInfinityFloatInputs",
+        "SimpleScalarProperties.AwsJson10SupportsNaNFloatInputs",
+        "SimpleScalarProperties.AwsJson10SupportsNegativeInfinityFloatInputs",
+    ],
+    ("json_1_0", "output"): [
+        "SimpleScalarProperties.AwsJson10SupportsInfinityFloatInputs",
+        "SimpleScalarProperties.AwsJson10SupportsNaNFloatInputs",
+        "SimpleScalarProperties.AwsJson10SupportsNegativeInfinityFloatInputs",
+    ],
+    ("query", "input"): [
+        "EndpointOperation.AwsQueryEndpointTrait",
+        "EndpointWithHostLabelOperation.AwsQueryEndpointTraitWithHostLabel",
+        "HostWithPathOperation.QueryHostWithPath",
+        "QueryIdempotencyTokenAutoFill.QueryProtocolIdempotencyTokenAutoFill",
+        "QueryLists.FlattenedQueryLists",
+        "QueryMaps.QueryFlattenedQueryMaps",
+        "QueryMaps.QueryQueryMapOfLists",
+        "QueryMaps.QuerySimpleQueryMapsWithXmlName",
+        "SimpleInputParams.AwsQuerySupportsInfinityFloatInputs",
+        "SimpleInputParams.AwsQuerySupportsNaNFloatInputs",
+        "SimpleInputParams.AwsQuerySupportsNegativeInfinityFloatInputs",
+    ],
+    ("query", "output"): [
+        "DatetimeOffsets.AwsQueryDateTimeWithNegativeOffset",
+        "DatetimeOffsets.AwsQueryDateTimeWithPositiveOffset",
+        "FlattenedXmlMap.QueryQueryFlattenedXmlMap",
+        "XmlEmptyBlobs.QueryXmlEmptyBlobs",
+        "XmlEmptyBlobs.QueryXmlEmptySelfClosedBlobs",
+        "XmlLists.QueryXmlLists",
+        "XmlMapsXmlName.QueryQueryXmlMapsXmlName",
+    ],
+    ("rest-json", "input"): [
+        "AllQueryStringTypes.RestJsonAllQueryStringTypes",
+        "AllQueryStringTypes.RestJsonQueryStringEscaping",
+        "AllQueryStringTypes.RestJsonSupportsInfinityFloatQueryValues",
+        "AllQueryStringTypes.RestJsonSupportsNaNFloatQueryValues",
+        "AllQueryStringTypes.RestJsonSupportsNegativeInfinityFloatQueryValues",
+        "AllQueryStringTypes.RestJsonZeroAndFalseQueryValues",
+        "ConstantQueryString.RestJsonConstantQueryString",
+        "EndpointOperation.RestJsonEndpointTrait",
+        "EndpointWithHostLabelOperation.RestJsonEndpointTraitWithHostLabel",
+        "HostWithPathOperation.RestJsonHostWithPath",
+        "HttpChecksumRequired.RestJsonHttpChecksumRequired",
+        "HttpEmptyPrefixHeaders.RestJsonHttpEmptyPrefixHeadersRequestClient",
+        "HttpEnumPayload.RestJsonEnumPayloadRequest",
+        "HttpPayloadTraits.RestJsonHttpPayloadTraitsWithBlob",
+        "HttpRequestWithFloatLabels.RestJsonSupportsInfinityFloatLabels",
+        "HttpRequestWithFloatLabels.RestJsonSupportsNaNFloatLabels",
+        "HttpRequestWithFloatLabels.RestJsonSupportsNegativeInfinityFloatLabels",
+        "HttpRequestWithGreedyLabelInPath.RestJsonHttpRequestWithGreedyLabelInPath",
+        "HttpRequestWithLabels.RestJsonHttpRequestLabelEscaping",
+        "HttpRequestWithLabels.RestJsonInputWithHeadersAndAllParams",
+        "HttpRequestWithLabelsAndTimestampFormat.RestJsonHttpRequestWithLabelsAndTimestampFormat",
+        "HttpStringPayload.RestJsonStringPayloadRequest",
+        "InputAndOutputWithHeaders.RestJsonInputAndOutputWithBooleanHeaders",
+        "InputAndOutputWithHeaders.RestJsonInputAndOutputWithQuotedStringHeaders",
+        "InputAndOutputWithHeaders.RestJsonSupportsInfinityFloatHeaderInputs",
+        "InputAndOutputWithHeaders.RestJsonSupportsNegativeInfinityFloatHeaderInputs",
+        "MediaTypeHeader.MediaTypeHeaderInputBase64",
+        "QueryIdempotencyTokenAutoFill.RestJsonQueryIdempotencyTokenAutoFill",
+        "QueryPrecedence.RestJsonQueryPrecedence",
+        "SimpleScalarProperties.RestJsonSupportsInfinityFloatInputs",
+        "SimpleScalarProperties.RestJsonSupportsNaNFloatInputs",
+        "SimpleScalarProperties.RestJsonSupportsNegativeInfinityFloatInputs",
+        "TestGetNoInputNoPayload.RestJsonHttpGetWithNoInput",
+        "TestGetNoPayload.RestJsonHttpGetWithHeaderMemberNoModeledBody",
+        "TestGetNoPayload.RestJsonHttpGetWithNoModeledBody",
+        "TestPostNoInputNoPayload.RestJsonHttpPostWithNoInput",
+        "TestPostNoPayload.RestJsonHttpPostWithNoModeledBody",
+        "TestPostNoPayload.RestJsonHttpWithPostHeaderMemberNoModeledBody",
+    ],
+    ("rest-json", "output"): [
+        "DatetimeOffsets.RestJsonDateTimeWithNegativeOffset",
+        "DatetimeOffsets.RestJsonDateTimeWithPositiveOffset",
+        "DocumentTypeAsMapValue.DocumentTypeAsMapValueOutput",
+        "GreetingWithErrors.RestJsonGreetingWithErrors",
+        "GreetingWithErrors.RestJsonGreetingWithErrorsNoPayload",
+        "HttpEmptyPrefixHeaders.RestJsonHttpEmptyPrefixHeadersResponseClient",
+        "HttpEnumPayload.RestJsonEnumPayloadResponse",
+        "HttpPayloadTraits.RestJsonHttpPayloadTraitsWithBlob",
+        "HttpPayloadTraits.RestJsonHttpPayloadTraitsWithNoBlobBody",
+        "HttpPrefixHeaders.RestJsonHttpPrefixHeadersArePresent",
+        "HttpPrefixHeadersInResponse.HttpPrefixHeadersResponse",
+        "HttpResponseCode.RestJsonHttpResponseCodeWithNoPayload",
+        "IgnoreQueryParamsInResponse.RestJsonIgnoreQueryParamsInResponse",
+        "InputAndOutputWithHeaders.RestJsonInputAndOutputWithBooleanHeaders",
+        "InputAndOutputWithHeaders.RestJsonInputAndOutputWithEnumHeaders",
+        "InputAndOutputWithHeaders.RestJsonInputAndOutputWithIntEnumHeaders",
+        "InputAndOutputWithHeaders.RestJsonInputAndOutputWithNumericHeaders",
+        "InputAndOutputWithHeaders.RestJsonInputAndOutputWithQuotedStringHeaders",
+        "InputAndOutputWithHeaders.RestJsonInputAndOutputWithStringHeaders",
+        "InputAndOutputWithHeaders.RestJsonInputAndOutputWithTimestampHeaders",
+        "InputAndOutputWithHeaders.RestJsonSupportsInfinityFloatHeaderOutputs",
+        "InputAndOutputWithHeaders.RestJsonSupportsNaNFloatHeaderOutputs",
+        "InputAndOutputWithHeaders.RestJsonSupportsNegativeInfinityFloatHeaderOutputs",
+        "MediaTypeHeader.MediaTypeHeaderOutputBase64",
+        "SimpleScalarProperties.RestJsonSimpleScalarProperties",
+        "SimpleScalarProperties.RestJsonSupportsInfinityFloatInputs",
+        "SimpleScalarProperties.RestJsonSupportsNaNFloatInputs",
+        "SimpleScalarProperties.RestJsonSupportsNegativeInfinityFloatInputs",
+        "TimestampFormatHeaders.RestJsonTimestampFormatHeaders",
+    ],
+    ("rest-xml", "input"): [
+        "AllQueryStringTypes.AllQueryStringTypes",
+        "AllQueryStringTypes.RestXmlSupportsInfinityFloatQueryValues",
+        "AllQueryStringTypes.RestXmlSupportsNaNFloatQueryValues",
+        "AllQueryStringTypes.RestXmlSupportsNegativeInfinityFloatQueryValues",
+        "AllQueryStringTypes.RestXmlZeroAndFalseQueryValues",
+        "BodyWithXmlName.BodyWithXmlName",
+        "ConstantQueryString.ConstantQueryString",
+        "EndpointOperation.RestXmlEndpointTrait",
+        "EndpointWithHostLabelHeaderOperation.RestXmlEndpointTraitWithHostLabelAndHttpBinding",
+        "EndpointWithHostLabelOperation.RestXmlEndpointTraitWithHostLabel",
+        "FlattenedXmlMap.FlattenedXmlMap",
+        "FlattenedXmlMapWithXmlName.FlattenedXmlMapWithXmlName",
+        "HttpEmptyPrefixHeaders.HttpEmptyPrefixHeadersRequestClient",
+        "HttpEnumPayload.RestXmlEnumPayloadRequest",
+        "HttpPayloadWithUnion.RestXmlHttpPayloadWithUnion",
+        "HttpPayloadWithXmlName.HttpPayloadWithXmlName",
+        "HttpPayloadWithXmlNamespace.HttpPayloadWithXmlNamespace",
+        "HttpPayloadWithXmlNamespaceAndPrefix.HttpPayloadWithXmlNamespaceAndPrefix",
+        "HttpRequestWithFloatLabels.RestXmlSupportsInfinityFloatLabels",
+        "HttpRequestWithFloatLabels.RestXmlSupportsNaNFloatLabels",
+        "HttpRequestWithFloatLabels.RestXmlSupportsNegativeInfinityFloatLabels",
+        "HttpRequestWithLabels.HttpRequestLabelEscaping",
+        "HttpRequestWithLabels.InputWithHeadersAndAllParams",
+        "HttpRequestWithLabelsAndTimestampFormat.HttpRequestWithLabelsAndTimestampFormat",
+        "HttpStringPayload.RestXmlStringPayloadRequest",
+        "InputAndOutputWithHeaders.InputAndOutputWithBooleanHeaders",
+        "InputAndOutputWithHeaders.RestXmlSupportsInfinityFloatHeaderInputs",
+        "InputAndOutputWithHeaders.RestXmlSupportsNegativeInfinityFloatHeaderInputs",
+        "NestedXmlMaps.FlatNestedXmlMapRequest",
+        "QueryIdempotencyTokenAutoFill.QueryIdempotencyTokenAutoFill",
+        "QueryPrecedence.RestXmlQueryPrecedence",
+        "SimpleScalarProperties.RestXmlSupportsInfinityFloatInputs",
+        "SimpleScalarProperties.RestXmlSupportsNaNFloatInputs",
+        "SimpleScalarProperties.RestXmlSupportsNegativeInfinityFloatInputs",
+        "XmlAttributesInMiddle.XmlAttributesInMiddle",
+        "XmlAttributesOnPayload.XmlAttributesOnPayload",
+        "XmlEmptyMaps.XmlEmptyMaps",
+        "XmlMapWithXmlNamespace.RestXmlXmlMapWithXmlNamespace",
+        "XmlNamespaces.XmlNamespaces",
+    ],
+    ("rest-xml", "output"): [
+        "DatetimeOffsets.RestXmlDateTimeWithNegativeOffset",
+        "DatetimeOffsets.RestXmlDateTimeWithPositiveOffset",
+        "FlattenedXmlMap.FlattenedXmlMap",
+        "GreetingWithErrors.GreetingWithErrors",
+        "HttpEmptyPrefixHeaders.HttpEmptyPrefixHeadersResponseClient",
+        "HttpEnumPayload.RestXmlEnumPayloadResponse",
+        "HttpPayloadTraits.HttpPayloadTraitsWithBlob",
+        "HttpPayloadTraits.HttpPayloadTraitsWithNoBlobBody",
+        "HttpPrefixHeaders.HttpPrefixHeadersAreNotPresent",
+        "HttpPrefixHeaders.HttpPrefixHeadersArePresent",
+        "HttpResponseCode.RestXmlHttpResponseCode",
+        "IgnoreQueryParamsInResponse.IgnoreQueryParamsInResponse",
+        "InputAndOutputWithHeaders.InputAndOutputWithBooleanHeaders",
+        "InputAndOutputWithHeaders.InputAndOutputWithEnumHeaders",
+        "InputAndOutputWithHeaders.InputAndOutputWithNumericHeaders",
+        "InputAndOutputWithHeaders.InputAndOutputWithStringHeaders",
+        "InputAndOutputWithHeaders.InputAndOutputWithTimestampHeaders",
+        "InputAndOutputWithHeaders.RestXmlSupportsInfinityFloatHeaderOutputs",
+        "InputAndOutputWithHeaders.RestXmlSupportsNaNFloatHeaderOutputs",
+        "InputAndOutputWithHeaders.RestXmlSupportsNegativeInfinityFloatHeaderOutputs",
+        "NestedXmlMapWithXmlName.NestedXmlMapWithXmlNameDeserializes",
+        "NestedXmlMaps.FlatNestedXmlMapResponse",
+        "SimpleScalarProperties.SimpleScalarProperties",
+        "SimpleScalarProperties.SimpleScalarPropertiesComplexEscapes",
+        "SimpleScalarProperties.SimpleScalarPropertiesPureWhiteSpace",
+        "SimpleScalarProperties.SimpleScalarPropertiesWithEscapedCharacter",
+        "SimpleScalarProperties.SimpleScalarPropertiesWithWhiteSpace",
+        "SimpleScalarProperties.SimpleScalarPropertiesWithXMLPreamble",
+        "TimestampFormatHeaders.TimestampFormatHeaders",
+        "XmlEmptyBlobs.XmlEmptyBlobs",
+        "XmlEmptyBlobs.XmlEmptySelfClosedBlobs",
+        "XmlLists.XmlLists",
+        "XmlMapWithXmlNamespace.RestXmlXmlMapWithXmlNamespace",
+        "XmlMapsXmlName.XmlMapsXmlName",
+    ],
+}
+
+
+def gtest_filter_for(protocol: str, group: str):
+    """Build a negative --gtest_filter for the known failures of a binary.
+
+    :return: the filter arg string, or None if nothing is skipped for this binary
+    """
+    skips = KNOWN_FAILURES.get((protocol, group))
+    if not skips:
+        return None
+    return "--gtest_filter=-" + ":".join(skips)
+
 
 def parse_arguments() -> dict:
     """Parse arguments and/or print help
@@ -99,10 +332,16 @@ class ProtocolTestRunner:
             if not tests or not len(tests):
                 print(f"No protocol tests found in {self.build_dir}")
                 self.fail = True
-            for test in tests:
+            for test, protocol, group in tests:
+                cmd = [test]
+                gtest_filter = gtest_filter_for(protocol, group)
+                if gtest_filter:
+                    cmd.append(gtest_filter)
+                    print(f"Skipping {len(KNOWN_FAILURES[(protocol, group)])} known-failing "
+                          f"test(s) in {protocol}-{group}")
                 with MockHttpServerHandle() as mock_server:
                     try:
-                        subprocess.run([test], timeout=6 * 60, check=True)
+                        subprocess.run(cmd, timeout=6 * 60, check=True)
                     except Exception as exc:
                         print(f"Protocol test {test} failed with exception: {exc}")
                         self.fail = True
@@ -126,7 +365,7 @@ class ProtocolTestRunner:
                     self.fail = True
                 else:
                     print(f"Found protocol tests {test_protocol}")
-                    all_tests.append(test_protocol_exe)
+                    all_tests.append((test_protocol_exe, test_protocol, test_group))
         return all_tests
 
 

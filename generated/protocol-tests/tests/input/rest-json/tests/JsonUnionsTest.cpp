@@ -243,3 +243,30 @@ AWS_PROTOCOL_TEST(JsonUnions, RestJsonSerializeRenamedStructureUnionValue) {
   ValidateRequestSent(expectedRq);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
+
+AWS_PROTOCOL_TEST(JsonUnions, RestJsonSerializeNestedUnionValue) {
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  SetMockResponse();
+
+  JsonUnionsRequest request;
+  {
+    MyUnion requestContents;
+    {
+      NestedUnion requestContentsUnionValue;
+      requestContentsUnionValue.SetStringValue(R"(foo)");
+      requestContents.SetUnionValue(requestContentsUnionValue);
+    }
+    request.SetContents(requestContents);
+  }
+
+  auto outcome = client.JsonUnions(request);
+  ExpectedRequest expectedRq;
+  expectedRq.method = "PUT";
+  expectedRq.body =
+      "ewogICAgImNvbnRlbnRzIjogewogICAgICAgICJ1bmlvblZhbHVlIjogewogICAgICAgICAgICAic3RyaW5nVmFsdWUiOiAiZm9vIgogICAgICAgIH0KICAgIH0KfQ==";
+  expectedRq.uri = "/JsonUnions";
+  expectedRq.headers = {{"Content-Type", R"(application/json)"}};
+  ValidateRequestSent(expectedRq);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+}

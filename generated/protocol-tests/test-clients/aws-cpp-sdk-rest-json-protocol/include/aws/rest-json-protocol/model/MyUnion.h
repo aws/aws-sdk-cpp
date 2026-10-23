@@ -12,6 +12,7 @@
 #include <aws/rest-json-protocol/RestJsonProtocol_EXPORTS.h>
 #include <aws/rest-json-protocol/model/FooEnum.h>
 #include <aws/rest-json-protocol/model/GreetingStruct.h>
+#include <aws/rest-json-protocol/model/NestedUnion.h>
 #include <aws/rest-json-protocol/model/RenamedGreeting.h>
 
 #include <utility>
@@ -204,6 +205,22 @@ class MyUnion {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const NestedUnion& GetUnionValue() const { return m_unionValue; }
+  inline bool UnionValueHasBeenSet() const { return m_unionValueHasBeenSet; }
+  template <typename UnionValueT = NestedUnion>
+  void SetUnionValue(UnionValueT&& value) {
+    m_unionValueHasBeenSet = true;
+    m_unionValue = std::forward<UnionValueT>(value);
+  }
+  template <typename UnionValueT = NestedUnion>
+  MyUnion& WithUnionValue(UnionValueT&& value) {
+    SetUnionValue(std::forward<UnionValueT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_stringValue;
 
@@ -224,6 +241,8 @@ class MyUnion {
   GreetingStruct m_structureValue;
 
   RenamedGreeting m_renamedStructureValue;
+
+  NestedUnion m_unionValue;
   bool m_stringValueHasBeenSet = false;
   bool m_booleanValueHasBeenSet = false;
   bool m_numberValueHasBeenSet = false;
@@ -234,6 +253,7 @@ class MyUnion {
   bool m_mapValueHasBeenSet = false;
   bool m_structureValueHasBeenSet = false;
   bool m_renamedStructureValueHasBeenSet = false;
+  bool m_unionValueHasBeenSet = false;
 };
 
 }  // namespace Model
