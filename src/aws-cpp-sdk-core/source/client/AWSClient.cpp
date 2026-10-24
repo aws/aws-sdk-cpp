@@ -8,6 +8,7 @@
 #include <aws/core/AmazonWebServiceRequest.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/auth/AWSAuthSignerProvider.h>
+#include <aws/core/auth/AWSCredentialsProvider.h>
 #include <aws/core/client/AWSUrlPresigner.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
@@ -30,6 +31,7 @@
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
 #include <aws/core/internal/ClockSkew.h>
+#include <aws/core/internal/CredentialsCachingProvider.h>
 #include <aws/core/utils/crypto/MD5.h>
 #include <aws/core/utils/crypto/CRC32.h>
 #include <aws/core/utils/crypto/Sha256.h>
@@ -262,6 +264,28 @@ static DateTime GetServerTimeFromError(const AWSError<CoreErrors> error)
     }
 }
 
+void AWSClient::InvalidateCredentials(const AWSError<CoreErrors>& error, const Aws::String& accessKeyId) const
+{
+    if (!Aws::Internal::IsCredentialsRejectedError(error))
+    {
+        return;
+    }
+    const Aws::String& errorCode = error.GetExceptionName();
+    if (accessKeyId.empty())
+    {
+        AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Not invalidating credentials after " << errorCode << ": the request was not signed with an access key.");
+        return;
+    }
+    const auto provider = GetCredentialsProvider();
+    if (!provider)
+    {
+        AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Not invalidating credentials after " << errorCode << ": the client has no credentials provider.");
+        return;
+    }
+    AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Invalidating credentials after " << errorCode << ".");
+    provider->Invalidate(accessKeyId);
+}
+
 bool AWSClient::AdjustClockSkew(HttpResponseOutcome& outcome, const Aws::Utils::DateTime& timeRequestSent, const Aws::Utils::DateTime& timeResponseReceived, std::chrono::milliseconds attemptSkew) const
 {
     if (m_enableClockSkewAdjustment)
@@ -354,6 +378,7 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
             break;
         }
         lastError = outcome.GetError();
+        InvalidateCredentials(outcome.GetError(), httpRequest->GetSigningAccessKey());
 
         DateTime serverTime = GetServerTimeFromError(outcome.GetError());
         auto clockSkew = DateTime::Diff(serverTime, DateTime::Now());
@@ -534,6 +559,7 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
             break;
         }
         lastError = outcome.GetError();
+        InvalidateCredentials(outcome.GetError(), httpRequest->GetSigningAccessKey());
 
         DateTime serverTime = GetServerTimeFromError(outcome.GetError());
         auto clockSkew = DateTime::Diff(serverTime, DateTime::Now());
@@ -942,6 +968,7 @@ Http::HttpClient::AttemptOutcome AWSClient::OnAttemptCompleteAsync(const std::sh
     }
 
     context->lastError = outcome.GetError();
+    InvalidateCredentials(outcome.GetError(), context->httpRequest->GetSigningAccessKey());
 
     DateTime serverTime = GetServerTimeFromError(outcome.GetError());
     auto clockSkew = DateTime::Diff(serverTime, DateTime::Now());

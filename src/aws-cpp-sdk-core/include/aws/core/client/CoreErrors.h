@@ -48,6 +48,8 @@ namespace Aws
             NOT_INITIALIZED = 25,
             MEMORY_ALLOCATION = 26,
             NOT_IMPLEMENTED = 27,
+            EXPIRED_TOKEN = 28,
+            INVALID_TOKEN = 29,
 
             NETWORK_CONNECTION = 99, // General failure to send message to service
 

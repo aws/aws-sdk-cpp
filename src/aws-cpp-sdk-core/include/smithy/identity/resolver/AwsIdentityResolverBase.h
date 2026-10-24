@@ -32,5 +32,8 @@ namespace smithy {
         // Identity. An identity resolver might load the identity from a remote service (e.g. STS), a local
         // service (e.g. IMDS), local disk (e.g. a configuration file) or local memory (e.g. environment variables).
         virtual ResolveIdentityFutureOutcome getIdentity(const IdentityProperties& identityProperties, const AdditionalParameters& additionalParameters) = 0;
+
+        // invalidate tells a caching resolver that a service rejected the identity with this identifier.
+        virtual void invalidate(const Aws::String& /*rejectedIdentifier*/) {}
     };
 }

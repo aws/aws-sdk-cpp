@@ -4,6 +4,7 @@
  */
 
 #include <aws/identity-management/auth/STSAssumeRoleCredentialsProvider.h>
+#include <aws/core/internal/CredentialsCachingProvider.h>
 #include <aws/sts/model/AssumeRoleRequest.h>
 #include <aws/sts/STSClient.h>
 #include <aws/core/utils/logging/LogMacros.h>
@@ -21,11 +22,25 @@ namespace Aws
         //60 seconds;
         static const int ACCOUNT_FOR_LATENCY = 60;
 
+        AWSCredentials STSAssumeRoleCredentialsProvider::RetrieveForCache()
+        {
+            m_cachedCredentials = AWSCredentials();
+            m_expiry = 0;
+            LoadCredentialsFromSTS();
+            AWSCredentials credentials = m_cachedCredentials;
+            if (!credentials.IsEmpty())
+            {
+                credentials.SetExpiration(DateTime(m_expiry.load()));
+            }
+            return credentials;
+        }
+
         STSAssumeRoleCredentialsProvider::STSAssumeRoleCredentialsProvider(const Aws::String& roleArn, const Aws::String& sessionName,
             const Aws::String& externalId, int loadFrequency, const std::shared_ptr<Aws::STS::STSClient>& stsClient) :
             m_stsClient(stsClient == nullptr ? Aws::MakeShared<Aws::STS::STSClient>(CLASS_TAG) : stsClient),
             m_roleArn(roleArn), m_sessionName(sessionName), m_externalId(externalId),
-            m_expiry(0), m_loadFrequency(loadFrequency)            
+            m_expiry(0), m_loadFrequency(loadFrequency),
+            m_cachingProvider(Aws::MakeShared<Aws::Internal::CredentialsCachingProvider>(CLASS_TAG, [this]() { return RetrieveForCache(); }))
         {
             if (sessionName.empty())
             {   
@@ -38,9 +53,12 @@ namespace Aws
 
         AWSCredentials STSAssumeRoleCredentialsProvider::GetAWSCredentials()
         {
-            LoadCredentialsFromSTS();
-            std::lock_guard<std::mutex> locker(m_credsMutex);
-            return m_cachedCredentials;
+            return m_cachingProvider->GetAWSCredentials();
+        }
+
+        void STSAssumeRoleCredentialsProvider::Invalidate(const Aws::String& accessKeyId)
+        {
+            m_cachingProvider->Invalidate(accessKeyId);
         }
 
         void STSAssumeRoleCredentialsProvider::LoadCredentialsFromSTS()

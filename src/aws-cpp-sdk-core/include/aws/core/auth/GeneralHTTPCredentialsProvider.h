@@ -89,6 +89,11 @@ namespace Aws
             */
             AWSCredentials GetAWSCredentials() override;
 
+            /**
+             * Invalidate marks the cached credentials for refresh if they match accessKeyId.
+             */
+            void Invalidate(const Aws::String& accessKeyId) override;
+
             static const char AWS_CONTAINER_AUTHORIZATION_TOKEN_FILE[];
             static const char AWS_CONTAINER_CREDENTIALS_RELATIVE_URI[];
             static const char AWS_CONTAINER_CREDENTIALS_FULL_URI[];
@@ -102,16 +107,14 @@ namespace Aws
             void Reload() override;
 
         private:
-            bool ExpiresSoon() const;
-            void RefreshIfExpired();
-
             Aws::String LoadTokenFromFile() const;
 
             std::shared_ptr<Aws::Internal::ECSCredentialsClient> m_ecsCredentialsClient;
             Aws::String m_authTokenFilePath;
 
-            long m_loadFrequencyMs = REFRESH_THRESHOLD;
             Aws::Auth::AWSCredentials m_credentials;
+            AWSCredentials RetrieveForCache();
+            std::shared_ptr<AWSCredentialsProvider> m_cachingProvider;
         };
 
         // GeneralHTTPCredentialsProvider was previously known as TaskRoleCredentialsProvider or "ECS credentials provider"

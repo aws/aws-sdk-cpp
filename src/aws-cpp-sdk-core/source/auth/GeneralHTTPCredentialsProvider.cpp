@@ -5,6 +5,7 @@
 
 
 #include <aws/core/auth/GeneralHTTPCredentialsProvider.h>
+#include <aws/core/internal/CredentialsCachingProvider.h>
 
 #include <aws/crt/Api.h>
 #include <aws/core/platform/Environment.h>
@@ -15,6 +16,13 @@
 using namespace Aws::Auth;
 
 static const char GEN_HTTP_LOG_TAG[] = "GeneralHTTPCredentialsProvider";
+
+AWSCredentials GeneralHTTPCredentialsProvider::RetrieveForCache()
+{
+    m_credentials = AWSCredentials();
+    Reload();
+    return m_credentials;
+}
 
 const char GeneralHTTPCredentialsProvider::AWS_CONTAINER_AUTHORIZATION_TOKEN_FILE[] = "AWS_CONTAINER_AUTHORIZATION_TOKEN_FILE";
 const char GeneralHTTPCredentialsProvider::AWS_CONTAINER_CREDENTIALS_RELATIVE_URI[] = "AWS_CONTAINER_CREDENTIALS_RELATIVE_URI";
@@ -154,7 +162,7 @@ GeneralHTTPCredentialsProvider::GeneralHTTPCredentialsProvider(const Aws::String
                                                                long refreshRateMs,
                                                                ShouldCreateFunc shouldCreateFunc) :
     m_authTokenFilePath(authTokenFilePath),
-    m_loadFrequencyMs(refreshRateMs)
+    m_cachingProvider(Aws::MakeShared<Aws::Internal::CredentialsCachingProvider>(GEN_HTTP_LOG_TAG, [this]() { return RetrieveForCache(); }))
 {
     if (shouldCreateFunc(relativeUri, absoluteUri, authToken))
     {
@@ -170,21 +178,19 @@ GeneralHTTPCredentialsProvider::GeneralHTTPCredentialsProvider(const Aws::String
 GeneralHTTPCredentialsProvider::GeneralHTTPCredentialsProvider(
         const std::shared_ptr<Aws::Internal::ECSCredentialsClient>& client, long refreshRateMs) :
     m_ecsCredentialsClient(client),
-    m_loadFrequencyMs(refreshRateMs)
+    m_cachingProvider(Aws::MakeShared<Aws::Internal::CredentialsCachingProvider>(GEN_HTTP_LOG_TAG, [this]() { return RetrieveForCache(); }))
 {
     AWS_LOGSTREAM_INFO(GEN_HTTP_LOG_TAG, "Creating GeneralHTTPCredentialsProvider with a pre-allocated client " << refreshRateMs);
 }
 
 AWSCredentials GeneralHTTPCredentialsProvider::GetAWSCredentials()
 {
-    RefreshIfExpired();
-    Aws::Utils::Threading::ReaderLockGuard guard(m_reloadLock);
-    return m_credentials;
+    return m_cachingProvider->GetAWSCredentials();
 }
 
-bool GeneralHTTPCredentialsProvider::ExpiresSoon() const
+void GeneralHTTPCredentialsProvider::Invalidate(const Aws::String& accessKeyId)
 {
-    return ((m_credentials.GetExpiration() - Aws::Utils::DateTime::Now()).count() < AWS_CREDENTIAL_PROVIDER_EXPIRATION_GRACE_PERIOD);
+    m_cachingProvider->Invalidate(accessKeyId);
 }
 
 Aws::String GeneralHTTPCredentialsProvider::LoadTokenFromFile() const
@@ -249,23 +255,4 @@ void GeneralHTTPCredentialsProvider::Reload()
         m_credentials.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_HTTP);
     }
     AWSCredentialsProvider::Reload();
-}
-
-void GeneralHTTPCredentialsProvider::RefreshIfExpired()
-{
-    AWS_LOGSTREAM_DEBUG(GEN_HTTP_LOG_TAG, "Checking if latest credential pull has expired.");
-    Aws::Utils::Threading::ReaderLockGuard guard(m_reloadLock);
-    if (!m_credentials.IsEmpty() && !IsTimeToRefresh(m_loadFrequencyMs) && !ExpiresSoon())
-    {
-        return;
-    }
-
-    guard.UpgradeToWriterLock();
-
-    if (!m_credentials.IsEmpty() && !IsTimeToRefresh(m_loadFrequencyMs) && !ExpiresSoon())
-    {
-        return;
-    }
-
-    Reload();
 }

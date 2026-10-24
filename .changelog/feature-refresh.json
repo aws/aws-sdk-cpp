@@ -1,0 +1,6 @@
+{
+  "type": "feature",
+  "category": "aws-cpp-sdk-core",
+  "contributor": "kai-ion",
+  "description": "Add the shared credential refresh lifecycle to built-in credential providers: advisory and mandatory refresh windows, a jittered backoff that keeps serving cached credentials when a refresh fails, and invalidation of credentials rejected with ExpiredToken or InvalidToken"
+}
