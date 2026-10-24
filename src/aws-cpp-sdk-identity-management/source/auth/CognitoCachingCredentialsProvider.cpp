@@ -22,7 +22,10 @@ static const char* MEM_TAG = "CognitoCachingCredentialsProvider";
 
 AWSCredentials CognitoCachingCredentialsProvider::RetrieveForCache()
 {
-    m_cachedCredentials = AWSCredentials("", "");
+    {
+        std::lock_guard<std::mutex> locker(m_credsMutex);
+        m_cachedCredentials = AWSCredentials("", "");
+    }
     m_expiry.store(0.0);
     AWSCredentials credentials = RetrieveCredentials();
     if (!credentials.IsEmpty())

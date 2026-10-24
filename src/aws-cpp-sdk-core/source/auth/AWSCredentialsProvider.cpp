@@ -288,7 +288,6 @@ void InstanceProfileCredentialsProvider::Reload()
 {
     if (m_ec2MetadataConfigLoader)
     {
-        m_ec2MetadataConfigLoader->Invalidate(m_ec2MetadataConfigLoader->GetCredentials().GetAWSAccessKeyId());
         m_ec2MetadataConfigLoader->GetCredentials();
     }
     AWSCredentialsProvider::Reload();
