@@ -7,6 +7,8 @@
 
 #include <aws/core/Core_EXPORTS.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
+#include <aws/core/client/AWSError.h>
+#include <aws/core/client/CoreErrors.h>
 #include <aws/core/utils/DateTime.h>
 #include <functional>
 #include <memory>
@@ -16,6 +18,13 @@ namespace Aws
     namespace Internal
     {
         class CredentialsCachingStateImpl;
+
+        // IsCredentialsRejectedError returns whether a service rejected the credentials that signed the request.
+        inline bool IsCredentialsRejectedError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& error)
+        {
+            const Aws::String& errorCode = error.GetExceptionName();
+            return errorCode == "ExpiredToken" || errorCode == "InvalidToken";
+        }
 
         /**
          * RefreshFailurePolicy picks what CredentialsCachingProvider serves after a failed refresh.

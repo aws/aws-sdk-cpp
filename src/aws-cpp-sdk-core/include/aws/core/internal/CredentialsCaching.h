@@ -128,18 +128,18 @@ namespace Aws
                 bool advisory = false;
                 {
                     Aws::Utils::Threading::ReaderLockGuard guard(m_stateLock);
-                    if (m_cached)
+                    if (m_entry.credentials)
                     {
-                        if (!RefreshNeeded(*m_cached, nowMs))
+                        if (!RefreshNeeded(m_entry, nowMs))
                         {
-                            return Aws::Utils::Outcome<CredentialsT, Aws::String>(m_cached->credentials);
+                            return Aws::Utils::Outcome<CredentialsT, Aws::String>(*m_entry.credentials);
                         }
-                        if (RateLimited(*m_cached, nowMs))
+                        if (RateLimited(m_entry, nowMs))
                         {
-                            return Aws::Utils::Outcome<CredentialsT, Aws::String>(m_cached->credentials);
+                            return Aws::Utils::Outcome<CredentialsT, Aws::String>(*m_entry.credentials);
                         }
-                        cachedCredentials = m_cached->credentials;
-                        advisory = !MandatoryRefreshNeeded(*m_cached, nowMs);
+                        cachedCredentials = *m_entry.credentials;
+                        advisory = !MandatoryRefreshNeeded(m_entry, nowMs);
                     }
                 }
 
@@ -154,32 +154,28 @@ namespace Aws
             void Invalidate(const Aws::String& rejectedIdentifier)
             {
                 Aws::Utils::Threading::WriterLockGuard guard(m_stateLock);
-                if (!m_cached)
+                if (!m_entry.credentials)
                 {
                     return;
                 }
-                if (m_identifier(m_cached->credentials) != rejectedIdentifier)
+                if (m_identifier(*m_entry.credentials) != rejectedIdentifier)
                 {
                     return;
                 }
-                m_cached->expiration = m_clock();
+                m_entry.expiration = m_clock();
             }
 
         private:
-            // CachedCredentials holds the cached credentials and their refresh timing.
-            struct CachedCredentials
+            // CacheEntry holds the cached credentials, their refresh timing, and any cached non-recoverable error.
+            struct CacheEntry
             {
-                CredentialsT credentials;
+                Aws::Crt::Optional<CredentialsT> credentials;
                 Aws::Utils::DateTime expiration;
                 std::chrono::milliseconds advisoryWindow{CREDENTIALS_MEDIUM_ADVISORY_WINDOW};
                 int64_t nextRefreshAllowedAtMs{0};
-            };
 
-            // CachedError holds a non-recoverable error and when it stops being served.
-            struct CachedError
-            {
-                Aws::String message;
-                int64_t expiresAtMs{0};
+                Aws::String errorMessage;
+                int64_t errorExpiresAtMs{0};
             };
 
             // AdvisoryRefresh runs SingleRetrieve if no refresh is in flight, otherwise returns cachedCredentials.
@@ -206,17 +202,17 @@ namespace Aws
                 {
                     const int64_t nowMs = m_clock().Millis();
                     Aws::Utils::Threading::ReaderLockGuard guard(m_stateLock);
-                    if (m_cached && !RefreshNeeded(*m_cached, nowMs))
+                    if (m_entry.credentials && !RefreshNeeded(m_entry, nowMs))
                     {
-                        return Aws::Utils::Outcome<CredentialsT, Aws::String>(m_cached->credentials);
+                        return Aws::Utils::Outcome<CredentialsT, Aws::String>(*m_entry.credentials);
                     }
                     if (NonRecoverableErrCached(nowMs))
                     {
-                        return Aws::Utils::Outcome<CredentialsT, Aws::String>(m_cachedError->message);
+                        return Aws::Utils::Outcome<CredentialsT, Aws::String>(m_entry.errorMessage);
                     }
-                    if (m_cached && RateLimited(*m_cached, nowMs))
+                    if (m_entry.credentials && RateLimited(m_entry, nowMs))
                     {
-                        return Aws::Utils::Outcome<CredentialsT, Aws::String>(m_cached->credentials);
+                        return Aws::Utils::Outcome<CredentialsT, Aws::String>(*m_entry.credentials);
                     }
                 }
 
@@ -227,65 +223,62 @@ namespace Aws
                 if (result.status == RefreshResult<CredentialsT>::Status::Success &&
                     result.expiration.has_value() && result.expiration->Millis() > nowMs)
                 {
-                    CachedCredentials entry;
+                    CacheEntry entry;
                     entry.credentials = result.credentials;
                     entry.expiration = result.expiration.value();
                     entry.advisoryWindow = AdvisoryWindowFor(std::chrono::milliseconds(result.expiration->Millis() - nowMs));
-                    m_cached = std::move(entry);
-                    m_cachedError.reset();
-                    return Aws::Utils::Outcome<CredentialsT, Aws::String>(m_cached->credentials);
+                    m_entry = std::move(entry);
+                    return Aws::Utils::Outcome<CredentialsT, Aws::String>(*m_entry.credentials);
                 }
 
                 if (result.status == RefreshResult<CredentialsT>::Status::NonRecoverable)
                 {
-                    CachedError error;
-                    error.message = result.errorMessage;
-                    error.expiresAtMs = nowMs + Jitter(CREDENTIALS_ERROR_CACHE_MIN, CREDENTIALS_ERROR_CACHE_MAX).count();
-                    m_cachedError = std::move(error);
+                    m_entry.errorMessage = result.errorMessage;
+                    m_entry.errorExpiresAtMs = nowMs + Jitter(CREDENTIALS_ERROR_CACHE_MIN, CREDENTIALS_ERROR_CACHE_MAX).count();
                     return Aws::Utils::Outcome<CredentialsT, Aws::String>(result.errorMessage);
                 }
 
                 const Aws::Crt::Optional<RefreshFailureStrategy::BackoffRange> backoffRange = m_failureStrategy->Backoff();
-                if (m_cached && backoffRange)
+                if (m_entry.credentials && backoffRange)
                 {
                     const std::chrono::milliseconds backoff = Jitter(backoffRange->min, backoffRange->max);
-                    m_cached->nextRefreshAllowedAtMs = nowMs + backoff.count();
+                    m_entry.nextRefreshAllowedAtMs = nowMs + backoff.count();
                     AWS_LOGSTREAM_WARN("CredentialsCachingState", "Credential refresh failed: "
                         << (result.errorMessage.empty() ? Aws::String("the credential source returned expired credentials") : result.errorMessage)
                         << ". The SDK will continue using cached credentials. A refresh of these credentials will be attempted again after "
                         << std::chrono::duration_cast<std::chrono::seconds>(backoff).count() << " seconds.");
-                    return Aws::Utils::Outcome<CredentialsT, Aws::String>(m_cached->credentials);
+                    return Aws::Utils::Outcome<CredentialsT, Aws::String>(*m_entry.credentials);
                 }
-                if (m_cached && nowMs < m_cached->expiration.Millis())
+                if (m_entry.credentials && nowMs < m_entry.expiration.Millis())
                 {
-                    return Aws::Utils::Outcome<CredentialsT, Aws::String>(m_cached->credentials);
+                    return Aws::Utils::Outcome<CredentialsT, Aws::String>(*m_entry.credentials);
                 }
                 return Aws::Utils::Outcome<CredentialsT, Aws::String>(
                     result.errorMessage.empty() ? Aws::String("NoCredentialsError") : result.errorMessage);
             }
 
             // RefreshNeeded returns whether cached is inside its advisory window.
-            static bool RefreshNeeded(const CachedCredentials& cached, int64_t nowMs)
+            static bool RefreshNeeded(const CacheEntry& entry, int64_t nowMs)
             {
-                return nowMs >= cached.expiration.Millis() - cached.advisoryWindow.count();
+                return nowMs >= entry.expiration.Millis() - entry.advisoryWindow.count();
             }
 
             // MandatoryRefreshNeeded returns whether cached is inside its mandatory window.
-            static bool MandatoryRefreshNeeded(const CachedCredentials& cached, int64_t nowMs)
+            static bool MandatoryRefreshNeeded(const CacheEntry& entry, int64_t nowMs)
             {
-                return nowMs >= cached.expiration.Millis() - std::chrono::milliseconds(CREDENTIALS_MANDATORY_REFRESH_WINDOW).count();
+                return nowMs >= entry.expiration.Millis() - std::chrono::milliseconds(CREDENTIALS_MANDATORY_REFRESH_WINDOW).count();
             }
 
-            // RateLimited returns whether a failed refresh's backoff is still active for cached.
-            static bool RateLimited(const CachedCredentials& cached, int64_t nowMs)
+            // RateLimited returns whether a failed refresh's backoff is still active for entry.
+            static bool RateLimited(const CacheEntry& entry, int64_t nowMs)
             {
-                return cached.nextRefreshAllowedAtMs != 0 && nowMs < cached.nextRefreshAllowedAtMs;
+                return entry.nextRefreshAllowedAtMs != 0 && nowMs < entry.nextRefreshAllowedAtMs;
             }
 
             // NonRecoverableErrCached returns whether a non-recoverable error is cached and not yet expired.
             bool NonRecoverableErrCached(int64_t nowMs) const
             {
-                return m_cachedError && nowMs < m_cachedError->expiresAtMs;
+                return nowMs < m_entry.errorExpiresAtMs;
             }
 
             // AdvisoryWindowFor returns the advisory window for a credential lifetime.
@@ -302,10 +295,10 @@ namespace Aws
                 return CREDENTIALS_LONG_ADVISORY_WINDOW;
             }
 
-            // Jitter returns a random duration in [lo, hi).
+            // Jitter returns a random duration in [lo, hi].
             std::chrono::milliseconds Jitter(std::chrono::milliseconds lo, std::chrono::milliseconds hi) const
             {
-                return lo + std::chrono::milliseconds(static_cast<int64_t>(m_jitter() * static_cast<double>((hi - lo).count())));
+                return lo + std::chrono::milliseconds(static_cast<int64_t>(m_jitter() * static_cast<double>((hi - lo).count() + 1)));
             }
 
             static double DefaultJitter()
@@ -323,9 +316,7 @@ namespace Aws
 
             mutable Aws::Utils::Threading::ReaderWriterLock m_stateLock;
             std::mutex m_refreshLock;
-
-            Aws::Crt::Optional<CachedCredentials> m_cached;
-            Aws::Crt::Optional<CachedError> m_cachedError;
+            CacheEntry m_entry;
         };
     } // namespace Internal
 } // namespace Aws

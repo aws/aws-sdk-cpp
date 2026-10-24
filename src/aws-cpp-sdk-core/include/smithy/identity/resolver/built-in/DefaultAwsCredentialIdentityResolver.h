@@ -52,5 +52,7 @@ class DefaultAwsCredentialIdentityResolver : public AwsCredentialIdentityResolve
 
     return ResolveIdentityFutureOutcome(std::move(smithyCreds));
   }
+
+  void invalidate(const Aws::String& rejectedIdentifier) override { legacyChain_sp->Invalidate(rejectedIdentifier); }
 };
 }  // namespace smithy

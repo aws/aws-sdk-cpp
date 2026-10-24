@@ -31,6 +31,7 @@
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
 #include <aws/core/internal/ClockSkew.h>
+#include <aws/core/internal/CredentialsCachingProvider.h>
 #include <aws/core/utils/crypto/MD5.h>
 #include <aws/core/utils/crypto/CRC32.h>
 #include <aws/core/utils/crypto/Sha256.h>
@@ -72,10 +73,6 @@ static const int SUCCESS_RESPONSE_MAX = 299;
 static const char AWS_CLIENT_LOG_TAG[] = "AWSClient";
 static const char AWS_LAMBDA_FUNCTION_NAME[] = "AWS_LAMBDA_FUNCTION_NAME";
 static const char X_AMZN_TRACE_ID[] = "_X_AMZN_TRACE_ID";
-
-// EXPIRED_TOKEN_ERROR_CODE and INVALID_TOKEN_ERROR_CODE trigger InvalidateCredentials.
-static const char EXPIRED_TOKEN_ERROR_CODE[] = "ExpiredToken";
-static const char INVALID_TOKEN_ERROR_CODE[] = "InvalidToken";
 
 CoreErrors AWSClient::GuessBodylessErrorType(Aws::Http::HttpResponseCode responseCode)
 {
@@ -269,11 +266,11 @@ static DateTime GetServerTimeFromError(const AWSError<CoreErrors> error)
 
 void AWSClient::InvalidateCredentials(const AWSError<CoreErrors>& error, const Aws::String& accessKeyId) const
 {
-    const Aws::String& errorCode = error.GetExceptionName();
-    if (errorCode != EXPIRED_TOKEN_ERROR_CODE && errorCode != INVALID_TOKEN_ERROR_CODE)
+    if (!Aws::Internal::IsCredentialsRejectedError(error))
     {
         return;
     }
+    const Aws::String& errorCode = error.GetExceptionName();
     if (accessKeyId.empty())
     {
         AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Not invalidating credentials after " << errorCode << ": the request was not signed with an access key.");
