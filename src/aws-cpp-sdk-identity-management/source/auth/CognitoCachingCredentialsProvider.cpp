@@ -19,15 +19,26 @@ using namespace Aws::Utils;
 
 static const char* LOG_TAG = "CognitoCachingCredentialsProvider";
 static const char* MEM_TAG = "CognitoCachingCredentialsProvider";
+static const int MAX_LOGINS_CHANGED_RETRIES = 1;
 
 AWSCredentials CognitoCachingCredentialsProvider::RetrieveForCache()
 {
+    AWSCredentials credentials;
+    for (int attempt = 0; attempt <= MAX_LOGINS_CHANGED_RETRIES; ++attempt)
     {
-        std::lock_guard<std::mutex> locker(m_credsMutex);
-        m_cachedCredentials = AWSCredentials("", "");
+        const uint64_t loginsGeneration = m_loginsGeneration.load();
+        {
+            std::lock_guard<std::mutex> locker(m_credsMutex);
+            m_cachedCredentials = AWSCredentials("", "");
+        }
+        m_expiry.store(0.0);
+        credentials = RetrieveCredentials();
+        if (m_loginsGeneration.load() == loginsGeneration)
+        {
+            break;
+        }
+        AWS_LOGSTREAM_INFO(LOG_TAG, "Logins were updated while fetching credentials, fetching again with the new logins.");
     }
-    m_expiry.store(0.0);
-    AWSCredentials credentials = RetrieveCredentials();
     if (!credentials.IsEmpty())
     {
         credentials.SetExpiration(DateTime(m_expiry.load()));
@@ -112,6 +123,7 @@ bool CognitoCachingCredentialsProvider::IsTimeExpired(double expiry)
 void CognitoCachingCredentialsProvider::OnLoginsUpdated(const PersistentCognitoIdentityProvider&)
 {
     AWS_LOGSTREAM_INFO(LOG_TAG, "Logins Updated in the identity repository, resetting the expiry to force a refresh on the next run.");
+    ++m_loginsGeneration;
     m_expiry.store(DateTime().SecondsWithMSPrecision());
     Aws::String accessKeyId;
     {

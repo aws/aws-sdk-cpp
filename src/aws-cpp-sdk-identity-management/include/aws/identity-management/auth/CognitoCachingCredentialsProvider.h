@@ -53,6 +53,7 @@ namespace Aws
             AWSCredentials m_cachedCredentials;
             std::atomic<double> m_expiry;
             std::mutex m_credsMutex;
+            std::atomic<uint64_t> m_loginsGeneration{0};
             AWSCredentials RetrieveForCache();
             std::shared_ptr<AWSCredentialsProvider> m_cachingProvider;
         };
