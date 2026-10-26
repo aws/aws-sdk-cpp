@@ -11,6 +11,7 @@
 #include <aws/networkmanager/model/AttachmentError.h>
 #include <aws/networkmanager/model/AttachmentState.h>
 #include <aws/networkmanager/model/AttachmentType.h>
+#include <aws/networkmanager/model/NatGatewaySupportState.h>
 #include <aws/networkmanager/model/ProposedNetworkFunctionGroupChange.h>
 #include <aws/networkmanager/model/ProposedSegmentChange.h>
 #include <aws/networkmanager/model/Tag.h>
@@ -261,6 +262,41 @@ class Attachment {
 
   ///@{
   /**
+   * <p>The state of NAT gateway support on the attachment. This is returned only to
+   * the core network owner for attachment types that support NAT.</p>
+   */
+  inline NatGatewaySupportState GetNatGatewaySupport() const { return m_natGatewaySupport; }
+  inline bool NatGatewaySupportHasBeenSet() const { return m_natGatewaySupportHasBeenSet; }
+  inline void SetNatGatewaySupport(NatGatewaySupportState value) {
+    m_natGatewaySupportHasBeenSet = true;
+    m_natGatewaySupport = value;
+  }
+  inline Attachment& WithNatGatewaySupport(NatGatewaySupportState value) {
+    SetNatGatewaySupport(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether the core network installs system routes for the NAT CIDR
+   * blocks of the attachment's NAT rules. This is returned only to the core network
+   * owner for attachment types that support NAT.</p>
+   */
+  inline bool GetNatSystemRouteSupport() const { return m_natSystemRouteSupport; }
+  inline bool NatSystemRouteSupportHasBeenSet() const { return m_natSystemRouteSupportHasBeenSet; }
+  inline void SetNatSystemRouteSupport(bool value) {
+    m_natSystemRouteSupportHasBeenSet = true;
+    m_natSystemRouteSupport = value;
+  }
+  inline Attachment& WithNatSystemRouteSupport(bool value) {
+    SetNatSystemRouteSupport(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The tags associated with the attachment.</p>
    */
   inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
@@ -406,6 +442,10 @@ class Attachment {
 
   Aws::String m_networkFunctionGroupName;
 
+  NatGatewaySupportState m_natGatewaySupport{NatGatewaySupportState::NOT_SET};
+
+  bool m_natSystemRouteSupport{false};
+
   Aws::Vector<Tag> m_tags;
 
   ProposedSegmentChange m_proposedSegmentChange;
@@ -429,6 +469,8 @@ class Attachment {
   bool m_attachmentPolicyRuleNumberHasBeenSet = false;
   bool m_segmentNameHasBeenSet = false;
   bool m_networkFunctionGroupNameHasBeenSet = false;
+  bool m_natGatewaySupportHasBeenSet = false;
+  bool m_natSystemRouteSupportHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_proposedSegmentChangeHasBeenSet = false;
   bool m_proposedNetworkFunctionGroupChangeHasBeenSet = false;

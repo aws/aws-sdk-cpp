@@ -20,6 +20,8 @@ static const int UPDATE_CONNECTOR_CONFIGURATION_HASH = HashingUtils::HashString(
 static const int ISOLATE_CONNECTOR_HASH = HashingUtils::HashString("ISOLATE_CONNECTOR");
 static const int RESTORE_CONNECTOR_HASH = HashingUtils::HashString("RESTORE_CONNECTOR");
 static const int RESTART_CONNECTOR_HASH = HashingUtils::HashString("RESTART_CONNECTOR");
+static const int PAUSE_CONNECTOR_HASH = HashingUtils::HashString("PAUSE_CONNECTOR");
+static const int RESUME_CONNECTOR_HASH = HashingUtils::HashString("RESUME_CONNECTOR");
 
 ConnectorOperationType GetConnectorOperationTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -33,6 +35,10 @@ ConnectorOperationType GetConnectorOperationTypeForName(const Aws::String& name)
     return ConnectorOperationType::RESTORE_CONNECTOR;
   } else if (hashCode == RESTART_CONNECTOR_HASH) {
     return ConnectorOperationType::RESTART_CONNECTOR;
+  } else if (hashCode == PAUSE_CONNECTOR_HASH) {
+    return ConnectorOperationType::PAUSE_CONNECTOR;
+  } else if (hashCode == RESUME_CONNECTOR_HASH) {
+    return ConnectorOperationType::RESUME_CONNECTOR;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -57,6 +63,10 @@ Aws::String GetNameForConnectorOperationType(ConnectorOperationType enumValue) {
       return "RESTORE_CONNECTOR";
     case ConnectorOperationType::RESTART_CONNECTOR:
       return "RESTART_CONNECTOR";
+    case ConnectorOperationType::PAUSE_CONNECTOR:
+      return "PAUSE_CONNECTOR";
+    case ConnectorOperationType::RESUME_CONNECTOR:
+      return "RESUME_CONNECTOR";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

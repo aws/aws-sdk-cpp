@@ -32,6 +32,7 @@
 #include <aws/networkmanager/model/Attachment.h>
 #include <aws/networkmanager/model/AttachmentError.h>
 #include <aws/networkmanager/model/AttachmentErrorCode.h>
+#include <aws/networkmanager/model/AttachmentNatConfiguration.h>
 #include <aws/networkmanager/model/AttachmentRoutingPolicyAssociationSummary.h>
 #include <aws/networkmanager/model/AttachmentState.h>
 #include <aws/networkmanager/model/AttachmentType.h>
@@ -192,6 +193,7 @@
 #include <aws/networkmanager/model/GetNetworkResourcesPaginationTraits.h>
 #include <aws/networkmanager/model/GetNetworkResourcesRequest.h>
 #include <aws/networkmanager/model/GetNetworkResourcesResult.h>
+#include <aws/networkmanager/model/GetNetworkRoutesPaginationTraits.h>
 #include <aws/networkmanager/model/GetNetworkRoutesRequest.h>
 #include <aws/networkmanager/model/GetNetworkRoutesResult.h>
 #include <aws/networkmanager/model/GetNetworkTelemetryPaginationTraits.h>
@@ -225,6 +227,9 @@
 #include <aws/networkmanager/model/LinkAssociation.h>
 #include <aws/networkmanager/model/LinkAssociationState.h>
 #include <aws/networkmanager/model/LinkState.h>
+#include <aws/networkmanager/model/ListAttachmentNatConfigurationsPaginationTraits.h>
+#include <aws/networkmanager/model/ListAttachmentNatConfigurationsRequest.h>
+#include <aws/networkmanager/model/ListAttachmentNatConfigurationsResult.h>
 #include <aws/networkmanager/model/ListAttachmentRoutingPolicyAssociationsPaginationTraits.h>
 #include <aws/networkmanager/model/ListAttachmentRoutingPolicyAssociationsRequest.h>
 #include <aws/networkmanager/model/ListAttachmentRoutingPolicyAssociationsResult.h>
@@ -254,6 +259,11 @@
 #include <aws/networkmanager/model/ListTagsForResourceRequest.h>
 #include <aws/networkmanager/model/ListTagsForResourceResult.h>
 #include <aws/networkmanager/model/Location.h>
+#include <aws/networkmanager/model/NatGatewaySupportState.h>
+#include <aws/networkmanager/model/NatGatewaySupportValue.h>
+#include <aws/networkmanager/model/NatRule.h>
+#include <aws/networkmanager/model/NatRuleRequest.h>
+#include <aws/networkmanager/model/NatRuleState.h>
 #include <aws/networkmanager/model/NetworkFunctionGroup.h>
 #include <aws/networkmanager/model/NetworkResource.h>
 #include <aws/networkmanager/model/NetworkResourceCount.h>
@@ -329,6 +339,8 @@
 #include <aws/networkmanager/model/TunnelProtocol.h>
 #include <aws/networkmanager/model/UntagResourceRequest.h>
 #include <aws/networkmanager/model/UntagResourceResult.h>
+#include <aws/networkmanager/model/UpdateAttachmentNatConfigurationRequest.h>
+#include <aws/networkmanager/model/UpdateAttachmentNatConfigurationResult.h>
 #include <aws/networkmanager/model/UpdateConnectionRequest.h>
 #include <aws/networkmanager/model/UpdateConnectionResult.h>
 #include <aws/networkmanager/model/UpdateCoreNetworkRequest.h>

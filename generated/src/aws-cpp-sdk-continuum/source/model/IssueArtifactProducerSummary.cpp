@@ -1,0 +1,40 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/continuum/model/IssueArtifactProducerSummary.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace Continuum {
+namespace Model {
+
+IssueArtifactProducerSummary::IssueArtifactProducerSummary(JsonView jsonValue) { *this = jsonValue; }
+
+IssueArtifactProducerSummary& IssueArtifactProducerSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("agent")) {
+    m_agent = jsonValue.GetString("agent");
+    m_agentHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue IssueArtifactProducerSummary::Jsonize() const {
+  JsonValue payload;
+
+  if (m_agentHasBeenSet) {
+    payload.WithString("agent", m_agent);
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace Continuum
+}  // namespace Aws

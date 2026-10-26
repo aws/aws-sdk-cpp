@@ -91,6 +91,8 @@
 #include <aws/kafkaconnect/model/LogDelivery.h>
 #include <aws/kafkaconnect/model/LogDeliveryDescription.h>
 #include <aws/kafkaconnect/model/NetworkType.h>
+#include <aws/kafkaconnect/model/PauseConnectorRequest.h>
+#include <aws/kafkaconnect/model/PauseConnectorResult.h>
 #include <aws/kafkaconnect/model/Plugin.h>
 #include <aws/kafkaconnect/model/PluginDescription.h>
 #include <aws/kafkaconnect/model/ProvisionedCapacity.h>
@@ -98,6 +100,8 @@
 #include <aws/kafkaconnect/model/ProvisionedCapacityUpdate.h>
 #include <aws/kafkaconnect/model/RestartConnectorRequest.h>
 #include <aws/kafkaconnect/model/RestartConnectorResult.h>
+#include <aws/kafkaconnect/model/ResumeConnectorRequest.h>
+#include <aws/kafkaconnect/model/ResumeConnectorResult.h>
 #include <aws/kafkaconnect/model/S3Location.h>
 #include <aws/kafkaconnect/model/S3LocationDescription.h>
 #include <aws/kafkaconnect/model/S3LogDelivery.h>

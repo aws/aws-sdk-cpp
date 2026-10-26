@@ -19,10 +19,12 @@
 #include <aws/networkmanager/model/GetNetworkResourceCountsPaginationTraits.h>
 #include <aws/networkmanager/model/GetNetworkResourceRelationshipsPaginationTraits.h>
 #include <aws/networkmanager/model/GetNetworkResourcesPaginationTraits.h>
+#include <aws/networkmanager/model/GetNetworkRoutesPaginationTraits.h>
 #include <aws/networkmanager/model/GetNetworkTelemetryPaginationTraits.h>
 #include <aws/networkmanager/model/GetSitesPaginationTraits.h>
 #include <aws/networkmanager/model/GetTransitGatewayConnectPeerAssociationsPaginationTraits.h>
 #include <aws/networkmanager/model/GetTransitGatewayRegistrationsPaginationTraits.h>
+#include <aws/networkmanager/model/ListAttachmentNatConfigurationsPaginationTraits.h>
 #include <aws/networkmanager/model/ListAttachmentRoutingPolicyAssociationsPaginationTraits.h>
 #include <aws/networkmanager/model/ListAttachmentsPaginationTraits.h>
 #include <aws/networkmanager/model/ListConnectPeersPaginationTraits.h>
@@ -181,6 +183,18 @@ class NetworkManagerPaginationBase {
   }
 
   /**
+   * Create a paginator for GetNetworkRoutes operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetNetworkRoutesRequest,
+                                    Pagination::GetNetworkRoutesPaginationTraits<DerivedClient>>
+  GetNetworkRoutesPaginator(const Model::GetNetworkRoutesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetNetworkRoutesRequest,
+                                             Pagination::GetNetworkRoutesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                          request};
+  }
+
+  /**
    * Create a paginator for GetNetworkTelemetry operation
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetNetworkTelemetryRequest,
@@ -223,6 +237,18 @@ class NetworkManagerPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetTransitGatewayRegistrationsRequest,
                                              Pagination::GetTransitGatewayRegistrationsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListAttachmentNatConfigurations operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAttachmentNatConfigurationsRequest,
+                                    Pagination::ListAttachmentNatConfigurationsPaginationTraits<DerivedClient>>
+  ListAttachmentNatConfigurationsPaginator(const Model::ListAttachmentNatConfigurationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAttachmentNatConfigurationsRequest,
+                                             Pagination::ListAttachmentNatConfigurationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

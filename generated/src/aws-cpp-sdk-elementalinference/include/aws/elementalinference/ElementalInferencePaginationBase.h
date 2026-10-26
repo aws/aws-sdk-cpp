@@ -9,6 +9,7 @@
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/elementalinference/model/ListDictionariesPaginationTraits.h>
 #include <aws/elementalinference/model/ListFeedsPaginationTraits.h>
+#include <aws/elementalinference/model/ListScheduleActionsPaginationTraits.h>
 #include <aws/elementalinference/model/SearchFixturesPaginationTraits.h>
 
 #include <memory>
@@ -38,6 +39,18 @@ class ElementalInferencePaginationBase {
   ListFeedsPaginator(const Model::ListFeedsRequest& request) {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFeedsRequest, Pagination::ListFeedsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListScheduleActions operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListScheduleActionsRequest,
+                                    Pagination::ListScheduleActionsPaginationTraits<DerivedClient>>
+  ListScheduleActionsPaginator(const Model::ListScheduleActionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListScheduleActionsRequest,
+                                             Pagination::ListScheduleActionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

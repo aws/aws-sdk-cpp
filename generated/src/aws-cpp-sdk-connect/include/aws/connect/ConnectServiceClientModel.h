@@ -217,6 +217,7 @@
 #include <aws/connect/model/ListQueuesResult.h>
 #include <aws/connect/model/ListQuickConnectsResult.h>
 #include <aws/connect/model/ListRealtimeContactAnalysisSegmentsV2Result.h>
+#include <aws/connect/model/ListReplicationFindingsResult.h>
 #include <aws/connect/model/ListRoutingProfileManualAssignmentQueuesResult.h>
 #include <aws/connect/model/ListRoutingProfileQueuesResult.h>
 #include <aws/connect/model/ListRoutingProfilesResult.h>
@@ -621,6 +622,7 @@ class ListQueueQuickConnectsRequest;
 class ListQueuesRequest;
 class ListQuickConnectsRequest;
 class ListRealtimeContactAnalysisSegmentsV2Request;
+class ListReplicationFindingsRequest;
 class ListRoutingProfileManualAssignmentQueuesRequest;
 class ListRoutingProfileQueuesRequest;
 class ListRoutingProfilesRequest;
@@ -1026,6 +1028,7 @@ typedef Aws::Utils::Outcome<ListQueueQuickConnectsResult, ConnectError> ListQueu
 typedef Aws::Utils::Outcome<ListQueuesResult, ConnectError> ListQueuesOutcome;
 typedef Aws::Utils::Outcome<ListQuickConnectsResult, ConnectError> ListQuickConnectsOutcome;
 typedef Aws::Utils::Outcome<ListRealtimeContactAnalysisSegmentsV2Result, ConnectError> ListRealtimeContactAnalysisSegmentsV2Outcome;
+typedef Aws::Utils::Outcome<ListReplicationFindingsResult, ConnectError> ListReplicationFindingsOutcome;
 typedef Aws::Utils::Outcome<ListRoutingProfileManualAssignmentQueuesResult, ConnectError> ListRoutingProfileManualAssignmentQueuesOutcome;
 typedef Aws::Utils::Outcome<ListRoutingProfileQueuesResult, ConnectError> ListRoutingProfileQueuesOutcome;
 typedef Aws::Utils::Outcome<ListRoutingProfilesResult, ConnectError> ListRoutingProfilesOutcome;
@@ -1431,6 +1434,7 @@ typedef std::future<ListQueueQuickConnectsOutcome> ListQueueQuickConnectsOutcome
 typedef std::future<ListQueuesOutcome> ListQueuesOutcomeCallable;
 typedef std::future<ListQuickConnectsOutcome> ListQuickConnectsOutcomeCallable;
 typedef std::future<ListRealtimeContactAnalysisSegmentsV2Outcome> ListRealtimeContactAnalysisSegmentsV2OutcomeCallable;
+typedef std::future<ListReplicationFindingsOutcome> ListReplicationFindingsOutcomeCallable;
 typedef std::future<ListRoutingProfileManualAssignmentQueuesOutcome> ListRoutingProfileManualAssignmentQueuesOutcomeCallable;
 typedef std::future<ListRoutingProfileQueuesOutcome> ListRoutingProfileQueuesOutcomeCallable;
 typedef std::future<ListRoutingProfilesOutcome> ListRoutingProfilesOutcomeCallable;
@@ -2364,6 +2368,9 @@ typedef std::function<void(const ConnectClient*, const Model::ListRealtimeContac
                            const Model::ListRealtimeContactAnalysisSegmentsV2Outcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListRealtimeContactAnalysisSegmentsV2ResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::ListReplicationFindingsRequest&, const Model::ListReplicationFindingsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListReplicationFindingsResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::ListRoutingProfileManualAssignmentQueuesRequest&,
                            const Model::ListRoutingProfileManualAssignmentQueuesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

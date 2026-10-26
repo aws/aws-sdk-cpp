@@ -827,6 +827,7 @@
 #include <aws/ec2/model/GetSnapshotBlockPublicAccessStateResponse.h>
 #include <aws/ec2/model/GetSpotPlacementScoresResponse.h>
 #include <aws/ec2/model/GetSubnetCidrReservationsResponse.h>
+#include <aws/ec2/model/GetTransitGatewayAttachmentNatConfigurationResponse.h>
 #include <aws/ec2/model/GetTransitGatewayAttachmentPropagationsResponse.h>
 #include <aws/ec2/model/GetTransitGatewayMeteringPolicyEntriesResponse.h>
 #include <aws/ec2/model/GetTransitGatewayMulticastDomainAssociationsResponse.h>
@@ -909,6 +910,7 @@
 #include <aws/ec2/model/ModifyTrafficMirrorFilterNetworkServicesResponse.h>
 #include <aws/ec2/model/ModifyTrafficMirrorFilterRuleResponse.h>
 #include <aws/ec2/model/ModifyTrafficMirrorSessionResponse.h>
+#include <aws/ec2/model/ModifyTransitGatewayAttachmentNatConfigurationResponse.h>
 #include <aws/ec2/model/ModifyTransitGatewayMeteringPolicyResponse.h>
 #include <aws/ec2/model/ModifyTransitGatewayPolicyTableEntryResponse.h>
 #include <aws/ec2/model/ModifyTransitGatewayPrefixListReferenceResponse.h>
@@ -1665,6 +1667,7 @@ class GetSerialConsoleAccessStatusRequest;
 class GetSnapshotBlockPublicAccessStateRequest;
 class GetSpotPlacementScoresRequest;
 class GetSubnetCidrReservationsRequest;
+class GetTransitGatewayAttachmentNatConfigurationRequest;
 class GetTransitGatewayAttachmentPropagationsRequest;
 class GetTransitGatewayMeteringPolicyEntriesRequest;
 class GetTransitGatewayMulticastDomainAssociationsRequest;
@@ -1746,6 +1749,7 @@ class ModifyTrafficMirrorFilterNetworkServicesRequest;
 class ModifyTrafficMirrorFilterRuleRequest;
 class ModifyTrafficMirrorSessionRequest;
 class ModifyTransitGatewayRequest;
+class ModifyTransitGatewayAttachmentNatConfigurationRequest;
 class ModifyTransitGatewayMeteringPolicyRequest;
 class ModifyTransitGatewayPolicyTableEntryRequest;
 class ModifyTransitGatewayPrefixListReferenceRequest;
@@ -2502,6 +2506,8 @@ typedef Aws::Utils::Outcome<GetSerialConsoleAccessStatusResponse, EC2Error> GetS
 typedef Aws::Utils::Outcome<GetSnapshotBlockPublicAccessStateResponse, EC2Error> GetSnapshotBlockPublicAccessStateOutcome;
 typedef Aws::Utils::Outcome<GetSpotPlacementScoresResponse, EC2Error> GetSpotPlacementScoresOutcome;
 typedef Aws::Utils::Outcome<GetSubnetCidrReservationsResponse, EC2Error> GetSubnetCidrReservationsOutcome;
+typedef Aws::Utils::Outcome<GetTransitGatewayAttachmentNatConfigurationResponse, EC2Error>
+    GetTransitGatewayAttachmentNatConfigurationOutcome;
 typedef Aws::Utils::Outcome<GetTransitGatewayAttachmentPropagationsResponse, EC2Error> GetTransitGatewayAttachmentPropagationsOutcome;
 typedef Aws::Utils::Outcome<GetTransitGatewayMeteringPolicyEntriesResponse, EC2Error> GetTransitGatewayMeteringPolicyEntriesOutcome;
 typedef Aws::Utils::Outcome<GetTransitGatewayMulticastDomainAssociationsResponse, EC2Error>
@@ -2587,6 +2593,8 @@ typedef Aws::Utils::Outcome<ModifyTrafficMirrorFilterNetworkServicesResponse, EC
 typedef Aws::Utils::Outcome<ModifyTrafficMirrorFilterRuleResponse, EC2Error> ModifyTrafficMirrorFilterRuleOutcome;
 typedef Aws::Utils::Outcome<ModifyTrafficMirrorSessionResponse, EC2Error> ModifyTrafficMirrorSessionOutcome;
 typedef Aws::Utils::Outcome<ModifyTransitGatewayResponse, EC2Error> ModifyTransitGatewayOutcome;
+typedef Aws::Utils::Outcome<ModifyTransitGatewayAttachmentNatConfigurationResponse, EC2Error>
+    ModifyTransitGatewayAttachmentNatConfigurationOutcome;
 typedef Aws::Utils::Outcome<ModifyTransitGatewayMeteringPolicyResponse, EC2Error> ModifyTransitGatewayMeteringPolicyOutcome;
 typedef Aws::Utils::Outcome<ModifyTransitGatewayPolicyTableEntryResponse, EC2Error> ModifyTransitGatewayPolicyTableEntryOutcome;
 typedef Aws::Utils::Outcome<ModifyTransitGatewayPrefixListReferenceResponse, EC2Error> ModifyTransitGatewayPrefixListReferenceOutcome;
@@ -3332,6 +3340,7 @@ typedef std::future<GetSerialConsoleAccessStatusOutcome> GetSerialConsoleAccessS
 typedef std::future<GetSnapshotBlockPublicAccessStateOutcome> GetSnapshotBlockPublicAccessStateOutcomeCallable;
 typedef std::future<GetSpotPlacementScoresOutcome> GetSpotPlacementScoresOutcomeCallable;
 typedef std::future<GetSubnetCidrReservationsOutcome> GetSubnetCidrReservationsOutcomeCallable;
+typedef std::future<GetTransitGatewayAttachmentNatConfigurationOutcome> GetTransitGatewayAttachmentNatConfigurationOutcomeCallable;
 typedef std::future<GetTransitGatewayAttachmentPropagationsOutcome> GetTransitGatewayAttachmentPropagationsOutcomeCallable;
 typedef std::future<GetTransitGatewayMeteringPolicyEntriesOutcome> GetTransitGatewayMeteringPolicyEntriesOutcomeCallable;
 typedef std::future<GetTransitGatewayMulticastDomainAssociationsOutcome> GetTransitGatewayMulticastDomainAssociationsOutcomeCallable;
@@ -3413,6 +3422,7 @@ typedef std::future<ModifyTrafficMirrorFilterNetworkServicesOutcome> ModifyTraff
 typedef std::future<ModifyTrafficMirrorFilterRuleOutcome> ModifyTrafficMirrorFilterRuleOutcomeCallable;
 typedef std::future<ModifyTrafficMirrorSessionOutcome> ModifyTrafficMirrorSessionOutcomeCallable;
 typedef std::future<ModifyTransitGatewayOutcome> ModifyTransitGatewayOutcomeCallable;
+typedef std::future<ModifyTransitGatewayAttachmentNatConfigurationOutcome> ModifyTransitGatewayAttachmentNatConfigurationOutcomeCallable;
 typedef std::future<ModifyTransitGatewayMeteringPolicyOutcome> ModifyTransitGatewayMeteringPolicyOutcomeCallable;
 typedef std::future<ModifyTransitGatewayPolicyTableEntryOutcome> ModifyTransitGatewayPolicyTableEntryOutcomeCallable;
 typedef std::future<ModifyTransitGatewayPrefixListReferenceOutcome> ModifyTransitGatewayPrefixListReferenceOutcomeCallable;
@@ -5659,6 +5669,10 @@ typedef std::function<void(const EC2Client*, const Model::GetSpotPlacementScores
 typedef std::function<void(const EC2Client*, const Model::GetSubnetCidrReservationsRequest&, const Model::GetSubnetCidrReservationsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetSubnetCidrReservationsResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::GetTransitGatewayAttachmentNatConfigurationRequest&,
+                           const Model::GetTransitGatewayAttachmentNatConfigurationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetTransitGatewayAttachmentNatConfigurationResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::GetTransitGatewayAttachmentPropagationsRequest&,
                            const Model::GetTransitGatewayAttachmentPropagationsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -5939,6 +5953,10 @@ typedef std::function<void(const EC2Client*, const Model::ModifyTrafficMirrorSes
 typedef std::function<void(const EC2Client*, const Model::ModifyTransitGatewayRequest&, const Model::ModifyTransitGatewayOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ModifyTransitGatewayResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::ModifyTransitGatewayAttachmentNatConfigurationRequest&,
+                           const Model::ModifyTransitGatewayAttachmentNatConfigurationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ModifyTransitGatewayAttachmentNatConfigurationResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::ModifyTransitGatewayMeteringPolicyRequest&,
                            const Model::ModifyTransitGatewayMeteringPolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

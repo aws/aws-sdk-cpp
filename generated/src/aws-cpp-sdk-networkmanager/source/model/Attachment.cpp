@@ -69,6 +69,14 @@ Attachment& Attachment::operator=(JsonView jsonValue) {
     m_networkFunctionGroupName = jsonValue.GetString("NetworkFunctionGroupName");
     m_networkFunctionGroupNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("NatGatewaySupport")) {
+    m_natGatewaySupport = NatGatewaySupportStateMapper::GetNatGatewaySupportStateForName(jsonValue.GetString("NatGatewaySupport"));
+    m_natGatewaySupportHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("NatSystemRouteSupport")) {
+    m_natSystemRouteSupport = jsonValue.GetBool("NatSystemRouteSupport");
+    m_natSystemRouteSupportHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Tags")) {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
@@ -156,6 +164,14 @@ JsonValue Attachment::Jsonize() const {
 
   if (m_networkFunctionGroupNameHasBeenSet) {
     payload.WithString("NetworkFunctionGroupName", m_networkFunctionGroupName);
+  }
+
+  if (m_natGatewaySupportHasBeenSet) {
+    payload.WithString("NatGatewaySupport", NatGatewaySupportStateMapper::GetNameForNatGatewaySupportState(m_natGatewaySupport));
+  }
+
+  if (m_natSystemRouteSupportHasBeenSet) {
+    payload.WithBool("NatSystemRouteSupport", m_natSystemRouteSupport);
   }
 
   if (m_tagsHasBeenSet) {

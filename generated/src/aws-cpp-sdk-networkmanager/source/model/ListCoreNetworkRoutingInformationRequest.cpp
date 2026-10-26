@@ -38,6 +38,40 @@ Aws::String ListCoreNetworkRoutingInformationRequest::SerializePayload() const {
     payload.WithObject("NextHopFilters", std::move(nextHopFiltersJsonMap));
   }
 
+  if (m_exactPrefixMatchesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> exactPrefixMatchesJsonList(m_exactPrefixMatches.size());
+    for (unsigned exactPrefixMatchesIndex = 0; exactPrefixMatchesIndex < exactPrefixMatchesJsonList.GetLength();
+         ++exactPrefixMatchesIndex) {
+      exactPrefixMatchesJsonList[exactPrefixMatchesIndex].AsString(m_exactPrefixMatches[exactPrefixMatchesIndex]);
+    }
+    payload.WithArray("ExactPrefixMatches", std::move(exactPrefixMatchesJsonList));
+  }
+
+  if (m_longestPrefixMatchesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> longestPrefixMatchesJsonList(m_longestPrefixMatches.size());
+    for (unsigned longestPrefixMatchesIndex = 0; longestPrefixMatchesIndex < longestPrefixMatchesJsonList.GetLength();
+         ++longestPrefixMatchesIndex) {
+      longestPrefixMatchesJsonList[longestPrefixMatchesIndex].AsString(m_longestPrefixMatches[longestPrefixMatchesIndex]);
+    }
+    payload.WithArray("LongestPrefixMatches", std::move(longestPrefixMatchesJsonList));
+  }
+
+  if (m_subnetOfMatchesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> subnetOfMatchesJsonList(m_subnetOfMatches.size());
+    for (unsigned subnetOfMatchesIndex = 0; subnetOfMatchesIndex < subnetOfMatchesJsonList.GetLength(); ++subnetOfMatchesIndex) {
+      subnetOfMatchesJsonList[subnetOfMatchesIndex].AsString(m_subnetOfMatches[subnetOfMatchesIndex]);
+    }
+    payload.WithArray("SubnetOfMatches", std::move(subnetOfMatchesJsonList));
+  }
+
+  if (m_supernetOfMatchesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> supernetOfMatchesJsonList(m_supernetOfMatches.size());
+    for (unsigned supernetOfMatchesIndex = 0; supernetOfMatchesIndex < supernetOfMatchesJsonList.GetLength(); ++supernetOfMatchesIndex) {
+      supernetOfMatchesJsonList[supernetOfMatchesIndex].AsString(m_supernetOfMatches[supernetOfMatchesIndex]);
+    }
+    payload.WithArray("SupernetOfMatches", std::move(supernetOfMatchesJsonList));
+  }
+
   if (m_localPreferenceMatchesHasBeenSet) {
     Aws::Utils::Array<JsonValue> localPreferenceMatchesJsonList(m_localPreferenceMatches.size());
     for (unsigned localPreferenceMatchesIndex = 0; localPreferenceMatchesIndex < localPreferenceMatchesJsonList.GetLength();

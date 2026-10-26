@@ -25,10 +25,13 @@
 #include <aws/opensearchserverless/model/BatchGetEffectiveLifecyclePolicyRequest.h>
 #include <aws/opensearchserverless/model/BatchGetLifecyclePolicyRequest.h>
 #include <aws/opensearchserverless/model/BatchGetVpcEndpointRequest.h>
+#include <aws/opensearchserverless/model/CancelIngestionJobRequest.h>
 #include <aws/opensearchserverless/model/CreateAccessPolicyRequest.h>
 #include <aws/opensearchserverless/model/CreateCollectionGroupRequest.h>
 #include <aws/opensearchserverless/model/CreateCollectionRequest.h>
 #include <aws/opensearchserverless/model/CreateIndexRequest.h>
+#include <aws/opensearchserverless/model/CreateIngestionJobRequest.h>
+#include <aws/opensearchserverless/model/CreateIngestionStreamRequest.h>
 #include <aws/opensearchserverless/model/CreateLifecyclePolicyRequest.h>
 #include <aws/opensearchserverless/model/CreateSecurityConfigRequest.h>
 #include <aws/opensearchserverless/model/CreateSecurityPolicyRequest.h>
@@ -37,6 +40,7 @@
 #include <aws/opensearchserverless/model/DeleteCollectionGroupRequest.h>
 #include <aws/opensearchserverless/model/DeleteCollectionRequest.h>
 #include <aws/opensearchserverless/model/DeleteIndexRequest.h>
+#include <aws/opensearchserverless/model/DeleteIngestionStreamRequest.h>
 #include <aws/opensearchserverless/model/DeleteLifecyclePolicyRequest.h>
 #include <aws/opensearchserverless/model/DeleteSecurityConfigRequest.h>
 #include <aws/opensearchserverless/model/DeleteSecurityPolicyRequest.h>
@@ -44,12 +48,16 @@
 #include <aws/opensearchserverless/model/GetAccessPolicyRequest.h>
 #include <aws/opensearchserverless/model/GetAccountSettingsRequest.h>
 #include <aws/opensearchserverless/model/GetIndexRequest.h>
+#include <aws/opensearchserverless/model/GetIngestionJobRequest.h>
+#include <aws/opensearchserverless/model/GetIngestionStreamRequest.h>
 #include <aws/opensearchserverless/model/GetPoliciesStatsRequest.h>
 #include <aws/opensearchserverless/model/GetSecurityConfigRequest.h>
 #include <aws/opensearchserverless/model/GetSecurityPolicyRequest.h>
 #include <aws/opensearchserverless/model/ListAccessPoliciesRequest.h>
 #include <aws/opensearchserverless/model/ListCollectionGroupsRequest.h>
 #include <aws/opensearchserverless/model/ListCollectionsRequest.h>
+#include <aws/opensearchserverless/model/ListIngestionJobsRequest.h>
+#include <aws/opensearchserverless/model/ListIngestionStreamsRequest.h>
 #include <aws/opensearchserverless/model/ListLifecyclePoliciesRequest.h>
 #include <aws/opensearchserverless/model/ListSecurityConfigsRequest.h>
 #include <aws/opensearchserverless/model/ListSecurityPoliciesRequest.h>
@@ -258,6 +266,12 @@ BatchGetVpcEndpointOutcome OpenSearchServerlessClient::BatchGetVpcEndpoint(const
                             : BatchGetVpcEndpointOutcome(std::move(result.GetError()));
 }
 
+CancelIngestionJobOutcome OpenSearchServerlessClient::CancelIngestionJob(const CancelIngestionJobRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelIngestionJobOutcome(result.GetResultWithOwnership())
+                            : CancelIngestionJobOutcome(std::move(result.GetError()));
+}
+
 CreateAccessPolicyOutcome OpenSearchServerlessClient::CreateAccessPolicy(const CreateAccessPolicyRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateAccessPolicyOutcome(result.GetResultWithOwnership())
@@ -279,6 +293,18 @@ CreateCollectionGroupOutcome OpenSearchServerlessClient::CreateCollectionGroup(c
 CreateIndexOutcome OpenSearchServerlessClient::CreateIndex(const CreateIndexRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateIndexOutcome(result.GetResultWithOwnership()) : CreateIndexOutcome(std::move(result.GetError()));
+}
+
+CreateIngestionJobOutcome OpenSearchServerlessClient::CreateIngestionJob(const CreateIngestionJobRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateIngestionJobOutcome(result.GetResultWithOwnership())
+                            : CreateIngestionJobOutcome(std::move(result.GetError()));
+}
+
+CreateIngestionStreamOutcome OpenSearchServerlessClient::CreateIngestionStream(const CreateIngestionStreamRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateIngestionStreamOutcome(result.GetResultWithOwnership())
+                            : CreateIngestionStreamOutcome(std::move(result.GetError()));
 }
 
 CreateLifecyclePolicyOutcome OpenSearchServerlessClient::CreateLifecyclePolicy(const CreateLifecyclePolicyRequest& request) const {
@@ -328,6 +354,12 @@ DeleteIndexOutcome OpenSearchServerlessClient::DeleteIndex(const DeleteIndexRequ
   return result.IsSuccess() ? DeleteIndexOutcome(result.GetResultWithOwnership()) : DeleteIndexOutcome(std::move(result.GetError()));
 }
 
+DeleteIngestionStreamOutcome OpenSearchServerlessClient::DeleteIngestionStream(const DeleteIngestionStreamRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteIngestionStreamOutcome(result.GetResultWithOwnership())
+                            : DeleteIngestionStreamOutcome(std::move(result.GetError()));
+}
+
 DeleteLifecyclePolicyOutcome OpenSearchServerlessClient::DeleteLifecyclePolicy(const DeleteLifecyclePolicyRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteLifecyclePolicyOutcome(result.GetResultWithOwnership())
@@ -369,6 +401,18 @@ GetIndexOutcome OpenSearchServerlessClient::GetIndex(const GetIndexRequest& requ
   return result.IsSuccess() ? GetIndexOutcome(result.GetResultWithOwnership()) : GetIndexOutcome(std::move(result.GetError()));
 }
 
+GetIngestionJobOutcome OpenSearchServerlessClient::GetIngestionJob(const GetIngestionJobRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetIngestionJobOutcome(result.GetResultWithOwnership())
+                            : GetIngestionJobOutcome(std::move(result.GetError()));
+}
+
+GetIngestionStreamOutcome OpenSearchServerlessClient::GetIngestionStream(const GetIngestionStreamRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetIngestionStreamOutcome(result.GetResultWithOwnership())
+                            : GetIngestionStreamOutcome(std::move(result.GetError()));
+}
+
 GetPoliciesStatsOutcome OpenSearchServerlessClient::GetPoliciesStats(const GetPoliciesStatsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetPoliciesStatsOutcome(result.GetResultWithOwnership())
@@ -403,6 +447,18 @@ ListCollectionsOutcome OpenSearchServerlessClient::ListCollections(const ListCol
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListCollectionsOutcome(result.GetResultWithOwnership())
                             : ListCollectionsOutcome(std::move(result.GetError()));
+}
+
+ListIngestionJobsOutcome OpenSearchServerlessClient::ListIngestionJobs(const ListIngestionJobsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListIngestionJobsOutcome(result.GetResultWithOwnership())
+                            : ListIngestionJobsOutcome(std::move(result.GetError()));
+}
+
+ListIngestionStreamsOutcome OpenSearchServerlessClient::ListIngestionStreams(const ListIngestionStreamsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListIngestionStreamsOutcome(result.GetResultWithOwnership())
+                            : ListIngestionStreamsOutcome(std::move(result.GetError()));
 }
 
 ListLifecyclePoliciesOutcome OpenSearchServerlessClient::ListLifecyclePolicies(const ListLifecyclePoliciesRequest& request) const {

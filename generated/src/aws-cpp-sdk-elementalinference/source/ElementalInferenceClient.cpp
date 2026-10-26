@@ -23,9 +23,11 @@
 #include <aws/elementalinference/model/AssociateFeedRequest.h>
 #include <aws/elementalinference/model/CreateDictionaryRequest.h>
 #include <aws/elementalinference/model/CreateFeedRequest.h>
+#include <aws/elementalinference/model/CreateScheduleActionRequest.h>
 #include <aws/elementalinference/model/DeleteDictionaryRequest.h>
 #include <aws/elementalinference/model/DeleteFeedPolicyRequest.h>
 #include <aws/elementalinference/model/DeleteFeedRequest.h>
+#include <aws/elementalinference/model/DeleteScheduleActionRequest.h>
 #include <aws/elementalinference/model/DisassociateFeedRequest.h>
 #include <aws/elementalinference/model/ExportDictionaryEntriesRequest.h>
 #include <aws/elementalinference/model/GetDictionaryRequest.h>
@@ -34,6 +36,7 @@
 #include <aws/elementalinference/model/GetFixtureRequest.h>
 #include <aws/elementalinference/model/ListDictionariesRequest.h>
 #include <aws/elementalinference/model/ListFeedsRequest.h>
+#include <aws/elementalinference/model/ListScheduleActionsRequest.h>
 #include <aws/elementalinference/model/ListTagsForResourceRequest.h>
 #include <aws/elementalinference/model/PutFeedPolicyRequest.h>
 #include <aws/elementalinference/model/SearchFixturesRequest.h>
@@ -240,6 +243,25 @@ CreateFeedOutcome ElementalInferenceClient::CreateFeed(const CreateFeedRequest& 
   return result.IsSuccess() ? CreateFeedOutcome(result.GetResultWithOwnership()) : CreateFeedOutcome(std::move(result.GetError()));
 }
 
+CreateScheduleActionOutcome ElementalInferenceClient::CreateScheduleAction(const CreateScheduleActionRequest& request) const {
+  if (!request.IdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CreateScheduleAction", "Required field: Id, is not set");
+    return CreateScheduleActionOutcome(Aws::Client::AWSError<ElementalInferenceErrors>(
+        ElementalInferenceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/feed/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/schedule-actions");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateScheduleActionOutcome(result.GetResultWithOwnership())
+                            : CreateScheduleActionOutcome(std::move(result.GetError()));
+}
+
 DeleteDictionaryOutcome ElementalInferenceClient::DeleteDictionary(const DeleteDictionaryRequest& request) const {
   if (!request.IdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DeleteDictionary", "Required field: Id, is not set");
@@ -292,6 +314,30 @@ DeleteFeedPolicyOutcome ElementalInferenceClient::DeleteFeedPolicy(const DeleteF
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? DeleteFeedPolicyOutcome(result.GetResultWithOwnership())
                             : DeleteFeedPolicyOutcome(std::move(result.GetError()));
+}
+
+DeleteScheduleActionOutcome ElementalInferenceClient::DeleteScheduleAction(const DeleteScheduleActionRequest& request) const {
+  if (!request.IdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteScheduleAction", "Required field: Id, is not set");
+    return DeleteScheduleActionOutcome(Aws::Client::AWSError<ElementalInferenceErrors>(
+        ElementalInferenceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  if (!request.ActionNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteScheduleAction", "Required field: ActionName, is not set");
+    return DeleteScheduleActionOutcome(Aws::Client::AWSError<ElementalInferenceErrors>(
+        ElementalInferenceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ActionName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/feed/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/schedule-actions");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteScheduleActionOutcome(result.GetResultWithOwnership())
+                            : DeleteScheduleActionOutcome(std::move(result.GetError()));
 }
 
 DisassociateFeedOutcome ElementalInferenceClient::DisassociateFeed(const DisassociateFeedRequest& request) const {
@@ -420,6 +466,25 @@ ListFeedsOutcome ElementalInferenceClient::ListFeeds(const ListFeedsRequest& req
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListFeedsOutcome(result.GetResultWithOwnership()) : ListFeedsOutcome(std::move(result.GetError()));
+}
+
+ListScheduleActionsOutcome ElementalInferenceClient::ListScheduleActions(const ListScheduleActionsRequest& request) const {
+  if (!request.IdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListScheduleActions", "Required field: Id, is not set");
+    return ListScheduleActionsOutcome(Aws::Client::AWSError<ElementalInferenceErrors>(
+        ElementalInferenceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/feed/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/schedule-actions");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListScheduleActionsOutcome(result.GetResultWithOwnership())
+                            : ListScheduleActionsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome ElementalInferenceClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {

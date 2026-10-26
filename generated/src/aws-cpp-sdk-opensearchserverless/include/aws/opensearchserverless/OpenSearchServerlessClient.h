@@ -245,6 +245,33 @@ class AWS_OPENSEARCHSERVERLESS_API OpenSearchServerlessClient
   }
 
   /**
+   * <p>Cancels an in-progress ingestion job. Documents that were already indexed
+   * before the cancellation remain in the index.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/CancelIngestionJob">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CancelIngestionJobOutcome CancelIngestionJob(const Model::CancelIngestionJobRequest& request) const;
+
+  /**
+   * A Callable wrapper for CancelIngestionJob that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CancelIngestionJobRequestT = Model::CancelIngestionJobRequest>
+  Model::CancelIngestionJobOutcomeCallable CancelIngestionJobCallable(const CancelIngestionJobRequestT& request) const {
+    return SubmitCallable(&OpenSearchServerlessClient::CancelIngestionJob, request);
+  }
+
+  /**
+   * An Async wrapper for CancelIngestionJob that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename CancelIngestionJobRequestT = Model::CancelIngestionJobRequest>
+  void CancelIngestionJobAsync(const CancelIngestionJobRequestT& request, const CancelIngestionJobResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OpenSearchServerlessClient::CancelIngestionJob, request, handler, context);
+  }
+
+  /**
    * <p>Creates a data access policy for OpenSearch Serverless. Access policies limit
    * access to collections and the resources within them, and allow a user to access
    * that data irrespective of the access mechanism or network source. For more
@@ -365,6 +392,67 @@ class AWS_OPENSEARCHSERVERLESS_API OpenSearchServerlessClient
   void CreateIndexAsync(const CreateIndexRequestT& request, const CreateIndexResponseReceivedHandler& handler,
                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&OpenSearchServerlessClient::CreateIndex, request, handler, context);
+  }
+
+  /**
+   * <p>Creates an ingestion job that performs a one-time bulk ingestion of data from
+   * an Amazon S3 bucket into an index in an OpenSearch Serverless collection. An
+   * ingestion job scans the source bucket, indexes the documents it finds, and then
+   * completes. To continuously ingest new data as it arrives, use
+   * <code>CreateIngestionStream</code> instead.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/CreateIngestionJob">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateIngestionJobOutcome CreateIngestionJob(const Model::CreateIngestionJobRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateIngestionJob that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateIngestionJobRequestT = Model::CreateIngestionJobRequest>
+  Model::CreateIngestionJobOutcomeCallable CreateIngestionJobCallable(const CreateIngestionJobRequestT& request) const {
+    return SubmitCallable(&OpenSearchServerlessClient::CreateIngestionJob, request);
+  }
+
+  /**
+   * An Async wrapper for CreateIngestionJob that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename CreateIngestionJobRequestT = Model::CreateIngestionJobRequest>
+  void CreateIngestionJobAsync(const CreateIngestionJobRequestT& request, const CreateIngestionJobResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OpenSearchServerlessClient::CreateIngestionJob, request, handler, context);
+  }
+
+  /**
+   * <p>Creates an ingestion stream that continuously ingests data from an Amazon S3
+   * bucket into an index in an OpenSearch Serverless collection. An ingestion stream
+   * processes Amazon S3 event notifications delivered to an Amazon SQS queue and
+   * ingests new objects as they arrive. The stream continues to ingest data until
+   * you delete it. To perform a one-time bulk ingestion instead, use
+   * <code>CreateIngestionJob</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/CreateIngestionStream">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateIngestionStreamOutcome CreateIngestionStream(const Model::CreateIngestionStreamRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateIngestionStream that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateIngestionStreamRequestT = Model::CreateIngestionStreamRequest>
+  Model::CreateIngestionStreamOutcomeCallable CreateIngestionStreamCallable(const CreateIngestionStreamRequestT& request) const {
+    return SubmitCallable(&OpenSearchServerlessClient::CreateIngestionStream, request);
+  }
+
+  /**
+   * An Async wrapper for CreateIngestionStream that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateIngestionStreamRequestT = Model::CreateIngestionStreamRequest>
+  void CreateIngestionStreamAsync(const CreateIngestionStreamRequestT& request, const CreateIngestionStreamResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OpenSearchServerlessClient::CreateIngestionStream, request, handler, context);
   }
 
   /**
@@ -609,6 +697,33 @@ class AWS_OPENSEARCHSERVERLESS_API OpenSearchServerlessClient
   }
 
   /**
+   * <p>Deletes an ingestion stream. Documents that were already indexed by the
+   * stream remain in the index.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/DeleteIngestionStream">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteIngestionStreamOutcome DeleteIngestionStream(const Model::DeleteIngestionStreamRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteIngestionStream that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteIngestionStreamRequestT = Model::DeleteIngestionStreamRequest>
+  Model::DeleteIngestionStreamOutcomeCallable DeleteIngestionStreamCallable(const DeleteIngestionStreamRequestT& request) const {
+    return SubmitCallable(&OpenSearchServerlessClient::DeleteIngestionStream, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteIngestionStream that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteIngestionStreamRequestT = Model::DeleteIngestionStreamRequest>
+  void DeleteIngestionStreamAsync(const DeleteIngestionStreamRequestT& request, const DeleteIngestionStreamResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OpenSearchServerlessClient::DeleteIngestionStream, request, handler, context);
+  }
+
+  /**
    * <p>Deletes an OpenSearch Serverless lifecycle policy. For more information, see
    * <a
    * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-lifecycle.html#serverless-lifecycle-delete">Deleting
@@ -810,6 +925,59 @@ class AWS_OPENSEARCHSERVERLESS_API OpenSearchServerlessClient
   }
 
   /**
+   * <p>Returns information about an ingestion job, including its configuration,
+   * status, and processing state.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/GetIngestionJob">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetIngestionJobOutcome GetIngestionJob(const Model::GetIngestionJobRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetIngestionJob that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetIngestionJobRequestT = Model::GetIngestionJobRequest>
+  Model::GetIngestionJobOutcomeCallable GetIngestionJobCallable(const GetIngestionJobRequestT& request) const {
+    return SubmitCallable(&OpenSearchServerlessClient::GetIngestionJob, request);
+  }
+
+  /**
+   * An Async wrapper for GetIngestionJob that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetIngestionJobRequestT = Model::GetIngestionJobRequest>
+  void GetIngestionJobAsync(const GetIngestionJobRequestT& request, const GetIngestionJobResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OpenSearchServerlessClient::GetIngestionJob, request, handler, context);
+  }
+
+  /**
+   * <p>Returns information about an ingestion stream, including its configuration,
+   * status, and processing state.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/GetIngestionStream">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetIngestionStreamOutcome GetIngestionStream(const Model::GetIngestionStreamRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetIngestionStream that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetIngestionStreamRequestT = Model::GetIngestionStreamRequest>
+  Model::GetIngestionStreamOutcomeCallable GetIngestionStreamCallable(const GetIngestionStreamRequestT& request) const {
+    return SubmitCallable(&OpenSearchServerlessClient::GetIngestionStream, request);
+  }
+
+  /**
+   * An Async wrapper for GetIngestionStream that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetIngestionStreamRequestT = Model::GetIngestionStreamRequest>
+  void GetIngestionStreamAsync(const GetIngestionStreamRequestT& request, const GetIngestionStreamResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OpenSearchServerlessClient::GetIngestionStream, request, handler, context);
+  }
+
+  /**
    * <p>Returns statistical information about your OpenSearch Serverless access
    * policies, security configurations, and security policies.</p><p><h3>See
    * Also:</h3>   <a
@@ -984,6 +1152,60 @@ class AWS_OPENSEARCHSERVERLESS_API OpenSearchServerlessClient
                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                             const ListCollectionsRequestT& request = {}) const {
     return SubmitAsync(&OpenSearchServerlessClient::ListCollections, request, handler, context);
+  }
+
+  /**
+   * <p>Returns a list of ingestion jobs in a collection.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/ListIngestionJobs">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListIngestionJobsOutcome ListIngestionJobs(const Model::ListIngestionJobsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListIngestionJobs that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListIngestionJobsRequestT = Model::ListIngestionJobsRequest>
+  Model::ListIngestionJobsOutcomeCallable ListIngestionJobsCallable(const ListIngestionJobsRequestT& request) const {
+    return SubmitCallable(&OpenSearchServerlessClient::ListIngestionJobs, request);
+  }
+
+  /**
+   * An Async wrapper for ListIngestionJobs that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListIngestionJobsRequestT = Model::ListIngestionJobsRequest>
+  void ListIngestionJobsAsync(const ListIngestionJobsRequestT& request, const ListIngestionJobsResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OpenSearchServerlessClient::ListIngestionJobs, request, handler, context);
+  }
+
+  /**
+   * <p>Returns a list of ingestion streams in a collection.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/ListIngestionStreams">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListIngestionStreamsOutcome ListIngestionStreams(const Model::ListIngestionStreamsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListIngestionStreams that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListIngestionStreamsRequestT = Model::ListIngestionStreamsRequest>
+  Model::ListIngestionStreamsOutcomeCallable ListIngestionStreamsCallable(const ListIngestionStreamsRequestT& request) const {
+    return SubmitCallable(&OpenSearchServerlessClient::ListIngestionStreams, request);
+  }
+
+  /**
+   * An Async wrapper for ListIngestionStreams that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListIngestionStreamsRequestT = Model::ListIngestionStreamsRequest>
+  void ListIngestionStreamsAsync(const ListIngestionStreamsRequestT& request, const ListIngestionStreamsResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OpenSearchServerlessClient::ListIngestionStreams, request, handler, context);
   }
 
   /**

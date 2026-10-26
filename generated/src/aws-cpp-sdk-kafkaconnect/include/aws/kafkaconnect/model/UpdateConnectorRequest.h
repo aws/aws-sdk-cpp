@@ -80,6 +80,29 @@ class UpdateConnectorRequest : public KafkaConnectRequest {
 
   ///@{
   /**
+   * <p>Specifies whether the update bypasses connector-level and task-level health
+   * checks. If <code>true</code>, the update skips the health checks. The update
+   * stays in effect even if the connector or its tasks are unhealthy, and Amazon MSK
+   * Connect doesn't roll it back. If <code>false</code> or not specified, the health
+   * checks run. If they fail, MSK Connect automatically rolls the connector back to
+   * its previous configuration, and the update doesn't take effect. To update a
+   * connector that is in the <code>PAUSED</code> state, you must set this parameter
+   * to <code>true</code>.</p>
+   */
+  inline bool GetSkipHealthValidation() const { return m_skipHealthValidation; }
+  inline bool SkipHealthValidationHasBeenSet() const { return m_skipHealthValidationHasBeenSet; }
+  inline void SetSkipHealthValidation(bool value) {
+    m_skipHealthValidationHasBeenSet = true;
+    m_skipHealthValidation = value;
+  }
+  inline UpdateConnectorRequest& WithSkipHealthValidation(bool value) {
+    SetSkipHealthValidation(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The Amazon Resource Name (ARN) of the connector that you want to update.</p>
    */
   inline const Aws::String& GetConnectorArn() const { return m_connectorArn; }
@@ -118,11 +141,14 @@ class UpdateConnectorRequest : public KafkaConnectRequest {
 
   Aws::Map<Aws::String, Aws::String> m_connectorConfiguration;
 
+  bool m_skipHealthValidation{false};
+
   Aws::String m_connectorArn;
 
   Aws::String m_currentVersion;
   bool m_capacityHasBeenSet = false;
   bool m_connectorConfigurationHasBeenSet = false;
+  bool m_skipHealthValidationHasBeenSet = false;
   bool m_connectorArnHasBeenSet = false;
   bool m_currentVersionHasBeenSet = false;
 };

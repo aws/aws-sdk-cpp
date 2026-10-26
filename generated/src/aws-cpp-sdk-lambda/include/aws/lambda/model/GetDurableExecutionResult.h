@@ -94,9 +94,9 @@ class GetDurableExecutionResult {
 
   ///@{
   /**
-   * <p>The JSON input payload that was provided when the durable execution was
-   * started. For asynchronous invocations, this is limited to 256 KB. For
-   * synchronous invocations, this can be up to 6 MB.</p>
+   * <p>The JSON input payload that you provided when you started the durable
+   * execution. Asynchronous invocations support up to 1 MB, and synchronous
+   * invocations support up to 6 MB.</p>
    */
   inline const Aws::String& GetInputPayload() const { return m_inputPayload; }
   template <typename InputPayloadT = Aws::String>
@@ -115,7 +115,8 @@ class GetDurableExecutionResult {
   /**
    * <p>The JSON result returned by the durable execution if it completed
    * successfully. This field is only present when the execution status is
-   * <code>SUCCEEDED</code>. The result is limited to 256 KB.</p>
+   * <code>SUCCEEDED</code>. Asynchronous invocations support up to 1 MB, and
+   * synchronous invocations support up to 6 MB.</p>
    */
   inline const Aws::String& GetResult() const { return m_result; }
   template <typename ResultT = Aws::String>
@@ -134,8 +135,8 @@ class GetDurableExecutionResult {
   /**
    * <p>Error information if the durable execution failed. This field is only present
    * when the execution status is <code>FAILED</code>, <code>TIMED_OUT</code>, or
-   * <code>STOPPED</code>. The combined size of all error fields is limited to 256
-   * KB.</p>
+   * <code>STOPPED</code>. The combined size of all error fields is limited to 1
+   * MB.</p>
    */
   inline const ErrorObject& GetError() const { return m_error; }
   template <typename ErrorT = ErrorObject>

@@ -35,7 +35,9 @@
 #include <aws/kafkaconnect/model/ListCustomPluginsRequest.h>
 #include <aws/kafkaconnect/model/ListTagsForResourceRequest.h>
 #include <aws/kafkaconnect/model/ListWorkerConfigurationsRequest.h>
+#include <aws/kafkaconnect/model/PauseConnectorRequest.h>
 #include <aws/kafkaconnect/model/RestartConnectorRequest.h>
+#include <aws/kafkaconnect/model/ResumeConnectorRequest.h>
 #include <aws/kafkaconnect/model/TagResourceRequest.h>
 #include <aws/kafkaconnect/model/UntagResourceRequest.h>
 #include <aws/kafkaconnect/model/UpdateConnectorRequest.h>
@@ -424,6 +426,24 @@ ListWorkerConfigurationsOutcome KafkaConnectClient::ListWorkerConfigurations(con
                             : ListWorkerConfigurationsOutcome(std::move(result.GetError()));
 }
 
+PauseConnectorOutcome KafkaConnectClient::PauseConnector(const PauseConnectorRequest& request) const {
+  if (!request.ConnectorArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("PauseConnector", "Required field: ConnectorArn, is not set");
+    return PauseConnectorOutcome(Aws::Client::AWSError<KafkaConnectErrors>(KafkaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                           "Missing required field [ConnectorArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/connectors/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConnectorArn());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/pause");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PauseConnectorOutcome(result.GetResultWithOwnership()) : PauseConnectorOutcome(std::move(result.GetError()));
+}
+
 RestartConnectorOutcome KafkaConnectClient::RestartConnector(const RestartConnectorRequest& request) const {
   if (!request.ConnectorArnHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("RestartConnector", "Required field: ConnectorArn, is not set");
@@ -441,6 +461,25 @@ RestartConnectorOutcome KafkaConnectClient::RestartConnector(const RestartConnec
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? RestartConnectorOutcome(result.GetResultWithOwnership())
                             : RestartConnectorOutcome(std::move(result.GetError()));
+}
+
+ResumeConnectorOutcome KafkaConnectClient::ResumeConnector(const ResumeConnectorRequest& request) const {
+  if (!request.ConnectorArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ResumeConnector", "Required field: ConnectorArn, is not set");
+    return ResumeConnectorOutcome(Aws::Client::AWSError<KafkaConnectErrors>(KafkaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                            "Missing required field [ConnectorArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/connectors/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetConnectorArn());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/resume");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? ResumeConnectorOutcome(result.GetResultWithOwnership())
+                            : ResumeConnectorOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome KafkaConnectClient::TagResource(const TagResourceRequest& request) const {

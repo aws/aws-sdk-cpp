@@ -142,6 +142,25 @@ class UpdateCollectionDetail {
 
   ///@{
   /**
+   * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Key Management
+   * Service (Amazon Web Services KMS) key used to encrypt the collection.</p>
+   */
+  inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
+  inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
+  template <typename KmsKeyArnT = Aws::String>
+  void SetKmsKeyArn(KmsKeyArnT&& value) {
+    m_kmsKeyArnHasBeenSet = true;
+    m_kmsKeyArn = std::forward<KmsKeyArnT>(value);
+  }
+  template <typename KmsKeyArnT = Aws::String>
+  UpdateCollectionDetail& WithKmsKeyArn(KmsKeyArnT&& value) {
+    SetKmsKeyArn(std::forward<KmsKeyArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The Amazon Resource Name (ARN) of the collection.</p>
    */
   inline const Aws::String& GetArn() const { return m_arn; }
@@ -219,6 +238,8 @@ class UpdateCollectionDetail {
 
   VectorOptions m_vectorOptions;
 
+  Aws::String m_kmsKeyArn;
+
   Aws::String m_arn;
 
   long long m_createdDate{0};
@@ -232,6 +253,7 @@ class UpdateCollectionDetail {
   bool m_typeHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_vectorOptionsHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_createdDateHasBeenSet = false;
   bool m_lastModifiedDateHasBeenSet = false;

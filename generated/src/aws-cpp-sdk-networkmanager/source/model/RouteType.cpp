@@ -17,6 +17,7 @@ namespace RouteTypeMapper {
 
 static const int PROPAGATED_HASH = HashingUtils::HashString("PROPAGATED");
 static const int STATIC__HASH = HashingUtils::HashString("STATIC");
+static const int SYSTEM_HASH = HashingUtils::HashString("SYSTEM");
 
 RouteType GetRouteTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ RouteType GetRouteTypeForName(const Aws::String& name) {
     return RouteType::PROPAGATED;
   } else if (hashCode == STATIC__HASH) {
     return RouteType::STATIC_;
+  } else if (hashCode == SYSTEM_HASH) {
+    return RouteType::SYSTEM;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForRouteType(RouteType enumValue) {
       return "PROPAGATED";
     case RouteType::STATIC_:
       return "STATIC";
+    case RouteType::SYSTEM:
+      return "SYSTEM";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

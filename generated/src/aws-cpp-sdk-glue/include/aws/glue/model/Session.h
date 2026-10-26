@@ -298,9 +298,16 @@ class Session {
   ///@{
   /**
    * <p>The type of predefined worker that is allocated when a session runs. Accepts
-   * a value of <code>G.1X</code>, <code>G.2X</code>, <code>G.4X</code>, or
-   * <code>G.8X</code> for Spark sessions. Accepts the value <code>Z.2X</code> for
-   * Ray sessions.</p>
+   * a value of <code>G.1X</code>, <code>G.2X</code>, <code>G.4X</code>,
+   * <code>G.8X</code>, <code>G.12X</code>, <code>G.16X</code>, <code>R.1X</code>,
+   * <code>R.2X</code>, <code>R.4X</code>, or <code>R.8X</code> for Spark sessions.
+   * Accepts the value <code>Z.2X</code> for Ray sessions.</p> <p>The
+   * <code>G.12X</code>, <code>G.16X</code>, and <code>R.1X</code> through
+   * <code>R.8X</code> worker types are available only for Glue version 4.0 or later
+   * Spark ETL jobs in select Amazon Web Services Regions. For the supported Regions,
+   * see <a
+   * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Configuring job
+   * properties for Spark jobs</a> in the developer guide.</p>
    */
   inline WorkerType GetWorkerType() const { return m_workerType; }
   inline bool WorkerTypeHasBeenSet() const { return m_workerTypeHasBeenSet; }

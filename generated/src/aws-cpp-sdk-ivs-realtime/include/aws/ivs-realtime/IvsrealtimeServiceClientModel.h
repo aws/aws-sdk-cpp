@@ -58,6 +58,7 @@
 #include <aws/ivs-realtime/model/ListStorageConfigurationsRequest.h>
 #include <aws/ivs-realtime/model/ListStorageConfigurationsResult.h>
 #include <aws/ivs-realtime/model/ListTagsForResourceResult.h>
+#include <aws/ivs-realtime/model/RevokeConnectionTokenResult.h>
 #include <aws/ivs-realtime/model/StartCompositionResult.h>
 #include <aws/ivs-realtime/model/StartParticipantReplicationResult.h>
 #include <aws/ivs-realtime/model/StopCompositionResult.h>
@@ -130,6 +131,7 @@ class ListStageSessionsRequest;
 class ListStagesRequest;
 class ListStorageConfigurationsRequest;
 class ListTagsForResourceRequest;
+class RevokeConnectionTokenRequest;
 class StartCompositionRequest;
 class StartParticipantReplicationRequest;
 class StopCompositionRequest;
@@ -172,6 +174,7 @@ typedef Aws::Utils::Outcome<ListStageSessionsResult, IvsrealtimeError> ListStage
 typedef Aws::Utils::Outcome<ListStagesResult, IvsrealtimeError> ListStagesOutcome;
 typedef Aws::Utils::Outcome<ListStorageConfigurationsResult, IvsrealtimeError> ListStorageConfigurationsOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, IvsrealtimeError> ListTagsForResourceOutcome;
+typedef Aws::Utils::Outcome<RevokeConnectionTokenResult, IvsrealtimeError> RevokeConnectionTokenOutcome;
 typedef Aws::Utils::Outcome<StartCompositionResult, IvsrealtimeError> StartCompositionOutcome;
 typedef Aws::Utils::Outcome<StartParticipantReplicationResult, IvsrealtimeError> StartParticipantReplicationOutcome;
 typedef Aws::Utils::Outcome<StopCompositionResult, IvsrealtimeError> StopCompositionOutcome;
@@ -214,6 +217,7 @@ typedef std::future<ListStageSessionsOutcome> ListStageSessionsOutcomeCallable;
 typedef std::future<ListStagesOutcome> ListStagesOutcomeCallable;
 typedef std::future<ListStorageConfigurationsOutcome> ListStorageConfigurationsOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+typedef std::future<RevokeConnectionTokenOutcome> RevokeConnectionTokenOutcomeCallable;
 typedef std::future<StartCompositionOutcome> StartCompositionOutcomeCallable;
 typedef std::future<StartParticipantReplicationOutcome> StartParticipantReplicationOutcomeCallable;
 typedef std::future<StopCompositionOutcome> StopCompositionOutcomeCallable;
@@ -321,6 +325,9 @@ typedef std::function<void(const IvsrealtimeClient*, const Model::ListStorageCon
 typedef std::function<void(const IvsrealtimeClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListTagsForResourceResponseReceivedHandler;
+typedef std::function<void(const IvsrealtimeClient*, const Model::RevokeConnectionTokenRequest&, const Model::RevokeConnectionTokenOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    RevokeConnectionTokenResponseReceivedHandler;
 typedef std::function<void(const IvsrealtimeClient*, const Model::StartCompositionRequest&, const Model::StartCompositionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartCompositionResponseReceivedHandler;

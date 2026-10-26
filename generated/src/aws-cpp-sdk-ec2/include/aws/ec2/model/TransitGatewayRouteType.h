@@ -10,7 +10,7 @@
 namespace Aws {
 namespace EC2 {
 namespace Model {
-enum class TransitGatewayRouteType { NOT_SET, static_, propagated };
+enum class TransitGatewayRouteType { NOT_SET, static_, propagated, system };
 
 namespace TransitGatewayRouteTypeMapper {
 AWS_EC2_API TransitGatewayRouteType GetTransitGatewayRouteTypeForName(const Aws::String& name);

@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/bedrock-agentcore-control/model/Fallback.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -48,9 +49,54 @@ class StaticRoute {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The model ID to send to the target. Supported only for inference targets. If
+   * you don't specify a model, the gateway sends the model from the original
+   * request.</p>
+   */
+  inline const Aws::String& GetModel() const { return m_model; }
+  inline bool ModelHasBeenSet() const { return m_modelHasBeenSet; }
+  template <typename ModelT = Aws::String>
+  void SetModel(ModelT&& value) {
+    m_modelHasBeenSet = true;
+    m_model = std::forward<ModelT>(value);
+  }
+  template <typename ModelT = Aws::String>
+  StaticRoute& WithModel(ModelT&& value) {
+    SetModel(std::forward<ModelT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The fallback configuration for this route. Supported only for inference
+   * targets.</p>
+   */
+  inline const Fallback& GetFallback() const { return m_fallback; }
+  inline bool FallbackHasBeenSet() const { return m_fallbackHasBeenSet; }
+  template <typename FallbackT = Fallback>
+  void SetFallback(FallbackT&& value) {
+    m_fallbackHasBeenSet = true;
+    m_fallback = std::forward<FallbackT>(value);
+  }
+  template <typename FallbackT = Fallback>
+  StaticRoute& WithFallback(FallbackT&& value) {
+    SetFallback(std::forward<FallbackT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_targetName;
+
+  Aws::String m_model;
+
+  Fallback m_fallback;
   bool m_targetNameHasBeenSet = false;
+  bool m_modelHasBeenSet = false;
+  bool m_fallbackHasBeenSet = false;
 };
 
 }  // namespace Model

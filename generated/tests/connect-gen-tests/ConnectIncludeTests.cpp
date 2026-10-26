@@ -61,6 +61,7 @@
 #include <aws/connect/model/AnsweringMachineDetectionStatus.h>
 #include <aws/connect/model/Application.h>
 #include <aws/connect/model/ApplicationType.h>
+#include <aws/connect/model/ApproximateDriftedResourceCount.h>
 #include <aws/connect/model/ArtifactStatus.h>
 #include <aws/connect/model/AssignContactCategoryActionDefinition.h>
 #include <aws/connect/model/AssignSlaActionDefinition.h>
@@ -920,6 +921,9 @@
 #include <aws/connect/model/ListRealtimeContactAnalysisSegmentsV2PaginationTraits.h>
 #include <aws/connect/model/ListRealtimeContactAnalysisSegmentsV2Request.h>
 #include <aws/connect/model/ListRealtimeContactAnalysisSegmentsV2Result.h>
+#include <aws/connect/model/ListReplicationFindingsPaginationTraits.h>
+#include <aws/connect/model/ListReplicationFindingsRequest.h>
+#include <aws/connect/model/ListReplicationFindingsResult.h>
 #include <aws/connect/model/ListRoutingProfileManualAssignmentQueuesPaginationTraits.h>
 #include <aws/connect/model/ListRoutingProfileManualAssignmentQueuesRequest.h>
 #include <aws/connect/model/ListRoutingProfileManualAssignmentQueuesResult.h>
@@ -1196,9 +1200,11 @@
 #include <aws/connect/model/ReplicateInstanceRequest.h>
 #include <aws/connect/model/ReplicateInstanceResult.h>
 #include <aws/connect/model/ReplicationConfiguration.h>
+#include <aws/connect/model/ReplicationFinding.h>
 #include <aws/connect/model/ReplicationStatusSummary.h>
 #include <aws/connect/model/RequiredFieldInfo.h>
 #include <aws/connect/model/ResourceInUseException.h>
+#include <aws/connect/model/ResourceReplicationStatus.h>
 #include <aws/connect/model/ResourceTagsSearchCriteria.h>
 #include <aws/connect/model/ResourceType.h>
 #include <aws/connect/model/ResponseMode.h>

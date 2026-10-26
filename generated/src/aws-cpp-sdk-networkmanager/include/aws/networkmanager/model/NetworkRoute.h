@@ -114,8 +114,10 @@ class NetworkRoute {
 
   ///@{
   /**
-   * <p>The route type. The possible values are <code>propagated</code> and
-   * <code>static</code>.</p>
+   * <p>The route type. The possible values are <code>PROPAGATED</code>,
+   * <code>STATIC</code>, and <code>SYSTEM</code>. A <code>SYSTEM</code> route is
+   * installed by the core network for the NAT CIDR block of an attachment's NAT
+   * rule.</p>
    */
   inline RouteType GetType() const { return m_type; }
   inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }

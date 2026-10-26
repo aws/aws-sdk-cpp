@@ -49,7 +49,8 @@ class SendDurableExecutionCallbackFailureRequest : public LambdaRequest {
 
   ///@{
   /**
-   * <p>Error details describing why the callback operation failed.</p>
+   * <p>Error details describing why the callback operation failed. The combined size
+   * of all error fields is limited to 1 MB.</p>
    */
   inline const ErrorObject& GetError() const { return m_error; }
   inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }

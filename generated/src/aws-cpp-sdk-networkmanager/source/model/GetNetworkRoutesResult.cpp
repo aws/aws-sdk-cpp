@@ -30,6 +30,10 @@ GetNetworkRoutesResult& GetNetworkRoutesResult::operator=(const Aws::AmazonWebSe
     m_coreNetworkSegmentEdge = jsonValue.GetObject("CoreNetworkSegmentEdge");
     m_coreNetworkSegmentEdgeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("CoreNetworkNetworkFunctionGroup")) {
+    m_coreNetworkNetworkFunctionGroup = jsonValue.GetObject("CoreNetworkNetworkFunctionGroup");
+    m_coreNetworkNetworkFunctionGroupHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("RouteTableType")) {
     m_routeTableType = RouteTableTypeMapper::GetRouteTableTypeForName(jsonValue.GetString("RouteTableType"));
     m_routeTableTypeHasBeenSet = true;
@@ -44,6 +48,10 @@ GetNetworkRoutesResult& GetNetworkRoutesResult::operator=(const Aws::AmazonWebSe
       m_networkRoutes.push_back(networkRoutesJsonList[networkRoutesIndex].AsObject());
     }
     m_networkRoutesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("NextToken")) {
+    m_nextToken = jsonValue.GetString("NextToken");
+    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

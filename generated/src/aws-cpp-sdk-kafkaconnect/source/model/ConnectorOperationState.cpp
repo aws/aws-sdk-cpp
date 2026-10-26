@@ -22,6 +22,12 @@ static const int UPDATE_FAILED_HASH = HashingUtils::HashString("UPDATE_FAILED");
 static const int ROLLBACK_IN_PROGRESS_HASH = HashingUtils::HashString("ROLLBACK_IN_PROGRESS");
 static const int ROLLBACK_FAILED_HASH = HashingUtils::HashString("ROLLBACK_FAILED");
 static const int ROLLBACK_COMPLETE_HASH = HashingUtils::HashString("ROLLBACK_COMPLETE");
+static const int PAUSE_COMPLETE_HASH = HashingUtils::HashString("PAUSE_COMPLETE");
+static const int PAUSE_FAILED_HASH = HashingUtils::HashString("PAUSE_FAILED");
+static const int RESUME_COMPLETE_HASH = HashingUtils::HashString("RESUME_COMPLETE");
+static const int RESUME_FAILED_HASH = HashingUtils::HashString("RESUME_FAILED");
+static const int PAUSE_IN_PROGRESS_HASH = HashingUtils::HashString("PAUSE_IN_PROGRESS");
+static const int RESUME_IN_PROGRESS_HASH = HashingUtils::HashString("RESUME_IN_PROGRESS");
 static const int RESTART_IN_PROGRESS_HASH = HashingUtils::HashString("RESTART_IN_PROGRESS");
 static const int RESTART_COMPLETE_HASH = HashingUtils::HashString("RESTART_COMPLETE");
 static const int RESTART_FAILED_HASH = HashingUtils::HashString("RESTART_FAILED");
@@ -42,6 +48,18 @@ ConnectorOperationState GetConnectorOperationStateForName(const Aws::String& nam
     return ConnectorOperationState::ROLLBACK_FAILED;
   } else if (hashCode == ROLLBACK_COMPLETE_HASH) {
     return ConnectorOperationState::ROLLBACK_COMPLETE;
+  } else if (hashCode == PAUSE_COMPLETE_HASH) {
+    return ConnectorOperationState::PAUSE_COMPLETE;
+  } else if (hashCode == PAUSE_FAILED_HASH) {
+    return ConnectorOperationState::PAUSE_FAILED;
+  } else if (hashCode == RESUME_COMPLETE_HASH) {
+    return ConnectorOperationState::RESUME_COMPLETE;
+  } else if (hashCode == RESUME_FAILED_HASH) {
+    return ConnectorOperationState::RESUME_FAILED;
+  } else if (hashCode == PAUSE_IN_PROGRESS_HASH) {
+    return ConnectorOperationState::PAUSE_IN_PROGRESS;
+  } else if (hashCode == RESUME_IN_PROGRESS_HASH) {
+    return ConnectorOperationState::RESUME_IN_PROGRESS;
   } else if (hashCode == RESTART_IN_PROGRESS_HASH) {
     return ConnectorOperationState::RESTART_IN_PROGRESS;
   } else if (hashCode == RESTART_COMPLETE_HASH) {
@@ -76,6 +94,18 @@ Aws::String GetNameForConnectorOperationState(ConnectorOperationState enumValue)
       return "ROLLBACK_FAILED";
     case ConnectorOperationState::ROLLBACK_COMPLETE:
       return "ROLLBACK_COMPLETE";
+    case ConnectorOperationState::PAUSE_COMPLETE:
+      return "PAUSE_COMPLETE";
+    case ConnectorOperationState::PAUSE_FAILED:
+      return "PAUSE_FAILED";
+    case ConnectorOperationState::RESUME_COMPLETE:
+      return "RESUME_COMPLETE";
+    case ConnectorOperationState::RESUME_FAILED:
+      return "RESUME_FAILED";
+    case ConnectorOperationState::PAUSE_IN_PROGRESS:
+      return "PAUSE_IN_PROGRESS";
+    case ConnectorOperationState::RESUME_IN_PROGRESS:
+      return "RESUME_IN_PROGRESS";
     case ConnectorOperationState::RESTART_IN_PROGRESS:
       return "RESTART_IN_PROGRESS";
     case ConnectorOperationState::RESTART_COMPLETE:

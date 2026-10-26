@@ -4455,7 +4455,12 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   }
 
   /**
-   * <p>Updates an existing gateway.</p><p><h3>See Also:</h3>   <a
+   * <p>Updates an existing gateway.</p> <p>Replaces the entire gateway
+   * configuration. Any optional field that you omit, including fields in
+   * <code>protocolConfiguration</code>, is reset. For information about retrieving
+   * the current configuration, see <a
+   * href="https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetGateway.html">GetGateway</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateGateway">AWS
    * API Reference</a></p>
    */

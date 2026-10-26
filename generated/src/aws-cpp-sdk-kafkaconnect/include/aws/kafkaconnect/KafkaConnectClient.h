@@ -494,6 +494,33 @@ class AWS_KAFKACONNECT_API KafkaConnectClient : public Aws::Client::AWSJsonClien
   }
 
   /**
+   * <p>Pauses the specified connector. The operation runs asynchronously. To track
+   * the pause, pass the connector operation ARN from the response to
+   * <code>DescribeConnectorOperation</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/PauseConnector">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PauseConnectorOutcome PauseConnector(const Model::PauseConnectorRequest& request) const;
+
+  /**
+   * A Callable wrapper for PauseConnector that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename PauseConnectorRequestT = Model::PauseConnectorRequest>
+  Model::PauseConnectorOutcomeCallable PauseConnectorCallable(const PauseConnectorRequestT& request) const {
+    return SubmitCallable(&KafkaConnectClient::PauseConnector, request);
+  }
+
+  /**
+   * An Async wrapper for PauseConnector that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename PauseConnectorRequestT = Model::PauseConnectorRequest>
+  void PauseConnectorAsync(const PauseConnectorRequestT& request, const PauseConnectorResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KafkaConnectClient::PauseConnector, request, handler, context);
+  }
+
+  /**
    * <p>Restarts the specified connector. By default, this operation restarts the
    * connector and all of its tasks. This operation is asynchronous and returns a
    * connector operation ARN that you can pass to
@@ -521,6 +548,33 @@ class AWS_KAFKACONNECT_API KafkaConnectClient : public Aws::Client::AWSJsonClien
   void RestartConnectorAsync(const RestartConnectorRequestT& request, const RestartConnectorResponseReceivedHandler& handler,
                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&KafkaConnectClient::RestartConnector, request, handler, context);
+  }
+
+  /**
+   * <p>Resumes the specified paused connector. The operation runs asynchronously. To
+   * track the resume, pass the connector operation ARN from the response to
+   * <code>DescribeConnectorOperation</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/ResumeConnector">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ResumeConnectorOutcome ResumeConnector(const Model::ResumeConnectorRequest& request) const;
+
+  /**
+   * A Callable wrapper for ResumeConnector that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ResumeConnectorRequestT = Model::ResumeConnectorRequest>
+  Model::ResumeConnectorOutcomeCallable ResumeConnectorCallable(const ResumeConnectorRequestT& request) const {
+    return SubmitCallable(&KafkaConnectClient::ResumeConnector, request);
+  }
+
+  /**
+   * An Async wrapper for ResumeConnector that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ResumeConnectorRequestT = Model::ResumeConnectorRequest>
+  void ResumeConnectorAsync(const ResumeConnectorRequestT& request, const ResumeConnectorResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KafkaConnectClient::ResumeConnector, request, handler, context);
   }
 
   /**
