@@ -72,13 +72,15 @@ public class Metadata {
             return protocol;
         }
 
-        //We're releasing CBOR so current services (only arc-region-switch) need to opt into the new protocol priority
-        if (serviceFullName != null && serviceFullName.equalsIgnoreCase("ARC - Region switch")){
+        //We're releasing CBOR so current services (only arc-region-switch) need to opt into the new protocol priority.
+        //Match on the service id (serviceId), NOT the display name (serviceFullName), so a
+        //display-name change can never silently flip the wire protocol (JSON <-> CBOR).
+        if (serviceId != null && serviceId.equalsIgnoreCase("ARC Region switch")){
             return "json";
         }
 
         return protocols.stream().filter(supportedProtocols::contains)
                 .min(Comparator.comparingInt(protocolName -> supportedProtocols.indexOf(protocolName)))
-                .orElseThrow(() -> new RuntimeException(String.format("No supported protocol found for %s", serviceFullName)));
+                .orElseThrow(() -> new RuntimeException(String.format("No supported protocol found for %s", serviceId)));
     }
 }
