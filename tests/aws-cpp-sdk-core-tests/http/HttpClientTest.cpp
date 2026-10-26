@@ -11,7 +11,6 @@
 #include <aws/core/http/standard/StandardHttpRequest.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/logging/LogMacros.h>
-#include <aws/crt/http/HttpRequestResponse.h>
 #include <future>
 #include <chrono>
 
@@ -386,5 +385,4 @@ TEST_F(CURLHttpClientTest, TestHttpRequestWorksFine)
 #endif // ENABLE_CURL_CLIENT
 #endif // ENABLE_HTTP_CLIENT_TESTING
 #endif // NO_HTTP_CLIENT
-
 #endif  // DISABLE_DNS_REQUIRED_TESTS
