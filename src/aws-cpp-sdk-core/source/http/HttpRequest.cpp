@@ -79,12 +79,12 @@ namespace Aws
             // practice however CRT will never support legacy mode and will
             // always need modern encoding, so be explicit here about which mode
             // we use.
-            
-            // Set path to origin-form (path + query only) per RFC 9112 §3.2.1.
-            // aws-c-http converts to absolute-form only when sending through a
-            // forward proxy via aws_http_rewrite_uri_for_proxy_request.
-            ss << (uri.GetPath().empty() ? "/" : uri.GetURLEncodedPath())
-                << uri.GetQueryString();
+            //
+            // Origin-form request-target (path + query) per RFC 9112 §3.2.1.
+            // GetURLEncodedPath() always begins with '/', including the root
+            // path. aws-c-http rewrites this to absolute-form only when the
+            // request goes through a forward proxy.
+            ss << uri.GetURLEncodedPath() << uri.GetQueryString();
 
             request->SetPath(Aws::Crt::ByteCursorFromCString(ss.str().c_str()));
             const char *method = HttpMethodMapper::GetNameForHttpMethod(m_method);
