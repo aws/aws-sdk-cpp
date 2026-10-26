@@ -32,6 +32,7 @@
 #include <aws/rest-json-protocol/model/DocumentTypeAsPayloadResult.h>
 #include <aws/rest-json-protocol/model/DocumentTypeRequest.h>
 #include <aws/rest-json-protocol/model/DocumentTypeResult.h>
+#include <aws/rest-json-protocol/model/DuplexStreamRequest.h>
 #include <aws/rest-json-protocol/model/EmptyInputAndEmptyOutputRequest.h>
 #include <aws/rest-json-protocol/model/EmptyInputAndEmptyOutputResult.h>
 #include <aws/rest-json-protocol/model/EndpointOperationRequest.h>
@@ -90,6 +91,8 @@
 #include <aws/rest-json-protocol/model/NullAndEmptyHeadersServerResult.h>
 #include <aws/rest-json-protocol/model/OmitsNullSerializesEmptyStringRequest.h>
 #include <aws/rest-json-protocol/model/OmitsSerializingEmptyListsRequest.h>
+#include <aws/rest-json-protocol/model/OutputStreamRequest.h>
+#include <aws/rest-json-protocol/model/OutputStreamWithInitialResponseRequest.h>
 #include <aws/rest-json-protocol/model/PostUnionWithJsonNameRequest.h>
 #include <aws/rest-json-protocol/model/PostUnionWithJsonNameResult.h>
 #include <aws/rest-json-protocol/model/PutWithContentEncodingRequest.h>
@@ -137,6 +140,10 @@ namespace Utils {
 template <typename R, typename E>
 class Outcome;
 
+namespace Event {
+class EventEncoderStream;
+}  // namespace Event
+
 namespace Threading {
 class Executor;
 }  // namespace Threading
@@ -166,6 +173,10 @@ class DatetimeOffsetsRequest;
 class DocumentTypeRequest;
 class DocumentTypeAsMapValueRequest;
 class DocumentTypeAsPayloadRequest;
+class DuplexStreamRequest;
+class EventStream;
+class DuplexStreamWithInitialMessagesRequest;
+class EventStream;
 class EmptyInputAndEmptyOutputRequest;
 class EndpointOperationRequest;
 class EndpointWithHostLabelOperationRequest;
@@ -204,6 +215,8 @@ class NullAndEmptyHeadersClientRequest;
 class NullAndEmptyHeadersServerRequest;
 class OmitsNullSerializesEmptyStringRequest;
 class OmitsSerializingEmptyListsRequest;
+class OutputStreamRequest;
+class OutputStreamWithInitialResponseRequest;
 class PostUnionWithJsonNameRequest;
 class PutWithContentEncodingRequest;
 class QueryIdempotencyTokenAutoFillRequest;
@@ -235,6 +248,8 @@ typedef Aws::Utils::Outcome<DatetimeOffsetsResult, RestJsonProtocolError> Dateti
 typedef Aws::Utils::Outcome<DocumentTypeResult, RestJsonProtocolError> DocumentTypeOutcome;
 typedef Aws::Utils::Outcome<DocumentTypeAsMapValueResult, RestJsonProtocolError> DocumentTypeAsMapValueOutcome;
 typedef Aws::Utils::Outcome<DocumentTypeAsPayloadResult, RestJsonProtocolError> DocumentTypeAsPayloadOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, RestJsonProtocolError> DuplexStreamOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, RestJsonProtocolError> DuplexStreamWithInitialMessagesOutcome;
 typedef Aws::Utils::Outcome<EmptyInputAndEmptyOutputResult, RestJsonProtocolError> EmptyInputAndEmptyOutputOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, RestJsonProtocolError> EndpointOperationOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, RestJsonProtocolError> EndpointWithHostLabelOperationOutcome;
@@ -273,6 +288,8 @@ typedef Aws::Utils::Outcome<NullAndEmptyHeadersClientResult, RestJsonProtocolErr
 typedef Aws::Utils::Outcome<NullAndEmptyHeadersServerResult, RestJsonProtocolError> NullAndEmptyHeadersServerOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, RestJsonProtocolError> OmitsNullSerializesEmptyStringOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, RestJsonProtocolError> OmitsSerializingEmptyListsOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, RestJsonProtocolError> OutputStreamOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, RestJsonProtocolError> OutputStreamWithInitialResponseOutcome;
 typedef Aws::Utils::Outcome<PostUnionWithJsonNameResult, RestJsonProtocolError> PostUnionWithJsonNameOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, RestJsonProtocolError> PutWithContentEncodingOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, RestJsonProtocolError> QueryIdempotencyTokenAutoFillOutcome;
@@ -304,6 +321,8 @@ typedef std::future<DatetimeOffsetsOutcome> DatetimeOffsetsOutcomeCallable;
 typedef std::future<DocumentTypeOutcome> DocumentTypeOutcomeCallable;
 typedef std::future<DocumentTypeAsMapValueOutcome> DocumentTypeAsMapValueOutcomeCallable;
 typedef std::future<DocumentTypeAsPayloadOutcome> DocumentTypeAsPayloadOutcomeCallable;
+typedef std::future<DuplexStreamOutcome> DuplexStreamOutcomeCallable;
+typedef std::future<DuplexStreamWithInitialMessagesOutcome> DuplexStreamWithInitialMessagesOutcomeCallable;
 typedef std::future<EmptyInputAndEmptyOutputOutcome> EmptyInputAndEmptyOutputOutcomeCallable;
 typedef std::future<EndpointOperationOutcome> EndpointOperationOutcomeCallable;
 typedef std::future<EndpointWithHostLabelOperationOutcome> EndpointWithHostLabelOperationOutcomeCallable;
@@ -342,6 +361,8 @@ typedef std::future<NullAndEmptyHeadersClientOutcome> NullAndEmptyHeadersClientO
 typedef std::future<NullAndEmptyHeadersServerOutcome> NullAndEmptyHeadersServerOutcomeCallable;
 typedef std::future<OmitsNullSerializesEmptyStringOutcome> OmitsNullSerializesEmptyStringOutcomeCallable;
 typedef std::future<OmitsSerializingEmptyListsOutcome> OmitsSerializingEmptyListsOutcomeCallable;
+typedef std::future<OutputStreamOutcome> OutputStreamOutcomeCallable;
+typedef std::future<OutputStreamWithInitialResponseOutcome> OutputStreamWithInitialResponseOutcomeCallable;
 typedef std::future<PostUnionWithJsonNameOutcome> PostUnionWithJsonNameOutcomeCallable;
 typedef std::future<PutWithContentEncodingOutcome> PutWithContentEncodingOutcomeCallable;
 typedef std::future<QueryIdempotencyTokenAutoFillOutcome> QueryIdempotencyTokenAutoFillOutcomeCallable;
@@ -393,6 +414,15 @@ typedef std::function<void(const RestJsonProtocolClient*, const Model::DocumentT
 typedef std::function<void(const RestJsonProtocolClient*, const Model::DocumentTypeAsPayloadRequest&,
                            const Model::DocumentTypeAsPayloadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DocumentTypeAsPayloadResponseReceivedHandler;
+typedef std::function<void(Model::EventStream&)> DuplexStreamStreamReadyHandler;
+typedef std::function<void(const RestJsonProtocolClient*, const Model::DuplexStreamRequest&, const Model::DuplexStreamOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DuplexStreamResponseReceivedHandler;
+typedef std::function<void(Model::EventStream&)> DuplexStreamWithInitialMessagesStreamReadyHandler;
+typedef std::function<void(const RestJsonProtocolClient*, const Model::DuplexStreamWithInitialMessagesRequest&,
+                           const Model::DuplexStreamWithInitialMessagesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DuplexStreamWithInitialMessagesResponseReceivedHandler;
 typedef std::function<void(const RestJsonProtocolClient*, const Model::EmptyInputAndEmptyOutputRequest&,
                            const Model::EmptyInputAndEmptyOutputOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     EmptyInputAndEmptyOutputResponseReceivedHandler;
@@ -512,6 +542,13 @@ typedef std::function<void(const RestJsonProtocolClient*, const Model::OmitsNull
 typedef std::function<void(const RestJsonProtocolClient*, const Model::OmitsSerializingEmptyListsRequest&,
                            const Model::OmitsSerializingEmptyListsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     OmitsSerializingEmptyListsResponseReceivedHandler;
+typedef std::function<void(const RestJsonProtocolClient*, const Model::OutputStreamRequest&, const Model::OutputStreamOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    OutputStreamResponseReceivedHandler;
+typedef std::function<void(const RestJsonProtocolClient*, const Model::OutputStreamWithInitialResponseRequest&,
+                           const Model::OutputStreamWithInitialResponseOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    OutputStreamWithInitialResponseResponseReceivedHandler;
 typedef std::function<void(const RestJsonProtocolClient*, const Model::PostUnionWithJsonNameRequest&,
                            const Model::PostUnionWithJsonNameOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PostUnionWithJsonNameResponseReceivedHandler;

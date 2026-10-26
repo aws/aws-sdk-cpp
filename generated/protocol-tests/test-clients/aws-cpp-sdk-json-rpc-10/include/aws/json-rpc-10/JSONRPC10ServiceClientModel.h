@@ -34,6 +34,7 @@
 #include <aws/json-rpc-10/model/NoInputAndOutputRequest.h>
 #include <aws/json-rpc-10/model/NoInputAndOutputResult.h>
 #include <aws/json-rpc-10/model/PutWithContentEncodingRequest.h>
+#include <aws/json-rpc-10/model/QueryIncompatibleOperationRequest.h>
 #include <aws/json-rpc-10/model/SimpleScalarPropertiesRequest.h>
 #include <aws/json-rpc-10/model/SimpleScalarPropertiesResult.h>
 /* End of service model headers required in JSONRPC10Client header */
@@ -79,6 +80,7 @@ class JsonUnionsRequest;
 class NoInputAndNoOutputRequest;
 class NoInputAndOutputRequest;
 class PutWithContentEncodingRequest;
+class QueryIncompatibleOperationRequest;
 class SimpleScalarPropertiesRequest;
 /* End of service model forward declarations required in JSONRPC10Client header */
 
@@ -93,6 +95,7 @@ typedef Aws::Utils::Outcome<JsonUnionsResult, JSONRPC10Error> JsonUnionsOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, JSONRPC10Error> NoInputAndNoOutputOutcome;
 typedef Aws::Utils::Outcome<NoInputAndOutputResult, JSONRPC10Error> NoInputAndOutputOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, JSONRPC10Error> PutWithContentEncodingOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, JSONRPC10Error> QueryIncompatibleOperationOutcome;
 typedef Aws::Utils::Outcome<SimpleScalarPropertiesResult, JSONRPC10Error> SimpleScalarPropertiesOutcome;
 /* End of service model Outcome class definitions */
 
@@ -107,6 +110,7 @@ typedef std::future<JsonUnionsOutcome> JsonUnionsOutcomeCallable;
 typedef std::future<NoInputAndNoOutputOutcome> NoInputAndNoOutputOutcomeCallable;
 typedef std::future<NoInputAndOutputOutcome> NoInputAndOutputOutcomeCallable;
 typedef std::future<PutWithContentEncodingOutcome> PutWithContentEncodingOutcomeCallable;
+typedef std::future<QueryIncompatibleOperationOutcome> QueryIncompatibleOperationOutcomeCallable;
 typedef std::future<SimpleScalarPropertiesOutcome> SimpleScalarPropertiesOutcomeCallable;
 /* End of service model Outcome callable definitions */
 }  // namespace Model
@@ -145,6 +149,9 @@ typedef std::function<void(const JSONRPC10Client*, const Model::NoInputAndOutput
 typedef std::function<void(const JSONRPC10Client*, const Model::PutWithContentEncodingRequest&, const Model::PutWithContentEncodingOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutWithContentEncodingResponseReceivedHandler;
+typedef std::function<void(const JSONRPC10Client*, const Model::QueryIncompatibleOperationRequest&,
+                           const Model::QueryIncompatibleOperationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    QueryIncompatibleOperationResponseReceivedHandler;
 typedef std::function<void(const JSONRPC10Client*, const Model::SimpleScalarPropertiesRequest&, const Model::SimpleScalarPropertiesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     SimpleScalarPropertiesResponseReceivedHandler;

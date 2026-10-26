@@ -16,8 +16,8 @@ AWS_PROTOCOL_TEST(QueryCompatibleOperation0, QueryCompatibleAwsJson10CustomCodeE
 
   OutputResponse mockRs;
   mockRs.statusCode = 400;
-  mockRs.headers = {{"Content-Type", R"(application/x-amz-json-1.0)"}, {"x-amzn-query-error", R"(Customized;Sender)"}};
-  mockRs.body = "ewogICAgIl9fdHlwZSI6ICJhd3MucHJvdG9jb2x0ZXN0cy5qc29uMTAjQ3VzdG9tQ29kZUVycm9yIiwKICAgICJNZXNzYWdlIjogIkhpIgp9";
+  mockRs.headers = {{"x-amzn-query-error", R"(Customized;Sender)"}, {"Content-Type", R"(application/x-amz-json-1.0)"}};
+  mockRs.body = "ewogICAgIl9fdHlwZSI6ICJhd3MucHJvdG9jb2x0ZXN0cy5qc29uMTAjQ3VzdG9tQ29kZUVycm9yIiwKICAgICJtZXNzYWdlIjogIkhpIgp9";
   SetMockResponse(mockRs);
 
   QueryCompatibleOperationRequest request;

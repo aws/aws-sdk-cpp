@@ -52,6 +52,8 @@ public class Shape {
     private boolean eventStream;
     private boolean event;
     private String eventPayloadMemberName;
+    // True when the model marks a member @eventPayload; eventPayloadMemberName may also be inferred for single-member events.
+    private boolean eventPayloadExplicit;
     private String eventPayloadType;
     private boolean isOutgoingEventStream;
     private Map<String, Shape> eventStreamHeaders;

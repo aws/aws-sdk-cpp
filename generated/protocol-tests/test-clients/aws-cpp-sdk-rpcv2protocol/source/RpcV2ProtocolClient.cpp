@@ -30,6 +30,7 @@
 #include <aws/rpcv2protocol/model/RpcV2CborDenseMapsRequest.h>
 #include <aws/rpcv2protocol/model/RpcV2CborListsRequest.h>
 #include <aws/rpcv2protocol/model/RpcV2CborSparseMapsRequest.h>
+#include <aws/rpcv2protocol/model/RpcV2CborUnionsRequest.h>
 #include <aws/rpcv2protocol/model/SimpleScalarPropertiesRequest.h>
 #include <aws/rpcv2protocol/model/SparseNullsOperationRequest.h>
 #include <smithy/tracing/TracingUtils.h>
@@ -242,6 +243,12 @@ RpcV2CborSparseMapsOutcome RpcV2ProtocolClient::RpcV2CborSparseMaps(const RpcV2C
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? RpcV2CborSparseMapsOutcome(result.GetResultWithOwnership())
                             : RpcV2CborSparseMapsOutcome(std::move(result.GetError()));
+}
+
+RpcV2CborUnionsOutcome RpcV2ProtocolClient::RpcV2CborUnions(const RpcV2CborUnionsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RpcV2CborUnionsOutcome(result.GetResultWithOwnership())
+                            : RpcV2CborUnionsOutcome(std::move(result.GetError()));
 }
 
 SimpleScalarPropertiesOutcome RpcV2ProtocolClient::SimpleScalarProperties(const SimpleScalarPropertiesRequest& request) const {

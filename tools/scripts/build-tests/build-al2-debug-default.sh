@@ -22,7 +22,7 @@ mkdir "${PREFIX_DIR}/al2-install"
 cd "${PREFIX_DIR}/al2-build"
 CMAKE_ARGS=(-GNinja ../aws-sdk-cpp -DCMAKE_BUILD_TYPE="$BUILD_TYPE" -DMINIMIZE_SIZE=ON -DCMAKE_INSTALL_PREFIX="${PREFIX_DIR}/al2-install" -DBUILD_PERFORMANCE_TESTS=ON -DAWS_ENABLE_CORE_INTEGRATION_TEST=ON -DENABLE_SMOKE_TESTS=ON)
 if [ "$BUILD_TYPE" = "Debug" ]; then
-  CMAKE_ARGS+=(-DCMAKE_CXX_FLAGS="-ggdb -fsanitize=address")
+  CMAKE_ARGS+=(-DCMAKE_CXX_FLAGS="-ggdb -fsanitize=address" -DENABLE_PROTOCOL_TESTS=ON)
 fi
 cmake "${CMAKE_ARGS[@]}"
 ninja-build -j $(grep -c ^processor /proc/cpuinfo)
@@ -32,6 +32,6 @@ ninja-build install
 rm -rf "${PREFIX_DIR}/al2-build/AWSSDK/"
 rm -rf "${PREFIX_DIR}/al2-build/CMakeFiles/"
 rm -rf "${PREFIX_DIR}/al2-build/crt/"
-find "${PREFIX_DIR}/al2-build/generated/" -mindepth 1 -maxdepth 1 ! -name "smoke-tests" -exec rm -rf {} +
+find "${PREFIX_DIR}/al2-build/generated/" -mindepth 1 -maxdepth 1 ! -name "smoke-tests" ! -name "protocol-tests" -exec rm -rf {} +
 rm -rf "${PREFIX_DIR}/al2-build/lib/"
 rm -rf "${PREFIX_DIR}/al2-build/src/"

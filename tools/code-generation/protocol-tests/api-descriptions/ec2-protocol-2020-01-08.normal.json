@@ -679,6 +679,17 @@
                 "UsesXmlName": {
                     "shape": "String",
                     "locationName": "usesXmlName"
+                },
+                "DistinctQueryName": {
+                    "shape": "String"
+                },
+                "DistinctQueryAndXmlName": {
+                    "shape": "String",
+                    "locationName": "xmlAndQueryName"
+                },
+                "DistinctXmlName": {
+                    "shape": "String",
+                    "locationName": "xmlNameOnly"
                 }
             }
         },

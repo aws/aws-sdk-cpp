@@ -54,6 +54,21 @@ AWS_PROTOCOL_TEST(GreetingWithErrors2, RestJsonFooErrorUsingXAmznErrorTypeWithUr
   ASSERT_FALSE(outcome.IsSuccess());
 }
 
+AWS_PROTOCOL_TEST(GreetingWithErrors2, RestJsonFooErrorUsingXAmznErrorTypeWithUriAndDifferentNamespace) {
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 500;
+  mockRs.headers = {
+      {"X-Amzn-Errortype", R"(aws.different.namespace#FooError:http://internal.amazon.com/coral/com.amazon.coral.validate/)"}};
+  SetMockResponse(mockRs);
+
+  GreetingWithErrorsRequest request;
+
+  auto outcome = client.GreetingWithErrors(request);
+  ASSERT_FALSE(outcome.IsSuccess());
+}
+
 AWS_PROTOCOL_TEST(GreetingWithErrors2, RestJsonFooErrorUsingCode) {
   RestJsonProtocolClient client(mockCredentials, mockConfig);
 
