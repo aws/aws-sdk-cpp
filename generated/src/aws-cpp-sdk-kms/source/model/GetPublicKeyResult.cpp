@@ -65,6 +65,15 @@ GetPublicKeyResult& GetPublicKeyResult::operator=(const Aws::AmazonWebServiceRes
     }
     m_keyAgreementAlgorithmsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("EncapsulationAlgorithms")) {
+    Aws::Utils::Array<JsonView> encapsulationAlgorithmsJsonList = jsonValue.GetArray("EncapsulationAlgorithms");
+    for (unsigned encapsulationAlgorithmsIndex = 0; encapsulationAlgorithmsIndex < encapsulationAlgorithmsJsonList.GetLength();
+         ++encapsulationAlgorithmsIndex) {
+      m_encapsulationAlgorithms.push_back(EncapsulationAlgorithmSpecMapper::GetEncapsulationAlgorithmSpecForName(
+          encapsulationAlgorithmsJsonList[encapsulationAlgorithmsIndex].AsString()));
+    }
+    m_encapsulationAlgorithmsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

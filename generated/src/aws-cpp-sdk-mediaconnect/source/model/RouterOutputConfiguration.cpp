@@ -30,6 +30,10 @@ RouterOutputConfiguration& RouterOutputConfiguration::operator=(JsonView jsonVal
     m_mediaLiveInput = jsonValue.GetObject("mediaLiveInput");
     m_mediaLiveInputHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("sourceEndpoint")) {
+    m_sourceEndpoint = jsonValue.GetObject("sourceEndpoint");
+    m_sourceEndpointHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +50,10 @@ JsonValue RouterOutputConfiguration::Jsonize() const {
 
   if (m_mediaLiveInputHasBeenSet) {
     payload.WithObject("mediaLiveInput", m_mediaLiveInput.Jsonize());
+  }
+
+  if (m_sourceEndpointHasBeenSet) {
+    payload.WithObject("sourceEndpoint", m_sourceEndpoint.Jsonize());
   }
 
   return payload;

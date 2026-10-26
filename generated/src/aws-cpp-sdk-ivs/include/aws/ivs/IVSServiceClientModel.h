@@ -26,6 +26,8 @@
 #include <aws/ivs/model/CreateAdConfigurationResult.h>
 #include <aws/ivs/model/CreateChannelRequest.h>
 #include <aws/ivs/model/CreateChannelResult.h>
+#include <aws/ivs/model/CreateFailoverSlateConfigurationRequest.h>
+#include <aws/ivs/model/CreateFailoverSlateConfigurationResult.h>
 #include <aws/ivs/model/CreatePlaybackRestrictionPolicyRequest.h>
 #include <aws/ivs/model/CreatePlaybackRestrictionPolicyResult.h>
 #include <aws/ivs/model/CreateRecordingConfigurationResult.h>
@@ -33,6 +35,7 @@
 #include <aws/ivs/model/DeletePlaybackKeyPairResult.h>
 #include <aws/ivs/model/GetAdConfigurationResult.h>
 #include <aws/ivs/model/GetChannelResult.h>
+#include <aws/ivs/model/GetFailoverSlateConfigurationResult.h>
 #include <aws/ivs/model/GetPlaybackKeyPairResult.h>
 #include <aws/ivs/model/GetPlaybackRestrictionPolicyResult.h>
 #include <aws/ivs/model/GetRecordingConfigurationResult.h>
@@ -45,6 +48,8 @@
 #include <aws/ivs/model/ListAdConfigurationsResult.h>
 #include <aws/ivs/model/ListChannelsRequest.h>
 #include <aws/ivs/model/ListChannelsResult.h>
+#include <aws/ivs/model/ListFailoverSlateConfigurationsRequest.h>
+#include <aws/ivs/model/ListFailoverSlateConfigurationsResult.h>
 #include <aws/ivs/model/ListPlaybackKeyPairsRequest.h>
 #include <aws/ivs/model/ListPlaybackKeyPairsResult.h>
 #include <aws/ivs/model/ListPlaybackRestrictionPoliciesRequest.h>
@@ -62,6 +67,7 @@
 #include <aws/ivs/model/UntagResourceResult.h>
 #include <aws/ivs/model/UpdateAdConfigurationResult.h>
 #include <aws/ivs/model/UpdateChannelResult.h>
+#include <aws/ivs/model/UpdateFailoverSlateConfigurationResult.h>
 #include <aws/ivs/model/UpdatePlaybackRestrictionPolicyResult.h>
 /* End of service model headers required in IVSClient header */
 
@@ -101,17 +107,20 @@ class BatchGetStreamKeyRequest;
 class BatchStartViewerSessionRevocationRequest;
 class CreateAdConfigurationRequest;
 class CreateChannelRequest;
+class CreateFailoverSlateConfigurationRequest;
 class CreatePlaybackRestrictionPolicyRequest;
 class CreateRecordingConfigurationRequest;
 class CreateStreamKeyRequest;
 class DeleteAdConfigurationRequest;
 class DeleteChannelRequest;
+class DeleteFailoverSlateConfigurationRequest;
 class DeletePlaybackKeyPairRequest;
 class DeletePlaybackRestrictionPolicyRequest;
 class DeleteRecordingConfigurationRequest;
 class DeleteStreamKeyRequest;
 class GetAdConfigurationRequest;
 class GetChannelRequest;
+class GetFailoverSlateConfigurationRequest;
 class GetPlaybackKeyPairRequest;
 class GetPlaybackRestrictionPolicyRequest;
 class GetRecordingConfigurationRequest;
@@ -122,6 +131,7 @@ class ImportPlaybackKeyPairRequest;
 class InsertAdBreakRequest;
 class ListAdConfigurationsRequest;
 class ListChannelsRequest;
+class ListFailoverSlateConfigurationsRequest;
 class ListPlaybackKeyPairsRequest;
 class ListPlaybackRestrictionPoliciesRequest;
 class ListRecordingConfigurationsRequest;
@@ -136,6 +146,7 @@ class TagResourceRequest;
 class UntagResourceRequest;
 class UpdateAdConfigurationRequest;
 class UpdateChannelRequest;
+class UpdateFailoverSlateConfigurationRequest;
 class UpdatePlaybackRestrictionPolicyRequest;
 /* End of service model forward declarations required in IVSClient header */
 
@@ -145,17 +156,20 @@ typedef Aws::Utils::Outcome<BatchGetStreamKeyResult, IVSError> BatchGetStreamKey
 typedef Aws::Utils::Outcome<BatchStartViewerSessionRevocationResult, IVSError> BatchStartViewerSessionRevocationOutcome;
 typedef Aws::Utils::Outcome<CreateAdConfigurationResult, IVSError> CreateAdConfigurationOutcome;
 typedef Aws::Utils::Outcome<CreateChannelResult, IVSError> CreateChannelOutcome;
+typedef Aws::Utils::Outcome<CreateFailoverSlateConfigurationResult, IVSError> CreateFailoverSlateConfigurationOutcome;
 typedef Aws::Utils::Outcome<CreatePlaybackRestrictionPolicyResult, IVSError> CreatePlaybackRestrictionPolicyOutcome;
 typedef Aws::Utils::Outcome<CreateRecordingConfigurationResult, IVSError> CreateRecordingConfigurationOutcome;
 typedef Aws::Utils::Outcome<CreateStreamKeyResult, IVSError> CreateStreamKeyOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, IVSError> DeleteAdConfigurationOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, IVSError> DeleteChannelOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, IVSError> DeleteFailoverSlateConfigurationOutcome;
 typedef Aws::Utils::Outcome<DeletePlaybackKeyPairResult, IVSError> DeletePlaybackKeyPairOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, IVSError> DeletePlaybackRestrictionPolicyOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, IVSError> DeleteRecordingConfigurationOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, IVSError> DeleteStreamKeyOutcome;
 typedef Aws::Utils::Outcome<GetAdConfigurationResult, IVSError> GetAdConfigurationOutcome;
 typedef Aws::Utils::Outcome<GetChannelResult, IVSError> GetChannelOutcome;
+typedef Aws::Utils::Outcome<GetFailoverSlateConfigurationResult, IVSError> GetFailoverSlateConfigurationOutcome;
 typedef Aws::Utils::Outcome<GetPlaybackKeyPairResult, IVSError> GetPlaybackKeyPairOutcome;
 typedef Aws::Utils::Outcome<GetPlaybackRestrictionPolicyResult, IVSError> GetPlaybackRestrictionPolicyOutcome;
 typedef Aws::Utils::Outcome<GetRecordingConfigurationResult, IVSError> GetRecordingConfigurationOutcome;
@@ -166,6 +180,7 @@ typedef Aws::Utils::Outcome<ImportPlaybackKeyPairResult, IVSError> ImportPlaybac
 typedef Aws::Utils::Outcome<InsertAdBreakResult, IVSError> InsertAdBreakOutcome;
 typedef Aws::Utils::Outcome<ListAdConfigurationsResult, IVSError> ListAdConfigurationsOutcome;
 typedef Aws::Utils::Outcome<ListChannelsResult, IVSError> ListChannelsOutcome;
+typedef Aws::Utils::Outcome<ListFailoverSlateConfigurationsResult, IVSError> ListFailoverSlateConfigurationsOutcome;
 typedef Aws::Utils::Outcome<ListPlaybackKeyPairsResult, IVSError> ListPlaybackKeyPairsOutcome;
 typedef Aws::Utils::Outcome<ListPlaybackRestrictionPoliciesResult, IVSError> ListPlaybackRestrictionPoliciesOutcome;
 typedef Aws::Utils::Outcome<ListRecordingConfigurationsResult, IVSError> ListRecordingConfigurationsOutcome;
@@ -180,6 +195,7 @@ typedef Aws::Utils::Outcome<TagResourceResult, IVSError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, IVSError> UntagResourceOutcome;
 typedef Aws::Utils::Outcome<UpdateAdConfigurationResult, IVSError> UpdateAdConfigurationOutcome;
 typedef Aws::Utils::Outcome<UpdateChannelResult, IVSError> UpdateChannelOutcome;
+typedef Aws::Utils::Outcome<UpdateFailoverSlateConfigurationResult, IVSError> UpdateFailoverSlateConfigurationOutcome;
 typedef Aws::Utils::Outcome<UpdatePlaybackRestrictionPolicyResult, IVSError> UpdatePlaybackRestrictionPolicyOutcome;
 /* End of service model Outcome class definitions */
 
@@ -189,17 +205,20 @@ typedef std::future<BatchGetStreamKeyOutcome> BatchGetStreamKeyOutcomeCallable;
 typedef std::future<BatchStartViewerSessionRevocationOutcome> BatchStartViewerSessionRevocationOutcomeCallable;
 typedef std::future<CreateAdConfigurationOutcome> CreateAdConfigurationOutcomeCallable;
 typedef std::future<CreateChannelOutcome> CreateChannelOutcomeCallable;
+typedef std::future<CreateFailoverSlateConfigurationOutcome> CreateFailoverSlateConfigurationOutcomeCallable;
 typedef std::future<CreatePlaybackRestrictionPolicyOutcome> CreatePlaybackRestrictionPolicyOutcomeCallable;
 typedef std::future<CreateRecordingConfigurationOutcome> CreateRecordingConfigurationOutcomeCallable;
 typedef std::future<CreateStreamKeyOutcome> CreateStreamKeyOutcomeCallable;
 typedef std::future<DeleteAdConfigurationOutcome> DeleteAdConfigurationOutcomeCallable;
 typedef std::future<DeleteChannelOutcome> DeleteChannelOutcomeCallable;
+typedef std::future<DeleteFailoverSlateConfigurationOutcome> DeleteFailoverSlateConfigurationOutcomeCallable;
 typedef std::future<DeletePlaybackKeyPairOutcome> DeletePlaybackKeyPairOutcomeCallable;
 typedef std::future<DeletePlaybackRestrictionPolicyOutcome> DeletePlaybackRestrictionPolicyOutcomeCallable;
 typedef std::future<DeleteRecordingConfigurationOutcome> DeleteRecordingConfigurationOutcomeCallable;
 typedef std::future<DeleteStreamKeyOutcome> DeleteStreamKeyOutcomeCallable;
 typedef std::future<GetAdConfigurationOutcome> GetAdConfigurationOutcomeCallable;
 typedef std::future<GetChannelOutcome> GetChannelOutcomeCallable;
+typedef std::future<GetFailoverSlateConfigurationOutcome> GetFailoverSlateConfigurationOutcomeCallable;
 typedef std::future<GetPlaybackKeyPairOutcome> GetPlaybackKeyPairOutcomeCallable;
 typedef std::future<GetPlaybackRestrictionPolicyOutcome> GetPlaybackRestrictionPolicyOutcomeCallable;
 typedef std::future<GetRecordingConfigurationOutcome> GetRecordingConfigurationOutcomeCallable;
@@ -210,6 +229,7 @@ typedef std::future<ImportPlaybackKeyPairOutcome> ImportPlaybackKeyPairOutcomeCa
 typedef std::future<InsertAdBreakOutcome> InsertAdBreakOutcomeCallable;
 typedef std::future<ListAdConfigurationsOutcome> ListAdConfigurationsOutcomeCallable;
 typedef std::future<ListChannelsOutcome> ListChannelsOutcomeCallable;
+typedef std::future<ListFailoverSlateConfigurationsOutcome> ListFailoverSlateConfigurationsOutcomeCallable;
 typedef std::future<ListPlaybackKeyPairsOutcome> ListPlaybackKeyPairsOutcomeCallable;
 typedef std::future<ListPlaybackRestrictionPoliciesOutcome> ListPlaybackRestrictionPoliciesOutcomeCallable;
 typedef std::future<ListRecordingConfigurationsOutcome> ListRecordingConfigurationsOutcomeCallable;
@@ -224,6 +244,7 @@ typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 typedef std::future<UpdateAdConfigurationOutcome> UpdateAdConfigurationOutcomeCallable;
 typedef std::future<UpdateChannelOutcome> UpdateChannelOutcomeCallable;
+typedef std::future<UpdateFailoverSlateConfigurationOutcome> UpdateFailoverSlateConfigurationOutcomeCallable;
 typedef std::future<UpdatePlaybackRestrictionPolicyOutcome> UpdatePlaybackRestrictionPolicyOutcomeCallable;
 /* End of service model Outcome callable definitions */
 }  // namespace Model
@@ -247,6 +268,10 @@ typedef std::function<void(const IVSClient*, const Model::CreateAdConfigurationR
 typedef std::function<void(const IVSClient*, const Model::CreateChannelRequest&, const Model::CreateChannelOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateChannelResponseReceivedHandler;
+typedef std::function<void(const IVSClient*, const Model::CreateFailoverSlateConfigurationRequest&,
+                           const Model::CreateFailoverSlateConfigurationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateFailoverSlateConfigurationResponseReceivedHandler;
 typedef std::function<void(const IVSClient*, const Model::CreatePlaybackRestrictionPolicyRequest&,
                            const Model::CreatePlaybackRestrictionPolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -264,6 +289,10 @@ typedef std::function<void(const IVSClient*, const Model::DeleteAdConfigurationR
 typedef std::function<void(const IVSClient*, const Model::DeleteChannelRequest&, const Model::DeleteChannelOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteChannelResponseReceivedHandler;
+typedef std::function<void(const IVSClient*, const Model::DeleteFailoverSlateConfigurationRequest&,
+                           const Model::DeleteFailoverSlateConfigurationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteFailoverSlateConfigurationResponseReceivedHandler;
 typedef std::function<void(const IVSClient*, const Model::DeletePlaybackKeyPairRequest&, const Model::DeletePlaybackKeyPairOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeletePlaybackKeyPairResponseReceivedHandler;
@@ -284,6 +313,10 @@ typedef std::function<void(const IVSClient*, const Model::GetAdConfigurationRequ
 typedef std::function<void(const IVSClient*, const Model::GetChannelRequest&, const Model::GetChannelOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetChannelResponseReceivedHandler;
+typedef std::function<void(const IVSClient*, const Model::GetFailoverSlateConfigurationRequest&,
+                           const Model::GetFailoverSlateConfigurationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetFailoverSlateConfigurationResponseReceivedHandler;
 typedef std::function<void(const IVSClient*, const Model::GetPlaybackKeyPairRequest&, const Model::GetPlaybackKeyPairOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetPlaybackKeyPairResponseReceivedHandler;
@@ -315,6 +348,10 @@ typedef std::function<void(const IVSClient*, const Model::ListAdConfigurationsRe
 typedef std::function<void(const IVSClient*, const Model::ListChannelsRequest&, const Model::ListChannelsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListChannelsResponseReceivedHandler;
+typedef std::function<void(const IVSClient*, const Model::ListFailoverSlateConfigurationsRequest&,
+                           const Model::ListFailoverSlateConfigurationsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListFailoverSlateConfigurationsResponseReceivedHandler;
 typedef std::function<void(const IVSClient*, const Model::ListPlaybackKeyPairsRequest&, const Model::ListPlaybackKeyPairsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListPlaybackKeyPairsResponseReceivedHandler;
@@ -359,6 +396,10 @@ typedef std::function<void(const IVSClient*, const Model::UpdateAdConfigurationR
 typedef std::function<void(const IVSClient*, const Model::UpdateChannelRequest&, const Model::UpdateChannelOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateChannelResponseReceivedHandler;
+typedef std::function<void(const IVSClient*, const Model::UpdateFailoverSlateConfigurationRequest&,
+                           const Model::UpdateFailoverSlateConfigurationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateFailoverSlateConfigurationResponseReceivedHandler;
 typedef std::function<void(const IVSClient*, const Model::UpdatePlaybackRestrictionPolicyRequest&,
                            const Model::UpdatePlaybackRestrictionPolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

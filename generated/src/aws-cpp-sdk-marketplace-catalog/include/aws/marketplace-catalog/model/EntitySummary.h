@@ -15,6 +15,7 @@
 #include <aws/marketplace-catalog/model/OfferSummary.h>
 #include <aws/marketplace-catalog/model/ResaleAuthorizationSummary.h>
 #include <aws/marketplace-catalog/model/SaaSProductSummary.h>
+#include <aws/marketplace-catalog/model/SubsidiaryAuthorizationSummary.h>
 
 #include <utility>
 
@@ -319,6 +320,26 @@ class EntitySummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>An object that contains summary information about the subsidiary
+   * authorization, such as its status and authorized resource, when the entity type
+   * is <code>SubsidiaryAuthorization</code>.</p>
+   */
+  inline const SubsidiaryAuthorizationSummary& GetSubsidiaryAuthorizationSummary() const { return m_subsidiaryAuthorizationSummary; }
+  inline bool SubsidiaryAuthorizationSummaryHasBeenSet() const { return m_subsidiaryAuthorizationSummaryHasBeenSet; }
+  template <typename SubsidiaryAuthorizationSummaryT = SubsidiaryAuthorizationSummary>
+  void SetSubsidiaryAuthorizationSummary(SubsidiaryAuthorizationSummaryT&& value) {
+    m_subsidiaryAuthorizationSummaryHasBeenSet = true;
+    m_subsidiaryAuthorizationSummary = std::forward<SubsidiaryAuthorizationSummaryT>(value);
+  }
+  template <typename SubsidiaryAuthorizationSummaryT = SubsidiaryAuthorizationSummary>
+  EntitySummary& WithSubsidiaryAuthorizationSummary(SubsidiaryAuthorizationSummaryT&& value) {
+    SetSubsidiaryAuthorizationSummary(std::forward<SubsidiaryAuthorizationSummaryT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -349,6 +370,8 @@ class EntitySummary {
   OfferSetSummary m_offerSetSummary;
 
   ExpressPrivateOfferConfigurationSummary m_expressPrivateOfferConfigurationSummary;
+
+  SubsidiaryAuthorizationSummary m_subsidiaryAuthorizationSummary;
   bool m_nameHasBeenSet = false;
   bool m_entityTypeHasBeenSet = false;
   bool m_entityIdHasBeenSet = false;
@@ -364,6 +387,7 @@ class EntitySummary {
   bool m_machineLearningProductSummaryHasBeenSet = false;
   bool m_offerSetSummaryHasBeenSet = false;
   bool m_expressPrivateOfferConfigurationSummaryHasBeenSet = false;
+  bool m_subsidiaryAuthorizationSummaryHasBeenSet = false;
 };
 
 }  // namespace Model

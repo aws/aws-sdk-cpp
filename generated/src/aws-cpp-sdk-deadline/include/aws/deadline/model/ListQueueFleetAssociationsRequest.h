@@ -18,10 +18,6 @@ namespace deadline {
 namespace Model {
 
 /**
- * <p>Shared pagination fields for List operation inputs (nextToken +
- * maxResults).</p><p><h3>See Also:</h3>   <a
- * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListQueueFleetAssociationsRequest">AWS
- * API Reference</a></p>
  */
 class ListQueueFleetAssociationsRequest : public DeadlineRequest {
  public:

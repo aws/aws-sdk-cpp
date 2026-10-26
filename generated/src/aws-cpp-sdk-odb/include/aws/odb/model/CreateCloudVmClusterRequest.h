@@ -11,7 +11,9 @@
 #include <aws/odb/OdbRequest.h>
 #include <aws/odb/Odb_EXPORTS.h>
 #include <aws/odb/model/DataCollectionOptions.h>
+#include <aws/odb/model/FileSystemConfigurationDetails.h>
 #include <aws/odb/model/LicenseModel.h>
+#include <aws/odb/model/VmStorageType.h>
 
 #include <utility>
 
@@ -49,6 +51,90 @@ class CreateCloudVmClusterRequest : public OdbRequest {
   template <typename CloudExadataInfrastructureIdT = Aws::String>
   CreateCloudVmClusterRequest& WithCloudExadataInfrastructureId(CloudExadataInfrastructureIdT&& value) {
     SetCloudExadataInfrastructureId(std::forward<CloudExadataInfrastructureIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The unique identifier or Amazon Resource Name (ARN) of the Exascale storage
+   * vault to use for the VM cluster. Specify this value to create a VM cluster that
+   * uses Exascale storage on dedicated Exadata infrastructure.</p>
+   */
+  inline const Aws::String& GetExascaleDbStorageVaultId() const { return m_exascaleDbStorageVaultId; }
+  inline bool ExascaleDbStorageVaultIdHasBeenSet() const { return m_exascaleDbStorageVaultIdHasBeenSet; }
+  template <typename ExascaleDbStorageVaultIdT = Aws::String>
+  void SetExascaleDbStorageVaultId(ExascaleDbStorageVaultIdT&& value) {
+    m_exascaleDbStorageVaultIdHasBeenSet = true;
+    m_exascaleDbStorageVaultId = std::forward<ExascaleDbStorageVaultIdT>(value);
+  }
+  template <typename ExascaleDbStorageVaultIdT = Aws::String>
+  CreateCloudVmClusterRequest& WithExascaleDbStorageVaultId(ExascaleDbStorageVaultIdT&& value) {
+    SetExascaleDbStorageVaultId(std::forward<ExascaleDbStorageVaultIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The type of storage to use for the VM file systems. Specify
+   * <code>EXASCALE</code> to store the VM file systems in Exascale storage on the
+   * storage servers, or <code>LOCAL</code> to store them on the database
+   * servers.</p>
+   */
+  inline VmStorageType GetVmFileSystemStorageType() const { return m_vmFileSystemStorageType; }
+  inline bool VmFileSystemStorageTypeHasBeenSet() const { return m_vmFileSystemStorageTypeHasBeenSet; }
+  inline void SetVmFileSystemStorageType(VmStorageType value) {
+    m_vmFileSystemStorageTypeHasBeenSet = true;
+    m_vmFileSystemStorageType = value;
+  }
+  inline CreateCloudVmClusterRequest& WithVmFileSystemStorageType(VmStorageType value) {
+    SetVmFileSystemStorageType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The type of storage to use for VM backups. Specify <code>EXASCALE</code> to
+   * store VM backups in Exascale storage on the storage servers, or
+   * <code>LOCAL</code> to store them on the database servers.</p>
+   */
+  inline VmStorageType GetVmBackupStorageType() const { return m_vmBackupStorageType; }
+  inline bool VmBackupStorageTypeHasBeenSet() const { return m_vmBackupStorageTypeHasBeenSet; }
+  inline void SetVmBackupStorageType(VmStorageType value) {
+    m_vmBackupStorageTypeHasBeenSet = true;
+    m_vmBackupStorageType = value;
+  }
+  inline CreateCloudVmClusterRequest& WithVmBackupStorageType(VmStorageType value) {
+    SetVmBackupStorageType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The list of file system configurations for the VM cluster. Each entry
+   * specifies the mount point of a file system and its size, in gigabytes (GB).</p>
+   */
+  inline const Aws::Vector<FileSystemConfigurationDetails>& GetFileSystemConfigurationDetails() const {
+    return m_fileSystemConfigurationDetails;
+  }
+  inline bool FileSystemConfigurationDetailsHasBeenSet() const { return m_fileSystemConfigurationDetailsHasBeenSet; }
+  template <typename FileSystemConfigurationDetailsT = Aws::Vector<FileSystemConfigurationDetails>>
+  void SetFileSystemConfigurationDetails(FileSystemConfigurationDetailsT&& value) {
+    m_fileSystemConfigurationDetailsHasBeenSet = true;
+    m_fileSystemConfigurationDetails = std::forward<FileSystemConfigurationDetailsT>(value);
+  }
+  template <typename FileSystemConfigurationDetailsT = Aws::Vector<FileSystemConfigurationDetails>>
+  CreateCloudVmClusterRequest& WithFileSystemConfigurationDetails(FileSystemConfigurationDetailsT&& value) {
+    SetFileSystemConfigurationDetails(std::forward<FileSystemConfigurationDetailsT>(value));
+    return *this;
+  }
+  template <typename FileSystemConfigurationDetailsT = FileSystemConfigurationDetails>
+  CreateCloudVmClusterRequest& AddFileSystemConfigurationDetails(FileSystemConfigurationDetailsT&& value) {
+    m_fileSystemConfigurationDetailsHasBeenSet = true;
+    m_fileSystemConfigurationDetails.emplace_back(std::forward<FileSystemConfigurationDetailsT>(value));
     return *this;
   }
   ///@}
@@ -439,6 +525,14 @@ class CreateCloudVmClusterRequest : public OdbRequest {
  private:
   Aws::String m_cloudExadataInfrastructureId;
 
+  Aws::String m_exascaleDbStorageVaultId;
+
+  VmStorageType m_vmFileSystemStorageType{VmStorageType::NOT_SET};
+
+  VmStorageType m_vmBackupStorageType{VmStorageType::NOT_SET};
+
+  Aws::Vector<FileSystemConfigurationDetails> m_fileSystemConfigurationDetails;
+
   int m_cpuCoreCount{0};
 
   Aws::String m_displayName;
@@ -479,6 +573,10 @@ class CreateCloudVmClusterRequest : public OdbRequest {
 
   int m_scanListenerPortTcp{0};
   bool m_cloudExadataInfrastructureIdHasBeenSet = false;
+  bool m_exascaleDbStorageVaultIdHasBeenSet = false;
+  bool m_vmFileSystemStorageTypeHasBeenSet = false;
+  bool m_vmBackupStorageTypeHasBeenSet = false;
+  bool m_fileSystemConfigurationDetailsHasBeenSet = false;
   bool m_cpuCoreCountHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
   bool m_giVersionHasBeenSet = false;

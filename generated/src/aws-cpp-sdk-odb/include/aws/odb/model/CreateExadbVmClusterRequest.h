@@ -308,8 +308,7 @@ class CreateExadbVmClusterRequest : public OdbRequest {
 
   ///@{
   /**
-   * <p>The port number for TCP connections with SSL to the Single Client Access Name
-   * (SCAN) listener.</p>
+   * <p>Reserved for future use.</p>
    */
   inline int GetScanListenerPortTcpSsl() const { return m_scanListenerPortTcpSsl; }
   inline bool ScanListenerPortTcpSslHasBeenSet() const { return m_scanListenerPortTcpSslHasBeenSet; }

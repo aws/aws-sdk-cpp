@@ -97,6 +97,7 @@
 #include <aws/odb/model/UpdateAutonomousDatabaseRequest.h>
 #include <aws/odb/model/UpdateCloudExadataInfrastructureRequest.h>
 #include <aws/odb/model/UpdateExadbVmClusterRequest.h>
+#include <aws/odb/model/UpdateExascaleCloudExadataInfrastructureRequest.h>
 #include <aws/odb/model/UpdateExascaleDbStorageVaultRequest.h>
 #include <aws/odb/model/UpdateOdbNetworkRequest.h>
 #include <aws/odb/model/UpdateOdbPeeringConnectionRequest.h>
@@ -716,6 +717,13 @@ UpdateExadbVmClusterOutcome OdbClient::UpdateExadbVmCluster(const UpdateExadbVmC
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UpdateExadbVmClusterOutcome(result.GetResultWithOwnership())
                             : UpdateExadbVmClusterOutcome(std::move(result.GetError()));
+}
+
+UpdateExascaleCloudExadataInfrastructureOutcome OdbClient::UpdateExascaleCloudExadataInfrastructure(
+    const UpdateExascaleCloudExadataInfrastructureRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateExascaleCloudExadataInfrastructureOutcome(result.GetResultWithOwnership())
+                            : UpdateExascaleCloudExadataInfrastructureOutcome(std::move(result.GetError()));
 }
 
 UpdateExascaleDbStorageVaultOutcome OdbClient::UpdateExascaleDbStorageVault(const UpdateExascaleDbStorageVaultRequest& request) const {

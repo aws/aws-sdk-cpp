@@ -54,6 +54,10 @@ EntityTypeSort& EntityTypeSort::operator=(JsonView jsonValue) {
     m_expressPrivateOfferConfigurationSort = jsonValue.GetObject("ExpressPrivateOfferConfigurationSort");
     m_expressPrivateOfferConfigurationSortHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("SubsidiaryAuthorizationSort")) {
+    m_subsidiaryAuthorizationSort = jsonValue.GetObject("SubsidiaryAuthorizationSort");
+    m_subsidiaryAuthorizationSortHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -94,6 +98,10 @@ JsonValue EntityTypeSort::Jsonize() const {
 
   if (m_expressPrivateOfferConfigurationSortHasBeenSet) {
     payload.WithObject("ExpressPrivateOfferConfigurationSort", m_expressPrivateOfferConfigurationSort.Jsonize());
+  }
+
+  if (m_subsidiaryAuthorizationSortHasBeenSet) {
+    payload.WithObject("SubsidiaryAuthorizationSort", m_subsidiaryAuthorizationSort.Jsonize());
   }
 
   return payload;

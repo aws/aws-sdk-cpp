@@ -21,13 +21,8 @@ namespace Signin {
 namespace Model {
 
 /**
- * <p>Error thrown for access denied scenarios with flexible HTTP status
- * mapping</p> <p>Runtime HTTP Status Code Mapping:</p> <ul> <li>HTTP 401
- * (Unauthorized): TOKEN_EXPIRED, AUTHCODE_EXPIRED</li> <li>HTTP 403 (Forbidden):
- * USER_CREDENTIALS_CHANGED, INSUFFICIENT_PERMISSIONS</li> </ul> <p>The specific
- * HTTP status code is determined at runtime based on the error enum value.
- * Consumers should use the error field to determine the specific access denial
- * reason.</p><p><h3>See Also:</h3>   <a
+ * <p>You do not have sufficient access to perform this action.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/signin-2023-01-01/AccessDeniedException">AWS
  * API Reference</a></p>
  */
@@ -40,9 +35,8 @@ class AccessDeniedException {
 
   ///@{
   /**
-   * <p>OAuth 2.0 error code indicating the specific type of access denial Can be
-   * TOKEN_EXPIRED, AUTHCODE_EXPIRED, USER_CREDENTIALS_CHANGED, or
-   * INSUFFICIENT_PERMISSIONS</p>
+   * <p>One of TOKEN_EXPIRED, AUTHCODE_EXPIRED, USER_CREDENTIALS_CHANGED, or
+   * INSUFFICIENT_PERMISSIONS.</p>
    */
   inline OAuth2ErrorCode GetError() const { return m_error; }
   inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
@@ -58,8 +52,7 @@ class AccessDeniedException {
 
   ///@{
   /**
-   * <p>Detailed message explaining the access denial Provides specific information
-   * about why access was denied</p>
+   * <p>The reason access was denied.</p>
    */
   inline const Aws::String& GetMessage() const { return m_message; }
   inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }

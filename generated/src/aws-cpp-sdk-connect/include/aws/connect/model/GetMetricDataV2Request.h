@@ -174,11 +174,11 @@ class GetMetricDataV2Request : public ConnectRequest {
    * <code>INITIATING_FLOW</code> | <code>INITIATION_METHOD</code> |
    * <code>INVOKING_RESOURCE_PUBLISHED_TIMESTAMP</code> |
    * <code>INVOKING_RESOURCE_TYPE</code> | <code>KNOWLEDGE_BASE_NAME</code> |
-   * <code>PARENT_FLOWS_RESOURCE_ID</code> | <code>Q_CONNECT_ENABLED</code> |
-   * <code>QUEUE</code> | <code>RESOURCE_PUBLISHED_TIMESTAMP</code> |
-   * <code>ROUTING_PROFILE</code> | <code>ROUTING_STEP_EXPRESSION</code> |
-   * <code>SESSION_ID</code> | <code>TEST_CASE</code> |
-   * <code>TEST_CASE_EXECUTION_FAILURE_REASON</code> |
+   * <code>LIFETIME_VALUE</code> | <code>PARENT_FLOWS_RESOURCE_ID</code> |
+   * <code>Q_CONNECT_ENABLED</code> | <code>QUEUE</code> | <code>REPEAT_CALLER</code>
+   * | <code>RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>ROUTING_PROFILE</code> |
+   * <code>ROUTING_STEP_EXPRESSION</code> | <code>SESSION_ID</code> |
+   * <code>TEST_CASE</code> | <code>TEST_CASE_EXECUTION_FAILURE_REASON</code> |
    * <code>TEST_CASE_EXECUTION_RESULT</code> | <code>TEST_CASE_EXECUTION_STATE</code>
    * | <code>WEB_NOTIFICATION_TYPE</code> </p>  <p>The following filter keys
    * correspond to Connect Customer resources and are used for authorizing requests.
@@ -221,7 +221,24 @@ class GetMetricDataV2Request : public ConnectRequest {
    * <li> <p>To filter by phone number, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/create-historical-metrics-report.html">Create
    * a historical metrics report</a> in the <i>Connect Customer Administrator
-   * Guide</i>.</p> </li> </ul>
+   * Guide</i>.</p> </li> <li> <p> <code>LIFETIME_VALUE</code> filters and groups by
+   * customer lifetime value segment (High lifetime value, Medium lifetime value, Low
+   * lifetime value). For more information about the calculated attributes that drive
+   * these segments, see <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/customerprofiles-default-calculated-attributes.html">Default
+   * calculated attributes</a> in the <i>Connect Customer Administrator
+   * Guide</i>.</p> </li> <li> <p> <code>REPEAT_CALLER</code> filters and groups by
+   * repeat caller status.</p> </li> <li> <p>The <code>LIFETIME_VALUE</code> and
+   * <code>REPEAT_CALLER</code> filters and groupings use customer segment data from
+   * Customer Profiles. For more information, see <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/customerprofiles-default-segments.html">Default
+   * segments</a> in the <i>Connect Customer Administrator Guide</i>.</p> </li> </ul>
+   *  <p>To use the <code>LIFETIME_VALUE</code> and <code>REPEAT_CALLER</code>
+   * filters and groupings, users must have the <b>Customer segments - View</b>
+   * permission enabled in their security profile. For more information, see <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html#customerprofiles-permissions-list">List
+   * of security profile permissions</a> in the <i>Connect Customer Administrator
+   * Guide</i>.</p>
    */
   inline const Aws::Vector<FilterV2>& GetFilters() const { return m_filters; }
   inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
@@ -278,8 +295,9 @@ class GetMetricDataV2Request : public ConnectRequest {
    * <code>INITIATION_METHOD</code> |
    * <code>INVOKING_RESOURCE_PUBLISHED_TIMESTAMP</code> |
    * <code>INVOKING_RESOURCE_TYPE</code> | <code>KNOWLEDGE_ARTICLE_NAME</code> |
-   * <code>KNOWLEDGE_BASE_NAME</code> | <code>PARENT_FLOWS_RESOURCE_ID</code> |
-   * <code>Q_CONNECT_ENABLED</code> | <code>QUEUE</code> |
+   * <code>KNOWLEDGE_BASE_NAME</code> | <code>LIFETIME_VALUE</code> |
+   * <code>PARENT_FLOWS_RESOURCE_ID</code> | <code>Q_CONNECT_ENABLED</code> |
+   * <code>QUEUE</code> | <code>REPEAT_CALLER</code> |
    * <code>RESOURCE_PUBLISHED_TIMESTAMP</code> | <code>ROUTING_PROFILE</code> |
    * <code>ROUTING_STEP_EXPRESSION</code> | <code>SESSION_ID</code> |
    * <code>TEST_CASE</code> | <code>TEST_CASE_EXECUTION_FAILURE_REASON</code> |
@@ -992,9 +1010,149 @@ class GetMetricDataV2Request : public ConnectRequest {
    * campaign delivery modes. Agent, Queue, Routing Profile, Answering Machine
    * Detection Status and Disconnect Reason are only available for agent assisted
    * voice and automated voice delivery modes. </p>  </dd>
-   * <dt>EVALUATIONS_PERFORMED</dt> <dd> <p>Unit: Count</p> <p>Valid groupings and
-   * filters: Agent, Agent Hierarchy, Channel, Evaluation Form ID, Evaluation Source,
-   * Form Version, Queue, Routing Profile</p> <p>UI name: <a
+   * <dt>EVALUATED_CHURN_PROPENSITY_RATE</dt> <dd> <p>This metric requires an
+   * evaluation form with business outcome questions. For more information, see <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/create-evaluation-forms.html">Create
+   * an evaluation form</a> in the <i>Connect Customer Administrator Guide</i>.</p>
+   * <p>Unit: Percent</p> <p>Valid groupings and filters: Agent, Agent Hierarchy
+   * Level One, Agent Hierarchy Level Two, Agent Hierarchy Level Three, Agent
+   * Hierarchy Level Four, Agent Hierarchy Level Five, AI Agent ID, AI Agent Name, AI
+   * Agent Name Version, AI Agent Type, AI Use Case, Bot ID, Bot Intent Name, Bot
+   * Locale, Campaign, Campaign Delivery Event Type, Channel, Contact Category,
+   * Disconnect Reason, Email Address, Evaluation Form, Evaluation Question,
+   * Evaluation Section, Evaluation Source, Evaluator, Feature, Flow Type, Flows
+   * Module Resource ID, Flows Next Resource ID, Flows Next Resource Queue ID, Flows
+   * Next Resource Type, Flows Outcome Type, Flows Resource Alias, Flows Resource ID,
+   * Flows Resource Type, Flows Resource Version, Initiation Method, <b>Lifetime
+   * Value</b>, Proficiency, Q Connect Enabled, Queue, Queue Agent Group Name, Queue
+   * Agent Group Type, Queue Type, <b>Repeat Caller</b>, Resource Published
+   * Timestamp, Routing Profile, Routing Step Expression, Session ID, Subtype,
+   * Telephone Number</p> <p>UI name: <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#evaluated-churn-propensity-rate">Evaluated
+   * churn propensity rate</a> </p>  <p>Feature, Flows Next Resource ID, Flows
+   * Next Resource Queue ID, Flows Next Resource Type, Flows Outcome Type, Flows
+   * Resource Type, Proficiency, Resource Published Timestamp, and Session ID are
+   * valid filters but not valid groupings. AI Agent Name Version, Campaign Delivery
+   * Event Type, and Queue Agent Group Name are valid groupings but not valid
+   * filters.</p> <p>When requesting business outcome metrics, the filters and
+   * groupings used in a single request must belong to the same metric scope. Filters
+   * and groupings from different metric scopes cannot be combined in one
+   * request.</p>  </dd> <dt>EVALUATED_CSAT_PERCENT</dt> <dd> <p>This metric
+   * requires an evaluation form with business outcome questions. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/create-evaluation-forms.html">Create
+   * an evaluation form</a> in the <i>Connect Customer Administrator Guide</i>.</p>
+   * <p>Unit: Percent</p> <p>Valid groupings and filters: Agent, Agent Hierarchy
+   * Level One, Agent Hierarchy Level Two, Agent Hierarchy Level Three, Agent
+   * Hierarchy Level Four, Agent Hierarchy Level Five, AI Agent ID, AI Agent Name, AI
+   * Agent Name Version, AI Agent Type, AI Use Case, Bot ID, Bot Intent Name, Bot
+   * Locale, Campaign, Campaign Delivery Event Type, Channel, Contact Category,
+   * Disconnect Reason, Email Address, Evaluation Form, Evaluation Question,
+   * Evaluation Section, Evaluation Source, Evaluator, Feature, Flow Type, Flows
+   * Module Resource ID, Flows Next Resource ID, Flows Next Resource Queue ID, Flows
+   * Next Resource Type, Flows Outcome Type, Flows Resource Alias, Flows Resource ID,
+   * Flows Resource Type, Flows Resource Version, Initiation Method, <b>Lifetime
+   * Value</b>, Proficiency, Q Connect Enabled, Queue, Queue Agent Group Name, Queue
+   * Agent Group Type, Queue Type, <b>Repeat Caller</b>, Resource Published
+   * Timestamp, Routing Profile, Routing Step Expression, Session ID, Subtype,
+   * Telephone Number</p> <p>UI name: <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#evaluated-csat-percent">Evaluated
+   * CSAT percent</a> </p>  <p>Feature, Flows Next Resource ID, Flows Next
+   * Resource Queue ID, Flows Next Resource Type, Flows Outcome Type, Flows Resource
+   * Type, Proficiency, Resource Published Timestamp, and Session ID are valid
+   * filters but not valid groupings. AI Agent Name Version, Campaign Delivery Event
+   * Type, and Queue Agent Group Name are valid groupings but not valid filters.</p>
+   * <p>When requesting business outcome metrics, the filters and groupings used in a
+   * single request must belong to the same metric scope. Filters and groupings from
+   * different metric scopes cannot be combined in one request.</p>  </dd>
+   * <dt>EVALUATED_PARTIAL_SELF_SERVICE_SUCCESS_RATE</dt> <dd> <p>This metric
+   * requires an evaluation form with business outcome questions. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/create-evaluation-forms.html">Create
+   * an evaluation form</a> in the <i>Connect Customer Administrator Guide</i>.</p>
+   * <p>Unit: Percent</p> <p>Valid groupings and filters: Agent, Agent Hierarchy
+   * Level One, Agent Hierarchy Level Two, Agent Hierarchy Level Three, Agent
+   * Hierarchy Level Four, Agent Hierarchy Level Five, AI Agent ID, AI Agent Name, AI
+   * Agent Name Version, AI Agent Type, AI Use Case, Bot ID, Bot Intent Name, Bot
+   * Locale, Campaign, Campaign Delivery Event Type, Channel, Contact Category,
+   * Disconnect Reason, Email Address, Evaluation Form, Evaluation Question,
+   * Evaluation Section, Evaluation Source, Evaluator, Feature, Flow Type, Flows
+   * Module Resource ID, Flows Next Resource ID, Flows Next Resource Queue ID, Flows
+   * Next Resource Type, Flows Outcome Type, Flows Resource Alias, Flows Resource ID,
+   * Flows Resource Type, Flows Resource Version, Initiation Method, <b>Lifetime
+   * Value</b>, Proficiency, Q Connect Enabled, Queue, Queue Agent Group Name, Queue
+   * Agent Group Type, Queue Type, <b>Repeat Caller</b>, Resource Published
+   * Timestamp, Routing Profile, Routing Step Expression, Session ID, Subtype,
+   * Telephone Number</p> <p>UI name: <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#evaluated-partial-self-service-resolution-rate">Evaluated
+   * partial self-service resolution rate</a> </p>  <p>Feature, Flows Next
+   * Resource ID, Flows Next Resource Queue ID, Flows Next Resource Type, Flows
+   * Outcome Type, Flows Resource Type, Proficiency, Resource Published Timestamp,
+   * and Session ID are valid filters but not valid groupings. AI Agent Name Version,
+   * Campaign Delivery Event Type, and Queue Agent Group Name are valid groupings but
+   * not valid filters.</p> <p>When requesting business outcome metrics, the filters
+   * and groupings used in a single request must belong to the same metric scope.
+   * Filters and groupings from different metric scopes cannot be combined in one
+   * request.</p>  </dd> <dt>EVALUATED_SELF_SERVICE_SUCCESS_RATE</dt> <dd>
+   * <p>This metric requires an evaluation form with business outcome questions. For
+   * more information, see <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/create-evaluation-forms.html">Create
+   * an evaluation form</a> in the <i>Connect Customer Administrator Guide</i>.</p>
+   * <p>Unit: Percent</p> <p>Valid groupings and filters: Agent, Agent Hierarchy
+   * Level One, Agent Hierarchy Level Two, Agent Hierarchy Level Three, Agent
+   * Hierarchy Level Four, Agent Hierarchy Level Five, AI Agent ID, AI Agent Name, AI
+   * Agent Name Version, AI Agent Type, AI Use Case, Bot ID, Bot Intent Name, Bot
+   * Locale, Campaign, Campaign Delivery Event Type, Channel, Contact Category,
+   * Disconnect Reason, Email Address, Evaluation Form, Evaluation Question,
+   * Evaluation Section, Evaluation Source, Evaluator, Feature, Flow Type, Flows
+   * Module Resource ID, Flows Next Resource ID, Flows Next Resource Queue ID, Flows
+   * Next Resource Type, Flows Outcome Type, Flows Resource Alias, Flows Resource ID,
+   * Flows Resource Type, Flows Resource Version, Initiation Method, <b>Lifetime
+   * Value</b>, Proficiency, Q Connect Enabled, Queue, Queue Agent Group Name, Queue
+   * Agent Group Type, Queue Type, <b>Repeat Caller</b>, Resource Published
+   * Timestamp, Routing Profile, Routing Step Expression, Session ID, Subtype,
+   * Telephone Number</p> <p>UI name: <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#evaluated-self-service-resolution-rate">Evaluated
+   * self-service resolution rate</a> </p>  <p>Feature, Flows Next Resource ID,
+   * Flows Next Resource Queue ID, Flows Next Resource Type, Flows Outcome Type,
+   * Flows Resource Type, Proficiency, Resource Published Timestamp, and Session ID
+   * are valid filters but not valid groupings. AI Agent Name Version, Campaign
+   * Delivery Event Type, and Queue Agent Group Name are valid groupings but not
+   * valid filters.</p> <p>When requesting business outcome metrics, the filters and
+   * groupings used in a single request must belong to the same metric scope. Filters
+   * and groupings from different metric scopes cannot be combined in one
+   * request.</p>  </dd> <dt>EVALUATED_SUCCESSFUL_SALE_RATE</dt> <dd> <p>This
+   * metric requires an evaluation form with business outcome questions. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/create-evaluation-forms.html">Create
+   * an evaluation form</a> in the <i>Connect Customer Administrator Guide</i>.</p>
+   * <p>Unit: Percent</p> <p>Valid groupings and filters: Agent, Agent Hierarchy
+   * Level One, Agent Hierarchy Level Two, Agent Hierarchy Level Three, Agent
+   * Hierarchy Level Four, Agent Hierarchy Level Five, AI Agent ID, AI Agent Name, AI
+   * Agent Name Version, AI Agent Type, AI Use Case, Bot ID, Bot Intent Name, Bot
+   * Locale, Campaign, Campaign Delivery Event Type, Channel, Contact Category,
+   * Disconnect Reason, Email Address, Evaluation Form, Evaluation Question,
+   * Evaluation Section, Evaluation Source, Evaluator, Feature, Flow Type, Flows
+   * Module Resource ID, Flows Next Resource ID, Flows Next Resource Queue ID, Flows
+   * Next Resource Type, Flows Outcome Type, Flows Resource Alias, Flows Resource ID,
+   * Flows Resource Type, Flows Resource Version, Initiation Method, <b>Lifetime
+   * Value</b>, Proficiency, Q Connect Enabled, Queue, Queue Agent Group Name, Queue
+   * Agent Group Type, Queue Type, <b>Repeat Caller</b>, Resource Published
+   * Timestamp, Routing Profile, Routing Step Expression, Session ID, Subtype,
+   * Telephone Number</p> <p>UI name: <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#evaluated-successful-sale-rate">Evaluated
+   * successful sale rate</a> </p>  <p>Feature, Flows Next Resource ID, Flows
+   * Next Resource Queue ID, Flows Next Resource Type, Flows Outcome Type, Flows
+   * Resource Type, Proficiency, Resource Published Timestamp, and Session ID are
+   * valid filters but not valid groupings. AI Agent Name Version, Campaign Delivery
+   * Event Type, and Queue Agent Group Name are valid groupings but not valid
+   * filters.</p> <p>When requesting business outcome metrics, the filters and
+   * groupings used in a single request must belong to the same metric scope. Filters
+   * and groupings from different metric scopes cannot be combined in one
+   * request.</p>  </dd> <dt>EVALUATIONS_PERFORMED</dt> <dd> <p>Unit:
+   * Count</p> <p>Valid groupings and filters: Agent, Agent Hierarchy, Channel,
+   * Evaluation Form ID, Evaluation Source, Form Version, Queue, Routing Profile</p>
+   * <p>UI name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#evaluations-performed">Evaluations
    * performed</a> </p> </dd> <dt>FLOWS_OUTCOME</dt> <dd> <p>Unit: Count</p> <p>Valid
    * groupings and filters: Channel, contact/segmentAttributes/connect:Subtype, Flow

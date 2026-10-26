@@ -26,6 +26,18 @@ H264FilterSettings& H264FilterSettings::operator=(JsonView jsonValue) {
     m_bandwidthReductionFilterSettings = jsonValue.GetObject("bandwidthReductionFilterSettings");
     m_bandwidthReductionFilterSettingsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("autoFilterSettings")) {
+    m_autoFilterSettings = jsonValue.GetObject("autoFilterSettings");
+    m_autoFilterSettingsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("noneFilterSettings")) {
+    m_noneFilterSettings = jsonValue.GetObject("noneFilterSettings");
+    m_noneFilterSettingsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("perceptualFilterSettings")) {
+    m_perceptualFilterSettings = jsonValue.GetObject("perceptualFilterSettings");
+    m_perceptualFilterSettingsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +50,18 @@ JsonValue H264FilterSettings::Jsonize() const {
 
   if (m_bandwidthReductionFilterSettingsHasBeenSet) {
     payload.WithObject("bandwidthReductionFilterSettings", m_bandwidthReductionFilterSettings.Jsonize());
+  }
+
+  if (m_autoFilterSettingsHasBeenSet) {
+    payload.WithObject("autoFilterSettings", m_autoFilterSettings.Jsonize());
+  }
+
+  if (m_noneFilterSettingsHasBeenSet) {
+    payload.WithObject("noneFilterSettings", m_noneFilterSettings.Jsonize());
+  }
+
+  if (m_perceptualFilterSettingsHasBeenSet) {
+    payload.WithObject("perceptualFilterSettings", m_perceptualFilterSettings.Jsonize());
   }
 
   return payload;

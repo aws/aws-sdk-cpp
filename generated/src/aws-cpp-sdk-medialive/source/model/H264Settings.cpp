@@ -197,6 +197,11 @@ H264Settings& H264Settings::operator=(JsonView jsonValue) {
     m_minBitrate = jsonValue.GetInteger("minBitrate");
     m_minBitrateHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("allowExplicitWeightedPrediction")) {
+    m_allowExplicitWeightedPrediction = H264AllowExplicitWeightedPredictionMapper::GetH264AllowExplicitWeightedPredictionForName(
+        jsonValue.GetString("allowExplicitWeightedPrediction"));
+    m_allowExplicitWeightedPredictionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -378,6 +383,12 @@ JsonValue H264Settings::Jsonize() const {
 
   if (m_minBitrateHasBeenSet) {
     payload.WithInteger("minBitrate", m_minBitrate);
+  }
+
+  if (m_allowExplicitWeightedPredictionHasBeenSet) {
+    payload.WithString(
+        "allowExplicitWeightedPrediction",
+        H264AllowExplicitWeightedPredictionMapper::GetNameForH264AllowExplicitWeightedPrediction(m_allowExplicitWeightedPrediction));
   }
 
   return payload;

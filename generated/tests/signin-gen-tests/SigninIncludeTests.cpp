@@ -26,6 +26,8 @@
 #include <aws/signin/model/CreateOAuth2TokenResult.h>
 #include <aws/signin/model/CreateOAuth2TokenWithIAMRequest.h>
 #include <aws/signin/model/CreateOAuth2TokenWithIAMResult.h>
+#include <aws/signin/model/CreateOAuth2TokenWithTokenExchangeRequest.h>
+#include <aws/signin/model/CreateOAuth2TokenWithTokenExchangeResult.h>
 #include <aws/signin/model/DeleteConsoleAuthorizationConfigurationRequest.h>
 #include <aws/signin/model/DeleteConsoleAuthorizationConfigurationResult.h>
 #include <aws/signin/model/DeleteResourcePermissionStatementRequest.h>
@@ -37,6 +39,8 @@
 #include <aws/signin/model/InternalServerException.h>
 #include <aws/signin/model/IntrospectOAuth2TokenWithIAMRequest.h>
 #include <aws/signin/model/IntrospectOAuth2TokenWithIAMResult.h>
+#include <aws/signin/model/InvalidGrantException.h>
+#include <aws/signin/model/InvalidScopeException.h>
 #include <aws/signin/model/ListResourcePermissionStatementsPaginationTraits.h>
 #include <aws/signin/model/ListResourcePermissionStatementsRequest.h>
 #include <aws/signin/model/ListResourcePermissionStatementsResult.h>
@@ -51,6 +55,7 @@
 #include <aws/signin/model/RevokeOAuth2TokenWithIAMRequest.h>
 #include <aws/signin/model/RevokeOAuth2TokenWithIAMResult.h>
 #include <aws/signin/model/ServiceQuotaExceededException.h>
+#include <aws/signin/model/ServiceUnavailableException.h>
 #include <aws/signin/model/SigninResourceBasedPolicy.h>
 #include <aws/signin/model/TooManyRequestsError.h>
 #include <aws/signin/model/ValidationException.h>

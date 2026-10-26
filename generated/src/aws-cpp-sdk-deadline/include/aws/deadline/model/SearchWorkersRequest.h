@@ -18,10 +18,6 @@ namespace deadline {
 namespace Model {
 
 /**
- * <p>Shared input fields for all Search operations (filterExpressions,
- * sortExpressions, itemOffset, pageSize).</p><p><h3>See Also:</h3>   <a
- * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/SearchWorkersRequest">AWS
- * API Reference</a></p>
  */
 class SearchWorkersRequest : public DeadlineRequest {
  public:

@@ -143,12 +143,15 @@
 #include <aws/odb/model/ExadbVmCluster.h>
 #include <aws/odb/model/ExadbVmClusterStorageDetails.h>
 #include <aws/odb/model/ExadbVmClusterSummary.h>
+#include <aws/odb/model/ExascaleConfiguration.h>
 #include <aws/odb/model/ExascaleDbStorageDetails.h>
 #include <aws/odb/model/ExascaleDbStorageVault.h>
 #include <aws/odb/model/ExascaleDbStorageVaultSummary.h>
+#include <aws/odb/model/ExascaleDbStorageVaultType.h>
 #include <aws/odb/model/ExternalIdType.h>
 #include <aws/odb/model/FailoverAutonomousDatabaseRequest.h>
 #include <aws/odb/model/FailoverAutonomousDatabaseResult.h>
+#include <aws/odb/model/FileSystemConfigurationDetails.h>
 #include <aws/odb/model/FlexComponentSummary.h>
 #include <aws/odb/model/GetAutonomousDatabaseBackupRequest.h>
 #include <aws/odb/model/GetAutonomousDatabaseBackupResult.h>
@@ -314,6 +317,7 @@
 #include <aws/odb/model/StopAutonomousDatabaseResult.h>
 #include <aws/odb/model/StopDbNodeRequest.h>
 #include <aws/odb/model/StopDbNodeResult.h>
+#include <aws/odb/model/StorageManagementType.h>
 #include <aws/odb/model/StsAccess.h>
 #include <aws/odb/model/SubscriptionError.h>
 #include <aws/odb/model/SupportedAwsIntegration.h>
@@ -335,6 +339,8 @@
 #include <aws/odb/model/UpdateCloudExadataInfrastructureResult.h>
 #include <aws/odb/model/UpdateExadbVmClusterRequest.h>
 #include <aws/odb/model/UpdateExadbVmClusterResult.h>
+#include <aws/odb/model/UpdateExascaleCloudExadataInfrastructureRequest.h>
+#include <aws/odb/model/UpdateExascaleCloudExadataInfrastructureResult.h>
 #include <aws/odb/model/UpdateExascaleDbStorageVaultRequest.h>
 #include <aws/odb/model/UpdateExascaleDbStorageVaultResult.h>
 #include <aws/odb/model/UpdateOdbNetworkRequest.h>
@@ -344,6 +350,7 @@
 #include <aws/odb/model/ValidationException.h>
 #include <aws/odb/model/ValidationExceptionField.h>
 #include <aws/odb/model/ValidationExceptionReason.h>
+#include <aws/odb/model/VmStorageType.h>
 #include <aws/odb/model/VpcEndpointType.h>
 #include <aws/odb/model/WalletPasswordSource.h>
 #include <aws/odb/model/WalletPasswordSourceConfiguration.h>

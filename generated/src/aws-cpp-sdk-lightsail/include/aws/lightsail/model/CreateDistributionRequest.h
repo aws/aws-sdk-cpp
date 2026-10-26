@@ -16,6 +16,7 @@
 #include <aws/lightsail/model/IpAddressType.h>
 #include <aws/lightsail/model/Tag.h>
 #include <aws/lightsail/model/ViewerMinimumTlsProtocolVersionEnum.h>
+#include <aws/lightsail/model/WafRule.h>
 
 #include <utility>
 
@@ -312,6 +313,68 @@ class CreateDistributionRequest : public LightsailRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether to enable Web Application Firewall (WAF) for the
+   * distribution. WAF inspects viewer requests and blocks requests that match the
+   * WAF rule groups that you enable.</p> <p>When you enable WAF without specifying
+   * the <code>wafRules</code> parameter, the distribution has no WAF rule groups
+   * enabled and doesn't block any requests.</p>  <p>WAF is available only for
+   * distributions that use the <code>medium_1_0</code> or <code>large_1_0</code>
+   * bundle.</p>
+   */
+  inline bool GetEnableWaf() const { return m_enableWaf; }
+  inline bool EnableWafHasBeenSet() const { return m_enableWafHasBeenSet; }
+  inline void SetEnableWaf(bool value) {
+    m_enableWafHasBeenSet = true;
+    m_enableWaf = value;
+  }
+  inline CreateDistributionRequest& WithEnableWaf(bool value) {
+    SetEnableWaf(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>An array of objects that describe the WAF rule groups to enable for the
+   * distribution.</p> <p>The WAF rule groups that you can specify depend on the
+   * bundle of the distribution:</p> <ul> <li> <p> <code>medium_1_0</code> – Supports
+   * the <code>AWSManagedRulesCommonRuleSet</code>,
+   * <code>AWSManagedRulesKnownBadInputsRuleSet</code>, and
+   * <code>AWSManagedRulesAnonymousIpList</code> rule groups.</p> </li> <li> <p>
+   * <code>large_1_0</code> – Supports the rule groups for <code>medium_1_0</code>,
+   * plus <code>AWSManagedRulesAdminProtectionRuleSet</code>,
+   * <code>AWSManagedRulesSQLiRuleSet</code>,
+   * <code>AWSManagedRulesLinuxRuleSet</code>,
+   * <code>AWSManagedRulesUnixRuleSet</code>,
+   * <code>AWSManagedRulesWindowsRuleSet</code>,
+   * <code>AWSManagedRulesPHPRuleSet</code>,
+   * <code>AWSManagedRulesWordPressRuleSet</code>,
+   * <code>AWSManagedRulesAmazonIpReputationList</code>,
+   * <code>AWSManagedRulesATPRuleSet</code>, <code>AWSManagedRulesACFPRuleSet</code>,
+   * and <code>AWSManagedRulesBotControlRuleSet</code> rule groups.</p> </li> </ul>
+   */
+  inline const Aws::Vector<WafRule>& GetWafRules() const { return m_wafRules; }
+  inline bool WafRulesHasBeenSet() const { return m_wafRulesHasBeenSet; }
+  template <typename WafRulesT = Aws::Vector<WafRule>>
+  void SetWafRules(WafRulesT&& value) {
+    m_wafRulesHasBeenSet = true;
+    m_wafRules = std::forward<WafRulesT>(value);
+  }
+  template <typename WafRulesT = Aws::Vector<WafRule>>
+  CreateDistributionRequest& WithWafRules(WafRulesT&& value) {
+    SetWafRules(std::forward<WafRulesT>(value));
+    return *this;
+  }
+  template <typename WafRulesT = WafRule>
+  CreateDistributionRequest& AddWafRules(WafRulesT&& value) {
+    m_wafRulesHasBeenSet = true;
+    m_wafRules.emplace_back(std::forward<WafRulesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_distributionName;
 
@@ -338,6 +401,10 @@ class CreateDistributionRequest : public LightsailRequest {
   Aws::String m_defaultRootObject;
 
   Aws::Vector<DistributionCustomErrorResponse> m_customErrorResponses;
+
+  bool m_enableWaf{false};
+
+  Aws::Vector<WafRule> m_wafRules;
   bool m_distributionNameHasBeenSet = false;
   bool m_originHasBeenSet = false;
   bool m_defaultCacheBehaviorHasBeenSet = false;
@@ -351,6 +418,8 @@ class CreateDistributionRequest : public LightsailRequest {
   bool m_enablePrivateOriginAccessHasBeenSet = false;
   bool m_defaultRootObjectHasBeenSet = false;
   bool m_customErrorResponsesHasBeenSet = false;
+  bool m_enableWafHasBeenSet = false;
+  bool m_wafRulesHasBeenSet = false;
 };
 
 }  // namespace Model

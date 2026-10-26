@@ -1,6 +1,0 @@
-{
-  "type": "bugfix",
-  "category": "protocol-tests",
-  "contributor": "pulimsr",
-  "description": "Fix generated protocol output tests silently skipping their result assertions since #3900, normalize whitespace around commas when comparing headers, and add a known-failures skip list to the protocol test runner."
-}

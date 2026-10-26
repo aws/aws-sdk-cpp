@@ -17,11 +17,6 @@ namespace deadline {
 namespace Model {
 
 /**
- * <p>Shared member fields for Associate inputs and {Resource}Member response
- * structures. principalId is excluded because it has @httpLabel on inputs but not
- * on responses.</p><p><h3>See Also:</h3>   <a
- * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/AssociateMemberToJobRequest">AWS
- * API Reference</a></p>
  */
 class AssociateMemberToJobRequest : public DeadlineRequest {
  public:

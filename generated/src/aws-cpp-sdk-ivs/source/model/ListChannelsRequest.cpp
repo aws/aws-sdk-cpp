@@ -31,6 +31,10 @@ Aws::String ListChannelsRequest::SerializePayload() const {
     payload.WithString("filterByAdConfigurationArn", m_filterByAdConfigurationArn);
   }
 
+  if (m_filterByFailoverSlateConfigurationArnHasBeenSet) {
+    payload.WithString("filterByFailoverSlateConfigurationArn", m_filterByFailoverSlateConfigurationArn);
+  }
+
   if (m_nextTokenHasBeenSet) {
     payload.WithString("nextToken", m_nextToken);
   }

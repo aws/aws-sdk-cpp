@@ -1054,6 +1054,7 @@
 #include <aws/connect/model/NotificationSource.h>
 #include <aws/connect/model/NotificationStatus.h>
 #include <aws/connect/model/NotificationType.h>
+#include <aws/connect/model/NullableAdditionalRecipients.h>
 #include <aws/connect/model/NumberComparisonType.h>
 #include <aws/connect/model/NumberCondition.h>
 #include <aws/connect/model/NumberReference.h>
@@ -1532,6 +1533,11 @@
 #include <aws/connect/model/UpdateMetricMetadataResult.h>
 #include <aws/connect/model/UpdateNotificationContentRequest.h>
 #include <aws/connect/model/UpdateNotificationContentResult.h>
+#include <aws/connect/model/UpdateOutboundEmailContactMessageRequest.h>
+#include <aws/connect/model/UpdateOutboundEmailContactMessageResult.h>
+#include <aws/connect/model/UpdateOutboundEmailContent.h>
+#include <aws/connect/model/UpdateOutboundEmailMessageSourceType.h>
+#include <aws/connect/model/UpdateOutboundRawMessage.h>
 #include <aws/connect/model/UpdateParticipantAuthenticationRequest.h>
 #include <aws/connect/model/UpdateParticipantAuthenticationResult.h>
 #include <aws/connect/model/UpdateParticipantRoleConfigChannelInfo.h>

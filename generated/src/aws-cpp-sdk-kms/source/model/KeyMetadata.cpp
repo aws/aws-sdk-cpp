@@ -108,6 +108,15 @@ KeyMetadata& KeyMetadata::operator=(JsonView jsonValue) {
     }
     m_keyAgreementAlgorithmsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("EncapsulationAlgorithms")) {
+    Aws::Utils::Array<JsonView> encapsulationAlgorithmsJsonList = jsonValue.GetArray("EncapsulationAlgorithms");
+    for (unsigned encapsulationAlgorithmsIndex = 0; encapsulationAlgorithmsIndex < encapsulationAlgorithmsJsonList.GetLength();
+         ++encapsulationAlgorithmsIndex) {
+      m_encapsulationAlgorithms.push_back(EncapsulationAlgorithmSpecMapper::GetEncapsulationAlgorithmSpecForName(
+          encapsulationAlgorithmsJsonList[encapsulationAlgorithmsIndex].AsString()));
+    }
+    m_encapsulationAlgorithmsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("MultiRegion")) {
     m_multiRegion = jsonValue.GetBool("MultiRegion");
     m_multiRegionHasBeenSet = true;
@@ -232,6 +241,16 @@ JsonValue KeyMetadata::Jsonize() const {
           KeyAgreementAlgorithmSpecMapper::GetNameForKeyAgreementAlgorithmSpec(m_keyAgreementAlgorithms[keyAgreementAlgorithmsIndex]));
     }
     payload.WithArray("KeyAgreementAlgorithms", std::move(keyAgreementAlgorithmsJsonList));
+  }
+
+  if (m_encapsulationAlgorithmsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> encapsulationAlgorithmsJsonList(m_encapsulationAlgorithms.size());
+    for (unsigned encapsulationAlgorithmsIndex = 0; encapsulationAlgorithmsIndex < encapsulationAlgorithmsJsonList.GetLength();
+         ++encapsulationAlgorithmsIndex) {
+      encapsulationAlgorithmsJsonList[encapsulationAlgorithmsIndex].AsString(
+          EncapsulationAlgorithmSpecMapper::GetNameForEncapsulationAlgorithmSpec(m_encapsulationAlgorithms[encapsulationAlgorithmsIndex]));
+    }
+    payload.WithArray("EncapsulationAlgorithms", std::move(encapsulationAlgorithmsJsonList));
   }
 
   if (m_multiRegionHasBeenSet) {

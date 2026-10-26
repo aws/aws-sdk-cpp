@@ -250,6 +250,26 @@ class ChannelSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Failover-slate-configuration ARN. A valid ARN value here both specifies the
+   * ARN and enables failover slate. Default: "" (empty string, no failover slate
+   * configuration is applied).</p>
+   */
+  inline const Aws::String& GetFailoverSlateConfigurationArn() const { return m_failoverSlateConfigurationArn; }
+  inline bool FailoverSlateConfigurationArnHasBeenSet() const { return m_failoverSlateConfigurationArnHasBeenSet; }
+  template <typename FailoverSlateConfigurationArnT = Aws::String>
+  void SetFailoverSlateConfigurationArn(FailoverSlateConfigurationArnT&& value) {
+    m_failoverSlateConfigurationArnHasBeenSet = true;
+    m_failoverSlateConfigurationArn = std::forward<FailoverSlateConfigurationArnT>(value);
+  }
+  template <typename FailoverSlateConfigurationArnT = Aws::String>
+  ChannelSummary& WithFailoverSlateConfigurationArn(FailoverSlateConfigurationArnT&& value) {
+    SetFailoverSlateConfigurationArn(std::forward<FailoverSlateConfigurationArnT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
@@ -272,6 +292,8 @@ class ChannelSummary {
   Aws::String m_playbackRestrictionPolicyArn;
 
   Aws::String m_adConfigurationArn;
+
+  Aws::String m_failoverSlateConfigurationArn;
   bool m_arnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_latencyModeHasBeenSet = false;
@@ -283,6 +305,7 @@ class ChannelSummary {
   bool m_presetHasBeenSet = false;
   bool m_playbackRestrictionPolicyArnHasBeenSet = false;
   bool m_adConfigurationArnHasBeenSet = false;
+  bool m_failoverSlateConfigurationArnHasBeenSet = false;
 };
 
 }  // namespace Model

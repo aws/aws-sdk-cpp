@@ -148,7 +148,9 @@ class ServiceManagedEc2InstanceCapabilities {
 
   ///@{
   /**
-   * <p>The allowable Amazon EC2 instance types.</p>
+   * <p>The allowable Amazon EC2 instance types.</p>  <p>If you specify
+   * <code>allowedInstanceTypes</code>, you can't specify
+   * <code>excludedInstanceTypes</code>.</p>
    */
   inline const Aws::Vector<Aws::String>& GetAllowedInstanceTypes() const { return m_allowedInstanceTypes; }
   inline bool AllowedInstanceTypesHasBeenSet() const { return m_allowedInstanceTypesHasBeenSet; }
@@ -172,7 +174,9 @@ class ServiceManagedEc2InstanceCapabilities {
 
   ///@{
   /**
-   * <p>The instance types to exclude from the fleet.</p>
+   * <p>The instance types to exclude from the fleet.</p>  <p>If you specify
+   * <code>excludedInstanceTypes</code>, you can't specify
+   * <code>allowedInstanceTypes</code>.</p>
    */
   inline const Aws::Vector<Aws::String>& GetExcludedInstanceTypes() const { return m_excludedInstanceTypes; }
   inline bool ExcludedInstanceTypesHasBeenSet() const { return m_excludedInstanceTypesHasBeenSet; }

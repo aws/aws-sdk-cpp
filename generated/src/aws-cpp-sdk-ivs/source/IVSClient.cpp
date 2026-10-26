@@ -25,17 +25,20 @@
 #include <aws/ivs/model/BatchStartViewerSessionRevocationRequest.h>
 #include <aws/ivs/model/CreateAdConfigurationRequest.h>
 #include <aws/ivs/model/CreateChannelRequest.h>
+#include <aws/ivs/model/CreateFailoverSlateConfigurationRequest.h>
 #include <aws/ivs/model/CreatePlaybackRestrictionPolicyRequest.h>
 #include <aws/ivs/model/CreateRecordingConfigurationRequest.h>
 #include <aws/ivs/model/CreateStreamKeyRequest.h>
 #include <aws/ivs/model/DeleteAdConfigurationRequest.h>
 #include <aws/ivs/model/DeleteChannelRequest.h>
+#include <aws/ivs/model/DeleteFailoverSlateConfigurationRequest.h>
 #include <aws/ivs/model/DeletePlaybackKeyPairRequest.h>
 #include <aws/ivs/model/DeletePlaybackRestrictionPolicyRequest.h>
 #include <aws/ivs/model/DeleteRecordingConfigurationRequest.h>
 #include <aws/ivs/model/DeleteStreamKeyRequest.h>
 #include <aws/ivs/model/GetAdConfigurationRequest.h>
 #include <aws/ivs/model/GetChannelRequest.h>
+#include <aws/ivs/model/GetFailoverSlateConfigurationRequest.h>
 #include <aws/ivs/model/GetPlaybackKeyPairRequest.h>
 #include <aws/ivs/model/GetPlaybackRestrictionPolicyRequest.h>
 #include <aws/ivs/model/GetRecordingConfigurationRequest.h>
@@ -46,6 +49,7 @@
 #include <aws/ivs/model/InsertAdBreakRequest.h>
 #include <aws/ivs/model/ListAdConfigurationsRequest.h>
 #include <aws/ivs/model/ListChannelsRequest.h>
+#include <aws/ivs/model/ListFailoverSlateConfigurationsRequest.h>
 #include <aws/ivs/model/ListPlaybackKeyPairsRequest.h>
 #include <aws/ivs/model/ListPlaybackRestrictionPoliciesRequest.h>
 #include <aws/ivs/model/ListRecordingConfigurationsRequest.h>
@@ -60,6 +64,7 @@
 #include <aws/ivs/model/UntagResourceRequest.h>
 #include <aws/ivs/model/UpdateAdConfigurationRequest.h>
 #include <aws/ivs/model/UpdateChannelRequest.h>
+#include <aws/ivs/model/UpdateFailoverSlateConfigurationRequest.h>
 #include <aws/ivs/model/UpdatePlaybackRestrictionPolicyRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
@@ -269,6 +274,18 @@ CreateChannelOutcome IVSClient::CreateChannel(const CreateChannelRequest& reques
   return result.IsSuccess() ? CreateChannelOutcome(result.GetResultWithOwnership()) : CreateChannelOutcome(std::move(result.GetError()));
 }
 
+CreateFailoverSlateConfigurationOutcome IVSClient::CreateFailoverSlateConfiguration(
+    const CreateFailoverSlateConfigurationRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/CreateFailoverSlateConfiguration");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateFailoverSlateConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateFailoverSlateConfigurationOutcome(std::move(result.GetError()));
+}
+
 CreatePlaybackRestrictionPolicyOutcome IVSClient::CreatePlaybackRestrictionPolicy(
     const CreatePlaybackRestrictionPolicyRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
@@ -322,6 +339,18 @@ DeleteChannelOutcome IVSClient::DeleteChannel(const DeleteChannelRequest& reques
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteChannelOutcome(result.GetResultWithOwnership()) : DeleteChannelOutcome(std::move(result.GetError()));
+}
+
+DeleteFailoverSlateConfigurationOutcome IVSClient::DeleteFailoverSlateConfiguration(
+    const DeleteFailoverSlateConfigurationRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteFailoverSlateConfiguration");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteFailoverSlateConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteFailoverSlateConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeletePlaybackKeyPairOutcome IVSClient::DeletePlaybackKeyPair(const DeletePlaybackKeyPairRequest& request) const {
@@ -388,6 +417,17 @@ GetChannelOutcome IVSClient::GetChannel(const GetChannelRequest& request) const 
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetChannelOutcome(result.GetResultWithOwnership()) : GetChannelOutcome(std::move(result.GetError()));
+}
+
+GetFailoverSlateConfigurationOutcome IVSClient::GetFailoverSlateConfiguration(const GetFailoverSlateConfigurationRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/GetFailoverSlateConfiguration");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetFailoverSlateConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetFailoverSlateConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetPlaybackKeyPairOutcome IVSClient::GetPlaybackKeyPair(const GetPlaybackKeyPairRequest& request) const {
@@ -494,6 +534,18 @@ ListChannelsOutcome IVSClient::ListChannels(const ListChannelsRequest& request) 
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListChannelsOutcome(result.GetResultWithOwnership()) : ListChannelsOutcome(std::move(result.GetError()));
+}
+
+ListFailoverSlateConfigurationsOutcome IVSClient::ListFailoverSlateConfigurations(
+    const ListFailoverSlateConfigurationsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/ListFailoverSlateConfigurations");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListFailoverSlateConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListFailoverSlateConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListPlaybackKeyPairsOutcome IVSClient::ListPlaybackKeyPairs(const ListPlaybackKeyPairsRequest& request) const {
@@ -668,6 +720,18 @@ UpdateChannelOutcome IVSClient::UpdateChannel(const UpdateChannelRequest& reques
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UpdateChannelOutcome(result.GetResultWithOwnership()) : UpdateChannelOutcome(std::move(result.GetError()));
+}
+
+UpdateFailoverSlateConfigurationOutcome IVSClient::UpdateFailoverSlateConfiguration(
+    const UpdateFailoverSlateConfigurationRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/UpdateFailoverSlateConfiguration");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateFailoverSlateConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateFailoverSlateConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdatePlaybackRestrictionPolicyOutcome IVSClient::UpdatePlaybackRestrictionPolicy(

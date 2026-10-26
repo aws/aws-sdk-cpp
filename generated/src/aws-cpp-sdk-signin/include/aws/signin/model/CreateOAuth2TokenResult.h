@@ -38,8 +38,8 @@ class CreateOAuth2TokenResult {
 
   ///@{
   /**
-   * <p>Flattened token operation outputs The specific response fields depend on the
-   * grant_type used in the request</p>
+   * <p>Flattened token operation outputs. The specific response fields depend on the
+   * grant_type used in the request.</p>
    */
   inline const CreateOAuth2TokenResponseBody& GetTokenOutput() const { return m_tokenOutput; }
   template <typename TokenOutputT = CreateOAuth2TokenResponseBody>

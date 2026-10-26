@@ -10,7 +10,7 @@
 namespace Aws {
 namespace KMS {
 namespace Model {
-enum class KeyUsageType { NOT_SET, SIGN_VERIFY, ENCRYPT_DECRYPT, GENERATE_VERIFY_MAC, KEY_AGREEMENT };
+enum class KeyUsageType { NOT_SET, SIGN_VERIFY, ENCRYPT_DECRYPT, GENERATE_VERIFY_MAC, KEY_AGREEMENT, ENCAPSULATE_DECAPSULATE };
 
 namespace KeyUsageTypeMapper {
 AWS_KMS_API KeyUsageType GetKeyUsageTypeForName(const Aws::String& name);

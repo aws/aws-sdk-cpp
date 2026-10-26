@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
+#include <aws/mediaconnect/model/DestinationEndpointRouterInputConfiguration.h>
 #include <aws/mediaconnect/model/FailoverRouterInputConfiguration.h>
 #include <aws/mediaconnect/model/MediaConnectFlowRouterInputConfiguration.h>
 #include <aws/mediaconnect/model/MediaLiveChannelRouterInputConfiguration.h>
@@ -34,6 +35,25 @@ class RouterInputConfiguration {
   AWS_MEDIACONNECT_API RouterInputConfiguration(Aws::Utils::Json::JsonView jsonValue);
   AWS_MEDIACONNECT_API RouterInputConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
   AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p>Configuration settings for a router input that is represented by a
+   * destination endpoint.</p>
+   */
+  inline const DestinationEndpointRouterInputConfiguration& GetDestinationEndpoint() const { return m_destinationEndpoint; }
+  inline bool DestinationEndpointHasBeenSet() const { return m_destinationEndpointHasBeenSet; }
+  template <typename DestinationEndpointT = DestinationEndpointRouterInputConfiguration>
+  void SetDestinationEndpoint(DestinationEndpointT&& value) {
+    m_destinationEndpointHasBeenSet = true;
+    m_destinationEndpoint = std::forward<DestinationEndpointT>(value);
+  }
+  template <typename DestinationEndpointT = DestinationEndpointRouterInputConfiguration>
+  RouterInputConfiguration& WithDestinationEndpoint(DestinationEndpointT&& value) {
+    SetDestinationEndpoint(std::forward<DestinationEndpointT>(value));
+    return *this;
+  }
+  ///@}
 
   ///@{
 
@@ -115,6 +135,8 @@ class RouterInputConfiguration {
   }
   ///@}
  private:
+  DestinationEndpointRouterInputConfiguration m_destinationEndpoint;
+
   StandardRouterInputConfiguration m_standard;
 
   MediaLiveChannelRouterInputConfiguration m_mediaLiveChannel;
@@ -124,6 +146,7 @@ class RouterInputConfiguration {
   MediaConnectFlowRouterInputConfiguration m_mediaConnectFlow;
 
   MergeRouterInputConfiguration m_merge;
+  bool m_destinationEndpointHasBeenSet = false;
   bool m_standardHasBeenSet = false;
   bool m_mediaLiveChannelHasBeenSet = false;
   bool m_failoverHasBeenSet = false;

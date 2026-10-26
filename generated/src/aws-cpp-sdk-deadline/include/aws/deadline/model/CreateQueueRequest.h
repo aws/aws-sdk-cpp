@@ -22,11 +22,6 @@ namespace deadline {
 namespace Model {
 
 /**
- * <p>Shared displayName + description for Create operations where both are
- * present. displayName is @required here - this mixin is Create-only by design
- * (Update has optional displayName).</p><p><h3>See Also:</h3>   <a
- * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/CreateQueueRequest">AWS
- * API Reference</a></p>
  */
 class CreateQueueRequest : public DeadlineRequest {
  public:

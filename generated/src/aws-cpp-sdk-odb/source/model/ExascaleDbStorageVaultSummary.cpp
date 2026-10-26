@@ -47,6 +47,14 @@ ExascaleDbStorageVaultSummary& ExascaleDbStorageVaultSummary::operator=(JsonView
     m_availabilityZoneId = jsonValue.GetString("availabilityZoneId");
     m_availabilityZoneIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("cloudExadataInfrastructureArn")) {
+    m_cloudExadataInfrastructureArn = jsonValue.GetString("cloudExadataInfrastructureArn");
+    m_cloudExadataInfrastructureArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("cloudExadataInfrastructureId")) {
+    m_cloudExadataInfrastructureId = jsonValue.GetString("cloudExadataInfrastructureId");
+    m_cloudExadataInfrastructureIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetString("createdAt");
     m_createdAtHasBeenSet = true;
@@ -117,6 +125,10 @@ ExascaleDbStorageVaultSummary& ExascaleDbStorageVaultSummary::operator=(JsonView
     m_timeZone = jsonValue.GetString("timeZone");
     m_timeZoneHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("vaultType")) {
+    m_vaultType = ExascaleDbStorageVaultTypeMapper::GetExascaleDbStorageVaultTypeForName(jsonValue.GetString("vaultType"));
+    m_vaultTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -151,6 +163,14 @@ JsonValue ExascaleDbStorageVaultSummary::Jsonize() const {
 
   if (m_availabilityZoneIdHasBeenSet) {
     payload.WithString("availabilityZoneId", m_availabilityZoneId);
+  }
+
+  if (m_cloudExadataInfrastructureArnHasBeenSet) {
+    payload.WithString("cloudExadataInfrastructureArn", m_cloudExadataInfrastructureArn);
+  }
+
+  if (m_cloudExadataInfrastructureIdHasBeenSet) {
+    payload.WithString("cloudExadataInfrastructureId", m_cloudExadataInfrastructureId);
   }
 
   if (m_createdAtHasBeenSet) {
@@ -223,6 +243,10 @@ JsonValue ExascaleDbStorageVaultSummary::Jsonize() const {
 
   if (m_timeZoneHasBeenSet) {
     payload.WithString("timeZone", m_timeZone);
+  }
+
+  if (m_vaultTypeHasBeenSet) {
+    payload.WithString("vaultType", ExascaleDbStorageVaultTypeMapper::GetNameForExascaleDbStorageVaultType(m_vaultType));
   }
 
   return payload;

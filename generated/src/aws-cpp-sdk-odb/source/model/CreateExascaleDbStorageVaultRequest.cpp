@@ -31,6 +31,10 @@ Aws::String CreateExascaleDbStorageVaultRequest::SerializePayload() const {
     payload.WithInteger("autoscaleLimitInGBs", m_autoscaleLimitInGBs);
   }
 
+  if (m_cloudExadataInfrastructureIdHasBeenSet) {
+    payload.WithString("cloudExadataInfrastructureId", m_cloudExadataInfrastructureId);
+  }
+
   if (m_availabilityZoneIdHasBeenSet) {
     payload.WithString("availabilityZoneId", m_availabilityZoneId);
   }

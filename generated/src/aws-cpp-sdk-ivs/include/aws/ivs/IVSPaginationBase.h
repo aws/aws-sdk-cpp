@@ -9,6 +9,7 @@
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/ivs/model/ListAdConfigurationsPaginationTraits.h>
 #include <aws/ivs/model/ListChannelsPaginationTraits.h>
+#include <aws/ivs/model/ListFailoverSlateConfigurationsPaginationTraits.h>
 #include <aws/ivs/model/ListPlaybackKeyPairsPaginationTraits.h>
 #include <aws/ivs/model/ListPlaybackRestrictionPoliciesPaginationTraits.h>
 #include <aws/ivs/model/ListRecordingConfigurationsPaginationTraits.h>
@@ -45,6 +46,18 @@ class IVSPaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListChannelsRequest,
                                              Pagination::ListChannelsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
+  }
+
+  /**
+   * Create a paginator for ListFailoverSlateConfigurations operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFailoverSlateConfigurationsRequest,
+                                    Pagination::ListFailoverSlateConfigurationsPaginationTraits<DerivedClient>>
+  ListFailoverSlateConfigurationsPaginator(const Model::ListFailoverSlateConfigurationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFailoverSlateConfigurationsRequest,
+                                             Pagination::ListFailoverSlateConfigurationsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
   }
 
   /**

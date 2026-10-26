@@ -19,12 +19,17 @@
 /* End of generic header includes */
 
 /* Service model headers required in BillingClient header */
+#include <aws/billing/model/AssociateContractResult.h>
 #include <aws/billing/model/AssociateSourceViewsResult.h>
+#include <aws/billing/model/CancelContractualInvestmentAttestationResult.h>
 #include <aws/billing/model/CreateBillingViewResult.h>
+#include <aws/billing/model/CreateContractualInvestmentAttestationResult.h>
 #include <aws/billing/model/DeleteBillingViewResult.h>
+#include <aws/billing/model/DisassociateContractResult.h>
 #include <aws/billing/model/DisassociateSourceViewsResult.h>
 #include <aws/billing/model/GetBillingPreferencesResult.h>
 #include <aws/billing/model/GetBillingViewResult.h>
+#include <aws/billing/model/GetContractInformationResult.h>
 #include <aws/billing/model/GetCreditAllocationHistoryResult.h>
 #include <aws/billing/model/GetCreditsResult.h>
 #include <aws/billing/model/GetEnterpriseSupportChargeSummaryResult.h>
@@ -37,6 +42,11 @@
 #include <aws/billing/model/ListBusinessSupportAccountChargesResult.h>
 #include <aws/billing/model/ListBusinessSupportSubscriptionHistoryRequest.h>
 #include <aws/billing/model/ListBusinessSupportSubscriptionHistoryResult.h>
+#include <aws/billing/model/ListContractsRequest.h>
+#include <aws/billing/model/ListContractsResult.h>
+#include <aws/billing/model/ListContractualInvestmentAttestationsResult.h>
+#include <aws/billing/model/ListContractualInvestmentSummariesResult.h>
+#include <aws/billing/model/ListContractualInvestmentsResult.h>
 #include <aws/billing/model/ListEnterpriseSupportLinkedAccountChargesResult.h>
 #include <aws/billing/model/ListSourceViewsForBillingViewResult.h>
 #include <aws/billing/model/ListTagsForResourceResult.h>
@@ -78,12 +88,17 @@ using BillingEndpointProvider = Aws::Billing::Endpoint::BillingEndpointProvider;
 
 namespace Model {
 /* Service model forward declarations required in BillingClient header */
+class AssociateContractRequest;
 class AssociateSourceViewsRequest;
+class CancelContractualInvestmentAttestationRequest;
 class CreateBillingViewRequest;
+class CreateContractualInvestmentAttestationRequest;
 class DeleteBillingViewRequest;
+class DisassociateContractRequest;
 class DisassociateSourceViewsRequest;
 class GetBillingPreferencesRequest;
 class GetBillingViewRequest;
+class GetContractInformationRequest;
 class GetCreditAllocationHistoryRequest;
 class GetCreditsRequest;
 class GetEnterpriseSupportChargeSummaryRequest;
@@ -93,6 +108,10 @@ class ListBillingViewSegmentsRequest;
 class ListBillingViewsRequest;
 class ListBusinessSupportAccountChargesRequest;
 class ListBusinessSupportSubscriptionHistoryRequest;
+class ListContractsRequest;
+class ListContractualInvestmentAttestationsRequest;
+class ListContractualInvestmentSummariesRequest;
+class ListContractualInvestmentsRequest;
 class ListEnterpriseSupportLinkedAccountChargesRequest;
 class ListSourceViewsForBillingViewRequest;
 class ListTagsForResourceRequest;
@@ -104,12 +123,17 @@ class UpdateBillingViewRequest;
 /* End of service model forward declarations required in BillingClient header */
 
 /* Service model Outcome class definitions */
+typedef Aws::Utils::Outcome<AssociateContractResult, BillingError> AssociateContractOutcome;
 typedef Aws::Utils::Outcome<AssociateSourceViewsResult, BillingError> AssociateSourceViewsOutcome;
+typedef Aws::Utils::Outcome<CancelContractualInvestmentAttestationResult, BillingError> CancelContractualInvestmentAttestationOutcome;
 typedef Aws::Utils::Outcome<CreateBillingViewResult, BillingError> CreateBillingViewOutcome;
+typedef Aws::Utils::Outcome<CreateContractualInvestmentAttestationResult, BillingError> CreateContractualInvestmentAttestationOutcome;
 typedef Aws::Utils::Outcome<DeleteBillingViewResult, BillingError> DeleteBillingViewOutcome;
+typedef Aws::Utils::Outcome<DisassociateContractResult, BillingError> DisassociateContractOutcome;
 typedef Aws::Utils::Outcome<DisassociateSourceViewsResult, BillingError> DisassociateSourceViewsOutcome;
 typedef Aws::Utils::Outcome<GetBillingPreferencesResult, BillingError> GetBillingPreferencesOutcome;
 typedef Aws::Utils::Outcome<GetBillingViewResult, BillingError> GetBillingViewOutcome;
+typedef Aws::Utils::Outcome<GetContractInformationResult, BillingError> GetContractInformationOutcome;
 typedef Aws::Utils::Outcome<GetCreditAllocationHistoryResult, BillingError> GetCreditAllocationHistoryOutcome;
 typedef Aws::Utils::Outcome<GetCreditsResult, BillingError> GetCreditsOutcome;
 typedef Aws::Utils::Outcome<GetEnterpriseSupportChargeSummaryResult, BillingError> GetEnterpriseSupportChargeSummaryOutcome;
@@ -119,6 +143,10 @@ typedef Aws::Utils::Outcome<ListBillingViewSegmentsResult, BillingError> ListBil
 typedef Aws::Utils::Outcome<ListBillingViewsResult, BillingError> ListBillingViewsOutcome;
 typedef Aws::Utils::Outcome<ListBusinessSupportAccountChargesResult, BillingError> ListBusinessSupportAccountChargesOutcome;
 typedef Aws::Utils::Outcome<ListBusinessSupportSubscriptionHistoryResult, BillingError> ListBusinessSupportSubscriptionHistoryOutcome;
+typedef Aws::Utils::Outcome<ListContractsResult, BillingError> ListContractsOutcome;
+typedef Aws::Utils::Outcome<ListContractualInvestmentAttestationsResult, BillingError> ListContractualInvestmentAttestationsOutcome;
+typedef Aws::Utils::Outcome<ListContractualInvestmentSummariesResult, BillingError> ListContractualInvestmentSummariesOutcome;
+typedef Aws::Utils::Outcome<ListContractualInvestmentsResult, BillingError> ListContractualInvestmentsOutcome;
 typedef Aws::Utils::Outcome<ListEnterpriseSupportLinkedAccountChargesResult, BillingError> ListEnterpriseSupportLinkedAccountChargesOutcome;
 typedef Aws::Utils::Outcome<ListSourceViewsForBillingViewResult, BillingError> ListSourceViewsForBillingViewOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, BillingError> ListTagsForResourceOutcome;
@@ -130,12 +158,17 @@ typedef Aws::Utils::Outcome<UpdateBillingViewResult, BillingError> UpdateBilling
 /* End of service model Outcome class definitions */
 
 /* Service model Outcome callable definitions */
+typedef std::future<AssociateContractOutcome> AssociateContractOutcomeCallable;
 typedef std::future<AssociateSourceViewsOutcome> AssociateSourceViewsOutcomeCallable;
+typedef std::future<CancelContractualInvestmentAttestationOutcome> CancelContractualInvestmentAttestationOutcomeCallable;
 typedef std::future<CreateBillingViewOutcome> CreateBillingViewOutcomeCallable;
+typedef std::future<CreateContractualInvestmentAttestationOutcome> CreateContractualInvestmentAttestationOutcomeCallable;
 typedef std::future<DeleteBillingViewOutcome> DeleteBillingViewOutcomeCallable;
+typedef std::future<DisassociateContractOutcome> DisassociateContractOutcomeCallable;
 typedef std::future<DisassociateSourceViewsOutcome> DisassociateSourceViewsOutcomeCallable;
 typedef std::future<GetBillingPreferencesOutcome> GetBillingPreferencesOutcomeCallable;
 typedef std::future<GetBillingViewOutcome> GetBillingViewOutcomeCallable;
+typedef std::future<GetContractInformationOutcome> GetContractInformationOutcomeCallable;
 typedef std::future<GetCreditAllocationHistoryOutcome> GetCreditAllocationHistoryOutcomeCallable;
 typedef std::future<GetCreditsOutcome> GetCreditsOutcomeCallable;
 typedef std::future<GetEnterpriseSupportChargeSummaryOutcome> GetEnterpriseSupportChargeSummaryOutcomeCallable;
@@ -145,6 +178,10 @@ typedef std::future<ListBillingViewSegmentsOutcome> ListBillingViewSegmentsOutco
 typedef std::future<ListBillingViewsOutcome> ListBillingViewsOutcomeCallable;
 typedef std::future<ListBusinessSupportAccountChargesOutcome> ListBusinessSupportAccountChargesOutcomeCallable;
 typedef std::future<ListBusinessSupportSubscriptionHistoryOutcome> ListBusinessSupportSubscriptionHistoryOutcomeCallable;
+typedef std::future<ListContractsOutcome> ListContractsOutcomeCallable;
+typedef std::future<ListContractualInvestmentAttestationsOutcome> ListContractualInvestmentAttestationsOutcomeCallable;
+typedef std::future<ListContractualInvestmentSummariesOutcome> ListContractualInvestmentSummariesOutcomeCallable;
+typedef std::future<ListContractualInvestmentsOutcome> ListContractualInvestmentsOutcomeCallable;
 typedef std::future<ListEnterpriseSupportLinkedAccountChargesOutcome> ListEnterpriseSupportLinkedAccountChargesOutcomeCallable;
 typedef std::future<ListSourceViewsForBillingViewOutcome> ListSourceViewsForBillingViewOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
@@ -159,15 +196,29 @@ typedef std::future<UpdateBillingViewOutcome> UpdateBillingViewOutcomeCallable;
 class BillingClient;
 
 /* Service model async handlers definitions */
+typedef std::function<void(const BillingClient*, const Model::AssociateContractRequest&, const Model::AssociateContractOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    AssociateContractResponseReceivedHandler;
 typedef std::function<void(const BillingClient*, const Model::AssociateSourceViewsRequest&, const Model::AssociateSourceViewsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     AssociateSourceViewsResponseReceivedHandler;
+typedef std::function<void(const BillingClient*, const Model::CancelContractualInvestmentAttestationRequest&,
+                           const Model::CancelContractualInvestmentAttestationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CancelContractualInvestmentAttestationResponseReceivedHandler;
 typedef std::function<void(const BillingClient*, const Model::CreateBillingViewRequest&, const Model::CreateBillingViewOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateBillingViewResponseReceivedHandler;
+typedef std::function<void(const BillingClient*, const Model::CreateContractualInvestmentAttestationRequest&,
+                           const Model::CreateContractualInvestmentAttestationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateContractualInvestmentAttestationResponseReceivedHandler;
 typedef std::function<void(const BillingClient*, const Model::DeleteBillingViewRequest&, const Model::DeleteBillingViewOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteBillingViewResponseReceivedHandler;
+typedef std::function<void(const BillingClient*, const Model::DisassociateContractRequest&, const Model::DisassociateContractOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DisassociateContractResponseReceivedHandler;
 typedef std::function<void(const BillingClient*, const Model::DisassociateSourceViewsRequest&, const Model::DisassociateSourceViewsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DisassociateSourceViewsResponseReceivedHandler;
@@ -177,6 +228,9 @@ typedef std::function<void(const BillingClient*, const Model::GetBillingPreferen
 typedef std::function<void(const BillingClient*, const Model::GetBillingViewRequest&, const Model::GetBillingViewOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetBillingViewResponseReceivedHandler;
+typedef std::function<void(const BillingClient*, const Model::GetContractInformationRequest&, const Model::GetContractInformationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetContractInformationResponseReceivedHandler;
 typedef std::function<void(const BillingClient*, const Model::GetCreditAllocationHistoryRequest&,
                            const Model::GetCreditAllocationHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetCreditAllocationHistoryResponseReceivedHandler;
@@ -208,6 +262,20 @@ typedef std::function<void(const BillingClient*, const Model::ListBusinessSuppor
                            const Model::ListBusinessSupportSubscriptionHistoryOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListBusinessSupportSubscriptionHistoryResponseReceivedHandler;
+typedef std::function<void(const BillingClient*, const Model::ListContractsRequest&, const Model::ListContractsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListContractsResponseReceivedHandler;
+typedef std::function<void(const BillingClient*, const Model::ListContractualInvestmentAttestationsRequest&,
+                           const Model::ListContractualInvestmentAttestationsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListContractualInvestmentAttestationsResponseReceivedHandler;
+typedef std::function<void(const BillingClient*, const Model::ListContractualInvestmentSummariesRequest&,
+                           const Model::ListContractualInvestmentSummariesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListContractualInvestmentSummariesResponseReceivedHandler;
+typedef std::function<void(const BillingClient*, const Model::ListContractualInvestmentsRequest&,
+                           const Model::ListContractualInvestmentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListContractualInvestmentsResponseReceivedHandler;
 typedef std::function<void(const BillingClient*, const Model::ListEnterpriseSupportLinkedAccountChargesRequest&,
                            const Model::ListEnterpriseSupportLinkedAccountChargesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

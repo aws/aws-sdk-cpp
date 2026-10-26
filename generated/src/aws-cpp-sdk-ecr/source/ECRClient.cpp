@@ -42,6 +42,7 @@
 #include <aws/ecr/model/DescribeImagesRequest.h>
 #include <aws/ecr/model/DescribePullThroughCacheRulesRequest.h>
 #include <aws/ecr/model/DescribeRegistryRequest.h>
+#include <aws/ecr/model/DescribeReplicationBackfillResultsRequest.h>
 #include <aws/ecr/model/DescribeRepositoriesRequest.h>
 #include <aws/ecr/model/DescribeRepositoryCreationTemplatesRequest.h>
 #include <aws/ecr/model/GetAccountSettingRequest.h>
@@ -57,6 +58,7 @@
 #include <aws/ecr/model/ListImageReferrersRequest.h>
 #include <aws/ecr/model/ListImagesRequest.h>
 #include <aws/ecr/model/ListPullTimeUpdateExclusionsRequest.h>
+#include <aws/ecr/model/ListReplicationBackfillsRequest.h>
 #include <aws/ecr/model/ListTagsForResourceRequest.h>
 #include <aws/ecr/model/PutAccountSettingRequest.h>
 #include <aws/ecr/model/PutImageRequest.h>
@@ -71,6 +73,8 @@
 #include <aws/ecr/model/SetRepositoryPolicyRequest.h>
 #include <aws/ecr/model/StartImageScanRequest.h>
 #include <aws/ecr/model/StartLifecyclePolicyPreviewRequest.h>
+#include <aws/ecr/model/StartReplicationBackfillRequest.h>
+#include <aws/ecr/model/StopReplicationBackfillRequest.h>
 #include <aws/ecr/model/TagResourceRequest.h>
 #include <aws/ecr/model/UntagResourceRequest.h>
 #include <aws/ecr/model/UpdateImageStorageClassRequest.h>
@@ -363,6 +367,13 @@ DescribeRegistryOutcome ECRClient::DescribeRegistry(const DescribeRegistryReques
                             : DescribeRegistryOutcome(std::move(result.GetError()));
 }
 
+DescribeReplicationBackfillResultsOutcome ECRClient::DescribeReplicationBackfillResults(
+    const DescribeReplicationBackfillResultsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeReplicationBackfillResultsOutcome(result.GetResultWithOwnership())
+                            : DescribeReplicationBackfillResultsOutcome(std::move(result.GetError()));
+}
+
 DescribeRepositoriesOutcome ECRClient::DescribeRepositories(const DescribeRepositoriesRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeRepositoriesOutcome(result.GetResultWithOwnership())
@@ -454,6 +465,12 @@ ListPullTimeUpdateExclusionsOutcome ECRClient::ListPullTimeUpdateExclusions(cons
                             : ListPullTimeUpdateExclusionsOutcome(std::move(result.GetError()));
 }
 
+ListReplicationBackfillsOutcome ECRClient::ListReplicationBackfills(const ListReplicationBackfillsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListReplicationBackfillsOutcome(result.GetResultWithOwnership())
+                            : ListReplicationBackfillsOutcome(std::move(result.GetError()));
+}
+
 ListTagsForResourceOutcome ECRClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
@@ -536,6 +553,18 @@ StartLifecyclePolicyPreviewOutcome ECRClient::StartLifecyclePolicyPreview(const 
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? StartLifecyclePolicyPreviewOutcome(result.GetResultWithOwnership())
                             : StartLifecyclePolicyPreviewOutcome(std::move(result.GetError()));
+}
+
+StartReplicationBackfillOutcome ECRClient::StartReplicationBackfill(const StartReplicationBackfillRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartReplicationBackfillOutcome(result.GetResultWithOwnership())
+                            : StartReplicationBackfillOutcome(std::move(result.GetError()));
+}
+
+StopReplicationBackfillOutcome ECRClient::StopReplicationBackfill(const StopReplicationBackfillRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopReplicationBackfillOutcome(result.GetResultWithOwnership())
+                            : StopReplicationBackfillOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome ECRClient::TagResource(const TagResourceRequest& request) const {

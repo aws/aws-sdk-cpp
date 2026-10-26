@@ -130,6 +130,16 @@ RouterInput& RouterInput::operator=(JsonView jsonValue) {
     m_contentQualityAnalysisConfiguration = jsonValue.GetObject("contentQualityAnalysisConfiguration");
     m_contentQualityAnalysisConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("associatedDestinationEndpointArns")) {
+    Aws::Utils::Array<JsonView> associatedDestinationEndpointArnsJsonList = jsonValue.GetArray("associatedDestinationEndpointArns");
+    for (unsigned associatedDestinationEndpointArnsIndex = 0;
+         associatedDestinationEndpointArnsIndex < associatedDestinationEndpointArnsJsonList.GetLength();
+         ++associatedDestinationEndpointArnsIndex) {
+      m_associatedDestinationEndpointArns.push_back(
+          associatedDestinationEndpointArnsJsonList[associatedDestinationEndpointArnsIndex].AsString());
+    }
+    m_associatedDestinationEndpointArnsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -248,6 +258,17 @@ JsonValue RouterInput::Jsonize() const {
 
   if (m_contentQualityAnalysisConfigurationHasBeenSet) {
     payload.WithObject("contentQualityAnalysisConfiguration", m_contentQualityAnalysisConfiguration.Jsonize());
+  }
+
+  if (m_associatedDestinationEndpointArnsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> associatedDestinationEndpointArnsJsonList(m_associatedDestinationEndpointArns.size());
+    for (unsigned associatedDestinationEndpointArnsIndex = 0;
+         associatedDestinationEndpointArnsIndex < associatedDestinationEndpointArnsJsonList.GetLength();
+         ++associatedDestinationEndpointArnsIndex) {
+      associatedDestinationEndpointArnsJsonList[associatedDestinationEndpointArnsIndex].AsString(
+          m_associatedDestinationEndpointArns[associatedDestinationEndpointArnsIndex]);
+    }
+    payload.WithArray("associatedDestinationEndpointArns", std::move(associatedDestinationEndpointArnsJsonList));
   }
 
   return payload;

@@ -20,6 +20,7 @@ static const int WINDOWS_SERVER_2016_HASH = HashingUtils::HashString("WINDOWS_SE
 static const int WINDOWS_SERVER_2019_HASH = HashingUtils::HashString("WINDOWS_SERVER_2019");
 static const int WINDOWS_SERVER_2022_HASH = HashingUtils::HashString("WINDOWS_SERVER_2022");
 static const int WINDOWS_SERVER_2025_HASH = HashingUtils::HashString("WINDOWS_SERVER_2025");
+static const int WINDOWS_11_HASH = HashingUtils::HashString("WINDOWS_11");
 static const int AMAZON_LINUX2_HASH = HashingUtils::HashString("AMAZON_LINUX2");
 static const int RHEL8_HASH = HashingUtils::HashString("RHEL8");
 static const int ROCKY_LINUX8_HASH = HashingUtils::HashString("ROCKY_LINUX8");
@@ -37,6 +38,8 @@ PlatformType GetPlatformTypeForName(const Aws::String& name) {
     return PlatformType::WINDOWS_SERVER_2022;
   } else if (hashCode == WINDOWS_SERVER_2025_HASH) {
     return PlatformType::WINDOWS_SERVER_2025;
+  } else if (hashCode == WINDOWS_11_HASH) {
+    return PlatformType::WINDOWS_11;
   } else if (hashCode == AMAZON_LINUX2_HASH) {
     return PlatformType::AMAZON_LINUX2;
   } else if (hashCode == RHEL8_HASH) {
@@ -69,6 +72,8 @@ Aws::String GetNameForPlatformType(PlatformType enumValue) {
       return "WINDOWS_SERVER_2022";
     case PlatformType::WINDOWS_SERVER_2025:
       return "WINDOWS_SERVER_2025";
+    case PlatformType::WINDOWS_11:
+      return "WINDOWS_11";
     case PlatformType::AMAZON_LINUX2:
       return "AMAZON_LINUX2";
     case PlatformType::RHEL8:

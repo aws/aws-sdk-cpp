@@ -10,7 +10,17 @@
 namespace Aws {
 namespace Lightsail {
 namespace Model {
-enum class DistributionMetricName { NOT_SET, Requests, BytesDownloaded, BytesUploaded, TotalErrorRate, Http4xxErrorRate, Http5xxErrorRate };
+enum class DistributionMetricName {
+  NOT_SET,
+  Requests,
+  BytesDownloaded,
+  BytesUploaded,
+  TotalErrorRate,
+  Http4xxErrorRate,
+  Http5xxErrorRate,
+  WafAllowedRequests,
+  WafBlockedRequests
+};
 
 namespace DistributionMetricNameMapper {
 AWS_LIGHTSAIL_API DistributionMetricName GetDistributionMetricNameForName(const Aws::String& name);

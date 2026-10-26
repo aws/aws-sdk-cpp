@@ -14,6 +14,7 @@
 #include <aws/marketplace-catalog/model/OfferSort.h>
 #include <aws/marketplace-catalog/model/ResaleAuthorizationSort.h>
 #include <aws/marketplace-catalog/model/SaaSProductSort.h>
+#include <aws/marketplace-catalog/model/SubsidiaryAuthorizationSort.h>
 
 #include <utility>
 
@@ -201,6 +202,24 @@ class EntityTypeSort {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A sort for subsidiary authorizations.</p>
+   */
+  inline const SubsidiaryAuthorizationSort& GetSubsidiaryAuthorizationSort() const { return m_subsidiaryAuthorizationSort; }
+  inline bool SubsidiaryAuthorizationSortHasBeenSet() const { return m_subsidiaryAuthorizationSortHasBeenSet; }
+  template <typename SubsidiaryAuthorizationSortT = SubsidiaryAuthorizationSort>
+  void SetSubsidiaryAuthorizationSort(SubsidiaryAuthorizationSortT&& value) {
+    m_subsidiaryAuthorizationSortHasBeenSet = true;
+    m_subsidiaryAuthorizationSort = std::forward<SubsidiaryAuthorizationSortT>(value);
+  }
+  template <typename SubsidiaryAuthorizationSortT = SubsidiaryAuthorizationSort>
+  EntityTypeSort& WithSubsidiaryAuthorizationSort(SubsidiaryAuthorizationSortT&& value) {
+    SetSubsidiaryAuthorizationSort(std::forward<SubsidiaryAuthorizationSortT>(value));
+    return *this;
+  }
+  ///@}
  private:
   DataProductSort m_dataProductSort;
 
@@ -219,6 +238,8 @@ class EntityTypeSort {
   OfferSetSort m_offerSetSort;
 
   ExpressPrivateOfferConfigurationSort m_expressPrivateOfferConfigurationSort;
+
+  SubsidiaryAuthorizationSort m_subsidiaryAuthorizationSort;
   bool m_dataProductSortHasBeenSet = false;
   bool m_saaSProductSortHasBeenSet = false;
   bool m_amiProductSortHasBeenSet = false;
@@ -228,6 +249,7 @@ class EntityTypeSort {
   bool m_machineLearningProductSortHasBeenSet = false;
   bool m_offerSetSortHasBeenSet = false;
   bool m_expressPrivateOfferConfigurationSortHasBeenSet = false;
+  bool m_subsidiaryAuthorizationSortHasBeenSet = false;
 };
 
 }  // namespace Model

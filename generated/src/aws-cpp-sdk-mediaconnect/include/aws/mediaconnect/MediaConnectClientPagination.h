@@ -7,6 +7,7 @@
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/mediaconnect/MediaConnectClient.h>
 #include <aws/mediaconnect/model/ListBridgesPaginationTraits.h>
+#include <aws/mediaconnect/model/ListDestinationEndpointsPaginationTraits.h>
 #include <aws/mediaconnect/model/ListEntitlementsPaginationTraits.h>
 #include <aws/mediaconnect/model/ListFlowsPaginationTraits.h>
 #include <aws/mediaconnect/model/ListGatewayInstancesPaginationTraits.h>
@@ -16,12 +17,16 @@
 #include <aws/mediaconnect/model/ListRouterInputsPaginationTraits.h>
 #include <aws/mediaconnect/model/ListRouterNetworkInterfacesPaginationTraits.h>
 #include <aws/mediaconnect/model/ListRouterOutputsPaginationTraits.h>
+#include <aws/mediaconnect/model/ListSourceEndpointsPaginationTraits.h>
 
 namespace Aws {
 namespace MediaConnect {
 
 using ListBridgesPaginator = Aws::Utils::Pagination::Paginator<MediaConnectClient, Model::ListBridgesRequest,
                                                                Pagination::ListBridgesPaginationTraits<MediaConnectClient>>;
+using ListDestinationEndpointsPaginator =
+    Aws::Utils::Pagination::Paginator<MediaConnectClient, Model::ListDestinationEndpointsRequest,
+                                      Pagination::ListDestinationEndpointsPaginationTraits<MediaConnectClient>>;
 using ListEntitlementsPaginator = Aws::Utils::Pagination::Paginator<MediaConnectClient, Model::ListEntitlementsRequest,
                                                                     Pagination::ListEntitlementsPaginationTraits<MediaConnectClient>>;
 using ListFlowsPaginator = Aws::Utils::Pagination::Paginator<MediaConnectClient, Model::ListFlowsRequest,
@@ -42,6 +47,8 @@ using ListRouterNetworkInterfacesPaginator =
                                       Pagination::ListRouterNetworkInterfacesPaginationTraits<MediaConnectClient>>;
 using ListRouterOutputsPaginator = Aws::Utils::Pagination::Paginator<MediaConnectClient, Model::ListRouterOutputsRequest,
                                                                      Pagination::ListRouterOutputsPaginationTraits<MediaConnectClient>>;
+using ListSourceEndpointsPaginator = Aws::Utils::Pagination::Paginator<MediaConnectClient, Model::ListSourceEndpointsRequest,
+                                                                       Pagination::ListSourceEndpointsPaginationTraits<MediaConnectClient>>;
 
 }  // namespace MediaConnect
 }  // namespace Aws

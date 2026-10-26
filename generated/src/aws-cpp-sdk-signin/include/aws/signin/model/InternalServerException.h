@@ -21,9 +21,8 @@ namespace Signin {
 namespace Model {
 
 /**
- * <p>Error thrown when an internal server error occurs</p> <p>HTTP Status Code:
- * 500 Internal Server Error</p> <p>Used for unexpected server-side errors that
- * prevent request processing.</p><p><h3>See Also:</h3>   <a
+ * <p>The request failed because of an internal server error.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/signin-2023-01-01/InternalServerException">AWS
  * API Reference</a></p>
  */
@@ -36,8 +35,7 @@ class InternalServerException {
 
   ///@{
   /**
-   * <p>OAuth 2.0 error code indicating server error Will be SERVER_ERROR for
-   * internal server errors</p>
+   * <p>Will be server_error.</p>
    */
   inline OAuth2ErrorCode GetError() const { return m_error; }
   inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
@@ -53,8 +51,7 @@ class InternalServerException {
 
   ///@{
   /**
-   * <p>Detailed message explaining the server error May include error details for
-   * debugging purposes</p>
+   * <p>The server error detail.</p>
    */
   inline const Aws::String& GetMessage() const { return m_message; }
   inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }

@@ -101,6 +101,30 @@ class CreateExascaleDbStorageVaultRequest : public OdbRequest {
 
   ///@{
   /**
+   * <p>The unique identifier or Amazon Resource Name (ARN) of the Exadata
+   * infrastructure on which to create the Exascale storage vault. Specify this value
+   * to create the Exascale storage vault on dedicated Exadata infrastructure that
+   * has Exascale storage configured. If you specify <code>availabilityZone</code> or
+   * <code>availabilityZoneId</code>, the value must match the Availability Zone of
+   * the Exadata infrastructure. If you specify neither, the service uses the
+   * Availability Zone of the Exadata infrastructure.</p>
+   */
+  inline const Aws::String& GetCloudExadataInfrastructureId() const { return m_cloudExadataInfrastructureId; }
+  inline bool CloudExadataInfrastructureIdHasBeenSet() const { return m_cloudExadataInfrastructureIdHasBeenSet; }
+  template <typename CloudExadataInfrastructureIdT = Aws::String>
+  void SetCloudExadataInfrastructureId(CloudExadataInfrastructureIdT&& value) {
+    m_cloudExadataInfrastructureIdHasBeenSet = true;
+    m_cloudExadataInfrastructureId = std::forward<CloudExadataInfrastructureIdT>(value);
+  }
+  template <typename CloudExadataInfrastructureIdT = Aws::String>
+  CreateExascaleDbStorageVaultRequest& WithCloudExadataInfrastructureId(CloudExadataInfrastructureIdT&& value) {
+    SetCloudExadataInfrastructureId(std::forward<CloudExadataInfrastructureIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The Availability Zone ID for the Exascale storage vault.</p>
    */
   inline const Aws::String& GetAvailabilityZoneId() const { return m_availabilityZoneId; }
@@ -242,6 +266,8 @@ class CreateExascaleDbStorageVaultRequest : public OdbRequest {
 
   int m_autoscaleLimitInGBs{0};
 
+  Aws::String m_cloudExadataInfrastructureId;
+
   Aws::String m_availabilityZoneId;
 
   Aws::String m_availabilityZone;
@@ -259,6 +285,7 @@ class CreateExascaleDbStorageVaultRequest : public OdbRequest {
   bool m_highCapacityDatabaseStorageTotalSizeInGBsHasBeenSet = false;
   bool m_additionalFlashCacheInPercentHasBeenSet = false;
   bool m_autoscaleLimitInGBsHasBeenSet = false;
+  bool m_cloudExadataInfrastructureIdHasBeenSet = false;
   bool m_availabilityZoneIdHasBeenSet = false;
   bool m_availabilityZoneHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

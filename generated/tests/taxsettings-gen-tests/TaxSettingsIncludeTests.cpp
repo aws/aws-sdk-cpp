@@ -50,6 +50,7 @@
 #include <aws/taxsettings/model/ExemptionCertificate.h>
 #include <aws/taxsettings/model/FranceAdditionalInfo.h>
 #include <aws/taxsettings/model/GeorgiaAdditionalInfo.h>
+#include <aws/taxsettings/model/GermanyAdditionalInfo.h>
 #include <aws/taxsettings/model/GetTaxExemptionTypesRequest.h>
 #include <aws/taxsettings/model/GetTaxExemptionTypesResult.h>
 #include <aws/taxsettings/model/GetTaxInheritanceRequest.h>
@@ -82,6 +83,7 @@
 #include <aws/taxsettings/model/ListTaxRegistrationsResult.h>
 #include <aws/taxsettings/model/MalaysiaAdditionalInfo.h>
 #include <aws/taxsettings/model/MalaysiaServiceTaxCode.h>
+#include <aws/taxsettings/model/MexicoAdditionalInfo.h>
 #include <aws/taxsettings/model/MonacoAdditionalInfo.h>
 #include <aws/taxsettings/model/PersonType.h>
 #include <aws/taxsettings/model/PhilippinesAdditionalInfo.h>

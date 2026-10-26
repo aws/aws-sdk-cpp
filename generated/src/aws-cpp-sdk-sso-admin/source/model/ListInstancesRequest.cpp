@@ -23,6 +23,10 @@ Aws::String ListInstancesRequest::SerializePayload() const {
     payload.WithString("NextToken", m_nextToken);
   }
 
+  if (m_regionScopeHasBeenSet) {
+    payload.WithString("RegionScope", RegionScopeMapper::GetNameForRegionScope(m_regionScope));
+  }
+
   return payload.View().WriteReadable();
 }
 

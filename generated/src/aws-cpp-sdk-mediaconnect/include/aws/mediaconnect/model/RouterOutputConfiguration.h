@@ -7,6 +7,7 @@
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
 #include <aws/mediaconnect/model/MediaConnectFlowRouterOutputConfiguration.h>
 #include <aws/mediaconnect/model/MediaLiveInputRouterOutputConfiguration.h>
+#include <aws/mediaconnect/model/SourceEndpointRouterOutputConfiguration.h>
 #include <aws/mediaconnect/model/StandardRouterOutputConfiguration.h>
 
 #include <utility>
@@ -80,15 +81,37 @@ class RouterOutputConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Configuration settings for a router output that is represented by a source
+   * endpoint.</p>
+   */
+  inline const SourceEndpointRouterOutputConfiguration& GetSourceEndpoint() const { return m_sourceEndpoint; }
+  inline bool SourceEndpointHasBeenSet() const { return m_sourceEndpointHasBeenSet; }
+  template <typename SourceEndpointT = SourceEndpointRouterOutputConfiguration>
+  void SetSourceEndpoint(SourceEndpointT&& value) {
+    m_sourceEndpointHasBeenSet = true;
+    m_sourceEndpoint = std::forward<SourceEndpointT>(value);
+  }
+  template <typename SourceEndpointT = SourceEndpointRouterOutputConfiguration>
+  RouterOutputConfiguration& WithSourceEndpoint(SourceEndpointT&& value) {
+    SetSourceEndpoint(std::forward<SourceEndpointT>(value));
+    return *this;
+  }
+  ///@}
  private:
   StandardRouterOutputConfiguration m_standard;
 
   MediaConnectFlowRouterOutputConfiguration m_mediaConnectFlow;
 
   MediaLiveInputRouterOutputConfiguration m_mediaLiveInput;
+
+  SourceEndpointRouterOutputConfiguration m_sourceEndpoint;
   bool m_standardHasBeenSet = false;
   bool m_mediaConnectFlowHasBeenSet = false;
   bool m_mediaLiveInputHasBeenSet = false;
+  bool m_sourceEndpointHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -174,6 +174,10 @@ CloudExadataInfrastructure& CloudExadataInfrastructure::operator=(JsonView jsonV
     m_computeModel = ComputeModelMapper::GetComputeModelForName(jsonValue.GetString("computeModel"));
     m_computeModelHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("exascaleConfiguration")) {
+    m_exascaleConfiguration = jsonValue.GetObject("exascaleConfiguration");
+    m_exascaleConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -336,6 +340,10 @@ JsonValue CloudExadataInfrastructure::Jsonize() const {
 
   if (m_computeModelHasBeenSet) {
     payload.WithString("computeModel", ComputeModelMapper::GetNameForComputeModel(m_computeModel));
+  }
+
+  if (m_exascaleConfigurationHasBeenSet) {
+    payload.WithObject("exascaleConfiguration", m_exascaleConfiguration.Jsonize());
   }
 
   return payload;

@@ -11407,6 +11407,39 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Updates the draft outbound email message for a contact. Use this operation to
+   * save changes to an in-progress outbound email reply before you send it. This
+   * operation applies only to contacts with an <code>OUTBOUND</code> or
+   * <code>AGENT_REPLY</code> initiation method; it isn't supported for
+   * flow-initiated emails.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateOutboundEmailContactMessage">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateOutboundEmailContactMessageOutcome UpdateOutboundEmailContactMessage(
+      const Model::UpdateOutboundEmailContactMessageRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateOutboundEmailContactMessage that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename UpdateOutboundEmailContactMessageRequestT = Model::UpdateOutboundEmailContactMessageRequest>
+  Model::UpdateOutboundEmailContactMessageOutcomeCallable UpdateOutboundEmailContactMessageCallable(
+      const UpdateOutboundEmailContactMessageRequestT& request) const {
+    return SubmitCallable(&ConnectClient::UpdateOutboundEmailContactMessage, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateOutboundEmailContactMessage that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename UpdateOutboundEmailContactMessageRequestT = Model::UpdateOutboundEmailContactMessageRequest>
+  void UpdateOutboundEmailContactMessageAsync(const UpdateOutboundEmailContactMessageRequestT& request,
+                                              const UpdateOutboundEmailContactMessageResponseReceivedHandler& handler,
+                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::UpdateOutboundEmailContactMessage, request, handler, context);
+  }
+
+  /**
    * <p>Instructs Connect Customer to resume the authentication process. The
    * subsequent actions depend on the request body contents:</p> <ul> <li> <p> <b>If
    * a code is provided</b>: Connect retrieves the identity information from Amazon

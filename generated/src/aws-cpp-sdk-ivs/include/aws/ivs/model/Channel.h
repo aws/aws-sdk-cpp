@@ -349,6 +349,26 @@ class Channel {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Failover-slate-configuration ARN. A valid ARN value here both specifies the
+   * ARN and enables failover slate. Default: "" (empty string, no failover slate
+   * configuration is applied).</p>
+   */
+  inline const Aws::String& GetFailoverSlateConfigurationArn() const { return m_failoverSlateConfigurationArn; }
+  inline bool FailoverSlateConfigurationArnHasBeenSet() const { return m_failoverSlateConfigurationArnHasBeenSet; }
+  template <typename FailoverSlateConfigurationArnT = Aws::String>
+  void SetFailoverSlateConfigurationArn(FailoverSlateConfigurationArnT&& value) {
+    m_failoverSlateConfigurationArnHasBeenSet = true;
+    m_failoverSlateConfigurationArn = std::forward<FailoverSlateConfigurationArnT>(value);
+  }
+  template <typename FailoverSlateConfigurationArnT = Aws::String>
+  Channel& WithFailoverSlateConfigurationArn(FailoverSlateConfigurationArnT&& value) {
+    SetFailoverSlateConfigurationArn(std::forward<FailoverSlateConfigurationArnT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
@@ -381,6 +401,8 @@ class Channel {
   ContainerFormat m_containerFormat{ContainerFormat::NOT_SET};
 
   Aws::String m_adConfigurationArn;
+
+  Aws::String m_failoverSlateConfigurationArn;
   bool m_arnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_latencyModeHasBeenSet = false;
@@ -397,6 +419,7 @@ class Channel {
   bool m_multitrackInputConfigurationHasBeenSet = false;
   bool m_containerFormatHasBeenSet = false;
   bool m_adConfigurationArnHasBeenSet = false;
+  bool m_failoverSlateConfigurationArnHasBeenSet = false;
 };
 
 }  // namespace Model

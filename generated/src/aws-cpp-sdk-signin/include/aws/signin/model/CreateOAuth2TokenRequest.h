@@ -41,8 +41,8 @@ class CreateOAuth2TokenRequest : public SigninRequest {
 
   ///@{
   /**
-   * <p>Flattened token operation inputs The specific operation is determined by
-   * grant_type in the request body</p>
+   * <p>Flattened token operation inputs. The &quot;grant_type&quot; in the request
+   * body determines the specific operation.</p>
    */
   inline const CreateOAuth2TokenRequestBody& GetTokenInput() const { return m_tokenInput; }
   inline bool TokenInputHasBeenSet() const { return m_tokenInputHasBeenSet; }

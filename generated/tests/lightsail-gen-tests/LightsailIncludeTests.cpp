@@ -556,6 +556,14 @@
 #include <aws/lightsail/model/UpdateRelationalDatabaseRequest.h>
 #include <aws/lightsail/model/UpdateRelationalDatabaseResult.h>
 #include <aws/lightsail/model/ViewerMinimumTlsProtocolVersionEnum.h>
+#include <aws/lightsail/model/WafAcfpConfig.h>
+#include <aws/lightsail/model/WafAtpConfig.h>
+#include <aws/lightsail/model/WafBotControlConfig.h>
+#include <aws/lightsail/model/WafConfig.h>
+#include <aws/lightsail/model/WafInspectionLevelEnum.h>
+#include <aws/lightsail/model/WafPayloadTypeEnum.h>
+#include <aws/lightsail/model/WafResponseInspection.h>
+#include <aws/lightsail/model/WafRule.h>
 
 using LightsailIncludeTest = ::testing::Test;
 

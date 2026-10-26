@@ -16,9 +16,8 @@
 namespace Aws {
 namespace Signin {
 /**
- * <p>AWS Sign-In manages authentication for AWS services. This service provides
- * secure authentication flows for accessing AWS resources from the console and
- * developer tools.</p>
+ * <p>AWS Sign-In manages authentication for AWS services. It implements OAuth 2.0,
+ * providing secure token exchange and refresh capabilities.</p>
  */
 class AWS_SIGNIN_API SigninClient : public Aws::Client::AWSJsonClient,
                                     public Aws::Client::ClientWithAsyncTemplateMethods<SigninClient>,
@@ -78,28 +77,8 @@ class AWS_SIGNIN_API SigninClient : public Aws::Client::AWSJsonClient,
   virtual ~SigninClient();
 
   /**
-   * <p>CreateOAuth2Token API</p> <p>Path: /v1/token Request Method: POST
-   * Content-Type: application/json or application/x-www-form-urlencoded</p> <p>This
-   * API implements OAuth 2.0 flows for AWS Sign-In CLI clients, supporting both:</p>
-   * <ol> <li>Authorization code redemption (grant_type=authorization_code) - NOT
-   * idempotent</li> <li>Token refresh (grant_type=refresh_token) - Idempotent within
-   * token validity window</li> </ol> <p>The operation behavior is determined by the
-   * grant_type parameter in the request body:</p> <p><strong>Authorization Code Flow
-   * (NOT Idempotent):</strong></p> <ul> <li>JSON or form-encoded body with
-   * client_id, grant_type=authorization_code, code, redirect_uri, code_verifier</li>
-   * <li>Returns access_token, token_type, expires_in, refresh_token, and
-   * id_token</li> <li>Each authorization code can only be used ONCE for security
-   * (prevents replay attacks)</li> </ul> <p><strong>Token Refresh Flow
-   * (Idempotent):</strong></p> <ul> <li>JSON or form-encoded body with client_id,
-   * grant_type=refresh_token, refresh_token</li> <li>Returns access_token,
-   * token_type, expires_in, and refresh_token (no id_token)</li> <li>Multiple calls
-   * with same refresh_token return consistent results within validity window</li>
-   * </ul> <p>Authentication and authorization:</p> <ul> <li>Confidential clients:
-   * sigv4 signing required with signin:ExchangeToken permissions</li> <li>CLI
-   * clients (public): authn/authz skipped based on client_id &amp; grant_type</li>
-   * </ul> <p>Note: This operation cannot be marked as @idempotent because it handles
-   * both idempotent (token refresh) and non-idempotent (auth code redemption) flows
-   * in a single endpoint.</p><p><h3>See Also:</h3>   <a
+   * <p>Exchanges an authorization code or refresh token for an OAuth 2.0 access
+   * token and refresh token.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/signin-2023-01-01/CreateOAuth2Token">AWS
    * API Reference</a></p>
    */
@@ -125,9 +104,9 @@ class AWS_SIGNIN_API SigninClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Grants permission to exchange client credentials for an OAuth 2.0 access
-   * token scoped to a resource that can be used to access AWS services from
-   * applications</p><p><h3>See Also:</h3>   <a
+   * <p>Exchanges client credentials for an OAuth 2.0 access token scoped to a
+   * resource, which you can use to access AWS services from
+   * applications.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/signin-2023-01-01/CreateOAuth2TokenWithIAM">AWS
    * API Reference</a></p>
    */
@@ -151,6 +130,37 @@ class AWS_SIGNIN_API SigninClient : public Aws::Client::AWSJsonClient,
                                      const CreateOAuth2TokenWithIAMResponseReceivedHandler& handler,
                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SigninClient::CreateOAuth2TokenWithIAM, request, handler, context);
+  }
+
+  /**
+   * <p>Exchanges a supported token for an OAuth 2.0 access token scoped to a
+   * resource, which you can use to access AWS services from
+   * applications.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/signin-2023-01-01/CreateOAuth2TokenWithTokenExchange">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateOAuth2TokenWithTokenExchangeOutcome CreateOAuth2TokenWithTokenExchange(
+      const Model::CreateOAuth2TokenWithTokenExchangeRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateOAuth2TokenWithTokenExchange that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename CreateOAuth2TokenWithTokenExchangeRequestT = Model::CreateOAuth2TokenWithTokenExchangeRequest>
+  Model::CreateOAuth2TokenWithTokenExchangeOutcomeCallable CreateOAuth2TokenWithTokenExchangeCallable(
+      const CreateOAuth2TokenWithTokenExchangeRequestT& request) const {
+    return SubmitCallable(&SigninClient::CreateOAuth2TokenWithTokenExchange, request);
+  }
+
+  /**
+   * An Async wrapper for CreateOAuth2TokenWithTokenExchange that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename CreateOAuth2TokenWithTokenExchangeRequestT = Model::CreateOAuth2TokenWithTokenExchangeRequest>
+  void CreateOAuth2TokenWithTokenExchangeAsync(const CreateOAuth2TokenWithTokenExchangeRequestT& request,
+                                               const CreateOAuth2TokenWithTokenExchangeResponseReceivedHandler& handler,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SigninClient::CreateOAuth2TokenWithTokenExchange, request, handler, context);
   }
 
   /**
@@ -272,14 +282,10 @@ class AWS_SIGNIN_API SigninClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Grants permission to inspect the metadata and state of an OAuth 2.0 access
-   * token or refresh token</p> <p>Implements RFC 7662 OAuth 2.0 Token Introspection
-   * over a SigV4-authenticated endpoint. Inspects the metadata of an access_token or
-   * refresh_token issued by AWS Sign-In and returns the claims associated with
-   * it.</p> <p>Inactive token semantics (RFC 7662 §2.2): when the supplied token is
-   * unknown, expired, revoked, malformed, or owned by a different account, the
-   * response body is exactly { &quot;active&quot;: false } with all other claims
-   * omitted.</p><p><h3>See Also:</h3>   <a
+   * <p>Inspects the metadata and active state of an OAuth 2.0 access token or
+   * refresh token.</p> <p>Implements RFC 7662 OAuth 2.0 Token Introspection over a
+   * SigV4-authenticated endpoint. Returns the claims associated with a token issued
+   * by AWS Sign-In.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/signin-2023-01-01/IntrospectOAuth2TokenWithIAM">AWS
    * API Reference</a></p>
    */
@@ -398,12 +404,8 @@ class AWS_SIGNIN_API SigninClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Grants permission to revoke an OAuth 2.0 refresh token and its associated
-   * refresh tokens</p> <p>Revokes a refresh_token issued by AWS Sign-In,
-   * invalidating the entire token chain so that the refresh_token can no longer be
-   * used to mint new access_tokens.</p> <p>Idempotency: revoking an already-revoked,
-   * expired, or otherwise invalid token still returns 200 OK with an empty body.
-   * Only the refresh_token type is accepted.</p><p><h3>See Also:</h3>   <a
+   * <p>Revokes an OAuth 2.0 refresh token and its associated token
+   * chain.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/signin-2023-01-01/RevokeOAuth2TokenWithIAM">AWS
    * API Reference</a></p>
    */

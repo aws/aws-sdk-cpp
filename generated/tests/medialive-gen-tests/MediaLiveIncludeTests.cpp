@@ -80,9 +80,11 @@
 #include <aws/medialive/model/AudioType.h>
 #include <aws/medialive/model/AudioWatermarkSettings.h>
 #include <aws/medialive/model/AuthenticationScheme.h>
+#include <aws/medialive/model/AutoFilterSettings.h>
 #include <aws/medialive/model/AutomaticInputFailoverSettings.h>
 #include <aws/medialive/model/Av1BitDepth.h>
 #include <aws/medialive/model/Av1ColorSpaceSettings.h>
+#include <aws/medialive/model/Av1FilterSettings.h>
 #include <aws/medialive/model/Av1GopSizeUnits.h>
 #include <aws/medialive/model/Av1Level.h>
 #include <aws/medialive/model/Av1LookAheadRateControl.h>
@@ -384,6 +386,7 @@
 #include <aws/medialive/model/GlobalConfigurationOutputLockingMode.h>
 #include <aws/medialive/model/GlobalConfigurationOutputTimingSource.h>
 #include <aws/medialive/model/H264AdaptiveQuantization.h>
+#include <aws/medialive/model/H264AllowExplicitWeightedPrediction.h>
 #include <aws/medialive/model/H264ColorMetadata.h>
 #include <aws/medialive/model/H264ColorSpaceSettings.h>
 #include <aws/medialive/model/H264EntropyEncoding.h>
@@ -743,6 +746,7 @@
 #include <aws/medialive/model/NodeInterfaceMappingCreateRequest.h>
 #include <aws/medialive/model/NodeRole.h>
 #include <aws/medialive/model/NodeState.h>
+#include <aws/medialive/model/NoneFilterSettings.h>
 #include <aws/medialive/model/Offering.h>
 #include <aws/medialive/model/OfferingDurationUnits.h>
 #include <aws/medialive/model/OfferingType.h>
@@ -757,6 +761,8 @@
 #include <aws/medialive/model/OutputUsage.h>
 #include <aws/medialive/model/PassThroughSettings.h>
 #include <aws/medialive/model/PauseStateScheduleActionSettings.h>
+#include <aws/medialive/model/PerceptualFilterSettings.h>
+#include <aws/medialive/model/PerceptualFilterStrength.h>
 #include <aws/medialive/model/PipelineDetail.h>
 #include <aws/medialive/model/PipelineId.h>
 #include <aws/medialive/model/PipelineLockingMethod.h>

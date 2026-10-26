@@ -336,6 +336,7 @@
 #include <aws/connect/model/UpdateMetricContentResult.h>
 #include <aws/connect/model/UpdateMetricMetadataResult.h>
 #include <aws/connect/model/UpdateNotificationContentResult.h>
+#include <aws/connect/model/UpdateOutboundEmailContactMessageResult.h>
 #include <aws/connect/model/UpdateParticipantAuthenticationResult.h>
 #include <aws/connect/model/UpdateParticipantRoleConfigResult.h>
 #include <aws/connect/model/UpdatePhoneNumberResult.h>
@@ -747,6 +748,7 @@ class UpdateInstanceStorageConfigRequest;
 class UpdateMetricContentRequest;
 class UpdateMetricMetadataRequest;
 class UpdateNotificationContentRequest;
+class UpdateOutboundEmailContactMessageRequest;
 class UpdateParticipantAuthenticationRequest;
 class UpdateParticipantRoleConfigRequest;
 class UpdatePhoneNumberRequest;
@@ -1153,6 +1155,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateInstanceStorageCo
 typedef Aws::Utils::Outcome<UpdateMetricContentResult, ConnectError> UpdateMetricContentOutcome;
 typedef Aws::Utils::Outcome<UpdateMetricMetadataResult, ConnectError> UpdateMetricMetadataOutcome;
 typedef Aws::Utils::Outcome<UpdateNotificationContentResult, ConnectError> UpdateNotificationContentOutcome;
+typedef Aws::Utils::Outcome<UpdateOutboundEmailContactMessageResult, ConnectError> UpdateOutboundEmailContactMessageOutcome;
 typedef Aws::Utils::Outcome<UpdateParticipantAuthenticationResult, ConnectError> UpdateParticipantAuthenticationOutcome;
 typedef Aws::Utils::Outcome<UpdateParticipantRoleConfigResult, ConnectError> UpdateParticipantRoleConfigOutcome;
 typedef Aws::Utils::Outcome<UpdatePhoneNumberResult, ConnectError> UpdatePhoneNumberOutcome;
@@ -1559,6 +1562,7 @@ typedef std::future<UpdateInstanceStorageConfigOutcome> UpdateInstanceStorageCon
 typedef std::future<UpdateMetricContentOutcome> UpdateMetricContentOutcomeCallable;
 typedef std::future<UpdateMetricMetadataOutcome> UpdateMetricMetadataOutcomeCallable;
 typedef std::future<UpdateNotificationContentOutcome> UpdateNotificationContentOutcomeCallable;
+typedef std::future<UpdateOutboundEmailContactMessageOutcome> UpdateOutboundEmailContactMessageOutcomeCallable;
 typedef std::future<UpdateParticipantAuthenticationOutcome> UpdateParticipantAuthenticationOutcomeCallable;
 typedef std::future<UpdateParticipantRoleConfigOutcome> UpdateParticipantRoleConfigOutcomeCallable;
 typedef std::future<UpdatePhoneNumberOutcome> UpdatePhoneNumberOutcomeCallable;
@@ -2759,6 +2763,10 @@ typedef std::function<void(const ConnectClient*, const Model::UpdateMetricMetada
 typedef std::function<void(const ConnectClient*, const Model::UpdateNotificationContentRequest&,
                            const Model::UpdateNotificationContentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateNotificationContentResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::UpdateOutboundEmailContactMessageRequest&,
+                           const Model::UpdateOutboundEmailContactMessageOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateOutboundEmailContactMessageResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::UpdateParticipantAuthenticationRequest&,
                            const Model::UpdateParticipantAuthenticationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

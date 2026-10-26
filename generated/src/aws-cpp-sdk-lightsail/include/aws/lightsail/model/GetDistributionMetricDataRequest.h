@@ -89,7 +89,16 @@ class GetDistributionMetricDataRequest : public LightsailRequest {
    * example, a status code of 503 (Service Unavailable) means that the origin server
    * is currently unavailable.</p> <p> <code>Statistics</code>: The most useful
    * statistic is <code>Average</code>.</p> <p> <code>Unit</code>: The published unit
-   * is <code>Percent</code>.</p> </li> </ul>
+   * is <code>Percent</code>.</p> </li> <li> <p> <b> <code>WafAllowedRequests</code>
+   * </b> - The number of viewer requests that Web Application Firewall (WAF)
+   * allowed. This metric is available only when WAF is enabled for the
+   * distribution.</p> <p> <code>Statistics</code>: The most useful statistic is
+   * <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is
+   * <code>None</code>.</p> </li> <li> <p> <b> <code>WafBlockedRequests</code> </b> -
+   * The number of viewer requests that WAF blocked. This metric is available only
+   * when WAF is enabled for the distribution.</p> <p> <code>Statistics</code>: The
+   * most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The
+   * published unit is <code>None</code>.</p> </li> </ul>
    */
   inline DistributionMetricName GetMetricName() const { return m_metricName; }
   inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }

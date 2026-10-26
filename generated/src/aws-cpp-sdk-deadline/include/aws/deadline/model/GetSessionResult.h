@@ -26,12 +26,6 @@ class JsonValue;
 }  // namespace Utils
 namespace deadline {
 namespace Model {
-/**
- * <p>Session lifecycle/status fields, ordered after IDs in session
- * shapes.</p><p><h3>See Also:</h3>   <a
- * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetSessionResponse">AWS
- * API Reference</a></p>
- */
 class GetSessionResult {
  public:
   AWS_DEADLINE_API GetSessionResult() = default;

@@ -24,6 +24,9 @@ static const int ECC_NIST_P521_HASH = HashingUtils::HashString("ECC_NIST_P521");
 static const int ECC_SECG_P256K1_HASH = HashingUtils::HashString("ECC_SECG_P256K1");
 static const int SM2_HASH = HashingUtils::HashString("SM2");
 static const int ECC_NIST_EDWARDS25519_HASH = HashingUtils::HashString("ECC_NIST_EDWARDS25519");
+static const int ML_KEM_512_HASH = HashingUtils::HashString("ML_KEM_512");
+static const int ML_KEM_768_HASH = HashingUtils::HashString("ML_KEM_768");
+static const int ML_KEM_1024_HASH = HashingUtils::HashString("ML_KEM_1024");
 
 DataKeyPairSpec GetDataKeyPairSpecForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -45,6 +48,12 @@ DataKeyPairSpec GetDataKeyPairSpecForName(const Aws::String& name) {
     return DataKeyPairSpec::SM2;
   } else if (hashCode == ECC_NIST_EDWARDS25519_HASH) {
     return DataKeyPairSpec::ECC_NIST_EDWARDS25519;
+  } else if (hashCode == ML_KEM_512_HASH) {
+    return DataKeyPairSpec::ML_KEM_512;
+  } else if (hashCode == ML_KEM_768_HASH) {
+    return DataKeyPairSpec::ML_KEM_768;
+  } else if (hashCode == ML_KEM_1024_HASH) {
+    return DataKeyPairSpec::ML_KEM_1024;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -77,6 +86,12 @@ Aws::String GetNameForDataKeyPairSpec(DataKeyPairSpec enumValue) {
       return "SM2";
     case DataKeyPairSpec::ECC_NIST_EDWARDS25519:
       return "ECC_NIST_EDWARDS25519";
+    case DataKeyPairSpec::ML_KEM_512:
+      return "ML_KEM_512";
+    case DataKeyPairSpec::ML_KEM_768:
+      return "ML_KEM_768";
+    case DataKeyPairSpec::ML_KEM_1024:
+      return "ML_KEM_1024";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

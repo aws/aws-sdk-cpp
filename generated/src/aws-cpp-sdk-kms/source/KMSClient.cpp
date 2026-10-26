@@ -26,6 +26,7 @@
 #include <aws/kms/model/CreateCustomKeyStoreRequest.h>
 #include <aws/kms/model/CreateGrantRequest.h>
 #include <aws/kms/model/CreateKeyRequest.h>
+#include <aws/kms/model/DecapsulateRequest.h>
 #include <aws/kms/model/DecryptRequest.h>
 #include <aws/kms/model/DeleteAliasRequest.h>
 #include <aws/kms/model/DeleteCustomKeyStoreRequest.h>
@@ -38,6 +39,7 @@
 #include <aws/kms/model/DisconnectCustomKeyStoreRequest.h>
 #include <aws/kms/model/EnableKeyRequest.h>
 #include <aws/kms/model/EnableKeyRotationRequest.h>
+#include <aws/kms/model/EncapsulateRequest.h>
 #include <aws/kms/model/EncryptRequest.h>
 #include <aws/kms/model/GenerateDataKeyPairRequest.h>
 #include <aws/kms/model/GenerateDataKeyPairWithoutPlaintextRequest.h>
@@ -257,6 +259,11 @@ CreateKeyOutcome KMSClient::CreateKey(const CreateKeyRequest& request) const {
   return result.IsSuccess() ? CreateKeyOutcome(result.GetResultWithOwnership()) : CreateKeyOutcome(std::move(result.GetError()));
 }
 
+DecapsulateOutcome KMSClient::Decapsulate(const DecapsulateRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DecapsulateOutcome(result.GetResultWithOwnership()) : DecapsulateOutcome(std::move(result.GetError()));
+}
+
 DecryptOutcome KMSClient::Decrypt(const DecryptRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DecryptOutcome(result.GetResultWithOwnership()) : DecryptOutcome(std::move(result.GetError()));
@@ -322,6 +329,11 @@ EnableKeyRotationOutcome KMSClient::EnableKeyRotation(const EnableKeyRotationReq
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? EnableKeyRotationOutcome(result.GetResultWithOwnership())
                             : EnableKeyRotationOutcome(std::move(result.GetError()));
+}
+
+EncapsulateOutcome KMSClient::Encapsulate(const EncapsulateRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? EncapsulateOutcome(result.GetResultWithOwnership()) : EncapsulateOutcome(std::move(result.GetError()));
 }
 
 EncryptOutcome KMSClient::Encrypt(const EncryptRequest& request) const {

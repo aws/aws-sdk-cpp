@@ -27,6 +27,8 @@ static const int ReEncrypt_HASH = HashingUtils::HashString("ReEncrypt");
 static const int Sign_HASH = HashingUtils::HashString("Sign");
 static const int Verify_HASH = HashingUtils::HashString("Verify");
 static const int VerifyMac_HASH = HashingUtils::HashString("VerifyMac");
+static const int Encapsulate_HASH = HashingUtils::HashString("Encapsulate");
+static const int Decapsulate_HASH = HashingUtils::HashString("Decapsulate");
 
 KeyLastUsageTrackingOperation GetKeyLastUsageTrackingOperationForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -54,6 +56,10 @@ KeyLastUsageTrackingOperation GetKeyLastUsageTrackingOperationForName(const Aws:
     return KeyLastUsageTrackingOperation::Verify;
   } else if (hashCode == VerifyMac_HASH) {
     return KeyLastUsageTrackingOperation::VerifyMac;
+  } else if (hashCode == Encapsulate_HASH) {
+    return KeyLastUsageTrackingOperation::Encapsulate;
+  } else if (hashCode == Decapsulate_HASH) {
+    return KeyLastUsageTrackingOperation::Decapsulate;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -92,6 +98,10 @@ Aws::String GetNameForKeyLastUsageTrackingOperation(KeyLastUsageTrackingOperatio
       return "Verify";
     case KeyLastUsageTrackingOperation::VerifyMac:
       return "VerifyMac";
+    case KeyLastUsageTrackingOperation::Encapsulate:
+      return "Encapsulate";
+    case KeyLastUsageTrackingOperation::Decapsulate:
+      return "Decapsulate";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

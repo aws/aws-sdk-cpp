@@ -17,6 +17,7 @@ namespace DeepHealthCheckTypeMapper {
 
 static const int InstanceStress_HASH = HashingUtils::HashString("InstanceStress");
 static const int InstanceConnectivity_HASH = HashingUtils::HashString("InstanceConnectivity");
+static const int MultiNodeTrainingValidation_HASH = HashingUtils::HashString("MultiNodeTrainingValidation");
 
 DeepHealthCheckType GetDeepHealthCheckTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ DeepHealthCheckType GetDeepHealthCheckTypeForName(const Aws::String& name) {
     return DeepHealthCheckType::InstanceStress;
   } else if (hashCode == InstanceConnectivity_HASH) {
     return DeepHealthCheckType::InstanceConnectivity;
+  } else if (hashCode == MultiNodeTrainingValidation_HASH) {
+    return DeepHealthCheckType::MultiNodeTrainingValidation;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForDeepHealthCheckType(DeepHealthCheckType enumValue) {
       return "InstanceStress";
     case DeepHealthCheckType::InstanceConnectivity:
       return "InstanceConnectivity";
+    case DeepHealthCheckType::MultiNodeTrainingValidation:
+      return "MultiNodeTrainingValidation";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

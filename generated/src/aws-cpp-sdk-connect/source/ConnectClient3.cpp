@@ -69,6 +69,7 @@
 #include <aws/connect/model/UpdateMetricContentRequest.h>
 #include <aws/connect/model/UpdateMetricMetadataRequest.h>
 #include <aws/connect/model/UpdateNotificationContentRequest.h>
+#include <aws/connect/model/UpdateOutboundEmailContactMessageRequest.h>
 #include <aws/connect/model/UpdateParticipantAuthenticationRequest.h>
 #include <aws/connect/model/UpdateParticipantRoleConfigRequest.h>
 #include <aws/connect/model/UpdatePhoneNumberMetadataRequest.h>
@@ -105,7 +106,6 @@
 #include <aws/connect/model/UpdateUserSecurityProfilesRequest.h>
 #include <aws/connect/model/UpdateViewContentRequest.h>
 #include <aws/connect/model/UpdateViewMetadataRequest.h>
-#include <aws/connect/model/UpdateWorkspaceMetadataRequest.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/client/CoreErrors.h>
@@ -1362,6 +1362,33 @@ UpdateNotificationContentOutcome ConnectClient::UpdateNotificationContent(const 
                             : UpdateNotificationContentOutcome(std::move(result.GetError()));
 }
 
+UpdateOutboundEmailContactMessageOutcome ConnectClient::UpdateOutboundEmailContactMessage(
+    const UpdateOutboundEmailContactMessageRequest& request) const {
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateOutboundEmailContactMessage", "Required field: InstanceId, is not set");
+    return UpdateOutboundEmailContactMessageOutcome(Aws::Client::AWSError<ConnectErrors>(
+        ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  if (!request.ContactIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateOutboundEmailContactMessage", "Required field: ContactId, is not set");
+    return UpdateOutboundEmailContactMessageOutcome(Aws::Client::AWSError<ConnectErrors>(
+        ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContactId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/instances/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/contacts/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetContactId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/outbound-email-message");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateOutboundEmailContactMessageOutcome(result.GetResultWithOwnership())
+                            : UpdateOutboundEmailContactMessageOutcome(std::move(result.GetError()));
+}
+
 UpdateParticipantAuthenticationOutcome ConnectClient::UpdateParticipantAuthentication(
     const UpdateParticipantAuthenticationRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
@@ -2221,29 +2248,4 @@ UpdateViewMetadataOutcome ConnectClient::UpdateViewMetadata(const UpdateViewMeta
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UpdateViewMetadataOutcome(result.GetResultWithOwnership())
                             : UpdateViewMetadataOutcome(std::move(result.GetError()));
-}
-
-UpdateWorkspaceMetadataOutcome ConnectClient::UpdateWorkspaceMetadata(const UpdateWorkspaceMetadataRequest& request) const {
-  if (!request.InstanceIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("UpdateWorkspaceMetadata", "Required field: InstanceId, is not set");
-    return UpdateWorkspaceMetadataOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                               "Missing required field [InstanceId]", false));
-  }
-  if (!request.WorkspaceIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("UpdateWorkspaceMetadata", "Required field: WorkspaceId, is not set");
-    return UpdateWorkspaceMetadataOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                               "Missing required field [WorkspaceId]", false));
-  }
-
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
-    endpointResolutionOutcome.GetResult().AddPathSegments("/metadata");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? UpdateWorkspaceMetadataOutcome(result.GetResultWithOwnership())
-                            : UpdateWorkspaceMetadataOutcome(std::move(result.GetError()));
 }

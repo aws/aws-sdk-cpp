@@ -113,6 +113,7 @@
 #include <aws/odb/model/UpdateAutonomousDatabaseResult.h>
 #include <aws/odb/model/UpdateCloudExadataInfrastructureResult.h>
 #include <aws/odb/model/UpdateExadbVmClusterResult.h>
+#include <aws/odb/model/UpdateExascaleCloudExadataInfrastructureResult.h>
 #include <aws/odb/model/UpdateExascaleDbStorageVaultResult.h>
 #include <aws/odb/model/UpdateOdbNetworkResult.h>
 #include <aws/odb/model/UpdateOdbPeeringConnectionResult.h>
@@ -226,6 +227,7 @@ class UpdateAutonomousDatabaseRequest;
 class UpdateAutonomousDatabaseBackupRequest;
 class UpdateCloudExadataInfrastructureRequest;
 class UpdateExadbVmClusterRequest;
+class UpdateExascaleCloudExadataInfrastructureRequest;
 class UpdateExascaleDbStorageVaultRequest;
 class UpdateOdbNetworkRequest;
 class UpdateOdbPeeringConnectionRequest;
@@ -311,6 +313,7 @@ typedef Aws::Utils::Outcome<UpdateAutonomousDatabaseResult, OdbError> UpdateAuto
 typedef Aws::Utils::Outcome<UpdateAutonomousDatabaseBackupResult, OdbError> UpdateAutonomousDatabaseBackupOutcome;
 typedef Aws::Utils::Outcome<UpdateCloudExadataInfrastructureResult, OdbError> UpdateCloudExadataInfrastructureOutcome;
 typedef Aws::Utils::Outcome<UpdateExadbVmClusterResult, OdbError> UpdateExadbVmClusterOutcome;
+typedef Aws::Utils::Outcome<UpdateExascaleCloudExadataInfrastructureResult, OdbError> UpdateExascaleCloudExadataInfrastructureOutcome;
 typedef Aws::Utils::Outcome<UpdateExascaleDbStorageVaultResult, OdbError> UpdateExascaleDbStorageVaultOutcome;
 typedef Aws::Utils::Outcome<UpdateOdbNetworkResult, OdbError> UpdateOdbNetworkOutcome;
 typedef Aws::Utils::Outcome<UpdateOdbPeeringConnectionResult, OdbError> UpdateOdbPeeringConnectionOutcome;
@@ -395,6 +398,7 @@ typedef std::future<UpdateAutonomousDatabaseOutcome> UpdateAutonomousDatabaseOut
 typedef std::future<UpdateAutonomousDatabaseBackupOutcome> UpdateAutonomousDatabaseBackupOutcomeCallable;
 typedef std::future<UpdateCloudExadataInfrastructureOutcome> UpdateCloudExadataInfrastructureOutcomeCallable;
 typedef std::future<UpdateExadbVmClusterOutcome> UpdateExadbVmClusterOutcomeCallable;
+typedef std::future<UpdateExascaleCloudExadataInfrastructureOutcome> UpdateExascaleCloudExadataInfrastructureOutcomeCallable;
 typedef std::future<UpdateExascaleDbStorageVaultOutcome> UpdateExascaleDbStorageVaultOutcomeCallable;
 typedef std::future<UpdateOdbNetworkOutcome> UpdateOdbNetworkOutcomeCallable;
 typedef std::future<UpdateOdbPeeringConnectionOutcome> UpdateOdbPeeringConnectionOutcomeCallable;
@@ -661,6 +665,10 @@ typedef std::function<void(const OdbClient*, const Model::UpdateCloudExadataInfr
 typedef std::function<void(const OdbClient*, const Model::UpdateExadbVmClusterRequest&, const Model::UpdateExadbVmClusterOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateExadbVmClusterResponseReceivedHandler;
+typedef std::function<void(const OdbClient*, const Model::UpdateExascaleCloudExadataInfrastructureRequest&,
+                           const Model::UpdateExascaleCloudExadataInfrastructureOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateExascaleCloudExadataInfrastructureResponseReceivedHandler;
 typedef std::function<void(const OdbClient*, const Model::UpdateExascaleDbStorageVaultRequest&,
                            const Model::UpdateExascaleDbStorageVaultOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

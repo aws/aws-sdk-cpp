@@ -39,7 +39,7 @@ class CreateOAuth2TokenWithIAMRequest : public SigninRequest {
 
   ///@{
   /**
-   * <p>OAuth 2.0 grant type. Must be &quot;client_credentials&quot;.</p>
+   * <p>The OAuth 2.0 grant type. Must be &quot;client_credentials&quot;.</p>
    */
   inline const Aws::String& GetGrantType() const { return m_grantType; }
   inline bool GrantTypeHasBeenSet() const { return m_grantTypeHasBeenSet; }

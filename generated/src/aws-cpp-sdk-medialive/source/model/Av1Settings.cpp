@@ -115,6 +115,10 @@ Av1Settings& Av1Settings::operator=(JsonView jsonValue) {
     m_bitDepth = Av1BitDepthMapper::GetAv1BitDepthForName(jsonValue.GetString("bitDepth"));
     m_bitDepthHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("filterSettings")) {
+    m_filterSettings = jsonValue.GetObject("filterSettings");
+    m_filterSettingsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -216,6 +220,10 @@ JsonValue Av1Settings::Jsonize() const {
 
   if (m_bitDepthHasBeenSet) {
     payload.WithString("bitDepth", Av1BitDepthMapper::GetNameForAv1BitDepth(m_bitDepth));
+  }
+
+  if (m_filterSettingsHasBeenSet) {
+    payload.WithObject("filterSettings", m_filterSettings.Jsonize());
   }
 
   return payload;

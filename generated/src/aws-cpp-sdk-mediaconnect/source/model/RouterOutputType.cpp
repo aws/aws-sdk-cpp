@@ -18,6 +18,7 @@ namespace RouterOutputTypeMapper {
 static const int STANDARD_HASH = HashingUtils::HashString("STANDARD");
 static const int MEDIACONNECT_FLOW_HASH = HashingUtils::HashString("MEDIACONNECT_FLOW");
 static const int MEDIALIVE_INPUT_HASH = HashingUtils::HashString("MEDIALIVE_INPUT");
+static const int SOURCE_ENDPOINT_HASH = HashingUtils::HashString("SOURCE_ENDPOINT");
 
 RouterOutputType GetRouterOutputTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ RouterOutputType GetRouterOutputTypeForName(const Aws::String& name) {
     return RouterOutputType::MEDIACONNECT_FLOW;
   } else if (hashCode == MEDIALIVE_INPUT_HASH) {
     return RouterOutputType::MEDIALIVE_INPUT;
+  } else if (hashCode == SOURCE_ENDPOINT_HASH) {
+    return RouterOutputType::SOURCE_ENDPOINT;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForRouterOutputType(RouterOutputType enumValue) {
       return "MEDIACONNECT_FLOW";
     case RouterOutputType::MEDIALIVE_INPUT:
       return "MEDIALIVE_INPUT";
+    case RouterOutputType::SOURCE_ENDPOINT:
+      return "SOURCE_ENDPOINT";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

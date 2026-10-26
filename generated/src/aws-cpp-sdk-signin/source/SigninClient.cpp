@@ -22,6 +22,7 @@
 #include <aws/signin/SigninErrorMarshaller.h>
 #include <aws/signin/model/CreateOAuth2TokenRequest.h>
 #include <aws/signin/model/CreateOAuth2TokenWithIAMRequest.h>
+#include <aws/signin/model/CreateOAuth2TokenWithTokenExchangeRequest.h>
 #include <aws/signin/model/DeleteConsoleAuthorizationConfigurationRequest.h>
 #include <aws/signin/model/DeleteResourcePermissionStatementRequest.h>
 #include <aws/signin/model/GetConsoleAuthorizationConfigurationRequest.h>
@@ -209,6 +210,21 @@ CreateOAuth2TokenWithIAMOutcome SigninClient::CreateOAuth2TokenWithIAM(const Cre
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateOAuth2TokenWithIAMOutcome(result.GetResultWithOwnership())
                             : CreateOAuth2TokenWithIAMOutcome(std::move(result.GetError()));
+}
+
+CreateOAuth2TokenWithTokenExchangeOutcome SigninClient::CreateOAuth2TokenWithTokenExchange(
+    const CreateOAuth2TokenWithTokenExchangeRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    Aws::StringStream ss;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/token");
+    ss.str("?x-amz-oauth-token-method=token-exchange");
+    endpointResolutionOutcome.GetResult().SetQueryString(ss.str());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
+  return result.IsSuccess() ? CreateOAuth2TokenWithTokenExchangeOutcome(result.GetResultWithOwnership())
+                            : CreateOAuth2TokenWithTokenExchangeOutcome(std::move(result.GetError()));
 }
 
 DeleteConsoleAuthorizationConfigurationOutcome SigninClient::DeleteConsoleAuthorizationConfiguration(

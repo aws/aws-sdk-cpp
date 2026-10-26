@@ -21,12 +21,10 @@ namespace Signin {
 namespace Model {
 
 /**
- * <p>Response body payload for CreateOAuth2Token operation</p> <p>The response
- * content depends on the grant_type from the request:</p> <ul>
- * <li>grant_type=authorization_code: Returns all fields including refresh_token
- * and id_token</li> <li>grant_type=refresh_token: Returns access_token,
- * token_type, expires_in, refresh_token (no id_token)</li> </ul><p><h3>See
- * Also:</h3>   <a
+ * <p>The response body for an OAuth 2.0 token request. The fields returned depend
+ * on the &quot;grant_type&quot;. The authorization code flow returns
+ * &quot;refresh_token&quot; and &quot;id_token&quot;. The refresh token flow omits
+ * &quot;id_token&quot;.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/signin-2023-01-01/CreateOAuth2TokenResponseBody">AWS
  * API Reference</a></p>
  */
@@ -39,8 +37,8 @@ class CreateOAuth2TokenResponseBody {
 
   ///@{
   /**
-   * <p>Scoped-down AWS credentials (15 minute duration) Present for both
-   * authorization code redemption and token refresh</p>
+   * <p>The access token issued by the authorization server. The token contains
+   * temporary AWS security credentials that you use to sign requests with SigV4.</p>
    */
   inline const AccessToken& GetAccessToken() const { return m_accessToken; }
   inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
@@ -58,8 +56,7 @@ class CreateOAuth2TokenResponseBody {
 
   ///@{
   /**
-   * <p>Token type indicating this is AWS SigV4 credentials Value is
-   * &quot;aws_sigv4&quot; for both flows</p>
+   * <p>The type of token issued. Value is &quot;aws_sigv4&quot;.</p>
    */
   inline const Aws::String& GetTokenType() const { return m_tokenType; }
   inline bool TokenTypeHasBeenSet() const { return m_tokenTypeHasBeenSet; }
@@ -77,8 +74,8 @@ class CreateOAuth2TokenResponseBody {
 
   ///@{
   /**
-   * <p>Time to expiry in seconds (maximum 900) Present for both authorization code
-   * redemption and token refresh</p>
+   * <p>The number of seconds until the access token expires. Maximum value is 900
+   * seconds (15 minutes).</p>
    */
   inline int GetExpiresIn() const { return m_expiresIn; }
   inline bool ExpiresInHasBeenSet() const { return m_expiresInHasBeenSet; }
@@ -94,8 +91,8 @@ class CreateOAuth2TokenResponseBody {
 
   ///@{
   /**
-   * <p>Encrypted refresh token with cnf.jkt (SHA-256 thumbprint of presented jwk)
-   * Always present in responses (required for both flows)</p>
+   * <p>A refresh token that can be used to obtain new access tokens without
+   * re-authenticating.</p>
    */
   inline const Aws::String& GetRefreshToken() const { return m_refreshToken; }
   inline bool RefreshTokenHasBeenSet() const { return m_refreshTokenHasBeenSet; }
@@ -113,9 +110,9 @@ class CreateOAuth2TokenResponseBody {
 
   ///@{
   /**
-   * <p>ID token containing user identity information Present only in authorization
-   * code redemption response (grant_type=authorization_code) Not included in token
-   * refresh responses</p>
+   * <p>A JSON Web Token (JWT) containing user identity claims. Present only when
+   * &quot;grant_type=authorization_code&quot;. Not included in refresh token
+   * responses.</p>
    */
   inline const Aws::String& GetIdToken() const { return m_idToken; }
   inline bool IdTokenHasBeenSet() const { return m_idTokenHasBeenSet; }

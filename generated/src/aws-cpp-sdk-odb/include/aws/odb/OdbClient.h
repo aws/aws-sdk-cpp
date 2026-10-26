@@ -393,7 +393,9 @@ class AWS_ODB_API OdbClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Creates an Exascale storage vault.</p><p><h3>See Also:</h3>   <a
+   * <p>Creates an Exascale storage vault.</p> <p>To create the Exascale storage
+   * vault on dedicated Exadata infrastructure, specify
+   * <code>cloudExadataInfrastructureId</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/CreateExascaleDbStorageVault">AWS
    * API Reference</a></p>
    */
@@ -2286,6 +2288,39 @@ class AWS_ODB_API OdbClient : public Aws::Client::AWSJsonClient,
   void UpdateExadbVmClusterAsync(const UpdateExadbVmClusterRequestT& request, const UpdateExadbVmClusterResponseReceivedHandler& handler,
                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&OdbClient::UpdateExadbVmCluster, request, handler, context);
+  }
+
+  /**
+   * <p>Configures or updates the Exascale storage on an Exadata infrastructure.
+   * After you configure Exascale storage, you can create Exascale storage vaults on
+   * the infrastructure and VM clusters that use Exascale storage.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/UpdateExascaleCloudExadataInfrastructure">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateExascaleCloudExadataInfrastructureOutcome UpdateExascaleCloudExadataInfrastructure(
+      const Model::UpdateExascaleCloudExadataInfrastructureRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateExascaleCloudExadataInfrastructure that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename UpdateExascaleCloudExadataInfrastructureRequestT = Model::UpdateExascaleCloudExadataInfrastructureRequest>
+  Model::UpdateExascaleCloudExadataInfrastructureOutcomeCallable UpdateExascaleCloudExadataInfrastructureCallable(
+      const UpdateExascaleCloudExadataInfrastructureRequestT& request) const {
+    return SubmitCallable(&OdbClient::UpdateExascaleCloudExadataInfrastructure, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateExascaleCloudExadataInfrastructure that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename UpdateExascaleCloudExadataInfrastructureRequestT = Model::UpdateExascaleCloudExadataInfrastructureRequest>
+  void UpdateExascaleCloudExadataInfrastructureAsync(
+      const UpdateExascaleCloudExadataInfrastructureRequestT& request,
+      const UpdateExascaleCloudExadataInfrastructureResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OdbClient::UpdateExascaleCloudExadataInfrastructure, request, handler, context);
   }
 
   /**

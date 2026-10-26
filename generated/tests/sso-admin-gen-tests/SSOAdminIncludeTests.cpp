@@ -227,6 +227,7 @@
 #include <aws/sso-admin/model/PutPermissionsBoundaryToPermissionSetResult.h>
 #include <aws/sso-admin/model/RefreshTokenGrant.h>
 #include <aws/sso-admin/model/RegionMetadata.h>
+#include <aws/sso-admin/model/RegionScope.h>
 #include <aws/sso-admin/model/RegionStatus.h>
 #include <aws/sso-admin/model/RemoveRegionRequest.h>
 #include <aws/sso-admin/model/RemoveRegionResult.h>

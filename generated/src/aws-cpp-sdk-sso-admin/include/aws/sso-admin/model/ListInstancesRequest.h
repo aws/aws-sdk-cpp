@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sso-admin/SSOAdminRequest.h>
 #include <aws/sso-admin/SSOAdmin_EXPORTS.h>
+#include <aws/sso-admin/model/RegionScope.h>
 
 #include <utility>
 
@@ -64,12 +65,36 @@ class ListInstancesRequest : public SSOAdminRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies which Amazon Web Services Regions to list IAM Identity Center
+   * instances from. Valid values:</p> <ul> <li> <p> <code>CURRENT_REGION</code> -
+   * Lists only the instances in the Region that you call this API from.</p> </li>
+   * <li> <p> <code>ALL_REGIONS</code> - Lists the instances that the caller owns or
+   * that are shared with the caller across all Regions.</p> </li> </ul> <p>If you
+   * don't specify a value, the default is <code>CURRENT_REGION</code>.</p>
+   */
+  inline RegionScope GetRegionScope() const { return m_regionScope; }
+  inline bool RegionScopeHasBeenSet() const { return m_regionScopeHasBeenSet; }
+  inline void SetRegionScope(RegionScope value) {
+    m_regionScopeHasBeenSet = true;
+    m_regionScope = value;
+  }
+  inline ListInstancesRequest& WithRegionScope(RegionScope value) {
+    SetRegionScope(value);
+    return *this;
+  }
+  ///@}
  private:
   int m_maxResults{0};
 
   Aws::String m_nextToken;
+
+  RegionScope m_regionScope{RegionScope::NOT_SET};
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
+  bool m_regionScopeHasBeenSet = false;
 };
 
 }  // namespace Model

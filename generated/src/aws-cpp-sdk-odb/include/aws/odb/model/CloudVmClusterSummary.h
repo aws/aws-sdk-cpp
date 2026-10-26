@@ -12,9 +12,12 @@
 #include <aws/odb/model/DataCollectionOptions.h>
 #include <aws/odb/model/DiskRedundancy.h>
 #include <aws/odb/model/ExadataIormConfig.h>
+#include <aws/odb/model/FileSystemConfigurationDetails.h>
 #include <aws/odb/model/IamRole.h>
 #include <aws/odb/model/LicenseModel.h>
 #include <aws/odb/model/ResourceStatus.h>
+#include <aws/odb/model/StorageManagementType.h>
+#include <aws/odb/model/VmStorageType.h>
 
 #include <utility>
 
@@ -162,6 +165,122 @@ class CloudVmClusterSummary {
   template <typename CloudExadataInfrastructureArnT = Aws::String>
   CloudVmClusterSummary& WithCloudExadataInfrastructureArn(CloudExadataInfrastructureArnT&& value) {
     SetCloudExadataInfrastructureArn(std::forward<CloudExadataInfrastructureArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The unique identifier of the Exascale storage vault that the VM cluster uses.
+   * This value is present only for VM clusters that use an Exascale storage
+   * vault.</p>
+   */
+  inline const Aws::String& GetExascaleDbStorageVaultId() const { return m_exascaleDbStorageVaultId; }
+  inline bool ExascaleDbStorageVaultIdHasBeenSet() const { return m_exascaleDbStorageVaultIdHasBeenSet; }
+  template <typename ExascaleDbStorageVaultIdT = Aws::String>
+  void SetExascaleDbStorageVaultId(ExascaleDbStorageVaultIdT&& value) {
+    m_exascaleDbStorageVaultIdHasBeenSet = true;
+    m_exascaleDbStorageVaultId = std::forward<ExascaleDbStorageVaultIdT>(value);
+  }
+  template <typename ExascaleDbStorageVaultIdT = Aws::String>
+  CloudVmClusterSummary& WithExascaleDbStorageVaultId(ExascaleDbStorageVaultIdT&& value) {
+    SetExascaleDbStorageVaultId(std::forward<ExascaleDbStorageVaultIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the Exascale storage vault that the VM
+   * cluster uses. This value is present only for VM clusters that use an Exascale
+   * storage vault.</p>
+   */
+  inline const Aws::String& GetExascaleDbStorageVaultArn() const { return m_exascaleDbStorageVaultArn; }
+  inline bool ExascaleDbStorageVaultArnHasBeenSet() const { return m_exascaleDbStorageVaultArnHasBeenSet; }
+  template <typename ExascaleDbStorageVaultArnT = Aws::String>
+  void SetExascaleDbStorageVaultArn(ExascaleDbStorageVaultArnT&& value) {
+    m_exascaleDbStorageVaultArnHasBeenSet = true;
+    m_exascaleDbStorageVaultArn = std::forward<ExascaleDbStorageVaultArnT>(value);
+  }
+  template <typename ExascaleDbStorageVaultArnT = Aws::String>
+  CloudVmClusterSummary& WithExascaleDbStorageVaultArn(ExascaleDbStorageVaultArnT&& value) {
+    SetExascaleDbStorageVaultArn(std::forward<ExascaleDbStorageVaultArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The type of storage management for the VM cluster. A value of
+   * <code>ASM</code> indicates Oracle Automatic Storage Management, and
+   * <code>EXASCALE</code> indicates Exascale storage.</p>
+   */
+  inline StorageManagementType GetStorageManagementType() const { return m_storageManagementType; }
+  inline bool StorageManagementTypeHasBeenSet() const { return m_storageManagementTypeHasBeenSet; }
+  inline void SetStorageManagementType(StorageManagementType value) {
+    m_storageManagementTypeHasBeenSet = true;
+    m_storageManagementType = value;
+  }
+  inline CloudVmClusterSummary& WithStorageManagementType(StorageManagementType value) {
+    SetStorageManagementType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The type of storage that the VM cluster uses for its VM file systems.</p>
+   */
+  inline VmStorageType GetVmFileSystemStorageType() const { return m_vmFileSystemStorageType; }
+  inline bool VmFileSystemStorageTypeHasBeenSet() const { return m_vmFileSystemStorageTypeHasBeenSet; }
+  inline void SetVmFileSystemStorageType(VmStorageType value) {
+    m_vmFileSystemStorageTypeHasBeenSet = true;
+    m_vmFileSystemStorageType = value;
+  }
+  inline CloudVmClusterSummary& WithVmFileSystemStorageType(VmStorageType value) {
+    SetVmFileSystemStorageType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The type of storage that the VM cluster uses for VM backups.</p>
+   */
+  inline VmStorageType GetVmBackupStorageType() const { return m_vmBackupStorageType; }
+  inline bool VmBackupStorageTypeHasBeenSet() const { return m_vmBackupStorageTypeHasBeenSet; }
+  inline void SetVmBackupStorageType(VmStorageType value) {
+    m_vmBackupStorageTypeHasBeenSet = true;
+    m_vmBackupStorageType = value;
+  }
+  inline CloudVmClusterSummary& WithVmBackupStorageType(VmStorageType value) {
+    SetVmBackupStorageType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The list of file system configurations for the VM cluster.</p>
+   */
+  inline const Aws::Vector<FileSystemConfigurationDetails>& GetFileSystemConfigurationDetails() const {
+    return m_fileSystemConfigurationDetails;
+  }
+  inline bool FileSystemConfigurationDetailsHasBeenSet() const { return m_fileSystemConfigurationDetailsHasBeenSet; }
+  template <typename FileSystemConfigurationDetailsT = Aws::Vector<FileSystemConfigurationDetails>>
+  void SetFileSystemConfigurationDetails(FileSystemConfigurationDetailsT&& value) {
+    m_fileSystemConfigurationDetailsHasBeenSet = true;
+    m_fileSystemConfigurationDetails = std::forward<FileSystemConfigurationDetailsT>(value);
+  }
+  template <typename FileSystemConfigurationDetailsT = Aws::Vector<FileSystemConfigurationDetails>>
+  CloudVmClusterSummary& WithFileSystemConfigurationDetails(FileSystemConfigurationDetailsT&& value) {
+    SetFileSystemConfigurationDetails(std::forward<FileSystemConfigurationDetailsT>(value));
+    return *this;
+  }
+  template <typename FileSystemConfigurationDetailsT = FileSystemConfigurationDetails>
+  CloudVmClusterSummary& AddFileSystemConfigurationDetails(FileSystemConfigurationDetailsT&& value) {
+    m_fileSystemConfigurationDetailsHasBeenSet = true;
+    m_fileSystemConfigurationDetails.emplace_back(std::forward<FileSystemConfigurationDetailsT>(value));
     return *this;
   }
   ///@}
@@ -851,6 +970,18 @@ class CloudVmClusterSummary {
 
   Aws::String m_cloudExadataInfrastructureArn;
 
+  Aws::String m_exascaleDbStorageVaultId;
+
+  Aws::String m_exascaleDbStorageVaultArn;
+
+  StorageManagementType m_storageManagementType{StorageManagementType::NOT_SET};
+
+  VmStorageType m_vmFileSystemStorageType{VmStorageType::NOT_SET};
+
+  VmStorageType m_vmBackupStorageType{VmStorageType::NOT_SET};
+
+  Aws::Vector<FileSystemConfigurationDetails> m_fileSystemConfigurationDetails;
+
   Aws::String m_clusterName;
 
   int m_cpuCoreCount{0};
@@ -929,6 +1060,12 @@ class CloudVmClusterSummary {
   bool m_cloudVmClusterArnHasBeenSet = false;
   bool m_cloudExadataInfrastructureIdHasBeenSet = false;
   bool m_cloudExadataInfrastructureArnHasBeenSet = false;
+  bool m_exascaleDbStorageVaultIdHasBeenSet = false;
+  bool m_exascaleDbStorageVaultArnHasBeenSet = false;
+  bool m_storageManagementTypeHasBeenSet = false;
+  bool m_vmFileSystemStorageTypeHasBeenSet = false;
+  bool m_vmBackupStorageTypeHasBeenSet = false;
+  bool m_fileSystemConfigurationDetailsHasBeenSet = false;
   bool m_clusterNameHasBeenSet = false;
   bool m_cpuCoreCountHasBeenSet = false;
   bool m_dataCollectionOptionsHasBeenSet = false;

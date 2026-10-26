@@ -26,6 +26,7 @@
 #include <aws/kms/model/CreateGrantResult.h>
 #include <aws/kms/model/CreateKeyRequest.h>
 #include <aws/kms/model/CreateKeyResult.h>
+#include <aws/kms/model/DecapsulateResult.h>
 #include <aws/kms/model/DecryptRequest.h>
 #include <aws/kms/model/DecryptResult.h>
 #include <aws/kms/model/DeleteCustomKeyStoreResult.h>
@@ -35,6 +36,7 @@
 #include <aws/kms/model/DescribeCustomKeyStoresResult.h>
 #include <aws/kms/model/DescribeKeyResult.h>
 #include <aws/kms/model/DisconnectCustomKeyStoreResult.h>
+#include <aws/kms/model/EncapsulateResult.h>
 #include <aws/kms/model/EncryptResult.h>
 #include <aws/kms/model/GenerateDataKeyPairResult.h>
 #include <aws/kms/model/GenerateDataKeyPairWithoutPlaintextResult.h>
@@ -107,6 +109,7 @@ class CreateAliasRequest;
 class CreateCustomKeyStoreRequest;
 class CreateGrantRequest;
 class CreateKeyRequest;
+class DecapsulateRequest;
 class DecryptRequest;
 class DeleteAliasRequest;
 class DeleteCustomKeyStoreRequest;
@@ -119,6 +122,7 @@ class DisableKeyRotationRequest;
 class DisconnectCustomKeyStoreRequest;
 class EnableKeyRequest;
 class EnableKeyRotationRequest;
+class EncapsulateRequest;
 class EncryptRequest;
 class GenerateDataKeyRequest;
 class GenerateDataKeyPairRequest;
@@ -164,6 +168,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, KMSError> CreateAliasOutcome;
 typedef Aws::Utils::Outcome<CreateCustomKeyStoreResult, KMSError> CreateCustomKeyStoreOutcome;
 typedef Aws::Utils::Outcome<CreateGrantResult, KMSError> CreateGrantOutcome;
 typedef Aws::Utils::Outcome<CreateKeyResult, KMSError> CreateKeyOutcome;
+typedef Aws::Utils::Outcome<DecapsulateResult, KMSError> DecapsulateOutcome;
 typedef Aws::Utils::Outcome<DecryptResult, KMSError> DecryptOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, KMSError> DeleteAliasOutcome;
 typedef Aws::Utils::Outcome<DeleteCustomKeyStoreResult, KMSError> DeleteCustomKeyStoreOutcome;
@@ -176,6 +181,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, KMSError> DisableKeyRotationOutcome;
 typedef Aws::Utils::Outcome<DisconnectCustomKeyStoreResult, KMSError> DisconnectCustomKeyStoreOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, KMSError> EnableKeyOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, KMSError> EnableKeyRotationOutcome;
+typedef Aws::Utils::Outcome<EncapsulateResult, KMSError> EncapsulateOutcome;
 typedef Aws::Utils::Outcome<EncryptResult, KMSError> EncryptOutcome;
 typedef Aws::Utils::Outcome<GenerateDataKeyResult, KMSError> GenerateDataKeyOutcome;
 typedef Aws::Utils::Outcome<GenerateDataKeyPairResult, KMSError> GenerateDataKeyPairOutcome;
@@ -221,6 +227,7 @@ typedef std::future<CreateAliasOutcome> CreateAliasOutcomeCallable;
 typedef std::future<CreateCustomKeyStoreOutcome> CreateCustomKeyStoreOutcomeCallable;
 typedef std::future<CreateGrantOutcome> CreateGrantOutcomeCallable;
 typedef std::future<CreateKeyOutcome> CreateKeyOutcomeCallable;
+typedef std::future<DecapsulateOutcome> DecapsulateOutcomeCallable;
 typedef std::future<DecryptOutcome> DecryptOutcomeCallable;
 typedef std::future<DeleteAliasOutcome> DeleteAliasOutcomeCallable;
 typedef std::future<DeleteCustomKeyStoreOutcome> DeleteCustomKeyStoreOutcomeCallable;
@@ -233,6 +240,7 @@ typedef std::future<DisableKeyRotationOutcome> DisableKeyRotationOutcomeCallable
 typedef std::future<DisconnectCustomKeyStoreOutcome> DisconnectCustomKeyStoreOutcomeCallable;
 typedef std::future<EnableKeyOutcome> EnableKeyOutcomeCallable;
 typedef std::future<EnableKeyRotationOutcome> EnableKeyRotationOutcomeCallable;
+typedef std::future<EncapsulateOutcome> EncapsulateOutcomeCallable;
 typedef std::future<EncryptOutcome> EncryptOutcomeCallable;
 typedef std::future<GenerateDataKeyOutcome> GenerateDataKeyOutcomeCallable;
 typedef std::future<GenerateDataKeyPairOutcome> GenerateDataKeyPairOutcomeCallable;
@@ -293,6 +301,9 @@ typedef std::function<void(const KMSClient*, const Model::CreateGrantRequest&, c
 typedef std::function<void(const KMSClient*, const Model::CreateKeyRequest&, const Model::CreateKeyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateKeyResponseReceivedHandler;
+typedef std::function<void(const KMSClient*, const Model::DecapsulateRequest&, const Model::DecapsulateOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DecapsulateResponseReceivedHandler;
 typedef std::function<void(const KMSClient*, const Model::DecryptRequest&, const Model::DecryptOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DecryptResponseReceivedHandler;
@@ -329,6 +340,9 @@ typedef std::function<void(const KMSClient*, const Model::EnableKeyRequest&, con
 typedef std::function<void(const KMSClient*, const Model::EnableKeyRotationRequest&, const Model::EnableKeyRotationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     EnableKeyRotationResponseReceivedHandler;
+typedef std::function<void(const KMSClient*, const Model::EncapsulateRequest&, const Model::EncapsulateOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    EncapsulateResponseReceivedHandler;
 typedef std::function<void(const KMSClient*, const Model::EncryptRequest&, const Model::EncryptOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     EncryptResponseReceivedHandler;

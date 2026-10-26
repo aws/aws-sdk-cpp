@@ -6,6 +6,7 @@
 #include <aws/connect/ConnectClient.h>
 #include <aws/connect/ConnectEndpointProvider.h>
 #include <aws/connect/ConnectErrorMarshaller.h>
+#include <aws/connect/model/UpdateWorkspaceMetadataRequest.h>
 #include <aws/connect/model/UpdateWorkspacePageRequest.h>
 #include <aws/connect/model/UpdateWorkspaceThemeRequest.h>
 #include <aws/connect/model/UpdateWorkspaceVisibilityRequest.h>
@@ -34,6 +35,31 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+UpdateWorkspaceMetadataOutcome ConnectClient::UpdateWorkspaceMetadata(const UpdateWorkspaceMetadataRequest& request) const {
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateWorkspaceMetadata", "Required field: InstanceId, is not set");
+    return UpdateWorkspaceMetadataOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                               "Missing required field [InstanceId]", false));
+  }
+  if (!request.WorkspaceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateWorkspaceMetadata", "Required field: WorkspaceId, is not set");
+    return UpdateWorkspaceMetadataOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                               "Missing required field [WorkspaceId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/workspaces/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWorkspaceId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/metadata");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateWorkspaceMetadataOutcome(result.GetResultWithOwnership())
+                            : UpdateWorkspaceMetadataOutcome(std::move(result.GetError()));
+}
 
 UpdateWorkspacePageOutcome ConnectClient::UpdateWorkspacePage(const UpdateWorkspacePageRequest& request) const {
   if (!request.InstanceIdHasBeenSet()) {

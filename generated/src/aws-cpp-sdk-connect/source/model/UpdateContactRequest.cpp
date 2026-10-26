@@ -55,5 +55,9 @@ Aws::String UpdateContactRequest::SerializePayload() const {
     payload.WithObject("SystemEndpoint", m_systemEndpoint.Jsonize());
   }
 
+  if (m_additionalRecipientsHasBeenSet) {
+    payload.WithObject("AdditionalRecipients", m_additionalRecipients.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

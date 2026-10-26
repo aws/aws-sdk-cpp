@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/odb/Odb_EXPORTS.h>
 #include <aws/odb/model/ExascaleDbStorageDetails.h>
+#include <aws/odb/model/ExascaleDbStorageVaultType.h>
 #include <aws/odb/model/ResourceStatus.h>
 #include <aws/odb/model/ShapeAttribute.h>
 
@@ -141,6 +142,46 @@ class ExascaleDbStorageVault {
   template <typename AvailabilityZoneIdT = Aws::String>
   ExascaleDbStorageVault& WithAvailabilityZoneId(AvailabilityZoneIdT&& value) {
     SetAvailabilityZoneId(std::forward<AvailabilityZoneIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the Exadata infrastructure that hosts the
+   * Exascale storage vault. This value is present only for vaults on dedicated
+   * Exadata infrastructure.</p>
+   */
+  inline const Aws::String& GetCloudExadataInfrastructureArn() const { return m_cloudExadataInfrastructureArn; }
+  inline bool CloudExadataInfrastructureArnHasBeenSet() const { return m_cloudExadataInfrastructureArnHasBeenSet; }
+  template <typename CloudExadataInfrastructureArnT = Aws::String>
+  void SetCloudExadataInfrastructureArn(CloudExadataInfrastructureArnT&& value) {
+    m_cloudExadataInfrastructureArnHasBeenSet = true;
+    m_cloudExadataInfrastructureArn = std::forward<CloudExadataInfrastructureArnT>(value);
+  }
+  template <typename CloudExadataInfrastructureArnT = Aws::String>
+  ExascaleDbStorageVault& WithCloudExadataInfrastructureArn(CloudExadataInfrastructureArnT&& value) {
+    SetCloudExadataInfrastructureArn(std::forward<CloudExadataInfrastructureArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The unique identifier of the Exadata infrastructure that hosts the Exascale
+   * storage vault. This value is present only for vaults on dedicated Exadata
+   * infrastructure.</p>
+   */
+  inline const Aws::String& GetCloudExadataInfrastructureId() const { return m_cloudExadataInfrastructureId; }
+  inline bool CloudExadataInfrastructureIdHasBeenSet() const { return m_cloudExadataInfrastructureIdHasBeenSet; }
+  template <typename CloudExadataInfrastructureIdT = Aws::String>
+  void SetCloudExadataInfrastructureId(CloudExadataInfrastructureIdT&& value) {
+    m_cloudExadataInfrastructureIdHasBeenSet = true;
+    m_cloudExadataInfrastructureId = std::forward<CloudExadataInfrastructureIdT>(value);
+  }
+  template <typename CloudExadataInfrastructureIdT = Aws::String>
+  ExascaleDbStorageVault& WithCloudExadataInfrastructureId(CloudExadataInfrastructureIdT&& value) {
+    SetCloudExadataInfrastructureId(std::forward<CloudExadataInfrastructureIdT>(value));
     return *this;
   }
   ///@}
@@ -441,6 +482,22 @@ class ExascaleDbStorageVault {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The type of infrastructure that hosts the Exascale storage vault.</p>
+   */
+  inline ExascaleDbStorageVaultType GetVaultType() const { return m_vaultType; }
+  inline bool VaultTypeHasBeenSet() const { return m_vaultTypeHasBeenSet; }
+  inline void SetVaultType(ExascaleDbStorageVaultType value) {
+    m_vaultTypeHasBeenSet = true;
+    m_vaultType = value;
+  }
+  inline ExascaleDbStorageVault& WithVaultType(ExascaleDbStorageVaultType value) {
+    SetVaultType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_exascaleDbStorageVaultId;
 
@@ -453,6 +510,10 @@ class ExascaleDbStorageVault {
   Aws::String m_availabilityZone;
 
   Aws::String m_availabilityZoneId;
+
+  Aws::String m_cloudExadataInfrastructureArn;
+
+  Aws::String m_cloudExadataInfrastructureId;
 
   Aws::Utils::DateTime m_createdAt{};
 
@@ -485,12 +546,16 @@ class ExascaleDbStorageVault {
   Aws::String m_statusReason;
 
   Aws::String m_timeZone;
+
+  ExascaleDbStorageVaultType m_vaultType{ExascaleDbStorageVaultType::NOT_SET};
   bool m_exascaleDbStorageVaultIdHasBeenSet = false;
   bool m_additionalFlashCacheInPercentHasBeenSet = false;
   bool m_attachedShapeAttributesHasBeenSet = false;
   bool m_autoscaleLimitInGBsHasBeenSet = false;
   bool m_availabilityZoneHasBeenSet = false;
   bool m_availabilityZoneIdHasBeenSet = false;
+  bool m_cloudExadataInfrastructureArnHasBeenSet = false;
+  bool m_cloudExadataInfrastructureIdHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
@@ -507,6 +572,7 @@ class ExascaleDbStorageVault {
   bool m_statusHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;
   bool m_timeZoneHasBeenSet = false;
+  bool m_vaultTypeHasBeenSet = false;
 };
 
 }  // namespace Model
