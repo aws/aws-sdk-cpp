@@ -1,0 +1,6 @@
+{
+  "type": "bugfix",
+  "category": "aws-cpp-sdk-core",
+  "contributor": "sbaluja",
+  "description": "Avoid per-chunk std::stringstream in response checksum header lookup"
+}
