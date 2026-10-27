@@ -601,24 +601,31 @@ std::shared_ptr<RetryStrategy> InitRetryStrategy(int maxAttempts, Aws::String re
     }
     else
     {
-        if (Aws::Utils::StringUtils::ToLower(Aws::Environment::GetEnv("AWS_NEW_RETRIES_2026").c_str()) != "true")
-        {
-            if (maxAttempts < 0)
-            {
-                retryStrategy = Aws::MakeShared<StandardRetryStrategy>(CLIENT_CONFIG_TAG);
-            }
-            else
-            {
-                retryStrategy = Aws::MakeShared<StandardRetryStrategy>(CLIENT_CONFIG_TAG, maxAttempts);
-            }
-        }
-        else
-        {
-            retryStrategy = Aws::MakeShared<DefaultRetryStrategy>(CLIENT_CONFIG_TAG);
-        }
+        retryStrategy = Aws::MakeShared<DefaultRetryStrategy>(CLIENT_CONFIG_TAG);
     }
 
     return retryStrategy;
+}
+
+static int ResolveConfiguredMaxAttempts()
+{
+    Aws::String maxAttemptsString = Aws::Environment::GetEnv("AWS_MAX_ATTEMPTS");
+    if (maxAttemptsString.empty())
+    {
+        maxAttemptsString = Aws::Config::GetCachedConfigValue("max_attempts");
+    }
+    // In case users specify 0 explicitly to disable retry.
+    if (maxAttemptsString == "0")
+    {
+        return 0;
+    }
+    int maxAttempts = static_cast<int>(Aws::Utils::StringUtils::ConvertToInt32(maxAttemptsString.c_str()));
+    if (maxAttempts == 0)
+    {
+        AWS_LOGSTREAM_INFO(CLIENT_CONFIG_TAG, "Retry Strategy will use the default max attempts.");
+        return -1;
+    }
+    return maxAttempts;
 }
 
 std::shared_ptr<RetryStrategy> InitRetryStrategy(int maxAttempts, Aws::String retryMode, double transientBackoffBaseSec) {
@@ -626,6 +633,13 @@ std::shared_ptr<RetryStrategy> InitRetryStrategy(int maxAttempts, Aws::String re
     {
         // Gate is off: ignore service-specific tuning, use default behavior
         return InitRetryStrategy(retryMode);
+    }
+
+    // maxAttempts is a service default. A max attempts value the customer configured wins.
+    const int configuredMaxAttempts = ResolveConfiguredMaxAttempts();
+    if (configuredMaxAttempts >= 0)
+    {
+        maxAttempts = configuredMaxAttempts;
     }
 
     // Only standard mode honors a service-specific backoff base; other modes are unaffected,
@@ -641,28 +655,7 @@ std::shared_ptr<RetryStrategy> InitRetryStrategy(int maxAttempts, Aws::String re
 
 std::shared_ptr<RetryStrategy> InitRetryStrategy(Aws::String retryMode)
 {
-    int maxAttempts = 0;
-    Aws::String maxAttemptsString = Aws::Environment::GetEnv("AWS_MAX_ATTEMPTS");
-    if (maxAttemptsString.empty())
-    {
-        maxAttemptsString = Aws::Config::GetCachedConfigValue("max_attempts");
-    }
-    // In case users specify 0 explicitly to disable retry.
-    if (maxAttemptsString == "0")
-    {
-        maxAttempts = 0;
-    }
-    else
-    {
-        maxAttempts = static_cast<int>(Aws::Utils::StringUtils::ConvertToInt32(maxAttemptsString.c_str()));
-        if (maxAttempts == 0)
-        {
-            AWS_LOGSTREAM_INFO(CLIENT_CONFIG_TAG, "Retry Strategy will use the default max attempts.");
-            maxAttempts = -1;
-        }
-    }
-
-    return InitRetryStrategy(maxAttempts, retryMode);
+    return InitRetryStrategy(ResolveConfiguredMaxAttempts(), retryMode);
 }
 
 Aws::String ClientConfiguration::LoadConfigFromEnvOrProfile(const Aws::String& envKey,
