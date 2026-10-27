@@ -278,6 +278,8 @@
 #include <aws/ecs/model/GatewayTestTrafficHeader.h>
 #include <aws/ecs/model/GetTaskProtectionRequest.h>
 #include <aws/ecs/model/GetTaskProtectionResult.h>
+#include <aws/ecs/model/GpuDevice.h>
+#include <aws/ecs/model/GpuSharingMode.h>
 #include <aws/ecs/model/HealthCheck.h>
 #include <aws/ecs/model/HealthStatus.h>
 #include <aws/ecs/model/HostEntry.h>
@@ -388,6 +390,7 @@
 #include <aws/ecs/model/NetworkInterface.h>
 #include <aws/ecs/model/NetworkInterfaceCountRequest.h>
 #include <aws/ecs/model/NetworkMode.h>
+#include <aws/ecs/model/NvidiaMpsAllocation.h>
 #include <aws/ecs/model/OSFamily.h>
 #include <aws/ecs/model/PidMode.h>
 #include <aws/ecs/model/PlacementConstraint.h>
@@ -472,6 +475,7 @@
 #include <aws/ecs/model/Setting.h>
 #include <aws/ecs/model/SettingName.h>
 #include <aws/ecs/model/SettingType.h>
+#include <aws/ecs/model/SharingStrategy.h>
 #include <aws/ecs/model/SortOrder.h>
 #include <aws/ecs/model/StabilityStatus.h>
 #include <aws/ecs/model/StartTaskRequest.h>

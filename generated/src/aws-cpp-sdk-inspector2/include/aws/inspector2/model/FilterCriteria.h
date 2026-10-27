@@ -1173,6 +1173,103 @@ class FilterCriteria {
 
   ///@{
   /**
+   * <p>The ID of the Amazon Machine Image (AMI) used to filter findings.</p>
+   */
+  inline const Aws::Vector<StringFilter>& GetMachineImageId() const { return m_machineImageId; }
+  inline bool MachineImageIdHasBeenSet() const { return m_machineImageIdHasBeenSet; }
+  template <typename MachineImageIdT = Aws::Vector<StringFilter>>
+  void SetMachineImageId(MachineImageIdT&& value) {
+    m_machineImageIdHasBeenSet = true;
+    m_machineImageId = std::forward<MachineImageIdT>(value);
+  }
+  template <typename MachineImageIdT = Aws::Vector<StringFilter>>
+  FilterCriteria& WithMachineImageId(MachineImageIdT&& value) {
+    SetMachineImageId(std::forward<MachineImageIdT>(value));
+    return *this;
+  }
+  template <typename MachineImageIdT = StringFilter>
+  FilterCriteria& AddMachineImageId(MachineImageIdT&& value) {
+    m_machineImageIdHasBeenSet = true;
+    m_machineImageId.emplace_back(std::forward<MachineImageIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the Amazon Machine Image (AMI) used to filter findings.</p>
+   */
+  inline const Aws::Vector<StringFilter>& GetMachineImageName() const { return m_machineImageName; }
+  inline bool MachineImageNameHasBeenSet() const { return m_machineImageNameHasBeenSet; }
+  template <typename MachineImageNameT = Aws::Vector<StringFilter>>
+  void SetMachineImageName(MachineImageNameT&& value) {
+    m_machineImageNameHasBeenSet = true;
+    m_machineImageName = std::forward<MachineImageNameT>(value);
+  }
+  template <typename MachineImageNameT = Aws::Vector<StringFilter>>
+  FilterCriteria& WithMachineImageName(MachineImageNameT&& value) {
+    SetMachineImageName(std::forward<MachineImageNameT>(value));
+    return *this;
+  }
+  template <typename MachineImageNameT = StringFilter>
+  FilterCriteria& AddMachineImageName(MachineImageNameT&& value) {
+    m_machineImageNameHasBeenSet = true;
+    m_machineImageName.emplace_back(std::forward<MachineImageNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the Amazon Web Services account that owns the Amazon Machine Image
+   * (AMI) used to filter findings.</p>
+   */
+  inline const Aws::Vector<StringFilter>& GetMachineImageOwnerAccountId() const { return m_machineImageOwnerAccountId; }
+  inline bool MachineImageOwnerAccountIdHasBeenSet() const { return m_machineImageOwnerAccountIdHasBeenSet; }
+  template <typename MachineImageOwnerAccountIdT = Aws::Vector<StringFilter>>
+  void SetMachineImageOwnerAccountId(MachineImageOwnerAccountIdT&& value) {
+    m_machineImageOwnerAccountIdHasBeenSet = true;
+    m_machineImageOwnerAccountId = std::forward<MachineImageOwnerAccountIdT>(value);
+  }
+  template <typename MachineImageOwnerAccountIdT = Aws::Vector<StringFilter>>
+  FilterCriteria& WithMachineImageOwnerAccountId(MachineImageOwnerAccountIdT&& value) {
+    SetMachineImageOwnerAccountId(std::forward<MachineImageOwnerAccountIdT>(value));
+    return *this;
+  }
+  template <typename MachineImageOwnerAccountIdT = StringFilter>
+  FilterCriteria& AddMachineImageOwnerAccountId(MachineImageOwnerAccountIdT&& value) {
+    m_machineImageOwnerAccountIdHasBeenSet = true;
+    m_machineImageOwnerAccountId.emplace_back(std::forward<MachineImageOwnerAccountIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The platform of the Amazon Machine Image (AMI) used to filter findings.</p>
+   */
+  inline const Aws::Vector<StringFilter>& GetMachineImagePlatform() const { return m_machineImagePlatform; }
+  inline bool MachineImagePlatformHasBeenSet() const { return m_machineImagePlatformHasBeenSet; }
+  template <typename MachineImagePlatformT = Aws::Vector<StringFilter>>
+  void SetMachineImagePlatform(MachineImagePlatformT&& value) {
+    m_machineImagePlatformHasBeenSet = true;
+    m_machineImagePlatform = std::forward<MachineImagePlatformT>(value);
+  }
+  template <typename MachineImagePlatformT = Aws::Vector<StringFilter>>
+  FilterCriteria& WithMachineImagePlatform(MachineImagePlatformT&& value) {
+    SetMachineImagePlatform(std::forward<MachineImagePlatformT>(value));
+    return *this;
+  }
+  template <typename MachineImagePlatformT = StringFilter>
+  FilterCriteria& AddMachineImagePlatform(MachineImagePlatformT&& value) {
+    m_machineImagePlatformHasBeenSet = true;
+    m_machineImagePlatform.emplace_back(std::forward<MachineImagePlatformT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Filter criteria for the cloud provider.</p>
    */
   inline const Aws::Vector<StringFilter>& GetCloudProvider() const { return m_cloudProvider; }
@@ -1719,6 +1816,14 @@ class FilterCriteria {
 
   Aws::Vector<StringFilter> m_codeRepositoryProviderType;
 
+  Aws::Vector<StringFilter> m_machineImageId;
+
+  Aws::Vector<StringFilter> m_machineImageName;
+
+  Aws::Vector<StringFilter> m_machineImageOwnerAccountId;
+
+  Aws::Vector<StringFilter> m_machineImagePlatform;
+
   Aws::Vector<StringFilter> m_cloudProvider;
 
   Aws::Vector<StringFilter> m_cloudProviderRegion;
@@ -1802,6 +1907,10 @@ class FilterCriteria {
   bool m_epssScoreHasBeenSet = false;
   bool m_codeRepositoryProjectNameHasBeenSet = false;
   bool m_codeRepositoryProviderTypeHasBeenSet = false;
+  bool m_machineImageIdHasBeenSet = false;
+  bool m_machineImageNameHasBeenSet = false;
+  bool m_machineImageOwnerAccountIdHasBeenSet = false;
+  bool m_machineImagePlatformHasBeenSet = false;
   bool m_cloudProviderHasBeenSet = false;
   bool m_cloudProviderRegionHasBeenSet = false;
   bool m_cloudProviderAccountIdHasBeenSet = false;

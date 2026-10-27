@@ -27,6 +27,10 @@ OnBehalfOfTokenExchangeConfigType& OnBehalfOfTokenExchangeConfigType::operator=(
     m_tokenExchangeGrantTypeConfig = jsonValue.GetObject("tokenExchangeGrantTypeConfig");
     m_tokenExchangeGrantTypeConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("onBehalfOfAuthenticationConfig")) {
+    m_onBehalfOfAuthenticationConfig = jsonValue.GetObject("onBehalfOfAuthenticationConfig");
+    m_onBehalfOfAuthenticationConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -40,6 +44,10 @@ JsonValue OnBehalfOfTokenExchangeConfigType::Jsonize() const {
 
   if (m_tokenExchangeGrantTypeConfigHasBeenSet) {
     payload.WithObject("tokenExchangeGrantTypeConfig", m_tokenExchangeGrantTypeConfig.Jsonize());
+  }
+
+  if (m_onBehalfOfAuthenticationConfigHasBeenSet) {
+    payload.WithObject("onBehalfOfAuthenticationConfig", m_onBehalfOfAuthenticationConfig.Jsonize());
   }
 
   return payload;

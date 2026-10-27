@@ -54,6 +54,10 @@ AmiAggregationResponse& AmiAggregationResponse::operator=(JsonView jsonValue) {
     m_affectedInstances = jsonValue.GetInt64("affectedInstances");
     m_affectedInstancesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("scanSource")) {
+    m_scanSource = ScanSourceMapper::GetScanSourceForName(jsonValue.GetString("scanSource"));
+    m_scanSourceHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -94,6 +98,10 @@ JsonValue AmiAggregationResponse::Jsonize() const {
 
   if (m_affectedInstancesHasBeenSet) {
     payload.WithInt64("affectedInstances", m_affectedInstances);
+  }
+
+  if (m_scanSourceHasBeenSet) {
+    payload.WithString("scanSource", ScanSourceMapper::GetNameForScanSource(m_scanSource));
   }
 
   return payload;

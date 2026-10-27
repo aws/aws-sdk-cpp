@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/bedrock-agentcore-control/model/OnBehalfOfAuthenticationConfig.h>
 #include <aws/bedrock-agentcore-control/model/OnBehalfOfTokenExchangeGrantTypeType.h>
 #include <aws/bedrock-agentcore-control/model/TokenExchangeGrantTypeConfigType.h>
 
@@ -65,12 +66,37 @@ class OnBehalfOfTokenExchangeConfigType {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specify the client authentication configuration to use for the on-behalf-of
+   * token exchange. With this configuration, you override the provider level client
+   * authentication method for the on-behalf-of exchange with the identity provider.
+   * If you don't specify this configuration, we use the provider level client
+   * authentication method.</p>
+   */
+  inline const OnBehalfOfAuthenticationConfig& GetOnBehalfOfAuthenticationConfig() const { return m_onBehalfOfAuthenticationConfig; }
+  inline bool OnBehalfOfAuthenticationConfigHasBeenSet() const { return m_onBehalfOfAuthenticationConfigHasBeenSet; }
+  template <typename OnBehalfOfAuthenticationConfigT = OnBehalfOfAuthenticationConfig>
+  void SetOnBehalfOfAuthenticationConfig(OnBehalfOfAuthenticationConfigT&& value) {
+    m_onBehalfOfAuthenticationConfigHasBeenSet = true;
+    m_onBehalfOfAuthenticationConfig = std::forward<OnBehalfOfAuthenticationConfigT>(value);
+  }
+  template <typename OnBehalfOfAuthenticationConfigT = OnBehalfOfAuthenticationConfig>
+  OnBehalfOfTokenExchangeConfigType& WithOnBehalfOfAuthenticationConfig(OnBehalfOfAuthenticationConfigT&& value) {
+    SetOnBehalfOfAuthenticationConfig(std::forward<OnBehalfOfAuthenticationConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   OnBehalfOfTokenExchangeGrantTypeType m_grantType{OnBehalfOfTokenExchangeGrantTypeType::NOT_SET};
 
   TokenExchangeGrantTypeConfigType m_tokenExchangeGrantTypeConfig;
+
+  OnBehalfOfAuthenticationConfig m_onBehalfOfAuthenticationConfig;
   bool m_grantTypeHasBeenSet = false;
   bool m_tokenExchangeGrantTypeConfigHasBeenSet = false;
+  bool m_onBehalfOfAuthenticationConfigHasBeenSet = false;
 };
 
 }  // namespace Model

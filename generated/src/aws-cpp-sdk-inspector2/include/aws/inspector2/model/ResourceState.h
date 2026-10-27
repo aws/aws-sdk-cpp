@@ -123,6 +123,22 @@ class ResourceState {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const State& GetAmi() const { return m_ami; }
+  inline bool AmiHasBeenSet() const { return m_amiHasBeenSet; }
+  template <typename AmiT = State>
+  void SetAmi(AmiT&& value) {
+    m_amiHasBeenSet = true;
+    m_ami = std::forward<AmiT>(value);
+  }
+  template <typename AmiT = State>
+  ResourceState& WithAmi(AmiT&& value) {
+    SetAmi(std::forward<AmiT>(value));
+    return *this;
+  }
+  ///@}
  private:
   State m_ec2;
 
@@ -133,11 +149,14 @@ class ResourceState {
   State m_lambdaCode;
 
   State m_codeRepository;
+
+  State m_ami;
   bool m_ec2HasBeenSet = false;
   bool m_ecrHasBeenSet = false;
   bool m_lambdaHasBeenSet = false;
   bool m_lambdaCodeHasBeenSet = false;
   bool m_codeRepositoryHasBeenSet = false;
+  bool m_amiHasBeenSet = false;
 };
 
 }  // namespace Model

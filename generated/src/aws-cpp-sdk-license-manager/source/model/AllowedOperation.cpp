@@ -22,6 +22,7 @@ static const int CheckInLicense_HASH = HashingUtils::HashString("CheckInLicense"
 static const int ExtendConsumptionLicense_HASH = HashingUtils::HashString("ExtendConsumptionLicense");
 static const int ListPurchasedLicenses_HASH = HashingUtils::HashString("ListPurchasedLicenses");
 static const int CreateToken_HASH = HashingUtils::HashString("CreateToken");
+static const int ListReceivedLicenses_HASH = HashingUtils::HashString("ListReceivedLicenses");
 
 AllowedOperation GetAllowedOperationForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -39,6 +40,8 @@ AllowedOperation GetAllowedOperationForName(const Aws::String& name) {
     return AllowedOperation::ListPurchasedLicenses;
   } else if (hashCode == CreateToken_HASH) {
     return AllowedOperation::CreateToken;
+  } else if (hashCode == ListReceivedLicenses_HASH) {
+    return AllowedOperation::ListReceivedLicenses;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -67,6 +70,8 @@ Aws::String GetNameForAllowedOperation(AllowedOperation enumValue) {
       return "ListPurchasedLicenses";
     case AllowedOperation::CreateToken:
       return "CreateToken";
+    case AllowedOperation::ListReceivedLicenses:
+      return "ListReceivedLicenses";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -20,6 +20,7 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/UnassignPrivateNatGatewayAddressRequest.h>
 #include <aws/ec2/model/UnlockSnapshotRequest.h>
 #include <aws/ec2/model/UnmonitorInstancesRequest.h>
 #include <aws/ec2/model/UpdateCapacityManagerMonitoredTagKeysRequest.h>
@@ -40,6 +41,13 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+UnassignPrivateNatGatewayAddressOutcome EC2Client::UnassignPrivateNatGatewayAddress(
+    const UnassignPrivateNatGatewayAddressRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UnassignPrivateNatGatewayAddressOutcome(result.GetResultWithOwnership())
+                            : UnassignPrivateNatGatewayAddressOutcome(std::move(result.GetError()));
+}
 
 UnlockSnapshotOutcome EC2Client::UnlockSnapshot(const UnlockSnapshotRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);

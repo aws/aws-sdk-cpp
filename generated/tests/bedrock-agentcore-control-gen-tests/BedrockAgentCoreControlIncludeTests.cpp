@@ -670,6 +670,8 @@
 #include <aws/bedrock-agentcore-control/model/Oauth2Discovery.h>
 #include <aws/bedrock-agentcore-control/model/Oauth2ProviderConfigInput.h>
 #include <aws/bedrock-agentcore-control/model/Oauth2ProviderConfigOutput.h>
+#include <aws/bedrock-agentcore-control/model/OnBehalfOfAuthenticationConfig.h>
+#include <aws/bedrock-agentcore-control/model/OnBehalfOfClientAuthenticationMethod.h>
 #include <aws/bedrock-agentcore-control/model/OnBehalfOfTokenExchangeConfigType.h>
 #include <aws/bedrock-agentcore-control/model/OnBehalfOfTokenExchangeGrantTypeType.h>
 #include <aws/bedrock-agentcore-control/model/OnlineEvaluationConfigStatus.h>
@@ -738,6 +740,8 @@
 #include <aws/bedrock-agentcore-control/model/RegistryStatus.h>
 #include <aws/bedrock-agentcore-control/model/RegistrySummary.h>
 #include <aws/bedrock-agentcore-control/model/RequestHeaderConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/ResetTokenVaultKeyMaterialRequest.h>
+#include <aws/bedrock-agentcore-control/model/ResetTokenVaultKeyMaterialResult.h>
 #include <aws/bedrock-agentcore-control/model/Resource.h>
 #include <aws/bedrock-agentcore-control/model/ResourceLocation.h>
 #include <aws/bedrock-agentcore-control/model/ResourceType.h>

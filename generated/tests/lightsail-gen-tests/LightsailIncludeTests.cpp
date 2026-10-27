@@ -375,6 +375,7 @@
 #include <aws/lightsail/model/Instance.h>
 #include <aws/lightsail/model/InstanceAccessDetails.h>
 #include <aws/lightsail/model/InstanceAccessProtocol.h>
+#include <aws/lightsail/model/InstanceAttributeUpdates.h>
 #include <aws/lightsail/model/InstanceEntry.h>
 #include <aws/lightsail/model/InstanceHardware.h>
 #include <aws/lightsail/model/InstanceHealthReason.h>

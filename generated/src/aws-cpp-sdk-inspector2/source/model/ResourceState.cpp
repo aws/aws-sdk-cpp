@@ -38,6 +38,10 @@ ResourceState& ResourceState::operator=(JsonView jsonValue) {
     m_codeRepository = jsonValue.GetObject("codeRepository");
     m_codeRepositoryHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ami")) {
+    m_ami = jsonValue.GetObject("ami");
+    m_amiHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +66,10 @@ JsonValue ResourceState::Jsonize() const {
 
   if (m_codeRepositoryHasBeenSet) {
     payload.WithObject("codeRepository", m_codeRepository.Jsonize());
+  }
+
+  if (m_amiHasBeenSet) {
+    payload.WithObject("ami", m_ami.Jsonize());
   }
 
   return payload;

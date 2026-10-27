@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/inspector2/model/AmiSortBy.h>
+#include <aws/inspector2/model/ScanSource.h>
 #include <aws/inspector2/model/SortOrder.h>
 #include <aws/inspector2/model/StringFilter.h>
 
@@ -90,15 +91,41 @@ class AmiAggregation {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The scan sources to filter the aggregation results by.</p>
+   */
+  inline const Aws::Vector<ScanSource>& GetScanSources() const { return m_scanSources; }
+  inline bool ScanSourcesHasBeenSet() const { return m_scanSourcesHasBeenSet; }
+  template <typename ScanSourcesT = Aws::Vector<ScanSource>>
+  void SetScanSources(ScanSourcesT&& value) {
+    m_scanSourcesHasBeenSet = true;
+    m_scanSources = std::forward<ScanSourcesT>(value);
+  }
+  template <typename ScanSourcesT = Aws::Vector<ScanSource>>
+  AmiAggregation& WithScanSources(ScanSourcesT&& value) {
+    SetScanSources(std::forward<ScanSourcesT>(value));
+    return *this;
+  }
+  inline AmiAggregation& AddScanSources(ScanSource value) {
+    m_scanSourcesHasBeenSet = true;
+    m_scanSources.push_back(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<StringFilter> m_amis;
 
   SortOrder m_sortOrder{SortOrder::NOT_SET};
 
   AmiSortBy m_sortBy{AmiSortBy::NOT_SET};
+
+  Aws::Vector<ScanSource> m_scanSources;
   bool m_amisHasBeenSet = false;
   bool m_sortOrderHasBeenSet = false;
   bool m_sortByHasBeenSet = false;
+  bool m_scanSourcesHasBeenSet = false;
 };
 
 }  // namespace Model

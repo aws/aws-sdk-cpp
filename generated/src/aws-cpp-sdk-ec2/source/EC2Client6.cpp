@@ -20,6 +20,7 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/GetLaunchTemplateDataRequest.h>
 #include <aws/ec2/model/GetManagedPrefixListAssociationsRequest.h>
 #include <aws/ec2/model/GetManagedPrefixListEntriesRequest.h>
 #include <aws/ec2/model/GetManagedResourceVisibilityRequest.h>
@@ -118,7 +119,6 @@
 #include <aws/ec2/model/ModifyTrafficMirrorSessionRequest.h>
 #include <aws/ec2/model/ModifyTransitGatewayAttachmentNatConfigurationRequest.h>
 #include <aws/ec2/model/ModifyTransitGatewayMeteringPolicyRequest.h>
-#include <aws/ec2/model/ModifyTransitGatewayPolicyTableEntryRequest.h>
 #include <aws/ec2/model/ModifyTransitGatewayRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
@@ -131,6 +131,12 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+GetLaunchTemplateDataOutcome EC2Client::GetLaunchTemplateData(const GetLaunchTemplateDataRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetLaunchTemplateDataOutcome(result.GetResultWithOwnership())
+                            : GetLaunchTemplateDataOutcome(std::move(result.GetError()));
+}
 
 GetManagedPrefixListAssociationsOutcome EC2Client::GetManagedPrefixListAssociations(
     const GetManagedPrefixListAssociationsRequest& request) const {
@@ -749,11 +755,4 @@ ModifyTransitGatewayMeteringPolicyOutcome EC2Client::ModifyTransitGatewayMeterin
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ModifyTransitGatewayMeteringPolicyOutcome(result.GetResultWithOwnership())
                             : ModifyTransitGatewayMeteringPolicyOutcome(std::move(result.GetError()));
-}
-
-ModifyTransitGatewayPolicyTableEntryOutcome EC2Client::ModifyTransitGatewayPolicyTableEntry(
-    const ModifyTransitGatewayPolicyTableEntryRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ModifyTransitGatewayPolicyTableEntryOutcome(result.GetResultWithOwnership())
-                            : ModifyTransitGatewayPolicyTableEntryOutcome(std::move(result.GetError()));
 }

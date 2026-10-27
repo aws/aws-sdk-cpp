@@ -27,6 +27,7 @@ static const int Microsoft_ContainerRegistry_registry_containerRepository_HASH =
     HashingUtils::HashString("Microsoft.ContainerRegistry/registry/containerRepository");
 static const int Microsoft_Web_sites_HASH = HashingUtils::HashString("Microsoft.Web/sites");
 static const int Microsoft_ContainerRegistry_registries_HASH = HashingUtils::HashString("Microsoft.ContainerRegistry/registries");
+static const int MACHINE_IMAGE_HASH = HashingUtils::HashString("MACHINE_IMAGE");
 
 CoverageResourceType GetCoverageResourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -50,6 +51,8 @@ CoverageResourceType GetCoverageResourceTypeForName(const Aws::String& name) {
     return CoverageResourceType::Microsoft_Web_sites;
   } else if (hashCode == Microsoft_ContainerRegistry_registries_HASH) {
     return CoverageResourceType::Microsoft_ContainerRegistry_registries;
+  } else if (hashCode == MACHINE_IMAGE_HASH) {
+    return CoverageResourceType::MACHINE_IMAGE;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -84,6 +87,8 @@ Aws::String GetNameForCoverageResourceType(CoverageResourceType enumValue) {
       return "Microsoft.Web/sites";
     case CoverageResourceType::Microsoft_ContainerRegistry_registries:
       return "Microsoft.ContainerRegistry/registries";
+    case CoverageResourceType::MACHINE_IMAGE:
+      return "MACHINE_IMAGE";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -57,7 +57,7 @@ class ContainerImageAggregationResponse {
   ///@{
   /**
    * <p>The cloud service provider associated with this container image aggregation.
-   * Valid values:</p> <ul> <li> <p> <code>AWS</code> – Findings from Amazon Web
+   * Valid values:</p> <ul> <li> <p> <code>AWS</code> �� Findings from Amazon Web
    * Services resources.</p> </li> <li> <p> <code>AZURE</code> – Findings from
    * Microsoft Azure resources.</p> </li> </ul>
    */

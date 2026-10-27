@@ -178,6 +178,7 @@
 #include <aws/bedrock-agentcore-control/model/ListWorkloadIdentitiesRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListWorkloadIdentitiesResult.h>
 #include <aws/bedrock-agentcore-control/model/PutResourcePolicyResult.h>
+#include <aws/bedrock-agentcore-control/model/ResetTokenVaultKeyMaterialResult.h>
 #include <aws/bedrock-agentcore-control/model/RotatePaymentConnectorCredentialsResult.h>
 #include <aws/bedrock-agentcore-control/model/SetTokenVaultCMKResult.h>
 #include <aws/bedrock-agentcore-control/model/StartPolicyGenerationResult.h>
@@ -382,6 +383,7 @@ class ListRegistryRecordsRequest;
 class ListTagsForResourceRequest;
 class ListWorkloadIdentitiesRequest;
 class PutResourcePolicyRequest;
+class ResetTokenVaultKeyMaterialRequest;
 class RotatePaymentConnectorCredentialsRequest;
 class SetTokenVaultCMKRequest;
 class StartPolicyGenerationRequest;
@@ -557,6 +559,7 @@ typedef Aws::Utils::Outcome<ListRegistryRecordsResult, BedrockAgentCoreControlEr
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, BedrockAgentCoreControlError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<ListWorkloadIdentitiesResult, BedrockAgentCoreControlError> ListWorkloadIdentitiesOutcome;
 typedef Aws::Utils::Outcome<PutResourcePolicyResult, BedrockAgentCoreControlError> PutResourcePolicyOutcome;
+typedef Aws::Utils::Outcome<ResetTokenVaultKeyMaterialResult, BedrockAgentCoreControlError> ResetTokenVaultKeyMaterialOutcome;
 typedef Aws::Utils::Outcome<RotatePaymentConnectorCredentialsResult, BedrockAgentCoreControlError> RotatePaymentConnectorCredentialsOutcome;
 typedef Aws::Utils::Outcome<SetTokenVaultCMKResult, BedrockAgentCoreControlError> SetTokenVaultCMKOutcome;
 typedef Aws::Utils::Outcome<StartPolicyGenerationResult, BedrockAgentCoreControlError> StartPolicyGenerationOutcome;
@@ -731,6 +734,7 @@ typedef std::future<ListRegistryRecordsOutcome> ListRegistryRecordsOutcomeCallab
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<ListWorkloadIdentitiesOutcome> ListWorkloadIdentitiesOutcomeCallable;
 typedef std::future<PutResourcePolicyOutcome> PutResourcePolicyOutcomeCallable;
+typedef std::future<ResetTokenVaultKeyMaterialOutcome> ResetTokenVaultKeyMaterialOutcomeCallable;
 typedef std::future<RotatePaymentConnectorCredentialsOutcome> RotatePaymentConnectorCredentialsOutcomeCallable;
 typedef std::future<SetTokenVaultCMKOutcome> SetTokenVaultCMKOutcomeCallable;
 typedef std::future<StartPolicyGenerationOutcome> StartPolicyGenerationOutcomeCallable;
@@ -1198,6 +1202,9 @@ typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::Li
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::PutResourcePolicyRequest&,
                            const Model::PutResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutResourcePolicyResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::ResetTokenVaultKeyMaterialRequest&,
+                           const Model::ResetTokenVaultKeyMaterialOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ResetTokenVaultKeyMaterialResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::RotatePaymentConnectorCredentialsRequest&,
                            const Model::RotatePaymentConnectorCredentialsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

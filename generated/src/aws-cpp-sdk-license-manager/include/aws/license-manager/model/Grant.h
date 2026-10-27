@@ -9,6 +9,7 @@
 #include <aws/license-manager/LicenseManager_EXPORTS.h>
 #include <aws/license-manager/model/AllowedOperation.h>
 #include <aws/license-manager/model/GrantStatus.h>
+#include <aws/license-manager/model/GrantType.h>
 #include <aws/license-manager/model/Options.h>
 
 #include <utility>
@@ -235,6 +236,26 @@ class Grant {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The type of the grant. Valid values:</p> <ul> <li> <p>
+   * <code>BuyerGrant</code> - Grants the entitlement to use the license.</p> </li>
+   * <li> <p> <code>DelegateGrant</code> - Gives the grantee read-only visibility
+   * into the licenses and grants distributed to buyers, with no entitlement to use
+   * them.</p> </li> </ul>
+   */
+  inline GrantType GetGrantType() const { return m_grantType; }
+  inline bool GrantTypeHasBeenSet() const { return m_grantTypeHasBeenSet; }
+  inline void SetGrantType(GrantType value) {
+    m_grantTypeHasBeenSet = true;
+    m_grantType = value;
+  }
+  inline Grant& WithGrantType(GrantType value) {
+    SetGrantType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_grantArn;
 
@@ -257,6 +278,8 @@ class Grant {
   Aws::Vector<AllowedOperation> m_grantedOperations;
 
   Options m_options;
+
+  GrantType m_grantType{GrantType::NOT_SET};
   bool m_grantArnHasBeenSet = false;
   bool m_grantNameHasBeenSet = false;
   bool m_parentArnHasBeenSet = false;
@@ -268,6 +291,7 @@ class Grant {
   bool m_versionHasBeenSet = false;
   bool m_grantedOperationsHasBeenSet = false;
   bool m_optionsHasBeenSet = false;
+  bool m_grantTypeHasBeenSet = false;
 };
 
 }  // namespace Model

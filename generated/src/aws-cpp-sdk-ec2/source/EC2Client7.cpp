@@ -20,6 +20,7 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/ModifyTransitGatewayPolicyTableEntryRequest.h>
 #include <aws/ec2/model/ModifyTransitGatewayPrefixListReferenceRequest.h>
 #include <aws/ec2/model/ModifyTransitGatewayVpcAttachmentRequest.h>
 #include <aws/ec2/model/ModifyVerifiedAccessEndpointPolicyRequest.h>
@@ -119,7 +120,6 @@
 #include <aws/ec2/model/TerminateInstancesRequest.h>
 #include <aws/ec2/model/UnassignIpv6AddressesRequest.h>
 #include <aws/ec2/model/UnassignPrivateIpAddressesRequest.h>
-#include <aws/ec2/model/UnassignPrivateNatGatewayAddressRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,13 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+ModifyTransitGatewayPolicyTableEntryOutcome EC2Client::ModifyTransitGatewayPolicyTableEntry(
+    const ModifyTransitGatewayPolicyTableEntryRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyTransitGatewayPolicyTableEntryOutcome(result.GetResultWithOwnership())
+                            : ModifyTransitGatewayPolicyTableEntryOutcome(std::move(result.GetError()));
+}
 
 ModifyTransitGatewayPrefixListReferenceOutcome EC2Client::ModifyTransitGatewayPrefixListReference(
     const ModifyTransitGatewayPrefixListReferenceRequest& request) const {
@@ -750,11 +757,4 @@ UnassignPrivateIpAddressesOutcome EC2Client::UnassignPrivateIpAddresses(const Un
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UnassignPrivateIpAddressesOutcome(result.GetResultWithOwnership())
                             : UnassignPrivateIpAddressesOutcome(std::move(result.GetError()));
-}
-
-UnassignPrivateNatGatewayAddressOutcome EC2Client::UnassignPrivateNatGatewayAddress(
-    const UnassignPrivateNatGatewayAddressRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? UnassignPrivateNatGatewayAddressOutcome(result.GetResultWithOwnership())
-                            : UnassignPrivateNatGatewayAddressOutcome(std::move(result.GetError()));
 }

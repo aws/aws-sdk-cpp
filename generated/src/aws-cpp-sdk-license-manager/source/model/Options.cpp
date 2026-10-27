@@ -23,6 +23,10 @@ Options& Options::operator=(JsonView jsonValue) {
         ActivationOverrideBehaviorMapper::GetActivationOverrideBehaviorForName(jsonValue.GetString("ActivationOverrideBehavior"));
     m_activationOverrideBehaviorHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("DesiredStatus")) {
+    m_desiredStatus = GrantStatusMapper::GetGrantStatusForName(jsonValue.GetString("DesiredStatus"));
+    m_desiredStatusHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -32,6 +36,10 @@ JsonValue Options::Jsonize() const {
   if (m_activationOverrideBehaviorHasBeenSet) {
     payload.WithString("ActivationOverrideBehavior",
                        ActivationOverrideBehaviorMapper::GetNameForActivationOverrideBehavior(m_activationOverrideBehavior));
+  }
+
+  if (m_desiredStatusHasBeenSet) {
+    payload.WithString("DesiredStatus", GrantStatusMapper::GetNameForGrantStatus(m_desiredStatus));
   }
 
   return payload;

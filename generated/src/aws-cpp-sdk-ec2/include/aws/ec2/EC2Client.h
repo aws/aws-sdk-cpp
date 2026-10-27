@@ -19300,6 +19300,35 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p>Describes the Amazon Inspector vulnerability findings for the specified
+   * AMI.</p> <p>You can get findings for AMIs that you own, AMIs that are shared
+   * with you, and public AMIs. Amazon Inspector returns findings only for AMIs that
+   * it has scanned.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetImageFindings">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetImageFindingsOutcome GetImageFindings(const Model::GetImageFindingsRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetImageFindings that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetImageFindingsRequestT = Model::GetImageFindingsRequest>
+  Model::GetImageFindingsOutcomeCallable GetImageFindingsCallable(const GetImageFindingsRequestT& request) const {
+    return SubmitCallable(&EC2Client::GetImageFindings, request);
+  }
+
+  /**
+   * An Async wrapper for GetImageFindings that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetImageFindingsRequestT = Model::GetImageFindingsRequest>
+  void GetImageFindingsAsync(const GetImageFindingsRequestT& request, const GetImageFindingsResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::GetImageFindings, request, handler, context);
+  }
+
+  /**
    * <p>Gets the default instance metadata service (IMDS) settings that are set at
    * the account level in the specified Amazon Web Services&#x2028; Region.</p>
    * <p>For more information, see <a

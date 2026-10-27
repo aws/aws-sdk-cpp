@@ -150,6 +150,7 @@
 #include <aws/ec2/model/GetCapacityManagerMetricDimensionsPaginationTraits.h>
 #include <aws/ec2/model/GetCapacityManagerMonitoredTagKeysPaginationTraits.h>
 #include <aws/ec2/model/GetGroupsForCapacityReservationPaginationTraits.h>
+#include <aws/ec2/model/GetImageFindingsPaginationTraits.h>
 #include <aws/ec2/model/GetInstanceTypesFromInstanceRequirementsPaginationTraits.h>
 #include <aws/ec2/model/GetIpamAddressHistoryPaginationTraits.h>
 #include <aws/ec2/model/GetIpamDiscoveredAccountsPaginationTraits.h>
@@ -1900,6 +1901,18 @@ class EC2PaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetGroupsForCapacityReservationRequest,
                                              Pagination::GetGroupsForCapacityReservationPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for GetImageFindings operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetImageFindingsRequest,
+                                    Pagination::GetImageFindingsPaginationTraits<DerivedClient>>
+  GetImageFindingsPaginator(const Model::GetImageFindingsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetImageFindingsRequest,
+                                             Pagination::GetImageFindingsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                          request};
   }
 
   /**

@@ -184,7 +184,7 @@ class FindingTypeAggregationResponse {
    * <p>The cloud infrastructure partition associated with this finding type
    * aggregation. Valid values:</p> <ul> <li> <p> <code>aws</code> – Amazon Web
    * Services commercial Regions.</p> </li> <li> <p> <code>aws-cn</code> – Amazon Web
-   * Services China Regions.</p> </li> <li> <p> <code>aws-us-gov</code> – Amazon Web
+   * Services China Regions.</p> </li> <li> <p> <code>aws-us-gov</code> �� Amazon Web
    * Services GovCloud (US) Regions.</p> </li> <li> <p> <code>AzureCloud</code> –
    * Azure commercial Regions.</p> </li> </ul>
    */

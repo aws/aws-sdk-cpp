@@ -105,6 +105,10 @@ Container& Container::operator=(JsonView jsonValue) {
     }
     m_neuronDeviceIdsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("gpuSharingStrategy")) {
+    m_gpuSharingStrategy = jsonValue.GetObject("gpuSharingStrategy");
+    m_gpuSharingStrategyHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -201,6 +205,10 @@ JsonValue Container::Jsonize() const {
       neuronDeviceIdsJsonList[neuronDeviceIdsIndex].AsString(m_neuronDeviceIds[neuronDeviceIdsIndex]);
     }
     payload.WithArray("neuronDeviceIds", std::move(neuronDeviceIdsJsonList));
+  }
+
+  if (m_gpuSharingStrategyHasBeenSet) {
+    payload.WithObject("gpuSharingStrategy", m_gpuSharingStrategy.Jsonize());
   }
 
   return payload;

@@ -77,6 +77,11 @@ ImageCriterion& ImageCriterion::operator=(const XmlNode& xmlNode) {
 
       m_imageWatermarksHasBeenSet = true;
     }
+    XmlNode scanResultConditionNode = resultNode.FirstChild("scanResultCondition");
+    if (!scanResultConditionNode.IsNull()) {
+      m_scanResultCondition = scanResultConditionNode;
+      m_scanResultConditionHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -127,6 +132,12 @@ void ImageCriterion::OutputToStream(Aws::OStream& oStream, const char* location,
       item.OutputToStream(oStream, imageWatermarksSs.str().c_str());
     }
   }
+
+  if (m_scanResultConditionHasBeenSet) {
+    Aws::StringStream scanResultConditionLocationAndMemberSs;
+    scanResultConditionLocationAndMemberSs << location << index << locationValue << ".ScanResultCondition";
+    m_scanResultCondition.OutputToStream(oStream, scanResultConditionLocationAndMemberSs.str().c_str());
+  }
 }
 
 void ImageCriterion::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -166,6 +177,11 @@ void ImageCriterion::OutputToStream(Aws::OStream& oStream, const char* location)
       imageWatermarksSs << location << ".ImageWatermarkSet." << imageWatermarksIdx++;
       item.OutputToStream(oStream, imageWatermarksSs.str().c_str());
     }
+  }
+  if (m_scanResultConditionHasBeenSet) {
+    Aws::String scanResultConditionLocationAndMember(location);
+    scanResultConditionLocationAndMember += ".ScanResultCondition";
+    m_scanResultCondition.OutputToStream(oStream, scanResultConditionLocationAndMember.c_str());
   }
 }
 

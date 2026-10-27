@@ -10,6 +10,7 @@
 #include <aws/inspector2/model/AwsLambdaFunctionDetails.h>
 #include <aws/inspector2/model/CodeRepositoryDetails.h>
 #include <aws/inspector2/model/Image.h>
+#include <aws/inspector2/model/MachineImageDetails.h>
 #include <aws/inspector2/model/ServerlessFunction.h>
 #include <aws/inspector2/model/Vm.h>
 
@@ -115,6 +116,22 @@ class ResourceDetails {
   ///@}
 
   ///@{
+
+  inline const MachineImageDetails& GetMachineImage() const { return m_machineImage; }
+  inline bool MachineImageHasBeenSet() const { return m_machineImageHasBeenSet; }
+  template <typename MachineImageT = MachineImageDetails>
+  void SetMachineImage(MachineImageT&& value) {
+    m_machineImageHasBeenSet = true;
+    m_machineImage = std::forward<MachineImageT>(value);
+  }
+  template <typename MachineImageT = MachineImageDetails>
+  ResourceDetails& WithMachineImage(MachineImageT&& value) {
+    SetMachineImage(std::forward<MachineImageT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
   /**
    * <p>An object that contains details about a VM instance involved in the
    * finding.</p>
@@ -179,6 +196,8 @@ class ResourceDetails {
 
   CodeRepositoryDetails m_codeRepository;
 
+  MachineImageDetails m_machineImage;
+
   Vm m_vm;
 
   Image m_image;
@@ -188,6 +207,7 @@ class ResourceDetails {
   bool m_awsEcrContainerImageHasBeenSet = false;
   bool m_awsLambdaFunctionHasBeenSet = false;
   bool m_codeRepositoryHasBeenSet = false;
+  bool m_machineImageHasBeenSet = false;
   bool m_vmHasBeenSet = false;
   bool m_imageHasBeenSet = false;
   bool m_serverlessFunctionHasBeenSet = false;

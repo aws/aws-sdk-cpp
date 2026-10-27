@@ -338,6 +338,30 @@ class CoverageFilterCriteria {
 
   ///@{
   /**
+   * <p>The machine image tags to filter coverage results by.</p>
+   */
+  inline const Aws::Vector<CoverageMapFilter>& GetMachineImageTags() const { return m_machineImageTags; }
+  inline bool MachineImageTagsHasBeenSet() const { return m_machineImageTagsHasBeenSet; }
+  template <typename MachineImageTagsT = Aws::Vector<CoverageMapFilter>>
+  void SetMachineImageTags(MachineImageTagsT&& value) {
+    m_machineImageTagsHasBeenSet = true;
+    m_machineImageTags = std::forward<MachineImageTagsT>(value);
+  }
+  template <typename MachineImageTagsT = Aws::Vector<CoverageMapFilter>>
+  CoverageFilterCriteria& WithMachineImageTags(MachineImageTagsT&& value) {
+    SetMachineImageTags(std::forward<MachineImageTagsT>(value));
+    return *this;
+  }
+  template <typename MachineImageTagsT = CoverageMapFilter>
+  CoverageFilterCriteria& AddMachineImageTags(MachineImageTagsT&& value) {
+    m_machineImageTagsHasBeenSet = true;
+    m_machineImageTags.emplace_back(std::forward<MachineImageTagsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Filters Amazon Web Services resources based on whether Amazon Inspector has
    * checked them for vulnerabilities within the specified time range.</p>
    */
@@ -848,6 +872,8 @@ class CoverageFilterCriteria {
 
   Aws::Vector<CoverageStringFilter> m_lambdaFunctionRuntime;
 
+  Aws::Vector<CoverageMapFilter> m_machineImageTags;
+
   Aws::Vector<CoverageDateFilter> m_lastScannedAt;
 
   Aws::Vector<CoverageStringFilter> m_scanMode;
@@ -899,6 +925,7 @@ class CoverageFilterCriteria {
   bool m_lambdaFunctionNameHasBeenSet = false;
   bool m_lambdaFunctionTagsHasBeenSet = false;
   bool m_lambdaFunctionRuntimeHasBeenSet = false;
+  bool m_machineImageTagsHasBeenSet = false;
   bool m_lastScannedAtHasBeenSet = false;
   bool m_scanModeHasBeenSet = false;
   bool m_imagePulledAtHasBeenSet = false;

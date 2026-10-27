@@ -3966,6 +3966,48 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   }
 
   /**
+   * <p>Resets the key material for a token vault whose customer managed KMS key has
+   * been deleted, and re-encrypts the token vault with an Amazon Web Services
+   * managed key so that you can use the token vault again.</p>  <p>This
+   * operation can't be undone. The reset permanently deletes the OAuth2 access
+   * tokens and refresh tokens stored in the token vault, including tokens obtained
+   * through all supported flows. After the reset, your agents must complete these
+   * flows again to get new tokens, and for user-delegated flows your users must
+   * authorize access again. The reset doesn't delete your credential providers or
+   * their configuration.</p>  <p>You can reset a token vault only if its
+   * customer managed key has been deleted. If the key still exists, including when
+   * it's disabled or scheduled for deletion, this operation returns a
+   * <code>ValidationException</code>. To use the token vault again, enable the key
+   * or cancel its scheduled deletion in KMS. To switch to a different key, use
+   * <code>SetTokenVaultCMK</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ResetTokenVaultKeyMaterial">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ResetTokenVaultKeyMaterialOutcome ResetTokenVaultKeyMaterial(
+      const Model::ResetTokenVaultKeyMaterialRequest& request) const;
+
+  /**
+   * A Callable wrapper for ResetTokenVaultKeyMaterial that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ResetTokenVaultKeyMaterialRequestT = Model::ResetTokenVaultKeyMaterialRequest>
+  Model::ResetTokenVaultKeyMaterialOutcomeCallable ResetTokenVaultKeyMaterialCallable(
+      const ResetTokenVaultKeyMaterialRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::ResetTokenVaultKeyMaterial, request);
+  }
+
+  /**
+   * An Async wrapper for ResetTokenVaultKeyMaterial that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ResetTokenVaultKeyMaterialRequestT = Model::ResetTokenVaultKeyMaterialRequest>
+  void ResetTokenVaultKeyMaterialAsync(const ResetTokenVaultKeyMaterialRequestT& request,
+                                       const ResetTokenVaultKeyMaterialResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::ResetTokenVaultKeyMaterial, request, handler, context);
+  }
+
+  /**
    * <p>Replaces the service-managed credentials of a payment connector with newly
    * issued credentials.</p> <p>Use this operation only for payment connectors with a
    * <code>provisionMode</code> of <code>QUICK_CREATE</code>. For payment connectors

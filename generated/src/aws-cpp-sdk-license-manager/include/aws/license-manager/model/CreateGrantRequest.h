@@ -9,6 +9,8 @@
 #include <aws/license-manager/LicenseManagerRequest.h>
 #include <aws/license-manager/LicenseManager_EXPORTS.h>
 #include <aws/license-manager/model/AllowedOperation.h>
+#include <aws/license-manager/model/GrantType.h>
+#include <aws/license-manager/model/Options.h>
 #include <aws/license-manager/model/Tag.h>
 
 #include <utility>
@@ -184,6 +186,47 @@ class CreateGrantRequest : public LicenseManagerRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The type of grant to create. For more information about each type, see the
+   * preceding description of this operation. Valid values:</p> <ul> <li> <p>
+   * <code>BuyerGrant</code> - The default grant type if you don't specify a value.
+   * Conveys the entitlement to use the license.</p> </li> <li> <p>
+   * <code>DelegateGrant</code> - Gives the grantee read-only visibility into the
+   * licenses and grants that you have distributed to buyers, with no entitlement to
+   * use them.</p> </li> </ul>
+   */
+  inline GrantType GetGrantType() const { return m_grantType; }
+  inline bool GrantTypeHasBeenSet() const { return m_grantTypeHasBeenSet; }
+  inline void SetGrantType(GrantType value) {
+    m_grantTypeHasBeenSet = true;
+    m_grantType = value;
+  }
+  inline CreateGrantRequest& WithGrantType(GrantType value) {
+    SetGrantType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The options for the grant: the status to set after creation, and how
+   * activating the grant affects other active grants for the same product.</p>
+   */
+  inline const Options& GetOptions() const { return m_options; }
+  inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
+  template <typename OptionsT = Options>
+  void SetOptions(OptionsT&& value) {
+    m_optionsHasBeenSet = true;
+    m_options = std::forward<OptionsT>(value);
+  }
+  template <typename OptionsT = Options>
+  CreateGrantRequest& WithOptions(OptionsT&& value) {
+    SetOptions(std::forward<OptionsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_clientToken;
 
@@ -198,6 +241,10 @@ class CreateGrantRequest : public LicenseManagerRequest {
   Aws::Vector<AllowedOperation> m_allowedOperations;
 
   Aws::Vector<Tag> m_tags;
+
+  GrantType m_grantType{GrantType::NOT_SET};
+
+  Options m_options;
   bool m_clientTokenHasBeenSet = false;
   bool m_grantNameHasBeenSet = false;
   bool m_licenseArnHasBeenSet = false;
@@ -205,6 +252,8 @@ class CreateGrantRequest : public LicenseManagerRequest {
   bool m_homeRegionHasBeenSet = false;
   bool m_allowedOperationsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_grantTypeHasBeenSet = false;
+  bool m_optionsHasBeenSet = false;
 };
 
 }  // namespace Model

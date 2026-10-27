@@ -113,6 +113,22 @@ class ResourceStatus {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The status of Amazon Machine Image (AMI) scanning for the account.</p>
+   */
+  inline Status GetAmi() const { return m_ami; }
+  inline bool AmiHasBeenSet() const { return m_amiHasBeenSet; }
+  inline void SetAmi(Status value) {
+    m_amiHasBeenSet = true;
+    m_ami = value;
+  }
+  inline ResourceStatus& WithAmi(Status value) {
+    SetAmi(value);
+    return *this;
+  }
+  ///@}
  private:
   Status m_ec2{Status::NOT_SET};
 
@@ -123,11 +139,14 @@ class ResourceStatus {
   Status m_lambdaCode{Status::NOT_SET};
 
   Status m_codeRepository{Status::NOT_SET};
+
+  Status m_ami{Status::NOT_SET};
   bool m_ec2HasBeenSet = false;
   bool m_ecrHasBeenSet = false;
   bool m_lambdaHasBeenSet = false;
   bool m_lambdaCodeHasBeenSet = false;
   bool m_codeRepositoryHasBeenSet = false;
+  bool m_amiHasBeenSet = false;
 };
 
 }  // namespace Model

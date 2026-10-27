@@ -26,6 +26,10 @@ UpdateConfigurationInheritance& UpdateConfigurationInheritance::operator=(JsonVi
     m_ecrConfiguration = InheritanceModeMapper::GetInheritanceModeForName(jsonValue.GetString("ecrConfiguration"));
     m_ecrConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("amiConfiguration")) {
+    m_amiConfiguration = InheritanceModeMapper::GetInheritanceModeForName(jsonValue.GetString("amiConfiguration"));
+    m_amiConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue UpdateConfigurationInheritance::Jsonize() const {
 
   if (m_ecrConfigurationHasBeenSet) {
     payload.WithString("ecrConfiguration", InheritanceModeMapper::GetNameForInheritanceMode(m_ecrConfiguration));
+  }
+
+  if (m_amiConfigurationHasBeenSet) {
+    payload.WithString("amiConfiguration", InheritanceModeMapper::GetNameForInheritanceMode(m_amiConfiguration));
   }
 
   return payload;

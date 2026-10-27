@@ -1247,6 +1247,33 @@ class AWS_INSPECTOR2_API Inspector2Client : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Retrieves the status of a specific on-demand scan for a
+   * resource.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetOnDemandScanStatus">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetOnDemandScanStatusOutcome GetOnDemandScanStatus(const Model::GetOnDemandScanStatusRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetOnDemandScanStatus that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetOnDemandScanStatusRequestT = Model::GetOnDemandScanStatusRequest>
+  Model::GetOnDemandScanStatusOutcomeCallable GetOnDemandScanStatusCallable(const GetOnDemandScanStatusRequestT& request) const {
+    return SubmitCallable(&Inspector2Client::GetOnDemandScanStatus, request);
+  }
+
+  /**
+   * An Async wrapper for GetOnDemandScanStatus that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetOnDemandScanStatusRequestT = Model::GetOnDemandScanStatusRequest>
+  void GetOnDemandScanStatusAsync(const GetOnDemandScanStatusRequestT& request, const GetOnDemandScanStatusResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&Inspector2Client::GetOnDemandScanStatus, request, handler, context);
+  }
+
+  /**
    * <p>Gets details of a software bill of materials (SBOM) report.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetSbomExport">AWS
@@ -1759,6 +1786,32 @@ class AWS_INSPECTOR2_API Inspector2Client : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Lists the on-demand scans for a resource.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListOnDemandScans">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListOnDemandScansOutcome ListOnDemandScans(const Model::ListOnDemandScansRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListOnDemandScans that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListOnDemandScansRequestT = Model::ListOnDemandScansRequest>
+  Model::ListOnDemandScansOutcomeCallable ListOnDemandScansCallable(const ListOnDemandScansRequestT& request) const {
+    return SubmitCallable(&Inspector2Client::ListOnDemandScans, request);
+  }
+
+  /**
+   * An Async wrapper for ListOnDemandScans that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListOnDemandScansRequestT = Model::ListOnDemandScansRequest>
+  void ListOnDemandScansAsync(const ListOnDemandScansRequestT& request, const ListOnDemandScansResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&Inspector2Client::ListOnDemandScans, request, handler, context);
+  }
+
+  /**
    * <p>Lists all tags attached to a given resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListTagsForResource">AWS
    * API Reference</a></p>
@@ -1977,6 +2030,33 @@ class AWS_INSPECTOR2_API Inspector2Client : public Aws::Client::AWSJsonClient,
   void StartCodeSecurityScanAsync(const StartCodeSecurityScanRequestT& request, const StartCodeSecurityScanResponseReceivedHandler& handler,
                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&Inspector2Client::StartCodeSecurityScan, request, handler, context);
+  }
+
+  /**
+   * <p>Starts an on-demand scan of the specified resource, such as an Amazon Machine
+   * Image (AMI).</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/StartOnDemandScan">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartOnDemandScanOutcome StartOnDemandScan(const Model::StartOnDemandScanRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartOnDemandScan that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StartOnDemandScanRequestT = Model::StartOnDemandScanRequest>
+  Model::StartOnDemandScanOutcomeCallable StartOnDemandScanCallable(const StartOnDemandScanRequestT& request) const {
+    return SubmitCallable(&Inspector2Client::StartOnDemandScan, request);
+  }
+
+  /**
+   * An Async wrapper for StartOnDemandScan that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename StartOnDemandScanRequestT = Model::StartOnDemandScanRequest>
+  void StartOnDemandScanAsync(const StartOnDemandScanRequestT& request, const StartOnDemandScanResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&Inspector2Client::StartOnDemandScan, request, handler, context);
   }
 
   /**

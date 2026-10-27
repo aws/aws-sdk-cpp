@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/ecs/model/ResourceType.h>
+#include <aws/ecs/model/SharingStrategy.h>
 
 #include <utility>
 
@@ -41,18 +42,20 @@ class ResourceRequirement {
 
   ///@{
   /**
-   * <p>The value for the specified resource type.</p> <p>When the type is
-   * <code>GPU</code>, the value is the number of physical <code>GPUs</code> the
-   * Amazon ECS container agent reserves for the container. The number of GPUs that's
-   * reserved for all containers in a task can't exceed the number of available GPUs
-   * on the container instance that the task is launched on. You can also specify
-   * <code>ALL</code> to allocate all available GPUs on the instance to the
-   * container.</p> <p>When the type is <code>NeuronDevice</code>, the value must be
-   * <code>ALL</code>. This allocates all available Neuron devices on the instance to
-   * the container. Only one container in a task can specify
-   * <code>NeuronDevice</code> resources. This resource type is only supported on
-   * Managed Instances.</p> <p>When the type is <code>InferenceAccelerator</code>,
-   * the <code>value</code> matches the <code>deviceName</code> for an <a
+   * <p>The value for the specified resource type.</p> <p>You must specify this
+   * parameter unless the type is <code>GPU</code> and you specify
+   * <code>sharingStrategy</code>.</p> <p>When the type is <code>GPU</code>, the
+   * value is the number of physical <code>GPUs</code> the Amazon ECS container agent
+   * reserves for the container. The number of GPUs that's reserved for all
+   * containers in a task can't exceed the number of available GPUs on the container
+   * instance that the task is launched on. You can also specify <code>ALL</code> to
+   * allocate all available GPUs on the instance to the container.</p> <p>When the
+   * type is <code>NeuronDevice</code>, the value must be <code>ALL</code>. This
+   * allocates all available Neuron devices on the instance to the container. Only
+   * one container in a task can specify <code>NeuronDevice</code> resources. This
+   * resource type is only supported on Managed Instances.</p> <p>When the type is
+   * <code>InferenceAccelerator</code>, the <code>value</code> matches the
+   * <code>deviceName</code> for an <a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_InferenceAccelerator.html">InferenceAccelerator</a>
    * specified in a task definition.</p>
    */
@@ -85,12 +88,41 @@ class ResourceRequirement {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The strategy that the container uses to share a GPU with other containers.
+   * Specify a sharing strategy only when the type is <code>GPU</code>. For a GPU
+   * resource requirement, specify either <code>value</code> or
+   * <code>sharingStrategy</code>, but not both. If you don't specify a sharing
+   * strategy, the container has exclusive use of each GPU that Amazon ECS assigns to
+   * it. The containers in a task that request GPUs must all use the same option.</p>
+   * <p>You can use GPU sharing with tasks that run on Amazon EC2 instances or Amazon
+   * ECS Managed Instances. Task definitions that require <code>EXTERNAL</code>
+   * compatibility don't support GPU sharing.</p>
+   */
+  inline const SharingStrategy& GetSharingStrategy() const { return m_sharingStrategy; }
+  inline bool SharingStrategyHasBeenSet() const { return m_sharingStrategyHasBeenSet; }
+  template <typename SharingStrategyT = SharingStrategy>
+  void SetSharingStrategy(SharingStrategyT&& value) {
+    m_sharingStrategyHasBeenSet = true;
+    m_sharingStrategy = std::forward<SharingStrategyT>(value);
+  }
+  template <typename SharingStrategyT = SharingStrategy>
+  ResourceRequirement& WithSharingStrategy(SharingStrategyT&& value) {
+    SetSharingStrategy(std::forward<SharingStrategyT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_value;
 
   ResourceType m_type{ResourceType::NOT_SET};
+
+  SharingStrategy m_sharingStrategy;
   bool m_valueHasBeenSet = false;
   bool m_typeHasBeenSet = false;
+  bool m_sharingStrategyHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -34,6 +34,10 @@ ResourceDetails& ResourceDetails::operator=(JsonView jsonValue) {
     m_codeRepository = jsonValue.GetObject("codeRepository");
     m_codeRepositoryHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("machineImage")) {
+    m_machineImage = jsonValue.GetObject("machineImage");
+    m_machineImageHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("vm")) {
     m_vm = jsonValue.GetObject("vm");
     m_vmHasBeenSet = true;
@@ -66,6 +70,10 @@ JsonValue ResourceDetails::Jsonize() const {
 
   if (m_codeRepositoryHasBeenSet) {
     payload.WithObject("codeRepository", m_codeRepository.Jsonize());
+  }
+
+  if (m_machineImageHasBeenSet) {
+    payload.WithObject("machineImage", m_machineImage.Jsonize());
   }
 
   if (m_vmHasBeenSet) {

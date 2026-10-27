@@ -86,6 +86,7 @@
 #include <aws/ec2/model/DescribeTrafficMirrorTargetsPaginationTraits.h>
 #include <aws/ec2/model/DescribeIamInstanceProfileAssociationsPaginationTraits.h>
 #include <aws/ec2/model/DescribeSecondaryInterfacesPaginationTraits.h>
+#include <aws/ec2/model/GetImageFindingsPaginationTraits.h>
 #include <aws/ec2/model/DescribeVpcEndpointConnectionsPaginationTraits.h>
 #include <aws/ec2/model/DescribeSecondarySubnetsPaginationTraits.h>
 #include <aws/ec2/model/DescribeStoreImageTasksPaginationTraits.h>

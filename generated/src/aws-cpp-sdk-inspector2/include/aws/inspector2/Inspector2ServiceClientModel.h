@@ -68,6 +68,7 @@
 #include <aws/inspector2/model/GetFindingsReportStatusRequest.h>
 #include <aws/inspector2/model/GetFindingsReportStatusResult.h>
 #include <aws/inspector2/model/GetMemberResult.h>
+#include <aws/inspector2/model/GetOnDemandScanStatusResult.h>
 #include <aws/inspector2/model/GetSbomExportResult.h>
 #include <aws/inspector2/model/ListAccountPermissionsRequest.h>
 #include <aws/inspector2/model/ListAccountPermissionsResult.h>
@@ -99,6 +100,7 @@
 #include <aws/inspector2/model/ListFindingsResult.h>
 #include <aws/inspector2/model/ListMembersRequest.h>
 #include <aws/inspector2/model/ListMembersResult.h>
+#include <aws/inspector2/model/ListOnDemandScansResult.h>
 #include <aws/inspector2/model/ListTagsForResourceResult.h>
 #include <aws/inspector2/model/ListUsageTotalsRequest.h>
 #include <aws/inspector2/model/ListUsageTotalsResult.h>
@@ -108,6 +110,7 @@
 #include <aws/inspector2/model/SendCisSessionTelemetryResult.h>
 #include <aws/inspector2/model/StartCisSessionResult.h>
 #include <aws/inspector2/model/StartCodeSecurityScanResult.h>
+#include <aws/inspector2/model/StartOnDemandScanResult.h>
 #include <aws/inspector2/model/StopCisSessionResult.h>
 #include <aws/inspector2/model/TagResourceResult.h>
 #include <aws/inspector2/model/UntagResourceResult.h>
@@ -198,6 +201,7 @@ class GetEc2DeepInspectionConfigurationRequest;
 class GetEncryptionKeyRequest;
 class GetFindingsReportStatusRequest;
 class GetMemberRequest;
+class GetOnDemandScanStatusRequest;
 class GetSbomExportRequest;
 class ListAccountPermissionsRequest;
 class ListCisScanConfigurationsRequest;
@@ -216,6 +220,7 @@ class ListFiltersRequest;
 class ListFindingAggregationsRequest;
 class ListFindingsRequest;
 class ListMembersRequest;
+class ListOnDemandScansRequest;
 class ListTagsForResourceRequest;
 class ListUsageTotalsRequest;
 class ResetEncryptionKeyRequest;
@@ -224,6 +229,7 @@ class SendCisSessionHealthRequest;
 class SendCisSessionTelemetryRequest;
 class StartCisSessionRequest;
 class StartCodeSecurityScanRequest;
+class StartOnDemandScanRequest;
 class StopCisSessionRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
@@ -285,6 +291,7 @@ typedef Aws::Utils::Outcome<GetEc2DeepInspectionConfigurationResult, Inspector2E
 typedef Aws::Utils::Outcome<GetEncryptionKeyResult, Inspector2Error> GetEncryptionKeyOutcome;
 typedef Aws::Utils::Outcome<GetFindingsReportStatusResult, Inspector2Error> GetFindingsReportStatusOutcome;
 typedef Aws::Utils::Outcome<GetMemberResult, Inspector2Error> GetMemberOutcome;
+typedef Aws::Utils::Outcome<GetOnDemandScanStatusResult, Inspector2Error> GetOnDemandScanStatusOutcome;
 typedef Aws::Utils::Outcome<GetSbomExportResult, Inspector2Error> GetSbomExportOutcome;
 typedef Aws::Utils::Outcome<ListAccountPermissionsResult, Inspector2Error> ListAccountPermissionsOutcome;
 typedef Aws::Utils::Outcome<ListCisScanConfigurationsResult, Inspector2Error> ListCisScanConfigurationsOutcome;
@@ -305,6 +312,7 @@ typedef Aws::Utils::Outcome<ListFiltersResult, Inspector2Error> ListFiltersOutco
 typedef Aws::Utils::Outcome<ListFindingAggregationsResult, Inspector2Error> ListFindingAggregationsOutcome;
 typedef Aws::Utils::Outcome<ListFindingsResult, Inspector2Error> ListFindingsOutcome;
 typedef Aws::Utils::Outcome<ListMembersResult, Inspector2Error> ListMembersOutcome;
+typedef Aws::Utils::Outcome<ListOnDemandScansResult, Inspector2Error> ListOnDemandScansOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, Inspector2Error> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<ListUsageTotalsResult, Inspector2Error> ListUsageTotalsOutcome;
 typedef Aws::Utils::Outcome<ResetEncryptionKeyResult, Inspector2Error> ResetEncryptionKeyOutcome;
@@ -313,6 +321,7 @@ typedef Aws::Utils::Outcome<SendCisSessionHealthResult, Inspector2Error> SendCis
 typedef Aws::Utils::Outcome<SendCisSessionTelemetryResult, Inspector2Error> SendCisSessionTelemetryOutcome;
 typedef Aws::Utils::Outcome<StartCisSessionResult, Inspector2Error> StartCisSessionOutcome;
 typedef Aws::Utils::Outcome<StartCodeSecurityScanResult, Inspector2Error> StartCodeSecurityScanOutcome;
+typedef Aws::Utils::Outcome<StartOnDemandScanResult, Inspector2Error> StartOnDemandScanOutcome;
 typedef Aws::Utils::Outcome<StopCisSessionResult, Inspector2Error> StopCisSessionOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, Inspector2Error> TagResourceOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, Inspector2Error> UntagResourceOutcome;
@@ -371,6 +380,7 @@ typedef std::future<GetEc2DeepInspectionConfigurationOutcome> GetEc2DeepInspecti
 typedef std::future<GetEncryptionKeyOutcome> GetEncryptionKeyOutcomeCallable;
 typedef std::future<GetFindingsReportStatusOutcome> GetFindingsReportStatusOutcomeCallable;
 typedef std::future<GetMemberOutcome> GetMemberOutcomeCallable;
+typedef std::future<GetOnDemandScanStatusOutcome> GetOnDemandScanStatusOutcomeCallable;
 typedef std::future<GetSbomExportOutcome> GetSbomExportOutcomeCallable;
 typedef std::future<ListAccountPermissionsOutcome> ListAccountPermissionsOutcomeCallable;
 typedef std::future<ListCisScanConfigurationsOutcome> ListCisScanConfigurationsOutcomeCallable;
@@ -389,6 +399,7 @@ typedef std::future<ListFiltersOutcome> ListFiltersOutcomeCallable;
 typedef std::future<ListFindingAggregationsOutcome> ListFindingAggregationsOutcomeCallable;
 typedef std::future<ListFindingsOutcome> ListFindingsOutcomeCallable;
 typedef std::future<ListMembersOutcome> ListMembersOutcomeCallable;
+typedef std::future<ListOnDemandScansOutcome> ListOnDemandScansOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<ListUsageTotalsOutcome> ListUsageTotalsOutcomeCallable;
 typedef std::future<ResetEncryptionKeyOutcome> ResetEncryptionKeyOutcomeCallable;
@@ -397,6 +408,7 @@ typedef std::future<SendCisSessionHealthOutcome> SendCisSessionHealthOutcomeCall
 typedef std::future<SendCisSessionTelemetryOutcome> SendCisSessionTelemetryOutcomeCallable;
 typedef std::future<StartCisSessionOutcome> StartCisSessionOutcomeCallable;
 typedef std::future<StartCodeSecurityScanOutcome> StartCodeSecurityScanOutcomeCallable;
+typedef std::future<StartOnDemandScanOutcome> StartOnDemandScanOutcomeCallable;
 typedef std::future<StopCisSessionOutcome> StopCisSessionOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
@@ -552,6 +564,9 @@ typedef std::function<void(const Inspector2Client*, const Model::GetFindingsRepo
 typedef std::function<void(const Inspector2Client*, const Model::GetMemberRequest&, const Model::GetMemberOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetMemberResponseReceivedHandler;
+typedef std::function<void(const Inspector2Client*, const Model::GetOnDemandScanStatusRequest&, const Model::GetOnDemandScanStatusOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetOnDemandScanStatusResponseReceivedHandler;
 typedef std::function<void(const Inspector2Client*, const Model::GetSbomExportRequest&, const Model::GetSbomExportOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetSbomExportResponseReceivedHandler;
@@ -612,6 +627,9 @@ typedef std::function<void(const Inspector2Client*, const Model::ListFindingsReq
 typedef std::function<void(const Inspector2Client*, const Model::ListMembersRequest&, const Model::ListMembersOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListMembersResponseReceivedHandler;
+typedef std::function<void(const Inspector2Client*, const Model::ListOnDemandScansRequest&, const Model::ListOnDemandScansOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListOnDemandScansResponseReceivedHandler;
 typedef std::function<void(const Inspector2Client*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListTagsForResourceResponseReceivedHandler;
@@ -636,6 +654,9 @@ typedef std::function<void(const Inspector2Client*, const Model::StartCisSession
 typedef std::function<void(const Inspector2Client*, const Model::StartCodeSecurityScanRequest&, const Model::StartCodeSecurityScanOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartCodeSecurityScanResponseReceivedHandler;
+typedef std::function<void(const Inspector2Client*, const Model::StartOnDemandScanRequest&, const Model::StartOnDemandScanOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StartOnDemandScanResponseReceivedHandler;
 typedef std::function<void(const Inspector2Client*, const Model::StopCisSessionRequest&, const Model::StopCisSessionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StopCisSessionResponseReceivedHandler;

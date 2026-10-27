@@ -61,6 +61,7 @@
 #include <aws/inspector2/model/GetEncryptionKeyRequest.h>
 #include <aws/inspector2/model/GetFindingsReportStatusRequest.h>
 #include <aws/inspector2/model/GetMemberRequest.h>
+#include <aws/inspector2/model/GetOnDemandScanStatusRequest.h>
 #include <aws/inspector2/model/GetSbomExportRequest.h>
 #include <aws/inspector2/model/ListAccountPermissionsRequest.h>
 #include <aws/inspector2/model/ListCisScanConfigurationsRequest.h>
@@ -79,6 +80,7 @@
 #include <aws/inspector2/model/ListFindingAggregationsRequest.h>
 #include <aws/inspector2/model/ListFindingsRequest.h>
 #include <aws/inspector2/model/ListMembersRequest.h>
+#include <aws/inspector2/model/ListOnDemandScansRequest.h>
 #include <aws/inspector2/model/ListTagsForResourceRequest.h>
 #include <aws/inspector2/model/ListUsageTotalsRequest.h>
 #include <aws/inspector2/model/ResetEncryptionKeyRequest.h>
@@ -87,6 +89,7 @@
 #include <aws/inspector2/model/SendCisSessionTelemetryRequest.h>
 #include <aws/inspector2/model/StartCisSessionRequest.h>
 #include <aws/inspector2/model/StartCodeSecurityScanRequest.h>
+#include <aws/inspector2/model/StartOnDemandScanRequest.h>
 #include <aws/inspector2/model/StopCisSessionRequest.h>
 #include <aws/inspector2/model/TagResourceRequest.h>
 #include <aws/inspector2/model/UntagResourceRequest.h>
@@ -725,6 +728,17 @@ GetMemberOutcome Inspector2Client::GetMember(const GetMemberRequest& request) co
   return result.IsSuccess() ? GetMemberOutcome(result.GetResultWithOwnership()) : GetMemberOutcome(std::move(result.GetError()));
 }
 
+GetOnDemandScanStatusOutcome Inspector2Client::GetOnDemandScanStatus(const GetOnDemandScanStatusRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/ondemand/scan/status");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetOnDemandScanStatusOutcome(result.GetResultWithOwnership())
+                            : GetOnDemandScanStatusOutcome(std::move(result.GetError()));
+}
+
 GetSbomExportOutcome Inspector2Client::GetSbomExport(const GetSbomExportRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -922,6 +936,17 @@ ListMembersOutcome Inspector2Client::ListMembers(const ListMembersRequest& reque
   return result.IsSuccess() ? ListMembersOutcome(result.GetResultWithOwnership()) : ListMembersOutcome(std::move(result.GetError()));
 }
 
+ListOnDemandScansOutcome Inspector2Client::ListOnDemandScans(const ListOnDemandScansRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/ondemand/scans");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListOnDemandScansOutcome(result.GetResultWithOwnership())
+                            : ListOnDemandScansOutcome(std::move(result.GetError()));
+}
+
 ListTagsForResourceOutcome Inspector2Client::ListTagsForResource(const ListTagsForResourceRequest& request) const {
   if (!request.ResourceArnHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListTagsForResource", "Required field: ResourceArn, is not set");
@@ -1015,6 +1040,17 @@ StartCodeSecurityScanOutcome Inspector2Client::StartCodeSecurityScan(const Start
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? StartCodeSecurityScanOutcome(result.GetResultWithOwnership())
                             : StartCodeSecurityScanOutcome(std::move(result.GetError()));
+}
+
+StartOnDemandScanOutcome Inspector2Client::StartOnDemandScan(const StartOnDemandScanRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/ondemand/scan");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartOnDemandScanOutcome(result.GetResultWithOwnership())
+                            : StartOnDemandScanOutcome(std::move(result.GetError()));
 }
 
 StopCisSessionOutcome Inspector2Client::StopCisSession(const StopCisSessionRequest& request) const {

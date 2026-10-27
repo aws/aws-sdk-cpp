@@ -1727,6 +1727,9 @@
 #include <aws/ec2/model/GetImageAncestryResponse.h>
 #include <aws/ec2/model/GetImageBlockPublicAccessStateRequest.h>
 #include <aws/ec2/model/GetImageBlockPublicAccessStateResponse.h>
+#include <aws/ec2/model/GetImageFindingsPaginationTraits.h>
+#include <aws/ec2/model/GetImageFindingsRequest.h>
+#include <aws/ec2/model/GetImageFindingsResponse.h>
 #include <aws/ec2/model/GetInstanceMetadataDefaultsRequest.h>
 #include <aws/ec2/model/GetInstanceMetadataDefaultsResponse.h>
 #include <aws/ec2/model/GetInstanceTpmEkPubRequest.h>
@@ -1907,6 +1910,7 @@
 #include <aws/ec2/model/ImageCriterion.h>
 #include <aws/ec2/model/ImageCriterionRequest.h>
 #include <aws/ec2/model/ImageDiskContainer.h>
+#include <aws/ec2/model/ImageFinding.h>
 #include <aws/ec2/model/ImageMetadata.h>
 #include <aws/ec2/model/ImageRecycleBinInfo.h>
 #include <aws/ec2/model/ImageReference.h>
@@ -2802,6 +2806,9 @@
 #include <aws/ec2/model/S3ObjectTag.h>
 #include <aws/ec2/model/S3Storage.h>
 #include <aws/ec2/model/SSEType.h>
+#include <aws/ec2/model/ScanResultCondition.h>
+#include <aws/ec2/model/ScanResultConditionRequest.h>
+#include <aws/ec2/model/ScanResults.h>
 #include <aws/ec2/model/Schedule.h>
 #include <aws/ec2/model/ScheduledInstance.h>
 #include <aws/ec2/model/ScheduledInstanceAvailability.h>
@@ -2865,6 +2872,7 @@
 #include <aws/ec2/model/ServiceState.h>
 #include <aws/ec2/model/ServiceType.h>
 #include <aws/ec2/model/ServiceTypeDetail.h>
+#include <aws/ec2/model/SeverityLabel.h>
 #include <aws/ec2/model/ShutdownBehavior.h>
 #include <aws/ec2/model/SlotDateTimeRangeRequest.h>
 #include <aws/ec2/model/SlotStartTimeRangeRequest.h>

@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lightsail/LightsailRequest.h>
 #include <aws/lightsail/Lightsail_EXPORTS.h>
+#include <aws/lightsail/model/InstanceAttributeUpdates.h>
 
 #include <utility>
 
@@ -47,9 +48,31 @@ class StartInstanceRequest : public LightsailRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>An object that describes the attributes to update on the instance before it
+   * starts.</p>
+   */
+  inline const InstanceAttributeUpdates& GetAttributeUpdates() const { return m_attributeUpdates; }
+  inline bool AttributeUpdatesHasBeenSet() const { return m_attributeUpdatesHasBeenSet; }
+  template <typename AttributeUpdatesT = InstanceAttributeUpdates>
+  void SetAttributeUpdates(AttributeUpdatesT&& value) {
+    m_attributeUpdatesHasBeenSet = true;
+    m_attributeUpdates = std::forward<AttributeUpdatesT>(value);
+  }
+  template <typename AttributeUpdatesT = InstanceAttributeUpdates>
+  StartInstanceRequest& WithAttributeUpdates(AttributeUpdatesT&& value) {
+    SetAttributeUpdates(std::forward<AttributeUpdatesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_instanceName;
+
+  InstanceAttributeUpdates m_attributeUpdates;
   bool m_instanceNameHasBeenSet = false;
+  bool m_attributeUpdatesHasBeenSet = false;
 };
 
 }  // namespace Model

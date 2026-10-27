@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/inspector2/Inspector2Request.h>
 #include <aws/inspector2/Inspector2_EXPORTS.h>
+#include <aws/inspector2/model/AmiConfiguration.h>
 #include <aws/inspector2/model/Ec2Configuration.h>
 #include <aws/inspector2/model/EcrConfiguration.h>
 #include <aws/inspector2/model/UpdateConfigurationInheritance.h>
@@ -93,6 +94,25 @@ class UpdateConfigurationRequest : public Inspector2Request {
 
   ///@{
   /**
+   * <p>The Amazon Machine Image (AMI) scan configuration to apply to the
+   * account.</p>
+   */
+  inline const AmiConfiguration& GetAmiConfiguration() const { return m_amiConfiguration; }
+  inline bool AmiConfigurationHasBeenSet() const { return m_amiConfigurationHasBeenSet; }
+  template <typename AmiConfigurationT = AmiConfiguration>
+  void SetAmiConfiguration(AmiConfigurationT&& value) {
+    m_amiConfigurationHasBeenSet = true;
+    m_amiConfiguration = std::forward<AmiConfigurationT>(value);
+  }
+  template <typename AmiConfigurationT = AmiConfiguration>
+  UpdateConfigurationRequest& WithAmiConfiguration(AmiConfigurationT&& value) {
+    SetAmiConfiguration(std::forward<AmiConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Specifies which scan-type configurations to reset to the delegated
    * administrator's inherited values for the targeted member account. Each member of
    * this structure is independently optional. When specified,
@@ -122,10 +142,13 @@ class UpdateConfigurationRequest : public Inspector2Request {
 
   Ec2Configuration m_ec2Configuration;
 
+  AmiConfiguration m_amiConfiguration;
+
   UpdateConfigurationInheritance m_updateConfigurationInheritance;
   bool m_accountIdHasBeenSet = false;
   bool m_ecrConfigurationHasBeenSet = false;
   bool m_ec2ConfigurationHasBeenSet = false;
+  bool m_amiConfigurationHasBeenSet = false;
   bool m_updateConfigurationInheritanceHasBeenSet = false;
 };
 

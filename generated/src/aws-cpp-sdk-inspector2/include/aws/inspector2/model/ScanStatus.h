@@ -82,6 +82,8 @@ class ScanStatus {
    * <code>INTERNAL_ERROR</code> - Amazon Inspector has encountered an internal error
    * for this resource. Amazon Inspector service will automatically resolve the issue
    * and resume the scanning. No action required from the user.</p> <p>
+   * <code>INVALID_ARTIFACT</code> - Amazon Inspector couldn't scan this resource
+   * because its artifact is malformed and couldn't be safely extracted.</p> <p>
    * <code>NO_INVENTORY</code> - Amazon Inspector couldn't find software application
    * inventory to scan for vulnerabilities. This might be caused due to required
    * Amazon Inspector associations being deleted or failing to run on your resource.

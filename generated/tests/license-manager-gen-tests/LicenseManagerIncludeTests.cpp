@@ -102,6 +102,7 @@
 #include <aws/license-manager/model/GetServiceSettingsResult.h>
 #include <aws/license-manager/model/Grant.h>
 #include <aws/license-manager/model/GrantStatus.h>
+#include <aws/license-manager/model/GrantType.h>
 #include <aws/license-manager/model/GrantedLicense.h>
 #include <aws/license-manager/model/InstanceRuleStatement.h>
 #include <aws/license-manager/model/InventoryFilter.h>

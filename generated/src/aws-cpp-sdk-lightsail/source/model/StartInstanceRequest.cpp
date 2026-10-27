@@ -19,6 +19,10 @@ Aws::String StartInstanceRequest::SerializePayload() const {
     payload.WithString("instanceName", m_instanceName);
   }
 
+  if (m_attributeUpdatesHasBeenSet) {
+    payload.WithObject("attributeUpdates", m_attributeUpdates.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

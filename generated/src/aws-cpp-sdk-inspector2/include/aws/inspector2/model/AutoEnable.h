@@ -114,6 +114,23 @@ class AutoEnable {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Represents whether Amazon Machine Image (AMI) scans are automatically enabled
+   * for new members of your Amazon Inspector organization.</p>
+   */
+  inline bool GetAmi() const { return m_ami; }
+  inline bool AmiHasBeenSet() const { return m_amiHasBeenSet; }
+  inline void SetAmi(bool value) {
+    m_amiHasBeenSet = true;
+    m_ami = value;
+  }
+  inline AutoEnable& WithAmi(bool value) {
+    SetAmi(value);
+    return *this;
+  }
+  ///@}
  private:
   bool m_ec2{false};
 
@@ -124,11 +141,14 @@ class AutoEnable {
   bool m_lambdaCode{false};
 
   bool m_codeRepository{false};
+
+  bool m_ami{false};
   bool m_ec2HasBeenSet = false;
   bool m_ecrHasBeenSet = false;
   bool m_lambdaHasBeenSet = false;
   bool m_lambdaCodeHasBeenSet = false;
   bool m_codeRepositoryHasBeenSet = false;
+  bool m_amiHasBeenSet = false;
 };
 
 }  // namespace Model

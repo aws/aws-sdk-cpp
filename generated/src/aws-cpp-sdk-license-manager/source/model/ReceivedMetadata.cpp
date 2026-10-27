@@ -34,6 +34,10 @@ ReceivedMetadata& ReceivedMetadata::operator=(JsonView jsonValue) {
     }
     m_allowedOperationsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("GrantType")) {
+    m_grantType = GrantTypeMapper::GetGrantTypeForName(jsonValue.GetString("GrantType"));
+    m_grantTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -55,6 +59,10 @@ JsonValue ReceivedMetadata::Jsonize() const {
           AllowedOperationMapper::GetNameForAllowedOperation(m_allowedOperations[allowedOperationsIndex]));
     }
     payload.WithArray("AllowedOperations", std::move(allowedOperationsJsonList));
+  }
+
+  if (m_grantTypeHasBeenSet) {
+    payload.WithString("GrantType", GrantTypeMapper::GetNameForGrantType(m_grantType));
   }
 
   return payload;

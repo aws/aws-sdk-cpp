@@ -11,6 +11,7 @@
 #include <aws/ec2/model/CreationDateConditionRequest.h>
 #include <aws/ec2/model/DeprecationTimeConditionRequest.h>
 #include <aws/ec2/model/ImageWatermarkFilterRequest.h>
+#include <aws/ec2/model/ScanResultConditionRequest.h>
 
 #include <utility>
 
@@ -198,6 +199,27 @@ class ImageCriterionRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Inspector scan-result criteria that an AMI must meet to be
+   * allowed. The criteria can limit the highest finding severity, the number of days
+   * since Amazon Inspector last scanned the AMI, and the number of days since Amazon
+   * Inspector reported a fix as available.</p>
+   */
+  inline const ScanResultConditionRequest& GetScanResultCondition() const { return m_scanResultCondition; }
+  inline bool ScanResultConditionHasBeenSet() const { return m_scanResultConditionHasBeenSet; }
+  template <typename ScanResultConditionT = ScanResultConditionRequest>
+  void SetScanResultCondition(ScanResultConditionT&& value) {
+    m_scanResultConditionHasBeenSet = true;
+    m_scanResultCondition = std::forward<ScanResultConditionT>(value);
+  }
+  template <typename ScanResultConditionT = ScanResultConditionRequest>
+  ImageCriterionRequest& WithScanResultCondition(ScanResultConditionT&& value) {
+    SetScanResultCondition(std::forward<ScanResultConditionT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_imageProviders;
 
@@ -210,12 +232,15 @@ class ImageCriterionRequest {
   CreationDateConditionRequest m_creationDateCondition;
 
   Aws::Vector<ImageWatermarkFilterRequest> m_imageWatermarks;
+
+  ScanResultConditionRequest m_scanResultCondition;
   bool m_imageProvidersHasBeenSet = false;
   bool m_marketplaceProductCodesHasBeenSet = false;
   bool m_imageNamesHasBeenSet = false;
   bool m_deprecationTimeConditionHasBeenSet = false;
   bool m_creationDateConditionHasBeenSet = false;
   bool m_imageWatermarksHasBeenSet = false;
+  bool m_scanResultConditionHasBeenSet = false;
 };
 
 }  // namespace Model

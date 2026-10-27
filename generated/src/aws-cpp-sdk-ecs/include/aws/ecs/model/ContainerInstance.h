@@ -12,6 +12,7 @@
 #include <aws/ecs/model/Attachment.h>
 #include <aws/ecs/model/Attribute.h>
 #include <aws/ecs/model/ContainerInstanceHealthStatus.h>
+#include <aws/ecs/model/GpuDevice.h>
 #include <aws/ecs/model/Resource.h>
 #include <aws/ecs/model/Tag.h>
 #include <aws/ecs/model/VersionInfo.h>
@@ -453,6 +454,32 @@ class ContainerInstance {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The state of each GPU on the container instance, including its sharing mode
+   * and available memory. This field is present only for container instances that
+   * support GPU sharing.</p>
+   */
+  inline const Aws::Vector<GpuDevice>& GetGpuDevices() const { return m_gpuDevices; }
+  inline bool GpuDevicesHasBeenSet() const { return m_gpuDevicesHasBeenSet; }
+  template <typename GpuDevicesT = Aws::Vector<GpuDevice>>
+  void SetGpuDevices(GpuDevicesT&& value) {
+    m_gpuDevicesHasBeenSet = true;
+    m_gpuDevices = std::forward<GpuDevicesT>(value);
+  }
+  template <typename GpuDevicesT = Aws::Vector<GpuDevice>>
+  ContainerInstance& WithGpuDevices(GpuDevicesT&& value) {
+    SetGpuDevices(std::forward<GpuDevicesT>(value));
+    return *this;
+  }
+  template <typename GpuDevicesT = GpuDevice>
+  ContainerInstance& AddGpuDevices(GpuDevicesT&& value) {
+    m_gpuDevicesHasBeenSet = true;
+    m_gpuDevices.emplace_back(std::forward<GpuDevicesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_containerInstanceArn;
 
@@ -489,6 +516,8 @@ class ContainerInstance {
   Aws::Vector<Tag> m_tags;
 
   ContainerInstanceHealthStatus m_healthStatus;
+
+  Aws::Vector<GpuDevice> m_gpuDevices;
   bool m_containerInstanceArnHasBeenSet = false;
   bool m_ec2InstanceIdHasBeenSet = false;
   bool m_capacityProviderNameHasBeenSet = false;
@@ -507,6 +536,7 @@ class ContainerInstance {
   bool m_attachmentsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_healthStatusHasBeenSet = false;
+  bool m_gpuDevicesHasBeenSet = false;
 };
 
 }  // namespace Model
