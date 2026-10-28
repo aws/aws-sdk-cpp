@@ -60,9 +60,7 @@ void OnResponseBodyReceived(Aws::Crt::Http::HttpStream&, const Aws::Crt::ByteCur
                             const std::shared_ptr<Aws::Http::HttpRequest>& request) {
   assert(response);
   for (const auto& hashIterator : request->GetResponseValidationHashes()) {
-    std::stringstream headerStr;
-    headerStr << "x-amz-checksum-" << hashIterator.first;
-    if (response->HasHeader(headerStr.str().c_str())) {
+    if (response->HasHeader(("x-amz-checksum-" + hashIterator.first).c_str())) {
       hashIterator.second->Update(reinterpret_cast<unsigned char*>(body.ptr), body.len);
       break;
     }

@@ -280,6 +280,7 @@
 #include <aws/ec2/model/CapacityManagerMonitoredTagKey.h>
 #include <aws/ec2/model/CapacityManagerMonitoredTagKeyStatus.h>
 #include <aws/ec2/model/CapacityManagerStatus.h>
+#include <aws/ec2/model/CapacityManagerSupportabilityScore.h>
 #include <aws/ec2/model/CapacityManagerTagDimension.h>
 #include <aws/ec2/model/CapacityReservation.h>
 #include <aws/ec2/model/CapacityReservationAdjustmentDetails.h>
@@ -313,6 +314,7 @@
 #include <aws/ec2/model/CapacityReservationTopology.h>
 #include <aws/ec2/model/CapacityReservationType.h>
 #include <aws/ec2/model/CapacityTenancy.h>
+#include <aws/ec2/model/CapacityUnit.h>
 #include <aws/ec2/model/CarrierGateway.h>
 #include <aws/ec2/model/CarrierGatewayState.h>
 #include <aws/ec2/model/CertificateAuthentication.h>
@@ -1696,6 +1698,8 @@
 #include <aws/ec2/model/GetCapacityManagerMonitoredTagKeysPaginationTraits.h>
 #include <aws/ec2/model/GetCapacityManagerMonitoredTagKeysRequest.h>
 #include <aws/ec2/model/GetCapacityManagerMonitoredTagKeysResponse.h>
+#include <aws/ec2/model/GetCapacityManagerSupportabilityScoresRequest.h>
+#include <aws/ec2/model/GetCapacityManagerSupportabilityScoresResponse.h>
 #include <aws/ec2/model/GetCapacityReservationUsageRequest.h>
 #include <aws/ec2/model/GetCapacityReservationUsageResponse.h>
 #include <aws/ec2/model/GetClientVpnEndpointAuthorizationPolicyRequest.h>
@@ -2952,6 +2956,8 @@
 #include <aws/ec2/model/SuccessfulQueuedPurchaseDeletion.h>
 #include <aws/ec2/model/SuccessfulSuppressionResponseObject.h>
 #include <aws/ec2/model/SummaryStatus.h>
+#include <aws/ec2/model/SupportabilityMarketType.h>
+#include <aws/ec2/model/SupportabilityScore.h>
 #include <aws/ec2/model/SupportedAdditionalProcessorFeature.h>
 #include <aws/ec2/model/SupportedRegionDetail.h>
 #include <aws/ec2/model/Tag.h>

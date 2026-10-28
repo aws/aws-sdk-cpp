@@ -50,7 +50,7 @@ class CreateFailoverSlateConfigurationRequest : public IVSRequest {
   ///@{
   /**
    * <p>Number of seconds of ingest interruption before the failover slate activates.
-   * Minimum: <code>3</code>. Maximum: <code>5</code>. Default: <code>3</code>.</p>
+   * Default: <code>3</code>.</p>
    */
   inline int GetActivationThresholdSeconds() const { return m_activationThresholdSeconds; }
   inline bool ActivationThresholdSecondsHasBeenSet() const { return m_activationThresholdSecondsHasBeenSet; }
@@ -67,7 +67,7 @@ class CreateFailoverSlateConfigurationRequest : public IVSRequest {
   ///@{
   /**
    * <p>Minimum number of seconds that the failover slate displays after activation.
-   * Minimum: <code>3</code>. Maximum: <code>10</code>. Default: <code>3</code>.</p>
+   * Default: <code>3</code>.</p>
    */
   inline int GetMinSlateDisplaySeconds() const { return m_minSlateDisplaySeconds; }
   inline bool MinSlateDisplaySecondsHasBeenSet() const { return m_minSlateDisplaySecondsHasBeenSet; }
@@ -83,8 +83,8 @@ class CreateFailoverSlateConfigurationRequest : public IVSRequest {
 
   ///@{
   /**
-   * <p>Maximum number of seconds that the failover slate displays. Minimum:
-   * <code>60</code>. Maximum: <code>180</code>. Default: <code>60</code>.</p>
+   * <p>Maximum number of seconds that the failover slate displays. Default:
+   * <code>60</code>.</p>
    */
   inline int GetMaxSlateDisplaySeconds() const { return m_maxSlateDisplaySeconds; }
   inline bool MaxSlateDisplaySecondsHasBeenSet() const { return m_maxSlateDisplaySecondsHasBeenSet; }

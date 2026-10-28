@@ -10,6 +10,7 @@
 #include <aws/core/platform/FileSystem.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
 #include <aws/core/platform/Environment.h>
+#include <aws/core/endpoint/BuiltInParameters.h>
 
 #include <fstream>
 #include <thread>
@@ -30,6 +31,8 @@ protected:
     SaveEnvironmentVariable("AWS_REGION");
     SaveEnvironmentVariable("AWS_EC2_METADATA_SERVICE_ENDPOINT");
     SaveEnvironmentVariable("DISABLE_REQUEST_COMPRESSION");
+    SaveEnvironmentVariable("AWS_USE_DUALSTACK_ENDPOINT");
+    SaveEnvironmentVariable("AWS_USE_FIPS_ENDPOINT");
 
     Aws::StringStream ss;
     ss << Aws::Auth::GetConfigProfileFilename() + "_blah" << std::this_thread::get_id();
@@ -41,6 +44,8 @@ protected:
     Aws::Environment::UnSetEnv("AWS_REGION");
     Aws::Environment::UnSetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT");
     Aws::Environment::UnSetEnv("DISABLE_REQUEST_COMPRESSION");
+    Aws::Environment::UnSetEnv("AWS_USE_DUALSTACK_ENDPOINT");
+    Aws::Environment::UnSetEnv("AWS_USE_FIPS_ENDPOINT");
 
     auto profileDirectory = Aws::Auth::ProfileCredentialsProvider::GetProfileDirectory();
     Aws::FileSystem::CreateDirectoryIfNotExists(profileDirectory.c_str());
@@ -192,6 +197,115 @@ TEST_F(AWSConfigTestSuite, TestNoEnvAndConfigSetToFalseSetsUseRequestCompression
   EXPECT_EQ(Aws::Client::UseRequestCompression::DISABLE, config.requestCompressionConfig.useRequestCompression);
 
   // cleanup
+  Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str());
+}
+
+TEST_F(AWSConfigTestSuite, TestNoEnvNoConfigLeavesDualStackAndFipsDisabled){
+  Aws::OFStream configFileNew(m_configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+  configFileNew.flush();
+  configFileNew.close();
+  Aws::Config::ReloadCachedConfigFile();
+
+  Aws::Client::ClientConfiguration config;
+
+  EXPECT_FALSE(config.useDualStack);
+  EXPECT_FALSE(config.useFIPS);
+
+  Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str());
+}
+
+TEST_F(AWSConfigTestSuite, TestEnvEnablesDualStackAndFips){
+  Aws::Environment::SetEnv("AWS_USE_DUALSTACK_ENDPOINT", "true", 1/*overwrite*/);
+  Aws::Environment::SetEnv("AWS_USE_FIPS_ENDPOINT", "TRUE", 1/*overwrite*/);
+  Aws::OFStream configFileNew(m_configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+  configFileNew.flush();
+  configFileNew.close();
+  Aws::Config::ReloadCachedConfigFile();
+
+  Aws::Client::ClientConfiguration config;
+
+  EXPECT_TRUE(config.useDualStack);
+  EXPECT_TRUE(config.useFIPS);
+
+  Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str());
+}
+
+TEST_F(AWSConfigTestSuite, TestProfileEnablesDualStackAndFips){
+  Aws::OFStream configFileNew(m_configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+  configFileNew << "[profile Dijkstra]" << std::endl;
+  configFileNew << "use_dualstack_endpoint = true" << std::endl;
+  configFileNew << "use_fips_endpoint = true" << std::endl;
+  configFileNew.flush();
+  configFileNew.close();
+  Aws::Config::ReloadCachedConfigFile();
+
+  Aws::Client::ClientConfiguration config("Dijkstra");
+
+  EXPECT_TRUE(config.useDualStack);
+  EXPECT_TRUE(config.useFIPS);
+
+  Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str());
+}
+
+TEST_F(AWSConfigTestSuite, TestEnvFalseOverridesProfileTrueForDualStackAndFips){
+  Aws::Environment::SetEnv("AWS_USE_DUALSTACK_ENDPOINT", "false", 1/*overwrite*/);
+  Aws::Environment::SetEnv("AWS_USE_FIPS_ENDPOINT", "false", 1/*overwrite*/);
+  Aws::OFStream configFileNew(m_configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+  configFileNew << "[profile Dijkstra]" << std::endl;
+  configFileNew << "use_dualstack_endpoint = true" << std::endl;
+  configFileNew << "use_fips_endpoint = true" << std::endl;
+  configFileNew.flush();
+  configFileNew.close();
+  Aws::Config::ReloadCachedConfigFile();
+
+  Aws::Client::ClientConfiguration config("Dijkstra");
+
+  EXPECT_FALSE(config.useDualStack);
+  EXPECT_FALSE(config.useFIPS);
+
+  Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str());
+}
+
+TEST_F(AWSConfigTestSuite, TestInvalidValueLeavesDualStackAndFipsDisabled){
+  Aws::Environment::SetEnv("AWS_USE_DUALSTACK_ENDPOINT", "yes", 1/*overwrite*/);
+  Aws::OFStream configFileNew(m_configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+  configFileNew << "[default]" << std::endl;
+  configFileNew << "use_fips_endpoint = 1" << std::endl;
+  configFileNew.flush();
+  configFileNew.close();
+  Aws::Config::ReloadCachedConfigFile();
+
+  Aws::Client::ClientConfiguration config;
+
+  EXPECT_FALSE(config.useDualStack);
+  EXPECT_FALSE(config.useFIPS);
+
+  Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str());
+}
+
+TEST_F(AWSConfigTestSuite, TestCodeOverridesEnvForDualStackAndFips){
+  Aws::Environment::SetEnv("AWS_USE_DUALSTACK_ENDPOINT", "true", 1/*overwrite*/);
+  Aws::Environment::SetEnv("AWS_USE_FIPS_ENDPOINT", "true", 1/*overwrite*/);
+  Aws::OFStream configFileNew(m_configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+  configFileNew.flush();
+  configFileNew.close();
+  Aws::Config::ReloadCachedConfigFile();
+
+  Aws::Client::ClientConfiguration config;
+  config.useDualStack = false;
+  config.useFIPS = false;
+
+  Aws::Endpoint::BuiltInParameters params;
+  params.SetFromClientConfiguration(config);
+  const auto& dualStack = params.GetParameter("UseDualStack");
+  const auto& fips = params.GetParameter("UseFIPS");
+  bool dualStackValue = true;
+  bool fipsValue = true;
+  ASSERT_EQ(Aws::Endpoint::EndpointParameter::GetSetResult::SUCCESS, dualStack.GetBool(dualStackValue));
+  ASSERT_EQ(Aws::Endpoint::EndpointParameter::GetSetResult::SUCCESS, fips.GetBool(fipsValue));
+  EXPECT_FALSE(dualStackValue);
+  EXPECT_FALSE(fipsValue);
+
   Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str());
 }
 

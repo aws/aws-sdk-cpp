@@ -765,6 +765,7 @@
 #include <aws/ec2/model/GetCapacityManagerMetricDimensionsResponse.h>
 #include <aws/ec2/model/GetCapacityManagerMonitoredTagKeysRequest.h>
 #include <aws/ec2/model/GetCapacityManagerMonitoredTagKeysResponse.h>
+#include <aws/ec2/model/GetCapacityManagerSupportabilityScoresResponse.h>
 #include <aws/ec2/model/GetCapacityReservationUsageResponse.h>
 #include <aws/ec2/model/GetClientVpnEndpointAuthorizationPolicyResponse.h>
 #include <aws/ec2/model/GetCoipPoolUsageResponse.h>
@@ -1614,6 +1615,7 @@ class GetCapacityManagerAttributesRequest;
 class GetCapacityManagerMetricDataRequest;
 class GetCapacityManagerMetricDimensionsRequest;
 class GetCapacityManagerMonitoredTagKeysRequest;
+class GetCapacityManagerSupportabilityScoresRequest;
 class GetCapacityReservationUsageRequest;
 class GetClientVpnEndpointAuthorizationPolicyRequest;
 class GetCoipPoolUsageRequest;
@@ -2453,6 +2455,7 @@ typedef Aws::Utils::Outcome<GetCapacityManagerAttributesResponse, EC2Error> GetC
 typedef Aws::Utils::Outcome<GetCapacityManagerMetricDataResponse, EC2Error> GetCapacityManagerMetricDataOutcome;
 typedef Aws::Utils::Outcome<GetCapacityManagerMetricDimensionsResponse, EC2Error> GetCapacityManagerMetricDimensionsOutcome;
 typedef Aws::Utils::Outcome<GetCapacityManagerMonitoredTagKeysResponse, EC2Error> GetCapacityManagerMonitoredTagKeysOutcome;
+typedef Aws::Utils::Outcome<GetCapacityManagerSupportabilityScoresResponse, EC2Error> GetCapacityManagerSupportabilityScoresOutcome;
 typedef Aws::Utils::Outcome<GetCapacityReservationUsageResponse, EC2Error> GetCapacityReservationUsageOutcome;
 typedef Aws::Utils::Outcome<GetClientVpnEndpointAuthorizationPolicyResponse, EC2Error> GetClientVpnEndpointAuthorizationPolicyOutcome;
 typedef Aws::Utils::Outcome<GetCoipPoolUsageResponse, EC2Error> GetCoipPoolUsageOutcome;
@@ -3289,6 +3292,7 @@ typedef std::future<GetCapacityManagerAttributesOutcome> GetCapacityManagerAttri
 typedef std::future<GetCapacityManagerMetricDataOutcome> GetCapacityManagerMetricDataOutcomeCallable;
 typedef std::future<GetCapacityManagerMetricDimensionsOutcome> GetCapacityManagerMetricDimensionsOutcomeCallable;
 typedef std::future<GetCapacityManagerMonitoredTagKeysOutcome> GetCapacityManagerMonitoredTagKeysOutcomeCallable;
+typedef std::future<GetCapacityManagerSupportabilityScoresOutcome> GetCapacityManagerSupportabilityScoresOutcomeCallable;
 typedef std::future<GetCapacityReservationUsageOutcome> GetCapacityReservationUsageOutcomeCallable;
 typedef std::future<GetClientVpnEndpointAuthorizationPolicyOutcome> GetClientVpnEndpointAuthorizationPolicyOutcomeCallable;
 typedef std::future<GetCoipPoolUsageOutcome> GetCoipPoolUsageOutcomeCallable;
@@ -5482,6 +5486,10 @@ typedef std::function<void(const EC2Client*, const Model::GetCapacityManagerMoni
                            const Model::GetCapacityManagerMonitoredTagKeysOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetCapacityManagerMonitoredTagKeysResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::GetCapacityManagerSupportabilityScoresRequest&,
+                           const Model::GetCapacityManagerSupportabilityScoresOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetCapacityManagerSupportabilityScoresResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::GetCapacityReservationUsageRequest&,
                            const Model::GetCapacityReservationUsageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetCapacityReservationUsageResponseReceivedHandler;

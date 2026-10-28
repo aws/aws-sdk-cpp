@@ -81,6 +81,7 @@
 #include <aws/ec2/model/GetCapacityManagerMetricDataRequest.h>
 #include <aws/ec2/model/GetCapacityManagerMetricDimensionsRequest.h>
 #include <aws/ec2/model/GetCapacityManagerMonitoredTagKeysRequest.h>
+#include <aws/ec2/model/GetCapacityManagerSupportabilityScoresRequest.h>
 #include <aws/ec2/model/GetCapacityReservationUsageRequest.h>
 #include <aws/ec2/model/GetClientVpnEndpointAuthorizationPolicyRequest.h>
 #include <aws/ec2/model/GetCoipPoolUsageRequest.h>
@@ -119,7 +120,6 @@
 #include <aws/ec2/model/GetIpamRouteOriginAuthorizationsRequest.h>
 #include <aws/ec2/model/GetIpamRouteProtectionFindingsRequest.h>
 #include <aws/ec2/model/GetIpamRoutingPolicyRegistrationDeltasRequest.h>
-#include <aws/ec2/model/GetIpamRoutingPolicyRegistrationsRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -522,6 +522,13 @@ GetCapacityManagerMonitoredTagKeysOutcome EC2Client::GetCapacityManagerMonitored
                             : GetCapacityManagerMonitoredTagKeysOutcome(std::move(result.GetError()));
 }
 
+GetCapacityManagerSupportabilityScoresOutcome EC2Client::GetCapacityManagerSupportabilityScores(
+    const GetCapacityManagerSupportabilityScoresRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetCapacityManagerSupportabilityScoresOutcome(result.GetResultWithOwnership())
+                            : GetCapacityManagerSupportabilityScoresOutcome(std::move(result.GetError()));
+}
+
 GetCapacityReservationUsageOutcome EC2Client::GetCapacityReservationUsage(const GetCapacityReservationUsageRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetCapacityReservationUsageOutcome(result.GetResultWithOwnership())
@@ -766,11 +773,4 @@ GetIpamRoutingPolicyRegistrationDeltasOutcome EC2Client::GetIpamRoutingPolicyReg
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetIpamRoutingPolicyRegistrationDeltasOutcome(result.GetResultWithOwnership())
                             : GetIpamRoutingPolicyRegistrationDeltasOutcome(std::move(result.GetError()));
-}
-
-GetIpamRoutingPolicyRegistrationsOutcome EC2Client::GetIpamRoutingPolicyRegistrations(
-    const GetIpamRoutingPolicyRegistrationsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? GetIpamRoutingPolicyRegistrationsOutcome(result.GetResultWithOwnership())
-                            : GetIpamRoutingPolicyRegistrationsOutcome(std::move(result.GetError()));
 }

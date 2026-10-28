@@ -29,6 +29,18 @@ Aws::String CreateCapacityReservationFleetRequest::SerializePayload() const {
     }
   }
 
+  if (m_instanceRequirementsHasBeenSet) {
+    m_instanceRequirements.OutputToStream(ss, "InstanceRequirements");
+  }
+
+  if (m_availabilityZoneHasBeenSet) {
+    ss << "AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
+  }
+
+  if (m_availabilityZoneIdHasBeenSet) {
+    ss << "AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
+  }
+
   if (m_tenancyHasBeenSet) {
     ss << "Tenancy=" << StringUtils::URLEncode(FleetCapacityReservationTenancyMapper::GetNameForFleetCapacityReservationTenancy(m_tenancy))
        << "&";

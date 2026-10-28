@@ -628,9 +628,13 @@ class AWS_KAFKACONNECT_API KafkaConnectClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Updates the specified connector. For request body, specify only one
-   * parameter: either <code>capacity</code> or
-   * <code>connectorConfiguration</code>.</p><p><h3>See Also:</h3>   <a
+   * <p>Updates the specified connector. In the request body, you can update either
+   * the connector's worker setting or its connector configuration, but not both in
+   * the same request. To update the worker setting, specify one or more of
+   * <code>capacity</code>, <code>plugins</code>, <code>workerConfiguration</code>,
+   * or <code>useDefaultWorkerConfiguration</code>. To update the connector
+   * configuration, specify only <code>connectorConfiguration</code>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/UpdateConnector">AWS
    * API Reference</a></p>
    */

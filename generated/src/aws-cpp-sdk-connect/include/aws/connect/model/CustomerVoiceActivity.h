@@ -20,7 +20,7 @@ namespace Connect {
 namespace Model {
 
 /**
- * <p>Information about customer’s voice activity.</p><p><h3>See Also:</h3>   <a
+ * <p>Information about customer���s voice activity.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CustomerVoiceActivity">AWS
  * API Reference</a></p>
  */

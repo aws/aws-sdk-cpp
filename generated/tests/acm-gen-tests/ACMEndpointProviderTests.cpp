@@ -74,7 +74,7 @@ protected:
 };
 
 Aws::UniquePtrSafeDeleted<Aws::Vector<ACMEndpointProviderEndpointTestCase>> ACMEndpointProviderTests::TEST_CASES;
-const size_t ACMEndpointProviderTests::TEST_CASES_SZ = 47;
+const size_t ACMEndpointProviderTests::TEST_CASES_SZ = 51;
 
 Aws::Vector<ACMEndpointProviderEndpointTestCase> ACMEndpointProviderTests::getTestCase() {
 
@@ -482,16 +482,49 @@ Aws::Vector<ACMEndpointProviderEndpointTestCase> ACMEndpointProviderTests::getTe
        {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 45*/
-  {"ACM-ACME in us-gov-west-1 returns partition error", // documentation
+  {"ACM-ACME standard endpoint for us-gov-west-1", // documentation
     {EpParam("UseFIPS", false), EpParam("ServiceType", "ACM-ACME"), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"ACME operations are only available in commercial AWS partitions"} // expect
+    {{/*epUrl*/"https://acm-acme.us-gov-west-1.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
   },
   /*TEST CASE 46*/
+  {"ACM-ACME standard endpoint for us-gov-east-1", // documentation
+    {EpParam("UseFIPS", false), EpParam("ServiceType", "ACM-ACME"), EpParam("Region", "us-gov-east-1"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://acm-acme.us-gov-east-1.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 47*/
   {"ACM-ACME in cn-north-1 returns partition error", // documentation
     {EpParam("UseFIPS", false), EpParam("ServiceType", "ACM-ACME"), EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
-    {{/*No endpoint expected*/}, /*error*/"ACME operations are only available in commercial AWS partitions"} // expect
+    {{/*No endpoint expected*/}, /*error*/"ACME operations are only available in the aws and aws-us-gov partitions"} // expect
+  },
+  /*TEST CASE 48*/
+  {"ACM-ACME in cn-northwest-1 returns partition error", // documentation
+    {EpParam("UseFIPS", false), EpParam("ServiceType", "ACM-ACME"), EpParam("Region", "cn-northwest-1"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"ACME operations are only available in the aws and aws-us-gov partitions"} // expect
+  },
+  /*TEST CASE 49*/
+  {"ACM-ACME with DualStack enabled for us-gov-west-1", // documentation
+    {EpParam("UseFIPS", false), EpParam("ServiceType", "ACM-ACME"), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", true)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://acm-acme.us-gov-west-1.api.aws",
+       {/*authScheme*/}, 
+       {/*properties*/},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 50*/
+  {"ACM-ACME FIPS in us-gov-west-1 returns error", // documentation
+    {EpParam("UseFIPS", true), EpParam("ServiceType", "ACM-ACME"), EpParam("Region", "us-gov-west-1"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"FIPS endpoints are not available for ACME operations"} // expect
   }
   };
   return test_cases;

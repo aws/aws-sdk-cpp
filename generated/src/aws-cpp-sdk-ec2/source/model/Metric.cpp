@@ -64,6 +64,16 @@ static const int spot_total_count_inst_HASH = HashingUtils::HashString("spot-tot
 static const int spot_total_count_vcpu_HASH = HashingUtils::HashString("spot-total-count-vcpu");
 static const int spot_interruption_rate_inst_HASH = HashingUtils::HashString("spot-interruption-rate-inst");
 static const int spot_interruption_rate_vcpu_HASH = HashingUtils::HashString("spot-interruption-rate-vcpu");
+static const int capacity_total_requested_vcpu_HASH = HashingUtils::HashString("capacity-total-requested-vcpu");
+static const int capacity_total_fulfilled_vcpu_HASH = HashingUtils::HashString("capacity-total-fulfilled-vcpu");
+static const int spot_capacity_total_requested_vcpu_HASH = HashingUtils::HashString("spot-capacity-total-requested-vcpu");
+static const int spot_capacity_total_fulfilled_vcpu_HASH = HashingUtils::HashString("spot-capacity-total-fulfilled-vcpu");
+static const int capacity_request_fulfillment_rate_HASH = HashingUtils::HashString("capacity-request-fulfillment-rate");
+static const int avg_inst_az_count_per_requested_vcpu_HASH = HashingUtils::HashString("avg-inst-az-count-per-requested-vcpu");
+static const int inst_az_fulfillment_rate_HASH = HashingUtils::HashString("inst-az-fulfillment-rate");
+static const int spot_capacity_request_fulfillment_rate_HASH = HashingUtils::HashString("spot-capacity-request-fulfillment-rate");
+static const int spot_avg_inst_az_count_per_requested_vcpu_HASH = HashingUtils::HashString("spot-avg-inst-az-count-per-requested-vcpu");
+static const int spot_inst_az_fulfillment_rate_HASH = HashingUtils::HashString("spot-inst-az-fulfillment-rate");
 
 Metric GetMetricForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -165,6 +175,26 @@ Metric GetMetricForName(const Aws::String& name) {
     return Metric::spot_interruption_rate_inst;
   } else if (hashCode == spot_interruption_rate_vcpu_HASH) {
     return Metric::spot_interruption_rate_vcpu;
+  } else if (hashCode == capacity_total_requested_vcpu_HASH) {
+    return Metric::capacity_total_requested_vcpu;
+  } else if (hashCode == capacity_total_fulfilled_vcpu_HASH) {
+    return Metric::capacity_total_fulfilled_vcpu;
+  } else if (hashCode == spot_capacity_total_requested_vcpu_HASH) {
+    return Metric::spot_capacity_total_requested_vcpu;
+  } else if (hashCode == spot_capacity_total_fulfilled_vcpu_HASH) {
+    return Metric::spot_capacity_total_fulfilled_vcpu;
+  } else if (hashCode == capacity_request_fulfillment_rate_HASH) {
+    return Metric::capacity_request_fulfillment_rate;
+  } else if (hashCode == avg_inst_az_count_per_requested_vcpu_HASH) {
+    return Metric::avg_inst_az_count_per_requested_vcpu;
+  } else if (hashCode == inst_az_fulfillment_rate_HASH) {
+    return Metric::inst_az_fulfillment_rate;
+  } else if (hashCode == spot_capacity_request_fulfillment_rate_HASH) {
+    return Metric::spot_capacity_request_fulfillment_rate;
+  } else if (hashCode == spot_avg_inst_az_count_per_requested_vcpu_HASH) {
+    return Metric::spot_avg_inst_az_count_per_requested_vcpu;
+  } else if (hashCode == spot_inst_az_fulfillment_rate_HASH) {
+    return Metric::spot_inst_az_fulfillment_rate;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -277,6 +307,26 @@ Aws::String GetNameForMetric(Metric enumValue) {
       return "spot-interruption-rate-inst";
     case Metric::spot_interruption_rate_vcpu:
       return "spot-interruption-rate-vcpu";
+    case Metric::capacity_total_requested_vcpu:
+      return "capacity-total-requested-vcpu";
+    case Metric::capacity_total_fulfilled_vcpu:
+      return "capacity-total-fulfilled-vcpu";
+    case Metric::spot_capacity_total_requested_vcpu:
+      return "spot-capacity-total-requested-vcpu";
+    case Metric::spot_capacity_total_fulfilled_vcpu:
+      return "spot-capacity-total-fulfilled-vcpu";
+    case Metric::capacity_request_fulfillment_rate:
+      return "capacity-request-fulfillment-rate";
+    case Metric::avg_inst_az_count_per_requested_vcpu:
+      return "avg-inst-az-count-per-requested-vcpu";
+    case Metric::inst_az_fulfillment_rate:
+      return "inst-az-fulfillment-rate";
+    case Metric::spot_capacity_request_fulfillment_rate:
+      return "spot-capacity-request-fulfillment-rate";
+    case Metric::spot_avg_inst_az_count_per_requested_vcpu:
+      return "spot-avg-inst-az-count-per-requested-vcpu";
+    case Metric::spot_inst_az_fulfillment_rate:
+      return "spot-inst-az-fulfillment-rate";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

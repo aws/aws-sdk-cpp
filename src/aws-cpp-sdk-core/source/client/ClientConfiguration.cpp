@@ -41,6 +41,10 @@ static const char* DISABLE_IMDSV1_CONFIG_VAR = "AWS_EC2_METADATA_V1_DISABLED";
 static const char* DISABLE_IMDSV1_ENV_VAR = "ec2_metadata_v1_disabled";
 static const char* DISABLE_CLOCK_SKEW_CORRECTION_ENV_VAR = "AWS_DISABLE_CLOCK_SKEW_CORRECTION";
 static const char* DISABLE_CLOCK_SKEW_CORRECTION_CONFIG_VAR = "disable_clock_skew_correction";
+static const char* AWS_USE_DUALSTACK_ENDPOINT_ENV_VAR = "AWS_USE_DUALSTACK_ENDPOINT";
+static const char* AWS_USE_DUALSTACK_ENDPOINT_CONFIG_VAR = "use_dualstack_endpoint";
+static const char* AWS_USE_FIPS_ENDPOINT_ENV_VAR = "AWS_USE_FIPS_ENDPOINT";
+static const char* AWS_USE_FIPS_ENDPOINT_CONFIG_VAR = "use_fips_endpoint";
 static const char* AWS_ACCOUNT_ID_ENDPOINT_MODE_ENVIRONMENT_VARIABLE = "AWS_ACCOUNT_ID_ENDPOINT_MODE";
 static const char* AWS_ACCOUNT_ID_ENDPOINT_MODE_CONFIG_FILE_OPTION = "account_id_endpoint_mode";
 static const char* AWS_METADATA_SERVICE_TIMEOUT_ENV_VAR = "AWS_METADATA_SERVICE_TIMEOUT";
@@ -347,6 +351,18 @@ void setConfigFromEnvOrProfile(ClientConfiguration &config)
     if (disableClockSkewCorrection) {
         config.enableClockSkewAdjustment = false;
     }
+
+    config.useDualStack = ClientConfiguration::LoadConfigFromEnvOrProfile(AWS_USE_DUALSTACK_ENDPOINT_ENV_VAR,
+        config.profileName,
+        AWS_USE_DUALSTACK_ENDPOINT_CONFIG_VAR,
+        {"true", "false"},
+        "false") == "true";
+
+    config.useFIPS = ClientConfiguration::LoadConfigFromEnvOrProfile(AWS_USE_FIPS_ENDPOINT_ENV_VAR,
+        config.profileName,
+        AWS_USE_FIPS_ENDPOINT_CONFIG_VAR,
+        {"true", "false"},
+        "false") == "true";
 
     // accountId is intentionally not set here: AWS_ACCOUNT_ID env variable may not match the provided credentials.
     // it must be set by an auth provider / identity resolver or by an SDK user.

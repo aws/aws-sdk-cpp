@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/TaskTemplateConstraints.h>
+#include <aws/connect/model/TaskTemplateContactHooks.h>
 #include <aws/connect/model/TaskTemplateDefaults.h>
 #include <aws/connect/model/TaskTemplateField.h>
 #include <aws/connect/model/TaskTemplateStatus.h>
@@ -158,6 +159,23 @@ class UpdateTaskTemplateResult {
 
   ///@{
   /**
+   * <p>The event hooks that are set on tasks created by using this template.</p>
+   */
+  inline const TaskTemplateContactHooks& GetContactHooks() const { return m_contactHooks; }
+  template <typename ContactHooksT = TaskTemplateContactHooks>
+  void SetContactHooks(ContactHooksT&& value) {
+    m_contactHooksHasBeenSet = true;
+    m_contactHooks = std::forward<ContactHooksT>(value);
+  }
+  template <typename ContactHooksT = TaskTemplateContactHooks>
+  UpdateTaskTemplateResult& WithContactHooks(ContactHooksT&& value) {
+    SetContactHooks(std::forward<ContactHooksT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Constraints that are applicable to the fields listed. Although this parameter
    * is marked as optional in the API model, the service requires it when calling
    * <code>CreateTaskTemplate</code> or <code>UpdateTaskTemplate</code>. The
@@ -302,6 +320,8 @@ class UpdateTaskTemplateResult {
 
   Aws::String m_selfAssignFlowId;
 
+  TaskTemplateContactHooks m_contactHooks;
+
   TaskTemplateConstraints m_constraints;
 
   TaskTemplateDefaults m_defaults;
@@ -323,6 +343,7 @@ class UpdateTaskTemplateResult {
   bool m_descriptionHasBeenSet = false;
   bool m_contactFlowIdHasBeenSet = false;
   bool m_selfAssignFlowIdHasBeenSet = false;
+  bool m_contactHooksHasBeenSet = false;
   bool m_constraintsHasBeenSet = false;
   bool m_defaultsHasBeenSet = false;
   bool m_fieldsHasBeenSet = false;

@@ -20,6 +20,7 @@
 
 /* Service model headers required in NeptunedataClient header */
 #include <aws/neptunedata/model/CancelGremlinQueryResult.h>
+#include <aws/neptunedata/model/CancelIndexRebuildResult.h>
 #include <aws/neptunedata/model/CancelLoaderJobResult.h>
 #include <aws/neptunedata/model/CancelMLDataProcessingJobResult.h>
 #include <aws/neptunedata/model/CancelMLModelTrainingJobResult.h>
@@ -41,6 +42,7 @@
 #include <aws/neptunedata/model/GetEngineStatusRequest.h>
 #include <aws/neptunedata/model/GetEngineStatusResult.h>
 #include <aws/neptunedata/model/GetGremlinQueryStatusResult.h>
+#include <aws/neptunedata/model/GetIndexRebuildStatusResult.h>
 #include <aws/neptunedata/model/GetLoaderJobStatusResult.h>
 #include <aws/neptunedata/model/GetMLDataProcessingJobResult.h>
 #include <aws/neptunedata/model/GetMLEndpointResult.h>
@@ -59,8 +61,12 @@
 #include <aws/neptunedata/model/GetSparqlStatisticsResult.h>
 #include <aws/neptunedata/model/GetSparqlStreamRequest.h>
 #include <aws/neptunedata/model/GetSparqlStreamResult.h>
+#include <aws/neptunedata/model/GetStorageInfoRequest.h>
+#include <aws/neptunedata/model/GetStorageInfoResult.h>
 #include <aws/neptunedata/model/ListGremlinQueriesRequest.h>
 #include <aws/neptunedata/model/ListGremlinQueriesResult.h>
+#include <aws/neptunedata/model/ListIndexRebuildsRequest.h>
+#include <aws/neptunedata/model/ListIndexRebuildsResult.h>
 #include <aws/neptunedata/model/ListLoaderJobsRequest.h>
 #include <aws/neptunedata/model/ListLoaderJobsResult.h>
 #include <aws/neptunedata/model/ListMLDataProcessingJobsRequest.h>
@@ -77,6 +83,8 @@
 #include <aws/neptunedata/model/ManagePropertygraphStatisticsResult.h>
 #include <aws/neptunedata/model/ManageSparqlStatisticsRequest.h>
 #include <aws/neptunedata/model/ManageSparqlStatisticsResult.h>
+#include <aws/neptunedata/model/StartIndexRebuildRequest.h>
+#include <aws/neptunedata/model/StartIndexRebuildResult.h>
 #include <aws/neptunedata/model/StartLoaderJobResult.h>
 #include <aws/neptunedata/model/StartMLDataProcessingJobResult.h>
 #include <aws/neptunedata/model/StartMLModelTrainingJobResult.h>
@@ -115,6 +123,7 @@ using NeptunedataEndpointProvider = Aws::neptunedata::Endpoint::NeptunedataEndpo
 namespace Model {
 /* Service model forward declarations required in NeptunedataClient header */
 class CancelGremlinQueryRequest;
+class CancelIndexRebuildRequest;
 class CancelLoaderJobRequest;
 class CancelMLDataProcessingJobRequest;
 class CancelMLModelTrainingJobRequest;
@@ -132,6 +141,7 @@ class ExecuteOpenCypherExplainQueryRequest;
 class ExecuteOpenCypherQueryRequest;
 class GetEngineStatusRequest;
 class GetGremlinQueryStatusRequest;
+class GetIndexRebuildStatusRequest;
 class GetLoaderJobStatusRequest;
 class GetMLDataProcessingJobRequest;
 class GetMLEndpointRequest;
@@ -144,7 +154,9 @@ class GetPropertygraphSummaryRequest;
 class GetRDFGraphSummaryRequest;
 class GetSparqlStatisticsRequest;
 class GetSparqlStreamRequest;
+class GetStorageInfoRequest;
 class ListGremlinQueriesRequest;
+class ListIndexRebuildsRequest;
 class ListLoaderJobsRequest;
 class ListMLDataProcessingJobsRequest;
 class ListMLEndpointsRequest;
@@ -153,6 +165,7 @@ class ListMLModelTransformJobsRequest;
 class ListOpenCypherQueriesRequest;
 class ManagePropertygraphStatisticsRequest;
 class ManageSparqlStatisticsRequest;
+class StartIndexRebuildRequest;
 class StartLoaderJobRequest;
 class StartMLDataProcessingJobRequest;
 class StartMLModelTrainingJobRequest;
@@ -161,6 +174,7 @@ class StartMLModelTransformJobRequest;
 
 /* Service model Outcome class definitions */
 typedef Aws::Utils::Outcome<CancelGremlinQueryResult, NeptunedataError> CancelGremlinQueryOutcome;
+typedef Aws::Utils::Outcome<CancelIndexRebuildResult, NeptunedataError> CancelIndexRebuildOutcome;
 typedef Aws::Utils::Outcome<CancelLoaderJobResult, NeptunedataError> CancelLoaderJobOutcome;
 typedef Aws::Utils::Outcome<CancelMLDataProcessingJobResult, NeptunedataError> CancelMLDataProcessingJobOutcome;
 typedef Aws::Utils::Outcome<CancelMLModelTrainingJobResult, NeptunedataError> CancelMLModelTrainingJobOutcome;
@@ -178,6 +192,7 @@ typedef Aws::Utils::Outcome<ExecuteOpenCypherExplainQueryResult, NeptunedataErro
 typedef Aws::Utils::Outcome<ExecuteOpenCypherQueryResult, NeptunedataError> ExecuteOpenCypherQueryOutcome;
 typedef Aws::Utils::Outcome<GetEngineStatusResult, NeptunedataError> GetEngineStatusOutcome;
 typedef Aws::Utils::Outcome<GetGremlinQueryStatusResult, NeptunedataError> GetGremlinQueryStatusOutcome;
+typedef Aws::Utils::Outcome<GetIndexRebuildStatusResult, NeptunedataError> GetIndexRebuildStatusOutcome;
 typedef Aws::Utils::Outcome<GetLoaderJobStatusResult, NeptunedataError> GetLoaderJobStatusOutcome;
 typedef Aws::Utils::Outcome<GetMLDataProcessingJobResult, NeptunedataError> GetMLDataProcessingJobOutcome;
 typedef Aws::Utils::Outcome<GetMLEndpointResult, NeptunedataError> GetMLEndpointOutcome;
@@ -190,7 +205,9 @@ typedef Aws::Utils::Outcome<GetPropertygraphSummaryResult, NeptunedataError> Get
 typedef Aws::Utils::Outcome<GetRDFGraphSummaryResult, NeptunedataError> GetRDFGraphSummaryOutcome;
 typedef Aws::Utils::Outcome<GetSparqlStatisticsResult, NeptunedataError> GetSparqlStatisticsOutcome;
 typedef Aws::Utils::Outcome<GetSparqlStreamResult, NeptunedataError> GetSparqlStreamOutcome;
+typedef Aws::Utils::Outcome<GetStorageInfoResult, NeptunedataError> GetStorageInfoOutcome;
 typedef Aws::Utils::Outcome<ListGremlinQueriesResult, NeptunedataError> ListGremlinQueriesOutcome;
+typedef Aws::Utils::Outcome<ListIndexRebuildsResult, NeptunedataError> ListIndexRebuildsOutcome;
 typedef Aws::Utils::Outcome<ListLoaderJobsResult, NeptunedataError> ListLoaderJobsOutcome;
 typedef Aws::Utils::Outcome<ListMLDataProcessingJobsResult, NeptunedataError> ListMLDataProcessingJobsOutcome;
 typedef Aws::Utils::Outcome<ListMLEndpointsResult, NeptunedataError> ListMLEndpointsOutcome;
@@ -199,6 +216,7 @@ typedef Aws::Utils::Outcome<ListMLModelTransformJobsResult, NeptunedataError> Li
 typedef Aws::Utils::Outcome<ListOpenCypherQueriesResult, NeptunedataError> ListOpenCypherQueriesOutcome;
 typedef Aws::Utils::Outcome<ManagePropertygraphStatisticsResult, NeptunedataError> ManagePropertygraphStatisticsOutcome;
 typedef Aws::Utils::Outcome<ManageSparqlStatisticsResult, NeptunedataError> ManageSparqlStatisticsOutcome;
+typedef Aws::Utils::Outcome<StartIndexRebuildResult, NeptunedataError> StartIndexRebuildOutcome;
 typedef Aws::Utils::Outcome<StartLoaderJobResult, NeptunedataError> StartLoaderJobOutcome;
 typedef Aws::Utils::Outcome<StartMLDataProcessingJobResult, NeptunedataError> StartMLDataProcessingJobOutcome;
 typedef Aws::Utils::Outcome<StartMLModelTrainingJobResult, NeptunedataError> StartMLModelTrainingJobOutcome;
@@ -207,6 +225,7 @@ typedef Aws::Utils::Outcome<StartMLModelTransformJobResult, NeptunedataError> St
 
 /* Service model Outcome callable definitions */
 typedef std::future<CancelGremlinQueryOutcome> CancelGremlinQueryOutcomeCallable;
+typedef std::future<CancelIndexRebuildOutcome> CancelIndexRebuildOutcomeCallable;
 typedef std::future<CancelLoaderJobOutcome> CancelLoaderJobOutcomeCallable;
 typedef std::future<CancelMLDataProcessingJobOutcome> CancelMLDataProcessingJobOutcomeCallable;
 typedef std::future<CancelMLModelTrainingJobOutcome> CancelMLModelTrainingJobOutcomeCallable;
@@ -224,6 +243,7 @@ typedef std::future<ExecuteOpenCypherExplainQueryOutcome> ExecuteOpenCypherExpla
 typedef std::future<ExecuteOpenCypherQueryOutcome> ExecuteOpenCypherQueryOutcomeCallable;
 typedef std::future<GetEngineStatusOutcome> GetEngineStatusOutcomeCallable;
 typedef std::future<GetGremlinQueryStatusOutcome> GetGremlinQueryStatusOutcomeCallable;
+typedef std::future<GetIndexRebuildStatusOutcome> GetIndexRebuildStatusOutcomeCallable;
 typedef std::future<GetLoaderJobStatusOutcome> GetLoaderJobStatusOutcomeCallable;
 typedef std::future<GetMLDataProcessingJobOutcome> GetMLDataProcessingJobOutcomeCallable;
 typedef std::future<GetMLEndpointOutcome> GetMLEndpointOutcomeCallable;
@@ -236,7 +256,9 @@ typedef std::future<GetPropertygraphSummaryOutcome> GetPropertygraphSummaryOutco
 typedef std::future<GetRDFGraphSummaryOutcome> GetRDFGraphSummaryOutcomeCallable;
 typedef std::future<GetSparqlStatisticsOutcome> GetSparqlStatisticsOutcomeCallable;
 typedef std::future<GetSparqlStreamOutcome> GetSparqlStreamOutcomeCallable;
+typedef std::future<GetStorageInfoOutcome> GetStorageInfoOutcomeCallable;
 typedef std::future<ListGremlinQueriesOutcome> ListGremlinQueriesOutcomeCallable;
+typedef std::future<ListIndexRebuildsOutcome> ListIndexRebuildsOutcomeCallable;
 typedef std::future<ListLoaderJobsOutcome> ListLoaderJobsOutcomeCallable;
 typedef std::future<ListMLDataProcessingJobsOutcome> ListMLDataProcessingJobsOutcomeCallable;
 typedef std::future<ListMLEndpointsOutcome> ListMLEndpointsOutcomeCallable;
@@ -245,6 +267,7 @@ typedef std::future<ListMLModelTransformJobsOutcome> ListMLModelTransformJobsOut
 typedef std::future<ListOpenCypherQueriesOutcome> ListOpenCypherQueriesOutcomeCallable;
 typedef std::future<ManagePropertygraphStatisticsOutcome> ManagePropertygraphStatisticsOutcomeCallable;
 typedef std::future<ManageSparqlStatisticsOutcome> ManageSparqlStatisticsOutcomeCallable;
+typedef std::future<StartIndexRebuildOutcome> StartIndexRebuildOutcomeCallable;
 typedef std::future<StartLoaderJobOutcome> StartLoaderJobOutcomeCallable;
 typedef std::future<StartMLDataProcessingJobOutcome> StartMLDataProcessingJobOutcomeCallable;
 typedef std::future<StartMLModelTrainingJobOutcome> StartMLModelTrainingJobOutcomeCallable;
@@ -258,6 +281,9 @@ class NeptunedataClient;
 typedef std::function<void(const NeptunedataClient*, const Model::CancelGremlinQueryRequest&, const Model::CancelGremlinQueryOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CancelGremlinQueryResponseReceivedHandler;
+typedef std::function<void(const NeptunedataClient*, const Model::CancelIndexRebuildRequest&, const Model::CancelIndexRebuildOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CancelIndexRebuildResponseReceivedHandler;
 typedef std::function<void(const NeptunedataClient*, const Model::CancelLoaderJobRequest&, const Model::CancelLoaderJobOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CancelLoaderJobResponseReceivedHandler;
@@ -310,6 +336,9 @@ typedef std::function<void(const NeptunedataClient*, const Model::GetEngineStatu
 typedef std::function<void(const NeptunedataClient*, const Model::GetGremlinQueryStatusRequest&, const Model::GetGremlinQueryStatusOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetGremlinQueryStatusResponseReceivedHandler;
+typedef std::function<void(const NeptunedataClient*, const Model::GetIndexRebuildStatusRequest&, const Model::GetIndexRebuildStatusOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetIndexRebuildStatusResponseReceivedHandler;
 typedef std::function<void(const NeptunedataClient*, const Model::GetLoaderJobStatusRequest&, const Model::GetLoaderJobStatusOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetLoaderJobStatusResponseReceivedHandler;
@@ -346,9 +375,15 @@ typedef std::function<void(const NeptunedataClient*, const Model::GetSparqlStati
 typedef std::function<void(const NeptunedataClient*, const Model::GetSparqlStreamRequest&, const Model::GetSparqlStreamOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetSparqlStreamResponseReceivedHandler;
+typedef std::function<void(const NeptunedataClient*, const Model::GetStorageInfoRequest&, const Model::GetStorageInfoOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetStorageInfoResponseReceivedHandler;
 typedef std::function<void(const NeptunedataClient*, const Model::ListGremlinQueriesRequest&, const Model::ListGremlinQueriesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListGremlinQueriesResponseReceivedHandler;
+typedef std::function<void(const NeptunedataClient*, const Model::ListIndexRebuildsRequest&, const Model::ListIndexRebuildsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListIndexRebuildsResponseReceivedHandler;
 typedef std::function<void(const NeptunedataClient*, const Model::ListLoaderJobsRequest&, const Model::ListLoaderJobsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListLoaderJobsResponseReceivedHandler;
@@ -374,6 +409,9 @@ typedef std::function<void(const NeptunedataClient*, const Model::ManageProperty
 typedef std::function<void(const NeptunedataClient*, const Model::ManageSparqlStatisticsRequest&,
                            const Model::ManageSparqlStatisticsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ManageSparqlStatisticsResponseReceivedHandler;
+typedef std::function<void(const NeptunedataClient*, const Model::StartIndexRebuildRequest&, const Model::StartIndexRebuildOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StartIndexRebuildResponseReceivedHandler;
 typedef std::function<void(const NeptunedataClient*, const Model::StartLoaderJobRequest&, const Model::StartLoaderJobOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartLoaderJobResponseReceivedHandler;

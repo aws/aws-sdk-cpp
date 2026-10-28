@@ -23,5 +23,13 @@ Aws::String InsertAdBreakRequest::SerializePayload() const {
     payload.WithInteger("durationSeconds", m_durationSeconds);
   }
 
+  if (m_adBreakIdHasBeenSet) {
+    payload.WithString("adBreakId", m_adBreakId);
+  }
+
+  if (m_targetStartAtHasBeenSet) {
+    payload.WithString("targetStartAt", m_targetStartAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
   return payload.View().WriteReadable();
 }

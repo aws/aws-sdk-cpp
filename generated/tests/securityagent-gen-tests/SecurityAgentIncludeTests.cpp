@@ -98,6 +98,7 @@
 #include <aws/securityagent/model/Category.h>
 #include <aws/securityagent/model/CiCdConfiguration.h>
 #include <aws/securityagent/model/CleanUpStrategy.h>
+#include <aws/securityagent/model/ClientCertificate.h>
 #include <aws/securityagent/model/CloudWatchLog.h>
 #include <aws/securityagent/model/CodeLocation.h>
 #include <aws/securityagent/model/CodeRemediationStrategy.h>

@@ -238,7 +238,8 @@ RestJsonProtocolClient::InvokeOperationOutcome RestJsonProtocolClient::InvokeSer
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
 
-  return TracingUtils::MakeCallWithTiming<InvokeOperationOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<InvokeOperationOutcome>(
+      request, std::move(span),
       [&]() -> InvokeOperationOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -252,7 +253,7 @@ RestJsonProtocolClient::InvokeOperationOutcome RestJsonProtocolClient::InvokeSer
 
         return InvokeOperationOutcome{MakeRequest(request, endpointResolutionOutcome.GetResult(), httpMethod, Aws::Auth::SIGV4_SIGNER)};
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
 }
 
@@ -626,7 +627,8 @@ HttpPayloadTraitsOutcome RestJsonProtocolClient::HttpPayloadTraits(const HttpPay
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<HttpPayloadTraitsOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<HttpPayloadTraitsOutcome>(
+      request, std::move(span),
       [&]() -> HttpPayloadTraitsOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -640,7 +642,7 @@ HttpPayloadTraitsOutcome RestJsonProtocolClient::HttpPayloadTraits(const HttpPay
         return result.IsSuccess() ? HttpPayloadTraitsOutcome(result.GetResultWithOwnership())
                                   : HttpPayloadTraitsOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
@@ -911,7 +913,8 @@ HttpStringPayloadOutcome RestJsonProtocolClient::HttpStringPayload(const HttpStr
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<HttpStringPayloadOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<HttpStringPayloadOutcome>(
+      request, std::move(span),
       [&]() -> HttpStringPayloadOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -925,7 +928,7 @@ HttpStringPayloadOutcome RestJsonProtocolClient::HttpStringPayload(const HttpStr
         return result.IsSuccess() ? HttpStringPayloadOutcome(result.GetResultWithOwnership())
                                   : HttpStringPayloadOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
@@ -1114,7 +1117,8 @@ OutputStreamOutcome RestJsonProtocolClient::OutputStream(OutputStreamRequest& re
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<OutputStreamOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<OutputStreamOutcome>(
+      request, std::move(span),
       [&]() -> OutputStreamOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -1140,7 +1144,7 @@ OutputStreamOutcome RestJsonProtocolClient::OutputStream(OutputStreamRequest& re
         return result.IsSuccess() ? OutputStreamOutcome(result.GetResultWithOwnership())
                                   : OutputStreamOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
@@ -1158,7 +1162,8 @@ OutputStreamWithInitialResponseOutcome RestJsonProtocolClient::OutputStreamWithI
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<OutputStreamWithInitialResponseOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<OutputStreamWithInitialResponseOutcome>(
+      request, std::move(span),
       [&]() -> OutputStreamWithInitialResponseOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -1184,7 +1189,7 @@ OutputStreamWithInitialResponseOutcome RestJsonProtocolClient::OutputStreamWithI
         return result.IsSuccess() ? OutputStreamWithInitialResponseOutcome(result.GetResultWithOwnership())
                                   : OutputStreamWithInitialResponseOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
@@ -1356,7 +1361,8 @@ TestPayloadBlobOutcome RestJsonProtocolClient::TestPayloadBlob(const TestPayload
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<TestPayloadBlobOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<TestPayloadBlobOutcome>(
+      request, std::move(span),
       [&]() -> TestPayloadBlobOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -1370,7 +1376,7 @@ TestPayloadBlobOutcome RestJsonProtocolClient::TestPayloadBlob(const TestPayload
         return result.IsSuccess() ? TestPayloadBlobOutcome(result.GetResultWithOwnership())
                                   : TestPayloadBlobOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }

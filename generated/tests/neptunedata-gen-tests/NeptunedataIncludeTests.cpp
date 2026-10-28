@@ -22,6 +22,8 @@
 #include <aws/neptunedata/model/BulkLoadIdNotFoundException.h>
 #include <aws/neptunedata/model/CancelGremlinQueryRequest.h>
 #include <aws/neptunedata/model/CancelGremlinQueryResult.h>
+#include <aws/neptunedata/model/CancelIndexRebuildRequest.h>
+#include <aws/neptunedata/model/CancelIndexRebuildResult.h>
 #include <aws/neptunedata/model/CancelLoaderJobRequest.h>
 #include <aws/neptunedata/model/CancelLoaderJobResult.h>
 #include <aws/neptunedata/model/CancelMLDataProcessingJobRequest.h>
@@ -32,6 +34,7 @@
 #include <aws/neptunedata/model/CancelMLModelTransformJobResult.h>
 #include <aws/neptunedata/model/CancelOpenCypherQueryRequest.h>
 #include <aws/neptunedata/model/CancelOpenCypherQueryResult.h>
+#include <aws/neptunedata/model/CancelledByMaintenanceException.h>
 #include <aws/neptunedata/model/CancelledByUserException.h>
 #include <aws/neptunedata/model/ClientTimeoutException.h>
 #include <aws/neptunedata/model/ConcurrentModificationException.h>
@@ -47,6 +50,7 @@
 #include <aws/neptunedata/model/DeleteSparqlStatisticsRequest.h>
 #include <aws/neptunedata/model/DeleteSparqlStatisticsResult.h>
 #include <aws/neptunedata/model/DeleteStatisticsValueMap.h>
+#include <aws/neptunedata/model/DictionariesInfo.h>
 #include <aws/neptunedata/model/EdgeStructure.h>
 #include <aws/neptunedata/model/Encoding.h>
 #include <aws/neptunedata/model/ExecuteFastResetRequest.h>
@@ -69,6 +73,8 @@
 #include <aws/neptunedata/model/GetEngineStatusResult.h>
 #include <aws/neptunedata/model/GetGremlinQueryStatusRequest.h>
 #include <aws/neptunedata/model/GetGremlinQueryStatusResult.h>
+#include <aws/neptunedata/model/GetIndexRebuildStatusRequest.h>
+#include <aws/neptunedata/model/GetIndexRebuildStatusResult.h>
 #include <aws/neptunedata/model/GetLoaderJobStatusRequest.h>
 #include <aws/neptunedata/model/GetLoaderJobStatusResult.h>
 #include <aws/neptunedata/model/GetMLDataProcessingJobRequest.h>
@@ -93,6 +99,8 @@
 #include <aws/neptunedata/model/GetSparqlStatisticsResult.h>
 #include <aws/neptunedata/model/GetSparqlStreamRequest.h>
 #include <aws/neptunedata/model/GetSparqlStreamResult.h>
+#include <aws/neptunedata/model/GetStorageInfoRequest.h>
+#include <aws/neptunedata/model/GetStorageInfoResult.h>
 #include <aws/neptunedata/model/GraphSummaryType.h>
 #include <aws/neptunedata/model/GremlinQueryStatus.h>
 #include <aws/neptunedata/model/GremlinQueryStatusAttributes.h>
@@ -104,6 +112,8 @@
 #include <aws/neptunedata/model/IteratorType.h>
 #include <aws/neptunedata/model/ListGremlinQueriesRequest.h>
 #include <aws/neptunedata/model/ListGremlinQueriesResult.h>
+#include <aws/neptunedata/model/ListIndexRebuildsRequest.h>
+#include <aws/neptunedata/model/ListIndexRebuildsResult.h>
 #include <aws/neptunedata/model/ListLoaderJobsRequest.h>
 #include <aws/neptunedata/model/ListLoaderJobsResult.h>
 #include <aws/neptunedata/model/ListMLDataProcessingJobsRequest.h>
@@ -139,6 +149,8 @@
 #include <aws/neptunedata/model/PropertygraphRecord.h>
 #include <aws/neptunedata/model/PropertygraphSummary.h>
 #include <aws/neptunedata/model/PropertygraphSummaryValueMap.h>
+#include <aws/neptunedata/model/QuadsIndexesInfo.h>
+#include <aws/neptunedata/model/QuadsInfo.h>
 #include <aws/neptunedata/model/QueryEvalStats.h>
 #include <aws/neptunedata/model/QueryLanguageVersion.h>
 #include <aws/neptunedata/model/QueryLimitExceededException.h>
@@ -147,12 +159,17 @@
 #include <aws/neptunedata/model/RDFGraphSummary.h>
 #include <aws/neptunedata/model/RDFGraphSummaryValueMap.h>
 #include <aws/neptunedata/model/ReadOnlyViolationException.h>
+#include <aws/neptunedata/model/RebuildStatus.h>
 #include <aws/neptunedata/model/RefreshStatisticsIdMap.h>
+#include <aws/neptunedata/model/ResourceNotFoundException.h>
 #include <aws/neptunedata/model/S3BucketRegion.h>
 #include <aws/neptunedata/model/S3Exception.h>
+#include <aws/neptunedata/model/Scope.h>
 #include <aws/neptunedata/model/ServerShutdownException.h>
 #include <aws/neptunedata/model/SparqlData.h>
 #include <aws/neptunedata/model/SparqlRecord.h>
+#include <aws/neptunedata/model/StartIndexRebuildRequest.h>
+#include <aws/neptunedata/model/StartIndexRebuildResult.h>
 #include <aws/neptunedata/model/StartLoaderJobRequest.h>
 #include <aws/neptunedata/model/StartLoaderJobResult.h>
 #include <aws/neptunedata/model/StartMLDataProcessingJobRequest.h>
@@ -165,12 +182,16 @@
 #include <aws/neptunedata/model/StatisticsAutoGenerationMode.h>
 #include <aws/neptunedata/model/StatisticsNotAvailableException.h>
 #include <aws/neptunedata/model/StatisticsSummary.h>
+#include <aws/neptunedata/model/StorageMetrics.h>
 #include <aws/neptunedata/model/StreamRecordsNotFoundException.h>
 #include <aws/neptunedata/model/SubjectStructure.h>
 #include <aws/neptunedata/model/ThrottlingException.h>
 #include <aws/neptunedata/model/TimeLimitExceededException.h>
 #include <aws/neptunedata/model/TooManyRequestsException.h>
+#include <aws/neptunedata/model/UndoLogsMetrics.h>
 #include <aws/neptunedata/model/UnsupportedOperationException.h>
+#include <aws/neptunedata/model/ValidationException.h>
+#include <aws/neptunedata/model/WriteBufferSize.h>
 
 using NeptunedataIncludeTest = ::testing::Test;
 
