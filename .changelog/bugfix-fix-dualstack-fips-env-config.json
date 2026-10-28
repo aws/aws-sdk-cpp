@@ -1,0 +1,6 @@
+{
+  "type": "bugfix",
+  "category": "aws-cpp-sdk-core",
+  "contributor": "sbaluja",
+  "description": "Use environment variables for dualstack and FIPS endpoints"
+}
