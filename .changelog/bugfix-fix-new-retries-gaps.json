@@ -1,0 +1,6 @@
+{
+  "type": "bugfix",
+  "category": "aws-cpp-sdk-core",
+  "contributor": "pulimsr",
+  "description": "Fix AWS_NEW_RETRIES_2026 gating: restore DefaultRetryStrategy fallback when the flag is off, read the flag case-insensitively in smithy clients, and let AWS_MAX_ATTEMPTS override the DynamoDB default when the flag is on"
+}
