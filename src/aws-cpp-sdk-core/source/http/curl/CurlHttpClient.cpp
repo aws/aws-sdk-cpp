@@ -203,9 +203,7 @@ static size_t WriteData(char* ptr, size_t size, size_t nmemb, void* userdata)
 
         for (const auto& hashIterator : context->m_request->GetResponseValidationHashes())
         {
-          std::stringstream headerStr;
-          headerStr<<"x-amz-checksum-"<<hashIterator.first;
-          if(context->m_response->HasHeader(headerStr.str().c_str()))
+          if(context->m_response->HasHeader(("x-amz-checksum-" + hashIterator.first).c_str()))
           {
             hashIterator.second->Update(reinterpret_cast<unsigned char*>(ptr), sizeToWrite);
             break;
