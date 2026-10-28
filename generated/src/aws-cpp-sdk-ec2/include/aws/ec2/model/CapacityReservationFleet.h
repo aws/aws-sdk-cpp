@@ -13,6 +13,7 @@
 #include <aws/ec2/model/FleetCapacityReservation.h>
 #include <aws/ec2/model/FleetCapacityReservationTenancy.h>
 #include <aws/ec2/model/FleetInstanceMatchCriteria.h>
+#include <aws/ec2/model/InstanceRequirementsRequest.h>
 #include <aws/ec2/model/Tag.h>
 
 #include <utility>
@@ -278,6 +279,60 @@ class CapacityReservationFleet {
 
   ///@{
   /**
+   * <p>Reserved for internal use.</p>
+   */
+  inline const InstanceRequirementsRequest& GetInstanceRequirements() const { return m_instanceRequirements; }
+  inline bool InstanceRequirementsHasBeenSet() const { return m_instanceRequirementsHasBeenSet; }
+  template <typename InstanceRequirementsT = InstanceRequirementsRequest>
+  void SetInstanceRequirements(InstanceRequirementsT&& value) {
+    m_instanceRequirementsHasBeenSet = true;
+    m_instanceRequirements = std::forward<InstanceRequirementsT>(value);
+  }
+  template <typename InstanceRequirementsT = InstanceRequirementsRequest>
+  CapacityReservationFleet& WithInstanceRequirements(InstanceRequirementsT&& value) {
+    SetInstanceRequirements(std::forward<InstanceRequirementsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Reserved for internal use.</p>
+   */
+  inline const Aws::String& GetAvailabilityZone() const { return m_availabilityZone; }
+  inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
+  template <typename AvailabilityZoneT = Aws::String>
+  void SetAvailabilityZone(AvailabilityZoneT&& value) {
+    m_availabilityZoneHasBeenSet = true;
+    m_availabilityZone = std::forward<AvailabilityZoneT>(value);
+  }
+  template <typename AvailabilityZoneT = Aws::String>
+  CapacityReservationFleet& WithAvailabilityZone(AvailabilityZoneT&& value) {
+    SetAvailabilityZone(std::forward<AvailabilityZoneT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Reserved for internal use.</p>
+   */
+  inline const Aws::String& GetAvailabilityZoneId() const { return m_availabilityZoneId; }
+  inline bool AvailabilityZoneIdHasBeenSet() const { return m_availabilityZoneIdHasBeenSet; }
+  template <typename AvailabilityZoneIdT = Aws::String>
+  void SetAvailabilityZoneId(AvailabilityZoneIdT&& value) {
+    m_availabilityZoneIdHasBeenSet = true;
+    m_availabilityZoneId = std::forward<AvailabilityZoneIdT>(value);
+  }
+  template <typename AvailabilityZoneIdT = Aws::String>
+  CapacityReservationFleet& WithAvailabilityZoneId(AvailabilityZoneIdT&& value) {
+    SetAvailabilityZoneId(std::forward<AvailabilityZoneIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The tags assigned to the Capacity Reservation Fleet.</p>
    */
   inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
@@ -322,6 +377,12 @@ class CapacityReservationFleet {
 
   Aws::Vector<FleetCapacityReservation> m_instanceTypeSpecifications;
 
+  InstanceRequirementsRequest m_instanceRequirements;
+
+  Aws::String m_availabilityZone;
+
+  Aws::String m_availabilityZoneId;
+
   Aws::Vector<Tag> m_tags;
   bool m_capacityReservationFleetIdHasBeenSet = false;
   bool m_capacityReservationFleetArnHasBeenSet = false;
@@ -334,6 +395,9 @@ class CapacityReservationFleet {
   bool m_instanceMatchCriteriaHasBeenSet = false;
   bool m_allocationStrategyHasBeenSet = false;
   bool m_instanceTypeSpecificationsHasBeenSet = false;
+  bool m_instanceRequirementsHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_availabilityZoneIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

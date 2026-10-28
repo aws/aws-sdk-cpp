@@ -91,6 +91,21 @@ CapacityReservationFleet& CapacityReservationFleet::operator=(const XmlNode& xml
 
       m_instanceTypeSpecificationsHasBeenSet = true;
     }
+    XmlNode instanceRequirementsNode = resultNode.FirstChild("instanceRequirements");
+    if (!instanceRequirementsNode.IsNull()) {
+      m_instanceRequirements = instanceRequirementsNode;
+      m_instanceRequirementsHasBeenSet = true;
+    }
+    XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
+    if (!availabilityZoneNode.IsNull()) {
+      m_availabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneNode.GetText());
+      m_availabilityZoneHasBeenSet = true;
+    }
+    XmlNode availabilityZoneIdNode = resultNode.FirstChild("availabilityZoneId");
+    if (!availabilityZoneIdNode.IsNull()) {
+      m_availabilityZoneId = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneIdNode.GetText());
+      m_availabilityZoneIdHasBeenSet = true;
+    }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if (!tagsNode.IsNull()) {
       XmlNode tagsMember = tagsNode.FirstChild("item");
@@ -168,6 +183,20 @@ void CapacityReservationFleet::OutputToStream(Aws::OStream& oStream, const char*
     }
   }
 
+  if (m_instanceRequirementsHasBeenSet) {
+    Aws::StringStream instanceRequirementsLocationAndMemberSs;
+    instanceRequirementsLocationAndMemberSs << location << index << locationValue << ".InstanceRequirements";
+    m_instanceRequirements.OutputToStream(oStream, instanceRequirementsLocationAndMemberSs.str().c_str());
+  }
+
+  if (m_availabilityZoneHasBeenSet) {
+    oStream << location << index << locationValue << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
+  }
+
+  if (m_availabilityZoneIdHasBeenSet) {
+    oStream << location << index << locationValue << ".AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
+  }
+
   if (m_tagsHasBeenSet) {
     unsigned tagsIdx = 1;
     for (auto& item : m_tags) {
@@ -222,6 +251,17 @@ void CapacityReservationFleet::OutputToStream(Aws::OStream& oStream, const char*
       instanceTypeSpecificationsSs << location << ".InstanceTypeSpecificationSet." << instanceTypeSpecificationsIdx++;
       item.OutputToStream(oStream, instanceTypeSpecificationsSs.str().c_str());
     }
+  }
+  if (m_instanceRequirementsHasBeenSet) {
+    Aws::String instanceRequirementsLocationAndMember(location);
+    instanceRequirementsLocationAndMember += ".InstanceRequirements";
+    m_instanceRequirements.OutputToStream(oStream, instanceRequirementsLocationAndMember.c_str());
+  }
+  if (m_availabilityZoneHasBeenSet) {
+    oStream << location << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
+  }
+  if (m_availabilityZoneIdHasBeenSet) {
+    oStream << location << ".AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
   }
   if (m_tagsHasBeenSet) {
     unsigned tagsIdx = 1;

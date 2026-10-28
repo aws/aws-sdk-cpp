@@ -31,6 +31,10 @@ Aws::String UpdateTaskTemplateRequest::SerializePayload() const {
     payload.WithString("SelfAssignFlowId", m_selfAssignFlowId);
   }
 
+  if (m_contactHooksHasBeenSet) {
+    payload.WithObject("ContactHooks", m_contactHooks.Jsonize());
+  }
+
   if (m_constraintsHasBeenSet) {
     payload.WithObject("Constraints", m_constraints.Jsonize());
   }

@@ -6,9 +6,12 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kafkaconnect/KafkaConnectRequest.h>
 #include <aws/kafkaconnect/KafkaConnect_EXPORTS.h>
 #include <aws/kafkaconnect/model/CapacityUpdate.h>
+#include <aws/kafkaconnect/model/PluginUpdate.h>
+#include <aws/kafkaconnect/model/WorkerConfigurationUpdate.h>
 
 #include <utility>
 
@@ -136,6 +139,80 @@ class UpdateConnectorRequest : public KafkaConnectRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> <p>Amazon MSK Connect does not currently support specifying
+   * multiple plugins as a list. To use more than one plugin for your connector, you
+   * can create a single custom plugin using a ZIP file that bundles multiple plugins
+   * together.</p>  <p>Specifies which plugin to use for the connector.
+   * You must specify a single-element list containing one <code>customPlugin</code>
+   * object. If you don't specify this parameter, the connector keeps its current
+   * plugin.</p></p>
+   */
+  inline const Aws::Vector<PluginUpdate>& GetPlugins() const { return m_plugins; }
+  inline bool PluginsHasBeenSet() const { return m_pluginsHasBeenSet; }
+  template <typename PluginsT = Aws::Vector<PluginUpdate>>
+  void SetPlugins(PluginsT&& value) {
+    m_pluginsHasBeenSet = true;
+    m_plugins = std::forward<PluginsT>(value);
+  }
+  template <typename PluginsT = Aws::Vector<PluginUpdate>>
+  UpdateConnectorRequest& WithPlugins(PluginsT&& value) {
+    SetPlugins(std::forward<PluginsT>(value));
+    return *this;
+  }
+  template <typename PluginsT = PluginUpdate>
+  UpdateConnectorRequest& AddPlugins(PluginsT&& value) {
+    m_pluginsHasBeenSet = true;
+    m_plugins.emplace_back(std::forward<PluginsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The worker configuration to use with the connector. Specify the Amazon
+   * Resource Name (ARN) and the revision of the worker configuration. You can't
+   * specify both <code>workerConfiguration</code> and
+   * <code>useDefaultWorkerConfiguration</code> in the same request. If you specify
+   * neither parameter, the connector keeps its current worker configuration.</p>
+   */
+  inline const WorkerConfigurationUpdate& GetWorkerConfiguration() const { return m_workerConfiguration; }
+  inline bool WorkerConfigurationHasBeenSet() const { return m_workerConfigurationHasBeenSet; }
+  template <typename WorkerConfigurationT = WorkerConfigurationUpdate>
+  void SetWorkerConfiguration(WorkerConfigurationT&& value) {
+    m_workerConfigurationHasBeenSet = true;
+    m_workerConfiguration = std::forward<WorkerConfigurationT>(value);
+  }
+  template <typename WorkerConfigurationT = WorkerConfigurationUpdate>
+  UpdateConnectorRequest& WithWorkerConfiguration(WorkerConfigurationT&& value) {
+    SetWorkerConfiguration(std::forward<WorkerConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether to switch the connector to the default worker configuration
+   * that Amazon MSK Connect provides. If <code>true</code>, the connector stops
+   * using its custom worker configuration and uses the default worker configuration
+   * instead. If <code>false</code> or not specified, the connector keeps its current
+   * worker configuration. You can't specify both
+   * <code>useDefaultWorkerConfiguration</code> and <code>workerConfiguration</code>
+   * in the same request.</p>
+   */
+  inline bool GetUseDefaultWorkerConfiguration() const { return m_useDefaultWorkerConfiguration; }
+  inline bool UseDefaultWorkerConfigurationHasBeenSet() const { return m_useDefaultWorkerConfigurationHasBeenSet; }
+  inline void SetUseDefaultWorkerConfiguration(bool value) {
+    m_useDefaultWorkerConfigurationHasBeenSet = true;
+    m_useDefaultWorkerConfiguration = value;
+  }
+  inline UpdateConnectorRequest& WithUseDefaultWorkerConfiguration(bool value) {
+    SetUseDefaultWorkerConfiguration(value);
+    return *this;
+  }
+  ///@}
  private:
   CapacityUpdate m_capacity;
 
@@ -146,11 +223,20 @@ class UpdateConnectorRequest : public KafkaConnectRequest {
   Aws::String m_connectorArn;
 
   Aws::String m_currentVersion;
+
+  Aws::Vector<PluginUpdate> m_plugins;
+
+  WorkerConfigurationUpdate m_workerConfiguration;
+
+  bool m_useDefaultWorkerConfiguration{false};
   bool m_capacityHasBeenSet = false;
   bool m_connectorConfigurationHasBeenSet = false;
   bool m_skipHealthValidationHasBeenSet = false;
   bool m_connectorArnHasBeenSet = false;
   bool m_currentVersionHasBeenSet = false;
+  bool m_pluginsHasBeenSet = false;
+  bool m_workerConfigurationHasBeenSet = false;
+  bool m_useDefaultWorkerConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

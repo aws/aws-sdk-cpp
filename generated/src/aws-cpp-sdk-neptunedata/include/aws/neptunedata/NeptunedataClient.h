@@ -116,6 +116,36 @@ class AWS_NEPTUNEDATA_API NeptunedataClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Cancels an in-progress index rebuild operation.</p> <p>When invoking this
+   * operation in a Neptune cluster that has IAM authentication enabled, the IAM user
+   * or role making the request must have a policy attached that allows the <a
+   * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#cancelindexrebuild">neptune-db:CancelIndexRebuild</a>
+   * IAM action in that cluster.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/CancelIndexRebuild">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CancelIndexRebuildOutcome CancelIndexRebuild(const Model::CancelIndexRebuildRequest& request) const;
+
+  /**
+   * A Callable wrapper for CancelIndexRebuild that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CancelIndexRebuildRequestT = Model::CancelIndexRebuildRequest>
+  Model::CancelIndexRebuildOutcomeCallable CancelIndexRebuildCallable(const CancelIndexRebuildRequestT& request) const {
+    return SubmitCallable(&NeptunedataClient::CancelIndexRebuild, request);
+  }
+
+  /**
+   * An Async wrapper for CancelIndexRebuild that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename CancelIndexRebuildRequestT = Model::CancelIndexRebuildRequest>
+  void CancelIndexRebuildAsync(const CancelIndexRebuildRequestT& request, const CancelIndexRebuildResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&NeptunedataClient::CancelIndexRebuild, request, handler, context);
+  }
+
+  /**
    * <p>Cancels a specified load job. This is an HTTP <code>DELETE</code> request.
    * See <a
    * href="https://docs.aws.amazon.com/neptune/latest/userguide/load-api-reference-status.htm">Neptune
@@ -751,6 +781,36 @@ class AWS_NEPTUNEDATA_API NeptunedataClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Retrieves the status of an index rebuild operation.</p> <p>When invoking this
+   * operation in a Neptune cluster that has IAM authentication enabled, the IAM user
+   * or role making the request must have a policy attached that allows the <a
+   * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#getindexrebuildstatus">neptune-db:GetIndexRebuildStatus</a>
+   * IAM action in that cluster.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/GetIndexRebuildStatus">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetIndexRebuildStatusOutcome GetIndexRebuildStatus(const Model::GetIndexRebuildStatusRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetIndexRebuildStatus that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetIndexRebuildStatusRequestT = Model::GetIndexRebuildStatusRequest>
+  Model::GetIndexRebuildStatusOutcomeCallable GetIndexRebuildStatusCallable(const GetIndexRebuildStatusRequestT& request) const {
+    return SubmitCallable(&NeptunedataClient::GetIndexRebuildStatus, request);
+  }
+
+  /**
+   * An Async wrapper for GetIndexRebuildStatus that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetIndexRebuildStatusRequestT = Model::GetIndexRebuildStatusRequest>
+  void GetIndexRebuildStatusAsync(const GetIndexRebuildStatusRequestT& request, const GetIndexRebuildStatusResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&NeptunedataClient::GetIndexRebuildStatus, request, handler, context);
+  }
+
+  /**
    * <p>Gets status information about a specified load job. Neptune keeps track of
    * the most recent 1,024 bulk load jobs, and stores the last 10,000 error details
    * per job.</p> <p>See <a
@@ -1170,6 +1230,47 @@ class AWS_NEPTUNEDATA_API NeptunedataClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Retrieves storage information for the Neptune database instance, including
+   * approximate total storage used and per-category size and entry counts. Storage
+   * categories include:</p> <ul> <li> <p> <i>Quad indexes</i> - the indexes that
+   * store graph data, for both RDF (SPARQL) and Property Graph (Gremlin/openCypher)
+   * models.</p> </li> <li> <p> <i>Dictionaries</i> - the term dictionaries,
+   * including total dictionary storage and the portion used by blob (large value)
+   * entries.</p> </li> <li> <p> <i>Undo logs</i> - the undo logs, reported as a
+   * total size and the number of entries in the undo log list.</p> </li> <li> <p>
+   * <i>Streams</i> - the change-log streams.</p> </li> <li> <p> <i>Schema</i> - the
+   * schema.</p> </li> <li> <p> <i>DFE statistics</i> - the DFE engine
+   * statistics.</p> </li> <li> <p> <i>System metadata</i> - internal system
+   * metadata.</p> </li> </ul> <p>When invoking this operation in a Neptune cluster
+   * that has IAM authentication enabled, the IAM user or role making the request
+   * must have a policy attached that allows the <a
+   * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#getstorageinfo">neptune-db:GetStorageInfo</a>
+   * IAM action in that cluster.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/GetStorageInfo">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetStorageInfoOutcome GetStorageInfo(const Model::GetStorageInfoRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for GetStorageInfo that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetStorageInfoRequestT = Model::GetStorageInfoRequest>
+  Model::GetStorageInfoOutcomeCallable GetStorageInfoCallable(const GetStorageInfoRequestT& request = {}) const {
+    return SubmitCallable(&NeptunedataClient::GetStorageInfo, request);
+  }
+
+  /**
+   * An Async wrapper for GetStorageInfo that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetStorageInfoRequestT = Model::GetStorageInfoRequest>
+  void GetStorageInfoAsync(const GetStorageInfoResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                           const GetStorageInfoRequestT& request = {}) const {
+    return SubmitAsync(&NeptunedataClient::GetStorageInfo, request, handler, context);
+  }
+
+  /**
    * <p>Lists active Gremlin queries. See <a
    * href="https://docs.aws.amazon.com/neptune/latest/userguide/gremlin-api-status.html">Gremlin
    * query status API</a> for details about the output.</p> <p>When invoking this
@@ -1206,6 +1307,38 @@ class AWS_NEPTUNEDATA_API NeptunedataClient : public Aws::Client::AWSJsonClient,
                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                const ListGremlinQueriesRequestT& request = {}) const {
     return SubmitAsync(&NeptunedataClient::ListGremlinQueries, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves a list of all index rebuild operation identifiers.</p> <p>When
+   * invoking this operation in a Neptune cluster that has IAM authentication
+   * enabled, the IAM user or role making the request must have a policy attached
+   * that allows the <a
+   * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#listindexrebuilds">neptune-db:ListIndexRebuilds</a>
+   * IAM action in that cluster.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/ListIndexRebuilds">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListIndexRebuildsOutcome ListIndexRebuilds(const Model::ListIndexRebuildsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListIndexRebuilds that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListIndexRebuildsRequestT = Model::ListIndexRebuildsRequest>
+  Model::ListIndexRebuildsOutcomeCallable ListIndexRebuildsCallable(const ListIndexRebuildsRequestT& request = {}) const {
+    return SubmitCallable(&NeptunedataClient::ListIndexRebuilds, request);
+  }
+
+  /**
+   * An Async wrapper for ListIndexRebuilds that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListIndexRebuildsRequestT = Model::ListIndexRebuildsRequest>
+  void ListIndexRebuildsAsync(const ListIndexRebuildsResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                              const ListIndexRebuildsRequestT& request = {}) const {
+    return SubmitAsync(&NeptunedataClient::ListIndexRebuilds, request, handler, context);
   }
 
   /**
@@ -1475,6 +1608,39 @@ class AWS_NEPTUNEDATA_API NeptunedataClient : public Aws::Client::AWSJsonClient,
                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                    const ManageSparqlStatisticsRequestT& request = {}) const {
     return SubmitAsync(&NeptunedataClient::ManageSparqlStatistics, request, handler, context);
+  }
+
+  /**
+   * <p>Initiates an index rebuild operation to optimize storage and improve query
+   * performance. The rebuild operation reorganizes index to reclaim space and
+   * improve efficiency.</p> <p>When invoking this operation in a Neptune cluster
+   * that has IAM authentication enabled, the IAM user or role making the request
+   * must have a policy attached that allows the <a
+   * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#startindexrebuild">neptune-db:StartIndexRebuild</a>
+   * IAM action in that cluster.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/StartIndexRebuild">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartIndexRebuildOutcome StartIndexRebuild(const Model::StartIndexRebuildRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for StartIndexRebuild that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StartIndexRebuildRequestT = Model::StartIndexRebuildRequest>
+  Model::StartIndexRebuildOutcomeCallable StartIndexRebuildCallable(const StartIndexRebuildRequestT& request = {}) const {
+    return SubmitCallable(&NeptunedataClient::StartIndexRebuild, request);
+  }
+
+  /**
+   * An Async wrapper for StartIndexRebuild that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename StartIndexRebuildRequestT = Model::StartIndexRebuildRequest>
+  void StartIndexRebuildAsync(const StartIndexRebuildResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                              const StartIndexRebuildRequestT& request = {}) const {
+    return SubmitAsync(&NeptunedataClient::StartIndexRebuild, request, handler, context);
   }
 
   /**

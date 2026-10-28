@@ -49,8 +49,6 @@ AWS_PROTOCOL_TEST(HttpPayloadWithStructure, RestJsonHttpPayloadWithStructureAndE
   const HttpPayloadWithStructureResult& result = outcome.GetResult();
   ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
     /* expectedResult = R"( {"nested":null} )" */
-    {
-      (void)result.GetNested();
-    }
+    { (void)result.GetNested(); }
   });
 }

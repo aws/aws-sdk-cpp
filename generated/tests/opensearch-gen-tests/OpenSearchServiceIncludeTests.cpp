@@ -33,6 +33,8 @@
 #include <aws/opensearch/model/AddDataSourceResult.h>
 #include <aws/opensearch/model/AddDirectQueryDataSourceRequest.h>
 #include <aws/opensearch/model/AddDirectQueryDataSourceResult.h>
+#include <aws/opensearch/model/AddReplicationPeerRequest.h>
+#include <aws/opensearch/model/AddReplicationPeerResult.h>
 #include <aws/opensearch/model/AddTagsRequest.h>
 #include <aws/opensearch/model/AdditionalLimit.h>
 #include <aws/opensearch/model/AdvancedOptionsStatus.h>
@@ -78,6 +80,7 @@
 #include <aws/opensearch/model/CapabilityFailure.h>
 #include <aws/opensearch/model/CapabilityFailureReason.h>
 #include <aws/opensearch/model/CapabilityStatus.h>
+#include <aws/opensearch/model/CategoryDiffResult.h>
 #include <aws/opensearch/model/ChangeProgressDetails.h>
 #include <aws/opensearch/model/ChangeProgressStage.h>
 #include <aws/opensearch/model/ChangeProgressStatusDetails.h>
@@ -87,6 +90,8 @@
 #include <aws/opensearch/model/CognitoOptions.h>
 #include <aws/opensearch/model/CognitoOptionsStatus.h>
 #include <aws/opensearch/model/ColdStorageOptions.h>
+#include <aws/opensearch/model/CompareDomainConfigurationRequest.h>
+#include <aws/opensearch/model/CompareDomainConfigurationResult.h>
 #include <aws/opensearch/model/CompatibleVersionsMap.h>
 #include <aws/opensearch/model/ConfigChangeStatus.h>
 #include <aws/opensearch/model/ConnectionMode.h>
@@ -146,6 +151,8 @@
 #include <aws/opensearch/model/DescribeDomainHealthResult.h>
 #include <aws/opensearch/model/DescribeDomainNodesRequest.h>
 #include <aws/opensearch/model/DescribeDomainNodesResult.h>
+#include <aws/opensearch/model/DescribeDomainReplicationRequest.h>
+#include <aws/opensearch/model/DescribeDomainReplicationResult.h>
 #include <aws/opensearch/model/DescribeDomainRequest.h>
 #include <aws/opensearch/model/DescribeDomainResult.h>
 #include <aws/opensearch/model/DescribeDomainsRequest.h>
@@ -177,12 +184,17 @@
 #include <aws/opensearch/model/DescribeVpcEndpointsResult.h>
 #include <aws/opensearch/model/DetachDataSourceRequest.h>
 #include <aws/opensearch/model/DetachDataSourceResult.h>
+#include <aws/opensearch/model/DiffFieldPolicy.h>
+#include <aws/opensearch/model/DiffItems.h>
+#include <aws/opensearch/model/DiffStatus.h>
 #include <aws/opensearch/model/DirectQueryDataSource.h>
 #include <aws/opensearch/model/DirectQueryDataSourceType.h>
 #include <aws/opensearch/model/DissociatePackageRequest.h>
 #include <aws/opensearch/model/DissociatePackageResult.h>
 #include <aws/opensearch/model/DissociatePackagesRequest.h>
 #include <aws/opensearch/model/DissociatePackagesResult.h>
+#include <aws/opensearch/model/DivergentField.h>
+#include <aws/opensearch/model/DivergentItem.h>
 #include <aws/opensearch/model/DomainConfig.h>
 #include <aws/opensearch/model/DomainEndpointOptions.h>
 #include <aws/opensearch/model/DomainEndpointOptionsStatus.h>
@@ -212,6 +224,8 @@
 #include <aws/opensearch/model/EnvironmentInfo.h>
 #include <aws/opensearch/model/ErrorDetails.h>
 #include <aws/opensearch/model/ExportOptions.h>
+#include <aws/opensearch/model/FailoverReplicationRequest.h>
+#include <aws/opensearch/model/FailoverReplicationResult.h>
 #include <aws/opensearch/model/Filter.h>
 #include <aws/opensearch/model/GetApplicationRequest.h>
 #include <aws/opensearch/model/GetApplicationResult.h>
@@ -377,7 +391,12 @@
 #include <aws/opensearch/model/RegisterCapabilityResult.h>
 #include <aws/opensearch/model/RejectInboundConnectionRequest.h>
 #include <aws/opensearch/model/RejectInboundConnectionResult.h>
+#include <aws/opensearch/model/RemoveReplicationPeerRequest.h>
+#include <aws/opensearch/model/RemoveReplicationPeerResult.h>
 #include <aws/opensearch/model/RemoveTagsRequest.h>
+#include <aws/opensearch/model/ReplicationPeer.h>
+#include <aws/opensearch/model/ReplicationRole.h>
+#include <aws/opensearch/model/ReplicationStatus.h>
 #include <aws/opensearch/model/RequirementLevel.h>
 #include <aws/opensearch/model/ReservedInstance.h>
 #include <aws/opensearch/model/ReservedInstanceOffering.h>
@@ -420,6 +439,8 @@
 #include <aws/opensearch/model/StorageType.h>
 #include <aws/opensearch/model/StorageTypeLimit.h>
 #include <aws/opensearch/model/SubjectKeyIdCOption.h>
+#include <aws/opensearch/model/SwitchoverReplicationRequest.h>
+#include <aws/opensearch/model/SwitchoverReplicationResult.h>
 #include <aws/opensearch/model/TLSSecurityPolicy.h>
 #include <aws/opensearch/model/Tag.h>
 #include <aws/opensearch/model/TimeUnit.h>

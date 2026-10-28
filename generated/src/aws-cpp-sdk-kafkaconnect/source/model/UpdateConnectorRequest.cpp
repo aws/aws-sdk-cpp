@@ -34,6 +34,22 @@ Aws::String UpdateConnectorRequest::SerializePayload() const {
     payload.WithBool("skipHealthValidation", m_skipHealthValidation);
   }
 
+  if (m_pluginsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> pluginsJsonList(m_plugins.size());
+    for (unsigned pluginsIndex = 0; pluginsIndex < pluginsJsonList.GetLength(); ++pluginsIndex) {
+      pluginsJsonList[pluginsIndex].AsObject(m_plugins[pluginsIndex].Jsonize());
+    }
+    payload.WithArray("plugins", std::move(pluginsJsonList));
+  }
+
+  if (m_workerConfigurationHasBeenSet) {
+    payload.WithObject("workerConfiguration", m_workerConfiguration.Jsonize());
+  }
+
+  if (m_useDefaultWorkerConfigurationHasBeenSet) {
+    payload.WithBool("useDefaultWorkerConfiguration", m_useDefaultWorkerConfiguration);
+  }
+
   return payload.View().WriteReadable();
 }
 

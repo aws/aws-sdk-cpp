@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ivs/IVSRequest.h>
 #include <aws/ivs/IVS_EXPORTS.h>
@@ -61,12 +62,55 @@ class InsertAdBreakRequest : public IVSRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Caller-specified unique identifier for the ad break to insert into the
+   * playlist.</p>
+   */
+  inline const Aws::String& GetAdBreakId() const { return m_adBreakId; }
+  inline bool AdBreakIdHasBeenSet() const { return m_adBreakIdHasBeenSet; }
+  template <typename AdBreakIdT = Aws::String>
+  void SetAdBreakId(AdBreakIdT&& value) {
+    m_adBreakIdHasBeenSet = true;
+    m_adBreakId = std::forward<AdBreakIdT>(value);
+  }
+  template <typename AdBreakIdT = Aws::String>
+  InsertAdBreakRequest& WithAdBreakId(AdBreakIdT&& value) {
+    SetAdBreakId(std::forward<AdBreakIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Target time at which the ad break starts.</p>
+   */
+  inline const Aws::Utils::DateTime& GetTargetStartAt() const { return m_targetStartAt; }
+  inline bool TargetStartAtHasBeenSet() const { return m_targetStartAtHasBeenSet; }
+  template <typename TargetStartAtT = Aws::Utils::DateTime>
+  void SetTargetStartAt(TargetStartAtT&& value) {
+    m_targetStartAtHasBeenSet = true;
+    m_targetStartAt = std::forward<TargetStartAtT>(value);
+  }
+  template <typename TargetStartAtT = Aws::Utils::DateTime>
+  InsertAdBreakRequest& WithTargetStartAt(TargetStartAtT&& value) {
+    SetTargetStartAt(std::forward<TargetStartAtT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_channelArn;
 
   int m_durationSeconds{0};
+
+  Aws::String m_adBreakId;
+
+  Aws::Utils::DateTime m_targetStartAt{};
   bool m_channelArnHasBeenSet = false;
   bool m_durationSecondsHasBeenSet = false;
+  bool m_adBreakIdHasBeenSet = false;
+  bool m_targetStartAtHasBeenSet = false;
 };
 
 }  // namespace Model

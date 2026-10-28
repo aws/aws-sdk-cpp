@@ -1441,6 +1441,7 @@
 #include <aws/connect/model/TaskActionDefinition.h>
 #include <aws/connect/model/TaskAttachment.h>
 #include <aws/connect/model/TaskTemplateConstraints.h>
+#include <aws/connect/model/TaskTemplateContactHooks.h>
 #include <aws/connect/model/TaskTemplateDefaultFieldValue.h>
 #include <aws/connect/model/TaskTemplateDefaults.h>
 #include <aws/connect/model/TaskTemplateField.h>

@@ -173,6 +173,38 @@ class AWS_OPENSEARCHSERVICE_API OpenSearchServiceClient : public Aws::Client::AW
   }
 
   /**
+   * <p>Starts replicating a domain to a peer domain in another AWS Region. A domain
+   * can have one peer. The domain you call becomes the primary and the peer becomes
+   * the secondary, which receives a copy of the primary's indexes and serves read
+   * requests.</p> <p>Replication is established asynchronously. Use the
+   * <code>DescribeDomainReplication</code> operation to check whether the
+   * relationship has reached the <code>ACTIVE</code> state.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AddReplicationPeer">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::AddReplicationPeerOutcome AddReplicationPeer(const Model::AddReplicationPeerRequest& request) const;
+
+  /**
+   * A Callable wrapper for AddReplicationPeer that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename AddReplicationPeerRequestT = Model::AddReplicationPeerRequest>
+  Model::AddReplicationPeerOutcomeCallable AddReplicationPeerCallable(const AddReplicationPeerRequestT& request) const {
+    return SubmitCallable(&OpenSearchServiceClient::AddReplicationPeer, request);
+  }
+
+  /**
+   * An Async wrapper for AddReplicationPeer that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename AddReplicationPeerRequestT = Model::AddReplicationPeerRequest>
+  void AddReplicationPeerAsync(const AddReplicationPeerRequestT& request, const AddReplicationPeerResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OpenSearchServiceClient::AddReplicationPeer, request, handler, context);
+  }
+
+  /**
    * <p>Attaches tags to an existing Amazon OpenSearch Service domain, data source,
    * or application. </p> <p>Tags are a set of case-sensitive key-value pairs. A
    * domain, data source, or application can have up to 10 tags. For more
@@ -381,6 +413,41 @@ class AWS_OPENSEARCHSERVICE_API OpenSearchServiceClient : public Aws::Client::AW
                                         const CancelServiceSoftwareUpdateResponseReceivedHandler& handler,
                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&OpenSearchServiceClient::CancelServiceSoftwareUpdate, request, handler, context);
+  }
+
+  /**
+   * <p>Compares the metadata of two domains and reports where they differ. Use this
+   * operation to check that a secondary domain is configured consistently with its
+   * primary before you rely on it, because replication copies index data but does
+   * not copy domain metadata such as index templates, ingest pipelines, or security
+   * roles.</p> <p>You choose which categories to compare. The response reports, for
+   * each category, how many items match, how many exist on only one domain, and
+   * which fields diverge.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/CompareDomainConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CompareDomainConfigurationOutcome CompareDomainConfiguration(
+      const Model::CompareDomainConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for CompareDomainConfiguration that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename CompareDomainConfigurationRequestT = Model::CompareDomainConfigurationRequest>
+  Model::CompareDomainConfigurationOutcomeCallable CompareDomainConfigurationCallable(
+      const CompareDomainConfigurationRequestT& request) const {
+    return SubmitCallable(&OpenSearchServiceClient::CompareDomainConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for CompareDomainConfiguration that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CompareDomainConfigurationRequestT = Model::CompareDomainConfigurationRequest>
+  void CompareDomainConfigurationAsync(const CompareDomainConfigurationRequestT& request,
+                                       const CompareDomainConfigurationResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OpenSearchServiceClient::CompareDomainConfiguration, request, handler, context);
   }
 
   /**
@@ -1043,6 +1110,39 @@ class AWS_OPENSEARCHSERVICE_API OpenSearchServiceClient : public Aws::Client::AW
   }
 
   /**
+   * <p>Describes the replication arrangement that a domain participates in,
+   * including the domain's role and the state of its relationship with each
+   * peer.</p> <p>A domain that is not replicating is returned with an empty
+   * <code>Peers</code> list and no <code>Role</code>. Returns
+   * <code>ResourceNotFoundException</code> if the domain does not
+   * exist.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomainReplication">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeDomainReplicationOutcome DescribeDomainReplication(const Model::DescribeDomainReplicationRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeDomainReplication that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeDomainReplicationRequestT = Model::DescribeDomainReplicationRequest>
+  Model::DescribeDomainReplicationOutcomeCallable DescribeDomainReplicationCallable(
+      const DescribeDomainReplicationRequestT& request) const {
+    return SubmitCallable(&OpenSearchServiceClient::DescribeDomainReplication, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeDomainReplication that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeDomainReplicationRequestT = Model::DescribeDomainReplicationRequest>
+  void DescribeDomainReplicationAsync(const DescribeDomainReplicationRequestT& request,
+                                      const DescribeDomainReplicationResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OpenSearchServiceClient::DescribeDomainReplication, request, handler, context);
+  }
+
+  /**
    * <p>Returns domain configuration information about the specified Amazon
    * OpenSearch Service domains.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomains">AWS
@@ -1432,6 +1532,38 @@ class AWS_OPENSEARCHSERVICE_API OpenSearchServiceClient : public Aws::Client::AW
   void DissociatePackagesAsync(const DissociatePackagesRequestT& request, const DissociatePackagesResponseReceivedHandler& handler,
                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&OpenSearchServiceClient::DissociatePackages, request, handler, context);
+  }
+
+  /**
+   * <p>Promotes a secondary domain to primary without coordinating with the current
+   * primary. Use this operation when the primary is unreachable and you cannot wait
+   * for it to recover.</p> <p>Writes that had not yet replicated when the primary
+   * became unreachable are lost. You must set <code>AllowDataLoss</code> to
+   * acknowledge this. To promote a domain without losing writes, use the
+   * <code>SwitchoverReplication</code> operation instead.</p> <p>Call this operation
+   * in the Region of the domain you want to promote.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/FailoverReplication">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::FailoverReplicationOutcome FailoverReplication(const Model::FailoverReplicationRequest& request) const;
+
+  /**
+   * A Callable wrapper for FailoverReplication that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename FailoverReplicationRequestT = Model::FailoverReplicationRequest>
+  Model::FailoverReplicationOutcomeCallable FailoverReplicationCallable(const FailoverReplicationRequestT& request) const {
+    return SubmitCallable(&OpenSearchServiceClient::FailoverReplication, request);
+  }
+
+  /**
+   * An Async wrapper for FailoverReplication that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename FailoverReplicationRequestT = Model::FailoverReplicationRequest>
+  void FailoverReplicationAsync(const FailoverReplicationRequestT& request, const FailoverReplicationResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OpenSearchServiceClient::FailoverReplication, request, handler, context);
   }
 
   /**
@@ -2402,6 +2534,34 @@ class AWS_OPENSEARCHSERVICE_API OpenSearchServiceClient : public Aws::Client::AW
   }
 
   /**
+   * <p>Stops replicating a domain to its peer. Replication ends for both domains,
+   * and each domain keeps the data it holds at that point. Neither domain is
+   * deleted.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/RemoveReplicationPeer">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::RemoveReplicationPeerOutcome RemoveReplicationPeer(const Model::RemoveReplicationPeerRequest& request) const;
+
+  /**
+   * A Callable wrapper for RemoveReplicationPeer that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename RemoveReplicationPeerRequestT = Model::RemoveReplicationPeerRequest>
+  Model::RemoveReplicationPeerOutcomeCallable RemoveReplicationPeerCallable(const RemoveReplicationPeerRequestT& request) const {
+    return SubmitCallable(&OpenSearchServiceClient::RemoveReplicationPeer, request);
+  }
+
+  /**
+   * An Async wrapper for RemoveReplicationPeer that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename RemoveReplicationPeerRequestT = Model::RemoveReplicationPeerRequest>
+  void RemoveReplicationPeerAsync(const RemoveReplicationPeerRequestT& request, const RemoveReplicationPeerResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OpenSearchServiceClient::RemoveReplicationPeer, request, handler, context);
+  }
+
+  /**
    * <p>Removes the specified set of tags from an Amazon OpenSearch Service domain,
    * data source, or application. For more information, see <a
    * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains.html#managedomains-awsresorcetagging">
@@ -2578,6 +2738,37 @@ class AWS_OPENSEARCHSERVICE_API OpenSearchServiceClient : public Aws::Client::AW
                                        const StartServiceSoftwareUpdateResponseReceivedHandler& handler,
                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&OpenSearchServiceClient::StartServiceSoftwareUpdate, request, handler, context);
+  }
+
+  /**
+   * <p>Promotes a secondary domain to primary, coordinating with the current primary
+   * so that no writes are lost. Use this operation for planned role changes, such as
+   * testing your recovery procedure or moving write traffic to another Region.</p>
+   * <p>Call this operation in the Region of the domain you want to promote. If the
+   * current primary is unreachable, use the <code>FailoverReplication</code>
+   * operation instead.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/SwitchoverReplication">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SwitchoverReplicationOutcome SwitchoverReplication(const Model::SwitchoverReplicationRequest& request) const;
+
+  /**
+   * A Callable wrapper for SwitchoverReplication that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename SwitchoverReplicationRequestT = Model::SwitchoverReplicationRequest>
+  Model::SwitchoverReplicationOutcomeCallable SwitchoverReplicationCallable(const SwitchoverReplicationRequestT& request) const {
+    return SubmitCallable(&OpenSearchServiceClient::SwitchoverReplication, request);
+  }
+
+  /**
+   * An Async wrapper for SwitchoverReplication that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename SwitchoverReplicationRequestT = Model::SwitchoverReplicationRequest>
+  void SwitchoverReplicationAsync(const SwitchoverReplicationRequestT& request, const SwitchoverReplicationResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OpenSearchServiceClient::SwitchoverReplication, request, handler, context);
   }
 
   /**

@@ -24,6 +24,10 @@ Aws::String GetAttachmentRequest::SerializePayload() const {
     payload.WithInteger("UrlExpiryInSeconds", m_urlExpiryInSeconds);
   }
 
+  if (m_urlContentDispositionHasBeenSet) {
+    payload.WithString("UrlContentDisposition", ContentDispositionMapper::GetNameForContentDisposition(m_urlContentDisposition));
+  }
+
   return payload.View().WriteReadable();
 }
 

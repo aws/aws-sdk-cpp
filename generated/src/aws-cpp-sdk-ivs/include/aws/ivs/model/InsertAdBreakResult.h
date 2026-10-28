@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ivs/IVS_EXPORTS.h>
 
@@ -45,6 +46,23 @@ class InsertAdBreakResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Target start time for the inserted ad break.</p>
+   */
+  inline const Aws::Utils::DateTime& GetTargetStartAt() const { return m_targetStartAt; }
+  template <typename TargetStartAtT = Aws::Utils::DateTime>
+  void SetTargetStartAt(TargetStartAtT&& value) {
+    m_targetStartAtHasBeenSet = true;
+    m_targetStartAt = std::forward<TargetStartAtT>(value);
+  }
+  template <typename TargetStartAtT = Aws::Utils::DateTime>
+  InsertAdBreakResult& WithTargetStartAt(TargetStartAtT&& value) {
+    SetTargetStartAt(std::forward<TargetStartAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -63,9 +81,12 @@ class InsertAdBreakResult {
  private:
   Aws::String m_adBreakId;
 
+  Aws::Utils::DateTime m_targetStartAt{};
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_adBreakIdHasBeenSet = false;
+  bool m_targetStartAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -26,6 +26,14 @@ MulticastSourceUpdateRequest& MulticastSourceUpdateRequest::operator=(JsonView j
     m_url = jsonValue.GetString("url");
     m_urlHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("secondarySourceIp")) {
+    m_secondarySourceIp = jsonValue.GetString("secondarySourceIp");
+    m_secondarySourceIpHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("secondaryUrl")) {
+    m_secondaryUrl = jsonValue.GetString("secondaryUrl");
+    m_secondaryUrlHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +46,14 @@ JsonValue MulticastSourceUpdateRequest::Jsonize() const {
 
   if (m_urlHasBeenSet) {
     payload.WithString("url", m_url);
+  }
+
+  if (m_secondarySourceIpHasBeenSet) {
+    payload.WithString("secondarySourceIp", m_secondarySourceIp);
+  }
+
+  if (m_secondaryUrlHasBeenSet) {
+    payload.WithString("secondaryUrl", m_secondaryUrl);
   }
 
   return payload;

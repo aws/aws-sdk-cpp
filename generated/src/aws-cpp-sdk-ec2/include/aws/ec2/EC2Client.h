@@ -18809,6 +18809,46 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p> Scores how well each instance type and Availability Zone combination can
+   * support a capacity request, based on current Amazon EC2 capacity. The response
+   * includes a score for each combination and an aggregate score for all
+   * combinations in the request. This action doesn't launch or reserve instances,
+   * and a score doesn't guarantee that a later launch will succeed. </p> <p> Call
+   * this action in the Region where you turned on Capacity Manager. A single request
+   * can include Availability Zones in any Region. Real-time supportability checks
+   * are available only to Amazon Web Services Support customers on the Unified
+   * Operations plan. </p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-manager-supportability.html">Check
+   * supportability</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCapacityManagerSupportabilityScores">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetCapacityManagerSupportabilityScoresOutcome GetCapacityManagerSupportabilityScores(
+      const Model::GetCapacityManagerSupportabilityScoresRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetCapacityManagerSupportabilityScores that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename GetCapacityManagerSupportabilityScoresRequestT = Model::GetCapacityManagerSupportabilityScoresRequest>
+  Model::GetCapacityManagerSupportabilityScoresOutcomeCallable GetCapacityManagerSupportabilityScoresCallable(
+      const GetCapacityManagerSupportabilityScoresRequestT& request) const {
+    return SubmitCallable(&EC2Client::GetCapacityManagerSupportabilityScores, request);
+  }
+
+  /**
+   * An Async wrapper for GetCapacityManagerSupportabilityScores that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename GetCapacityManagerSupportabilityScoresRequestT = Model::GetCapacityManagerSupportabilityScoresRequest>
+  void GetCapacityManagerSupportabilityScoresAsync(const GetCapacityManagerSupportabilityScoresRequestT& request,
+                                                   const GetCapacityManagerSupportabilityScoresResponseReceivedHandler& handler,
+                                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::GetCapacityManagerSupportabilityScores, request, handler, context);
+  }
+
+  /**
    * <p>Gets usage information about a Capacity Reservation. If the Capacity
    * Reservation is shared, it shows usage information for the Capacity Reservation
    * owner and each Amazon Web Services account that is currently using the shared

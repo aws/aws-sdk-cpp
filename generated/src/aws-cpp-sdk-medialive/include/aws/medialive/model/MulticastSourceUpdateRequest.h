@@ -67,12 +67,56 @@ class MulticastSourceUpdateRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * This represents the ip address of the device sending the secondary multicast
+   * stream.
+   */
+  inline const Aws::String& GetSecondarySourceIp() const { return m_secondarySourceIp; }
+  inline bool SecondarySourceIpHasBeenSet() const { return m_secondarySourceIpHasBeenSet; }
+  template <typename SecondarySourceIpT = Aws::String>
+  void SetSecondarySourceIp(SecondarySourceIpT&& value) {
+    m_secondarySourceIpHasBeenSet = true;
+    m_secondarySourceIp = std::forward<SecondarySourceIpT>(value);
+  }
+  template <typename SecondarySourceIpT = Aws::String>
+  MulticastSourceUpdateRequest& WithSecondarySourceIp(SecondarySourceIpT&& value) {
+    SetSecondarySourceIp(std::forward<SecondarySourceIpT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * This represents the customer's secondary source URL where the redundant
+   * multicast stream (SMPTE 2022-7) is pulled from.
+   */
+  inline const Aws::String& GetSecondaryUrl() const { return m_secondaryUrl; }
+  inline bool SecondaryUrlHasBeenSet() const { return m_secondaryUrlHasBeenSet; }
+  template <typename SecondaryUrlT = Aws::String>
+  void SetSecondaryUrl(SecondaryUrlT&& value) {
+    m_secondaryUrlHasBeenSet = true;
+    m_secondaryUrl = std::forward<SecondaryUrlT>(value);
+  }
+  template <typename SecondaryUrlT = Aws::String>
+  MulticastSourceUpdateRequest& WithSecondaryUrl(SecondaryUrlT&& value) {
+    SetSecondaryUrl(std::forward<SecondaryUrlT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_sourceIp;
 
   Aws::String m_url;
+
+  Aws::String m_secondarySourceIp;
+
+  Aws::String m_secondaryUrl;
   bool m_sourceIpHasBeenSet = false;
   bool m_urlHasBeenSet = false;
+  bool m_secondarySourceIpHasBeenSet = false;
+  bool m_secondaryUrlHasBeenSet = false;
 };
 
 }  // namespace Model
