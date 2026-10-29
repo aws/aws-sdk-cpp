@@ -1,0 +1,6 @@
+{
+  "type": "bugfix",
+  "category": "aws-cpp-sdk-core",
+  "contributor": "",
+  "description": "CRTHttpClient now refuses every request with a non-retryable error, instead of sending it, when its TLS context or proxy TLS context failed to initialize (for example an unreadable caFile, caPath or proxyCaFile). This also applies when verifySSL is false and to plain http requests."
+}
