@@ -199,7 +199,7 @@ namespace Aws
             assert(GetHttpClientFactory());
             auto client = GetHttpClientFactory()->CreateHttpClient(clientConfiguration);
 
-            if (!client)
+            if (!client || !*client)
             {
                 AWS_LOGSTREAM_FATAL(HTTP_CLIENT_FACTORY_ALLOCATION_TAG, "Initializing Http Client failed!");
                 // assert just in case this is a misconfiguration at development time to make the dev's job easier.
