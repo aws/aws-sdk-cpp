@@ -108,6 +108,7 @@ void AwsSmithyClientBase::baseCopyAssign(const AwsSmithyClientBase& other,
                                          std::shared_ptr<Aws::Client::AWSErrorMarshaller> errorMarshaller) {
   m_serviceName = other.m_serviceName;
   m_serviceUserAgentName = other.m_serviceUserAgentName;
+  m_enableNewRetries = other.m_enableNewRetries;
   m_httpClient = std::move(httpClient);
   m_errorMarshaller = std::move(errorMarshaller);
   
@@ -129,6 +130,7 @@ void AwsSmithyClientBase::baseMoveAssign(AwsSmithyClientBase&& other) {
   m_errorMarshaller = std::move(other.m_errorMarshaller);
   m_interceptors = std::move(other.m_interceptors);
   m_userAgentInterceptor = std::move(other.m_userAgentInterceptor);
+  m_enableNewRetries = other.m_enableNewRetries;
 }
 
 std::shared_ptr<Aws::Http::HttpRequest>
@@ -335,10 +337,7 @@ std::shared_ptr<AwsSmithyClientAsyncRequestContext> AwsSmithyClientBase::CreateR
     }
     pRequestCtx->m_requestInfo.attempt = 1;
     pRequestCtx->m_attemptSkew = m_clientSkew->Load();
-    pRequestCtx->m_requestInfo.maxAttempts =
-        Aws::Environment::GetEnv("AWS_NEW_RETRIES_2026") == "true"
-            ? m_clientConfig->retryStrategy->GetMaxAttempts()
-            : 0;
+    pRequestCtx->m_requestInfo.maxAttempts = m_enableNewRetries ? m_clientConfig->retryStrategy->GetMaxAttempts() : 0;
     pRequestCtx->m_interceptorContext = Aws::MakeShared<InterceptorContext>(AWS_SMITHY_CLIENT_LOG, *request);
     pRequestCtx->m_responseHandler = std::move(responseHandler);
     pRequestCtx->m_authResolvedCallback = std::move(authCallback);
