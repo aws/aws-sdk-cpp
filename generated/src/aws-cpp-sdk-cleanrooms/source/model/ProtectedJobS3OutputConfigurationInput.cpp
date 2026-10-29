@@ -18,6 +18,10 @@ namespace Model {
 ProtectedJobS3OutputConfigurationInput::ProtectedJobS3OutputConfigurationInput(JsonView jsonValue) { *this = jsonValue; }
 
 ProtectedJobS3OutputConfigurationInput& ProtectedJobS3OutputConfigurationInput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("resultFormat")) {
+    m_resultFormat = ResultFormatMapper::GetResultFormatForName(jsonValue.GetString("resultFormat"));
+    m_resultFormatHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("bucket")) {
     m_bucket = jsonValue.GetString("bucket");
     m_bucketHasBeenSet = true;
@@ -31,6 +35,10 @@ ProtectedJobS3OutputConfigurationInput& ProtectedJobS3OutputConfigurationInput::
 
 JsonValue ProtectedJobS3OutputConfigurationInput::Jsonize() const {
   JsonValue payload;
+
+  if (m_resultFormatHasBeenSet) {
+    payload.WithString("resultFormat", ResultFormatMapper::GetNameForResultFormat(m_resultFormat));
+  }
 
   if (m_bucketHasBeenSet) {
     payload.WithString("bucket", m_bucket);

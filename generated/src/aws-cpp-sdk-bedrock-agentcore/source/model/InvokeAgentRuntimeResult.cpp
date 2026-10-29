@@ -30,6 +30,12 @@ InvokeAgentRuntimeResult& InvokeAgentRuntimeResult::operator=(Aws::AmazonWebServ
     m_runtimeSessionIdHasBeenSet = true;
   }
 
+  const auto& sessionEndpointUrlIter = headers.find("x-amzn-bedrock-agentcore-runtime-session-endpoint-url");
+  if (sessionEndpointUrlIter != headers.end()) {
+    m_sessionEndpointUrl = sessionEndpointUrlIter->second;
+    m_sessionEndpointUrlHasBeenSet = true;
+  }
+
   const auto& mcpSessionIdIter = headers.find("mcp-session-id");
   if (mcpSessionIdIter != headers.end()) {
     m_mcpSessionId = mcpSessionIdIter->second;

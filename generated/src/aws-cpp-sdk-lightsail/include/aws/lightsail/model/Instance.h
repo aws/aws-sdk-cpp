@@ -10,6 +10,7 @@
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/lightsail/model/AddOn.h>
 #include <aws/lightsail/model/InstanceHardware.h>
+#include <aws/lightsail/model/InstanceHealthStatus.h>
 #include <aws/lightsail/model/InstanceMetadataOptions.h>
 #include <aws/lightsail/model/InstanceNetworking.h>
 #include <aws/lightsail/model/InstanceState.h>
@@ -462,6 +463,48 @@ class Instance {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Reports impaired functionality that stems from issues internal to the
+   * instance, such as impaired reachability.</p> <p>This value is returned only when
+   * you set <code>includeHealthStatus</code> to <code>true</code> in your
+   * request.</p>
+   */
+  inline const InstanceHealthStatus& GetInstanceStatus() const { return m_instanceStatus; }
+  inline bool InstanceStatusHasBeenSet() const { return m_instanceStatusHasBeenSet; }
+  template <typename InstanceStatusT = InstanceHealthStatus>
+  void SetInstanceStatus(InstanceStatusT&& value) {
+    m_instanceStatusHasBeenSet = true;
+    m_instanceStatus = std::forward<InstanceStatusT>(value);
+  }
+  template <typename InstanceStatusT = InstanceHealthStatus>
+  Instance& WithInstanceStatus(InstanceStatusT&& value) {
+    SetInstanceStatus(std::forward<InstanceStatusT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Reports impaired functionality that stems from issues related to the systems
+   * that support an instance, such as hardware failures and network connectivity
+   * problems.</p> <p>This value is returned only when you set
+   * <code>includeHealthStatus</code> to <code>true</code> in your request.</p>
+   */
+  inline const InstanceHealthStatus& GetSystemStatus() const { return m_systemStatus; }
+  inline bool SystemStatusHasBeenSet() const { return m_systemStatusHasBeenSet; }
+  template <typename SystemStatusT = InstanceHealthStatus>
+  void SetSystemStatus(SystemStatusT&& value) {
+    m_systemStatusHasBeenSet = true;
+    m_systemStatus = std::forward<SystemStatusT>(value);
+  }
+  template <typename SystemStatusT = InstanceHealthStatus>
+  Instance& WithSystemStatus(SystemStatusT&& value) {
+    SetSystemStatus(std::forward<SystemStatusT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -506,6 +549,10 @@ class Instance {
   Aws::String m_sshKeyName;
 
   InstanceMetadataOptions m_metadataOptions;
+
+  InstanceHealthStatus m_instanceStatus;
+
+  InstanceHealthStatus m_systemStatus;
   bool m_nameHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_supportCodeHasBeenSet = false;
@@ -528,6 +575,8 @@ class Instance {
   bool m_usernameHasBeenSet = false;
   bool m_sshKeyNameHasBeenSet = false;
   bool m_metadataOptionsHasBeenSet = false;
+  bool m_instanceStatusHasBeenSet = false;
+  bool m_systemStatusHasBeenSet = false;
 };
 
 }  // namespace Model

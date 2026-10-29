@@ -46,6 +46,7 @@
 #include <aws/wafv2/model/CaptchaResponse.h>
 #include <aws/wafv2/model/ChallengeAction.h>
 #include <aws/wafv2/model/ChallengeConfig.h>
+#include <aws/wafv2/model/ChallengeJavascriptSdkInjectionConfig.h>
 #include <aws/wafv2/model/ChallengeResponse.h>
 #include <aws/wafv2/model/CheckCapacityRequest.h>
 #include <aws/wafv2/model/CheckCapacityResult.h>

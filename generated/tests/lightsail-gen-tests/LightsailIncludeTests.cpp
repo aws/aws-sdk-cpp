@@ -380,6 +380,11 @@
 #include <aws/lightsail/model/InstanceHardware.h>
 #include <aws/lightsail/model/InstanceHealthReason.h>
 #include <aws/lightsail/model/InstanceHealthState.h>
+#include <aws/lightsail/model/InstanceHealthStatus.h>
+#include <aws/lightsail/model/InstanceHealthStatusDetail.h>
+#include <aws/lightsail/model/InstanceHealthStatusDetailName.h>
+#include <aws/lightsail/model/InstanceHealthStatusDetailValue.h>
+#include <aws/lightsail/model/InstanceHealthStatusValue.h>
 #include <aws/lightsail/model/InstanceHealthSummary.h>
 #include <aws/lightsail/model/InstanceMetadataOptions.h>
 #include <aws/lightsail/model/InstanceMetadataState.h>

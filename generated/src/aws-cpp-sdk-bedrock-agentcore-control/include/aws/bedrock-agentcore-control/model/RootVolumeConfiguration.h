@@ -58,7 +58,7 @@ class RootVolumeConfiguration {
    * <code>io2</code> volumes, this is the number of IOPS provisioned for the volume.
    * For <code>gp2</code> volumes, this sets the baseline IOPS performance. It also
    * controls the rate at which the volume accumulates I/O credits for bursting.
-   * Supported values: <code>gp3</code>, 3,000–80,000; <code>io1</code>, 100–64,000;
+   * Supported values: <code>gp3</code>, 3,000��80,000; <code>io1</code>, 100–64,000;
    * <code>io2</code>, 100–256,000.</p>
    */
   inline int GetIops() const { return m_iops; }

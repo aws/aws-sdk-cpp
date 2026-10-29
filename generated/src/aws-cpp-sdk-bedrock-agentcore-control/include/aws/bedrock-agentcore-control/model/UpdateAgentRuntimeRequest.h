@@ -7,6 +7,7 @@
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControlRequest.h>
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/AgentRuntimeArtifact.h>
+#include <aws/bedrock-agentcore-control/model/AllowedPort.h>
 #include <aws/bedrock-agentcore-control/model/AuthorizerConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/CapacityProviderConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/FilesystemConfiguration.h>
@@ -169,7 +170,10 @@ class UpdateAgentRuntimeRequest : public BedrockAgentCoreControlRequest {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The updated protocol configuration for the AgentCore Runtime, including the
+   * protocol, port, and path on which the agent server is available.</p>
+   */
   inline const ProtocolConfiguration& GetProtocolConfiguration() const { return m_protocolConfiguration; }
   inline bool ProtocolConfigurationHasBeenSet() const { return m_protocolConfigurationHasBeenSet; }
   template <typename ProtocolConfigurationT = ProtocolConfiguration>
@@ -310,6 +314,34 @@ class UpdateAgentRuntimeRequest : public BedrockAgentCoreControlRequest {
 
   ///@{
   /**
+   * <p>The updated additional ports on the AgentCore Runtime that are reachable
+   * through the runtime's session URL. Specify one to five non-overlapping entries,
+   * each containing either a single port or an inclusive port range. Ports must be
+   * between <code>8000</code> and <code>12000</code>, excluding the reserved port
+   * <code>8443</code>.</p>
+   */
+  inline const Aws::Vector<AllowedPort>& GetAllowedPorts() const { return m_allowedPorts; }
+  inline bool AllowedPortsHasBeenSet() const { return m_allowedPortsHasBeenSet; }
+  template <typename AllowedPortsT = Aws::Vector<AllowedPort>>
+  void SetAllowedPorts(AllowedPortsT&& value) {
+    m_allowedPortsHasBeenSet = true;
+    m_allowedPorts = std::forward<AllowedPortsT>(value);
+  }
+  template <typename AllowedPortsT = Aws::Vector<AllowedPort>>
+  UpdateAgentRuntimeRequest& WithAllowedPorts(AllowedPortsT&& value) {
+    SetAllowedPorts(std::forward<AllowedPortsT>(value));
+    return *this;
+  }
+  template <typename AllowedPortsT = AllowedPort>
+  UpdateAgentRuntimeRequest& AddAllowedPorts(AllowedPortsT&& value) {
+    m_allowedPortsHasBeenSet = true;
+    m_allowedPorts.emplace_back(std::forward<AllowedPortsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A unique, case-sensitive identifier to ensure idempotency of the request.</p>
    */
   inline const Aws::String& GetClientToken() const { return m_clientToken; }
@@ -354,6 +386,8 @@ class UpdateAgentRuntimeRequest : public BedrockAgentCoreControlRequest {
 
   Aws::String m_platformVersion;
 
+  Aws::Vector<AllowedPort> m_allowedPorts;
+
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_agentRuntimeIdHasBeenSet = false;
   bool m_agentRuntimeArtifactHasBeenSet = false;
@@ -369,6 +403,7 @@ class UpdateAgentRuntimeRequest : public BedrockAgentCoreControlRequest {
   bool m_filesystemConfigurationsHasBeenSet = false;
   bool m_capacityProviderConfigurationHasBeenSet = false;
   bool m_platformVersionHasBeenSet = false;
+  bool m_allowedPortsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace CleanRooms {
 namespace Model {
-enum class AnalysisFormat { NOT_SET, SQL, PYSPARK_1_0 };
+enum class AnalysisFormat { NOT_SET, SQL, PYSPARK_1_0, PYSPARK_2_0 };
 
 namespace AnalysisFormatMapper {
 AWS_CLEANROOMS_API AnalysisFormat GetAnalysisFormatForName(const Aws::String& name);

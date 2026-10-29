@@ -115,6 +115,14 @@ Instance& Instance::operator=(JsonView jsonValue) {
     m_metadataOptions = jsonValue.GetObject("metadataOptions");
     m_metadataOptionsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("instanceStatus")) {
+    m_instanceStatus = jsonValue.GetObject("instanceStatus");
+    m_instanceStatusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("systemStatus")) {
+    m_systemStatus = jsonValue.GetObject("systemStatus");
+    m_systemStatusHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -219,6 +227,14 @@ JsonValue Instance::Jsonize() const {
 
   if (m_metadataOptionsHasBeenSet) {
     payload.WithObject("metadataOptions", m_metadataOptions.Jsonize());
+  }
+
+  if (m_instanceStatusHasBeenSet) {
+    payload.WithObject("instanceStatus", m_instanceStatus.Jsonize());
+  }
+
+  if (m_systemStatusHasBeenSet) {
+    payload.WithObject("systemStatus", m_systemStatus.Jsonize());
   }
 
   return payload;

@@ -7,6 +7,7 @@
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/AgentRuntimeArtifact.h>
 #include <aws/bedrock-agentcore-control/model/AgentRuntimeStatus.h>
+#include <aws/bedrock-agentcore-control/model/AllowedPort.h>
 #include <aws/bedrock-agentcore-control/model/AuthorizerConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/CapacityProviderConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/FilesystemConfiguration.h>
@@ -278,7 +279,10 @@ class GetAgentRuntimeResult {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The protocol configuration for the AgentCore Runtime, including the protocol,
+   * port, and path on which the agent server is available.</p>
+   */
   inline const ProtocolConfiguration& GetProtocolConfiguration() const { return m_protocolConfiguration; }
   template <typename ProtocolConfigurationT = ProtocolConfiguration>
   void SetProtocolConfiguration(ProtocolConfigurationT&& value) {
@@ -426,6 +430,30 @@ class GetAgentRuntimeResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The additional ports on the AgentCore Runtime that are reachable through the
+   * runtime's session URL.</p>
+   */
+  inline const Aws::Vector<AllowedPort>& GetAllowedPorts() const { return m_allowedPorts; }
+  template <typename AllowedPortsT = Aws::Vector<AllowedPort>>
+  void SetAllowedPorts(AllowedPortsT&& value) {
+    m_allowedPortsHasBeenSet = true;
+    m_allowedPorts = std::forward<AllowedPortsT>(value);
+  }
+  template <typename AllowedPortsT = Aws::Vector<AllowedPort>>
+  GetAgentRuntimeResult& WithAllowedPorts(AllowedPortsT&& value) {
+    SetAllowedPorts(std::forward<AllowedPortsT>(value));
+    return *this;
+  }
+  template <typename AllowedPortsT = AllowedPort>
+  GetAgentRuntimeResult& AddAllowedPorts(AllowedPortsT&& value) {
+    m_allowedPortsHasBeenSet = true;
+    m_allowedPorts.emplace_back(std::forward<AllowedPortsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -486,6 +514,8 @@ class GetAgentRuntimeResult {
 
   Aws::String m_platformVersion;
 
+  Aws::Vector<AllowedPort> m_allowedPorts;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_agentRuntimeArnHasBeenSet = false;
@@ -510,6 +540,7 @@ class GetAgentRuntimeResult {
   bool m_filesystemConfigurationsHasBeenSet = false;
   bool m_capacityProviderConfigurationHasBeenSet = false;
   bool m_platformVersionHasBeenSet = false;
+  bool m_allowedPortsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

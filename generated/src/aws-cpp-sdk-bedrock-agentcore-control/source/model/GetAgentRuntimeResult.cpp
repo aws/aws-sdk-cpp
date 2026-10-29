@@ -117,6 +117,13 @@ GetAgentRuntimeResult& GetAgentRuntimeResult::operator=(const Aws::AmazonWebServ
     m_platformVersion = jsonValue.GetString("platformVersion");
     m_platformVersionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("allowedPorts")) {
+    Aws::Utils::Array<JsonView> allowedPortsJsonList = jsonValue.GetArray("allowedPorts");
+    for (unsigned allowedPortsIndex = 0; allowedPortsIndex < allowedPortsJsonList.GetLength(); ++allowedPortsIndex) {
+      m_allowedPorts.push_back(allowedPortsJsonList[allowedPortsIndex].AsObject());
+    }
+    m_allowedPortsHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -50,6 +50,27 @@ class InvokeAgentRuntimeResult {
 
   ///@{
   /**
+   * <p>The HTTPS endpoint that addresses this runtime session directly. This value
+   * is returned only when the agent runtime is configured with allowed ports and
+   * direct runtime access is available for the session. If this value is not
+   * present, use <code>InvokeAgentRuntime</code> to communicate with the
+   * session.</p>
+   */
+  inline const Aws::String& GetSessionEndpointUrl() const { return m_sessionEndpointUrl; }
+  template <typename SessionEndpointUrlT = Aws::String>
+  void SetSessionEndpointUrl(SessionEndpointUrlT&& value) {
+    m_sessionEndpointUrlHasBeenSet = true;
+    m_sessionEndpointUrl = std::forward<SessionEndpointUrlT>(value);
+  }
+  template <typename SessionEndpointUrlT = Aws::String>
+  InvokeAgentRuntimeResult& WithSessionEndpointUrl(SessionEndpointUrlT&& value) {
+    SetSessionEndpointUrl(std::forward<SessionEndpointUrlT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The identifier of the MCP session.</p>
    */
   inline const Aws::String& GetMcpSessionId() const { return m_mcpSessionId; }
@@ -214,6 +235,8 @@ class InvokeAgentRuntimeResult {
  private:
   Aws::String m_runtimeSessionId;
 
+  Aws::String m_sessionEndpointUrl;
+
   Aws::String m_mcpSessionId;
 
   Aws::String m_mcpProtocolVersion;
@@ -235,6 +258,7 @@ class InvokeAgentRuntimeResult {
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_runtimeSessionIdHasBeenSet = false;
+  bool m_sessionEndpointUrlHasBeenSet = false;
   bool m_mcpSessionIdHasBeenSet = false;
   bool m_mcpProtocolVersionHasBeenSet = false;
   bool m_traceIdHasBeenSet = false;

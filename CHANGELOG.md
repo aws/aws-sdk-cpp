@@ -1,3 +1,16 @@
+# 1.11.920 (2026-10-29)
+
+## SDK Highlights
+* **Bug Fix**: Fix AWS_NEW_RETRIES_2026 gating: restore DefaultRetryStrategy fallback when the flag is off, read the flag case-insensitively in smithy clients, and let AWS_MAX_ATTEMPTS override the DynamoDB default when the flag is on
+
+## Service Updates
+* **Bedrock AgentCore Control**: Adds Session Endpoint Feature on AgentCore Runtime
+* **Bedrock AgentCore**: Adds AgentCore Runtime session endpoint support, including sessionEndpointUrl on the InvokeAgentRuntime response
+* **CleanRooms**: Adds support for the PySpark 2.0 analysis template format and for choosing the file format (CSV or Parquet) of protected job results written to Amazon S3, including in a membership's default job result configuration.
+* **Lightsail**: This release adds support for instance health status checks and system status checks.
+* **WAFV2**: AWS WAF customers using Targeted Bot Control, ATP, or ACFP managed rule groups can now enable automatic Challenge JavaScript SDK injection. When enabled, Amazon CloudFront injects the script tag into HTML responses on your behalf, removing the need for manual integration.
+* **imagebuilder**: This release adds support for on-demand AMI scanning with Amazon Inspector.
+
 # 1.11.919 (2026-10-28)
 
 ## SDK Highlights

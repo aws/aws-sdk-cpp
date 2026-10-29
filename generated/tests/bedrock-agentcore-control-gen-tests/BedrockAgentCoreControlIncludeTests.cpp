@@ -31,6 +31,7 @@
 #include <aws/bedrock-agentcore-control/model/AgentRuntimeStatus.h>
 #include <aws/bedrock-agentcore-control/model/AgentRuntimeVersionSummary.h>
 #include <aws/bedrock-agentcore-control/model/AgentSkillsDescriptor.h>
+#include <aws/bedrock-agentcore-control/model/AllowedPort.h>
 #include <aws/bedrock-agentcore-control/model/AllowedWorkloadConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/ApiGatewayTargetConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/ApiGatewayToolConfiguration.h>
@@ -711,6 +712,7 @@
 #include <aws/bedrock-agentcore-control/model/PolicyStatus.h>
 #include <aws/bedrock-agentcore-control/model/PolicySummary.h>
 #include <aws/bedrock-agentcore-control/model/PolicyValidationMode.h>
+#include <aws/bedrock-agentcore-control/model/PortRange.h>
 #include <aws/bedrock-agentcore-control/model/PrincipalMatchOperator.h>
 #include <aws/bedrock-agentcore-control/model/PrivateEndpoint.h>
 #include <aws/bedrock-agentcore-control/model/PrivateEndpointOverride.h>
