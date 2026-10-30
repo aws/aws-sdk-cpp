@@ -1,0 +1,196 @@
+# From smithy-lang/smithy-java codecs/cbor-codec/src/fuzz/resources/dictionary/codec-fuzz.dict (Apache-2.0)
+# ---- Integers (major type 0) ----
+# uint(0)
+"\x00"
+
+# uint(1)
+"\x01"
+
+# uint(10)
+"\x0a"
+
+# uint(23) — boundary of “small” ints
+"\x17"
+
+# uint(24) encoded using 1 follow byte
+"\x18\x18"
+
+# uint(255)
+"\x18\xff"
+
+# uint(256)
+"\x19\x01\x00"
+
+# ---- Negative integers (major type 1) ----
+# -1
+"\x20"
+
+# -10
+"\x29"
+
+# -24 (boundary small negative int)
+"\x37"
+
+# -25 (encoded with u8 following)
+"\x38\x18"
+
+
+# ---- Byte strings (major type 2) ----
+# byte string length 0
+"\x40"
+
+# byte string length 1
+"\x41"
+
+# byte string length 4
+"\x44"
+
+# byte string length 8
+"\x48"
+
+# byte string length 16 (u8)
+"\x58\x10"
+
+# byte string length 256 (u16)
+"\x59\x01\x00"
+
+# indefinite-length byte string
+"\x5f"
+
+
+# ---- Text strings (major type 3) ----
+# text string length 0
+"\x60"
+
+# text string length 1
+"\x61"
+
+# text string length 4
+"\x64"
+
+# text string length 8
+"\x68"
+
+# text string length 16 (u8)
+"\x78\x10"
+
+# text string length 256 (u16)
+"\x79\x01\x00"
+
+# indefinite-length text string
+"\x7f"
+
+
+# ---- Arrays (major type 4) ----
+# array(0)
+"\x80"
+
+# array(1)
+"\x81"
+
+# array(2)
+"\x82"
+
+# array(3)
+"\x83"
+
+# array(4)
+"\x84"
+
+# array(8)
+"\x88"
+
+# array(16) (u8)
+"\x98\x10"
+
+# array(256) (u16)
+"\x99\x01\x00"
+
+# indefinite-length array
+"\x9f"
+
+
+# ---- Maps (major type 5) ----
+# map(0)
+"\xa0"
+
+# map(1)
+"\xa1"
+
+# map(2)
+"\xa2"
+
+# map(3)
+"\xa3"
+
+# map(4)
+"\xa4"
+
+# map(8)
+"\xa8"
+
+# map(16) (u8)
+"\xb8\x10"
+
+# map(256) (u16)
+"\xb9\x01\x00"
+
+# indefinite-length map
+"\xbf"
+
+
+# ---- Tags (major type 6) ----
+# tag(0): datetime string
+"\xc0"
+
+# tag(1): epoch datetime
+"\xc1"
+
+# tag(2): positive bignum
+"\xc2"
+
+# tag(3): negative bignum
+"\xc3"
+
+# tag(32): URI
+"\xd8\x20"
+
+# tag(55799) — common CBOR self-describe magic
+"\xd9\xd9\xf7"
+
+
+# ---- Simple values, floats, break (major type 7) ----
+# false
+"\xf4"
+
+# true
+"\xf5"
+
+# null
+"\xf6"
+
+# undefined
+"\xf7"
+
+# half float header
+"\xf9"
+
+# float32 header
+"\xfa"
+
+# float64 header
+"\xfb"
+
+# BREAK code for indefinite lengths
+"\xff"
+
+
+# ---- Useful prefabricated patterns ----
+# { "a": false }
+"\xa1\x61\x61\xf4"
+
+# [1,2,3]
+"\x83\x01\x02\x03"
+
+# [false, true, null]
+"\x83\xf4\xf5\xf6"

@@ -4,7 +4,6 @@
  */
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/StringUtils.h>
-#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <smithy/client/schema/Document.h>
 #include <smithy/client/schema/JsonShapeSerializer.h>
 #include <smithy/client/schema/JsonTraits.h>
@@ -14,8 +13,6 @@
 #include <smithy/client/schema/SerializableStruct.h>
 
 #include <cmath>
-#include <cstdlib>
-#include <iomanip>
 
 #include "aws/core/client/AWSClient.h"
 #include "aws/core/utils/Outcome.h"
@@ -24,8 +21,6 @@
 using namespace smithy::schema;
 using namespace Aws::Utils;
 using SerializerOutcome = Aws::Utils::Outcome<Aws::String, Aws::Client::AWSError<Aws::Client::CoreErrors>>;
-
-static constexpr int MAX_DEPTH = 500;
 
 class JsonShapeSerializer::Impl final : public ShapeSerializer {
  public:
@@ -88,42 +83,18 @@ class JsonShapeSerializer::Impl final : public ShapeSerializer {
   void WriteNull(const Schema&) override { m_buf += "null"; }
   void WriteDocument(const Schema& schema, const Document& value) override { value.Serialize(*this, schema); }
 
-  // Shortest decimal that round-trips (matches the SDK cJSON writer): 15 significant digits,
-  // falling back to 17 (max_digits10, always round-trips) when 15 does not reparse equal.
-  static Aws::String RoundTripDouble(double value) {
-    Aws::OStringStream s15;
-    s15 << std::setprecision(15) << value;
-    Aws::String t15 = s15.str();
-    if (StringUtils::ConvertToDouble(t15.c_str()) == value) {
-      return t15;
-    }
-    Aws::OStringStream s17;
-    s17 << std::setprecision(17) << value;
-    return s17.str();
-  }
-
   // Preserve the double type through a JSON round-trip: an integral-valued double formats as "2",
   // which the document deserializer reclassifies as Long. Append a ".0" marker when absent.
   static Aws::String FormatDouble(double value) {
-    Aws::String text = RoundTripDouble(value);
+    Aws::String text = StringUtils::FormatRoundTripDouble(value);
     if (text.find_first_of(".eE") == Aws::String::npos) {
       text += ".0";
     }
     return text;
   }
 
-  // Float counterpart of FormatDouble: reparse at float precision (strtof) so a float emits the
-  // shortest decimal that round-trips the float ("3.14"), not the double expansion of its imprecision
-  // ("3.1400001049041748"). 6 significant digits, falling back to 9 (max_digits10 for float).
   static Aws::String FormatFloat(float value) {
-    Aws::OStringStream s6;
-    s6 << std::setprecision(6) << value;
-    Aws::String text = s6.str();
-    if (std::strtof(text.c_str(), nullptr) != value) {
-      Aws::OStringStream s9;
-      s9 << std::setprecision(9) << value;
-      text = s9.str();
-    }
+    Aws::String text = StringUtils::FormatRoundTripFloat(value);
     if (text.find_first_of(".eE") == Aws::String::npos) {
       text += ".0";
     }
@@ -142,10 +113,10 @@ class JsonShapeSerializer::Impl final : public ShapeSerializer {
   }
 
   void WriteCommaIfNeeded() {
-    if (m_needsComma[m_depth]) {
+    if (m_needsComma[m_depth.Get()]) {
       m_buf += ',';
     } else {
-      m_needsComma[m_depth] = true;
+      m_needsComma[m_depth.Get()] = true;
     }
   }
 
@@ -308,27 +279,22 @@ class JsonShapeSerializer::Impl final : public ShapeSerializer {
   };
 
   bool OpenContainer(char open) {
-    if (!m_errorMessage.empty()) {
-      return false;
-    }
-    if (m_depth + 1 >= MAX_DEPTH) {
-      m_errorMessage = "Maximum nesting depth exceeded";
+    if (!m_depth.Enter(m_errorMessage)) {
       return false;
     }
     m_buf += open;
-    ++m_depth;
-    m_needsComma[m_depth] = false;
+    m_needsComma[m_depth.Get()] = false;
     return true;
   }
 
   void CloseContainer(char close) {
-    --m_depth;
+    m_depth.Exit();
     m_buf += close;
   }
 
   Aws::String m_buf;
-  int m_depth = 0;
-  Aws::Array<bool, MAX_DEPTH> m_needsComma{};
+  NestingDepth m_depth;
+  Aws::Array<bool, MAX_NESTING_DEPTH + 1> m_needsComma{};
   bool m_finalized = false;
   Aws::String m_errorMessage;
   CodecSettings m_settings;

@@ -17,22 +17,34 @@ using SerializerOutcome = Aws::Utils::Outcome<Aws::String, Aws::Client::AWSError
 class CborShapeSerializer::Impl final : public ShapeSerializer {
  public:
   void WriteStruct(const Schema&, const SerializableStruct& value) override {
+    if (!EnterContainer()) {
+      return;
+    }
     m_encoder.WriteIndefMapStart();
     StructContext ctx(this);
     value.SerializeMembers(ctx);
     m_encoder.WriteBreak();
+    ExitContainer();
   }
 
   void WriteList(const Schema&, size_t size, const std::function<void(ShapeSerializer&)>& consumer) override {
+    if (!EnterContainer()) {
+      return;
+    }
     m_encoder.WriteArrayStart(size);
     ListContext ctx(this);
     consumer(ctx);
+    ExitContainer();
   }
 
   void WriteMap(const Schema&, size_t size, const std::function<void(MapSerializer&)>& consumer) override {
+    if (!EnterContainer()) {
+      return;
+    }
     m_encoder.WriteMapStart(size);
     MapContext ctx(this);
     consumer(ctx);
+    ExitContainer();
   }
 
   void WriteBoolean(const Schema&, bool value) override { m_encoder.WriteBool(value); }
@@ -173,7 +185,11 @@ class CborShapeSerializer::Impl final : public ShapeSerializer {
     }
   }
 
+  bool EnterContainer() { return m_depth.Enter(m_errorMessage); }
+  void ExitContainer() { m_depth.Exit(); }
+
   Aws::Crt::Cbor::CborEncoder m_encoder;
+  NestingDepth m_depth;
   bool m_finalized = false;
   Aws::String m_errorMessage;
 };

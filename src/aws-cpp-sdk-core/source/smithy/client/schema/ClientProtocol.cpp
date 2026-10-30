@@ -41,10 +41,11 @@ ClientProtocol::SerializerOutcome ClientProtocol::SerializeRequest(const Operati
   return SerializeInput(inputSchema, input);
 }
 
-void ClientProtocol::DeserializeResponse(const OperationRequestContext&, Aws::Crt::ByteCursor data,
-                                         SerializableStruct& output) const {
+Aws::Crt::Optional<DeserializerError> ClientProtocol::DeserializeResponse(const OperationRequestContext&, Aws::Crt::ByteCursor data,
+                                                                          SerializableStruct& output) const {
   auto deserializer = CreateOutputDeserializer(data);
   output.Deserialize(*deserializer);
+  return deserializer->GetError();
 }
 
 Aws::String RestJsonProtocol::GetProtocolId() const { return "aws.protocols#restJson1"; }
@@ -105,11 +106,12 @@ ClientProtocol::SerializerOutcome AwsQueryProtocol::SerializeRequest(const Opera
                                                                     const SerializableStruct& input) const {
   return WrapQueryEnvelope(operation, SerializeInput(inputSchema, input));
 }
-void AwsQueryProtocol::DeserializeResponse(const OperationRequestContext& operation, Aws::Crt::ByteCursor data,
-                                           SerializableStruct& output) const {
+Aws::Crt::Optional<DeserializerError> AwsQueryProtocol::DeserializeResponse(const OperationRequestContext& operation,
+                                                                            Aws::Crt::ByteCursor data, SerializableStruct& output) const {
   XmlShapeDeserializer deserializer(data);
   deserializer.EnterWrapperElement(operation.action + "Result");
   output.Deserialize(deserializer);
+  return deserializer.GetError();
 }
 
 Aws::String Ec2QueryProtocol::GetProtocolId() const { return "aws.protocols#ec2Query"; }

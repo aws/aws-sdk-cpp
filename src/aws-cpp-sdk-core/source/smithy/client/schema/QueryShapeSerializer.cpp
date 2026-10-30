@@ -21,8 +21,6 @@ using namespace smithy::schema;
 using namespace Aws::Utils;
 using SerializerOutcome = Aws::Utils::Outcome<Aws::String, Aws::Client::AWSError<Aws::Client::CoreErrors>>;
 
-static constexpr int MAX_DEPTH = 500;
-
 class QueryShapeSerializer::Impl final : public ShapeSerializer {
  public:
   explicit Impl(bool ec2, CodecSettings settings) : m_ec2(ec2), m_settings(settings) { m_buf.reserve(1024); }
@@ -44,6 +42,10 @@ class QueryShapeSerializer::Impl final : public ShapeSerializer {
     const bool flattened = m_ec2 || IsFlattened(schema);
     ListContext ctx(this, m_prefix, flattened, GetListItemName(schema));
     consumer(ctx);
+    // awsQuery sends an empty list as a bare key; ec2Query omits it.
+    if (!m_ec2 && ctx.IsEmpty()) {
+      EmitField("");
+    }
     ExitContainer();
   }
 
@@ -59,8 +61,11 @@ class QueryShapeSerializer::Impl final : public ShapeSerializer {
   void WriteBoolean(const Schema&, bool value) override { EmitField(value ? "true" : "false"); }
   void WriteInteger(const Schema&, int value) override { EmitField(StringUtils::to_string(value)); }
   void WriteLong(const Schema&, int64_t value) override { EmitField(StringUtils::to_string(value)); }
-  void WriteFloat(const Schema&, float value) override { EmitField(FormatFloatingPoint(value)); }
-  void WriteDouble(const Schema&, double value) override { EmitField(FormatFloatingPoint(value)); }
+  void WriteFloat(const Schema&, float value) override {
+    EmitField(StringUtils::URLEncode(
+        (std::isfinite(value) ? StringUtils::FormatRoundTripFloat(value) : FormatFloatingPoint(static_cast<double>(value))).c_str()));
+  }
+  void WriteDouble(const Schema&, double value) override { EmitField(StringUtils::URLEncode(FormatFloatingPoint(value).c_str())); }
   void WriteString(const Schema&, const Aws::String& value) override { EmitField(StringUtils::URLEncode(value.c_str())); }
   void WriteTimestamp(const Schema& schema, const DateTime& value) override {
     EmitField(StringUtils::URLEncode(
@@ -197,6 +202,8 @@ class QueryShapeSerializer::Impl final : public ShapeSerializer {
     void WriteNull(const Schema&) override { ++m_index; }
     void WriteDocument(const Schema& s, const Document& v) override { m_outer->WriteDocument(s, v); }
 
+    bool IsEmpty() const { return m_index == 0; }
+
    private:
     Aws::String ItemKey() {
       Aws::String key = m_base;
@@ -263,18 +270,8 @@ class QueryShapeSerializer::Impl final : public ShapeSerializer {
     m_buf += value;
   }
 
-  bool EnterContainer() {
-    if (!m_errorMessage.empty()) {
-      return false;
-    }
-    if (m_depth + 1 > MAX_DEPTH) {
-      m_errorMessage = "Maximum serialization depth exceeded";
-      return false;
-    }
-    ++m_depth;
-    return true;
-  }
-  void ExitContainer() { --m_depth; }
+  bool EnterContainer() { return m_depth.Enter(m_errorMessage); }
+  void ExitContainer() { m_depth.Exit(); }
 
   static Aws::String JoinKey(const Aws::String& prefix, const Aws::String& name) {
     if (prefix.empty()) {
@@ -288,7 +285,7 @@ class QueryShapeSerializer::Impl final : public ShapeSerializer {
 
   static Aws::String FormatFloatingPoint(double value) {
     if (std::isfinite(value)) {
-      return StringUtils::to_string(value);
+      return StringUtils::FormatRoundTripDouble(value);
     }
     if (std::isnan(value)) {
       return "NaN";
@@ -330,7 +327,7 @@ class QueryShapeSerializer::Impl final : public ShapeSerializer {
 
   Aws::String m_buf;
   Aws::String m_prefix;
-  int m_depth = 0;
+  NestingDepth m_depth;
   bool m_ec2 = false;
   CodecSettings m_settings;
   bool m_hasContent = false;
