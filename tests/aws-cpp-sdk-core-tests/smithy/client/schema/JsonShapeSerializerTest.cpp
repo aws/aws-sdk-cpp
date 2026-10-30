@@ -15,6 +15,8 @@
 
 #include <cstdlib>
 #include <functional>
+#include <limits>
+#include <utility>
 
 #include "SchemaSerializerTestHelpers.h"
 
@@ -464,23 +466,6 @@ TEST_F(JsonShapeSerializerTest, EscapesInMapKey) {
   EXPECT_NE(s.GetPayload().GetResult().find("\"key\\\"with\\\"quotes\":\"v\""), Aws::String::npos);
 }
 
-TEST_F(JsonShapeSerializerTest, MaxDepthEnforcement) {
-  JsonShapeSerializer s;
-  auto root = Schema::StructureBuilder("Root").Build();
-  auto nested = Schema::CreateMember("n", ShapeType::Structure);
-  std::function<void(ShapeSerializer&, int)> nest = [&](ShapeSerializer& ser, int remaining) {
-    if (remaining <= 0) {
-      return;
-    }
-    ser.WriteStruct(*nested, LambdaStruct(*nested, [&, remaining](ShapeSerializer& inner) { nest(inner, remaining - 1); }));
-  };
-  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { nest(ser, 1000); });
-  s.WriteStruct(*root, rootStruct);
-  auto outcome = s.GetPayload();
-  ASSERT_FALSE(outcome.IsSuccess());
-  EXPECT_NE(outcome.GetError().GetMessage().find("depth"), Aws::String::npos);
-}
-
 TEST_F(JsonShapeSerializerTest, JsonNameOverridesMemberName) {
   JsonShapeSerializer s;
   auto root = Schema::StructureBuilder("Root").Build();
@@ -572,6 +557,23 @@ TEST_F(JsonShapeSerializerTest, DocumentAsStructMember) {
   EXPECT_EQ(outcome.GetResult(), "{\"doc\":{\"a\":1}}");
 }
 
+TEST_F(JsonShapeSerializerTest, NonFiniteDocumentDoubleIsWrittenAsItsString) {
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto member = Schema::CreateMember("doc", ShapeType::Document);
+  const std::pair<double, const char*> cases[] = {{std::numeric_limits<double>::quiet_NaN(), "{\"doc\":[\"NaN\"]}"},
+                                                  {std::numeric_limits<double>::infinity(), "{\"doc\":[\"Infinity\"]}"},
+                                                  {-std::numeric_limits<double>::infinity(), "{\"doc\":[\"-Infinity\"]}"}};
+  for (const auto& c : cases) {
+    JsonShapeSerializer s;
+    const auto doc = Document::FromList({Document::FromDouble(c.first)});
+    LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteDocument(*member, *doc); });
+    s.WriteStruct(*root, rootStruct);
+    auto outcome = s.GetPayload();
+    ASSERT_TRUE(outcome.IsSuccess());
+    EXPECT_EQ(outcome.GetResult(), c.second);
+  }
+}
+
 TEST_F(JsonShapeSerializerTest, DocumentAsListElement) {
   JsonShapeSerializer s;
   auto member = Schema::CreateMember("doc", ShapeType::Document);
@@ -582,4 +584,20 @@ TEST_F(JsonShapeSerializerTest, DocumentAsListElement) {
   auto outcome = s.GetPayload();
   ASSERT_TRUE(outcome.IsSuccess());
   EXPECT_EQ(outcome.GetResult(), "[\"x\",true]");
+}
+
+TEST_F(JsonShapeSerializerTest, NestingAtMaxDepthSucceeds) {
+  JsonShapeSerializer s;
+  auto root = Schema::StructureBuilder("Root").Build();
+  WriteNestedStructs(s, *root, MAX_NESTING_DEPTH);
+  EXPECT_TRUE(s.GetPayload().IsSuccess());
+}
+
+TEST_F(JsonShapeSerializerTest, NestingPastMaxDepthFails) {
+  JsonShapeSerializer s;
+  auto root = Schema::StructureBuilder("Root").Build();
+  WriteNestedStructs(s, *root, MAX_NESTING_DEPTH + 1);
+  auto outcome = s.GetPayload();
+  ASSERT_FALSE(outcome.IsSuccess());
+  EXPECT_NE(outcome.GetError().GetMessage().find("depth"), Aws::String::npos);
 }

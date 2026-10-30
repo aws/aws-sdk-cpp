@@ -12,6 +12,9 @@
 namespace smithy {
 namespace schema {
 
+// Container nesting limit, root included, shared by every serializer and deserializer.
+constexpr int MAX_NESTING_DEPTH = 1000;
+
 class SchemaBuilder;
 
 enum class ShapeType : uint8_t {

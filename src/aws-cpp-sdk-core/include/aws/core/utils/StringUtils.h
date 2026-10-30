@@ -13,6 +13,8 @@
 #include <aws/common/byte_buf.h>
 #include <aws/crt/Optional.h>
 
+#include <locale>
+
 
 namespace Aws
 {
@@ -176,8 +178,7 @@ namespace Aws
 
 
             /**
-             * Parses the entire string as a base-10 int64. Returns empty if the string is empty or has
-             * characters after the number. Out-of-range values saturate, matching ConvertToInt64.
+             * Parses the entire string as a base-10 int64. Returns empty if it is malformed or out of range.
              */
             static Aws::Crt::Optional<int64_t> ParseInt64(const Aws::String& source);
 
@@ -187,6 +188,18 @@ namespace Aws
              * characters after the number.
              */
             static Aws::Crt::Optional<double> ParseDouble(const Aws::String& source);
+
+            /**
+             * Formats a double with 15 significant digits, or 17 when 15 does not round-trip.
+             */
+            static Aws::String FormatRoundTripDouble(double value);
+
+
+            /**
+             * Formats a finite float with 6 significant digits, or 9 when 6 does not round-trip.
+             */
+            static Aws::String FormatRoundTripFloat(float value);
+
 
 
 #ifdef _WIN32
@@ -202,12 +215,13 @@ namespace Aws
 #endif
 
             /**
-             * not all platforms (Android) have std::to_string
+             * not all platforms (Android) have std::to_string. Formats in the classic locale.
              */
             template< typename T >
             static Aws::String to_string(T value)
             {
                 Aws::OStringStream os;
+                os.imbue(std::locale::classic());
                 os << value;
                 return os.str();
             }

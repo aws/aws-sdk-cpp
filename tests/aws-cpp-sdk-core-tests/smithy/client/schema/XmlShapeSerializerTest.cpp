@@ -14,6 +14,7 @@
 #include <smithy/client/schema/XmlTraits.h>
 
 #include <functional>
+#include <limits>
 
 #include "SchemaSerializerTestHelpers.h"
 
@@ -72,6 +73,54 @@ TEST_F(XmlShapeSerializerTest, Double) {
   LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteDouble(*member, 3.14); });
   s.WriteStruct(*root, rootStruct);
   EXPECT_NE(s.GetPayload().GetResult().find("<ratio>3.14</ratio>"), Aws::String::npos);
+}
+
+namespace {
+Aws::String FloatElementPayload(float value) {
+  XmlShapeSerializer s;
+  auto root = Schema::StructureBuilder("Root", {{XmlNameTrait::KEY(), Aws::MakeShared<XmlNameTrait>("Schema", "Root")}}).Build();
+  auto member = Schema::CreateMember("f", ShapeType::Float);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteFloat(*member, value); });
+  s.WriteStruct(*root, rootStruct);
+  return s.GetPayload().GetResult();
+}
+
+Aws::String FloatAttributePayload(float value) {
+  XmlShapeSerializer s;
+  auto root = Schema::StructureBuilder("Root", {{XmlNameTrait::KEY(), Aws::MakeShared<XmlNameTrait>("Schema", "Root")}})
+                  .PutMember("f", Schema::CreateFloat("F"), {{XmlAttributeTrait::KEY(), Aws::MakeShared<XmlAttributeTrait>("Schema")}})
+                  .Build();
+  auto member = root->GetMember("f").value();
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteFloat(*member, value); });
+  s.WriteStruct(*root, rootStruct);
+  return s.GetPayload().GetResult();
+}
+}  // namespace
+
+TEST_F(XmlShapeSerializerTest, FloatElementIsFormattedAtFloatPrecision) {
+  EXPECT_NE(FloatElementPayload(3.14f).find("<f>3.14</f>"), Aws::String::npos);
+  EXPECT_NE(FloatElementPayload(0.1f).find("<f>0.1</f>"), Aws::String::npos);
+  EXPECT_NE(FloatElementPayload((std::numeric_limits<float>::max)()).find("<f>3.40282347e+38</f>"), Aws::String::npos);
+}
+
+TEST_F(XmlShapeSerializerTest, FloatAttributeIsFormattedAtFloatPrecision) {
+  EXPECT_NE(FloatAttributePayload(3.14f).find("f=\"3.14\""), Aws::String::npos);
+  EXPECT_NE(FloatAttributePayload(0.1f).find("f=\"0.1\""), Aws::String::npos);
+}
+
+TEST_F(XmlShapeSerializerTest, NonFiniteFloatAttributeUsesXmlLiterals) {
+  EXPECT_NE(FloatAttributePayload(std::numeric_limits<float>::quiet_NaN()).find("f=\"NaN\""), Aws::String::npos);
+  EXPECT_NE(FloatAttributePayload(std::numeric_limits<float>::infinity()).find("f=\"Infinity\""), Aws::String::npos);
+  EXPECT_NE(FloatAttributePayload(-std::numeric_limits<float>::infinity()).find("f=\"-Infinity\""), Aws::String::npos);
+}
+
+TEST_F(XmlShapeSerializerTest, LargeIntegralDoubleKeepsAllDigits) {
+  XmlShapeSerializer s;
+  auto root = Schema::StructureBuilder("Root", {{XmlNameTrait::KEY(), Aws::MakeShared<XmlNameTrait>("Schema", "Root")}}).Build();
+  auto member = Schema::CreateMember("big", ShapeType::Double);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteDouble(*member, 2147483647.0); });
+  s.WriteStruct(*root, rootStruct);
+  EXPECT_NE(s.GetPayload().GetResult().find("<big>2147483647</big>"), Aws::String::npos);
 }
 
 TEST_F(XmlShapeSerializerTest, String) {
@@ -354,20 +403,13 @@ TEST_F(XmlShapeSerializerTest, EscapesMultipleSpecialChars) {
   EXPECT_NE(s.GetPayload().GetResult().find("<expr>x &lt; 5 &amp; y &gt; 3</expr>"), Aws::String::npos);
 }
 
-TEST_F(XmlShapeSerializerTest, MaxDepthEnforcement) {
+TEST_F(XmlShapeSerializerTest, EscapesCarriageReturnSoItSurvivesLineEndNormalization) {
   XmlShapeSerializer s;
   auto root = Schema::StructureBuilder("Root", {{XmlNameTrait::KEY(), Aws::MakeShared<XmlNameTrait>("Schema", "Root")}}).Build();
-  auto nested = Schema::CreateMember("n", ShapeType::Structure);
-  std::function<void(ShapeSerializer&, int)> nest = [&](ShapeSerializer& ser, int remaining) {
-    if (remaining <= 0) {
-      return;
-    }
-    ser.WriteStruct(*nested, LambdaStruct(*nested, [&, remaining](ShapeSerializer& inner) { nest(inner, remaining - 1); }));
-  };
-  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { nest(ser, 1000); });
+  auto member = Schema::CreateMember("msg", ShapeType::String);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteString(*member, "a\r\nb\n\rc"); });
   s.WriteStruct(*root, rootStruct);
-  bool hitLimit = !s.GetPayload().IsSuccess();
-  EXPECT_TRUE(hitLimit);
+  EXPECT_NE(s.GetPayload().GetResult().find("<msg>a&#xD;\nb\n&#xD;c</msg>"), Aws::String::npos);
 }
 
 TEST_F(XmlShapeSerializerTest, XmlNameOverridesMemberName) {
@@ -533,4 +575,20 @@ TEST_F(XmlShapeSerializerTest, DocumentIsUnsupported) {
   auto outcome = s.GetPayload();
   ASSERT_FALSE(outcome.IsSuccess());
   EXPECT_EQ(outcome.GetError().GetExceptionName(), "SerializationException");
+}
+
+TEST_F(XmlShapeSerializerTest, NestingAtMaxDepthSucceeds) {
+  XmlShapeSerializer s;
+  auto root = Schema::StructureBuilder("Root", {{XmlNameTrait::KEY(), Aws::MakeShared<XmlNameTrait>("Schema", "Root")}}).Build();
+  WriteNestedStructs(s, *root, MAX_NESTING_DEPTH);
+  EXPECT_TRUE(s.GetPayload().IsSuccess());
+}
+
+TEST_F(XmlShapeSerializerTest, NestingPastMaxDepthFails) {
+  XmlShapeSerializer s;
+  auto root = Schema::StructureBuilder("Root", {{XmlNameTrait::KEY(), Aws::MakeShared<XmlNameTrait>("Schema", "Root")}}).Build();
+  WriteNestedStructs(s, *root, MAX_NESTING_DEPTH + 1);
+  auto outcome = s.GetPayload();
+  ASSERT_FALSE(outcome.IsSuccess());
+  EXPECT_NE(outcome.GetError().GetMessage().find("depth"), Aws::String::npos);
 }

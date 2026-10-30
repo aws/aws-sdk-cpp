@@ -16,6 +16,26 @@ namespace schema {
 class SerializableStruct;
 class MapSerializer;
 
+class NestingDepth final {
+ public:
+  bool Enter(Aws::String& errorMessage) {
+    if (!errorMessage.empty()) {
+      return false;
+    }
+    if (m_depth >= MAX_NESTING_DEPTH) {
+      errorMessage = "Maximum nesting depth exceeded";
+      return false;
+    }
+    ++m_depth;
+    return true;
+  }
+  void Exit() { --m_depth; }
+  int Get() const { return m_depth; }
+
+ private:
+  int m_depth = 0;
+};
+
 // Push-based serializer: the model drives serialization and the serializer owns
 // all wire-format structure. Aggregates hand control back through a consumer.
 class SMITHY_API ShapeSerializer {

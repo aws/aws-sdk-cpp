@@ -9,6 +9,8 @@
 #include <algorithm>
 #include <iomanip>
 #include <numeric>
+#include <cerrno>
+#include <clocale>
 #include <cstdlib>
 #include <cstdio>
 #include <cstring>
@@ -390,27 +392,98 @@ Aws::Crt::Optional<int64_t> StringUtils::ParseInt64(const Aws::String& source)
         return {};
     }
     char* end = nullptr;
+    errno = 0;
     const long long value = std::strtoll(source.c_str(), &end, 10);
-    if (end != source.c_str() + source.size())
+    if (end != source.c_str() + source.size() || errno == ERANGE)
     {
         return {};
     }
     return static_cast<int64_t>(value);
 }
 
+namespace
+{
+    // strtod and strtof use the C locale's decimal point; wire numbers always use '.'.
+    Aws::Crt::Optional<Aws::String> InCLocaleForm(const Aws::String& source)
+    {
+        const Aws::String point = std::localeconv()->decimal_point;
+        if (point == ".")
+        {
+            return source;
+        }
+        if (source.find(point) != Aws::String::npos)
+        {
+            return {};
+        }
+        Aws::String text;
+        for (const char c : source)
+        {
+            if (c == '.')
+            {
+                text += point;
+            }
+            else
+            {
+                text += c;
+            }
+        }
+        return text;
+    }
+
+    bool ReparsesAsFloat(const Aws::String& text, float value)
+    {
+        const auto localized = InCLocaleForm(text);
+        return localized.has_value() && std::strtof(localized->c_str(), nullptr) == value;
+    }
+}
+
 Aws::Crt::Optional<double> StringUtils::ParseDouble(const Aws::String& source)
 {
-    if (source.empty())
+    const auto text = InCLocaleForm(source);
+    if (source.empty() || !text.has_value())
     {
         return {};
     }
     char* end = nullptr;
-    const double value = std::strtod(source.c_str(), &end);
-    if (end != source.c_str() + source.size())
+    const double value = std::strtod(text->c_str(), &end);
+    if (end != text->c_str() + text->size())
     {
         return {};
     }
     return value;
+}
+
+Aws::String StringUtils::FormatRoundTripDouble(double value)
+{
+    Aws::OStringStream s15;
+    s15.imbue(std::locale::classic());
+    s15 << std::setprecision(15) << value;
+    Aws::String text = s15.str();
+    const auto reparsed = ParseDouble(text);
+    if (reparsed.has_value() && *reparsed == value)
+    {
+        return text;
+    }
+    Aws::OStringStream s17;
+    s17.imbue(std::locale::classic());
+    s17 << std::setprecision(17) << value;
+    return s17.str();
+}
+
+Aws::String StringUtils::FormatRoundTripFloat(float value)
+{
+    Aws::OStringStream s6;
+    s6.imbue(std::locale::classic());
+    s6 << std::setprecision(6) << value;
+    Aws::String text = s6.str();
+    if (!ReparsesAsFloat(text, value))
+    {
+        Aws::OStringStream s9;
+        s9.imbue(std::locale::classic());
+        s9 << std::setprecision(9) << value;
+        text = s9.str();
+    }
+    return text;
 }
 
 Aws::String StringUtils::Join(const Aws::Vector<Aws::String>& elements, char delimiter)
