@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Connect {
 namespace Model {
-enum class PreEvaluationFilterResourceType { NOT_SET, CONTACT };
+enum class PreEvaluationFilterResourceType { NOT_SET, CONTACT, CONTACT_EVALUATION };
 
 namespace PreEvaluationFilterResourceTypeMapper {
 AWS_CONNECT_API PreEvaluationFilterResourceType GetPreEvaluationFilterResourceTypeForName(const Aws::String& name);

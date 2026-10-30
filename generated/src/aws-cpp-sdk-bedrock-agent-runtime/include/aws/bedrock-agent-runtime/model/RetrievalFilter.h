@@ -29,7 +29,7 @@ namespace Model {
  * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html#API_agent-runtime_Retrieve_RequestSyntax">Retrieve
  * request</a> – in the <code>filter</code> field</p> </li> <li> <p> <a
  * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_RetrieveAndGenerate.html#API_agent-runtime_RetrieveAndGenerate_RequestSyntax">RetrieveAndGenerate
- * request</a> – in the <code>filter</code> field</p> </li> </ul><p><h3>See
+ * request</a> �� in the <code>filter</code> field</p> </li> </ul><p><h3>See
  * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/RetrievalFilter">AWS
  * API Reference</a></p>

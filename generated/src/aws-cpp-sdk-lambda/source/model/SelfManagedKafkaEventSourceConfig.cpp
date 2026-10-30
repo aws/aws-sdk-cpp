@@ -26,6 +26,11 @@ SelfManagedKafkaEventSourceConfig& SelfManagedKafkaEventSourceConfig::operator=(
     m_schemaRegistryConfig = jsonValue.GetObject("SchemaRegistryConfig");
     m_schemaRegistryConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ConsumptionMode")) {
+    m_consumptionMode = KafkaEventSourceMappingConsumptionModeMapper::GetKafkaEventSourceMappingConsumptionModeForName(
+        jsonValue.GetString("ConsumptionMode"));
+    m_consumptionModeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +43,11 @@ JsonValue SelfManagedKafkaEventSourceConfig::Jsonize() const {
 
   if (m_schemaRegistryConfigHasBeenSet) {
     payload.WithObject("SchemaRegistryConfig", m_schemaRegistryConfig.Jsonize());
+  }
+
+  if (m_consumptionModeHasBeenSet) {
+    payload.WithString("ConsumptionMode",
+                       KafkaEventSourceMappingConsumptionModeMapper::GetNameForKafkaEventSourceMappingConsumptionMode(m_consumptionMode));
   }
 
   return payload;

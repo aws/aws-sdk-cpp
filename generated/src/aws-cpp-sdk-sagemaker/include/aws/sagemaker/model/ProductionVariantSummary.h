@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
+#include <aws/sagemaker/model/AcceleratorPartitionLayout.h>
 #include <aws/sagemaker/model/DeployedImage.h>
 #include <aws/sagemaker/model/InstancePoolSummary.h>
 #include <aws/sagemaker/model/ProductionVariantCapacityReservationSummary.h>
@@ -295,6 +296,33 @@ class ProductionVariantSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The accelerator partition layout that SageMaker applies to this production
+   * variant. On NVIDIA GPUs, the profiles are Multi-Instance GPU (MIG) profiles.
+   * SageMaker returns the accelerator partition layout as you provided it when you
+   * created the variant, without normalization.</p>
+   */
+  inline const Aws::Vector<AcceleratorPartitionLayout>& GetAcceleratorPartitionLayouts() const { return m_acceleratorPartitionLayouts; }
+  inline bool AcceleratorPartitionLayoutsHasBeenSet() const { return m_acceleratorPartitionLayoutsHasBeenSet; }
+  template <typename AcceleratorPartitionLayoutsT = Aws::Vector<AcceleratorPartitionLayout>>
+  void SetAcceleratorPartitionLayouts(AcceleratorPartitionLayoutsT&& value) {
+    m_acceleratorPartitionLayoutsHasBeenSet = true;
+    m_acceleratorPartitionLayouts = std::forward<AcceleratorPartitionLayoutsT>(value);
+  }
+  template <typename AcceleratorPartitionLayoutsT = Aws::Vector<AcceleratorPartitionLayout>>
+  ProductionVariantSummary& WithAcceleratorPartitionLayouts(AcceleratorPartitionLayoutsT&& value) {
+    SetAcceleratorPartitionLayouts(std::forward<AcceleratorPartitionLayoutsT>(value));
+    return *this;
+  }
+  template <typename AcceleratorPartitionLayoutsT = AcceleratorPartitionLayout>
+  ProductionVariantSummary& AddAcceleratorPartitionLayouts(AcceleratorPartitionLayoutsT&& value) {
+    m_acceleratorPartitionLayoutsHasBeenSet = true;
+    m_acceleratorPartitionLayouts.emplace_back(std::forward<AcceleratorPartitionLayoutsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_variantName;
 
@@ -321,6 +349,8 @@ class ProductionVariantSummary {
   ProductionVariantRoutingConfig m_routingConfig;
 
   ProductionVariantCapacityReservationSummary m_capacityReservationConfig;
+
+  Aws::Vector<AcceleratorPartitionLayout> m_acceleratorPartitionLayouts;
   bool m_variantNameHasBeenSet = false;
   bool m_deployedImagesHasBeenSet = false;
   bool m_currentWeightHasBeenSet = false;
@@ -334,6 +364,7 @@ class ProductionVariantSummary {
   bool m_managedInstanceScalingHasBeenSet = false;
   bool m_routingConfigHasBeenSet = false;
   bool m_capacityReservationConfigHasBeenSet = false;
+  bool m_acceleratorPartitionLayoutsHasBeenSet = false;
 };
 
 }  // namespace Model

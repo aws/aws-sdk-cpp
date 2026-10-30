@@ -18,6 +18,10 @@ namespace Model {
 RealTimeContactAnalysisCategoryDetails::RealTimeContactAnalysisCategoryDetails(JsonView jsonValue) { *this = jsonValue; }
 
 RealTimeContactAnalysisCategoryDetails& RealTimeContactAnalysisCategoryDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("RuleId")) {
+    m_ruleId = jsonValue.GetString("RuleId");
+    m_ruleIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("PointsOfInterest")) {
     Aws::Utils::Array<JsonView> pointsOfInterestJsonList = jsonValue.GetArray("PointsOfInterest");
     for (unsigned pointsOfInterestIndex = 0; pointsOfInterestIndex < pointsOfInterestJsonList.GetLength(); ++pointsOfInterestIndex) {
@@ -30,6 +34,10 @@ RealTimeContactAnalysisCategoryDetails& RealTimeContactAnalysisCategoryDetails::
 
 JsonValue RealTimeContactAnalysisCategoryDetails::Jsonize() const {
   JsonValue payload;
+
+  if (m_ruleIdHasBeenSet) {
+    payload.WithString("RuleId", m_ruleId);
+  }
 
   if (m_pointsOfInterestHasBeenSet) {
     Aws::Utils::Array<JsonValue> pointsOfInterestJsonList(m_pointsOfInterest.size());

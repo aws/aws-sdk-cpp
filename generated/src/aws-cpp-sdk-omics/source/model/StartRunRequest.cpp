@@ -119,5 +119,9 @@ Aws::String StartRunRequest::SerializePayload() const {
     }
   }
 
+  if (m_outputUriPrefixModeHasBeenSet) {
+    payload.WithString("outputUriPrefixMode", RunOutputUriPrefixModeMapper::GetNameForRunOutputUriPrefixMode(m_outputUriPrefixMode));
+  }
+
   return payload.View().WriteReadable();
 }

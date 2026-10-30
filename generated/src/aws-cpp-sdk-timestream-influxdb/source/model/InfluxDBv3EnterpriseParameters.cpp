@@ -182,18 +182,6 @@ InfluxDBv3EnterpriseParameters& InfluxDBv3EnterpriseParameters::operator=(JsonVi
     m_pluginRepositorySecretArn = jsonValue.GetString("pluginRepositorySecretArn");
     m_pluginRepositorySecretArnHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("ingestQueryInstances")) {
-    m_ingestQueryInstances = jsonValue.GetInteger("ingestQueryInstances");
-    m_ingestQueryInstancesHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("queryOnlyInstances")) {
-    m_queryOnlyInstances = jsonValue.GetInteger("queryOnlyInstances");
-    m_queryOnlyInstancesHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("dedicatedCompactor")) {
-    m_dedicatedCompactor = jsonValue.GetBool("dedicatedCompactor");
-    m_dedicatedCompactorHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("compactionRowLimit")) {
     m_compactionRowLimit = jsonValue.GetInteger("compactionRowLimit");
     m_compactionRowLimitHasBeenSet = true;
@@ -418,18 +406,6 @@ JsonValue InfluxDBv3EnterpriseParameters::Jsonize() const {
 
   if (m_pluginRepositorySecretArnHasBeenSet) {
     payload.WithString("pluginRepositorySecretArn", m_pluginRepositorySecretArn);
-  }
-
-  if (m_ingestQueryInstancesHasBeenSet) {
-    payload.WithInteger("ingestQueryInstances", m_ingestQueryInstances);
-  }
-
-  if (m_queryOnlyInstancesHasBeenSet) {
-    payload.WithInteger("queryOnlyInstances", m_queryOnlyInstances);
-  }
-
-  if (m_dedicatedCompactorHasBeenSet) {
-    payload.WithBool("dedicatedCompactor", m_dedicatedCompactor);
   }
 
   if (m_compactionRowLimitHasBeenSet) {

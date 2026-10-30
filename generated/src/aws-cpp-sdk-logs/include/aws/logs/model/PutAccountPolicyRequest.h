@@ -211,6 +211,28 @@ class PutAccountPolicyRequest : public CloudWatchLogsRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether to preview the impact of the policy without creating or
+   * updating it. If you specify <code>true</code>, CloudWatch Logs validates the
+   * request, does not save the policy, and returns the estimated impact in
+   * <code>dryRunResult</code> instead of <code>accountPolicy</code>. The default is
+   * <code>false</code>.</p> <p>Specifying <code>dryRun</code> is valid only when you
+   * specify <code>RETENTION_POLICY</code> for <code>policyType</code>. Only one dry
+   * run can be in progress for an account at a time.</p>
+   */
+  inline bool GetDryRun() const { return m_dryRun; }
+  inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+  inline void SetDryRun(bool value) {
+    m_dryRunHasBeenSet = true;
+    m_dryRun = value;
+  }
+  inline PutAccountPolicyRequest& WithDryRun(bool value) {
+    SetDryRun(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_policyName;
 
@@ -221,11 +243,14 @@ class PutAccountPolicyRequest : public CloudWatchLogsRequest {
   Scope m_scope{Scope::NOT_SET};
 
   Aws::String m_selectionCriteria;
+
+  bool m_dryRun{false};
   bool m_policyNameHasBeenSet = false;
   bool m_policyDocumentHasBeenSet = false;
   bool m_policyTypeHasBeenSet = false;
   bool m_scopeHasBeenSet = false;
   bool m_selectionCriteriaHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
 };
 
 }  // namespace Model

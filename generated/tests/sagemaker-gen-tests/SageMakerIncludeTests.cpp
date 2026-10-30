@@ -61,6 +61,7 @@
 #include <aws/sagemaker/model/AIWorkloadInputDataConfig.h>
 #include <aws/sagemaker/model/AIWorkloadS3DataSource.h>
 #include <aws/sagemaker/model/AcceleratorPartitionConfig.h>
+#include <aws/sagemaker/model/AcceleratorPartitionLayout.h>
 #include <aws/sagemaker/model/AccountDefaultStatus.h>
 #include <aws/sagemaker/model/ActionSource.h>
 #include <aws/sagemaker/model/ActionStatus.h>

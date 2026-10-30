@@ -296,6 +296,29 @@ class LogGroup {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The name of the account-level retention policy that determines the retention
+   * period of this log group. This field is returned only when an account-level
+   * retention policy applies to the log group. When it is returned,
+   * <code>retentionInDays</code> shows the retention period from that policy instead
+   * of the retention period set on the log group. If the policy specifies that log
+   * events never expire, <code>retentionInDays</code> is not returned.</p>
+   */
+  inline const Aws::String& GetRetentionPolicyName() const { return m_retentionPolicyName; }
+  inline bool RetentionPolicyNameHasBeenSet() const { return m_retentionPolicyNameHasBeenSet; }
+  template <typename RetentionPolicyNameT = Aws::String>
+  void SetRetentionPolicyName(RetentionPolicyNameT&& value) {
+    m_retentionPolicyNameHasBeenSet = true;
+    m_retentionPolicyName = std::forward<RetentionPolicyNameT>(value);
+  }
+  template <typename RetentionPolicyNameT = Aws::String>
+  LogGroup& WithRetentionPolicyName(RetentionPolicyNameT&& value) {
+    SetRetentionPolicyName(std::forward<RetentionPolicyNameT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_logGroupName;
 
@@ -322,6 +345,8 @@ class LogGroup {
   bool m_deletionProtectionEnabled{false};
 
   bool m_bearerTokenAuthenticationEnabled{false};
+
+  Aws::String m_retentionPolicyName;
   bool m_logGroupNameHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;
   bool m_retentionInDaysHasBeenSet = false;
@@ -335,6 +360,7 @@ class LogGroup {
   bool m_logGroupArnHasBeenSet = false;
   bool m_deletionProtectionEnabledHasBeenSet = false;
   bool m_bearerTokenAuthenticationEnabledHasBeenSet = false;
+  bool m_retentionPolicyNameHasBeenSet = false;
 };
 
 }  // namespace Model

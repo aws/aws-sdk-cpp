@@ -39,6 +39,8 @@
 #include <aws/bedrock-agent-runtime/model/AgenticRetrieveBedrockRerankingModelConfiguration.h>
 #include <aws/bedrock-agent-runtime/model/AgenticRetrieveCitation.h>
 #include <aws/bedrock-agent-runtime/model/AgenticRetrieveCitationReference.h>
+#include <aws/bedrock-agent-runtime/model/AgenticRetrieveCodeExecutionDetails.h>
+#include <aws/bedrock-agent-runtime/model/AgenticRetrieveCodeExecutionDocument.h>
 #include <aws/bedrock-agent-runtime/model/AgenticRetrieveConfiguration.h>
 #include <aws/bedrock-agent-runtime/model/AgenticRetrieveFailure.h>
 #include <aws/bedrock-agent-runtime/model/AgenticRetrieveFullDocExpansionDetails.h>

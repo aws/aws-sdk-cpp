@@ -40,10 +40,13 @@ class ProductionVariantRoutingConfig {
    * specific instances that have more capacity to process them.</p> </li> <li> <p>
    * <code>RANDOM</code>: The endpoint routes each request to a randomly chosen
    * instance.</p> </li> <li> <p> <code>PREFIX_AWARE</code>: The endpoint routes
-   * requests that share the same prompt prefix to the same instance. When the number
-   * of in-flight requests on the selected instance reaches the configured threshold,
-   * the endpoint routes the request to an instance with more available capacity.</p>
-   * </li> </ul>
+   * requests that share the same prompt prefix to the same instance and, when that
+   * instance hosts more than one copy of the invoked inference component, to the
+   * same copy. When the number of in-flight requests on the selected instance or
+   * copy reaches the <code>ConcurrencyThreshold</code> value, the endpoint routes
+   * the request to another copy on that instance or to another instance. The
+   * endpoint applies prefix-aware routing only when two or more instances can serve
+   * the request.</p> </li> </ul>
    */
   inline RoutingStrategy GetRoutingStrategy() const { return m_routingStrategy; }
   inline bool RoutingStrategyHasBeenSet() const { return m_routingStrategyHasBeenSet; }

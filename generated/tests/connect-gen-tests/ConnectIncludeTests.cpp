@@ -154,6 +154,8 @@
 #include <aws/connect/model/CalculationComponent.h>
 #include <aws/connect/model/Campaign.h>
 #include <aws/connect/model/CaseSlaConfiguration.h>
+#include <aws/connect/model/CategoriesAttributeAndCondition.h>
+#include <aws/connect/model/CategoriesAttributeFilter.h>
 #include <aws/connect/model/Channel.h>
 #include <aws/connect/model/ChannelWorkloadBehaviorType.h>
 #include <aws/connect/model/ChatContactMetrics.h>
@@ -1176,6 +1178,7 @@
 #include <aws/connect/model/RealTimeContactAnalysisSegmentPostContactSummary.h>
 #include <aws/connect/model/RealTimeContactAnalysisSegmentTranscript.h>
 #include <aws/connect/model/RealTimeContactAnalysisSegmentType.h>
+#include <aws/connect/model/RealTimeContactAnalysisSegmentsFilter.h>
 #include <aws/connect/model/RealTimeContactAnalysisSentimentLabel.h>
 #include <aws/connect/model/RealTimeContactAnalysisStatus.h>
 #include <aws/connect/model/RealTimeContactAnalysisSupportedChannel.h>

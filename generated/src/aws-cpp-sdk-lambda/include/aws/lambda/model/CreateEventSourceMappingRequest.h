@@ -261,7 +261,9 @@ class CreateEventSourceMappingRequest : public LambdaRequest {
    * restore the default batching window, you must create a new event source
    * mapping.</p> <p>Related setting: For Kinesis, DynamoDB, and Amazon SQS event
    * sources, when you set <code>BatchSize</code> to a value greater than 10, you
-   * must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
+   * must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p> <p>Not
+   * supported for Kafka event source mappings when <code>ConsumptionMode</code> is
+   * <code>Queue</code>.</p>
    */
   inline int GetMaximumBatchingWindowInSeconds() const { return m_maximumBatchingWindowInSeconds; }
   inline bool MaximumBatchingWindowInSecondsHasBeenSet() const { return m_maximumBatchingWindowInSecondsHasBeenSet; }
@@ -297,7 +299,8 @@ class CreateEventSourceMappingRequest : public LambdaRequest {
    * <p>The position in a stream from which to start reading. Required for Amazon
    * Kinesis and Amazon DynamoDB Stream event sources. <code>AT_TIMESTAMP</code> is
    * supported only for Amazon Kinesis streams, Amazon DocumentDB, Amazon MSK, and
-   * self-managed Apache Kafka.</p>
+   * self-managed Apache Kafka.</p> <p>Not supported for Kafka event source mappings
+   * when <code>ConsumptionMode</code> is <code>Queue</code>.</p>
    */
   inline EventSourcePosition GetStartingPosition() const { return m_startingPosition; }
   inline bool StartingPositionHasBeenSet() const { return m_startingPositionHasBeenSet; }
@@ -315,7 +318,8 @@ class CreateEventSourceMappingRequest : public LambdaRequest {
   /**
    * <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time
    * from which to start reading. <code>StartingPositionTimestamp</code> cannot be in
-   * the future.</p>
+   * the future.</p> <p>Not supported for Kafka event source mappings when
+   * <code>ConsumptionMode</code> is <code>Queue</code>.</p>
    */
   inline const Aws::Utils::DateTime& GetStartingPositionTimestamp() const { return m_startingPositionTimestamp; }
   inline bool StartingPositionTimestampHasBeenSet() const { return m_startingPositionTimestampHasBeenSet; }
@@ -391,7 +395,11 @@ class CreateEventSourceMappingRequest : public LambdaRequest {
    * <p>(Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Apache Kafka)
    * Discard records after the specified number of retries. The default value is
    * infinite (-1). When set to infinite (-1), failed records are retried until the
-   * record expires.</p>
+   * record expires.</p> <p>For Kafka <code>Stream</code> consumption mode, the
+   * default is <code>-1</code> (infinite retries; capped at 10 when an on-failure
+   * destination is configured). For Kafka <code>Queue</code> consumption mode, the
+   * default is <code>0</code>, and if no on-failure destination is configured the
+   * Kafka broker performs retries.</p>
    */
   inline int GetMaximumRetryAttempts() const { return m_maximumRetryAttempts; }
   inline bool MaximumRetryAttemptsHasBeenSet() const { return m_maximumRetryAttemptsHasBeenSet; }

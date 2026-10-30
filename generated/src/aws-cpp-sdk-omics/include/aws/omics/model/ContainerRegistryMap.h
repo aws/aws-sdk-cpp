@@ -39,8 +39,10 @@ class ContainerRegistryMap {
 
   ///@{
   /**
-   * <p>Mapping that provides the ECR repository path where upstream container images
-   * are pulled and synchronized.</p>
+   * <p>The mappings between upstream container registries and repository prefixes in
+   * your Amazon Elastic Container Registry (Amazon ECR) private registry. The list
+   * can include both pull through cache mappings and mappings for registries that
+   * Amazon Web Services HealthOmics copies images from.</p>
    */
   inline const Aws::Vector<RegistryMapping>& GetRegistryMappings() const { return m_registryMappings; }
   inline bool RegistryMappingsHasBeenSet() const { return m_registryMappingsHasBeenSet; }

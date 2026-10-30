@@ -234,6 +234,7 @@
 #include <aws/lambda/model/KMSDisabledException.h>
 #include <aws/lambda/model/KMSInvalidStateException.h>
 #include <aws/lambda/model/KMSNotFoundException.h>
+#include <aws/lambda/model/KafkaEventSourceMappingConsumptionMode.h>
 #include <aws/lambda/model/KafkaSchemaRegistryAccessConfig.h>
 #include <aws/lambda/model/KafkaSchemaRegistryAuthType.h>
 #include <aws/lambda/model/KafkaSchemaRegistryConfig.h>

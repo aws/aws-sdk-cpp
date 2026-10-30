@@ -476,9 +476,15 @@ class GetMetricDataV2Request : public ConnectRequest {
    * Evaluation Form ID, Evaluation Section ID, Evaluation Question ID, Evaluation
    * Source, Form Version, Queue, Routing Profile</p> <p>UI name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-evaluation-score">Average
-   * evaluation score</a> </p> </dd> <dt>AVG_FIRST_RESPONSE_TIME_AGENT</dt> <dd>
-   * <p>Unit: Seconds</p> <p>Valid groupings and filters: Agent, Agent Hierarchy,
-   * Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature,
+   * evaluation score</a> </p> </dd> <dt>AVG_EVALUATION_SCORE_BY_SUBMIT_TIME</dt>
+   * <dd> <p>Unit: Percent</p> <p>Valid groupings and filters: Agent, Agent
+   * Hierarchy, Channel, Evaluation Form ID, Evaluation Source, Form Version, Queue,
+   * Routing Profile</p> <p>UI name: <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-evaluation-score-by-submit-time">Average
+   * evaluation score (Submit time)</a> </p> </dd>
+   * <dt>AVG_FIRST_RESPONSE_TIME_AGENT</dt> <dd> <p>Unit: Seconds</p> <p>Valid
+   * groupings and filters: Agent, Agent Hierarchy, Channel,
+   * contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature,
    * RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in
    * Connect</p> <p>UI name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-agent-first-response-time">Average
@@ -1154,11 +1160,16 @@ class GetMetricDataV2Request : public ConnectRequest {
    * Evaluation Form ID, Evaluation Source, Form Version, Queue, Routing Profile</p>
    * <p>UI name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#evaluations-performed">Evaluations
-   * performed</a> </p> </dd> <dt>FLOWS_OUTCOME</dt> <dd> <p>Unit: Count</p> <p>Valid
-   * groupings and filters: Channel, contact/segmentAttributes/connect:Subtype, Flow
-   * type, Flows module resource ID, Flows next resource ID, Flows next resource
-   * queue ID, Flows outcome type, Flows resource ID, Initiation method, Resource
-   * published timestamp</p> <p>UI name: <a
+   * performed</a> </p> </dd> <dt>EVALUATIONS_PERFORMED_BY_SUBMIT_TIME</dt> <dd>
+   * <p>Unit: Count</p> <p>Valid groupings and filters: Agent, Agent Hierarchy,
+   * Channel, Evaluation Form ID, Evaluation Source, Form Version, Queue, Routing
+   * Profile</p> <p>UI name: <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#evaluations-performed-by-submit-time">Evaluations
+   * performed (Submit time)</a> </p> </dd> <dt>FLOWS_OUTCOME</dt> <dd> <p>Unit:
+   * Count</p> <p>Valid groupings and filters: Channel,
+   * contact/segmentAttributes/connect:Subtype, Flow type, Flows module resource ID,
+   * Flows next resource ID, Flows next resource queue ID, Flows outcome type, Flows
+   * resource ID, Initiation method, Resource published timestamp</p> <p>UI name: <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#flows-outcome">Flows
    * outcome</a> </p> </dd> <dt>FLOWS_STARTED</dt> <dd> <p>Unit: Count</p> <p>Valid
    * groupings and filters: Channel, contact/segmentAttributes/connect:Subtype, Flow

@@ -79,6 +79,14 @@ ProductionVariantSummary& ProductionVariantSummary::operator=(JsonView jsonValue
     m_capacityReservationConfig = jsonValue.GetObject("CapacityReservationConfig");
     m_capacityReservationConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AcceleratorPartitionLayouts")) {
+    Aws::Utils::Array<JsonView> acceleratorPartitionLayoutsJsonList = jsonValue.GetArray("AcceleratorPartitionLayouts");
+    for (unsigned acceleratorPartitionLayoutsIndex = 0; acceleratorPartitionLayoutsIndex < acceleratorPartitionLayoutsJsonList.GetLength();
+         ++acceleratorPartitionLayoutsIndex) {
+      m_acceleratorPartitionLayouts.push_back(acceleratorPartitionLayoutsJsonList[acceleratorPartitionLayoutsIndex].AsObject());
+    }
+    m_acceleratorPartitionLayoutsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -147,6 +155,16 @@ JsonValue ProductionVariantSummary::Jsonize() const {
 
   if (m_capacityReservationConfigHasBeenSet) {
     payload.WithObject("CapacityReservationConfig", m_capacityReservationConfig.Jsonize());
+  }
+
+  if (m_acceleratorPartitionLayoutsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> acceleratorPartitionLayoutsJsonList(m_acceleratorPartitionLayouts.size());
+    for (unsigned acceleratorPartitionLayoutsIndex = 0; acceleratorPartitionLayoutsIndex < acceleratorPartitionLayoutsJsonList.GetLength();
+         ++acceleratorPartitionLayoutsIndex) {
+      acceleratorPartitionLayoutsJsonList[acceleratorPartitionLayoutsIndex].AsObject(
+          m_acceleratorPartitionLayouts[acceleratorPartitionLayoutsIndex].Jsonize());
+    }
+    payload.WithArray("AcceleratorPartitionLayouts", std::move(acceleratorPartitionLayoutsJsonList));
   }
 
   return payload;

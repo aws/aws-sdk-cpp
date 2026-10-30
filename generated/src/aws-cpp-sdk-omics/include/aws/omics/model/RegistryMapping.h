@@ -20,9 +20,14 @@ namespace Omics {
 namespace Model {
 
 /**
- * <p>If you are using the ECR pull through cache feature, the registry mapping
- * maps between the ECR repository and the upstream registry where container images
- * are pulled and synchronized.</p><p><h3>See Also:</h3>   <a
+ * <p>Maps an upstream container registry to a repository prefix in your Amazon
+ * Elastic Container Registry (Amazon ECR) private registry. For registries that
+ * Amazon ECR pull through cache supports, you create a pull through cache rule
+ * that synchronizes the upstream repositories with your private repositories. You
+ * can also use some registries that pull through cache doesn't support. For these
+ * registries, specify <code>credentialArn</code>, and Amazon Web Services
+ * HealthOmics copies each image into a private Amazon ECR repository the first
+ * time a task needs it.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/RegistryMapping">AWS
  * API Reference</a></p>
  */

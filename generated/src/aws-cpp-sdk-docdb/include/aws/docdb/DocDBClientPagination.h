@@ -19,6 +19,7 @@
 #include <aws/docdb/model/DescribeGlobalClustersPaginationTraits.h>
 #include <aws/docdb/model/DescribeOrderableDBInstanceOptionsPaginationTraits.h>
 #include <aws/docdb/model/DescribePendingMaintenanceActionsPaginationTraits.h>
+#include <aws/docdb/model/DescribeServerlessV2PlatformVersionsPaginationTraits.h>
 
 namespace Aws {
 namespace DocDB {
@@ -56,6 +57,9 @@ using DescribeOrderableDBInstanceOptionsPaginator =
 using DescribePendingMaintenanceActionsPaginator =
     Aws::Utils::Pagination::Paginator<DocDBClient, Model::DescribePendingMaintenanceActionsRequest,
                                       Pagination::DescribePendingMaintenanceActionsPaginationTraits<DocDBClient>>;
+using DescribeServerlessV2PlatformVersionsPaginator =
+    Aws::Utils::Pagination::Paginator<DocDBClient, Model::DescribeServerlessV2PlatformVersionsRequest,
+                                      Pagination::DescribeServerlessV2PlatformVersionsPaginationTraits<DocDBClient>>;
 
 }  // namespace DocDB
 }  // namespace Aws

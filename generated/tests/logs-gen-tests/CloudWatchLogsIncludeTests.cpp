@@ -56,6 +56,7 @@
 #include <aws/logs/model/DataSourceFilter.h>
 #include <aws/logs/model/DateTimeConverter.h>
 #include <aws/logs/model/DeleteAccountPolicyRequest.h>
+#include <aws/logs/model/DeleteAccountPolicyResult.h>
 #include <aws/logs/model/DeleteDataProtectionPolicyRequest.h>
 #include <aws/logs/model/DeleteDeliveryDestinationPolicyRequest.h>
 #include <aws/logs/model/DeleteDeliveryDestinationRequest.h>
@@ -143,6 +144,7 @@
 #include <aws/logs/model/DisassociateSourceFromS3TableIntegrationRequest.h>
 #include <aws/logs/model/DisassociateSourceFromS3TableIntegrationResult.h>
 #include <aws/logs/model/Distribution.h>
+#include <aws/logs/model/DryRunResult.h>
 #include <aws/logs/model/Entity.h>
 #include <aws/logs/model/EntityRejectionErrorType.h>
 #include <aws/logs/model/EvaluationFrequency.h>
@@ -255,6 +257,7 @@
 #include <aws/logs/model/LogGroup.h>
 #include <aws/logs/model/LogGroupClass.h>
 #include <aws/logs/model/LogGroupField.h>
+#include <aws/logs/model/LogGroupImpact.h>
 #include <aws/logs/model/LogGroupSummary.h>
 #include <aws/logs/model/LogStream.h>
 #include <aws/logs/model/LookupTable.h>

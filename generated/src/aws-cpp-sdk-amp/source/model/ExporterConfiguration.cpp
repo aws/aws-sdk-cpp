@@ -22,6 +22,10 @@ ExporterConfiguration& ExporterConfiguration::operator=(JsonView jsonValue) {
     m_openSearchConfiguration = jsonValue.GetObject("openSearchConfiguration");
     m_openSearchConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("kafkaConfiguration")) {
+    m_kafkaConfiguration = jsonValue.GetObject("kafkaConfiguration");
+    m_kafkaConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue ExporterConfiguration::Jsonize() const {
 
   if (m_openSearchConfigurationHasBeenSet) {
     payload.WithObject("openSearchConfiguration", m_openSearchConfiguration.Jsonize());
+  }
+
+  if (m_kafkaConfigurationHasBeenSet) {
+    payload.WithObject("kafkaConfiguration", m_kafkaConfiguration.Jsonize());
   }
 
   return payload;

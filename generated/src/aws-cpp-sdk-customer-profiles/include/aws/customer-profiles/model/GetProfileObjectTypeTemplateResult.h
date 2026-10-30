@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -79,6 +80,61 @@ class GetProfileObjectTypeTemplateResult {
   template <typename SourceObjectT = Aws::String>
   GetProfileObjectTypeTemplateResult& WithSourceObject(SourceObjectT&& value) {
     SetSourceObject(std::forward<SourceObjectT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The default maximum number of objects of this object type that can be stored
+   * per profile. This default applies when you don't set
+   * <code>MaxProfileObjectCount</code> on an object type created from this template.
+   * If this value isn't present, no default limit applies.</p>
+   */
+  inline int GetDefaultMaxProfileObjectCount() const { return m_defaultMaxProfileObjectCount; }
+  inline void SetDefaultMaxProfileObjectCount(int value) {
+    m_defaultMaxProfileObjectCountHasBeenSet = true;
+    m_defaultMaxProfileObjectCount = value;
+  }
+  inline GetProfileObjectTypeTemplateResult& WithDefaultMaxProfileObjectCount(int value) {
+    SetDefaultMaxProfileObjectCount(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp after which <code>DefaultMaxProfileObjectCount</code> takes
+   * effect. The default limit applies only to domains created after this time.</p>
+   */
+  inline const Aws::Utils::DateTime& GetDefaultMaxProfileObjectCountEffectiveAfter() const {
+    return m_defaultMaxProfileObjectCountEffectiveAfter;
+  }
+  template <typename DefaultMaxProfileObjectCountEffectiveAfterT = Aws::Utils::DateTime>
+  void SetDefaultMaxProfileObjectCountEffectiveAfter(DefaultMaxProfileObjectCountEffectiveAfterT&& value) {
+    m_defaultMaxProfileObjectCountEffectiveAfterHasBeenSet = true;
+    m_defaultMaxProfileObjectCountEffectiveAfter = std::forward<DefaultMaxProfileObjectCountEffectiveAfterT>(value);
+  }
+  template <typename DefaultMaxProfileObjectCountEffectiveAfterT = Aws::Utils::DateTime>
+  GetProfileObjectTypeTemplateResult& WithDefaultMaxProfileObjectCountEffectiveAfter(DefaultMaxProfileObjectCountEffectiveAfterT&& value) {
+    SetDefaultMaxProfileObjectCountEffectiveAfter(std::forward<DefaultMaxProfileObjectCountEffectiveAfterT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether the template is store-only. Objects of an object type
+   * created from a store-only template are ingested and stored, but the object type
+   * can't be used by calculated attributes or event triggers.</p>
+   */
+  inline bool GetStoreOnly() const { return m_storeOnly; }
+  inline void SetStoreOnly(bool value) {
+    m_storeOnlyHasBeenSet = true;
+    m_storeOnly = value;
+  }
+  inline GetProfileObjectTypeTemplateResult& WithStoreOnly(bool value) {
+    SetStoreOnly(value);
     return *this;
   }
   ///@}
@@ -190,6 +246,12 @@ class GetProfileObjectTypeTemplateResult {
 
   Aws::String m_sourceObject;
 
+  int m_defaultMaxProfileObjectCount{0};
+
+  Aws::Utils::DateTime m_defaultMaxProfileObjectCountEffectiveAfter{};
+
+  bool m_storeOnly{false};
+
   bool m_allowProfileCreation{false};
 
   Aws::String m_sourceLastUpdatedTimestampFormat;
@@ -203,6 +265,9 @@ class GetProfileObjectTypeTemplateResult {
   bool m_templateIdHasBeenSet = false;
   bool m_sourceNameHasBeenSet = false;
   bool m_sourceObjectHasBeenSet = false;
+  bool m_defaultMaxProfileObjectCountHasBeenSet = false;
+  bool m_defaultMaxProfileObjectCountEffectiveAfterHasBeenSet = false;
+  bool m_storeOnlyHasBeenSet = false;
   bool m_allowProfileCreationHasBeenSet = false;
   bool m_sourceLastUpdatedTimestampFormatHasBeenSet = false;
   bool m_fieldsHasBeenSet = false;

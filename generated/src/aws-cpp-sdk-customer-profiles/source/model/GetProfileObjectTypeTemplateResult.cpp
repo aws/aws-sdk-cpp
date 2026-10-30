@@ -36,6 +36,18 @@ GetProfileObjectTypeTemplateResult& GetProfileObjectTypeTemplateResult::operator
     m_sourceObject = jsonValue.GetString("SourceObject");
     m_sourceObjectHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("DefaultMaxProfileObjectCount")) {
+    m_defaultMaxProfileObjectCount = jsonValue.GetInteger("DefaultMaxProfileObjectCount");
+    m_defaultMaxProfileObjectCountHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("DefaultMaxProfileObjectCountEffectiveAfter")) {
+    m_defaultMaxProfileObjectCountEffectiveAfter = jsonValue.GetDouble("DefaultMaxProfileObjectCountEffectiveAfter");
+    m_defaultMaxProfileObjectCountEffectiveAfterHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("StoreOnly")) {
+    m_storeOnly = jsonValue.GetBool("StoreOnly");
+    m_storeOnlyHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("AllowProfileCreation")) {
     m_allowProfileCreation = jsonValue.GetBool("AllowProfileCreation");
     m_allowProfileCreationHasBeenSet = true;
