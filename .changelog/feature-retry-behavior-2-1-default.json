@@ -1,0 +1,6 @@
+{
+  "type": "feature",
+  "category": "aws-cpp-sdk-core",
+  "contributor": "pulimsr",
+  "description": "Make Retry Behavior 2.1 the default retry behavior and remove AWS_NEW_RETRIES_2026. Set AWS_RETRY_MODE=legacy or retry_mode = legacy to keep the previous DefaultRetryStrategy behavior."
+}

@@ -109,7 +109,7 @@ namespace Aws
             struct ProviderFactories
             {
                 /**
-                 * Retry Strategy factory method. Default is DefaultRetryStrategy (i.e. exponential backoff).
+                 * Retry Strategy factory method. Default is StandardRetryStrategy.
                  */
                 std::function<std::shared_ptr<RetryStrategy>()> retryStrategyCreateFn;
                 /**
@@ -229,7 +229,7 @@ namespace Aws
              */
             unsigned long lowSpeedLimit = 1;
             /**
-             * Strategy to use in case of failed requests. Default is DefaultRetryStrategy (i.e. exponential backoff).
+             * Strategy to use in case of failed requests. Default is StandardRetryStrategy.
              * Provide retry strategy here or via a factory method.
              */
             std::shared_ptr<RetryStrategy> retryStrategy = nullptr;
@@ -652,7 +652,7 @@ namespace Aws
 
         /**
          * A helper function to initialize a retry strategy.
-         * Default is DefaultRetryStrategy (i.e. exponential backoff)
+         * Default is StandardRetryStrategy. Retry mode "legacy" uses DefaultRetryStrategy.
          */
         AWS_CORE_API std::shared_ptr<RetryStrategy> InitRetryStrategy(Aws::String retryMode = "");
         AWS_CORE_API std::shared_ptr<RetryStrategy> InitRetryStrategy(int maxRetries, Aws::String retryMode = "");

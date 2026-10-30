@@ -50,12 +50,18 @@ DynamoDBClientConfiguration::DynamoDBClientConfiguration(const Aws::Client::Clie
 DynamoDBClientConfiguration::DynamoDBClientConfiguration(const char* inputProfileName, bool shouldDisableIMDS)
     : BaseClientConfigClass(inputProfileName, shouldDisableIMDS), enableEndpointDiscovery(ClientConfiguration::enableEndpointDiscovery) {
   LoadDynamoDBSpecificConfig(Aws::String(inputProfileName));
+  if (this->retryStrategy) {
+    this->retryStrategy = this->configFactories.retryStrategyCreateFn();
+  }
 }
 
 DynamoDBClientConfiguration::DynamoDBClientConfiguration(bool useSmartDefaults, const char* defaultMode, bool shouldDisableIMDS)
     : BaseClientConfigClass(useSmartDefaults, defaultMode, shouldDisableIMDS),
       enableEndpointDiscovery(ClientConfiguration::enableEndpointDiscovery) {
   LoadDynamoDBSpecificConfig(this->profileName);
+  if (this->retryStrategy) {
+    this->retryStrategy = this->configFactories.retryStrategyCreateFn();
+  }
 }
 
 DynamoDBClientConfiguration::DynamoDBClientConfiguration(const Aws::Client::ClientConfiguration& config)

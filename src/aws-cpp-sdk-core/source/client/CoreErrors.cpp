@@ -5,7 +5,6 @@
 
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
-#include <aws/core/platform/Environment.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/HashingUtils.h>
 
@@ -34,9 +33,7 @@ void CoreErrorsMapper::InitCoreErrorsMapper()
     }
     s_CoreErrorsMapper = Aws::New<ErrorsMapperContainer>("InitCoreErrorsMapper");
 
-    const bool newRetriesEnabled = Aws::Utils::StringUtils::ToLower(Aws::Environment::GetEnv("AWS_NEW_RETRIES_2026").c_str()) == "true";
-    const RetryableType throttleType =
-        newRetriesEnabled ? RetryableType::RETRYABLE_THROTTLING : RetryableType::RETRYABLE;
+    const RetryableType throttleType = RetryableType::RETRYABLE_THROTTLING;
 
     s_CoreErrorsMapper->emplace("IncompleteSignature", AWSError<CoreErrors>(CoreErrors::INCOMPLETE_SIGNATURE, false));
     s_CoreErrorsMapper->emplace("IncompleteSignatureException", AWSError<CoreErrors>(CoreErrors::INCOMPLETE_SIGNATURE, false));
@@ -94,17 +91,15 @@ void CoreErrorsMapper::InitCoreErrorsMapper()
     s_CoreErrorsMapper->emplace("RequestTimeTooSkewed", AWSError<CoreErrors>(CoreErrors::REQUEST_TIME_TOO_SKEWED, true));
     s_CoreErrorsMapper->emplace("RequestTimeoutException", AWSError<CoreErrors>(CoreErrors::REQUEST_TIMEOUT, true));
     s_CoreErrorsMapper->emplace("RequestTimeout", AWSError<CoreErrors>(CoreErrors::REQUEST_TIMEOUT, true));
-    if (newRetriesEnabled) {
-        s_CoreErrorsMapper->emplace("TooManyRequestsException", AWSError<CoreErrors>(CoreErrors::THROTTLING, RetryableType::RETRYABLE_THROTTLING));
-        s_CoreErrorsMapper->emplace("ProvisionedThroughputExceededException", AWSError<CoreErrors>(CoreErrors::THROTTLING, RetryableType::RETRYABLE_THROTTLING));
-        s_CoreErrorsMapper->emplace("TransactionInProgressException", AWSError<CoreErrors>(CoreErrors::THROTTLING, RetryableType::RETRYABLE_THROTTLING));
-        s_CoreErrorsMapper->emplace("RequestLimitExceeded", AWSError<CoreErrors>(CoreErrors::THROTTLING, RetryableType::RETRYABLE_THROTTLING));
-        s_CoreErrorsMapper->emplace("BandwidthLimitExceeded", AWSError<CoreErrors>(CoreErrors::THROTTLING, RetryableType::RETRYABLE_THROTTLING));
-        s_CoreErrorsMapper->emplace("LimitExceededException", AWSError<CoreErrors>(CoreErrors::THROTTLING, RetryableType::RETRYABLE_THROTTLING));
-        s_CoreErrorsMapper->emplace("PriorRequestNotComplete", AWSError<CoreErrors>(CoreErrors::THROTTLING, RetryableType::RETRYABLE_THROTTLING));
-        s_CoreErrorsMapper->emplace("EC2ThrottledException", AWSError<CoreErrors>(CoreErrors::THROTTLING, RetryableType::RETRYABLE_THROTTLING));
-        s_CoreErrorsMapper->emplace("IDPCommunicationError", AWSError<CoreErrors>(CoreErrors::NETWORK_CONNECTION, true));
-    }
+    s_CoreErrorsMapper->emplace("TooManyRequestsException", AWSError<CoreErrors>(CoreErrors::THROTTLING, RetryableType::RETRYABLE_THROTTLING));
+    s_CoreErrorsMapper->emplace("ProvisionedThroughputExceededException", AWSError<CoreErrors>(CoreErrors::THROTTLING, RetryableType::RETRYABLE_THROTTLING));
+    s_CoreErrorsMapper->emplace("TransactionInProgressException", AWSError<CoreErrors>(CoreErrors::THROTTLING, RetryableType::RETRYABLE_THROTTLING));
+    s_CoreErrorsMapper->emplace("RequestLimitExceeded", AWSError<CoreErrors>(CoreErrors::THROTTLING, RetryableType::RETRYABLE_THROTTLING));
+    s_CoreErrorsMapper->emplace("BandwidthLimitExceeded", AWSError<CoreErrors>(CoreErrors::THROTTLING, RetryableType::RETRYABLE_THROTTLING));
+    s_CoreErrorsMapper->emplace("LimitExceededException", AWSError<CoreErrors>(CoreErrors::THROTTLING, RetryableType::RETRYABLE_THROTTLING));
+    s_CoreErrorsMapper->emplace("PriorRequestNotComplete", AWSError<CoreErrors>(CoreErrors::THROTTLING, RetryableType::RETRYABLE_THROTTLING));
+    s_CoreErrorsMapper->emplace("EC2ThrottledException", AWSError<CoreErrors>(CoreErrors::THROTTLING, RetryableType::RETRYABLE_THROTTLING));
+    s_CoreErrorsMapper->emplace("IDPCommunicationError", AWSError<CoreErrors>(CoreErrors::NETWORK_CONNECTION, true));
 }
 
 void CoreErrorsMapper::CleanupCoreErrorsMapper()
@@ -138,7 +133,7 @@ AWS_CORE_API AWSError<CoreErrors> CoreErrorsMapper::GetErrorForHttpResponseCode(
             error = AWSError<CoreErrors>(CoreErrors::RESOURCE_NOT_FOUND, retryable);
             break;
         case HttpResponseCode::TOO_MANY_REQUESTS:
-            error = AWSError<CoreErrors>(CoreErrors::SLOW_DOWN, retryable);
+            error = AWSError<CoreErrors>(CoreErrors::SLOW_DOWN, RetryableType::RETRYABLE_THROTTLING);
             break;
         case HttpResponseCode::INTERNAL_SERVER_ERROR:
             error = AWSError<CoreErrors>(CoreErrors::INTERNAL_FAILURE, retryable);

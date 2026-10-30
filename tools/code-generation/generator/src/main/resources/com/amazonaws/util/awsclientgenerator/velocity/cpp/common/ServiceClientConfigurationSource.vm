@@ -170,11 +170,21 @@ ${metadata.classNamePrefix}ClientConfiguration::${metadata.classNamePrefix}Clien
 ${metadata.classNamePrefix}ClientConfiguration::${metadata.classNamePrefix}ClientConfiguration(const char* inputProfileName, bool shouldDisableIMDS)
 : BaseClientConfigClass(inputProfileName, shouldDisableIMDS)#if($metadata.hasEndpointDiscoveryTrait), enableEndpointDiscovery(ClientConfiguration::enableEndpointDiscovery)#end${nl}{
   Load${serviceNamespace}SpecificConfig(Aws::String(inputProfileName));
+#if($serviceModel.metadata.serviceId == "DynamoDB" || $serviceModel.metadata.serviceId == "DynamoDB Streams")
+  if (this->retryStrategy) {
+    this->retryStrategy = this->configFactories.retryStrategyCreateFn();
+  }
+#end
 }
 
 ${metadata.classNamePrefix}ClientConfiguration::${metadata.classNamePrefix}ClientConfiguration(bool useSmartDefaults, const char* defaultMode, bool shouldDisableIMDS)
 : BaseClientConfigClass(useSmartDefaults, defaultMode, shouldDisableIMDS)#if($metadata.hasEndpointDiscoveryTrait), enableEndpointDiscovery(ClientConfiguration::enableEndpointDiscovery)#end${nl}{
   Load${serviceNamespace}SpecificConfig(this->profileName);
+#if($serviceModel.metadata.serviceId == "DynamoDB" || $serviceModel.metadata.serviceId == "DynamoDB Streams")
+  if (this->retryStrategy) {
+    this->retryStrategy = this->configFactories.retryStrategyCreateFn();
+  }
+#end
 }
 
 #set($classNamePrefix = $metadata.classNamePrefix)

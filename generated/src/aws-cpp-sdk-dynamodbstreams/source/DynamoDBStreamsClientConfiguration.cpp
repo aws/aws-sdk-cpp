@@ -27,12 +27,18 @@ DynamoDBStreamsClientConfiguration::DynamoDBStreamsClientConfiguration(const Aws
 DynamoDBStreamsClientConfiguration::DynamoDBStreamsClientConfiguration(const char* inputProfileName, bool shouldDisableIMDS)
     : BaseClientConfigClass(inputProfileName, shouldDisableIMDS) {
   LoadDynamoDBStreamsSpecificConfig(Aws::String(inputProfileName));
+  if (this->retryStrategy) {
+    this->retryStrategy = this->configFactories.retryStrategyCreateFn();
+  }
 }
 
 DynamoDBStreamsClientConfiguration::DynamoDBStreamsClientConfiguration(bool useSmartDefaults, const char* defaultMode,
                                                                        bool shouldDisableIMDS)
     : BaseClientConfigClass(useSmartDefaults, defaultMode, shouldDisableIMDS) {
   LoadDynamoDBStreamsSpecificConfig(this->profileName);
+  if (this->retryStrategy) {
+    this->retryStrategy = this->configFactories.retryStrategyCreateFn();
+  }
 }
 
 DynamoDBStreamsClientConfiguration::DynamoDBStreamsClientConfiguration(const Aws::Client::ClientConfiguration& config)

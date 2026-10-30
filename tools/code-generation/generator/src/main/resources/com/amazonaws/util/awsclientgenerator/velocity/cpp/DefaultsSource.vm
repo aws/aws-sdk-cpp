@@ -14,6 +14,7 @@
 \#include <aws/core/config/AWSProfileConfigLoader.h>
 \#include <aws/core/client/ClientConfiguration.h>
 \#include <aws/core/internal/AWSHttpResourceClient.h>
+\#include <aws/core/internal/RetryStrategyImpl.h>
 \#include <aws/core/platform/Environment.h>
 \#include <aws/core/utils/StringUtils.h>
 \#include <aws/core/utils/logging/LogMacros.h>
@@ -108,7 +109,7 @@ namespace Aws
 
             void SetLegacyClientConfiguration(Aws::Client::ClientConfiguration& clientConfig)
             {
-                clientConfig.retryStrategy = Aws::Client::InitRetryStrategy("default");
+                clientConfig.retryStrategy = Aws::Client::Internal::InitRetryStrategyForDefaultsMode("standard");
             }
 
 #foreach($defaultMode in $defaultsModel.defaultsModes)
@@ -121,7 +122,7 @@ namespace Aws
             {
 #foreach ($configEntry in $defaultMode.configurationValues.entrySet())
 #if (${configEntry.key} == "retryMode")
-                clientConfig.retryStrategy = Aws::Client::InitRetryStrategy(${configEntry.value.getAsSourceString()});
+                clientConfig.retryStrategy = Aws::Client::Internal::InitRetryStrategyForDefaultsMode(${configEntry.value.getAsSourceString()});
 #else
                 clientConfig.${configEntry.key} = ${configEntry.value.getAsSourceString()};
 #end

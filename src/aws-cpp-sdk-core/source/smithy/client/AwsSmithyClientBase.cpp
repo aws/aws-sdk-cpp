@@ -14,6 +14,7 @@
 #include <aws/core/client/AsyncOperationState.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/internal/ClockSkew.h>
+#include <aws/core/internal/RetryStrategyImpl.h>
 #include <aws/core/client/RetryStrategy.h>
 #include <aws/core/http/HttpClientFactory.h>
 #include <aws/core/monitoring/CoreMetrics.h>
@@ -73,6 +74,7 @@ void AwsSmithyClientBase::baseInit() {
   AWS_CHECK_PTR(AWS_SMITHY_CLIENT_LOG, m_clientConfig);
   m_clientSkew = Aws::MakeShared<Aws::Internal::ClientSkew>(AWS_SMITHY_CLIENT_LOG, std::chrono::milliseconds(0));
   createFromFactories(m_clientConfig->retryStrategy, m_clientConfig->configFactories.retryStrategyCreateFn);
+  m_enableNewRetries = Aws::Client::Internal::UsesRetryBehavior21(m_clientConfig->retryStrategy.get());
   createFromFactories(m_clientConfig->executor, m_clientConfig->configFactories.executorCreateFn);
   createFromFactories(m_clientConfig->writeRateLimiter, m_clientConfig->configFactories.writeRateLimiterCreateFn);
   createFromFactories(m_clientConfig->readRateLimiter, m_clientConfig->configFactories.readRateLimiterCreateFn);
@@ -90,6 +92,7 @@ void AwsSmithyClientBase::baseCopyInit() {
   AWS_CHECK_PTR(AWS_SMITHY_CLIENT_LOG, m_clientConfig);
   m_clientSkew = Aws::MakeShared<Aws::Internal::ClientSkew>(AWS_SMITHY_CLIENT_LOG, std::chrono::milliseconds(0));
   createFromFactoriesIfPresent(m_clientConfig->retryStrategy, m_clientConfig->configFactories.retryStrategyCreateFn);
+  m_enableNewRetries = Aws::Client::Internal::UsesRetryBehavior21(m_clientConfig->retryStrategy.get());
   createFromFactoriesIfPresent(m_clientConfig->executor, m_clientConfig->configFactories.executorCreateFn);
   createFromFactoriesIfPresent(m_clientConfig->writeRateLimiter, m_clientConfig->configFactories.writeRateLimiterCreateFn);
   createFromFactoriesIfPresent(m_clientConfig->readRateLimiter, m_clientConfig->configFactories.readRateLimiterCreateFn);
