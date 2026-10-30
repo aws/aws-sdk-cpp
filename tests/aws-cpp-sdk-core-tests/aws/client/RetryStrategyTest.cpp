@@ -7,8 +7,10 @@
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/testing/platform/PlatformTesting.h>
 #include <aws/core/client/AWSError.h>
+#include <aws/core/client/AWSErrorMarshaller.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/CoreErrors.h>
+#include <aws/core/client/DefaultRetryStrategy.h>
 #include <aws/core/client/RetryStrategy.h>
 #include <aws/core/config/ConfigAndCredentialsCacheManager.h>
 #include <aws/core/http/URI.h>
@@ -16,6 +18,7 @@
 #include <aws/core/http/standard/StandardHttpRequest.h>
 #include <aws/core/http/standard/StandardHttpResponse.h>
 #include <aws/core/utils/stream/ResponseStream.h>
+#include <aws/core/utils/FileSystemUtils.h>
 #include <aws/core/utils/Outcome.h>
 
 using namespace Aws::Client;
@@ -30,6 +33,8 @@ public:
     MockStandardRetryStrategy() = default;
     explicit MockStandardRetryStrategy(double transientBackoffBaseSec)
         : StandardRetryStrategy(3, transientBackoffBaseSec) {}
+    explicit MockStandardRetryStrategy(std::shared_ptr<Aws::Client::RetryQuotaContainer> retryQuotaContainer)
+        : StandardRetryStrategy(retryQuotaContainer) {}
 
     const std::shared_ptr<Aws::Client::RetryQuotaContainer>& GetRetryQuotaContainer() const
     {
@@ -75,7 +80,7 @@ TEST_F(RetryStrategyTest, TestStandardRetryStrategy)
     AWSError<CoreErrors> retryableError(CoreErrors::NETWORK_CONNECTION, true);
     AWSError<CoreErrors> nonRetryableError(CoreErrors::INCOMPLETE_SIGNATURE, false);
 
-    MockStandardRetryStrategy retryStrategy;
+    MockStandardRetryStrategy retryStrategy(Aws::MakeShared<DefaultRetryQuotaContainer>(ALLOCATION_TAG));
     ASSERT_EQ(500, retryStrategy.GetRetryQuotaContainer()->GetRetryQuota());
     ASSERT_EQ(3, retryStrategy.GetMaxAttempts());
 
@@ -136,7 +141,6 @@ TEST_F(RetryStrategyTest, TestStandardRetryStrategy)
 
 class NewRetriesStrategyTest : public Aws::Testing::AwsCppSdkGTestSuite
 {
-    Aws::Environment::EnvironmentRAII m_env{{{"AWS_NEW_RETRIES_2026", "true"}}};
 };
 
 // SEP Test Case 1
@@ -327,26 +331,24 @@ protected:
     void TearDown() override { Aws::Config::ReloadCachedConfigFile(); }
 };
 
-TEST_F(InitRetryStrategyTest, GateOffUnsetRetryModeUsesDefaultRetryStrategy)
+TEST_F(InitRetryStrategyTest, UnsetRetryModeUsesStandardRetryStrategy)
 {
-    Aws::Environment::EnvironmentRAII env{{{"AWS_NEW_RETRIES_2026", ""},
-                                           {"AWS_RETRY_MODE", ""},
+    Aws::Environment::EnvironmentRAII env{{{"AWS_RETRY_MODE", ""},
                                            {"AWS_MAX_ATTEMPTS", ""},
                                            {"AWS_CONFIG_FILE", "/nonexistent/retry-strategy-test-config"}}};
     Aws::Config::ReloadCachedConfigFile();
 
     auto retryStrategy = InitRetryStrategy();
     ASSERT_TRUE(retryStrategy);
-    ASSERT_STREQ("default", retryStrategy->GetStrategyName());
-    ASSERT_EQ(11, retryStrategy->GetMaxAttempts());
+    ASSERT_STREQ("standard", retryStrategy->GetStrategyName());
+    ASSERT_EQ(3, retryStrategy->GetMaxAttempts());
 }
 
 TEST_F(InitRetryStrategyTest, ConfiguredMaxAttemptsOverridesServiceDefault)
 {
     for (const auto& testCase : {std::make_pair("", 4L), std::make_pair("2", 2L), std::make_pair("0", 0L)})
     {
-        Aws::Environment::EnvironmentRAII env{{{"AWS_NEW_RETRIES_2026", "true"},
-                                               {"AWS_RETRY_MODE", ""},
+        Aws::Environment::EnvironmentRAII env{{{"AWS_RETRY_MODE", ""},
                                                {"AWS_MAX_ATTEMPTS", testCase.first},
                                                {"AWS_CONFIG_FILE", "/nonexistent/retry-strategy-test-config"}}};
         Aws::Config::ReloadCachedConfigFile();
@@ -355,4 +357,188 @@ TEST_F(InitRetryStrategyTest, ConfiguredMaxAttemptsOverridesServiceDefault)
         ASSERT_TRUE(retryStrategy);
         ASSERT_EQ(testCase.second, retryStrategy->GetMaxAttempts()) << "AWS_MAX_ATTEMPTS=" << testCase.first;
     }
+}
+
+namespace
+{
+    Aws::Vector<std::pair<Aws::String, Aws::String>> RetryEnv(const char* retryMode, const char* maxAttempts = "")
+    {
+        return {{"AWS_RETRY_MODE", retryMode},
+                {"AWS_MAX_ATTEMPTS", maxAttempts},
+                {"AWS_CONFIG_FILE", "/nonexistent/retry-strategy-test-config"}};
+    }
+
+    AWSError<CoreErrors> NamedError(CoreErrors type, const Aws::String& name, HttpResponseCode code = HttpResponseCode::BAD_REQUEST)
+    {
+        AWSError<CoreErrors> error(type, name, "", true);
+        error.SetResponseCode(code);
+        return error;
+    }
+
+    std::shared_ptr<HttpResponse> JsonErrorResponse(HttpResponseCode code, const Aws::String& body)
+    {
+        auto request = CreateHttpRequest(URI("http://www.uri.com"), HttpMethod::HTTP_POST, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+        auto response = Aws::MakeShared<Standard::StandardHttpResponse>(ALLOCATION_TAG, request);
+        response->SetResponseCode(code);
+        response->GetResponseBody() << body;
+        return response;
+    }
+}
+
+TEST_F(InitRetryStrategyTest, LegacyRetryModeUsesDefaultRetryStrategy)
+{
+    for (const char* retryMode : {"legacy", "LEGACY"})
+    {
+        Aws::Environment::EnvironmentRAII env{RetryEnv(retryMode, "5")};
+        Aws::Config::ReloadCachedConfigFile();
+
+        auto retryStrategy = InitRetryStrategy();
+        ASSERT_STREQ("default", retryStrategy->GetStrategyName()) << retryMode;
+        // Legacy mode keeps its previous max attempts.
+        ASSERT_EQ(11, retryStrategy->GetMaxAttempts()) << retryMode;
+    }
+}
+
+TEST_F(InitRetryStrategyTest, UnknownRetryModeUsesStandardRetryStrategy)
+{
+    Aws::Environment::EnvironmentRAII env{RetryEnv("bogus")};
+    Aws::Config::ReloadCachedConfigFile();
+
+    ASSERT_STREQ("standard", InitRetryStrategy()->GetStrategyName());
+}
+
+TEST_F(InitRetryStrategyTest, LegacyRetryModeDoesNotRetryRetry21OnlyErrors)
+{
+    Aws::Environment::EnvironmentRAII env{RetryEnv("legacy")};
+    Aws::Config::ReloadCachedConfigFile();
+    auto retryStrategy = InitRetryStrategy();
+
+    ASSERT_FALSE(retryStrategy->ShouldRetry(NamedError(CoreErrors::THROTTLING, "TooManyRequestsException"), 0));
+    ASSERT_FALSE(retryStrategy->ShouldRetry(NamedError(CoreErrors::NETWORK_CONNECTION, "IDPCommunicationError"), 0));
+    ASSERT_FALSE(retryStrategy->ShouldRetry(NamedError(CoreErrors::UNKNOWN, "SomeUnknownException", HttpResponseCode::TOO_MANY_REQUESTS), 0));
+
+    ASSERT_TRUE(retryStrategy->ShouldRetry(NamedError(CoreErrors::THROTTLING, "ThrottlingException"), 0));
+    ASSERT_TRUE(retryStrategy->ShouldRetry(NamedError(CoreErrors::INTERNAL_FAILURE, "InternalFailure"), 0));
+}
+
+TEST_F(InitRetryStrategyTest, ServiceTunedAdaptiveStrategyUsesServiceBackoffBase)
+{
+    Aws::Environment::EnvironmentRAII env{RetryEnv("adaptive")};
+    Aws::Config::ReloadCachedConfigFile();
+
+    auto retryStrategy = InitRetryStrategy(4, "", 0.025);
+    ASSERT_STREQ("adaptive", retryStrategy->GetStrategyName());
+    ASSERT_EQ(4, retryStrategy->GetMaxAttempts());
+    AWSError<CoreErrors> transientError(CoreErrors::SERVICE_UNAVAILABLE, true);
+    for (int i = 0; i < 100; ++i)
+    {
+        ASSERT_LE(retryStrategy->CalculateDelayBeforeNextRetry(transientError, 0), 25);
+    }
+}
+
+TEST_F(InitRetryStrategyTest, ServiceTunedStrategyInLegacyModeUsesDefaultRetryStrategy)
+{
+    Aws::Environment::EnvironmentRAII env{RetryEnv("legacy")};
+    Aws::Config::ReloadCachedConfigFile();
+
+    auto retryStrategy = InitRetryStrategy(4, "", 0.025);
+    ASSERT_STREQ("default", retryStrategy->GetStrategyName());
+    ASSERT_EQ(11, retryStrategy->GetMaxAttempts());
+}
+
+TEST_F(RetryStrategyTest, UnmodeledTooManyRequestsIsRetryableThrottling)
+{
+    JsonErrorMarshaller marshaller;
+
+    auto unknownName = marshaller.BuildAWSError(
+        JsonErrorResponse(HttpResponseCode::TOO_MANY_REQUESTS, R"({"__type":"SomeUnknownException","message":"slow down"})"));
+    ASSERT_TRUE(unknownName.ShouldRetry());
+    ASSERT_TRUE(unknownName.ShouldThrottle());
+
+    auto noType = marshaller.BuildAWSError(JsonErrorResponse(HttpResponseCode::TOO_MANY_REQUESTS, R"({"message":"slow down"})"));
+    ASSERT_TRUE(noType.ShouldRetry());
+    ASSERT_TRUE(noType.ShouldThrottle());
+
+    // A modeled error keeps its own classification.
+    auto modeled = marshaller.BuildAWSError(
+        JsonErrorResponse(HttpResponseCode::TOO_MANY_REQUESTS, R"({"__type":"AccessDeniedException","message":"no"})"));
+    ASSERT_FALSE(modeled.ShouldRetry());
+}
+
+TEST_F(InitRetryStrategyTest, DefaultRetryModeIsAnAliasForLegacy)
+{
+    Aws::Environment::EnvironmentRAII env{RetryEnv("")};
+    Aws::Config::ReloadCachedConfigFile();
+
+    auto retryStrategy = InitRetryStrategy("default");
+    ASSERT_STREQ("default", retryStrategy->GetStrategyName());
+    ASSERT_EQ(11, retryStrategy->GetMaxAttempts());
+}
+
+TEST_F(InitRetryStrategyTest, SmartDefaultsConfigurationResolvesRetryStrategyFromFactory)
+{
+    Aws::Environment::EnvironmentRAII env{{{"AWS_RETRY_MODE", ""},
+                                           {"AWS_MAX_ATTEMPTS", ""},
+                                           {"AWS_DEFAULTS_MODE", ""},
+                                           {"AWS_REGION", "us-east-1"},
+                                           {"AWS_EC2_METADATA_DISABLED", "true"},
+                                           {"AWS_CONFIG_FILE", "/nonexistent/retry-strategy-test-config"}}};
+    Aws::Config::ReloadCachedConfigFile();
+
+    ClientConfiguration smartDefaults(true);
+    ASSERT_FALSE(smartDefaults.retryStrategy);
+    ASSERT_STREQ("standard", smartDefaults.configFactories.retryStrategyCreateFn()->GetStrategyName());
+
+    Aws::Environment::EnvironmentRAII legacy{{{"AWS_RETRY_MODE", "legacy"}}};
+    ASSERT_STREQ("default", ClientConfiguration(true).configFactories.retryStrategyCreateFn()->GetStrategyName());
+}
+
+TEST_F(InitRetryStrategyTest, RetrySettingsFromConfigFile)
+{
+    Aws::Utils::TempFile configFile(std::ios_base::out | std::ios_base::trunc);
+    ASSERT_TRUE(configFile.good());
+    configFile << "[default]" << std::endl;
+    configFile << "retry_mode = adaptive" << std::endl;
+    configFile << "[profile prod]" << std::endl;
+    configFile << "retry_mode = legacy" << std::endl;
+    configFile << "[profile tuned]" << std::endl;
+    configFile << "max_attempts = 2" << std::endl;
+    configFile.close();
+    {
+        Aws::Environment::EnvironmentRAII env{{{"AWS_RETRY_MODE", ""},
+                                               {"AWS_MAX_ATTEMPTS", ""},
+                                               {"AWS_PROFILE", ""},
+                                               {"AWS_DEFAULTS_MODE", ""},
+                                               {"AWS_REGION", "us-east-1"},
+                                               {"AWS_EC2_METADATA_DISABLED", "true"},
+                                               {"AWS_CONFIG_FILE", configFile.GetFileName().c_str()}}};
+        Aws::Config::ReloadCachedConfigFile();
+
+        ASSERT_STREQ("adaptive", InitRetryStrategy()->GetStrategyName());
+
+        ClientConfiguration prod("prod");
+        ASSERT_STREQ("default", prod.configFactories.retryStrategyCreateFn()->GetStrategyName());
+
+        ASSERT_EQ(2, InitRetryStrategy(4, "", 0.025, "tuned")->GetMaxAttempts());
+    }
+    Aws::Config::ReloadCachedConfigFile();
+}
+
+TEST_F(RetryStrategyTest, DefaultRetryStrategyDoesNotRetryRetry21OnlyErrors)
+{
+    DefaultRetryStrategy retryStrategy;
+
+    ASSERT_FALSE(retryStrategy.ShouldRetry(NamedError(CoreErrors::THROTTLING, "LimitExceededException"), 0));
+    ASSERT_FALSE(retryStrategy.ShouldRetry(NamedError(CoreErrors::UNKNOWN, "SomeUnknownException", HttpResponseCode::TOO_MANY_REQUESTS), 0));
+    ASSERT_TRUE(retryStrategy.ShouldRetry(NamedError(CoreErrors::THROTTLING, "Throttling"), 0));
+}
+
+TEST_F(RetryStrategyTest, UnmodeledTooManyRequestsIsRetryableThrottlingForXml)
+{
+    XmlErrorMarshaller marshaller;
+
+    auto unknownCode = marshaller.BuildAWSError(JsonErrorResponse(
+        HttpResponseCode::TOO_MANY_REQUESTS, "<Error><Code>SomeUnknownCode</Code><Message>slow down</Message></Error>"));
+    ASSERT_TRUE(unknownCode.ShouldRetry());
+    ASSERT_TRUE(unknownCode.ShouldThrottle());
 }

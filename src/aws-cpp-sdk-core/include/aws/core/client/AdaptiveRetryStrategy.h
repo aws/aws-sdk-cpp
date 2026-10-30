@@ -127,6 +127,7 @@ public:
      */
     AdaptiveRetryStrategy(long maxAttempts = 3);
     AdaptiveRetryStrategy(std::shared_ptr<RetryQuotaContainer> retryQuotaContainer, long maxAttempts = 3);
+    AdaptiveRetryStrategy(long maxAttempts, double transientBackoffBaseSec);
 
     /**
      * Retrieve and consume a send token.

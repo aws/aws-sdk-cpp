@@ -117,31 +117,28 @@ namespace Aws
 
             void SetLegacyClientConfiguration(Aws::Client::ClientConfiguration& clientConfig)
             {
-                clientConfig.retryStrategy = Aws::Client::InitRetryStrategy("default");
+                // Leave the retry strategy unset so the client configuration factory resolves it.
+                clientConfig.retryStrategy = nullptr;
             }
 
             void SetStandardClientConfiguration(Aws::Client::ClientConfiguration& clientConfig)
             {
                 clientConfig.connectTimeoutMs = 3100;
-                clientConfig.retryStrategy = Aws::Client::InitRetryStrategy("standard");
             }
 
             void SetInRegionClientConfiguration(Aws::Client::ClientConfiguration& clientConfig)
             {
                 clientConfig.connectTimeoutMs = 1100;
-                clientConfig.retryStrategy = Aws::Client::InitRetryStrategy("standard");
             }
 
             void SetCrossRegionClientConfiguration(Aws::Client::ClientConfiguration& clientConfig)
             {
                 clientConfig.connectTimeoutMs = 3100;
-                clientConfig.retryStrategy = Aws::Client::InitRetryStrategy("standard");
             }
 
             void SetMobileClientConfiguration(Aws::Client::ClientConfiguration& clientConfig)
             {
                 clientConfig.connectTimeoutMs = 30000;
-                clientConfig.retryStrategy = Aws::Client::InitRetryStrategy("standard");
             }
 
             Aws::String ResolveDefaultModeName(const Aws::Client::ClientConfiguration& clientConfig,

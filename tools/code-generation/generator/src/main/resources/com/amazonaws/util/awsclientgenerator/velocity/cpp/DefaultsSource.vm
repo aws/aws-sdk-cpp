@@ -108,7 +108,8 @@ namespace Aws
 
             void SetLegacyClientConfiguration(Aws::Client::ClientConfiguration& clientConfig)
             {
-                clientConfig.retryStrategy = Aws::Client::InitRetryStrategy("default");
+                // Leave the retry strategy unset so the client configuration factory resolves it.
+                clientConfig.retryStrategy = nullptr;
             }
 
 #foreach($defaultMode in $defaultsModel.defaultsModes)
@@ -121,7 +122,7 @@ namespace Aws
             {
 #foreach ($configEntry in $defaultMode.configurationValues.entrySet())
 #if (${configEntry.key} == "retryMode")
-                clientConfig.retryStrategy = Aws::Client::InitRetryStrategy(${configEntry.value.getAsSourceString()});
+## The retry strategy is resolved by the client configuration factory.
 #else
                 clientConfig.${configEntry.key} = ${configEntry.value.getAsSourceString()};
 #end

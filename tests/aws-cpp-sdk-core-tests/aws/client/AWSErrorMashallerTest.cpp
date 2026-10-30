@@ -6,6 +6,13 @@
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
+#include <aws/core/client/AWSJsonClient.h>
+#include <aws/core/auth/signer/AWSNullSigner.h>
+#include <aws/core/client/ClientConfiguration.h>
+#include <aws/testing/platform/PlatformTesting.h>
+#include <aws/testing/mocks/http/MockHttpClient.h>
+#include <aws/core/http/HttpClientFactory.h>
+#include <aws/core/utils/stream/ResponseStream.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/http/standard/StandardHttpResponse.h>
@@ -1375,4 +1382,63 @@ TEST_F(AWSErrorMarshallerTest, TestRpcV2ErrorMarshallerWithPrefix)
     ASSERT_EQ(message, error.GetMessage());
     ASSERT_EQ(requestId, error.GetRequestId());
     ASSERT_FALSE(error.ShouldRetry());
+}
+
+namespace
+{
+    std::shared_ptr<Aws::Http::HttpResponse> WithResponseCode(Aws::UniquePtr<Aws::Http::HttpResponse> response, Aws::Http::HttpResponseCode code)
+    {
+        response->SetResponseCode(code);
+        return std::shared_ptr<Aws::Http::HttpResponse>(std::move(response));
+    }
+
+    class JsonClientUnderTest : public AWSJsonClient
+    {
+    public:
+        explicit JsonClientUnderTest(const ClientConfiguration& configuration)
+            : AWSJsonClient(configuration, Aws::MakeShared<Aws::Client::AWSNullSigner>(ERROR_MARSHALLER_TEST_ALLOC_TAG),
+                            Aws::MakeShared<JsonErrorMarshaller>(ERROR_MARSHALLER_TEST_ALLOC_TAG)) {}
+        using AWSJsonClient::BuildAWSError;
+    };
+}
+
+TEST_F(AWSErrorMarshallerTest, RpcV2UnmodeledTooManyRequestsIsRetryableThrottling)
+{
+    RpcV2ErrorMarshaller awsErrorMarshaller;
+
+    auto unknownName = awsErrorMarshaller.BuildAWSError(WithResponseCode(
+        BuildHttpCborResponse("SomeUnknownException", "slow down", "Request Id"), Aws::Http::HttpResponseCode::TOO_MANY_REQUESTS));
+    ASSERT_TRUE(unknownName.ShouldRetry());
+    ASSERT_TRUE(unknownName.ShouldThrottle());
+
+    // A modeled error keeps its own classification.
+    auto modeled = awsErrorMarshaller.BuildAWSError(WithResponseCode(
+        BuildHttpCborResponse("IncompleteSignatureException", "no", "Request Id"), Aws::Http::HttpResponseCode::TOO_MANY_REQUESTS));
+    ASSERT_FALSE(modeled.ShouldRetry());
+}
+
+TEST_F(AWSErrorMarshallerTest, ProtocolClientUnmodeledTooManyRequestsIsRetryableThrottling)
+{
+    Aws::Environment::EnvironmentRAII env{{{"AWS_EC2_METADATA_DISABLED", "true"}, {"AWS_REGION", "us-east-1"}}};
+    auto mockHttpClientFactory = Aws::MakeShared<MockHttpClientFactory>(ERROR_MARSHALLER_TEST_ALLOC_TAG);
+    mockHttpClientFactory->SetClient(Aws::MakeShared<MockHttpClient>(ERROR_MARSHALLER_TEST_ALLOC_TAG));
+    Aws::Http::SetHttpClientFactory(mockHttpClientFactory);
+    ClientConfiguration configuration;
+    JsonClientUnderTest client(configuration);
+
+    auto request = Aws::Http::CreateHttpRequest(Aws::Http::URI("http://www.uri.com"), Aws::Http::HttpMethod::HTTP_POST,
+                                                Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+    auto bodyless = Aws::MakeShared<Aws::Http::Standard::StandardHttpResponse>(ERROR_MARSHALLER_TEST_ALLOC_TAG, request);
+    bodyless->SetResponseCode(Aws::Http::HttpResponseCode::TOO_MANY_REQUESTS);
+    auto bodylessError = client.BuildAWSError(bodyless);
+    ASSERT_TRUE(bodylessError.ShouldRetry());
+    ASSERT_TRUE(bodylessError.ShouldThrottle());
+
+    auto unknownName = client.BuildAWSError(WithResponseCode(
+        BuildHttpResponse("SomeUnknownException", "slow down", "Request Id"), Aws::Http::HttpResponseCode::TOO_MANY_REQUESTS));
+    ASSERT_TRUE(unknownName.ShouldRetry());
+    ASSERT_TRUE(unknownName.ShouldThrottle());
+
+    Aws::Http::CleanupHttp();
+    Aws::Http::InitHttp();
 }

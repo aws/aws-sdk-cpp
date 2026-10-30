@@ -175,6 +175,10 @@ namespace Aws
 
                 error.SetResponseHeaders(httpResponse->GetHeaders());
                 error.SetResponseCode(httpResponse->GetResponseCode());
+                if (error.GetResponseCode() == Aws::Http::HttpResponseCode::TOO_MANY_REQUESTS && error.GetErrorType() == CoreErrors::UNKNOWN)
+                {
+                    error.SetRetryableType(RetryableType::RETRYABLE_THROTTLING);
+                }
                 error.SetRemoteHostIpAddress(httpResponse->GetOriginatingRequest().GetResolvedRemoteHost());
                 AWS_LOGSTREAM_ERROR(GetClientLogTag(), error);
                 return error;

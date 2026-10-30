@@ -10,6 +10,7 @@
 #include <aws/core/auth/SSOCredentialsProvider.h>
 #include <aws/core/auth/STSCredentialsProvider.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/config/ConfigAndCredentialsCacheManager.h>
 #include <aws/core/internal/AWSHttpResourceClient.h>
 #include <aws/core/monitoring/MonitoringFactory.h>
 #include <aws/core/monitoring/MonitoringInterface.h>
@@ -18,6 +19,9 @@
 #include <aws/dynamodb/DynamoDBClient.h>
 #include <aws/dynamodb/DynamoDBClientConfiguration.h>
 #include <aws/dynamodb/model/PutItemRequest.h>
+#ifdef HAS_DYNAMODB_STREAMS
+#include <aws/dynamodbstreams/DynamoDBStreamsClientConfiguration.h>
+#endif
 #include <aws/dynamodb/DynamoDBEndpointProvider.h>
 #include <aws/testing/AwsTestHelpers.h>
 #include <aws/testing/MemoryTesting.h>
@@ -833,3 +837,84 @@ TEST_F(DynamoDBUnitTest, PutItemDoesNotSendExpect100ContinueHeader) {
   const auto requestSeen = mock_http_client_->GetMostRecentHttpRequest();
   EXPECT_FALSE(requestSeen.HasHeader("expect"));
 }
+
+namespace {
+std::shared_ptr<RetryStrategy> ResolvedRetryStrategy(const ClientConfiguration& configuration) {
+  return configuration.retryStrategy ? configuration.retryStrategy : configuration.configFactories.retryStrategyCreateFn();
+}
+
+void ExpectDynamoDBRetryStrategy(const std::shared_ptr<RetryStrategy>& retryStrategy) {
+  ASSERT_TRUE(retryStrategy);
+  EXPECT_EQ(4, retryStrategy->GetMaxAttempts());
+  AWSError<CoreErrors> transientError(CoreErrors::SERVICE_UNAVAILABLE, true);
+  for (int i = 0; i < 100; ++i) {
+    EXPECT_LE(retryStrategy->CalculateDelayBeforeNextRetry(transientError, 0), 25);
+  }
+}
+}  // namespace
+
+TEST_F(DynamoDBUnitTest, DefaultRetryStrategyUsesDynamoDBTuning) {
+  Environment::EnvironmentRAII envVars{{{"AWS_RETRY_MODE", ""},
+                                        {"AWS_MAX_ATTEMPTS", ""},
+                                        {"AWS_DEFAULTS_MODE", ""},
+                                        {"AWS_REGION", "us-east-1"},
+                                        {"AWS_EC2_METADATA_DISABLED", "true"},
+                                        {"AWS_CONFIG_FILE", "/nonexistent/dynamodb-retry-test-config"}}};
+  Aws::Config::ReloadCachedConfigFile();
+
+  ExpectDynamoDBRetryStrategy(ResolvedRetryStrategy(DynamoDBClientConfiguration()));
+  ExpectDynamoDBRetryStrategy(ResolvedRetryStrategy(DynamoDBClientConfiguration(true)));
+  // The path behind DynamoDBClient(const ClientConfiguration&).
+  ExpectDynamoDBRetryStrategy(ResolvedRetryStrategy(DynamoDBClientConfiguration(ClientConfiguration(true))));
+  {
+    Environment::EnvironmentRAII adaptive{{{"AWS_RETRY_MODE", "adaptive"}}};
+    auto retryStrategy = ResolvedRetryStrategy(DynamoDBClientConfiguration(true));
+    EXPECT_STREQ("adaptive", retryStrategy->GetStrategyName());
+    ExpectDynamoDBRetryStrategy(retryStrategy);
+  }
+  Aws::Config::ReloadCachedConfigFile();
+}
+
+TEST_F(DynamoDBUnitTest, ConfiguredRetrySettingsWinOverDynamoDBTuning) {
+  Utils::TempFile configFile(std::ios_base::out | std::ios_base::trunc);
+  ASSERT_TRUE(configFile.good());
+  configFile << "[profile tuned]" << std::endl;
+  configFile << "region = us-west-2" << std::endl;
+  configFile << "max_attempts = 3" << std::endl;
+  configFile.close();
+  {
+    Environment::EnvironmentRAII envVars{{{"AWS_RETRY_MODE", ""},
+                                          {"AWS_MAX_ATTEMPTS", "2"},
+                                          {"AWS_REGION", "us-east-1"},
+                                          {"AWS_EC2_METADATA_DISABLED", "true"},
+                                          {"AWS_CONFIG_FILE", configFile.GetFileName().c_str()}}};
+    Aws::Config::ReloadCachedConfigFile();
+    EXPECT_EQ(2, ResolvedRetryStrategy(DynamoDBClientConfiguration(true))->GetMaxAttempts());
+
+    Environment::EnvironmentRAII noEnvMaxAttempts{{{"AWS_MAX_ATTEMPTS", ""}}};
+    EXPECT_EQ(3, ResolvedRetryStrategy(DynamoDBClientConfiguration("tuned"))->GetMaxAttempts());
+
+    ClientConfiguration configuration;
+    configuration.retryStrategy = Aws::MakeShared<StandardRetryStrategy>(LOG_TAG, 7);
+    EXPECT_EQ(7, ResolvedRetryStrategy(DynamoDBClientConfiguration(configuration))->GetMaxAttempts());
+  }
+  Aws::Config::ReloadCachedConfigFile();
+}
+
+#ifdef HAS_DYNAMODB_STREAMS
+TEST_F(DynamoDBUnitTest, DynamoDBStreamsDefaultRetryStrategyUsesDynamoDBTuning) {
+  Environment::EnvironmentRAII envVars{{{"AWS_RETRY_MODE", ""},
+                                        {"AWS_MAX_ATTEMPTS", ""},
+                                        {"AWS_DEFAULTS_MODE", ""},
+                                        {"AWS_REGION", "us-east-1"},
+                                        {"AWS_EC2_METADATA_DISABLED", "true"},
+                                        {"AWS_CONFIG_FILE", "/nonexistent/dynamodb-retry-test-config"}}};
+  Aws::Config::ReloadCachedConfigFile();
+
+  using Aws::DynamoDBStreams::DynamoDBStreamsClientConfiguration;
+  ExpectDynamoDBRetryStrategy(ResolvedRetryStrategy(DynamoDBStreamsClientConfiguration()));
+  ExpectDynamoDBRetryStrategy(ResolvedRetryStrategy(DynamoDBStreamsClientConfiguration(true)));
+  ExpectDynamoDBRetryStrategy(ResolvedRetryStrategy(DynamoDBStreamsClientConfiguration(ClientConfiguration(true))));
+  Aws::Config::ReloadCachedConfigFile();
+}
+#endif

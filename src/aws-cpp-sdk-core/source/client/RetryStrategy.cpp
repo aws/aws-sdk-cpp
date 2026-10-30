@@ -7,7 +7,6 @@
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
 #include <aws/core/internal/RetryStrategyImpl.h>
-#include <aws/core/platform/Environment.h>
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/local/Random.h>
@@ -33,22 +32,6 @@ namespace {
     const char RETRY_STRATEGY_TAG[] = "StandardRetryStrategy";
 
     const double DEFAULT_TRANSIENT_BACKOFF_BASE_SEC = 0.05;
-
-    bool IsNewRetriesEnabled()
-    {
-        return Aws::Utils::StringUtils::ToLower(Aws::Environment::GetEnv("AWS_NEW_RETRIES_2026").c_str()) == "true";
-    }
-
-    class LegacyRetryImpl : public StandardRetryStrategy::RetryImpl
-    {
-    public:
-        long CalculateDelay(const AWSError<CoreErrors>& error, long attemptedRetries) const override
-        {
-            AWS_UNREFERENCED_PARAM(error);
-            // Maximum left shift factor is capped by ceil(log2(max_delay)), to avoid wrap-around and overflow into negative values:
-            return (std::min)(static_cast<int>(Aws::Utils::GetRandomValue() % 1000) * (1 << (std::min)(attemptedRetries, 15L)), 20000);
-        }
-    };
 
     class NewRetriesImpl : public StandardRetryStrategy::RetryImpl
     {
@@ -87,22 +70,29 @@ namespace {
 
     Aws::UniquePtr<StandardRetryStrategy::RetryImpl> CreateRetryImpl(double transientBackoffBaseSec)
     {
-        if (IsNewRetriesEnabled())
-        {
-            return Aws::MakeUnique<NewRetriesImpl>("StandardRetryStrategy", transientBackoffBaseSec);
-        }
-        return Aws::MakeUnique<LegacyRetryImpl>("StandardRetryStrategy");
+        return Aws::MakeUnique<NewRetriesImpl>("StandardRetryStrategy", transientBackoffBaseSec);
     }
 
     std::shared_ptr<RetryQuotaContainer> CreateQuotaContainer()
     {
-        if (IsNewRetriesEnabled())
-        {
-            return Aws::MakeShared<ThrottleBasedRetryQuotaContainer>("StandardRetryStrategy");
-        }
-        return Aws::MakeShared<DefaultRetryQuotaContainer>("StandardRetryStrategy");
+        return Aws::MakeShared<ThrottleBasedRetryQuotaContainer>("StandardRetryStrategy");
     }
 } // anonymous namespace
+
+namespace Aws
+{
+    namespace Client
+    {
+        namespace Internal
+        {
+            bool UsesRetryBehavior21(const RetryStrategy* retryStrategy)
+            {
+                // DefaultRetryStrategy is the legacy retry behavior, so it keeps the request handling from before Retry Behavior 2.1.
+                return retryStrategy && Aws::String("default") != retryStrategy->GetStrategyName();
+            }
+        } // namespace Internal
+    } // namespace Client
+} // namespace Aws
 
 namespace Aws
 {
