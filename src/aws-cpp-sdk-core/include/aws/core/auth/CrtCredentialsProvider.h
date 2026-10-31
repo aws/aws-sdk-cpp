@@ -7,6 +7,7 @@
 
 #include <aws/core/Core_EXPORTS.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
+#include <aws/core/internal/CredentialsCachingProvider.h>
 
 #include <atomic>
 #include <memory>
@@ -37,6 +38,16 @@ class AWS_CORE_API CrtCredentialsProvider : public AWSCredentialsProvider {
    */
   AWSCredentials GetAWSCredentials() override;
 
+  /**
+   * Invalidate marks the cached credentials for refresh if they match accessKeyId.
+   */
+  void Invalidate(const Aws::String& accessKeyId) override;
+
+ protected:
+  CrtCredentialsProvider(const std::function<std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider>()>& credentialsProviderFactory,
+                         std::chrono::milliseconds providerFuturesTimeoutMs, Aws::Client::UserAgentFeature userAgentFeature,
+                         const Aws::String& providerName, Aws::Internal::RefreshFailurePolicy failurePolicy);
+
  private:
   enum class STATE {
     INITIALIZED,
@@ -45,13 +56,14 @@ class AWS_CORE_API CrtCredentialsProvider : public AWSCredentialsProvider {
 
   static AWSCredentials ExtractCredentialsFromCrt(const Aws::Crt::Auth::Credentials& crtCredentials);
   void Reload() override;
-  void RefreshIfExpired();
 
   std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider> m_credentialsProvider;
   AWSCredentials m_credentials;
   std::chrono::milliseconds m_providerFuturesTimeoutMs;
   Aws::Client::UserAgentFeature m_userAgentFeature;
   Aws::String m_providerName;
+  AWSCredentials RetrieveForCache();
+  std::shared_ptr<AWSCredentialsProvider> m_cachingProvider;
   STATE m_state{STATE::NOT_INITIALIZED};
 };
 }  // namespace Auth

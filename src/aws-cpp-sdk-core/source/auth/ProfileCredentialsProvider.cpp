@@ -6,6 +6,8 @@
 #include <aws/core/auth/CrtCredentialsProvider.h>
 #include <aws/core/auth/ProfileCredentialsProvider.h>
 #include <aws/core/client/UserAgent.h>
+#include <aws/core/config/ConfigAndCredentialsCacheManager.h>
+#include <aws/core/internal/CredentialsCachingProvider.h>
 #include <aws/core/platform/Environment.h>
 #include <aws/core/platform/FileSystem.h>
 #include <aws/crt/auth/Credentials.h>
@@ -46,6 +48,23 @@ std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider> GetProfileCrtProvider(
 
   return CredentialsProvider::CreateCredentialsProviderProfile(config);
 }
+
+// UsesCredentialProcess returns whether the CRT profile provider resolves profileName through credential_process.
+bool UsesCredentialProcess(const Aws::String& profileName) {
+  const Aws::Config::Profile config = Aws::Config::GetCachedConfigProfile(profileName);
+  const Aws::Config::Profile credentials = Aws::Config::GetCachedCredentialsProfile(profileName);
+  const bool hasProcess = !config.GetCredentialProcess().empty() || !credentials.GetCredentialProcess().empty();
+  const bool hasRoleArn = !config.GetRoleArn().empty() || !credentials.GetRoleArn().empty();
+  const bool hasStaticKeys = !config.GetCredentials().GetAWSAccessKeyId().empty() || !config.GetCredentials().GetAWSSecretKey().empty() ||
+                             !credentials.GetCredentials().GetAWSAccessKeyId().empty() || !credentials.GetCredentials().GetAWSSecretKey().empty();
+  return hasProcess && !hasRoleArn && !hasStaticKeys;
+}
+
+// FailurePolicyFor serves credential_process credentials only until they expire.
+Aws::Internal::RefreshFailurePolicy FailurePolicyFor(const Aws::String& profileName) {
+  return UsesCredentialProcess(profileName) ? Aws::Internal::RefreshFailurePolicy::ServeUntilExpiry
+                                            : Aws::Internal::RefreshFailurePolicy::StaticStability;
+}
 }  // namespace
 
 class ProfileCredentialsProvider::ProfileCredentialsProviderImp : public CrtCredentialsProvider {
@@ -56,7 +75,8 @@ class ProfileCredentialsProvider::ProfileCredentialsProviderImp : public CrtCred
               CredentialsProviderProfileConfig config;
               return CredentialsProvider::CreateCredentialsProviderProfile(config);
             },
-            std::chrono::milliseconds(DEFAULT_REFRESH_RATE_MS), UserAgentFeature::CREDENTIALS_PROFILE, "ProfileCredentialsProvider") {}
+            std::chrono::milliseconds(DEFAULT_REFRESH_RATE_MS), UserAgentFeature::CREDENTIALS_PROFILE, "ProfileCredentialsProvider",
+            FailurePolicyFor(GetConfigProfileName())) {}
 
   ProfileCredentialsProviderImp(const Aws::Client::ClientConfiguration::CredentialProviderConfiguration& credentialsConfig)
       : CrtCredentialsProvider(
@@ -64,7 +84,8 @@ class ProfileCredentialsProvider::ProfileCredentialsProviderImp : public CrtCred
               return GetProfileCrtProvider(credentialsConfig);
             },
             std::chrono::milliseconds(DEFAULT_REFRESH_RATE_MS), UserAgentFeature::CREDENTIALS_PROFILE,
-            "ProfileCredentialsProvider") {}
+            "ProfileCredentialsProvider",
+            FailurePolicyFor(credentialsConfig.profile.empty() ? GetConfigProfileName() : credentialsConfig.profile)) {}
 
   static Aws::String GetCredentialsProfileFilename() {
     auto credentialsFileNameFromVar = Aws::Environment::GetEnv(PROFILE_AWS_CREDENTIALS_FILE);
@@ -112,3 +133,5 @@ Aws::String ProfileCredentialsProvider::GetCredentialsProfileFilename() {
 Aws::String ProfileCredentialsProvider::GetProfileDirectory() { return ProfileCredentialsProviderImp::GetProfileDirectory(); }
 
 AWSCredentials ProfileCredentialsProvider::GetAWSCredentials() { return m_impl->GetAWSCredentials(); }
+
+void ProfileCredentialsProvider::Invalidate(const Aws::String& accessKeyId) { m_impl->Invalidate(accessKeyId); }
