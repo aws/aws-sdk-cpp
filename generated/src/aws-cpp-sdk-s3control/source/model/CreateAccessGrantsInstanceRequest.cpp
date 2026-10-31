@@ -34,7 +34,7 @@ Aws::String CreateAccessGrantsInstanceRequest::SerializePayload() const {
     }
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToCompactString();
 }
 
 Aws::Http::HeaderValueCollection CreateAccessGrantsInstanceRequest::GetRequestSpecificHeaders() const {

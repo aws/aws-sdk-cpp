@@ -24,7 +24,7 @@ Aws::String PutBucketNotificationConfigurationRequest::SerializePayload() const 
 
   m_notificationConfiguration.AddToNode(parentNode);
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToCompactString();
 }
 
 void PutBucketNotificationConfigurationRequest::AddQueryStringParameters(URI& uri) const {

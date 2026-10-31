@@ -26,7 +26,7 @@ Aws::String PutAccessPointScopeRequest::SerializePayload() const {
     m_scope.AddToNode(scopeNode);
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToCompactString();
 }
 
 Aws::Http::HeaderValueCollection PutAccessPointScopeRequest::GetRequestSpecificHeaders() const {
