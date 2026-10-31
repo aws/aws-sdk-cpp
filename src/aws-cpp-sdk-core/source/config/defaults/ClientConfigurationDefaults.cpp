@@ -14,6 +14,7 @@
 #include <aws/core/config/AWSProfileConfigLoader.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/internal/AWSHttpResourceClient.h>
+#include <aws/core/internal/RetryStrategyImpl.h>
 #include <aws/core/platform/Environment.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/logging/LogMacros.h>
@@ -117,31 +118,31 @@ namespace Aws
 
             void SetLegacyClientConfiguration(Aws::Client::ClientConfiguration& clientConfig)
             {
-                clientConfig.retryStrategy = Aws::Client::InitRetryStrategy("default");
+                clientConfig.retryStrategy = Aws::Client::Internal::InitRetryStrategyForDefaultsMode("standard");
             }
 
             void SetStandardClientConfiguration(Aws::Client::ClientConfiguration& clientConfig)
             {
                 clientConfig.connectTimeoutMs = 3100;
-                clientConfig.retryStrategy = Aws::Client::InitRetryStrategy("standard");
+                clientConfig.retryStrategy = Aws::Client::Internal::InitRetryStrategyForDefaultsMode("standard");
             }
 
             void SetInRegionClientConfiguration(Aws::Client::ClientConfiguration& clientConfig)
             {
                 clientConfig.connectTimeoutMs = 1100;
-                clientConfig.retryStrategy = Aws::Client::InitRetryStrategy("standard");
+                clientConfig.retryStrategy = Aws::Client::Internal::InitRetryStrategyForDefaultsMode("standard");
             }
 
             void SetCrossRegionClientConfiguration(Aws::Client::ClientConfiguration& clientConfig)
             {
                 clientConfig.connectTimeoutMs = 3100;
-                clientConfig.retryStrategy = Aws::Client::InitRetryStrategy("standard");
+                clientConfig.retryStrategy = Aws::Client::Internal::InitRetryStrategyForDefaultsMode("standard");
             }
 
             void SetMobileClientConfiguration(Aws::Client::ClientConfiguration& clientConfig)
             {
                 clientConfig.connectTimeoutMs = 30000;
-                clientConfig.retryStrategy = Aws::Client::InitRetryStrategy("standard");
+                clientConfig.retryStrategy = Aws::Client::Internal::InitRetryStrategyForDefaultsMode("standard");
             }
 
             Aws::String ResolveDefaultModeName(const Aws::Client::ClientConfiguration& clientConfig,

@@ -257,7 +257,6 @@ namespace
 
     TEST_F(AsyncSmithyClientTest, LongPollingQuotaExhaustedDelaysCompletion)
     {
-        Aws::Environment::EnvironmentRAII env{{{"AWS_NEW_RETRIES_2026", "true"}}};
         auto quota = Aws::MakeShared<DefaultRetryQuotaContainer>(ALLOCATION_TAG);
         ASSERT_TRUE(quota->AcquireRetryQuota(498));
         client = MakeClient(Aws::MakeShared<FixedDelayStandardRetryStrategy>(ALLOCATION_TAG, quota, LONG_POLL_DELAY_MS));
@@ -281,7 +280,6 @@ namespace
 
     TEST_F(AsyncSmithyClientTest, NonLongPollingQuotaExhaustedCompletesImmediately)
     {
-        Aws::Environment::EnvironmentRAII env{{{"AWS_NEW_RETRIES_2026", "true"}}};
         auto quota = Aws::MakeShared<DefaultRetryQuotaContainer>(ALLOCATION_TAG);
         ASSERT_TRUE(quota->AcquireRetryQuota(498));
         client = MakeClient(Aws::MakeShared<FixedDelayStandardRetryStrategy>(ALLOCATION_TAG, quota, LONG_POLL_DELAY_MS));
@@ -302,9 +300,8 @@ namespace
 #endif
     }
 
-    TEST_F(AsyncSmithyClientTest, NewRetriesFlagIsCaseInsensitive)
+    TEST_F(AsyncSmithyClientTest, FirstRequestHeaderIncludesMaxAttempts)
     {
-        Aws::Environment::EnvironmentRAII env{{{"AWS_NEW_RETRIES_2026", "TRUE"}}};
         client = MakeClient(Aws::MakeShared<StandardRetryStrategy>(ALLOCATION_TAG, 3));
         mockHttpClient->AddResponseToReturn(MakeSuccessResponse());
 
