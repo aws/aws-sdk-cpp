@@ -1,0 +1,65 @@
+name: mingw-w64
+
+on:
+  - push
+  - pull_request
+
+jobs:
+  build:
+    name: Build
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        with-patch:
+          - true
+          - false
+    env:
+      MINGW_PACKAGE_PREFIX: mingw-w64-ucrt-x86_64
+      MSYSTEM: UCRT64
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - name: dependencies
+        shell: c:\msys64\usr\bin\bash.exe -e -l {0}
+        run: |
+          pacman \
+            --needed \
+            --noconfirm \
+            --sync \
+            ${MINGW_PACKAGE_PREFIX}-cc \
+            ${MINGW_PACKAGE_PREFIX}-cmake \
+            ${MINGW_PACKAGE_PREFIX}-curl \
+            ${MINGW_PACKAGE_PREFIX}-ninja \
+            ${MINGW_PACKAGE_PREFIX}-openssl \
+            ${MINGW_PACKAGE_PREFIX}-zlib
+      - name: patch
+        if: matrix.with-patch
+        shell: c:\msys64\usr\bin\bash.exe -e -l {0}
+        run: |
+          pacman \
+            --needed \
+            --noconfirm \
+            --sync \
+            patch
+          cd ${GITHUB_WORKSPACE}
+          curl https://raw.githubusercontent.com/msys2/MINGW-packages/refs/heads/master/mingw-w64-aws-sdk-cpp/aws-sdk-cpp-pr-1333.patch | \
+            patch -p1
+      - name: configure
+        shell: c:\msys64\usr\bin\bash.exe -e -l {0}
+        run: |
+          set -x
+          cmake \
+            -B build \
+            -DAWS_SDK_WARNINGS_ARE_ERRORS=OFF \
+            -DBUILD_ONLY="s3;s3-crt;dynamodb;logs;kms;sqs;firehose;kinesis;sns;mediastore;mediastore-data;monitoring;secretsmanager;athena;kafka;cognito-idp;rds;ecs" \
+            -DBUILD_SHARED_LIBS=OFF \
+            -DENABLE_TESTING=OFF \
+            -GNinja \
+            -S ${GITHUB_WORKSPACE}
+      - name: build
+        shell: c:\msys64\usr\bin\bash.exe -e -l {0}
+        run: |
+          cmake --build build
