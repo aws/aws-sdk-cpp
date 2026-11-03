@@ -26,7 +26,7 @@ Aws::String UpdateStorageLensGroupRequest::SerializePayload() const {
     m_storageLensGroup.AddToNode(storageLensGroupNode);
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToCompactString();
 }
 
 Aws::Http::HeaderValueCollection UpdateStorageLensGroupRequest::GetRequestSpecificHeaders() const {
