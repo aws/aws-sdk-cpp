@@ -312,6 +312,46 @@ TEST_F(AWSClientTestSuite, TestClockChangesAfterSkewHasBeenSet)
     ASSERT_EQ(1, client->GetRequestAttemptedRetries());
 }
 
+TEST_F(AWSClientTestSuite, TestClockSkewUsesResponseHeadersReceivedTime) {
+  // The HTTP client stamps the time the headers arrived, then the body takes 3 more seconds.
+  // The skew must be measured from the header time, not from when MakeRequest returned.
+  mockHttpClient->Reset();
+  auto makeResponse = []() {
+    auto httpRequest = CreateHttpRequest(URI("http://www.uri.com/path/to/res"), HttpMethod::HTTP_GET,
+                                         Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+    auto httpResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, httpRequest);
+    httpResponse->SetResponseCode(HttpResponseCode::OK);
+    return httpResponse;
+  };
+  auto firstResponse = makeResponse();
+  mockHttpClient->AddResponseToReturn(
+      firstResponse, [](Aws::IOStream&) -> void {},
+      [firstResponse](const std::shared_ptr<HttpRequest>& httpRequest) -> void {
+        const DateTime headersReceived = DateTime::Now();
+        httpRequest->SetResponseHeadersReceivedTime(headersReceived);
+        firstResponse->AddHeader("Date", (headersReceived + std::chrono::hours(1)).ToGmtString(DateFormat::RFC822));
+        std::this_thread::sleep_for(std::chrono::seconds(3));
+      });
+  mockHttpClient->AddResponseToReturn(makeResponse(), [](Aws::IOStream&) -> void {}, [](const std::shared_ptr<HttpRequest>&) -> void {});
+
+  AmazonWebServiceRequestMock request;
+  auto outcome = client->MakeRequest(request);
+  AWS_ASSERT_SUCCESS(outcome);
+
+  const DateTime before = DateTime::Now();
+  outcome = client->MakeRequest(request);
+  AWS_ASSERT_SUCCESS(outcome);
+
+  const auto& requests = mockHttpClient->GetAllRequestsMade();
+  ASSERT_EQ(2u, requests.size());
+  const auto& signingTime = requests.back().GetSigningTimestampOverride();
+  ASSERT_TRUE(signingTime.has_value());
+  const int64_t skewMs = signingTime.value().Millis() - before.Millis();
+  const int64_t hourMs = std::chrono::milliseconds(std::chrono::hours(1)).count();
+  EXPECT_GE(skewMs, hourMs - 1100);
+  EXPECT_LE(skewMs, hourMs + 500);
+}
+
 TEST_F(AWSClientTestSuite, TestRetryHeaders)
 {
     // The first server time is ahead of us by 1 hour.

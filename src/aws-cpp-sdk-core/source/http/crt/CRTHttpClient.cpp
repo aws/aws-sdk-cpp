@@ -202,6 +202,11 @@ void OnClientConnectionAvailableAsync(const std::shared_ptr<Aws::Crt::Http::Http
     requestOptions.onIncomingHeaders = [state](Aws::Crt::Http::HttpStream& stream, enum aws_http_header_block block,
                                                const Aws::Crt::Http::HttpHeader* headersArray, std::size_t headersCount) {
       OnIncomingHeaders(stream, block, headersArray, headersCount, state->response);
+      // aws-c-http reports the main block done only when the body starts, so stamp as header lines arrive.
+      // Written on the event-loop thread and read in the completion callback on that same thread.
+      if (block == AWS_HTTP_HEADER_BLOCK_MAIN) {
+        state->request->SetResponseHeadersReceivedTime(Aws::Utils::DateTime::Now());
+      }
     };
 
     requestOptions.onIncomingHeadersBlockDone = [state](Aws::Crt::Http::HttpStream& stream, enum aws_http_header_block block) {
@@ -292,9 +297,14 @@ class CRTConnection : public Aws::Http::Connection {
     Aws::Crt::Http::HttpRequestOptions requestOptions{};
     requestOptions.request = crtRequest.get();
 
-    requestOptions.onIncomingHeaders = [response](Aws::Crt::Http::HttpStream& stream, enum aws_http_header_block block,
-                                                  const Aws::Crt::Http::HttpHeader* headersArray, std::size_t headersCount) {
+    requestOptions.onIncomingHeaders = [request, response](Aws::Crt::Http::HttpStream& stream, enum aws_http_header_block block,
+                                                           const Aws::Crt::Http::HttpHeader* headersArray, std::size_t headersCount) {
       OnIncomingHeaders(stream, block, headersArray, headersCount, response);
+      // aws-c-http reports the main block done only when the body starts, so stamp as header lines arrive.
+      // Written on the event-loop thread; the caller reads it only after waiting for stream completion.
+      if (block == AWS_HTTP_HEADER_BLOCK_MAIN) {
+        request->SetResponseHeadersReceivedTime(Aws::Utils::DateTime::Now());
+      }
     };
 
     requestOptions.onIncomingHeadersBlockDone = [request, response](Aws::Crt::Http::HttpStream& stream, enum aws_http_header_block block) {
