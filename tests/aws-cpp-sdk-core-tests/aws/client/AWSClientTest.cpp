@@ -351,8 +351,8 @@ TEST_F(AWSClientTestSuite, TestClockSkewUsesResponseHeadersReceivedTime) {
   const auto& signingTime = requests.back().GetSigningTimestampOverride();
   ASSERT_TRUE(signingTime.has_value());
   const DateTime sendTime = signingTime.value() - std::chrono::hours(1);
-  EXPECT_GE(sendTime.Millis(), before.Millis());
-  EXPECT_LE(sendTime.Millis(), after.Millis());
+  EXPECT_TRUE(before.Millis() <= sendTime.Millis() && sendTime.Millis() <= after.Millis())
+      << "signing time should be the send time + exactly 1h";
 }
 
 TEST_F(AWSClientTestSuite, TestRetryHeaders)
