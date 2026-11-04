@@ -573,8 +573,7 @@ Aws::Http::HttpClient::AttemptOutcome AwsSmithyClientBase::HandleAsyncReply(std:
 {
     assert(pRequestCtx && httpResponse);
 
-    pRequestCtx->m_timeResponseReceived =
-        pRequestCtx->m_httpRequest ? Aws::Internal::GetTimeResponseReceived(*pRequestCtx->m_httpRequest) : Aws::Utils::DateTime::Now();
+    pRequestCtx->m_timeResponseReceived = Aws::Internal::GetTimeResponseReceived(*pRequestCtx->m_httpRequest);
 #if defined(AWS_CRT_HTTP_USE_ASYNC_IO)
     pRequestCtx->m_serviceCallTimer.reset();
 #endif

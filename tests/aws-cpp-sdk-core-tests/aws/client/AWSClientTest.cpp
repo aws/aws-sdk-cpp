@@ -313,7 +313,7 @@ TEST_F(AWSClientTestSuite, TestClockChangesAfterSkewHasBeenSet)
 }
 
 TEST_F(AWSClientTestSuite, TestClockSkewUsesResponseHeadersReceivedTime) {
-  // The HTTP client stamps the time the headers arrived, then the body takes 3 more seconds.
+  // The HTTP client stamps the time the headers arrived, 3 seconds before the attempt returns (a slow body).
   // The skew must be measured from the header time, not from when MakeRequest returned.
   mockHttpClient->Reset();
   auto makeResponse = []() {
@@ -327,10 +327,11 @@ TEST_F(AWSClientTestSuite, TestClockSkewUsesResponseHeadersReceivedTime) {
   mockHttpClient->AddResponseToReturn(
       firstResponse, [](Aws::IOStream&) -> void {},
       [firstResponse](const std::shared_ptr<HttpRequest>& httpRequest) -> void {
-        const DateTime headersReceived = DateTime::Now();
+        // Whole seconds, so the 1 s resolution Date header carries exactly headersReceived + 1h. Back-dating the
+        // stamp by 3 s stands in for a slow body without sleeping.
+        const DateTime headersReceived(DateTime::Now().Millis() / 1000 * 1000 - 3000);
         httpRequest->SetResponseHeadersReceivedTime(headersReceived);
         firstResponse->AddHeader("Date", (headersReceived + std::chrono::hours(1)).ToGmtString(DateFormat::RFC822));
-        std::this_thread::sleep_for(std::chrono::seconds(3));
       });
   mockHttpClient->AddResponseToReturn(makeResponse(), [](Aws::IOStream&) -> void {}, [](const std::shared_ptr<HttpRequest>&) -> void {});
 
@@ -340,16 +341,18 @@ TEST_F(AWSClientTestSuite, TestClockSkewUsesResponseHeadersReceivedTime) {
 
   const DateTime before = DateTime::Now();
   outcome = client->MakeRequest(request);
+  const DateTime after = DateTime::Now();
   AWS_ASSERT_SUCCESS(outcome);
 
+  // The second request is signed at its send time + exactly 1h; that send time lies between before and after.
+  // Measuring from when MakeRequest returned would give 1h - 3s instead.
   const auto& requests = mockHttpClient->GetAllRequestsMade();
   ASSERT_EQ(2u, requests.size());
   const auto& signingTime = requests.back().GetSigningTimestampOverride();
   ASSERT_TRUE(signingTime.has_value());
-  const int64_t skewMs = signingTime.value().Millis() - before.Millis();
-  const int64_t hourMs = std::chrono::milliseconds(std::chrono::hours(1)).count();
-  EXPECT_GE(skewMs, hourMs - 1100);
-  EXPECT_LE(skewMs, hourMs + 500);
+  const DateTime sendTime = signingTime.value() - std::chrono::hours(1);
+  EXPECT_GE(sendTime.Millis(), before.Millis());
+  EXPECT_LE(sendTime.Millis(), after.Millis());
 }
 
 TEST_F(AWSClientTestSuite, TestRetryHeaders)
