@@ -591,8 +591,9 @@ namespace Aws
 
               /**
                * Time out for the credentials future call.
+               * This needs to be larger than the worst-case retry time of the provider.
                */
-              std::chrono::milliseconds retrieveCredentialsFutureTimeout = std::chrono::seconds(10);
+              std::chrono::milliseconds retrieveCredentialsFutureTimeout = std::chrono::seconds(330);
 
               /**
                * How long a cached credential set will be used for
