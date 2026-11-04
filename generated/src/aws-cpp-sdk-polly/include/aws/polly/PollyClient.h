@@ -269,11 +269,41 @@ class AWS_POLLY_API PollyClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Lists the tags for an Amazon Polly resource.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/ListTagsForResource">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
+  Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const ListTagsForResourceRequestT& request) const {
+    return SubmitCallable(&PollyClient::ListTagsForResource, request);
+  }
+
+  /**
+   * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
+  void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PollyClient::ListTagsForResource, request, handler, context);
+  }
+
+  /**
    * <p>Stores a pronunciation lexicon in an Amazon Web Services Region. If a lexicon
    * with the same name already exists in the region, it is overwritten by the new
    * lexicon. Lexicon operations have eventual consistency, therefore, it might take
    * some time before the lexicon is available to the SynthesizeSpeech operation.</p>
-   * <p>For more information, see <a
+   * <p>Overwriting a lexicon keeps its existing tags. You can specify tags only when
+   * you create a lexicon. If you specify tags for a lexicon that already exists, the
+   * request fails with a <code>ValidationException</code>. To change the tags of an
+   * existing lexicon, use <code>TagResource</code> and
+   * <code>UntagResource</code>.</p> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing
    * Lexicons</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/PutLexicon">AWS
@@ -384,6 +414,59 @@ class AWS_POLLY_API PollyClient : public Aws::Client::AWSJsonClient,
   void SynthesizeSpeechAsync(const SynthesizeSpeechRequestT& request, const SynthesizeSpeechResponseReceivedHandler& handler,
                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&PollyClient::SynthesizeSpeech, request, handler, context);
+  }
+
+  /**
+   * <p>Adds specified tags to a resource with the specified ARN. Existing tags on a
+   * resource are not changed if they are not specified in the request parameters. If
+   * you specify a tag key that already exists on the resource, the value in the
+   * request replaces the existing value.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/TagResource">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+  /**
+   * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename TagResourceRequestT = Model::TagResourceRequest>
+  Model::TagResourceOutcomeCallable TagResourceCallable(const TagResourceRequestT& request) const {
+    return SubmitCallable(&PollyClient::TagResource, request);
+  }
+
+  /**
+   * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename TagResourceRequestT = Model::TagResourceRequest>
+  void TagResourceAsync(const TagResourceRequestT& request, const TagResourceResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PollyClient::TagResource, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes specified tags from a resource.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/UntagResource">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+  /**
+   * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename UntagResourceRequestT = Model::UntagResourceRequest>
+  Model::UntagResourceOutcomeCallable UntagResourceCallable(const UntagResourceRequestT& request) const {
+    return SubmitCallable(&PollyClient::UntagResource, request);
+  }
+
+  /**
+   * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename UntagResourceRequestT = Model::UntagResourceRequest>
+  void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&PollyClient::UntagResource, request, handler, context);
   }
 
   virtual void OverrideEndpoint(const Aws::String& endpoint);

@@ -54,6 +54,10 @@ TaxRegistration& TaxRegistration::operator=(JsonView jsonValue) {
     m_additionalTaxInformation = jsonValue.GetObject("additionalTaxInformation");
     m_additionalTaxInformationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("statusReason")) {
+    m_statusReason = jsonValue.GetObject("statusReason");
+    m_statusReasonHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("legalAddress")) {
     m_legalAddress = jsonValue.GetObject("legalAddress");
     m_legalAddressHasBeenSet = true;
@@ -99,6 +103,10 @@ JsonValue TaxRegistration::Jsonize() const {
 
   if (m_additionalTaxInformationHasBeenSet) {
     payload.WithObject("additionalTaxInformation", m_additionalTaxInformation.Jsonize());
+  }
+
+  if (m_statusReasonHasBeenSet) {
+    payload.WithObject("statusReason", m_statusReason.Jsonize());
   }
 
   if (m_legalAddressHasBeenSet) {

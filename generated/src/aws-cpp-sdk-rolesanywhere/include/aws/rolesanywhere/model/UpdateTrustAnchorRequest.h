@@ -82,15 +82,35 @@ class UpdateTrustAnchorRequest : public RolesAnywhereRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether the trust anchor checks certificate revocation status
+   * against CRL distribution points.</p>
+   */
+  inline bool GetCrlDpRevocationEnabled() const { return m_crlDpRevocationEnabled; }
+  inline bool CrlDpRevocationEnabledHasBeenSet() const { return m_crlDpRevocationEnabledHasBeenSet; }
+  inline void SetCrlDpRevocationEnabled(bool value) {
+    m_crlDpRevocationEnabledHasBeenSet = true;
+    m_crlDpRevocationEnabled = value;
+  }
+  inline UpdateTrustAnchorRequest& WithCrlDpRevocationEnabled(bool value) {
+    SetCrlDpRevocationEnabled(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_trustAnchorId;
 
   Aws::String m_name;
 
   Source m_source;
+
+  bool m_crlDpRevocationEnabled{false};
   bool m_trustAnchorIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_sourceHasBeenSet = false;
+  bool m_crlDpRevocationEnabledHasBeenSet = false;
 };
 
 }  // namespace Model

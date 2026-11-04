@@ -247,6 +247,25 @@ class OptionGroup {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the Amazon Web Services Region for the option group from which this
+   * option group is copied.</p>
+   */
+  inline const Aws::String& GetSourceRegion() const { return m_sourceRegion; }
+  inline bool SourceRegionHasBeenSet() const { return m_sourceRegionHasBeenSet; }
+  template <typename SourceRegionT = Aws::String>
+  void SetSourceRegion(SourceRegionT&& value) {
+    m_sourceRegionHasBeenSet = true;
+    m_sourceRegion = std::forward<SourceRegionT>(value);
+  }
+  template <typename SourceRegionT = Aws::String>
+  OptionGroup& WithSourceRegion(SourceRegionT&& value) {
+    SetSourceRegion(std::forward<SourceRegionT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_optionGroupName;
 
@@ -269,6 +288,8 @@ class OptionGroup {
   Aws::String m_sourceAccountId;
 
   Aws::Utils::DateTime m_copyTimestamp{};
+
+  Aws::String m_sourceRegion;
   bool m_optionGroupNameHasBeenSet = false;
   bool m_optionGroupDescriptionHasBeenSet = false;
   bool m_engineNameHasBeenSet = false;
@@ -280,6 +301,7 @@ class OptionGroup {
   bool m_sourceOptionGroupHasBeenSet = false;
   bool m_sourceAccountIdHasBeenSet = false;
   bool m_copyTimestampHasBeenSet = false;
+  bool m_sourceRegionHasBeenSet = false;
 };
 
 }  // namespace Model

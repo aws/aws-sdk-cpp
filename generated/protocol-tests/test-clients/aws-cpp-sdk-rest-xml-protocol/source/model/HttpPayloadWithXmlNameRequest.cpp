@@ -21,7 +21,7 @@ Aws::String HttpPayloadWithXmlNameRequest::SerializePayload() const {
 
   m_nested.AddToNode(parentNode);
   if (parentNode.HasChildren()) {
-    return payloadDoc.ConvertToString();
+    return payloadDoc.ConvertToCompactString();
   }
 
   return {};

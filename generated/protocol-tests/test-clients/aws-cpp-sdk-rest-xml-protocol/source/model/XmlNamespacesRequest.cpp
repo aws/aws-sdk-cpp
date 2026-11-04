@@ -26,5 +26,5 @@ Aws::String XmlNamespacesRequest::SerializePayload() const {
     m_nested.AddToNode(nestedNode);
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToCompactString();
 }

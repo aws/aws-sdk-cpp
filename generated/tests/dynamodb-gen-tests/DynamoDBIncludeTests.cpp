@@ -49,6 +49,17 @@
 #include <aws/dynamodb/model/BatchWriteItemResult.h>
 #include <aws/dynamodb/model/BillingMode.h>
 #include <aws/dynamodb/model/BillingModeSummary.h>
+#include <aws/dynamodb/model/BulkOperationBytes.h>
+#include <aws/dynamodb/model/BulkOperationDescription.h>
+#include <aws/dynamodb/model/BulkOperationInputFormat.h>
+#include <aws/dynamodb/model/BulkOperationPerformanceTier.h>
+#include <aws/dynamodb/model/BulkOperationStatus.h>
+#include <aws/dynamodb/model/BulkOperationSummary.h>
+#include <aws/dynamodb/model/BulkOperationTableDetail.h>
+#include <aws/dynamodb/model/BulkOperationUsage.h>
+#include <aws/dynamodb/model/BulkOperationVectorBytes.h>
+#include <aws/dynamodb/model/CancelBulkOperationRequest.h>
+#include <aws/dynamodb/model/CancelBulkOperationResult.h>
 #include <aws/dynamodb/model/CancellationReason.h>
 #include <aws/dynamodb/model/Capacity.h>
 #include <aws/dynamodb/model/ComparisonOperator.h>
@@ -92,6 +103,8 @@
 #include <aws/dynamodb/model/DeleteVectorIndexAction.h>
 #include <aws/dynamodb/model/DescribeBackupRequest.h>
 #include <aws/dynamodb/model/DescribeBackupResult.h>
+#include <aws/dynamodb/model/DescribeBulkOperationRequest.h>
+#include <aws/dynamodb/model/DescribeBulkOperationResult.h>
 #include <aws/dynamodb/model/DescribeContinuousBackupsRequest.h>
 #include <aws/dynamodb/model/DescribeContinuousBackupsResult.h>
 #include <aws/dynamodb/model/DescribeContributorInsightsRequest.h>
@@ -168,6 +181,7 @@
 #include <aws/dynamodb/model/InputCompressionType.h>
 #include <aws/dynamodb/model/InputFormat.h>
 #include <aws/dynamodb/model/InputFormatOptions.h>
+#include <aws/dynamodb/model/InputS3Configuration.h>
 #include <aws/dynamodb/model/ItemCollectionMetrics.h>
 #include <aws/dynamodb/model/ItemResponse.h>
 #include <aws/dynamodb/model/KeySchemaElement.h>
@@ -176,6 +190,9 @@
 #include <aws/dynamodb/model/KinesisDataStreamDestination.h>
 #include <aws/dynamodb/model/ListBackupsRequest.h>
 #include <aws/dynamodb/model/ListBackupsResult.h>
+#include <aws/dynamodb/model/ListBulkOperationsPaginationTraits.h>
+#include <aws/dynamodb/model/ListBulkOperationsRequest.h>
+#include <aws/dynamodb/model/ListBulkOperationsResult.h>
 #include <aws/dynamodb/model/ListContributorInsightsPaginationTraits.h>
 #include <aws/dynamodb/model/ListContributorInsightsRequest.h>
 #include <aws/dynamodb/model/ListContributorInsightsResult.h>
@@ -198,6 +215,8 @@
 #include <aws/dynamodb/model/MultiRegionConsistency.h>
 #include <aws/dynamodb/model/OnDemandThroughput.h>
 #include <aws/dynamodb/model/OnDemandThroughputOverride.h>
+#include <aws/dynamodb/model/OutputS3Configuration.h>
+#include <aws/dynamodb/model/OutputTypeEnum.h>
 #include <aws/dynamodb/model/ParameterizedStatement.h>
 #include <aws/dynamodb/model/PointInTimeRecoveryDescription.h>
 #include <aws/dynamodb/model/PointInTimeRecoverySpecification.h>
@@ -260,6 +279,8 @@
 #include <aws/dynamodb/model/Select.h>
 #include <aws/dynamodb/model/SourceTableDetails.h>
 #include <aws/dynamodb/model/SourceTableFeatureDetails.h>
+#include <aws/dynamodb/model/StartBulkPutItemsRequest.h>
+#include <aws/dynamodb/model/StartBulkPutItemsResult.h>
 #include <aws/dynamodb/model/StreamSpecification.h>
 #include <aws/dynamodb/model/StreamViewType.h>
 #include <aws/dynamodb/model/TableAutoScalingDescription.h>

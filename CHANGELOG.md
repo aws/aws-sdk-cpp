@@ -1,3 +1,30 @@
+# 1.11.922 (2026-11-04)
+
+## SDK Highlights
+* **Bug Fix**: Serialize XML request payloads without pretty-printing whitespace, via the new XmlDocument::ConvertToCompactString(). This shrinks S3, S3 CRT, S3 Control, CloudFront, and Route 53 request bodies; a CompleteMultipartUpload with 9,331 parts drops from 1.04 MiB to 0.79 MiB, staying under the 1 MiB body limit of some S3-compatible services ([#3891](https://github.com/aws/aws-sdk-cpp/issues/3891)). XmlDocument::ConvertToString() still pretty-prints.
+* **Bug Fix**: CRTHttpClient now refuses every request with a non-retryable error, instead of sending it, when its TLS context or proxy TLS context failed to initialize (for example an unreadable caFile, caPath or proxyCaFile). This also applies when verifySSL is false and to plain http requests.
+
+## Service Updates
+* **Connect Contact Lens**: Rules TBAC GA (Contact Lens V1) - Adds an optional ListFilter (CategoriesAttributeFilter with OrConditions, AndCondition and TagCondition) to ListRealtimeContactAnalysisSegments. This filters matched categories by rule tags. It also adds an optional RuleId to CategoryDetails in the response.
+* **Connect**: Adds support for retrieving associated cases in contact responses. The Contact object now includes a Cases field containing case IDs and reference numbers linked to the contact.
+* **DynamoDB**: Adds StartBulkPutItems, DescribeBulkOperation, ListBulkOperations, and CancelBulkOperation for asynchronously loading Amazon S3 datasets into existing DynamoDB tables.
+* **EC2**: Add the Unsupported SupportabilityScore to GetCapacityManagerSupportabilityScores.
+* **ECS**: Amazon ECS Managed Instances now supports the json-file log driver in task definitions. Daemon task definition volumes also support logDriverVolumeConfiguration, letting managed daemons read those logs.
+* **EMR**: Added StepAdditionalInfo on DescribeStep and ListSteps to surface YARN application IDs for steps.
+* **Elastic Beanstalk**: Adds DefaultAmiList to DescribePlatformVersion to return the default AMI for each processor architecture that a platform version supports.
+* **IoTSiteWise**: Adds support for an optional jobName on CreateDatasetExportJob. The jobName is returned by DescribeDatasetExportJob and ListDatasetExportJobs, making dataset export jobs easier to identify and track. If jobName is omitted, a default name is generated automatically.
+* **LookoutEquipment**: Amazon Lookout for Equipment reached end of support on October 7, 2026. All Lookout for Equipment APIs are now marked as deprecated.
+* **MWAA Serverless**: Adding support to Environment Variables in MWAA Serverless
+* **Marketplace Discovery**: GetListing and SearchListings APIs now return G2 and PeerSpot review sources in review summaries.
+* **Polly**: Amazon Polly now supports tagging lexicons. Use the new TagResource, UntagResource and ListTagsForResource APIs, or add tags when creating a lexicon with PutLexicon, to organize lexicons and control access with tag-based (ABAC) IAM policies.
+* **RDS**: Adding support for copying and tagging option groups with cross-Region DB snapshot copies, in the same account or across accounts.
+* **RolesAnywhere**: Adds the crlDpRevocationEnabled field to enable automatic revocation checking using CRL distribution points in X.509 certificates.
+* **S3Tables**: Amazon S3 Tables now supports migrating AWS Glue Data Catalog tables into S3 Table buckets. This release adds the StartTableMigration, SyncTableMigration, UpdateTableMigration, CompleteTableMigration, GetTableMigration, and ListTableMigrations APIs.
+* **SecurityHub**: Release Software APIs- GetSoftwareV2, GetSoftwareStatisticsV2 and GetSoftwareResourcesV2 to list software packages with aggregated resource count, get aggregated software statistics, and find the resources that contain a specific software package.
+* **TaxSettings**: Adds Colombia additional information (responsibility codes, taxpayer type code, and RUT issue date) and a rejection reason (statusReason) to tax registration responses, and adds Argentina and Uruguay tax registration types.
+* **WorkSpaces**: Add Ubuntu 24.04, Ubuntu 26.04, RHEL 9, RHEL10, Rocky 9 and Rocky 10 to OperatingSystemName and documentation update for WorkspaceProperties Protocols.
+* **mgn**: This release adds Migration Planning artifacts as a source environment for network migration definitions, and an optional clientToken on CreateNetworkMigrationDefinition so that retried requests don't create duplicate definitions.
+
 # 1.11.921 (2026-10-30)
 
 ## Service Updates

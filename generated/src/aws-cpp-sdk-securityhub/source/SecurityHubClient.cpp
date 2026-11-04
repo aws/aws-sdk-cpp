@@ -102,6 +102,9 @@
 #include <aws/securityhub/model/GetResourcesTrendsV2Request.h>
 #include <aws/securityhub/model/GetResourcesV2Request.h>
 #include <aws/securityhub/model/GetSecurityControlDefinitionRequest.h>
+#include <aws/securityhub/model/GetSoftwareResourcesV2Request.h>
+#include <aws/securityhub/model/GetSoftwareStatisticsV2Request.h>
+#include <aws/securityhub/model/GetSoftwareV2Request.h>
 #include <aws/securityhub/model/InviteMembersRequest.h>
 #include <aws/securityhub/model/ListAggregatorsV2Request.h>
 #include <aws/securityhub/model/ListAutomationRulesRequest.h>
@@ -1361,6 +1364,38 @@ GetSecurityControlDefinitionOutcome SecurityHubClient::GetSecurityControlDefinit
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? GetSecurityControlDefinitionOutcome(result.GetResultWithOwnership())
                             : GetSecurityControlDefinitionOutcome(std::move(result.GetError()));
+}
+
+GetSoftwareResourcesV2Outcome SecurityHubClient::GetSoftwareResourcesV2(const GetSoftwareResourcesV2Request& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/softwarev2/resources");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetSoftwareResourcesV2Outcome(result.GetResultWithOwnership())
+                            : GetSoftwareResourcesV2Outcome(std::move(result.GetError()));
+}
+
+GetSoftwareStatisticsV2Outcome SecurityHubClient::GetSoftwareStatisticsV2(const GetSoftwareStatisticsV2Request& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/softwarev2/statistics");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetSoftwareStatisticsV2Outcome(result.GetResultWithOwnership())
+                            : GetSoftwareStatisticsV2Outcome(std::move(result.GetError()));
+}
+
+GetSoftwareV2Outcome SecurityHubClient::GetSoftwareV2(const GetSoftwareV2Request& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/softwarev2");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetSoftwareV2Outcome(result.GetResultWithOwnership()) : GetSoftwareV2Outcome(std::move(result.GetError()));
 }
 
 InviteMembersOutcome SecurityHubClient::InviteMembers(const InviteMembersRequest& request) const {

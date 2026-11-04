@@ -110,6 +110,25 @@ class CreateDatasetExportJobRequest : public IoTSiteWiseRequest {
 
   ///@{
   /**
+   * <p>An optional name for the export job. When omitted, one will be created based
+   * on type of job and start time.</p>
+   */
+  inline const Aws::String& GetJobName() const { return m_jobName; }
+  inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
+  template <typename JobNameT = Aws::String>
+  void SetJobName(JobNameT&& value) {
+    m_jobNameHasBeenSet = true;
+    m_jobName = std::forward<JobNameT>(value);
+  }
+  template <typename JobNameT = Aws::String>
+  CreateDatasetExportJobRequest& WithJobName(JobNameT&& value) {
+    SetJobName(std::forward<JobNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The location where the error report will be written on failure.</p>
    */
   inline const ExportErrorReportLocation& GetErrorReportLocation() const { return m_errorReportLocation; }
@@ -134,11 +153,14 @@ class CreateDatasetExportJobRequest : public IoTSiteWiseRequest {
 
   ProcessingInput m_input;
 
+  Aws::String m_jobName;
+
   ExportErrorReportLocation m_errorReportLocation;
   bool m_workspaceNameHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
   bool m_destinationS3UriHasBeenSet = false;
   bool m_inputHasBeenSet = false;
+  bool m_jobNameHasBeenSet = false;
   bool m_errorReportLocationHasBeenSet = false;
 };
 

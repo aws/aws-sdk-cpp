@@ -9,6 +9,7 @@
 #include <aws/mwaa-serverless/MWAAServerless_EXPORTS.h>
 #include <aws/mwaa-serverless/model/Code.h>
 #include <aws/mwaa-serverless/model/DefinitionS3Location.h>
+#include <aws/mwaa-serverless/model/Environment.h>
 #include <aws/mwaa-serverless/model/LoggingConfiguration.h>
 #include <aws/mwaa-serverless/model/NetworkConfiguration.h>
 
@@ -182,6 +183,28 @@ class UpdateWorkflowRequest : public MWAAServerlessRequest {
 
   ///@{
   /**
+   * <p>The environment variables to set for tasks in the workflow.</p>
+   * <p>The variables that you specify replace all existing environment variables for
+   * the workflow. If you don't specify this parameter, the workflow has no
+   * environment variables. To keep existing environment variables, include them in
+   * the request.</p>
+   */
+  inline const Environment& GetEnvironment() const { return m_environment; }
+  inline bool EnvironmentHasBeenSet() const { return m_environmentHasBeenSet; }
+  template <typename EnvironmentT = Environment>
+  void SetEnvironment(EnvironmentT&& value) {
+    m_environmentHasBeenSet = true;
+    m_environment = std::forward<EnvironmentT>(value);
+  }
+  template <typename EnvironmentT = Environment>
+  UpdateWorkflowRequest& WithEnvironment(EnvironmentT&& value) {
+    SetEnvironment(std::forward<EnvironmentT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The trigger mode for the workflow execution.</p>
    */
   inline const Aws::String& GetTriggerMode() const { return m_triggerMode; }
@@ -214,6 +237,8 @@ class UpdateWorkflowRequest : public MWAAServerlessRequest {
 
   NetworkConfiguration m_networkConfiguration;
 
+  Environment m_environment;
+
   Aws::String m_triggerMode;
   bool m_workflowArnHasBeenSet = false;
   bool m_definitionS3LocationHasBeenSet = false;
@@ -223,6 +248,7 @@ class UpdateWorkflowRequest : public MWAAServerlessRequest {
   bool m_loggingConfigurationHasBeenSet = false;
   bool m_engineVersionHasBeenSet = false;
   bool m_networkConfigurationHasBeenSet = false;
+  bool m_environmentHasBeenSet = false;
   bool m_triggerModeHasBeenSet = false;
 };
 

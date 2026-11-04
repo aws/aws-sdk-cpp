@@ -39,13 +39,15 @@ namespace Model {
  * supported log drivers are <code>awslogs</code>, <code>fluentd</code>,
  * <code>gelf</code>, <code>json-file</code>,
  * <code>journald</code>,<code>syslog</code>, <code>splunk</code>, and
- * <code>awsfirelens</code>.</p> </li> <li> <p>This parameter requires version 1.18
- * of the Docker Remote API or greater on your container instance.</p> </li> <li>
- * <p>For tasks that are hosted on Amazon EC2 instances, the Amazon ECS container
- * agent must register the available logging drivers with the
- * <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before
- * containers placed on that instance can use these log configuration options. For
- * more information, see <a
+ * <code>awsfirelens</code>.</p> <p>For tasks on Amazon ECS Managed Instances, the
+ * supported log drivers are <code>awslogs</code>, <code>splunk</code>,
+ * <code>awsfirelens</code>, and <code>json-file</code>.</p> </li> <li> <p>This
+ * parameter requires version 1.18 of the Docker Remote API or greater on your
+ * container instance.</p> </li> <li> <p>For tasks that are hosted on Amazon EC2
+ * instances, the Amazon ECS container agent must register the available logging
+ * drivers with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable
+ * before containers placed on that instance can use these log configuration
+ * options. For more information, see <a
  * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
  * ECS container agent configuration</a> in the <i>Amazon Elastic Container Service
  * Developer Guide</i>.</p> </li> <li> <p>For tasks that are on Fargate, because
@@ -71,7 +73,10 @@ class LogConfiguration {
    * supported log drivers are <code>awslogs</code>, <code>fluentd</code>,
    * <code>gelf</code>, <code>json-file</code>, <code>journald</code>,
    * <code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p>
-   * <p>For more information about using the <code>awslogs</code> log driver, see <a
+   * <p>For tasks on Amazon ECS Managed Instances, the supported log drivers are
+   * <code>awslogs</code>, <code>splunk</code>, <code>awsfirelens</code>, and
+   * <code>json-file</code>.</p> <p>For more information about using the
+   * <code>awslogs</code> log driver, see <a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Send
    * Amazon ECS logs to CloudWatch</a> in the <i>Amazon Elastic Container Service
    * Developer Guide</i>.</p> <p>For more information about using the

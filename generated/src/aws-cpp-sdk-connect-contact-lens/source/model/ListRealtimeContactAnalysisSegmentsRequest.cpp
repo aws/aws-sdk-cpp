@@ -31,5 +31,9 @@ Aws::String ListRealtimeContactAnalysisSegmentsRequest::SerializePayload() const
     payload.WithString("NextToken", m_nextToken);
   }
 
+  if (m_listFilterHasBeenSet) {
+    payload.WithObject("ListFilter", m_listFilter.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

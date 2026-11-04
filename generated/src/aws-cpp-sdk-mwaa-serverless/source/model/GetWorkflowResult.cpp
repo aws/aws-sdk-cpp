@@ -86,6 +86,10 @@ GetWorkflowResult& GetWorkflowResult::operator=(const Aws::AmazonWebServiceResul
     m_networkConfiguration = jsonValue.GetObject("NetworkConfiguration");
     m_networkConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Environment")) {
+    m_environment = jsonValue.GetObject("Environment");
+    m_environmentHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("TriggerMode")) {
     m_triggerMode = jsonValue.GetString("TriggerMode");
     m_triggerModeHasBeenSet = true;

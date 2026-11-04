@@ -29,6 +29,12 @@ static const int WINDOWS_SERVER_2022_HASH = HashingUtils::HashString("WINDOWS_SE
 static const int WINDOWS_SERVER_2025_HASH = HashingUtils::HashString("WINDOWS_SERVER_2025");
 static const int RHEL_8_HASH = HashingUtils::HashString("RHEL_8");
 static const int ROCKY_8_HASH = HashingUtils::HashString("ROCKY_8");
+static const int UBUNTU_24_04_HASH = HashingUtils::HashString("UBUNTU_24_04");
+static const int RHEL_9_HASH = HashingUtils::HashString("RHEL_9");
+static const int ROCKY_9_HASH = HashingUtils::HashString("ROCKY_9");
+static const int UBUNTU_26_04_HASH = HashingUtils::HashString("UBUNTU_26_04");
+static const int RHEL_10_HASH = HashingUtils::HashString("RHEL_10");
+static const int ROCKY_10_HASH = HashingUtils::HashString("ROCKY_10");
 
 OperatingSystemName GetOperatingSystemNameForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -60,6 +66,18 @@ OperatingSystemName GetOperatingSystemNameForName(const Aws::String& name) {
     return OperatingSystemName::RHEL_8;
   } else if (hashCode == ROCKY_8_HASH) {
     return OperatingSystemName::ROCKY_8;
+  } else if (hashCode == UBUNTU_24_04_HASH) {
+    return OperatingSystemName::UBUNTU_24_04;
+  } else if (hashCode == RHEL_9_HASH) {
+    return OperatingSystemName::RHEL_9;
+  } else if (hashCode == ROCKY_9_HASH) {
+    return OperatingSystemName::ROCKY_9;
+  } else if (hashCode == UBUNTU_26_04_HASH) {
+    return OperatingSystemName::UBUNTU_26_04;
+  } else if (hashCode == RHEL_10_HASH) {
+    return OperatingSystemName::RHEL_10;
+  } else if (hashCode == ROCKY_10_HASH) {
+    return OperatingSystemName::ROCKY_10;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -102,6 +120,18 @@ Aws::String GetNameForOperatingSystemName(OperatingSystemName enumValue) {
       return "RHEL_8";
     case OperatingSystemName::ROCKY_8:
       return "ROCKY_8";
+    case OperatingSystemName::UBUNTU_24_04:
+      return "UBUNTU_24_04";
+    case OperatingSystemName::RHEL_9:
+      return "RHEL_9";
+    case OperatingSystemName::ROCKY_9:
+      return "ROCKY_9";
+    case OperatingSystemName::UBUNTU_26_04:
+      return "UBUNTU_26_04";
+    case OperatingSystemName::RHEL_10:
+      return "RHEL_10";
+    case OperatingSystemName::ROCKY_10:
+      return "ROCKY_10";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

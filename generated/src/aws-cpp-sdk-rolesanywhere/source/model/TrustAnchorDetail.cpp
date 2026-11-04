@@ -38,6 +38,10 @@ TrustAnchorDetail& TrustAnchorDetail::operator=(JsonView jsonValue) {
     m_enabled = jsonValue.GetBool("enabled");
     m_enabledHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("crlDpRevocationEnabled")) {
+    m_crlDpRevocationEnabled = jsonValue.GetBool("crlDpRevocationEnabled");
+    m_crlDpRevocationEnabledHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetString("createdAt");
     m_createdAtHasBeenSet = true;
@@ -78,6 +82,10 @@ JsonValue TrustAnchorDetail::Jsonize() const {
 
   if (m_enabledHasBeenSet) {
     payload.WithBool("enabled", m_enabled);
+  }
+
+  if (m_crlDpRevocationEnabledHasBeenSet) {
+    payload.WithBool("crlDpRevocationEnabled", m_crlDpRevocationEnabled);
   }
 
   if (m_createdAtHasBeenSet) {

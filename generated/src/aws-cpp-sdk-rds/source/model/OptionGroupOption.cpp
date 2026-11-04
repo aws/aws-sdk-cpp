@@ -140,6 +140,12 @@ OptionGroupOption& OptionGroupOption::operator=(const XmlNode& xmlNode) {
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(copyableCrossAccountNode.GetText()).c_str()).c_str());
       m_copyableCrossAccountHasBeenSet = true;
     }
+    XmlNode copyableCrossRegionNode = resultNode.FirstChild("CopyableCrossRegion");
+    if (!copyableCrossRegionNode.IsNull()) {
+      m_copyableCrossRegion = StringUtils::ConvertToBool(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(copyableCrossRegionNode.GetText()).c_str()).c_str());
+      m_copyableCrossRegionHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -236,6 +242,10 @@ void OptionGroupOption::OutputToStream(Aws::OStream& oStream, const char* locati
   if (m_copyableCrossAccountHasBeenSet) {
     oStream << location << index << locationValue << ".CopyableCrossAccount=" << std::boolalpha << m_copyableCrossAccount << "&";
   }
+
+  if (m_copyableCrossRegionHasBeenSet) {
+    oStream << location << index << locationValue << ".CopyableCrossRegion=" << std::boolalpha << m_copyableCrossRegion << "&";
+  }
 }
 
 void OptionGroupOption::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -308,6 +318,9 @@ void OptionGroupOption::OutputToStream(Aws::OStream& oStream, const char* locati
   }
   if (m_copyableCrossAccountHasBeenSet) {
     oStream << location << ".CopyableCrossAccount=" << std::boolalpha << m_copyableCrossAccount << "&";
+  }
+  if (m_copyableCrossRegionHasBeenSet) {
+    oStream << location << ".CopyableCrossRegion=" << std::boolalpha << m_copyableCrossRegion << "&";
   }
 }
 

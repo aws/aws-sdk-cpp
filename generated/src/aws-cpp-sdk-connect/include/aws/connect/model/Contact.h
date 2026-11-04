@@ -9,6 +9,7 @@
 #include <aws/connect/model/AgentInfo.h>
 #include <aws/connect/model/AnsweringMachineDetectionStatus.h>
 #include <aws/connect/model/Campaign.h>
+#include <aws/connect/model/CaseEntry.h>
 #include <aws/connect/model/Channel.h>
 #include <aws/connect/model/ChatMetrics.h>
 #include <aws/connect/model/ContactDetails.h>
@@ -885,6 +886,31 @@ class Contact {
 
   ///@{
   /**
+   * <p>A list of cases associated with the contact. This field is populated when one
+   * or more cases have been linked to the contact.</p>
+   */
+  inline const Aws::Vector<CaseEntry>& GetCases() const { return m_cases; }
+  inline bool CasesHasBeenSet() const { return m_casesHasBeenSet; }
+  template <typename CasesT = Aws::Vector<CaseEntry>>
+  void SetCases(CasesT&& value) {
+    m_casesHasBeenSet = true;
+    m_cases = std::forward<CasesT>(value);
+  }
+  template <typename CasesT = Aws::Vector<CaseEntry>>
+  Contact& WithCases(CasesT&& value) {
+    SetCases(std::forward<CasesT>(value));
+    return *this;
+  }
+  template <typename CasesT = CaseEntry>
+  Contact& AddCases(CasesT&& value) {
+    m_casesHasBeenSet = true;
+    m_cases.emplace_back(std::forward<CasesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A map of string key/value pairs that contain user-defined attributes which
    * are lightly typed within the contact. This object is used only for task
    * contacts.</p>
@@ -1074,6 +1100,8 @@ class Contact {
 
   TaskTemplateInfoV2 m_taskTemplateInfo;
 
+  Aws::Vector<CaseEntry> m_cases;
+
   ContactDetails m_contactDetails;
 
   OutboundStrategy m_outboundStrategy;
@@ -1126,6 +1154,7 @@ class Contact {
   bool m_disconnectReasonHasBeenSet = false;
   bool m_contactEvaluationsHasBeenSet = false;
   bool m_taskTemplateInfoHasBeenSet = false;
+  bool m_casesHasBeenSet = false;
   bool m_contactDetailsHasBeenSet = false;
   bool m_outboundStrategyHasBeenSet = false;
   bool m_attributesHasBeenSet = false;
