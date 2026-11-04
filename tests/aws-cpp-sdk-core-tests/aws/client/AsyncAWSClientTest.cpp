@@ -170,7 +170,6 @@ namespace
 
     TEST_F(AsyncAWSClientTest, LongPollingQuotaExhaustedDelaysCompletion)
     {
-        Aws::Environment::EnvironmentRAII env{{{"AWS_NEW_RETRIES_2026", "true"}}};
         ClientConfiguration config;
         auto quota = Aws::MakeShared<DefaultRetryQuotaContainer>(ALLOCATION_TAG);
         config.retryStrategy = Aws::MakeShared<FixedDelayStandardRetryStrategy>(ALLOCATION_TAG, quota, LONG_POLL_DELAY_MS);
@@ -190,7 +189,6 @@ namespace
 
     TEST_F(AsyncAWSClientTest, NonLongPollingQuotaExhaustedCompletesImmediately)
     {
-        Aws::Environment::EnvironmentRAII env{{{"AWS_NEW_RETRIES_2026", "true"}}};
         ClientConfiguration config;
         auto quota = Aws::MakeShared<DefaultRetryQuotaContainer>(ALLOCATION_TAG);
         config.retryStrategy = Aws::MakeShared<FixedDelayStandardRetryStrategy>(ALLOCATION_TAG, quota, LONG_POLL_DELAY_MS);

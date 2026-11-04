@@ -6,6 +6,7 @@
 #include <aws/core/client/DefaultRetryStrategy.h>
 
 #include <aws/core/client/AWSError.h>
+#include <aws/core/internal/RetryErrorClassification.h>
 #include <aws/core/utils/UnreferencedParam.h>
 
 using namespace Aws;
@@ -14,6 +15,9 @@ using namespace Aws::Client;
 bool DefaultRetryStrategy::ShouldRetry(const AWSError<CoreErrors>& error, long attemptedRetries) const
 {    
     if (attemptedRetries >= m_maxRetries)
+        return false;
+
+    if (Internal::IsStandardOnlyRetryableError(error))
         return false;
 
     return error.ShouldRetry();

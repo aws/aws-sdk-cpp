@@ -447,7 +447,6 @@ static AmazonWebServiceRequestMock MakeLongPollingRequest()
 // SEP Test Case 12: long-polling, retryable error, retry quota exhausted - stops without a normal retry.
 TEST_F(AWSClientTestSuite, LongPollingQuotaExhausted)
 {
-    Aws::Environment::EnvironmentRAII env{{{"AWS_NEW_RETRIES_2026", "true"}}};
     ClientConfiguration config;
     auto quota = Aws::MakeShared<DefaultRetryQuotaContainer>(ALLOCATION_TAG);
     config.retryStrategy = Aws::MakeShared<CountedStandardRetryStrategy>(ALLOCATION_TAG, quota);
@@ -466,7 +465,6 @@ TEST_F(AWSClientTestSuite, LongPollingQuotaExhausted)
 // SEP Test Case 14: long-polling, retryable error, stops at max attempts.
 TEST_F(AWSClientTestSuite, LongPollingMaxAttemptsExceeded)
 {
-    Aws::Environment::EnvironmentRAII env{{{"AWS_NEW_RETRIES_2026", "true"}}};
     ClientConfiguration config;
     auto quota = Aws::MakeShared<DefaultRetryQuotaContainer>(ALLOCATION_TAG);
     config.retryStrategy = Aws::MakeShared<CountedStandardRetryStrategy>(ALLOCATION_TAG, quota);
@@ -487,7 +485,6 @@ TEST_F(AWSClientTestSuite, LongPollingMaxAttemptsExceeded)
 // SEP Test Case 15: long-polling, retryable error then success.
 TEST_F(AWSClientTestSuite, LongPollingRetriesThenSucceeds)
 {
-    Aws::Environment::EnvironmentRAII env{{{"AWS_NEW_RETRIES_2026", "true"}}};
     ClientConfiguration config;
     auto quota = Aws::MakeShared<DefaultRetryQuotaContainer>(ALLOCATION_TAG);
     config.retryStrategy = Aws::MakeShared<CountedStandardRetryStrategy>(ALLOCATION_TAG, quota);
@@ -506,7 +503,6 @@ TEST_F(AWSClientTestSuite, LongPollingRetriesThenSucceeds)
 // SEP Test Case 16: long-polling, non-retryable error, fails without retrying.
 TEST_F(AWSClientTestSuite, LongPollingNonRetryableError)
 {
-    Aws::Environment::EnvironmentRAII env{{{"AWS_NEW_RETRIES_2026", "true"}}};
     ClientConfiguration config;
     auto quota = Aws::MakeShared<DefaultRetryQuotaContainer>(ALLOCATION_TAG);
     config.retryStrategy = Aws::MakeShared<CountedStandardRetryStrategy>(ALLOCATION_TAG, quota);
