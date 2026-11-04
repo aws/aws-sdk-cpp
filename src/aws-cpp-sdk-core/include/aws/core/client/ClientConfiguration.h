@@ -657,8 +657,24 @@ namespace Aws
         AWS_CORE_API std::shared_ptr<RetryStrategy> InitRetryStrategy(Aws::String retryMode = "");
         AWS_CORE_API std::shared_ptr<RetryStrategy> InitRetryStrategy(int maxRetries, Aws::String retryMode = "");
         AWS_CORE_API std::shared_ptr<RetryStrategy> InitRetryStrategy(int maxRetries, Aws::String retryMode, double transientBackoffBaseSec);
-        AWS_CORE_API std::shared_ptr<RetryStrategy> InitRetryStrategy(int maxRetries, Aws::String retryMode, double transientBackoffBaseSec,
-                                                                       const Aws::String& profileName);
+
+        struct InitRetryStrategyOptions
+        {
+            /**
+             * Service default. AWS_MAX_ATTEMPTS or max_attempts from the config file override it.
+             */
+            long maxAttempts = 3;
+            /**
+             * Empty uses AWS_RETRY_MODE, then retry_mode from the config file, then "standard".
+             */
+            Aws::String retryMode;
+            double transientBackoffBaseSec = 0.05;
+            /**
+             * Config file profile to read retry_mode and max_attempts from. Empty uses the default profile.
+             */
+            Aws::String profileName;
+        };
+        AWS_CORE_API std::shared_ptr<RetryStrategy> InitRetryStrategy(const InitRetryStrategyOptions& options);
 
         /**
          * A helper function to compute a user agent

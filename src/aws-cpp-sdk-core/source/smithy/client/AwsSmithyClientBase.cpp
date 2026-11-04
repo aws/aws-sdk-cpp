@@ -74,7 +74,7 @@ void AwsSmithyClientBase::baseInit() {
   AWS_CHECK_PTR(AWS_SMITHY_CLIENT_LOG, m_clientConfig);
   m_clientSkew = Aws::MakeShared<Aws::Internal::ClientSkew>(AWS_SMITHY_CLIENT_LOG, std::chrono::milliseconds(0));
   createFromFactories(m_clientConfig->retryStrategy, m_clientConfig->configFactories.retryStrategyCreateFn);
-  m_enableNewRetries = Aws::Client::Internal::UsesRetryBehavior21(m_clientConfig->retryStrategy.get());
+  m_isLegacyRetryStrategy = Aws::Client::Internal::IsLegacyRetryStrategy(m_clientConfig->retryStrategy.get());
   createFromFactories(m_clientConfig->executor, m_clientConfig->configFactories.executorCreateFn);
   createFromFactories(m_clientConfig->writeRateLimiter, m_clientConfig->configFactories.writeRateLimiterCreateFn);
   createFromFactories(m_clientConfig->readRateLimiter, m_clientConfig->configFactories.readRateLimiterCreateFn);
@@ -92,7 +92,7 @@ void AwsSmithyClientBase::baseCopyInit() {
   AWS_CHECK_PTR(AWS_SMITHY_CLIENT_LOG, m_clientConfig);
   m_clientSkew = Aws::MakeShared<Aws::Internal::ClientSkew>(AWS_SMITHY_CLIENT_LOG, std::chrono::milliseconds(0));
   createFromFactoriesIfPresent(m_clientConfig->retryStrategy, m_clientConfig->configFactories.retryStrategyCreateFn);
-  m_enableNewRetries = Aws::Client::Internal::UsesRetryBehavior21(m_clientConfig->retryStrategy.get());
+  m_isLegacyRetryStrategy = Aws::Client::Internal::IsLegacyRetryStrategy(m_clientConfig->retryStrategy.get());
   createFromFactoriesIfPresent(m_clientConfig->executor, m_clientConfig->configFactories.executorCreateFn);
   createFromFactoriesIfPresent(m_clientConfig->writeRateLimiter, m_clientConfig->configFactories.writeRateLimiterCreateFn);
   createFromFactoriesIfPresent(m_clientConfig->readRateLimiter, m_clientConfig->configFactories.readRateLimiterCreateFn);
@@ -111,7 +111,7 @@ void AwsSmithyClientBase::baseCopyAssign(const AwsSmithyClientBase& other,
                                          std::shared_ptr<Aws::Client::AWSErrorMarshaller> errorMarshaller) {
   m_serviceName = other.m_serviceName;
   m_serviceUserAgentName = other.m_serviceUserAgentName;
-  m_enableNewRetries = other.m_enableNewRetries;
+  m_isLegacyRetryStrategy = other.m_isLegacyRetryStrategy;
   m_httpClient = std::move(httpClient);
   m_errorMarshaller = std::move(errorMarshaller);
   
@@ -133,7 +133,7 @@ void AwsSmithyClientBase::baseMoveAssign(AwsSmithyClientBase&& other) {
   m_errorMarshaller = std::move(other.m_errorMarshaller);
   m_interceptors = std::move(other.m_interceptors);
   m_userAgentInterceptor = std::move(other.m_userAgentInterceptor);
-  m_enableNewRetries = other.m_enableNewRetries;
+  m_isLegacyRetryStrategy = other.m_isLegacyRetryStrategy;
 }
 
 std::shared_ptr<Aws::Http::HttpRequest>
@@ -340,7 +340,7 @@ std::shared_ptr<AwsSmithyClientAsyncRequestContext> AwsSmithyClientBase::CreateR
     }
     pRequestCtx->m_requestInfo.attempt = 1;
     pRequestCtx->m_attemptSkew = m_clientSkew->Load();
-    pRequestCtx->m_requestInfo.maxAttempts = m_enableNewRetries ? m_clientConfig->retryStrategy->GetMaxAttempts() : 0;
+    pRequestCtx->m_requestInfo.maxAttempts = m_isLegacyRetryStrategy ? 0 : m_clientConfig->retryStrategy->GetMaxAttempts();
     pRequestCtx->m_interceptorContext = Aws::MakeShared<InterceptorContext>(AWS_SMITHY_CLIENT_LOG, *request);
     pRequestCtx->m_responseHandler = std::move(responseHandler);
     pRequestCtx->m_authResolvedCallback = std::move(authCallback);
@@ -713,7 +713,7 @@ Aws::Http::HttpClient::AttemptOutcome AwsSmithyClientBase::HandleAsyncReply(std:
         {
             const bool blockedByQuotaOnly = outcome.GetError().ShouldRetry() &&
                 static_cast<long>(pRequestCtx->m_retryCount) + 1 < m_clientConfig->retryStrategy->GetMaxAttempts();
-            if (m_enableNewRetries && blockedByQuotaOnly && pRequestCtx->m_pRequest && pRequestCtx->m_pRequest->IsLongPollingOperation()) {
+            if (!m_isLegacyRetryStrategy && blockedByQuotaOnly && pRequestCtx->m_pRequest && pRequestCtx->m_pRequest->IsLongPollingOperation()) {
                 giveUpDelay = std::chrono::milliseconds(sleepMillis);
             }
             break;

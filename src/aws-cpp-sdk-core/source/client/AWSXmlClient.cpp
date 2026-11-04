@@ -22,7 +22,6 @@
 #include <aws/core/utils/event/EventStream.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/client/UserAgent.h>
-#include <aws/core/internal/RetryStrategyImpl.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -231,7 +230,6 @@ AWSError<CoreErrors> AWSXMLClient::BuildAWSError(const std::shared_ptr<Http::Htt
 
     error.SetResponseHeaders(httpResponse->GetHeaders());
     error.SetResponseCode(httpResponse->GetResponseCode());
-    Aws::Client::Internal::ClassifyUnmodeledTooManyRequests(error);
     error.SetRemoteHostIpAddress(httpResponse->GetOriginatingRequest().GetResolvedRemoteHost());
     AWS_LOGSTREAM_ERROR(AWS_XML_CLIENT_LOG_TAG, error);
     return error;

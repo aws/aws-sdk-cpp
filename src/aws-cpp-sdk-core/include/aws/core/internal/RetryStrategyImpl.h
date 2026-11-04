@@ -9,10 +9,7 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/threading/ReaderWriterLock.h>
-
-#include <memory>
 
 namespace Aws
 {
@@ -79,16 +76,7 @@ namespace Aws
 
         namespace Internal
         {
-            AWS_CORE_LOCAL bool UsesRetryBehavior21(const RetryStrategy* retryStrategy);
-
-            inline void ClassifyUnmodeledTooManyRequests(AWSError<CoreErrors>& error)
-            {
-                if (error.GetResponseCode() == Aws::Http::HttpResponseCode::TOO_MANY_REQUESTS &&
-                    error.GetErrorType() == CoreErrors::UNKNOWN)
-                {
-                    error.SetRetryableType(RetryableType::RETRYABLE_THROTTLING);
-                }
-            }
+            AWS_CORE_LOCAL bool IsLegacyRetryStrategy(const RetryStrategy* retryStrategy);
         } // namespace Internal
     } // namespace Client
 } // namespace Aws

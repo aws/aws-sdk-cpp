@@ -162,8 +162,8 @@ namespace Aws
                 StandardRetryStrategy(retryQuotaContainer, maxAttempts)
         {}
 
-        AdaptiveRetryStrategy::AdaptiveRetryStrategy(long maxAttempts, double transientBackoffBaseSec) :
-                StandardRetryStrategy(maxAttempts, transientBackoffBaseSec)
+        AdaptiveRetryStrategy::AdaptiveRetryStrategy(const StandardRetryStrategyOptions& options) :
+                StandardRetryStrategy(options)
         {}
 
         bool AdaptiveRetryStrategy::HasSendToken()

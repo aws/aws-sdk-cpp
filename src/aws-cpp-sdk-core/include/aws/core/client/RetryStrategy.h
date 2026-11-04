@@ -119,9 +119,20 @@ namespace Aws
             int m_retryQuota;
         };
 
+        struct StandardRetryStrategyOptions
+        {
+            long maxAttempts = 3;
+            double transientBackoffBaseSec = 0.05;
+            /**
+             * When null, the strategy creates its own retry quota container.
+             */
+            std::shared_ptr<RetryQuotaContainer> retryQuotaContainer;
+        };
+
         class AWS_CORE_API StandardRetryStrategy : public RetryStrategy
         {
         public:
+            explicit StandardRetryStrategy(const StandardRetryStrategyOptions& options);
             StandardRetryStrategy(long maxAttempts = 3);
             StandardRetryStrategy(std::shared_ptr<RetryQuotaContainer> retryQuotaContainer, long maxAttempts = 3);
             StandardRetryStrategy(long maxAttempts, double transientBackoffBaseSec);
@@ -138,14 +149,12 @@ namespace Aws
 
             const char* GetStrategyName() const override { return "standard";}
 
-            class RetryImpl;
-
         protected:
             std::shared_ptr<RetryQuotaContainer> m_retryQuotaContainer;
             long m_maxAttempts;
 
         private:
-            Aws::UniquePtr<RetryImpl> m_impl;
+            double m_transientBackoffBaseSec;
         };
     } // namespace Client
 } // namespace Aws

@@ -14,6 +14,7 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/internal/RetryErrorClassification.h>
 #include <aws/core/internal/RetryStrategyImpl.h>
 #include <aws/core/client/RequestCompression.h>
 #include <aws/core/http/HttpClient.h>
@@ -178,7 +179,7 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
         m_httpClient->IsDefaultAwsHttpClient() ? Aws::Client::HttpClientChunkedMode::DEFAULT : configuration.httpClientChunkedMode,
         configuration.awsChunkedBufferSize),
         m_userAgentInterceptor},
-    m_enableNewRetries{Aws::Client::Internal::UsesRetryBehavior21(m_retryStrategy.get())},
+    m_isLegacyRetryStrategy{Aws::Client::Internal::IsLegacyRetryStrategy(m_retryStrategy.get())},
     m_disableExpectHeader(configuration.disableExpectHeader)
 {
 }
@@ -210,7 +211,7 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
         m_httpClient->IsDefaultAwsHttpClient() ? Aws::Client::HttpClientChunkedMode::DEFAULT : configuration.httpClientChunkedMode,
         configuration.awsChunkedBufferSize),
         m_userAgentInterceptor},
-    m_enableNewRetries{Aws::Client::Internal::UsesRetryBehavior21(m_retryStrategy.get())},
+    m_isLegacyRetryStrategy{Aws::Client::Internal::IsLegacyRetryStrategy(m_retryStrategy.get())},
     m_disableExpectHeader(configuration.disableExpectHeader)
 {
 }
@@ -306,7 +307,7 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
     Aws::String invocationId = Aws::Utils::UUID::PseudoRandomUUID();
     RequestInfo requestInfo;
     requestInfo.attempt = 1;
-    requestInfo.maxAttempts = m_enableNewRetries ? m_retryStrategy->GetMaxAttempts() : 0;
+    requestInfo.maxAttempts = m_isLegacyRetryStrategy ? 0 : m_retryStrategy->GetMaxAttempts();
     httpRequest->SetHeaderValue(Http::SDK_INVOCATION_ID_HEADER, invocationId);
     httpRequest->SetHeaderValue(Http::SDK_REQUEST_HEADER, requestInfo);
     AppendRecursionDetectionHeader(httpRequest);
@@ -399,7 +400,7 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
         {
             const bool blockedByQuotaOnly = outcome.GetError().ShouldRetry() &&
                 retries + 1 < m_retryStrategy->GetMaxAttempts();
-            if (m_enableNewRetries && blockedByQuotaOnly && request.IsLongPollingOperation()) {
+            if (!m_isLegacyRetryStrategy && blockedByQuotaOnly && request.IsLongPollingOperation()) {
                 m_httpClient->RetryRequestSleep(std::chrono::milliseconds(sleepMillis));
             }
             break;
@@ -490,7 +491,7 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
     Aws::String invocationId = Aws::Utils::UUID::PseudoRandomUUID();
     RequestInfo requestInfo;
     requestInfo.attempt = 1;
-    requestInfo.maxAttempts = m_enableNewRetries ? m_retryStrategy->GetMaxAttempts() : 0;
+    requestInfo.maxAttempts = m_isLegacyRetryStrategy ? 0 : m_retryStrategy->GetMaxAttempts();
     httpRequest->SetHeaderValue(Http::SDK_INVOCATION_ID_HEADER, invocationId);
     httpRequest->SetHeaderValue(Http::SDK_REQUEST_HEADER, requestInfo);
     AppendRecursionDetectionHeader(httpRequest);
@@ -673,6 +674,7 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<Aws::Http
     {
         AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Request returned error. Attempting to generate appropriate error codes from response");
         auto error = BuildAWSError(httpResponse);
+        Aws::Client::Internal::ClassifyUnmodeledTooManyRequests(error);
         return HttpResponseOutcome(std::move(error));
     }
     else if(request.HasEmbeddedError(httpResponse->GetResponseBody(), httpResponse->GetHeaders()))
@@ -727,6 +729,7 @@ HttpResponseOutcome AWSClient::AttemptOneRequest(const std::shared_ptr<Aws::Http
     {
         AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Request returned error. Attempting to generate appropriate error codes from response");
         auto error = BuildAWSError(httpResponse);
+        Aws::Client::Internal::ClassifyUnmodeledTooManyRequests(error);
         return HttpResponseOutcome(std::move(error));
     }
 
@@ -771,7 +774,7 @@ void AWSClient::AttemptExhaustivelyAsync(const Aws::Http::URI& uri,
     context->monitoringContexts = Aws::Monitoring::OnRequestStarted(this->GetServiceClientName(), request.GetServiceRequestName(), context->httpRequest);
     context->attemptSkew = m_clientSkew->Load();
     context->requestInfo.attempt = 1;
-    context->requestInfo.maxAttempts = m_enableNewRetries ? m_retryStrategy->GetMaxAttempts() : 0;
+    context->requestInfo.maxAttempts = m_isLegacyRetryStrategy ? 0 : m_retryStrategy->GetMaxAttempts();
     context->httpRequest->SetHeaderValue(Http::SDK_INVOCATION_ID_HEADER, context->invocationId);
     context->httpRequest->SetHeaderValue(Http::SDK_REQUEST_HEADER, context->requestInfo);
     AppendRecursionDetectionHeader(context->httpRequest);
@@ -886,7 +889,9 @@ Http::HttpClient::AttemptOutcome AWSClient::OnResponseReceivedAsync(const std::s
     if (DoesResponseGenerateError(httpResponse))
     {
         AWS_LOGSTREAM_DEBUG(AWS_CLIENT_LOG_TAG, "Request returned error. Attempting to generate appropriate error codes from response");
-        return OnAttemptCompleteAsync(context, HttpResponseOutcome(BuildAWSError(httpResponse)));
+        auto error = BuildAWSError(httpResponse);
+        Aws::Client::Internal::ClassifyUnmodeledTooManyRequests(error);
+        return OnAttemptCompleteAsync(context, HttpResponseOutcome(std::move(error)));
     }
 
     if (request.HasEmbeddedError(httpResponse->GetResponseBody(), httpResponse->GetHeaders()))
@@ -987,7 +992,7 @@ Http::HttpClient::AttemptOutcome AWSClient::OnAttemptCompleteAsync(const std::sh
         const bool blockedByQuotaOnly = outcome.GetError().ShouldRetry() &&
             context->retries + 1 < m_retryStrategy->GetMaxAttempts();
         context->outcome = std::move(outcome);
-        if (m_enableNewRetries && blockedByQuotaOnly && request.IsLongPollingOperation()) {
+        if (!m_isLegacyRetryStrategy && blockedByQuotaOnly && request.IsLongPollingOperation()) {
             return {false, std::chrono::milliseconds(sleepMillis)};
         }
         return {};

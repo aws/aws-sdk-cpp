@@ -11,7 +11,11 @@ namespace DynamoDBStreams {
 void DynamoDBStreamsClientConfiguration::LoadDynamoDBStreamsSpecificConfig(const Aws::String& inputProfileName) {
   const Aws::String retryProfileName = this->profileName;
   this->configFactories.retryStrategyCreateFn = [retryProfileName]() -> std::shared_ptr<Client::RetryStrategy> {
-    return Client::InitRetryStrategy(4, "", 0.025, retryProfileName);
+    Client::InitRetryStrategyOptions options;
+    options.maxAttempts = 4;
+    options.transientBackoffBaseSec = 0.025;
+    options.profileName = retryProfileName;
+    return Client::InitRetryStrategy(options);
   };
 #if defined(_MSC_VER)
   (&reinterpret_cast<const int&>(inputProfileName));

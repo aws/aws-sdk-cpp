@@ -9,8 +9,10 @@
 #include <aws/core/client/AWSJsonClient.h>
 #include <aws/core/auth/signer/AWSNullSigner.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/RetryStrategy.h>
 #include <aws/testing/platform/PlatformTesting.h>
 #include <aws/testing/mocks/http/MockHttpClient.h>
+#include <aws/testing/mocks/aws/client/MockAWSClient.h>
 #include <aws/core/http/HttpClientFactory.h>
 #include <aws/core/utils/stream/ResponseStream.h>
 #include <aws/core/client/AWSError.h>
@@ -1398,7 +1400,7 @@ namespace
         explicit JsonClientUnderTest(const ClientConfiguration& configuration)
             : AWSJsonClient(configuration, Aws::MakeShared<Aws::Client::AWSNullSigner>(ERROR_MARSHALLER_TEST_ALLOC_TAG),
                             Aws::MakeShared<JsonErrorMarshaller>(ERROR_MARSHALLER_TEST_ALLOC_TAG)) {}
-        using AWSJsonClient::BuildAWSError;
+        using AWSJsonClient::MakeRequest;
     };
 }
 
@@ -1420,25 +1422,32 @@ TEST_F(AWSErrorMarshallerTest, RpcV2UnmodeledTooManyRequestsIsRetryableThrottlin
 TEST_F(AWSErrorMarshallerTest, ProtocolClientUnmodeledTooManyRequestsIsRetryableThrottling)
 {
     Aws::Environment::EnvironmentRAII env{{{"AWS_EC2_METADATA_DISABLED", "true"}, {"AWS_REGION", "us-east-1"}}};
+    auto mockHttpClient = Aws::MakeShared<MockHttpClient>(ERROR_MARSHALLER_TEST_ALLOC_TAG);
     auto mockHttpClientFactory = Aws::MakeShared<MockHttpClientFactory>(ERROR_MARSHALLER_TEST_ALLOC_TAG);
-    mockHttpClientFactory->SetClient(Aws::MakeShared<MockHttpClient>(ERROR_MARSHALLER_TEST_ALLOC_TAG));
+    mockHttpClientFactory->SetClient(mockHttpClient);
     Aws::Http::SetHttpClientFactory(mockHttpClientFactory);
-    ClientConfiguration configuration;
-    JsonClientUnderTest client(configuration);
+    {
+        ClientConfiguration configuration;
+        configuration.retryStrategy = Aws::MakeShared<StandardRetryStrategy>(ERROR_MARSHALLER_TEST_ALLOC_TAG, 1);
+        JsonClientUnderTest client(configuration);
+        const Aws::Http::URI uri("http://www.uri.com");
+        AmazonWebServiceRequestMock request;
 
-    auto request = Aws::Http::CreateHttpRequest(Aws::Http::URI("http://www.uri.com"), Aws::Http::HttpMethod::HTTP_POST,
-                                                Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-    auto bodyless = Aws::MakeShared<Aws::Http::Standard::StandardHttpResponse>(ERROR_MARSHALLER_TEST_ALLOC_TAG, request);
-    bodyless->SetResponseCode(Aws::Http::HttpResponseCode::TOO_MANY_REQUESTS);
-    auto bodylessError = client.BuildAWSError(bodyless);
-    ASSERT_TRUE(bodylessError.ShouldRetry());
-    ASSERT_TRUE(bodylessError.ShouldThrottle());
+        auto bodylessRequest = Aws::Http::CreateHttpRequest(uri, Aws::Http::HttpMethod::HTTP_POST, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+        auto bodyless = Aws::MakeShared<Aws::Http::Standard::StandardHttpResponse>(ERROR_MARSHALLER_TEST_ALLOC_TAG, bodylessRequest);
+        bodyless->SetResponseCode(Aws::Http::HttpResponseCode::TOO_MANY_REQUESTS);
+        mockHttpClient->AddResponseToReturn(bodyless);
+        auto bodylessOutcome = client.MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
+        ASSERT_FALSE(bodylessOutcome.IsSuccess());
+        ASSERT_TRUE(bodylessOutcome.GetError().ShouldThrottle());
 
-    auto unknownName = client.BuildAWSError(WithResponseCode(
-        BuildHttpResponse("SomeUnknownException", "slow down", "Request Id"), Aws::Http::HttpResponseCode::TOO_MANY_REQUESTS));
-    ASSERT_TRUE(unknownName.ShouldRetry());
-    ASSERT_TRUE(unknownName.ShouldThrottle());
-
+        mockHttpClient->AddResponseToReturn(WithResponseCode(
+            BuildHttpResponse("SomeUnknownException", "slow down", "Request Id"), Aws::Http::HttpResponseCode::TOO_MANY_REQUESTS));
+        auto unknownNameOutcome = client.MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
+        ASSERT_FALSE(unknownNameOutcome.IsSuccess());
+        ASSERT_TRUE(unknownNameOutcome.GetError().ShouldRetry());
+        ASSERT_TRUE(unknownNameOutcome.GetError().ShouldThrottle());
+    }
     Aws::Http::CleanupHttp();
     Aws::Http::InitHttp();
 }

@@ -11,7 +11,7 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/utils/cbor/CborValue.h>
-#include <aws/core/internal/RetryStrategyImpl.h>
+#include <aws/core/internal/RetryErrorClassification.h>
 
 using namespace Aws::Utils::Logging;
 using namespace Aws::Utils::Json;
