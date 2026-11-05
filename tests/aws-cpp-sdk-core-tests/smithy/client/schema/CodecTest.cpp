@@ -501,7 +501,6 @@ TEST_F(CodecTest, JsonDocumentAtReaderDepthLimitStillSerializes) {
   }
 }
 
-
 TEST_F(CodecTest, CborBigNumberRoundTrip) {
   auto root = Schema::StructureBuilder("Root")
                   .PutMember("big", Schema::CreateBigInteger("BI"))
