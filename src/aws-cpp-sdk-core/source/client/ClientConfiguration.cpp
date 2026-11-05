@@ -208,7 +208,7 @@ Aws::Vector<Aws::String> calculateAuthPreferences() {
   return res;
 }
 
-Aws::Vector<Aws::String> calculateSigV4aSigningRegionSet(const Aws::String& profileName) {
+Aws::Vector<Aws::String> calculateSigV4aSigningRegionSet(Aws::String profileName) {
   Aws::Vector<Aws::String> res;
   Aws::String regionSetStr = Aws::Environment::GetEnv(AWS_SIGV4A_SIGNING_REGION_SET_ENV_VAR);
   if (regionSetStr.empty()) {
