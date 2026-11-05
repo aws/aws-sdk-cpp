@@ -17,6 +17,8 @@ void S3ControlClientConfiguration::LoadS3ControlSpecificConfig(const Aws::String
   if (useArnRegionCfg == "true") {
     useArnRegion = true;
   }
+  useFIPS = Aws::Client::LoadUseFIPSFromEnvOrProfile(this->profileName);
+  useDualStack = Aws::Client::LoadUseDualStackFromEnvOrProfile(this->profileName);
 }
 
 S3ControlClientConfiguration::S3ControlClientConfiguration(const Aws::Client::ClientConfigurationInitValues& configuration)
@@ -34,8 +36,15 @@ S3ControlClientConfiguration::S3ControlClientConfiguration(bool useSmartDefaults
   LoadS3ControlSpecificConfig(this->profileName);
 }
 
-S3ControlClientConfiguration::S3ControlClientConfiguration(const Aws::Client::ClientConfiguration& config) : BaseClientConfigClass(config) {
+S3ControlClientConfiguration::S3ControlClientConfiguration(const Aws::Client::ClientConfiguration& sharedConfig)
+    : BaseClientConfigClass(sharedConfig) {
   LoadS3ControlSpecificConfig(this->profileName);
+}
+
+Aws::Client::ServiceClientOptions GetServiceClientOptions(const S3ControlClientConfiguration& config) {
+  Aws::Client::ServiceClientOptions options;
+  options.accountId = config.accountId;
+  return options;
 }
 
 }  // namespace S3Control

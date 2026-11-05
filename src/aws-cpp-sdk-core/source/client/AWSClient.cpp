@@ -171,14 +171,14 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     m_requestTimeoutMs(configuration.requestTimeoutMs),
     m_enableClockSkewAdjustment(configuration.enableClockSkewAdjustment),
     m_clientSkew(Aws::MakeShared<Aws::Internal::ClientSkew>(AWS_CLIENT_LOG_TAG, std::chrono::milliseconds(0))),
-    m_requestCompressionConfig(configuration.requestCompressionConfig),
+    m_requestCompressionConfig(),
     m_userAgentInterceptor{Aws::MakeShared<smithy::client::UserAgentInterceptor>(AWS_CLIENT_LOG_TAG, configuration, m_retryStrategy->GetStrategyName(), m_serviceName)},
     m_interceptors{Aws::MakeShared<smithy::client::ChecksumInterceptor>(AWS_CLIENT_LOG_TAG), Aws::MakeShared<smithy::client::features::ChunkingInterceptor>(AWS_CLIENT_LOG_TAG,
-        m_httpClient->IsDefaultAwsHttpClient() ? Aws::Client::HttpClientChunkedMode::DEFAULT : configuration.httpClientChunkedMode,
-        configuration.awsChunkedBufferSize),
+        m_httpClient->IsDefaultAwsHttpClient() ? Aws::Client::HttpClientChunkedMode::DEFAULT : Aws::Client::HttpClientChunkedMode::CLIENT_IMPLEMENTATION,
+        Aws::Client::DEFAULT_AWS_CHUNKED_BUFFER_SIZE),
         m_userAgentInterceptor},
     m_enableNewRetries{Aws::Utils::StringUtils::ToLower(Aws::Environment::GetEnv("AWS_NEW_RETRIES_2026").c_str()) == "true"},
-    m_disableExpectHeader(configuration.disableExpectHeader)
+    m_disableExpectHeader(false)
 {
 }
 
@@ -203,14 +203,14 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     m_requestTimeoutMs(configuration.requestTimeoutMs),
     m_enableClockSkewAdjustment(configuration.enableClockSkewAdjustment),
     m_clientSkew(Aws::MakeShared<Aws::Internal::ClientSkew>(AWS_CLIENT_LOG_TAG, std::chrono::milliseconds(0))),
-    m_requestCompressionConfig(configuration.requestCompressionConfig),
+    m_requestCompressionConfig(),
     m_userAgentInterceptor{Aws::MakeShared<smithy::client::UserAgentInterceptor>(AWS_CLIENT_LOG_TAG, configuration, m_retryStrategy->GetStrategyName(), m_serviceName)},
-    m_interceptors{Aws::MakeShared<smithy::client::ChecksumInterceptor>(AWS_CLIENT_LOG_TAG, configuration), Aws::MakeShared<smithy::client::features::ChunkingInterceptor>(AWS_CLIENT_LOG_TAG,
-        m_httpClient->IsDefaultAwsHttpClient() ? Aws::Client::HttpClientChunkedMode::DEFAULT : configuration.httpClientChunkedMode,
-        configuration.awsChunkedBufferSize),
+    m_interceptors{Aws::MakeShared<smithy::client::ChecksumInterceptor>(AWS_CLIENT_LOG_TAG), Aws::MakeShared<smithy::client::features::ChunkingInterceptor>(AWS_CLIENT_LOG_TAG,
+        m_httpClient->IsDefaultAwsHttpClient() ? Aws::Client::HttpClientChunkedMode::DEFAULT : Aws::Client::HttpClientChunkedMode::CLIENT_IMPLEMENTATION,
+        Aws::Client::DEFAULT_AWS_CHUNKED_BUFFER_SIZE),
         m_userAgentInterceptor},
     m_enableNewRetries{Aws::Utils::StringUtils::ToLower(Aws::Environment::GetEnv("AWS_NEW_RETRIES_2026").c_str()) == "true"},
-    m_disableExpectHeader(configuration.disableExpectHeader)
+    m_disableExpectHeader(false)
 {
 }
 
@@ -235,6 +235,19 @@ void AWSClient::AppendToUserAgent(const Aws::String& valueToAppend)
 {
    assert(m_userAgentInterceptor);
    m_userAgentInterceptor->AddLegacyFeaturesToUserAgent(valueToAppend);
+}
+
+void AWSClient::ApplyServiceOptions(const Aws::Client::ServiceClientOptions& options)
+{
+    m_requestCompressionConfig = options.requestCompressionConfig;
+    m_disableExpectHeader = options.disableExpectHeader;
+    // m_interceptors is built in the constructor as {checksum, chunking, user agent}.
+    m_interceptors[0] = Aws::MakeShared<smithy::client::ChecksumInterceptor>(AWS_CLIENT_LOG_TAG, options.checksumConfig);
+    m_interceptors[1] = Aws::MakeShared<smithy::client::features::ChunkingInterceptor>(AWS_CLIENT_LOG_TAG,
+        m_httpClient->IsDefaultAwsHttpClient() ? Aws::Client::HttpClientChunkedMode::DEFAULT : options.httpClientChunkedMode,
+        options.awsChunkedBufferSize);
+    assert(m_userAgentInterceptor);
+    m_userAgentInterceptor->SetAccountIdEndpointMode(options.accountIdEndpointMode);
 }
 
 Aws::Client::AWSAuthSigner* AWSClient::GetSignerByName(const char* name) const

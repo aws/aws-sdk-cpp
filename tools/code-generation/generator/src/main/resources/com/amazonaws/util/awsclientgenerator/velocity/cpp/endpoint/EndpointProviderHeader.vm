@@ -17,19 +17,13 @@
 #if($serviceModel.metadata.serviceId == "S3" || $serviceModel.metadata.serviceId == "S3 Control")
 #set($hasServiceSpecificEpParams = true)
 #end
-#if($serviceModel.endpointRuleSetModel.parameters.containsKey("AccountId"))
-#set($hasServiceSpecificEpParams = true)
-#end
-#if($serviceModel.endpointRuleSetModel.parameters.containsKey("AccountIdEndpointMode"))
+#set($options = $serviceModel.supportedClientOptions)
+#if($options.contains("accountId") || $options.contains("accountIdEndpointMode") || $options.contains("useFIPS") || $options.contains("useDualStack"))
 #set($hasServiceSpecificEpParams = true)
 #end
 #pragma once
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}_EXPORTS.h>
-#if($serviceModel.hasServiceSpecificClientConfig())
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}ClientConfiguration.h>
-#else
-\#include <aws/core/client/GenericClientConfiguration.h>
-#end
 \#include <aws/core/endpoint/${epProviderType}.h>
 \#include <aws/core/endpoint/EndpointParameter.h>
 \#include <aws/core/utils/memory/stl/AWSString.h>
@@ -43,9 +37,7 @@ namespace ${serviceNamespace}
 {
 namespace Endpoint
 {
-#if($serviceModel.hasServiceSpecificClientConfig())
 using ${metadata.classNamePrefix}ClientConfiguration = Aws::${serviceNamespace}::${metadata.classNamePrefix}ClientConfiguration;
-#end
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::EndpointProviderBase;
 using Aws::Endpoint::${epProviderType};
@@ -77,10 +69,6 @@ public:
 using ${epContextClassName} = Aws::Endpoint::ClientContextParameters;
 #end
 
-#if(!$serviceModel.hasServiceSpecificClientConfig())
-using ${metadata.classNamePrefix}ClientConfiguration = Aws::Client::GenericClientConfiguration;
-#end
-#if($serviceModel.hasServiceSpecificClientConfig())
 class ${exportMacro} ${epBuiltInClassName} : public Aws::Endpoint::BuiltInParameters
 {
 public:
@@ -94,9 +82,6 @@ private:
     void SetServiceSpecificParameters(const ${metadata.classNamePrefix}ClientConfiguration& config);
 #end
 };
-#else
-using ${epBuiltInClassName} = Aws::Endpoint::BuiltInParameters;
-#end
 
 /**
  * The type for the ${serviceNamespace} Client Endpoint Provider.
@@ -109,7 +94,6 @@ using ${metadata.classNamePrefix}EndpointProviderBase =
 using ${metadata.classNamePrefix}DefaultEpProviderBase =
     ${epProviderType}<${metadata.classNamePrefix}ClientConfiguration, ${epBuiltInClassName}, ${epContextClassName}>;
 
-#if($serviceModel.hasServiceSpecificClientConfig() || $serviceModel.clientContextParams)
 } // namespace Endpoint
 } // namespace ${serviceNamespace}
 
@@ -129,7 +113,6 @@ namespace ${serviceNamespace}
 {
 namespace Endpoint
 {
-#end
 /**
  * Default endpoint provider used for this service
  */

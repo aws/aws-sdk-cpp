@@ -251,55 +251,6 @@ S3Client::S3Client(const std::shared_ptr<AWSCredentialsProvider>& credentialsPro
   init(m_clientConfiguration);
 }
 
-/* Legacy constructors due deprecation */
-S3Client::S3Client(const Aws::Client::ClientConfiguration& clientConfiguration,
-                   Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads /*= Never*/, bool useVirtualAddressing /*= true*/,
-                   Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption)
-    : BASECLASS(
-          clientConfiguration,
-          Aws::MakeShared<Aws::Auth::S3ExpressSignerProvider>(
-              ALLOCATION_TAG,
-              Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
-              Aws::MakeShared<DefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this), SERVICE_NAME,
-              Aws::Region::ComputeSignerRegion(clientConfiguration.region), signPayloads,
-              /*doubleEncodeValue*/ false),
-          Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG)),
-      m_clientConfiguration(clientConfiguration, signPayloads, useVirtualAddressing, USEast1RegionalEndPointOption),
-      m_endpointProvider(Aws::MakeShared<S3EndpointProvider>(ALLOCATION_TAG)) {
-  init(m_clientConfiguration);
-}
-
-S3Client::S3Client(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration,
-                   Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads /*= Never*/, bool useVirtualAddressing /*= true*/,
-                   Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption)
-    : BASECLASS(clientConfiguration,
-                Aws::MakeShared<Aws::Auth::S3ExpressSignerProvider>(
-                    ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-                    Aws::MakeShared<DefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this), SERVICE_NAME,
-                    Aws::Region::ComputeSignerRegion(clientConfiguration.region), signPayloads,
-                    /*doubleEncodeValue*/ false),
-                Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG)),
-      m_clientConfiguration(clientConfiguration, signPayloads, useVirtualAddressing, USEast1RegionalEndPointOption),
-      m_endpointProvider(Aws::MakeShared<S3EndpointProvider>(ALLOCATION_TAG)) {
-  init(m_clientConfiguration);
-}
-
-S3Client::S3Client(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                   const Aws::Client::ClientConfiguration& clientConfiguration,
-                   Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads /*= Never*/, bool useVirtualAddressing /*= true*/,
-                   Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption)
-    : BASECLASS(clientConfiguration,
-                Aws::MakeShared<Aws::Auth::S3ExpressSignerProvider>(
-                    ALLOCATION_TAG, credentialsProvider, Aws::MakeShared<DefaultS3ExpressIdentityProvider>(ALLOCATION_TAG, *this),
-                    SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region), signPayloads,
-                    /*doubleEncodeValue*/ false),
-                Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG)),
-      m_clientConfiguration(clientConfiguration, signPayloads, useVirtualAddressing, USEast1RegionalEndPointOption),
-      m_endpointProvider(Aws::MakeShared<S3EndpointProvider>(ALLOCATION_TAG)) {
-  init(m_clientConfiguration);
-}
-
-/* End of legacy constructors due deprecation */
 S3Client::~S3Client() { ShutdownSdkClient(this, -1); }
 
 std::shared_ptr<S3EndpointProviderBase>& S3Client::accessEndpointProvider() { return m_endpointProvider; }
@@ -316,12 +267,7 @@ void S3Client::init(const S3::S3ClientConfiguration& config) {
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config, "s3");
-}
-
-void S3Client::OverrideEndpoint(const Aws::String& endpoint) {
-  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_clientConfiguration.endpointOverride = endpoint;
-  m_endpointProvider->OverrideEndpoint(endpoint);
+  ApplyServiceOptions(GetServiceClientOptions(m_clientConfiguration));
 }
 
 S3Client::InvokeOperationOutcome S3Client::InvokeServiceOperation(

@@ -138,7 +138,10 @@ UserAgent::UserAgent(const ClientConfiguration& clientConfiguration,
 #undef XSTR
 #endif
 {
-  const auto accountIdMode = BusinessMetricForAccountIdMode(clientConfiguration.accountIdEndpointMode);
+}
+
+void UserAgent::SetAccountIdEndpointMode(const Aws::String& accountIdEndpointMode) {
+  const auto accountIdMode = BusinessMetricForAccountIdMode(accountIdEndpointMode);
   if (accountIdMode.has_value()) {
     m_features.emplace(accountIdMode.value());
   }

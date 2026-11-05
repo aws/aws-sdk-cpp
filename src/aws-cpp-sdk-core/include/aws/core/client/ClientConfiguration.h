@@ -92,6 +92,40 @@ namespace Aws
           UseRequestCompression useRequestCompression=UseRequestCompression::ENABLE;
           size_t requestMinCompressionSizeBytes = 10240;
         };
+
+        struct ChecksumConfig {
+          /**
+           * Setting on whether to calculate a checksum for a payload only when it is required.
+           * i.e. when setting WHEN_REQUIRED the SDK will NOT calculate a checksum for an endpoint
+           * where it is supported but is NOT required.
+           */
+          RequestChecksumCalculation requestChecksumCalculation = RequestChecksumCalculation::WHEN_SUPPORTED;
+
+          /**
+           * Setting on whether to client side response validate a content body that had a checksum
+           * associated with it. Response validation right now cannot be modeled as required but rely
+           * on an associated model configuration.
+           */
+          ResponseChecksumValidation responseChecksumValidation = ResponseChecksumValidation::WHEN_SUPPORTED;
+        };
+
+        static const size_t DEFAULT_AWS_CHUNKED_BUFFER_SIZE = 64UL * 1024;
+
+        /**
+         * Values a generated client hands to core for the options its service supports.
+         * Options the service does not support keep these defaults.
+         * Internal: not a client configuration and not accepted by any client constructor.
+         */
+        struct ServiceClientOptions {
+          RequestCompressionConfig requestCompressionConfig;
+          ChecksumConfig checksumConfig;
+          bool disableExpectHeader = false;
+          HttpClientChunkedMode httpClientChunkedMode = HttpClientChunkedMode::CLIENT_IMPLEMENTATION;
+          size_t awsChunkedBufferSize = DEFAULT_AWS_CHUNKED_BUFFER_SIZE;
+          Aws::Vector<Aws::String> sigV4aSigningRegionSet;
+          Aws::String accountId;
+          Aws::String accountIdEndpointMode;
+        };
          /**
           * This structure is used to provide initial configuration values to the default ClientConfiguration constructor for the following parameter(s):
           * - disableIMDS
@@ -180,16 +214,6 @@ namespace Aws
              * AWS Region to use in signing requests. Default US_EAST_1
              */
             Aws::String region;
-            /**
-             * Use dual stack endpoint in the endpoint calculation. It is your responsibility to verify that the service supports ipv6 in the region you select.
-             */
-            bool useDualStack = false;
-
-            /**
-             * Use FIPS endpoint in the endpoint calculation. Please check first that the service supports FIPS in a selected region.
-             */
-            bool useFIPS = false;
-
             /**
              * Max concurrent tcp connections for a single http client to use. Default 25.
              */
@@ -352,45 +376,9 @@ namespace Aws
             FollowRedirectsPolicy followRedirects;
 
             /**
-             * When set to true, the SDK will NOT add "Expect: 100-Continue" header to any HTTP request,
-             * including streaming operations like S3 PutObject or UploadPart.
-             *
-             * By default (false), the SDK automatically adds "Expect: 100-Continue" only to streaming
-             * requests (operations with streaming input bodies). This allows the server to reject the
-             * request before the client sends a potentially large payload, saving bandwidth on failures.
-             * Non-streaming requests never receive the Expect header regardless of this setting.
-             *
-             * Set to true if you are going through a proxy or middleware that does not correctly
-             * handle the Expect: 100-Continue mechanism.
-             */
-            bool disableExpectHeader = false;
-
-            /**
              * If set to true clock skew will be adjusted after each http attempt, default to true.
              */
             bool enableClockSkewAdjustment = true;
-
-            /**
-             * Enable host prefix injection.
-             * For services whose endpoint is injectable. e.g. servicediscovery, you can modify the http host's prefix so as to add "data-" prefix for DiscoverInstances request.
-             * Default to true, enabled. You can disable it for testing purpose.
-             *
-             * Deprecated in API v. 1.10. Please set in service-specific client configuration.
-             */
-            bool enableHostPrefixInjection = true;
-
-            /**
-             * Enable endpoint discovery
-             * For some services to dynamically set up their endpoints for different requests.
-             * By default, service clients will decide if endpoint discovery is enabled or not.
-             * If disabled, regional or overridden endpoint will be used instead.
-             * If a request requires endpoint discovery but you disabled it. The request will never succeed.
-             * A boolean value is either true of false, use Optional here to have an instance does not contain a value,
-             * such that SDK will decide the default behavior as stated before, if no value specified.
-             *
-             * Deprecated in API v. 1.10. Please set in service-specific client configuration.
-             */
-            Aws::Crt::Optional<bool> enableEndpointDiscovery;
 
             /**
              * Enable http client (WinHTTP or CURL) traces.
@@ -402,13 +390,6 @@ namespace Aws
              * profileName in config file that will be used by this object to resolve more configurations.
              */
             Aws::String profileName;
-
-            /**
-             * Request compression configuration
-             * To use this feature, the service needs to provide the support, and the compression
-             * algorithms needs to be available at SDK build time.
-             */
-            Aws::Client::RequestCompressionConfig requestCompressionConfig;
 
             /**
              * Disable all internal IMDS Calls
@@ -439,22 +420,6 @@ namespace Aws
              * more information on environment variables and shared config settings.
              */
             Aws::String appId;
-
-            struct {
-              /**
-               * Setting on whether to calculate a checksum for a payload only when it is required.
-               * i.e. when setting WHEN_REQUIRED the SDK will NOT calculate a checksum for an endpoint
-               * where it is supported but is NOT required.
-               */
-              RequestChecksumCalculation requestChecksumCalculation = RequestChecksumCalculation::WHEN_SUPPORTED;
-
-              /**
-               * Setting on whether to client side response validate a content body that had a checksum
-               * associated with it. Response validation right now cannot be modeled as required but rely
-               * on an associated model configuration.
-               */
-              ResponseChecksumValidation responseChecksumValidation = ResponseChecksumValidation::WHEN_SUPPORTED;
-            } checksumConfig;
 
             /**
              * A helper function to read config value from env variable or aws profile config
@@ -502,27 +467,6 @@ namespace Aws
               bool revokeBestEffort = false;
             } curlOptions;
 
-          /**
-            * The AWS account ID. Used for account-based endpoint routing. An AWS account ID has a format like 111122223333.
-            * Account-based endpoint routing provides better request performance for some services.
-            *
-            * https://docs.aws.amazon.com/sdkref/latest/guide/feature-account-endpoints.html
-            */
-          Aws::String accountId;
-
-          /**
-           * This setting is used to turn off account-based endpoint routing if necessary, and bypass account-based rules.
-           * Can be the case sensitive string values "required", "disabled", or "preferred". Defaults to "preferred".
-           *
-           * https://docs.aws.amazon.com/sdkref/latest/guide/feature-account-endpoints.html
-           */
-          Aws::String accountIdEndpointMode = "preferred";
-
-          /**
-           * Control HTTP client chunking implementation mode.
-           * Default is set automatically: CLIENT_IMPLEMENTATION for custom clients, DEFAULT for AWS clients.
-           */
-          HttpClientChunkedMode httpClientChunkedMode = HttpClientChunkedMode::CLIENT_IMPLEMENTATION;
           /**
           * Configuration structure for credential providers in the AWS SDK.
           * This structure allows passing configuration options to credential providers
@@ -631,24 +575,18 @@ namespace Aws
            * First available auth scheme will be used for each operation.
            */
           Aws::Vector<Aws::String> authPreferences;
-
-          /**
-           * List of AWS regions for SigV4a multi-region signing.
-           */
-          Aws::Vector<Aws::String> sigV4aSigningRegionSet;
-
-          /**
-           * Buffer size in bytes that will be used to content encode
-           * bodies using aws-chunked. Changing this is useful when you
-           * want to minimize memory use while uploading to S3. Size MUST
-           * be greater than 8KB otherwise S3 will reject the request.
-           *
-           * Defaults to 64KiB.
-           *
-           * https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-streaming.html
-           */
-          size_t awsChunkedBufferSize = 64UL * 1024;
         };
+
+        /*
+         * Loaders for service-specific options. A service's generated configuration declares the options its
+         * model and endpoint rules support and calls these to load them from the environment and profile.
+         */
+        AWS_CORE_API bool LoadUseFIPSFromEnvOrProfile(const Aws::String& profileName);
+        AWS_CORE_API bool LoadUseDualStackFromEnvOrProfile(const Aws::String& profileName);
+        AWS_CORE_API Aws::String LoadAccountIdEndpointModeFromEnvOrProfile(const Aws::String& profileName);
+        AWS_CORE_API RequestCompressionConfig LoadRequestCompressionConfigFromEnvOrProfile(const Aws::String& profileName);
+        AWS_CORE_API ChecksumConfig LoadChecksumConfigFromEnvOrProfile(const Aws::String& profileName);
+        AWS_CORE_API Aws::Vector<Aws::String> LoadSigV4aSigningRegionSetFromEnvOrProfile(const Aws::String& profileName);
 
         /**
          * A helper function to initialize a retry strategy.

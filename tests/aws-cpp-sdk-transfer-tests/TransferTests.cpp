@@ -141,7 +141,7 @@ class ScopedTestFile
 class MockS3Client : public S3Client
 {
 public:
-    MockS3Client(const Aws::Client::ClientConfiguration& clientConfiguration,
+    MockS3Client(const Aws::S3::S3ClientConfiguration& clientConfiguration,
                  std::shared_ptr<S3EndpointProviderBase> endpointProvider):
         S3Client(clientConfiguration, endpointProvider),
         executor(clientConfiguration.executor), listObjectsV2RequestCount(0)
@@ -665,7 +665,7 @@ protected:
     static void SetUpTestCase()
     {
         // Create a client
-        ClientConfiguration config(ClientConfigurationInitValues{});
+        Aws::S3::S3ClientConfiguration config(ClientConfigurationInitValues{});
         config.scheme = Scheme::HTTP;
         config.connectTimeoutMs = 3000;
         config.requestTimeoutMs = 60000;

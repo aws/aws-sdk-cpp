@@ -88,7 +88,7 @@ namespace
             config.scheme = Scheme::HTTPS;
             config.connectTimeoutMs = 30000;
             config.requestTimeoutMs = 30000;
-            m_client = S3ControlClient(config);
+            m_client = S3ControlClient(S3ControlClientConfiguration(config));
             m_s3Client = createS3Client(config);
             m_httpClient = Aws::Http::CreateHttpClient(config);
 
@@ -132,7 +132,7 @@ namespace
             Aws::String testAccount(Aws::Environment::GetEnv("CATAPULT_TEST_ACCOUNT"));
             if (!testAccount.empty()) {
                 Aws::String testRoleArn("arn:aws:iam::" + testAccount + ":role/IntegrationTest");
-                STS::STSClient stsClient(configuration);
+                STS::STSClient stsClient{STS::STSClientConfiguration(configuration)};
                 STS::Model::AssumeRoleRequest assumeRoleRequest;
                 assumeRoleRequest.SetRoleArn(testRoleArn);
                 assumeRoleRequest.SetRoleSessionName("s3-control-cpp-integ-test");
@@ -142,9 +142,9 @@ namespace
                                                     creds.GetSecretAccessKey(),
                                                     creds.GetSessionToken(),
                                                     creds.GetExpiration());
-                return {awsCredentials, Aws::MakeShared<S3::Endpoint::S3EndpointProvider>(ALLOCATION_TAG), configuration};
+                return {awsCredentials, Aws::MakeShared<S3::Endpoint::S3EndpointProvider>(ALLOCATION_TAG), S3::S3ClientConfiguration(configuration)};
             }
-            return {configuration};
+            return S3::S3Client(S3::S3ClientConfiguration(configuration));
         }
 
         static void TagTestBucket(const Aws::String& bucketName, const S3::S3Client& client) {
@@ -534,11 +534,13 @@ namespace
         EXPECT_EQ(CoreErrors::ENDPOINT_RESOLUTION_FAILURE, (CoreErrors) headBucketOutcome.GetError().GetErrorType());
 
         // Using dualstack
-        ClientConfiguration config;
+        S3::S3ClientConfiguration config;
         config.region = Aws::Region::US_WEST_2;
         config.useDualStack = true;
         S3::S3Client s3ClientInUsWest2UsingDualStack(config);
-        S3ControlClient clientInUsWest2UsingDualStack(config);
+        S3ControlClientConfiguration controlConfig(config);  // copies shared settings only, not S3's options
+        controlConfig.useDualStack = true;
+        S3ControlClient clientInUsWest2UsingDualStack(controlConfig);
         headBucketRequest.SetBucket(accessPointArn);
         headBucketOutcome = s3ClientInUsWest2UsingDualStack.HeadBucket(headBucketRequest);
         AWS_ASSERT_SUCCESS(headBucketOutcome);
@@ -571,7 +573,9 @@ namespace
 
         // Using path style addressing
         config.endpointOverride = "";
-        S3::S3Client s3ClientInUsWest2UsingPathStyleAddressing(config, AWSAuthV4Signer::PayloadSigningPolicy::Never /*signPayloads*/, false /*useVirtualAddressing*/);
+        config.payloadSigningPolicy = AWSAuthV4Signer::PayloadSigningPolicy::Never;
+        config.useVirtualAddressing = false;
+        S3::S3Client s3ClientInUsWest2UsingPathStyleAddressing(config);
         headBucketOutcome = s3ClientInUsWest2UsingPathStyleAddressing.HeadBucket(headBucketRequest);
         ASSERT_FALSE(headBucketOutcome.IsSuccess());
         EXPECT_EQ(CoreErrors::ENDPOINT_RESOLUTION_FAILURE, (CoreErrors) headBucketOutcome.GetError().GetErrorType());
@@ -652,7 +656,7 @@ namespace
         std::shared_ptr<HttpRequest> putRequest = CreateHttpRequest(presignedUrlPut, HttpMethod::HTTP_PUT, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
         DoPresignedUrlTest(accessPointArn, putRequest);
 
-        ClientConfiguration config;
+        S3::S3ClientConfiguration config;
         config.region = Aws::Region::US_EAST_1;
         S3::S3Client s3ClientInUsEast1(config);
         presignedUrlPut = s3ClientInUsEast1.GeneratePresignedUrl(accessPointArn, TEST_OBJECT_KEY, HttpMethod::HTTP_PUT);
@@ -740,7 +744,7 @@ TEST_F(S3ControlTest, TestRemoveHostPrefix)
     mock_client_factory->SetClient(mock_http_client);
     SetHttpClientFactory(mock_client_factory);
 
-    ClientConfiguration config;
+    S3ControlClientConfiguration config;
     config.region = Aws::Region::US_EAST_1;
     auto s3controlClient = S3ControlClient(config);
     Aws::String bucket = "test-ap-bucket--use2-az1--x-s3";
