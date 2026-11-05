@@ -3,20 +3,20 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/core/client/AWSError.h>
+#include <aws/core/monitoring/CoreMetrics.h>
+#include <aws/core/monitoring/DefaultMonitoring.h>
+#include <aws/core/monitoring/MonitoringFactory.h>
+#include <aws/core/monitoring/MonitoringInterface.h>
+#include <aws/core/monitoring/MonitoringManager.h>
+#include <aws/core/net/SimpleUDP.h>
+#include <aws/core/platform/Environment.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/threading/ThreadTask.h>
+#include <aws/core/utils/threading/UnboundedExecutor.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/testing/mocks/aws/client/MockAWSClient.h>
 #include <aws/testing/platform/PlatformTesting.h>
-#include <aws/core/platform/Environment.h>
-#include <aws/core/monitoring/CoreMetrics.h>
-#include <aws/core/monitoring/MonitoringInterface.h>
-#include <aws/core/monitoring/MonitoringFactory.h>
-#include <aws/core/monitoring/MonitoringManager.h>
-#include <aws/core/monitoring/DefaultMonitoring.h>
-#include <aws/core/net/SimpleUDP.h>
-#include <aws/core/utils/threading/DefaultExecutor.h>
-#include <aws/core/utils/threading/ThreadTask.h>
-#include <aws/core/utils/json/JsonSerializer.h>
 
 #if 0
 using namespace Aws::Utils;
@@ -225,7 +225,7 @@ protected:
 
 TEST_F(MonitoringEndToEndTestSuite, TestMockDynamoDbSingleAttemptSucceeded)
 {
-    Threading::DefaultExecutor exec;
+    Threading::UnboundedExecutor exec;
     Threading::Semaphore ev(0, 1);
     Threading::Semaphore sync(0, 1);
     int packetsNum = 2;
@@ -274,7 +274,7 @@ TEST_F(MonitoringEndToEndTestSuite, TestMockDynamoDbSingleAttemptSucceeded)
 
 TEST_F(MonitoringEndToEndTestSuite, TestMockDynamoDbTwoAttemptsFailedThenSucceeded)
 {
-    Threading::DefaultExecutor exec;
+    Threading::UnboundedExecutor exec;
     Threading::Semaphore ev(0, 1);
     Threading::Semaphore sync(0, 1);
     int packetsNum = 3;
@@ -335,7 +335,7 @@ TEST_F(MonitoringEndToEndTestSuite, TestMockDynamoDbTwoAttemptsFailedThenSucceed
 
 TEST_F(MonitoringEndToEndTestSuite, TestMockS3TwoAttemptsFailedThenSucceeded)
 {
-    Threading::DefaultExecutor exec;
+    Threading::UnboundedExecutor exec;
     Threading::Semaphore ev(0, 1);
     Threading::Semaphore sync(0, 1);
     int packetsNum = 3;
@@ -394,7 +394,7 @@ TEST_F(MonitoringEndToEndTestSuite, TestMockS3TwoAttemptsFailedThenSucceeded)
 
 TEST_F(MonitoringEndToEndTestSuite, TestMockS3TwoAttemptsFailedThenFailed)
 {
-    Threading::DefaultExecutor exec;
+    Threading::UnboundedExecutor exec;
     Threading::Semaphore ev(0, 1);
     Threading::Semaphore sync(0, 1);
     int packetsNum = 3;

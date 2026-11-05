@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/utils/threading/PooledThreadExecutor.h>
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 
@@ -55,4 +56,16 @@ TEST_F(PooledThreadExecutorTest, WorkerThreadTheOnlyOwner) {
 
   waitForSignal(taskFinished, "Async task has not finished within 60 seconds!");
   ASSERT_FALSE(pExec);  // (just in case) executor pointer cannot magically resurrect.
+}
+
+TEST_F(PooledThreadExecutorTest, UserAgentName) {
+  PooledThreadExecutor exec(1);
+  EXPECT_STREQ("pooled", exec.GetUserAgentName());
+}
+
+TEST_F(PooledThreadExecutorTest, ClientsDefaultToPooledExecutor) {
+  Aws::Client::ClientConfiguration config;
+  const auto executor = config.configFactories.executorCreateFn();
+  ASSERT_TRUE(executor);
+  EXPECT_STREQ("pooled", executor->GetUserAgentName());
 }

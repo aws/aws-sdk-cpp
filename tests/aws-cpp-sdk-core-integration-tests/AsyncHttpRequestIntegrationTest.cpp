@@ -30,7 +30,7 @@ protected:
     AsyncHttpRequestIntegrationTest()
     {
         InitAPI(m_options);
-        m_executor = Aws::MakeShared<Aws::Utils::Threading::DefaultExecutor>("AsyncHttpRequestIntegrationTest");
+        m_executor = Aws::MakeShared<Aws::Utils::Threading::UnboundedExecutor>("AsyncHttpRequestIntegrationTest");
     }
 
     ~AsyncHttpRequestIntegrationTest()

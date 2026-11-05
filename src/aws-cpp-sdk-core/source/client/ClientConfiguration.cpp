@@ -20,7 +20,9 @@
 #include <aws/crt/Config.h>
 #include <smithy/tracing/NoopTelemetryProvider.h>
 
+#include <algorithm>
 #include <array>
+#include <thread>
 
 namespace Aws
 {
@@ -91,7 +93,10 @@ ClientConfiguration::ProviderFactories ClientConfiguration::ProviderFactories::d
     ProviderFactories factories;
 
     factories.retryStrategyCreateFn = [](){return InitRetryStrategy();};
-    factories.executorCreateFn = [](){return Aws::MakeShared<Aws::Utils::Threading::DefaultExecutor>(CLIENT_CONFIG_TAG);};
+    factories.executorCreateFn = []() {
+      return Aws::MakeShared<Aws::Utils::Threading::PooledThreadExecutor>(CLIENT_CONFIG_TAG,
+                                                                          (std::max)(1u, std::thread::hardware_concurrency()));
+    };
     factories.writeRateLimiterCreateFn = [](){return nullptr;};
     factories.readRateLimiterCreateFn = [](){return nullptr;};
     factories.telemetryProviderCreateFn = [](){return smithy::components::tracing::NoopTelemetryProvider::CreateProvider();};
