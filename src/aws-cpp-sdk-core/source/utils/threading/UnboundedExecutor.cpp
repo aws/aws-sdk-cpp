@@ -4,8 +4,8 @@
  */
 
 #include <aws/core/utils/logging/LogMacros.h>
-#include <aws/core/utils/threading/DefaultExecutor.h>
 #include <aws/core/utils/threading/ThreadTask.h>
+#include <aws/core/utils/threading/UnboundedExecutor.h>
 #include <aws/crt/Optional.h>
 
 #include <cassert>
@@ -14,12 +14,12 @@ namespace Aws {
 namespace Utils {
 namespace Threading {
 
-static const char DEFAULT_EXECUTOR_LOG_TAG[] = "DefaultExecutor";
+static const char UNBOUNDED_EXECUTOR_LOG_TAG[] = "UnboundedExecutor";
 
-class DefaultExecutorTask;
-using DefaultExecutorTaskPair = std::pair<std::thread, DefaultExecutorTask*>;
+class UnboundedExecutorTask;
+using UnboundedExecutorTaskPair = std::pair<std::thread, UnboundedExecutorTask*>;
 
-struct DefaultExecutor::impl {
+struct UnboundedExecutor::impl {
   impl() = default;
   impl(const impl&) = delete;
   impl(impl&&) = delete;
@@ -38,18 +38,18 @@ struct DefaultExecutor::impl {
   std::mutex m_mutex;
   std::condition_variable m_cv;
   State m_state = State::Free;
-  Aws::UnorderedMap<std::thread::id, DefaultExecutorTaskPair> m_tasks;
+  Aws::UnorderedMap<std::thread::id, UnboundedExecutorTaskPair> m_tasks;
 };
 
-class DefaultExecutorTask {
+class UnboundedExecutorTask {
  public:
-  DefaultExecutorTask(std::function<void()>&& task, const std::shared_ptr<DefaultExecutor::impl>& pExecutor)
+  UnboundedExecutorTask(std::function<void()>&& task, const std::shared_ptr<UnboundedExecutor::impl>& pExecutor)
       : m_task(std::move(task)), m_impl(pExecutor) {
     assert(m_task);
   }
-  DefaultExecutorTask(const DefaultExecutorTask&) = delete;
-  DefaultExecutorTask& operator=(const DefaultExecutorTask&) = delete;
-  DefaultExecutorTask(DefaultExecutorTask&&) = default;
+  UnboundedExecutorTask(const UnboundedExecutorTask&) = delete;
+  UnboundedExecutorTask& operator=(const UnboundedExecutorTask&) = delete;
+  UnboundedExecutorTask(UnboundedExecutorTask&&) = default;
 
   /**
    * Detaches the task from the executor
@@ -58,12 +58,12 @@ class DefaultExecutorTask {
   /**
    * Starts task execution on a new thread
    */
-  static DefaultExecutorTaskPair Launch(DefaultExecutorTask* task) {
+  static UnboundedExecutorTaskPair Launch(UnboundedExecutorTask* task) {
     if (!task) {
-      AWS_LOGSTREAM_FATAL(DEFAULT_EXECUTOR_LOG_TAG, "Attempted to launch an empty task");
+      AWS_LOGSTREAM_FATAL(UNBOUNDED_EXECUTOR_LOG_TAG, "Attempted to launch an empty task");
       return {};
     }
-    return {std::thread(&DefaultExecutorTask::Execute, task), task};
+    return {std::thread(&UnboundedExecutorTask::Execute, task), task};
   }
 
  private:
@@ -77,50 +77,50 @@ class DefaultExecutorTask {
   }
 
   std::function<void()> m_task;
-  std::weak_ptr<DefaultExecutor::impl> m_impl;
+  std::weak_ptr<UnboundedExecutor::impl> m_impl;
 };
 
-bool DefaultExecutor::SubmitToThread(std::function<void()>&& fx) {
+bool UnboundedExecutor::SubmitToThread(std::function<void()>&& fx) {
   if (!pImpl) {
-    AWS_LOGSTREAM_ERROR(DEFAULT_EXECUTOR_LOG_TAG, "Unable to submit async task: the executor is shut down!");
+    AWS_LOGSTREAM_ERROR(UNBOUNDED_EXECUTOR_LOG_TAG, "Unable to submit async task: the executor is shut down!");
     return false;
   }
   return pImpl->SubmitToThread(pImpl, std::move(fx));
 }
 
-void DefaultExecutor::WaitUntilStopped() {
+void UnboundedExecutor::WaitUntilStopped() {
   if (pImpl) {
     pImpl->WaitUntilStopped();
   }
 }
 
-bool DefaultExecutor::impl::SubmitToThread(const std::shared_ptr<impl>& spThis, std::function<void()>&& fx) {
+bool UnboundedExecutor::impl::SubmitToThread(const std::shared_ptr<impl>& spThis, std::function<void()>&& fx) {
   // allocate outside critical section
-  auto* task = Aws::New<DefaultExecutorTask>(DEFAULT_EXECUTOR_LOG_TAG, std::move(fx), spThis);
+  auto* task = Aws::New<UnboundedExecutorTask>(UNBOUNDED_EXECUTOR_LOG_TAG, std::move(fx), spThis);
   if (!task) {
-    AWS_LOGSTREAM_ERROR(DEFAULT_EXECUTOR_LOG_TAG, "Unable to allocate async task!");
+    AWS_LOGSTREAM_ERROR(UNBOUNDED_EXECUTOR_LOG_TAG, "Unable to allocate async task!");
     return false;
   }
 
   // lock and launch task
   std::unique_lock<std::mutex> lock(m_mutex);
   if (State::Shutdown == m_state) {
-    AWS_LOGSTREAM_ERROR(DEFAULT_EXECUTOR_LOG_TAG, "Unable to submit async task: the executor is shut down!");
+    AWS_LOGSTREAM_ERROR(UNBOUNDED_EXECUTOR_LOG_TAG, "Unable to submit async task: the executor is shut down!");
     Aws::Delete(task);
     return false;
   }
 
-  DefaultExecutorTaskPair taskPair = DefaultExecutorTask::Launch(task);
+  UnboundedExecutorTaskPair taskPair = UnboundedExecutorTask::Launch(task);
   const auto id = taskPair.first.get_id();
   m_tasks.emplace(id, std::move(taskPair));
   m_state = State::Free;
   return true;
 }
 
-void DefaultExecutor::impl::Detach(std::thread::id id) {
+void UnboundedExecutor::impl::Detach(std::thread::id id) {
   std::unique_lock<std::mutex> lock(m_mutex);
   if (State::Shutdown == m_state) {
-    AWS_LOGSTREAM_ERROR(DEFAULT_EXECUTOR_LOG_TAG, "Unable to Detach async task: the executor is shut down!");
+    AWS_LOGSTREAM_ERROR(UNBOUNDED_EXECUTOR_LOG_TAG, "Unable to Detach async task: the executor is shut down!");
   }
   auto it = m_tasks.find(id);
   assert(it != m_tasks.end());
@@ -129,7 +129,7 @@ void DefaultExecutor::impl::Detach(std::thread::id id) {
   m_cv.notify_one();
 }
 
-void DefaultExecutor::impl::WaitUntilStopped() {
+void UnboundedExecutor::impl::WaitUntilStopped() {
   std::unique_lock<std::mutex> lock(m_mutex);
   m_state = State::Shutdown;
 
@@ -149,34 +149,34 @@ void DefaultExecutor::impl::WaitUntilStopped() {
   m_cv.wait(lock, [this]() { return m_tasks.empty(); });
 
   if (toDetach) {
-    AWS_LOGSTREAM_WARN(DEFAULT_EXECUTOR_LOG_TAG, "DefaultExecutor is getting destructed from one of it's worker threads!");
+    AWS_LOGSTREAM_WARN(UNBOUNDED_EXECUTOR_LOG_TAG, "UnboundedExecutor is getting destructed from one of it's worker threads!");
     AWS_LOGSTREAM_FLUSH();  // we are in UB zone and may crash soon.
 
     toDetach->detach();
   }
 }
 
-DefaultExecutor::DefaultExecutor() { pImpl = MakeShared<DefaultExecutor::impl>(DEFAULT_EXECUTOR_LOG_TAG); }
+UnboundedExecutor::UnboundedExecutor() { pImpl = MakeShared<UnboundedExecutor::impl>(UNBOUNDED_EXECUTOR_LOG_TAG); }
 
-DefaultExecutor::DefaultExecutor(const DefaultExecutor& other) {
+UnboundedExecutor::UnboundedExecutor(const UnboundedExecutor& other) {
   AWS_UNREFERENCED_PARAM(other);
-  pImpl = MakeShared<DefaultExecutor::impl>(DEFAULT_EXECUTOR_LOG_TAG);
+  pImpl = MakeShared<UnboundedExecutor::impl>(UNBOUNDED_EXECUTOR_LOG_TAG);
 }
 
-DefaultExecutor& DefaultExecutor::operator=(const DefaultExecutor& other) {
+UnboundedExecutor& UnboundedExecutor::operator=(const UnboundedExecutor& other) {
   if (this != &other) {
     WaitUntilStopped();
-    pImpl = MakeShared<DefaultExecutor::impl>(DEFAULT_EXECUTOR_LOG_TAG);
+    pImpl = MakeShared<UnboundedExecutor::impl>(UNBOUNDED_EXECUTOR_LOG_TAG);
   }
   return *this;
 }
 
-DefaultExecutor::~DefaultExecutor() {
-  DefaultExecutor::WaitUntilStopped();
+UnboundedExecutor::~UnboundedExecutor() {
+  UnboundedExecutor::WaitUntilStopped();
   pImpl.reset();
 }
 
-DefaultExecutor::impl::~impl() {
+UnboundedExecutor::impl::~impl() {
   WaitUntilStopped();
   assert(m_state == State::Shutdown && m_tasks.empty());
 }

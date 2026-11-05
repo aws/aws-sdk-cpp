@@ -39,6 +39,8 @@ class UserAgentInterceptor : public interceptor::Interceptor {
 
   void AddLegacyFeaturesToUserAgent(const Aws::String& valueToAppend) { m_userAgent.AddLegacyFeature(valueToAppend); }
 
+  void SetExecutor(const Aws::Utils::Threading::Executor& executor) { m_userAgent.SetExecutor(executor); }
+
  private:
   Aws::Client::UserAgent m_userAgent;
 };

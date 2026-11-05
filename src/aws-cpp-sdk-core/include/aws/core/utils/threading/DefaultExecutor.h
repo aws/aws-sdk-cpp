@@ -5,40 +5,18 @@
 
 #pragma once
 
-#include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/core/utils/threading/Executor.h>
-
-#include <functional>
+#include <aws/core/utils/threading/UnboundedExecutor.h>
 
 namespace Aws {
 namespace Utils {
 namespace Threading {
+class UnboundedExecutor;
+
 /**
- * Default Executor implementation. Simply spawns a thread and detaches it.
+ * The executor that runs each task on a thread of its own was called DefaultExecutor until it stopped being the
+ * default. The old name still compiles, with a deprecation warning.
  */
-class AWS_CORE_API DefaultExecutor : public Executor {
-  // API contract
- public:
-  DefaultExecutor();
-  DefaultExecutor(const DefaultExecutor& other);
-  DefaultExecutor& operator=(const DefaultExecutor&);
-  DefaultExecutor(DefaultExecutor&& other) = default;
-  DefaultExecutor& operator=(DefaultExecutor&&) = default;
-
-  virtual ~DefaultExecutor();
-
-  void WaitUntilStopped() override;
-
- protected:
-  bool SubmitToThread(std::function<void()>&&) override;
-
-  // implementation details
- public:
-  struct impl;
-
- private:
-  std::shared_ptr<impl> pImpl;
-};
+using DefaultExecutor [[deprecated("Use UnboundedExecutor")]] = UnboundedExecutor;
 }  // namespace Threading
 }  // namespace Utils
 }  // namespace Aws

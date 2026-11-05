@@ -65,7 +65,7 @@ namespace Aws
             std::shared_ptr<Aws::Utils::Threading::Executor> spExecutor = nullptr;
 
             /**
-             * Threading Executor factory method. Default creates a factory that creates DefaultExecutor
+             * Threading Executor factory method. Creates spExecutor when neither transferExecutor nor spExecutor is set.
              */
             std::function<std::shared_ptr<Utils::Threading::Executor>()> executorCreateFn;
 

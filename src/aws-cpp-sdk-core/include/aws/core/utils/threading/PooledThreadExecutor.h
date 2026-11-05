@@ -46,6 +46,8 @@ namespace Aws
                 PooledThreadExecutor(PooledThreadExecutor&&) = delete;
                 PooledThreadExecutor& operator =(PooledThreadExecutor&&) = delete;
 
+                const char* GetUserAgentName() const override { return "pooled"; }
+
                 /**
                 * Call to ensure the threadpool can be safely destroyed. It blocks until all threads finished.
                 */
