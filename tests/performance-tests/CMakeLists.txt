@@ -29,7 +29,6 @@ function(add_service_test SERVICE)
     set_compiler_warnings(${SERVICE_LOWER}-performance-test)
     target_include_directories(${SERVICE_LOWER}-performance-test PRIVATE include)
     target_link_libraries(${SERVICE_LOWER}-performance-test PRIVATE aws-cpp-sdk-core aws-cpp-sdk-${SERVICE_LOWER} cxxopts::cxxopts)
-    set_property(TARGET ${SERVICE_LOWER}-performance-test PROPERTY CXX_STANDARD 20)
     set_property(TARGET ${SERVICE_LOWER}-performance-test PROPERTY COMPILE_OPTIONS "-fexceptions")
 endfunction()
 

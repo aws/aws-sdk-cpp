@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: Apache-2.0.
 #
 
-cmake_minimum_required(VERSION 3.13 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.17 FATAL_ERROR)
 
 option(LEGACY_BUILD "If enabled, the SDK will use 1.11.0 version of CMake files to build" ON)
 if (LEGACY_BUILD)
@@ -16,6 +16,9 @@ if (LEGACY_BUILD)
     if (POLICY CMP0077)
         cmake_policy(SET CMP0077 OLD) # CMP0077: option() honors normal variables. Introduced in 3.13
     endif ()
+    # CMP0091: MSVC runtime library flags are selected by an abstraction. Introduced in 3.15. set_msvc_flags()
+    # picks /MD or /MT by editing CMAKE_CXX_FLAGS, which only works under the old behavior.
+    cmake_policy(SET CMP0091 OLD)
 
     get_filename_component(AWS_NATIVE_SDK_ROOT "${CMAKE_CURRENT_SOURCE_DIR}" ABSOLUTE)
 
@@ -80,7 +83,19 @@ if (LEGACY_BUILD)
     set(AWS_TEST_REGION "US_EAST_1" CACHE STRING "Region to target integration tests against")
     set(AWS_AUTORUN_LD_LIBRARY_PATH CACHE STRING "Path to append into LD_LIBRARY_PATH for unit tests autorun by cmake. Set this if custom runtime libs are required for overridden dependencies.")
     set(BUILD_ONLY "" CACHE STRING "A semi-colon delimited list of the projects to build")
-    set(CPP_STANDARD "11" CACHE STRING "Flag to upgrade the C++ standard used. The default is 11. The minimum is 11.")
+    if (DEFINED CPP_STANDARD)
+        message(FATAL_ERROR "CPP_STANDARD was removed in 1.12. Set CMake's CMAKE_CXX_STANDARD instead, for example -DCMAKE_CXX_STANDARD=20.")
+    endif ()
+    if (NOT DEFINED CMAKE_CXX_STANDARD)
+        set(CMAKE_CXX_STANDARD 17)
+    endif ()
+    set(CMAKE_CXX_STANDARD_REQUIRED ON)
+    if (NOT DEFINED CMAKE_CXX_EXTENSIONS)
+        set(CMAKE_CXX_EXTENSIONS OFF)
+    endif ()
+    if (CMAKE_CXX_STANDARD EQUAL 98 OR CMAKE_CXX_STANDARD LESS 17)
+        message(FATAL_ERROR "The AWS SDK for C++ requires C++17 or later, and CMAKE_CXX_STANDARD is ${CMAKE_CXX_STANDARD}.")
+    endif ()
 
     get_property(is_multi_config GLOBAL PROPERTY GENERATOR_IS_MULTI_CONFIG)
     if (NOT ${is_multi_config})
@@ -364,7 +379,7 @@ if (LEGACY_BUILD)
 else () #  End of Legacy Build
     # -- Preamble --
     message(STATUS "Building with new CMake scripts.")
-    string(CONCAT DESCRIPTION_STRING "The AWS SDK for C++ provides a modern C++ (standard version C++11 or later) "
+    string(CONCAT DESCRIPTION_STRING "The AWS SDK for C++ provides a modern C++ (standard version C++17 or later) "
             "interface for Amazon Web Services (AWS).")
 
     list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
@@ -384,7 +399,7 @@ else () #  End of Legacy Build
 
     # -- Project wide setup --
     # Setting C++ minimum requirements
-    set(CMAKE_CXX_STANDARD 11)
+    set(CMAKE_CXX_STANDARD 17)
     set(CMAKE_CXX_EXTENSIONS OFF)
     set(CMAKE_CXX_STANDARD_REQUIRED ON)
 

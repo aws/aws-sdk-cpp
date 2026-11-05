@@ -1,5 +1,5 @@
 # AWS SDK for C++
-The AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).
+The AWS SDK for C++ provides a modern C++ (version C++17 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).
 
 AWS SDK for C++ is now in General Availability and recommended for production use. We invite our customers to join the development efforts by submitting pull requests and sending us feedback and ideas via GitHub Issues.
 
@@ -15,9 +15,11 @@ AWS SDK for C++ is now in General Availability and recommended for production us
 ## Building the SDK:
 
 ### Minimum Requirements:
-* Visual Studio 2015 or later
-* OR GNU Compiler Collection (GCC) 4.9 or later
-* OR Clang 3.3 or later
+* A compiler with C++17 support
+  * Visual Studio 2017 or later
+  * OR GNU Compiler Collection (GCC) 7.3 or later
+  * OR Clang 5 or later
+* CMake 3.17 or later
 * 4GB of RAM (required for building some of the larger clients; SDK build may fail on EC2 instance types t2.micro, t2.small, and other small instance types due to insufficient memory)
 * Supported platforms
   * Amazon Linux
