@@ -1,0 +1,6 @@
+{
+  "type": "breaking-change",
+  "category": "cmake",
+  "contributor": "sbiscigl",
+  "description": "The CRT HTTP client is now the default transport, with non-blocking async I/O on, and the CRT uses its own crypto instead of the system's OpenSSL. A default build no longer needs libcurl, WinHTTP or OpenSSL. Set USE_CRT_HTTP_CLIENT=OFF to build libcurl or WinHTTP instead, or USE_OPENSSL=ON to use the system's OpenSSL."
+}

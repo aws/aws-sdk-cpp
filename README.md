@@ -52,7 +52,7 @@ AWS SDK for C++ is now in General Availability and recommended for production us
    **_NOTE:_** BUILD_ONLY is an optional flag used to list only the services you are using. Building the whole SDK can take a long time. Also, check out the list of [CMake parameters](./docs/CMake_Parameters.md)
 
 #### Other Dependencies:
-To compile in Linux, you must have the header files for libcurl, libopenssl. The packages are typically available in your package manager.
+A default build sends requests through the CRT, which comes with the SDK, so it doesn't need libcurl or OpenSSL. To build with libcurl instead (`-DUSE_CRT_HTTP_CLIENT=OFF`) on Linux, you must have the header files for libcurl. The packages are typically available in your package manager.
 
 Debian based Linux distributions example:
    `sudo apt-get install libcurl-dev`
