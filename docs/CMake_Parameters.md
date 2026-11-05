@@ -43,8 +43,8 @@ Windows example:
 
 For more information, see the CMake documentation for your platform.
 
-### CPP_STANDARD
-(Defaults to 11) Allows you to specify a custom c++ standard for use with C++ 14 and 17 code-bases
+### CMAKE_CXX_STANDARD
+(Defaults to 17) CMake's standard setting for the C++ standard the SDK builds with. The minimum is 17, and setting anything older fails the build. The SDK's own `CPP_STANDARD` setting was removed in 1.12.
 
 ### ENABLE_UNITY_BUILD
 (Defaults to ON) If enabled, most SDK libraries will be built as a single, generated .cpp file.  This can significantly reduce static library size as well as speed up compilation time.
