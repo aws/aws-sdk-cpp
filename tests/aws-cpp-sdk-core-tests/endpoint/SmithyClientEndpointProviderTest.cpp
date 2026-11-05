@@ -21,6 +21,9 @@ namespace
     {
     };
 
+    // Generated service configurations provide this; test configurations have no service-specific options.
+    Aws::Client::ServiceClientOptions GetServiceClientOptions(const TestClientConfiguration&) { return {}; }
+
     class RecordingEndpointProvider : public Aws::Endpoint::EndpointProviderBase<>
     {
     public:

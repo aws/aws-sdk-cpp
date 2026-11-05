@@ -60,6 +60,8 @@ class AWS_CORE_API UserAgent {
   Aws::String SerializeWithFeatures(const Aws::Set<UserAgentFeature>& features) const;
   void SetApiName(const Aws::String& apiName) { m_api = apiName; }
   void AddLegacyFeature(const Aws::String& legacyFeature);
+  /** Records the account ID endpoint mode for services that support account-based endpoints. */
+  void SetAccountIdEndpointMode(const Aws::String& accountIdEndpointMode);
 
  private:
   const Aws::String m_sdkVersion;

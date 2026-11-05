@@ -28,21 +28,21 @@ namespace Aws
         using namespace Aws::S3::Model;
 
         S3EncryptionClientBase::S3EncryptionClientBase(const std::shared_ptr<EncryptionMaterials>& encryptionMaterials, const Aws::S3Encryption::CryptoConfiguration& cryptoConfig,
-            const Client::ClientConfiguration& clientConfiguration) :
+            const S3ClientConfiguration& clientConfiguration) :
             m_s3Client(Aws::MakeUnique<S3Client>(ALLOCATION_TAG, clientConfiguration)), m_cryptoModuleFactory(), m_encryptionMaterials(encryptionMaterials), m_cryptoConfig(cryptoConfig)
         {
             m_s3Client->AppendToUserAgent("ft/S3CryptoV1n");
         }
 
         S3EncryptionClientBase::S3EncryptionClientBase(const std::shared_ptr<EncryptionMaterials>& encryptionMaterials, const Aws::S3Encryption::CryptoConfiguration& cryptoConfig,
-            const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
+            const Auth::AWSCredentials& credentials, const S3ClientConfiguration& clientConfiguration) :
             m_s3Client(Aws::MakeUnique<S3Client>(ALLOCATION_TAG, credentials, Aws::MakeShared<S3::Endpoint::S3EndpointProvider>(ALLOCATION_TAG), clientConfiguration)), m_cryptoModuleFactory(), m_encryptionMaterials(encryptionMaterials), m_cryptoConfig(cryptoConfig)
         {
             m_s3Client->AppendToUserAgent("ft/S3CryptoV1n");
         }
 
         S3EncryptionClientBase::S3EncryptionClientBase(const std::shared_ptr<EncryptionMaterials>& encryptionMaterials,
-            const Aws::S3Encryption::CryptoConfiguration& cryptoConfig, const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider, const Client::ClientConfiguration& clientConfiguration) :
+            const Aws::S3Encryption::CryptoConfiguration& cryptoConfig, const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider, const S3ClientConfiguration& clientConfiguration) :
             m_s3Client(Aws::MakeUnique<S3Client>(ALLOCATION_TAG, credentialsProvider, Aws::MakeShared<S3::Endpoint::S3EndpointProvider>(ALLOCATION_TAG), clientConfiguration)), m_cryptoModuleFactory(), m_encryptionMaterials(encryptionMaterials), m_cryptoConfig(cryptoConfig)
         {
             m_s3Client->AppendToUserAgent("ft/S3CryptoV1n");

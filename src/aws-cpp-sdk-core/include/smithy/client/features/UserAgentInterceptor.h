@@ -39,6 +39,8 @@ class UserAgentInterceptor : public interceptor::Interceptor {
 
   void AddLegacyFeaturesToUserAgent(const Aws::String& valueToAppend) { m_userAgent.AddLegacyFeature(valueToAppend); }
 
+  void SetAccountIdEndpointMode(const Aws::String& accountIdEndpointMode) { m_userAgent.SetAccountIdEndpointMode(accountIdEndpointMode); }
+
  private:
   Aws::Client::UserAgent m_userAgent;
 };
