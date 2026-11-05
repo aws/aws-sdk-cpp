@@ -94,6 +94,50 @@ public class C2jModelToGeneratorModelTransformerTest {
         assertEquals("application-json", metadata.findFirstSupportedProtocol());
     }
 
+    // A token that cannot appear in a serviceId-derived namespace. If the namespace derivation ever
+    // read a display-name field, this would leak into the generated identifier.
+    private static final String DISPLAY_NAME_SENTINEL = "DisplayNameSentinelZZZ";
+
+    private static C2jServiceModel modelWithIds(String serviceId, String serviceFullName, String serviceAbbreviation) {
+        C2jServiceModel model = new C2jServiceModel();
+        C2jMetadata c2jMetadata = new C2jMetadata();
+        c2jMetadata.setServiceId(serviceId);
+        c2jMetadata.setServiceFullName(serviceFullName);
+        c2jMetadata.setServiceAbbreviation(serviceAbbreviation);
+        c2jMetadata.setEndpointPrefix("endpoint");
+        c2jMetadata.setProtocol("json");
+        c2jMetadata.setApiVersion("2021-01-01");
+        c2jMetadata.setUid(serviceId + "-2021-01-01");
+        model.setMetadata(c2jMetadata);
+        return model;
+    }
+
+    // Guard: the service namespace MUST derive from serviceId only. Swapping the display-name fields
+    // (serviceFullName / serviceAbbreviation) for a sentinel must not change the derived namespace,
+    // nor leak the sentinel into it. serviceId NOT in the identifier table.
+    @Test
+    public void testNamespaceDerivesFromServiceIdOnly_derivedService() {
+        Metadata clean = new C2jModelToGeneratorModelTransformer(
+                modelWithIds("GuardTestService", "AWS Guard Test Service", "GTS"), false).convertMetadata();
+        Metadata sentineled = new C2jModelToGeneratorModelTransformer(
+                modelWithIds("GuardTestService", DISPLAY_NAME_SENTINEL + " Full Name", DISPLAY_NAME_SENTINEL), false).convertMetadata();
+
+        assertEquals("GuardTestService", clean.getNamespace());
+        assertEquals(clean.getNamespace(), sentineled.getNamespace());
+        assertFalse(sentineled.getNamespace().contains(DISPLAY_NAME_SENTINEL));
+    }
+
+    // Same guard for a serviceId that is present in the identifier table (amp -> PrometheusService):
+    // the preserved name must come from the serviceId-keyed table, never from the display-name fields.
+    @Test
+    public void testNamespaceDerivesFromServiceIdOnly_tableService() {
+        Metadata sentineled = new C2jModelToGeneratorModelTransformer(
+                modelWithIds("amp", DISPLAY_NAME_SENTINEL + " Full Name", DISPLAY_NAME_SENTINEL), false).convertMetadata();
+
+        assertEquals("PrometheusService", sentineled.getNamespace());
+        assertFalse(sentineled.getNamespace().contains(DISPLAY_NAME_SENTINEL));
+    }
+
     @Test
     public void testStructureShapeConversion() {
         C2jServiceModel c2jServiceModel = new C2jServiceModel();
