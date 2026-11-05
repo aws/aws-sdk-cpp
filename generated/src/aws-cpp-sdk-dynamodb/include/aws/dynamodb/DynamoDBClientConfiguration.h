@@ -15,25 +15,6 @@ struct AWS_DYNAMODB_API DynamoDBClientConfiguration : public Aws::Client::Generi
   static const bool EndpointDiscoverySupported = true;
   static const bool EndpointDiscoveryRequired = false;
 
-  DynamoDBClientConfiguration(const DynamoDBClientConfiguration& other)
-      : Aws::Client::GenericClientConfiguration(other), enableEndpointDiscovery(BaseClientConfigClass::enableEndpointDiscovery) {}
-
-  DynamoDBClientConfiguration(DynamoDBClientConfiguration&& other) noexcept
-      : Aws::Client::GenericClientConfiguration(std::move(other)),
-        enableEndpointDiscovery(BaseClientConfigClass::enableEndpointDiscovery) {}
-
-  DynamoDBClientConfiguration& operator=(const DynamoDBClientConfiguration& other) {
-    if (this == &other) return *this;
-    Aws::Client::GenericClientConfiguration::operator=(other);
-    return *this;
-  }
-
-  DynamoDBClientConfiguration& operator=(DynamoDBClientConfiguration&& other) noexcept {
-    if (this == &other) return *this;
-    Aws::Client::GenericClientConfiguration::operator=(std::move(other));
-    return *this;
-  }
-
   DynamoDBClientConfiguration(const Aws::Client::ClientConfigurationInitValues& configuration = {});
 
   /**
@@ -53,9 +34,38 @@ struct AWS_DYNAMODB_API DynamoDBClientConfiguration : public Aws::Client::Generi
   DynamoDBClientConfiguration(bool useSmartDefaults, const char* defaultMode = "legacy", bool shouldDisableIMDS = false);
 
   /**
-   * Converting constructors for compatibility with a legacy code
+   * Create a configuration that starts from shared settings (region, timeouts, proxy, retry, ...),
+   * then loads this service's options from the environment and profile.
+   * Explicit, so a client is never built from the shared configuration implicitly.
    */
-  DynamoDBClientConfiguration(const Aws::Client::ClientConfiguration& config);
+  explicit DynamoDBClientConfiguration(const Aws::Client::ClientConfiguration& sharedConfig);
+
+  /**
+   * Use FIPS endpoint in the endpoint calculation. Please check first that the service supports FIPS in a selected region.
+   */
+  bool useFIPS = false;
+
+  /**
+   * Use dual stack endpoint in the endpoint calculation. It is your responsibility to verify that the service supports ipv6 in the region
+   * you select.
+   */
+  bool useDualStack = false;
+
+  /**
+   * The AWS account ID. Used for account-based endpoint routing. An AWS account ID has a format like 111122223333.
+   * Account-based endpoint routing provides better request performance for some services.
+   *
+   * https://docs.aws.amazon.com/sdkref/latest/guide/feature-account-endpoints.html
+   */
+  Aws::String accountId;
+
+  /**
+   * This setting is used to turn off account-based endpoint routing if necessary, and bypass account-based rules.
+   * Can be the case sensitive string values "required", "disabled", or "preferred". Defaults to "preferred".
+   *
+   * https://docs.aws.amazon.com/sdkref/latest/guide/feature-account-endpoints.html
+   */
+  Aws::String accountIdEndpointMode = "preferred";
 
   /**
    * Enable endpoint discovery
@@ -67,10 +77,15 @@ struct AWS_DYNAMODB_API DynamoDBClientConfiguration : public Aws::Client::Generi
    * such that SDK will decide the default behavior as stated before, if no value specified.
    * DynamoDB service client does not require endpoint discovery. The default value for this setting is Disabled.
    */
-  Aws::Crt::Optional<bool>& enableEndpointDiscovery;
+  Aws::Crt::Optional<bool> enableEndpointDiscovery;
 
  private:
   void LoadDynamoDBSpecificConfig(const Aws::String& profileName);
 };
+
+/**
+ * Values of this service's supported options that the client hands to core.
+ */
+AWS_DYNAMODB_API Aws::Client::ServiceClientOptions GetServiceClientOptions(const DynamoDBClientConfiguration& config);
 }  // namespace DynamoDB
 }  // namespace Aws

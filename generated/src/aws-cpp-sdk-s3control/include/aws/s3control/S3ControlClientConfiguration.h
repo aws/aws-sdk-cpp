@@ -33,14 +33,48 @@ struct AWS_S3CONTROL_API S3ControlClientConfiguration : public Aws::Client::Gene
   S3ControlClientConfiguration(bool useSmartDefaults, const char* defaultMode = "legacy", bool shouldDisableIMDS = false);
 
   /**
-   * Converting constructors for compatibility with a legacy code
+   * Create a configuration that starts from shared settings (region, timeouts, proxy, retry, ...),
+   * then loads this service's options from the environment and profile.
+   * Explicit, so a client is never built from the shared configuration implicitly.
    */
-  S3ControlClientConfiguration(const Aws::Client::ClientConfiguration& config);
+  explicit S3ControlClientConfiguration(const Aws::Client::ClientConfiguration& sharedConfig);
+
   bool useArnRegion = false;
   Client::AWSAuthV4Signer::PayloadSigningPolicy payloadSigningPolicy = Client::AWSAuthV4Signer::PayloadSigningPolicy::RequestDependent;
+
+  /**
+   * Use FIPS endpoint in the endpoint calculation. Please check first that the service supports FIPS in a selected region.
+   */
+  bool useFIPS = false;
+
+  /**
+   * Use dual stack endpoint in the endpoint calculation. It is your responsibility to verify that the service supports ipv6 in the region
+   * you select.
+   */
+  bool useDualStack = false;
+
+  /**
+   * The AWS account ID. Used for account-based endpoint routing. An AWS account ID has a format like 111122223333.
+   * Account-based endpoint routing provides better request performance for some services.
+   *
+   * https://docs.aws.amazon.com/sdkref/latest/guide/feature-account-endpoints.html
+   */
+  Aws::String accountId;
+
+  /**
+   * Enable host prefix injection.
+   * For services whose endpoint is injectable. e.g. servicediscovery, you can modify the http host's prefix so as to add "data-" prefix for
+   * DiscoverInstances request. Default to true, enabled. You can disable it for testing purpose.
+   */
+  bool enableHostPrefixInjection = true;
 
  private:
   void LoadS3ControlSpecificConfig(const Aws::String& profileName);
 };
+
+/**
+ * Values of this service's supported options that the client hands to core.
+ */
+AWS_S3CONTROL_API Aws::Client::ServiceClientOptions GetServiceClientOptions(const S3ControlClientConfiguration& config);
 }  // namespace S3Control
 }  // namespace Aws

@@ -34,6 +34,9 @@ bool IsEndpointDiscoveryEnabled(const Aws::String& endpointOverride, const Aws::
 }
 
 void DynamoDBClientConfiguration::LoadDynamoDBSpecificConfig(const Aws::String& inputProfileName) {
+  useFIPS = Aws::Client::LoadUseFIPSFromEnvOrProfile(this->profileName);
+  useDualStack = Aws::Client::LoadUseDualStackFromEnvOrProfile(this->profileName);
+  accountIdEndpointMode = Aws::Client::LoadAccountIdEndpointModeFromEnvOrProfile(this->profileName);
   if (!enableEndpointDiscovery) {
     enableEndpointDiscovery = IsEndpointDiscoveryEnabled(this->endpointOverride, inputProfileName);
   }
@@ -43,24 +46,30 @@ void DynamoDBClientConfiguration::LoadDynamoDBSpecificConfig(const Aws::String& 
 }
 
 DynamoDBClientConfiguration::DynamoDBClientConfiguration(const Aws::Client::ClientConfigurationInitValues& configuration)
-    : BaseClientConfigClass(configuration), enableEndpointDiscovery(ClientConfiguration::enableEndpointDiscovery) {
+    : BaseClientConfigClass(configuration) {
   LoadDynamoDBSpecificConfig(this->profileName);
 }
 
 DynamoDBClientConfiguration::DynamoDBClientConfiguration(const char* inputProfileName, bool shouldDisableIMDS)
-    : BaseClientConfigClass(inputProfileName, shouldDisableIMDS), enableEndpointDiscovery(ClientConfiguration::enableEndpointDiscovery) {
+    : BaseClientConfigClass(inputProfileName, shouldDisableIMDS) {
   LoadDynamoDBSpecificConfig(Aws::String(inputProfileName));
 }
 
 DynamoDBClientConfiguration::DynamoDBClientConfiguration(bool useSmartDefaults, const char* defaultMode, bool shouldDisableIMDS)
-    : BaseClientConfigClass(useSmartDefaults, defaultMode, shouldDisableIMDS),
-      enableEndpointDiscovery(ClientConfiguration::enableEndpointDiscovery) {
+    : BaseClientConfigClass(useSmartDefaults, defaultMode, shouldDisableIMDS) {
   LoadDynamoDBSpecificConfig(this->profileName);
 }
 
-DynamoDBClientConfiguration::DynamoDBClientConfiguration(const Aws::Client::ClientConfiguration& config)
-    : BaseClientConfigClass(config), enableEndpointDiscovery(ClientConfiguration::enableEndpointDiscovery) {
+DynamoDBClientConfiguration::DynamoDBClientConfiguration(const Aws::Client::ClientConfiguration& sharedConfig)
+    : BaseClientConfigClass(sharedConfig) {
   LoadDynamoDBSpecificConfig(this->profileName);
+}
+
+Aws::Client::ServiceClientOptions GetServiceClientOptions(const DynamoDBClientConfiguration& config) {
+  Aws::Client::ServiceClientOptions options;
+  options.accountId = config.accountId;
+  options.accountIdEndpointMode = config.accountIdEndpointMode;
+  return options;
 }
 
 }  // namespace DynamoDB

@@ -62,6 +62,12 @@ void S3BuiltInParameters::SetFromClientConfiguration(const S3ClientConfiguration
 }
 
 void S3BuiltInParameters::SetServiceSpecificParameters(const S3ClientConfiguration& config) {
+  if (config.useFIPS) {
+    SetBooleanParameter("UseFIPS", true);
+  }
+  if (config.useDualStack) {
+    SetBooleanParameter("UseDualStack", true);
+  }
   static const char* AWS_S3_USE_GLOBAL_ENDPOINT = "UseGlobalEndpoint";
   if (config.useUSEast1RegionalEndPointOption == US_EAST_1_REGIONAL_ENDPOINT_OPTION::LEGACY) {
     SetBooleanParameter(AWS_S3_USE_GLOBAL_ENDPOINT, true);

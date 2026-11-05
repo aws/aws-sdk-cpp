@@ -49,6 +49,10 @@ void S3CrtClientConfiguration::LoadS3CrtSpecificConfig(const Aws::String& inputP
   if (useArnRegionCfg == "true") {
     useArnRegion = true;
   }
+  useFIPS = Aws::Client::LoadUseFIPSFromEnvOrProfile(this->profileName);
+  useDualStack = Aws::Client::LoadUseDualStackFromEnvOrProfile(this->profileName);
+  checksumConfig = Aws::Client::LoadChecksumConfigFromEnvOrProfile(this->profileName);
+  sigV4aSigningRegionSet = Aws::Client::LoadSigV4aSigningRegionSetFromEnvOrProfile(this->profileName);
 }
 
 S3CrtClientConfiguration::S3CrtClientConfiguration(const Aws::Client::ClientConfigurationInitValues& configuration)
@@ -66,15 +70,19 @@ S3CrtClientConfiguration::S3CrtClientConfiguration(bool useSmartDefaults, const 
   LoadS3CrtSpecificConfig(this->profileName);
 }
 
-S3CrtClientConfiguration::S3CrtClientConfiguration(const Aws::Client::ClientConfiguration& config,
-                                                   Client::AWSAuthV4Signer::PayloadSigningPolicy iPayloadSigningPolicy,
-                                                   bool iUseVirtualAddressing,
-                                                   US_EAST_1_REGIONAL_ENDPOINT_OPTION iUseUSEast1RegionalEndPointOption)
-    : BaseClientConfigClass(config),
-      useVirtualAddressing(iUseVirtualAddressing),
-      useUSEast1RegionalEndPointOption(iUseUSEast1RegionalEndPointOption),
-      payloadSigningPolicy(iPayloadSigningPolicy) {
+S3CrtClientConfiguration::S3CrtClientConfiguration(const Aws::Client::ClientConfiguration& sharedConfig)
+    : BaseClientConfigClass(sharedConfig) {
   LoadS3CrtSpecificConfig(this->profileName);
+}
+
+Aws::Client::ServiceClientOptions GetServiceClientOptions(const S3CrtClientConfiguration& config) {
+  Aws::Client::ServiceClientOptions options;
+  options.checksumConfig = config.checksumConfig;
+  options.disableExpectHeader = config.disableExpectHeader;
+  options.httpClientChunkedMode = config.httpClientChunkedMode;
+  options.awsChunkedBufferSize = config.awsChunkedBufferSize;
+  options.sigV4aSigningRegionSet = config.sigV4aSigningRegionSet;
+  return options;
 }
 
 /* S3 CRT specifics */
