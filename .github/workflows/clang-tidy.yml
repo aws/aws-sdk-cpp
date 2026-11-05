@@ -19,17 +19,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Check out the PR's own commit rather than the merge with main, so reported line numbers
+      # (and annotations) match the files in the PR.
       - name: Checkout code
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
         with:
+          ref: ${{ github.event.pull_request.head.sha }}
           fetch-depth: 0
           submodules: recursive
           persist-credentials: false
 
       - name: Install dependencies
         run: |
-          sudo apt-get update
-          sudo apt-get install -y clang-tidy cmake libcurl4-openssl-dev libssl-dev python3
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq clang-tidy cmake libcurl4-openssl-dev libssl-dev python3 > /dev/null
 
       # Reports clang-tidy diagnostics only on lines changed by the PR. To run it locally:
       #   python3 tools/scripts/run_clang_tidy.py

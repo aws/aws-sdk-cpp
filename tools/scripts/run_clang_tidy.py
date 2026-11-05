@@ -45,7 +45,10 @@ CHECKED_EXTENSIONS = SOURCE_EXTENSIONS + (".h", ".hh", ".hpp")
 # Hunk header of a -U0 diff, e.g. "@@ -10,0 +11,3 @@": 3 lines added starting at line 11.
 HUNK_HEADER = re.compile(r"^@@ -\S+ \+(\d+)(?:,(\d+))? @@", re.MULTILINE)
 # e.g. "/path/File.cpp:1575:101: error: the parameter 'x' is copied ... [performance-unnecessary-value-param]"
-DIAGNOSTIC_ERROR = re.compile(r"^(.+?):(\d+):(\d+): error: (.+)$")
+DIAGNOSTIC = re.compile(r"^(.+?):(\d+):(\d+): (warning|error|note): (.+)$")
+# clang's summary lines, e.g. "51527 warnings generated." or "Suppressed 12 warnings (12 in non-user code)."
+CLANG_COUNTERS = re.compile(
+    r"^(\d+ (warnings?|errors?)( and \d+ errors?)? generated\.|Suppressed \d+ warnings|Use -header-filter)")
 
 
 def parse_arguments() -> dict:
@@ -74,12 +77,17 @@ def main():
     if not clang_tidy:
         error(f"{args['clang_tidy']} not found; install it (e.g. pip install clang-tidy) or pass --clang_tidy")
         return 1
+    print(clang_tidy_version(clang_tidy))
 
     changed = git("diff", "--name-only", "--diff-filter=d", diff_range, cwd=repo_root).splitlines()
     services = select_services(changed, repo_root)
-    print(f"BUILD_ONLY={';'.join(services)}")
-    with workflow_commands_paused():
-        configure(repo_root, build_dir, services)
+    print(f"Configuring CMake with BUILD_ONLY={';'.join(services)}")
+    configured, cmake_output = configure(repo_root, build_dir, services)
+    if not configured:
+        with workflow_commands_paused():
+            print(cmake_output, end="")
+        error("CMake configure failed; see the output above")
+        return 1
 
     compiled = compiled_files(repo_root, build_dir)
     # Core is always built; if none of its sources map back into the repo, every changed file
@@ -106,8 +114,11 @@ def main():
     tidy_command = [clang_tidy, "-p", build_dir, "--quiet", f"--line-filter={json.dumps(line_filter)}",
                     *macos_sysroot_args(), *(entry["name"] for entry in line_filter)]
     with workflow_commands_paused():
-        returncode, errors = run_clang_tidy(tidy_command, repo_root)
+        returncode, errors, hidden_warnings = run_clang_tidy(tidy_command, repo_root)
+    if hidden_warnings:
+        print(f"{hidden_warnings} warning(s) on changed lines not shown; only errors fail this check.")
     if returncode == 0:
+        print("No errors on changed lines.")
         return 0
     if not errors:
         error(f"clang-tidy exited with {returncode}; see the output above")
@@ -172,12 +183,23 @@ def select_services(changed_files: list, repo_root: str) -> list:
     return sorted(services)
 
 
-def configure(repo_root: str, build_dir: str, services: list):
-    subprocess.run(["cmake", "-S", repo_root, "-B", build_dir,
-                    "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
-                    f"-DBUILD_ONLY={';'.join(services)}",
-                    "-DENABLE_UNITY_BUILD=OFF",
-                    "-DENABLE_TESTING=ON"], check=True)
+def clang_tidy_version(clang_tidy: str) -> str:
+    output = subprocess.run([clang_tidy, "--version"], capture_output=True, text=True).stdout
+    version = next((line.strip() for line in output.splitlines() if "version" in line), "unknown version")
+    return f"Using {clang_tidy} ({version})"
+
+
+def configure(repo_root: str, build_dir: str, services: list) -> tuple:
+    """Configure CMake.
+
+    :return: (whether it succeeded, its combined output, which main() prints only on failure)
+    """
+    result = subprocess.run(["cmake", "-S", repo_root, "-B", build_dir,
+                             "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
+                             f"-DBUILD_ONLY={';'.join(services)}",
+                             "-DENABLE_UNITY_BUILD=OFF",
+                             "-DENABLE_TESTING=ON"], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
+    return result.returncode == 0, result.stdout
 
 
 def compiled_files(repo_root: str, build_dir: str) -> set:
@@ -229,6 +251,7 @@ def workflow_commands_paused():
         yield
     finally:
         if token:
+            print("Resuming workflow commands (GitHub masks the token below):")
             print(f"::{token}::")
 
 
@@ -244,28 +267,43 @@ def annotation_escape(value: str, is_property: bool = False) -> str:
 
 
 def run_clang_tidy(command: list, repo_root: str) -> tuple:
-    """Run clang-tidy, echoing its output as it arrives.
+    """Run clang-tidy, echoing errors (with their code snippets and notes) as they arrive.
 
-    :return: (exit code, list of (path, line, column, message) for each distinct error)
+    Warnings don't fail the check, so they and clang's "N warnings generated" counters are not printed.
+
+    :return: (exit code, list of (path, line, column, message) for each distinct error, number of hidden warnings)
     """
     process = subprocess.Popen(command, cwd=repo_root, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
     real_root = os.path.realpath(repo_root)
     errors = []
+    hidden_warnings = 0
+    showing = True  # whether the current diagnostic (and its snippet and notes) is printed
     for line in process.stdout:
-        print(line, end="")
-        match = DIAGNOSTIC_ERROR.match(line.rstrip("\n"))
-        if not match:
+        text = line.rstrip("\n")
+        if CLANG_COUNTERS.match(text):
             continue
-        path, line_number, column, message = match.groups()
-        # Real diagnostics start with an absolute path into the repo; this skips look-alikes such as
-        # a source line containing "x.cpp:1:1: error: ..." echoed in a code snippet.
-        real_path = os.path.realpath(path)
-        if not os.path.isabs(path) or not real_path.startswith(real_root + os.sep):
-            continue
-        entry = (os.path.relpath(real_path, real_root), line_number, column, message)
-        if entry not in errors:  # a header can be reported once per file that includes it
-            errors.append(entry)
-    return process.wait(), errors
+        match = DIAGNOSTIC.match(text)
+        # Real diagnostics start with an absolute path; snippet lines are indented, so a source line
+        # containing "x.cpp:1:1: error: ..." is never taken for one.
+        if match and os.path.isabs(match[1]):
+            path, line_number, column, level, message = match.groups()
+            if level == "warning":
+                showing = False
+                hidden_warnings += 1
+            elif level == "error":
+                showing = True
+                real_path = os.path.realpath(path)
+                entry = (os.path.relpath(real_path, real_root), line_number, column, message)
+                # Only errors inside the repo become annotations; a header can be reported once per
+                # file that includes it.
+                if real_path.startswith(real_root + os.sep) and entry not in errors:
+                    errors.append(entry)
+            # A note belongs to the diagnostic before it, so it keeps that one's visibility.
+        elif not text.startswith((" ", "\t")):
+            showing = True  # other messages, such as "Error while processing ...", are always shown
+        if showing:
+            print(line, end="")
+    return process.wait(), errors, hidden_warnings
 
 
 if __name__ == "__main__":
