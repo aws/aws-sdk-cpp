@@ -16,17 +16,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Static, checked-in table preserving the C++ SDK service namespaces released before Revision 2
- * of the Service ID SEP (seps/accepted/shared/service-id.md) that diverge from the namespace
- * derived from the service's codegen id ("serviceId" == Smithy sdkId).
+ * Static, checked-in table preserving the C++ SDK service namespaces that diverge from the
+ * namespace derived from the service's {@code "serviceId"} (== Smithy sdkId), so previously
+ * released names stay stable.
  *
  * <p>This loads the SAME shared data file as the C2J generator
  * ({@code tools/code-generation/shared/service-namespace-table.json}), the single source of truth.
- * The file is keyed by the exact, untransformed serviceId per the SEP. Because the Smithy
- * generator queries with a sanitized, lower-cased serviceId, this class builds a lookup index
- * keyed by {@code sanitizeServiceAbbreviation(serviceId).toLowerCase()} (the same normalization
+ * The file is keyed by the exact, untransformed serviceId. Because the Smithy generator queries
+ * with a sanitized, lower-cased serviceId, this class builds a lookup index keyed by
+ * {@code sanitizeServiceAbbreviation(serviceId).toLowerCase()} (the same normalization
  * {@link ServiceNameUtil#getServiceName} applies). The stored values are frozen literals, never
- * derived from a docgen id, endpoint prefix, or model file name.
+ * derived from the display-name fields, endpoint prefix, or model file name.
  */
 public final class ServiceNamespaceTable {
 
