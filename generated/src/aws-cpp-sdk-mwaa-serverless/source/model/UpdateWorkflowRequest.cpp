@@ -47,6 +47,10 @@ Aws::String UpdateWorkflowRequest::SerializePayload() const {
     payload.WithObject("NetworkConfiguration", m_networkConfiguration.Jsonize());
   }
 
+  if (m_environmentHasBeenSet) {
+    payload.WithObject("Environment", m_environment.Jsonize());
+  }
+
   if (m_triggerModeHasBeenSet) {
     payload.WithString("TriggerMode", m_triggerMode);
   }

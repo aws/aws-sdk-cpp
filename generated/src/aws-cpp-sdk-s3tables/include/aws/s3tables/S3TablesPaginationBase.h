@@ -9,6 +9,7 @@
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/s3tables/model/ListNamespacesPaginationTraits.h>
 #include <aws/s3tables/model/ListTableBucketsPaginationTraits.h>
+#include <aws/s3tables/model/ListTableMigrationsPaginationTraits.h>
 #include <aws/s3tables/model/ListTablesPaginationTraits.h>
 
 #include <memory>
@@ -40,6 +41,18 @@ class S3TablesPaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTableBucketsRequest,
                                              Pagination::ListTableBucketsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
+  }
+
+  /**
+   * Create a paginator for ListTableMigrations operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTableMigrationsRequest,
+                                    Pagination::ListTableMigrationsPaginationTraits<DerivedClient>>
+  ListTableMigrationsPaginator(const Model::ListTableMigrationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTableMigrationsRequest,
+                                             Pagination::ListTableMigrationsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
   }
 
   /**

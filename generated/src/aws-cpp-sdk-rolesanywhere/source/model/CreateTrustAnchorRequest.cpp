@@ -27,6 +27,10 @@ Aws::String CreateTrustAnchorRequest::SerializePayload() const {
     payload.WithBool("enabled", m_enabled);
   }
 
+  if (m_crlDpRevocationEnabledHasBeenSet) {
+    payload.WithBool("crlDpRevocationEnabled", m_crlDpRevocationEnabled);
+  }
+
   if (m_tagsHasBeenSet) {
     Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
     for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {

@@ -73,6 +73,23 @@ class DescribeDatasetExportJobResult {
 
   ///@{
   /**
+   * <p>The name of the dataset export job.</p>
+   */
+  inline const Aws::String& GetJobName() const { return m_jobName; }
+  template <typename JobNameT = Aws::String>
+  void SetJobName(JobNameT&& value) {
+    m_jobNameHasBeenSet = true;
+    m_jobName = std::forward<JobNameT>(value);
+  }
+  template <typename JobNameT = Aws::String>
+  DescribeDatasetExportJobResult& WithJobName(JobNameT&& value) {
+    SetJobName(std::forward<JobNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The current status of the dataset export job.</p>
    */
   inline DatasetExportJobStatus GetStatus() const { return m_status; }
@@ -194,6 +211,8 @@ class DescribeDatasetExportJobResult {
 
   Aws::String m_workspaceName;
 
+  Aws::String m_jobName;
+
   DatasetExportJobStatus m_status{DatasetExportJobStatus::NOT_SET};
 
   Aws::Utils::DateTime m_startedAt{};
@@ -210,6 +229,7 @@ class DescribeDatasetExportJobResult {
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_jobIdHasBeenSet = false;
   bool m_workspaceNameHasBeenSet = false;
+  bool m_jobNameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_startedAtHasBeenSet = false;
   bool m_completedAtHasBeenSet = false;

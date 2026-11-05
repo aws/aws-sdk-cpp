@@ -86,6 +86,11 @@ OptionGroup& OptionGroup::operator=(const XmlNode& xmlNode) {
                                  Aws::Utils::DateFormat::ISO_8601);
       m_copyTimestampHasBeenSet = true;
     }
+    XmlNode sourceRegionNode = resultNode.FirstChild("SourceRegion");
+    if (!sourceRegionNode.IsNull()) {
+      m_sourceRegion = Aws::Utils::Xml::DecodeEscapedXmlText(sourceRegionNode.GetText());
+      m_sourceRegionHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -143,6 +148,10 @@ void OptionGroup::OutputToStream(Aws::OStream& oStream, const char* location, un
     oStream << location << index << locationValue
             << ".CopyTimestamp=" << StringUtils::URLEncode(m_copyTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
+
+  if (m_sourceRegionHasBeenSet) {
+    oStream << location << index << locationValue << ".SourceRegion=" << StringUtils::URLEncode(m_sourceRegion.c_str()) << "&";
+  }
 }
 
 void OptionGroup::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -184,6 +193,9 @@ void OptionGroup::OutputToStream(Aws::OStream& oStream, const char* location) co
   if (m_copyTimestampHasBeenSet) {
     oStream << location
             << ".CopyTimestamp=" << StringUtils::URLEncode(m_copyTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if (m_sourceRegionHasBeenSet) {
+    oStream << location << ".SourceRegion=" << StringUtils::URLEncode(m_sourceRegion.c_str()) << "&";
   }
 }
 

@@ -55,6 +55,10 @@ Aws::String CreateWorkflowRequest::SerializePayload() const {
     payload.WithObject("NetworkConfiguration", m_networkConfiguration.Jsonize());
   }
 
+  if (m_environmentHasBeenSet) {
+    payload.WithObject("Environment", m_environment.Jsonize());
+  }
+
   if (m_tagsHasBeenSet) {
     JsonValue tagsJsonMap;
     for (auto& tagsItem : m_tags) {

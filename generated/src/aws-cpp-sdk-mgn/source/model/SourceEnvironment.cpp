@@ -23,6 +23,7 @@ static const int CISCO_ACI_HASH = HashingUtils::HashString("CISCO_ACI");
 static const int LOGICAL_MODEL_HASH = HashingUtils::HashString("LOGICAL_MODEL");
 static const int MODELIZE_IT_HASH = HashingUtils::HashString("MODELIZE_IT");
 static const int AWS_DISCOVERY_COLLECTOR_HASH = HashingUtils::HashString("AWS_DISCOVERY_COLLECTOR");
+static const int MIGRATION_PLANNING_ARTIFACTS_HASH = HashingUtils::HashString("MIGRATION_PLANNING_ARTIFACTS");
 
 SourceEnvironment GetSourceEnvironmentForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -42,6 +43,8 @@ SourceEnvironment GetSourceEnvironmentForName(const Aws::String& name) {
     return SourceEnvironment::MODELIZE_IT;
   } else if (hashCode == AWS_DISCOVERY_COLLECTOR_HASH) {
     return SourceEnvironment::AWS_DISCOVERY_COLLECTOR;
+  } else if (hashCode == MIGRATION_PLANNING_ARTIFACTS_HASH) {
+    return SourceEnvironment::MIGRATION_PLANNING_ARTIFACTS;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -72,6 +75,8 @@ Aws::String GetNameForSourceEnvironment(SourceEnvironment enumValue) {
       return "MODELIZE_IT";
     case SourceEnvironment::AWS_DISCOVERY_COLLECTOR:
       return "AWS_DISCOVERY_COLLECTOR";
+    case SourceEnvironment::MIGRATION_PLANNING_ARTIFACTS:
+      return "MIGRATION_PLANNING_ARTIFACTS";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

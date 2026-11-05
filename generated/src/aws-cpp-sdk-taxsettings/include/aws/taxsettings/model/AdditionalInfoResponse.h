@@ -9,6 +9,7 @@
 #include <aws/taxsettings/model/BrazilAdditionalInfo.h>
 #include <aws/taxsettings/model/CanadaAdditionalInfo.h>
 #include <aws/taxsettings/model/ChileAdditionalInfo.h>
+#include <aws/taxsettings/model/ColombiaAdditionalInfo.h>
 #include <aws/taxsettings/model/EgyptAdditionalInfo.h>
 #include <aws/taxsettings/model/EstoniaAdditionalInfo.h>
 #include <aws/taxsettings/model/FranceAdditionalInfo.h>
@@ -568,6 +569,25 @@ class AdditionalInfoResponse {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Additional tax information associated with your Tax Registration Number (TRN)
+   * in Colombia.</p>
+   */
+  inline const ColombiaAdditionalInfo& GetColombiaAdditionalInfo() const { return m_colombiaAdditionalInfo; }
+  inline bool ColombiaAdditionalInfoHasBeenSet() const { return m_colombiaAdditionalInfoHasBeenSet; }
+  template <typename ColombiaAdditionalInfoT = ColombiaAdditionalInfo>
+  void SetColombiaAdditionalInfo(ColombiaAdditionalInfoT&& value) {
+    m_colombiaAdditionalInfoHasBeenSet = true;
+    m_colombiaAdditionalInfo = std::forward<ColombiaAdditionalInfoT>(value);
+  }
+  template <typename ColombiaAdditionalInfoT = ColombiaAdditionalInfo>
+  AdditionalInfoResponse& WithColombiaAdditionalInfo(ColombiaAdditionalInfoT&& value) {
+    SetColombiaAdditionalInfo(std::forward<ColombiaAdditionalInfoT>(value));
+    return *this;
+  }
+  ///@}
  private:
   MalaysiaAdditionalInfo m_malaysiaAdditionalInfo;
 
@@ -624,6 +644,8 @@ class AdditionalInfoResponse {
   GermanyAdditionalInfo m_germanyAdditionalInfo;
 
   MexicoAdditionalInfo m_mexicoAdditionalInfo;
+
+  ColombiaAdditionalInfo m_colombiaAdditionalInfo;
   bool m_malaysiaAdditionalInfoHasBeenSet = false;
   bool m_israelAdditionalInfoHasBeenSet = false;
   bool m_estoniaAdditionalInfoHasBeenSet = false;
@@ -652,6 +674,7 @@ class AdditionalInfoResponse {
   bool m_monacoAdditionalInfoHasBeenSet = false;
   bool m_germanyAdditionalInfoHasBeenSet = false;
   bool m_mexicoAdditionalInfoHasBeenSet = false;
+  bool m_colombiaAdditionalInfoHasBeenSet = false;
 };
 
 }  // namespace Model

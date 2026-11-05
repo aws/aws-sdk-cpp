@@ -25,5 +25,5 @@ Aws::String XmlEmptyStringsRequest::SerializePayload() const {
     emptyStringNode.SetText(m_emptyString);
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToCompactString();
 }

@@ -23,8 +23,9 @@ namespace Model {
 
 /**
  * <p>The tags to apply to resources when creating or modifying a DB instance or DB
- * cluster. When you specify a tag, you must specify the resource type to tag,
- * otherwise the request will fail.</p><p><h3>See Also:</h3>   <a
+ * cluster, or when copying a DB instance snapshot. When you specify a tag, you
+ * must specify the resource type to tag, otherwise the request will
+ * fail.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/TagSpecification">AWS
  * API Reference</a></p>
  */
@@ -42,7 +43,8 @@ class TagSpecification {
    * <p>The type of resource to tag on creation.</p> <p>Valid Values: </p> <ul> <li>
    * <p> <code>auto-backup</code> - The DB instance's automated backup.</p> </li>
    * <li> <p> <code>cluster-auto-backup</code> - The DB cluster's automated
-   * backup.</p> </li> </ul>
+   * backup.</p> </li> <li> <p> <code>og</code> - The copied option group. Valid only
+   * for <code>CopyDBSnapshot</code>.</p> </li> </ul>
    */
   inline const Aws::String& GetResourceType() const { return m_resourceType; }
   inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }

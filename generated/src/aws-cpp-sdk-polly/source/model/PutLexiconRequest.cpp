@@ -19,5 +19,13 @@ Aws::String PutLexiconRequest::SerializePayload() const {
     payload.WithString("Content", m_content);
   }
 
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("Tags", std::move(tagsJsonMap));
+  }
+
   return payload.View().WriteReadable();
 }

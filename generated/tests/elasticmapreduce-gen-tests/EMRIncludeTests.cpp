@@ -284,6 +284,7 @@
 #include <aws/elasticmapreduce/model/StartSessionResult.h>
 #include <aws/elasticmapreduce/model/Statistic.h>
 #include <aws/elasticmapreduce/model/Step.h>
+#include <aws/elasticmapreduce/model/StepAdditionalInfo.h>
 #include <aws/elasticmapreduce/model/StepCancellationOption.h>
 #include <aws/elasticmapreduce/model/StepConfig.h>
 #include <aws/elasticmapreduce/model/StepDetail.h>

@@ -12,6 +12,7 @@
 #include <aws/taxsettings/model/Sector.h>
 #include <aws/taxsettings/model/TaxDocumentMetadata.h>
 #include <aws/taxsettings/model/TaxRegistrationStatus.h>
+#include <aws/taxsettings/model/TaxRegistrationStatusReason.h>
 #include <aws/taxsettings/model/TaxRegistrationType.h>
 
 #include <utility>
@@ -95,7 +96,9 @@ class TaxRegistrationWithJurisdiction {
   ///@{
   /**
    * <p>The status of your TRN. This can be either <code>Verified</code>,
-   * <code>Pending</code>, <code>Deleted</code>, or <code>Rejected</code>. </p>
+   * <code>Pending</code>, <code>Deleted</code>, or <code>Rejected</code>. If the
+   * status is <code>Rejected</code>, see <code>statusReason</code> for the reason.
+   * </p>
    */
   inline TaxRegistrationStatus GetStatus() const { return m_status; }
   inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
@@ -191,6 +194,25 @@ class TaxRegistrationWithJurisdiction {
 
   ///@{
   /**
+   * <p>The reason that your TRN was rejected. This is returned only when
+   * <code>status</code> is <code>Rejected</code>.</p>
+   */
+  inline const TaxRegistrationStatusReason& GetStatusReason() const { return m_statusReason; }
+  inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
+  template <typename StatusReasonT = TaxRegistrationStatusReason>
+  void SetStatusReason(StatusReasonT&& value) {
+    m_statusReasonHasBeenSet = true;
+    m_statusReason = std::forward<StatusReasonT>(value);
+  }
+  template <typename StatusReasonT = TaxRegistrationStatusReason>
+  TaxRegistrationWithJurisdiction& WithStatusReason(StatusReasonT&& value) {
+    SetStatusReason(std::forward<StatusReasonT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p> The jurisdiction associated with your TRN information. </p>
    */
   inline const Jurisdiction& GetJurisdiction() const { return m_jurisdiction; }
@@ -223,6 +245,8 @@ class TaxRegistrationWithJurisdiction {
 
   AdditionalInfoResponse m_additionalTaxInformation;
 
+  TaxRegistrationStatusReason m_statusReason;
+
   Jurisdiction m_jurisdiction;
   bool m_registrationIdHasBeenSet = false;
   bool m_registrationTypeHasBeenSet = false;
@@ -232,6 +256,7 @@ class TaxRegistrationWithJurisdiction {
   bool m_taxDocumentMetadatasHasBeenSet = false;
   bool m_certifiedEmailIdHasBeenSet = false;
   bool m_additionalTaxInformationHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
   bool m_jurisdictionHasBeenSet = false;
 };
 

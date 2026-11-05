@@ -26,6 +26,10 @@ DaemonVolume& DaemonVolume::operator=(JsonView jsonValue) {
     m_host = jsonValue.GetObject("host");
     m_hostHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("logDriverVolumeConfiguration")) {
+    m_logDriverVolumeConfiguration = jsonValue.GetObject("logDriverVolumeConfiguration");
+    m_logDriverVolumeConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue DaemonVolume::Jsonize() const {
 
   if (m_hostHasBeenSet) {
     payload.WithObject("host", m_host.Jsonize());
+  }
+
+  if (m_logDriverVolumeConfigurationHasBeenSet) {
+    payload.WithObject("logDriverVolumeConfiguration", m_logDriverVolumeConfiguration.Jsonize());
   }
 
   return payload;

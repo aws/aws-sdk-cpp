@@ -18,6 +18,8 @@
 #include <aws/connect-contact-lens/ConnectContactLens_EXPORTS.h>
 #include <aws/connect-contact-lens/internal/ConnectContactLensEndpointRules.h>
 #include <aws/connect-contact-lens/model/Categories.h>
+#include <aws/connect-contact-lens/model/CategoriesAttributeAndCondition.h>
+#include <aws/connect-contact-lens/model/CategoriesAttributeFilter.h>
 #include <aws/connect-contact-lens/model/CategoryDetails.h>
 #include <aws/connect-contact-lens/model/CharacterOffsets.h>
 #include <aws/connect-contact-lens/model/ExtractedInformation.h>
@@ -31,8 +33,11 @@
 #include <aws/connect-contact-lens/model/PostContactSummary.h>
 #include <aws/connect-contact-lens/model/PostContactSummaryFailureCode.h>
 #include <aws/connect-contact-lens/model/PostContactSummaryStatus.h>
+#include <aws/connect-contact-lens/model/RealTimeContactAnalysisSegmentsFilter.h>
 #include <aws/connect-contact-lens/model/RealtimeContactAnalysisSegment.h>
 #include <aws/connect-contact-lens/model/SentimentValue.h>
+#include <aws/connect-contact-lens/model/TagComparisonType.h>
+#include <aws/connect-contact-lens/model/TagCondition.h>
 #include <aws/connect-contact-lens/model/Transcript.h>
 
 using ConnectContactLensIncludeTest = ::testing::Test;

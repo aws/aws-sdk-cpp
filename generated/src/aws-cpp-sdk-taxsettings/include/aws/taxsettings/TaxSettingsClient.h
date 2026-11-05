@@ -151,8 +151,11 @@ class AWS_TAXSETTINGS_API TaxSettingsClient : public Aws::Client::AWSJsonClient,
    * used to add or update tax registrations for up to five accounts in one batch.
    * You can't set a TRN if there's a pending TRN. You'll need to delete the pending
    * TRN first.</p> <p>To call this API operation for specific countries, see the
-   * following country-specific requirements.</p> <p> <b>Bangladesh</b> </p> <ul>
-   * <li> <p>You must specify the tax registration certificate document in the
+   * following country-specific requirements.</p> <p> <b>Argentina</b> </p> <ul> <li>
+   * <p> <code>RegistrationType</code> valid values are <code>CUIT</code> (Clave
+   * Única de Identificación Tributaria) and <code>CDI</code> (Clave de
+   * Identificación).</p> </li> </ul> <p> <b>Bangladesh</b> </p> <ul> <li> <p>You
+   * must specify the tax registration certificate document in the
    * <code>taxRegistrationDocuments</code> field of the
    * <code>VerificationDetails</code> object.</p> </li> </ul> <p> <b>Brazil</b> </p>
    * <ul> <li> <p>You must complete the tax registration process in the <a
@@ -272,8 +275,11 @@ class AWS_TAXSETTINGS_API TaxSettingsClient : public Aws::Client::AWSJsonClient,
    * <code>industries</code> field.</p> </li> <li> <p>For <code>address</code>, you
    * must specify <code>districtOrCounty</code>.</p> </li> </ul> <p> <b>Ukraine</b>
    * </p> <ul> <li> <p>The sector valid values are <code>Business</code> and
-   * <code>Individual</code>.</p> </li> </ul> <p> <b>Philippines</b> </p> <ul> <li>
-   * <p>You can optionally specify the <code>isVatRegistered</code> in the
+   * <code>Individual</code>.</p> </li> </ul> <p> <b>Uruguay</b> </p> <ul> <li> <p>
+   * <code>RegistrationType</code> valid values are <code>RUT</code> (Registro Único
+   * Tributario), <code>NIE</code> (Numero de Identificacion del Extranjero), and
+   * <code>CI</code> (Cedula Identidad).</p> </li> </ul> <p> <b>Philippines</b> </p>
+   * <ul> <li> <p>You can optionally specify the <code>isVatRegistered</code> in the
    * <code>philippinesAdditionalInfo</code> field of the
    * <code>additionalTaxInformation</code> object to indicate your VAT registration
    * status with the Bureau of Internal Revenue (BIR).</p> </li> </ul> <p>
@@ -681,11 +687,14 @@ class AWS_TAXSETTINGS_API TaxSettingsClient : public Aws::Client::AWSJsonClient,
    * <p>Adds or updates tax registration for a single account. You can't set a TRN if
    * there's a pending TRN. You'll need to delete the pending TRN first.</p> <p>To
    * call this API operation for specific countries, see the following
-   * country-specific requirements.</p> <p> <b>Bangladesh</b> </p> <ul> <li> <p>You
-   * must specify the tax registration certificate document in the
-   * <code>taxRegistrationDocuments</code> field of the
-   * <code>VerificationDetails</code> object.</p> </li> </ul> <p> <b>Brazil</b> </p>
-   * <ul> <li> <p>You must complete the tax registration process in the <a
+   * country-specific requirements.</p> <p> <b>Argentina</b> </p> <ul> <li> <p>
+   * <code>RegistrationType</code> valid values are <code>CUIT</code> (Clave Única de
+   * Identificación Tributaria) and <code>CDI</code> (Clave de Identificación).</p>
+   * </li> </ul> <p> <b>Bangladesh</b> </p> <ul> <li> <p>You must specify the tax
+   * registration certificate document in the <code>taxRegistrationDocuments</code>
+   * field of the <code>VerificationDetails</code> object.</p> </li> </ul> <p>
+   * <b>Brazil</b> </p> <ul> <li> <p>You must complete the tax registration process
+   * in the <a
    * href="https://console.aws.amazon.com/billing/home#/paymentpreferences/paymentmethods">Payment
    * preferences</a> page in the Billing and Cost Management console. After your TRN
    * and billing address are verified, you can call this API operation.</p> </li>
@@ -802,8 +811,11 @@ class AWS_TAXSETTINGS_API TaxSettingsClient : public Aws::Client::AWSJsonClient,
    * <code>industries</code> field.</p> </li> <li> <p>For <code>address</code>, you
    * must specify <code>districtOrCounty</code>.</p> </li> </ul> <p> <b>Ukraine</b>
    * </p> <ul> <li> <p>The sector valid values are <code>Business</code> and
-   * <code>Individual</code>.</p> </li> </ul> <p> <b>Philippines</b> </p> <ul> <li>
-   * <p>You can optionally specify the <code>isVatRegistered</code> in the
+   * <code>Individual</code>.</p> </li> </ul> <p> <b>Uruguay</b> </p> <ul> <li> <p>
+   * <code>RegistrationType</code> valid values are <code>RUT</code> (Registro Único
+   * Tributario), <code>NIE</code> (Numero de Identificacion del Extranjero), and
+   * <code>CI</code> (Cedula Identidad).</p> </li> </ul> <p> <b>Philippines</b> </p>
+   * <ul> <li> <p>You can optionally specify the <code>isVatRegistered</code> in the
    * <code>philippinesAdditionalInfo</code> field of the
    * <code>additionalTaxInformation</code> object to indicate your VAT registration
    * status with the Bureau of Internal Revenue (BIR).</p> </li> </ul> <p>

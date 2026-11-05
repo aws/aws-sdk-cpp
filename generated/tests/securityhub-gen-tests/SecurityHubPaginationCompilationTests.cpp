@@ -23,10 +23,12 @@
 #include <aws/securityhub/model/DescribeProductsPaginationTraits.h>
 #include <aws/securityhub/model/GetRemediationsV2PaginationTraits.h>
 #include <aws/securityhub/model/GetFindingsTrendsV2PaginationTraits.h>
+#include <aws/securityhub/model/GetSoftwareV2PaginationTraits.h>
 #include <aws/securityhub/model/ListConfigurationPoliciesPaginationTraits.h>
 #include <aws/securityhub/model/ListEnabledProductsForImportPaginationTraits.h>
 #include <aws/securityhub/model/GetInsightsPaginationTraits.h>
 #include <aws/securityhub/model/ListStandardsControlAssociationsPaginationTraits.h>
+#include <aws/securityhub/model/GetSoftwareResourcesV2PaginationTraits.h>
 #include <aws/securityhub/model/GetResourcesV2PaginationTraits.h>
 #include <aws/securityhub/model/GetFindingsPaginationTraits.h>
 #include <aws/securityhub/model/ListMembersPaginationTraits.h>

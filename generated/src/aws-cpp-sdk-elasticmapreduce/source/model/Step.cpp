@@ -50,6 +50,10 @@ Step& Step::operator=(JsonView jsonValue) {
     m_encryptionKeyArn = jsonValue.GetString("EncryptionKeyArn");
     m_encryptionKeyArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AdditionalInfo")) {
+    m_additionalInfo = jsonValue.GetObject("AdditionalInfo");
+    m_additionalInfoHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -86,6 +90,10 @@ JsonValue Step::Jsonize() const {
 
   if (m_encryptionKeyArnHasBeenSet) {
     payload.WithString("EncryptionKeyArn", m_encryptionKeyArn);
+  }
+
+  if (m_additionalInfoHasBeenSet) {
+    payload.WithObject("AdditionalInfo", m_additionalInfo.Jsonize());
   }
 
   return payload;

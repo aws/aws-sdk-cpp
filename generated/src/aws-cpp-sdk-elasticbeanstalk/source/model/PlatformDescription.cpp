@@ -124,6 +124,17 @@ PlatformDescription& PlatformDescription::operator=(const XmlNode& xmlNode) {
 
       m_customAmiListHasBeenSet = true;
     }
+    XmlNode defaultAmiListNode = resultNode.FirstChild("DefaultAmiList");
+    if (!defaultAmiListNode.IsNull()) {
+      XmlNode defaultAmiListMember = defaultAmiListNode.FirstChild("member");
+      m_defaultAmiListHasBeenSet = !defaultAmiListMember.IsNull();
+      while (!defaultAmiListMember.IsNull()) {
+        m_defaultAmiList.push_back(defaultAmiListMember);
+        defaultAmiListMember = defaultAmiListMember.NextNode("member");
+      }
+
+      m_defaultAmiListHasBeenSet = true;
+    }
     XmlNode supportedTierListNode = resultNode.FirstChild("SupportedTierList");
     if (!supportedTierListNode.IsNull()) {
       XmlNode supportedTierListMember = supportedTierListNode.FirstChild("member");
@@ -251,6 +262,15 @@ void PlatformDescription::OutputToStream(Aws::OStream& oStream, const char* loca
     }
   }
 
+  if (m_defaultAmiListHasBeenSet) {
+    unsigned defaultAmiListIdx = 1;
+    for (auto& item : m_defaultAmiList) {
+      Aws::StringStream defaultAmiListSs;
+      defaultAmiListSs << location << index << locationValue << ".DefaultAmiList.member." << defaultAmiListIdx++;
+      item.OutputToStream(oStream, defaultAmiListSs.str().c_str());
+    }
+  }
+
   if (m_supportedTierListHasBeenSet) {
     unsigned supportedTierListIdx = 1;
     for (auto& item : m_supportedTierList) {
@@ -347,6 +367,14 @@ void PlatformDescription::OutputToStream(Aws::OStream& oStream, const char* loca
       Aws::StringStream customAmiListSs;
       customAmiListSs << location << ".CustomAmiList.member." << customAmiListIdx++;
       item.OutputToStream(oStream, customAmiListSs.str().c_str());
+    }
+  }
+  if (m_defaultAmiListHasBeenSet) {
+    unsigned defaultAmiListIdx = 1;
+    for (auto& item : m_defaultAmiList) {
+      Aws::StringStream defaultAmiListSs;
+      defaultAmiListSs << location << ".DefaultAmiList.member." << defaultAmiListIdx++;
+      item.OutputToStream(oStream, defaultAmiListSs.str().c_str());
     }
   }
   if (m_supportedTierListHasBeenSet) {

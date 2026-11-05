@@ -126,6 +126,23 @@ class TrustAnchorDetail {
 
   ///@{
   /**
+   * <p>Specifies whether the trust anchor checks certificate revocation status
+   * against CRL distribution points.</p>
+   */
+  inline bool GetCrlDpRevocationEnabled() const { return m_crlDpRevocationEnabled; }
+  inline bool CrlDpRevocationEnabledHasBeenSet() const { return m_crlDpRevocationEnabledHasBeenSet; }
+  inline void SetCrlDpRevocationEnabled(bool value) {
+    m_crlDpRevocationEnabledHasBeenSet = true;
+    m_crlDpRevocationEnabled = value;
+  }
+  inline TrustAnchorDetail& WithCrlDpRevocationEnabled(bool value) {
+    SetCrlDpRevocationEnabled(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The ISO-8601 timestamp when the trust anchor was created. </p>
    */
   inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -194,6 +211,8 @@ class TrustAnchorDetail {
 
   bool m_enabled{false};
 
+  bool m_crlDpRevocationEnabled{false};
+
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::Utils::DateTime m_updatedAt{};
@@ -204,6 +223,7 @@ class TrustAnchorDetail {
   bool m_nameHasBeenSet = false;
   bool m_sourceHasBeenSet = false;
   bool m_enabledHasBeenSet = false;
+  bool m_crlDpRevocationEnabledHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_notificationSettingsHasBeenSet = false;

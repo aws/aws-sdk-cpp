@@ -2740,6 +2740,121 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Returns a list of resources that contain a specific software package. You
+   * identify the package with <code>PackageName</code> and <code>PackageType</code>.
+   * To narrow the results to one version of the package, include
+   * <code>PackageVersion</code>.</p> <p>You can use the <code>Scopes</code>
+   * parameter to define the data boundary for the query. Currently,
+   * <code>Scopes</code> supports <code>AwsOrganizations</code>, which lets you
+   * retrieve resources from your entire organization or from specific organizational
+   * units. Only the delegated administrator account can use <code>Scopes</code>.</p>
+   * <p>You can use the <code>Filters</code> parameter to further refine results
+   * based on resource attributes, such as <code>ResourceType</code> or
+   * <code>Region</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetSoftwareResourcesV2">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetSoftwareResourcesV2Outcome GetSoftwareResourcesV2(const Model::GetSoftwareResourcesV2Request& request) const;
+
+  /**
+   * A Callable wrapper for GetSoftwareResourcesV2 that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetSoftwareResourcesV2RequestT = Model::GetSoftwareResourcesV2Request>
+  Model::GetSoftwareResourcesV2OutcomeCallable GetSoftwareResourcesV2Callable(const GetSoftwareResourcesV2RequestT& request) const {
+    return SubmitCallable(&SecurityHubClient::GetSoftwareResourcesV2, request);
+  }
+
+  /**
+   * An Async wrapper for GetSoftwareResourcesV2 that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetSoftwareResourcesV2RequestT = Model::GetSoftwareResourcesV2Request>
+  void GetSoftwareResourcesV2Async(const GetSoftwareResourcesV2RequestT& request,
+                                   const GetSoftwareResourcesV2ResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityHubClient::GetSoftwareResourcesV2, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves aggregated counts of software packages installed on your resources,
+   * grouped by a field that you specify. For example, you can return the most common
+   * package types or the accounts with the most installed packages.</p> <p>Each
+   * count is the number of package-to-resource pairs that match the grouping value.
+   * A package installed on three resources contributes three to the count.</p>
+   * <p>You can use the <code>Scopes</code> parameter to define the data boundary for
+   * the query. Currently, <code>Scopes</code> supports
+   * <code>AwsOrganizations</code>, which lets you aggregate software from your
+   * entire organization or from specific organizational units. Only the delegated
+   * administrator account can use <code>Scopes</code>.</p> <p>This operation doesn't
+   * paginate. Use <code>MaxStatisticResults</code> to control how many grouping
+   * values are returned.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetSoftwareStatisticsV2">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetSoftwareStatisticsV2Outcome GetSoftwareStatisticsV2(const Model::GetSoftwareStatisticsV2Request& request) const;
+
+  /**
+   * A Callable wrapper for GetSoftwareStatisticsV2 that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetSoftwareStatisticsV2RequestT = Model::GetSoftwareStatisticsV2Request>
+  Model::GetSoftwareStatisticsV2OutcomeCallable GetSoftwareStatisticsV2Callable(const GetSoftwareStatisticsV2RequestT& request) const {
+    return SubmitCallable(&SecurityHubClient::GetSoftwareStatisticsV2, request);
+  }
+
+  /**
+   * An Async wrapper for GetSoftwareStatisticsV2 that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetSoftwareStatisticsV2RequestT = Model::GetSoftwareStatisticsV2Request>
+  void GetSoftwareStatisticsV2Async(const GetSoftwareStatisticsV2RequestT& request,
+                                    const GetSoftwareStatisticsV2ResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecurityHubClient::GetSoftwareStatisticsV2, request, handler, context);
+  }
+
+  /**
+   * <p>Returns a list of software packages installed on your resources. Each result
+   * identifies a package by name, version, and type, and includes the number of
+   * resources that contain that package.</p> <p>You can use the <code>Scopes</code>
+   * parameter to define the data boundary for the query. Currently,
+   * <code>Scopes</code> supports <code>AwsOrganizations</code>, which lets you
+   * retrieve software from your entire organization or from specific organizational
+   * units. Only the delegated administrator account can use <code>Scopes</code>.</p>
+   * <p>You can use the <code>Filters</code> parameter to refine results based on
+   * package and resource attributes. You can use <code>Scopes</code> and
+   * <code>Filters</code> independently or together. When both are provided,
+   * <code>Scopes</code> narrows the data set first, and then <code>Filters</code>
+   * refines results within that scoped data set.</p> <p>To list the resources that
+   * contain a specific package, use <code>GetSoftwareResourcesV2</code>. To get
+   * counts of software grouped by a field, use
+   * <code>GetSoftwareStatisticsV2</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetSoftwareV2">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetSoftwareV2Outcome GetSoftwareV2(const Model::GetSoftwareV2Request& request = {}) const;
+
+  /**
+   * A Callable wrapper for GetSoftwareV2 that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetSoftwareV2RequestT = Model::GetSoftwareV2Request>
+  Model::GetSoftwareV2OutcomeCallable GetSoftwareV2Callable(const GetSoftwareV2RequestT& request = {}) const {
+    return SubmitCallable(&SecurityHubClient::GetSoftwareV2, request);
+  }
+
+  /**
+   * An Async wrapper for GetSoftwareV2 that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetSoftwareV2RequestT = Model::GetSoftwareV2Request>
+  void GetSoftwareV2Async(const GetSoftwareV2ResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                          const GetSoftwareV2RequestT& request = {}) const {
+    return SubmitAsync(&SecurityHubClient::GetSoftwareV2, request, handler, context);
+  }
+
+  /**
    *  <p>We recommend using Organizations instead of Security Hub CSPM
    * invitations to manage your member accounts. For information, see <a
    * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html">Managing

@@ -24,6 +24,7 @@
 #include <aws/dynamodb/model/BatchExecuteStatementResult.h>
 #include <aws/dynamodb/model/BatchGetItemResult.h>
 #include <aws/dynamodb/model/BatchWriteItemResult.h>
+#include <aws/dynamodb/model/CancelBulkOperationResult.h>
 #include <aws/dynamodb/model/CreateBackupResult.h>
 #include <aws/dynamodb/model/CreateGlobalTableResult.h>
 #include <aws/dynamodb/model/CreateTableResult.h>
@@ -32,6 +33,7 @@
 #include <aws/dynamodb/model/DeleteResourcePolicyResult.h>
 #include <aws/dynamodb/model/DeleteTableResult.h>
 #include <aws/dynamodb/model/DescribeBackupResult.h>
+#include <aws/dynamodb/model/DescribeBulkOperationResult.h>
 #include <aws/dynamodb/model/DescribeContinuousBackupsResult.h>
 #include <aws/dynamodb/model/DescribeContributorInsightsResult.h>
 #include <aws/dynamodb/model/DescribeEndpointsRequest.h>
@@ -56,6 +58,8 @@
 #include <aws/dynamodb/model/ImportTableResult.h>
 #include <aws/dynamodb/model/ListBackupsRequest.h>
 #include <aws/dynamodb/model/ListBackupsResult.h>
+#include <aws/dynamodb/model/ListBulkOperationsRequest.h>
+#include <aws/dynamodb/model/ListBulkOperationsResult.h>
 #include <aws/dynamodb/model/ListContributorInsightsRequest.h>
 #include <aws/dynamodb/model/ListContributorInsightsResult.h>
 #include <aws/dynamodb/model/ListExportsRequest.h>
@@ -74,6 +78,7 @@
 #include <aws/dynamodb/model/RestoreTableToPointInTimeResult.h>
 #include <aws/dynamodb/model/ScanResult.h>
 #include <aws/dynamodb/model/SearchVectorsResult.h>
+#include <aws/dynamodb/model/StartBulkPutItemsResult.h>
 #include <aws/dynamodb/model/TransactGetItemsResult.h>
 #include <aws/dynamodb/model/TransactWriteItemsResult.h>
 #include <aws/dynamodb/model/UpdateContinuousBackupsResult.h>
@@ -120,6 +125,7 @@ namespace Model {
 class BatchExecuteStatementRequest;
 class BatchGetItemRequest;
 class BatchWriteItemRequest;
+class CancelBulkOperationRequest;
 class CreateBackupRequest;
 class CreateGlobalTableRequest;
 class CreateTableRequest;
@@ -128,6 +134,7 @@ class DeleteItemRequest;
 class DeleteResourcePolicyRequest;
 class DeleteTableRequest;
 class DescribeBackupRequest;
+class DescribeBulkOperationRequest;
 class DescribeContinuousBackupsRequest;
 class DescribeContributorInsightsRequest;
 class DescribeEndpointsRequest;
@@ -149,6 +156,7 @@ class GetItemRequest;
 class GetResourcePolicyRequest;
 class ImportTableRequest;
 class ListBackupsRequest;
+class ListBulkOperationsRequest;
 class ListContributorInsightsRequest;
 class ListExportsRequest;
 class ListGlobalTablesRequest;
@@ -162,6 +170,7 @@ class RestoreTableFromBackupRequest;
 class RestoreTableToPointInTimeRequest;
 class ScanRequest;
 class SearchVectorsRequest;
+class StartBulkPutItemsRequest;
 class TagResourceRequest;
 class TransactGetItemsRequest;
 class TransactWriteItemsRequest;
@@ -181,6 +190,7 @@ class UpdateTimeToLiveRequest;
 typedef Aws::Utils::Outcome<BatchExecuteStatementResult, DynamoDBError> BatchExecuteStatementOutcome;
 typedef Aws::Utils::Outcome<BatchGetItemResult, DynamoDBError> BatchGetItemOutcome;
 typedef Aws::Utils::Outcome<BatchWriteItemResult, DynamoDBError> BatchWriteItemOutcome;
+typedef Aws::Utils::Outcome<CancelBulkOperationResult, DynamoDBError> CancelBulkOperationOutcome;
 typedef Aws::Utils::Outcome<CreateBackupResult, DynamoDBError> CreateBackupOutcome;
 typedef Aws::Utils::Outcome<CreateGlobalTableResult, DynamoDBError> CreateGlobalTableOutcome;
 typedef Aws::Utils::Outcome<CreateTableResult, DynamoDBError> CreateTableOutcome;
@@ -189,6 +199,7 @@ typedef Aws::Utils::Outcome<DeleteItemResult, DynamoDBError> DeleteItemOutcome;
 typedef Aws::Utils::Outcome<DeleteResourcePolicyResult, DynamoDBError> DeleteResourcePolicyOutcome;
 typedef Aws::Utils::Outcome<DeleteTableResult, DynamoDBError> DeleteTableOutcome;
 typedef Aws::Utils::Outcome<DescribeBackupResult, DynamoDBError> DescribeBackupOutcome;
+typedef Aws::Utils::Outcome<DescribeBulkOperationResult, DynamoDBError> DescribeBulkOperationOutcome;
 typedef Aws::Utils::Outcome<DescribeContinuousBackupsResult, DynamoDBError> DescribeContinuousBackupsOutcome;
 typedef Aws::Utils::Outcome<DescribeContributorInsightsResult, DynamoDBError> DescribeContributorInsightsOutcome;
 typedef Aws::Utils::Outcome<DescribeEndpointsResult, DynamoDBError> DescribeEndpointsOutcome;
@@ -210,6 +221,7 @@ typedef Aws::Utils::Outcome<GetItemResult, DynamoDBError> GetItemOutcome;
 typedef Aws::Utils::Outcome<GetResourcePolicyResult, DynamoDBError> GetResourcePolicyOutcome;
 typedef Aws::Utils::Outcome<ImportTableResult, DynamoDBError> ImportTableOutcome;
 typedef Aws::Utils::Outcome<ListBackupsResult, DynamoDBError> ListBackupsOutcome;
+typedef Aws::Utils::Outcome<ListBulkOperationsResult, DynamoDBError> ListBulkOperationsOutcome;
 typedef Aws::Utils::Outcome<ListContributorInsightsResult, DynamoDBError> ListContributorInsightsOutcome;
 typedef Aws::Utils::Outcome<ListExportsResult, DynamoDBError> ListExportsOutcome;
 typedef Aws::Utils::Outcome<ListGlobalTablesResult, DynamoDBError> ListGlobalTablesOutcome;
@@ -223,6 +235,7 @@ typedef Aws::Utils::Outcome<RestoreTableFromBackupResult, DynamoDBError> Restore
 typedef Aws::Utils::Outcome<RestoreTableToPointInTimeResult, DynamoDBError> RestoreTableToPointInTimeOutcome;
 typedef Aws::Utils::Outcome<ScanResult, DynamoDBError> ScanOutcome;
 typedef Aws::Utils::Outcome<SearchVectorsResult, DynamoDBError> SearchVectorsOutcome;
+typedef Aws::Utils::Outcome<StartBulkPutItemsResult, DynamoDBError> StartBulkPutItemsOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, DynamoDBError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<TransactGetItemsResult, DynamoDBError> TransactGetItemsOutcome;
 typedef Aws::Utils::Outcome<TransactWriteItemsResult, DynamoDBError> TransactWriteItemsOutcome;
@@ -242,6 +255,7 @@ typedef Aws::Utils::Outcome<UpdateTimeToLiveResult, DynamoDBError> UpdateTimeToL
 typedef std::future<BatchExecuteStatementOutcome> BatchExecuteStatementOutcomeCallable;
 typedef std::future<BatchGetItemOutcome> BatchGetItemOutcomeCallable;
 typedef std::future<BatchWriteItemOutcome> BatchWriteItemOutcomeCallable;
+typedef std::future<CancelBulkOperationOutcome> CancelBulkOperationOutcomeCallable;
 typedef std::future<CreateBackupOutcome> CreateBackupOutcomeCallable;
 typedef std::future<CreateGlobalTableOutcome> CreateGlobalTableOutcomeCallable;
 typedef std::future<CreateTableOutcome> CreateTableOutcomeCallable;
@@ -250,6 +264,7 @@ typedef std::future<DeleteItemOutcome> DeleteItemOutcomeCallable;
 typedef std::future<DeleteResourcePolicyOutcome> DeleteResourcePolicyOutcomeCallable;
 typedef std::future<DeleteTableOutcome> DeleteTableOutcomeCallable;
 typedef std::future<DescribeBackupOutcome> DescribeBackupOutcomeCallable;
+typedef std::future<DescribeBulkOperationOutcome> DescribeBulkOperationOutcomeCallable;
 typedef std::future<DescribeContinuousBackupsOutcome> DescribeContinuousBackupsOutcomeCallable;
 typedef std::future<DescribeContributorInsightsOutcome> DescribeContributorInsightsOutcomeCallable;
 typedef std::future<DescribeEndpointsOutcome> DescribeEndpointsOutcomeCallable;
@@ -271,6 +286,7 @@ typedef std::future<GetItemOutcome> GetItemOutcomeCallable;
 typedef std::future<GetResourcePolicyOutcome> GetResourcePolicyOutcomeCallable;
 typedef std::future<ImportTableOutcome> ImportTableOutcomeCallable;
 typedef std::future<ListBackupsOutcome> ListBackupsOutcomeCallable;
+typedef std::future<ListBulkOperationsOutcome> ListBulkOperationsOutcomeCallable;
 typedef std::future<ListContributorInsightsOutcome> ListContributorInsightsOutcomeCallable;
 typedef std::future<ListExportsOutcome> ListExportsOutcomeCallable;
 typedef std::future<ListGlobalTablesOutcome> ListGlobalTablesOutcomeCallable;
@@ -284,6 +300,7 @@ typedef std::future<RestoreTableFromBackupOutcome> RestoreTableFromBackupOutcome
 typedef std::future<RestoreTableToPointInTimeOutcome> RestoreTableToPointInTimeOutcomeCallable;
 typedef std::future<ScanOutcome> ScanOutcomeCallable;
 typedef std::future<SearchVectorsOutcome> SearchVectorsOutcomeCallable;
+typedef std::future<StartBulkPutItemsOutcome> StartBulkPutItemsOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<TransactGetItemsOutcome> TransactGetItemsOutcomeCallable;
 typedef std::future<TransactWriteItemsOutcome> TransactWriteItemsOutcomeCallable;
@@ -312,6 +329,9 @@ typedef std::function<void(const DynamoDBClient*, const Model::BatchGetItemReque
 typedef std::function<void(const DynamoDBClient*, const Model::BatchWriteItemRequest&, const Model::BatchWriteItemOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     BatchWriteItemResponseReceivedHandler;
+typedef std::function<void(const DynamoDBClient*, const Model::CancelBulkOperationRequest&, const Model::CancelBulkOperationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CancelBulkOperationResponseReceivedHandler;
 typedef std::function<void(const DynamoDBClient*, const Model::CreateBackupRequest&, const Model::CreateBackupOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateBackupResponseReceivedHandler;
@@ -336,6 +356,9 @@ typedef std::function<void(const DynamoDBClient*, const Model::DeleteTableReques
 typedef std::function<void(const DynamoDBClient*, const Model::DescribeBackupRequest&, const Model::DescribeBackupOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeBackupResponseReceivedHandler;
+typedef std::function<void(const DynamoDBClient*, const Model::DescribeBulkOperationRequest&, const Model::DescribeBulkOperationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeBulkOperationResponseReceivedHandler;
 typedef std::function<void(const DynamoDBClient*, const Model::DescribeContinuousBackupsRequest&,
                            const Model::DescribeContinuousBackupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeContinuousBackupsResponseReceivedHandler;
@@ -403,6 +426,9 @@ typedef std::function<void(const DynamoDBClient*, const Model::ImportTableReques
 typedef std::function<void(const DynamoDBClient*, const Model::ListBackupsRequest&, const Model::ListBackupsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListBackupsResponseReceivedHandler;
+typedef std::function<void(const DynamoDBClient*, const Model::ListBulkOperationsRequest&, const Model::ListBulkOperationsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListBulkOperationsResponseReceivedHandler;
 typedef std::function<void(const DynamoDBClient*, const Model::ListContributorInsightsRequest&,
                            const Model::ListContributorInsightsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListContributorInsightsResponseReceivedHandler;
@@ -442,6 +468,9 @@ typedef std::function<void(const DynamoDBClient*, const Model::ScanRequest&, con
 typedef std::function<void(const DynamoDBClient*, const Model::SearchVectorsRequest&, const Model::SearchVectorsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     SearchVectorsResponseReceivedHandler;
+typedef std::function<void(const DynamoDBClient*, const Model::StartBulkPutItemsRequest&, const Model::StartBulkPutItemsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StartBulkPutItemsResponseReceivedHandler;
 typedef std::function<void(const DynamoDBClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     TagResourceResponseReceivedHandler;
