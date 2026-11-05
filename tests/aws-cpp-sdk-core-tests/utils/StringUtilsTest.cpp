@@ -9,6 +9,12 @@
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <climits>
+#include <clocale>
+#include <cmath>
+#include <cstdlib>
+#include <limits>
+#include <locale>
+#include <string>
 
 using namespace Aws::Utils;
 
@@ -601,10 +607,9 @@ TEST_F(StringUtilsTest, TestParseInt64)
     ASSERT_FALSE(StringUtils::ParseInt64("1-2").has_value());
     ASSERT_FALSE(StringUtils::ParseInt64("42 ").has_value());
 
-    // Out-of-range values saturate, matching ConvertToInt64.
-    ASSERT_EQ(LLONG_MAX, StringUtils::ParseInt64("9223372036854775808").value());
-    ASSERT_EQ(LLONG_MIN, StringUtils::ParseInt64("-9223372036854775809").value());
-    ASSERT_EQ(LLONG_MAX, StringUtils::ParseInt64("99999999999999999999999999").value());
+    ASSERT_FALSE(StringUtils::ParseInt64("9223372036854775808").has_value());
+    ASSERT_FALSE(StringUtils::ParseInt64("-9223372036854775809").has_value());
+    ASSERT_FALSE(StringUtils::ParseInt64("99999999999999999999999999").has_value());
 }
 
 TEST_F(StringUtilsTest, TestParseDouble)
@@ -622,6 +627,115 @@ TEST_F(StringUtilsTest, TestParseDouble)
     ASSERT_FALSE(StringUtils::ParseDouble("1e").has_value());
     ASSERT_FALSE(StringUtils::ParseDouble("1-2").has_value());
     ASSERT_FALSE(StringUtils::ParseDouble("1.5abc").has_value());
+}
+
+namespace
+{
+class ScopedNumericLocale
+{
+public:
+    explicit ScopedNumericLocale(const char* name)
+        : m_previous(std::setlocale(LC_NUMERIC, nullptr)), m_set(std::setlocale(LC_NUMERIC, name) != nullptr) {}
+    ~ScopedNumericLocale() { std::setlocale(LC_NUMERIC, m_previous.c_str()); }
+    bool IsSet() const { return m_set; }
+
+private:
+    std::string m_previous;
+    bool m_set;
+};
+
+// std::locale throws for a missing locale and exceptions are off, so availability is checked through the C API first.
+class ScopedGlobalLocale
+{
+public:
+    explicit ScopedGlobalLocale(const char* name)
+    {
+        const std::string previous = std::setlocale(LC_ALL, nullptr);
+        const bool available = std::setlocale(LC_ALL, name) != nullptr;
+        std::setlocale(LC_ALL, previous.c_str());
+        if (available)
+        {
+            m_previous = std::locale::global(std::locale(name));
+            m_set = true;
+        }
+    }
+    ~ScopedGlobalLocale()
+    {
+        if (m_set)
+        {
+            std::locale::global(m_previous);
+        }
+    }
+    bool IsSet() const { return m_set; }
+
+private:
+    std::locale m_previous;
+    bool m_set = false;
+};
+}
+
+TEST_F(StringUtilsTest, NumberConversionsIgnoreTheCNumericLocale)
+{
+    ScopedNumericLocale locale("de_DE.UTF-8");
+    if (!locale.IsSet())
+    {
+        GTEST_SKIP() << "de_DE.UTF-8 is not installed";
+    }
+    ASSERT_EQ(',', *std::localeconv()->decimal_point);
+    ASSERT_TRUE(StringUtils::ParseDouble("3.14").has_value());
+    ASSERT_DOUBLE_EQ(3.14, StringUtils::ParseDouble("3.14").value());
+    ASSERT_TRUE(StringUtils::ParseDouble("-1.5e-3").has_value());
+    ASSERT_DOUBLE_EQ(-1.5e-3, StringUtils::ParseDouble("-1.5e-3").value());
+    ASSERT_FALSE(StringUtils::ParseDouble("3,14").has_value());
+    ASSERT_EQ("0.1", StringUtils::FormatRoundTripDouble(0.1));
+    ASSERT_EQ("0.1", StringUtils::FormatRoundTripFloat(0.1f));
+}
+
+TEST_F(StringUtilsTest, FormattingIgnoresTheGlobalLocale)
+{
+    ScopedGlobalLocale locale("de_DE.UTF-8");
+    if (!locale.IsSet())
+    {
+        GTEST_SKIP() << "de_DE.UTF-8 is not installed";
+    }
+    ASSERT_EQ("1234567", StringUtils::to_string(1234567));
+    ASSERT_EQ("3.14", StringUtils::FormatRoundTripDouble(3.14));
+    ASSERT_EQ("3.14", StringUtils::FormatRoundTripFloat(3.14f));
+    ASSERT_TRUE(StringUtils::ParseDouble("3.14").has_value());
+    ASSERT_DOUBLE_EQ(3.14, StringUtils::ParseDouble("3.14").value());
+}
+
+TEST_F(StringUtilsTest, TestFormatRoundTripDouble)
+{
+    ASSERT_EQ("0", StringUtils::FormatRoundTripDouble(0.0));
+    ASSERT_EQ("0.1", StringUtils::FormatRoundTripDouble(0.1));
+    ASSERT_EQ("-2.5", StringUtils::FormatRoundTripDouble(-2.5));
+    ASSERT_EQ("3.14", StringUtils::FormatRoundTripDouble(3.14));
+    ASSERT_EQ("2147483647", StringUtils::FormatRoundTripDouble(2147483647.0));
+    // 15 digits would print "0.3", which reparses to a different double.
+    ASSERT_EQ("0.30000000000000004", StringUtils::FormatRoundTripDouble(0.1 + 0.2));
+    ASSERT_EQ("1.7976931348623157e+308", StringUtils::FormatRoundTripDouble((std::numeric_limits<double>::max)()));
+
+    for (const double value : {0.1 + 0.2, 1.0 / 3.0, 123456789.123456789, 5e-324, -(std::numeric_limits<double>::max)()})
+    {
+        ASSERT_EQ(value, StringUtils::ParseDouble(StringUtils::FormatRoundTripDouble(value)).value());
+    }
+}
+
+TEST_F(StringUtilsTest, TestFormatRoundTripFloat)
+{
+    ASSERT_EQ("0", StringUtils::FormatRoundTripFloat(0.0f));
+    ASSERT_EQ("0.1", StringUtils::FormatRoundTripFloat(0.1f));
+    ASSERT_EQ("3.14", StringUtils::FormatRoundTripFloat(3.14f));
+    // 6 digits would print "1.67772e+07" and "1", which reparse to different floats.
+    ASSERT_EQ("16777216", StringUtils::FormatRoundTripFloat(16777216.0f));
+    ASSERT_EQ("1.00000012", StringUtils::FormatRoundTripFloat(std::nextafter(1.0f, 2.0f)));
+    ASSERT_EQ("3.40282347e+38", StringUtils::FormatRoundTripFloat((std::numeric_limits<float>::max)()));
+
+    for (const float value : {1.0f / 3.0f, 123456.789f, (std::numeric_limits<float>::min)(), -(std::numeric_limits<float>::max)()})
+    {
+        ASSERT_EQ(value, std::strtof(StringUtils::FormatRoundTripFloat(value).c_str(), nullptr));
+    }
 }
 
 TEST_F(StringUtilsTest, TestDoubleURLEncoding)

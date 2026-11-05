@@ -21,9 +21,18 @@ using namespace smithy::schema;
 using namespace Aws::Utils;
 using SerializerOutcome = Aws::Utils::Outcome<Aws::String, Aws::Client::AWSError<Aws::Client::CoreErrors>>;
 
-static constexpr int MAX_DEPTH = 500;
-
 namespace {
+
+Aws::String NonFiniteText(double value) {
+  if (std::isnan(value)) {
+    return "NaN";
+  }
+  return value > 0 ? "Infinity" : "-Infinity";
+}
+
+Aws::String FloatText(float value) { return std::isfinite(value) ? StringUtils::FormatRoundTripFloat(value) : NonFiniteText(value); }
+
+Aws::String DoubleText(double value) { return std::isfinite(value) ? StringUtils::FormatRoundTripDouble(value) : NonFiniteText(value); }
 
 void AppendXmlEscaped(Aws::String& buf, const Aws::String& value) {
   const char* data = value.data();
@@ -31,7 +40,7 @@ void AppendXmlEscaped(Aws::String& buf, const Aws::String& value) {
   size_t i = 0;
   while (i < len) {
     size_t start = i;
-    while (i < len && data[i] != '&' && data[i] != '<' && data[i] != '>' && data[i] != '"' && data[i] != '\'') {
+    while (i < len && data[i] != '&' && data[i] != '<' && data[i] != '>' && data[i] != '"' && data[i] != '\'' && data[i] != '\r') {
       i++;
     }
     if (i > start) {
@@ -53,6 +62,10 @@ void AppendXmlEscaped(Aws::String& buf, const Aws::String& value) {
           break;
         case '\'':
           buf += "&apos;";
+          break;
+        case '\r':
+          // Readers turn a literal CR into LF.
+          buf += "&#xD;";
           break;
       }
       i++;
@@ -177,18 +190,8 @@ class XmlShapeSerializer::Impl final : public InterceptingSerializer {
     }
   }
 
-  bool EnterContainer() {
-    if (!m_errorMessage.empty()) {
-      return false;
-    }
-    if (m_depth + 1 > MAX_DEPTH) {
-      m_errorMessage = "Maximum serialization depth exceeded";
-      return false;
-    }
-    ++m_depth;
-    return true;
-  }
-  void ExitContainer() { --m_depth; }
+  bool EnterContainer() { return m_depth.Enter(m_errorMessage); }
+  void ExitContainer() { m_depth.Exit(); }
 
   void ClosePendingTag() {
     if (m_pendingClose) {
@@ -285,7 +288,7 @@ class XmlShapeSerializer::Impl final : public InterceptingSerializer {
 
  private:
   Aws::String m_buf;
-  int m_depth = 0;
+  NestingDepth m_depth;
   bool m_pendingClose = false;
   bool m_finalized = false;
   Aws::String m_errorMessage;
@@ -345,23 +348,11 @@ void XmlShapeSerializer::Impl::ValueSerializer::WriteLong(const Schema&, int64_t
 }
 void XmlShapeSerializer::Impl::ValueSerializer::WriteFloat(const Schema&, float value) {
   m_outer->ClosePendingTag();
-  if (std::isfinite(value)) {
-    m_outer->AppendRaw(StringUtils::to_string(value));
-  } else if (std::isnan(value)) {
-    m_outer->AppendRaw("NaN");
-  } else {
-    m_outer->AppendRaw(value > 0 ? "Infinity" : "-Infinity");
-  }
+  m_outer->AppendRaw(FloatText(value));
 }
 void XmlShapeSerializer::Impl::ValueSerializer::WriteDouble(const Schema&, double value) {
   m_outer->ClosePendingTag();
-  if (std::isfinite(value)) {
-    m_outer->AppendRaw(StringUtils::to_string(value));
-  } else if (std::isnan(value)) {
-    m_outer->AppendRaw("NaN");
-  } else {
-    m_outer->AppendRaw(value > 0 ? "Infinity" : "-Infinity");
-  }
+  m_outer->AppendRaw(DoubleText(value));
 }
 void XmlShapeSerializer::Impl::ValueSerializer::WriteString(const Schema&, const Aws::String& value) {
   m_outer->ClosePendingTag();
@@ -422,10 +413,10 @@ void XmlShapeSerializer::Impl::InlineAttributeSerializer::WriteLong(const Schema
   WriteAttr(schema, StringUtils::to_string(value));
 }
 void XmlShapeSerializer::Impl::InlineAttributeSerializer::WriteFloat(const Schema& schema, float value) {
-  WriteAttr(schema, StringUtils::to_string(value));
+  WriteAttr(schema, FloatText(value));
 }
 void XmlShapeSerializer::Impl::InlineAttributeSerializer::WriteDouble(const Schema& schema, double value) {
-  WriteAttr(schema, StringUtils::to_string(value));
+  WriteAttr(schema, DoubleText(value));
 }
 void XmlShapeSerializer::Impl::InlineAttributeSerializer::WriteString(const Schema& schema, const Aws::String& value) {
   WriteAttr(schema, value);

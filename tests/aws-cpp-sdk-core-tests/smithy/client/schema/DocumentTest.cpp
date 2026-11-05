@@ -14,6 +14,7 @@
 
 #include <limits>
 #include <memory>
+#include <utility>
 
 using namespace smithy::schema;
 
@@ -287,6 +288,32 @@ TEST_F(SchemaDocumentTest, ContentEqualDocumentsCoerceDifferentlyByCodec) {
   EXPECT_FALSE(plainNumber->AsTimestamp().has_value());
   ASSERT_TRUE(jsonNumber->AsTimestamp().has_value());
   EXPECT_EQ(jsonNumber->AsTimestamp()->Seconds(), 1234567890);
+}
+
+TEST_F(SchemaDocumentTest, JsonEpochNumberMatchesLegacyDateTimeDouble) {
+  auto schema = Schema::CreateDocument("smithy.api#Document");
+  // DateTime(double) truncates, so 4307758798.296 (stored just below) reads back as ...295.
+  const Aws::Vector<std::pair<Aws::String, int64_t>> cases = {
+      {"-4307758798.296", -4307758798295}, {"4307758798.296", 4307758798295}, {"1.296", 1296}, {"-1.296", -1296}, {"-0.001", -1}};
+  for (const auto& c : cases) {
+    JsonShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(c.first.data()), c.first.size()));
+    auto doc = d.ReadDocument(*schema);
+    ASSERT_NE(doc, nullptr) << c.first;
+    auto ts = doc->AsTimestamp();
+    ASSERT_TRUE(ts.has_value()) << c.first;
+    EXPECT_EQ(ts->Millis(), c.second) << c.first;
+  }
+}
+
+TEST_F(SchemaDocumentTest, JsonEpochNumberBeyondClockRangeIsAbsent) {
+  auto schema = Schema::CreateDocument("smithy.api#Document");
+  for (const char* wire : {"1e300", "-1e300", "9223372036854775807"}) {
+    const Aws::String json = wire;
+    JsonShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(json.data()), json.size()));
+    auto doc = d.ReadDocument(*schema);
+    ASSERT_NE(doc, nullptr) << wire;
+    EXPECT_FALSE(doc->AsTimestamp().has_value()) << wire;
+  }
 }
 
 TEST_F(SchemaDocumentTest, EqualityIsSymmetricAcrossImplementations) {

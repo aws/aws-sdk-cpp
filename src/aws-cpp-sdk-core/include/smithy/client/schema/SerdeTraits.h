@@ -7,10 +7,13 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/Optional.h>
 #include <smithy/client/schema/Schema.h>
 #include <smithy/client/schema/Trait.h>
 #include <smithy/client/schema/TraitKey.h>
 
+#include <chrono>
+#include <cmath>
 #include <cstdint>
 
 namespace smithy {
@@ -62,6 +65,16 @@ inline Aws::String EpochSecondsText(const Aws::Utils::DateTime& value) {
     out += "." + digits;
   }
   return out;
+}
+
+// Decodes as DateTime(double) does, for parity with legacy clients. Empty where DateTime(double) would overflow.
+inline Aws::Crt::Optional<Aws::Utils::DateTime> EpochSecondsToDateTime(double seconds) {
+  static const double maxSeconds = static_cast<double>(std::chrono::duration_cast<std::chrono::milliseconds>(
+                                       (std::chrono::system_clock::duration::max)()).count()) / 1000.0;
+  if (!std::isfinite(seconds) || std::fabs(seconds) >= maxSeconds) {
+    return {};
+  }
+  return Aws::Utils::DateTime(seconds);
 }
 
 inline Aws::String FormatTimestampText(const Aws::Utils::DateTime& value, TimestampFormatTrait::Format format) {

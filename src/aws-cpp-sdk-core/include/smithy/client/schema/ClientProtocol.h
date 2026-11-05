@@ -28,8 +28,8 @@ class SMITHY_API ClientProtocol {
   virtual SerializerOutcome SerializeRequest(const OperationRequestContext& operation, const Schema& inputSchema,
                                              const SerializableStruct& input) const;
 
-  virtual void DeserializeResponse(const OperationRequestContext& operation, Aws::Crt::ByteCursor data,
-                                   SerializableStruct& output) const;
+  virtual Aws::Crt::Optional<DeserializerError> DeserializeResponse(const OperationRequestContext& operation, Aws::Crt::ByteCursor data,
+                                                                    SerializableStruct& output) const;
 };
 
 class SMITHY_API RestJsonProtocol final : public ClientProtocol {
@@ -95,8 +95,8 @@ class SMITHY_API AwsQueryProtocol final : public ClientProtocol {
   Aws::UniquePtr<ShapeDeserializer> CreateOutputDeserializer(Aws::Crt::ByteCursor data) const override;
   SerializerOutcome SerializeRequest(const OperationRequestContext& operation, const Schema& inputSchema,
                                      const SerializableStruct& input) const override;
-  void DeserializeResponse(const OperationRequestContext& operation, Aws::Crt::ByteCursor data,
-                           SerializableStruct& output) const override;
+  Aws::Crt::Optional<DeserializerError> DeserializeResponse(const OperationRequestContext& operation, Aws::Crt::ByteCursor data,
+                                                            SerializableStruct& output) const override;
 };
 
 class SMITHY_API Ec2QueryProtocol final : public ClientProtocol {

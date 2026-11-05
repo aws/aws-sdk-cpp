@@ -966,6 +966,31 @@ TEST_F(CborShapeSerializerTest, FloatWholeNumberEncodedAsInt) {
   EXPECT_EQ(payload, expected);
 }
 
+TEST_F(CborShapeSerializerTest, NegativeZeroFloatIsEncodedAsIntegerZero) {
+  // CRT encodes any double that converts losslessly to int64 as an integer, so -0.0 loses its sign
+  const Aws::String expected = Aws::String("\xBF\x61\x66", 3) + '\x00' + '\xFF';
+  {
+    CborShapeSerializer s;
+    auto root = Schema::StructureBuilder("Root").Build();
+    auto member = Schema::CreateMember("f", ShapeType::Float);
+    LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteFloat(*member, -0.0f); });
+    s.WriteStruct(*root, rootStruct);
+    auto outcome = s.GetPayload();
+    ASSERT_TRUE(outcome.IsSuccess());
+    EXPECT_EQ(outcome.GetResult(), expected);
+  }
+  {
+    CborShapeSerializer s;
+    auto root = Schema::StructureBuilder("Root").Build();
+    auto member = Schema::CreateMember("f", ShapeType::Double);
+    LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteDouble(*member, -0.0); });
+    s.WriteStruct(*root, rootStruct);
+    auto outcome = s.GetPayload();
+    ASSERT_TRUE(outcome.IsSuccess());
+    EXPECT_EQ(outcome.GetResult(), expected);
+  }
+}
+
 TEST_F(CborShapeSerializerTest, TimestampEpochZero) {
   CborShapeSerializer s;
   auto root = Schema::StructureBuilder("Root").Build();
@@ -1069,4 +1094,20 @@ TEST_F(CborShapeSerializerTest, TimestampIgnoresTimestampFormatTrait) {
   ASSERT_TRUE(aOut.IsSuccess());
   ASSERT_TRUE(bOut.IsSuccess());
   EXPECT_EQ(aOut.GetResult(), bOut.GetResult());  // trait ignored -> identical bytes
+}
+
+TEST_F(CborShapeSerializerTest, NestingAtMaxDepthSucceeds) {
+  CborShapeSerializer s;
+  auto root = Schema::StructureBuilder("Root").Build();
+  WriteNestedStructs(s, *root, MAX_NESTING_DEPTH);
+  EXPECT_TRUE(s.GetPayload().IsSuccess());
+}
+
+TEST_F(CborShapeSerializerTest, NestingPastMaxDepthFails) {
+  CborShapeSerializer s;
+  auto root = Schema::StructureBuilder("Root").Build();
+  WriteNestedStructs(s, *root, MAX_NESTING_DEPTH + 1);
+  auto outcome = s.GetPayload();
+  ASSERT_FALSE(outcome.IsSuccess());
+  EXPECT_NE(outcome.GetError().GetMessage().find("depth"), Aws::String::npos);
 }

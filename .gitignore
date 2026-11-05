@@ -95,3 +95,6 @@ src/aws-cpp-sdk-core/include/aws/core/SDKConfig.h
 
 #temp codegen files
 tools/code-generation/smithy/codegen/cpp-smoke-tests/codegen_output/
+
+# FuzzTest reproducers (run_fuzz.sh)
+tests/fuzz/reproducers/

@@ -89,6 +89,80 @@ TEST_F(QueryShapeSerializerTest, Double) {
   EXPECT_EQ(outcome.GetResult(), "ratio=6.5");
 }
 
+TEST_F(QueryShapeSerializerTest, LargeIntegralDoubleKeepsAllDigits) {
+  QueryShapeSerializer s;
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto member = Schema::CreateMember("big", ShapeType::Double);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteDouble(*member, 2147483647.0); });
+  s.WriteStruct(*root, rootStruct);
+  auto outcome = s.GetPayload();
+  ASSERT_TRUE(outcome.IsSuccess());
+  EXPECT_EQ(outcome.GetResult(), "big=2147483647");
+}
+
+TEST_F(QueryShapeSerializerTest, FloatKeepsRoundTripPrecision) {
+  QueryShapeSerializer s;
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto member = Schema::CreateMember("f", ShapeType::Float);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteFloat(*member, 16777218.0f); });
+  s.WriteStruct(*root, rootStruct);
+  auto outcome = s.GetPayload();
+  ASSERT_TRUE(outcome.IsSuccess());
+  EXPECT_EQ(outcome.GetResult(), "f=16777218");
+}
+
+TEST_F(QueryShapeSerializerTest, FloatIsFormattedAtFloatPrecision) {
+  QueryShapeSerializer s;
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto member = Schema::CreateMember("f", ShapeType::Float);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { ser.WriteFloat(*member, 3.14f); });
+  s.WriteStruct(*root, rootStruct);
+  auto outcome = s.GetPayload();
+  ASSERT_TRUE(outcome.IsSuccess());
+  EXPECT_EQ(outcome.GetResult(), "f=3.14");
+}
+
+namespace {
+Aws::String SerializeFloating(QueryShapeSerializer::Flavor flavor, ShapeType type, double value) {
+  QueryShapeSerializer s(flavor);
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto member = Schema::CreateMember("v", type);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) {
+    if (type == ShapeType::Float) {
+      ser.WriteFloat(*member, static_cast<float>(value));
+    } else {
+      ser.WriteDouble(*member, value);
+    }
+  });
+  s.WriteStruct(*root, rootStruct);
+  auto outcome = s.GetPayload();
+  return outcome.IsSuccess() ? outcome.GetResult() : Aws::String("<error>");
+}
+}  // namespace
+
+TEST_F(QueryShapeSerializerTest, DoubleExponentPlusIsUrlEncoded) {
+  const auto body = SerializeFloating(QueryShapeSerializer::Flavor::AwsQuery, ShapeType::Double, 1e21);
+  EXPECT_EQ(body.find('+'), Aws::String::npos) << body;
+  EXPECT_NE(body.find("%2B"), Aws::String::npos) << body;
+}
+
+TEST_F(QueryShapeSerializerTest, FloatExponentPlusIsUrlEncoded) {
+  const auto body = SerializeFloating(QueryShapeSerializer::Flavor::AwsQuery, ShapeType::Float,
+                                      -static_cast<double>((std::numeric_limits<float>::max)()));
+  EXPECT_EQ(body.find('+'), Aws::String::npos) << body;
+  EXPECT_NE(body.find("%2B"), Aws::String::npos) << body;
+}
+
+TEST_F(QueryShapeSerializerTest, Ec2FloatingPointPlusIsUrlEncoded) {
+  const auto body = SerializeFloating(QueryShapeSerializer::Flavor::Ec2Query, ShapeType::Double, 1e21);
+  EXPECT_EQ(body.find('+'), Aws::String::npos) << body;
+  EXPECT_NE(body.find("%2B"), Aws::String::npos) << body;
+}
+
+TEST_F(QueryShapeSerializerTest, OrdinaryDoubleIsNotAltered) {
+  EXPECT_EQ(SerializeFloating(QueryShapeSerializer::Flavor::AwsQuery, ShapeType::Double, 3.14), "v=3.14");
+}
+
 TEST_F(QueryShapeSerializerTest, NonFiniteFloats) {
   QueryShapeSerializer s;
   auto root = Schema::StructureBuilder("Root").Build();
@@ -148,6 +222,40 @@ TEST_F(QueryShapeSerializerTest, ListOfStrings) {
   auto outcome = s.GetPayload();
   ASSERT_TRUE(outcome.IsSuccess());
   EXPECT_EQ(outcome.GetResult(), "tags.member.1=a&tags.member.2=b&tags.member.3=c");
+}
+
+TEST_F(QueryShapeSerializerTest, EmptyListIsBareKey) {
+  for (const bool flattened : {false, true}) {
+    QueryShapeSerializer s;
+    auto root = Schema::StructureBuilder("Root").Build();
+    auto listMember = flattened ? Schema::CreateMember("tags", ShapeType::List,
+                                                       {{XmlFlattenedTrait::KEY(), Aws::MakeShared<XmlFlattenedTrait>("Schema")}})
+                                : Schema::CreateMember("tags", ShapeType::List);
+    auto other = Schema::CreateMember("name", ShapeType::String);
+    LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) {
+      ser.WriteList(*listMember, 0, [](ShapeSerializer&) {});
+      ser.WriteString(*other, "n");
+    });
+    s.WriteStruct(*root, rootStruct);
+    auto outcome = s.GetPayload();
+    ASSERT_TRUE(outcome.IsSuccess());
+    EXPECT_EQ(outcome.GetResult(), "tags=&name=n") << "flattened=" << flattened;
+  }
+}
+
+TEST_F(QueryShapeSerializerTest, Ec2EmptyListIsOmitted) {
+  QueryShapeSerializer s(QueryShapeSerializer::Flavor::Ec2Query);
+  auto root = Schema::StructureBuilder("Root").Build();
+  auto listMember = Schema::CreateMember("items", ShapeType::List);
+  auto other = Schema::CreateMember("name", ShapeType::String);
+  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) {
+    ser.WriteList(*listMember, 0, [](ShapeSerializer&) {});
+    ser.WriteString(*other, "n");
+  });
+  s.WriteStruct(*root, rootStruct);
+  auto outcome = s.GetPayload();
+  ASSERT_TRUE(outcome.IsSuccess());
+  EXPECT_EQ(outcome.GetResult(), "Name=n");
 }
 
 TEST_F(QueryShapeSerializerTest, FlattenedList) {
@@ -218,21 +326,6 @@ TEST_F(QueryShapeSerializerTest, FlattenedMap) {
   auto outcome = s.GetPayload();
   ASSERT_TRUE(outcome.IsSuccess());
   EXPECT_EQ(outcome.GetResult(), "attr.1.key=k1&attr.1.value=v1");
-}
-
-TEST_F(QueryShapeSerializerTest, MaxDepthEnforcement) {
-  QueryShapeSerializer s;
-  auto root = Schema::StructureBuilder("Root").Build();
-  auto nested = Schema::CreateMember("n", ShapeType::Structure);
-  std::function<void(ShapeSerializer&, int)> nest = [&](ShapeSerializer& ser, int remaining) {
-    if (remaining <= 0) {
-      return;
-    }
-    ser.WriteStruct(*nested, LambdaStruct(*nested, [&, remaining](ShapeSerializer& inner) { nest(inner, remaining - 1); }));
-  };
-  LambdaStruct rootStruct(*root, [&](ShapeSerializer& ser) { nest(ser, 1000); });
-  s.WriteStruct(*root, rootStruct);
-  EXPECT_FALSE(s.GetPayload().IsSuccess());
 }
 
 TEST_F(QueryShapeSerializerTest, Ec2CapitalizesMemberName) {
@@ -339,4 +432,20 @@ TEST_F(QueryShapeSerializerTest, DocumentIsUnsupported) {
   auto outcome = s.GetPayload();
   ASSERT_FALSE(outcome.IsSuccess());
   EXPECT_EQ(outcome.GetError().GetExceptionName(), "SerializationException");
+}
+
+TEST_F(QueryShapeSerializerTest, NestingAtMaxDepthSucceeds) {
+  QueryShapeSerializer s;
+  auto root = Schema::StructureBuilder("Root").Build();
+  WriteNestedStructs(s, *root, MAX_NESTING_DEPTH);
+  EXPECT_TRUE(s.GetPayload().IsSuccess());
+}
+
+TEST_F(QueryShapeSerializerTest, NestingPastMaxDepthFails) {
+  QueryShapeSerializer s;
+  auto root = Schema::StructureBuilder("Root").Build();
+  WriteNestedStructs(s, *root, MAX_NESTING_DEPTH + 1);
+  auto outcome = s.GetPayload();
+  ASSERT_FALSE(outcome.IsSuccess());
+  EXPECT_NE(outcome.GetError().GetMessage().find("depth"), Aws::String::npos);
 }

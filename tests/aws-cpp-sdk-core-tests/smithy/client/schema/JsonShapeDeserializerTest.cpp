@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/crt/Optional.h>
@@ -17,10 +18,12 @@
 #include <smithy/client/schema/SchemaBuilder.h>
 #include <smithy/client/schema/SerdeTraits.h>
 
+#include <chrono>
 #include <cmath>
 #include <functional>
 #include <limits>
 #include <memory>
+#include <utility>
 
 #include "SchemaSerializerTestHelpers.h"
 
@@ -29,6 +32,14 @@ using namespace smithy::schema;
 class JsonShapeDeserializerTest : public Aws::Testing::AwsCppSdkGTestSuite {};
 
 namespace {
+
+Aws::String EpochText(int64_t millis) {
+  const bool negative = millis < 0;
+  const int64_t abs = negative ? -millis : millis;
+  Aws::String frac = Aws::Utils::StringUtils::to_string(abs % 1000);
+  frac.insert(0, 3 - frac.size(), '0');
+  return Aws::String(negative ? "-" : "") + Aws::Utils::StringUtils::to_string(abs / 1000) + "." + frac;
+}
 
 Aws::String Encode(const std::shared_ptr<const Schema>& root, const std::function<void(ShapeSerializer&)>& writeMembers) {
   JsonShapeSerializer s;
@@ -160,6 +171,30 @@ TEST_F(JsonShapeDeserializerTest, TimestampEpochSeconds) {
   d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) { got = de.ReadTimestamp(m); });
   ASSERT_TRUE(got.has_value());
   EXPECT_EQ(got.value().Seconds(), 1234567890);
+}
+
+TEST_F(JsonShapeDeserializerTest, EpochTimestampMatchesLegacyDateTimeDouble) {
+  auto root = Schema::StructureBuilder("Root").PutMember("ts", Schema::CreateTimestamp("T")).Build();
+  auto member = root->GetMember("ts").value();
+  for (const int64_t millis : {int64_t(-4307758798296), int64_t(4307758798296), int64_t(1296), int64_t(-1296), int64_t(1700000000123)}) {
+    auto payload = Encode(root, [&](ShapeSerializer& ser) { ser.WriteTimestamp(*member, Aws::Utils::DateTime(millis)); });
+    JsonShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()));
+    Aws::Crt::Optional<Aws::Utils::DateTime> got;
+    d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) { got = de.ReadTimestamp(m); });
+    ASSERT_TRUE(got.has_value()) << payload;
+    EXPECT_EQ(got.value().Millis(), LegacyEpochMillis(EpochSecondsText(Aws::Utils::DateTime(millis)))) << payload;
+  }
+}
+
+TEST_F(JsonShapeDeserializerTest, EpochTimestampSweepMatchesLegacyDateTimeDouble) {
+  auto schema = Schema::CreateTimestamp("T");
+  for (int64_t millis = -3000; millis <= 3000; ++millis) {
+    const Aws::String wire = EpochText(millis);
+    JsonShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(wire.data()), wire.size()));
+    auto got = d.ReadTimestamp(*schema);
+    ASSERT_TRUE(got.has_value()) << wire;
+    EXPECT_EQ(got.value().Millis(), LegacyEpochMillis(wire)) << wire;
+  }
 }
 
 TEST_F(JsonShapeDeserializerTest, TimestampDateTimeString) {
@@ -308,6 +343,55 @@ TEST_F(JsonShapeDeserializerTest, SkipsUnknownField) {
   });
   ASSERT_EQ(got.size(), 1u);
   EXPECT_EQ(got["known"], 5);
+}
+
+namespace {
+
+std::pair<Aws::String, bool> ReadName(const Aws::String& json) {
+  auto root = Schema::StructureBuilder("Root").PutMember("name", Schema::CreateString("S")).Build();
+  JsonShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(json.data()), json.size()));
+  Aws::String name;
+  d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) {
+    auto v = de.ReadString(m);
+    if (v.has_value()) {
+      name = v.value();
+    }
+  });
+  return {name, d.GetError().has_value()};
+}
+
+}  // namespace
+
+TEST_F(JsonShapeDeserializerTest, SkippedValidValuesAreConsumed) {
+  for (const Aws::String json : {R"({"unknown":{"a":[1,2.5e3,-0,true,false,null,"x\"y"],"b":{}},"name":"bob"})",
+                                 R"({"unknown":1e400,"name":"bob"})", R"({"unknown":[],"name":"bob"})", R"({"unknown" : "\ud83d\ude00" ,"name":"bob"})"}) {
+    const auto result = ReadName(json);
+    EXPECT_FALSE(result.second) << json;
+    EXPECT_EQ(result.first, "bob") << json;
+  }
+}
+
+TEST_F(JsonShapeDeserializerTest, SkippedMalformedValueRecordsError) {
+  for (const Aws::String json : {R"({"unknown":[1 2],"name":"bob"})", R"({"unknown":{"a" 1},"name":"bob"})",
+                                 R"({"unknown":[1},"name":"bob"})", R"({"unknown":[1,],"name":"bob"})",
+                                 R"({"unknown":{"a":1,},"name":"bob"})", R"({"unknown":{1:2},"name":"bob"})",
+                                 R"({"unknown":tru,"name":"bob"})", R"({"unknown":1e,"name":"bob"})", R"({"unknown":-,"name":"bob"})",
+                                 R"({"unknown":[[[)", R"({"name":[1 2]})", R"({"unknown":"\q","name":"bob"})"}) {
+    EXPECT_TRUE(ReadName(json).second) << json;
+  }
+}
+
+TEST_F(JsonShapeDeserializerTest, SurrogatePairDecodes) {
+  const auto result = ReadName(R"({"name":"\ud83d\ude00"})");
+  EXPECT_FALSE(result.second);
+  EXPECT_EQ(result.first, "\xF0\x9F\x98\x80");
+}
+
+TEST_F(JsonShapeDeserializerTest, InvalidEscapeRecordsError) {
+  for (const Aws::String json : {R"({"name":"\ud800"})", R"({"name":"\ude00"})", R"({"name":"\ud800x"})", R"({"name":"\ud800\u0041"})",
+                                 R"({"name":"\u12G4"})", R"({"name":"\u12"})", R"({"name":"\q"})"}) {
+    EXPECT_TRUE(ReadName(json).second) << json;
+  }
 }
 
 TEST_F(JsonShapeDeserializerTest, EmptyOptionalOnTypeMismatch) {
@@ -551,23 +635,24 @@ TEST_F(JsonShapeDeserializerTest, ReadDocumentIntegerVsDouble) {
 }
 
 TEST_F(JsonShapeDeserializerTest, ReadDocumentAcceptsNestingAtDepthLimit) {
-  // The cap admits MAX_DOCUMENT_DEPTH - 1 containers.
-  Aws::String json(255, '[');
+  Aws::String json(MAX_NESTING_DEPTH, '[');
   json += "1";
-  json.append(255, ']');
+  json.append(MAX_NESTING_DEPTH, ']');
   JsonShapeDeserializer deser(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(json.c_str()), json.size()));
   auto schema = Schema::CreateDocument("smithy.api#Document");
   EXPECT_NE(deser.ReadDocument(*schema), nullptr);
+  EXPECT_FALSE(deser.GetError().has_value());
 }
 
 TEST_F(JsonShapeDeserializerTest, ReadDocumentRejectsExcessiveNesting) {
-  // Locks the MAX_DOCUMENT_DEPTH guard: nesting past the cap yields nullptr, not a crash.
-  Aws::String json(256, '[');
+  Aws::String json(MAX_NESTING_DEPTH + 1, '[');
   json += "1";
-  json.append(256, ']');
+  json.append(MAX_NESTING_DEPTH + 1, ']');
   JsonShapeDeserializer deser(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(json.c_str()), json.size()));
   auto schema = Schema::CreateDocument("smithy.api#Document");
   EXPECT_EQ(deser.ReadDocument(*schema), nullptr);
+  ASSERT_TRUE(deser.GetError().has_value());
+  EXPECT_NE(deser.GetError()->GetMessage().find("depth"), Aws::String::npos);
 }
 
 TEST_F(JsonShapeDeserializerTest, ReadDocumentRequiresColonAfterKey) {
@@ -582,22 +667,18 @@ TEST_F(JsonShapeDeserializerTest, ReadDocumentRequiresColonAfterKey) {
   const Aws::String missing = "{\"a\" 1}";
   JsonShapeDeserializer bad(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(missing.data()), missing.size()));
   EXPECT_EQ(bad.ReadDocument(*schema), nullptr);
+  ASSERT_TRUE(bad.GetError().has_value());
+  EXPECT_NE(bad.GetError()->GetMessage().find("expected ':'"), Aws::String::npos);
 }
 
-TEST_F(JsonShapeDeserializerTest, ReadDocumentFailureConsumesValueSoTrailingMemberSurvives) {
+TEST_F(JsonShapeDeserializerTest, ReadDocumentMalformedRecordsError) {
   auto root = Schema::StructureBuilder("Root")
                   .PutMember("doc", Schema::CreateDocument("smithy.api#Document"))
                   .PutMember("name", Schema::CreateString("S"))
                   .Build();
-  // First three fail outright; the rest would otherwise return a truncated or malformed-but-present document.
   const Aws::Vector<Aws::String> payloads = {
-      "{\"doc\":" + Aws::String(300, '[') + "1" + Aws::String(300, ']') + ",\"name\":\"bob\"}",
-      "{\"doc\":[1.2.3],\"name\":\"bob\"}",
-      "{\"doc\":{1:2},\"name\":\"bob\"}",
-      "{\"doc\":[1,2 3],\"name\":\"bob\"}",
-      "{\"doc\":{\"a\":1 \"b\":2},\"name\":\"bob\"}",
-      "{\"doc\":[1:2],\"name\":\"bob\"}",
-      "{\"doc\":{\"a\" 1},\"name\":\"bob\"}",
+      "{\"doc\":[1.2.3],\"name\":\"bob\"}",           "{\"doc\":{1:2},\"name\":\"bob\"}", "{\"doc\":[1,2 3],\"name\":\"bob\"}",
+      "{\"doc\":{\"a\":1 \"b\":2},\"name\":\"bob\"}", "{\"doc\":[1:2],\"name\":\"bob\"}", "{\"doc\":{\"a\" 1},\"name\":\"bob\"}",
   };
   for (const auto& json : payloads) {
     JsonShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(json.data()), json.size()));
@@ -614,32 +695,78 @@ TEST_F(JsonShapeDeserializerTest, ReadDocumentFailureConsumesValueSoTrailingMemb
       }
     });
     EXPECT_FALSE(docPresent) << json;
-    EXPECT_EQ(name, "bob") << json;
+    EXPECT_TRUE(name.empty()) << json;
+    EXPECT_TRUE(d.GetError().has_value()) << json;
   }
 }
 
-TEST_F(JsonShapeDeserializerTest, ReadLongRejectsNonFiniteAndOutOfRange) {
+TEST_F(JsonShapeDeserializerTest, ReadDocumentUnrecognisedLiteralRecordsError) {
+  auto root = Schema::StructureBuilder("Root")
+                  .PutMember("doc", Schema::CreateDocument("smithy.api#Document"))
+                  .PutMember("name", Schema::CreateString("S"))
+                  .Build();
+  for (const Aws::String json : {"{\"doc\":nul,\"name\":\"bob\"}", "{\"doc\":[1,tru],\"name\":\"bob\"}"}) {
+    JsonShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(json.data()), json.size()));
+    bool docPresent = true;
+    Aws::String name;
+    d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) {
+      if (m.GetMemberName() == "doc") {
+        docPresent = de.ReadDocument(m) != nullptr;
+      } else {
+        auto v = de.ReadString(m);
+        if (v.has_value()) {
+          name = v.value();
+        }
+      }
+    });
+    EXPECT_FALSE(docPresent) << json;
+    EXPECT_TRUE(name.empty()) << json;
+    EXPECT_TRUE(d.GetError().has_value()) << json;
+  }
+}
+
+TEST_F(JsonShapeDeserializerTest, ReadLongNonIntegralOrOutOfRangeRecordsError) {
   auto root = Schema::StructureBuilder("Root").PutMember("n", Schema::CreateLong("L")).Build();
-  const Aws::Vector<Aws::String> wires = {"{\"n\":1e30}", "{\"n\":1e400}"};
+  const Aws::Vector<Aws::String> wires = {"{\"n\":1e30}", "{\"n\":1e400}", "{\"n\":1.5}", "{\"n\":-2.5e0}"};
   for (const auto& wire : wires) {
     JsonShapeDeserializer d(
         Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(wire.data()), wire.size()));
     bool present = true;
     d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) { present = de.ReadLong(m).has_value(); });
     EXPECT_FALSE(present) << wire;
+    ASSERT_TRUE(d.GetError().has_value()) << wire;
+    EXPECT_NE(d.GetError()->GetMessage().find("out of range"), Aws::String::npos) << wire;
   }
 }
 
-TEST_F(JsonShapeDeserializerTest, ReadLongClampsPlainDigitOverflow) {
+TEST_F(JsonShapeDeserializerTest, ReadLongIntegralExponentFormIsExact) {
+  auto schema = Schema::CreateLong("L");
+  const Aws::String json = "1.5e3";
+  JsonShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(json.data()), json.size()));
+  EXPECT_EQ(d.ReadLong(*schema).value(), 1500);
+  EXPECT_FALSE(d.GetError().has_value());
+}
+
+TEST_F(JsonShapeDeserializerTest, ReadLongPlainDigitOverflowRecordsError) {
   auto root = Schema::StructureBuilder("Root").PutMember("n", Schema::CreateLong("L")).Build();
-  const Aws::String wire = "{\"n\":99999999999999999999}";  // > INT64_MAX, no exponent
-  JsonShapeDeserializer d(
-      Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(wire.data()), wire.size()));
-  Aws::Crt::Optional<int64_t> got;
-  d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) { got = de.ReadLong(m); });
-  // A plain-integer overflow clamps to INT64_MAX rather than dropping.
-  ASSERT_TRUE(got.has_value());
-  EXPECT_EQ(got.value(), 9223372036854775807LL);
+  for (const Aws::String wire : {"{\"n\":99999999999999999999}", "{\"n\":9223372036854775808}", "{\"n\":-9223372036854775809}"}) {
+    JsonShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(wire.data()), wire.size()));
+    Aws::Crt::Optional<int64_t> got;
+    d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) { got = de.ReadLong(m); });
+    EXPECT_FALSE(got.has_value()) << wire;
+    ASSERT_TRUE(d.GetError().has_value()) << wire;
+    EXPECT_NE(d.GetError()->GetMessage().find("out of range"), Aws::String::npos) << wire;
+  }
+  const Aws::Vector<std::pair<Aws::String, int64_t>> bounds = {{"{\"n\":9223372036854775807}", (std::numeric_limits<int64_t>::max)()},
+                                                               {"{\"n\":-9223372036854775808}", (std::numeric_limits<int64_t>::min)()}};
+  for (const auto& bound : bounds) {
+    JsonShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(bound.first.data()), bound.first.size()));
+    Aws::Crt::Optional<int64_t> got;
+    d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) { got = de.ReadLong(m); });
+    ASSERT_TRUE(got.has_value()) << bound.first;
+    EXPECT_EQ(got.value(), bound.second);
+    EXPECT_FALSE(d.GetError().has_value()) << bound.first;
+  }
 }
 
 TEST_F(JsonShapeDeserializerTest, ReadDocumentOverflowIntegerBecomesDouble) {
@@ -650,6 +777,37 @@ TEST_F(JsonShapeDeserializerTest, ReadDocumentOverflowIntegerBecomesDouble) {
   auto doc = d.ReadDocument(*schema);
   ASSERT_NE(doc, nullptr);
   EXPECT_EQ(doc->GetType(), ShapeType::Double);  // magnitude preserved as double, not clamped to Long
+}
+
+TEST_F(JsonShapeDeserializerTest, ReadDocumentNonFiniteNumberRecordsError) {
+  auto root = Schema::StructureBuilder("Root")
+                  .PutMember("doc", Schema::CreateDocument("smithy.api#Document"))
+                  .PutMember("name", Schema::CreateString("S"))
+                  .Build();
+  const Aws::Vector<Aws::String> payloads = {
+      "{\"doc\":1E310,\"name\":\"bob\"}",
+      "{\"doc\":-1E310,\"name\":\"bob\"}",
+      "{\"doc\":[1,1E310],\"name\":\"bob\"}",
+  };
+  for (const auto& json : payloads) {
+    JsonShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(json.data()), json.size()));
+    bool docPresent = true;
+    Aws::String name;
+    d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) {
+      if (m.GetMemberName() == "doc") {
+        docPresent = de.ReadDocument(m) != nullptr;
+      } else {
+        auto v = de.ReadString(m);
+        if (v.has_value()) {
+          name = v.value();
+        }
+      }
+    });
+    EXPECT_FALSE(docPresent) << json;
+    EXPECT_TRUE(name.empty()) << json;
+    ASSERT_TRUE(d.GetError().has_value()) << json;
+    EXPECT_NE(d.GetError()->GetMessage().find("out of range"), Aws::String::npos) << json;
+  }
 }
 
 TEST_F(JsonShapeDeserializerTest, DocumentJsonCoercesBase64AndIsoAndRejectsMalformed) {
@@ -745,5 +903,364 @@ TEST_F(JsonShapeDeserializerTest, DocumentNumberTimestampGatedByConfiguredFormat
     auto doc = d.ReadDocument(*schema);
     ASSERT_NE(doc, nullptr);
     EXPECT_FALSE(doc->AsTimestamp().has_value());
+  }
+}
+
+TEST_F(JsonShapeDeserializerTest, MissingSeparatorSetsErrorAndStops) {
+  auto root = Schema::StructureBuilder("Root")
+                  .PutMember("a", Schema::CreateInteger("I"))
+                  .PutMember("b", Schema::CreateInteger("I"))
+                  .Build();
+  const Aws::String json = "{\"a\":1 \"b\":2}";
+  JsonShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(json.data()), json.size()));
+  int delivered = 0;
+  d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) {
+    ++delivered;
+    de.ReadInteger(m);
+  });
+  EXPECT_EQ(delivered, 1);
+  ASSERT_TRUE(d.GetError().has_value());
+  EXPECT_NE(d.GetError()->GetMessage().find("expected ','"), Aws::String::npos);
+}
+
+TEST_F(JsonShapeDeserializerTest, ReadsReturnEmptyAfterError) {
+  const Aws::String json = "{\"a\":1-2,\"b\":3}";
+  JsonShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(json.data()), json.size()));
+  auto root = Schema::StructureBuilder("Root").PutMember("a", Schema::CreateLong("A")).PutMember("b", Schema::CreateLong("B")).Build();
+  Aws::Vector<Aws::String> seen;
+  d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) {
+    seen.push_back(m.GetMemberName());
+    de.ReadLong(m);
+  });
+  ASSERT_EQ(seen.size(), 1u);
+  EXPECT_EQ(seen[0], "a");
+  EXPECT_TRUE(d.GetError().has_value());
+}
+
+TEST_F(JsonShapeDeserializerTest, MalformedNumberSetsError) {
+  const Aws::String json = "1-2";
+  JsonShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(json.data()), json.size()));
+  auto schema = Schema::CreateLong("L");
+  EXPECT_FALSE(d.ReadLong(*schema).has_value());
+  EXPECT_TRUE(d.GetError().has_value());
+}
+
+TEST_F(JsonShapeDeserializerTest, BadDocumentNumberRecordsError) {
+  const Aws::String json = "[1.2.3]";
+  JsonShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(json.data()), json.size()));
+  auto schema = Schema::CreateDocument("smithy.api#Document");
+  EXPECT_EQ(d.ReadDocument(*schema), nullptr);
+  ASSERT_TRUE(d.GetError().has_value());
+  EXPECT_NE(d.GetError()->GetMessage().find("invalid number"), Aws::String::npos);
+}
+
+TEST_F(JsonShapeDeserializerTest, RecursiveStructAtMaxDepthSucceeds) {
+  RecursiveNodeSchema node;
+  const Aws::String json = NestedJsonNodes(MAX_NESTING_DEPTH);
+  JsonShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(json.data()), json.size()));
+  EXPECT_EQ(DescendRecursiveNode(d, node.Get()), MAX_NESTING_DEPTH);
+  EXPECT_FALSE(d.GetError().has_value());
+}
+
+TEST_F(JsonShapeDeserializerTest, RecursiveStructPastMaxDepthSetsError) {
+  RecursiveNodeSchema node;
+  const Aws::String json = NestedJsonNodes(MAX_NESTING_DEPTH + 1);
+  JsonShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(json.data()), json.size()));
+  DescendRecursiveNode(d, node.Get());
+  ASSERT_TRUE(d.GetError().has_value());
+  EXPECT_NE(d.GetError()->GetMessage().find("depth"), Aws::String::npos);
+}
+
+TEST_F(JsonShapeDeserializerTest, NestedListsPastMaxDepthSetErrorWithoutRecursingFurther) {
+  auto listBuilder = Schema::ListBuilder("L");
+  listBuilder.PutMember("member", listBuilder);
+  auto list = listBuilder.Build();
+  const Aws::String json = Aws::String(MAX_NESTING_DEPTH * 4, '[') + Aws::String(MAX_NESTING_DEPTH * 4, ']');
+  JsonShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(json.data()), json.size()));
+  size_t calls = 0;
+  std::function<void(ShapeDeserializer&)> descend = [&](ShapeDeserializer& de) {
+    ++calls;
+    de.ReadList(*list, descend);
+  };
+  descend(d);
+  EXPECT_TRUE(d.GetError().has_value());
+  EXPECT_LE(calls, static_cast<size_t>(MAX_NESTING_DEPTH) + 1);
+}
+
+namespace {
+template <typename Fn>
+void WithJson(const Aws::String& json, const Fn& fn) {
+  JsonShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(json.data()), json.size()));
+  fn(d);
+}
+
+void ExpectOutOfRange(const ShapeDeserializer& d, const Aws::String& wire) {
+  ASSERT_TRUE(d.GetError().has_value()) << wire;
+  EXPECT_NE(d.GetError()->GetMessage().find("out of range"), Aws::String::npos) << wire;
+}
+}  // namespace
+
+TEST_F(JsonShapeDeserializerTest, IntegerBeyondInt32RecordsError) {
+  auto schema = Schema::CreateInteger("I");
+  for (const char* wire : {"3000000000", "-2147483649"}) {
+    WithJson(wire, [&](JsonShapeDeserializer& d) {
+      EXPECT_FALSE(d.ReadInteger(*schema).has_value()) << wire;
+      ExpectOutOfRange(d, wire);
+    });
+  }
+  WithJson("-2147483648", [&](JsonShapeDeserializer& d) { EXPECT_EQ(d.ReadInteger(*schema).value(), (std::numeric_limits<int>::min)()); });
+}
+
+TEST_F(JsonShapeDeserializerTest, FloatBeyondFloatRangeRecordsError) {
+  auto schema = Schema::CreateFloat("F");
+  WithJson("1e300", [&](JsonShapeDeserializer& d) {
+    EXPECT_FALSE(d.ReadFloat(*schema).has_value());
+    ExpectOutOfRange(d, "1e300");
+  });
+  WithJson("\"Infinity\"", [&](JsonShapeDeserializer& d) { EXPECT_TRUE(std::isinf(d.ReadFloat(*schema).value())); });
+}
+
+TEST_F(JsonShapeDeserializerTest, FloatMaxRoundTrips) {
+  auto root = Schema::StructureBuilder("Root").PutMember("f", Schema::CreateFloat("F")).Build();
+  auto member = root->GetMember("f").value();
+  const float max = (std::numeric_limits<float>::max)();
+  for (const float value : {max, -max}) {
+    auto payload = Encode(root, [&](ShapeSerializer& ser) { ser.WriteFloat(*member, value); });
+    JsonShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(payload.data()), payload.size()));
+    Aws::Crt::Optional<float> got;
+    d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) { got = de.ReadFloat(m); });
+    ASSERT_TRUE(got.has_value()) << payload;
+    EXPECT_EQ(got.value(), value);
+  }
+}
+
+TEST_F(JsonShapeDeserializerTest, FloatNarrowingBoundaries) {
+  auto schema = Schema::CreateFloat("F");
+  const auto readFloat = [&](double value) {
+    Aws::Crt::Optional<float> got;
+    WithJson(Aws::Utils::StringUtils::FormatRoundTripDouble(value), [&](JsonShapeDeserializer& d) { got = d.ReadFloat(*schema); });
+    return got;
+  };
+  const double max = static_cast<double>((std::numeric_limits<float>::max)());
+  const double halfUlp = std::ldexp(1.0, 103);
+  const float maxF = (std::numeric_limits<float>::max)();
+
+  ASSERT_TRUE(readFloat(max).has_value());
+  EXPECT_EQ(readFloat(max).value(), maxF);
+  ASSERT_TRUE(readFloat(-max).has_value());
+  EXPECT_EQ(readFloat(-max).value(), -maxF);
+
+  const double justAbove = std::nextafter(max, std::numeric_limits<double>::infinity());
+  ASSERT_TRUE(readFloat(justAbove).has_value());
+  EXPECT_EQ(readFloat(justAbove).value(), maxF);
+  ASSERT_TRUE(readFloat(-justAbove).has_value());
+  EXPECT_EQ(readFloat(-justAbove).value(), -maxF);
+
+  const double justBelowHalf = std::nextafter(max + halfUlp, 0.0);
+  ASSERT_TRUE(readFloat(justBelowHalf).has_value());
+  EXPECT_EQ(readFloat(justBelowHalf).value(), maxF);
+
+  EXPECT_FALSE(readFloat(max + halfUlp).has_value());
+  EXPECT_FALSE(readFloat(-(max + halfUlp)).has_value());
+  EXPECT_FALSE(readFloat(1e300).has_value());
+
+  WithJson("\"Infinity\"", [&](JsonShapeDeserializer& d) { EXPECT_TRUE(std::isinf(d.ReadFloat(*schema).value())); });
+  WithJson("\"-Infinity\"", [&](JsonShapeDeserializer& d) { EXPECT_TRUE(std::isinf(d.ReadFloat(*schema).value())); });
+  WithJson("\"NaN\"", [&](JsonShapeDeserializer& d) { EXPECT_TRUE(std::isnan(d.ReadFloat(*schema).value())); });
+}
+
+TEST_F(JsonShapeDeserializerTest, UnrepresentableEpochTimestampRecordsError) {
+  auto schema = Schema::CreateTimestamp("T");
+  for (const char* wire : {"1e300", "-1e300", "1e400"}) {
+    WithJson(wire, [&](JsonShapeDeserializer& d) {
+      EXPECT_FALSE(d.ReadTimestamp(*schema).has_value()) << wire;
+      ExpectOutOfRange(d, wire);
+    });
+  }
+}
+
+namespace {
+void ExpectRootRecordsError(const Aws::String& json) {
+  auto root = Schema::StructureBuilder("Root").PutMember("a", Schema::CreateInteger("I")).Build();
+  JsonShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(json.data()), json.size()));
+  int delivered = 0;
+  d.ReadStruct(*root, [&](const Schema&, ShapeDeserializer&) { ++delivered; });
+  EXPECT_EQ(delivered, 0) << json;
+  ASSERT_TRUE(d.GetError().has_value()) << json;
+  EXPECT_NE(d.GetError()->GetMessage().find("expected object"), Aws::String::npos) << json;
+}
+}  // namespace
+
+TEST_F(JsonShapeDeserializerTest, NonObjectRootRecordsError) {
+  for (const char* wire : {"hello", "[1]", "\"x\"", "<html>503</html>", "5"}) {
+    ExpectRootRecordsError(wire);
+  }
+}
+
+TEST_F(JsonShapeDeserializerTest, RootNullIsEmptyStructWithoutError) {
+  auto root = Schema::StructureBuilder("Root").PutMember("a", Schema::CreateInteger("I")).Build();
+  for (const char* wire : {"null", "  null  ", "\nnull\t"}) {
+    const Aws::String json = wire;
+    JsonShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(json.data()), json.size()));
+    int delivered = 0;
+    d.ReadStruct(*root, [&](const Schema&, ShapeDeserializer&) { ++delivered; });
+    EXPECT_EQ(delivered, 0) << "[" << wire << "]";
+    EXPECT_FALSE(d.GetError().has_value()) << "[" << wire << "]";
+  }
+}
+
+TEST_F(JsonShapeDeserializerTest, RootNullxRecordsError) {
+  auto root = Schema::StructureBuilder("Root").PutMember("a", Schema::CreateInteger("I")).Build();
+  const Aws::String json = "nullx";
+  JsonShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(json.data()), json.size()));
+  int delivered = 0;
+  d.ReadStruct(*root, [&](const Schema&, ShapeDeserializer&) { ++delivered; });
+  EXPECT_EQ(delivered, 0);
+  ASSERT_TRUE(d.GetError().has_value());
+  EXPECT_NE(d.GetError()->GetMessage().find("trailing data"), Aws::String::npos);
+}
+
+TEST_F(JsonShapeDeserializerTest, TrailingDataAfterRootRecordsError) {
+  auto root = Schema::StructureBuilder("Root").PutMember("a", Schema::CreateInteger("I")).Build();
+  for (const char* wire : {"{\"a\":1}xyz", "{\"a\":1} {}", "{}]", "null null"}) {
+    const Aws::String json = wire;
+    JsonShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(json.data()), json.size()));
+    d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) { de.ReadInteger(m); });
+    ASSERT_TRUE(d.GetError().has_value()) << wire;
+    EXPECT_NE(d.GetError()->GetMessage().find("trailing data"), Aws::String::npos) << wire;
+  }
+  const Aws::String json = "{\"a\":1} \n\t";
+  JsonShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(json.data()), json.size()));
+  d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) { de.ReadInteger(m); });
+  EXPECT_FALSE(d.GetError().has_value());
+}
+
+TEST_F(JsonShapeDeserializerTest, MissingColonAfterKeyRecordsError) {
+  auto mapBuilder = Schema::MapBuilder("M");
+  auto root = Schema::StructureBuilder("Root").PutMember("name", Schema::CreateString("S")).PutMember("m", mapBuilder).Build();
+  auto valueSchema = Schema::CreateString("V");
+  for (const char* wire : {"{\"name\" \"Alice\"}", "{\"m\":{\"k\" \"v\"}}"}) {
+    const Aws::String json = wire;
+    JsonShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(json.data()), json.size()));
+    d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) {
+      if (m.GetType() == ShapeType::Map) {
+        de.ReadMap(m, [&](const Aws::String&, ShapeDeserializer& v) { v.ReadString(*valueSchema); });
+      } else {
+        de.ReadString(m);
+      }
+    });
+    ASSERT_TRUE(d.GetError().has_value()) << wire;
+    EXPECT_NE(d.GetError()->GetMessage().find("expected ':'"), Aws::String::npos) << wire;
+  }
+}
+
+TEST_F(JsonShapeDeserializerTest, WhitespaceOnlyRootIsEmptyStructWithoutError) {
+  auto root = Schema::StructureBuilder("Root").PutMember("a", Schema::CreateInteger("I")).Build();
+  for (const char* wire : {"", "   ", " \n\t"}) {
+    const Aws::String json = wire;
+    JsonShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(json.data()), json.size()));
+    int delivered = 0;
+    d.ReadStruct(*root, [&](const Schema&, ShapeDeserializer&) { ++delivered; });
+    EXPECT_EQ(delivered, 0);
+    EXPECT_FALSE(d.GetError().has_value()) << "[" << wire << "]";
+  }
+}
+
+TEST_F(JsonShapeDeserializerTest, ScalarWhereNestedStructExpectedIsNotAnError) {
+  auto inner = Schema::StructureBuilder("Inner").PutMember("x", Schema::CreateInteger("I")).Build();
+  auto root = Schema::StructureBuilder("Root").PutMember("inner", inner).PutMember("after", Schema::CreateInteger("I")).Build();
+  const Aws::String json = "{\"inner\":5,\"after\":7}";
+  JsonShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(json.data()), json.size()));
+  Aws::Crt::Optional<int> after;
+  int innerDelivered = 0;
+  d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) {
+    if (m.GetMemberName() == "inner") {
+      de.ReadStruct(m, [&](const Schema&, ShapeDeserializer&) { ++innerDelivered; });
+    } else {
+      after = de.ReadInteger(m);
+    }
+  });
+  EXPECT_EQ(innerDelivered, 0);
+  EXPECT_FALSE(d.GetError().has_value());
+  ASSERT_TRUE(after.has_value());
+  EXPECT_EQ(after.value(), 7);
+}
+
+TEST_F(JsonShapeDeserializerTest, OverflowingFiniteTextRecordsError) {
+  auto dbl = Schema::CreateDouble("D");
+  auto flt = Schema::CreateFloat("F");
+  for (const char* wire : {"1e400", "-1e400"}) {
+    WithJson(wire, [&](JsonShapeDeserializer& d) {
+      EXPECT_FALSE(d.ReadDouble(*dbl).has_value()) << wire;
+      ExpectOutOfRange(d, wire);
+    });
+    WithJson(wire, [&](JsonShapeDeserializer& d) {
+      EXPECT_FALSE(d.ReadFloat(*flt).has_value()) << wire;
+      ExpectOutOfRange(d, wire);
+    });
+  }
+  WithJson("\"Infinity\"", [&](JsonShapeDeserializer& d) {
+    const auto v = d.ReadDouble(*dbl);
+    ASSERT_TRUE(v.has_value());
+    EXPECT_TRUE(std::isinf(v.value()));
+  });
+}
+
+namespace {
+
+std::shared_ptr<const Schema> UnionRoot() {
+  auto variants = Schema::UnionBuilder("U").PutMember("a", Schema::CreateString("S")).PutMember("b", Schema::CreateInteger("I")).Build();
+  return Schema::StructureBuilder("Root").PutMember("u", variants).Build();
+}
+
+int ReadUnionVariants(JsonShapeDeserializer& d) {
+  const auto root = UnionRoot();
+  int delivered = 0;
+  d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) {
+    de.ReadStruct(**m.GetMemberTarget(), [&](const Schema& variant, ShapeDeserializer& vde) {
+      ++delivered;
+      if (variant.GetMemberName() == Aws::String("a")) {
+        vde.ReadString(variant);
+      } else {
+        vde.ReadInteger(variant);
+      }
+    });
+  });
+  return delivered;
+}
+
+}  // namespace
+
+TEST_F(JsonShapeDeserializerTest, LeadingByteOrderMarkIsSkipped) {
+  auto root = Schema::StructureBuilder("Root").PutMember("n", Schema::CreateInteger("I")).Build();
+  const auto read = [&](const Aws::String& json, Aws::Crt::Optional<int>& got) {
+    JsonShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(json.data()), json.size()));
+    d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) { got = de.ReadInteger(m); });
+    return d.GetError();
+  };
+  Aws::Crt::Optional<int> got;
+  EXPECT_FALSE(read("\xEF\xBB\xBF{\"n\":7}", got).has_value());
+  ASSERT_TRUE(got.has_value());
+  EXPECT_EQ(got.value(), 7);
+  Aws::Crt::Optional<int> none;
+  EXPECT_FALSE(read("\xEF\xBB\xBF", none).has_value());
+  EXPECT_FALSE(none.has_value());
+  EXPECT_TRUE(read("{\"n\":7}\xEF\xBB\xBF", none).has_value());
+  EXPECT_TRUE(read("\xEF\xBB{}", none).has_value());
+}
+
+TEST_F(JsonShapeDeserializerTest, UnionWithTwoMembersSetRecordsError) {
+  const Aws::String json = "{\"u\":{\"a\":\"x\",\"b\":1}}";
+  JsonShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(json.data()), json.size()));
+  EXPECT_EQ(ReadUnionVariants(d), 1);
+  ASSERT_TRUE(d.GetError().has_value());
+  EXPECT_NE(d.GetError()->GetMessage().find("more than one member"), Aws::String::npos);
+}
+
+TEST_F(JsonShapeDeserializerTest, UnionIgnoresNullAndUnmodeledMembers) {
+  for (const Aws::String json : {"{\"u\":{\"a\":\"x\",\"b\":null}}", "{\"u\":{\"__type\":\"T\",\"b\":1}}"}) {
+    JsonShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(json.data()), json.size()));
+    EXPECT_EQ(ReadUnionVariants(d), 1) << json;
+    EXPECT_FALSE(d.GetError().has_value()) << json;
   }
 }

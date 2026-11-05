@@ -13,6 +13,7 @@
 #include <smithy/client/schema/SchemaBuilder.h>
 
 #include <functional>
+#include <limits>
 
 #include "SchemaSerializerTestHelpers.h"
 
@@ -433,6 +434,17 @@ TEST_F(CborShapeDeserializerTest, TimestampFromFloat) {
   EXPECT_DOUBLE_EQ(ts.value().SecondsWithMSPrecision(), 1234567890.5);
 }
 
+TEST_F(CborShapeDeserializerTest, TimestampFloatMatchesLegacyDateTimeDouble) {
+  auto scalar = Schema::CreateTimestamp("T");
+  // Tag 1, float64 1.9996 (0x3FFFFE5C91D14E3C)
+  const unsigned char data[] = {0xC1, 0xFB, 0x3F, 0xFF, 0xFE, 0x5C, 0x91, 0xD1, 0x4E, 0x3C};
+  CborShapeDeserializer d(Aws::Crt::ByteCursorFromArray(data, sizeof(data)));
+  auto ts = d.ReadTimestamp(*scalar);
+  ASSERT_TRUE(ts.has_value());
+  EXPECT_EQ(ts.value().Millis(), 1999);
+  EXPECT_EQ(ts.value().Millis(), Aws::Utils::DateTime(1.9996).Millis());
+}
+
 TEST_F(CborShapeDeserializerTest, TimestampNegativeIntReturnsEmpty) {
   auto scalar = Schema::CreateTimestamp("T");
   const unsigned char data[] = {0xC1, 0x20};
@@ -554,4 +566,389 @@ TEST_F(CborShapeDeserializerTest, ReadDocumentConsumesValueSoTrailingMemberSurvi
     }
   });
   EXPECT_EQ(trailing, "x");
+}
+
+TEST_F(CborShapeDeserializerTest, DefiniteMapShorterThanHeaderSetsError) {
+  auto root = Schema::StructureBuilder("Root").PutMember("a", Schema::CreateInteger("I")).Build();
+  const unsigned char bytes[] = {0xA2, 0x61, 'a', 0x01};  // map(2) holding one entry
+  CborShapeDeserializer d(Aws::Crt::ByteCursorFromArray(bytes, sizeof(bytes)));
+  Aws::Crt::Optional<int> got;
+  d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) { got = de.ReadInteger(m); });
+  ASSERT_TRUE(got.has_value());
+  EXPECT_EQ(got.value(), 1);
+  EXPECT_TRUE(d.GetError().has_value());
+}
+
+namespace {
+struct ChunkedRead {
+  Aws::Crt::Optional<Aws::String> text;
+  Aws::Crt::Optional<Aws::Utils::ByteBuffer> blob;
+  bool failed = false;
+};
+
+ChunkedRead ReadChunked(const Aws::Vector<unsigned char>& bytes) {
+  auto root = Schema::StructureBuilder("Root").PutMember("s", Schema::CreateString("S")).PutMember("b", Schema::CreateBlob("B")).Build();
+  CborShapeDeserializer d(Aws::Crt::ByteCursorFromArray(bytes.data(), bytes.size()));
+  ChunkedRead got;
+  d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) {
+    if (m.GetMemberName() == "s") {
+      got.text = de.ReadString(m);
+    } else {
+      got.blob = de.ReadBlob(m);
+    }
+  });
+  got.failed = d.GetError().has_value();
+  return got;
+}
+}  // namespace
+
+TEST_F(CborShapeDeserializerTest, IndefiniteTextIsJoined) {
+  // {"s": (_ "ab", "", "c")}
+  const auto got = ReadChunked({0xA1, 0x61, 's', 0x7F, 0x62, 'a', 'b', 0x60, 0x61, 'c', 0xFF});
+  EXPECT_FALSE(got.failed);
+  ASSERT_TRUE(got.text.has_value());
+  EXPECT_EQ(got.text.value(), "abc");
+}
+
+TEST_F(CborShapeDeserializerTest, EmptyIndefiniteTextIsEmptyString) {
+  const auto got = ReadChunked({0xA1, 0x61, 's', 0x7F, 0xFF});
+  EXPECT_FALSE(got.failed);
+  ASSERT_TRUE(got.text.has_value());
+  EXPECT_EQ(got.text.value(), "");
+}
+
+TEST_F(CborShapeDeserializerTest, IndefiniteBytesAreJoined) {
+  // {"b": (_ h'0102', h'03'), "s": "x"}
+  const auto got = ReadChunked({0xA2, 0x61, 'b', 0x5F, 0x42, 0x01, 0x02, 0x41, 0x03, 0xFF, 0x61, 's', 0x61, 'x'});
+  EXPECT_FALSE(got.failed);
+  ASSERT_TRUE(got.blob.has_value());
+  const unsigned char expected[] = {0x01, 0x02, 0x03};
+  EXPECT_EQ(got.blob.value(), Aws::Utils::ByteBuffer(expected, sizeof(expected)));
+  ASSERT_TRUE(got.text.has_value());
+  EXPECT_EQ(got.text.value(), "x");
+}
+
+TEST_F(CborShapeDeserializerTest, IndefiniteTextKeyIsJoined) {
+  // {(_ "", "s"): "x"}
+  const auto got = ReadChunked({0xA1, 0x7F, 0x60, 0x61, 's', 0xFF, 0x61, 'x'});
+  EXPECT_FALSE(got.failed);
+  ASSERT_TRUE(got.text.has_value());
+  EXPECT_EQ(got.text.value(), "x");
+}
+
+TEST_F(CborShapeDeserializerTest, MalformedIndefiniteStringRecordsError) {
+  for (const auto& bytes : Aws::Vector<Aws::Vector<unsigned char>>{
+           {0xA1, 0x61, 's', 0x7F, 0x01, 0xFF},             // integer chunk
+           {0xA1, 0x61, 's', 0x7F, 0x41, 0x01, 0xFF},       // byte-string chunk in a text string
+           {0xA1, 0x61, 'b', 0x5F, 0x61, 'a', 0xFF},        // text chunk in a byte string
+           {0xA1, 0x61, 's', 0x7F, 0x7F, 0xFF, 0xFF},       // nested indefinite chunk
+           {0xA1, 0x61, 's', 0x7F, 0x61, 'a'}}) {           // no break
+    EXPECT_TRUE(ReadChunked(bytes).failed);
+  }
+}
+
+TEST_F(CborShapeDeserializerTest, EmptyInputIsNotAnError) {
+  auto root = Schema::StructureBuilder("Root").PutMember("a", Schema::CreateInteger("I")).Build();
+  const unsigned char empty[1] = {0};
+  CborShapeDeserializer d(Aws::Crt::ByteCursorFromArray(empty, 0));
+  d.ReadStruct(*root, [](const Schema&, ShapeDeserializer&) { FAIL() << "no members expected"; });
+  EXPECT_FALSE(d.GetError().has_value());
+}
+
+TEST_F(CborShapeDeserializerTest, GarbageRootSetsError) {
+  auto root = Schema::StructureBuilder("Root").PutMember("a", Schema::CreateInteger("I")).Build();
+  const unsigned char bytes[] = {0xBA, 0x00};  // map with 4-byte length, truncated header
+  CborShapeDeserializer d(Aws::Crt::ByteCursorFromArray(bytes, sizeof(bytes)));
+  d.ReadStruct(*root, [](const Schema&, ShapeDeserializer&) {});
+  EXPECT_TRUE(d.GetError().has_value());
+}
+
+TEST_F(CborShapeDeserializerTest, RecursiveStructAtMaxDepthSucceeds) {
+  RecursiveNodeSchema node;
+  const Aws::String cbor = NestedCborNodes(MAX_NESTING_DEPTH);
+  CborShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(cbor.data()), cbor.size()));
+  EXPECT_EQ(DescendRecursiveNode(d, node.Get()), MAX_NESTING_DEPTH);
+  EXPECT_FALSE(d.GetError().has_value());
+}
+
+TEST_F(CborShapeDeserializerTest, RecursiveStructPastMaxDepthSetsError) {
+  RecursiveNodeSchema node;
+  const Aws::String cbor = NestedCborNodes(MAX_NESTING_DEPTH + 1);
+  CborShapeDeserializer d(Aws::Crt::ByteCursorFromArray(reinterpret_cast<const uint8_t*>(cbor.data()), cbor.size()));
+  DescendRecursiveNode(d, node.Get());
+  ASSERT_TRUE(d.GetError().has_value());
+  EXPECT_NE(d.GetError()->GetMessage().find("depth"), Aws::String::npos);
+}
+
+namespace {
+void ExpectOutOfRange(const ShapeDeserializer& d) {
+  ASSERT_TRUE(d.GetError().has_value());
+  EXPECT_NE(d.GetError()->GetMessage().find("out of range"), Aws::String::npos);
+}
+}  // namespace
+
+TEST_F(CborShapeDeserializerTest, NegIntBeyondInt64RecordsError) {
+  const unsigned char bytes[] = {0x3B, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
+  CborShapeDeserializer d(Aws::Crt::ByteCursorFromArray(bytes, sizeof(bytes)));
+  auto schema = Schema::CreateLong("L");
+  EXPECT_FALSE(d.ReadLong(*schema).has_value());
+  ExpectOutOfRange(d);
+}
+
+TEST_F(CborShapeDeserializerTest, NegIntAtInt64MinIsExact) {
+  const unsigned char bytes[] = {0x3B, 0x7F, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
+  CborShapeDeserializer d(Aws::Crt::ByteCursorFromArray(bytes, sizeof(bytes)));
+  auto schema = Schema::CreateLong("L");
+  auto v = d.ReadLong(*schema);
+  ASSERT_TRUE(v.has_value());
+  EXPECT_EQ(v.value(), (std::numeric_limits<int64_t>::min)());
+}
+
+namespace {
+double ReadDoubleFromInteger(uint8_t majorTypeByte, uint64_t n) {
+  unsigned char bytes[9] = {majorTypeByte};
+  for (int i = 0; i < 8; ++i) {
+    bytes[1 + i] = static_cast<unsigned char>(n >> (8 * (7 - i)));
+  }
+  CborShapeDeserializer d(Aws::Crt::ByteCursorFromArray(bytes, sizeof(bytes)));
+  auto schema = Schema::CreateDouble("D");
+  auto v = d.ReadDouble(*schema);
+  EXPECT_TRUE(v.has_value());
+  return v.has_value() ? v.value() : 0.0;
+}
+}  // namespace
+
+TEST_F(CborShapeDeserializerTest, NegIntDoubleRoundsOnce) {
+  EXPECT_EQ(ReadDoubleFromInteger(0x3B, UINT64_C(11943773121102237)), static_cast<double>(INT64_C(-11943773121102238)));
+}
+
+TEST_F(CborShapeDeserializerTest, NegIntDoubleAtUint64Max) { EXPECT_EQ(ReadDoubleFromInteger(0x3B, UINT64_MAX), -18446744073709551616.0); }
+
+TEST_F(CborShapeDeserializerTest, NegIntDoubleZeroIsMinusOne) { EXPECT_EQ(ReadDoubleFromInteger(0x3B, 0), -1.0); }
+
+TEST_F(CborShapeDeserializerTest, NegIntDoubleAboveTwoPow53) {
+  const uint64_t n = UINT64_C(1) << 53;
+  EXPECT_EQ(ReadDoubleFromInteger(0x3B, n), static_cast<double>(-static_cast<int64_t>(n) - 1));
+}
+
+TEST_F(CborShapeDeserializerTest, UIntDoubleAtUint64MaxRoundsOnce) {
+  EXPECT_EQ(ReadDoubleFromInteger(0x1B, UINT64_MAX), static_cast<double>(UINT64_MAX));
+}
+
+TEST_F(CborShapeDeserializerTest, UIntBeyondInt64RecordsError) {
+  const unsigned char bytes[] = {0x1B, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};  // 2^63
+  CborShapeDeserializer d(Aws::Crt::ByteCursorFromArray(bytes, sizeof(bytes)));
+  auto schema = Schema::CreateLong("L");
+  EXPECT_FALSE(d.ReadLong(*schema).has_value());
+  ExpectOutOfRange(d);
+}
+
+TEST_F(CborShapeDeserializerTest, IntegerBeyondInt32RecordsError) {
+  const unsigned char bytes[] = {0x1B, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00};  // 2^40
+  CborShapeDeserializer d(Aws::Crt::ByteCursorFromArray(bytes, sizeof(bytes)));
+  auto schema = Schema::CreateInteger("I");
+  EXPECT_FALSE(d.ReadInteger(*schema).has_value());
+  ExpectOutOfRange(d);
+}
+
+TEST_F(CborShapeDeserializerTest, FloatBeyondFloatRangeRecordsError) {
+  const unsigned char bytes[] = {0xFB, 0x7E, 0x37, 0xE4, 0x3C, 0x88, 0x00, 0x75, 0x9C};  // 1e300
+  CborShapeDeserializer d(Aws::Crt::ByteCursorFromArray(bytes, sizeof(bytes)));
+  auto schema = Schema::CreateFloat("F");
+  EXPECT_FALSE(d.ReadFloat(*schema).has_value());
+  ExpectOutOfRange(d);
+}
+
+TEST_F(CborShapeDeserializerTest, UnrepresentableTimestampRecordsError) {
+  const unsigned char bytes[] = {0xC1, 0xFB, 0x7E, 0x37, 0xE4, 0x3C, 0x88, 0x00, 0x75, 0x9C};  // 1(1e300)
+  CborShapeDeserializer d(Aws::Crt::ByteCursorFromArray(bytes, sizeof(bytes)));
+  auto schema = Schema::CreateTimestamp("T");
+  EXPECT_FALSE(d.ReadTimestamp(*schema).has_value());
+  ExpectOutOfRange(d);
+}
+
+TEST_F(CborShapeDeserializerTest, MismatchedListElementsAreConsumed) {
+  auto listBuilder = Schema::ListBuilder("L");
+  listBuilder.PutMember("member", Schema::CreateInteger("I"));
+  auto list = listBuilder.Build();
+  const unsigned char bytes[] = {0x9F, 0x61, 'a', 0x61, 'b', 0xFF};  // [_ "a", "b"]
+  CborShapeDeserializer d(Aws::Crt::ByteCursorFromArray(bytes, sizeof(bytes)));
+  int calls = 0;
+  d.ReadList(*list, [&](ShapeDeserializer& de) {
+    ++calls;
+    EXPECT_FALSE(de.ReadInteger(*list->GetMember("member").value()).has_value());
+  });
+  EXPECT_EQ(calls, 2);
+  EXPECT_FALSE(d.GetError().has_value());
+}
+
+TEST_F(CborShapeDeserializerTest, MismatchedMemberKeepsSiblingsAligned) {
+  auto root =
+      Schema::StructureBuilder("Root").PutMember("a", Schema::CreateInteger("I")).PutMember("b", Schema::CreateInteger("I")).Build();
+  const unsigned char bytes[] = {0xA2, 0x61, 'a', 0x63, 'x', 'y', 'z', 0x61, 'b', 0x02};  // {"a":"xyz","b":2}
+  CborShapeDeserializer d(Aws::Crt::ByteCursorFromArray(bytes, sizeof(bytes)));
+  Aws::Crt::Optional<int> b;
+  d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) {
+    auto v = de.ReadInteger(m);
+    if (m.GetMemberName() == "b") {
+      b = v;
+    }
+  });
+  ASSERT_TRUE(b.has_value());
+  EXPECT_EQ(b.value(), 2);
+  EXPECT_FALSE(d.GetError().has_value());
+}
+
+TEST_F(CborShapeDeserializerTest, ScalarWhereStructExpectedKeepsSiblingsAligned) {
+  auto inner = Schema::StructureBuilder("Inner").Build();
+  auto root = Schema::StructureBuilder("Root").PutMember("child", inner).PutMember("x", Schema::CreateInteger("I")).Build();
+  const unsigned char bytes[] = {0xA2, 0x65, 'c', 'h', 'i', 'l', 'd', 0x05, 0x61, 'x', 0x01};  // {"child":5,"x":1}
+  CborShapeDeserializer d(Aws::Crt::ByteCursorFromArray(bytes, sizeof(bytes)));
+  Aws::Crt::Optional<int> x;
+  d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) {
+    if (m.GetMemberName() == "x") {
+      x = de.ReadInteger(m);
+    } else {
+      de.ReadStruct(*m.GetMemberTarget().value(), [](const Schema&, ShapeDeserializer&) {});
+    }
+  });
+  ASSERT_TRUE(x.has_value());
+  EXPECT_EQ(x.value(), 1);
+  EXPECT_FALSE(d.GetError().has_value());
+}
+
+TEST_F(CborShapeDeserializerTest, HugeDefiniteArrayHeaderTerminatesWithError) {
+  auto listBuilder = Schema::ListBuilder("L");
+  listBuilder.PutMember("member", Schema::CreateInteger("I"));
+  auto list = listBuilder.Build();
+  const unsigned char bytes[] = {0x9B, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};  // array(2^64-1), no items
+  CborShapeDeserializer d(Aws::Crt::ByteCursorFromArray(bytes, sizeof(bytes)));
+  d.ReadList(*list, [&](ShapeDeserializer& de) { de.ReadInteger(*list->GetMember("member").value()); });
+  EXPECT_TRUE(d.GetError().has_value());
+}
+
+TEST_F(CborShapeDeserializerTest, NonMapRootRecordsError) {
+  auto root = Schema::StructureBuilder("Root").PutMember("a", Schema::CreateInteger("I")).Build();
+  const Aws::Vector<Aws::Vector<unsigned char>> roots = {{0x05}, {0x81, 0x01}, {0x61, 'x'}, {0xF5}};
+  for (const auto& bytes : roots) {
+    CborShapeDeserializer d(Aws::Crt::ByteCursorFromArray(bytes.data(), bytes.size()));
+    int delivered = 0;
+    d.ReadStruct(*root, [&](const Schema&, ShapeDeserializer&) { ++delivered; });
+    EXPECT_EQ(delivered, 0);
+    ASSERT_TRUE(d.GetError().has_value()) << static_cast<int>(bytes[0]);
+  }
+}
+
+TEST_F(CborShapeDeserializerTest, NullRootIsEmptyStructWithoutError) {
+  auto root = Schema::StructureBuilder("Root").PutMember("a", Schema::CreateInteger("I")).Build();
+  const unsigned char bytes[] = {0xF6};
+  CborShapeDeserializer d(Aws::Crt::ByteCursorFromArray(bytes, sizeof(bytes)));
+  int delivered = 0;
+  d.ReadStruct(*root, [&](const Schema&, ShapeDeserializer&) { ++delivered; });
+  EXPECT_EQ(delivered, 0);
+  EXPECT_FALSE(d.GetError().has_value());
+}
+
+TEST_F(CborShapeDeserializerTest, TrailingDataAfterRootRecordsError) {
+  auto root = Schema::StructureBuilder("Root").PutMember("a", Schema::CreateInteger("I")).Build();
+  // map(1){"a": 1} then a stray item; map(0) then a stray item; null then a stray item.
+  const Aws::Vector<Aws::Vector<unsigned char>> payloads = {{0xA1, 0x61, 'a', 0x01, 0x05}, {0xA0, 0xA0}, {0xF6, 0x00}};
+  for (const auto& bytes : payloads) {
+    CborShapeDeserializer d(Aws::Crt::ByteCursorFromArray(bytes.data(), bytes.size()));
+    d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) { de.ReadInteger(m); });
+    ASSERT_TRUE(d.GetError().has_value()) << bytes.size();
+    EXPECT_NE(d.GetError()->GetMessage().find("trailing data"), Aws::String::npos);
+  }
+}
+
+TEST_F(CborShapeDeserializerTest, EmptyRootIsEmptyStructWithoutError) {
+  auto root = Schema::StructureBuilder("Root").PutMember("a", Schema::CreateInteger("I")).Build();
+  const unsigned char none[1] = {0};
+  CborShapeDeserializer d(Aws::Crt::ByteCursorFromArray(none, 0));
+  int delivered = 0;
+  d.ReadStruct(*root, [&](const Schema&, ShapeDeserializer&) { ++delivered; });
+  EXPECT_EQ(delivered, 0);
+  EXPECT_FALSE(d.GetError().has_value());
+}
+
+TEST_F(CborShapeDeserializerTest, ScalarWhereNestedStructExpectedIsNotAnError) {
+  auto inner = Schema::StructureBuilder("Inner").PutMember("x", Schema::CreateInteger("I")).Build();
+  auto root = Schema::StructureBuilder("Root").PutMember("inner", inner).Build();
+  const unsigned char bytes[] = {0xA1, 0x65, 'i', 'n', 'n', 'e', 'r', 0x05};
+  CborShapeDeserializer d(Aws::Crt::ByteCursorFromArray(bytes, sizeof(bytes)));
+  int innerDelivered = 0;
+  d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) {
+    de.ReadStruct(m, [&](const Schema&, ShapeDeserializer&) { ++innerDelivered; });
+  });
+  EXPECT_EQ(innerDelivered, 0);
+  EXPECT_FALSE(d.GetError().has_value());
+}
+
+TEST_F(CborShapeDeserializerTest, UIntAboveInt64MaxOnDoubleConvertsDirectly) {
+  const unsigned char bytes[] = {0x1B, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
+  CborShapeDeserializer d(Aws::Crt::ByteCursorFromArray(bytes, sizeof(bytes)));
+  auto v = d.ReadDouble(*Schema::CreateDouble("D"));
+  ASSERT_TRUE(v.has_value());
+  EXPECT_EQ(v.value(), 1.8446744073709552e19);
+  EXPECT_FALSE(d.GetError().has_value());
+}
+
+TEST_F(CborShapeDeserializerTest, NegIntBeyondInt64OnDoubleConvertsDirectly) {
+  const unsigned char bytes[] = {0x3B, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
+  CborShapeDeserializer d(Aws::Crt::ByteCursorFromArray(bytes, sizeof(bytes)));
+  auto v = d.ReadDouble(*Schema::CreateDouble("D"));
+  ASSERT_TRUE(v.has_value());
+  EXPECT_EQ(v.value(), -1.8446744073709552e19);
+  EXPECT_FALSE(d.GetError().has_value());
+}
+
+TEST_F(CborShapeDeserializerTest, SmallIntegersOnDoubleAndFloat) {
+  const unsigned char neg[] = {0x38, 0x63};  // -100
+  CborShapeDeserializer d(Aws::Crt::ByteCursorFromArray(neg, sizeof(neg)));
+  EXPECT_EQ(d.ReadDouble(*Schema::CreateDouble("D")).value(), -100.0);
+  CborShapeDeserializer f(Aws::Crt::ByteCursorFromArray(neg, sizeof(neg)));
+  EXPECT_EQ(f.ReadFloat(*Schema::CreateFloat("F")).value(), -100.0f);
+}
+
+namespace {
+
+int ReadUnionVariants(CborShapeDeserializer& d) {
+  auto variants = Schema::UnionBuilder("U").PutMember("a", Schema::CreateString("S")).PutMember("b", Schema::CreateInteger("I")).Build();
+  auto root = Schema::StructureBuilder("Root").PutMember("u", variants).Build();
+  int delivered = 0;
+  d.ReadStruct(*root, [&](const Schema& m, ShapeDeserializer& de) {
+    de.ReadStruct(**m.GetMemberTarget(), [&](const Schema& variant, ShapeDeserializer& vde) {
+      ++delivered;
+      if (variant.GetMemberName() == Aws::String("a")) {
+        vde.ReadString(variant);
+      } else {
+        vde.ReadInteger(variant);
+      }
+    });
+  });
+  return delivered;
+}
+
+}  // namespace
+
+TEST_F(CborShapeDeserializerTest, UnionWithTwoMembersSetRecordsError) {
+  // {"u": {"a": "x", "b": 1}}
+  const unsigned char bytes[] = {0xA1, 0x61, 'u', 0xA2, 0x61, 'a', 0x61, 'x', 0x61, 'b', 0x01};
+  CborShapeDeserializer d(Aws::Crt::ByteCursorFromArray(bytes, sizeof(bytes)));
+  EXPECT_EQ(ReadUnionVariants(d), 1);
+  ASSERT_TRUE(d.GetError().has_value());
+  EXPECT_NE(d.GetError()->GetMessage().find("more than one member"), Aws::String::npos);
+}
+
+TEST_F(CborShapeDeserializerTest, UnionIgnoresNullAndUnmodeledMembers) {
+  // {"u": {"a": "x", "b": null}}
+  const unsigned char withNull[] = {0xA1, 0x61, 'u', 0xA2, 0x61, 'a', 0x61, 'x', 0x61, 'b', 0xF6};
+  // {"u": {"z": 2, "b": 1}}
+  const unsigned char withUnmodeled[] = {0xA1, 0x61, 'u', 0xA2, 0x61, 'z', 0x02, 0x61, 'b', 0x01};
+  CborShapeDeserializer nullVariant(Aws::Crt::ByteCursorFromArray(withNull, sizeof(withNull)));
+  EXPECT_EQ(ReadUnionVariants(nullVariant), 1);
+  EXPECT_FALSE(nullVariant.GetError().has_value());
+  CborShapeDeserializer unmodeled(Aws::Crt::ByteCursorFromArray(withUnmodeled, sizeof(withUnmodeled)));
+  EXPECT_EQ(ReadUnionVariants(unmodeled), 1);
+  EXPECT_FALSE(unmodeled.GetError().has_value());
 }

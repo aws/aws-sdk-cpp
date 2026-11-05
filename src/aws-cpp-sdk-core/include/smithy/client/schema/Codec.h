@@ -43,8 +43,10 @@ class SMITHY_API Codec {
 
   virtual Aws::UniquePtr<ShapeDeserializer> CreateDeserializer(Aws::Crt::ByteCursor data) const = 0;
 
-  void DeserializeShape(Aws::Crt::ByteCursor data, SerializableStruct& shape) const {
-    shape.Deserialize(*CreateDeserializer(data));
+  Aws::Crt::Optional<DeserializerError> DeserializeShape(Aws::Crt::ByteCursor data, SerializableStruct& shape) const {
+    auto deserializer = CreateDeserializer(data);
+    shape.Deserialize(*deserializer);
+    return deserializer->GetError();
   }
 };
 
