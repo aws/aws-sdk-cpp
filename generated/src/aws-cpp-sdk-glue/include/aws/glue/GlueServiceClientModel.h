@@ -187,6 +187,7 @@
 #include <aws/glue/model/GetJobResult.h>
 #include <aws/glue/model/GetJobRunResult.h>
 #include <aws/glue/model/GetJobRunsResult.h>
+#include <aws/glue/model/GetJobUpgradeAnalysisResult.h>
 #include <aws/glue/model/GetJobsRequest.h>
 #include <aws/glue/model/GetJobsResult.h>
 #include <aws/glue/model/GetMLTaskRunResult.h>
@@ -334,6 +335,7 @@
 #include <aws/glue/model/StartExportLabelsTaskRunResult.h>
 #include <aws/glue/model/StartImportLabelsTaskRunResult.h>
 #include <aws/glue/model/StartJobRunResult.h>
+#include <aws/glue/model/StartJobUpgradeAnalysisResult.h>
 #include <aws/glue/model/StartMLEvaluationTaskRunResult.h>
 #include <aws/glue/model/StartMLLabelingSetGenerationTaskRunResult.h>
 #include <aws/glue/model/StartMaterializedViewRefreshTaskRunResult.h>
@@ -343,6 +345,7 @@
 #include <aws/glue/model/StopColumnStatisticsTaskRunScheduleResult.h>
 #include <aws/glue/model/StopCrawlerResult.h>
 #include <aws/glue/model/StopCrawlerScheduleResult.h>
+#include <aws/glue/model/StopJobUpgradeAnalysisResult.h>
 #include <aws/glue/model/StopMaterializedViewRefreshTaskRunResult.h>
 #include <aws/glue/model/StopSessionResult.h>
 #include <aws/glue/model/StopTriggerResult.h>
@@ -569,6 +572,7 @@ class GetJobRequest;
 class GetJobBookmarkRequest;
 class GetJobRunRequest;
 class GetJobRunsRequest;
+class GetJobUpgradeAnalysisRequest;
 class GetJobsRequest;
 class GetMLTaskRunRequest;
 class GetMLTaskRunsRequest;
@@ -678,6 +682,7 @@ class StartDataQualityRulesetEvaluationRunRequest;
 class StartExportLabelsTaskRunRequest;
 class StartImportLabelsTaskRunRequest;
 class StartJobRunRequest;
+class StartJobUpgradeAnalysisRequest;
 class StartMLEvaluationTaskRunRequest;
 class StartMLLabelingSetGenerationTaskRunRequest;
 class StartMaterializedViewRefreshTaskRunRequest;
@@ -687,6 +692,7 @@ class StopColumnStatisticsTaskRunRequest;
 class StopColumnStatisticsTaskRunScheduleRequest;
 class StopCrawlerRequest;
 class StopCrawlerScheduleRequest;
+class StopJobUpgradeAnalysisRequest;
 class StopMaterializedViewRefreshTaskRunRequest;
 class StopSessionRequest;
 class StopTriggerRequest;
@@ -878,6 +884,7 @@ typedef Aws::Utils::Outcome<GetJobResult, GlueError> GetJobOutcome;
 typedef Aws::Utils::Outcome<GetJobBookmarkResult, GlueError> GetJobBookmarkOutcome;
 typedef Aws::Utils::Outcome<GetJobRunResult, GlueError> GetJobRunOutcome;
 typedef Aws::Utils::Outcome<GetJobRunsResult, GlueError> GetJobRunsOutcome;
+typedef Aws::Utils::Outcome<GetJobUpgradeAnalysisResult, GlueError> GetJobUpgradeAnalysisOutcome;
 typedef Aws::Utils::Outcome<GetJobsResult, GlueError> GetJobsOutcome;
 typedef Aws::Utils::Outcome<GetMLTaskRunResult, GlueError> GetMLTaskRunOutcome;
 typedef Aws::Utils::Outcome<GetMLTaskRunsResult, GlueError> GetMLTaskRunsOutcome;
@@ -987,6 +994,7 @@ typedef Aws::Utils::Outcome<StartDataQualityRulesetEvaluationRunResult, GlueErro
 typedef Aws::Utils::Outcome<StartExportLabelsTaskRunResult, GlueError> StartExportLabelsTaskRunOutcome;
 typedef Aws::Utils::Outcome<StartImportLabelsTaskRunResult, GlueError> StartImportLabelsTaskRunOutcome;
 typedef Aws::Utils::Outcome<StartJobRunResult, GlueError> StartJobRunOutcome;
+typedef Aws::Utils::Outcome<StartJobUpgradeAnalysisResult, GlueError> StartJobUpgradeAnalysisOutcome;
 typedef Aws::Utils::Outcome<StartMLEvaluationTaskRunResult, GlueError> StartMLEvaluationTaskRunOutcome;
 typedef Aws::Utils::Outcome<StartMLLabelingSetGenerationTaskRunResult, GlueError> StartMLLabelingSetGenerationTaskRunOutcome;
 typedef Aws::Utils::Outcome<StartMaterializedViewRefreshTaskRunResult, GlueError> StartMaterializedViewRefreshTaskRunOutcome;
@@ -996,6 +1004,7 @@ typedef Aws::Utils::Outcome<StopColumnStatisticsTaskRunResult, GlueError> StopCo
 typedef Aws::Utils::Outcome<StopColumnStatisticsTaskRunScheduleResult, GlueError> StopColumnStatisticsTaskRunScheduleOutcome;
 typedef Aws::Utils::Outcome<StopCrawlerResult, GlueError> StopCrawlerOutcome;
 typedef Aws::Utils::Outcome<StopCrawlerScheduleResult, GlueError> StopCrawlerScheduleOutcome;
+typedef Aws::Utils::Outcome<StopJobUpgradeAnalysisResult, GlueError> StopJobUpgradeAnalysisOutcome;
 typedef Aws::Utils::Outcome<StopMaterializedViewRefreshTaskRunResult, GlueError> StopMaterializedViewRefreshTaskRunOutcome;
 typedef Aws::Utils::Outcome<StopSessionResult, GlueError> StopSessionOutcome;
 typedef Aws::Utils::Outcome<StopTriggerResult, GlueError> StopTriggerOutcome;
@@ -1187,6 +1196,7 @@ typedef std::future<GetJobOutcome> GetJobOutcomeCallable;
 typedef std::future<GetJobBookmarkOutcome> GetJobBookmarkOutcomeCallable;
 typedef std::future<GetJobRunOutcome> GetJobRunOutcomeCallable;
 typedef std::future<GetJobRunsOutcome> GetJobRunsOutcomeCallable;
+typedef std::future<GetJobUpgradeAnalysisOutcome> GetJobUpgradeAnalysisOutcomeCallable;
 typedef std::future<GetJobsOutcome> GetJobsOutcomeCallable;
 typedef std::future<GetMLTaskRunOutcome> GetMLTaskRunOutcomeCallable;
 typedef std::future<GetMLTaskRunsOutcome> GetMLTaskRunsOutcomeCallable;
@@ -1296,6 +1306,7 @@ typedef std::future<StartDataQualityRulesetEvaluationRunOutcome> StartDataQualit
 typedef std::future<StartExportLabelsTaskRunOutcome> StartExportLabelsTaskRunOutcomeCallable;
 typedef std::future<StartImportLabelsTaskRunOutcome> StartImportLabelsTaskRunOutcomeCallable;
 typedef std::future<StartJobRunOutcome> StartJobRunOutcomeCallable;
+typedef std::future<StartJobUpgradeAnalysisOutcome> StartJobUpgradeAnalysisOutcomeCallable;
 typedef std::future<StartMLEvaluationTaskRunOutcome> StartMLEvaluationTaskRunOutcomeCallable;
 typedef std::future<StartMLLabelingSetGenerationTaskRunOutcome> StartMLLabelingSetGenerationTaskRunOutcomeCallable;
 typedef std::future<StartMaterializedViewRefreshTaskRunOutcome> StartMaterializedViewRefreshTaskRunOutcomeCallable;
@@ -1305,6 +1316,7 @@ typedef std::future<StopColumnStatisticsTaskRunOutcome> StopColumnStatisticsTask
 typedef std::future<StopColumnStatisticsTaskRunScheduleOutcome> StopColumnStatisticsTaskRunScheduleOutcomeCallable;
 typedef std::future<StopCrawlerOutcome> StopCrawlerOutcomeCallable;
 typedef std::future<StopCrawlerScheduleOutcome> StopCrawlerScheduleOutcomeCallable;
+typedef std::future<StopJobUpgradeAnalysisOutcome> StopJobUpgradeAnalysisOutcomeCallable;
 typedef std::future<StopMaterializedViewRefreshTaskRunOutcome> StopMaterializedViewRefreshTaskRunOutcomeCallable;
 typedef std::future<StopSessionOutcome> StopSessionOutcomeCallable;
 typedef std::future<StopTriggerOutcome> StopTriggerOutcomeCallable;
@@ -1822,6 +1834,9 @@ typedef std::function<void(const GlueClient*, const Model::GetJobRunRequest&, co
 typedef std::function<void(const GlueClient*, const Model::GetJobRunsRequest&, const Model::GetJobRunsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetJobRunsResponseReceivedHandler;
+typedef std::function<void(const GlueClient*, const Model::GetJobUpgradeAnalysisRequest&, const Model::GetJobUpgradeAnalysisOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetJobUpgradeAnalysisResponseReceivedHandler;
 typedef std::function<void(const GlueClient*, const Model::GetJobsRequest&, const Model::GetJobsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetJobsResponseReceivedHandler;
@@ -2166,6 +2181,9 @@ typedef std::function<void(const GlueClient*, const Model::StartImportLabelsTask
 typedef std::function<void(const GlueClient*, const Model::StartJobRunRequest&, const Model::StartJobRunOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartJobRunResponseReceivedHandler;
+typedef std::function<void(const GlueClient*, const Model::StartJobUpgradeAnalysisRequest&, const Model::StartJobUpgradeAnalysisOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StartJobUpgradeAnalysisResponseReceivedHandler;
 typedef std::function<void(const GlueClient*, const Model::StartMLEvaluationTaskRunRequest&, const Model::StartMLEvaluationTaskRunOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartMLEvaluationTaskRunResponseReceivedHandler;
@@ -2196,6 +2214,9 @@ typedef std::function<void(const GlueClient*, const Model::StopCrawlerRequest&, 
 typedef std::function<void(const GlueClient*, const Model::StopCrawlerScheduleRequest&, const Model::StopCrawlerScheduleOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StopCrawlerScheduleResponseReceivedHandler;
+typedef std::function<void(const GlueClient*, const Model::StopJobUpgradeAnalysisRequest&, const Model::StopJobUpgradeAnalysisOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StopJobUpgradeAnalysisResponseReceivedHandler;
 typedef std::function<void(const GlueClient*, const Model::StopMaterializedViewRefreshTaskRunRequest&,
                            const Model::StopMaterializedViewRefreshTaskRunOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

@@ -166,6 +166,42 @@ class AIPromptSummary {
 
   ///@{
   /**
+   * <p>The timestamp when the AI Prompt was last modified.</p>
+   */
+  inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
+  inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
+  template <typename LastModifiedTimeT = Aws::Utils::DateTime>
+  void SetLastModifiedTime(LastModifiedTimeT&& value) {
+    m_lastModifiedTimeHasBeenSet = true;
+    m_lastModifiedTime = std::forward<LastModifiedTimeT>(value);
+  }
+  template <typename LastModifiedTimeT = Aws::Utils::DateTime>
+  AIPromptSummary& WithLastModifiedTime(LastModifiedTimeT&& value) {
+    SetLastModifiedTime(std::forward<LastModifiedTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Web Services Region where the AI Prompt was last modified.</p>
+   */
+  inline const Aws::String& GetLastModifiedRegion() const { return m_lastModifiedRegion; }
+  inline bool LastModifiedRegionHasBeenSet() const { return m_lastModifiedRegionHasBeenSet; }
+  template <typename LastModifiedRegionT = Aws::String>
+  void SetLastModifiedRegion(LastModifiedRegionT&& value) {
+    m_lastModifiedRegionHasBeenSet = true;
+    m_lastModifiedRegion = std::forward<LastModifiedRegionT>(value);
+  }
+  template <typename LastModifiedRegionT = Aws::String>
+  AIPromptSummary& WithLastModifiedRegion(LastModifiedRegionT&& value) {
+    SetLastModifiedRegion(std::forward<LastModifiedRegionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The type of the prompt template for this AI Prompt.</p>
    */
   inline AIPromptTemplateType GetTemplateType() const { return m_templateType; }
@@ -321,6 +357,10 @@ class AIPromptSummary {
 
   Aws::Utils::DateTime m_modifiedTime{};
 
+  Aws::Utils::DateTime m_lastModifiedTime{};
+
+  Aws::String m_lastModifiedRegion;
+
   AIPromptTemplateType m_templateType{AIPromptTemplateType::NOT_SET};
 
   Aws::String m_modelId;
@@ -343,6 +383,8 @@ class AIPromptSummary {
   bool m_typeHasBeenSet = false;
   bool m_aiPromptArnHasBeenSet = false;
   bool m_modifiedTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_lastModifiedRegionHasBeenSet = false;
   bool m_templateTypeHasBeenSet = false;
   bool m_modelIdHasBeenSet = false;
   bool m_apiFormatHasBeenSet = false;

@@ -22,6 +22,14 @@ MonetizationConfig& MonetizationConfig::operator=(JsonView jsonValue) {
     m_cryptoConfig = jsonValue.GetObject("CryptoConfig");
     m_cryptoConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ConnectedAccountConfigs")) {
+    Aws::Utils::Array<JsonView> connectedAccountConfigsJsonList = jsonValue.GetArray("ConnectedAccountConfigs");
+    for (unsigned connectedAccountConfigsIndex = 0; connectedAccountConfigsIndex < connectedAccountConfigsJsonList.GetLength();
+         ++connectedAccountConfigsIndex) {
+      m_connectedAccountConfigs.push_back(connectedAccountConfigsJsonList[connectedAccountConfigsIndex].AsObject());
+    }
+    m_connectedAccountConfigsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("CurrencyMode")) {
     m_currencyMode = CurrencyModeMapper::GetCurrencyModeForName(jsonValue.GetString("CurrencyMode"));
     m_currencyModeHasBeenSet = true;
@@ -34,6 +42,16 @@ JsonValue MonetizationConfig::Jsonize() const {
 
   if (m_cryptoConfigHasBeenSet) {
     payload.WithObject("CryptoConfig", m_cryptoConfig.Jsonize());
+  }
+
+  if (m_connectedAccountConfigsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> connectedAccountConfigsJsonList(m_connectedAccountConfigs.size());
+    for (unsigned connectedAccountConfigsIndex = 0; connectedAccountConfigsIndex < connectedAccountConfigsJsonList.GetLength();
+         ++connectedAccountConfigsIndex) {
+      connectedAccountConfigsJsonList[connectedAccountConfigsIndex].AsObject(
+          m_connectedAccountConfigs[connectedAccountConfigsIndex].Jsonize());
+    }
+    payload.WithArray("ConnectedAccountConfigs", std::move(connectedAccountConfigsJsonList));
   }
 
   if (m_currencyModeHasBeenSet) {

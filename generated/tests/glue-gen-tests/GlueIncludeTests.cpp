@@ -28,6 +28,7 @@
 #include <aws/glue/model/AmazonRedshiftNodeData.h>
 #include <aws/glue/model/AmazonRedshiftSource.h>
 #include <aws/glue/model/AmazonRedshiftTarget.h>
+#include <aws/glue/model/AnalysisType.h>
 #include <aws/glue/model/AnnotationError.h>
 #include <aws/glue/model/ApplyMapping.h>
 #include <aws/glue/model/AssetFormEntry.h>
@@ -43,6 +44,8 @@
 #include <aws/glue/model/AuthenticationType.h>
 #include <aws/glue/model/AuthorizationCodeProperties.h>
 #include <aws/glue/model/AutoDataQuality.h>
+#include <aws/glue/model/AutoUpgradeMetadata.h>
+#include <aws/glue/model/AutoUpgradeStatus.h>
 #include <aws/glue/model/BackfillError.h>
 #include <aws/glue/model/BackfillErrorCode.h>
 #include <aws/glue/model/BasicAuthenticationCredentials.h>
@@ -587,6 +590,8 @@
 #include <aws/glue/model/GetJobRunsPaginationTraits.h>
 #include <aws/glue/model/GetJobRunsRequest.h>
 #include <aws/glue/model/GetJobRunsResult.h>
+#include <aws/glue/model/GetJobUpgradeAnalysisRequest.h>
+#include <aws/glue/model/GetJobUpgradeAnalysisResult.h>
 #include <aws/glue/model/GetJobsPaginationTraits.h>
 #include <aws/glue/model/GetJobsRequest.h>
 #include <aws/glue/model/GetJobsResult.h>
@@ -1122,6 +1127,8 @@
 #include <aws/glue/model/StartImportLabelsTaskRunResult.h>
 #include <aws/glue/model/StartJobRunRequest.h>
 #include <aws/glue/model/StartJobRunResult.h>
+#include <aws/glue/model/StartJobUpgradeAnalysisRequest.h>
+#include <aws/glue/model/StartJobUpgradeAnalysisResult.h>
 #include <aws/glue/model/StartMLEvaluationTaskRunRequest.h>
 #include <aws/glue/model/StartMLEvaluationTaskRunResult.h>
 #include <aws/glue/model/StartMLLabelingSetGenerationTaskRunRequest.h>
@@ -1142,6 +1149,7 @@
 #include <aws/glue/model/StatisticEvaluationLevel.h>
 #include <aws/glue/model/StatisticModelResult.h>
 #include <aws/glue/model/StatisticSummary.h>
+#include <aws/glue/model/Status.h>
 #include <aws/glue/model/StatusDetails.h>
 #include <aws/glue/model/StopColumnStatisticsTaskRunRequest.h>
 #include <aws/glue/model/StopColumnStatisticsTaskRunResult.h>
@@ -1151,6 +1159,8 @@
 #include <aws/glue/model/StopCrawlerResult.h>
 #include <aws/glue/model/StopCrawlerScheduleRequest.h>
 #include <aws/glue/model/StopCrawlerScheduleResult.h>
+#include <aws/glue/model/StopJobUpgradeAnalysisRequest.h>
+#include <aws/glue/model/StopJobUpgradeAnalysisResult.h>
 #include <aws/glue/model/StopMaterializedViewRefreshTaskRunRequest.h>
 #include <aws/glue/model/StopMaterializedViewRefreshTaskRunResult.h>
 #include <aws/glue/model/StopSessionRequest.h>
@@ -1289,6 +1299,7 @@
 #include <aws/glue/model/UpdateWorkflowRequest.h>
 #include <aws/glue/model/UpdateWorkflowResult.h>
 #include <aws/glue/model/UpdateXMLClassifierRequest.h>
+#include <aws/glue/model/UpgradeConsent.h>
 #include <aws/glue/model/UpsertRedshiftTargetOptions.h>
 #include <aws/glue/model/UsageProfileDefinition.h>
 #include <aws/glue/model/UserDefinedFunction.h>

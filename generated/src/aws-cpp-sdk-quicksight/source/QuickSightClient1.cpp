@@ -54,6 +54,7 @@
 #include <aws/quicksight/model/DescribeQPersonalizationConfigurationRequest.h>
 #include <aws/quicksight/model/DescribeQuickSightQSearchConfigurationRequest.h>
 #include <aws/quicksight/model/DescribeRefreshScheduleRequest.h>
+#include <aws/quicksight/model/DescribeResourcePermissionsRequest.h>
 #include <aws/quicksight/model/DescribeRoleCustomPermissionRequest.h>
 #include <aws/quicksight/model/DescribeSelfUpgradeConfigurationRequest.h>
 #include <aws/quicksight/model/DescribeSpacePermissionsRequest.h>
@@ -119,7 +120,6 @@
 #include <aws/quicksight/model/ListTemplateVersionsRequest.h>
 #include <aws/quicksight/model/ListTemplatesRequest.h>
 #include <aws/quicksight/model/ListThemeAliasesRequest.h>
-#include <aws/quicksight/model/ListThemeVersionsRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -1019,6 +1019,25 @@ DescribeRefreshScheduleOutcome QuickSightClient::DescribeRefreshSchedule(const D
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? DescribeRefreshScheduleOutcome(result.GetResultWithOwnership())
                             : DescribeRefreshScheduleOutcome(std::move(result.GetError()));
+}
+
+DescribeResourcePermissionsOutcome QuickSightClient::DescribeResourcePermissions(const DescribeResourcePermissionsRequest& request) const {
+  if (!request.AwsAccountIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeResourcePermissions", "Required field: AwsAccountId, is not set");
+    return DescribeResourcePermissionsOutcome(Aws::Client::AWSError<QuickSightErrors>(
+        QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/account-resource-permissions");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeResourcePermissionsOutcome(result.GetResultWithOwnership())
+                            : DescribeResourcePermissionsOutcome(std::move(result.GetError()));
 }
 
 DescribeRoleCustomPermissionOutcome QuickSightClient::DescribeRoleCustomPermission(
@@ -2553,30 +2572,4 @@ ListThemeAliasesOutcome QuickSightClient::ListThemeAliases(const ListThemeAliase
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListThemeAliasesOutcome(result.GetResultWithOwnership())
                             : ListThemeAliasesOutcome(std::move(result.GetError()));
-}
-
-ListThemeVersionsOutcome QuickSightClient::ListThemeVersions(const ListThemeVersionsRequest& request) const {
-  if (!request.AwsAccountIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListThemeVersions", "Required field: AwsAccountId, is not set");
-    return ListThemeVersionsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                            "Missing required field [AwsAccountId]", false));
-  }
-  if (!request.ThemeIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListThemeVersions", "Required field: ThemeId, is not set");
-    return ListThemeVersionsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                            "Missing required field [ThemeId]", false));
-  }
-
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
-    endpointResolutionOutcome.GetResult().AddPathSegments("/themes/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetThemeId());
-    endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
-  return result.IsSuccess() ? ListThemeVersionsOutcome(result.GetResultWithOwnership())
-                            : ListThemeVersionsOutcome(std::move(result.GetError()));
 }

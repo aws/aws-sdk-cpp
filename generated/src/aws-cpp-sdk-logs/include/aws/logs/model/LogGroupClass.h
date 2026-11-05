@@ -10,7 +10,7 @@
 namespace Aws {
 namespace CloudWatchLogs {
 namespace Model {
-enum class LogGroupClass { NOT_SET, STANDARD, INFREQUENT_ACCESS, DELIVERY };
+enum class LogGroupClass { NOT_SET, STANDARD, INFREQUENT_ACCESS, DELIVERY, ESSENTIALS };
 
 namespace LogGroupClassMapper {
 AWS_CLOUDWATCHLOGS_API LogGroupClass GetLogGroupClassForName(const Aws::String& name);

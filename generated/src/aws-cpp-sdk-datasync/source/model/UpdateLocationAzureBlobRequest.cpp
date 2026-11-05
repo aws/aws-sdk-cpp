@@ -32,6 +32,10 @@ Aws::String UpdateLocationAzureBlobRequest::SerializePayload() const {
     payload.WithObject("SasConfiguration", m_sasConfiguration.Jsonize());
   }
 
+  if (m_federatedIdentityHasBeenSet) {
+    payload.WithObject("FederatedIdentity", m_federatedIdentity.Jsonize());
+  }
+
   if (m_blobTypeHasBeenSet) {
     payload.WithString("BlobType", AzureBlobTypeMapper::GetNameForAzureBlobType(m_blobType));
   }

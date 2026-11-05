@@ -22,6 +22,10 @@ MemberMetadata& MemberMetadata::operator=(JsonView jsonValue) {
     m_user = jsonValue.GetObject("user");
     m_userHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("group")) {
+    m_group = jsonValue.GetObject("group");
+    m_groupHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue MemberMetadata::Jsonize() const {
 
   if (m_userHasBeenSet) {
     payload.WithObject("user", m_user.Jsonize());
+  }
+
+  if (m_groupHasBeenSet) {
+    payload.WithObject("group", m_group.Jsonize());
   }
 
   return payload;

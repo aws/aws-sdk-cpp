@@ -90,7 +90,9 @@ class CreateMembershipRequest : public SecurityAgentRequest {
 
   ///@{
   /**
-   * <p>The type of member. Currently, only USER is supported.</p>
+   * <p>The type of member. Use USER for an individual user or GROUP for an IAM
+   * Identity Center group. All members of a group have access to the agent
+   * space.</p>
    */
   inline MembershipType GetMemberType() const { return m_memberType; }
   inline bool MemberTypeHasBeenSet() const { return m_memberTypeHasBeenSet; }

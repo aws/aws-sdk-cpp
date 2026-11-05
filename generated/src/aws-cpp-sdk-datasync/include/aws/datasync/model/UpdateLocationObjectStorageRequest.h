@@ -11,6 +11,7 @@
 #include <aws/datasync/DataSync_EXPORTS.h>
 #include <aws/datasync/model/CmkSecretConfig.h>
 #include <aws/datasync/model/CustomSecretConfig.h>
+#include <aws/datasync/model/ObjectStorageFederatedIdentityConfig.h>
 #include <aws/datasync/model/ObjectStorageServerProtocol.h>
 
 #include <utility>
@@ -171,6 +172,27 @@ class UpdateLocationObjectStorageRequest : public DataSyncRequest {
 
   ///@{
   /**
+   * <p>Specifies the federated identity configuration that allows DataSync to access
+   * your object storage using an OpenID Connect (OIDC) token instead of a long-term
+   * access key and secret key. Provide either <code>FederatedIdentity</code> or the
+   * <code>AccessKey</code>/<code>SecretKey</code> credentials, but not both.</p>
+   */
+  inline const ObjectStorageFederatedIdentityConfig& GetFederatedIdentity() const { return m_federatedIdentity; }
+  inline bool FederatedIdentityHasBeenSet() const { return m_federatedIdentityHasBeenSet; }
+  template <typename FederatedIdentityT = ObjectStorageFederatedIdentityConfig>
+  void SetFederatedIdentity(FederatedIdentityT&& value) {
+    m_federatedIdentityHasBeenSet = true;
+    m_federatedIdentity = std::forward<FederatedIdentityT>(value);
+  }
+  template <typename FederatedIdentityT = ObjectStorageFederatedIdentityConfig>
+  UpdateLocationObjectStorageRequest& WithFederatedIdentity(FederatedIdentityT&& value) {
+    SetFederatedIdentity(std::forward<FederatedIdentityT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>(Optional) Specifies the Amazon Resource Names (ARNs) of the DataSync agents
    * that can connect with your object storage system. If you are setting up an
    * agentless cross-cloud transfer, you do not need to specify a value for this
@@ -286,6 +308,8 @@ class UpdateLocationObjectStorageRequest : public DataSyncRequest {
 
   Aws::String m_secretKey;
 
+  ObjectStorageFederatedIdentityConfig m_federatedIdentity;
+
   Aws::Vector<Aws::String> m_agentArns;
 
   Aws::Utils::ByteBuffer m_serverCertificate{};
@@ -300,6 +324,7 @@ class UpdateLocationObjectStorageRequest : public DataSyncRequest {
   bool m_serverHostnameHasBeenSet = false;
   bool m_accessKeyHasBeenSet = false;
   bool m_secretKeyHasBeenSet = false;
+  bool m_federatedIdentityHasBeenSet = false;
   bool m_agentArnsHasBeenSet = false;
   bool m_serverCertificateHasBeenSet = false;
   bool m_cmkSecretConfigHasBeenSet = false;

@@ -16,11 +16,14 @@ namespace Model {
 namespace MembershipTypeMapper {
 
 static const int USER_HASH = HashingUtils::HashString("USER");
+static const int GROUP_HASH = HashingUtils::HashString("GROUP");
 
 MembershipType GetMembershipTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == USER_HASH) {
     return MembershipType::USER;
+  } else if (hashCode == GROUP_HASH) {
+    return MembershipType::GROUP;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +40,8 @@ Aws::String GetNameForMembershipType(MembershipType enumValue) {
       return {};
     case MembershipType::USER:
       return "USER";
+    case MembershipType::GROUP:
+      return "GROUP";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {
