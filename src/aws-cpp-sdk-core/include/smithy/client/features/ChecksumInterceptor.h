@@ -47,9 +47,9 @@ class ChecksumInterceptor : public smithy::interceptor::Interceptor {
   using XXHash128 = Aws::Utils::Checksum::XXHash128;
   using PrecalculatedHash = Aws::Utils::Crypto::PrecalculatedHash;
 
-  explicit ChecksumInterceptor(const ClientConfiguration& configuration)
-      : m_requestChecksumCalculation(configuration.checksumConfig.requestChecksumCalculation),
-        m_responseChecksumValidation(configuration.checksumConfig.responseChecksumValidation) {}
+  explicit ChecksumInterceptor(const Aws::Client::ChecksumConfig& checksumConfig)
+      : m_requestChecksumCalculation(checksumConfig.requestChecksumCalculation),
+        m_responseChecksumValidation(checksumConfig.responseChecksumValidation) {}
   ~ChecksumInterceptor() override = default;
   ChecksumInterceptor() = default;
   ChecksumInterceptor(const ChecksumInterceptor& other) = delete;

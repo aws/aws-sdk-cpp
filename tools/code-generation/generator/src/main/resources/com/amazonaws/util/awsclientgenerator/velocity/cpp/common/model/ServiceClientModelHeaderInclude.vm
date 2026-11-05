@@ -83,9 +83,6 @@ namespace ${rootNamespace}
 
   namespace ${metadata.namespace}
   {
-#if(!$serviceModel.hasServiceSpecificClientConfig())
-    using ${metadata.classNamePrefix}ClientConfiguration = Aws::Client::GenericClientConfiguration;
-#end
     using ${metadata.classNamePrefix}EndpointProviderBase = Aws::${metadata.namespace}::Endpoint::${metadata.classNamePrefix}EndpointProviderBase;
     using ${metadata.classNamePrefix}EndpointProvider = Aws::${metadata.namespace}::Endpoint::${metadata.classNamePrefix}EndpointProvider;
 

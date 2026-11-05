@@ -106,7 +106,6 @@ namespace ${serviceNamespace}
 #foreach($presigner in $serviceModel.presigners)
         ${smithy_virtual}Aws::Utils::Outcome<String, ${metadata.classNamePrefix}Error> ${presigner.functionName}(const Aws::String& ${presigner.hostNameVarName}, const Aws::String& ${presigner.regionVarName},#foreach($arg in $presigner.queryParams)#if(${arg.variableName}) ${arg.type} ${arg.variableName},#end#end long long expiresIn = 900);
 #end
-        ${smithy_virtual}void OverrideEndpoint(const ${rootNamespace}::String& endpoint);
         ${smithy_virtual}std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase>& accessEndpointProvider();
     private:
       friend class ${rootNamespace}::Client::ClientWithAsyncTemplateMethods<${className}>;

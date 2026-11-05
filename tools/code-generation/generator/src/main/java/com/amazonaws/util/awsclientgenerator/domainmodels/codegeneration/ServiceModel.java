@@ -89,14 +89,62 @@ public class ServiceModel {
         );
     }
 
-    public boolean hasServiceSpecificClientConfig() {
-        return metadata.getServiceId().equalsIgnoreCase("S3") ||
-                metadata.getServiceId().equalsIgnoreCase("S3-CRT") ||
-                metadata.getServiceId().equalsIgnoreCase("S3 Control") ||
-                metadata.getServiceId().equalsIgnoreCase("DynamoDB Streams") ||
-                metadata.getSigningName().equalsIgnoreCase("bedrock") ||
-                metadata.isHasEndpointDiscoveryTrait() ||
-                endpointRuleSetModel.getParameters().containsKey("AccountId") || endpointRuleSetModel.getParameters().containsKey("AccountIdEndpointMode");
+    /**
+     * Names of the Aws::Client::ClientConfiguration fields this service supports beyond the shared ones.
+     * The generated service configuration exposes only these, plus the shared fields.
+     */
+    private static final java.util.regex.Pattern SIGV4A_ENDPOINT_AUTH_SCHEME =
+            java.util.regex.Pattern.compile("\"name\"\\s*:\\s*\"sigv4a\"");
+
+    public List<String> getSupportedClientOptions() {
+        List<String> options = new ArrayList<>();
+
+        Set<String> builtIns = new HashSet<>();
+        if (endpointRuleSetModel != null && endpointRuleSetModel.getParameters() != null) {
+            endpointRuleSetModel.getParameters().values().stream()
+                    .map(EndpointRuleSetModel.Parameter::getBuiltIn)
+                    .filter(Objects::nonNull)
+                    .forEach(builtIns::add);
+        }
+        if (builtIns.contains("AWS::UseFIPS")) {
+            options.add("useFIPS");
+        }
+        if (builtIns.contains("AWS::UseDualStack")) {
+            options.add("useDualStack");
+        }
+        // Matched by builtIn and by parameter name: some rule sets (e.g. S3 Control) declare AccountId without a builtIn
+        // and take its value from the client configuration.
+        Set<String> paramNames = endpointRuleSetModel != null && endpointRuleSetModel.getParameters() != null
+                ? endpointRuleSetModel.getParameters().keySet() : Collections.emptySet();
+        if (builtIns.contains("AWS::Auth::AccountId") || paramNames.contains("AccountId")) {
+            options.add("accountId");
+        }
+        if (builtIns.contains("AWS::Auth::AccountIdEndpointMode") || paramNames.contains("AccountIdEndpointMode")) {
+            options.add("accountIdEndpointMode");
+        }
+        if (metadata.isHasEndpointDiscoveryTrait()) {
+            options.add("enableEndpointDiscovery");
+        }
+        if (operations.values().stream().anyMatch(op -> op.getEndpoint() != null && op.getEndpoint().getHostPrefix() != null)) {
+            options.add("enableHostPrefixInjection");
+        }
+        if (operations.values().stream().anyMatch(Operation::isRequestCompressionRequired)) {
+            options.add("requestCompressionConfig");
+        }
+        if (operations.values().stream().anyMatch(op -> op.isRequestChecksumRequired() || op.getRequestAlgorithmMember() != null
+                || (op.getResponseAlgorithms() != null && !op.getResponseAlgorithms().isEmpty()))) {
+            options.add("checksumConfig");
+        }
+        if (hasStreamingRequestShapes()) {
+            options.add("disableExpectHeader");
+            options.add("httpClientChunkedMode");
+            options.add("awsChunkedBufferSize");
+        }
+        // SigV4a can come from the model's auth traits or from the endpoint rules' auth schemes (e.g. S3 Multi-Region Access Points).
+        if (hasSigV4aAuth() || (endpointRules != null && SIGV4A_ENDPOINT_AUTH_SCHEME.matcher(endpointRules).find())) {
+            options.add("sigV4aSigningRegionSet");
+        }
+        return options;
     }
 
     public Operation getOperationForRequestShapeName(String requestShapeName) {

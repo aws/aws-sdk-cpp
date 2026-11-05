@@ -39,6 +39,12 @@ void DynamoDBBuiltInParameters::SetFromClientConfiguration(const DynamoDBClientC
 }
 
 void DynamoDBBuiltInParameters::SetServiceSpecificParameters(const DynamoDBClientConfiguration& config) {
+  if (config.useFIPS) {
+    SetBooleanParameter("UseFIPS", true);
+  }
+  if (config.useDualStack) {
+    SetBooleanParameter("UseDualStack", true);
+  }
   if (!config.accountId.empty()) {
     SetStringParameter("AccountId", config.accountId);
   }

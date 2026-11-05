@@ -111,10 +111,10 @@ namespace client
           m_httpClient(std::move(httpClient)),
           m_errorMarshaller(std::move(errorMarshaller)),
           m_interceptors({
-              Aws::MakeShared<ChecksumInterceptor>("AwsSmithyClientBase", *m_clientConfig),
-              Aws::MakeShared<features::ChunkingInterceptor>("AwsSmithyClientBase", 
-                  m_httpClient->IsDefaultAwsHttpClient() ? Aws::Client::HttpClientChunkedMode::DEFAULT : m_clientConfig->httpClientChunkedMode,
-                  m_clientConfig->awsChunkedBufferSize)
+              Aws::MakeShared<ChecksumInterceptor>("AwsSmithyClientBase", m_serviceOptions.checksumConfig),
+              Aws::MakeShared<features::ChunkingInterceptor>("AwsSmithyClientBase",
+                  m_httpClient->IsDefaultAwsHttpClient() ? Aws::Client::HttpClientChunkedMode::DEFAULT : m_serviceOptions.httpClientChunkedMode,
+                  m_serviceOptions.awsChunkedBufferSize)
           }),
           m_enableNewRetries{Aws::Utils::StringUtils::ToLower(Aws::Environment::GetEnv("AWS_NEW_RETRIES_2026").c_str()) == "true"}
         {
@@ -197,6 +197,12 @@ namespace client
         void baseInit();
 
         /**
+         * Applies the values of the service-specific options this client's service supports.
+         * Called by generated service clients during initialization; unsupported options keep their defaults.
+         */
+        void ApplyServiceOptions(const Aws::Client::ServiceClientOptions& options);
+
+        /**
          * Initialize client configuration on copy, if there is a factory use it, otherwise use the already present
          * shared configuration.
          */
@@ -241,6 +247,8 @@ namespace client
          * This is done to avoid duplication of config object between this base and actual service template classes.
          */
         const Aws::UniquePtr<Aws::Client::ClientConfiguration> m_clientConfig;
+        /* Values of the service-specific options, set by ApplyServiceOptions. Declared before m_interceptors, which is built from it. */
+        Aws::Client::ServiceClientOptions m_serviceOptions;
         Aws::String m_serviceName;
         Aws::String m_serviceUserAgentName;
 
