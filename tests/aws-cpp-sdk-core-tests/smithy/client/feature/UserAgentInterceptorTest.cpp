@@ -6,6 +6,8 @@
 #include <aws/core/platform/Environment.h>
 #include <aws/core/utils/FileSystemUtils.h>
 #include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/threading/PooledThreadExecutor.h>
+#include <aws/core/utils/threading/UnboundedExecutor.h>
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/testing/mocks/aws/client/MockAWSClient.h>
 #include <smithy/client/features/UserAgentInterceptor.h>
@@ -296,4 +298,50 @@ TEST_F(UserAgentInterceptorTest, AppIdEnvVarHasInvalidCharacters) {
   EXPECT_TRUE(langMetadata < crtMetadata);
   EXPECT_TRUE(crtMetadata < appMetadata);
   EXPECT_TRUE(appMetadata < businessMetrics);
+}
+
+namespace {
+Aws::String UserAgentFor(UserAgentInterceptor& userAgentInterceptor) {
+  AmazonWebServiceRequestMock request{};
+  InterceptorContext context{request};
+  const auto wireRequest = Aws::MakeShared<StandardHttpRequest>(LOG_TAG, URI{"rydia.com/caller"}, HttpMethod::HTTP_POST);
+  context.SetTransmitRequest(wireRequest);
+  userAgentInterceptor.ModifyBeforeSigning(context);
+  return wireRequest->GetHeaderValue("user-agent");
+}
+}  // namespace
+
+TEST_F(UserAgentInterceptorTest, NamesConfiguredExecutor) {
+  Client::ClientConfiguration configuration;
+  configuration.executor = Aws::MakeShared<Threading::UnboundedExecutor>(LOG_TAG);
+  UserAgentInterceptor userAgentInterceptor{configuration, "standard", "TestService"};
+
+  EXPECT_NE(Aws::String::npos, UserAgentFor(userAgentInterceptor).find("md/executor#unbounded"));
+}
+
+TEST_F(UserAgentInterceptorTest, ExecutorFollowsCrtVersion) {
+  Environment::SetEnv(EXECUTION_ENV_VAR, "lambda", true);
+  Client::ClientConfiguration configuration;
+  configuration.executor = Aws::MakeShared<Threading::UnboundedExecutor>(LOG_TAG);
+  UserAgentInterceptor userAgentInterceptor{configuration, "standard", "TestService"};
+
+  const auto userAgentParsed = Utils::StringUtils::Split(UserAgentFor(userAgentInterceptor), ' ');
+  const auto crtMetadata =
+      std::find_if(userAgentParsed.begin(), userAgentParsed.end(), [](const Aws::String& value) { return value.find("md/aws-crt#") == 0; });
+  ASSERT_TRUE(crtMetadata != userAgentParsed.end());
+  const auto executorMetadata = crtMetadata + 1;
+  ASSERT_TRUE(executorMetadata != userAgentParsed.end());
+  EXPECT_EQ("md/executor#unbounded", *executorMetadata);
+  ASSERT_TRUE(executorMetadata + 1 != userAgentParsed.end());
+  EXPECT_EQ("exec-env/lambda", *(executorMetadata + 1));
+}
+
+TEST_F(UserAgentInterceptorTest, NamesExecutorSetAfterConstruction) {
+  Client::ClientConfiguration configuration;
+  UserAgentInterceptor userAgentInterceptor{configuration, "standard", "TestService"};
+  EXPECT_EQ(Aws::String::npos, UserAgentFor(userAgentInterceptor).find("md/executor#"));
+
+  Threading::PooledThreadExecutor executor(1);
+  userAgentInterceptor.SetExecutor(executor);
+  EXPECT_NE(Aws::String::npos, UserAgentFor(userAgentInterceptor).find("md/executor#pooled"));
 }

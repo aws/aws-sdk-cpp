@@ -4,23 +4,25 @@
  */
 
 #include <aws/core/utils/threading/DefaultExecutor.h>
+#include <aws/core/utils/threading/UnboundedExecutor.h>
 #include <aws/core/utils/threading/Semaphore.h>
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 
 #include <atomic>
 #include <chrono>
+#include <type_traits>
 
 using namespace Aws::Utils::Threading;
 
-class DefaultExecutorTest : public Aws::Testing::AwsCppSdkGTestSuite
+class UnboundedExecutorTest : public Aws::Testing::AwsCppSdkGTestSuite
 {
 };
 
-TEST_F(DefaultExecutorTest, ThreadsJoinOnDestructionTest)
+TEST_F(UnboundedExecutorTest, ThreadsJoinOnDestructionTest)
 {
     std::atomic<int> i(1);
     {
-        DefaultExecutor exec;
+        UnboundedExecutor exec;
         static Semaphore ev(0, 2);
         auto first = [&] { ev.WaitOne(); i++; };
         auto second = [&] { ev.WaitOne(); i++; };
@@ -32,21 +34,21 @@ TEST_F(DefaultExecutorTest, ThreadsJoinOnDestructionTest)
     ASSERT_EQ(30, i.load());
 }
 
-TEST_F(DefaultExecutorTest, ThreadsDetachIfNotShuttingDown)
+TEST_F(UnboundedExecutorTest, ThreadsDetachIfNotShuttingDown)
 {
     using namespace std::chrono;
     std::atomic<int> i(1);
     static Semaphore ev(0, 1);
-    DefaultExecutor exec;
+    UnboundedExecutor exec;
     exec.Submit([&] { i++; ev.Release(); });
     ev.WaitOne();
     i = i * 10;
     ASSERT_EQ(20, i.load());
 }
 
-TEST_F(DefaultExecutorTest, WorkerThreadTheOnlyOwner) {
+TEST_F(UnboundedExecutorTest, WorkerThreadTheOnlyOwner) {
   // If somehow the shared_ptr of the Executor gets owned by a worker thread of that Executor - Executor shutdown must not deadlock
-  auto pExec = Aws::MakeShared<DefaultExecutor>("WorkerThreadTheOnlyOwner");
+  auto pExec = Aws::MakeShared<UnboundedExecutor>("WorkerThreadTheOnlyOwner");
 
   std::mutex mtx;
   std::condition_variable cv;
@@ -89,7 +91,7 @@ TEST_F(DefaultExecutorTest, WorkerThreadTheOnlyOwner) {
   ASSERT_FALSE(pExec);  // (just in case) executor pointer cannot magically resurrect.
 }
 
-TEST_F(DefaultExecutorTest, ConcurrentTaskLaunchAndShutdown) {
+TEST_F(UnboundedExecutorTest, ConcurrentTaskLaunchAndShutdown) {
   // Try to force a race condition on task submission and shutdown
   // one threads submit a new task, another starts the executor shutdown
   std::mutex mtx;
@@ -110,7 +112,7 @@ TEST_F(DefaultExecutorTest, ConcurrentTaskLaunchAndShutdown) {
 
   static const size_t TEST_REPEATS = 50;  // test verifies race condition behavior, repeat it.
   for (size_t testRepeat = 0; testRepeat < TEST_REPEATS; ++testRepeat) {
-    auto pExec = Aws::MakeShared<DefaultExecutor>("ConcurrentTaskLaunchAndShutdown");
+    auto pExec = Aws::MakeShared<UnboundedExecutor>("ConcurrentTaskLaunchAndShutdown");
     bool continueTest = false;
     std::atomic<size_t> someVar;
     auto executorShutdown = [&](bool& executorShutdownReady) {
@@ -153,3 +155,23 @@ TEST_F(DefaultExecutorTest, ConcurrentTaskLaunchAndShutdown) {
     }
   }
 }
+
+TEST_F(UnboundedExecutorTest, UserAgentName) {
+  UnboundedExecutor exec;
+  EXPECT_STREQ("unbounded", exec.GetUserAgentName());
+}
+
+// DefaultExecutor is a deprecated alias, so naming it warns. The warning is silenced here to check it still compiles.
+#if defined(_MSC_VER)
+#pragma warning(push)
+#pragma warning(disable : 4996)
+#else
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+#endif
+static_assert(std::is_same<DefaultExecutor, UnboundedExecutor>::value, "DefaultExecutor still names the thread-per-call executor");
+#if defined(_MSC_VER)
+#pragma warning(pop)
+#else
+#pragma GCC diagnostic pop
+#endif

@@ -63,7 +63,7 @@ class AWS_CORE_LOCAL SmithyBidirectionalStreamingWriteDataTask final {
 
   void operator()() {
     // Resolve auth and endpoint
-    auto pExecutor = Aws::MakeShared<Aws::Utils::Threading::DefaultExecutor>("SmithyBidiWriteData");
+    auto pExecutor = Aws::MakeShared<Aws::Utils::Threading::UnboundedExecutor>("SmithyBidiWriteData");
     auto authResolver = m_request->GetRequestSpecificSupportedAuth().empty() ? nullptr
         : Aws::MakeShared<smithy::GenericAuthSchemeResolver<>>("SmithyBidiWriteData",
             m_request->GetRequestSpecificSupportedAuth());

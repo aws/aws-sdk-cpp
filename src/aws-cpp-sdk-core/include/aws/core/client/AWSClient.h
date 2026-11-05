@@ -208,6 +208,12 @@ namespace Aws
              */
             virtual void SetServiceClientName(const Aws::String& name);
 
+            /**
+             * Names the client's executor in each request's user agent.
+             * Note: this API should only be called in your extended class constructors.
+             */
+            void SetUserAgentExecutor(const Aws::Utils::Threading::Executor& executor);
+
             void AppendToUserAgent(const Aws::String& valueToAppend);
         protected:
             /**

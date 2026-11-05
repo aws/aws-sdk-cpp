@@ -4,7 +4,7 @@
  */
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>
-#include <aws/core/utils/threading/DefaultExecutor.h>
+#include <aws/core/utils/threading/UnboundedExecutor.h>
 #include <aws/core/utils/threading/ReaderWriterLock.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -24,7 +24,7 @@ TEST_F(ReaderWriterLockTest, MultipleReadersMultipleWriters)
     Semaphore ev(0, READER_THREADS + WRITER_THREADS);
     ReaderWriterLock rwlock;
     {
-        DefaultExecutor exec;
+        UnboundedExecutor exec;
         auto reader = [&] {
             ev.WaitOne();
             for(int i = 0; i < ITERATIONS; i++)
@@ -66,7 +66,7 @@ TEST_F(ReaderWriterLockTest, NoReadersMultipleWriters)
     Semaphore ev(0, 100);
     ReaderWriterLock rwlock;
     {
-        DefaultExecutor exec;
+        UnboundedExecutor exec;
         auto writer = [&] {
             ev.WaitOne();
             for(int i = 0; i < ITERATIONS; i++)

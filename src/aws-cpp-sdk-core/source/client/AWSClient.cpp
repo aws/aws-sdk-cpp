@@ -237,6 +237,11 @@ void AWSClient::AppendToUserAgent(const Aws::String& valueToAppend)
    m_userAgentInterceptor->AddLegacyFeaturesToUserAgent(valueToAppend);
 }
 
+void AWSClient::SetUserAgentExecutor(const Aws::Utils::Threading::Executor& executor) {
+  assert(m_userAgentInterceptor);
+  m_userAgentInterceptor->SetExecutor(executor);
+}
+
 Aws::Client::AWSAuthSigner* AWSClient::GetSignerByName(const char* name) const
 {
     const auto& signer =  m_signerProvider->GetSigner(name);
