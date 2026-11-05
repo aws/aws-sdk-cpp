@@ -16,15 +16,18 @@ AWS SDK for C++ is now in General Availability and recommended for production us
 
 ### Minimum Requirements:
 * A compiler with C++17 support
-  * Visual Studio 2017 or later
-  * OR GNU Compiler Collection (GCC) 7.3 or later
+  * GNU Compiler Collection (GCC) 7.3 or later
   * OR Clang 5 or later
+  * OR Apple Clang 9.1 (Xcode 9.3) or later
+  * OR Visual Studio 2017 version 15.7 or later
 * CMake 3.17 or later
 * 4GB of RAM (required for building some of the larger clients; SDK build may fail on EC2 instance types t2.micro, t2.small, and other small instance types due to insufficient memory)
 * Supported platforms
   * Amazon Linux
   * Windows
   * Mac
+
+These minimums follow the SDK's [toolchain policy](./docs/Toolchain_Policy.md).
 
 ### Building From Source:
 
@@ -153,6 +156,7 @@ Please make sure to check out our resources too before opening an issue:
 # Using the SDK and Other Topics
 * Other docs for how to build the sdk
   * [CMake Parameters](./docs/CMake_Parameters.md)
+  * [Toolchain policy](./docs/Toolchain_Policy.md)
   * [Add as CMake external project](./docs/CMake_External_Project.md)
   * [Building for Docker](https://github.com/aws/aws-sdk-cpp/tree/master/CI/docker-file) (To build for Docker, ensure your container meets the [minimum requirements](#minimum-requirements))
   * [Building on an EC2 instance](https://github.com/aws/aws-sdk-cpp/wiki/Building-the-SDK-from-source-on-EC2)

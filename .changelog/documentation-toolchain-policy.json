@@ -1,0 +1,6 @@
+{
+  "type": "documentation",
+  "category": "docs",
+  "contributor": "sbiscigl",
+  "description": "Add a toolchain policy with the minimum GCC, Clang, Apple Clang, MSVC and CMake versions for building the SDK, and how each one is set. The README's minimum requirements now list the same versions."
+}
