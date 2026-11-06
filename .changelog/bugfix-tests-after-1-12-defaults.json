@@ -1,0 +1,6 @@
+{
+  "type": "bugfix",
+  "category": "aws-cpp-sdk-core, tests",
+  "contributor": "sbiscigl",
+  "description": "Fix tests and builds that broke once the 1.12 defaults were turned on. The CRT HTTP client now uses httpRequestTimeoutMs, not requestTimeoutMs, as its limit on a whole request, the same as libcurl."
+}

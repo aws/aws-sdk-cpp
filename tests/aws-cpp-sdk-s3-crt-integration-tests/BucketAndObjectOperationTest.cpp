@@ -1643,6 +1643,9 @@ namespace
         ASSERT_FALSE(outcome.IsSuccess());
     }
 
+    // On the CRT HTTP client with asserts on, CreateHttpClient aborts when the TLS context can't be built (#3972),
+    // so the client is never constructed and this test can't reach its check.
+#if !AWS_SDK_USE_CRT_HTTP || defined(NDEBUG)
     TEST_F(BucketAndObjectOperationTest, MissingCertificate) {
         Aws::S3Crt::ClientConfiguration s3ClientConfig;
         s3ClientConfig.region = Aws::Region::US_EAST_1;
@@ -1661,6 +1664,7 @@ namespace
         ASSERT_FALSE(result.IsSuccess());
         ASSERT_EQ((Aws::Client::CoreErrors) result.GetError().GetErrorType(), Aws::Client::CoreErrors::NOT_INITIALIZED);
     }
+#endif
 
     TEST_F(BucketAndObjectOperationTest, PutObjectChecksum) {
         struct ChecksumTestCase {

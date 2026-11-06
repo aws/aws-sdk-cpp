@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/Outcome.h>
+#include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSSet.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/ratelimiter/DefaultRateLimiter.h>
@@ -61,7 +62,9 @@ static const char BASE_VALIDATION_TABLE[] = "Validation";
 static const char BASE_CRUD_TEST_TABLE[] = "Crud";
 static const char BASE_CRUD_CALLBACKS_TEST_TABLE[] = "Crud_WithCallbacks";
 static const char BASE_THROTTLED_TEST_TABLE[] = "Throttled";
+#if !AWS_SDK_USE_CRT_HTTP
 static const char BASE_LIMITER_TEST_TABLE[] = "Limiter";
+#endif
 static const char BASE_ATTRIBUTEVALUE_TEST_TABLE[] = "AttributeValue";
 
 static const char ALLOCATION_TAG[] = "TableOperationTest";
@@ -814,6 +817,9 @@ TEST_F(TableOperationTest, TestCrudOperationsWithCallbacks)
     }
 }
 
+// TODO: the CRT HTTP client doesn't apply readRateLimiter, so this test only runs on the legacy transports.
+// Run it on the CRT too once aws-c-http has a throughput cap the SDK's rate limiter can use.
+#if !AWS_SDK_USE_CRT_HTTP
 void PutBlobs(DynamoDBClient* client, uint32_t blobRowStartIndex)
 {
     Aws::String testValueColumnName = "TestBlob";
@@ -888,6 +894,7 @@ TEST_F(TableOperationTest, TestLimiter)
 //
 //  auto secondsElapsed2 = std::chrono::duration_cast<std::chrono::seconds>(timeDifference2);
 }
+#endif // !AWS_SDK_USE_CRT_HTTP
 
 TEST_F(TableOperationTest, TestAttributeValues)
 {
@@ -1568,11 +1575,11 @@ TEST_F(TableOperationTest, TestWriteDataApi) {
     auto body = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG);
     *body << payload;
     request->AddContentBody(body);
-    request->SetContentLength(std::to_string(payload.size()));
+    request->SetContentLength(Aws::Utils::StringUtils::to_string(payload.size()));
 
     // Sign the request
     auto credProvider = Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG);
-    Aws::Client::AWSAuthV4Signer signer(credProvider, "dynamodb", Aws::Region::US_EAST_1);
+    Aws::Client::AWSAuthV4Signer signer(credProvider, "dynamodb", config.region);
     ASSERT_TRUE(signer.SignRequest(*request));
 
     // Acquire connection and create stream
