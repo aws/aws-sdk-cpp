@@ -194,7 +194,7 @@ namespace Aws
              */
             unsigned maxConnections = 25;
             /**
-             * This is currently only applicable for Curl to set the http request level timeout, including possible dns lookup time, connection establish time, ssl handshake time and actual data transmission time.
+             * This is currently only applicable for Curl and the CRT HTTP client to set the http request level timeout, including possible dns lookup time, connection establish time, ssl handshake time and actual data transmission time.
              * the corresponding Curl option is CURLOPT_TIMEOUT_MS
              * defaults to 0, no http request level timeout.
              */
