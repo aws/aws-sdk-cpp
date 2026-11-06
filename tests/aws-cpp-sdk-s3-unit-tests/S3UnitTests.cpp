@@ -20,8 +20,10 @@
 #include <aws/testing/AwsTestHelpers.h>
 #include <aws/testing/MemoryTesting.h>
 #include <aws/testing/mocks/http/MockHttpClient.h>
+#include <aws/testing/utils/UserAgentUtils.h>
 #include <gtest/gtest.h>
 
+#include <functional>
 #include <memory>
 
 using namespace Aws;
@@ -439,6 +441,71 @@ TEST_F(S3UnitTest, PutObjectShouldHaveCorrectUserAgent) {
   EXPECT_TRUE(langMetadata < crtMetadata);
   EXPECT_TRUE(crtMetadata <  archMetadata);
   EXPECT_TRUE(archMetadata < businessMetrics);
+}
+
+namespace {
+struct ChecksumFeatureTestCase {
+  ChecksumAlgorithm algorithm;
+  std::function<void(PutObjectRequest&)> setChecksum;
+  Aws::String metric;
+};
+}  // namespace
+
+TEST_F(S3UnitTest, PutObjectShouldTrackChecksumAlgorithmFeature) {
+  // FLEXIBLE_CHECKSUMS_REQ_* metric values, from the AWS SDK business metrics registry.
+  const Aws::Vector<ChecksumFeatureTestCase> testCases{
+    {ChecksumAlgorithm::CRC32, [](PutObjectRequest& r) { r.SetChecksumCRC32("Y2hlY2tzdW0="); }, "U"},
+    {ChecksumAlgorithm::CRC32C, [](PutObjectRequest& r) { r.SetChecksumCRC32C("Y2hlY2tzdW0="); }, "V"},
+    {ChecksumAlgorithm::CRC64NVME, [](PutObjectRequest& r) { r.SetChecksumCRC64NVME("Y2hlY2tzdW0="); }, "W"},
+    {ChecksumAlgorithm::SHA1, [](PutObjectRequest& r) { r.SetChecksumSHA1("Y2hlY2tzdW0="); }, "X"},
+    {ChecksumAlgorithm::SHA256, [](PutObjectRequest& r) { r.SetChecksumSHA256("Y2hlY2tzdW0="); }, "Y"},
+    {ChecksumAlgorithm::SHA512, [](PutObjectRequest& r) { r.SetChecksumSHA512("Y2hlY2tzdW0="); }, "AF"},
+    {ChecksumAlgorithm::XXHASH3, [](PutObjectRequest& r) { r.SetChecksumXXHASH3("Y2hlY2tzdW0="); }, "AG"},
+    {ChecksumAlgorithm::XXHASH64, [](PutObjectRequest& r) { r.SetChecksumXXHASH64("Y2hlY2tzdW0="); }, "AH"},
+    {ChecksumAlgorithm::XXHASH128, [](PutObjectRequest& r) { r.SetChecksumXXHASH128("Y2hlY2tzdW0="); }, "AI"},
+  };
+  Aws::Vector<Aws::String> allMetrics;
+  for (const auto& testCase : testCases) {
+    allMetrics.push_back(testCase.metric);
+  }
+
+  for (const auto& testCase : testCases) {
+    // The SDK either calculates the checksum, or sends the one set on the request.
+    for (const bool provided : {false, true}) {
+      SCOPED_TRACE(Aws::String(ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(testCase.algorithm)) +
+                   (provided ? " provided" : " calculated"));
+      // The mock client is shared by the suite, so start each case clean.
+      _mockHttpClient->Reset();
+      auto request = PutObjectRequest()
+        .WithBucket("big-boss")
+        .WithKey("snake-eater")
+        .WithChecksumAlgorithm(testCase.algorithm);
+      if (provided) {
+        testCase.setChecksum(request);
+      }
+      std::shared_ptr<IOStream> body = Aws::MakeShared<StringStream>(ALLOCATION_TAG, "phantom pain");
+      request.SetBody(body);
+
+      auto mockRequest = Aws::MakeShared<Standard::StandardHttpRequest>(ALLOCATION_TAG, "outer.heaven/mother-base", HttpMethod::HTTP_PUT);
+      mockRequest->SetResponseStreamFactory([]() -> IOStream* {
+        return Aws::New<StringStream>(ALLOCATION_TAG, "", std::ios_base::in | std::ios_base::binary);
+      });
+      auto mockResponse = Aws::MakeShared<Standard::StandardHttpResponse>(ALLOCATION_TAG, mockRequest);
+      mockResponse->SetResponseCode(HttpResponseCode::OK);
+      _mockHttpClient->AddResponseToReturn(mockResponse);
+
+      const auto response = _s3Client->PutObject(request);
+      EXPECT_TRUE(response.IsSuccess());
+      ASSERT_EQ(1u, _mockHttpClient->GetAllRequestsMade().size());
+
+      // Exactly one checksum algorithm metric is reported, and it's the right one.
+      const auto metrics = GetFeaturesForRequest(_mockHttpClient->GetMostRecentHttpRequest());
+      for (const auto& metric : allMetrics) {
+        const bool reported = std::find(metrics.begin(), metrics.end(), metric) != metrics.end();
+        EXPECT_EQ(metric == testCase.metric, reported) << "metric " << metric;
+      }
+    }
+  }
 }
 
 TEST_F(S3UnitTest, PutObjectShouldOverrideUserAgent) {

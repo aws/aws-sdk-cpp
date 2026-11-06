@@ -151,10 +151,10 @@ class ChecksumInterceptor : public smithy::interceptor::Interceptor {
  private:
   void addChecksumFeatureForChecksumName(const Aws::String& checksumName, const Aws::AmazonWebServiceRequest& request) {
     if (checksumName == "crc32") {
-      request.AddUserAgentFeature(Aws::Client::UserAgentFeature::FLEXIBLE_CHECKSUMS_REQ_CRC32C);
+      request.AddUserAgentFeature(Aws::Client::UserAgentFeature::FLEXIBLE_CHECKSUMS_REQ_CRC32);
     } else if (checksumName == "crc32c") {
       request.AddUserAgentFeature(Aws::Client::UserAgentFeature::FLEXIBLE_CHECKSUMS_REQ_CRC32C);
-    } else if (checksumName == "crc64") {
+    } else if (checksumName == "crc64nvme") {
       request.AddUserAgentFeature(Aws::Client::UserAgentFeature::FLEXIBLE_CHECKSUMS_REQ_CRC64);
     } else if (checksumName == "sha1") {
       request.AddUserAgentFeature(Aws::Client::UserAgentFeature::FLEXIBLE_CHECKSUMS_REQ_SHA1);
