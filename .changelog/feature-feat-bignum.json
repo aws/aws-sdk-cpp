@@ -1,0 +1,6 @@
+{
+  "type": "feature",
+  "category": "aws-cpp-sdk-core",
+  "contributor": "lucix-aws",
+  "description": "Add byte, short, bigInteger, and bigDecimal support to the schema-serde ShapeSerializer and ShapeDeserializer (CBOR, JSON, XML, and Query codecs). Big numbers use Aws::Crt::BigInteger and Aws::Crt::BigDecimal, so this updates aws-crt-cpp to a main commit that includes them (aws-crt-cpp PR 917) along with its dependency pins. Adding pure virtual methods to ShapeSerializer and ShapeDeserializer is a source-breaking change for out-of-tree subclasses. HTTP bindings are not covered."
+}
