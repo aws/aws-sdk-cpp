@@ -35,7 +35,7 @@ macro(apply_post_project_platform_settings)
 
     # libatomic - some arches need to link against libatomic.so, some don't
     cmake_push_check_state()
-    list(APPEND CMAKE_REQUIRED_FLAGS "-std=c++${CPP_STANDARD}")
+    list(APPEND CMAKE_REQUIRED_FLAGS "-std=c++${CMAKE_CXX_STANDARD}")
     check_cxx_source_compiles("${ATOMIC_TEST_CXX_SOURCE}" HAVE_ATOMICS_WITHOUT_LIBATOMIC)
     if(NOT HAVE_ATOMICS_WITHOUT_LIBATOMIC)
         set(CMAKE_REQUIRED_LIBRARIES atomic)

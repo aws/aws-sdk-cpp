@@ -108,9 +108,9 @@ if(USE_WINDOWS_DLL_SEMANTICS)
     endif()
 endif()
 
-if(USE_GCC_FLAGS)
-    target_compile_options(${PROJECT_NAME} PUBLIC -std=c++${CPP_STANDARD})
+target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_17)
 
+if(USE_GCC_FLAGS)
     if(NOT ENABLE_RTTI)
         target_compile_options(${PROJECT_NAME} PUBLIC -fno-rtti)
     endif()

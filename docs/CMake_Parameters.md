@@ -43,8 +43,8 @@ Windows example:
 
 For more information, see the CMake documentation for your platform.
 
-### CPP_STANDARD
-(Defaults to 11) Allows you to specify a custom c++ standard for use with C++ 14 and 17 code-bases
+### CMAKE_CXX_STANDARD
+(Defaults to 17) CMake's standard setting for the C++ standard the SDK builds with. The minimum is 17, and setting anything older fails the build. The SDK's own `CPP_STANDARD` setting was removed in 1.12.
 
 ### ENABLE_UNITY_BUILD
 (Defaults to ON) If enabled, most SDK libraries will be built as a single, generated .cpp file.  This can significantly reduce static library size as well as speed up compilation time.
@@ -61,8 +61,11 @@ For more information, see the CMake documentation for your platform.
 ### SIMPLE_INSTALL
 (Defaults to ON) If enabled, the install process will not insert platform-specific intermediate directories underneath bin/ and lib/.  Turn OFF if you need to make multi-platform releases under a single install directory.
 
-### USE_CRT_HTTP_CLIENT 
-(Defaults to OFF) If enabled, the common runtime HTTP client will be used, and the legacy systems such as WinHttp and libcurl will not be built or included
+### USE_CRT_HTTP_CLIENT
+(Defaults to ON) If enabled, the common runtime HTTP client will be used, and the legacy systems such as WinHttp and libcurl will not be built or included. Turn it off to build libcurl or WinHttp instead. They get no new features, and new work is built and tested against the CRT.
+
+### USE_CRT_HTTP_CLIENT_ASYNC_IO
+(Defaults to ON) If enabled, async calls on the CRT HTTP client use non-blocking I/O, so a request doesn't hold an executor thread while it waits on the network. Has no effect when USE_CRT_HTTP_CLIENT is off.
 
 ### NO_HTTP_CLIENT
 (Defaults to OFF) If enabled, prevents the default platform-specific http client from being built into the library.  Turn this ON if you wish to inject your own http client implementation.
@@ -95,9 +98,9 @@ For more information, see the CMake documentation for your platform.
 (Defaults to ON) Build third-party dependencies
 
 ### USE_OPENSSL
-(Defaults to ON) Set this if you want to use your system's OpenSSL 1.0.2/1.1.1 compatible libcrypto
+(Defaults to OFF) Set this if you want to use your system's OpenSSL 1.0.2/1.1.1 compatible libcrypto instead of the CRT's own crypto.
 
-If disabled, SDK will build and install [AWS-LC](https://github.com/awslabs/aws-lc) on Linux system when `BUILD_DEPS` is `ON`. This is an experimental feature. It will install AWS-LC as replacement of OpenSSL in the system default directory. Do not use if you have an OpenSSL installation in your system already.
+If disabled, the SDK builds [AWS-LC](https://github.com/awslabs/aws-lc) on Linux and macOS when `BUILD_DEPS` is `ON`, and installs its libcrypto alongside the SDK. If you have an OpenSSL installation in the same install prefix, install the SDK to a different prefix.
 
 ### ENABLE_CURL_LOGGING
 (Defaults to ON) If enabled, Curl's internal log will be piped to SDK's logger

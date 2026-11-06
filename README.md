@@ -1,5 +1,5 @@
 # AWS SDK for C++
-The AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).
+The AWS SDK for C++ provides a modern C++ (version C++17 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).
 
 AWS SDK for C++ is now in General Availability and recommended for production use. We invite our customers to join the development efforts by submitting pull requests and sending us feedback and ideas via GitHub Issues.
 
@@ -15,14 +15,19 @@ AWS SDK for C++ is now in General Availability and recommended for production us
 ## Building the SDK:
 
 ### Minimum Requirements:
-* Visual Studio 2015 or later
-* OR GNU Compiler Collection (GCC) 4.9 or later
-* OR Clang 3.3 or later
+* A compiler with C++17 support
+  * GNU Compiler Collection (GCC) 7.3 or later
+  * OR Clang 5 or later
+  * OR Apple Clang 9.1 (Xcode 9.3) or later
+  * OR Visual Studio 2017 version 15.7 or later
+* CMake 3.17 or later
 * 4GB of RAM (required for building some of the larger clients; SDK build may fail on EC2 instance types t2.micro, t2.small, and other small instance types due to insufficient memory)
 * Supported platforms
   * Amazon Linux
   * Windows
   * Mac
+
+These minimums follow the SDK's [toolchain policy](./docs/Toolchain_Policy.md).
 
 ### Building From Source:
 
@@ -50,7 +55,7 @@ AWS SDK for C++ is now in General Availability and recommended for production us
    **_NOTE:_** BUILD_ONLY is an optional flag used to list only the services you are using. Building the whole SDK can take a long time. Also, check out the list of [CMake parameters](./docs/CMake_Parameters.md)
 
 #### Other Dependencies:
-To compile in Linux, you must have the header files for libcurl, libopenssl. The packages are typically available in your package manager.
+A default build sends requests through the CRT, which comes with the SDK, so it doesn't need libcurl or OpenSSL. To build with libcurl instead (`-DUSE_CRT_HTTP_CLIENT=OFF`) on Linux, you must have the header files for libcurl. The packages are typically available in your package manager.
 
 Debian based Linux distributions example:
    `sudo apt-get install libcurl-dev`
@@ -151,6 +156,7 @@ Please make sure to check out our resources too before opening an issue:
 # Using the SDK and Other Topics
 * Other docs for how to build the sdk
   * [CMake Parameters](./docs/CMake_Parameters.md)
+  * [Toolchain policy](./docs/Toolchain_Policy.md)
   * [Add as CMake external project](./docs/CMake_External_Project.md)
   * [Building for Docker](https://github.com/aws/aws-sdk-cpp/tree/master/CI/docker-file) (To build for Docker, ensure your container meets the [minimum requirements](#minimum-requirements))
   * [Building on an EC2 instance](https://github.com/aws/aws-sdk-cpp/wiki/Building-the-SDK-from-source-on-EC2)

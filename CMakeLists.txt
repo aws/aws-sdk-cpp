@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: Apache-2.0.
 #
 
-cmake_minimum_required(VERSION 3.13 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.17 FATAL_ERROR)
 
 option(LEGACY_BUILD "If enabled, the SDK will use 1.11.0 version of CMake files to build" ON)
 if (LEGACY_BUILD)
@@ -16,6 +16,9 @@ if (LEGACY_BUILD)
     if (POLICY CMP0077)
         cmake_policy(SET CMP0077 OLD) # CMP0077: option() honors normal variables. Introduced in 3.13
     endif ()
+    # CMP0091: MSVC runtime library flags are selected by an abstraction. Introduced in 3.15. set_msvc_flags()
+    # picks /MD or /MT by editing CMAKE_CXX_FLAGS, which only works under the old behavior.
+    cmake_policy(SET CMP0091 OLD)
 
     get_filename_component(AWS_NATIVE_SDK_ROOT "${CMAKE_CURRENT_SOURCE_DIR}" ABSOLUTE)
 
@@ -33,8 +36,8 @@ if (LEGACY_BUILD)
     option(BUILD_SHARED_LIBS "If enabled, all aws sdk libraries will be build as shared objects; otherwise all Aws libraries will be built as static objects" ON)
     option(FORCE_SHARED_CRT "If enabled, will unconditionally link the standard libraries in dynamically, otherwise the standard library will be linked in based on the BUILD_SHARED_LIBS setting" ON)
     option(SIMPLE_INSTALL "If enabled, removes all the additional indirection (platform/cpu/config) in the bin and lib directories on the install step" ON)
-    option(USE_CRT_HTTP_CLIENT "If enabled, the common runtime HTTP client will be used, and the legacy systems such as WinHttp and libcurl will not be built or included" OFF)
-    option(USE_CRT_HTTP_CLIENT_ASYNC_IO "If enabled (requires USE_CRT_HTTP_CLIENT), compiles in and uses the non-blocking async I/O request path. Off by default to protect existing customers; flipping it on is the release gate for the new async path." OFF)
+    option(USE_CRT_HTTP_CLIENT "If enabled, the common runtime HTTP client will be used, and the legacy systems such as WinHttp and libcurl will not be built or included. Turn it off to build libcurl or WinHttp instead" ON)
+    option(USE_CRT_HTTP_CLIENT_ASYNC_IO "If enabled (requires USE_CRT_HTTP_CLIENT), compiles in and uses the non-blocking async I/O request path" ON)
     option(NO_HTTP_CLIENT "If enabled, no platform-default http client will be included in the library.  For the library to be used you will need to provide your own platform-specific implementation" OFF)
     option(NO_ENCRYPTION "If enabled, no platform-default encryption will be included in the library.  For the library to be used you will need to provide your own platform-specific implementations" OFF)
     option(USE_IXML_HTTP_REQUEST_2 "If enabled on windows, the com object IXmlHttpRequest2 will be used for the http stack" OFF)
@@ -49,7 +52,7 @@ if (LEGACY_BUILD)
     option(ENABLE_ADDRESS_SANITIZER "Flags to enable/disable Address Sanitizer for gcc or clang" OFF)
     option(BYPASS_DEFAULT_PROXY "Bypass the machine's default proxy settings when using IXmlHttpRequest2" ON)
     option(BUILD_DEPS "Build third-party dependencies" ON)
-    option(USE_OPENSSL "Set this if you want to use your system's OpenSSL 1.0.2/1.1.1 compatible libcrypto" ON)
+    option(USE_OPENSSL "Set this if you want to use your system's OpenSSL 1.0.2/1.1.1 compatible libcrypto instead of the CRT's AWS-LC" OFF)
     option(ENABLE_CURL_LOGGING "If enabled, Curl's internal log will be piped to SDK's logger" ON)
     option(ENABLE_HTTP_CLIENT_TESTING "If enabled, corresponding http client test suites will be built and run" OFF)
     option(CUSTOM_MEMORY_MANAGEMENT "If set to ON, generates the sdk project files with custom memory management enabled, otherwise disables it" OFF)
@@ -80,7 +83,19 @@ if (LEGACY_BUILD)
     set(AWS_TEST_REGION "US_EAST_1" CACHE STRING "Region to target integration tests against")
     set(AWS_AUTORUN_LD_LIBRARY_PATH CACHE STRING "Path to append into LD_LIBRARY_PATH for unit tests autorun by cmake. Set this if custom runtime libs are required for overridden dependencies.")
     set(BUILD_ONLY "" CACHE STRING "A semi-colon delimited list of the projects to build")
-    set(CPP_STANDARD "11" CACHE STRING "Flag to upgrade the C++ standard used. The default is 11. The minimum is 11.")
+    if (DEFINED CPP_STANDARD)
+        message(FATAL_ERROR "CPP_STANDARD was removed in 1.12. Set CMake's CMAKE_CXX_STANDARD instead, for example -DCMAKE_CXX_STANDARD=20.")
+    endif ()
+    if (NOT DEFINED CMAKE_CXX_STANDARD)
+        set(CMAKE_CXX_STANDARD 17)
+    endif ()
+    set(CMAKE_CXX_STANDARD_REQUIRED ON)
+    if (NOT DEFINED CMAKE_CXX_EXTENSIONS)
+        set(CMAKE_CXX_EXTENSIONS OFF)
+    endif ()
+    if (CMAKE_CXX_STANDARD EQUAL 98 OR CMAKE_CXX_STANDARD LESS 17)
+        message(FATAL_ERROR "The AWS SDK for C++ requires C++17 or later, and CMAKE_CXX_STANDARD is ${CMAKE_CXX_STANDARD}.")
+    endif ()
 
     get_property(is_multi_config GLOBAL PROPERTY GENERATOR_IS_MULTI_CONFIG)
     if (NOT ${is_multi_config})
@@ -364,7 +379,7 @@ if (LEGACY_BUILD)
 else () #  End of Legacy Build
     # -- Preamble --
     message(STATUS "Building with new CMake scripts.")
-    string(CONCAT DESCRIPTION_STRING "The AWS SDK for C++ provides a modern C++ (standard version C++11 or later) "
+    string(CONCAT DESCRIPTION_STRING "The AWS SDK for C++ provides a modern C++ (standard version C++17 or later) "
             "interface for Amazon Web Services (AWS).")
 
     list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
@@ -384,7 +399,7 @@ else () #  End of Legacy Build
 
     # -- Project wide setup --
     # Setting C++ minimum requirements
-    set(CMAKE_CXX_STANDARD 11)
+    set(CMAKE_CXX_STANDARD 17)
     set(CMAKE_CXX_EXTENSIONS OFF)
     set(CMAKE_CXX_STANDARD_REQUIRED ON)
 

@@ -24,6 +24,7 @@ namespace Aws
             {
             public:
                 virtual ~SameThreadExecutor();
+                const char* GetUserAgentName() const override { return "same-thread"; }
                 void WaitUntilStopped() override;
             protected:
                 bool SubmitToThread(std::function<void()>&& task) override;

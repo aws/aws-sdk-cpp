@@ -113,9 +113,8 @@ namespace Aws
                  */
                 std::function<std::shared_ptr<RetryStrategy>()> retryStrategyCreateFn;
                 /**
-                 * Threading Executor factory method. Default creates a factory that creates DefaultExecutor
-                 *  (i.e. spawn a separate thread for each task) for backward compatibility reasons.
-                 *  Please switch to a better executor such as PooledThreadExecutor.
+                 * Threading Executor factory method. Default creates a PooledThreadExecutor with one thread per
+                 *  hardware thread. Use UnboundedExecutor to get a separate thread for each task.
                  */
                 std::function<std::shared_ptr<Utils::Threading::Executor>()> executorCreateFn;
                 /**
@@ -195,7 +194,7 @@ namespace Aws
              */
             unsigned maxConnections = 25;
             /**
-             * This is currently only applicable for Curl to set the http request level timeout, including possible dns lookup time, connection establish time, ssl handshake time and actual data transmission time.
+             * This is currently only applicable for Curl and the CRT HTTP client to set the http request level timeout, including possible dns lookup time, connection establish time, ssl handshake time and actual data transmission time.
              * the corresponding Curl option is CURLOPT_TIMEOUT_MS
              * defaults to 0, no http request level timeout.
              */

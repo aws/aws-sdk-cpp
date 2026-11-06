@@ -43,6 +43,11 @@ namespace Aws
                 }
 
                 /**
+                 * The name each request's user agent gives this executor. Executors the SDK doesn't provide are "custom".
+                 */
+                virtual const char* GetUserAgentName() const { return "custom"; }
+
+                /**
                  * Call to wait until all tasks have finished.
                  */
                 virtual void WaitUntilStopped() { return; };
@@ -61,3 +66,4 @@ namespace Aws
 #endif // !defined(AWS_EXECUTOR_H)
 #include <aws/core/utils/threading/DefaultExecutor.h>
 #include <aws/core/utils/threading/PooledThreadExecutor.h>
+#include <aws/core/utils/threading/UnboundedExecutor.h>

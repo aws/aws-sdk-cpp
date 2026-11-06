@@ -1,0 +1,6 @@
+{
+  "type": "breaking-change",
+  "category": "cmake",
+  "contributor": "sbiscigl",
+  "description": "C++17 is now the default and the minimum for building the SDK. CMake's CMAKE_CXX_STANDARD replaces the SDK's CPP_STANDARD setting, and asking for a standard older than 17 fails the build. The minimum CMake version goes from 3.13 to 3.17."
+}
