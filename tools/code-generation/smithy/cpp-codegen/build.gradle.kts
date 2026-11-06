@@ -6,7 +6,7 @@ import org.gradle.api.logging.Logging
 import kotlin.streams.toList
 
 val logger = Logging.getLogger("MyLogger")
-val smithyVersion = "1.73.0"
+val smithyVersion = "1.74.1"
 
 plugins {
     id("java-library")
@@ -20,7 +20,7 @@ repositories {
 
 buildscript {
     // buildscript is evaluated before script-body vals, so it keeps its own copy in sync
-    val smithyVersion = "1.73.0"
+    val smithyVersion = "1.74.1"
     dependencies {
         classpath("software.amazon.smithy:smithy-model:$smithyVersion")
         classpath("software.amazon.smithy:smithy-aws-traits:$smithyVersion")
