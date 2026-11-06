@@ -859,8 +859,12 @@ TEST_F(XmlShapeDeserializerTest, ByteAndShortRanges) {
     });
     ASSERT_EQ(b.has_value(), c.byteOk);
     ASSERT_EQ(s.has_value(), c.shortOk);
-    if (c.byteOk) EXPECT_EQ(b.value(), c.byteValue);
-    if (c.shortOk) EXPECT_EQ(s.value(), c.shortValue);
+    if (c.byteOk) {
+      EXPECT_EQ(b.value(), c.byteValue);
+    }
+    if (c.shortOk) {
+      EXPECT_EQ(s.value(), c.shortValue);
+    }
     ASSERT_TRUE(after.has_value());
     EXPECT_EQ(after.value(), 1);
   }

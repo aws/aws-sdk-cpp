@@ -776,8 +776,12 @@ TEST_F(CborShapeDeserializerTest, ByteAndShortRanges) {
     });
     ASSERT_EQ(b.has_value(), c.byteOk);
     ASSERT_EQ(s.has_value(), c.shortOk);
-    if (c.byteOk) EXPECT_EQ(b.value(), c.byteWire);
-    if (c.shortOk) EXPECT_EQ(s.value(), c.shortWire);
+    if (c.byteOk) {
+      EXPECT_EQ(b.value(), c.byteWire);
+    }
+    if (c.shortOk) {
+      EXPECT_EQ(s.value(), c.shortWire);
+    }
     ASSERT_TRUE(after.has_value());
     EXPECT_EQ(after.value(), 1);
   }
