@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 #include <aws/core/auth/CrtCredentialsProvider.h>
+#include <aws/core/internal/CredentialsCachingProvider.h>
 #include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/threading/ReaderWriterLock.h>
@@ -16,7 +17,6 @@ using namespace Aws::Utils;
 using namespace Aws::Utils::Threading;
 
 namespace {
-const int FIVE_MINUTES_IN_MILLIS = 5 * 60 * 1000;
 const char* CRT_CREDS_PROVIDER_TAG = "CrtCredentialsProvider";
 
 struct RefreshState {
@@ -27,13 +27,27 @@ struct RefreshState {
 };
 }  // namespace
 
+AWSCredentials CrtCredentialsProvider::RetrieveForCache() {
+  m_credentials = AWSCredentials{};
+  Reload();
+  return m_credentials;
+}
+
 CrtCredentialsProvider::CrtCredentialsProvider(
     const std::function<std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider>()>& credentialsProviderFactory,
     std::chrono::milliseconds providerFuturesTimeoutMs, Aws::Client::UserAgentFeature userAgentFeature, const Aws::String& providerName)
+    : CrtCredentialsProvider(credentialsProviderFactory, providerFuturesTimeoutMs, userAgentFeature, providerName,
+                             Aws::Internal::RefreshFailurePolicy::StaticStability) {}
+
+CrtCredentialsProvider::CrtCredentialsProvider(
+    const std::function<std::shared_ptr<Aws::Crt::Auth::ICredentialsProvider>()>& credentialsProviderFactory,
+    std::chrono::milliseconds providerFuturesTimeoutMs, Aws::Client::UserAgentFeature userAgentFeature, const Aws::String& providerName,
+    Aws::Internal::RefreshFailurePolicy failurePolicy)
     : m_credentialsProvider{credentialsProviderFactory()},
       m_providerFuturesTimeoutMs{providerFuturesTimeoutMs},
       m_userAgentFeature{userAgentFeature},
-      m_providerName{providerName} {
+      m_providerName{providerName},
+      m_cachingProvider{Aws::MakeShared<Aws::Internal::CredentialsCachingProvider>(CRT_CREDS_PROVIDER_TAG, [this]() { return RetrieveForCache(); }, failurePolicy)} {
   if (m_credentialsProvider && m_credentialsProvider->IsValid()) {
     m_state = STATE::INITIALIZED;
   }
@@ -45,9 +59,14 @@ AWSCredentials CrtCredentialsProvider::GetAWSCredentials() {
   if (m_state != STATE::INITIALIZED) {
     return AWSCredentials{};
   }
-  RefreshIfExpired();
-  const ReaderLockGuard guard(m_reloadLock);
-  return m_credentials;
+  return m_cachingProvider->GetAWSCredentials();
+}
+
+void CrtCredentialsProvider::Invalidate(const Aws::String& accessKeyId) {
+  if (m_state != STATE::INITIALIZED) {
+    return;
+  }
+  m_cachingProvider->Invalidate(accessKeyId);
 }
 
 void CrtCredentialsProvider::Reload() {
@@ -76,21 +95,6 @@ void CrtCredentialsProvider::Reload() {
     credentials.AddUserAgentFeature(m_userAgentFeature);
   }
   m_credentials = std::move(credentials);
-}
-
-void CrtCredentialsProvider::RefreshIfExpired() {
-  ReaderLockGuard guard(m_reloadLock);
-  if (!m_credentials.IsEmpty() && !m_credentials.ExpiresSoon(FIVE_MINUTES_IN_MILLIS)) {
-    return;
-  }
-
-  guard.UpgradeToWriterLock();
-  // double-checked lock to avoid refreshing twice
-  if (!m_credentials.IsEmpty() && !m_credentials.ExpiresSoon(FIVE_MINUTES_IN_MILLIS)) {
-    return;
-  }
-
-  Reload();
 }
 
 AWSCredentials CrtCredentialsProvider::ExtractCredentialsFromCrt(const Aws::Crt::Auth::Credentials& crtCredentials) {

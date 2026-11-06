@@ -320,6 +320,19 @@ class InstanceProfileCredentialsProviderTest : public Aws::Testing::AwsCppSdkGTe
 {
 };
 
+// The credentials cache's refresh windows are relative to the credential's own expiration, not wall-clock
+// time since the last poll, so tests that need a second real retrieve attempt use an expiration a couple
+// seconds out: that's already within the 1 minute mandatory window by the time of the second call.
+static Aws::String BuildIMDSCredentialsJson(const char* accessKeyId, const char* secretAccessKey, const char* token,
+                                             const DateTime& expiration)
+{
+    Aws::StringStream ss;
+    ss << R"({ "AccessKeyId": ")" << accessKeyId << R"(", "SecretAccessKey": ")" << secretAccessKey
+       << R"(", "Token": ")" << token << R"(", "Code": "Success", "Expiration": ")"
+       << expiration.ToGmtString(DateFormat::ISO_8601) << R"(" })";
+    return ss.str();
+}
+
 TEST_F(InstanceProfileCredentialsProviderTest, TestEC2MetadataClientReturnsGoodData)
 {
     auto mockClient = Aws::MakeShared<MockEC2MetadataClient>(AllocationTag);
@@ -337,15 +350,15 @@ TEST_F(InstanceProfileCredentialsProviderTest, TestThatProviderRefreshes)
 {
     auto mockClient = Aws::MakeShared<MockEC2MetadataClient>(AllocationTag);
 
-    const char* validCredentials = R"({ "AccessKeyId": "goodAccessKey", "SecretAccessKey": "goodSecretKey", "Token": "goodToken", "Code": "Success", "Expiration": "2037-04-19T00:00:00Z" })";
-    mockClient->SetMockedCredentialsValue(validCredentials);
+    DateTime firstExpiry(DateTime::Now().Millis() + 2000);
+    mockClient->SetMockedCredentialsValue(BuildIMDSCredentialsJson("goodAccessKey", "goodSecretKey", "goodToken", firstExpiry));
 
     InstanceProfileCredentialsProvider provider(Aws::MakeShared<Aws::Config::EC2InstanceProfileConfigLoader>(AllocationTag, mockClient), 10);
     ASSERT_EQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
     ASSERT_EQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
 
-    const char* nextSetOfCredentials = R"({ "AccessKeyId": "betterAccessKey", "SecretAccessKey": "betterSecretKey", "Token": "betterToken", "Code": "Success", "Expiration": "2037-04-19T00:00:00Z" })";
-    mockClient->SetMockedCredentialsValue(nextSetOfCredentials);
+    DateTime nextExpiry(DateTime::Now().Millis() + 2000);
+    mockClient->SetMockedCredentialsValue(BuildIMDSCredentialsJson("betterAccessKey", "betterSecretKey", "betterToken", nextExpiry));
     std::this_thread::sleep_for(std::chrono::milliseconds(100));
     ASSERT_EQ("betterAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
     ASSERT_EQ("betterSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
@@ -355,8 +368,8 @@ TEST_F(InstanceProfileCredentialsProviderTest, TestCredentialsDontRefreshForCred
 {
     auto mockClient = Aws::MakeShared<MockEC2MetadataClient>(AllocationTag);
 
-    const char* validCredentials = R"({ "AccessKeyId": "goodAccessKey", "SecretAccessKey": "goodSecretKey", "Token": "goodToken", "Code": "Success", "Expiration": "2037-04-19T00:00:00Z" })";
-    mockClient->SetMockedCredentialsValue(validCredentials);
+    DateTime firstExpiry(DateTime::Now().Millis() + 2000);
+    mockClient->SetMockedCredentialsValue(BuildIMDSCredentialsJson("goodAccessKey", "goodSecretKey", "goodToken", firstExpiry));
 
     InstanceProfileCredentialsProvider provider(Aws::MakeShared<Aws::Config::EC2InstanceProfileConfigLoader>(AllocationTag, mockClient), 10);
     ASSERT_EQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
@@ -374,8 +387,8 @@ TEST_F(InstanceProfileCredentialsProviderTest, TestCredentialsDontRefreshForFail
 {
     auto mockClient = Aws::MakeShared<MockEC2MetadataClient>(AllocationTag);
 
-    const char* validCredentials = R"({ "AccessKeyId": "goodAccessKey", "SecretAccessKey": "goodSecretKey", "Token": "goodToken", "Code": "Success", "Expiration": "2037-04-19T00:00:00Z" })";
-    mockClient->SetMockedCredentialsValue(validCredentials);
+    DateTime firstExpiry(DateTime::Now().Millis() + 2000);
+    mockClient->SetMockedCredentialsValue(BuildIMDSCredentialsJson("goodAccessKey", "goodSecretKey", "goodToken", firstExpiry));
 
     InstanceProfileCredentialsProvider provider(Aws::MakeShared<Aws::Config::EC2InstanceProfileConfigLoader>(AllocationTag, mockClient), 10);
     ASSERT_EQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
@@ -428,15 +441,18 @@ TEST_F(InstanceProfileCredentialsProviderTest, TestEC2MetadataClientReturnsBadDa
     ASSERT_EQ("", provider.GetAWSCredentials().GetAWSSecretKey());
 }
 
-TEST_F(InstanceProfileCredentialsProviderTest, TestUsesExpiredCredentialsIfNoneExist) {
+// The credentials cache treats a retrieve that comes back already expired as a failure rather than a
+// cacheable success, even with nothing else to serve: expired credentials would just be rejected by
+// the service anyway, so there is no benefit to handing them out.
+TEST_F(InstanceProfileCredentialsProviderTest, TestDoesNotUseAlreadyExpiredCredentialsIfNoneExist) {
   auto mockClient = Aws::MakeShared<MockEC2MetadataClient>(AllocationTag);
 
   const char* validCredentials = R"({ "AccessKeyId": "goodAccessKey", "SecretAccessKey": "goodSecretKey", "Token": "goodToken", "Code": "Success", "Expiration": "1991-04-19T06:12:00Z" })";
   mockClient->SetMockedCredentialsValue(validCredentials);
 
   InstanceProfileCredentialsProvider provider(Aws::MakeShared<Aws::Config::EC2InstanceProfileConfigLoader>(AllocationTag, mockClient), 10);
-  ASSERT_EQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
-  ASSERT_EQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
+  ASSERT_EQ("", provider.GetAWSCredentials().GetAWSAccessKeyId());
+  ASSERT_EQ("", provider.GetAWSCredentials().GetAWSSecretKey());
 }
 
 static Aws::String WrapEchoStringWithSingleQuoteForUnixShell(Aws::String str)

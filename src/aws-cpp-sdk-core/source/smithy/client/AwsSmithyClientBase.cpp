@@ -14,6 +14,7 @@
 #include <aws/core/client/AsyncOperationState.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/internal/ClockSkew.h>
+#include <aws/core/internal/CredentialsCachingProvider.h>
 #include <aws/core/client/RetryStrategy.h>
 #include <aws/core/http/HttpClientFactory.h>
 #include <aws/core/monitoring/CoreMetrics.h>
@@ -567,6 +568,23 @@ bool AwsSmithyClientBase::AdjustClockSkew(HttpResponseOutcome& outcome, const Aw
     return false;
 }
 
+void AwsSmithyClientBase::InvalidateCredentials(const AWSCoreError& error, const AwsSmithyClientAsyncRequestContext& ctx) const
+{
+    if (!Aws::Internal::IsCredentialsRejectedError(error))
+    {
+        return;
+    }
+    const Aws::String& errorCode = error.GetExceptionName();
+    const Aws::String accessKeyId = ctx.m_httpRequest ? ctx.m_httpRequest->GetSigningAccessKey() : Aws::String();
+    if (accessKeyId.empty())
+    {
+        AWS_LOGSTREAM_DEBUG(AWS_SMITHY_CLIENT_LOG, "Not invalidating credentials after " << errorCode << ": the request was not signed with an access key.");
+        return;
+    }
+    AWS_LOGSTREAM_DEBUG(AWS_SMITHY_CLIENT_LOG, "Invalidating credentials after " << errorCode << ".");
+    InvalidateIdentity(ctx, accessKeyId);
+}
+
 Aws::Http::HttpClient::AttemptOutcome AwsSmithyClientBase::HandleAsyncReply(std::shared_ptr<AwsSmithyClientAsyncRequestContext> pRequestCtx,
                                            std::shared_ptr<Aws::Http::HttpResponse> httpResponse) const
 {
@@ -646,6 +664,7 @@ Aws::Http::HttpClient::AttemptOutcome AwsSmithyClientBase::HandleAsyncReply(std:
             break;
         }
         pRequestCtx->m_lastError = outcome.GetError();
+        InvalidateCredentials(outcome.GetError(), *pRequestCtx);
 
         Utils::DateTime serverTime = Utils::GetServerTimeFromError(outcome.GetError());
         auto clockSkew = Utils::DateTime::Diff(serverTime, Utils::DateTime::Now());

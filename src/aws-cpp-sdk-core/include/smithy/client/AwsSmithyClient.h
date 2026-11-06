@@ -232,6 +232,10 @@ namespace client
           return AwsClientRequestSigning<AuthSchemesVariantT>::SignEventMessage(message, seed, ctx, m_authSchemes);
         }
 
+        void InvalidateIdentity(const AwsSmithyClientAsyncRequestContext& ctx, const Aws::String& rejectedIdentifier) const override {
+          AwsClientRequestSigning<AuthSchemesVariantT>::InvalidateIdentity(ctx, m_authSchemes, rejectedIdentifier);
+        }
+
         IdentityOutcome ResolveIdentity(const AwsSmithyClientAsyncRequestContext& ctx) const override {
           return AwsClientRequestSigning<AuthSchemesVariantT>::ResolveIdentity(ctx, m_authSchemes);
         }

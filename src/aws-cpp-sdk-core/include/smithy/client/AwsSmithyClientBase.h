@@ -231,6 +231,8 @@ namespace client
         bool AdjustClockSkew(HttpResponseOutcome& outcome, const AwsSmithyClientAsyncRequestContext& ctx) const;
         void RecordClockSkew(const Aws::Http::HttpResponse& response, const AwsSmithyClientAsyncRequestContext& ctx) const;
         virtual IdentityOutcome ResolveIdentity(const AwsSmithyClientAsyncRequestContext& ctx) const = 0;
+        virtual void InvalidateIdentity(const AwsSmithyClientAsyncRequestContext& ctx, const Aws::String& rejectedIdentifier) const = 0;
+        void InvalidateCredentials(const AWSCoreError& error, const AwsSmithyClientAsyncRequestContext& ctx) const;
         virtual GetContextEndpointParametersOutcome GetContextEndpointParameters(const AwsSmithyClientAsyncRequestContext& ctx) const = 0;
         AwsSmithyClientBase::ResolveEndpointOutcome ResolveEndpointFromRequest(
             Aws::AmazonWebServiceRequest const * const request,

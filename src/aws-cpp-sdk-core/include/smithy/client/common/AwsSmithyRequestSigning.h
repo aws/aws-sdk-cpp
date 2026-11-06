@@ -64,6 +64,21 @@ namespace smithy
           return std::move(*visitor.result);
         }
 
+        static void InvalidateIdentity(const client::AwsSmithyClientAsyncRequestContext& ctx,
+          const Aws::UnorderedMap<Aws::String, AuthSchemesVariantT>& authSchemes,
+          const Aws::String& rejectedIdentifier)
+        {
+          auto authSchemeOutcome = ResolveAuthScheme(ctx.m_authSchemeOption, authSchemes);
+          if (!authSchemeOutcome.IsSuccess())
+          {
+            AWS_LOGSTREAM_DEBUG(AWS_SMITHY_CLIENT_SIGNING_TAG, "Not invalidating identity: no auth scheme for " << ctx.m_authSchemeOption.schemeId);
+            return;
+          }
+          InvalidateVisitor visitor(rejectedIdentifier);
+          AuthSchemesVariantT authSchemesVariantCopy(authSchemeOutcome.GetResult().value());
+          authSchemesVariantCopy.Visit(visitor);
+        }
+
         static SigningOutcome SignRequest(std::shared_ptr<HttpRequest> HTTPRequest,
           const client::AwsSmithyClientAsyncRequestContext& ctx,
           const Aws::UnorderedMap<Aws::String, AuthSchemesVariantT>& authSchemes)
@@ -184,6 +199,27 @@ namespace smithy
                 return;
               }
               result.emplace(std::move(identityResult.GetResultWithOwnership()));
+            }
+        };
+
+        struct InvalidateVisitor
+        {
+            explicit InvalidateVisitor(const Aws::String& rejectedIdentifier): m_rejectedIdentifier(rejectedIdentifier)
+            {
+            }
+
+            const Aws::String& m_rejectedIdentifier;
+
+            template <typename AuthSchemeAlternativeT>
+            void operator()(AuthSchemeAlternativeT& authScheme)
+            {
+              auto identityResolver = authScheme.identityResolver();
+              if (!identityResolver)
+              {
+                AWS_LOGSTREAM_DEBUG(AWS_SMITHY_CLIENT_SIGNING_TAG, "Not invalidating identity: auth scheme has no identity resolver");
+                return;
+              }
+              identityResolver->invalidate(m_rejectedIdentifier);
             }
         };
 
