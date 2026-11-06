@@ -1,0 +1,6 @@
+{
+  "type": "dependency",
+  "category": "aws-cpp-sdk-core",
+  "contributor": "pulimsr",
+  "description": "Bump Smithy from 1.73.0 to 1.74.1 in the code generator"
+}
