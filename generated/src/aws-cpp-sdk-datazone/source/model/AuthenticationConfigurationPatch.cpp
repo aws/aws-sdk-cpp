@@ -26,6 +26,10 @@ AuthenticationConfigurationPatch& AuthenticationConfigurationPatch::operator=(Js
     m_basicAuthenticationCredentials = jsonValue.GetObject("basicAuthenticationCredentials");
     m_basicAuthenticationCredentialsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("oAuth2Properties")) {
+    m_oAuth2Properties = jsonValue.GetObject("oAuth2Properties");
+    m_oAuth2PropertiesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue AuthenticationConfigurationPatch::Jsonize() const {
 
   if (m_basicAuthenticationCredentialsHasBeenSet) {
     payload.WithObject("basicAuthenticationCredentials", m_basicAuthenticationCredentials.Jsonize());
+  }
+
+  if (m_oAuth2PropertiesHasBeenSet) {
+    payload.WithObject("oAuth2Properties", m_oAuth2Properties.Jsonize());
   }
 
   return payload;

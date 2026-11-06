@@ -10,7 +10,7 @@
 namespace Aws {
 namespace MediaConvert {
 namespace Model {
-enum class ElementalInferenceFeature { NOT_SET, SMART_CROP };
+enum class ElementalInferenceFeature { NOT_SET, SMART_CROP, SMART_SUBTITLE };
 
 namespace ElementalInferenceFeatureMapper {
 AWS_MEDIACONVERT_API ElementalInferenceFeature GetElementalInferenceFeatureForName(const Aws::String& name);

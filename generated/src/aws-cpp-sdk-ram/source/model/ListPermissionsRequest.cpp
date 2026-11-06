@@ -19,6 +19,10 @@ Aws::String ListPermissionsRequest::SerializePayload() const {
     payload.WithString("resourceType", m_resourceType);
   }
 
+  if (m_resourceOwnerHasBeenSet) {
+    payload.WithString("resourceOwner", ResourceOwnerMapper::GetNameForResourceOwner(m_resourceOwner));
+  }
+
   if (m_nextTokenHasBeenSet) {
     payload.WithString("nextToken", m_nextToken);
   }
@@ -29,6 +33,10 @@ Aws::String ListPermissionsRequest::SerializePayload() const {
 
   if (m_permissionTypeHasBeenSet) {
     payload.WithString("permissionType", PermissionTypeFilterMapper::GetNameForPermissionTypeFilter(m_permissionType));
+  }
+
+  if (m_permissionStatusHasBeenSet) {
+    payload.WithString("permissionStatus", PermissionStatusMapper::GetNameForPermissionStatus(m_permissionStatus));
   }
 
   return payload.View().WriteReadable();

@@ -37,6 +37,10 @@ Aws::String DescribeScheduledActionsRequest::SerializePayload() const {
     ss << "EndTime=" << StringUtils::URLEncode(m_endTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 
+  if (m_includeManagedResourcesHasBeenSet) {
+    ss << "IncludeManagedResources=" << std::boolalpha << m_includeManagedResources << "&";
+  }
+
   if (m_nextTokenHasBeenSet) {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }

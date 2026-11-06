@@ -19,6 +19,7 @@ static const int ATTACHABLE_HASH = HashingUtils::HashString("ATTACHABLE");
 static const int UNATTACHABLE_HASH = HashingUtils::HashString("UNATTACHABLE");
 static const int DELETING_HASH = HashingUtils::HashString("DELETING");
 static const int DELETED_HASH = HashingUtils::HashString("DELETED");
+static const int DEPRECATED_HASH = HashingUtils::HashString("DEPRECATED");
 
 PermissionStatus GetPermissionStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -30,6 +31,8 @@ PermissionStatus GetPermissionStatusForName(const Aws::String& name) {
     return PermissionStatus::DELETING;
   } else if (hashCode == DELETED_HASH) {
     return PermissionStatus::DELETED;
+  } else if (hashCode == DEPRECATED_HASH) {
+    return PermissionStatus::DEPRECATED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -52,6 +55,8 @@ Aws::String GetNameForPermissionStatus(PermissionStatus enumValue) {
       return "DELETING";
     case PermissionStatus::DELETED:
       return "DELETED";
+    case PermissionStatus::DEPRECATED:
+      return "DEPRECATED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

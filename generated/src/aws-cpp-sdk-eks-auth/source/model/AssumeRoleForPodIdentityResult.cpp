@@ -42,6 +42,10 @@ AssumeRoleForPodIdentityResult& AssumeRoleForPodIdentityResult::operator=(const 
     m_credentials = jsonValue.GetObject("credentials");
     m_credentialsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("workloadIdentityProviderArn")) {
+    m_workloadIdentityProviderArn = jsonValue.GetString("workloadIdentityProviderArn");
+    m_workloadIdentityProviderArnHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

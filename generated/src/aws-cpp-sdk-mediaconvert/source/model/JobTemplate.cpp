@@ -38,6 +38,10 @@ JobTemplate& JobTemplate::operator=(JsonView jsonValue) {
     m_description = jsonValue.GetString("description");
     m_descriptionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("elementalInferenceSettings")) {
+    m_elementalInferenceSettings = jsonValue.GetObject("elementalInferenceSettings");
+    m_elementalInferenceSettingsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("hopDestinations")) {
     Aws::Utils::Array<JsonView> hopDestinationsJsonList = jsonValue.GetArray("hopDestinations");
     for (unsigned hopDestinationsIndex = 0; hopDestinationsIndex < hopDestinationsJsonList.GetLength(); ++hopDestinationsIndex) {
@@ -97,6 +101,10 @@ JsonValue JobTemplate::Jsonize() const {
 
   if (m_descriptionHasBeenSet) {
     payload.WithString("description", m_description);
+  }
+
+  if (m_elementalInferenceSettingsHasBeenSet) {
+    payload.WithObject("elementalInferenceSettings", m_elementalInferenceSettings.Jsonize());
   }
 
   if (m_hopDestinationsHasBeenSet) {

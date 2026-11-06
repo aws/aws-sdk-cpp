@@ -1,6 +1,0 @@
-{
-  "type": "bugfix",
-  "category": "aws-cpp-sdk-core",
-  "contributor": "grrtrr",
-  "description": "Fix disabling IMDSv1 fallback through the AWS_EC2_METADATA_V1_DISABLED environment variable and the ec2_metadata_v1_disabled config file setting. The two names were swapped, so neither had any effect."
-}

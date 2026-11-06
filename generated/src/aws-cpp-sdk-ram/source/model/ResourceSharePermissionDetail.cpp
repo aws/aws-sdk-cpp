@@ -42,6 +42,14 @@ ResourceSharePermissionDetail& ResourceSharePermissionDetail::operator=(JsonView
     m_permission = jsonValue.GetString("permission");
     m_permissionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("permissionTemplateParameters")) {
+    Aws::Utils::Array<JsonView> permissionTemplateParametersJsonList = jsonValue.GetArray("permissionTemplateParameters");
+    for (unsigned permissionTemplateParametersIndex = 0;
+         permissionTemplateParametersIndex < permissionTemplateParametersJsonList.GetLength(); ++permissionTemplateParametersIndex) {
+      m_permissionTemplateParameters.push_back(permissionTemplateParametersJsonList[permissionTemplateParametersIndex].AsObject());
+    }
+    m_permissionTemplateParametersHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("creationTime")) {
     m_creationTime = jsonValue.GetDouble("creationTime");
     m_creationTimeHasBeenSet = true;
@@ -73,6 +81,10 @@ ResourceSharePermissionDetail& ResourceSharePermissionDetail::operator=(JsonView
     }
     m_tagsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("resourceOwner")) {
+    m_resourceOwner = ResourceOwnerMapper::GetResourceOwnerForName(jsonValue.GetString("resourceOwner"));
+    m_resourceOwnerHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -101,6 +113,16 @@ JsonValue ResourceSharePermissionDetail::Jsonize() const {
 
   if (m_permissionHasBeenSet) {
     payload.WithString("permission", m_permission);
+  }
+
+  if (m_permissionTemplateParametersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> permissionTemplateParametersJsonList(m_permissionTemplateParameters.size());
+    for (unsigned permissionTemplateParametersIndex = 0;
+         permissionTemplateParametersIndex < permissionTemplateParametersJsonList.GetLength(); ++permissionTemplateParametersIndex) {
+      permissionTemplateParametersJsonList[permissionTemplateParametersIndex].AsObject(
+          m_permissionTemplateParameters[permissionTemplateParametersIndex].Jsonize());
+    }
+    payload.WithArray("permissionTemplateParameters", std::move(permissionTemplateParametersJsonList));
   }
 
   if (m_creationTimeHasBeenSet) {
@@ -133,6 +155,10 @@ JsonValue ResourceSharePermissionDetail::Jsonize() const {
       tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
     }
     payload.WithArray("tags", std::move(tagsJsonList));
+  }
+
+  if (m_resourceOwnerHasBeenSet) {
+    payload.WithString("resourceOwner", ResourceOwnerMapper::GetNameForResourceOwner(m_resourceOwner));
   }
 
   return payload;

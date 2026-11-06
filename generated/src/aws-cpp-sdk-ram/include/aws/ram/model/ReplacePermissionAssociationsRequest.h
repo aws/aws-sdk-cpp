@@ -5,8 +5,10 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ram/RAMRequest.h>
 #include <aws/ram/RAM_EXPORTS.h>
+#include <aws/ram/model/PermissionTemplateParameterInput.h>
 
 #include <utility>
 
@@ -89,6 +91,35 @@ class ReplacePermissionAssociationsRequest : public RAMRequest {
 
   ///@{
   /**
+   * <p>Specifies the template parameter values to apply when replacing the
+   * permission. You must provide values for all parameters declared in the target
+   * permission template. This parameter is required only if the target permission
+   * (<code>toPermissionArn</code>) has template parameters.</p>
+   */
+  inline const Aws::Vector<PermissionTemplateParameterInput>& GetPermissionTemplateParameters() const {
+    return m_permissionTemplateParameters;
+  }
+  inline bool PermissionTemplateParametersHasBeenSet() const { return m_permissionTemplateParametersHasBeenSet; }
+  template <typename PermissionTemplateParametersT = Aws::Vector<PermissionTemplateParameterInput>>
+  void SetPermissionTemplateParameters(PermissionTemplateParametersT&& value) {
+    m_permissionTemplateParametersHasBeenSet = true;
+    m_permissionTemplateParameters = std::forward<PermissionTemplateParametersT>(value);
+  }
+  template <typename PermissionTemplateParametersT = Aws::Vector<PermissionTemplateParameterInput>>
+  ReplacePermissionAssociationsRequest& WithPermissionTemplateParameters(PermissionTemplateParametersT&& value) {
+    SetPermissionTemplateParameters(std::forward<PermissionTemplateParametersT>(value));
+    return *this;
+  }
+  template <typename PermissionTemplateParametersT = PermissionTemplateParameterInput>
+  ReplacePermissionAssociationsRequest& AddPermissionTemplateParameters(PermissionTemplateParametersT&& value) {
+    m_permissionTemplateParametersHasBeenSet = true;
+    m_permissionTemplateParameters.emplace_back(std::forward<PermissionTemplateParametersT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Specifies a unique, case-sensitive identifier that you provide to ensure the
    * idempotency of the request. This lets you safely retry the request without
    * accidentally performing the same operation a second time. Passing the same value
@@ -120,10 +151,13 @@ class ReplacePermissionAssociationsRequest : public RAMRequest {
 
   Aws::String m_toPermissionArn;
 
+  Aws::Vector<PermissionTemplateParameterInput> m_permissionTemplateParameters;
+
   Aws::String m_clientToken;
   bool m_fromPermissionArnHasBeenSet = false;
   bool m_fromPermissionVersionHasBeenSet = false;
   bool m_toPermissionArnHasBeenSet = false;
+  bool m_permissionTemplateParametersHasBeenSet = false;
   bool m_clientTokenHasBeenSet = false;
 };
 

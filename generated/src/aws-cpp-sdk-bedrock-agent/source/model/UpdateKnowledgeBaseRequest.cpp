@@ -35,5 +35,14 @@ Aws::String UpdateKnowledgeBaseRequest::SerializePayload() const {
     payload.WithObject("storageConfiguration", m_storageConfiguration.Jsonize());
   }
 
+  if (m_metadataConfigurationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> metadataConfigurationsJsonList(m_metadataConfigurations.size());
+    for (unsigned metadataConfigurationsIndex = 0; metadataConfigurationsIndex < metadataConfigurationsJsonList.GetLength();
+         ++metadataConfigurationsIndex) {
+      metadataConfigurationsJsonList[metadataConfigurationsIndex].AsObject(m_metadataConfigurations[metadataConfigurationsIndex].Jsonize());
+    }
+    payload.WithArray("metadataConfigurations", std::move(metadataConfigurationsJsonList));
+  }
+
   return payload.View().WriteReadable();
 }

@@ -21,7 +21,7 @@ namespace ConnectCases {
 namespace Model {
 
 /**
- * <p>Summary information of this case rule. In the Amazon Connect admin website,
+ * <p>Summary information of this case rule. In the Connect Customer admin website,
  * case rules are known as <i>case field conditions</i>. For more information about
  * case field conditions, see <a
  * href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">Add

@@ -23,6 +23,16 @@ Aws::String AssociateResourceSharePermissionRequest::SerializePayload() const {
     payload.WithString("permissionArn", m_permissionArn);
   }
 
+  if (m_permissionTemplateParametersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> permissionTemplateParametersJsonList(m_permissionTemplateParameters.size());
+    for (unsigned permissionTemplateParametersIndex = 0;
+         permissionTemplateParametersIndex < permissionTemplateParametersJsonList.GetLength(); ++permissionTemplateParametersIndex) {
+      permissionTemplateParametersJsonList[permissionTemplateParametersIndex].AsObject(
+          m_permissionTemplateParameters[permissionTemplateParametersIndex].Jsonize());
+    }
+    payload.WithArray("permissionTemplateParameters", std::move(permissionTemplateParametersJsonList));
+  }
+
   if (m_replaceHasBeenSet) {
     payload.WithBool("replace", m_replace);
   }

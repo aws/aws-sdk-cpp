@@ -22,9 +22,9 @@ namespace Model {
 class CompoundCondition;
 
 /**
- * <p>Boolean condition for a rule. In the Amazon Connect admin website, case rules
- * are known as <i>case field conditions</i>. For more information about case field
- * conditions, see <a
+ * <p>Boolean condition for a rule. In the Connect Customer admin website, case
+ * rules are known as <i>case field conditions</i>. For more information about case
+ * field conditions, see <a
  * href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">Add
  * case field conditions to a case template</a>.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/BooleanCondition">AWS

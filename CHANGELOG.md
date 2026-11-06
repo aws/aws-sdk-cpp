@@ -1,3 +1,22 @@
+# 1.11.924 (2026-11-06)
+
+## SDK Highlights
+* **Bug Fix**: Fix disabling IMDSv1 fallback through the AWS_EC2_METADATA_V1_DISABLED environment variable and the ec2_metadata_v1_disabled config file setting. The two names were swapped, so neither had any effect.
+
+## Service Updates
+* **Athena**: Added support for Athena System Tables which writes Athena usage data to AWS S3 managed tables in Apache Iceberg format. Adds CreateSystemTableConfiguration, UpdateSystemTableConfiguration, DeleteSystemTableConfiguration, GetSystemTableConfiguration, and ListSystemTableStatuses.
+* **Auto Scaling**: Amazon EC2 Auto Scaling now lets you exclude managed resources from describe API responses using the new optional IncludeManagedResources parameter. Set this parameter to false to exclude managed resources from the response. By default, managed resources are included.
+* **Bedrock Agent**: Add support for configuring searchability for metadata fields via UpdateKnowledgeBase request for Managed Knowledge Base. Once a field is marked as searchable it can be queried via query text and is factored into Managed Knowledge Base's ranking algorithm.
+* **Connect**: Rules in Amazon Connect now support ending email contacts associated to a case based on case events.
+* **ConnectCases**: Amazon Connect Cases adds two Bulk Case Actions operations. BatchCreateRelatedItem adds a Comment-type related item to up to 100 cases per request, BatchUpdateCase updates fields (title, status, customer ID, custom) on up to 100 cases. Same domain, per-case success and failure results returned.
+* **DataZone**: Adds support for updating OAuth 2.0 connection settings with UpdateConnection.
+* **EKS Auth**: Added workloadIdentityProviderArn to the AssumeRoleForPodIdentity API response.
+* **Glue**: Adds support for user-defined functions governed by AWS Lake Formation.
+* **Lightsail**: Marking fields as sensitive in GetInstanceAccessDetails, CreateKeyPair, DownloadDefaultKeyPair, CreateBucketAccessKey, CreateContainerServiceRegistryLogin, and GetRelationalDatabase responses.
+* **MediaConvert**: Smart subtitling uses AWS Elemental Inference to generate captions from your content's audio, in embedded, burn-in, DVB-Sub, IMSC, SMI, SRT, teletext, TTML, or WebVTT outputs. Also fixes HEVC passthrough writing an incomplete codecs string to DASH and HLS manifests.
+* **RAM**: Adds support for using managed permission template parameters, discovering shared customer-managed permissions, and managing customer-managed permission deprecation.
+* **SSM**: AWS Systems Manager now provides two new APIs - RegisterDefaultHostManagementConfiguration and DeregisterDefaultHostManagementConfiguration - along with a new DefaultHostManagementConfiguration CloudFormation resource type.
+
 # 1.11.923 (2026-11-05)
 
 ## Service Updates

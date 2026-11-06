@@ -25,6 +25,10 @@ Aws::String DescribeTagsRequest::SerializePayload() const {
     }
   }
 
+  if (m_includeManagedResourcesHasBeenSet) {
+    ss << "IncludeManagedResources=" << std::boolalpha << m_includeManagedResources << "&";
+  }
+
   if (m_nextTokenHasBeenSet) {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }

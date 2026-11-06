@@ -21,7 +21,7 @@ namespace ConnectCases {
 namespace Model {
 
 /**
- * <p>Represents the right hand operand in the condition. In the Amazon Connect
+ * <p>Represents the right hand operand in the condition. In the Connect Customer
  * admin website, case rules are known as <i>case field conditions</i>. For more
  * information about case field conditions, see <a
  * href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">Add

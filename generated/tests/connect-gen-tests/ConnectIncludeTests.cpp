@@ -547,6 +547,7 @@
 #include <aws/connect/model/EmptyFieldValue.h>
 #include <aws/connect/model/EncryptionConfig.h>
 #include <aws/connect/model/EncryptionType.h>
+#include <aws/connect/model/EndAssociatedEmailsActionDefinition.h>
 #include <aws/connect/model/EndAssociatedTasksActionDefinition.h>
 #include <aws/connect/model/Endpoint.h>
 #include <aws/connect/model/EndpointInfo.h>
