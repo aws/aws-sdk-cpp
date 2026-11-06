@@ -2,7 +2,7 @@ plugins {
     `java-library`
 }
 
-val smithyVersion = "1.74.1"
+val smithyVersion: String by project
 
 java {
     sourceCompatibility = JavaVersion.VERSION_16
