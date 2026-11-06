@@ -529,7 +529,7 @@ namespace Aws
 
             auto startSend = [state, this, connectionManager]()
             {
-                if (m_configuration.requestTimeoutMs > 0)
+                if (m_configuration.httpRequestTimeoutMs > 0)
                 {
                     std::weak_ptr<AsyncRequestState> weakState = state;
                     state->timeoutTask = m_bootstrap.GetNextEventLoop().Schedule(
@@ -555,7 +555,7 @@ namespace Aws
                             }
                             state->CompleteWithError(Aws::Client::CoreErrors::REQUEST_TIMEOUT, "Request Timeout Has Expired");
                         },
-                        std::chrono::milliseconds(m_configuration.requestTimeoutMs));
+                        std::chrono::milliseconds(m_configuration.httpRequestTimeoutMs));
                 }
 
                 connectionManager->AcquireConnection(
