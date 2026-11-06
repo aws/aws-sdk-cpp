@@ -111,7 +111,8 @@ S3CrtClientConfiguration::S3CrtConfigFactories S3CrtClientConfiguration::S3CrtCo
 
     if (strategyToUse == CrtRetryStrategyType::EXPONENTIAL_BACKOFF) {
       aws_exponential_backoff_retry_options options{};
-      options.el_group = el_group, options.max_retries = config.crtRetryStrategyConfig.config.maxRetries;
+      options.el_group = el_group;
+      options.max_retries = config.crtRetryStrategyConfig.config.maxRetries;
       options.backoff_scale_factor_ms = config.crtRetryStrategyConfig.config.scaleFactorMs;
       options.max_backoff_secs = config.crtRetryStrategyConfig.config.maxBackoffSecs;
       options.jitter_mode = AWS_EXPONENTIAL_BACKOFF_JITTER_FULL;
