@@ -20,6 +20,10 @@ class SMITHY_API SpecificShapeSerializer : public ShapeSerializer {
   void WriteLong(const Schema&, int64_t) override {}
   void WriteFloat(const Schema&, float) override {}
   void WriteDouble(const Schema&, double) override {}
+  void WriteByte(const Schema&, int8_t) override {}
+  void WriteShort(const Schema&, int16_t) override {}
+  void WriteBigInteger(const Schema&, const Aws::Crt::BigInteger&) override {}
+  void WriteBigDecimal(const Schema&, const Aws::Crt::BigDecimal&) override {}
   void WriteString(const Schema&, const Aws::String&) override {}
   void WriteTimestamp(const Schema&, const Aws::Utils::DateTime&) override {}
   void WriteBlob(const Schema&, const Aws::Utils::ByteBuffer&) override {}
