@@ -1,0 +1,6 @@
+{
+  "type": "bugfix",
+  "category": "aws-cpp-sdk-core",
+  "contributor": "hippi345",
+  "description": "Fix S3CrtClient to use origin-form request-target"
+}
