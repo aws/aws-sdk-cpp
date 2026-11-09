@@ -78,9 +78,15 @@ namespace Aws
                 return Aws::Crt::Optional<std::chrono::milliseconds>{};
             }
 
-            // Server Date is assumed to be from the round-trip midpoint (NTP offset, RFC 5905 s8).
-            const int64_t midpointMs = sentMs + (receivedMs - sentMs) / 2;
-            return Aws::Crt::Optional<std::chrono::milliseconds>(std::chrono::milliseconds{serverMs - midpointMs});
+            // The server's Date is compared with the moment its response headers reached the client.
+            return Aws::Crt::Optional<std::chrono::milliseconds>(std::chrono::milliseconds{serverMs - receivedMs});
+        }
+
+        // Time the response headers arrived, if the HTTP client recorded it. Otherwise now (after the body),
+        // the legacy behaviour.
+        inline Aws::Utils::DateTime GetTimeResponseReceived(const Aws::Http::HttpRequest& request) {
+          const auto& stamped = request.GetResponseHeadersReceivedTime();
+          return stamped.has_value() ? stamped.value() : Aws::Utils::DateTime::Now();
         }
 
         // Clock-skew error codes. Matched by CoreErrors enum where one exists; AuthFailure (EC2) has no
