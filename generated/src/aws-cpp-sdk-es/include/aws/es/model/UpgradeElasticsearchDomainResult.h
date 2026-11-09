@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/es/ElasticsearchService_EXPORTS.h>
 #include <aws/es/model/ChangeProgressDetails.h>
+#include <aws/es/model/DeploymentStrategyOverrideOptions.h>
 
 #include <utility>
 
@@ -84,6 +85,23 @@ class UpgradeElasticsearchDomainResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The deployment strategy override used for the upgrade.</p>
+   */
+  inline const DeploymentStrategyOverrideOptions& GetDeploymentStrategyOptions() const { return m_deploymentStrategyOptions; }
+  template <typename DeploymentStrategyOptionsT = DeploymentStrategyOverrideOptions>
+  void SetDeploymentStrategyOptions(DeploymentStrategyOptionsT&& value) {
+    m_deploymentStrategyOptionsHasBeenSet = true;
+    m_deploymentStrategyOptions = std::forward<DeploymentStrategyOptionsT>(value);
+  }
+  template <typename DeploymentStrategyOptionsT = DeploymentStrategyOverrideOptions>
+  UpgradeElasticsearchDomainResult& WithDeploymentStrategyOptions(DeploymentStrategyOptionsT&& value) {
+    SetDeploymentStrategyOptions(std::forward<DeploymentStrategyOptionsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const ChangeProgressDetails& GetChangeProgressDetails() const { return m_changeProgressDetails; }
   template <typename ChangeProgressDetailsT = ChangeProgressDetails>
@@ -121,6 +139,8 @@ class UpgradeElasticsearchDomainResult {
 
   bool m_performCheckOnly{false};
 
+  DeploymentStrategyOverrideOptions m_deploymentStrategyOptions;
+
   ChangeProgressDetails m_changeProgressDetails;
 
   Aws::String m_requestId;
@@ -128,6 +148,7 @@ class UpgradeElasticsearchDomainResult {
   bool m_domainNameHasBeenSet = false;
   bool m_targetVersionHasBeenSet = false;
   bool m_performCheckOnlyHasBeenSet = false;
+  bool m_deploymentStrategyOptionsHasBeenSet = false;
   bool m_changeProgressDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -834,6 +834,37 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Installs an extension, such as <code>sagemaker-observability</code>, on a
+   * SageMaker HyperPod cluster orchestrated by Slurm. The cluster must have
+   * <code>NodeProvisioningMode</code> set to <code>Continuous</code> and can have
+   * only one extension with a given name. To track the installation, call
+   * <code>DescribeClusterExtension</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateClusterExtension">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateClusterExtensionOutcome CreateClusterExtension(const Model::CreateClusterExtensionRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateClusterExtension that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateClusterExtensionRequestT = Model::CreateClusterExtensionRequest>
+  Model::CreateClusterExtensionOutcomeCallable CreateClusterExtensionCallable(const CreateClusterExtensionRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::CreateClusterExtension, request);
+  }
+
+  /**
+   * An Async wrapper for CreateClusterExtension that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateClusterExtensionRequestT = Model::CreateClusterExtensionRequest>
+  void CreateClusterExtensionAsync(const CreateClusterExtensionRequestT& request,
+                                   const CreateClusterExtensionResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::CreateClusterExtension, request, handler, context);
+  }
+
+  /**
    * <p>Create cluster policy configuration. This policy is used for task
    * prioritization and fair-share allocation of idle compute. This helps prioritize
    * critical workloads and distributes idle compute across entities.</p><p><h3>See
@@ -3373,6 +3404,41 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Deletes an extension from a SageMaker HyperPod cluster. SageMaker HyperPod
+   * removes the extension's software from every node in the cluster. While SageMaker
+   * HyperPod removes the extension, its status is <code>Deleting</code>. After
+   * SageMaker HyperPod removes the extension from all nodes, it no longer appears in
+   * <code>ListClusterExtensions</code>, and <code>DescribeClusterExtension</code>
+   * returns a <code>ResourceNotFound</code> error.</p> <p>Deleting an extension
+   * doesn't delete data that the extension sent to other Amazon Web Services
+   * services, such as metrics in Amazon CloudWatch or Amazon Managed Service for
+   * Prometheus.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteClusterExtension">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteClusterExtensionOutcome DeleteClusterExtension(const Model::DeleteClusterExtensionRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteClusterExtension that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteClusterExtensionRequestT = Model::DeleteClusterExtensionRequest>
+  Model::DeleteClusterExtensionOutcomeCallable DeleteClusterExtensionCallable(const DeleteClusterExtensionRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::DeleteClusterExtension, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteClusterExtension that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteClusterExtensionRequestT = Model::DeleteClusterExtensionRequest>
+  void DeleteClusterExtensionAsync(const DeleteClusterExtensionRequestT& request,
+                                   const DeleteClusterExtensionResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::DeleteClusterExtension, request, handler, context);
+  }
+
+  /**
    * <p>Deletes the cluster policy of the cluster.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteClusterSchedulerConfig">AWS
    * API Reference</a></p>
@@ -5270,6 +5336,36 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
   void DescribeClusterEventAsync(const DescribeClusterEventRequestT& request, const DescribeClusterEventResponseReceivedHandler& handler,
                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SageMakerClient::DescribeClusterEvent, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves information about an extension installed on a SageMaker HyperPod
+   * cluster. The information includes the extension's version, configuration, and
+   * status, and a summary of how many cluster nodes are running the current version
+   * and configuration of the extension.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeClusterExtension">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeClusterExtensionOutcome DescribeClusterExtension(const Model::DescribeClusterExtensionRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeClusterExtension that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeClusterExtensionRequestT = Model::DescribeClusterExtensionRequest>
+  Model::DescribeClusterExtensionOutcomeCallable DescribeClusterExtensionCallable(const DescribeClusterExtensionRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::DescribeClusterExtension, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeClusterExtension that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeClusterExtensionRequestT = Model::DescribeClusterExtensionRequest>
+  void DescribeClusterExtensionAsync(const DescribeClusterExtensionRequestT& request,
+                                     const DescribeClusterExtensionResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::DescribeClusterExtension, request, handler, context);
   }
 
   /**
@@ -7852,6 +7948,33 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
   void ListClusterEventsAsync(const ListClusterEventsRequestT& request, const ListClusterEventsResponseReceivedHandler& handler,
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SageMakerClient::ListClusterEvents, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the extensions installed on a SageMaker HyperPod cluster.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListClusterExtensions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListClusterExtensionsOutcome ListClusterExtensions(const Model::ListClusterExtensionsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListClusterExtensions that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListClusterExtensionsRequestT = Model::ListClusterExtensionsRequest>
+  Model::ListClusterExtensionsOutcomeCallable ListClusterExtensionsCallable(const ListClusterExtensionsRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::ListClusterExtensions, request);
+  }
+
+  /**
+   * An Async wrapper for ListClusterExtensions that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListClusterExtensionsRequestT = Model::ListClusterExtensionsRequest>
+  void ListClusterExtensionsAsync(const ListClusterExtensionsRequestT& request, const ListClusterExtensionsResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::ListClusterExtensions, request, handler, context);
   }
 
   /**
@@ -11267,6 +11390,43 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
   void UpdateClusterAsync(const UpdateClusterRequestT& request, const UpdateClusterResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SageMakerClient::UpdateCluster, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the configuration or the version of an extension installed on a
+   * SageMaker HyperPod cluster. SageMaker HyperPod applies the change to every node
+   * in the cluster. You can change the configuration, the version, or both in one
+   * request.</p> <ul> <li> <p> <b>Configuration:</b> You can change settings by
+   * sending <code>ConfigurationValues</code>. Settings that you include are changed.
+   * Settings that you omit keep their current values. A setting with the value
+   * <code>null</code> is removed and returns to its default value.</p> </li> <li>
+   * <p> <b>Version:</b> You can update to a later version. You can't update to an
+   * earlier version. To use an earlier version, delete the extension and create it
+   * again with that version.</p> </li> </ul> <p>You can't update an extension while
+   * it is being deleted.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateClusterExtension">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateClusterExtensionOutcome UpdateClusterExtension(const Model::UpdateClusterExtensionRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateClusterExtension that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateClusterExtensionRequestT = Model::UpdateClusterExtensionRequest>
+  Model::UpdateClusterExtensionOutcomeCallable UpdateClusterExtensionCallable(const UpdateClusterExtensionRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::UpdateClusterExtension, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateClusterExtension that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateClusterExtensionRequestT = Model::UpdateClusterExtensionRequest>
+  void UpdateClusterExtensionAsync(const UpdateClusterExtensionRequestT& request,
+                                   const UpdateClusterExtensionResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::UpdateClusterExtension, request, handler, context);
   }
 
   /**

@@ -43,6 +43,12 @@ void ListCallerAccessGrantsRequest::AddQueryStringParameters(URI& uri) const {
     uri.AddQueryStringParameter("allowedByApplication", ss.str());
     ss.str("");
   }
+
+  if (m_instanceScopeHasBeenSet) {
+    ss << InstanceScopeMapper::GetNameForInstanceScope(m_instanceScope);
+    uri.AddQueryStringParameter("instanceScope", ss.str());
+    ss.str("");
+  }
 }
 
 Aws::Http::HeaderValueCollection ListCallerAccessGrantsRequest::GetRequestSpecificHeaders() const {

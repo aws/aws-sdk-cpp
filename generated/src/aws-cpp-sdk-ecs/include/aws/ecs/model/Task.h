@@ -20,6 +20,7 @@
 #include <aws/ecs/model/TaskEphemeralStorage.h>
 #include <aws/ecs/model/TaskOverride.h>
 #include <aws/ecs/model/TaskStopCode.h>
+#include <aws/ecs/model/TrustedExecutionSummary.h>
 
 #include <utility>
 
@@ -825,6 +826,27 @@ class Task {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A summary of the trusted execution configuration for the task, including the
+   * isolation mode. This is a read-only view of the configuration that was set on
+   * the task definition.</p>  <p>Trusted execution is supported only for
+   * Amazon ECS Managed Instances.</p>
+   */
+  inline const TrustedExecutionSummary& GetTrustedExecutionSummary() const { return m_trustedExecutionSummary; }
+  inline bool TrustedExecutionSummaryHasBeenSet() const { return m_trustedExecutionSummaryHasBeenSet; }
+  template <typename TrustedExecutionSummaryT = TrustedExecutionSummary>
+  void SetTrustedExecutionSummary(TrustedExecutionSummaryT&& value) {
+    m_trustedExecutionSummaryHasBeenSet = true;
+    m_trustedExecutionSummary = std::forward<TrustedExecutionSummaryT>(value);
+  }
+  template <typename TrustedExecutionSummaryT = TrustedExecutionSummary>
+  Task& WithTrustedExecutionSummary(TrustedExecutionSummaryT&& value) {
+    SetTrustedExecutionSummary(std::forward<TrustedExecutionSummaryT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Attachment> m_attachments;
 
@@ -899,6 +921,8 @@ class Task {
   EphemeralStorage m_ephemeralStorage;
 
   TaskEphemeralStorage m_fargateEphemeralStorage;
+
+  TrustedExecutionSummary m_trustedExecutionSummary;
   bool m_attachmentsHasBeenSet = false;
   bool m_attributesHasBeenSet = false;
   bool m_availabilityZoneHasBeenSet = false;
@@ -936,6 +960,7 @@ class Task {
   bool m_versionHasBeenSet = false;
   bool m_ephemeralStorageHasBeenSet = false;
   bool m_fargateEphemeralStorageHasBeenSet = false;
+  bool m_trustedExecutionSummaryHasBeenSet = false;
 };
 
 }  // namespace Model

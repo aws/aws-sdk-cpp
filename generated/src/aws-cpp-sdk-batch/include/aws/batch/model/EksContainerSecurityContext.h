@@ -5,6 +5,10 @@
 
 #pragma once
 #include <aws/batch/Batch_EXPORTS.h>
+#include <aws/batch/model/EksContainerLinuxCapabilities.h>
+#include <aws/batch/model/EksSeccompProfile.h>
+
+#include <utility>
 
 namespace Aws {
 namespace Utils {
@@ -35,8 +39,9 @@ class EksContainerSecurityContext {
   /**
    * <p>When this parameter is specified, the container is run as the specified user
    * ID (<code>uid</code>). If this parameter isn't specified, the default is the
-   * user that's specified in the image metadata. This parameter maps to
-   * <code>RunAsUser</code> and <code>MustRanAs</code> policy in the <a
+   * user that's specified in the image metadata. The supported value range is
+   * <code>0</code> through <code>2147483647</code>. This parameter maps to
+   * <code>RunAsUser</code> and <code>MustRunAs</code> policy in the <a
    * href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#users-and-groups">Users
    * and groups pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
    */
@@ -56,7 +61,8 @@ class EksContainerSecurityContext {
   /**
    * <p>When this parameter is specified, the container is run as the specified group
    * ID (<code>gid</code>). If this parameter isn't specified, the default is the
-   * group that's specified in the image metadata. This parameter maps to
+   * group that's specified in the image metadata. The supported value range is
+   * <code>0</code> through <code>2147483647</code>. This parameter maps to
    * <code>RunAsGroup</code> and <code>MustRunAs</code> policy in the <a
    * href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#users-and-groups">Users
    * and groups pod security policies</a> in the <i>Kubernetes documentation</i>.</p>
@@ -153,6 +159,48 @@ class EksContainerSecurityContext {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Adds or removes Linux capabilities from the container's default capability
+   * set. With Linux capabilities, you can grant specific privileges without granting
+   * full root permissions.</p>
+   */
+  inline const EksContainerLinuxCapabilities& GetCapabilities() const { return m_capabilities; }
+  inline bool CapabilitiesHasBeenSet() const { return m_capabilitiesHasBeenSet; }
+  template <typename CapabilitiesT = EksContainerLinuxCapabilities>
+  void SetCapabilities(CapabilitiesT&& value) {
+    m_capabilitiesHasBeenSet = true;
+    m_capabilities = std::forward<CapabilitiesT>(value);
+  }
+  template <typename CapabilitiesT = EksContainerLinuxCapabilities>
+  EksContainerSecurityContext& WithCapabilities(CapabilitiesT&& value) {
+    SetCapabilities(std::forward<CapabilitiesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The seccomp profile for the container. A container-level seccomp profile
+   * overrides the profile in the pod security context, which defines security
+   * settings that apply to all containers in the pod unless a container overrides
+   * them. If this parameter isn't specified, the container uses the pod security
+   * context's seccomp profile when one is specified.</p>
+   */
+  inline const EksSeccompProfile& GetSeccompProfile() const { return m_seccompProfile; }
+  inline bool SeccompProfileHasBeenSet() const { return m_seccompProfileHasBeenSet; }
+  template <typename SeccompProfileT = EksSeccompProfile>
+  void SetSeccompProfile(SeccompProfileT&& value) {
+    m_seccompProfileHasBeenSet = true;
+    m_seccompProfile = std::forward<SeccompProfileT>(value);
+  }
+  template <typename SeccompProfileT = EksSeccompProfile>
+  EksContainerSecurityContext& WithSeccompProfile(SeccompProfileT&& value) {
+    SetSeccompProfile(std::forward<SeccompProfileT>(value));
+    return *this;
+  }
+  ///@}
  private:
   long long m_runAsUser{0};
 
@@ -165,12 +213,18 @@ class EksContainerSecurityContext {
   bool m_readOnlyRootFilesystem{false};
 
   bool m_runAsNonRoot{false};
+
+  EksContainerLinuxCapabilities m_capabilities;
+
+  EksSeccompProfile m_seccompProfile;
   bool m_runAsUserHasBeenSet = false;
   bool m_runAsGroupHasBeenSet = false;
   bool m_privilegedHasBeenSet = false;
   bool m_allowPrivilegeEscalationHasBeenSet = false;
   bool m_readOnlyRootFilesystemHasBeenSet = false;
   bool m_runAsNonRootHasBeenSet = false;
+  bool m_capabilitiesHasBeenSet = false;
+  bool m_seccompProfileHasBeenSet = false;
 };
 
 }  // namespace Model

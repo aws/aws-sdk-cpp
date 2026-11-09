@@ -21,6 +21,11 @@ class JsonView;
 namespace Glue {
 namespace Model {
 
+/**
+ * <p/><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DataQualityTelemetry">AWS
+ * API Reference</a></p>
+ */
 class DataQualityTelemetry {
  public:
   AWS_GLUE_API DataQualityTelemetry() = default;
@@ -29,7 +34,9 @@ class DataQualityTelemetry {
   AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   ///@{
-
+  /**
+   * <p/>
+   */
   inline double GetVcpuHours() const { return m_vcpuHours; }
   inline bool VcpuHoursHasBeenSet() const { return m_vcpuHoursHasBeenSet; }
   inline void SetVcpuHours(double value) {
@@ -43,7 +50,9 @@ class DataQualityTelemetry {
   ///@}
 
   ///@{
-
+  /**
+   * <p/>
+   */
   inline const Aws::Map<Aws::String, Aws::String>& GetFlagsEnabled() const { return m_flagsEnabled; }
   inline bool FlagsEnabledHasBeenSet() const { return m_flagsEnabledHasBeenSet; }
   template <typename FlagsEnabledT = Aws::Map<Aws::String, Aws::String>>
@@ -65,7 +74,9 @@ class DataQualityTelemetry {
   ///@}
 
   ///@{
-
+  /**
+   * <p/>
+   */
   inline const Aws::String& GetLibraryVersion() const { return m_libraryVersion; }
   inline bool LibraryVersionHasBeenSet() const { return m_libraryVersionHasBeenSet; }
   template <typename LibraryVersionT = Aws::String>
@@ -81,7 +92,9 @@ class DataQualityTelemetry {
   ///@}
 
   ///@{
-
+  /**
+   * <p/>
+   */
   inline const Aws::String& GetSparkVersion() const { return m_sparkVersion; }
   inline bool SparkVersionHasBeenSet() const { return m_sparkVersionHasBeenSet; }
   template <typename SparkVersionT = Aws::String>
@@ -97,7 +110,9 @@ class DataQualityTelemetry {
   ///@}
 
   ///@{
-
+  /**
+   * <p/>
+   */
   inline const Aws::String& GetHostRuntimeVersion() const { return m_hostRuntimeVersion; }
   inline bool HostRuntimeVersionHasBeenSet() const { return m_hostRuntimeVersionHasBeenSet; }
   template <typename HostRuntimeVersionT = Aws::String>
@@ -113,7 +128,9 @@ class DataQualityTelemetry {
   ///@}
 
   ///@{
-
+  /**
+   * <p/>
+   */
   inline DataQualityEngine GetEngine() const { return m_engine; }
   inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
   inline void SetEngine(DataQualityEngine value) {

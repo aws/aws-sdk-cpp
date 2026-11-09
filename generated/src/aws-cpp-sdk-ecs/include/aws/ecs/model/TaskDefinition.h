@@ -20,6 +20,7 @@
 #include <aws/ecs/model/RuntimePlatform.h>
 #include <aws/ecs/model/TaskDefinitionPlacementConstraint.h>
 #include <aws/ecs/model/TaskDefinitionStatus.h>
+#include <aws/ecs/model/TrustedExecutionConfiguration.h>
 #include <aws/ecs/model/Volume.h>
 
 #include <utility>
@@ -710,6 +711,27 @@ class TaskDefinition {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The trusted execution configuration for tasks that use this task definition,
+   * including the isolation mode and, if configured, an attestation policy.</p>
+   *  <p>Trusted execution is supported only for Amazon ECS Managed
+   * Instances.</p>
+   */
+  inline const TrustedExecutionConfiguration& GetTrustedExecutionConfiguration() const { return m_trustedExecutionConfiguration; }
+  inline bool TrustedExecutionConfigurationHasBeenSet() const { return m_trustedExecutionConfigurationHasBeenSet; }
+  template <typename TrustedExecutionConfigurationT = TrustedExecutionConfiguration>
+  void SetTrustedExecutionConfiguration(TrustedExecutionConfigurationT&& value) {
+    m_trustedExecutionConfigurationHasBeenSet = true;
+    m_trustedExecutionConfiguration = std::forward<TrustedExecutionConfigurationT>(value);
+  }
+  template <typename TrustedExecutionConfigurationT = TrustedExecutionConfiguration>
+  TaskDefinition& WithTrustedExecutionConfiguration(TrustedExecutionConfigurationT&& value) {
+    SetTrustedExecutionConfiguration(std::forward<TrustedExecutionConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_taskDefinitionArn;
 
@@ -762,6 +784,8 @@ class TaskDefinition {
   EphemeralStorage m_ephemeralStorage;
 
   bool m_enableFaultInjection{false};
+
+  TrustedExecutionConfiguration m_trustedExecutionConfiguration;
   bool m_taskDefinitionArnHasBeenSet = false;
   bool m_containerDefinitionsHasBeenSet = false;
   bool m_familyHasBeenSet = false;
@@ -788,6 +812,7 @@ class TaskDefinition {
   bool m_registeredByHasBeenSet = false;
   bool m_ephemeralStorageHasBeenSet = false;
   bool m_enableFaultInjectionHasBeenSet = false;
+  bool m_trustedExecutionConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

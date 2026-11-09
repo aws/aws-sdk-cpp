@@ -40,6 +40,7 @@
 #include <aws/sagemaker/model/CreateArtifactRequest.h>
 #include <aws/sagemaker/model/CreateAutoMLJobRequest.h>
 #include <aws/sagemaker/model/CreateAutoMLJobV2Request.h>
+#include <aws/sagemaker/model/CreateClusterExtensionRequest.h>
 #include <aws/sagemaker/model/CreateClusterRequest.h>
 #include <aws/sagemaker/model/CreateClusterSchedulerConfigRequest.h>
 #include <aws/sagemaker/model/CreateCodeRepositoryRequest.h>
@@ -112,14 +113,13 @@
 #include <aws/sagemaker/model/DeleteAppRequest.h>
 #include <aws/sagemaker/model/DeleteArtifactRequest.h>
 #include <aws/sagemaker/model/DeleteAssociationRequest.h>
+#include <aws/sagemaker/model/DeleteClusterExtensionRequest.h>
 #include <aws/sagemaker/model/DeleteClusterRequest.h>
 #include <aws/sagemaker/model/DeleteClusterSchedulerConfigRequest.h>
 #include <aws/sagemaker/model/DeleteCodeRepositoryRequest.h>
 #include <aws/sagemaker/model/DeleteCompilationJobRequest.h>
 #include <aws/sagemaker/model/DeleteComputeQuotaRequest.h>
 #include <aws/sagemaker/model/DeleteContextRequest.h>
-#include <aws/sagemaker/model/DeleteDataQualityJobDefinitionRequest.h>
-#include <aws/sagemaker/model/DeleteDeviceFleetRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -391,6 +391,12 @@ CreateAutoMLJobV2Outcome SageMakerClient::CreateAutoMLJobV2(const CreateAutoMLJo
 CreateClusterOutcome SageMakerClient::CreateCluster(const CreateClusterRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateClusterOutcome(result.GetResultWithOwnership()) : CreateClusterOutcome(std::move(result.GetError()));
+}
+
+CreateClusterExtensionOutcome SageMakerClient::CreateClusterExtension(const CreateClusterExtensionRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateClusterExtensionOutcome(result.GetResultWithOwnership())
+                            : CreateClusterExtensionOutcome(std::move(result.GetError()));
 }
 
 CreateClusterSchedulerConfigOutcome SageMakerClient::CreateClusterSchedulerConfig(
@@ -821,6 +827,12 @@ DeleteClusterOutcome SageMakerClient::DeleteCluster(const DeleteClusterRequest& 
   return result.IsSuccess() ? DeleteClusterOutcome(result.GetResultWithOwnership()) : DeleteClusterOutcome(std::move(result.GetError()));
 }
 
+DeleteClusterExtensionOutcome SageMakerClient::DeleteClusterExtension(const DeleteClusterExtensionRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteClusterExtensionOutcome(result.GetResultWithOwnership())
+                            : DeleteClusterExtensionOutcome(std::move(result.GetError()));
+}
+
 DeleteClusterSchedulerConfigOutcome SageMakerClient::DeleteClusterSchedulerConfig(
     const DeleteClusterSchedulerConfigRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -849,17 +861,4 @@ DeleteComputeQuotaOutcome SageMakerClient::DeleteComputeQuota(const DeleteComput
 DeleteContextOutcome SageMakerClient::DeleteContext(const DeleteContextRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteContextOutcome(result.GetResultWithOwnership()) : DeleteContextOutcome(std::move(result.GetError()));
-}
-
-DeleteDataQualityJobDefinitionOutcome SageMakerClient::DeleteDataQualityJobDefinition(
-    const DeleteDataQualityJobDefinitionRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DeleteDataQualityJobDefinitionOutcome(result.GetResultWithOwnership())
-                            : DeleteDataQualityJobDefinitionOutcome(std::move(result.GetError()));
-}
-
-DeleteDeviceFleetOutcome SageMakerClient::DeleteDeviceFleet(const DeleteDeviceFleetRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DeleteDeviceFleetOutcome(result.GetResultWithOwnership())
-                            : DeleteDeviceFleetOutcome(std::move(result.GetError()));
 }

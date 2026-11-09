@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 
 #include <utility>
@@ -138,6 +139,30 @@ class PipelineVersionSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The aliases assigned to the pipeline version.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetPipelineVersionAliases() const { return m_pipelineVersionAliases; }
+  inline bool PipelineVersionAliasesHasBeenSet() const { return m_pipelineVersionAliasesHasBeenSet; }
+  template <typename PipelineVersionAliasesT = Aws::Vector<Aws::String>>
+  void SetPipelineVersionAliases(PipelineVersionAliasesT&& value) {
+    m_pipelineVersionAliasesHasBeenSet = true;
+    m_pipelineVersionAliases = std::forward<PipelineVersionAliasesT>(value);
+  }
+  template <typename PipelineVersionAliasesT = Aws::Vector<Aws::String>>
+  PipelineVersionSummary& WithPipelineVersionAliases(PipelineVersionAliasesT&& value) {
+    SetPipelineVersionAliases(std::forward<PipelineVersionAliasesT>(value));
+    return *this;
+  }
+  template <typename PipelineVersionAliasesT = Aws::String>
+  PipelineVersionSummary& AddPipelineVersionAliases(PipelineVersionAliasesT&& value) {
+    m_pipelineVersionAliasesHasBeenSet = true;
+    m_pipelineVersionAliases.emplace_back(std::forward<PipelineVersionAliasesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_pipelineArn;
 
@@ -150,12 +175,15 @@ class PipelineVersionSummary {
   Aws::String m_pipelineVersionDisplayName;
 
   Aws::String m_lastExecutionPipelineExecutionArn;
+
+  Aws::Vector<Aws::String> m_pipelineVersionAliases;
   bool m_pipelineArnHasBeenSet = false;
   bool m_pipelineVersionIdHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;
   bool m_pipelineVersionDescriptionHasBeenSet = false;
   bool m_pipelineVersionDisplayNameHasBeenSet = false;
   bool m_lastExecutionPipelineExecutionArnHasBeenSet = false;
+  bool m_pipelineVersionAliasesHasBeenSet = false;
 };
 
 }  // namespace Model

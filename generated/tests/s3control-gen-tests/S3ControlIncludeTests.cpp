@@ -165,6 +165,7 @@
 #include <aws/s3control/model/Grantee.h>
 #include <aws/s3control/model/GranteeType.h>
 #include <aws/s3control/model/Include.h>
+#include <aws/s3control/model/InstanceScope.h>
 #include <aws/s3control/model/JobDescriptor.h>
 #include <aws/s3control/model/JobFailure.h>
 #include <aws/s3control/model/JobListDescriptor.h>

@@ -1,6 +1,0 @@
-{
-  "type": "bugfix",
-  "category": "aws-cpp-sdk-core",
-  "contributor": "",
-  "description": "Compute clock skew as the server Date minus the time the response headers were received, instead of the request round-trip midpoint, so long-running operations no longer record a false skew. The curl, CRT and WinHTTP/WinINet clients record the header arrival time; custom HTTP clients that do not set HttpRequest::SetResponseHeadersReceivedTime fall back to the time the request returned."
-}

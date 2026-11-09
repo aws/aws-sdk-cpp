@@ -42,6 +42,7 @@
 #include <aws/glue/model/ListJobsPaginationTraits.h>
 #include <aws/glue/model/ListWorkflowsPaginationTraits.h>
 #include <aws/glue/model/ListIterableFormsPaginationTraits.h>
+#include <aws/glue/model/ListDataQualityEvaluationConfigsPaginationTraits.h>
 #include <aws/glue/model/ListDataQualityRulesetsPaginationTraits.h>
 #include <aws/glue/model/GetMLTransformsPaginationTraits.h>
 #include <aws/glue/model/ListAssetTypesPaginationTraits.h>

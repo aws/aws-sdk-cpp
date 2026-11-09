@@ -20,6 +20,8 @@
 #include <aws/signin/model/AccessDeniedException.h>
 #include <aws/signin/model/AccessToken.h>
 #include <aws/signin/model/ConflictException.h>
+#include <aws/signin/model/CreateBearerTokenRequest.h>
+#include <aws/signin/model/CreateBearerTokenResult.h>
 #include <aws/signin/model/CreateOAuth2TokenRequest.h>
 #include <aws/signin/model/CreateOAuth2TokenRequestBody.h>
 #include <aws/signin/model/CreateOAuth2TokenResponseBody.h>

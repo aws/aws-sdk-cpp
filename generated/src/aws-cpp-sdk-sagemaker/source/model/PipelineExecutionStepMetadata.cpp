@@ -126,6 +126,10 @@ PipelineExecutionStepMetadata& PipelineExecutionStepMetadata::operator=(JsonView
     m_forEach = jsonValue.GetObject("ForEach");
     m_forEachHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("HubContent")) {
+    m_hubContent = jsonValue.GetObject("HubContent");
+    m_hubContentHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -238,6 +242,10 @@ JsonValue PipelineExecutionStepMetadata::Jsonize() const {
 
   if (m_forEachHasBeenSet) {
     payload.WithObject("ForEach", m_forEach.Jsonize());
+  }
+
+  if (m_hubContentHasBeenSet) {
+    payload.WithObject("HubContent", m_hubContent.Jsonize());
   }
 
   return payload;

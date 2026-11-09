@@ -26,6 +26,15 @@ GetDataQualityResultV2Result& GetDataQualityResultV2Result::operator=(const Aws:
     m_resultId = jsonValue.GetString("ResultId");
     m_resultIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("EvaluationRunMode")) {
+    m_evaluationRunMode =
+        DataQualityEvaluationRunModeMapper::GetDataQualityEvaluationRunModeForName(jsonValue.GetString("EvaluationRunMode"));
+    m_evaluationRunModeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("DataQualityEvaluationConfig")) {
+    m_dataQualityEvaluationConfig = jsonValue.GetString("DataQualityEvaluationConfig");
+    m_dataQualityEvaluationConfigHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("DataSource")) {
     m_dataSource = jsonValue.GetObject("DataSource");
     m_dataSourceHasBeenSet = true;

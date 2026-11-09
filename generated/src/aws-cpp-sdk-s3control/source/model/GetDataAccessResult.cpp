@@ -39,6 +39,11 @@ GetDataAccessResult& GetDataAccessResult::operator=(const Aws::AmazonWebServiceR
       m_grantee = granteeNode;
       m_granteeHasBeenSet = true;
     }
+    XmlNode matchedInstanceArnNode = resultNode.FirstChild("MatchedInstanceArn");
+    if (!matchedInstanceArnNode.IsNull()) {
+      m_matchedInstanceArn = Aws::Utils::Xml::DecodeEscapedXmlText(matchedInstanceArnNode.GetText());
+      m_matchedInstanceArnHasBeenSet = true;
+    }
   }
 
   const auto& headers = result.GetHeaderValueCollection();

@@ -31,6 +31,7 @@
 #include <aws/ecs/model/AssociateGatewayWithClusterResult.h>
 #include <aws/ecs/model/Attachment.h>
 #include <aws/ecs/model/AttachmentStateChange.h>
+#include <aws/ecs/model/AttestationPolicyStatus.h>
 #include <aws/ecs/model/Attribute.h>
 #include <aws/ecs/model/AutoRepairActionsStatus.h>
 #include <aws/ecs/model/AutoRepairConfiguration.h>
@@ -297,6 +298,7 @@
 #include <aws/ecs/model/InstanceLaunchTemplateUpdate.h>
 #include <aws/ecs/model/InstanceRequirementsRequest.h>
 #include <aws/ecs/model/IpcMode.h>
+#include <aws/ecs/model/IsolationMode.h>
 #include <aws/ecs/model/KernelCapabilities.h>
 #include <aws/ecs/model/KeyValuePair.h>
 #include <aws/ecs/model/LaunchType.h>
@@ -520,6 +522,8 @@
 #include <aws/ecs/model/Tmpfs.h>
 #include <aws/ecs/model/TotalLocalStorageGBRequest.h>
 #include <aws/ecs/model/TransportProtocol.h>
+#include <aws/ecs/model/TrustedExecutionConfiguration.h>
+#include <aws/ecs/model/TrustedExecutionSummary.h>
 #include <aws/ecs/model/Ulimit.h>
 #include <aws/ecs/model/UlimitName.h>
 #include <aws/ecs/model/UntagResourceRequest.h>

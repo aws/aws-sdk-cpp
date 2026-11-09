@@ -69,6 +69,10 @@ ChangeProgressStatusDetails& ChangeProgressStatusDetails::operator=(JsonView jso
     m_initiatedBy = InitiatedByMapper::GetInitiatedByForName(jsonValue.GetString("InitiatedBy"));
     m_initiatedByHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ClonedBlueGreenUpgradeDetails")) {
+    m_clonedBlueGreenUpgradeDetails = jsonValue.GetObject("ClonedBlueGreenUpgradeDetails");
+    m_clonedBlueGreenUpgradeDetailsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("ValidationFailures")) {
     Aws::Utils::Array<JsonView> validationFailuresJsonList = jsonValue.GetArray("ValidationFailures");
     for (unsigned validationFailuresIndex = 0; validationFailuresIndex < validationFailuresJsonList.GetLength();
@@ -142,6 +146,10 @@ JsonValue ChangeProgressStatusDetails::Jsonize() const {
 
   if (m_initiatedByHasBeenSet) {
     payload.WithString("InitiatedBy", InitiatedByMapper::GetNameForInitiatedBy(m_initiatedBy));
+  }
+
+  if (m_clonedBlueGreenUpgradeDetailsHasBeenSet) {
+    payload.WithObject("ClonedBlueGreenUpgradeDetails", m_clonedBlueGreenUpgradeDetails.Jsonize());
   }
 
   if (m_validationFailuresHasBeenSet) {

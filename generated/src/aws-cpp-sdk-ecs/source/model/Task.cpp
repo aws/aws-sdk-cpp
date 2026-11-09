@@ -182,6 +182,10 @@ Task& Task::operator=(JsonView jsonValue) {
     m_fargateEphemeralStorage = jsonValue.GetObject("fargateEphemeralStorage");
     m_fargateEphemeralStorageHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("trustedExecutionSummary")) {
+    m_trustedExecutionSummary = jsonValue.GetObject("trustedExecutionSummary");
+    m_trustedExecutionSummaryHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -355,6 +359,10 @@ JsonValue Task::Jsonize() const {
 
   if (m_fargateEphemeralStorageHasBeenSet) {
     payload.WithObject("fargateEphemeralStorage", m_fargateEphemeralStorage.Jsonize());
+  }
+
+  if (m_trustedExecutionSummaryHasBeenSet) {
+    payload.WithObject("trustedExecutionSummary", m_trustedExecutionSummary.Jsonize());
   }
 
   return payload;

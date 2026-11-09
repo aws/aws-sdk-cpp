@@ -58,6 +58,10 @@ InstanceLaunchTemplate& InstanceLaunchTemplate::operator=(JsonView jsonValue) {
     m_capacityReservations = jsonValue.GetObject("capacityReservations");
     m_capacityReservationsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("nitroEnclavesEnabled")) {
+    m_nitroEnclavesEnabled = jsonValue.GetBool("nitroEnclavesEnabled");
+    m_nitroEnclavesEnabledHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -102,6 +106,10 @@ JsonValue InstanceLaunchTemplate::Jsonize() const {
 
   if (m_capacityReservationsHasBeenSet) {
     payload.WithObject("capacityReservations", m_capacityReservations.Jsonize());
+  }
+
+  if (m_nitroEnclavesEnabledHasBeenSet) {
+    payload.WithBool("nitroEnclavesEnabled", m_nitroEnclavesEnabled);
   }
 
   return payload;

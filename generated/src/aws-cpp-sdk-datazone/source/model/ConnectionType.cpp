@@ -42,6 +42,8 @@ static const int GIT_HASH = HashingUtils::HashString("GIT");
 static const int ICEBERGRESTCATALOG_HASH = HashingUtils::HashString("ICEBERGRESTCATALOG");
 static const int SNOWFLAKEICEBERGRESTCATALOG_HASH = HashingUtils::HashString("SNOWFLAKEICEBERGRESTCATALOG");
 static const int DATABRICKSICEBERGRESTCATALOG_HASH = HashingUtils::HashString("DATABRICKSICEBERGRESTCATALOG");
+static const int WORKDAYICEBERGRESTCATALOG_HASH = HashingUtils::HashString("WORKDAYICEBERGRESTCATALOG");
+static const int WORKDAYLDQ_HASH = HashingUtils::HashString("WORKDAYLDQ");
 
 ConnectionType GetConnectionTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -99,6 +101,10 @@ ConnectionType GetConnectionTypeForName(const Aws::String& name) {
     return ConnectionType::SNOWFLAKEICEBERGRESTCATALOG;
   } else if (hashCode == DATABRICKSICEBERGRESTCATALOG_HASH) {
     return ConnectionType::DATABRICKSICEBERGRESTCATALOG;
+  } else if (hashCode == WORKDAYICEBERGRESTCATALOG_HASH) {
+    return ConnectionType::WORKDAYICEBERGRESTCATALOG;
+  } else if (hashCode == WORKDAYLDQ_HASH) {
+    return ConnectionType::WORKDAYLDQ;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -167,6 +173,10 @@ Aws::String GetNameForConnectionType(ConnectionType enumValue) {
       return "SNOWFLAKEICEBERGRESTCATALOG";
     case ConnectionType::DATABRICKSICEBERGRESTCATALOG:
       return "DATABRICKSICEBERGRESTCATALOG";
+    case ConnectionType::WORKDAYICEBERGRESTCATALOG:
+      return "WORKDAYICEBERGRESTCATALOG";
+    case ConnectionType::WORKDAYLDQ:
+      return "WORKDAYLDQ";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

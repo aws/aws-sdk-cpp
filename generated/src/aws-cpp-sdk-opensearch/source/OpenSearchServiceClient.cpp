@@ -113,6 +113,7 @@
 #include <aws/opensearch/model/StartServiceSoftwareUpdateRequest.h>
 #include <aws/opensearch/model/SwitchoverReplicationRequest.h>
 #include <aws/opensearch/model/UpdateApplicationRequest.h>
+#include <aws/opensearch/model/UpdateCloneRequest.h>
 #include <aws/opensearch/model/UpdateDataSourceRequest.h>
 #include <aws/opensearch/model/UpdateDirectQueryDataSourceRequest.h>
 #include <aws/opensearch/model/UpdateDomainConfigRequest.h>
@@ -1812,6 +1813,24 @@ UpdateApplicationOutcome OpenSearchServiceClient::UpdateApplication(const Update
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
   return result.IsSuccess() ? UpdateApplicationOutcome(result.GetResultWithOwnership())
                             : UpdateApplicationOutcome(std::move(result.GetError()));
+}
+
+UpdateCloneOutcome OpenSearchServiceClient::UpdateClone(const UpdateCloneRequest& request) const {
+  if (!request.DomainNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateClone", "Required field: DomainName, is not set");
+    return UpdateCloneOutcome(Aws::Client::AWSError<OpenSearchServiceErrors>(
+        OpenSearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/domain/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/clone");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateCloneOutcome(result.GetResultWithOwnership()) : UpdateCloneOutcome(std::move(result.GetError()));
 }
 
 UpdateDataSourceOutcome OpenSearchServiceClient::UpdateDataSource(const UpdateDataSourceRequest& request) const {

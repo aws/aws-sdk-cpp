@@ -4,6 +4,7 @@
  */
 
 #include <aws/bedrock-agentcore/BedrockAgentCoreErrors.h>
+#include <aws/bedrock-agentcore/model/ServiceUnavailableException.h>
 #include <aws/bedrock-agentcore/model/SubscriptionRequiredException.h>
 #include <aws/bedrock-agentcore/model/ValidationException.h>
 #include <aws/core/client/AWSError.h>
@@ -26,6 +27,12 @@ template <>
 AWS_BEDROCKAGENTCORE_API SubscriptionRequiredException BedrockAgentCoreError::GetModeledError() {
   assert(this->GetErrorType() == BedrockAgentCoreErrors::SUBSCRIPTION_REQUIRED);
   return SubscriptionRequiredException(this->GetJsonPayload().View());
+}
+
+template <>
+AWS_BEDROCKAGENTCORE_API ServiceUnavailableException BedrockAgentCoreError::GetModeledError() {
+  assert(this->GetErrorType() == BedrockAgentCoreErrors::SERVICE_UNAVAILABLE);
+  return ServiceUnavailableException(this->GetJsonPayload().View());
 }
 
 namespace BedrockAgentCoreErrorMapper {

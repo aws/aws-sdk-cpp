@@ -66,6 +66,10 @@ EksPodProperties& EksPodProperties::operator=(JsonView jsonValue) {
     m_shareProcessNamespace = jsonValue.GetBool("shareProcessNamespace");
     m_shareProcessNamespaceHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("securityContext")) {
+    m_securityContext = jsonValue.GetObject("securityContext");
+    m_securityContextHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -122,6 +126,10 @@ JsonValue EksPodProperties::Jsonize() const {
 
   if (m_shareProcessNamespaceHasBeenSet) {
     payload.WithBool("shareProcessNamespace", m_shareProcessNamespace);
+  }
+
+  if (m_securityContextHasBeenSet) {
+    payload.WithObject("securityContext", m_securityContext.Jsonize());
   }
 
   return payload;

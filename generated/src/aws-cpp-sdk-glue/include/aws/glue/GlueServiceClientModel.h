@@ -54,6 +54,7 @@
 #include <aws/glue/model/CreateConnectionResult.h>
 #include <aws/glue/model/CreateCrawlerResult.h>
 #include <aws/glue/model/CreateCustomEntityTypeResult.h>
+#include <aws/glue/model/CreateDataQualityEvaluationConfigResult.h>
 #include <aws/glue/model/CreateDataQualityRulesetResult.h>
 #include <aws/glue/model/CreateDatabaseResult.h>
 #include <aws/glue/model/CreateDevEndpointResult.h>
@@ -92,6 +93,7 @@
 #include <aws/glue/model/DeleteConnectionTypeResult.h>
 #include <aws/glue/model/DeleteCrawlerResult.h>
 #include <aws/glue/model/DeleteCustomEntityTypeResult.h>
+#include <aws/glue/model/DeleteDataQualityEvaluationConfigResult.h>
 #include <aws/glue/model/DeleteDataQualityRulesetResult.h>
 #include <aws/glue/model/DeleteDatabaseResult.h>
 #include <aws/glue/model/DeleteDevEndpointResult.h>
@@ -160,6 +162,7 @@
 #include <aws/glue/model/GetDataCatalogEncryptionSettingsResult.h>
 #include <aws/glue/model/GetDataCatalogExportConfigurationRequest.h>
 #include <aws/glue/model/GetDataCatalogExportConfigurationResult.h>
+#include <aws/glue/model/GetDataQualityEvaluationConfigResult.h>
 #include <aws/glue/model/GetDataQualityModelResult.h>
 #include <aws/glue/model/GetDataQualityModelResultResult.h>
 #include <aws/glue/model/GetDataQualityResultResult.h>
@@ -253,6 +256,8 @@
 #include <aws/glue/model/ListCrawlsResult.h>
 #include <aws/glue/model/ListCustomEntityTypesRequest.h>
 #include <aws/glue/model/ListCustomEntityTypesResult.h>
+#include <aws/glue/model/ListDataQualityEvaluationConfigsRequest.h>
+#include <aws/glue/model/ListDataQualityEvaluationConfigsResult.h>
 #include <aws/glue/model/ListDataQualityResultsRequest.h>
 #include <aws/glue/model/ListDataQualityResultsResult.h>
 #include <aws/glue/model/ListDataQualityResultsV2Request.h>
@@ -365,6 +370,7 @@
 #include <aws/glue/model/UpdateConnectionResult.h>
 #include <aws/glue/model/UpdateCrawlerResult.h>
 #include <aws/glue/model/UpdateCrawlerScheduleResult.h>
+#include <aws/glue/model/UpdateDataQualityEvaluationConfigResult.h>
 #include <aws/glue/model/UpdateDataQualityRulesetResult.h>
 #include <aws/glue/model/UpdateDatabaseResult.h>
 #include <aws/glue/model/UpdateDevEndpointResult.h>
@@ -456,6 +462,7 @@ class CreateColumnStatisticsTaskSettingsRequest;
 class CreateConnectionRequest;
 class CreateCrawlerRequest;
 class CreateCustomEntityTypeRequest;
+class CreateDataQualityEvaluationConfigRequest;
 class CreateDataQualityRulesetRequest;
 class CreateDatabaseRequest;
 class CreateDevEndpointRequest;
@@ -493,6 +500,7 @@ class DeleteConnectionRequest;
 class DeleteConnectionTypeRequest;
 class DeleteCrawlerRequest;
 class DeleteCustomEntityTypeRequest;
+class DeleteDataQualityEvaluationConfigRequest;
 class DeleteDataQualityRulesetRequest;
 class DeleteDatabaseRequest;
 class DeleteDevEndpointRequest;
@@ -549,6 +557,7 @@ class GetCustomEntityTypeRequest;
 class GetDashboardUrlRequest;
 class GetDataCatalogEncryptionSettingsRequest;
 class GetDataCatalogExportConfigurationRequest;
+class GetDataQualityEvaluationConfigRequest;
 class GetDataQualityModelRequest;
 class GetDataQualityModelResultRequest;
 class GetDataQualityResultRequest;
@@ -624,6 +633,7 @@ class ListConnectionTypesRequest;
 class ListCrawlersRequest;
 class ListCrawlsRequest;
 class ListCustomEntityTypesRequest;
+class ListDataQualityEvaluationConfigsRequest;
 class ListDataQualityResultsRequest;
 class ListDataQualityResultsV2Request;
 class ListDataQualityRuleRecommendationRunsRequest;
@@ -710,6 +720,7 @@ class UpdateColumnStatisticsTaskSettingsRequest;
 class UpdateConnectionRequest;
 class UpdateCrawlerRequest;
 class UpdateCrawlerScheduleRequest;
+class UpdateDataQualityEvaluationConfigRequest;
 class UpdateDataQualityRulesetRequest;
 class UpdateDatabaseRequest;
 class UpdateDevEndpointRequest;
@@ -768,6 +779,7 @@ typedef Aws::Utils::Outcome<CreateColumnStatisticsTaskSettingsResult, GlueError>
 typedef Aws::Utils::Outcome<CreateConnectionResult, GlueError> CreateConnectionOutcome;
 typedef Aws::Utils::Outcome<CreateCrawlerResult, GlueError> CreateCrawlerOutcome;
 typedef Aws::Utils::Outcome<CreateCustomEntityTypeResult, GlueError> CreateCustomEntityTypeOutcome;
+typedef Aws::Utils::Outcome<CreateDataQualityEvaluationConfigResult, GlueError> CreateDataQualityEvaluationConfigOutcome;
 typedef Aws::Utils::Outcome<CreateDataQualityRulesetResult, GlueError> CreateDataQualityRulesetOutcome;
 typedef Aws::Utils::Outcome<CreateDatabaseResult, GlueError> CreateDatabaseOutcome;
 typedef Aws::Utils::Outcome<CreateDevEndpointResult, GlueError> CreateDevEndpointOutcome;
@@ -805,6 +817,7 @@ typedef Aws::Utils::Outcome<DeleteConnectionResult, GlueError> DeleteConnectionO
 typedef Aws::Utils::Outcome<DeleteConnectionTypeResult, GlueError> DeleteConnectionTypeOutcome;
 typedef Aws::Utils::Outcome<DeleteCrawlerResult, GlueError> DeleteCrawlerOutcome;
 typedef Aws::Utils::Outcome<DeleteCustomEntityTypeResult, GlueError> DeleteCustomEntityTypeOutcome;
+typedef Aws::Utils::Outcome<DeleteDataQualityEvaluationConfigResult, GlueError> DeleteDataQualityEvaluationConfigOutcome;
 typedef Aws::Utils::Outcome<DeleteDataQualityRulesetResult, GlueError> DeleteDataQualityRulesetOutcome;
 typedef Aws::Utils::Outcome<DeleteDatabaseResult, GlueError> DeleteDatabaseOutcome;
 typedef Aws::Utils::Outcome<DeleteDevEndpointResult, GlueError> DeleteDevEndpointOutcome;
@@ -861,6 +874,7 @@ typedef Aws::Utils::Outcome<GetCustomEntityTypeResult, GlueError> GetCustomEntit
 typedef Aws::Utils::Outcome<GetDashboardUrlResult, GlueError> GetDashboardUrlOutcome;
 typedef Aws::Utils::Outcome<GetDataCatalogEncryptionSettingsResult, GlueError> GetDataCatalogEncryptionSettingsOutcome;
 typedef Aws::Utils::Outcome<GetDataCatalogExportConfigurationResult, GlueError> GetDataCatalogExportConfigurationOutcome;
+typedef Aws::Utils::Outcome<GetDataQualityEvaluationConfigResult, GlueError> GetDataQualityEvaluationConfigOutcome;
 typedef Aws::Utils::Outcome<GetDataQualityModelResult, GlueError> GetDataQualityModelOutcome;
 typedef Aws::Utils::Outcome<GetDataQualityModelResultResult, GlueError> GetDataQualityModelResultOutcome;
 typedef Aws::Utils::Outcome<GetDataQualityResultResult, GlueError> GetDataQualityResultOutcome;
@@ -936,6 +950,7 @@ typedef Aws::Utils::Outcome<ListConnectionTypesResult, GlueError> ListConnection
 typedef Aws::Utils::Outcome<ListCrawlersResult, GlueError> ListCrawlersOutcome;
 typedef Aws::Utils::Outcome<ListCrawlsResult, GlueError> ListCrawlsOutcome;
 typedef Aws::Utils::Outcome<ListCustomEntityTypesResult, GlueError> ListCustomEntityTypesOutcome;
+typedef Aws::Utils::Outcome<ListDataQualityEvaluationConfigsResult, GlueError> ListDataQualityEvaluationConfigsOutcome;
 typedef Aws::Utils::Outcome<ListDataQualityResultsResult, GlueError> ListDataQualityResultsOutcome;
 typedef Aws::Utils::Outcome<ListDataQualityResultsV2Result, GlueError> ListDataQualityResultsV2Outcome;
 typedef Aws::Utils::Outcome<ListDataQualityRuleRecommendationRunsResult, GlueError> ListDataQualityRuleRecommendationRunsOutcome;
@@ -1022,6 +1037,7 @@ typedef Aws::Utils::Outcome<UpdateColumnStatisticsTaskSettingsResult, GlueError>
 typedef Aws::Utils::Outcome<UpdateConnectionResult, GlueError> UpdateConnectionOutcome;
 typedef Aws::Utils::Outcome<UpdateCrawlerResult, GlueError> UpdateCrawlerOutcome;
 typedef Aws::Utils::Outcome<UpdateCrawlerScheduleResult, GlueError> UpdateCrawlerScheduleOutcome;
+typedef Aws::Utils::Outcome<UpdateDataQualityEvaluationConfigResult, GlueError> UpdateDataQualityEvaluationConfigOutcome;
 typedef Aws::Utils::Outcome<UpdateDataQualityRulesetResult, GlueError> UpdateDataQualityRulesetOutcome;
 typedef Aws::Utils::Outcome<UpdateDatabaseResult, GlueError> UpdateDatabaseOutcome;
 typedef Aws::Utils::Outcome<UpdateDevEndpointResult, GlueError> UpdateDevEndpointOutcome;
@@ -1080,6 +1096,7 @@ typedef std::future<CreateColumnStatisticsTaskSettingsOutcome> CreateColumnStati
 typedef std::future<CreateConnectionOutcome> CreateConnectionOutcomeCallable;
 typedef std::future<CreateCrawlerOutcome> CreateCrawlerOutcomeCallable;
 typedef std::future<CreateCustomEntityTypeOutcome> CreateCustomEntityTypeOutcomeCallable;
+typedef std::future<CreateDataQualityEvaluationConfigOutcome> CreateDataQualityEvaluationConfigOutcomeCallable;
 typedef std::future<CreateDataQualityRulesetOutcome> CreateDataQualityRulesetOutcomeCallable;
 typedef std::future<CreateDatabaseOutcome> CreateDatabaseOutcomeCallable;
 typedef std::future<CreateDevEndpointOutcome> CreateDevEndpointOutcomeCallable;
@@ -1117,6 +1134,7 @@ typedef std::future<DeleteConnectionOutcome> DeleteConnectionOutcomeCallable;
 typedef std::future<DeleteConnectionTypeOutcome> DeleteConnectionTypeOutcomeCallable;
 typedef std::future<DeleteCrawlerOutcome> DeleteCrawlerOutcomeCallable;
 typedef std::future<DeleteCustomEntityTypeOutcome> DeleteCustomEntityTypeOutcomeCallable;
+typedef std::future<DeleteDataQualityEvaluationConfigOutcome> DeleteDataQualityEvaluationConfigOutcomeCallable;
 typedef std::future<DeleteDataQualityRulesetOutcome> DeleteDataQualityRulesetOutcomeCallable;
 typedef std::future<DeleteDatabaseOutcome> DeleteDatabaseOutcomeCallable;
 typedef std::future<DeleteDevEndpointOutcome> DeleteDevEndpointOutcomeCallable;
@@ -1173,6 +1191,7 @@ typedef std::future<GetCustomEntityTypeOutcome> GetCustomEntityTypeOutcomeCallab
 typedef std::future<GetDashboardUrlOutcome> GetDashboardUrlOutcomeCallable;
 typedef std::future<GetDataCatalogEncryptionSettingsOutcome> GetDataCatalogEncryptionSettingsOutcomeCallable;
 typedef std::future<GetDataCatalogExportConfigurationOutcome> GetDataCatalogExportConfigurationOutcomeCallable;
+typedef std::future<GetDataQualityEvaluationConfigOutcome> GetDataQualityEvaluationConfigOutcomeCallable;
 typedef std::future<GetDataQualityModelOutcome> GetDataQualityModelOutcomeCallable;
 typedef std::future<GetDataQualityModelResultOutcome> GetDataQualityModelResultOutcomeCallable;
 typedef std::future<GetDataQualityResultOutcome> GetDataQualityResultOutcomeCallable;
@@ -1248,6 +1267,7 @@ typedef std::future<ListConnectionTypesOutcome> ListConnectionTypesOutcomeCallab
 typedef std::future<ListCrawlersOutcome> ListCrawlersOutcomeCallable;
 typedef std::future<ListCrawlsOutcome> ListCrawlsOutcomeCallable;
 typedef std::future<ListCustomEntityTypesOutcome> ListCustomEntityTypesOutcomeCallable;
+typedef std::future<ListDataQualityEvaluationConfigsOutcome> ListDataQualityEvaluationConfigsOutcomeCallable;
 typedef std::future<ListDataQualityResultsOutcome> ListDataQualityResultsOutcomeCallable;
 typedef std::future<ListDataQualityResultsV2Outcome> ListDataQualityResultsV2OutcomeCallable;
 typedef std::future<ListDataQualityRuleRecommendationRunsOutcome> ListDataQualityRuleRecommendationRunsOutcomeCallable;
@@ -1334,6 +1354,7 @@ typedef std::future<UpdateColumnStatisticsTaskSettingsOutcome> UpdateColumnStati
 typedef std::future<UpdateConnectionOutcome> UpdateConnectionOutcomeCallable;
 typedef std::future<UpdateCrawlerOutcome> UpdateCrawlerOutcomeCallable;
 typedef std::future<UpdateCrawlerScheduleOutcome> UpdateCrawlerScheduleOutcomeCallable;
+typedef std::future<UpdateDataQualityEvaluationConfigOutcome> UpdateDataQualityEvaluationConfigOutcomeCallable;
 typedef std::future<UpdateDataQualityRulesetOutcome> UpdateDataQualityRulesetOutcomeCallable;
 typedef std::future<UpdateDatabaseOutcome> UpdateDatabaseOutcomeCallable;
 typedef std::future<UpdateDevEndpointOutcome> UpdateDevEndpointOutcomeCallable;
@@ -1468,6 +1489,10 @@ typedef std::function<void(const GlueClient*, const Model::CreateCrawlerRequest&
 typedef std::function<void(const GlueClient*, const Model::CreateCustomEntityTypeRequest&, const Model::CreateCustomEntityTypeOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateCustomEntityTypeResponseReceivedHandler;
+typedef std::function<void(const GlueClient*, const Model::CreateDataQualityEvaluationConfigRequest&,
+                           const Model::CreateDataQualityEvaluationConfigOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateDataQualityEvaluationConfigResponseReceivedHandler;
 typedef std::function<void(const GlueClient*, const Model::CreateDataQualityRulesetRequest&, const Model::CreateDataQualityRulesetOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateDataQualityRulesetResponseReceivedHandler;
@@ -1585,6 +1610,10 @@ typedef std::function<void(const GlueClient*, const Model::DeleteCrawlerRequest&
 typedef std::function<void(const GlueClient*, const Model::DeleteCustomEntityTypeRequest&, const Model::DeleteCustomEntityTypeOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteCustomEntityTypeResponseReceivedHandler;
+typedef std::function<void(const GlueClient*, const Model::DeleteDataQualityEvaluationConfigRequest&,
+                           const Model::DeleteDataQualityEvaluationConfigOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteDataQualityEvaluationConfigResponseReceivedHandler;
 typedef std::function<void(const GlueClient*, const Model::DeleteDataQualityRulesetRequest&, const Model::DeleteDataQualityRulesetOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteDataQualityRulesetResponseReceivedHandler;
@@ -1760,6 +1789,10 @@ typedef std::function<void(const GlueClient*, const Model::GetDataCatalogExportC
                            const Model::GetDataCatalogExportConfigurationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetDataCatalogExportConfigurationResponseReceivedHandler;
+typedef std::function<void(const GlueClient*, const Model::GetDataQualityEvaluationConfigRequest&,
+                           const Model::GetDataQualityEvaluationConfigOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetDataQualityEvaluationConfigResponseReceivedHandler;
 typedef std::function<void(const GlueClient*, const Model::GetDataQualityModelRequest&, const Model::GetDataQualityModelOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetDataQualityModelResponseReceivedHandler;
@@ -1994,6 +2027,10 @@ typedef std::function<void(const GlueClient*, const Model::ListCrawlsRequest&, c
 typedef std::function<void(const GlueClient*, const Model::ListCustomEntityTypesRequest&, const Model::ListCustomEntityTypesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListCustomEntityTypesResponseReceivedHandler;
+typedef std::function<void(const GlueClient*, const Model::ListDataQualityEvaluationConfigsRequest&,
+                           const Model::ListDataQualityEvaluationConfigsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListDataQualityEvaluationConfigsResponseReceivedHandler;
 typedef std::function<void(const GlueClient*, const Model::ListDataQualityResultsRequest&, const Model::ListDataQualityResultsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListDataQualityResultsResponseReceivedHandler;
@@ -2272,6 +2309,10 @@ typedef std::function<void(const GlueClient*, const Model::UpdateCrawlerRequest&
 typedef std::function<void(const GlueClient*, const Model::UpdateCrawlerScheduleRequest&, const Model::UpdateCrawlerScheduleOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateCrawlerScheduleResponseReceivedHandler;
+typedef std::function<void(const GlueClient*, const Model::UpdateDataQualityEvaluationConfigRequest&,
+                           const Model::UpdateDataQualityEvaluationConfigOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateDataQualityEvaluationConfigResponseReceivedHandler;
 typedef std::function<void(const GlueClient*, const Model::UpdateDataQualityRulesetRequest&, const Model::UpdateDataQualityRulesetOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateDataQualityRulesetResponseReceivedHandler;

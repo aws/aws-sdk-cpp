@@ -149,6 +149,10 @@ TaskDefinition& TaskDefinition::operator=(JsonView jsonValue) {
     m_enableFaultInjection = jsonValue.GetBool("enableFaultInjection");
     m_enableFaultInjectionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("trustedExecutionConfiguration")) {
+    m_trustedExecutionConfiguration = jsonValue.GetObject("trustedExecutionConfiguration");
+    m_trustedExecutionConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -292,6 +296,10 @@ JsonValue TaskDefinition::Jsonize() const {
 
   if (m_enableFaultInjectionHasBeenSet) {
     payload.WithBool("enableFaultInjection", m_enableFaultInjection);
+  }
+
+  if (m_trustedExecutionConfigurationHasBeenSet) {
+    payload.WithObject("trustedExecutionConfiguration", m_trustedExecutionConfiguration.Jsonize());
   }
 
   return payload;

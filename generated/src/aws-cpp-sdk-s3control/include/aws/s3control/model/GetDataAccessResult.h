@@ -88,6 +88,24 @@ class GetDataAccessResult {
 
   ///@{
   /**
+   * <p>The Amazon Resource Name (ARN) of the S3 Access Grants instance containing
+   * the grant that matched the requested S3 URI path.</p>
+   */
+  inline const Aws::String& GetMatchedInstanceArn() const { return m_matchedInstanceArn; }
+  template <typename MatchedInstanceArnT = Aws::String>
+  void SetMatchedInstanceArn(MatchedInstanceArnT&& value) {
+    m_matchedInstanceArnHasBeenSet = true;
+    m_matchedInstanceArn = std::forward<MatchedInstanceArnT>(value);
+  }
+  template <typename MatchedInstanceArnT = Aws::String>
+  GetDataAccessResult& WithMatchedInstanceArn(MatchedInstanceArnT&& value) {
+    SetMatchedInstanceArn(std::forward<MatchedInstanceArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * AWS Request Id value
    */
   inline const Aws::String& GetRequestId() const { return m_requestId; }
@@ -128,6 +146,8 @@ class GetDataAccessResult {
 
   Grantee m_grantee;
 
+  Aws::String m_matchedInstanceArn;
+
   Aws::String m_requestId;
 
   Aws::String m_hostId;
@@ -135,6 +155,7 @@ class GetDataAccessResult {
   bool m_credentialsHasBeenSet = false;
   bool m_matchedGrantTargetHasBeenSet = false;
   bool m_granteeHasBeenSet = false;
+  bool m_matchedInstanceArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
   bool m_hostIdHasBeenSet = false;
 };
