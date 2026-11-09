@@ -87,8 +87,13 @@
 #include <aws/ram/model/ListSourceAssociationsPaginationTraits.h>
 #include <aws/ram/model/ListSourceAssociationsRequest.h>
 #include <aws/ram/model/ListSourceAssociationsResult.h>
+#include <aws/ram/model/PermissionArnAndTemplateParameters.h>
 #include <aws/ram/model/PermissionFeatureSet.h>
 #include <aws/ram/model/PermissionStatus.h>
+#include <aws/ram/model/PermissionTemplateParameter.h>
+#include <aws/ram/model/PermissionTemplateParameterDeclaration.h>
+#include <aws/ram/model/PermissionTemplateParameterInput.h>
+#include <aws/ram/model/PermissionTemplateParameterType.h>
 #include <aws/ram/model/PermissionType.h>
 #include <aws/ram/model/PermissionTypeFilter.h>
 #include <aws/ram/model/Principal.h>
@@ -127,6 +132,9 @@
 #include <aws/ram/model/TagResourceResult.h>
 #include <aws/ram/model/UntagResourceRequest.h>
 #include <aws/ram/model/UntagResourceResult.h>
+#include <aws/ram/model/UpdatePermissionRequest.h>
+#include <aws/ram/model/UpdatePermissionResult.h>
+#include <aws/ram/model/UpdatePermissionStatus.h>
 #include <aws/ram/model/UpdateResourceShareRequest.h>
 #include <aws/ram/model/UpdateResourceShareResult.h>
 

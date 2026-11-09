@@ -77,14 +77,65 @@ public class C2jModelToGeneratorModelTransformerTest {
         c2jMetadata.setServiceFullName("Amazon AWS Service Abbr Full Name");
         c2jMetadata.setSignatureVersion("v4");
         c2jMetadata.setTargetPrefix("ServiceAbbr.");
+        // The namespace is derived from serviceId only (serviceAbbreviation / serviceFullName are
+        // no longer read), so the model must carry a serviceId. A deliberately "dirty" serviceId
+        // (distinct from the serviceAbbreviation above) verifies sanitizeServiceAbbreviation runs
+        // AND that the transformer reads serviceId, not the abbreviation:
+        // "AWS My Cool-Service_X" -> strip " -_/", "Amazon", "AWS" -> "MyCoolServiceX".
+        c2jMetadata.setServiceId("AWS My Cool-Service_X");
         c2jMetadata.setUid("service-9089-34-54");
         c2jServiceModel.setMetadata(c2jMetadata);
         C2jModelToGeneratorModelTransformer c2jModelToGeneratorModelTransformer = new C2jModelToGeneratorModelTransformer(c2jServiceModel, true);
         Metadata metadata = c2jModelToGeneratorModelTransformer.convertMetadata();
         assertTrue(metadata.isStandalone());
         assertTrue(metadata.isApigateway());
+        assertEquals("MyCoolServiceX", metadata.getNamespace());
         assertEquals("service-abbr.execute-api", metadata.getEndpointPrefix());
         assertEquals("application-json", metadata.findFirstSupportedProtocol());
+    }
+
+    // A token that cannot appear in a serviceId-derived namespace. If the namespace derivation ever
+    // read a display-name field, this would leak into the generated identifier.
+    private static final String DISPLAY_NAME_SENTINEL = "DisplayNameSentinelZZZ";
+
+    private static C2jServiceModel modelWithIds(String serviceId, String serviceFullName, String serviceAbbreviation) {
+        C2jServiceModel model = new C2jServiceModel();
+        C2jMetadata c2jMetadata = new C2jMetadata();
+        c2jMetadata.setServiceId(serviceId);
+        c2jMetadata.setServiceFullName(serviceFullName);
+        c2jMetadata.setServiceAbbreviation(serviceAbbreviation);
+        c2jMetadata.setEndpointPrefix("endpoint");
+        c2jMetadata.setProtocol("json");
+        c2jMetadata.setApiVersion("2021-01-01");
+        c2jMetadata.setUid(serviceId + "-2021-01-01");
+        model.setMetadata(c2jMetadata);
+        return model;
+    }
+
+    // Guard: the service namespace MUST derive from serviceId only. Swapping the display-name fields
+    // (serviceFullName / serviceAbbreviation) for a sentinel must not change the derived namespace,
+    // nor leak the sentinel into it. serviceId NOT in the identifier table.
+    @Test
+    public void testNamespaceDerivesFromServiceIdOnly_derivedService() {
+        Metadata clean = new C2jModelToGeneratorModelTransformer(
+                modelWithIds("GuardTestService", "AWS Guard Test Service", "GTS"), false).convertMetadata();
+        Metadata sentineled = new C2jModelToGeneratorModelTransformer(
+                modelWithIds("GuardTestService", DISPLAY_NAME_SENTINEL + " Full Name", DISPLAY_NAME_SENTINEL), false).convertMetadata();
+
+        assertEquals("GuardTestService", clean.getNamespace());
+        assertEquals(clean.getNamespace(), sentineled.getNamespace());
+        assertFalse(sentineled.getNamespace().contains(DISPLAY_NAME_SENTINEL));
+    }
+
+    // Same guard for a serviceId that is present in the identifier table (amp -> PrometheusService):
+    // the preserved name must come from the serviceId-keyed table, never from the display-name fields.
+    @Test
+    public void testNamespaceDerivesFromServiceIdOnly_tableService() {
+        Metadata sentineled = new C2jModelToGeneratorModelTransformer(
+                modelWithIds("amp", DISPLAY_NAME_SENTINEL + " Full Name", DISPLAY_NAME_SENTINEL), false).convertMetadata();
+
+        assertEquals("PrometheusService", sentineled.getNamespace());
+        assertFalse(sentineled.getNamespace().contains(DISPLAY_NAME_SENTINEL));
     }
 
     @Test

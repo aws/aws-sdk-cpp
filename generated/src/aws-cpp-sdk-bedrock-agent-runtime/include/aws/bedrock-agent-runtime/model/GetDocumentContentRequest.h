@@ -86,9 +86,35 @@ class GetDocumentContentRequest : public BedrockAgentRuntimeRequest {
 
   ///@{
   /**
-   * <p>The output format for the document content. <code>RAW</code> returns the
-   * original file. <code>EXTRACTED</code> returns parsed text as JSON. Defaults to
+   * <p>The unique identifier (in UUID format) of an image embedded in the specified
+   * document. Set this parameter to the <code>_media_id</code> value in the metadata
+   * of the corresponding <code>Retrieve</code> result. If you specify this
+   * parameter, the response contains a pre-signed URL for the image instead of the
+   * document, and you must omit <code>outputFormat</code> or set it to
    * <code>RAW</code>.</p>
+   */
+  inline const Aws::String& GetMediaId() const { return m_mediaId; }
+  inline bool MediaIdHasBeenSet() const { return m_mediaIdHasBeenSet; }
+  template <typename MediaIdT = Aws::String>
+  void SetMediaId(MediaIdT&& value) {
+    m_mediaIdHasBeenSet = true;
+    m_mediaId = std::forward<MediaIdT>(value);
+  }
+  template <typename MediaIdT = Aws::String>
+  GetDocumentContentRequest& WithMediaId(MediaIdT&& value) {
+    SetMediaId(std::forward<MediaIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The output format for the content. You can specify one of the following
+   * values:</p> <dl> <dt>RAW</dt> <dd> <p>Returns the original document, or the
+   * selected image if you specify <code>mediaId</code>.</p> </dd> <dt>EXTRACTED</dt>
+   * <dd> <p>Returns parsed document text as JSON.</p> </dd> </dl> <p>If you omit
+   * this parameter, the default is <code>RAW</code>. You can't use
+   * <code>EXTRACTED</code> with <code>mediaId</code>.</p>
    */
   inline DocumentOutputFormat GetOutputFormat() const { return m_outputFormat; }
   inline bool OutputFormatHasBeenSet() const { return m_outputFormatHasBeenSet; }
@@ -128,12 +154,15 @@ class GetDocumentContentRequest : public BedrockAgentRuntimeRequest {
 
   Aws::String m_knowledgeBaseId;
 
+  Aws::String m_mediaId;
+
   DocumentOutputFormat m_outputFormat{DocumentOutputFormat::NOT_SET};
 
   UserContext m_userContext;
   bool m_dataSourceIdHasBeenSet = false;
   bool m_documentIdHasBeenSet = false;
   bool m_knowledgeBaseIdHasBeenSet = false;
+  bool m_mediaIdHasBeenSet = false;
   bool m_outputFormatHasBeenSet = false;
   bool m_userContextHasBeenSet = false;
 };

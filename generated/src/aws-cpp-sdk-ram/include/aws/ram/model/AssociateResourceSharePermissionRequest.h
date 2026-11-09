@@ -5,8 +5,10 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ram/RAMRequest.h>
 #include <aws/ram/RAM_EXPORTS.h>
+#include <aws/ram/model/PermissionTemplateParameterInput.h>
 
 #include <utility>
 
@@ -70,6 +72,35 @@ class AssociateResourceSharePermissionRequest : public RAMRequest {
   template <typename PermissionArnT = Aws::String>
   AssociateResourceSharePermissionRequest& WithPermissionArn(PermissionArnT&& value) {
     SetPermissionArn(std::forward<PermissionArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the template parameter values for the permission being associated.
+   * You must provide values for all parameters declared in the permission template.
+   * This parameter is required only if the specified permission has template
+   * parameters.</p>
+   */
+  inline const Aws::Vector<PermissionTemplateParameterInput>& GetPermissionTemplateParameters() const {
+    return m_permissionTemplateParameters;
+  }
+  inline bool PermissionTemplateParametersHasBeenSet() const { return m_permissionTemplateParametersHasBeenSet; }
+  template <typename PermissionTemplateParametersT = Aws::Vector<PermissionTemplateParameterInput>>
+  void SetPermissionTemplateParameters(PermissionTemplateParametersT&& value) {
+    m_permissionTemplateParametersHasBeenSet = true;
+    m_permissionTemplateParameters = std::forward<PermissionTemplateParametersT>(value);
+  }
+  template <typename PermissionTemplateParametersT = Aws::Vector<PermissionTemplateParameterInput>>
+  AssociateResourceSharePermissionRequest& WithPermissionTemplateParameters(PermissionTemplateParametersT&& value) {
+    SetPermissionTemplateParameters(std::forward<PermissionTemplateParametersT>(value));
+    return *this;
+  }
+  template <typename PermissionTemplateParametersT = PermissionTemplateParameterInput>
+  AssociateResourceSharePermissionRequest& AddPermissionTemplateParameters(PermissionTemplateParametersT&& value) {
+    m_permissionTemplateParametersHasBeenSet = true;
+    m_permissionTemplateParameters.emplace_back(std::forward<PermissionTemplateParametersT>(value));
     return *this;
   }
   ///@}
@@ -152,6 +183,8 @@ class AssociateResourceSharePermissionRequest : public RAMRequest {
 
   Aws::String m_permissionArn;
 
+  Aws::Vector<PermissionTemplateParameterInput> m_permissionTemplateParameters;
+
   bool m_replace{false};
 
   Aws::String m_clientToken;
@@ -159,6 +192,7 @@ class AssociateResourceSharePermissionRequest : public RAMRequest {
   int m_permissionVersion{0};
   bool m_resourceShareArnHasBeenSet = false;
   bool m_permissionArnHasBeenSet = false;
+  bool m_permissionTemplateParametersHasBeenSet = false;
   bool m_replaceHasBeenSet = false;
   bool m_clientTokenHasBeenSet = false;
   bool m_permissionVersionHasBeenSet = false;

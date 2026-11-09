@@ -8,6 +8,7 @@
 #include <aws/ram/RAMRequest.h>
 #include <aws/ram/RAM_EXPORTS.h>
 #include <aws/ram/model/PermissionFeatureSet.h>
+#include <aws/ram/model/ResourceOwner.h>
 #include <aws/ram/model/ResourceShareAssociationStatus.h>
 
 #include <utility>
@@ -144,6 +145,48 @@ class ListPermissionAssociationsRequest : public RAMRequest {
 
   ///@{
   /**
+   * <p>Specifies that you want to list only those associations with resource shares
+   * owned by a specific entity:</p> <ul> <li> <p> <code>SELF</code> – returns only
+   * associations with resource shares owned by the calling account.</p> </li> <li>
+   * <p> <code>OTHER-ACCOUNTS</code> – returns only associations with resource shares
+   * owned by other Amazon Web Services accounts.</p> </li> </ul> <p>If you don't
+   * specify this parameter, the default is <code>SELF</code>.</p>
+   */
+  inline ResourceOwner GetResourceOwner() const { return m_resourceOwner; }
+  inline bool ResourceOwnerHasBeenSet() const { return m_resourceOwnerHasBeenSet; }
+  inline void SetResourceOwner(ResourceOwner value) {
+    m_resourceOwnerHasBeenSet = true;
+    m_resourceOwner = value;
+  }
+  inline ListPermissionAssociationsRequest& WithResourceOwner(ResourceOwner value) {
+    SetResourceOwner(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the <a
+   * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+   * Resource Name (ARN)</a> of the resource share for which you want to retrieve
+   * permission associations.</p>
+   */
+  inline const Aws::String& GetResourceShareArn() const { return m_resourceShareArn; }
+  inline bool ResourceShareArnHasBeenSet() const { return m_resourceShareArnHasBeenSet; }
+  template <typename ResourceShareArnT = Aws::String>
+  void SetResourceShareArn(ResourceShareArnT&& value) {
+    m_resourceShareArnHasBeenSet = true;
+    m_resourceShareArn = std::forward<ResourceShareArnT>(value);
+  }
+  template <typename ResourceShareArnT = Aws::String>
+  ListPermissionAssociationsRequest& WithResourceShareArn(ResourceShareArnT&& value) {
+    SetResourceShareArn(std::forward<ResourceShareArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Specifies that you want to receive the next page of results. Valid only if
    * you received a <code>NextToken</code> response in the previous request. If you
    * did, it indicates that more output is available. Set this parameter to the value
@@ -200,6 +243,10 @@ class ListPermissionAssociationsRequest : public RAMRequest {
 
   bool m_defaultVersion{false};
 
+  ResourceOwner m_resourceOwner{ResourceOwner::NOT_SET};
+
+  Aws::String m_resourceShareArn;
+
   Aws::String m_nextToken;
 
   int m_maxResults{0};
@@ -209,6 +256,8 @@ class ListPermissionAssociationsRequest : public RAMRequest {
   bool m_resourceTypeHasBeenSet = false;
   bool m_featureSetHasBeenSet = false;
   bool m_defaultVersionHasBeenSet = false;
+  bool m_resourceOwnerHasBeenSet = false;
+  bool m_resourceShareArnHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };

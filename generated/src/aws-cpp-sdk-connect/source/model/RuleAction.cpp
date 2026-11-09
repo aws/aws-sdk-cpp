@@ -54,6 +54,10 @@ RuleAction& RuleAction::operator=(JsonView jsonValue) {
     m_endAssociatedTasksAction = jsonValue.GetObject("EndAssociatedTasksAction");
     m_endAssociatedTasksActionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("EndAssociatedEmailsAction")) {
+    m_endAssociatedEmailsAction = jsonValue.GetObject("EndAssociatedEmailsAction");
+    m_endAssociatedEmailsActionHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("SubmitAutoEvaluationAction")) {
     m_submitAutoEvaluationAction = jsonValue.GetObject("SubmitAutoEvaluationAction");
     m_submitAutoEvaluationActionHasBeenSet = true;
@@ -106,6 +110,10 @@ JsonValue RuleAction::Jsonize() const {
 
   if (m_endAssociatedTasksActionHasBeenSet) {
     payload.WithObject("EndAssociatedTasksAction", m_endAssociatedTasksAction.Jsonize());
+  }
+
+  if (m_endAssociatedEmailsActionHasBeenSet) {
+    payload.WithObject("EndAssociatedEmailsAction", m_endAssociatedEmailsAction.Jsonize());
   }
 
   if (m_submitAutoEvaluationActionHasBeenSet) {

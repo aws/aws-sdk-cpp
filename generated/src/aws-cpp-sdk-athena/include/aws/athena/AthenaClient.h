@@ -404,6 +404,38 @@ class AWS_ATHENA_API AthenaClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Enables system tables for the current account. System tables are enabled or
+   * disabled for the entire account: creating this configuration enables them. If a
+   * configuration already exists, use <a>UpdateSystemTableConfiguration</a> to
+   * update it.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateSystemTableConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateSystemTableConfigurationOutcome CreateSystemTableConfiguration(
+      const Model::CreateSystemTableConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateSystemTableConfiguration that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename CreateSystemTableConfigurationRequestT = Model::CreateSystemTableConfigurationRequest>
+  Model::CreateSystemTableConfigurationOutcomeCallable CreateSystemTableConfigurationCallable(
+      const CreateSystemTableConfigurationRequestT& request) const {
+    return SubmitCallable(&AthenaClient::CreateSystemTableConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for CreateSystemTableConfiguration that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename CreateSystemTableConfigurationRequestT = Model::CreateSystemTableConfigurationRequest>
+  void CreateSystemTableConfigurationAsync(const CreateSystemTableConfigurationRequestT& request,
+                                           const CreateSystemTableConfigurationResponseReceivedHandler& handler,
+                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&AthenaClient::CreateSystemTableConfiguration, request, handler, context);
+  }
+
+  /**
    * <p>Creates a workgroup with the specified name. A workgroup can be an Apache
    * Spark enabled workgroup or an Athena SQL workgroup.</p><p><h3>See Also:</h3>
    * <a
@@ -567,6 +599,38 @@ class AWS_ATHENA_API AthenaClient : public Aws::Client::AWSJsonClient,
                                     const DeletePreparedStatementResponseReceivedHandler& handler,
                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&AthenaClient::DeletePreparedStatement, request, handler, context);
+  }
+
+  /**
+   * <p>Disables system tables for the current account by deleting the account-level
+   * configuration. If the configuration doesn't exist, the operation succeeds
+   * without making any changes. The system table and previously published data are
+   * left intact.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteSystemTableConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteSystemTableConfigurationOutcome DeleteSystemTableConfiguration(
+      const Model::DeleteSystemTableConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteSystemTableConfiguration that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DeleteSystemTableConfigurationRequestT = Model::DeleteSystemTableConfigurationRequest>
+  Model::DeleteSystemTableConfigurationOutcomeCallable DeleteSystemTableConfigurationCallable(
+      const DeleteSystemTableConfigurationRequestT& request) const {
+    return SubmitCallable(&AthenaClient::DeleteSystemTableConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteSystemTableConfiguration that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DeleteSystemTableConfigurationRequestT = Model::DeleteSystemTableConfigurationRequest>
+  void DeleteSystemTableConfigurationAsync(const DeleteSystemTableConfigurationRequestT& request,
+                                           const DeleteSystemTableConfigurationResponseReceivedHandler& handler,
+                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&AthenaClient::DeleteSystemTableConfiguration, request, handler, context);
   }
 
   /**
@@ -1108,6 +1172,37 @@ class AWS_ATHENA_API AthenaClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Returns the account-level system tables configuration. Fails with a
+   * <code>ResourceNotFoundException</code> if system tables are not enabled for the
+   * account.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetSystemTableConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetSystemTableConfigurationOutcome GetSystemTableConfiguration(
+      const Model::GetSystemTableConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetSystemTableConfiguration that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetSystemTableConfigurationRequestT = Model::GetSystemTableConfigurationRequest>
+  Model::GetSystemTableConfigurationOutcomeCallable GetSystemTableConfigurationCallable(
+      const GetSystemTableConfigurationRequestT& request) const {
+    return SubmitCallable(&AthenaClient::GetSystemTableConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for GetSystemTableConfiguration that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetSystemTableConfigurationRequestT = Model::GetSystemTableConfigurationRequest>
+  void GetSystemTableConfigurationAsync(const GetSystemTableConfigurationRequestT& request,
+                                        const GetSystemTableConfigurationResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&AthenaClient::GetSystemTableConfiguration, request, handler, context);
+  }
+
+  /**
    * <p>Returns table metadata for the specified catalog, database, and
    * table.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetTableMetadata">AWS
@@ -1560,6 +1655,36 @@ class AWS_ATHENA_API AthenaClient : public Aws::Client::AWSJsonClient,
   void ListSessionsAsync(const ListSessionsRequestT& request, const ListSessionsResponseReceivedHandler& handler,
                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&AthenaClient::ListSessions, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the system tables that the account-level configuration activates, along
+   * with whether each is currently enabled. Because system tables are enabled at the
+   * account level, every entry reflects the same account-wide state.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListSystemTableStatuses">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListSystemTableStatusesOutcome ListSystemTableStatuses(const Model::ListSystemTableStatusesRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListSystemTableStatuses that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListSystemTableStatusesRequestT = Model::ListSystemTableStatusesRequest>
+  Model::ListSystemTableStatusesOutcomeCallable ListSystemTableStatusesCallable(const ListSystemTableStatusesRequestT& request = {}) const {
+    return SubmitCallable(&AthenaClient::ListSystemTableStatuses, request);
+  }
+
+  /**
+   * An Async wrapper for ListSystemTableStatuses that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListSystemTableStatusesRequestT = Model::ListSystemTableStatusesRequest>
+  void ListSystemTableStatusesAsync(const ListSystemTableStatusesResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                    const ListSystemTableStatusesRequestT& request = {}) const {
+    return SubmitAsync(&AthenaClient::ListSystemTableStatuses, request, handler, context);
   }
 
   /**
@@ -2082,6 +2207,37 @@ class AWS_ATHENA_API AthenaClient : public Aws::Client::AWSJsonClient,
                                     const UpdatePreparedStatementResponseReceivedHandler& handler,
                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&AthenaClient::UpdatePreparedStatement, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the account-level system tables configuration. If no configuration
+   * exists, use <a>CreateSystemTableConfiguration</a> to create one. Fields that you
+   * omit retain their current values.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateSystemTableConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateSystemTableConfigurationOutcome UpdateSystemTableConfiguration(
+      const Model::UpdateSystemTableConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateSystemTableConfiguration that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename UpdateSystemTableConfigurationRequestT = Model::UpdateSystemTableConfigurationRequest>
+  Model::UpdateSystemTableConfigurationOutcomeCallable UpdateSystemTableConfigurationCallable(
+      const UpdateSystemTableConfigurationRequestT& request) const {
+    return SubmitCallable(&AthenaClient::UpdateSystemTableConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateSystemTableConfiguration that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename UpdateSystemTableConfigurationRequestT = Model::UpdateSystemTableConfigurationRequest>
+  void UpdateSystemTableConfigurationAsync(const UpdateSystemTableConfigurationRequestT& request,
+                                           const UpdateSystemTableConfigurationResponseReceivedHandler& handler,
+                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&AthenaClient::UpdateSystemTableConfiguration, request, handler, context);
   }
 
   /**

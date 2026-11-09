@@ -62,6 +62,24 @@ class DescribeTagsRequest : public AutoScalingRequest {
 
   ///@{
   /**
+   * <p> Specifies whether to include tags for managed Auto Scaling groups in the
+   * response. When set to <code>true</code> (default), the response includes tags
+   * for managed Auto Scaling groups. </p>
+   */
+  inline bool GetIncludeManagedResources() const { return m_includeManagedResources; }
+  inline bool IncludeManagedResourcesHasBeenSet() const { return m_includeManagedResourcesHasBeenSet; }
+  inline void SetIncludeManagedResources(bool value) {
+    m_includeManagedResourcesHasBeenSet = true;
+    m_includeManagedResources = value;
+  }
+  inline DescribeTagsRequest& WithIncludeManagedResources(bool value) {
+    SetIncludeManagedResources(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The token for the next set of items to return. (You received this token from
    * a previous call.)</p>
    */
@@ -82,7 +100,11 @@ class DescribeTagsRequest : public AutoScalingRequest {
   ///@{
   /**
    * <p>The maximum number of items to return with this call. The default value is
-   * <code>50</code> and the maximum value is <code>100</code>.</p>
+   * <code>50</code> and the maximum value is <code>100</code>.</p> <p>A response can
+   * contain fewer items than the value specified by <code>MaxRecords</code>, even
+   * when more items are available. To retrieve the additional items, use the
+   * <code>NextToken</code> value in a subsequent call rather than relying on the
+   * number of items in the response.</p>
    */
   inline int GetMaxRecords() const { return m_maxRecords; }
   inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
@@ -98,10 +120,13 @@ class DescribeTagsRequest : public AutoScalingRequest {
  private:
   Aws::Vector<Filter> m_filters;
 
+  bool m_includeManagedResources{false};
+
   Aws::String m_nextToken;
 
   int m_maxRecords{0};
   bool m_filtersHasBeenSet = false;
+  bool m_includeManagedResourcesHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_maxRecordsHasBeenSet = false;
 };

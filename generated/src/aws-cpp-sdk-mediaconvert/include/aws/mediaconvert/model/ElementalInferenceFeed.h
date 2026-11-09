@@ -21,7 +21,7 @@ namespace MediaConvert {
 namespace Model {
 
 /**
- * Elemental Inference Feed.<p><h3>See Also:</h3>   <a
+ * An AWS Elemental Inference Feed.<p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/ElementalInferenceFeed">AWS
  * API Reference</a></p>
  */
@@ -34,7 +34,7 @@ class ElementalInferenceFeed {
 
   ///@{
   /**
-   * Feed ARN.
+   * The ARN of an AWS Elemental Inference Feed.
    */
   inline const Aws::String& GetArn() const { return m_arn; }
   inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }

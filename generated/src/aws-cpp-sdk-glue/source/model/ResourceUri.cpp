@@ -26,6 +26,10 @@ ResourceUri& ResourceUri::operator=(JsonView jsonValue) {
     m_uri = jsonValue.GetString("Uri");
     m_uriHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("LastModified")) {
+    m_lastModified = jsonValue.GetDouble("LastModified");
+    m_lastModifiedHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue ResourceUri::Jsonize() const {
 
   if (m_uriHasBeenSet) {
     payload.WithString("Uri", m_uri);
+  }
+
+  if (m_lastModifiedHasBeenSet) {
+    payload.WithDouble("LastModified", m_lastModified.SecondsWithMSPrecision());
   }
 
   return payload;

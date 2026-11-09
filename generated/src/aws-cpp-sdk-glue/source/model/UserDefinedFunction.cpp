@@ -53,6 +53,14 @@ UserDefinedFunction& UserDefinedFunction::operator=(JsonView jsonValue) {
     }
     m_resourceUrisHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ArtifactLocation")) {
+    m_artifactLocation = jsonValue.GetString("ArtifactLocation");
+    m_artifactLocationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("GovernanceMode")) {
+    m_governanceMode = GovernanceModeMapper::GetGovernanceModeForName(jsonValue.GetString("GovernanceMode"));
+    m_governanceModeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("CatalogId")) {
     m_catalogId = jsonValue.GetString("CatalogId");
     m_catalogIdHasBeenSet = true;
@@ -97,6 +105,14 @@ JsonValue UserDefinedFunction::Jsonize() const {
       resourceUrisJsonList[resourceUrisIndex].AsObject(m_resourceUris[resourceUrisIndex].Jsonize());
     }
     payload.WithArray("ResourceUris", std::move(resourceUrisJsonList));
+  }
+
+  if (m_artifactLocationHasBeenSet) {
+    payload.WithString("ArtifactLocation", m_artifactLocation);
+  }
+
+  if (m_governanceModeHasBeenSet) {
+    payload.WithString("GovernanceMode", GovernanceModeMapper::GetNameForGovernanceMode(m_governanceMode));
   }
 
   if (m_catalogIdHasBeenSet) {

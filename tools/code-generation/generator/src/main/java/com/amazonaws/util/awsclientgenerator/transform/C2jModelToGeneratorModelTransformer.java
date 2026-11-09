@@ -52,63 +52,15 @@ public class C2jModelToGeneratorModelTransformer {
         UNSUPPORTEDHTMLTAGS.add("</important>");
     }
 
-    // A list of non-compliant service models that are already released, so we keep them backward-compatible.
-    public static final HashSet<String> LEGACY_SERVICE_IDS = new HashSet<>();
+    // A few ancient models carry no "serviceId" at all, so their namespace cannot be keyed by one
+    // (identifiers must not be keyed on a display name, endpoint prefix, or model file name). Their
+    // already-released namespaces are therefore preserved by model (service) name. Every other
+    // preserved namespace lives in the shared, serviceId-keyed identifier table
+    // (service-namespace-table.json via ServiceNamespaceTable).
+    private static final Map<String, String> SERVICE_ID_LESS_NAMESPACES = new HashMap<>();
     static {
-        LEGACY_SERVICE_IDS.add("amp");
-        LEGACY_SERVICE_IDS.add("appintegrations");
-        LEGACY_SERVICE_IDS.add("billingconductor");
-        LEGACY_SERVICE_IDS.add("clouddirectory");
-        LEGACY_SERVICE_IDS.add("cloudfront");
-        LEGACY_SERVICE_IDS.add("cloudsearch");
-        LEGACY_SERVICE_IDS.add("cloudsearchdomain");
-        LEGACY_SERVICE_IDS.add("codeartifact");
-        LEGACY_SERVICE_IDS.add("codestar-notifications");
-        LEGACY_SERVICE_IDS.add("config");
-        LEGACY_SERVICE_IDS.add("databrew");
-        LEGACY_SERVICE_IDS.add("ec2");
-        LEGACY_SERVICE_IDS.add("elasticache");
-        LEGACY_SERVICE_IDS.add("emr-containers");
-        LEGACY_SERVICE_IDS.add("entitlement.marketplace");
-        LEGACY_SERVICE_IDS.add("events");
-        LEGACY_SERVICE_IDS.add("evidently");
-        LEGACY_SERVICE_IDS.add("forecast");
-        LEGACY_SERVICE_IDS.add("forecastquery");
-        LEGACY_SERVICE_IDS.add("grafana");
-        LEGACY_SERVICE_IDS.add("importexport");
-        LEGACY_SERVICE_IDS.add("inspector");
-        LEGACY_SERVICE_IDS.add("lambda");
-        LEGACY_SERVICE_IDS.add("location");
-        LEGACY_SERVICE_IDS.add("lookoutvision");
-        LEGACY_SERVICE_IDS.add("m2");
-        LEGACY_SERVICE_IDS.add("migrationhubstrategy");
-        LEGACY_SERVICE_IDS.add("mobile");
-        LEGACY_SERVICE_IDS.add("mobileanalytics");
-        LEGACY_SERVICE_IDS.add("mq");
-        LEGACY_SERVICE_IDS.add("nimble");
-        LEGACY_SERVICE_IDS.add("opensearch");
-        LEGACY_SERVICE_IDS.add("rbin");
-        LEGACY_SERVICE_IDS.add("rds-data");
-        LEGACY_SERVICE_IDS.add("redshift-data");
-        LEGACY_SERVICE_IDS.add("resiliencehub");
-        LEGACY_SERVICE_IDS.add("rum");
-        LEGACY_SERVICE_IDS.add("sagemaker-a2i-runtime");
-        LEGACY_SERVICE_IDS.add("sagemaker-edge");
-        LEGACY_SERVICE_IDS.add("schemas");
-        LEGACY_SERVICE_IDS.add("sdb");
-        LEGACY_SERVICE_IDS.add("transcribe");
-        LEGACY_SERVICE_IDS.add("transcribe-streaming");
-        LEGACY_SERVICE_IDS.add("wisdom");
-
-        // remaps
-        LEGACY_SERVICE_IDS.add("lex");
-        LEGACY_SERVICE_IDS.add("lexv2-runtime");
-        LEGACY_SERVICE_IDS.add("lexv2-models");
-        LEGACY_SERVICE_IDS.add("marketplace-entitlement");
-        LEGACY_SERVICE_IDS.add("sagemaker-runtime");
-        LEGACY_SERVICE_IDS.add("awstransfer");
-        LEGACY_SERVICE_IDS.add("transcribestreaming");
-        LEGACY_SERVICE_IDS.add("dynamodbstreams");
+        SERVICE_ID_LESS_NAMESPACES.put("importexport", "ImportExport");
+        SERVICE_ID_LESS_NAMESPACES.put("sdb", "SimpleDB");
     }
 
     /**
@@ -310,30 +262,19 @@ public class C2jModelToGeneratorModelTransformer {
         }
         metadata.setProtocols(c2jMetadata.getProtocols());
         metadata.setAuth(c2jMetadata.getAuth());
-        metadata.setNamespace(c2jMetadata.getServiceAbbreviation());
         metadata.setServiceFullName(c2jMetadata.getServiceFullName());
         metadata.setSignatureVersion(c2jMetadata.getSignatureVersion());
         metadata.setTargetPrefix(c2jMetadata.getTargetPrefix());
         metadata.setGlobalEndpoint(c2jMetadata.getGlobalEndpoint());
         metadata.setTimestampFormat(c2jMetadata.getTimestampFormat());
 
-        if (metadata.getNamespace() == null || metadata.getNamespace().isEmpty()) {
-            String serviceId = c2jMetadata.getServiceId();
-            if(LEGACY_SERVICE_IDS.contains(this.c2jServiceModel.getServiceName())) {
-                serviceId = c2jMetadata.getServiceFullName(); // fallback to full name for legacy already released models
-            }
-            if(serviceId == null || serviceId.isEmpty()) {
-                throw new SourceGenerationFailedException(String.format("Service model file %s must have metadata.serviceId present", c2jServiceModel.getServiceName()));
-            }
-            metadata.setNamespace(sanitizeServiceAbbreviation(serviceId));
-        } else {
-            metadata.setNamespace(sanitizeServiceAbbreviation(metadata.getNamespace()));
-        }
-        metadata.setServiceId(c2jMetadata.getServiceId() != null ? c2jMetadata.getServiceId() : c2jMetadata.getEndpointPrefix());
+        // Service namespace is derived from the service id ("serviceId") ONLY. The display-name
+        // fields (serviceAbbreviation / serviceFullName) MUST NOT be read to derive it. Names that
+        // diverge from the serviceId-derived name are preserved via the static, serviceId-keyed
+        // identifier table (ServiceNamespaceTable).
+        metadata.setNamespace(deriveNamespace(c2jMetadata, this.c2jServiceModel.getServiceName()));
 
-        if ("S3-CRT".equalsIgnoreCase(c2jServiceModel.getServiceName())) {
-            metadata.setNamespace("S3Crt");
-        }
+        metadata.setServiceId(c2jMetadata.getServiceId() != null ? c2jMetadata.getServiceId() : c2jMetadata.getEndpointPrefix());
 
         metadata.setClassNamePrefix(CppViewHelper.convertToUpperCamel(ifNotNullOrEmpty(c2jMetadata.getClientClassNamePrefix(), metadata.getNamespace())));
 
@@ -1035,6 +976,46 @@ public class C2jModelToGeneratorModelTransformer {
 
         allErrors.add(error);
         return error;
+    }
+
+    /**
+     * Derive the service namespace from the service id ("serviceId") only, consulting the frozen,
+     * serviceId-keyed identifier table (ServiceNamespaceTable) for already-released names that
+     * diverge from it.
+     *
+     * @param c2jMetadata      the raw C2J metadata for the service
+     * @param serviceModelName the model (service) name, used only for S3-CRT and for the two
+     *                         serviceId-less exceptions; never used to derive a tabled value
+     */
+    String deriveNamespace(C2jMetadata c2jMetadata, String serviceModelName) {
+        // S3-CRT is a projection of s3 with no model of its own.
+        if ("S3-CRT".equalsIgnoreCase(serviceModelName)) {
+            return "S3Crt";
+        }
+        // Exception: pre-serviceId models (see SERVICE_ID_LESS_NAMESPACES).
+        String serviceIdLess = SERVICE_ID_LESS_NAMESPACES.get(serviceModelName);
+        if (serviceIdLess != null) {
+            return serviceIdLess;
+        }
+        String serviceId = c2jMetadata.getServiceId();
+        if (serviceId == null || serviceId.isEmpty()) {
+            throw new SourceGenerationFailedException(String.format(
+                    "Service model file %s must have metadata.serviceId present", serviceModelName));
+        }
+        // Preserved, already-released name takes precedence over derivation.
+        String preserved = ServiceNamespaceTable.getNamespace(serviceId);
+        if (preserved != null) {
+            return preserved;
+        }
+        String derived = sanitizeServiceAbbreviation(serviceId);
+        // Uniqueness guard: a serviceId-derived name must never collide with a preserved one.
+        if (ServiceNamespaceTable.isReservedNamespace(derived)) {
+            throw new SourceGenerationFailedException(String.format(
+                    "Derived namespace '%s' for serviceId '%s' collides with a reserved namespace "
+                            + "in the identifier table; the serviceId or the table must be reconciled",
+                    derived, serviceId));
+        }
+        return derived;
     }
 
     String sanitizeServiceAbbreviation(String serviceAbbreviation) {

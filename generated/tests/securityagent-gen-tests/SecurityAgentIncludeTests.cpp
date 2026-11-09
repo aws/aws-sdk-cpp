@@ -192,6 +192,7 @@
 #include <aws/securityagent/model/GitLabRepositoryResource.h>
 #include <aws/securityagent/model/GitLabResourceCapabilities.h>
 #include <aws/securityagent/model/GitLabTokenType.h>
+#include <aws/securityagent/model/GroupMetadata.h>
 #include <aws/securityagent/model/HttpVerification.h>
 #include <aws/securityagent/model/IdCConfiguration.h>
 #include <aws/securityagent/model/ImportSecurityRequirementsRequest.h>

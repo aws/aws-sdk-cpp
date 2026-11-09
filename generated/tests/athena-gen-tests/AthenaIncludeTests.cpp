@@ -58,6 +58,8 @@
 #include <aws/athena/model/CreatePreparedStatementResult.h>
 #include <aws/athena/model/CreatePresignedNotebookUrlRequest.h>
 #include <aws/athena/model/CreatePresignedNotebookUrlResult.h>
+#include <aws/athena/model/CreateSystemTableConfigurationRequest.h>
+#include <aws/athena/model/CreateSystemTableConfigurationResult.h>
 #include <aws/athena/model/CreateWorkGroupRequest.h>
 #include <aws/athena/model/CreateWorkGroupResult.h>
 #include <aws/athena/model/CustomerContentEncryptionConfiguration.h>
@@ -77,6 +79,8 @@
 #include <aws/athena/model/DeleteNotebookResult.h>
 #include <aws/athena/model/DeletePreparedStatementRequest.h>
 #include <aws/athena/model/DeletePreparedStatementResult.h>
+#include <aws/athena/model/DeleteSystemTableConfigurationRequest.h>
+#include <aws/athena/model/DeleteSystemTableConfigurationResult.h>
 #include <aws/athena/model/DeleteWorkGroupRequest.h>
 #include <aws/athena/model/DeleteWorkGroupResult.h>
 #include <aws/athena/model/EncryptionConfiguration.h>
@@ -124,6 +128,8 @@
 #include <aws/athena/model/GetSessionResult.h>
 #include <aws/athena/model/GetSessionStatusRequest.h>
 #include <aws/athena/model/GetSessionStatusResult.h>
+#include <aws/athena/model/GetSystemTableConfigurationRequest.h>
+#include <aws/athena/model/GetSystemTableConfigurationResult.h>
 #include <aws/athena/model/GetTableMetadataRequest.h>
 #include <aws/athena/model/GetTableMetadataResult.h>
 #include <aws/athena/model/GetWorkGroupRequest.h>
@@ -169,6 +175,9 @@
 #include <aws/athena/model/ListSessionsPaginationTraits.h>
 #include <aws/athena/model/ListSessionsRequest.h>
 #include <aws/athena/model/ListSessionsResult.h>
+#include <aws/athena/model/ListSystemTableStatusesPaginationTraits.h>
+#include <aws/athena/model/ListSystemTableStatusesRequest.h>
+#include <aws/athena/model/ListSystemTableStatusesResult.h>
 #include <aws/athena/model/ListTableMetadataPaginationTraits.h>
 #include <aws/athena/model/ListTableMetadataRequest.h>
 #include <aws/athena/model/ListTableMetadataResult.h>
@@ -230,6 +239,9 @@
 #include <aws/athena/model/StopCalculationExecutionResult.h>
 #include <aws/athena/model/StopQueryExecutionRequest.h>
 #include <aws/athena/model/StopQueryExecutionResult.h>
+#include <aws/athena/model/SystemTableName.h>
+#include <aws/athena/model/SystemTableStatus.h>
+#include <aws/athena/model/SystemTableType.h>
 #include <aws/athena/model/TableMetadata.h>
 #include <aws/athena/model/Tag.h>
 #include <aws/athena/model/TagResourceRequest.h>
@@ -255,6 +267,8 @@
 #include <aws/athena/model/UpdateNotebookResult.h>
 #include <aws/athena/model/UpdatePreparedStatementRequest.h>
 #include <aws/athena/model/UpdatePreparedStatementResult.h>
+#include <aws/athena/model/UpdateSystemTableConfigurationRequest.h>
+#include <aws/athena/model/UpdateSystemTableConfigurationResult.h>
 #include <aws/athena/model/UpdateWorkGroupRequest.h>
 #include <aws/athena/model/UpdateWorkGroupResult.h>
 #include <aws/athena/model/WorkGroup.h>

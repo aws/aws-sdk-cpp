@@ -553,8 +553,8 @@ class WebACL {
   ///@{
   /**
    * <p>The monetization configuration for the web ACL. Required when any rule in the
-   * web ACL uses the <code>Monetize</code> action. Specifies the cryptocurrency
-   * payment networks and currency mode for AI bot monetization.</p>
+   * web ACL uses the <code>Monetize</code> action. Specifies the payment settlement
+   * options and currency mode for AI bot monetization.</p>
    */
   inline const MonetizationConfig& GetMonetizationConfig() const { return m_monetizationConfig; }
   inline bool MonetizationConfigHasBeenSet() const { return m_monetizationConfigHasBeenSet; }

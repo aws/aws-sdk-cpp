@@ -12,6 +12,7 @@
 #include <aws/datasync/model/AzureAccessTier.h>
 #include <aws/datasync/model/AzureBlobAuthenticationType.h>
 #include <aws/datasync/model/AzureBlobType.h>
+#include <aws/datasync/model/AzureFederatedIdentityConfig.h>
 #include <aws/datasync/model/CmkSecretConfig.h>
 #include <aws/datasync/model/CustomSecretConfig.h>
 #include <aws/datasync/model/ManagedSecretConfig.h>
@@ -72,7 +73,8 @@ class DescribeLocationAzureBlobResult {
   ///@{
   /**
    * <p>The authentication method DataSync uses to access your Azure Blob Storage.
-   * DataSync can access blob storage using a shared access signature (SAS).</p>
+   * DataSync can access blob storage using a shared access signature (SAS) or an
+   * OpenID Connect (OIDC) token.</p>
    */
   inline AzureBlobAuthenticationType GetAuthenticationType() const { return m_authenticationType; }
   inline void SetAuthenticationType(AzureBlobAuthenticationType value) {
@@ -81,6 +83,24 @@ class DescribeLocationAzureBlobResult {
   }
   inline DescribeLocationAzureBlobResult& WithAuthenticationType(AzureBlobAuthenticationType value) {
     SetAuthenticationType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The federated identity configuration that DataSync uses to access your Azure
+   * Blob Storage using an OpenID Connect (OIDC) token.</p>
+   */
+  inline const AzureFederatedIdentityConfig& GetFederatedIdentity() const { return m_federatedIdentity; }
+  template <typename FederatedIdentityT = AzureFederatedIdentityConfig>
+  void SetFederatedIdentity(FederatedIdentityT&& value) {
+    m_federatedIdentityHasBeenSet = true;
+    m_federatedIdentity = std::forward<FederatedIdentityT>(value);
+  }
+  template <typename FederatedIdentityT = AzureFederatedIdentityConfig>
+  DescribeLocationAzureBlobResult& WithFederatedIdentity(FederatedIdentityT&& value) {
+    SetFederatedIdentity(std::forward<FederatedIdentityT>(value));
     return *this;
   }
   ///@}
@@ -247,6 +267,8 @@ class DescribeLocationAzureBlobResult {
 
   AzureBlobAuthenticationType m_authenticationType{AzureBlobAuthenticationType::NOT_SET};
 
+  AzureFederatedIdentityConfig m_federatedIdentity;
+
   AzureBlobType m_blobType{AzureBlobType::NOT_SET};
 
   AzureAccessTier m_accessTier{AzureAccessTier::NOT_SET};
@@ -266,6 +288,7 @@ class DescribeLocationAzureBlobResult {
   bool m_locationArnHasBeenSet = false;
   bool m_locationUriHasBeenSet = false;
   bool m_authenticationTypeHasBeenSet = false;
+  bool m_federatedIdentityHasBeenSet = false;
   bool m_blobTypeHasBeenSet = false;
   bool m_accessTierHasBeenSet = false;
   bool m_agentArnsHasBeenSet = false;

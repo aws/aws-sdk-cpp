@@ -39,7 +39,8 @@ class RelatedItemInputContent {
 
   ///@{
   /**
-   * <p>Object representing a contact in Amazon Connect as an API request field.</p>
+   * <p>Object representing a contact in Connect Customer as an API request
+   * field.</p>
    */
   inline const Contact& GetContact() const { return m_contact; }
   inline bool ContactHasBeenSet() const { return m_contactHasBeenSet; }
@@ -111,7 +112,7 @@ class RelatedItemInputContent {
 
   ///@{
   /**
-   * <p>Represents the Amazon Connect case to be created as a related item.</p>
+   * <p>Represents the Connect Customer case to be created as a related item.</p>
    */
   inline const ConnectCaseInputContent& GetConnectCase() const { return m_connectCase; }
   inline bool ConnectCaseHasBeenSet() const { return m_connectCaseHasBeenSet; }

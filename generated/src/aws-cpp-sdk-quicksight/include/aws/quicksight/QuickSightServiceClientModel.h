@@ -153,6 +153,7 @@
 #include <aws/quicksight/model/DescribeQPersonalizationConfigurationResult.h>
 #include <aws/quicksight/model/DescribeQuickSightQSearchConfigurationResult.h>
 #include <aws/quicksight/model/DescribeRefreshScheduleResult.h>
+#include <aws/quicksight/model/DescribeResourcePermissionsResult.h>
 #include <aws/quicksight/model/DescribeRoleCustomPermissionResult.h>
 #include <aws/quicksight/model/DescribeSelfUpgradeConfigurationResult.h>
 #include <aws/quicksight/model/DescribeSpacePermissionsResult.h>
@@ -298,6 +299,7 @@
 #include <aws/quicksight/model/UpdateQPersonalizationConfigurationResult.h>
 #include <aws/quicksight/model/UpdateQuickSightQSearchConfigurationResult.h>
 #include <aws/quicksight/model/UpdateRefreshScheduleResult.h>
+#include <aws/quicksight/model/UpdateResourcePermissionsResult.h>
 #include <aws/quicksight/model/UpdateRoleCustomPermissionResult.h>
 #include <aws/quicksight/model/UpdateSPICECapacityConfigurationResult.h>
 #include <aws/quicksight/model/UpdateSelfUpgradeConfigurationResult.h>
@@ -486,6 +488,7 @@ class DescribeOAuthClientApplicationRequest;
 class DescribeQPersonalizationConfigurationRequest;
 class DescribeQuickSightQSearchConfigurationRequest;
 class DescribeRefreshScheduleRequest;
+class DescribeResourcePermissionsRequest;
 class DescribeRoleCustomPermissionRequest;
 class DescribeSelfUpgradeConfigurationRequest;
 class DescribeSpaceRequest;
@@ -630,6 +633,7 @@ class UpdatePublicSharingSettingsRequest;
 class UpdateQPersonalizationConfigurationRequest;
 class UpdateQuickSightQSearchConfigurationRequest;
 class UpdateRefreshScheduleRequest;
+class UpdateResourcePermissionsRequest;
 class UpdateRoleCustomPermissionRequest;
 class UpdateSPICECapacityConfigurationRequest;
 class UpdateSelfUpgradeRequest;
@@ -788,6 +792,7 @@ typedef Aws::Utils::Outcome<DescribeOAuthClientApplicationResult, QuickSightErro
 typedef Aws::Utils::Outcome<DescribeQPersonalizationConfigurationResult, QuickSightError> DescribeQPersonalizationConfigurationOutcome;
 typedef Aws::Utils::Outcome<DescribeQuickSightQSearchConfigurationResult, QuickSightError> DescribeQuickSightQSearchConfigurationOutcome;
 typedef Aws::Utils::Outcome<DescribeRefreshScheduleResult, QuickSightError> DescribeRefreshScheduleOutcome;
+typedef Aws::Utils::Outcome<DescribeResourcePermissionsResult, QuickSightError> DescribeResourcePermissionsOutcome;
 typedef Aws::Utils::Outcome<DescribeRoleCustomPermissionResult, QuickSightError> DescribeRoleCustomPermissionOutcome;
 typedef Aws::Utils::Outcome<DescribeSelfUpgradeConfigurationResult, QuickSightError> DescribeSelfUpgradeConfigurationOutcome;
 typedef Aws::Utils::Outcome<DescribeSpaceResult, QuickSightError> DescribeSpaceOutcome;
@@ -933,6 +938,7 @@ typedef Aws::Utils::Outcome<UpdatePublicSharingSettingsResult, QuickSightError> 
 typedef Aws::Utils::Outcome<UpdateQPersonalizationConfigurationResult, QuickSightError> UpdateQPersonalizationConfigurationOutcome;
 typedef Aws::Utils::Outcome<UpdateQuickSightQSearchConfigurationResult, QuickSightError> UpdateQuickSightQSearchConfigurationOutcome;
 typedef Aws::Utils::Outcome<UpdateRefreshScheduleResult, QuickSightError> UpdateRefreshScheduleOutcome;
+typedef Aws::Utils::Outcome<UpdateResourcePermissionsResult, QuickSightError> UpdateResourcePermissionsOutcome;
 typedef Aws::Utils::Outcome<UpdateRoleCustomPermissionResult, QuickSightError> UpdateRoleCustomPermissionOutcome;
 typedef Aws::Utils::Outcome<UpdateSPICECapacityConfigurationResult, QuickSightError> UpdateSPICECapacityConfigurationOutcome;
 typedef Aws::Utils::Outcome<UpdateSelfUpgradeResult, QuickSightError> UpdateSelfUpgradeOutcome;
@@ -1091,6 +1097,7 @@ typedef std::future<DescribeOAuthClientApplicationOutcome> DescribeOAuthClientAp
 typedef std::future<DescribeQPersonalizationConfigurationOutcome> DescribeQPersonalizationConfigurationOutcomeCallable;
 typedef std::future<DescribeQuickSightQSearchConfigurationOutcome> DescribeQuickSightQSearchConfigurationOutcomeCallable;
 typedef std::future<DescribeRefreshScheduleOutcome> DescribeRefreshScheduleOutcomeCallable;
+typedef std::future<DescribeResourcePermissionsOutcome> DescribeResourcePermissionsOutcomeCallable;
 typedef std::future<DescribeRoleCustomPermissionOutcome> DescribeRoleCustomPermissionOutcomeCallable;
 typedef std::future<DescribeSelfUpgradeConfigurationOutcome> DescribeSelfUpgradeConfigurationOutcomeCallable;
 typedef std::future<DescribeSpaceOutcome> DescribeSpaceOutcomeCallable;
@@ -1235,6 +1242,7 @@ typedef std::future<UpdatePublicSharingSettingsOutcome> UpdatePublicSharingSetti
 typedef std::future<UpdateQPersonalizationConfigurationOutcome> UpdateQPersonalizationConfigurationOutcomeCallable;
 typedef std::future<UpdateQuickSightQSearchConfigurationOutcome> UpdateQuickSightQSearchConfigurationOutcomeCallable;
 typedef std::future<UpdateRefreshScheduleOutcome> UpdateRefreshScheduleOutcomeCallable;
+typedef std::future<UpdateResourcePermissionsOutcome> UpdateResourcePermissionsOutcomeCallable;
 typedef std::future<UpdateRoleCustomPermissionOutcome> UpdateRoleCustomPermissionOutcomeCallable;
 typedef std::future<UpdateSPICECapacityConfigurationOutcome> UpdateSPICECapacityConfigurationOutcomeCallable;
 typedef std::future<UpdateSelfUpgradeOutcome> UpdateSelfUpgradeOutcomeCallable;
@@ -1690,6 +1698,9 @@ typedef std::function<void(const QuickSightClient*, const Model::DescribeQuickSi
 typedef std::function<void(const QuickSightClient*, const Model::DescribeRefreshScheduleRequest&,
                            const Model::DescribeRefreshScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeRefreshScheduleResponseReceivedHandler;
+typedef std::function<void(const QuickSightClient*, const Model::DescribeResourcePermissionsRequest&,
+                           const Model::DescribeResourcePermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeResourcePermissionsResponseReceivedHandler;
 typedef std::function<void(const QuickSightClient*, const Model::DescribeRoleCustomPermissionRequest&,
                            const Model::DescribeRoleCustomPermissionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -2142,6 +2153,9 @@ typedef std::function<void(const QuickSightClient*, const Model::UpdateQuickSigh
 typedef std::function<void(const QuickSightClient*, const Model::UpdateRefreshScheduleRequest&, const Model::UpdateRefreshScheduleOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateRefreshScheduleResponseReceivedHandler;
+typedef std::function<void(const QuickSightClient*, const Model::UpdateResourcePermissionsRequest&,
+                           const Model::UpdateResourcePermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateResourcePermissionsResponseReceivedHandler;
 typedef std::function<void(const QuickSightClient*, const Model::UpdateRoleCustomPermissionRequest&,
                            const Model::UpdateRoleCustomPermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateRoleCustomPermissionResponseReceivedHandler;

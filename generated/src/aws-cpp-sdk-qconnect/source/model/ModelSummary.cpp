@@ -55,6 +55,11 @@ ModelSummary& ModelSummary::operator=(JsonView jsonValue) {
     m_endOfLifeTimestamp = jsonValue.GetDouble("endOfLifeTimestamp");
     m_endOfLifeTimestampHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("globalResiliencyStatus")) {
+    m_globalResiliencyStatus =
+        GlobalResiliencyStatusMapper::GetGlobalResiliencyStatusForName(jsonValue.GetString("globalResiliencyStatus"));
+    m_globalResiliencyStatusHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -97,6 +102,10 @@ JsonValue ModelSummary::Jsonize() const {
 
   if (m_endOfLifeTimestampHasBeenSet) {
     payload.WithDouble("endOfLifeTimestamp", m_endOfLifeTimestamp.SecondsWithMSPrecision());
+  }
+
+  if (m_globalResiliencyStatusHasBeenSet) {
+    payload.WithString("globalResiliencyStatus", GlobalResiliencyStatusMapper::GetNameForGlobalResiliencyStatus(m_globalResiliencyStatus));
   }
 
   return payload;

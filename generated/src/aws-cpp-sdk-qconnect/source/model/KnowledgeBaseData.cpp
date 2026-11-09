@@ -81,6 +81,14 @@ KnowledgeBaseData& KnowledgeBaseData::operator=(JsonView jsonValue) {
     }
     m_ingestionFailureReasonsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("lastModifiedTime")) {
+    m_lastModifiedTime = jsonValue.GetDouble("lastModifiedTime");
+    m_lastModifiedTimeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("lastModifiedRegion")) {
+    m_lastModifiedRegion = jsonValue.GetString("lastModifiedRegion");
+    m_lastModifiedRegionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -150,6 +158,14 @@ JsonValue KnowledgeBaseData::Jsonize() const {
       ingestionFailureReasonsJsonList[ingestionFailureReasonsIndex].AsString(m_ingestionFailureReasons[ingestionFailureReasonsIndex]);
     }
     payload.WithArray("ingestionFailureReasons", std::move(ingestionFailureReasonsJsonList));
+  }
+
+  if (m_lastModifiedTimeHasBeenSet) {
+    payload.WithDouble("lastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
+  }
+
+  if (m_lastModifiedRegionHasBeenSet) {
+    payload.WithString("lastModifiedRegion", m_lastModifiedRegion);
   }
 
   return payload;

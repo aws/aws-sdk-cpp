@@ -134,8 +134,8 @@ class CreateCaseRequest : public ConnectCasesRequest {
 
   ///@{
   /**
-   * <p>A map of of key-value pairs that represent tags on a resource. Tags are used
-   * to organize, track, or control access for this resource.</p>
+   * <p>A map of key-value pairs that represent tags on a resource. Tags are used to
+   * organize, track, or control access for this resource.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
   inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }

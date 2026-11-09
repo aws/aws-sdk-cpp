@@ -142,8 +142,8 @@ class UpdateMicrovmImageVersionResult {
 
   ///@{
   /**
-   * <p>The list of egress network connectors available to the MicroVM at
-   * runtime.</p>
+   * <p>The list of egress network connectors available to the MicroVM at image build
+   * time.</p>
    */
   inline const Aws::Vector<Aws::String>& GetEgressNetworkConnectors() const { return m_egressNetworkConnectors; }
   template <typename EgressNetworkConnectorsT = Aws::Vector<Aws::String>>

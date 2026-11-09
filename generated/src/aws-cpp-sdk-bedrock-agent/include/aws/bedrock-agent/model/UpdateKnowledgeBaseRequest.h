@@ -7,8 +7,10 @@
 #include <aws/bedrock-agent/BedrockAgentRequest.h>
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/bedrock-agent/model/KnowledgeBaseConfiguration.h>
+#include <aws/bedrock-agent/model/MetadataConfiguration.h>
 #include <aws/bedrock-agent/model/StorageConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -141,6 +143,34 @@ class UpdateKnowledgeBaseRequest : public BedrockAgentRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies up to 30 custom metadata field configurations for a managed
+   * knowledge base.</p> <p>The list that you specify replaces the existing
+   * configurations. The update removes any configuration that you leave out, and its
+   * field is no longer searchable. An empty list removes all configurations. If you
+   * don't specify a list, the existing configurations don't change.</p>
+   */
+  inline const Aws::Vector<MetadataConfiguration>& GetMetadataConfigurations() const { return m_metadataConfigurations; }
+  inline bool MetadataConfigurationsHasBeenSet() const { return m_metadataConfigurationsHasBeenSet; }
+  template <typename MetadataConfigurationsT = Aws::Vector<MetadataConfiguration>>
+  void SetMetadataConfigurations(MetadataConfigurationsT&& value) {
+    m_metadataConfigurationsHasBeenSet = true;
+    m_metadataConfigurations = std::forward<MetadataConfigurationsT>(value);
+  }
+  template <typename MetadataConfigurationsT = Aws::Vector<MetadataConfiguration>>
+  UpdateKnowledgeBaseRequest& WithMetadataConfigurations(MetadataConfigurationsT&& value) {
+    SetMetadataConfigurations(std::forward<MetadataConfigurationsT>(value));
+    return *this;
+  }
+  template <typename MetadataConfigurationsT = MetadataConfiguration>
+  UpdateKnowledgeBaseRequest& AddMetadataConfigurations(MetadataConfigurationsT&& value) {
+    m_metadataConfigurationsHasBeenSet = true;
+    m_metadataConfigurations.emplace_back(std::forward<MetadataConfigurationsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_knowledgeBaseId;
 
@@ -153,12 +183,15 @@ class UpdateKnowledgeBaseRequest : public BedrockAgentRequest {
   KnowledgeBaseConfiguration m_knowledgeBaseConfiguration;
 
   StorageConfiguration m_storageConfiguration;
+
+  Aws::Vector<MetadataConfiguration> m_metadataConfigurations;
   bool m_knowledgeBaseIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
   bool m_knowledgeBaseConfigurationHasBeenSet = false;
   bool m_storageConfigurationHasBeenSet = false;
+  bool m_metadataConfigurationsHasBeenSet = false;
 };
 
 }  // namespace Model

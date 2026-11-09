@@ -47,6 +47,7 @@
 #include <aws/ssm/model/DeletePatchBaselineRequest.h>
 #include <aws/ssm/model/DeleteResourceDataSyncRequest.h>
 #include <aws/ssm/model/DeleteResourcePolicyRequest.h>
+#include <aws/ssm/model/DeregisterDefaultHostManagementConfigurationRequest.h>
 #include <aws/ssm/model/DeregisterManagedInstanceRequest.h>
 #include <aws/ssm/model/DeregisterPatchBaselineForPatchGroupRequest.h>
 #include <aws/ssm/model/DeregisterTargetFromMaintenanceWindowRequest.h>
@@ -138,6 +139,7 @@
 #include <aws/ssm/model/PutInventoryRequest.h>
 #include <aws/ssm/model/PutParameterRequest.h>
 #include <aws/ssm/model/PutResourcePolicyRequest.h>
+#include <aws/ssm/model/RegisterDefaultHostManagementConfigurationRequest.h>
 #include <aws/ssm/model/RegisterDefaultPatchBaselineRequest.h>
 #include <aws/ssm/model/RegisterPatchBaselineForPatchGroupRequest.h>
 #include <aws/ssm/model/RegisterTargetWithMaintenanceWindowRequest.h>
@@ -478,6 +480,13 @@ DeleteResourcePolicyOutcome SSMClient::DeleteResourcePolicy(const DeleteResource
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteResourcePolicyOutcome(result.GetResultWithOwnership())
                             : DeleteResourcePolicyOutcome(std::move(result.GetError()));
+}
+
+DeregisterDefaultHostManagementConfigurationOutcome SSMClient::DeregisterDefaultHostManagementConfiguration(
+    const DeregisterDefaultHostManagementConfigurationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeregisterDefaultHostManagementConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeregisterDefaultHostManagementConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeregisterManagedInstanceOutcome SSMClient::DeregisterManagedInstance(const DeregisterManagedInstanceRequest& request) const {
@@ -1032,6 +1041,13 @@ PutResourcePolicyOutcome SSMClient::PutResourcePolicy(const PutResourcePolicyReq
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? PutResourcePolicyOutcome(result.GetResultWithOwnership())
                             : PutResourcePolicyOutcome(std::move(result.GetError()));
+}
+
+RegisterDefaultHostManagementConfigurationOutcome SSMClient::RegisterDefaultHostManagementConfiguration(
+    const RegisterDefaultHostManagementConfigurationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterDefaultHostManagementConfigurationOutcome(result.GetResultWithOwnership())
+                            : RegisterDefaultHostManagementConfigurationOutcome(std::move(result.GetError()));
 }
 
 RegisterDefaultPatchBaselineOutcome SSMClient::RegisterDefaultPatchBaseline(const RegisterDefaultPatchBaselineRequest& request) const {

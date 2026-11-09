@@ -298,6 +298,61 @@ class ContentData {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp when the content was last modified.</p>
+   */
+  inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
+  inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
+  template <typename LastModifiedTimeT = Aws::Utils::DateTime>
+  void SetLastModifiedTime(LastModifiedTimeT&& value) {
+    m_lastModifiedTimeHasBeenSet = true;
+    m_lastModifiedTime = std::forward<LastModifiedTimeT>(value);
+  }
+  template <typename LastModifiedTimeT = Aws::Utils::DateTime>
+  ContentData& WithLastModifiedTime(LastModifiedTimeT&& value) {
+    SetLastModifiedTime(std::forward<LastModifiedTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Web Services Region where the content was last modified.</p>
+   */
+  inline const Aws::String& GetLastModifiedRegion() const { return m_lastModifiedRegion; }
+  inline bool LastModifiedRegionHasBeenSet() const { return m_lastModifiedRegionHasBeenSet; }
+  template <typename LastModifiedRegionT = Aws::String>
+  void SetLastModifiedRegion(LastModifiedRegionT&& value) {
+    m_lastModifiedRegionHasBeenSet = true;
+    m_lastModifiedRegion = std::forward<LastModifiedRegionT>(value);
+  }
+  template <typename LastModifiedRegionT = Aws::String>
+  ContentData& WithLastModifiedRegion(LastModifiedRegionT&& value) {
+    SetLastModifiedRegion(std::forward<LastModifiedRegionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Base64-encoded SHA-256 hash of the content file. Amazon Connect Global
+   * Resiliency returns this field only for replicated content.</p>
+   */
+  inline const Aws::String& GetFileHash() const { return m_fileHash; }
+  inline bool FileHashHasBeenSet() const { return m_fileHashHasBeenSet; }
+  template <typename FileHashT = Aws::String>
+  void SetFileHash(FileHashT&& value) {
+    m_fileHashHasBeenSet = true;
+    m_fileHash = std::forward<FileHashT>(value);
+  }
+  template <typename FileHashT = Aws::String>
+  ContentData& WithFileHash(FileHashT&& value) {
+    SetFileHash(std::forward<FileHashT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_contentArn;
 
@@ -326,6 +381,12 @@ class ContentData {
   Aws::String m_url;
 
   Aws::Utils::DateTime m_urlExpiry{};
+
+  Aws::Utils::DateTime m_lastModifiedTime{};
+
+  Aws::String m_lastModifiedRegion;
+
+  Aws::String m_fileHash;
   bool m_contentArnHasBeenSet = false;
   bool m_contentIdHasBeenSet = false;
   bool m_knowledgeBaseArnHasBeenSet = false;
@@ -340,6 +401,9 @@ class ContentData {
   bool m_linkOutUriHasBeenSet = false;
   bool m_urlHasBeenSet = false;
   bool m_urlExpiryHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_lastModifiedRegionHasBeenSet = false;
+  bool m_fileHashHasBeenSet = false;
 };
 
 }  // namespace Model

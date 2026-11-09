@@ -16,6 +16,20 @@
     </properties>
 
     <build>
+        <resources>
+            <!-- Default resources (Velocity templates, etc.) -->
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+            <!-- Shared service-id -> namespace identifier table, single source of truth shared with
+                 the Smithy generator. Bundled onto the classpath so ServiceNamespaceTable can load it. -->
+            <resource>
+                <directory>../shared</directory>
+                <includes>
+                    <include>service-namespace-table.json</include>
+                </includes>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

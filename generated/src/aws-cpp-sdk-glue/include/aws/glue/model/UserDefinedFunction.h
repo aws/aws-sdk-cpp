@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/glue/model/FunctionType.h>
+#include <aws/glue/model/GovernanceMode.h>
 #include <aws/glue/model/PrincipalType.h>
 #include <aws/glue/model/ResourceUri.h>
 
@@ -185,6 +186,46 @@ class UserDefinedFunction {
 
   ///@{
   /**
+   * <p>The Amazon S3 location that contains the function's artifacts. This location
+   * must be registered with Lake Formation. Glue returns this field only for
+   * functions whose <code>GovernanceMode</code> is <code>LAKE_FORMATION</code>.</p>
+   */
+  inline const Aws::String& GetArtifactLocation() const { return m_artifactLocation; }
+  inline bool ArtifactLocationHasBeenSet() const { return m_artifactLocationHasBeenSet; }
+  template <typename ArtifactLocationT = Aws::String>
+  void SetArtifactLocation(ArtifactLocationT&& value) {
+    m_artifactLocationHasBeenSet = true;
+    m_artifactLocation = std::forward<ArtifactLocationT>(value);
+  }
+  template <typename ArtifactLocationT = Aws::String>
+  UserDefinedFunction& WithArtifactLocation(ArtifactLocationT&& value) {
+    SetArtifactLocation(std::forward<ArtifactLocationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>How access to the function is governed. <code>IAM_ONLY</code> means access is
+   * controlled by IAM permissions only. <code>LAKE_FORMATION</code> means Lake
+   * Formation permissions (<code>EXECUTE</code>, <code>DESCRIBE</code>,
+   * <code>ALTER</code>, and <code>DROP</code>) also control who can run, describe,
+   * update, and delete the function.</p>
+   */
+  inline GovernanceMode GetGovernanceMode() const { return m_governanceMode; }
+  inline bool GovernanceModeHasBeenSet() const { return m_governanceModeHasBeenSet; }
+  inline void SetGovernanceMode(GovernanceMode value) {
+    m_governanceModeHasBeenSet = true;
+    m_governanceMode = value;
+  }
+  inline UserDefinedFunction& WithGovernanceMode(GovernanceMode value) {
+    SetGovernanceMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The ID of the Data Catalog in which the function resides.</p>
    */
   inline const Aws::String& GetCatalogId() const { return m_catalogId; }
@@ -217,6 +258,10 @@ class UserDefinedFunction {
 
   Aws::Vector<ResourceUri> m_resourceUris;
 
+  Aws::String m_artifactLocation;
+
+  GovernanceMode m_governanceMode{GovernanceMode::NOT_SET};
+
   Aws::String m_catalogId;
   bool m_functionNameHasBeenSet = false;
   bool m_databaseNameHasBeenSet = false;
@@ -226,6 +271,8 @@ class UserDefinedFunction {
   bool m_ownerTypeHasBeenSet = false;
   bool m_createTimeHasBeenSet = false;
   bool m_resourceUrisHasBeenSet = false;
+  bool m_artifactLocationHasBeenSet = false;
+  bool m_governanceModeHasBeenSet = false;
   bool m_catalogIdHasBeenSet = false;
 };
 

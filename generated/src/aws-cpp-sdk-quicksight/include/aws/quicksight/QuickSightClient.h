@@ -3994,6 +3994,38 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Describes the service role configuration for your Amazon Quick Sight
+   * account.</p> <p>Call this operation in the Amazon Web Services Region where your
+   * Amazon Quick Sight account is registered (the home Region).</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeResourcePermissions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeResourcePermissionsOutcome DescribeResourcePermissions(
+      const Model::DescribeResourcePermissionsRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeResourcePermissions that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DescribeResourcePermissionsRequestT = Model::DescribeResourcePermissionsRequest>
+  Model::DescribeResourcePermissionsOutcomeCallable DescribeResourcePermissionsCallable(
+      const DescribeResourcePermissionsRequestT& request) const {
+    return SubmitCallable(&QuickSightClient::DescribeResourcePermissions, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeResourcePermissions that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeResourcePermissionsRequestT = Model::DescribeResourcePermissionsRequest>
+  void DescribeResourcePermissionsAsync(const DescribeResourcePermissionsRequestT& request,
+                                        const DescribeResourcePermissionsResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&QuickSightClient::DescribeResourcePermissions, request, handler, context);
+  }
+
+  /**
    * <p>Describes all custom permissions that are mapped to a role.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeRoleCustomPermission">AWS
@@ -8268,6 +8300,42 @@ class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient,
   void UpdateRefreshScheduleAsync(const UpdateRefreshScheduleRequestT& request, const UpdateRefreshScheduleResponseReceivedHandler& handler,
                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&QuickSightClient::UpdateRefreshSchedule, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the service role configuration that Amazon Quick Sight uses to access
+   * resources in your Amazon Web Services account. To use this operation, you must
+   * have the <code>quicksight:UpdateResourcePermissions</code> and
+   * <code>iam:PassRole</code> permissions.</p> <p>Call this operation in the Amazon
+   * Web Services Region where your Amazon Quick Sight account is registered (the
+   * home Region). You can switch from a role managed by Amazon Quick Sight to a
+   * customer-managed role, or replace one customer-managed role with another. You
+   * can't use this operation to switch back to a role managed by Amazon Quick
+   * Sight.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateResourcePermissions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateResourcePermissionsOutcome UpdateResourcePermissions(const Model::UpdateResourcePermissionsRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateResourcePermissions that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateResourcePermissionsRequestT = Model::UpdateResourcePermissionsRequest>
+  Model::UpdateResourcePermissionsOutcomeCallable UpdateResourcePermissionsCallable(
+      const UpdateResourcePermissionsRequestT& request) const {
+    return SubmitCallable(&QuickSightClient::UpdateResourcePermissions, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateResourcePermissions that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateResourcePermissionsRequestT = Model::UpdateResourcePermissionsRequest>
+  void UpdateResourcePermissionsAsync(const UpdateResourcePermissionsRequestT& request,
+                                      const UpdateResourcePermissionsResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&QuickSightClient::UpdateResourcePermissions, request, handler, context);
   }
 
   /**

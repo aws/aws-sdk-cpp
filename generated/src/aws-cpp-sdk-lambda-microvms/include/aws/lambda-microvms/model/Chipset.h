@@ -10,7 +10,7 @@
 namespace Aws {
 namespace LambdaMicrovms {
 namespace Model {
-enum class Chipset { NOT_SET, GRAVITON };
+enum class Chipset { NOT_SET, GRAVITON, INTEL };
 
 namespace ChipsetMapper {
 AWS_LAMBDAMICROVMS_API Chipset GetChipsetForName(const Aws::String& name);

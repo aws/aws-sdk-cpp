@@ -37,6 +37,10 @@ DescribeLocationObjectStorageResult& DescribeLocationObjectStorageResult::operat
     m_accessKey = jsonValue.GetString("AccessKey");
     m_accessKeyHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("FederatedIdentity")) {
+    m_federatedIdentity = jsonValue.GetObject("FederatedIdentity");
+    m_federatedIdentityHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("ServerPort")) {
     m_serverPort = jsonValue.GetInteger("ServerPort");
     m_serverPortHasBeenSet = true;

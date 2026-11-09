@@ -113,7 +113,7 @@ class SageMakerWaiter {
     using RequestT = Model::DescribeImageRequest;
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>("ImageDeletedWaiter", Aws::Utils::WaiterState::SUCCESS,
-                                                                                Aws::String("ResourceNotFoundException")));
+                                                                                Aws::String("ResourceNotFound")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ImageDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("DELETE_FAILED"),
         [](const Model::DescribeImageOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
@@ -190,7 +190,7 @@ class SageMakerWaiter {
     using RequestT = Model::DescribeImageVersionRequest;
     Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
-        "ImageVersionDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ResourceNotFoundException")));
+        "ImageVersionDeletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("ResourceNotFound")));
     acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
         "ImageVersionDeletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("DELETE_FAILED"),
         [](const Model::DescribeImageVersionOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {

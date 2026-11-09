@@ -18,6 +18,7 @@ namespace LogGroupClassMapper {
 static const int STANDARD_HASH = HashingUtils::HashString("STANDARD");
 static const int INFREQUENT_ACCESS_HASH = HashingUtils::HashString("INFREQUENT_ACCESS");
 static const int DELIVERY_HASH = HashingUtils::HashString("DELIVERY");
+static const int ESSENTIALS_HASH = HashingUtils::HashString("ESSENTIALS");
 
 LogGroupClass GetLogGroupClassForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ LogGroupClass GetLogGroupClassForName(const Aws::String& name) {
     return LogGroupClass::INFREQUENT_ACCESS;
   } else if (hashCode == DELIVERY_HASH) {
     return LogGroupClass::DELIVERY;
+  } else if (hashCode == ESSENTIALS_HASH) {
+    return LogGroupClass::ESSENTIALS;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForLogGroupClass(LogGroupClass enumValue) {
       return "INFREQUENT_ACCESS";
     case LogGroupClass::DELIVERY:
       return "DELIVERY";
+    case LogGroupClass::ESSENTIALS:
+      return "ESSENTIALS";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

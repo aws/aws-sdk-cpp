@@ -19,9 +19,11 @@
 /* End of generic header includes */
 
 /* Service model headers required in ConnectCasesClient header */
+#include <aws/connectcases/model/BatchCreateRelatedItemResult.h>
 #include <aws/connectcases/model/BatchGetCaseRuleResult.h>
 #include <aws/connectcases/model/BatchGetFieldResult.h>
 #include <aws/connectcases/model/BatchPutFieldOptionsResult.h>
+#include <aws/connectcases/model/BatchUpdateCaseResult.h>
 #include <aws/connectcases/model/CreateCaseResult.h>
 #include <aws/connectcases/model/CreateCaseRuleResult.h>
 #include <aws/connectcases/model/CreateDomainResult.h>
@@ -95,9 +97,11 @@ using ConnectCasesEndpointProvider = Aws::ConnectCases::Endpoint::ConnectCasesEn
 
 namespace Model {
 /* Service model forward declarations required in ConnectCasesClient header */
+class BatchCreateRelatedItemRequest;
 class BatchGetCaseRuleRequest;
 class BatchGetFieldRequest;
 class BatchPutFieldOptionsRequest;
+class BatchUpdateCaseRequest;
 class CreateCaseRequest;
 class CreateCaseRuleRequest;
 class CreateDomainRequest;
@@ -141,9 +145,11 @@ class UpdateTemplateRequest;
 /* End of service model forward declarations required in ConnectCasesClient header */
 
 /* Service model Outcome class definitions */
+typedef Aws::Utils::Outcome<BatchCreateRelatedItemResult, ConnectCasesError> BatchCreateRelatedItemOutcome;
 typedef Aws::Utils::Outcome<BatchGetCaseRuleResult, ConnectCasesError> BatchGetCaseRuleOutcome;
 typedef Aws::Utils::Outcome<BatchGetFieldResult, ConnectCasesError> BatchGetFieldOutcome;
 typedef Aws::Utils::Outcome<BatchPutFieldOptionsResult, ConnectCasesError> BatchPutFieldOptionsOutcome;
+typedef Aws::Utils::Outcome<BatchUpdateCaseResult, ConnectCasesError> BatchUpdateCaseOutcome;
 typedef Aws::Utils::Outcome<CreateCaseResult, ConnectCasesError> CreateCaseOutcome;
 typedef Aws::Utils::Outcome<CreateCaseRuleResult, ConnectCasesError> CreateCaseRuleOutcome;
 typedef Aws::Utils::Outcome<CreateDomainResult, ConnectCasesError> CreateDomainOutcome;
@@ -187,9 +193,11 @@ typedef Aws::Utils::Outcome<UpdateTemplateResult, ConnectCasesError> UpdateTempl
 /* End of service model Outcome class definitions */
 
 /* Service model Outcome callable definitions */
+typedef std::future<BatchCreateRelatedItemOutcome> BatchCreateRelatedItemOutcomeCallable;
 typedef std::future<BatchGetCaseRuleOutcome> BatchGetCaseRuleOutcomeCallable;
 typedef std::future<BatchGetFieldOutcome> BatchGetFieldOutcomeCallable;
 typedef std::future<BatchPutFieldOptionsOutcome> BatchPutFieldOptionsOutcomeCallable;
+typedef std::future<BatchUpdateCaseOutcome> BatchUpdateCaseOutcomeCallable;
 typedef std::future<CreateCaseOutcome> CreateCaseOutcomeCallable;
 typedef std::future<CreateCaseRuleOutcome> CreateCaseRuleOutcomeCallable;
 typedef std::future<CreateDomainOutcome> CreateDomainOutcomeCallable;
@@ -236,6 +244,9 @@ typedef std::future<UpdateTemplateOutcome> UpdateTemplateOutcomeCallable;
 class ConnectCasesClient;
 
 /* Service model async handlers definitions */
+typedef std::function<void(const ConnectCasesClient*, const Model::BatchCreateRelatedItemRequest&,
+                           const Model::BatchCreateRelatedItemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    BatchCreateRelatedItemResponseReceivedHandler;
 typedef std::function<void(const ConnectCasesClient*, const Model::BatchGetCaseRuleRequest&, const Model::BatchGetCaseRuleOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     BatchGetCaseRuleResponseReceivedHandler;
@@ -245,6 +256,9 @@ typedef std::function<void(const ConnectCasesClient*, const Model::BatchGetField
 typedef std::function<void(const ConnectCasesClient*, const Model::BatchPutFieldOptionsRequest&, const Model::BatchPutFieldOptionsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     BatchPutFieldOptionsResponseReceivedHandler;
+typedef std::function<void(const ConnectCasesClient*, const Model::BatchUpdateCaseRequest&, const Model::BatchUpdateCaseOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    BatchUpdateCaseResponseReceivedHandler;
 typedef std::function<void(const ConnectCasesClient*, const Model::CreateCaseRequest&, const Model::CreateCaseOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateCaseResponseReceivedHandler;

@@ -964,6 +964,52 @@ class AWS_ROUTE53DOMAINS_API Route53DomainsClient : public Aws::Client::AWSJsonC
   }
 
   /**
+   * <p>Restores a domain that has expired, or was deleted, before it becomes
+   * available for others to register. The cost of restoring your domain is billed to
+   * your Amazon Web Services account.</p> <p>Not every TLD registry supports
+   * restoring domains, and the period during which a domain can be restored varies
+   * by TLD. To find out whether your domain can be restored and the period during
+   * which you can restore it, see <a
+   * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
+   * that you can register with Amazon Route 53</a> in the <i>Amazon Route 53
+   * Developer Guide</i>.</p>  <p>Restoring a domain typically costs more,
+   * and sometimes much more, than registering or renewing a domain. To get the
+   * restoration price for a domain before you restore it, use <a
+   * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetDomainPrices.html">GetDomainPrices</a>.</p>
+   *  <p>Restoration is asynchronous. The response includes an operation
+   * ID that you can use with <a
+   * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
+   * to track the progress of the request. When the restoration succeeds, the domain
+   * reappears in the response to <a
+   * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ListDomains.html">ListDomains</a>.</p>
+   * <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-restore-expired.html">Restoring
+   * an expired or deleted domain</a> in the <i>Amazon Route 53 Developer
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RestoreDomain">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::RestoreDomainOutcome RestoreDomain(const Model::RestoreDomainRequest& request) const;
+
+  /**
+   * A Callable wrapper for RestoreDomain that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename RestoreDomainRequestT = Model::RestoreDomainRequest>
+  Model::RestoreDomainOutcomeCallable RestoreDomainCallable(const RestoreDomainRequestT& request) const {
+    return SubmitCallable(&Route53DomainsClient::RestoreDomain, request);
+  }
+
+  /**
+   * An Async wrapper for RestoreDomain that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename RestoreDomainRequestT = Model::RestoreDomainRequest>
+  void RestoreDomainAsync(const RestoreDomainRequestT& request, const RestoreDomainResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&Route53DomainsClient::RestoreDomain, request, handler, context);
+  }
+
+  /**
    * <p>This operation returns the authorization code for the domain. To transfer a
    * domain to another registrar, you provide this value to the new
    * registrar.</p><p><h3>See Also:</h3>   <a

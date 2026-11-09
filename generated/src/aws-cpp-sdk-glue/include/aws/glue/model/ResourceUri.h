@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/glue/model/ResourceType.h>
@@ -65,12 +66,37 @@ class ResourceUri {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The time at which the resource was last modified in Amazon S3. Glue records
+   * this value when you create or update a function whose
+   * <code>GovernanceMode</code> is <code>LAKE_FORMATION</code>. Analytics engines
+   * use it to verify that the resource hasn't changed. This is an output-only
+   * field.</p>
+   */
+  inline const Aws::Utils::DateTime& GetLastModified() const { return m_lastModified; }
+  inline bool LastModifiedHasBeenSet() const { return m_lastModifiedHasBeenSet; }
+  template <typename LastModifiedT = Aws::Utils::DateTime>
+  void SetLastModified(LastModifiedT&& value) {
+    m_lastModifiedHasBeenSet = true;
+    m_lastModified = std::forward<LastModifiedT>(value);
+  }
+  template <typename LastModifiedT = Aws::Utils::DateTime>
+  ResourceUri& WithLastModified(LastModifiedT&& value) {
+    SetLastModified(std::forward<LastModifiedT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ResourceType m_resourceType{ResourceType::NOT_SET};
 
   Aws::String m_uri;
+
+  Aws::Utils::DateTime m_lastModified{};
   bool m_resourceTypeHasBeenSet = false;
   bool m_uriHasBeenSet = false;
+  bool m_lastModifiedHasBeenSet = false;
 };
 
 }  // namespace Model

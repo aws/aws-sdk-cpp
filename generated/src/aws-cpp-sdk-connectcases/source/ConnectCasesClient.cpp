@@ -6,9 +6,11 @@
 #include <aws/connectcases/ConnectCasesClient.h>
 #include <aws/connectcases/ConnectCasesEndpointProvider.h>
 #include <aws/connectcases/ConnectCasesErrorMarshaller.h>
+#include <aws/connectcases/model/BatchCreateRelatedItemRequest.h>
 #include <aws/connectcases/model/BatchGetCaseRuleRequest.h>
 #include <aws/connectcases/model/BatchGetFieldRequest.h>
 #include <aws/connectcases/model/BatchPutFieldOptionsRequest.h>
+#include <aws/connectcases/model/BatchUpdateCaseRequest.h>
 #include <aws/connectcases/model/CreateCaseRequest.h>
 #include <aws/connectcases/model/CreateCaseRuleRequest.h>
 #include <aws/connectcases/model/CreateDomainRequest.h>
@@ -219,6 +221,17 @@ ConnectCasesClient::InvokeOperationOutcome ConnectCasesClient::InvokeServiceOper
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
 }
 
+BatchCreateRelatedItemOutcome ConnectCasesClient::BatchCreateRelatedItem(const BatchCreateRelatedItemRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/cases:batchCreateRelatedItem");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchCreateRelatedItemOutcome(result.GetResultWithOwnership())
+                            : BatchCreateRelatedItemOutcome(std::move(result.GetError()));
+}
+
 BatchGetCaseRuleOutcome ConnectCasesClient::BatchGetCaseRule(const BatchGetCaseRuleRequest& request) const {
   if (!request.DomainIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("BatchGetCaseRule", "Required field: DomainId, is not set");
@@ -280,6 +293,17 @@ BatchPutFieldOptionsOutcome ConnectCasesClient::BatchPutFieldOptions(const Batch
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
   return result.IsSuccess() ? BatchPutFieldOptionsOutcome(result.GetResultWithOwnership())
                             : BatchPutFieldOptionsOutcome(std::move(result.GetError()));
+}
+
+BatchUpdateCaseOutcome ConnectCasesClient::BatchUpdateCase(const BatchUpdateCaseRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/cases:batchUpdateCase");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? BatchUpdateCaseOutcome(result.GetResultWithOwnership())
+                            : BatchUpdateCaseOutcome(std::move(result.GetError()));
 }
 
 CreateCaseOutcome ConnectCasesClient::CreateCase(const CreateCaseRequest& request) const {

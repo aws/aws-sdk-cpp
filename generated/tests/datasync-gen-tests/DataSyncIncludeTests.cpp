@@ -24,6 +24,8 @@
 #include <aws/datasync/model/AzureBlobAuthenticationType.h>
 #include <aws/datasync/model/AzureBlobSasConfiguration.h>
 #include <aws/datasync/model/AzureBlobType.h>
+#include <aws/datasync/model/AzureFederatedIdentityConfig.h>
+#include <aws/datasync/model/AzureOidcConfig.h>
 #include <aws/datasync/model/CancelTaskExecutionRequest.h>
 #include <aws/datasync/model/CancelTaskExecutionResult.h>
 #include <aws/datasync/model/CmkSecretConfig.h>
@@ -99,6 +101,7 @@
 #include <aws/datasync/model/FsxUpdateProtocol.h>
 #include <aws/datasync/model/FsxUpdateProtocolSmb.h>
 #include <aws/datasync/model/Gid.h>
+#include <aws/datasync/model/GoogleOidcConfig.h>
 #include <aws/datasync/model/HdfsAuthenticationType.h>
 #include <aws/datasync/model/HdfsDataTransferProtection.h>
 #include <aws/datasync/model/HdfsNameNode.h>
@@ -132,6 +135,8 @@
 #include <aws/datasync/model/NfsMountOptions.h>
 #include <aws/datasync/model/NfsVersion.h>
 #include <aws/datasync/model/ObjectMetadata.h>
+#include <aws/datasync/model/ObjectStorageExternalIdentityConfig.h>
+#include <aws/datasync/model/ObjectStorageFederatedIdentityConfig.h>
 #include <aws/datasync/model/ObjectStorageServerProtocol.h>
 #include <aws/datasync/model/ObjectTags.h>
 #include <aws/datasync/model/ObjectVersionIds.h>

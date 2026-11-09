@@ -24,7 +24,7 @@ namespace ConnectCases {
 namespace Model {
 
 /**
- * <p>Detailed case rule information. In the Amazon Connect admin website, case
+ * <p>Detailed case rule information. In the Connect Customer admin website, case
  * rules are known as <i>case field conditions</i>. For more information about case
  * field conditions, see <a
  * href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">Add
@@ -183,8 +183,8 @@ class GetCaseRuleResponse {
 
   ///@{
   /**
-   * <p>A map of of key-value pairs that represent tags on a resource. Tags are used
-   * to organize, track, or control access for this resource.</p>
+   * <p>A map of key-value pairs that represent tags on a resource. Tags are used to
+   * organize, track, or control access for this resource.</p>
    */
   inline const Aws::Map<Aws::String, Aws::Crt::Optional<Aws::String>>& GetTags() const { return m_tags; }
   inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }

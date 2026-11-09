@@ -824,8 +824,13 @@ class AWS_SSM_API SSMClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Delete a parameter from the system. After deleting a parameter, wait for at
-   * least 30 seconds to create a parameter with the same name.</p><p><h3>See
-   * Also:</h3>   <a
+   * least 30 seconds to create a parameter with the same name.</p>  <p>This
+   * operation is authorized against the <code>ssm:DeleteParameter</code> action.
+   * Denying that action alone doesn't restrict <a>DeleteParameters</a>, which is
+   * authorized against its own action. For more information, see <a
+   * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-restrict-parameter-access.html">Restricting
+   * access to specific parameters and paths</a> in the <i>Amazon Web Services
+   * Systems Manager User Guide</i>.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteParameter">AWS
    * API Reference</a></p>
    */
@@ -851,7 +856,14 @@ class AWS_SSM_API SSMClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Delete a list of parameters. After deleting a parameter, wait for at least 30
-   * seconds to create a parameter with the same name.</p><p><h3>See Also:</h3>   <a
+   * seconds to create a parameter with the same name.</p>  <p>This
+   * operation is authorized against the <code>ssm:DeleteParameters</code> action,
+   * not against <code>ssm:DeleteParameter</code>. Denying
+   * <code>ssm:DeleteParameter</code> for a parameter doesn't prevent a principal
+   * from deleting that parameter with this operation. For more information, see <a
+   * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-restrict-parameter-access.html">Restricting
+   * access to specific parameters and paths</a> in the <i>Amazon Web Services
+   * Systems Manager User Guide</i>.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteParameters">AWS
    * API Reference</a></p>
    */
@@ -972,6 +984,45 @@ class AWS_SSM_API SSMClient : public Aws::Client::AWSJsonClient,
   void DeleteResourcePolicyAsync(const DeleteResourcePolicyRequestT& request, const DeleteResourcePolicyResponseReceivedHandler& handler,
                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SSMClient::DeleteResourcePolicy, request, handler, context);
+  }
+
+  /**
+   * <p>Removes the Default Host Management Configuration (DHMC) for an Amazon Web
+   * Services account and Amazon Web Services Region. After you deregister DHMC,
+   * Amazon EC2 instances are no longer automatically managed as managed nodes by
+   * Amazon Web Services Systems Manager.</p> <p>To use this operation, you must have
+   * the following permissions:</p> <ul> <li> <p>You need the
+   * <code>ssm:GetServiceSetting</code> and <code>ssm:ResetServiceSetting</code>
+   * permissions for the
+   * <code>/ssm/managed-instance/default-ec2-instance-management-role</code> service
+   * setting.</p> </li> </ul> <p>If the registered role is service-managed, you also
+   * need the <code>iam:DeleteRole</code> permission so that Amazon Web Services
+   * Systems Manager can remove the role it created.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeregisterDefaultHostManagementConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeregisterDefaultHostManagementConfigurationOutcome DeregisterDefaultHostManagementConfiguration(
+      const Model::DeregisterDefaultHostManagementConfigurationRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DeregisterDefaultHostManagementConfiguration that returns a future to the operation so that it can be executed
+   * in parallel to other requests.
+   */
+  template <typename DeregisterDefaultHostManagementConfigurationRequestT = Model::DeregisterDefaultHostManagementConfigurationRequest>
+  Model::DeregisterDefaultHostManagementConfigurationOutcomeCallable DeregisterDefaultHostManagementConfigurationCallable(
+      const DeregisterDefaultHostManagementConfigurationRequestT& request = {}) const {
+    return SubmitCallable(&SSMClient::DeregisterDefaultHostManagementConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for DeregisterDefaultHostManagementConfiguration that queues the request into a thread executor and triggers
+   * associated callback when operation has finished.
+   */
+  template <typename DeregisterDefaultHostManagementConfigurationRequestT = Model::DeregisterDefaultHostManagementConfigurationRequest>
+  void DeregisterDefaultHostManagementConfigurationAsync(const DeregisterDefaultHostManagementConfigurationResponseReceivedHandler& handler,
+                                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                                         const DeregisterDefaultHostManagementConfigurationRequestT& request = {}) const {
+    return SubmitAsync(&SSMClient::DeregisterDefaultHostManagementConfiguration, request, handler, context);
   }
 
   /**
@@ -2789,10 +2840,16 @@ class AWS_SSM_API SSMClient : public Aws::Client::AWSJsonClient,
    * name for a parameter contains spaces between characters, the request fails with
    * a <code>ValidationException</code> error.</p>  <p>To get information about
    * more than one parameter at a time, use the <a>GetParameters</a> operation.</p>
-   *   <p>Parameter Store throughput defines the number of API
-   * transactions per second (TPS) that Systems Manager can process. This applies to
-   * <code>GetParameter</code>, <code>GetParameters</code>, and
-   * <code>PutParameter</code> API calls for your Amazon Web Services account and
+   *   <p>This operation is authorized against the
+   * <code>ssm:GetParameter</code> action. Denying that action alone doesn't restrict
+   * <a>GetParameters</a>, <a>GetParameterHistory</a>, or <a>GetParametersByPath</a>,
+   * each of which is authorized against its own action. For more information, see <a
+   * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-retrieval-authorization.html">How
+   * Parameter Store authorizes parameter retrieval</a> in the <i>Amazon Web Services
+   * Systems Manager User Guide</i>.</p>   <p>Parameter Store throughput
+   * defines the number of API transactions per second (TPS) that Systems Manager can
+   * process. This applies to <code>GetParameter</code>, <code>GetParameters</code>,
+   * and <code>PutParameter</code> API calls for your Amazon Web Services account and
    * Amazon Web Services Region. By default, Parameter Store is configured with a
    * standard throughput quota suitable for low- to moderate-volume workloads.
    * Applications that retrieve configuration data infrequently or operate at smaller
@@ -2836,7 +2893,18 @@ class AWS_SSM_API SSMClient : public Aws::Client::AWSJsonClient,
    * key alias for the KMS key used to encrypt a parameter, then you must also update
    * the key alias the parameter uses to reference KMS. Otherwise,
    * <code>GetParameterHistory</code> retrieves whatever the original key alias was
-   * referencing.</p> <p><h3>See Also:</h3>   <a
+   * referencing.</p>   <p>This operation is authorized
+   * against the <code>ssm:GetParameterHistory</code> action, not against
+   * <code>ssm:GetParameter</code>. Because parameter history includes every version
+   * of a parameter, including the current one, a principal who is denied
+   * <code>ssm:GetParameter</code>, <code>ssm:GetParameters</code>, and
+   * <code>ssm:GetParametersByPath</code> but allowed
+   * <code>ssm:GetParameterHistory</code> can still read the current value. To
+   * restrict access to a parameter value, deny every action that can return it. For
+   * more information, see <a
+   * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-retrieval-authorization.html">How
+   * Parameter Store authorizes parameter retrieval</a> in the <i>Amazon Web Services
+   * Systems Manager User Guide</i>.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParameterHistory">AWS
    * API Reference</a></p>
    */
@@ -2864,7 +2932,15 @@ class AWS_SSM_API SSMClient : public Aws::Client::AWSJsonClient,
   /**
    * <p>Get information about one or more parameters by specifying multiple parameter
    * names.</p>  <p>To get information about a single parameter, you can use
-   * the <a>GetParameter</a> operation instead.</p>  <p>Parameter names can't
+   * the <a>GetParameter</a> operation instead.</p>   <p>This
+   * operation is authorized against the <code>ssm:GetParameters</code> action, not
+   * against <code>ssm:GetParameter</code>. Denying <code>ssm:GetParameter</code> for
+   * a parameter doesn't prevent a principal from retrieving that parameter with this
+   * operation. To restrict access to a parameter value, deny every action that can
+   * return it. For more information, see <a
+   * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-retrieval-authorization.html">How
+   * Parameter Store authorizes parameter retrieval</a> in the <i>Amazon Web Services
+   * Systems Manager User Guide</i>.</p>  <p>Parameter names can't
    * contain spaces. The service removes any spaces specified for the beginning or
    * end of a parameter name. If the specified name for a parameter contains spaces
    * between characters, the request fails with a <code>ValidationException</code>
@@ -2908,18 +2984,31 @@ class AWS_SSM_API SSMClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Retrieve information about one or more parameters under a specified level in
-   * a hierarchy. </p> <p>Request results are returned on a best-effort basis. If you
-   * specify <code>MaxResults</code> in the request, the response includes
-   * information up to the limit specified. The number of items returned, however,
-   * can be between zero and the value of <code>MaxResults</code>. If the service
-   * reaches an internal limit while processing the results, it stops the operation
-   * and returns the matching values up to that point and a <code>NextToken</code>.
-   * You can specify the <code>NextToken</code> in a subsequent call to get the next
-   * set of results.</p> <p>Parameter names can't contain spaces. The service removes
-   * any spaces specified for the beginning or end of a parameter name. If the
-   * specified name for a parameter contains spaces between characters, the request
-   * fails with a <code>ValidationException</code> error.</p><p><h3>See Also:</h3>
-   * <a
+   * a hierarchy. </p>  <p>This operation is authorized against the
+   * <code>ssm:GetParametersByPath</code> action for the path that you specify in the
+   * request. It isn't authorized against the individual parameters that it returns,
+   * and it isn't authorized against <code>ssm:GetParameter</code>. A principal who
+   * is allowed to call this operation for the path <code>/a</code> with
+   * <code>Recursive</code> set to <code>true</code> receives every parameter under
+   * that path, including <code>/a/b</code>, even if a policy explicitly denies
+   * access to <code>/a/b</code>.</p> <p>To prevent a parameter from being returned
+   * by this operation, deny the <code>ssm:GetParametersByPath</code> action on every
+   * ancestor path that could include the parameter in its results. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-restrict-parameter-access.html">Restricting
+   * access to specific parameters and paths</a> in the <i>Amazon Web Services
+   * Systems Manager User Guide</i>.</p>  <p>Request results are returned
+   * on a best-effort basis. If you specify <code>MaxResults</code> in the request,
+   * the response includes information up to the limit specified. The number of items
+   * returned, however, can be between zero and the value of <code>MaxResults</code>.
+   * If the service reaches an internal limit while processing the results, it stops
+   * the operation and returns the matching values up to that point and a
+   * <code>NextToken</code>. You can specify the <code>NextToken</code> in a
+   * subsequent call to get the next set of results.</p> <p>Parameter names can't
+   * contain spaces. The service removes any spaces specified for the beginning or
+   * end of a parameter name. If the specified name for a parameter contains spaces
+   * between characters, the request fails with a <code>ValidationException</code>
+   * error.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParametersByPath">AWS
    * API Reference</a></p>
    */
@@ -3909,6 +3998,50 @@ class AWS_SSM_API SSMClient : public Aws::Client::AWSJsonClient,
   void PutResourcePolicyAsync(const PutResourcePolicyRequestT& request, const PutResourcePolicyResponseReceivedHandler& handler,
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SSMClient::PutResourcePolicy, request, handler, context);
+  }
+
+  /**
+   * <p>Enables Default Host Management Configuration (DHMC) for the current Amazon
+   * Web Services account and Amazon Web Services Region. With DHMC enabled, you
+   * don't need to configure additional resources, such as an instance profile, to
+   * use your Amazon EC2 instances as managed nodes in Amazon Web Services Systems
+   * Manager.</p> <p>To use this operation, you must have the following
+   * permissions:</p> <ul> <li> <p>You need the <code>ssm:GetServiceSetting</code>
+   * and <code>ssm:UpdateServiceSetting</code> permissions for the
+   * <code>/ssm/managed-instance/default-ec2-instance-management-role</code> service
+   * setting.</p> </li> <li> <p>You need the <code>iam:GetRole</code> and
+   * <code>iam:PassRole</code> permissions for the role used for Default Host
+   * Management Configuration.</p> </li> </ul> <p>If <code>PermissionModel</code> is
+   * <code>SERVICE_MANAGED</code>, you also need the <code>iam:CreateRole</code> and
+   * <code>iam:AttachRolePolicy</code> permissions so that Amazon Web Services
+   * Systems Manager can create and configure the role on your behalf.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterDefaultHostManagementConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::RegisterDefaultHostManagementConfigurationOutcome RegisterDefaultHostManagementConfiguration(
+      const Model::RegisterDefaultHostManagementConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for RegisterDefaultHostManagementConfiguration that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename RegisterDefaultHostManagementConfigurationRequestT = Model::RegisterDefaultHostManagementConfigurationRequest>
+  Model::RegisterDefaultHostManagementConfigurationOutcomeCallable RegisterDefaultHostManagementConfigurationCallable(
+      const RegisterDefaultHostManagementConfigurationRequestT& request) const {
+    return SubmitCallable(&SSMClient::RegisterDefaultHostManagementConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for RegisterDefaultHostManagementConfiguration that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename RegisterDefaultHostManagementConfigurationRequestT = Model::RegisterDefaultHostManagementConfigurationRequest>
+  void RegisterDefaultHostManagementConfigurationAsync(
+      const RegisterDefaultHostManagementConfigurationRequestT& request,
+      const RegisterDefaultHostManagementConfigurationResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SSMClient::RegisterDefaultHostManagementConfiguration, request, handler, context);
   }
 
   /**

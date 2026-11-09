@@ -1,0 +1,6 @@
+{
+  "type": "bugfix",
+  "category": "tools",
+  "contributor": "",
+  "description": "Derive generated service client namespaces from the service ID in both the C2J and Smithy code generators. Generated client output is unchanged."
+}

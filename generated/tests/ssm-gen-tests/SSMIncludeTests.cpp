@@ -114,6 +114,7 @@
 #include <aws/ssm/model/CreateResourceDataSyncRequest.h>
 #include <aws/ssm/model/CreateResourceDataSyncResult.h>
 #include <aws/ssm/model/Credentials.h>
+#include <aws/ssm/model/DHMCPermissionModel.h>
 #include <aws/ssm/model/DeleteActivationRequest.h>
 #include <aws/ssm/model/DeleteActivationResult.h>
 #include <aws/ssm/model/DeleteAssociationRequest.h>
@@ -141,6 +142,8 @@
 #include <aws/ssm/model/DeleteResourcePolicyRequest.h>
 #include <aws/ssm/model/DeleteResourcePolicyResult.h>
 #include <aws/ssm/model/DeletionMode.h>
+#include <aws/ssm/model/DeregisterDefaultHostManagementConfigurationRequest.h>
+#include <aws/ssm/model/DeregisterDefaultHostManagementConfigurationResult.h>
 #include <aws/ssm/model/DeregisterManagedInstanceRequest.h>
 #include <aws/ssm/model/DeregisterManagedInstanceResult.h>
 #include <aws/ssm/model/DeregisterPatchBaselineForPatchGroupRequest.h>
@@ -547,6 +550,8 @@
 #include <aws/ssm/model/PutResourcePolicyRequest.h>
 #include <aws/ssm/model/PutResourcePolicyResult.h>
 #include <aws/ssm/model/RebootOption.h>
+#include <aws/ssm/model/RegisterDefaultHostManagementConfigurationRequest.h>
+#include <aws/ssm/model/RegisterDefaultHostManagementConfigurationResult.h>
 #include <aws/ssm/model/RegisterDefaultPatchBaselineRequest.h>
 #include <aws/ssm/model/RegisterDefaultPatchBaselineResult.h>
 #include <aws/ssm/model/RegisterPatchBaselineForPatchGroupRequest.h>

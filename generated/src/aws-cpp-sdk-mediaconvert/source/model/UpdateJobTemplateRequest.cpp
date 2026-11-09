@@ -27,6 +27,10 @@ Aws::String UpdateJobTemplateRequest::SerializePayload() const {
     payload.WithString("description", m_description);
   }
 
+  if (m_elementalInferenceSettingsHasBeenSet) {
+    payload.WithObject("elementalInferenceSettings", m_elementalInferenceSettings.Jsonize());
+  }
+
   if (m_hopDestinationsHasBeenSet) {
     Aws::Utils::Array<JsonValue> hopDestinationsJsonList(m_hopDestinations.size());
     for (unsigned hopDestinationsIndex = 0; hopDestinationsIndex < hopDestinationsJsonList.GetLength(); ++hopDestinationsIndex) {

@@ -77,6 +77,19 @@ AssistantData& AssistantData::operator=(JsonView jsonValue) {
     }
     m_orchestratorConfigurationListHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("lastModifiedTime")) {
+    m_lastModifiedTime = jsonValue.GetDouble("lastModifiedTime");
+    m_lastModifiedTimeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("lastModifiedRegion")) {
+    m_lastModifiedRegion = jsonValue.GetString("lastModifiedRegion");
+    m_lastModifiedRegionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("assistantGlobalResiliencyStatus")) {
+    m_assistantGlobalResiliencyStatus = AssistantGlobalResiliencyStatusMapper::GetAssistantGlobalResiliencyStatusForName(
+        jsonValue.GetString("assistantGlobalResiliencyStatus"));
+    m_assistantGlobalResiliencyStatusHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -144,6 +157,19 @@ JsonValue AssistantData::Jsonize() const {
           m_orchestratorConfigurationList[orchestratorConfigurationListIndex].Jsonize());
     }
     payload.WithArray("orchestratorConfigurationList", std::move(orchestratorConfigurationListJsonList));
+  }
+
+  if (m_lastModifiedTimeHasBeenSet) {
+    payload.WithDouble("lastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
+  }
+
+  if (m_lastModifiedRegionHasBeenSet) {
+    payload.WithString("lastModifiedRegion", m_lastModifiedRegion);
+  }
+
+  if (m_assistantGlobalResiliencyStatusHasBeenSet) {
+    payload.WithString("assistantGlobalResiliencyStatus",
+                       AssistantGlobalResiliencyStatusMapper::GetNameForAssistantGlobalResiliencyStatus(m_assistantGlobalResiliencyStatus));
   }
 
   return payload;

@@ -52,7 +52,7 @@ class Sort {
 
   ///@{
   /**
-   * <p>A structured set of sort terms</p>
+   * <p>Whether results should be sorted in ascending or descending order.</p>
    */
   inline Order GetSortOrder() const { return m_sortOrder; }
   inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }

@@ -10,7 +10,9 @@
 #include <aws/ram/RAM_EXPORTS.h>
 #include <aws/ram/model/PermissionFeatureSet.h>
 #include <aws/ram/model/PermissionStatus.h>
+#include <aws/ram/model/PermissionTemplateParameterDeclaration.h>
 #include <aws/ram/model/PermissionType.h>
+#include <aws/ram/model/ResourceOwner.h>
 #include <aws/ram/model/Tag.h>
 
 #include <utility>
@@ -151,6 +153,34 @@ class ResourceSharePermissionDetail {
 
   ///@{
   /**
+   * <p>The list of template parameter declarations defined for this permission. Each
+   * declaration includes the parameter name, type, and description. This field is
+   * present only if the permission is a template with declared parameters.</p>
+   */
+  inline const Aws::Vector<PermissionTemplateParameterDeclaration>& GetPermissionTemplateParameters() const {
+    return m_permissionTemplateParameters;
+  }
+  inline bool PermissionTemplateParametersHasBeenSet() const { return m_permissionTemplateParametersHasBeenSet; }
+  template <typename PermissionTemplateParametersT = Aws::Vector<PermissionTemplateParameterDeclaration>>
+  void SetPermissionTemplateParameters(PermissionTemplateParametersT&& value) {
+    m_permissionTemplateParametersHasBeenSet = true;
+    m_permissionTemplateParameters = std::forward<PermissionTemplateParametersT>(value);
+  }
+  template <typename PermissionTemplateParametersT = Aws::Vector<PermissionTemplateParameterDeclaration>>
+  ResourceSharePermissionDetail& WithPermissionTemplateParameters(PermissionTemplateParametersT&& value) {
+    SetPermissionTemplateParameters(std::forward<PermissionTemplateParametersT>(value));
+    return *this;
+  }
+  template <typename PermissionTemplateParametersT = PermissionTemplateParameterDeclaration>
+  ResourceSharePermissionDetail& AddPermissionTemplateParameters(PermissionTemplateParametersT&& value) {
+    m_permissionTemplateParametersHasBeenSet = true;
+    m_permissionTemplateParameters.emplace_back(std::forward<PermissionTemplateParametersT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The date and time when the permission was created.</p>
    */
   inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
@@ -266,7 +296,9 @@ class ResourceSharePermissionDetail {
    * or version can't currently be associated with resource shares.</p> </li> <li>
    * <p> <code>DELETING</code> – This permission or version is in the process of
    * being deleted.</p> </li> <li> <p> <code>DELETED</code> – This permission or
-   * version is deleted.</p> </li> </ul>
+   * version is deleted.</p> </li> <li> <p> <code>DEPRECATED</code> – The permission
+   * owner deprecated this permission. It can't be associated with new resource
+   * shares, but existing associations continue to function.</p> </li> </ul>
    */
   inline PermissionStatus GetStatus() const { return m_status; }
   inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
@@ -303,6 +335,25 @@ class ResourceSharePermissionDetail {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The owner of the permission. This can be one of the following values:</p>
+   * <ul> <li> <p> <code>SELF</code> – The permission is owned by the current
+   * account.</p> </li> <li> <p> <code>OTHER-ACCOUNTS</code> – The permission is
+   * owned by another account and shared with the current account.</p> </li> </ul>
+   */
+  inline ResourceOwner GetResourceOwner() const { return m_resourceOwner; }
+  inline bool ResourceOwnerHasBeenSet() const { return m_resourceOwnerHasBeenSet; }
+  inline void SetResourceOwner(ResourceOwner value) {
+    m_resourceOwnerHasBeenSet = true;
+    m_resourceOwner = value;
+  }
+  inline ResourceSharePermissionDetail& WithResourceOwner(ResourceOwner value) {
+    SetResourceOwner(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
@@ -315,6 +366,8 @@ class ResourceSharePermissionDetail {
   Aws::String m_resourceType;
 
   Aws::String m_permission;
+
+  Aws::Vector<PermissionTemplateParameterDeclaration> m_permissionTemplateParameters;
 
   Aws::Utils::DateTime m_creationTime{};
 
@@ -329,12 +382,15 @@ class ResourceSharePermissionDetail {
   PermissionStatus m_status{PermissionStatus::NOT_SET};
 
   Aws::Vector<Tag> m_tags;
+
+  ResourceOwner m_resourceOwner{ResourceOwner::NOT_SET};
   bool m_arnHasBeenSet = false;
   bool m_versionHasBeenSet = false;
   bool m_defaultVersionHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
   bool m_permissionHasBeenSet = false;
+  bool m_permissionTemplateParametersHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;
   bool m_lastUpdatedTimeHasBeenSet = false;
   bool m_isResourceTypeDefaultHasBeenSet = false;
@@ -342,6 +398,7 @@ class ResourceSharePermissionDetail {
   bool m_featureSetHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_resourceOwnerHasBeenSet = false;
 };
 
 }  // namespace Model

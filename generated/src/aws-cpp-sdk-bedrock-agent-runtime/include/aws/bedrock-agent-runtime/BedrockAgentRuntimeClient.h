@@ -392,8 +392,10 @@ class AWS_BEDROCKAGENTRUNTIME_API BedrockAgentRuntimeClient
   }
 
   /**
-   * <p>Retrieves the content of an ingested document from a knowledge base. Returns
-   * a pre-signed URL for secure document access.</p><p><h3>See Also:</h3>   <a
+   * <p>Retrieves the content of an ingested document from a knowledge base, or of an
+   * image embedded in the document. Returns a pre-signed URL for downloading the
+   * content. Use this operation to display the source of a <code>Retrieve</code>
+   * result.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/GetDocumentContent">AWS
    * API Reference</a></p>
    */

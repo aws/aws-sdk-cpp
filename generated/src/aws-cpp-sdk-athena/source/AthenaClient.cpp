@@ -16,12 +16,14 @@
 #include <aws/athena/model/CreateNotebookRequest.h>
 #include <aws/athena/model/CreatePreparedStatementRequest.h>
 #include <aws/athena/model/CreatePresignedNotebookUrlRequest.h>
+#include <aws/athena/model/CreateSystemTableConfigurationRequest.h>
 #include <aws/athena/model/CreateWorkGroupRequest.h>
 #include <aws/athena/model/DeleteCapacityReservationRequest.h>
 #include <aws/athena/model/DeleteDataCatalogRequest.h>
 #include <aws/athena/model/DeleteNamedQueryRequest.h>
 #include <aws/athena/model/DeleteNotebookRequest.h>
 #include <aws/athena/model/DeletePreparedStatementRequest.h>
+#include <aws/athena/model/DeleteSystemTableConfigurationRequest.h>
 #include <aws/athena/model/DeleteWorkGroupRequest.h>
 #include <aws/athena/model/ExportNotebookRequest.h>
 #include <aws/athena/model/GetCalculationExecutionCodeRequest.h>
@@ -41,6 +43,7 @@
 #include <aws/athena/model/GetSessionEndpointRequest.h>
 #include <aws/athena/model/GetSessionRequest.h>
 #include <aws/athena/model/GetSessionStatusRequest.h>
+#include <aws/athena/model/GetSystemTableConfigurationRequest.h>
 #include <aws/athena/model/GetTableMetadataRequest.h>
 #include <aws/athena/model/GetWorkGroupRequest.h>
 #include <aws/athena/model/ImportNotebookRequest.h>
@@ -57,6 +60,7 @@
 #include <aws/athena/model/ListPreparedStatementsRequest.h>
 #include <aws/athena/model/ListQueryExecutionsRequest.h>
 #include <aws/athena/model/ListSessionsRequest.h>
+#include <aws/athena/model/ListSystemTableStatusesRequest.h>
 #include <aws/athena/model/ListTableMetadataRequest.h>
 #include <aws/athena/model/ListTagsForResourceRequest.h>
 #include <aws/athena/model/ListWorkGroupsRequest.h>
@@ -75,6 +79,7 @@
 #include <aws/athena/model/UpdateNotebookMetadataRequest.h>
 #include <aws/athena/model/UpdateNotebookRequest.h>
 #include <aws/athena/model/UpdatePreparedStatementRequest.h>
+#include <aws/athena/model/UpdateSystemTableConfigurationRequest.h>
 #include <aws/athena/model/UpdateWorkGroupRequest.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
@@ -301,6 +306,13 @@ CreatePresignedNotebookUrlOutcome AthenaClient::CreatePresignedNotebookUrl(const
                             : CreatePresignedNotebookUrlOutcome(std::move(result.GetError()));
 }
 
+CreateSystemTableConfigurationOutcome AthenaClient::CreateSystemTableConfiguration(
+    const CreateSystemTableConfigurationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSystemTableConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateSystemTableConfigurationOutcome(std::move(result.GetError()));
+}
+
 CreateWorkGroupOutcome AthenaClient::CreateWorkGroup(const CreateWorkGroupRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateWorkGroupOutcome(result.GetResultWithOwnership())
@@ -334,6 +346,13 @@ DeletePreparedStatementOutcome AthenaClient::DeletePreparedStatement(const Delet
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeletePreparedStatementOutcome(result.GetResultWithOwnership())
                             : DeletePreparedStatementOutcome(std::move(result.GetError()));
+}
+
+DeleteSystemTableConfigurationOutcome AthenaClient::DeleteSystemTableConfiguration(
+    const DeleteSystemTableConfigurationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSystemTableConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteSystemTableConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteWorkGroupOutcome AthenaClient::DeleteWorkGroup(const DeleteWorkGroupRequest& request) const {
@@ -447,6 +466,12 @@ GetSessionStatusOutcome AthenaClient::GetSessionStatus(const GetSessionStatusReq
                             : GetSessionStatusOutcome(std::move(result.GetError()));
 }
 
+GetSystemTableConfigurationOutcome AthenaClient::GetSystemTableConfiguration(const GetSystemTableConfigurationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetSystemTableConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetSystemTableConfigurationOutcome(std::move(result.GetError()));
+}
+
 GetTableMetadataOutcome AthenaClient::GetTableMetadata(const GetTableMetadataRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetTableMetadataOutcome(result.GetResultWithOwnership())
@@ -536,6 +561,12 @@ ListQueryExecutionsOutcome AthenaClient::ListQueryExecutions(const ListQueryExec
 ListSessionsOutcome AthenaClient::ListSessions(const ListSessionsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListSessionsOutcome(result.GetResultWithOwnership()) : ListSessionsOutcome(std::move(result.GetError()));
+}
+
+ListSystemTableStatusesOutcome AthenaClient::ListSystemTableStatuses(const ListSystemTableStatusesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSystemTableStatusesOutcome(result.GetResultWithOwnership())
+                            : ListSystemTableStatusesOutcome(std::move(result.GetError()));
 }
 
 ListTableMetadataOutcome AthenaClient::ListTableMetadata(const ListTableMetadataRequest& request) const {
@@ -640,6 +671,13 @@ UpdatePreparedStatementOutcome AthenaClient::UpdatePreparedStatement(const Updat
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UpdatePreparedStatementOutcome(result.GetResultWithOwnership())
                             : UpdatePreparedStatementOutcome(std::move(result.GetError()));
+}
+
+UpdateSystemTableConfigurationOutcome AthenaClient::UpdateSystemTableConfiguration(
+    const UpdateSystemTableConfigurationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateSystemTableConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateSystemTableConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateWorkGroupOutcome AthenaClient::UpdateWorkGroup(const UpdateWorkGroupRequest& request) const {
