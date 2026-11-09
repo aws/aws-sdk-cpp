@@ -26,5 +26,5 @@ Aws::String XmlEmptyBlobsRequest::SerializePayload() const {
     dataNode.SetText(HashingUtils::Base64Encode(m_data));
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToCompactString();
 }

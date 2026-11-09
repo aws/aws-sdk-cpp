@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/securityagent/SecurityAgent_EXPORTS.h>
+#include <aws/securityagent/model/GroupMetadata.h>
 #include <aws/securityagent/model/UserMetadata.h>
 
 #include <utility>
@@ -49,9 +50,30 @@ class MemberMetadata {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The group metadata for the member.</p>
+   */
+  inline const GroupMetadata& GetGroup() const { return m_group; }
+  inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
+  template <typename GroupT = GroupMetadata>
+  void SetGroup(GroupT&& value) {
+    m_groupHasBeenSet = true;
+    m_group = std::forward<GroupT>(value);
+  }
+  template <typename GroupT = GroupMetadata>
+  MemberMetadata& WithGroup(GroupT&& value) {
+    SetGroup(std::forward<GroupT>(value));
+    return *this;
+  }
+  ///@}
  private:
   UserMetadata m_user;
+
+  GroupMetadata m_group;
   bool m_userHasBeenSet = false;
+  bool m_groupHasBeenSet = false;
 };
 
 }  // namespace Model

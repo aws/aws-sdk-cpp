@@ -39,20 +39,24 @@ Aws::Crt::Optional<Aws::Client::AWSError<Aws::Client::CoreErrors>> Aws::Utils::S
   // Callback captures stack locals by reference. This is safe because
   // we block on acquireCondition.wait() below, keeping the stack frame
   // alive until the callback has fired.
-  m_client->AcquireConnection(request,
-                              [&acquireMutex, &acquireCondition, &connectionAcquired, &error, this](
-                                  std::shared_ptr<Aws::Http::Connection> connection, int errorCode) -> void {
-                                {
-                                  std::unique_lock<std::mutex> const lock{acquireMutex};
-                                  if (errorCode != AWS_ERROR_SUCCESS) {
-                                    error =
-                                        Aws::Client::AWSError<Aws::Client::CoreErrors>(Aws::Client::CoreErrors::NETWORK_CONNECTION, false);
-                                  }
-                                  m_connection = std::move(connection);
-                                  connectionAcquired = true;
-                                }
-                                acquireCondition.notify_all();
-                              });
+  auto acquireError = m_client->AcquireConnection(request,
+                                                  [&acquireMutex, &acquireCondition, &connectionAcquired, &error, this](
+                                                      std::shared_ptr<Aws::Http::Connection> connection, int errorCode) -> void {
+                                                    {
+                                                      std::unique_lock<std::mutex> const lock{acquireMutex};
+                                                      if (errorCode != AWS_ERROR_SUCCESS) {
+                                                        error = Aws::Client::AWSError<Aws::Client::CoreErrors>(
+                                                            Aws::Client::CoreErrors::NETWORK_CONNECTION, false);
+                                                      }
+                                                      m_connection = std::move(connection);
+                                                      connectionAcquired = true;
+                                                    }
+                                                    acquireCondition.notify_all();
+                                                  });
+
+  if (acquireError.has_value()) {
+    return acquireError;
+  }
 
   std::unique_lock<std::mutex> lock{acquireMutex};
   acquireCondition.wait(lock, [&connectionAcquired]() -> bool { return connectionAcquired; });

@@ -6,7 +6,9 @@
 #pragma once
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ram/RAM_EXPORTS.h>
+#include <aws/ram/model/PermissionTemplateParameter.h>
 #include <aws/ram/model/ReplacePermissionAssociationsWorkStatus.h>
 
 #include <utility>
@@ -137,6 +139,32 @@ class ReplacePermissionAssociationsWork {
 
   ///@{
   /**
+   * <p>The template parameter values to apply when replacing the permission. This
+   * field is present only if the target permission is a template with declared
+   * parameters.</p>
+   */
+  inline const Aws::Vector<PermissionTemplateParameter>& GetPermissionTemplateParameters() const { return m_permissionTemplateParameters; }
+  inline bool PermissionTemplateParametersHasBeenSet() const { return m_permissionTemplateParametersHasBeenSet; }
+  template <typename PermissionTemplateParametersT = Aws::Vector<PermissionTemplateParameter>>
+  void SetPermissionTemplateParameters(PermissionTemplateParametersT&& value) {
+    m_permissionTemplateParametersHasBeenSet = true;
+    m_permissionTemplateParameters = std::forward<PermissionTemplateParametersT>(value);
+  }
+  template <typename PermissionTemplateParametersT = Aws::Vector<PermissionTemplateParameter>>
+  ReplacePermissionAssociationsWork& WithPermissionTemplateParameters(PermissionTemplateParametersT&& value) {
+    SetPermissionTemplateParameters(std::forward<PermissionTemplateParametersT>(value));
+    return *this;
+  }
+  template <typename PermissionTemplateParametersT = PermissionTemplateParameter>
+  ReplacePermissionAssociationsWork& AddPermissionTemplateParameters(PermissionTemplateParametersT&& value) {
+    m_permissionTemplateParametersHasBeenSet = true;
+    m_permissionTemplateParameters.emplace_back(std::forward<PermissionTemplateParametersT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Specifies the current status of the background tasks for the specified ID.
    * The output is one of the following strings:</p> <ul> <li> <p>
    * <code>IN_PROGRESS</code> </p> </li> <li> <p> <code>COMPLETED</code> </p> </li>
@@ -220,6 +248,8 @@ class ReplacePermissionAssociationsWork {
 
   Aws::String m_toPermissionVersion;
 
+  Aws::Vector<PermissionTemplateParameter> m_permissionTemplateParameters;
+
   ReplacePermissionAssociationsWorkStatus m_status{ReplacePermissionAssociationsWorkStatus::NOT_SET};
 
   Aws::String m_statusMessage;
@@ -232,6 +262,7 @@ class ReplacePermissionAssociationsWork {
   bool m_fromPermissionVersionHasBeenSet = false;
   bool m_toPermissionArnHasBeenSet = false;
   bool m_toPermissionVersionHasBeenSet = false;
+  bool m_permissionTemplateParametersHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_statusMessageHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;

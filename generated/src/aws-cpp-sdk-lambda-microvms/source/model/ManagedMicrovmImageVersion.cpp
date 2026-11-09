@@ -30,6 +30,14 @@ ManagedMicrovmImageVersion& ManagedMicrovmImageVersion::operator=(JsonView jsonV
     m_status = ManagedMicrovmImageVersionStatusMapper::GetManagedMicrovmImageVersionStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("supportedCpuConfigurations")) {
+    Aws::Utils::Array<JsonView> supportedCpuConfigurationsJsonList = jsonValue.GetArray("supportedCpuConfigurations");
+    for (unsigned supportedCpuConfigurationsIndex = 0; supportedCpuConfigurationsIndex < supportedCpuConfigurationsJsonList.GetLength();
+         ++supportedCpuConfigurationsIndex) {
+      m_supportedCpuConfigurations.push_back(supportedCpuConfigurationsJsonList[supportedCpuConfigurationsIndex].AsObject());
+    }
+    m_supportedCpuConfigurationsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetDouble("createdAt");
     m_createdAtHasBeenSet = true;
@@ -54,6 +62,16 @@ JsonValue ManagedMicrovmImageVersion::Jsonize() const {
 
   if (m_statusHasBeenSet) {
     payload.WithString("status", ManagedMicrovmImageVersionStatusMapper::GetNameForManagedMicrovmImageVersionStatus(m_status));
+  }
+
+  if (m_supportedCpuConfigurationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> supportedCpuConfigurationsJsonList(m_supportedCpuConfigurations.size());
+    for (unsigned supportedCpuConfigurationsIndex = 0; supportedCpuConfigurationsIndex < supportedCpuConfigurationsJsonList.GetLength();
+         ++supportedCpuConfigurationsIndex) {
+      supportedCpuConfigurationsJsonList[supportedCpuConfigurationsIndex].AsObject(
+          m_supportedCpuConfigurations[supportedCpuConfigurationsIndex].Jsonize());
+    }
+    payload.WithArray("supportedCpuConfigurations", std::move(supportedCpuConfigurationsJsonList));
   }
 
   if (m_createdAtHasBeenSet) {

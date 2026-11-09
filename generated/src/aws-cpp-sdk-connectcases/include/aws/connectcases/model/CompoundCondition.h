@@ -23,8 +23,9 @@ class BooleanCondition;
 
 /**
  * <p>A compound condition that combines multiple boolean conditions using logical
- * operators. In the Amazon Connect admin website, case rules are known as <i>case
- * field conditions</i>. For more information about case field conditions, see <a
+ * operators. In the Connect Customer admin website, case rules are known as
+ * <i>case field conditions</i>. For more information about case field conditions,
+ * see <a
  * href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">Add
  * case field conditions to a case template</a>.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/CompoundCondition">AWS

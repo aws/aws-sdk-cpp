@@ -4330,6 +4330,33 @@ class AWS_GLUE_API GlueClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Retrieves the current status and results of an upgrade
+   * analysis.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetJobUpgradeAnalysis">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetJobUpgradeAnalysisOutcome GetJobUpgradeAnalysis(const Model::GetJobUpgradeAnalysisRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetJobUpgradeAnalysis that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetJobUpgradeAnalysisRequestT = Model::GetJobUpgradeAnalysisRequest>
+  Model::GetJobUpgradeAnalysisOutcomeCallable GetJobUpgradeAnalysisCallable(const GetJobUpgradeAnalysisRequestT& request) const {
+    return SubmitCallable(&GlueClient::GetJobUpgradeAnalysis, request);
+  }
+
+  /**
+   * An Async wrapper for GetJobUpgradeAnalysis that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetJobUpgradeAnalysisRequestT = Model::GetJobUpgradeAnalysisRequest>
+  void GetJobUpgradeAnalysisAsync(const GetJobUpgradeAnalysisRequestT& request, const GetJobUpgradeAnalysisResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GlueClient::GetJobUpgradeAnalysis, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves all current job definitions.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetJobs">AWS API
    * Reference</a></p>
@@ -7471,6 +7498,34 @@ class AWS_GLUE_API GlueClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Resumes an analysis that is waiting for upgrade consent.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartJobUpgradeAnalysis">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartJobUpgradeAnalysisOutcome StartJobUpgradeAnalysis(const Model::StartJobUpgradeAnalysisRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartJobUpgradeAnalysis that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StartJobUpgradeAnalysisRequestT = Model::StartJobUpgradeAnalysisRequest>
+  Model::StartJobUpgradeAnalysisOutcomeCallable StartJobUpgradeAnalysisCallable(const StartJobUpgradeAnalysisRequestT& request) const {
+    return SubmitCallable(&GlueClient::StartJobUpgradeAnalysis, request);
+  }
+
+  /**
+   * An Async wrapper for StartJobUpgradeAnalysis that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename StartJobUpgradeAnalysisRequestT = Model::StartJobUpgradeAnalysisRequest>
+  void StartJobUpgradeAnalysisAsync(const StartJobUpgradeAnalysisRequestT& request,
+                                    const StartJobUpgradeAnalysisResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GlueClient::StartJobUpgradeAnalysis, request, handler, context);
+  }
+
+  /**
    * <p>Starts a task to estimate the quality of the transform. </p> <p>When you
    * provide label sets as examples of truth, Glue machine learning uses some of
    * those examples to learn from them. The rest of the labels are used as a test to
@@ -7739,6 +7794,33 @@ class AWS_GLUE_API GlueClient : public Aws::Client::AWSJsonClient,
   void StopCrawlerScheduleAsync(const StopCrawlerScheduleRequestT& request, const StopCrawlerScheduleResponseReceivedHandler& handler,
                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&GlueClient::StopCrawlerSchedule, request, handler, context);
+  }
+
+  /**
+   * <p>Stops an in-progress upgrade analysis.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StopJobUpgradeAnalysis">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StopJobUpgradeAnalysisOutcome StopJobUpgradeAnalysis(const Model::StopJobUpgradeAnalysisRequest& request) const;
+
+  /**
+   * A Callable wrapper for StopJobUpgradeAnalysis that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StopJobUpgradeAnalysisRequestT = Model::StopJobUpgradeAnalysisRequest>
+  Model::StopJobUpgradeAnalysisOutcomeCallable StopJobUpgradeAnalysisCallable(const StopJobUpgradeAnalysisRequestT& request) const {
+    return SubmitCallable(&GlueClient::StopJobUpgradeAnalysis, request);
+  }
+
+  /**
+   * An Async wrapper for StopJobUpgradeAnalysis that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename StopJobUpgradeAnalysisRequestT = Model::StopJobUpgradeAnalysisRequest>
+  void StopJobUpgradeAnalysisAsync(const StopJobUpgradeAnalysisRequestT& request,
+                                   const StopJobUpgradeAnalysisResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GlueClient::StopJobUpgradeAnalysis, request, handler, context);
   }
 
   /**

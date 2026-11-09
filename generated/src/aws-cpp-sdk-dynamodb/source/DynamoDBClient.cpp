@@ -21,6 +21,7 @@
 #include <aws/dynamodb/model/BatchExecuteStatementRequest.h>
 #include <aws/dynamodb/model/BatchGetItemRequest.h>
 #include <aws/dynamodb/model/BatchWriteItemRequest.h>
+#include <aws/dynamodb/model/CancelBulkOperationRequest.h>
 #include <aws/dynamodb/model/CreateBackupRequest.h>
 #include <aws/dynamodb/model/CreateGlobalTableRequest.h>
 #include <aws/dynamodb/model/CreateTableRequest.h>
@@ -29,6 +30,7 @@
 #include <aws/dynamodb/model/DeleteResourcePolicyRequest.h>
 #include <aws/dynamodb/model/DeleteTableRequest.h>
 #include <aws/dynamodb/model/DescribeBackupRequest.h>
+#include <aws/dynamodb/model/DescribeBulkOperationRequest.h>
 #include <aws/dynamodb/model/DescribeContinuousBackupsRequest.h>
 #include <aws/dynamodb/model/DescribeContributorInsightsRequest.h>
 #include <aws/dynamodb/model/DescribeEndpointsRequest.h>
@@ -50,6 +52,7 @@
 #include <aws/dynamodb/model/GetResourcePolicyRequest.h>
 #include <aws/dynamodb/model/ImportTableRequest.h>
 #include <aws/dynamodb/model/ListBackupsRequest.h>
+#include <aws/dynamodb/model/ListBulkOperationsRequest.h>
 #include <aws/dynamodb/model/ListContributorInsightsRequest.h>
 #include <aws/dynamodb/model/ListExportsRequest.h>
 #include <aws/dynamodb/model/ListGlobalTablesRequest.h>
@@ -63,6 +66,7 @@
 #include <aws/dynamodb/model/RestoreTableToPointInTimeRequest.h>
 #include <aws/dynamodb/model/ScanRequest.h>
 #include <aws/dynamodb/model/SearchVectorsRequest.h>
+#include <aws/dynamodb/model/StartBulkPutItemsRequest.h>
 #include <aws/dynamodb/model/TagResourceRequest.h>
 #include <aws/dynamodb/model/TransactGetItemsRequest.h>
 #include <aws/dynamodb/model/TransactWriteItemsRequest.h>
@@ -233,6 +237,11 @@ BatchWriteItemOutcome DynamoDBClient::BatchWriteItem(const BatchWriteItemRequest
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? BatchWriteItemOutcome(result.GetResultWithOwnership()) : BatchWriteItemOutcome(std::move(result.GetError()));
 }
+CancelBulkOperationOutcome DynamoDBClient::CancelBulkOperation(const CancelBulkOperationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelBulkOperationOutcome(result.GetResultWithOwnership())
+                            : CancelBulkOperationOutcome(std::move(result.GetError()));
+}
 CreateBackupOutcome DynamoDBClient::CreateBackup(const CreateBackupRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateBackupOutcome(result.GetResultWithOwnership()) : CreateBackupOutcome(std::move(result.GetError()));
@@ -266,6 +275,11 @@ DeleteTableOutcome DynamoDBClient::DeleteTable(const DeleteTableRequest& request
 DescribeBackupOutcome DynamoDBClient::DescribeBackup(const DescribeBackupRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeBackupOutcome(result.GetResultWithOwnership()) : DescribeBackupOutcome(std::move(result.GetError()));
+}
+DescribeBulkOperationOutcome DynamoDBClient::DescribeBulkOperation(const DescribeBulkOperationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeBulkOperationOutcome(result.GetResultWithOwnership())
+                            : DescribeBulkOperationOutcome(std::move(result.GetError()));
 }
 DescribeContinuousBackupsOutcome DynamoDBClient::DescribeContinuousBackups(const DescribeContinuousBackupsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -369,6 +383,11 @@ ListBackupsOutcome DynamoDBClient::ListBackups(const ListBackupsRequest& request
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListBackupsOutcome(result.GetResultWithOwnership()) : ListBackupsOutcome(std::move(result.GetError()));
 }
+ListBulkOperationsOutcome DynamoDBClient::ListBulkOperations(const ListBulkOperationsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListBulkOperationsOutcome(result.GetResultWithOwnership())
+                            : ListBulkOperationsOutcome(std::move(result.GetError()));
+}
 ListContributorInsightsOutcome DynamoDBClient::ListContributorInsights(const ListContributorInsightsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListContributorInsightsOutcome(result.GetResultWithOwnership())
@@ -426,6 +445,11 @@ ScanOutcome DynamoDBClient::Scan(const ScanRequest& request) const {
 SearchVectorsOutcome DynamoDBClient::SearchVectors(const SearchVectorsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? SearchVectorsOutcome(result.GetResultWithOwnership()) : SearchVectorsOutcome(std::move(result.GetError()));
+}
+StartBulkPutItemsOutcome DynamoDBClient::StartBulkPutItems(const StartBulkPutItemsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartBulkPutItemsOutcome(result.GetResultWithOwnership())
+                            : StartBulkPutItemsOutcome(std::move(result.GetError()));
 }
 TagResourceOutcome DynamoDBClient::TagResource(const TagResourceRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);

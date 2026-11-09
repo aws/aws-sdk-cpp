@@ -12,6 +12,7 @@
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/mediaconvert/model/AccelerationSettings.h>
 #include <aws/mediaconvert/model/BillingTagsSource.h>
+#include <aws/mediaconvert/model/ElementalInferenceSettings.h>
 #include <aws/mediaconvert/model/HopDestination.h>
 #include <aws/mediaconvert/model/JobSettings.h>
 #include <aws/mediaconvert/model/SimulateReservedQueue.h>
@@ -95,6 +96,24 @@ class CreateJobRequest : public MediaConvertRequest {
   template <typename ClientRequestTokenT = Aws::String>
   CreateJobRequest& WithClientRequestToken(ClientRequestTokenT&& value) {
     SetClientRequestToken(std::forward<ClientRequestTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * The Elemental Inference settings used in this job.
+   */
+  inline const ElementalInferenceSettings& GetElementalInferenceSettings() const { return m_elementalInferenceSettings; }
+  inline bool ElementalInferenceSettingsHasBeenSet() const { return m_elementalInferenceSettingsHasBeenSet; }
+  template <typename ElementalInferenceSettingsT = ElementalInferenceSettings>
+  void SetElementalInferenceSettings(ElementalInferenceSettingsT&& value) {
+    m_elementalInferenceSettingsHasBeenSet = true;
+    m_elementalInferenceSettings = std::forward<ElementalInferenceSettingsT>(value);
+  }
+  template <typename ElementalInferenceSettingsT = ElementalInferenceSettings>
+  CreateJobRequest& WithElementalInferenceSettings(ElementalInferenceSettingsT&& value) {
+    SetElementalInferenceSettings(std::forward<ElementalInferenceSettingsT>(value));
     return *this;
   }
   ///@}
@@ -346,6 +365,8 @@ class CreateJobRequest : public MediaConvertRequest {
 
   Aws::String m_clientRequestToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
+  ElementalInferenceSettings m_elementalInferenceSettings;
+
   Aws::Vector<HopDestination> m_hopDestinations;
 
   Aws::String m_jobEngineVersion;
@@ -370,6 +391,7 @@ class CreateJobRequest : public MediaConvertRequest {
   bool m_accelerationSettingsHasBeenSet = false;
   bool m_billingTagsSourceHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = true;
+  bool m_elementalInferenceSettingsHasBeenSet = false;
   bool m_hopDestinationsHasBeenSet = false;
   bool m_jobEngineVersionHasBeenSet = false;
   bool m_jobTemplateHasBeenSet = false;

@@ -46,6 +46,14 @@ AIPromptSummary& AIPromptSummary::operator=(JsonView jsonValue) {
     m_modifiedTime = jsonValue.GetDouble("modifiedTime");
     m_modifiedTimeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("lastModifiedTime")) {
+    m_lastModifiedTime = jsonValue.GetDouble("lastModifiedTime");
+    m_lastModifiedTimeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("lastModifiedRegion")) {
+    m_lastModifiedRegion = jsonValue.GetString("lastModifiedRegion");
+    m_lastModifiedRegionHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("templateType")) {
     m_templateType = AIPromptTemplateTypeMapper::GetAIPromptTemplateTypeForName(jsonValue.GetString("templateType"));
     m_templateTypeHasBeenSet = true;
@@ -113,6 +121,14 @@ JsonValue AIPromptSummary::Jsonize() const {
 
   if (m_modifiedTimeHasBeenSet) {
     payload.WithDouble("modifiedTime", m_modifiedTime.SecondsWithMSPrecision());
+  }
+
+  if (m_lastModifiedTimeHasBeenSet) {
+    payload.WithDouble("lastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
+  }
+
+  if (m_lastModifiedRegionHasBeenSet) {
+    payload.WithString("lastModifiedRegion", m_lastModifiedRegion);
   }
 
   if (m_templateTypeHasBeenSet) {

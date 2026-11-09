@@ -8,6 +8,7 @@
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 #include <aws/elasticmapreduce/model/ActionOnFailure.h>
 #include <aws/elasticmapreduce/model/HadoopStepConfig.h>
+#include <aws/elasticmapreduce/model/StepAdditionalInfo.h>
 #include <aws/elasticmapreduce/model/StepStatus.h>
 
 #include <utility>
@@ -160,6 +161,25 @@ class StepSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Additional information about the step, including the YARN application IDs
+   * associated with the step and the resource manager that processed it.</p>
+   */
+  inline const StepAdditionalInfo& GetAdditionalInfo() const { return m_additionalInfo; }
+  inline bool AdditionalInfoHasBeenSet() const { return m_additionalInfoHasBeenSet; }
+  template <typename AdditionalInfoT = StepAdditionalInfo>
+  void SetAdditionalInfo(AdditionalInfoT&& value) {
+    m_additionalInfoHasBeenSet = true;
+    m_additionalInfo = std::forward<AdditionalInfoT>(value);
+  }
+  template <typename AdditionalInfoT = StepAdditionalInfo>
+  StepSummary& WithAdditionalInfo(AdditionalInfoT&& value) {
+    SetAdditionalInfo(std::forward<AdditionalInfoT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -174,6 +194,8 @@ class StepSummary {
   Aws::String m_logUri;
 
   Aws::String m_encryptionKeyArn;
+
+  StepAdditionalInfo m_additionalInfo;
   bool m_idHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_configHasBeenSet = false;
@@ -181,6 +203,7 @@ class StepSummary {
   bool m_statusHasBeenSet = false;
   bool m_logUriHasBeenSet = false;
   bool m_encryptionKeyArnHasBeenSet = false;
+  bool m_additionalInfoHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -29,8 +29,7 @@ class GetDocumentContentResult {
 
   ///@{
   /**
-   * <p>The size of the document content in bytes available at the pre-signed
-   * URL.</p>
+   * <p>The size, in bytes, of the content available at the pre-signed URL.</p>
    */
   inline long long GetDocumentContentLength() const { return m_documentContentLength; }
   inline void SetDocumentContentLength(long long value) {
@@ -45,9 +44,11 @@ class GetDocumentContentResult {
 
   ///@{
   /**
-   * <p>The MIME type of the document content. For <code>RAW</code> format, this is
-   * the original file type (for example, <code>application/pdf</code>). For
-   * <code>EXTRACTED</code> format, this is always <code>application/json</code>.</p>
+   * <p>The MIME type of the returned content. For <code>RAW</code> format, this is
+   * the original file type (for example, <code>application/pdf</code>), or the image
+   * type (for example, <code>image/png</code>) if you specify <code>mediaId</code>.
+   * For <code>EXTRACTED</code> format, this is always
+   * <code>application/json</code>.</p>
    */
   inline const Aws::String& GetMimeType() const { return m_mimeType; }
   template <typename MimeTypeT = Aws::String>
@@ -64,8 +65,8 @@ class GetDocumentContentResult {
 
   ///@{
   /**
-   * <p>A pre-signed URL for downloading the document content. The URL expires after
-   * 5 minutes.</p>
+   * <p>A pre-signed URL for downloading the document content, or the selected image
+   * if you specify <code>mediaId</code>. The URL expires after 5 minutes.</p>
    */
   inline const Aws::String& GetPresignedUrl() const { return m_presignedUrl; }
   template <typename PresignedUrlT = Aws::String>

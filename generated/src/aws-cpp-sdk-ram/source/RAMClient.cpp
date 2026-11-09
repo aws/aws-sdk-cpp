@@ -54,6 +54,7 @@
 #include <aws/ram/model/SetDefaultPermissionVersionRequest.h>
 #include <aws/ram/model/TagResourceRequest.h>
 #include <aws/ram/model/UntagResourceRequest.h>
+#include <aws/ram/model/UpdatePermissionRequest.h>
 #include <aws/ram/model/UpdateResourceShareRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
@@ -611,6 +612,17 @@ UntagResourceOutcome RAMClient::UntagResource(const UntagResourceRequest& reques
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
+}
+
+UpdatePermissionOutcome RAMClient::UpdatePermission(const UpdatePermissionRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/updatepermission");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdatePermissionOutcome(result.GetResultWithOwnership())
+                            : UpdatePermissionOutcome(std::move(result.GetError()));
 }
 
 UpdateResourceShareOutcome RAMClient::UpdateResourceShare(const UpdateResourceShareRequest& request) const {

@@ -54,5 +54,5 @@ Aws::String NestedXmlMapsRequest::SerializePayload() const {
     }
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToCompactString();
 }

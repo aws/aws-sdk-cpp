@@ -102,8 +102,8 @@ class StartWorkflowRunRequest : public MWAAServerlessRequest {
 
   ///@{
   /**
-   * <p>Optional. The specific version of the workflow to execute. If not specified,
-   * the latest version is used.</p>
+   * <p>Optional. The specific version of the workflow to execute. If you don't
+   * specify a version, we use the latest version.</p>
    */
   inline const Aws::String& GetWorkflowVersion() const { return m_workflowVersion; }
   inline bool WorkflowVersionHasBeenSet() const { return m_workflowVersionHasBeenSet; }

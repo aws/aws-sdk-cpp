@@ -153,6 +153,7 @@
 #include <aws/connect/model/BooleanCondition.h>
 #include <aws/connect/model/CalculationComponent.h>
 #include <aws/connect/model/Campaign.h>
+#include <aws/connect/model/CaseEntry.h>
 #include <aws/connect/model/CaseSlaConfiguration.h>
 #include <aws/connect/model/CategoriesAttributeAndCondition.h>
 #include <aws/connect/model/CategoriesAttributeFilter.h>
@@ -546,6 +547,7 @@
 #include <aws/connect/model/EmptyFieldValue.h>
 #include <aws/connect/model/EncryptionConfig.h>
 #include <aws/connect/model/EncryptionType.h>
+#include <aws/connect/model/EndAssociatedEmailsActionDefinition.h>
 #include <aws/connect/model/EndAssociatedTasksActionDefinition.h>
 #include <aws/connect/model/Endpoint.h>
 #include <aws/connect/model/EndpointInfo.h>

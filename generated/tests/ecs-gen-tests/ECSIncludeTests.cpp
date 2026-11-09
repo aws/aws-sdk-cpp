@@ -353,6 +353,7 @@
 #include <aws/ecs/model/LocalStorageType.h>
 #include <aws/ecs/model/LogConfiguration.h>
 #include <aws/ecs/model/LogDriver.h>
+#include <aws/ecs/model/LogDriverVolumeConfiguration.h>
 #include <aws/ecs/model/ManagedAgent.h>
 #include <aws/ecs/model/ManagedAgentName.h>
 #include <aws/ecs/model/ManagedAgentStateChange.h>

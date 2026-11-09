@@ -173,8 +173,16 @@ namespace Aws
                 XmlNode GetRootElement() const;
                 /**
                  * Convert entire document to string. Use this if you for example, want to save the document to a file.
+                 * The output is pretty-printed: each element goes on its own line, indented by nesting depth.
+                 * Use ConvertToCompactString() for output without that whitespace.
                  */
                 Aws::String ConvertToString() const;
+                /**
+                 * Convert entire document to string without pretty-printing whitespace (no indentation or newlines
+                 * between elements). Use this when the output is sent over the wire, e.g. as a request payload.
+                 * Use ConvertToString() for pretty-printed output.
+                 */
+                Aws::String ConvertToCompactString() const;
                 /**
                  * Returns true if the call to CreateFromXml* was successful, otherwise false.
                  * if this returns false, you can call GetErrorMessage() to see details.

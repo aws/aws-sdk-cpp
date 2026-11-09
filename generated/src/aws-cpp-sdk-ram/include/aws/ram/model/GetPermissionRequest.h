@@ -5,8 +5,10 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ram/RAMRequest.h>
 #include <aws/ram/RAM_EXPORTS.h>
+#include <aws/ram/model/PermissionTemplateParameterInput.h>
 
 #include <utility>
 
@@ -70,12 +72,49 @@ class GetPermissionRequest : public RAMRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the template parameter values to use when rendering the
+   * permission's policy template. Each entry supplies a parameter name and its
+   * values. When you provide this parameter, the response contains the rendered
+   * policy with the specified values in place of the template parameter
+   * placeholders.</p> <p>For <code>STRING</code> type parameters, provide a single
+   * value. For <code>STRING_LIST</code> type parameters, provide one or more
+   * values.</p> <p>You can specify this parameter only for permissions that declare
+   * template parameters. You must provide values for all parameters declared in the
+   * permission template.</p>
+   */
+  inline const Aws::Vector<PermissionTemplateParameterInput>& GetPermissionTemplateParameters() const {
+    return m_permissionTemplateParameters;
+  }
+  inline bool PermissionTemplateParametersHasBeenSet() const { return m_permissionTemplateParametersHasBeenSet; }
+  template <typename PermissionTemplateParametersT = Aws::Vector<PermissionTemplateParameterInput>>
+  void SetPermissionTemplateParameters(PermissionTemplateParametersT&& value) {
+    m_permissionTemplateParametersHasBeenSet = true;
+    m_permissionTemplateParameters = std::forward<PermissionTemplateParametersT>(value);
+  }
+  template <typename PermissionTemplateParametersT = Aws::Vector<PermissionTemplateParameterInput>>
+  GetPermissionRequest& WithPermissionTemplateParameters(PermissionTemplateParametersT&& value) {
+    SetPermissionTemplateParameters(std::forward<PermissionTemplateParametersT>(value));
+    return *this;
+  }
+  template <typename PermissionTemplateParametersT = PermissionTemplateParameterInput>
+  GetPermissionRequest& AddPermissionTemplateParameters(PermissionTemplateParametersT&& value) {
+    m_permissionTemplateParametersHasBeenSet = true;
+    m_permissionTemplateParameters.emplace_back(std::forward<PermissionTemplateParametersT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_permissionArn;
 
   int m_permissionVersion{0};
+
+  Aws::Vector<PermissionTemplateParameterInput> m_permissionTemplateParameters;
   bool m_permissionArnHasBeenSet = false;
   bool m_permissionVersionHasBeenSet = false;
+  bool m_permissionTemplateParametersHasBeenSet = false;
 };
 
 }  // namespace Model

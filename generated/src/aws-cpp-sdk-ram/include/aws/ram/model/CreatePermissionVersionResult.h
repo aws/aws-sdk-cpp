@@ -29,7 +29,11 @@ class CreatePermissionVersionResult {
   AWS_RAM_API CreatePermissionVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   ///@{
-
+  /**
+   * <p>The details of the new permission version, including its <a
+   * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+   * Resource Name (ARN)</a>, version number, status, and policy document.</p>
+   */
   inline const ResourceSharePermissionDetail& GetPermission() const { return m_permission; }
   template <typename PermissionT = ResourceSharePermissionDetail>
   void SetPermission(PermissionT&& value) {

@@ -196,10 +196,9 @@ class SearchVectorsRequest : public DynamoDBRequest {
    * <p>A condition expression used to filter the vector search results. The
    * expression can reference attributes defined in the vector index search schema,
    * including <code>HASH</code> and <code>INLINE_FILTER</code> key elements.</p>
-   * <p>Only the equality operator (<code>=</code>) is supported for
-   * <code>HASH</code> attributes. Comparison and range operators are supported for
-   * <code>INLINE_FILTER</code> attributes. Only top-level attributes from the search
-   * schema can be referenced.</p>
+   * <p>The <code>HASH</code> and <code>INLINE_FILTER</code> attributes support only
+   * the equality operator (<code>=</code>). You can reference only top-level
+   * attributes from the search schema.</p>
    */
   inline const Aws::String& GetSearchConditionExpression() const { return m_searchConditionExpression; }
   inline bool SearchConditionExpressionHasBeenSet() const { return m_searchConditionExpressionHasBeenSet; }

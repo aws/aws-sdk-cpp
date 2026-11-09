@@ -29,9 +29,12 @@
 #include <aws/polly/model/ListLexiconsResult.h>
 #include <aws/polly/model/ListSpeechSynthesisTasksRequest.h>
 #include <aws/polly/model/ListSpeechSynthesisTasksResult.h>
+#include <aws/polly/model/ListTagsForResourceResult.h>
 #include <aws/polly/model/PutLexiconResult.h>
 #include <aws/polly/model/StartSpeechSynthesisTaskResult.h>
 #include <aws/polly/model/SynthesizeSpeechResult.h>
+#include <aws/polly/model/TagResourceResult.h>
+#include <aws/polly/model/UntagResourceResult.h>
 /* End of service model headers required in PollyClient header */
 
 namespace Aws {
@@ -75,11 +78,14 @@ class GetLexiconRequest;
 class GetSpeechSynthesisTaskRequest;
 class ListLexiconsRequest;
 class ListSpeechSynthesisTasksRequest;
+class ListTagsForResourceRequest;
 class PutLexiconRequest;
 class StartSpeechSynthesisStreamRequest;
 class StartSpeechSynthesisStreamActionStream;
 class StartSpeechSynthesisTaskRequest;
 class SynthesizeSpeechRequest;
+class TagResourceRequest;
+class UntagResourceRequest;
 /* End of service model forward declarations required in PollyClient header */
 
 /* Service model Outcome class definitions */
@@ -89,10 +95,13 @@ typedef Aws::Utils::Outcome<GetLexiconResult, PollyError> GetLexiconOutcome;
 typedef Aws::Utils::Outcome<GetSpeechSynthesisTaskResult, PollyError> GetSpeechSynthesisTaskOutcome;
 typedef Aws::Utils::Outcome<ListLexiconsResult, PollyError> ListLexiconsOutcome;
 typedef Aws::Utils::Outcome<ListSpeechSynthesisTasksResult, PollyError> ListSpeechSynthesisTasksOutcome;
+typedef Aws::Utils::Outcome<ListTagsForResourceResult, PollyError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<PutLexiconResult, PollyError> PutLexiconOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, PollyError> StartSpeechSynthesisStreamOutcome;
 typedef Aws::Utils::Outcome<StartSpeechSynthesisTaskResult, PollyError> StartSpeechSynthesisTaskOutcome;
 typedef Aws::Utils::Outcome<SynthesizeSpeechResult, PollyError> SynthesizeSpeechOutcome;
+typedef Aws::Utils::Outcome<TagResourceResult, PollyError> TagResourceOutcome;
+typedef Aws::Utils::Outcome<UntagResourceResult, PollyError> UntagResourceOutcome;
 /* End of service model Outcome class definitions */
 
 /* Service model Outcome callable definitions */
@@ -102,10 +111,13 @@ typedef std::future<GetLexiconOutcome> GetLexiconOutcomeCallable;
 typedef std::future<GetSpeechSynthesisTaskOutcome> GetSpeechSynthesisTaskOutcomeCallable;
 typedef std::future<ListLexiconsOutcome> ListLexiconsOutcomeCallable;
 typedef std::future<ListSpeechSynthesisTasksOutcome> ListSpeechSynthesisTasksOutcomeCallable;
+typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<PutLexiconOutcome> PutLexiconOutcomeCallable;
 typedef std::future<StartSpeechSynthesisStreamOutcome> StartSpeechSynthesisStreamOutcomeCallable;
 typedef std::future<StartSpeechSynthesisTaskOutcome> StartSpeechSynthesisTaskOutcomeCallable;
 typedef std::future<SynthesizeSpeechOutcome> SynthesizeSpeechOutcomeCallable;
+typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 /* End of service model Outcome callable definitions */
 }  // namespace Model
 
@@ -130,6 +142,9 @@ typedef std::function<void(const PollyClient*, const Model::ListLexiconsRequest&
 typedef std::function<void(const PollyClient*, const Model::ListSpeechSynthesisTasksRequest&, const Model::ListSpeechSynthesisTasksOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListSpeechSynthesisTasksResponseReceivedHandler;
+typedef std::function<void(const PollyClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListTagsForResourceResponseReceivedHandler;
 typedef std::function<void(const PollyClient*, const Model::PutLexiconRequest&, const Model::PutLexiconOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutLexiconResponseReceivedHandler;
@@ -143,6 +158,12 @@ typedef std::function<void(const PollyClient*, const Model::StartSpeechSynthesis
 typedef std::function<void(const PollyClient*, const Model::SynthesizeSpeechRequest&, Model::SynthesizeSpeechOutcome,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     SynthesizeSpeechResponseReceivedHandler;
+typedef std::function<void(const PollyClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    TagResourceResponseReceivedHandler;
+typedef std::function<void(const PollyClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UntagResourceResponseReceivedHandler;
 /* End of service model async handlers definitions */
 }  // namespace Polly
 }  // namespace Aws

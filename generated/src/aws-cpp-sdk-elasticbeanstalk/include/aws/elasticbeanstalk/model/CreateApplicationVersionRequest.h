@@ -192,10 +192,15 @@ class CreateApplicationVersionRequest : public ElasticBeanstalkRequest {
    * configuration files can identify issues prior to deploying the application
    * version to an environment.</p> <p>You must turn processing on for application
    * versions that you create using CodeBuild or CodeCommit. For application versions
-   * built from a source bundle in Amazon S3, processing is optional.</p>
-   * <p>The <code>Process</code> option validates Elastic Beanstalk configuration
-   * files. It doesn't validate your application's configuration files, like proxy
-   * server or Docker configuration.</p>
+   * built from a source bundle in Amazon S3, processing is optional.</p> <p>For
+   * application versions with <code>ImageConfiguration.Build</code>,
+   * <code>Process</code> determines when Elastic Beanstalk builds the container
+   * image. Set it to <code>true</code> to build the image when you create the
+   * application version. If you don't, Elastic Beanstalk builds the image when you
+   * first deploy the application version to an environment.</p>  <p>The
+   * <code>Process</code> option validates Elastic Beanstalk configuration files. It
+   * doesn't validate your application's configuration files, like proxy server or
+   * Docker configuration.</p>
    */
   inline bool GetProcess() const { return m_process; }
   inline bool ProcessHasBeenSet() const { return m_processHasBeenSet; }

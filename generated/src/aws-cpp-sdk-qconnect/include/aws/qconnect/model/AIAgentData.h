@@ -183,6 +183,42 @@ class AIAgentData {
 
   ///@{
   /**
+   * <p>The timestamp when the AI Agent was last modified.</p>
+   */
+  inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
+  inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
+  template <typename LastModifiedTimeT = Aws::Utils::DateTime>
+  void SetLastModifiedTime(LastModifiedTimeT&& value) {
+    m_lastModifiedTimeHasBeenSet = true;
+    m_lastModifiedTime = std::forward<LastModifiedTimeT>(value);
+  }
+  template <typename LastModifiedTimeT = Aws::Utils::DateTime>
+  AIAgentData& WithLastModifiedTime(LastModifiedTimeT&& value) {
+    SetLastModifiedTime(std::forward<LastModifiedTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Web Services Region where the AI Agent was last modified.</p>
+   */
+  inline const Aws::String& GetLastModifiedRegion() const { return m_lastModifiedRegion; }
+  inline bool LastModifiedRegionHasBeenSet() const { return m_lastModifiedRegionHasBeenSet; }
+  template <typename LastModifiedRegionT = Aws::String>
+  void SetLastModifiedRegion(LastModifiedRegionT&& value) {
+    m_lastModifiedRegionHasBeenSet = true;
+    m_lastModifiedRegion = std::forward<LastModifiedRegionT>(value);
+  }
+  template <typename LastModifiedRegionT = Aws::String>
+  AIAgentData& WithLastModifiedRegion(LastModifiedRegionT&& value) {
+    SetLastModifiedRegion(std::forward<LastModifiedRegionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The description of the AI Agent.</p>
    */
   inline const Aws::String& GetDescription() const { return m_description; }
@@ -289,6 +325,10 @@ class AIAgentData {
 
   Aws::Utils::DateTime m_modifiedTime{};
 
+  Aws::Utils::DateTime m_lastModifiedTime{};
+
+  Aws::String m_lastModifiedRegion;
+
   Aws::String m_description;
 
   VisibilityStatus m_visibilityStatus{VisibilityStatus::NOT_SET};
@@ -306,6 +346,8 @@ class AIAgentData {
   bool m_typeHasBeenSet = false;
   bool m_configurationHasBeenSet = false;
   bool m_modifiedTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_lastModifiedRegionHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_visibilityStatusHasBeenSet = false;
   bool m_tagsHasBeenSet = false;

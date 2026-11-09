@@ -20,7 +20,7 @@ namespace ConnectCases {
 namespace Model {
 
 /**
- * <p>An object that represents an Amazon Connect contact object. </p><p><h3>See
+ * <p>An object that represents an Connect Customer contact object. </p><p><h3>See
  * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/Contact">AWS
  * API Reference</a></p>
@@ -34,7 +34,7 @@ class Contact {
 
   ///@{
   /**
-   * <p>A unique identifier of a contact in Amazon Connect.</p>
+   * <p>A unique identifier of a contact in Connect Customer.</p>
    */
   inline const Aws::String& GetContactArn() const { return m_contactArn; }
   inline bool ContactArnHasBeenSet() const { return m_contactArnHasBeenSet; }

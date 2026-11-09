@@ -70,7 +70,7 @@ Aws::String SelectObjectContentRequest::SerializePayload() const {
     m_scanRange.AddToNode(scanRangeNode);
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToCompactString();
 }
 
 void SelectObjectContentRequest::AddQueryStringParameters(URI& uri) const {

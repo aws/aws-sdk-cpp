@@ -44,6 +44,10 @@ Aws::String CreateLocationObjectStorageRequest::SerializePayload() const {
     payload.WithString("SecretKey", m_secretKey);
   }
 
+  if (m_federatedIdentityHasBeenSet) {
+    payload.WithObject("FederatedIdentity", m_federatedIdentity.Jsonize());
+  }
+
   if (m_agentArnsHasBeenSet) {
     Aws::Utils::Array<JsonValue> agentArnsJsonList(m_agentArns.size());
     for (unsigned agentArnsIndex = 0; agentArnsIndex < agentArnsJsonList.GetLength(); ++agentArnsIndex) {

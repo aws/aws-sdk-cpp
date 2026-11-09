@@ -20,6 +20,7 @@
 #include <aws/quicksight/QuickSightClient.h>
 #include <aws/quicksight/QuickSightEndpointProvider.h>
 #include <aws/quicksight/QuickSightErrorMarshaller.h>
+#include <aws/quicksight/model/ListThemeVersionsRequest.h>
 #include <aws/quicksight/model/ListThemesRequest.h>
 #include <aws/quicksight/model/ListTopicRefreshSchedulesRequest.h>
 #include <aws/quicksight/model/ListTopicReviewedAnswersRequest.h>
@@ -98,6 +99,7 @@
 #include <aws/quicksight/model/UpdateQPersonalizationConfigurationRequest.h>
 #include <aws/quicksight/model/UpdateQuickSightQSearchConfigurationRequest.h>
 #include <aws/quicksight/model/UpdateRefreshScheduleRequest.h>
+#include <aws/quicksight/model/UpdateResourcePermissionsRequest.h>
 #include <aws/quicksight/model/UpdateRoleCustomPermissionRequest.h>
 #include <aws/quicksight/model/UpdateSPICECapacityConfigurationRequest.h>
 #include <aws/quicksight/model/UpdateSelfUpgradeConfigurationRequest.h>
@@ -118,7 +120,6 @@
 #include <aws/quicksight/model/UpdateTopicV2Request.h>
 #include <aws/quicksight/model/UpdateUserCustomPermissionRequest.h>
 #include <aws/quicksight/model/UpdateUserRequest.h>
-#include <aws/quicksight/model/UpdateVPCConnectionRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -130,6 +131,32 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+ListThemeVersionsOutcome QuickSightClient::ListThemeVersions(const ListThemeVersionsRequest& request) const {
+  if (!request.AwsAccountIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListThemeVersions", "Required field: AwsAccountId, is not set");
+    return ListThemeVersionsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                            "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.ThemeIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListThemeVersions", "Required field: ThemeId, is not set");
+    return ListThemeVersionsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                            "Missing required field [ThemeId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/themes/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetThemeId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListThemeVersionsOutcome(result.GetResultWithOwnership())
+                            : ListThemeVersionsOutcome(std::move(result.GetError()));
+}
 
 ListThemesOutcome QuickSightClient::ListThemes(const ListThemesRequest& request) const {
   if (!request.AwsAccountIdHasBeenSet()) {
@@ -1925,6 +1952,25 @@ UpdateRefreshScheduleOutcome QuickSightClient::UpdateRefreshSchedule(const Updat
                             : UpdateRefreshScheduleOutcome(std::move(result.GetError()));
 }
 
+UpdateResourcePermissionsOutcome QuickSightClient::UpdateResourcePermissions(const UpdateResourcePermissionsRequest& request) const {
+  if (!request.AwsAccountIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateResourcePermissions", "Required field: AwsAccountId, is not set");
+    return UpdateResourcePermissionsOutcome(Aws::Client::AWSError<QuickSightErrors>(
+        QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/account-resource-permissions");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateResourcePermissionsOutcome(result.GetResultWithOwnership())
+                            : UpdateResourcePermissionsOutcome(std::move(result.GetError()));
+}
+
 UpdateRoleCustomPermissionOutcome QuickSightClient::UpdateRoleCustomPermission(const UpdateRoleCustomPermissionRequest& request) const {
   if (!request.RoleHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("UpdateRoleCustomPermission", "Required field: Role, is not set");
@@ -2465,29 +2511,4 @@ UpdateUserCustomPermissionOutcome QuickSightClient::UpdateUserCustomPermission(c
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
   return result.IsSuccess() ? UpdateUserCustomPermissionOutcome(result.GetResultWithOwnership())
                             : UpdateUserCustomPermissionOutcome(std::move(result.GetError()));
-}
-
-UpdateVPCConnectionOutcome QuickSightClient::UpdateVPCConnection(const UpdateVPCConnectionRequest& request) const {
-  if (!request.AwsAccountIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("UpdateVPCConnection", "Required field: AwsAccountId, is not set");
-    return UpdateVPCConnectionOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                              "Missing required field [AwsAccountId]", false));
-  }
-  if (!request.VPCConnectionIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("UpdateVPCConnection", "Required field: VPCConnectionId, is not set");
-    return UpdateVPCConnectionOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                              "Missing required field [VPCConnectionId]", false));
-  }
-
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
-    endpointResolutionOutcome.GetResult().AddPathSegments("/vpc-connections/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVPCConnectionId());
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
-  return result.IsSuccess() ? UpdateVPCConnectionOutcome(result.GetResultWithOwnership())
-                            : UpdateVPCConnectionOutcome(std::move(result.GetError()));
 }

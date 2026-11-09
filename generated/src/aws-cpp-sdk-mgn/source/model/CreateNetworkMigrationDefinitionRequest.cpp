@@ -15,6 +15,10 @@ using namespace Aws::Utils;
 Aws::String CreateNetworkMigrationDefinitionRequest::SerializePayload() const {
   JsonValue payload;
 
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
+  }
+
   if (m_nameHasBeenSet) {
     payload.WithString("name", m_name);
   }

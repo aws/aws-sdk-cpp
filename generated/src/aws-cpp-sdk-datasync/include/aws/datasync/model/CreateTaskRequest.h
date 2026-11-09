@@ -294,15 +294,13 @@ class CreateTaskRequest : public DataSyncRequest {
    * <li> <p> <code>ENHANCED</code> - Transfer virtually unlimited numbers of objects
    * with higher performance than Basic mode. Enhanced mode tasks optimize the data
    * transfer process by listing, preparing, transferring, and verifying data in
-   * parallel. Enhanced mode is currently available for transfers between Amazon S3
-   * locations, transfers between Azure Blob and Amazon S3 without an agent, and
-   * transfers between other clouds and Amazon S3 without an agent.</p>  <p>To
-   * create an Enhanced mode task, the IAM role that you use to call the
-   * <code>CreateTask</code> operation must have the
-   * <code>iam:CreateServiceLinkedRole</code> permission.</p>  </li> <li> <p>
-   * <code>BASIC</code> (default) - Transfer files or objects between Amazon Web
-   * Services storage and all other supported DataSync locations. Basic mode tasks
-   * are subject to <a
+   * parallel. Enhanced mode is currently available for all transfers except those
+   * that use Amazon S3 on Outposts.</p>  <p>To create an Enhanced mode task,
+   * the IAM role that you use to call the <code>CreateTask</code> operation must
+   * have the <code>iam:CreateServiceLinkedRole</code> permission.</p>  </li>
+   * <li> <p> <code>BASIC</code> (default) - Transfer files or objects between Amazon
+   * Web Services storage and all other supported DataSync locations. Basic mode
+   * tasks are subject to <a
    * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-limits.html">quotas</a>
    * on the number of files, objects, and directories in a dataset. Basic mode
    * sequentially prepares, transfers, and verifies data, making it slower than

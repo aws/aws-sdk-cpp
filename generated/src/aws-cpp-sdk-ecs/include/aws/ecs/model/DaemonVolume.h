@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/ecs/model/HostVolumeProperties.h>
+#include <aws/ecs/model/LogDriverVolumeConfiguration.h>
 
 #include <utility>
 
@@ -70,12 +71,39 @@ class DaemonVolume {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The log driver volume configuration. With a log driver volume, the containers
+   * in a daemon task can read the log files that a log driver writes for the other
+   * tasks on the container instance. To read the log files, mount the volume into a
+   * container in the daemon task with <code>mountPoints</code>.</p> <p>Use
+   * <code>host</code> to bind mount a path on the container instance. Use
+   * <code>logDriverVolumeConfiguration</code> to read the log output of other tasks.
+   * You can't specify both for the same volume.</p>
+   */
+  inline const LogDriverVolumeConfiguration& GetLogDriverVolumeConfiguration() const { return m_logDriverVolumeConfiguration; }
+  inline bool LogDriverVolumeConfigurationHasBeenSet() const { return m_logDriverVolumeConfigurationHasBeenSet; }
+  template <typename LogDriverVolumeConfigurationT = LogDriverVolumeConfiguration>
+  void SetLogDriverVolumeConfiguration(LogDriverVolumeConfigurationT&& value) {
+    m_logDriverVolumeConfigurationHasBeenSet = true;
+    m_logDriverVolumeConfiguration = std::forward<LogDriverVolumeConfigurationT>(value);
+  }
+  template <typename LogDriverVolumeConfigurationT = LogDriverVolumeConfiguration>
+  DaemonVolume& WithLogDriverVolumeConfiguration(LogDriverVolumeConfigurationT&& value) {
+    SetLogDriverVolumeConfiguration(std::forward<LogDriverVolumeConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
   HostVolumeProperties m_host;
+
+  LogDriverVolumeConfiguration m_logDriverVolumeConfiguration;
   bool m_nameHasBeenSet = false;
   bool m_hostHasBeenSet = false;
+  bool m_logDriverVolumeConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

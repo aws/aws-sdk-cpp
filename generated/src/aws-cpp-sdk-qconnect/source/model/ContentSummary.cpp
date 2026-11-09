@@ -68,6 +68,18 @@ ContentSummary& ContentSummary::operator=(JsonView jsonValue) {
     }
     m_tagsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("lastModifiedTime")) {
+    m_lastModifiedTime = jsonValue.GetDouble("lastModifiedTime");
+    m_lastModifiedTimeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("lastModifiedRegion")) {
+    m_lastModifiedRegion = jsonValue.GetString("lastModifiedRegion");
+    m_lastModifiedRegionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("fileHash")) {
+    m_fileHash = jsonValue.GetString("fileHash");
+    m_fileHashHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -124,6 +136,18 @@ JsonValue ContentSummary::Jsonize() const {
       tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
     }
     payload.WithObject("tags", std::move(tagsJsonMap));
+  }
+
+  if (m_lastModifiedTimeHasBeenSet) {
+    payload.WithDouble("lastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
+  }
+
+  if (m_lastModifiedRegionHasBeenSet) {
+    payload.WithString("lastModifiedRegion", m_lastModifiedRegion);
+  }
+
+  if (m_fileHashHasBeenSet) {
+    payload.WithString("fileHash", m_fileHash);
   }
 
   return payload;

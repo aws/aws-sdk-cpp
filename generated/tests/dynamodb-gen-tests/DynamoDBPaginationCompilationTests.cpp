@@ -13,6 +13,7 @@
 #include <aws/dynamodb/model/ListImportsPaginationTraits.h>
 #include <aws/dynamodb/model/ListExportsPaginationTraits.h>
 #include <aws/dynamodb/model/QueryPaginationTraits.h>
+#include <aws/dynamodb/model/ListBulkOperationsPaginationTraits.h>
 #include <aws/dynamodb/model/ListTablesPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>

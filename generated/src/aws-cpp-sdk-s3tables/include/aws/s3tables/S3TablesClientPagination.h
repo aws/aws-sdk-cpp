@@ -8,6 +8,7 @@
 #include <aws/s3tables/S3TablesClient.h>
 #include <aws/s3tables/model/ListNamespacesPaginationTraits.h>
 #include <aws/s3tables/model/ListTableBucketsPaginationTraits.h>
+#include <aws/s3tables/model/ListTableMigrationsPaginationTraits.h>
 #include <aws/s3tables/model/ListTablesPaginationTraits.h>
 
 namespace Aws {
@@ -17,6 +18,8 @@ using ListNamespacesPaginator = Aws::Utils::Pagination::Paginator<S3TablesClient
                                                                   Pagination::ListNamespacesPaginationTraits<S3TablesClient>>;
 using ListTableBucketsPaginator = Aws::Utils::Pagination::Paginator<S3TablesClient, Model::ListTableBucketsRequest,
                                                                     Pagination::ListTableBucketsPaginationTraits<S3TablesClient>>;
+using ListTableMigrationsPaginator = Aws::Utils::Pagination::Paginator<S3TablesClient, Model::ListTableMigrationsRequest,
+                                                                       Pagination::ListTableMigrationsPaginationTraits<S3TablesClient>>;
 using ListTablesPaginator =
     Aws::Utils::Pagination::Paginator<S3TablesClient, Model::ListTablesRequest, Pagination::ListTablesPaginationTraits<S3TablesClient>>;
 

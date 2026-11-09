@@ -23,5 +23,9 @@ Aws::String UpdateTrustAnchorRequest::SerializePayload() const {
     payload.WithObject("source", m_source.Jsonize());
   }
 
+  if (m_crlDpRevocationEnabledHasBeenSet) {
+    payload.WithBool("crlDpRevocationEnabled", m_crlDpRevocationEnabled);
+  }
+
   return payload.View().WriteReadable();
 }

@@ -7,7 +7,9 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ram/RAMRequest.h>
 #include <aws/ram/RAM_EXPORTS.h>
+#include <aws/ram/model/PermissionStatus.h>
 #include <aws/ram/model/PermissionTypeFilter.h>
+#include <aws/ram/model/ResourceOwner.h>
 
 #include <utility>
 
@@ -47,6 +49,26 @@ class ListPermissionsRequest : public RAMRequest {
   template <typename ResourceTypeT = Aws::String>
   ListPermissionsRequest& WithResourceType(ResourceTypeT&& value) {
     SetResourceType(std::forward<ResourceTypeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies that you want to list only permissions owned by a specific
+   * entity:</p> <ul> <li> <p> <code>SELF</code> – returns only permissions owned by
+   * the calling account.</p> </li> <li> <p> <code>OTHER-ACCOUNTS</code> – returns
+   * only permissions shared with the calling account by other accounts.</p> </li>
+   * </ul>
+   */
+  inline ResourceOwner GetResourceOwner() const { return m_resourceOwner; }
+  inline bool ResourceOwnerHasBeenSet() const { return m_resourceOwnerHasBeenSet; }
+  inline void SetResourceOwner(ResourceOwner value) {
+    m_resourceOwnerHasBeenSet = true;
+    m_resourceOwner = value;
+  }
+  inline ListPermissionsRequest& WithResourceOwner(ResourceOwner value) {
+    SetResourceOwner(value);
     return *this;
   }
   ///@}
@@ -117,18 +139,43 @@ class ListPermissionsRequest : public RAMRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies that you want to filter the results to include only permissions
+   * with the specified status. For example, use <code>ATTACHABLE</code> to list only
+   * permissions that can be associated with resource shares, or
+   * <code>DEPRECATED</code> to list only deprecated permissions.</p>
+   */
+  inline PermissionStatus GetPermissionStatus() const { return m_permissionStatus; }
+  inline bool PermissionStatusHasBeenSet() const { return m_permissionStatusHasBeenSet; }
+  inline void SetPermissionStatus(PermissionStatus value) {
+    m_permissionStatusHasBeenSet = true;
+    m_permissionStatus = value;
+  }
+  inline ListPermissionsRequest& WithPermissionStatus(PermissionStatus value) {
+    SetPermissionStatus(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_resourceType;
+
+  ResourceOwner m_resourceOwner{ResourceOwner::NOT_SET};
 
   Aws::String m_nextToken;
 
   int m_maxResults{0};
 
   PermissionTypeFilter m_permissionType{PermissionTypeFilter::NOT_SET};
+
+  PermissionStatus m_permissionStatus{PermissionStatus::NOT_SET};
   bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceOwnerHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_permissionTypeHasBeenSet = false;
+  bool m_permissionStatusHasBeenSet = false;
 };
 
 }  // namespace Model

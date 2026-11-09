@@ -26,7 +26,7 @@ Aws::String AssociateAccessGrantsIdentityCenterRequest::SerializePayload() const
     identityCenterArnNode.SetText(m_identityCenterArn);
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToCompactString();
 }
 
 Aws::Http::HeaderValueCollection AssociateAccessGrantsIdentityCenterRequest::GetRequestSpecificHeaders() const {

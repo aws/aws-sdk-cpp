@@ -111,7 +111,7 @@ class RelatedItemContent {
 
   ///@{
   /**
-   * <p>Represents the Amazon Connect case to be created as a related item.</p>
+   * <p>Represents the Connect Customer case to be created as a related item.</p>
    */
   inline const ConnectCaseContent& GetConnectCase() const { return m_connectCase; }
   inline bool ConnectCaseHasBeenSet() const { return m_connectCaseHasBeenSet; }

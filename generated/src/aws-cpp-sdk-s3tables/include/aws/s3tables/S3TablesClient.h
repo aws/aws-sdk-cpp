@@ -22,14 +22,13 @@ namespace S3Tables {
  * tables in a table bucket are stored in the <a
  * href="https://iceberg.apache.org/docs/latest/">Apache Iceberg</a> table format.
  * Through integration with the <a
- * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/glue/latest/dg/catalog-and-crawler.html">Amazon
+ * href="https://docs.aws.amazon.com/glue/latest/dg/catalog-and-crawler.html">Amazon
  * Web Services Glue Data Catalog</a> you can interact with your tables using
  * Amazon Web Services analytics services, such as <a
- * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/athena/">Amazon
- * Athena</a> and <a
- * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/redshift/">Amazon
- * Redshift</a>. Amazon S3 manages maintenance of your tables through automatic
- * file compaction and snapshot management. For more information, see <a
+ * href="https://docs.aws.amazon.com/athena/">Amazon Athena</a> and <a
+ * href="https://docs.aws.amazon.com/redshift/">Amazon Redshift</a>. Amazon S3
+ * manages maintenance of your tables through automatic file compaction and
+ * snapshot management. For more information, see <a
  * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-buckets.html">Amazon
  * S3 table buckets</a>.</p>
  */
@@ -89,6 +88,41 @@ class AWS_S3TABLES_API S3TablesClient : public Aws::Client::AWSJsonClient,
 
   /* End of legacy constructors due deprecation */
   virtual ~S3TablesClient();
+
+  /**
+   * <p>Completes the migration of a table. The table's most recent migration must be
+   * in the <code>succeeded</code>, <code>failed</code> or <code>cancelled</code>
+   * state. After you complete the migration, you can't sync the table again, and you
+   * can write to and maintain the table as you do any other table: compaction
+   * starts, and unreferenced file removal follows the table bucket's configuration.
+   * You can't undo this operation. Calling it again for the same table returns a
+   * <code>ConflictException</code>.</p> <dl> <dt>Permissions</dt> <dd> <ul> <li>
+   * <p>You must have the <code>s3tables:CompleteTableMigration</code> permission to
+   * use this operation.</p> </li> </ul> </dd> </dl><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/CompleteTableMigration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CompleteTableMigrationOutcome CompleteTableMigration(const Model::CompleteTableMigrationRequest& request) const;
+
+  /**
+   * A Callable wrapper for CompleteTableMigration that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CompleteTableMigrationRequestT = Model::CompleteTableMigrationRequest>
+  Model::CompleteTableMigrationOutcomeCallable CompleteTableMigrationCallable(const CompleteTableMigrationRequestT& request) const {
+    return SubmitCallable(&S3TablesClient::CompleteTableMigration, request);
+  }
+
+  /**
+   * An Async wrapper for CompleteTableMigration that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CompleteTableMigrationRequestT = Model::CompleteTableMigrationRequest>
+  void CompleteTableMigrationAsync(const CompleteTableMigrationRequestT& request,
+                                   const CompleteTableMigrationResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&S3TablesClient::CompleteTableMigration, request, handler, context);
+  }
 
   /**
    * <p>Creates a namespace. A namespace is a logical grouping of tables within your
@@ -905,6 +939,39 @@ class AWS_S3TABLES_API S3TablesClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Gets the details of a migration, including its state, the reason it failed,
+   * its statistics and the location of its reports. Identify the migration by its
+   * <code>migrationId</code>, or specify the <code>tableARN</code> of a destination
+   * table to get that table's most recent migration.</p> <dl> <dt>Permissions</dt>
+   * <dd> <ul> <li> <p>You must have the <code>s3tables:GetTableMigration</code>
+   * permission to use this operation.</p> </li> </ul> </dd> </dl><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableMigration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetTableMigrationOutcome GetTableMigration(const Model::GetTableMigrationRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for GetTableMigration that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetTableMigrationRequestT = Model::GetTableMigrationRequest>
+  Model::GetTableMigrationOutcomeCallable GetTableMigrationCallable(const GetTableMigrationRequestT& request = {}) const {
+    return SubmitCallable(&S3TablesClient::GetTableMigration, request);
+  }
+
+  /**
+   * An Async wrapper for GetTableMigration that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetTableMigrationRequestT = Model::GetTableMigrationRequest>
+  void GetTableMigrationAsync(const GetTableMigrationResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                              const GetTableMigrationRequestT& request = {}) const {
+    return SubmitAsync(&S3TablesClient::GetTableMigration, request, handler, context);
+  }
+
+  /**
    * <p>Gets details about a table policy. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-table-policy.html#table-policy-get">Viewing
    * a table policy</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
@@ -1154,6 +1221,44 @@ class AWS_S3TABLES_API S3TablesClient : public Aws::Client::AWSJsonClient,
                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                              const ListTableBucketsRequestT& request = {}) const {
     return SubmitAsync(&S3TablesClient::ListTableBuckets, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the migrations whose destination is in a table bucket, a namespace or a
+   * table. Specify a <code>tableBucketARN</code> to list the migrations into a table
+   * bucket, and add a <code>namespace</code>, or a <code>namespace</code> and a
+   * <code>name</code>, to narrow the list. Or specify a <code>tableARN</code> to
+   * list the migrations into a table.</p> <p>Migrations are listed newest first.
+   * Results are paginated: use <code>maxResults</code> to set the page size, and
+   * pass the <code>nextToken</code> from a response to retrieve the next page of
+   * results. A page can contain fewer migrations than <code>maxResults</code>, or
+   * none, and still return a <code>nextToken</code>. Continue until a response has
+   * no <code>nextToken</code>.</p> <dl> <dt>Permissions</dt> <dd> <ul> <li> <p>You
+   * must have the <code>s3tables:ListTableMigrations</code> permission to use this
+   * operation.</p> </li> </ul> </dd> </dl><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/ListTableMigrations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListTableMigrationsOutcome ListTableMigrations(const Model::ListTableMigrationsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListTableMigrations that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListTableMigrationsRequestT = Model::ListTableMigrationsRequest>
+  Model::ListTableMigrationsOutcomeCallable ListTableMigrationsCallable(const ListTableMigrationsRequestT& request = {}) const {
+    return SubmitCallable(&S3TablesClient::ListTableMigrations, request);
+  }
+
+  /**
+   * An Async wrapper for ListTableMigrations that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListTableMigrationsRequestT = Model::ListTableMigrationsRequest>
+  void ListTableMigrationsAsync(const ListTableMigrationsResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                const ListTableMigrationsRequestT& request = {}) const {
+    return SubmitAsync(&S3TablesClient::ListTableMigrations, request, handler, context);
   }
 
   /**
@@ -1609,6 +1714,105 @@ class AWS_S3TABLES_API S3TablesClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Starts migrating an Amazon Web Services Glue Data Catalog table into a new
+   * table in a table bucket. The migration runs asynchronously: this operation
+   * returns the migration ID and its initial state, and you track progress with
+   * <code>GetTableMigration</code>.</p> <p>The namespace must already exist, and a
+   * table with the specified name must not. The migration creates the table during
+   * planning and commits data to it as it runs. Until you call
+   * <code>CompleteTableMigration</code>, you can read the table but you can't write
+   * to it. If the migration fails or is cancelled, the table and the data already
+   * committed to it remain.</p> <p>The migration first checks the source and the
+   * destination, and writes the table compatibility and object compatibility reports
+   * to the bucket that you specify in <code>migrationOutput</code>. If you set
+   * <code>reviewMigrationPlan</code> to <code>true</code>, the migration waits in
+   * the <code>pendingReview</code> state so that you can review the reports, and
+   * continues only when you call <code>UpdateTableMigration</code> with
+   * <code>requestedState</code> set to <code>queued</code>. If you don't continue or
+   * cancel the migration within 30 days, the migration fails. Otherwise it continues
+   * to migrate the data, and writes the object migration report when the migration
+   * ends. If planning fails, the migration writes no object migration report.</p>
+   * <dl> <dt>Permissions</dt> <dd> <ul> <li> <p>You must have the
+   * <code>s3tables:StartTableMigration</code> permission to use this operation.</p>
+   * </li> <li> <p>You must have the <code>iam:PassRole</code> permission on the role
+   * that you specify in <code>roleARN</code>, with a condition that allows passing
+   * it to <code>migration.s3tables.amazonaws.com</code>. The associated resource is
+   * the table bucket.</p> </li> <li> <p>If <code>destinationTable</code> specifies
+   * SSE-KMS encryption, you must have the <code>kms:DescribeKey</code> and
+   * <code>kms:GenerateDataKey</code> permissions on the KMS key. You must also grant
+   * the S3 Tables maintenance principal access to the key. For more information, see
+   * <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-kms-permissions.html">Permissions
+   * requirements for S3 Tables SSE-KMS encryption</a>.</p> </li> </ul> </dd>
+   * </dl><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/StartTableMigration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartTableMigrationOutcome StartTableMigration(const Model::StartTableMigrationRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartTableMigration that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StartTableMigrationRequestT = Model::StartTableMigrationRequest>
+  Model::StartTableMigrationOutcomeCallable StartTableMigrationCallable(const StartTableMigrationRequestT& request) const {
+    return SubmitCallable(&S3TablesClient::StartTableMigration, request);
+  }
+
+  /**
+   * An Async wrapper for StartTableMigration that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename StartTableMigrationRequestT = Model::StartTableMigrationRequest>
+  void StartTableMigrationAsync(const StartTableMigrationRequestT& request, const StartTableMigrationResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&S3TablesClient::StartTableMigration, request, handler, context);
+  }
+
+  /**
+   * <p>Migrates the changes in the source table since the previous start or sync,
+   * such as added and deleted source objects, into the destination table. The sync
+   * runs asynchronously: this operation returns the migration ID of the sync and its
+   * initial state, and you track progress with <code>GetTableMigration</code>.</p>
+   * <p>A sync uses the source, destination and data migration settings of the
+   * table's migration, and plans the work and writes its reports in the same way as
+   * <code>StartTableMigration</code>. You can sync after a start or sync that
+   * succeeded, failed or was cancelled, if an earlier start or sync of the table has
+   * a valid plan (<code>hasValidPlan</code>). You can't sync a table while a start
+   * or sync is in progress for it, and you can sync a table until you call
+   * <code>CompleteTableMigration</code> for it. If a source object that an earlier
+   * migration migrated has since been overwritten, the sync fails.</p> <dl>
+   * <dt>Permissions</dt> <dd> <ul> <li> <p>You must have the
+   * <code>s3tables:SyncTableMigration</code> permission to use this operation.</p>
+   * </li> <li> <p>You must have the <code>iam:PassRole</code> permission on the role
+   * that you specify in <code>roleARN</code>, with a condition that allows passing
+   * it to <code>migration.s3tables.amazonaws.com</code>. The associated resource is
+   * the table.</p> </li> </ul> </dd> </dl><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/SyncTableMigration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SyncTableMigrationOutcome SyncTableMigration(const Model::SyncTableMigrationRequest& request) const;
+
+  /**
+   * A Callable wrapper for SyncTableMigration that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename SyncTableMigrationRequestT = Model::SyncTableMigrationRequest>
+  Model::SyncTableMigrationOutcomeCallable SyncTableMigrationCallable(const SyncTableMigrationRequestT& request) const {
+    return SubmitCallable(&S3TablesClient::SyncTableMigration, request);
+  }
+
+  /**
+   * An Async wrapper for SyncTableMigration that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename SyncTableMigrationRequestT = Model::SyncTableMigrationRequest>
+  void SyncTableMigrationAsync(const SyncTableMigrationRequestT& request, const SyncTableMigrationResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&S3TablesClient::SyncTableMigration, request, handler, context);
+  }
+
+  /**
    * <p>Applies one or more user-defined tags to an Amazon S3 Tables resource or
    * updates existing tags. Each tag is a label consisting of a key and value pair.
    * Tags can help you organize, track costs for, and control access to your
@@ -1707,6 +1911,45 @@ class AWS_S3TABLES_API S3TablesClient : public Aws::Client::AWSJsonClient,
                                         const UpdateTableMetadataLocationResponseReceivedHandler& handler,
                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&S3TablesClient::UpdateTableMetadataLocation, request, handler, context);
+  }
+
+  /**
+   * <p>Requests a state change for a migration. Identify the migration by its
+   * <code>migrationId</code> or by the <code>tableARN</code> of its destination
+   * table.</p> <p>Set <code>requestedState</code> to <code>queued</code> to continue
+   * a migration in the <code>pendingReview</code> state; the migration moves to
+   * <code>queued</code> or <code>migrating</code>. Set it to <code>cancelled</code>
+   * to cancel a migration in the <code>new</code>, <code>planning</code>,
+   * <code>pendingReview</code>, <code>queued</code> or <code>migrating</code> state;
+   * the migration moves to <code>cancelling</code>, finishes the work in progress,
+   * and then ends in the <code>cancelled</code> state, or in the <code>failed</code>
+   * state if any objects failed to migrate. Data that the migration already
+   * committed stays in the destination table.</p> <dl> <dt>Permissions</dt> <dd>
+   * <ul> <li> <p>You must have the <code>s3tables:UpdateTableMigration</code>
+   * permission to use this operation.</p> </li> </ul> </dd> </dl><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/UpdateTableMigration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateTableMigrationOutcome UpdateTableMigration(const Model::UpdateTableMigrationRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateTableMigration that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateTableMigrationRequestT = Model::UpdateTableMigrationRequest>
+  Model::UpdateTableMigrationOutcomeCallable UpdateTableMigrationCallable(const UpdateTableMigrationRequestT& request) const {
+    return SubmitCallable(&S3TablesClient::UpdateTableMigration, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateTableMigration that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateTableMigrationRequestT = Model::UpdateTableMigrationRequest>
+  void UpdateTableMigrationAsync(const UpdateTableMigrationRequestT& request, const UpdateTableMigrationResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&S3TablesClient::UpdateTableMigration, request, handler, context);
   }
 
   virtual void OverrideEndpoint(const Aws::String& endpoint);

@@ -50,6 +50,14 @@ AssociatedPermission& AssociatedPermission::operator=(JsonView jsonValue) {
     m_resourceShareArn = jsonValue.GetString("resourceShareArn");
     m_resourceShareArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("permissionTemplateParameters")) {
+    Aws::Utils::Array<JsonView> permissionTemplateParametersJsonList = jsonValue.GetArray("permissionTemplateParameters");
+    for (unsigned permissionTemplateParametersIndex = 0;
+         permissionTemplateParametersIndex < permissionTemplateParametersJsonList.GetLength(); ++permissionTemplateParametersIndex) {
+      m_permissionTemplateParameters.push_back(permissionTemplateParametersJsonList[permissionTemplateParametersIndex].AsObject());
+    }
+    m_permissionTemplateParametersHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -86,6 +94,16 @@ JsonValue AssociatedPermission::Jsonize() const {
 
   if (m_resourceShareArnHasBeenSet) {
     payload.WithString("resourceShareArn", m_resourceShareArn);
+  }
+
+  if (m_permissionTemplateParametersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> permissionTemplateParametersJsonList(m_permissionTemplateParameters.size());
+    for (unsigned permissionTemplateParametersIndex = 0;
+         permissionTemplateParametersIndex < permissionTemplateParametersJsonList.GetLength(); ++permissionTemplateParametersIndex) {
+      permissionTemplateParametersJsonList[permissionTemplateParametersIndex].AsObject(
+          m_permissionTemplateParameters[permissionTemplateParametersIndex].Jsonize());
+    }
+    payload.WithArray("permissionTemplateParameters", std::move(permissionTemplateParametersJsonList));
   }
 
   return payload;

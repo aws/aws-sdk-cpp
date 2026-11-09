@@ -57,12 +57,14 @@ class LoadBalancerTargetGroupState {
    * Auto Scaling instances are being registered with the target group.</p> </li>
    * <li> <p> <code>Added</code> - All Auto Scaling instances are registered with the
    * target group.</p> </li> <li> <p> <code>InService</code> - At least one Auto
-   * Scaling instance passed an <code>ELB</code> health check.</p> </li> <li> <p>
-   * <code>Removing</code> - The Auto Scaling instances are being deregistered from
-   * the target group. If connection draining is enabled, Elastic Load Balancing
-   * waits for in-flight requests to complete before deregistering the instances.</p>
-   * </li> <li> <p> <code>Removed</code> - All Auto Scaling instances are
-   * deregistered from the target group.</p> </li> </ul>
+   * Scaling instance passed an <code>ELB</code> health check. Note that the target
+   * group enters this state immediately if you attach it in the <a
+   * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_CreateAutoScalingGroup.html">CreateAutoScalingGroup</a>
+   * API call.</p> </li> <li> <p> <code>Removing</code> - The Auto Scaling instances
+   * are being deregistered from the target group. If connection draining is enabled,
+   * Elastic Load Balancing waits for in-flight requests to complete before
+   * deregistering the instances.</p> </li> <li> <p> <code>Removed</code> - All Auto
+   * Scaling instances are deregistered from the target group.</p> </li> </ul>
    */
   inline const Aws::String& GetState() const { return m_state; }
   inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }

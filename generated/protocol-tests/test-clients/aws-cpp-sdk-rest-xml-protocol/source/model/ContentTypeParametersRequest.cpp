@@ -27,5 +27,5 @@ Aws::String ContentTypeParametersRequest::SerializePayload() const {
     ss.str("");
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToCompactString();
 }

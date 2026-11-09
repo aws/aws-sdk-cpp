@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -35,6 +36,25 @@ class CreateNetworkMigrationDefinitionRequest : public MgnRequest {
   inline virtual const char* GetServiceRequestName() const override { return "CreateNetworkMigrationDefinition"; }
 
   AWS_MGN_API Aws::String SerializePayload() const override;
+
+  ///@{
+  /**
+   * <p>A unique, case-sensitive identifier that you provide to ensure the
+   * idempotency of the request.</p>
+   */
+  inline const Aws::String& GetClientToken() const { return m_clientToken; }
+  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+  template <typename ClientTokenT = Aws::String>
+  void SetClientToken(ClientTokenT&& value) {
+    m_clientTokenHasBeenSet = true;
+    m_clientToken = std::forward<ClientTokenT>(value);
+  }
+  template <typename ClientTokenT = Aws::String>
+  CreateNetworkMigrationDefinitionRequest& WithClientToken(ClientTokenT&& value) {
+    SetClientToken(std::forward<ClientTokenT>(value));
+    return *this;
+  }
+  ///@}
 
   ///@{
   /**
@@ -242,6 +262,8 @@ class CreateNetworkMigrationDefinitionRequest : public MgnRequest {
   }
   ///@}
  private:
+  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+
   Aws::String m_name;
 
   Aws::String m_description;
@@ -261,6 +283,7 @@ class CreateNetworkMigrationDefinitionRequest : public MgnRequest {
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::Map<Aws::String, Aws::String> m_scopeTags;
+  bool m_clientTokenHasBeenSet = true;
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_sourceConfigurationsHasBeenSet = false;

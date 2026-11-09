@@ -10,7 +10,7 @@
 namespace Aws {
 namespace SecurityAgent {
 namespace Model {
-enum class MembershipTypeFilter { NOT_SET, USER, ALL };
+enum class MembershipTypeFilter { NOT_SET, USER, GROUP, ALL };
 
 namespace MembershipTypeFilterMapper {
 AWS_SECURITYAGENT_API MembershipTypeFilter GetMembershipTypeFilterForName(const Aws::String& name);

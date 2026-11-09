@@ -7,7 +7,10 @@
 #include <aws/core/utils/Waiter.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/dynamodb/DynamoDBClient.h>
+#include <aws/dynamodb/model/BulkOperationStatus.h>
 #include <aws/dynamodb/model/ContributorInsightsStatus.h>
+#include <aws/dynamodb/model/DescribeBulkOperationRequest.h>
+#include <aws/dynamodb/model/DescribeBulkOperationResult.h>
 #include <aws/dynamodb/model/DescribeContributorInsightsRequest.h>
 #include <aws/dynamodb/model/DescribeContributorInsightsResult.h>
 #include <aws/dynamodb/model/DescribeExportRequest.h>
@@ -31,6 +34,49 @@ namespace DynamoDB {
 template <typename DerivedClient = DynamoDBClient>
 class DynamoDBWaiter {
  public:
+  Aws::Utils::WaiterOutcome<Model::DescribeBulkOperationOutcome> WaitUntilBulkOperationCompleted(
+      const Model::DescribeBulkOperationRequest& request) {
+    using OutcomeT = Model::DescribeBulkOperationOutcome;
+    using RequestT = Model::DescribeBulkOperationRequest;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "BulkOperationCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("COMPLETED"),
+        [](const Model::DescribeBulkOperationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::BulkOperationStatusMapper::GetNameForBulkOperationStatus(
+                     result.GetBulkOperationDescription().GetBulkOperationStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "BulkOperationCompletedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("COMPLETED_WITH_ERRORS"),
+        [](const Model::DescribeBulkOperationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::BulkOperationStatusMapper::GetNameForBulkOperationStatus(
+                     result.GetBulkOperationDescription().GetBulkOperationStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "BulkOperationCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("CANCELLED"),
+        [](const Model::DescribeBulkOperationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::BulkOperationStatusMapper::GetNameForBulkOperationStatus(
+                     result.GetBulkOperationDescription().GetBulkOperationStatus()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "BulkOperationCompletedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("FAILED"),
+        [](const Model::DescribeBulkOperationOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::BulkOperationStatusMapper::GetNameForBulkOperationStatus(
+                     result.GetBulkOperationDescription().GetBulkOperationStatus()) == expected.get<Aws::String>();
+        }));
+
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeBulkOperation(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(20, 6, std::move(acceptors), operation, "WaitUntilBulkOperationCompleted");
+    return waiter.Wait(request);
+  }
+
   Aws::Utils::WaiterOutcome<Model::DescribeContributorInsightsOutcome> WaitUntilContributorInsightsEnabled(
       const Model::DescribeContributorInsightsRequest& request) {
     using OutcomeT = Model::DescribeContributorInsightsOutcome;

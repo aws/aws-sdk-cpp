@@ -302,6 +302,35 @@ class AWS_DYNAMODB_API DynamoDBClient
   }
 
   /**
+   * <p>Cancels an in-progress bulk operation asynchronously. Cancellation doesn't
+   * remove items that the operation has already written. Use
+   * <code>DescribeBulkOperation</code> to monitor the operation until it reaches a
+   * terminal status.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CancelBulkOperation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CancelBulkOperationOutcome CancelBulkOperation(const Model::CancelBulkOperationRequest& request) const;
+
+  /**
+   * A Callable wrapper for CancelBulkOperation that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CancelBulkOperationRequestT = Model::CancelBulkOperationRequest>
+  Model::CancelBulkOperationOutcomeCallable CancelBulkOperationCallable(const CancelBulkOperationRequestT& request) const {
+    return SubmitCallable(&DynamoDBClient::CancelBulkOperation, request);
+  }
+
+  /**
+   * An Async wrapper for CancelBulkOperation that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename CancelBulkOperationRequestT = Model::CancelBulkOperationRequest>
+  void CancelBulkOperationAsync(const CancelBulkOperationRequestT& request, const CancelBulkOperationResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DynamoDBClient::CancelBulkOperation, request, handler, context);
+  }
+
+  /**
    * <p>Creates a backup for an existing table.</p> <p> Each time you create an
    * on-demand backup, the entire table data is backed up. There is no limit to the
    * number of on-demand backups that can be taken. </p> <p> When you create an
@@ -612,6 +641,32 @@ class AWS_DYNAMODB_API DynamoDBClient
   void DescribeBackupAsync(const DescribeBackupRequestT& request, const DescribeBackupResponseReceivedHandler& handler,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&DynamoDBClient::DescribeBackup, request, handler, context);
+  }
+
+  /**
+   * <p>Describes the specified bulk operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeBulkOperation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeBulkOperationOutcome DescribeBulkOperation(const Model::DescribeBulkOperationRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeBulkOperation that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeBulkOperationRequestT = Model::DescribeBulkOperationRequest>
+  Model::DescribeBulkOperationOutcomeCallable DescribeBulkOperationCallable(const DescribeBulkOperationRequestT& request) const {
+    return SubmitCallable(&DynamoDBClient::DescribeBulkOperation, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeBulkOperation that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeBulkOperationRequestT = Model::DescribeBulkOperationRequest>
+  void DescribeBulkOperationAsync(const DescribeBulkOperationRequestT& request, const DescribeBulkOperationResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DynamoDBClient::DescribeBulkOperation, request, handler, context);
   }
 
   /**
@@ -1336,6 +1391,36 @@ class AWS_DYNAMODB_API DynamoDBClient
   }
 
   /**
+   * <p>Lists bulk operations that started within the past 90 days for the current
+   * Amazon Web Services account and Amazon Web Services Region, with the most recent
+   * operations first. Results are paginated. Use the <code>NextToken</code>
+   * parameter to retrieve additional results.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListBulkOperations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListBulkOperationsOutcome ListBulkOperations(const Model::ListBulkOperationsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListBulkOperations that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListBulkOperationsRequestT = Model::ListBulkOperationsRequest>
+  Model::ListBulkOperationsOutcomeCallable ListBulkOperationsCallable(const ListBulkOperationsRequestT& request = {}) const {
+    return SubmitCallable(&DynamoDBClient::ListBulkOperations, request);
+  }
+
+  /**
+   * An Async wrapper for ListBulkOperations that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListBulkOperationsRequestT = Model::ListBulkOperationsRequest>
+  void ListBulkOperationsAsync(const ListBulkOperationsResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                               const ListBulkOperationsRequestT& request = {}) const {
+    return SubmitAsync(&DynamoDBClient::ListBulkOperations, request, handler, context);
+  }
+
+  /**
    * <p>Returns a list of ContributorInsightsSummary for a table and all its global
    * secondary indexes.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListContributorInsights">AWS
@@ -1852,6 +1937,34 @@ class AWS_DYNAMODB_API DynamoDBClient
   void SearchVectorsAsync(const SearchVectorsRequestT& request, const SearchVectorsResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&DynamoDBClient::SearchVectors, request, handler, context);
+  }
+
+  /**
+   * <p>Starts an asynchronous bulk operation that reads items from Amazon S3 and
+   * writes them to an existing DynamoDB table, so you can efficiently load or
+   * migrate large datasets.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/StartBulkPutItems">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartBulkPutItemsOutcome StartBulkPutItems(const Model::StartBulkPutItemsRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartBulkPutItems that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StartBulkPutItemsRequestT = Model::StartBulkPutItemsRequest>
+  Model::StartBulkPutItemsOutcomeCallable StartBulkPutItemsCallable(const StartBulkPutItemsRequestT& request) const {
+    return SubmitCallable(&DynamoDBClient::StartBulkPutItems, request);
+  }
+
+  /**
+   * An Async wrapper for StartBulkPutItems that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename StartBulkPutItemsRequestT = Model::StartBulkPutItemsRequest>
+  void StartBulkPutItemsAsync(const StartBulkPutItemsRequestT& request, const StartBulkPutItemsResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&DynamoDBClient::StartBulkPutItems, request, handler, context);
   }
 
   /**

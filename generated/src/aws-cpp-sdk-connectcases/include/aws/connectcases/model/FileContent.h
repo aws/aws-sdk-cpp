@@ -20,7 +20,7 @@ namespace ConnectCases {
 namespace Model {
 
 /**
- * <p>An object that represents a content of an Amazon Connect file
+ * <p>An object that represents a content of an Connect Customer file
  * object.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/FileContent">AWS
  * API Reference</a></p>
@@ -34,7 +34,7 @@ class FileContent {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of a File in Amazon Connect.</p>
+   * <p>The Amazon Resource Name (ARN) of a File in Connect Customer.</p>
    */
   inline const Aws::String& GetFileArn() const { return m_fileArn; }
   inline bool FileArnHasBeenSet() const { return m_fileArnHasBeenSet; }

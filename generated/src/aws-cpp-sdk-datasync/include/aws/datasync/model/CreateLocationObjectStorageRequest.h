@@ -11,6 +11,7 @@
 #include <aws/datasync/DataSync_EXPORTS.h>
 #include <aws/datasync/model/CmkSecretConfig.h>
 #include <aws/datasync/model/CustomSecretConfig.h>
+#include <aws/datasync/model/ObjectStorageFederatedIdentityConfig.h>
 #include <aws/datasync/model/ObjectStorageServerProtocol.h>
 #include <aws/datasync/model/TagListEntry.h>
 
@@ -168,6 +169,27 @@ class CreateLocationObjectStorageRequest : public DataSyncRequest {
   template <typename SecretKeyT = Aws::String>
   CreateLocationObjectStorageRequest& WithSecretKey(SecretKeyT&& value) {
     SetSecretKey(std::forward<SecretKeyT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the federated identity configuration that allows DataSync to access
+   * your object storage using an OpenID Connect (OIDC) token instead of a long-term
+   * access key and secret key. Provide either <code>FederatedIdentity</code> or the
+   * <code>AccessKey</code>/<code>SecretKey</code> credentials, but not both.</p>
+   */
+  inline const ObjectStorageFederatedIdentityConfig& GetFederatedIdentity() const { return m_federatedIdentity; }
+  inline bool FederatedIdentityHasBeenSet() const { return m_federatedIdentityHasBeenSet; }
+  template <typename FederatedIdentityT = ObjectStorageFederatedIdentityConfig>
+  void SetFederatedIdentity(FederatedIdentityT&& value) {
+    m_federatedIdentityHasBeenSet = true;
+    m_federatedIdentity = std::forward<FederatedIdentityT>(value);
+  }
+  template <typename FederatedIdentityT = ObjectStorageFederatedIdentityConfig>
+  CreateLocationObjectStorageRequest& WithFederatedIdentity(FederatedIdentityT&& value) {
+    SetFederatedIdentity(std::forward<FederatedIdentityT>(value));
     return *this;
   }
   ///@}
@@ -334,6 +356,8 @@ class CreateLocationObjectStorageRequest : public DataSyncRequest {
 
   Aws::String m_secretKey;
 
+  ObjectStorageFederatedIdentityConfig m_federatedIdentity;
+
   Aws::Vector<Aws::String> m_agentArns;
 
   Aws::Vector<TagListEntry> m_tags;
@@ -350,6 +374,7 @@ class CreateLocationObjectStorageRequest : public DataSyncRequest {
   bool m_bucketNameHasBeenSet = false;
   bool m_accessKeyHasBeenSet = false;
   bool m_secretKeyHasBeenSet = false;
+  bool m_federatedIdentityHasBeenSet = false;
   bool m_agentArnsHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_serverCertificateHasBeenSet = false;

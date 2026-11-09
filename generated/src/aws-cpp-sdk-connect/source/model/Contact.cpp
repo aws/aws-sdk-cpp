@@ -203,6 +203,13 @@ Contact& Contact::operator=(JsonView jsonValue) {
     m_taskTemplateInfo = jsonValue.GetObject("TaskTemplateInfo");
     m_taskTemplateInfoHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Cases")) {
+    Aws::Utils::Array<JsonView> casesJsonList = jsonValue.GetArray("Cases");
+    for (unsigned casesIndex = 0; casesIndex < casesJsonList.GetLength(); ++casesIndex) {
+      m_cases.push_back(casesJsonList[casesIndex].AsObject());
+    }
+    m_casesHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("ContactDetails")) {
     m_contactDetails = jsonValue.GetObject("ContactDetails");
     m_contactDetailsHasBeenSet = true;
@@ -422,6 +429,14 @@ JsonValue Contact::Jsonize() const {
 
   if (m_taskTemplateInfoHasBeenSet) {
     payload.WithObject("TaskTemplateInfo", m_taskTemplateInfo.Jsonize());
+  }
+
+  if (m_casesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> casesJsonList(m_cases.size());
+    for (unsigned casesIndex = 0; casesIndex < casesJsonList.GetLength(); ++casesIndex) {
+      casesJsonList[casesIndex].AsObject(m_cases[casesIndex].Jsonize());
+    }
+    payload.WithArray("Cases", std::move(casesJsonList));
   }
 
   if (m_contactDetailsHasBeenSet) {

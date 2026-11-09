@@ -1,3 +1,68 @@
+# 1.11.924 (2026-11-06)
+
+## SDK Highlights
+* **Bug Fix**: Fix disabling IMDSv1 fallback through the AWS_EC2_METADATA_V1_DISABLED environment variable and the ec2_metadata_v1_disabled config file setting. The two names were swapped, so neither had any effect.
+
+## Service Updates
+* **Athena**: Added support for Athena System Tables which writes Athena usage data to AWS S3 managed tables in Apache Iceberg format. Adds CreateSystemTableConfiguration, UpdateSystemTableConfiguration, DeleteSystemTableConfiguration, GetSystemTableConfiguration, and ListSystemTableStatuses.
+* **Auto Scaling**: Amazon EC2 Auto Scaling now lets you exclude managed resources from describe API responses using the new optional IncludeManagedResources parameter. Set this parameter to false to exclude managed resources from the response. By default, managed resources are included.
+* **Bedrock Agent**: Add support for configuring searchability for metadata fields via UpdateKnowledgeBase request for Managed Knowledge Base. Once a field is marked as searchable it can be queried via query text and is factored into Managed Knowledge Base's ranking algorithm.
+* **Connect**: Rules in Amazon Connect now support ending email contacts associated to a case based on case events.
+* **ConnectCases**: Amazon Connect Cases adds two Bulk Case Actions operations. BatchCreateRelatedItem adds a Comment-type related item to up to 100 cases per request, BatchUpdateCase updates fields (title, status, customer ID, custom) on up to 100 cases. Same domain, per-case success and failure results returned.
+* **DataZone**: Adds support for updating OAuth 2.0 connection settings with UpdateConnection.
+* **EKS Auth**: Added workloadIdentityProviderArn to the AssumeRoleForPodIdentity API response.
+* **Glue**: Adds support for user-defined functions governed by AWS Lake Formation.
+* **Lightsail**: Marking fields as sensitive in GetInstanceAccessDetails, CreateKeyPair, DownloadDefaultKeyPair, CreateBucketAccessKey, CreateContainerServiceRegistryLogin, and GetRelationalDatabase responses.
+* **MediaConvert**: Smart subtitling uses AWS Elemental Inference to generate captions from your content's audio, in embedded, burn-in, DVB-Sub, IMSC, SMI, SRT, teletext, TTML, or WebVTT outputs. Also fixes HEVC passthrough writing an incomplete codecs string to DASH and HLS manifests.
+* **RAM**: Adds support for using managed permission template parameters, discovering shared customer-managed permissions, and managing customer-managed permission deprecation.
+* **SSM**: AWS Systems Manager now provides two new APIs - RegisterDefaultHostManagementConfiguration and DeregisterDefaultHostManagementConfiguration - along with a new DefaultHostManagementConfiguration CloudFormation resource type.
+
+# 1.11.923 (2026-11-05)
+
+## Service Updates
+* **Account Access Runtime**: Adds SDK support for Account Access user portal operations, enabling users to list out and get credentials for role assignments configured in AWS IAM Account Access Manager.
+* **Agent Registry Control**: Adds support for OAuth2 Authorization Server Metadata (RFC 8414) discovery URLs in custom JWT authorizer.
+* **AppIntegrations**: This release adds a LastModifiedRegion field to GetApplication and ListApplications so customers can see which Region an application was last modified in.
+* **Bedrock Agent Runtime**: Amazon Bedrock Managed Knowledge Base now supports an optional mediaId parameter in GetDocumentContent that you can use to retrieve images embedded in source documents.
+* **Bedrock AgentCore Control**: Adds support for OAuth2 Authorization Server Metadata (RFC 8414) discovery URLs in custom JWT authorizer and OAuth2 credential provider configurations.
+* **CloudWatch Logs**: Adds account-level retention policies with dry run preview and the Essentials log group class to Amazon CloudWatch Logs
+* **DataSync**: Adds support for federated identity on Azure Blob Storage and object storage locations, enabling DataSync to authenticate to Azure and Google Cloud Storage using Workload Identity Federation (WIF) over OpenID Connect (OIDC) instead of stored long-lived credentials.
+* **Glue**: AWS Glue Spark ETL jobs can now auto-upgrade to the latest version. Set GlueVersion to Auto, then track progress with the AutoVersionStatus field in GetJob. Use StartJobUpgradeAnalysis to approve or decline an upgrade, GetJobUpgradeAnalysis to view details, and StopJobUpgradeAnalysis to stop it.
+* **Lambda Microvms**: AWS Lambda MicroVMs now support the x86-64 CPU architecture, which you can select in addition to ARM64 (Graviton) when launching a MicroVM.
+* **QConnect**: Adds support for real-time agent assistance and self-service with Amazon Connect Global Resiliency, including cross-Region replication of supported AI agent resources and configurations.
+* **QuickSight**: Amazon QuickSight adds APIs to view account service role settings and switch to or replace a customer-managed IAM role.
+* **Route 53 Domains**: Route 53 Domains now supports restoring domains. This release adds the RestoreDomain API to self-serve domain restoration.
+* **SageMaker**: Fixed the ImageDeleted and ImageVersionDeleted waiters to succeed on the ResourceNotFound error returned by DescribeImage and DescribeImageVersion
+* **SecurityAgent**: Adds support for IAM Identity Center groups as Agent Space members. CreateMembership, DeleteMembership, and ListMemberships now accept the GROUP member type. ListMemberships can filter by USER, GROUP, or ALL, and returns group display name and description.
+* **WAFV2**: AWS WAF customers who monetize AI traffic on Web ACLs can now configure payments through connected accounts (Stripe).
+
+# 1.11.922 (2026-11-04)
+
+## SDK Highlights
+* **Bug Fix**: Serialize XML request payloads without pretty-printing whitespace, via the new XmlDocument::ConvertToCompactString(). This shrinks S3, S3 CRT, S3 Control, CloudFront, and Route 53 request bodies; a CompleteMultipartUpload with 9,331 parts drops from 1.04 MiB to 0.79 MiB, staying under the 1 MiB body limit of some S3-compatible services ([#3891](https://github.com/aws/aws-sdk-cpp/issues/3891)). XmlDocument::ConvertToString() still pretty-prints.
+* **Bug Fix**: CRTHttpClient now refuses every request with a non-retryable error, instead of sending it, when its TLS context or proxy TLS context failed to initialize (for example an unreadable caFile, caPath or proxyCaFile). This also applies when verifySSL is false and to plain http requests.
+
+## Service Updates
+* **Connect Contact Lens**: Rules TBAC GA (Contact Lens V1) - Adds an optional ListFilter (CategoriesAttributeFilter with OrConditions, AndCondition and TagCondition) to ListRealtimeContactAnalysisSegments. This filters matched categories by rule tags. It also adds an optional RuleId to CategoryDetails in the response.
+* **Connect**: Adds support for retrieving associated cases in contact responses. The Contact object now includes a Cases field containing case IDs and reference numbers linked to the contact.
+* **DynamoDB**: Adds StartBulkPutItems, DescribeBulkOperation, ListBulkOperations, and CancelBulkOperation for asynchronously loading Amazon S3 datasets into existing DynamoDB tables.
+* **EC2**: Add the Unsupported SupportabilityScore to GetCapacityManagerSupportabilityScores.
+* **ECS**: Amazon ECS Managed Instances now supports the json-file log driver in task definitions. Daemon task definition volumes also support logDriverVolumeConfiguration, letting managed daemons read those logs.
+* **EMR**: Added StepAdditionalInfo on DescribeStep and ListSteps to surface YARN application IDs for steps.
+* **Elastic Beanstalk**: Adds DefaultAmiList to DescribePlatformVersion to return the default AMI for each processor architecture that a platform version supports.
+* **IoTSiteWise**: Adds support for an optional jobName on CreateDatasetExportJob. The jobName is returned by DescribeDatasetExportJob and ListDatasetExportJobs, making dataset export jobs easier to identify and track. If jobName is omitted, a default name is generated automatically.
+* **LookoutEquipment**: Amazon Lookout for Equipment reached end of support on October 7, 2026. All Lookout for Equipment APIs are now marked as deprecated.
+* **MWAA Serverless**: Adding support to Environment Variables in MWAA Serverless
+* **Marketplace Discovery**: GetListing and SearchListings APIs now return G2 and PeerSpot review sources in review summaries.
+* **Polly**: Amazon Polly now supports tagging lexicons. Use the new TagResource, UntagResource and ListTagsForResource APIs, or add tags when creating a lexicon with PutLexicon, to organize lexicons and control access with tag-based (ABAC) IAM policies.
+* **RDS**: Adding support for copying and tagging option groups with cross-Region DB snapshot copies, in the same account or across accounts.
+* **RolesAnywhere**: Adds the crlDpRevocationEnabled field to enable automatic revocation checking using CRL distribution points in X.509 certificates.
+* **S3Tables**: Amazon S3 Tables now supports migrating AWS Glue Data Catalog tables into S3 Table buckets. This release adds the StartTableMigration, SyncTableMigration, UpdateTableMigration, CompleteTableMigration, GetTableMigration, and ListTableMigrations APIs.
+* **SecurityHub**: Release Software APIs- GetSoftwareV2, GetSoftwareStatisticsV2 and GetSoftwareResourcesV2 to list software packages with aggregated resource count, get aggregated software statistics, and find the resources that contain a specific software package.
+* **TaxSettings**: Adds Colombia additional information (responsibility codes, taxpayer type code, and RUT issue date) and a rejection reason (statusReason) to tax registration responses, and adds Argentina and Uruguay tax registration types.
+* **WorkSpaces**: Add Ubuntu 24.04, Ubuntu 26.04, RHEL 9, RHEL10, Rocky 9 and Rocky 10 to OperatingSystemName and documentation update for WorkspaceProperties Protocols.
+* **mgn**: This release adds Migration Planning artifacts as a source environment for network migration definitions, and an optional clientToken on CreateNetworkMigrationDefinition so that retried requests don't create duplicate definitions.
+
 # 1.11.921 (2026-10-30)
 
 ## Service Updates

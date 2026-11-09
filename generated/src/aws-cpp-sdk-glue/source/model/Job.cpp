@@ -131,6 +131,10 @@ Job& Job::operator=(JsonView jsonValue) {
     m_profileName = jsonValue.GetString("ProfileName");
     m_profileNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AutoUpgradeMetadata")) {
+    m_autoUpgradeMetadata = jsonValue.GetObject("AutoUpgradeMetadata");
+    m_autoUpgradeMetadataHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -251,6 +255,10 @@ JsonValue Job::Jsonize() const {
 
   if (m_profileNameHasBeenSet) {
     payload.WithString("ProfileName", m_profileName);
+  }
+
+  if (m_autoUpgradeMetadataHasBeenSet) {
+    payload.WithObject("AutoUpgradeMetadata", m_autoUpgradeMetadata.Jsonize());
   }
 
   return payload;

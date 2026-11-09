@@ -10,7 +10,7 @@
 namespace Aws {
 namespace EC2 {
 namespace Model {
-enum class SupportabilityScore { NOT_SET, high, medium, low };
+enum class SupportabilityScore { NOT_SET, high, medium, low, unsupported };
 
 namespace SupportabilityScoreMapper {
 AWS_EC2_API SupportabilityScore GetSupportabilityScoreForName(const Aws::String& name);

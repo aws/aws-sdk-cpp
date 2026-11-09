@@ -22,6 +22,10 @@ ExportJobSummary& ExportJobSummary::operator=(JsonView jsonValue) {
     m_jobId = jsonValue.GetString("jobId");
     m_jobIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("jobName")) {
+    m_jobName = jsonValue.GetString("jobName");
+    m_jobNameHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("status")) {
     m_status = DatasetExportJobStatusMapper::GetDatasetExportJobStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
@@ -46,6 +50,10 @@ JsonValue ExportJobSummary::Jsonize() const {
 
   if (m_jobIdHasBeenSet) {
     payload.WithString("jobId", m_jobId);
+  }
+
+  if (m_jobNameHasBeenSet) {
+    payload.WithString("jobName", m_jobName);
   }
 
   if (m_statusHasBeenSet) {

@@ -18,6 +18,7 @@ namespace SupportabilityScoreMapper {
 static const int high_HASH = HashingUtils::HashString("high");
 static const int medium_HASH = HashingUtils::HashString("medium");
 static const int low_HASH = HashingUtils::HashString("low");
+static const int unsupported_HASH = HashingUtils::HashString("unsupported");
 
 SupportabilityScore GetSupportabilityScoreForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ SupportabilityScore GetSupportabilityScoreForName(const Aws::String& name) {
     return SupportabilityScore::medium;
   } else if (hashCode == low_HASH) {
     return SupportabilityScore::low;
+  } else if (hashCode == unsupported_HASH) {
+    return SupportabilityScore::unsupported;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForSupportabilityScore(SupportabilityScore enumValue) {
       return "medium";
     case SupportabilityScore::low:
       return "low";
+    case SupportabilityScore::unsupported:
+      return "unsupported";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -10,6 +10,7 @@
 #include <aws/qconnect/QConnect_EXPORTS.h>
 #include <aws/qconnect/model/AIPromptType.h>
 #include <aws/qconnect/model/CrossRegionStatus.h>
+#include <aws/qconnect/model/GlobalResiliencyStatus.h>
 #include <aws/qconnect/model/ModelLifecycle.h>
 
 #include <utility>
@@ -187,6 +188,25 @@ class ModelSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Whether this model is published in every Region of the caller's Amazon
+   * Connect Global Resiliency replication group, and so can be referenced by an AI
+   * Prompt that replicates. Present only for callers to which global resiliency
+   * applies.</p>
+   */
+  inline GlobalResiliencyStatus GetGlobalResiliencyStatus() const { return m_globalResiliencyStatus; }
+  inline bool GlobalResiliencyStatusHasBeenSet() const { return m_globalResiliencyStatusHasBeenSet; }
+  inline void SetGlobalResiliencyStatus(GlobalResiliencyStatus value) {
+    m_globalResiliencyStatusHasBeenSet = true;
+    m_globalResiliencyStatus = value;
+  }
+  inline ModelSummary& WithGlobalResiliencyStatus(GlobalResiliencyStatus value) {
+    SetGlobalResiliencyStatus(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_modelId;
 
@@ -203,6 +223,8 @@ class ModelSummary {
   Aws::Utils::DateTime m_legacyTimestamp{};
 
   Aws::Utils::DateTime m_endOfLifeTimestamp{};
+
+  GlobalResiliencyStatus m_globalResiliencyStatus{GlobalResiliencyStatus::NOT_SET};
   bool m_modelIdHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
   bool m_crossRegionStatusHasBeenSet = false;
@@ -211,6 +233,7 @@ class ModelSummary {
   bool m_modelLifecycleHasBeenSet = false;
   bool m_legacyTimestampHasBeenSet = false;
   bool m_endOfLifeTimestampHasBeenSet = false;
+  bool m_globalResiliencyStatusHasBeenSet = false;
 };
 
 }  // namespace Model

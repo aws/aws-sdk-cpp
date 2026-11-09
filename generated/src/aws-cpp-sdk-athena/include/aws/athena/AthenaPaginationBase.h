@@ -17,6 +17,7 @@
 #include <aws/athena/model/ListPreparedStatementsPaginationTraits.h>
 #include <aws/athena/model/ListQueryExecutionsPaginationTraits.h>
 #include <aws/athena/model/ListSessionsPaginationTraits.h>
+#include <aws/athena/model/ListSystemTableStatusesPaginationTraits.h>
 #include <aws/athena/model/ListTableMetadataPaginationTraits.h>
 #include <aws/athena/model/ListTagsForResourcePaginationTraits.h>
 #include <aws/athena/model/ListWorkGroupsPaginationTraits.h>
@@ -170,6 +171,18 @@ class AthenaPaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSessionsRequest,
                                              Pagination::ListSessionsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
+  }
+
+  /**
+   * Create a paginator for ListSystemTableStatuses operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSystemTableStatusesRequest,
+                                    Pagination::ListSystemTableStatusesPaginationTraits<DerivedClient>>
+  ListSystemTableStatusesPaginator(const Model::ListSystemTableStatusesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSystemTableStatusesRequest,
+                                             Pagination::ListSystemTableStatusesPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
   }
 
   /**

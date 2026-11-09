@@ -26,6 +26,7 @@
 #include <aws/mwaa-serverless/model/DeleteWorkflowResult.h>
 #include <aws/mwaa-serverless/model/EncryptionConfiguration.h>
 #include <aws/mwaa-serverless/model/EncryptionType.h>
+#include <aws/mwaa-serverless/model/Environment.h>
 #include <aws/mwaa-serverless/model/GetTaskInstanceRequest.h>
 #include <aws/mwaa-serverless/model/GetTaskInstanceResult.h>
 #include <aws/mwaa-serverless/model/GetWorkflowRequest.h>

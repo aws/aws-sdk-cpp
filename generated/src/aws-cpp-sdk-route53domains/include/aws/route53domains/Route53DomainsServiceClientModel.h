@@ -50,6 +50,7 @@
 #include <aws/route53domains/model/RenewDomainResult.h>
 #include <aws/route53domains/model/ResendContactReachabilityEmailRequest.h>
 #include <aws/route53domains/model/ResendContactReachabilityEmailResult.h>
+#include <aws/route53domains/model/RestoreDomainResult.h>
 #include <aws/route53domains/model/RetrieveDomainAuthCodeResult.h>
 #include <aws/route53domains/model/TransferDomainResult.h>
 #include <aws/route53domains/model/TransferDomainToAnotherAwsAccountResult.h>
@@ -119,6 +120,7 @@ class RejectDomainTransferFromAnotherAwsAccountRequest;
 class RenewDomainRequest;
 class ResendContactReachabilityEmailRequest;
 class ResendOperationAuthorizationRequest;
+class RestoreDomainRequest;
 class RetrieveDomainAuthCodeRequest;
 class TransferDomainRequest;
 class TransferDomainToAnotherAwsAccountRequest;
@@ -161,6 +163,7 @@ typedef Aws::Utils::Outcome<RejectDomainTransferFromAnotherAwsAccountResult, Rou
 typedef Aws::Utils::Outcome<RenewDomainResult, Route53DomainsError> RenewDomainOutcome;
 typedef Aws::Utils::Outcome<ResendContactReachabilityEmailResult, Route53DomainsError> ResendContactReachabilityEmailOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, Route53DomainsError> ResendOperationAuthorizationOutcome;
+typedef Aws::Utils::Outcome<RestoreDomainResult, Route53DomainsError> RestoreDomainOutcome;
 typedef Aws::Utils::Outcome<RetrieveDomainAuthCodeResult, Route53DomainsError> RetrieveDomainAuthCodeOutcome;
 typedef Aws::Utils::Outcome<TransferDomainResult, Route53DomainsError> TransferDomainOutcome;
 typedef Aws::Utils::Outcome<TransferDomainToAnotherAwsAccountResult, Route53DomainsError> TransferDomainToAnotherAwsAccountOutcome;
@@ -199,6 +202,7 @@ typedef std::future<RejectDomainTransferFromAnotherAwsAccountOutcome> RejectDoma
 typedef std::future<RenewDomainOutcome> RenewDomainOutcomeCallable;
 typedef std::future<ResendContactReachabilityEmailOutcome> ResendContactReachabilityEmailOutcomeCallable;
 typedef std::future<ResendOperationAuthorizationOutcome> ResendOperationAuthorizationOutcomeCallable;
+typedef std::future<RestoreDomainOutcome> RestoreDomainOutcomeCallable;
 typedef std::future<RetrieveDomainAuthCodeOutcome> RetrieveDomainAuthCodeOutcomeCallable;
 typedef std::future<TransferDomainOutcome> TransferDomainOutcomeCallable;
 typedef std::future<TransferDomainToAnotherAwsAccountOutcome> TransferDomainToAnotherAwsAccountOutcomeCallable;
@@ -302,6 +306,9 @@ typedef std::function<void(const Route53DomainsClient*, const Model::ResendOpera
                            const Model::ResendOperationAuthorizationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ResendOperationAuthorizationResponseReceivedHandler;
+typedef std::function<void(const Route53DomainsClient*, const Model::RestoreDomainRequest&, const Model::RestoreDomainOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    RestoreDomainResponseReceivedHandler;
 typedef std::function<void(const Route53DomainsClient*, const Model::RetrieveDomainAuthCodeRequest&,
                            const Model::RetrieveDomainAuthCodeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     RetrieveDomainAuthCodeResponseReceivedHandler;

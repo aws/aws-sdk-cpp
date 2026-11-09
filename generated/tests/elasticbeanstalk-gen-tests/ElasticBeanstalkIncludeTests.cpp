@@ -21,6 +21,7 @@
 #include <aws/elasticbeanstalk/model/ActionHistoryStatus.h>
 #include <aws/elasticbeanstalk/model/ActionStatus.h>
 #include <aws/elasticbeanstalk/model/ActionType.h>
+#include <aws/elasticbeanstalk/model/AmiArchitecture.h>
 #include <aws/elasticbeanstalk/model/ApplicationDescription.h>
 #include <aws/elasticbeanstalk/model/ApplicationMetrics.h>
 #include <aws/elasticbeanstalk/model/ApplicationResourceLifecycleConfig.h>
@@ -59,6 +60,7 @@
 #include <aws/elasticbeanstalk/model/CreateStorageLocationRequest.h>
 #include <aws/elasticbeanstalk/model/CreateStorageLocationResult.h>
 #include <aws/elasticbeanstalk/model/CustomAmi.h>
+#include <aws/elasticbeanstalk/model/DefaultAmi.h>
 #include <aws/elasticbeanstalk/model/DeleteApplicationRequest.h>
 #include <aws/elasticbeanstalk/model/DeleteApplicationVersionRequest.h>
 #include <aws/elasticbeanstalk/model/DeleteConfigurationTemplateRequest.h>

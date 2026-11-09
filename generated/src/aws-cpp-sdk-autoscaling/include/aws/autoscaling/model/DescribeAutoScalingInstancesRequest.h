@@ -61,8 +61,30 @@ class DescribeAutoScalingInstancesRequest : public AutoScalingRequest {
 
   ///@{
   /**
+   * <p> Specifies whether to include managed Auto Scaling instances in the response.
+   * When set to <code>true</code> (default), the response includes managed Auto
+   * Scaling instances. </p>
+   */
+  inline bool GetIncludeManagedResources() const { return m_includeManagedResources; }
+  inline bool IncludeManagedResourcesHasBeenSet() const { return m_includeManagedResourcesHasBeenSet; }
+  inline void SetIncludeManagedResources(bool value) {
+    m_includeManagedResourcesHasBeenSet = true;
+    m_includeManagedResources = value;
+  }
+  inline DescribeAutoScalingInstancesRequest& WithIncludeManagedResources(bool value) {
+    SetIncludeManagedResources(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The maximum number of items to return with this call. The default value is
-   * <code>50</code> and the maximum value is <code>50</code>.</p>
+   * <code>50</code> and the maximum value is <code>50</code>.</p> <p>A response can
+   * contain fewer items than the value specified by <code>MaxRecords</code>, even
+   * when more items are available. To retrieve the additional items, use the
+   * <code>NextToken</code> value in a subsequent call rather than relying on the
+   * number of items in the response.</p>
    */
   inline int GetMaxRecords() const { return m_maxRecords; }
   inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
@@ -97,10 +119,13 @@ class DescribeAutoScalingInstancesRequest : public AutoScalingRequest {
  private:
   Aws::Vector<Aws::String> m_instanceIds;
 
+  bool m_includeManagedResources{false};
+
   int m_maxRecords{0};
 
   Aws::String m_nextToken;
   bool m_instanceIdsHasBeenSet = false;
+  bool m_includeManagedResourcesHasBeenSet = false;
   bool m_maxRecordsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };

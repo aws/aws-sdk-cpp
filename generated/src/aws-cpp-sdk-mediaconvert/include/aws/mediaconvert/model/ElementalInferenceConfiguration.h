@@ -59,7 +59,7 @@ class ElementalInferenceConfiguration {
 
   ///@{
   /**
-   * A list of Elemental Inference feeds used by this job.
+   * A list of Elemental Inference feeds created during this job.
    */
   inline const Aws::Vector<ElementalInferenceFeed>& GetFeeds() const { return m_feeds; }
   inline bool FeedsHasBeenSet() const { return m_feedsHasBeenSet; }

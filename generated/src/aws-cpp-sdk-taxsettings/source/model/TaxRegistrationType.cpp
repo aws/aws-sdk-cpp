@@ -24,6 +24,11 @@ static const int TIN_HASH = HashingUtils::HashString("TIN");
 static const int NRIC_HASH = HashingUtils::HashString("NRIC");
 static const int PAN_HASH = HashingUtils::HashString("PAN");
 static const int NIP_HASH = HashingUtils::HashString("NIP");
+static const int CUIT_HASH = HashingUtils::HashString("CUIT");
+static const int CDI_HASH = HashingUtils::HashString("CDI");
+static const int RUT_HASH = HashingUtils::HashString("RUT");
+static const int NIE_HASH = HashingUtils::HashString("NIE");
+static const int CI_HASH = HashingUtils::HashString("CI");
 
 TaxRegistrationType GetTaxRegistrationTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -45,6 +50,16 @@ TaxRegistrationType GetTaxRegistrationTypeForName(const Aws::String& name) {
     return TaxRegistrationType::PAN;
   } else if (hashCode == NIP_HASH) {
     return TaxRegistrationType::NIP;
+  } else if (hashCode == CUIT_HASH) {
+    return TaxRegistrationType::CUIT;
+  } else if (hashCode == CDI_HASH) {
+    return TaxRegistrationType::CDI;
+  } else if (hashCode == RUT_HASH) {
+    return TaxRegistrationType::RUT;
+  } else if (hashCode == NIE_HASH) {
+    return TaxRegistrationType::NIE;
+  } else if (hashCode == CI_HASH) {
+    return TaxRegistrationType::CI;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -77,6 +92,16 @@ Aws::String GetNameForTaxRegistrationType(TaxRegistrationType enumValue) {
       return "PAN";
     case TaxRegistrationType::NIP:
       return "NIP";
+    case TaxRegistrationType::CUIT:
+      return "CUIT";
+    case TaxRegistrationType::CDI:
+      return "CDI";
+    case TaxRegistrationType::RUT:
+      return "RUT";
+    case TaxRegistrationType::NIE:
+      return "NIE";
+    case TaxRegistrationType::CI:
+      return "CI";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

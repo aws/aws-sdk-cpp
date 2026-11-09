@@ -70,6 +70,7 @@
 #include <aws/glue/model/GetJobRequest.h>
 #include <aws/glue/model/GetJobRunRequest.h>
 #include <aws/glue/model/GetJobRunsRequest.h>
+#include <aws/glue/model/GetJobUpgradeAnalysisRequest.h>
 #include <aws/glue/model/GetJobsRequest.h>
 #include <aws/glue/model/GetMLTaskRunRequest.h>
 #include <aws/glue/model/GetMLTaskRunsRequest.h>
@@ -119,7 +120,6 @@
 #include <aws/glue/model/ListColumnStatisticsTaskRunsRequest.h>
 #include <aws/glue/model/ListConnectionTypesRequest.h>
 #include <aws/glue/model/ListCrawlersRequest.h>
-#include <aws/glue/model/ListCrawlsRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -420,6 +420,12 @@ GetJobRunsOutcome GlueClient::GetJobRuns(const GetJobRunsRequest& request) const
   return result.IsSuccess() ? GetJobRunsOutcome(result.GetResultWithOwnership()) : GetJobRunsOutcome(std::move(result.GetError()));
 }
 
+GetJobUpgradeAnalysisOutcome GlueClient::GetJobUpgradeAnalysis(const GetJobUpgradeAnalysisRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetJobUpgradeAnalysisOutcome(result.GetResultWithOwnership())
+                            : GetJobUpgradeAnalysisOutcome(std::move(result.GetError()));
+}
+
 GetJobsOutcome GlueClient::GetJobs(const GetJobsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetJobsOutcome(result.GetResultWithOwnership()) : GetJobsOutcome(std::move(result.GetError()));
@@ -693,9 +699,4 @@ ListConnectionTypesOutcome GlueClient::ListConnectionTypes(const ListConnectionT
 ListCrawlersOutcome GlueClient::ListCrawlers(const ListCrawlersRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListCrawlersOutcome(result.GetResultWithOwnership()) : ListCrawlersOutcome(std::move(result.GetError()));
-}
-
-ListCrawlsOutcome GlueClient::ListCrawls(const ListCrawlsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ListCrawlsOutcome(result.GetResultWithOwnership()) : ListCrawlsOutcome(std::move(result.GetError()));
 }

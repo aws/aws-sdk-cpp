@@ -39,8 +39,8 @@ class CustomJWTAuthorizerConfiguration {
 
   ///@{
   /**
-   * <p>The OpenID Connect discovery URL used to retrieve the identity provider's
-   * metadata and signing keys.</p>
+   * <p>The OpenID Connect discovery or OAuth 2.0 authorization server metadata URL
+   * used to retrieve the identity provider's metadata and signing keys.</p>
    */
   inline const Aws::String& GetDiscoveryUrl() const { return m_discoveryUrl; }
   inline bool DiscoveryUrlHasBeenSet() const { return m_discoveryUrlHasBeenSet; }
