@@ -571,6 +571,23 @@ namespace Aws
             inline void SetSigningTimestampOverride(const Aws::Utils::DateTime& signingTime) { m_signingTimestampOverride = signingTime; }
 
             /**
+             * Gets the raw client time (no skew applied) at which the final response's headers arrived for this attempt, if
+             * the HTTP client recorded it.
+             */
+            inline const Aws::Crt::Optional<Aws::Utils::DateTime>& GetResponseHeadersReceivedTime() const {
+              return m_responseHeadersReceivedTime;
+            }
+            /**
+             * Records when the response headers arrived, before the body is read. Set by the HTTP client; used as the
+             * response-received time for clock-skew correction.
+             */
+            inline void SetResponseHeadersReceivedTime(const Aws::Utils::DateTime& time) { m_responseHeadersReceivedTime = time; }
+            /**
+             * Clears the response headers received time; called at the start of each attempt.
+             */
+            inline void ClearResponseHeadersReceivedTime() { m_responseHeadersReceivedTime.reset(); }
+
+            /**
              * Add a request metric
              * @param key, HttpClientMetricsKey defined in HttpClientMetrics.cpp
              * @param value, the corresponding value of this key measured during http request.
@@ -631,6 +648,7 @@ namespace Aws
             ContinueRequestHandler m_continueRequest;
             Aws::String m_signingRegion;
             Aws::Crt::Optional<Aws::Utils::DateTime> m_signingTimestampOverride;
+            Aws::Crt::Optional<Aws::Utils::DateTime> m_responseHeadersReceivedTime;
             Aws::String m_signingAccessKey;
             Aws::String m_resolvedRemoteHost;
             Aws::Monitoring::HttpClientMetricsCollection m_httpRequestMetrics;

@@ -191,6 +191,8 @@ bool WinSyncHttpClient::BuildSuccessResponse(const std::shared_ptr<HttpRequest>&
     Aws::StringStream ss;
     uint64_t read = 0;
 
+    // The platform has received the status line and headers by now, and the body is read below.
+    request->SetResponseHeadersReceivedTime(DateTime::Now());
     DoQueryHeaders(hHttpRequest, response, ss, read);
 
     if(readLimiter != nullptr && read > 0)
