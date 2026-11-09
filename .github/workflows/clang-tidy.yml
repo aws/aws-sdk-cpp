@@ -19,8 +19,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Check out the PR's own commit rather than the merge with main, so reported line numbers
-      # (and annotations) match the files in the PR.
       - name: Checkout code
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
         with:

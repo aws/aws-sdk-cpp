@@ -1,0 +1,6 @@
+{
+  "type": "bugfix",
+  "category": "tools",
+  "contributor": "Madrigal",
+  "description": "Run the clang-tidy CI check only on lines changed by the pull request, and only on files with a compile command, so it no longer fails on pre-existing issues or missing includes. The check can also be run locally with tools/scripts/run_clang_tidy.py."
+}

@@ -40,8 +40,7 @@ import subprocess
 import sys
 
 DEFAULT_SERVICES = ["s3"]
-SOURCE_EXTENSIONS = (".cpp", ".cc", ".cxx", ".c")
-CHECKED_EXTENSIONS = SOURCE_EXTENSIONS + (".h", ".hh", ".hpp")
+CHECKED_EXTENSIONS = (".cpp", ".h")
 # Hunk header of a -U0 diff, e.g. "@@ -10,0 +11,3 @@": 3 lines added starting at line 11.
 HUNK_HEADER = re.compile(r"^@@ -\S+ \+(\d+)(?:,(\d+))? @@", re.MULTILINE)
 # e.g. "/path/File.cpp:1575:101: error: the parameter 'x' is copied ... [performance-unnecessary-value-param]"
