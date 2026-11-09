@@ -5,8 +5,10 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/mediaconvert/model/CaptionDestinationSettings.h>
+#include <aws/mediaconvert/model/CaptionSource.h>
 #include <aws/mediaconvert/model/LanguageCode.h>
 
 #include <utility>
@@ -34,6 +36,33 @@ class CaptionDescription {
   AWS_MEDIACONVERT_API CaptionDescription(Aws::Utils::Json::JsonView jsonValue);
   AWS_MEDIACONVERT_API CaptionDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
   AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * Specifies the audio selector or audio selector group that MediaConvert uses to
+   * generate Smart subtitles. The audio selector you choose must exist in all inputs
+   * for the job. If MediaConvert can't detect speech in the audio, it can't generate
+   * subtitles. Required when source is SMART_SUBTITLE; not allowed otherwise.
+   */
+  inline const Aws::Vector<Aws::String>& GetAudioSourceNames() const { return m_audioSourceNames; }
+  inline bool AudioSourceNamesHasBeenSet() const { return m_audioSourceNamesHasBeenSet; }
+  template <typename AudioSourceNamesT = Aws::Vector<Aws::String>>
+  void SetAudioSourceNames(AudioSourceNamesT&& value) {
+    m_audioSourceNamesHasBeenSet = true;
+    m_audioSourceNames = std::forward<AudioSourceNamesT>(value);
+  }
+  template <typename AudioSourceNamesT = Aws::Vector<Aws::String>>
+  CaptionDescription& WithAudioSourceNames(AudioSourceNamesT&& value) {
+    SetAudioSourceNames(std::forward<AudioSourceNamesT>(value));
+    return *this;
+  }
+  template <typename AudioSourceNamesT = Aws::String>
+  CaptionDescription& AddAudioSourceNames(AudioSourceNamesT&& value) {
+    m_audioSourceNamesHasBeenSet = true;
+    m_audioSourceNames.emplace_back(std::forward<AudioSourceNamesT>(value));
+    return *this;
+  }
+  ///@}
 
   ///@{
   /**
@@ -145,7 +174,29 @@ class CaptionDescription {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * Specify the source of the captions for this caption description. Choose Captions
+   * input source (INPUT_CAPTION_SELECTOR) to use a caption selector from your input.
+   * Choose Smart subtitling (SMART_SUBTITLE) to have MediaConvert and Elemental
+   * Inference generate subtitles automatically from an audio source that you
+   * specify.
+   */
+  inline CaptionSource GetSource() const { return m_source; }
+  inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
+  inline void SetSource(CaptionSource value) {
+    m_sourceHasBeenSet = true;
+    m_source = value;
+  }
+  inline CaptionDescription& WithSource(CaptionSource value) {
+    SetSource(value);
+    return *this;
+  }
+  ///@}
  private:
+  Aws::Vector<Aws::String> m_audioSourceNames;
+
   Aws::String m_captionSelectorName;
 
   Aws::String m_customLanguageCode;
@@ -155,11 +206,15 @@ class CaptionDescription {
   LanguageCode m_languageCode{LanguageCode::NOT_SET};
 
   Aws::String m_languageDescription;
+
+  CaptionSource m_source{CaptionSource::NOT_SET};
+  bool m_audioSourceNamesHasBeenSet = false;
   bool m_captionSelectorNameHasBeenSet = false;
   bool m_customLanguageCodeHasBeenSet = false;
   bool m_destinationSettingsHasBeenSet = false;
   bool m_languageCodeHasBeenSet = false;
   bool m_languageDescriptionHasBeenSet = false;
+  bool m_sourceHasBeenSet = false;
 };
 
 }  // namespace Model

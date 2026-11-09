@@ -629,6 +629,7 @@
 #include <aws/datazone/model/OAuth2ClientApplication.h>
 #include <aws/datazone/model/OAuth2GrantType.h>
 #include <aws/datazone/model/OAuth2Properties.h>
+#include <aws/datazone/model/OAuth2PropertiesPatch.h>
 #include <aws/datazone/model/OpenLineageRunEventSummary.h>
 #include <aws/datazone/model/OpenLineageRunState.h>
 #include <aws/datazone/model/OutputLocation.h>

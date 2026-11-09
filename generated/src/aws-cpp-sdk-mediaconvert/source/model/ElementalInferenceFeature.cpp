@@ -16,11 +16,14 @@ namespace Model {
 namespace ElementalInferenceFeatureMapper {
 
 static const int SMART_CROP_HASH = HashingUtils::HashString("SMART_CROP");
+static const int SMART_SUBTITLE_HASH = HashingUtils::HashString("SMART_SUBTITLE");
 
 ElementalInferenceFeature GetElementalInferenceFeatureForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == SMART_CROP_HASH) {
     return ElementalInferenceFeature::SMART_CROP;
+  } else if (hashCode == SMART_SUBTITLE_HASH) {
+    return ElementalInferenceFeature::SMART_SUBTITLE;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +40,8 @@ Aws::String GetNameForElementalInferenceFeature(ElementalInferenceFeature enumVa
       return {};
     case ElementalInferenceFeature::SMART_CROP:
       return "SMART_CROP";
+    case ElementalInferenceFeature::SMART_SUBTITLE:
+      return "SMART_SUBTITLE";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

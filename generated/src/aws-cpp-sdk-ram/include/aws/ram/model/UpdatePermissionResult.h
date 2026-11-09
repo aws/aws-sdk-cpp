@@ -1,0 +1,97 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ram/RAM_EXPORTS.h>
+#include <aws/ram/model/UpdatePermissionStatus.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace RAM {
+namespace Model {
+class UpdatePermissionResult {
+ public:
+  AWS_RAM_API UpdatePermissionResult() = default;
+  AWS_RAM_API UpdatePermissionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_RAM_API UpdatePermissionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The idempotency identifier associated with this request. If you want to
+   * repeat the same operation in an idempotent manner then you must include this
+   * value in the <code>clientToken</code> request parameter of that later call. All
+   * other parameters must also have the same values that you used in the first
+   * call.</p>
+   */
+  inline const Aws::String& GetClientToken() const { return m_clientToken; }
+  template <typename ClientTokenT = Aws::String>
+  void SetClientToken(ClientTokenT&& value) {
+    m_clientTokenHasBeenSet = true;
+    m_clientToken = std::forward<ClientTokenT>(value);
+  }
+  template <typename ClientTokenT = Aws::String>
+  UpdatePermissionResult& WithClientToken(ClientTokenT&& value) {
+    SetClientToken(std::forward<ClientTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The updated status of the permission.</p>
+   */
+  inline UpdatePermissionStatus GetPermissionStatus() const { return m_permissionStatus; }
+  inline void SetPermissionStatus(UpdatePermissionStatus value) {
+    m_permissionStatusHasBeenSet = true;
+    m_permissionStatus = value;
+  }
+  inline UpdatePermissionResult& WithPermissionStatus(UpdatePermissionStatus value) {
+    SetPermissionStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  UpdatePermissionResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Aws::String m_clientToken;
+
+  UpdatePermissionStatus m_permissionStatus{UpdatePermissionStatus::NOT_SET};
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_permissionStatusHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace RAM
+}  // namespace Aws

@@ -9,7 +9,9 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ram/RAM_EXPORTS.h>
 #include <aws/ram/model/PermissionFeatureSet.h>
+#include <aws/ram/model/PermissionTemplateParameter.h>
 #include <aws/ram/model/PermissionType.h>
+#include <aws/ram/model/ResourceOwner.h>
 #include <aws/ram/model/Tag.h>
 
 #include <utility>
@@ -258,6 +260,33 @@ class ResourceSharePermissionSummary {
 
   ///@{
   /**
+   * <p>The list of template parameters defined for this permission, including their
+   * names, types, descriptions, and values. This field is present only if the
+   * permission is a template with declared parameters. When returned in the context
+   * of a permission association, the values are also included.</p>
+   */
+  inline const Aws::Vector<PermissionTemplateParameter>& GetPermissionTemplateParameters() const { return m_permissionTemplateParameters; }
+  inline bool PermissionTemplateParametersHasBeenSet() const { return m_permissionTemplateParametersHasBeenSet; }
+  template <typename PermissionTemplateParametersT = Aws::Vector<PermissionTemplateParameter>>
+  void SetPermissionTemplateParameters(PermissionTemplateParametersT&& value) {
+    m_permissionTemplateParametersHasBeenSet = true;
+    m_permissionTemplateParameters = std::forward<PermissionTemplateParametersT>(value);
+  }
+  template <typename PermissionTemplateParametersT = Aws::Vector<PermissionTemplateParameter>>
+  ResourceSharePermissionSummary& WithPermissionTemplateParameters(PermissionTemplateParametersT&& value) {
+    SetPermissionTemplateParameters(std::forward<PermissionTemplateParametersT>(value));
+    return *this;
+  }
+  template <typename PermissionTemplateParametersT = PermissionTemplateParameter>
+  ResourceSharePermissionSummary& AddPermissionTemplateParameters(PermissionTemplateParametersT&& value) {
+    m_permissionTemplateParametersHasBeenSet = true;
+    m_permissionTemplateParameters.emplace_back(std::forward<PermissionTemplateParametersT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A list of the tag key value pairs currently attached to the permission.</p>
    */
   inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
@@ -276,6 +305,25 @@ class ResourceSharePermissionSummary {
   ResourceSharePermissionSummary& AddTags(TagsT&& value) {
     m_tagsHasBeenSet = true;
     m_tags.emplace_back(std::forward<TagsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The owner of the permission. This can be one of the following values:</p>
+   * <ul> <li> <p> <code>SELF</code> – The permission is owned by the current
+   * account.</p> </li> <li> <p> <code>OTHER-ACCOUNTS</code> – The permission is
+   * owned by another account and shared with the current account.</p> </li> </ul>
+   */
+  inline ResourceOwner GetResourceOwner() const { return m_resourceOwner; }
+  inline bool ResourceOwnerHasBeenSet() const { return m_resourceOwnerHasBeenSet; }
+  inline void SetResourceOwner(ResourceOwner value) {
+    m_resourceOwnerHasBeenSet = true;
+    m_resourceOwner = value;
+  }
+  inline ResourceSharePermissionSummary& WithResourceOwner(ResourceOwner value) {
+    SetResourceOwner(value);
     return *this;
   }
   ///@}
@@ -302,7 +350,11 @@ class ResourceSharePermissionSummary {
 
   PermissionFeatureSet m_featureSet{PermissionFeatureSet::NOT_SET};
 
+  Aws::Vector<PermissionTemplateParameter> m_permissionTemplateParameters;
+
   Aws::Vector<Tag> m_tags;
+
+  ResourceOwner m_resourceOwner{ResourceOwner::NOT_SET};
   bool m_arnHasBeenSet = false;
   bool m_versionHasBeenSet = false;
   bool m_defaultVersionHasBeenSet = false;
@@ -314,7 +366,9 @@ class ResourceSharePermissionSummary {
   bool m_isResourceTypeDefaultHasBeenSet = false;
   bool m_permissionTypeHasBeenSet = false;
   bool m_featureSetHasBeenSet = false;
+  bool m_permissionTemplateParametersHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_resourceOwnerHasBeenSet = false;
 };
 
 }  // namespace Model

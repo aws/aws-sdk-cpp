@@ -10,7 +10,7 @@
 namespace Aws {
 namespace RAM {
 namespace Model {
-enum class PermissionStatus { NOT_SET, ATTACHABLE, UNATTACHABLE, DELETING, DELETED };
+enum class PermissionStatus { NOT_SET, ATTACHABLE, UNATTACHABLE, DELETING, DELETED, DEPRECATED };
 
 namespace PermissionStatusMapper {
 AWS_RAM_API PermissionStatus GetPermissionStatusForName(const Aws::String& name);

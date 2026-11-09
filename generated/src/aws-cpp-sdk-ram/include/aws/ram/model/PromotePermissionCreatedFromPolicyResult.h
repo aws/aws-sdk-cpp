@@ -29,7 +29,11 @@ class PromotePermissionCreatedFromPolicyResult {
   AWS_RAM_API PromotePermissionCreatedFromPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   ///@{
-
+  /**
+   * <p>The details of the promoted customer managed permission, including its <a
+   * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+   * Resource Name (ARN)</a>, version, and status.</p>
+   */
   inline const ResourceSharePermissionSummary& GetPermission() const { return m_permission; }
   template <typename PermissionT = ResourceSharePermissionSummary>
   void SetPermission(PermissionT&& value) {

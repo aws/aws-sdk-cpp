@@ -78,6 +78,14 @@ WorkGroupConfiguration& WorkGroupConfiguration::operator=(JsonView jsonValue) {
     m_queryResultsS3AccessGrantsConfiguration = jsonValue.GetObject("QueryResultsS3AccessGrantsConfiguration");
     m_queryResultsS3AccessGrantsConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("SystemTableStatuses")) {
+    Aws::Utils::Array<JsonView> systemTableStatusesJsonList = jsonValue.GetArray("SystemTableStatuses");
+    for (unsigned systemTableStatusesIndex = 0; systemTableStatusesIndex < systemTableStatusesJsonList.GetLength();
+         ++systemTableStatusesIndex) {
+      m_systemTableStatuses.push_back(systemTableStatusesJsonList[systemTableStatusesIndex].AsObject());
+    }
+    m_systemTableStatusesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -142,6 +150,15 @@ JsonValue WorkGroupConfiguration::Jsonize() const {
 
   if (m_queryResultsS3AccessGrantsConfigurationHasBeenSet) {
     payload.WithObject("QueryResultsS3AccessGrantsConfiguration", m_queryResultsS3AccessGrantsConfiguration.Jsonize());
+  }
+
+  if (m_systemTableStatusesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> systemTableStatusesJsonList(m_systemTableStatuses.size());
+    for (unsigned systemTableStatusesIndex = 0; systemTableStatusesIndex < systemTableStatusesJsonList.GetLength();
+         ++systemTableStatusesIndex) {
+      systemTableStatusesJsonList[systemTableStatusesIndex].AsObject(m_systemTableStatuses[systemTableStatusesIndex].Jsonize());
+    }
+    payload.WithArray("SystemTableStatuses", std::move(systemTableStatusesJsonList));
   }
 
   return payload;

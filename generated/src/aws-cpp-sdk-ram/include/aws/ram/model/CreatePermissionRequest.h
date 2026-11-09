@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ram/RAMRequest.h>
 #include <aws/ram/RAM_EXPORTS.h>
+#include <aws/ram/model/PermissionTemplateParameterDeclaration.h>
 #include <aws/ram/model/Tag.h>
 
 #include <utility>
@@ -112,6 +113,37 @@ class CreatePermissionRequest : public RAMRequest {
 
   ///@{
   /**
+   * <p>Specifies a list of template parameter declarations for this permission. Each
+   * declaration defines a named placeholder that can be used in the policy template
+   * using the syntax <code>@{parameterName}</code>. Template parameters can only
+   * appear in Condition Key and Condition Value fields of the policy. When you
+   * associate this permission with a resource share, you must provide values for all
+   * declared parameters.</p>
+   */
+  inline const Aws::Vector<PermissionTemplateParameterDeclaration>& GetPermissionTemplateParameters() const {
+    return m_permissionTemplateParameters;
+  }
+  inline bool PermissionTemplateParametersHasBeenSet() const { return m_permissionTemplateParametersHasBeenSet; }
+  template <typename PermissionTemplateParametersT = Aws::Vector<PermissionTemplateParameterDeclaration>>
+  void SetPermissionTemplateParameters(PermissionTemplateParametersT&& value) {
+    m_permissionTemplateParametersHasBeenSet = true;
+    m_permissionTemplateParameters = std::forward<PermissionTemplateParametersT>(value);
+  }
+  template <typename PermissionTemplateParametersT = Aws::Vector<PermissionTemplateParameterDeclaration>>
+  CreatePermissionRequest& WithPermissionTemplateParameters(PermissionTemplateParametersT&& value) {
+    SetPermissionTemplateParameters(std::forward<PermissionTemplateParametersT>(value));
+    return *this;
+  }
+  template <typename PermissionTemplateParametersT = PermissionTemplateParameterDeclaration>
+  CreatePermissionRequest& AddPermissionTemplateParameters(PermissionTemplateParametersT&& value) {
+    m_permissionTemplateParametersHasBeenSet = true;
+    m_permissionTemplateParameters.emplace_back(std::forward<PermissionTemplateParametersT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Specifies a unique, case-sensitive identifier that you provide to ensure the
    * idempotency of the request. This lets you safely retry the request without
    * accidentally performing the same operation a second time. Passing the same value
@@ -168,12 +200,15 @@ class CreatePermissionRequest : public RAMRequest {
 
   Aws::String m_policyTemplate;
 
+  Aws::Vector<PermissionTemplateParameterDeclaration> m_permissionTemplateParameters;
+
   Aws::String m_clientToken;
 
   Aws::Vector<Tag> m_tags;
   bool m_nameHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
   bool m_policyTemplateHasBeenSet = false;
+  bool m_permissionTemplateParametersHasBeenSet = false;
   bool m_clientTokenHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };

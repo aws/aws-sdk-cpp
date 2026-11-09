@@ -33,6 +33,10 @@ Aws::String DescribeScalingActivitiesRequest::SerializePayload() const {
     ss << "IncludeDeletedGroups=" << std::boolalpha << m_includeDeletedGroups << "&";
   }
 
+  if (m_includeManagedResourcesHasBeenSet) {
+    ss << "IncludeManagedResources=" << std::boolalpha << m_includeManagedResources << "&";
+  }
+
   if (m_maxRecordsHasBeenSet) {
     ss << "MaxRecords=" << m_maxRecords << "&";
   }

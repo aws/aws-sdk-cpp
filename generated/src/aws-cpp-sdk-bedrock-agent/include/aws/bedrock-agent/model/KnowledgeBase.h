@@ -7,6 +7,7 @@
 #include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
 #include <aws/bedrock-agent/model/KnowledgeBaseConfiguration.h>
 #include <aws/bedrock-agent/model/KnowledgeBaseStatus.h>
+#include <aws/bedrock-agent/model/MetadataConfiguration.h>
 #include <aws/bedrock-agent/model/StorageConfiguration.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -244,6 +245,35 @@ class KnowledgeBase {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The custom metadata field configurations of the knowledge base. Each
+   * configuration specifies whether its field is searchable (<code>ENABLED</code> or
+   * <code>DISABLED</code>).</p> <p>If the update fails, the knowledge base status
+   * becomes <code>UPDATE_UNSUCCESSFUL</code>, the field configurations revert to
+   * their previous values, and <code>failureReasons</code> describes the cause. You
+   * can retry the update from <code>UPDATE_UNSUCCESSFUL</code>.</p>
+   */
+  inline const Aws::Vector<MetadataConfiguration>& GetMetadataConfigurations() const { return m_metadataConfigurations; }
+  inline bool MetadataConfigurationsHasBeenSet() const { return m_metadataConfigurationsHasBeenSet; }
+  template <typename MetadataConfigurationsT = Aws::Vector<MetadataConfiguration>>
+  void SetMetadataConfigurations(MetadataConfigurationsT&& value) {
+    m_metadataConfigurationsHasBeenSet = true;
+    m_metadataConfigurations = std::forward<MetadataConfigurationsT>(value);
+  }
+  template <typename MetadataConfigurationsT = Aws::Vector<MetadataConfiguration>>
+  KnowledgeBase& WithMetadataConfigurations(MetadataConfigurationsT&& value) {
+    SetMetadataConfigurations(std::forward<MetadataConfigurationsT>(value));
+    return *this;
+  }
+  template <typename MetadataConfigurationsT = MetadataConfiguration>
+  KnowledgeBase& AddMetadataConfigurations(MetadataConfigurationsT&& value) {
+    m_metadataConfigurationsHasBeenSet = true;
+    m_metadataConfigurations.emplace_back(std::forward<MetadataConfigurationsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_knowledgeBaseId;
 
@@ -266,6 +296,8 @@ class KnowledgeBase {
   Aws::Utils::DateTime m_updatedAt{};
 
   Aws::Vector<Aws::String> m_failureReasons;
+
+  Aws::Vector<MetadataConfiguration> m_metadataConfigurations;
   bool m_knowledgeBaseIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_knowledgeBaseArnHasBeenSet = false;
@@ -277,6 +309,7 @@ class KnowledgeBase {
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_failureReasonsHasBeenSet = false;
+  bool m_metadataConfigurationsHasBeenSet = false;
 };
 
 }  // namespace Model

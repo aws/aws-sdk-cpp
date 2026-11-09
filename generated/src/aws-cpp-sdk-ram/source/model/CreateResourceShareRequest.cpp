@@ -67,6 +67,16 @@ Aws::String CreateResourceShareRequest::SerializePayload() const {
     payload.WithArray("sources", std::move(sourcesJsonList));
   }
 
+  if (m_permissionTemplateParametersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> permissionTemplateParametersJsonList(m_permissionTemplateParameters.size());
+    for (unsigned permissionTemplateParametersIndex = 0;
+         permissionTemplateParametersIndex < permissionTemplateParametersJsonList.GetLength(); ++permissionTemplateParametersIndex) {
+      permissionTemplateParametersJsonList[permissionTemplateParametersIndex].AsObject(
+          m_permissionTemplateParameters[permissionTemplateParametersIndex].Jsonize());
+    }
+    payload.WithArray("permissionTemplateParameters", std::move(permissionTemplateParametersJsonList));
+  }
+
   if (m_resourceShareConfigurationHasBeenSet) {
     payload.WithObject("resourceShareConfiguration", m_resourceShareConfiguration.Jsonize());
   }

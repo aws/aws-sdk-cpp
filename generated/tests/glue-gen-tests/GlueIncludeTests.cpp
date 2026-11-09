@@ -699,6 +699,7 @@
 #include <aws/glue/model/GlueSchema.h>
 #include <aws/glue/model/GlueStudioSchemaColumn.h>
 #include <aws/glue/model/GlueTable.h>
+#include <aws/glue/model/GovernanceMode.h>
 #include <aws/glue/model/GovernedCatalogSource.h>
 #include <aws/glue/model/GovernedCatalogTarget.h>
 #include <aws/glue/model/GrokClassifier.h>
