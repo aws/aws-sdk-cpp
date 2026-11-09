@@ -6,6 +6,10 @@ package com.amazonaws.util.awsclientsmithygenerator.generators.model;
 
 import org.junit.jupiter.api.Test;
 import software.amazon.smithy.model.Model;
+import software.amazon.smithy.model.shapes.BigDecimalShape;
+import software.amazon.smithy.model.shapes.BigIntegerShape;
+import software.amazon.smithy.model.shapes.ByteShape;
+import software.amazon.smithy.model.shapes.ShortShape;
 import software.amazon.smithy.model.shapes.BlobShape;
 import software.amazon.smithy.model.shapes.BooleanShape;
 import software.amazon.smithy.model.shapes.DocumentShape;
@@ -23,6 +27,7 @@ import software.amazon.smithy.model.shapes.TimestampShape;
 import software.amazon.smithy.model.shapes.UnionShape;
 
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -791,5 +796,112 @@ class CppTypeMapperTest {
         assertEquals(List.of(
             "<aws/core/utils/memory/stl/AWSVector.h>",
             "<aws/myservice/model/Item.h>"), includes);
+    }
+
+    // --- bigInteger / bigDecimal tests ---
+
+    private static ListShape listOf(String id, Shape element) {
+        return ListShape.builder().id(id)
+            .member(MemberShape.builder().id(id + "$member").target(element.getId()).build()).build();
+    }
+
+    @Test
+    void bigIntegerShape_mapsToCrtBigInteger() {
+        BigIntegerShape shape = BigIntegerShape.builder().id("com.example#Big").build();
+        Model model = Model.builder().addShape(shape).build();
+        assertEquals("Aws::Crt::BigInteger", CppTypeMapper.getCppType(shape, model));
+    }
+
+    @Test
+    void bigNumbers_wideIntegers_areNotWidened() {
+        BigIntegerShape bi = BigIntegerShape.builder().id("com.example#Big").build();
+        BigDecimalShape bd = BigDecimalShape.builder().id("com.example#Dec").build();
+        Model model = Model.builder().addShapes(bi, bd).build();
+        assertEquals("Aws::Crt::BigInteger", CppTypeMapper.getCppType(bi, model, true));
+        assertEquals("Aws::Crt::BigDecimal", CppTypeMapper.getCppType(bd, model, true));
+    }
+
+    @Test
+    void sparseListOfBigDecimal_wrapsElementInOptional() {
+        BigDecimalShape bd = BigDecimalShape.builder().id("com.example#Dec").build();
+        ListShape list = ListShape.builder().id("com.example#DecList")
+            .member(MemberShape.builder().id("com.example#DecList$member").target(bd.getId()).build())
+            .addTrait(new software.amazon.smithy.model.traits.SparseTrait()).build();
+        Model model = Model.builder().addShapes(bd, list).build();
+        assertEquals("Aws::Vector<Aws::Crt::Optional<Aws::Crt::BigDecimal>>",
+            CppTypeMapper.getCppType(list, model));
+    }
+
+    @Test
+    void defaultValue_bigNumbers_isValueInitialized() {
+        // Same precedent as blob / timestamp: Type m_field{}; (zero-valued default construction).
+        assertEquals(java.util.Optional.of(""),
+            CppTypeMapper.getDefaultValue(BigIntegerShape.builder().id("com.example#Big").build()));
+        assertEquals(java.util.Optional.of(""),
+            CppTypeMapper.getDefaultValue(BigDecimalShape.builder().id("com.example#Dec").build()));
+    }
+
+    @Test
+    void bigNumbers_areNotPrimitive_butNeedHasBeenSetFlag() {
+        BigIntegerShape bi = BigIntegerShape.builder().id("com.example#Big").build();
+        BigDecimalShape bd = BigDecimalShape.builder().id("com.example#Dec").build();
+        assertFalse(CppTypeMapper.isPrimitive(bi));
+        assertFalse(CppTypeMapper.isPrimitive(bd));
+        assertTrue(CppTypeMapper.needsHasBeenSetFlag(bi));
+        assertTrue(CppTypeMapper.needsHasBeenSetFlag(bd));
+    }
+
+    @Test
+    void includeForBigNumbers_isCrtHeader() {
+        BigIntegerShape bi = BigIntegerShape.builder().id("com.example#Big").build();
+        BigDecimalShape bd = BigDecimalShape.builder().id("com.example#Dec").build();
+        Model model = Model.builder().addShapes(bi, bd).build();
+        assertEquals(java.util.Optional.of("<aws/crt/BigInteger.h>"),
+            CppTypeMapper.getIncludeForMemberType(bi, model, "myservice"));
+        assertEquals(java.util.Optional.of("<aws/crt/BigDecimal.h>"),
+            CppTypeMapper.getIncludeForMemberType(bd, model, "myservice"));
+    }
+
+    @Test
+    void includesForShape_bigNumbersNestedInContainers_surfaceCrtHeaders() {
+        BigIntegerShape bi = BigIntegerShape.builder().id("com.example#Big").build();
+        BigDecimalShape bd = BigDecimalShape.builder().id("com.example#Dec").build();
+        StringShape str = StringShape.builder().id("com.example#Str").build();
+        ListShape list = listOf("com.example#BigList", bi);
+        MapShape map = MapShape.builder().id("com.example#DecMap")
+            .key(MemberShape.builder().id("com.example#DecMap$key").target(str.getId()).build())
+            .value(MemberShape.builder().id("com.example#DecMap$value").target(bd.getId()).build())
+            .addTrait(new software.amazon.smithy.model.traits.SparseTrait()).build();
+        StructureShape holder = StructureShape.builder().id("com.example#Holder")
+            .addMember("ids", list.getId()).addMember("amounts", map.getId()).build();
+        Model model = Model.builder().addShapes(bi, bd, str, list, map, holder).build();
+        List<String> includes = CppTypeMapper.getIncludesForShape(holder, model, "myservice");
+        assertTrue(includes.contains("<aws/crt/BigInteger.h>"), includes.toString());
+        assertTrue(includes.contains("<aws/crt/BigDecimal.h>"), includes.toString());
+        assertTrue(includes.contains("<aws/crt/Optional.h>"), includes.toString());
+    }
+
+    // --- byte / short tests ---
+
+    @Test
+    void byteAndShort_mapToFixedWidthSignedTypes() {
+        ByteShape b = ByteShape.builder().id("com.example#B").build();
+        ShortShape s = ShortShape.builder().id("com.example#S").build();
+        Model model = Model.builder().addShapes(b, s).build();
+        assertEquals("int8_t", CppTypeMapper.getCppType(b, model));
+        assertEquals("int16_t", CppTypeMapper.getCppType(s, model));
+        assertEquals("int8_t", CppTypeMapper.getCppType(b, model, true));
+        assertEquals("int16_t", CppTypeMapper.getCppType(s, model, true));
+    }
+
+    @Test
+    void byteAndShort_arePrimitivesWithZeroDefaultAndHasBeenSet() {
+        ByteShape b = ByteShape.builder().id("com.example#B").build();
+        ShortShape s = ShortShape.builder().id("com.example#S").build();
+        for (Shape shape : new Shape[] {b, s}) {
+            assertTrue(CppTypeMapper.isPrimitive(shape));
+            assertTrue(CppTypeMapper.needsHasBeenSetFlag(shape));
+            assertEquals(Optional.of("0"), CppTypeMapper.getDefaultValue(shape));
+        }
     }
 }
