@@ -217,6 +217,7 @@
 #include <aws/connect/model/ListQueuesResult.h>
 #include <aws/connect/model/ListQuickConnectsResult.h>
 #include <aws/connect/model/ListRealtimeContactAnalysisSegmentsV2Result.h>
+#include <aws/connect/model/ListReplicationFindingsResult.h>
 #include <aws/connect/model/ListRoutingProfileManualAssignmentQueuesResult.h>
 #include <aws/connect/model/ListRoutingProfileQueuesResult.h>
 #include <aws/connect/model/ListRoutingProfilesResult.h>
@@ -335,6 +336,7 @@
 #include <aws/connect/model/UpdateMetricContentResult.h>
 #include <aws/connect/model/UpdateMetricMetadataResult.h>
 #include <aws/connect/model/UpdateNotificationContentResult.h>
+#include <aws/connect/model/UpdateOutboundEmailContactMessageResult.h>
 #include <aws/connect/model/UpdateParticipantAuthenticationResult.h>
 #include <aws/connect/model/UpdateParticipantRoleConfigResult.h>
 #include <aws/connect/model/UpdatePhoneNumberResult.h>
@@ -621,6 +623,7 @@ class ListQueueQuickConnectsRequest;
 class ListQueuesRequest;
 class ListQuickConnectsRequest;
 class ListRealtimeContactAnalysisSegmentsV2Request;
+class ListReplicationFindingsRequest;
 class ListRoutingProfileManualAssignmentQueuesRequest;
 class ListRoutingProfileQueuesRequest;
 class ListRoutingProfilesRequest;
@@ -745,6 +748,7 @@ class UpdateInstanceStorageConfigRequest;
 class UpdateMetricContentRequest;
 class UpdateMetricMetadataRequest;
 class UpdateNotificationContentRequest;
+class UpdateOutboundEmailContactMessageRequest;
 class UpdateParticipantAuthenticationRequest;
 class UpdateParticipantRoleConfigRequest;
 class UpdatePhoneNumberRequest;
@@ -1026,6 +1030,7 @@ typedef Aws::Utils::Outcome<ListQueueQuickConnectsResult, ConnectError> ListQueu
 typedef Aws::Utils::Outcome<ListQueuesResult, ConnectError> ListQueuesOutcome;
 typedef Aws::Utils::Outcome<ListQuickConnectsResult, ConnectError> ListQuickConnectsOutcome;
 typedef Aws::Utils::Outcome<ListRealtimeContactAnalysisSegmentsV2Result, ConnectError> ListRealtimeContactAnalysisSegmentsV2Outcome;
+typedef Aws::Utils::Outcome<ListReplicationFindingsResult, ConnectError> ListReplicationFindingsOutcome;
 typedef Aws::Utils::Outcome<ListRoutingProfileManualAssignmentQueuesResult, ConnectError> ListRoutingProfileManualAssignmentQueuesOutcome;
 typedef Aws::Utils::Outcome<ListRoutingProfileQueuesResult, ConnectError> ListRoutingProfileQueuesOutcome;
 typedef Aws::Utils::Outcome<ListRoutingProfilesResult, ConnectError> ListRoutingProfilesOutcome;
@@ -1150,6 +1155,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateInstanceStorageCo
 typedef Aws::Utils::Outcome<UpdateMetricContentResult, ConnectError> UpdateMetricContentOutcome;
 typedef Aws::Utils::Outcome<UpdateMetricMetadataResult, ConnectError> UpdateMetricMetadataOutcome;
 typedef Aws::Utils::Outcome<UpdateNotificationContentResult, ConnectError> UpdateNotificationContentOutcome;
+typedef Aws::Utils::Outcome<UpdateOutboundEmailContactMessageResult, ConnectError> UpdateOutboundEmailContactMessageOutcome;
 typedef Aws::Utils::Outcome<UpdateParticipantAuthenticationResult, ConnectError> UpdateParticipantAuthenticationOutcome;
 typedef Aws::Utils::Outcome<UpdateParticipantRoleConfigResult, ConnectError> UpdateParticipantRoleConfigOutcome;
 typedef Aws::Utils::Outcome<UpdatePhoneNumberResult, ConnectError> UpdatePhoneNumberOutcome;
@@ -1431,6 +1437,7 @@ typedef std::future<ListQueueQuickConnectsOutcome> ListQueueQuickConnectsOutcome
 typedef std::future<ListQueuesOutcome> ListQueuesOutcomeCallable;
 typedef std::future<ListQuickConnectsOutcome> ListQuickConnectsOutcomeCallable;
 typedef std::future<ListRealtimeContactAnalysisSegmentsV2Outcome> ListRealtimeContactAnalysisSegmentsV2OutcomeCallable;
+typedef std::future<ListReplicationFindingsOutcome> ListReplicationFindingsOutcomeCallable;
 typedef std::future<ListRoutingProfileManualAssignmentQueuesOutcome> ListRoutingProfileManualAssignmentQueuesOutcomeCallable;
 typedef std::future<ListRoutingProfileQueuesOutcome> ListRoutingProfileQueuesOutcomeCallable;
 typedef std::future<ListRoutingProfilesOutcome> ListRoutingProfilesOutcomeCallable;
@@ -1555,6 +1562,7 @@ typedef std::future<UpdateInstanceStorageConfigOutcome> UpdateInstanceStorageCon
 typedef std::future<UpdateMetricContentOutcome> UpdateMetricContentOutcomeCallable;
 typedef std::future<UpdateMetricMetadataOutcome> UpdateMetricMetadataOutcomeCallable;
 typedef std::future<UpdateNotificationContentOutcome> UpdateNotificationContentOutcomeCallable;
+typedef std::future<UpdateOutboundEmailContactMessageOutcome> UpdateOutboundEmailContactMessageOutcomeCallable;
 typedef std::future<UpdateParticipantAuthenticationOutcome> UpdateParticipantAuthenticationOutcomeCallable;
 typedef std::future<UpdateParticipantRoleConfigOutcome> UpdateParticipantRoleConfigOutcomeCallable;
 typedef std::future<UpdatePhoneNumberOutcome> UpdatePhoneNumberOutcomeCallable;
@@ -2364,6 +2372,9 @@ typedef std::function<void(const ConnectClient*, const Model::ListRealtimeContac
                            const Model::ListRealtimeContactAnalysisSegmentsV2Outcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListRealtimeContactAnalysisSegmentsV2ResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::ListReplicationFindingsRequest&, const Model::ListReplicationFindingsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListReplicationFindingsResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::ListRoutingProfileManualAssignmentQueuesRequest&,
                            const Model::ListRoutingProfileManualAssignmentQueuesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -2752,6 +2763,10 @@ typedef std::function<void(const ConnectClient*, const Model::UpdateMetricMetada
 typedef std::function<void(const ConnectClient*, const Model::UpdateNotificationContentRequest&,
                            const Model::UpdateNotificationContentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateNotificationContentResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::UpdateOutboundEmailContactMessageRequest&,
+                           const Model::UpdateOutboundEmailContactMessageOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateOutboundEmailContactMessageResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::UpdateParticipantAuthenticationRequest&,
                            const Model::UpdateParticipantAuthenticationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

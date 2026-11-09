@@ -84,6 +84,14 @@ PendingProductionVariantSummary& PendingProductionVariantSummary::operator=(Json
     m_routingConfig = jsonValue.GetObject("RoutingConfig");
     m_routingConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AcceleratorPartitionLayouts")) {
+    Aws::Utils::Array<JsonView> acceleratorPartitionLayoutsJsonList = jsonValue.GetArray("AcceleratorPartitionLayouts");
+    for (unsigned acceleratorPartitionLayoutsIndex = 0; acceleratorPartitionLayoutsIndex < acceleratorPartitionLayoutsJsonList.GetLength();
+         ++acceleratorPartitionLayoutsIndex) {
+      m_acceleratorPartitionLayouts.push_back(acceleratorPartitionLayoutsJsonList[acceleratorPartitionLayoutsIndex].AsObject());
+    }
+    m_acceleratorPartitionLayoutsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -157,6 +165,16 @@ JsonValue PendingProductionVariantSummary::Jsonize() const {
 
   if (m_routingConfigHasBeenSet) {
     payload.WithObject("RoutingConfig", m_routingConfig.Jsonize());
+  }
+
+  if (m_acceleratorPartitionLayoutsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> acceleratorPartitionLayoutsJsonList(m_acceleratorPartitionLayouts.size());
+    for (unsigned acceleratorPartitionLayoutsIndex = 0; acceleratorPartitionLayoutsIndex < acceleratorPartitionLayoutsJsonList.GetLength();
+         ++acceleratorPartitionLayoutsIndex) {
+      acceleratorPartitionLayoutsJsonList[acceleratorPartitionLayoutsIndex].AsObject(
+          m_acceleratorPartitionLayouts[acceleratorPartitionLayoutsIndex].Jsonize());
+    }
+    payload.WithArray("AcceleratorPartitionLayouts", std::move(acceleratorPartitionLayoutsJsonList));
   }
 
   return payload;

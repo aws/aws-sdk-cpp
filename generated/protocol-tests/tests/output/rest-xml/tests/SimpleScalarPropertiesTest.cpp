@@ -7,6 +7,9 @@
 #include <aws/rest-xml-protocol/model/SimpleScalarPropertiesRequest.h>
 #include <aws/testing/AwsProtocolTestHelpers.h>
 
+#include <cmath>
+#include <limits>
+
 using SimpleScalarProperties = AWS_PROTOCOL_TEST_SUITE;
 using RestXmlProtocolClient = Aws::RestXmlProtocol::RestXmlProtocolClient;
 using namespace Aws::RestXmlProtocol::Model;
@@ -16,7 +19,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, SimpleScalarProperties) {
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
-  mockRs.headers = {{"Content-Type", R"(application/xml)"}, {"X-Foo", R"(Foo)"}};
+  mockRs.headers = {{"X-Foo", R"(Foo)"}, {"Content-Type", R"(application/xml)"}};
   mockRs.body =
       "PFNpbXBsZVNjYWxhclByb3BlcnRpZXNSZXNwb25zZT4KICAgIDxzdHJpbmdWYWx1ZT5zdHJpbmc8L3N0cmluZ1ZhbHVlPgogICAgPHRydWVCb29sZWFuVmFsdWU+"
       "dHJ1ZTwvdHJ1ZUJvb2xlYW5WYWx1ZT4KICAgIDxmYWxzZUJvb2xlYW5WYWx1ZT5mYWxzZTwvZmFsc2VCb29sZWFuVmFsdWU+"
@@ -52,7 +55,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, SimpleScalarPropertiesComplexEscapes) 
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
-  mockRs.headers = {{"Content-Type", R"(application/xml)"}, {"X-Foo", R"(Foo)"}};
+  mockRs.headers = {{"X-Foo", R"(Foo)"}, {"Content-Type", R"(application/xml)"}};
   mockRs.body =
       "PFNpbXBsZVNjYWxhclByb3BlcnRpZXNSZXNwb25zZT4KICAgIDxzdHJpbmdWYWx1ZT5lc2NhcGVkIGRhdGE6ICZhbXA7bHQ7JiN4RDsmIzEwOzwvc3RyaW5nVmFsdWU+"
       "CjwvU2ltcGxlU2NhbGFyUHJvcGVydGllc1Jlc3BvbnNlPgo=";
@@ -77,7 +80,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, SimpleScalarPropertiesWithEscapedChara
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
-  mockRs.headers = {{"Content-Type", R"(application/xml)"}, {"X-Foo", R"(Foo)"}};
+  mockRs.headers = {{"X-Foo", R"(Foo)"}, {"Content-Type", R"(application/xml)"}};
   mockRs.body =
       "PFNpbXBsZVNjYWxhclByb3BlcnRpZXNSZXNwb25zZT4KICAgIDxzdHJpbmdWYWx1ZT4mbHQ7c3RyaW5nJmd0Ozwvc3RyaW5nVmFsdWU+"
       "CjwvU2ltcGxlU2NhbGFyUHJvcGVydGllc1Jlc3BvbnNlPgo=";
@@ -100,7 +103,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, SimpleScalarPropertiesWithXMLPreamble)
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
-  mockRs.headers = {{"Content-Type", R"(application/xml)"}, {"X-Foo", R"(Foo)"}};
+  mockRs.headers = {{"X-Foo", R"(Foo)"}, {"Content-Type", R"(application/xml)"}};
   mockRs.body =
       "PD94bWwgdmVyc2lvbiA9ICIxLjAiIGVuY29kaW5nID0gIlVURi04Ij8+CjxTaW1wbGVTY2FsYXJQcm9wZXJ0aWVzUmVzcG9uc2U+"
       "CiAgICA8IVtDREFUQVtjaGFyYWN0ZXJzIHJlcHJlc2VudGluZyBDREFUQV1dPgogICAgPHN0cmluZ1ZhbHVlPnN0cmluZzwvc3RyaW5nVmFsdWU+"
@@ -124,7 +127,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, SimpleScalarPropertiesWithWhiteSpace) 
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
-  mockRs.headers = {{"Content-Type", R"(application/xml)"}, {"X-Foo", R"(Foo)"}};
+  mockRs.headers = {{"X-Foo", R"(Foo)"}, {"Content-Type", R"(application/xml)"}};
   mockRs.body =
       "PD94bWwgdmVyc2lvbiA9ICIxLjAiIGVuY29kaW5nID0gIlVURi04Ij8+CjxTaW1wbGVTY2FsYXJQcm9wZXJ0aWVzUmVzcG9uc2U+CiAgICA8c3RyaW5nVmFsdWU+"
       "IHN0cmluZyB3aXRoIHdoaXRlICAgIHNwYWNlIDwvc3RyaW5nVmFsdWU+CjwvU2ltcGxlU2NhbGFyUHJvcGVydGllc1Jlc3BvbnNlPgo=";
@@ -147,7 +150,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, SimpleScalarPropertiesPureWhiteSpace) 
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
-  mockRs.headers = {{"Content-Type", R"(application/xml)"}, {"X-Foo", R"(Foo)"}};
+  mockRs.headers = {{"X-Foo", R"(Foo)"}, {"Content-Type", R"(application/xml)"}};
   mockRs.body =
       "PD94bWwgdmVyc2lvbiA9ICIxLjAiIGVuY29kaW5nID0gIlVURi04Ij8+CjxTaW1wbGVTY2FsYXJQcm9wZXJ0aWVzUmVzcG9uc2U+CiAgICA8c3RyaW5nVmFsdWU+"
       "ICA8L3N0cmluZ1ZhbHVlPgo8L1NpbXBsZVNjYWxhclByb3BlcnRpZXNSZXNwb25zZT4K";

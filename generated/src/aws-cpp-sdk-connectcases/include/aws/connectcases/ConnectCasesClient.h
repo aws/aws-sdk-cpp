@@ -20,13 +20,13 @@ namespace ConnectCases {
  * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Connect_Cases.html">Cases
  * actions</a> </p> </li> <li> <p> <a
  * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_Types_Amazon_Connect_Cases.html">Cases
- * data types</a> </p> </li> </ul> <p>With Amazon Connect Cases, your agents can
+ * data types</a> </p> </li> </ul> <p>With Connect Customer Cases, your agents can
  * track and manage customer issues that require multiple interactions, follow-up
  * tasks, and teams in your contact center. A case represents a customer issue. It
  * records the issue, the steps and interactions taken to resolve the issue, and
  * the outcome. For more information, see <a
- * href="https://docs.aws.amazon.com/connect/latest/adminguide/cases.html">Amazon
- * Connect Cases</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
+ * href="https://docs.aws.amazon.com/connect/latest/adminguide/cases.html">Connect
+ * Customer Cases</a> in the <i>Connect Customer Administrator Guide</i>.</p>
  */
 class AWS_CONNECTCASES_API ConnectCasesClient : public Aws::Client::AWSJsonClient,
                                                 public Aws::Client::ClientWithAsyncTemplateMethods<ConnectCasesClient>,
@@ -89,7 +89,55 @@ class AWS_CONNECTCASES_API ConnectCasesClient : public Aws::Client::AWSJsonClien
   virtual ~ConnectCasesClient();
 
   /**
-   * <p>Gets a batch of case rules. In the Amazon Connect admin website, case rules
+   * <p>Creates a comment and associates it with multiple cases in a single request.
+   * All cases must belong to the same domain. This operation supports only the
+   * Comment related item type.</p> <p>Each case is processed independently. If some
+   * cases fail, the remaining cases still receive the related item. To determine
+   * whether individual items failed, inspect the <code>failedItems</code> array in
+   * the response.</p> <p>The entire request fails, and no related items are created,
+   * in the following cases:</p> <ul> <li> <p>The specified domain doesn't exist.</p>
+   * </li> <li> <p>A reference ID doesn't match any case in the domain.</p> </li>
+   * <li> <p>The request contains duplicate case IDs.</p> </li> <li> <p>The content
+   * isn't comment content.</p> </li> </ul>  <p>This operation uses the same
+   * IAM action as <a
+   * href="https://docs.aws.amazon.com/cases/latest/APIReference/API_CreateRelatedItem.html">CreateRelatedItem</a>
+   * (<code>cases:CreateRelatedItem</code>). You can use the
+   * <code>cases:IsBatchAction</code> condition key in IAM policies to allow or deny
+   * batch operations independently from single-case operations.</p>
+   * <p>If you provide a value for <code>performedBy.userArn</code>, you must also
+   * have <a
+   * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
+   * permission on the ARN of the user that you provide.</p>  <p>
+   * <b>Endpoints</b>: See <a
+   * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+   * Customer endpoints and quotas</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/BatchCreateRelatedItem">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::BatchCreateRelatedItemOutcome BatchCreateRelatedItem(const Model::BatchCreateRelatedItemRequest& request) const;
+
+  /**
+   * A Callable wrapper for BatchCreateRelatedItem that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename BatchCreateRelatedItemRequestT = Model::BatchCreateRelatedItemRequest>
+  Model::BatchCreateRelatedItemOutcomeCallable BatchCreateRelatedItemCallable(const BatchCreateRelatedItemRequestT& request) const {
+    return SubmitCallable(&ConnectCasesClient::BatchCreateRelatedItem, request);
+  }
+
+  /**
+   * An Async wrapper for BatchCreateRelatedItem that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename BatchCreateRelatedItemRequestT = Model::BatchCreateRelatedItemRequest>
+  void BatchCreateRelatedItemAsync(const BatchCreateRelatedItemRequestT& request,
+                                   const BatchCreateRelatedItemResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectCasesClient::BatchCreateRelatedItem, request, handler, context);
+  }
+
+  /**
+   * <p>Gets a batch of case rules. In the Connect Customer admin website, case rules
    * are known as <i>case field conditions</i>. For more information about case field
    * conditions, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">Add
@@ -172,19 +220,76 @@ class AWS_CONNECTCASES_API ConnectCasesClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p> <p>If you provide a value for <code>PerformedBy.UserArn</code> you
-   * must also have <a
+   * <p>Updates fields on multiple cases in a single request. All cases must belong
+   * to the same domain. Set the title, status, and customer ID through the top-level
+   * <code>title</code>, <code>status</code>, and <code>customerId</code> parameters,
+   * and set other fields through the <code>fields</code> array.</p> <p>Each case is
+   * processed independently. If some cases fail, the remaining cases are still
+   * updated. To determine whether individual cases failed, inspect the
+   * <code>failedCases</code> array in the response.</p> <p>The entire request fails,
+   * and no cases are updated, in the following cases:</p> <ul> <li> <p>The specified
+   * domain doesn't exist.</p> </li> <li> <p>A reference ID doesn't match any case in
+   * the domain.</p> </li> <li> <p>The request contains duplicate case IDs.</p> </li>
+   * <li> <p>The request doesn't specify any update. Provide at least one entry in
+   * <code>fields</code>, or a <code>title</code>, <code>status</code>, or
+   * <code>customerId</code>.</p> </li> <li> <p>A field identifier in
+   * <code>fields</code> doesn't resolve to a field in the domain, for example, an
+   * unknown field name.</p> </li> <li> <p>A field name contains a pipe
+   * (<code>|</code>) or comma (<code>,</code>) character.</p> </li> <li> <p>
+   * <code>fields</code> includes <code>title</code>, <code>status</code>, or
+   * <code>customerId</code>.</p> </li> </ul>  <p>This operation uses the same
+   * IAM action as <a
+   * href="https://docs.aws.amazon.com/cases/latest/APIReference/API_UpdateCase.html">UpdateCase</a>
+   * (<code>cases:UpdateCase</code>). You can use the
+   * <code>cases:IsBatchAction</code> condition key in IAM policies to allow or deny
+   * batch operations independently from single-case operations.</p>
+   * <p>If you provide a value for <code>performedBy.userArn</code>, you must also
+   * have <a
+   * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
+   * permission on the ARN of the user that you provide.</p>  <p>
+   * <b>Endpoints</b>: See <a
+   * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+   * Customer endpoints and quotas</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/BatchUpdateCase">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::BatchUpdateCaseOutcome BatchUpdateCase(const Model::BatchUpdateCaseRequest& request) const;
+
+  /**
+   * A Callable wrapper for BatchUpdateCase that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename BatchUpdateCaseRequestT = Model::BatchUpdateCaseRequest>
+  Model::BatchUpdateCaseOutcomeCallable BatchUpdateCaseCallable(const BatchUpdateCaseRequestT& request) const {
+    return SubmitCallable(&ConnectCasesClient::BatchUpdateCase, request);
+  }
+
+  /**
+   * An Async wrapper for BatchUpdateCase that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename BatchUpdateCaseRequestT = Model::BatchUpdateCaseRequest>
+  void BatchUpdateCaseAsync(const BatchUpdateCaseRequestT& request, const BatchUpdateCaseResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectCasesClient::BatchUpdateCase, request, handler, context);
+  }
+
+  /**
+   * <p> <p>If you provide a value for <code>PerformedBy.UserArn</code>, you
+   * must also have the <a
    * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">connect:DescribeUser</a>
-   * permission on the User ARN resource that you provide</p>  <p>Creates a
-   * case in the specified Cases domain. Case system and custom fields are taken as
-   * an array id/value pairs with a declared data types.</p> <p>When creating a case
-   * from a template that has tag propagation configurations, the specified tags are
-   * automatically applied to the case.</p> <p>The following fields are required when
-   * creating a case:</p> <ul> <li> <p> <code>customer_id</code> - You must provide
-   * the full customer profile ARN in this format:
-   * <code>arn:aws:profile:your_AWS_Region:your_AWS_account
-   * ID:domains/your_profiles_domain_name/profiles/profile_ID</code> </p> </li> <li>
-   * <p> <code>title</code> </p> </li> </ul></p><p><h3>See Also:</h3>   <a
+   * permission on the user ARN that you provide.</p>  <p>Creates a case in
+   * the specified Cases domain. Case system and custom fields are taken as an array
+   * id/value pairs with a declared data types.</p> <p>When creating a case from a
+   * template that has tag propagation configurations, the specified tags are
+   * automatically applied to the case.</p> <p>The following field is always required
+   * when creating a case:</p> <ul> <li> <p> <code>title</code> </p> </li> </ul>
+   * <p>The following field may be required depending on the template
+   * configuration:</p> <ul> <li> <p> <code>customer_id</code> - Required only if the
+   * template's <code>requiredFields</code> list includes <code>customer_id</code>.
+   * When required, provide the full customer profile ARN in this format:
+   * <code>arn:aws:profile:your_AWS_Region:your_AWS_account_ID:domains/your_profiles_domain_name/profiles/profile_ID</code>.
+   * When not required, the field is optional and can be omitted, added, changed, or
+   * removed after case creation.</p> </li> </ul></p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/CreateCase">AWS
    * API Reference</a></p>
    */
@@ -209,8 +314,8 @@ class AWS_CONNECTCASES_API ConnectCasesClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Creates a new case rule. In the Amazon Connect admin website, case rules are
-   * known as <i>case field conditions</i>. For more information about case field
+   * <p>Creates a new case rule. In the Connect Customer admin website, case rules
+   * are known as <i>case field conditions</i>. For more information about case field
    * conditions, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">Add
    * case field conditions to a case template</a>.</p><p><h3>See Also:</h3>   <a
@@ -239,9 +344,9 @@ class AWS_CONNECTCASES_API ConnectCasesClient : public Aws::Client::AWSJsonClien
 
   /**
    * <p>Creates a domain, which is a container for all case data, such as cases,
-   * fields, templates and layouts. Each Amazon Connect instance can be associated
+   * fields, templates and layouts. Each Connect Customer instance can be associated
    * with only one Cases domain.</p>  <p>This will not associate your
-   * connect instance to Cases domain. Instead, use the Amazon Connect <a
+   * connect instance to Cases domain. Instead, use the Connect Customer <a
    * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateIntegrationAssociation.html">CreateIntegrationAssociation</a>
    * API. You need specific IAM permissions to successfully associate the Cases
    * domain. For more information, see <a
@@ -331,12 +436,12 @@ class AWS_CONNECTCASES_API ConnectCasesClient : public Aws::Client::AWSJsonClien
    * <p>Creates a related item (comments, tasks, and contacts) and associates it with
    * a case.</p> <p>There's a quota for the number of fields allowed in a Custom type
    * related item. See <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#cases-quotas">Amazon
-   * Connect Cases quotas</a>.</p> <p> <b>Use cases</b> </p> <p>Following are
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#cases-quotas">Connect
+   * Customer Cases quotas</a>.</p> <p> <b>Use cases</b> </p> <p>Following are
    * examples of related items that you may want to associate with a case:</p> <ul>
    * <li> <p>Related contacts, such as calls, chats, emails tasks</p> </li> <li>
    * <p>Comments, for agent notes</p> </li> <li> <p>SLAs, to capture target
-   * resolution goals</p> </li> <li> <p>Cases, to capture related Amazon Connect
+   * resolution goals</p> </li> <li> <p>Cases, to capture related Connect Customer
    * Cases</p> </li> <li> <p>Files, such as policy documentation or customer-provided
    * attachments</p> </li> <li> <p>Custom related items, which provide flexibility
    * for you to define related items that such as bookings, orders, products,
@@ -351,13 +456,12 @@ class AWS_CONNECTCASES_API ConnectCasesClient : public Aws::Client::AWSJsonClien
    * <code>contactArn</code>). All Related Items have their own internal identifier,
    * the <code>relatedItemArn</code>. Examples of related items include
    * <code>comments</code> and <code>contacts</code>.</p> </li> <li> <p>If you
-   * provide a value for <code>performedBy.userArn</code> you must also have <a
+   * provide a value for <code>performedBy.userArn</code>, you must also have <a
    * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
-   * permission on the ARN of the user that you provide.</p> </li> <li> <p>The
-   * <code>type</code> field is reserved for internal use only.</p> </li> </ul> <p>
+   * permission on the ARN of the user that you provide.</p> </li> </ul> <p>
    * <b>Endpoints</b>: See <a
-   * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-   * Connect endpoints and quotas</a>.</p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+   * Customer endpoints and quotas</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/CreateRelatedItem">AWS
    * API Reference</a></p>
    */
@@ -452,7 +556,7 @@ class AWS_CONNECTCASES_API ConnectCasesClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Deletes a case rule. In the Amazon Connect admin website, case rules are
+   * <p>Deletes a case rule. In the Connect Customer admin website, case rules are
    * known as <i>case field conditions</i>. For more information about case field
    * conditions, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">Add
@@ -482,9 +586,9 @@ class AWS_CONNECTCASES_API ConnectCasesClient : public Aws::Client::AWSJsonClien
 
   /**
    * <p>Deletes a Cases domain.</p>  <p>After deleting your domain you must
-   * disassociate the deleted domain from your Amazon Connect instance with another
-   * API call before being able to use Cases again with this Amazon Connect instance.
-   * See <a
+   * disassociate the deleted domain from your Connect Customer instance with another
+   * API call before being able to use Cases again with this Connect Customer
+   * instance. See <a
    * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteIntegrationAssociation.html">DeleteIntegrationAssociation</a>.</p>
    * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/DeleteDomain">AWS
@@ -511,7 +615,7 @@ class AWS_CONNECTCASES_API ConnectCasesClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Deletes a field from a cases template.</p> <p>After a field is deleted:</p>
+   * <p>Deletes a field from a Cases template.</p> <p>After a field is deleted:</p>
    * <ul> <li> <p>You can still retrieve the field by calling
    * <code>BatchGetField</code>.</p> </li> <li> <p>You cannot update a deleted field
    * by calling <code>UpdateField</code>; it throws a
@@ -560,7 +664,7 @@ class AWS_CONNECTCASES_API ConnectCasesClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Deletes a layout from a cases template. You can delete up to 100 layouts per
+   * <p>Deletes a layout from a Cases template. You can delete up to 100 layouts per
    * domain.</p> <p>After a layout is deleted:</p> <ul> <li> <p>You can still
    * retrieve the layout by calling <code>GetLayout</code>.</p> </li> <li> <p>You
    * cannot update a deleted layout by calling <code>UpdateLayout</code>; it throws a
@@ -621,8 +725,8 @@ class AWS_CONNECTCASES_API ConnectCasesClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Deletes a cases template. You can delete up to 100 templates per domain.</p>
-   * <p>After a cases template is deleted:</p> <ul> <li> <p>You can still retrieve
+   * <p>Deletes a Cases template. You can delete up to 100 templates per domain.</p>
+   * <p>After a Cases template is deleted:</p> <ul> <li> <p>You can still retrieve
    * the template by calling <code>GetTemplate</code>.</p> </li> <li> <p>You cannot
    * update the template. </p> </li> <li> <p>You cannot create a case by using the
    * deleted template.</p> </li> <li> <p>Deleted templates are not included in the
@@ -818,9 +922,9 @@ class AWS_CONNECTCASES_API ConnectCasesClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Lists all case rules in a Cases domain. In the Amazon Connect admin website,
-   * case rules are known as <i>case field conditions</i>. For more information about
-   * case field conditions, see <a
+   * <p>Lists all case rules in a Cases domain. In the Connect Customer admin
+   * website, case rules are known as <i>case field conditions</i>. For more
+   * information about case field conditions, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">Add
    * case field conditions to a case template</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/ListCaseRules">AWS
@@ -1042,8 +1146,8 @@ class AWS_CONNECTCASES_API ConnectCasesClient : public Aws::Client::AWSJsonClien
    * <p>Adds case event publishing configuration. For a complete list of fields you
    * can add to the event message, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/case-fields.html">Create
-   * case fields</a> in the <i>Amazon Connect Administrator Guide</i> </p><p><h3>See
-   * Also:</h3>   <a
+   * case fields</a> in the <i>Connect Customer Administrator
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/PutCaseEventConfiguration">AWS
    * API Reference</a></p>
    */
@@ -1092,8 +1196,8 @@ class AWS_CONNECTCASES_API ConnectCasesClient : public Aws::Client::AWSJsonClien
    * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_SearchCases.html">SearchCases</a>
    * API to search within case field values.</p> </li> </ul> <p> <b>Endpoints</b>:
    * See <a
-   * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-   * Connect endpoints and quotas</a>.</p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+   * Customer endpoints and quotas</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/SearchAllRelatedItems">AWS
    * API Reference</a></p>
    */
@@ -1227,14 +1331,14 @@ class AWS_CONNECTCASES_API ConnectCasesClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p> <p>If you provide a value for <code>PerformedBy.UserArn</code> you
-   * must also have <a
+   * <p> <p>If you provide a value for <code>PerformedBy.UserArn</code>, you
+   * must also have the <a
    * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">connect:DescribeUser</a>
-   * permission on the User ARN resource that you provide</p>  <p>Updates the
-   * values of fields on a case. Fields to be updated are received as an array of
-   * id/value pairs identical to the <code>CreateCase</code> input .</p> <p>If the
-   * action is successful, the service sends back an HTTP 200 response with an empty
-   * HTTP body.</p></p><p><h3>See Also:</h3>   <a
+   * permission on the user ARN that you provide.</p>  <p>Updates the values
+   * of fields on a case. Fields to be updated are received as an array of id/value
+   * pairs identical to the <code>CreateCase</code> input.</p> <p>If the action is
+   * successful, the service sends back an HTTP 200 response with an empty HTTP
+   * body.</p></p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/UpdateCase">AWS
    * API Reference</a></p>
    */
@@ -1259,7 +1363,7 @@ class AWS_CONNECTCASES_API ConnectCasesClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Updates a case rule. In the Amazon Connect admin website, case rules are
+   * <p>Updates a case rule. In the Connect Customer admin website, case rules are
    * known as <i>case field conditions</i>. For more information about case field
    * conditions, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">Add
@@ -1349,19 +1453,19 @@ class AWS_CONNECTCASES_API ConnectCasesClient : public Aws::Client::AWSJsonClien
    * the fields of a custom related item. You can add, modify, and remove fields from
    * a custom related item. There's a quota for the number of fields allowed in a
    * Custom type related item. See <a
-   * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#cases-quotas">Amazon
-   * Connect Cases quotas</a>.</p> </li> </ul> <p> <b>Important things to know</b>
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#cases-quotas">Connect
+   * Customer Cases quotas</a>.</p> </li> </ul> <p> <b>Important things to know</b>
    * </p> <ul> <li> <p>When updating a Custom related item, all existing and new
    * fields, and their associated values should be included in the request. Fields
    * not included as part of this request will be removed.</p> </li> <li> <p>If you
-   * provide a value for <code>performedBy.userArn</code> you must also have <a
+   * provide a value for <code>performedBy.userArn</code>, you must also have <a
    * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
    * permission on the ARN of the user that you provide.</p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/case-fields.html#system-case-fields">System
    * case fields</a> cannot be used in a custom related item.</p> </li> </ul> <p>
    * <b>Endpoints</b>: See <a
-   * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
-   * Connect endpoints and quotas</a>.</p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+   * Customer endpoints and quotas</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/UpdateRelatedItem">AWS
    * API Reference</a></p>
    */

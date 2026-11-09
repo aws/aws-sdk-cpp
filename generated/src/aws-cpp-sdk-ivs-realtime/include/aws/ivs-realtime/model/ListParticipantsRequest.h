@@ -73,7 +73,7 @@ class ListParticipantsRequest : public IvsrealtimeRequest {
    * <code>filterByState</code>, or <code>filterByRecordingState</code> can be
    * provided per request. A <code>userId</code> is a customer-assigned name to help
    * identify the token; this can be used to link a participant to a user in the
-   * customer’s own systems.</p>
+   * customer���s own systems.</p>
    */
   inline const Aws::String& GetFilterByUserId() const { return m_filterByUserId; }
   inline bool FilterByUserIdHasBeenSet() const { return m_filterByUserIdHasBeenSet; }

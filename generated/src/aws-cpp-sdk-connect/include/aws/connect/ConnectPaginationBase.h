@@ -52,6 +52,7 @@
 #include <aws/connect/model/ListQueuesPaginationTraits.h>
 #include <aws/connect/model/ListQuickConnectsPaginationTraits.h>
 #include <aws/connect/model/ListRealtimeContactAnalysisSegmentsV2PaginationTraits.h>
+#include <aws/connect/model/ListReplicationFindingsPaginationTraits.h>
 #include <aws/connect/model/ListRoutingProfileManualAssignmentQueuesPaginationTraits.h>
 #include <aws/connect/model/ListRoutingProfileQueuesPaginationTraits.h>
 #include <aws/connect/model/ListRoutingProfilesPaginationTraits.h>
@@ -661,6 +662,18 @@ class ConnectPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRealtimeContactAnalysisSegmentsV2Request,
                                              Pagination::ListRealtimeContactAnalysisSegmentsV2PaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListReplicationFindings operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListReplicationFindingsRequest,
+                                    Pagination::ListReplicationFindingsPaginationTraits<DerivedClient>>
+  ListReplicationFindingsPaginator(const Model::ListReplicationFindingsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListReplicationFindingsRequest,
+                                             Pagination::ListReplicationFindingsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

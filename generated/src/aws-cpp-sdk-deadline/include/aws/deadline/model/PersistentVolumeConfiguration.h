@@ -102,7 +102,7 @@ class PersistentVolumeConfiguration {
   ///@{
   /**
    * <p>The number of hours a persistent volume can remain unused before it is
-   * deleted. The default is 168 (7 days).</p>
+   * deleted. The default is 12.</p>
    */
   inline int GetLastUsedTtlHours() const { return m_lastUsedTtlHours; }
   inline bool LastUsedTtlHoursHasBeenSet() const { return m_lastUsedTtlHoursHasBeenSet; }

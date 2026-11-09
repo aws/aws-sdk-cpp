@@ -26,7 +26,7 @@ Aws::String UpdateAccessGrantsLocationRequest::SerializePayload() const {
     iAMRoleArnNode.SetText(m_iAMRoleArn);
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToCompactString();
 }
 
 Aws::Http::HeaderValueCollection UpdateAccessGrantsLocationRequest::GetRequestSpecificHeaders() const {

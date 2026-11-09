@@ -53,6 +53,10 @@ StreamSession& StreamSession::operator=(JsonView jsonValue) {
     }
     m_truncatedEventsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("failoverSlateConfiguration")) {
+    m_failoverSlateConfiguration = jsonValue.GetObject("failoverSlateConfiguration");
+    m_failoverSlateConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -93,6 +97,10 @@ JsonValue StreamSession::Jsonize() const {
       truncatedEventsJsonList[truncatedEventsIndex].AsObject(m_truncatedEvents[truncatedEventsIndex].Jsonize());
     }
     payload.WithArray("truncatedEvents", std::move(truncatedEventsJsonList));
+  }
+
+  if (m_failoverSlateConfigurationHasBeenSet) {
+    payload.WithObject("failoverSlateConfiguration", m_failoverSlateConfiguration.Jsonize());
   }
 
   return payload;

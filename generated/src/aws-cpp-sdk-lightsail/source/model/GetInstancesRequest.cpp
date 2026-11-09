@@ -19,6 +19,10 @@ Aws::String GetInstancesRequest::SerializePayload() const {
     payload.WithString("pageToken", m_pageToken);
   }
 
+  if (m_includeHealthStatusHasBeenSet) {
+    payload.WithBool("includeHealthStatus", m_includeHealthStatus);
+  }
+
   return payload.View().WriteReadable();
 }
 

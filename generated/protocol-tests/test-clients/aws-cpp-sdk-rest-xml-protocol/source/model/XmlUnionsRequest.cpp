@@ -25,5 +25,5 @@ Aws::String XmlUnionsRequest::SerializePayload() const {
     m_unionValue.AddToNode(unionValueNode);
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToCompactString();
 }

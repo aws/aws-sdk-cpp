@@ -10,7 +10,7 @@
 namespace Aws {
 namespace SageMaker {
 namespace Model {
-enum class DeepHealthCheckType { NOT_SET, InstanceStress, InstanceConnectivity };
+enum class DeepHealthCheckType { NOT_SET, InstanceStress, InstanceConnectivity, MultiNodeTrainingValidation };
 
 namespace DeepHealthCheckTypeMapper {
 AWS_SAGEMAKER_API DeepHealthCheckType GetDeepHealthCheckTypeForName(const Aws::String& name);

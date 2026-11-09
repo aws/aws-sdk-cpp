@@ -56,6 +56,14 @@ Aws::String CreateGrantRequest::SerializePayload() const {
     payload.WithArray("Tags", std::move(tagsJsonList));
   }
 
+  if (m_grantTypeHasBeenSet) {
+    payload.WithString("GrantType", GrantTypeMapper::GetNameForGrantType(m_grantType));
+  }
+
+  if (m_optionsHasBeenSet) {
+    payload.WithObject("Options", m_options.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

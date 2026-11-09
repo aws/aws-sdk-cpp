@@ -10,7 +10,7 @@
 namespace Aws {
 namespace DataSync {
 namespace Model {
-enum class AzureBlobAuthenticationType { NOT_SET, SAS, NONE };
+enum class AzureBlobAuthenticationType { NOT_SET, SAS, NONE, OIDC };
 
 namespace AzureBlobAuthenticationTypeMapper {
 AWS_DATASYNC_API AzureBlobAuthenticationType GetAzureBlobAuthenticationTypeForName(const Aws::String& name);

@@ -85,15 +85,37 @@ class Destination {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Web Services account ID of the expected owner of the Amazon S3
+   * bucket. If the actual bucket owner does not match, the export request fails.</p>
+   */
+  inline const Aws::String& GetExpectedBucketOwner() const { return m_expectedBucketOwner; }
+  inline bool ExpectedBucketOwnerHasBeenSet() const { return m_expectedBucketOwnerHasBeenSet; }
+  template <typename ExpectedBucketOwnerT = Aws::String>
+  void SetExpectedBucketOwner(ExpectedBucketOwnerT&& value) {
+    m_expectedBucketOwnerHasBeenSet = true;
+    m_expectedBucketOwner = std::forward<ExpectedBucketOwnerT>(value);
+  }
+  template <typename ExpectedBucketOwnerT = Aws::String>
+  Destination& WithExpectedBucketOwner(ExpectedBucketOwnerT&& value) {
+    SetExpectedBucketOwner(std::forward<ExpectedBucketOwnerT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_bucketName;
 
   Aws::String m_keyPrefix;
 
   Aws::String m_kmsKeyArn;
+
+  Aws::String m_expectedBucketOwner;
   bool m_bucketNameHasBeenSet = false;
   bool m_keyPrefixHasBeenSet = false;
   bool m_kmsKeyArnHasBeenSet = false;
+  bool m_expectedBucketOwnerHasBeenSet = false;
 };
 
 }  // namespace Model

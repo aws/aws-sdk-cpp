@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kms/KMS_EXPORTS.h>
+#include <aws/kms/model/EncapsulationAlgorithmSpec.h>
 #include <aws/kms/model/EncryptionAlgorithmSpec.h>
 #include <aws/kms/model/KeyAgreementAlgorithmSpec.h>
 #include <aws/kms/model/KeySpec.h>
@@ -183,6 +184,30 @@ class GetPublicKeyResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The key encapsulation algorithm used to establish a shared secret. This field
+   * is present only when the KMS key has a <code>KeyUsage</code> value of
+   * <code>ENCAPSULATE_DECAPSULATE</code>.</p>
+   */
+  inline const Aws::Vector<EncapsulationAlgorithmSpec>& GetEncapsulationAlgorithms() const { return m_encapsulationAlgorithms; }
+  template <typename EncapsulationAlgorithmsT = Aws::Vector<EncapsulationAlgorithmSpec>>
+  void SetEncapsulationAlgorithms(EncapsulationAlgorithmsT&& value) {
+    m_encapsulationAlgorithmsHasBeenSet = true;
+    m_encapsulationAlgorithms = std::forward<EncapsulationAlgorithmsT>(value);
+  }
+  template <typename EncapsulationAlgorithmsT = Aws::Vector<EncapsulationAlgorithmSpec>>
+  GetPublicKeyResult& WithEncapsulationAlgorithms(EncapsulationAlgorithmsT&& value) {
+    SetEncapsulationAlgorithms(std::forward<EncapsulationAlgorithmsT>(value));
+    return *this;
+  }
+  inline GetPublicKeyResult& AddEncapsulationAlgorithms(EncapsulationAlgorithmSpec value) {
+    m_encapsulationAlgorithmsHasBeenSet = true;
+    m_encapsulationAlgorithms.push_back(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -213,6 +238,8 @@ class GetPublicKeyResult {
 
   Aws::Vector<KeyAgreementAlgorithmSpec> m_keyAgreementAlgorithms;
 
+  Aws::Vector<EncapsulationAlgorithmSpec> m_encapsulationAlgorithms;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_keyIdHasBeenSet = false;
@@ -222,6 +249,7 @@ class GetPublicKeyResult {
   bool m_encryptionAlgorithmsHasBeenSet = false;
   bool m_signingAlgorithmsHasBeenSet = false;
   bool m_keyAgreementAlgorithmsHasBeenSet = false;
+  bool m_encapsulationAlgorithmsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

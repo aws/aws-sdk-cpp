@@ -46,6 +46,7 @@
 #include <aws/wafv2/model/CaptchaResponse.h>
 #include <aws/wafv2/model/ChallengeAction.h>
 #include <aws/wafv2/model/ChallengeConfig.h>
+#include <aws/wafv2/model/ChallengeJavascriptSdkInjectionConfig.h>
 #include <aws/wafv2/model/ChallengeResponse.h>
 #include <aws/wafv2/model/CheckCapacityRequest.h>
 #include <aws/wafv2/model/CheckCapacityResult.h>
@@ -53,6 +54,10 @@
 #include <aws/wafv2/model/ClientSideActionConfig.h>
 #include <aws/wafv2/model/ComparisonOperator.h>
 #include <aws/wafv2/model/Condition.h>
+#include <aws/wafv2/model/ConnectedAccountChain.h>
+#include <aws/wafv2/model/ConnectedAccountChainConfig.h>
+#include <aws/wafv2/model/ConnectedAccountConfig.h>
+#include <aws/wafv2/model/ConnectedAccountPrice.h>
 #include <aws/wafv2/model/CookieMatchPattern.h>
 #include <aws/wafv2/model/Cookies.h>
 #include <aws/wafv2/model/CountAction.h>

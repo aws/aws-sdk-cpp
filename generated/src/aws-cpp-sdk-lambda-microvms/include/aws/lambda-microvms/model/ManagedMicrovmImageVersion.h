@@ -6,7 +6,9 @@
 #pragma once
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lambda-microvms/LambdaMicrovms_EXPORTS.h>
+#include <aws/lambda-microvms/model/CpuConfiguration.h>
 #include <aws/lambda-microvms/model/ManagedMicrovmImageVersionStatus.h>
 
 #include <utility>
@@ -90,6 +92,30 @@ class ManagedMicrovmImageVersion {
 
   ///@{
   /**
+   * <p>CPU configurations supported by this managed base image version.</p>
+   */
+  inline const Aws::Vector<CpuConfiguration>& GetSupportedCpuConfigurations() const { return m_supportedCpuConfigurations; }
+  inline bool SupportedCpuConfigurationsHasBeenSet() const { return m_supportedCpuConfigurationsHasBeenSet; }
+  template <typename SupportedCpuConfigurationsT = Aws::Vector<CpuConfiguration>>
+  void SetSupportedCpuConfigurations(SupportedCpuConfigurationsT&& value) {
+    m_supportedCpuConfigurationsHasBeenSet = true;
+    m_supportedCpuConfigurations = std::forward<SupportedCpuConfigurationsT>(value);
+  }
+  template <typename SupportedCpuConfigurationsT = Aws::Vector<CpuConfiguration>>
+  ManagedMicrovmImageVersion& WithSupportedCpuConfigurations(SupportedCpuConfigurationsT&& value) {
+    SetSupportedCpuConfigurations(std::forward<SupportedCpuConfigurationsT>(value));
+    return *this;
+  }
+  template <typename SupportedCpuConfigurationsT = CpuConfiguration>
+  ManagedMicrovmImageVersion& AddSupportedCpuConfigurations(SupportedCpuConfigurationsT&& value) {
+    m_supportedCpuConfigurationsHasBeenSet = true;
+    m_supportedCpuConfigurations.emplace_back(std::forward<SupportedCpuConfigurationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The timestamp when the version was created.</p>
    */
   inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -130,12 +156,15 @@ class ManagedMicrovmImageVersion {
 
   ManagedMicrovmImageVersionStatus m_status{ManagedMicrovmImageVersionStatus::NOT_SET};
 
+  Aws::Vector<CpuConfiguration> m_supportedCpuConfigurations;
+
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::Utils::DateTime m_updatedAt{};
   bool m_imageArnHasBeenSet = false;
   bool m_imageVersionHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_supportedCpuConfigurationsHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
 };

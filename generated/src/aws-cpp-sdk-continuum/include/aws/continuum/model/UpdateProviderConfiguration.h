@@ -1,0 +1,59 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/continuum/Continuum_EXPORTS.h>
+#include <aws/continuum/model/UpdateS3Configuration.h>
+
+#include <utility>
+
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace Continuum {
+namespace Model {
+
+/**
+ * <p>Provider-specific changes for updating an integration. Only S3 integrations
+ * can be updated, so S3 is the only member.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/continuum-2022-07-26/UpdateProviderConfiguration">AWS
+ * API Reference</a></p>
+ */
+class UpdateProviderConfiguration {
+ public:
+  AWS_CONTINUUM_API UpdateProviderConfiguration() = default;
+  AWS_CONTINUUM_API UpdateProviderConfiguration(Aws::Utils::Json::JsonView jsonValue);
+  AWS_CONTINUUM_API UpdateProviderConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_CONTINUUM_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p>Replacement credentials for a customer-managed S3 integration.</p>
+   */
+  inline const UpdateS3Configuration& GetS3() const { return m_s3; }
+  inline bool S3HasBeenSet() const { return m_s3HasBeenSet; }
+  template <typename S3T = UpdateS3Configuration>
+  void SetS3(S3T&& value) {
+    m_s3HasBeenSet = true;
+    m_s3 = std::forward<S3T>(value);
+  }
+  template <typename S3T = UpdateS3Configuration>
+  UpdateProviderConfiguration& WithS3(S3T&& value) {
+    SetS3(std::forward<S3T>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  UpdateS3Configuration m_s3;
+  bool m_s3HasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace Continuum
+}  // namespace Aws

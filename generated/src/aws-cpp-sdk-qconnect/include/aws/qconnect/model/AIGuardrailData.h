@@ -356,6 +356,42 @@ class AIGuardrailData {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp when the AI Guardrail was last modified.</p>
+   */
+  inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
+  inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
+  template <typename LastModifiedTimeT = Aws::Utils::DateTime>
+  void SetLastModifiedTime(LastModifiedTimeT&& value) {
+    m_lastModifiedTimeHasBeenSet = true;
+    m_lastModifiedTime = std::forward<LastModifiedTimeT>(value);
+  }
+  template <typename LastModifiedTimeT = Aws::Utils::DateTime>
+  AIGuardrailData& WithLastModifiedTime(LastModifiedTimeT&& value) {
+    SetLastModifiedTime(std::forward<LastModifiedTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Web Services Region where the AI Guardrail was last modified.</p>
+   */
+  inline const Aws::String& GetLastModifiedRegion() const { return m_lastModifiedRegion; }
+  inline bool LastModifiedRegionHasBeenSet() const { return m_lastModifiedRegionHasBeenSet; }
+  template <typename LastModifiedRegionT = Aws::String>
+  void SetLastModifiedRegion(LastModifiedRegionT&& value) {
+    m_lastModifiedRegionHasBeenSet = true;
+    m_lastModifiedRegion = std::forward<LastModifiedRegionT>(value);
+  }
+  template <typename LastModifiedRegionT = Aws::String>
+  AIGuardrailData& WithLastModifiedRegion(LastModifiedRegionT&& value) {
+    SetLastModifiedRegion(std::forward<LastModifiedRegionT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_assistantId;
 
@@ -390,6 +426,10 @@ class AIGuardrailData {
   Status m_status{Status::NOT_SET};
 
   Aws::Utils::DateTime m_modifiedTime{};
+
+  Aws::Utils::DateTime m_lastModifiedTime{};
+
+  Aws::String m_lastModifiedRegion;
   bool m_assistantIdHasBeenSet = false;
   bool m_assistantArnHasBeenSet = false;
   bool m_aiGuardrailArnHasBeenSet = false;
@@ -407,6 +447,8 @@ class AIGuardrailData {
   bool m_tagsHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_modifiedTimeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_lastModifiedRegionHasBeenSet = false;
 };
 
 }  // namespace Model

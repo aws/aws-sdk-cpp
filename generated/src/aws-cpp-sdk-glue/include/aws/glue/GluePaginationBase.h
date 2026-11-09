@@ -36,6 +36,7 @@
 #include <aws/glue/model/ListConnectionTypesPaginationTraits.h>
 #include <aws/glue/model/ListCrawlersPaginationTraits.h>
 #include <aws/glue/model/ListCustomEntityTypesPaginationTraits.h>
+#include <aws/glue/model/ListDataQualityEvaluationConfigsPaginationTraits.h>
 #include <aws/glue/model/ListDataQualityResultsPaginationTraits.h>
 #include <aws/glue/model/ListDataQualityResultsV2PaginationTraits.h>
 #include <aws/glue/model/ListDataQualityRuleRecommendationRunsPaginationTraits.h>
@@ -398,6 +399,18 @@ class GluePaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCustomEntityTypesRequest,
                                              Pagination::ListCustomEntityTypesPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListDataQualityEvaluationConfigs operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataQualityEvaluationConfigsRequest,
+                                    Pagination::ListDataQualityEvaluationConfigsPaginationTraits<DerivedClient>>
+  ListDataQualityEvaluationConfigsPaginator(const Model::ListDataQualityEvaluationConfigsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListDataQualityEvaluationConfigsRequest,
+                                             Pagination::ListDataQualityEvaluationConfigsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

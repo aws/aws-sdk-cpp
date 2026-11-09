@@ -19,7 +19,8 @@ enum class ResourceType {
   CODE_REPOSITORY,
   Microsoft_Compute_virtualMachines,
   Microsoft_ContainerRegistry_registry_containerImage,
-  Microsoft_Web_sites
+  Microsoft_Web_sites,
+  MACHINE_IMAGE
 };
 
 namespace ResourceTypeMapper {

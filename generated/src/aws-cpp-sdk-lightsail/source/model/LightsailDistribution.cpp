@@ -124,6 +124,10 @@ LightsailDistribution& LightsailDistribution::operator=(JsonView jsonValue) {
     }
     m_customErrorResponsesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("waf")) {
+    m_waf = jsonValue.GetObject("waf");
+    m_wafHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -238,6 +242,10 @@ JsonValue LightsailDistribution::Jsonize() const {
       customErrorResponsesJsonList[customErrorResponsesIndex].AsObject(m_customErrorResponses[customErrorResponsesIndex].Jsonize());
     }
     payload.WithArray("customErrorResponses", std::move(customErrorResponsesJsonList));
+  }
+
+  if (m_wafHasBeenSet) {
+    payload.WithObject("waf", m_waf.Jsonize());
   }
 
   return payload;

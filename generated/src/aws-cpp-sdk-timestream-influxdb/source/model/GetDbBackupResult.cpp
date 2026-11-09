@@ -66,9 +66,9 @@ GetDbBackupResult& GetDbBackupResult::operator=(const Aws::AmazonWebServiceResul
     m_kmsKeyId = jsonValue.GetString("kmsKeyId");
     m_kmsKeyIdHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("clusterConfiguration")) {
-    m_clusterConfiguration = jsonValue.GetObject("clusterConfiguration");
-    m_clusterConfigurationHasBeenSet = true;
+  if (jsonValue.ValueExists("deploymentConfiguration")) {
+    m_deploymentConfiguration = jsonValue.GetObject("deploymentConfiguration");
+    m_deploymentConfigurationHasBeenSet = true;
   }
   if (jsonValue.ValueExists("dbParameterGroupId")) {
     m_dbParameterGroupId = jsonValue.GetString("dbParameterGroupId");

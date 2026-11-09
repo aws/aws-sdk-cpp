@@ -125,9 +125,9 @@ GetDbClusterResult& GetDbClusterResult::operator=(const Aws::AmazonWebServiceRes
     m_failoverMode = FailoverModeMapper::GetFailoverModeForName(jsonValue.GetString("failoverMode"));
     m_failoverModeHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("clusterConfiguration")) {
-    m_clusterConfiguration = jsonValue.GetObject("clusterConfiguration");
-    m_clusterConfigurationHasBeenSet = true;
+  if (jsonValue.ValueExists("deploymentConfiguration")) {
+    m_deploymentConfiguration = jsonValue.GetObject("deploymentConfiguration");
+    m_deploymentConfigurationHasBeenSet = true;
   }
   if (jsonValue.ValueExists("dbBackupConfigurations")) {
     Aws::Utils::Array<JsonView> dbBackupConfigurationsJsonList = jsonValue.GetArray("dbBackupConfigurations");

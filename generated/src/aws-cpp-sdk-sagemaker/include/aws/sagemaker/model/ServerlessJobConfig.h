@@ -168,14 +168,11 @@ class ServerlessJobConfig {
   /**
    * <p> The maximum sequence length, in tokens, that the customization job supports.
    * SageMaker uses this value to select a training configuration for the base model
-   * that you specify. The parameter supports the following values: </p> <ul> <li>
-   * <p> <code>1K</code> </p> </li> <li> <p> <code>2K</code> </p> </li> <li> <p>
-   * <code>4K</code> </p> </li> <li> <p> <code>8K</code> </p> </li> <li> <p>
-   * <code>16K</code> </p> </li> <li> <p> <code>32K</code> </p> </li> <li> <p>
-   * <code>64K</code> </p> </li> <li> <p> <code>128K</code> </p> </li> </ul> <p> If
-   * you don't specify a value, SageMaker selects a training configuration based on
-   * the other values that you specify. The selection is not restricted to a
-   * particular sequence length. </p>
+   * that you specify. The value must be an integer value from <code>1K</code> to
+   * <code>1024K</code> (for example, <code>32K</code>). </p> <p> If you don't
+   * specify a value, SageMaker selects a training configuration based on the other
+   * values that you specify. The selection is not restricted to a particular
+   * sequence length. </p>
    */
   inline const Aws::String& GetSequenceLength() const { return m_sequenceLength; }
   inline bool SequenceLengthHasBeenSet() const { return m_sequenceLengthHasBeenSet; }

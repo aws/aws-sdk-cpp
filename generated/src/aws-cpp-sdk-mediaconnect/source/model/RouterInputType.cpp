@@ -20,6 +20,7 @@ static const int FAILOVER_HASH = HashingUtils::HashString("FAILOVER");
 static const int MERGE_HASH = HashingUtils::HashString("MERGE");
 static const int MEDIACONNECT_FLOW_HASH = HashingUtils::HashString("MEDIACONNECT_FLOW");
 static const int MEDIALIVE_CHANNEL_HASH = HashingUtils::HashString("MEDIALIVE_CHANNEL");
+static const int DESTINATION_ENDPOINT_HASH = HashingUtils::HashString("DESTINATION_ENDPOINT");
 
 RouterInputType GetRouterInputTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -33,6 +34,8 @@ RouterInputType GetRouterInputTypeForName(const Aws::String& name) {
     return RouterInputType::MEDIACONNECT_FLOW;
   } else if (hashCode == MEDIALIVE_CHANNEL_HASH) {
     return RouterInputType::MEDIALIVE_CHANNEL;
+  } else if (hashCode == DESTINATION_ENDPOINT_HASH) {
+    return RouterInputType::DESTINATION_ENDPOINT;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -57,6 +60,8 @@ Aws::String GetNameForRouterInputType(RouterInputType enumValue) {
       return "MEDIACONNECT_FLOW";
     case RouterInputType::MEDIALIVE_CHANNEL:
       return "MEDIALIVE_CHANNEL";
+    case RouterInputType::DESTINATION_ENDPOINT:
+      return "DESTINATION_ENDPOINT";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

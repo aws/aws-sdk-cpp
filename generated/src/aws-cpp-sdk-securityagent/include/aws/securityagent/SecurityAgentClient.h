@@ -876,8 +876,8 @@ class AWS_SECURITYAGENT_API SecurityAgentClient : public Aws::Client::AWSJsonCli
   }
 
   /**
-   * <p>Creates a new membership, granting a user access to an agent space within an
-   * application.</p><p><h3>See Also:</h3>   <a
+   * <p>Creates a new membership, granting a user or group access to an agent space
+   * within an application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/CreateMembership">AWS
    * API Reference</a></p>
    */
@@ -1175,7 +1175,7 @@ class AWS_SECURITYAGENT_API SecurityAgentClient : public Aws::Client::AWSJsonCli
   }
 
   /**
-   * <p>Deletes a membership, revoking a user's access to an agent
+   * <p>Deletes a membership, revoking a user's or group's access to an agent
    * space.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/DeleteMembership">AWS
    * API Reference</a></p>

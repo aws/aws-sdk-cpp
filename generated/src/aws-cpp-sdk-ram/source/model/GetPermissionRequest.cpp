@@ -23,5 +23,15 @@ Aws::String GetPermissionRequest::SerializePayload() const {
     payload.WithInteger("permissionVersion", m_permissionVersion);
   }
 
+  if (m_permissionTemplateParametersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> permissionTemplateParametersJsonList(m_permissionTemplateParameters.size());
+    for (unsigned permissionTemplateParametersIndex = 0;
+         permissionTemplateParametersIndex < permissionTemplateParametersJsonList.GetLength(); ++permissionTemplateParametersIndex) {
+      permissionTemplateParametersJsonList[permissionTemplateParametersIndex].AsObject(
+          m_permissionTemplateParameters[permissionTemplateParametersIndex].Jsonize());
+    }
+    payload.WithArray("permissionTemplateParameters", std::move(permissionTemplateParametersJsonList));
+  }
+
   return payload.View().WriteReadable();
 }

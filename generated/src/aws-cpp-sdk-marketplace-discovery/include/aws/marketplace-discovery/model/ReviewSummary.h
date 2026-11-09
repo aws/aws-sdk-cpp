@@ -35,7 +35,8 @@ class ReviewSummary {
 
   ///@{
   /**
-   * <p>Review summaries from different sources, such as AWS Marketplace.</p>
+   * <p>Review summaries from different sources, such as AWS Marketplace, G2, and
+   * PeerSpot.</p>
    */
   inline const Aws::Vector<ReviewSourceSummary>& GetReviewSourceSummaries() const { return m_reviewSourceSummaries; }
   inline bool ReviewSourceSummariesHasBeenSet() const { return m_reviewSourceSummariesHasBeenSet; }

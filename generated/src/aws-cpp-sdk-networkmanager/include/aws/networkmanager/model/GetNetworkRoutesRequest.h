@@ -260,6 +260,40 @@ class GetNetworkRoutesRequest : public NetworkManagerRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The maximum number of results to return.</p>
+   */
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
+  }
+  inline GetNetworkRoutesRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The token for the next page of results.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  GetNetworkRoutesRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_globalNetworkId;
 
@@ -280,6 +314,10 @@ class GetNetworkRoutesRequest : public NetworkManagerRequest {
   Aws::Vector<RouteType> m_types;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_destinationFilters;
+
+  int m_maxResults{0};
+
+  Aws::String m_nextToken;
   bool m_globalNetworkIdHasBeenSet = false;
   bool m_routeTableIdentifierHasBeenSet = false;
   bool m_exactCidrMatchesHasBeenSet = false;
@@ -290,6 +328,8 @@ class GetNetworkRoutesRequest : public NetworkManagerRequest {
   bool m_statesHasBeenSet = false;
   bool m_typesHasBeenSet = false;
   bool m_destinationFiltersHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -46,6 +46,8 @@ enum class SigninErrors {
 
   CONFLICT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL_SERVER,
+  INVALID_GRANT,
+  INVALID_SCOPE,
   SERVICE_QUOTA_EXCEEDED,
   TOO_MANY_REQUESTS
 };

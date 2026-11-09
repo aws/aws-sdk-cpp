@@ -122,6 +122,10 @@
 #include <aws/securityhub/model/GetResourcesV2Request.h>
 #include <aws/securityhub/model/GetResourcesV2Result.h>
 #include <aws/securityhub/model/GetSecurityControlDefinitionResult.h>
+#include <aws/securityhub/model/GetSoftwareResourcesV2Result.h>
+#include <aws/securityhub/model/GetSoftwareStatisticsV2Result.h>
+#include <aws/securityhub/model/GetSoftwareV2Request.h>
+#include <aws/securityhub/model/GetSoftwareV2Result.h>
 #include <aws/securityhub/model/InviteMembersResult.h>
 #include <aws/securityhub/model/ListAggregatorsV2Request.h>
 #include <aws/securityhub/model/ListAggregatorsV2Result.h>
@@ -291,6 +295,9 @@ class GetResourcesStatisticsV2Request;
 class GetResourcesTrendsV2Request;
 class GetResourcesV2Request;
 class GetSecurityControlDefinitionRequest;
+class GetSoftwareResourcesV2Request;
+class GetSoftwareStatisticsV2Request;
+class GetSoftwareV2Request;
 class InviteMembersRequest;
 class ListAggregatorsV2Request;
 class ListAutomationRulesRequest;
@@ -414,6 +421,9 @@ typedef Aws::Utils::Outcome<GetResourcesStatisticsV2Result, SecurityHubError> Ge
 typedef Aws::Utils::Outcome<GetResourcesTrendsV2Result, SecurityHubError> GetResourcesTrendsV2Outcome;
 typedef Aws::Utils::Outcome<GetResourcesV2Result, SecurityHubError> GetResourcesV2Outcome;
 typedef Aws::Utils::Outcome<GetSecurityControlDefinitionResult, SecurityHubError> GetSecurityControlDefinitionOutcome;
+typedef Aws::Utils::Outcome<GetSoftwareResourcesV2Result, SecurityHubError> GetSoftwareResourcesV2Outcome;
+typedef Aws::Utils::Outcome<GetSoftwareStatisticsV2Result, SecurityHubError> GetSoftwareStatisticsV2Outcome;
+typedef Aws::Utils::Outcome<GetSoftwareV2Result, SecurityHubError> GetSoftwareV2Outcome;
 typedef Aws::Utils::Outcome<InviteMembersResult, SecurityHubError> InviteMembersOutcome;
 typedef Aws::Utils::Outcome<ListAggregatorsV2Result, SecurityHubError> ListAggregatorsV2Outcome;
 typedef Aws::Utils::Outcome<ListAutomationRulesResult, SecurityHubError> ListAutomationRulesOutcome;
@@ -537,6 +547,9 @@ typedef std::future<GetResourcesStatisticsV2Outcome> GetResourcesStatisticsV2Out
 typedef std::future<GetResourcesTrendsV2Outcome> GetResourcesTrendsV2OutcomeCallable;
 typedef std::future<GetResourcesV2Outcome> GetResourcesV2OutcomeCallable;
 typedef std::future<GetSecurityControlDefinitionOutcome> GetSecurityControlDefinitionOutcomeCallable;
+typedef std::future<GetSoftwareResourcesV2Outcome> GetSoftwareResourcesV2OutcomeCallable;
+typedef std::future<GetSoftwareStatisticsV2Outcome> GetSoftwareStatisticsV2OutcomeCallable;
+typedef std::future<GetSoftwareV2Outcome> GetSoftwareV2OutcomeCallable;
 typedef std::future<InviteMembersOutcome> InviteMembersOutcomeCallable;
 typedef std::future<ListAggregatorsV2Outcome> ListAggregatorsV2OutcomeCallable;
 typedef std::future<ListAutomationRulesOutcome> ListAutomationRulesOutcomeCallable;
@@ -839,6 +852,15 @@ typedef std::function<void(const SecurityHubClient*, const Model::GetSecurityCon
                            const Model::GetSecurityControlDefinitionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetSecurityControlDefinitionResponseReceivedHandler;
+typedef std::function<void(const SecurityHubClient*, const Model::GetSoftwareResourcesV2Request&,
+                           const Model::GetSoftwareResourcesV2Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetSoftwareResourcesV2ResponseReceivedHandler;
+typedef std::function<void(const SecurityHubClient*, const Model::GetSoftwareStatisticsV2Request&,
+                           const Model::GetSoftwareStatisticsV2Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetSoftwareStatisticsV2ResponseReceivedHandler;
+typedef std::function<void(const SecurityHubClient*, const Model::GetSoftwareV2Request&, const Model::GetSoftwareV2Outcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetSoftwareV2ResponseReceivedHandler;
 typedef std::function<void(const SecurityHubClient*, const Model::InviteMembersRequest&, const Model::InviteMembersOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     InviteMembersResponseReceivedHandler;

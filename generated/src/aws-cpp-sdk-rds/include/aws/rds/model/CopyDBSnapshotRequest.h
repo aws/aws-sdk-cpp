@@ -9,6 +9,7 @@
 #include <aws/rds/RDSRequest.h>
 #include <aws/rds/RDS_EXPORTS.h>
 #include <aws/rds/model/Tag.h>
+#include <aws/rds/model/TagSpecification.h>
 
 #include <utility>
 
@@ -294,9 +295,8 @@ class CopyDBSnapshotRequest : public RDSRequest {
   ///@{
   /**
    * <p>Specifies whether to copy the DB option group associated with the source DB
-   * snapshot to the target Amazon Web Services account and associate with the target
-   * DB snapshot. The associated option group can be copied only with cross-account
-   * snapshot copy calls.</p>
+   * snapshot to the target Amazon Web Services account or Amazon Web Services Region
+   * and associate it with the target DB snapshot.</p>
    */
   inline bool GetCopyOptionGroup() const { return m_copyOptionGroup; }
   inline bool CopyOptionGroupHasBeenSet() const { return m_copyOptionGroupHasBeenSet; }
@@ -326,6 +326,34 @@ class CopyDBSnapshotRequest : public RDSRequest {
   template <typename SnapshotAvailabilityZoneT = Aws::String>
   CopyDBSnapshotRequest& WithSnapshotAvailabilityZone(SnapshotAvailabilityZoneT&& value) {
     SetSnapshotAvailabilityZone(std::forward<SnapshotAvailabilityZoneT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Tags to assign to the copied option group. By default, the copied option
+   * group isn't tagged.</p> <p>Valid Values: </p> <ul> <li> <p> <code>og</code> -
+   * The copied option group.</p> </li> </ul> <p>Constraints:</p> <ul> <li> <p>Can
+   * only be specified when <code>CopyOptionGroup</code> is <code>true</code> </p>
+   * </li> </ul>
+   */
+  inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const { return m_tagSpecifications; }
+  inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
+  template <typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+  void SetTagSpecifications(TagSpecificationsT&& value) {
+    m_tagSpecificationsHasBeenSet = true;
+    m_tagSpecifications = std::forward<TagSpecificationsT>(value);
+  }
+  template <typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+  CopyDBSnapshotRequest& WithTagSpecifications(TagSpecificationsT&& value) {
+    SetTagSpecifications(std::forward<TagSpecificationsT>(value));
+    return *this;
+  }
+  template <typename TagSpecificationsT = TagSpecification>
+  CopyDBSnapshotRequest& AddTagSpecifications(TagSpecificationsT&& value) {
+    m_tagSpecificationsHasBeenSet = true;
+    m_tagSpecifications.emplace_back(std::forward<TagSpecificationsT>(value));
     return *this;
   }
   ///@}
@@ -370,6 +398,8 @@ class CopyDBSnapshotRequest : public RDSRequest {
 
   Aws::String m_snapshotAvailabilityZone;
 
+  Aws::Vector<TagSpecification> m_tagSpecifications;
+
   Aws::String m_sourceRegion;
   bool m_sourceDBSnapshotIdentifierHasBeenSet = false;
   bool m_targetDBSnapshotIdentifierHasBeenSet = false;
@@ -382,6 +412,7 @@ class CopyDBSnapshotRequest : public RDSRequest {
   bool m_snapshotTargetHasBeenSet = false;
   bool m_copyOptionGroupHasBeenSet = false;
   bool m_snapshotAvailabilityZoneHasBeenSet = false;
+  bool m_tagSpecificationsHasBeenSet = false;
   bool m_sourceRegionHasBeenSet = false;
 };
 

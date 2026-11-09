@@ -12,6 +12,8 @@
 #include <aws/mediaconnect/model/ListRouterNetworkInterfacesPaginationTraits.h>
 #include <aws/mediaconnect/model/ListRouterInputsPaginationTraits.h>
 #include <aws/mediaconnect/model/ListEntitlementsPaginationTraits.h>
+#include <aws/mediaconnect/model/ListDestinationEndpointsPaginationTraits.h>
+#include <aws/mediaconnect/model/ListSourceEndpointsPaginationTraits.h>
 #include <aws/mediaconnect/model/ListGatewaysPaginationTraits.h>
 #include <aws/mediaconnect/model/ListRouterOutputsPaginationTraits.h>
 #include <aws/mediaconnect/model/ListBridgesPaginationTraits.h>

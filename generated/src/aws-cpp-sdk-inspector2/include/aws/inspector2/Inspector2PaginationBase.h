@@ -23,6 +23,7 @@
 #include <aws/inspector2/model/ListFindingAggregationsPaginationTraits.h>
 #include <aws/inspector2/model/ListFindingsPaginationTraits.h>
 #include <aws/inspector2/model/ListMembersPaginationTraits.h>
+#include <aws/inspector2/model/ListOnDemandScansPaginationTraits.h>
 #include <aws/inspector2/model/ListUsageTotalsPaginationTraits.h>
 #include <aws/inspector2/model/SearchVulnerabilitiesPaginationTraits.h>
 
@@ -218,6 +219,18 @@ class Inspector2PaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMembersRequest,
                                              Pagination::ListMembersPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
+  }
+
+  /**
+   * Create a paginator for ListOnDemandScans operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOnDemandScansRequest,
+                                    Pagination::ListOnDemandScansPaginationTraits<DerivedClient>>
+  ListOnDemandScansPaginator(const Model::ListOnDemandScansRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOnDemandScansRequest,
+                                             Pagination::ListOnDemandScansPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
   }
 
   /**

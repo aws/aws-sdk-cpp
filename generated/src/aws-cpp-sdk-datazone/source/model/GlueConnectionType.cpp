@@ -31,6 +31,8 @@ static const int VERTICA_HASH = HashingUtils::HashString("VERTICA");
 static const int ICEBERGRESTCATALOG_HASH = HashingUtils::HashString("ICEBERGRESTCATALOG");
 static const int SNOWFLAKEICEBERGRESTCATALOG_HASH = HashingUtils::HashString("SNOWFLAKEICEBERGRESTCATALOG");
 static const int DATABRICKSICEBERGRESTCATALOG_HASH = HashingUtils::HashString("DATABRICKSICEBERGRESTCATALOG");
+static const int WORKDAYICEBERGRESTCATALOG_HASH = HashingUtils::HashString("WORKDAYICEBERGRESTCATALOG");
+static const int WORKDAYLDQ_HASH = HashingUtils::HashString("WORKDAYLDQ");
 
 GlueConnectionType GetGlueConnectionTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -66,6 +68,10 @@ GlueConnectionType GetGlueConnectionTypeForName(const Aws::String& name) {
     return GlueConnectionType::SNOWFLAKEICEBERGRESTCATALOG;
   } else if (hashCode == DATABRICKSICEBERGRESTCATALOG_HASH) {
     return GlueConnectionType::DATABRICKSICEBERGRESTCATALOG;
+  } else if (hashCode == WORKDAYICEBERGRESTCATALOG_HASH) {
+    return GlueConnectionType::WORKDAYICEBERGRESTCATALOG;
+  } else if (hashCode == WORKDAYLDQ_HASH) {
+    return GlueConnectionType::WORKDAYLDQ;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -112,6 +118,10 @@ Aws::String GetNameForGlueConnectionType(GlueConnectionType enumValue) {
       return "SNOWFLAKEICEBERGRESTCATALOG";
     case GlueConnectionType::DATABRICKSICEBERGRESTCATALOG:
       return "DATABRICKSICEBERGRESTCATALOG";
+    case GlueConnectionType::WORKDAYICEBERGRESTCATALOG:
+      return "WORKDAYICEBERGRESTCATALOG";
+    case GlueConnectionType::WORKDAYLDQ:
+      return "WORKDAYLDQ";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

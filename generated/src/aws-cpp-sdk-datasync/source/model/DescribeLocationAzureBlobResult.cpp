@@ -35,6 +35,10 @@ DescribeLocationAzureBlobResult& DescribeLocationAzureBlobResult::operator=(cons
         AzureBlobAuthenticationTypeMapper::GetAzureBlobAuthenticationTypeForName(jsonValue.GetString("AuthenticationType"));
     m_authenticationTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("FederatedIdentity")) {
+    m_federatedIdentity = jsonValue.GetObject("FederatedIdentity");
+    m_federatedIdentityHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("BlobType")) {
     m_blobType = AzureBlobTypeMapper::GetAzureBlobTypeForName(jsonValue.GetString("BlobType"));
     m_blobTypeHasBeenSet = true;

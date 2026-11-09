@@ -27,6 +27,10 @@ Aws::String CreateDatasetExportJobRequest::SerializePayload() const {
     payload.WithObject("input", m_input.Jsonize());
   }
 
+  if (m_jobNameHasBeenSet) {
+    payload.WithString("jobName", m_jobName);
+  }
+
   if (m_errorReportLocationHasBeenSet) {
     payload.WithObject("errorReportLocation", m_errorReportLocation.Jsonize());
   }

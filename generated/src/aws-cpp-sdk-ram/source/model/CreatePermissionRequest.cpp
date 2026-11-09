@@ -27,6 +27,16 @@ Aws::String CreatePermissionRequest::SerializePayload() const {
     payload.WithString("policyTemplate", m_policyTemplate);
   }
 
+  if (m_permissionTemplateParametersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> permissionTemplateParametersJsonList(m_permissionTemplateParameters.size());
+    for (unsigned permissionTemplateParametersIndex = 0;
+         permissionTemplateParametersIndex < permissionTemplateParametersJsonList.GetLength(); ++permissionTemplateParametersIndex) {
+      permissionTemplateParametersJsonList[permissionTemplateParametersIndex].AsObject(
+          m_permissionTemplateParameters[permissionTemplateParametersIndex].Jsonize());
+    }
+    payload.WithArray("permissionTemplateParameters", std::move(permissionTemplateParametersJsonList));
+  }
+
   if (m_clientTokenHasBeenSet) {
     payload.WithString("clientToken", m_clientToken);
   }

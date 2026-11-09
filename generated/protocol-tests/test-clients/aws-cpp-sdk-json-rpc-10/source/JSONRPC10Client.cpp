@@ -30,6 +30,7 @@
 #include <aws/json-rpc-10/model/NoInputAndNoOutputRequest.h>
 #include <aws/json-rpc-10/model/NoInputAndOutputRequest.h>
 #include <aws/json-rpc-10/model/PutWithContentEncodingRequest.h>
+#include <aws/json-rpc-10/model/QueryIncompatibleOperationRequest.h>
 #include <aws/json-rpc-10/model/SimpleScalarPropertiesRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
@@ -166,7 +167,8 @@ JSONRPC10Client::InvokeOperationOutcome JSONRPC10Client::InvokeServiceOperation(
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
 
-  return TracingUtils::MakeCallWithTiming<InvokeOperationOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<InvokeOperationOutcome>(
+      request, std::move(span),
       [&]() -> InvokeOperationOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -178,7 +180,7 @@ JSONRPC10Client::InvokeOperationOutcome JSONRPC10Client::InvokeServiceOperation(
 
         return InvokeOperationOutcome{MakeRequest(request, endpointResolutionOutcome.GetResult(), httpMethod, Aws::Auth::SIGV4_SIGNER)};
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
 }
 
@@ -240,6 +242,12 @@ PutWithContentEncodingOutcome JSONRPC10Client::PutWithContentEncoding(const PutW
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? PutWithContentEncodingOutcome(result.GetResultWithOwnership())
                             : PutWithContentEncodingOutcome(std::move(result.GetError()));
+}
+
+QueryIncompatibleOperationOutcome JSONRPC10Client::QueryIncompatibleOperation(const QueryIncompatibleOperationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? QueryIncompatibleOperationOutcome(result.GetResultWithOwnership())
+                            : QueryIncompatibleOperationOutcome(std::move(result.GetError()));
 }
 
 SimpleScalarPropertiesOutcome JSONRPC10Client::SimpleScalarProperties(const SimpleScalarPropertiesRequest& request) const {

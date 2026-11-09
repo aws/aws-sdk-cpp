@@ -267,7 +267,7 @@ namespace client
             ResponseHandlerFunc&& responseHandler,
             EndpointUpdateCallback&& endpointCallback
         ) const;
-        bool m_enableNewRetries;
+        bool m_enableNewRetries = false;
     };
 } // namespace client
 } // namespace smithy

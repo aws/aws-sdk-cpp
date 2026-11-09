@@ -290,6 +290,35 @@ class AWS_IVS_API IVSClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Creates a new failover slate configuration.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/CreateFailoverSlateConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateFailoverSlateConfigurationOutcome CreateFailoverSlateConfiguration(
+      const Model::CreateFailoverSlateConfigurationRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for CreateFailoverSlateConfiguration that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename CreateFailoverSlateConfigurationRequestT = Model::CreateFailoverSlateConfigurationRequest>
+  Model::CreateFailoverSlateConfigurationOutcomeCallable CreateFailoverSlateConfigurationCallable(
+      const CreateFailoverSlateConfigurationRequestT& request = {}) const {
+    return SubmitCallable(&IVSClient::CreateFailoverSlateConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for CreateFailoverSlateConfiguration that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename CreateFailoverSlateConfigurationRequestT = Model::CreateFailoverSlateConfigurationRequest>
+  void CreateFailoverSlateConfigurationAsync(const CreateFailoverSlateConfigurationResponseReceivedHandler& handler,
+                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                             const CreateFailoverSlateConfigurationRequestT& request = {}) const {
+    return SubmitAsync(&IVSClient::CreateFailoverSlateConfiguration, request, handler, context);
+  }
+
+  /**
    * <p>Creates a new playback restriction policy, for constraining playback by
    * countries and/or origins.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/CreatePlaybackRestrictionPolicy">AWS
@@ -443,6 +472,36 @@ class AWS_IVS_API IVSClient : public Aws::Client::AWSJsonClient,
   void DeleteChannelAsync(const DeleteChannelRequestT& request, const DeleteChannelResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&IVSClient::DeleteChannel, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes the specified failover slate configuration.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/DeleteFailoverSlateConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteFailoverSlateConfigurationOutcome DeleteFailoverSlateConfiguration(
+      const Model::DeleteFailoverSlateConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteFailoverSlateConfiguration that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename DeleteFailoverSlateConfigurationRequestT = Model::DeleteFailoverSlateConfigurationRequest>
+  Model::DeleteFailoverSlateConfigurationOutcomeCallable DeleteFailoverSlateConfigurationCallable(
+      const DeleteFailoverSlateConfigurationRequestT& request) const {
+    return SubmitCallable(&IVSClient::DeleteFailoverSlateConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteFailoverSlateConfiguration that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DeleteFailoverSlateConfigurationRequestT = Model::DeleteFailoverSlateConfigurationRequest>
+  void DeleteFailoverSlateConfigurationAsync(const DeleteFailoverSlateConfigurationRequestT& request,
+                                             const DeleteFailoverSlateConfigurationResponseReceivedHandler& handler,
+                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&IVSClient::DeleteFailoverSlateConfiguration, request, handler, context);
   }
 
   /**
@@ -617,6 +676,36 @@ class AWS_IVS_API IVSClient : public Aws::Client::AWSJsonClient,
   void GetChannelAsync(const GetChannelRequestT& request, const GetChannelResponseReceivedHandler& handler,
                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&IVSClient::GetChannel, request, handler, context);
+  }
+
+  /**
+   * <p>Gets the failover slate configuration for the specified ARN.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/GetFailoverSlateConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetFailoverSlateConfigurationOutcome GetFailoverSlateConfiguration(
+      const Model::GetFailoverSlateConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetFailoverSlateConfiguration that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetFailoverSlateConfigurationRequestT = Model::GetFailoverSlateConfigurationRequest>
+  Model::GetFailoverSlateConfigurationOutcomeCallable GetFailoverSlateConfigurationCallable(
+      const GetFailoverSlateConfigurationRequestT& request) const {
+    return SubmitCallable(&IVSClient::GetFailoverSlateConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for GetFailoverSlateConfiguration that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetFailoverSlateConfigurationRequestT = Model::GetFailoverSlateConfigurationRequest>
+  void GetFailoverSlateConfigurationAsync(const GetFailoverSlateConfigurationRequestT& request,
+                                          const GetFailoverSlateConfigurationResponseReceivedHandler& handler,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&IVSClient::GetFailoverSlateConfiguration, request, handler, context);
   }
 
   /**
@@ -907,6 +996,37 @@ class AWS_IVS_API IVSClient : public Aws::Client::AWSJsonClient,
                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                          const ListChannelsRequestT& request = {}) const {
     return SubmitAsync(&IVSClient::ListChannels, request, handler, context);
+  }
+
+  /**
+   * <p>Gets summary information about all failover slate configurations in your
+   * account, in the Amazon Web Services region where the API request is
+   * processed.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListFailoverSlateConfigurations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListFailoverSlateConfigurationsOutcome ListFailoverSlateConfigurations(
+      const Model::ListFailoverSlateConfigurationsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListFailoverSlateConfigurations that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListFailoverSlateConfigurationsRequestT = Model::ListFailoverSlateConfigurationsRequest>
+  Model::ListFailoverSlateConfigurationsOutcomeCallable ListFailoverSlateConfigurationsCallable(
+      const ListFailoverSlateConfigurationsRequestT& request = {}) const {
+    return SubmitCallable(&IVSClient::ListFailoverSlateConfigurations, request);
+  }
+
+  /**
+   * An Async wrapper for ListFailoverSlateConfigurations that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename ListFailoverSlateConfigurationsRequestT = Model::ListFailoverSlateConfigurationsRequest>
+  void ListFailoverSlateConfigurationsAsync(const ListFailoverSlateConfigurationsResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                            const ListFailoverSlateConfigurationsRequestT& request = {}) const {
+    return SubmitAsync(&IVSClient::ListFailoverSlateConfigurations, request, handler, context);
   }
 
   /**
@@ -1308,6 +1428,36 @@ class AWS_IVS_API IVSClient : public Aws::Client::AWSJsonClient,
   void UpdateChannelAsync(const UpdateChannelRequestT& request, const UpdateChannelResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&IVSClient::UpdateChannel, request, handler, context);
+  }
+
+  /**
+   * <p>Updates a specified failover slate configuration.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/UpdateFailoverSlateConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateFailoverSlateConfigurationOutcome UpdateFailoverSlateConfiguration(
+      const Model::UpdateFailoverSlateConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateFailoverSlateConfiguration that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename UpdateFailoverSlateConfigurationRequestT = Model::UpdateFailoverSlateConfigurationRequest>
+  Model::UpdateFailoverSlateConfigurationOutcomeCallable UpdateFailoverSlateConfigurationCallable(
+      const UpdateFailoverSlateConfigurationRequestT& request) const {
+    return SubmitCallable(&IVSClient::UpdateFailoverSlateConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateFailoverSlateConfiguration that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename UpdateFailoverSlateConfigurationRequestT = Model::UpdateFailoverSlateConfigurationRequest>
+  void UpdateFailoverSlateConfigurationAsync(const UpdateFailoverSlateConfigurationRequestT& request,
+                                             const UpdateFailoverSlateConfigurationResponseReceivedHandler& handler,
+                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&IVSClient::UpdateFailoverSlateConfiguration, request, handler, context);
   }
 
   /**

@@ -858,7 +858,7 @@ class AWS_MGN_API MgnClient : public Aws::Client::AWSJsonClient,
    * dataReplicationInfo.dataReplicationState will be set to DISCONNECTED; The
    * totalStorageBytes property for each of dataReplicationInfo.replicatedDisks will
    * be set to zero; dataReplicationInfo.lagDuration and
-   * dataReplicationInfo.lagDuration will be nullified.</p><p><h3>See Also:</h3>   <a
+   * dataReplicationInfo.etaDateTime will be nullified.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DisconnectFromService">AWS
    * API Reference</a></p>
    */
@@ -893,7 +893,7 @@ class AWS_MGN_API MgnClient : public Aws::Client::AWSJsonClient,
    * dataReplicationInfo.dataReplicationState will be changed to DISCONNECTED; The
    * SourceServer.lifeCycle.state will be changed to CUTOVER; The totalStorageBytes
    * property for each of dataReplicationInfo.replicatedDisks will be set to zero;
-   * dataReplicationInfo.lagDuration and dataReplicationInfo.lagDuration will be
+   * dataReplicationInfo.lagDuration and dataReplicationInfo.etaDateTime will be
    * nullified.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/FinalizeCutover">AWS
    * API Reference</a></p>

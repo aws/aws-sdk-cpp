@@ -38,7 +38,12 @@ class PreEvaluationFilter {
 
   ///@{
   /**
-   * <p>The type of resource to filter on. Valid values: <code>CONTACT</code>.</p>
+   * <p>The type of resource to filter on. Valid values:</p> <ul> <li> <p>
+   * <code>CONTACT</code> - Filter on attributes of the contact, such as tags
+   * assigned to the contact.</p> </li> <li> <p> <code>CONTACT_EVALUATION</code> -
+   * Filter on attributes of the contact evaluation, such as tags assigned to the
+   * contact evaluation, for rules triggered on the
+   * <code>OnContactEvaluationSubmit</code> event source.</p> </li> </ul>
    */
   inline PreEvaluationFilterResourceType GetResourceType() const { return m_resourceType; }
   inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }

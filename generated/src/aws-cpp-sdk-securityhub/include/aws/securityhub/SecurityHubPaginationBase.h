@@ -22,6 +22,8 @@
 #include <aws/securityhub/model/GetRemediationsV2PaginationTraits.h>
 #include <aws/securityhub/model/GetResourcesTrendsV2PaginationTraits.h>
 #include <aws/securityhub/model/GetResourcesV2PaginationTraits.h>
+#include <aws/securityhub/model/GetSoftwareResourcesV2PaginationTraits.h>
+#include <aws/securityhub/model/GetSoftwareV2PaginationTraits.h>
 #include <aws/securityhub/model/ListAggregatorsV2PaginationTraits.h>
 #include <aws/securityhub/model/ListConfigurationPoliciesPaginationTraits.h>
 #include <aws/securityhub/model/ListConfigurationPolicyAssociationsPaginationTraits.h>
@@ -218,6 +220,29 @@ class SecurityHubPaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetResourcesV2Request,
                                              Pagination::GetResourcesV2PaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
+  }
+
+  /**
+   * Create a paginator for GetSoftwareResourcesV2 operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetSoftwareResourcesV2Request,
+                                    Pagination::GetSoftwareResourcesV2PaginationTraits<DerivedClient>>
+  GetSoftwareResourcesV2Paginator(const Model::GetSoftwareResourcesV2Request& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetSoftwareResourcesV2Request,
+                                             Pagination::GetSoftwareResourcesV2PaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for GetSoftwareV2 operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetSoftwareV2Request, Pagination::GetSoftwareV2PaginationTraits<DerivedClient>>
+  GetSoftwareV2Paginator(const Model::GetSoftwareV2Request& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::GetSoftwareV2Request,
+                                             Pagination::GetSoftwareV2PaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                       request};
   }
 
   /**

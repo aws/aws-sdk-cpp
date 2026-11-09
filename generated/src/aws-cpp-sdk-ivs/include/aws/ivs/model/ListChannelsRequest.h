@@ -103,6 +103,25 @@ class ListChannelsRequest : public IVSRequest {
 
   ///@{
   /**
+   * <p>Filters the channel list to match the specified failover-slate-configuration
+   * ARN.</p>
+   */
+  inline const Aws::String& GetFilterByFailoverSlateConfigurationArn() const { return m_filterByFailoverSlateConfigurationArn; }
+  inline bool FilterByFailoverSlateConfigurationArnHasBeenSet() const { return m_filterByFailoverSlateConfigurationArnHasBeenSet; }
+  template <typename FilterByFailoverSlateConfigurationArnT = Aws::String>
+  void SetFilterByFailoverSlateConfigurationArn(FilterByFailoverSlateConfigurationArnT&& value) {
+    m_filterByFailoverSlateConfigurationArnHasBeenSet = true;
+    m_filterByFailoverSlateConfigurationArn = std::forward<FilterByFailoverSlateConfigurationArnT>(value);
+  }
+  template <typename FilterByFailoverSlateConfigurationArnT = Aws::String>
+  ListChannelsRequest& WithFilterByFailoverSlateConfigurationArn(FilterByFailoverSlateConfigurationArnT&& value) {
+    SetFilterByFailoverSlateConfigurationArn(std::forward<FilterByFailoverSlateConfigurationArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The first channel to retrieve. This is used for pagination; see the
    * <code>nextToken</code> response field.</p>
    */
@@ -144,6 +163,8 @@ class ListChannelsRequest : public IVSRequest {
 
   Aws::String m_filterByAdConfigurationArn;
 
+  Aws::String m_filterByFailoverSlateConfigurationArn;
+
   Aws::String m_nextToken;
 
   int m_maxResults{0};
@@ -151,6 +172,7 @@ class ListChannelsRequest : public IVSRequest {
   bool m_filterByRecordingConfigurationArnHasBeenSet = false;
   bool m_filterByPlaybackRestrictionPolicyArnHasBeenSet = false;
   bool m_filterByAdConfigurationArnHasBeenSet = false;
+  bool m_filterByFailoverSlateConfigurationArnHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
 };

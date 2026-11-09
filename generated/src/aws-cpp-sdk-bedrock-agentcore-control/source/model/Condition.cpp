@@ -26,6 +26,10 @@ Condition& Condition::operator=(JsonView jsonValue) {
     m_matchPaths = jsonValue.GetObject("matchPaths");
     m_matchPathsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("matchModels")) {
+    m_matchModels = jsonValue.GetObject("matchModels");
+    m_matchModelsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue Condition::Jsonize() const {
 
   if (m_matchPathsHasBeenSet) {
     payload.WithObject("matchPaths", m_matchPaths.Jsonize());
+  }
+
+  if (m_matchModelsHasBeenSet) {
+    payload.WithObject("matchModels", m_matchModels.Jsonize());
   }
 
   return payload;

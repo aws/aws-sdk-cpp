@@ -10,7 +10,7 @@
 namespace Aws {
 namespace LambdaMicrovms {
 namespace Model {
-enum class ManagedMicrovmImageVersionStatus { NOT_SET, AVAILABLE, DEPRECATED };
+enum class ManagedMicrovmImageVersionStatus { NOT_SET, AVAILABLE, DEPRECATED, RECALLED };
 
 namespace ManagedMicrovmImageVersionStatusMapper {
 AWS_LAMBDAMICROVMS_API ManagedMicrovmImageVersionStatus GetManagedMicrovmImageVersionStatusForName(const Aws::String& name);

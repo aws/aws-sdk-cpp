@@ -990,6 +990,34 @@ class AWS_IVSREALTIME_API IvsrealtimeClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Revokes the specified connection token so that it can no longer connect to a
+   * stage. This operation disconnects any participant currently connected with the
+   * revoked token.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/RevokeConnectionToken">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::RevokeConnectionTokenOutcome RevokeConnectionToken(const Model::RevokeConnectionTokenRequest& request) const;
+
+  /**
+   * A Callable wrapper for RevokeConnectionToken that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename RevokeConnectionTokenRequestT = Model::RevokeConnectionTokenRequest>
+  Model::RevokeConnectionTokenOutcomeCallable RevokeConnectionTokenCallable(const RevokeConnectionTokenRequestT& request) const {
+    return SubmitCallable(&IvsrealtimeClient::RevokeConnectionToken, request);
+  }
+
+  /**
+   * An Async wrapper for RevokeConnectionToken that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename RevokeConnectionTokenRequestT = Model::RevokeConnectionTokenRequest>
+  void RevokeConnectionTokenAsync(const RevokeConnectionTokenRequestT& request, const RevokeConnectionTokenResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&IvsrealtimeClient::RevokeConnectionToken, request, handler, context);
+  }
+
+  /**
    * <p>Starts a Composition from a stage based on the configuration provided in the
    * request.</p> <p>A Composition is an ephemeral resource that exists after this
    * operation returns successfully. Composition stops and the resource is

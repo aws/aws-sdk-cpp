@@ -30,6 +30,10 @@ GetConfigurationResult& GetConfigurationResult::operator=(const Aws::AmazonWebSe
     m_ec2Configuration = jsonValue.GetObject("ec2Configuration");
     m_ec2ConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("amiConfiguration")) {
+    m_amiConfiguration = jsonValue.GetObject("amiConfiguration");
+    m_amiConfigurationHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

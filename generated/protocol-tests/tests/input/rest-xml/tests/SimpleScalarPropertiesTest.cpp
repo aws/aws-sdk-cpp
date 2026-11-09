@@ -7,6 +7,9 @@
 #include <aws/rest-xml-protocol/model/SimpleScalarPropertiesRequest.h>
 #include <aws/testing/AwsProtocolTestHelpers.h>
 
+#include <cmath>
+#include <limits>
+
 using SimpleScalarProperties = AWS_PROTOCOL_TEST_SUITE;
 using RestXmlProtocolClient = Aws::RestXmlProtocol::RestXmlProtocolClient;
 using namespace Aws::RestXmlProtocol::Model;
@@ -38,7 +41,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, SimpleScalarProperties) {
       "MzwvaW50ZWdlclZhbHVlPgogICAgPGxvbmdWYWx1ZT40PC9sb25nVmFsdWU+CiAgICA8ZmxvYXRWYWx1ZT41LjU8L2Zsb2F0VmFsdWU+"
       "CiAgICA8RG91YmxlRHJpYmJsZT42LjU8L0RvdWJsZURyaWJibGU+CjwvU2ltcGxlU2NhbGFyUHJvcGVydGllc1JlcXVlc3Q+Cg==";
   expectedRq.uri = "/SimpleScalarProperties";
-  expectedRq.headers = {{"Content-Type", R"(application/xml)"}, {"X-Foo", R"(Foo)"}};
+  expectedRq.headers = {{"X-Foo", R"(Foo)"}, {"Content-Type", R"(application/xml)"}};
   ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
@@ -59,7 +62,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, SimpleScalarPropertiesWithEscapedChara
       "PFNpbXBsZVNjYWxhclByb3BlcnRpZXNSZXF1ZXN0PgogICAgPHN0cmluZ1ZhbHVlPiZsdDtzdHJpbmcmZ3Q7PC9zdHJpbmdWYWx1ZT4KPC9TaW1wbGVTY2FsYXJQcm9wZXJ0"
       "aWVzUmVxdWVzdD4K";
   expectedRq.uri = "/SimpleScalarProperties";
-  expectedRq.headers = {{"Content-Type", R"(application/xml)"}, {"X-Foo", R"(Foo)"}};
+  expectedRq.headers = {{"X-Foo", R"(Foo)"}, {"Content-Type", R"(application/xml)"}};
   ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
@@ -80,7 +83,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, SimpleScalarPropertiesWithWhiteSpace) 
       "PFNpbXBsZVNjYWxhclByb3BlcnRpZXNSZXF1ZXN0PgogICAgPHN0cmluZ1ZhbHVlPiAgc3RyaW5nIHdpdGggd2hpdGUgICAgc3BhY2UgIDwvc3RyaW5nVmFsdWU+"
       "CjwvU2ltcGxlU2NhbGFyUHJvcGVydGllc1JlcXVlc3Q+Cg==";
   expectedRq.uri = "/SimpleScalarProperties";
-  expectedRq.headers = {{"Content-Type", R"(application/xml)"}, {"X-Foo", R"(Foo)"}};
+  expectedRq.headers = {{"X-Foo", R"(Foo)"}, {"Content-Type", R"(application/xml)"}};
   ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }
@@ -101,7 +104,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, SimpleScalarPropertiesPureWhiteSpace) 
       "PFNpbXBsZVNjYWxhclByb3BlcnRpZXNSZXF1ZXN0PgogICAgPHN0cmluZ1ZhbHVlPiAgIDwvc3RyaW5nVmFsdWU+CjwvU2ltcGxlU2NhbGFyUHJvcGVydGllc1JlcXVlc3Q+"
       "Cg==";
   expectedRq.uri = "/SimpleScalarProperties";
-  expectedRq.headers = {{"Content-Type", R"(application/xml)"}, {"X-Foo", R"(Foo)"}};
+  expectedRq.headers = {{"X-Foo", R"(Foo)"}, {"Content-Type", R"(application/xml)"}};
   ValidateRequestSent(expectedRq, ValidateXmlBody);
   AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
 }

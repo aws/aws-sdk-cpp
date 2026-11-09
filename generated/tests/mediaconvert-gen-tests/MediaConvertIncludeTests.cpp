@@ -123,6 +123,7 @@
 #include <aws/mediaconvert/model/CaptionDestinationSettings.h>
 #include <aws/mediaconvert/model/CaptionDestinationType.h>
 #include <aws/mediaconvert/model/CaptionSelector.h>
+#include <aws/mediaconvert/model/CaptionSource.h>
 #include <aws/mediaconvert/model/CaptionSourceByteRateLimit.h>
 #include <aws/mediaconvert/model/CaptionSourceConvertPaintOnToPopOn.h>
 #include <aws/mediaconvert/model/CaptionSourceFramerate.h>
@@ -288,7 +289,9 @@
 #include <aws/mediaconvert/model/ElementalInferenceConfiguration.h>
 #include <aws/mediaconvert/model/ElementalInferenceFeature.h>
 #include <aws/mediaconvert/model/ElementalInferenceFeed.h>
+#include <aws/mediaconvert/model/ElementalInferenceFeedConfigurationSource.h>
 #include <aws/mediaconvert/model/ElementalInferenceFeedManagementState.h>
+#include <aws/mediaconvert/model/ElementalInferenceSettings.h>
 #include <aws/mediaconvert/model/EmbeddedConvert608To708.h>
 #include <aws/mediaconvert/model/EmbeddedDestinationSettings.h>
 #include <aws/mediaconvert/model/EmbeddedSourceSettings.h>

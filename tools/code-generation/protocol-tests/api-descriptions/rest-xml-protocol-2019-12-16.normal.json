@@ -27,7 +27,8 @@
             "input": {
                 "shape": "AllQueryStringTypesInput"
             },
-            "documentation": "<p>This example uses all query string types.</p>"
+            "documentation": "<p>This example uses all query string types.</p>",
+            "readonly": true
         },
         "BodyWithXmlName": {
             "name": "BodyWithXmlName",
@@ -56,7 +57,8 @@
             "input": {
                 "shape": "ConstantAndVariableQueryStringInput"
             },
-            "documentation": "<p>This example uses fixed query string params and variable query string params. The fixed query string parameters and variable parameters must both be serialized (implementations may need to merge them together).</p>"
+            "documentation": "<p>This example uses fixed query string params and variable query string params. The fixed query string parameters and variable parameters must both be serialized (implementations may need to merge them together).</p>",
+            "readonly": true
         },
         "ConstantQueryString": {
             "name": "ConstantQueryString",
@@ -68,7 +70,8 @@
             "input": {
                 "shape": "ConstantQueryStringInput"
             },
-            "documentation": "<p>This example uses a constant query string parameters and a label. This simply tests that labels and query string parameters are compatible. The fixed query string parameter named &quot;hello&quot; should in no way conflict with the label, <code>{hello}</code>.</p>"
+            "documentation": "<p>This example uses a constant query string parameters and a label. This simply tests that labels and query string parameters are compatible. The fixed query string parameter named &quot;hello&quot; should in no way conflict with the label, <code>{hello}</code>.</p>",
+            "readonly": true
         },
         "ContentTypeParameters": {
             "name": "ContentTypeParameters",
@@ -229,6 +232,22 @@
             "documentation": "<p>This operation has three possible return values:</p> <ol> <li>A successful response in the form of GreetingWithErrorsOutput</li> <li>An InvalidGreeting error.</li> <li>A BadRequest error.</li> </ol> <p>Implementations must be able to successfully take a response and properly (de)serialize successful and error responses based on the the presence of the</p>",
             "idempotent": true
         },
+        "HttpEmptyPrefixHeaders": {
+            "name": "HttpEmptyPrefixHeaders",
+            "http": {
+                "method": "GET",
+                "requestUri": "/HttpEmptyPrefixHeaders",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "HttpEmptyPrefixHeadersInput"
+            },
+            "output": {
+                "shape": "HttpEmptyPrefixHeadersOutput"
+            },
+            "documentation": "<p>Clients that perform this test extract all headers from the response.</p>",
+            "readonly": true
+        },
         "HttpEnumPayload": {
             "name": "HttpEnumPayload",
             "http": {
@@ -367,7 +386,8 @@
             "output": {
                 "shape": "HttpPrefixHeadersInputOutput"
             },
-            "documentation": "<p>This examples adds headers to the input of a request and response by prefix.</p>"
+            "documentation": "<p>This examples adds headers to the input of a request and response by prefix.</p>",
+            "readonly": true
         },
         "HttpRequestWithFloatLabels": {
             "name": "HttpRequestWithFloatLabels",
@@ -378,7 +398,8 @@
             },
             "input": {
                 "shape": "HttpRequestWithFloatLabelsInput"
-            }
+            },
+            "readonly": true
         },
         "HttpRequestWithGreedyLabelInPath": {
             "name": "HttpRequestWithGreedyLabelInPath",
@@ -389,7 +410,8 @@
             },
             "input": {
                 "shape": "HttpRequestWithGreedyLabelInPathInput"
-            }
+            },
+            "readonly": true
         },
         "HttpRequestWithLabels": {
             "name": "HttpRequestWithLabels",
@@ -401,7 +423,8 @@
             "input": {
                 "shape": "HttpRequestWithLabelsInput"
             },
-            "documentation": "<p>The example tests how requests are serialized when there's no input payload but there are HTTP labels.</p>"
+            "documentation": "<p>The example tests how requests are serialized when there's no input payload but there are HTTP labels.</p>",
+            "readonly": true
         },
         "HttpRequestWithLabelsAndTimestampFormat": {
             "name": "HttpRequestWithLabelsAndTimestampFormat",
@@ -413,7 +436,8 @@
             "input": {
                 "shape": "HttpRequestWithLabelsAndTimestampFormatInput"
             },
-            "documentation": "<p>The example tests how requests serialize different timestamp formats in the URI path.</p>"
+            "documentation": "<p>The example tests how requests serialize different timestamp formats in the URI path.</p>",
+            "readonly": true
         },
         "HttpResponseCode": {
             "name": "HttpResponseCode",
@@ -451,7 +475,8 @@
             "output": {
                 "shape": "IgnoreQueryParamsInResponseOutput"
             },
-            "documentation": "<p>This example ensures that query string bound request parameters are serialized in the body of responses if the structure is used in both the request and response.</p>"
+            "documentation": "<p>This example ensures that query string bound request parameters are serialized in the body of responses if the structure is used in both the request and response.</p>",
+            "readonly": true
         },
         "InputAndOutputWithHeaders": {
             "name": "InputAndOutputWithHeaders",
@@ -476,11 +501,11 @@
                 "responseCode": 200
             },
             "input": {
-                "shape": "NestedXmlMapWithXmlNameInputOutput",
+                "shape": "NestedXmlMapWithXmlNameRequest",
                 "locationName": "NestedXmlMapWithXmlNameRequest"
             },
             "output": {
-                "shape": "NestedXmlMapWithXmlNameInputOutput"
+                "shape": "NestedXmlMapWithXmlNameResponse"
             },
             "documentation": "<p>Nested Xml Maps with key/values with @xmlName</p>"
         },
@@ -533,7 +558,8 @@
             "output": {
                 "shape": "NullAndEmptyHeadersIO"
             },
-            "documentation": "<p>Null headers are not sent over the wire, empty headers are serialized to &quot;&quot;</p>"
+            "documentation": "<p>Null headers are not sent over the wire, empty headers are serialized to &quot;&quot;</p>",
+            "readonly": true
         },
         "NullAndEmptyHeadersServer": {
             "name": "NullAndEmptyHeadersServer",
@@ -548,7 +574,8 @@
             "output": {
                 "shape": "NullAndEmptyHeadersIO"
             },
-            "documentation": "<p>Null headers are not sent over the wire, empty headers are serialized to &quot;&quot;</p>"
+            "documentation": "<p>Null headers are not sent over the wire, empty headers are serialized to &quot;&quot;</p>",
+            "readonly": true
         },
         "OmitsNullSerializesEmptyString": {
             "name": "OmitsNullSerializesEmptyString",
@@ -560,7 +587,8 @@
             "input": {
                 "shape": "OmitsNullSerializesEmptyStringInput"
             },
-            "documentation": "<p>Omits null, but serializes empty string value.</p>"
+            "documentation": "<p>Omits null, but serializes empty string value.</p>",
+            "readonly": true
         },
         "PutWithContentEncoding": {
             "name": "PutWithContentEncoding",
@@ -676,6 +704,22 @@
                 "shape": "XmlAttributesResponse"
             },
             "documentation": "<p>This example serializes an XML attributes on synthesized document.</p>",
+            "idempotent": true
+        },
+        "XmlAttributesInMiddle": {
+            "name": "XmlAttributesInMiddle",
+            "http": {
+                "method": "PUT",
+                "requestUri": "/XmlAttributesInMiddle",
+                "responseCode": 200
+            },
+            "input": {
+                "shape": "XmlAttributesInMiddleRequest"
+            },
+            "output": {
+                "shape": "XmlAttributesInMiddleResponse"
+            },
+            "documentation": "<p>This example serializes an XML attribute on a payload when it's defined in the middle of the member list. This tests that implementations correctly write attributes immediately after the element start tag, which is critical for languages like C# where attribute writing must happen before child elements.</p>",
             "idempotent": true
         },
         "XmlAttributesOnPayload": {
@@ -1337,6 +1381,36 @@
             "type": "timestamp",
             "timestampFormat": "rfc822"
         },
+        "HttpEmptyPrefixHeadersInput": {
+            "type": "structure",
+            "members": {
+                "prefixHeaders": {
+                    "shape": "StringMap",
+                    "location": "headers",
+                    "locationName": ""
+                },
+                "specificHeader": {
+                    "shape": "String",
+                    "location": "header",
+                    "locationName": "hello"
+                }
+            }
+        },
+        "HttpEmptyPrefixHeadersOutput": {
+            "type": "structure",
+            "members": {
+                "prefixHeaders": {
+                    "shape": "StringMap",
+                    "location": "headers",
+                    "locationName": ""
+                },
+                "specificHeader": {
+                    "shape": "String",
+                    "location": "header",
+                    "locationName": "hello"
+                }
+            }
+        },
         "HttpPayloadTraitsInputOutput": {
             "type": "structure",
             "members": {
@@ -1786,14 +1860,6 @@
                 "locationName": "InnerValue"
             }
         },
-        "NestedXmlMapWithXmlNameInputOutput": {
-            "type": "structure",
-            "members": {
-                "nestedXmlMapWithXmlNameMap": {
-                    "shape": "NestedXmlMapWithXmlNameMap"
-                }
-            }
-        },
         "NestedXmlMapWithXmlNameMap": {
             "type": "map",
             "key": {
@@ -1802,6 +1868,22 @@
             },
             "value": {
                 "shape": "NestedXmlMapWithXmlNameInnerMap"
+            }
+        },
+        "NestedXmlMapWithXmlNameRequest": {
+            "type": "structure",
+            "members": {
+                "nestedXmlMapWithXmlNameMap": {
+                    "shape": "NestedXmlMapWithXmlNameMap"
+                }
+            }
+        },
+        "NestedXmlMapWithXmlNameResponse": {
+            "type": "structure",
+            "members": {
+                "nestedXmlMapWithXmlNameMap": {
+                    "shape": "NestedXmlMapWithXmlNameMap"
+                }
             }
         },
         "NestedXmlMapsRequest": {
@@ -2207,6 +2289,57 @@
                 }
             },
             "union": true
+        },
+        "XmlAttributesInMiddlePayloadRequest": {
+            "type": "structure",
+            "members": {
+                "foo": {
+                    "shape": "String"
+                },
+                "attr": {
+                    "shape": "String",
+                    "locationName": "test",
+                    "xmlAttribute": true
+                },
+                "baz": {
+                    "shape": "String"
+                }
+            }
+        },
+        "XmlAttributesInMiddlePayloadResponse": {
+            "type": "structure",
+            "members": {
+                "foo": {
+                    "shape": "String"
+                },
+                "attr": {
+                    "shape": "String",
+                    "locationName": "test",
+                    "xmlAttribute": true
+                },
+                "baz": {
+                    "shape": "String"
+                }
+            }
+        },
+        "XmlAttributesInMiddleRequest": {
+            "type": "structure",
+            "members": {
+                "payload": {
+                    "shape": "XmlAttributesInMiddlePayloadRequest",
+                    "locationName": "payload"
+                }
+            },
+            "payload": "payload"
+        },
+        "XmlAttributesInMiddleResponse": {
+            "type": "structure",
+            "members": {
+                "payload": {
+                    "shape": "XmlAttributesInMiddlePayloadResponse"
+                }
+            },
+            "payload": "payload"
         },
         "XmlAttributesOnPayloadRequest": {
             "type": "structure",

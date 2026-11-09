@@ -494,6 +494,34 @@ class AWS_RESTXMLPROTOCOL_API RestXmlProtocolClient : public Aws::Client::AWSXML
   }
 
   /**
+   * <p>Clients that perform this test extract all headers from the
+   * response.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/HttpEmptyPrefixHeaders">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::HttpEmptyPrefixHeadersOutcome HttpEmptyPrefixHeaders(const Model::HttpEmptyPrefixHeadersRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for HttpEmptyPrefixHeaders that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename HttpEmptyPrefixHeadersRequestT = Model::HttpEmptyPrefixHeadersRequest>
+  Model::HttpEmptyPrefixHeadersOutcomeCallable HttpEmptyPrefixHeadersCallable(const HttpEmptyPrefixHeadersRequestT& request = {}) const {
+    return SubmitCallable(&RestXmlProtocolClient::HttpEmptyPrefixHeaders, request);
+  }
+
+  /**
+   * An Async wrapper for HttpEmptyPrefixHeaders that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename HttpEmptyPrefixHeadersRequestT = Model::HttpEmptyPrefixHeadersRequest>
+  void HttpEmptyPrefixHeadersAsync(const HttpEmptyPrefixHeadersResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                   const HttpEmptyPrefixHeadersRequestT& request = {}) const {
+    return SubmitAsync(&RestXmlProtocolClient::HttpEmptyPrefixHeaders, request, handler, context);
+  }
+
+  /**
    *
    */
   virtual Model::HttpEnumPayloadOutcome HttpEnumPayload(const Model::HttpEnumPayloadRequest& request = {}) const;
@@ -1381,6 +1409,37 @@ class AWS_RESTXMLPROTOCOL_API RestXmlProtocolClient : public Aws::Client::AWSXML
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                           const XmlAttributesRequestT& request = {}) const {
     return SubmitAsync(&RestXmlProtocolClient::XmlAttributes, request, handler, context);
+  }
+
+  /**
+   * <p>This example serializes an XML attribute on a payload when it's defined in
+   * the middle of the member list. This tests that implementations correctly write
+   * attributes immediately after the element start tag, which is critical for
+   * languages like C# where attribute writing must happen before child
+   * elements.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rest-xml-protocol-2019-12-16/XmlAttributesInMiddle">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::XmlAttributesInMiddleOutcome XmlAttributesInMiddle(const Model::XmlAttributesInMiddleRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for XmlAttributesInMiddle that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename XmlAttributesInMiddleRequestT = Model::XmlAttributesInMiddleRequest>
+  Model::XmlAttributesInMiddleOutcomeCallable XmlAttributesInMiddleCallable(const XmlAttributesInMiddleRequestT& request = {}) const {
+    return SubmitCallable(&RestXmlProtocolClient::XmlAttributesInMiddle, request);
+  }
+
+  /**
+   * An Async wrapper for XmlAttributesInMiddle that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename XmlAttributesInMiddleRequestT = Model::XmlAttributesInMiddleRequest>
+  void XmlAttributesInMiddleAsync(const XmlAttributesInMiddleResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                  const XmlAttributesInMiddleRequestT& request = {}) const {
+    return SubmitAsync(&RestXmlProtocolClient::XmlAttributesInMiddle, request, handler, context);
   }
 
   /**

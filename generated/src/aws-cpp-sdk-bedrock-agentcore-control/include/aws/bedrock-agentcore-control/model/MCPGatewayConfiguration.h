@@ -138,11 +138,13 @@ class MCPGatewayConfiguration {
 
   ///@{
   /**
-   * <p>Specifies whether pagination is disabled for the Model Context Protocol (MCP)
-   * <code>tools/list</code> operation. When set to <code>true</code>, the gateway
-   * returns the complete list of tools in a single response without a pagination
-   * cursor. When set to <code>false</code> or omitted, the gateway returns tools in
-   * paginated responses.</p>
+   * <p>Specifies whether the gateway disables pagination for the Model Context
+   * Protocol (MCP) <code>tools/list</code> operation. When set to <code>true</code>,
+   * the gateway returns the complete list of tools in a single response without a
+   * pagination cursor. When set to <code>false</code> or omitted, the gateway
+   * returns tools in paginated responses. For information about changing this value
+   * on an existing gateway, see <a
+   * href="https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_UpdateGateway.html">UpdateGateway</a>.</p>
    */
   inline bool GetDisableMcpListToolsPagination() const { return m_disableMcpListToolsPagination; }
   inline bool DisableMcpListToolsPaginationHasBeenSet() const { return m_disableMcpListToolsPaginationHasBeenSet; }

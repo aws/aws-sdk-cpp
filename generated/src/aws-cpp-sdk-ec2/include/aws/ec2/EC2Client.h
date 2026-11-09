@@ -8649,11 +8649,13 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
   }
 
   /**
-   * <p>Deletes the specified transit gateway route table. If there are any route
-   * tables associated with the transit gateway route table, you must first run
-   * <a>DisassociateRouteTable</a> before you can delete the transit gateway route
-   * table. This removes any route tables associated with the transit gateway route
-   * table.</p><p><h3>See Also:</h3>   <a
+   * <p>Deletes the specified transit gateway route table. Before you can delete a
+   * transit gateway route table, you must disassociate all attachments from it by
+   * using <a>DisassociateTransitGatewayRouteTable</a> and wait for the
+   * disassociations to complete. You can't delete a transit gateway route table that
+   * is the default association route table or default propagation route table for
+   * the transit gateway. To change the default route tables, use
+   * <a>ModifyTransitGateway</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayRouteTable">AWS
    * API Reference</a></p>
    */
@@ -18807,6 +18809,46 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p> Scores how well each instance type and Availability Zone combination can
+   * support a capacity request, based on current Amazon EC2 capacity. The response
+   * includes a score for each combination and an aggregate score for all
+   * combinations in the request. This action doesn't launch or reserve instances,
+   * and a score doesn't guarantee that a later launch will succeed. </p> <p> Call
+   * this action in the Region where you turned on Capacity Manager. A single request
+   * can include Availability Zones in any Region. Real-time supportability checks
+   * are available only to Amazon Web Services Support customers on the Unified
+   * Operations plan. </p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-manager-supportability.html">Check
+   * supportability</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCapacityManagerSupportabilityScores">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetCapacityManagerSupportabilityScoresOutcome GetCapacityManagerSupportabilityScores(
+      const Model::GetCapacityManagerSupportabilityScoresRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetCapacityManagerSupportabilityScores that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename GetCapacityManagerSupportabilityScoresRequestT = Model::GetCapacityManagerSupportabilityScoresRequest>
+  Model::GetCapacityManagerSupportabilityScoresOutcomeCallable GetCapacityManagerSupportabilityScoresCallable(
+      const GetCapacityManagerSupportabilityScoresRequestT& request) const {
+    return SubmitCallable(&EC2Client::GetCapacityManagerSupportabilityScores, request);
+  }
+
+  /**
+   * An Async wrapper for GetCapacityManagerSupportabilityScores that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename GetCapacityManagerSupportabilityScoresRequestT = Model::GetCapacityManagerSupportabilityScoresRequest>
+  void GetCapacityManagerSupportabilityScoresAsync(const GetCapacityManagerSupportabilityScoresRequestT& request,
+                                                   const GetCapacityManagerSupportabilityScoresResponseReceivedHandler& handler,
+                                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::GetCapacityManagerSupportabilityScores, request, handler, context);
+  }
+
+  /**
    * <p>Gets usage information about a Capacity Reservation. If the Capacity
    * Reservation is shared, it shows usage information for the Capacity Reservation
    * owner and each Amazon Web Services account that is currently using the shared
@@ -19295,6 +19337,35 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                            const GetImageBlockPublicAccessStateRequestT& request = {}) const {
     return SubmitAsync(&EC2Client::GetImageBlockPublicAccessState, request, handler, context);
+  }
+
+  /**
+   * <p>Describes the Amazon Inspector vulnerability findings for the specified
+   * AMI.</p> <p>You can get findings for AMIs that you own, AMIs that are shared
+   * with you, and public AMIs. Amazon Inspector returns findings only for AMIs that
+   * it has scanned.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetImageFindings">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetImageFindingsOutcome GetImageFindings(const Model::GetImageFindingsRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetImageFindings that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetImageFindingsRequestT = Model::GetImageFindingsRequest>
+  Model::GetImageFindingsOutcomeCallable GetImageFindingsCallable(const GetImageFindingsRequestT& request) const {
+    return SubmitCallable(&EC2Client::GetImageFindings, request);
+  }
+
+  /**
+   * An Async wrapper for GetImageFindings that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetImageFindingsRequestT = Model::GetImageFindingsRequest>
+  void GetImageFindingsAsync(const GetImageFindingsRequestT& request, const GetImageFindingsResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::GetImageFindings, request, handler, context);
   }
 
   /**
@@ -20611,6 +20682,38 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
                                       const GetSubnetCidrReservationsResponseReceivedHandler& handler,
                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EC2Client::GetSubnetCidrReservations, request, handler, context);
+  }
+
+  /**
+   * <p>Describes the NAT configuration for the specified transit gateway attachment.
+   * Only the owner of the transit gateway can describe the NAT
+   * configuration.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayAttachmentNatConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetTransitGatewayAttachmentNatConfigurationOutcome GetTransitGatewayAttachmentNatConfiguration(
+      const Model::GetTransitGatewayAttachmentNatConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetTransitGatewayAttachmentNatConfiguration that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename GetTransitGatewayAttachmentNatConfigurationRequestT = Model::GetTransitGatewayAttachmentNatConfigurationRequest>
+  Model::GetTransitGatewayAttachmentNatConfigurationOutcomeCallable GetTransitGatewayAttachmentNatConfigurationCallable(
+      const GetTransitGatewayAttachmentNatConfigurationRequestT& request) const {
+    return SubmitCallable(&EC2Client::GetTransitGatewayAttachmentNatConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for GetTransitGatewayAttachmentNatConfiguration that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename GetTransitGatewayAttachmentNatConfigurationRequestT = Model::GetTransitGatewayAttachmentNatConfigurationRequest>
+  void GetTransitGatewayAttachmentNatConfigurationAsync(
+      const GetTransitGatewayAttachmentNatConfigurationRequestT& request,
+      const GetTransitGatewayAttachmentNatConfigurationResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::GetTransitGatewayAttachmentNatConfiguration, request, handler, context);
   }
 
   /**
@@ -23343,6 +23446,47 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
   void ModifyTransitGatewayAsync(const ModifyTransitGatewayRequestT& request, const ModifyTransitGatewayResponseReceivedHandler& handler,
                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EC2Client::ModifyTransitGateway, request, handler, context);
+  }
+
+  /**
+   * <p>Modifies the NAT configuration for the specified transit gateway attachment.
+   * Use this operation to do the following:</p> <ul> <li> <p>Enable or disable NAT
+   * gateway support for the attachment.</p> </li> <li> <p>Specify whether the
+   * transit gateway installs routes for the NAT CIDRs.</p> </li> <li> <p>Replace the
+   * NAT gateway rules for the attachment.</p> </li> </ul> <p>Only the owner of the
+   * transit gateway can modify the NAT configuration.</p> <p>With NAT gateway
+   * support enabled, the transit gateway translates addresses in each rule's
+   * <code>MatchSourceCidr</code> range to the corresponding addresses in its
+   * <code>NatCidr</code> range.</p> <p>The transit gateway applies changes
+   * asynchronously. To check the result, use
+   * <code>GetTransitGatewayAttachmentNatConfiguration</code>.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTransitGatewayAttachmentNatConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ModifyTransitGatewayAttachmentNatConfigurationOutcome ModifyTransitGatewayAttachmentNatConfiguration(
+      const Model::ModifyTransitGatewayAttachmentNatConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for ModifyTransitGatewayAttachmentNatConfiguration that returns a future to the operation so that it can be executed
+   * in parallel to other requests.
+   */
+  template <typename ModifyTransitGatewayAttachmentNatConfigurationRequestT = Model::ModifyTransitGatewayAttachmentNatConfigurationRequest>
+  Model::ModifyTransitGatewayAttachmentNatConfigurationOutcomeCallable ModifyTransitGatewayAttachmentNatConfigurationCallable(
+      const ModifyTransitGatewayAttachmentNatConfigurationRequestT& request) const {
+    return SubmitCallable(&EC2Client::ModifyTransitGatewayAttachmentNatConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for ModifyTransitGatewayAttachmentNatConfiguration that queues the request into a thread executor and triggers
+   * associated callback when operation has finished.
+   */
+  template <typename ModifyTransitGatewayAttachmentNatConfigurationRequestT = Model::ModifyTransitGatewayAttachmentNatConfigurationRequest>
+  void ModifyTransitGatewayAttachmentNatConfigurationAsync(
+      const ModifyTransitGatewayAttachmentNatConfigurationRequestT& request,
+      const ModifyTransitGatewayAttachmentNatConfigurationResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::ModifyTransitGatewayAttachmentNatConfiguration, request, handler, context);
   }
 
   /**

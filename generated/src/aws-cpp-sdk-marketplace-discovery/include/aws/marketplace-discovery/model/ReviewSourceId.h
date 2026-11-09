@@ -10,7 +10,7 @@
 namespace Aws {
 namespace MarketplaceDiscovery {
 namespace Model {
-enum class ReviewSourceId { NOT_SET, AWS_MARKETPLACE };
+enum class ReviewSourceId { NOT_SET, AWS_MARKETPLACE, G2, PEERSPOT };
 
 namespace ReviewSourceIdMapper {
 AWS_MARKETPLACEDISCOVERY_API ReviewSourceId GetReviewSourceIdForName(const Aws::String& name);

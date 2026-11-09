@@ -9,6 +9,7 @@
 #include <aws/docdb/DocDBClientPagination.h>
 #include <aws/docdb/DocDBPaginationBase.h>
 #include <aws/docdb/model/DescribeDBClusterSnapshotsPaginationTraits.h>
+#include <aws/docdb/model/DescribeServerlessV2PlatformVersionsPaginationTraits.h>
 #include <aws/docdb/model/DescribeDBClustersPaginationTraits.h>
 #include <aws/docdb/model/DescribeDBEngineVersionsPaginationTraits.h>
 #include <aws/docdb/model/DescribeEventsPaginationTraits.h>

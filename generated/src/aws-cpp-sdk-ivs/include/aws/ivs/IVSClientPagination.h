@@ -8,6 +8,7 @@
 #include <aws/ivs/IVSClient.h>
 #include <aws/ivs/model/ListAdConfigurationsPaginationTraits.h>
 #include <aws/ivs/model/ListChannelsPaginationTraits.h>
+#include <aws/ivs/model/ListFailoverSlateConfigurationsPaginationTraits.h>
 #include <aws/ivs/model/ListPlaybackKeyPairsPaginationTraits.h>
 #include <aws/ivs/model/ListPlaybackRestrictionPoliciesPaginationTraits.h>
 #include <aws/ivs/model/ListRecordingConfigurationsPaginationTraits.h>
@@ -22,6 +23,9 @@ using ListAdConfigurationsPaginator = Aws::Utils::Pagination::Paginator<IVSClien
                                                                         Pagination::ListAdConfigurationsPaginationTraits<IVSClient>>;
 using ListChannelsPaginator =
     Aws::Utils::Pagination::Paginator<IVSClient, Model::ListChannelsRequest, Pagination::ListChannelsPaginationTraits<IVSClient>>;
+using ListFailoverSlateConfigurationsPaginator =
+    Aws::Utils::Pagination::Paginator<IVSClient, Model::ListFailoverSlateConfigurationsRequest,
+                                      Pagination::ListFailoverSlateConfigurationsPaginationTraits<IVSClient>>;
 using ListPlaybackKeyPairsPaginator = Aws::Utils::Pagination::Paginator<IVSClient, Model::ListPlaybackKeyPairsRequest,
                                                                         Pagination::ListPlaybackKeyPairsPaginationTraits<IVSClient>>;
 using ListPlaybackRestrictionPoliciesPaginator =

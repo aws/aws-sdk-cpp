@@ -82,6 +82,7 @@
 #include <aws/amp/model/GetDefaultScraperConfigurationResult.h>
 #include <aws/amp/model/IgnoreNearExpected.h>
 #include <aws/amp/model/InternalServerException.h>
+#include <aws/amp/model/KafkaExporterConfiguration.h>
 #include <aws/amp/model/LimitsPerLabelSet.h>
 #include <aws/amp/model/LimitsPerLabelSetEntry.h>
 #include <aws/amp/model/ListAnomalyDetectorsPaginationTraits.h>

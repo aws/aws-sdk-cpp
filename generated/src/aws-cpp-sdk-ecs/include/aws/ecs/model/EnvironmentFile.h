@@ -36,8 +36,7 @@ namespace Model {
  * Container Service Developer Guide</i>.</p> <p>Environment variable files are
  * objects in Amazon S3 and all Amazon S3 security considerations apply. </p>
  * <p>You must use the following platforms for the Fargate launch type:</p> <ul>
- * <li> <p>Linux platform version <code>1.4.0</code> or later.</p> </li> <li>
- * <p>Windows platform version <code>1.0.0</code> or later.</p> </li> </ul>
+ * <li> <p>Linux platform version <code>1.4.0</code> or later.</p> </li> </ul>
  * <p>Consider the following when using the Fargate launch type:</p> <ul> <li>
  * <p>The file is handled like a native Docker env-file.</p> </li> <li> <p>There is
  * no support for shell escape handling.</p> </li> <li> <p>The container entry

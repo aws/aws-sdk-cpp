@@ -7,6 +7,9 @@
 #include <aws/rest-json-protocol/model/HttpRequestWithFloatLabelsRequest.h>
 #include <aws/testing/AwsProtocolTestHelpers.h>
 
+#include <cmath>
+#include <limits>
+
 using HttpRequestWithFloatLabels = AWS_PROTOCOL_TEST_SUITE;
 using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
 using namespace Aws::RestJsonProtocol::Model;

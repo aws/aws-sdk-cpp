@@ -149,9 +149,9 @@ class OperationUpdate {
   /**
    * <p>The payload for successful operations. The maximum payload size is 6 MB for
    * synchronous <code>EXECUTION</code> operations (RequestResponse invocationType),
-   * 1 MB for asynchronous <code>EXECUTION</code> (Event invocationType) and
-   * <code>CHAINED_INVOKE</code> operations, and 256 KB for <code>CONTEXT</code>,
-   * <code>STEP</code>, <code>WAIT</code>, and <code>CALLBACK</code> operations.</p>
+   * and 1 MB for asynchronous <code>EXECUTION</code> (Event invocationType),
+   * <code>CHAINED_INVOKE</code>, <code>CONTEXT</code>, <code>STEP</code>,
+   * <code>WAIT</code>, and <code>CALLBACK</code> operations.</p>
    */
   inline const Aws::String& GetPayload() const { return m_payload; }
   inline bool PayloadHasBeenSet() const { return m_payloadHasBeenSet; }
@@ -169,7 +169,8 @@ class OperationUpdate {
 
   ///@{
   /**
-   * <p>The error information for failed operations.</p>
+   * <p>The error information for failed operations. The combined size of all error
+   * fields is limited to 1 MB.</p>
    */
   inline const ErrorObject& GetError() const { return m_error; }
   inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }

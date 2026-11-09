@@ -18,7 +18,6 @@
 #include <aws/timestream-influxdb/TimestreamInfluxDB_EXPORTS.h>
 #include <aws/timestream-influxdb/internal/TimestreamInfluxDBEndpointRules.h>
 #include <aws/timestream-influxdb/model/AutomatedDbBackupType.h>
-#include <aws/timestream-influxdb/model/ClusterConfiguration.h>
 #include <aws/timestream-influxdb/model/ClusterDeploymentType.h>
 #include <aws/timestream-influxdb/model/ClusterStatus.h>
 #include <aws/timestream-influxdb/model/ConflictException.h>
@@ -48,6 +47,7 @@
 #include <aws/timestream-influxdb/model/DeleteDbClusterResult.h>
 #include <aws/timestream-influxdb/model/DeleteDbInstanceRequest.h>
 #include <aws/timestream-influxdb/model/DeleteDbInstanceResult.h>
+#include <aws/timestream-influxdb/model/DeploymentConfiguration.h>
 #include <aws/timestream-influxdb/model/DeploymentType.h>
 #include <aws/timestream-influxdb/model/Duration.h>
 #include <aws/timestream-influxdb/model/DurationType.h>
@@ -63,6 +63,7 @@
 #include <aws/timestream-influxdb/model/GetDbParameterGroupResult.h>
 #include <aws/timestream-influxdb/model/InfluxDBv2Parameters.h>
 #include <aws/timestream-influxdb/model/InfluxDBv3CoreParameters.h>
+#include <aws/timestream-influxdb/model/InfluxDBv3EnterpriseDeploymentConfiguration.h>
 #include <aws/timestream-influxdb/model/InfluxDBv3EnterpriseParameters.h>
 #include <aws/timestream-influxdb/model/InstanceMode.h>
 #include <aws/timestream-influxdb/model/ListDbBackupsPaginationTraits.h>
@@ -87,6 +88,7 @@
 #include <aws/timestream-influxdb/model/LogLevel.h>
 #include <aws/timestream-influxdb/model/MaintenanceSchedule.h>
 #include <aws/timestream-influxdb/model/NetworkType.h>
+#include <aws/timestream-influxdb/model/NodeGroup.h>
 #include <aws/timestream-influxdb/model/Parameters.h>
 #include <aws/timestream-influxdb/model/PercentOrAbsoluteLong.h>
 #include <aws/timestream-influxdb/model/RebootDbClusterRequest.h>

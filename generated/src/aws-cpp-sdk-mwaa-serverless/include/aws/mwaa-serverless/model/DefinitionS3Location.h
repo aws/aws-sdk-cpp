@@ -77,8 +77,8 @@ class DefinitionS3Location {
 
   ///@{
   /**
-   * <p>Optional. The version ID of the workflow definition file in Amazon S3. If not
-   * specified, the latest version is used.</p>
+   * <p>Optional. The version ID of the workflow definition file in Amazon S3. If you
+   * don't specify a version, we use the latest version.</p>
    */
   inline const Aws::String& GetVersionId() const { return m_versionId; }
   inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }

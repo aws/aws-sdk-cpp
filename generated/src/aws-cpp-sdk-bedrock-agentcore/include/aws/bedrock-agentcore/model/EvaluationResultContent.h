@@ -98,6 +98,27 @@ class EvaluationResultContent {
 
   ///@{
   /**
+   * <p> The name of the dimension that this result scores. This field is set only on
+   * results produced by an evaluator that uses a multi-dimensional rating scale,
+   * where each dimension is scored independently. For evaluators with a single
+   * rating scale, this field is absent. </p>
+   */
+  inline const Aws::String& GetEvaluationDimensionName() const { return m_evaluationDimensionName; }
+  inline bool EvaluationDimensionNameHasBeenSet() const { return m_evaluationDimensionNameHasBeenSet; }
+  template <typename EvaluationDimensionNameT = Aws::String>
+  void SetEvaluationDimensionName(EvaluationDimensionNameT&& value) {
+    m_evaluationDimensionNameHasBeenSet = true;
+    m_evaluationDimensionName = std::forward<EvaluationDimensionNameT>(value);
+  }
+  template <typename EvaluationDimensionNameT = Aws::String>
+  EvaluationResultContent& WithEvaluationDimensionName(EvaluationDimensionNameT&& value) {
+    SetEvaluationDimensionName(std::forward<EvaluationDimensionNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p> The detailed explanation provided by the evaluator describing the reasoning
    * behind the assigned score. This qualitative feedback helps understand why
    * specific ratings were given and provides actionable insights for improvement.
@@ -269,6 +290,8 @@ class EvaluationResultContent {
 
   Aws::String m_evaluatorName;
 
+  Aws::String m_evaluationDimensionName;
+
   Aws::String m_explanation;
 
   Context m_context;
@@ -287,6 +310,7 @@ class EvaluationResultContent {
   bool m_evaluatorArnHasBeenSet = false;
   bool m_evaluatorIdHasBeenSet = false;
   bool m_evaluatorNameHasBeenSet = false;
+  bool m_evaluationDimensionNameHasBeenSet = false;
   bool m_explanationHasBeenSet = false;
   bool m_contextHasBeenSet = false;
   bool m_valueHasBeenSet = false;

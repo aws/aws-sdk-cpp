@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Connect {
 namespace Model {
-enum class ReferenceStatus { NOT_SET, AVAILABLE, DELETED, APPROVED, REJECTED, PROCESSING, FAILED };
+enum class ReferenceStatus { NOT_SET, AVAILABLE, DELETED, APPROVED, REJECTED, PROCESSING, FAILED, DRAFTING };
 
 namespace ReferenceStatusMapper {
 AWS_CONNECT_API ReferenceStatus GetReferenceStatusForName(const Aws::String& name);

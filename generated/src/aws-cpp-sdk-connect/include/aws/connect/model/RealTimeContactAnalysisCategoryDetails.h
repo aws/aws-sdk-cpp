@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/RealTimeContactAnalysisPointOfInterest.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
@@ -35,6 +36,24 @@ class RealTimeContactAnalysisCategoryDetails {
 
   ///@{
   /**
+   * <p>The unique identifier of the rule that created the matched category.</p>
+   */
+  inline const Aws::String& GetRuleId() const { return m_ruleId; }
+  inline bool RuleIdHasBeenSet() const { return m_ruleIdHasBeenSet; }
+  template <typename RuleIdT = Aws::String>
+  void SetRuleId(RuleIdT&& value) {
+    m_ruleIdHasBeenSet = true;
+    m_ruleId = std::forward<RuleIdT>(value);
+  }
+  template <typename RuleIdT = Aws::String>
+  RealTimeContactAnalysisCategoryDetails& WithRuleId(RuleIdT&& value) {
+    SetRuleId(std::forward<RuleIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>List of PointOfInterest - objects describing a single match of a rule.</p>
    */
   inline const Aws::Vector<RealTimeContactAnalysisPointOfInterest>& GetPointsOfInterest() const { return m_pointsOfInterest; }
@@ -57,7 +76,10 @@ class RealTimeContactAnalysisCategoryDetails {
   }
   ///@}
  private:
+  Aws::String m_ruleId;
+
   Aws::Vector<RealTimeContactAnalysisPointOfInterest> m_pointsOfInterest;
+  bool m_ruleIdHasBeenSet = false;
   bool m_pointsOfInterestHasBeenSet = false;
 };
 

@@ -89,5 +89,13 @@ Aws::String CreateAgentRuntimeRequest::SerializePayload() const {
     payload.WithString("platformVersion", m_platformVersion);
   }
 
+  if (m_allowedPortsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> allowedPortsJsonList(m_allowedPorts.size());
+    for (unsigned allowedPortsIndex = 0; allowedPortsIndex < allowedPortsJsonList.GetLength(); ++allowedPortsIndex) {
+      allowedPortsJsonList[allowedPortsIndex].AsObject(m_allowedPorts[allowedPortsIndex].Jsonize());
+    }
+    payload.WithArray("allowedPorts", std::move(allowedPortsJsonList));
+  }
+
   return payload.View().WriteReadable();
 }

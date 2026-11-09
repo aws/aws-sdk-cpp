@@ -22,6 +22,14 @@ ProtocolConfiguration& ProtocolConfiguration::operator=(JsonView jsonValue) {
     m_serverProtocol = ServerProtocolMapper::GetServerProtocolForName(jsonValue.GetString("serverProtocol"));
     m_serverProtocolHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("port")) {
+    m_port = jsonValue.GetInteger("port");
+    m_portHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("path")) {
+    m_path = jsonValue.GetString("path");
+    m_pathHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +38,14 @@ JsonValue ProtocolConfiguration::Jsonize() const {
 
   if (m_serverProtocolHasBeenSet) {
     payload.WithString("serverProtocol", ServerProtocolMapper::GetNameForServerProtocol(m_serverProtocol));
+  }
+
+  if (m_portHasBeenSet) {
+    payload.WithInteger("port", m_port);
+  }
+
+  if (m_pathHasBeenSet) {
+    payload.WithString("path", m_path);
   }
 
   return payload;

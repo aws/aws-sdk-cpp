@@ -1999,6 +1999,69 @@ class AWS_QCONNECT_API QConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Registers a replica Region KMS key for an Amazon Q in Connect assistant. To
+   * use this operation, you must have <code>kms:GenerateDataKey</code> permission on
+   * the replica key.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/RegisterAssistantReplicaKey">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::RegisterAssistantReplicaKeyOutcome RegisterAssistantReplicaKey(
+      const Model::RegisterAssistantReplicaKeyRequest& request) const;
+
+  /**
+   * A Callable wrapper for RegisterAssistantReplicaKey that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename RegisterAssistantReplicaKeyRequestT = Model::RegisterAssistantReplicaKeyRequest>
+  Model::RegisterAssistantReplicaKeyOutcomeCallable RegisterAssistantReplicaKeyCallable(
+      const RegisterAssistantReplicaKeyRequestT& request) const {
+    return SubmitCallable(&QConnectClient::RegisterAssistantReplicaKey, request);
+  }
+
+  /**
+   * An Async wrapper for RegisterAssistantReplicaKey that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename RegisterAssistantReplicaKeyRequestT = Model::RegisterAssistantReplicaKeyRequest>
+  void RegisterAssistantReplicaKeyAsync(const RegisterAssistantReplicaKeyRequestT& request,
+                                        const RegisterAssistantReplicaKeyResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&QConnectClient::RegisterAssistantReplicaKey, request, handler, context);
+  }
+
+  /**
+   * <p>Registers a replica Region KMS key for an Amazon Q in Connect knowledge base.
+   * To use this operation, you must have <code>kms:GenerateDataKey</code> permission
+   * on the replica key. You must also have <code>kms:CreateGrant</code> permission
+   * on the primary key.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/RegisterKnowledgeBaseReplicaKey">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::RegisterKnowledgeBaseReplicaKeyOutcome RegisterKnowledgeBaseReplicaKey(
+      const Model::RegisterKnowledgeBaseReplicaKeyRequest& request) const;
+
+  /**
+   * A Callable wrapper for RegisterKnowledgeBaseReplicaKey that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename RegisterKnowledgeBaseReplicaKeyRequestT = Model::RegisterKnowledgeBaseReplicaKeyRequest>
+  Model::RegisterKnowledgeBaseReplicaKeyOutcomeCallable RegisterKnowledgeBaseReplicaKeyCallable(
+      const RegisterKnowledgeBaseReplicaKeyRequestT& request) const {
+    return SubmitCallable(&QConnectClient::RegisterKnowledgeBaseReplicaKey, request);
+  }
+
+  /**
+   * An Async wrapper for RegisterKnowledgeBaseReplicaKey that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename RegisterKnowledgeBaseReplicaKeyRequestT = Model::RegisterKnowledgeBaseReplicaKeyRequest>
+  void RegisterKnowledgeBaseReplicaKeyAsync(const RegisterKnowledgeBaseReplicaKeyRequestT& request,
+                                            const RegisterKnowledgeBaseReplicaKeyResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&QConnectClient::RegisterKnowledgeBaseReplicaKey, request, handler, context);
+  }
+
+  /**
    * <p>Removes the AI Agent that is set for use by default on an Amazon Q in Connect
    * Assistant.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qconnect-2020-10-19/RemoveAssistantAIAgent">AWS

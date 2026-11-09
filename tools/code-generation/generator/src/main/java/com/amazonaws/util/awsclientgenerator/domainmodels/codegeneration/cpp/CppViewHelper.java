@@ -138,10 +138,16 @@ public class CppViewHelper {
         CORAL_AUTH_TO_SCHEME_MAPPING.put("smithy.api#noAuth", "smithy::NoAuthSchemeOption::noAuthSchemeOption");
     }
 
-    private static final ImmutableMap<String, String> EVENT_STREAM_HEADER_ACCESSORS = ImmutableMap.of(
-            "string", "GetEventHeaderValueAsString()",
-            "boolean", "GetEventHeaderValueAsBoolean()"
-    );
+    private static final ImmutableMap<String, String> EVENT_STREAM_HEADER_ACCESSORS = ImmutableMap.<String, String>builder()
+            .put("string", "GetEventHeaderValueAsString()")
+            .put("boolean", "GetEventHeaderValueAsBoolean()")
+            .put("byte", "GetEventHeaderValueAsByte()")
+            .put("short", "GetEventHeaderValueAsInt16()")
+            .put("integer", "GetEventHeaderValueAsInt32()")
+            .put("long", "GetEventHeaderValueAsInt64()")
+            .put("blob", "GetEventHeaderValueAsBytebuf()")
+            .put("timestamp", "GetEventHeaderValueAsTimestamp()")
+            .build();
 
     public static String computeExportValue(String classNamePrefix) {
         return String.format("AWS_%s_API", classNamePrefix.toUpperCase());
@@ -659,6 +665,10 @@ public class CppViewHelper {
                     shape.getName(),
                     shape.getName(),
                     value);
+        }
+        if (shape.isTimeStamp()) {
+            // Event-stream timestamp headers carry epoch milliseconds.
+            return String.format("Aws::Utils::DateTime(%s)", value);
         }
         return value;
     }

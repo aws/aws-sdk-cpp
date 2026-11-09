@@ -19,7 +19,8 @@ enum class SourceEnvironment {
   CISCO_ACI,
   LOGICAL_MODEL,
   MODELIZE_IT,
-  AWS_DISCOVERY_COLLECTOR
+  AWS_DISCOVERY_COLLECTOR,
+  MIGRATION_PLANNING_ARTIFACTS
 };
 
 namespace SourceEnvironmentMapper {

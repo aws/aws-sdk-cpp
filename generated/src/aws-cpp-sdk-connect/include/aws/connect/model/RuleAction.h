@@ -9,6 +9,7 @@
 #include <aws/connect/model/AssignContactCategoryActionDefinition.h>
 #include <aws/connect/model/AssignSlaActionDefinition.h>
 #include <aws/connect/model/CreateCaseActionDefinition.h>
+#include <aws/connect/model/EndAssociatedEmailsActionDefinition.h>
 #include <aws/connect/model/EndAssociatedTasksActionDefinition.h>
 #include <aws/connect/model/EventBridgeActionDefinition.h>
 #include <aws/connect/model/ExtractInformationActionDefinition.h>
@@ -229,6 +230,25 @@ class RuleAction {
 
   ///@{
   /**
+   * <p>Information about the end associated emails action.</p> <p>Supported only for
+   * <code>TriggerEventSource</code> values: <code>OnCaseUpdate</code>.</p>
+   */
+  inline const EndAssociatedEmailsActionDefinition& GetEndAssociatedEmailsAction() const { return m_endAssociatedEmailsAction; }
+  inline bool EndAssociatedEmailsActionHasBeenSet() const { return m_endAssociatedEmailsActionHasBeenSet; }
+  template <typename EndAssociatedEmailsActionT = EndAssociatedEmailsActionDefinition>
+  void SetEndAssociatedEmailsAction(EndAssociatedEmailsActionT&& value) {
+    m_endAssociatedEmailsActionHasBeenSet = true;
+    m_endAssociatedEmailsAction = std::forward<EndAssociatedEmailsActionT>(value);
+  }
+  template <typename EndAssociatedEmailsActionT = EndAssociatedEmailsActionDefinition>
+  RuleAction& WithEndAssociatedEmailsAction(EndAssociatedEmailsActionT&& value) {
+    SetEndAssociatedEmailsAction(std::forward<EndAssociatedEmailsActionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Information about the submit automated evaluation action.</p>
    */
   inline const SubmitAutoEvaluationActionDefinition& GetSubmitAutoEvaluationAction() const { return m_submitAutoEvaluationAction; }
@@ -309,6 +329,8 @@ class RuleAction {
 
   EndAssociatedTasksActionDefinition m_endAssociatedTasksAction;
 
+  EndAssociatedEmailsActionDefinition m_endAssociatedEmailsAction;
+
   SubmitAutoEvaluationActionDefinition m_submitAutoEvaluationAction;
 
   ExtractInformationActionDefinition m_extractInformationAction;
@@ -323,6 +345,7 @@ class RuleAction {
   bool m_updateCaseActionHasBeenSet = false;
   bool m_assignSlaActionHasBeenSet = false;
   bool m_endAssociatedTasksActionHasBeenSet = false;
+  bool m_endAssociatedEmailsActionHasBeenSet = false;
   bool m_submitAutoEvaluationActionHasBeenSet = false;
   bool m_extractInformationActionHasBeenSet = false;
   bool m_sendInAppNotificationActionHasBeenSet = false;

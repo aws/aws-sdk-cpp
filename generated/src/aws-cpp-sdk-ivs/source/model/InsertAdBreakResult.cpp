@@ -26,6 +26,10 @@ InsertAdBreakResult& InsertAdBreakResult::operator=(const Aws::AmazonWebServiceR
     m_adBreakId = jsonValue.GetString("adBreakId");
     m_adBreakIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("targetStartAt")) {
+    m_targetStartAt = jsonValue.GetString("targetStartAt");
+    m_targetStartAtHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

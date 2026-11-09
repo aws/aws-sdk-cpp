@@ -50,6 +50,10 @@ Job& Job::operator=(JsonView jsonValue) {
     m_elementalInferenceConfiguration = jsonValue.GetObject("elementalInferenceConfiguration");
     m_elementalInferenceConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("elementalInferenceSettings")) {
+    m_elementalInferenceSettings = jsonValue.GetObject("elementalInferenceSettings");
+    m_elementalInferenceSettingsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("errorCode")) {
     m_errorCode = jsonValue.GetInteger("errorCode");
     m_errorCodeHasBeenSet = true;
@@ -198,6 +202,10 @@ JsonValue Job::Jsonize() const {
 
   if (m_elementalInferenceConfigurationHasBeenSet) {
     payload.WithObject("elementalInferenceConfiguration", m_elementalInferenceConfiguration.Jsonize());
+  }
+
+  if (m_elementalInferenceSettingsHasBeenSet) {
+    payload.WithObject("elementalInferenceSettings", m_elementalInferenceSettings.Jsonize());
   }
 
   if (m_errorCodeHasBeenSet) {

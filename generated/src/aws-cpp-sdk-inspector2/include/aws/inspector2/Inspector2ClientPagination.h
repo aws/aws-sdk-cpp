@@ -22,6 +22,7 @@
 #include <aws/inspector2/model/ListFindingAggregationsPaginationTraits.h>
 #include <aws/inspector2/model/ListFindingsPaginationTraits.h>
 #include <aws/inspector2/model/ListMembersPaginationTraits.h>
+#include <aws/inspector2/model/ListOnDemandScansPaginationTraits.h>
 #include <aws/inspector2/model/ListUsageTotalsPaginationTraits.h>
 #include <aws/inspector2/model/SearchVulnerabilitiesPaginationTraits.h>
 
@@ -69,6 +70,8 @@ using ListFindingsPaginator = Aws::Utils::Pagination::Paginator<Inspector2Client
                                                                 Pagination::ListFindingsPaginationTraits<Inspector2Client>>;
 using ListMembersPaginator = Aws::Utils::Pagination::Paginator<Inspector2Client, Model::ListMembersRequest,
                                                                Pagination::ListMembersPaginationTraits<Inspector2Client>>;
+using ListOnDemandScansPaginator = Aws::Utils::Pagination::Paginator<Inspector2Client, Model::ListOnDemandScansRequest,
+                                                                     Pagination::ListOnDemandScansPaginationTraits<Inspector2Client>>;
 using ListUsageTotalsPaginator = Aws::Utils::Pagination::Paginator<Inspector2Client, Model::ListUsageTotalsRequest,
                                                                    Pagination::ListUsageTotalsPaginationTraits<Inspector2Client>>;
 using SearchVulnerabilitiesPaginator =

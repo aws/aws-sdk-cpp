@@ -35,6 +35,10 @@ Aws::String UpdateDbClusterRequest::SerializePayload() const {
     payload.WithString("dbInstanceType", DbInstanceTypeMapper::GetNameForDbInstanceType(m_dbInstanceType));
   }
 
+  if (m_deploymentConfigurationHasBeenSet) {
+    payload.WithObject("deploymentConfiguration", m_deploymentConfiguration.Jsonize());
+  }
+
   if (m_failoverModeHasBeenSet) {
     payload.WithString("failoverMode", FailoverModeMapper::GetNameForFailoverMode(m_failoverMode));
   }

@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/bedrock-agentcore-control/model/Fallback.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -32,6 +33,63 @@ class TargetTrafficSplitEntry {
   AWS_BEDROCKAGENTCORECONTROL_API TargetTrafficSplitEntry(Aws::Utils::Json::JsonView jsonValue);
   AWS_BEDROCKAGENTCORECONTROL_API TargetTrafficSplitEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
   AWS_BEDROCKAGENTCORECONTROL_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p>The name of the target to route traffic to.</p>
+   */
+  inline const Aws::String& GetTargetName() const { return m_targetName; }
+  inline bool TargetNameHasBeenSet() const { return m_targetNameHasBeenSet; }
+  template <typename TargetNameT = Aws::String>
+  void SetTargetName(TargetNameT&& value) {
+    m_targetNameHasBeenSet = true;
+    m_targetName = std::forward<TargetNameT>(value);
+  }
+  template <typename TargetNameT = Aws::String>
+  TargetTrafficSplitEntry& WithTargetName(TargetNameT&& value) {
+    SetTargetName(std::forward<TargetNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The model ID to send to the target for this variant. Supported only for
+   * inference targets. If you don't specify a model, the gateway sends the model
+   * from the original request.</p>
+   */
+  inline const Aws::String& GetModel() const { return m_model; }
+  inline bool ModelHasBeenSet() const { return m_modelHasBeenSet; }
+  template <typename ModelT = Aws::String>
+  void SetModel(ModelT&& value) {
+    m_modelHasBeenSet = true;
+    m_model = std::forward<ModelT>(value);
+  }
+  template <typename ModelT = Aws::String>
+  TargetTrafficSplitEntry& WithModel(ModelT&& value) {
+    SetModel(std::forward<ModelT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The fallback configuration for this variant. Supported only for inference
+   * targets.</p>
+   */
+  inline const Fallback& GetFallback() const { return m_fallback; }
+  inline bool FallbackHasBeenSet() const { return m_fallbackHasBeenSet; }
+  template <typename FallbackT = Fallback>
+  void SetFallback(FallbackT&& value) {
+    m_fallbackHasBeenSet = true;
+    m_fallback = std::forward<FallbackT>(value);
+  }
+  template <typename FallbackT = Fallback>
+  TargetTrafficSplitEntry& WithFallback(FallbackT&& value) {
+    SetFallback(std::forward<FallbackT>(value));
+    return *this;
+  }
+  ///@}
 
   ///@{
   /**
@@ -63,24 +121,6 @@ class TargetTrafficSplitEntry {
   }
   inline TargetTrafficSplitEntry& WithWeight(int value) {
     SetWeight(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The name of the target to route traffic to.</p>
-   */
-  inline const Aws::String& GetTargetName() const { return m_targetName; }
-  inline bool TargetNameHasBeenSet() const { return m_targetNameHasBeenSet; }
-  template <typename TargetNameT = Aws::String>
-  void SetTargetName(TargetNameT&& value) {
-    m_targetNameHasBeenSet = true;
-    m_targetName = std::forward<TargetNameT>(value);
-  }
-  template <typename TargetNameT = Aws::String>
-  TargetTrafficSplitEntry& WithTargetName(TargetNameT&& value) {
-    SetTargetName(std::forward<TargetNameT>(value));
     return *this;
   }
   ///@}
@@ -127,18 +167,24 @@ class TargetTrafficSplitEntry {
   }
   ///@}
  private:
+  Aws::String m_targetName;
+
+  Aws::String m_model;
+
+  Fallback m_fallback;
+
   Aws::String m_name;
 
   int m_weight{0};
 
-  Aws::String m_targetName;
-
   Aws::String m_description;
 
   Aws::Map<Aws::String, Aws::String> m_metadata;
+  bool m_targetNameHasBeenSet = false;
+  bool m_modelHasBeenSet = false;
+  bool m_fallbackHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_weightHasBeenSet = false;
-  bool m_targetNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_metadataHasBeenSet = false;
 };

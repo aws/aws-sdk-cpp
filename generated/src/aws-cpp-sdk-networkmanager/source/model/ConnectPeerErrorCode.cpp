@@ -21,6 +21,8 @@ static const int SUBNET_NOT_FOUND_HASH = HashingUtils::HashString("SUBNET_NOT_FO
 static const int IP_OUTSIDE_SUBNET_CIDR_RANGE_HASH = HashingUtils::HashString("IP_OUTSIDE_SUBNET_CIDR_RANGE");
 static const int INVALID_INSIDE_CIDR_BLOCK_HASH = HashingUtils::HashString("INVALID_INSIDE_CIDR_BLOCK");
 static const int NO_ASSOCIATED_CIDR_BLOCK_HASH = HashingUtils::HashString("NO_ASSOCIATED_CIDR_BLOCK");
+static const int CREATION_FAILED_HASH = HashingUtils::HashString("CREATION_FAILED");
+static const int DELETION_FAILED_HASH = HashingUtils::HashString("DELETION_FAILED");
 
 ConnectPeerErrorCode GetConnectPeerErrorCodeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -36,6 +38,10 @@ ConnectPeerErrorCode GetConnectPeerErrorCodeForName(const Aws::String& name) {
     return ConnectPeerErrorCode::INVALID_INSIDE_CIDR_BLOCK;
   } else if (hashCode == NO_ASSOCIATED_CIDR_BLOCK_HASH) {
     return ConnectPeerErrorCode::NO_ASSOCIATED_CIDR_BLOCK;
+  } else if (hashCode == CREATION_FAILED_HASH) {
+    return ConnectPeerErrorCode::CREATION_FAILED;
+  } else if (hashCode == DELETION_FAILED_HASH) {
+    return ConnectPeerErrorCode::DELETION_FAILED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -62,6 +68,10 @@ Aws::String GetNameForConnectPeerErrorCode(ConnectPeerErrorCode enumValue) {
       return "INVALID_INSIDE_CIDR_BLOCK";
     case ConnectPeerErrorCode::NO_ASSOCIATED_CIDR_BLOCK:
       return "NO_ASSOCIATED_CIDR_BLOCK";
+    case ConnectPeerErrorCode::CREATION_FAILED:
+      return "CREATION_FAILED";
+    case ConnectPeerErrorCode::DELETION_FAILED:
+      return "DELETION_FAILED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

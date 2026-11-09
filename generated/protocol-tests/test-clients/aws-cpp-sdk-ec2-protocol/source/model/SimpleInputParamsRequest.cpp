@@ -58,6 +58,18 @@ Aws::String SimpleInputParamsRequest::SerializePayload() const {
     ss << "UsesXmlName=" << StringUtils::URLEncode(m_usesXmlName.c_str()) << "&";
   }
 
+  if (m_distinctQueryNameHasBeenSet) {
+    ss << "DistinctQueryName=" << StringUtils::URLEncode(m_distinctQueryName.c_str()) << "&";
+  }
+
+  if (m_distinctQueryAndXmlNameHasBeenSet) {
+    ss << "XmlAndQueryName=" << StringUtils::URLEncode(m_distinctQueryAndXmlName.c_str()) << "&";
+  }
+
+  if (m_distinctXmlNameHasBeenSet) {
+    ss << "XmlNameOnly=" << StringUtils::URLEncode(m_distinctXmlName.c_str()) << "&";
+  }
+
   ss << "Version=2020-01-08";
   return ss.str();
 }

@@ -303,6 +303,7 @@
 #include <aws/omics/model/RunListItem.h>
 #include <aws/omics/model/RunLogLevel.h>
 #include <aws/omics/model/RunLogLocation.h>
+#include <aws/omics/model/RunOutputUriPrefixMode.h>
 #include <aws/omics/model/RunRetentionMode.h>
 #include <aws/omics/model/RunStatus.h>
 #include <aws/omics/model/RunSummary.h>

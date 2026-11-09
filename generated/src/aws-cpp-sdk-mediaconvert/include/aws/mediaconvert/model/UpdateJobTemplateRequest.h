@@ -9,6 +9,7 @@
 #include <aws/mediaconvert/MediaConvertRequest.h>
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/mediaconvert/model/AccelerationSettings.h>
+#include <aws/mediaconvert/model/ElementalInferenceSettings.h>
 #include <aws/mediaconvert/model/HopDestination.h>
 #include <aws/mediaconvert/model/JobTemplateSettings.h>
 #include <aws/mediaconvert/model/StatusUpdateInterval.h>
@@ -86,6 +87,24 @@ class UpdateJobTemplateRequest : public MediaConvertRequest {
   template <typename DescriptionT = Aws::String>
   UpdateJobTemplateRequest& WithDescription(DescriptionT&& value) {
     SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * The Elemental Inference settings used in this job.
+   */
+  inline const ElementalInferenceSettings& GetElementalInferenceSettings() const { return m_elementalInferenceSettings; }
+  inline bool ElementalInferenceSettingsHasBeenSet() const { return m_elementalInferenceSettingsHasBeenSet; }
+  template <typename ElementalInferenceSettingsT = ElementalInferenceSettings>
+  void SetElementalInferenceSettings(ElementalInferenceSettingsT&& value) {
+    m_elementalInferenceSettingsHasBeenSet = true;
+    m_elementalInferenceSettings = std::forward<ElementalInferenceSettingsT>(value);
+  }
+  template <typename ElementalInferenceSettingsT = ElementalInferenceSettings>
+  UpdateJobTemplateRequest& WithElementalInferenceSettings(ElementalInferenceSettingsT&& value) {
+    SetElementalInferenceSettings(std::forward<ElementalInferenceSettingsT>(value));
     return *this;
   }
   ///@}
@@ -213,6 +232,8 @@ class UpdateJobTemplateRequest : public MediaConvertRequest {
 
   Aws::String m_description;
 
+  ElementalInferenceSettings m_elementalInferenceSettings;
+
   Aws::Vector<HopDestination> m_hopDestinations;
 
   Aws::String m_name;
@@ -227,6 +248,7 @@ class UpdateJobTemplateRequest : public MediaConvertRequest {
   bool m_accelerationSettingsHasBeenSet = false;
   bool m_categoryHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
+  bool m_elementalInferenceSettingsHasBeenSet = false;
   bool m_hopDestinationsHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_priorityHasBeenSet = false;

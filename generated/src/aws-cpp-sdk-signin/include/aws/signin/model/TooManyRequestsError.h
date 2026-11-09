@@ -21,13 +21,8 @@ namespace Signin {
 namespace Model {
 
 /**
- * <p>Error thrown when rate limit is exceeded</p> <p>HTTP Status Code: 429 Too
- * Many Requests</p> <p>Possible OAuth2ErrorCode values:</p> <ul>
- * <li>INVALID_REQUEST: Rate limiting, too many requests, abuse prevention</li>
- * </ul> <p>Possible causes:</p> <ul> <li>Too many token requests from the same
- * client</li> <li>Rate limiting based on client_id or IP address</li> <li>Abuse
- * prevention mechanisms triggered</li> <li>Service protection against excessive
- * token generation</li> </ul><p><h3>See Also:</h3>   <a
+ * <p>The request failed because you exceeded the request rate limit for this
+ * operation.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/signin-2023-01-01/TooManyRequestsError">AWS
  * API Reference</a></p>
  */
@@ -40,8 +35,7 @@ class TooManyRequestsError {
 
   ///@{
   /**
-   * <p>OAuth 2.0 error code indicating the specific type of error Will be
-   * INVALID_REQUEST for rate limiting scenarios</p>
+   * <p>Will be rate_exceeded.</p>
    */
   inline OAuth2ErrorCode GetError() const { return m_error; }
   inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
@@ -57,8 +51,7 @@ class TooManyRequestsError {
 
   ///@{
   /**
-   * <p>Detailed message about the rate limiting May include retry-after information
-   * or rate limit details</p>
+   * <p>Details about the rate limit.</p>
    */
   inline const Aws::String& GetMessage() const { return m_message; }
   inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }

@@ -10,6 +10,8 @@
 #include <aws/opensearchserverless/model/ListAccessPoliciesPaginationTraits.h>
 #include <aws/opensearchserverless/model/ListCollectionGroupsPaginationTraits.h>
 #include <aws/opensearchserverless/model/ListCollectionsPaginationTraits.h>
+#include <aws/opensearchserverless/model/ListIngestionJobsPaginationTraits.h>
+#include <aws/opensearchserverless/model/ListIngestionStreamsPaginationTraits.h>
 #include <aws/opensearchserverless/model/ListLifecyclePoliciesPaginationTraits.h>
 #include <aws/opensearchserverless/model/ListSecurityConfigsPaginationTraits.h>
 #include <aws/opensearchserverless/model/ListSecurityPoliciesPaginationTraits.h>
@@ -57,6 +59,30 @@ class OpenSearchServerlessPaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListCollectionsRequest,
                                              Pagination::ListCollectionsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                          request};
+  }
+
+  /**
+   * Create a paginator for ListIngestionJobs operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIngestionJobsRequest,
+                                    Pagination::ListIngestionJobsPaginationTraits<DerivedClient>>
+  ListIngestionJobsPaginator(const Model::ListIngestionJobsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIngestionJobsRequest,
+                                             Pagination::ListIngestionJobsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListIngestionStreams operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIngestionStreamsRequest,
+                                    Pagination::ListIngestionStreamsPaginationTraits<DerivedClient>>
+  ListIngestionStreamsPaginator(const Model::ListIngestionStreamsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListIngestionStreamsRequest,
+                                             Pagination::ListIngestionStreamsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
   }
 
   /**

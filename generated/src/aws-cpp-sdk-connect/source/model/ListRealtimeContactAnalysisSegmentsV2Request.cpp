@@ -36,5 +36,9 @@ Aws::String ListRealtimeContactAnalysisSegmentsV2Request::SerializePayload() con
     payload.WithArray("SegmentTypes", std::move(segmentTypesJsonList));
   }
 
+  if (m_listFilterHasBeenSet) {
+    payload.WithObject("ListFilter", m_listFilter.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

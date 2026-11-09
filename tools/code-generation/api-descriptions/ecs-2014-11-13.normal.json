@@ -1701,7 +1701,9 @@
         "v100",
         "a10g",
         "h100",
-        "t4g"
+        "t4g",
+        "l40s",
+        "l4"
       ]
     },
     "AcceleratorNameSet":{
@@ -1905,6 +1907,11 @@
     "Attachments":{
       "type":"list",
       "member":{"shape":"Attachment"}
+    },
+    "AttestationPolicyStatus":{
+      "type":"string",
+      "documentation":"<p>The status of the attestation policy for a task that uses the <code>CONFIDENTIAL_SANDBOX</code> isolation mode.</p>",
+      "enum":["CONFIGURED"]
     },
     "Attribute":{
       "type":"structure",
@@ -2578,6 +2585,10 @@
         "neuronDeviceIds":{
           "shape":"NeuronDeviceIds",
           "documentation":"<p>The IDs of each Neuron device assigned to the container.</p>"
+        },
+        "gpuSharingStrategy":{
+          "shape":"SharingStrategy",
+          "documentation":"<p>The GPU sharing strategy that the task definition specifies for the container. This field is present only for containers whose resource requirements include <code>sharingStrategy</code>.</p>"
         }
       },
       "documentation":"<p>A Docker container that's part of a task.</p>"
@@ -2887,6 +2898,10 @@
         "healthStatus":{
           "shape":"ContainerInstanceHealthStatus",
           "documentation":"<p>An object representing the health status of the container instance.</p>"
+        },
+        "gpuDevices":{
+          "shape":"GpuDevices",
+          "documentation":"<p>The state of each GPU on the container instance, including its sharing mode and available memory. This field is present only for container instances that support GPU sharing.</p>"
         }
       },
       "documentation":"<p>An Amazon EC2 or External instance that's running the Amazon ECS agent and has been registered with a cluster.</p>"
@@ -4399,6 +4414,10 @@
         "host":{
           "shape":"HostVolumeProperties",
           "documentation":"<p>The contents of the <code>host</code> parameter determine whether your bind mount host volume persists on the host container instance and where it's stored.</p>"
+        },
+        "logDriverVolumeConfiguration":{
+          "shape":"LogDriverVolumeConfiguration",
+          "documentation":"<p>The log driver volume configuration. With a log driver volume, the containers in a daemon task can read the log files that a log driver writes for the other tasks on the container instance. To read the log files, mount the volume into a container in the daemon task with <code>mountPoints</code>.</p> <p>Use <code>host</code> to bind mount a path on the container instance. Use <code>logDriverVolumeConfiguration</code> to read the log output of other tasks. You can't specify both for the same volume.</p>"
         }
       },
       "documentation":"<p>A data volume definition for a daemon task.</p>"
@@ -5988,7 +6007,7 @@
           "documentation":"<p>The file type to use. Environment files are objects in Amazon S3. The only supported value is <code>s3</code>.</p>"
         }
       },
-      "documentation":"<p>A list of files containing the environment variables to pass to a container. You can specify up to ten environment files. The file must have a <code>.env</code> file extension. Each line in an environment file should contain an environment variable in <code>VARIABLE=VALUE</code> format. Lines beginning with <code>#</code> are treated as comments and are ignored.</p> <p>If there are environment variables specified using the <code>environment</code> parameter in a container definition, they take precedence over the variables contained within an environment file. If multiple environment files are specified that contain the same variable, they're processed from the top down. We recommend that you use unique variable names. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonECS/latest/developerguide/use-environment-file.html\">Use a file to pass environment variables to a container</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <p>Environment variable files are objects in Amazon S3 and all Amazon S3 security considerations apply. </p> <p>You must use the following platforms for the Fargate launch type:</p> <ul> <li> <p>Linux platform version <code>1.4.0</code> or later.</p> </li> <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li> </ul> <p>Consider the following when using the Fargate launch type:</p> <ul> <li> <p>The file is handled like a native Docker env-file.</p> </li> <li> <p>There is no support for shell escape handling.</p> </li> <li> <p>The container entry point interperts the <code>VARIABLE</code> values.</p> </li> </ul>"
+      "documentation":"<p>A list of files containing the environment variables to pass to a container. You can specify up to ten environment files. The file must have a <code>.env</code> file extension. Each line in an environment file should contain an environment variable in <code>VARIABLE=VALUE</code> format. Lines beginning with <code>#</code> are treated as comments and are ignored.</p> <p>If there are environment variables specified using the <code>environment</code> parameter in a container definition, they take precedence over the variables contained within an environment file. If multiple environment files are specified that contain the same variable, they're processed from the top down. We recommend that you use unique variable names. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonECS/latest/developerguide/use-environment-file.html\">Use a file to pass environment variables to a container</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <p>Environment variable files are objects in Amazon S3 and all Amazon S3 security considerations apply. </p> <p>You must use the following platforms for the Fargate launch type:</p> <ul> <li> <p>Linux platform version <code>1.4.0</code> or later.</p> </li> </ul> <p>Consider the following when using the Fargate launch type:</p> <ul> <li> <p>The file is handled like a native Docker env-file.</p> </li> <li> <p>There is no support for shell escape handling.</p> </li> <li> <p>The container entry point interperts the <code>VARIABLE</code> values.</p> </li> </ul>"
     },
     "EnvironmentFileType":{
       "type":"string",
@@ -6012,7 +6031,7 @@
           "documentation":"<p>The total amount, in GiB, of ephemeral storage to set for the task. The minimum supported value is <code>21</code> GiB and the maximum supported value is <code>200</code> GiB.</p>"
         }
       },
-      "documentation":"<p>The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of ephemeral storage available, beyond the default amount, for tasks hosted on Fargate. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html\">Using data volumes in tasks</a> in the <i>Amazon ECS Developer Guide;</i>.</p> <note> <p>For tasks using the Fargate launch type, the task requires the following platforms:</p> <ul> <li> <p>Linux platform version <code>1.4.0</code> or later.</p> </li> <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li> </ul> </note>"
+      "documentation":"<p>The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of ephemeral storage available, beyond the default amount, for tasks hosted on Fargate. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html\">Using data volumes in tasks</a> in the <i>Amazon ECS Developer Guide;</i>.</p> <note> <p>For tasks using the Fargate launch type, the task requires the following platforms:</p> <ul> <li> <p>Linux platform version <code>1.4.0</code> or later.</p> </li> </ul> </note>"
     },
     "ExcludedInstanceType":{
       "type":"string",
@@ -7155,9 +7174,48 @@
         }
       }
     },
+    "GpuDevice":{
+      "type":"structure",
+      "members":{
+        "gpuId":{
+          "shape":"String",
+          "documentation":"<p>The ID of the GPU. This ID matches the GPU IDs in the <code>gpuIds</code> of the containers that Amazon ECS assigned to the GPU.</p>"
+        },
+        "sharingMode":{
+          "shape":"GpuSharingMode",
+          "documentation":"<p>How the GPU is shared between containers.</p> <p>Valid values:</p> <ul> <li> <p> <code>IDLE</code> - No containers are assigned to the GPU, and all of its memory is available.</p> </li> <li> <p> <code>NVIDIA_MPS</code> - One or more containers share the GPU by using NVIDIA Multi-Process Service (MPS).</p> </li> <li> <p> <code>DEDICATED</code> - One container has exclusive use of the GPU.</p> </li> </ul>"
+        },
+        "totalMemoryInMiB":{
+          "shape":"BoxedInteger",
+          "documentation":"<p>The total amount of GPU memory, in MiB, that the Amazon ECS container agent reported for the GPU. This is the memory that's available to containers, and it can be less than the nominal memory of the GPU.</p>"
+        },
+        "remainingMemoryInMiB":{
+          "shape":"BoxedInteger",
+          "documentation":"<p>The amount of GPU memory, in MiB, that's available to allocate to new containers that use the <code>nvidiaMps</code> sharing strategy. Amazon ECS calculates this value from the memory that it allocated to containers on the GPU, not from the memory that the containers use.</p>"
+        },
+        "containerCount":{
+          "shape":"BoxedInteger",
+          "documentation":"<p>The number of containers that Amazon ECS assigned to the GPU. This value is <code>0</code> when the sharing mode is <code>IDLE</code> and <code>1</code> when the sharing mode is <code>DEDICATED</code>. Amazon ECS counts the containers that it assigned to the GPU, not the processes that are running on it.</p>"
+        }
+      },
+      "documentation":"<p>The state of a GPU on a container instance, including its sharing mode and the memory that's available for new containers.</p>"
+    },
+    "GpuDevices":{
+      "type":"list",
+      "member":{"shape":"GpuDevice"}
+    },
     "GpuIds":{
       "type":"list",
       "member":{"shape":"String"}
+    },
+    "GpuSharingMode":{
+      "type":"string",
+      "documentation":"<p>Describes how a GPU on a container instance is shared between containers.</p>",
+      "enum":[
+        "IDLE",
+        "NVIDIA_MPS",
+        "DEDICATED"
+      ]
     },
     "HealthCheck":{
       "type":"structure",
@@ -7469,6 +7527,10 @@
         "capacityReservations":{
           "shape":"CapacityReservationRequest",
           "documentation":"<p>Capacity reservation specifications. You can specify:</p> <ul> <li> <p>Capacity reservation preference</p> </li> <li> <p>Reservation resource group to be used for targeted capacity reservations</p> </li> </ul> <p>Amazon ECS will launch instances according to the specified criteria.</p>"
+        },
+        "nitroEnclavesEnabled":{
+          "shape":"BoxedBoolean",
+          "documentation":"<p>Specifies whether instances that this capacity provider launches have <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/amazon-ec2-nitro-sandboxes.html\">Nitro Sandbox</a> enabled. Enable this setting to run tasks that use the <code>ISOLATED_SANDBOX</code> or <code>CONFIDENTIAL_SANDBOX</code> isolation mode.</p> <p>When you enable this setting, the capacity provider must include at least one instance type that supports Nitro Sandbox. You can't enable this setting together with local storage (the <code>useLocalStorage</code> setting in <code>localStorageConfiguration</code>).</p> <p>The default value is <code>false</code>.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/AmazonECS/latest/developerguide/isolated-confidential-tasks.html\">Isolated and confidential tasks</a> in <i>Amazon Elastic Container Service Developer Guide</i>.</p>"
         }
       },
       "documentation":"<p>The launch template configuration for Amazon ECS Managed Instances. This defines how Amazon ECS launches Amazon EC2 instances, including the instance profile for your tasks, network and storage configuration, capacity options, and instance requirements for flexible instance type selection.</p>"
@@ -7639,6 +7701,15 @@
         "host",
         "task",
         "none"
+      ]
+    },
+    "IsolationMode":{
+      "type":"string",
+      "documentation":"<p>The isolation mode determines how a task is isolated from other tasks on the same Amazon EC2 instance.</p>",
+      "enum":[
+        "SHARED",
+        "ISOLATED_SANDBOX",
+        "CONFIDENTIAL_SANDBOX"
       ]
     },
     "KernelCapabilities":{
@@ -8458,7 +8529,7 @@
       "members":{
         "logDriver":{
           "shape":"LogDriver",
-          "documentation":"<p>The log driver to use for the container.</p> <p>For tasks on Fargate, the supported log drivers are <code>awslogs</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p> <p>For tasks hosted on Amazon EC2 instances, the supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p> <p>For more information about using the <code>awslogs</code> log driver, see <a href=\"https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html\">Send Amazon ECS logs to CloudWatch</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <p>For more information about using the <code>awsfirelens</code> log driver, see <a href=\"https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html\">Send Amazon ECS logs to an Amazon Web Services service or Amazon Web Services Partner</a>.</p> <note> <p>If you have a custom driver that isn't listed, you can fork the Amazon ECS container agent project that's <a href=\"https://github.com/aws/amazon-ecs-agent\">available on GitHub</a> and customize it to work with that driver. We encourage you to submit pull requests for changes that you would like to have included. However, we don't currently provide support for running modified copies of this software.</p> </note>"
+          "documentation":"<p>The log driver to use for the container.</p> <p>For tasks on Fargate, the supported log drivers are <code>awslogs</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p> <p>For tasks hosted on Amazon EC2 instances, the supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p> <p>For tasks on Amazon ECS Managed Instances, the supported log drivers are <code>awslogs</code>, <code>splunk</code>, <code>awsfirelens</code>, and <code>json-file</code>.</p> <p>For more information about using the <code>awslogs</code> log driver, see <a href=\"https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html\">Send Amazon ECS logs to CloudWatch</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <p>For more information about using the <code>awsfirelens</code> log driver, see <a href=\"https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html\">Send Amazon ECS logs to an Amazon Web Services service or Amazon Web Services Partner</a>.</p> <note> <p>If you have a custom driver that isn't listed, you can fork the Amazon ECS container agent project that's <a href=\"https://github.com/aws/amazon-ecs-agent\">available on GitHub</a> and customize it to work with that driver. We encourage you to submit pull requests for changes that you would like to have included. However, we don't currently provide support for running modified copies of this software.</p> </note>"
         },
         "options":{
           "shape":"LogConfigurationOptionsMap",
@@ -8469,7 +8540,7 @@
           "documentation":"<p>The secrets to pass to the log configuration. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html\">Specifying sensitive data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>"
         }
       },
-      "documentation":"<p>The log configuration for the container. This parameter maps to <code>LogConfig</code> in the docker container create command and the <code>--log-driver</code> option to docker run.</p> <p>By default, containers use the same logging driver that the Docker daemon uses. However, the container might use a different logging driver than the Docker daemon by specifying a log driver configuration in the container definition.</p> <p>Understand the following when specifying a log configuration for your containers.</p> <ul> <li> <p>Amazon ECS currently supports a subset of the logging drivers available to the Docker daemon. Additional log drivers may be available in future releases of the Amazon ECS container agent.</p> <p>For tasks on Fargate, the supported log drivers are <code>awslogs</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p> <p>For tasks hosted on Amazon EC2 instances, the supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>,<code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p> </li> <li> <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance.</p> </li> <li> <p>For tasks that are hosted on Amazon EC2 instances, the Amazon ECS container agent must register the available logging drivers with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before containers placed on that instance can use these log configuration options. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html\">Amazon ECS container agent configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> </li> <li> <p>For tasks that are on Fargate, because you don't have access to the underlying infrastructure your tasks are hosted on, any additional software needed must be installed outside of the task. For example, the Fluentd output aggregators or a remote host running Logstash to send Gelf logs to.</p> </li> </ul>"
+      "documentation":"<p>The log configuration for the container. This parameter maps to <code>LogConfig</code> in the docker container create command and the <code>--log-driver</code> option to docker run.</p> <p>By default, containers use the same logging driver that the Docker daemon uses. However, the container might use a different logging driver than the Docker daemon by specifying a log driver configuration in the container definition.</p> <p>Understand the following when specifying a log configuration for your containers.</p> <ul> <li> <p>Amazon ECS currently supports a subset of the logging drivers available to the Docker daemon. Additional log drivers may be available in future releases of the Amazon ECS container agent.</p> <p>For tasks on Fargate, the supported log drivers are <code>awslogs</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p> <p>For tasks hosted on Amazon EC2 instances, the supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>,<code>syslog</code>, <code>splunk</code>, and <code>awsfirelens</code>.</p> <p>For tasks on Amazon ECS Managed Instances, the supported log drivers are <code>awslogs</code>, <code>splunk</code>, <code>awsfirelens</code>, and <code>json-file</code>.</p> </li> <li> <p>This parameter requires version 1.18 of the Docker Remote API or greater on your container instance.</p> </li> <li> <p>For tasks that are hosted on Amazon EC2 instances, the Amazon ECS container agent must register the available logging drivers with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before containers placed on that instance can use these log configuration options. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html\">Amazon ECS container agent configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> </li> <li> <p>For tasks that are on Fargate, because you don't have access to the underlying infrastructure your tasks are hosted on, any additional software needed must be installed outside of the task. For example, the Fluentd output aggregators or a remote host running Logstash to send Gelf logs to.</p> </li> </ul>"
     },
     "LogConfigurationOptionsMap":{
       "type":"map",
@@ -8488,6 +8559,17 @@
         "splunk",
         "awsfirelens"
       ]
+    },
+    "LogDriverVolumeConfiguration":{
+      "type":"structure",
+      "required":["driver"],
+      "members":{
+        "driver":{
+          "shape":"LogDriver",
+          "documentation":"<p>The log driver whose log files the volume contains. The only supported value is <code>json-file</code>.</p>"
+        }
+      },
+      "documentation":"<p>The configuration for a log driver volume in a daemon task definition. The volume contains the log files for each container on the container instance that uses the specified log driver in its <code>logConfiguration</code>. Containers that use a different log driver don't write log files to the volume.</p> <p>For the <code>json-file</code> log driver, the volume has one directory for each container, named with the container ID. Each directory contains the container's log file, <code>&lt;container-id&gt;-json.log</code>, and any rotated log files. After a container stops and Amazon ECS removes it, Amazon ECS deletes the container's directory. Read the log files before the container is removed.</p>"
     },
     "Long":{"type":"long"},
     "ManagedAgent":{
@@ -9352,6 +9434,32 @@
       "documentation":"<p>There's no update available for this Amazon ECS container agent. This might be because the agent is already running the latest version or because it's so old that there's no update path to the current version.</p>",
       "exception":true
     },
+    "NvidiaMpsAllocation":{
+      "type":"structure",
+      "required":["memory"],
+      "members":{
+        "memory":{
+          "shape":"NvidiaMpsAllocationMemoryInteger",
+          "documentation":"<p>The amount of GPU memory, in MiB, to allocate to the container. Amazon ECS assigns the container a GPU that has at least the specified amount of memory available, and sets the <code>CUDA_MPS_PINNED_DEVICE_MEM_LIMIT</code> environment variable in the container to limit its memory to this amount. The memory must be available on a single GPU. If more than one container in a task uses <code>nvidiaMps</code>, Amazon ECS assigns them the same GPU, which must have enough memory available for all of them.</p>"
+        },
+        "maxComputePercent":{
+          "shape":"NvidiaMpsAllocationMaxComputePercentInteger",
+          "documentation":"<p>The maximum percentage of the GPU's compute capacity that the container can use. Amazon ECS sets the <code>CUDA_MPS_ACTIVE_THREAD_PERCENTAGE</code> environment variable in the container to this value. This value is a limit, not a reservation.</p> <p>If you don't specify this parameter, Amazon ECS doesn't set <code>CUDA_MPS_ACTIVE_THREAD_PERCENTAGE</code>, and the active thread percentage of the MPS server on the container instance applies. By default, this is 100 percent.</p>"
+        }
+      },
+      "documentation":"<p>The GPU memory and compute limits for a container that shares a GPU by using NVIDIA Multi-Process Service (MPS). Amazon ECS assigns the container a single GPU that has enough memory available. Other containers that use MPS can share the same GPU.</p>"
+    },
+    "NvidiaMpsAllocationMaxComputePercentInteger":{
+      "type":"integer",
+      "box":true,
+      "max":100,
+      "min":1
+    },
+    "NvidiaMpsAllocationMemoryInteger":{
+      "type":"integer",
+      "box":true,
+      "min":1
+    },
     "OSFamily":{
       "type":"string",
       "enum":[
@@ -9882,7 +9990,7 @@
         },
         "ephemeralStorage":{
           "shape":"EphemeralStorage",
-          "documentation":"<p>The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of ephemeral storage available, beyond the default amount, for tasks hosted on Fargate. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html\">Using data volumes in tasks</a> in the <i>Amazon ECS Developer Guide</i>.</p> <note> <p>For tasks using the Fargate launch type, the task requires the following platforms:</p> <ul> <li> <p>Linux platform version <code>1.4.0</code> or later.</p> </li> <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li> </ul> </note>"
+          "documentation":"<p>The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of ephemeral storage available, beyond the default amount, for tasks hosted on Fargate. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html\">Using data volumes in tasks</a> in the <i>Amazon ECS Developer Guide</i>.</p> <note> <p>For tasks using the Fargate launch type, the task requires the following platforms:</p> <ul> <li> <p>Linux platform version <code>1.4.0</code> or later.</p> </li> </ul> </note>"
         },
         "runtimePlatform":{
           "shape":"RuntimePlatform",
@@ -9891,6 +9999,10 @@
         "enableFaultInjection":{
           "shape":"BoxedBoolean",
           "documentation":"<p>Enables fault injection when you register your task definition and allows for fault injection requests to be accepted from the task's containers. The default value is <code>false</code>.</p>"
+        },
+        "trustedExecutionConfiguration":{
+          "shape":"TrustedExecutionConfiguration",
+          "documentation":"<p>The trusted execution configuration for tasks that use this task definition, including the isolation mode and, if configured, an attestation policy.</p> <note> <p>Trusted execution is supported only for Amazon ECS Managed Instances.</p> </note>"
         }
       },
       "documentation":"<zonbook></zonbook><xhtml></xhtml>"
@@ -10004,18 +10116,19 @@
     },
     "ResourceRequirement":{
       "type":"structure",
-      "required":[
-        "value",
-        "type"
-      ],
+      "required":["type"],
       "members":{
         "value":{
           "shape":"String",
-          "documentation":"<p>The value for the specified resource type.</p> <p>When the type is <code>GPU</code>, the value is the number of physical <code>GPUs</code> the Amazon ECS container agent reserves for the container. The number of GPUs that's reserved for all containers in a task can't exceed the number of available GPUs on the container instance that the task is launched on. You can also specify <code>ALL</code> to allocate all available GPUs on the instance to the container.</p> <p>When the type is <code>NeuronDevice</code>, the value must be <code>ALL</code>. This allocates all available Neuron devices on the instance to the container. Only one container in a task can specify <code>NeuronDevice</code> resources. This resource type is only supported on Managed Instances.</p> <p>When the type is <code>InferenceAccelerator</code>, the <code>value</code> matches the <code>deviceName</code> for an <a href=\"https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_InferenceAccelerator.html\">InferenceAccelerator</a> specified in a task definition.</p>"
+          "documentation":"<p>The value for the specified resource type.</p> <p>You must specify this parameter unless the type is <code>GPU</code> and you specify <code>sharingStrategy</code>.</p> <p>When the type is <code>GPU</code>, the value is the number of physical <code>GPUs</code> the Amazon ECS container agent reserves for the container. The number of GPUs that's reserved for all containers in a task can't exceed the number of available GPUs on the container instance that the task is launched on. You can also specify <code>ALL</code> to allocate all available GPUs on the instance to the container.</p> <p>When the type is <code>NeuronDevice</code>, the value must be <code>ALL</code>. This allocates all available Neuron devices on the instance to the container. Only one container in a task can specify <code>NeuronDevice</code> resources. This resource type is only supported on Managed Instances.</p> <p>When the type is <code>InferenceAccelerator</code>, the <code>value</code> matches the <code>deviceName</code> for an <a href=\"https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_InferenceAccelerator.html\">InferenceAccelerator</a> specified in a task definition.</p>"
         },
         "type":{
           "shape":"ResourceType",
           "documentation":"<p>The type of resource to assign to a container. </p>"
+        },
+        "sharingStrategy":{
+          "shape":"SharingStrategy",
+          "documentation":"<p>The strategy that the container uses to share a GPU with other containers. Specify a sharing strategy only when the type is <code>GPU</code>. For a GPU resource requirement, specify either <code>value</code> or <code>sharingStrategy</code>, but not both. If you don't specify a sharing strategy, the container has exclusive use of each GPU that Amazon ECS assigns to it. The containers in a task that request GPUs must all use the same option.</p> <p>You can use GPU sharing with tasks that run on Amazon EC2 instances or Amazon ECS Managed Instances. Task definitions that require <code>EXTERNAL</code> compatibility don't support GPU sharing.</p>"
         }
       },
       "documentation":"<p>The type and amount of a resource to assign to a container. The supported resource types are GPUs, Neuron devices, and Elastic Inference accelerators. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-gpu.html\">Working with GPUs on Amazon ECS</a> or <a href=\"https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-inference.html\">Working with Amazon Elastic Inference on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i> </p>"
@@ -11283,6 +11396,17 @@
       "type":"list",
       "member":{"shape":"Setting"}
     },
+    "SharingStrategy":{
+      "type":"structure",
+      "members":{
+        "nvidiaMps":{
+          "shape":"NvidiaMpsAllocation",
+          "documentation":"<p>Shares a GPU between containers by using NVIDIA Multi-Process Service (MPS). You specify the GPU memory to allocate to the container and, optionally, the maximum percentage of the GPU's compute capacity that the container can use.</p>"
+        }
+      },
+      "documentation":"<p>The strategy that a container uses to share a GPU with other containers. Specify exactly one member.</p>",
+      "union":true
+    },
     "SortOrder":{
       "type":"string",
       "enum":[
@@ -11824,6 +11948,10 @@
         "fargateEphemeralStorage":{
           "shape":"TaskEphemeralStorage",
           "documentation":"<p>The Fargate ephemeral storage settings for the task.</p>"
+        },
+        "trustedExecutionSummary":{
+          "shape":"TrustedExecutionSummary",
+          "documentation":"<p>A summary of the trusted execution configuration for the task, including the isolation mode. This is a read-only view of the configuration that was set on the task definition.</p> <note> <p>Trusted execution is supported only for Amazon ECS Managed Instances.</p> </note>"
         }
       },
       "documentation":"<p>Details on a task in a cluster.</p>"
@@ -11934,6 +12062,10 @@
         "enableFaultInjection":{
           "shape":"BoxedBoolean",
           "documentation":"<p>Enables fault injection and allows for fault injection requests to be accepted from the task's containers. The default value is <code>false</code>.</p>"
+        },
+        "trustedExecutionConfiguration":{
+          "shape":"TrustedExecutionConfiguration",
+          "documentation":"<p>The trusted execution configuration for tasks that use this task definition, including the isolation mode and, if configured, an attestation policy.</p> <note> <p>Trusted execution is supported only for Amazon ECS Managed Instances.</p> </note>"
         }
       },
       "documentation":"<p>The details of a task definition which describes the container and volume definitions of an Amazon Elastic Container Service task. You can specify which Docker images to use, the required resources, and other configurations related to launching the task definition through an Amazon ECS service or task.</p>"
@@ -12114,7 +12246,7 @@
         },
         "ephemeralStorage":{
           "shape":"EphemeralStorage",
-          "documentation":"<p>The ephemeral storage setting override for the task.</p> <note> <p>This parameter is only supported for tasks hosted on Fargate that use the following platform versions:</p> <ul> <li> <p>Linux platform version <code>1.4.0</code> or later.</p> </li> <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li> </ul> </note>"
+          "documentation":"<p>The ephemeral storage setting override for the task.</p> <note> <p>This parameter is only supported for tasks hosted on Fargate that use the following platform versions:</p> <ul> <li> <p>Linux platform version <code>1.4.0</code> or later.</p> </li> </ul> </note>"
         }
       },
       "documentation":"<p>The overrides that are associated with a task.</p>"
@@ -12376,6 +12508,36 @@
         "tcp",
         "udp"
       ]
+    },
+    "TrustedExecutionConfiguration":{
+      "type":"structure",
+      "required":["isolationMode"],
+      "members":{
+        "isolationMode":{
+          "shape":"IsolationMode",
+          "documentation":"<p>The isolation mode for tasks that use this task definition. The isolation mode determines how a task is isolated from other tasks on the same Amazon EC2 instance.</p> <ul> <li> <p> <code>SHARED</code>: The task shares the underlying Amazon EC2 instance with other tasks. This is the default isolation mode.</p> </li> <li> <p> <code>ISOLATED_SANDBOX</code>: The task runs in its own <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/amazon-ec2-nitro-sandboxes.html\">Nitro Sandbox</a>, which is a lightweight virtual machine that is isolated by the Amazon Web Services Nitro System. Each task's sandbox is isolated from every other task's sandbox on the same Amazon EC2 instance, so one task can't access another task's memory or storage. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonECS/latest/developerguide/isolated-confidential-tasks.html\">Isolated and confidential tasks</a> in <i>Amazon Elastic Container Service Developer Guide</i>.</p> </li> <li> <p> <code>CONFIDENTIAL_SANDBOX</code>: The task runs in its own <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/amazon-ec2-nitro-sandboxes.html\">Nitro Sandbox</a>, which is a lightweight virtual machine that is isolated by the Amazon Web Services Nitro System, with cryptographic attestation. The host can't access the sandbox's memory or storage, and only the approved workload can decrypt data that you encrypt with your Key Management Service key. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonECS/latest/developerguide/isolated-confidential-tasks.html\">Isolated and confidential tasks</a> in <i>Amazon Elastic Container Service Developer Guide</i>.</p> </li> </ul>"
+        },
+        "attestationPolicy":{
+          "shape":"String",
+          "documentation":"<p>The base64-encoded attestation policy envelope for the task. The policy specifies which containers are allowed to run and the runtime configuration that is cryptographically attested. This parameter is required when <code>isolationMode</code> is <code>CONFIDENTIAL_SANDBOX</code>.</p>"
+        }
+      },
+      "documentation":"<p>The trusted execution configuration for a task. This configuration controls the isolation mode and attestation policy. You set this configuration when you register a task definition.</p> <note> <p>Trusted execution is supported only for Amazon ECS Managed Instances.</p> </note>"
+    },
+    "TrustedExecutionSummary":{
+      "type":"structure",
+      "required":["isolationMode"],
+      "members":{
+        "isolationMode":{
+          "shape":"IsolationMode",
+          "documentation":"<p>The isolation mode that the task runs in. This value mirrors the <code>isolationMode</code> that was set in the task definition's <code>TrustedExecutionConfiguration</code>.</p> <ul> <li> <p> <code>SHARED</code>: The task shares the underlying Amazon EC2 instance with other tasks. This is the default isolation mode.</p> </li> <li> <p> <code>ISOLATED_SANDBOX</code>: The task runs in its own <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/amazon-ec2-nitro-sandboxes.html\">Nitro Sandbox</a>, which is a lightweight virtual machine that is isolated by the Amazon Web Services Nitro System. Each task's sandbox is isolated from every other task's sandbox on the same Amazon EC2 instance, so one task can't access another task's memory or storage. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonECS/latest/developerguide/isolated-confidential-tasks.html\">Isolated and confidential tasks</a> in <i>Amazon Elastic Container Service Developer Guide</i>.</p> </li> <li> <p> <code>CONFIDENTIAL_SANDBOX</code>: The task runs in its own <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/amazon-ec2-nitro-sandboxes.html\">Nitro Sandbox</a>, which is a lightweight virtual machine that is isolated by the Amazon Web Services Nitro System, with cryptographic attestation. The host can't access the sandbox's memory or storage, and only the approved workload can decrypt data that you encrypt with your Key Management Service key. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonECS/latest/developerguide/isolated-confidential-tasks.html\">Isolated and confidential tasks</a> in <i>Amazon Elastic Container Service Developer Guide</i>.</p> </li> </ul>"
+        },
+        "attestationPolicyStatus":{
+          "shape":"AttestationPolicyStatus",
+          "documentation":"<p>The status of the attestation policy for the task. This value is present only for tasks that use the <code>CONFIDENTIAL_SANDBOX</code> isolation mode.</p>"
+        }
+      },
+      "documentation":"<p>A summary of the trusted execution configuration for a task. This is a read-only view of the isolation configuration that was set on the task definition. Use it to see a task's isolation configuration in the response to <code>DescribeTasks</code>, <code>RunTask</code>, or <code>StopTask</code> without calling <code>DescribeTaskDefinition</code>. This summary never includes the attestation policy itself.</p> <note> <p>Trusted execution is supported only for Amazon ECS Managed Instances.</p> </note>"
     },
     "Ulimit":{
       "type":"structure",

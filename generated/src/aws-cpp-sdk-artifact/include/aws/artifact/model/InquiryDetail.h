@@ -177,8 +177,7 @@ class InquiryDetail {
 
   ///@{
   /**
-   * <p>Support mode for this inquiry. AI_ONLY provides AI-generated responses.
-   * FULL_SUPPORT includes human expert review.</p>
+   * <p>Support mode for this inquiry. AI_ONLY provides AI-generated responses.</p>
    */
   inline InquirySupportMode GetSupportMode() const { return m_supportMode; }
   inline bool SupportModeHasBeenSet() const { return m_supportModeHasBeenSet; }

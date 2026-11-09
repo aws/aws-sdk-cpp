@@ -8,6 +8,7 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/RealTimeContactAnalysisOutputType.h>
 #include <aws/connect/model/RealTimeContactAnalysisSegmentType.h>
+#include <aws/connect/model/RealTimeContactAnalysisSegmentsFilter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -144,6 +145,28 @@ class ListRealtimeContactAnalysisSegmentsV2Request : public ConnectRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A filter that restricts the segments returned by the API. When
+   * <code>SegmentTypes</code> includes <code>Categories</code>, use
+   * <code>CategoriesAttributeFilter</code> to return only the category segments
+   * whose rules have tags that match the filter. This enforces tag-based access
+   * control on the categories a caller can view.</p>
+   */
+  inline const RealTimeContactAnalysisSegmentsFilter& GetListFilter() const { return m_listFilter; }
+  inline bool ListFilterHasBeenSet() const { return m_listFilterHasBeenSet; }
+  template <typename ListFilterT = RealTimeContactAnalysisSegmentsFilter>
+  void SetListFilter(ListFilterT&& value) {
+    m_listFilterHasBeenSet = true;
+    m_listFilter = std::forward<ListFilterT>(value);
+  }
+  template <typename ListFilterT = RealTimeContactAnalysisSegmentsFilter>
+  ListRealtimeContactAnalysisSegmentsV2Request& WithListFilter(ListFilterT&& value) {
+    SetListFilter(std::forward<ListFilterT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_instanceId;
 
@@ -156,12 +179,15 @@ class ListRealtimeContactAnalysisSegmentsV2Request : public ConnectRequest {
   RealTimeContactAnalysisOutputType m_outputType{RealTimeContactAnalysisOutputType::NOT_SET};
 
   Aws::Vector<RealTimeContactAnalysisSegmentType> m_segmentTypes;
+
+  RealTimeContactAnalysisSegmentsFilter m_listFilter;
   bool m_instanceIdHasBeenSet = false;
   bool m_contactIdHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_outputTypeHasBeenSet = false;
   bool m_segmentTypesHasBeenSet = false;
+  bool m_listFilterHasBeenSet = false;
 };
 
 }  // namespace Model

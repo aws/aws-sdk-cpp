@@ -121,6 +121,14 @@ RouterOutput& RouterOutput::operator=(JsonView jsonValue) {
     m_fabricConfiguration = jsonValue.GetObject("fabricConfiguration");
     m_fabricConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("associatedSourceEndpointArns")) {
+    Aws::Utils::Array<JsonView> associatedSourceEndpointArnsJsonList = jsonValue.GetArray("associatedSourceEndpointArns");
+    for (unsigned associatedSourceEndpointArnsIndex = 0;
+         associatedSourceEndpointArnsIndex < associatedSourceEndpointArnsJsonList.GetLength(); ++associatedSourceEndpointArnsIndex) {
+      m_associatedSourceEndpointArns.push_back(associatedSourceEndpointArnsJsonList[associatedSourceEndpointArnsIndex].AsString());
+    }
+    m_associatedSourceEndpointArnsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -230,6 +238,16 @@ JsonValue RouterOutput::Jsonize() const {
 
   if (m_fabricConfigurationHasBeenSet) {
     payload.WithObject("fabricConfiguration", m_fabricConfiguration.Jsonize());
+  }
+
+  if (m_associatedSourceEndpointArnsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> associatedSourceEndpointArnsJsonList(m_associatedSourceEndpointArns.size());
+    for (unsigned associatedSourceEndpointArnsIndex = 0;
+         associatedSourceEndpointArnsIndex < associatedSourceEndpointArnsJsonList.GetLength(); ++associatedSourceEndpointArnsIndex) {
+      associatedSourceEndpointArnsJsonList[associatedSourceEndpointArnsIndex].AsString(
+          m_associatedSourceEndpointArns[associatedSourceEndpointArnsIndex]);
+    }
+    payload.WithArray("associatedSourceEndpointArns", std::move(associatedSourceEndpointArnsJsonList));
   }
 
   return payload;

@@ -23,8 +23,8 @@ namespace Signin {
 namespace Model {
 /**
  * <p>Output structure for CreateOAuth2TokenWithIAM operation</p> <p>Contains the
- * JWT access token, token type, and expiration per RFC 6749 §5.1.</p><p><h3>See
- * Also:</h3>   <a
+ * access token, token type, and expiration as defined in RFC 6749
+ * §5.1.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/signin-2023-01-01/CreateOAuth2TokenWithIAMResponse">AWS
  * API Reference</a></p>
  */
@@ -36,8 +36,8 @@ class CreateOAuth2TokenWithIAMResult {
 
   ///@{
   /**
-   * <p>JWT access token containing principal identity, resource scope, and session
-   * metadata</p>
+   * <p>Access token containing principal identity, resource scope, and session
+   * metadata.</p>
    */
   inline const Aws::String& GetAccessToken() const { return m_accessToken; }
   template <typename AccessTokenT = Aws::String>
@@ -54,7 +54,7 @@ class CreateOAuth2TokenWithIAMResult {
 
   ///@{
   /**
-   * <p>Always &quot;Bearer&quot; per OAuth 2.1 specification</p>
+   * <p>The token type. Always &quot;Bearer&quot; as defined in RFC 6749.</p>
    */
   inline const Aws::String& GetTokenType() const { return m_tokenType; }
   template <typename TokenTypeT = Aws::String>
@@ -71,8 +71,8 @@ class CreateOAuth2TokenWithIAMResult {
 
   ///@{
   /**
-   * <p>Token lifetime in seconds. Value is the minimum of session validity and 1
-   * hour.</p>
+   * <p>Token lifetime in seconds. Value is the minimum of the caller's session
+   * validity and 1 hour (3600 seconds).</p>
    */
   inline int GetExpiresIn() const { return m_expiresIn; }
   inline void SetExpiresIn(int value) {

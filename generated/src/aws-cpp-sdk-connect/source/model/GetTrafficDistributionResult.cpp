@@ -42,6 +42,10 @@ GetTrafficDistributionResult& GetTrafficDistributionResult::operator=(const Aws:
     m_agentConfig = jsonValue.GetObject("AgentConfig");
     m_agentConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("LastFailoverTime")) {
+    m_lastFailoverTime = jsonValue.GetDouble("LastFailoverTime");
+    m_lastFailoverTimeHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

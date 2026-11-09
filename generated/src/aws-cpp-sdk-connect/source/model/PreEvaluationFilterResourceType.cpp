@@ -16,11 +16,14 @@ namespace Model {
 namespace PreEvaluationFilterResourceTypeMapper {
 
 static const int CONTACT_HASH = HashingUtils::HashString("CONTACT");
+static const int CONTACT_EVALUATION_HASH = HashingUtils::HashString("CONTACT_EVALUATION");
 
 PreEvaluationFilterResourceType GetPreEvaluationFilterResourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == CONTACT_HASH) {
     return PreEvaluationFilterResourceType::CONTACT;
+  } else if (hashCode == CONTACT_EVALUATION_HASH) {
+    return PreEvaluationFilterResourceType::CONTACT_EVALUATION;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +40,8 @@ Aws::String GetNameForPreEvaluationFilterResourceType(PreEvaluationFilterResourc
       return {};
     case PreEvaluationFilterResourceType::CONTACT:
       return "CONTACT";
+    case PreEvaluationFilterResourceType::CONTACT_EVALUATION:
+      return "CONTACT_EVALUATION";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

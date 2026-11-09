@@ -37,17 +37,5 @@ Aws::String NestedXmlMapWithXmlNameRequest::SerializePayload() const {
     }
   }
 
-  return payloadDoc.ConvertToString();
-}
-
-Aws::Http::HeaderValueCollection NestedXmlMapWithXmlNameRequest::GetRequestSpecificHeaders() const {
-  Aws::Http::HeaderValueCollection headers;
-  Aws::StringStream ss;
-  if (m_requestIdHasBeenSet) {
-    ss << m_requestId;
-    headers.emplace("x-amzn-requestid", ss.str());
-    ss.str("");
-  }
-
-  return headers;
+  return payloadDoc.ConvertToCompactString();
 }

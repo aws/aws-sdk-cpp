@@ -290,7 +290,8 @@ class ScraperDescription {
   ///@{
   /**
    * <p>The exporter configurations for the scraper, if configured. The list contains
-   * at most one configuration for an Amazon OpenSearch Service domain.</p>
+   * at most one configuration, for either an Amazon OpenSearch Service domain or an
+   * Amazon MSK cluster.</p>
    */
   inline const Aws::Vector<ExporterConfiguration>& GetExporters() const { return m_exporters; }
   inline bool ExportersHasBeenSet() const { return m_exportersHasBeenSet; }

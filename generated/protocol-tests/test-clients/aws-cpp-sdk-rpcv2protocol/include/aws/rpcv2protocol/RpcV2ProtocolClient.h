@@ -331,6 +331,33 @@ class AWS_RPCV2PROTOCOL_API RpcV2ProtocolClient : public Aws::Client::AWSRpcV2Cb
   }
 
   /**
+   * <p>This operation uses unions for inputs and outputs.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rpcv2protocol-2020-07-14/RpcV2CborUnions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::RpcV2CborUnionsOutcome RpcV2CborUnions(const Model::RpcV2CborUnionsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for RpcV2CborUnions that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename RpcV2CborUnionsRequestT = Model::RpcV2CborUnionsRequest>
+  Model::RpcV2CborUnionsOutcomeCallable RpcV2CborUnionsCallable(const RpcV2CborUnionsRequestT& request = {}) const {
+    return SubmitCallable(&RpcV2ProtocolClient::RpcV2CborUnions, request);
+  }
+
+  /**
+   * An Async wrapper for RpcV2CborUnions that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename RpcV2CborUnionsRequestT = Model::RpcV2CborUnionsRequest>
+  void RpcV2CborUnionsAsync(const RpcV2CborUnionsResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                            const RpcV2CborUnionsRequestT& request = {}) const {
+    return SubmitAsync(&RpcV2ProtocolClient::RpcV2CborUnions, request, handler, context);
+  }
+
+  /**
    *
    */
   virtual Model::SimpleScalarPropertiesOutcome SimpleScalarProperties(const Model::SimpleScalarPropertiesRequest& request = {}) const;

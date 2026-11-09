@@ -36,6 +36,8 @@
 #include <aws/kms/model/CustomKeyStoresListEntry.h>
 #include <aws/kms/model/DataKeyPairSpec.h>
 #include <aws/kms/model/DataKeySpec.h>
+#include <aws/kms/model/DecapsulateRequest.h>
+#include <aws/kms/model/DecapsulateResult.h>
 #include <aws/kms/model/DecryptRequest.h>
 #include <aws/kms/model/DecryptResult.h>
 #include <aws/kms/model/DeleteAliasRequest.h>
@@ -57,6 +59,9 @@
 #include <aws/kms/model/DryRunModifierType.h>
 #include <aws/kms/model/EnableKeyRequest.h>
 #include <aws/kms/model/EnableKeyRotationRequest.h>
+#include <aws/kms/model/EncapsulateRequest.h>
+#include <aws/kms/model/EncapsulateResult.h>
+#include <aws/kms/model/EncapsulationAlgorithmSpec.h>
 #include <aws/kms/model/EncryptRequest.h>
 #include <aws/kms/model/EncryptResult.h>
 #include <aws/kms/model/EncryptionAlgorithmSpec.h>

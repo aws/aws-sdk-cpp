@@ -24,12 +24,6 @@ class JsonValue;
 }  // namespace Utils
 namespace deadline {
 namespace Model {
-/**
- * <p>Shared pagination field for List operation outputs (nextToken).</p><p><h3>See
- * Also:</h3>   <a
- * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetSessionsStatisticsAggregationResponse">AWS
- * API Reference</a></p>
- */
 class GetSessionsStatisticsAggregationResult {
  public:
   AWS_DEADLINE_API GetSessionsStatisticsAggregationResult() = default;

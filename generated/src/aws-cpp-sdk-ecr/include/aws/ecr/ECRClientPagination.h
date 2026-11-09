@@ -9,10 +9,12 @@
 #include <aws/ecr/model/DescribeImageScanFindingsPaginationTraits.h>
 #include <aws/ecr/model/DescribeImagesPaginationTraits.h>
 #include <aws/ecr/model/DescribePullThroughCacheRulesPaginationTraits.h>
+#include <aws/ecr/model/DescribeReplicationBackfillResultsPaginationTraits.h>
 #include <aws/ecr/model/DescribeRepositoriesPaginationTraits.h>
 #include <aws/ecr/model/DescribeRepositoryCreationTemplatesPaginationTraits.h>
 #include <aws/ecr/model/GetLifecyclePolicyPreviewPaginationTraits.h>
 #include <aws/ecr/model/ListImagesPaginationTraits.h>
+#include <aws/ecr/model/ListReplicationBackfillsPaginationTraits.h>
 
 namespace Aws {
 namespace ECR {
@@ -25,6 +27,9 @@ using DescribeImageScanFindingsPaginator =
 using DescribePullThroughCacheRulesPaginator =
     Aws::Utils::Pagination::Paginator<ECRClient, Model::DescribePullThroughCacheRulesRequest,
                                       Pagination::DescribePullThroughCacheRulesPaginationTraits<ECRClient>>;
+using DescribeReplicationBackfillResultsPaginator =
+    Aws::Utils::Pagination::Paginator<ECRClient, Model::DescribeReplicationBackfillResultsRequest,
+                                      Pagination::DescribeReplicationBackfillResultsPaginationTraits<ECRClient>>;
 using DescribeRepositoriesPaginator = Aws::Utils::Pagination::Paginator<ECRClient, Model::DescribeRepositoriesRequest,
                                                                         Pagination::DescribeRepositoriesPaginationTraits<ECRClient>>;
 using DescribeRepositoryCreationTemplatesPaginator =
@@ -35,6 +40,9 @@ using GetLifecyclePolicyPreviewPaginator =
                                       Pagination::GetLifecyclePolicyPreviewPaginationTraits<ECRClient>>;
 using ListImagesPaginator =
     Aws::Utils::Pagination::Paginator<ECRClient, Model::ListImagesRequest, Pagination::ListImagesPaginationTraits<ECRClient>>;
+using ListReplicationBackfillsPaginator =
+    Aws::Utils::Pagination::Paginator<ECRClient, Model::ListReplicationBackfillsRequest,
+                                      Pagination::ListReplicationBackfillsPaginationTraits<ECRClient>>;
 
 }  // namespace ECR
 }  // namespace Aws

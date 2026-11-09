@@ -185,6 +185,11 @@ Image& Image::operator=(const XmlNode& xmlNode) {
 
       m_imageWatermarksHasBeenSet = true;
     }
+    XmlNode scanResultsNode = resultNode.FirstChild("scanResults");
+    if (!scanResultsNode.IsNull()) {
+      m_scanResults = scanResultsNode;
+      m_scanResultsHasBeenSet = true;
+    }
     XmlNode instanceTypeSpecificationNode = resultNode.FirstChild("instanceTypeSpecification");
     if (!instanceTypeSpecificationNode.IsNull()) {
       m_instanceTypeSpecification = instanceTypeSpecificationNode;
@@ -399,6 +404,12 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
     }
   }
 
+  if (m_scanResultsHasBeenSet) {
+    Aws::StringStream scanResultsLocationAndMemberSs;
+    scanResultsLocationAndMemberSs << location << index << locationValue << ".ScanResults";
+    m_scanResults.OutputToStream(oStream, scanResultsLocationAndMemberSs.str().c_str());
+  }
+
   if (m_instanceTypeSpecificationHasBeenSet) {
     Aws::StringStream instanceTypeSpecificationLocationAndMemberSs;
     instanceTypeSpecificationLocationAndMemberSs << location << index << locationValue << ".InstanceTypeSpecification";
@@ -564,6 +575,11 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location) const {
       imageWatermarksSs << location << ".ImageWatermarkSet." << imageWatermarksIdx++;
       item.OutputToStream(oStream, imageWatermarksSs.str().c_str());
     }
+  }
+  if (m_scanResultsHasBeenSet) {
+    Aws::String scanResultsLocationAndMember(location);
+    scanResultsLocationAndMember += ".ScanResults";
+    m_scanResults.OutputToStream(oStream, scanResultsLocationAndMember.c_str());
   }
   if (m_instanceTypeSpecificationHasBeenSet) {
     Aws::String instanceTypeSpecificationLocationAndMember(location);

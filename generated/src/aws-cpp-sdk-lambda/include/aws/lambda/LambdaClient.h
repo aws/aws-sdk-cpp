@@ -26,14 +26,14 @@ namespace Lambda {
  * href="https://docs.aws.amazon.com/lambda/latest/dg/welcome.html">What is
  * Lambda</a> in the <b>Lambda Developer Guide</b>.</p> <p>Lambda Event Functions,
  * previously known as Lambda functions, run your code in response to events and
- * API calls. Event Functions is a documentation name only. In this API, the Amazon
- * Web Services SDKs, and the CLI, Event Functions are still called
- * <i>functions</i>, for example in <code>CreateFunction</code> and
- * <code>Invoke</code>. You don't need to change any code.</p> <p>The <i>Lambda API
- * Reference</i> provides information about each of the API methods, including
- * details about the parameters in each API request and response. </p> <p/> <p>You
- * can use Software Development Kits (SDKs), Integrated Development Environment
- * (IDE) Toolkits, and command line tools to access the API. For installation
+ * API calls. In the Lambda API, the Amazon Web Services SDKs, and the CLI, Event
+ * Functions are still called <i>functions</i>, for example in
+ * <code>CreateFunction</code> and <code>Invoke</code>. You don't need to change
+ * any existing code.</p> <p>The <i>Lambda API Reference</i> provides information
+ * about each of the API methods for Lambda Event Functions, including details
+ * about the parameters in each API request and response.</p> <p/> <p>You can use
+ * Software Development Kits (SDKs), Integrated Development Environment (IDE)
+ * Toolkits, and command line tools to access the API. For installation
  * instructions, see <a href="http://aws.amazon.com/tools/">Tools for Amazon Web
  * Services</a>. </p> <p>For a list of Region-specific endpoints that Lambda
  * supports, see <a
@@ -700,8 +700,8 @@ class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Removes a concurrent execution limit from a function.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Removes a concurrent execution limit from a Lambda Event
+   * Function.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionConcurrency">AWS
    * API Reference</a></p>
    */
@@ -1116,9 +1116,9 @@ class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Returns information about the function or function version, with a link to
-   * download the deployment package that's valid for 10 minutes. If you specify a
-   * function version, only details that are specific to that version are
+   * <p>Returns information about a Lambda Event Function or function version, with a
+   * link to download the deployment package that's valid for 10 minutes. If you
+   * specify a function version, only details that are specific to that version are
    * returned.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunction">AWS
    * API Reference</a></p>
@@ -1810,8 +1810,9 @@ class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Retrieves a list of configurations for asynchronous invocation for a
-   * function.</p> <p>To configure options for asynchronous invocation, use
+   * <p>Retrieves a list of configurations for asynchronous invocation for a Lambda
+   * Event Function. To retrieve more configurations, use the <code>Marker</code>
+   * parameter.</p> <p>To configure options for asynchronous invocation, use
    * <a>PutFunctionEventInvokeConfig</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctionEventInvokeConfigs">AWS
    * API Reference</a></p>
@@ -2088,9 +2089,9 @@ class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Returns a list of <a
-   * href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">versions</a>,
-   * with the version-specific configuration of each. Lambda returns up to 50
-   * versions per call.</p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">versions</a>
+   * of a Lambda Event Function, with the version-specific configuration of each.
+   * Lambda returns up to 50 versions per call.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListVersionsByFunction">AWS
    * API Reference</a></p>
    */
@@ -2150,11 +2151,11 @@ class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient,
   /**
    * <p>Creates a <a
    * href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">version</a>
-   * from the current code and configuration of a function. Use versions to create a
-   * snapshot of your function code and configuration that doesn't change.</p>
-   * <p>Lambda doesn't publish a version if the function's configuration and code
-   * haven't changed since the last version. Use <a>UpdateFunctionCode</a> or
-   * <a>UpdateFunctionConfiguration</a> to update the function before publishing a
+   * from the current code and configuration of a Lambda Event Function. Use versions
+   * to create a snapshot of your function code and configuration that doesn't
+   * change.</p> <p>Lambda doesn't publish a version if the function's configuration
+   * and code haven't changed since the last version. Use <a>UpdateFunctionCode</a>
+   * or <a>UpdateFunctionConfiguration</a> to update the function before publishing a
    * version.</p> <p>Clients can invoke versions directly or with an alias. To create
    * an alias, use <a>CreateAlias</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublishVersion">AWS
@@ -2212,16 +2213,16 @@ class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Sets the maximum number of simultaneous executions for a function, and
-   * reserves capacity for that concurrency level.</p> <p>Concurrency settings apply
-   * to the function as a whole, including all published versions and the unpublished
-   * version. Reserving concurrency both ensures that your function has capacity to
-   * process the specified number of events simultaneously, and prevents it from
-   * scaling beyond that level. Use <a>GetFunction</a> to see the current setting for
-   * a function.</p> <p>Use <a>GetAccountSettings</a> to see your Regional
-   * concurrency limit. You can reserve concurrency for as many functions as you
-   * like, as long as you leave at least 100 simultaneous executions unreserved for
-   * functions that aren't configured with a per-function limit. For more
+   * <p>Sets the maximum number of simultaneous executions for a Lambda Event
+   * Function, and reserves capacity for that concurrency level.</p> <p>Concurrency
+   * settings apply to the function as a whole, including all published versions and
+   * the unpublished version. Reserving concurrency both ensures that your function
+   * has capacity to process the specified number of events simultaneously, and
+   * prevents it from scaling beyond that level. Use <a>GetFunction</a> to see the
+   * current setting for a function.</p> <p>Use <a>GetAccountSettings</a> to see your
+   * Regional concurrency limit. You can reserve concurrency for as many functions as
+   * you like, as long as you leave at least 100 simultaneous executions unreserved
+   * for functions that aren't configured with a per-function limit. For more
    * information, see <a
    * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-scaling.html">Lambda
    * function scaling</a>.</p><p><h3>See Also:</h3>   <a
@@ -2299,18 +2300,19 @@ class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Sets your function's <a
+   * <p>Sets the <a
    * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-recursion.html">recursive
-   * loop detection</a> configuration.</p> <p>When you configure a Lambda function to
-   * output to the same service or resource that invokes the function, it's possible
-   * to create an infinite recursive loop. For example, a Lambda function might write
-   * a message to an Amazon Simple Queue Service (Amazon SQS) queue, which then
-   * invokes the same function. This invocation causes the function to write another
-   * message to the queue, which in turn invokes the function again.</p> <p>Lambda
-   * can detect certain types of recursive loops shortly after they occur. When
-   * Lambda detects a recursive loop and your function's recursive loop detection
-   * configuration is set to <code>Terminate</code>, it stops your function being
-   * invoked and notifies you.</p><p><h3>See Also:</h3>   <a
+   * loop detection</a> configuration for a Lambda Event Function.</p> <p>When you
+   * configure a Lambda function to output to the same service or resource that
+   * invokes the function, it's possible to create an infinite recursive loop. For
+   * example, a Lambda function might write a message to an Amazon Simple Queue
+   * Service (Amazon SQS) queue, which then invokes the same function. This
+   * invocation causes the function to write another message to the queue, which in
+   * turn invokes the function again.</p> <p>Lambda can detect certain types of
+   * recursive loops shortly after they occur. When Lambda detects a recursive loop
+   * and your function's recursive loop detection configuration is set to
+   * <code>Terminate</code>, it stops your function being invoked and notifies
+   * you.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionRecursionConfig">AWS
    * API Reference</a></p>
    */
@@ -2990,8 +2992,8 @@ class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Updates the configuration for a Lambda function URL.</p><p><h3>See Also:</h3>
-   * <a
+   * <p>Updates the configuration for a function URL of a Lambda Event
+   * Function.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionUrlConfig">AWS
    * API Reference</a></p>
    */

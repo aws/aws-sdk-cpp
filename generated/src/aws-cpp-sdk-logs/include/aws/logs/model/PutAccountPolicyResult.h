@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
 #include <aws/logs/model/AccountPolicy.h>
+#include <aws/logs/model/DryRunResult.h>
 
 #include <utility>
 
@@ -46,6 +47,25 @@ class PutAccountPolicyResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The estimated impact of the policy on log groups in the account. This field
+   * is returned only when the request specifies <code>dryRun</code> as
+   * <code>true</code>.</p>
+   */
+  inline const DryRunResult& GetDryRunResult() const { return m_dryRunResult; }
+  template <typename DryRunResultT = DryRunResult>
+  void SetDryRunResult(DryRunResultT&& value) {
+    m_dryRunResultHasBeenSet = true;
+    m_dryRunResult = std::forward<DryRunResultT>(value);
+  }
+  template <typename DryRunResultT = DryRunResult>
+  PutAccountPolicyResult& WithDryRunResult(DryRunResultT&& value) {
+    SetDryRunResult(std::forward<DryRunResultT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -64,9 +84,12 @@ class PutAccountPolicyResult {
  private:
   AccountPolicy m_accountPolicy;
 
+  DryRunResult m_dryRunResult;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_accountPolicyHasBeenSet = false;
+  bool m_dryRunResultHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

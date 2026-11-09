@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/inspector2/Inspector2_EXPORTS.h>
 #include <aws/inspector2/model/Provider.h>
+#include <aws/inspector2/model/ScanSource.h>
 #include <aws/inspector2/model/SeverityCounts.h>
 
 #include <utility>
@@ -93,10 +94,10 @@ class AmiAggregationResponse {
   /**
    * <p>The cloud infrastructure partition associated with this AMI aggregation.
    * Valid values:</p> <ul> <li> <p> <code>aws</code> – Amazon Web Services
-   * commercial Regions.</p> </li> <li> <p> <code>aws-cn</code> – Amazon Web Services
-   * China Regions.</p> </li> <li> <p> <code>aws-us-gov</code> – Amazon Web Services
-   * GovCloud (US) Regions.</p> </li> <li> <p> <code>AzureCloud</code> – Azure
-   * commercial Regions.</p> </li> </ul>
+   * commercial Regions.</p> </li> <li> <p> <code>aws-cn</code> �� Amazon Web
+   * Services China Regions.</p> </li> <li> <p> <code>aws-us-gov</code> – Amazon Web
+   * Services GovCloud (US) Regions.</p> </li> <li> <p> <code>AzureCloud</code> –
+   * Azure commercial Regions.</p> </li> </ul>
    */
   inline const Aws::String& GetCloudPartition() const { return m_cloudPartition; }
   inline bool CloudPartitionHasBeenSet() const { return m_cloudPartitionHasBeenSet; }
@@ -202,6 +203,23 @@ class AmiAggregationResponse {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The source of the scan that generated the findings for the Amazon Machine
+   * Image (AMI).</p>
+   */
+  inline ScanSource GetScanSource() const { return m_scanSource; }
+  inline bool ScanSourceHasBeenSet() const { return m_scanSourceHasBeenSet; }
+  inline void SetScanSource(ScanSource value) {
+    m_scanSourceHasBeenSet = true;
+    m_scanSource = value;
+  }
+  inline AmiAggregationResponse& WithScanSource(ScanSource value) {
+    SetScanSource(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_ami;
 
@@ -220,6 +238,8 @@ class AmiAggregationResponse {
   SeverityCounts m_severityCounts;
 
   long long m_affectedInstances{0};
+
+  ScanSource m_scanSource{ScanSource::NOT_SET};
   bool m_amiHasBeenSet = false;
   bool m_accountIdHasBeenSet = false;
   bool m_cloudProviderHasBeenSet = false;
@@ -229,6 +249,7 @@ class AmiAggregationResponse {
   bool m_cloudAccountIdHasBeenSet = false;
   bool m_severityCountsHasBeenSet = false;
   bool m_affectedInstancesHasBeenSet = false;
+  bool m_scanSourceHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -20,6 +20,9 @@
 #include <aws/sagemaker/SageMakerClient.h>
 #include <aws/sagemaker/SageMakerEndpointProvider.h>
 #include <aws/sagemaker/SageMakerErrorMarshaller.h>
+#include <aws/sagemaker/model/DescribeModelPackageGroupRequest.h>
+#include <aws/sagemaker/model/DescribeModelPackageRequest.h>
+#include <aws/sagemaker/model/DescribeModelQualityJobDefinitionRequest.h>
 #include <aws/sagemaker/model/DescribeMonitoringScheduleRequest.h>
 #include <aws/sagemaker/model/DescribeNotebookInstanceLifecycleConfigRequest.h>
 #include <aws/sagemaker/model/DescribeNotebookInstanceRequest.h>
@@ -69,6 +72,7 @@
 #include <aws/sagemaker/model/ListAutoMLJobsRequest.h>
 #include <aws/sagemaker/model/ListCandidatesForAutoMLJobRequest.h>
 #include <aws/sagemaker/model/ListClusterEventsRequest.h>
+#include <aws/sagemaker/model/ListClusterExtensionsRequest.h>
 #include <aws/sagemaker/model/ListClusterNodesRequest.h>
 #include <aws/sagemaker/model/ListClusterSchedulerConfigsRequest.h>
 #include <aws/sagemaker/model/ListClustersRequest.h>
@@ -116,10 +120,6 @@
 #include <aws/sagemaker/model/ListModelQualityJobDefinitionsRequest.h>
 #include <aws/sagemaker/model/ListModelsRequest.h>
 #include <aws/sagemaker/model/ListMonitoringAlertHistoryRequest.h>
-#include <aws/sagemaker/model/ListMonitoringAlertsRequest.h>
-#include <aws/sagemaker/model/ListMonitoringExecutionsRequest.h>
-#include <aws/sagemaker/model/ListMonitoringSchedulesRequest.h>
-#include <aws/sagemaker/model/ListNotebookInstanceLifecycleConfigsRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,25 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DescribeModelPackageOutcome SageMakerClient::DescribeModelPackage(const DescribeModelPackageRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeModelPackageOutcome(result.GetResultWithOwnership())
+                            : DescribeModelPackageOutcome(std::move(result.GetError()));
+}
+
+DescribeModelPackageGroupOutcome SageMakerClient::DescribeModelPackageGroup(const DescribeModelPackageGroupRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeModelPackageGroupOutcome(result.GetResultWithOwnership())
+                            : DescribeModelPackageGroupOutcome(std::move(result.GetError()));
+}
+
+DescribeModelQualityJobDefinitionOutcome SageMakerClient::DescribeModelQualityJobDefinition(
+    const DescribeModelQualityJobDefinitionRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeModelQualityJobDefinitionOutcome(result.GetResultWithOwnership())
+                            : DescribeModelQualityJobDefinitionOutcome(std::move(result.GetError()));
+}
 
 DescribeMonitoringScheduleOutcome SageMakerClient::DescribeMonitoringSchedule(const DescribeMonitoringScheduleRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -426,6 +445,12 @@ ListClusterEventsOutcome SageMakerClient::ListClusterEvents(const ListClusterEve
                             : ListClusterEventsOutcome(std::move(result.GetError()));
 }
 
+ListClusterExtensionsOutcome SageMakerClient::ListClusterExtensions(const ListClusterExtensionsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListClusterExtensionsOutcome(result.GetResultWithOwnership())
+                            : ListClusterExtensionsOutcome(std::move(result.GetError()));
+}
+
 ListClusterNodesOutcome SageMakerClient::ListClusterNodes(const ListClusterNodesRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListClusterNodesOutcome(result.GetResultWithOwnership())
@@ -701,29 +726,4 @@ ListMonitoringAlertHistoryOutcome SageMakerClient::ListMonitoringAlertHistory(co
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListMonitoringAlertHistoryOutcome(result.GetResultWithOwnership())
                             : ListMonitoringAlertHistoryOutcome(std::move(result.GetError()));
-}
-
-ListMonitoringAlertsOutcome SageMakerClient::ListMonitoringAlerts(const ListMonitoringAlertsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ListMonitoringAlertsOutcome(result.GetResultWithOwnership())
-                            : ListMonitoringAlertsOutcome(std::move(result.GetError()));
-}
-
-ListMonitoringExecutionsOutcome SageMakerClient::ListMonitoringExecutions(const ListMonitoringExecutionsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ListMonitoringExecutionsOutcome(result.GetResultWithOwnership())
-                            : ListMonitoringExecutionsOutcome(std::move(result.GetError()));
-}
-
-ListMonitoringSchedulesOutcome SageMakerClient::ListMonitoringSchedules(const ListMonitoringSchedulesRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ListMonitoringSchedulesOutcome(result.GetResultWithOwnership())
-                            : ListMonitoringSchedulesOutcome(std::move(result.GetError()));
-}
-
-ListNotebookInstanceLifecycleConfigsOutcome SageMakerClient::ListNotebookInstanceLifecycleConfigs(
-    const ListNotebookInstanceLifecycleConfigsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ListNotebookInstanceLifecycleConfigsOutcome(result.GetResultWithOwnership())
-                            : ListNotebookInstanceLifecycleConfigsOutcome(std::move(result.GetError()));
 }

@@ -60,7 +60,17 @@ enum class Metric {
   spot_total_count_inst,
   spot_total_count_vcpu,
   spot_interruption_rate_inst,
-  spot_interruption_rate_vcpu
+  spot_interruption_rate_vcpu,
+  capacity_total_requested_vcpu,
+  capacity_total_fulfilled_vcpu,
+  spot_capacity_total_requested_vcpu,
+  spot_capacity_total_fulfilled_vcpu,
+  capacity_request_fulfillment_rate,
+  avg_inst_az_count_per_requested_vcpu,
+  inst_az_fulfillment_rate,
+  spot_capacity_request_fulfillment_rate,
+  spot_avg_inst_az_count_per_requested_vcpu,
+  spot_inst_az_fulfillment_rate
 };
 
 namespace MetricMapper {

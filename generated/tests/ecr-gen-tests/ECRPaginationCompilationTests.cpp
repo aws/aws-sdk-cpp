@@ -11,6 +11,8 @@
 #include <aws/ecr/model/GetLifecyclePolicyPreviewPaginationTraits.h>
 #include <aws/ecr/model/DescribeImageScanFindingsPaginationTraits.h>
 #include <aws/ecr/model/DescribeRepositoryCreationTemplatesPaginationTraits.h>
+#include <aws/ecr/model/ListReplicationBackfillsPaginationTraits.h>
+#include <aws/ecr/model/DescribeReplicationBackfillResultsPaginationTraits.h>
 #include <aws/ecr/model/DescribeRepositoriesPaginationTraits.h>
 #include <aws/ecr/model/DescribeImagesPaginationTraits.h>
 #include <aws/ecr/model/DescribePullThroughCacheRulesPaginationTraits.h>

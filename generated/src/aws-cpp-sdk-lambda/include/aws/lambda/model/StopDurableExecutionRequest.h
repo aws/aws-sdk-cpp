@@ -49,7 +49,8 @@ class StopDurableExecutionRequest : public LambdaRequest {
 
   ///@{
   /**
-   * <p>Optional error details explaining why the execution is being stopped.</p>
+   * <p>Optional error details explaining why the execution is being stopped. The
+   * combined size of all error fields is limited to 1 MB.</p>
    */
   inline const ErrorObject& GetError() const { return m_error; }
   inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }

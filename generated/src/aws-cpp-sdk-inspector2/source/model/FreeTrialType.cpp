@@ -23,6 +23,7 @@ static const int CODE_REPOSITORY_HASH = HashingUtils::HashString("CODE_REPOSITOR
 static const int VM_HASH = HashingUtils::HashString("VM");
 static const int CONTAINER_IMAGE_HASH = HashingUtils::HashString("CONTAINER_IMAGE");
 static const int SERVERLESS_FUNCTION_HASH = HashingUtils::HashString("SERVERLESS_FUNCTION");
+static const int MACHINE_IMAGE_HASH = HashingUtils::HashString("MACHINE_IMAGE");
 
 FreeTrialType GetFreeTrialTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -42,6 +43,8 @@ FreeTrialType GetFreeTrialTypeForName(const Aws::String& name) {
     return FreeTrialType::CONTAINER_IMAGE;
   } else if (hashCode == SERVERLESS_FUNCTION_HASH) {
     return FreeTrialType::SERVERLESS_FUNCTION;
+  } else if (hashCode == MACHINE_IMAGE_HASH) {
+    return FreeTrialType::MACHINE_IMAGE;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -72,6 +75,8 @@ Aws::String GetNameForFreeTrialType(FreeTrialType enumValue) {
       return "CONTAINER_IMAGE";
     case FreeTrialType::SERVERLESS_FUNCTION:
       return "SERVERLESS_FUNCTION";
+    case FreeTrialType::MACHINE_IMAGE:
+      return "MACHINE_IMAGE";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

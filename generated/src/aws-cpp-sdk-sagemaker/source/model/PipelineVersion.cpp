@@ -63,6 +63,14 @@ PipelineVersion& PipelineVersion::operator=(JsonView jsonValue) {
         PipelineExecutionStatusMapper::GetPipelineExecutionStatusForName(jsonValue.GetString("LastExecutedPipelineExecutionStatus"));
     m_lastExecutedPipelineExecutionStatusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("PipelineVersionAliases")) {
+    Aws::Utils::Array<JsonView> pipelineVersionAliasesJsonList = jsonValue.GetArray("PipelineVersionAliases");
+    for (unsigned pipelineVersionAliasesIndex = 0; pipelineVersionAliasesIndex < pipelineVersionAliasesJsonList.GetLength();
+         ++pipelineVersionAliasesIndex) {
+      m_pipelineVersionAliases.push_back(pipelineVersionAliasesJsonList[pipelineVersionAliasesIndex].AsString());
+    }
+    m_pipelineVersionAliasesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -112,6 +120,15 @@ JsonValue PipelineVersion::Jsonize() const {
   if (m_lastExecutedPipelineExecutionStatusHasBeenSet) {
     payload.WithString("LastExecutedPipelineExecutionStatus",
                        PipelineExecutionStatusMapper::GetNameForPipelineExecutionStatus(m_lastExecutedPipelineExecutionStatus));
+  }
+
+  if (m_pipelineVersionAliasesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> pipelineVersionAliasesJsonList(m_pipelineVersionAliases.size());
+    for (unsigned pipelineVersionAliasesIndex = 0; pipelineVersionAliasesIndex < pipelineVersionAliasesJsonList.GetLength();
+         ++pipelineVersionAliasesIndex) {
+      pipelineVersionAliasesJsonList[pipelineVersionAliasesIndex].AsString(m_pipelineVersionAliases[pipelineVersionAliasesIndex]);
+    }
+    payload.WithArray("PipelineVersionAliases", std::move(pipelineVersionAliasesJsonList));
   }
 
   return payload;

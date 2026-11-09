@@ -23,8 +23,10 @@
 #include <aws/elementalinference/model/AssociateFeedResult.h>
 #include <aws/elementalinference/model/CreateDictionaryResult.h>
 #include <aws/elementalinference/model/CreateFeedResult.h>
+#include <aws/elementalinference/model/CreateScheduleActionResult.h>
 #include <aws/elementalinference/model/DeleteDictionaryResult.h>
 #include <aws/elementalinference/model/DeleteFeedResult.h>
+#include <aws/elementalinference/model/DeleteScheduleActionResult.h>
 #include <aws/elementalinference/model/DisassociateFeedResult.h>
 #include <aws/elementalinference/model/ExportDictionaryEntriesResult.h>
 #include <aws/elementalinference/model/GetDictionaryResult.h>
@@ -35,6 +37,7 @@
 #include <aws/elementalinference/model/ListDictionariesResult.h>
 #include <aws/elementalinference/model/ListFeedsRequest.h>
 #include <aws/elementalinference/model/ListFeedsResult.h>
+#include <aws/elementalinference/model/ListScheduleActionsResult.h>
 #include <aws/elementalinference/model/ListTagsForResourceResult.h>
 #include <aws/elementalinference/model/PutFeedPolicyResult.h>
 #include <aws/elementalinference/model/SearchFixturesResult.h>
@@ -76,9 +79,11 @@ namespace Model {
 class AssociateFeedRequest;
 class CreateDictionaryRequest;
 class CreateFeedRequest;
+class CreateScheduleActionRequest;
 class DeleteDictionaryRequest;
 class DeleteFeedRequest;
 class DeleteFeedPolicyRequest;
+class DeleteScheduleActionRequest;
 class DisassociateFeedRequest;
 class ExportDictionaryEntriesRequest;
 class GetDictionaryRequest;
@@ -87,6 +92,7 @@ class GetFeedPolicyRequest;
 class GetFixtureRequest;
 class ListDictionariesRequest;
 class ListFeedsRequest;
+class ListScheduleActionsRequest;
 class ListTagsForResourceRequest;
 class PutFeedPolicyRequest;
 class SearchFixturesRequest;
@@ -100,9 +106,11 @@ class UpdateFeedRequest;
 typedef Aws::Utils::Outcome<AssociateFeedResult, ElementalInferenceError> AssociateFeedOutcome;
 typedef Aws::Utils::Outcome<CreateDictionaryResult, ElementalInferenceError> CreateDictionaryOutcome;
 typedef Aws::Utils::Outcome<CreateFeedResult, ElementalInferenceError> CreateFeedOutcome;
+typedef Aws::Utils::Outcome<CreateScheduleActionResult, ElementalInferenceError> CreateScheduleActionOutcome;
 typedef Aws::Utils::Outcome<DeleteDictionaryResult, ElementalInferenceError> DeleteDictionaryOutcome;
 typedef Aws::Utils::Outcome<DeleteFeedResult, ElementalInferenceError> DeleteFeedOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ElementalInferenceError> DeleteFeedPolicyOutcome;
+typedef Aws::Utils::Outcome<DeleteScheduleActionResult, ElementalInferenceError> DeleteScheduleActionOutcome;
 typedef Aws::Utils::Outcome<DisassociateFeedResult, ElementalInferenceError> DisassociateFeedOutcome;
 typedef Aws::Utils::Outcome<ExportDictionaryEntriesResult, ElementalInferenceError> ExportDictionaryEntriesOutcome;
 typedef Aws::Utils::Outcome<GetDictionaryResult, ElementalInferenceError> GetDictionaryOutcome;
@@ -111,6 +119,7 @@ typedef Aws::Utils::Outcome<GetFeedPolicyResult, ElementalInferenceError> GetFee
 typedef Aws::Utils::Outcome<GetFixtureResult, ElementalInferenceError> GetFixtureOutcome;
 typedef Aws::Utils::Outcome<ListDictionariesResult, ElementalInferenceError> ListDictionariesOutcome;
 typedef Aws::Utils::Outcome<ListFeedsResult, ElementalInferenceError> ListFeedsOutcome;
+typedef Aws::Utils::Outcome<ListScheduleActionsResult, ElementalInferenceError> ListScheduleActionsOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, ElementalInferenceError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<PutFeedPolicyResult, ElementalInferenceError> PutFeedPolicyOutcome;
 typedef Aws::Utils::Outcome<SearchFixturesResult, ElementalInferenceError> SearchFixturesOutcome;
@@ -124,9 +133,11 @@ typedef Aws::Utils::Outcome<UpdateFeedResult, ElementalInferenceError> UpdateFee
 typedef std::future<AssociateFeedOutcome> AssociateFeedOutcomeCallable;
 typedef std::future<CreateDictionaryOutcome> CreateDictionaryOutcomeCallable;
 typedef std::future<CreateFeedOutcome> CreateFeedOutcomeCallable;
+typedef std::future<CreateScheduleActionOutcome> CreateScheduleActionOutcomeCallable;
 typedef std::future<DeleteDictionaryOutcome> DeleteDictionaryOutcomeCallable;
 typedef std::future<DeleteFeedOutcome> DeleteFeedOutcomeCallable;
 typedef std::future<DeleteFeedPolicyOutcome> DeleteFeedPolicyOutcomeCallable;
+typedef std::future<DeleteScheduleActionOutcome> DeleteScheduleActionOutcomeCallable;
 typedef std::future<DisassociateFeedOutcome> DisassociateFeedOutcomeCallable;
 typedef std::future<ExportDictionaryEntriesOutcome> ExportDictionaryEntriesOutcomeCallable;
 typedef std::future<GetDictionaryOutcome> GetDictionaryOutcomeCallable;
@@ -135,6 +146,7 @@ typedef std::future<GetFeedPolicyOutcome> GetFeedPolicyOutcomeCallable;
 typedef std::future<GetFixtureOutcome> GetFixtureOutcomeCallable;
 typedef std::future<ListDictionariesOutcome> ListDictionariesOutcomeCallable;
 typedef std::future<ListFeedsOutcome> ListFeedsOutcomeCallable;
+typedef std::future<ListScheduleActionsOutcome> ListScheduleActionsOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<PutFeedPolicyOutcome> PutFeedPolicyOutcomeCallable;
 typedef std::future<SearchFixturesOutcome> SearchFixturesOutcomeCallable;
@@ -157,6 +169,9 @@ typedef std::function<void(const ElementalInferenceClient*, const Model::CreateD
 typedef std::function<void(const ElementalInferenceClient*, const Model::CreateFeedRequest&, const Model::CreateFeedOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateFeedResponseReceivedHandler;
+typedef std::function<void(const ElementalInferenceClient*, const Model::CreateScheduleActionRequest&,
+                           const Model::CreateScheduleActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateScheduleActionResponseReceivedHandler;
 typedef std::function<void(const ElementalInferenceClient*, const Model::DeleteDictionaryRequest&, const Model::DeleteDictionaryOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteDictionaryResponseReceivedHandler;
@@ -166,6 +181,9 @@ typedef std::function<void(const ElementalInferenceClient*, const Model::DeleteF
 typedef std::function<void(const ElementalInferenceClient*, const Model::DeleteFeedPolicyRequest&, const Model::DeleteFeedPolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteFeedPolicyResponseReceivedHandler;
+typedef std::function<void(const ElementalInferenceClient*, const Model::DeleteScheduleActionRequest&,
+                           const Model::DeleteScheduleActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteScheduleActionResponseReceivedHandler;
 typedef std::function<void(const ElementalInferenceClient*, const Model::DisassociateFeedRequest&, const Model::DisassociateFeedOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DisassociateFeedResponseReceivedHandler;
@@ -190,6 +208,9 @@ typedef std::function<void(const ElementalInferenceClient*, const Model::ListDic
 typedef std::function<void(const ElementalInferenceClient*, const Model::ListFeedsRequest&, const Model::ListFeedsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListFeedsResponseReceivedHandler;
+typedef std::function<void(const ElementalInferenceClient*, const Model::ListScheduleActionsRequest&,
+                           const Model::ListScheduleActionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListScheduleActionsResponseReceivedHandler;
 typedef std::function<void(const ElementalInferenceClient*, const Model::ListTagsForResourceRequest&,
                            const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListTagsForResourceResponseReceivedHandler;

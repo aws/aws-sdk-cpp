@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connectparticipant/ConnectParticipantRequest.h>
 #include <aws/connectparticipant/ConnectParticipant_EXPORTS.h>
+#include <aws/connectparticipant/model/ContentDisposition.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -82,15 +83,37 @@ class GetAttachmentRequest : public ConnectParticipantRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies how a browser handles the file at the pre-signed URL. The following
+   * values are valid:</p> <dl> <dt>INLINE</dt> <dd> <p>Displays the file in the
+   * browser.</p> </dd> <dt>ATTACHMENT</dt> <dd> <p>Downloads the file. This is the
+   * default behavior.</p> </dd> </dl>
+   */
+  inline ContentDisposition GetUrlContentDisposition() const { return m_urlContentDisposition; }
+  inline bool UrlContentDispositionHasBeenSet() const { return m_urlContentDispositionHasBeenSet; }
+  inline void SetUrlContentDisposition(ContentDisposition value) {
+    m_urlContentDispositionHasBeenSet = true;
+    m_urlContentDisposition = value;
+  }
+  inline GetAttachmentRequest& WithUrlContentDisposition(ContentDisposition value) {
+    SetUrlContentDisposition(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_attachmentId;
 
   Aws::String m_connectionToken;
 
   int m_urlExpiryInSeconds{0};
+
+  ContentDisposition m_urlContentDisposition{ContentDisposition::NOT_SET};
   bool m_attachmentIdHasBeenSet = false;
   bool m_connectionTokenHasBeenSet = false;
   bool m_urlExpiryInSecondsHasBeenSet = false;
+  bool m_urlContentDispositionHasBeenSet = false;
 };
 
 }  // namespace Model

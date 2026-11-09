@@ -360,6 +360,23 @@ class OptionGroupOption {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether the option can be copied across Amazon Web Services
+   * Regions.</p>
+   */
+  inline bool GetCopyableCrossRegion() const { return m_copyableCrossRegion; }
+  inline bool CopyableCrossRegionHasBeenSet() const { return m_copyableCrossRegionHasBeenSet; }
+  inline void SetCopyableCrossRegion(bool value) {
+    m_copyableCrossRegionHasBeenSet = true;
+    m_copyableCrossRegion = value;
+  }
+  inline OptionGroupOption& WithCopyableCrossRegion(bool value) {
+    SetCopyableCrossRegion(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -394,6 +411,8 @@ class OptionGroupOption {
   Aws::Vector<OptionVersion> m_optionGroupOptionVersions;
 
   bool m_copyableCrossAccount{false};
+
+  bool m_copyableCrossRegion{false};
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_engineNameHasBeenSet = false;
@@ -411,6 +430,7 @@ class OptionGroupOption {
   bool m_optionGroupOptionSettingsHasBeenSet = false;
   bool m_optionGroupOptionVersionsHasBeenSet = false;
   bool m_copyableCrossAccountHasBeenSet = false;
+  bool m_copyableCrossRegionHasBeenSet = false;
 };
 
 }  // namespace Model

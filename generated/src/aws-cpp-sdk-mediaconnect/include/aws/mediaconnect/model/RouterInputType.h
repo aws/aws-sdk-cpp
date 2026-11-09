@@ -10,7 +10,7 @@
 namespace Aws {
 namespace MediaConnect {
 namespace Model {
-enum class RouterInputType { NOT_SET, STANDARD, FAILOVER, MERGE, MEDIACONNECT_FLOW, MEDIALIVE_CHANNEL };
+enum class RouterInputType { NOT_SET, STANDARD, FAILOVER, MERGE, MEDIACONNECT_FLOW, MEDIALIVE_CHANNEL, DESTINATION_ENDPOINT };
 
 namespace RouterInputTypeMapper {
 AWS_MEDIACONNECT_API RouterInputType GetRouterInputTypeForName(const Aws::String& name);

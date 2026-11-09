@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/cleanrooms/CleanRooms_EXPORTS.h>
+#include <aws/cleanrooms/model/ResultFormat.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -31,6 +32,23 @@ class ProtectedJobS3OutputConfigurationInput {
   AWS_CLEANROOMS_API ProtectedJobS3OutputConfigurationInput(Aws::Utils::Json::JsonView jsonValue);
   AWS_CLEANROOMS_API ProtectedJobS3OutputConfigurationInput& operator=(Aws::Utils::Json::JsonView jsonValue);
   AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p>The file format of the protected job results. If you don't specify a format,
+   * results are written as CSV.</p>
+   */
+  inline ResultFormat GetResultFormat() const { return m_resultFormat; }
+  inline bool ResultFormatHasBeenSet() const { return m_resultFormatHasBeenSet; }
+  inline void SetResultFormat(ResultFormat value) {
+    m_resultFormatHasBeenSet = true;
+    m_resultFormat = value;
+  }
+  inline ProtectedJobS3OutputConfigurationInput& WithResultFormat(ResultFormat value) {
+    SetResultFormat(value);
+    return *this;
+  }
+  ///@}
 
   ///@{
   /**
@@ -68,9 +86,12 @@ class ProtectedJobS3OutputConfigurationInput {
   }
   ///@}
  private:
+  ResultFormat m_resultFormat{ResultFormat::NOT_SET};
+
   Aws::String m_bucket;
 
   Aws::String m_keyPrefix;
+  bool m_resultFormatHasBeenSet = false;
   bool m_bucketHasBeenSet = false;
   bool m_keyPrefixHasBeenSet = false;
 };

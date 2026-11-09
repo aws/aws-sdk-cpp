@@ -20,6 +20,7 @@ static const int SUBSCRIPTION_FILTER_POLICY_HASH = HashingUtils::HashString("SUB
 static const int FIELD_INDEX_POLICY_HASH = HashingUtils::HashString("FIELD_INDEX_POLICY");
 static const int TRANSFORMER_POLICY_HASH = HashingUtils::HashString("TRANSFORMER_POLICY");
 static const int METRIC_EXTRACTION_POLICY_HASH = HashingUtils::HashString("METRIC_EXTRACTION_POLICY");
+static const int RETENTION_POLICY_HASH = HashingUtils::HashString("RETENTION_POLICY");
 
 PolicyType GetPolicyTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -33,6 +34,8 @@ PolicyType GetPolicyTypeForName(const Aws::String& name) {
     return PolicyType::TRANSFORMER_POLICY;
   } else if (hashCode == METRIC_EXTRACTION_POLICY_HASH) {
     return PolicyType::METRIC_EXTRACTION_POLICY;
+  } else if (hashCode == RETENTION_POLICY_HASH) {
+    return PolicyType::RETENTION_POLICY;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -57,6 +60,8 @@ Aws::String GetNameForPolicyType(PolicyType enumValue) {
       return "TRANSFORMER_POLICY";
     case PolicyType::METRIC_EXTRACTION_POLICY:
       return "METRIC_EXTRACTION_POLICY";
+    case PolicyType::RETENTION_POLICY:
+      return "RETENTION_POLICY";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

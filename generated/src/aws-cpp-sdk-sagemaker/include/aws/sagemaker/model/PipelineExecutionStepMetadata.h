@@ -21,6 +21,7 @@
 #include <aws/sagemaker/model/EndpointStepMetadata.h>
 #include <aws/sagemaker/model/FailStepMetadata.h>
 #include <aws/sagemaker/model/ForEachStepMetadata.h>
+#include <aws/sagemaker/model/HubContentStepMetadata.h>
 #include <aws/sagemaker/model/InferenceComponentMetadata.h>
 #include <aws/sagemaker/model/JobStepMetadata.h>
 #include <aws/sagemaker/model/LambdaStepMetadata.h>
@@ -582,6 +583,24 @@ class PipelineExecutionStepMetadata {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The metadata for the HubContent step execution.</p>
+   */
+  inline const HubContentStepMetadata& GetHubContent() const { return m_hubContent; }
+  inline bool HubContentHasBeenSet() const { return m_hubContentHasBeenSet; }
+  template <typename HubContentT = HubContentStepMetadata>
+  void SetHubContent(HubContentT&& value) {
+    m_hubContentHasBeenSet = true;
+    m_hubContent = std::forward<HubContentT>(value);
+  }
+  template <typename HubContentT = HubContentStepMetadata>
+  PipelineExecutionStepMetadata& WithHubContent(HubContentT&& value) {
+    SetHubContent(std::forward<HubContentT>(value));
+    return *this;
+  }
+  ///@}
  private:
   TrainingJobStepMetadata m_trainingJob;
 
@@ -636,6 +655,8 @@ class PipelineExecutionStepMetadata {
   CleanupStepMetadata m_cleanup;
 
   ForEachStepMetadata m_forEach;
+
+  HubContentStepMetadata m_hubContent;
   bool m_trainingJobHasBeenSet = false;
   bool m_processingJobHasBeenSet = false;
   bool m_transformJobHasBeenSet = false;
@@ -663,6 +684,7 @@ class PipelineExecutionStepMetadata {
   bool m_athenaHasBeenSet = false;
   bool m_cleanupHasBeenSet = false;
   bool m_forEachHasBeenSet = false;
+  bool m_hubContentHasBeenSet = false;
 };
 
 }  // namespace Model

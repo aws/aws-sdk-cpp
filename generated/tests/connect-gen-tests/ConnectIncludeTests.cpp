@@ -61,6 +61,7 @@
 #include <aws/connect/model/AnsweringMachineDetectionStatus.h>
 #include <aws/connect/model/Application.h>
 #include <aws/connect/model/ApplicationType.h>
+#include <aws/connect/model/ApproximateDriftedResourceCount.h>
 #include <aws/connect/model/ArtifactStatus.h>
 #include <aws/connect/model/AssignContactCategoryActionDefinition.h>
 #include <aws/connect/model/AssignSlaActionDefinition.h>
@@ -152,7 +153,10 @@
 #include <aws/connect/model/BooleanCondition.h>
 #include <aws/connect/model/CalculationComponent.h>
 #include <aws/connect/model/Campaign.h>
+#include <aws/connect/model/CaseEntry.h>
 #include <aws/connect/model/CaseSlaConfiguration.h>
+#include <aws/connect/model/CategoriesAttributeAndCondition.h>
+#include <aws/connect/model/CategoriesAttributeFilter.h>
 #include <aws/connect/model/Channel.h>
 #include <aws/connect/model/ChannelWorkloadBehaviorType.h>
 #include <aws/connect/model/ChatContactMetrics.h>
@@ -543,6 +547,7 @@
 #include <aws/connect/model/EmptyFieldValue.h>
 #include <aws/connect/model/EncryptionConfig.h>
 #include <aws/connect/model/EncryptionType.h>
+#include <aws/connect/model/EndAssociatedEmailsActionDefinition.h>
 #include <aws/connect/model/EndAssociatedTasksActionDefinition.h>
 #include <aws/connect/model/Endpoint.h>
 #include <aws/connect/model/EndpointInfo.h>
@@ -920,6 +925,9 @@
 #include <aws/connect/model/ListRealtimeContactAnalysisSegmentsV2PaginationTraits.h>
 #include <aws/connect/model/ListRealtimeContactAnalysisSegmentsV2Request.h>
 #include <aws/connect/model/ListRealtimeContactAnalysisSegmentsV2Result.h>
+#include <aws/connect/model/ListReplicationFindingsPaginationTraits.h>
+#include <aws/connect/model/ListReplicationFindingsRequest.h>
+#include <aws/connect/model/ListReplicationFindingsResult.h>
 #include <aws/connect/model/ListRoutingProfileManualAssignmentQueuesPaginationTraits.h>
 #include <aws/connect/model/ListRoutingProfileManualAssignmentQueuesRequest.h>
 #include <aws/connect/model/ListRoutingProfileManualAssignmentQueuesResult.h>
@@ -1050,6 +1058,7 @@
 #include <aws/connect/model/NotificationSource.h>
 #include <aws/connect/model/NotificationStatus.h>
 #include <aws/connect/model/NotificationType.h>
+#include <aws/connect/model/NullableAdditionalRecipients.h>
 #include <aws/connect/model/NumberComparisonType.h>
 #include <aws/connect/model/NumberCondition.h>
 #include <aws/connect/model/NumberReference.h>
@@ -1171,6 +1180,7 @@
 #include <aws/connect/model/RealTimeContactAnalysisSegmentPostContactSummary.h>
 #include <aws/connect/model/RealTimeContactAnalysisSegmentTranscript.h>
 #include <aws/connect/model/RealTimeContactAnalysisSegmentType.h>
+#include <aws/connect/model/RealTimeContactAnalysisSegmentsFilter.h>
 #include <aws/connect/model/RealTimeContactAnalysisSentimentLabel.h>
 #include <aws/connect/model/RealTimeContactAnalysisStatus.h>
 #include <aws/connect/model/RealTimeContactAnalysisSupportedChannel.h>
@@ -1196,9 +1206,11 @@
 #include <aws/connect/model/ReplicateInstanceRequest.h>
 #include <aws/connect/model/ReplicateInstanceResult.h>
 #include <aws/connect/model/ReplicationConfiguration.h>
+#include <aws/connect/model/ReplicationFinding.h>
 #include <aws/connect/model/ReplicationStatusSummary.h>
 #include <aws/connect/model/RequiredFieldInfo.h>
 #include <aws/connect/model/ResourceInUseException.h>
+#include <aws/connect/model/ResourceReplicationStatus.h>
 #include <aws/connect/model/ResourceTagsSearchCriteria.h>
 #include <aws/connect/model/ResourceType.h>
 #include <aws/connect/model/ResponseMode.h>
@@ -1434,6 +1446,7 @@
 #include <aws/connect/model/TaskActionDefinition.h>
 #include <aws/connect/model/TaskAttachment.h>
 #include <aws/connect/model/TaskTemplateConstraints.h>
+#include <aws/connect/model/TaskTemplateContactHooks.h>
 #include <aws/connect/model/TaskTemplateDefaultFieldValue.h>
 #include <aws/connect/model/TaskTemplateDefaults.h>
 #include <aws/connect/model/TaskTemplateField.h>
@@ -1526,6 +1539,11 @@
 #include <aws/connect/model/UpdateMetricMetadataResult.h>
 #include <aws/connect/model/UpdateNotificationContentRequest.h>
 #include <aws/connect/model/UpdateNotificationContentResult.h>
+#include <aws/connect/model/UpdateOutboundEmailContactMessageRequest.h>
+#include <aws/connect/model/UpdateOutboundEmailContactMessageResult.h>
+#include <aws/connect/model/UpdateOutboundEmailContent.h>
+#include <aws/connect/model/UpdateOutboundEmailMessageSourceType.h>
+#include <aws/connect/model/UpdateOutboundRawMessage.h>
 #include <aws/connect/model/UpdateParticipantAuthenticationRequest.h>
 #include <aws/connect/model/UpdateParticipantAuthenticationResult.h>
 #include <aws/connect/model/UpdateParticipantRoleConfigChannelInfo.h>

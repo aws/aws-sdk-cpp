@@ -85,6 +85,10 @@ Channel& Channel::operator=(JsonView jsonValue) {
     m_adConfigurationArn = jsonValue.GetString("adConfigurationArn");
     m_adConfigurationArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("failoverSlateConfigurationArn")) {
+    m_failoverSlateConfigurationArn = jsonValue.GetString("failoverSlateConfigurationArn");
+    m_failoverSlateConfigurationArnHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -157,6 +161,10 @@ JsonValue Channel::Jsonize() const {
 
   if (m_adConfigurationArnHasBeenSet) {
     payload.WithString("adConfigurationArn", m_adConfigurationArn);
+  }
+
+  if (m_failoverSlateConfigurationArnHasBeenSet) {
+    payload.WithString("failoverSlateConfigurationArn", m_failoverSlateConfigurationArn);
   }
 
   return payload;

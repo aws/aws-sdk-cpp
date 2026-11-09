@@ -9,6 +9,8 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/networkmanager/NetworkManagerRequest.h>
 #include <aws/networkmanager/NetworkManager_EXPORTS.h>
+#include <aws/networkmanager/model/NatGatewaySupportValue.h>
+#include <aws/networkmanager/model/NatRuleRequest.h>
 #include <aws/networkmanager/model/Tag.h>
 #include <aws/networkmanager/model/VpcOptions.h>
 
@@ -131,6 +133,49 @@ class CreateVpcAttachmentRequest : public NetworkManagerRequest {
 
   ///@{
   /**
+   * <p>Specifies whether to enable NAT gateway support on the VPC attachment. To
+   * enable NAT gateway support, you must also specify at least one NAT rule. If you
+   * don't specify a value, NAT gateway support is disabled. Only the core network
+   * owner can configure NAT on an attachment.</p>
+   */
+  inline NatGatewaySupportValue GetNatGatewaySupport() const { return m_natGatewaySupport; }
+  inline bool NatGatewaySupportHasBeenSet() const { return m_natGatewaySupportHasBeenSet; }
+  inline void SetNatGatewaySupport(NatGatewaySupportValue value) {
+    m_natGatewaySupportHasBeenSet = true;
+    m_natGatewaySupport = value;
+  }
+  inline CreateVpcAttachmentRequest& WithNatGatewaySupport(NatGatewaySupportValue value) {
+    SetNatGatewaySupport(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The NAT rules for the VPC attachment, up to 50 rules.</p>
+   */
+  inline const Aws::Vector<NatRuleRequest>& GetNatGatewayRules() const { return m_natGatewayRules; }
+  inline bool NatGatewayRulesHasBeenSet() const { return m_natGatewayRulesHasBeenSet; }
+  template <typename NatGatewayRulesT = Aws::Vector<NatRuleRequest>>
+  void SetNatGatewayRules(NatGatewayRulesT&& value) {
+    m_natGatewayRulesHasBeenSet = true;
+    m_natGatewayRules = std::forward<NatGatewayRulesT>(value);
+  }
+  template <typename NatGatewayRulesT = Aws::Vector<NatRuleRequest>>
+  CreateVpcAttachmentRequest& WithNatGatewayRules(NatGatewayRulesT&& value) {
+    SetNatGatewayRules(std::forward<NatGatewayRulesT>(value));
+    return *this;
+  }
+  template <typename NatGatewayRulesT = NatRuleRequest>
+  CreateVpcAttachmentRequest& AddNatGatewayRules(NatGatewayRulesT&& value) {
+    m_natGatewayRulesHasBeenSet = true;
+    m_natGatewayRules.emplace_back(std::forward<NatGatewayRulesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The key-value tags associated with the request.</p>
    */
   inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
@@ -181,6 +226,10 @@ class CreateVpcAttachmentRequest : public NetworkManagerRequest {
 
   Aws::String m_routingPolicyLabel;
 
+  NatGatewaySupportValue m_natGatewaySupport{NatGatewaySupportValue::NOT_SET};
+
+  Aws::Vector<NatRuleRequest> m_natGatewayRules;
+
   Aws::Vector<Tag> m_tags;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
@@ -189,6 +238,8 @@ class CreateVpcAttachmentRequest : public NetworkManagerRequest {
   bool m_subnetArnsHasBeenSet = false;
   bool m_optionsHasBeenSet = false;
   bool m_routingPolicyLabelHasBeenSet = false;
+  bool m_natGatewaySupportHasBeenSet = false;
+  bool m_natGatewayRulesHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };

@@ -7,6 +7,7 @@
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/inspector2/Inspector2_EXPORTS.h>
+#include <aws/inspector2/model/AmiConfigurationState.h>
 #include <aws/inspector2/model/Ec2ConfigurationState.h>
 #include <aws/inspector2/model/EcrConfigurationState.h>
 
@@ -66,6 +67,24 @@ class GetConfigurationResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The current state of the Amazon Machine Image (AMI) scan configuration for
+   * the account.</p>
+   */
+  inline const AmiConfigurationState& GetAmiConfiguration() const { return m_amiConfiguration; }
+  template <typename AmiConfigurationT = AmiConfigurationState>
+  void SetAmiConfiguration(AmiConfigurationT&& value) {
+    m_amiConfigurationHasBeenSet = true;
+    m_amiConfiguration = std::forward<AmiConfigurationT>(value);
+  }
+  template <typename AmiConfigurationT = AmiConfigurationState>
+  GetConfigurationResult& WithAmiConfiguration(AmiConfigurationT&& value) {
+    SetAmiConfiguration(std::forward<AmiConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -86,10 +105,13 @@ class GetConfigurationResult {
 
   Ec2ConfigurationState m_ec2Configuration;
 
+  AmiConfigurationState m_amiConfiguration;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_ecrConfigurationHasBeenSet = false;
   bool m_ec2ConfigurationHasBeenSet = false;
+  bool m_amiConfigurationHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

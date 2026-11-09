@@ -10,7 +10,7 @@
 namespace Aws {
 namespace NetworkManager {
 namespace Model {
-enum class RouteType { NOT_SET, PROPAGATED, STATIC_ };
+enum class RouteType { NOT_SET, PROPAGATED, STATIC_, SYSTEM };
 
 namespace RouteTypeMapper {
 AWS_NETWORKMANAGER_API RouteType GetRouteTypeForName(const Aws::String& name);

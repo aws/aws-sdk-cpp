@@ -41,6 +41,8 @@
 #include <aws/rest-xml-protocol/model/FractionalSecondsResult.h>
 #include <aws/rest-xml-protocol/model/GreetingWithErrorsRequest.h>
 #include <aws/rest-xml-protocol/model/GreetingWithErrorsResult.h>
+#include <aws/rest-xml-protocol/model/HttpEmptyPrefixHeadersRequest.h>
+#include <aws/rest-xml-protocol/model/HttpEmptyPrefixHeadersResult.h>
 #include <aws/rest-xml-protocol/model/HttpEnumPayloadRequest.h>
 #include <aws/rest-xml-protocol/model/HttpEnumPayloadResult.h>
 #include <aws/rest-xml-protocol/model/HttpPayloadTraitsRequest.h>
@@ -89,6 +91,8 @@
 #include <aws/rest-xml-protocol/model/SimpleScalarPropertiesResult.h>
 #include <aws/rest-xml-protocol/model/TimestampFormatHeadersRequest.h>
 #include <aws/rest-xml-protocol/model/TimestampFormatHeadersResult.h>
+#include <aws/rest-xml-protocol/model/XmlAttributesInMiddleRequest.h>
+#include <aws/rest-xml-protocol/model/XmlAttributesInMiddleResult.h>
 #include <aws/rest-xml-protocol/model/XmlAttributesOnPayloadRequest.h>
 #include <aws/rest-xml-protocol/model/XmlAttributesOnPayloadResult.h>
 #include <aws/rest-xml-protocol/model/XmlAttributesRequest.h>
@@ -169,6 +173,7 @@ class FlattenedXmlMapWithXmlNameRequest;
 class FlattenedXmlMapWithXmlNamespaceRequest;
 class FractionalSecondsRequest;
 class GreetingWithErrorsRequest;
+class HttpEmptyPrefixHeadersRequest;
 class HttpEnumPayloadRequest;
 class HttpPayloadTraitsRequest;
 class HttpPayloadWithMemberXmlNameRequest;
@@ -201,6 +206,7 @@ class RecursiveShapesRequest;
 class SimpleScalarPropertiesRequest;
 class TimestampFormatHeadersRequest;
 class XmlAttributesRequest;
+class XmlAttributesInMiddleRequest;
 class XmlAttributesOnPayloadRequest;
 class XmlBlobsRequest;
 class XmlEmptyBlobsRequest;
@@ -234,6 +240,7 @@ typedef Aws::Utils::Outcome<FlattenedXmlMapWithXmlNameResult, RestXmlProtocolErr
 typedef Aws::Utils::Outcome<FlattenedXmlMapWithXmlNamespaceResult, RestXmlProtocolError> FlattenedXmlMapWithXmlNamespaceOutcome;
 typedef Aws::Utils::Outcome<FractionalSecondsResult, RestXmlProtocolError> FractionalSecondsOutcome;
 typedef Aws::Utils::Outcome<GreetingWithErrorsResult, RestXmlProtocolError> GreetingWithErrorsOutcome;
+typedef Aws::Utils::Outcome<HttpEmptyPrefixHeadersResult, RestXmlProtocolError> HttpEmptyPrefixHeadersOutcome;
 typedef Aws::Utils::Outcome<HttpEnumPayloadResult, RestXmlProtocolError> HttpEnumPayloadOutcome;
 typedef Aws::Utils::Outcome<HttpPayloadTraitsResult, RestXmlProtocolError> HttpPayloadTraitsOutcome;
 typedef Aws::Utils::Outcome<HttpPayloadWithMemberXmlNameResult, RestXmlProtocolError> HttpPayloadWithMemberXmlNameOutcome;
@@ -266,6 +273,7 @@ typedef Aws::Utils::Outcome<RecursiveShapesResult, RestXmlProtocolError> Recursi
 typedef Aws::Utils::Outcome<SimpleScalarPropertiesResult, RestXmlProtocolError> SimpleScalarPropertiesOutcome;
 typedef Aws::Utils::Outcome<TimestampFormatHeadersResult, RestXmlProtocolError> TimestampFormatHeadersOutcome;
 typedef Aws::Utils::Outcome<XmlAttributesResult, RestXmlProtocolError> XmlAttributesOutcome;
+typedef Aws::Utils::Outcome<XmlAttributesInMiddleResult, RestXmlProtocolError> XmlAttributesInMiddleOutcome;
 typedef Aws::Utils::Outcome<XmlAttributesOnPayloadResult, RestXmlProtocolError> XmlAttributesOnPayloadOutcome;
 typedef Aws::Utils::Outcome<XmlBlobsResult, RestXmlProtocolError> XmlBlobsOutcome;
 typedef Aws::Utils::Outcome<XmlEmptyBlobsResult, RestXmlProtocolError> XmlEmptyBlobsOutcome;
@@ -299,6 +307,7 @@ typedef std::future<FlattenedXmlMapWithXmlNameOutcome> FlattenedXmlMapWithXmlNam
 typedef std::future<FlattenedXmlMapWithXmlNamespaceOutcome> FlattenedXmlMapWithXmlNamespaceOutcomeCallable;
 typedef std::future<FractionalSecondsOutcome> FractionalSecondsOutcomeCallable;
 typedef std::future<GreetingWithErrorsOutcome> GreetingWithErrorsOutcomeCallable;
+typedef std::future<HttpEmptyPrefixHeadersOutcome> HttpEmptyPrefixHeadersOutcomeCallable;
 typedef std::future<HttpEnumPayloadOutcome> HttpEnumPayloadOutcomeCallable;
 typedef std::future<HttpPayloadTraitsOutcome> HttpPayloadTraitsOutcomeCallable;
 typedef std::future<HttpPayloadWithMemberXmlNameOutcome> HttpPayloadWithMemberXmlNameOutcomeCallable;
@@ -331,6 +340,7 @@ typedef std::future<RecursiveShapesOutcome> RecursiveShapesOutcomeCallable;
 typedef std::future<SimpleScalarPropertiesOutcome> SimpleScalarPropertiesOutcomeCallable;
 typedef std::future<TimestampFormatHeadersOutcome> TimestampFormatHeadersOutcomeCallable;
 typedef std::future<XmlAttributesOutcome> XmlAttributesOutcomeCallable;
+typedef std::future<XmlAttributesInMiddleOutcome> XmlAttributesInMiddleOutcomeCallable;
 typedef std::future<XmlAttributesOnPayloadOutcome> XmlAttributesOnPayloadOutcomeCallable;
 typedef std::future<XmlBlobsOutcome> XmlBlobsOutcomeCallable;
 typedef std::future<XmlEmptyBlobsOutcome> XmlEmptyBlobsOutcomeCallable;
@@ -401,6 +411,9 @@ typedef std::function<void(const RestXmlProtocolClient*, const Model::Fractional
 typedef std::function<void(const RestXmlProtocolClient*, const Model::GreetingWithErrorsRequest&, const Model::GreetingWithErrorsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GreetingWithErrorsResponseReceivedHandler;
+typedef std::function<void(const RestXmlProtocolClient*, const Model::HttpEmptyPrefixHeadersRequest&,
+                           const Model::HttpEmptyPrefixHeadersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    HttpEmptyPrefixHeadersResponseReceivedHandler;
 typedef std::function<void(const RestXmlProtocolClient*, const Model::HttpEnumPayloadRequest&, const Model::HttpEnumPayloadOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     HttpEnumPayloadResponseReceivedHandler;
@@ -503,6 +516,9 @@ typedef std::function<void(const RestXmlProtocolClient*, const Model::TimestampF
 typedef std::function<void(const RestXmlProtocolClient*, const Model::XmlAttributesRequest&, const Model::XmlAttributesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     XmlAttributesResponseReceivedHandler;
+typedef std::function<void(const RestXmlProtocolClient*, const Model::XmlAttributesInMiddleRequest&,
+                           const Model::XmlAttributesInMiddleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    XmlAttributesInMiddleResponseReceivedHandler;
 typedef std::function<void(const RestXmlProtocolClient*, const Model::XmlAttributesOnPayloadRequest&,
                            const Model::XmlAttributesOnPayloadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     XmlAttributesOnPayloadResponseReceivedHandler;

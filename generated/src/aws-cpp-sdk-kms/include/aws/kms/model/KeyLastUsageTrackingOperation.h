@@ -23,7 +23,9 @@ enum class KeyLastUsageTrackingOperation {
   ReEncrypt,
   Sign,
   Verify,
-  VerifyMac
+  VerifyMac,
+  Encapsulate,
+  Decapsulate
 };
 
 namespace KeyLastUsageTrackingOperationMapper {

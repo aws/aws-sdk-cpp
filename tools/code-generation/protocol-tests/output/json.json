@@ -505,7 +505,7 @@
                 "response": {
                     "status_code": 500,
                     "headers": {
-                        "X-Amzn-Errortype": "aws.protocoltests.restjson#FooError:http://internal.amazon.com/coral/com.amazon.coral.validate/"
+                        "X-Amzn-Errortype": "aws.protocoltests.json#FooError:http://internal.amazon.com/coral/com.amazon.coral.validate/"
                     }
                 }
             },
@@ -560,7 +560,7 @@
                     "headers": {
                         "Content-Type": "application/x-amz-json-1.1"
                     },
-                    "body": "{\n    \"code\": \"aws.protocoltests.restjson#FooError\"\n}"
+                    "body": "{\n    \"code\": \"aws.protocoltests.json#FooError\"\n}"
                 }
             },
             {
@@ -587,7 +587,7 @@
                     "headers": {
                         "Content-Type": "application/x-amz-json-1.1"
                     },
-                    "body": "{\n    \"code\": \"aws.protocoltests.restjson#FooError:http://internal.amazon.com/coral/com.amazon.coral.validate/\"\n}"
+                    "body": "{\n    \"code\": \"aws.protocoltests.json#FooError:http://internal.amazon.com/coral/com.amazon.coral.validate/\"\n}"
                 }
             },
             {
@@ -641,7 +641,34 @@
                     "headers": {
                         "Content-Type": "application/x-amz-json-1.1"
                     },
-                    "body": "{\n    \"__type\": \"aws.protocoltests.restjson#FooError\"\n}"
+                    "body": "{\n    \"__type\": \"aws.protocoltests.json#FooError\"\n}"
+                }
+            },
+            {
+                "id": "AwsJson11FooErrorWithDunderTypeAndDifferentNamespace",
+                "description": "Because only the part after '#' is considered, an unrecognized namespace should not make a difference.",
+                "given": {
+                    "name": "GreetingWithErrors",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "documentation": "<p>This operation has three possible return values:</p> <ol> <li>A successful response in the form of GreetingWithErrorsOutput</li> <li>An InvalidGreeting error.</li> <li>A ComplexError error.</li> </ol> <p>Implementations must be able to successfully take a response and properly deserialize successful and error responses.</p>",
+                    "idempotent": true,
+                    "errors": [
+                        {
+                            "shape": "FooError"
+                        }
+                    ]
+                },
+                "errorCode": "FooError",
+                "error": {},
+                "response": {
+                    "status_code": 500,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{\n    \"__type\": \"aws.different.namespace#FooError\"\n}"
                 }
             },
             {
@@ -668,7 +695,7 @@
                     "headers": {
                         "Content-Type": "application/x-amz-json-1.1"
                     },
-                    "body": "{\n    \"__type\": \"aws.protocoltests.restjson#FooError:http://internal.amazon.com/coral/com.amazon.coral.validate/\"\n}"
+                    "body": "{\n    \"__type\": \"aws.protocoltests.json#FooError:http://internal.amazon.com/coral/com.amazon.coral.validate/\"\n}"
                 }
             },
             {
@@ -695,7 +722,7 @@
                     "headers": {
                         "Content-Type": "application/x-amz-json-1.1"
                     },
-                    "body": "{\n    \"__type\": \"aws.protocoltests.restjson#FooError\",\n    \"ErrorDetails\": [\n      {\n          \"__type\": \"com.amazon.internal#ErrorDetails\",\n          \"reason\": \"Some reason\"\n      }\n    ]\n}"
+                    "body": "{\n    \"__type\": \"aws.protocoltests.json#FooError\",\n    \"ErrorDetails\": [\n      {\n          \"__type\": \"com.amazon.internal#ErrorDetails\",\n          \"reason\": \"Some reason\"\n      }\n    ]\n}"
                 }
             }
         ]

@@ -38,6 +38,10 @@ AutoEnable& AutoEnable::operator=(JsonView jsonValue) {
     m_codeRepository = jsonValue.GetBool("codeRepository");
     m_codeRepositoryHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ami")) {
+    m_ami = jsonValue.GetBool("ami");
+    m_amiHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +66,10 @@ JsonValue AutoEnable::Jsonize() const {
 
   if (m_codeRepositoryHasBeenSet) {
     payload.WithBool("codeRepository", m_codeRepository);
+  }
+
+  if (m_amiHasBeenSet) {
+    payload.WithBool("ami", m_ami);
   }
 
   return payload;

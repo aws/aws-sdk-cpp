@@ -56,6 +56,7 @@
 #include <aws/bedrock-agentcore/model/IngestDataResult.h>
 #include <aws/bedrock-agentcore/model/InvokeAgentRuntimeResult.h>
 #include <aws/bedrock-agentcore/model/InvokeBrowserResult.h>
+#include <aws/bedrock-agentcore/model/InvokeWebSearchResult.h>
 #include <aws/bedrock-agentcore/model/ListABTestsRequest.h>
 #include <aws/bedrock-agentcore/model/ListABTestsResult.h>
 #include <aws/bedrock-agentcore/model/ListActorsResult.h>
@@ -160,6 +161,7 @@ class InvokeAgentRuntimeCommandRequest;
 class InvokeBrowserRequest;
 class InvokeCodeInterpreterRequest;
 class InvokeHarnessRequest;
+class InvokeWebSearchRequest;
 class ListABTestsRequest;
 class ListActorsRequest;
 class ListBatchEvaluationsRequest;
@@ -230,6 +232,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, BedrockAgentCoreError> InvokeAgentRun
 typedef Aws::Utils::Outcome<InvokeBrowserResult, BedrockAgentCoreError> InvokeBrowserOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, BedrockAgentCoreError> InvokeCodeInterpreterOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, BedrockAgentCoreError> InvokeHarnessOutcome;
+typedef Aws::Utils::Outcome<InvokeWebSearchResult, BedrockAgentCoreError> InvokeWebSearchOutcome;
 typedef Aws::Utils::Outcome<ListABTestsResult, BedrockAgentCoreError> ListABTestsOutcome;
 typedef Aws::Utils::Outcome<ListActorsResult, BedrockAgentCoreError> ListActorsOutcome;
 typedef Aws::Utils::Outcome<ListBatchEvaluationsResult, BedrockAgentCoreError> ListBatchEvaluationsOutcome;
@@ -300,6 +303,7 @@ typedef std::future<InvokeAgentRuntimeCommandOutcome> InvokeAgentRuntimeCommandO
 typedef std::future<InvokeBrowserOutcome> InvokeBrowserOutcomeCallable;
 typedef std::future<InvokeCodeInterpreterOutcome> InvokeCodeInterpreterOutcomeCallable;
 typedef std::future<InvokeHarnessOutcome> InvokeHarnessOutcomeCallable;
+typedef std::future<InvokeWebSearchOutcome> InvokeWebSearchOutcomeCallable;
 typedef std::future<ListABTestsOutcome> ListABTestsOutcomeCallable;
 typedef std::future<ListActorsOutcome> ListActorsOutcomeCallable;
 typedef std::future<ListBatchEvaluationsOutcome> ListBatchEvaluationsOutcomeCallable;
@@ -456,6 +460,9 @@ typedef std::function<void(const BedrockAgentCoreClient*, const Model::InvokeCod
 typedef std::function<void(const BedrockAgentCoreClient*, const Model::InvokeHarnessRequest&, const Model::InvokeHarnessOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     InvokeHarnessResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreClient*, const Model::InvokeWebSearchRequest&, const Model::InvokeWebSearchOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    InvokeWebSearchResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreClient*, const Model::ListABTestsRequest&, const Model::ListABTestsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListABTestsResponseReceivedHandler;

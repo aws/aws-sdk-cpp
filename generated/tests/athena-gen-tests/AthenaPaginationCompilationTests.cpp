@@ -20,6 +20,7 @@
 #include <aws/athena/model/ListExecutorsPaginationTraits.h>
 #include <aws/athena/model/ListApplicationDPUSizesPaginationTraits.h>
 #include <aws/athena/model/ListSessionsPaginationTraits.h>
+#include <aws/athena/model/ListSystemTableStatusesPaginationTraits.h>
 #include <aws/athena/model/ListTagsForResourcePaginationTraits.h>
 #include <aws/athena/model/ListQueryExecutionsPaginationTraits.h>
 #include <aws/athena/model/ListNamedQueriesPaginationTraits.h>

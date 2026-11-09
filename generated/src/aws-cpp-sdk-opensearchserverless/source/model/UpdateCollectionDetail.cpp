@@ -42,6 +42,10 @@ UpdateCollectionDetail& UpdateCollectionDetail::operator=(JsonView jsonValue) {
     m_vectorOptions = jsonValue.GetObject("vectorOptions");
     m_vectorOptionsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("kmsKeyArn")) {
+    m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
+    m_kmsKeyArnHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("arn")) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
@@ -86,6 +90,10 @@ JsonValue UpdateCollectionDetail::Jsonize() const {
 
   if (m_vectorOptionsHasBeenSet) {
     payload.WithObject("vectorOptions", m_vectorOptions.Jsonize());
+  }
+
+  if (m_kmsKeyArnHasBeenSet) {
+    payload.WithString("kmsKeyArn", m_kmsKeyArn);
   }
 
   if (m_arnHasBeenSet) {

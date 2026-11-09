@@ -73,6 +73,9 @@
 #include <aws/ecr/model/DescribePullThroughCacheRulesResult.h>
 #include <aws/ecr/model/DescribeRegistryRequest.h>
 #include <aws/ecr/model/DescribeRegistryResult.h>
+#include <aws/ecr/model/DescribeReplicationBackfillResultsPaginationTraits.h>
+#include <aws/ecr/model/DescribeReplicationBackfillResultsRequest.h>
+#include <aws/ecr/model/DescribeReplicationBackfillResultsResult.h>
 #include <aws/ecr/model/DescribeRepositoriesPaginationTraits.h>
 #include <aws/ecr/model/DescribeRepositoriesRequest.h>
 #include <aws/ecr/model/DescribeRepositoriesResult.h>
@@ -146,6 +149,9 @@
 #include <aws/ecr/model/ListImagesResult.h>
 #include <aws/ecr/model/ListPullTimeUpdateExclusionsRequest.h>
 #include <aws/ecr/model/ListPullTimeUpdateExclusionsResult.h>
+#include <aws/ecr/model/ListReplicationBackfillsPaginationTraits.h>
+#include <aws/ecr/model/ListReplicationBackfillsRequest.h>
+#include <aws/ecr/model/ListReplicationBackfillsResult.h>
 #include <aws/ecr/model/ListTagsForResourceRequest.h>
 #include <aws/ecr/model/ListTagsForResourceResult.h>
 #include <aws/ecr/model/PackageVulnerabilityDetails.h>
@@ -175,6 +181,11 @@
 #include <aws/ecr/model/RegistryScanningConfiguration.h>
 #include <aws/ecr/model/RegistryScanningRule.h>
 #include <aws/ecr/model/Remediation.h>
+#include <aws/ecr/model/ReplicationBackfillProgress.h>
+#include <aws/ecr/model/ReplicationBackfillResult.h>
+#include <aws/ecr/model/ReplicationBackfillResultStatus.h>
+#include <aws/ecr/model/ReplicationBackfillStatus.h>
+#include <aws/ecr/model/ReplicationBackfillSummary.h>
 #include <aws/ecr/model/ReplicationConfiguration.h>
 #include <aws/ecr/model/ReplicationDestination.h>
 #include <aws/ecr/model/ReplicationRule.h>
@@ -205,6 +216,10 @@
 #include <aws/ecr/model/StartImageScanResult.h>
 #include <aws/ecr/model/StartLifecyclePolicyPreviewRequest.h>
 #include <aws/ecr/model/StartLifecyclePolicyPreviewResult.h>
+#include <aws/ecr/model/StartReplicationBackfillRequest.h>
+#include <aws/ecr/model/StartReplicationBackfillResult.h>
+#include <aws/ecr/model/StopReplicationBackfillRequest.h>
+#include <aws/ecr/model/StopReplicationBackfillResult.h>
 #include <aws/ecr/model/SubjectIdentifier.h>
 #include <aws/ecr/model/Tag.h>
 #include <aws/ecr/model/TagResourceRequest.h>

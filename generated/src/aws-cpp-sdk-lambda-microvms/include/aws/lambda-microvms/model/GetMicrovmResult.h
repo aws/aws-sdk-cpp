@@ -242,7 +242,8 @@ class GetMicrovmResult {
 
   ///@{
   /**
-   * <p>The list of egress network connectors configured for the MicroVM.</p>
+   * <p>The list of egress network connectors available to the MicroVM at
+   * runtime.</p>
    */
   inline const Aws::Vector<Aws::String>& GetEgressNetworkConnectors() const { return m_egressNetworkConnectors; }
   template <typename EgressNetworkConnectorsT = Aws::Vector<Aws::String>>

@@ -20,6 +20,8 @@
 #include <aws/sagemaker/SageMakerClient.h>
 #include <aws/sagemaker/SageMakerEndpointProvider.h>
 #include <aws/sagemaker/SageMakerErrorMarshaller.h>
+#include <aws/sagemaker/model/DeleteDataQualityJobDefinitionRequest.h>
+#include <aws/sagemaker/model/DeleteDeviceFleetRequest.h>
 #include <aws/sagemaker/model/DeleteDomainRequest.h>
 #include <aws/sagemaker/model/DeleteEdgeDeploymentPlanRequest.h>
 #include <aws/sagemaker/model/DeleteEdgeDeploymentStageRequest.h>
@@ -78,6 +80,7 @@
 #include <aws/sagemaker/model/DescribeAutoMLJobRequest.h>
 #include <aws/sagemaker/model/DescribeAutoMLJobV2Request.h>
 #include <aws/sagemaker/model/DescribeClusterEventRequest.h>
+#include <aws/sagemaker/model/DescribeClusterExtensionRequest.h>
 #include <aws/sagemaker/model/DescribeClusterNodeRequest.h>
 #include <aws/sagemaker/model/DescribeClusterRequest.h>
 #include <aws/sagemaker/model/DescribeClusterSchedulerConfigRequest.h>
@@ -116,9 +119,6 @@
 #include <aws/sagemaker/model/DescribeModelCardExportJobRequest.h>
 #include <aws/sagemaker/model/DescribeModelCardRequest.h>
 #include <aws/sagemaker/model/DescribeModelExplainabilityJobDefinitionRequest.h>
-#include <aws/sagemaker/model/DescribeModelPackageGroupRequest.h>
-#include <aws/sagemaker/model/DescribeModelPackageRequest.h>
-#include <aws/sagemaker/model/DescribeModelQualityJobDefinitionRequest.h>
 #include <aws/sagemaker/model/DescribeModelRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
@@ -131,6 +131,19 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DeleteDataQualityJobDefinitionOutcome SageMakerClient::DeleteDataQualityJobDefinition(
+    const DeleteDataQualityJobDefinitionRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDataQualityJobDefinitionOutcome(result.GetResultWithOwnership())
+                            : DeleteDataQualityJobDefinitionOutcome(std::move(result.GetError()));
+}
+
+DeleteDeviceFleetOutcome SageMakerClient::DeleteDeviceFleet(const DeleteDeviceFleetRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDeviceFleetOutcome(result.GetResultWithOwnership())
+                            : DeleteDeviceFleetOutcome(std::move(result.GetError()));
+}
 
 DeleteDomainOutcome SageMakerClient::DeleteDomain(const DeleteDomainRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -478,6 +491,12 @@ DescribeClusterEventOutcome SageMakerClient::DescribeClusterEvent(const Describe
                             : DescribeClusterEventOutcome(std::move(result.GetError()));
 }
 
+DescribeClusterExtensionOutcome SageMakerClient::DescribeClusterExtension(const DescribeClusterExtensionRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeClusterExtensionOutcome(result.GetResultWithOwnership())
+                            : DescribeClusterExtensionOutcome(std::move(result.GetError()));
+}
+
 DescribeClusterNodeOutcome SageMakerClient::DescribeClusterNode(const DescribeClusterNodeRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeClusterNodeOutcome(result.GetResultWithOwnership())
@@ -705,23 +724,4 @@ DescribeModelExplainabilityJobDefinitionOutcome SageMakerClient::DescribeModelEx
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeModelExplainabilityJobDefinitionOutcome(result.GetResultWithOwnership())
                             : DescribeModelExplainabilityJobDefinitionOutcome(std::move(result.GetError()));
-}
-
-DescribeModelPackageOutcome SageMakerClient::DescribeModelPackage(const DescribeModelPackageRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeModelPackageOutcome(result.GetResultWithOwnership())
-                            : DescribeModelPackageOutcome(std::move(result.GetError()));
-}
-
-DescribeModelPackageGroupOutcome SageMakerClient::DescribeModelPackageGroup(const DescribeModelPackageGroupRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeModelPackageGroupOutcome(result.GetResultWithOwnership())
-                            : DescribeModelPackageGroupOutcome(std::move(result.GetError()));
-}
-
-DescribeModelQualityJobDefinitionOutcome SageMakerClient::DescribeModelQualityJobDefinition(
-    const DescribeModelQualityJobDefinitionRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeModelQualityJobDefinitionOutcome(result.GetResultWithOwnership())
-                            : DescribeModelQualityJobDefinitionOutcome(std::move(result.GetError()));
 }

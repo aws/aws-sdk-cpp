@@ -190,8 +190,21 @@ class AWS_LICENSEMANAGER_API LicenseManagerClient : public Aws::Client::AWSJsonC
    * entitlements with a specific Amazon Web Services account, an organization, or an
    * organizational unit (OU). For more information, see <a
    * href="https://docs.aws.amazon.com/license-manager/latest/userguide/granted-licenses.html">Granted
-   * licenses in License Manager</a> in the <i>License Manager User
-   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * licenses in License Manager</a> in the <i>License Manager User Guide</i>.</p>
+   * <p>Set the type of grant with the <code>GrantType</code> field:</p> <ul> <li>
+   * <p> <code>BuyerGrant</code> - The default grant type, created by the seller when
+   * a customer subscribes to a product. The seller creates a license for the
+   * subscription and a buyer grant for the customer. With a buyer grant, the
+   * customer can use, consume, and distribute the license, according to the
+   * permissions the seller sets in the product contract.</p> </li> <li> <p>
+   * <code>DelegateGrant</code> - A delegate grant gives the grantee read-only
+   * visibility into the licenses and grants that you have distributed to buyers for
+   * a product. The grantee can monitor that activity on your behalf, and can also
+   * listen for the related Amazon EventBridge events. A delegate grant conveys no
+   * entitlement to use the licenses, and its only allowed operation is
+   * <code>ListReceivedLicenses</code>. You must create the delegate grant, and its
+   * license, from the same Amazon Web Services account that you used to create those
+   * buyer licenses and grants.</p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateGrant">AWS
    * API Reference</a></p>
    */

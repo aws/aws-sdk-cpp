@@ -106,6 +106,7 @@
 #include <aws/eks/model/ControlPlanePlacementResponse.h>
 #include <aws/eks/model/ControlPlaneScalingConfig.h>
 #include <aws/eks/model/ControlPlaneScalingTierInfo.h>
+#include <aws/eks/model/CrdManagementConfiguration.h>
 #include <aws/eks/model/CreateAccessConfigRequest.h>
 #include <aws/eks/model/CreateAccessEntryRequest.h>
 #include <aws/eks/model/CreateAccessEntryResult.h>
@@ -203,6 +204,7 @@
 #include <aws/eks/model/FargateProfileIssueCode.h>
 #include <aws/eks/model/FargateProfileSelector.h>
 #include <aws/eks/model/FargateProfileStatus.h>
+#include <aws/eks/model/GatewayApiConfiguration.h>
 #include <aws/eks/model/HorizontalPodAutoscalerControllerConfigRequest.h>
 #include <aws/eks/model/HorizontalPodAutoscalerControllerConfigResponse.h>
 #include <aws/eks/model/HorizontalPodAutoscalerControllerVersionConfig.h>

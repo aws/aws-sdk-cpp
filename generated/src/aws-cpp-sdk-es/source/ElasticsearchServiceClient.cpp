@@ -67,6 +67,7 @@
 #include <aws/es/model/RemoveTagsRequest.h>
 #include <aws/es/model/RevokeVpcEndpointAccessRequest.h>
 #include <aws/es/model/StartElasticsearchServiceSoftwareUpdateRequest.h>
+#include <aws/es/model/UpdateCloneRequest.h>
 #include <aws/es/model/UpdateElasticsearchDomainConfigRequest.h>
 #include <aws/es/model/UpdatePackageRequest.h>
 #include <aws/es/model/UpdateVpcEndpointRequest.h>
@@ -989,6 +990,24 @@ StartElasticsearchServiceSoftwareUpdateOutcome ElasticsearchServiceClient::Start
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? StartElasticsearchServiceSoftwareUpdateOutcome(result.GetResultWithOwnership())
                             : StartElasticsearchServiceSoftwareUpdateOutcome(std::move(result.GetError()));
+}
+
+UpdateCloneOutcome ElasticsearchServiceClient::UpdateClone(const UpdateCloneRequest& request) const {
+  if (!request.DomainNameHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateClone", "Required field: DomainName, is not set");
+    return UpdateCloneOutcome(Aws::Client::AWSError<ElasticsearchServiceErrors>(
+        ElasticsearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2015-01-01/es/domain/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/clone");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateCloneOutcome(result.GetResultWithOwnership()) : UpdateCloneOutcome(std::move(result.GetError()));
 }
 
 UpdateElasticsearchDomainConfigOutcome ElasticsearchServiceClient::UpdateElasticsearchDomainConfig(

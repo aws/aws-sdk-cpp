@@ -250,8 +250,10 @@ class JobDefinition {
    * <code>nodeProperties</code> is used in the job definition, it can't be used in
    * addition to <code>containerProperties</code>, <code>ecsProperties</code>, or
    * <code>eksProperties</code>.</p>  <p>If the job runs on Fargate resources,
-   * don't specify <code>nodeProperties</code>. Use <code>containerProperties</code>
-   * instead.</p>
+   * don't specify <code>nodeProperties</code>. We recommend
+   * <code>ecsProperties</code>, which supports both single-container and
+   * multi-container jobs. <code>containerProperties</code> is also supported for
+   * single-container jobs.</p>
    */
   inline const NodeProperties& GetNodeProperties() const { return m_nodeProperties; }
   inline bool NodePropertiesHasBeenSet() const { return m_nodePropertiesHasBeenSet; }

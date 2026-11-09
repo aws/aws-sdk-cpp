@@ -83,6 +83,7 @@
 #include <aws/rolesanywhere/model/PutNotificationSettingsResult.h>
 #include <aws/rolesanywhere/model/ResetNotificationSettingsRequest.h>
 #include <aws/rolesanywhere/model/ResetNotificationSettingsResult.h>
+#include <aws/rolesanywhere/model/ServiceUnavailableException.h>
 #include <aws/rolesanywhere/model/Source.h>
 #include <aws/rolesanywhere/model/SourceData.h>
 #include <aws/rolesanywhere/model/SubjectDetail.h>

@@ -191,6 +191,8 @@ bool WinSyncHttpClient::BuildSuccessResponse(const std::shared_ptr<HttpRequest>&
     Aws::StringStream ss;
     uint64_t read = 0;
 
+    // The platform has received the status line and headers by now, and the body is read below.
+    request->SetResponseHeadersReceivedTime(DateTime::Now());
     DoQueryHeaders(hHttpRequest, response, ss, read);
 
     if(readLimiter != nullptr && read > 0)
@@ -249,9 +251,7 @@ bool WinSyncHttpClient::BuildSuccessResponse(const std::shared_ptr<HttpRequest>&
                         {
                             for (const auto& hashIterator : request->GetResponseValidationHashes())
                             {
-                              std::stringstream headerStr;
-                              headerStr<<"x-amz-checksum-"<<hashIterator.first;
-                              if(response->HasHeader(headerStr.str().c_str()))
+                              if(response->HasHeader(("x-amz-checksum-" + hashIterator.first).c_str()))
                               {
                                 hashIterator.second->Update(reinterpret_cast<unsigned char*>(dst), static_cast<size_t>(read));
                                 break;

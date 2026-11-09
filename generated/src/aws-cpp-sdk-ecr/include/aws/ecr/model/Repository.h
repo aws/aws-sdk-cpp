@@ -41,9 +41,9 @@ class Repository {
   /**
    * <p>The Amazon Resource Name (ARN) that identifies the repository. The ARN
    * contains the <code>arn:aws:ecr</code> namespace, followed by the region of the
-   * repository, Amazon Web Services account ID of the repository owner, repository
-   * namespace, and repository name. For example,
-   * <code>arn:aws:ecr:region:012345678910:repository-namespace/repository-name</code>.</p>
+   * repository, Amazon Web Services account ID of the repository owner, and
+   * repository name. For example,
+   * <code>arn:aws:ecr:region:012345678910:repository/repository-name</code>.</p>
    */
   inline const Aws::String& GetRepositoryArn() const { return m_repositoryArn; }
   inline bool RepositoryArnHasBeenSet() const { return m_repositoryArnHasBeenSet; }

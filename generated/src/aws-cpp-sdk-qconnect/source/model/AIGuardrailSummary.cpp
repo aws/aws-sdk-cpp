@@ -42,6 +42,14 @@ AIGuardrailSummary& AIGuardrailSummary::operator=(JsonView jsonValue) {
     m_modifiedTime = jsonValue.GetDouble("modifiedTime");
     m_modifiedTimeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("lastModifiedTime")) {
+    m_lastModifiedTime = jsonValue.GetDouble("lastModifiedTime");
+    m_lastModifiedTimeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("lastModifiedRegion")) {
+    m_lastModifiedRegion = jsonValue.GetString("lastModifiedRegion");
+    m_lastModifiedRegionHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("visibilityStatus")) {
     m_visibilityStatus = VisibilityStatusMapper::GetVisibilityStatusForName(jsonValue.GetString("visibilityStatus"));
     m_visibilityStatusHasBeenSet = true;
@@ -89,6 +97,14 @@ JsonValue AIGuardrailSummary::Jsonize() const {
 
   if (m_modifiedTimeHasBeenSet) {
     payload.WithDouble("modifiedTime", m_modifiedTime.SecondsWithMSPrecision());
+  }
+
+  if (m_lastModifiedTimeHasBeenSet) {
+    payload.WithDouble("lastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
+  }
+
+  if (m_lastModifiedRegionHasBeenSet) {
+    payload.WithString("lastModifiedRegion", m_lastModifiedRegion);
   }
 
   if (m_visibilityStatusHasBeenSet) {

@@ -18,10 +18,12 @@
 #include <aws/networkmanager/model/GetNetworkResourceCountsPaginationTraits.h>
 #include <aws/networkmanager/model/GetNetworkResourceRelationshipsPaginationTraits.h>
 #include <aws/networkmanager/model/GetNetworkResourcesPaginationTraits.h>
+#include <aws/networkmanager/model/GetNetworkRoutesPaginationTraits.h>
 #include <aws/networkmanager/model/GetNetworkTelemetryPaginationTraits.h>
 #include <aws/networkmanager/model/GetSitesPaginationTraits.h>
 #include <aws/networkmanager/model/GetTransitGatewayConnectPeerAssociationsPaginationTraits.h>
 #include <aws/networkmanager/model/GetTransitGatewayRegistrationsPaginationTraits.h>
+#include <aws/networkmanager/model/ListAttachmentNatConfigurationsPaginationTraits.h>
 #include <aws/networkmanager/model/ListAttachmentRoutingPolicyAssociationsPaginationTraits.h>
 #include <aws/networkmanager/model/ListAttachmentsPaginationTraits.h>
 #include <aws/networkmanager/model/ListConnectPeersPaginationTraits.h>
@@ -67,6 +69,8 @@ using GetNetworkResourceRelationshipsPaginator =
 using GetNetworkResourcesPaginator =
     Aws::Utils::Pagination::Paginator<NetworkManagerClient, Model::GetNetworkResourcesRequest,
                                       Pagination::GetNetworkResourcesPaginationTraits<NetworkManagerClient>>;
+using GetNetworkRoutesPaginator = Aws::Utils::Pagination::Paginator<NetworkManagerClient, Model::GetNetworkRoutesRequest,
+                                                                    Pagination::GetNetworkRoutesPaginationTraits<NetworkManagerClient>>;
 using GetNetworkTelemetryPaginator =
     Aws::Utils::Pagination::Paginator<NetworkManagerClient, Model::GetNetworkTelemetryRequest,
                                       Pagination::GetNetworkTelemetryPaginationTraits<NetworkManagerClient>>;
@@ -78,6 +82,9 @@ using GetTransitGatewayConnectPeerAssociationsPaginator =
 using GetTransitGatewayRegistrationsPaginator =
     Aws::Utils::Pagination::Paginator<NetworkManagerClient, Model::GetTransitGatewayRegistrationsRequest,
                                       Pagination::GetTransitGatewayRegistrationsPaginationTraits<NetworkManagerClient>>;
+using ListAttachmentNatConfigurationsPaginator =
+    Aws::Utils::Pagination::Paginator<NetworkManagerClient, Model::ListAttachmentNatConfigurationsRequest,
+                                      Pagination::ListAttachmentNatConfigurationsPaginationTraits<NetworkManagerClient>>;
 using ListAttachmentRoutingPolicyAssociationsPaginator =
     Aws::Utils::Pagination::Paginator<NetworkManagerClient, Model::ListAttachmentRoutingPolicyAssociationsRequest,
                                       Pagination::ListAttachmentRoutingPolicyAssociationsPaginationTraits<NetworkManagerClient>>;

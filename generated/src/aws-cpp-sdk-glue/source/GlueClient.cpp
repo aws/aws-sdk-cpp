@@ -54,6 +54,7 @@
 #include <aws/glue/model/CreateConnectionRequest.h>
 #include <aws/glue/model/CreateCrawlerRequest.h>
 #include <aws/glue/model/CreateCustomEntityTypeRequest.h>
+#include <aws/glue/model/CreateDataQualityEvaluationConfigRequest.h>
 #include <aws/glue/model/CreateDataQualityRulesetRequest.h>
 #include <aws/glue/model/CreateDatabaseRequest.h>
 #include <aws/glue/model/CreateDevEndpointRequest.h>
@@ -91,6 +92,7 @@
 #include <aws/glue/model/DeleteConnectionTypeRequest.h>
 #include <aws/glue/model/DeleteCrawlerRequest.h>
 #include <aws/glue/model/DeleteCustomEntityTypeRequest.h>
+#include <aws/glue/model/DeleteDataQualityEvaluationConfigRequest.h>
 #include <aws/glue/model/DeleteDataQualityRulesetRequest.h>
 #include <aws/glue/model/DeleteDatabaseRequest.h>
 #include <aws/glue/model/DeleteDevEndpointRequest.h>
@@ -118,8 +120,6 @@
 #include <aws/glue/model/DeleteUsageProfileRequest.h>
 #include <aws/glue/model/DeleteUserDefinedFunctionRequest.h>
 #include <aws/glue/model/DeleteWorkflowRequest.h>
-#include <aws/glue/model/DescribeConnectionTypeRequest.h>
-#include <aws/glue/model/DescribeEntityRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -476,6 +476,13 @@ CreateCustomEntityTypeOutcome GlueClient::CreateCustomEntityType(const CreateCus
                             : CreateCustomEntityTypeOutcome(std::move(result.GetError()));
 }
 
+CreateDataQualityEvaluationConfigOutcome GlueClient::CreateDataQualityEvaluationConfig(
+    const CreateDataQualityEvaluationConfigRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateDataQualityEvaluationConfigOutcome(result.GetResultWithOwnership())
+                            : CreateDataQualityEvaluationConfigOutcome(std::move(result.GetError()));
+}
+
 CreateDataQualityRulesetOutcome GlueClient::CreateDataQualityRuleset(const CreateDataQualityRulesetRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateDataQualityRulesetOutcome(result.GetResultWithOwnership())
@@ -691,6 +698,13 @@ DeleteCustomEntityTypeOutcome GlueClient::DeleteCustomEntityType(const DeleteCus
                             : DeleteCustomEntityTypeOutcome(std::move(result.GetError()));
 }
 
+DeleteDataQualityEvaluationConfigOutcome GlueClient::DeleteDataQualityEvaluationConfig(
+    const DeleteDataQualityEvaluationConfigRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteDataQualityEvaluationConfigOutcome(result.GetResultWithOwnership())
+                            : DeleteDataQualityEvaluationConfigOutcome(std::move(result.GetError()));
+}
+
 DeleteDataQualityRulesetOutcome GlueClient::DeleteDataQualityRuleset(const DeleteDataQualityRulesetRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteDataQualityRulesetOutcome(result.GetResultWithOwnership())
@@ -844,15 +858,4 @@ DeleteUserDefinedFunctionOutcome GlueClient::DeleteUserDefinedFunction(const Del
 DeleteWorkflowOutcome GlueClient::DeleteWorkflow(const DeleteWorkflowRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteWorkflowOutcome(result.GetResultWithOwnership()) : DeleteWorkflowOutcome(std::move(result.GetError()));
-}
-
-DescribeConnectionTypeOutcome GlueClient::DescribeConnectionType(const DescribeConnectionTypeRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeConnectionTypeOutcome(result.GetResultWithOwnership())
-                            : DescribeConnectionTypeOutcome(std::move(result.GetError()));
-}
-
-DescribeEntityOutcome GlueClient::DescribeEntity(const DescribeEntityRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeEntityOutcome(result.GetResultWithOwnership()) : DescribeEntityOutcome(std::move(result.GetError()));
 }

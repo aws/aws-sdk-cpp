@@ -48,7 +48,7 @@ class ListCasesForContactRequest : public ConnectCasesRequest {
 
   ///@{
   /**
-   * <p>A unique identifier of a contact in Amazon Connect.</p>
+   * <p>A unique identifier of a contact in Connect Customer.</p>
    */
   inline const Aws::String& GetContactArn() const { return m_contactArn; }
   inline bool ContactArnHasBeenSet() const { return m_contactArnHasBeenSet; }

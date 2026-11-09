@@ -18,6 +18,10 @@ namespace Model {
 RouterInputConfiguration::RouterInputConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
 RouterInputConfiguration& RouterInputConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("destinationEndpoint")) {
+    m_destinationEndpoint = jsonValue.GetObject("destinationEndpoint");
+    m_destinationEndpointHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("standard")) {
     m_standard = jsonValue.GetObject("standard");
     m_standardHasBeenSet = true;
@@ -43,6 +47,10 @@ RouterInputConfiguration& RouterInputConfiguration::operator=(JsonView jsonValue
 
 JsonValue RouterInputConfiguration::Jsonize() const {
   JsonValue payload;
+
+  if (m_destinationEndpointHasBeenSet) {
+    payload.WithObject("destinationEndpoint", m_destinationEndpoint.Jsonize());
+  }
 
   if (m_standardHasBeenSet) {
     payload.WithObject("standard", m_standard.Jsonize());

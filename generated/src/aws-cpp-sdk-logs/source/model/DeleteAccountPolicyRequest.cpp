@@ -23,6 +23,10 @@ Aws::String DeleteAccountPolicyRequest::SerializePayload() const {
     payload.WithString("policyType", PolicyTypeMapper::GetNameForPolicyType(m_policyType));
   }
 
+  if (m_dryRunHasBeenSet) {
+    payload.WithBool("dryRun", m_dryRun);
+  }
+
   return payload.View().WriteReadable();
 }
 

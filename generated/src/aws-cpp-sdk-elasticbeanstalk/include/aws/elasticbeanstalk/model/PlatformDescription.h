@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticbeanstalk/ElasticBeanstalk_EXPORTS.h>
 #include <aws/elasticbeanstalk/model/CustomAmi.h>
+#include <aws/elasticbeanstalk/model/DefaultAmi.h>
 #include <aws/elasticbeanstalk/model/PlatformFramework.h>
 #include <aws/elasticbeanstalk/model/PlatformProgrammingLanguage.h>
 #include <aws/elasticbeanstalk/model/PlatformStatus.h>
@@ -323,7 +324,11 @@ class PlatformDescription {
 
   ///@{
   /**
-   * <p>The custom AMIs supported by the platform version.</p>
+   * <p>The AMIs of the platform version, by virtualization type. For Elastic
+   * Beanstalk managed platforms, these are the default <code>x86_64</code> AMIs; for
+   * custom platforms, the <code>hvm</code> entry is the AMI built for the platform
+   * version. To find a managed platform's default AMIs for every supported processor
+   * architecture, including <code>arm64</code>, use <code>DefaultAmiList</code>.</p>
    */
   inline const Aws::Vector<CustomAmi>& GetCustomAmiList() const { return m_customAmiList; }
   inline bool CustomAmiListHasBeenSet() const { return m_customAmiListHasBeenSet; }
@@ -341,6 +346,34 @@ class PlatformDescription {
   PlatformDescription& AddCustomAmiList(CustomAmiListT&& value) {
     m_customAmiListHasBeenSet = true;
     m_customAmiList.emplace_back(std::forward<CustomAmiListT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The AMIs that Elastic Beanstalk uses by default for the platform version, one
+   * for each supported processor architecture. When an environment doesn't specify a
+   * custom AMI, Elastic Beanstalk chooses the default AMI that matches the
+   * environment's architecture.</p> <p>This list isn't returned for custom
+   * platforms.</p>
+   */
+  inline const Aws::Vector<DefaultAmi>& GetDefaultAmiList() const { return m_defaultAmiList; }
+  inline bool DefaultAmiListHasBeenSet() const { return m_defaultAmiListHasBeenSet; }
+  template <typename DefaultAmiListT = Aws::Vector<DefaultAmi>>
+  void SetDefaultAmiList(DefaultAmiListT&& value) {
+    m_defaultAmiListHasBeenSet = true;
+    m_defaultAmiList = std::forward<DefaultAmiListT>(value);
+  }
+  template <typename DefaultAmiListT = Aws::Vector<DefaultAmi>>
+  PlatformDescription& WithDefaultAmiList(DefaultAmiListT&& value) {
+    SetDefaultAmiList(std::forward<DefaultAmiListT>(value));
+    return *this;
+  }
+  template <typename DefaultAmiListT = DefaultAmi>
+  PlatformDescription& AddDefaultAmiList(DefaultAmiListT&& value) {
+    m_defaultAmiListHasBeenSet = true;
+    m_defaultAmiList.emplace_back(std::forward<DefaultAmiListT>(value));
     return *this;
   }
   ///@}
@@ -485,6 +518,8 @@ class PlatformDescription {
 
   Aws::Vector<CustomAmi> m_customAmiList;
 
+  Aws::Vector<DefaultAmi> m_defaultAmiList;
+
   Aws::Vector<Aws::String> m_supportedTierList;
 
   Aws::Vector<Aws::String> m_supportedAddonList;
@@ -510,6 +545,7 @@ class PlatformDescription {
   bool m_programmingLanguagesHasBeenSet = false;
   bool m_frameworksHasBeenSet = false;
   bool m_customAmiListHasBeenSet = false;
+  bool m_defaultAmiListHasBeenSet = false;
   bool m_supportedTierListHasBeenSet = false;
   bool m_supportedAddonListHasBeenSet = false;
   bool m_platformLifecycleStateHasBeenSet = false;

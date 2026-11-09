@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/amp/PrometheusService_EXPORTS.h>
+#include <aws/amp/model/KafkaExporterConfiguration.h>
 #include <aws/amp/model/OpenSearchExporterConfiguration.h>
 
 #include <utility>
@@ -50,9 +51,31 @@ class ExporterConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The configuration that the scraper uses to collect metrics from an Amazon MSK
+   * cluster through a managed Kafka exporter.</p>
+   */
+  inline const KafkaExporterConfiguration& GetKafkaConfiguration() const { return m_kafkaConfiguration; }
+  inline bool KafkaConfigurationHasBeenSet() const { return m_kafkaConfigurationHasBeenSet; }
+  template <typename KafkaConfigurationT = KafkaExporterConfiguration>
+  void SetKafkaConfiguration(KafkaConfigurationT&& value) {
+    m_kafkaConfigurationHasBeenSet = true;
+    m_kafkaConfiguration = std::forward<KafkaConfigurationT>(value);
+  }
+  template <typename KafkaConfigurationT = KafkaExporterConfiguration>
+  ExporterConfiguration& WithKafkaConfiguration(KafkaConfigurationT&& value) {
+    SetKafkaConfiguration(std::forward<KafkaConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   OpenSearchExporterConfiguration m_openSearchConfiguration;
+
+  KafkaExporterConfiguration m_kafkaConfiguration;
   bool m_openSearchConfigurationHasBeenSet = false;
+  bool m_kafkaConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

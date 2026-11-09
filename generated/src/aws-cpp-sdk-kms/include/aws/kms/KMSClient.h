@@ -47,13 +47,28 @@ namespace KMS {
  * recommends you always use the latest supported TLS version. Clients must also
  * support cipher suites with Perfect Forward Secrecy (PFS) such as Ephemeral
  * Diffie-Hellman (DHE) or Elliptic Curve Ephemeral Diffie-Hellman (ECDHE). Most
- * modern systems such as Java 7 and later support these modes.</p> <p> <b>Signing
- * Requests</b> </p> <p>Requests must be signed using an access key ID and a secret
- * access key. We strongly recommend that you do not use your Amazon Web Services
- * account root access key ID and secret access key for everyday work. You can use
- * the access key ID and secret access key for an IAM user or you can use the
- * Security Token Service (STS) to generate temporary security credentials and use
- * those to sign requests. </p> <p>All KMS requests must be signed with <a
+ * modern systems such as Java 7 and later support these modes.</p>  <p>With
+ * current technology, brute force attacks on KMS TLS cipher suite key exchange
+ * mechanisms are not feasible. However, cipher suites that use
+ * Rivest–Shamir–Adleman (RSA) or Diffie-Hellman (DH) key exchange will be
+ * susceptible if large-scale quantum computing becomes practical. <a
+ * href="https://nvlpubs.nist.gov/nistpubs/ir/2024/NIST.IR.8547.ipd.pdf">NIST IR
+ * 8547</a> on the NIST website establishes a timeline to phase out
+ * quantum-vulnerable algorithms by 2030 and disallow them entirely by 2035. If
+ * your applications rely on the long-term confidentiality of KMS API traffic, we
+ * recommend that you <a
+ * href="https://docs.aws.amazon.com/kms/latest/developerguide/pqtls.html">use
+ * post-quantum TLS with KMS</a>. For more information about post-quantum
+ * cybersecurity, see <a
+ * href="https://www.nsa.gov/Cybersecurity/Post-Quantum-Cybersecurity-Resources/">Post-Quantum
+ * Cybersecurity Resources</a> on the National Security Agency (NSA) website.</p>
+ *  <p> <b>Signing Requests</b> </p> <p>Requests must be signed using an
+ * access key ID and a secret access key. We strongly recommend that you do not use
+ * your Amazon Web Services account root access key ID and secret access key for
+ * everyday work. You can use the access key ID and secret access key for an IAM
+ * user or you can use the Security Token Service (STS) to generate temporary
+ * security credentials and use those to sign requests. </p> <p>All KMS requests
+ * must be signed with <a
  * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
  * Version 4</a>.</p> <p> <b>Logging API Requests</b> </p> <p>KMS supports
  * CloudTrail, a service that logs Amazon Web Services API calls and related events
@@ -683,6 +698,67 @@ class AWS_KMS_API KMSClient : public Aws::Client::AWSJsonClient,
                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                       const CreateKeyRequestT& request = {}) const {
     return SubmitAsync(&KMSClient::CreateKey, request, handler, context);
+  }
+
+  /**
+   * <p>Recovers the shared secret that was encapsulated with the public key of an
+   * ML-KEM KMS key. Module-Lattice-Based Key-Encapsulation Mechanism (ML-KEM),
+   * specified in <a href="https://csrc.nist.gov/pubs/fips/203/final">FIPS 203</a> on
+   * the NIST website, is a post-quantum algorithm for establishing a shared secret
+   * between two parties. For an example of how two parties establish a shared secret
+   * over an insecure channel using ML-KEM, see <a
+   * href="https://docs.aws.amazon.com/kms/latest/developerguide/pqkeys.html#mlkem">ML-KEM
+   * keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p> <p>The
+   * Decapsulate operation is not available in China Regions.</p> <p>
+   * <code>Decapsulate</code> returns the shared secret as a 32-byte value. You can
+   * use it directly as key material, or run it through a key derivation function to
+   * derive multiple keys and nonces.</p>  <p> <code>Decapsulate</code>
+   * returns an <code>InvalidCiphertextException</code> when the length of the
+   * <code>SharedSecretCiphertextBlob</code> is inconsistent with the ML-KEM key
+   * spec. In all other cases, <code>Decapsulate</code> returns a 32-byte
+   * pseudo-random value. This is true even when the
+   * <code>SharedSecretCiphertextBlob</code> was created using a different ML-KEM key
+   * or altered from its original value. This behavior is a security feature called
+   * <i>implicit rejection</i> that helps protect against chosen-ciphertext
+   * attacks.</p> <p>Because a response does not indicate that the ciphertext and key
+   * are valid, confirm the two parties derived the same shared secret before using
+   * it.</p>  <p>The KMS key that you use for this operation must be in a
+   * compatible key state. For details, see <a
+   * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+   * states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+   * <p> <b>Cross-account use</b>: Yes. To perform this operation with a KMS key in a
+   * different Amazon Web Services account, specify the key ARN or alias ARN in the
+   * value of the <code>KeyId</code> parameter.</p> <p> <b>Required permissions</b>:
+   * <a
+   * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:Decapsulate</a>
+   * (key policy)</p> <p> <b>Related operations:</b> </p> <ul> <li> <p>
+   * <a>Encapsulate</a> </p> </li> <li> <p> <a>CreateKey</a> </p> </li> <li> <p>
+   * <a>GetPublicKey</a> </p> </li> <li> <p> <a>DescribeKey</a> </p> </li> </ul> <p>
+   * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model.
+   * For more information, see <a
+   * href="https://docs.aws.amazon.com/kms/latest/developerguide/accessing-kms.html#programming-eventual-consistency">KMS
+   * eventual consistency</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/Decapsulate">AWS API
+   * Reference</a></p>
+   */
+  virtual Model::DecapsulateOutcome Decapsulate(const Model::DecapsulateRequest& request) const;
+
+  /**
+   * A Callable wrapper for Decapsulate that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DecapsulateRequestT = Model::DecapsulateRequest>
+  Model::DecapsulateOutcomeCallable DecapsulateCallable(const DecapsulateRequestT& request) const {
+    return SubmitCallable(&KMSClient::Decapsulate, request);
+  }
+
+  /**
+   * An Async wrapper for Decapsulate that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DecapsulateRequestT = Model::DecapsulateRequest>
+  void DecapsulateAsync(const DecapsulateRequestT& request, const DecapsulateResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KMSClient::Decapsulate, request, handler, context);
   }
 
   /**
@@ -1473,6 +1549,56 @@ class AWS_KMS_API KMSClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Generates a shared secret and its encapsulated (ciphertext) form using the
+   * public key of an ML-KEM KMS key pair. Module-Lattice-Based Key-Encapsulation
+   * Mechanism (ML-KEM), specified in <a
+   * href="https://csrc.nist.gov/pubs/fips/203/final">FIPS 203</a> on the NIST
+   * website, is a post-quantum algorithm for establishing a shared secret between
+   * two parties.</p> <p>For an example of how two parties establish a shared secret
+   * over an insecure channel using ML-KEM, see <a
+   * href="https://docs.aws.amazon.com/kms/latest/developerguide/pqkeys.html#mlkem">ML-KEM
+   * keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p> <p>The
+   * Encapsulate operation is not available in China Regions.</p> <p>The KMS key that
+   * you use for this operation must be in a compatible key state. For details, see
+   * <a
+   * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
+   * states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+   * <p> <b>Cross-account use</b>: Yes. To perform this operation with a KMS key in a
+   * different Amazon Web Services account, specify the key ARN or alias ARN in the
+   * value of the <code>KeyId</code> parameter.</p> <p> <b>Required permissions</b>:
+   * <a
+   * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:Encapsulate</a>
+   * (key policy)</p> <p> <b>Related operations:</b> </p> <ul> <li> <p>
+   * <a>Decapsulate</a> </p> </li> <li> <p> <a>DeriveSharedSecret</a> </p> </li> <li>
+   * <p> <a>CreateKey</a> </p> </li> <li> <p> <a>GetPublicKey</a> </p> </li> <li> <p>
+   * <a>DescribeKey</a> </p> </li> </ul> <p> <b>Eventual consistency</b>: The KMS API
+   * follows an eventual consistency model. For more information, see <a
+   * href="https://docs.aws.amazon.com/kms/latest/developerguide/accessing-kms.html#programming-eventual-consistency">KMS
+   * eventual consistency</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/Encapsulate">AWS API
+   * Reference</a></p>
+   */
+  virtual Model::EncapsulateOutcome Encapsulate(const Model::EncapsulateRequest& request) const;
+
+  /**
+   * A Callable wrapper for Encapsulate that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename EncapsulateRequestT = Model::EncapsulateRequest>
+  Model::EncapsulateOutcomeCallable EncapsulateCallable(const EncapsulateRequestT& request) const {
+    return SubmitCallable(&KMSClient::Encapsulate, request);
+  }
+
+  /**
+   * An Async wrapper for Encapsulate that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename EncapsulateRequestT = Model::EncapsulateRequest>
+  void EncapsulateAsync(const EncapsulateRequestT& request, const EncapsulateResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KMSClient::Encapsulate, request, handler, context);
+  }
+
+  /**
    * <p>Encrypts plaintext of up to 4,096 bytes using a KMS key. You can use a
    * symmetric or asymmetric KMS key with a <code>KeyUsage</code> of
    * <code>ENCRYPT_DECRYPT</code>.</p> <p>You can use this operation to encrypt small
@@ -1687,8 +1813,11 @@ class AWS_KMS_API KMSClient : public Aws::Client::AWSJsonClient,
    * DER-encoded X.509 SubjectPublicKeyInfo, as specified in <a
    * href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>. The private key is a
    * DER-encoded PKCS8 PrivateKeyInfo, as specified in <a
-   * href="https://tools.ietf.org/html/rfc5958">RFC 5958</a>.</p> <p>
-   * <code>GenerateDataKeyPair</code> also supports <a
+   * href="https://tools.ietf.org/html/rfc5958">RFC 5958</a>.</p>  <p>For
+   * ML-KEM data key pairs, the DER-encoded PKCS8 PrivateKeyInfo contains the private
+   * key in seed format. As a result, the length of the private key is the same for
+   * all ML-KEM key pair specs.</p>  <p> <code>GenerateDataKeyPair</code> also
+   * supports <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
    * Web Services Nitro Enclaves</a>, which provide an isolated compute environment
    * in Amazon EC2. To call <code>GenerateDataKeyPair</code> for an Amazon Web
@@ -1780,11 +1909,14 @@ class AWS_KMS_API KMSClient : public Aws::Client::AWSJsonClient,
    * for each request. The bytes in the key are not related to the caller or KMS key
    * that is used to encrypt the private key. The public key is a DER-encoded X.509
    * SubjectPublicKeyInfo, as specified in <a
-   * href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>.</p> <p>You can use an
-   * optional encryption context to add additional security to the encryption
-   * operation. If you specify an <code>EncryptionContext</code>, you must specify
-   * the same encryption context (a case-sensitive exact match) when decrypting the
-   * encrypted data key. Otherwise, the request to decrypt fails with an
+   * href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>.</p>  <p>For
+   * ML-KEM data key pairs, the DER-encoded PKCS8 PrivateKeyInfo contains the private
+   * key in seed format. As a result, the length of the private key is the same for
+   * all ML-KEM key pair specs.</p>  <p>You can use an optional encryption
+   * context to add additional security to the encryption operation. If you specify
+   * an <code>EncryptionContext</code>, you must specify the same encryption context
+   * (a case-sensitive exact match) when decrypting the encrypted data key.
+   * Otherwise, the request to decrypt fails with an
    * <code>InvalidCiphertextException</code>. For more information, see <a
    * href="https://docs.aws.amazon.com/kms/latest/developerguide/encrypt_context.html">Encryption
    * Context</a> in the <i>Key Management Service Developer Guide</i>.</p> <p>The KMS
@@ -2059,7 +2191,8 @@ class AWS_KMS_API KMSClient : public Aws::Client::AWSJsonClient,
    * the key</a> and monitor CloudTrail for <code>DisabledException</code> entries,
    * as there could be infrequent workflows that are dependent on the key. By looking
    * for this exception, you can identify potential dependencies and workload
-   * failures before they occur.</p>  <p> <b>Cross-account use</b>: No. You
+   * failures before they occur. CloudTrail remains the authoritative source for all
+   * API calls made to your key.</p>  <p> <b>Cross-account use</b>: No. You
    * cannot perform this operation on a KMS key in a different Amazon Web Services
    * account.</p> <p> <b>Required permissions</b>: <a
    * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:GetKeyLastUsage</a>

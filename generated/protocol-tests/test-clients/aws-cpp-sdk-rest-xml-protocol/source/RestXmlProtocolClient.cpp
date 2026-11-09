@@ -35,6 +35,7 @@
 #include <aws/rest-xml-protocol/model/FlattenedXmlMapWithXmlNamespaceRequest.h>
 #include <aws/rest-xml-protocol/model/FractionalSecondsRequest.h>
 #include <aws/rest-xml-protocol/model/GreetingWithErrorsRequest.h>
+#include <aws/rest-xml-protocol/model/HttpEmptyPrefixHeadersRequest.h>
 #include <aws/rest-xml-protocol/model/HttpEnumPayloadRequest.h>
 #include <aws/rest-xml-protocol/model/HttpPayloadTraitsRequest.h>
 #include <aws/rest-xml-protocol/model/HttpPayloadWithMemberXmlNameRequest.h>
@@ -66,6 +67,7 @@
 #include <aws/rest-xml-protocol/model/RecursiveShapesRequest.h>
 #include <aws/rest-xml-protocol/model/SimpleScalarPropertiesRequest.h>
 #include <aws/rest-xml-protocol/model/TimestampFormatHeadersRequest.h>
+#include <aws/rest-xml-protocol/model/XmlAttributesInMiddleRequest.h>
 #include <aws/rest-xml-protocol/model/XmlAttributesOnPayloadRequest.h>
 #include <aws/rest-xml-protocol/model/XmlAttributesRequest.h>
 #include <aws/rest-xml-protocol/model/XmlBlobsRequest.h>
@@ -227,7 +229,8 @@ RestXmlProtocolClient::InvokeOperationOutcome RestXmlProtocolClient::InvokeServi
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
 
-  return TracingUtils::MakeCallWithTiming<InvokeOperationOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<InvokeOperationOutcome>(
+      request, std::move(span),
       [&]() -> InvokeOperationOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -241,7 +244,7 @@ RestXmlProtocolClient::InvokeOperationOutcome RestXmlProtocolClient::InvokeServi
 
         return InvokeOperationOutcome{MakeRequest(request, endpointResolutionOutcome.GetResult(), httpMethod, Aws::Auth::SIGV4_SIGNER)};
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
 }
 AllQueryStringTypesOutcome RestXmlProtocolClient::AllQueryStringTypes(const AllQueryStringTypesRequest& request) const {
@@ -433,6 +436,17 @@ GreetingWithErrorsOutcome RestXmlProtocolClient::GreetingWithErrors(const Greeti
                             : GreetingWithErrorsOutcome(std::move(result.GetError()));
 }
 
+HttpEmptyPrefixHeadersOutcome RestXmlProtocolClient::HttpEmptyPrefixHeaders(const HttpEmptyPrefixHeadersRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/HttpEmptyPrefixHeaders");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? HttpEmptyPrefixHeadersOutcome(result.GetResultWithOwnership())
+                            : HttpEmptyPrefixHeadersOutcome(std::move(result.GetError()));
+}
+
 HttpEnumPayloadOutcome RestXmlProtocolClient::HttpEnumPayload(const HttpEnumPayloadRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -456,7 +470,8 @@ HttpPayloadTraitsOutcome RestXmlProtocolClient::HttpPayloadTraits(const HttpPayl
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<HttpPayloadTraitsOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<HttpPayloadTraitsOutcome>(
+      request, std::move(span),
       [&]() -> HttpPayloadTraitsOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -470,7 +485,7 @@ HttpPayloadTraitsOutcome RestXmlProtocolClient::HttpPayloadTraits(const HttpPayl
         return result.IsSuccess() ? HttpPayloadTraitsOutcome(result.GetResultWithOwnership())
                                   : HttpPayloadTraitsOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
@@ -744,7 +759,8 @@ HttpStringPayloadOutcome RestXmlProtocolClient::HttpStringPayload(const HttpStri
                                   {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<HttpStringPayloadOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<HttpStringPayloadOutcome>(
+      request, std::move(span),
       [&]() -> HttpStringPayloadOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -758,7 +774,7 @@ HttpStringPayloadOutcome RestXmlProtocolClient::HttpStringPayload(const HttpStri
         return result.IsSuccess() ? HttpStringPayloadOutcome(result.GetResultWithOwnership())
                                   : HttpStringPayloadOutcome(std::move(result.GetError()));
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
@@ -950,6 +966,17 @@ XmlAttributesOutcome RestXmlProtocolClient::XmlAttributes(const XmlAttributesReq
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
   return result.IsSuccess() ? XmlAttributesOutcome(result.GetResultWithOwnership()) : XmlAttributesOutcome(std::move(result.GetError()));
+}
+
+XmlAttributesInMiddleOutcome RestXmlProtocolClient::XmlAttributesInMiddle(const XmlAttributesInMiddleRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/XmlAttributesInMiddle");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? XmlAttributesInMiddleOutcome(result.GetResultWithOwnership())
+                            : XmlAttributesInMiddleOutcome(std::move(result.GetError()));
 }
 
 XmlAttributesOnPayloadOutcome RestXmlProtocolClient::XmlAttributesOnPayload(const XmlAttributesOnPayloadRequest& request) const {

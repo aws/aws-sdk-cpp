@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kms/KMS_EXPORTS.h>
+#include <aws/kms/model/EncapsulationAlgorithmSpec.h>
 #include <aws/kms/model/EncryptionAlgorithmSpec.h>
 #include <aws/kms/model/ExpirationModelType.h>
 #include <aws/kms/model/KeyAgreementAlgorithmSpec.h>
@@ -436,6 +437,31 @@ class KeyMetadata {
 
   ///@{
   /**
+   * <p>The key encapsulation algorithm that the KMS key supports. This field appears
+   * only for KMS keys with a <code>KeyUsage</code> value of
+   * <code>ENCAPSULATE_DECAPSULATE</code>.</p>
+   */
+  inline const Aws::Vector<EncapsulationAlgorithmSpec>& GetEncapsulationAlgorithms() const { return m_encapsulationAlgorithms; }
+  inline bool EncapsulationAlgorithmsHasBeenSet() const { return m_encapsulationAlgorithmsHasBeenSet; }
+  template <typename EncapsulationAlgorithmsT = Aws::Vector<EncapsulationAlgorithmSpec>>
+  void SetEncapsulationAlgorithms(EncapsulationAlgorithmsT&& value) {
+    m_encapsulationAlgorithmsHasBeenSet = true;
+    m_encapsulationAlgorithms = std::forward<EncapsulationAlgorithmsT>(value);
+  }
+  template <typename EncapsulationAlgorithmsT = Aws::Vector<EncapsulationAlgorithmSpec>>
+  KeyMetadata& WithEncapsulationAlgorithms(EncapsulationAlgorithmsT&& value) {
+    SetEncapsulationAlgorithms(std::forward<EncapsulationAlgorithmsT>(value));
+    return *this;
+  }
+  inline KeyMetadata& AddEncapsulationAlgorithms(EncapsulationAlgorithmSpec value) {
+    m_encapsulationAlgorithmsHasBeenSet = true;
+    m_encapsulationAlgorithms.push_back(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Indicates whether the KMS key is a multi-Region (<code>True</code>) or
    * regional (<code>False</code>) key. This value is <code>True</code> for
    * multi-Region primary and replica keys and <code>False</code> for regional KMS
@@ -618,6 +644,8 @@ class KeyMetadata {
 
   Aws::Vector<KeyAgreementAlgorithmSpec> m_keyAgreementAlgorithms;
 
+  Aws::Vector<EncapsulationAlgorithmSpec> m_encapsulationAlgorithms;
+
   bool m_multiRegion{false};
 
   MultiRegionConfiguration m_multiRegionConfiguration;
@@ -648,6 +676,7 @@ class KeyMetadata {
   bool m_encryptionAlgorithmsHasBeenSet = false;
   bool m_signingAlgorithmsHasBeenSet = false;
   bool m_keyAgreementAlgorithmsHasBeenSet = false;
+  bool m_encapsulationAlgorithmsHasBeenSet = false;
   bool m_multiRegionHasBeenSet = false;
   bool m_multiRegionConfigurationHasBeenSet = false;
   bool m_pendingDeletionWindowInDaysHasBeenSet = false;

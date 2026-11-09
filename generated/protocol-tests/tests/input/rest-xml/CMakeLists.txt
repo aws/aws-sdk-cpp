@@ -35,6 +35,9 @@ FetchContent_Declare(
     GIT_TAG 11.0.0
 )
 FetchContent_MakeAvailable(tinyxml2)
+# Third-party header: expose it as a system include so the SDK's -Werror warnings don't apply to it.
+get_target_property(TINYXML2_INCLUDE_DIRS tinyxml2 INTERFACE_INCLUDE_DIRECTORIES)
+set_target_properties(tinyxml2 PROPERTIES INTERFACE_SYSTEM_INCLUDE_DIRECTORIES "${TINYXML2_INCLUDE_DIRS}")
 target_link_libraries(${PROJECT_NAME} tinyxml2::tinyxml2)
 target_compile_definitions(${PROJECT_NAME} PRIVATE AWS_PROTOCOL_TEST_USE_TINYXML2)
 

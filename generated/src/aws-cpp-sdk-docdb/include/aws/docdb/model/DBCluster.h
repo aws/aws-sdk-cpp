@@ -740,6 +740,25 @@ class DBCluster {
 
   ///@{
   /**
+   * <p>The version of the Amazon DocumentDB Serverless platform used by the
+   * cluster.</p>
+   */
+  inline const Aws::String& GetServerlessV2PlatformVersion() const { return m_serverlessV2PlatformVersion; }
+  inline bool ServerlessV2PlatformVersionHasBeenSet() const { return m_serverlessV2PlatformVersionHasBeenSet; }
+  template <typename ServerlessV2PlatformVersionT = Aws::String>
+  void SetServerlessV2PlatformVersion(ServerlessV2PlatformVersionT&& value) {
+    m_serverlessV2PlatformVersionHasBeenSet = true;
+    m_serverlessV2PlatformVersion = std::forward<ServerlessV2PlatformVersionT>(value);
+  }
+  template <typename ServerlessV2PlatformVersionT = Aws::String>
+  DBCluster& WithServerlessV2PlatformVersion(ServerlessV2PlatformVersionT&& value) {
+    SetServerlessV2PlatformVersion(std::forward<ServerlessV2PlatformVersionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The secret managed by Amazon DocumentDB in Amazon Web Services Secrets
    * Manager for the master user password.</p>
    */
@@ -868,6 +887,8 @@ class DBCluster {
 
   ServerlessV2ScalingConfigurationInfo m_serverlessV2ScalingConfiguration;
 
+  Aws::String m_serverlessV2PlatformVersion;
+
   ClusterMasterUserSecret m_masterUserSecret;
 
   Aws::String m_networkType;
@@ -908,6 +929,7 @@ class DBCluster {
   bool m_iOOptimizedNextAllowedModificationTimeHasBeenSet = false;
   bool m_storageTypeHasBeenSet = false;
   bool m_serverlessV2ScalingConfigurationHasBeenSet = false;
+  bool m_serverlessV2PlatformVersionHasBeenSet = false;
   bool m_masterUserSecretHasBeenSet = false;
   bool m_networkTypeHasBeenSet = false;
   bool m_copyTagsToSnapshotHasBeenSet = false;

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/bedrock-agent-runtime/model/AgenticRetrieveActionDetails.h>
+#include <aws/bedrock-agent-runtime/model/AgenticRetrieveCodeExecutionDetails.h>
 #include <aws/bedrock-agent-runtime/model/AgenticRetrieveFullDocExpansionDetails.h>
 #include <aws/bedrock-agent-runtime/model/AgenticRetrieveMemoryRetrieveDetails.h>
 
@@ -32,6 +33,24 @@ class AgenticRetrieveAction {
   AWS_BEDROCKAGENTRUNTIME_API AgenticRetrieveAction(Aws::Utils::Json::JsonView jsonValue);
   AWS_BEDROCKAGENTRUNTIME_API AgenticRetrieveAction& operator=(Aws::Utils::Json::JsonView jsonValue);
   AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p>The details of code that the agent chose to run.</p>
+   */
+  inline const AgenticRetrieveCodeExecutionDetails& GetCodeExecution() const { return m_codeExecution; }
+  inline bool CodeExecutionHasBeenSet() const { return m_codeExecutionHasBeenSet; }
+  template <typename CodeExecutionT = AgenticRetrieveCodeExecutionDetails>
+  void SetCodeExecution(CodeExecutionT&& value) {
+    m_codeExecutionHasBeenSet = true;
+    m_codeExecution = std::forward<CodeExecutionT>(value);
+  }
+  template <typename CodeExecutionT = AgenticRetrieveCodeExecutionDetails>
+  AgenticRetrieveAction& WithCodeExecution(CodeExecutionT&& value) {
+    SetCodeExecution(std::forward<CodeExecutionT>(value));
+    return *this;
+  }
+  ///@}
 
   ///@{
   /**
@@ -88,11 +107,14 @@ class AgenticRetrieveAction {
   }
   ///@}
  private:
+  AgenticRetrieveCodeExecutionDetails m_codeExecution;
+
   AgenticRetrieveFullDocExpansionDetails m_fullDocumentExpansion;
 
   AgenticRetrieveMemoryRetrieveDetails m_memoryRetrieve;
 
   AgenticRetrieveActionDetails m_retrieve;
+  bool m_codeExecutionHasBeenSet = false;
   bool m_fullDocumentExpansionHasBeenSet = false;
   bool m_memoryRetrieveHasBeenSet = false;
   bool m_retrieveHasBeenSet = false;

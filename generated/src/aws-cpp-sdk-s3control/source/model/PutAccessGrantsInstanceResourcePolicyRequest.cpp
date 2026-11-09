@@ -31,7 +31,7 @@ Aws::String PutAccessGrantsInstanceResourcePolicyRequest::SerializePayload() con
     organizationNode.SetText(m_organization);
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToCompactString();
 }
 
 Aws::Http::HeaderValueCollection PutAccessGrantsInstanceResourcePolicyRequest::GetRequestSpecificHeaders() const {

@@ -61,6 +61,7 @@
 #include <aws/sagemaker/model/AIWorkloadInputDataConfig.h>
 #include <aws/sagemaker/model/AIWorkloadS3DataSource.h>
 #include <aws/sagemaker/model/AcceleratorPartitionConfig.h>
+#include <aws/sagemaker/model/AcceleratorPartitionLayout.h>
 #include <aws/sagemaker/model/AccountDefaultStatus.h>
 #include <aws/sagemaker/model/ActionSource.h>
 #include <aws/sagemaker/model/ActionStatus.h>
@@ -89,6 +90,7 @@
 #include <aws/sagemaker/model/AlgorithmSummary.h>
 #include <aws/sagemaker/model/AlgorithmValidationProfile.h>
 #include <aws/sagemaker/model/AlgorithmValidationSpecification.h>
+#include <aws/sagemaker/model/AliasOperations.h>
 #include <aws/sagemaker/model/AmazonQSettings.h>
 #include <aws/sagemaker/model/AnnotationConsolidationConfig.h>
 #include <aws/sagemaker/model/AppDetails.h>
@@ -369,6 +371,8 @@
 #include <aws/sagemaker/model/CreateAutoMLJobResult.h>
 #include <aws/sagemaker/model/CreateAutoMLJobV2Request.h>
 #include <aws/sagemaker/model/CreateAutoMLJobV2Result.h>
+#include <aws/sagemaker/model/CreateClusterExtensionRequest.h>
+#include <aws/sagemaker/model/CreateClusterExtensionResult.h>
 #include <aws/sagemaker/model/CreateClusterRequest.h>
 #include <aws/sagemaker/model/CreateClusterResult.h>
 #include <aws/sagemaker/model/CreateClusterSchedulerConfigRequest.h>
@@ -537,6 +541,8 @@
 #include <aws/sagemaker/model/DeleteArtifactResult.h>
 #include <aws/sagemaker/model/DeleteAssociationRequest.h>
 #include <aws/sagemaker/model/DeleteAssociationResult.h>
+#include <aws/sagemaker/model/DeleteClusterExtensionRequest.h>
+#include <aws/sagemaker/model/DeleteClusterExtensionResult.h>
 #include <aws/sagemaker/model/DeleteClusterRequest.h>
 #include <aws/sagemaker/model/DeleteClusterResult.h>
 #include <aws/sagemaker/model/DeleteClusterSchedulerConfigRequest.h>
@@ -640,6 +646,8 @@
 #include <aws/sagemaker/model/DescribeAutoMLJobV2Result.h>
 #include <aws/sagemaker/model/DescribeClusterEventRequest.h>
 #include <aws/sagemaker/model/DescribeClusterEventResult.h>
+#include <aws/sagemaker/model/DescribeClusterExtensionRequest.h>
+#include <aws/sagemaker/model/DescribeClusterExtensionResult.h>
 #include <aws/sagemaker/model/DescribeClusterNodeRequest.h>
 #include <aws/sagemaker/model/DescribeClusterNodeResult.h>
 #include <aws/sagemaker/model/DescribeClusterRequest.h>
@@ -864,6 +872,10 @@
 #include <aws/sagemaker/model/ExplainerConfig.h>
 #include <aws/sagemaker/model/ExtendTrainingPlanRequest.h>
 #include <aws/sagemaker/model/ExtendTrainingPlanResult.h>
+#include <aws/sagemaker/model/ExtensionDetails.h>
+#include <aws/sagemaker/model/ExtensionNodeSummary.h>
+#include <aws/sagemaker/model/ExtensionStatus.h>
+#include <aws/sagemaker/model/ExtensionSummary.h>
 #include <aws/sagemaker/model/FSxLustreConfig.h>
 #include <aws/sagemaker/model/FSxLustreFileSystem.h>
 #include <aws/sagemaker/model/FSxLustreFileSystemConfig.h>
@@ -921,6 +933,7 @@
 #include <aws/sagemaker/model/HubContentInfo.h>
 #include <aws/sagemaker/model/HubContentSortBy.h>
 #include <aws/sagemaker/model/HubContentStatus.h>
+#include <aws/sagemaker/model/HubContentStepMetadata.h>
 #include <aws/sagemaker/model/HubContentSupportStatus.h>
 #include <aws/sagemaker/model/HubContentType.h>
 #include <aws/sagemaker/model/HubInfo.h>
@@ -1114,6 +1127,9 @@
 #include <aws/sagemaker/model/ListClusterEventsPaginationTraits.h>
 #include <aws/sagemaker/model/ListClusterEventsRequest.h>
 #include <aws/sagemaker/model/ListClusterEventsResult.h>
+#include <aws/sagemaker/model/ListClusterExtensionsPaginationTraits.h>
+#include <aws/sagemaker/model/ListClusterExtensionsRequest.h>
+#include <aws/sagemaker/model/ListClusterExtensionsResult.h>
 #include <aws/sagemaker/model/ListClusterNodesPaginationTraits.h>
 #include <aws/sagemaker/model/ListClusterNodesRequest.h>
 #include <aws/sagemaker/model/ListClusterNodesResult.h>
@@ -1569,6 +1585,7 @@
 #include <aws/sagemaker/model/PipelineExecutionStepMetadata.h>
 #include <aws/sagemaker/model/PipelineExecutionSummary.h>
 #include <aws/sagemaker/model/PipelineExperimentConfig.h>
+#include <aws/sagemaker/model/PipelineManagedBy.h>
 #include <aws/sagemaker/model/PipelineStatus.h>
 #include <aws/sagemaker/model/PipelineSummary.h>
 #include <aws/sagemaker/model/PipelineVersion.h>
@@ -1950,6 +1967,8 @@
 #include <aws/sagemaker/model/UpdateAppImageConfigResult.h>
 #include <aws/sagemaker/model/UpdateArtifactRequest.h>
 #include <aws/sagemaker/model/UpdateArtifactResult.h>
+#include <aws/sagemaker/model/UpdateClusterExtensionRequest.h>
+#include <aws/sagemaker/model/UpdateClusterExtensionResult.h>
 #include <aws/sagemaker/model/UpdateClusterRequest.h>
 #include <aws/sagemaker/model/UpdateClusterResult.h>
 #include <aws/sagemaker/model/UpdateClusterSchedulerConfigRequest.h>

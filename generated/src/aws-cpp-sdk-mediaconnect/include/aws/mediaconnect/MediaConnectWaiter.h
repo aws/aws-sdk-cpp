@@ -9,13 +9,21 @@
 #include <aws/mediaconnect/MediaConnectClient.h>
 #include <aws/mediaconnect/model/DescribeFlowRequest.h>
 #include <aws/mediaconnect/model/DescribeFlowResult.h>
+#include <aws/mediaconnect/model/DestinationEndpointConnectionState.h>
+#include <aws/mediaconnect/model/DestinationEndpointRegistrationState.h>
+#include <aws/mediaconnect/model/GetDestinationEndpointRequest.h>
+#include <aws/mediaconnect/model/GetDestinationEndpointResult.h>
 #include <aws/mediaconnect/model/GetRouterInputRequest.h>
 #include <aws/mediaconnect/model/GetRouterInputResult.h>
 #include <aws/mediaconnect/model/GetRouterOutputRequest.h>
 #include <aws/mediaconnect/model/GetRouterOutputResult.h>
+#include <aws/mediaconnect/model/GetSourceEndpointRequest.h>
+#include <aws/mediaconnect/model/GetSourceEndpointResult.h>
 #include <aws/mediaconnect/model/RouterInputState.h>
 #include <aws/mediaconnect/model/RouterOutputRoutedState.h>
 #include <aws/mediaconnect/model/RouterOutputState.h>
+#include <aws/mediaconnect/model/SourceEndpointConnectionState.h>
+#include <aws/mediaconnect/model/SourceEndpointRegistrationState.h>
 #include <aws/mediaconnect/model/Status.h>
 
 #include <algorithm>
@@ -137,6 +145,140 @@ class MediaConnectWaiter {
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->DescribeFlow(req); };
     Aws::Utils::Waiter<RequestT, OutcomeT> waiter(3, 40, std::move(acceptors), operation, "WaitUntilFlowDeleted");
+    return waiter.Wait(request);
+  }
+
+  Aws::Utils::WaiterOutcome<Model::GetDestinationEndpointOutcome> WaitUntilDestinationEndpointConnected(
+      const Model::GetDestinationEndpointRequest& request) {
+    using OutcomeT = Model::GetDestinationEndpointOutcome;
+    using RequestT = Model::GetDestinationEndpointRequest;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "DestinationEndpointConnectedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("CONNECTED"),
+        [](const Model::GetDestinationEndpointOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::DestinationEndpointConnectionStateMapper::GetNameForDestinationEndpointConnectionState(
+                     result.GetDestinationEndpoint().GetConnectionState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "DestinationEndpointConnectedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("DISCONNECTED"),
+        [](const Model::GetDestinationEndpointOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::DestinationEndpointConnectionStateMapper::GetNameForDestinationEndpointConnectionState(
+                     result.GetDestinationEndpoint().GetConnectionState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
+        "DestinationEndpointConnectedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("InternalServerErrorException")));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
+        "DestinationEndpointConnectedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("ServiceUnavailableException")));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
+        "DestinationEndpointConnectedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("TooManyRequestsException")));
+
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetDestinationEndpoint(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(3, 40, std::move(acceptors), operation, "WaitUntilDestinationEndpointConnected");
+    return waiter.Wait(request);
+  }
+
+  Aws::Utils::WaiterOutcome<Model::GetDestinationEndpointOutcome> WaitUntilDestinationEndpointDisconnected(
+      const Model::GetDestinationEndpointRequest& request) {
+    using OutcomeT = Model::GetDestinationEndpointOutcome;
+    using RequestT = Model::GetDestinationEndpointRequest;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "DestinationEndpointDisconnectedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("DISCONNECTED"),
+        [](const Model::GetDestinationEndpointOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::DestinationEndpointConnectionStateMapper::GetNameForDestinationEndpointConnectionState(
+                     result.GetDestinationEndpoint().GetConnectionState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "DestinationEndpointDisconnectedWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("CONNECTED"),
+        [](const Model::GetDestinationEndpointOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::DestinationEndpointConnectionStateMapper::GetNameForDestinationEndpointConnectionState(
+                     result.GetDestinationEndpoint().GetConnectionState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
+        "DestinationEndpointDisconnectedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("InternalServerErrorException")));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
+        "DestinationEndpointDisconnectedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("ServiceUnavailableException")));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
+        "DestinationEndpointDisconnectedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("TooManyRequestsException")));
+
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetDestinationEndpoint(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(3, 40, std::move(acceptors), operation, "WaitUntilDestinationEndpointDisconnected");
+    return waiter.Wait(request);
+  }
+
+  Aws::Utils::WaiterOutcome<Model::GetDestinationEndpointOutcome> WaitUntilDestinationEndpointDeregistered(
+      const Model::GetDestinationEndpointRequest& request) {
+    using OutcomeT = Model::GetDestinationEndpointOutcome;
+    using RequestT = Model::GetDestinationEndpointRequest;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
+        "DestinationEndpointDeregisteredWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("NotFoundException")));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "DestinationEndpointDeregisteredWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("REGISTRATION_FAILED"),
+        [](const Model::GetDestinationEndpointOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::DestinationEndpointRegistrationStateMapper::GetNameForDestinationEndpointRegistrationState(
+                     result.GetDestinationEndpoint().GetRegistrationState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
+        "DestinationEndpointDeregisteredWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("InternalServerErrorException")));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
+        "DestinationEndpointDeregisteredWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("ServiceUnavailableException")));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
+        "DestinationEndpointDeregisteredWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("TooManyRequestsException")));
+
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetDestinationEndpoint(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(3, 40, std::move(acceptors), operation, "WaitUntilDestinationEndpointDeregistered");
+    return waiter.Wait(request);
+  }
+
+  Aws::Utils::WaiterOutcome<Model::GetDestinationEndpointOutcome> WaitUntilDestinationEndpointRegistered(
+      const Model::GetDestinationEndpointRequest& request) {
+    using OutcomeT = Model::GetDestinationEndpointOutcome;
+    using RequestT = Model::GetDestinationEndpointRequest;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "DestinationEndpointRegisteredWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("REGISTERED"),
+        [](const Model::GetDestinationEndpointOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::DestinationEndpointRegistrationStateMapper::GetNameForDestinationEndpointRegistrationState(
+                     result.GetDestinationEndpoint().GetRegistrationState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "DestinationEndpointRegisteredWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("REGISTRATION_FAILED"),
+        [](const Model::GetDestinationEndpointOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::DestinationEndpointRegistrationStateMapper::GetNameForDestinationEndpointRegistrationState(
+                     result.GetDestinationEndpoint().GetRegistrationState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "DestinationEndpointRegisteredWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("DEREGISTERING"),
+        [](const Model::GetDestinationEndpointOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::DestinationEndpointRegistrationStateMapper::GetNameForDestinationEndpointRegistrationState(
+                     result.GetDestinationEndpoint().GetRegistrationState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
+        "DestinationEndpointRegisteredWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("InternalServerErrorException")));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
+        "DestinationEndpointRegisteredWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("ServiceUnavailableException")));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
+        "DestinationEndpointRegisteredWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("TooManyRequestsException")));
+
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetDestinationEndpoint(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(3, 40, std::move(acceptors), operation, "WaitUntilDestinationEndpointRegistered");
     return waiter.Wait(request);
   }
 
@@ -445,6 +587,190 @@ class MediaConnectWaiter {
 
     auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetRouterOutput(req); };
     Aws::Utils::Waiter<RequestT, OutcomeT> waiter(3, 40, std::move(acceptors), operation, "WaitUntilOutputUnrouted");
+    return waiter.Wait(request);
+  }
+
+  Aws::Utils::WaiterOutcome<Model::GetSourceEndpointOutcome> WaitUntilSourceEndpointConnected(
+      const Model::GetSourceEndpointRequest& request) {
+    using OutcomeT = Model::GetSourceEndpointOutcome;
+    using RequestT = Model::GetSourceEndpointRequest;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "SourceEndpointConnectedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("CONNECTED"),
+        [](const Model::GetSourceEndpointOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::SourceEndpointConnectionStateMapper::GetNameForSourceEndpointConnectionState(
+                     result.GetSourceEndpoint().GetConnectionState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
+        "SourceEndpointConnectedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("InternalServerErrorException")));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
+        "SourceEndpointConnectedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("ServiceUnavailableException")));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
+        "SourceEndpointConnectedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("TooManyRequestsException")));
+
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetSourceEndpoint(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(3, 40, std::move(acceptors), operation, "WaitUntilSourceEndpointConnected");
+    return waiter.Wait(request);
+  }
+
+  Aws::Utils::WaiterOutcome<Model::GetSourceEndpointOutcome> WaitUntilSourceEndpointDisconnected(
+      const Model::GetSourceEndpointRequest& request) {
+    using OutcomeT = Model::GetSourceEndpointOutcome;
+    using RequestT = Model::GetSourceEndpointRequest;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "SourceEndpointDisconnectedWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("DISCONNECTED"),
+        [](const Model::GetSourceEndpointOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::SourceEndpointConnectionStateMapper::GetNameForSourceEndpointConnectionState(
+                     result.GetSourceEndpoint().GetConnectionState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
+        "SourceEndpointDisconnectedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("InternalServerErrorException")));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
+        "SourceEndpointDisconnectedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("ServiceUnavailableException")));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
+        "SourceEndpointDisconnectedWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("TooManyRequestsException")));
+
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetSourceEndpoint(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(3, 40, std::move(acceptors), operation, "WaitUntilSourceEndpointDisconnected");
+    return waiter.Wait(request);
+  }
+
+  Aws::Utils::WaiterOutcome<Model::GetSourceEndpointOutcome> WaitUntilSourceEndpointConnecting(
+      const Model::GetSourceEndpointRequest& request) {
+    using OutcomeT = Model::GetSourceEndpointOutcome;
+    using RequestT = Model::GetSourceEndpointRequest;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "SourceEndpointConnectingWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("CONNECTING"),
+        [](const Model::GetSourceEndpointOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::SourceEndpointConnectionStateMapper::GetNameForSourceEndpointConnectionState(
+                     result.GetSourceEndpoint().GetConnectionState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "SourceEndpointConnectingWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("CONNECTED"),
+        [](const Model::GetSourceEndpointOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::SourceEndpointConnectionStateMapper::GetNameForSourceEndpointConnectionState(
+                     result.GetSourceEndpoint().GetConnectionState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
+        "SourceEndpointConnectingWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("InternalServerErrorException")));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
+        "SourceEndpointConnectingWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("ServiceUnavailableException")));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
+        "SourceEndpointConnectingWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("TooManyRequestsException")));
+
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetSourceEndpoint(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(3, 40, std::move(acceptors), operation, "WaitUntilSourceEndpointConnecting");
+    return waiter.Wait(request);
+  }
+
+  Aws::Utils::WaiterOutcome<Model::GetSourceEndpointOutcome> WaitUntilSourceEndpointRegistered(
+      const Model::GetSourceEndpointRequest& request) {
+    using OutcomeT = Model::GetSourceEndpointOutcome;
+    using RequestT = Model::GetSourceEndpointRequest;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "SourceEndpointRegisteredWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("REGISTERED"),
+        [](const Model::GetSourceEndpointOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::SourceEndpointRegistrationStateMapper::GetNameForSourceEndpointRegistrationState(
+                     result.GetSourceEndpoint().GetRegistrationState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "SourceEndpointRegisteredWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("REGISTRATION_FAILED"),
+        [](const Model::GetSourceEndpointOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::SourceEndpointRegistrationStateMapper::GetNameForSourceEndpointRegistrationState(
+                     result.GetSourceEndpoint().GetRegistrationState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "SourceEndpointRegisteredWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("DEREGISTERING"),
+        [](const Model::GetSourceEndpointOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::SourceEndpointRegistrationStateMapper::GetNameForSourceEndpointRegistrationState(
+                     result.GetSourceEndpoint().GetRegistrationState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
+        "SourceEndpointRegisteredWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("InternalServerErrorException")));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
+        "SourceEndpointRegisteredWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("ServiceUnavailableException")));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
+        "SourceEndpointRegisteredWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("TooManyRequestsException")));
+
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetSourceEndpoint(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(3, 40, std::move(acceptors), operation, "WaitUntilSourceEndpointRegistered");
+    return waiter.Wait(request);
+  }
+
+  Aws::Utils::WaiterOutcome<Model::GetSourceEndpointOutcome> WaitUntilSourceEndpointDisconnecting(
+      const Model::GetSourceEndpointRequest& request) {
+    using OutcomeT = Model::GetSourceEndpointOutcome;
+    using RequestT = Model::GetSourceEndpointRequest;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "SourceEndpointDisconnectingWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("DISCONNECTING"),
+        [](const Model::GetSourceEndpointOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::SourceEndpointConnectionStateMapper::GetNameForSourceEndpointConnectionState(
+                     result.GetSourceEndpoint().GetConnectionState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "SourceEndpointDisconnectingWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("DISCONNECTED"),
+        [](const Model::GetSourceEndpointOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::SourceEndpointConnectionStateMapper::GetNameForSourceEndpointConnectionState(
+                     result.GetSourceEndpoint().GetConnectionState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
+        "SourceEndpointDisconnectingWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("InternalServerErrorException")));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
+        "SourceEndpointDisconnectingWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("ServiceUnavailableException")));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
+        "SourceEndpointDisconnectingWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("TooManyRequestsException")));
+
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetSourceEndpoint(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(3, 40, std::move(acceptors), operation, "WaitUntilSourceEndpointDisconnecting");
+    return waiter.Wait(request);
+  }
+
+  Aws::Utils::WaiterOutcome<Model::GetSourceEndpointOutcome> WaitUntilSourceEndpointDeregistered(
+      const Model::GetSourceEndpointRequest& request) {
+    using OutcomeT = Model::GetSourceEndpointOutcome;
+    using RequestT = Model::GetSourceEndpointRequest;
+    Aws::Vector<Aws::UniquePtr<Aws::Utils::Acceptor<OutcomeT>>> acceptors;
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
+        "SourceEndpointDeregisteredWaiter", Aws::Utils::WaiterState::SUCCESS, Aws::String("NotFoundException")));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::PathAcceptor<OutcomeT>>(
+        "SourceEndpointDeregisteredWaiter", Aws::Utils::WaiterState::FAILURE, Aws::String("REGISTRATION_FAILED"),
+        [](const Model::GetSourceEndpointOutcome& outcome, const Aws::Utils::ExpectedValue& expected) -> bool {
+          if (!outcome.IsSuccess()) return false;
+          const auto& result = outcome.GetResult();
+          return Model::SourceEndpointRegistrationStateMapper::GetNameForSourceEndpointRegistrationState(
+                     result.GetSourceEndpoint().GetRegistrationState()) == expected.get<Aws::String>();
+        }));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
+        "SourceEndpointDeregisteredWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("InternalServerErrorException")));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
+        "SourceEndpointDeregisteredWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("ServiceUnavailableException")));
+    acceptors.emplace_back(Aws::MakeUnique<Aws::Utils::ErrorAcceptor<OutcomeT>>(
+        "SourceEndpointDeregisteredWaiter", Aws::Utils::WaiterState::RETRY, Aws::String("TooManyRequestsException")));
+
+    auto operation = [this](const RequestT& req) { return static_cast<DerivedClient*>(this)->GetSourceEndpoint(req); };
+    Aws::Utils::Waiter<RequestT, OutcomeT> waiter(3, 40, std::move(acceptors), operation, "WaitUntilSourceEndpointDeregistered");
     return waiter.Wait(request);
   }
 };

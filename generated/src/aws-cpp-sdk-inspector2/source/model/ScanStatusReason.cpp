@@ -55,6 +55,9 @@ static const int IMAGE_ARCHIVED_HASH = HashingUtils::HashString("IMAGE_ARCHIVED"
 static const int UNSUPPORTED_CODE_ARTIFACTS_HASH = HashingUtils::HashString("UNSUPPORTED_CODE_ARTIFACTS");
 static const int RESOURCE_UNMANAGED_HASH = HashingUtils::HashString("RESOURCE_UNMANAGED");
 static const int RESOURCE_STOPPED_HASH = HashingUtils::HashString("RESOURCE_STOPPED");
+static const int EXTRACTION_COLLECTION_TIME_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("EXTRACTION_COLLECTION_TIME_LIMIT_EXCEEDED");
+static const int STORAGE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("STORAGE_LIMIT_EXCEEDED");
+static const int INVALID_ARTIFACT_HASH = HashingUtils::HashString("INVALID_ARTIFACT");
 
 ScanStatusReason GetScanStatusReasonForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -130,6 +133,12 @@ ScanStatusReason GetScanStatusReasonForName(const Aws::String& name) {
     return ScanStatusReason::RESOURCE_UNMANAGED;
   } else if (hashCode == RESOURCE_STOPPED_HASH) {
     return ScanStatusReason::RESOURCE_STOPPED;
+  } else if (hashCode == EXTRACTION_COLLECTION_TIME_LIMIT_EXCEEDED_HASH) {
+    return ScanStatusReason::EXTRACTION_COLLECTION_TIME_LIMIT_EXCEEDED;
+  } else if (hashCode == STORAGE_LIMIT_EXCEEDED_HASH) {
+    return ScanStatusReason::STORAGE_LIMIT_EXCEEDED;
+  } else if (hashCode == INVALID_ARTIFACT_HASH) {
+    return ScanStatusReason::INVALID_ARTIFACT;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -216,6 +225,12 @@ Aws::String GetNameForScanStatusReason(ScanStatusReason enumValue) {
       return "RESOURCE_UNMANAGED";
     case ScanStatusReason::RESOURCE_STOPPED:
       return "RESOURCE_STOPPED";
+    case ScanStatusReason::EXTRACTION_COLLECTION_TIME_LIMIT_EXCEEDED:
+      return "EXTRACTION_COLLECTION_TIME_LIMIT_EXCEEDED";
+    case ScanStatusReason::STORAGE_LIMIT_EXCEEDED:
+      return "STORAGE_LIMIT_EXCEEDED";
+    case ScanStatusReason::INVALID_ARTIFACT:
+      return "INVALID_ARTIFACT";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

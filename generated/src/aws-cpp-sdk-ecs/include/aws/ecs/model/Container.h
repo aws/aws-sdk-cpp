@@ -11,6 +11,7 @@
 #include <aws/ecs/model/ManagedAgent.h>
 #include <aws/ecs/model/NetworkBinding.h>
 #include <aws/ecs/model/NetworkInterface.h>
+#include <aws/ecs/model/SharingStrategy.h>
 
 #include <utility>
 
@@ -391,6 +392,26 @@ class Container {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The GPU sharing strategy that the task definition specifies for the
+   * container. This field is present only for containers whose resource requirements
+   * include <code>sharingStrategy</code>.</p>
+   */
+  inline const SharingStrategy& GetGpuSharingStrategy() const { return m_gpuSharingStrategy; }
+  inline bool GpuSharingStrategyHasBeenSet() const { return m_gpuSharingStrategyHasBeenSet; }
+  template <typename GpuSharingStrategyT = SharingStrategy>
+  void SetGpuSharingStrategy(GpuSharingStrategyT&& value) {
+    m_gpuSharingStrategyHasBeenSet = true;
+    m_gpuSharingStrategy = std::forward<GpuSharingStrategyT>(value);
+  }
+  template <typename GpuSharingStrategyT = SharingStrategy>
+  Container& WithGpuSharingStrategy(GpuSharingStrategyT&& value) {
+    SetGpuSharingStrategy(std::forward<GpuSharingStrategyT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_containerArn;
 
@@ -427,6 +448,8 @@ class Container {
   Aws::Vector<Aws::String> m_gpuIds;
 
   Aws::Vector<Aws::String> m_neuronDeviceIds;
+
+  SharingStrategy m_gpuSharingStrategy;
   bool m_containerArnHasBeenSet = false;
   bool m_taskArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
@@ -445,6 +468,7 @@ class Container {
   bool m_memoryReservationHasBeenSet = false;
   bool m_gpuIdsHasBeenSet = false;
   bool m_neuronDeviceIdsHasBeenSet = false;
+  bool m_gpuSharingStrategyHasBeenSet = false;
 };
 
 }  // namespace Model

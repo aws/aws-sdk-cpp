@@ -98,6 +98,7 @@
 #include <aws/securityagent/model/Category.h>
 #include <aws/securityagent/model/CiCdConfiguration.h>
 #include <aws/securityagent/model/CleanUpStrategy.h>
+#include <aws/securityagent/model/ClientCertificate.h>
 #include <aws/securityagent/model/CloudWatchLog.h>
 #include <aws/securityagent/model/CodeLocation.h>
 #include <aws/securityagent/model/CodeRemediationStrategy.h>
@@ -191,6 +192,7 @@
 #include <aws/securityagent/model/GitLabRepositoryResource.h>
 #include <aws/securityagent/model/GitLabResourceCapabilities.h>
 #include <aws/securityagent/model/GitLabTokenType.h>
+#include <aws/securityagent/model/GroupMetadata.h>
 #include <aws/securityagent/model/HttpVerification.h>
 #include <aws/securityagent/model/IdCConfiguration.h>
 #include <aws/securityagent/model/ImportSecurityRequirementsRequest.h>

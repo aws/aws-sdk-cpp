@@ -13,6 +13,7 @@
 #include <aws/datasync/model/CmkSecretConfig.h>
 #include <aws/datasync/model/CustomSecretConfig.h>
 #include <aws/datasync/model/ManagedSecretConfig.h>
+#include <aws/datasync/model/ObjectStorageFederatedIdentityConfig.h>
 #include <aws/datasync/model/ObjectStorageServerProtocol.h>
 
 #include <utility>
@@ -87,6 +88,24 @@ class DescribeLocationObjectStorageResult {
   template <typename AccessKeyT = Aws::String>
   DescribeLocationObjectStorageResult& WithAccessKey(AccessKeyT&& value) {
     SetAccessKey(std::forward<AccessKeyT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The federated identity configuration that DataSync uses to access your object
+   * storage using an OpenID Connect (OIDC) token.</p>
+   */
+  inline const ObjectStorageFederatedIdentityConfig& GetFederatedIdentity() const { return m_federatedIdentity; }
+  template <typename FederatedIdentityT = ObjectStorageFederatedIdentityConfig>
+  void SetFederatedIdentity(FederatedIdentityT&& value) {
+    m_federatedIdentityHasBeenSet = true;
+    m_federatedIdentity = std::forward<FederatedIdentityT>(value);
+  }
+  template <typename FederatedIdentityT = ObjectStorageFederatedIdentityConfig>
+  DescribeLocationObjectStorageResult& WithFederatedIdentity(FederatedIdentityT&& value) {
+    SetFederatedIdentity(std::forward<FederatedIdentityT>(value));
     return *this;
   }
   ///@}
@@ -264,6 +283,8 @@ class DescribeLocationObjectStorageResult {
 
   Aws::String m_accessKey;
 
+  ObjectStorageFederatedIdentityConfig m_federatedIdentity;
+
   int m_serverPort{0};
 
   ObjectStorageServerProtocol m_serverProtocol{ObjectStorageServerProtocol::NOT_SET};
@@ -285,6 +306,7 @@ class DescribeLocationObjectStorageResult {
   bool m_locationArnHasBeenSet = false;
   bool m_locationUriHasBeenSet = false;
   bool m_accessKeyHasBeenSet = false;
+  bool m_federatedIdentityHasBeenSet = false;
   bool m_serverPortHasBeenSet = false;
   bool m_serverProtocolHasBeenSet = false;
   bool m_agentArnsHasBeenSet = false;

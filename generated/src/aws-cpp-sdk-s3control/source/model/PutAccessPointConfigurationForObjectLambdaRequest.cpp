@@ -26,7 +26,7 @@ Aws::String PutAccessPointConfigurationForObjectLambdaRequest::SerializePayload(
     m_configuration.AddToNode(configurationNode);
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToCompactString();
 }
 
 Aws::Http::HeaderValueCollection PutAccessPointConfigurationForObjectLambdaRequest::GetRequestSpecificHeaders() const {

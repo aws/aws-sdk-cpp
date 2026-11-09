@@ -58,6 +58,10 @@ ResourceScanMetadata& ResourceScanMetadata::operator=(JsonView jsonValue) {
     m_serverlessFunction = jsonValue.GetObject("serverlessFunction");
     m_serverlessFunctionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("machineImage")) {
+    m_machineImage = jsonValue.GetObject("machineImage");
+    m_machineImageHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -102,6 +106,10 @@ JsonValue ResourceScanMetadata::Jsonize() const {
 
   if (m_serverlessFunctionHasBeenSet) {
     payload.WithObject("serverlessFunction", m_serverlessFunction.Jsonize());
+  }
+
+  if (m_machineImageHasBeenSet) {
+    payload.WithObject("machineImage", m_machineImage.Jsonize());
   }
 
   return payload;

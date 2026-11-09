@@ -42,6 +42,14 @@ EksContainerSecurityContext& EksContainerSecurityContext::operator=(JsonView jso
     m_runAsNonRoot = jsonValue.GetBool("runAsNonRoot");
     m_runAsNonRootHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("capabilities")) {
+    m_capabilities = jsonValue.GetObject("capabilities");
+    m_capabilitiesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("seccompProfile")) {
+    m_seccompProfile = jsonValue.GetObject("seccompProfile");
+    m_seccompProfileHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -70,6 +78,14 @@ JsonValue EksContainerSecurityContext::Jsonize() const {
 
   if (m_runAsNonRootHasBeenSet) {
     payload.WithBool("runAsNonRoot", m_runAsNonRoot);
+  }
+
+  if (m_capabilitiesHasBeenSet) {
+    payload.WithObject("capabilities", m_capabilities.Jsonize());
+  }
+
+  if (m_seccompProfileHasBeenSet) {
+    payload.WithObject("seccompProfile", m_seccompProfile.Jsonize());
   }
 
   return payload;

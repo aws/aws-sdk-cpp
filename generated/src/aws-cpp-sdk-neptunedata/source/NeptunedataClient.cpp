@@ -21,6 +21,7 @@
 #include <aws/neptunedata/NeptunedataEndpointProvider.h>
 #include <aws/neptunedata/NeptunedataErrorMarshaller.h>
 #include <aws/neptunedata/model/CancelGremlinQueryRequest.h>
+#include <aws/neptunedata/model/CancelIndexRebuildRequest.h>
 #include <aws/neptunedata/model/CancelLoaderJobRequest.h>
 #include <aws/neptunedata/model/CancelMLDataProcessingJobRequest.h>
 #include <aws/neptunedata/model/CancelMLModelTrainingJobRequest.h>
@@ -38,6 +39,7 @@
 #include <aws/neptunedata/model/ExecuteOpenCypherQueryRequest.h>
 #include <aws/neptunedata/model/GetEngineStatusRequest.h>
 #include <aws/neptunedata/model/GetGremlinQueryStatusRequest.h>
+#include <aws/neptunedata/model/GetIndexRebuildStatusRequest.h>
 #include <aws/neptunedata/model/GetLoaderJobStatusRequest.h>
 #include <aws/neptunedata/model/GetMLDataProcessingJobRequest.h>
 #include <aws/neptunedata/model/GetMLEndpointRequest.h>
@@ -50,7 +52,9 @@
 #include <aws/neptunedata/model/GetRDFGraphSummaryRequest.h>
 #include <aws/neptunedata/model/GetSparqlStatisticsRequest.h>
 #include <aws/neptunedata/model/GetSparqlStreamRequest.h>
+#include <aws/neptunedata/model/GetStorageInfoRequest.h>
 #include <aws/neptunedata/model/ListGremlinQueriesRequest.h>
+#include <aws/neptunedata/model/ListIndexRebuildsRequest.h>
 #include <aws/neptunedata/model/ListLoaderJobsRequest.h>
 #include <aws/neptunedata/model/ListMLDataProcessingJobsRequest.h>
 #include <aws/neptunedata/model/ListMLEndpointsRequest.h>
@@ -59,6 +63,7 @@
 #include <aws/neptunedata/model/ListOpenCypherQueriesRequest.h>
 #include <aws/neptunedata/model/ManagePropertygraphStatisticsRequest.h>
 #include <aws/neptunedata/model/ManageSparqlStatisticsRequest.h>
+#include <aws/neptunedata/model/StartIndexRebuildRequest.h>
 #include <aws/neptunedata/model/StartLoaderJobRequest.h>
 #include <aws/neptunedata/model/StartMLDataProcessingJobRequest.h>
 #include <aws/neptunedata/model/StartMLModelTrainingJobRequest.h>
@@ -234,6 +239,25 @@ CancelGremlinQueryOutcome NeptunedataClient::CancelGremlinQuery(const CancelGrem
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? CancelGremlinQueryOutcome(result.GetResultWithOwnership())
                             : CancelGremlinQueryOutcome(std::move(result.GetError()));
+}
+
+CancelIndexRebuildOutcome NeptunedataClient::CancelIndexRebuild(const CancelIndexRebuildRequest& request) const {
+  if (!request.RebuildIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CancelIndexRebuild", "Required field: RebuildId, is not set");
+    return CancelIndexRebuildOutcome(Aws::Client::AWSError<NeptunedataErrors>(NeptunedataErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                              "Missing required field [RebuildId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/storage/indexes/rebuilds/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRebuildId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/cancel");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelIndexRebuildOutcome(result.GetResultWithOwnership())
+                            : CancelIndexRebuildOutcome(std::move(result.GetError()));
 }
 
 CancelLoaderJobOutcome NeptunedataClient::CancelLoaderJob(const CancelLoaderJobRequest& request) const {
@@ -537,6 +561,24 @@ GetGremlinQueryStatusOutcome NeptunedataClient::GetGremlinQueryStatus(const GetG
                             : GetGremlinQueryStatusOutcome(std::move(result.GetError()));
 }
 
+GetIndexRebuildStatusOutcome NeptunedataClient::GetIndexRebuildStatus(const GetIndexRebuildStatusRequest& request) const {
+  if (!request.RebuildIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetIndexRebuildStatus", "Required field: RebuildId, is not set");
+    return GetIndexRebuildStatusOutcome(Aws::Client::AWSError<NeptunedataErrors>(NeptunedataErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                 "Missing required field [RebuildId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/storage/indexes/rebuilds/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRebuildId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetIndexRebuildStatusOutcome(result.GetResultWithOwnership())
+                            : GetIndexRebuildStatusOutcome(std::move(result.GetError()));
+}
+
 GetLoaderJobStatusOutcome NeptunedataClient::GetLoaderJobStatus(const GetLoaderJobStatusRequest& request) const {
   if (!request.LoadIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetLoaderJobStatus", "Required field: LoadId, is not set");
@@ -710,6 +752,16 @@ GetSparqlStreamOutcome NeptunedataClient::GetSparqlStream(const GetSparqlStreamR
                             : GetSparqlStreamOutcome(std::move(result.GetError()));
 }
 
+GetStorageInfoOutcome NeptunedataClient::GetStorageInfo(const GetStorageInfoRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/storage/info");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetStorageInfoOutcome(result.GetResultWithOwnership()) : GetStorageInfoOutcome(std::move(result.GetError()));
+}
+
 ListGremlinQueriesOutcome NeptunedataClient::ListGremlinQueries(const ListGremlinQueriesRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -719,6 +771,17 @@ ListGremlinQueriesOutcome NeptunedataClient::ListGremlinQueries(const ListGremli
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListGremlinQueriesOutcome(result.GetResultWithOwnership())
                             : ListGremlinQueriesOutcome(std::move(result.GetError()));
+}
+
+ListIndexRebuildsOutcome NeptunedataClient::ListIndexRebuilds(const ListIndexRebuildsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/storage/indexes/rebuilds");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListIndexRebuildsOutcome(result.GetResultWithOwnership())
+                            : ListIndexRebuildsOutcome(std::move(result.GetError()));
 }
 
 ListLoaderJobsOutcome NeptunedataClient::ListLoaderJobs(const ListLoaderJobsRequest& request) const {
@@ -807,6 +870,17 @@ ManageSparqlStatisticsOutcome NeptunedataClient::ManageSparqlStatistics(const Ma
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ManageSparqlStatisticsOutcome(result.GetResultWithOwnership())
                             : ManageSparqlStatisticsOutcome(std::move(result.GetError()));
+}
+
+StartIndexRebuildOutcome NeptunedataClient::StartIndexRebuild(const StartIndexRebuildRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/storage/indexes/rebuilds");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartIndexRebuildOutcome(result.GetResultWithOwnership())
+                            : StartIndexRebuildOutcome(std::move(result.GetError()));
 }
 
 StartLoaderJobOutcome NeptunedataClient::StartLoaderJob(const StartLoaderJobRequest& request) const {

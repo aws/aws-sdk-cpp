@@ -98,6 +98,8 @@
 #include <aws/route53domains/model/ResendContactReachabilityEmailRequest.h>
 #include <aws/route53domains/model/ResendContactReachabilityEmailResult.h>
 #include <aws/route53domains/model/ResendOperationAuthorizationRequest.h>
+#include <aws/route53domains/model/RestoreDomainRequest.h>
+#include <aws/route53domains/model/RestoreDomainResult.h>
 #include <aws/route53domains/model/RetrieveDomainAuthCodeRequest.h>
 #include <aws/route53domains/model/RetrieveDomainAuthCodeResult.h>
 #include <aws/route53domains/model/SortCondition.h>

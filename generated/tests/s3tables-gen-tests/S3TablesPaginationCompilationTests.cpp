@@ -9,6 +9,7 @@
 #include <aws/s3tables/S3TablesClientPagination.h>
 #include <aws/s3tables/S3TablesPaginationBase.h>
 #include <aws/s3tables/model/ListTableBucketsPaginationTraits.h>
+#include <aws/s3tables/model/ListTableMigrationsPaginationTraits.h>
 #include <aws/s3tables/model/ListTablesPaginationTraits.h>
 #include <aws/s3tables/model/ListNamespacesPaginationTraits.h>
 

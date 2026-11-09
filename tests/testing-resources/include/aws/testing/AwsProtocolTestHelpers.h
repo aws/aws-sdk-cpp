@@ -5,21 +5,21 @@
 
 #pragma once
 
-#include <aws/testing/Testing_EXPORTS.h>
+#include <aws/core/auth/AWSCredentials.h>
+#include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/protocol-mock/ProtocolMockClient.h>
+#include <aws/protocol-mock/model/Request.h>
+#include <aws/protocol-mock/model/SetNextResponseRequest.h>
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/testing/AwsTestHelpers.h>
+#include <aws/testing/Testing_EXPORTS.h>
 
-#include <aws/core/auth/AWSCredentials.h>
-#include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/HashingUtils.h>
-#include <aws/core/client/ClientConfiguration.h>
-
-#include <aws/protocol-mock/ProtocolMockClient.h>
-#include <aws/protocol-mock/model/SetNextResponseRequest.h>
-#include <aws/protocol-mock/model/Request.h>
 #include <cstdint>
+#include <numeric>
 #include <utility>
 
 #ifdef AWS_PROTOCOL_TEST_USE_TINYXML2
@@ -115,6 +115,10 @@ public:
   }
 
   static void ValidateBody(const ExpectedRequest& expected, const Aws::ProtocolMock::Model::Request& receivedRequest) {
+    // A Smithy vector with no "body" asserts only headers/uri, not the body.
+    if (expected.body.empty()) {
+      return;
+    }
     const auto expectedBodyBuf = Aws::Utils::HashingUtils::Base64Decode(expected.body);
     const auto receivedBodyBuf = Aws::Utils::HashingUtils::Base64Decode(receivedRequest.GetBody());
     auto expectedBodyStr = Aws::String(reinterpret_cast<char*>(expectedBodyBuf.GetUnderlyingData()), expectedBodyBuf.GetLength());
@@ -163,6 +167,10 @@ public:
   }
 
   static void ValidateXmlBody(const ExpectedRequest& expected, const Aws::ProtocolMock::Model::Request& receivedRequest) {
+    // A Smithy vector with no "body" asserts only headers/uri, not the body.
+    if (expected.body.empty()) {
+      return;
+    }
     const auto expectedBodyBuf = Aws::Utils::HashingUtils::Base64Decode(expected.body);
     const auto receivedBodyBuf = Aws::Utils::HashingUtils::Base64Decode(receivedRequest.GetBody());
     const Aws::String expectedBodyStr(reinterpret_cast<char*>(expectedBodyBuf.GetUnderlyingData()), expectedBodyBuf.GetLength());
@@ -181,6 +189,10 @@ public:
 #endif
 
   static void ValidateFormUrlEncodedBody(const ExpectedRequest& expected, const Aws::ProtocolMock::Model::Request& receivedRequest) {
+    // A Smithy vector with no "body" asserts only headers/uri, not the body.
+    if (expected.body.empty()) {
+      return;
+    }
     const auto expectedBodyBuf = Aws::Utils::HashingUtils::Base64Decode(expected.body);
     const auto receivedBodyBuf = Aws::Utils::HashingUtils::Base64Decode(receivedRequest.GetBody());
     const Aws::String expectedBodyStr(reinterpret_cast<char*>(expectedBodyBuf.GetUnderlyingData()), expectedBodyBuf.GetLength());
@@ -227,13 +239,22 @@ public:
     EXPECT_STREQ(sortedQuery(expected, expQ).c_str(), sortedQuery(received, recQ).c_str());
   }
 
+  static Aws::String CanonicalizeHeaderValue(const Aws::String& value) {
+    const Aws::Vector<Aws::String> parts = Aws::Utils::StringUtils::Split(value, ',');
+    return std::accumulate(parts.begin(), parts.end(), Aws::String(), [](const Aws::String& joined, const Aws::String& part) {
+      const Aws::String trimmed = Aws::Utils::StringUtils::Trim(part.c_str());
+      return joined.empty() ? trimmed : joined + "," + trimmed;
+    });
+  }
+
   void ValidateRequestSent(const std::function<void (const ExpectedRequest& expected, const Aws::ProtocolMock::Model::Request& receivedRequest)>& bodyCompare = ValidateBody) const {
     ValidateRequestSent(ExpectedRequest(), bodyCompare);
   }
 
-  void ValidateRequestSent(const ExpectedRequest& expected = ExpectedRequest(),
-                          const std::function<void (const ExpectedRequest& expected, const Aws::ProtocolMock::Model::Request& receivedRequest)>& bodyCompare = ValidateBody) const {
-
+  void ValidateRequestSent(
+      const ExpectedRequest& expected = ExpectedRequest(),
+      const std::function<void(const ExpectedRequest& expected, const Aws::ProtocolMock::Model::Request& receivedRequest)>& bodyCompare =
+          ValidateBody) const {
     auto requestsReceivedOutcome = mockClient.GetRequestsReceived();
     AWS_ASSERT_SUCCESS(requestsReceivedOutcome);
     ASSERT_EQ(1u, requestsReceivedOutcome.GetResult().GetRequests().size());
@@ -242,10 +263,7 @@ public:
     if (!expected.method.empty()) {
       EXPECT_STREQ(expected.method.c_str(), receivedRequest.GetMethod().c_str());
     }
-    // A Smithy vector with no "body" asserts only headers/uri, not the body.
-    if (!expected.body.empty()) {
-      bodyCompare(expected, receivedRequest);
-    }
+    bodyCompare(expected, receivedRequest);
     if (!expected.uri.empty()) {
       CompareUri(expected.uri, receivedRequest.GetUri());
     }
@@ -260,8 +278,9 @@ public:
           return Aws::Utils::StringUtils::ToLower(hdr.GetKey().c_str()) == Aws::Utils::StringUtils::ToLower(expectedHeader.first.c_str());
         });
         ASSERT_TRUE(foundIt != receivedHeaders.end());
-        ASSERT_STREQ(Aws::Utils::StringUtils::ToLower(expectedHeader.second.c_str()).c_str(),
-                     Aws::Utils::StringUtils::ToLower(foundIt->GetVal().c_str()).c_str());
+        // Compare list-valued headers with OWS around commas normalized (RFC 7230).
+        ASSERT_STREQ(Aws::Utils::StringUtils::ToLower(CanonicalizeHeaderValue(expectedHeader.second).c_str()).c_str(),
+                     Aws::Utils::StringUtils::ToLower(CanonicalizeHeaderValue(foundIt->GetVal()).c_str()).c_str());
       }
     }
     if (!expected.forbidHeaders.empty()) {

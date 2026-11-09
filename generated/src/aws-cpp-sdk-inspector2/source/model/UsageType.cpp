@@ -28,6 +28,7 @@ static const int AZURE_CONTAINER_IMAGE_INITIAL_SCAN_HASH = HashingUtils::HashStr
 static const int AZURE_CONTAINER_IMAGE_RESCAN_HASH = HashingUtils::HashString("AZURE_CONTAINER_IMAGE_RESCAN");
 static const int AZURE_VM_AGENT_BASED_INSTANCE_HOURS_HASH = HashingUtils::HashString("AZURE_VM_AGENT_BASED_INSTANCE_HOURS");
 static const int AZURE_SERVERLESS_FUNCTION_HOURS_HASH = HashingUtils::HashString("AZURE_SERVERLESS_FUNCTION_HOURS");
+static const int EC2_AMI_HOURS_HASH = HashingUtils::HashString("EC2_AMI_HOURS");
 
 UsageType GetUsageTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -57,6 +58,8 @@ UsageType GetUsageTypeForName(const Aws::String& name) {
     return UsageType::AZURE_VM_AGENT_BASED_INSTANCE_HOURS;
   } else if (hashCode == AZURE_SERVERLESS_FUNCTION_HOURS_HASH) {
     return UsageType::AZURE_SERVERLESS_FUNCTION_HOURS;
+  } else if (hashCode == EC2_AMI_HOURS_HASH) {
+    return UsageType::EC2_AMI_HOURS;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -97,6 +100,8 @@ Aws::String GetNameForUsageType(UsageType enumValue) {
       return "AZURE_VM_AGENT_BASED_INSTANCE_HOURS";
     case UsageType::AZURE_SERVERLESS_FUNCTION_HOURS:
       return "AZURE_SERVERLESS_FUNCTION_HOURS";
+    case UsageType::EC2_AMI_HOURS:
+      return "EC2_AMI_HOURS";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

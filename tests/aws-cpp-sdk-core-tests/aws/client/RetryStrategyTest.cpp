@@ -7,8 +7,10 @@
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/testing/platform/PlatformTesting.h>
 #include <aws/core/client/AWSError.h>
+#include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
+#include <aws/core/config/ConfigAndCredentialsCacheManager.h>
 #include <aws/core/http/URI.h>
 #include <aws/core/http/HttpClientFactory.h>
 #include <aws/core/http/standard/StandardHttpRequest.h>
@@ -316,4 +318,41 @@ TEST_F(NewRetriesStrategyTest, DynamoDBBackoffBase)
     long delay = retryStrategy.CalculateDelayBeforeNextRetry(throttlingError, 0);
     ASSERT_GE(delay, 0);
     ASSERT_LE(delay, 1000);
+}
+
+class InitRetryStrategyTest : public Aws::Testing::AwsCppSdkGTestSuite
+{
+protected:
+    void SetUp() override { Aws::Config::ReloadCachedConfigFile(); }
+    void TearDown() override { Aws::Config::ReloadCachedConfigFile(); }
+};
+
+TEST_F(InitRetryStrategyTest, GateOffUnsetRetryModeUsesDefaultRetryStrategy)
+{
+    Aws::Environment::EnvironmentRAII env{{{"AWS_NEW_RETRIES_2026", ""},
+                                           {"AWS_RETRY_MODE", ""},
+                                           {"AWS_MAX_ATTEMPTS", ""},
+                                           {"AWS_CONFIG_FILE", "/nonexistent/retry-strategy-test-config"}}};
+    Aws::Config::ReloadCachedConfigFile();
+
+    auto retryStrategy = InitRetryStrategy();
+    ASSERT_TRUE(retryStrategy);
+    ASSERT_STREQ("default", retryStrategy->GetStrategyName());
+    ASSERT_EQ(11, retryStrategy->GetMaxAttempts());
+}
+
+TEST_F(InitRetryStrategyTest, ConfiguredMaxAttemptsOverridesServiceDefault)
+{
+    for (const auto& testCase : {std::make_pair("", 4L), std::make_pair("2", 2L), std::make_pair("0", 0L)})
+    {
+        Aws::Environment::EnvironmentRAII env{{{"AWS_NEW_RETRIES_2026", "true"},
+                                               {"AWS_RETRY_MODE", ""},
+                                               {"AWS_MAX_ATTEMPTS", testCase.first},
+                                               {"AWS_CONFIG_FILE", "/nonexistent/retry-strategy-test-config"}}};
+        Aws::Config::ReloadCachedConfigFile();
+
+        auto retryStrategy = InitRetryStrategy(4, "", 0.025);
+        ASSERT_TRUE(retryStrategy);
+        ASSERT_EQ(testCase.second, retryStrategy->GetMaxAttempts()) << "AWS_MAX_ATTEMPTS=" << testCase.first;
+    }
 }

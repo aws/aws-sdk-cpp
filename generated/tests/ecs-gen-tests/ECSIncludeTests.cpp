@@ -31,6 +31,7 @@
 #include <aws/ecs/model/AssociateGatewayWithClusterResult.h>
 #include <aws/ecs/model/Attachment.h>
 #include <aws/ecs/model/AttachmentStateChange.h>
+#include <aws/ecs/model/AttestationPolicyStatus.h>
 #include <aws/ecs/model/Attribute.h>
 #include <aws/ecs/model/AutoRepairActionsStatus.h>
 #include <aws/ecs/model/AutoRepairConfiguration.h>
@@ -278,6 +279,8 @@
 #include <aws/ecs/model/GatewayTestTrafficHeader.h>
 #include <aws/ecs/model/GetTaskProtectionRequest.h>
 #include <aws/ecs/model/GetTaskProtectionResult.h>
+#include <aws/ecs/model/GpuDevice.h>
+#include <aws/ecs/model/GpuSharingMode.h>
 #include <aws/ecs/model/HealthCheck.h>
 #include <aws/ecs/model/HealthStatus.h>
 #include <aws/ecs/model/HostEntry.h>
@@ -295,6 +298,7 @@
 #include <aws/ecs/model/InstanceLaunchTemplateUpdate.h>
 #include <aws/ecs/model/InstanceRequirementsRequest.h>
 #include <aws/ecs/model/IpcMode.h>
+#include <aws/ecs/model/IsolationMode.h>
 #include <aws/ecs/model/KernelCapabilities.h>
 #include <aws/ecs/model/KeyValuePair.h>
 #include <aws/ecs/model/LaunchType.h>
@@ -351,6 +355,7 @@
 #include <aws/ecs/model/LocalStorageType.h>
 #include <aws/ecs/model/LogConfiguration.h>
 #include <aws/ecs/model/LogDriver.h>
+#include <aws/ecs/model/LogDriverVolumeConfiguration.h>
 #include <aws/ecs/model/ManagedAgent.h>
 #include <aws/ecs/model/ManagedAgentName.h>
 #include <aws/ecs/model/ManagedAgentStateChange.h>
@@ -388,6 +393,7 @@
 #include <aws/ecs/model/NetworkInterface.h>
 #include <aws/ecs/model/NetworkInterfaceCountRequest.h>
 #include <aws/ecs/model/NetworkMode.h>
+#include <aws/ecs/model/NvidiaMpsAllocation.h>
 #include <aws/ecs/model/OSFamily.h>
 #include <aws/ecs/model/PidMode.h>
 #include <aws/ecs/model/PlacementConstraint.h>
@@ -472,6 +478,7 @@
 #include <aws/ecs/model/Setting.h>
 #include <aws/ecs/model/SettingName.h>
 #include <aws/ecs/model/SettingType.h>
+#include <aws/ecs/model/SharingStrategy.h>
 #include <aws/ecs/model/SortOrder.h>
 #include <aws/ecs/model/StabilityStatus.h>
 #include <aws/ecs/model/StartTaskRequest.h>
@@ -515,6 +522,8 @@
 #include <aws/ecs/model/Tmpfs.h>
 #include <aws/ecs/model/TotalLocalStorageGBRequest.h>
 #include <aws/ecs/model/TransportProtocol.h>
+#include <aws/ecs/model/TrustedExecutionConfiguration.h>
+#include <aws/ecs/model/TrustedExecutionSummary.h>
 #include <aws/ecs/model/Ulimit.h>
 #include <aws/ecs/model/UlimitName.h>
 #include <aws/ecs/model/UntagResourceRequest.h>

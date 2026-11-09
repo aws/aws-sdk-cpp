@@ -47,9 +47,32 @@ class GetInstanceRequest : public LightsailRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether to include the instance health status checks in the
+   * response of your request.</p> <p>When set to <code>true</code>, the response
+   * includes the <code>instanceStatus</code> and <code>systemStatus</code> of the
+   * instance. When omitted or set to <code>false</code>, the response doesn't
+   * include them.</p>
+   */
+  inline bool GetIncludeHealthStatus() const { return m_includeHealthStatus; }
+  inline bool IncludeHealthStatusHasBeenSet() const { return m_includeHealthStatusHasBeenSet; }
+  inline void SetIncludeHealthStatus(bool value) {
+    m_includeHealthStatusHasBeenSet = true;
+    m_includeHealthStatus = value;
+  }
+  inline GetInstanceRequest& WithIncludeHealthStatus(bool value) {
+    SetIncludeHealthStatus(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_instanceName;
+
+  bool m_includeHealthStatus{false};
   bool m_instanceNameHasBeenSet = false;
+  bool m_includeHealthStatusHasBeenSet = false;
 };
 
 }  // namespace Model

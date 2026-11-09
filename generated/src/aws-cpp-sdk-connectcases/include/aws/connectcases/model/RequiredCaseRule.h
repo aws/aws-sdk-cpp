@@ -22,7 +22,7 @@ namespace Model {
 
 /**
  * <p>Required rule type, used to indicate whether a field is required. In the
- * Amazon Connect admin website, case rules are known as <i>case field
+ * Connect Customer admin website, case rules are known as <i>case field
  * conditions</i>. For more information about case field conditions, see <a
  * href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">Add
  * case field conditions to a case template</a>.</p><p><h3>See Also:</h3>   <a

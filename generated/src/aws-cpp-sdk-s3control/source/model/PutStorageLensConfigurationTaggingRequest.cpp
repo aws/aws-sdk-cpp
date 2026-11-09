@@ -29,7 +29,7 @@ Aws::String PutStorageLensConfigurationTaggingRequest::SerializePayload() const 
     }
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToCompactString();
 }
 
 Aws::Http::HeaderValueCollection PutStorageLensConfigurationTaggingRequest::GetRequestSpecificHeaders() const {

@@ -28,6 +28,7 @@
 #include <aws/connectparticipant/model/CompleteAttachmentUploadResult.h>
 #include <aws/connectparticipant/model/ConnectionCredentials.h>
 #include <aws/connectparticipant/model/ConnectionType.h>
+#include <aws/connectparticipant/model/ContentDisposition.h>
 #include <aws/connectparticipant/model/CreateParticipantConnectionRequest.h>
 #include <aws/connectparticipant/model/CreateParticipantConnectionResult.h>
 #include <aws/connectparticipant/model/DescribeViewRequest.h>

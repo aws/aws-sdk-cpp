@@ -47,6 +47,8 @@
 #include <aws/ssm/model/DeletePatchBaselineResult.h>
 #include <aws/ssm/model/DeleteResourceDataSyncResult.h>
 #include <aws/ssm/model/DeleteResourcePolicyResult.h>
+#include <aws/ssm/model/DeregisterDefaultHostManagementConfigurationRequest.h>
+#include <aws/ssm/model/DeregisterDefaultHostManagementConfigurationResult.h>
 #include <aws/ssm/model/DeregisterManagedInstanceResult.h>
 #include <aws/ssm/model/DeregisterPatchBaselineForPatchGroupResult.h>
 #include <aws/ssm/model/DeregisterTargetFromMaintenanceWindowResult.h>
@@ -168,6 +170,7 @@
 #include <aws/ssm/model/PutInventoryResult.h>
 #include <aws/ssm/model/PutParameterResult.h>
 #include <aws/ssm/model/PutResourcePolicyResult.h>
+#include <aws/ssm/model/RegisterDefaultHostManagementConfigurationResult.h>
 #include <aws/ssm/model/RegisterDefaultPatchBaselineResult.h>
 #include <aws/ssm/model/RegisterPatchBaselineForPatchGroupResult.h>
 #include <aws/ssm/model/RegisterTargetWithMaintenanceWindowResult.h>
@@ -262,6 +265,7 @@ class DeleteParametersRequest;
 class DeletePatchBaselineRequest;
 class DeleteResourceDataSyncRequest;
 class DeleteResourcePolicyRequest;
+class DeregisterDefaultHostManagementConfigurationRequest;
 class DeregisterManagedInstanceRequest;
 class DeregisterPatchBaselineForPatchGroupRequest;
 class DeregisterTargetFromMaintenanceWindowRequest;
@@ -353,6 +357,7 @@ class PutComplianceItemsRequest;
 class PutInventoryRequest;
 class PutParameterRequest;
 class PutResourcePolicyRequest;
+class RegisterDefaultHostManagementConfigurationRequest;
 class RegisterDefaultPatchBaselineRequest;
 class RegisterPatchBaselineForPatchGroupRequest;
 class RegisterTargetWithMaintenanceWindowRequest;
@@ -417,6 +422,8 @@ typedef Aws::Utils::Outcome<DeleteParametersResult, SSMError> DeleteParametersOu
 typedef Aws::Utils::Outcome<DeletePatchBaselineResult, SSMError> DeletePatchBaselineOutcome;
 typedef Aws::Utils::Outcome<DeleteResourceDataSyncResult, SSMError> DeleteResourceDataSyncOutcome;
 typedef Aws::Utils::Outcome<DeleteResourcePolicyResult, SSMError> DeleteResourcePolicyOutcome;
+typedef Aws::Utils::Outcome<DeregisterDefaultHostManagementConfigurationResult, SSMError>
+    DeregisterDefaultHostManagementConfigurationOutcome;
 typedef Aws::Utils::Outcome<DeregisterManagedInstanceResult, SSMError> DeregisterManagedInstanceOutcome;
 typedef Aws::Utils::Outcome<DeregisterPatchBaselineForPatchGroupResult, SSMError> DeregisterPatchBaselineForPatchGroupOutcome;
 typedef Aws::Utils::Outcome<DeregisterTargetFromMaintenanceWindowResult, SSMError> DeregisterTargetFromMaintenanceWindowOutcome;
@@ -509,6 +516,7 @@ typedef Aws::Utils::Outcome<PutComplianceItemsResult, SSMError> PutComplianceIte
 typedef Aws::Utils::Outcome<PutInventoryResult, SSMError> PutInventoryOutcome;
 typedef Aws::Utils::Outcome<PutParameterResult, SSMError> PutParameterOutcome;
 typedef Aws::Utils::Outcome<PutResourcePolicyResult, SSMError> PutResourcePolicyOutcome;
+typedef Aws::Utils::Outcome<RegisterDefaultHostManagementConfigurationResult, SSMError> RegisterDefaultHostManagementConfigurationOutcome;
 typedef Aws::Utils::Outcome<RegisterDefaultPatchBaselineResult, SSMError> RegisterDefaultPatchBaselineOutcome;
 typedef Aws::Utils::Outcome<RegisterPatchBaselineForPatchGroupResult, SSMError> RegisterPatchBaselineForPatchGroupOutcome;
 typedef Aws::Utils::Outcome<RegisterTargetWithMaintenanceWindowResult, SSMError> RegisterTargetWithMaintenanceWindowOutcome;
@@ -573,6 +581,7 @@ typedef std::future<DeleteParametersOutcome> DeleteParametersOutcomeCallable;
 typedef std::future<DeletePatchBaselineOutcome> DeletePatchBaselineOutcomeCallable;
 typedef std::future<DeleteResourceDataSyncOutcome> DeleteResourceDataSyncOutcomeCallable;
 typedef std::future<DeleteResourcePolicyOutcome> DeleteResourcePolicyOutcomeCallable;
+typedef std::future<DeregisterDefaultHostManagementConfigurationOutcome> DeregisterDefaultHostManagementConfigurationOutcomeCallable;
 typedef std::future<DeregisterManagedInstanceOutcome> DeregisterManagedInstanceOutcomeCallable;
 typedef std::future<DeregisterPatchBaselineForPatchGroupOutcome> DeregisterPatchBaselineForPatchGroupOutcomeCallable;
 typedef std::future<DeregisterTargetFromMaintenanceWindowOutcome> DeregisterTargetFromMaintenanceWindowOutcomeCallable;
@@ -665,6 +674,7 @@ typedef std::future<PutComplianceItemsOutcome> PutComplianceItemsOutcomeCallable
 typedef std::future<PutInventoryOutcome> PutInventoryOutcomeCallable;
 typedef std::future<PutParameterOutcome> PutParameterOutcomeCallable;
 typedef std::future<PutResourcePolicyOutcome> PutResourcePolicyOutcomeCallable;
+typedef std::future<RegisterDefaultHostManagementConfigurationOutcome> RegisterDefaultHostManagementConfigurationOutcomeCallable;
 typedef std::future<RegisterDefaultPatchBaselineOutcome> RegisterDefaultPatchBaselineOutcomeCallable;
 typedef std::future<RegisterPatchBaselineForPatchGroupOutcome> RegisterPatchBaselineForPatchGroupOutcomeCallable;
 typedef std::future<RegisterTargetWithMaintenanceWindowOutcome> RegisterTargetWithMaintenanceWindowOutcomeCallable;
@@ -787,6 +797,10 @@ typedef std::function<void(const SSMClient*, const Model::DeleteResourceDataSync
 typedef std::function<void(const SSMClient*, const Model::DeleteResourcePolicyRequest&, const Model::DeleteResourcePolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteResourcePolicyResponseReceivedHandler;
+typedef std::function<void(const SSMClient*, const Model::DeregisterDefaultHostManagementConfigurationRequest&,
+                           const Model::DeregisterDefaultHostManagementConfigurationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeregisterDefaultHostManagementConfigurationResponseReceivedHandler;
 typedef std::function<void(const SSMClient*, const Model::DeregisterManagedInstanceRequest&, const Model::DeregisterManagedInstanceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeregisterManagedInstanceResponseReceivedHandler;
@@ -1085,6 +1099,10 @@ typedef std::function<void(const SSMClient*, const Model::PutParameterRequest&, 
 typedef std::function<void(const SSMClient*, const Model::PutResourcePolicyRequest&, const Model::PutResourcePolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutResourcePolicyResponseReceivedHandler;
+typedef std::function<void(const SSMClient*, const Model::RegisterDefaultHostManagementConfigurationRequest&,
+                           const Model::RegisterDefaultHostManagementConfigurationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    RegisterDefaultHostManagementConfigurationResponseReceivedHandler;
 typedef std::function<void(const SSMClient*, const Model::RegisterDefaultPatchBaselineRequest&,
                            const Model::RegisterDefaultPatchBaselineOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

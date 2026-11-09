@@ -472,7 +472,10 @@ class WebACL {
    * resources forward body sizes that are larger than the default. For more
    * information, see <a href="http://aws.amazon.com/waf/pricing/">WAF
    * Pricing</a>.</p>  <p>For Application Load Balancer and AppSync, the limit
-   * is fixed at 8 KB (8,192 bytes).</p>
+   * is fixed at 8 KB (8,192 bytes).</p> <p>You can also use this to have your
+   * CloudFront distributions insert the WAF challenge JavaScript SDK into the HTML
+   * responses that they return. For more information, see the
+   * <code>ChallengeJavascriptSdkInjection</code> setting. </p>
    */
   inline const AssociationConfig& GetAssociationConfig() const { return m_associationConfig; }
   inline bool AssociationConfigHasBeenSet() const { return m_associationConfigHasBeenSet; }
@@ -550,8 +553,8 @@ class WebACL {
   ///@{
   /**
    * <p>The monetization configuration for the web ACL. Required when any rule in the
-   * web ACL uses the <code>Monetize</code> action. Specifies the cryptocurrency
-   * payment networks and currency mode for AI bot monetization.</p>
+   * web ACL uses the <code>Monetize</code> action. Specifies the payment settlement
+   * options and currency mode for AI bot monetization.</p>
    */
   inline const MonetizationConfig& GetMonetizationConfig() const { return m_monetizationConfig; }
   inline bool MonetizationConfigHasBeenSet() const { return m_monetizationConfigHasBeenSet; }

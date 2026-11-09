@@ -114,6 +114,14 @@ AdditionalInfoRequest& AdditionalInfoRequest::operator=(JsonView jsonValue) {
     m_monacoAdditionalInfo = jsonValue.GetObject("monacoAdditionalInfo");
     m_monacoAdditionalInfoHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("germanyAdditionalInfo")) {
+    m_germanyAdditionalInfo = jsonValue.GetObject("germanyAdditionalInfo");
+    m_germanyAdditionalInfoHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("mexicoAdditionalInfo")) {
+    m_mexicoAdditionalInfo = jsonValue.GetObject("mexicoAdditionalInfo");
+    m_mexicoAdditionalInfoHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -214,6 +222,14 @@ JsonValue AdditionalInfoRequest::Jsonize() const {
 
   if (m_monacoAdditionalInfoHasBeenSet) {
     payload.WithObject("monacoAdditionalInfo", m_monacoAdditionalInfo.Jsonize());
+  }
+
+  if (m_germanyAdditionalInfoHasBeenSet) {
+    payload.WithObject("germanyAdditionalInfo", m_germanyAdditionalInfo.Jsonize());
+  }
+
+  if (m_mexicoAdditionalInfoHasBeenSet) {
+    payload.WithObject("mexicoAdditionalInfo", m_mexicoAdditionalInfo.Jsonize());
   }
 
   return payload;

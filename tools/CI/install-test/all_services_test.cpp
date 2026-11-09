@@ -5,6 +5,7 @@
 #include <aws/core/Aws.h>
 #include <aws/AWSMigrationHub/MigrationHubClient.h>
 #include <aws/accessanalyzer/AccessAnalyzerClient.h>
+#include <aws/account-access-runtime/AccountAccessRuntimeClient.h>
 #include <aws/account-access/AccountAccessClient.h>
 #include <aws/account/AccountClient.h>
 #include <aws/acm-pca/ACMPCAClient.h>
@@ -111,6 +112,7 @@
 #include <aws/connectcases/ConnectCasesClient.h>
 #include <aws/connecthealth/ConnectHealthClient.h>
 #include <aws/connectparticipant/ConnectParticipantClient.h>
+#include <aws/continuum/ContinuumClient.h>
 #include <aws/controlcatalog/ControlCatalogClient.h>
 #include <aws/controltower/ControlTowerClient.h>
 #include <aws/cost-optimization-hub/CostOptimizationHubClient.h>

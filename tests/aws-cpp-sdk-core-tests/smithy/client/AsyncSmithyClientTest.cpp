@@ -12,6 +12,7 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/DefaultRetryStrategy.h>
+#include <aws/core/client/RetryStrategy.h>
 #include <aws/core/endpoint/AWSEndpoint.h>
 #include <aws/core/endpoint/EndpointProviderBase.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -299,5 +300,19 @@ namespace
 #else
         ASSERT_LT(elapsed, std::chrono::milliseconds(LONG_POLL_DELAY_MS));
 #endif
+    }
+
+    TEST_F(AsyncSmithyClientTest, NewRetriesFlagIsCaseInsensitive)
+    {
+        Aws::Environment::EnvironmentRAII env{{{"AWS_NEW_RETRIES_2026", "TRUE"}}};
+        client = MakeClient(Aws::MakeShared<StandardRetryStrategy>(ALLOCATION_TAG, 3));
+        mockHttpClient->AddResponseToReturn(MakeSuccessResponse());
+
+        auto outcome = RunAndCapture();
+
+        ASSERT_TRUE(outcome.IsSuccess());
+        const auto& requests = mockHttpClient->GetAllRequestsMade();
+        ASSERT_EQ(1u, requests.size());
+        ASSERT_NE(Aws::String::npos, requests[0].GetHeaders()[Aws::Http::SDK_REQUEST_HEADER].find("max=3"));
     }
 }

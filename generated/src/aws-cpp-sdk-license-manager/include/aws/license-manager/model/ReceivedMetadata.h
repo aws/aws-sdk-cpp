@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/license-manager/LicenseManager_EXPORTS.h>
 #include <aws/license-manager/model/AllowedOperation.h>
+#include <aws/license-manager/model/GrantType.h>
 #include <aws/license-manager/model/ReceivedStatus.h>
 
 #include <utility>
@@ -91,15 +92,38 @@ class ReceivedMetadata {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The type of the grant through which the license was received. Valid
+   * values:</p> <ul> <li> <p> <code>BuyerGrant</code> - Grants you the entitlement
+   * to use the license.</p> </li> <li> <p> <code>DelegateGrant</code> - Gives you
+   * read-only visibility into the licenses and grants distributed to buyers, with no
+   * entitlement to use them.</p> </li> </ul>
+   */
+  inline GrantType GetGrantType() const { return m_grantType; }
+  inline bool GrantTypeHasBeenSet() const { return m_grantTypeHasBeenSet; }
+  inline void SetGrantType(GrantType value) {
+    m_grantTypeHasBeenSet = true;
+    m_grantType = value;
+  }
+  inline ReceivedMetadata& WithGrantType(GrantType value) {
+    SetGrantType(value);
+    return *this;
+  }
+  ///@}
  private:
   ReceivedStatus m_receivedStatus{ReceivedStatus::NOT_SET};
 
   Aws::String m_receivedStatusReason;
 
   Aws::Vector<AllowedOperation> m_allowedOperations;
+
+  GrantType m_grantType{GrantType::NOT_SET};
   bool m_receivedStatusHasBeenSet = false;
   bool m_receivedStatusReasonHasBeenSet = false;
   bool m_allowedOperationsHasBeenSet = false;
+  bool m_grantTypeHasBeenSet = false;
 };
 
 }  // namespace Model

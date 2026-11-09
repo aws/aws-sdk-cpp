@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/bedrock-agentcore-control/model/MatchModels.h>
 #include <aws/bedrock-agentcore-control/model/MatchPaths.h>
 #include <aws/bedrock-agentcore-control/model/MatchPrincipals.h>
 
@@ -22,7 +23,8 @@ namespace Model {
 
 /**
  * <p>A condition that determines when a gateway rule applies. Conditions can match
- * on principals or request paths.</p><p><h3>See Also:</h3>   <a
+ * on principals, request paths, or the requested model.</p><p><h3>See Also:</h3>
+ * <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/Condition">AWS
  * API Reference</a></p>
  */
@@ -69,12 +71,33 @@ class Condition {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A condition that matches on the model requested in an inference request.</p>
+   */
+  inline const MatchModels& GetMatchModels() const { return m_matchModels; }
+  inline bool MatchModelsHasBeenSet() const { return m_matchModelsHasBeenSet; }
+  template <typename MatchModelsT = MatchModels>
+  void SetMatchModels(MatchModelsT&& value) {
+    m_matchModelsHasBeenSet = true;
+    m_matchModels = std::forward<MatchModelsT>(value);
+  }
+  template <typename MatchModelsT = MatchModels>
+  Condition& WithMatchModels(MatchModelsT&& value) {
+    SetMatchModels(std::forward<MatchModelsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   MatchPrincipals m_matchPrincipals;
 
   MatchPaths m_matchPaths;
+
+  MatchModels m_matchModels;
   bool m_matchPrincipalsHasBeenSet = false;
   bool m_matchPathsHasBeenSet = false;
+  bool m_matchModelsHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -26,6 +26,10 @@ PutAccountPolicyResult& PutAccountPolicyResult::operator=(const Aws::AmazonWebSe
     m_accountPolicy = jsonValue.GetObject("accountPolicy");
     m_accountPolicyHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("dryRunResult")) {
+    m_dryRunResult = jsonValue.GetObject("dryRunResult");
+    m_dryRunResultHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

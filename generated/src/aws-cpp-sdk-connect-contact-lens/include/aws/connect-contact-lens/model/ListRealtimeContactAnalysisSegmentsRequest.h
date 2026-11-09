@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connect-contact-lens/ConnectContactLensRequest.h>
 #include <aws/connect-contact-lens/ConnectContactLens_EXPORTS.h>
+#include <aws/connect-contact-lens/model/RealTimeContactAnalysisSegmentsFilter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -98,6 +99,27 @@ class ListRealtimeContactAnalysisSegmentsRequest : public ConnectContactLensRequ
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A filter that limits the category segments returned by the operation. When
+   * provided, use <code>CategoriesAttributeFilter</code> to return only the category
+   * segments whose rules have tags that match the filter. This enforces tag-based
+   * access control on the categories that the caller can view.</p>
+   */
+  inline const RealTimeContactAnalysisSegmentsFilter& GetListFilter() const { return m_listFilter; }
+  inline bool ListFilterHasBeenSet() const { return m_listFilterHasBeenSet; }
+  template <typename ListFilterT = RealTimeContactAnalysisSegmentsFilter>
+  void SetListFilter(ListFilterT&& value) {
+    m_listFilterHasBeenSet = true;
+    m_listFilter = std::forward<ListFilterT>(value);
+  }
+  template <typename ListFilterT = RealTimeContactAnalysisSegmentsFilter>
+  ListRealtimeContactAnalysisSegmentsRequest& WithListFilter(ListFilterT&& value) {
+    SetListFilter(std::forward<ListFilterT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_instanceId;
 
@@ -106,10 +128,13 @@ class ListRealtimeContactAnalysisSegmentsRequest : public ConnectContactLensRequ
   int m_maxResults{0};
 
   Aws::String m_nextToken;
+
+  RealTimeContactAnalysisSegmentsFilter m_listFilter;
   bool m_instanceIdHasBeenSet = false;
   bool m_contactIdHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
+  bool m_listFilterHasBeenSet = false;
 };
 
 }  // namespace Model

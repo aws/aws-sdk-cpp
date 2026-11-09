@@ -131,9 +131,10 @@ class CreateKeyRequest : public KMSRequest {
    * asymmetric KMS keys with <code>ECC_SECG_P256K1</code> key pairs, specify
    * <code>SIGN_VERIFY</code>.</p> </li> <li> <p>For asymmetric KMS keys with ML-DSA
    * key pairs, specify <code>SIGN_VERIFY</code>.</p> </li> <li> <p>For asymmetric
-   * KMS keys with SM2 key pairs (China Regions only), specify
-   * <code>ENCRYPT_DECRYPT</code>, <code>SIGN_VERIFY</code>, or
-   * <code>KEY_AGREEMENT</code>.</p> </li> </ul>
+   * KMS keys with ML-KEM key pairs, specify
+   * <code>ENCAPSULATE_DECAPSULATE</code>.</p> </li> <li> <p>For asymmetric KMS keys
+   * with SM2 key pairs (China Regions only), specify <code>ENCRYPT_DECRYPT</code>,
+   * <code>SIGN_VERIFY</code>, or <code>KEY_AGREEMENT</code>.</p> </li> </ul>
    */
   inline KeyUsageType GetKeyUsage() const { return m_keyUsage; }
   inline bool KeyUsageHasBeenSet() const { return m_keyUsageHasBeenSet; }
@@ -199,9 +200,13 @@ class CreateKeyRequest : public KMSRequest {
    * cryptocurrencies.</p> </li> </ul> </li> <li> <p>Asymmetric ML-DSA key pairs
    * (signing and verification)</p> <ul> <li> <p> <code>ML_DSA_44</code> </p> </li>
    * <li> <p> <code>ML_DSA_65</code> </p> </li> <li> <p> <code>ML_DSA_87</code> </p>
-   * </li> </ul> </li> <li> <p>SM2 key pairs (encryption and decryption -or- signing
-   * and verification -or- deriving shared secrets)</p> <ul> <li> <p>
-   * <code>SM2</code> (China Regions only)</p> </li> </ul> </li> </ul>
+   * </li> </ul> </li> <li> <p>Asymmetric ML-KEM key pairs (establishing shared
+   * secrets)</p> <ul> <li> <p> <code>ML_KEM_512</code> </p> </li> <li> <p>
+   * <code>ML_KEM_768</code> </p> </li> <li> <p> <code>ML_KEM_1024</code> </p> </li>
+   * </ul> <p>The ML-KEM key specs are not available in China Regions.</p> </li> <li>
+   * <p>SM2 key pairs (encryption and decryption -or- signing and verification -or-
+   * deriving shared secrets)</p> <ul> <li> <p> <code>SM2</code> (China Regions
+   * only)</p> </li> </ul> </li> </ul>
    */
   inline KeySpec GetKeySpec() const { return m_keySpec; }
   inline bool KeySpecHasBeenSet() const { return m_keySpecHasBeenSet; }

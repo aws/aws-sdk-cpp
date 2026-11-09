@@ -92,6 +92,7 @@ static const int WALLET_ADDRESS_HASH = HashingUtils::HashString("WALLET_ADDRESS"
 static const int PRICE_AMOUNT_HASH = HashingUtils::HashString("PRICE_AMOUNT");
 static const int PAYMENT_NETWORK_HASH = HashingUtils::HashString("PAYMENT_NETWORK");
 static const int PRE_PARSE_TEXT_TRANSFORMATION_HASH = HashingUtils::HashString("PRE_PARSE_TEXT_TRANSFORMATION");
+static const int CHALLENGE_JAVASCRIPT_SDK_INJECTION_CONFIG_HASH = HashingUtils::HashString("CHALLENGE_JAVASCRIPT_SDK_INJECTION_CONFIG");
 
 ParameterExceptionField GetParameterExceptionFieldForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -249,6 +250,8 @@ ParameterExceptionField GetParameterExceptionFieldForName(const Aws::String& nam
     return ParameterExceptionField::PAYMENT_NETWORK;
   } else if (hashCode == PRE_PARSE_TEXT_TRANSFORMATION_HASH) {
     return ParameterExceptionField::PRE_PARSE_TEXT_TRANSFORMATION;
+  } else if (hashCode == CHALLENGE_JAVASCRIPT_SDK_INJECTION_CONFIG_HASH) {
+    return ParameterExceptionField::CHALLENGE_JAVASCRIPT_SDK_INJECTION_CONFIG;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -417,6 +420,8 @@ Aws::String GetNameForParameterExceptionField(ParameterExceptionField enumValue)
       return "PAYMENT_NETWORK";
     case ParameterExceptionField::PRE_PARSE_TEXT_TRANSFORMATION:
       return "PRE_PARSE_TEXT_TRANSFORMATION";
+    case ParameterExceptionField::CHALLENGE_JAVASCRIPT_SDK_INJECTION_CONFIG:
+      return "CHALLENGE_JAVASCRIPT_SDK_INJECTION_CONFIG";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

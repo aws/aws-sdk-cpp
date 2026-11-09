@@ -39,6 +39,11 @@ ListCallerAccessGrantsEntry& ListCallerAccessGrantsEntry::operator=(const XmlNod
       m_applicationArn = Aws::Utils::Xml::DecodeEscapedXmlText(applicationArnNode.GetText());
       m_applicationArnHasBeenSet = true;
     }
+    XmlNode accessGrantsInstanceArnNode = resultNode.FirstChild("AccessGrantsInstanceArn");
+    if (!accessGrantsInstanceArnNode.IsNull()) {
+      m_accessGrantsInstanceArn = Aws::Utils::Xml::DecodeEscapedXmlText(accessGrantsInstanceArnNode.GetText());
+      m_accessGrantsInstanceArnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -59,6 +64,11 @@ void ListCallerAccessGrantsEntry::AddToNode(XmlNode& parentNode) const {
   if (m_applicationArnHasBeenSet) {
     XmlNode applicationArnNode = parentNode.CreateChildElement("ApplicationArn");
     applicationArnNode.SetText(m_applicationArn);
+  }
+
+  if (m_accessGrantsInstanceArnHasBeenSet) {
+    XmlNode accessGrantsInstanceArnNode = parentNode.CreateChildElement("AccessGrantsInstanceArn");
+    accessGrantsInstanceArnNode.SetText(m_accessGrantsInstanceArn);
   }
 }
 

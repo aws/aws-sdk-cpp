@@ -11,6 +11,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/Tag.h>
 #include <aws/ec2/model/TransitGatewayAttachmentAssociation.h>
+#include <aws/ec2/model/TransitGatewayAttachmentNatGatewaySupportState.h>
 #include <aws/ec2/model/TransitGatewayAttachmentResourceType.h>
 #include <aws/ec2/model/TransitGatewayAttachmentState.h>
 
@@ -223,6 +224,23 @@ class TransitGatewayAttachment {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The state of NAT gateway support for the attachment. Only the owner of the
+   * transit gateway receives this parameter.</p>
+   */
+  inline TransitGatewayAttachmentNatGatewaySupportState GetNatGatewaySupport() const { return m_natGatewaySupport; }
+  inline bool NatGatewaySupportHasBeenSet() const { return m_natGatewaySupportHasBeenSet; }
+  inline void SetNatGatewaySupport(TransitGatewayAttachmentNatGatewaySupportState value) {
+    m_natGatewaySupportHasBeenSet = true;
+    m_natGatewaySupport = value;
+  }
+  inline TransitGatewayAttachment& WithNatGatewaySupport(TransitGatewayAttachmentNatGatewaySupportState value) {
+    SetNatGatewaySupport(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_transitGatewayAttachmentId;
 
@@ -243,6 +261,8 @@ class TransitGatewayAttachment {
   Aws::Utils::DateTime m_creationTime{};
 
   Aws::Vector<Tag> m_tags;
+
+  TransitGatewayAttachmentNatGatewaySupportState m_natGatewaySupport{TransitGatewayAttachmentNatGatewaySupportState::NOT_SET};
   bool m_transitGatewayAttachmentIdHasBeenSet = false;
   bool m_transitGatewayIdHasBeenSet = false;
   bool m_transitGatewayOwnerIdHasBeenSet = false;
@@ -253,6 +273,7 @@ class TransitGatewayAttachment {
   bool m_associationHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_natGatewaySupportHasBeenSet = false;
 };
 
 }  // namespace Model

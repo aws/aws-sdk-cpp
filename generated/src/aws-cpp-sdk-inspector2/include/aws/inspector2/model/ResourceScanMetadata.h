@@ -13,6 +13,7 @@
 #include <aws/inspector2/model/EcrContainerImageMetadata.h>
 #include <aws/inspector2/model/EcrRepositoryMetadata.h>
 #include <aws/inspector2/model/LambdaFunctionMetadata.h>
+#include <aws/inspector2/model/MachineImageMetadata.h>
 #include <aws/inspector2/model/ServerlessFunctionMetadata.h>
 #include <aws/inspector2/model/VmInstanceMetadata.h>
 
@@ -223,6 +224,24 @@ class ResourceScanMetadata {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The machine image metadata associated with a covered resource.</p>
+   */
+  inline const MachineImageMetadata& GetMachineImage() const { return m_machineImage; }
+  inline bool MachineImageHasBeenSet() const { return m_machineImageHasBeenSet; }
+  template <typename MachineImageT = MachineImageMetadata>
+  void SetMachineImage(MachineImageT&& value) {
+    m_machineImageHasBeenSet = true;
+    m_machineImage = std::forward<MachineImageT>(value);
+  }
+  template <typename MachineImageT = MachineImageMetadata>
+  ResourceScanMetadata& WithMachineImage(MachineImageT&& value) {
+    SetMachineImage(std::forward<MachineImageT>(value));
+    return *this;
+  }
+  ///@}
  private:
   EcrRepositoryMetadata m_ecrRepository;
 
@@ -243,6 +262,8 @@ class ResourceScanMetadata {
   ContainerRegistryMetadata m_containerRegistry;
 
   ServerlessFunctionMetadata m_serverlessFunction;
+
+  MachineImageMetadata m_machineImage;
   bool m_ecrRepositoryHasBeenSet = false;
   bool m_ecrImageHasBeenSet = false;
   bool m_ec2HasBeenSet = false;
@@ -253,6 +274,7 @@ class ResourceScanMetadata {
   bool m_containerRepositoryHasBeenSet = false;
   bool m_containerRegistryHasBeenSet = false;
   bool m_serverlessFunctionHasBeenSet = false;
+  bool m_machineImageHasBeenSet = false;
 };
 
 }  // namespace Model

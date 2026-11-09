@@ -21,6 +21,9 @@ static const int MISSING_PERMISSIONS_HASH = HashingUtils::HashString("MISSING_PE
 static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("INTERNAL_ERROR");
 static const int EDGE_LOCATION_PEER_DUPLICATE_HASH = HashingUtils::HashString("EDGE_LOCATION_PEER_DUPLICATE");
 static const int INVALID_TRANSIT_GATEWAY_STATE_HASH = HashingUtils::HashString("INVALID_TRANSIT_GATEWAY_STATE");
+static const int TRANSIT_GATEWAY_ENCRYPTION_NOT_SUPPORTED_HASH = HashingUtils::HashString("TRANSIT_GATEWAY_ENCRYPTION_NOT_SUPPORTED");
+static const int CREATION_FAILED_HASH = HashingUtils::HashString("CREATION_FAILED");
+static const int DELETION_FAILED_HASH = HashingUtils::HashString("DELETION_FAILED");
 
 PeeringErrorCode GetPeeringErrorCodeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -36,6 +39,12 @@ PeeringErrorCode GetPeeringErrorCodeForName(const Aws::String& name) {
     return PeeringErrorCode::EDGE_LOCATION_PEER_DUPLICATE;
   } else if (hashCode == INVALID_TRANSIT_GATEWAY_STATE_HASH) {
     return PeeringErrorCode::INVALID_TRANSIT_GATEWAY_STATE;
+  } else if (hashCode == TRANSIT_GATEWAY_ENCRYPTION_NOT_SUPPORTED_HASH) {
+    return PeeringErrorCode::TRANSIT_GATEWAY_ENCRYPTION_NOT_SUPPORTED;
+  } else if (hashCode == CREATION_FAILED_HASH) {
+    return PeeringErrorCode::CREATION_FAILED;
+  } else if (hashCode == DELETION_FAILED_HASH) {
+    return PeeringErrorCode::DELETION_FAILED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -62,6 +71,12 @@ Aws::String GetNameForPeeringErrorCode(PeeringErrorCode enumValue) {
       return "EDGE_LOCATION_PEER_DUPLICATE";
     case PeeringErrorCode::INVALID_TRANSIT_GATEWAY_STATE:
       return "INVALID_TRANSIT_GATEWAY_STATE";
+    case PeeringErrorCode::TRANSIT_GATEWAY_ENCRYPTION_NOT_SUPPORTED:
+      return "TRANSIT_GATEWAY_ENCRYPTION_NOT_SUPPORTED";
+    case PeeringErrorCode::CREATION_FAILED:
+      return "CREATION_FAILED";
+    case PeeringErrorCode::DELETION_FAILED:
+      return "DELETION_FAILED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -12,6 +12,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/FleetCapacityReservationTenancy.h>
 #include <aws/ec2/model/FleetInstanceMatchCriteria.h>
+#include <aws/ec2/model/InstanceRequirementsRequest.h>
 #include <aws/ec2/model/ReservationFleetInstanceSpecification.h>
 #include <aws/ec2/model/TagSpecification.h>
 
@@ -105,6 +106,60 @@ class CreateCapacityReservationFleetRequest : public EC2Request {
   CreateCapacityReservationFleetRequest& AddInstanceTypeSpecifications(InstanceTypeSpecificationsT&& value) {
     m_instanceTypeSpecificationsHasBeenSet = true;
     m_instanceTypeSpecifications.emplace_back(std::forward<InstanceTypeSpecificationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Reserved for internal use.</p>
+   */
+  inline const InstanceRequirementsRequest& GetInstanceRequirements() const { return m_instanceRequirements; }
+  inline bool InstanceRequirementsHasBeenSet() const { return m_instanceRequirementsHasBeenSet; }
+  template <typename InstanceRequirementsT = InstanceRequirementsRequest>
+  void SetInstanceRequirements(InstanceRequirementsT&& value) {
+    m_instanceRequirementsHasBeenSet = true;
+    m_instanceRequirements = std::forward<InstanceRequirementsT>(value);
+  }
+  template <typename InstanceRequirementsT = InstanceRequirementsRequest>
+  CreateCapacityReservationFleetRequest& WithInstanceRequirements(InstanceRequirementsT&& value) {
+    SetInstanceRequirements(std::forward<InstanceRequirementsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Reserved for internal use.</p>
+   */
+  inline const Aws::String& GetAvailabilityZone() const { return m_availabilityZone; }
+  inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
+  template <typename AvailabilityZoneT = Aws::String>
+  void SetAvailabilityZone(AvailabilityZoneT&& value) {
+    m_availabilityZoneHasBeenSet = true;
+    m_availabilityZone = std::forward<AvailabilityZoneT>(value);
+  }
+  template <typename AvailabilityZoneT = Aws::String>
+  CreateCapacityReservationFleetRequest& WithAvailabilityZone(AvailabilityZoneT&& value) {
+    SetAvailabilityZone(std::forward<AvailabilityZoneT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Reserved for internal use.</p>
+   */
+  inline const Aws::String& GetAvailabilityZoneId() const { return m_availabilityZoneId; }
+  inline bool AvailabilityZoneIdHasBeenSet() const { return m_availabilityZoneIdHasBeenSet; }
+  template <typename AvailabilityZoneIdT = Aws::String>
+  void SetAvailabilityZoneId(AvailabilityZoneIdT&& value) {
+    m_availabilityZoneIdHasBeenSet = true;
+    m_availabilityZoneId = std::forward<AvailabilityZoneIdT>(value);
+  }
+  template <typename AvailabilityZoneIdT = Aws::String>
+  CreateCapacityReservationFleetRequest& WithAvailabilityZoneId(AvailabilityZoneIdT&& value) {
+    SetAvailabilityZoneId(std::forward<AvailabilityZoneIdT>(value));
     return *this;
   }
   ///@}
@@ -250,6 +305,12 @@ class CreateCapacityReservationFleetRequest : public EC2Request {
 
   Aws::Vector<ReservationFleetInstanceSpecification> m_instanceTypeSpecifications;
 
+  InstanceRequirementsRequest m_instanceRequirements;
+
+  Aws::String m_availabilityZone;
+
+  Aws::String m_availabilityZoneId;
+
   FleetCapacityReservationTenancy m_tenancy{FleetCapacityReservationTenancy::NOT_SET};
 
   int m_totalTargetCapacity{0};
@@ -264,6 +325,9 @@ class CreateCapacityReservationFleetRequest : public EC2Request {
   bool m_allocationStrategyHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
   bool m_instanceTypeSpecificationsHasBeenSet = false;
+  bool m_instanceRequirementsHasBeenSet = false;
+  bool m_availabilityZoneHasBeenSet = false;
+  bool m_availabilityZoneIdHasBeenSet = false;
   bool m_tenancyHasBeenSet = false;
   bool m_totalTargetCapacityHasBeenSet = false;
   bool m_endDateHasBeenSet = false;

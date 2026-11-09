@@ -105,6 +105,13 @@ CoverageFilterCriteria& CoverageFilterCriteria::operator=(JsonView jsonValue) {
     }
     m_lambdaFunctionRuntimeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("machineImageTags")) {
+    Aws::Utils::Array<JsonView> machineImageTagsJsonList = jsonValue.GetArray("machineImageTags");
+    for (unsigned machineImageTagsIndex = 0; machineImageTagsIndex < machineImageTagsJsonList.GetLength(); ++machineImageTagsIndex) {
+      m_machineImageTags.push_back(machineImageTagsJsonList[machineImageTagsIndex].AsObject());
+    }
+    m_machineImageTagsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("lastScannedAt")) {
     Aws::Utils::Array<JsonView> lastScannedAtJsonList = jsonValue.GetArray("lastScannedAt");
     for (unsigned lastScannedAtIndex = 0; lastScannedAtIndex < lastScannedAtJsonList.GetLength(); ++lastScannedAtIndex) {
@@ -366,6 +373,14 @@ JsonValue CoverageFilterCriteria::Jsonize() const {
       lambdaFunctionRuntimeJsonList[lambdaFunctionRuntimeIndex].AsObject(m_lambdaFunctionRuntime[lambdaFunctionRuntimeIndex].Jsonize());
     }
     payload.WithArray("lambdaFunctionRuntime", std::move(lambdaFunctionRuntimeJsonList));
+  }
+
+  if (m_machineImageTagsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> machineImageTagsJsonList(m_machineImageTags.size());
+    for (unsigned machineImageTagsIndex = 0; machineImageTagsIndex < machineImageTagsJsonList.GetLength(); ++machineImageTagsIndex) {
+      machineImageTagsJsonList[machineImageTagsIndex].AsObject(m_machineImageTags[machineImageTagsIndex].Jsonize());
+    }
+    payload.WithArray("machineImageTags", std::move(machineImageTagsJsonList));
   }
 
   if (m_lastScannedAtHasBeenSet) {

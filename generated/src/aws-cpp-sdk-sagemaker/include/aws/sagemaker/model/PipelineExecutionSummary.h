@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/PipelineExecutionStatus.h>
 
@@ -139,6 +140,31 @@ class PipelineExecutionSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The aliases currently assigned to the pipeline version that the execution
+   * ran.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetPipelineVersionAliases() const { return m_pipelineVersionAliases; }
+  inline bool PipelineVersionAliasesHasBeenSet() const { return m_pipelineVersionAliasesHasBeenSet; }
+  template <typename PipelineVersionAliasesT = Aws::Vector<Aws::String>>
+  void SetPipelineVersionAliases(PipelineVersionAliasesT&& value) {
+    m_pipelineVersionAliasesHasBeenSet = true;
+    m_pipelineVersionAliases = std::forward<PipelineVersionAliasesT>(value);
+  }
+  template <typename PipelineVersionAliasesT = Aws::Vector<Aws::String>>
+  PipelineExecutionSummary& WithPipelineVersionAliases(PipelineVersionAliasesT&& value) {
+    SetPipelineVersionAliases(std::forward<PipelineVersionAliasesT>(value));
+    return *this;
+  }
+  template <typename PipelineVersionAliasesT = Aws::String>
+  PipelineExecutionSummary& AddPipelineVersionAliases(PipelineVersionAliasesT&& value) {
+    m_pipelineVersionAliasesHasBeenSet = true;
+    m_pipelineVersionAliases.emplace_back(std::forward<PipelineVersionAliasesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_pipelineExecutionArn;
 
@@ -151,12 +177,15 @@ class PipelineExecutionSummary {
   Aws::String m_pipelineExecutionDisplayName;
 
   Aws::String m_pipelineExecutionFailureReason;
+
+  Aws::Vector<Aws::String> m_pipelineVersionAliases;
   bool m_pipelineExecutionArnHasBeenSet = false;
   bool m_startTimeHasBeenSet = false;
   bool m_pipelineExecutionStatusHasBeenSet = false;
   bool m_pipelineExecutionDescriptionHasBeenSet = false;
   bool m_pipelineExecutionDisplayNameHasBeenSet = false;
   bool m_pipelineExecutionFailureReasonHasBeenSet = false;
+  bool m_pipelineVersionAliasesHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -23,12 +23,6 @@ class JsonValue;
 }  // namespace Utils
 namespace deadline {
 namespace Model {
-/**
- * <p>Shared pagination field for List operation outputs (nextToken).</p><p><h3>See
- * Also:</h3>   <a
- * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ListFarmsResponse">AWS
- * API Reference</a></p>
- */
 class ListFarmsResult {
  public:
   AWS_DEADLINE_API ListFarmsResult() = default;

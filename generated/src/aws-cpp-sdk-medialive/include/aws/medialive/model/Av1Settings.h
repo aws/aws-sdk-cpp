@@ -8,6 +8,7 @@
 #include <aws/medialive/model/AfdSignaling.h>
 #include <aws/medialive/model/Av1BitDepth.h>
 #include <aws/medialive/model/Av1ColorSpaceSettings.h>
+#include <aws/medialive/model/Av1FilterSettings.h>
 #include <aws/medialive/model/Av1GopSizeUnits.h>
 #include <aws/medialive/model/Av1Level.h>
 #include <aws/medialive/model/Av1LookAheadRateControl.h>
@@ -510,6 +511,24 @@ METADATA_OBU: Include timecodes. MediaLive inserts
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * Optional filters that you can apply to an encode.
+   */
+  inline const Av1FilterSettings& GetFilterSettings() const { return m_filterSettings; }
+  inline bool FilterSettingsHasBeenSet() const { return m_filterSettingsHasBeenSet; }
+  template <typename FilterSettingsT = Av1FilterSettings>
+  void SetFilterSettings(FilterSettingsT&& value) {
+    m_filterSettingsHasBeenSet = true;
+    m_filterSettings = std::forward<FilterSettingsT>(value);
+  }
+  template <typename FilterSettingsT = Av1FilterSettings>
+  Av1Settings& WithFilterSettings(FilterSettingsT&& value) {
+    SetFilterSettings(std::forward<FilterSettingsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   AfdSignaling m_afdSignaling{AfdSignaling::NOT_SET};
 
@@ -558,6 +577,8 @@ METADATA_OBU: Include timecodes. MediaLive inserts
   Av1TimecodeInsertionBehavior m_timecodeInsertion{Av1TimecodeInsertionBehavior::NOT_SET};
 
   Av1BitDepth m_bitDepth{Av1BitDepth::NOT_SET};
+
+  Av1FilterSettings m_filterSettings;
   bool m_afdSignalingHasBeenSet = false;
   bool m_bufSizeHasBeenSet = false;
   bool m_colorSpaceSettingsHasBeenSet = false;
@@ -582,6 +603,7 @@ METADATA_OBU: Include timecodes. MediaLive inserts
   bool m_temporalAqHasBeenSet = false;
   bool m_timecodeInsertionHasBeenSet = false;
   bool m_bitDepthHasBeenSet = false;
+  bool m_filterSettingsHasBeenSet = false;
 };
 
 }  // namespace Model

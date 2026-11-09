@@ -37,9 +37,8 @@ class SharePointClientCredentials {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS)
-   * key used to encrypt the SharePoint certificate credentials. This field is
-   * required.</p>
+   * <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used
+   * to encrypt the SharePoint certificate credentials. This field is required.</p>
    */
   inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
   inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }

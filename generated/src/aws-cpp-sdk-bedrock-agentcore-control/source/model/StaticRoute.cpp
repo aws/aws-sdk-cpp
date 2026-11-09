@@ -22,6 +22,14 @@ StaticRoute& StaticRoute::operator=(JsonView jsonValue) {
     m_targetName = jsonValue.GetString("targetName");
     m_targetNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("model")) {
+    m_model = jsonValue.GetString("model");
+    m_modelHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("fallback")) {
+    m_fallback = jsonValue.GetObject("fallback");
+    m_fallbackHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +38,14 @@ JsonValue StaticRoute::Jsonize() const {
 
   if (m_targetNameHasBeenSet) {
     payload.WithString("targetName", m_targetName);
+  }
+
+  if (m_modelHasBeenSet) {
+    payload.WithString("model", m_model);
+  }
+
+  if (m_fallbackHasBeenSet) {
+    payload.WithObject("fallback", m_fallback.Jsonize());
   }
 
   return payload;

@@ -148,6 +148,7 @@
 #include <aws/imagebuilder/model/ImageScanState.h>
 #include <aws/imagebuilder/model/ImageScanStatus.h>
 #include <aws/imagebuilder/model/ImageScanningConfiguration.h>
+#include <aws/imagebuilder/model/ImageScanningType.h>
 #include <aws/imagebuilder/model/ImageSource.h>
 #include <aws/imagebuilder/model/ImageState.h>
 #include <aws/imagebuilder/model/ImageStatus.h>
@@ -263,6 +264,7 @@
 #include <aws/imagebuilder/model/ListWorkflowsResult.h>
 #include <aws/imagebuilder/model/Logging.h>
 #include <aws/imagebuilder/model/MarketplaceResourceType.h>
+#include <aws/imagebuilder/model/MaximumSeverityLabel.h>
 #include <aws/imagebuilder/model/OnWorkflowFailure.h>
 #include <aws/imagebuilder/model/OutputResources.h>
 #include <aws/imagebuilder/model/Ownership.h>
@@ -296,6 +298,7 @@
 #include <aws/imagebuilder/model/RetryImageResult.h>
 #include <aws/imagebuilder/model/S3ExportConfiguration.h>
 #include <aws/imagebuilder/model/S3Logs.h>
+#include <aws/imagebuilder/model/ScanResultCondition.h>
 #include <aws/imagebuilder/model/Schedule.h>
 #include <aws/imagebuilder/model/SendWorkflowStepActionRequest.h>
 #include <aws/imagebuilder/model/SendWorkflowStepActionResult.h>

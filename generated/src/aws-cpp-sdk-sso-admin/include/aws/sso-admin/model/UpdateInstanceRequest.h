@@ -97,7 +97,7 @@ class UpdateInstanceRequest : public SSOAdminRequest {
    * value is <code>true </code>. After permission sets are enabled, they cannot be
    * disabled.</p>  <p>You can't set <code>EncryptionConfiguration</code> and
    * <code>PermissionSetsEnabled</code> in the same request. To configure both, make
-   * two separate <code>UpdateInstance</code> calls. These calls can be made in
+   * two separate <code>UpdateInstance</code> calls. You can make these calls in
    * parallel.</p>
    */
   inline bool GetPermissionSetsEnabled() const { return m_permissionSetsEnabled; }

@@ -162,8 +162,8 @@ class CoreNetworkChangeEventValues {
 
   ///@{
   /**
-   * <p>The names of the routing policies and other association details in the core
-   * network change values.</p>
+   * <p>The names of the routing policies and other association details in a core
+   * network change event.</p>
    */
   inline const Aws::Vector<RoutingPolicyAssociationDetail>& GetRoutingPolicyAssociationDetails() const {
     return m_routingPolicyAssociationDetails;

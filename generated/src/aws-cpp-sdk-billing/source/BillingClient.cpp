@@ -6,12 +6,17 @@
 #include <aws/billing/BillingClient.h>
 #include <aws/billing/BillingEndpointProvider.h>
 #include <aws/billing/BillingErrorMarshaller.h>
+#include <aws/billing/model/AssociateContractRequest.h>
 #include <aws/billing/model/AssociateSourceViewsRequest.h>
+#include <aws/billing/model/CancelContractualInvestmentAttestationRequest.h>
 #include <aws/billing/model/CreateBillingViewRequest.h>
+#include <aws/billing/model/CreateContractualInvestmentAttestationRequest.h>
 #include <aws/billing/model/DeleteBillingViewRequest.h>
+#include <aws/billing/model/DisassociateContractRequest.h>
 #include <aws/billing/model/DisassociateSourceViewsRequest.h>
 #include <aws/billing/model/GetBillingPreferencesRequest.h>
 #include <aws/billing/model/GetBillingViewRequest.h>
+#include <aws/billing/model/GetContractInformationRequest.h>
 #include <aws/billing/model/GetCreditAllocationHistoryRequest.h>
 #include <aws/billing/model/GetCreditsRequest.h>
 #include <aws/billing/model/GetEnterpriseSupportChargeSummaryRequest.h>
@@ -21,6 +26,10 @@
 #include <aws/billing/model/ListBillingViewsRequest.h>
 #include <aws/billing/model/ListBusinessSupportAccountChargesRequest.h>
 #include <aws/billing/model/ListBusinessSupportSubscriptionHistoryRequest.h>
+#include <aws/billing/model/ListContractsRequest.h>
+#include <aws/billing/model/ListContractualInvestmentAttestationsRequest.h>
+#include <aws/billing/model/ListContractualInvestmentSummariesRequest.h>
+#include <aws/billing/model/ListContractualInvestmentsRequest.h>
 #include <aws/billing/model/ListEnterpriseSupportLinkedAccountChargesRequest.h>
 #include <aws/billing/model/ListSourceViewsForBillingViewRequest.h>
 #include <aws/billing/model/ListTagsForResourceRequest.h>
@@ -195,10 +204,23 @@ BillingClient::InvokeOperationOutcome BillingClient::InvokeServiceOperation(cons
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
 }
 
+AssociateContractOutcome BillingClient::AssociateContract(const AssociateContractRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateContractOutcome(result.GetResultWithOwnership())
+                            : AssociateContractOutcome(std::move(result.GetError()));
+}
+
 AssociateSourceViewsOutcome BillingClient::AssociateSourceViews(const AssociateSourceViewsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? AssociateSourceViewsOutcome(result.GetResultWithOwnership())
                             : AssociateSourceViewsOutcome(std::move(result.GetError()));
+}
+
+CancelContractualInvestmentAttestationOutcome BillingClient::CancelContractualInvestmentAttestation(
+    const CancelContractualInvestmentAttestationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CancelContractualInvestmentAttestationOutcome(result.GetResultWithOwnership())
+                            : CancelContractualInvestmentAttestationOutcome(std::move(result.GetError()));
 }
 
 CreateBillingViewOutcome BillingClient::CreateBillingView(const CreateBillingViewRequest& request) const {
@@ -207,10 +229,23 @@ CreateBillingViewOutcome BillingClient::CreateBillingView(const CreateBillingVie
                             : CreateBillingViewOutcome(std::move(result.GetError()));
 }
 
+CreateContractualInvestmentAttestationOutcome BillingClient::CreateContractualInvestmentAttestation(
+    const CreateContractualInvestmentAttestationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateContractualInvestmentAttestationOutcome(result.GetResultWithOwnership())
+                            : CreateContractualInvestmentAttestationOutcome(std::move(result.GetError()));
+}
+
 DeleteBillingViewOutcome BillingClient::DeleteBillingView(const DeleteBillingViewRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteBillingViewOutcome(result.GetResultWithOwnership())
                             : DeleteBillingViewOutcome(std::move(result.GetError()));
+}
+
+DisassociateContractOutcome BillingClient::DisassociateContract(const DisassociateContractRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateContractOutcome(result.GetResultWithOwnership())
+                            : DisassociateContractOutcome(std::move(result.GetError()));
 }
 
 DisassociateSourceViewsOutcome BillingClient::DisassociateSourceViews(const DisassociateSourceViewsRequest& request) const {
@@ -228,6 +263,12 @@ GetBillingPreferencesOutcome BillingClient::GetBillingPreferences(const GetBilli
 GetBillingViewOutcome BillingClient::GetBillingView(const GetBillingViewRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetBillingViewOutcome(result.GetResultWithOwnership()) : GetBillingViewOutcome(std::move(result.GetError()));
+}
+
+GetContractInformationOutcome BillingClient::GetContractInformation(const GetContractInformationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetContractInformationOutcome(result.GetResultWithOwnership())
+                            : GetContractInformationOutcome(std::move(result.GetError()));
 }
 
 GetCreditAllocationHistoryOutcome BillingClient::GetCreditAllocationHistory(const GetCreditAllocationHistoryRequest& request) const {
@@ -285,6 +326,31 @@ ListBusinessSupportSubscriptionHistoryOutcome BillingClient::ListBusinessSupport
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListBusinessSupportSubscriptionHistoryOutcome(result.GetResultWithOwnership())
                             : ListBusinessSupportSubscriptionHistoryOutcome(std::move(result.GetError()));
+}
+
+ListContractsOutcome BillingClient::ListContracts(const ListContractsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListContractsOutcome(result.GetResultWithOwnership()) : ListContractsOutcome(std::move(result.GetError()));
+}
+
+ListContractualInvestmentAttestationsOutcome BillingClient::ListContractualInvestmentAttestations(
+    const ListContractualInvestmentAttestationsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListContractualInvestmentAttestationsOutcome(result.GetResultWithOwnership())
+                            : ListContractualInvestmentAttestationsOutcome(std::move(result.GetError()));
+}
+
+ListContractualInvestmentSummariesOutcome BillingClient::ListContractualInvestmentSummaries(
+    const ListContractualInvestmentSummariesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListContractualInvestmentSummariesOutcome(result.GetResultWithOwnership())
+                            : ListContractualInvestmentSummariesOutcome(std::move(result.GetError()));
+}
+
+ListContractualInvestmentsOutcome BillingClient::ListContractualInvestments(const ListContractualInvestmentsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListContractualInvestmentsOutcome(result.GetResultWithOwnership())
+                            : ListContractualInvestmentsOutcome(std::move(result.GetError()));
 }
 
 ListEnterpriseSupportLinkedAccountChargesOutcome BillingClient::ListEnterpriseSupportLinkedAccountCharges(

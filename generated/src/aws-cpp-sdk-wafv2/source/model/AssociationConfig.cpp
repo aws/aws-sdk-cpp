@@ -26,6 +26,15 @@ AssociationConfig& AssociationConfig::operator=(JsonView jsonValue) {
     }
     m_requestBodyHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ChallengeJavascriptSdkInjection")) {
+    Aws::Map<Aws::String, JsonView> challengeJavascriptSdkInjectionJsonMap =
+        jsonValue.GetObject("ChallengeJavascriptSdkInjection").GetAllObjects();
+    for (auto& challengeJavascriptSdkInjectionItem : challengeJavascriptSdkInjectionJsonMap) {
+      m_challengeJavascriptSdkInjection[AssociatedResourceTypeMapper::GetAssociatedResourceTypeForName(
+          challengeJavascriptSdkInjectionItem.first)] = challengeJavascriptSdkInjectionItem.second.AsObject();
+    }
+    m_challengeJavascriptSdkInjectionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -39,6 +48,16 @@ JsonValue AssociationConfig::Jsonize() const {
                                     requestBodyItem.second.Jsonize());
     }
     payload.WithObject("RequestBody", std::move(requestBodyJsonMap));
+  }
+
+  if (m_challengeJavascriptSdkInjectionHasBeenSet) {
+    JsonValue challengeJavascriptSdkInjectionJsonMap;
+    for (auto& challengeJavascriptSdkInjectionItem : m_challengeJavascriptSdkInjection) {
+      challengeJavascriptSdkInjectionJsonMap.WithObject(
+          AssociatedResourceTypeMapper::GetNameForAssociatedResourceType(challengeJavascriptSdkInjectionItem.first),
+          challengeJavascriptSdkInjectionItem.second.Jsonize());
+    }
+    payload.WithObject("ChallengeJavascriptSdkInjection", std::move(challengeJavascriptSdkInjectionJsonMap));
   }
 
   return payload;

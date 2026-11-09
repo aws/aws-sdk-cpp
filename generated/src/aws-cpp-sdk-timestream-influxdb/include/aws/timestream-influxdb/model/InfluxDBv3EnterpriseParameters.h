@@ -773,56 +773,6 @@ class InfluxDBv3EnterpriseParameters {
 
   ///@{
   /**
-   * <p>Specifies number of instances in the DbCluster which can both ingest and
-   * query.</p>
-   */
-  inline int GetIngestQueryInstances() const { return m_ingestQueryInstances; }
-  inline bool IngestQueryInstancesHasBeenSet() const { return m_ingestQueryInstancesHasBeenSet; }
-  inline void SetIngestQueryInstances(int value) {
-    m_ingestQueryInstancesHasBeenSet = true;
-    m_ingestQueryInstances = value;
-  }
-  inline InfluxDBv3EnterpriseParameters& WithIngestQueryInstances(int value) {
-    SetIngestQueryInstances(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Specifies number of instances in the DbCluster which can only query.</p>
-   */
-  inline int GetQueryOnlyInstances() const { return m_queryOnlyInstances; }
-  inline bool QueryOnlyInstancesHasBeenSet() const { return m_queryOnlyInstancesHasBeenSet; }
-  inline void SetQueryOnlyInstances(int value) {
-    m_queryOnlyInstancesHasBeenSet = true;
-    m_queryOnlyInstances = value;
-  }
-  inline InfluxDBv3EnterpriseParameters& WithQueryOnlyInstances(int value) {
-    SetQueryOnlyInstances(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Specifies if the compactor instance should be a standalone instance or
-   * not.</p>
-   */
-  inline bool GetDedicatedCompactor() const { return m_dedicatedCompactor; }
-  inline bool DedicatedCompactorHasBeenSet() const { return m_dedicatedCompactorHasBeenSet; }
-  inline void SetDedicatedCompactor(bool value) {
-    m_dedicatedCompactorHasBeenSet = true;
-    m_dedicatedCompactor = value;
-  }
-  inline InfluxDBv3EnterpriseParameters& WithDedicatedCompactor(bool value) {
-    SetDedicatedCompactor(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Specifies the soft limit for the number of rows per file that the compactor
    * writes. The compactor may write more rows than this limit.</p> <p>Default:
    * 1000000</p>
@@ -1167,12 +1117,6 @@ class InfluxDBv3EnterpriseParameters {
 
   Aws::String m_pluginRepositorySecretArn;
 
-  int m_ingestQueryInstances{0};
-
-  int m_queryOnlyInstances{0};
-
-  bool m_dedicatedCompactor{false};
-
   int m_compactionRowLimit{0};
 
   int m_compactionMaxNumFilesPerPlan{0};
@@ -1241,9 +1185,6 @@ class InfluxDBv3EnterpriseParameters {
   bool m_hardDeleteDefaultDurationHasBeenSet = false;
   bool m_pluginRepositoryUrlHasBeenSet = false;
   bool m_pluginRepositorySecretArnHasBeenSet = false;
-  bool m_ingestQueryInstancesHasBeenSet = false;
-  bool m_queryOnlyInstancesHasBeenSet = false;
-  bool m_dedicatedCompactorHasBeenSet = false;
   bool m_compactionRowLimitHasBeenSet = false;
   bool m_compactionMaxNumFilesPerPlanHasBeenSet = false;
   bool m_compactionGen2DurationHasBeenSet = false;

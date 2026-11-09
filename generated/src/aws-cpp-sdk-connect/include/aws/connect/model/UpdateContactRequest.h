@@ -7,6 +7,7 @@
 #include <aws/connect/ConnectRequest.h>
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/Endpoint.h>
+#include <aws/connect/model/NullableAdditionalRecipients.h>
 #include <aws/connect/model/QueueInfoInput.h>
 #include <aws/connect/model/Reference.h>
 #include <aws/connect/model/SegmentAttributeValue.h>
@@ -220,7 +221,9 @@ class UpdateContactRequest : public ConnectRequest {
    * <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Connect
    * Customer Contact Lens integration</a> in the <i>Connect Customer Administrator
-   * Guide</i>.</p>
+   * Guide</i>. For email contacts with an <code>OUTBOUND</code> or
+   * <code>AGENT_REPLY</code> initiation method, this value can be updated while the
+   * outbound email is still a draft, before you send it.</p>
    */
   inline const Endpoint& GetCustomerEndpoint() const { return m_customerEndpoint; }
   inline bool CustomerEndpointHasBeenSet() const { return m_customerEndpointHasBeenSet; }
@@ -244,7 +247,9 @@ class UpdateContactRequest : public ConnectRequest {
    * information, see <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-integration.html">Connect
    * Customer Contact Lens integration</a> in the <i>Connect Customer Administrator
-   * Guide</i>.</p>
+   * Guide</i>. For email contacts with an <code>OUTBOUND</code> or
+   * <code>AGENT_REPLY</code> initiation method, this value can be updated while the
+   * outbound email is still a draft, before you send it.</p>
    */
   inline const Endpoint& GetSystemEndpoint() const { return m_systemEndpoint; }
   inline bool SystemEndpointHasBeenSet() const { return m_systemEndpointHasBeenSet; }
@@ -256,6 +261,26 @@ class UpdateContactRequest : public ConnectRequest {
   template <typename SystemEndpointT = Endpoint>
   UpdateContactRequest& WithSystemEndpoint(SystemEndpointT&& value) {
     SetSystemEndpoint(std::forward<SystemEndpointT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The additional recipients of an outbound email. Use this field to update the
+   * CC email address recipients of a contact. An empty list clears the existing CC
+   * recipients.</p>
+   */
+  inline const NullableAdditionalRecipients& GetAdditionalRecipients() const { return m_additionalRecipients; }
+  inline bool AdditionalRecipientsHasBeenSet() const { return m_additionalRecipientsHasBeenSet; }
+  template <typename AdditionalRecipientsT = NullableAdditionalRecipients>
+  void SetAdditionalRecipients(AdditionalRecipientsT&& value) {
+    m_additionalRecipientsHasBeenSet = true;
+    m_additionalRecipients = std::forward<AdditionalRecipientsT>(value);
+  }
+  template <typename AdditionalRecipientsT = NullableAdditionalRecipients>
+  UpdateContactRequest& WithAdditionalRecipients(AdditionalRecipientsT&& value) {
+    SetAdditionalRecipients(std::forward<AdditionalRecipientsT>(value));
     return *this;
   }
   ///@}
@@ -279,6 +304,8 @@ class UpdateContactRequest : public ConnectRequest {
   Endpoint m_customerEndpoint;
 
   Endpoint m_systemEndpoint;
+
+  NullableAdditionalRecipients m_additionalRecipients;
   bool m_instanceIdHasBeenSet = false;
   bool m_contactIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
@@ -289,6 +316,7 @@ class UpdateContactRequest : public ConnectRequest {
   bool m_userInfoHasBeenSet = false;
   bool m_customerEndpointHasBeenSet = false;
   bool m_systemEndpointHasBeenSet = false;
+  bool m_additionalRecipientsHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -254,8 +254,8 @@ class UpdateImagePipelineRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>Contains settings for vulnerability scans that Amazon Inspector runs against
-   * the test instance during image creation.</p>
+   * <p>The updated settings that determine whether and how Amazon Inspector scans
+   * the images that this pipeline creates.</p>
    */
   inline const ImageScanningConfiguration& GetImageScanningConfiguration() const { return m_imageScanningConfiguration; }
   inline bool ImageScanningConfigurationHasBeenSet() const { return m_imageScanningConfigurationHasBeenSet; }

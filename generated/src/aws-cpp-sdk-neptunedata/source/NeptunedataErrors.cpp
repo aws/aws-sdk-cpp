@@ -9,6 +9,7 @@
 #include <aws/neptunedata/model/AccessDeniedException.h>
 #include <aws/neptunedata/model/BadRequestException.h>
 #include <aws/neptunedata/model/BulkLoadIdNotFoundException.h>
+#include <aws/neptunedata/model/CancelledByMaintenanceException.h>
 #include <aws/neptunedata/model/CancelledByUserException.h>
 #include <aws/neptunedata/model/ClientTimeoutException.h>
 #include <aws/neptunedata/model/ConcurrentModificationException.h>
@@ -32,6 +33,7 @@
 #include <aws/neptunedata/model/QueryLimitException.h>
 #include <aws/neptunedata/model/QueryTooLargeException.h>
 #include <aws/neptunedata/model/ReadOnlyViolationException.h>
+#include <aws/neptunedata/model/ResourceNotFoundException.h>
 #include <aws/neptunedata/model/S3Exception.h>
 #include <aws/neptunedata/model/ServerShutdownException.h>
 #include <aws/neptunedata/model/StatisticsNotAvailableException.h>
@@ -40,6 +42,7 @@
 #include <aws/neptunedata/model/TimeLimitExceededException.h>
 #include <aws/neptunedata/model/TooManyRequestsException.h>
 #include <aws/neptunedata/model/UnsupportedOperationException.h>
+#include <aws/neptunedata/model/ValidationException.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
@@ -48,6 +51,12 @@ using namespace Aws::neptunedata::Model;
 
 namespace Aws {
 namespace neptunedata {
+template <>
+AWS_NEPTUNEDATA_API CancelledByMaintenanceException NeptunedataError::GetModeledError() {
+  assert(this->GetErrorType() == NeptunedataErrors::CANCELLED_BY_MAINTENANCE);
+  return CancelledByMaintenanceException(this->GetJsonPayload().View());
+}
+
 template <>
 AWS_NEPTUNEDATA_API QueryLimitExceededException NeptunedataError::GetModeledError() {
   assert(this->GetErrorType() == NeptunedataErrors::QUERY_LIMIT_EXCEEDED);
@@ -58,6 +67,18 @@ template <>
 AWS_NEPTUNEDATA_API ExpiredStreamException NeptunedataError::GetModeledError() {
   assert(this->GetErrorType() == NeptunedataErrors::EXPIRED_STREAM);
   return ExpiredStreamException(this->GetJsonPayload().View());
+}
+
+template <>
+AWS_NEPTUNEDATA_API ResourceNotFoundException NeptunedataError::GetModeledError() {
+  assert(this->GetErrorType() == NeptunedataErrors::RESOURCE_NOT_FOUND);
+  return ResourceNotFoundException(this->GetJsonPayload().View());
+}
+
+template <>
+AWS_NEPTUNEDATA_API ValidationException NeptunedataError::GetModeledError() {
+  assert(this->GetErrorType() == NeptunedataErrors::VALIDATION);
+  return ValidationException(this->GetJsonPayload().View());
 }
 
 template <>
@@ -181,15 +202,15 @@ AWS_NEPTUNEDATA_API ClientTimeoutException NeptunedataError::GetModeledError() {
 }
 
 template <>
-AWS_NEPTUNEDATA_API StatisticsNotAvailableException NeptunedataError::GetModeledError() {
-  assert(this->GetErrorType() == NeptunedataErrors::STATISTICS_NOT_AVAILABLE);
-  return StatisticsNotAvailableException(this->GetJsonPayload().View());
-}
-
-template <>
 AWS_NEPTUNEDATA_API MethodNotAllowedException NeptunedataError::GetModeledError() {
   assert(this->GetErrorType() == NeptunedataErrors::METHOD_NOT_ALLOWED);
   return MethodNotAllowedException(this->GetJsonPayload().View());
+}
+
+template <>
+AWS_NEPTUNEDATA_API StatisticsNotAvailableException NeptunedataError::GetModeledError() {
+  assert(this->GetErrorType() == NeptunedataErrors::STATISTICS_NOT_AVAILABLE);
+  return StatisticsNotAvailableException(this->GetJsonPayload().View());
 }
 
 template <>
@@ -254,6 +275,7 @@ AWS_NEPTUNEDATA_API FailureByQueryException NeptunedataError::GetModeledError() 
 
 namespace NeptunedataErrorMapper {
 
+static const int CANCELLED_BY_MAINTENANCE_HASH = HashingUtils::HashString("CancelledByMaintenanceException");
 static const int QUERY_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("QueryLimitExceededException");
 static const int EXPIRED_STREAM_HASH = HashingUtils::HashString("ExpiredStreamException");
 static const int QUERY_LIMIT_HASH = HashingUtils::HashString("QueryLimitException");
@@ -275,8 +297,8 @@ static const int MALFORMED_QUERY_HASH = HashingUtils::HashString("MalformedQuery
 static const int QUERY_TOO_LARGE_HASH = HashingUtils::HashString("QueryTooLargeException");
 static const int READ_ONLY_VIOLATION_HASH = HashingUtils::HashString("ReadOnlyViolationException");
 static const int CLIENT_TIMEOUT_HASH = HashingUtils::HashString("ClientTimeoutException");
-static const int STATISTICS_NOT_AVAILABLE_HASH = HashingUtils::HashString("StatisticsNotAvailableException");
 static const int METHOD_NOT_ALLOWED_HASH = HashingUtils::HashString("MethodNotAllowedException");
+static const int STATISTICS_NOT_AVAILABLE_HASH = HashingUtils::HashString("StatisticsNotAvailableException");
 static const int MEMORY_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("MemoryLimitExceededException");
 static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
 static const int M_L_RESOURCE_NOT_FOUND_HASH = HashingUtils::HashString("MLResourceNotFoundException");
@@ -288,7 +310,9 @@ static const int FAILURE_BY_QUERY_HASH = HashingUtils::HashString("FailureByQuer
 AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == QUERY_LIMIT_EXCEEDED_HASH) {
+  if (hashCode == CANCELLED_BY_MAINTENANCE_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::CANCELLED_BY_MAINTENANCE), RetryableType::RETRYABLE);
+  } else if (hashCode == QUERY_LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::QUERY_LIMIT_EXCEEDED), RetryableType::RETRYABLE);
   } else if (hashCode == EXPIRED_STREAM_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::EXPIRED_STREAM), RetryableType::NOT_RETRYABLE);
@@ -330,10 +354,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::READ_ONLY_VIOLATION), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == CLIENT_TIMEOUT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::CLIENT_TIMEOUT), RetryableType::RETRYABLE);
-  } else if (hashCode == STATISTICS_NOT_AVAILABLE_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::STATISTICS_NOT_AVAILABLE), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == METHOD_NOT_ALLOWED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::METHOD_NOT_ALLOWED), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == STATISTICS_NOT_AVAILABLE_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::STATISTICS_NOT_AVAILABLE), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == MEMORY_LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::MEMORY_LIMIT_EXCEEDED), RetryableType::RETRYABLE);
   } else if (hashCode == TOO_MANY_REQUESTS_HASH) {

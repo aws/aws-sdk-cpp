@@ -21,6 +21,7 @@ static const int APPROVED_HASH = HashingUtils::HashString("APPROVED");
 static const int REJECTED_HASH = HashingUtils::HashString("REJECTED");
 static const int PROCESSING_HASH = HashingUtils::HashString("PROCESSING");
 static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+static const int DRAFTING_HASH = HashingUtils::HashString("DRAFTING");
 
 ReferenceStatus GetReferenceStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -36,6 +37,8 @@ ReferenceStatus GetReferenceStatusForName(const Aws::String& name) {
     return ReferenceStatus::PROCESSING;
   } else if (hashCode == FAILED_HASH) {
     return ReferenceStatus::FAILED;
+  } else if (hashCode == DRAFTING_HASH) {
+    return ReferenceStatus::DRAFTING;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -62,6 +65,8 @@ Aws::String GetNameForReferenceStatus(ReferenceStatus enumValue) {
       return "PROCESSING";
     case ReferenceStatus::FAILED:
       return "FAILED";
+    case ReferenceStatus::DRAFTING:
+      return "DRAFTING";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

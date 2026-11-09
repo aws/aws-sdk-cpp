@@ -85,7 +85,7 @@ class CreateDesignationRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The Cedar permit policy that defines what actions holders of this designation
+   * <p>The Cedar permit policy that defines the actions holders of this designation
    * are allowed to perform.</p>
    */
   inline const Aws::String& GetPolicy() const { return m_policy; }
@@ -104,8 +104,10 @@ class CreateDesignationRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>Whether deletion protection is enabled for this designation. Defaults to true
-   * when omitted.</p>
+   * <p>Specifies whether deletion protection is enabled for this designation.
+   * Defaults to <code>true</code> when omitted. When enabled,
+   * <code>DeleteDesignation</code> is rejected until protection is disabled through
+   * <code>UpdateDesignation</code>.</p>
    */
   inline bool GetDeletionProtection() const { return m_deletionProtection; }
   inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }

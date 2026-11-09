@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/opensearch/OpenSearchService_EXPORTS.h>
 #include <aws/opensearch/model/ChangeProgressDetails.h>
+#include <aws/opensearch/model/DeploymentStrategyOverrideOptions.h>
 
 #include <utility>
 
@@ -126,6 +127,23 @@ class UpgradeDomainResult {
 
   ///@{
   /**
+   * <p>The deployment strategy override used for the upgrade.</p>
+   */
+  inline const DeploymentStrategyOverrideOptions& GetDeploymentStrategyOptions() const { return m_deploymentStrategyOptions; }
+  template <typename DeploymentStrategyOptionsT = DeploymentStrategyOverrideOptions>
+  void SetDeploymentStrategyOptions(DeploymentStrategyOptionsT&& value) {
+    m_deploymentStrategyOptionsHasBeenSet = true;
+    m_deploymentStrategyOptions = std::forward<DeploymentStrategyOptionsT>(value);
+  }
+  template <typename DeploymentStrategyOptionsT = DeploymentStrategyOverrideOptions>
+  UpgradeDomainResult& WithDeploymentStrategyOptions(DeploymentStrategyOptionsT&& value) {
+    SetDeploymentStrategyOptions(std::forward<DeploymentStrategyOptionsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Container for information about a configuration change happening on a
    * domain.</p>
    */
@@ -169,6 +187,8 @@ class UpgradeDomainResult {
 
   Aws::Map<Aws::String, Aws::String> m_advancedOptions;
 
+  DeploymentStrategyOverrideOptions m_deploymentStrategyOptions;
+
   ChangeProgressDetails m_changeProgressDetails;
 
   Aws::String m_requestId;
@@ -178,6 +198,7 @@ class UpgradeDomainResult {
   bool m_targetVersionHasBeenSet = false;
   bool m_performCheckOnlyHasBeenSet = false;
   bool m_advancedOptionsHasBeenSet = false;
+  bool m_deploymentStrategyOptionsHasBeenSet = false;
   bool m_changeProgressDetailsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

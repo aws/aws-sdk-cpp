@@ -20,11 +20,9 @@ namespace Signin {
 namespace Model {
 
 /**
- * <p>Request body payload for CreateOAuth2Token operation</p> <p>The operation
- * type is determined by the grant_type parameter:</p> <ul>
- * <li>grant_type=authorization_code: Requires code, redirect_uri,
- * code_verifier</li> <li>grant_type=refresh_token: Requires refresh_token</li>
- * </ul><p><h3>See Also:</h3>   <a
+ * <p>The request body for creating an OAuth 2.0 token. Supports both the
+ * authorization code and refresh token flows, selected by the
+ * &quot;grant_type&quot; parameter.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/signin-2023-01-01/CreateOAuth2TokenRequestBody">AWS
  * API Reference</a></p>
  */
@@ -37,8 +35,9 @@ class CreateOAuth2TokenRequestBody {
 
   ///@{
   /**
-   * <p>The client identifier (ARN) used during Sign-In onboarding Required for both
-   * authorization code and refresh token flows</p>
+   * <p>The OAuth 2.0 client identifier. Expected values:
+   * &quot;arn:aws:signin:::devtools/same-device&quot; or
+   * &quot;arn:aws:signin:::devtools/cross-device&quot;.</p>
    */
   inline const Aws::String& GetClientId() const { return m_clientId; }
   inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
@@ -56,8 +55,10 @@ class CreateOAuth2TokenRequestBody {
 
   ///@{
   /**
-   * <p>OAuth 2.0 grant type - determines which flow is used Must be
-   * &quot;authorization_code&quot; or &quot;refresh_token&quot;</p>
+   * <p>The OAuth 2.0 grant type. Supported values:</p> <ul>
+   * <li>&quot;authorization_code&quot; - Exchange an authorization code for
+   * tokens.</li> <li>&quot;refresh_token&quot; - Use a refresh token to obtain a new
+   * access token.</li> </ul>
    */
   inline const Aws::String& GetGrantType() const { return m_grantType; }
   inline bool GrantTypeHasBeenSet() const { return m_grantTypeHasBeenSet; }
@@ -75,8 +76,8 @@ class CreateOAuth2TokenRequestBody {
 
   ///@{
   /**
-   * <p>The authorization code received from /v1/authorize Required only when
-   * grant_type=authorization_code</p>
+   * <p>The authorization code received from the &quot;/v1/authorize&quot; endpoint.
+   * Required when &quot;grant_type=authorization_code&quot;.</p>
    */
   inline const Aws::String& GetCode() const { return m_code; }
   inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
@@ -94,8 +95,8 @@ class CreateOAuth2TokenRequestBody {
 
   ///@{
   /**
-   * <p>The redirect URI that must match the original authorization request Required
-   * only when grant_type=authorization_code</p>
+   * <p>The redirect URI that was used in the original authorization request. Must
+   * match exactly. Required when &quot;grant_type=authorization_code&quot;.</p>
    */
   inline const Aws::String& GetRedirectUri() const { return m_redirectUri; }
   inline bool RedirectUriHasBeenSet() const { return m_redirectUriHasBeenSet; }
@@ -113,8 +114,8 @@ class CreateOAuth2TokenRequestBody {
 
   ///@{
   /**
-   * <p>PKCE code verifier to prove possession of the original code challenge
-   * Required only when grant_type=authorization_code</p>
+   * <p>The PKCE code verifier that proves possession of the original code challenge.
+   * Required when &quot;grant_type=authorization_code&quot;.</p>
    */
   inline const Aws::String& GetCodeVerifier() const { return m_codeVerifier; }
   inline bool CodeVerifierHasBeenSet() const { return m_codeVerifierHasBeenSet; }
@@ -132,8 +133,8 @@ class CreateOAuth2TokenRequestBody {
 
   ///@{
   /**
-   * <p>The refresh token returned from auth_code redemption Required only when
-   * grant_type=refresh_token</p>
+   * <p>The refresh token issued by a previous token response. Required when
+   * &quot;grant_type=refresh_token&quot;.</p>
    */
   inline const Aws::String& GetRefreshToken() const { return m_refreshToken; }
   inline bool RefreshTokenHasBeenSet() const { return m_refreshTokenHasBeenSet; }

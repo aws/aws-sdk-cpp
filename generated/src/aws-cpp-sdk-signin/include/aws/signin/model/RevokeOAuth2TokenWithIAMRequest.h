@@ -40,8 +40,8 @@ class RevokeOAuth2TokenWithIAMRequest : public SigninRequest {
 
   ///@{
   /**
-   * <p>The refresh_token to revoke. Must be a refresh_token issued by AWS Sign-In
-   * (prefix &quot;ASOR&quot;); access_tokens are not accepted for revocation.</p>
+   * <p>The refresh token to revoke. Must be a refresh token issued by AWS Sign-In.
+   * Access tokens are not accepted for revocation.</p>
    */
   inline const Aws::String& GetToken() const { return m_token; }
   inline bool TokenHasBeenSet() const { return m_tokenHasBeenSet; }

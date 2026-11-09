@@ -20,7 +20,10 @@ static const int CREATING_HASH = HashingUtils::HashString("CREATING");
 static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
 static const int DELETING_HASH = HashingUtils::HashString("DELETING");
 static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+static const int PAUSED_HASH = HashingUtils::HashString("PAUSED");
 static const int RESTARTING_HASH = HashingUtils::HashString("RESTARTING");
+static const int PAUSING_HASH = HashingUtils::HashString("PAUSING");
+static const int RESUMING_HASH = HashingUtils::HashString("RESUMING");
 
 ConnectorState GetConnectorStateForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -34,8 +37,14 @@ ConnectorState GetConnectorStateForName(const Aws::String& name) {
     return ConnectorState::DELETING;
   } else if (hashCode == FAILED_HASH) {
     return ConnectorState::FAILED;
+  } else if (hashCode == PAUSED_HASH) {
+    return ConnectorState::PAUSED;
   } else if (hashCode == RESTARTING_HASH) {
     return ConnectorState::RESTARTING;
+  } else if (hashCode == PAUSING_HASH) {
+    return ConnectorState::PAUSING;
+  } else if (hashCode == RESUMING_HASH) {
+    return ConnectorState::RESUMING;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -60,8 +69,14 @@ Aws::String GetNameForConnectorState(ConnectorState enumValue) {
       return "DELETING";
     case ConnectorState::FAILED:
       return "FAILED";
+    case ConnectorState::PAUSED:
+      return "PAUSED";
     case ConnectorState::RESTARTING:
       return "RESTARTING";
+    case ConnectorState::PAUSING:
+      return "PAUSING";
+    case ConnectorState::RESUMING:
+      return "RESUMING";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

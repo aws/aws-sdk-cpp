@@ -55,6 +55,12 @@ void GetDataAccessRequest::AddQueryStringParameters(URI& uri) const {
     uri.AddQueryStringParameter("auditContext", ss.str());
     ss.str("");
   }
+
+  if (m_instanceScopeHasBeenSet) {
+    ss << InstanceScopeMapper::GetNameForInstanceScope(m_instanceScope);
+    uri.AddQueryStringParameter("instanceScope", ss.str());
+    ss.str("");
+  }
 }
 
 Aws::Http::HeaderValueCollection GetDataAccessRequest::GetRequestSpecificHeaders() const {

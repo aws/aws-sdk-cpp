@@ -74,7 +74,11 @@ class HostInfoForCreate {
 
   ///@{
   /**
-   * <p>The EC2 instance type that represents the host.</p>
+   * <p>The EC2 instance type that represents the host.</p>  <p>With VCF 5.2.x,
+   * you can use only the <code>i4i.metal</code>, <code>i7i.metal-24xl</code>, and
+   * <code>i7i.metal-48xl</code> instance types. All of these instance types are
+   * supported with <code>vcfVersion</code> set to <code>SELF_DEPLOYED</code>.</p>
+   *
    */
   inline InstanceType GetInstanceType() const { return m_instanceType; }
   inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }

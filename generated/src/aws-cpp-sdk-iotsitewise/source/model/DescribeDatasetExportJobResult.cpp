@@ -30,6 +30,10 @@ DescribeDatasetExportJobResult& DescribeDatasetExportJobResult::operator=(const 
     m_workspaceName = jsonValue.GetString("workspaceName");
     m_workspaceNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("jobName")) {
+    m_jobName = jsonValue.GetString("jobName");
+    m_jobNameHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("status")) {
     m_status = DatasetExportJobStatusMapper::GetDatasetExportJobStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;

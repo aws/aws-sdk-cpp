@@ -37,6 +37,7 @@
 #include <aws/taxsettings/model/CanadaAdditionalInfo.h>
 #include <aws/taxsettings/model/ChileAdditionalInfo.h>
 #include <aws/taxsettings/model/ChileDocumentType.h>
+#include <aws/taxsettings/model/ColombiaAdditionalInfo.h>
 #include <aws/taxsettings/model/ConflictException.h>
 #include <aws/taxsettings/model/CustomerType.h>
 #include <aws/taxsettings/model/DeleteSupplementalTaxRegistrationRequest.h>
@@ -50,6 +51,7 @@
 #include <aws/taxsettings/model/ExemptionCertificate.h>
 #include <aws/taxsettings/model/FranceAdditionalInfo.h>
 #include <aws/taxsettings/model/GeorgiaAdditionalInfo.h>
+#include <aws/taxsettings/model/GermanyAdditionalInfo.h>
 #include <aws/taxsettings/model/GetTaxExemptionTypesRequest.h>
 #include <aws/taxsettings/model/GetTaxExemptionTypesResult.h>
 #include <aws/taxsettings/model/GetTaxInheritanceRequest.h>
@@ -82,6 +84,7 @@
 #include <aws/taxsettings/model/ListTaxRegistrationsResult.h>
 #include <aws/taxsettings/model/MalaysiaAdditionalInfo.h>
 #include <aws/taxsettings/model/MalaysiaServiceTaxCode.h>
+#include <aws/taxsettings/model/MexicoAdditionalInfo.h>
 #include <aws/taxsettings/model/MonacoAdditionalInfo.h>
 #include <aws/taxsettings/model/PersonType.h>
 #include <aws/taxsettings/model/PhilippinesAdditionalInfo.h>
@@ -118,6 +121,7 @@
 #include <aws/taxsettings/model/TaxRegistrationEntry.h>
 #include <aws/taxsettings/model/TaxRegistrationNumberType.h>
 #include <aws/taxsettings/model/TaxRegistrationStatus.h>
+#include <aws/taxsettings/model/TaxRegistrationStatusReason.h>
 #include <aws/taxsettings/model/TaxRegistrationType.h>
 #include <aws/taxsettings/model/TaxRegistrationWithJurisdiction.h>
 #include <aws/taxsettings/model/TurkeyAdditionalInfo.h>

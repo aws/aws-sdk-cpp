@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ivs/IVS_EXPORTS.h>
 #include <aws/ivs/model/Channel.h>
+#include <aws/ivs/model/FailoverSlateConfiguration.h>
 #include <aws/ivs/model/IngestConfiguration.h>
 #include <aws/ivs/model/IngestConfigurations.h>
 #include <aws/ivs/model/RecordingConfiguration.h>
@@ -205,6 +206,25 @@ class StreamSession {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The properties of the failover slate configuration at the time of going
+   * live.</p>
+   */
+  inline const FailoverSlateConfiguration& GetFailoverSlateConfiguration() const { return m_failoverSlateConfiguration; }
+  inline bool FailoverSlateConfigurationHasBeenSet() const { return m_failoverSlateConfigurationHasBeenSet; }
+  template <typename FailoverSlateConfigurationT = FailoverSlateConfiguration>
+  void SetFailoverSlateConfiguration(FailoverSlateConfigurationT&& value) {
+    m_failoverSlateConfigurationHasBeenSet = true;
+    m_failoverSlateConfiguration = std::forward<FailoverSlateConfigurationT>(value);
+  }
+  template <typename FailoverSlateConfigurationT = FailoverSlateConfiguration>
+  StreamSession& WithFailoverSlateConfiguration(FailoverSlateConfigurationT&& value) {
+    SetFailoverSlateConfiguration(std::forward<FailoverSlateConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_streamId;
 
@@ -221,6 +241,8 @@ class StreamSession {
   RecordingConfiguration m_recordingConfiguration;
 
   Aws::Vector<StreamEvent> m_truncatedEvents;
+
+  FailoverSlateConfiguration m_failoverSlateConfiguration;
   bool m_streamIdHasBeenSet = false;
   bool m_startTimeHasBeenSet = false;
   bool m_endTimeHasBeenSet = false;
@@ -229,6 +251,7 @@ class StreamSession {
   bool m_ingestConfigurationsHasBeenSet = false;
   bool m_recordingConfigurationHasBeenSet = false;
   bool m_truncatedEventsHasBeenSet = false;
+  bool m_failoverSlateConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

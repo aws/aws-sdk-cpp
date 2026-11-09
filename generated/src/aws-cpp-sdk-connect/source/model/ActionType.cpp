@@ -23,6 +23,7 @@ static const int CREATE_CASE_HASH = HashingUtils::HashString("CREATE_CASE");
 static const int UPDATE_CASE_HASH = HashingUtils::HashString("UPDATE_CASE");
 static const int ASSIGN_SLA_HASH = HashingUtils::HashString("ASSIGN_SLA");
 static const int END_ASSOCIATED_TASKS_HASH = HashingUtils::HashString("END_ASSOCIATED_TASKS");
+static const int END_ASSOCIATED_EMAILS_HASH = HashingUtils::HashString("END_ASSOCIATED_EMAILS");
 static const int SUBMIT_AUTO_EVALUATION_HASH = HashingUtils::HashString("SUBMIT_AUTO_EVALUATION");
 static const int EXTRACT_INFORMATION_HASH = HashingUtils::HashString("EXTRACT_INFORMATION");
 static const int SEND_IN_APP_NOTIFICATION_HASH = HashingUtils::HashString("SEND_IN_APP_NOTIFICATION");
@@ -45,6 +46,8 @@ ActionType GetActionTypeForName(const Aws::String& name) {
     return ActionType::ASSIGN_SLA;
   } else if (hashCode == END_ASSOCIATED_TASKS_HASH) {
     return ActionType::END_ASSOCIATED_TASKS;
+  } else if (hashCode == END_ASSOCIATED_EMAILS_HASH) {
+    return ActionType::END_ASSOCIATED_EMAILS;
   } else if (hashCode == SUBMIT_AUTO_EVALUATION_HASH) {
     return ActionType::SUBMIT_AUTO_EVALUATION;
   } else if (hashCode == EXTRACT_INFORMATION_HASH) {
@@ -81,6 +84,8 @@ Aws::String GetNameForActionType(ActionType enumValue) {
       return "ASSIGN_SLA";
     case ActionType::END_ASSOCIATED_TASKS:
       return "END_ASSOCIATED_TASKS";
+    case ActionType::END_ASSOCIATED_EMAILS:
+      return "END_ASSOCIATED_EMAILS";
     case ActionType::SUBMIT_AUTO_EVALUATION:
       return "SUBMIT_AUTO_EVALUATION";
     case ActionType::EXTRACT_INFORMATION:

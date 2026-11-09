@@ -514,6 +514,31 @@ class RouterInput {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Names (ARNs) of one or more destination endpoints that
+   * are associated with this router input.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetAssociatedDestinationEndpointArns() const { return m_associatedDestinationEndpointArns; }
+  inline bool AssociatedDestinationEndpointArnsHasBeenSet() const { return m_associatedDestinationEndpointArnsHasBeenSet; }
+  template <typename AssociatedDestinationEndpointArnsT = Aws::Vector<Aws::String>>
+  void SetAssociatedDestinationEndpointArns(AssociatedDestinationEndpointArnsT&& value) {
+    m_associatedDestinationEndpointArnsHasBeenSet = true;
+    m_associatedDestinationEndpointArns = std::forward<AssociatedDestinationEndpointArnsT>(value);
+  }
+  template <typename AssociatedDestinationEndpointArnsT = Aws::Vector<Aws::String>>
+  RouterInput& WithAssociatedDestinationEndpointArns(AssociatedDestinationEndpointArnsT&& value) {
+    SetAssociatedDestinationEndpointArns(std::forward<AssociatedDestinationEndpointArnsT>(value));
+    return *this;
+  }
+  template <typename AssociatedDestinationEndpointArnsT = Aws::String>
+  RouterInput& AddAssociatedDestinationEndpointArns(AssociatedDestinationEndpointArnsT&& value) {
+    m_associatedDestinationEndpointArnsHasBeenSet = true;
+    m_associatedDestinationEndpointArns.emplace_back(std::forward<AssociatedDestinationEndpointArnsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -566,6 +591,8 @@ class RouterInput {
   RouterContentQualityAnalysisType m_contentQualityAnalysisType{RouterContentQualityAnalysisType::NOT_SET};
 
   RouterContentQualityAnalysisConfiguration m_contentQualityAnalysisConfiguration;
+
+  Aws::Vector<Aws::String> m_associatedDestinationEndpointArns;
   bool m_nameHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_idHasBeenSet = false;
@@ -592,6 +619,7 @@ class RouterInput {
   bool m_maintenanceScheduleHasBeenSet = false;
   bool m_contentQualityAnalysisTypeHasBeenSet = false;
   bool m_contentQualityAnalysisConfigurationHasBeenSet = false;
+  bool m_associatedDestinationEndpointArnsHasBeenSet = false;
 };
 
 }  // namespace Model

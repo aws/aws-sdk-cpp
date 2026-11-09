@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
+#include <aws/sagemaker/model/AcceleratorPartitionLayout.h>
 #include <aws/sagemaker/model/InstancePool.h>
 #include <aws/sagemaker/model/ProductionVariantAcceleratorType.h>
 #include <aws/sagemaker/model/ProductionVariantCapacityReservationConfig.h>
@@ -412,6 +413,36 @@ class ProductionVariant {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The accelerator partition layout for the accelerators backing this production
+   * variant. A layout lists the partition profiles to carve on the accelerators it
+   * applies to; on NVIDIA GPUs these are Multi-Instance GPU (MIG) profiles such as
+   * <code>mig-3g.40gb</code>. Specify a single layout: SageMaker applies it
+   * uniformly to every accelerator on the variant's instance type, and you place one
+   * inference component on each partition. Omit this field to use whole,
+   * unpartitioned accelerators.</p>
+   */
+  inline const Aws::Vector<AcceleratorPartitionLayout>& GetAcceleratorPartitionLayouts() const { return m_acceleratorPartitionLayouts; }
+  inline bool AcceleratorPartitionLayoutsHasBeenSet() const { return m_acceleratorPartitionLayoutsHasBeenSet; }
+  template <typename AcceleratorPartitionLayoutsT = Aws::Vector<AcceleratorPartitionLayout>>
+  void SetAcceleratorPartitionLayouts(AcceleratorPartitionLayoutsT&& value) {
+    m_acceleratorPartitionLayoutsHasBeenSet = true;
+    m_acceleratorPartitionLayouts = std::forward<AcceleratorPartitionLayoutsT>(value);
+  }
+  template <typename AcceleratorPartitionLayoutsT = Aws::Vector<AcceleratorPartitionLayout>>
+  ProductionVariant& WithAcceleratorPartitionLayouts(AcceleratorPartitionLayoutsT&& value) {
+    SetAcceleratorPartitionLayouts(std::forward<AcceleratorPartitionLayoutsT>(value));
+    return *this;
+  }
+  template <typename AcceleratorPartitionLayoutsT = AcceleratorPartitionLayout>
+  ProductionVariant& AddAcceleratorPartitionLayouts(AcceleratorPartitionLayoutsT&& value) {
+    m_acceleratorPartitionLayoutsHasBeenSet = true;
+    m_acceleratorPartitionLayouts.emplace_back(std::forward<AcceleratorPartitionLayoutsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_variantName;
 
@@ -448,6 +479,8 @@ class ProductionVariant {
   ProductionVariantInferenceAmiVersion m_inferenceAmiVersion{ProductionVariantInferenceAmiVersion::NOT_SET};
 
   ProductionVariantCapacityReservationConfig m_capacityReservationConfig;
+
+  Aws::Vector<AcceleratorPartitionLayout> m_acceleratorPartitionLayouts;
   bool m_variantNameHasBeenSet = false;
   bool m_modelNameHasBeenSet = false;
   bool m_initialInstanceCountHasBeenSet = false;
@@ -466,6 +499,7 @@ class ProductionVariant {
   bool m_routingConfigHasBeenSet = false;
   bool m_inferenceAmiVersionHasBeenSet = false;
   bool m_capacityReservationConfigHasBeenSet = false;
+  bool m_acceleratorPartitionLayoutsHasBeenSet = false;
 };
 
 }  // namespace Model

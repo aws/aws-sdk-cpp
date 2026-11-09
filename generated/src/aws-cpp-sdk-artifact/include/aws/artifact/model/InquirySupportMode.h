@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Artifact {
 namespace Model {
-enum class InquirySupportMode { NOT_SET, AI_ONLY, FULL_SUPPORT };
+enum class InquirySupportMode { NOT_SET, AI_ONLY };
 
 namespace InquirySupportModeMapper {
 AWS_ARTIFACT_API InquirySupportMode GetInquirySupportModeForName(const Aws::String& name);

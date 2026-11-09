@@ -765,6 +765,7 @@
 #include <aws/ec2/model/GetCapacityManagerMetricDimensionsResponse.h>
 #include <aws/ec2/model/GetCapacityManagerMonitoredTagKeysRequest.h>
 #include <aws/ec2/model/GetCapacityManagerMonitoredTagKeysResponse.h>
+#include <aws/ec2/model/GetCapacityManagerSupportabilityScoresResponse.h>
 #include <aws/ec2/model/GetCapacityReservationUsageResponse.h>
 #include <aws/ec2/model/GetClientVpnEndpointAuthorizationPolicyResponse.h>
 #include <aws/ec2/model/GetCoipPoolUsageResponse.h>
@@ -784,6 +785,7 @@
 #include <aws/ec2/model/GetImageAncestryResponse.h>
 #include <aws/ec2/model/GetImageBlockPublicAccessStateRequest.h>
 #include <aws/ec2/model/GetImageBlockPublicAccessStateResponse.h>
+#include <aws/ec2/model/GetImageFindingsResponse.h>
 #include <aws/ec2/model/GetInstanceMetadataDefaultsRequest.h>
 #include <aws/ec2/model/GetInstanceMetadataDefaultsResponse.h>
 #include <aws/ec2/model/GetInstanceTpmEkPubResponse.h>
@@ -827,6 +829,7 @@
 #include <aws/ec2/model/GetSnapshotBlockPublicAccessStateResponse.h>
 #include <aws/ec2/model/GetSpotPlacementScoresResponse.h>
 #include <aws/ec2/model/GetSubnetCidrReservationsResponse.h>
+#include <aws/ec2/model/GetTransitGatewayAttachmentNatConfigurationResponse.h>
 #include <aws/ec2/model/GetTransitGatewayAttachmentPropagationsResponse.h>
 #include <aws/ec2/model/GetTransitGatewayMeteringPolicyEntriesResponse.h>
 #include <aws/ec2/model/GetTransitGatewayMulticastDomainAssociationsResponse.h>
@@ -909,6 +912,7 @@
 #include <aws/ec2/model/ModifyTrafficMirrorFilterNetworkServicesResponse.h>
 #include <aws/ec2/model/ModifyTrafficMirrorFilterRuleResponse.h>
 #include <aws/ec2/model/ModifyTrafficMirrorSessionResponse.h>
+#include <aws/ec2/model/ModifyTransitGatewayAttachmentNatConfigurationResponse.h>
 #include <aws/ec2/model/ModifyTransitGatewayMeteringPolicyResponse.h>
 #include <aws/ec2/model/ModifyTransitGatewayPolicyTableEntryResponse.h>
 #include <aws/ec2/model/ModifyTransitGatewayPrefixListReferenceResponse.h>
@@ -1611,6 +1615,7 @@ class GetCapacityManagerAttributesRequest;
 class GetCapacityManagerMetricDataRequest;
 class GetCapacityManagerMetricDimensionsRequest;
 class GetCapacityManagerMonitoredTagKeysRequest;
+class GetCapacityManagerSupportabilityScoresRequest;
 class GetCapacityReservationUsageRequest;
 class GetClientVpnEndpointAuthorizationPolicyRequest;
 class GetCoipPoolUsageRequest;
@@ -1626,6 +1631,7 @@ class GetGroupsForCapacityReservationRequest;
 class GetHostReservationPurchasePreviewRequest;
 class GetImageAncestryRequest;
 class GetImageBlockPublicAccessStateRequest;
+class GetImageFindingsRequest;
 class GetInstanceMetadataDefaultsRequest;
 class GetInstanceTpmEkPubRequest;
 class GetInstanceTypesFromInstanceRequirementsRequest;
@@ -1665,6 +1671,7 @@ class GetSerialConsoleAccessStatusRequest;
 class GetSnapshotBlockPublicAccessStateRequest;
 class GetSpotPlacementScoresRequest;
 class GetSubnetCidrReservationsRequest;
+class GetTransitGatewayAttachmentNatConfigurationRequest;
 class GetTransitGatewayAttachmentPropagationsRequest;
 class GetTransitGatewayMeteringPolicyEntriesRequest;
 class GetTransitGatewayMulticastDomainAssociationsRequest;
@@ -1746,6 +1753,7 @@ class ModifyTrafficMirrorFilterNetworkServicesRequest;
 class ModifyTrafficMirrorFilterRuleRequest;
 class ModifyTrafficMirrorSessionRequest;
 class ModifyTransitGatewayRequest;
+class ModifyTransitGatewayAttachmentNatConfigurationRequest;
 class ModifyTransitGatewayMeteringPolicyRequest;
 class ModifyTransitGatewayPolicyTableEntryRequest;
 class ModifyTransitGatewayPrefixListReferenceRequest;
@@ -2447,6 +2455,7 @@ typedef Aws::Utils::Outcome<GetCapacityManagerAttributesResponse, EC2Error> GetC
 typedef Aws::Utils::Outcome<GetCapacityManagerMetricDataResponse, EC2Error> GetCapacityManagerMetricDataOutcome;
 typedef Aws::Utils::Outcome<GetCapacityManagerMetricDimensionsResponse, EC2Error> GetCapacityManagerMetricDimensionsOutcome;
 typedef Aws::Utils::Outcome<GetCapacityManagerMonitoredTagKeysResponse, EC2Error> GetCapacityManagerMonitoredTagKeysOutcome;
+typedef Aws::Utils::Outcome<GetCapacityManagerSupportabilityScoresResponse, EC2Error> GetCapacityManagerSupportabilityScoresOutcome;
 typedef Aws::Utils::Outcome<GetCapacityReservationUsageResponse, EC2Error> GetCapacityReservationUsageOutcome;
 typedef Aws::Utils::Outcome<GetClientVpnEndpointAuthorizationPolicyResponse, EC2Error> GetClientVpnEndpointAuthorizationPolicyOutcome;
 typedef Aws::Utils::Outcome<GetCoipPoolUsageResponse, EC2Error> GetCoipPoolUsageOutcome;
@@ -2462,6 +2471,7 @@ typedef Aws::Utils::Outcome<GetGroupsForCapacityReservationResponse, EC2Error> G
 typedef Aws::Utils::Outcome<GetHostReservationPurchasePreviewResponse, EC2Error> GetHostReservationPurchasePreviewOutcome;
 typedef Aws::Utils::Outcome<GetImageAncestryResponse, EC2Error> GetImageAncestryOutcome;
 typedef Aws::Utils::Outcome<GetImageBlockPublicAccessStateResponse, EC2Error> GetImageBlockPublicAccessStateOutcome;
+typedef Aws::Utils::Outcome<GetImageFindingsResponse, EC2Error> GetImageFindingsOutcome;
 typedef Aws::Utils::Outcome<GetInstanceMetadataDefaultsResponse, EC2Error> GetInstanceMetadataDefaultsOutcome;
 typedef Aws::Utils::Outcome<GetInstanceTpmEkPubResponse, EC2Error> GetInstanceTpmEkPubOutcome;
 typedef Aws::Utils::Outcome<GetInstanceTypesFromInstanceRequirementsResponse, EC2Error> GetInstanceTypesFromInstanceRequirementsOutcome;
@@ -2502,6 +2512,8 @@ typedef Aws::Utils::Outcome<GetSerialConsoleAccessStatusResponse, EC2Error> GetS
 typedef Aws::Utils::Outcome<GetSnapshotBlockPublicAccessStateResponse, EC2Error> GetSnapshotBlockPublicAccessStateOutcome;
 typedef Aws::Utils::Outcome<GetSpotPlacementScoresResponse, EC2Error> GetSpotPlacementScoresOutcome;
 typedef Aws::Utils::Outcome<GetSubnetCidrReservationsResponse, EC2Error> GetSubnetCidrReservationsOutcome;
+typedef Aws::Utils::Outcome<GetTransitGatewayAttachmentNatConfigurationResponse, EC2Error>
+    GetTransitGatewayAttachmentNatConfigurationOutcome;
 typedef Aws::Utils::Outcome<GetTransitGatewayAttachmentPropagationsResponse, EC2Error> GetTransitGatewayAttachmentPropagationsOutcome;
 typedef Aws::Utils::Outcome<GetTransitGatewayMeteringPolicyEntriesResponse, EC2Error> GetTransitGatewayMeteringPolicyEntriesOutcome;
 typedef Aws::Utils::Outcome<GetTransitGatewayMulticastDomainAssociationsResponse, EC2Error>
@@ -2587,6 +2599,8 @@ typedef Aws::Utils::Outcome<ModifyTrafficMirrorFilterNetworkServicesResponse, EC
 typedef Aws::Utils::Outcome<ModifyTrafficMirrorFilterRuleResponse, EC2Error> ModifyTrafficMirrorFilterRuleOutcome;
 typedef Aws::Utils::Outcome<ModifyTrafficMirrorSessionResponse, EC2Error> ModifyTrafficMirrorSessionOutcome;
 typedef Aws::Utils::Outcome<ModifyTransitGatewayResponse, EC2Error> ModifyTransitGatewayOutcome;
+typedef Aws::Utils::Outcome<ModifyTransitGatewayAttachmentNatConfigurationResponse, EC2Error>
+    ModifyTransitGatewayAttachmentNatConfigurationOutcome;
 typedef Aws::Utils::Outcome<ModifyTransitGatewayMeteringPolicyResponse, EC2Error> ModifyTransitGatewayMeteringPolicyOutcome;
 typedef Aws::Utils::Outcome<ModifyTransitGatewayPolicyTableEntryResponse, EC2Error> ModifyTransitGatewayPolicyTableEntryOutcome;
 typedef Aws::Utils::Outcome<ModifyTransitGatewayPrefixListReferenceResponse, EC2Error> ModifyTransitGatewayPrefixListReferenceOutcome;
@@ -3278,6 +3292,7 @@ typedef std::future<GetCapacityManagerAttributesOutcome> GetCapacityManagerAttri
 typedef std::future<GetCapacityManagerMetricDataOutcome> GetCapacityManagerMetricDataOutcomeCallable;
 typedef std::future<GetCapacityManagerMetricDimensionsOutcome> GetCapacityManagerMetricDimensionsOutcomeCallable;
 typedef std::future<GetCapacityManagerMonitoredTagKeysOutcome> GetCapacityManagerMonitoredTagKeysOutcomeCallable;
+typedef std::future<GetCapacityManagerSupportabilityScoresOutcome> GetCapacityManagerSupportabilityScoresOutcomeCallable;
 typedef std::future<GetCapacityReservationUsageOutcome> GetCapacityReservationUsageOutcomeCallable;
 typedef std::future<GetClientVpnEndpointAuthorizationPolicyOutcome> GetClientVpnEndpointAuthorizationPolicyOutcomeCallable;
 typedef std::future<GetCoipPoolUsageOutcome> GetCoipPoolUsageOutcomeCallable;
@@ -3293,6 +3308,7 @@ typedef std::future<GetGroupsForCapacityReservationOutcome> GetGroupsForCapacity
 typedef std::future<GetHostReservationPurchasePreviewOutcome> GetHostReservationPurchasePreviewOutcomeCallable;
 typedef std::future<GetImageAncestryOutcome> GetImageAncestryOutcomeCallable;
 typedef std::future<GetImageBlockPublicAccessStateOutcome> GetImageBlockPublicAccessStateOutcomeCallable;
+typedef std::future<GetImageFindingsOutcome> GetImageFindingsOutcomeCallable;
 typedef std::future<GetInstanceMetadataDefaultsOutcome> GetInstanceMetadataDefaultsOutcomeCallable;
 typedef std::future<GetInstanceTpmEkPubOutcome> GetInstanceTpmEkPubOutcomeCallable;
 typedef std::future<GetInstanceTypesFromInstanceRequirementsOutcome> GetInstanceTypesFromInstanceRequirementsOutcomeCallable;
@@ -3332,6 +3348,7 @@ typedef std::future<GetSerialConsoleAccessStatusOutcome> GetSerialConsoleAccessS
 typedef std::future<GetSnapshotBlockPublicAccessStateOutcome> GetSnapshotBlockPublicAccessStateOutcomeCallable;
 typedef std::future<GetSpotPlacementScoresOutcome> GetSpotPlacementScoresOutcomeCallable;
 typedef std::future<GetSubnetCidrReservationsOutcome> GetSubnetCidrReservationsOutcomeCallable;
+typedef std::future<GetTransitGatewayAttachmentNatConfigurationOutcome> GetTransitGatewayAttachmentNatConfigurationOutcomeCallable;
 typedef std::future<GetTransitGatewayAttachmentPropagationsOutcome> GetTransitGatewayAttachmentPropagationsOutcomeCallable;
 typedef std::future<GetTransitGatewayMeteringPolicyEntriesOutcome> GetTransitGatewayMeteringPolicyEntriesOutcomeCallable;
 typedef std::future<GetTransitGatewayMulticastDomainAssociationsOutcome> GetTransitGatewayMulticastDomainAssociationsOutcomeCallable;
@@ -3413,6 +3430,7 @@ typedef std::future<ModifyTrafficMirrorFilterNetworkServicesOutcome> ModifyTraff
 typedef std::future<ModifyTrafficMirrorFilterRuleOutcome> ModifyTrafficMirrorFilterRuleOutcomeCallable;
 typedef std::future<ModifyTrafficMirrorSessionOutcome> ModifyTrafficMirrorSessionOutcomeCallable;
 typedef std::future<ModifyTransitGatewayOutcome> ModifyTransitGatewayOutcomeCallable;
+typedef std::future<ModifyTransitGatewayAttachmentNatConfigurationOutcome> ModifyTransitGatewayAttachmentNatConfigurationOutcomeCallable;
 typedef std::future<ModifyTransitGatewayMeteringPolicyOutcome> ModifyTransitGatewayMeteringPolicyOutcomeCallable;
 typedef std::future<ModifyTransitGatewayPolicyTableEntryOutcome> ModifyTransitGatewayPolicyTableEntryOutcomeCallable;
 typedef std::future<ModifyTransitGatewayPrefixListReferenceOutcome> ModifyTransitGatewayPrefixListReferenceOutcomeCallable;
@@ -5468,6 +5486,10 @@ typedef std::function<void(const EC2Client*, const Model::GetCapacityManagerMoni
                            const Model::GetCapacityManagerMonitoredTagKeysOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetCapacityManagerMonitoredTagKeysResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::GetCapacityManagerSupportabilityScoresRequest&,
+                           const Model::GetCapacityManagerSupportabilityScoresOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetCapacityManagerSupportabilityScoresResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::GetCapacityReservationUsageRequest&,
                            const Model::GetCapacityReservationUsageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetCapacityReservationUsageResponseReceivedHandler;
@@ -5520,6 +5542,9 @@ typedef std::function<void(const EC2Client*, const Model::GetImageBlockPublicAcc
                            const Model::GetImageBlockPublicAccessStateOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetImageBlockPublicAccessStateResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::GetImageFindingsRequest&, const Model::GetImageFindingsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetImageFindingsResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::GetInstanceMetadataDefaultsRequest&,
                            const Model::GetInstanceMetadataDefaultsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetInstanceMetadataDefaultsResponseReceivedHandler;
@@ -5659,6 +5684,10 @@ typedef std::function<void(const EC2Client*, const Model::GetSpotPlacementScores
 typedef std::function<void(const EC2Client*, const Model::GetSubnetCidrReservationsRequest&, const Model::GetSubnetCidrReservationsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetSubnetCidrReservationsResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::GetTransitGatewayAttachmentNatConfigurationRequest&,
+                           const Model::GetTransitGatewayAttachmentNatConfigurationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetTransitGatewayAttachmentNatConfigurationResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::GetTransitGatewayAttachmentPropagationsRequest&,
                            const Model::GetTransitGatewayAttachmentPropagationsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -5939,6 +5968,10 @@ typedef std::function<void(const EC2Client*, const Model::ModifyTrafficMirrorSes
 typedef std::function<void(const EC2Client*, const Model::ModifyTransitGatewayRequest&, const Model::ModifyTransitGatewayOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ModifyTransitGatewayResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::ModifyTransitGatewayAttachmentNatConfigurationRequest&,
+                           const Model::ModifyTransitGatewayAttachmentNatConfigurationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ModifyTransitGatewayAttachmentNatConfigurationResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::ModifyTransitGatewayMeteringPolicyRequest&,
                            const Model::ModifyTransitGatewayMeteringPolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

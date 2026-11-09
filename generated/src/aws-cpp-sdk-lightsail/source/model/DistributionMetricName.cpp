@@ -21,6 +21,8 @@ static const int BytesUploaded_HASH = HashingUtils::HashString("BytesUploaded");
 static const int TotalErrorRate_HASH = HashingUtils::HashString("TotalErrorRate");
 static const int Http4xxErrorRate_HASH = HashingUtils::HashString("Http4xxErrorRate");
 static const int Http5xxErrorRate_HASH = HashingUtils::HashString("Http5xxErrorRate");
+static const int WafAllowedRequests_HASH = HashingUtils::HashString("WafAllowedRequests");
+static const int WafBlockedRequests_HASH = HashingUtils::HashString("WafBlockedRequests");
 
 DistributionMetricName GetDistributionMetricNameForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -36,6 +38,10 @@ DistributionMetricName GetDistributionMetricNameForName(const Aws::String& name)
     return DistributionMetricName::Http4xxErrorRate;
   } else if (hashCode == Http5xxErrorRate_HASH) {
     return DistributionMetricName::Http5xxErrorRate;
+  } else if (hashCode == WafAllowedRequests_HASH) {
+    return DistributionMetricName::WafAllowedRequests;
+  } else if (hashCode == WafBlockedRequests_HASH) {
+    return DistributionMetricName::WafBlockedRequests;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -62,6 +68,10 @@ Aws::String GetNameForDistributionMetricName(DistributionMetricName enumValue) {
       return "Http4xxErrorRate";
     case DistributionMetricName::Http5xxErrorRate:
       return "Http5xxErrorRate";
+    case DistributionMetricName::WafAllowedRequests:
+      return "WafAllowedRequests";
+    case DistributionMetricName::WafBlockedRequests:
+      return "WafBlockedRequests";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

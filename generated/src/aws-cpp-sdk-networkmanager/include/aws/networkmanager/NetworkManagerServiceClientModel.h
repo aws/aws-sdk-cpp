@@ -86,6 +86,8 @@
 #include <aws/networkmanager/model/GetTransitGatewayRegistrationsResult.h>
 #include <aws/networkmanager/model/GetTransitGatewayRouteTableAttachmentResult.h>
 #include <aws/networkmanager/model/GetVpcAttachmentResult.h>
+#include <aws/networkmanager/model/ListAttachmentNatConfigurationsRequest.h>
+#include <aws/networkmanager/model/ListAttachmentNatConfigurationsResult.h>
 #include <aws/networkmanager/model/ListAttachmentRoutingPolicyAssociationsResult.h>
 #include <aws/networkmanager/model/ListAttachmentsRequest.h>
 #include <aws/networkmanager/model/ListAttachmentsResult.h>
@@ -112,6 +114,7 @@
 #include <aws/networkmanager/model/StartRouteAnalysisResult.h>
 #include <aws/networkmanager/model/TagResourceResult.h>
 #include <aws/networkmanager/model/UntagResourceResult.h>
+#include <aws/networkmanager/model/UpdateAttachmentNatConfigurationResult.h>
 #include <aws/networkmanager/model/UpdateConnectionResult.h>
 #include <aws/networkmanager/model/UpdateCoreNetworkResult.h>
 #include <aws/networkmanager/model/UpdateDeviceResult.h>
@@ -219,6 +222,7 @@ class GetTransitGatewayPeeringRequest;
 class GetTransitGatewayRegistrationsRequest;
 class GetTransitGatewayRouteTableAttachmentRequest;
 class GetVpcAttachmentRequest;
+class ListAttachmentNatConfigurationsRequest;
 class ListAttachmentRoutingPolicyAssociationsRequest;
 class ListAttachmentsRequest;
 class ListConnectPeersRequest;
@@ -240,6 +244,7 @@ class StartOrganizationServiceAccessUpdateRequest;
 class StartRouteAnalysisRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
+class UpdateAttachmentNatConfigurationRequest;
 class UpdateConnectionRequest;
 class UpdateCoreNetworkRequest;
 class UpdateDeviceRequest;
@@ -321,6 +326,7 @@ typedef Aws::Utils::Outcome<GetTransitGatewayPeeringResult, NetworkManagerError>
 typedef Aws::Utils::Outcome<GetTransitGatewayRegistrationsResult, NetworkManagerError> GetTransitGatewayRegistrationsOutcome;
 typedef Aws::Utils::Outcome<GetTransitGatewayRouteTableAttachmentResult, NetworkManagerError> GetTransitGatewayRouteTableAttachmentOutcome;
 typedef Aws::Utils::Outcome<GetVpcAttachmentResult, NetworkManagerError> GetVpcAttachmentOutcome;
+typedef Aws::Utils::Outcome<ListAttachmentNatConfigurationsResult, NetworkManagerError> ListAttachmentNatConfigurationsOutcome;
 typedef Aws::Utils::Outcome<ListAttachmentRoutingPolicyAssociationsResult, NetworkManagerError>
     ListAttachmentRoutingPolicyAssociationsOutcome;
 typedef Aws::Utils::Outcome<ListAttachmentsResult, NetworkManagerError> ListAttachmentsOutcome;
@@ -343,6 +349,7 @@ typedef Aws::Utils::Outcome<StartOrganizationServiceAccessUpdateResult, NetworkM
 typedef Aws::Utils::Outcome<StartRouteAnalysisResult, NetworkManagerError> StartRouteAnalysisOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, NetworkManagerError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, NetworkManagerError> UntagResourceOutcome;
+typedef Aws::Utils::Outcome<UpdateAttachmentNatConfigurationResult, NetworkManagerError> UpdateAttachmentNatConfigurationOutcome;
 typedef Aws::Utils::Outcome<UpdateConnectionResult, NetworkManagerError> UpdateConnectionOutcome;
 typedef Aws::Utils::Outcome<UpdateCoreNetworkResult, NetworkManagerError> UpdateCoreNetworkOutcome;
 typedef Aws::Utils::Outcome<UpdateDeviceResult, NetworkManagerError> UpdateDeviceOutcome;
@@ -420,6 +427,7 @@ typedef std::future<GetTransitGatewayPeeringOutcome> GetTransitGatewayPeeringOut
 typedef std::future<GetTransitGatewayRegistrationsOutcome> GetTransitGatewayRegistrationsOutcomeCallable;
 typedef std::future<GetTransitGatewayRouteTableAttachmentOutcome> GetTransitGatewayRouteTableAttachmentOutcomeCallable;
 typedef std::future<GetVpcAttachmentOutcome> GetVpcAttachmentOutcomeCallable;
+typedef std::future<ListAttachmentNatConfigurationsOutcome> ListAttachmentNatConfigurationsOutcomeCallable;
 typedef std::future<ListAttachmentRoutingPolicyAssociationsOutcome> ListAttachmentRoutingPolicyAssociationsOutcomeCallable;
 typedef std::future<ListAttachmentsOutcome> ListAttachmentsOutcomeCallable;
 typedef std::future<ListConnectPeersOutcome> ListConnectPeersOutcomeCallable;
@@ -441,6 +449,7 @@ typedef std::future<StartOrganizationServiceAccessUpdateOutcome> StartOrganizati
 typedef std::future<StartRouteAnalysisOutcome> StartRouteAnalysisOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+typedef std::future<UpdateAttachmentNatConfigurationOutcome> UpdateAttachmentNatConfigurationOutcomeCallable;
 typedef std::future<UpdateConnectionOutcome> UpdateConnectionOutcomeCallable;
 typedef std::future<UpdateCoreNetworkOutcome> UpdateCoreNetworkOutcomeCallable;
 typedef std::future<UpdateDeviceOutcome> UpdateDeviceOutcomeCallable;
@@ -665,6 +674,10 @@ typedef std::function<void(const NetworkManagerClient*, const Model::GetTransitG
 typedef std::function<void(const NetworkManagerClient*, const Model::GetVpcAttachmentRequest&, const Model::GetVpcAttachmentOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetVpcAttachmentResponseReceivedHandler;
+typedef std::function<void(const NetworkManagerClient*, const Model::ListAttachmentNatConfigurationsRequest&,
+                           const Model::ListAttachmentNatConfigurationsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListAttachmentNatConfigurationsResponseReceivedHandler;
 typedef std::function<void(const NetworkManagerClient*, const Model::ListAttachmentRoutingPolicyAssociationsRequest&,
                            const Model::ListAttachmentRoutingPolicyAssociationsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -737,6 +750,10 @@ typedef std::function<void(const NetworkManagerClient*, const Model::TagResource
 typedef std::function<void(const NetworkManagerClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UntagResourceResponseReceivedHandler;
+typedef std::function<void(const NetworkManagerClient*, const Model::UpdateAttachmentNatConfigurationRequest&,
+                           const Model::UpdateAttachmentNatConfigurationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateAttachmentNatConfigurationResponseReceivedHandler;
 typedef std::function<void(const NetworkManagerClient*, const Model::UpdateConnectionRequest&, const Model::UpdateConnectionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateConnectionResponseReceivedHandler;

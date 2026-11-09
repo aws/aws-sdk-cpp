@@ -39,6 +39,18 @@ Aws::String CreateVpcAttachmentRequest::SerializePayload() const {
     payload.WithString("RoutingPolicyLabel", m_routingPolicyLabel);
   }
 
+  if (m_natGatewaySupportHasBeenSet) {
+    payload.WithString("NatGatewaySupport", NatGatewaySupportValueMapper::GetNameForNatGatewaySupportValue(m_natGatewaySupport));
+  }
+
+  if (m_natGatewayRulesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> natGatewayRulesJsonList(m_natGatewayRules.size());
+    for (unsigned natGatewayRulesIndex = 0; natGatewayRulesIndex < natGatewayRulesJsonList.GetLength(); ++natGatewayRulesIndex) {
+      natGatewayRulesJsonList[natGatewayRulesIndex].AsObject(m_natGatewayRules[natGatewayRulesIndex].Jsonize());
+    }
+    payload.WithArray("NatGatewayRules", std::move(natGatewayRulesJsonList));
+  }
+
   if (m_tagsHasBeenSet) {
     Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
     for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {

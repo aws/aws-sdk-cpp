@@ -64,6 +64,8 @@
 #include <aws/docdb/model/DescribeOrderableDBInstanceOptionsResult.h>
 #include <aws/docdb/model/DescribePendingMaintenanceActionsRequest.h>
 #include <aws/docdb/model/DescribePendingMaintenanceActionsResult.h>
+#include <aws/docdb/model/DescribeServerlessV2PlatformVersionsRequest.h>
+#include <aws/docdb/model/DescribeServerlessV2PlatformVersionsResult.h>
 #include <aws/docdb/model/FailoverDBClusterRequest.h>
 #include <aws/docdb/model/FailoverDBClusterResult.h>
 #include <aws/docdb/model/FailoverGlobalClusterResult.h>
@@ -152,6 +154,7 @@ class DescribeEventsRequest;
 class DescribeGlobalClustersRequest;
 class DescribeOrderableDBInstanceOptionsRequest;
 class DescribePendingMaintenanceActionsRequest;
+class DescribeServerlessV2PlatformVersionsRequest;
 class FailoverDBClusterRequest;
 class FailoverGlobalClusterRequest;
 class ListTagsForResourceRequest;
@@ -210,6 +213,7 @@ typedef Aws::Utils::Outcome<DescribeEventsResult, DocDBError> DescribeEventsOutc
 typedef Aws::Utils::Outcome<DescribeGlobalClustersResult, DocDBError> DescribeGlobalClustersOutcome;
 typedef Aws::Utils::Outcome<DescribeOrderableDBInstanceOptionsResult, DocDBError> DescribeOrderableDBInstanceOptionsOutcome;
 typedef Aws::Utils::Outcome<DescribePendingMaintenanceActionsResult, DocDBError> DescribePendingMaintenanceActionsOutcome;
+typedef Aws::Utils::Outcome<DescribeServerlessV2PlatformVersionsResult, DocDBError> DescribeServerlessV2PlatformVersionsOutcome;
 typedef Aws::Utils::Outcome<FailoverDBClusterResult, DocDBError> FailoverDBClusterOutcome;
 typedef Aws::Utils::Outcome<FailoverGlobalClusterResult, DocDBError> FailoverGlobalClusterOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, DocDBError> ListTagsForResourceOutcome;
@@ -268,6 +272,7 @@ typedef std::future<DescribeEventsOutcome> DescribeEventsOutcomeCallable;
 typedef std::future<DescribeGlobalClustersOutcome> DescribeGlobalClustersOutcomeCallable;
 typedef std::future<DescribeOrderableDBInstanceOptionsOutcome> DescribeOrderableDBInstanceOptionsOutcomeCallable;
 typedef std::future<DescribePendingMaintenanceActionsOutcome> DescribePendingMaintenanceActionsOutcomeCallable;
+typedef std::future<DescribeServerlessV2PlatformVersionsOutcome> DescribeServerlessV2PlatformVersionsOutcomeCallable;
 typedef std::future<FailoverDBClusterOutcome> FailoverDBClusterOutcomeCallable;
 typedef std::future<FailoverGlobalClusterOutcome> FailoverGlobalClusterOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
@@ -408,6 +413,10 @@ typedef std::function<void(const DocDBClient*, const Model::DescribePendingMaint
                            const Model::DescribePendingMaintenanceActionsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribePendingMaintenanceActionsResponseReceivedHandler;
+typedef std::function<void(const DocDBClient*, const Model::DescribeServerlessV2PlatformVersionsRequest&,
+                           const Model::DescribeServerlessV2PlatformVersionsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeServerlessV2PlatformVersionsResponseReceivedHandler;
 typedef std::function<void(const DocDBClient*, const Model::FailoverDBClusterRequest&, const Model::FailoverDBClusterOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     FailoverDBClusterResponseReceivedHandler;

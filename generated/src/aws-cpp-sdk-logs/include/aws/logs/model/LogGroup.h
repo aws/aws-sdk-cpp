@@ -207,16 +207,18 @@ class LogGroup {
 
   ///@{
   /**
-   * <p>This specifies the log group class for this log group. There are three
+   * <p>This specifies the log group class for this log group. There are four
    * classes:</p> <ul> <li> <p>The <code>Standard</code> log class supports all
    * CloudWatch Logs features.</p> </li> <li> <p>The <code>Infrequent Access</code>
    * log class supports a subset of CloudWatch Logs features and incurs lower
-   * costs.</p> </li> <li> <p>Use the <code>Delivery</code> log class only for
-   * delivering Lambda logs to store in Amazon S3 or Amazon Data Firehose. Log events
-   * in log groups in the Delivery class are kept in CloudWatch Logs for only one
-   * day. This log class doesn't offer rich CloudWatch Logs capabilities such as
-   * CloudWatch Logs Insights queries.</p> </li> </ul> <p>For details about the
-   * features supported by the Standard and Infrequent Access classes, see <a
+   * costs.</p> </li> <li> <p>The <code>Essentials</code> log class supports a subset
+   * of CloudWatch Logs features and incurs lower costs.</p> </li> <li> <p>Use the
+   * <code>Delivery</code> log class only for delivering Lambda logs to store in
+   * Amazon S3 or Amazon Data Firehose. Log events in log groups in the Delivery
+   * class are kept in CloudWatch Logs for only one day. This log class doesn't offer
+   * rich CloudWatch Logs capabilities such as CloudWatch Logs Insights queries.</p>
+   * </li> </ul> <p>For details about the features supported by the Standard,
+   * Infrequent Access, and Essentials classes, see <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log
    * classes</a> </p>
    */
@@ -296,6 +298,29 @@ class LogGroup {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The name of the account-level retention policy that determines the retention
+   * period of this log group. This field is returned only when an account-level
+   * retention policy applies to the log group. When it is returned,
+   * <code>retentionInDays</code> shows the retention period from that policy instead
+   * of the retention period set on the log group. If the policy specifies that log
+   * events never expire, <code>retentionInDays</code> is not returned.</p>
+   */
+  inline const Aws::String& GetRetentionPolicyName() const { return m_retentionPolicyName; }
+  inline bool RetentionPolicyNameHasBeenSet() const { return m_retentionPolicyNameHasBeenSet; }
+  template <typename RetentionPolicyNameT = Aws::String>
+  void SetRetentionPolicyName(RetentionPolicyNameT&& value) {
+    m_retentionPolicyNameHasBeenSet = true;
+    m_retentionPolicyName = std::forward<RetentionPolicyNameT>(value);
+  }
+  template <typename RetentionPolicyNameT = Aws::String>
+  LogGroup& WithRetentionPolicyName(RetentionPolicyNameT&& value) {
+    SetRetentionPolicyName(std::forward<RetentionPolicyNameT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_logGroupName;
 
@@ -322,6 +347,8 @@ class LogGroup {
   bool m_deletionProtectionEnabled{false};
 
   bool m_bearerTokenAuthenticationEnabled{false};
+
+  Aws::String m_retentionPolicyName;
   bool m_logGroupNameHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;
   bool m_retentionInDaysHasBeenSet = false;
@@ -335,6 +362,7 @@ class LogGroup {
   bool m_logGroupArnHasBeenSet = false;
   bool m_deletionProtectionEnabledHasBeenSet = false;
   bool m_bearerTokenAuthenticationEnabledHasBeenSet = false;
+  bool m_retentionPolicyNameHasBeenSet = false;
 };
 
 }  // namespace Model

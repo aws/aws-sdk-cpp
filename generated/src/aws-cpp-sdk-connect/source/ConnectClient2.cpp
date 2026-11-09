@@ -44,6 +44,7 @@
 #include <aws/connect/model/ListQueuesRequest.h>
 #include <aws/connect/model/ListQuickConnectsRequest.h>
 #include <aws/connect/model/ListRealtimeContactAnalysisSegmentsV2Request.h>
+#include <aws/connect/model/ListReplicationFindingsRequest.h>
 #include <aws/connect/model/ListRoutingProfileManualAssignmentQueuesRequest.h>
 #include <aws/connect/model/ListRoutingProfileQueuesRequest.h>
 #include <aws/connect/model/ListRoutingProfilesRequest.h>
@@ -105,7 +106,6 @@
 #include <aws/connect/model/SearchViewsRequest.h>
 #include <aws/connect/model/SearchVocabulariesRequest.h>
 #include <aws/connect/model/SearchWorkspaceAssociationsRequest.h>
-#include <aws/connect/model/SearchWorkspacesRequest.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/client/CoreErrors.h>
@@ -912,6 +912,29 @@ ListRealtimeContactAnalysisSegmentsV2Outcome ConnectClient::ListRealtimeContactA
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListRealtimeContactAnalysisSegmentsV2Outcome(result.GetResultWithOwnership())
                             : ListRealtimeContactAnalysisSegmentsV2Outcome(std::move(result.GetError()));
+}
+
+ListReplicationFindingsOutcome ConnectClient::ListReplicationFindings(const ListReplicationFindingsRequest& request) const {
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListReplicationFindings", "Required field: InstanceId, is not set");
+    return ListReplicationFindingsOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                               "Missing required field [InstanceId]", false));
+  }
+  if (!request.ResourceTypeHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListReplicationFindings", "Required field: ResourceType, is not set");
+    return ListReplicationFindingsOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                               "Missing required field [ResourceType]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/replication-findings/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListReplicationFindingsOutcome(result.GetResultWithOwnership())
+                            : ListReplicationFindingsOutcome(std::move(result.GetError()));
 }
 
 ListRoutingProfileManualAssignmentQueuesOutcome ConnectClient::ListRoutingProfileManualAssignmentQueues(
@@ -1888,15 +1911,4 @@ SearchWorkspaceAssociationsOutcome ConnectClient::SearchWorkspaceAssociations(co
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? SearchWorkspaceAssociationsOutcome(result.GetResultWithOwnership())
                             : SearchWorkspaceAssociationsOutcome(std::move(result.GetError()));
-}
-
-SearchWorkspacesOutcome ConnectClient::SearchWorkspaces(const SearchWorkspacesRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/search-workspaces");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? SearchWorkspacesOutcome(result.GetResultWithOwnership())
-                            : SearchWorkspacesOutcome(std::move(result.GetError()));
 }

@@ -25,6 +25,15 @@ static const char *const CRT_HTTP_CLIENT_TAG = "CRTHttpClient";
 
 namespace {
 
+Aws::Client::AWSError<Aws::Client::CoreErrors> MakeCrtClientInitializationError(const Aws::Http::HttpRequest& request) {
+  AWS_LOGSTREAM_ERROR(CRT_HTTP_CLIENT_TAG, "Refusing to send request to " << request.GetUri().GetAuthority()
+                                               << ", the client failed to initialize its TLS context");
+  return Aws::Client::AWSError<Aws::Client::CoreErrors>{Aws::Client::CoreErrors::INVALID_PARAMETER_COMBINATION,
+                                                        "InvalidParameterCombination",
+                                                        "CRTHttpClient failed to initialize its TLS context, check caFile, caPath and the proxy TLS settings",
+                                                        false};
+}
+
 void AddRequestMetadataToCrtRequest(const std::shared_ptr<Aws::Http::HttpRequest>& request,
                                     const std::shared_ptr<Aws::Crt::Http::HttpRequest>& crtRequest) {
   const char* methodStr = Aws::Http::HttpMethodMapper::GetNameForHttpMethod(request->GetMethod());
@@ -60,9 +69,7 @@ void OnResponseBodyReceived(Aws::Crt::Http::HttpStream&, const Aws::Crt::ByteCur
                             const std::shared_ptr<Aws::Http::HttpRequest>& request) {
   assert(response);
   for (const auto& hashIterator : request->GetResponseValidationHashes()) {
-    std::stringstream headerStr;
-    headerStr << "x-amz-checksum-" << hashIterator.first;
-    if (response->HasHeader(headerStr.str().c_str())) {
+    if (response->HasHeader(("x-amz-checksum-" + hashIterator.first).c_str())) {
       hashIterator.second->Update(reinterpret_cast<unsigned char*>(body.ptr), body.len);
       break;
     }
@@ -195,6 +202,11 @@ void OnClientConnectionAvailableAsync(const std::shared_ptr<Aws::Crt::Http::Http
     requestOptions.onIncomingHeaders = [state](Aws::Crt::Http::HttpStream& stream, enum aws_http_header_block block,
                                                const Aws::Crt::Http::HttpHeader* headersArray, std::size_t headersCount) {
       OnIncomingHeaders(stream, block, headersArray, headersCount, state->response);
+      // aws-c-http reports the main block done only when the body starts, so stamp as header lines arrive.
+      // Written on the event-loop thread and read in the completion callback on that same thread.
+      if (block == AWS_HTTP_HEADER_BLOCK_MAIN) {
+        state->request->SetResponseHeadersReceivedTime(Aws::Utils::DateTime::Now());
+      }
     };
 
     requestOptions.onIncomingHeadersBlockDone = [state](Aws::Crt::Http::HttpStream& stream, enum aws_http_header_block block) {
@@ -285,9 +297,14 @@ class CRTConnection : public Aws::Http::Connection {
     Aws::Crt::Http::HttpRequestOptions requestOptions{};
     requestOptions.request = crtRequest.get();
 
-    requestOptions.onIncomingHeaders = [response](Aws::Crt::Http::HttpStream& stream, enum aws_http_header_block block,
-                                                  const Aws::Crt::Http::HttpHeader* headersArray, std::size_t headersCount) {
+    requestOptions.onIncomingHeaders = [request, response](Aws::Crt::Http::HttpStream& stream, enum aws_http_header_block block,
+                                                           const Aws::Crt::Http::HttpHeader* headersArray, std::size_t headersCount) {
       OnIncomingHeaders(stream, block, headersArray, headersCount, response);
+      // aws-c-http reports the main block done only when the body starts, so stamp as header lines arrive.
+      // Written on the event-loop thread; the caller reads it only after waiting for stream completion.
+      if (block == AWS_HTTP_HEADER_BLOCK_MAIN) {
+        request->SetResponseHeadersReceivedTime(Aws::Utils::DateTime::Now());
+      }
     };
 
     requestOptions.onIncomingHeadersBlockDone = [request, response](Aws::Crt::Http::HttpStream& stream, enum aws_http_header_block block) {
@@ -431,6 +448,8 @@ namespace Aws
                     const char* caFile = m_configuration.caFile.empty() ? nullptr : m_configuration.caFile.c_str();
                     if (!tlsContextOptions.OverrideDefaultTrustStore(caPath, caFile))
                     {
+                        AWS_LOGSTREAM_ERROR(CRT_HTTP_CLIENT_TAG, "Failed to load the trust store, caPath: \"" << m_configuration.caPath
+                            << "\", caFile: \"" << m_configuration.caFile << "\": " << aws_error_debug_str(aws_last_error()));
                         m_bad = true;
                         return;
                     }
@@ -444,6 +463,7 @@ namespace Aws
                 // this may need to be pulled from the client configuration....
                 if (!tlsContextOptions.SetAlpnList("h2;http/1.1"))
                 {
+                    AWS_LOGSTREAM_ERROR(CRT_HTTP_CLIENT_TAG, "Failed to set the TLS ALPN list: " << aws_error_debug_str(aws_last_error()));
                     m_bad = true;
                     return;
                 }
@@ -453,6 +473,8 @@ namespace Aws
 
             if (!newContext)
             {
+                AWS_LOGSTREAM_ERROR(CRT_HTTP_CLIENT_TAG, "Failed to create the TLS context: "
+                    << aws_error_debug_str(newContext.GetInitializationError()));
                 m_bad = true;
                 return;
             }
@@ -484,6 +506,11 @@ namespace Aws
             const std::shared_ptr<HttpRequest>& request,
             std::function<void(std::shared_ptr<HttpResponse>)> onResponseComplete) const
         {
+            if (m_bad)
+            {
+                return MakeCrtClientInitializationError(*request);
+            }
+
             auto state = Aws::MakeShared<AsyncRequestState>(CRT_HTTP_CLIENT_TAG, request, std::move(onResponseComplete));
 
             auto requestConnOptions = CreateConnectionOptionsForRequest(request);
@@ -649,6 +676,8 @@ namespace Aws
                 {
                     auto response = Aws::MakeShared<Standard::StandardHttpResponse>(CRT_HTTP_CLIENT_TAG, request);
                     response->SetResponseCode(Aws::Http::HttpResponseCode::REQUEST_NOT_MADE);
+                    response->SetClientErrorType(error->GetErrorType());
+                    response->SetClientErrorMessage(error->GetMessage());
                     onResponse(std::move(response));
                 }
             };
@@ -837,18 +866,34 @@ namespace Aws
                     {
                         const char* caPath = clientConfig.proxyCaPath.empty() ? nullptr : clientConfig.proxyCaPath.c_str();
                         const char* caFile = clientConfig.proxyCaFile.empty() ? nullptr : clientConfig.proxyCaFile.c_str();
-                        contextOptions.OverrideDefaultTrustStore(caPath, caFile);
-                    } 
+                        if (!contextOptions.OverrideDefaultTrustStore(caPath, caFile))
+                        {
+                            AWS_LOGSTREAM_ERROR(CRT_HTTP_CLIENT_TAG, "Failed to load the proxy trust store, proxyCaPath: \"" << clientConfig.proxyCaPath
+                                << "\", proxyCaFile: \"" << clientConfig.proxyCaFile << "\": " << aws_error_debug_str(aws_last_error()));
+                            m_bad = true;
+                        }
+                    }
                     else if (!m_configuration.caFile.empty() || !m_configuration.caPath.empty())
                     {
                         const char* caPath = clientConfig.caPath.empty() ? nullptr : clientConfig.caPath.c_str();
                         const char* caFile = clientConfig.caFile.empty() ? nullptr : clientConfig.caFile.c_str();
-                        contextOptions.OverrideDefaultTrustStore(caPath, caFile);
+                        if (!contextOptions.OverrideDefaultTrustStore(caPath, caFile))
+                        {
+                            AWS_LOGSTREAM_ERROR(CRT_HTTP_CLIENT_TAG, "Failed to load the proxy trust store, caPath: \"" << clientConfig.caPath
+                                << "\", caFile: \"" << clientConfig.caFile << "\": " << aws_error_debug_str(aws_last_error()));
+                            m_bad = true;
+                        }
                     }
 
                     contextOptions.SetVerifyPeer(clientConfig.verifySSL);
                     Crt::Io::TlsContext context = Crt::Io::TlsContext(contextOptions, Crt::Io::TlsMode::CLIENT);
-                    proxyOptions.TlsOptions = context.NewConnectionOptions();                    
+                    if (!context)
+                    {
+                        AWS_LOGSTREAM_ERROR(CRT_HTTP_CLIENT_TAG, "Failed to create the proxy TLS context: "
+                            << aws_error_debug_str(context.GetInitializationError()));
+                        m_bad = true;
+                    }
+                    proxyOptions.TlsOptions = context.NewConnectionOptions();
                 }
 
                 m_proxyOptions = std::move(proxyOptions);
@@ -858,6 +903,11 @@ namespace Aws
         Aws::Crt::Optional<Aws::Client::AWSError<Aws::Client::CoreErrors>> CRTHttpClient::AcquireConnection(
             const std::shared_ptr<HttpRequest>& request,
             const std::function<void(std::shared_ptr<Aws::Http::Connection>, int)>& onClientConnectionAvailable) {
+          if (m_bad)
+          {
+            return MakeCrtClientInitializationError(*request);
+          }
+
           auto requestConnOptions = CreateConnectionOptionsForRequest(request);
           auto connectionManager = GetWithCreateConnectionManagerForRequest(request, requestConnOptions);
 

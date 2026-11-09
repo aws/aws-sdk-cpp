@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/ServerProtocol.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
 
@@ -48,9 +49,57 @@ class ProtocolConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The port on which the agent server listens. The port must be between
+   * <code>8000</code> and <code>12000</code>, excluding the reserved port
+   * <code>8443</code>. When this field is omitted, the default is <code>8080</code>
+   * for <code>HTTP</code> and <code>AGUI</code>, <code>8000</code> for
+   * <code>MCP</code>, and <code>9000</code> for <code>A2A</code>.</p>
+   */
+  inline int GetPort() const { return m_port; }
+  inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+  inline void SetPort(int value) {
+    m_portHasBeenSet = true;
+    m_port = value;
+  }
+  inline ProtocolConfiguration& WithPort(int value) {
+    SetPort(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The path on which the agent server accepts requests. The path must begin with
+   * <code>/</code>. When this field is omitted, the default is
+   * <code>/invocations</code> for <code>HTTP</code> and <code>AGUI</code>,
+   * <code>/mcp</code> for <code>MCP</code>, and <code>/</code> for
+   * <code>A2A</code>.</p>
+   */
+  inline const Aws::String& GetPath() const { return m_path; }
+  inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
+  template <typename PathT = Aws::String>
+  void SetPath(PathT&& value) {
+    m_pathHasBeenSet = true;
+    m_path = std::forward<PathT>(value);
+  }
+  template <typename PathT = Aws::String>
+  ProtocolConfiguration& WithPath(PathT&& value) {
+    SetPath(std::forward<PathT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ServerProtocol m_serverProtocol{ServerProtocol::NOT_SET};
+
+  int m_port{0};
+
+  Aws::String m_path;
   bool m_serverProtocolHasBeenSet = false;
+  bool m_portHasBeenSet = false;
+  bool m_pathHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -64,12 +64,36 @@ class DeleteAccountPolicyRequest : public CloudWatchLogsRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether to preview the impact of deleting the policy without
+   * deleting it. If you specify <code>true</code>, CloudWatch Logs does not delete
+   * the policy and returns the estimated impact in <code>dryRunResult</code>. The
+   * default is <code>false</code>.</p> <p>Specifying <code>dryRun</code> is valid
+   * only when you specify <code>RETENTION_POLICY</code> for <code>policyType</code>.
+   * Only one dry run can be in progress for an account at a time.</p>
+   */
+  inline bool GetDryRun() const { return m_dryRun; }
+  inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+  inline void SetDryRun(bool value) {
+    m_dryRunHasBeenSet = true;
+    m_dryRun = value;
+  }
+  inline DeleteAccountPolicyRequest& WithDryRun(bool value) {
+    SetDryRun(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_policyName;
 
   PolicyType m_policyType{PolicyType::NOT_SET};
+
+  bool m_dryRun{false};
   bool m_policyNameHasBeenSet = false;
   bool m_policyTypeHasBeenSet = false;
+  bool m_dryRunHasBeenSet = false;
 };
 
 }  // namespace Model

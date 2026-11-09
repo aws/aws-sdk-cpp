@@ -72,12 +72,29 @@ class UpdateConfigurationInheritance {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline InheritanceMode GetAmiConfiguration() const { return m_amiConfiguration; }
+  inline bool AmiConfigurationHasBeenSet() const { return m_amiConfigurationHasBeenSet; }
+  inline void SetAmiConfiguration(InheritanceMode value) {
+    m_amiConfigurationHasBeenSet = true;
+    m_amiConfiguration = value;
+  }
+  inline UpdateConfigurationInheritance& WithAmiConfiguration(InheritanceMode value) {
+    SetAmiConfiguration(value);
+    return *this;
+  }
+  ///@}
  private:
   InheritanceMode m_ec2Configuration{InheritanceMode::NOT_SET};
 
   InheritanceMode m_ecrConfiguration{InheritanceMode::NOT_SET};
+
+  InheritanceMode m_amiConfiguration{InheritanceMode::NOT_SET};
   bool m_ec2ConfigurationHasBeenSet = false;
   bool m_ecrConfigurationHasBeenSet = false;
+  bool m_amiConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -13,6 +13,7 @@
 #include <aws/omics/model/CacheBehavior.h>
 #include <aws/omics/model/NetworkingMode.h>
 #include <aws/omics/model/RunLogLevel.h>
+#include <aws/omics/model/RunOutputUriPrefixMode.h>
 #include <aws/omics/model/RunRetentionMode.h>
 #include <aws/omics/model/ScratchStorageMode.h>
 #include <aws/omics/model/StorageType.h>
@@ -525,6 +526,24 @@ class StartRunRequest : public OmicsRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>You can control the path prefixes that the service adds beneath
+   * <code>outputUri</code>. If you don't specify a value, the service uses
+   * <code>SERVICE_DEFINED</code>, which adds a run-specific prefix.</p>
+   */
+  inline RunOutputUriPrefixMode GetOutputUriPrefixMode() const { return m_outputUriPrefixMode; }
+  inline bool OutputUriPrefixModeHasBeenSet() const { return m_outputUriPrefixModeHasBeenSet; }
+  inline void SetOutputUriPrefixMode(RunOutputUriPrefixMode value) {
+    m_outputUriPrefixModeHasBeenSet = true;
+    m_outputUriPrefixMode = value;
+  }
+  inline StartRunRequest& WithOutputUriPrefixMode(RunOutputUriPrefixMode value) {
+    SetOutputUriPrefixMode(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_workflowId;
 
@@ -573,6 +592,8 @@ class StartRunRequest : public OmicsRequest {
   Aws::String m_sessionPolicy;
 
   Aws::Utils::Document m_engineSettings;
+
+  RunOutputUriPrefixMode m_outputUriPrefixMode{RunOutputUriPrefixMode::NOT_SET};
   bool m_workflowIdHasBeenSet = false;
   bool m_workflowTypeHasBeenSet = false;
   bool m_runIdHasBeenSet = false;
@@ -597,6 +618,7 @@ class StartRunRequest : public OmicsRequest {
   bool m_configurationNameHasBeenSet = false;
   bool m_sessionPolicyHasBeenSet = false;
   bool m_engineSettingsHasBeenSet = false;
+  bool m_outputUriPrefixModeHasBeenSet = false;
 };
 
 }  // namespace Model

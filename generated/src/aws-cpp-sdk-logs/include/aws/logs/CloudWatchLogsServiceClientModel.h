@@ -28,6 +28,7 @@
 #include <aws/logs/model/CreateLogAnomalyDetectorResult.h>
 #include <aws/logs/model/CreateLookupTableResult.h>
 #include <aws/logs/model/CreateScheduledQueryResult.h>
+#include <aws/logs/model/DeleteAccountPolicyResult.h>
 #include <aws/logs/model/DeleteIndexPolicyResult.h>
 #include <aws/logs/model/DeleteIntegrationResult.h>
 #include <aws/logs/model/DeleteQueryDefinitionResult.h>
@@ -288,7 +289,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> CreateLogGroupOu
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> CreateLogStreamOutcome;
 typedef Aws::Utils::Outcome<CreateLookupTableResult, CloudWatchLogsError> CreateLookupTableOutcome;
 typedef Aws::Utils::Outcome<CreateScheduledQueryResult, CloudWatchLogsError> CreateScheduledQueryOutcome;
-typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> DeleteAccountPolicyOutcome;
+typedef Aws::Utils::Outcome<DeleteAccountPolicyResult, CloudWatchLogsError> DeleteAccountPolicyOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> DeleteDataProtectionPolicyOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> DeleteDeliveryOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchLogsError> DeleteDeliveryDestinationOutcome;

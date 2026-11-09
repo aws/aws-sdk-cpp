@@ -10,7 +10,7 @@
 namespace Aws {
 namespace MediaConnect {
 namespace Model {
-enum class RouterOutputType { NOT_SET, STANDARD, MEDIACONNECT_FLOW, MEDIALIVE_INPUT };
+enum class RouterOutputType { NOT_SET, STANDARD, MEDIACONNECT_FLOW, MEDIALIVE_INPUT, SOURCE_ENDPOINT };
 
 namespace RouterOutputTypeMapper {
 AWS_MEDIACONNECT_API RouterOutputType GetRouterOutputTypeForName(const Aws::String& name);

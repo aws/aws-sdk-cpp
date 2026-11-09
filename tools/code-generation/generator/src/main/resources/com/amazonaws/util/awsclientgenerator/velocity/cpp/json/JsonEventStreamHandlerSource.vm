@@ -134,29 +134,78 @@ namespace Model
             ${eventShape.name} event(GetEventPayloadWithOwnership());
             m_on${eventShape.name}(event);
             break;
-#elseif($eventShape.getEventStreamHeaders().size() > 0)
-            ${eventShape.name} event(GetEventPayloadWithOwnership());
-#foreach($eventStreamHeaderMapping in $eventShape.getEventStreamHeaders().entrySet())
-#set($eventStreamHeader = $eventStreamHeaderMapping.getValue())
-#set($eventHeaderMemberNameWithFirstLetterCapitalized = $CppViewHelper.capitalizeFirstChar($eventStreamHeader.getName()))
-#set($headerVarName = $CppViewHelper.lowercasesFirstChar("${eventStreamHeader.getName()}Header"))
-            const auto $headerVarName = headers.find("${eventStreamHeaderMapping.getKey()}");
-            if ($headerVarName != headers.end()) {
-                event.Set$eventHeaderMemberNameWithFirstLetterCapitalized($CppViewHelper.getEventStreamHeaderValue($headerVarName, $eventStreamHeader));
-            }
-#end
-            m_on${eventShape.name}(event);
-            break;
-##multiple members or the only one member is structure
 #elseif(!$eventShape.members.isEmpty())
+## Build the event from its payload, by payload kind: an explicit @eventPayload member (blob / string / structure),
+## the whole event as a JSON structure (implicit payload), or no payload (header-only). Then set the @eventHeader members.
+## (#set with a null value keeps the previous value in Velocity, so reset explicitly per event.)
+#set($hasEventHeaders = false)
+#foreach($eventMemberCheck in $eventShape.members.values())
+#if($eventMemberCheck.isEventHeader())
+#set($hasEventHeaders = true)
+#end
+#end
+## Only an explicit @eventPayload member is the body; for an inferred one the whole event is the JSON body.
+## Blob payloads keep the raw-bytes construction either way.
+#set($payloadMemberName = "")
+#if($eventShape.eventPayloadMemberName && ($eventShape.isEventPayloadExplicit() || $eventShape.members.get($eventShape.eventPayloadMemberName).shape.isBlob()))
+#set($payloadMemberName = $eventShape.eventPayloadMemberName)
+#end
+#if($payloadMemberName != "")
+#set($payloadMember = $eventShape.members.get($payloadMemberName))
+#set($payloadSetter = "Set${CppViewHelper.capitalizeFirstChar($payloadMemberName)}")
+#end
+#if($payloadMemberName != "" && $payloadMember.shape.isBlob())
+            ${eventShape.name} event(GetEventPayloadWithOwnership());
+#elseif($payloadMemberName != "" && $payloadMember.shape.isString())
+            ${eventShape.name} event;
+            event.${payloadSetter}(GetEventPayloadAsString());
+#elseif($payloadMemberName != "" || $eventShape.eventPayloadType)
             JsonValue json(GetEventPayloadAsString());
             if (!json.WasParseSuccessful())
             {
                 AWS_LOGSTREAM_WARN(${operation.name.toUpperCase()}_HANDLER_CLASS_TAG, "Unable to generate a proper ${eventShape.name} object from the response in JSON format.");
                 break;
             }
+#if($payloadMemberName != "")
+            ${eventShape.name} event;
+            event.${payloadSetter}(${payloadMember.shape.name}{json.View()});
+#elseif(!$hasEventHeaders)
 
             m_on${eventShape.name}(${eventShape.name}{json.View()});
+#else
+            ${eventShape.name} event{json.View()};
+#end
+#else
+            ${eventShape.name} event;
+#end
+#if($payloadMemberName != "" || $hasEventHeaders || !$eventShape.eventPayloadType)
+## Header member name -> header shape. eventStreamHeaders is only filled for events with a payload member;
+## otherwise take the @eventHeader members directly.
+#if($eventShape.getEventStreamHeaders() && !$eventShape.getEventStreamHeaders().isEmpty())
+#set($eventHeaders = $eventShape.getEventStreamHeaders())
+#else
+#set($eventHeaders = {})
+#foreach($eventHeaderMember in $eventShape.members.entrySet())
+#if($eventHeaderMember.value.isEventHeader())
+#set($ignored = $eventHeaders.put($eventHeaderMember.key, $eventHeaderMember.value.shape))
+#end
+#end
+#end
+#foreach($eventHeaderEntry in $eventHeaders.entrySet())
+## Blob-payload event classes name header accessors after the header's shape; regular model classes after the member.
+#if($payloadMemberName != "" && $payloadMember.shape.isBlob())
+#set($headerAccessorName = $CppViewHelper.capitalizeFirstChar($eventHeaderEntry.value.name))
+#else
+#set($headerAccessorName = $CppViewHelper.capitalizeFirstChar($eventHeaderEntry.key))
+#end
+#set($headerVarName = $CppViewHelper.lowercasesFirstChar("${headerAccessorName}Header"))
+            const auto $headerVarName = headers.find("${eventHeaderEntry.key}");
+            if ($headerVarName != headers.end()) {
+                event.Set${headerAccessorName}($CppViewHelper.getEventStreamHeaderValue($headerVarName, $eventHeaderEntry.value));
+            }
+#end
+            m_on${eventShape.name}(event);
+#end
             break;
 #else
             m_on${eventShape.name}();

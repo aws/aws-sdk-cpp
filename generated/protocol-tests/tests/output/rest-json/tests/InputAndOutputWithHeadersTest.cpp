@@ -7,6 +7,9 @@
 #include <aws/rest-json-protocol/model/InputAndOutputWithHeadersRequest.h>
 #include <aws/testing/AwsProtocolTestHelpers.h>
 
+#include <cmath>
+#include <limits>
+
 using InputAndOutputWithHeaders = AWS_PROTOCOL_TEST_SUITE;
 using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
 using namespace Aws::RestJsonProtocol::Model;

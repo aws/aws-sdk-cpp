@@ -75,6 +75,10 @@ LogGroup& LogGroup::operator=(JsonView jsonValue) {
     m_bearerTokenAuthenticationEnabled = jsonValue.GetBool("bearerTokenAuthenticationEnabled");
     m_bearerTokenAuthenticationEnabledHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("retentionPolicyName")) {
+    m_retentionPolicyName = jsonValue.GetString("retentionPolicyName");
+    m_retentionPolicyNameHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -137,6 +141,10 @@ JsonValue LogGroup::Jsonize() const {
 
   if (m_bearerTokenAuthenticationEnabledHasBeenSet) {
     payload.WithBool("bearerTokenAuthenticationEnabled", m_bearerTokenAuthenticationEnabled);
+  }
+
+  if (m_retentionPolicyNameHasBeenSet) {
+    payload.WithString("retentionPolicyName", m_retentionPolicyName);
   }
 
   return payload;

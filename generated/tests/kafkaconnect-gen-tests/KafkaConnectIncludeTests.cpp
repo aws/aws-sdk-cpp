@@ -50,6 +50,7 @@
 #include <aws/kafkaconnect/model/CustomPluginRevisionSummary.h>
 #include <aws/kafkaconnect/model/CustomPluginState.h>
 #include <aws/kafkaconnect/model/CustomPluginSummary.h>
+#include <aws/kafkaconnect/model/CustomPluginUpdate.h>
 #include <aws/kafkaconnect/model/DeleteConnectorRequest.h>
 #include <aws/kafkaconnect/model/DeleteConnectorResult.h>
 #include <aws/kafkaconnect/model/DeleteCustomPluginRequest.h>
@@ -91,13 +92,18 @@
 #include <aws/kafkaconnect/model/LogDelivery.h>
 #include <aws/kafkaconnect/model/LogDeliveryDescription.h>
 #include <aws/kafkaconnect/model/NetworkType.h>
+#include <aws/kafkaconnect/model/PauseConnectorRequest.h>
+#include <aws/kafkaconnect/model/PauseConnectorResult.h>
 #include <aws/kafkaconnect/model/Plugin.h>
 #include <aws/kafkaconnect/model/PluginDescription.h>
+#include <aws/kafkaconnect/model/PluginUpdate.h>
 #include <aws/kafkaconnect/model/ProvisionedCapacity.h>
 #include <aws/kafkaconnect/model/ProvisionedCapacityDescription.h>
 #include <aws/kafkaconnect/model/ProvisionedCapacityUpdate.h>
 #include <aws/kafkaconnect/model/RestartConnectorRequest.h>
 #include <aws/kafkaconnect/model/RestartConnectorResult.h>
+#include <aws/kafkaconnect/model/ResumeConnectorRequest.h>
+#include <aws/kafkaconnect/model/ResumeConnectorResult.h>
 #include <aws/kafkaconnect/model/S3Location.h>
 #include <aws/kafkaconnect/model/S3LocationDescription.h>
 #include <aws/kafkaconnect/model/S3LogDelivery.h>
@@ -123,6 +129,7 @@
 #include <aws/kafkaconnect/model/WorkerConfigurationRevisionSummary.h>
 #include <aws/kafkaconnect/model/WorkerConfigurationState.h>
 #include <aws/kafkaconnect/model/WorkerConfigurationSummary.h>
+#include <aws/kafkaconnect/model/WorkerConfigurationUpdate.h>
 #include <aws/kafkaconnect/model/WorkerLogDelivery.h>
 #include <aws/kafkaconnect/model/WorkerLogDeliveryDescription.h>
 #include <aws/kafkaconnect/model/WorkerSetting.h>

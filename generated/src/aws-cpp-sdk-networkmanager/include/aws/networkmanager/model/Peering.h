@@ -221,7 +221,7 @@ class Peering {
 
   ///@{
   /**
-   * <p>Describes the error associated with the Connect peer request.</p>
+   * <p>Describes the error associated with the peering request.</p>
    */
   inline const Aws::Vector<PeeringError>& GetLastModificationErrors() const { return m_lastModificationErrors; }
   inline bool LastModificationErrorsHasBeenSet() const { return m_lastModificationErrorsHasBeenSet; }

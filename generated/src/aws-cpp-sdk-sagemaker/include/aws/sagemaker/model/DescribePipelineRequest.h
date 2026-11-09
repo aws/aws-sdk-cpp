@@ -50,7 +50,8 @@ class DescribePipelineRequest : public SageMakerRequest {
 
   ///@{
   /**
-   * <p>The ID of the pipeline version to describe.</p>
+   * <p>The ID of the pipeline version to describe. You can't specify this with
+   * <code>PipelineVersionAlias</code>.</p>
    */
   inline long long GetPipelineVersionId() const { return m_pipelineVersionId; }
   inline bool PipelineVersionIdHasBeenSet() const { return m_pipelineVersionIdHasBeenSet; }
@@ -63,12 +64,36 @@ class DescribePipelineRequest : public SageMakerRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The alias of the pipeline version to describe. You can't specify this with
+   * <code>PipelineVersionId</code>. If no version of the pipeline has this alias,
+   * the request fails with a <code>ResourceNotFound</code> error. If you specify
+   * neither, SageMaker describes the latest version of the pipeline.</p>
+   */
+  inline const Aws::String& GetPipelineVersionAlias() const { return m_pipelineVersionAlias; }
+  inline bool PipelineVersionAliasHasBeenSet() const { return m_pipelineVersionAliasHasBeenSet; }
+  template <typename PipelineVersionAliasT = Aws::String>
+  void SetPipelineVersionAlias(PipelineVersionAliasT&& value) {
+    m_pipelineVersionAliasHasBeenSet = true;
+    m_pipelineVersionAlias = std::forward<PipelineVersionAliasT>(value);
+  }
+  template <typename PipelineVersionAliasT = Aws::String>
+  DescribePipelineRequest& WithPipelineVersionAlias(PipelineVersionAliasT&& value) {
+    SetPipelineVersionAlias(std::forward<PipelineVersionAliasT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_pipelineName;
 
   long long m_pipelineVersionId{0};
+
+  Aws::String m_pipelineVersionAlias;
   bool m_pipelineNameHasBeenSet = false;
   bool m_pipelineVersionIdHasBeenSet = false;
+  bool m_pipelineVersionAliasHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -37,7 +37,9 @@
 #include <aws/kafkaconnect/model/ListTagsForResourceResult.h>
 #include <aws/kafkaconnect/model/ListWorkerConfigurationsRequest.h>
 #include <aws/kafkaconnect/model/ListWorkerConfigurationsResult.h>
+#include <aws/kafkaconnect/model/PauseConnectorResult.h>
 #include <aws/kafkaconnect/model/RestartConnectorResult.h>
+#include <aws/kafkaconnect/model/ResumeConnectorResult.h>
 #include <aws/kafkaconnect/model/TagResourceResult.h>
 #include <aws/kafkaconnect/model/UntagResourceResult.h>
 #include <aws/kafkaconnect/model/UpdateConnectorResult.h>
@@ -89,7 +91,9 @@ class ListConnectorsRequest;
 class ListCustomPluginsRequest;
 class ListTagsForResourceRequest;
 class ListWorkerConfigurationsRequest;
+class PauseConnectorRequest;
 class RestartConnectorRequest;
+class ResumeConnectorRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
 class UpdateConnectorRequest;
@@ -111,7 +115,9 @@ typedef Aws::Utils::Outcome<ListConnectorsResult, KafkaConnectError> ListConnect
 typedef Aws::Utils::Outcome<ListCustomPluginsResult, KafkaConnectError> ListCustomPluginsOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, KafkaConnectError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<ListWorkerConfigurationsResult, KafkaConnectError> ListWorkerConfigurationsOutcome;
+typedef Aws::Utils::Outcome<PauseConnectorResult, KafkaConnectError> PauseConnectorOutcome;
 typedef Aws::Utils::Outcome<RestartConnectorResult, KafkaConnectError> RestartConnectorOutcome;
+typedef Aws::Utils::Outcome<ResumeConnectorResult, KafkaConnectError> ResumeConnectorOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, KafkaConnectError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, KafkaConnectError> UntagResourceOutcome;
 typedef Aws::Utils::Outcome<UpdateConnectorResult, KafkaConnectError> UpdateConnectorOutcome;
@@ -133,7 +139,9 @@ typedef std::future<ListConnectorsOutcome> ListConnectorsOutcomeCallable;
 typedef std::future<ListCustomPluginsOutcome> ListCustomPluginsOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<ListWorkerConfigurationsOutcome> ListWorkerConfigurationsOutcomeCallable;
+typedef std::future<PauseConnectorOutcome> PauseConnectorOutcomeCallable;
 typedef std::future<RestartConnectorOutcome> RestartConnectorOutcomeCallable;
+typedef std::future<ResumeConnectorOutcome> ResumeConnectorOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 typedef std::future<UpdateConnectorOutcome> UpdateConnectorOutcomeCallable;
@@ -188,9 +196,15 @@ typedef std::function<void(const KafkaConnectClient*, const Model::ListTagsForRe
 typedef std::function<void(const KafkaConnectClient*, const Model::ListWorkerConfigurationsRequest&,
                            const Model::ListWorkerConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListWorkerConfigurationsResponseReceivedHandler;
+typedef std::function<void(const KafkaConnectClient*, const Model::PauseConnectorRequest&, const Model::PauseConnectorOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    PauseConnectorResponseReceivedHandler;
 typedef std::function<void(const KafkaConnectClient*, const Model::RestartConnectorRequest&, const Model::RestartConnectorOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     RestartConnectorResponseReceivedHandler;
+typedef std::function<void(const KafkaConnectClient*, const Model::ResumeConnectorRequest&, const Model::ResumeConnectorOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ResumeConnectorResponseReceivedHandler;
 typedef std::function<void(const KafkaConnectClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     TagResourceResponseReceivedHandler;

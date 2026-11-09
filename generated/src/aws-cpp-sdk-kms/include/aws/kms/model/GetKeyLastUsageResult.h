@@ -50,7 +50,7 @@ class GetKeyLastUsageResult {
   /**
    * <p>Contains usage information about the last time the KMS key was used for a
    * successful cryptographic operation. If the key has not been used since tracking
-   * began, this response element is empty.</p>
+   * began, this response element is an empty object.</p>
    */
   inline const KeyLastUsageData& GetKeyLastUsage() const { return m_keyLastUsage; }
   template <typename KeyLastUsageT = KeyLastUsageData>

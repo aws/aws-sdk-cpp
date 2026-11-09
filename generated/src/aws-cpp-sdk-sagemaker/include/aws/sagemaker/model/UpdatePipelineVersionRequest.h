@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/SageMakerRequest.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
+#include <aws/sagemaker/model/AliasOperations.h>
 
 #include <utility>
 
@@ -99,6 +100,24 @@ class UpdatePipelineVersionRequest : public SageMakerRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The aliases to add to or remove from the pipeline version.</p>
+   */
+  inline const AliasOperations& GetPipelineVersionAliasOperations() const { return m_pipelineVersionAliasOperations; }
+  inline bool PipelineVersionAliasOperationsHasBeenSet() const { return m_pipelineVersionAliasOperationsHasBeenSet; }
+  template <typename PipelineVersionAliasOperationsT = AliasOperations>
+  void SetPipelineVersionAliasOperations(PipelineVersionAliasOperationsT&& value) {
+    m_pipelineVersionAliasOperationsHasBeenSet = true;
+    m_pipelineVersionAliasOperations = std::forward<PipelineVersionAliasOperationsT>(value);
+  }
+  template <typename PipelineVersionAliasOperationsT = AliasOperations>
+  UpdatePipelineVersionRequest& WithPipelineVersionAliasOperations(PipelineVersionAliasOperationsT&& value) {
+    SetPipelineVersionAliasOperations(std::forward<PipelineVersionAliasOperationsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_pipelineArn;
 
@@ -107,10 +126,13 @@ class UpdatePipelineVersionRequest : public SageMakerRequest {
   Aws::String m_pipelineVersionDisplayName;
 
   Aws::String m_pipelineVersionDescription;
+
+  AliasOperations m_pipelineVersionAliasOperations;
   bool m_pipelineArnHasBeenSet = false;
   bool m_pipelineVersionIdHasBeenSet = false;
   bool m_pipelineVersionDisplayNameHasBeenSet = false;
   bool m_pipelineVersionDescriptionHasBeenSet = false;
+  bool m_pipelineVersionAliasOperationsHasBeenSet = false;
 };
 
 }  // namespace Model

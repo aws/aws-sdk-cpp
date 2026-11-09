@@ -21,6 +21,8 @@
 #include <aws/securityhub/model/GetRemediationsV2PaginationTraits.h>
 #include <aws/securityhub/model/GetResourcesTrendsV2PaginationTraits.h>
 #include <aws/securityhub/model/GetResourcesV2PaginationTraits.h>
+#include <aws/securityhub/model/GetSoftwareResourcesV2PaginationTraits.h>
+#include <aws/securityhub/model/GetSoftwareV2PaginationTraits.h>
 #include <aws/securityhub/model/ListAggregatorsV2PaginationTraits.h>
 #include <aws/securityhub/model/ListConfigurationPoliciesPaginationTraits.h>
 #include <aws/securityhub/model/ListConfigurationPolicyAssociationsPaginationTraits.h>
@@ -72,6 +74,11 @@ using GetResourcesTrendsV2Paginator =
                                       Pagination::GetResourcesTrendsV2PaginationTraits<SecurityHubClient>>;
 using GetResourcesV2Paginator = Aws::Utils::Pagination::Paginator<SecurityHubClient, Model::GetResourcesV2Request,
                                                                   Pagination::GetResourcesV2PaginationTraits<SecurityHubClient>>;
+using GetSoftwareResourcesV2Paginator =
+    Aws::Utils::Pagination::Paginator<SecurityHubClient, Model::GetSoftwareResourcesV2Request,
+                                      Pagination::GetSoftwareResourcesV2PaginationTraits<SecurityHubClient>>;
+using GetSoftwareV2Paginator = Aws::Utils::Pagination::Paginator<SecurityHubClient, Model::GetSoftwareV2Request,
+                                                                 Pagination::GetSoftwareV2PaginationTraits<SecurityHubClient>>;
 using ListAggregatorsV2Paginator = Aws::Utils::Pagination::Paginator<SecurityHubClient, Model::ListAggregatorsV2Request,
                                                                      Pagination::ListAggregatorsV2PaginationTraits<SecurityHubClient>>;
 using ListConfigurationPoliciesPaginator =

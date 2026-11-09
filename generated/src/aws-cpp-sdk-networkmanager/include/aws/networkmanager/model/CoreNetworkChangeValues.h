@@ -273,8 +273,8 @@ class CoreNetworkChangeValues {
 
   ///@{
   /**
-   * <p>The routing policy direction (inbound/outbound) in a core network change
-   * event.</p>
+   * <p>The routing policy direction (inbound/outbound) in the core network change
+   * values.</p>
    */
   inline RoutingPolicyDirection GetRoutingPolicyDirection() const { return m_routingPolicyDirection; }
   inline bool RoutingPolicyDirectionHasBeenSet() const { return m_routingPolicyDirectionHasBeenSet; }

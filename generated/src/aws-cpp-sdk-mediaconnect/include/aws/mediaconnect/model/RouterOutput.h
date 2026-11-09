@@ -482,6 +482,31 @@ class RouterOutput {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Names (ARNs) of one or more source endpoints that are
+   * associated with this router output.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetAssociatedSourceEndpointArns() const { return m_associatedSourceEndpointArns; }
+  inline bool AssociatedSourceEndpointArnsHasBeenSet() const { return m_associatedSourceEndpointArnsHasBeenSet; }
+  template <typename AssociatedSourceEndpointArnsT = Aws::Vector<Aws::String>>
+  void SetAssociatedSourceEndpointArns(AssociatedSourceEndpointArnsT&& value) {
+    m_associatedSourceEndpointArnsHasBeenSet = true;
+    m_associatedSourceEndpointArns = std::forward<AssociatedSourceEndpointArnsT>(value);
+  }
+  template <typename AssociatedSourceEndpointArnsT = Aws::Vector<Aws::String>>
+  RouterOutput& WithAssociatedSourceEndpointArns(AssociatedSourceEndpointArnsT&& value) {
+    SetAssociatedSourceEndpointArns(std::forward<AssociatedSourceEndpointArnsT>(value));
+    return *this;
+  }
+  template <typename AssociatedSourceEndpointArnsT = Aws::String>
+  RouterOutput& AddAssociatedSourceEndpointArns(AssociatedSourceEndpointArnsT&& value) {
+    m_associatedSourceEndpointArnsHasBeenSet = true;
+    m_associatedSourceEndpointArns.emplace_back(std::forward<AssociatedSourceEndpointArnsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -530,6 +555,8 @@ class RouterOutput {
   MaintenanceSchedule m_maintenanceSchedule;
 
   FabricConfiguration m_fabricConfiguration;
+
+  Aws::Vector<Aws::String> m_associatedSourceEndpointArns;
   bool m_nameHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_idHasBeenSet = false;
@@ -554,6 +581,7 @@ class RouterOutput {
   bool m_maintenanceScheduleTypeHasBeenSet = false;
   bool m_maintenanceScheduleHasBeenSet = false;
   bool m_fabricConfigurationHasBeenSet = false;
+  bool m_associatedSourceEndpointArnsHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -8,6 +8,7 @@
 #include <aws/medialive/model/AfdSignaling.h>
 #include <aws/medialive/model/FixedAfd.h>
 #include <aws/medialive/model/H264AdaptiveQuantization.h>
+#include <aws/medialive/model/H264AllowExplicitWeightedPrediction.h>
 #include <aws/medialive/model/H264ColorMetadata.h>
 #include <aws/medialive/model/H264ColorSpaceSettings.h>
 #include <aws/medialive/model/H264EntropyEncoding.h>
@@ -899,6 +900,28 @@ Enter a minimum bitrate if you
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * Specifies whether the encoder may apply explicit weighted prediction (EWP), an
+   * H.264 coding tool that can improve compression. EWP applies a scaling factor and
+   * offset to reference frames, which helps when brightness changes between frames,
+   * such as during a fade. When this setting is enabled, the encoder decides whether
+   * to apply EWP based on the output's other codec settings, such as profile and
+   * quality level. We recommend that you keep the default, enabled. When disabled,
+   * the encoder never applies EWP.
+   */
+  inline H264AllowExplicitWeightedPrediction GetAllowExplicitWeightedPrediction() const { return m_allowExplicitWeightedPrediction; }
+  inline bool AllowExplicitWeightedPredictionHasBeenSet() const { return m_allowExplicitWeightedPredictionHasBeenSet; }
+  inline void SetAllowExplicitWeightedPrediction(H264AllowExplicitWeightedPrediction value) {
+    m_allowExplicitWeightedPredictionHasBeenSet = true;
+    m_allowExplicitWeightedPrediction = value;
+  }
+  inline H264Settings& WithAllowExplicitWeightedPrediction(H264AllowExplicitWeightedPrediction value) {
+    SetAllowExplicitWeightedPrediction(value);
+    return *this;
+  }
+  ///@}
  private:
   H264AdaptiveQuantization m_adaptiveQuantization{H264AdaptiveQuantization::NOT_SET};
 
@@ -987,6 +1010,8 @@ Enter a minimum bitrate if you
   int m_minQp{0};
 
   int m_minBitrate{0};
+
+  H264AllowExplicitWeightedPrediction m_allowExplicitWeightedPrediction{H264AllowExplicitWeightedPrediction::NOT_SET};
   bool m_adaptiveQuantizationHasBeenSet = false;
   bool m_afdSignalingHasBeenSet = false;
   bool m_bitrateHasBeenSet = false;
@@ -1031,6 +1056,7 @@ Enter a minimum bitrate if you
   bool m_timecodeBurninSettingsHasBeenSet = false;
   bool m_minQpHasBeenSet = false;
   bool m_minBitrateHasBeenSet = false;
+  bool m_allowExplicitWeightedPredictionHasBeenSet = false;
 };
 
 }  // namespace Model

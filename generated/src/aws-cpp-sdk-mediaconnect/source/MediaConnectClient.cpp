@@ -26,9 +26,12 @@
 #include <aws/mediaconnect/model/AddFlowOutputsRequest.h>
 #include <aws/mediaconnect/model/AddFlowSourcesRequest.h>
 #include <aws/mediaconnect/model/AddFlowVpcInterfacesRequest.h>
+#include <aws/mediaconnect/model/BatchGetDestinationEndpointRequest.h>
 #include <aws/mediaconnect/model/BatchGetRouterInputRequest.h>
 #include <aws/mediaconnect/model/BatchGetRouterNetworkInterfaceRequest.h>
 #include <aws/mediaconnect/model/BatchGetRouterOutputRequest.h>
+#include <aws/mediaconnect/model/BatchGetSourceEndpointRequest.h>
+#include <aws/mediaconnect/model/ConnectEndpointsRequest.h>
 #include <aws/mediaconnect/model/CreateBridgeRequest.h>
 #include <aws/mediaconnect/model/CreateFlowRequest.h>
 #include <aws/mediaconnect/model/CreateGatewayRequest.h>
@@ -41,7 +44,9 @@
 #include <aws/mediaconnect/model/DeleteRouterInputRequest.h>
 #include <aws/mediaconnect/model/DeleteRouterNetworkInterfaceRequest.h>
 #include <aws/mediaconnect/model/DeleteRouterOutputRequest.h>
+#include <aws/mediaconnect/model/DeregisterDestinationEndpointRequest.h>
 #include <aws/mediaconnect/model/DeregisterGatewayInstanceRequest.h>
+#include <aws/mediaconnect/model/DeregisterSourceEndpointRequest.h>
 #include <aws/mediaconnect/model/DescribeBridgeRequest.h>
 #include <aws/mediaconnect/model/DescribeFlowRequest.h>
 #include <aws/mediaconnect/model/DescribeFlowSourceMetadataRequest.h>
@@ -50,13 +55,17 @@
 #include <aws/mediaconnect/model/DescribeGatewayRequest.h>
 #include <aws/mediaconnect/model/DescribeOfferingRequest.h>
 #include <aws/mediaconnect/model/DescribeReservationRequest.h>
+#include <aws/mediaconnect/model/DisconnectEndpointsRequest.h>
+#include <aws/mediaconnect/model/GetDestinationEndpointRequest.h>
 #include <aws/mediaconnect/model/GetRouterInputRequest.h>
 #include <aws/mediaconnect/model/GetRouterInputSourceMetadataRequest.h>
 #include <aws/mediaconnect/model/GetRouterInputThumbnailRequest.h>
 #include <aws/mediaconnect/model/GetRouterNetworkInterfaceRequest.h>
 #include <aws/mediaconnect/model/GetRouterOutputRequest.h>
+#include <aws/mediaconnect/model/GetSourceEndpointRequest.h>
 #include <aws/mediaconnect/model/GrantFlowEntitlementsRequest.h>
 #include <aws/mediaconnect/model/ListBridgesRequest.h>
+#include <aws/mediaconnect/model/ListDestinationEndpointsRequest.h>
 #include <aws/mediaconnect/model/ListEntitlementsRequest.h>
 #include <aws/mediaconnect/model/ListFlowsRequest.h>
 #include <aws/mediaconnect/model/ListGatewayInstancesRequest.h>
@@ -66,9 +75,12 @@
 #include <aws/mediaconnect/model/ListRouterInputsRequest.h>
 #include <aws/mediaconnect/model/ListRouterNetworkInterfacesRequest.h>
 #include <aws/mediaconnect/model/ListRouterOutputsRequest.h>
+#include <aws/mediaconnect/model/ListSourceEndpointsRequest.h>
 #include <aws/mediaconnect/model/ListTagsForGlobalResourceRequest.h>
 #include <aws/mediaconnect/model/ListTagsForResourceRequest.h>
 #include <aws/mediaconnect/model/PurchaseOfferingRequest.h>
+#include <aws/mediaconnect/model/RegisterDestinationEndpointRequest.h>
+#include <aws/mediaconnect/model/RegisterSourceEndpointRequest.h>
 #include <aws/mediaconnect/model/RemoveBridgeOutputRequest.h>
 #include <aws/mediaconnect/model/RemoveBridgeSourceRequest.h>
 #include <aws/mediaconnect/model/RemoveFlowMediaStreamRequest.h>
@@ -93,6 +105,7 @@
 #include <aws/mediaconnect/model/UpdateBridgeRequest.h>
 #include <aws/mediaconnect/model/UpdateBridgeSourceRequest.h>
 #include <aws/mediaconnect/model/UpdateBridgeStateRequest.h>
+#include <aws/mediaconnect/model/UpdateDestinationEndpointRequest.h>
 #include <aws/mediaconnect/model/UpdateFlowEntitlementRequest.h>
 #include <aws/mediaconnect/model/UpdateFlowMediaStreamRequest.h>
 #include <aws/mediaconnect/model/UpdateFlowOutputRequest.h>
@@ -102,6 +115,7 @@
 #include <aws/mediaconnect/model/UpdateRouterInputRequest.h>
 #include <aws/mediaconnect/model/UpdateRouterNetworkInterfaceRequest.h>
 #include <aws/mediaconnect/model/UpdateRouterOutputRequest.h>
+#include <aws/mediaconnect/model/UpdateSourceEndpointRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -370,6 +384,24 @@ AddFlowVpcInterfacesOutcome MediaConnectClient::AddFlowVpcInterfaces(const AddFl
                             : AddFlowVpcInterfacesOutcome(std::move(result.GetError()));
 }
 
+BatchGetDestinationEndpointOutcome MediaConnectClient::BatchGetDestinationEndpoint(
+    const BatchGetDestinationEndpointRequest& request) const {
+  if (!request.ArnsHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("BatchGetDestinationEndpoint", "Required field: Arns, is not set");
+    return BatchGetDestinationEndpointOutcome(Aws::Client::AWSError<MediaConnectErrors>(
+        MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Arns]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/destinationEndpoints");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? BatchGetDestinationEndpointOutcome(result.GetResultWithOwnership())
+                            : BatchGetDestinationEndpointOutcome(std::move(result.GetError()));
+}
+
 BatchGetRouterInputOutcome MediaConnectClient::BatchGetRouterInput(const BatchGetRouterInputRequest& request) const {
   if (!request.ArnsHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("BatchGetRouterInput", "Required field: Arns, is not set");
@@ -420,6 +452,41 @@ BatchGetRouterOutputOutcome MediaConnectClient::BatchGetRouterOutput(const Batch
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? BatchGetRouterOutputOutcome(result.GetResultWithOwnership())
                             : BatchGetRouterOutputOutcome(std::move(result.GetError()));
+}
+
+BatchGetSourceEndpointOutcome MediaConnectClient::BatchGetSourceEndpoint(const BatchGetSourceEndpointRequest& request) const {
+  if (!request.ArnsHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("BatchGetSourceEndpoint", "Required field: Arns, is not set");
+    return BatchGetSourceEndpointOutcome(Aws::Client::AWSError<MediaConnectErrors>(
+        MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Arns]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/sourceEndpoints");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? BatchGetSourceEndpointOutcome(result.GetResultWithOwnership())
+                            : BatchGetSourceEndpointOutcome(std::move(result.GetError()));
+}
+
+ConnectEndpointsOutcome MediaConnectClient::ConnectEndpoints(const ConnectEndpointsRequest& request) const {
+  if (!request.DestinationEndpointArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ConnectEndpoints", "Required field: DestinationEndpointArn, is not set");
+    return ConnectEndpointsOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                             "Missing required field [DestinationEndpointArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/connectEndpoints/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDestinationEndpointArn());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? ConnectEndpointsOutcome(result.GetResultWithOwnership())
+                            : ConnectEndpointsOutcome(std::move(result.GetError()));
 }
 
 CreateBridgeOutcome MediaConnectClient::CreateBridge(const CreateBridgeRequest& request) const {
@@ -592,6 +659,25 @@ DeleteRouterOutputOutcome MediaConnectClient::DeleteRouterOutput(const DeleteRou
                             : DeleteRouterOutputOutcome(std::move(result.GetError()));
 }
 
+DeregisterDestinationEndpointOutcome MediaConnectClient::DeregisterDestinationEndpoint(
+    const DeregisterDestinationEndpointRequest& request) const {
+  if (!request.ArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeregisterDestinationEndpoint", "Required field: Arn, is not set");
+    return DeregisterDestinationEndpointOutcome(Aws::Client::AWSError<MediaConnectErrors>(
+        MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Arn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/destinationEndpoint/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeregisterDestinationEndpointOutcome(result.GetResultWithOwnership())
+                            : DeregisterDestinationEndpointOutcome(std::move(result.GetError()));
+}
+
 DeregisterGatewayInstanceOutcome MediaConnectClient::DeregisterGatewayInstance(const DeregisterGatewayInstanceRequest& request) const {
   if (!request.GatewayInstanceArnHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DeregisterGatewayInstance", "Required field: GatewayInstanceArn, is not set");
@@ -608,6 +694,24 @@ DeregisterGatewayInstanceOutcome MediaConnectClient::DeregisterGatewayInstance(c
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? DeregisterGatewayInstanceOutcome(result.GetResultWithOwnership())
                             : DeregisterGatewayInstanceOutcome(std::move(result.GetError()));
+}
+
+DeregisterSourceEndpointOutcome MediaConnectClient::DeregisterSourceEndpoint(const DeregisterSourceEndpointRequest& request) const {
+  if (!request.ArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeregisterSourceEndpoint", "Required field: Arn, is not set");
+    return DeregisterSourceEndpointOutcome(Aws::Client::AWSError<MediaConnectErrors>(
+        MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Arn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/sourceEndpoint/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeregisterSourceEndpointOutcome(result.GetResultWithOwnership())
+                            : DeregisterSourceEndpointOutcome(std::move(result.GetError()));
 }
 
 DescribeBridgeOutcome MediaConnectClient::DescribeBridge(const DescribeBridgeRequest& request) const {
@@ -755,6 +859,42 @@ DescribeReservationOutcome MediaConnectClient::DescribeReservation(const Describ
                             : DescribeReservationOutcome(std::move(result.GetError()));
 }
 
+DisconnectEndpointsOutcome MediaConnectClient::DisconnectEndpoints(const DisconnectEndpointsRequest& request) const {
+  if (!request.DestinationEndpointArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DisconnectEndpoints", "Required field: DestinationEndpointArn, is not set");
+    return DisconnectEndpointsOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                "Missing required field [DestinationEndpointArn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/disconnectEndpoints/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDestinationEndpointArn());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? DisconnectEndpointsOutcome(result.GetResultWithOwnership())
+                            : DisconnectEndpointsOutcome(std::move(result.GetError()));
+}
+
+GetDestinationEndpointOutcome MediaConnectClient::GetDestinationEndpoint(const GetDestinationEndpointRequest& request) const {
+  if (!request.ArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetDestinationEndpoint", "Required field: Arn, is not set");
+    return GetDestinationEndpointOutcome(Aws::Client::AWSError<MediaConnectErrors>(
+        MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Arn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/destinationEndpoint/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetDestinationEndpointOutcome(result.GetResultWithOwnership())
+                            : GetDestinationEndpointOutcome(std::move(result.GetError()));
+}
+
 GetRouterInputOutcome MediaConnectClient::GetRouterInput(const GetRouterInputRequest& request) const {
   if (!request.ArnHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetRouterInput", "Required field: Arn, is not set");
@@ -847,6 +987,24 @@ GetRouterOutputOutcome MediaConnectClient::GetRouterOutput(const GetRouterOutput
                             : GetRouterOutputOutcome(std::move(result.GetError()));
 }
 
+GetSourceEndpointOutcome MediaConnectClient::GetSourceEndpoint(const GetSourceEndpointRequest& request) const {
+  if (!request.ArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetSourceEndpoint", "Required field: Arn, is not set");
+    return GetSourceEndpointOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                              "Missing required field [Arn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/sourceEndpoint/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSourceEndpointOutcome(result.GetResultWithOwnership())
+                            : GetSourceEndpointOutcome(std::move(result.GetError()));
+}
+
 GrantFlowEntitlementsOutcome MediaConnectClient::GrantFlowEntitlements(const GrantFlowEntitlementsRequest& request) const {
   if (!request.FlowArnHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GrantFlowEntitlements", "Required field: FlowArn, is not set");
@@ -874,6 +1032,17 @@ ListBridgesOutcome MediaConnectClient::ListBridges(const ListBridgesRequest& req
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListBridgesOutcome(result.GetResultWithOwnership()) : ListBridgesOutcome(std::move(result.GetError()));
+}
+
+ListDestinationEndpointsOutcome MediaConnectClient::ListDestinationEndpoints(const ListDestinationEndpointsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/destinationEndpoints");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListDestinationEndpointsOutcome(result.GetResultWithOwnership())
+                            : ListDestinationEndpointsOutcome(std::move(result.GetError()));
 }
 
 ListEntitlementsOutcome MediaConnectClient::ListEntitlements(const ListEntitlementsRequest& request) const {
@@ -973,6 +1142,17 @@ ListRouterOutputsOutcome MediaConnectClient::ListRouterOutputs(const ListRouterO
                             : ListRouterOutputsOutcome(std::move(result.GetError()));
 }
 
+ListSourceEndpointsOutcome MediaConnectClient::ListSourceEndpoints(const ListSourceEndpointsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/sourceEndpoints");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSourceEndpointsOutcome(result.GetResultWithOwnership())
+                            : ListSourceEndpointsOutcome(std::move(result.GetError()));
+}
+
 ListTagsForGlobalResourceOutcome MediaConnectClient::ListTagsForGlobalResource(const ListTagsForGlobalResourceRequest& request) const {
   if (!request.ResourceArnHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListTagsForGlobalResource", "Required field: ResourceArn, is not set");
@@ -1025,6 +1205,29 @@ PurchaseOfferingOutcome MediaConnectClient::PurchaseOffering(const PurchaseOffer
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? PurchaseOfferingOutcome(result.GetResultWithOwnership())
                             : PurchaseOfferingOutcome(std::move(result.GetError()));
+}
+
+RegisterDestinationEndpointOutcome MediaConnectClient::RegisterDestinationEndpoint(
+    const RegisterDestinationEndpointRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/destinationEndpoint");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterDestinationEndpointOutcome(result.GetResultWithOwnership())
+                            : RegisterDestinationEndpointOutcome(std::move(result.GetError()));
+}
+
+RegisterSourceEndpointOutcome MediaConnectClient::RegisterSourceEndpoint(const RegisterSourceEndpointRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/sourceEndpoint");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterSourceEndpointOutcome(result.GetResultWithOwnership())
+                            : RegisterSourceEndpointOutcome(std::move(result.GetError()));
 }
 
 RemoveBridgeOutputOutcome MediaConnectClient::RemoveBridgeOutput(const RemoveBridgeOutputRequest& request) const {
@@ -1528,6 +1731,24 @@ UpdateBridgeStateOutcome MediaConnectClient::UpdateBridgeState(const UpdateBridg
                             : UpdateBridgeStateOutcome(std::move(result.GetError()));
 }
 
+UpdateDestinationEndpointOutcome MediaConnectClient::UpdateDestinationEndpoint(const UpdateDestinationEndpointRequest& request) const {
+  if (!request.ArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateDestinationEndpoint", "Required field: Arn, is not set");
+    return UpdateDestinationEndpointOutcome(Aws::Client::AWSError<MediaConnectErrors>(
+        MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Arn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/destinationEndpoint/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateDestinationEndpointOutcome(result.GetResultWithOwnership())
+                            : UpdateDestinationEndpointOutcome(std::move(result.GetError()));
+}
+
 UpdateFlowOutcome MediaConnectClient::UpdateFlow(const UpdateFlowRequest& request) const {
   if (!request.FlowArnHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("UpdateFlow", "Required field: FlowArn, is not set");
@@ -1716,4 +1937,22 @@ UpdateRouterOutputOutcome MediaConnectClient::UpdateRouterOutput(const UpdateRou
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
   return result.IsSuccess() ? UpdateRouterOutputOutcome(result.GetResultWithOwnership())
                             : UpdateRouterOutputOutcome(std::move(result.GetError()));
+}
+
+UpdateSourceEndpointOutcome MediaConnectClient::UpdateSourceEndpoint(const UpdateSourceEndpointRequest& request) const {
+  if (!request.ArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateSourceEndpoint", "Required field: Arn, is not set");
+    return UpdateSourceEndpointOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                 "Missing required field [Arn]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/v1/sourceEndpoint/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetArn());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateSourceEndpointOutcome(result.GetResultWithOwnership())
+                            : UpdateSourceEndpointOutcome(std::move(result.GetError()));
 }

@@ -89,6 +89,8 @@
 #include <aws/qconnect/model/ListTagsForResourceResult.h>
 #include <aws/qconnect/model/NotifyRecommendationsReceivedResult.h>
 #include <aws/qconnect/model/PutFeedbackResult.h>
+#include <aws/qconnect/model/RegisterAssistantReplicaKeyResult.h>
+#include <aws/qconnect/model/RegisterKnowledgeBaseReplicaKeyResult.h>
 #include <aws/qconnect/model/RemoveAssistantAIAgentResult.h>
 #include <aws/qconnect/model/RemoveKnowledgeBaseTemplateUriResult.h>
 #include <aws/qconnect/model/RenderMessageTemplateResult.h>
@@ -214,6 +216,8 @@ class ListSpansRequest;
 class ListTagsForResourceRequest;
 class NotifyRecommendationsReceivedRequest;
 class PutFeedbackRequest;
+class RegisterAssistantReplicaKeyRequest;
+class RegisterKnowledgeBaseReplicaKeyRequest;
 class RemoveAssistantAIAgentRequest;
 class RemoveKnowledgeBaseTemplateUriRequest;
 class RenderMessageTemplateRequest;
@@ -309,6 +313,8 @@ typedef Aws::Utils::Outcome<ListSpansResult, QConnectError> ListSpansOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, QConnectError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<NotifyRecommendationsReceivedResult, QConnectError> NotifyRecommendationsReceivedOutcome;
 typedef Aws::Utils::Outcome<PutFeedbackResult, QConnectError> PutFeedbackOutcome;
+typedef Aws::Utils::Outcome<RegisterAssistantReplicaKeyResult, QConnectError> RegisterAssistantReplicaKeyOutcome;
+typedef Aws::Utils::Outcome<RegisterKnowledgeBaseReplicaKeyResult, QConnectError> RegisterKnowledgeBaseReplicaKeyOutcome;
 typedef Aws::Utils::Outcome<RemoveAssistantAIAgentResult, QConnectError> RemoveAssistantAIAgentOutcome;
 typedef Aws::Utils::Outcome<RemoveKnowledgeBaseTemplateUriResult, QConnectError> RemoveKnowledgeBaseTemplateUriOutcome;
 typedef Aws::Utils::Outcome<RenderMessageTemplateResult, QConnectError> RenderMessageTemplateOutcome;
@@ -404,6 +410,8 @@ typedef std::future<ListSpansOutcome> ListSpansOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<NotifyRecommendationsReceivedOutcome> NotifyRecommendationsReceivedOutcomeCallable;
 typedef std::future<PutFeedbackOutcome> PutFeedbackOutcomeCallable;
+typedef std::future<RegisterAssistantReplicaKeyOutcome> RegisterAssistantReplicaKeyOutcomeCallable;
+typedef std::future<RegisterKnowledgeBaseReplicaKeyOutcome> RegisterKnowledgeBaseReplicaKeyOutcomeCallable;
 typedef std::future<RemoveAssistantAIAgentOutcome> RemoveAssistantAIAgentOutcomeCallable;
 typedef std::future<RemoveKnowledgeBaseTemplateUriOutcome> RemoveKnowledgeBaseTemplateUriOutcomeCallable;
 typedef std::future<RenderMessageTemplateOutcome> RenderMessageTemplateOutcomeCallable;
@@ -642,6 +650,13 @@ typedef std::function<void(const QConnectClient*, const Model::NotifyRecommendat
 typedef std::function<void(const QConnectClient*, const Model::PutFeedbackRequest&, const Model::PutFeedbackOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutFeedbackResponseReceivedHandler;
+typedef std::function<void(const QConnectClient*, const Model::RegisterAssistantReplicaKeyRequest&,
+                           const Model::RegisterAssistantReplicaKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    RegisterAssistantReplicaKeyResponseReceivedHandler;
+typedef std::function<void(const QConnectClient*, const Model::RegisterKnowledgeBaseReplicaKeyRequest&,
+                           const Model::RegisterKnowledgeBaseReplicaKeyOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    RegisterKnowledgeBaseReplicaKeyResponseReceivedHandler;
 typedef std::function<void(const QConnectClient*, const Model::RemoveAssistantAIAgentRequest&, const Model::RemoveAssistantAIAgentOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     RemoveAssistantAIAgentResponseReceivedHandler;

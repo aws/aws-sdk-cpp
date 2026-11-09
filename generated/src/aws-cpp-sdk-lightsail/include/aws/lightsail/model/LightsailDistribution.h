@@ -17,6 +17,7 @@
 #include <aws/lightsail/model/ResourceLocation.h>
 #include <aws/lightsail/model/ResourceType.h>
 #include <aws/lightsail/model/Tag.h>
+#include <aws/lightsail/model/WafConfig.h>
 
 #include <utility>
 
@@ -493,6 +494,25 @@ class LightsailDistribution {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>An object that describes the Web Application Firewall (WAF) configuration of
+   * the distribution.</p>
+   */
+  inline const WafConfig& GetWaf() const { return m_waf; }
+  inline bool WafHasBeenSet() const { return m_wafHasBeenSet; }
+  template <typename WafT = WafConfig>
+  void SetWaf(WafT&& value) {
+    m_wafHasBeenSet = true;
+    m_waf = std::forward<WafT>(value);
+  }
+  template <typename WafT = WafConfig>
+  LightsailDistribution& WithWaf(WafT&& value) {
+    SetWaf(std::forward<WafT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -539,6 +559,8 @@ class LightsailDistribution {
   Aws::String m_defaultRootObject;
 
   Aws::Vector<DistributionCustomErrorResponse> m_customErrorResponses;
+
+  WafConfig m_waf;
   bool m_nameHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_supportCodeHasBeenSet = false;
@@ -562,6 +584,7 @@ class LightsailDistribution {
   bool m_viewerMinimumTlsProtocolVersionHasBeenSet = false;
   bool m_defaultRootObjectHasBeenSet = false;
   bool m_customErrorResponsesHasBeenSet = false;
+  bool m_wafHasBeenSet = false;
 };
 
 }  // namespace Model

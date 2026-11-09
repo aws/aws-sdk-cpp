@@ -5,6 +5,9 @@
 
 #pragma once
 #include <aws/eks/EKS_EXPORTS.h>
+#include <aws/eks/model/GatewayApiConfiguration.h>
+
+#include <utility>
 
 namespace Aws {
 namespace Utils {
@@ -48,9 +51,33 @@ class ElasticLoadBalancing {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates the current configuration of the Kubernetes Gateway API for the
+   * load balancing capability on your EKS Auto Mode cluster. For more information,
+   * see EKS Auto Mode load balancing capability in the <i>Amazon EKS User
+   * Guide</i>.</p>
+   */
+  inline const GatewayApiConfiguration& GetGatewayApi() const { return m_gatewayApi; }
+  inline bool GatewayApiHasBeenSet() const { return m_gatewayApiHasBeenSet; }
+  template <typename GatewayApiT = GatewayApiConfiguration>
+  void SetGatewayApi(GatewayApiT&& value) {
+    m_gatewayApiHasBeenSet = true;
+    m_gatewayApi = std::forward<GatewayApiT>(value);
+  }
+  template <typename GatewayApiT = GatewayApiConfiguration>
+  ElasticLoadBalancing& WithGatewayApi(GatewayApiT&& value) {
+    SetGatewayApi(std::forward<GatewayApiT>(value));
+    return *this;
+  }
+  ///@}
  private:
   bool m_enabled{false};
+
+  GatewayApiConfiguration m_gatewayApi;
   bool m_enabledHasBeenSet = false;
+  bool m_gatewayApiHasBeenSet = false;
 };
 
 }  // namespace Model

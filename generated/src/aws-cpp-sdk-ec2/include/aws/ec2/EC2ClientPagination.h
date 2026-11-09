@@ -149,6 +149,7 @@
 #include <aws/ec2/model/GetCapacityManagerMetricDimensionsPaginationTraits.h>
 #include <aws/ec2/model/GetCapacityManagerMonitoredTagKeysPaginationTraits.h>
 #include <aws/ec2/model/GetGroupsForCapacityReservationPaginationTraits.h>
+#include <aws/ec2/model/GetImageFindingsPaginationTraits.h>
 #include <aws/ec2/model/GetInstanceTypesFromInstanceRequirementsPaginationTraits.h>
 #include <aws/ec2/model/GetIpamAddressHistoryPaginationTraits.h>
 #include <aws/ec2/model/GetIpamDiscoveredAccountsPaginationTraits.h>
@@ -571,6 +572,8 @@ using GetCapacityManagerMonitoredTagKeysPaginator =
 using GetGroupsForCapacityReservationPaginator =
     Aws::Utils::Pagination::Paginator<EC2Client, Model::GetGroupsForCapacityReservationRequest,
                                       Pagination::GetGroupsForCapacityReservationPaginationTraits<EC2Client>>;
+using GetImageFindingsPaginator =
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::GetImageFindingsRequest, Pagination::GetImageFindingsPaginationTraits<EC2Client>>;
 using GetInstanceTypesFromInstanceRequirementsPaginator =
     Aws::Utils::Pagination::Paginator<EC2Client, Model::GetInstanceTypesFromInstanceRequirementsRequest,
                                       Pagination::GetInstanceTypesFromInstanceRequirementsPaginationTraits<EC2Client>>;

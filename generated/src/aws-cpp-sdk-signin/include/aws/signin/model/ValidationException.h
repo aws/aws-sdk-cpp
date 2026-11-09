@@ -21,10 +21,8 @@ namespace Signin {
 namespace Model {
 
 /**
- * <p>Error thrown when request validation fails</p> <p>HTTP Status Code: 400 Bad
- * Request</p> <p>Used for request validation errors such as malformed parameters,
- * missing required fields, or invalid parameter values.</p><p><h3>See Also:</h3>
- * <a
+ * <p>The request failed because it contains a malformed, missing, or invalid
+ * parameter.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/signin-2023-01-01/ValidationException">AWS
  * API Reference</a></p>
  */
@@ -37,8 +35,7 @@ class ValidationException {
 
   ///@{
   /**
-   * <p>OAuth 2.0 error code indicating validation failure Will be INVALID_REQUEST
-   * for validation errors</p>
+   * <p>The specific code depends on which validation failed.</p>
    */
   inline OAuth2ErrorCode GetError() const { return m_error; }
   inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
@@ -54,8 +51,7 @@ class ValidationException {
 
   ///@{
   /**
-   * <p>Detailed message explaining the validation failure Provides specific
-   * information about which validation failed</p>
+   * <p>The validation constraint that failed.</p>
    */
   inline const Aws::String& GetMessage() const { return m_message; }
   inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }

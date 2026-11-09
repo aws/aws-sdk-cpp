@@ -7,6 +7,9 @@
 #include <aws/rpcv2protocol/model/Float16Request.h>
 #include <aws/testing/AwsProtocolTestHelpers.h>
 
+#include <cmath>
+#include <limits>
+
 using Float16 = AWS_PROTOCOL_TEST_SUITE;
 using RpcV2ProtocolClient = Aws::RpcV2Protocol::RpcV2ProtocolClient;
 using namespace Aws::RpcV2Protocol::Model;

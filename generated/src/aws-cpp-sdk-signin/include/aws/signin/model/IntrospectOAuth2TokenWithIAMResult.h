@@ -36,9 +36,9 @@ class IntrospectOAuth2TokenWithIAMResult {
 
   ///@{
   /**
-   * <p>Indicates whether the token is currently active. <code>true</code> only when
-   * the token is valid, has not expired, has not been revoked, and belongs to the
-   * caller's account.</p>
+   * <p>Indicates whether the token is currently active. Returns &quot;true&quot;
+   * only when the token is valid, has not expired, has not been revoked, and belongs
+   * to the caller's account.</p>
    */
   inline bool GetActive() const { return m_active; }
   inline void SetActive(bool value) {
@@ -70,9 +70,8 @@ class IntrospectOAuth2TokenWithIAMResult {
 
   ///@{
   /**
-   * <p>User identifier matching sts:GetCallerIdentity's <code>UserId</code> field
-   * for the token's subject principal (e.g. &quot;AIDAEXAMPLE&quot; for an IAM user,
-   * or &quot;AROAEXAMPLE:session-name&quot; for an assumed role).</p>
+   * <p>User identifier matching the &quot;UserId&quot; field from
+   * &quot;sts:GetCallerIdentity&quot; for the token's subject principal.</p>
    */
   inline const Aws::String& GetUserId() const { return m_userId; }
   template <typename UserIdT = Aws::String>
@@ -152,9 +151,8 @@ class IntrospectOAuth2TokenWithIAMResult {
 
   ///@{
   /**
-   * <p>Subject of the token: the IAM principal ARN. For assumed-role sessions, this
-   * is the session ARN (matches sts:GetCallerIdentity's <code>Arn</code> field),
-   * e.g. arn:aws:sts::123456789012:assumed-role/MyRole/session-name.</p>
+   * <p>The IAM principal Amazon Resource Name (ARN). For assumed-role sessions, this
+   * is the session ARN.</p>
    */
   inline const Aws::String& GetSub() const { return m_sub; }
   template <typename SubT = Aws::String>
@@ -171,8 +169,8 @@ class IntrospectOAuth2TokenWithIAMResult {
 
   ///@{
   /**
-   * <p>Audience of the token: the OAuth resource the token is scoped to (for
-   * example, &quot;aws-mcp.amazonaws.com&quot;). Omitted for refresh tokens.</p>
+   * <p>The OAuth resource the token is scoped to. Omitted for refresh tokens.
+   * Example: &quot;aws-mcp.amazonaws.com&quot;.</p>
    */
   inline const Aws::String& GetAud() const { return m_aud; }
   template <typename AudT = Aws::String>
@@ -259,8 +257,8 @@ class IntrospectOAuth2TokenWithIAMResult {
 
   ///@{
   /**
-   * <p>The OAuth resource the token is scoped to during Human OAuth flow. Only
-   * present for refresh token introspection.</p>
+   * <p>The OAuth resource the token is scoped to. Only present for refresh token
+   * introspection.</p>
    */
   inline const Aws::String& GetResource() const { return m_resource; }
   template <typename ResourceT = Aws::String>

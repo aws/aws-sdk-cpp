@@ -375,10 +375,16 @@
 #include <aws/lightsail/model/Instance.h>
 #include <aws/lightsail/model/InstanceAccessDetails.h>
 #include <aws/lightsail/model/InstanceAccessProtocol.h>
+#include <aws/lightsail/model/InstanceAttributeUpdates.h>
 #include <aws/lightsail/model/InstanceEntry.h>
 #include <aws/lightsail/model/InstanceHardware.h>
 #include <aws/lightsail/model/InstanceHealthReason.h>
 #include <aws/lightsail/model/InstanceHealthState.h>
+#include <aws/lightsail/model/InstanceHealthStatus.h>
+#include <aws/lightsail/model/InstanceHealthStatusDetail.h>
+#include <aws/lightsail/model/InstanceHealthStatusDetailName.h>
+#include <aws/lightsail/model/InstanceHealthStatusDetailValue.h>
+#include <aws/lightsail/model/InstanceHealthStatusValue.h>
 #include <aws/lightsail/model/InstanceHealthSummary.h>
 #include <aws/lightsail/model/InstanceMetadataOptions.h>
 #include <aws/lightsail/model/InstanceMetadataState.h>
@@ -556,6 +562,14 @@
 #include <aws/lightsail/model/UpdateRelationalDatabaseRequest.h>
 #include <aws/lightsail/model/UpdateRelationalDatabaseResult.h>
 #include <aws/lightsail/model/ViewerMinimumTlsProtocolVersionEnum.h>
+#include <aws/lightsail/model/WafAcfpConfig.h>
+#include <aws/lightsail/model/WafAtpConfig.h>
+#include <aws/lightsail/model/WafBotControlConfig.h>
+#include <aws/lightsail/model/WafConfig.h>
+#include <aws/lightsail/model/WafInspectionLevelEnum.h>
+#include <aws/lightsail/model/WafPayloadTypeEnum.h>
+#include <aws/lightsail/model/WafResponseInspection.h>
+#include <aws/lightsail/model/WafRule.h>
 
 using LightsailIncludeTest = ::testing::Test;
 

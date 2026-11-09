@@ -32,6 +32,8 @@ static const int GenerateDataKeyPairWithoutPlaintext_HASH = HashingUtils::HashSt
 static const int GenerateMac_HASH = HashingUtils::HashString("GenerateMac");
 static const int VerifyMac_HASH = HashingUtils::HashString("VerifyMac");
 static const int DeriveSharedSecret_HASH = HashingUtils::HashString("DeriveSharedSecret");
+static const int Encapsulate_HASH = HashingUtils::HashString("Encapsulate");
+static const int Decapsulate_HASH = HashingUtils::HashString("Decapsulate");
 
 GrantOperation GetGrantOperationForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -69,6 +71,10 @@ GrantOperation GetGrantOperationForName(const Aws::String& name) {
     return GrantOperation::VerifyMac;
   } else if (hashCode == DeriveSharedSecret_HASH) {
     return GrantOperation::DeriveSharedSecret;
+  } else if (hashCode == Encapsulate_HASH) {
+    return GrantOperation::Encapsulate;
+  } else if (hashCode == Decapsulate_HASH) {
+    return GrantOperation::Decapsulate;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -117,6 +123,10 @@ Aws::String GetNameForGrantOperation(GrantOperation enumValue) {
       return "VerifyMac";
     case GrantOperation::DeriveSharedSecret:
       return "DeriveSharedSecret";
+    case GrantOperation::Encapsulate:
+      return "Encapsulate";
+    case GrantOperation::Decapsulate:
+      return "Decapsulate";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

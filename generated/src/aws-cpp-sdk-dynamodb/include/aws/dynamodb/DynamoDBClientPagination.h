@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/dynamodb/DynamoDBClient.h>
+#include <aws/dynamodb/model/ListBulkOperationsPaginationTraits.h>
 #include <aws/dynamodb/model/ListContributorInsightsPaginationTraits.h>
 #include <aws/dynamodb/model/ListExportsPaginationTraits.h>
 #include <aws/dynamodb/model/ListImportsPaginationTraits.h>
@@ -16,6 +17,8 @@
 namespace Aws {
 namespace DynamoDB {
 
+using ListBulkOperationsPaginator = Aws::Utils::Pagination::Paginator<DynamoDBClient, Model::ListBulkOperationsRequest,
+                                                                      Pagination::ListBulkOperationsPaginationTraits<DynamoDBClient>>;
 using ListContributorInsightsPaginator =
     Aws::Utils::Pagination::Paginator<DynamoDBClient, Model::ListContributorInsightsRequest,
                                       Pagination::ListContributorInsightsPaginationTraits<DynamoDBClient>>;

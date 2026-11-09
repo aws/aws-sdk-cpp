@@ -17,6 +17,7 @@
 #include <aws/athena/model/ListPreparedStatementsPaginationTraits.h>
 #include <aws/athena/model/ListQueryExecutionsPaginationTraits.h>
 #include <aws/athena/model/ListSessionsPaginationTraits.h>
+#include <aws/athena/model/ListSystemTableStatusesPaginationTraits.h>
 #include <aws/athena/model/ListTableMetadataPaginationTraits.h>
 #include <aws/athena/model/ListTagsForResourcePaginationTraits.h>
 #include <aws/athena/model/ListWorkGroupsPaginationTraits.h>
@@ -52,6 +53,9 @@ using ListQueryExecutionsPaginator = Aws::Utils::Pagination::Paginator<AthenaCli
                                                                        Pagination::ListQueryExecutionsPaginationTraits<AthenaClient>>;
 using ListSessionsPaginator =
     Aws::Utils::Pagination::Paginator<AthenaClient, Model::ListSessionsRequest, Pagination::ListSessionsPaginationTraits<AthenaClient>>;
+using ListSystemTableStatusesPaginator =
+    Aws::Utils::Pagination::Paginator<AthenaClient, Model::ListSystemTableStatusesRequest,
+                                      Pagination::ListSystemTableStatusesPaginationTraits<AthenaClient>>;
 using ListTableMetadataPaginator = Aws::Utils::Pagination::Paginator<AthenaClient, Model::ListTableMetadataRequest,
                                                                      Pagination::ListTableMetadataPaginationTraits<AthenaClient>>;
 using ListTagsForResourcePaginator = Aws::Utils::Pagination::Paginator<AthenaClient, Model::ListTagsForResourceRequest,

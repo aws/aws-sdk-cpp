@@ -21,7 +21,8 @@ enum class CoverageResourceType {
   Microsoft_ContainerRegistry_registry_containerImage,
   Microsoft_ContainerRegistry_registry_containerRepository,
   Microsoft_Web_sites,
-  Microsoft_ContainerRegistry_registries
+  Microsoft_ContainerRegistry_registries,
+  MACHINE_IMAGE
 };
 
 namespace CoverageResourceTypeMapper {

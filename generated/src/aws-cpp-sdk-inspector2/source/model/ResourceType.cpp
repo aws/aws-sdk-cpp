@@ -24,6 +24,7 @@ static const int Microsoft_Compute_virtualMachines_HASH = HashingUtils::HashStri
 static const int Microsoft_ContainerRegistry_registry_containerImage_HASH =
     HashingUtils::HashString("Microsoft.ContainerRegistry/registry/containerImage");
 static const int Microsoft_Web_sites_HASH = HashingUtils::HashString("Microsoft.Web/sites");
+static const int MACHINE_IMAGE_HASH = HashingUtils::HashString("MACHINE_IMAGE");
 
 ResourceType GetResourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -43,6 +44,8 @@ ResourceType GetResourceTypeForName(const Aws::String& name) {
     return ResourceType::Microsoft_ContainerRegistry_registry_containerImage;
   } else if (hashCode == Microsoft_Web_sites_HASH) {
     return ResourceType::Microsoft_Web_sites;
+  } else if (hashCode == MACHINE_IMAGE_HASH) {
+    return ResourceType::MACHINE_IMAGE;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -73,6 +76,8 @@ Aws::String GetNameForResourceType(ResourceType enumValue) {
       return "Microsoft.ContainerRegistry/registry/containerImage";
     case ResourceType::Microsoft_Web_sites:
       return "Microsoft.Web/sites";
+    case ResourceType::MACHINE_IMAGE:
+      return "MACHINE_IMAGE";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

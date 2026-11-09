@@ -31,6 +31,7 @@
 #include <aws/bedrock-agentcore-control/model/AgentRuntimeStatus.h>
 #include <aws/bedrock-agentcore-control/model/AgentRuntimeVersionSummary.h>
 #include <aws/bedrock-agentcore-control/model/AgentSkillsDescriptor.h>
+#include <aws/bedrock-agentcore-control/model/AllowedPort.h>
 #include <aws/bedrock-agentcore-control/model/AllowedWorkloadConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/ApiGatewayTargetConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/ApiGatewayToolConfiguration.h>
@@ -74,6 +75,8 @@
 #include <aws/bedrock-agentcore-control/model/Certificate.h>
 #include <aws/bedrock-agentcore-control/model/CertificateConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/CertificateLocation.h>
+#include <aws/bedrock-agentcore-control/model/CircuitBreakerConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/CircuitBreakerMode.h>
 #include <aws/bedrock-agentcore-control/model/ClaimMatchOperatorType.h>
 #include <aws/bedrock-agentcore-control/model/ClaimMatchValueType.h>
 #include <aws/bedrock-agentcore-control/model/ClientAuthenticationMethodType.h>
@@ -263,6 +266,7 @@
 #include <aws/bedrock-agentcore-control/model/DerivedEvaluatorConfig.h>
 #include <aws/bedrock-agentcore-control/model/DescriptorType.h>
 #include <aws/bedrock-agentcore-control/model/Descriptors.h>
+#include <aws/bedrock-agentcore-control/model/DimensionRatingScale.h>
 #include <aws/bedrock-agentcore-control/model/DraftStatus.h>
 #include <aws/bedrock-agentcore-control/model/EbsVolumeConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/EbsVolumeType.h>
@@ -283,6 +287,7 @@
 #include <aws/bedrock-agentcore-control/model/EpisodicReflectionConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/EpisodicReflectionConfigurationInput.h>
 #include <aws/bedrock-agentcore-control/model/EpisodicReflectionOverride.h>
+#include <aws/bedrock-agentcore-control/model/EvaluationDimension.h>
 #include <aws/bedrock-agentcore-control/model/EvaluatorConfig.h>
 #include <aws/bedrock-agentcore-control/model/EvaluatorLevel.h>
 #include <aws/bedrock-agentcore-control/model/EvaluatorModelConfig.h>
@@ -294,6 +299,10 @@
 #include <aws/bedrock-agentcore-control/model/ExtractionConfig.h>
 #include <aws/bedrock-agentcore-control/model/ExtractionConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/ExtractionType.h>
+#include <aws/bedrock-agentcore-control/model/Fallback.h>
+#include <aws/bedrock-agentcore-control/model/FallbackError.h>
+#include <aws/bedrock-agentcore-control/model/FallbackTarget.h>
+#include <aws/bedrock-agentcore-control/model/FallbackTriggers.h>
 #include <aws/bedrock-agentcore-control/model/FilesystemConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/Filter.h>
 #include <aws/bedrock-agentcore-control/model/FilterOperator.h>
@@ -610,6 +619,9 @@
 #include <aws/bedrock-agentcore-control/model/MCPGatewayConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/ManagedResourceDetails.h>
 #include <aws/bedrock-agentcore-control/model/ManagedVpcResource.h>
+#include <aws/bedrock-agentcore-control/model/MatchModelEntry.h>
+#include <aws/bedrock-agentcore-control/model/MatchModels.h>
+#include <aws/bedrock-agentcore-control/model/MatchOperator.h>
 #include <aws/bedrock-agentcore-control/model/MatchPaths.h>
 #include <aws/bedrock-agentcore-control/model/MatchPrincipalEntry.h>
 #include <aws/bedrock-agentcore-control/model/MatchPrincipals.h>
@@ -659,6 +671,8 @@
 #include <aws/bedrock-agentcore-control/model/Oauth2Discovery.h>
 #include <aws/bedrock-agentcore-control/model/Oauth2ProviderConfigInput.h>
 #include <aws/bedrock-agentcore-control/model/Oauth2ProviderConfigOutput.h>
+#include <aws/bedrock-agentcore-control/model/OnBehalfOfAuthenticationConfig.h>
+#include <aws/bedrock-agentcore-control/model/OnBehalfOfClientAuthenticationMethod.h>
 #include <aws/bedrock-agentcore-control/model/OnBehalfOfTokenExchangeConfigType.h>
 #include <aws/bedrock-agentcore-control/model/OnBehalfOfTokenExchangeGrantTypeType.h>
 #include <aws/bedrock-agentcore-control/model/OnlineEvaluationConfigStatus.h>
@@ -698,6 +712,7 @@
 #include <aws/bedrock-agentcore-control/model/PolicyStatus.h>
 #include <aws/bedrock-agentcore-control/model/PolicySummary.h>
 #include <aws/bedrock-agentcore-control/model/PolicyValidationMode.h>
+#include <aws/bedrock-agentcore-control/model/PortRange.h>
 #include <aws/bedrock-agentcore-control/model/PrincipalMatchOperator.h>
 #include <aws/bedrock-agentcore-control/model/PrivateEndpoint.h>
 #include <aws/bedrock-agentcore-control/model/PrivateEndpointOverride.h>
@@ -727,6 +742,8 @@
 #include <aws/bedrock-agentcore-control/model/RegistryStatus.h>
 #include <aws/bedrock-agentcore-control/model/RegistrySummary.h>
 #include <aws/bedrock-agentcore-control/model/RequestHeaderConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/ResetTokenVaultKeyMaterialRequest.h>
+#include <aws/bedrock-agentcore-control/model/ResetTokenVaultKeyMaterialResult.h>
 #include <aws/bedrock-agentcore-control/model/Resource.h>
 #include <aws/bedrock-agentcore-control/model/ResourceLocation.h>
 #include <aws/bedrock-agentcore-control/model/ResourceType.h>

@@ -114,6 +114,9 @@
 #include <aws/docdb/model/DescribePendingMaintenanceActionsPaginationTraits.h>
 #include <aws/docdb/model/DescribePendingMaintenanceActionsRequest.h>
 #include <aws/docdb/model/DescribePendingMaintenanceActionsResult.h>
+#include <aws/docdb/model/DescribeServerlessV2PlatformVersionsPaginationTraits.h>
+#include <aws/docdb/model/DescribeServerlessV2PlatformVersionsRequest.h>
+#include <aws/docdb/model/DescribeServerlessV2PlatformVersionsResult.h>
 #include <aws/docdb/model/Endpoint.h>
 #include <aws/docdb/model/EngineDefaults.h>
 #include <aws/docdb/model/Event.h>
@@ -166,6 +169,7 @@
 #include <aws/docdb/model/RestoreDBClusterToPointInTimeRequest.h>
 #include <aws/docdb/model/RestoreDBClusterToPointInTimeResult.h>
 #include <aws/docdb/model/ServerlessV2FeaturesSupport.h>
+#include <aws/docdb/model/ServerlessV2PlatformVersionInfo.h>
 #include <aws/docdb/model/ServerlessV2ScalingConfiguration.h>
 #include <aws/docdb/model/ServerlessV2ScalingConfigurationInfo.h>
 #include <aws/docdb/model/SourceType.h>

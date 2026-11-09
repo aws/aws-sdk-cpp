@@ -20,9 +20,8 @@ namespace Signin {
 namespace Model {
 
 /**
- * <p>AWS credentials structure containing temporary access credentials</p>
- * <p>Scoped, temporary AWS credentials with a 15-minute duration.</p><p><h3>See
- * Also:</h3>   <a
+ * <p>Contains the scoped, temporary AWS credentials used to sign requests with
+ * SigV4. Valid for 15 minutes.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/signin-2023-01-01/AccessToken">AWS
  * API Reference</a></p>
  */
@@ -35,7 +34,7 @@ class AccessToken {
 
   ///@{
   /**
-   * <p>AWS access key ID for temporary credentials</p>
+   * <p>The AWS access key ID for the temporary credentials.</p>
    */
   inline const Aws::String& GetAccessKeyId() const { return m_accessKeyId; }
   inline bool AccessKeyIdHasBeenSet() const { return m_accessKeyIdHasBeenSet; }
@@ -53,7 +52,7 @@ class AccessToken {
 
   ///@{
   /**
-   * <p>AWS secret access key for temporary credentials</p>
+   * <p>The AWS secret access key used to sign requests.</p>
    */
   inline const Aws::String& GetSecretAccessKey() const { return m_secretAccessKey; }
   inline bool SecretAccessKeyHasBeenSet() const { return m_secretAccessKeyHasBeenSet; }
@@ -71,7 +70,7 @@ class AccessToken {
 
   ///@{
   /**
-   * <p>AWS session token for temporary credentials</p>
+   * <p>The session token that validates the temporary security credentials.</p>
    */
   inline const Aws::String& GetSessionToken() const { return m_sessionToken; }
   inline bool SessionTokenHasBeenSet() const { return m_sessionTokenHasBeenSet; }

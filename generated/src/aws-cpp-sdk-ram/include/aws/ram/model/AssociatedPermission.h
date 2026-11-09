@@ -6,8 +6,10 @@
 #pragma once
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ram/RAM_EXPORTS.h>
 #include <aws/ram/model/PermissionFeatureSet.h>
+#include <aws/ram/model/PermissionTemplateParameter.h>
 
 #include <utility>
 
@@ -117,7 +119,9 @@ class AssociatedPermission {
    * or version can't currently be associated with resource shares.</p> </li> <li>
    * <p> <code>DELETING</code> – This permission or version is in the process of
    * being deleted.</p> </li> <li> <p> <code>DELETED</code> – This permission or
-   * version is deleted.</p> </li> </ul>
+   * version is deleted.</p> </li> <li> <p> <code>DEPRECATED</code> – The permission
+   * owner deprecated this permission. It can't be associated with new resource
+   * shares, but existing associations continue to function.</p> </li> </ul>
    */
   inline const Aws::String& GetStatus() const { return m_status; }
   inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
@@ -204,6 +208,32 @@ class AssociatedPermission {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The template parameter values provided when the permission was associated
+   * with this resource share. If the permission has no declared template parameters,
+   * this member doesn't appear in the response.</p>
+   */
+  inline const Aws::Vector<PermissionTemplateParameter>& GetPermissionTemplateParameters() const { return m_permissionTemplateParameters; }
+  inline bool PermissionTemplateParametersHasBeenSet() const { return m_permissionTemplateParametersHasBeenSet; }
+  template <typename PermissionTemplateParametersT = Aws::Vector<PermissionTemplateParameter>>
+  void SetPermissionTemplateParameters(PermissionTemplateParametersT&& value) {
+    m_permissionTemplateParametersHasBeenSet = true;
+    m_permissionTemplateParameters = std::forward<PermissionTemplateParametersT>(value);
+  }
+  template <typename PermissionTemplateParametersT = Aws::Vector<PermissionTemplateParameter>>
+  AssociatedPermission& WithPermissionTemplateParameters(PermissionTemplateParametersT&& value) {
+    SetPermissionTemplateParameters(std::forward<PermissionTemplateParametersT>(value));
+    return *this;
+  }
+  template <typename PermissionTemplateParametersT = PermissionTemplateParameter>
+  AssociatedPermission& AddPermissionTemplateParameters(PermissionTemplateParametersT&& value) {
+    m_permissionTemplateParametersHasBeenSet = true;
+    m_permissionTemplateParameters.emplace_back(std::forward<PermissionTemplateParametersT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
@@ -220,6 +250,8 @@ class AssociatedPermission {
   Aws::Utils::DateTime m_lastUpdatedTime{};
 
   Aws::String m_resourceShareArn;
+
+  Aws::Vector<PermissionTemplateParameter> m_permissionTemplateParameters;
   bool m_arnHasBeenSet = false;
   bool m_permissionVersionHasBeenSet = false;
   bool m_defaultVersionHasBeenSet = false;
@@ -228,6 +260,7 @@ class AssociatedPermission {
   bool m_featureSetHasBeenSet = false;
   bool m_lastUpdatedTimeHasBeenSet = false;
   bool m_resourceShareArnHasBeenSet = false;
+  bool m_permissionTemplateParametersHasBeenSet = false;
 };
 
 }  // namespace Model

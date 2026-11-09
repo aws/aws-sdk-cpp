@@ -19,6 +19,28 @@ Aws::String CreateCloudVmClusterRequest::SerializePayload() const {
     payload.WithString("cloudExadataInfrastructureId", m_cloudExadataInfrastructureId);
   }
 
+  if (m_exascaleDbStorageVaultIdHasBeenSet) {
+    payload.WithString("exascaleDbStorageVaultId", m_exascaleDbStorageVaultId);
+  }
+
+  if (m_vmFileSystemStorageTypeHasBeenSet) {
+    payload.WithString("vmFileSystemStorageType", VmStorageTypeMapper::GetNameForVmStorageType(m_vmFileSystemStorageType));
+  }
+
+  if (m_vmBackupStorageTypeHasBeenSet) {
+    payload.WithString("vmBackupStorageType", VmStorageTypeMapper::GetNameForVmStorageType(m_vmBackupStorageType));
+  }
+
+  if (m_fileSystemConfigurationDetailsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> fileSystemConfigurationDetailsJsonList(m_fileSystemConfigurationDetails.size());
+    for (unsigned fileSystemConfigurationDetailsIndex = 0;
+         fileSystemConfigurationDetailsIndex < fileSystemConfigurationDetailsJsonList.GetLength(); ++fileSystemConfigurationDetailsIndex) {
+      fileSystemConfigurationDetailsJsonList[fileSystemConfigurationDetailsIndex].AsObject(
+          m_fileSystemConfigurationDetails[fileSystemConfigurationDetailsIndex].Jsonize());
+    }
+    payload.WithArray("fileSystemConfigurationDetails", std::move(fileSystemConfigurationDetailsJsonList));
+  }
+
   if (m_cpuCoreCountHasBeenSet) {
     payload.WithInteger("cpuCoreCount", m_cpuCoreCount);
   }

@@ -25,6 +25,10 @@ CategoryDetails& CategoryDetails::operator=(JsonView jsonValue) {
     }
     m_pointsOfInterestHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("RuleId")) {
+    m_ruleId = jsonValue.GetString("RuleId");
+    m_ruleIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -37,6 +41,10 @@ JsonValue CategoryDetails::Jsonize() const {
       pointsOfInterestJsonList[pointsOfInterestIndex].AsObject(m_pointsOfInterest[pointsOfInterestIndex].Jsonize());
     }
     payload.WithArray("PointsOfInterest", std::move(pointsOfInterestJsonList));
+  }
+
+  if (m_ruleIdHasBeenSet) {
+    payload.WithString("RuleId", m_ruleId);
   }
 
   return payload;

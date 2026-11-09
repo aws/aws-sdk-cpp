@@ -50,6 +50,10 @@ GetTaskTemplateResult& GetTaskTemplateResult::operator=(const Aws::AmazonWebServ
     m_selfAssignFlowId = jsonValue.GetString("SelfAssignFlowId");
     m_selfAssignFlowIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ContactHooks")) {
+    m_contactHooks = jsonValue.GetObject("ContactHooks");
+    m_contactHooksHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Constraints")) {
     m_constraints = jsonValue.GetObject("Constraints");
     m_constraintsHasBeenSet = true;

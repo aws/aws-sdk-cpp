@@ -143,6 +143,7 @@
 #include <aws/bedrock-agentcore-control/model/ListTagsForResourceRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListWorkloadIdentitiesRequest.h>
 #include <aws/bedrock-agentcore-control/model/PutResourcePolicyRequest.h>
+#include <aws/bedrock-agentcore-control/model/ResetTokenVaultKeyMaterialRequest.h>
 #include <aws/bedrock-agentcore-control/model/RotatePaymentConnectorCredentialsRequest.h>
 #include <aws/bedrock-agentcore-control/model/SetTokenVaultCMKRequest.h>
 #include <aws/bedrock-agentcore-control/model/StartPolicyGenerationRequest.h>
@@ -2633,6 +2634,18 @@ PutResourcePolicyOutcome BedrockAgentCoreControlClient::PutResourcePolicy(const 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
   return result.IsSuccess() ? PutResourcePolicyOutcome(result.GetResultWithOwnership())
                             : PutResourcePolicyOutcome(std::move(result.GetError()));
+}
+
+ResetTokenVaultKeyMaterialOutcome BedrockAgentCoreControlClient::ResetTokenVaultKeyMaterial(
+    const ResetTokenVaultKeyMaterialRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/identities/reset-token-vault-key-material");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ResetTokenVaultKeyMaterialOutcome(result.GetResultWithOwnership())
+                            : ResetTokenVaultKeyMaterialOutcome(std::move(result.GetError()));
 }
 
 RotatePaymentConnectorCredentialsOutcome BedrockAgentCoreControlClient::RotatePaymentConnectorCredentials(

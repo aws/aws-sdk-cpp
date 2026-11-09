@@ -10,6 +10,7 @@
 #include <aws/odb/Odb_EXPORTS.h>
 #include <aws/odb/model/ComputeModel.h>
 #include <aws/odb/model/CustomerContact.h>
+#include <aws/odb/model/ExascaleConfiguration.h>
 #include <aws/odb/model/MaintenanceWindow.h>
 #include <aws/odb/model/ResourceStatus.h>
 
@@ -628,7 +629,7 @@ class CloudExadataInfrastructure {
 
   ///@{
   /**
-   * <p>The total amount of storage, in gigabytes (GB), on the the Exadata
+   * <p>The total amount of storage, in gigabytes (GB), on the Exadata
    * infrastructure.</p>
    */
   inline int GetTotalStorageSizeInGBs() const { return m_totalStorageSizeInGBs; }
@@ -717,6 +718,25 @@ class CloudExadataInfrastructure {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Exascale storage configuration of the Exadata infrastructure. This value
+   * is present only when Exascale storage is configured on the infrastructure.</p>
+   */
+  inline const ExascaleConfiguration& GetExascaleConfiguration() const { return m_exascaleConfiguration; }
+  inline bool ExascaleConfigurationHasBeenSet() const { return m_exascaleConfigurationHasBeenSet; }
+  template <typename ExascaleConfigurationT = ExascaleConfiguration>
+  void SetExascaleConfiguration(ExascaleConfigurationT&& value) {
+    m_exascaleConfigurationHasBeenSet = true;
+    m_exascaleConfiguration = std::forward<ExascaleConfigurationT>(value);
+  }
+  template <typename ExascaleConfigurationT = ExascaleConfiguration>
+  CloudExadataInfrastructure& WithExascaleConfiguration(ExascaleConfigurationT&& value) {
+    SetExascaleConfiguration(std::forward<ExascaleConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_cloudExadataInfrastructureId;
 
@@ -793,6 +813,8 @@ class CloudExadataInfrastructure {
   Aws::String m_storageServerType;
 
   ComputeModel m_computeModel{ComputeModel::NOT_SET};
+
+  ExascaleConfiguration m_exascaleConfiguration;
   bool m_cloudExadataInfrastructureIdHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
@@ -831,6 +853,7 @@ class CloudExadataInfrastructure {
   bool m_databaseServerTypeHasBeenSet = false;
   bool m_storageServerTypeHasBeenSet = false;
   bool m_computeModelHasBeenSet = false;
+  bool m_exascaleConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

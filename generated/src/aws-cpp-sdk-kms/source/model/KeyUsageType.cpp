@@ -19,6 +19,7 @@ static const int SIGN_VERIFY_HASH = HashingUtils::HashString("SIGN_VERIFY");
 static const int ENCRYPT_DECRYPT_HASH = HashingUtils::HashString("ENCRYPT_DECRYPT");
 static const int GENERATE_VERIFY_MAC_HASH = HashingUtils::HashString("GENERATE_VERIFY_MAC");
 static const int KEY_AGREEMENT_HASH = HashingUtils::HashString("KEY_AGREEMENT");
+static const int ENCAPSULATE_DECAPSULATE_HASH = HashingUtils::HashString("ENCAPSULATE_DECAPSULATE");
 
 KeyUsageType GetKeyUsageTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -30,6 +31,8 @@ KeyUsageType GetKeyUsageTypeForName(const Aws::String& name) {
     return KeyUsageType::GENERATE_VERIFY_MAC;
   } else if (hashCode == KEY_AGREEMENT_HASH) {
     return KeyUsageType::KEY_AGREEMENT;
+  } else if (hashCode == ENCAPSULATE_DECAPSULATE_HASH) {
+    return KeyUsageType::ENCAPSULATE_DECAPSULATE;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -52,6 +55,8 @@ Aws::String GetNameForKeyUsageType(KeyUsageType enumValue) {
       return "GENERATE_VERIFY_MAC";
     case KeyUsageType::KEY_AGREEMENT:
       return "KEY_AGREEMENT";
+    case KeyUsageType::ENCAPSULATE_DECAPSULATE:
+      return "ENCAPSULATE_DECAPSULATE";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

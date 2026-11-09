@@ -10,10 +10,12 @@
 #include <aws/ecr/model/DescribeImageScanFindingsPaginationTraits.h>
 #include <aws/ecr/model/DescribeImagesPaginationTraits.h>
 #include <aws/ecr/model/DescribePullThroughCacheRulesPaginationTraits.h>
+#include <aws/ecr/model/DescribeReplicationBackfillResultsPaginationTraits.h>
 #include <aws/ecr/model/DescribeRepositoriesPaginationTraits.h>
 #include <aws/ecr/model/DescribeRepositoryCreationTemplatesPaginationTraits.h>
 #include <aws/ecr/model/GetLifecyclePolicyPreviewPaginationTraits.h>
 #include <aws/ecr/model/ListImagesPaginationTraits.h>
+#include <aws/ecr/model/ListReplicationBackfillsPaginationTraits.h>
 
 #include <memory>
 
@@ -55,6 +57,18 @@ class ECRPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribePullThroughCacheRulesRequest,
                                              Pagination::DescribePullThroughCacheRulesPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for DescribeReplicationBackfillResults operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeReplicationBackfillResultsRequest,
+                                    Pagination::DescribeReplicationBackfillResultsPaginationTraits<DerivedClient>>
+  DescribeReplicationBackfillResultsPaginator(const Model::DescribeReplicationBackfillResultsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeReplicationBackfillResultsRequest,
+                                             Pagination::DescribeReplicationBackfillResultsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 
@@ -103,6 +117,18 @@ class ECRPaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListImagesRequest,
                                              Pagination::ListImagesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};
+  }
+
+  /**
+   * Create a paginator for ListReplicationBackfills operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListReplicationBackfillsRequest,
+                                    Pagination::ListReplicationBackfillsPaginationTraits<DerivedClient>>
+  ListReplicationBackfillsPaginator(const Model::ListReplicationBackfillsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListReplicationBackfillsRequest,
+                                             Pagination::ListReplicationBackfillsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
   }
 };
 }  // namespace ECR

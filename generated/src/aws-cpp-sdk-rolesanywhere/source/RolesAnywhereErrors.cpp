@@ -6,13 +6,21 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/rolesanywhere/RolesAnywhereErrors.h>
+#include <aws/rolesanywhere/model/ServiceUnavailableException.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::RolesAnywhere;
+using namespace Aws::RolesAnywhere::Model;
 
 namespace Aws {
 namespace RolesAnywhere {
+template <>
+AWS_ROLESANYWHERE_API ServiceUnavailableException RolesAnywhereError::GetModeledError() {
+  assert(this->GetErrorType() == RolesAnywhereErrors::SERVICE_UNAVAILABLE);
+  return ServiceUnavailableException(this->GetJsonPayload().View());
+}
+
 namespace RolesAnywhereErrorMapper {
 
 static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");

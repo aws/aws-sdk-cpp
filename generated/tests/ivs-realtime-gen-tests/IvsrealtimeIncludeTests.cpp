@@ -141,6 +141,8 @@
 #include <aws/ivs-realtime/model/ReplicationState.h>
 #include <aws/ivs-realtime/model/ReplicationType.h>
 #include <aws/ivs-realtime/model/ResourceNotFoundException.h>
+#include <aws/ivs-realtime/model/RevokeConnectionTokenRequest.h>
+#include <aws/ivs-realtime/model/RevokeConnectionTokenResult.h>
 #include <aws/ivs-realtime/model/S3DestinationConfiguration.h>
 #include <aws/ivs-realtime/model/S3Detail.h>
 #include <aws/ivs-realtime/model/S3StorageConfiguration.h>

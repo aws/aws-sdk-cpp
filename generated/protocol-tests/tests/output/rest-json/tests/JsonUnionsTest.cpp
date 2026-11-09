@@ -232,6 +232,33 @@ AWS_PROTOCOL_TEST(JsonUnions, RestJsonDeserializeStructureUnionValue) {
   });
 }
 
+AWS_PROTOCOL_TEST(JsonUnions, RestJsonDeserializeNestedUnionValue) {
+  RestJsonProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+  mockRs.headers = {{"Content-Type", R"(application/json)"}};
+  mockRs.body =
+      "ewogICAgImNvbnRlbnRzIjogewogICAgICAgICJ1bmlvblZhbHVlIjogewogICAgICAgICAgICAic3RyaW5nVmFsdWUiOiAiZm9vIgogICAgICAgIH0KICAgIH0KfQ==";
+  SetMockResponse(mockRs);
+
+  JsonUnionsRequest request;
+
+  auto outcome = client.JsonUnions(request);
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  const JsonUnionsResult& result = outcome.GetResult();
+  ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) -> void {
+    /* expectedResult = R"( {"contents":{"unionValue":{"stringValue":"foo"}}} )" */
+    {
+      const MyUnion& resultContents = result.GetContents();
+      {
+        const NestedUnion& resultContentsUnionValue = resultContents.GetUnionValue();
+        EXPECT_EQ(R"(foo)", resultContentsUnionValue.GetStringValue());
+      }
+    }
+  });
+}
+
 AWS_PROTOCOL_TEST(JsonUnions, RestJsonDeserializeIgnoreType) {
   RestJsonProtocolClient client(mockCredentials, mockConfig);
 

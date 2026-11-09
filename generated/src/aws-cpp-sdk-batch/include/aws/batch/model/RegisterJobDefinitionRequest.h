@@ -142,8 +142,12 @@ class RegisterJobDefinitionRequest : public BatchRequest {
    * <code>container</code>, then you must specify either
    * <code>containerProperties</code> or <code>nodeProperties</code>. This must not
    * be specified for Amazon EKS-based job definitions.</p>  <p>If the job runs
-   * on Fargate resources, then you must not specify <code>nodeProperties</code>; use
-   * only <code>containerProperties</code>.</p>
+   * on Fargate resources, then you must not specify <code>nodeProperties</code>. We
+   * recommend <code>ecsProperties</code>, which supports both single-container and
+   * multi-container jobs. <code>containerProperties</code> is also supported for
+   * single-container jobs. For more information, see <a
+   * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-container-jobs.html">Multi-container
+   * jobs</a> in the <i>Batch User Guide</i>.</p>
    */
   inline const ContainerProperties& GetContainerProperties() const { return m_containerProperties; }
   inline bool ContainerPropertiesHasBeenSet() const { return m_containerPropertiesHasBeenSet; }
@@ -166,10 +170,11 @@ class RegisterJobDefinitionRequest : public BatchRequest {
    * more information, see <a
    * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node
    * Parallel Jobs</a> in the <i>Batch User Guide</i>.</p>  <p>If the job runs
-   * on Fargate resources, then you must not specify <code>nodeProperties</code>; use
-   * <code>containerProperties</code> instead.</p>   <p>If the job runs
-   * on Amazon EKS resources, then you must not specify
-   * <code>nodeProperties</code>.</p>
+   * on Fargate resources, then you must not specify <code>nodeProperties</code>. We
+   * recommend <code>ecsProperties</code>, which supports both single-container and
+   * multi-container jobs. <code>containerProperties</code> is also supported for
+   * single-container jobs.</p>   <p>If the job runs on Amazon EKS
+   * resources, then you must not specify <code>nodeProperties</code>.</p>
    */
   inline const NodeProperties& GetNodeProperties() const { return m_nodeProperties; }
   inline bool NodePropertiesHasBeenSet() const { return m_nodePropertiesHasBeenSet; }

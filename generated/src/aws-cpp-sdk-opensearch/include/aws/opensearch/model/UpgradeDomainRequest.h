@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/opensearch/OpenSearchServiceRequest.h>
 #include <aws/opensearch/OpenSearchService_EXPORTS.h>
+#include <aws/opensearch/model/DeploymentStrategyOverrideOptions.h>
 
 #include <utility>
 
@@ -113,6 +114,26 @@ class UpgradeDomainRequest : public OpenSearchServiceRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Overrides the deployment strategy for this upgrade. To run a cloned
+   * blue/green upgrade, set <code>DeploymentStrategy</code> to
+   * <code>ClonedBlueGreen</code>.</p>
+   */
+  inline const DeploymentStrategyOverrideOptions& GetDeploymentStrategyOptions() const { return m_deploymentStrategyOptions; }
+  inline bool DeploymentStrategyOptionsHasBeenSet() const { return m_deploymentStrategyOptionsHasBeenSet; }
+  template <typename DeploymentStrategyOptionsT = DeploymentStrategyOverrideOptions>
+  void SetDeploymentStrategyOptions(DeploymentStrategyOptionsT&& value) {
+    m_deploymentStrategyOptionsHasBeenSet = true;
+    m_deploymentStrategyOptions = std::forward<DeploymentStrategyOptionsT>(value);
+  }
+  template <typename DeploymentStrategyOptionsT = DeploymentStrategyOverrideOptions>
+  UpgradeDomainRequest& WithDeploymentStrategyOptions(DeploymentStrategyOptionsT&& value) {
+    SetDeploymentStrategyOptions(std::forward<DeploymentStrategyOptionsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_domainName;
 
@@ -121,10 +142,13 @@ class UpgradeDomainRequest : public OpenSearchServiceRequest {
   bool m_performCheckOnly{false};
 
   Aws::Map<Aws::String, Aws::String> m_advancedOptions;
+
+  DeploymentStrategyOverrideOptions m_deploymentStrategyOptions;
   bool m_domainNameHasBeenSet = false;
   bool m_targetVersionHasBeenSet = false;
   bool m_performCheckOnlyHasBeenSet = false;
   bool m_advancedOptionsHasBeenSet = false;
+  bool m_deploymentStrategyOptionsHasBeenSet = false;
 };
 
 }  // namespace Model

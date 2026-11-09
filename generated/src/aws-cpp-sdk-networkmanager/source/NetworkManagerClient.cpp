@@ -85,6 +85,7 @@
 #include <aws/networkmanager/model/GetTransitGatewayRegistrationsRequest.h>
 #include <aws/networkmanager/model/GetTransitGatewayRouteTableAttachmentRequest.h>
 #include <aws/networkmanager/model/GetVpcAttachmentRequest.h>
+#include <aws/networkmanager/model/ListAttachmentNatConfigurationsRequest.h>
 #include <aws/networkmanager/model/ListAttachmentRoutingPolicyAssociationsRequest.h>
 #include <aws/networkmanager/model/ListAttachmentsRequest.h>
 #include <aws/networkmanager/model/ListConnectPeersRequest.h>
@@ -106,6 +107,7 @@
 #include <aws/networkmanager/model/StartRouteAnalysisRequest.h>
 #include <aws/networkmanager/model/TagResourceRequest.h>
 #include <aws/networkmanager/model/UntagResourceRequest.h>
+#include <aws/networkmanager/model/UpdateAttachmentNatConfigurationRequest.h>
 #include <aws/networkmanager/model/UpdateConnectionRequest.h>
 #include <aws/networkmanager/model/UpdateCoreNetworkRequest.h>
 #include <aws/networkmanager/model/UpdateDeviceRequest.h>
@@ -1501,6 +1503,18 @@ GetVpcAttachmentOutcome NetworkManagerClient::GetVpcAttachment(const GetVpcAttac
                             : GetVpcAttachmentOutcome(std::move(result.GetError()));
 }
 
+ListAttachmentNatConfigurationsOutcome NetworkManagerClient::ListAttachmentNatConfigurations(
+    const ListAttachmentNatConfigurationsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/nat-configurations");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAttachmentNatConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListAttachmentNatConfigurationsOutcome(std::move(result.GetError()));
+}
+
 ListAttachmentRoutingPolicyAssociationsOutcome NetworkManagerClient::ListAttachmentRoutingPolicyAssociations(
     const ListAttachmentRoutingPolicyAssociationsRequest& request) const {
   if (!request.CoreNetworkIdHasBeenSet()) {
@@ -1860,6 +1874,26 @@ UntagResourceOutcome NetworkManagerClient::UntagResource(const UntagResourceRequ
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
+}
+
+UpdateAttachmentNatConfigurationOutcome NetworkManagerClient::UpdateAttachmentNatConfiguration(
+    const UpdateAttachmentNatConfigurationRequest& request) const {
+  if (!request.AttachmentIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateAttachmentNatConfiguration", "Required field: AttachmentId, is not set");
+    return UpdateAttachmentNatConfigurationOutcome(Aws::Client::AWSError<NetworkManagerErrors>(
+        NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AttachmentId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/attachments/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAttachmentId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/nat-configuration");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateAttachmentNatConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateAttachmentNatConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateConnectionOutcome NetworkManagerClient::UpdateConnection(const UpdateConnectionRequest& request) const {

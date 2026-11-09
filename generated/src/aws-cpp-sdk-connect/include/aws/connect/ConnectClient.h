@@ -7486,6 +7486,38 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Lists replication findings for resources of a specified resource type in a
+   * specified Connect Customer instance. A replication finding describes a single
+   * resource whose replication to one or more Regions is incomplete or has
+   * encountered an error. Results are returned in pages. This operation is available
+   * only for instances that are set up for Global Resiliency.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListReplicationFindings">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListReplicationFindingsOutcome ListReplicationFindings(const Model::ListReplicationFindingsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListReplicationFindings that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListReplicationFindingsRequestT = Model::ListReplicationFindingsRequest>
+  Model::ListReplicationFindingsOutcomeCallable ListReplicationFindingsCallable(const ListReplicationFindingsRequestT& request) const {
+    return SubmitCallable(&ConnectClient::ListReplicationFindings, request);
+  }
+
+  /**
+   * An Async wrapper for ListReplicationFindings that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListReplicationFindingsRequestT = Model::ListReplicationFindingsRequest>
+  void ListReplicationFindingsAsync(const ListReplicationFindingsRequestT& request,
+                                    const ListReplicationFindingsResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::ListReplicationFindings, request, handler, context);
+  }
+
+  /**
    * <p>Lists the manual assignment queues associated with a routing profile.</p> <p>
    * <b>Use cases</b> </p> <p>Following are common uses cases for this API:</p> <ul>
    * <li> <p>This API returns list of queues where contacts can be manually assigned
@@ -11372,6 +11404,39 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
                                       const UpdateNotificationContentResponseReceivedHandler& handler,
                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ConnectClient::UpdateNotificationContent, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the draft outbound email message for a contact. Use this operation to
+   * save changes to an in-progress outbound email reply before you send it. This
+   * operation applies only to contacts with an <code>OUTBOUND</code> or
+   * <code>AGENT_REPLY</code> initiation method; it isn't supported for
+   * flow-initiated emails.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateOutboundEmailContactMessage">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateOutboundEmailContactMessageOutcome UpdateOutboundEmailContactMessage(
+      const Model::UpdateOutboundEmailContactMessageRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateOutboundEmailContactMessage that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename UpdateOutboundEmailContactMessageRequestT = Model::UpdateOutboundEmailContactMessageRequest>
+  Model::UpdateOutboundEmailContactMessageOutcomeCallable UpdateOutboundEmailContactMessageCallable(
+      const UpdateOutboundEmailContactMessageRequestT& request) const {
+    return SubmitCallable(&ConnectClient::UpdateOutboundEmailContactMessage, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateOutboundEmailContactMessage that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename UpdateOutboundEmailContactMessageRequestT = Model::UpdateOutboundEmailContactMessageRequest>
+  void UpdateOutboundEmailContactMessageAsync(const UpdateOutboundEmailContactMessageRequestT& request,
+                                              const UpdateOutboundEmailContactMessageResponseReceivedHandler& handler,
+                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::UpdateOutboundEmailContactMessage, request, handler, context);
   }
 
   /**

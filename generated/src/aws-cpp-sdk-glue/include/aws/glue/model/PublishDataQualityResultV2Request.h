@@ -370,7 +370,9 @@ class PublishDataQualityResultV2Request : public GlueRequest {
   ///@}
 
   ///@{
-
+  /**
+   * <p/>
+   */
   inline const DataQualityTelemetry& GetTelemetry() const { return m_telemetry; }
   inline bool TelemetryHasBeenSet() const { return m_telemetryHasBeenSet; }
   template <typename TelemetryT = DataQualityTelemetry>

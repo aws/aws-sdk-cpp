@@ -46,6 +46,34 @@ CloudVmClusterSummary& CloudVmClusterSummary::operator=(JsonView jsonValue) {
     m_cloudExadataInfrastructureArn = jsonValue.GetString("cloudExadataInfrastructureArn");
     m_cloudExadataInfrastructureArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("exascaleDbStorageVaultId")) {
+    m_exascaleDbStorageVaultId = jsonValue.GetString("exascaleDbStorageVaultId");
+    m_exascaleDbStorageVaultIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("exascaleDbStorageVaultArn")) {
+    m_exascaleDbStorageVaultArn = jsonValue.GetString("exascaleDbStorageVaultArn");
+    m_exascaleDbStorageVaultArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("storageManagementType")) {
+    m_storageManagementType = StorageManagementTypeMapper::GetStorageManagementTypeForName(jsonValue.GetString("storageManagementType"));
+    m_storageManagementTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("vmFileSystemStorageType")) {
+    m_vmFileSystemStorageType = VmStorageTypeMapper::GetVmStorageTypeForName(jsonValue.GetString("vmFileSystemStorageType"));
+    m_vmFileSystemStorageTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("vmBackupStorageType")) {
+    m_vmBackupStorageType = VmStorageTypeMapper::GetVmStorageTypeForName(jsonValue.GetString("vmBackupStorageType"));
+    m_vmBackupStorageTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("fileSystemConfigurationDetails")) {
+    Aws::Utils::Array<JsonView> fileSystemConfigurationDetailsJsonList = jsonValue.GetArray("fileSystemConfigurationDetails");
+    for (unsigned fileSystemConfigurationDetailsIndex = 0;
+         fileSystemConfigurationDetailsIndex < fileSystemConfigurationDetailsJsonList.GetLength(); ++fileSystemConfigurationDetailsIndex) {
+      m_fileSystemConfigurationDetails.push_back(fileSystemConfigurationDetailsJsonList[fileSystemConfigurationDetailsIndex].AsObject());
+    }
+    m_fileSystemConfigurationDetailsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("clusterName")) {
     m_clusterName = jsonValue.GetString("clusterName");
     m_clusterNameHasBeenSet = true;
@@ -237,6 +265,36 @@ JsonValue CloudVmClusterSummary::Jsonize() const {
 
   if (m_cloudExadataInfrastructureArnHasBeenSet) {
     payload.WithString("cloudExadataInfrastructureArn", m_cloudExadataInfrastructureArn);
+  }
+
+  if (m_exascaleDbStorageVaultIdHasBeenSet) {
+    payload.WithString("exascaleDbStorageVaultId", m_exascaleDbStorageVaultId);
+  }
+
+  if (m_exascaleDbStorageVaultArnHasBeenSet) {
+    payload.WithString("exascaleDbStorageVaultArn", m_exascaleDbStorageVaultArn);
+  }
+
+  if (m_storageManagementTypeHasBeenSet) {
+    payload.WithString("storageManagementType", StorageManagementTypeMapper::GetNameForStorageManagementType(m_storageManagementType));
+  }
+
+  if (m_vmFileSystemStorageTypeHasBeenSet) {
+    payload.WithString("vmFileSystemStorageType", VmStorageTypeMapper::GetNameForVmStorageType(m_vmFileSystemStorageType));
+  }
+
+  if (m_vmBackupStorageTypeHasBeenSet) {
+    payload.WithString("vmBackupStorageType", VmStorageTypeMapper::GetNameForVmStorageType(m_vmBackupStorageType));
+  }
+
+  if (m_fileSystemConfigurationDetailsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> fileSystemConfigurationDetailsJsonList(m_fileSystemConfigurationDetails.size());
+    for (unsigned fileSystemConfigurationDetailsIndex = 0;
+         fileSystemConfigurationDetailsIndex < fileSystemConfigurationDetailsJsonList.GetLength(); ++fileSystemConfigurationDetailsIndex) {
+      fileSystemConfigurationDetailsJsonList[fileSystemConfigurationDetailsIndex].AsObject(
+          m_fileSystemConfigurationDetails[fileSystemConfigurationDetailsIndex].Jsonize());
+    }
+    payload.WithArray("fileSystemConfigurationDetails", std::move(fileSystemConfigurationDetailsJsonList));
   }
 
   if (m_clusterNameHasBeenSet) {

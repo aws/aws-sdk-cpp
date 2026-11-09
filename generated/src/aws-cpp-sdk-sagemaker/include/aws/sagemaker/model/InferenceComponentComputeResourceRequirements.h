@@ -4,7 +4,10 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
+
+#include <utility>
 
 namespace Aws {
 namespace Utils {
@@ -98,6 +101,31 @@ class InferenceComponentComputeResourceRequirements {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The accelerator partition profile this inference component occupies; on
+   * NVIDIA GPUs this is a Multi-Instance GPU (MIG) profile such as
+   * <code>mig-3g.40gb</code>. It must be one of the partition profiles declared in
+   * the target endpoint's accelerator partition layout, and when set,
+   * <code>NumberOfAcceleratorDevicesRequired</code> must be <code>1</code>. This
+   * field is required when the endpoint's production variant has an accelerator
+   * partition layout. For endpoints without a layout, omit this field to place the
+   * inference component on a whole accelerator.</p>
+   */
+  inline const Aws::String& GetAcceleratorPartitionType() const { return m_acceleratorPartitionType; }
+  inline bool AcceleratorPartitionTypeHasBeenSet() const { return m_acceleratorPartitionTypeHasBeenSet; }
+  template <typename AcceleratorPartitionTypeT = Aws::String>
+  void SetAcceleratorPartitionType(AcceleratorPartitionTypeT&& value) {
+    m_acceleratorPartitionTypeHasBeenSet = true;
+    m_acceleratorPartitionType = std::forward<AcceleratorPartitionTypeT>(value);
+  }
+  template <typename AcceleratorPartitionTypeT = Aws::String>
+  InferenceComponentComputeResourceRequirements& WithAcceleratorPartitionType(AcceleratorPartitionTypeT&& value) {
+    SetAcceleratorPartitionType(std::forward<AcceleratorPartitionTypeT>(value));
+    return *this;
+  }
+  ///@}
  private:
   double m_numberOfCpuCoresRequired{0.0};
 
@@ -106,10 +134,13 @@ class InferenceComponentComputeResourceRequirements {
   int m_minMemoryRequiredInMb{0};
 
   int m_maxMemoryRequiredInMb{0};
+
+  Aws::String m_acceleratorPartitionType;
   bool m_numberOfCpuCoresRequiredHasBeenSet = false;
   bool m_numberOfAcceleratorDevicesRequiredHasBeenSet = false;
   bool m_minMemoryRequiredInMbHasBeenSet = false;
   bool m_maxMemoryRequiredInMbHasBeenSet = false;
+  bool m_acceleratorPartitionTypeHasBeenSet = false;
 };
 
 }  // namespace Model

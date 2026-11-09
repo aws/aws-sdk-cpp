@@ -202,6 +202,25 @@ class QuickResponseSummary {
 
   ///@{
   /**
+   * <p>The Amazon Web Services Region where the quick response was last
+   * modified.</p>
+   */
+  inline const Aws::String& GetLastModifiedRegion() const { return m_lastModifiedRegion; }
+  inline bool LastModifiedRegionHasBeenSet() const { return m_lastModifiedRegionHasBeenSet; }
+  template <typename LastModifiedRegionT = Aws::String>
+  void SetLastModifiedRegion(LastModifiedRegionT&& value) {
+    m_lastModifiedRegionHasBeenSet = true;
+    m_lastModifiedRegion = std::forward<LastModifiedRegionT>(value);
+  }
+  template <typename LastModifiedRegionT = Aws::String>
+  QuickResponseSummary& WithLastModifiedRegion(LastModifiedRegionT&& value) {
+    SetLastModifiedRegion(std::forward<LastModifiedRegionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The description of the quick response.</p>
    */
   inline const Aws::String& GetDescription() const { return m_description; }
@@ -320,6 +339,8 @@ class QuickResponseSummary {
 
   Aws::Utils::DateTime m_lastModifiedTime{};
 
+  Aws::String m_lastModifiedRegion;
+
   Aws::String m_description;
 
   Aws::String m_lastModifiedBy;
@@ -338,6 +359,7 @@ class QuickResponseSummary {
   bool m_statusHasBeenSet = false;
   bool m_createdTimeHasBeenSet = false;
   bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_lastModifiedRegionHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_lastModifiedByHasBeenSet = false;
   bool m_isActiveHasBeenSet = false;

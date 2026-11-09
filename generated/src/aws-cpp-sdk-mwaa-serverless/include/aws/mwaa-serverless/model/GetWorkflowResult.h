@@ -11,6 +11,7 @@
 #include <aws/mwaa-serverless/model/Code.h>
 #include <aws/mwaa-serverless/model/DefinitionS3Location.h>
 #include <aws/mwaa-serverless/model/EncryptionConfiguration.h>
+#include <aws/mwaa-serverless/model/Environment.h>
 #include <aws/mwaa-serverless/model/LoggingConfiguration.h>
 #include <aws/mwaa-serverless/model/NetworkConfiguration.h>
 #include <aws/mwaa-serverless/model/ScheduleConfiguration.h>
@@ -316,6 +317,24 @@ class GetWorkflowResult {
 
   ///@{
   /**
+   * <p>The environment variables that tasks in the workflow use during
+   * execution.</p>
+   */
+  inline const Environment& GetEnvironment() const { return m_environment; }
+  template <typename EnvironmentT = Environment>
+  void SetEnvironment(EnvironmentT&& value) {
+    m_environmentHasBeenSet = true;
+    m_environment = std::forward<EnvironmentT>(value);
+  }
+  template <typename EnvironmentT = Environment>
+  GetWorkflowResult& WithEnvironment(EnvironmentT&& value) {
+    SetEnvironment(std::forward<EnvironmentT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The trigger mode for the workflow execution.</p>
    */
   inline const Aws::String& GetTriggerMode() const { return m_triggerMode; }
@@ -397,6 +416,8 @@ class GetWorkflowResult {
 
   NetworkConfiguration m_networkConfiguration;
 
+  Environment m_environment;
+
   Aws::String m_triggerMode;
 
   Aws::String m_workflowDefinition;
@@ -419,6 +440,7 @@ class GetWorkflowResult {
   bool m_scheduleConfigurationHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
   bool m_networkConfigurationHasBeenSet = false;
+  bool m_environmentHasBeenSet = false;
   bool m_triggerModeHasBeenSet = false;
   bool m_workflowDefinitionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

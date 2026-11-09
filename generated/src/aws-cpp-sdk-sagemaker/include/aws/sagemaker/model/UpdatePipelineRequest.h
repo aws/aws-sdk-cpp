@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/SageMakerRequest.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/ParallelismConfiguration.h>
@@ -158,6 +159,36 @@ class UpdatePipelineRequest : public SageMakerRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The aliases to assign to the new pipeline version that this update creates.
+   * You can specify aliases only when the update changes the pipeline definition. To
+   * change the aliases of an existing version, use
+   * <code>UpdatePipelineVersion</code>.</p> <p>An alias must be unique within the
+   * pipeline. To move an alias from an existing version to the new version, first
+   * remove the alias from the existing version with
+   * <code>UpdatePipelineVersion</code>.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetPipelineVersionAliases() const { return m_pipelineVersionAliases; }
+  inline bool PipelineVersionAliasesHasBeenSet() const { return m_pipelineVersionAliasesHasBeenSet; }
+  template <typename PipelineVersionAliasesT = Aws::Vector<Aws::String>>
+  void SetPipelineVersionAliases(PipelineVersionAliasesT&& value) {
+    m_pipelineVersionAliasesHasBeenSet = true;
+    m_pipelineVersionAliases = std::forward<PipelineVersionAliasesT>(value);
+  }
+  template <typename PipelineVersionAliasesT = Aws::Vector<Aws::String>>
+  UpdatePipelineRequest& WithPipelineVersionAliases(PipelineVersionAliasesT&& value) {
+    SetPipelineVersionAliases(std::forward<PipelineVersionAliasesT>(value));
+    return *this;
+  }
+  template <typename PipelineVersionAliasesT = Aws::String>
+  UpdatePipelineRequest& AddPipelineVersionAliases(PipelineVersionAliasesT&& value) {
+    m_pipelineVersionAliasesHasBeenSet = true;
+    m_pipelineVersionAliases.emplace_back(std::forward<PipelineVersionAliasesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_pipelineName;
 
@@ -172,6 +203,8 @@ class UpdatePipelineRequest : public SageMakerRequest {
   Aws::String m_roleArn;
 
   ParallelismConfiguration m_parallelismConfiguration;
+
+  Aws::Vector<Aws::String> m_pipelineVersionAliases;
   bool m_pipelineNameHasBeenSet = false;
   bool m_pipelineDisplayNameHasBeenSet = false;
   bool m_pipelineDefinitionHasBeenSet = false;
@@ -179,6 +212,7 @@ class UpdatePipelineRequest : public SageMakerRequest {
   bool m_pipelineDescriptionHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
   bool m_parallelismConfigurationHasBeenSet = false;
+  bool m_pipelineVersionAliasesHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -24,7 +24,6 @@ namespace Model {
  * data volumes in tasks</a> in the <i>Amazon ECS Developer Guide;</i>.</p>
  * <p>For tasks using the Fargate launch type, the task requires the following
  * platforms:</p> <ul> <li> <p>Linux platform version <code>1.4.0</code> or
- * later.</p> </li> <li> <p>Windows platform version <code>1.0.0</code> or
  * later.</p> </li> </ul> <p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/EphemeralStorage">AWS
  * API Reference</a></p>

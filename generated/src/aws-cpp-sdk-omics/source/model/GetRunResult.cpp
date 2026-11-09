@@ -200,6 +200,10 @@ GetRunResult& GetRunResult::operator=(const Aws::AmazonWebServiceResult<JsonValu
     m_sessionPolicy = jsonValue.GetString("sessionPolicy");
     m_sessionPolicyHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("outputUriPrefixMode")) {
+    m_outputUriPrefixMode = RunOutputUriPrefixModeMapper::GetRunOutputUriPrefixModeForName(jsonValue.GetString("outputUriPrefixMode"));
+    m_outputUriPrefixModeHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

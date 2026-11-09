@@ -63,5 +63,9 @@ Aws::String UpdateChannelRequest::SerializePayload() const {
     payload.WithString("adConfigurationArn", m_adConfigurationArn);
   }
 
+  if (m_failoverSlateConfigurationArnHasBeenSet) {
+    payload.WithString("failoverSlateConfigurationArn", m_failoverSlateConfigurationArn);
+  }
+
   return payload.View().WriteReadable();
 }

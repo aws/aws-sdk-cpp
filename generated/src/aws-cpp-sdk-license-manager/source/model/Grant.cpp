@@ -66,6 +66,10 @@ Grant& Grant::operator=(JsonView jsonValue) {
     m_options = jsonValue.GetObject("Options");
     m_optionsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("GrantType")) {
+    m_grantType = GrantTypeMapper::GetGrantTypeForName(jsonValue.GetString("GrantType"));
+    m_grantTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -119,6 +123,10 @@ JsonValue Grant::Jsonize() const {
 
   if (m_optionsHasBeenSet) {
     payload.WithObject("Options", m_options.Jsonize());
+  }
+
+  if (m_grantTypeHasBeenSet) {
+    payload.WithString("GrantType", GrantTypeMapper::GetNameForGrantType(m_grantType));
   }
 
   return payload;

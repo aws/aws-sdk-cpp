@@ -7,6 +7,7 @@
 
 #include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
+#include <aws/dynamodb/model/ListBulkOperationsPaginationTraits.h>
 #include <aws/dynamodb/model/ListContributorInsightsPaginationTraits.h>
 #include <aws/dynamodb/model/ListExportsPaginationTraits.h>
 #include <aws/dynamodb/model/ListImportsPaginationTraits.h>
@@ -22,6 +23,18 @@ namespace DynamoDB {
 template <typename DerivedClient>
 class DynamoDBPaginationBase {
  public:
+  /**
+   * Create a paginator for ListBulkOperations operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBulkOperationsRequest,
+                                    Pagination::ListBulkOperationsPaginationTraits<DerivedClient>>
+  ListBulkOperationsPaginator(const Model::ListBulkOperationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBulkOperationsRequest,
+                                             Pagination::ListBulkOperationsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
   /**
    * Create a paginator for ListContributorInsights operation
    */

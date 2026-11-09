@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connect-contact-lens/ConnectContactLens_EXPORTS.h>
 #include <aws/connect-contact-lens/model/PointOfInterest.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
@@ -56,9 +57,30 @@ class CategoryDetails {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The unique identifier of the rule that created the matched category.</p>
+   */
+  inline const Aws::String& GetRuleId() const { return m_ruleId; }
+  inline bool RuleIdHasBeenSet() const { return m_ruleIdHasBeenSet; }
+  template <typename RuleIdT = Aws::String>
+  void SetRuleId(RuleIdT&& value) {
+    m_ruleIdHasBeenSet = true;
+    m_ruleId = std::forward<RuleIdT>(value);
+  }
+  template <typename RuleIdT = Aws::String>
+  CategoryDetails& WithRuleId(RuleIdT&& value) {
+    SetRuleId(std::forward<RuleIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<PointOfInterest> m_pointsOfInterest;
+
+  Aws::String m_ruleId;
   bool m_pointsOfInterestHasBeenSet = false;
+  bool m_ruleIdHasBeenSet = false;
 };
 
 }  // namespace Model

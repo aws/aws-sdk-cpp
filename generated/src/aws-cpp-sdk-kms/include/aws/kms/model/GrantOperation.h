@@ -28,7 +28,9 @@ enum class GrantOperation {
   GenerateDataKeyPairWithoutPlaintext,
   GenerateMac,
   VerifyMac,
-  DeriveSharedSecret
+  DeriveSharedSecret,
+  Encapsulate,
+  Decapsulate
 };
 
 namespace GrantOperationMapper {

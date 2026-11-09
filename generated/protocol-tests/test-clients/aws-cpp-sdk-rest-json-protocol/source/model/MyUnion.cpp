@@ -65,6 +65,10 @@ MyUnion& MyUnion::operator=(JsonView jsonValue) {
     m_renamedStructureValue = jsonValue.GetObject("renamedStructureValue");
     m_renamedStructureValueHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("unionValue")) {
+    m_unionValue = jsonValue.GetObject("unionValue");
+    m_unionValueHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -117,6 +121,10 @@ JsonValue MyUnion::Jsonize() const {
 
   if (m_renamedStructureValueHasBeenSet) {
     payload.WithObject("renamedStructureValue", m_renamedStructureValue.Jsonize());
+  }
+
+  if (m_unionValueHasBeenSet) {
+    payload.WithObject("unionValue", m_unionValue.Jsonize());
   }
 
   return payload;

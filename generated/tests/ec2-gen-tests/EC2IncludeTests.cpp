@@ -280,6 +280,7 @@
 #include <aws/ec2/model/CapacityManagerMonitoredTagKey.h>
 #include <aws/ec2/model/CapacityManagerMonitoredTagKeyStatus.h>
 #include <aws/ec2/model/CapacityManagerStatus.h>
+#include <aws/ec2/model/CapacityManagerSupportabilityScore.h>
 #include <aws/ec2/model/CapacityManagerTagDimension.h>
 #include <aws/ec2/model/CapacityReservation.h>
 #include <aws/ec2/model/CapacityReservationAdjustmentDetails.h>
@@ -313,6 +314,7 @@
 #include <aws/ec2/model/CapacityReservationTopology.h>
 #include <aws/ec2/model/CapacityReservationType.h>
 #include <aws/ec2/model/CapacityTenancy.h>
+#include <aws/ec2/model/CapacityUnit.h>
 #include <aws/ec2/model/CarrierGateway.h>
 #include <aws/ec2/model/CarrierGatewayState.h>
 #include <aws/ec2/model/CertificateAuthentication.h>
@@ -1696,6 +1698,8 @@
 #include <aws/ec2/model/GetCapacityManagerMonitoredTagKeysPaginationTraits.h>
 #include <aws/ec2/model/GetCapacityManagerMonitoredTagKeysRequest.h>
 #include <aws/ec2/model/GetCapacityManagerMonitoredTagKeysResponse.h>
+#include <aws/ec2/model/GetCapacityManagerSupportabilityScoresRequest.h>
+#include <aws/ec2/model/GetCapacityManagerSupportabilityScoresResponse.h>
 #include <aws/ec2/model/GetCapacityReservationUsageRequest.h>
 #include <aws/ec2/model/GetCapacityReservationUsageResponse.h>
 #include <aws/ec2/model/GetClientVpnEndpointAuthorizationPolicyRequest.h>
@@ -1727,6 +1731,9 @@
 #include <aws/ec2/model/GetImageAncestryResponse.h>
 #include <aws/ec2/model/GetImageBlockPublicAccessStateRequest.h>
 #include <aws/ec2/model/GetImageBlockPublicAccessStateResponse.h>
+#include <aws/ec2/model/GetImageFindingsPaginationTraits.h>
+#include <aws/ec2/model/GetImageFindingsRequest.h>
+#include <aws/ec2/model/GetImageFindingsResponse.h>
 #include <aws/ec2/model/GetInstanceMetadataDefaultsRequest.h>
 #include <aws/ec2/model/GetInstanceMetadataDefaultsResponse.h>
 #include <aws/ec2/model/GetInstanceTpmEkPubRequest.h>
@@ -1820,6 +1827,8 @@
 #include <aws/ec2/model/GetSpotPlacementScoresResponse.h>
 #include <aws/ec2/model/GetSubnetCidrReservationsRequest.h>
 #include <aws/ec2/model/GetSubnetCidrReservationsResponse.h>
+#include <aws/ec2/model/GetTransitGatewayAttachmentNatConfigurationRequest.h>
+#include <aws/ec2/model/GetTransitGatewayAttachmentNatConfigurationResponse.h>
 #include <aws/ec2/model/GetTransitGatewayAttachmentPropagationsPaginationTraits.h>
 #include <aws/ec2/model/GetTransitGatewayAttachmentPropagationsRequest.h>
 #include <aws/ec2/model/GetTransitGatewayAttachmentPropagationsResponse.h>
@@ -1905,6 +1914,7 @@
 #include <aws/ec2/model/ImageCriterion.h>
 #include <aws/ec2/model/ImageCriterionRequest.h>
 #include <aws/ec2/model/ImageDiskContainer.h>
+#include <aws/ec2/model/ImageFinding.h>
 #include <aws/ec2/model/ImageMetadata.h>
 #include <aws/ec2/model/ImageRecycleBinInfo.h>
 #include <aws/ec2/model/ImageReference.h>
@@ -2387,6 +2397,8 @@
 #include <aws/ec2/model/ModifyTrafficMirrorFilterRuleResponse.h>
 #include <aws/ec2/model/ModifyTrafficMirrorSessionRequest.h>
 #include <aws/ec2/model/ModifyTrafficMirrorSessionResponse.h>
+#include <aws/ec2/model/ModifyTransitGatewayAttachmentNatConfigurationRequest.h>
+#include <aws/ec2/model/ModifyTransitGatewayAttachmentNatConfigurationResponse.h>
 #include <aws/ec2/model/ModifyTransitGatewayMeteringPolicyRequest.h>
 #include <aws/ec2/model/ModifyTransitGatewayMeteringPolicyResponse.h>
 #include <aws/ec2/model/ModifyTransitGatewayOptions.h>
@@ -2798,6 +2810,9 @@
 #include <aws/ec2/model/S3ObjectTag.h>
 #include <aws/ec2/model/S3Storage.h>
 #include <aws/ec2/model/SSEType.h>
+#include <aws/ec2/model/ScanResultCondition.h>
+#include <aws/ec2/model/ScanResultConditionRequest.h>
+#include <aws/ec2/model/ScanResults.h>
 #include <aws/ec2/model/Schedule.h>
 #include <aws/ec2/model/ScheduledInstance.h>
 #include <aws/ec2/model/ScheduledInstanceAvailability.h>
@@ -2861,6 +2876,7 @@
 #include <aws/ec2/model/ServiceState.h>
 #include <aws/ec2/model/ServiceType.h>
 #include <aws/ec2/model/ServiceTypeDetail.h>
+#include <aws/ec2/model/SeverityLabel.h>
 #include <aws/ec2/model/ShutdownBehavior.h>
 #include <aws/ec2/model/SlotDateTimeRangeRequest.h>
 #include <aws/ec2/model/SlotStartTimeRangeRequest.h>
@@ -2940,6 +2956,8 @@
 #include <aws/ec2/model/SuccessfulQueuedPurchaseDeletion.h>
 #include <aws/ec2/model/SuccessfulSuppressionResponseObject.h>
 #include <aws/ec2/model/SummaryStatus.h>
+#include <aws/ec2/model/SupportabilityMarketType.h>
+#include <aws/ec2/model/SupportabilityScore.h>
 #include <aws/ec2/model/SupportedAdditionalProcessorFeature.h>
 #include <aws/ec2/model/SupportedRegionDetail.h>
 #include <aws/ec2/model/Tag.h>
@@ -2993,6 +3011,9 @@
 #include <aws/ec2/model/TransitGatewayAttachment.h>
 #include <aws/ec2/model/TransitGatewayAttachmentAssociation.h>
 #include <aws/ec2/model/TransitGatewayAttachmentBgpConfiguration.h>
+#include <aws/ec2/model/TransitGatewayAttachmentNatGatewaySupportState.h>
+#include <aws/ec2/model/TransitGatewayAttachmentNatGatewaySupportValue.h>
+#include <aws/ec2/model/TransitGatewayAttachmentNatSystemRouteSupportValue.h>
 #include <aws/ec2/model/TransitGatewayAttachmentPropagation.h>
 #include <aws/ec2/model/TransitGatewayAttachmentResourceType.h>
 #include <aws/ec2/model/TransitGatewayAttachmentState.h>
@@ -3023,6 +3044,9 @@
 #include <aws/ec2/model/TransitGatewayMulticastGroup.h>
 #include <aws/ec2/model/TransitGatewayMulticastRegisteredGroupMembers.h>
 #include <aws/ec2/model/TransitGatewayMulticastRegisteredGroupSources.h>
+#include <aws/ec2/model/TransitGatewayNatRule.h>
+#include <aws/ec2/model/TransitGatewayNatRuleRequest.h>
+#include <aws/ec2/model/TransitGatewayNatRuleState.h>
 #include <aws/ec2/model/TransitGatewayOptions.h>
 #include <aws/ec2/model/TransitGatewayPeeringAttachment.h>
 #include <aws/ec2/model/TransitGatewayPeeringAttachmentOptions.h>

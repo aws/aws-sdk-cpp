@@ -53,6 +53,27 @@ class EvaluatorSummary {
 
   ///@{
   /**
+   * <p>The name of the dimension that this summary covers. This field is set only
+   * for evaluators that use a multi-dimensional rating scale, where each dimension
+   * is summarized separately. For single-scale evaluators, this field is not
+   * set.</p>
+   */
+  inline const Aws::String& GetEvaluationDimensionName() const { return m_evaluationDimensionName; }
+  inline bool EvaluationDimensionNameHasBeenSet() const { return m_evaluationDimensionNameHasBeenSet; }
+  template <typename EvaluationDimensionNameT = Aws::String>
+  void SetEvaluationDimensionName(EvaluationDimensionNameT&& value) {
+    m_evaluationDimensionNameHasBeenSet = true;
+    m_evaluationDimensionName = std::forward<EvaluationDimensionNameT>(value);
+  }
+  template <typename EvaluationDimensionNameT = Aws::String>
+  EvaluatorSummary& WithEvaluationDimensionName(EvaluationDimensionNameT&& value) {
+    SetEvaluationDimensionName(std::forward<EvaluationDimensionNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The aggregated statistics for this evaluator.</p>
    */
   inline const EvaluatorStatistics& GetStatistics() const { return m_statistics; }
@@ -103,12 +124,15 @@ class EvaluatorSummary {
  private:
   Aws::String m_evaluatorId;
 
+  Aws::String m_evaluationDimensionName;
+
   EvaluatorStatistics m_statistics;
 
   int m_totalEvaluated{0};
 
   int m_totalFailed{0};
   bool m_evaluatorIdHasBeenSet = false;
+  bool m_evaluationDimensionNameHasBeenSet = false;
   bool m_statisticsHasBeenSet = false;
   bool m_totalEvaluatedHasBeenSet = false;
   bool m_totalFailedHasBeenSet = false;

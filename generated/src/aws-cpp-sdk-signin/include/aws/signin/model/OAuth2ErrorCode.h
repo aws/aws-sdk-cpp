@@ -20,7 +20,14 @@ enum class OAuth2ErrorCode {
   INVALID_REQUEST,
   RESOURCE_NOT_FOUND,
   CONFLICT,
-  SERVICE_QUOTA_EXCEEDED
+  SERVICE_QUOTA_EXCEEDED,
+  unsupported_grant_type,
+  invalid_request,
+  invalid_grant,
+  invalid_scope,
+  invalid_target,
+  rate_exceeded,
+  service_unavailable
 };
 
 namespace OAuth2ErrorCodeMapper {

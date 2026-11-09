@@ -19,6 +19,10 @@ Aws::String GetInstanceRequest::SerializePayload() const {
     payload.WithString("instanceName", m_instanceName);
   }
 
+  if (m_includeHealthStatusHasBeenSet) {
+    payload.WithBool("includeHealthStatus", m_includeHealthStatus);
+  }
+
   return payload.View().WriteReadable();
 }
 

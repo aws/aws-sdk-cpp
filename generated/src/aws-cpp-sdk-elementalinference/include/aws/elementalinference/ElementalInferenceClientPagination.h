@@ -8,6 +8,7 @@
 #include <aws/elementalinference/ElementalInferenceClient.h>
 #include <aws/elementalinference/model/ListDictionariesPaginationTraits.h>
 #include <aws/elementalinference/model/ListFeedsPaginationTraits.h>
+#include <aws/elementalinference/model/ListScheduleActionsPaginationTraits.h>
 #include <aws/elementalinference/model/SearchFixturesPaginationTraits.h>
 
 namespace Aws {
@@ -17,6 +18,9 @@ using ListDictionariesPaginator = Aws::Utils::Pagination::Paginator<ElementalInf
                                                                     Pagination::ListDictionariesPaginationTraits<ElementalInferenceClient>>;
 using ListFeedsPaginator = Aws::Utils::Pagination::Paginator<ElementalInferenceClient, Model::ListFeedsRequest,
                                                              Pagination::ListFeedsPaginationTraits<ElementalInferenceClient>>;
+using ListScheduleActionsPaginator =
+    Aws::Utils::Pagination::Paginator<ElementalInferenceClient, Model::ListScheduleActionsRequest,
+                                      Pagination::ListScheduleActionsPaginationTraits<ElementalInferenceClient>>;
 using SearchFixturesPaginator = Aws::Utils::Pagination::Paginator<ElementalInferenceClient, Model::SearchFixturesRequest,
                                                                   Pagination::SearchFixturesPaginationTraits<ElementalInferenceClient>>;
 

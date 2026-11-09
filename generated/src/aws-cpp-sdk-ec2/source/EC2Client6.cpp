@@ -20,6 +20,8 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/GetIpamRoutingPolicyRegistrationsRequest.h>
+#include <aws/ec2/model/GetLaunchTemplateDataRequest.h>
 #include <aws/ec2/model/GetManagedPrefixListAssociationsRequest.h>
 #include <aws/ec2/model/GetManagedPrefixListEntriesRequest.h>
 #include <aws/ec2/model/GetManagedResourceVisibilityRequest.h>
@@ -35,6 +37,7 @@
 #include <aws/ec2/model/GetSnapshotBlockPublicAccessStateRequest.h>
 #include <aws/ec2/model/GetSpotPlacementScoresRequest.h>
 #include <aws/ec2/model/GetSubnetCidrReservationsRequest.h>
+#include <aws/ec2/model/GetTransitGatewayAttachmentNatConfigurationRequest.h>
 #include <aws/ec2/model/GetTransitGatewayAttachmentPropagationsRequest.h>
 #include <aws/ec2/model/GetTransitGatewayMeteringPolicyEntriesRequest.h>
 #include <aws/ec2/model/GetTransitGatewayMulticastDomainAssociationsRequest.h>
@@ -115,11 +118,8 @@
 #include <aws/ec2/model/ModifyTrafficMirrorFilterNetworkServicesRequest.h>
 #include <aws/ec2/model/ModifyTrafficMirrorFilterRuleRequest.h>
 #include <aws/ec2/model/ModifyTrafficMirrorSessionRequest.h>
-#include <aws/ec2/model/ModifyTransitGatewayMeteringPolicyRequest.h>
-#include <aws/ec2/model/ModifyTransitGatewayPolicyTableEntryRequest.h>
-#include <aws/ec2/model/ModifyTransitGatewayPrefixListReferenceRequest.h>
+#include <aws/ec2/model/ModifyTransitGatewayAttachmentNatConfigurationRequest.h>
 #include <aws/ec2/model/ModifyTransitGatewayRequest.h>
-#include <aws/ec2/model/ModifyTransitGatewayVpcAttachmentRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,19 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+GetIpamRoutingPolicyRegistrationsOutcome EC2Client::GetIpamRoutingPolicyRegistrations(
+    const GetIpamRoutingPolicyRegistrationsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetIpamRoutingPolicyRegistrationsOutcome(result.GetResultWithOwnership())
+                            : GetIpamRoutingPolicyRegistrationsOutcome(std::move(result.GetError()));
+}
+
+GetLaunchTemplateDataOutcome EC2Client::GetLaunchTemplateData(const GetLaunchTemplateDataRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetLaunchTemplateDataOutcome(result.GetResultWithOwnership())
+                            : GetLaunchTemplateDataOutcome(std::move(result.GetError()));
+}
 
 GetManagedPrefixListAssociationsOutcome EC2Client::GetManagedPrefixListAssociations(
     const GetManagedPrefixListAssociationsRequest& request) const {
@@ -225,6 +238,13 @@ GetSubnetCidrReservationsOutcome EC2Client::GetSubnetCidrReservations(const GetS
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetSubnetCidrReservationsOutcome(result.GetResultWithOwnership())
                             : GetSubnetCidrReservationsOutcome(std::move(result.GetError()));
+}
+
+GetTransitGatewayAttachmentNatConfigurationOutcome EC2Client::GetTransitGatewayAttachmentNatConfiguration(
+    const GetTransitGatewayAttachmentNatConfigurationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTransitGatewayAttachmentNatConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetTransitGatewayAttachmentNatConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetTransitGatewayAttachmentPropagationsOutcome EC2Client::GetTransitGatewayAttachmentPropagations(
@@ -730,30 +750,9 @@ ModifyTransitGatewayOutcome EC2Client::ModifyTransitGateway(const ModifyTransitG
                             : ModifyTransitGatewayOutcome(std::move(result.GetError()));
 }
 
-ModifyTransitGatewayMeteringPolicyOutcome EC2Client::ModifyTransitGatewayMeteringPolicy(
-    const ModifyTransitGatewayMeteringPolicyRequest& request) const {
+ModifyTransitGatewayAttachmentNatConfigurationOutcome EC2Client::ModifyTransitGatewayAttachmentNatConfiguration(
+    const ModifyTransitGatewayAttachmentNatConfigurationRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ModifyTransitGatewayMeteringPolicyOutcome(result.GetResultWithOwnership())
-                            : ModifyTransitGatewayMeteringPolicyOutcome(std::move(result.GetError()));
-}
-
-ModifyTransitGatewayPolicyTableEntryOutcome EC2Client::ModifyTransitGatewayPolicyTableEntry(
-    const ModifyTransitGatewayPolicyTableEntryRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ModifyTransitGatewayPolicyTableEntryOutcome(result.GetResultWithOwnership())
-                            : ModifyTransitGatewayPolicyTableEntryOutcome(std::move(result.GetError()));
-}
-
-ModifyTransitGatewayPrefixListReferenceOutcome EC2Client::ModifyTransitGatewayPrefixListReference(
-    const ModifyTransitGatewayPrefixListReferenceRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ModifyTransitGatewayPrefixListReferenceOutcome(result.GetResultWithOwnership())
-                            : ModifyTransitGatewayPrefixListReferenceOutcome(std::move(result.GetError()));
-}
-
-ModifyTransitGatewayVpcAttachmentOutcome EC2Client::ModifyTransitGatewayVpcAttachment(
-    const ModifyTransitGatewayVpcAttachmentRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ModifyTransitGatewayVpcAttachmentOutcome(result.GetResultWithOwnership())
-                            : ModifyTransitGatewayVpcAttachmentOutcome(std::move(result.GetError()));
+  return result.IsSuccess() ? ModifyTransitGatewayAttachmentNatConfigurationOutcome(result.GetResultWithOwnership())
+                            : ModifyTransitGatewayAttachmentNatConfigurationOutcome(std::move(result.GetError()));
 }

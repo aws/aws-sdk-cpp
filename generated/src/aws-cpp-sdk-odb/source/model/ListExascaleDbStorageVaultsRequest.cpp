@@ -23,6 +23,14 @@ Aws::String ListExascaleDbStorageVaultsRequest::SerializePayload() const {
     payload.WithString("nextToken", m_nextToken);
   }
 
+  if (m_cloudExadataInfrastructureIdHasBeenSet) {
+    payload.WithString("cloudExadataInfrastructureId", m_cloudExadataInfrastructureId);
+  }
+
+  if (m_vaultTypeHasBeenSet) {
+    payload.WithString("vaultType", ExascaleDbStorageVaultTypeMapper::GetNameForExascaleDbStorageVaultType(m_vaultType));
+  }
+
   return payload.View().WriteReadable();
 }
 

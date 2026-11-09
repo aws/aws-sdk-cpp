@@ -196,7 +196,11 @@ class StartQueryExecutionRequest : public AthenaRequest {
    * Reservations queries, the workgroup containing <code>EngineConfiguration</code>
    * should have the following values: The name of the <code>Classifications</code>
    * should be <code>athena-query-engine-properties</code>, with the only allowed
-   * properties as <code>max-dpu-count</code> and <code>min-dpu-count</code>.</p>
+   * properties as <code>max-dpu-count</code> and <code>min-dpu-count</code>.</p> <p>
+   * <b>Note:</b> When using StartQueryExecution, only the Classifications field
+   * applies. Do not specify the other fields (AdditionalConfigs, CoordinatorDpuSize,
+   * DefaultExecutorDpuSize, MaxConcurrentDpus, and SparkProperties), as these are
+   * used only with StartSession to configure Apache Spark-based sessions.</p>
    */
   inline const EngineConfiguration& GetEngineConfiguration() const { return m_engineConfiguration; }
   inline bool EngineConfigurationHasBeenSet() const { return m_engineConfigurationHasBeenSet; }

@@ -107,6 +107,13 @@ ContainerInstance& ContainerInstance::operator=(JsonView jsonValue) {
     m_healthStatus = jsonValue.GetObject("healthStatus");
     m_healthStatusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("gpuDevices")) {
+    Aws::Utils::Array<JsonView> gpuDevicesJsonList = jsonValue.GetArray("gpuDevices");
+    for (unsigned gpuDevicesIndex = 0; gpuDevicesIndex < gpuDevicesJsonList.GetLength(); ++gpuDevicesIndex) {
+      m_gpuDevices.push_back(gpuDevicesJsonList[gpuDevicesIndex].AsObject());
+    }
+    m_gpuDevicesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -205,6 +212,14 @@ JsonValue ContainerInstance::Jsonize() const {
 
   if (m_healthStatusHasBeenSet) {
     payload.WithObject("healthStatus", m_healthStatus.Jsonize());
+  }
+
+  if (m_gpuDevicesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> gpuDevicesJsonList(m_gpuDevices.size());
+    for (unsigned gpuDevicesIndex = 0; gpuDevicesIndex < gpuDevicesJsonList.GetLength(); ++gpuDevicesIndex) {
+      gpuDevicesJsonList[gpuDevicesIndex].AsObject(m_gpuDevices[gpuDevicesIndex].Jsonize());
+    }
+    payload.WithArray("gpuDevices", std::move(gpuDevicesJsonList));
   }
 
   return payload;

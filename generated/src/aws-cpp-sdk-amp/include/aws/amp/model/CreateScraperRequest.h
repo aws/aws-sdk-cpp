@@ -185,8 +185,9 @@ class CreateScraperRequest : public PrometheusServiceRequest {
   ///@{
   /**
    * <p>The exporter configurations for the scraper. You can configure at most one
-   * Amazon OpenSearch Service domain. If you don't specify a value, the scraper is
-   * created without an exporter configuration.</p>
+   * exporter, for either an Amazon OpenSearch Service domain or an Amazon MSK
+   * cluster. If you don't specify a value, the scraper is created without an
+   * exporter configuration.</p>
    */
   inline const Aws::Vector<ExporterConfiguration>& GetExporters() const { return m_exporters; }
   inline bool ExportersHasBeenSet() const { return m_exportersHasBeenSet; }

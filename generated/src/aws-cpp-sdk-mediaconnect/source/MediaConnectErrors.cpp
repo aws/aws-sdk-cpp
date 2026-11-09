@@ -20,6 +20,9 @@ static const int FORBIDDEN_HASH = HashingUtils::HashString("ForbiddenException")
 static const int ROUTER_NETWORK_INTERFACE_SERVICE_QUOTA_EXCEEDED_HASH =
     HashingUtils::HashString("RouterNetworkInterfaceServiceQuotaExceededException");
 static const int CREATE_GATEWAY420_HASH = HashingUtils::HashString("CreateGateway420Exception");
+static const int DESTINATION_ENDPOINT_SERVICE_QUOTA_EXCEEDED_HASH =
+    HashingUtils::HashString("DestinationEndpointServiceQuotaExceededException");
+static const int SOURCE_ENDPOINT_SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("SourceEndpointServiceQuotaExceededException");
 static const int CREATE_FLOW420_HASH = HashingUtils::HashString("CreateFlow420Exception");
 static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
 static const int ROUTER_OUTPUT_SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("RouterOutputServiceQuotaExceededException");
@@ -43,6 +46,12 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
                                 RetryableType::NOT_RETRYABLE);
   } else if (hashCode == CREATE_GATEWAY420_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaConnectErrors::CREATE_GATEWAY420), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == DESTINATION_ENDPOINT_SERVICE_QUOTA_EXCEEDED_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaConnectErrors::DESTINATION_ENDPOINT_SERVICE_QUOTA_EXCEEDED),
+                                RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == SOURCE_ENDPOINT_SERVICE_QUOTA_EXCEEDED_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaConnectErrors::SOURCE_ENDPOINT_SERVICE_QUOTA_EXCEEDED),
+                                RetryableType::NOT_RETRYABLE);
   } else if (hashCode == CREATE_FLOW420_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaConnectErrors::CREATE_FLOW420), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == NOT_FOUND_HASH) {

@@ -123,6 +123,7 @@
 #include <aws/batch/model/EksContainer.h>
 #include <aws/batch/model/EksContainerDetail.h>
 #include <aws/batch/model/EksContainerEnvironmentVariable.h>
+#include <aws/batch/model/EksContainerLinuxCapabilities.h>
 #include <aws/batch/model/EksContainerOverride.h>
 #include <aws/batch/model/EksContainerResourceRequirements.h>
 #include <aws/batch/model/EksContainerSecurityContext.h>
@@ -134,9 +135,12 @@
 #include <aws/batch/model/EksPodProperties.h>
 #include <aws/batch/model/EksPodPropertiesDetail.h>
 #include <aws/batch/model/EksPodPropertiesOverride.h>
+#include <aws/batch/model/EksPodSecurityContext.h>
 #include <aws/batch/model/EksProperties.h>
 #include <aws/batch/model/EksPropertiesDetail.h>
 #include <aws/batch/model/EksPropertiesOverride.h>
+#include <aws/batch/model/EksSeccompProfile.h>
+#include <aws/batch/model/EksSeccompProfileType.h>
 #include <aws/batch/model/EksSecret.h>
 #include <aws/batch/model/EksVolume.h>
 #include <aws/batch/model/EphemeralStorage.h>

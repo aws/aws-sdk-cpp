@@ -56,6 +56,7 @@
 #include <aws/qconnect/model/AssistantCapabilityConfiguration.h>
 #include <aws/qconnect/model/AssistantCapabilityType.h>
 #include <aws/qconnect/model/AssistantData.h>
+#include <aws/qconnect/model/AssistantGlobalResiliencyStatus.h>
 #include <aws/qconnect/model/AssistantIntegrationConfiguration.h>
 #include <aws/qconnect/model/AssistantStatus.h>
 #include <aws/qconnect/model/AssistantSummary.h>
@@ -211,6 +212,7 @@
 #include <aws/qconnect/model/GetQuickResponseResult.h>
 #include <aws/qconnect/model/GetSessionRequest.h>
 #include <aws/qconnect/model/GetSessionResult.h>
+#include <aws/qconnect/model/GlobalResiliencyStatus.h>
 #include <aws/qconnect/model/GroupingConfiguration.h>
 #include <aws/qconnect/model/GuardrailAction.h>
 #include <aws/qconnect/model/GuardrailContentFilterConfig.h>
@@ -388,6 +390,10 @@
 #include <aws/qconnect/model/RecommendationTriggerType.h>
 #include <aws/qconnect/model/RecommendationType.h>
 #include <aws/qconnect/model/ReferenceType.h>
+#include <aws/qconnect/model/RegisterAssistantReplicaKeyRequest.h>
+#include <aws/qconnect/model/RegisterAssistantReplicaKeyResult.h>
+#include <aws/qconnect/model/RegisterKnowledgeBaseReplicaKeyRequest.h>
+#include <aws/qconnect/model/RegisterKnowledgeBaseReplicaKeyResult.h>
 #include <aws/qconnect/model/Relevance.h>
 #include <aws/qconnect/model/RelevanceLevel.h>
 #include <aws/qconnect/model/RemoveAssistantAIAgentRequest.h>
@@ -397,6 +403,7 @@
 #include <aws/qconnect/model/RenderMessageTemplateRequest.h>
 #include <aws/qconnect/model/RenderMessageTemplateResult.h>
 #include <aws/qconnect/model/RenderingConfiguration.h>
+#include <aws/qconnect/model/ReplicaKmsKey.h>
 #include <aws/qconnect/model/ResourceNotFoundException.h>
 #include <aws/qconnect/model/ResultData.h>
 #include <aws/qconnect/model/RetrievalConfiguration.h>
@@ -479,6 +486,8 @@
 #include <aws/qconnect/model/ToolOverrideInputValueType.h>
 #include <aws/qconnect/model/ToolType.h>
 #include <aws/qconnect/model/ToolUseResultData.h>
+#include <aws/qconnect/model/UnprocessableContentException.h>
+#include <aws/qconnect/model/UnprocessableContentReason.h>
 #include <aws/qconnect/model/UntagResourceRequest.h>
 #include <aws/qconnect/model/UntagResourceResult.h>
 #include <aws/qconnect/model/UpdateAIAgentRequest.h>

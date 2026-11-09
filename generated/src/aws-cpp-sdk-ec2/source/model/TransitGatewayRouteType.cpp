@@ -17,6 +17,7 @@ namespace TransitGatewayRouteTypeMapper {
 
 static const int static__HASH = HashingUtils::HashString("static");
 static const int propagated_HASH = HashingUtils::HashString("propagated");
+static const int system_HASH = HashingUtils::HashString("system");
 
 TransitGatewayRouteType GetTransitGatewayRouteTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ TransitGatewayRouteType GetTransitGatewayRouteTypeForName(const Aws::String& nam
     return TransitGatewayRouteType::static_;
   } else if (hashCode == propagated_HASH) {
     return TransitGatewayRouteType::propagated;
+  } else if (hashCode == system_HASH) {
+    return TransitGatewayRouteType::system;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForTransitGatewayRouteType(TransitGatewayRouteType enumValue)
       return "static";
     case TransitGatewayRouteType::propagated:
       return "propagated";
+    case TransitGatewayRouteType::system:
+      return "system";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

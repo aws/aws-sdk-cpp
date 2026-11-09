@@ -150,8 +150,8 @@ class UpdateMicrovmImageRequest : public LambdaMicrovmsRequest {
 
   ///@{
   /**
-   * <p>The list of egress network connectors available to the MicroVM at
-   * runtime.</p>
+   * <p>The list of egress network connectors available to the MicroVM at image build
+   * time.</p>
    */
   inline const Aws::Vector<Aws::String>& GetEgressNetworkConnectors() const { return m_egressNetworkConnectors; }
   inline bool EgressNetworkConnectorsHasBeenSet() const { return m_egressNetworkConnectorsHasBeenSet; }

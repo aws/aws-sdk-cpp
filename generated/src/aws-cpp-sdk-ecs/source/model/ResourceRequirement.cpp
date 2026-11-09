@@ -26,6 +26,10 @@ ResourceRequirement& ResourceRequirement::operator=(JsonView jsonValue) {
     m_type = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("sharingStrategy")) {
+    m_sharingStrategy = jsonValue.GetObject("sharingStrategy");
+    m_sharingStrategyHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue ResourceRequirement::Jsonize() const {
 
   if (m_typeHasBeenSet) {
     payload.WithString("type", ResourceTypeMapper::GetNameForResourceType(m_type));
+  }
+
+  if (m_sharingStrategyHasBeenSet) {
+    payload.WithObject("sharingStrategy", m_sharingStrategy.Jsonize());
   }
 
   return payload;

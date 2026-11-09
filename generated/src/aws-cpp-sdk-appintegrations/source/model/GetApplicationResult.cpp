@@ -54,6 +54,10 @@ GetApplicationResult& GetApplicationResult::operator=(const Aws::AmazonWebServic
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
     m_lastModifiedTimeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("LastModifiedRegion")) {
+    m_lastModifiedRegion = jsonValue.GetString("LastModifiedRegion");
+    m_lastModifiedRegionHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
     for (auto& tagsItem : tagsJsonMap) {

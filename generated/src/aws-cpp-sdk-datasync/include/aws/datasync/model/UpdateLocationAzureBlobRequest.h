@@ -12,6 +12,7 @@
 #include <aws/datasync/model/AzureBlobAuthenticationType.h>
 #include <aws/datasync/model/AzureBlobSasConfiguration.h>
 #include <aws/datasync/model/AzureBlobType.h>
+#include <aws/datasync/model/AzureFederatedIdentityConfig.h>
 #include <aws/datasync/model/CmkSecretConfig.h>
 #include <aws/datasync/model/CustomSecretConfig.h>
 
@@ -78,8 +79,8 @@ class UpdateLocationAzureBlobRequest : public DataSyncRequest {
   ///@{
   /**
    * <p>Specifies the authentication method DataSync uses to access your Azure Blob
-   * Storage. DataSync can access blob storage using a shared access signature
-   * (SAS).</p>
+   * Storage. DataSync can access blob storage using a shared access signature (SAS)
+   * or an OpenID Connect (OIDC) token.</p>
    */
   inline AzureBlobAuthenticationType GetAuthenticationType() const { return m_authenticationType; }
   inline bool AuthenticationTypeHasBeenSet() const { return m_authenticationTypeHasBeenSet; }
@@ -108,6 +109,27 @@ class UpdateLocationAzureBlobRequest : public DataSyncRequest {
   template <typename SasConfigurationT = AzureBlobSasConfiguration>
   UpdateLocationAzureBlobRequest& WithSasConfiguration(SasConfigurationT&& value) {
     SetSasConfiguration(std::forward<SasConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the federated identity configuration that allows DataSync to access
+   * your Azure Blob Storage using an OpenID Connect (OIDC) token instead of a shared
+   * access signature (SAS). Provide either <code>FederatedIdentity</code> or
+   * <code>SasConfiguration</code>, but not both.</p>
+   */
+  inline const AzureFederatedIdentityConfig& GetFederatedIdentity() const { return m_federatedIdentity; }
+  inline bool FederatedIdentityHasBeenSet() const { return m_federatedIdentityHasBeenSet; }
+  template <typename FederatedIdentityT = AzureFederatedIdentityConfig>
+  void SetFederatedIdentity(FederatedIdentityT&& value) {
+    m_federatedIdentityHasBeenSet = true;
+    m_federatedIdentity = std::forward<FederatedIdentityT>(value);
+  }
+  template <typename FederatedIdentityT = AzureFederatedIdentityConfig>
+  UpdateLocationAzureBlobRequest& WithFederatedIdentity(FederatedIdentityT&& value) {
+    SetFederatedIdentity(std::forward<FederatedIdentityT>(value));
     return *this;
   }
   ///@}
@@ -233,6 +255,8 @@ class UpdateLocationAzureBlobRequest : public DataSyncRequest {
 
   AzureBlobSasConfiguration m_sasConfiguration;
 
+  AzureFederatedIdentityConfig m_federatedIdentity;
+
   AzureBlobType m_blobType{AzureBlobType::NOT_SET};
 
   AzureAccessTier m_accessTier{AzureAccessTier::NOT_SET};
@@ -246,6 +270,7 @@ class UpdateLocationAzureBlobRequest : public DataSyncRequest {
   bool m_subdirectoryHasBeenSet = false;
   bool m_authenticationTypeHasBeenSet = false;
   bool m_sasConfigurationHasBeenSet = false;
+  bool m_federatedIdentityHasBeenSet = false;
   bool m_blobTypeHasBeenSet = false;
   bool m_accessTierHasBeenSet = false;
   bool m_agentArnsHasBeenSet = false;

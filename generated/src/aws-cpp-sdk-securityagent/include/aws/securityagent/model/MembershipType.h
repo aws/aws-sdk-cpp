@@ -10,7 +10,7 @@
 namespace Aws {
 namespace SecurityAgent {
 namespace Model {
-enum class MembershipType { NOT_SET, USER };
+enum class MembershipType { NOT_SET, USER, GROUP };
 
 namespace MembershipTypeMapper {
 AWS_SECURITYAGENT_API MembershipType GetMembershipTypeForName(const Aws::String& name);

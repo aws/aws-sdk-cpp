@@ -34,6 +34,10 @@ InferenceComponentComputeResourceRequirements& InferenceComponentComputeResource
     m_maxMemoryRequiredInMb = jsonValue.GetInteger("MaxMemoryRequiredInMb");
     m_maxMemoryRequiredInMbHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("AcceleratorPartitionType")) {
+    m_acceleratorPartitionType = jsonValue.GetString("AcceleratorPartitionType");
+    m_acceleratorPartitionTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +58,10 @@ JsonValue InferenceComponentComputeResourceRequirements::Jsonize() const {
 
   if (m_maxMemoryRequiredInMbHasBeenSet) {
     payload.WithInteger("MaxMemoryRequiredInMb", m_maxMemoryRequiredInMb);
+  }
+
+  if (m_acceleratorPartitionTypeHasBeenSet) {
+    payload.WithString("AcceleratorPartitionType", m_acceleratorPartitionType);
   }
 
   return payload;

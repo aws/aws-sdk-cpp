@@ -30,6 +30,7 @@
 #include <aws/rpcv2protocol/model/RpcV2CborDenseMapsRequest.h>
 #include <aws/rpcv2protocol/model/RpcV2CborListsRequest.h>
 #include <aws/rpcv2protocol/model/RpcV2CborSparseMapsRequest.h>
+#include <aws/rpcv2protocol/model/RpcV2CborUnionsRequest.h>
 #include <aws/rpcv2protocol/model/SimpleScalarPropertiesRequest.h>
 #include <aws/rpcv2protocol/model/SparseNullsOperationRequest.h>
 #include <smithy/tracing/TracingUtils.h>
@@ -168,7 +169,8 @@ RpcV2ProtocolClient::InvokeOperationOutcome RpcV2ProtocolClient::InvokeServiceOp
                                   {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
                                  smithy::components::tracing::SpanKind::CLIENT);
 
-  return TracingUtils::MakeCallWithTiming<InvokeOperationOutcome>(
+  return Aws::Client::AsyncOperationState::MakeCallWithTiming<InvokeOperationOutcome>(
+      request, std::move(span),
       [&]() -> InvokeOperationOutcome {
         auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
             [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
@@ -183,7 +185,7 @@ RpcV2ProtocolClient::InvokeOperationOutcome RpcV2ProtocolClient::InvokeServiceOp
 
         return InvokeOperationOutcome{MakeRequest(request, endpointResolutionOutcome.GetResult(), httpMethod, Aws::Auth::SIGV4_SIGNER)};
       },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
 }
 
@@ -242,6 +244,12 @@ RpcV2CborSparseMapsOutcome RpcV2ProtocolClient::RpcV2CborSparseMaps(const RpcV2C
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? RpcV2CborSparseMapsOutcome(result.GetResultWithOwnership())
                             : RpcV2CborSparseMapsOutcome(std::move(result.GetError()));
+}
+
+RpcV2CborUnionsOutcome RpcV2ProtocolClient::RpcV2CborUnions(const RpcV2CborUnionsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RpcV2CborUnionsOutcome(result.GetResultWithOwnership())
+                            : RpcV2CborUnionsOutcome(std::move(result.GetError()));
 }
 
 SimpleScalarPropertiesOutcome RpcV2ProtocolClient::SimpleScalarProperties(const SimpleScalarPropertiesRequest& request) const {

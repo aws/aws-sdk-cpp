@@ -18,7 +18,8 @@ enum class AllowedOperation {
   CheckInLicense,
   ExtendConsumptionLicense,
   ListPurchasedLicenses,
-  CreateToken
+  CreateToken,
+  ListReceivedLicenses
 };
 
 namespace AllowedOperationMapper {

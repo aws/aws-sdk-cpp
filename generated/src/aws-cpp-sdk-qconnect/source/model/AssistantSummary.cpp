@@ -77,6 +77,14 @@ AssistantSummary& AssistantSummary::operator=(JsonView jsonValue) {
     }
     m_orchestratorConfigurationListHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("lastModifiedTime")) {
+    m_lastModifiedTime = jsonValue.GetDouble("lastModifiedTime");
+    m_lastModifiedTimeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("lastModifiedRegion")) {
+    m_lastModifiedRegion = jsonValue.GetString("lastModifiedRegion");
+    m_lastModifiedRegionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -144,6 +152,14 @@ JsonValue AssistantSummary::Jsonize() const {
           m_orchestratorConfigurationList[orchestratorConfigurationListIndex].Jsonize());
     }
     payload.WithArray("orchestratorConfigurationList", std::move(orchestratorConfigurationListJsonList));
+  }
+
+  if (m_lastModifiedTimeHasBeenSet) {
+    payload.WithDouble("lastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
+  }
+
+  if (m_lastModifiedRegionHasBeenSet) {
+    payload.WithString("lastModifiedRegion", m_lastModifiedRegion);
   }
 
   return payload;

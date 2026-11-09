@@ -252,6 +252,36 @@ class AWS_MEDIACONNECT_API MediaConnectClient : public Aws::Client::AWSJsonClien
   }
 
   /**
+   * <p>Retrieves information about multiple destination endpoints in a single
+   * request.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/BatchGetDestinationEndpoint">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::BatchGetDestinationEndpointOutcome BatchGetDestinationEndpoint(
+      const Model::BatchGetDestinationEndpointRequest& request) const;
+
+  /**
+   * A Callable wrapper for BatchGetDestinationEndpoint that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename BatchGetDestinationEndpointRequestT = Model::BatchGetDestinationEndpointRequest>
+  Model::BatchGetDestinationEndpointOutcomeCallable BatchGetDestinationEndpointCallable(
+      const BatchGetDestinationEndpointRequestT& request) const {
+    return SubmitCallable(&MediaConnectClient::BatchGetDestinationEndpoint, request);
+  }
+
+  /**
+   * An Async wrapper for BatchGetDestinationEndpoint that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename BatchGetDestinationEndpointRequestT = Model::BatchGetDestinationEndpointRequest>
+  void BatchGetDestinationEndpointAsync(const BatchGetDestinationEndpointRequestT& request,
+                                        const BatchGetDestinationEndpointResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MediaConnectClient::BatchGetDestinationEndpoint, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves information about multiple router inputs in AWS Elemental
    * MediaConnect.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/BatchGetRouterInput">AWS
@@ -333,6 +363,61 @@ class AWS_MEDIACONNECT_API MediaConnectClient : public Aws::Client::AWSJsonClien
   void BatchGetRouterOutputAsync(const BatchGetRouterOutputRequestT& request, const BatchGetRouterOutputResponseReceivedHandler& handler,
                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&MediaConnectClient::BatchGetRouterOutput, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves information about multiple source endpoints in a single
+   * request.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/BatchGetSourceEndpoint">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::BatchGetSourceEndpointOutcome BatchGetSourceEndpoint(const Model::BatchGetSourceEndpointRequest& request) const;
+
+  /**
+   * A Callable wrapper for BatchGetSourceEndpoint that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename BatchGetSourceEndpointRequestT = Model::BatchGetSourceEndpointRequest>
+  Model::BatchGetSourceEndpointOutcomeCallable BatchGetSourceEndpointCallable(const BatchGetSourceEndpointRequestT& request) const {
+    return SubmitCallable(&MediaConnectClient::BatchGetSourceEndpoint, request);
+  }
+
+  /**
+   * An Async wrapper for BatchGetSourceEndpoint that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename BatchGetSourceEndpointRequestT = Model::BatchGetSourceEndpointRequest>
+  void BatchGetSourceEndpointAsync(const BatchGetSourceEndpointRequestT& request,
+                                   const BatchGetSourceEndpointResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MediaConnectClient::BatchGetSourceEndpoint, request, handler, context);
+  }
+
+  /**
+   * <p>Connects a source endpoint to a destination endpoint.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ConnectEndpoints">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ConnectEndpointsOutcome ConnectEndpoints(const Model::ConnectEndpointsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ConnectEndpoints that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ConnectEndpointsRequestT = Model::ConnectEndpointsRequest>
+  Model::ConnectEndpointsOutcomeCallable ConnectEndpointsCallable(const ConnectEndpointsRequestT& request) const {
+    return SubmitCallable(&MediaConnectClient::ConnectEndpoints, request);
+  }
+
+  /**
+   * An Async wrapper for ConnectEndpoints that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ConnectEndpointsRequestT = Model::ConnectEndpointsRequest>
+  void ConnectEndpointsAsync(const ConnectEndpointsRequestT& request, const ConnectEndpointsResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MediaConnectClient::ConnectEndpoints, request, handler, context);
   }
 
   /**
@@ -661,6 +746,36 @@ class AWS_MEDIACONNECT_API MediaConnectClient : public Aws::Client::AWSJsonClien
   }
 
   /**
+   * <p>Deregisters a destination endpoint from MediaConnect.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DeregisterDestinationEndpoint">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeregisterDestinationEndpointOutcome DeregisterDestinationEndpoint(
+      const Model::DeregisterDestinationEndpointRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeregisterDestinationEndpoint that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DeregisterDestinationEndpointRequestT = Model::DeregisterDestinationEndpointRequest>
+  Model::DeregisterDestinationEndpointOutcomeCallable DeregisterDestinationEndpointCallable(
+      const DeregisterDestinationEndpointRequestT& request) const {
+    return SubmitCallable(&MediaConnectClient::DeregisterDestinationEndpoint, request);
+  }
+
+  /**
+   * An Async wrapper for DeregisterDestinationEndpoint that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeregisterDestinationEndpointRequestT = Model::DeregisterDestinationEndpointRequest>
+  void DeregisterDestinationEndpointAsync(const DeregisterDestinationEndpointRequestT& request,
+                                          const DeregisterDestinationEndpointResponseReceivedHandler& handler,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MediaConnectClient::DeregisterDestinationEndpoint, request, handler, context);
+  }
+
+  /**
    * <p> Deregisters an instance. Before you deregister an instance, all bridges
    * running on the instance must be stopped. If you want to deregister an instance
    * without stopping the bridges, you must use the --force option.</p><p><h3>See
@@ -689,6 +804,34 @@ class AWS_MEDIACONNECT_API MediaConnectClient : public Aws::Client::AWSJsonClien
                                       const DeregisterGatewayInstanceResponseReceivedHandler& handler,
                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&MediaConnectClient::DeregisterGatewayInstance, request, handler, context);
+  }
+
+  /**
+   * <p>Deregisters a source endpoint from MediaConnect.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DeregisterSourceEndpoint">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeregisterSourceEndpointOutcome DeregisterSourceEndpoint(const Model::DeregisterSourceEndpointRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeregisterSourceEndpoint that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeregisterSourceEndpointRequestT = Model::DeregisterSourceEndpointRequest>
+  Model::DeregisterSourceEndpointOutcomeCallable DeregisterSourceEndpointCallable(const DeregisterSourceEndpointRequestT& request) const {
+    return SubmitCallable(&MediaConnectClient::DeregisterSourceEndpoint, request);
+  }
+
+  /**
+   * An Async wrapper for DeregisterSourceEndpoint that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeregisterSourceEndpointRequestT = Model::DeregisterSourceEndpointRequest>
+  void DeregisterSourceEndpointAsync(const DeregisterSourceEndpointRequestT& request,
+                                     const DeregisterSourceEndpointResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MediaConnectClient::DeregisterSourceEndpoint, request, handler, context);
   }
 
   /**
@@ -916,6 +1059,61 @@ class AWS_MEDIACONNECT_API MediaConnectClient : public Aws::Client::AWSJsonClien
   }
 
   /**
+   * <p>Disconnects a source endpoint from a destination endpoint.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DisconnectEndpoints">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DisconnectEndpointsOutcome DisconnectEndpoints(const Model::DisconnectEndpointsRequest& request) const;
+
+  /**
+   * A Callable wrapper for DisconnectEndpoints that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DisconnectEndpointsRequestT = Model::DisconnectEndpointsRequest>
+  Model::DisconnectEndpointsOutcomeCallable DisconnectEndpointsCallable(const DisconnectEndpointsRequestT& request) const {
+    return SubmitCallable(&MediaConnectClient::DisconnectEndpoints, request);
+  }
+
+  /**
+   * An Async wrapper for DisconnectEndpoints that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DisconnectEndpointsRequestT = Model::DisconnectEndpointsRequest>
+  void DisconnectEndpointsAsync(const DisconnectEndpointsRequestT& request, const DisconnectEndpointsResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MediaConnectClient::DisconnectEndpoints, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves information about a destination endpoint.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/GetDestinationEndpoint">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetDestinationEndpointOutcome GetDestinationEndpoint(const Model::GetDestinationEndpointRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetDestinationEndpoint that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetDestinationEndpointRequestT = Model::GetDestinationEndpointRequest>
+  Model::GetDestinationEndpointOutcomeCallable GetDestinationEndpointCallable(const GetDestinationEndpointRequestT& request) const {
+    return SubmitCallable(&MediaConnectClient::GetDestinationEndpoint, request);
+  }
+
+  /**
+   * An Async wrapper for GetDestinationEndpoint that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetDestinationEndpointRequestT = Model::GetDestinationEndpointRequest>
+  void GetDestinationEndpointAsync(const GetDestinationEndpointRequestT& request,
+                                   const GetDestinationEndpointResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MediaConnectClient::GetDestinationEndpoint, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves information about a specific router input in AWS Elemental
    * MediaConnect.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/GetRouterInput">AWS
@@ -1055,6 +1253,32 @@ class AWS_MEDIACONNECT_API MediaConnectClient : public Aws::Client::AWSJsonClien
   }
 
   /**
+   * <p>Retrieves information about a source endpoint.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/GetSourceEndpoint">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetSourceEndpointOutcome GetSourceEndpoint(const Model::GetSourceEndpointRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetSourceEndpoint that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetSourceEndpointRequestT = Model::GetSourceEndpointRequest>
+  Model::GetSourceEndpointOutcomeCallable GetSourceEndpointCallable(const GetSourceEndpointRequestT& request) const {
+    return SubmitCallable(&MediaConnectClient::GetSourceEndpoint, request);
+  }
+
+  /**
+   * An Async wrapper for GetSourceEndpoint that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetSourceEndpointRequestT = Model::GetSourceEndpointRequest>
+  void GetSourceEndpointAsync(const GetSourceEndpointRequestT& request, const GetSourceEndpointResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MediaConnectClient::GetSourceEndpoint, request, handler, context);
+  }
+
+  /**
    * <p> Grants entitlements to an existing flow.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/GrantFlowEntitlements">AWS
    * API Reference</a></p>
@@ -1106,6 +1330,36 @@ class AWS_MEDIACONNECT_API MediaConnectClient : public Aws::Client::AWSJsonClien
                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                         const ListBridgesRequestT& request = {}) const {
     return SubmitAsync(&MediaConnectClient::ListBridges, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves a list of the destination endpoints in your account. The results
+   * are paginated. Use the NextToken value that's returned to retrieve additional
+   * results.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListDestinationEndpoints">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListDestinationEndpointsOutcome ListDestinationEndpoints(const Model::ListDestinationEndpointsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListDestinationEndpoints that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListDestinationEndpointsRequestT = Model::ListDestinationEndpointsRequest>
+  Model::ListDestinationEndpointsOutcomeCallable ListDestinationEndpointsCallable(
+      const ListDestinationEndpointsRequestT& request = {}) const {
+    return SubmitCallable(&MediaConnectClient::ListDestinationEndpoints, request);
+  }
+
+  /**
+   * An Async wrapper for ListDestinationEndpoints that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListDestinationEndpointsRequestT = Model::ListDestinationEndpointsRequest>
+  void ListDestinationEndpointsAsync(const ListDestinationEndpointsResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                     const ListDestinationEndpointsRequestT& request = {}) const {
+    return SubmitAsync(&MediaConnectClient::ListDestinationEndpoints, request, handler, context);
   }
 
   /**
@@ -1366,6 +1620,35 @@ class AWS_MEDIACONNECT_API MediaConnectClient : public Aws::Client::AWSJsonClien
   }
 
   /**
+   * <p>Retrieves a list of the source endpoints in your account. The results are
+   * paginated. Use the NextToken value that's returned to retrieve additional
+   * results.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListSourceEndpoints">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListSourceEndpointsOutcome ListSourceEndpoints(const Model::ListSourceEndpointsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListSourceEndpoints that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListSourceEndpointsRequestT = Model::ListSourceEndpointsRequest>
+  Model::ListSourceEndpointsOutcomeCallable ListSourceEndpointsCallable(const ListSourceEndpointsRequestT& request = {}) const {
+    return SubmitCallable(&MediaConnectClient::ListSourceEndpoints, request);
+  }
+
+  /**
+   * An Async wrapper for ListSourceEndpoints that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListSourceEndpointsRequestT = Model::ListSourceEndpointsRequest>
+  void ListSourceEndpointsAsync(const ListSourceEndpointsResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                const ListSourceEndpointsRequestT& request = {}) const {
+    return SubmitAsync(&MediaConnectClient::ListSourceEndpoints, request, handler, context);
+  }
+
+  /**
    * <p>Lists the tags associated with a global resource in AWS Elemental
    * MediaConnect. The API supports the following global resources: router inputs,
    * router outputs and router network interfaces. </p><p><h3>See Also:</h3>   <a
@@ -1447,6 +1730,64 @@ class AWS_MEDIACONNECT_API MediaConnectClient : public Aws::Client::AWSJsonClien
   void PurchaseOfferingAsync(const PurchaseOfferingRequestT& request, const PurchaseOfferingResponseReceivedHandler& handler,
                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&MediaConnectClient::PurchaseOffering, request, handler, context);
+  }
+
+  /**
+   * <p>Registers a new destination endpoint in MediaConnect.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RegisterDestinationEndpoint">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::RegisterDestinationEndpointOutcome RegisterDestinationEndpoint(
+      const Model::RegisterDestinationEndpointRequest& request) const;
+
+  /**
+   * A Callable wrapper for RegisterDestinationEndpoint that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename RegisterDestinationEndpointRequestT = Model::RegisterDestinationEndpointRequest>
+  Model::RegisterDestinationEndpointOutcomeCallable RegisterDestinationEndpointCallable(
+      const RegisterDestinationEndpointRequestT& request) const {
+    return SubmitCallable(&MediaConnectClient::RegisterDestinationEndpoint, request);
+  }
+
+  /**
+   * An Async wrapper for RegisterDestinationEndpoint that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename RegisterDestinationEndpointRequestT = Model::RegisterDestinationEndpointRequest>
+  void RegisterDestinationEndpointAsync(const RegisterDestinationEndpointRequestT& request,
+                                        const RegisterDestinationEndpointResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MediaConnectClient::RegisterDestinationEndpoint, request, handler, context);
+  }
+
+  /**
+   * <p>Registers a new source endpoint in MediaConnect.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RegisterSourceEndpoint">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::RegisterSourceEndpointOutcome RegisterSourceEndpoint(const Model::RegisterSourceEndpointRequest& request) const;
+
+  /**
+   * A Callable wrapper for RegisterSourceEndpoint that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename RegisterSourceEndpointRequestT = Model::RegisterSourceEndpointRequest>
+  Model::RegisterSourceEndpointOutcomeCallable RegisterSourceEndpointCallable(const RegisterSourceEndpointRequestT& request) const {
+    return SubmitCallable(&MediaConnectClient::RegisterSourceEndpoint, request);
+  }
+
+  /**
+   * An Async wrapper for RegisterSourceEndpoint that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename RegisterSourceEndpointRequestT = Model::RegisterSourceEndpointRequest>
+  void RegisterSourceEndpointAsync(const RegisterSourceEndpointRequestT& request,
+                                   const RegisterSourceEndpointResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MediaConnectClient::RegisterSourceEndpoint, request, handler, context);
   }
 
   /**
@@ -2097,6 +2438,35 @@ class AWS_MEDIACONNECT_API MediaConnectClient : public Aws::Client::AWSJsonClien
   }
 
   /**
+   * <p>Updates the configuration of a destination endpoint.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateDestinationEndpoint">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateDestinationEndpointOutcome UpdateDestinationEndpoint(const Model::UpdateDestinationEndpointRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateDestinationEndpoint that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateDestinationEndpointRequestT = Model::UpdateDestinationEndpointRequest>
+  Model::UpdateDestinationEndpointOutcomeCallable UpdateDestinationEndpointCallable(
+      const UpdateDestinationEndpointRequestT& request) const {
+    return SubmitCallable(&MediaConnectClient::UpdateDestinationEndpoint, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateDestinationEndpoint that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateDestinationEndpointRequestT = Model::UpdateDestinationEndpointRequest>
+  void UpdateDestinationEndpointAsync(const UpdateDestinationEndpointRequestT& request,
+                                      const UpdateDestinationEndpointResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MediaConnectClient::UpdateDestinationEndpoint, request, handler, context);
+  }
+
+  /**
    * <p> Updates an existing flow.</p>  <p> Because
    * <code>UpdateFlowSources</code> and <code>UpdateFlow</code> are separate
    * operations, you can't change both the source type AND the flow size in a single
@@ -2362,6 +2732,32 @@ class AWS_MEDIACONNECT_API MediaConnectClient : public Aws::Client::AWSJsonClien
   void UpdateRouterOutputAsync(const UpdateRouterOutputRequestT& request, const UpdateRouterOutputResponseReceivedHandler& handler,
                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&MediaConnectClient::UpdateRouterOutput, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the configuration of a source endpoint.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateSourceEndpoint">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateSourceEndpointOutcome UpdateSourceEndpoint(const Model::UpdateSourceEndpointRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateSourceEndpoint that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateSourceEndpointRequestT = Model::UpdateSourceEndpointRequest>
+  Model::UpdateSourceEndpointOutcomeCallable UpdateSourceEndpointCallable(const UpdateSourceEndpointRequestT& request) const {
+    return SubmitCallable(&MediaConnectClient::UpdateSourceEndpoint, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateSourceEndpoint that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateSourceEndpointRequestT = Model::UpdateSourceEndpointRequest>
+  void UpdateSourceEndpointAsync(const UpdateSourceEndpointRequestT& request, const UpdateSourceEndpointResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&MediaConnectClient::UpdateSourceEndpoint, request, handler, context);
   }
 
   virtual void OverrideEndpoint(const Aws::String& endpoint);

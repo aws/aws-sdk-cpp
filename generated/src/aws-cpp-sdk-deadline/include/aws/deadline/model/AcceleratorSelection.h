@@ -64,24 +64,15 @@ class AcceleratorSelection {
    * the runtime is released, the new version of the runtime is used.</p> </li> <li>
    * <p> <code>grid:r580</code> - <a
    * href="https://docs.nvidia.com/vgpu/19.0/index.html">NVIDIA vGPU software 19</a>
-   * </p> </li> <li> <p> <code>grid:r570</code> - <a
-   * href="https://docs.nvidia.com/vgpu/18.0/index.html">NVIDIA vGPU software 18</a>
-   * </p> </li> <li> <p> <code>grid:r535</code> - <a
-   * href="https://docs.nvidia.com/vgpu/16.0/index.html">NVIDIA vGPU software 16</a>
    * </p> </li> </ul> <p>If you don't specify a runtime, Amazon Web Services Deadline
    * Cloud uses <code>latest</code> as the default. However, if you have multiple
    * accelerators and specify <code>latest</code> for some and leave others blank,
-   * Amazon Web Services Deadline Cloud raises an exception.</p>  <p>Not
-   * all runtimes are compatible with all accelerator types:</p> <ul> <li> <p>
-   * <code>t4</code> and <code>a10g</code>: Support all runtimes
-   * (<code>grid:r580</code>, <code>grid:r570</code>, <code>grid:r535</code>)</p>
-   * </li> <li> <p> <code>l4</code> and <code>l40s</code>: Only support
-   * <code>grid:r570</code> and newer</p> </li> <li> <p>
-   * <code>rtx-pro-server-6000</code>: Only supports <code>grid:r580</code> </p>
-   * </li> </ul> <p>All accelerators in a fleet must use the same runtime version.
-   * You cannot mix different runtime versions within a single fleet.</p>
-   *   <p>When you specify <code>latest</code>, it resolves to
-   * <code>grid:r580</code> for all currently supported accelerators.</p>
+   * Amazon Web Services Deadline Cloud raises an exception.</p>  <p>All
+   * accelerator types support <code>grid:r580</code>.</p> <p>All accelerators in a
+   * fleet must use the same runtime version. You cannot mix different runtime
+   * versions within a single fleet.</p>   <p>When you specify
+   * <code>latest</code>, it resolves to <code>grid:r580</code> for all currently
+   * supported accelerators.</p>
    */
   inline const Aws::String& GetRuntime() const { return m_runtime; }
   inline bool RuntimeHasBeenSet() const { return m_runtimeHasBeenSet; }

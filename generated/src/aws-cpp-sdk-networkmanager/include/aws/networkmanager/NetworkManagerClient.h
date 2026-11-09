@@ -1925,6 +1925,37 @@ class AWS_NETWORKMANAGER_API NetworkManagerClient : public Aws::Client::AWSJsonC
   }
 
   /**
+   * <p>Returns the NAT configurations of core network attachments. You must specify
+   * either a core network ID or an attachment ID. Only the core network owner can
+   * list NAT configurations.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListAttachmentNatConfigurations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListAttachmentNatConfigurationsOutcome ListAttachmentNatConfigurations(
+      const Model::ListAttachmentNatConfigurationsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListAttachmentNatConfigurations that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListAttachmentNatConfigurationsRequestT = Model::ListAttachmentNatConfigurationsRequest>
+  Model::ListAttachmentNatConfigurationsOutcomeCallable ListAttachmentNatConfigurationsCallable(
+      const ListAttachmentNatConfigurationsRequestT& request = {}) const {
+    return SubmitCallable(&NetworkManagerClient::ListAttachmentNatConfigurations, request);
+  }
+
+  /**
+   * An Async wrapper for ListAttachmentNatConfigurations that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename ListAttachmentNatConfigurationsRequestT = Model::ListAttachmentNatConfigurationsRequest>
+  void ListAttachmentNatConfigurationsAsync(const ListAttachmentNatConfigurationsResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                            const ListAttachmentNatConfigurationsRequestT& request = {}) const {
+    return SubmitAsync(&NetworkManagerClient::ListAttachmentNatConfigurations, request, handler, context);
+  }
+
+  /**
    * <p>Lists the routing policy associations for attachments in a core
    * network.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListAttachmentRoutingPolicyAssociations">AWS
@@ -2520,6 +2551,46 @@ class AWS_NETWORKMANAGER_API NetworkManagerClient : public Aws::Client::AWSJsonC
   void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&NetworkManagerClient::UntagResource, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the NAT configuration of a core network attachment. You can enable or
+   * disable NAT gateway support, specify whether the core network installs system
+   * routes for the NAT CIDR blocks, and replace the NAT rules of the attachment.
+   * Specify at least one of <code>NatGatewaySupport</code>,
+   * <code>NatSystemRouteSupport</code>, or <code>NatGatewayRules</code>.</p> <p>Only
+   * the core network owner can update the NAT configuration of an attachment. The
+   * attachment must be in the <code>AVAILABLE</code>,
+   * <code>PENDING_ATTACHMENT_ACCEPTANCE</code>, or
+   * <code>PENDING_TAG_ACCEPTANCE</code> state. Changes are applied asynchronously,
+   * and the attachment is in the <code>UPDATING</code> state while they are applied.
+   * If the attachment is pending acceptance, the NAT configuration is stored and is
+   * applied after the attachment is accepted.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/UpdateAttachmentNatConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateAttachmentNatConfigurationOutcome UpdateAttachmentNatConfiguration(
+      const Model::UpdateAttachmentNatConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateAttachmentNatConfiguration that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename UpdateAttachmentNatConfigurationRequestT = Model::UpdateAttachmentNatConfigurationRequest>
+  Model::UpdateAttachmentNatConfigurationOutcomeCallable UpdateAttachmentNatConfigurationCallable(
+      const UpdateAttachmentNatConfigurationRequestT& request) const {
+    return SubmitCallable(&NetworkManagerClient::UpdateAttachmentNatConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateAttachmentNatConfiguration that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename UpdateAttachmentNatConfigurationRequestT = Model::UpdateAttachmentNatConfigurationRequest>
+  void UpdateAttachmentNatConfigurationAsync(const UpdateAttachmentNatConfigurationRequestT& request,
+                                             const UpdateAttachmentNatConfigurationResponseReceivedHandler& handler,
+                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&NetworkManagerClient::UpdateAttachmentNatConfiguration, request, handler, context);
   }
 
   /**

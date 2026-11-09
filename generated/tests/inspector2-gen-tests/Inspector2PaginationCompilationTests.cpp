@@ -18,6 +18,7 @@
 #include <aws/inspector2/model/GetClustersForImagePaginationTraits.h>
 #include <aws/inspector2/model/ListConnectorsPaginationTraits.h>
 #include <aws/inspector2/model/ListMembersPaginationTraits.h>
+#include <aws/inspector2/model/ListOnDemandScansPaginationTraits.h>
 #include <aws/inspector2/model/ListCoverageStatisticsPaginationTraits.h>
 #include <aws/inspector2/model/ListFindingAggregationsPaginationTraits.h>
 #include <aws/inspector2/model/ListCisScanResultsAggregatedByTargetResourcePaginationTraits.h>

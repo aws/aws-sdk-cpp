@@ -86,6 +86,23 @@ class CreateTrustAnchorRequest : public RolesAnywhereRequest {
 
   ///@{
   /**
+   * <p>Specifies whether the trust anchor checks certificate revocation status
+   * against CRL distribution points.</p>
+   */
+  inline bool GetCrlDpRevocationEnabled() const { return m_crlDpRevocationEnabled; }
+  inline bool CrlDpRevocationEnabledHasBeenSet() const { return m_crlDpRevocationEnabledHasBeenSet; }
+  inline void SetCrlDpRevocationEnabled(bool value) {
+    m_crlDpRevocationEnabledHasBeenSet = true;
+    m_crlDpRevocationEnabled = value;
+  }
+  inline CreateTrustAnchorRequest& WithCrlDpRevocationEnabled(bool value) {
+    SetCrlDpRevocationEnabled(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The tags to attach to the trust anchor.</p>
    */
   inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
@@ -138,12 +155,15 @@ class CreateTrustAnchorRequest : public RolesAnywhereRequest {
 
   bool m_enabled{false};
 
+  bool m_crlDpRevocationEnabled{false};
+
   Aws::Vector<Tag> m_tags;
 
   Aws::Vector<NotificationSetting> m_notificationSettings;
   bool m_nameHasBeenSet = false;
   bool m_sourceHasBeenSet = false;
   bool m_enabledHasBeenSet = false;
+  bool m_crlDpRevocationEnabledHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_notificationSettingsHasBeenSet = false;
 };

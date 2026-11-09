@@ -7,6 +7,9 @@
 #include <aws/rpcv2protocol/model/SimpleScalarPropertiesRequest.h>
 #include <aws/testing/AwsProtocolTestHelpers.h>
 
+#include <cmath>
+#include <limits>
+
 using SimpleScalarProperties = AWS_PROTOCOL_TEST_SUITE;
 using RpcV2ProtocolClient = Aws::RpcV2Protocol::RpcV2ProtocolClient;
 using namespace Aws::RpcV2Protocol::Model;

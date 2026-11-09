@@ -44,8 +44,7 @@ AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson11FooErrorUsingXAmznErrorTypeWithU
 
   OutputResponse mockRs;
   mockRs.statusCode = 500;
-  mockRs.headers = {
-      {"X-Amzn-Errortype", R"(aws.protocoltests.restjson#FooError:http://internal.amazon.com/coral/com.amazon.coral.validate/)"}};
+  mockRs.headers = {{"X-Amzn-Errortype", R"(aws.protocoltests.json#FooError:http://internal.amazon.com/coral/com.amazon.coral.validate/)"}};
   SetMockResponse(mockRs);
 
   GreetingWithErrorsRequest request;
@@ -75,7 +74,7 @@ AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson11FooErrorUsingCodeAndNamespace) {
   OutputResponse mockRs;
   mockRs.statusCode = 500;
   mockRs.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}};
-  mockRs.body = "ewogICAgImNvZGUiOiAiYXdzLnByb3RvY29sdGVzdHMucmVzdGpzb24jRm9vRXJyb3IiCn0=";
+  mockRs.body = "ewogICAgImNvZGUiOiAiYXdzLnByb3RvY29sdGVzdHMuanNvbiNGb29FcnJvciIKfQ==";
   SetMockResponse(mockRs);
 
   GreetingWithErrorsRequest request;
@@ -91,8 +90,8 @@ AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson11FooErrorUsingCodeUriAndNamespace
   mockRs.statusCode = 500;
   mockRs.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}};
   mockRs.body =
-      "ewogICAgImNvZGUiOiAiYXdzLnByb3RvY29sdGVzdHMucmVzdGpzb24jRm9vRXJyb3I6aHR0cDovL2ludGVybmFsLmFtYXpvbi5jb20vY29yYWwvY29tLmFtYXpvbi5jb3Jh"
-      "bC52YWxpZGF0ZS8iCn0=";
+      "ewogICAgImNvZGUiOiAiYXdzLnByb3RvY29sdGVzdHMuanNvbiNGb29FcnJvcjpodHRwOi8vaW50ZXJuYWwuYW1hem9uLmNvbS9jb3JhbC9jb20uYW1hem9uLmNvcmFsLnZh"
+      "bGlkYXRlLyIKfQ==";
   SetMockResponse(mockRs);
 
   GreetingWithErrorsRequest request;
@@ -122,7 +121,22 @@ AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson11FooErrorWithDunderTypeAndNamespa
   OutputResponse mockRs;
   mockRs.statusCode = 500;
   mockRs.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}};
-  mockRs.body = "ewogICAgIl9fdHlwZSI6ICJhd3MucHJvdG9jb2x0ZXN0cy5yZXN0anNvbiNGb29FcnJvciIKfQ==";
+  mockRs.body = "ewogICAgIl9fdHlwZSI6ICJhd3MucHJvdG9jb2x0ZXN0cy5qc29uI0Zvb0Vycm9yIgp9";
+  SetMockResponse(mockRs);
+
+  GreetingWithErrorsRequest request;
+
+  auto outcome = client.GreetingWithErrors(request);
+  ASSERT_FALSE(outcome.IsSuccess());
+}
+
+AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson11FooErrorWithDunderTypeAndDifferentNamespace) {
+  JsonProtocolClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = 500;
+  mockRs.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}};
+  mockRs.body = "ewogICAgIl9fdHlwZSI6ICJhd3MuZGlmZmVyZW50Lm5hbWVzcGFjZSNGb29FcnJvciIKfQ==";
   SetMockResponse(mockRs);
 
   GreetingWithErrorsRequest request;
@@ -138,8 +152,8 @@ AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson11FooErrorWithDunderTypeUriAndName
   mockRs.statusCode = 500;
   mockRs.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}};
   mockRs.body =
-      "ewogICAgIl9fdHlwZSI6ICJhd3MucHJvdG9jb2x0ZXN0cy5yZXN0anNvbiNGb29FcnJvcjpodHRwOi8vaW50ZXJuYWwuYW1hem9uLmNvbS9jb3JhbC9jb20uYW1hem9uLmNv"
-      "cmFsLnZhbGlkYXRlLyIKfQ==";
+      "ewogICAgIl9fdHlwZSI6ICJhd3MucHJvdG9jb2x0ZXN0cy5qc29uI0Zvb0Vycm9yOmh0dHA6Ly9pbnRlcm5hbC5hbWF6b24uY29tL2NvcmFsL2NvbS5hbWF6b24uY29yYWwu"
+      "dmFsaWRhdGUvIgp9";
   SetMockResponse(mockRs);
 
   GreetingWithErrorsRequest request;
@@ -155,8 +169,8 @@ AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson11FooErrorWithNestedTypeProperty) 
   mockRs.statusCode = 500;
   mockRs.headers = {{"Content-Type", R"(application/x-amz-json-1.1)"}};
   mockRs.body =
-      "ewogICAgIl9fdHlwZSI6ICJhd3MucHJvdG9jb2x0ZXN0cy5yZXN0anNvbiNGb29FcnJvciIsCiAgICAiRXJyb3JEZXRhaWxzIjogWwogICAgICB7CiAgICAgICAgICAiX190"
-      "eXBlIjogImNvbS5hbWF6b24uaW50ZXJuYWwjRXJyb3JEZXRhaWxzIiwKICAgICAgICAgICJyZWFzb24iOiAiU29tZSByZWFzb24iCiAgICAgIH0KICAgIF0KfQ==";
+      "ewogICAgIl9fdHlwZSI6ICJhd3MucHJvdG9jb2x0ZXN0cy5qc29uI0Zvb0Vycm9yIiwKICAgICJFcnJvckRldGFpbHMiOiBbCiAgICAgIHsKICAgICAgICAgICJfX3R5cGUi"
+      "OiAiY29tLmFtYXpvbi5pbnRlcm5hbCNFcnJvckRldGFpbHMiLAogICAgICAgICAgInJlYXNvbiI6ICJTb21lIHJlYXNvbiIKICAgICAgfQogICAgXQp9";
   SetMockResponse(mockRs);
 
   GreetingWithErrorsRequest request;

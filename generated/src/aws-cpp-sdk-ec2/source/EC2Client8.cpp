@@ -20,6 +20,10 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/UnassignPrivateIpAddressesRequest.h>
+#include <aws/ec2/model/UnassignPrivateNatGatewayAddressRequest.h>
+#include <aws/ec2/model/UnlockSnapshotRequest.h>
+#include <aws/ec2/model/UnmonitorInstancesRequest.h>
 #include <aws/ec2/model/UpdateCapacityManagerMonitoredTagKeysRequest.h>
 #include <aws/ec2/model/UpdateCapacityManagerOrganizationsAccessRequest.h>
 #include <aws/ec2/model/UpdateInterruptibleCapacityReservationAllocationRequest.h>
@@ -38,6 +42,30 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+UnassignPrivateIpAddressesOutcome EC2Client::UnassignPrivateIpAddresses(const UnassignPrivateIpAddressesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UnassignPrivateIpAddressesOutcome(result.GetResultWithOwnership())
+                            : UnassignPrivateIpAddressesOutcome(std::move(result.GetError()));
+}
+
+UnassignPrivateNatGatewayAddressOutcome EC2Client::UnassignPrivateNatGatewayAddress(
+    const UnassignPrivateNatGatewayAddressRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UnassignPrivateNatGatewayAddressOutcome(result.GetResultWithOwnership())
+                            : UnassignPrivateNatGatewayAddressOutcome(std::move(result.GetError()));
+}
+
+UnlockSnapshotOutcome EC2Client::UnlockSnapshot(const UnlockSnapshotRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UnlockSnapshotOutcome(result.GetResultWithOwnership()) : UnlockSnapshotOutcome(std::move(result.GetError()));
+}
+
+UnmonitorInstancesOutcome EC2Client::UnmonitorInstances(const UnmonitorInstancesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UnmonitorInstancesOutcome(result.GetResultWithOwnership())
+                            : UnmonitorInstancesOutcome(std::move(result.GetError()));
+}
 
 UpdateCapacityManagerMonitoredTagKeysOutcome EC2Client::UpdateCapacityManagerMonitoredTagKeys(
     const UpdateCapacityManagerMonitoredTagKeysRequest& request) const {

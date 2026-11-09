@@ -766,6 +766,40 @@ class AWS_ECR_API ECRClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Returns the status, progress, and per-image results for a replication
+   * backfill. The backfill to describe is identified by the
+   * <code>replicationBackfillId</code> returned by the
+   * <a>StartReplicationBackfill</a> operation.</p>  <p>The per-image results
+   * are available only after the replication backfill reaches a terminal status.</p>
+   * <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeReplicationBackfillResults">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeReplicationBackfillResultsOutcome DescribeReplicationBackfillResults(
+      const Model::DescribeReplicationBackfillResultsRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeReplicationBackfillResults that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename DescribeReplicationBackfillResultsRequestT = Model::DescribeReplicationBackfillResultsRequest>
+  Model::DescribeReplicationBackfillResultsOutcomeCallable DescribeReplicationBackfillResultsCallable(
+      const DescribeReplicationBackfillResultsRequestT& request) const {
+    return SubmitCallable(&ECRClient::DescribeReplicationBackfillResults, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeReplicationBackfillResults that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DescribeReplicationBackfillResultsRequestT = Model::DescribeReplicationBackfillResultsRequest>
+  void DescribeReplicationBackfillResultsAsync(const DescribeReplicationBackfillResultsRequestT& request,
+                                               const DescribeReplicationBackfillResultsResponseReceivedHandler& handler,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ECRClient::DescribeReplicationBackfillResults, request, handler, context);
+  }
+
+  /**
    * <p>Describes image repositories in a registry.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeRepositories">AWS
    * API Reference</a></p>
@@ -1216,6 +1250,37 @@ class AWS_ECR_API ECRClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Lists the replication backfills for a registry, including their status and
+   * progress.</p>  <p>Replication backfills that have reached a terminal
+   * status are retained for 90 days after they end, after which they are no longer
+   * returned.</p> <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ListReplicationBackfills">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListReplicationBackfillsOutcome ListReplicationBackfills(const Model::ListReplicationBackfillsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListReplicationBackfills that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListReplicationBackfillsRequestT = Model::ListReplicationBackfillsRequest>
+  Model::ListReplicationBackfillsOutcomeCallable ListReplicationBackfillsCallable(
+      const ListReplicationBackfillsRequestT& request = {}) const {
+    return SubmitCallable(&ECRClient::ListReplicationBackfills, request);
+  }
+
+  /**
+   * An Async wrapper for ListReplicationBackfills that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListReplicationBackfillsRequestT = Model::ListReplicationBackfillsRequest>
+  void ListReplicationBackfillsAsync(const ListReplicationBackfillsResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                     const ListReplicationBackfillsRequestT& request = {}) const {
+    return SubmitAsync(&ECRClient::ListReplicationBackfills, request, handler, context);
+  }
+
+  /**
    * <p>List the tags for an Amazon ECR resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ListTagsForResource">AWS
    * API Reference</a></p>
@@ -1654,6 +1719,76 @@ class AWS_ECR_API ECRClient : public Aws::Client::AWSJsonClient,
                                         const StartLifecyclePolicyPreviewResponseReceivedHandler& handler,
                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ECRClient::StartLifecyclePolicyPreview, request, handler, context);
+  }
+
+  /**
+   * <p>Starts a replication backfill for a registry. A replication backfill
+   * replicates a registry's existing images that match its replication configuration
+   * to the specified destination. Use the <a>DescribeReplicationBackfillResults</a>
+   * operation to monitor the progress of a replication backfill, and to retrieve its
+   * per-image results after it reaches a terminal status.</p>  <p>The
+   * destination must already be configured in the registry's replication
+   * configuration.</p>   <p>Only one replication backfill can be in
+   * progress for a given destination Region at a time. Starting a replication
+   * backfill for a destination Region that already has one in progress fails with a
+   * <code>ReplicationBackfillInProgressException</code>. In addition, a registry can
+   * have at most 10 replication backfills in progress at once. Starting a
+   * replication backfill that would exceed this limit fails with a
+   * <code>LimitExceededException</code>.</p> <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/StartReplicationBackfill">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartReplicationBackfillOutcome StartReplicationBackfill(const Model::StartReplicationBackfillRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartReplicationBackfill that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StartReplicationBackfillRequestT = Model::StartReplicationBackfillRequest>
+  Model::StartReplicationBackfillOutcomeCallable StartReplicationBackfillCallable(const StartReplicationBackfillRequestT& request) const {
+    return SubmitCallable(&ECRClient::StartReplicationBackfill, request);
+  }
+
+  /**
+   * An Async wrapper for StartReplicationBackfill that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename StartReplicationBackfillRequestT = Model::StartReplicationBackfillRequest>
+  void StartReplicationBackfillAsync(const StartReplicationBackfillRequestT& request,
+                                     const StartReplicationBackfillResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ECRClient::StartReplicationBackfill, request, handler, context);
+  }
+
+  /**
+   * <p>Stops an in progress replication backfill for a registry. The backfill to
+   * stop is identified by the <code>replicationBackfillId</code> returned by the
+   * <a>StartReplicationBackfill</a> operation.</p>  <p>Images that have
+   * already been replicated are not affected, and replications that are already in
+   * progress continue to completion.</p> <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/StopReplicationBackfill">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StopReplicationBackfillOutcome StopReplicationBackfill(const Model::StopReplicationBackfillRequest& request) const;
+
+  /**
+   * A Callable wrapper for StopReplicationBackfill that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StopReplicationBackfillRequestT = Model::StopReplicationBackfillRequest>
+  Model::StopReplicationBackfillOutcomeCallable StopReplicationBackfillCallable(const StopReplicationBackfillRequestT& request) const {
+    return SubmitCallable(&ECRClient::StopReplicationBackfill, request);
+  }
+
+  /**
+   * An Async wrapper for StopReplicationBackfill that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename StopReplicationBackfillRequestT = Model::StopReplicationBackfillRequest>
+  void StopReplicationBackfillAsync(const StopReplicationBackfillRequestT& request,
+                                    const StopReplicationBackfillResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ECRClient::StopReplicationBackfill, request, handler, context);
   }
 
   /**

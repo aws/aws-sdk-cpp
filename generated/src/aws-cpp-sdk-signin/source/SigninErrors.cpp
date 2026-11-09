@@ -9,8 +9,11 @@
 #include <aws/signin/model/AccessDeniedException.h>
 #include <aws/signin/model/ConflictException.h>
 #include <aws/signin/model/InternalServerException.h>
+#include <aws/signin/model/InvalidGrantException.h>
+#include <aws/signin/model/InvalidScopeException.h>
 #include <aws/signin/model/ResourceNotFoundException.h>
 #include <aws/signin/model/ServiceQuotaExceededException.h>
+#include <aws/signin/model/ServiceUnavailableException.h>
 #include <aws/signin/model/TooManyRequestsError.h>
 #include <aws/signin/model/ValidationException.h>
 
@@ -22,15 +25,33 @@ using namespace Aws::Signin::Model;
 namespace Aws {
 namespace Signin {
 template <>
+AWS_SIGNIN_API ServiceUnavailableException SigninError::GetModeledError() {
+  assert(this->GetErrorType() == SigninErrors::SERVICE_UNAVAILABLE);
+  return ServiceUnavailableException(this->GetJsonPayload().View());
+}
+
+template <>
 AWS_SIGNIN_API ConflictException SigninError::GetModeledError() {
   assert(this->GetErrorType() == SigninErrors::CONFLICT);
   return ConflictException(this->GetJsonPayload().View());
 }
 
 template <>
+AWS_SIGNIN_API InvalidGrantException SigninError::GetModeledError() {
+  assert(this->GetErrorType() == SigninErrors::INVALID_GRANT);
+  return InvalidGrantException(this->GetJsonPayload().View());
+}
+
+template <>
 AWS_SIGNIN_API ServiceQuotaExceededException SigninError::GetModeledError() {
   assert(this->GetErrorType() == SigninErrors::SERVICE_QUOTA_EXCEEDED);
   return ServiceQuotaExceededException(this->GetJsonPayload().View());
+}
+
+template <>
+AWS_SIGNIN_API InvalidScopeException SigninError::GetModeledError() {
+  assert(this->GetErrorType() == SigninErrors::INVALID_SCOPE);
+  return InvalidScopeException(this->GetJsonPayload().View());
 }
 
 template <>
@@ -66,7 +87,9 @@ AWS_SIGNIN_API AccessDeniedException SigninError::GetModeledError() {
 namespace SigninErrorMapper {
 
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
+static const int INVALID_GRANT_HASH = HashingUtils::HashString("InvalidGrantException");
 static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
+static const int INVALID_SCOPE_HASH = HashingUtils::HashString("InvalidScopeException");
 static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsError");
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
 
@@ -75,8 +98,12 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
 
   if (hashCode == CONFLICT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SigninErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == INVALID_GRANT_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SigninErrors::INVALID_GRANT), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SigninErrors::SERVICE_QUOTA_EXCEEDED), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == INVALID_SCOPE_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SigninErrors::INVALID_SCOPE), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == TOO_MANY_REQUESTS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SigninErrors::TOO_MANY_REQUESTS), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INTERNAL_SERVER_HASH) {

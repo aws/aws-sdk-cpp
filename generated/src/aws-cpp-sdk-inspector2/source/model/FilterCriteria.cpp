@@ -359,6 +359,36 @@ FilterCriteria& FilterCriteria::operator=(JsonView jsonValue) {
     }
     m_codeRepositoryProviderTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("machineImageId")) {
+    Aws::Utils::Array<JsonView> machineImageIdJsonList = jsonValue.GetArray("machineImageId");
+    for (unsigned machineImageIdIndex = 0; machineImageIdIndex < machineImageIdJsonList.GetLength(); ++machineImageIdIndex) {
+      m_machineImageId.push_back(machineImageIdJsonList[machineImageIdIndex].AsObject());
+    }
+    m_machineImageIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("machineImageName")) {
+    Aws::Utils::Array<JsonView> machineImageNameJsonList = jsonValue.GetArray("machineImageName");
+    for (unsigned machineImageNameIndex = 0; machineImageNameIndex < machineImageNameJsonList.GetLength(); ++machineImageNameIndex) {
+      m_machineImageName.push_back(machineImageNameJsonList[machineImageNameIndex].AsObject());
+    }
+    m_machineImageNameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("machineImageOwnerAccountId")) {
+    Aws::Utils::Array<JsonView> machineImageOwnerAccountIdJsonList = jsonValue.GetArray("machineImageOwnerAccountId");
+    for (unsigned machineImageOwnerAccountIdIndex = 0; machineImageOwnerAccountIdIndex < machineImageOwnerAccountIdJsonList.GetLength();
+         ++machineImageOwnerAccountIdIndex) {
+      m_machineImageOwnerAccountId.push_back(machineImageOwnerAccountIdJsonList[machineImageOwnerAccountIdIndex].AsObject());
+    }
+    m_machineImageOwnerAccountIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("machineImagePlatform")) {
+    Aws::Utils::Array<JsonView> machineImagePlatformJsonList = jsonValue.GetArray("machineImagePlatform");
+    for (unsigned machineImagePlatformIndex = 0; machineImagePlatformIndex < machineImagePlatformJsonList.GetLength();
+         ++machineImagePlatformIndex) {
+      m_machineImagePlatform.push_back(machineImagePlatformJsonList[machineImagePlatformIndex].AsObject());
+    }
+    m_machineImagePlatformHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("cloudProvider")) {
     Aws::Utils::Array<JsonView> cloudProviderJsonList = jsonValue.GetArray("cloudProvider");
     for (unsigned cloudProviderIndex = 0; cloudProviderIndex < cloudProviderJsonList.GetLength(); ++cloudProviderIndex) {
@@ -908,6 +938,41 @@ JsonValue FilterCriteria::Jsonize() const {
           m_codeRepositoryProviderType[codeRepositoryProviderTypeIndex].Jsonize());
     }
     payload.WithArray("codeRepositoryProviderType", std::move(codeRepositoryProviderTypeJsonList));
+  }
+
+  if (m_machineImageIdHasBeenSet) {
+    Aws::Utils::Array<JsonValue> machineImageIdJsonList(m_machineImageId.size());
+    for (unsigned machineImageIdIndex = 0; machineImageIdIndex < machineImageIdJsonList.GetLength(); ++machineImageIdIndex) {
+      machineImageIdJsonList[machineImageIdIndex].AsObject(m_machineImageId[machineImageIdIndex].Jsonize());
+    }
+    payload.WithArray("machineImageId", std::move(machineImageIdJsonList));
+  }
+
+  if (m_machineImageNameHasBeenSet) {
+    Aws::Utils::Array<JsonValue> machineImageNameJsonList(m_machineImageName.size());
+    for (unsigned machineImageNameIndex = 0; machineImageNameIndex < machineImageNameJsonList.GetLength(); ++machineImageNameIndex) {
+      machineImageNameJsonList[machineImageNameIndex].AsObject(m_machineImageName[machineImageNameIndex].Jsonize());
+    }
+    payload.WithArray("machineImageName", std::move(machineImageNameJsonList));
+  }
+
+  if (m_machineImageOwnerAccountIdHasBeenSet) {
+    Aws::Utils::Array<JsonValue> machineImageOwnerAccountIdJsonList(m_machineImageOwnerAccountId.size());
+    for (unsigned machineImageOwnerAccountIdIndex = 0; machineImageOwnerAccountIdIndex < machineImageOwnerAccountIdJsonList.GetLength();
+         ++machineImageOwnerAccountIdIndex) {
+      machineImageOwnerAccountIdJsonList[machineImageOwnerAccountIdIndex].AsObject(
+          m_machineImageOwnerAccountId[machineImageOwnerAccountIdIndex].Jsonize());
+    }
+    payload.WithArray("machineImageOwnerAccountId", std::move(machineImageOwnerAccountIdJsonList));
+  }
+
+  if (m_machineImagePlatformHasBeenSet) {
+    Aws::Utils::Array<JsonValue> machineImagePlatformJsonList(m_machineImagePlatform.size());
+    for (unsigned machineImagePlatformIndex = 0; machineImagePlatformIndex < machineImagePlatformJsonList.GetLength();
+         ++machineImagePlatformIndex) {
+      machineImagePlatformJsonList[machineImagePlatformIndex].AsObject(m_machineImagePlatform[machineImagePlatformIndex].Jsonize());
+    }
+    payload.WithArray("machineImagePlatform", std::move(machineImagePlatformJsonList));
   }
 
   if (m_cloudProviderHasBeenSet) {

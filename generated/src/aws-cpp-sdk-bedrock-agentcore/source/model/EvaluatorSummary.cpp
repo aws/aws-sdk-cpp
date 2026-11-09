@@ -22,6 +22,10 @@ EvaluatorSummary& EvaluatorSummary::operator=(JsonView jsonValue) {
     m_evaluatorId = jsonValue.GetString("evaluatorId");
     m_evaluatorIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("evaluationDimensionName")) {
+    m_evaluationDimensionName = jsonValue.GetString("evaluationDimensionName");
+    m_evaluationDimensionNameHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("statistics")) {
     m_statistics = jsonValue.GetObject("statistics");
     m_statisticsHasBeenSet = true;
@@ -42,6 +46,10 @@ JsonValue EvaluatorSummary::Jsonize() const {
 
   if (m_evaluatorIdHasBeenSet) {
     payload.WithString("evaluatorId", m_evaluatorId);
+  }
+
+  if (m_evaluationDimensionNameHasBeenSet) {
+    payload.WithString("evaluationDimensionName", m_evaluationDimensionName);
   }
 
   if (m_statisticsHasBeenSet) {

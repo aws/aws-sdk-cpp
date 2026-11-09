@@ -194,8 +194,8 @@ class InstanceNetworkInterfaceSpecification {
   ///@{
   /**
    * <p>The ID of the network interface.</p> <p>If you are creating a Spot Fleet,
-   * omit this parameter because you can’t specify a network interface ID in a launch
-   * specification.</p>
+   * omit this parameter because you can���t specify a network interface ID in a
+   * launch specification.</p>
    */
   inline const Aws::String& GetNetworkInterfaceId() const { return m_networkInterfaceId; }
   inline bool NetworkInterfaceIdHasBeenSet() const { return m_networkInterfaceIdHasBeenSet; }

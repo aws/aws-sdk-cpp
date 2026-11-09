@@ -9,12 +9,12 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/timestream-influxdb/TimestreamInfluxDB_EXPORTS.h>
-#include <aws/timestream-influxdb/model/ClusterConfiguration.h>
 #include <aws/timestream-influxdb/model/ClusterDeploymentType.h>
 #include <aws/timestream-influxdb/model/ClusterStatus.h>
 #include <aws/timestream-influxdb/model/DbBackupConfigurationOutput.h>
 #include <aws/timestream-influxdb/model/DbInstanceType.h>
 #include <aws/timestream-influxdb/model/DbStorageType.h>
+#include <aws/timestream-influxdb/model/DeploymentConfiguration.h>
 #include <aws/timestream-influxdb/model/EngineType.h>
 #include <aws/timestream-influxdb/model/FailoverMode.h>
 #include <aws/timestream-influxdb/model/LogDeliveryConfiguration.h>
@@ -458,17 +458,18 @@ class GetDbClusterResult {
 
   ///@{
   /**
-   * <p>Configuration for node modes in the DbCluster.</p>
+   * <p>The current compute topology of the cluster, as a set of node groups. The
+   * returned topology reflects the cluster's actual provisioned nodes.</p>
    */
-  inline const ClusterConfiguration& GetClusterConfiguration() const { return m_clusterConfiguration; }
-  template <typename ClusterConfigurationT = ClusterConfiguration>
-  void SetClusterConfiguration(ClusterConfigurationT&& value) {
-    m_clusterConfigurationHasBeenSet = true;
-    m_clusterConfiguration = std::forward<ClusterConfigurationT>(value);
+  inline const DeploymentConfiguration& GetDeploymentConfiguration() const { return m_deploymentConfiguration; }
+  template <typename DeploymentConfigurationT = DeploymentConfiguration>
+  void SetDeploymentConfiguration(DeploymentConfigurationT&& value) {
+    m_deploymentConfigurationHasBeenSet = true;
+    m_deploymentConfiguration = std::forward<DeploymentConfigurationT>(value);
   }
-  template <typename ClusterConfigurationT = ClusterConfiguration>
-  GetDbClusterResult& WithClusterConfiguration(ClusterConfigurationT&& value) {
-    SetClusterConfiguration(std::forward<ClusterConfigurationT>(value));
+  template <typename DeploymentConfigurationT = DeploymentConfiguration>
+  GetDbClusterResult& WithDeploymentConfiguration(DeploymentConfigurationT&& value) {
+    SetDeploymentConfiguration(std::forward<DeploymentConfigurationT>(value));
     return *this;
   }
   ///@}
@@ -579,7 +580,7 @@ class GetDbClusterResult {
 
   FailoverMode m_failoverMode{FailoverMode::NOT_SET};
 
-  ClusterConfiguration m_clusterConfiguration;
+  DeploymentConfiguration m_deploymentConfiguration;
 
   Aws::Vector<DbBackupConfigurationOutput> m_dbBackupConfigurations;
 
@@ -611,7 +612,7 @@ class GetDbClusterResult {
   bool m_vpcSubnetIdsHasBeenSet = false;
   bool m_vpcSecurityGroupIdsHasBeenSet = false;
   bool m_failoverModeHasBeenSet = false;
-  bool m_clusterConfigurationHasBeenSet = false;
+  bool m_deploymentConfigurationHasBeenSet = false;
   bool m_dbBackupConfigurationsHasBeenSet = false;
   bool m_kmsKeyIdHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

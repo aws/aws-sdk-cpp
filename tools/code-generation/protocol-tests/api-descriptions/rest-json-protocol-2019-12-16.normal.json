@@ -102,6 +102,29 @@
       "documentation":"<p>This example serializes a document as the entire HTTP payload.</p>",
       "idempotent":true
     },
+    "DuplexStream":{
+      "name":"DuplexStream",
+      "http":{
+        "method":"POST",
+        "requestUri":"/DuplexStream",
+        "responseCode":200
+      },
+      "input":{"shape":"DuplexStreamInput"},
+      "output":{"shape":"DuplexStreamOutput"}
+    },
+    "DuplexStreamWithInitialMessages":{
+      "name":"DuplexStreamWithInitialMessages",
+      "http":{
+        "method":"POST",
+        "requestUri":"/DuplexStreamWithInitialMessages",
+        "responseCode":200
+      },
+      "input":{"shape":"DuplexStreamWithInitialMessagesInput"},
+      "output":{"shape":"DuplexStreamWithInitialMessagesOutput"},
+      "errors":[
+        {"shape":"ServiceUnavailableError"}
+      ]
+    },
     "EmptyInputAndEmptyOutput":{
       "name":"EmptyInputAndEmptyOutput",
       "http":{
@@ -366,6 +389,24 @@
       "output":{"shape":"InputAndOutputWithHeadersIO"},
       "documentation":"<p>The example tests how requests and responses are serialized when there is no input or output payload but there are HTTP header bindings.</p>"
     },
+    "InputStream":{
+      "name":"InputStream",
+      "http":{
+        "method":"POST",
+        "requestUri":"/InputStream",
+        "responseCode":200
+      },
+      "input":{"shape":"InputStreamInput"}
+    },
+    "InputStreamWithInitialRequest":{
+      "name":"InputStreamWithInitialRequest",
+      "http":{
+        "method":"POST",
+        "requestUri":"/InputStreamWithInitialRequest",
+        "responseCode":200
+      },
+      "input":{"shape":"InputStreamWithInitialRequestInput"}
+    },
     "JsonBlobs":{
       "name":"JsonBlobs",
       "http":{
@@ -522,6 +563,27 @@
       },
       "input":{"shape":"OmitsSerializingEmptyListsInput"},
       "documentation":"<p>Omits serializing empty lists. Because empty strings are serilized as <code>Foo=</code>, empty lists cannot also be serialized as <code>Foo=</code> and instead must be omitted.</p>"
+    },
+    "OutputStream":{
+      "name":"OutputStream",
+      "http":{
+        "method":"POST",
+        "requestUri":"/OutputStream",
+        "responseCode":200
+      },
+      "output":{"shape":"OutputStreamOutput"},
+      "errors":[
+        {"shape":"ServiceUnavailableError"}
+      ]
+    },
+    "OutputStreamWithInitialResponse":{
+      "name":"OutputStreamWithInitialResponse",
+      "http":{
+        "method":"POST",
+        "requestUri":"/OutputStreamWithInitialResponse",
+        "responseCode":200
+      },
+      "output":{"shape":"OutputStreamWithInitialResponseOutput"}
     },
     "PostUnionWithJsonName":{
       "name":"PostUnionWithJsonName",
@@ -850,6 +912,16 @@
       }
     },
     "Blob":{"type":"blob"},
+    "BlobPayloadEvent":{
+      "type":"structure",
+      "members":{
+        "payload":{
+          "shape":"Blob",
+          "eventpayload":true
+        }
+      },
+      "event":true
+    },
     "Boolean":{
       "type":"boolean",
       "box":true
@@ -994,6 +1066,46 @@
       "type":"list",
       "member":{"shape":"Double"}
     },
+    "DuplexStreamInput":{
+      "type":"structure",
+      "members":{
+        "stream":{"shape":"EventStream"}
+      },
+      "payload":"stream"
+    },
+    "DuplexStreamOutput":{
+      "type":"structure",
+      "members":{
+        "stream":{"shape":"EventStream"}
+      },
+      "payload":"stream"
+    },
+    "DuplexStreamWithInitialMessagesInput":{
+      "type":"structure",
+      "required":["initialRequestMember"],
+      "members":{
+        "initialRequestMember":{
+          "shape":"String",
+          "location":"header",
+          "locationName":"initial-request-member"
+        },
+        "stream":{"shape":"EventStream"}
+      },
+      "payload":"stream"
+    },
+    "DuplexStreamWithInitialMessagesOutput":{
+      "type":"structure",
+      "required":["initialResponseMember"],
+      "members":{
+        "initialResponseMember":{
+          "shape":"String",
+          "location":"header",
+          "locationName":"initial-response-member"
+        },
+        "stream":{"shape":"EventStream"}
+      },
+      "payload":"stream"
+    },
     "EmptyInputAndEmptyOutputInput":{
       "type":"structure",
       "members":{}
@@ -1012,6 +1124,27 @@
     "EpochSeconds":{
       "type":"timestamp",
       "timestampFormat":"unixTimestamp"
+    },
+    "ErrorEvent":{
+      "type":"structure",
+      "members":{
+        "message":{"shape":"String"}
+      },
+      "exception":true
+    },
+    "EventStream":{
+      "type":"structure",
+      "members":{
+        "headers":{"shape":"HeadersEvent"},
+        "blobPayload":{"shape":"BlobPayloadEvent"},
+        "stringPayload":{"shape":"StringPayloadEvent"},
+        "structurePayload":{"shape":"StructurePayloadEvent"},
+        "unionPayload":{"shape":"UnionPayloadEvent"},
+        "headersAndExplicitPayload":{"shape":"HeadersAndExplicitPayloadEvent"},
+        "headersAndImplicitPayload":{"shape":"HeadersAndImplicitPayloadEvent"},
+        "error":{"shape":"ErrorEvent"}
+      },
+      "eventstream":true
     },
     "Float":{
       "type":"float",
@@ -1069,6 +1202,69 @@
           "locationName":"X-Greeting"
         }
       }
+    },
+    "HeadersAndExplicitPayloadEvent":{
+      "type":"structure",
+      "members":{
+        "header":{
+          "shape":"String",
+          "eventheader":true
+        },
+        "payload":{
+          "shape":"PayloadStructure",
+          "eventpayload":true
+        }
+      },
+      "event":true
+    },
+    "HeadersAndImplicitPayloadEvent":{
+      "type":"structure",
+      "members":{
+        "header":{
+          "shape":"String",
+          "eventheader":true
+        },
+        "payload":{"shape":"String"}
+      },
+      "event":true
+    },
+    "HeadersEvent":{
+      "type":"structure",
+      "members":{
+        "booleanHeader":{
+          "shape":"Boolean",
+          "eventheader":true
+        },
+        "byteHeader":{
+          "shape":"Integer",
+          "eventheader":true
+        },
+        "shortHeader":{
+          "shape":"Integer",
+          "eventheader":true
+        },
+        "intHeader":{
+          "shape":"Integer",
+          "eventheader":true
+        },
+        "longHeader":{
+          "shape":"Long",
+          "eventheader":true
+        },
+        "blobHeader":{
+          "shape":"Blob",
+          "eventheader":true
+        },
+        "stringHeader":{
+          "shape":"String",
+          "eventheader":true
+        },
+        "timestampHeader":{
+          "shape":"DateTime",
+          "eventheader":true
+        }
+      },
+      "event":true
     },
     "HostLabelInput":{
       "type":"structure",
@@ -1468,6 +1664,26 @@
         }
       }
     },
+    "InputStreamInput":{
+      "type":"structure",
+      "members":{
+        "stream":{"shape":"EventStream"}
+      },
+      "payload":"stream"
+    },
+    "InputStreamWithInitialRequestInput":{
+      "type":"structure",
+      "required":["initialRequestMember"],
+      "members":{
+        "initialRequestMember":{
+          "shape":"String",
+          "location":"header",
+          "locationName":"initial-request-member"
+        },
+        "stream":{"shape":"EventStream"}
+      },
+      "payload":"stream"
+    },
     "Integer":{
       "type":"integer",
       "box":true
@@ -1615,7 +1831,8 @@
         "listValue":{"shape":"StringList"},
         "mapValue":{"shape":"StringMap"},
         "structureValue":{"shape":"GreetingStruct"},
-        "renamedStructureValue":{"shape":"RenamedGreeting"}
+        "renamedStructureValue":{"shape":"RenamedGreeting"},
+        "unionValue":{"shape":"NestedUnion"}
       },
       "documentation":"<p>A union with a representative set of types for members.</p>",
       "union":true
@@ -1631,6 +1848,14 @@
       "type":"list",
       "member":{"shape":"StringList"},
       "documentation":"<p>A list of lists of strings.</p>"
+    },
+    "NestedUnion":{
+      "type":"structure",
+      "members":{
+        "stringValue":{"shape":"String"}
+      },
+      "documentation":"<p>A union used to test unions nested inside unions.</p>",
+      "union":true
     },
     "NoInputAndOutputOutput":{
       "type":"structure",
@@ -1711,11 +1936,44 @@
         }
       }
     },
+    "OutputStreamOutput":{
+      "type":"structure",
+      "members":{
+        "stream":{"shape":"EventStream"}
+      },
+      "payload":"stream"
+    },
+    "OutputStreamWithInitialResponseOutput":{
+      "type":"structure",
+      "required":["initialResponseMember"],
+      "members":{
+        "initialResponseMember":{
+          "shape":"String",
+          "location":"header",
+          "locationName":"initial-response-member"
+        },
+        "stream":{"shape":"EventStream"}
+      },
+      "payload":"stream"
+    },
     "PayloadConfig":{
       "type":"structure",
       "members":{
         "data":{"shape":"Integer"}
       }
+    },
+    "PayloadStructure":{
+      "type":"structure",
+      "members":{
+        "structureMember":{"shape":"String"}
+      }
+    },
+    "PayloadUnion":{
+      "type":"structure",
+      "members":{
+        "unionMember":{"shape":"String"}
+      },
+      "union":true
     },
     "PostUnionWithJsonNameInput":{
       "type":"structure",
@@ -1825,6 +2083,15 @@
         }
       }
     },
+    "ServiceUnavailableError":{
+      "type":"structure",
+      "members":{
+        "message":{"shape":"String"}
+      },
+      "error":{"httpStatusCode":500},
+      "exception":true,
+      "fault":true
+    },
     "SimpleScalarPropertiesInputOutput":{
       "type":"structure",
       "members":{
@@ -1923,6 +2190,16 @@
       "key":{"shape":"String"},
       "value":{"shape":"String"}
     },
+    "StringPayloadEvent":{
+      "type":"structure",
+      "members":{
+        "payload":{
+          "shape":"String",
+          "eventpayload":true
+        }
+      },
+      "event":true
+    },
     "StringPayloadInput":{
       "type":"structure",
       "members":{
@@ -1950,6 +2227,16 @@
           "locationName":"other"
         }
       }
+    },
+    "StructurePayloadEvent":{
+      "type":"structure",
+      "members":{
+        "payload":{
+          "shape":"PayloadStructure",
+          "eventpayload":true
+        }
+      },
+      "event":true
     },
     "SyntheticTimestamp_date_time":{
       "type":"timestamp",
@@ -2072,6 +2359,16 @@
         "greeting":{"shape":"String"}
       },
       "union":true
+    },
+    "UnionPayloadEvent":{
+      "type":"structure",
+      "members":{
+        "payload":{
+          "shape":"PayloadUnion",
+          "eventpayload":true
+        }
+      },
+      "event":true
     },
     "UnionWithJsonName":{
       "type":"structure",

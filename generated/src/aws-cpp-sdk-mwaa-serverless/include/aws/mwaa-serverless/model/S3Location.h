@@ -70,8 +70,8 @@ class S3Location {
 
   ///@{
   /**
-   * <p>The version ID of the object in Amazon S3. If not specified, the latest
-   * version is used.</p>
+   * <p>Specifies the version ID of the object in Amazon S3. If you don't specify a
+   * version, we use the latest version.</p>
    */
   inline const Aws::String& GetVersionId() const { return m_versionId; }
   inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }

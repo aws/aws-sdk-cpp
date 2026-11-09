@@ -22,6 +22,10 @@ ElasticLoadBalancing& ElasticLoadBalancing::operator=(JsonView jsonValue) {
     m_enabled = jsonValue.GetBool("enabled");
     m_enabledHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("gatewayApi")) {
+    m_gatewayApi = jsonValue.GetObject("gatewayApi");
+    m_gatewayApiHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue ElasticLoadBalancing::Jsonize() const {
 
   if (m_enabledHasBeenSet) {
     payload.WithBool("enabled", m_enabled);
+  }
+
+  if (m_gatewayApiHasBeenSet) {
+    payload.WithObject("gatewayApi", m_gatewayApi.Jsonize());
   }
 
   return payload;

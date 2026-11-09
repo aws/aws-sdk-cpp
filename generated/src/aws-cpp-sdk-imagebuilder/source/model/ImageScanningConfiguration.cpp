@@ -26,6 +26,19 @@ ImageScanningConfiguration& ImageScanningConfiguration::operator=(JsonView jsonV
     m_ecrConfiguration = jsonValue.GetObject("ecrConfiguration");
     m_ecrConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("imageScanningTypes")) {
+    Aws::Utils::Array<JsonView> imageScanningTypesJsonList = jsonValue.GetArray("imageScanningTypes");
+    for (unsigned imageScanningTypesIndex = 0; imageScanningTypesIndex < imageScanningTypesJsonList.GetLength();
+         ++imageScanningTypesIndex) {
+      m_imageScanningTypes.push_back(
+          ImageScanningTypeMapper::GetImageScanningTypeForName(imageScanningTypesJsonList[imageScanningTypesIndex].AsString()));
+    }
+    m_imageScanningTypesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("scanResultCondition")) {
+    m_scanResultCondition = jsonValue.GetObject("scanResultCondition");
+    m_scanResultConditionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +51,20 @@ JsonValue ImageScanningConfiguration::Jsonize() const {
 
   if (m_ecrConfigurationHasBeenSet) {
     payload.WithObject("ecrConfiguration", m_ecrConfiguration.Jsonize());
+  }
+
+  if (m_imageScanningTypesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> imageScanningTypesJsonList(m_imageScanningTypes.size());
+    for (unsigned imageScanningTypesIndex = 0; imageScanningTypesIndex < imageScanningTypesJsonList.GetLength();
+         ++imageScanningTypesIndex) {
+      imageScanningTypesJsonList[imageScanningTypesIndex].AsString(
+          ImageScanningTypeMapper::GetNameForImageScanningType(m_imageScanningTypes[imageScanningTypesIndex]));
+    }
+    payload.WithArray("imageScanningTypes", std::move(imageScanningTypesJsonList));
+  }
+
+  if (m_scanResultConditionHasBeenSet) {
+    payload.WithObject("scanResultCondition", m_scanResultCondition.Jsonize());
   }
 
   return payload;

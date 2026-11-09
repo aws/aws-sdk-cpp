@@ -27,6 +27,10 @@ Aws::String UpdateConfigurationRequest::SerializePayload() const {
     payload.WithObject("ec2Configuration", m_ec2Configuration.Jsonize());
   }
 
+  if (m_amiConfigurationHasBeenSet) {
+    payload.WithObject("amiConfiguration", m_amiConfiguration.Jsonize());
+  }
+
   if (m_updateConfigurationInheritanceHasBeenSet) {
     payload.WithObject("updateConfigurationInheritance", m_updateConfigurationInheritance.Jsonize());
   }

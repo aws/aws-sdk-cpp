@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/datazone/DataZone_EXPORTS.h>
 #include <aws/datazone/model/BasicAuthenticationCredentials.h>
+#include <aws/datazone/model/OAuth2PropertiesPatch.h>
 
 #include <utility>
 
@@ -68,12 +69,36 @@ class AuthenticationConfigurationPatch {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The OAuth2 properties, such as the client application, grant type, and token
+   * URL, that you want to update for a connection. Only the properties that you
+   * specify are updated; the connection keeps its existing values for the properties
+   * that you omit.</p>
+   */
+  inline const OAuth2PropertiesPatch& GetOAuth2Properties() const { return m_oAuth2Properties; }
+  inline bool OAuth2PropertiesHasBeenSet() const { return m_oAuth2PropertiesHasBeenSet; }
+  template <typename OAuth2PropertiesT = OAuth2PropertiesPatch>
+  void SetOAuth2Properties(OAuth2PropertiesT&& value) {
+    m_oAuth2PropertiesHasBeenSet = true;
+    m_oAuth2Properties = std::forward<OAuth2PropertiesT>(value);
+  }
+  template <typename OAuth2PropertiesT = OAuth2PropertiesPatch>
+  AuthenticationConfigurationPatch& WithOAuth2Properties(OAuth2PropertiesT&& value) {
+    SetOAuth2Properties(std::forward<OAuth2PropertiesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_secretArn;
 
   BasicAuthenticationCredentials m_basicAuthenticationCredentials;
+
+  OAuth2PropertiesPatch m_oAuth2Properties;
   bool m_secretArnHasBeenSet = false;
   bool m_basicAuthenticationCredentialsHasBeenSet = false;
+  bool m_oAuth2PropertiesHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -33,6 +33,13 @@ AmiAggregation& AmiAggregation::operator=(JsonView jsonValue) {
     m_sortBy = AmiSortByMapper::GetAmiSortByForName(jsonValue.GetString("sortBy"));
     m_sortByHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("scanSources")) {
+    Aws::Utils::Array<JsonView> scanSourcesJsonList = jsonValue.GetArray("scanSources");
+    for (unsigned scanSourcesIndex = 0; scanSourcesIndex < scanSourcesJsonList.GetLength(); ++scanSourcesIndex) {
+      m_scanSources.push_back(ScanSourceMapper::GetScanSourceForName(scanSourcesJsonList[scanSourcesIndex].AsString()));
+    }
+    m_scanSourcesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -53,6 +60,14 @@ JsonValue AmiAggregation::Jsonize() const {
 
   if (m_sortByHasBeenSet) {
     payload.WithString("sortBy", AmiSortByMapper::GetNameForAmiSortBy(m_sortBy));
+  }
+
+  if (m_scanSourcesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> scanSourcesJsonList(m_scanSources.size());
+    for (unsigned scanSourcesIndex = 0; scanSourcesIndex < scanSourcesJsonList.GetLength(); ++scanSourcesIndex) {
+      scanSourcesJsonList[scanSourcesIndex].AsString(ScanSourceMapper::GetNameForScanSource(m_scanSources[scanSourcesIndex]));
+    }
+    payload.WithArray("scanSources", std::move(scanSourcesJsonList));
   }
 
   return payload;

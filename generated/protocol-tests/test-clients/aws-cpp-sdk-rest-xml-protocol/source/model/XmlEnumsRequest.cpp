@@ -62,5 +62,5 @@ Aws::String XmlEnumsRequest::SerializePayload() const {
     }
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToCompactString();
 }
