@@ -73,5 +73,10 @@ namespace Aws
             mutable Aws::Utils::Threading::ReaderWriterLock m_retryQuotaLock;
             int m_retryQuota;
         };
+
+        namespace Internal
+        {
+            AWS_CORE_LOCAL bool IsLegacyRetryStrategy(const RetryStrategy* retryStrategy);
+        } // namespace Internal
     } // namespace Client
 } // namespace Aws

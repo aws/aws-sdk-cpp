@@ -109,7 +109,7 @@ namespace Aws
             struct ProviderFactories
             {
                 /**
-                 * Retry Strategy factory method. Default is DefaultRetryStrategy (i.e. exponential backoff).
+                 * Retry Strategy factory method. Default is StandardRetryStrategy.
                  */
                 std::function<std::shared_ptr<RetryStrategy>()> retryStrategyCreateFn;
                 /**
@@ -229,7 +229,7 @@ namespace Aws
              */
             unsigned long lowSpeedLimit = 1;
             /**
-             * Strategy to use in case of failed requests. Default is DefaultRetryStrategy (i.e. exponential backoff).
+             * Strategy to use in case of failed requests. Default is StandardRetryStrategy.
              * Provide retry strategy here or via a factory method.
              */
             std::shared_ptr<RetryStrategy> retryStrategy = nullptr;
@@ -652,11 +652,29 @@ namespace Aws
 
         /**
          * A helper function to initialize a retry strategy.
-         * Default is DefaultRetryStrategy (i.e. exponential backoff)
+         * Default is StandardRetryStrategy. Retry mode "legacy" uses DefaultRetryStrategy.
          */
         AWS_CORE_API std::shared_ptr<RetryStrategy> InitRetryStrategy(Aws::String retryMode = "");
         AWS_CORE_API std::shared_ptr<RetryStrategy> InitRetryStrategy(int maxRetries, Aws::String retryMode = "");
         AWS_CORE_API std::shared_ptr<RetryStrategy> InitRetryStrategy(int maxRetries, Aws::String retryMode, double transientBackoffBaseSec);
+
+        struct InitRetryStrategyOptions
+        {
+            /**
+             * Service default. AWS_MAX_ATTEMPTS or max_attempts from the config file override it.
+             */
+            long maxAttempts = 3;
+            /**
+             * Empty uses AWS_RETRY_MODE, then retry_mode from the config file, then "standard".
+             */
+            Aws::String retryMode;
+            double transientBackoffBaseSec = 0.05;
+            /**
+             * Config file profile to read retry_mode and max_attempts from. Empty uses the default profile.
+             */
+            Aws::String profileName;
+        };
+        AWS_CORE_API std::shared_ptr<RetryStrategy> InitRetryStrategy(const InitRetryStrategyOptions& options);
 
         /**
          * A helper function to compute a user agent

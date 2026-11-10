@@ -106,9 +106,8 @@ namespace Aws
                 return "standard";
             }
 
-            void SetLegacyClientConfiguration(Aws::Client::ClientConfiguration& clientConfig)
+            void SetLegacyClientConfiguration(Aws::Client::ClientConfiguration& /*clientConfig*/)
             {
-                clientConfig.retryStrategy = Aws::Client::InitRetryStrategy("default");
             }
 
 #foreach($defaultMode in $defaultsModel.defaultsModes)
@@ -120,9 +119,7 @@ namespace Aws
             void Set${defaultModeNameCamel}ClientConfiguration(Aws::Client::ClientConfiguration& clientConfig)
             {
 #foreach ($configEntry in $defaultMode.configurationValues.entrySet())
-#if (${configEntry.key} == "retryMode")
-                clientConfig.retryStrategy = Aws::Client::InitRetryStrategy(${configEntry.value.getAsSourceString()});
-#else
+#if (${configEntry.key} != "retryMode")
                 clientConfig.${configEntry.key} = ${configEntry.value.getAsSourceString()};
 #end
 #end

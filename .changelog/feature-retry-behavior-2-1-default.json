@@ -1,0 +1,6 @@
+{
+  "type": "feature",
+  "category": "aws-cpp-sdk-core",
+  "contributor": "pulimsr",
+  "description": "Make Retry Behavior 2.1 the default retry behavior and remove AWS_NEW_RETRIES_2026. Set AWS_RETRY_MODE=legacy or retry_mode = legacy, or use DefaultRetryStrategy, to keep the previous behavior. Custom retry strategies now also get the Retry Behavior 2.1 request handling, and errors such as LimitExceededException or an HTTP 429 with an unknown error name now report ShouldRetry() as true."
+}
