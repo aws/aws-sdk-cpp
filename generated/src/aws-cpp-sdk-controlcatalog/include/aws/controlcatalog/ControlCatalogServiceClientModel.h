@@ -57,7 +57,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace ControlCatalog {
-using ControlCatalogClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ControlCatalogEndpointProviderBase = Aws::ControlCatalog::Endpoint::ControlCatalogEndpointProviderBase;
 using ControlCatalogEndpointProvider = Aws::ControlCatalog::Endpoint::ControlCatalogEndpointProvider;
 

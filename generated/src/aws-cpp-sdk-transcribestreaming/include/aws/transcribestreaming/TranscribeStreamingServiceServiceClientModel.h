@@ -52,7 +52,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace TranscribeStreamingService {
-using TranscribeStreamingServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
 using TranscribeStreamingServiceEndpointProviderBase =
     Aws::TranscribeStreamingService::Endpoint::TranscribeStreamingServiceEndpointProviderBase;
 using TranscribeStreamingServiceEndpointProvider = Aws::TranscribeStreamingService::Endpoint::TranscribeStreamingServiceEndpointProvider;

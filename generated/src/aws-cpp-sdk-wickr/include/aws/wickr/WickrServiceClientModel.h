@@ -91,7 +91,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace Wickr {
-using WickrClientConfiguration = Aws::Client::GenericClientConfiguration;
 using WickrEndpointProviderBase = Aws::Wickr::Endpoint::WickrEndpointProviderBase;
 using WickrEndpointProvider = Aws::Wickr::Endpoint::WickrEndpointProvider;
 

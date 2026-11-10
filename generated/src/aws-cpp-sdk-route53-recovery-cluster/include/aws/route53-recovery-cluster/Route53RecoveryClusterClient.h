@@ -99,27 +99,6 @@ class AWS_ROUTE53RECOVERYCLUSTER_API Route53RecoveryClusterClient
                                const Aws::Route53RecoveryCluster::Route53RecoveryClusterClientConfiguration& clientConfiguration =
                                    Aws::Route53RecoveryCluster::Route53RecoveryClusterClientConfiguration());
 
-  /* Legacy constructors due deprecation */
-  /**
-   * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client
-   * config is not specified, it will be initialized to default values.
-   */
-  Route53RecoveryClusterClient(const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /**
-   * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
-   * is not specified, it will be initialized to default values.
-   */
-  Route53RecoveryClusterClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /**
-   * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
-   * the default http client factory will be used
-   */
-  Route53RecoveryClusterClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                               const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /* End of legacy constructors due deprecation */
   virtual ~Route53RecoveryClusterClient();
 
   /**
@@ -333,7 +312,6 @@ class AWS_ROUTE53RECOVERYCLUSTER_API Route53RecoveryClusterClient
     return SubmitAsync(&Route53RecoveryClusterClient::UpdateRoutingControlStates, request, handler, context);
   }
 
-  virtual void OverrideEndpoint(const Aws::String& endpoint);
   virtual std::shared_ptr<Route53RecoveryClusterEndpointProviderBase>& accessEndpointProvider();
 
  private:

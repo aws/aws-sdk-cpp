@@ -60,7 +60,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace ServerlessApplicationRepository {
-using ServerlessApplicationRepositoryClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ServerlessApplicationRepositoryEndpointProviderBase =
     Aws::ServerlessApplicationRepository::Endpoint::ServerlessApplicationRepositoryEndpointProviderBase;
 using ServerlessApplicationRepositoryEndpointProvider =

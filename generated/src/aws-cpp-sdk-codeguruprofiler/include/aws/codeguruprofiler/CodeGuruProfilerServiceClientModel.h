@@ -71,7 +71,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace CodeGuruProfiler {
-using CodeGuruProfilerClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CodeGuruProfilerEndpointProviderBase = Aws::CodeGuruProfiler::Endpoint::CodeGuruProfilerEndpointProviderBase;
 using CodeGuruProfilerEndpointProvider = Aws::CodeGuruProfiler::Endpoint::CodeGuruProfilerEndpointProvider;
 

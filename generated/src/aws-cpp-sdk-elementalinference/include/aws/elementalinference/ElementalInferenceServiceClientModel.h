@@ -70,7 +70,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace ElementalInference {
-using ElementalInferenceClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ElementalInferenceEndpointProviderBase = Aws::ElementalInference::Endpoint::ElementalInferenceEndpointProviderBase;
 using ElementalInferenceEndpointProvider = Aws::ElementalInference::Endpoint::ElementalInferenceEndpointProvider;
 

@@ -102,7 +102,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace CostExplorer {
-using CostExplorerClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CostExplorerEndpointProviderBase = Aws::CostExplorer::Endpoint::CostExplorerEndpointProviderBase;
 using CostExplorerEndpointProvider = Aws::CostExplorer::Endpoint::CostExplorerEndpointProvider;
 

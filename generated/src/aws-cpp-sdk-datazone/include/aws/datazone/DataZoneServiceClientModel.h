@@ -236,7 +236,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace DataZone {
-using DataZoneClientConfiguration = Aws::Client::GenericClientConfiguration;
 using DataZoneEndpointProviderBase = Aws::DataZone::Endpoint::DataZoneEndpointProviderBase;
 using DataZoneEndpointProvider = Aws::DataZone::Endpoint::DataZoneEndpointProvider;
 

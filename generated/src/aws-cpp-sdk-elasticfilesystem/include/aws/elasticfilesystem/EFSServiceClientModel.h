@@ -72,7 +72,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace EFS {
-using EFSClientConfiguration = Aws::Client::GenericClientConfiguration;
 using EFSEndpointProviderBase = Aws::EFS::Endpoint::EFSEndpointProviderBase;
 using EFSEndpointProvider = Aws::EFS::Endpoint::EFSEndpointProvider;
 

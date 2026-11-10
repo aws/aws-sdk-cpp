@@ -95,58 +95,12 @@ BedrockDataAutomationRuntimeClient::BedrockDataAutomationRuntimeClient(
           }) {}
 
 /* Legacy constructors due deprecation */
-BedrockDataAutomationRuntimeClient::BedrockDataAutomationRuntimeClient(const Aws::Client::ClientConfiguration& clientConfiguration)
-    : AwsSmithyClientT(clientConfiguration, GetServiceName(), "Bedrock Data Automation Runtime",
-                       Aws::Http::CreateHttpClient(clientConfiguration),
-                       Aws::MakeShared<BedrockDataAutomationRuntimeErrorMarshaller>(ALLOCATION_TAG),
-                       Aws::MakeShared<BedrockDataAutomationRuntimeEndpointProvider>(ALLOCATION_TAG),
-                       Aws::MakeShared<smithy::GenericAuthSchemeResolver<>>(
-                           ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption})),
-                       {
-                           {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
-                            smithy::SigV4AuthScheme{GetServiceName(), clientConfiguration.region,
-                                                    clientConfiguration.ResolveCredentialProviderConfig()}},
-                       }) {}
-
-BedrockDataAutomationRuntimeClient::BedrockDataAutomationRuntimeClient(const AWSCredentials& credentials,
-                                                                       const Aws::Client::ClientConfiguration& clientConfiguration)
-    : AwsSmithyClientT(
-          clientConfiguration, GetServiceName(), "Bedrock Data Automation Runtime", Aws::Http::CreateHttpClient(clientConfiguration),
-          Aws::MakeShared<BedrockDataAutomationRuntimeErrorMarshaller>(ALLOCATION_TAG),
-          Aws::MakeShared<BedrockDataAutomationRuntimeEndpointProvider>(ALLOCATION_TAG),
-          Aws::MakeShared<smithy::GenericAuthSchemeResolver<>>(
-              ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption})),
-          {
-              {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
-               smithy::SigV4AuthScheme{Aws::MakeShared<smithy::SimpleAwsCredentialIdentityResolver>(ALLOCATION_TAG, credentials),
-                                       GetServiceName(), clientConfiguration.region}},
-          }) {}
-
-BedrockDataAutomationRuntimeClient::BedrockDataAutomationRuntimeClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                                       const Aws::Client::ClientConfiguration& clientConfiguration)
-    : AwsSmithyClientT(
-          clientConfiguration, GetServiceName(), "Bedrock Data Automation Runtime", Aws::Http::CreateHttpClient(clientConfiguration),
-          Aws::MakeShared<BedrockDataAutomationRuntimeErrorMarshaller>(ALLOCATION_TAG),
-          Aws::MakeShared<BedrockDataAutomationRuntimeEndpointProvider>(ALLOCATION_TAG),
-          Aws::MakeShared<smithy::GenericAuthSchemeResolver<>>(
-              ALLOCATION_TAG, Aws::Vector<smithy::AuthSchemeOption>({smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption})),
-          {
-              {smithy::SigV4AuthSchemeOption::sigV4AuthSchemeOption.schemeId,
-               smithy::SigV4AuthScheme{Aws::MakeShared<smithy::AwsCredentialsProviderIdentityResolver>(ALLOCATION_TAG, credentialsProvider),
-                                       GetServiceName(), clientConfiguration.region}},
-          }) {}
 /* End of legacy constructors due deprecation */
 
 BedrockDataAutomationRuntimeClient::~BedrockDataAutomationRuntimeClient() { ShutdownSdkClient(this, -1); }
 
 std::shared_ptr<BedrockDataAutomationRuntimeEndpointProviderBase>& BedrockDataAutomationRuntimeClient::accessEndpointProvider() {
   return m_endpointProvider;
-}
-
-void BedrockDataAutomationRuntimeClient::OverrideEndpoint(const Aws::String& endpoint) {
-  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_clientConfiguration.endpointOverride = endpoint;
-  m_endpointProvider->OverrideEndpoint(endpoint);
 }
 BedrockDataAutomationRuntimeClient::InvokeOperationOutcome BedrockDataAutomationRuntimeClient::InvokeServiceOperation(
     const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const {

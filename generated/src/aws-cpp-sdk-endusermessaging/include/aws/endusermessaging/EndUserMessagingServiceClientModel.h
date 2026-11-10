@@ -76,7 +76,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace EndUserMessaging {
-using EndUserMessagingClientConfiguration = Aws::Client::GenericClientConfiguration;
 using EndUserMessagingEndpointProviderBase = Aws::EndUserMessaging::Endpoint::EndUserMessagingEndpointProviderBase;
 using EndUserMessagingEndpointProvider = Aws::EndUserMessaging::Endpoint::EndUserMessagingEndpointProvider;
 

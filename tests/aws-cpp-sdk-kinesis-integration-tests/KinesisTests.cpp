@@ -45,7 +45,7 @@ protected:
         // Create client
         m_UUID = Aws::Utils::UUID::RandomUUID();
         streamName = BuildResourceName("stream");
-        Client::ClientConfiguration config;
+        Aws::Kinesis::KinesisClientConfiguration config;
         config.region = AWS_TEST_REGION;
         m_client.reset(Aws::New<KinesisClient>(ALLOC_TAG, config));
 

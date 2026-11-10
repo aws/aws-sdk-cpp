@@ -56,7 +56,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace ManagedBlockchainQuery {
-using ManagedBlockchainQueryClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ManagedBlockchainQueryEndpointProviderBase = Aws::ManagedBlockchainQuery::Endpoint::ManagedBlockchainQueryEndpointProviderBase;
 using ManagedBlockchainQueryEndpointProvider = Aws::ManagedBlockchainQuery::Endpoint::ManagedBlockchainQueryEndpointProvider;
 

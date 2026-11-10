@@ -47,7 +47,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace EKSAuth {
-using EKSAuthClientConfiguration = Aws::Client::GenericClientConfiguration;
 using EKSAuthEndpointProviderBase = Aws::EKSAuth::Endpoint::EKSAuthEndpointProviderBase;
 using EKSAuthEndpointProvider = Aws::EKSAuth::Endpoint::EKSAuthEndpointProvider;
 

@@ -29,7 +29,7 @@ namespace Aws
             const char* cmkID_Identifier = "kms_cmk_id";
             const char* kmsEncryptionContextKey = "aws:x-amz-cek-alg";
 
-            KMSEncryptionMaterialsBase::KMSEncryptionMaterialsBase(const String& customerMasterKeyID, const ClientConfiguration& clientConfig) :
+            KMSEncryptionMaterialsBase::KMSEncryptionMaterialsBase(const String& customerMasterKeyID, const Aws::KMS::KMSClientConfiguration& clientConfig) :
                 m_customerMasterKeyID(customerMasterKeyID), m_kmsClient(Aws::MakeShared<KMSClient>(ALLOCATION_TAG, clientConfig)), m_allowDecryptWithAnyCMK(true)
             {
             }

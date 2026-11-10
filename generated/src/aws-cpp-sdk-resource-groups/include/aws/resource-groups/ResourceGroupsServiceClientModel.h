@@ -80,7 +80,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace ResourceGroups {
-using ResourceGroupsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ResourceGroupsEndpointProviderBase = Aws::ResourceGroups::Endpoint::ResourceGroupsEndpointProviderBase;
 using ResourceGroupsEndpointProvider = Aws::ResourceGroups::Endpoint::ResourceGroupsEndpointProvider;
 

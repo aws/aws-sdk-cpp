@@ -185,7 +185,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace IAM {
-using IAMClientConfiguration = Aws::Client::GenericClientConfiguration;
 using IAMEndpointProviderBase = Aws::IAM::Endpoint::IAMEndpointProviderBase;
 using IAMEndpointProvider = Aws::IAM::Endpoint::IAMEndpointProvider;
 

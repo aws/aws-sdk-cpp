@@ -4,8 +4,8 @@
  */
 
 #pragma once
+#include <aws/codebuild/CodeBuildClientConfiguration.h>
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -14,14 +14,23 @@
 namespace Aws {
 namespace CodeBuild {
 namespace Endpoint {
+using CodeBuildClientConfiguration = Aws::CodeBuild::CodeBuildClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using CodeBuildClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using CodeBuildClientConfiguration = Aws::Client::GenericClientConfiguration;
-using CodeBuildBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_CODEBUILD_API CodeBuildBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~CodeBuildBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const CodeBuildClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const CodeBuildClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const CodeBuildClientConfiguration& config);
+};
 
 /**
  * The type for the CodeBuild Client Endpoint Provider.
@@ -34,6 +43,24 @@ using CodeBuildEndpointProviderBase =
 using CodeBuildDefaultEpProviderBase =
     BDDEndpointProvider<CodeBuildClientConfiguration, CodeBuildBuiltInParameters, CodeBuildClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace CodeBuild
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_CODEBUILD_EXTERN template class AWS_CODEBUILD_API
+    Aws::Endpoint::EndpointProviderBase<CodeBuild::Endpoint::CodeBuildClientConfiguration, CodeBuild::Endpoint::CodeBuildBuiltInParameters,
+                                        CodeBuild::Endpoint::CodeBuildClientContextParameters>;
+
+AWS_CODEBUILD_EXTERN template class AWS_CODEBUILD_API
+    Aws::Endpoint::BDDEndpointProvider<CodeBuild::Endpoint::CodeBuildClientConfiguration, CodeBuild::Endpoint::CodeBuildBuiltInParameters,
+                                       CodeBuild::Endpoint::CodeBuildClientContextParameters>;
+}  // namespace Endpoint
+
+namespace CodeBuild {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

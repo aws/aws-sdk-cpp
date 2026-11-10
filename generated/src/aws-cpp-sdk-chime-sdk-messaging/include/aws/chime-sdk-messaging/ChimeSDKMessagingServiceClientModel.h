@@ -88,7 +88,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace ChimeSDKMessaging {
-using ChimeSDKMessagingClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ChimeSDKMessagingEndpointProviderBase = Aws::ChimeSDKMessaging::Endpoint::ChimeSDKMessagingEndpointProviderBase;
 using ChimeSDKMessagingEndpointProvider = Aws::ChimeSDKMessaging::Endpoint::ChimeSDKMessagingEndpointProvider;
 

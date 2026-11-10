@@ -120,27 +120,6 @@ class AWS_MARKETPLACEMETERING_API MarketplaceMeteringClient : public Aws::Client
                             const Aws::MarketplaceMetering::MarketplaceMeteringClientConfiguration& clientConfiguration =
                                 Aws::MarketplaceMetering::MarketplaceMeteringClientConfiguration());
 
-  /* Legacy constructors due deprecation */
-  /**
-   * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client
-   * config is not specified, it will be initialized to default values.
-   */
-  MarketplaceMeteringClient(const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /**
-   * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
-   * is not specified, it will be initialized to default values.
-   */
-  MarketplaceMeteringClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /**
-   * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
-   * the default http client factory will be used
-   */
-  MarketplaceMeteringClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                            const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /* End of legacy constructors due deprecation */
   virtual ~MarketplaceMeteringClient();
 
   /**
@@ -428,7 +407,6 @@ class AWS_MARKETPLACEMETERING_API MarketplaceMeteringClient : public Aws::Client
     return SubmitAsync(&MarketplaceMeteringClient::ResolveCustomer, request, handler, context);
   }
 
-  virtual void OverrideEndpoint(const Aws::String& endpoint);
   virtual std::shared_ptr<MarketplaceMeteringEndpointProviderBase>& accessEndpointProvider();
 
  private:

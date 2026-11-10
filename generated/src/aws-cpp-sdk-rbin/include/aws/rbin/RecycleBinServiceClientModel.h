@@ -56,7 +56,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace RecycleBin {
-using RecycleBinClientConfiguration = Aws::Client::GenericClientConfiguration;
 using RecycleBinEndpointProviderBase = Aws::RecycleBin::Endpoint::RecycleBinEndpointProviderBase;
 using RecycleBinEndpointProvider = Aws::RecycleBin::Endpoint::RecycleBinEndpointProvider;
 

@@ -15,25 +15,6 @@ struct AWS_TIMESTREAMWRITE_API TimestreamWriteClientConfiguration : public Aws::
   static const bool EndpointDiscoverySupported = true;
   static const bool EndpointDiscoveryRequired = true;
 
-  TimestreamWriteClientConfiguration(const TimestreamWriteClientConfiguration& other)
-      : Aws::Client::GenericClientConfiguration(other), enableEndpointDiscovery(BaseClientConfigClass::enableEndpointDiscovery) {}
-
-  TimestreamWriteClientConfiguration(TimestreamWriteClientConfiguration&& other) noexcept
-      : Aws::Client::GenericClientConfiguration(std::move(other)),
-        enableEndpointDiscovery(BaseClientConfigClass::enableEndpointDiscovery) {}
-
-  TimestreamWriteClientConfiguration& operator=(const TimestreamWriteClientConfiguration& other) {
-    if (this == &other) return *this;
-    Aws::Client::GenericClientConfiguration::operator=(other);
-    return *this;
-  }
-
-  TimestreamWriteClientConfiguration& operator=(TimestreamWriteClientConfiguration&& other) noexcept {
-    if (this == &other) return *this;
-    Aws::Client::GenericClientConfiguration::operator=(std::move(other));
-    return *this;
-  }
-
   TimestreamWriteClientConfiguration(const Aws::Client::ClientConfigurationInitValues& configuration = {});
 
   /**
@@ -53,9 +34,22 @@ struct AWS_TIMESTREAMWRITE_API TimestreamWriteClientConfiguration : public Aws::
   TimestreamWriteClientConfiguration(bool useSmartDefaults, const char* defaultMode = "legacy", bool shouldDisableIMDS = false);
 
   /**
-   * Converting constructors for compatibility with a legacy code
+   * Create a configuration that starts from shared settings (region, timeouts, proxy, retry, ...),
+   * then loads this service's options from the environment and profile.
+   * Explicit, so a client is never built from the shared configuration implicitly.
    */
-  TimestreamWriteClientConfiguration(const Aws::Client::ClientConfiguration& config);
+  explicit TimestreamWriteClientConfiguration(const Aws::Client::ClientConfiguration& sharedConfig);
+
+  /**
+   * Use FIPS endpoint in the endpoint calculation. Please check first that the service supports FIPS in a selected region.
+   */
+  bool useFIPS = false;
+
+  /**
+   * Use dual stack endpoint in the endpoint calculation. It is your responsibility to verify that the service supports ipv6 in the region
+   * you select.
+   */
+  bool useDualStack = false;
 
   /**
    * Enable endpoint discovery
@@ -67,10 +61,15 @@ struct AWS_TIMESTREAMWRITE_API TimestreamWriteClientConfiguration : public Aws::
    * such that SDK will decide the default behavior as stated before, if no value specified.
    * Timestream Write service client requires endpoint discovery. The default value for this setting is Enabled.
    */
-  Aws::Crt::Optional<bool>& enableEndpointDiscovery;
+  Aws::Crt::Optional<bool> enableEndpointDiscovery;
 
  private:
   void LoadTimestreamWriteSpecificConfig(const Aws::String& profileName);
 };
+
+/**
+ * Values of this service's supported options that the client hands to core.
+ */
+AWS_TIMESTREAMWRITE_API Aws::Client::ServiceClientOptions GetServiceClientOptions(const TimestreamWriteClientConfiguration& config);
 }  // namespace TimestreamWrite
 }  // namespace Aws

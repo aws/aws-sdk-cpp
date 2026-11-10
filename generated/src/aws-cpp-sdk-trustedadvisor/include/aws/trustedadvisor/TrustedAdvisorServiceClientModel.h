@@ -60,7 +60,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace TrustedAdvisor {
-using TrustedAdvisorClientConfiguration = Aws::Client::GenericClientConfiguration;
 using TrustedAdvisorEndpointProviderBase = Aws::TrustedAdvisor::Endpoint::TrustedAdvisorEndpointProviderBase;
 using TrustedAdvisorEndpointProvider = Aws::TrustedAdvisor::Endpoint::TrustedAdvisorEndpointProvider;
 

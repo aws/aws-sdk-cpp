@@ -60,7 +60,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace SnowDeviceManagement {
-using SnowDeviceManagementClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SnowDeviceManagementEndpointProviderBase = Aws::SnowDeviceManagement::Endpoint::SnowDeviceManagementEndpointProviderBase;
 using SnowDeviceManagementEndpointProvider = Aws::SnowDeviceManagement::Endpoint::SnowDeviceManagementEndpointProvider;
 

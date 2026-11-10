@@ -68,7 +68,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace SageMakerGeospatial {
-using SageMakerGeospatialClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SageMakerGeospatialEndpointProviderBase = Aws::SageMakerGeospatial::Endpoint::SageMakerGeospatialEndpointProviderBase;
 using SageMakerGeospatialEndpointProvider = Aws::SageMakerGeospatial::Endpoint::SageMakerGeospatialEndpointProvider;
 

@@ -127,7 +127,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace IoTManagedIntegrations {
-using IoTManagedIntegrationsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using IoTManagedIntegrationsEndpointProviderBase = Aws::IoTManagedIntegrations::Endpoint::IoTManagedIntegrationsEndpointProviderBase;
 using IoTManagedIntegrationsEndpointProvider = Aws::IoTManagedIntegrations::Endpoint::IoTManagedIntegrationsEndpointProvider;
 

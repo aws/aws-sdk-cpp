@@ -4,24 +4,33 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/globalaccelerator/GlobalAcceleratorClientConfiguration.h>
 #include <aws/globalaccelerator/GlobalAccelerator_EXPORTS.h>
 
 namespace Aws {
 namespace GlobalAccelerator {
 namespace Endpoint {
+using GlobalAcceleratorClientConfiguration = Aws::GlobalAccelerator::GlobalAcceleratorClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using GlobalAcceleratorClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using GlobalAcceleratorClientConfiguration = Aws::Client::GenericClientConfiguration;
-using GlobalAcceleratorBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_GLOBALACCELERATOR_API GlobalAcceleratorBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~GlobalAcceleratorBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const GlobalAcceleratorClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const GlobalAcceleratorClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const GlobalAcceleratorClientConfiguration& config);
+};
 
 /**
  * The type for the GlobalAccelerator Client Endpoint Provider.
@@ -34,6 +43,24 @@ using GlobalAcceleratorEndpointProviderBase = EndpointProviderBase<GlobalAcceler
 using GlobalAcceleratorDefaultEpProviderBase =
     BDDEndpointProvider<GlobalAcceleratorClientConfiguration, GlobalAcceleratorBuiltInParameters, GlobalAcceleratorClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace GlobalAccelerator
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_GLOBALACCELERATOR_EXTERN template class AWS_GLOBALACCELERATOR_API Aws::Endpoint::EndpointProviderBase<
+    GlobalAccelerator::Endpoint::GlobalAcceleratorClientConfiguration, GlobalAccelerator::Endpoint::GlobalAcceleratorBuiltInParameters,
+    GlobalAccelerator::Endpoint::GlobalAcceleratorClientContextParameters>;
+
+AWS_GLOBALACCELERATOR_EXTERN template class AWS_GLOBALACCELERATOR_API Aws::Endpoint::BDDEndpointProvider<
+    GlobalAccelerator::Endpoint::GlobalAcceleratorClientConfiguration, GlobalAccelerator::Endpoint::GlobalAcceleratorBuiltInParameters,
+    GlobalAccelerator::Endpoint::GlobalAcceleratorClientContextParameters>;
+}  // namespace Endpoint
+
+namespace GlobalAccelerator {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

@@ -63,7 +63,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace DirectoryServiceData {
-using DirectoryServiceDataClientConfiguration = Aws::Client::GenericClientConfiguration;
 using DirectoryServiceDataEndpointProviderBase = Aws::DirectoryServiceData::Endpoint::DirectoryServiceDataEndpointProviderBase;
 using DirectoryServiceDataEndpointProvider = Aws::DirectoryServiceData::Endpoint::DirectoryServiceDataEndpointProvider;
 

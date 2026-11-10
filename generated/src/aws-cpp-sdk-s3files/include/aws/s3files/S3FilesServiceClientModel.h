@@ -64,7 +64,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace S3Files {
-using S3FilesClientConfiguration = Aws::Client::GenericClientConfiguration;
 using S3FilesEndpointProviderBase = Aws::S3Files::Endpoint::S3FilesEndpointProviderBase;
 using S3FilesEndpointProvider = Aws::S3Files::Endpoint::S3FilesEndpointProvider;
 

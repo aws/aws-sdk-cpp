@@ -38,8 +38,8 @@ static size_t GCM_AAD_LENGTH = 17;
 class MockKMSClient : public KMSClient
 {
 public:
-    MockKMSClient(ClientConfiguration clientConfiguration = ClientConfiguration()) :
-        KMSClient(Aws::Auth::AWSCredentials("", ""), clientConfiguration), m_genDataKeyCalledCount(0), m_decryptCalledCount(0)
+    MockKMSClient(Aws::KMS::KMSClientConfiguration clientConfiguration = Aws::KMS::KMSClientConfiguration()) :
+        KMSClient(Aws::Auth::AWSCredentials("", ""), nullptr, clientConfiguration), m_genDataKeyCalledCount(0), m_decryptCalledCount(0)
     {
     }
 
@@ -437,7 +437,7 @@ namespace
     TEST_F(KMSWithContextEncryptionMaterialsTest, TestEncryptCEKInvalidCmkID)
     {
         Aws::String testCmkID = "someRandomCustomerMasterKeyID";
-        auto myClient = Aws::MakeShared<MockKMSClient>(AllocationTag, ClientConfiguration());
+        auto myClient = Aws::MakeShared<MockKMSClient>(AllocationTag, Aws::KMS::KMSClientConfiguration());
         KMSWithContextEncryptionMaterials encryptionMaterials(testCmkID, myClient);
 
         ContentCryptoMaterial contentCryptoMaterial(ContentCryptoScheme::GCM);
@@ -456,7 +456,7 @@ namespace
     // This also test for a successful outcome for encrypt and decrypt calls.
     TEST_F(KMSWithContextEncryptionMaterialsTest, TestMockEncryptDecryptCEK)
     {
-        auto myClient = Aws::MakeShared<MockKMSClient>(AllocationTag, ClientConfiguration());
+        auto myClient = Aws::MakeShared<MockKMSClient>(AllocationTag, Aws::KMS::KMSClientConfiguration());
         InitMockKMSClient(myClient);
 
         KMSWithContextEncryptionMaterials encryptionMaterials(TEST_CMK_ID, myClient);
@@ -486,7 +486,7 @@ namespace
     //This tests KMS Encryption Materials Decrypt CEK by using a mock KMS Client with an invalid customer master key.
     TEST_F(KMSWithContextEncryptionMaterialsTest, TestInvalidKeyWrapAlgorithmDecryptCEK)
     {
-        auto myClient = Aws::MakeShared<MockKMSClient>(AllocationTag, ClientConfiguration());
+        auto myClient = Aws::MakeShared<MockKMSClient>(AllocationTag, Aws::KMS::KMSClientConfiguration());
         KMSWithContextEncryptionMaterials encryptionMaterials(TEST_CMK_ID, myClient);
 
         ContentCryptoMaterial contentCryptoMaterial;
@@ -510,7 +510,7 @@ namespace
     //This tests KMS Encryption Materials Decrypt CEK by using a mock KMS Client with an invalid materials description.
     TEST_F(KMSWithContextEncryptionMaterialsTest, TestInvalidMaterialsDescriptionDecryptCEK)
     {
-        auto myClient = Aws::MakeShared<MockKMSClient>(AllocationTag, ClientConfiguration());
+        auto myClient = Aws::MakeShared<MockKMSClient>(AllocationTag, Aws::KMS::KMSClientConfiguration());
         KMSWithContextEncryptionMaterials encryptionMaterials(TEST_CMK_ID, myClient);
 
         ContentCryptoMaterial contentCryptoMaterial;
@@ -536,7 +536,7 @@ namespace
     //This tests KMS Encryption Materials Decrypt CEK by using a mock KMS Client with a missing encrypted key.
     TEST_F(KMSWithContextEncryptionMaterialsTest, TestMissingEncryptedContentKeyDecryptCEK)
     {
-        auto myClient = Aws::MakeShared<MockKMSClient>(AllocationTag, ClientConfiguration());
+        auto myClient = Aws::MakeShared<MockKMSClient>(AllocationTag, Aws::KMS::KMSClientConfiguration());
         KMSWithContextEncryptionMaterials encryptionMaterials(TEST_CMK_ID, myClient);
 
         ContentCryptoMaterial contentCryptoMaterial;

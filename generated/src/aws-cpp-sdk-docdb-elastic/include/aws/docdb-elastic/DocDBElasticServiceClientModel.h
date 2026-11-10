@@ -68,7 +68,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace DocDBElastic {
-using DocDBElasticClientConfiguration = Aws::Client::GenericClientConfiguration;
 using DocDBElasticEndpointProviderBase = Aws::DocDBElastic::Endpoint::DocDBElasticEndpointProviderBase;
 using DocDBElasticEndpointProvider = Aws::DocDBElastic::Endpoint::DocDBElasticEndpointProvider;
 

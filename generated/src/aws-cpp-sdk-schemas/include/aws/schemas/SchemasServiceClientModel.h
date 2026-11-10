@@ -75,7 +75,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace Schemas {
-using SchemasClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SchemasEndpointProviderBase = Aws::Schemas::Endpoint::SchemasEndpointProviderBase;
 using SchemasEndpointProvider = Aws::Schemas::Endpoint::SchemasEndpointProvider;
 

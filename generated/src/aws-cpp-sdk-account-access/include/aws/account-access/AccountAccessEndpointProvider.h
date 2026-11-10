@@ -4,8 +4,8 @@
  */
 
 #pragma once
+#include <aws/account-access/AccountAccessClientConfiguration.h>
 #include <aws/account-access/AccountAccess_EXPORTS.h>
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -14,14 +14,23 @@
 namespace Aws {
 namespace AccountAccess {
 namespace Endpoint {
+using AccountAccessClientConfiguration = Aws::AccountAccess::AccountAccessClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using AccountAccessClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using AccountAccessClientConfiguration = Aws::Client::GenericClientConfiguration;
-using AccountAccessBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_ACCOUNTACCESS_API AccountAccessBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~AccountAccessBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const AccountAccessClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const AccountAccessClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const AccountAccessClientConfiguration& config);
+};
 
 /**
  * The type for the AccountAccess Client Endpoint Provider.
@@ -34,6 +43,24 @@ using AccountAccessEndpointProviderBase =
 using AccountAccessDefaultEpProviderBase =
     BDDEndpointProvider<AccountAccessClientConfiguration, AccountAccessBuiltInParameters, AccountAccessClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace AccountAccess
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_ACCOUNTACCESS_EXTERN template class AWS_ACCOUNTACCESS_API Aws::Endpoint::EndpointProviderBase<
+    AccountAccess::Endpoint::AccountAccessClientConfiguration, AccountAccess::Endpoint::AccountAccessBuiltInParameters,
+    AccountAccess::Endpoint::AccountAccessClientContextParameters>;
+
+AWS_ACCOUNTACCESS_EXTERN template class AWS_ACCOUNTACCESS_API Aws::Endpoint::BDDEndpointProvider<
+    AccountAccess::Endpoint::AccountAccessClientConfiguration, AccountAccess::Endpoint::AccountAccessBuiltInParameters,
+    AccountAccess::Endpoint::AccountAccessClientContextParameters>;
+}  // namespace Endpoint
+
+namespace AccountAccess {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

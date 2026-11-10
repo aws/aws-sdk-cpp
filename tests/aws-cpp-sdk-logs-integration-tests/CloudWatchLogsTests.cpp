@@ -59,15 +59,15 @@ namespace
             ClientConfiguration config;
             config.scheme = Scheme::HTTPS;
             config.region = AWS_TEST_REGION;
-            CloudWatchLogsClient tmpClient(config);  // test copy c-tor
+            CloudWatchLogsClient tmpClient{Aws::CloudWatchLogs::CloudWatchLogsClientConfiguration(config)};  // test copy c-tor
             m_client = Aws::MakeUnique<CloudWatchLogsClient>(ALLOCATION_TAG, tmpClient);
             CreateLogsGroup(BuildResourceName(BASE_CLOUD_WATCH_LOGS_GROUP));
 
             auto accountId = Aws::Environment::GetEnv("CATAPULT_TEST_ACCOUNT");
             if(accountId.empty()) {
                 config.region = Aws::Region::US_EAST_1;
-                auto iamClient = Aws::MakeShared<Aws::IAM::IAMClient>(ALLOCATION_TAG, config);
-                auto cognitoClient = Aws::MakeShared<Aws::CognitoIdentity::CognitoIdentityClient>(ALLOCATION_TAG, config);
+                auto iamClient = Aws::MakeShared<Aws::IAM::IAMClient>(ALLOCATION_TAG, Aws::IAM::IAMClientConfiguration(config));
+                auto cognitoClient = Aws::MakeShared<Aws::CognitoIdentity::CognitoIdentityClient>(ALLOCATION_TAG, Aws::CognitoIdentity::CognitoIdentityClientConfiguration(config));
                 Aws::AccessManagement::AccessManagementClient accessManagementClient(iamClient, cognitoClient);
                 accountId = accessManagementClient.GetAccountId();
                 assert(!accountId.empty()); // AccountId must be set for this test

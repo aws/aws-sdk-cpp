@@ -61,7 +61,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace Interconnect {
-using InterconnectClientConfiguration = Aws::Client::GenericClientConfiguration;
 using InterconnectEndpointProviderBase = Aws::Interconnect::Endpoint::InterconnectEndpointProviderBase;
 using InterconnectEndpointProvider = Aws::Interconnect::Endpoint::InterconnectEndpointProvider;
 

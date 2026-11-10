@@ -47,7 +47,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace MarketplaceCommerceAnalytics {
-using MarketplaceCommerceAnalyticsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using MarketplaceCommerceAnalyticsEndpointProviderBase =
     Aws::MarketplaceCommerceAnalytics::Endpoint::MarketplaceCommerceAnalyticsEndpointProviderBase;
 using MarketplaceCommerceAnalyticsEndpointProvider =

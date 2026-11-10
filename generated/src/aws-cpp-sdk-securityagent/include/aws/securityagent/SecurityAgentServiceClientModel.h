@@ -149,7 +149,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace SecurityAgent {
-using SecurityAgentClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SecurityAgentEndpointProviderBase = Aws::SecurityAgent::Endpoint::SecurityAgentEndpointProviderBase;
 using SecurityAgentEndpointProvider = Aws::SecurityAgent::Endpoint::SecurityAgentEndpointProvider;
 

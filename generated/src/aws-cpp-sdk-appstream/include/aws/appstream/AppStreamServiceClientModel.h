@@ -152,7 +152,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace AppStream {
-using AppStreamClientConfiguration = Aws::Client::GenericClientConfiguration;
 using AppStreamEndpointProviderBase = Aws::AppStream::Endpoint::AppStreamEndpointProviderBase;
 using AppStreamEndpointProvider = Aws::AppStream::Endpoint::AppStreamEndpointProvider;
 

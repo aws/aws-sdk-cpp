@@ -63,7 +63,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace OAM {
-using OAMClientConfiguration = Aws::Client::GenericClientConfiguration;
 using OAMEndpointProviderBase = Aws::OAM::Endpoint::OAMEndpointProviderBase;
 using OAMEndpointProvider = Aws::OAM::Endpoint::OAMEndpointProvider;
 

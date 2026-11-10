@@ -27,6 +27,9 @@ class AWS_TIMESTREAMWRITE_API TimestreamWriteBuiltInParameters : public Aws::End
   using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
   virtual void SetFromClientConfiguration(const TimestreamWriteClientConfiguration& config);
   virtual void SetFromClientConfiguration(const TimestreamWriteClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const TimestreamWriteClientConfiguration& config);
 };
 
 /**

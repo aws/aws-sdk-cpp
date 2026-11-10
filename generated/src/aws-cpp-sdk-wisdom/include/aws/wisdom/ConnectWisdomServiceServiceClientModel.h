@@ -87,7 +87,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace ConnectWisdomService {
-using ConnectWisdomServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ConnectWisdomServiceEndpointProviderBase = Aws::ConnectWisdomService::Endpoint::ConnectWisdomServiceEndpointProviderBase;
 using ConnectWisdomServiceEndpointProvider = Aws::ConnectWisdomService::Endpoint::ConnectWisdomServiceEndpointProvider;
 

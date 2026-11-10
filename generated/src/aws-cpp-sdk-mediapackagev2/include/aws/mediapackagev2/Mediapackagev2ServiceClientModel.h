@@ -76,7 +76,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace mediapackagev2 {
-using Mediapackagev2ClientConfiguration = Aws::Client::GenericClientConfiguration;
 using Mediapackagev2EndpointProviderBase = Aws::mediapackagev2::Endpoint::Mediapackagev2EndpointProviderBase;
 using Mediapackagev2EndpointProvider = Aws::mediapackagev2::Endpoint::Mediapackagev2EndpointProvider;
 

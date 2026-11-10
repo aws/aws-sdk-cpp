@@ -103,41 +103,6 @@ ARCRegionswitchClient::ARCRegionswitchClient(const std::shared_ptr<AWSCredential
   init(m_clientConfiguration);
 }
 
-/* Legacy constructors due deprecation */
-ARCRegionswitchClient::ARCRegionswitchClient(const Aws::Client::ClientConfiguration& clientConfiguration)
-    : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                                 Aws::MakeShared<DefaultAWSCredentialsProviderChain>(
-                                                     ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
-                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-                Aws::MakeShared<ARCRegionswitchErrorMarshaller>(ALLOCATION_TAG)),
-      m_clientConfiguration(clientConfiguration),
-      m_endpointProvider(Aws::MakeShared<ARCRegionswitchEndpointProvider>(ALLOCATION_TAG)) {
-  init(m_clientConfiguration);
-}
-
-ARCRegionswitchClient::ARCRegionswitchClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
-    : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-                Aws::MakeShared<ARCRegionswitchErrorMarshaller>(ALLOCATION_TAG)),
-      m_clientConfiguration(clientConfiguration),
-      m_endpointProvider(Aws::MakeShared<ARCRegionswitchEndpointProvider>(ALLOCATION_TAG)) {
-  init(m_clientConfiguration);
-}
-
-ARCRegionswitchClient::ARCRegionswitchClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                             const Aws::Client::ClientConfiguration& clientConfiguration)
-    : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
-                                                 Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-                Aws::MakeShared<ARCRegionswitchErrorMarshaller>(ALLOCATION_TAG)),
-      m_clientConfiguration(clientConfiguration),
-      m_endpointProvider(Aws::MakeShared<ARCRegionswitchEndpointProvider>(ALLOCATION_TAG)) {
-  init(m_clientConfiguration);
-}
-
-/* End of legacy constructors due deprecation */
 ARCRegionswitchClient::~ARCRegionswitchClient() { ShutdownSdkClient(this, -1); }
 
 std::shared_ptr<ARCRegionswitchEndpointProviderBase>& ARCRegionswitchClient::accessEndpointProvider() { return m_endpointProvider; }
@@ -154,12 +119,7 @@ void ARCRegionswitchClient::init(const ARCRegionswitch::ARCRegionswitchClientCon
   }
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config, "arc-region-switch");
-}
-
-void ARCRegionswitchClient::OverrideEndpoint(const Aws::String& endpoint) {
-  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_clientConfiguration.endpointOverride = endpoint;
-  m_endpointProvider->OverrideEndpoint(endpoint);
+  ApplyServiceOptions(GetServiceClientOptions(m_clientConfiguration));
 }
 ARCRegionswitchClient::InvokeOperationOutcome ARCRegionswitchClient::InvokeServiceOperation(const AmazonWebServiceRequest& request,
                                                                                             Aws::Http::HttpMethod httpMethod) const {

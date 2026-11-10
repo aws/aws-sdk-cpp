@@ -69,7 +69,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace Health {
-using HealthClientConfiguration = Aws::Client::GenericClientConfiguration;
 using HealthEndpointProviderBase = Aws::Health::Endpoint::HealthEndpointProviderBase;
 using HealthEndpointProvider = Aws::Health::Endpoint::HealthEndpointProvider;
 

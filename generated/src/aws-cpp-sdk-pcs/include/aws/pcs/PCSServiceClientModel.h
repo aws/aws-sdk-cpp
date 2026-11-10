@@ -66,7 +66,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace PCS {
-using PCSClientConfiguration = Aws::Client::GenericClientConfiguration;
 using PCSEndpointProviderBase = Aws::PCS::Endpoint::PCSEndpointProviderBase;
 using PCSEndpointProvider = Aws::PCS::Endpoint::PCSEndpointProvider;
 

@@ -99,7 +99,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace CloudWatchEvents {
-using CloudWatchEventsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CloudWatchEventsEndpointProviderBase = Aws::CloudWatchEvents::Endpoint::CloudWatchEventsEndpointProviderBase;
 using CloudWatchEventsEndpointProvider = Aws::CloudWatchEvents::Endpoint::CloudWatchEventsEndpointProvider;
 

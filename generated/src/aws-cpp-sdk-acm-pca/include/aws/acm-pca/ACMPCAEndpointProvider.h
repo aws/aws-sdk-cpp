@@ -4,8 +4,8 @@
  */
 
 #pragma once
+#include <aws/acm-pca/ACMPCAClientConfiguration.h>
 #include <aws/acm-pca/ACMPCA_EXPORTS.h>
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -14,14 +14,23 @@
 namespace Aws {
 namespace ACMPCA {
 namespace Endpoint {
+using ACMPCAClientConfiguration = Aws::ACMPCA::ACMPCAClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using ACMPCAClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ACMPCAClientConfiguration = Aws::Client::GenericClientConfiguration;
-using ACMPCABuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_ACMPCA_API ACMPCABuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~ACMPCABuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const ACMPCAClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const ACMPCAClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const ACMPCAClientConfiguration& config);
+};
 
 /**
  * The type for the ACMPCA Client Endpoint Provider.
@@ -32,6 +41,24 @@ using ACMPCAEndpointProviderBase = EndpointProviderBase<ACMPCAClientConfiguratio
 
 using ACMPCADefaultEpProviderBase = BDDEndpointProvider<ACMPCAClientConfiguration, ACMPCABuiltInParameters, ACMPCAClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace ACMPCA
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_ACMPCA_EXTERN template class AWS_ACMPCA_API
+    Aws::Endpoint::EndpointProviderBase<ACMPCA::Endpoint::ACMPCAClientConfiguration, ACMPCA::Endpoint::ACMPCABuiltInParameters,
+                                        ACMPCA::Endpoint::ACMPCAClientContextParameters>;
+
+AWS_ACMPCA_EXTERN template class AWS_ACMPCA_API
+    Aws::Endpoint::BDDEndpointProvider<ACMPCA::Endpoint::ACMPCAClientConfiguration, ACMPCA::Endpoint::ACMPCABuiltInParameters,
+                                       ACMPCA::Endpoint::ACMPCAClientContextParameters>;
+}  // namespace Endpoint
+
+namespace ACMPCA {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

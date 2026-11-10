@@ -51,7 +51,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace IoTJobsDataPlane {
-using IoTJobsDataPlaneClientConfiguration = Aws::Client::GenericClientConfiguration;
 using IoTJobsDataPlaneEndpointProviderBase = Aws::IoTJobsDataPlane::Endpoint::IoTJobsDataPlaneEndpointProviderBase;
 using IoTJobsDataPlaneEndpointProvider = Aws::IoTJobsDataPlane::Endpoint::IoTJobsDataPlaneEndpointProvider;
 

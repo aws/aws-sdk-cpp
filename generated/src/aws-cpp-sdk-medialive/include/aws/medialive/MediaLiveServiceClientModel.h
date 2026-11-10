@@ -191,7 +191,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace MediaLive {
-using MediaLiveClientConfiguration = Aws::Client::GenericClientConfiguration;
 using MediaLiveEndpointProviderBase = Aws::MediaLive::Endpoint::MediaLiveEndpointProviderBase;
 using MediaLiveEndpointProvider = Aws::MediaLive::Endpoint::MediaLiveEndpointProvider;
 

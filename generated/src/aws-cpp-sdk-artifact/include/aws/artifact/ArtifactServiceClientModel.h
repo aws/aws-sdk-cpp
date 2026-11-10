@@ -68,7 +68,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace Artifact {
-using ArtifactClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ArtifactEndpointProviderBase = Aws::Artifact::Endpoint::ArtifactEndpointProviderBase;
 using ArtifactEndpointProvider = Aws::Artifact::Endpoint::ArtifactEndpointProvider;
 

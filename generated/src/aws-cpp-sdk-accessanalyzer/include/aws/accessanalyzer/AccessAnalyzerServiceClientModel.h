@@ -79,7 +79,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace AccessAnalyzer {
-using AccessAnalyzerClientConfiguration = Aws::Client::GenericClientConfiguration;
 using AccessAnalyzerEndpointProviderBase = Aws::AccessAnalyzer::Endpoint::AccessAnalyzerEndpointProviderBase;
 using AccessAnalyzerEndpointProvider = Aws::AccessAnalyzer::Endpoint::AccessAnalyzerEndpointProvider;
 

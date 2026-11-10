@@ -96,7 +96,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace Shield {
-using ShieldClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ShieldEndpointProviderBase = Aws::Shield::Endpoint::ShieldEndpointProviderBase;
 using ShieldEndpointProvider = Aws::Shield::Endpoint::ShieldEndpointProvider;
 

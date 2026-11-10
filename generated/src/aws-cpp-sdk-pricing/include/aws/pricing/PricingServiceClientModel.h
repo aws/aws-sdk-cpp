@@ -52,7 +52,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace Pricing {
-using PricingClientConfiguration = Aws::Client::GenericClientConfiguration;
 using PricingEndpointProviderBase = Aws::Pricing::Endpoint::PricingEndpointProviderBase;
 using PricingEndpointProvider = Aws::Pricing::Endpoint::PricingEndpointProvider;
 

@@ -62,7 +62,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace CodeStarNotifications {
-using CodeStarNotificationsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CodeStarNotificationsEndpointProviderBase = Aws::CodeStarNotifications::Endpoint::CodeStarNotificationsEndpointProviderBase;
 using CodeStarNotificationsEndpointProvider = Aws::CodeStarNotifications::Endpoint::CodeStarNotificationsEndpointProvider;
 

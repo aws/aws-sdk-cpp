@@ -55,7 +55,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace KinesisVideoArchivedMedia {
-using KinesisVideoArchivedMediaClientConfiguration = Aws::Client::GenericClientConfiguration;
 using KinesisVideoArchivedMediaEndpointProviderBase =
     Aws::KinesisVideoArchivedMedia::Endpoint::KinesisVideoArchivedMediaEndpointProviderBase;
 using KinesisVideoArchivedMediaEndpointProvider = Aws::KinesisVideoArchivedMedia::Endpoint::KinesisVideoArchivedMediaEndpointProvider;

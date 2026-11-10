@@ -97,7 +97,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace CleanRoomsML {
-using CleanRoomsMLClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CleanRoomsMLEndpointProviderBase = Aws::CleanRoomsML::Endpoint::CleanRoomsMLEndpointProviderBase;
 using CleanRoomsMLEndpointProvider = Aws::CleanRoomsML::Endpoint::CleanRoomsMLEndpointProvider;
 

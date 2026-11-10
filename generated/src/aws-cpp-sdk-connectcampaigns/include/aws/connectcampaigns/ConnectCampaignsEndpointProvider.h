@@ -4,8 +4,8 @@
  */
 
 #pragma once
+#include <aws/connectcampaigns/ConnectCampaignsClientConfiguration.h>
 #include <aws/connectcampaigns/ConnectCampaigns_EXPORTS.h>
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -14,14 +14,23 @@
 namespace Aws {
 namespace ConnectCampaigns {
 namespace Endpoint {
+using ConnectCampaignsClientConfiguration = Aws::ConnectCampaigns::ConnectCampaignsClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using ConnectCampaignsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ConnectCampaignsClientConfiguration = Aws::Client::GenericClientConfiguration;
-using ConnectCampaignsBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_CONNECTCAMPAIGNS_API ConnectCampaignsBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~ConnectCampaignsBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const ConnectCampaignsClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const ConnectCampaignsClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const ConnectCampaignsClientConfiguration& config);
+};
 
 /**
  * The type for the ConnectCampaigns Client Endpoint Provider.
@@ -34,6 +43,24 @@ using ConnectCampaignsEndpointProviderBase =
 using ConnectCampaignsDefaultEpProviderBase =
     BDDEndpointProvider<ConnectCampaignsClientConfiguration, ConnectCampaignsBuiltInParameters, ConnectCampaignsClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace ConnectCampaigns
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_CONNECTCAMPAIGNS_EXTERN template class AWS_CONNECTCAMPAIGNS_API Aws::Endpoint::EndpointProviderBase<
+    ConnectCampaigns::Endpoint::ConnectCampaignsClientConfiguration, ConnectCampaigns::Endpoint::ConnectCampaignsBuiltInParameters,
+    ConnectCampaigns::Endpoint::ConnectCampaignsClientContextParameters>;
+
+AWS_CONNECTCAMPAIGNS_EXTERN template class AWS_CONNECTCAMPAIGNS_API Aws::Endpoint::BDDEndpointProvider<
+    ConnectCampaigns::Endpoint::ConnectCampaignsClientConfiguration, ConnectCampaigns::Endpoint::ConnectCampaignsBuiltInParameters,
+    ConnectCampaigns::Endpoint::ConnectCampaignsClientContextParameters>;
+}  // namespace Endpoint
+
+namespace ConnectCampaigns {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

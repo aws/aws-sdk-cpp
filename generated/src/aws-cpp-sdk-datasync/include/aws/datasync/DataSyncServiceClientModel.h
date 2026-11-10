@@ -103,7 +103,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace DataSync {
-using DataSyncClientConfiguration = Aws::Client::GenericClientConfiguration;
 using DataSyncEndpointProviderBase = Aws::DataSync::Endpoint::DataSyncEndpointProviderBase;
 using DataSyncEndpointProvider = Aws::DataSync::Endpoint::DataSyncEndpointProvider;
 

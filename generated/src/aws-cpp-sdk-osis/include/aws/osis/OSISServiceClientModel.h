@@ -72,7 +72,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace OSIS {
-using OSISClientConfiguration = Aws::Client::GenericClientConfiguration;
 using OSISEndpointProviderBase = Aws::OSIS::Endpoint::OSISEndpointProviderBase;
 using OSISEndpointProvider = Aws::OSIS::Endpoint::OSISEndpointProvider;
 

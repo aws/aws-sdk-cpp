@@ -4,24 +4,33 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/xray/XRayClientConfiguration.h>
 #include <aws/xray/XRay_EXPORTS.h>
 
 namespace Aws {
 namespace XRay {
 namespace Endpoint {
+using XRayClientConfiguration = Aws::XRay::XRayClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using XRayClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using XRayClientConfiguration = Aws::Client::GenericClientConfiguration;
-using XRayBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_XRAY_API XRayBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~XRayBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const XRayClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const XRayClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const XRayClientConfiguration& config);
+};
 
 /**
  * The type for the XRay Client Endpoint Provider.
@@ -32,6 +41,22 @@ using XRayEndpointProviderBase = EndpointProviderBase<XRayClientConfiguration, X
 
 using XRayDefaultEpProviderBase = BDDEndpointProvider<XRayClientConfiguration, XRayBuiltInParameters, XRayClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace XRay
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_XRAY_EXTERN template class AWS_XRAY_API Aws::Endpoint::EndpointProviderBase<
+    XRay::Endpoint::XRayClientConfiguration, XRay::Endpoint::XRayBuiltInParameters, XRay::Endpoint::XRayClientContextParameters>;
+
+AWS_XRAY_EXTERN template class AWS_XRAY_API Aws::Endpoint::BDDEndpointProvider<
+    XRay::Endpoint::XRayClientConfiguration, XRay::Endpoint::XRayBuiltInParameters, XRay::Endpoint::XRayClientContextParameters>;
+}  // namespace Endpoint
+
+namespace XRay {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

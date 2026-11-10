@@ -111,7 +111,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace AutoScaling {
-using AutoScalingClientConfiguration = Aws::Client::GenericClientConfiguration;
 using AutoScalingEndpointProviderBase = Aws::AutoScaling::Endpoint::AutoScalingEndpointProviderBase;
 using AutoScalingEndpointProvider = Aws::AutoScaling::Endpoint::AutoScalingEndpointProvider;
 

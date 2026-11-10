@@ -4,8 +4,8 @@
  */
 
 #pragma once
+#include <aws/cloudsearch/CloudSearchClientConfiguration.h>
 #include <aws/cloudsearch/CloudSearch_EXPORTS.h>
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -14,14 +14,23 @@
 namespace Aws {
 namespace CloudSearch {
 namespace Endpoint {
+using CloudSearchClientConfiguration = Aws::CloudSearch::CloudSearchClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using CloudSearchClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using CloudSearchClientConfiguration = Aws::Client::GenericClientConfiguration;
-using CloudSearchBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_CLOUDSEARCH_API CloudSearchBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~CloudSearchBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const CloudSearchClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const CloudSearchClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const CloudSearchClientConfiguration& config);
+};
 
 /**
  * The type for the CloudSearch Client Endpoint Provider.
@@ -34,6 +43,24 @@ using CloudSearchEndpointProviderBase =
 using CloudSearchDefaultEpProviderBase =
     BDDEndpointProvider<CloudSearchClientConfiguration, CloudSearchBuiltInParameters, CloudSearchClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace CloudSearch
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_CLOUDSEARCH_EXTERN template class AWS_CLOUDSEARCH_API Aws::Endpoint::EndpointProviderBase<
+    CloudSearch::Endpoint::CloudSearchClientConfiguration, CloudSearch::Endpoint::CloudSearchBuiltInParameters,
+    CloudSearch::Endpoint::CloudSearchClientContextParameters>;
+
+AWS_CLOUDSEARCH_EXTERN template class AWS_CLOUDSEARCH_API Aws::Endpoint::BDDEndpointProvider<
+    CloudSearch::Endpoint::CloudSearchClientConfiguration, CloudSearch::Endpoint::CloudSearchBuiltInParameters,
+    CloudSearch::Endpoint::CloudSearchClientContextParameters>;
+}  // namespace Endpoint
+
+namespace CloudSearch {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

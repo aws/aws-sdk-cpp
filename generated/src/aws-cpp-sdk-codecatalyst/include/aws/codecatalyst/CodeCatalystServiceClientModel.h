@@ -87,7 +87,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace CodeCatalyst {
-using CodeCatalystClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CodeCatalystEndpointProviderBase = Aws::CodeCatalyst::Endpoint::CodeCatalystEndpointProviderBase;
 using CodeCatalystEndpointProvider = Aws::CodeCatalyst::Endpoint::CodeCatalystEndpointProvider;
 

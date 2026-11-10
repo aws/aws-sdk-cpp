@@ -102,7 +102,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace Batch {
-using BatchClientConfiguration = Aws::Client::GenericClientConfiguration;
 using BatchEndpointProviderBase = Aws::Batch::Endpoint::BatchEndpointProviderBase;
 using BatchEndpointProvider = Aws::Batch::Endpoint::BatchEndpointProvider;
 

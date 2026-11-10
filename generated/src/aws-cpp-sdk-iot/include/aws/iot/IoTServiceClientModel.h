@@ -350,7 +350,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace IoT {
-using IoTClientConfiguration = Aws::Client::GenericClientConfiguration;
 using IoTEndpointProviderBase = Aws::IoT::Endpoint::IoTEndpointProviderBase;
 using IoTEndpointProvider = Aws::IoT::Endpoint::IoTEndpointProvider;
 

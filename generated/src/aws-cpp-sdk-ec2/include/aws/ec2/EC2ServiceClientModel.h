@@ -1048,7 +1048,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace EC2 {
-using EC2ClientConfiguration = Aws::Client::GenericClientConfiguration;
 using EC2EndpointProviderBase = Aws::EC2::Endpoint::EC2EndpointProviderBase;
 using EC2EndpointProvider = Aws::EC2::Endpoint::EC2EndpointProvider;
 

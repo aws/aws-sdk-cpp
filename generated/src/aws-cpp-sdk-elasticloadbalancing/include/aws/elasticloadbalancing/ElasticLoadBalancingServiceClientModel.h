@@ -79,7 +79,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace ElasticLoadBalancing {
-using ElasticLoadBalancingClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ElasticLoadBalancingEndpointProviderBase = Aws::ElasticLoadBalancing::Endpoint::ElasticLoadBalancingEndpointProviderBase;
 using ElasticLoadBalancingEndpointProvider = Aws::ElasticLoadBalancing::Endpoint::ElasticLoadBalancingEndpointProvider;
 

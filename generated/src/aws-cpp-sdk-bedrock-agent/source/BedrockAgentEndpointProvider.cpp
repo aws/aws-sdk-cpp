@@ -30,13 +30,23 @@ BedrockAgentEndpointProvider::BedrockAgentEndpointProvider()
 
 void BedrockAgentBuiltInParameters::SetFromClientConfiguration(const BedrockAgentClientConfiguration& config) {
   SetFromClientConfiguration(static_cast<const BedrockAgentClientConfiguration::BaseClientConfigClass&>(config));
+  SetServiceSpecificParameters(config);
 }
 
 void BedrockAgentBuiltInParameters::SetFromClientConfiguration(const BedrockAgentClientConfiguration& config,
                                                                const Aws::String& serviceName) {
   SetFromClientConfiguration(static_cast<const BedrockAgentClientConfiguration::BaseClientConfigClass&>(config), serviceName);
+  SetServiceSpecificParameters(config);
 }
 
+void BedrockAgentBuiltInParameters::SetServiceSpecificParameters(const BedrockAgentClientConfiguration& config) {
+  if (config.useFIPS) {
+    SetBooleanParameter("UseFIPS", true);
+  }
+  if (config.useDualStack) {
+    SetBooleanParameter("UseDualStack", true);
+  }
+}
 }  // namespace Endpoint
 }  // namespace BedrockAgent
 }  // namespace Aws

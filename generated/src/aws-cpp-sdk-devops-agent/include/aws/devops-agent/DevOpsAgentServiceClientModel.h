@@ -113,7 +113,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace DevOpsAgent {
-using DevOpsAgentClientConfiguration = Aws::Client::GenericClientConfiguration;
 using DevOpsAgentEndpointProviderBase = Aws::DevOpsAgent::Endpoint::DevOpsAgentEndpointProviderBase;
 using DevOpsAgentEndpointProvider = Aws::DevOpsAgent::Endpoint::DevOpsAgentEndpointProvider;
 

@@ -96,8 +96,8 @@ namespace
             auto accountId = Aws::Environment::GetEnv("CATAPULT_TEST_ACCOUNT");
             if(accountId.empty()) {
                 config.region = Aws::Region::US_EAST_1;
-                auto iamClient = Aws::MakeShared<Aws::IAM::IAMClient>(ALLOCATION_TAG, config);
-                auto cognitoClient = Aws::MakeShared<Aws::CognitoIdentity::CognitoIdentityClient>(ALLOCATION_TAG, config);
+                auto iamClient = Aws::MakeShared<Aws::IAM::IAMClient>(ALLOCATION_TAG, Aws::IAM::IAMClientConfiguration(config));
+                auto cognitoClient = Aws::MakeShared<Aws::CognitoIdentity::CognitoIdentityClient>(ALLOCATION_TAG, Aws::CognitoIdentity::CognitoIdentityClientConfiguration(config));
                 Aws::AccessManagement::AccessManagementClient accessManagementClient(iamClient, cognitoClient);
                 accountId = accessManagementClient.GetAccountId();
             }

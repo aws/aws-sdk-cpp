@@ -4,24 +4,33 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/license-manager/LicenseManagerClientConfiguration.h>
 #include <aws/license-manager/LicenseManager_EXPORTS.h>
 
 namespace Aws {
 namespace LicenseManager {
 namespace Endpoint {
+using LicenseManagerClientConfiguration = Aws::LicenseManager::LicenseManagerClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using LicenseManagerClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using LicenseManagerClientConfiguration = Aws::Client::GenericClientConfiguration;
-using LicenseManagerBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_LICENSEMANAGER_API LicenseManagerBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~LicenseManagerBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const LicenseManagerClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const LicenseManagerClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const LicenseManagerClientConfiguration& config);
+};
 
 /**
  * The type for the LicenseManager Client Endpoint Provider.
@@ -34,6 +43,24 @@ using LicenseManagerEndpointProviderBase =
 using LicenseManagerDefaultEpProviderBase =
     BDDEndpointProvider<LicenseManagerClientConfiguration, LicenseManagerBuiltInParameters, LicenseManagerClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace LicenseManager
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_LICENSEMANAGER_EXTERN template class AWS_LICENSEMANAGER_API Aws::Endpoint::EndpointProviderBase<
+    LicenseManager::Endpoint::LicenseManagerClientConfiguration, LicenseManager::Endpoint::LicenseManagerBuiltInParameters,
+    LicenseManager::Endpoint::LicenseManagerClientContextParameters>;
+
+AWS_LICENSEMANAGER_EXTERN template class AWS_LICENSEMANAGER_API Aws::Endpoint::BDDEndpointProvider<
+    LicenseManager::Endpoint::LicenseManagerClientConfiguration, LicenseManager::Endpoint::LicenseManagerBuiltInParameters,
+    LicenseManager::Endpoint::LicenseManagerClientContextParameters>;
+}  // namespace Endpoint
+
+namespace LicenseManager {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

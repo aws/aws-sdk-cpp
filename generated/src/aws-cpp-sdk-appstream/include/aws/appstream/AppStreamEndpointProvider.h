@@ -4,8 +4,8 @@
  */
 
 #pragma once
+#include <aws/appstream/AppStreamClientConfiguration.h>
 #include <aws/appstream/AppStream_EXPORTS.h>
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -14,14 +14,23 @@
 namespace Aws {
 namespace AppStream {
 namespace Endpoint {
+using AppStreamClientConfiguration = Aws::AppStream::AppStreamClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using AppStreamClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using AppStreamClientConfiguration = Aws::Client::GenericClientConfiguration;
-using AppStreamBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_APPSTREAM_API AppStreamBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~AppStreamBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const AppStreamClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const AppStreamClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const AppStreamClientConfiguration& config);
+};
 
 /**
  * The type for the AppStream Client Endpoint Provider.
@@ -34,6 +43,24 @@ using AppStreamEndpointProviderBase =
 using AppStreamDefaultEpProviderBase =
     BDDEndpointProvider<AppStreamClientConfiguration, AppStreamBuiltInParameters, AppStreamClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace AppStream
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_APPSTREAM_EXTERN template class AWS_APPSTREAM_API
+    Aws::Endpoint::EndpointProviderBase<AppStream::Endpoint::AppStreamClientConfiguration, AppStream::Endpoint::AppStreamBuiltInParameters,
+                                        AppStream::Endpoint::AppStreamClientContextParameters>;
+
+AWS_APPSTREAM_EXTERN template class AWS_APPSTREAM_API
+    Aws::Endpoint::BDDEndpointProvider<AppStream::Endpoint::AppStreamClientConfiguration, AppStream::Endpoint::AppStreamBuiltInParameters,
+                                       AppStream::Endpoint::AppStreamClientContextParameters>;
+}  // namespace Endpoint
+
+namespace AppStream {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

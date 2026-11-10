@@ -4,8 +4,8 @@
  */
 
 #pragma once
+#include <aws/comprehend/ComprehendClientConfiguration.h>
 #include <aws/comprehend/Comprehend_EXPORTS.h>
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -14,14 +14,23 @@
 namespace Aws {
 namespace Comprehend {
 namespace Endpoint {
+using ComprehendClientConfiguration = Aws::Comprehend::ComprehendClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using ComprehendClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ComprehendClientConfiguration = Aws::Client::GenericClientConfiguration;
-using ComprehendBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_COMPREHEND_API ComprehendBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~ComprehendBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const ComprehendClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const ComprehendClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const ComprehendClientConfiguration& config);
+};
 
 /**
  * The type for the Comprehend Client Endpoint Provider.
@@ -34,6 +43,24 @@ using ComprehendEndpointProviderBase =
 using ComprehendDefaultEpProviderBase =
     BDDEndpointProvider<ComprehendClientConfiguration, ComprehendBuiltInParameters, ComprehendClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace Comprehend
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_COMPREHEND_EXTERN template class AWS_COMPREHEND_API Aws::Endpoint::EndpointProviderBase<
+    Comprehend::Endpoint::ComprehendClientConfiguration, Comprehend::Endpoint::ComprehendBuiltInParameters,
+    Comprehend::Endpoint::ComprehendClientContextParameters>;
+
+AWS_COMPREHEND_EXTERN template class AWS_COMPREHEND_API Aws::Endpoint::BDDEndpointProvider<
+    Comprehend::Endpoint::ComprehendClientConfiguration, Comprehend::Endpoint::ComprehendBuiltInParameters,
+    Comprehend::Endpoint::ComprehendClientContextParameters>;
+}  // namespace Endpoint
+
+namespace Comprehend {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

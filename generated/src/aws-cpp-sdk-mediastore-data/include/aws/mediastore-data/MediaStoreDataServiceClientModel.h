@@ -52,7 +52,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace MediaStoreData {
-using MediaStoreDataClientConfiguration = Aws::Client::GenericClientConfiguration;
 using MediaStoreDataEndpointProviderBase = Aws::MediaStoreData::Endpoint::MediaStoreDataEndpointProviderBase;
 using MediaStoreDataEndpointProvider = Aws::MediaStoreData::Endpoint::MediaStoreDataEndpointProvider;
 

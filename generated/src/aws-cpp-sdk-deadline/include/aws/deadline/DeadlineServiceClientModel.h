@@ -177,7 +177,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace deadline {
-using DeadlineClientConfiguration = Aws::Client::GenericClientConfiguration;
 using DeadlineEndpointProviderBase = Aws::deadline::Endpoint::DeadlineEndpointProviderBase;
 using DeadlineEndpointProvider = Aws::deadline::Endpoint::DeadlineEndpointProvider;
 

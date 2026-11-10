@@ -65,7 +65,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace WorkSpacesThinClient {
-using WorkSpacesThinClientClientConfiguration = Aws::Client::GenericClientConfiguration;
 using WorkSpacesThinClientEndpointProviderBase = Aws::WorkSpacesThinClient::Endpoint::WorkSpacesThinClientEndpointProviderBase;
 using WorkSpacesThinClientEndpointProvider = Aws::WorkSpacesThinClient::Endpoint::WorkSpacesThinClientEndpointProvider;
 

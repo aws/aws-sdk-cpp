@@ -135,7 +135,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace DeviceFarm {
-using DeviceFarmClientConfiguration = Aws::Client::GenericClientConfiguration;
 using DeviceFarmEndpointProviderBase = Aws::DeviceFarm::Endpoint::DeviceFarmEndpointProviderBase;
 using DeviceFarmEndpointProvider = Aws::DeviceFarm::Endpoint::DeviceFarmEndpointProvider;
 

@@ -61,27 +61,6 @@ class AWS_CLOUDFRONT_API CloudFrontClient : public Aws::Client::AWSXMLClient,
       std::shared_ptr<CloudFrontEndpointProviderBase> endpointProvider = nullptr,
       const Aws::CloudFront::CloudFrontClientConfiguration& clientConfiguration = Aws::CloudFront::CloudFrontClientConfiguration());
 
-  /* Legacy constructors due deprecation */
-  /**
-   * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client
-   * config is not specified, it will be initialized to default values.
-   */
-  CloudFrontClient(const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /**
-   * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
-   * is not specified, it will be initialized to default values.
-   */
-  CloudFrontClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /**
-   * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
-   * the default http client factory will be used
-   */
-  CloudFrontClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                   const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /* End of legacy constructors due deprecation */
   virtual ~CloudFrontClient();
 
   /**
@@ -5587,7 +5566,6 @@ class AWS_CLOUDFRONT_API CloudFrontClient : public Aws::Client::AWSXMLClient,
     return SubmitAsync(&CloudFrontClient::VerifyDnsConfiguration2020_05_31, request, handler, context);
   }
 
-  virtual void OverrideEndpoint(const Aws::String& endpoint);
   virtual std::shared_ptr<CloudFrontEndpointProviderBase>& accessEndpointProvider();
 
  private:

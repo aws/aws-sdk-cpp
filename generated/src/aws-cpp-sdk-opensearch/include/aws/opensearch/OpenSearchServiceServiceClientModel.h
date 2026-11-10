@@ -158,7 +158,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace OpenSearchService {
-using OpenSearchServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
 using OpenSearchServiceEndpointProviderBase = Aws::OpenSearchService::Endpoint::OpenSearchServiceEndpointProviderBase;
 using OpenSearchServiceEndpointProvider = Aws::OpenSearchService::Endpoint::OpenSearchServiceEndpointProvider;
 

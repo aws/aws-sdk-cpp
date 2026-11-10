@@ -78,7 +78,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace SupplyChain {
-using SupplyChainClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SupplyChainEndpointProviderBase = Aws::SupplyChain::Endpoint::SupplyChainEndpointProviderBase;
 using SupplyChainEndpointProvider = Aws::SupplyChain::Endpoint::SupplyChainEndpointProvider;
 

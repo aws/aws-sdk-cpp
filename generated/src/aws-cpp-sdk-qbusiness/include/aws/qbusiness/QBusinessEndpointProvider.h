@@ -4,24 +4,33 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/qbusiness/QBusinessClientConfiguration.h>
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
 
 namespace Aws {
 namespace QBusiness {
 namespace Endpoint {
+using QBusinessClientConfiguration = Aws::QBusiness::QBusinessClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using QBusinessClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using QBusinessClientConfiguration = Aws::Client::GenericClientConfiguration;
-using QBusinessBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_QBUSINESS_API QBusinessBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~QBusinessBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const QBusinessClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const QBusinessClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const QBusinessClientConfiguration& config);
+};
 
 /**
  * The type for the QBusiness Client Endpoint Provider.
@@ -34,6 +43,24 @@ using QBusinessEndpointProviderBase =
 using QBusinessDefaultEpProviderBase =
     BDDEndpointProvider<QBusinessClientConfiguration, QBusinessBuiltInParameters, QBusinessClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace QBusiness
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_QBUSINESS_EXTERN template class AWS_QBUSINESS_API
+    Aws::Endpoint::EndpointProviderBase<QBusiness::Endpoint::QBusinessClientConfiguration, QBusiness::Endpoint::QBusinessBuiltInParameters,
+                                        QBusiness::Endpoint::QBusinessClientContextParameters>;
+
+AWS_QBUSINESS_EXTERN template class AWS_QBUSINESS_API
+    Aws::Endpoint::BDDEndpointProvider<QBusiness::Endpoint::QBusinessClientConfiguration, QBusiness::Endpoint::QBusinessBuiltInParameters,
+                                       QBusiness::Endpoint::QBusinessClientContextParameters>;
+}  // namespace Endpoint
+
+namespace QBusiness {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

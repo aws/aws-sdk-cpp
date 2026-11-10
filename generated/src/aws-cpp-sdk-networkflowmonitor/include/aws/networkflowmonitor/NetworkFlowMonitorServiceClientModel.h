@@ -73,7 +73,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace NetworkFlowMonitor {
-using NetworkFlowMonitorClientConfiguration = Aws::Client::GenericClientConfiguration;
 using NetworkFlowMonitorEndpointProviderBase = Aws::NetworkFlowMonitor::Endpoint::NetworkFlowMonitorEndpointProviderBase;
 using NetworkFlowMonitorEndpointProvider = Aws::NetworkFlowMonitor::Endpoint::NetworkFlowMonitorEndpointProvider;
 

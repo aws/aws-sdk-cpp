@@ -4,8 +4,8 @@
  */
 
 #pragma once
+#include <aws/appconfig/AppConfigClientConfiguration.h>
 #include <aws/appconfig/AppConfig_EXPORTS.h>
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -14,14 +14,23 @@
 namespace Aws {
 namespace AppConfig {
 namespace Endpoint {
+using AppConfigClientConfiguration = Aws::AppConfig::AppConfigClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using AppConfigClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using AppConfigClientConfiguration = Aws::Client::GenericClientConfiguration;
-using AppConfigBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_APPCONFIG_API AppConfigBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~AppConfigBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const AppConfigClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const AppConfigClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const AppConfigClientConfiguration& config);
+};
 
 /**
  * The type for the AppConfig Client Endpoint Provider.
@@ -34,6 +43,24 @@ using AppConfigEndpointProviderBase =
 using AppConfigDefaultEpProviderBase =
     BDDEndpointProvider<AppConfigClientConfiguration, AppConfigBuiltInParameters, AppConfigClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace AppConfig
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_APPCONFIG_EXTERN template class AWS_APPCONFIG_API
+    Aws::Endpoint::EndpointProviderBase<AppConfig::Endpoint::AppConfigClientConfiguration, AppConfig::Endpoint::AppConfigBuiltInParameters,
+                                        AppConfig::Endpoint::AppConfigClientContextParameters>;
+
+AWS_APPCONFIG_EXTERN template class AWS_APPCONFIG_API
+    Aws::Endpoint::BDDEndpointProvider<AppConfig::Endpoint::AppConfigClientConfiguration, AppConfig::Endpoint::AppConfigBuiltInParameters,
+                                       AppConfig::Endpoint::AppConfigClientContextParameters>;
+}  // namespace Endpoint
+
+namespace AppConfig {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

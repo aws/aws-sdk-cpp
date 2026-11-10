@@ -88,7 +88,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace SSMContacts {
-using SSMContactsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SSMContactsEndpointProviderBase = Aws::SSMContacts::Endpoint::SSMContactsEndpointProviderBase;
 using SSMContactsEndpointProvider = Aws::SSMContacts::Endpoint::SSMContactsEndpointProvider;
 

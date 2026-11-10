@@ -76,7 +76,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace ComprehendMedical {
-using ComprehendMedicalClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ComprehendMedicalEndpointProviderBase = Aws::ComprehendMedical::Endpoint::ComprehendMedicalEndpointProviderBase;
 using ComprehendMedicalEndpointProvider = Aws::ComprehendMedical::Endpoint::ComprehendMedicalEndpointProvider;
 

@@ -63,10 +63,10 @@ class ClientHolder {
   CloudWatchLogsClient makeClient() {
     Aws::Client::ClientConfigurationInitValues cfgInit;
     cfgInit.shouldDisableIMDS = true;
-    Aws::Client::ClientConfiguration clientConfig(cfgInit);
+    Aws::CloudWatchLogs::CloudWatchLogsClientConfiguration clientConfig(cfgInit);
     clientConfig.region = Aws::Region::US_EAST_1;
     AWSCredentials credentials{"mock", "credentials"};
-    return CloudWatchLogsClient(credentials, clientConfig);
+    return CloudWatchLogsClient(credentials, nullptr, clientConfig);
   }
 
   CloudWatchLogsClient client;
@@ -124,7 +124,7 @@ TEST_F(CloudWatchLogsTest, ClientOperatorCopyMoveEquals) {
   {
     Aws::Client::ClientConfigurationInitValues cfgInit;
     cfgInit.shouldDisableIMDS = true;
-    Aws::Client::ClientConfiguration clientConfig(cfgInit);
+    Aws::CloudWatchLogs::CloudWatchLogsClientConfiguration clientConfig(cfgInit);
     CloudWatchLogsClient copyAssigned(clientConfig);
 
     mockResponse();
@@ -144,7 +144,7 @@ TEST_F(CloudWatchLogsTest, ClientOperatorCopyMoveEquals) {
   {
     Aws::Client::ClientConfigurationInitValues cfgInit;
     cfgInit.shouldDisableIMDS = true;
-    Aws::Client::ClientConfiguration clientConfig(cfgInit);
+    Aws::CloudWatchLogs::CloudWatchLogsClientConfiguration clientConfig(cfgInit);
     CloudWatchLogsClient moveAssigned(clientConfig);
 
     mockResponse();

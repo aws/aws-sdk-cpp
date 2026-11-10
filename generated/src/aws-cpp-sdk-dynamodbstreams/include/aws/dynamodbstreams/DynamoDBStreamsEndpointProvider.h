@@ -27,6 +27,9 @@ class AWS_DYNAMODBSTREAMS_API DynamoDBStreamsBuiltInParameters : public Aws::End
   using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
   virtual void SetFromClientConfiguration(const DynamoDBStreamsClientConfiguration& config);
   virtual void SetFromClientConfiguration(const DynamoDBStreamsClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const DynamoDBStreamsClientConfiguration& config);
 };
 
 /**

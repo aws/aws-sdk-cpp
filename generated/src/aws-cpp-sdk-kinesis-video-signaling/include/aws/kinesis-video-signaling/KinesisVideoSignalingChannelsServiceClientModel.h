@@ -48,7 +48,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace KinesisVideoSignalingChannels {
-using KinesisVideoSignalingChannelsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using KinesisVideoSignalingChannelsEndpointProviderBase =
     Aws::KinesisVideoSignalingChannels::Endpoint::KinesisVideoSignalingChannelsEndpointProviderBase;
 using KinesisVideoSignalingChannelsEndpointProvider =

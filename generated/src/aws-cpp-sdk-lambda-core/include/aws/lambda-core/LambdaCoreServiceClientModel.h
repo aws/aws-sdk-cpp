@@ -53,7 +53,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace LambdaCore {
-using LambdaCoreClientConfiguration = Aws::Client::GenericClientConfiguration;
 using LambdaCoreEndpointProviderBase = Aws::LambdaCore::Endpoint::LambdaCoreEndpointProviderBase;
 using LambdaCoreEndpointProvider = Aws::LambdaCore::Endpoint::LambdaCoreEndpointProvider;
 

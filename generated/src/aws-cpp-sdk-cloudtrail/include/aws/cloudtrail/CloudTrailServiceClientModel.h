@@ -120,7 +120,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace CloudTrail {
-using CloudTrailClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CloudTrailEndpointProviderBase = Aws::CloudTrail::Endpoint::CloudTrailEndpointProviderBase;
 using CloudTrailEndpointProvider = Aws::CloudTrail::Endpoint::CloudTrailEndpointProvider;
 

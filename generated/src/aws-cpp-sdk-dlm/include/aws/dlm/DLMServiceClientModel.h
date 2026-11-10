@@ -55,7 +55,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace DLM {
-using DLMClientConfiguration = Aws::Client::GenericClientConfiguration;
 using DLMEndpointProviderBase = Aws::DLM::Endpoint::DLMEndpointProviderBase;
 using DLMEndpointProvider = Aws::DLM::Endpoint::DLMEndpointProvider;
 

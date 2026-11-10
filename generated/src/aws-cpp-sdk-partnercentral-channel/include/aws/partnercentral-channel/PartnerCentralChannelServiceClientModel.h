@@ -63,7 +63,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace PartnerCentralChannel {
-using PartnerCentralChannelClientConfiguration = Aws::Client::GenericClientConfiguration;
 using PartnerCentralChannelEndpointProviderBase = Aws::PartnerCentralChannel::Endpoint::PartnerCentralChannelEndpointProviderBase;
 using PartnerCentralChannelEndpointProvider = Aws::PartnerCentralChannel::Endpoint::PartnerCentralChannelEndpointProvider;
 

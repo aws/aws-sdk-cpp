@@ -4,8 +4,8 @@
  */
 
 #pragma once
+#include <aws/accessanalyzer/AccessAnalyzerClientConfiguration.h>
 #include <aws/accessanalyzer/AccessAnalyzer_EXPORTS.h>
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -14,14 +14,23 @@
 namespace Aws {
 namespace AccessAnalyzer {
 namespace Endpoint {
+using AccessAnalyzerClientConfiguration = Aws::AccessAnalyzer::AccessAnalyzerClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using AccessAnalyzerClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using AccessAnalyzerClientConfiguration = Aws::Client::GenericClientConfiguration;
-using AccessAnalyzerBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_ACCESSANALYZER_API AccessAnalyzerBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~AccessAnalyzerBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const AccessAnalyzerClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const AccessAnalyzerClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const AccessAnalyzerClientConfiguration& config);
+};
 
 /**
  * The type for the AccessAnalyzer Client Endpoint Provider.
@@ -34,6 +43,24 @@ using AccessAnalyzerEndpointProviderBase =
 using AccessAnalyzerDefaultEpProviderBase =
     BDDEndpointProvider<AccessAnalyzerClientConfiguration, AccessAnalyzerBuiltInParameters, AccessAnalyzerClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace AccessAnalyzer
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_ACCESSANALYZER_EXTERN template class AWS_ACCESSANALYZER_API Aws::Endpoint::EndpointProviderBase<
+    AccessAnalyzer::Endpoint::AccessAnalyzerClientConfiguration, AccessAnalyzer::Endpoint::AccessAnalyzerBuiltInParameters,
+    AccessAnalyzer::Endpoint::AccessAnalyzerClientContextParameters>;
+
+AWS_ACCESSANALYZER_EXTERN template class AWS_ACCESSANALYZER_API Aws::Endpoint::BDDEndpointProvider<
+    AccessAnalyzer::Endpoint::AccessAnalyzerClientConfiguration, AccessAnalyzer::Endpoint::AccessAnalyzerBuiltInParameters,
+    AccessAnalyzer::Endpoint::AccessAnalyzerClientContextParameters>;
+}  // namespace Endpoint
+
+namespace AccessAnalyzer {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

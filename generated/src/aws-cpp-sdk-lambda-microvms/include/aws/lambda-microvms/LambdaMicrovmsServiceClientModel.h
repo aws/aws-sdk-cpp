@@ -72,7 +72,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace LambdaMicrovms {
-using LambdaMicrovmsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using LambdaMicrovmsEndpointProviderBase = Aws::LambdaMicrovms::Endpoint::LambdaMicrovmsEndpointProviderBase;
 using LambdaMicrovmsEndpointProvider = Aws::LambdaMicrovms::Endpoint::LambdaMicrovmsEndpointProvider;
 
