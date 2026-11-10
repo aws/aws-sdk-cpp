@@ -27,5 +27,9 @@ Aws::String UpgradeElasticsearchDomainRequest::SerializePayload() const {
     payload.WithBool("PerformCheckOnly", m_performCheckOnly);
   }
 
+  if (m_deploymentStrategyOptionsHasBeenSet) {
+    payload.WithObject("DeploymentStrategyOptions", m_deploymentStrategyOptions.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

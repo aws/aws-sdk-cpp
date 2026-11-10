@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/es/ElasticsearchServiceRequest.h>
 #include <aws/es/ElasticsearchService_EXPORTS.h>
+#include <aws/es/model/DeploymentStrategyOverrideOptions.h>
 
 #include <utility>
 
@@ -82,15 +83,38 @@ class UpgradeElasticsearchDomainRequest : public ElasticsearchServiceRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Overrides the deployment strategy for this upgrade. To run a cloned
+   * blue/green upgrade, set <code>DeploymentStrategy</code> to
+   * <code>ClonedBlueGreen</code>.</p>
+   */
+  inline const DeploymentStrategyOverrideOptions& GetDeploymentStrategyOptions() const { return m_deploymentStrategyOptions; }
+  inline bool DeploymentStrategyOptionsHasBeenSet() const { return m_deploymentStrategyOptionsHasBeenSet; }
+  template <typename DeploymentStrategyOptionsT = DeploymentStrategyOverrideOptions>
+  void SetDeploymentStrategyOptions(DeploymentStrategyOptionsT&& value) {
+    m_deploymentStrategyOptionsHasBeenSet = true;
+    m_deploymentStrategyOptions = std::forward<DeploymentStrategyOptionsT>(value);
+  }
+  template <typename DeploymentStrategyOptionsT = DeploymentStrategyOverrideOptions>
+  UpgradeElasticsearchDomainRequest& WithDeploymentStrategyOptions(DeploymentStrategyOptionsT&& value) {
+    SetDeploymentStrategyOptions(std::forward<DeploymentStrategyOptionsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_domainName;
 
   Aws::String m_targetVersion;
 
   bool m_performCheckOnly{false};
+
+  DeploymentStrategyOverrideOptions m_deploymentStrategyOptions;
   bool m_domainNameHasBeenSet = false;
   bool m_targetVersionHasBeenSet = false;
   bool m_performCheckOnlyHasBeenSet = false;
+  bool m_deploymentStrategyOptionsHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/SageMakerRequest.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
+#include <aws/sagemaker/model/PipelineManagedBy.h>
 #include <aws/sagemaker/model/SortOrder.h>
 #include <aws/sagemaker/model/SortPipelinesBy.h>
 
@@ -157,6 +158,24 @@ class ListPipelinesRequest : public SageMakerRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Filters the pipelines by who manages them. Specify <code>AWS</code> to return
+   * pipelines that AWS manages, or <code>CUSTOMER</code> to return pipelines that
+   * you created. If you don't specify a value, the response includes both.</p>
+   */
+  inline PipelineManagedBy GetManagedBy() const { return m_managedBy; }
+  inline bool ManagedByHasBeenSet() const { return m_managedByHasBeenSet; }
+  inline void SetManagedBy(PipelineManagedBy value) {
+    m_managedByHasBeenSet = true;
+    m_managedBy = value;
+  }
+  inline ListPipelinesRequest& WithManagedBy(PipelineManagedBy value) {
+    SetManagedBy(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_pipelineNamePrefix;
 
@@ -171,6 +190,8 @@ class ListPipelinesRequest : public SageMakerRequest {
   Aws::String m_nextToken;
 
   int m_maxResults{0};
+
+  PipelineManagedBy m_managedBy{PipelineManagedBy::NOT_SET};
   bool m_pipelineNamePrefixHasBeenSet = false;
   bool m_createdAfterHasBeenSet = false;
   bool m_createdBeforeHasBeenSet = false;
@@ -178,6 +199,7 @@ class ListPipelinesRequest : public SageMakerRequest {
   bool m_sortOrderHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
+  bool m_managedByHasBeenSet = false;
 };
 
 }  // namespace Model

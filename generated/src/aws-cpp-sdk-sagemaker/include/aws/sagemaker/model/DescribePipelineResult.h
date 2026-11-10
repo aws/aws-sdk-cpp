@@ -7,6 +7,7 @@
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/ParallelismConfiguration.h>
 #include <aws/sagemaker/model/PipelineStatus.h>
@@ -281,6 +282,29 @@ class DescribePipelineResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The aliases assigned to the pipeline version.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetPipelineVersionAliases() const { return m_pipelineVersionAliases; }
+  template <typename PipelineVersionAliasesT = Aws::Vector<Aws::String>>
+  void SetPipelineVersionAliases(PipelineVersionAliasesT&& value) {
+    m_pipelineVersionAliasesHasBeenSet = true;
+    m_pipelineVersionAliases = std::forward<PipelineVersionAliasesT>(value);
+  }
+  template <typename PipelineVersionAliasesT = Aws::Vector<Aws::String>>
+  DescribePipelineResult& WithPipelineVersionAliases(PipelineVersionAliasesT&& value) {
+    SetPipelineVersionAliases(std::forward<PipelineVersionAliasesT>(value));
+    return *this;
+  }
+  template <typename PipelineVersionAliasesT = Aws::String>
+  DescribePipelineResult& AddPipelineVersionAliases(PipelineVersionAliasesT&& value) {
+    m_pipelineVersionAliasesHasBeenSet = true;
+    m_pipelineVersionAliases.emplace_back(std::forward<PipelineVersionAliasesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -327,6 +351,8 @@ class DescribePipelineResult {
 
   Aws::String m_pipelineVersionDescription;
 
+  Aws::Vector<Aws::String> m_pipelineVersionAliases;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_pipelineArnHasBeenSet = false;
@@ -344,6 +370,7 @@ class DescribePipelineResult {
   bool m_parallelismConfigurationHasBeenSet = false;
   bool m_pipelineVersionDisplayNameHasBeenSet = false;
   bool m_pipelineVersionDescriptionHasBeenSet = false;
+  bool m_pipelineVersionAliasesHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -7,6 +7,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glue/Glue_EXPORTS.h>
+#include <aws/glue/model/DataQualityEvaluationRunMode.h>
 #include <aws/glue/model/DataSource.h>
 
 #include <utility>
@@ -123,6 +124,43 @@ class DataQualityResultFilterCriteria {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Filter results by how their evaluation run started: <code>ON_DEMAND</code> or
+   * <code>EVALUATION_CONFIG</code>. Results that no evaluation run produced match
+   * neither value.</p>
+   */
+  inline DataQualityEvaluationRunMode GetEvaluationRunMode() const { return m_evaluationRunMode; }
+  inline bool EvaluationRunModeHasBeenSet() const { return m_evaluationRunModeHasBeenSet; }
+  inline void SetEvaluationRunMode(DataQualityEvaluationRunMode value) {
+    m_evaluationRunModeHasBeenSet = true;
+    m_evaluationRunMode = value;
+  }
+  inline DataQualityResultFilterCriteria& WithEvaluationRunMode(DataQualityEvaluationRunMode value) {
+    SetEvaluationRunMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Filter results by the evaluation configuration name which started the
+   * evaluation run.</p>
+   */
+  inline const Aws::String& GetDataQualityEvaluationConfig() const { return m_dataQualityEvaluationConfig; }
+  inline bool DataQualityEvaluationConfigHasBeenSet() const { return m_dataQualityEvaluationConfigHasBeenSet; }
+  template <typename DataQualityEvaluationConfigT = Aws::String>
+  void SetDataQualityEvaluationConfig(DataQualityEvaluationConfigT&& value) {
+    m_dataQualityEvaluationConfigHasBeenSet = true;
+    m_dataQualityEvaluationConfig = std::forward<DataQualityEvaluationConfigT>(value);
+  }
+  template <typename DataQualityEvaluationConfigT = Aws::String>
+  DataQualityResultFilterCriteria& WithDataQualityEvaluationConfig(DataQualityEvaluationConfigT&& value) {
+    SetDataQualityEvaluationConfig(std::forward<DataQualityEvaluationConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   DataSource m_dataSource;
 
@@ -133,11 +171,17 @@ class DataQualityResultFilterCriteria {
   Aws::Utils::DateTime m_startedAfter{};
 
   Aws::Utils::DateTime m_startedBefore{};
+
+  DataQualityEvaluationRunMode m_evaluationRunMode{DataQualityEvaluationRunMode::NOT_SET};
+
+  Aws::String m_dataQualityEvaluationConfig;
   bool m_dataSourceHasBeenSet = false;
   bool m_jobNameHasBeenSet = false;
   bool m_jobRunIdHasBeenSet = false;
   bool m_startedAfterHasBeenSet = false;
   bool m_startedBeforeHasBeenSet = false;
+  bool m_evaluationRunModeHasBeenSet = false;
+  bool m_dataQualityEvaluationConfigHasBeenSet = false;
 };
 
 }  // namespace Model

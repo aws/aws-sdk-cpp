@@ -157,6 +157,27 @@ class ListPipelineExecutionsRequest : public SageMakerRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The alias of a pipeline version. The response includes only the executions of
+   * the version that has this alias when you make the request. If no version of the
+   * pipeline has this alias, the request fails with a <code>ResourceNotFound</code>
+   * error.</p>
+   */
+  inline const Aws::String& GetPipelineVersionAlias() const { return m_pipelineVersionAlias; }
+  inline bool PipelineVersionAliasHasBeenSet() const { return m_pipelineVersionAliasHasBeenSet; }
+  template <typename PipelineVersionAliasT = Aws::String>
+  void SetPipelineVersionAlias(PipelineVersionAliasT&& value) {
+    m_pipelineVersionAliasHasBeenSet = true;
+    m_pipelineVersionAlias = std::forward<PipelineVersionAliasT>(value);
+  }
+  template <typename PipelineVersionAliasT = Aws::String>
+  ListPipelineExecutionsRequest& WithPipelineVersionAlias(PipelineVersionAliasT&& value) {
+    SetPipelineVersionAlias(std::forward<PipelineVersionAliasT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_pipelineName;
 
@@ -171,6 +192,8 @@ class ListPipelineExecutionsRequest : public SageMakerRequest {
   Aws::String m_nextToken;
 
   int m_maxResults{0};
+
+  Aws::String m_pipelineVersionAlias;
   bool m_pipelineNameHasBeenSet = false;
   bool m_createdAfterHasBeenSet = false;
   bool m_createdBeforeHasBeenSet = false;
@@ -178,6 +201,7 @@ class ListPipelineExecutionsRequest : public SageMakerRequest {
   bool m_sortOrderHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
+  bool m_pipelineVersionAliasHasBeenSet = false;
 };
 
 }  // namespace Model

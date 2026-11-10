@@ -55,6 +55,15 @@ Aws::String CreatePipelineRequest::SerializePayload() const {
     payload.WithObject("ParallelismConfiguration", m_parallelismConfiguration.Jsonize());
   }
 
+  if (m_pipelineVersionAliasesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> pipelineVersionAliasesJsonList(m_pipelineVersionAliases.size());
+    for (unsigned pipelineVersionAliasesIndex = 0; pipelineVersionAliasesIndex < pipelineVersionAliasesJsonList.GetLength();
+         ++pipelineVersionAliasesIndex) {
+      pipelineVersionAliasesJsonList[pipelineVersionAliasesIndex].AsString(m_pipelineVersionAliases[pipelineVersionAliasesIndex]);
+    }
+    payload.WithArray("PipelineVersionAliases", std::move(pipelineVersionAliasesJsonList));
+  }
+
   return payload.View().WriteReadable();
 }
 

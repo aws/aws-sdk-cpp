@@ -107,6 +107,10 @@ Aws::String RegisterTaskDefinitionRequest::SerializePayload() const {
     payload.WithBool("enableFaultInjection", m_enableFaultInjection);
   }
 
+  if (m_trustedExecutionConfigurationHasBeenSet) {
+    payload.WithObject("trustedExecutionConfiguration", m_trustedExecutionConfiguration.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

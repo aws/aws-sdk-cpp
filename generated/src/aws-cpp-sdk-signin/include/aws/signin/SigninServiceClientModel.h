@@ -19,6 +19,7 @@
 /* End of generic header includes */
 
 /* Service model headers required in SigninClient header */
+#include <aws/signin/model/CreateBearerTokenResult.h>
 #include <aws/signin/model/CreateOAuth2TokenResult.h>
 #include <aws/signin/model/CreateOAuth2TokenWithIAMResult.h>
 #include <aws/signin/model/CreateOAuth2TokenWithTokenExchangeResult.h>
@@ -70,6 +71,7 @@ using SigninEndpointProvider = Aws::Signin::Endpoint::SigninEndpointProvider;
 
 namespace Model {
 /* Service model forward declarations required in SigninClient header */
+class CreateBearerTokenRequest;
 class CreateOAuth2TokenRequest;
 class CreateOAuth2TokenWithIAMRequest;
 class CreateOAuth2TokenWithTokenExchangeRequest;
@@ -85,6 +87,7 @@ class RevokeOAuth2TokenWithIAMRequest;
 /* End of service model forward declarations required in SigninClient header */
 
 /* Service model Outcome class definitions */
+typedef Aws::Utils::Outcome<CreateBearerTokenResult, SigninError> CreateBearerTokenOutcome;
 typedef Aws::Utils::Outcome<CreateOAuth2TokenResult, SigninError> CreateOAuth2TokenOutcome;
 typedef Aws::Utils::Outcome<CreateOAuth2TokenWithIAMResult, SigninError> CreateOAuth2TokenWithIAMOutcome;
 typedef Aws::Utils::Outcome<CreateOAuth2TokenWithTokenExchangeResult, SigninError> CreateOAuth2TokenWithTokenExchangeOutcome;
@@ -100,6 +103,7 @@ typedef Aws::Utils::Outcome<RevokeOAuth2TokenWithIAMResult, SigninError> RevokeO
 /* End of service model Outcome class definitions */
 
 /* Service model Outcome callable definitions */
+typedef std::future<CreateBearerTokenOutcome> CreateBearerTokenOutcomeCallable;
 typedef std::future<CreateOAuth2TokenOutcome> CreateOAuth2TokenOutcomeCallable;
 typedef std::future<CreateOAuth2TokenWithIAMOutcome> CreateOAuth2TokenWithIAMOutcomeCallable;
 typedef std::future<CreateOAuth2TokenWithTokenExchangeOutcome> CreateOAuth2TokenWithTokenExchangeOutcomeCallable;
@@ -118,6 +122,9 @@ typedef std::future<RevokeOAuth2TokenWithIAMOutcome> RevokeOAuth2TokenWithIAMOut
 class SigninClient;
 
 /* Service model async handlers definitions */
+typedef std::function<void(const SigninClient*, const Model::CreateBearerTokenRequest&, const Model::CreateBearerTokenOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateBearerTokenResponseReceivedHandler;
 typedef std::function<void(const SigninClient*, const Model::CreateOAuth2TokenRequest&, const Model::CreateOAuth2TokenOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateOAuth2TokenResponseReceivedHandler;

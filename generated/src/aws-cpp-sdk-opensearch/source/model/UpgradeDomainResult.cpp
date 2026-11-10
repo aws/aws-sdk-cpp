@@ -45,6 +45,10 @@ UpgradeDomainResult& UpgradeDomainResult::operator=(const Aws::AmazonWebServiceR
     }
     m_advancedOptionsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("DeploymentStrategyOptions")) {
+    m_deploymentStrategyOptions = jsonValue.GetObject("DeploymentStrategyOptions");
+    m_deploymentStrategyOptionsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("ChangeProgressDetails")) {
     m_changeProgressDetails = jsonValue.GetObject("ChangeProgressDetails");
     m_changeProgressDetailsHasBeenSet = true;

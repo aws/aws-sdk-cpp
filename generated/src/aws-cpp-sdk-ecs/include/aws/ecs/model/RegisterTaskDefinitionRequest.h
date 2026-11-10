@@ -18,6 +18,7 @@
 #include <aws/ecs/model/RuntimePlatform.h>
 #include <aws/ecs/model/Tag.h>
 #include <aws/ecs/model/TaskDefinitionPlacementConstraint.h>
+#include <aws/ecs/model/TrustedExecutionConfiguration.h>
 #include <aws/ecs/model/Volume.h>
 
 #include <utility>
@@ -476,7 +477,6 @@ class RegisterTaskDefinitionRequest : public ECSRequest {
    * data volumes in tasks</a> in the <i>Amazon ECS Developer Guide</i>.</p>
    * <p>For tasks using the Fargate launch type, the task requires the following
    * platforms:</p> <ul> <li> <p>Linux platform version <code>1.4.0</code> or
-   * later.</p> </li> <li> <p>Windows platform version <code>1.0.0</code> or
    * later.</p> </li> </ul>
    */
   inline const EphemeralStorage& GetEphemeralStorage() const { return m_ephemeralStorage; }
@@ -528,6 +528,27 @@ class RegisterTaskDefinitionRequest : public ECSRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The trusted execution configuration for tasks that use this task definition,
+   * including the isolation mode and, if configured, an attestation policy.</p>
+   *  <p>Trusted execution is supported only for Amazon ECS Managed
+   * Instances.</p>
+   */
+  inline const TrustedExecutionConfiguration& GetTrustedExecutionConfiguration() const { return m_trustedExecutionConfiguration; }
+  inline bool TrustedExecutionConfigurationHasBeenSet() const { return m_trustedExecutionConfigurationHasBeenSet; }
+  template <typename TrustedExecutionConfigurationT = TrustedExecutionConfiguration>
+  void SetTrustedExecutionConfiguration(TrustedExecutionConfigurationT&& value) {
+    m_trustedExecutionConfigurationHasBeenSet = true;
+    m_trustedExecutionConfiguration = std::forward<TrustedExecutionConfigurationT>(value);
+  }
+  template <typename TrustedExecutionConfigurationT = TrustedExecutionConfiguration>
+  RegisterTaskDefinitionRequest& WithTrustedExecutionConfiguration(TrustedExecutionConfigurationT&& value) {
+    SetTrustedExecutionConfiguration(std::forward<TrustedExecutionConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_family;
 
@@ -562,6 +583,8 @@ class RegisterTaskDefinitionRequest : public ECSRequest {
   RuntimePlatform m_runtimePlatform;
 
   bool m_enableFaultInjection{false};
+
+  TrustedExecutionConfiguration m_trustedExecutionConfiguration;
   bool m_familyHasBeenSet = false;
   bool m_taskRoleArnHasBeenSet = false;
   bool m_executionRoleArnHasBeenSet = false;
@@ -579,6 +602,7 @@ class RegisterTaskDefinitionRequest : public ECSRequest {
   bool m_ephemeralStorageHasBeenSet = false;
   bool m_runtimePlatformHasBeenSet = false;
   bool m_enableFaultInjectionHasBeenSet = false;
+  bool m_trustedExecutionConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

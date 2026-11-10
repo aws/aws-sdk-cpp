@@ -21,6 +21,7 @@
 #include <aws/sagemaker/model/ListAutoMLJobsPaginationTraits.h>
 #include <aws/sagemaker/model/ListCandidatesForAutoMLJobPaginationTraits.h>
 #include <aws/sagemaker/model/ListClusterEventsPaginationTraits.h>
+#include <aws/sagemaker/model/ListClusterExtensionsPaginationTraits.h>
 #include <aws/sagemaker/model/ListClusterNodesPaginationTraits.h>
 #include <aws/sagemaker/model/ListClusterSchedulerConfigsPaginationTraits.h>
 #include <aws/sagemaker/model/ListClustersPaginationTraits.h>
@@ -137,6 +138,9 @@ using ListCandidatesForAutoMLJobPaginator =
                                       Pagination::ListCandidatesForAutoMLJobPaginationTraits<SageMakerClient>>;
 using ListClusterEventsPaginator = Aws::Utils::Pagination::Paginator<SageMakerClient, Model::ListClusterEventsRequest,
                                                                      Pagination::ListClusterEventsPaginationTraits<SageMakerClient>>;
+using ListClusterExtensionsPaginator =
+    Aws::Utils::Pagination::Paginator<SageMakerClient, Model::ListClusterExtensionsRequest,
+                                      Pagination::ListClusterExtensionsPaginationTraits<SageMakerClient>>;
 using ListClusterNodesPaginator = Aws::Utils::Pagination::Paginator<SageMakerClient, Model::ListClusterNodesRequest,
                                                                     Pagination::ListClusterNodesPaginationTraits<SageMakerClient>>;
 using ListClustersPaginator = Aws::Utils::Pagination::Paginator<SageMakerClient, Model::ListClustersRequest,

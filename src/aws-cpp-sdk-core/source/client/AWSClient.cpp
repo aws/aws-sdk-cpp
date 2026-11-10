@@ -329,8 +329,9 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
 
         const DateTime attemptSentTime = DateTime::Now();
         httpRequest->SetSigningTimestampOverride(attemptSentTime + attemptSkew);
+        httpRequest->ClearResponseHeadersReceivedTime();
         outcome = AttemptOneRequest(httpRequest, request, signerName, signerRegion, signerServiceNameOverride);
-        const DateTime timeResponseReceived = DateTime::Now();
+        const DateTime timeResponseReceived = Aws::Internal::GetTimeResponseReceived(*httpRequest);
         outcome.SetRetryCount(retries);
         if (retries == 0)
         {
@@ -510,8 +511,9 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
         };
         const DateTime attemptSentTime = DateTime::Now();
         httpRequest->SetSigningTimestampOverride(attemptSentTime + attemptSkew);
+        httpRequest->ClearResponseHeadersReceivedTime();
         outcome = AttemptOneRequest(httpRequest, signerName, requestName, signerRegion, signerServiceNameOverride);
-        const DateTime timeResponseReceived = DateTime::Now();
+        const DateTime timeResponseReceived = Aws::Internal::GetTimeResponseReceived(*httpRequest);
         outcome.SetRetryCount(retries);
         if (retries == 0)
         {
@@ -818,6 +820,7 @@ std::shared_ptr<Aws::Http::HttpRequest> AWSClient::StartOneAttemptAsync(const st
 
     context->attemptSentTime = DateTime::Now();
     context->httpRequest->SetSigningTimestampOverride(context->attemptSentTime + context->attemptSkew);
+    context->httpRequest->ClearResponseHeadersReceivedTime();
 
     const char* signerRegion = context->signerRegion ? context->signerRegion->c_str() : nullptr;
     const char* signerServiceName = context->signerServiceName ? context->signerServiceName->c_str() : nullptr;
@@ -918,7 +921,7 @@ Http::HttpClient::AttemptOutcome AWSClient::OnAttemptCompleteAsync(const std::sh
     const Aws::AmazonWebServiceRequest& request = *context->request;
     HttpResponseOutcome outcome = std::move(outcomeParam);
 
-    const DateTime timeResponseReceived = DateTime::Now();
+    const DateTime timeResponseReceived = Aws::Internal::GetTimeResponseReceived(*context->httpRequest);
     outcome.SetRetryCount(context->retries);
     if (context->retries == 0)
     {

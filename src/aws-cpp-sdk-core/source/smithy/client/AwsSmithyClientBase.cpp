@@ -498,6 +498,7 @@ std::shared_ptr<Aws::Http::HttpRequest> AwsSmithyClientBase::AttemptOneRequestAs
     }
     pRequestCtx->m_timeRequestSent = Aws::Utils::DateTime::Now();
     pRequestCtx->m_httpRequest->SetSigningTimestampOverride(pRequestCtx->m_timeRequestSent + pRequestCtx->m_attemptSkew);
+    pRequestCtx->m_httpRequest->ClearResponseHeadersReceivedTime();
     SigningOutcome signingOutcome = TracingUtils::MakeCallWithTiming<SigningOutcome>([&]() -> SigningOutcome {
             return this->SignHttpRequest(pRequestCtx->m_httpRequest, *pRequestCtx);
         },
@@ -575,7 +576,7 @@ Aws::Http::HttpClient::AttemptOutcome AwsSmithyClientBase::HandleAsyncReply(std:
 {
     assert(pRequestCtx && httpResponse);
 
-    pRequestCtx->m_timeResponseReceived = Aws::Utils::DateTime::Now();
+    pRequestCtx->m_timeResponseReceived = Aws::Internal::GetTimeResponseReceived(*pRequestCtx->m_httpRequest);
 #if defined(AWS_CRT_HTTP_USE_ASYNC_IO)
     pRequestCtx->m_serviceCallTimer.reset();
 #endif

@@ -107,8 +107,10 @@ class UpdateDesignationResult {
 
   ///@{
   /**
-   * <p>The classification of this designation. MANAGED designations are
-   * system-defined and cannot be modified or deleted.</p>
+   * <p>The classification of this designation. Valid values:</p> <ul> <li> <p>
+   * <code>MANAGED</code> — System-defined designations that cannot be modified or
+   * deleted.</p> </li> <li> <p> <code>USER_CREATED</code> — Designations created
+   * through <code>CreateDesignation</code>.</p> </li> </ul>
    */
   inline DesignationType GetDesignationType() const { return m_designationType; }
   inline void SetDesignationType(DesignationType value) {
@@ -123,7 +125,7 @@ class UpdateDesignationResult {
 
   ///@{
   /**
-   * <p>The Cedar permit policy that governs what actions holders of this designation
+   * <p>The Cedar permit policy that governs the actions holders of this designation
    * are allowed to perform.</p>
    */
   inline const Aws::String& GetPolicy() const { return m_policy; }
@@ -141,9 +143,9 @@ class UpdateDesignationResult {
 
   ///@{
   /**
-   * <p>Whether deletion protection is enabled for this designation. When true,
-   * DeleteDesignation is rejected until protection is disabled via
-   * UpdateDesignation.</p>
+   * <p>Specifies whether deletion protection is enabled for this designation. When
+   * <code>true</code>, <code>DeleteDesignation</code> is rejected until protection
+   * is disabled through <code>UpdateDesignation</code>.</p>
    */
   inline bool GetDeletionProtection() const { return m_deletionProtection; }
   inline void SetDeletionProtection(bool value) {

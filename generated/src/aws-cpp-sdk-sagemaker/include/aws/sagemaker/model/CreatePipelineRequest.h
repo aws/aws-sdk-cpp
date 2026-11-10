@@ -209,6 +209,35 @@ class CreatePipelineRequest : public SageMakerRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The aliases to assign to the first version of the pipeline. You can use an
+   * alias instead of a pipeline version ID to start an execution, describe the
+   * pipeline, or list its executions. Each alias can contain 1-128 letters, numbers,
+   * periods (.), hyphens (-), and underscores (_), and can't consist of numbers
+   * only. An alias must be unique within the pipeline, and a version can have up to
+   * 10 aliases.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetPipelineVersionAliases() const { return m_pipelineVersionAliases; }
+  inline bool PipelineVersionAliasesHasBeenSet() const { return m_pipelineVersionAliasesHasBeenSet; }
+  template <typename PipelineVersionAliasesT = Aws::Vector<Aws::String>>
+  void SetPipelineVersionAliases(PipelineVersionAliasesT&& value) {
+    m_pipelineVersionAliasesHasBeenSet = true;
+    m_pipelineVersionAliases = std::forward<PipelineVersionAliasesT>(value);
+  }
+  template <typename PipelineVersionAliasesT = Aws::Vector<Aws::String>>
+  CreatePipelineRequest& WithPipelineVersionAliases(PipelineVersionAliasesT&& value) {
+    SetPipelineVersionAliases(std::forward<PipelineVersionAliasesT>(value));
+    return *this;
+  }
+  template <typename PipelineVersionAliasesT = Aws::String>
+  CreatePipelineRequest& AddPipelineVersionAliases(PipelineVersionAliasesT&& value) {
+    m_pipelineVersionAliasesHasBeenSet = true;
+    m_pipelineVersionAliases.emplace_back(std::forward<PipelineVersionAliasesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_pipelineName;
 
@@ -227,6 +256,8 @@ class CreatePipelineRequest : public SageMakerRequest {
   Aws::Vector<Tag> m_tags;
 
   ParallelismConfiguration m_parallelismConfiguration;
+
+  Aws::Vector<Aws::String> m_pipelineVersionAliases;
   bool m_pipelineNameHasBeenSet = false;
   bool m_pipelineDisplayNameHasBeenSet = false;
   bool m_pipelineDefinitionHasBeenSet = false;
@@ -236,6 +267,7 @@ class CreatePipelineRequest : public SageMakerRequest {
   bool m_roleArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_parallelismConfigurationHasBeenSet = false;
+  bool m_pipelineVersionAliasesHasBeenSet = false;
 };
 
 }  // namespace Model

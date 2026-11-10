@@ -22,8 +22,10 @@ namespace Model {
 /**
  * <p>Part of <code>ListCallerAccessGrantsResult</code>. Each entry includes the
  * permission level (READ, WRITE, or READWRITE) and the grant scope of the access
- * grant. If the grant also includes an application ARN, the grantee can only
- * access the S3 data through this application.</p><p><h3>See Also:</h3>   <a
+ * grant. Each entry also includes the ARN of the S3 Access Grants instance in
+ * which the grant was created. If the grant also includes an application ARN, the
+ * grantee can only access the S3 data through this application.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListCallerAccessGrantsEntry">AWS
  * API Reference</a></p>
  */
@@ -93,15 +95,37 @@ class ListCallerAccessGrantsEntry {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the S3 Access Grants instance in which the
+   * grant was created.</p>
+   */
+  inline const Aws::String& GetAccessGrantsInstanceArn() const { return m_accessGrantsInstanceArn; }
+  inline bool AccessGrantsInstanceArnHasBeenSet() const { return m_accessGrantsInstanceArnHasBeenSet; }
+  template <typename AccessGrantsInstanceArnT = Aws::String>
+  void SetAccessGrantsInstanceArn(AccessGrantsInstanceArnT&& value) {
+    m_accessGrantsInstanceArnHasBeenSet = true;
+    m_accessGrantsInstanceArn = std::forward<AccessGrantsInstanceArnT>(value);
+  }
+  template <typename AccessGrantsInstanceArnT = Aws::String>
+  ListCallerAccessGrantsEntry& WithAccessGrantsInstanceArn(AccessGrantsInstanceArnT&& value) {
+    SetAccessGrantsInstanceArn(std::forward<AccessGrantsInstanceArnT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Permission m_permission{Permission::NOT_SET};
 
   Aws::String m_grantScope;
 
   Aws::String m_applicationArn;
+
+  Aws::String m_accessGrantsInstanceArn;
   bool m_permissionHasBeenSet = false;
   bool m_grantScopeHasBeenSet = false;
   bool m_applicationArnHasBeenSet = false;
+  bool m_accessGrantsInstanceArnHasBeenSet = false;
 };
 
 }  // namespace Model

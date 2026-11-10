@@ -34,6 +34,10 @@ UpgradeElasticsearchDomainResult& UpgradeElasticsearchDomainResult::operator=(co
     m_performCheckOnly = jsonValue.GetBool("PerformCheckOnly");
     m_performCheckOnlyHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("DeploymentStrategyOptions")) {
+    m_deploymentStrategyOptions = jsonValue.GetObject("DeploymentStrategyOptions");
+    m_deploymentStrategyOptionsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("ChangeProgressDetails")) {
     m_changeProgressDetails = jsonValue.GetObject("ChangeProgressDetails");
     m_changeProgressDetailsHasBeenSet = true;

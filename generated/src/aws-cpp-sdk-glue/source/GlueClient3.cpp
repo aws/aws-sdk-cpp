@@ -20,6 +20,11 @@
 #include <aws/glue/GlueClient.h>
 #include <aws/glue/GlueEndpointProvider.h>
 #include <aws/glue/GlueErrorMarshaller.h>
+#include <aws/glue/model/UpdateIntegrationTablePropertiesRequest.h>
+#include <aws/glue/model/UpdateJobFromSourceControlRequest.h>
+#include <aws/glue/model/UpdateJobRequest.h>
+#include <aws/glue/model/UpdateMLTransformRequest.h>
+#include <aws/glue/model/UpdatePartitionRequest.h>
 #include <aws/glue/model/UpdateRegistryRequest.h>
 #include <aws/glue/model/UpdateSchemaRequest.h>
 #include <aws/glue/model/UpdateSourceControlFromJobRequest.h>
@@ -40,6 +45,36 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+UpdateIntegrationTablePropertiesOutcome GlueClient::UpdateIntegrationTableProperties(
+    const UpdateIntegrationTablePropertiesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateIntegrationTablePropertiesOutcome(result.GetResultWithOwnership())
+                            : UpdateIntegrationTablePropertiesOutcome(std::move(result.GetError()));
+}
+
+UpdateJobOutcome GlueClient::UpdateJob(const UpdateJobRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateJobOutcome(result.GetResultWithOwnership()) : UpdateJobOutcome(std::move(result.GetError()));
+}
+
+UpdateJobFromSourceControlOutcome GlueClient::UpdateJobFromSourceControl(const UpdateJobFromSourceControlRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateJobFromSourceControlOutcome(result.GetResultWithOwnership())
+                            : UpdateJobFromSourceControlOutcome(std::move(result.GetError()));
+}
+
+UpdateMLTransformOutcome GlueClient::UpdateMLTransform(const UpdateMLTransformRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateMLTransformOutcome(result.GetResultWithOwnership())
+                            : UpdateMLTransformOutcome(std::move(result.GetError()));
+}
+
+UpdatePartitionOutcome GlueClient::UpdatePartition(const UpdatePartitionRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdatePartitionOutcome(result.GetResultWithOwnership())
+                            : UpdatePartitionOutcome(std::move(result.GetError()));
+}
 
 UpdateRegistryOutcome GlueClient::UpdateRegistry(const UpdateRegistryRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);

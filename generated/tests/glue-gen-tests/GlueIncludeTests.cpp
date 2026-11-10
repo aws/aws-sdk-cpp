@@ -212,6 +212,8 @@
 #include <aws/glue/model/CreateCsvClassifierRequest.h>
 #include <aws/glue/model/CreateCustomEntityTypeRequest.h>
 #include <aws/glue/model/CreateCustomEntityTypeResult.h>
+#include <aws/glue/model/CreateDataQualityEvaluationConfigRequest.h>
+#include <aws/glue/model/CreateDataQualityEvaluationConfigResult.h>
 #include <aws/glue/model/CreateDataQualityRulesetRequest.h>
 #include <aws/glue/model/CreateDataQualityRulesetResult.h>
 #include <aws/glue/model/CreateDatabaseRequest.h>
@@ -290,7 +292,17 @@
 #include <aws/glue/model/DataQualityEncryption.h>
 #include <aws/glue/model/DataQualityEncryptionMode.h>
 #include <aws/glue/model/DataQualityEngine.h>
+#include <aws/glue/model/DataQualityEvaluationConfigAdditionalRunOptions.h>
+#include <aws/glue/model/DataQualityEvaluationConfigDataSource.h>
+#include <aws/glue/model/DataQualityEvaluationConfigGlueTables.h>
+#include <aws/glue/model/DataQualityEvaluationConfigLevel.h>
+#include <aws/glue/model/DataQualityEvaluationConfigListDataSource.h>
+#include <aws/glue/model/DataQualityEvaluationConfigListDetails.h>
+#include <aws/glue/model/DataQualityEvaluationConfigListGlueTables.h>
+#include <aws/glue/model/DataQualityEvaluationConfigManagedRuleset.h>
+#include <aws/glue/model/DataQualityEvaluationConfigTrigger.h>
 #include <aws/glue/model/DataQualityEvaluationRunAdditionalRunOptions.h>
+#include <aws/glue/model/DataQualityEvaluationRunMode.h>
 #include <aws/glue/model/DataQualityGlueTable.h>
 #include <aws/glue/model/DataQualityMetricValues.h>
 #include <aws/glue/model/DataQualityModelStatus.h>
@@ -352,6 +364,8 @@
 #include <aws/glue/model/DeleteCrawlerResult.h>
 #include <aws/glue/model/DeleteCustomEntityTypeRequest.h>
 #include <aws/glue/model/DeleteCustomEntityTypeResult.h>
+#include <aws/glue/model/DeleteDataQualityEvaluationConfigRequest.h>
+#include <aws/glue/model/DeleteDataQualityEvaluationConfigResult.h>
 #include <aws/glue/model/DeleteDataQualityRulesetRequest.h>
 #include <aws/glue/model/DeleteDataQualityRulesetResult.h>
 #include <aws/glue/model/DeleteDatabaseRequest.h>
@@ -541,6 +555,8 @@
 #include <aws/glue/model/GetDataCatalogEncryptionSettingsResult.h>
 #include <aws/glue/model/GetDataCatalogExportConfigurationRequest.h>
 #include <aws/glue/model/GetDataCatalogExportConfigurationResult.h>
+#include <aws/glue/model/GetDataQualityEvaluationConfigRequest.h>
+#include <aws/glue/model/GetDataQualityEvaluationConfigResult.h>
 #include <aws/glue/model/GetDataQualityModelRequest.h>
 #include <aws/glue/model/GetDataQualityModelResult.h>
 #include <aws/glue/model/GetDataQualityModelResultRequest.h>
@@ -806,6 +822,9 @@
 #include <aws/glue/model/ListCustomEntityTypesPaginationTraits.h>
 #include <aws/glue/model/ListCustomEntityTypesRequest.h>
 #include <aws/glue/model/ListCustomEntityTypesResult.h>
+#include <aws/glue/model/ListDataQualityEvaluationConfigsPaginationTraits.h>
+#include <aws/glue/model/ListDataQualityEvaluationConfigsRequest.h>
+#include <aws/glue/model/ListDataQualityEvaluationConfigsResult.h>
 #include <aws/glue/model/ListDataQualityResultsPaginationTraits.h>
 #include <aws/glue/model/ListDataQualityResultsRequest.h>
 #include <aws/glue/model/ListDataQualityResultsResult.h>
@@ -1252,6 +1271,8 @@
 #include <aws/glue/model/UpdateCrawlerScheduleRequest.h>
 #include <aws/glue/model/UpdateCrawlerScheduleResult.h>
 #include <aws/glue/model/UpdateCsvClassifierRequest.h>
+#include <aws/glue/model/UpdateDataQualityEvaluationConfigRequest.h>
+#include <aws/glue/model/UpdateDataQualityEvaluationConfigResult.h>
 #include <aws/glue/model/UpdateDataQualityRulesetRequest.h>
 #include <aws/glue/model/UpdateDataQualityRulesetResult.h>
 #include <aws/glue/model/UpdateDatabaseRequest.h>

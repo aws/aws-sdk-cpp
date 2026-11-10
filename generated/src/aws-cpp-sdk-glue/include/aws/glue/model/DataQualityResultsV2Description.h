@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glue/Glue_EXPORTS.h>
+#include <aws/glue/model/DataQualityEvaluationRunMode.h>
 #include <aws/glue/model/DataSource.h>
 
 #include <utility>
@@ -49,6 +50,47 @@ class DataQualityResultsV2Description {
   template <typename ResultIdT = Aws::String>
   DataQualityResultsV2Description& WithResultId(ResultIdT&& value) {
     SetResultId(std::forward<ResultIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>How the evaluation run that produced the result started:
+   * <code>ON_DEMAND</code> for a run started by
+   * <code>StartDataQualityRulesetEvaluationRun</code>, or
+   * <code>EVALUATION_CONFIG</code> for a run started by a data quality evaluation
+   * configuration. Not returned for results that no evaluation run produced, such as
+   * results from any ETL job.</p>
+   */
+  inline DataQualityEvaluationRunMode GetEvaluationRunMode() const { return m_evaluationRunMode; }
+  inline bool EvaluationRunModeHasBeenSet() const { return m_evaluationRunModeHasBeenSet; }
+  inline void SetEvaluationRunMode(DataQualityEvaluationRunMode value) {
+    m_evaluationRunModeHasBeenSet = true;
+    m_evaluationRunMode = value;
+  }
+  inline DataQualityResultsV2Description& WithEvaluationRunMode(DataQualityEvaluationRunMode value) {
+    SetEvaluationRunMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the data quality evaluation configuration that started the
+   * evaluation run, returned when <code>EvaluationRunMode</code> is
+   * <code>EVALUATION_CONFIG</code>.</p>
+   */
+  inline const Aws::String& GetDataQualityEvaluationConfig() const { return m_dataQualityEvaluationConfig; }
+  inline bool DataQualityEvaluationConfigHasBeenSet() const { return m_dataQualityEvaluationConfigHasBeenSet; }
+  template <typename DataQualityEvaluationConfigT = Aws::String>
+  void SetDataQualityEvaluationConfig(DataQualityEvaluationConfigT&& value) {
+    m_dataQualityEvaluationConfigHasBeenSet = true;
+    m_dataQualityEvaluationConfig = std::forward<DataQualityEvaluationConfigT>(value);
+  }
+  template <typename DataQualityEvaluationConfigT = Aws::String>
+  DataQualityResultsV2Description& WithDataQualityEvaluationConfig(DataQualityEvaluationConfigT&& value) {
+    SetDataQualityEvaluationConfig(std::forward<DataQualityEvaluationConfigT>(value));
     return *this;
   }
   ///@}
@@ -162,6 +204,10 @@ class DataQualityResultsV2Description {
  private:
   Aws::String m_resultId;
 
+  DataQualityEvaluationRunMode m_evaluationRunMode{DataQualityEvaluationRunMode::NOT_SET};
+
+  Aws::String m_dataQualityEvaluationConfig;
+
   DataSource m_dataSource;
 
   Aws::Utils::DateTime m_resultPublishedOn{};
@@ -172,6 +218,8 @@ class DataQualityResultsV2Description {
 
   Aws::Map<Aws::String, Aws::String> m_descriptors;
   bool m_resultIdHasBeenSet = false;
+  bool m_evaluationRunModeHasBeenSet = false;
+  bool m_dataQualityEvaluationConfigHasBeenSet = false;
   bool m_dataSourceHasBeenSet = false;
   bool m_resultPublishedOnHasBeenSet = false;
   bool m_dimensionsHasBeenSet = false;

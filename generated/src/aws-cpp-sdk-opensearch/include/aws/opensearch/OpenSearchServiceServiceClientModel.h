@@ -122,6 +122,7 @@
 #include <aws/opensearch/model/StartServiceSoftwareUpdateResult.h>
 #include <aws/opensearch/model/SwitchoverReplicationResult.h>
 #include <aws/opensearch/model/UpdateApplicationResult.h>
+#include <aws/opensearch/model/UpdateCloneResult.h>
 #include <aws/opensearch/model/UpdateDataSourceResult.h>
 #include <aws/opensearch/model/UpdateDirectQueryDataSourceResult.h>
 #include <aws/opensearch/model/UpdateDomainConfigResult.h>
@@ -257,6 +258,7 @@ class StartMigrationRequest;
 class StartServiceSoftwareUpdateRequest;
 class SwitchoverReplicationRequest;
 class UpdateApplicationRequest;
+class UpdateCloneRequest;
 class UpdateDataSourceRequest;
 class UpdateDirectQueryDataSourceRequest;
 class UpdateDomainConfigRequest;
@@ -362,6 +364,7 @@ typedef Aws::Utils::Outcome<StartMigrationResult, OpenSearchServiceError> StartM
 typedef Aws::Utils::Outcome<StartServiceSoftwareUpdateResult, OpenSearchServiceError> StartServiceSoftwareUpdateOutcome;
 typedef Aws::Utils::Outcome<SwitchoverReplicationResult, OpenSearchServiceError> SwitchoverReplicationOutcome;
 typedef Aws::Utils::Outcome<UpdateApplicationResult, OpenSearchServiceError> UpdateApplicationOutcome;
+typedef Aws::Utils::Outcome<UpdateCloneResult, OpenSearchServiceError> UpdateCloneOutcome;
 typedef Aws::Utils::Outcome<UpdateDataSourceResult, OpenSearchServiceError> UpdateDataSourceOutcome;
 typedef Aws::Utils::Outcome<UpdateDirectQueryDataSourceResult, OpenSearchServiceError> UpdateDirectQueryDataSourceOutcome;
 typedef Aws::Utils::Outcome<UpdateDomainConfigResult, OpenSearchServiceError> UpdateDomainConfigOutcome;
@@ -467,6 +470,7 @@ typedef std::future<StartMigrationOutcome> StartMigrationOutcomeCallable;
 typedef std::future<StartServiceSoftwareUpdateOutcome> StartServiceSoftwareUpdateOutcomeCallable;
 typedef std::future<SwitchoverReplicationOutcome> SwitchoverReplicationOutcomeCallable;
 typedef std::future<UpdateApplicationOutcome> UpdateApplicationOutcomeCallable;
+typedef std::future<UpdateCloneOutcome> UpdateCloneOutcomeCallable;
 typedef std::future<UpdateDataSourceOutcome> UpdateDataSourceOutcomeCallable;
 typedef std::future<UpdateDirectQueryDataSourceOutcome> UpdateDirectQueryDataSourceOutcomeCallable;
 typedef std::future<UpdateDomainConfigOutcome> UpdateDomainConfigOutcomeCallable;
@@ -768,6 +772,9 @@ typedef std::function<void(const OpenSearchServiceClient*, const Model::Switchov
 typedef std::function<void(const OpenSearchServiceClient*, const Model::UpdateApplicationRequest&, const Model::UpdateApplicationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateApplicationResponseReceivedHandler;
+typedef std::function<void(const OpenSearchServiceClient*, const Model::UpdateCloneRequest&, const Model::UpdateCloneOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateCloneResponseReceivedHandler;
 typedef std::function<void(const OpenSearchServiceClient*, const Model::UpdateDataSourceRequest&, const Model::UpdateDataSourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateDataSourceResponseReceivedHandler;
