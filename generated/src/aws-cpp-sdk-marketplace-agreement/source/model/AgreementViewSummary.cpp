@@ -281,6 +281,29 @@ AgreementViewSummary& AgreementViewSummary::operator=(const std::shared_ptr<Aws:
                       Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
                 }
                 m_endTimeBehaviorReasonCodeHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "freeTrialEndTime") {
+                auto tag = decoder->PopNextTagVal();
+                if (tag.has_value() &&
+                    tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+                {
+                  auto dateType = decoder->PeekType();
+                  if (dateType.has_value()) {
+                    if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                      auto val = decoder->PopNextFloatVal();
+                      if (val.has_value()) {
+                        m_freeTrialEndTime = Aws::Utils::DateTime(val.value());
+                      }
+                    } else {
+                      auto val = decoder->PopNextUnsignedIntVal();
+                      if (val.has_value()) {
+                        m_freeTrialEndTime = Aws::Utils::DateTime(val.value());
+                      }
+                    }
+                  }
+                }
+                m_freeTrialEndTimeHasBeenSet = true;
               } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
@@ -559,6 +582,29 @@ AgreementViewSummary& AgreementViewSummary::operator=(const std::shared_ptr<Aws:
                     Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
               }
               m_endTimeBehaviorReasonCodeHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "freeTrialEndTime") {
+              auto tag = decoder->PopNextTagVal();
+              if (tag.has_value() &&
+                  tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+              {
+                auto dateType = decoder->PeekType();
+                if (dateType.has_value()) {
+                  if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                    auto val = decoder->PopNextFloatVal();
+                    if (val.has_value()) {
+                      m_freeTrialEndTime = Aws::Utils::DateTime(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_freeTrialEndTime = Aws::Utils::DateTime(val.value());
+                    }
+                  }
+                }
+              }
+              m_freeTrialEndTimeHasBeenSet = true;
             } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
@@ -615,6 +661,9 @@ void AgreementViewSummary::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) cons
     mapSize++;
   }
   if (m_endTimeBehaviorReasonCodeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_freeTrialEndTimeHasBeenSet) {
     mapSize++;
   }
 
@@ -697,6 +746,12 @@ void AgreementViewSummary::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) cons
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("endTimeBehaviorReasonCode"));
     encoder.WriteText(Aws::Crt::ByteCursorFromCString(
         EndTimeBehaviorReasonCodeMapper::GetNameForEndTimeBehaviorReasonCode(m_endTimeBehaviorReasonCode).c_str()));
+  }
+
+  if (m_freeTrialEndTimeHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("freeTrialEndTime"));
+    encoder.WriteTag(1);  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+    encoder.WriteUInt(m_freeTrialEndTime.Seconds());
   }
 }
 

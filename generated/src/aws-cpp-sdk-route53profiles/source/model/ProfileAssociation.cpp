@@ -18,17 +18,9 @@ namespace Model {
 ProfileAssociation::ProfileAssociation(JsonView jsonValue) { *this = jsonValue; }
 
 ProfileAssociation& ProfileAssociation::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("CreationTime")) {
-    m_creationTime = jsonValue.GetDouble("CreationTime");
-    m_creationTimeHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("Id")) {
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ModificationTime")) {
-    m_modificationTime = jsonValue.GetDouble("ModificationTime");
-    m_modificationTimeHasBeenSet = true;
   }
   if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
@@ -54,22 +46,26 @@ ProfileAssociation& ProfileAssociation::operator=(JsonView jsonValue) {
     m_statusMessage = jsonValue.GetString("StatusMessage");
     m_statusMessageHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("CreationTime")) {
+    m_creationTime = jsonValue.GetDouble("CreationTime");
+    m_creationTimeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ModificationTime")) {
+    m_modificationTime = jsonValue.GetDouble("ModificationTime");
+    m_modificationTimeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Priority")) {
+    m_priority = jsonValue.GetInteger("Priority");
+    m_priorityHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue ProfileAssociation::Jsonize() const {
   JsonValue payload;
 
-  if (m_creationTimeHasBeenSet) {
-    payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
-  }
-
   if (m_idHasBeenSet) {
     payload.WithString("Id", m_id);
-  }
-
-  if (m_modificationTimeHasBeenSet) {
-    payload.WithDouble("ModificationTime", m_modificationTime.SecondsWithMSPrecision());
   }
 
   if (m_nameHasBeenSet) {
@@ -94,6 +90,18 @@ JsonValue ProfileAssociation::Jsonize() const {
 
   if (m_statusMessageHasBeenSet) {
     payload.WithString("StatusMessage", m_statusMessage);
+  }
+
+  if (m_creationTimeHasBeenSet) {
+    payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
+  }
+
+  if (m_modificationTimeHasBeenSet) {
+    payload.WithDouble("ModificationTime", m_modificationTime.SecondsWithMSPrecision());
+  }
+
+  if (m_priorityHasBeenSet) {
+    payload.WithInteger("Priority", m_priority);
   }
 
   return payload;

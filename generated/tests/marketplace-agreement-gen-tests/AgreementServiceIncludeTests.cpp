@@ -76,6 +76,7 @@
 #include <aws/marketplace-agreement/model/FixedPercentage.h>
 #include <aws/marketplace-agreement/model/FixedUpfrontPricingTerm.h>
 #include <aws/marketplace-agreement/model/FreeTrialPricingTerm.h>
+#include <aws/marketplace-agreement/model/FreeTrialSummary.h>
 #include <aws/marketplace-agreement/model/GetAgreementCancellationRequestRequest.h>
 #include <aws/marketplace-agreement/model/GetAgreementCancellationRequestResult.h>
 #include <aws/marketplace-agreement/model/GetAgreementEntitlementsPaginationTraits.h>

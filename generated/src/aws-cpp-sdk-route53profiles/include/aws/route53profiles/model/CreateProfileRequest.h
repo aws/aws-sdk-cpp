@@ -33,6 +33,24 @@ class CreateProfileRequest : public Route53ProfilesRequest {
 
   ///@{
   /**
+   * <p> A name for the Profile. </p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  CreateProfileRequest& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p> <code>ClientToken</code> is an idempotency token that ensures a call to
    * <code>CreateProfile</code> completes only once. You choose the value to pass.
    * For example, an issue might prevent you from getting a response from
@@ -50,24 +68,6 @@ class CreateProfileRequest : public Route53ProfilesRequest {
   template <typename ClientTokenT = Aws::String>
   CreateProfileRequest& WithClientToken(ClientTokenT&& value) {
     SetClientToken(std::forward<ClientTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p> A name for the Profile. </p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  CreateProfileRequest& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
     return *this;
   }
   ///@}
@@ -97,13 +97,13 @@ class CreateProfileRequest : public Route53ProfilesRequest {
   }
   ///@}
  private:
-  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-
   Aws::String m_name;
 
+  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+
   Aws::Vector<Tag> m_tags;
-  bool m_clientTokenHasBeenSet = true;
   bool m_nameHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
   bool m_tagsHasBeenSet = false;
 };
 

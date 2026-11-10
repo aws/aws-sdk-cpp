@@ -31,6 +31,10 @@ Aws::String DescribeRuleGroupRequest::SerializePayload() const {
     payload.WithBool("AnalyzeRuleGroup", m_analyzeRuleGroup);
   }
 
+  if (m_ruleOutputFormatHasBeenSet) {
+    payload.WithString("RuleOutputFormat", RuleOutputFormatMapper::GetNameForRuleOutputFormat(m_ruleOutputFormat));
+  }
+
   return payload.View().WriteReadable();
 }
 

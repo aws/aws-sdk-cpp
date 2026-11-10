@@ -9,6 +9,7 @@
 #include <aws/bedrock-agentcore-control/model/AuthorizerConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/AuthorizerType.h>
 #include <aws/bedrock-agentcore-control/model/CustomTransformConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/DomainOverride.h>
 #include <aws/bedrock-agentcore-control/model/ExceptionLevel.h>
 #include <aws/bedrock-agentcore-control/model/GatewayInterceptorConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/GatewayPolicyEngineConfiguration.h>
@@ -296,6 +297,26 @@ class UpdateGatewayRequest : public BedrockAgentCoreControlRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The updated public domain names that the gateway advertises in its OAuth
+   * discovery URLs instead of the inbound Host header. Specify this when clients
+   * reach the gateway through your own proxy or custom domain.</p>
+   */
+  inline const DomainOverride& GetDomainOverride() const { return m_domainOverride; }
+  inline bool DomainOverrideHasBeenSet() const { return m_domainOverrideHasBeenSet; }
+  template <typename DomainOverrideT = DomainOverride>
+  void SetDomainOverride(DomainOverrideT&& value) {
+    m_domainOverrideHasBeenSet = true;
+    m_domainOverride = std::forward<DomainOverrideT>(value);
+  }
+  template <typename DomainOverrideT = DomainOverride>
+  UpdateGatewayRequest& WithDomainOverride(DomainOverrideT&& value) {
+    SetDomainOverride(std::forward<DomainOverrideT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_gatewayIdentifier;
 
@@ -324,6 +345,8 @@ class UpdateGatewayRequest : public BedrockAgentCoreControlRequest {
   ExceptionLevel m_exceptionLevel{ExceptionLevel::NOT_SET};
 
   WafConfiguration m_wafConfiguration;
+
+  DomainOverride m_domainOverride;
   bool m_gatewayIdentifierHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
@@ -338,6 +361,7 @@ class UpdateGatewayRequest : public BedrockAgentCoreControlRequest {
   bool m_policyEngineConfigurationHasBeenSet = false;
   bool m_exceptionLevelHasBeenSet = false;
   bool m_wafConfigurationHasBeenSet = false;
+  bool m_domainOverrideHasBeenSet = false;
 };
 
 }  // namespace Model

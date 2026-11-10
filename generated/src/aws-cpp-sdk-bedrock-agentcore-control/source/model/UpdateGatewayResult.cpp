@@ -117,6 +117,10 @@ UpdateGatewayResult& UpdateGatewayResult::operator=(const Aws::AmazonWebServiceR
     m_wafConfiguration = jsonValue.GetObject("wafConfiguration");
     m_wafConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("domainOverride")) {
+    m_domainOverride = jsonValue.GetObject("domainOverride");
+    m_domainOverrideHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

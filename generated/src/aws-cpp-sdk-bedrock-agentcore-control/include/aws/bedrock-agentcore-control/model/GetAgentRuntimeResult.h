@@ -15,6 +15,8 @@
 #include <aws/bedrock-agentcore-control/model/NetworkConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/ProtocolConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/RequestHeaderConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/ResourceConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/RuntimeHooksConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/RuntimeMetadataConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/WorkloadIdentityDetails.h>
 #include <aws/core/http/HttpResponse.h>
@@ -206,6 +208,23 @@ class GetAgentRuntimeResult {
   template <typename LifecycleConfigurationT = LifecycleConfiguration>
   GetAgentRuntimeResult& WithLifecycleConfiguration(LifecycleConfigurationT&& value) {
     SetLifecycleConfiguration(std::forward<LifecycleConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The lifecycle hooks configuration for the AgentCore Runtime.</p>
+   */
+  inline const RuntimeHooksConfiguration& GetHooksConfiguration() const { return m_hooksConfiguration; }
+  template <typename HooksConfigurationT = RuntimeHooksConfiguration>
+  void SetHooksConfiguration(HooksConfigurationT&& value) {
+    m_hooksConfigurationHasBeenSet = true;
+    m_hooksConfiguration = std::forward<HooksConfigurationT>(value);
+  }
+  template <typename HooksConfigurationT = RuntimeHooksConfiguration>
+  GetAgentRuntimeResult& WithHooksConfiguration(HooksConfigurationT&& value) {
+    SetHooksConfiguration(std::forward<HooksConfigurationT>(value));
     return *this;
   }
   ///@}
@@ -454,6 +473,29 @@ class GetAgentRuntimeResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The resource configurations for the AgentCore Runtime.</p>
+   */
+  inline const Aws::Vector<ResourceConfiguration>& GetResourceConfigurations() const { return m_resourceConfigurations; }
+  template <typename ResourceConfigurationsT = Aws::Vector<ResourceConfiguration>>
+  void SetResourceConfigurations(ResourceConfigurationsT&& value) {
+    m_resourceConfigurationsHasBeenSet = true;
+    m_resourceConfigurations = std::forward<ResourceConfigurationsT>(value);
+  }
+  template <typename ResourceConfigurationsT = Aws::Vector<ResourceConfiguration>>
+  GetAgentRuntimeResult& WithResourceConfigurations(ResourceConfigurationsT&& value) {
+    SetResourceConfigurations(std::forward<ResourceConfigurationsT>(value));
+    return *this;
+  }
+  template <typename ResourceConfigurationsT = ResourceConfiguration>
+  GetAgentRuntimeResult& AddResourceConfigurations(ResourceConfigurationsT&& value) {
+    m_resourceConfigurationsHasBeenSet = true;
+    m_resourceConfigurations.emplace_back(std::forward<ResourceConfigurationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -490,6 +532,8 @@ class GetAgentRuntimeResult {
 
   LifecycleConfiguration m_lifecycleConfiguration;
 
+  RuntimeHooksConfiguration m_hooksConfiguration;
+
   Aws::String m_failureReason;
 
   Aws::String m_description;
@@ -516,6 +560,8 @@ class GetAgentRuntimeResult {
 
   Aws::Vector<AllowedPort> m_allowedPorts;
 
+  Aws::Vector<ResourceConfiguration> m_resourceConfigurations;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_agentRuntimeArnHasBeenSet = false;
@@ -528,6 +574,7 @@ class GetAgentRuntimeResult {
   bool m_networkConfigurationHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_lifecycleConfigurationHasBeenSet = false;
+  bool m_hooksConfigurationHasBeenSet = false;
   bool m_failureReasonHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_workloadIdentityDetailsHasBeenSet = false;
@@ -541,6 +588,7 @@ class GetAgentRuntimeResult {
   bool m_capacityProviderConfigurationHasBeenSet = false;
   bool m_platformVersionHasBeenSet = false;
   bool m_allowedPortsHasBeenSet = false;
+  bool m_resourceConfigurationsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

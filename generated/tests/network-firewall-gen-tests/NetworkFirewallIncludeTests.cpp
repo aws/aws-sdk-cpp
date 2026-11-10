@@ -21,6 +21,7 @@
 #include <aws/network-firewall/model/AcceptNetworkFirewallTransitGatewayAttachmentRequest.h>
 #include <aws/network-firewall/model/AcceptNetworkFirewallTransitGatewayAttachmentResult.h>
 #include <aws/network-firewall/model/ActionDefinition.h>
+#include <aws/network-firewall/model/ActionScope.h>
 #include <aws/network-firewall/model/Address.h>
 #include <aws/network-firewall/model/AnalysisReport.h>
 #include <aws/network-firewall/model/AnalysisResult.h>
@@ -50,6 +51,8 @@
 #include <aws/network-firewall/model/CreateContainerAssociationResult.h>
 #include <aws/network-firewall/model/CreateFirewallPolicyRequest.h>
 #include <aws/network-firewall/model/CreateFirewallPolicyResult.h>
+#include <aws/network-firewall/model/CreateFirewallPolicyV2Request.h>
+#include <aws/network-firewall/model/CreateFirewallPolicyV2Result.h>
 #include <aws/network-firewall/model/CreateFirewallRequest.h>
 #include <aws/network-firewall/model/CreateFirewallResult.h>
 #include <aws/network-firewall/model/CreateProxyConfigurationRequest.h>
@@ -74,6 +77,8 @@
 #include <aws/network-firewall/model/DeleteContainerAssociationResult.h>
 #include <aws/network-firewall/model/DeleteFirewallPolicyRequest.h>
 #include <aws/network-firewall/model/DeleteFirewallPolicyResult.h>
+#include <aws/network-firewall/model/DeleteFirewallPolicyV2Request.h>
+#include <aws/network-firewall/model/DeleteFirewallPolicyV2Result.h>
 #include <aws/network-firewall/model/DeleteFirewallRequest.h>
 #include <aws/network-firewall/model/DeleteFirewallResult.h>
 #include <aws/network-firewall/model/DeleteNetworkFirewallTransitGatewayAttachmentRequest.h>
@@ -100,6 +105,8 @@
 #include <aws/network-firewall/model/DescribeFirewallMetadataResult.h>
 #include <aws/network-firewall/model/DescribeFirewallPolicyRequest.h>
 #include <aws/network-firewall/model/DescribeFirewallPolicyResult.h>
+#include <aws/network-firewall/model/DescribeFirewallPolicyV2Request.h>
+#include <aws/network-firewall/model/DescribeFirewallPolicyV2Result.h>
 #include <aws/network-firewall/model/DescribeFirewallRequest.h>
 #include <aws/network-firewall/model/DescribeFirewallResult.h>
 #include <aws/network-firewall/model/DescribeFlowOperationRequest.h>
@@ -144,6 +151,15 @@
 #include <aws/network-firewall/model/FirewallPolicyErrorCode.h>
 #include <aws/network-firewall/model/FirewallPolicyMetadata.h>
 #include <aws/network-firewall/model/FirewallPolicyResponse.h>
+#include <aws/network-firewall/model/FirewallPolicyV2.h>
+#include <aws/network-firewall/model/FirewallPolicyV2Metadata.h>
+#include <aws/network-firewall/model/FirewallPolicyV2Response.h>
+#include <aws/network-firewall/model/FirewallRule.h>
+#include <aws/network-firewall/model/FirewallRuleAction.h>
+#include <aws/network-firewall/model/FirewallRuleGroup.h>
+#include <aws/network-firewall/model/FirewallRuleGroupEntry.h>
+#include <aws/network-firewall/model/FirewallRuleProtocol.h>
+#include <aws/network-firewall/model/FirewallRulesSource.h>
 #include <aws/network-firewall/model/FirewallStatus.h>
 #include <aws/network-firewall/model/FirewallStatusValue.h>
 #include <aws/network-firewall/model/Flow.h>
@@ -159,11 +175,16 @@
 #include <aws/network-firewall/model/GetAnalysisReportResultsResult.h>
 #include <aws/network-firewall/model/Header.h>
 #include <aws/network-firewall/model/Hits.h>
+#include <aws/network-firewall/model/HookKey.h>
 #include <aws/network-firewall/model/IPAddressType.h>
 #include <aws/network-firewall/model/IPSet.h>
 #include <aws/network-firewall/model/IPSetMetadata.h>
 #include <aws/network-firewall/model/IPSetReference.h>
 #include <aws/network-firewall/model/IdentifiedType.h>
+#include <aws/network-firewall/model/IpsRuleGroup.h>
+#include <aws/network-firewall/model/IpsRuleGroupEntry.h>
+#include <aws/network-firewall/model/IpsRuleGroupOverride.h>
+#include <aws/network-firewall/model/IpsRulesSource.h>
 #include <aws/network-firewall/model/ListAnalysisReportsPaginationTraits.h>
 #include <aws/network-firewall/model/ListAnalysisReportsRequest.h>
 #include <aws/network-firewall/model/ListAnalysisReportsResult.h>
@@ -173,6 +194,9 @@
 #include <aws/network-firewall/model/ListFirewallPoliciesPaginationTraits.h>
 #include <aws/network-firewall/model/ListFirewallPoliciesRequest.h>
 #include <aws/network-firewall/model/ListFirewallPoliciesResult.h>
+#include <aws/network-firewall/model/ListFirewallPoliciesV2PaginationTraits.h>
+#include <aws/network-firewall/model/ListFirewallPoliciesV2Request.h>
+#include <aws/network-firewall/model/ListFirewallPoliciesV2Result.h>
 #include <aws/network-firewall/model/ListFirewallsPaginationTraits.h>
 #include <aws/network-firewall/model/ListFirewallsRequest.h>
 #include <aws/network-firewall/model/ListFirewallsResult.h>
@@ -217,6 +241,8 @@
 #include <aws/network-firewall/model/OverrideAction.h>
 #include <aws/network-firewall/model/PerObjectStatus.h>
 #include <aws/network-firewall/model/PerObjectSyncStatus.h>
+#include <aws/network-firewall/model/PolicyDefaultAction.h>
+#include <aws/network-firewall/model/PolicyMode.h>
 #include <aws/network-firewall/model/PolicyVariables.h>
 #include <aws/network-firewall/model/PortRange.h>
 #include <aws/network-firewall/model/PortSet.h>
@@ -257,8 +283,10 @@
 #include <aws/network-firewall/model/RuleGroupRequestPhase.h>
 #include <aws/network-firewall/model/RuleGroupResponse.h>
 #include <aws/network-firewall/model/RuleGroupType.h>
+#include <aws/network-firewall/model/RuleMetadata.h>
 #include <aws/network-firewall/model/RuleOption.h>
 #include <aws/network-firewall/model/RuleOrder.h>
+#include <aws/network-firewall/model/RuleOutputFormat.h>
 #include <aws/network-firewall/model/RuleSummary.h>
 #include <aws/network-firewall/model/RuleVariables.h>
 #include <aws/network-firewall/model/RulesSource.h>
@@ -275,6 +303,7 @@
 #include <aws/network-firewall/model/StartFlowFlushResult.h>
 #include <aws/network-firewall/model/StatefulAction.h>
 #include <aws/network-firewall/model/StatefulEngineOptions.h>
+#include <aws/network-firewall/model/StatefulEngineOptionsV2.h>
 #include <aws/network-firewall/model/StatefulRule.h>
 #include <aws/network-firewall/model/StatefulRuleDirection.h>
 #include <aws/network-firewall/model/StatefulRuleGroupOverride.h>
@@ -285,6 +314,7 @@
 #include <aws/network-firewall/model/StatelessRuleGroupReference.h>
 #include <aws/network-firewall/model/StatelessRulesAndCustomActions.h>
 #include <aws/network-firewall/model/StreamExceptionPolicy.h>
+#include <aws/network-firewall/model/StreamExceptionPolicyV2.h>
 #include <aws/network-firewall/model/SubnetMapping.h>
 #include <aws/network-firewall/model/SubscriptionStatus.h>
 #include <aws/network-firewall/model/Summary.h>
@@ -325,6 +355,8 @@
 #include <aws/network-firewall/model/UpdateFirewallPolicyChangeProtectionResult.h>
 #include <aws/network-firewall/model/UpdateFirewallPolicyRequest.h>
 #include <aws/network-firewall/model/UpdateFirewallPolicyResult.h>
+#include <aws/network-firewall/model/UpdateFirewallPolicyV2Request.h>
+#include <aws/network-firewall/model/UpdateFirewallPolicyV2Result.h>
 #include <aws/network-firewall/model/UpdateLoggingConfigurationRequest.h>
 #include <aws/network-firewall/model/UpdateLoggingConfigurationResult.h>
 #include <aws/network-firewall/model/UpdateProxyConfigurationRequest.h>

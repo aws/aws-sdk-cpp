@@ -62,6 +62,7 @@
 #include <aws/bedrock-agentcore-control/model/BrowserSigningConfigOutput.h>
 #include <aws/bedrock-agentcore-control/model/BrowserStatus.h>
 #include <aws/bedrock-agentcore-control/model/BrowserSummary.h>
+#include <aws/bedrock-agentcore-control/model/BuildLifecycleHooks.h>
 #include <aws/bedrock-agentcore-control/model/CapacityProviderConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/CapacityProviderStatus.h>
 #include <aws/bedrock-agentcore-control/model/CapacityProviderStatusCode.h>
@@ -267,6 +268,7 @@
 #include <aws/bedrock-agentcore-control/model/DescriptorType.h>
 #include <aws/bedrock-agentcore-control/model/Descriptors.h>
 #include <aws/bedrock-agentcore-control/model/DimensionRatingScale.h>
+#include <aws/bedrock-agentcore-control/model/DomainOverride.h>
 #include <aws/bedrock-agentcore-control/model/DraftStatus.h>
 #include <aws/bedrock-agentcore-control/model/EbsVolumeConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/EbsVolumeType.h>
@@ -455,6 +457,7 @@
 #include <aws/bedrock-agentcore-control/model/HttpApiSchemaConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/HttpConnectorSource.h>
 #include <aws/bedrock-agentcore-control/model/HttpConnectorTargetConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/HttpPostLifecycleHookAction.h>
 #include <aws/bedrock-agentcore-control/model/HttpTargetConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/IamCredentialProvider.h>
 #include <aws/bedrock-agentcore-control/model/IamPrincipal.h>
@@ -491,6 +494,8 @@
 #include <aws/bedrock-agentcore-control/model/LaunchTemplateSource.h>
 #include <aws/bedrock-agentcore-control/model/LicenseSpecification.h>
 #include <aws/bedrock-agentcore-control/model/LifecycleConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/LifecycleHook.h>
+#include <aws/bedrock-agentcore-control/model/LifecycleHookAction.h>
 #include <aws/bedrock-agentcore-control/model/LimitEntry.h>
 #include <aws/bedrock-agentcore-control/model/LinkedinOauth2ProviderConfigInput.h>
 #include <aws/bedrock-agentcore-control/model/LinkedinOauth2ProviderConfigOutput.h>
@@ -745,6 +750,7 @@
 #include <aws/bedrock-agentcore-control/model/ResetTokenVaultKeyMaterialRequest.h>
 #include <aws/bedrock-agentcore-control/model/ResetTokenVaultKeyMaterialResult.h>
 #include <aws/bedrock-agentcore-control/model/Resource.h>
+#include <aws/bedrock-agentcore-control/model/ResourceConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/ResourceLocation.h>
 #include <aws/bedrock-agentcore-control/model/ResourceType.h>
 #include <aws/bedrock-agentcore-control/model/RestApiMethod.h>
@@ -754,6 +760,7 @@
 #include <aws/bedrock-agentcore-control/model/RotatePaymentConnectorCredentialsResult.h>
 #include <aws/bedrock-agentcore-control/model/RouteToTargetAction.h>
 #include <aws/bedrock-agentcore-control/model/Rule.h>
+#include <aws/bedrock-agentcore-control/model/RuntimeHooksConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/RuntimeMetadataConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/RuntimeTargetConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/S3CertificateConfiguration.h>

@@ -61,6 +61,8 @@
 #include <aws/route53profiles/model/TagResourceResult.h>
 #include <aws/route53profiles/model/UntagResourceRequest.h>
 #include <aws/route53profiles/model/UntagResourceResult.h>
+#include <aws/route53profiles/model/UpdateProfileAssociationRequest.h>
+#include <aws/route53profiles/model/UpdateProfileAssociationResult.h>
 #include <aws/route53profiles/model/UpdateProfileResourceAssociationRequest.h>
 #include <aws/route53profiles/model/UpdateProfileResourceAssociationResult.h>
 

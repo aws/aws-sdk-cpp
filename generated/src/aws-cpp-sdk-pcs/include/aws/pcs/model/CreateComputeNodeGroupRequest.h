@@ -13,6 +13,7 @@
 #include <aws/pcs/model/ComputeNodeGroupSlurmConfigurationRequest.h>
 #include <aws/pcs/model/CustomLaunchTemplate.h>
 #include <aws/pcs/model/InstanceConfig.h>
+#include <aws/pcs/model/LaunchTemplateMode.h>
 #include <aws/pcs/model/NodeLifecycleActionsRequest.h>
 #include <aws/pcs/model/PurchaseOption.h>
 #include <aws/pcs/model/ScalingConfigurationRequest.h>
@@ -39,6 +40,89 @@ class CreateComputeNodeGroupRequest : public PCSRequest {
   AWS_PCS_API Aws::String SerializePayload() const override;
 
   AWS_PCS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
+  /**
+   * <p> The ID of the Amazon Machine Image (AMI) that PCS uses to launch compute
+   * nodes (Amazon EC2 instances). This value overrides the AMI ID in the custom
+   * launch template. If you don't provide this value, PCS uses the AMI ID specified
+   * in the custom launch template. You must provide this value if
+   * <code>launchTemplateMode</code> is <code>MANAGED</code>.</p>
+   */
+  inline const Aws::String& GetAmiId() const { return m_amiId; }
+  inline bool AmiIdHasBeenSet() const { return m_amiIdHasBeenSet; }
+  template <typename AmiIdT = Aws::String>
+  void SetAmiId(AmiIdT&& value) {
+    m_amiIdHasBeenSet = true;
+    m_amiId = std::forward<AmiIdT>(value);
+  }
+  template <typename AmiIdT = Aws::String>
+  CreateComputeNodeGroupRequest& WithAmiId(AmiIdT&& value) {
+    SetAmiId(std::forward<AmiIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The IDs of the EC2 security groups to configure directly on the compute node
+   * group. The security groups must be in the same VPC as the cluster. PCS uses
+   * these security groups instead of the security groups in the custom launch
+   * template. You can't specify this value if the custom launch template defines
+   * network interfaces. If you don't provide this value, PCS uses the security
+   * groups in the custom launch template. You must provide this value if
+   * <code>launchTemplateMode</code> is <code>MANAGED</code>. For more information,
+   * see <a
+   * href="https://docs.aws.amazon.com/pcs/latest/userguide/working-with_cng_instance-settings.html">Configuring
+   * instance settings for compute node groups in PCS</a> in the <i>PCS User
+   * Guide</i>.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const { return m_securityGroupIds; }
+  inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
+  template <typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+  void SetSecurityGroupIds(SecurityGroupIdsT&& value) {
+    m_securityGroupIdsHasBeenSet = true;
+    m_securityGroupIds = std::forward<SecurityGroupIdsT>(value);
+  }
+  template <typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+  CreateComputeNodeGroupRequest& WithSecurityGroupIds(SecurityGroupIdsT&& value) {
+    SetSecurityGroupIds(std::forward<SecurityGroupIdsT>(value));
+    return *this;
+  }
+  template <typename SecurityGroupIdsT = Aws::String>
+  CreateComputeNodeGroupRequest& AddSecurityGroupIds(SecurityGroupIdsT&& value) {
+    m_securityGroupIdsHasBeenSet = true;
+    m_securityGroupIds.emplace_back(std::forward<SecurityGroupIdsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the EC2 key pair to configure directly on the compute node group.
+   * The key pair must exist in your account and Amazon Web Services Region. PCS uses
+   * this key pair instead of the key pair in the custom launch template. If you
+   * don't provide this value, PCS uses the key pair in the custom launch template,
+   * if one is specified. You must have permission for
+   * <code>ec2:DescribeKeyPairs</code>. If you delete the key pair later, future
+   * instance launches can fail. For more information, see <a
+   * href="https://docs.aws.amazon.com/pcs/latest/userguide/working-with_cng_instance-settings.html">Configuring
+   * instance settings for compute node groups in PCS</a> in the <i>PCS User
+   * Guide</i>.</p>
+   */
+  inline const Aws::String& GetSshKeyName() const { return m_sshKeyName; }
+  inline bool SshKeyNameHasBeenSet() const { return m_sshKeyNameHasBeenSet; }
+  template <typename SshKeyNameT = Aws::String>
+  void SetSshKeyName(SshKeyNameT&& value) {
+    m_sshKeyNameHasBeenSet = true;
+    m_sshKeyName = std::forward<SshKeyNameT>(value);
+  }
+  template <typename SshKeyNameT = Aws::String>
+  CreateComputeNodeGroupRequest& WithSshKeyName(SshKeyNameT&& value) {
+    SetSshKeyName(std::forward<SshKeyNameT>(value));
+    return *this;
+  }
+  ///@}
 
   ///@{
   /**
@@ -72,26 +156,6 @@ class CreateComputeNodeGroupRequest : public PCSRequest {
   template <typename ComputeNodeGroupNameT = Aws::String>
   CreateComputeNodeGroupRequest& WithComputeNodeGroupName(ComputeNodeGroupNameT&& value) {
     SetComputeNodeGroupName(std::forward<ComputeNodeGroupNameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p> The ID of the Amazon Machine Image (AMI) that PCS uses to launch compute
-   * nodes (Amazon EC2 instances). If you don't provide this value, PCS uses the AMI
-   * ID specified in the custom launch template.</p>
-   */
-  inline const Aws::String& GetAmiId() const { return m_amiId; }
-  inline bool AmiIdHasBeenSet() const { return m_amiIdHasBeenSet; }
-  template <typename AmiIdT = Aws::String>
-  void SetAmiId(AmiIdT&& value) {
-    m_amiIdHasBeenSet = true;
-    m_amiId = std::forward<AmiIdT>(value);
-  }
-  template <typename AmiIdT = Aws::String>
-  CreateComputeNodeGroupRequest& WithAmiId(AmiIdT&& value) {
-    SetAmiId(std::forward<AmiIdT>(value));
     return *this;
   }
   ///@}
@@ -155,7 +219,33 @@ class CreateComputeNodeGroupRequest : public PCSRequest {
   ///@}
 
   ///@{
+  /**
+   * <p>Specifies whether the compute node group uses a custom launch template or a
+   * launch template that PCS manages. The default value is <code>CUSTOM</code>.</p>
+   * <p>If the value is <code>CUSTOM</code>, provide
+   * <code>customLaunchTemplate</code>. If the value is <code>MANAGED</code>, omit
+   * <code>customLaunchTemplate</code> and provide <code>amiId</code> and
+   * <code>securityGroupIds</code>.</p>
+   */
+  inline LaunchTemplateMode GetLaunchTemplateMode() const { return m_launchTemplateMode; }
+  inline bool LaunchTemplateModeHasBeenSet() const { return m_launchTemplateModeHasBeenSet; }
+  inline void SetLaunchTemplateMode(LaunchTemplateMode value) {
+    m_launchTemplateModeHasBeenSet = true;
+    m_launchTemplateMode = value;
+  }
+  inline CreateComputeNodeGroupRequest& WithLaunchTemplateMode(LaunchTemplateMode value) {
+    SetLaunchTemplateMode(value);
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The custom Amazon EC2 launch template to associate with the compute node
+   * group. Specify the launch template <code>id</code> and <code>version</code> when
+   * <code>launchTemplateMode</code> is <code>CUSTOM</code>. Don't specify this value
+   * when <code>launchTemplateMode</code> is <code>MANAGED</code>.</p>
+   */
   inline const CustomLaunchTemplate& GetCustomLaunchTemplate() const { return m_customLaunchTemplate; }
   inline bool CustomLaunchTemplateHasBeenSet() const { return m_customLaunchTemplateHasBeenSet; }
   template <typename CustomLaunchTemplateT = CustomLaunchTemplate>
@@ -299,7 +389,7 @@ class CreateComputeNodeGroupRequest : public PCSRequest {
    * only once. With an idempotent request, if the original request completes
    * successfully, the subsequent retries with the same client token return the
    * result from the original successful request and they have no additional effect.
-   * If you don't specify a client token, the CLI and SDK automatically generate 1
+   * If you don't specify a client token, the CLI and SDK automatically generate one
    * for you.</p>
    */
   inline const Aws::String& GetClientToken() const { return m_clientToken; }
@@ -341,15 +431,21 @@ class CreateComputeNodeGroupRequest : public PCSRequest {
   }
   ///@}
  private:
+  Aws::String m_amiId;
+
+  Aws::Vector<Aws::String> m_securityGroupIds;
+
+  Aws::String m_sshKeyName;
+
   Aws::String m_clusterIdentifier;
 
   Aws::String m_computeNodeGroupName;
 
-  Aws::String m_amiId;
-
   Aws::Vector<Aws::String> m_subnetIds;
 
   PurchaseOption m_purchaseOption{PurchaseOption::NOT_SET};
+
+  LaunchTemplateMode m_launchTemplateMode{LaunchTemplateMode::NOT_SET};
 
   CustomLaunchTemplate m_customLaunchTemplate;
 
@@ -368,11 +464,14 @@ class CreateComputeNodeGroupRequest : public PCSRequest {
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_amiIdHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
+  bool m_sshKeyNameHasBeenSet = false;
   bool m_clusterIdentifierHasBeenSet = false;
   bool m_computeNodeGroupNameHasBeenSet = false;
-  bool m_amiIdHasBeenSet = false;
   bool m_subnetIdsHasBeenSet = false;
   bool m_purchaseOptionHasBeenSet = false;
+  bool m_launchTemplateModeHasBeenSet = false;
   bool m_customLaunchTemplateHasBeenSet = false;
   bool m_iamInstanceProfileArnHasBeenSet = false;
   bool m_scalingConfigurationHasBeenSet = false;

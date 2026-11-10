@@ -17,7 +17,7 @@ namespace Aws {
 namespace Route53Profiles {
 /**
  * <p> With Amazon Route 53 Profiles you can share Route 53 configurations with
- * VPCs and AWS accounts </p>
+ * VPCs and Amazon Web Services accounts </p>
  */
 class AWS_ROUTE53PROFILES_API Route53ProfilesClient : public Aws::Client::AWSJsonClient,
                                                       public Aws::Client::ClientWithAsyncTemplateMethods<Route53ProfilesClient>,
@@ -81,11 +81,29 @@ class AWS_ROUTE53PROFILES_API Route53ProfilesClient : public Aws::Client::AWSJso
   virtual ~Route53ProfilesClient();
 
   /**
-   * <p> Associates a Route 53 Profiles profile with a VPC. A VPC can have only one
-   * Profile associated with it, but a Profile can be associated with 1000 of VPCs
-   * (and you can request a higher quota). For more information, see <a
-   * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities">https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities</a>.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p> Associates a Route 53 Profiles profile with a VPC. A VPC can have up to two
+   * Profile associations. A Profile can be associated with up to 1,000 VPCs, and you
+   * can request a higher quota for the number of VPCs. For more information, see <a
+   * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities-route53-profiles">Quotas
+   * on Route 53 Profiles</a>. </p> <p> Route 53 VPC Resolver evaluates the Profile
+   * associations for a VPC in priority order, starting with the lowest
+   * <code>Priority</code> value. If the VPC has no other Profile associations, you
+   * can omit <code>Priority</code>, and the association gets priority 100. When the
+   * VPC already has a Profile association, you must specify a <code>Priority</code>,
+   * and each Profile association for the VPC must have a unique priority. To change
+   * the priority of an existing association, use
+   * <code>UpdateProfileAssociation</code>. </p> <p>The request fails with a
+   * <code>ValidationException</code> in these cases:</p> <ul> <li> <p>You omit
+   * <code>Priority</code>, and the VPC already has a Profile association.</p> </li>
+   * <li> <p>Another Profile association for the VPC already uses the priority that
+   * you specify.</p> </li> <li> <p>The priority is outside the range 100–9900.</p>
+   * </li> <li> <p>The Profile is already associated with the VPC, and you specify a
+   * different <code>Name</code> or <code>Priority</code>. To change the priority,
+   * use <a
+   * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53profiles_UpdateProfileAssociation.html">UpdateProfileAssociation</a>.</p>
+   * </li> </ul> <p> The request fails with a <code>LimitExceededException</code> if
+   * the VPC already has the maximum number of Profile associations. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53profiles-2018-05-10/AssociateProfile">AWS
    * API Reference</a></p>
    */
@@ -111,8 +129,8 @@ class AWS_ROUTE53PROFILES_API Route53ProfilesClient : public Aws::Client::AWSJso
   }
 
   /**
-   * <p> Associates a DNS reource configuration to a Route 53 Profile. </p><p><h3>See
-   * Also:</h3>   <a
+   * <p> Associates a DNS resource configuration to a Route 53 Profile.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53profiles-2018-05-10/AssociateResourceToProfile">AWS
    * API Reference</a></p>
    */
@@ -276,8 +294,8 @@ class AWS_ROUTE53PROFILES_API Route53ProfilesClient : public Aws::Client::AWSJso
   }
 
   /**
-   * <p> Retrieves a Route 53 Profile association for a VPC. A VPC can have only one
-   * Profile association, but a Profile can be associated with up to 5000 VPCs.
+   * <p> Retrieves a Route 53 Profile association for a VPC. A VPC can have up to two
+   * Profile associations, and a Profile can be associated with up to 1,000 VPCs.
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53profiles-2018-05-10/GetProfileAssociation">AWS
    * API Reference</a></p>
@@ -495,6 +513,48 @@ class AWS_ROUTE53PROFILES_API Route53ProfilesClient : public Aws::Client::AWSJso
   void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&Route53ProfilesClient::UntagResource, request, handler, context);
+  }
+
+  /**
+   * <p> Updates the name or priority of the specified Route 53 Profile association
+   * with a VPC. Route 53 VPC Resolver evaluates the Profile associations for a VPC
+   * in priority order, starting with the lowest value. Only the account that created
+   * the association can update it. </p> <p> When you change the priority, the
+   * association status is <code>UPDATING</code> until the change propagates, and
+   * then <code>COMPLETE</code>. While the status is <code>UPDATING</code>, Route 53
+   * VPC Resolver might still use the previous priority for some queries. When the
+   * status is <code>COMPLETE</code>, the new priority applies to all queries from
+   * the VPC. </p> <p> The request fails with a <code>ValidationException</code> if
+   * another Profile association for the VPC already uses the priority that you
+   * specify, or if the priority is outside the range 100–9900. </p> <p> You can
+   * update an association whose status is <code>CREATING</code>,
+   * <code>UPDATING</code>, or <code>COMPLETE</code>. The request fails with a
+   * <code>ConflictException</code> if the association status is
+   * <code>DELETING</code>, <code>DELETED</code>, or <code>FAILED</code>, or if the
+   * account that owns the association is inactive. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53profiles-2018-05-10/UpdateProfileAssociation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateProfileAssociationOutcome UpdateProfileAssociation(const Model::UpdateProfileAssociationRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateProfileAssociation that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateProfileAssociationRequestT = Model::UpdateProfileAssociationRequest>
+  Model::UpdateProfileAssociationOutcomeCallable UpdateProfileAssociationCallable(const UpdateProfileAssociationRequestT& request) const {
+    return SubmitCallable(&Route53ProfilesClient::UpdateProfileAssociation, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateProfileAssociation that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateProfileAssociationRequestT = Model::UpdateProfileAssociationRequest>
+  void UpdateProfileAssociationAsync(const UpdateProfileAssociationRequestT& request,
+                                     const UpdateProfileAssociationResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&Route53ProfilesClient::UpdateProfileAssociation, request, handler, context);
   }
 
   /**

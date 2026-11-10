@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/lakeformation/LakeFormation_EXPORTS.h>
+#include <aws/lakeformation/model/AnyResource.h>
 #include <aws/lakeformation/model/CatalogResource.h>
 #include <aws/lakeformation/model/DataCellsFilterResource.h>
 #include <aws/lakeformation/model/DataLocationResource.h>
@@ -15,6 +16,7 @@
 #include <aws/lakeformation/model/RLSPolicyResource.h>
 #include <aws/lakeformation/model/TableResource.h>
 #include <aws/lakeformation/model/TableWithColumnsResource.h>
+#include <aws/lakeformation/model/UserDefinedFunctionResource.h>
 
 #include <utility>
 
@@ -39,6 +41,27 @@ class Resource {
   AWS_LAKEFORMATION_API Resource(Aws::Utils::Json::JsonView jsonValue);
   AWS_LAKEFORMATION_API Resource& operator=(Aws::Utils::Json::JsonView jsonValue);
   AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p>All resources of the specified type in a Data Catalog. When you grant or
+   * revoke permissions on this resource, the principal must be a user-defined
+   * function whose <code>GovernanceMode</code> is <code>LAKE_FORMATION</code>, and
+   * the Data Catalog must be in your account.</p>
+   */
+  inline const AnyResource& GetAnyResource() const { return m_anyResource; }
+  inline bool AnyResourceHasBeenSet() const { return m_anyResourceHasBeenSet; }
+  template <typename AnyResourceT = AnyResource>
+  void SetAnyResource(AnyResourceT&& value) {
+    m_anyResourceHasBeenSet = true;
+    m_anyResource = std::forward<AnyResourceT>(value);
+  }
+  template <typename AnyResourceT = AnyResource>
+  Resource& WithAnyResource(AnyResourceT&& value) {
+    SetAnyResource(std::forward<AnyResourceT>(value));
+    return *this;
+  }
+  ///@}
 
   ///@{
   /**
@@ -231,7 +254,34 @@ class Resource {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The user-defined function that you want to grant or revoke permissions on.
+   * The function's <code>GovernanceMode</code> must be <code>LAKE_FORMATION</code>.
+   * You can grant the following permissions:</p> <ul> <li> <p> <code>EXECUTE</code>
+   * – Use the function in a job, and get credentials to download its artifacts.</p>
+   * </li> <li> <p> <code>DESCRIBE</code> – View the function's definition.</p> </li>
+   * <li> <p> <code>ALTER</code> – Update the function.</p> </li> <li> <p>
+   * <code>DROP</code> – Delete the function.</p> </li> <li> <p> <code>ALL</code> –
+   * All of the preceding permissions.</p> </li> </ul>
+   */
+  inline const UserDefinedFunctionResource& GetUserDefinedFunction() const { return m_userDefinedFunction; }
+  inline bool UserDefinedFunctionHasBeenSet() const { return m_userDefinedFunctionHasBeenSet; }
+  template <typename UserDefinedFunctionT = UserDefinedFunctionResource>
+  void SetUserDefinedFunction(UserDefinedFunctionT&& value) {
+    m_userDefinedFunctionHasBeenSet = true;
+    m_userDefinedFunction = std::forward<UserDefinedFunctionT>(value);
+  }
+  template <typename UserDefinedFunctionT = UserDefinedFunctionResource>
+  Resource& WithUserDefinedFunction(UserDefinedFunctionT&& value) {
+    SetUserDefinedFunction(std::forward<UserDefinedFunctionT>(value));
+    return *this;
+  }
+  ///@}
  private:
+  AnyResource m_anyResource;
+
   CatalogResource m_catalog;
 
   DatabaseResource m_database;
@@ -251,6 +301,9 @@ class Resource {
   LFTagExpressionResource m_lFTagExpression;
 
   RLSPolicyResource m_rLSPolicy;
+
+  UserDefinedFunctionResource m_userDefinedFunction;
+  bool m_anyResourceHasBeenSet = false;
   bool m_catalogHasBeenSet = false;
   bool m_databaseHasBeenSet = false;
   bool m_tableHasBeenSet = false;
@@ -261,6 +314,7 @@ class Resource {
   bool m_lFTagPolicyHasBeenSet = false;
   bool m_lFTagExpressionHasBeenSet = false;
   bool m_rLSPolicyHasBeenSet = false;
+  bool m_userDefinedFunctionHasBeenSet = false;
 };
 
 }  // namespace Model

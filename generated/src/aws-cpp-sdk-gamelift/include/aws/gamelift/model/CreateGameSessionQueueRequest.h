@@ -10,6 +10,7 @@
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/model/FilterConfiguration.h>
 #include <aws/gamelift/model/GameSessionQueueDestination.h>
+#include <aws/gamelift/model/GameSessionQueueLogConfiguration.h>
 #include <aws/gamelift/model/PlayerLatencyPolicy.h>
 #include <aws/gamelift/model/PriorityConfiguration.h>
 #include <aws/gamelift/model/Tag.h>
@@ -154,9 +155,9 @@ class CreateGameSessionQueueRequest : public GameLiftRequest {
   ///@{
   /**
    * <p>Custom settings to use when prioritizing destinations and locations for game
-   * session placements. This configuration replaces the FleetIQ default
-   * prioritization process. Priority types that are not explicitly named will be
-   * automatically applied at the end of the prioritization process. </p>
+   * session placements. This configuration replaces the default prioritization
+   * process. Priority types that are not explicitly named will be automatically
+   * applied at the end of the prioritization process. </p>
    */
   inline const PriorityConfiguration& GetPriorityConfiguration() const { return m_priorityConfiguration; }
   inline bool PriorityConfigurationHasBeenSet() const { return m_priorityConfigurationHasBeenSet; }
@@ -241,6 +242,28 @@ class CreateGameSessionQueueRequest : public GameLiftRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>An optional configuration that delivers game session placement insight logs
+   * to one or more destinations of your choice. Use these logs to diagnose why a
+   * game session placement is <code>FULFILLED</code>, <code>CANCELLED</code>,
+   * <code>TIMED_OUT</code>, or <code>FAILED</code>, which locations were evaluated,
+   * and the latency and cost factors that influenced each decision.</p>
+   */
+  inline const GameSessionQueueLogConfiguration& GetLogConfiguration() const { return m_logConfiguration; }
+  inline bool LogConfigurationHasBeenSet() const { return m_logConfigurationHasBeenSet; }
+  template <typename LogConfigurationT = GameSessionQueueLogConfiguration>
+  void SetLogConfiguration(LogConfigurationT&& value) {
+    m_logConfigurationHasBeenSet = true;
+    m_logConfiguration = std::forward<LogConfigurationT>(value);
+  }
+  template <typename LogConfigurationT = GameSessionQueueLogConfiguration>
+  CreateGameSessionQueueRequest& WithLogConfiguration(LogConfigurationT&& value) {
+    SetLogConfiguration(std::forward<LogConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -259,6 +282,8 @@ class CreateGameSessionQueueRequest : public GameLiftRequest {
   Aws::String m_notificationTarget;
 
   Aws::Vector<Tag> m_tags;
+
+  GameSessionQueueLogConfiguration m_logConfiguration;
   bool m_nameHasBeenSet = false;
   bool m_timeoutInSecondsHasBeenSet = false;
   bool m_playerLatencyPoliciesHasBeenSet = false;
@@ -268,6 +293,7 @@ class CreateGameSessionQueueRequest : public GameLiftRequest {
   bool m_customEventDataHasBeenSet = false;
   bool m_notificationTargetHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_logConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

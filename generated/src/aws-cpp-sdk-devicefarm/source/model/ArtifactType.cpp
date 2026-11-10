@@ -43,6 +43,7 @@ static const int VIDEO_HASH = HashingUtils::HashString("VIDEO");
 static const int CUSTOMER_ARTIFACT_HASH = HashingUtils::HashString("CUSTOMER_ARTIFACT");
 static const int CUSTOMER_ARTIFACT_LOG_HASH = HashingUtils::HashString("CUSTOMER_ARTIFACT_LOG");
 static const int TESTSPEC_OUTPUT_HASH = HashingUtils::HashString("TESTSPEC_OUTPUT");
+static const int DEVICE_CONNECT_COMMAND_LOG_HASH = HashingUtils::HashString("DEVICE_CONNECT_COMMAND_LOG");
 
 ArtifactType GetArtifactTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -102,6 +103,8 @@ ArtifactType GetArtifactTypeForName(const Aws::String& name) {
     return ArtifactType::CUSTOMER_ARTIFACT_LOG;
   } else if (hashCode == TESTSPEC_OUTPUT_HASH) {
     return ArtifactType::TESTSPEC_OUTPUT;
+  } else if (hashCode == DEVICE_CONNECT_COMMAND_LOG_HASH) {
+    return ArtifactType::DEVICE_CONNECT_COMMAND_LOG;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -172,6 +175,8 @@ Aws::String GetNameForArtifactType(ArtifactType enumValue) {
       return "CUSTOMER_ARTIFACT_LOG";
     case ArtifactType::TESTSPEC_OUTPUT:
       return "TESTSPEC_OUTPUT";
+    case ArtifactType::DEVICE_CONNECT_COMMAND_LOG:
+      return "DEVICE_CONNECT_COMMAND_LOG";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -59,6 +59,7 @@
 #include <aws/pcs/model/InstanceConfig.h>
 #include <aws/pcs/model/JwtAuth.h>
 #include <aws/pcs/model/JwtKey.h>
+#include <aws/pcs/model/LaunchTemplateMode.h>
 #include <aws/pcs/model/ListClustersPaginationTraits.h>
 #include <aws/pcs/model/ListClustersRequest.h>
 #include <aws/pcs/model/ListClustersResult.h>

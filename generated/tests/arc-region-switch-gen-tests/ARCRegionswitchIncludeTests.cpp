@@ -131,6 +131,7 @@
 #include <aws/arc-region-switch/model/ReportOutputConfiguration.h>
 #include <aws/arc-region-switch/model/ResourceWarning.h>
 #include <aws/arc-region-switch/model/ResourceWarningStatus.h>
+#include <aws/arc-region-switch/model/RetryableConflictException.h>
 #include <aws/arc-region-switch/model/Route53HealthCheck.h>
 #include <aws/arc-region-switch/model/Route53HealthCheckConfiguration.h>
 #include <aws/arc-region-switch/model/Route53HealthCheckStatus.h>

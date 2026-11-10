@@ -56,6 +56,7 @@
 #include <aws/lakeformation/model/GetDataLakeSettingsRequest.h>
 #include <aws/lakeformation/model/GetDataLakeSettingsResult.h>
 #include <aws/lakeformation/model/GetEffectivePermissionsForPathResult.h>
+#include <aws/lakeformation/model/GetGlueFunctionSessionContextResult.h>
 #include <aws/lakeformation/model/GetLFTagExpressionResult.h>
 #include <aws/lakeformation/model/GetLFTagResult.h>
 #include <aws/lakeformation/model/GetQueryStateResult.h>
@@ -65,6 +66,7 @@
 #include <aws/lakeformation/model/GetTableObjectsResult.h>
 #include <aws/lakeformation/model/GetTemporaryDataLocationCredentialsRequest.h>
 #include <aws/lakeformation/model/GetTemporaryDataLocationCredentialsResult.h>
+#include <aws/lakeformation/model/GetTemporaryGlueFunctionCredentialsResult.h>
 #include <aws/lakeformation/model/GetTemporaryGluePartitionCredentialsResult.h>
 #include <aws/lakeformation/model/GetTemporaryGlueTableCredentialsResult.h>
 #include <aws/lakeformation/model/GetWorkUnitResultsResult.h>
@@ -170,6 +172,7 @@ class GetDataCellsFilterRequest;
 class GetDataLakePrincipalRequest;
 class GetDataLakeSettingsRequest;
 class GetEffectivePermissionsForPathRequest;
+class GetGlueFunctionSessionContextRequest;
 class GetLFTagRequest;
 class GetLFTagExpressionRequest;
 class GetQueryStateRequest;
@@ -178,6 +181,7 @@ class GetRLSPolicyRequest;
 class GetResourceLFTagsRequest;
 class GetTableObjectsRequest;
 class GetTemporaryDataLocationCredentialsRequest;
+class GetTemporaryGlueFunctionCredentialsRequest;
 class GetTemporaryGluePartitionCredentialsRequest;
 class GetTemporaryGlueTableCredentialsRequest;
 class GetWorkUnitResultsRequest;
@@ -245,6 +249,7 @@ typedef Aws::Utils::Outcome<GetDataCellsFilterResult, LakeFormationError> GetDat
 typedef Aws::Utils::Outcome<GetDataLakePrincipalResult, LakeFormationError> GetDataLakePrincipalOutcome;
 typedef Aws::Utils::Outcome<GetDataLakeSettingsResult, LakeFormationError> GetDataLakeSettingsOutcome;
 typedef Aws::Utils::Outcome<GetEffectivePermissionsForPathResult, LakeFormationError> GetEffectivePermissionsForPathOutcome;
+typedef Aws::Utils::Outcome<GetGlueFunctionSessionContextResult, LakeFormationError> GetGlueFunctionSessionContextOutcome;
 typedef Aws::Utils::Outcome<GetLFTagResult, LakeFormationError> GetLFTagOutcome;
 typedef Aws::Utils::Outcome<GetLFTagExpressionResult, LakeFormationError> GetLFTagExpressionOutcome;
 typedef Aws::Utils::Outcome<GetQueryStateResult, LakeFormationError> GetQueryStateOutcome;
@@ -253,6 +258,7 @@ typedef Aws::Utils::Outcome<GetRLSPolicyResult, LakeFormationError> GetRLSPolicy
 typedef Aws::Utils::Outcome<GetResourceLFTagsResult, LakeFormationError> GetResourceLFTagsOutcome;
 typedef Aws::Utils::Outcome<GetTableObjectsResult, LakeFormationError> GetTableObjectsOutcome;
 typedef Aws::Utils::Outcome<GetTemporaryDataLocationCredentialsResult, LakeFormationError> GetTemporaryDataLocationCredentialsOutcome;
+typedef Aws::Utils::Outcome<GetTemporaryGlueFunctionCredentialsResult, LakeFormationError> GetTemporaryGlueFunctionCredentialsOutcome;
 typedef Aws::Utils::Outcome<GetTemporaryGluePartitionCredentialsResult, LakeFormationError> GetTemporaryGluePartitionCredentialsOutcome;
 typedef Aws::Utils::Outcome<GetTemporaryGlueTableCredentialsResult, LakeFormationError> GetTemporaryGlueTableCredentialsOutcome;
 typedef Aws::Utils::Outcome<GetWorkUnitResultsResult, LakeFormationError> GetWorkUnitResultsOutcome;
@@ -319,6 +325,7 @@ typedef std::future<GetDataCellsFilterOutcome> GetDataCellsFilterOutcomeCallable
 typedef std::future<GetDataLakePrincipalOutcome> GetDataLakePrincipalOutcomeCallable;
 typedef std::future<GetDataLakeSettingsOutcome> GetDataLakeSettingsOutcomeCallable;
 typedef std::future<GetEffectivePermissionsForPathOutcome> GetEffectivePermissionsForPathOutcomeCallable;
+typedef std::future<GetGlueFunctionSessionContextOutcome> GetGlueFunctionSessionContextOutcomeCallable;
 typedef std::future<GetLFTagOutcome> GetLFTagOutcomeCallable;
 typedef std::future<GetLFTagExpressionOutcome> GetLFTagExpressionOutcomeCallable;
 typedef std::future<GetQueryStateOutcome> GetQueryStateOutcomeCallable;
@@ -327,6 +334,7 @@ typedef std::future<GetRLSPolicyOutcome> GetRLSPolicyOutcomeCallable;
 typedef std::future<GetResourceLFTagsOutcome> GetResourceLFTagsOutcomeCallable;
 typedef std::future<GetTableObjectsOutcome> GetTableObjectsOutcomeCallable;
 typedef std::future<GetTemporaryDataLocationCredentialsOutcome> GetTemporaryDataLocationCredentialsOutcomeCallable;
+typedef std::future<GetTemporaryGlueFunctionCredentialsOutcome> GetTemporaryGlueFunctionCredentialsOutcomeCallable;
 typedef std::future<GetTemporaryGluePartitionCredentialsOutcome> GetTemporaryGluePartitionCredentialsOutcomeCallable;
 typedef std::future<GetTemporaryGlueTableCredentialsOutcome> GetTemporaryGlueTableCredentialsOutcomeCallable;
 typedef std::future<GetWorkUnitResultsOutcome> GetWorkUnitResultsOutcomeCallable;
@@ -458,6 +466,10 @@ typedef std::function<void(const LakeFormationClient*, const Model::GetEffective
                            const Model::GetEffectivePermissionsForPathOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetEffectivePermissionsForPathResponseReceivedHandler;
+typedef std::function<void(const LakeFormationClient*, const Model::GetGlueFunctionSessionContextRequest&,
+                           const Model::GetGlueFunctionSessionContextOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetGlueFunctionSessionContextResponseReceivedHandler;
 typedef std::function<void(const LakeFormationClient*, const Model::GetLFTagRequest&, const Model::GetLFTagOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetLFTagResponseReceivedHandler;
@@ -483,6 +495,10 @@ typedef std::function<void(const LakeFormationClient*, const Model::GetTemporary
                            const Model::GetTemporaryDataLocationCredentialsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetTemporaryDataLocationCredentialsResponseReceivedHandler;
+typedef std::function<void(const LakeFormationClient*, const Model::GetTemporaryGlueFunctionCredentialsRequest&,
+                           const Model::GetTemporaryGlueFunctionCredentialsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetTemporaryGlueFunctionCredentialsResponseReceivedHandler;
 typedef std::function<void(const LakeFormationClient*, const Model::GetTemporaryGluePartitionCredentialsRequest&,
                            const Model::GetTemporaryGluePartitionCredentialsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

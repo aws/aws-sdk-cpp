@@ -77,5 +77,9 @@ Aws::String CreateGatewayRequest::SerializePayload() const {
     payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
+  if (m_domainOverrideHasBeenSet) {
+    payload.WithObject("domainOverride", m_domainOverride.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

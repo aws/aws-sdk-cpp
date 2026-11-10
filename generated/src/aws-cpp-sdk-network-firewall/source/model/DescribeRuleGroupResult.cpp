@@ -30,6 +30,14 @@ DescribeRuleGroupResult& DescribeRuleGroupResult::operator=(const Aws::AmazonWeb
     m_ruleGroup = jsonValue.GetObject("RuleGroup");
     m_ruleGroupHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("FirewallRuleGroup")) {
+    m_firewallRuleGroup = jsonValue.GetObject("FirewallRuleGroup");
+    m_firewallRuleGroupHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("IpsRuleGroup")) {
+    m_ipsRuleGroup = jsonValue.GetObject("IpsRuleGroup");
+    m_ipsRuleGroupHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("RuleGroupResponse")) {
     m_ruleGroupResponse = jsonValue.GetObject("RuleGroupResponse");
     m_ruleGroupResponseHasBeenSet = true;

@@ -92,7 +92,7 @@ class UpdateMemoryRequest : public BedrockAgentCoreControlRequest {
 
   ///@{
   /**
-   * <p>The number of days after which memory events will expire, between 7 and 365
+   * <p>The number of days after which memory events expire, between 7 and 3650
    * days.</p>
    */
   inline int GetEventExpiryDuration() const { return m_eventExpiryDuration; }

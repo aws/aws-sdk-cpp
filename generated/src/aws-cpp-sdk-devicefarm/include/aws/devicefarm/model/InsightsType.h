@@ -10,7 +10,7 @@
 namespace Aws {
 namespace DeviceFarm {
 namespace Model {
-enum class InsightsType { NOT_SET, TEST_REPORT };
+enum class InsightsType { NOT_SET, TEST_REPORT, NONE };
 
 namespace InsightsTypeMapper {
 AWS_DEVICEFARM_API InsightsType GetInsightsTypeForName(const Aws::String& name);

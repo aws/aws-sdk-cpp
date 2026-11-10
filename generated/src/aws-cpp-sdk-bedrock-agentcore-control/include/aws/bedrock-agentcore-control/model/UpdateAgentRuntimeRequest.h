@@ -15,6 +15,8 @@
 #include <aws/bedrock-agentcore-control/model/NetworkConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/ProtocolConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/RequestHeaderConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/ResourceConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/RuntimeHooksConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/RuntimeMetadataConfiguration.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -208,6 +210,24 @@ class UpdateAgentRuntimeRequest : public BedrockAgentCoreControlRequest {
 
   ///@{
   /**
+   * <p>The updated lifecycle hooks configuration for the AgentCore Runtime.</p>
+   */
+  inline const RuntimeHooksConfiguration& GetHooksConfiguration() const { return m_hooksConfiguration; }
+  inline bool HooksConfigurationHasBeenSet() const { return m_hooksConfigurationHasBeenSet; }
+  template <typename HooksConfigurationT = RuntimeHooksConfiguration>
+  void SetHooksConfiguration(HooksConfigurationT&& value) {
+    m_hooksConfigurationHasBeenSet = true;
+    m_hooksConfiguration = std::forward<HooksConfigurationT>(value);
+  }
+  template <typename HooksConfigurationT = RuntimeHooksConfiguration>
+  UpdateAgentRuntimeRequest& WithHooksConfiguration(HooksConfigurationT&& value) {
+    SetHooksConfiguration(std::forward<HooksConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The updated configuration for microVM Metadata Service (MMDS) settings for
    * the AgentCore Runtime.</p>
    */
@@ -342,6 +362,31 @@ class UpdateAgentRuntimeRequest : public BedrockAgentCoreControlRequest {
 
   ///@{
   /**
+   * <p>The updated resource configurations for the AgentCore Runtime. You can
+   * specify at most one resource configuration.</p>
+   */
+  inline const Aws::Vector<ResourceConfiguration>& GetResourceConfigurations() const { return m_resourceConfigurations; }
+  inline bool ResourceConfigurationsHasBeenSet() const { return m_resourceConfigurationsHasBeenSet; }
+  template <typename ResourceConfigurationsT = Aws::Vector<ResourceConfiguration>>
+  void SetResourceConfigurations(ResourceConfigurationsT&& value) {
+    m_resourceConfigurationsHasBeenSet = true;
+    m_resourceConfigurations = std::forward<ResourceConfigurationsT>(value);
+  }
+  template <typename ResourceConfigurationsT = Aws::Vector<ResourceConfiguration>>
+  UpdateAgentRuntimeRequest& WithResourceConfigurations(ResourceConfigurationsT&& value) {
+    SetResourceConfigurations(std::forward<ResourceConfigurationsT>(value));
+    return *this;
+  }
+  template <typename ResourceConfigurationsT = ResourceConfiguration>
+  UpdateAgentRuntimeRequest& AddResourceConfigurations(ResourceConfigurationsT&& value) {
+    m_resourceConfigurationsHasBeenSet = true;
+    m_resourceConfigurations.emplace_back(std::forward<ResourceConfigurationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A unique, case-sensitive identifier to ensure idempotency of the request.</p>
    */
   inline const Aws::String& GetClientToken() const { return m_clientToken; }
@@ -376,6 +421,8 @@ class UpdateAgentRuntimeRequest : public BedrockAgentCoreControlRequest {
 
   LifecycleConfiguration m_lifecycleConfiguration;
 
+  RuntimeHooksConfiguration m_hooksConfiguration;
+
   RuntimeMetadataConfiguration m_metadataConfiguration;
 
   Aws::Map<Aws::String, Aws::String> m_environmentVariables;
@@ -388,6 +435,8 @@ class UpdateAgentRuntimeRequest : public BedrockAgentCoreControlRequest {
 
   Aws::Vector<AllowedPort> m_allowedPorts;
 
+  Aws::Vector<ResourceConfiguration> m_resourceConfigurations;
+
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_agentRuntimeIdHasBeenSet = false;
   bool m_agentRuntimeArtifactHasBeenSet = false;
@@ -398,12 +447,14 @@ class UpdateAgentRuntimeRequest : public BedrockAgentCoreControlRequest {
   bool m_requestHeaderConfigurationHasBeenSet = false;
   bool m_protocolConfigurationHasBeenSet = false;
   bool m_lifecycleConfigurationHasBeenSet = false;
+  bool m_hooksConfigurationHasBeenSet = false;
   bool m_metadataConfigurationHasBeenSet = false;
   bool m_environmentVariablesHasBeenSet = false;
   bool m_filesystemConfigurationsHasBeenSet = false;
   bool m_capacityProviderConfigurationHasBeenSet = false;
   bool m_platformVersionHasBeenSet = false;
   bool m_allowedPortsHasBeenSet = false;
+  bool m_resourceConfigurationsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
 };
 

@@ -8,6 +8,7 @@
 #include <aws/bedrock-agentcore-control/model/AuthorizerConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/AuthorizerType.h>
 #include <aws/bedrock-agentcore-control/model/CustomTransformConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/DomainOverride.h>
 #include <aws/bedrock-agentcore-control/model/ExceptionLevel.h>
 #include <aws/bedrock-agentcore-control/model/GatewayInterceptorConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/GatewayPolicyEngineConfiguration.h>
@@ -423,6 +424,24 @@ class GetGatewayResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The public domain names that the gateway advertises in its OAuth discovery
+   * URLs instead of the inbound Host header.</p>
+   */
+  inline const DomainOverride& GetDomainOverride() const { return m_domainOverride; }
+  template <typename DomainOverrideT = DomainOverride>
+  void SetDomainOverride(DomainOverrideT&& value) {
+    m_domainOverrideHasBeenSet = true;
+    m_domainOverride = std::forward<DomainOverrideT>(value);
+  }
+  template <typename DomainOverrideT = DomainOverride>
+  GetGatewayResult& WithDomainOverride(DomainOverrideT&& value) {
+    SetDomainOverride(std::forward<DomainOverrideT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -483,6 +502,8 @@ class GetGatewayResult {
 
   WafConfiguration m_wafConfiguration;
 
+  DomainOverride m_domainOverride;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_gatewayArnHasBeenSet = false;
@@ -507,6 +528,7 @@ class GetGatewayResult {
   bool m_exceptionLevelHasBeenSet = false;
   bool m_webAclArnHasBeenSet = false;
   bool m_wafConfigurationHasBeenSet = false;
+  bool m_domainOverrideHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

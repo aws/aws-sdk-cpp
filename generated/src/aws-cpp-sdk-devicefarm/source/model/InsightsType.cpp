@@ -16,11 +16,14 @@ namespace Model {
 namespace InsightsTypeMapper {
 
 static const int TEST_REPORT_HASH = HashingUtils::HashString("TEST_REPORT");
+static const int NONE_HASH = HashingUtils::HashString("NONE");
 
 InsightsType GetInsightsTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == TEST_REPORT_HASH) {
     return InsightsType::TEST_REPORT;
+  } else if (hashCode == NONE_HASH) {
+    return InsightsType::NONE;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +40,8 @@ Aws::String GetNameForInsightsType(InsightsType enumValue) {
       return {};
     case InsightsType::TEST_REPORT:
       return "TEST_REPORT";
+    case InsightsType::NONE:
+      return "NONE";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

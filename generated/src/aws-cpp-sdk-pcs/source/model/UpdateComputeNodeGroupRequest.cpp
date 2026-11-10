@@ -15,6 +15,22 @@ using namespace Aws::Utils;
 Aws::String UpdateComputeNodeGroupRequest::SerializePayload() const {
   JsonValue payload;
 
+  if (m_amiIdHasBeenSet) {
+    payload.WithString("amiId", m_amiId);
+  }
+
+  if (m_securityGroupIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> securityGroupIdsJsonList(m_securityGroupIds.size());
+    for (unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex) {
+      securityGroupIdsJsonList[securityGroupIdsIndex].AsString(m_securityGroupIds[securityGroupIdsIndex]);
+    }
+    payload.WithArray("securityGroupIds", std::move(securityGroupIdsJsonList));
+  }
+
+  if (m_sshKeyNameHasBeenSet) {
+    payload.WithString("sshKeyName", m_sshKeyName);
+  }
+
   if (m_clusterIdentifierHasBeenSet) {
     payload.WithString("clusterIdentifier", m_clusterIdentifier);
   }
@@ -23,16 +39,16 @@ Aws::String UpdateComputeNodeGroupRequest::SerializePayload() const {
     payload.WithString("computeNodeGroupIdentifier", m_computeNodeGroupIdentifier);
   }
 
-  if (m_amiIdHasBeenSet) {
-    payload.WithString("amiId", m_amiId);
-  }
-
   if (m_subnetIdsHasBeenSet) {
     Aws::Utils::Array<JsonValue> subnetIdsJsonList(m_subnetIds.size());
     for (unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex) {
       subnetIdsJsonList[subnetIdsIndex].AsString(m_subnetIds[subnetIdsIndex]);
     }
     payload.WithArray("subnetIds", std::move(subnetIdsJsonList));
+  }
+
+  if (m_launchTemplateModeHasBeenSet) {
+    payload.WithString("launchTemplateMode", LaunchTemplateModeMapper::GetNameForLaunchTemplateMode(m_launchTemplateMode));
   }
 
   if (m_customLaunchTemplateHasBeenSet) {

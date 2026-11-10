@@ -115,7 +115,9 @@ namespace Aws
                 return "standard";
             }
 
-            void SetLegacyClientConfiguration(Aws::Client::ClientConfiguration& /*clientConfig*/) {}
+            void SetLegacyClientConfiguration(Aws::Client::ClientConfiguration& /*clientConfig*/)
+            {
+            }
 
             void SetStandardClientConfiguration(Aws::Client::ClientConfiguration& clientConfig)
             {

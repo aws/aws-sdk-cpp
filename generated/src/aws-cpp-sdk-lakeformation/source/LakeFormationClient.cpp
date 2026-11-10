@@ -50,6 +50,7 @@
 #include <aws/lakeformation/model/GetDataLakePrincipalRequest.h>
 #include <aws/lakeformation/model/GetDataLakeSettingsRequest.h>
 #include <aws/lakeformation/model/GetEffectivePermissionsForPathRequest.h>
+#include <aws/lakeformation/model/GetGlueFunctionSessionContextRequest.h>
 #include <aws/lakeformation/model/GetLFTagExpressionRequest.h>
 #include <aws/lakeformation/model/GetLFTagRequest.h>
 #include <aws/lakeformation/model/GetQueryStateRequest.h>
@@ -58,6 +59,7 @@
 #include <aws/lakeformation/model/GetResourceLFTagsRequest.h>
 #include <aws/lakeformation/model/GetTableObjectsRequest.h>
 #include <aws/lakeformation/model/GetTemporaryDataLocationCredentialsRequest.h>
+#include <aws/lakeformation/model/GetTemporaryGlueFunctionCredentialsRequest.h>
 #include <aws/lakeformation/model/GetTemporaryGluePartitionCredentialsRequest.h>
 #include <aws/lakeformation/model/GetTemporaryGlueTableCredentialsRequest.h>
 #include <aws/lakeformation/model/GetWorkUnitResultsRequest.h>
@@ -578,6 +580,18 @@ GetEffectivePermissionsForPathOutcome LakeFormationClient::GetEffectivePermissio
                             : GetEffectivePermissionsForPathOutcome(std::move(result.GetError()));
 }
 
+GetGlueFunctionSessionContextOutcome LakeFormationClient::GetGlueFunctionSessionContext(
+    const GetGlueFunctionSessionContextRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/GetGlueFunctionSessionContext");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetGlueFunctionSessionContextOutcome(result.GetResultWithOwnership())
+                            : GetGlueFunctionSessionContextOutcome(std::move(result.GetError()));
+}
+
 GetLFTagOutcome LakeFormationClient::GetLFTag(const GetLFTagRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -662,6 +676,18 @@ GetTemporaryDataLocationCredentialsOutcome LakeFormationClient::GetTemporaryData
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetTemporaryDataLocationCredentialsOutcome(result.GetResultWithOwnership())
                             : GetTemporaryDataLocationCredentialsOutcome(std::move(result.GetError()));
+}
+
+GetTemporaryGlueFunctionCredentialsOutcome LakeFormationClient::GetTemporaryGlueFunctionCredentials(
+    const GetTemporaryGlueFunctionCredentialsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/GetTemporaryGlueFunctionCredentials");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetTemporaryGlueFunctionCredentialsOutcome(result.GetResultWithOwnership())
+                            : GetTemporaryGlueFunctionCredentialsOutcome(std::move(result.GetError()));
 }
 
 GetTemporaryGluePartitionCredentialsOutcome LakeFormationClient::GetTemporaryGluePartitionCredentials(

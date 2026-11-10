@@ -30,24 +30,6 @@ class AssociateResourceToProfileRequest : public Route53ProfilesRequest {
 
   ///@{
   /**
-   * <p> Name for the resource association. </p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  AssociateResourceToProfileRequest& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p> ID of the Profile. </p>
    */
   inline const Aws::String& GetProfileId() const { return m_profileId; }
@@ -66,7 +48,9 @@ class AssociateResourceToProfileRequest : public Route53ProfilesRequest {
 
   ///@{
   /**
-   * <p> Amazon resource number, ARN, of the DNS resource. </p>
+   * <p> Amazon resource number, ARN, of the resource to associate. Either a private
+   * hosted zone, DNS Firewall rule group, Resolver rule, or an interface VPC
+   * endpoint. </p>
    */
   inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
   inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
@@ -78,6 +62,24 @@ class AssociateResourceToProfileRequest : public Route53ProfilesRequest {
   template <typename ResourceArnT = Aws::String>
   AssociateResourceToProfileRequest& WithResourceArn(ResourceArnT&& value) {
     SetResourceArn(std::forward<ResourceArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> Name for the resource association. </p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  AssociateResourceToProfileRequest& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
     return *this;
   }
   ///@}
@@ -103,16 +105,16 @@ class AssociateResourceToProfileRequest : public Route53ProfilesRequest {
   }
   ///@}
  private:
-  Aws::String m_name;
-
   Aws::String m_profileId;
 
   Aws::String m_resourceArn;
 
+  Aws::String m_name;
+
   Aws::String m_resourceProperties;
-  bool m_nameHasBeenSet = false;
   bool m_profileIdHasBeenSet = false;
   bool m_resourceArnHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_resourcePropertiesHasBeenSet = false;
 };
 

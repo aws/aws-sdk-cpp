@@ -72,7 +72,8 @@ class FreeTrialPricingTerm {
 
   ///@{
   /**
-   * <p>Duration of the free trial period (5–31 days). </p>
+   * <p>Duration of the free trial period. The allowed duration depends on the
+   * product type. For SaaS products, the free trial lasts 7 to 90 days.</p>
    */
   inline const Aws::String& GetDuration() const { return m_duration; }
   inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }

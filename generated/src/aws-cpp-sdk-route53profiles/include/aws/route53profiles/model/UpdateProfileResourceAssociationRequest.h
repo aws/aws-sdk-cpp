@@ -30,24 +30,6 @@ class UpdateProfileResourceAssociationRequest : public Route53ProfilesRequest {
 
   ///@{
   /**
-   * <p> Name of the resource association. </p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  UpdateProfileResourceAssociationRequest& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p> ID of the resource association. </p>
    */
   inline const Aws::String& GetProfileResourceAssociationId() const { return m_profileResourceAssociationId; }
@@ -60,6 +42,24 @@ class UpdateProfileResourceAssociationRequest : public Route53ProfilesRequest {
   template <typename ProfileResourceAssociationIdT = Aws::String>
   UpdateProfileResourceAssociationRequest& WithProfileResourceAssociationId(ProfileResourceAssociationIdT&& value) {
     SetProfileResourceAssociationId(std::forward<ProfileResourceAssociationIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> Name of the resource association. </p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  UpdateProfileResourceAssociationRequest& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
     return *this;
   }
   ///@}
@@ -85,13 +85,13 @@ class UpdateProfileResourceAssociationRequest : public Route53ProfilesRequest {
   }
   ///@}
  private:
-  Aws::String m_name;
-
   Aws::String m_profileResourceAssociationId;
 
+  Aws::String m_name;
+
   Aws::String m_resourceProperties;
-  bool m_nameHasBeenSet = false;
   bool m_profileResourceAssociationIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_resourcePropertiesHasBeenSet = false;
 };
 

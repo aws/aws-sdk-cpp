@@ -47,7 +47,8 @@ enum class ARCRegionswitchErrors {
   CONFLICT = static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   ILLEGAL_ARGUMENT,
   ILLEGAL_STATE,
-  INTERNAL_SERVER
+  INTERNAL_SERVER,
+  RETRYABLE_CONFLICT
 };
 
 class AWS_ARCREGIONSWITCH_API ARCRegionswitchError : public Aws::Client::AWSError<ARCRegionswitchErrors> {

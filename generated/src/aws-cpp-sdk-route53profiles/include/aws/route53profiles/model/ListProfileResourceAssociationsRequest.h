@@ -35,6 +35,61 @@ class ListProfileResourceAssociationsRequest : public Route53ProfilesRequest {
 
   ///@{
   /**
+   * <p> The ID of the Profile. </p>
+   */
+  inline const Aws::String& GetProfileId() const { return m_profileId; }
+  inline bool ProfileIdHasBeenSet() const { return m_profileIdHasBeenSet; }
+  template <typename ProfileIdT = Aws::String>
+  void SetProfileId(ProfileIdT&& value) {
+    m_profileIdHasBeenSet = true;
+    m_profileId = std::forward<ProfileIdT>(value);
+  }
+  template <typename ProfileIdT = Aws::String>
+  ListProfileResourceAssociationsRequest& WithProfileId(ProfileIdT&& value) {
+    SetProfileId(std::forward<ProfileIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> ID of a resource if you want information on only one type. </p>
+   */
+  inline const Aws::String& GetResourceType() const { return m_resourceType; }
+  inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+  template <typename ResourceTypeT = Aws::String>
+  void SetResourceType(ResourceTypeT&& value) {
+    m_resourceTypeHasBeenSet = true;
+    m_resourceType = std::forward<ResourceTypeT>(value);
+  }
+  template <typename ResourceTypeT = Aws::String>
+  ListProfileResourceAssociationsRequest& WithResourceType(ResourceTypeT&& value) {
+    SetResourceType(std::forward<ResourceTypeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The Amazon Resource Name (ARN) of a resource. If you specify this parameter,
+   * only the association with that resource is returned. </p>
+   */
+  inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
+  inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+  template <typename ResourceArnT = Aws::String>
+  void SetResourceArn(ResourceArnT&& value) {
+    m_resourceArnHasBeenSet = true;
+    m_resourceArn = std::forward<ResourceArnT>(value);
+  }
+  template <typename ResourceArnT = Aws::String>
+  ListProfileResourceAssociationsRequest& WithResourceArn(ResourceArnT&& value) {
+    SetResourceArn(std::forward<ResourceArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p> The maximum number of objects that you want to return for this request. If
    * more objects are available, in the response, a <code>NextToken</code> value,
    * which you can use in a subsequent call to get the next batch of objects, is
@@ -75,54 +130,21 @@ class ListProfileResourceAssociationsRequest : public Route53ProfilesRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p> The ID of the Profile. </p>
-   */
-  inline const Aws::String& GetProfileId() const { return m_profileId; }
-  inline bool ProfileIdHasBeenSet() const { return m_profileIdHasBeenSet; }
-  template <typename ProfileIdT = Aws::String>
-  void SetProfileId(ProfileIdT&& value) {
-    m_profileIdHasBeenSet = true;
-    m_profileId = std::forward<ProfileIdT>(value);
-  }
-  template <typename ProfileIdT = Aws::String>
-  ListProfileResourceAssociationsRequest& WithProfileId(ProfileIdT&& value) {
-    SetProfileId(std::forward<ProfileIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p> ID of a resource if you want information on only one type. </p>
-   */
-  inline const Aws::String& GetResourceType() const { return m_resourceType; }
-  inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-  template <typename ResourceTypeT = Aws::String>
-  void SetResourceType(ResourceTypeT&& value) {
-    m_resourceTypeHasBeenSet = true;
-    m_resourceType = std::forward<ResourceTypeT>(value);
-  }
-  template <typename ResourceTypeT = Aws::String>
-  ListProfileResourceAssociationsRequest& WithResourceType(ResourceTypeT&& value) {
-    SetResourceType(std::forward<ResourceTypeT>(value));
-    return *this;
-  }
-  ///@}
  private:
-  int m_maxResults{0};
-
-  Aws::String m_nextToken;
-
   Aws::String m_profileId;
 
   Aws::String m_resourceType;
-  bool m_maxResultsHasBeenSet = false;
-  bool m_nextTokenHasBeenSet = false;
+
+  Aws::String m_resourceArn;
+
+  int m_maxResults{0};
+
+  Aws::String m_nextToken;
   bool m_profileIdHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceArnHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
 };
 
 }  // namespace Model

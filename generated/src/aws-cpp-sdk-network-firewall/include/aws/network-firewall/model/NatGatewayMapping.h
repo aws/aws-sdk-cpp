@@ -21,7 +21,7 @@ namespace Model {
 
 /**
  * <p>A NAT gateway that a proxy mode firewall uses to proxy traffic. This is used
- * in <a>CreateFirewall</a> when <code>NoSourcePreservation</code> is
+ * in <code>CreateFirewall</code> when <code>NoSourcePreservation</code> is
  * <code>TRUE</code>. </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/NatGatewayMapping">AWS
  * API Reference</a></p>

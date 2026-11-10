@@ -36,25 +36,6 @@ class ProfileResourceAssociation {
 
   ///@{
   /**
-   * <p> The date and time that the Profile resource association was created, in Unix
-   * time format and Coordinated Universal Time (UTC). </p>
-   */
-  inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
-  inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-  template <typename CreationTimeT = Aws::Utils::DateTime>
-  void SetCreationTime(CreationTimeT&& value) {
-    m_creationTimeHasBeenSet = true;
-    m_creationTime = std::forward<CreationTimeT>(value);
-  }
-  template <typename CreationTimeT = Aws::Utils::DateTime>
-  ProfileResourceAssociation& WithCreationTime(CreationTimeT&& value) {
-    SetCreationTime(std::forward<CreationTimeT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p> ID of the Profile resource association. </p>
    */
   inline const Aws::String& GetId() const { return m_id; }
@@ -67,25 +48,6 @@ class ProfileResourceAssociation {
   template <typename IdT = Aws::String>
   ProfileResourceAssociation& WithId(IdT&& value) {
     SetId(std::forward<IdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p> The date and time that the Profile resource association was modified, in
-   * Unix time format and Coordinated Universal Time (UTC). </p>
-   */
-  inline const Aws::Utils::DateTime& GetModificationTime() const { return m_modificationTime; }
-  inline bool ModificationTimeHasBeenSet() const { return m_modificationTimeHasBeenSet; }
-  template <typename ModificationTimeT = Aws::Utils::DateTime>
-  void SetModificationTime(ModificationTimeT&& value) {
-    m_modificationTimeHasBeenSet = true;
-    m_modificationTime = std::forward<ModificationTimeT>(value);
-  }
-  template <typename ModificationTimeT = Aws::Utils::DateTime>
-  ProfileResourceAssociation& WithModificationTime(ModificationTimeT&& value) {
-    SetModificationTime(std::forward<ModificationTimeT>(value));
     return *this;
   }
   ///@}
@@ -165,6 +127,25 @@ class ProfileResourceAssociation {
 
   ///@{
   /**
+   * <p> Resource type, such as a private hosted zone, interface VPC endpoint,
+   * Resolver query log configuration, or DNS Firewall rule group. </p>
+   */
+  inline const Aws::String& GetResourceType() const { return m_resourceType; }
+  inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+  template <typename ResourceTypeT = Aws::String>
+  void SetResourceType(ResourceTypeT&& value) {
+    m_resourceTypeHasBeenSet = true;
+    m_resourceType = std::forward<ResourceTypeT>(value);
+  }
+  template <typename ResourceTypeT = Aws::String>
+  ProfileResourceAssociation& WithResourceType(ResourceTypeT&& value) {
+    SetResourceType(std::forward<ResourceTypeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p> If the DNS resource is a DNS Firewall rule group, this indicates the
    * priority. </p>
    */
@@ -178,25 +159,6 @@ class ProfileResourceAssociation {
   template <typename ResourcePropertiesT = Aws::String>
   ProfileResourceAssociation& WithResourceProperties(ResourcePropertiesT&& value) {
     SetResourceProperties(std::forward<ResourcePropertiesT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p> Resource type, such as a private hosted zone, or DNS Firewall rule group.
-   * </p>
-   */
-  inline const Aws::String& GetResourceType() const { return m_resourceType; }
-  inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-  template <typename ResourceTypeT = Aws::String>
-  void SetResourceType(ResourceTypeT&& value) {
-    m_resourceTypeHasBeenSet = true;
-    m_resourceType = std::forward<ResourceTypeT>(value);
-  }
-  template <typename ResourceTypeT = Aws::String>
-  ProfileResourceAssociation& WithResourceType(ResourceTypeT&& value) {
-    SetResourceType(std::forward<ResourceTypeT>(value));
     return *this;
   }
   ///@}
@@ -234,12 +196,46 @@ class ProfileResourceAssociation {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> The date and time that the Profile resource association was created, in Unix
+   * time format and Coordinated Universal Time (UTC). </p>
+   */
+  inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+  inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+  template <typename CreationTimeT = Aws::Utils::DateTime>
+  void SetCreationTime(CreationTimeT&& value) {
+    m_creationTimeHasBeenSet = true;
+    m_creationTime = std::forward<CreationTimeT>(value);
+  }
+  template <typename CreationTimeT = Aws::Utils::DateTime>
+  ProfileResourceAssociation& WithCreationTime(CreationTimeT&& value) {
+    SetCreationTime(std::forward<CreationTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The date and time that the Profile resource association was modified, in
+   * Unix time format and Coordinated Universal Time (UTC). </p>
+   */
+  inline const Aws::Utils::DateTime& GetModificationTime() const { return m_modificationTime; }
+  inline bool ModificationTimeHasBeenSet() const { return m_modificationTimeHasBeenSet; }
+  template <typename ModificationTimeT = Aws::Utils::DateTime>
+  void SetModificationTime(ModificationTimeT&& value) {
+    m_modificationTimeHasBeenSet = true;
+    m_modificationTime = std::forward<ModificationTimeT>(value);
+  }
+  template <typename ModificationTimeT = Aws::Utils::DateTime>
+  ProfileResourceAssociation& WithModificationTime(ModificationTimeT&& value) {
+    SetModificationTime(std::forward<ModificationTimeT>(value));
+    return *this;
+  }
+  ///@}
  private:
-  Aws::Utils::DateTime m_creationTime{};
-
   Aws::String m_id;
-
-  Aws::Utils::DateTime m_modificationTime{};
 
   Aws::String m_name;
 
@@ -249,24 +245,28 @@ class ProfileResourceAssociation {
 
   Aws::String m_resourceArn;
 
-  Aws::String m_resourceProperties;
-
   Aws::String m_resourceType;
+
+  Aws::String m_resourceProperties;
 
   ProfileStatus m_status{ProfileStatus::NOT_SET};
 
   Aws::String m_statusMessage;
-  bool m_creationTimeHasBeenSet = false;
+
+  Aws::Utils::DateTime m_creationTime{};
+
+  Aws::Utils::DateTime m_modificationTime{};
   bool m_idHasBeenSet = false;
-  bool m_modificationTimeHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_ownerIdHasBeenSet = false;
   bool m_profileIdHasBeenSet = false;
   bool m_resourceArnHasBeenSet = false;
-  bool m_resourcePropertiesHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
+  bool m_resourcePropertiesHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_statusMessageHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_modificationTimeHasBeenSet = false;
 };
 
 }  // namespace Model

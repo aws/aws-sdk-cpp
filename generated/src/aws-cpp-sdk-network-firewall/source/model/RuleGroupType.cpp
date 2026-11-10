@@ -18,6 +18,8 @@ namespace RuleGroupTypeMapper {
 static const int STATELESS_HASH = HashingUtils::HashString("STATELESS");
 static const int STATEFUL_HASH = HashingUtils::HashString("STATEFUL");
 static const int STATEFUL_DOMAIN_HASH = HashingUtils::HashString("STATEFUL_DOMAIN");
+static const int FIREWALL_HASH = HashingUtils::HashString("FIREWALL");
+static const int IPS_HASH = HashingUtils::HashString("IPS");
 
 RuleGroupType GetRuleGroupTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +29,10 @@ RuleGroupType GetRuleGroupTypeForName(const Aws::String& name) {
     return RuleGroupType::STATEFUL;
   } else if (hashCode == STATEFUL_DOMAIN_HASH) {
     return RuleGroupType::STATEFUL_DOMAIN;
+  } else if (hashCode == FIREWALL_HASH) {
+    return RuleGroupType::FIREWALL;
+  } else if (hashCode == IPS_HASH) {
+    return RuleGroupType::IPS;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +53,10 @@ Aws::String GetNameForRuleGroupType(RuleGroupType enumValue) {
       return "STATEFUL";
     case RuleGroupType::STATEFUL_DOMAIN:
       return "STATEFUL_DOMAIN";
+    case RuleGroupType::FIREWALL:
+      return "FIREWALL";
+    case RuleGroupType::IPS:
+      return "IPS";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

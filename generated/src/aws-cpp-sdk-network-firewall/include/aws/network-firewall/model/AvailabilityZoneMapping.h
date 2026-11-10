@@ -22,10 +22,11 @@ namespace Model {
 /**
  * <p>Defines the mapping between an Availability Zone and a firewall endpoint for
  * a transit gateway-attached firewall. Each mapping represents where the firewall
- * can process traffic. You use these mappings when calling <a>CreateFirewall</a>,
- * <a>AssociateAvailabilityZones</a>, and <a>DisassociateAvailabilityZones</a>.</p>
- * <p>To retrieve the current Availability Zone mappings for a firewall, use
- * <a>DescribeFirewall</a>.</p><p><h3>See Also:</h3>   <a
+ * can process traffic. You use these mappings when calling
+ * <code>CreateFirewall</code>, <code>AssociateAvailabilityZones</code>, and
+ * <code>DisassociateAvailabilityZones</code>.</p> <p>To retrieve the current
+ * Availability Zone mappings for a firewall, use
+ * <code>DescribeFirewall</code>.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/AvailabilityZoneMapping">AWS
  * API Reference</a></p>
  */

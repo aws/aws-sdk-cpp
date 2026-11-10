@@ -644,6 +644,38 @@ class AWS_S3TABLES_API S3TablesClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Gets the server access logging configuration for a table bucket. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-server-logs.html">Server
+   * access logging for table buckets</a> in the <i>Amazon Simple Storage Service
+   * User Guide</i>.</p> <dl> <dt>Permissions</dt> <dd> <p>You must have the
+   * <code>s3tables:GetTableBucketLogging</code> permission to use this
+   * operation.</p> </dd> </dl><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/GetTableBucketLogging">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetTableBucketLoggingOutcome GetTableBucketLogging(const Model::GetTableBucketLoggingRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetTableBucketLogging that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetTableBucketLoggingRequestT = Model::GetTableBucketLoggingRequest>
+  Model::GetTableBucketLoggingOutcomeCallable GetTableBucketLoggingCallable(const GetTableBucketLoggingRequestT& request) const {
+    return SubmitCallable(&S3TablesClient::GetTableBucketLogging, request);
+  }
+
+  /**
+   * An Async wrapper for GetTableBucketLogging that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetTableBucketLoggingRequestT = Model::GetTableBucketLoggingRequest>
+  void GetTableBucketLoggingAsync(const GetTableBucketLoggingRequestT& request, const GetTableBucketLoggingResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&S3TablesClient::GetTableBucketLogging, request, handler, context);
+  }
+
+  /**
    * <p>Gets details about a maintenance configuration for a given table bucket. For
    * more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-table-buckets-maintenance.html">Amazon
@@ -1358,6 +1390,41 @@ class AWS_S3TABLES_API S3TablesClient : public Aws::Client::AWSJsonClient,
                                      const PutTableBucketEncryptionResponseReceivedHandler& handler,
                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&S3TablesClient::PutTableBucketEncryption, request, handler, context);
+  }
+
+  /**
+   * <p>Sets, updates, or removes the server access logging configuration for a table
+   * bucket. When logging is enabled, Amazon S3 delivers a record of the requests
+   * made to the table bucket and its tables to the target general purpose bucket
+   * that you specify. To disable logging, call this operation with an empty
+   * <code>tableBucketLoggingStatus</code>. For more information, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-server-logs.html">Server
+   * access logging for table buckets</a> in the <i>Amazon Simple Storage Service
+   * User Guide</i>.</p> <dl> <dt>Permissions</dt> <dd> <p>You must have the
+   * <code>s3tables:PutTableBucketLogging</code> permission to use this
+   * operation.</p> </dd> </dl><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3tables-2018-05-10/PutTableBucketLogging">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutTableBucketLoggingOutcome PutTableBucketLogging(const Model::PutTableBucketLoggingRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutTableBucketLogging that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename PutTableBucketLoggingRequestT = Model::PutTableBucketLoggingRequest>
+  Model::PutTableBucketLoggingOutcomeCallable PutTableBucketLoggingCallable(const PutTableBucketLoggingRequestT& request) const {
+    return SubmitCallable(&S3TablesClient::PutTableBucketLogging, request);
+  }
+
+  /**
+   * An Async wrapper for PutTableBucketLogging that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename PutTableBucketLoggingRequestT = Model::PutTableBucketLoggingRequest>
+  void PutTableBucketLoggingAsync(const PutTableBucketLoggingRequestT& request, const PutTableBucketLoggingResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&S3TablesClient::PutTableBucketLogging, request, handler, context);
   }
 
   /**

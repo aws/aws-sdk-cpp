@@ -21,8 +21,9 @@ namespace Connect {
 namespace Model {
 
 /**
- * Additional recipients for UpdateContact, allowing an empty list to clear CC
- * recipients.<p><h3>See Also:</h3>   <a
+ * <p>The additional recipients of an outbound email that you can update. An empty
+ * list of <code>CcEmailAddresses</code> clears the existing CC
+ * recipients.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/NullableAdditionalRecipients">AWS
  * API Reference</a></p>
  */

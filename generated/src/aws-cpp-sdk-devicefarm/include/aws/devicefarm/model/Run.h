@@ -617,6 +617,26 @@ class Run {
 
   ///@{
   /**
+   * <p>The ARN of the test package the run was scheduled with. This field is not
+   * returned for test types that do not use a test package, such as
+   * <code>BUILTIN_FUZZ</code>.</p>
+   */
+  inline const Aws::String& GetTestPackageArn() const { return m_testPackageArn; }
+  inline bool TestPackageArnHasBeenSet() const { return m_testPackageArnHasBeenSet; }
+  template <typename TestPackageArnT = Aws::String>
+  void SetTestPackageArn(TestPackageArnT&& value) {
+    m_testPackageArnHasBeenSet = true;
+    m_testPackageArn = std::forward<TestPackageArnT>(value);
+  }
+  template <typename TestPackageArnT = Aws::String>
+  Run& WithTestPackageArn(TestPackageArnT&& value) {
+    SetTestPackageArn(std::forward<TestPackageArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The results of a device filter used to select the devices for a test run.</p>
    */
   inline const DeviceSelectionResult& GetDeviceSelectionResult() const { return m_deviceSelectionResult; }
@@ -798,6 +818,8 @@ class Run {
 
   Aws::String m_testSpecArn;
 
+  Aws::String m_testPackageArn;
+
   DeviceSelectionResult m_deviceSelectionResult;
 
   VpcConfig m_vpcConfig;
@@ -840,6 +862,7 @@ class Run {
   bool m_webUrlHasBeenSet = false;
   bool m_skipAppResignHasBeenSet = false;
   bool m_testSpecArnHasBeenSet = false;
+  bool m_testPackageArnHasBeenSet = false;
   bool m_deviceSelectionResultHasBeenSet = false;
   bool m_vpcConfigHasBeenSet = false;
   bool m_executionRoleArnHasBeenSet = false;

@@ -1,0 +1,23 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/s3tables/model/PutTableBucketLoggingRequest.h>
+
+#include <utility>
+
+using namespace Aws::S3Tables::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+Aws::String PutTableBucketLoggingRequest::SerializePayload() const {
+  JsonValue payload;
+
+  if (m_tableBucketLoggingStatusHasBeenSet) {
+    payload.WithObject("tableBucketLoggingStatus", m_tableBucketLoggingStatus.Jsonize());
+  }
+
+  return payload.View().WriteReadable();
+}

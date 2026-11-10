@@ -20,8 +20,8 @@ namespace PCS {
 namespace Model {
 
 /**
- * <p>An Amazon EC2 launch template PCS uses to launch compute nodes.</p><p><h3>See
- * Also:</h3>   <a
+ * <p>An Amazon EC2 launch template PCS uses to launch compute nodes. The structure
+ * contains the launch template ID and version.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/CustomLaunchTemplate">AWS
  * API Reference</a></p>
  */
@@ -34,8 +34,9 @@ class CustomLaunchTemplate {
 
   ///@{
   /**
-   * <p>The ID of the EC2 launch template to use to provision instances.</p> <p>
-   * Example: <code>lt-xxxx</code> </p>
+   * <p>The ID of the EC2 launch template to use to provision instances. Specify this
+   * value together with <code>version</code>.</p> <p> Example: <code>lt-xxxx</code>
+   * </p>
    */
   inline const Aws::String& GetId() const { return m_id; }
   inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
@@ -53,7 +54,8 @@ class CustomLaunchTemplate {
 
   ///@{
   /**
-   * <p>The version of the EC2 launch template to use to provision instances.</p>
+   * <p>The version of the EC2 launch template to use to provision instances. Specify
+   * this value together with <code>id</code>.</p>
    */
   inline const Aws::String& GetVersion() const { return m_version; }
   inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }

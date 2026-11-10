@@ -10,6 +10,7 @@
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/model/FilterConfiguration.h>
 #include <aws/gamelift/model/GameSessionQueueDestination.h>
+#include <aws/gamelift/model/LogDeliveryDestination.h>
 #include <aws/gamelift/model/PlayerLatencyPolicy.h>
 #include <aws/gamelift/model/PriorityConfiguration.h>
 
@@ -154,10 +155,10 @@ class UpdateGameSessionQueueRequest : public GameLiftRequest {
   ///@{
   /**
    * <p>Custom settings to use when prioritizing destinations and locations for game
-   * session placements. This configuration replaces the FleetIQ default
-   * prioritization process. Priority types that are not explicitly named will be
-   * automatically applied at the end of the prioritization process. To remove an
-   * existing priority configuration, pass in an empty set.</p>
+   * session placements. This configuration replaces the default prioritization
+   * process. Priority types that are not explicitly named will be automatically
+   * applied at the end of the prioritization process. To remove an existing priority
+   * configuration, pass in an empty set.</p>
    */
   inline const PriorityConfiguration& GetPriorityConfiguration() const { return m_priorityConfiguration; }
   inline bool PriorityConfigurationHasBeenSet() const { return m_priorityConfigurationHasBeenSet; }
@@ -212,6 +213,56 @@ class UpdateGameSessionQueueRequest : public GameLiftRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Log delivery destinations to add to the queue's log configuration
+   * (<code>LogConfiguration</code>).</p>
+   */
+  inline const Aws::Vector<LogDeliveryDestination>& GetAddLogDeliveryDestinations() const { return m_addLogDeliveryDestinations; }
+  inline bool AddLogDeliveryDestinationsHasBeenSet() const { return m_addLogDeliveryDestinationsHasBeenSet; }
+  template <typename AddLogDeliveryDestinationsT = Aws::Vector<LogDeliveryDestination>>
+  void SetAddLogDeliveryDestinations(AddLogDeliveryDestinationsT&& value) {
+    m_addLogDeliveryDestinationsHasBeenSet = true;
+    m_addLogDeliveryDestinations = std::forward<AddLogDeliveryDestinationsT>(value);
+  }
+  template <typename AddLogDeliveryDestinationsT = Aws::Vector<LogDeliveryDestination>>
+  UpdateGameSessionQueueRequest& WithAddLogDeliveryDestinations(AddLogDeliveryDestinationsT&& value) {
+    SetAddLogDeliveryDestinations(std::forward<AddLogDeliveryDestinationsT>(value));
+    return *this;
+  }
+  template <typename AddLogDeliveryDestinationsT = LogDeliveryDestination>
+  UpdateGameSessionQueueRequest& AddAddLogDeliveryDestinations(AddLogDeliveryDestinationsT&& value) {
+    m_addLogDeliveryDestinationsHasBeenSet = true;
+    m_addLogDeliveryDestinations.emplace_back(std::forward<AddLogDeliveryDestinationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Log delivery destinations to remove from the queue's log configuration
+   * (<code>LogConfiguration</code>).</p>
+   */
+  inline const Aws::Vector<LogDeliveryDestination>& GetRemoveLogDeliveryDestinations() const { return m_removeLogDeliveryDestinations; }
+  inline bool RemoveLogDeliveryDestinationsHasBeenSet() const { return m_removeLogDeliveryDestinationsHasBeenSet; }
+  template <typename RemoveLogDeliveryDestinationsT = Aws::Vector<LogDeliveryDestination>>
+  void SetRemoveLogDeliveryDestinations(RemoveLogDeliveryDestinationsT&& value) {
+    m_removeLogDeliveryDestinationsHasBeenSet = true;
+    m_removeLogDeliveryDestinations = std::forward<RemoveLogDeliveryDestinationsT>(value);
+  }
+  template <typename RemoveLogDeliveryDestinationsT = Aws::Vector<LogDeliveryDestination>>
+  UpdateGameSessionQueueRequest& WithRemoveLogDeliveryDestinations(RemoveLogDeliveryDestinationsT&& value) {
+    SetRemoveLogDeliveryDestinations(std::forward<RemoveLogDeliveryDestinationsT>(value));
+    return *this;
+  }
+  template <typename RemoveLogDeliveryDestinationsT = LogDeliveryDestination>
+  UpdateGameSessionQueueRequest& AddRemoveLogDeliveryDestinations(RemoveLogDeliveryDestinationsT&& value) {
+    m_removeLogDeliveryDestinationsHasBeenSet = true;
+    m_removeLogDeliveryDestinations.emplace_back(std::forward<RemoveLogDeliveryDestinationsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -228,6 +279,10 @@ class UpdateGameSessionQueueRequest : public GameLiftRequest {
   Aws::String m_customEventData;
 
   Aws::String m_notificationTarget;
+
+  Aws::Vector<LogDeliveryDestination> m_addLogDeliveryDestinations;
+
+  Aws::Vector<LogDeliveryDestination> m_removeLogDeliveryDestinations;
   bool m_nameHasBeenSet = false;
   bool m_timeoutInSecondsHasBeenSet = false;
   bool m_playerLatencyPoliciesHasBeenSet = false;
@@ -236,6 +291,8 @@ class UpdateGameSessionQueueRequest : public GameLiftRequest {
   bool m_priorityConfigurationHasBeenSet = false;
   bool m_customEventDataHasBeenSet = false;
   bool m_notificationTargetHasBeenSet = false;
+  bool m_addLogDeliveryDestinationsHasBeenSet = false;
+  bool m_removeLogDeliveryDestinationsHasBeenSet = false;
 };
 
 }  // namespace Model
