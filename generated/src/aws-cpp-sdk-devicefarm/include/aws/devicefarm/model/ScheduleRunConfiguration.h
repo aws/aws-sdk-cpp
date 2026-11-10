@@ -281,10 +281,12 @@ class ScheduleRunConfiguration {
 
   ///@{
   /**
-   * <p>The types of insights to generate for a run. Specify one or more values to
-   * opt in to insights generation when scheduling a run.</p> <p>Insights are
-   * currently supported for custom mode runs with Instrumentation, Appium Java
-   * TestNG, and XCTest UI test types.</p>
+   * <p>The types of insights to generate for a run. If you do not specify a value,
+   * the default is <code>TEST_REPORT</code> for runs that support insights.</p>
+   * <p>Specify <code>NONE</code> if you do not want the service to generate insights
+   * for the run. You cannot combine <code>NONE</code> with any other value.</p>
+   * <p>Insights are supported for custom mode runs of all test types except Appium
+   * Ruby and Appium Web Ruby.</p>
    */
   inline const Aws::Vector<InsightsType>& GetInsightsTypes() const { return m_insightsTypes; }
   inline bool InsightsTypesHasBeenSet() const { return m_insightsTypesHasBeenSet; }

@@ -19,15 +19,9 @@ Aws::String ListProfileAssociationsRequest::SerializePayload() const { return {}
 
 void ListProfileAssociationsRequest::AddQueryStringParameters(URI& uri) const {
   Aws::StringStream ss;
-  if (m_maxResultsHasBeenSet) {
-    ss << m_maxResults;
-    uri.AddQueryStringParameter("maxResults", ss.str());
-    ss.str("");
-  }
-
-  if (m_nextTokenHasBeenSet) {
-    ss << m_nextToken;
-    uri.AddQueryStringParameter("nextToken", ss.str());
+  if (m_resourceIdHasBeenSet) {
+    ss << m_resourceId;
+    uri.AddQueryStringParameter("resourceId", ss.str());
     ss.str("");
   }
 
@@ -37,9 +31,15 @@ void ListProfileAssociationsRequest::AddQueryStringParameters(URI& uri) const {
     ss.str("");
   }
 
-  if (m_resourceIdHasBeenSet) {
-    ss << m_resourceId;
-    uri.AddQueryStringParameter("resourceId", ss.str());
+  if (m_maxResultsHasBeenSet) {
+    ss << m_maxResults;
+    uri.AddQueryStringParameter("maxResults", ss.str());
+    ss.str("");
+  }
+
+  if (m_nextTokenHasBeenSet) {
+    ss << m_nextToken;
+    uri.AddQueryStringParameter("nextToken", ss.str());
     ss.str("");
   }
 }

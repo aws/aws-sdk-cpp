@@ -15,6 +15,7 @@
 #include <aws/connect/model/ContactDetails.h>
 #include <aws/connect/model/ContactEvaluation.h>
 #include <aws/connect/model/ContactInitiationMethod.h>
+#include <aws/connect/model/ContactLens.h>
 #include <aws/connect/model/Customer.h>
 #include <aws/connect/model/CustomerVoiceActivity.h>
 #include <aws/connect/model/DisconnectDetails.h>
@@ -1013,6 +1014,26 @@ class Contact {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Information about the conversational analytics configuration applied to the
+   * contact. This field is present only for contacts where conversational analytics
+   * is enabled in the contact flow.</p>
+   */
+  inline const ContactLens& GetContactLens() const { return m_contactLens; }
+  inline bool ContactLensHasBeenSet() const { return m_contactLensHasBeenSet; }
+  template <typename ContactLensT = ContactLens>
+  void SetContactLens(ContactLensT&& value) {
+    m_contactLensHasBeenSet = true;
+    m_contactLens = std::forward<ContactLensT>(value);
+  }
+  template <typename ContactLensT = ContactLens>
+  Contact& WithContactLens(ContactLensT&& value) {
+    SetContactLens(std::forward<ContactLensT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
@@ -1111,6 +1132,8 @@ class Contact {
   Aws::Vector<NextContactEntry> m_nextContacts;
 
   GlobalResiliencyMetadata m_globalResiliencyMetadata;
+
+  ContactLens m_contactLens;
   bool m_arnHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_initialContactIdHasBeenSet = false;
@@ -1160,6 +1183,7 @@ class Contact {
   bool m_attributesHasBeenSet = false;
   bool m_nextContactsHasBeenSet = false;
   bool m_globalResiliencyMetadataHasBeenSet = false;
+  bool m_contactLensHasBeenSet = false;
 };
 
 }  // namespace Model

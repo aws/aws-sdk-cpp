@@ -35,6 +35,42 @@ class ListProfileAssociationsRequest : public Route53ProfilesRequest {
 
   ///@{
   /**
+   * <p> ID of the VPC. </p>
+   */
+  inline const Aws::String& GetResourceId() const { return m_resourceId; }
+  inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
+  template <typename ResourceIdT = Aws::String>
+  void SetResourceId(ResourceIdT&& value) {
+    m_resourceIdHasBeenSet = true;
+    m_resourceId = std::forward<ResourceIdT>(value);
+  }
+  template <typename ResourceIdT = Aws::String>
+  ListProfileAssociationsRequest& WithResourceId(ResourceIdT&& value) {
+    SetResourceId(std::forward<ResourceIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> ID of the Profile. </p>
+   */
+  inline const Aws::String& GetProfileId() const { return m_profileId; }
+  inline bool ProfileIdHasBeenSet() const { return m_profileIdHasBeenSet; }
+  template <typename ProfileIdT = Aws::String>
+  void SetProfileId(ProfileIdT&& value) {
+    m_profileIdHasBeenSet = true;
+    m_profileId = std::forward<ProfileIdT>(value);
+  }
+  template <typename ProfileIdT = Aws::String>
+  ListProfileAssociationsRequest& WithProfileId(ProfileIdT&& value) {
+    SetProfileId(std::forward<ProfileIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p> The maximum number of objects that you want to return for this request. If
    * more objects are available, in the response, a <code>NextToken</code> value,
    * which you can use in a subsequent call to get the next batch of objects, is
@@ -75,54 +111,18 @@ class ListProfileAssociationsRequest : public Route53ProfilesRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p> ID of the Profile. </p>
-   */
-  inline const Aws::String& GetProfileId() const { return m_profileId; }
-  inline bool ProfileIdHasBeenSet() const { return m_profileIdHasBeenSet; }
-  template <typename ProfileIdT = Aws::String>
-  void SetProfileId(ProfileIdT&& value) {
-    m_profileIdHasBeenSet = true;
-    m_profileId = std::forward<ProfileIdT>(value);
-  }
-  template <typename ProfileIdT = Aws::String>
-  ListProfileAssociationsRequest& WithProfileId(ProfileIdT&& value) {
-    SetProfileId(std::forward<ProfileIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p> ID of the VPC. </p>
-   */
-  inline const Aws::String& GetResourceId() const { return m_resourceId; }
-  inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-  template <typename ResourceIdT = Aws::String>
-  void SetResourceId(ResourceIdT&& value) {
-    m_resourceIdHasBeenSet = true;
-    m_resourceId = std::forward<ResourceIdT>(value);
-  }
-  template <typename ResourceIdT = Aws::String>
-  ListProfileAssociationsRequest& WithResourceId(ResourceIdT&& value) {
-    SetResourceId(std::forward<ResourceIdT>(value));
-    return *this;
-  }
-  ///@}
  private:
-  int m_maxResults{0};
-
-  Aws::String m_nextToken;
+  Aws::String m_resourceId;
 
   Aws::String m_profileId;
 
-  Aws::String m_resourceId;
+  int m_maxResults{0};
+
+  Aws::String m_nextToken;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_profileIdHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
-  bool m_profileIdHasBeenSet = false;
-  bool m_resourceIdHasBeenSet = false;
 };
 
 }  // namespace Model

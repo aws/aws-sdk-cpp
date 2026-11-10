@@ -36,25 +36,6 @@ class ProfileAssociation {
 
   ///@{
   /**
-   * <p> The date and time that the Profile association was created, in Unix time
-   * format and Coordinated Universal Time (UTC). </p>
-   */
-  inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
-  inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-  template <typename CreationTimeT = Aws::Utils::DateTime>
-  void SetCreationTime(CreationTimeT&& value) {
-    m_creationTimeHasBeenSet = true;
-    m_creationTime = std::forward<CreationTimeT>(value);
-  }
-  template <typename CreationTimeT = Aws::Utils::DateTime>
-  ProfileAssociation& WithCreationTime(CreationTimeT&& value) {
-    SetCreationTime(std::forward<CreationTimeT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p> ID of the Profile association. </p>
    */
   inline const Aws::String& GetId() const { return m_id; }
@@ -67,25 +48,6 @@ class ProfileAssociation {
   template <typename IdT = Aws::String>
   ProfileAssociation& WithId(IdT&& value) {
     SetId(std::forward<IdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p> The date and time that the Profile association was modified, in Unix time
-   * format and Coordinated Universal Time (UTC). </p>
-   */
-  inline const Aws::Utils::DateTime& GetModificationTime() const { return m_modificationTime; }
-  inline bool ModificationTimeHasBeenSet() const { return m_modificationTimeHasBeenSet; }
-  template <typename ModificationTimeT = Aws::Utils::DateTime>
-  void SetModificationTime(ModificationTimeT&& value) {
-    m_modificationTimeHasBeenSet = true;
-    m_modificationTime = std::forward<ModificationTimeT>(value);
-  }
-  template <typename ModificationTimeT = Aws::Utils::DateTime>
-  ProfileAssociation& WithModificationTime(ModificationTimeT&& value) {
-    SetModificationTime(std::forward<ModificationTimeT>(value));
     return *this;
   }
   ///@}
@@ -195,12 +157,64 @@ class ProfileAssociation {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> The date and time that the Profile association was created, in Unix time
+   * format and Coordinated Universal Time (UTC). </p>
+   */
+  inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+  inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+  template <typename CreationTimeT = Aws::Utils::DateTime>
+  void SetCreationTime(CreationTimeT&& value) {
+    m_creationTimeHasBeenSet = true;
+    m_creationTime = std::forward<CreationTimeT>(value);
+  }
+  template <typename CreationTimeT = Aws::Utils::DateTime>
+  ProfileAssociation& WithCreationTime(CreationTimeT&& value) {
+    SetCreationTime(std::forward<CreationTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The date and time that the Profile association was modified, in Unix time
+   * format and Coordinated Universal Time (UTC). </p>
+   */
+  inline const Aws::Utils::DateTime& GetModificationTime() const { return m_modificationTime; }
+  inline bool ModificationTimeHasBeenSet() const { return m_modificationTimeHasBeenSet; }
+  template <typename ModificationTimeT = Aws::Utils::DateTime>
+  void SetModificationTime(ModificationTimeT&& value) {
+    m_modificationTimeHasBeenSet = true;
+    m_modificationTime = std::forward<ModificationTimeT>(value);
+  }
+  template <typename ModificationTimeT = Aws::Utils::DateTime>
+  ProfileAssociation& WithModificationTime(ModificationTimeT&& value) {
+    SetModificationTime(std::forward<ModificationTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The priority of the Profile association. Route 53 VPC Resolver evaluates the
+   * Profile associations for a VPC in priority order, starting with the lowest
+   * value. Associations created without a priority have priority 100. </p>
+   */
+  inline int GetPriority() const { return m_priority; }
+  inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
+  inline void SetPriority(int value) {
+    m_priorityHasBeenSet = true;
+    m_priority = value;
+  }
+  inline ProfileAssociation& WithPriority(int value) {
+    SetPriority(value);
+    return *this;
+  }
+  ///@}
  private:
-  Aws::Utils::DateTime m_creationTime{};
-
   Aws::String m_id;
-
-  Aws::Utils::DateTime m_modificationTime{};
 
   Aws::String m_name;
 
@@ -213,15 +227,22 @@ class ProfileAssociation {
   ProfileStatus m_status{ProfileStatus::NOT_SET};
 
   Aws::String m_statusMessage;
-  bool m_creationTimeHasBeenSet = false;
+
+  Aws::Utils::DateTime m_creationTime{};
+
+  Aws::Utils::DateTime m_modificationTime{};
+
+  int m_priority{0};
   bool m_idHasBeenSet = false;
-  bool m_modificationTimeHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_ownerIdHasBeenSet = false;
   bool m_profileIdHasBeenSet = false;
   bool m_resourceIdHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_statusMessageHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_modificationTimeHasBeenSet = false;
+  bool m_priorityHasBeenSet = false;
 };
 
 }  // namespace Model

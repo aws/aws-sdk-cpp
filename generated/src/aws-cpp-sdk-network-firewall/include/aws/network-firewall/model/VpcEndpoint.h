@@ -22,12 +22,12 @@ namespace NetworkFirewall {
 namespace Model {
 
 /**
- * <p>The VPC and subnets for a proxy mode firewall endpoint. This is used in
- * <a>CreateFirewall</a> when <code>NoSourcePreservation</code> is
+ * <p>Contains the VPC and subnets for a proxy mode firewall endpoint. You use it
+ * in <code>CreateFirewall</code> when <code>NoSourcePreservation</code> is
  * <code>TRUE</code>, to specify where Network Firewall creates the firewall
- * endpoint. </p> <p>This differs from <a>VpcEndpointAssociation</a>, which defines
- * additional secondary endpoints for a firewall in other VPCs. </p><p><h3>See
- * Also:</h3>   <a
+ * endpoint. </p> <p>This differs from <code>VpcEndpointAssociation</code>, which
+ * defines additional secondary endpoints for a firewall in other VPCs.
+ * </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/VpcEndpoint">AWS
  * API Reference</a></p>
  */

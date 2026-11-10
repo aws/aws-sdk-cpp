@@ -23,6 +23,14 @@ Aws::String CreateRuleGroupRequest::SerializePayload() const {
     payload.WithObject("RuleGroup", m_ruleGroup.Jsonize());
   }
 
+  if (m_firewallRuleGroupHasBeenSet) {
+    payload.WithObject("FirewallRuleGroup", m_firewallRuleGroup.Jsonize());
+  }
+
+  if (m_ipsRuleGroupHasBeenSet) {
+    payload.WithObject("IpsRuleGroup", m_ipsRuleGroup.Jsonize());
+  }
+
   if (m_rulesHasBeenSet) {
     payload.WithString("Rules", m_rules);
   }

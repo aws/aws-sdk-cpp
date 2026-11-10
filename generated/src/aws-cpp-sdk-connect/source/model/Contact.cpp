@@ -236,6 +236,10 @@ Contact& Contact::operator=(JsonView jsonValue) {
     m_globalResiliencyMetadata = jsonValue.GetObject("GlobalResiliencyMetadata");
     m_globalResiliencyMetadataHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ContactLens")) {
+    m_contactLens = jsonValue.GetObject("ContactLens");
+    m_contactLensHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -465,6 +469,10 @@ JsonValue Contact::Jsonize() const {
 
   if (m_globalResiliencyMetadataHasBeenSet) {
     payload.WithObject("GlobalResiliencyMetadata", m_globalResiliencyMetadata.Jsonize());
+  }
+
+  if (m_contactLensHasBeenSet) {
+    payload.WithObject("ContactLens", m_contactLens.Jsonize());
   }
 
   return payload;

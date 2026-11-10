@@ -21,8 +21,10 @@ namespace GameLift {
 namespace Model {
 
 /**
- * <p>Set of rules for processing a deployment for a container fleet
- * update.</p><p><h3>See Also:</h3>   <a
+ * <p>Set of rules for processing a deployment for a container fleet update. For
+ * how Amazon GameLift Servers validates and rolls out a deployment, see <a
+ * href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/containers-deployment-validation.html">Container
+ * fleet deployments</a>.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeploymentConfiguration">AWS
  * API Reference</a></p>
  */
@@ -36,11 +38,19 @@ class DeploymentConfiguration {
   ///@{
   /**
    * <p>Determines how fleet deployment activity affects active game sessions on the
-   * fleet. With protection, a deployment honors game session protection, and delays
-   * actions that would interrupt a protected active game session until the game
-   * session ends. Without protection, deployment activity can shut down all running
-   * tasks, including active game sessions, regardless of game session protection.
-   * </p>
+   * fleet. A protected game session can't be terminated while it's active; a fleet
+   * sets the default protection for its new game sessions with
+   * <code>NewGameSessionProtectionPolicy</code>.</p> <ul> <li> <p>
+   * <code>WITH_PROTECTION</code> -- The deployment honors game session protection,
+   * and delays actions that would interrupt a protected active game session until
+   * the game session ends.</p> </li> <li> <p> <code>IGNORE_PROTECTION</code> -- The
+   * deployment replaces containers regardless of game session activity, including
+   * active game sessions. This option is useful during development and testing.</p>
+   * </li> </ul> <p>This setting also affects how long deployment validation can
+   * take. When the fleet's <code>NewGameSessionProtectionPolicy</code> is
+   * <code>FullProtection</code> and the deployment uses
+   * <code>WITH_PROTECTION</code>, validation waits for protected game sessions to
+   * end.</p> <p>Default value: <code>WITH_PROTECTION</code> </p>
    */
   inline DeploymentProtectionStrategy GetProtectionStrategy() const { return m_protectionStrategy; }
   inline bool ProtectionStrategyHasBeenSet() const { return m_protectionStrategyHasBeenSet; }
@@ -56,8 +66,12 @@ class DeploymentConfiguration {
 
   ///@{
   /**
-   * <p>Sets a minimum level of healthy tasks to maintain during deployment activity.
-   * </p>
+   * <p>Sets the minimum percentage of the fleet's game server container groups to
+   * keep healthy during deployment activity. A low value favors deployment speed; a
+   * high value favors game server availability. For example, if the fleet runs 20
+   * game server container groups and this value is 75, Amazon GameLift Servers keeps
+   * at least 15 of them healthy, so it replaces no more than 5 at a time.</p>
+   * <p>Default value: 75</p>
    */
   inline int64_t GetMinimumHealthyPercentage() const { return m_minimumHealthyPercentage; }
   inline bool MinimumHealthyPercentageHasBeenSet() const { return m_minimumHealthyPercentageHasBeenSet; }
@@ -73,12 +87,14 @@ class DeploymentConfiguration {
 
   ///@{
   /**
-   * <p>Determines what actions to take if a deployment fails. If the fleet is
-   * multi-location, this strategy applies across all fleet locations. With a
-   * rollback strategy, updated fleet instances are rolled back to the last
-   * successful deployment. Alternatively, you can maintain a few impaired containers
-   * for the purpose of debugging, while all other tasks return to the last
-   * successful deployment.</p>
+   * <p>Determines what actions to take if a deployment fails validation. If the
+   * fleet is multi-location, this strategy applies across all fleet locations.</p>
+   * <ul> <li> <p> <code>ROLLBACK</code> -- Returns all of the fleet's containers to
+   * the last successful deployment.</p> </li> <li> <p> <code>MAINTAIN</code> --
+   * Keeps the containers that failed validation in place so that you can inspect
+   * them, and returns all other containers to the last successful deployment. Use
+   * this option when you're deploying a container image that you want to be able to
+   * debug on failure.</p> </li> </ul> <p>Default value: <code>MAINTAIN</code> </p>
    */
   inline DeploymentImpairmentStrategy GetImpairmentStrategy() const { return m_impairmentStrategy; }
   inline bool ImpairmentStrategyHasBeenSet() const { return m_impairmentStrategyHasBeenSet; }

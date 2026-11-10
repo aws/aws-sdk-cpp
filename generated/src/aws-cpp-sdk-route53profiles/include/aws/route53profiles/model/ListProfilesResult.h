@@ -31,26 +31,6 @@ class ListProfilesResult {
 
   ///@{
   /**
-   * <p> If more than <code>MaxResults</code> resource associations match the
-   * specified criteria, you can submit another <code>ListProfiles</code> request to
-   * get the next group of results. In the next request, specify the value of
-   * <code>NextToken</code> from the previous response. </p>
-   */
-  inline const Aws::String& GetNextToken() const { return m_nextToken; }
-  template <typename NextTokenT = Aws::String>
-  void SetNextToken(NextTokenT&& value) {
-    m_nextTokenHasBeenSet = true;
-    m_nextToken = std::forward<NextTokenT>(value);
-  }
-  template <typename NextTokenT = Aws::String>
-  ListProfilesResult& WithNextToken(NextTokenT&& value) {
-    SetNextToken(std::forward<NextTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p> Summary information about the Profiles. </p>
    */
   inline const Aws::Vector<ProfileSummary>& GetProfileSummaries() const { return m_profileSummaries; }
@@ -73,6 +53,26 @@ class ListProfilesResult {
   ///@}
 
   ///@{
+  /**
+   * <p> If more than <code>MaxResults</code> resource associations match the
+   * specified criteria, you can submit another <code>ListProfiles</code> request to
+   * get the next group of results. In the next request, specify the value of
+   * <code>NextToken</code> from the previous response. </p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListProfilesResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -89,14 +89,14 @@ class ListProfilesResult {
   inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
-  Aws::String m_nextToken;
-
   Aws::Vector<ProfileSummary> m_profileSummaries;
+
+  Aws::String m_nextToken;
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
-  bool m_nextTokenHasBeenSet = false;
   bool m_profileSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -70,10 +70,10 @@ class EndTimeBehavior {
    * <code>PROPOSER_RENEW_OPTED_OUT</code> – The proposer opted out of renewing the
    * agreement.</p> </li> <li> <p> <code>ACCEPTOR_RENEW_OPTED_OUT</code> – The
    * acceptor opted out of renewing the agreement.</p> </li> <li> <p>
-   * <code>NO_RENEWAL_TERM</code> �� The accepted terms of the agreement don't
-   * include a renewal term, which is required for an agreement to renew.</p> </li>
-   * <li> <p> <code>RENEWAL_LIMIT_EXHAUSTED</code> – The agreement reached the
-   * maximum number of renewals allowed by its renewal term.</p> </li> </ul>
+   * <code>NO_RENEWAL_TERM</code> – The accepted terms of the agreement don't include
+   * a renewal term, which is required for an agreement to renew.</p> </li> <li> <p>
+   * <code>RENEWAL_LIMIT_EXHAUSTED</code> – The agreement reached the maximum number
+   * of renewals allowed by its renewal term.</p> </li> </ul>
    */
   inline EndTimeBehaviorReasonCode GetReasonCode() const { return m_reasonCode; }
   inline bool ReasonCodeHasBeenSet() const { return m_reasonCodeHasBeenSet; }

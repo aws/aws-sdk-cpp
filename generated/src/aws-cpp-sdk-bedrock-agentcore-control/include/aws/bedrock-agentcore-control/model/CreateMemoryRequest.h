@@ -131,8 +131,8 @@ class CreateMemoryRequest : public BedrockAgentCoreControlRequest {
 
   ///@{
   /**
-   * <p>The duration after which memory events expire. Specified as an ISO 8601
-   * duration.</p>
+   * <p>The number of days after which memory events expire, between 7 and 3650
+   * days.</p>
    */
   inline int GetEventExpiryDuration() const { return m_eventExpiryDuration; }
   inline bool EventExpiryDurationHasBeenSet() const { return m_eventExpiryDurationHasBeenSet; }

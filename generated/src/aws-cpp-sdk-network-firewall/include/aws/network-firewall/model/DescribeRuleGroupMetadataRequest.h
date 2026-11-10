@@ -73,10 +73,14 @@ class DescribeRuleGroupMetadataRequest : public NetworkFirewallRequest {
 
   ///@{
   /**
-   * <p>Indicates whether the rule group is stateless or stateful. If the rule group
-   * is stateless, it contains stateless rules. If it is stateful, it contains
-   * stateful rules. </p>  <p>This setting is required for requests that do not
-   * include the <code>RuleGroupARN</code>.</p>
+   * <p>Indicates the type of the rule group. Valid values are:</p> <ul> <li> <p>
+   * <code>STATELESS</code> - Stateless rules, for use in a Classic Network Firewall
+   * policy.</p> </li> <li> <p> <code>STATEFUL</code> - Stateful rules, for use in a
+   * Classic Network Firewall policy.</p> </li> <li> <p> <code>FIREWALL</code> -
+   * Firewall engine rules, for use in a Next Generation policy.</p> </li> <li> <p>
+   * <code>IPS</code> - IPS engine rules, for use in a Next Generation policy.</p>
+   * </li> </ul>  <p>This setting is required for requests that do not include
+   * the <code>RuleGroupARN</code>.</p>
    */
   inline RuleGroupType GetType() const { return m_type; }
   inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }

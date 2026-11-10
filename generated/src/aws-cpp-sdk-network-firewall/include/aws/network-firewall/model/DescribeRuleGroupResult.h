@@ -7,6 +7,8 @@
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
+#include <aws/network-firewall/model/FirewallRuleGroup.h>
+#include <aws/network-firewall/model/IpsRuleGroup.h>
 #include <aws/network-firewall/model/RuleGroup.h>
 #include <aws/network-firewall/model/RuleGroupResponse.h>
 
@@ -82,6 +84,42 @@ class DescribeRuleGroupResult {
 
   ///@{
   /**
+   * <p>The object that defines the rules in a firewall engine rule group, for use in
+   * a Next Generation policy.</p>
+   */
+  inline const FirewallRuleGroup& GetFirewallRuleGroup() const { return m_firewallRuleGroup; }
+  template <typename FirewallRuleGroupT = FirewallRuleGroup>
+  void SetFirewallRuleGroup(FirewallRuleGroupT&& value) {
+    m_firewallRuleGroupHasBeenSet = true;
+    m_firewallRuleGroup = std::forward<FirewallRuleGroupT>(value);
+  }
+  template <typename FirewallRuleGroupT = FirewallRuleGroup>
+  DescribeRuleGroupResult& WithFirewallRuleGroup(FirewallRuleGroupT&& value) {
+    SetFirewallRuleGroup(std::forward<FirewallRuleGroupT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The object that defines the rules in an IPS engine rule group, for use in a
+   * Next Generation policy.</p>
+   */
+  inline const IpsRuleGroup& GetIpsRuleGroup() const { return m_ipsRuleGroup; }
+  template <typename IpsRuleGroupT = IpsRuleGroup>
+  void SetIpsRuleGroup(IpsRuleGroupT&& value) {
+    m_ipsRuleGroupHasBeenSet = true;
+    m_ipsRuleGroup = std::forward<IpsRuleGroupT>(value);
+  }
+  template <typename IpsRuleGroupT = IpsRuleGroup>
+  DescribeRuleGroupResult& WithIpsRuleGroup(IpsRuleGroupT&& value) {
+    SetIpsRuleGroup(std::forward<IpsRuleGroupT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The high-level properties of a rule group. This, along with the
    * <a>RuleGroup</a>, define the rule group. You can retrieve all objects for a rule
    * group by calling <a>DescribeRuleGroup</a>. </p>
@@ -120,12 +158,18 @@ class DescribeRuleGroupResult {
 
   RuleGroup m_ruleGroup;
 
+  FirewallRuleGroup m_firewallRuleGroup;
+
+  IpsRuleGroup m_ipsRuleGroup;
+
   RuleGroupResponse m_ruleGroupResponse;
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_updateTokenHasBeenSet = false;
   bool m_ruleGroupHasBeenSet = false;
+  bool m_firewallRuleGroupHasBeenSet = false;
+  bool m_ipsRuleGroupHasBeenSet = false;
   bool m_ruleGroupResponseHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

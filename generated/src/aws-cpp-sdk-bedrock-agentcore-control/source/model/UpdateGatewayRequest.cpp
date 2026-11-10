@@ -73,5 +73,9 @@ Aws::String UpdateGatewayRequest::SerializePayload() const {
     payload.WithObject("wafConfiguration", m_wafConfiguration.Jsonize());
   }
 
+  if (m_domainOverrideHasBeenSet) {
+    payload.WithObject("domainOverride", m_domainOverride.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

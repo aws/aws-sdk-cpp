@@ -37,62 +37,6 @@ class Profile {
 
   ///@{
   /**
-   * <p> The Amazon Resource Name (ARN) of the Profile. </p>
-   */
-  inline const Aws::String& GetArn() const { return m_arn; }
-  inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-  template <typename ArnT = Aws::String>
-  void SetArn(ArnT&& value) {
-    m_arnHasBeenSet = true;
-    m_arn = std::forward<ArnT>(value);
-  }
-  template <typename ArnT = Aws::String>
-  Profile& WithArn(ArnT&& value) {
-    SetArn(std::forward<ArnT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p> The <code>ClientToken</code> value that was assigned when the Profile was
-   * created. </p>
-   */
-  inline const Aws::String& GetClientToken() const { return m_clientToken; }
-  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-  template <typename ClientTokenT = Aws::String>
-  void SetClientToken(ClientTokenT&& value) {
-    m_clientTokenHasBeenSet = true;
-    m_clientToken = std::forward<ClientTokenT>(value);
-  }
-  template <typename ClientTokenT = Aws::String>
-  Profile& WithClientToken(ClientTokenT&& value) {
-    SetClientToken(std::forward<ClientTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p> The date and time that the Profile was created, in Unix time format and
-   * Coordinated Universal Time (UTC). </p>
-   */
-  inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
-  inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-  template <typename CreationTimeT = Aws::Utils::DateTime>
-  void SetCreationTime(CreationTimeT&& value) {
-    m_creationTimeHasBeenSet = true;
-    m_creationTime = std::forward<CreationTimeT>(value);
-  }
-  template <typename CreationTimeT = Aws::Utils::DateTime>
-  Profile& WithCreationTime(CreationTimeT&& value) {
-    SetCreationTime(std::forward<CreationTimeT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p> ID of the Profile. </p>
    */
   inline const Aws::String& GetId() const { return m_id; }
@@ -111,19 +55,18 @@ class Profile {
 
   ///@{
   /**
-   * <p> The date and time that the Profile was modified, in Unix time format and
-   * Coordinated Universal Time (UTC). </p>
+   * <p> The Amazon Resource Name (ARN) of the Profile. </p>
    */
-  inline const Aws::Utils::DateTime& GetModificationTime() const { return m_modificationTime; }
-  inline bool ModificationTimeHasBeenSet() const { return m_modificationTimeHasBeenSet; }
-  template <typename ModificationTimeT = Aws::Utils::DateTime>
-  void SetModificationTime(ModificationTimeT&& value) {
-    m_modificationTimeHasBeenSet = true;
-    m_modificationTime = std::forward<ModificationTimeT>(value);
+  inline const Aws::String& GetArn() const { return m_arn; }
+  inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+  template <typename ArnT = Aws::String>
+  void SetArn(ArnT&& value) {
+    m_arnHasBeenSet = true;
+    m_arn = std::forward<ArnT>(value);
   }
-  template <typename ModificationTimeT = Aws::Utils::DateTime>
-  Profile& WithModificationTime(ModificationTimeT&& value) {
-    SetModificationTime(std::forward<ModificationTimeT>(value));
+  template <typename ArnT = Aws::String>
+  Profile& WithArn(ArnT&& value) {
+    SetArn(std::forward<ArnT>(value));
     return *this;
   }
   ///@}
@@ -166,22 +109,6 @@ class Profile {
 
   ///@{
   /**
-   * <p> Sharing status for the Profile. </p>
-   */
-  inline ShareStatus GetShareStatus() const { return m_shareStatus; }
-  inline bool ShareStatusHasBeenSet() const { return m_shareStatusHasBeenSet; }
-  inline void SetShareStatus(ShareStatus value) {
-    m_shareStatusHasBeenSet = true;
-    m_shareStatus = value;
-  }
-  inline Profile& WithShareStatus(ShareStatus value) {
-    SetShareStatus(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p> The status for the Profile. </p>
    */
   inline ProfileStatus GetStatus() const { return m_status; }
@@ -213,36 +140,109 @@ class Profile {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> Sharing status for the Profile. </p>
+   */
+  inline ShareStatus GetShareStatus() const { return m_shareStatus; }
+  inline bool ShareStatusHasBeenSet() const { return m_shareStatusHasBeenSet; }
+  inline void SetShareStatus(ShareStatus value) {
+    m_shareStatusHasBeenSet = true;
+    m_shareStatus = value;
+  }
+  inline Profile& WithShareStatus(ShareStatus value) {
+    SetShareStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The date and time that the Profile was created, in Unix time format and
+   * Coordinated Universal Time (UTC). </p>
+   */
+  inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+  inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+  template <typename CreationTimeT = Aws::Utils::DateTime>
+  void SetCreationTime(CreationTimeT&& value) {
+    m_creationTimeHasBeenSet = true;
+    m_creationTime = std::forward<CreationTimeT>(value);
+  }
+  template <typename CreationTimeT = Aws::Utils::DateTime>
+  Profile& WithCreationTime(CreationTimeT&& value) {
+    SetCreationTime(std::forward<CreationTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The date and time that the Profile was modified, in Unix time format and
+   * Coordinated Universal Time (UTC). </p>
+   */
+  inline const Aws::Utils::DateTime& GetModificationTime() const { return m_modificationTime; }
+  inline bool ModificationTimeHasBeenSet() const { return m_modificationTimeHasBeenSet; }
+  template <typename ModificationTimeT = Aws::Utils::DateTime>
+  void SetModificationTime(ModificationTimeT&& value) {
+    m_modificationTimeHasBeenSet = true;
+    m_modificationTime = std::forward<ModificationTimeT>(value);
+  }
+  template <typename ModificationTimeT = Aws::Utils::DateTime>
+  Profile& WithModificationTime(ModificationTimeT&& value) {
+    SetModificationTime(std::forward<ModificationTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The <code>ClientToken</code> value that was assigned when the Profile was
+   * created. </p>
+   */
+  inline const Aws::String& GetClientToken() const { return m_clientToken; }
+  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+  template <typename ClientTokenT = Aws::String>
+  void SetClientToken(ClientTokenT&& value) {
+    m_clientTokenHasBeenSet = true;
+    m_clientToken = std::forward<ClientTokenT>(value);
+  }
+  template <typename ClientTokenT = Aws::String>
+  Profile& WithClientToken(ClientTokenT&& value) {
+    SetClientToken(std::forward<ClientTokenT>(value));
+    return *this;
+  }
+  ///@}
  private:
-  Aws::String m_arn;
-
-  Aws::String m_clientToken;
-
-  Aws::Utils::DateTime m_creationTime{};
-
   Aws::String m_id;
 
-  Aws::Utils::DateTime m_modificationTime{};
+  Aws::String m_arn;
 
   Aws::String m_name;
 
   Aws::String m_ownerId;
 
-  ShareStatus m_shareStatus{ShareStatus::NOT_SET};
-
   ProfileStatus m_status{ProfileStatus::NOT_SET};
 
   Aws::String m_statusMessage;
-  bool m_arnHasBeenSet = false;
-  bool m_clientTokenHasBeenSet = false;
-  bool m_creationTimeHasBeenSet = false;
+
+  ShareStatus m_shareStatus{ShareStatus::NOT_SET};
+
+  Aws::Utils::DateTime m_creationTime{};
+
+  Aws::Utils::DateTime m_modificationTime{};
+
+  Aws::String m_clientToken;
   bool m_idHasBeenSet = false;
-  bool m_modificationTimeHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_ownerIdHasBeenSet = false;
-  bool m_shareStatusHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_statusMessageHasBeenSet = false;
+  bool m_shareStatusHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_modificationTimeHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
 };
 
 }  // namespace Model

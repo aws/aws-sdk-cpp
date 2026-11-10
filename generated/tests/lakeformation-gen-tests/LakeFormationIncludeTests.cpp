@@ -21,6 +21,8 @@
 #include <aws/lakeformation/model/AddLFTagsToResourceResult.h>
 #include <aws/lakeformation/model/AddObjectInput.h>
 #include <aws/lakeformation/model/AllRowsWildcard.h>
+#include <aws/lakeformation/model/AnyResource.h>
+#include <aws/lakeformation/model/AnyResourceSupportedTypes.h>
 #include <aws/lakeformation/model/ApplicationStatus.h>
 #include <aws/lakeformation/model/AssumeDecoratedRoleWithSAMLRequest.h>
 #include <aws/lakeformation/model/AssumeDecoratedRoleWithSAMLResult.h>
@@ -106,6 +108,8 @@
 #include <aws/lakeformation/model/GetEffectivePermissionsForPathPaginationTraits.h>
 #include <aws/lakeformation/model/GetEffectivePermissionsForPathRequest.h>
 #include <aws/lakeformation/model/GetEffectivePermissionsForPathResult.h>
+#include <aws/lakeformation/model/GetGlueFunctionSessionContextRequest.h>
+#include <aws/lakeformation/model/GetGlueFunctionSessionContextResult.h>
 #include <aws/lakeformation/model/GetLFTagExpressionRequest.h>
 #include <aws/lakeformation/model/GetLFTagExpressionResult.h>
 #include <aws/lakeformation/model/GetLFTagRequest.h>
@@ -123,6 +127,8 @@
 #include <aws/lakeformation/model/GetTableObjectsResult.h>
 #include <aws/lakeformation/model/GetTemporaryDataLocationCredentialsRequest.h>
 #include <aws/lakeformation/model/GetTemporaryDataLocationCredentialsResult.h>
+#include <aws/lakeformation/model/GetTemporaryGlueFunctionCredentialsRequest.h>
+#include <aws/lakeformation/model/GetTemporaryGlueFunctionCredentialsResult.h>
 #include <aws/lakeformation/model/GetTemporaryGluePartitionCredentialsRequest.h>
 #include <aws/lakeformation/model/GetTemporaryGluePartitionCredentialsResult.h>
 #include <aws/lakeformation/model/GetTemporaryGlueTableCredentialsRequest.h>
@@ -241,6 +247,8 @@
 #include <aws/lakeformation/model/UpdateTableObjectsResult.h>
 #include <aws/lakeformation/model/UpdateTableStorageOptimizerRequest.h>
 #include <aws/lakeformation/model/UpdateTableStorageOptimizerResult.h>
+#include <aws/lakeformation/model/UserDefinedFunctionResource.h>
+#include <aws/lakeformation/model/UserDefinedFunctionWildcard.h>
 #include <aws/lakeformation/model/VerificationStatus.h>
 #include <aws/lakeformation/model/VirtualObject.h>
 #include <aws/lakeformation/model/WorkUnitRange.h>

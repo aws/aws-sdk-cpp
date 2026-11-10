@@ -18,17 +18,9 @@ namespace Model {
 ProfileResourceAssociation::ProfileResourceAssociation(JsonView jsonValue) { *this = jsonValue; }
 
 ProfileResourceAssociation& ProfileResourceAssociation::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("CreationTime")) {
-    m_creationTime = jsonValue.GetDouble("CreationTime");
-    m_creationTimeHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("Id")) {
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ModificationTime")) {
-    m_modificationTime = jsonValue.GetDouble("ModificationTime");
-    m_modificationTimeHasBeenSet = true;
   }
   if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
@@ -46,13 +38,13 @@ ProfileResourceAssociation& ProfileResourceAssociation::operator=(JsonView jsonV
     m_resourceArn = jsonValue.GetString("ResourceArn");
     m_resourceArnHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("ResourceProperties")) {
-    m_resourceProperties = jsonValue.GetString("ResourceProperties");
-    m_resourcePropertiesHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("ResourceType")) {
     m_resourceType = jsonValue.GetString("ResourceType");
     m_resourceTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ResourceProperties")) {
+    m_resourceProperties = jsonValue.GetString("ResourceProperties");
+    m_resourcePropertiesHasBeenSet = true;
   }
   if (jsonValue.ValueExists("Status")) {
     m_status = ProfileStatusMapper::GetProfileStatusForName(jsonValue.GetString("Status"));
@@ -62,22 +54,22 @@ ProfileResourceAssociation& ProfileResourceAssociation::operator=(JsonView jsonV
     m_statusMessage = jsonValue.GetString("StatusMessage");
     m_statusMessageHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("CreationTime")) {
+    m_creationTime = jsonValue.GetDouble("CreationTime");
+    m_creationTimeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ModificationTime")) {
+    m_modificationTime = jsonValue.GetDouble("ModificationTime");
+    m_modificationTimeHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue ProfileResourceAssociation::Jsonize() const {
   JsonValue payload;
 
-  if (m_creationTimeHasBeenSet) {
-    payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
-  }
-
   if (m_idHasBeenSet) {
     payload.WithString("Id", m_id);
-  }
-
-  if (m_modificationTimeHasBeenSet) {
-    payload.WithDouble("ModificationTime", m_modificationTime.SecondsWithMSPrecision());
   }
 
   if (m_nameHasBeenSet) {
@@ -96,12 +88,12 @@ JsonValue ProfileResourceAssociation::Jsonize() const {
     payload.WithString("ResourceArn", m_resourceArn);
   }
 
-  if (m_resourcePropertiesHasBeenSet) {
-    payload.WithString("ResourceProperties", m_resourceProperties);
-  }
-
   if (m_resourceTypeHasBeenSet) {
     payload.WithString("ResourceType", m_resourceType);
+  }
+
+  if (m_resourcePropertiesHasBeenSet) {
+    payload.WithString("ResourceProperties", m_resourceProperties);
   }
 
   if (m_statusHasBeenSet) {
@@ -110,6 +102,14 @@ JsonValue ProfileResourceAssociation::Jsonize() const {
 
   if (m_statusMessageHasBeenSet) {
     payload.WithString("StatusMessage", m_statusMessage);
+  }
+
+  if (m_creationTimeHasBeenSet) {
+    payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
+  }
+
+  if (m_modificationTimeHasBeenSet) {
+    payload.WithDouble("ModificationTime", m_modificationTime.SecondsWithMSPrecision());
   }
 
   return payload;

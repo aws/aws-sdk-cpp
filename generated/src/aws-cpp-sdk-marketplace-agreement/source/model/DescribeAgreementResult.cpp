@@ -231,6 +231,11 @@ DescribeAgreementResult& DescribeAgreementResult::operator=(const Aws::AmazonWeb
                 m_endTimeBehaviorHasBeenSet = true;
               }
 
+              else if (initialKeyStr == "freeTrialSummary") {
+                m_freeTrialSummary = FreeTrialSummary(decoder);
+                m_freeTrialSummaryHasBeenSet = true;
+              }
+
               else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
@@ -449,6 +454,11 @@ DescribeAgreementResult& DescribeAgreementResult::operator=(const Aws::AmazonWeb
             else if (initialKeyStr == "endTimeBehavior") {
               m_endTimeBehavior = EndTimeBehavior(decoder);
               m_endTimeBehaviorHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "freeTrialSummary") {
+              m_freeTrialSummary = FreeTrialSummary(decoder);
+              m_freeTrialSummaryHasBeenSet = true;
             }
 
             else {

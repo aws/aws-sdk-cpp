@@ -1,3 +1,25 @@
+# 1.11.926 (2026-11-10)
+
+## SDK Highlights
+* **Bug Fix**: Run the clang-tidy CI check only on lines changed by the pull request, and only on files with a compile command, so it no longer fails on pre-existing issues or missing includes. The check can also be run locally with tools/scripts/run_clang_tidy.py.
+* **Dependency Update**: Bump Smithy from 1.73.0 to 1.74.1 in the code generator
+* **Feature**: Make Retry Behavior 2.1 the default retry behavior and remove AWS_NEW_RETRIES_2026. Set AWS_RETRY_MODE=legacy or retry_mode = legacy, or use DefaultRetryStrategy, to keep the previous behavior. Custom retry strategies now also get the Retry Behavior 2.1 request handling, and errors such as LimitExceededException or an HTTP 429 with an unknown error name now report ShouldRetry() as true.
+
+## Service Updates
+* **ARC Region switch**: Adds RetryableConflictException to UpdatePlan so AWS SDKs automatically retry updates that conflict with a concurrent change.
+* **Bedrock AgentCore Control**: Amazon Bedrock AgentCore Gateway now supports domainOverride so JWT-authorized gateways can advertise your public domain in OAuth discovery behind a proxy or custom domain. AgentCore Runtime adds warmup lifecycle hooks and specifying runtime memory via hooksConfiguration and resourceConfigurations.
+* **CloudWatchOmni**: Release of GetSpaceDataAccess API - Used to get temporary credentials, limited to the requested actions, for working with data in a space.
+* **Connect**: Amazon Connect now returns Contact Lens conversational analytics configuration in the DescribeContact API. Customers can retrieve a contact's analytics, redaction, summarization, and sentiment settings, consistent with the configuration already available in contact trace records and contact events.
+* **Device Farm**: Adds the NONE insights type to disable insights generation for a run, a testPackageArn field in run details, and a new artifact type for device connect command logs.
+* **GameLift**: Amazon GameLift Servers adds game session placement insights. Logs show how the queue's priority configuration, along with player latency and cost data, are applied to each placement request. Use game session placement insights to diagnose why game session placements succeed, fail, or time out.
+* **LakeFormation**: Adds support for governing AWS Glue user-defined functions with Lake Formation permissions. This release adds the UserDefinedFunction and AnyResource resources, the EXECUTE permission, and the GetTemporaryGlueFunctionCredentials and GetGlueFunctionSessionContext APIs.
+* **Marketplace Agreement**: This release adds the freeTrialSummary.trialEndTime field to DescribeAgreement and the freeTrialEndTime field to SearchAgreements results, so you can see when an agreement's free trial ends.
+* **Network Firewall**: Firewall Policy V2 for Network Firewall
+* **PCS**: Added support for configuring AMIs, Amazon EC2 security groups, SSH key pairs, and launch template modes when creating or updating AWS PCS compute node groups.
+* **Route53Profiles**: Adds support for having multiple profiles on one VPC. This is done using a priority system to handle conflicts on the dataplane.
+* **S3Tables**: Adds support for server access logging for Amazon S3 table buckets with the new PutTableBucketLogging and GetTableBucketLogging APIs.
+* **VerifiedPermissions**: Inconsequential changes to model formatting
+
 # 1.11.925 (2026-11-09)
 
 ## SDK Highlights

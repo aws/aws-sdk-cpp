@@ -8337,7 +8337,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Allows pausing an ongoing task contact.</p><p><h3>See Also:</h3>   <a
+   * <p>Pauses an ongoing task or email contact.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/PauseContact">AWS
    * API Reference</a></p>
    */
@@ -8472,7 +8472,7 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Allows resuming a task contact in a paused state.</p><p><h3>See Also:</h3>
+   * <p>Resumes a task or email contact in a paused state.</p><p><h3>See Also:</h3>
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ResumeContact">AWS
    * API Reference</a></p>

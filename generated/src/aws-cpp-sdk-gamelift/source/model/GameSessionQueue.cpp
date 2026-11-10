@@ -234,6 +234,11 @@ GameSessionQueue& GameSessionQueue::operator=(const std::shared_ptr<Aws::Crt::Cb
                   }
                 }
                 m_notificationTargetHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "LogConfiguration") {
+                m_logConfiguration = GameSessionQueueLogConfiguration(decoder);
+                m_logConfigurationHasBeenSet = true;
               } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
@@ -465,6 +470,11 @@ GameSessionQueue& GameSessionQueue::operator=(const std::shared_ptr<Aws::Crt::Cb
                 }
               }
               m_notificationTargetHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "LogConfiguration") {
+              m_logConfiguration = GameSessionQueueLogConfiguration(decoder);
+              m_logConfigurationHasBeenSet = true;
             } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
@@ -506,6 +516,9 @@ void GameSessionQueue::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
     mapSize++;
   }
   if (m_notificationTargetHasBeenSet) {
+    mapSize++;
+  }
+  if (m_logConfigurationHasBeenSet) {
     mapSize++;
   }
 
@@ -560,6 +573,11 @@ void GameSessionQueue::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
   if (m_notificationTargetHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("NotificationTarget"));
     encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_notificationTarget.c_str()));
+  }
+
+  if (m_logConfigurationHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("LogConfiguration"));
+    m_logConfiguration.CborEncode(encoder);
   }
 }
 

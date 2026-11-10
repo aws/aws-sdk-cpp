@@ -41,6 +41,12 @@ Aws::String UpdateGameSessionQueueRequest::SerializePayload() const {
   if (m_notificationTargetHasBeenSet) {
     mapSize++;
   }
+  if (m_addLogDeliveryDestinationsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_removeLogDeliveryDestinationsHasBeenSet) {
+    mapSize++;
+  }
 
   encoder.WriteMapStart(mapSize);
 
@@ -88,6 +94,22 @@ Aws::String UpdateGameSessionQueueRequest::SerializePayload() const {
   if (m_notificationTargetHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("NotificationTarget"));
     encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_notificationTarget.c_str()));
+  }
+
+  if (m_addLogDeliveryDestinationsHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AddLogDeliveryDestinations"));
+    encoder.WriteArrayStart(m_addLogDeliveryDestinations.size());
+    for (const auto& item_0 : m_addLogDeliveryDestinations) {
+      item_0.CborEncode(encoder);
+    }
+  }
+
+  if (m_removeLogDeliveryDestinationsHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("RemoveLogDeliveryDestinations"));
+    encoder.WriteArrayStart(m_removeLogDeliveryDestinations.size());
+    for (const auto& item_0 : m_removeLogDeliveryDestinations) {
+      item_0.CborEncode(encoder);
+    }
   }
   const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
   return str;

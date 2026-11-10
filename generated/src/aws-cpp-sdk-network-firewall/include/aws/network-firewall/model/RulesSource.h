@@ -88,7 +88,7 @@ class RulesSource {
    * protocol, source and destination, ports, direction, and rule options. For
    * information about the Suricata <code>Rules</code> format, see <a
    * href="https://suricata.readthedocs.io/en/suricata-8.0.3/rules/intro.html">Rules
-   * Format</a>. </p>
+   * Format</a> on the Suricata website. </p>
    */
   inline const Aws::Vector<StatefulRule>& GetStatefulRules() const { return m_statefulRules; }
   inline bool StatefulRulesHasBeenSet() const { return m_statefulRulesHasBeenSet; }

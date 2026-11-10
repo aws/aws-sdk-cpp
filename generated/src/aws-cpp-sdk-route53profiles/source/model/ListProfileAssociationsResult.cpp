@@ -22,10 +22,6 @@ ListProfileAssociationsResult::ListProfileAssociationsResult(const Aws::AmazonWe
 ListProfileAssociationsResult& ListProfileAssociationsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("NextToken")) {
-    m_nextToken = jsonValue.GetString("NextToken");
-    m_nextTokenHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("ProfileAssociations")) {
     Aws::Utils::Array<JsonView> profileAssociationsJsonList = jsonValue.GetArray("ProfileAssociations");
     for (unsigned profileAssociationsIndex = 0; profileAssociationsIndex < profileAssociationsJsonList.GetLength();
@@ -33,6 +29,10 @@ ListProfileAssociationsResult& ListProfileAssociationsResult::operator=(const Aw
       m_profileAssociations.push_back(profileAssociationsJsonList[profileAssociationsIndex].AsObject());
     }
     m_profileAssociationsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("NextToken")) {
+    m_nextToken = jsonValue.GetString("NextToken");
+    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

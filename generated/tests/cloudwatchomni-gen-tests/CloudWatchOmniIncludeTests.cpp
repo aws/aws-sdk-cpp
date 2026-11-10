@@ -67,6 +67,7 @@
 #include <aws/cloudwatchomni/model/CreateSpaceResult.h>
 #include <aws/cloudwatchomni/model/CreateViewRequest.h>
 #include <aws/cloudwatchomni/model/CreateViewResult.h>
+#include <aws/cloudwatchomni/model/DataAccessTarget.h>
 #include <aws/cloudwatchomni/model/DeleteAccessGrantRequest.h>
 #include <aws/cloudwatchomni/model/DeleteAccessGrantResult.h>
 #include <aws/cloudwatchomni/model/DeleteAccessProfileRequest.h>
@@ -121,6 +122,8 @@
 #include <aws/cloudwatchomni/model/GetOmniDashboardResult.h>
 #include <aws/cloudwatchomni/model/GetSpaceCredentialsForOrganizationRequest.h>
 #include <aws/cloudwatchomni/model/GetSpaceCredentialsForOrganizationResult.h>
+#include <aws/cloudwatchomni/model/GetSpaceDataAccessRequest.h>
+#include <aws/cloudwatchomni/model/GetSpaceDataAccessResult.h>
 #include <aws/cloudwatchomni/model/GetSpaceRequest.h>
 #include <aws/cloudwatchomni/model/GetSpaceResult.h>
 #include <aws/cloudwatchomni/model/GetTelemetryQueryResultsPaginationTraits.h>

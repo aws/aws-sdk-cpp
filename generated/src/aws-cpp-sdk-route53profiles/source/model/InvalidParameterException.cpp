@@ -18,13 +18,13 @@ namespace Model {
 InvalidParameterException::InvalidParameterException(JsonView jsonValue) { *this = jsonValue; }
 
 InvalidParameterException& InvalidParameterException::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("FieldName")) {
-    m_fieldName = jsonValue.GetString("FieldName");
-    m_fieldNameHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("Message")) {
     m_message = jsonValue.GetString("Message");
     m_messageHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("FieldName")) {
+    m_fieldName = jsonValue.GetString("FieldName");
+    m_fieldNameHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ InvalidParameterException& InvalidParameterException::operator=(JsonView jsonVal
 JsonValue InvalidParameterException::Jsonize() const {
   JsonValue payload;
 
-  if (m_fieldNameHasBeenSet) {
-    payload.WithString("FieldName", m_fieldName);
-  }
-
   if (m_messageHasBeenSet) {
     payload.WithString("Message", m_message);
+  }
+
+  if (m_fieldNameHasBeenSet) {
+    payload.WithString("FieldName", m_fieldName);
   }
 
   return payload;

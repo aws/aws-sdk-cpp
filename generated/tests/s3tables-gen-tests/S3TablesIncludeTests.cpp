@@ -44,6 +44,8 @@
 #include <aws/s3tables/model/GetNamespaceResult.h>
 #include <aws/s3tables/model/GetTableBucketEncryptionRequest.h>
 #include <aws/s3tables/model/GetTableBucketEncryptionResult.h>
+#include <aws/s3tables/model/GetTableBucketLoggingRequest.h>
+#include <aws/s3tables/model/GetTableBucketLoggingResult.h>
 #include <aws/s3tables/model/GetTableBucketMaintenanceConfigurationRequest.h>
 #include <aws/s3tables/model/GetTableBucketMaintenanceConfigurationResult.h>
 #include <aws/s3tables/model/GetTableBucketMetricsConfigurationRequest.h>
@@ -111,6 +113,7 @@
 #include <aws/s3tables/model/ListTablesResult.h>
 #include <aws/s3tables/model/ListTagsForResourceRequest.h>
 #include <aws/s3tables/model/ListTagsForResourceResult.h>
+#include <aws/s3tables/model/LoggingEnabled.h>
 #include <aws/s3tables/model/MaintenanceSettings.h>
 #include <aws/s3tables/model/MaintenanceStatus.h>
 #include <aws/s3tables/model/ManagedTableInformation.h>
@@ -131,8 +134,11 @@
 #include <aws/s3tables/model/MigrationType.h>
 #include <aws/s3tables/model/NamespaceSummary.h>
 #include <aws/s3tables/model/OpenTableFormat.h>
+#include <aws/s3tables/model/PartitionDateSource.h>
+#include <aws/s3tables/model/PartitionedPrefix.h>
 #include <aws/s3tables/model/PlanningStats.h>
 #include <aws/s3tables/model/PutTableBucketEncryptionRequest.h>
+#include <aws/s3tables/model/PutTableBucketLoggingRequest.h>
 #include <aws/s3tables/model/PutTableBucketMaintenanceConfigurationRequest.h>
 #include <aws/s3tables/model/PutTableBucketMetricsConfigurationRequest.h>
 #include <aws/s3tables/model/PutTableBucketPolicyRequest.h>
@@ -161,6 +167,7 @@
 #include <aws/s3tables/model/StorageClassConfiguration.h>
 #include <aws/s3tables/model/SyncTableMigrationRequest.h>
 #include <aws/s3tables/model/SyncTableMigrationResult.h>
+#include <aws/s3tables/model/TableBucketLoggingStatus.h>
 #include <aws/s3tables/model/TableBucketMaintenanceConfigurationValue.h>
 #include <aws/s3tables/model/TableBucketMaintenanceSettings.h>
 #include <aws/s3tables/model/TableBucketMaintenanceType.h>
@@ -185,6 +192,7 @@
 #include <aws/s3tables/model/TableType.h>
 #include <aws/s3tables/model/TagResourceRequest.h>
 #include <aws/s3tables/model/TagResourceResult.h>
+#include <aws/s3tables/model/TargetObjectKeyFormat.h>
 #include <aws/s3tables/model/UnmatchedSourceFieldsPolicy.h>
 #include <aws/s3tables/model/UntagResourceRequest.h>
 #include <aws/s3tables/model/UntagResourceResult.h>

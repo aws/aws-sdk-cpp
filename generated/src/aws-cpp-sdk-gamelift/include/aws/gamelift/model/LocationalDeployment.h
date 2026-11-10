@@ -35,14 +35,21 @@ class LocationalDeployment {
   ///@{
   /**
    * <p>The status of fleet deployment activity in the location. </p> <ul> <li> <p>
-   * <code>IN_PROGRESS</code> -- The deployment is in progress.</p> </li> <li> <p>
-   * <code>IMPAIRED</code> -- The deployment failed and the fleet has some impaired
-   * containers. </p> </li> <li> <p> <code>COMPLETE</code> -- The deployment has
-   * completed successfully.</p> </li> <li> <p> <code>ROLLBACK_IN_PROGRESS</code> --
-   * The deployment failed and rollback has been initiated.</p> </li> <li> <p>
-   * <code>ROLLBACK_IN_COMPLETE</code> -- The deployment failed and rollback has been
-   * completed.</p> </li> <li> <p> <code>CANCELLED</code> -- The deployment was
-   * cancelled.</p> </li> </ul>
+   * <code>IN_PROGRESS</code> -- The deployment is in progress in the location. This
+   * status covers validation as well as the replacement of the location's
+   * containers.</p> </li> <li> <p> <code>IMPAIRED</code> -- The deployment failed
+   * validation in the location, and the location kept the containers that failed
+   * validation so that you can inspect them. A location reaches this status when the
+   * deployment's impairment strategy is <code>MAINTAIN</code>.</p> </li> <li> <p>
+   * <code>COMPLETE</code> -- The deployment has completed successfully in the
+   * location.</p> </li> <li> <p> <code>ROLLBACK_IN_PROGRESS</code> -- The deployment
+   * failed and rollback has been initiated in the location. A location reaches this
+   * status when the deployment's impairment strategy is <code>ROLLBACK</code>.</p>
+   * </li> <li> <p> <code>ROLLBACK_COMPLETE</code> -- The deployment failed and
+   * rollback has been completed in the location. The location is running the
+   * configuration from the last successful deployment.</p> </li> <li> <p>
+   * <code>CANCELLED</code> -- The deployment was cancelled because a new deployment
+   * started for the same fleet.</p> </li> </ul>
    */
   inline DeploymentStatus GetDeploymentStatus() const { return m_deploymentStatus; }
   inline bool DeploymentStatusHasBeenSet() const { return m_deploymentStatusHasBeenSet; }

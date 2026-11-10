@@ -15,6 +15,7 @@ namespace LakeFormation {
 namespace Model {
 namespace DataLakeResourceTypeMapper {
 
+static const int ANY_RESOURCE_HASH = HashingUtils::HashString("ANY_RESOURCE");
 static const int CATALOG_HASH = HashingUtils::HashString("CATALOG");
 static const int DATABASE_HASH = HashingUtils::HashString("DATABASE");
 static const int TABLE_HASH = HashingUtils::HashString("TABLE");
@@ -24,10 +25,13 @@ static const int LF_TAG_POLICY_HASH = HashingUtils::HashString("LF_TAG_POLICY");
 static const int LF_TAG_POLICY_DATABASE_HASH = HashingUtils::HashString("LF_TAG_POLICY_DATABASE");
 static const int LF_TAG_POLICY_TABLE_HASH = HashingUtils::HashString("LF_TAG_POLICY_TABLE");
 static const int LF_NAMED_TAG_EXPRESSION_HASH = HashingUtils::HashString("LF_NAMED_TAG_EXPRESSION");
+static const int USER_DEFINED_FUNCTION_HASH = HashingUtils::HashString("USER_DEFINED_FUNCTION");
 
 DataLakeResourceType GetDataLakeResourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == CATALOG_HASH) {
+  if (hashCode == ANY_RESOURCE_HASH) {
+    return DataLakeResourceType::ANY_RESOURCE;
+  } else if (hashCode == CATALOG_HASH) {
     return DataLakeResourceType::CATALOG;
   } else if (hashCode == DATABASE_HASH) {
     return DataLakeResourceType::DATABASE;
@@ -45,6 +49,8 @@ DataLakeResourceType GetDataLakeResourceTypeForName(const Aws::String& name) {
     return DataLakeResourceType::LF_TAG_POLICY_TABLE;
   } else if (hashCode == LF_NAMED_TAG_EXPRESSION_HASH) {
     return DataLakeResourceType::LF_NAMED_TAG_EXPRESSION;
+  } else if (hashCode == USER_DEFINED_FUNCTION_HASH) {
+    return DataLakeResourceType::USER_DEFINED_FUNCTION;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -59,6 +65,8 @@ Aws::String GetNameForDataLakeResourceType(DataLakeResourceType enumValue) {
   switch (enumValue) {
     case DataLakeResourceType::NOT_SET:
       return {};
+    case DataLakeResourceType::ANY_RESOURCE:
+      return "ANY_RESOURCE";
     case DataLakeResourceType::CATALOG:
       return "CATALOG";
     case DataLakeResourceType::DATABASE:
@@ -77,6 +85,8 @@ Aws::String GetNameForDataLakeResourceType(DataLakeResourceType enumValue) {
       return "LF_TAG_POLICY_TABLE";
     case DataLakeResourceType::LF_NAMED_TAG_EXPRESSION:
       return "LF_NAMED_TAG_EXPRESSION";
+    case DataLakeResourceType::USER_DEFINED_FUNCTION:
+      return "USER_DEFINED_FUNCTION";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

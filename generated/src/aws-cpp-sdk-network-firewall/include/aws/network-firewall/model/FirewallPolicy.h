@@ -301,12 +301,12 @@ class FirewallPolicy {
   /**
    * <p>The settings that enable resolved IP validation for the policy. Resolved IP
    * validation verifies that a connection's destination IP address is one that the
-   * Amazon Route 53 Resolver returned in a DNS response for a domain. The response
-   * must come from a VPC that's associated with the Route 53 Resolver DNS Firewall
-   * rule group that you specify. This checks how the destination IP address was
-   * obtained, instead of relying only on the domain that the client asserts in its
-   * TLS Server Name Indication (SNI) or HTTP <code>Host</code> header. For more
-   * information, see <a>Route53ResolvedIPValidation</a>.</p>
+   * Amazon Route 53 Resolver returned in a DNS response for a domain. A VPC that's
+   * associated with the Route 53 Resolver DNS Firewall rule group that you specify
+   * must send the response. This checks how the destination IP address was obtained,
+   * instead of relying only on the domain that the client asserts in its TLS Server
+   * Name Indication (SNI) or HTTP <code>Host</code> header. For more information,
+   * see <a>Route53ResolvedIPValidation</a>.</p>
    */
   inline const Route53ResolvedIPValidation& GetRoute53ResolvedIPValidation() const { return m_route53ResolvedIPValidation; }
   inline bool Route53ResolvedIPValidationHasBeenSet() const { return m_route53ResolvedIPValidationHasBeenSet; }

@@ -8,6 +8,7 @@
 #include <aws/network-firewall/NetworkFirewallRequest.h>
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 #include <aws/network-firewall/model/RuleGroupType.h>
+#include <aws/network-firewall/model/RuleOutputFormat.h>
 
 #include <utility>
 
@@ -72,10 +73,14 @@ class DescribeRuleGroupRequest : public NetworkFirewallRequest {
 
   ///@{
   /**
-   * <p>Indicates whether the rule group is stateless or stateful. If the rule group
-   * is stateless, it contains stateless rules. If it is stateful, it contains
-   * stateful rules. </p>  <p>This setting is required for requests that do not
-   * include the <code>RuleGroupARN</code>.</p>
+   * <p>Indicates the type of the rule group. Valid values are:</p> <ul> <li> <p>
+   * <code>STATELESS</code> - Stateless rules, for use in a Classic Network Firewall
+   * policy.</p> </li> <li> <p> <code>STATEFUL</code> - Stateful rules, for use in a
+   * Classic Network Firewall policy.</p> </li> <li> <p> <code>FIREWALL</code> -
+   * Firewall engine rules, for use in a Next Generation policy.</p> </li> <li> <p>
+   * <code>IPS</code> - IPS engine rules, for use in a Next Generation policy.</p>
+   * </li> </ul>  <p>This setting is required for requests that do not include
+   * the <code>RuleGroupARN</code>.</p>
    */
   inline RuleGroupType GetType() const { return m_type; }
   inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
@@ -106,6 +111,30 @@ class DescribeRuleGroupRequest : public NetworkFirewallRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>For a firewall engine rule group, the format in which to return the rules.
+   * Specify one of the following values:</p> <ul> <li> <p>
+   * <code>FIREWALL_RULES</code> - Returns the rules as structured
+   * <code>FirewallRule</code> objects.</p> </li> <li> <p> <code>RULES_STRING</code>
+   * - Returns the rules as a Suricata-compatible firewall-mode rule string.</p>
+   * </li> </ul> <p>If you don't specify a format, Network Firewall returns the rules
+   * in the format you provided them in. This setting applies only to
+   * <code>FIREWALL</code> and <code>IPS</code> rule groups; IPS engine rule groups
+   * support only <code>RULES_STRING</code>.</p>
+   */
+  inline RuleOutputFormat GetRuleOutputFormat() const { return m_ruleOutputFormat; }
+  inline bool RuleOutputFormatHasBeenSet() const { return m_ruleOutputFormatHasBeenSet; }
+  inline void SetRuleOutputFormat(RuleOutputFormat value) {
+    m_ruleOutputFormatHasBeenSet = true;
+    m_ruleOutputFormat = value;
+  }
+  inline DescribeRuleGroupRequest& WithRuleOutputFormat(RuleOutputFormat value) {
+    SetRuleOutputFormat(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_ruleGroupName;
 
@@ -114,10 +143,13 @@ class DescribeRuleGroupRequest : public NetworkFirewallRequest {
   RuleGroupType m_type{RuleGroupType::NOT_SET};
 
   bool m_analyzeRuleGroup{false};
+
+  RuleOutputFormat m_ruleOutputFormat{RuleOutputFormat::NOT_SET};
   bool m_ruleGroupNameHasBeenSet = false;
   bool m_ruleGroupArnHasBeenSet = false;
   bool m_typeHasBeenSet = false;
   bool m_analyzeRuleGroupHasBeenSet = false;
+  bool m_ruleOutputFormatHasBeenSet = false;
 };
 
 }  // namespace Model

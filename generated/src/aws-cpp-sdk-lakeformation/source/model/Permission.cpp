@@ -31,6 +31,7 @@ static const int GRANT_WITH_LF_TAG_EXPRESSION_HASH = HashingUtils::HashString("G
 static const int CREATE_LF_TAG_EXPRESSION_HASH = HashingUtils::HashString("CREATE_LF_TAG_EXPRESSION");
 static const int CREATE_CATALOG_HASH = HashingUtils::HashString("CREATE_CATALOG");
 static const int SUPER_USER_HASH = HashingUtils::HashString("SUPER_USER");
+static const int EXECUTE_HASH = HashingUtils::HashString("EXECUTE");
 
 Permission GetPermissionForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -66,6 +67,8 @@ Permission GetPermissionForName(const Aws::String& name) {
     return Permission::CREATE_CATALOG;
   } else if (hashCode == SUPER_USER_HASH) {
     return Permission::SUPER_USER;
+  } else if (hashCode == EXECUTE_HASH) {
+    return Permission::EXECUTE;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -112,6 +115,8 @@ Aws::String GetNameForPermission(Permission enumValue) {
       return "CREATE_CATALOG";
     case Permission::SUPER_USER:
       return "SUPER_USER";
+    case Permission::EXECUTE:
+      return "EXECUTE";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

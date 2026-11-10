@@ -32,24 +32,6 @@ class AssociateProfileRequest : public Route53ProfilesRequest {
 
   ///@{
   /**
-   * <p> A name for the association. </p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  AssociateProfileRequest& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p> ID of the Profile. </p>
    */
   inline const Aws::String& GetProfileId() const { return m_profileId; }
@@ -86,6 +68,24 @@ class AssociateProfileRequest : public Route53ProfilesRequest {
 
   ///@{
   /**
+   * <p> A name for the association. </p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  AssociateProfileRequest& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p> A list of the tag keys and values that you want to identify the Profile
    * association. </p>
    */
@@ -108,18 +108,42 @@ class AssociateProfileRequest : public Route53ProfilesRequest {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_name;
 
+  ///@{
+  /**
+   * <p> The priority of the Profile association. Route 53 VPC Resolver evaluates the
+   * Profile associations for a VPC in priority order, starting with the lowest
+   * value. </p> <p> When the VPC already has a Profile association, you must specify
+   * a priority that no other Profile association for the VPC uses. If you omit the
+   * priority for the first association with a VPC, the association gets priority
+   * 100. </p>
+   */
+  inline int GetPriority() const { return m_priority; }
+  inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
+  inline void SetPriority(int value) {
+    m_priorityHasBeenSet = true;
+    m_priority = value;
+  }
+  inline AssociateProfileRequest& WithPriority(int value) {
+    SetPriority(value);
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_profileId;
 
   Aws::String m_resourceId;
 
+  Aws::String m_name;
+
   Aws::Vector<Tag> m_tags;
-  bool m_nameHasBeenSet = false;
+
+  int m_priority{0};
   bool m_profileIdHasBeenSet = false;
   bool m_resourceIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_priorityHasBeenSet = false;
 };
 
 }  // namespace Model
