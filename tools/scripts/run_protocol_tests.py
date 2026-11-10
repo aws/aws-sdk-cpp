@@ -12,6 +12,7 @@ import argparse
 import os
 import shutil
 import signal
+import socket
 import subprocess
 import time
 
@@ -276,6 +277,14 @@ class MockHttpServerHandle:
             python_cmd = [shutil.which("python3"), PROTO_TEST_MOCK_HANDLER]
             self.process = subprocess.Popen(python_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             print(f"Started mock server with PID {self.process.pid}")
+            seconds_waited = 0
+            while seconds_waited < 30:
+                try:
+                    with socket.create_connection(("127.0.0.1", 1994)):
+                        break
+                except ConnectionRefusedError:
+                    time.sleep(1)
+                    seconds_waited += 1
         except Exception as exc:
             print(f"ERROR: unable to start Mock server:\n{exc}")
             raise exc

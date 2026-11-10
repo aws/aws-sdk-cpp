@@ -1,0 +1,6 @@
+{
+  "type": "bugfix",
+  "category": "tools",
+  "contributor": "sbiscigl",
+  "description": "Wait for the protocol tests mock server to accept connections before running each protocol test binary, so the first test no longer fails with a connection refused error when the server is slow to start."
+}
