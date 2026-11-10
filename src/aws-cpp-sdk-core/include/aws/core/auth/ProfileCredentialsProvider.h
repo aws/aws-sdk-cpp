@@ -38,6 +38,11 @@ class AWS_CORE_API ProfileCredentialsProvider : public AWSCredentialsProvider {
   AWSCredentials GetAWSCredentials() override;
 
   /**
+   * Invalidate marks the cached credentials for refresh if they match accessKeyId.
+   */
+  void Invalidate(const Aws::String& accessKeyId) override;
+
+  /**
    * Returns the fullpath of the calculated credentials profile file
    */
   static Aws::String GetCredentialsProfileFilename();

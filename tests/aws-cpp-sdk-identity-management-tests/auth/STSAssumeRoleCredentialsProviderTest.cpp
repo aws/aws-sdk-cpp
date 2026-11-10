@@ -69,7 +69,9 @@ TEST(STSAssumeRoleCredentialsProviderTest, TestCredentialsLoadAndCache)
 {
     auto stsClient = Aws::MakeShared<MockSTSClient>(CLASS_TAG);
 
-    DateTime expiryTime(DateTime::CurrentTimeMillis() + 70000);
+    // Expiry must sit outside the credentials cache's 5 minute advisory window (for lifetimes <= 20 min),
+    // otherwise the second call below would be treated as due for a refresh.
+    DateTime expiryTime(DateTime::CurrentTimeMillis() + 600000);
 
     Model::Credentials stsCredentials;
         stsCredentials.WithAccessKeyId(ACCESS_KEY_ID_1)

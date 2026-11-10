@@ -73,6 +73,11 @@ namespace Aws
              */
             virtual AWSCredentials GetAWSCredentials() = 0;
 
+            /**
+             * Invalidate tells a caching provider that a service rejected the credentials with this access key ID.
+             */
+            virtual void Invalidate(const Aws::String& /*rejectedAccessKeyId*/) {}
+
         protected:
             /**
              * The default implementation keeps up with the cache times and lets you know if it's time to refresh your internal caching
@@ -227,15 +232,16 @@ namespace Aws
             */
             AWSCredentials GetAWSCredentials() override;
 
+            /**
+             * Invalidate marks the cached credentials for refresh if they match accessKeyId.
+             */
+            void Invalidate(const Aws::String& accessKeyId) override;
+
         protected:
             void Reload() override;
 
         private:
-            bool ExpiresSoon() const;
-            void RefreshIfExpired();
-
-            std::shared_ptr<Aws::Config::AWSProfileConfigLoader> m_ec2MetadataConfigLoader;
-            long m_loadFrequencyMs;
+            std::shared_ptr<Aws::Config::EC2InstanceProfileConfigLoader> m_ec2MetadataConfigLoader;
         };
 
         /**

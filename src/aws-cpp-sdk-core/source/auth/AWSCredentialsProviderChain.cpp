@@ -43,6 +43,15 @@ AWSCredentials AWSCredentialsProviderChain::GetAWSCredentials()
     return AWSCredentials();
 }
 
+void AWSCredentialsProviderChain::Invalidate(const Aws::String& accessKeyId)
+{
+    ReaderLockGuard lock(m_cachedProviderLock);
+    if (m_cachedProvider)
+    {
+        m_cachedProvider->Invalidate(accessKeyId);
+    }
+}
+
 DefaultAWSCredentialsProviderChain::DefaultAWSCredentialsProviderChain() : AWSCredentialsProviderChain()
 {
     AddProvider(Aws::MakeShared<EnvironmentAWSCredentialsProvider>(DefaultCredentialsProviderChainTag));

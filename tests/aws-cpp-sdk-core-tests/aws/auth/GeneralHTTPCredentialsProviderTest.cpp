@@ -437,7 +437,7 @@ const char GeneralHTTPCredentialsProviderParamsTest::RH_TEST_CASES[] = R"([
       "headers": {
         "Content-Type": "application/json"
       },
-      "body": "{\"Foo\":\"Bar\",\"AccessKeyId\":\"foo\",\"SecretAccessKey\":\"bar\",\"Token\":\"baz\",\"AccountId\":\"qux\",\"Expiration\":\"2023-06-30T00:00:00.000Z\"}"
+      "body": "{\"Foo\":\"Bar\",\"AccessKeyId\":\"foo\",\"SecretAccessKey\":\"bar\",\"Token\":\"baz\",\"AccountId\":\"qux\",\"Expiration\":\"2037-06-30T00:00:00.000Z\"}"
     },
     "expect": {
       "type": "success",
@@ -446,7 +446,7 @@ const char GeneralHTTPCredentialsProviderParamsTest::RH_TEST_CASES[] = R"([
         "secret_access_key": "bar",
         "session_token": "baz",
         "account_id": "qux",
-        "expiration": "2023-06-30T00:00:00.000Z"
+        "expiration": "2037-06-30T00:00:00.000Z"
       }
     }
   }
@@ -588,7 +588,7 @@ TEST_F(TaskRoleCredentialsProviderTest, TestECSCredentialsClientReturnsGoodData)
 {
     auto mockClient = Aws::MakeShared<MockECSCredentialsClient>(ALLOCATION_TAG, "/path/to/res");
 
-    const char* validCredentials = "{ \"AccessKeyId\": \"goodAccessKey\", \"SecretAccessKey\": \"goodSecretKey\", \"Token\": \"goodToken\", \"Expiration\": \"2020-02-25T06:03:31Z\" }";
+    const char* validCredentials = "{ \"AccessKeyId\": \"goodAccessKey\", \"SecretAccessKey\": \"goodSecretKey\", \"Token\": \"goodToken\", \"Expiration\": \"2037-02-25T06:03:31Z\" }";
     mockClient->SetMockedCredentialsValue(validCredentials);
 
     TaskRoleCredentialsProvider provider(mockClient, 1000 * 60 * 15);
@@ -603,16 +603,12 @@ TEST_F(TaskRoleCredentialsProviderTest, TestThatProviderRefreshes)
 
     Aws::String goodCredentialsPrefix("{ \"AccessKeyId\": \"goodAccessKey\", \"SecretAccessKey\": \"goodSecretKey\", \"Token\": \"goodToken\", \"Expiration\": ");
     Aws::String betterCredentialsPrefix("{ \"AccessKeyId\": \"betterAccessKey\", \"SecretAccessKey\": \"betterSecretKey\", \"Token\": \"betterToken\", \"Expiration\": ");
-    DateTime now = DateTime::Now();
-    Aws::String dateStringNow = now.ToGmtString(DateFormat::ISO_8601);
 
-    DateTime after = now.Millis() + 1000;
-    Aws::String dateStringAfter = after.ToGmtString(DateFormat::ISO_8601);
-
-    // Set the current credentials expiration date to now, which expires immediately.
-    // Next time when calling GetAWSCredentials, the credentials will be refreshed.
+    // Expiration must be strictly in the future for the credentials cache to accept the retrieve, but close
+    // enough that the second call below already falls within the cache's 1 minute mandatory refresh window.
+    DateTime firstExpiry(DateTime::Now().Millis() + 2000);
     Aws::StringStream validCredentials;
-    validCredentials << goodCredentialsPrefix << "\"" << dateStringNow << "\" }";
+    validCredentials << goodCredentialsPrefix << "\"" << firstExpiry.ToGmtString(DateFormat::ISO_8601) << "\" }";
 
     mockClient->SetMockedCredentialsValue(validCredentials.str());
 
@@ -620,8 +616,9 @@ TEST_F(TaskRoleCredentialsProviderTest, TestThatProviderRefreshes)
     ASSERT_EQ("goodAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());
     ASSERT_EQ("goodSecretKey", provider.GetAWSCredentials().GetAWSSecretKey());
 
+    DateTime nextExpiry(DateTime::Now().Millis() + 2000);
     Aws::StringStream nextSetOfCredentials;
-    nextSetOfCredentials << betterCredentialsPrefix << "\"" << dateStringAfter << "\" }";
+    nextSetOfCredentials << betterCredentialsPrefix << "\"" << nextExpiry.ToGmtString(DateFormat::ISO_8601) << "\" }";
     mockClient->SetMockedCredentialsValue(nextSetOfCredentials.str());
 
     ASSERT_EQ("betterAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId());

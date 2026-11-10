@@ -26,6 +26,11 @@ namespace Aws
         public:
             AWSCredentials GetAWSCredentials() override;
 
+            /**
+             * Invalidate marks the cached credentials for refresh if they match accessKeyId.
+             */
+            void Invalidate(const Aws::String& accessKeyId) override;
+
         protected:
             /**
              * PersistentCognitoIdentityProvider is responsible for storing and retrieving cognito identity information
@@ -43,10 +48,14 @@ namespace Aws
 
         private:
             void OnLoginsUpdated(const PersistentCognitoIdentityProvider&);
+            AWSCredentials RetrieveCredentials();
 
             AWSCredentials m_cachedCredentials;
             std::atomic<double> m_expiry;
             std::mutex m_credsMutex;
+            std::atomic<uint64_t> m_loginsGeneration{0};
+            AWSCredentials RetrieveForCache();
+            std::shared_ptr<AWSCredentialsProvider> m_cachingProvider;
         };
 
         /**

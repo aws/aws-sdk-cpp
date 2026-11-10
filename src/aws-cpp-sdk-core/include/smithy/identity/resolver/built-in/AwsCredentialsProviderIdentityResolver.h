@@ -45,6 +45,11 @@ namespace smithy
             return {std::move(smithyCreds)};
         }
 
+        void invalidate(const Aws::String& rejectedIdentifier) override
+        {
+            m_credentialsProvider->Invalidate(rejectedIdentifier);
+        }
+
     protected:
         std::shared_ptr<Aws::Auth::AWSCredentialsProvider> m_credentialsProvider;
     };

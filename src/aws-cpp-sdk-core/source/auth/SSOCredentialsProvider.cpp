@@ -5,6 +5,7 @@
 
 
 #include <aws/core/auth/SSOCredentialsProvider.h>
+#include <aws/core/internal/CredentialsCachingProvider.h>
 #include <aws/core/auth/ProfileCredentialsProvider.h>
 #include <aws/core/config/AWSProfileConfigLoader.h>
 #include <aws/core/internal/AWSHttpResourceClient.h>
@@ -29,6 +30,13 @@ using Aws::Utils::Threading::ReaderLockGuard;
 
 static const char SSO_CREDENTIALS_PROVIDER_LOG_TAG[] = "SSOCredentialsProvider";
 
+AWSCredentials SSOCredentialsProvider::RetrieveForCache()
+{
+    m_credentials = AWSCredentials();
+    Reload();
+    return m_credentials;
+}
+
 SSOCredentialsProvider::SSOCredentialsProvider() : SSOCredentialsProvider(GetConfigProfileName(), nullptr)
 {
 }
@@ -40,7 +48,8 @@ SSOCredentialsProvider::SSOCredentialsProvider(const Aws::String& profile) : SSO
 SSOCredentialsProvider::SSOCredentialsProvider(const Aws::String& profile, std::shared_ptr<const Aws::Client::ClientConfiguration> config) :
     m_profileToUse(profile),
     m_bearerTokenProvider(profile),
-    m_config(std::move(config))
+    m_config(std::move(config)),
+    m_cachingProvider(Aws::MakeShared<Aws::Internal::CredentialsCachingProvider>(SSO_CREDENTIALS_PROVIDER_LOG_TAG, [this]() { return RetrieveForCache(); }))
 {
     AWS_LOGSTREAM_INFO(SSO_CREDENTIALS_PROVIDER_LOG_TAG, "Setting sso credentials provider to read config from " << m_profileToUse);
     if (!m_config)
@@ -56,9 +65,12 @@ SSOCredentialsProvider::SSOCredentialsProvider(const Aws::String& profile, std::
 
 AWSCredentials SSOCredentialsProvider::GetAWSCredentials()
 {
-    RefreshIfExpired();
-    ReaderLockGuard guard(m_reloadLock);
-    return m_credentials;
+    return m_cachingProvider->GetAWSCredentials();
+}
+
+void SSOCredentialsProvider::Invalidate(const Aws::String& accessKeyId)
+{
+    m_cachingProvider->Invalidate(accessKeyId);
 }
 
 void SSOCredentialsProvider::Reload()
@@ -109,23 +121,6 @@ void SSOCredentialsProvider::Reload()
           m_credentials.AddUserAgentFeature(Aws::Client::UserAgentFeature::CREDENTIALS_SSO);
         }
     }
-}
-
-void SSOCredentialsProvider::RefreshIfExpired()
-{
-    ReaderLockGuard guard(m_reloadLock);
-    if (!m_credentials.IsExpiredOrEmpty())
-    {
-        return;
-    }
-
-    guard.UpgradeToWriterLock();
-    if (!m_credentials.IsExpiredOrEmpty()) // double-checked lock to avoid refreshing twice
-    {
-        return;
-    }
-
-    Reload();
 }
 
 Aws::String SSOCredentialsProvider::LoadAccessTokenFile(const Aws::String& ssoAccessTokenPath)

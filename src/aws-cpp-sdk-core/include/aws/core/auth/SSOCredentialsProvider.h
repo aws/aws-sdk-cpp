@@ -27,6 +27,11 @@ namespace Aws {
              */
             AWSCredentials GetAWSCredentials() override;
 
+            /**
+             * Invalidate marks the cached credentials for refresh if they match accessKeyId.
+             */
+            void Invalidate(const Aws::String& accessKeyId) override;
+
         private:
             Aws::UniquePtr<Aws::Internal::SSOCredentialsClient> m_client;
             Aws::Auth::AWSCredentials m_credentials;
@@ -45,9 +50,10 @@ namespace Aws {
             Aws::Auth::SSOBearerTokenProvider m_bearerTokenProvider;
             // The client configuration to use
             std::shared_ptr<const Aws::Client::ClientConfiguration> m_config;
+            AWSCredentials RetrieveForCache();
+            std::shared_ptr<AWSCredentialsProvider> m_cachingProvider;
 
             void Reload() override;
-            void RefreshIfExpired();
             Aws::String LoadAccessTokenFile(const Aws::String& ssoAccessTokenPath);
         };
     } // namespace Auth
