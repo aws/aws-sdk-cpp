@@ -5,16 +5,16 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/memorydb/MemoryDB_EXPORTS.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace MemoryDB {
 namespace Model {
@@ -28,9 +28,9 @@ namespace Model {
 class Endpoint {
  public:
   AWS_MEMORYDB_API Endpoint() = default;
-  AWS_MEMORYDB_API Endpoint(Aws::Utils::Json::JsonView jsonValue);
-  AWS_MEMORYDB_API Endpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_MEMORYDB_API Endpoint(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_MEMORYDB_API Endpoint& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_MEMORYDB_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -54,13 +54,13 @@ class Endpoint {
   /**
    * <p>The port number that the engine is listening on.</p>
    */
-  inline int GetPort() const { return m_port; }
+  inline int64_t GetPort() const { return m_port; }
   inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
-  inline void SetPort(int value) {
+  inline void SetPort(int64_t value) {
     m_portHasBeenSet = true;
     m_port = value;
   }
-  inline Endpoint& WithPort(int value) {
+  inline Endpoint& WithPort(int64_t value) {
     SetPort(value);
     return *this;
   }
@@ -68,7 +68,7 @@ class Endpoint {
  private:
   Aws::String m_address;
 
-  int m_port{0};
+  int64_t m_port{0};
   bool m_addressHasBeenSet = false;
   bool m_portHasBeenSet = false;
 };

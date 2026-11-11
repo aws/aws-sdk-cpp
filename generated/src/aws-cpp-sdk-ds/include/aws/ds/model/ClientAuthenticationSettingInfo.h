@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/DateTime.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/ds/model/ClientAuthenticationStatus.h>
 #include <aws/ds/model/ClientAuthenticationType.h>
@@ -13,10 +14,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace DirectoryService {
 namespace Model {
@@ -30,9 +30,9 @@ namespace Model {
 class ClientAuthenticationSettingInfo {
  public:
   AWS_DIRECTORYSERVICE_API ClientAuthenticationSettingInfo() = default;
-  AWS_DIRECTORYSERVICE_API ClientAuthenticationSettingInfo(Aws::Utils::Json::JsonView jsonValue);
-  AWS_DIRECTORYSERVICE_API ClientAuthenticationSettingInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_DIRECTORYSERVICE_API ClientAuthenticationSettingInfo(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_DIRECTORYSERVICE_API ClientAuthenticationSettingInfo& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_DIRECTORYSERVICE_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

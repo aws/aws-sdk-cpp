@@ -3,44 +3,110 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/textract/model/IdentityDocumentField.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace Textract {
 namespace Model {
 
-IdentityDocumentField::IdentityDocumentField(JsonView jsonValue) { *this = jsonValue; }
+IdentityDocumentField::IdentityDocumentField(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-IdentityDocumentField& IdentityDocumentField::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("Type")) {
-    m_type = jsonValue.GetObject("Type");
-    m_typeHasBeenSet = true;
+IdentityDocumentField& IdentityDocumentField::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "Type") {
+                m_type = AnalyzeIDDetections(decoder);
+                m_typeHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "ValueDetection") {
+                m_valueDetection = AnalyzeIDDetections(decoder);
+                m_valueDetectionHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("IdentityDocumentField", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "Type") {
+              m_type = AnalyzeIDDetections(decoder);
+              m_typeHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "ValueDetection") {
+              m_valueDetection = AnalyzeIDDetections(decoder);
+              m_valueDetectionHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
+    }
   }
-  if (jsonValue.ValueExists("ValueDetection")) {
-    m_valueDetection = jsonValue.GetObject("ValueDetection");
-    m_valueDetectionHasBeenSet = true;
-  }
+
   return *this;
 }
 
-JsonValue IdentityDocumentField::Jsonize() const {
-  JsonValue payload;
+void IdentityDocumentField::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_typeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_valueDetectionHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_typeHasBeenSet) {
-    payload.WithObject("Type", m_type.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Type"));
+    m_type.CborEncode(encoder);
   }
 
   if (m_valueDetectionHasBeenSet) {
-    payload.WithObject("ValueDetection", m_valueDetection.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ValueDetection"));
+    m_valueDetection.CborEncode(encoder);
   }
-
-  return payload;
 }
 
 }  // namespace Model

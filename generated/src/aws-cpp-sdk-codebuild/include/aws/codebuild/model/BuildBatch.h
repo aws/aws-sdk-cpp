@@ -20,15 +20,15 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace CodeBuild {
 namespace Model {
@@ -41,9 +41,9 @@ namespace Model {
 class BuildBatch {
  public:
   AWS_CODEBUILD_API BuildBatch() = default;
-  AWS_CODEBUILD_API BuildBatch(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CODEBUILD_API BuildBatch& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_CODEBUILD_API BuildBatch(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CODEBUILD_API BuildBatch& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CODEBUILD_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -427,13 +427,13 @@ class BuildBatch {
    * <p>Specifies the maximum amount of time, in minutes, that the build in a batch
    * must be completed in.</p>
    */
-  inline int GetBuildTimeoutInMinutes() const { return m_buildTimeoutInMinutes; }
+  inline int64_t GetBuildTimeoutInMinutes() const { return m_buildTimeoutInMinutes; }
   inline bool BuildTimeoutInMinutesHasBeenSet() const { return m_buildTimeoutInMinutesHasBeenSet; }
-  inline void SetBuildTimeoutInMinutes(int value) {
+  inline void SetBuildTimeoutInMinutes(int64_t value) {
     m_buildTimeoutInMinutesHasBeenSet = true;
     m_buildTimeoutInMinutes = value;
   }
-  inline BuildBatch& WithBuildTimeoutInMinutes(int value) {
+  inline BuildBatch& WithBuildTimeoutInMinutes(int64_t value) {
     SetBuildTimeoutInMinutes(value);
     return *this;
   }
@@ -444,13 +444,13 @@ class BuildBatch {
    * <p>Specifies the amount of time, in minutes, that the batch build is allowed to
    * be queued before it times out.</p>
    */
-  inline int GetQueuedTimeoutInMinutes() const { return m_queuedTimeoutInMinutes; }
+  inline int64_t GetQueuedTimeoutInMinutes() const { return m_queuedTimeoutInMinutes; }
   inline bool QueuedTimeoutInMinutesHasBeenSet() const { return m_queuedTimeoutInMinutesHasBeenSet; }
-  inline void SetQueuedTimeoutInMinutes(int value) {
+  inline void SetQueuedTimeoutInMinutes(int64_t value) {
     m_queuedTimeoutInMinutesHasBeenSet = true;
     m_queuedTimeoutInMinutes = value;
   }
-  inline BuildBatch& WithQueuedTimeoutInMinutes(int value) {
+  inline BuildBatch& WithQueuedTimeoutInMinutes(int64_t value) {
     SetQueuedTimeoutInMinutes(value);
     return *this;
   }
@@ -706,9 +706,9 @@ class BuildBatch {
 
   LogsConfig m_logConfig;
 
-  int m_buildTimeoutInMinutes{0};
+  int64_t m_buildTimeoutInMinutes{0};
 
-  int m_queuedTimeoutInMinutes{0};
+  int64_t m_queuedTimeoutInMinutes{0};
 
   bool m_complete{false};
 

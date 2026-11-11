@@ -3,64 +3,100 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/transcribe/model/StartCallAnalyticsJobRequest.h>
 
 #include <utility>
 
 using namespace Aws::TranscribeService::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String StartCallAnalyticsJobRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_callAnalyticsJobNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_mediaHasBeenSet) {
+    mapSize++;
+  }
+  if (m_outputLocationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_outputEncryptionKMSKeyIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_dataAccessRoleArnHasBeenSet) {
+    mapSize++;
+  }
+  if (m_settingsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_tagsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_channelDefinitionsHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_callAnalyticsJobNameHasBeenSet) {
-    payload.WithString("CallAnalyticsJobName", m_callAnalyticsJobName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("CallAnalyticsJobName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_callAnalyticsJobName.c_str()));
   }
 
   if (m_mediaHasBeenSet) {
-    payload.WithObject("Media", m_media.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Media"));
+    m_media.CborEncode(encoder);
   }
 
   if (m_outputLocationHasBeenSet) {
-    payload.WithString("OutputLocation", m_outputLocation);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("OutputLocation"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_outputLocation.c_str()));
   }
 
   if (m_outputEncryptionKMSKeyIdHasBeenSet) {
-    payload.WithString("OutputEncryptionKMSKeyId", m_outputEncryptionKMSKeyId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("OutputEncryptionKMSKeyId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_outputEncryptionKMSKeyId.c_str()));
   }
 
   if (m_dataAccessRoleArnHasBeenSet) {
-    payload.WithString("DataAccessRoleArn", m_dataAccessRoleArn);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("DataAccessRoleArn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_dataAccessRoleArn.c_str()));
   }
 
   if (m_settingsHasBeenSet) {
-    payload.WithObject("Settings", m_settings.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Settings"));
+    m_settings.CborEncode(encoder);
   }
 
   if (m_tagsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
-      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Tags"));
+    encoder.WriteArrayStart(m_tags.size());
+    for (const auto& item_0 : m_tags) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("Tags", std::move(tagsJsonList));
   }
 
   if (m_channelDefinitionsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> channelDefinitionsJsonList(m_channelDefinitions.size());
-    for (unsigned channelDefinitionsIndex = 0; channelDefinitionsIndex < channelDefinitionsJsonList.GetLength();
-         ++channelDefinitionsIndex) {
-      channelDefinitionsJsonList[channelDefinitionsIndex].AsObject(m_channelDefinitions[channelDefinitionsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ChannelDefinitions"));
+    encoder.WriteArrayStart(m_channelDefinitions.size());
+    for (const auto& item_0 : m_channelDefinitions) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("ChannelDefinitions", std::move(channelDefinitionsJsonList));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection StartCallAnalyticsJobRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Transcribe.StartCallAnalyticsJob"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

@@ -18,11 +18,15 @@
 #include <aws/servicecatalog/model/ListPortfoliosForProductPaginationTraits.h>
 #include <aws/servicecatalog/model/ListPortfoliosPaginationTraits.h>
 #include <aws/servicecatalog/model/ListPrincipalsForPortfolioPaginationTraits.h>
+#include <aws/servicecatalog/model/ListProvisionedProductPlansPaginationTraits.h>
 #include <aws/servicecatalog/model/ListProvisioningArtifactsForServiceActionPaginationTraits.h>
+#include <aws/servicecatalog/model/ListRecordHistoryPaginationTraits.h>
 #include <aws/servicecatalog/model/ListResourcesForTagOptionPaginationTraits.h>
 #include <aws/servicecatalog/model/ListServiceActionsForProvisioningArtifactPaginationTraits.h>
 #include <aws/servicecatalog/model/ListServiceActionsPaginationTraits.h>
+#include <aws/servicecatalog/model/ListStackInstancesForProvisionedProductPaginationTraits.h>
 #include <aws/servicecatalog/model/ListTagOptionsPaginationTraits.h>
+#include <aws/servicecatalog/model/ScanProvisionedProductsPaginationTraits.h>
 #include <aws/servicecatalog/model/SearchProductsAsAdminPaginationTraits.h>
 #include <aws/servicecatalog/model/SearchProductsPaginationTraits.h>
 #include <aws/servicecatalog/model/SearchProvisionedProductsPaginationTraits.h>
@@ -167,6 +171,18 @@ class ServiceCatalogPaginationBase {
   }
 
   /**
+   * Create a paginator for ListProvisionedProductPlans operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProvisionedProductPlansRequest,
+                                    Pagination::ListProvisionedProductPlansPaginationTraits<DerivedClient>>
+  ListProvisionedProductPlansPaginator(const Model::ListProvisionedProductPlansRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProvisionedProductPlansRequest,
+                                             Pagination::ListProvisionedProductPlansPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
    * Create a paginator for ListProvisioningArtifactsForServiceAction operation
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProvisioningArtifactsForServiceActionRequest,
@@ -175,6 +191,18 @@ class ServiceCatalogPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListProvisioningArtifactsForServiceActionRequest,
                                              Pagination::ListProvisioningArtifactsForServiceActionPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListRecordHistory operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRecordHistoryRequest,
+                                    Pagination::ListRecordHistoryPaginationTraits<DerivedClient>>
+  ListRecordHistoryPaginator(const Model::ListRecordHistoryRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRecordHistoryRequest,
+                                             Pagination::ListRecordHistoryPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 
@@ -215,6 +243,18 @@ class ServiceCatalogPaginationBase {
   }
 
   /**
+   * Create a paginator for ListStackInstancesForProvisionedProduct operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListStackInstancesForProvisionedProductRequest,
+                                    Pagination::ListStackInstancesForProvisionedProductPaginationTraits<DerivedClient>>
+  ListStackInstancesForProvisionedProductPaginator(const Model::ListStackInstancesForProvisionedProductRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListStackInstancesForProvisionedProductRequest,
+                                             Pagination::ListStackInstancesForProvisionedProductPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
    * Create a paginator for ListTagOptions operation
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTagOptionsRequest, Pagination::ListTagOptionsPaginationTraits<DerivedClient>>
@@ -223,6 +263,18 @@ class ServiceCatalogPaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListTagOptionsRequest,
                                              Pagination::ListTagOptionsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
+  }
+
+  /**
+   * Create a paginator for ScanProvisionedProducts operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ScanProvisionedProductsRequest,
+                                    Pagination::ScanProvisionedProductsPaginationTraits<DerivedClient>>
+  ScanProvisionedProductsPaginator(const Model::ScanProvisionedProductsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ScanProvisionedProductsRequest,
+                                             Pagination::ScanProvisionedProductsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
   }
 
   /**

@@ -8,6 +8,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/datasync/DataSync_EXPORTS.h>
 #include <aws/datasync/model/CmkSecretConfig.h>
 #include <aws/datasync/model/CustomSecretConfig.h>
@@ -17,23 +18,22 @@
 #include <aws/datasync/model/QopConfiguration.h>
 
 #include <utility>
-
 namespace Aws {
 template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
 namespace Utils {
-namespace Json {
-class JsonValue;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace DataSync {
 namespace Model {
 class DescribeLocationHdfsResult {
  public:
   AWS_DATASYNC_API DescribeLocationHdfsResult() = default;
-  AWS_DATASYNC_API DescribeLocationHdfsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-  AWS_DATASYNC_API DescribeLocationHdfsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_DATASYNC_API DescribeLocationHdfsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
+  AWS_DATASYNC_API DescribeLocationHdfsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
 
   ///@{
   /**
@@ -96,12 +96,12 @@ class DescribeLocationHdfsResult {
   /**
    * <p>The size of the data blocks to write into the HDFS cluster. </p>
    */
-  inline int GetBlockSize() const { return m_blockSize; }
-  inline void SetBlockSize(int value) {
+  inline int64_t GetBlockSize() const { return m_blockSize; }
+  inline void SetBlockSize(int64_t value) {
     m_blockSizeHasBeenSet = true;
     m_blockSize = value;
   }
-  inline DescribeLocationHdfsResult& WithBlockSize(int value) {
+  inline DescribeLocationHdfsResult& WithBlockSize(int64_t value) {
     SetBlockSize(value);
     return *this;
   }
@@ -112,12 +112,12 @@ class DescribeLocationHdfsResult {
    * <p>The number of DataNodes to replicate the data to when writing to the HDFS
    * cluster. </p>
    */
-  inline int GetReplicationFactor() const { return m_replicationFactor; }
-  inline void SetReplicationFactor(int value) {
+  inline int64_t GetReplicationFactor() const { return m_replicationFactor; }
+  inline void SetReplicationFactor(int64_t value) {
     m_replicationFactorHasBeenSet = true;
     m_replicationFactor = value;
   }
-  inline DescribeLocationHdfsResult& WithReplicationFactor(int value) {
+  inline DescribeLocationHdfsResult& WithReplicationFactor(int64_t value) {
     SetReplicationFactor(value);
     return *this;
   }
@@ -334,9 +334,9 @@ class DescribeLocationHdfsResult {
 
   Aws::Vector<HdfsNameNode> m_nameNodes;
 
-  int m_blockSize{0};
+  int64_t m_blockSize{0};
 
-  int m_replicationFactor{0};
+  int64_t m_replicationFactor{0};
 
   Aws::String m_kmsKeyProviderUri;
 

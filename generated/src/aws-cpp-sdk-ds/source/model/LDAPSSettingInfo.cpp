@@ -3,52 +3,223 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/ds/model/LDAPSSettingInfo.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace DirectoryService {
 namespace Model {
 
-LDAPSSettingInfo::LDAPSSettingInfo(JsonView jsonValue) { *this = jsonValue; }
+LDAPSSettingInfo::LDAPSSettingInfo(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-LDAPSSettingInfo& LDAPSSettingInfo::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("LDAPSStatus")) {
-    m_lDAPSStatus = LDAPSStatusMapper::GetLDAPSStatusForName(jsonValue.GetString("LDAPSStatus"));
-    m_lDAPSStatusHasBeenSet = true;
+LDAPSSettingInfo& LDAPSSettingInfo::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "LDAPSStatus") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_lDAPSStatus = LDAPSStatusMapper::GetLDAPSStatusForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_lDAPSStatusHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "LDAPSStatusReason") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_lDAPSStatusReason = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_lDAPSStatusReason = ss.str();
+                  }
+                }
+                m_lDAPSStatusReasonHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "LastUpdatedDateTime") {
+                auto tag = decoder->PopNextTagVal();
+                if (tag.has_value() &&
+                    tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+                {
+                  auto dateType = decoder->PeekType();
+                  if (dateType.has_value()) {
+                    if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                      auto val = decoder->PopNextFloatVal();
+                      if (val.has_value()) {
+                        m_lastUpdatedDateTime = Aws::Utils::DateTime(val.value());
+                      }
+                    } else {
+                      auto val = decoder->PopNextUnsignedIntVal();
+                      if (val.has_value()) {
+                        m_lastUpdatedDateTime = Aws::Utils::DateTime(val.value());
+                      }
+                    }
+                  }
+                }
+                m_lastUpdatedDateTimeHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("LDAPSSettingInfo", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "LDAPSStatus") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_lDAPSStatus =
+                    LDAPSStatusMapper::GetLDAPSStatusForName(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_lDAPSStatusHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "LDAPSStatusReason") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_lDAPSStatusReason = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_lDAPSStatusReason = ss.str();
+                }
+              }
+              m_lDAPSStatusReasonHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "LastUpdatedDateTime") {
+              auto tag = decoder->PopNextTagVal();
+              if (tag.has_value() &&
+                  tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+              {
+                auto dateType = decoder->PeekType();
+                if (dateType.has_value()) {
+                  if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                    auto val = decoder->PopNextFloatVal();
+                    if (val.has_value()) {
+                      m_lastUpdatedDateTime = Aws::Utils::DateTime(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_lastUpdatedDateTime = Aws::Utils::DateTime(val.value());
+                    }
+                  }
+                }
+              }
+              m_lastUpdatedDateTimeHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
+    }
   }
-  if (jsonValue.ValueExists("LDAPSStatusReason")) {
-    m_lDAPSStatusReason = jsonValue.GetString("LDAPSStatusReason");
-    m_lDAPSStatusReasonHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("LastUpdatedDateTime")) {
-    m_lastUpdatedDateTime = jsonValue.GetDouble("LastUpdatedDateTime");
-    m_lastUpdatedDateTimeHasBeenSet = true;
-  }
+
   return *this;
 }
 
-JsonValue LDAPSSettingInfo::Jsonize() const {
-  JsonValue payload;
+void LDAPSSettingInfo::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_lDAPSStatusHasBeenSet) {
+    mapSize++;
+  }
+  if (m_lDAPSStatusReasonHasBeenSet) {
+    mapSize++;
+  }
+  if (m_lastUpdatedDateTimeHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_lDAPSStatusHasBeenSet) {
-    payload.WithString("LDAPSStatus", LDAPSStatusMapper::GetNameForLDAPSStatus(m_lDAPSStatus));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("LDAPSStatus"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(LDAPSStatusMapper::GetNameForLDAPSStatus(m_lDAPSStatus).c_str()));
   }
 
   if (m_lDAPSStatusReasonHasBeenSet) {
-    payload.WithString("LDAPSStatusReason", m_lDAPSStatusReason);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("LDAPSStatusReason"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_lDAPSStatusReason.c_str()));
   }
 
   if (m_lastUpdatedDateTimeHasBeenSet) {
-    payload.WithDouble("LastUpdatedDateTime", m_lastUpdatedDateTime.SecondsWithMSPrecision());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("LastUpdatedDateTime"));
+    encoder.WriteTag(1);  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+    encoder.WriteUInt(m_lastUpdatedDateTime.Seconds());
   }
-
-  return payload;
 }
 
 }  // namespace Model

@@ -10,15 +10,15 @@
 #include <aws/codepipeline/model/RuleExecutionStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace CodePipeline {
 namespace Model {
@@ -32,9 +32,9 @@ namespace Model {
 class RuleExecutionDetail {
  public:
   AWS_CODEPIPELINE_API RuleExecutionDetail() = default;
-  AWS_CODEPIPELINE_API RuleExecutionDetail(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CODEPIPELINE_API RuleExecutionDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_CODEPIPELINE_API RuleExecutionDetail(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CODEPIPELINE_API RuleExecutionDetail& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CODEPIPELINE_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -78,13 +78,13 @@ class RuleExecutionDetail {
   /**
    * <p>The version number of the pipeline with the stage where the rule was run.</p>
    */
-  inline int GetPipelineVersion() const { return m_pipelineVersion; }
+  inline int64_t GetPipelineVersion() const { return m_pipelineVersion; }
   inline bool PipelineVersionHasBeenSet() const { return m_pipelineVersionHasBeenSet; }
-  inline void SetPipelineVersion(int value) {
+  inline void SetPipelineVersion(int64_t value) {
     m_pipelineVersionHasBeenSet = true;
     m_pipelineVersion = value;
   }
-  inline RuleExecutionDetail& WithPipelineVersion(int value) {
+  inline RuleExecutionDetail& WithPipelineVersion(int64_t value) {
     SetPipelineVersion(value);
     return *this;
   }
@@ -239,7 +239,7 @@ class RuleExecutionDetail {
 
   Aws::String m_ruleExecutionId;
 
-  int m_pipelineVersion{0};
+  int64_t m_pipelineVersion{0};
 
   Aws::String m_stageName;
 

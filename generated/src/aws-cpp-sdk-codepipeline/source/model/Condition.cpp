@@ -4,50 +4,166 @@
  */
 
 #include <aws/codepipeline/model/Condition.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace CodePipeline {
 namespace Model {
 
-Condition::Condition(JsonView jsonValue) { *this = jsonValue; }
+Condition::Condition(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-Condition& Condition::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("result")) {
-    m_result = ResultMapper::GetResultForName(jsonValue.GetString("result"));
-    m_resultHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("rules")) {
-    Aws::Utils::Array<JsonView> rulesJsonList = jsonValue.GetArray("rules");
-    for (unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex) {
-      m_rules.push_back(rulesJsonList[rulesIndex].AsObject());
+Condition& Condition::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "result") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_result = ResultMapper::GetResultForName(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_resultHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "rules") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_rules.push_back(RuleDeclaration(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_rules.push_back(RuleDeclaration(decoder));
+                    }
+                  }
+                }
+                m_rulesHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("Condition", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "result") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_result = ResultMapper::GetResultForName(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_resultHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "rules") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_rules.push_back(RuleDeclaration(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_rules.push_back(RuleDeclaration(decoder));
+                  }
+                }
+              }
+              m_rulesHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
     }
-    m_rulesHasBeenSet = true;
   }
+
   return *this;
 }
 
-JsonValue Condition::Jsonize() const {
-  JsonValue payload;
+void Condition::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_resultHasBeenSet) {
+    mapSize++;
+  }
+  if (m_rulesHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_resultHasBeenSet) {
-    payload.WithString("result", ResultMapper::GetNameForResult(m_result));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("result"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(ResultMapper::GetNameForResult(m_result).c_str()));
   }
 
   if (m_rulesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> rulesJsonList(m_rules.size());
-    for (unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex) {
-      rulesJsonList[rulesIndex].AsObject(m_rules[rulesIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("rules"));
+    encoder.WriteArrayStart(m_rules.size());
+    for (const auto& item_0 : m_rules) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("rules", std::move(rulesJsonList));
   }
-
-  return payload;
 }
 
 }  // namespace Model

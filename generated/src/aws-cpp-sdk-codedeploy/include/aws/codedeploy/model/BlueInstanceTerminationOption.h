@@ -6,15 +6,15 @@
 #pragma once
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/codedeploy/model/InstanceAction.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace CodeDeploy {
 namespace Model {
@@ -30,9 +30,9 @@ namespace Model {
 class BlueInstanceTerminationOption {
  public:
   AWS_CODEDEPLOY_API BlueInstanceTerminationOption() = default;
-  AWS_CODEDEPLOY_API BlueInstanceTerminationOption(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CODEDEPLOY_API BlueInstanceTerminationOption& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_CODEDEPLOY_API BlueInstanceTerminationOption(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CODEDEPLOY_API BlueInstanceTerminationOption& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CODEDEPLOY_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -63,13 +63,13 @@ class BlueInstanceTerminationOption {
    * CodeDeploy shifts traffic from the original (blue) task set to a replacement
    * (green) task set. </p> <p> The maximum setting is 2880 minutes (2 days). </p>
    */
-  inline int GetTerminationWaitTimeInMinutes() const { return m_terminationWaitTimeInMinutes; }
+  inline int64_t GetTerminationWaitTimeInMinutes() const { return m_terminationWaitTimeInMinutes; }
   inline bool TerminationWaitTimeInMinutesHasBeenSet() const { return m_terminationWaitTimeInMinutesHasBeenSet; }
-  inline void SetTerminationWaitTimeInMinutes(int value) {
+  inline void SetTerminationWaitTimeInMinutes(int64_t value) {
     m_terminationWaitTimeInMinutesHasBeenSet = true;
     m_terminationWaitTimeInMinutes = value;
   }
-  inline BlueInstanceTerminationOption& WithTerminationWaitTimeInMinutes(int value) {
+  inline BlueInstanceTerminationOption& WithTerminationWaitTimeInMinutes(int64_t value) {
     SetTerminationWaitTimeInMinutes(value);
     return *this;
   }
@@ -77,7 +77,7 @@ class BlueInstanceTerminationOption {
  private:
   InstanceAction m_action{InstanceAction::NOT_SET};
 
-  int m_terminationWaitTimeInMinutes{0};
+  int64_t m_terminationWaitTimeInMinutes{0};
   bool m_actionHasBeenSet = false;
   bool m_terminationWaitTimeInMinutesHasBeenSet = false;
 };

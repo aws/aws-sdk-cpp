@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/directconnect/model/BillingMode.h>
 #include <aws/directconnect/model/Connection.h>
@@ -19,10 +20,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace DirectConnect {
 namespace Model {
@@ -36,9 +36,9 @@ namespace Model {
 class Lag {
  public:
   AWS_DIRECTCONNECT_API Lag() = default;
-  AWS_DIRECTCONNECT_API Lag(Aws::Utils::Json::JsonView jsonValue);
-  AWS_DIRECTCONNECT_API Lag& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_DIRECTCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_DIRECTCONNECT_API Lag(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_DIRECTCONNECT_API Lag& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_DIRECTCONNECT_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -66,13 +66,13 @@ class Lag {
    * speed is 1 Gbps or 10 Gbps, or two when the port speed is 100 Gbps or 400
    * Gbps.</p>
    */
-  inline int GetNumberOfConnections() const { return m_numberOfConnections; }
+  inline int64_t GetNumberOfConnections() const { return m_numberOfConnections; }
   inline bool NumberOfConnectionsHasBeenSet() const { return m_numberOfConnectionsHasBeenSet; }
-  inline void SetNumberOfConnections(int value) {
+  inline void SetNumberOfConnections(int64_t value) {
     m_numberOfConnectionsHasBeenSet = true;
     m_numberOfConnections = value;
   }
-  inline Lag& WithNumberOfConnections(int value) {
+  inline Lag& WithNumberOfConnections(int64_t value) {
     SetNumberOfConnections(value);
     return *this;
   }
@@ -198,13 +198,13 @@ class Lag {
    * <p>The minimum number of physical dedicated connections that must be operational
    * for the LAG itself to be operational.</p>
    */
-  inline int GetMinimumLinks() const { return m_minimumLinks; }
+  inline int64_t GetMinimumLinks() const { return m_minimumLinks; }
   inline bool MinimumLinksHasBeenSet() const { return m_minimumLinksHasBeenSet; }
-  inline void SetMinimumLinks(int value) {
+  inline void SetMinimumLinks(int64_t value) {
     m_minimumLinksHasBeenSet = true;
     m_minimumLinks = value;
   }
-  inline Lag& WithMinimumLinks(int value) {
+  inline Lag& WithMinimumLinks(int64_t value) {
     SetMinimumLinks(value);
     return *this;
   }
@@ -447,13 +447,13 @@ class Lag {
    * virtual interfaces on the LAG. Not applicable to LAGs that are interconnects and
    * support hosted connections.</p>
    */
-  inline int GetPrefixPoolSizeIpv4() const { return m_prefixPoolSizeIpv4; }
+  inline int64_t GetPrefixPoolSizeIpv4() const { return m_prefixPoolSizeIpv4; }
   inline bool PrefixPoolSizeIpv4HasBeenSet() const { return m_prefixPoolSizeIpv4HasBeenSet; }
-  inline void SetPrefixPoolSizeIpv4(int value) {
+  inline void SetPrefixPoolSizeIpv4(int64_t value) {
     m_prefixPoolSizeIpv4HasBeenSet = true;
     m_prefixPoolSizeIpv4 = value;
   }
-  inline Lag& WithPrefixPoolSizeIpv4(int value) {
+  inline Lag& WithPrefixPoolSizeIpv4(int64_t value) {
     SetPrefixPoolSizeIpv4(value);
     return *this;
   }
@@ -465,13 +465,13 @@ class Lag {
    * virtual interfaces on the LAG. Not applicable to LAGs that are interconnects and
    * support hosted connections.</p>
    */
-  inline int GetPrefixPoolSizeIpv6() const { return m_prefixPoolSizeIpv6; }
+  inline int64_t GetPrefixPoolSizeIpv6() const { return m_prefixPoolSizeIpv6; }
   inline bool PrefixPoolSizeIpv6HasBeenSet() const { return m_prefixPoolSizeIpv6HasBeenSet; }
-  inline void SetPrefixPoolSizeIpv6(int value) {
+  inline void SetPrefixPoolSizeIpv6(int64_t value) {
     m_prefixPoolSizeIpv6HasBeenSet = true;
     m_prefixPoolSizeIpv6 = value;
   }
-  inline Lag& WithPrefixPoolSizeIpv6(int value) {
+  inline Lag& WithPrefixPoolSizeIpv6(int64_t value) {
     SetPrefixPoolSizeIpv6(value);
     return *this;
   }
@@ -483,13 +483,13 @@ class Lag {
    * allocated to a virtual interface. Not applicable to LAGs that are interconnects
    * and support hosted connections.</p>
    */
-  inline int GetPrefixPoolUnallocatedCountIpv4() const { return m_prefixPoolUnallocatedCountIpv4; }
+  inline int64_t GetPrefixPoolUnallocatedCountIpv4() const { return m_prefixPoolUnallocatedCountIpv4; }
   inline bool PrefixPoolUnallocatedCountIpv4HasBeenSet() const { return m_prefixPoolUnallocatedCountIpv4HasBeenSet; }
-  inline void SetPrefixPoolUnallocatedCountIpv4(int value) {
+  inline void SetPrefixPoolUnallocatedCountIpv4(int64_t value) {
     m_prefixPoolUnallocatedCountIpv4HasBeenSet = true;
     m_prefixPoolUnallocatedCountIpv4 = value;
   }
-  inline Lag& WithPrefixPoolUnallocatedCountIpv4(int value) {
+  inline Lag& WithPrefixPoolUnallocatedCountIpv4(int64_t value) {
     SetPrefixPoolUnallocatedCountIpv4(value);
     return *this;
   }
@@ -501,13 +501,13 @@ class Lag {
    * allocated to a virtual interface. Not applicable to LAGs that are interconnects
    * and support hosted connections.</p>
    */
-  inline int GetPrefixPoolUnallocatedCountIpv6() const { return m_prefixPoolUnallocatedCountIpv6; }
+  inline int64_t GetPrefixPoolUnallocatedCountIpv6() const { return m_prefixPoolUnallocatedCountIpv6; }
   inline bool PrefixPoolUnallocatedCountIpv6HasBeenSet() const { return m_prefixPoolUnallocatedCountIpv6HasBeenSet; }
-  inline void SetPrefixPoolUnallocatedCountIpv6(int value) {
+  inline void SetPrefixPoolUnallocatedCountIpv6(int64_t value) {
     m_prefixPoolUnallocatedCountIpv6HasBeenSet = true;
     m_prefixPoolUnallocatedCountIpv6 = value;
   }
-  inline Lag& WithPrefixPoolUnallocatedCountIpv6(int value) {
+  inline Lag& WithPrefixPoolUnallocatedCountIpv6(int64_t value) {
     SetPrefixPoolUnallocatedCountIpv6(value);
     return *this;
   }
@@ -566,7 +566,7 @@ class Lag {
  private:
   Aws::String m_connectionsBandwidth;
 
-  int m_numberOfConnections{0};
+  int64_t m_numberOfConnections{0};
 
   Aws::String m_lagId;
 
@@ -580,7 +580,7 @@ class Lag {
 
   Aws::String m_region;
 
-  int m_minimumLinks{0};
+  int64_t m_minimumLinks{0};
 
   Aws::String m_awsDevice;
 
@@ -606,13 +606,13 @@ class Lag {
 
   Aws::Vector<MacSecKey> m_macSecKeys;
 
-  int m_prefixPoolSizeIpv4{0};
+  int64_t m_prefixPoolSizeIpv4{0};
 
-  int m_prefixPoolSizeIpv6{0};
+  int64_t m_prefixPoolSizeIpv6{0};
 
-  int m_prefixPoolUnallocatedCountIpv4{0};
+  int64_t m_prefixPoolUnallocatedCountIpv4{0};
 
-  int m_prefixPoolUnallocatedCountIpv6{0};
+  int64_t m_prefixPoolUnallocatedCountIpv6{0};
 
   RateLimiterStatus m_rateLimiterStatus;
 

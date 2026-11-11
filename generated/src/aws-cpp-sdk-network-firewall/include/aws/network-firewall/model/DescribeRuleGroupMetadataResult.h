@@ -7,29 +7,29 @@
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 #include <aws/network-firewall/model/RuleGroupType.h>
 #include <aws/network-firewall/model/StatefulRuleOptions.h>
 
 #include <utility>
-
 namespace Aws {
 template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
 namespace Utils {
-namespace Json {
-class JsonValue;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace NetworkFirewall {
 namespace Model {
 class DescribeRuleGroupMetadataResult {
  public:
   AWS_NETWORKFIREWALL_API DescribeRuleGroupMetadataResult() = default;
-  AWS_NETWORKFIREWALL_API DescribeRuleGroupMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_NETWORKFIREWALL_API DescribeRuleGroupMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
   AWS_NETWORKFIREWALL_API DescribeRuleGroupMetadataResult& operator=(
-      const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+      const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
 
   ///@{
   /**
@@ -118,12 +118,12 @@ class DescribeRuleGroupMetadataResult {
    * group by calling <a>CreateRuleGroup</a> with <code>DryRun</code> set to
    * <code>TRUE</code>. </p>
    */
-  inline int GetCapacity() const { return m_capacity; }
-  inline void SetCapacity(int value) {
+  inline int64_t GetCapacity() const { return m_capacity; }
+  inline void SetCapacity(int64_t value) {
     m_capacityHasBeenSet = true;
     m_capacity = value;
   }
-  inline DescribeRuleGroupMetadataResult& WithCapacity(int value) {
+  inline DescribeRuleGroupMetadataResult& WithCapacity(int64_t value) {
     SetCapacity(value);
     return *this;
   }
@@ -239,7 +239,7 @@ class DescribeRuleGroupMetadataResult {
 
   RuleGroupType m_type{RuleGroupType::NOT_SET};
 
-  int m_capacity{0};
+  int64_t m_capacity{0};
 
   StatefulRuleOptions m_statefulRuleOptions;
 

@@ -5,16 +5,16 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/route53domains/Route53Domains_EXPORTS.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace Route53Domains {
 namespace Model {
@@ -30,21 +30,21 @@ namespace Model {
 class DnssecSigningAttributes {
  public:
   AWS_ROUTE53DOMAINS_API DnssecSigningAttributes() = default;
-  AWS_ROUTE53DOMAINS_API DnssecSigningAttributes(Aws::Utils::Json::JsonView jsonValue);
-  AWS_ROUTE53DOMAINS_API DnssecSigningAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_ROUTE53DOMAINS_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_ROUTE53DOMAINS_API DnssecSigningAttributes(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_ROUTE53DOMAINS_API DnssecSigningAttributes& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_ROUTE53DOMAINS_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
    * <p> Algorithm which was used to generate the digest from the public key. </p>
    */
-  inline int GetAlgorithm() const { return m_algorithm; }
+  inline int64_t GetAlgorithm() const { return m_algorithm; }
   inline bool AlgorithmHasBeenSet() const { return m_algorithmHasBeenSet; }
-  inline void SetAlgorithm(int value) {
+  inline void SetAlgorithm(int64_t value) {
     m_algorithmHasBeenSet = true;
     m_algorithm = value;
   }
-  inline DnssecSigningAttributes& WithAlgorithm(int value) {
+  inline DnssecSigningAttributes& WithAlgorithm(int64_t value) {
     SetAlgorithm(value);
     return *this;
   }
@@ -58,13 +58,13 @@ class DnssecSigningAttributes {
    * <p>If you have KSK and ZSK keys, always use KSK to create a delegations signer
    * (DS) record. If you have ZSK keys only – use ZSK to create a DS record.</p>
    */
-  inline int GetFlags() const { return m_flags; }
+  inline int64_t GetFlags() const { return m_flags; }
   inline bool FlagsHasBeenSet() const { return m_flagsHasBeenSet; }
-  inline void SetFlags(int value) {
+  inline void SetFlags(int64_t value) {
     m_flagsHasBeenSet = true;
     m_flags = value;
   }
-  inline DnssecSigningAttributes& WithFlags(int value) {
+  inline DnssecSigningAttributes& WithFlags(int64_t value) {
     SetFlags(value);
     return *this;
   }
@@ -89,9 +89,9 @@ class DnssecSigningAttributes {
   }
   ///@}
  private:
-  int m_algorithm{0};
+  int64_t m_algorithm{0};
 
-  int m_flags{0};
+  int64_t m_flags{0};
 
   Aws::String m_publicKey;
   bool m_algorithmHasBeenSet = false;

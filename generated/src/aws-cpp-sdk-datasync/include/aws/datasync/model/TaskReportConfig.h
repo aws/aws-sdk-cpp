@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/datasync/DataSync_EXPORTS.h>
 #include <aws/datasync/model/ObjectVersionIds.h>
 #include <aws/datasync/model/ReportDestination.h>
@@ -15,10 +16,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace DataSync {
 namespace Model {
@@ -35,9 +35,9 @@ namespace Model {
 class TaskReportConfig {
  public:
   AWS_DATASYNC_API TaskReportConfig() = default;
-  AWS_DATASYNC_API TaskReportConfig(Aws::Utils::Json::JsonView jsonValue);
-  AWS_DATASYNC_API TaskReportConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_DATASYNC_API TaskReportConfig(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_DATASYNC_API TaskReportConfig& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_DATASYNC_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

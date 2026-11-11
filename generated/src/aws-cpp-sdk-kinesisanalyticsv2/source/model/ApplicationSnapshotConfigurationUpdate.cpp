@@ -22,6 +22,10 @@ ApplicationSnapshotConfigurationUpdate& ApplicationSnapshotConfigurationUpdate::
     m_snapshotsEnabledUpdate = jsonValue.GetBool("SnapshotsEnabledUpdate");
     m_snapshotsEnabledUpdateHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("SnapshotModeUpdate")) {
+    m_snapshotModeUpdate = SnapshotModeMapper::GetSnapshotModeForName(jsonValue.GetString("SnapshotModeUpdate"));
+    m_snapshotModeUpdateHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue ApplicationSnapshotConfigurationUpdate::Jsonize() const {
 
   if (m_snapshotsEnabledUpdateHasBeenSet) {
     payload.WithBool("SnapshotsEnabledUpdate", m_snapshotsEnabledUpdate);
+  }
+
+  if (m_snapshotModeUpdateHasBeenSet) {
+    payload.WithString("SnapshotModeUpdate", SnapshotModeMapper::GetNameForSnapshotMode(m_snapshotModeUpdate));
   }
 
   return payload;

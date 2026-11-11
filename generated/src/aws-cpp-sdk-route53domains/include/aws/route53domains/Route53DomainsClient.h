@@ -7,7 +7,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/route53domains/Route53DomainsPaginationBase.h>
 #include <aws/route53domains/Route53DomainsServiceClientModel.h>
 #include <aws/route53domains/Route53DomainsWaiter.h>
@@ -19,12 +19,12 @@ namespace Route53Domains {
  * <p>Amazon Route 53 API actions let you register domain names and perform related
  * operations.</p>
  */
-class AWS_ROUTE53DOMAINS_API Route53DomainsClient : public Aws::Client::AWSJsonClient,
+class AWS_ROUTE53DOMAINS_API Route53DomainsClient : public Aws::Client::AWSRpcV2CborClient,
                                                     public Aws::Client::ClientWithAsyncTemplateMethods<Route53DomainsClient>,
                                                     public Route53DomainsPaginationBase<Route53DomainsClient>,
                                                     public Route53DomainsWaiter<Route53DomainsClient> {
  public:
-  typedef Aws::Client::AWSJsonClient BASECLASS;
+  typedef Aws::Client::AWSRpcV2CborClient BASECLASS;
   static const char* GetServiceName();
   static const char* GetAllocationTag();
 

@@ -204,6 +204,7 @@
 #include <aws/config/model/FailedRemediationBatch.h>
 #include <aws/config/model/FailedRemediationExceptionBatch.h>
 #include <aws/config/model/FieldInfo.h>
+#include <aws/config/model/GcpConnectorConfiguration.h>
 #include <aws/config/model/GetAggregateComplianceDetailsByConfigRulePaginationTraits.h>
 #include <aws/config/model/GetAggregateComplianceDetailsByConfigRuleRequest.h>
 #include <aws/config/model/GetAggregateComplianceDetailsByConfigRuleResult.h>

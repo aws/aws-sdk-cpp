@@ -49,6 +49,10 @@ AuditEvent& AuditEvent::operator=(JsonView jsonValue) {
     m_performedBy = jsonValue.GetObject("performedBy");
     m_performedByHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("mergeMetadata")) {
+    m_mergeMetadata = jsonValue.GetObject("mergeMetadata");
+    m_mergeMetadataHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -85,6 +89,10 @@ JsonValue AuditEvent::Jsonize() const {
 
   if (m_performedByHasBeenSet) {
     payload.WithObject("performedBy", m_performedBy.Jsonize());
+  }
+
+  if (m_mergeMetadataHasBeenSet) {
+    payload.WithObject("mergeMetadata", m_mergeMetadata.Jsonize());
   }
 
   return payload;

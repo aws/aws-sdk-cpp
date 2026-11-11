@@ -7,15 +7,15 @@
 #include <aws/comprehend/Comprehend_EXPORTS.h>
 #include <aws/comprehend/model/KeyPhrase.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace Comprehend {
 namespace Model {
@@ -30,21 +30,21 @@ namespace Model {
 class BatchDetectKeyPhrasesItemResult {
  public:
   AWS_COMPREHEND_API BatchDetectKeyPhrasesItemResult() = default;
-  AWS_COMPREHEND_API BatchDetectKeyPhrasesItemResult(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPREHEND_API BatchDetectKeyPhrasesItemResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_COMPREHEND_API BatchDetectKeyPhrasesItemResult(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPREHEND_API BatchDetectKeyPhrasesItemResult& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPREHEND_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
    * <p>The zero-based index of the document in the input list.</p>
    */
-  inline int GetIndex() const { return m_index; }
+  inline int64_t GetIndex() const { return m_index; }
   inline bool IndexHasBeenSet() const { return m_indexHasBeenSet; }
-  inline void SetIndex(int value) {
+  inline void SetIndex(int64_t value) {
     m_indexHasBeenSet = true;
     m_index = value;
   }
-  inline BatchDetectKeyPhrasesItemResult& WithIndex(int value) {
+  inline BatchDetectKeyPhrasesItemResult& WithIndex(int64_t value) {
     SetIndex(value);
     return *this;
   }
@@ -75,7 +75,7 @@ class BatchDetectKeyPhrasesItemResult {
   }
   ///@}
  private:
-  int m_index{0};
+  int64_t m_index{0};
 
   Aws::Vector<KeyPhrase> m_keyPhrases;
   bool m_indexHasBeenSet = false;

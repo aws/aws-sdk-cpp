@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/directconnect/model/DirectConnectGatewayState.h>
 #include <aws/directconnect/model/Tag.h>
@@ -14,10 +15,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace DirectConnect {
 namespace Model {
@@ -32,9 +32,9 @@ namespace Model {
 class DirectConnectGateway {
  public:
   AWS_DIRECTCONNECT_API DirectConnectGateway() = default;
-  AWS_DIRECTCONNECT_API DirectConnectGateway(Aws::Utils::Json::JsonView jsonValue);
-  AWS_DIRECTCONNECT_API DirectConnectGateway& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_DIRECTCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_DIRECTCONNECT_API DirectConnectGateway(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_DIRECTCONNECT_API DirectConnectGateway& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_DIRECTCONNECT_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -153,13 +153,13 @@ class DirectConnectGateway {
    * the Direct Connect gateway. The count combines the IPv4 and IPv6 address
    * families.</p>
    */
-  inline int GetTotalPrefixPoolAllocations() const { return m_totalPrefixPoolAllocations; }
+  inline int64_t GetTotalPrefixPoolAllocations() const { return m_totalPrefixPoolAllocations; }
   inline bool TotalPrefixPoolAllocationsHasBeenSet() const { return m_totalPrefixPoolAllocationsHasBeenSet; }
-  inline void SetTotalPrefixPoolAllocations(int value) {
+  inline void SetTotalPrefixPoolAllocations(int64_t value) {
     m_totalPrefixPoolAllocationsHasBeenSet = true;
     m_totalPrefixPoolAllocations = value;
   }
-  inline DirectConnectGateway& WithTotalPrefixPoolAllocations(int value) {
+  inline DirectConnectGateway& WithTotalPrefixPoolAllocations(int64_t value) {
     SetTotalPrefixPoolAllocations(value);
     return *this;
   }
@@ -201,7 +201,7 @@ class DirectConnectGateway {
 
   Aws::String m_stateChangeError;
 
-  int m_totalPrefixPoolAllocations{0};
+  int64_t m_totalPrefixPoolAllocations{0};
 
   Aws::Vector<Tag> m_tags;
   bool m_directConnectGatewayIdHasBeenSet = false;

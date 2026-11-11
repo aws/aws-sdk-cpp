@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 #include <aws/network-firewall/model/StatefulRuleGroupOverride.h>
 
@@ -12,10 +13,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace NetworkFirewall {
 namespace Model {
@@ -29,9 +29,9 @@ namespace Model {
 class StatefulRuleGroupReference {
  public:
   AWS_NETWORKFIREWALL_API StatefulRuleGroupReference() = default;
-  AWS_NETWORKFIREWALL_API StatefulRuleGroupReference(Aws::Utils::Json::JsonView jsonValue);
-  AWS_NETWORKFIREWALL_API StatefulRuleGroupReference& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_NETWORKFIREWALL_API StatefulRuleGroupReference(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_NETWORKFIREWALL_API StatefulRuleGroupReference& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_NETWORKFIREWALL_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -63,13 +63,13 @@ class StatefulRuleGroupReference {
    * time. To make it easier to insert rule groups later, number them so there's a
    * wide range in between, for example use 100, 200, and so on. </p>
    */
-  inline int GetPriority() const { return m_priority; }
+  inline int64_t GetPriority() const { return m_priority; }
   inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
-  inline void SetPriority(int value) {
+  inline void SetPriority(int64_t value) {
     m_priorityHasBeenSet = true;
     m_priority = value;
   }
-  inline StatefulRuleGroupReference& WithPriority(int value) {
+  inline StatefulRuleGroupReference& WithPriority(int64_t value) {
     SetPriority(value);
     return *this;
   }
@@ -122,7 +122,7 @@ class StatefulRuleGroupReference {
  private:
   Aws::String m_resourceArn;
 
-  int m_priority{0};
+  int64_t m_priority{0};
 
   StatefulRuleGroupOverride m_override;
 

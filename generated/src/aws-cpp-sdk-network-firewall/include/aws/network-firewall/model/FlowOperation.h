@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 #include <aws/network-firewall/model/FlowFilter.h>
 
@@ -12,10 +13,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace NetworkFirewall {
 namespace Model {
@@ -34,9 +34,9 @@ namespace Model {
 class FlowOperation {
  public:
   AWS_NETWORKFIREWALL_API FlowOperation() = default;
-  AWS_NETWORKFIREWALL_API FlowOperation(Aws::Utils::Json::JsonView jsonValue);
-  AWS_NETWORKFIREWALL_API FlowOperation& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_NETWORKFIREWALL_API FlowOperation(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_NETWORKFIREWALL_API FlowOperation& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_NETWORKFIREWALL_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -44,13 +44,13 @@ class FlowOperation {
    * seconds) lower than <code>MinimumFlowAgeInSeconds</code>. You provide this for
    * start commands.</p>
    */
-  inline int GetMinimumFlowAgeInSeconds() const { return m_minimumFlowAgeInSeconds; }
+  inline int64_t GetMinimumFlowAgeInSeconds() const { return m_minimumFlowAgeInSeconds; }
   inline bool MinimumFlowAgeInSecondsHasBeenSet() const { return m_minimumFlowAgeInSecondsHasBeenSet; }
-  inline void SetMinimumFlowAgeInSeconds(int value) {
+  inline void SetMinimumFlowAgeInSeconds(int64_t value) {
     m_minimumFlowAgeInSecondsHasBeenSet = true;
     m_minimumFlowAgeInSeconds = value;
   }
-  inline FlowOperation& WithMinimumFlowAgeInSeconds(int value) {
+  inline FlowOperation& WithMinimumFlowAgeInSeconds(int64_t value) {
     SetMinimumFlowAgeInSeconds(value);
     return *this;
   }
@@ -81,7 +81,7 @@ class FlowOperation {
   }
   ///@}
  private:
-  int m_minimumFlowAgeInSeconds{0};
+  int64_t m_minimumFlowAgeInSeconds{0};
 
   Aws::Vector<FlowFilter> m_flowFilters;
   bool m_minimumFlowAgeInSecondsHasBeenSet = false;

@@ -5,13 +5,13 @@
 
 #pragma once
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
+#include <aws/crt/cbor/Cbor.h>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace CodeDeploy {
 namespace Model {
@@ -27,22 +27,22 @@ namespace Model {
 class TimeBasedCanary {
  public:
   AWS_CODEDEPLOY_API TimeBasedCanary() = default;
-  AWS_CODEDEPLOY_API TimeBasedCanary(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CODEDEPLOY_API TimeBasedCanary& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_CODEDEPLOY_API TimeBasedCanary(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CODEDEPLOY_API TimeBasedCanary& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CODEDEPLOY_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
    * <p>The percentage of traffic to shift in the first increment of a
    * <code>TimeBasedCanary</code> deployment.</p>
    */
-  inline int GetCanaryPercentage() const { return m_canaryPercentage; }
+  inline int64_t GetCanaryPercentage() const { return m_canaryPercentage; }
   inline bool CanaryPercentageHasBeenSet() const { return m_canaryPercentageHasBeenSet; }
-  inline void SetCanaryPercentage(int value) {
+  inline void SetCanaryPercentage(int64_t value) {
     m_canaryPercentageHasBeenSet = true;
     m_canaryPercentage = value;
   }
-  inline TimeBasedCanary& WithCanaryPercentage(int value) {
+  inline TimeBasedCanary& WithCanaryPercentage(int64_t value) {
     SetCanaryPercentage(value);
     return *this;
   }
@@ -53,21 +53,21 @@ class TimeBasedCanary {
    * <p>The number of minutes between the first and second traffic shifts of a
    * <code>TimeBasedCanary</code> deployment.</p>
    */
-  inline int GetCanaryInterval() const { return m_canaryInterval; }
+  inline int64_t GetCanaryInterval() const { return m_canaryInterval; }
   inline bool CanaryIntervalHasBeenSet() const { return m_canaryIntervalHasBeenSet; }
-  inline void SetCanaryInterval(int value) {
+  inline void SetCanaryInterval(int64_t value) {
     m_canaryIntervalHasBeenSet = true;
     m_canaryInterval = value;
   }
-  inline TimeBasedCanary& WithCanaryInterval(int value) {
+  inline TimeBasedCanary& WithCanaryInterval(int64_t value) {
     SetCanaryInterval(value);
     return *this;
   }
   ///@}
  private:
-  int m_canaryPercentage{0};
+  int64_t m_canaryPercentage{0};
 
-  int m_canaryInterval{0};
+  int64_t m_canaryInterval{0};
   bool m_canaryPercentageHasBeenSet = false;
   bool m_canaryIntervalHasBeenSet = false;
 };

@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/bedrock-agentcore-control/model/HarnessRemoteMcpOutboundAuth.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -74,12 +75,34 @@ class HarnessRemoteMcpConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>How the harness authenticates to this MCP server. Defaults to no
+   * authentication.</p>
+   */
+  inline const HarnessRemoteMcpOutboundAuth& GetOutboundAuth() const { return m_outboundAuth; }
+  inline bool OutboundAuthHasBeenSet() const { return m_outboundAuthHasBeenSet; }
+  template <typename OutboundAuthT = HarnessRemoteMcpOutboundAuth>
+  void SetOutboundAuth(OutboundAuthT&& value) {
+    m_outboundAuthHasBeenSet = true;
+    m_outboundAuth = std::forward<OutboundAuthT>(value);
+  }
+  template <typename OutboundAuthT = HarnessRemoteMcpOutboundAuth>
+  HarnessRemoteMcpConfig& WithOutboundAuth(OutboundAuthT&& value) {
+    SetOutboundAuth(std::forward<OutboundAuthT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_url;
 
   Aws::Map<Aws::String, Aws::String> m_headers;
+
+  HarnessRemoteMcpOutboundAuth m_outboundAuth;
   bool m_urlHasBeenSet = false;
   bool m_headersHasBeenSet = false;
+  bool m_outboundAuthHasBeenSet = false;
 };
 
 }  // namespace Model

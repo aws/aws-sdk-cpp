@@ -3,45 +3,119 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/network-firewall/model/StatefulEngineOptionsV2.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace NetworkFirewall {
 namespace Model {
 
-StatefulEngineOptionsV2::StatefulEngineOptionsV2(JsonView jsonValue) { *this = jsonValue; }
+StatefulEngineOptionsV2::StatefulEngineOptionsV2(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-StatefulEngineOptionsV2& StatefulEngineOptionsV2::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("StreamExceptionPolicy")) {
-    m_streamExceptionPolicy =
-        StreamExceptionPolicyV2Mapper::GetStreamExceptionPolicyV2ForName(jsonValue.GetString("StreamExceptionPolicy"));
-    m_streamExceptionPolicyHasBeenSet = true;
+StatefulEngineOptionsV2& StatefulEngineOptionsV2::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "StreamExceptionPolicy") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_streamExceptionPolicy = StreamExceptionPolicyV2Mapper::GetStreamExceptionPolicyV2ForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_streamExceptionPolicyHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "FlowTimeouts") {
+                m_flowTimeouts = FlowTimeouts(decoder);
+                m_flowTimeoutsHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("StatefulEngineOptionsV2", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "StreamExceptionPolicy") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_streamExceptionPolicy = StreamExceptionPolicyV2Mapper::GetStreamExceptionPolicyV2ForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_streamExceptionPolicyHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "FlowTimeouts") {
+              m_flowTimeouts = FlowTimeouts(decoder);
+              m_flowTimeoutsHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
+    }
   }
-  if (jsonValue.ValueExists("FlowTimeouts")) {
-    m_flowTimeouts = jsonValue.GetObject("FlowTimeouts");
-    m_flowTimeoutsHasBeenSet = true;
-  }
+
   return *this;
 }
 
-JsonValue StatefulEngineOptionsV2::Jsonize() const {
-  JsonValue payload;
+void StatefulEngineOptionsV2::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_streamExceptionPolicyHasBeenSet) {
+    mapSize++;
+  }
+  if (m_flowTimeoutsHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_streamExceptionPolicyHasBeenSet) {
-    payload.WithString("StreamExceptionPolicy", StreamExceptionPolicyV2Mapper::GetNameForStreamExceptionPolicyV2(m_streamExceptionPolicy));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("StreamExceptionPolicy"));
+    encoder.WriteText(
+        Aws::Crt::ByteCursorFromCString(StreamExceptionPolicyV2Mapper::GetNameForStreamExceptionPolicyV2(m_streamExceptionPolicy).c_str()));
   }
 
   if (m_flowTimeoutsHasBeenSet) {
-    payload.WithObject("FlowTimeouts", m_flowTimeouts.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("FlowTimeouts"));
+    m_flowTimeouts.CborEncode(encoder);
   }
-
-  return payload;
 }
 
 }  // namespace Model

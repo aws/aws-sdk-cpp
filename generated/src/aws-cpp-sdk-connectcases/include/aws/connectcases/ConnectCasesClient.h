@@ -458,8 +458,11 @@ class AWS_CONNECTCASES_API ConnectCasesClient : public Aws::Client::AWSJsonClien
    * <code>comments</code> and <code>contacts</code>.</p> </li> <li> <p>If you
    * provide a value for <code>performedBy.userArn</code>, you must also have <a
    * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
-   * permission on the ARN of the user that you provide.</p> </li> </ul> <p>
-   * <b>Endpoints</b>: See <a
+   * permission on the ARN of the user that you provide.</p> </li> <li> <p>If the
+   * case is the secondary case of a merge that is running, the request fails with a
+   * <code>ConflictException</code>. For more information, see <a
+   * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_StartMergeCases.html">StartMergeCases</a>.</p>
+   * </li> </ul> <p> <b>Endpoints</b>: See <a
    * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
    * Customer endpoints and quotas</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/CreateRelatedItem">AWS
@@ -530,8 +533,12 @@ class AWS_CONNECTCASES_API ConnectCasesClient : public Aws::Client::AWSJsonClien
    * resources from the cases data store. After a successful deletion, you
    * cannot:</p> <ul> <li> <p>Retrieve related items</p> </li> <li> <p>Access audit
    * history</p> </li> <li> <p>Perform any operations that require the CaseID</p>
-   * </li> </ul>  <p>This action is irreversible. After you delete a case,
-   * you cannot recover its data.</p> <p><h3>See Also:</h3>   <a
+   * </li> </ul> <p>You can't delete a case while it's part of a merge that is
+   * running, as either the primary or the secondary case. The request fails with a
+   * <code>ConflictException</code>. For more information, see <a
+   * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_StartMergeCases.html">StartMergeCases</a>.</p>
+   *  <p>This action is irreversible. After you delete a case, you cannot
+   * recover its data.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/DeleteCase">AWS
    * API Reference</a></p>
    */
@@ -699,7 +706,11 @@ class AWS_CONNECTCASES_API ConnectCasesClient : public Aws::Client::AWSJsonClien
    * be used on a FILE type related attachment. To delete this type of file, use the
    * <a
    * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteAttachedFile.html">DeleteAttachedFile</a>
-   * API</p> <p><h3>See Also:</h3>   <a
+   * API</p>  <p>If the case is the secondary case of a merge that is running,
+   * the request fails with a <code>ConflictException</code>. For more information,
+   * see <a
+   * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_StartMergeCases.html">StartMergeCases</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/DeleteRelatedItem">AWS
    * API Reference</a></p>
    */
@@ -885,6 +896,44 @@ class AWS_CONNECTCASES_API ConnectCasesClient : public Aws::Client::AWSJsonClien
   void GetLayoutAsync(const GetLayoutRequestT& request, const GetLayoutResponseReceivedHandler& handler,
                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ConnectCasesClient::GetLayout, request, handler, context);
+  }
+
+  /**
+   * <p>Returns the merge status of a case. Use this operation to track a merge that
+   * you started with <a
+   * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_StartMergeCases.html">StartMergeCases</a>,
+   * or to check whether a case is part of a merge before you modify it.</p> <p>The
+   * operation returns the following, depending on the case:</p> <ul> <li> <p>For the
+   * primary case or the secondary case of a merge that is running, it returns
+   * <code>IN_PROGRESS</code>.</p> </li> <li> <p>For a case that was merged into
+   * another case as the secondary case, it returns <code>COMPLETED</code>.</p> </li>
+   * <li> <p>For any other case, it returns a <code>ResourceNotFoundException</code>.
+   * This includes the primary case after its merge finishes.</p> </li> </ul> <p>
+   * <b>Endpoints</b>: See <a
+   * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+   * Customer endpoints and quotas</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/GetMergeCasesStatus">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetMergeCasesStatusOutcome GetMergeCasesStatus(const Model::GetMergeCasesStatusRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetMergeCasesStatus that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetMergeCasesStatusRequestT = Model::GetMergeCasesStatusRequest>
+  Model::GetMergeCasesStatusOutcomeCallable GetMergeCasesStatusCallable(const GetMergeCasesStatusRequestT& request) const {
+    return SubmitCallable(&ConnectCasesClient::GetMergeCasesStatus, request);
+  }
+
+  /**
+   * An Async wrapper for GetMergeCasesStatus that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetMergeCasesStatusRequestT = Model::GetMergeCasesStatusRequest>
+  void GetMergeCasesStatusAsync(const GetMergeCasesStatusRequestT& request, const GetMergeCasesStatusResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectCasesClient::GetMergeCasesStatus, request, handler, context);
   }
 
   /**
@@ -1281,6 +1330,64 @@ class AWS_CONNECTCASES_API ConnectCasesClient : public Aws::Client::AWSJsonClien
   }
 
   /**
+   * <p>Merges a secondary case into a primary case. The primary case, which you
+   * specify in the request URI, remains active. Both cases must belong to the same
+   * domain.</p> <p>The merge runs asynchronously. To track its progress, call <a
+   * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_GetMergeCasesStatus.html">GetMergeCasesStatus</a>.
+   * When the merge finishes, the selected field values and related items from the
+   * secondary case are on the primary case, the two cases are linked, and the
+   * secondary case is closed. Both cases record the merge in their audit history.
+   * For more information, see <a
+   * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_GetCaseAuditEvents.html">GetCaseAuditEvents</a>.</p>
+   * <p> <b>Important things to know</b> </p> <ul> <li> <p>Both cases must have the
+   * same customer, or at least one of them must have no customer.</p> </li> <li>
+   * <p>While the merge runs, you can't modify the secondary case or its related
+   * items, and you can't delete the primary case. These requests return a
+   * <code>ConflictException</code>.</p> </li> <li> <p>After the merge, the secondary
+   * case can be reopened, updated, and deleted, but it can't be merged again.</p>
+   * </li> </ul> <p>The request fails with a <code>ValidationException</code>, and no
+   * merge starts, if:</p> <ul> <li> <p>The primary case and the secondary case are
+   * the same case.</p> </li> <li> <p>Either case is closed.</p> </li> <li> <p>Both
+   * cases have a customer, and the customers are different.</p> </li> <li> <p>
+   * <code>fieldsConfiguration</code> selects a field that can't be merged, or a
+   * field that the secondary case doesn't have.</p> </li> <li> <p>After the merge,
+   * the primary case would have more than 500 field values, or would exceed the
+   * maximum case size.</p> </li> </ul> <p>The request fails with a
+   * <code>ServiceQuotaExceededException</code> if, after the merge, either case
+   * would exceed the quota for related items per case. For the primary case, the
+   * count is its existing related items, plus the related items moved from the
+   * secondary case, plus the new case link. See <a
+   * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#cases-quotas">Connect
+   * Customer Cases quotas</a>.</p> <p>The request fails with a
+   * <code>ConflictException</code> if either case is already part of a merge that is
+   * running, or was previously merged into another case as the secondary case.</p>
+   * <p> <b>Endpoints</b>: See <a
+   * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
+   * Customer endpoints and quotas</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/StartMergeCases">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartMergeCasesOutcome StartMergeCases(const Model::StartMergeCasesRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartMergeCases that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename StartMergeCasesRequestT = Model::StartMergeCasesRequest>
+  Model::StartMergeCasesOutcomeCallable StartMergeCasesCallable(const StartMergeCasesRequestT& request) const {
+    return SubmitCallable(&ConnectCasesClient::StartMergeCases, request);
+  }
+
+  /**
+   * An Async wrapper for StartMergeCases that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename StartMergeCasesRequestT = Model::StartMergeCasesRequest>
+  void StartMergeCasesAsync(const StartMergeCasesRequestT& request, const StartMergeCasesResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectCasesClient::StartMergeCases, request, handler, context);
+  }
+
+  /**
    * <p>Adds tags to a resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/TagResource">AWS
    * API Reference</a></p>
@@ -1336,9 +1443,12 @@ class AWS_CONNECTCASES_API ConnectCasesClient : public Aws::Client::AWSJsonClien
    * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">connect:DescribeUser</a>
    * permission on the user ARN that you provide.</p>  <p>Updates the values
    * of fields on a case. Fields to be updated are received as an array of id/value
-   * pairs identical to the <code>CreateCase</code> input.</p> <p>If the action is
-   * successful, the service sends back an HTTP 200 response with an empty HTTP
-   * body.</p></p><p><h3>See Also:</h3>   <a
+   * pairs identical to the <code>CreateCase</code> input.</p> <p>If the case is the
+   * secondary case of a merge that is running, the request fails with a
+   * <code>ConflictException</code>. For more information, see <a
+   * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_StartMergeCases.html">StartMergeCases</a>.</p>
+   * <p>If the action is successful, the service sends back an HTTP 200 response with
+   * an empty HTTP body.</p></p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/UpdateCase">AWS
    * API Reference</a></p>
    */
@@ -1462,8 +1572,11 @@ class AWS_CONNECTCASES_API ConnectCasesClient : public Aws::Client::AWSJsonClien
    * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
    * permission on the ARN of the user that you provide.</p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/connect/latest/adminguide/case-fields.html#system-case-fields">System
-   * case fields</a> cannot be used in a custom related item.</p> </li> </ul> <p>
-   * <b>Endpoints</b>: See <a
+   * case fields</a> cannot be used in a custom related item.</p> </li> <li> <p>If
+   * the case is the secondary case of a merge that is running, the request fails
+   * with a <code>ConflictException</code>. For more information, see <a
+   * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_StartMergeCases.html">StartMergeCases</a>.</p>
+   * </li> </ul> <p> <b>Endpoints</b>: See <a
    * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect
    * Customer endpoints and quotas</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/UpdateRelatedItem">AWS

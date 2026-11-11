@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/servicediscovery/ServiceDiscovery_EXPORTS.h>
 #include <aws/servicediscovery/model/NamespaceProperties.h>
 #include <aws/servicediscovery/model/NamespaceType.h>
@@ -14,10 +15,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace ServiceDiscovery {
 namespace Model {
@@ -31,9 +31,9 @@ namespace Model {
 class NamespaceSummary {
  public:
   AWS_SERVICEDISCOVERY_API NamespaceSummary() = default;
-  AWS_SERVICEDISCOVERY_API NamespaceSummary(Aws::Utils::Json::JsonView jsonValue);
-  AWS_SERVICEDISCOVERY_API NamespaceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_SERVICEDISCOVERY_API NamespaceSummary(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_SERVICEDISCOVERY_API NamespaceSummary& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_SERVICEDISCOVERY_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -152,13 +152,13 @@ class NamespaceSummary {
   /**
    * <p>The number of services that were created using the namespace.</p>
    */
-  inline int GetServiceCount() const { return m_serviceCount; }
+  inline int64_t GetServiceCount() const { return m_serviceCount; }
   inline bool ServiceCountHasBeenSet() const { return m_serviceCountHasBeenSet; }
-  inline void SetServiceCount(int value) {
+  inline void SetServiceCount(int64_t value) {
     m_serviceCountHasBeenSet = true;
     m_serviceCount = value;
   }
-  inline NamespaceSummary& WithServiceCount(int value) {
+  inline NamespaceSummary& WithServiceCount(int64_t value) {
     SetServiceCount(value);
     return *this;
   }
@@ -212,7 +212,7 @@ class NamespaceSummary {
 
   Aws::String m_description;
 
-  int m_serviceCount{0};
+  int64_t m_serviceCount{0};
 
   NamespaceProperties m_properties;
 

@@ -5,16 +5,16 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace NetworkFirewall {
 namespace Model {
@@ -27,9 +27,9 @@ namespace Model {
 class ProxyRulePriority {
  public:
   AWS_NETWORKFIREWALL_API ProxyRulePriority() = default;
-  AWS_NETWORKFIREWALL_API ProxyRulePriority(Aws::Utils::Json::JsonView jsonValue);
-  AWS_NETWORKFIREWALL_API ProxyRulePriority& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_NETWORKFIREWALL_API ProxyRulePriority(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_NETWORKFIREWALL_API ProxyRulePriority& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_NETWORKFIREWALL_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -54,13 +54,13 @@ class ProxyRulePriority {
   /**
    * <p>Where to move a proxy rule in a proxy rule group. </p>
    */
-  inline int GetNewPosition() const { return m_newPosition; }
+  inline int64_t GetNewPosition() const { return m_newPosition; }
   inline bool NewPositionHasBeenSet() const { return m_newPositionHasBeenSet; }
-  inline void SetNewPosition(int value) {
+  inline void SetNewPosition(int64_t value) {
     m_newPositionHasBeenSet = true;
     m_newPosition = value;
   }
-  inline ProxyRulePriority& WithNewPosition(int value) {
+  inline ProxyRulePriority& WithNewPosition(int64_t value) {
     SetNewPosition(value);
     return *this;
   }
@@ -68,7 +68,7 @@ class ProxyRulePriority {
  private:
   Aws::String m_proxyRuleName;
 
-  int m_newPosition{0};
+  int64_t m_newPosition{0};
   bool m_proxyRuleNameHasBeenSet = false;
   bool m_newPositionHasBeenSet = false;
 };

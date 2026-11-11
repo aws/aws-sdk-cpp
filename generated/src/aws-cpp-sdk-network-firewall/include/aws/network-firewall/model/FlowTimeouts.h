@@ -4,14 +4,14 @@
  */
 
 #pragma once
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace NetworkFirewall {
 namespace Model {
@@ -28,9 +28,9 @@ namespace Model {
 class FlowTimeouts {
  public:
   AWS_NETWORKFIREWALL_API FlowTimeouts() = default;
-  AWS_NETWORKFIREWALL_API FlowTimeouts(Aws::Utils::Json::JsonView jsonValue);
-  AWS_NETWORKFIREWALL_API FlowTimeouts& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_NETWORKFIREWALL_API FlowTimeouts(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_NETWORKFIREWALL_API FlowTimeouts& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_NETWORKFIREWALL_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -42,19 +42,19 @@ class FlowTimeouts {
    * the <code>TcpIdleTimeoutSeconds</code> value to be between 60 and 6000 seconds.
    * If no value is provided, it defaults to 350 seconds. </p>
    */
-  inline int GetTcpIdleTimeoutSeconds() const { return m_tcpIdleTimeoutSeconds; }
+  inline int64_t GetTcpIdleTimeoutSeconds() const { return m_tcpIdleTimeoutSeconds; }
   inline bool TcpIdleTimeoutSecondsHasBeenSet() const { return m_tcpIdleTimeoutSecondsHasBeenSet; }
-  inline void SetTcpIdleTimeoutSeconds(int value) {
+  inline void SetTcpIdleTimeoutSeconds(int64_t value) {
     m_tcpIdleTimeoutSecondsHasBeenSet = true;
     m_tcpIdleTimeoutSeconds = value;
   }
-  inline FlowTimeouts& WithTcpIdleTimeoutSeconds(int value) {
+  inline FlowTimeouts& WithTcpIdleTimeoutSeconds(int64_t value) {
     SetTcpIdleTimeoutSeconds(value);
     return *this;
   }
   ///@}
  private:
-  int m_tcpIdleTimeoutSeconds{0};
+  int64_t m_tcpIdleTimeoutSeconds{0};
   bool m_tcpIdleTimeoutSecondsHasBeenSet = false;
 };
 

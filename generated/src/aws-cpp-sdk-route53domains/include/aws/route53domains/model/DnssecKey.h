@@ -5,16 +5,16 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/route53domains/Route53Domains_EXPORTS.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace Route53Domains {
 namespace Model {
@@ -31,9 +31,9 @@ namespace Model {
 class DnssecKey {
  public:
   AWS_ROUTE53DOMAINS_API DnssecKey() = default;
-  AWS_ROUTE53DOMAINS_API DnssecKey(Aws::Utils::Json::JsonView jsonValue);
-  AWS_ROUTE53DOMAINS_API DnssecKey& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_ROUTE53DOMAINS_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_ROUTE53DOMAINS_API DnssecKey(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_ROUTE53DOMAINS_API DnssecKey& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_ROUTE53DOMAINS_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -44,13 +44,13 @@ class DnssecKey {
    * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-configuring-dnssec-enable-signing.html">Enabling
    * DNSSEC signing and establishing a chain of trust</a>.</p>
    */
-  inline int GetAlgorithm() const { return m_algorithm; }
+  inline int64_t GetAlgorithm() const { return m_algorithm; }
   inline bool AlgorithmHasBeenSet() const { return m_algorithmHasBeenSet; }
-  inline void SetAlgorithm(int value) {
+  inline void SetAlgorithm(int64_t value) {
     m_algorithmHasBeenSet = true;
     m_algorithm = value;
   }
-  inline DnssecKey& WithAlgorithm(int value) {
+  inline DnssecKey& WithAlgorithm(int64_t value) {
     SetAlgorithm(value);
     return *this;
   }
@@ -64,13 +64,13 @@ class DnssecKey {
    * for DNSSEC Delegation Signer (DS) Resource Record (RR) Type Digest Algorithms.
    * </p>
    */
-  inline int GetDigestType() const { return m_digestType; }
+  inline int64_t GetDigestType() const { return m_digestType; }
   inline bool DigestTypeHasBeenSet() const { return m_digestTypeHasBeenSet; }
-  inline void SetDigestType(int value) {
+  inline void SetDigestType(int64_t value) {
     m_digestTypeHasBeenSet = true;
     m_digestType = value;
   }
-  inline DnssecKey& WithDigestType(int value) {
+  inline DnssecKey& WithDigestType(int64_t value) {
     SetDigestType(value);
     return *this;
   }
@@ -101,13 +101,13 @@ class DnssecKey {
    * <p> A numeric identification of the DNSKEY record referred to by this DS record.
    * </p>
    */
-  inline int GetKeyTag() const { return m_keyTag; }
+  inline int64_t GetKeyTag() const { return m_keyTag; }
   inline bool KeyTagHasBeenSet() const { return m_keyTagHasBeenSet; }
-  inline void SetKeyTag(int value) {
+  inline void SetKeyTag(int64_t value) {
     m_keyTagHasBeenSet = true;
     m_keyTag = value;
   }
-  inline DnssecKey& WithKeyTag(int value) {
+  inline DnssecKey& WithKeyTag(int64_t value) {
     SetKeyTag(value);
     return *this;
   }
@@ -133,13 +133,13 @@ class DnssecKey {
   }
   ///@}
  private:
-  int m_algorithm{0};
+  int64_t m_algorithm{0};
 
-  int m_digestType{0};
+  int64_t m_digestType{0};
 
   Aws::String m_digest;
 
-  int m_keyTag{0};
+  int64_t m_keyTag{0};
 
   Aws::String m_id;
   bool m_algorithmHasBeenSet = false;

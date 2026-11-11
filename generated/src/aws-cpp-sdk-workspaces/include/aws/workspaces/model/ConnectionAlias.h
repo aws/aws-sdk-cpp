@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/workspaces/WorkSpaces_EXPORTS.h>
 #include <aws/workspaces/model/ConnectionAliasAssociation.h>
 #include <aws/workspaces/model/ConnectionAliasState.h>
@@ -14,10 +15,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace WorkSpaces {
 namespace Model {
@@ -34,9 +34,9 @@ namespace Model {
 class ConnectionAlias {
  public:
   AWS_WORKSPACES_API ConnectionAlias() = default;
-  AWS_WORKSPACES_API ConnectionAlias(Aws::Utils::Json::JsonView jsonValue);
-  AWS_WORKSPACES_API ConnectionAlias& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_WORKSPACES_API ConnectionAlias(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_WORKSPACES_API ConnectionAlias& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_WORKSPACES_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

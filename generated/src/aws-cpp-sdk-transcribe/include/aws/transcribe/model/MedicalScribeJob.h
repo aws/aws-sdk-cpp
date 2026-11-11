@@ -7,6 +7,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/transcribe/TranscribeService_EXPORTS.h>
 #include <aws/transcribe/model/Media.h>
 #include <aws/transcribe/model/MedicalScribeChannelDefinition.h>
@@ -20,10 +21,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace TranscribeService {
 namespace Model {
@@ -42,9 +42,9 @@ namespace Model {
 class MedicalScribeJob {
  public:
   AWS_TRANSCRIBESERVICE_API MedicalScribeJob() = default;
-  AWS_TRANSCRIBESERVICE_API MedicalScribeJob(Aws::Utils::Json::JsonView jsonValue);
-  AWS_TRANSCRIBESERVICE_API MedicalScribeJob& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_TRANSCRIBESERVICE_API MedicalScribeJob(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_TRANSCRIBESERVICE_API MedicalScribeJob& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_TRANSCRIBESERVICE_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

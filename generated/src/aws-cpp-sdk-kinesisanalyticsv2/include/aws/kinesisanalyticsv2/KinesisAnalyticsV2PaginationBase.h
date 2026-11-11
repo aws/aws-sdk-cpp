@@ -11,6 +11,8 @@
 #include <aws/kinesisanalyticsv2/model/ListApplicationSnapshotsPaginationTraits.h>
 #include <aws/kinesisanalyticsv2/model/ListApplicationVersionsPaginationTraits.h>
 #include <aws/kinesisanalyticsv2/model/ListApplicationsPaginationTraits.h>
+#include <aws/kinesisanalyticsv2/model/ListSnapshotOperationsPaginationTraits.h>
+#include <aws/kinesisanalyticsv2/model/ListSnapshotsPaginationTraits.h>
 
 #include <memory>
 
@@ -66,6 +68,29 @@ class KinesisAnalyticsV2PaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListApplicationVersionsRequest,
                                              Pagination::ListApplicationVersionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListSnapshotOperations operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSnapshotOperationsRequest,
+                                    Pagination::ListSnapshotOperationsPaginationTraits<DerivedClient>>
+  ListSnapshotOperationsPaginator(const Model::ListSnapshotOperationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSnapshotOperationsRequest,
+                                             Pagination::ListSnapshotOperationsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListSnapshots operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSnapshotsRequest, Pagination::ListSnapshotsPaginationTraits<DerivedClient>>
+  ListSnapshotsPaginator(const Model::ListSnapshotsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSnapshotsRequest,
+                                             Pagination::ListSnapshotsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                       request};
   }
 };
 }  // namespace KinesisAnalyticsV2

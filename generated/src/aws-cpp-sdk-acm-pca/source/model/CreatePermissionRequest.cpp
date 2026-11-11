@@ -4,42 +4,64 @@
  */
 
 #include <aws/acm-pca/model/CreatePermissionRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 using namespace Aws::ACMPCA::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String CreatePermissionRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_certificateAuthorityArnHasBeenSet) {
+    mapSize++;
+  }
+  if (m_principalHasBeenSet) {
+    mapSize++;
+  }
+  if (m_sourceAccountHasBeenSet) {
+    mapSize++;
+  }
+  if (m_actionsHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_certificateAuthorityArnHasBeenSet) {
-    payload.WithString("CertificateAuthorityArn", m_certificateAuthorityArn);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("CertificateAuthorityArn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_certificateAuthorityArn.c_str()));
   }
 
   if (m_principalHasBeenSet) {
-    payload.WithString("Principal", m_principal);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Principal"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_principal.c_str()));
   }
 
   if (m_sourceAccountHasBeenSet) {
-    payload.WithString("SourceAccount", m_sourceAccount);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("SourceAccount"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_sourceAccount.c_str()));
   }
 
   if (m_actionsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> actionsJsonList(m_actions.size());
-    for (unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex) {
-      actionsJsonList[actionsIndex].AsString(ActionTypeMapper::GetNameForActionType(m_actions[actionsIndex]));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Actions"));
+    encoder.WriteArrayStart(m_actions.size());
+    for (const auto& item_0 : m_actions) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(ActionTypeMapper::GetNameForActionType(item_0).c_str()));
     }
-    payload.WithArray("Actions", std::move(actionsJsonList));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection CreatePermissionRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "ACMPrivateCA.CreatePermission"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

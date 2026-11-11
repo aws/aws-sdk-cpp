@@ -11,7 +11,7 @@
 namespace Aws {
 namespace Client {
 
-class AWS_DIRECTORYSERVICE_API DirectoryServiceErrorMarshaller : public Aws::Client::JsonErrorMarshaller {
+class AWS_DIRECTORYSERVICE_API DirectoryServiceErrorMarshaller : public Aws::Client::RpcV2ErrorMarshaller {
  public:
   Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };

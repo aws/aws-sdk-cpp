@@ -71,8 +71,9 @@ class ConnectorSummary {
 
   ///@{
   /**
-   * <p>The third-party cloud service provider. Currently, <code>AZURE</code> is
-   * supported.</p>
+   * <p>The third-party cloud service provider. Valid values:</p> <ul> <li> <p>
+   * <code>AZURE</code> – The connector is for Microsoft Azure</p> </li> <li> <p>
+   * <code>GCP</code> – The connector is for Google Cloud</p> </li> </ul>
    */
   inline Provider GetProvider() const { return m_provider; }
   inline bool ProviderHasBeenSet() const { return m_providerHasBeenSet; }
@@ -88,7 +89,8 @@ class ConnectorSummary {
 
   ///@{
   /**
-   * <p>The Azure tenant identifier for the connector.</p>
+   * <p>The Azure tenant identifier for the connector. Returned only for Azure
+   * connectors.</p>
    */
   inline const Aws::String& GetTenantIdentifier() const { return m_tenantIdentifier; }
   inline bool TenantIdentifierHasBeenSet() const { return m_tenantIdentifierHasBeenSet; }
@@ -100,6 +102,44 @@ class ConnectorSummary {
   template <typename TenantIdentifierT = Aws::String>
   ConnectorSummary& WithTenantIdentifier(TenantIdentifierT&& value) {
     SetTenantIdentifier(std::forward<TenantIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Google Cloud organization ID for the connector. Returned only for Google
+   * Cloud connectors.</p>
+   */
+  inline const Aws::String& GetGcpOrganizationId() const { return m_gcpOrganizationId; }
+  inline bool GcpOrganizationIdHasBeenSet() const { return m_gcpOrganizationIdHasBeenSet; }
+  template <typename GcpOrganizationIdT = Aws::String>
+  void SetGcpOrganizationId(GcpOrganizationIdT&& value) {
+    m_gcpOrganizationIdHasBeenSet = true;
+    m_gcpOrganizationId = std::forward<GcpOrganizationIdT>(value);
+  }
+  template <typename GcpOrganizationIdT = Aws::String>
+  ConnectorSummary& WithGcpOrganizationId(GcpOrganizationIdT&& value) {
+    SetGcpOrganizationId(std::forward<GcpOrganizationIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The email address of the Google Cloud service account for the connector.
+   * Returned only for Google Cloud connectors.</p>
+   */
+  inline const Aws::String& GetServiceAccountEmail() const { return m_serviceAccountEmail; }
+  inline bool ServiceAccountEmailHasBeenSet() const { return m_serviceAccountEmailHasBeenSet; }
+  template <typename ServiceAccountEmailT = Aws::String>
+  void SetServiceAccountEmail(ServiceAccountEmailT&& value) {
+    m_serviceAccountEmailHasBeenSet = true;
+    m_serviceAccountEmail = std::forward<ServiceAccountEmailT>(value);
+  }
+  template <typename ServiceAccountEmailT = Aws::String>
+  ConnectorSummary& WithServiceAccountEmail(ServiceAccountEmailT&& value) {
+    SetServiceAccountEmail(std::forward<ServiceAccountEmailT>(value));
     return *this;
   }
   ///@}
@@ -130,11 +170,17 @@ class ConnectorSummary {
 
   Aws::String m_tenantIdentifier;
 
+  Aws::String m_gcpOrganizationId;
+
+  Aws::String m_serviceAccountEmail;
+
   Aws::Utils::DateTime m_createdTime{};
   bool m_arnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_providerHasBeenSet = false;
   bool m_tenantIdentifierHasBeenSet = false;
+  bool m_gcpOrganizationIdHasBeenSet = false;
+  bool m_serviceAccountEmailHasBeenSet = false;
   bool m_createdTimeHasBeenSet = false;
 };
 

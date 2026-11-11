@@ -3,111 +3,387 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/network-firewall/model/FirewallPolicyV2.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace NetworkFirewall {
 namespace Model {
 
-FirewallPolicyV2::FirewallPolicyV2(JsonView jsonValue) { *this = jsonValue; }
+FirewallPolicyV2::FirewallPolicyV2(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-FirewallPolicyV2& FirewallPolicyV2::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("FirewallRuleGroupEntries")) {
-    Aws::Utils::Array<JsonView> firewallRuleGroupEntriesJsonList = jsonValue.GetArray("FirewallRuleGroupEntries");
-    for (unsigned firewallRuleGroupEntriesIndex = 0; firewallRuleGroupEntriesIndex < firewallRuleGroupEntriesJsonList.GetLength();
-         ++firewallRuleGroupEntriesIndex) {
-      m_firewallRuleGroupEntries.push_back(firewallRuleGroupEntriesJsonList[firewallRuleGroupEntriesIndex].AsObject());
+FirewallPolicyV2& FirewallPolicyV2::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "FirewallRuleGroupEntries") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_firewallRuleGroupEntries.push_back(FirewallRuleGroupEntry(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_firewallRuleGroupEntries.push_back(FirewallRuleGroupEntry(decoder));
+                    }
+                  }
+                }
+                m_firewallRuleGroupEntriesHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "IpsRuleGroupEntries") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_ipsRuleGroupEntries.push_back(IpsRuleGroupEntry(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_ipsRuleGroupEntries.push_back(IpsRuleGroupEntry(decoder));
+                    }
+                  }
+                }
+                m_ipsRuleGroupEntriesHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "PolicyMode") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_policyMode =
+                      PolicyModeMapper::GetPolicyModeForName(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_policyModeHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "FirewallDefaultAction") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_firewallDefaultAction = PolicyDefaultActionMapper::GetPolicyDefaultActionForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_firewallDefaultActionHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "StatefulEngineOptions") {
+                m_statefulEngineOptions = StatefulEngineOptionsV2(decoder);
+                m_statefulEngineOptionsHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "TLSInspectionConfigurationArn") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_tLSInspectionConfigurationArn = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_tLSInspectionConfigurationArn = ss.str();
+                  }
+                }
+                m_tLSInspectionConfigurationArnHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "PolicyVariables") {
+                m_policyVariables = PolicyVariables(decoder);
+                m_policyVariablesHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "Route53ResolvedIPValidation") {
+                m_route53ResolvedIPValidation = Route53ResolvedIPValidation(decoder);
+                m_route53ResolvedIPValidationHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("FirewallPolicyV2", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "FirewallRuleGroupEntries") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_firewallRuleGroupEntries.push_back(FirewallRuleGroupEntry(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_firewallRuleGroupEntries.push_back(FirewallRuleGroupEntry(decoder));
+                  }
+                }
+              }
+              m_firewallRuleGroupEntriesHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "IpsRuleGroupEntries") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_ipsRuleGroupEntries.push_back(IpsRuleGroupEntry(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_ipsRuleGroupEntries.push_back(IpsRuleGroupEntry(decoder));
+                  }
+                }
+              }
+              m_ipsRuleGroupEntriesHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "PolicyMode") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_policyMode =
+                    PolicyModeMapper::GetPolicyModeForName(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_policyModeHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "FirewallDefaultAction") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_firewallDefaultAction = PolicyDefaultActionMapper::GetPolicyDefaultActionForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_firewallDefaultActionHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "StatefulEngineOptions") {
+              m_statefulEngineOptions = StatefulEngineOptionsV2(decoder);
+              m_statefulEngineOptionsHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "TLSInspectionConfigurationArn") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_tLSInspectionConfigurationArn = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_tLSInspectionConfigurationArn = ss.str();
+                }
+              }
+              m_tLSInspectionConfigurationArnHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "PolicyVariables") {
+              m_policyVariables = PolicyVariables(decoder);
+              m_policyVariablesHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "Route53ResolvedIPValidation") {
+              m_route53ResolvedIPValidation = Route53ResolvedIPValidation(decoder);
+              m_route53ResolvedIPValidationHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
     }
-    m_firewallRuleGroupEntriesHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("IpsRuleGroupEntries")) {
-    Aws::Utils::Array<JsonView> ipsRuleGroupEntriesJsonList = jsonValue.GetArray("IpsRuleGroupEntries");
-    for (unsigned ipsRuleGroupEntriesIndex = 0; ipsRuleGroupEntriesIndex < ipsRuleGroupEntriesJsonList.GetLength();
-         ++ipsRuleGroupEntriesIndex) {
-      m_ipsRuleGroupEntries.push_back(ipsRuleGroupEntriesJsonList[ipsRuleGroupEntriesIndex].AsObject());
-    }
-    m_ipsRuleGroupEntriesHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("PolicyMode")) {
-    m_policyMode = PolicyModeMapper::GetPolicyModeForName(jsonValue.GetString("PolicyMode"));
-    m_policyModeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("FirewallDefaultAction")) {
-    m_firewallDefaultAction = PolicyDefaultActionMapper::GetPolicyDefaultActionForName(jsonValue.GetString("FirewallDefaultAction"));
-    m_firewallDefaultActionHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("StatefulEngineOptions")) {
-    m_statefulEngineOptions = jsonValue.GetObject("StatefulEngineOptions");
-    m_statefulEngineOptionsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("TLSInspectionConfigurationArn")) {
-    m_tLSInspectionConfigurationArn = jsonValue.GetString("TLSInspectionConfigurationArn");
-    m_tLSInspectionConfigurationArnHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("PolicyVariables")) {
-    m_policyVariables = jsonValue.GetObject("PolicyVariables");
-    m_policyVariablesHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("Route53ResolvedIPValidation")) {
-    m_route53ResolvedIPValidation = jsonValue.GetObject("Route53ResolvedIPValidation");
-    m_route53ResolvedIPValidationHasBeenSet = true;
-  }
+
   return *this;
 }
 
-JsonValue FirewallPolicyV2::Jsonize() const {
-  JsonValue payload;
+void FirewallPolicyV2::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_firewallRuleGroupEntriesHasBeenSet) {
+    mapSize++;
+  }
+  if (m_ipsRuleGroupEntriesHasBeenSet) {
+    mapSize++;
+  }
+  if (m_policyModeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_firewallDefaultActionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_statefulEngineOptionsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_tLSInspectionConfigurationArnHasBeenSet) {
+    mapSize++;
+  }
+  if (m_policyVariablesHasBeenSet) {
+    mapSize++;
+  }
+  if (m_route53ResolvedIPValidationHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_firewallRuleGroupEntriesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> firewallRuleGroupEntriesJsonList(m_firewallRuleGroupEntries.size());
-    for (unsigned firewallRuleGroupEntriesIndex = 0; firewallRuleGroupEntriesIndex < firewallRuleGroupEntriesJsonList.GetLength();
-         ++firewallRuleGroupEntriesIndex) {
-      firewallRuleGroupEntriesJsonList[firewallRuleGroupEntriesIndex].AsObject(
-          m_firewallRuleGroupEntries[firewallRuleGroupEntriesIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("FirewallRuleGroupEntries"));
+    encoder.WriteArrayStart(m_firewallRuleGroupEntries.size());
+    for (const auto& item_0 : m_firewallRuleGroupEntries) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("FirewallRuleGroupEntries", std::move(firewallRuleGroupEntriesJsonList));
   }
 
   if (m_ipsRuleGroupEntriesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> ipsRuleGroupEntriesJsonList(m_ipsRuleGroupEntries.size());
-    for (unsigned ipsRuleGroupEntriesIndex = 0; ipsRuleGroupEntriesIndex < ipsRuleGroupEntriesJsonList.GetLength();
-         ++ipsRuleGroupEntriesIndex) {
-      ipsRuleGroupEntriesJsonList[ipsRuleGroupEntriesIndex].AsObject(m_ipsRuleGroupEntries[ipsRuleGroupEntriesIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("IpsRuleGroupEntries"));
+    encoder.WriteArrayStart(m_ipsRuleGroupEntries.size());
+    for (const auto& item_0 : m_ipsRuleGroupEntries) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("IpsRuleGroupEntries", std::move(ipsRuleGroupEntriesJsonList));
   }
 
   if (m_policyModeHasBeenSet) {
-    payload.WithString("PolicyMode", PolicyModeMapper::GetNameForPolicyMode(m_policyMode));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("PolicyMode"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(PolicyModeMapper::GetNameForPolicyMode(m_policyMode).c_str()));
   }
 
   if (m_firewallDefaultActionHasBeenSet) {
-    payload.WithString("FirewallDefaultAction", PolicyDefaultActionMapper::GetNameForPolicyDefaultAction(m_firewallDefaultAction));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("FirewallDefaultAction"));
+    encoder.WriteText(
+        Aws::Crt::ByteCursorFromCString(PolicyDefaultActionMapper::GetNameForPolicyDefaultAction(m_firewallDefaultAction).c_str()));
   }
 
   if (m_statefulEngineOptionsHasBeenSet) {
-    payload.WithObject("StatefulEngineOptions", m_statefulEngineOptions.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("StatefulEngineOptions"));
+    m_statefulEngineOptions.CborEncode(encoder);
   }
 
   if (m_tLSInspectionConfigurationArnHasBeenSet) {
-    payload.WithString("TLSInspectionConfigurationArn", m_tLSInspectionConfigurationArn);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("TLSInspectionConfigurationArn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_tLSInspectionConfigurationArn.c_str()));
   }
 
   if (m_policyVariablesHasBeenSet) {
-    payload.WithObject("PolicyVariables", m_policyVariables.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("PolicyVariables"));
+    m_policyVariables.CborEncode(encoder);
   }
 
   if (m_route53ResolvedIPValidationHasBeenSet) {
-    payload.WithObject("Route53ResolvedIPValidation", m_route53ResolvedIPValidation.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Route53ResolvedIPValidation"));
+    m_route53ResolvedIPValidation.CborEncode(encoder);
   }
-
-  return payload;
 }
 
 }  // namespace Model

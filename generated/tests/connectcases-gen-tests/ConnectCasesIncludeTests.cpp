@@ -22,6 +22,7 @@
 #include <aws/connectcases/model/AuditEventFieldValueUnion.h>
 #include <aws/connectcases/model/AuditEventPerformedBy.h>
 #include <aws/connectcases/model/AuditEventType.h>
+#include <aws/connectcases/model/AuditMergeMetadata.h>
 #include <aws/connectcases/model/BasicLayout.h>
 #include <aws/connectcases/model/BatchCreateRelatedItemErrorEntry.h>
 #include <aws/connectcases/model/BatchCreateRelatedItemIdentifier.h>
@@ -116,6 +117,7 @@
 #include <aws/connectcases/model/FieldValue.h>
 #include <aws/connectcases/model/FieldValueInput.h>
 #include <aws/connectcases/model/FieldValueUnion.h>
+#include <aws/connectcases/model/FieldsConfiguration.h>
 #include <aws/connectcases/model/FileContent.h>
 #include <aws/connectcases/model/FileFilter.h>
 #include <aws/connectcases/model/GetCaseAuditEventsPaginationTraits.h>
@@ -132,6 +134,8 @@
 #include <aws/connectcases/model/GetFieldResponse.h>
 #include <aws/connectcases/model/GetLayoutRequest.h>
 #include <aws/connectcases/model/GetLayoutResult.h>
+#include <aws/connectcases/model/GetMergeCasesStatusRequest.h>
+#include <aws/connectcases/model/GetMergeCasesStatusResult.h>
 #include <aws/connectcases/model/GetTemplateRequest.h>
 #include <aws/connectcases/model/GetTemplateResult.h>
 #include <aws/connectcases/model/HiddenCaseRule.h>
@@ -163,6 +167,7 @@
 #include <aws/connectcases/model/ListTemplatesPaginationTraits.h>
 #include <aws/connectcases/model/ListTemplatesRequest.h>
 #include <aws/connectcases/model/ListTemplatesResult.h>
+#include <aws/connectcases/model/MergeStatus.h>
 #include <aws/connectcases/model/OperandOne.h>
 #include <aws/connectcases/model/OperandTwo.h>
 #include <aws/connectcases/model/Order.h>
@@ -175,6 +180,7 @@
 #include <aws/connectcases/model/RelatedItemType.h>
 #include <aws/connectcases/model/RelatedItemTypeFilter.h>
 #include <aws/connectcases/model/RelatedItemUpdateContent.h>
+#include <aws/connectcases/model/RelatedItemsConfiguration.h>
 #include <aws/connectcases/model/RequiredCaseRule.h>
 #include <aws/connectcases/model/RequiredField.h>
 #include <aws/connectcases/model/ResourceNotFoundException.h>
@@ -202,6 +208,8 @@
 #include <aws/connectcases/model/SlaStatus.h>
 #include <aws/connectcases/model/SlaType.h>
 #include <aws/connectcases/model/Sort.h>
+#include <aws/connectcases/model/StartMergeCasesRequest.h>
+#include <aws/connectcases/model/StartMergeCasesResult.h>
 #include <aws/connectcases/model/TagFilter.h>
 #include <aws/connectcases/model/TagPropagationConfiguration.h>
 #include <aws/connectcases/model/TagPropagationResourceType.h>

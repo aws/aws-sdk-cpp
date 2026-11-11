@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 #include <aws/network-firewall/model/ProxyRulePhaseAction.h>
 
@@ -11,10 +12,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace NetworkFirewall {
 namespace Model {
@@ -30,9 +30,9 @@ namespace Model {
 class ProxyConfigDefaultRulePhaseActionsRequest {
  public:
   AWS_NETWORKFIREWALL_API ProxyConfigDefaultRulePhaseActionsRequest() = default;
-  AWS_NETWORKFIREWALL_API ProxyConfigDefaultRulePhaseActionsRequest(Aws::Utils::Json::JsonView jsonValue);
-  AWS_NETWORKFIREWALL_API ProxyConfigDefaultRulePhaseActionsRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_NETWORKFIREWALL_API ProxyConfigDefaultRulePhaseActionsRequest(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_NETWORKFIREWALL_API ProxyConfigDefaultRulePhaseActionsRequest& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_NETWORKFIREWALL_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

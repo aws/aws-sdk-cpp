@@ -226,6 +226,7 @@
 #include <aws/bedrock-agentcore/model/HarnessReasoningContentBlockDelta.h>
 #include <aws/bedrock-agentcore/model/HarnessReasoningTextBlock.h>
 #include <aws/bedrock-agentcore/model/HarnessRemoteMcpConfig.h>
+#include <aws/bedrock-agentcore/model/HarnessRemoteMcpOutboundAuth.h>
 #include <aws/bedrock-agentcore/model/HarnessSkill.h>
 #include <aws/bedrock-agentcore/model/HarnessSkillAwsSkillsSource.h>
 #include <aws/bedrock-agentcore/model/HarnessSkillGitAuth.h>
@@ -248,6 +249,7 @@
 #include <aws/bedrock-agentcore/model/HarnessToolUseBlockStart.h>
 #include <aws/bedrock-agentcore/model/HarnessToolUseStatus.h>
 #include <aws/bedrock-agentcore/model/HarnessToolUseType.h>
+#include <aws/bedrock-agentcore/model/IamCredentialProvider.h>
 #include <aws/bedrock-agentcore/model/IngestDataRequest.h>
 #include <aws/bedrock-agentcore/model/IngestDataResult.h>
 #include <aws/bedrock-agentcore/model/IngestPayloadType.h>

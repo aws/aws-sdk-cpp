@@ -19184,8 +19184,9 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
    * table partitioned between two timestamps in the past</p> </li> <li> <p>Create a
    * set of named queries in Athena that you can use to get started quickly</p> </li>
    * </ul>  <p> <code>GetFlowLogsIntegrationTemplate</code> does not support
-   * integration between Amazon Web Services Transit Gateway Flow Logs and Amazon
-   * Athena.</p> <p><h3>See Also:</h3>   <a
+   * integration between Amazon Web Services Transit Gateway Flow Logs or Amazon Web
+   * Services Cloud WAN Flow Logs and Amazon Athena.</p> <p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetFlowLogsIntegrationTemplate">AWS
    * API Reference</a></p>
    */

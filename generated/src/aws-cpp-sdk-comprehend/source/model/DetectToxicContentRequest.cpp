@@ -4,34 +4,48 @@
  */
 
 #include <aws/comprehend/model/DetectToxicContentRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 using namespace Aws::Comprehend::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String DetectToxicContentRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_textSegmentsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_languageCodeHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_textSegmentsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> textSegmentsJsonList(m_textSegments.size());
-    for (unsigned textSegmentsIndex = 0; textSegmentsIndex < textSegmentsJsonList.GetLength(); ++textSegmentsIndex) {
-      textSegmentsJsonList[textSegmentsIndex].AsObject(m_textSegments[textSegmentsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("TextSegments"));
+    encoder.WriteArrayStart(m_textSegments.size());
+    for (const auto& item_0 : m_textSegments) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("TextSegments", std::move(textSegmentsJsonList));
   }
 
   if (m_languageCodeHasBeenSet) {
-    payload.WithString("LanguageCode", LanguageCodeMapper::GetNameForLanguageCode(m_languageCode));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("LanguageCode"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(LanguageCodeMapper::GetNameForLanguageCode(m_languageCode).c_str()));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection DetectToxicContentRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Comprehend_20171127.DetectToxicContent"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

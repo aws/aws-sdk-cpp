@@ -5,16 +5,16 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/datasync/DataSync_EXPORTS.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace DataSync {
 namespace Model {
@@ -31,9 +31,9 @@ namespace Model {
 class HdfsNameNode {
  public:
   AWS_DATASYNC_API HdfsNameNode() = default;
-  AWS_DATASYNC_API HdfsNameNode(Aws::Utils::Json::JsonView jsonValue);
-  AWS_DATASYNC_API HdfsNameNode& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_DATASYNC_API HdfsNameNode(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_DATASYNC_API HdfsNameNode& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_DATASYNC_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -60,13 +60,13 @@ class HdfsNameNode {
   /**
    * <p>The port that the NameNode uses to listen to client requests.</p>
    */
-  inline int GetPort() const { return m_port; }
+  inline int64_t GetPort() const { return m_port; }
   inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
-  inline void SetPort(int value) {
+  inline void SetPort(int64_t value) {
     m_portHasBeenSet = true;
     m_port = value;
   }
-  inline HdfsNameNode& WithPort(int value) {
+  inline HdfsNameNode& WithPort(int64_t value) {
     SetPort(value);
     return *this;
   }
@@ -74,7 +74,7 @@ class HdfsNameNode {
  private:
   Aws::String m_hostname;
 
-  int m_port{0};
+  int64_t m_port{0};
   bool m_hostnameHasBeenSet = false;
   bool m_portHasBeenSet = false;
 };

@@ -4,75 +4,539 @@
  */
 
 #include <aws/core/utils/HashingUtils.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/workspaces/model/DefaultImportClientBrandingAttributes.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace WorkSpaces {
 namespace Model {
 
-DefaultImportClientBrandingAttributes::DefaultImportClientBrandingAttributes(JsonView jsonValue) { *this = jsonValue; }
+DefaultImportClientBrandingAttributes::DefaultImportClientBrandingAttributes(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  *this = decoder;
+}
 
-DefaultImportClientBrandingAttributes& DefaultImportClientBrandingAttributes::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("Logo")) {
-    m_logo = HashingUtils::Base64Decode(jsonValue.GetString("Logo"));
-    m_logoHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("SupportEmail")) {
-    m_supportEmail = jsonValue.GetString("SupportEmail");
-    m_supportEmailHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("SupportLink")) {
-    m_supportLink = jsonValue.GetString("SupportLink");
-    m_supportLinkHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ForgotPasswordLink")) {
-    m_forgotPasswordLink = jsonValue.GetString("ForgotPasswordLink");
-    m_forgotPasswordLinkHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("LoginMessage")) {
-    Aws::Map<Aws::String, JsonView> loginMessageJsonMap = jsonValue.GetObject("LoginMessage").GetAllObjects();
-    for (auto& loginMessageItem : loginMessageJsonMap) {
-      m_loginMessage[loginMessageItem.first] = loginMessageItem.second.AsString();
+DefaultImportClientBrandingAttributes& DefaultImportClientBrandingAttributes::operator=(
+    const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "Logo") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Bytes) {
+                    auto val = decoder->PopNextBytesVal();
+                    if (val.has_value()) {
+                      m_logo = Aws::Utils::ByteBuffer(val.value().ptr, val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextBytesVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_logo = Aws::Utils::ByteBuffer(ss.str());
+                    ss.clear();
+                  }
+                }
+                m_logoHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "SupportEmail") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_supportEmail = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_supportEmail = ss.str();
+                  }
+                }
+                m_supportEmailHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "SupportLink") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_supportLink = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_supportLink = ss.str();
+                  }
+                }
+                m_supportLinkHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "ForgotPasswordLink") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_forgotPasswordLink = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_forgotPasswordLink = ss.str();
+                  }
+                }
+                m_forgotPasswordLinkHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "LoginMessage") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() && (peekType_0.value() == CborType::MapStart || peekType_0.value() == CborType::IndefMapStart)) {
+                  if (peekType_0.value() == CborType::MapStart) {
+                    auto mapSize_0 = decoder->PopNextMapStart();
+                    if (mapSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < mapSize_0.value(); j_0++) {
+                        auto key_1 = decoder->PopNextTextVal();
+                        if (key_1.has_value()) {
+                          Aws::String keyStr_1 = Aws::String(reinterpret_cast<const char*>(key_1.value().ptr), key_1.value().len);
+                          auto peekType_1 = decoder->PeekType();
+                          if (peekType_1) {
+                            if (peekType_1.value() == Aws::Crt::Cbor::CborType::Text) {
+                              auto val = decoder->PopNextTextVal();
+                              if (val.has_value()) {
+                                m_loginMessage[keyStr_1] = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                              }
+                            } else {
+                              decoder->ConsumeNextSingleElement();
+                              Aws::StringStream ss_1;
+                              while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                                auto nextType_1 = decoder->PeekType();
+                                if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
+                                  if (nextType_1.has_value()) {
+                                    decoder->ConsumeNextSingleElement();  // consume the Break
+                                  }
+                                  break;
+                                }
+                                auto val = decoder->PopNextTextVal();
+                                if (val.has_value()) {
+                                  ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                                }
+                              }
+                              m_loginMessage[keyStr_1] = ss_1.str();
+                              ss_1.clear();
+                            }
+                          }
+                        }
+                      }
+                    }
+                  } else  // IndefMapStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto key_1 = decoder->PopNextTextVal();
+                      if (key_1.has_value()) {
+                        Aws::String keyStr_1 = Aws::String(reinterpret_cast<const char*>(key_1.value().ptr), key_1.value().len);
+                        auto peekType_1 = decoder->PeekType();
+                        if (peekType_1) {
+                          if (peekType_1.value() == Aws::Crt::Cbor::CborType::Text) {
+                            auto val = decoder->PopNextTextVal();
+                            if (val.has_value()) {
+                              m_loginMessage[keyStr_1] = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                            }
+                          } else {
+                            decoder->ConsumeNextSingleElement();
+                            Aws::StringStream ss_1;
+                            while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                              auto nextType_1 = decoder->PeekType();
+                              if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
+                                if (nextType_1.has_value()) {
+                                  decoder->ConsumeNextSingleElement();  // consume the Break
+                                }
+                                break;
+                              }
+                              auto val = decoder->PopNextTextVal();
+                              if (val.has_value()) {
+                                ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                              }
+                            }
+                            m_loginMessage[keyStr_1] = ss_1.str();
+                            ss_1.clear();
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                m_loginMessageHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("DefaultImportClientBrandingAttributes", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "Logo") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Bytes) {
+                  auto val = decoder->PopNextBytesVal();
+                  if (val.has_value()) {
+                    m_logo = Aws::Utils::ByteBuffer(val.value().ptr, val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextBytesVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_logo = Aws::Utils::ByteBuffer(ss.str());
+                  ss.clear();
+                }
+              }
+              m_logoHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "SupportEmail") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_supportEmail = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_supportEmail = ss.str();
+                }
+              }
+              m_supportEmailHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "SupportLink") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_supportLink = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_supportLink = ss.str();
+                }
+              }
+              m_supportLinkHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "ForgotPasswordLink") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_forgotPasswordLink = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_forgotPasswordLink = ss.str();
+                }
+              }
+              m_forgotPasswordLinkHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "LoginMessage") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() && (peekType_0.value() == CborType::MapStart || peekType_0.value() == CborType::IndefMapStart)) {
+                if (peekType_0.value() == CborType::MapStart) {
+                  auto mapSize_0 = decoder->PopNextMapStart();
+                  if (mapSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < mapSize_0.value(); j_0++) {
+                      auto key_1 = decoder->PopNextTextVal();
+                      if (key_1.has_value()) {
+                        Aws::String keyStr_1 = Aws::String(reinterpret_cast<const char*>(key_1.value().ptr), key_1.value().len);
+                        auto peekType_1 = decoder->PeekType();
+                        if (peekType_1) {
+                          if (peekType_1.value() == Aws::Crt::Cbor::CborType::Text) {
+                            auto val = decoder->PopNextTextVal();
+                            if (val.has_value()) {
+                              m_loginMessage[keyStr_1] = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                            }
+                          } else {
+                            decoder->ConsumeNextSingleElement();
+                            Aws::StringStream ss_1;
+                            while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                              auto nextType_1 = decoder->PeekType();
+                              if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
+                                if (nextType_1.has_value()) {
+                                  decoder->ConsumeNextSingleElement();  // consume the Break
+                                }
+                                break;
+                              }
+                              auto val = decoder->PopNextTextVal();
+                              if (val.has_value()) {
+                                ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                              }
+                            }
+                            m_loginMessage[keyStr_1] = ss_1.str();
+                            ss_1.clear();
+                          }
+                        }
+                      }
+                    }
+                  }
+                } else  // IndefMapStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto key_1 = decoder->PopNextTextVal();
+                    if (key_1.has_value()) {
+                      Aws::String keyStr_1 = Aws::String(reinterpret_cast<const char*>(key_1.value().ptr), key_1.value().len);
+                      auto peekType_1 = decoder->PeekType();
+                      if (peekType_1) {
+                        if (peekType_1.value() == Aws::Crt::Cbor::CborType::Text) {
+                          auto val = decoder->PopNextTextVal();
+                          if (val.has_value()) {
+                            m_loginMessage[keyStr_1] = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                          }
+                        } else {
+                          decoder->ConsumeNextSingleElement();
+                          Aws::StringStream ss_1;
+                          while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                            auto nextType_1 = decoder->PeekType();
+                            if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
+                              if (nextType_1.has_value()) {
+                                decoder->ConsumeNextSingleElement();  // consume the Break
+                              }
+                              break;
+                            }
+                            auto val = decoder->PopNextTextVal();
+                            if (val.has_value()) {
+                              ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                            }
+                          }
+                          m_loginMessage[keyStr_1] = ss_1.str();
+                          ss_1.clear();
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              m_loginMessageHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
     }
-    m_loginMessageHasBeenSet = true;
   }
+
   return *this;
 }
 
-JsonValue DefaultImportClientBrandingAttributes::Jsonize() const {
-  JsonValue payload;
+void DefaultImportClientBrandingAttributes::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_logoHasBeenSet) {
+    mapSize++;
+  }
+  if (m_supportEmailHasBeenSet) {
+    mapSize++;
+  }
+  if (m_supportLinkHasBeenSet) {
+    mapSize++;
+  }
+  if (m_forgotPasswordLinkHasBeenSet) {
+    mapSize++;
+  }
+  if (m_loginMessageHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_logoHasBeenSet) {
-    payload.WithString("Logo", HashingUtils::Base64Encode(m_logo));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Logo"));
+    encoder.WriteBytes(Aws::Crt::ByteCursorFromArray(m_logo.GetUnderlyingData(), m_logo.GetLength()));
   }
 
   if (m_supportEmailHasBeenSet) {
-    payload.WithString("SupportEmail", m_supportEmail);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("SupportEmail"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_supportEmail.c_str()));
   }
 
   if (m_supportLinkHasBeenSet) {
-    payload.WithString("SupportLink", m_supportLink);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("SupportLink"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_supportLink.c_str()));
   }
 
   if (m_forgotPasswordLinkHasBeenSet) {
-    payload.WithString("ForgotPasswordLink", m_forgotPasswordLink);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ForgotPasswordLink"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_forgotPasswordLink.c_str()));
   }
 
   if (m_loginMessageHasBeenSet) {
-    JsonValue loginMessageJsonMap;
-    for (auto& loginMessageItem : m_loginMessage) {
-      loginMessageJsonMap.WithString(loginMessageItem.first, loginMessageItem.second);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("LoginMessage"));
+    encoder.WriteMapStart(m_loginMessage.size());
+    for (const auto& item_0 : m_loginMessage) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.first.c_str()));
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.second.c_str()));
     }
-    payload.WithObject("LoginMessage", std::move(loginMessageJsonMap));
   }
-
-  return payload;
 }
 
 }  // namespace Model

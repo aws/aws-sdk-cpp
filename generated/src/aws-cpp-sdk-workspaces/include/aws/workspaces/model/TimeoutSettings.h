@@ -4,14 +4,14 @@
  */
 
 #pragma once
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/workspaces/WorkSpaces_EXPORTS.h>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace WorkSpaces {
 namespace Model {
@@ -25,9 +25,9 @@ namespace Model {
 class TimeoutSettings {
  public:
   AWS_WORKSPACES_API TimeoutSettings() = default;
-  AWS_WORKSPACES_API TimeoutSettings(Aws::Utils::Json::JsonView jsonValue);
-  AWS_WORKSPACES_API TimeoutSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_WORKSPACES_API TimeoutSettings(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_WORKSPACES_API TimeoutSettings& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_WORKSPACES_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -37,13 +37,13 @@ class TimeoutSettings {
    * are connected to their previous session. Otherwise, they are connected to a new
    * session with a new streaming instance.</p>
    */
-  inline int GetDisconnectTimeoutInSeconds() const { return m_disconnectTimeoutInSeconds; }
+  inline int64_t GetDisconnectTimeoutInSeconds() const { return m_disconnectTimeoutInSeconds; }
   inline bool DisconnectTimeoutInSecondsHasBeenSet() const { return m_disconnectTimeoutInSecondsHasBeenSet; }
-  inline void SetDisconnectTimeoutInSeconds(int value) {
+  inline void SetDisconnectTimeoutInSeconds(int64_t value) {
     m_disconnectTimeoutInSecondsHasBeenSet = true;
     m_disconnectTimeoutInSeconds = value;
   }
-  inline TimeoutSettings& WithDisconnectTimeoutInSeconds(int value) {
+  inline TimeoutSettings& WithDisconnectTimeoutInSeconds(int64_t value) {
     SetDisconnectTimeoutInSeconds(value);
     return *this;
   }
@@ -53,13 +53,13 @@ class TimeoutSettings {
   /**
    * <p>The amount of time in seconds a connection will stay active while idle.</p>
    */
-  inline int GetIdleDisconnectTimeoutInSeconds() const { return m_idleDisconnectTimeoutInSeconds; }
+  inline int64_t GetIdleDisconnectTimeoutInSeconds() const { return m_idleDisconnectTimeoutInSeconds; }
   inline bool IdleDisconnectTimeoutInSecondsHasBeenSet() const { return m_idleDisconnectTimeoutInSecondsHasBeenSet; }
-  inline void SetIdleDisconnectTimeoutInSeconds(int value) {
+  inline void SetIdleDisconnectTimeoutInSeconds(int64_t value) {
     m_idleDisconnectTimeoutInSecondsHasBeenSet = true;
     m_idleDisconnectTimeoutInSeconds = value;
   }
-  inline TimeoutSettings& WithIdleDisconnectTimeoutInSeconds(int value) {
+  inline TimeoutSettings& WithIdleDisconnectTimeoutInSeconds(int64_t value) {
     SetIdleDisconnectTimeoutInSeconds(value);
     return *this;
   }
@@ -73,23 +73,23 @@ class TimeoutSettings {
    * documents before being disconnected. After this time elapses, the instance is
    * terminated and replaced by a new instance.</p>
    */
-  inline int GetMaxUserDurationInSeconds() const { return m_maxUserDurationInSeconds; }
+  inline int64_t GetMaxUserDurationInSeconds() const { return m_maxUserDurationInSeconds; }
   inline bool MaxUserDurationInSecondsHasBeenSet() const { return m_maxUserDurationInSecondsHasBeenSet; }
-  inline void SetMaxUserDurationInSeconds(int value) {
+  inline void SetMaxUserDurationInSeconds(int64_t value) {
     m_maxUserDurationInSecondsHasBeenSet = true;
     m_maxUserDurationInSeconds = value;
   }
-  inline TimeoutSettings& WithMaxUserDurationInSeconds(int value) {
+  inline TimeoutSettings& WithMaxUserDurationInSeconds(int64_t value) {
     SetMaxUserDurationInSeconds(value);
     return *this;
   }
   ///@}
  private:
-  int m_disconnectTimeoutInSeconds{0};
+  int64_t m_disconnectTimeoutInSeconds{0};
 
-  int m_idleDisconnectTimeoutInSeconds{0};
+  int64_t m_idleDisconnectTimeoutInSeconds{0};
 
-  int m_maxUserDurationInSeconds{0};
+  int64_t m_maxUserDurationInSeconds{0};
   bool m_disconnectTimeoutInSecondsHasBeenSet = false;
   bool m_idleDisconnectTimeoutInSecondsHasBeenSet = false;
   bool m_maxUserDurationInSecondsHasBeenSet = false;

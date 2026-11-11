@@ -7,7 +7,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/datasync/DataSyncPaginationBase.h>
 #include <aws/datasync/DataSyncServiceClientModel.h>
 #include <aws/datasync/DataSyncWaiter.h>
@@ -28,12 +28,12 @@ namespace DataSync {
  * href="https://docs.aws.amazon.com/datasync/latest/userguide/what-is-datasync.html">DataSync
  * User Guide</a> </i>.</p>
  */
-class AWS_DATASYNC_API DataSyncClient : public Aws::Client::AWSJsonClient,
+class AWS_DATASYNC_API DataSyncClient : public Aws::Client::AWSRpcV2CborClient,
                                         public Aws::Client::ClientWithAsyncTemplateMethods<DataSyncClient>,
                                         public DataSyncPaginationBase<DataSyncClient>,
                                         public DataSyncWaiter<DataSyncClient> {
  public:
-  typedef Aws::Client::AWSJsonClient BASECLASS;
+  typedef Aws::Client::AWSRpcV2CborClient BASECLASS;
   static const char* GetServiceName();
   static const char* GetAllocationTag();
 

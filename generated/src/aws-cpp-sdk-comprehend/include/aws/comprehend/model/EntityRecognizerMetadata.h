@@ -8,15 +8,15 @@
 #include <aws/comprehend/model/EntityRecognizerEvaluationMetrics.h>
 #include <aws/comprehend/model/EntityRecognizerMetadataEntityTypesListItem.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace Comprehend {
 namespace Model {
@@ -30,22 +30,22 @@ namespace Model {
 class EntityRecognizerMetadata {
  public:
   AWS_COMPREHEND_API EntityRecognizerMetadata() = default;
-  AWS_COMPREHEND_API EntityRecognizerMetadata(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPREHEND_API EntityRecognizerMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_COMPREHEND_API EntityRecognizerMetadata(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPREHEND_API EntityRecognizerMetadata& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPREHEND_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
    * <p> The number of documents in the input data that were used to train the entity
    * recognizer. Typically this is 80 to 90 percent of the input documents.</p>
    */
-  inline int GetNumberOfTrainedDocuments() const { return m_numberOfTrainedDocuments; }
+  inline int64_t GetNumberOfTrainedDocuments() const { return m_numberOfTrainedDocuments; }
   inline bool NumberOfTrainedDocumentsHasBeenSet() const { return m_numberOfTrainedDocumentsHasBeenSet; }
-  inline void SetNumberOfTrainedDocuments(int value) {
+  inline void SetNumberOfTrainedDocuments(int64_t value) {
     m_numberOfTrainedDocumentsHasBeenSet = true;
     m_numberOfTrainedDocuments = value;
   }
-  inline EntityRecognizerMetadata& WithNumberOfTrainedDocuments(int value) {
+  inline EntityRecognizerMetadata& WithNumberOfTrainedDocuments(int64_t value) {
     SetNumberOfTrainedDocuments(value);
     return *this;
   }
@@ -56,13 +56,13 @@ class EntityRecognizerMetadata {
    * <p> The number of documents in the input data that were used to test the entity
    * recognizer. Typically this is 10 to 20 percent of the input documents.</p>
    */
-  inline int GetNumberOfTestDocuments() const { return m_numberOfTestDocuments; }
+  inline int64_t GetNumberOfTestDocuments() const { return m_numberOfTestDocuments; }
   inline bool NumberOfTestDocumentsHasBeenSet() const { return m_numberOfTestDocumentsHasBeenSet; }
-  inline void SetNumberOfTestDocuments(int value) {
+  inline void SetNumberOfTestDocuments(int64_t value) {
     m_numberOfTestDocumentsHasBeenSet = true;
     m_numberOfTestDocuments = value;
   }
-  inline EntityRecognizerMetadata& WithNumberOfTestDocuments(int value) {
+  inline EntityRecognizerMetadata& WithNumberOfTestDocuments(int64_t value) {
     SetNumberOfTestDocuments(value);
     return *this;
   }
@@ -110,9 +110,9 @@ class EntityRecognizerMetadata {
   }
   ///@}
  private:
-  int m_numberOfTrainedDocuments{0};
+  int64_t m_numberOfTrainedDocuments{0};
 
-  int m_numberOfTestDocuments{0};
+  int64_t m_numberOfTestDocuments{0};
 
   EntityRecognizerEvaluationMetrics m_evaluationMetrics;
 

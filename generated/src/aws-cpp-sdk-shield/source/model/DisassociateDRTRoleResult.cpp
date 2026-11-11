@@ -6,22 +6,26 @@
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/shield/model/DisassociateDRTRoleResult.h>
 
 #include <utility>
 
 using namespace Aws::Shield::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
+using namespace Aws::Utils::Cbor;
 using namespace Aws;
 
-DisassociateDRTRoleResult::DisassociateDRTRoleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
+DisassociateDRTRoleResult::DisassociateDRTRoleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result) {
+  *this = result;
+}
 
-DisassociateDRTRoleResult& DisassociateDRTRoleResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+DisassociateDRTRoleResult& DisassociateDRTRoleResult::operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
-  AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -3,45 +3,65 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/network-firewall/model/AssociateAvailabilityZonesRequest.h>
 
 #include <utility>
 
 using namespace Aws::NetworkFirewall::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String AssociateAvailabilityZonesRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_updateTokenHasBeenSet) {
+    mapSize++;
+  }
+  if (m_firewallArnHasBeenSet) {
+    mapSize++;
+  }
+  if (m_firewallNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_availabilityZoneMappingsHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_updateTokenHasBeenSet) {
-    payload.WithString("UpdateToken", m_updateToken);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("UpdateToken"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_updateToken.c_str()));
   }
 
   if (m_firewallArnHasBeenSet) {
-    payload.WithString("FirewallArn", m_firewallArn);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("FirewallArn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_firewallArn.c_str()));
   }
 
   if (m_firewallNameHasBeenSet) {
-    payload.WithString("FirewallName", m_firewallName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("FirewallName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_firewallName.c_str()));
   }
 
   if (m_availabilityZoneMappingsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> availabilityZoneMappingsJsonList(m_availabilityZoneMappings.size());
-    for (unsigned availabilityZoneMappingsIndex = 0; availabilityZoneMappingsIndex < availabilityZoneMappingsJsonList.GetLength();
-         ++availabilityZoneMappingsIndex) {
-      availabilityZoneMappingsJsonList[availabilityZoneMappingsIndex].AsObject(
-          m_availabilityZoneMappings[availabilityZoneMappingsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AvailabilityZoneMappings"));
+    encoder.WriteArrayStart(m_availabilityZoneMappings.size());
+    for (const auto& item_0 : m_availabilityZoneMappings) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("AvailabilityZoneMappings", std::move(availabilityZoneMappingsJsonList));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection AssociateAvailabilityZonesRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "NetworkFirewall_20201112.AssociateAvailabilityZones"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

@@ -4,34 +4,53 @@
  */
 
 #include <aws/codebuild/model/ListBuildsForProjectRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 using namespace Aws::CodeBuild::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String ListBuildsForProjectRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_projectNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_sortOrderHasBeenSet) {
+    mapSize++;
+  }
+  if (m_nextTokenHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_projectNameHasBeenSet) {
-    payload.WithString("projectName", m_projectName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("projectName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_projectName.c_str()));
   }
 
   if (m_sortOrderHasBeenSet) {
-    payload.WithString("sortOrder", SortOrderTypeMapper::GetNameForSortOrderType(m_sortOrder));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("sortOrder"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(SortOrderTypeMapper::GetNameForSortOrderType(m_sortOrder).c_str()));
   }
 
   if (m_nextTokenHasBeenSet) {
-    payload.WithString("nextToken", m_nextToken);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("nextToken"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_nextToken.c_str()));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection ListBuildsForProjectRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeBuild_20161006.ListBuildsForProject"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

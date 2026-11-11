@@ -17,11 +17,15 @@
 #include <aws/servicecatalog/model/ListPortfoliosForProductPaginationTraits.h>
 #include <aws/servicecatalog/model/ListPortfoliosPaginationTraits.h>
 #include <aws/servicecatalog/model/ListPrincipalsForPortfolioPaginationTraits.h>
+#include <aws/servicecatalog/model/ListProvisionedProductPlansPaginationTraits.h>
 #include <aws/servicecatalog/model/ListProvisioningArtifactsForServiceActionPaginationTraits.h>
+#include <aws/servicecatalog/model/ListRecordHistoryPaginationTraits.h>
 #include <aws/servicecatalog/model/ListResourcesForTagOptionPaginationTraits.h>
 #include <aws/servicecatalog/model/ListServiceActionsForProvisioningArtifactPaginationTraits.h>
 #include <aws/servicecatalog/model/ListServiceActionsPaginationTraits.h>
+#include <aws/servicecatalog/model/ListStackInstancesForProvisionedProductPaginationTraits.h>
 #include <aws/servicecatalog/model/ListTagOptionsPaginationTraits.h>
+#include <aws/servicecatalog/model/ScanProvisionedProductsPaginationTraits.h>
 #include <aws/servicecatalog/model/SearchProductsAsAdminPaginationTraits.h>
 #include <aws/servicecatalog/model/SearchProductsPaginationTraits.h>
 #include <aws/servicecatalog/model/SearchProvisionedProductsPaginationTraits.h>
@@ -60,9 +64,14 @@ using ListPortfoliosForProductPaginator =
 using ListPrincipalsForPortfolioPaginator =
     Aws::Utils::Pagination::Paginator<ServiceCatalogClient, Model::ListPrincipalsForPortfolioRequest,
                                       Pagination::ListPrincipalsForPortfolioPaginationTraits<ServiceCatalogClient>>;
+using ListProvisionedProductPlansPaginator =
+    Aws::Utils::Pagination::Paginator<ServiceCatalogClient, Model::ListProvisionedProductPlansRequest,
+                                      Pagination::ListProvisionedProductPlansPaginationTraits<ServiceCatalogClient>>;
 using ListProvisioningArtifactsForServiceActionPaginator =
     Aws::Utils::Pagination::Paginator<ServiceCatalogClient, Model::ListProvisioningArtifactsForServiceActionRequest,
                                       Pagination::ListProvisioningArtifactsForServiceActionPaginationTraits<ServiceCatalogClient>>;
+using ListRecordHistoryPaginator = Aws::Utils::Pagination::Paginator<ServiceCatalogClient, Model::ListRecordHistoryRequest,
+                                                                     Pagination::ListRecordHistoryPaginationTraits<ServiceCatalogClient>>;
 using ListResourcesForTagOptionPaginator =
     Aws::Utils::Pagination::Paginator<ServiceCatalogClient, Model::ListResourcesForTagOptionRequest,
                                       Pagination::ListResourcesForTagOptionPaginationTraits<ServiceCatalogClient>>;
@@ -71,8 +80,14 @@ using ListServiceActionsPaginator = Aws::Utils::Pagination::Paginator<ServiceCat
 using ListServiceActionsForProvisioningArtifactPaginator =
     Aws::Utils::Pagination::Paginator<ServiceCatalogClient, Model::ListServiceActionsForProvisioningArtifactRequest,
                                       Pagination::ListServiceActionsForProvisioningArtifactPaginationTraits<ServiceCatalogClient>>;
+using ListStackInstancesForProvisionedProductPaginator =
+    Aws::Utils::Pagination::Paginator<ServiceCatalogClient, Model::ListStackInstancesForProvisionedProductRequest,
+                                      Pagination::ListStackInstancesForProvisionedProductPaginationTraits<ServiceCatalogClient>>;
 using ListTagOptionsPaginator = Aws::Utils::Pagination::Paginator<ServiceCatalogClient, Model::ListTagOptionsRequest,
                                                                   Pagination::ListTagOptionsPaginationTraits<ServiceCatalogClient>>;
+using ScanProvisionedProductsPaginator =
+    Aws::Utils::Pagination::Paginator<ServiceCatalogClient, Model::ScanProvisionedProductsRequest,
+                                      Pagination::ScanProvisionedProductsPaginationTraits<ServiceCatalogClient>>;
 using SearchProductsPaginator = Aws::Utils::Pagination::Paginator<ServiceCatalogClient, Model::SearchProductsRequest,
                                                                   Pagination::SearchProductsPaginationTraits<ServiceCatalogClient>>;
 using SearchProductsAsAdminPaginator =

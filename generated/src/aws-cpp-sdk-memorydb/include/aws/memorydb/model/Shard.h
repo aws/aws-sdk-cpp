@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/memorydb/MemoryDB_EXPORTS.h>
 #include <aws/memorydb/model/Node.h>
 
@@ -13,10 +14,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace MemoryDB {
 namespace Model {
@@ -31,9 +31,9 @@ namespace Model {
 class Shard {
  public:
   AWS_MEMORYDB_API Shard() = default;
-  AWS_MEMORYDB_API Shard(Aws::Utils::Json::JsonView jsonValue);
-  AWS_MEMORYDB_API Shard& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_MEMORYDB_API Shard(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_MEMORYDB_API Shard& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_MEMORYDB_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -118,13 +118,13 @@ class Shard {
   /**
    * <p>The number of nodes in the shard</p>
    */
-  inline int GetNumberOfNodes() const { return m_numberOfNodes; }
+  inline int64_t GetNumberOfNodes() const { return m_numberOfNodes; }
   inline bool NumberOfNodesHasBeenSet() const { return m_numberOfNodesHasBeenSet; }
-  inline void SetNumberOfNodes(int value) {
+  inline void SetNumberOfNodes(int64_t value) {
     m_numberOfNodesHasBeenSet = true;
     m_numberOfNodes = value;
   }
-  inline Shard& WithNumberOfNodes(int value) {
+  inline Shard& WithNumberOfNodes(int64_t value) {
     SetNumberOfNodes(value);
     return *this;
   }
@@ -138,7 +138,7 @@ class Shard {
 
   Aws::Vector<Node> m_nodes;
 
-  int m_numberOfNodes{0};
+  int64_t m_numberOfNodes{0};
   bool m_nameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_slotsHasBeenSet = false;

@@ -7,15 +7,15 @@
 #include <aws/comprehend/Comprehend_EXPORTS.h>
 #include <aws/comprehend/model/ExtractedCharactersListItem.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace Comprehend {
 namespace Model {
@@ -29,21 +29,21 @@ namespace Model {
 class DocumentMetadata {
  public:
   AWS_COMPREHEND_API DocumentMetadata() = default;
-  AWS_COMPREHEND_API DocumentMetadata(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPREHEND_API DocumentMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_COMPREHEND_API DocumentMetadata(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPREHEND_API DocumentMetadata& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPREHEND_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
    * <p>Number of pages in the document.</p>
    */
-  inline int GetPages() const { return m_pages; }
+  inline int64_t GetPages() const { return m_pages; }
   inline bool PagesHasBeenSet() const { return m_pagesHasBeenSet; }
-  inline void SetPages(int value) {
+  inline void SetPages(int64_t value) {
     m_pagesHasBeenSet = true;
     m_pages = value;
   }
-  inline DocumentMetadata& WithPages(int value) {
+  inline DocumentMetadata& WithPages(int64_t value) {
     SetPages(value);
     return *this;
   }
@@ -74,7 +74,7 @@ class DocumentMetadata {
   }
   ///@}
  private:
-  int m_pages{0};
+  int64_t m_pages{0};
 
   Aws::Vector<ExtractedCharactersListItem> m_extractedCharacters;
   bool m_pagesHasBeenSet = false;

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/workspaces/WorkSpaces_EXPORTS.h>
 #include <aws/workspaces/model/UserSettingActionEnum.h>
 #include <aws/workspaces/model/UserSettingPermissionEnum.h>
@@ -12,10 +13,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace WorkSpaces {
 namespace Model {
@@ -29,9 +29,9 @@ namespace Model {
 class UserSetting {
  public:
   AWS_WORKSPACES_API UserSetting() = default;
-  AWS_WORKSPACES_API UserSetting(Aws::Utils::Json::JsonView jsonValue);
-  AWS_WORKSPACES_API UserSetting& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_WORKSPACES_API UserSetting(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_WORKSPACES_API UserSetting& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_WORKSPACES_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -69,13 +69,13 @@ class UserSetting {
   /**
    * <p>Indicates the maximum character length for the specified user setting.</p>
    */
-  inline int GetMaximumLength() const { return m_maximumLength; }
+  inline int64_t GetMaximumLength() const { return m_maximumLength; }
   inline bool MaximumLengthHasBeenSet() const { return m_maximumLengthHasBeenSet; }
-  inline void SetMaximumLength(int value) {
+  inline void SetMaximumLength(int64_t value) {
     m_maximumLengthHasBeenSet = true;
     m_maximumLength = value;
   }
-  inline UserSetting& WithMaximumLength(int value) {
+  inline UserSetting& WithMaximumLength(int64_t value) {
     SetMaximumLength(value);
     return *this;
   }
@@ -85,7 +85,7 @@ class UserSetting {
 
   UserSettingPermissionEnum m_permission{UserSettingPermissionEnum::NOT_SET};
 
-  int m_maximumLength{0};
+  int64_t m_maximumLength{0};
   bool m_actionHasBeenSet = false;
   bool m_permissionHasBeenSet = false;
   bool m_maximumLengthHasBeenSet = false;

@@ -6,15 +6,15 @@
 #pragma once
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/codedeploy/model/MinimumHealthyHostsType.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace CodeDeploy {
 namespace Model {
@@ -28,9 +28,9 @@ namespace Model {
 class MinimumHealthyHosts {
  public:
   AWS_CODEDEPLOY_API MinimumHealthyHosts() = default;
-  AWS_CODEDEPLOY_API MinimumHealthyHosts(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CODEDEPLOY_API MinimumHealthyHosts& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_CODEDEPLOY_API MinimumHealthyHosts(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CODEDEPLOY_API MinimumHealthyHosts& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CODEDEPLOY_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -72,13 +72,13 @@ class MinimumHealthyHosts {
   /**
    * <p>The minimum healthy instance value.</p>
    */
-  inline int GetValue() const { return m_value; }
+  inline int64_t GetValue() const { return m_value; }
   inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-  inline void SetValue(int value) {
+  inline void SetValue(int64_t value) {
     m_valueHasBeenSet = true;
     m_value = value;
   }
-  inline MinimumHealthyHosts& WithValue(int value) {
+  inline MinimumHealthyHosts& WithValue(int64_t value) {
     SetValue(value);
     return *this;
   }
@@ -86,7 +86,7 @@ class MinimumHealthyHosts {
  private:
   MinimumHealthyHostsType m_type{MinimumHealthyHostsType::NOT_SET};
 
-  int m_value{0};
+  int64_t m_value{0};
   bool m_typeHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };

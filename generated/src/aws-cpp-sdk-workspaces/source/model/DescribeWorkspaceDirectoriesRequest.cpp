@@ -3,56 +3,79 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/workspaces/model/DescribeWorkspaceDirectoriesRequest.h>
 
 #include <utility>
 
 using namespace Aws::WorkSpaces::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String DescribeWorkspaceDirectoriesRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_directoryIdsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_workspaceDirectoryNamesHasBeenSet) {
+    mapSize++;
+  }
+  if (m_limitHasBeenSet) {
+    mapSize++;
+  }
+  if (m_nextTokenHasBeenSet) {
+    mapSize++;
+  }
+  if (m_filtersHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_directoryIdsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> directoryIdsJsonList(m_directoryIds.size());
-    for (unsigned directoryIdsIndex = 0; directoryIdsIndex < directoryIdsJsonList.GetLength(); ++directoryIdsIndex) {
-      directoryIdsJsonList[directoryIdsIndex].AsString(m_directoryIds[directoryIdsIndex]);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("DirectoryIds"));
+    encoder.WriteArrayStart(m_directoryIds.size());
+    for (const auto& item_0 : m_directoryIds) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
     }
-    payload.WithArray("DirectoryIds", std::move(directoryIdsJsonList));
   }
 
   if (m_workspaceDirectoryNamesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> workspaceDirectoryNamesJsonList(m_workspaceDirectoryNames.size());
-    for (unsigned workspaceDirectoryNamesIndex = 0; workspaceDirectoryNamesIndex < workspaceDirectoryNamesJsonList.GetLength();
-         ++workspaceDirectoryNamesIndex) {
-      workspaceDirectoryNamesJsonList[workspaceDirectoryNamesIndex].AsString(m_workspaceDirectoryNames[workspaceDirectoryNamesIndex]);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("WorkspaceDirectoryNames"));
+    encoder.WriteArrayStart(m_workspaceDirectoryNames.size());
+    for (const auto& item_0 : m_workspaceDirectoryNames) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
     }
-    payload.WithArray("WorkspaceDirectoryNames", std::move(workspaceDirectoryNamesJsonList));
   }
 
   if (m_limitHasBeenSet) {
-    payload.WithInteger("Limit", m_limit);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Limit"));
+    (m_limit >= 0) ? encoder.WriteUInt(m_limit) : encoder.WriteNegInt(m_limit);
   }
 
   if (m_nextTokenHasBeenSet) {
-    payload.WithString("NextToken", m_nextToken);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("NextToken"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_nextToken.c_str()));
   }
 
   if (m_filtersHasBeenSet) {
-    Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
-    for (unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex) {
-      filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Filters"));
+    encoder.WriteArrayStart(m_filters.size());
+    for (const auto& item_0 : m_filters) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("Filters", std::move(filtersJsonList));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection DescribeWorkspaceDirectoriesRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "WorkspacesService.DescribeWorkspaceDirectories"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

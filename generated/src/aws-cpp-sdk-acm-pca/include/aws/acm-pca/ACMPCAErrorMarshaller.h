@@ -11,7 +11,7 @@
 namespace Aws {
 namespace Client {
 
-class AWS_ACMPCA_API ACMPCAErrorMarshaller : public Aws::Client::JsonErrorMarshaller {
+class AWS_ACMPCA_API ACMPCAErrorMarshaller : public Aws::Client::RpcV2ErrorMarshaller {
  public:
   Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
 };

@@ -11,7 +11,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 
 namespace Aws {
 namespace ACMPCA {
@@ -39,12 +39,12 @@ namespace ACMPCA {
  * href="https://console.aws.amazon.com/servicequotas/">Service Quotas</a>
  * console.</p>
  */
-class AWS_ACMPCA_API ACMPCAClient : public Aws::Client::AWSJsonClient,
+class AWS_ACMPCA_API ACMPCAClient : public Aws::Client::AWSRpcV2CborClient,
                                     public Aws::Client::ClientWithAsyncTemplateMethods<ACMPCAClient>,
                                     public ACMPCAPaginationBase<ACMPCAClient>,
                                     public ACMPCAWaiter<ACMPCAClient> {
  public:
-  typedef Aws::Client::AWSJsonClient BASECLASS;
+  typedef Aws::Client::AWSRpcV2CborClient BASECLASS;
   static const char* GetServiceName();
   static const char* GetAllocationTag();
 

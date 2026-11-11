@@ -3,75 +3,134 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/route53domains/model/RegisterDomainRequest.h>
 
 #include <utility>
 
 using namespace Aws::Route53Domains::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String RegisterDomainRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_domainNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_idnLangCodeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_durationInYearsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_autoRenewHasBeenSet) {
+    mapSize++;
+  }
+  if (m_adminContactHasBeenSet) {
+    mapSize++;
+  }
+  if (m_registrantContactHasBeenSet) {
+    mapSize++;
+  }
+  if (m_techContactHasBeenSet) {
+    mapSize++;
+  }
+  if (m_privacyProtectAdminContactHasBeenSet) {
+    mapSize++;
+  }
+  if (m_privacyProtectRegistrantContactHasBeenSet) {
+    mapSize++;
+  }
+  if (m_privacyProtectTechContactHasBeenSet) {
+    mapSize++;
+  }
+  if (m_billingContactHasBeenSet) {
+    mapSize++;
+  }
+  if (m_privacyProtectBillingContactHasBeenSet) {
+    mapSize++;
+  }
+  if (m_consentHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_domainNameHasBeenSet) {
-    payload.WithString("DomainName", m_domainName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("DomainName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_domainName.c_str()));
   }
 
   if (m_idnLangCodeHasBeenSet) {
-    payload.WithString("IdnLangCode", m_idnLangCode);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("IdnLangCode"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_idnLangCode.c_str()));
   }
 
   if (m_durationInYearsHasBeenSet) {
-    payload.WithInteger("DurationInYears", m_durationInYears);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("DurationInYears"));
+    (m_durationInYears >= 0) ? encoder.WriteUInt(m_durationInYears) : encoder.WriteNegInt(m_durationInYears);
   }
 
   if (m_autoRenewHasBeenSet) {
-    payload.WithBool("AutoRenew", m_autoRenew);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AutoRenew"));
+    encoder.WriteBool(m_autoRenew);
   }
 
   if (m_adminContactHasBeenSet) {
-    payload.WithObject("AdminContact", m_adminContact.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AdminContact"));
+    m_adminContact.CborEncode(encoder);
   }
 
   if (m_registrantContactHasBeenSet) {
-    payload.WithObject("RegistrantContact", m_registrantContact.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("RegistrantContact"));
+    m_registrantContact.CborEncode(encoder);
   }
 
   if (m_techContactHasBeenSet) {
-    payload.WithObject("TechContact", m_techContact.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("TechContact"));
+    m_techContact.CborEncode(encoder);
   }
 
   if (m_privacyProtectAdminContactHasBeenSet) {
-    payload.WithBool("PrivacyProtectAdminContact", m_privacyProtectAdminContact);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("PrivacyProtectAdminContact"));
+    encoder.WriteBool(m_privacyProtectAdminContact);
   }
 
   if (m_privacyProtectRegistrantContactHasBeenSet) {
-    payload.WithBool("PrivacyProtectRegistrantContact", m_privacyProtectRegistrantContact);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("PrivacyProtectRegistrantContact"));
+    encoder.WriteBool(m_privacyProtectRegistrantContact);
   }
 
   if (m_privacyProtectTechContactHasBeenSet) {
-    payload.WithBool("PrivacyProtectTechContact", m_privacyProtectTechContact);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("PrivacyProtectTechContact"));
+    encoder.WriteBool(m_privacyProtectTechContact);
   }
 
   if (m_billingContactHasBeenSet) {
-    payload.WithObject("BillingContact", m_billingContact.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("BillingContact"));
+    m_billingContact.CborEncode(encoder);
   }
 
   if (m_privacyProtectBillingContactHasBeenSet) {
-    payload.WithBool("PrivacyProtectBillingContact", m_privacyProtectBillingContact);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("PrivacyProtectBillingContact"));
+    encoder.WriteBool(m_privacyProtectBillingContact);
   }
 
   if (m_consentHasBeenSet) {
-    payload.WithObject("Consent", m_consent.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Consent"));
+    m_consent.CborEncode(encoder);
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection RegisterDomainRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Route53Domains_v20140515.RegisterDomain"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

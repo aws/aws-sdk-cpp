@@ -5,13 +5,13 @@
 
 #pragma once
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
+#include <aws/crt/cbor/Cbor.h>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace CodePipeline {
 namespace Model {
@@ -25,9 +25,9 @@ namespace Model {
 class ActionTypeArtifactDetails {
  public:
   AWS_CODEPIPELINE_API ActionTypeArtifactDetails() = default;
-  AWS_CODEPIPELINE_API ActionTypeArtifactDetails(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CODEPIPELINE_API ActionTypeArtifactDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_CODEPIPELINE_API ActionTypeArtifactDetails(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CODEPIPELINE_API ActionTypeArtifactDetails& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CODEPIPELINE_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -35,13 +35,13 @@ class ActionTypeArtifactDetails {
    * example, you should specify a minimum and maximum of zero input artifacts for an
    * action type with a category of <code>source</code>.</p>
    */
-  inline int GetMinimumCount() const { return m_minimumCount; }
+  inline int64_t GetMinimumCount() const { return m_minimumCount; }
   inline bool MinimumCountHasBeenSet() const { return m_minimumCountHasBeenSet; }
-  inline void SetMinimumCount(int value) {
+  inline void SetMinimumCount(int64_t value) {
     m_minimumCountHasBeenSet = true;
     m_minimumCount = value;
   }
-  inline ActionTypeArtifactDetails& WithMinimumCount(int value) {
+  inline ActionTypeArtifactDetails& WithMinimumCount(int64_t value) {
     SetMinimumCount(value);
     return *this;
   }
@@ -53,21 +53,21 @@ class ActionTypeArtifactDetails {
    * example, you should specify a minimum and maximum of zero input artifacts for an
    * action type with a category of <code>source</code>.</p>
    */
-  inline int GetMaximumCount() const { return m_maximumCount; }
+  inline int64_t GetMaximumCount() const { return m_maximumCount; }
   inline bool MaximumCountHasBeenSet() const { return m_maximumCountHasBeenSet; }
-  inline void SetMaximumCount(int value) {
+  inline void SetMaximumCount(int64_t value) {
     m_maximumCountHasBeenSet = true;
     m_maximumCount = value;
   }
-  inline ActionTypeArtifactDetails& WithMaximumCount(int value) {
+  inline ActionTypeArtifactDetails& WithMaximumCount(int64_t value) {
     SetMaximumCount(value);
     return *this;
   }
   ///@}
  private:
-  int m_minimumCount{0};
+  int64_t m_minimumCount{0};
 
-  int m_maximumCount{0};
+  int64_t m_maximumCount{0};
   bool m_minimumCountHasBeenSet = false;
   bool m_maximumCountHasBeenSet = false;
 };

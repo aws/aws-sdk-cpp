@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/textract/Textract_EXPORTS.h>
 #include <aws/textract/model/LineItemFields.h>
 
@@ -12,10 +13,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace Textract {
 namespace Model {
@@ -29,22 +29,22 @@ namespace Model {
 class LineItemGroup {
  public:
   AWS_TEXTRACT_API LineItemGroup() = default;
-  AWS_TEXTRACT_API LineItemGroup(Aws::Utils::Json::JsonView jsonValue);
-  AWS_TEXTRACT_API LineItemGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_TEXTRACT_API LineItemGroup(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_TEXTRACT_API LineItemGroup& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_TEXTRACT_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
    * <p>The number used to identify a specific table in a document. The first table
    * encountered will have a LineItemGroupIndex of 1, the second 2, etc.</p>
    */
-  inline int GetLineItemGroupIndex() const { return m_lineItemGroupIndex; }
+  inline int64_t GetLineItemGroupIndex() const { return m_lineItemGroupIndex; }
   inline bool LineItemGroupIndexHasBeenSet() const { return m_lineItemGroupIndexHasBeenSet; }
-  inline void SetLineItemGroupIndex(int value) {
+  inline void SetLineItemGroupIndex(int64_t value) {
     m_lineItemGroupIndexHasBeenSet = true;
     m_lineItemGroupIndex = value;
   }
-  inline LineItemGroup& WithLineItemGroupIndex(int value) {
+  inline LineItemGroup& WithLineItemGroupIndex(int64_t value) {
     SetLineItemGroupIndex(value);
     return *this;
   }
@@ -74,7 +74,7 @@ class LineItemGroup {
   }
   ///@}
  private:
-  int m_lineItemGroupIndex{0};
+  int64_t m_lineItemGroupIndex{0};
 
   Aws::Vector<LineItemFields> m_lineItems;
   bool m_lineItemGroupIndexHasBeenSet = false;

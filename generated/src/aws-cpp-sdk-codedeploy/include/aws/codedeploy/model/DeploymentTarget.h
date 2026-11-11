@@ -10,15 +10,15 @@
 #include <aws/codedeploy/model/ECSTarget.h>
 #include <aws/codedeploy/model/InstanceTarget.h>
 #include <aws/codedeploy/model/LambdaTarget.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace CodeDeploy {
 namespace Model {
@@ -31,9 +31,9 @@ namespace Model {
 class DeploymentTarget {
  public:
   AWS_CODEDEPLOY_API DeploymentTarget() = default;
-  AWS_CODEDEPLOY_API DeploymentTarget(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CODEDEPLOY_API DeploymentTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_CODEDEPLOY_API DeploymentTarget(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CODEDEPLOY_API DeploymentTarget& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CODEDEPLOY_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

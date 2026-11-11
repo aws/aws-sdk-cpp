@@ -3,43 +3,66 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/servicediscovery/model/RegisterInstanceRequest.h>
 
 #include <utility>
 
 using namespace Aws::ServiceDiscovery::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String RegisterInstanceRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_serviceIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_instanceIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_creatorRequestIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_attributesHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_serviceIdHasBeenSet) {
-    payload.WithString("ServiceId", m_serviceId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ServiceId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_serviceId.c_str()));
   }
 
   if (m_instanceIdHasBeenSet) {
-    payload.WithString("InstanceId", m_instanceId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("InstanceId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_instanceId.c_str()));
   }
 
   if (m_creatorRequestIdHasBeenSet) {
-    payload.WithString("CreatorRequestId", m_creatorRequestId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("CreatorRequestId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_creatorRequestId.c_str()));
   }
 
   if (m_attributesHasBeenSet) {
-    JsonValue attributesJsonMap;
-    for (auto& attributesItem : m_attributes) {
-      attributesJsonMap.WithString(attributesItem.first, attributesItem.second);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Attributes"));
+    encoder.WriteMapStart(m_attributes.size());
+    for (const auto& item_0 : m_attributes) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.first.c_str()));
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.second.c_str()));
     }
-    payload.WithObject("Attributes", std::move(attributesJsonMap));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection RegisterInstanceRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Route53AutoNaming_v20170314.RegisterInstance"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

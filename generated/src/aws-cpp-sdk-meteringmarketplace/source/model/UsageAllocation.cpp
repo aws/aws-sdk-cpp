@@ -18,9 +18,9 @@ namespace Model {
 UsageAllocation::UsageAllocation(JsonView jsonValue) { *this = jsonValue; }
 
 UsageAllocation& UsageAllocation::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("AllocatedUsageQuantity")) {
-    m_allocatedUsageQuantity = jsonValue.GetInteger("AllocatedUsageQuantity");
-    m_allocatedUsageQuantityHasBeenSet = true;
+  if (jsonValue.ValueExists("AllocatedUsageQuantityAsDecimal")) {
+    m_allocatedUsageQuantityAsDecimal = jsonValue.GetString("AllocatedUsageQuantityAsDecimal");
+    m_allocatedUsageQuantityAsDecimalHasBeenSet = true;
   }
   if (jsonValue.ValueExists("Tags")) {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -35,8 +35,8 @@ UsageAllocation& UsageAllocation::operator=(JsonView jsonValue) {
 JsonValue UsageAllocation::Jsonize() const {
   JsonValue payload;
 
-  if (m_allocatedUsageQuantityHasBeenSet) {
-    payload.WithInteger("AllocatedUsageQuantity", m_allocatedUsageQuantity);
+  if (m_allocatedUsageQuantityAsDecimalHasBeenSet) {
+    payload.WithString("AllocatedUsageQuantityAsDecimal", m_allocatedUsageQuantityAsDecimal);
   }
 
   if (m_tagsHasBeenSet) {

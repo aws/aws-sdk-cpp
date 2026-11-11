@@ -35,8 +35,13 @@ class ScopeConfiguration {
 
   ///@{
   /**
-   * <p>The type of scope for the third-party cloud resources. Valid values include
-   * <code>tenant</code> and <code>subscription</code>.</p>
+   * <p>The type of scope for the third-party cloud resources. Valid values
+   * include:</p> <ul> <li> <p> <code>tenant</code> – Applies to all resources in an
+   * Azure tenant</p> </li> <li> <p> <code>subscription</code> – Applies to resources
+   * in the Azure subscriptions you specify</p> </li> <li> <p>
+   * <code>organization</code> – Applies to all resources in a Google Cloud
+   * organization</p> </li> <li> <p> <code>project</code> – Applies to resources in
+   * the Google Cloud projects you specify</p> </li> </ul>
    */
   inline const Aws::String& GetScopeType() const { return m_scopeType; }
   inline bool ScopeTypeHasBeenSet() const { return m_scopeTypeHasBeenSet; }
@@ -55,7 +60,9 @@ class ScopeConfiguration {
   ///@{
   /**
    * <p>The list of specific scope values for the third-party cloud resources. For
-   * example, a list of Azure subscriptions or management groups.</p>
+   * example, a list of Azure subscription IDs, or a list of Google Cloud project
+   * IDs. Don't specify <code>scopeValues</code> when <code>scopeType</code> is
+   * <code>tenant</code> or <code>organization</code>.</p>
    */
   inline const Aws::Vector<Aws::String>& GetScopeValues() const { return m_scopeValues; }
   inline bool ScopeValuesHasBeenSet() const { return m_scopeValuesHasBeenSet; }

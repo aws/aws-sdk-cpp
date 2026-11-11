@@ -7,7 +7,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPIPaginationBase.h>
 #include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPIServiceClientModel.h>
 #include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPIWaiter.h>
@@ -19,12 +19,12 @@ namespace ResourceGroupsTaggingAPI {
  * <fullname>Resource Groups Tagging API</fullname>
  */
 class AWS_RESOURCEGROUPSTAGGINGAPI_API ResourceGroupsTaggingAPIClient
-    : public Aws::Client::AWSJsonClient,
+    : public Aws::Client::AWSRpcV2CborClient,
       public Aws::Client::ClientWithAsyncTemplateMethods<ResourceGroupsTaggingAPIClient>,
       public ResourceGroupsTaggingAPIPaginationBase<ResourceGroupsTaggingAPIClient>,
       public ResourceGroupsTaggingAPIWaiter<ResourceGroupsTaggingAPIClient> {
  public:
-  typedef Aws::Client::AWSJsonClient BASECLASS;
+  typedef Aws::Client::AWSRpcV2CborClient BASECLASS;
   static const char* GetServiceName();
   static const char* GetAllocationTag();
 

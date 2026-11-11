@@ -3,42 +3,58 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/workspaces/model/ModifyCertificateBasedAuthPropertiesRequest.h>
 
 #include <utility>
 
 using namespace Aws::WorkSpaces::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String ModifyCertificateBasedAuthPropertiesRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_resourceIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_certificateBasedAuthPropertiesHasBeenSet) {
+    mapSize++;
+  }
+  if (m_propertiesToDeleteHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_resourceIdHasBeenSet) {
-    payload.WithString("ResourceId", m_resourceId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ResourceId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_resourceId.c_str()));
   }
 
   if (m_certificateBasedAuthPropertiesHasBeenSet) {
-    payload.WithObject("CertificateBasedAuthProperties", m_certificateBasedAuthProperties.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("CertificateBasedAuthProperties"));
+    m_certificateBasedAuthProperties.CborEncode(encoder);
   }
 
   if (m_propertiesToDeleteHasBeenSet) {
-    Aws::Utils::Array<JsonValue> propertiesToDeleteJsonList(m_propertiesToDelete.size());
-    for (unsigned propertiesToDeleteIndex = 0; propertiesToDeleteIndex < propertiesToDeleteJsonList.GetLength();
-         ++propertiesToDeleteIndex) {
-      propertiesToDeleteJsonList[propertiesToDeleteIndex].AsString(
-          DeletableCertificateBasedAuthPropertyMapper::GetNameForDeletableCertificateBasedAuthProperty(
-              m_propertiesToDelete[propertiesToDeleteIndex]));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("PropertiesToDelete"));
+    encoder.WriteArrayStart(m_propertiesToDelete.size());
+    for (const auto& item_0 : m_propertiesToDelete) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(
+          DeletableCertificateBasedAuthPropertyMapper::GetNameForDeletableCertificateBasedAuthProperty(item_0).c_str()));
     }
-    payload.WithArray("PropertiesToDelete", std::move(propertiesToDeleteJsonList));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection ModifyCertificateBasedAuthPropertiesRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "WorkspacesService.ModifyCertificateBasedAuthProperties"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

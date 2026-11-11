@@ -8,15 +8,15 @@
 #include <aws/codebuild/model/BatchReportModeType.h>
 #include <aws/codebuild/model/BatchRestrictions.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace CodeBuild {
 namespace Model {
@@ -30,9 +30,9 @@ namespace Model {
 class ProjectBuildBatchConfig {
  public:
   AWS_CODEBUILD_API ProjectBuildBatchConfig() = default;
-  AWS_CODEBUILD_API ProjectBuildBatchConfig(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CODEBUILD_API ProjectBuildBatchConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_CODEBUILD_API ProjectBuildBatchConfig(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CODEBUILD_API ProjectBuildBatchConfig& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CODEBUILD_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -93,13 +93,13 @@ class ProjectBuildBatchConfig {
    * <p>Specifies the maximum amount of time, in minutes, that the batch build must
    * be completed in.</p>
    */
-  inline int GetTimeoutInMins() const { return m_timeoutInMins; }
+  inline int64_t GetTimeoutInMins() const { return m_timeoutInMins; }
   inline bool TimeoutInMinsHasBeenSet() const { return m_timeoutInMinsHasBeenSet; }
-  inline void SetTimeoutInMins(int value) {
+  inline void SetTimeoutInMins(int64_t value) {
     m_timeoutInMinsHasBeenSet = true;
     m_timeoutInMins = value;
   }
-  inline ProjectBuildBatchConfig& WithTimeoutInMins(int value) {
+  inline ProjectBuildBatchConfig& WithTimeoutInMins(int64_t value) {
     SetTimeoutInMins(value);
     return *this;
   }
@@ -134,7 +134,7 @@ class ProjectBuildBatchConfig {
 
   BatchRestrictions m_restrictions;
 
-  int m_timeoutInMins{0};
+  int64_t m_timeoutInMins{0};
 
   BatchReportModeType m_batchReportMode{BatchReportModeType::NOT_SET};
   bool m_serviceRoleHasBeenSet = false;

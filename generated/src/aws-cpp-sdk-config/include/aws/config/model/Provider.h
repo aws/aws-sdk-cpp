@@ -10,7 +10,7 @@
 namespace Aws {
 namespace ConfigService {
 namespace Model {
-enum class Provider { NOT_SET, AZURE };
+enum class Provider { NOT_SET, AZURE, GCP };
 
 namespace ProviderMapper {
 AWS_CONFIGSERVICE_API Provider GetProviderForName(const Aws::String& name);

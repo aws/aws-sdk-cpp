@@ -4,50 +4,210 @@
  */
 
 #include <aws/acm-pca/model/PolicyInformation.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace ACMPCA {
 namespace Model {
 
-PolicyInformation::PolicyInformation(JsonView jsonValue) { *this = jsonValue; }
+PolicyInformation::PolicyInformation(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-PolicyInformation& PolicyInformation::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("CertPolicyId")) {
-    m_certPolicyId = jsonValue.GetString("CertPolicyId");
-    m_certPolicyIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("PolicyQualifiers")) {
-    Aws::Utils::Array<JsonView> policyQualifiersJsonList = jsonValue.GetArray("PolicyQualifiers");
-    for (unsigned policyQualifiersIndex = 0; policyQualifiersIndex < policyQualifiersJsonList.GetLength(); ++policyQualifiersIndex) {
-      m_policyQualifiers.push_back(policyQualifiersJsonList[policyQualifiersIndex].AsObject());
+PolicyInformation& PolicyInformation::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "CertPolicyId") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_certPolicyId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_certPolicyId = ss.str();
+                  }
+                }
+                m_certPolicyIdHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "PolicyQualifiers") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_policyQualifiers.push_back(PolicyQualifierInfo(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_policyQualifiers.push_back(PolicyQualifierInfo(decoder));
+                    }
+                  }
+                }
+                m_policyQualifiersHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("PolicyInformation", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "CertPolicyId") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_certPolicyId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_certPolicyId = ss.str();
+                }
+              }
+              m_certPolicyIdHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "PolicyQualifiers") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_policyQualifiers.push_back(PolicyQualifierInfo(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_policyQualifiers.push_back(PolicyQualifierInfo(decoder));
+                  }
+                }
+              }
+              m_policyQualifiersHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
     }
-    m_policyQualifiersHasBeenSet = true;
   }
+
   return *this;
 }
 
-JsonValue PolicyInformation::Jsonize() const {
-  JsonValue payload;
+void PolicyInformation::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_certPolicyIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_policyQualifiersHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_certPolicyIdHasBeenSet) {
-    payload.WithString("CertPolicyId", m_certPolicyId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("CertPolicyId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_certPolicyId.c_str()));
   }
 
   if (m_policyQualifiersHasBeenSet) {
-    Aws::Utils::Array<JsonValue> policyQualifiersJsonList(m_policyQualifiers.size());
-    for (unsigned policyQualifiersIndex = 0; policyQualifiersIndex < policyQualifiersJsonList.GetLength(); ++policyQualifiersIndex) {
-      policyQualifiersJsonList[policyQualifiersIndex].AsObject(m_policyQualifiers[policyQualifiersIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("PolicyQualifiers"));
+    encoder.WriteArrayStart(m_policyQualifiers.size());
+    for (const auto& item_0 : m_policyQualifiers) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("PolicyQualifiers", std::move(policyQualifiersJsonList));
   }
-
-  return payload;
 }
 
 }  // namespace Model

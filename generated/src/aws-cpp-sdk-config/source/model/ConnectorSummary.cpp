@@ -34,6 +34,14 @@ ConnectorSummary& ConnectorSummary::operator=(JsonView jsonValue) {
     m_tenantIdentifier = jsonValue.GetString("tenantIdentifier");
     m_tenantIdentifierHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("gcpOrganizationId")) {
+    m_gcpOrganizationId = jsonValue.GetString("gcpOrganizationId");
+    m_gcpOrganizationIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("serviceAccountEmail")) {
+    m_serviceAccountEmail = jsonValue.GetString("serviceAccountEmail");
+    m_serviceAccountEmailHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("createdTime")) {
     m_createdTime = jsonValue.GetDouble("createdTime");
     m_createdTimeHasBeenSet = true;
@@ -58,6 +66,14 @@ JsonValue ConnectorSummary::Jsonize() const {
 
   if (m_tenantIdentifierHasBeenSet) {
     payload.WithString("tenantIdentifier", m_tenantIdentifier);
+  }
+
+  if (m_gcpOrganizationIdHasBeenSet) {
+    payload.WithString("gcpOrganizationId", m_gcpOrganizationId);
+  }
+
+  if (m_serviceAccountEmailHasBeenSet) {
+    payload.WithString("serviceAccountEmail", m_serviceAccountEmail);
   }
 
   if (m_createdTimeHasBeenSet) {

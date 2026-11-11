@@ -3,116 +3,648 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/directconnect/model/BGPPeer.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace DirectConnect {
 namespace Model {
 
-BGPPeer::BGPPeer(JsonView jsonValue) { *this = jsonValue; }
+BGPPeer::BGPPeer(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-BGPPeer& BGPPeer::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("bgpPeerId")) {
-    m_bgpPeerId = jsonValue.GetString("bgpPeerId");
-    m_bgpPeerIdHasBeenSet = true;
+BGPPeer& BGPPeer::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "bgpPeerId") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_bgpPeerId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_bgpPeerId = ss.str();
+                  }
+                }
+                m_bgpPeerIdHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "asn") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_asn = static_cast<int64_t>(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextNegativeIntVal();
+                    if (val.has_value()) {
+                      m_asn = static_cast<int64_t>(1 - val.value());
+                    }
+                  }
+                }
+                m_asnHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "asnLong") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_asnLong = static_cast<int64_t>(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextNegativeIntVal();
+                    if (val.has_value()) {
+                      m_asnLong = static_cast<int64_t>(1 - val.value());
+                    }
+                  }
+                }
+                m_asnLongHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "authKey") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_authKey = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_authKey = ss.str();
+                  }
+                }
+                m_authKeyHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "addressFamily") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_addressFamily = AddressFamilyMapper::GetAddressFamilyForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_addressFamilyHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "amazonAddress") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_amazonAddress = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_amazonAddress = ss.str();
+                  }
+                }
+                m_amazonAddressHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "customerAddress") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_customerAddress = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_customerAddress = ss.str();
+                  }
+                }
+                m_customerAddressHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "bgpPeerState") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_bgpPeerState = BGPPeerStateMapper::GetBGPPeerStateForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_bgpPeerStateHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "bgpStatus") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_bgpStatus =
+                      BGPStatusMapper::GetBGPStatusForName(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_bgpStatusHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "awsDeviceV2") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_awsDeviceV2 = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_awsDeviceV2 = ss.str();
+                  }
+                }
+                m_awsDeviceV2HasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "awsLogicalDeviceId") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_awsLogicalDeviceId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_awsLogicalDeviceId = ss.str();
+                  }
+                }
+                m_awsLogicalDeviceIdHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("BGPPeer", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "bgpPeerId") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_bgpPeerId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_bgpPeerId = ss.str();
+                }
+              }
+              m_bgpPeerIdHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "asn") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
+                  auto val = decoder->PopNextUnsignedIntVal();
+                  if (val.has_value()) {
+                    m_asn = static_cast<int64_t>(val.value());
+                  }
+                } else {
+                  auto val = decoder->PopNextNegativeIntVal();
+                  if (val.has_value()) {
+                    m_asn = static_cast<int64_t>(1 - val.value());
+                  }
+                }
+              }
+              m_asnHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "asnLong") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
+                  auto val = decoder->PopNextUnsignedIntVal();
+                  if (val.has_value()) {
+                    m_asnLong = static_cast<int64_t>(val.value());
+                  }
+                } else {
+                  auto val = decoder->PopNextNegativeIntVal();
+                  if (val.has_value()) {
+                    m_asnLong = static_cast<int64_t>(1 - val.value());
+                  }
+                }
+              }
+              m_asnLongHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "authKey") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_authKey = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_authKey = ss.str();
+                }
+              }
+              m_authKeyHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "addressFamily") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_addressFamily = AddressFamilyMapper::GetAddressFamilyForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_addressFamilyHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "amazonAddress") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_amazonAddress = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_amazonAddress = ss.str();
+                }
+              }
+              m_amazonAddressHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "customerAddress") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_customerAddress = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_customerAddress = ss.str();
+                }
+              }
+              m_customerAddressHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "bgpPeerState") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_bgpPeerState = BGPPeerStateMapper::GetBGPPeerStateForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_bgpPeerStateHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "bgpStatus") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_bgpStatus =
+                    BGPStatusMapper::GetBGPStatusForName(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_bgpStatusHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "awsDeviceV2") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_awsDeviceV2 = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_awsDeviceV2 = ss.str();
+                }
+              }
+              m_awsDeviceV2HasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "awsLogicalDeviceId") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_awsLogicalDeviceId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_awsLogicalDeviceId = ss.str();
+                }
+              }
+              m_awsLogicalDeviceIdHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
+    }
   }
-  if (jsonValue.ValueExists("asn")) {
-    m_asn = jsonValue.GetInteger("asn");
-    m_asnHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("asnLong")) {
-    m_asnLong = jsonValue.GetInt64("asnLong");
-    m_asnLongHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("authKey")) {
-    m_authKey = jsonValue.GetString("authKey");
-    m_authKeyHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("addressFamily")) {
-    m_addressFamily = AddressFamilyMapper::GetAddressFamilyForName(jsonValue.GetString("addressFamily"));
-    m_addressFamilyHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("amazonAddress")) {
-    m_amazonAddress = jsonValue.GetString("amazonAddress");
-    m_amazonAddressHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("customerAddress")) {
-    m_customerAddress = jsonValue.GetString("customerAddress");
-    m_customerAddressHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("bgpPeerState")) {
-    m_bgpPeerState = BGPPeerStateMapper::GetBGPPeerStateForName(jsonValue.GetString("bgpPeerState"));
-    m_bgpPeerStateHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("bgpStatus")) {
-    m_bgpStatus = BGPStatusMapper::GetBGPStatusForName(jsonValue.GetString("bgpStatus"));
-    m_bgpStatusHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("awsDeviceV2")) {
-    m_awsDeviceV2 = jsonValue.GetString("awsDeviceV2");
-    m_awsDeviceV2HasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("awsLogicalDeviceId")) {
-    m_awsLogicalDeviceId = jsonValue.GetString("awsLogicalDeviceId");
-    m_awsLogicalDeviceIdHasBeenSet = true;
-  }
+
   return *this;
 }
 
-JsonValue BGPPeer::Jsonize() const {
-  JsonValue payload;
+void BGPPeer::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_bgpPeerIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_asnHasBeenSet) {
+    mapSize++;
+  }
+  if (m_asnLongHasBeenSet) {
+    mapSize++;
+  }
+  if (m_authKeyHasBeenSet) {
+    mapSize++;
+  }
+  if (m_addressFamilyHasBeenSet) {
+    mapSize++;
+  }
+  if (m_amazonAddressHasBeenSet) {
+    mapSize++;
+  }
+  if (m_customerAddressHasBeenSet) {
+    mapSize++;
+  }
+  if (m_bgpPeerStateHasBeenSet) {
+    mapSize++;
+  }
+  if (m_bgpStatusHasBeenSet) {
+    mapSize++;
+  }
+  if (m_awsDeviceV2HasBeenSet) {
+    mapSize++;
+  }
+  if (m_awsLogicalDeviceIdHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_bgpPeerIdHasBeenSet) {
-    payload.WithString("bgpPeerId", m_bgpPeerId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("bgpPeerId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_bgpPeerId.c_str()));
   }
 
   if (m_asnHasBeenSet) {
-    payload.WithInteger("asn", m_asn);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("asn"));
+    (m_asn >= 0) ? encoder.WriteUInt(m_asn) : encoder.WriteNegInt(m_asn);
   }
 
   if (m_asnLongHasBeenSet) {
-    payload.WithInt64("asnLong", m_asnLong);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("asnLong"));
+    (m_asnLong >= 0) ? encoder.WriteUInt(m_asnLong) : encoder.WriteNegInt(m_asnLong);
   }
 
   if (m_authKeyHasBeenSet) {
-    payload.WithString("authKey", m_authKey);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("authKey"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_authKey.c_str()));
   }
 
   if (m_addressFamilyHasBeenSet) {
-    payload.WithString("addressFamily", AddressFamilyMapper::GetNameForAddressFamily(m_addressFamily));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("addressFamily"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(AddressFamilyMapper::GetNameForAddressFamily(m_addressFamily).c_str()));
   }
 
   if (m_amazonAddressHasBeenSet) {
-    payload.WithString("amazonAddress", m_amazonAddress);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("amazonAddress"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_amazonAddress.c_str()));
   }
 
   if (m_customerAddressHasBeenSet) {
-    payload.WithString("customerAddress", m_customerAddress);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("customerAddress"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_customerAddress.c_str()));
   }
 
   if (m_bgpPeerStateHasBeenSet) {
-    payload.WithString("bgpPeerState", BGPPeerStateMapper::GetNameForBGPPeerState(m_bgpPeerState));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("bgpPeerState"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(BGPPeerStateMapper::GetNameForBGPPeerState(m_bgpPeerState).c_str()));
   }
 
   if (m_bgpStatusHasBeenSet) {
-    payload.WithString("bgpStatus", BGPStatusMapper::GetNameForBGPStatus(m_bgpStatus));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("bgpStatus"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(BGPStatusMapper::GetNameForBGPStatus(m_bgpStatus).c_str()));
   }
 
   if (m_awsDeviceV2HasBeenSet) {
-    payload.WithString("awsDeviceV2", m_awsDeviceV2);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("awsDeviceV2"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_awsDeviceV2.c_str()));
   }
 
   if (m_awsLogicalDeviceIdHasBeenSet) {
-    payload.WithString("awsLogicalDeviceId", m_awsLogicalDeviceId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("awsLogicalDeviceId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_awsLogicalDeviceId.c_str()));
   }
-
-  return payload;
 }
 
 }  // namespace Model

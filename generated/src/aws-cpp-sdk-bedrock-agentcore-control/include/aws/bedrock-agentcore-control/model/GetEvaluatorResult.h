@@ -127,7 +127,7 @@ class GetEvaluatorResult {
    * evaluator from a third-party provider.</p> </li> <li> <p> <code>Custom</code> –
    * A customer-created evaluator.</p> </li> <li> <p> <code>CustomCode</code> – A
    * customer-created code-based evaluator.</p> </li> <li> <p>
-   * <code>CustomDerived</code> ��� A customer-created evaluator derived from an
+   * <code>CustomDerived</code> – A customer-created evaluator derived from an
    * existing base evaluator.</p> </li> </ul>
    */
   inline EvaluatorType GetEvaluatorType() const { return m_evaluatorType; }

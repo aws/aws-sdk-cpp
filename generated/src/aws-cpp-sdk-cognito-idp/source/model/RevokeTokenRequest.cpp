@@ -27,6 +27,11 @@ Aws::String RevokeTokenRequest::SerializePayload() const {
     payload.WithString("ClientSecret", m_clientSecret);
   }
 
+  if (m_revokeAssociatedSessionsHasBeenSet) {
+    payload.WithString("RevokeAssociatedSessions",
+                       RevokeAssociatedSessionsTypeMapper::GetNameForRevokeAssociatedSessionsType(m_revokeAssociatedSessions));
+  }
+
   return payload.View().WriteReadable();
 }
 

@@ -6,15 +6,15 @@
 #pragma once
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace CodePipeline {
 namespace Model {
@@ -28,9 +28,9 @@ namespace Model {
 class ExecutionDetails {
  public:
   AWS_CODEPIPELINE_API ExecutionDetails() = default;
-  AWS_CODEPIPELINE_API ExecutionDetails(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CODEPIPELINE_API ExecutionDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_CODEPIPELINE_API ExecutionDetails(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CODEPIPELINE_API ExecutionDetails& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CODEPIPELINE_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -74,13 +74,13 @@ class ExecutionDetails {
    * <p>The percentage of work completed on the action, represented on a scale of 0
    * to 100 percent.</p>
    */
-  inline int GetPercentComplete() const { return m_percentComplete; }
+  inline int64_t GetPercentComplete() const { return m_percentComplete; }
   inline bool PercentCompleteHasBeenSet() const { return m_percentCompleteHasBeenSet; }
-  inline void SetPercentComplete(int value) {
+  inline void SetPercentComplete(int64_t value) {
     m_percentCompleteHasBeenSet = true;
     m_percentComplete = value;
   }
-  inline ExecutionDetails& WithPercentComplete(int value) {
+  inline ExecutionDetails& WithPercentComplete(int64_t value) {
     SetPercentComplete(value);
     return *this;
   }
@@ -90,7 +90,7 @@ class ExecutionDetails {
 
   Aws::String m_externalExecutionId;
 
-  int m_percentComplete{0};
+  int64_t m_percentComplete{0};
   bool m_summaryHasBeenSet = false;
   bool m_externalExecutionIdHasBeenSet = false;
   bool m_percentCompleteHasBeenSet = false;

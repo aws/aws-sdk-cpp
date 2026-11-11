@@ -3,43 +3,60 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/memorydb/model/UpdateACLRequest.h>
 
 #include <utility>
 
 using namespace Aws::MemoryDB::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String UpdateACLRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_aCLNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_userNamesToAddHasBeenSet) {
+    mapSize++;
+  }
+  if (m_userNamesToRemoveHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_aCLNameHasBeenSet) {
-    payload.WithString("ACLName", m_aCLName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ACLName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_aCLName.c_str()));
   }
 
   if (m_userNamesToAddHasBeenSet) {
-    Aws::Utils::Array<JsonValue> userNamesToAddJsonList(m_userNamesToAdd.size());
-    for (unsigned userNamesToAddIndex = 0; userNamesToAddIndex < userNamesToAddJsonList.GetLength(); ++userNamesToAddIndex) {
-      userNamesToAddJsonList[userNamesToAddIndex].AsString(m_userNamesToAdd[userNamesToAddIndex]);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("UserNamesToAdd"));
+    encoder.WriteArrayStart(m_userNamesToAdd.size());
+    for (const auto& item_0 : m_userNamesToAdd) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
     }
-    payload.WithArray("UserNamesToAdd", std::move(userNamesToAddJsonList));
   }
 
   if (m_userNamesToRemoveHasBeenSet) {
-    Aws::Utils::Array<JsonValue> userNamesToRemoveJsonList(m_userNamesToRemove.size());
-    for (unsigned userNamesToRemoveIndex = 0; userNamesToRemoveIndex < userNamesToRemoveJsonList.GetLength(); ++userNamesToRemoveIndex) {
-      userNamesToRemoveJsonList[userNamesToRemoveIndex].AsString(m_userNamesToRemove[userNamesToRemoveIndex]);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("UserNamesToRemove"));
+    encoder.WriteArrayStart(m_userNamesToRemove.size());
+    for (const auto& item_0 : m_userNamesToRemove) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
     }
-    payload.WithArray("UserNamesToRemove", std::move(userNamesToRemoveJsonList));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection UpdateACLRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonMemoryDB.UpdateACL"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

@@ -3,86 +3,393 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/workspaces/model/ApplicationResourceAssociation.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace WorkSpaces {
 namespace Model {
 
-ApplicationResourceAssociation::ApplicationResourceAssociation(JsonView jsonValue) { *this = jsonValue; }
+ApplicationResourceAssociation::ApplicationResourceAssociation(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  *this = decoder;
+}
 
-ApplicationResourceAssociation& ApplicationResourceAssociation::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("ApplicationId")) {
-    m_applicationId = jsonValue.GetString("ApplicationId");
-    m_applicationIdHasBeenSet = true;
+ApplicationResourceAssociation& ApplicationResourceAssociation::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "ApplicationId") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_applicationId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_applicationId = ss.str();
+                  }
+                }
+                m_applicationIdHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "AssociatedResourceId") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_associatedResourceId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_associatedResourceId = ss.str();
+                  }
+                }
+                m_associatedResourceIdHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "AssociatedResourceType") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_associatedResourceType = ApplicationAssociatedResourceTypeMapper::GetApplicationAssociatedResourceTypeForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_associatedResourceTypeHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "Created") {
+                auto tag = decoder->PopNextTagVal();
+                if (tag.has_value() &&
+                    tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+                {
+                  auto dateType = decoder->PeekType();
+                  if (dateType.has_value()) {
+                    if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                      auto val = decoder->PopNextFloatVal();
+                      if (val.has_value()) {
+                        m_created = Aws::Utils::DateTime(val.value());
+                      }
+                    } else {
+                      auto val = decoder->PopNextUnsignedIntVal();
+                      if (val.has_value()) {
+                        m_created = Aws::Utils::DateTime(val.value());
+                      }
+                    }
+                  }
+                }
+                m_createdHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "LastUpdatedTime") {
+                auto tag = decoder->PopNextTagVal();
+                if (tag.has_value() &&
+                    tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+                {
+                  auto dateType = decoder->PeekType();
+                  if (dateType.has_value()) {
+                    if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                      auto val = decoder->PopNextFloatVal();
+                      if (val.has_value()) {
+                        m_lastUpdatedTime = Aws::Utils::DateTime(val.value());
+                      }
+                    } else {
+                      auto val = decoder->PopNextUnsignedIntVal();
+                      if (val.has_value()) {
+                        m_lastUpdatedTime = Aws::Utils::DateTime(val.value());
+                      }
+                    }
+                  }
+                }
+                m_lastUpdatedTimeHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "State") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_state = AssociationStateMapper::GetAssociationStateForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_stateHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "StateReason") {
+                m_stateReason = AssociationStateReason(decoder);
+                m_stateReasonHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("ApplicationResourceAssociation", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "ApplicationId") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_applicationId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_applicationId = ss.str();
+                }
+              }
+              m_applicationIdHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "AssociatedResourceId") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_associatedResourceId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_associatedResourceId = ss.str();
+                }
+              }
+              m_associatedResourceIdHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "AssociatedResourceType") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_associatedResourceType = ApplicationAssociatedResourceTypeMapper::GetApplicationAssociatedResourceTypeForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_associatedResourceTypeHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "Created") {
+              auto tag = decoder->PopNextTagVal();
+              if (tag.has_value() &&
+                  tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+              {
+                auto dateType = decoder->PeekType();
+                if (dateType.has_value()) {
+                  if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                    auto val = decoder->PopNextFloatVal();
+                    if (val.has_value()) {
+                      m_created = Aws::Utils::DateTime(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_created = Aws::Utils::DateTime(val.value());
+                    }
+                  }
+                }
+              }
+              m_createdHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "LastUpdatedTime") {
+              auto tag = decoder->PopNextTagVal();
+              if (tag.has_value() &&
+                  tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+              {
+                auto dateType = decoder->PeekType();
+                if (dateType.has_value()) {
+                  if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                    auto val = decoder->PopNextFloatVal();
+                    if (val.has_value()) {
+                      m_lastUpdatedTime = Aws::Utils::DateTime(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_lastUpdatedTime = Aws::Utils::DateTime(val.value());
+                    }
+                  }
+                }
+              }
+              m_lastUpdatedTimeHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "State") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_state = AssociationStateMapper::GetAssociationStateForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_stateHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "StateReason") {
+              m_stateReason = AssociationStateReason(decoder);
+              m_stateReasonHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
+    }
   }
-  if (jsonValue.ValueExists("AssociatedResourceId")) {
-    m_associatedResourceId = jsonValue.GetString("AssociatedResourceId");
-    m_associatedResourceIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("AssociatedResourceType")) {
-    m_associatedResourceType =
-        ApplicationAssociatedResourceTypeMapper::GetApplicationAssociatedResourceTypeForName(jsonValue.GetString("AssociatedResourceType"));
-    m_associatedResourceTypeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("Created")) {
-    m_created = jsonValue.GetDouble("Created");
-    m_createdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("LastUpdatedTime")) {
-    m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
-    m_lastUpdatedTimeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("State")) {
-    m_state = AssociationStateMapper::GetAssociationStateForName(jsonValue.GetString("State"));
-    m_stateHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("StateReason")) {
-    m_stateReason = jsonValue.GetObject("StateReason");
-    m_stateReasonHasBeenSet = true;
-  }
+
   return *this;
 }
 
-JsonValue ApplicationResourceAssociation::Jsonize() const {
-  JsonValue payload;
+void ApplicationResourceAssociation::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_applicationIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_associatedResourceIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_associatedResourceTypeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_createdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_lastUpdatedTimeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_stateHasBeenSet) {
+    mapSize++;
+  }
+  if (m_stateReasonHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_applicationIdHasBeenSet) {
-    payload.WithString("ApplicationId", m_applicationId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ApplicationId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_applicationId.c_str()));
   }
 
   if (m_associatedResourceIdHasBeenSet) {
-    payload.WithString("AssociatedResourceId", m_associatedResourceId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AssociatedResourceId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_associatedResourceId.c_str()));
   }
 
   if (m_associatedResourceTypeHasBeenSet) {
-    payload.WithString("AssociatedResourceType",
-                       ApplicationAssociatedResourceTypeMapper::GetNameForApplicationAssociatedResourceType(m_associatedResourceType));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AssociatedResourceType"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(
+        ApplicationAssociatedResourceTypeMapper::GetNameForApplicationAssociatedResourceType(m_associatedResourceType).c_str()));
   }
 
   if (m_createdHasBeenSet) {
-    payload.WithDouble("Created", m_created.SecondsWithMSPrecision());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Created"));
+    encoder.WriteTag(1);  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+    encoder.WriteUInt(m_created.Seconds());
   }
 
   if (m_lastUpdatedTimeHasBeenSet) {
-    payload.WithDouble("LastUpdatedTime", m_lastUpdatedTime.SecondsWithMSPrecision());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("LastUpdatedTime"));
+    encoder.WriteTag(1);  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+    encoder.WriteUInt(m_lastUpdatedTime.Seconds());
   }
 
   if (m_stateHasBeenSet) {
-    payload.WithString("State", AssociationStateMapper::GetNameForAssociationState(m_state));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("State"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(AssociationStateMapper::GetNameForAssociationState(m_state).c_str()));
   }
 
   if (m_stateReasonHasBeenSet) {
-    payload.WithObject("StateReason", m_stateReason.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("StateReason"));
+    m_stateReason.CborEncode(encoder);
   }
-
-  return payload;
 }
 
 }  // namespace Model

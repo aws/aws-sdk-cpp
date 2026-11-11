@@ -29,6 +29,10 @@ HarnessRemoteMcpConfig& HarnessRemoteMcpConfig::operator=(JsonView jsonValue) {
     }
     m_headersHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("outboundAuth")) {
+    m_outboundAuth = jsonValue.GetObject("outboundAuth");
+    m_outboundAuthHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -45,6 +49,10 @@ JsonValue HarnessRemoteMcpConfig::Jsonize() const {
       headersJsonMap.WithString(headersItem.first, headersItem.second);
     }
     payload.WithObject("headers", std::move(headersJsonMap));
+  }
+
+  if (m_outboundAuthHasBeenSet) {
+    payload.WithObject("outboundAuth", m_outboundAuth.Jsonize());
   }
 
   return payload;

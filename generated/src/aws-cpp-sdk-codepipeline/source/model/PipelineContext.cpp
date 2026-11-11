@@ -4,67 +4,313 @@
  */
 
 #include <aws/codepipeline/model/PipelineContext.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace CodePipeline {
 namespace Model {
 
-PipelineContext::PipelineContext(JsonView jsonValue) { *this = jsonValue; }
+PipelineContext::PipelineContext(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-PipelineContext& PipelineContext::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("pipelineName")) {
-    m_pipelineName = jsonValue.GetString("pipelineName");
-    m_pipelineNameHasBeenSet = true;
+PipelineContext& PipelineContext::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "pipelineName") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_pipelineName = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_pipelineName = ss.str();
+                  }
+                }
+                m_pipelineNameHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "stage") {
+                m_stage = StageContext(decoder);
+                m_stageHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "action") {
+                m_action = ActionContext(decoder);
+                m_actionHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "pipelineArn") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_pipelineArn = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_pipelineArn = ss.str();
+                  }
+                }
+                m_pipelineArnHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "pipelineExecutionId") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_pipelineExecutionId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_pipelineExecutionId = ss.str();
+                  }
+                }
+                m_pipelineExecutionIdHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("PipelineContext", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "pipelineName") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_pipelineName = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_pipelineName = ss.str();
+                }
+              }
+              m_pipelineNameHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "stage") {
+              m_stage = StageContext(decoder);
+              m_stageHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "action") {
+              m_action = ActionContext(decoder);
+              m_actionHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "pipelineArn") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_pipelineArn = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_pipelineArn = ss.str();
+                }
+              }
+              m_pipelineArnHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "pipelineExecutionId") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_pipelineExecutionId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_pipelineExecutionId = ss.str();
+                }
+              }
+              m_pipelineExecutionIdHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
+    }
   }
-  if (jsonValue.ValueExists("stage")) {
-    m_stage = jsonValue.GetObject("stage");
-    m_stageHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("action")) {
-    m_action = jsonValue.GetObject("action");
-    m_actionHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("pipelineArn")) {
-    m_pipelineArn = jsonValue.GetString("pipelineArn");
-    m_pipelineArnHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("pipelineExecutionId")) {
-    m_pipelineExecutionId = jsonValue.GetString("pipelineExecutionId");
-    m_pipelineExecutionIdHasBeenSet = true;
-  }
+
   return *this;
 }
 
-JsonValue PipelineContext::Jsonize() const {
-  JsonValue payload;
+void PipelineContext::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_pipelineNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_stageHasBeenSet) {
+    mapSize++;
+  }
+  if (m_actionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_pipelineArnHasBeenSet) {
+    mapSize++;
+  }
+  if (m_pipelineExecutionIdHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_pipelineNameHasBeenSet) {
-    payload.WithString("pipelineName", m_pipelineName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("pipelineName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_pipelineName.c_str()));
   }
 
   if (m_stageHasBeenSet) {
-    payload.WithObject("stage", m_stage.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("stage"));
+    m_stage.CborEncode(encoder);
   }
 
   if (m_actionHasBeenSet) {
-    payload.WithObject("action", m_action.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("action"));
+    m_action.CborEncode(encoder);
   }
 
   if (m_pipelineArnHasBeenSet) {
-    payload.WithString("pipelineArn", m_pipelineArn);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("pipelineArn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_pipelineArn.c_str()));
   }
 
   if (m_pipelineExecutionIdHasBeenSet) {
-    payload.WithString("pipelineExecutionId", m_pipelineExecutionId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("pipelineExecutionId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_pipelineExecutionId.c_str()));
   }
-
-  return payload;
 }
 
 }  // namespace Model

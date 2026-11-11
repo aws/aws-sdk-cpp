@@ -10,6 +10,8 @@
 #include <aws/kinesisanalyticsv2/model/ListApplicationSnapshotsPaginationTraits.h>
 #include <aws/kinesisanalyticsv2/model/ListApplicationVersionsPaginationTraits.h>
 #include <aws/kinesisanalyticsv2/model/ListApplicationsPaginationTraits.h>
+#include <aws/kinesisanalyticsv2/model/ListSnapshotOperationsPaginationTraits.h>
+#include <aws/kinesisanalyticsv2/model/ListSnapshotsPaginationTraits.h>
 
 namespace Aws {
 namespace KinesisAnalyticsV2 {
@@ -25,6 +27,11 @@ using ListApplicationSnapshotsPaginator =
 using ListApplicationVersionsPaginator =
     Aws::Utils::Pagination::Paginator<KinesisAnalyticsV2Client, Model::ListApplicationVersionsRequest,
                                       Pagination::ListApplicationVersionsPaginationTraits<KinesisAnalyticsV2Client>>;
+using ListSnapshotOperationsPaginator =
+    Aws::Utils::Pagination::Paginator<KinesisAnalyticsV2Client, Model::ListSnapshotOperationsRequest,
+                                      Pagination::ListSnapshotOperationsPaginationTraits<KinesisAnalyticsV2Client>>;
+using ListSnapshotsPaginator = Aws::Utils::Pagination::Paginator<KinesisAnalyticsV2Client, Model::ListSnapshotsRequest,
+                                                                 Pagination::ListSnapshotsPaginationTraits<KinesisAnalyticsV2Client>>;
 
 }  // namespace KinesisAnalyticsV2
 }  // namespace Aws

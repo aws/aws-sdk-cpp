@@ -3,68 +3,114 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/datasync/model/UpdateLocationAzureBlobRequest.h>
 
 #include <utility>
 
 using namespace Aws::DataSync::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String UpdateLocationAzureBlobRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_locationArnHasBeenSet) {
+    mapSize++;
+  }
+  if (m_subdirectoryHasBeenSet) {
+    mapSize++;
+  }
+  if (m_authenticationTypeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_sasConfigurationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_federatedIdentityHasBeenSet) {
+    mapSize++;
+  }
+  if (m_blobTypeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_accessTierHasBeenSet) {
+    mapSize++;
+  }
+  if (m_agentArnsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_cmkSecretConfigHasBeenSet) {
+    mapSize++;
+  }
+  if (m_customSecretConfigHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_locationArnHasBeenSet) {
-    payload.WithString("LocationArn", m_locationArn);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("LocationArn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_locationArn.c_str()));
   }
 
   if (m_subdirectoryHasBeenSet) {
-    payload.WithString("Subdirectory", m_subdirectory);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Subdirectory"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_subdirectory.c_str()));
   }
 
   if (m_authenticationTypeHasBeenSet) {
-    payload.WithString("AuthenticationType",
-                       AzureBlobAuthenticationTypeMapper::GetNameForAzureBlobAuthenticationType(m_authenticationType));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AuthenticationType"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(
+        AzureBlobAuthenticationTypeMapper::GetNameForAzureBlobAuthenticationType(m_authenticationType).c_str()));
   }
 
   if (m_sasConfigurationHasBeenSet) {
-    payload.WithObject("SasConfiguration", m_sasConfiguration.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("SasConfiguration"));
+    m_sasConfiguration.CborEncode(encoder);
   }
 
   if (m_federatedIdentityHasBeenSet) {
-    payload.WithObject("FederatedIdentity", m_federatedIdentity.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("FederatedIdentity"));
+    m_federatedIdentity.CborEncode(encoder);
   }
 
   if (m_blobTypeHasBeenSet) {
-    payload.WithString("BlobType", AzureBlobTypeMapper::GetNameForAzureBlobType(m_blobType));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("BlobType"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(AzureBlobTypeMapper::GetNameForAzureBlobType(m_blobType).c_str()));
   }
 
   if (m_accessTierHasBeenSet) {
-    payload.WithString("AccessTier", AzureAccessTierMapper::GetNameForAzureAccessTier(m_accessTier));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AccessTier"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(AzureAccessTierMapper::GetNameForAzureAccessTier(m_accessTier).c_str()));
   }
 
   if (m_agentArnsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> agentArnsJsonList(m_agentArns.size());
-    for (unsigned agentArnsIndex = 0; agentArnsIndex < agentArnsJsonList.GetLength(); ++agentArnsIndex) {
-      agentArnsJsonList[agentArnsIndex].AsString(m_agentArns[agentArnsIndex]);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AgentArns"));
+    encoder.WriteArrayStart(m_agentArns.size());
+    for (const auto& item_0 : m_agentArns) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
     }
-    payload.WithArray("AgentArns", std::move(agentArnsJsonList));
   }
 
   if (m_cmkSecretConfigHasBeenSet) {
-    payload.WithObject("CmkSecretConfig", m_cmkSecretConfig.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("CmkSecretConfig"));
+    m_cmkSecretConfig.CborEncode(encoder);
   }
 
   if (m_customSecretConfigHasBeenSet) {
-    payload.WithObject("CustomSecretConfig", m_customSecretConfig.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("CustomSecretConfig"));
+    m_customSecretConfig.CborEncode(encoder);
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection UpdateLocationAzureBlobRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "FmrsService.UpdateLocationAzureBlob"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

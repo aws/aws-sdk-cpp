@@ -3,39 +3,52 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/resourcegroupstaggingapi/model/UntagResourcesRequest.h>
 
 #include <utility>
 
 using namespace Aws::ResourceGroupsTaggingAPI::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String UntagResourcesRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_resourceARNListHasBeenSet) {
+    mapSize++;
+  }
+  if (m_tagKeysHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_resourceARNListHasBeenSet) {
-    Aws::Utils::Array<JsonValue> resourceARNListJsonList(m_resourceARNList.size());
-    for (unsigned resourceARNListIndex = 0; resourceARNListIndex < resourceARNListJsonList.GetLength(); ++resourceARNListIndex) {
-      resourceARNListJsonList[resourceARNListIndex].AsString(m_resourceARNList[resourceARNListIndex]);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ResourceARNList"));
+    encoder.WriteArrayStart(m_resourceARNList.size());
+    for (const auto& item_0 : m_resourceARNList) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
     }
-    payload.WithArray("ResourceARNList", std::move(resourceARNListJsonList));
   }
 
   if (m_tagKeysHasBeenSet) {
-    Aws::Utils::Array<JsonValue> tagKeysJsonList(m_tagKeys.size());
-    for (unsigned tagKeysIndex = 0; tagKeysIndex < tagKeysJsonList.GetLength(); ++tagKeysIndex) {
-      tagKeysJsonList[tagKeysIndex].AsString(m_tagKeys[tagKeysIndex]);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("TagKeys"));
+    encoder.WriteArrayStart(m_tagKeys.size());
+    for (const auto& item_0 : m_tagKeys) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
     }
-    payload.WithArray("TagKeys", std::move(tagKeysJsonList));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection UntagResourcesRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "ResourceGroupsTaggingAPI_20170126.UntagResources"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

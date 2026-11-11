@@ -3,62 +3,92 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/network-firewall/model/UpdateContainerAssociationRequest.h>
 
 #include <utility>
 
 using namespace Aws::NetworkFirewall::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String UpdateContainerAssociationRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_containerAssociationNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_containerAssociationArnHasBeenSet) {
+    mapSize++;
+  }
+  if (m_descriptionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_typeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_containerMonitoringConfigurationsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_tagsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_updateTokenHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_containerAssociationNameHasBeenSet) {
-    payload.WithString("ContainerAssociationName", m_containerAssociationName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ContainerAssociationName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_containerAssociationName.c_str()));
   }
 
   if (m_containerAssociationArnHasBeenSet) {
-    payload.WithString("ContainerAssociationArn", m_containerAssociationArn);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ContainerAssociationArn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_containerAssociationArn.c_str()));
   }
 
   if (m_descriptionHasBeenSet) {
-    payload.WithString("Description", m_description);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Description"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_description.c_str()));
   }
 
   if (m_typeHasBeenSet) {
-    payload.WithString("Type", ContainerMonitoringTypeMapper::GetNameForContainerMonitoringType(m_type));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Type"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(ContainerMonitoringTypeMapper::GetNameForContainerMonitoringType(m_type).c_str()));
   }
 
   if (m_containerMonitoringConfigurationsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> containerMonitoringConfigurationsJsonList(m_containerMonitoringConfigurations.size());
-    for (unsigned containerMonitoringConfigurationsIndex = 0;
-         containerMonitoringConfigurationsIndex < containerMonitoringConfigurationsJsonList.GetLength();
-         ++containerMonitoringConfigurationsIndex) {
-      containerMonitoringConfigurationsJsonList[containerMonitoringConfigurationsIndex].AsObject(
-          m_containerMonitoringConfigurations[containerMonitoringConfigurationsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ContainerMonitoringConfigurations"));
+    encoder.WriteArrayStart(m_containerMonitoringConfigurations.size());
+    for (const auto& item_0 : m_containerMonitoringConfigurations) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("ContainerMonitoringConfigurations", std::move(containerMonitoringConfigurationsJsonList));
   }
 
   if (m_tagsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
-      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Tags"));
+    encoder.WriteArrayStart(m_tags.size());
+    for (const auto& item_0 : m_tags) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("Tags", std::move(tagsJsonList));
   }
 
   if (m_updateTokenHasBeenSet) {
-    payload.WithString("UpdateToken", m_updateToken);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("UpdateToken"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_updateToken.c_str()));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection UpdateContainerAssociationRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "NetworkFirewall_20201112.UpdateContainerAssociation"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

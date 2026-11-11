@@ -7,15 +7,15 @@
 #include <aws/comprehend/Comprehend_EXPORTS.h>
 #include <aws/comprehend/model/EntityTypesEvaluationMetrics.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace Comprehend {
 namespace Model {
@@ -29,9 +29,9 @@ namespace Model {
 class EntityRecognizerMetadataEntityTypesListItem {
  public:
   AWS_COMPREHEND_API EntityRecognizerMetadataEntityTypesListItem() = default;
-  AWS_COMPREHEND_API EntityRecognizerMetadataEntityTypesListItem(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPREHEND_API EntityRecognizerMetadataEntityTypesListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_COMPREHEND_API EntityRecognizerMetadataEntityTypesListItem(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPREHEND_API EntityRecognizerMetadataEntityTypesListItem& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPREHEND_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -76,13 +76,13 @@ class EntityRecognizerMetadataEntityTypesListItem {
    * <p>Indicates the number of times the given entity type was seen in the training
    * data. </p>
    */
-  inline int GetNumberOfTrainMentions() const { return m_numberOfTrainMentions; }
+  inline int64_t GetNumberOfTrainMentions() const { return m_numberOfTrainMentions; }
   inline bool NumberOfTrainMentionsHasBeenSet() const { return m_numberOfTrainMentionsHasBeenSet; }
-  inline void SetNumberOfTrainMentions(int value) {
+  inline void SetNumberOfTrainMentions(int64_t value) {
     m_numberOfTrainMentionsHasBeenSet = true;
     m_numberOfTrainMentions = value;
   }
-  inline EntityRecognizerMetadataEntityTypesListItem& WithNumberOfTrainMentions(int value) {
+  inline EntityRecognizerMetadataEntityTypesListItem& WithNumberOfTrainMentions(int64_t value) {
     SetNumberOfTrainMentions(value);
     return *this;
   }
@@ -92,7 +92,7 @@ class EntityRecognizerMetadataEntityTypesListItem {
 
   EntityTypesEvaluationMetrics m_evaluationMetrics;
 
-  int m_numberOfTrainMentions{0};
+  int64_t m_numberOfTrainMentions{0};
   bool m_typeHasBeenSet = false;
   bool m_evaluationMetricsHasBeenSet = false;
   bool m_numberOfTrainMentionsHasBeenSet = false;

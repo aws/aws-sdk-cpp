@@ -3,63 +3,105 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/memorydb/model/CreateMultiRegionClusterRequest.h>
 
 #include <utility>
 
 using namespace Aws::MemoryDB::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String CreateMultiRegionClusterRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_multiRegionClusterNameSuffixHasBeenSet) {
+    mapSize++;
+  }
+  if (m_descriptionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_engineHasBeenSet) {
+    mapSize++;
+  }
+  if (m_engineVersionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_nodeTypeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_multiRegionParameterGroupNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_numShardsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_tLSEnabledHasBeenSet) {
+    mapSize++;
+  }
+  if (m_tagsHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_multiRegionClusterNameSuffixHasBeenSet) {
-    payload.WithString("MultiRegionClusterNameSuffix", m_multiRegionClusterNameSuffix);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("MultiRegionClusterNameSuffix"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_multiRegionClusterNameSuffix.c_str()));
   }
 
   if (m_descriptionHasBeenSet) {
-    payload.WithString("Description", m_description);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Description"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_description.c_str()));
   }
 
   if (m_engineHasBeenSet) {
-    payload.WithString("Engine", m_engine);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Engine"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_engine.c_str()));
   }
 
   if (m_engineVersionHasBeenSet) {
-    payload.WithString("EngineVersion", m_engineVersion);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("EngineVersion"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_engineVersion.c_str()));
   }
 
   if (m_nodeTypeHasBeenSet) {
-    payload.WithString("NodeType", m_nodeType);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("NodeType"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_nodeType.c_str()));
   }
 
   if (m_multiRegionParameterGroupNameHasBeenSet) {
-    payload.WithString("MultiRegionParameterGroupName", m_multiRegionParameterGroupName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("MultiRegionParameterGroupName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_multiRegionParameterGroupName.c_str()));
   }
 
   if (m_numShardsHasBeenSet) {
-    payload.WithInteger("NumShards", m_numShards);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("NumShards"));
+    (m_numShards >= 0) ? encoder.WriteUInt(m_numShards) : encoder.WriteNegInt(m_numShards);
   }
 
   if (m_tLSEnabledHasBeenSet) {
-    payload.WithBool("TLSEnabled", m_tLSEnabled);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("TLSEnabled"));
+    encoder.WriteBool(m_tLSEnabled);
   }
 
   if (m_tagsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
-      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Tags"));
+    encoder.WriteArrayStart(m_tags.size());
+    for (const auto& item_0 : m_tags) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("Tags", std::move(tagsJsonList));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection CreateMultiRegionClusterRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonMemoryDB.CreateMultiRegionCluster"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

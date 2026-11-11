@@ -4,74 +4,129 @@
  */
 
 #include <aws/codebuild/model/UpdateFleetRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 using namespace Aws::CodeBuild::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String UpdateFleetRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_arnHasBeenSet) {
+    mapSize++;
+  }
+  if (m_baseCapacityHasBeenSet) {
+    mapSize++;
+  }
+  if (m_environmentTypeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_computeTypeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_computeConfigurationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_scalingConfigurationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_overflowBehaviorHasBeenSet) {
+    mapSize++;
+  }
+  if (m_vpcConfigHasBeenSet) {
+    mapSize++;
+  }
+  if (m_proxyConfigurationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_imageIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_fleetServiceRoleHasBeenSet) {
+    mapSize++;
+  }
+  if (m_tagsHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_arnHasBeenSet) {
-    payload.WithString("arn", m_arn);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("arn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_arn.c_str()));
   }
 
   if (m_baseCapacityHasBeenSet) {
-    payload.WithInteger("baseCapacity", m_baseCapacity);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("baseCapacity"));
+    (m_baseCapacity >= 0) ? encoder.WriteUInt(m_baseCapacity) : encoder.WriteNegInt(m_baseCapacity);
   }
 
   if (m_environmentTypeHasBeenSet) {
-    payload.WithString("environmentType", EnvironmentTypeMapper::GetNameForEnvironmentType(m_environmentType));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("environmentType"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(EnvironmentTypeMapper::GetNameForEnvironmentType(m_environmentType).c_str()));
   }
 
   if (m_computeTypeHasBeenSet) {
-    payload.WithString("computeType", ComputeTypeMapper::GetNameForComputeType(m_computeType));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("computeType"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(ComputeTypeMapper::GetNameForComputeType(m_computeType).c_str()));
   }
 
   if (m_computeConfigurationHasBeenSet) {
-    payload.WithObject("computeConfiguration", m_computeConfiguration.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("computeConfiguration"));
+    m_computeConfiguration.CborEncode(encoder);
   }
 
   if (m_scalingConfigurationHasBeenSet) {
-    payload.WithObject("scalingConfiguration", m_scalingConfiguration.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("scalingConfiguration"));
+    m_scalingConfiguration.CborEncode(encoder);
   }
 
   if (m_overflowBehaviorHasBeenSet) {
-    payload.WithString("overflowBehavior", FleetOverflowBehaviorMapper::GetNameForFleetOverflowBehavior(m_overflowBehavior));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("overflowBehavior"));
+    encoder.WriteText(
+        Aws::Crt::ByteCursorFromCString(FleetOverflowBehaviorMapper::GetNameForFleetOverflowBehavior(m_overflowBehavior).c_str()));
   }
 
   if (m_vpcConfigHasBeenSet) {
-    payload.WithObject("vpcConfig", m_vpcConfig.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("vpcConfig"));
+    m_vpcConfig.CborEncode(encoder);
   }
 
   if (m_proxyConfigurationHasBeenSet) {
-    payload.WithObject("proxyConfiguration", m_proxyConfiguration.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("proxyConfiguration"));
+    m_proxyConfiguration.CborEncode(encoder);
   }
 
   if (m_imageIdHasBeenSet) {
-    payload.WithString("imageId", m_imageId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("imageId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_imageId.c_str()));
   }
 
   if (m_fleetServiceRoleHasBeenSet) {
-    payload.WithString("fleetServiceRole", m_fleetServiceRole);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("fleetServiceRole"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_fleetServiceRole.c_str()));
   }
 
   if (m_tagsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
-      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("tags"));
+    encoder.WriteArrayStart(m_tags.size());
+    for (const auto& item_0 : m_tags) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("tags", std::move(tagsJsonList));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection UpdateFleetRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeBuild_20161006.UpdateFleet"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

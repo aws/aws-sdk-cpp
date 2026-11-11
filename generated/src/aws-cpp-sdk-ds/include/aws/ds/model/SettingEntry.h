@@ -7,6 +7,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/ds/model/DirectoryConfigurationStatus.h>
 
@@ -14,10 +15,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace DirectoryService {
 namespace Model {
@@ -31,9 +31,9 @@ namespace Model {
 class SettingEntry {
  public:
   AWS_DIRECTORYSERVICE_API SettingEntry() = default;
-  AWS_DIRECTORYSERVICE_API SettingEntry(Aws::Utils::Json::JsonView jsonValue);
-  AWS_DIRECTORYSERVICE_API SettingEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_DIRECTORYSERVICE_API SettingEntry(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_DIRECTORYSERVICE_API SettingEntry& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_DIRECTORYSERVICE_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

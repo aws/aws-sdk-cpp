@@ -7,6 +7,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 #include <aws/network-firewall/model/EncryptionConfiguration.h>
 #include <aws/network-firewall/model/FirewallPolicyError.h>
@@ -17,10 +18,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace NetworkFirewall {
 namespace Model {
@@ -37,9 +37,9 @@ namespace Model {
 class FirewallPolicyV2Response {
  public:
   AWS_NETWORKFIREWALL_API FirewallPolicyV2Response() = default;
-  AWS_NETWORKFIREWALL_API FirewallPolicyV2Response(Aws::Utils::Json::JsonView jsonValue);
-  AWS_NETWORKFIREWALL_API FirewallPolicyV2Response& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_NETWORKFIREWALL_API FirewallPolicyV2Response(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_NETWORKFIREWALL_API FirewallPolicyV2Response& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_NETWORKFIREWALL_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -181,13 +181,13 @@ class FirewallPolicyV2Response {
    * <p>The number of firewall engine rule capacity units that the policy's firewall
    * section currently consumes.</p>
    */
-  inline int GetConsumedFirewallRuleCapacity() const { return m_consumedFirewallRuleCapacity; }
+  inline int64_t GetConsumedFirewallRuleCapacity() const { return m_consumedFirewallRuleCapacity; }
   inline bool ConsumedFirewallRuleCapacityHasBeenSet() const { return m_consumedFirewallRuleCapacityHasBeenSet; }
-  inline void SetConsumedFirewallRuleCapacity(int value) {
+  inline void SetConsumedFirewallRuleCapacity(int64_t value) {
     m_consumedFirewallRuleCapacityHasBeenSet = true;
     m_consumedFirewallRuleCapacity = value;
   }
-  inline FirewallPolicyV2Response& WithConsumedFirewallRuleCapacity(int value) {
+  inline FirewallPolicyV2Response& WithConsumedFirewallRuleCapacity(int64_t value) {
     SetConsumedFirewallRuleCapacity(value);
     return *this;
   }
@@ -198,13 +198,13 @@ class FirewallPolicyV2Response {
    * <p>The number of IPS engine rule capacity units that the policy's IPS section
    * currently consumes.</p>
    */
-  inline int GetConsumedIpsRuleCapacity() const { return m_consumedIpsRuleCapacity; }
+  inline int64_t GetConsumedIpsRuleCapacity() const { return m_consumedIpsRuleCapacity; }
   inline bool ConsumedIpsRuleCapacityHasBeenSet() const { return m_consumedIpsRuleCapacityHasBeenSet; }
-  inline void SetConsumedIpsRuleCapacity(int value) {
+  inline void SetConsumedIpsRuleCapacity(int64_t value) {
     m_consumedIpsRuleCapacityHasBeenSet = true;
     m_consumedIpsRuleCapacity = value;
   }
-  inline FirewallPolicyV2Response& WithConsumedIpsRuleCapacity(int value) {
+  inline FirewallPolicyV2Response& WithConsumedIpsRuleCapacity(int64_t value) {
     SetConsumedIpsRuleCapacity(value);
     return *this;
   }
@@ -215,13 +215,13 @@ class FirewallPolicyV2Response {
    * <p>The number of IPS domain list capacity units that the policy's IPS section
    * currently consumes.</p>
    */
-  inline int GetConsumedIpsDomainCapacity() const { return m_consumedIpsDomainCapacity; }
+  inline int64_t GetConsumedIpsDomainCapacity() const { return m_consumedIpsDomainCapacity; }
   inline bool ConsumedIpsDomainCapacityHasBeenSet() const { return m_consumedIpsDomainCapacityHasBeenSet; }
-  inline void SetConsumedIpsDomainCapacity(int value) {
+  inline void SetConsumedIpsDomainCapacity(int64_t value) {
     m_consumedIpsDomainCapacityHasBeenSet = true;
     m_consumedIpsDomainCapacity = value;
   }
-  inline FirewallPolicyV2Response& WithConsumedIpsDomainCapacity(int value) {
+  inline FirewallPolicyV2Response& WithConsumedIpsDomainCapacity(int64_t value) {
     SetConsumedIpsDomainCapacity(value);
     return *this;
   }
@@ -232,13 +232,13 @@ class FirewallPolicyV2Response {
    * <p>The number of firewalls that are associated with the Next Generation
    * policy.</p>
    */
-  inline int GetNumberOfAssociations() const { return m_numberOfAssociations; }
+  inline int64_t GetNumberOfAssociations() const { return m_numberOfAssociations; }
   inline bool NumberOfAssociationsHasBeenSet() const { return m_numberOfAssociationsHasBeenSet; }
-  inline void SetNumberOfAssociations(int value) {
+  inline void SetNumberOfAssociations(int64_t value) {
     m_numberOfAssociationsHasBeenSet = true;
     m_numberOfAssociations = value;
   }
-  inline FirewallPolicyV2Response& WithNumberOfAssociations(int value) {
+  inline FirewallPolicyV2Response& WithNumberOfAssociations(int64_t value) {
     SetNumberOfAssociations(value);
     return *this;
   }
@@ -323,13 +323,13 @@ class FirewallPolicyV2Response {
 
   Aws::Vector<Tag> m_tags;
 
-  int m_consumedFirewallRuleCapacity{0};
+  int64_t m_consumedFirewallRuleCapacity{0};
 
-  int m_consumedIpsRuleCapacity{0};
+  int64_t m_consumedIpsRuleCapacity{0};
 
-  int m_consumedIpsDomainCapacity{0};
+  int64_t m_consumedIpsDomainCapacity{0};
 
-  int m_numberOfAssociations{0};
+  int64_t m_numberOfAssociations{0};
 
   EncryptionConfiguration m_encryptionConfiguration;
 

@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 #include <aws/servicecatalog/model/LastSync.h>
 #include <aws/servicecatalog/model/SourceConnectionParameters.h>
@@ -13,10 +14,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace ServiceCatalog {
 namespace Model {
@@ -30,9 +30,9 @@ namespace Model {
 class SourceConnectionDetail {
  public:
   AWS_SERVICECATALOG_API SourceConnectionDetail() = default;
-  AWS_SERVICECATALOG_API SourceConnectionDetail(Aws::Utils::Json::JsonView jsonValue);
-  AWS_SERVICECATALOG_API SourceConnectionDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_SERVICECATALOG_API SourceConnectionDetail(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_SERVICECATALOG_API SourceConnectionDetail& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_SERVICECATALOG_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

@@ -7,16 +7,16 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/ds/DirectoryService_EXPORTS.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace DirectoryService {
 namespace Model {
@@ -31,9 +31,9 @@ namespace Model {
 class Assessment {
  public:
   AWS_DIRECTORYSERVICE_API Assessment() = default;
-  AWS_DIRECTORYSERVICE_API Assessment(Aws::Utils::Json::JsonView jsonValue);
-  AWS_DIRECTORYSERVICE_API Assessment& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_DIRECTORYSERVICE_API Assessment(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_DIRECTORYSERVICE_API Assessment& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_DIRECTORYSERVICE_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

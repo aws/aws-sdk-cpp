@@ -3,48 +3,73 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/ds/model/CreateComputerRequest.h>
 
 #include <utility>
 
 using namespace Aws::DirectoryService::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String CreateComputerRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_directoryIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_computerNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_passwordHasBeenSet) {
+    mapSize++;
+  }
+  if (m_organizationalUnitDistinguishedNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_computerAttributesHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_directoryIdHasBeenSet) {
-    payload.WithString("DirectoryId", m_directoryId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("DirectoryId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_directoryId.c_str()));
   }
 
   if (m_computerNameHasBeenSet) {
-    payload.WithString("ComputerName", m_computerName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ComputerName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_computerName.c_str()));
   }
 
   if (m_passwordHasBeenSet) {
-    payload.WithString("Password", m_password);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Password"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_password.c_str()));
   }
 
   if (m_organizationalUnitDistinguishedNameHasBeenSet) {
-    payload.WithString("OrganizationalUnitDistinguishedName", m_organizationalUnitDistinguishedName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("OrganizationalUnitDistinguishedName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_organizationalUnitDistinguishedName.c_str()));
   }
 
   if (m_computerAttributesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> computerAttributesJsonList(m_computerAttributes.size());
-    for (unsigned computerAttributesIndex = 0; computerAttributesIndex < computerAttributesJsonList.GetLength();
-         ++computerAttributesIndex) {
-      computerAttributesJsonList[computerAttributesIndex].AsObject(m_computerAttributes[computerAttributesIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ComputerAttributes"));
+    encoder.WriteArrayStart(m_computerAttributes.size());
+    for (const auto& item_0 : m_computerAttributes) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("ComputerAttributes", std::move(computerAttributesJsonList));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection CreateComputerRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "DirectoryService_20150416.CreateComputer"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPI_EXPORTS.h>
 #include <aws/resourcegroupstaggingapi/model/TargetIdType.h>
 
@@ -12,10 +13,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace ResourceGroupsTaggingAPI {
 namespace Model {
@@ -28,9 +28,9 @@ namespace Model {
 class Summary {
  public:
   AWS_RESOURCEGROUPSTAGGINGAPI_API Summary() = default;
-  AWS_RESOURCEGROUPSTAGGINGAPI_API Summary(Aws::Utils::Json::JsonView jsonValue);
-  AWS_RESOURCEGROUPSTAGGINGAPI_API Summary& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_RESOURCEGROUPSTAGGINGAPI_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_RESOURCEGROUPSTAGGINGAPI_API Summary(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_RESOURCEGROUPSTAGGINGAPI_API Summary& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_RESOURCEGROUPSTAGGINGAPI_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

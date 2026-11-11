@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 #include <aws/network-firewall/model/AvailabilityZoneMapping.h>
 #include <aws/network-firewall/model/EnabledAnalysisType.h>
@@ -20,10 +21,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace NetworkFirewall {
 namespace Model {
@@ -47,9 +47,9 @@ namespace Model {
 class Firewall {
  public:
   AWS_NETWORKFIREWALL_API Firewall() = default;
-  AWS_NETWORKFIREWALL_API Firewall(Aws::Utils::Json::JsonView jsonValue);
-  AWS_NETWORKFIREWALL_API Firewall& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_NETWORKFIREWALL_API Firewall(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_NETWORKFIREWALL_API Firewall& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_NETWORKFIREWALL_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -305,13 +305,13 @@ class Firewall {
    * <p>The number of <code>VpcEndpointAssociation</code> resources that use this
    * firewall. </p>
    */
-  inline int GetNumberOfAssociations() const { return m_numberOfAssociations; }
+  inline int64_t GetNumberOfAssociations() const { return m_numberOfAssociations; }
   inline bool NumberOfAssociationsHasBeenSet() const { return m_numberOfAssociationsHasBeenSet; }
-  inline void SetNumberOfAssociations(int value) {
+  inline void SetNumberOfAssociations(int64_t value) {
     m_numberOfAssociationsHasBeenSet = true;
     m_numberOfAssociations = value;
   }
-  inline Firewall& WithNumberOfAssociations(int value) {
+  inline Firewall& WithNumberOfAssociations(int64_t value) {
     SetNumberOfAssociations(value);
     return *this;
   }
@@ -532,7 +532,7 @@ class Firewall {
 
   EncryptionConfiguration m_encryptionConfiguration;
 
-  int m_numberOfAssociations{0};
+  int64_t m_numberOfAssociations{0};
 
   Aws::Vector<EnabledAnalysisType> m_enabledAnalysisTypes;
 

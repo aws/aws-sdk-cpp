@@ -6,15 +6,15 @@
 #pragma once
 #include <aws/comprehend/Comprehend_EXPORTS.h>
 #include <aws/comprehend/model/ClassifierEvaluationMetrics.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace Comprehend {
 namespace Model {
@@ -28,21 +28,21 @@ namespace Model {
 class ClassifierMetadata {
  public:
   AWS_COMPREHEND_API ClassifierMetadata() = default;
-  AWS_COMPREHEND_API ClassifierMetadata(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPREHEND_API ClassifierMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_COMPREHEND_API ClassifierMetadata(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPREHEND_API ClassifierMetadata& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPREHEND_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
    * <p>The number of labels in the input data. </p>
    */
-  inline int GetNumberOfLabels() const { return m_numberOfLabels; }
+  inline int64_t GetNumberOfLabels() const { return m_numberOfLabels; }
   inline bool NumberOfLabelsHasBeenSet() const { return m_numberOfLabelsHasBeenSet; }
-  inline void SetNumberOfLabels(int value) {
+  inline void SetNumberOfLabels(int64_t value) {
     m_numberOfLabelsHasBeenSet = true;
     m_numberOfLabels = value;
   }
-  inline ClassifierMetadata& WithNumberOfLabels(int value) {
+  inline ClassifierMetadata& WithNumberOfLabels(int64_t value) {
     SetNumberOfLabels(value);
     return *this;
   }
@@ -53,13 +53,13 @@ class ClassifierMetadata {
    * <p>The number of documents in the input data that were used to train the
    * classifier. Typically this is 80 to 90 percent of the input documents.</p>
    */
-  inline int GetNumberOfTrainedDocuments() const { return m_numberOfTrainedDocuments; }
+  inline int64_t GetNumberOfTrainedDocuments() const { return m_numberOfTrainedDocuments; }
   inline bool NumberOfTrainedDocumentsHasBeenSet() const { return m_numberOfTrainedDocumentsHasBeenSet; }
-  inline void SetNumberOfTrainedDocuments(int value) {
+  inline void SetNumberOfTrainedDocuments(int64_t value) {
     m_numberOfTrainedDocumentsHasBeenSet = true;
     m_numberOfTrainedDocuments = value;
   }
-  inline ClassifierMetadata& WithNumberOfTrainedDocuments(int value) {
+  inline ClassifierMetadata& WithNumberOfTrainedDocuments(int64_t value) {
     SetNumberOfTrainedDocuments(value);
     return *this;
   }
@@ -71,13 +71,13 @@ class ClassifierMetadata {
    * classifier. Typically this is 10 to 20 percent of the input documents, up to
    * 10,000 documents.</p>
    */
-  inline int GetNumberOfTestDocuments() const { return m_numberOfTestDocuments; }
+  inline int64_t GetNumberOfTestDocuments() const { return m_numberOfTestDocuments; }
   inline bool NumberOfTestDocumentsHasBeenSet() const { return m_numberOfTestDocumentsHasBeenSet; }
-  inline void SetNumberOfTestDocuments(int value) {
+  inline void SetNumberOfTestDocuments(int64_t value) {
     m_numberOfTestDocumentsHasBeenSet = true;
     m_numberOfTestDocuments = value;
   }
-  inline ClassifierMetadata& WithNumberOfTestDocuments(int value) {
+  inline ClassifierMetadata& WithNumberOfTestDocuments(int64_t value) {
     SetNumberOfTestDocuments(value);
     return *this;
   }
@@ -102,11 +102,11 @@ class ClassifierMetadata {
   }
   ///@}
  private:
-  int m_numberOfLabels{0};
+  int64_t m_numberOfLabels{0};
 
-  int m_numberOfTrainedDocuments{0};
+  int64_t m_numberOfTrainedDocuments{0};
 
-  int m_numberOfTestDocuments{0};
+  int64_t m_numberOfTestDocuments{0};
 
   ClassifierEvaluationMetrics m_evaluationMetrics;
   bool m_numberOfLabelsHasBeenSet = false;

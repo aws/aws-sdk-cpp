@@ -7,7 +7,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/textract/TextractPaginationBase.h>
 #include <aws/textract/TextractServiceClientModel.h>
 #include <aws/textract/TextractWaiter.h>
@@ -20,12 +20,12 @@ namespace Textract {
  * machine-readable text. This is the API reference documentation for Amazon
  * Textract.</p>
  */
-class AWS_TEXTRACT_API TextractClient : public Aws::Client::AWSJsonClient,
+class AWS_TEXTRACT_API TextractClient : public Aws::Client::AWSRpcV2CborClient,
                                         public Aws::Client::ClientWithAsyncTemplateMethods<TextractClient>,
                                         public TextractPaginationBase<TextractClient>,
                                         public TextractWaiter<TextractClient> {
  public:
-  typedef Aws::Client::AWSJsonClient BASECLASS;
+  typedef Aws::Client::AWSRpcV2CborClient BASECLASS;
   static const char* GetServiceName();
   static const char* GetAllocationTag();
 

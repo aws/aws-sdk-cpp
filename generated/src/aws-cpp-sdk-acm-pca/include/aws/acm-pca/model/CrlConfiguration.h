@@ -9,15 +9,15 @@
 #include <aws/acm-pca/model/CrlType.h>
 #include <aws/acm-pca/model/S3ObjectAcl.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace ACMPCA {
 namespace Model {
@@ -78,9 +78,9 @@ namespace Model {
 class CrlConfiguration {
  public:
   AWS_ACMPCA_API CrlConfiguration() = default;
-  AWS_ACMPCA_API CrlConfiguration(Aws::Utils::Json::JsonView jsonValue);
-  AWS_ACMPCA_API CrlConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_ACMPCA_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_ACMPCA_API CrlConfiguration(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_ACMPCA_API CrlConfiguration& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_ACMPCA_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -108,13 +108,13 @@ class CrlConfiguration {
   /**
    * <p>Validity period of the CRL in days.</p>
    */
-  inline int GetExpirationInDays() const { return m_expirationInDays; }
+  inline int64_t GetExpirationInDays() const { return m_expirationInDays; }
   inline bool ExpirationInDaysHasBeenSet() const { return m_expirationInDaysHasBeenSet; }
-  inline void SetExpirationInDays(int value) {
+  inline void SetExpirationInDays(int64_t value) {
     m_expirationInDaysHasBeenSet = true;
     m_expirationInDays = value;
   }
-  inline CrlConfiguration& WithExpirationInDays(int value) {
+  inline CrlConfiguration& WithExpirationInDays(int64_t value) {
     SetExpirationInDays(value);
     return *this;
   }
@@ -281,7 +281,7 @@ class CrlConfiguration {
  private:
   bool m_enabled{false};
 
-  int m_expirationInDays{0};
+  int64_t m_expirationInDays{0};
 
   Aws::String m_customCname;
 

@@ -69,12 +69,37 @@ class ApplicationRestoreConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The identifier of an existing enhanced snapshot of application state to use
+   * to restart an application. The application uses this value if
+   * <code>RESTORE_FROM_CUSTOM_SNAPSHOT</code> is specified for the
+   * <code>ApplicationRestoreType</code> and <code>SnapshotMode</code> is
+   * <code>ENHANCED_SNAPSHOTS</code>.</p>
+   */
+  inline const Aws::String& GetSnapshotArn() const { return m_snapshotArn; }
+  inline bool SnapshotArnHasBeenSet() const { return m_snapshotArnHasBeenSet; }
+  template <typename SnapshotArnT = Aws::String>
+  void SetSnapshotArn(SnapshotArnT&& value) {
+    m_snapshotArnHasBeenSet = true;
+    m_snapshotArn = std::forward<SnapshotArnT>(value);
+  }
+  template <typename SnapshotArnT = Aws::String>
+  ApplicationRestoreConfiguration& WithSnapshotArn(SnapshotArnT&& value) {
+    SetSnapshotArn(std::forward<SnapshotArnT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ApplicationRestoreType m_applicationRestoreType{ApplicationRestoreType::NOT_SET};
 
   Aws::String m_snapshotName;
+
+  Aws::String m_snapshotArn;
   bool m_applicationRestoreTypeHasBeenSet = false;
   bool m_snapshotNameHasBeenSet = false;
+  bool m_snapshotArnHasBeenSet = false;
 };
 
 }  // namespace Model

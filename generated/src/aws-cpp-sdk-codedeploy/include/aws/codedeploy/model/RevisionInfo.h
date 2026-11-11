@@ -7,15 +7,15 @@
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/codedeploy/model/GenericRevisionInfo.h>
 #include <aws/codedeploy/model/RevisionLocation.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace CodeDeploy {
 namespace Model {
@@ -28,9 +28,9 @@ namespace Model {
 class RevisionInfo {
  public:
   AWS_CODEDEPLOY_API RevisionInfo() = default;
-  AWS_CODEDEPLOY_API RevisionInfo(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CODEDEPLOY_API RevisionInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_CODEDEPLOY_API RevisionInfo(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CODEDEPLOY_API RevisionInfo& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CODEDEPLOY_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

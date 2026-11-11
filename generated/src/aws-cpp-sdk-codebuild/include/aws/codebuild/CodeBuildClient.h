@@ -11,7 +11,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 
 namespace Aws {
 namespace CodeBuild {
@@ -28,12 +28,12 @@ namespace CodeBuild {
  * href="https://docs.aws.amazon.com/codebuild/latest/userguide/welcome.html">CodeBuild
  * User Guide</a>.</i> </p>
  */
-class AWS_CODEBUILD_API CodeBuildClient : public Aws::Client::AWSJsonClient,
+class AWS_CODEBUILD_API CodeBuildClient : public Aws::Client::AWSRpcV2CborClient,
                                           public Aws::Client::ClientWithAsyncTemplateMethods<CodeBuildClient>,
                                           public CodeBuildPaginationBase<CodeBuildClient>,
                                           public CodeBuildWaiter<CodeBuildClient> {
  public:
-  typedef Aws::Client::AWSJsonClient BASECLASS;
+  typedef Aws::Client::AWSRpcV2CborClient BASECLASS;
   static const char* GetServiceName();
   static const char* GetAllocationTag();
 

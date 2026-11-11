@@ -4,54 +4,88 @@
  */
 
 #include <aws/comprehend/model/CreateDatasetRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 using namespace Aws::Comprehend::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String CreateDatasetRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_flywheelArnHasBeenSet) {
+    mapSize++;
+  }
+  if (m_datasetNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_datasetTypeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_descriptionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_inputDataConfigHasBeenSet) {
+    mapSize++;
+  }
+  if (m_clientRequestTokenHasBeenSet) {
+    mapSize++;
+  }
+  if (m_tagsHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_flywheelArnHasBeenSet) {
-    payload.WithString("FlywheelArn", m_flywheelArn);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("FlywheelArn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_flywheelArn.c_str()));
   }
 
   if (m_datasetNameHasBeenSet) {
-    payload.WithString("DatasetName", m_datasetName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("DatasetName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_datasetName.c_str()));
   }
 
   if (m_datasetTypeHasBeenSet) {
-    payload.WithString("DatasetType", DatasetTypeMapper::GetNameForDatasetType(m_datasetType));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("DatasetType"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(DatasetTypeMapper::GetNameForDatasetType(m_datasetType).c_str()));
   }
 
   if (m_descriptionHasBeenSet) {
-    payload.WithString("Description", m_description);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Description"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_description.c_str()));
   }
 
   if (m_inputDataConfigHasBeenSet) {
-    payload.WithObject("InputDataConfig", m_inputDataConfig.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("InputDataConfig"));
+    m_inputDataConfig.CborEncode(encoder);
   }
 
   if (m_clientRequestTokenHasBeenSet) {
-    payload.WithString("ClientRequestToken", m_clientRequestToken);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ClientRequestToken"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_clientRequestToken.c_str()));
   }
 
   if (m_tagsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
-      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Tags"));
+    encoder.WriteArrayStart(m_tags.size());
+    for (const auto& item_0 : m_tags) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("Tags", std::move(tagsJsonList));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection CreateDatasetRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Comprehend_20171127.CreateDataset"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

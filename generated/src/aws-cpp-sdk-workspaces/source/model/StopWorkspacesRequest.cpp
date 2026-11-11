@@ -3,32 +3,41 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/workspaces/model/StopWorkspacesRequest.h>
 
 #include <utility>
 
 using namespace Aws::WorkSpaces::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String StopWorkspacesRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
 
+  // Calculate map size
+  size_t mapSize = 0;
   if (m_stopWorkspaceRequestsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> stopWorkspaceRequestsJsonList(m_stopWorkspaceRequests.size());
-    for (unsigned stopWorkspaceRequestsIndex = 0; stopWorkspaceRequestsIndex < stopWorkspaceRequestsJsonList.GetLength();
-         ++stopWorkspaceRequestsIndex) {
-      stopWorkspaceRequestsJsonList[stopWorkspaceRequestsIndex].AsObject(m_stopWorkspaceRequests[stopWorkspaceRequestsIndex].Jsonize());
-    }
-    payload.WithArray("StopWorkspaceRequests", std::move(stopWorkspaceRequestsJsonList));
+    mapSize++;
   }
 
-  return payload.View().WriteReadable();
+  encoder.WriteMapStart(mapSize);
+
+  if (m_stopWorkspaceRequestsHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("StopWorkspaceRequests"));
+    encoder.WriteArrayStart(m_stopWorkspaceRequests.size());
+    for (const auto& item_0 : m_stopWorkspaceRequests) {
+      item_0.CborEncode(encoder);
+    }
+  }
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection StopWorkspacesRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "WorkspacesService.StopWorkspaces"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

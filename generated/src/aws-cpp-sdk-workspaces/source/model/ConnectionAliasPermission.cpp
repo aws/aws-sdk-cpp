@@ -3,44 +3,166 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/workspaces/model/ConnectionAliasPermission.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace WorkSpaces {
 namespace Model {
 
-ConnectionAliasPermission::ConnectionAliasPermission(JsonView jsonValue) { *this = jsonValue; }
+ConnectionAliasPermission::ConnectionAliasPermission(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-ConnectionAliasPermission& ConnectionAliasPermission::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("SharedAccountId")) {
-    m_sharedAccountId = jsonValue.GetString("SharedAccountId");
-    m_sharedAccountIdHasBeenSet = true;
+ConnectionAliasPermission& ConnectionAliasPermission::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "SharedAccountId") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_sharedAccountId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_sharedAccountId = ss.str();
+                  }
+                }
+                m_sharedAccountIdHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "AllowAssociation") {
+                auto val = decoder->PopNextBooleanVal();
+                if (val.has_value()) {
+                  m_allowAssociation = val.value();
+                }
+                m_allowAssociationHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("ConnectionAliasPermission", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "SharedAccountId") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_sharedAccountId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_sharedAccountId = ss.str();
+                }
+              }
+              m_sharedAccountIdHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "AllowAssociation") {
+              auto val = decoder->PopNextBooleanVal();
+              if (val.has_value()) {
+                m_allowAssociation = val.value();
+              }
+              m_allowAssociationHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
+    }
   }
-  if (jsonValue.ValueExists("AllowAssociation")) {
-    m_allowAssociation = jsonValue.GetBool("AllowAssociation");
-    m_allowAssociationHasBeenSet = true;
-  }
+
   return *this;
 }
 
-JsonValue ConnectionAliasPermission::Jsonize() const {
-  JsonValue payload;
+void ConnectionAliasPermission::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_sharedAccountIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_allowAssociationHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_sharedAccountIdHasBeenSet) {
-    payload.WithString("SharedAccountId", m_sharedAccountId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("SharedAccountId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_sharedAccountId.c_str()));
   }
 
   if (m_allowAssociationHasBeenSet) {
-    payload.WithBool("AllowAssociation", m_allowAssociation);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AllowAssociation"));
+    encoder.WriteBool(m_allowAssociation);
   }
-
-  return payload;
 }
 
 }  // namespace Model

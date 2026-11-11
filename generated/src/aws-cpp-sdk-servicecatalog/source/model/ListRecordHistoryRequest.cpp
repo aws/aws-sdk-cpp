@@ -3,43 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/servicecatalog/model/ListRecordHistoryRequest.h>
 
 #include <utility>
 
 using namespace Aws::ServiceCatalog::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String ListRecordHistoryRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_acceptLanguageHasBeenSet) {
+    mapSize++;
+  }
+  if (m_accessLevelFilterHasBeenSet) {
+    mapSize++;
+  }
+  if (m_searchFilterHasBeenSet) {
+    mapSize++;
+  }
+  if (m_pageSizeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_pageTokenHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_acceptLanguageHasBeenSet) {
-    payload.WithString("AcceptLanguage", m_acceptLanguage);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AcceptLanguage"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_acceptLanguage.c_str()));
   }
 
   if (m_accessLevelFilterHasBeenSet) {
-    payload.WithObject("AccessLevelFilter", m_accessLevelFilter.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AccessLevelFilter"));
+    m_accessLevelFilter.CborEncode(encoder);
   }
 
   if (m_searchFilterHasBeenSet) {
-    payload.WithObject("SearchFilter", m_searchFilter.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("SearchFilter"));
+    m_searchFilter.CborEncode(encoder);
   }
 
   if (m_pageSizeHasBeenSet) {
-    payload.WithInteger("PageSize", m_pageSize);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("PageSize"));
+    (m_pageSize >= 0) ? encoder.WriteUInt(m_pageSize) : encoder.WriteNegInt(m_pageSize);
   }
 
   if (m_pageTokenHasBeenSet) {
-    payload.WithString("PageToken", m_pageToken);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("PageToken"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_pageToken.c_str()));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection ListRecordHistoryRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWS242ServiceCatalogService.ListRecordHistory"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

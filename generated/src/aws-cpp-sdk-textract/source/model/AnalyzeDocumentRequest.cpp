@@ -3,47 +3,73 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/textract/model/AnalyzeDocumentRequest.h>
 
 #include <utility>
 
 using namespace Aws::Textract::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String AnalyzeDocumentRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_documentHasBeenSet) {
+    mapSize++;
+  }
+  if (m_featureTypesHasBeenSet) {
+    mapSize++;
+  }
+  if (m_humanLoopConfigHasBeenSet) {
+    mapSize++;
+  }
+  if (m_queriesConfigHasBeenSet) {
+    mapSize++;
+  }
+  if (m_adaptersConfigHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_documentHasBeenSet) {
-    payload.WithObject("Document", m_document.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Document"));
+    m_document.CborEncode(encoder);
   }
 
   if (m_featureTypesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> featureTypesJsonList(m_featureTypes.size());
-    for (unsigned featureTypesIndex = 0; featureTypesIndex < featureTypesJsonList.GetLength(); ++featureTypesIndex) {
-      featureTypesJsonList[featureTypesIndex].AsString(FeatureTypeMapper::GetNameForFeatureType(m_featureTypes[featureTypesIndex]));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("FeatureTypes"));
+    encoder.WriteArrayStart(m_featureTypes.size());
+    for (const auto& item_0 : m_featureTypes) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(FeatureTypeMapper::GetNameForFeatureType(item_0).c_str()));
     }
-    payload.WithArray("FeatureTypes", std::move(featureTypesJsonList));
   }
 
   if (m_humanLoopConfigHasBeenSet) {
-    payload.WithObject("HumanLoopConfig", m_humanLoopConfig.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("HumanLoopConfig"));
+    m_humanLoopConfig.CborEncode(encoder);
   }
 
   if (m_queriesConfigHasBeenSet) {
-    payload.WithObject("QueriesConfig", m_queriesConfig.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("QueriesConfig"));
+    m_queriesConfig.CborEncode(encoder);
   }
 
   if (m_adaptersConfigHasBeenSet) {
-    payload.WithObject("AdaptersConfig", m_adaptersConfig.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AdaptersConfig"));
+    m_adaptersConfig.CborEncode(encoder);
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection AnalyzeDocumentRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Textract.AnalyzeDocument"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

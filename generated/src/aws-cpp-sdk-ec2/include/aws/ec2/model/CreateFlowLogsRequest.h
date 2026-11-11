@@ -186,8 +186,8 @@ class CreateFlowLogsRequest : public EC2Request {
   ///@{
   /**
    * <p>The type of traffic to monitor (accepted traffic, rejected traffic, or all
-   * traffic). This parameter is not supported for transit gateway resource types. It
-   * is required for the other resource types.</p>
+   * traffic). This parameter is not supported for transit gateway or Cloud WAN
+   * resource types. It is required for the other resource types.</p>
    */
   inline TrafficType GetTrafficType() const { return m_trafficType; }
   inline bool TrafficTypeHasBeenSet() const { return m_trafficTypeHasBeenSet; }
@@ -256,9 +256,12 @@ class CreateFlowLogsRequest : public EC2Request {
    * using the default format. If you specify this parameter, you must include at
    * least one field. For more information about the available fields, see <a
    * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-log-records.html">Flow
-   * log records</a> in the <i>Amazon VPC User Guide</i> or <a
+   * log records</a> in the <i>Amazon VPC User Guide</i>, <a
    * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-flow-logs.html#flow-log-records">Transit
    * Gateway Flow Log records</a> in the <i>Amazon Web Services Transit Gateway
+   * Guide</i>, or <a
+   * href="https://docs.aws.amazon.com/network-manager/latest/cloudwan/cwan-flow-logs.html">Cloud
+   * WAN Flow Log records</a> in the <i>Amazon Web Services Cloud WAN User
    * Guide</i>.</p> <p>Specify the fields using the <code>${field-id}</code> format,
    * separated by spaces.</p>
    */
@@ -305,7 +308,8 @@ class CreateFlowLogsRequest : public EC2Request {
    * <p>The maximum interval of time during which a flow of packets is captured and
    * aggregated into a flow log record. The possible values are 60 seconds (1 minute)
    * or 600 seconds (10 minutes). This parameter must be 60 seconds for transit
-   * gateway resource types.</p> <p>When a network interface is attached to a <a
+   * gateway and Cloud WAN resource types.</p> <p>When a network interface is
+   * attached to a <a
    * href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html">Nitro-based
    * instance</a>, the aggregation interval is always 60 seconds or less, regardless
    * of the value that you specify.</p> <p>Default: 600</p>

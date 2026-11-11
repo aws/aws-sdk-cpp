@@ -6,15 +6,15 @@
 #pragma once
 #include <aws/comprehend/Comprehend_EXPORTS.h>
 #include <aws/comprehend/model/DocumentType.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace Comprehend {
 namespace Model {
@@ -27,21 +27,21 @@ namespace Model {
 class DocumentTypeListItem {
  public:
   AWS_COMPREHEND_API DocumentTypeListItem() = default;
-  AWS_COMPREHEND_API DocumentTypeListItem(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPREHEND_API DocumentTypeListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_COMPREHEND_API DocumentTypeListItem(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPREHEND_API DocumentTypeListItem& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPREHEND_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
    * <p>Page number.</p>
    */
-  inline int GetPage() const { return m_page; }
+  inline int64_t GetPage() const { return m_page; }
   inline bool PageHasBeenSet() const { return m_pageHasBeenSet; }
-  inline void SetPage(int value) {
+  inline void SetPage(int64_t value) {
     m_pageHasBeenSet = true;
     m_page = value;
   }
-  inline DocumentTypeListItem& WithPage(int value) {
+  inline DocumentTypeListItem& WithPage(int64_t value) {
     SetPage(value);
     return *this;
   }
@@ -63,7 +63,7 @@ class DocumentTypeListItem {
   }
   ///@}
  private:
-  int m_page{0};
+  int64_t m_page{0};
 
   DocumentType m_type{DocumentType::NOT_SET};
   bool m_pageHasBeenSet = false;

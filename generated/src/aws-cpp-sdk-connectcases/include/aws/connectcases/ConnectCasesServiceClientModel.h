@@ -43,6 +43,7 @@
 #include <aws/connectcases/model/GetCaseResult.h>
 #include <aws/connectcases/model/GetDomainResult.h>
 #include <aws/connectcases/model/GetLayoutResult.h>
+#include <aws/connectcases/model/GetMergeCasesStatusResult.h>
 #include <aws/connectcases/model/GetTemplateResult.h>
 #include <aws/connectcases/model/ListCaseRulesResult.h>
 #include <aws/connectcases/model/ListCasesForContactResult.h>
@@ -57,6 +58,7 @@
 #include <aws/connectcases/model/SearchAllRelatedItemsResult.h>
 #include <aws/connectcases/model/SearchCasesResult.h>
 #include <aws/connectcases/model/SearchRelatedItemsResult.h>
+#include <aws/connectcases/model/StartMergeCasesResult.h>
 #include <aws/connectcases/model/UpdateCaseResult.h>
 #include <aws/connectcases/model/UpdateCaseRuleResult.h>
 #include <aws/connectcases/model/UpdateFieldResult.h>
@@ -121,6 +123,7 @@ class GetCaseAuditEventsRequest;
 class GetCaseEventConfigurationRequest;
 class GetDomainRequest;
 class GetLayoutRequest;
+class GetMergeCasesStatusRequest;
 class GetTemplateRequest;
 class ListCaseRulesRequest;
 class ListCasesForContactRequest;
@@ -134,6 +137,7 @@ class PutCaseEventConfigurationRequest;
 class SearchAllRelatedItemsRequest;
 class SearchCasesRequest;
 class SearchRelatedItemsRequest;
+class StartMergeCasesRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
 class UpdateCaseRequest;
@@ -169,6 +173,7 @@ typedef Aws::Utils::Outcome<GetCaseAuditEventsResult, ConnectCasesError> GetCase
 typedef Aws::Utils::Outcome<GetCaseEventConfigurationResult, ConnectCasesError> GetCaseEventConfigurationOutcome;
 typedef Aws::Utils::Outcome<GetDomainResult, ConnectCasesError> GetDomainOutcome;
 typedef Aws::Utils::Outcome<GetLayoutResult, ConnectCasesError> GetLayoutOutcome;
+typedef Aws::Utils::Outcome<GetMergeCasesStatusResult, ConnectCasesError> GetMergeCasesStatusOutcome;
 typedef Aws::Utils::Outcome<GetTemplateResult, ConnectCasesError> GetTemplateOutcome;
 typedef Aws::Utils::Outcome<ListCaseRulesResult, ConnectCasesError> ListCaseRulesOutcome;
 typedef Aws::Utils::Outcome<ListCasesForContactResult, ConnectCasesError> ListCasesForContactOutcome;
@@ -182,6 +187,7 @@ typedef Aws::Utils::Outcome<PutCaseEventConfigurationResult, ConnectCasesError> 
 typedef Aws::Utils::Outcome<SearchAllRelatedItemsResult, ConnectCasesError> SearchAllRelatedItemsOutcome;
 typedef Aws::Utils::Outcome<SearchCasesResult, ConnectCasesError> SearchCasesOutcome;
 typedef Aws::Utils::Outcome<SearchRelatedItemsResult, ConnectCasesError> SearchRelatedItemsOutcome;
+typedef Aws::Utils::Outcome<StartMergeCasesResult, ConnectCasesError> StartMergeCasesOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectCasesError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectCasesError> UntagResourceOutcome;
 typedef Aws::Utils::Outcome<UpdateCaseResult, ConnectCasesError> UpdateCaseOutcome;
@@ -217,6 +223,7 @@ typedef std::future<GetCaseAuditEventsOutcome> GetCaseAuditEventsOutcomeCallable
 typedef std::future<GetCaseEventConfigurationOutcome> GetCaseEventConfigurationOutcomeCallable;
 typedef std::future<GetDomainOutcome> GetDomainOutcomeCallable;
 typedef std::future<GetLayoutOutcome> GetLayoutOutcomeCallable;
+typedef std::future<GetMergeCasesStatusOutcome> GetMergeCasesStatusOutcomeCallable;
 typedef std::future<GetTemplateOutcome> GetTemplateOutcomeCallable;
 typedef std::future<ListCaseRulesOutcome> ListCaseRulesOutcomeCallable;
 typedef std::future<ListCasesForContactOutcome> ListCasesForContactOutcomeCallable;
@@ -230,6 +237,7 @@ typedef std::future<PutCaseEventConfigurationOutcome> PutCaseEventConfigurationO
 typedef std::future<SearchAllRelatedItemsOutcome> SearchAllRelatedItemsOutcomeCallable;
 typedef std::future<SearchCasesOutcome> SearchCasesOutcomeCallable;
 typedef std::future<SearchRelatedItemsOutcome> SearchRelatedItemsOutcomeCallable;
+typedef std::future<StartMergeCasesOutcome> StartMergeCasesOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 typedef std::future<UpdateCaseOutcome> UpdateCaseOutcomeCallable;
@@ -316,6 +324,9 @@ typedef std::function<void(const ConnectCasesClient*, const Model::GetDomainRequ
 typedef std::function<void(const ConnectCasesClient*, const Model::GetLayoutRequest&, const Model::GetLayoutOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetLayoutResponseReceivedHandler;
+typedef std::function<void(const ConnectCasesClient*, const Model::GetMergeCasesStatusRequest&, const Model::GetMergeCasesStatusOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetMergeCasesStatusResponseReceivedHandler;
 typedef std::function<void(const ConnectCasesClient*, const Model::GetTemplateRequest&, const Model::GetTemplateOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetTemplateResponseReceivedHandler;
@@ -355,6 +366,9 @@ typedef std::function<void(const ConnectCasesClient*, const Model::SearchCasesRe
 typedef std::function<void(const ConnectCasesClient*, const Model::SearchRelatedItemsRequest&, const Model::SearchRelatedItemsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     SearchRelatedItemsResponseReceivedHandler;
+typedef std::function<void(const ConnectCasesClient*, const Model::StartMergeCasesRequest&, const Model::StartMergeCasesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StartMergeCasesResponseReceivedHandler;
 typedef std::function<void(const ConnectCasesClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     TagResourceResponseReceivedHandler;

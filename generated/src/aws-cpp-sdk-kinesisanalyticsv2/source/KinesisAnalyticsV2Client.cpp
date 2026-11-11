@@ -29,6 +29,7 @@
 #include <aws/kinesisanalyticsv2/model/CreateApplicationPresignedUrlRequest.h>
 #include <aws/kinesisanalyticsv2/model/CreateApplicationRequest.h>
 #include <aws/kinesisanalyticsv2/model/CreateApplicationSnapshotRequest.h>
+#include <aws/kinesisanalyticsv2/model/CreateSnapshotRequest.h>
 #include <aws/kinesisanalyticsv2/model/DeleteApplicationCloudWatchLoggingOptionRequest.h>
 #include <aws/kinesisanalyticsv2/model/DeleteApplicationInputProcessingConfigurationRequest.h>
 #include <aws/kinesisanalyticsv2/model/DeleteApplicationOutputRequest.h>
@@ -36,15 +37,22 @@
 #include <aws/kinesisanalyticsv2/model/DeleteApplicationRequest.h>
 #include <aws/kinesisanalyticsv2/model/DeleteApplicationSnapshotRequest.h>
 #include <aws/kinesisanalyticsv2/model/DeleteApplicationVpcConfigurationRequest.h>
+#include <aws/kinesisanalyticsv2/model/DeleteSnapshotRequest.h>
 #include <aws/kinesisanalyticsv2/model/DescribeApplicationOperationRequest.h>
 #include <aws/kinesisanalyticsv2/model/DescribeApplicationRequest.h>
 #include <aws/kinesisanalyticsv2/model/DescribeApplicationSnapshotRequest.h>
 #include <aws/kinesisanalyticsv2/model/DescribeApplicationVersionRequest.h>
+#include <aws/kinesisanalyticsv2/model/DescribeSnapshotOperationRequest.h>
+#include <aws/kinesisanalyticsv2/model/DescribeSnapshotRequest.h>
 #include <aws/kinesisanalyticsv2/model/DiscoverInputSchemaRequest.h>
+#include <aws/kinesisanalyticsv2/model/ExportSnapshotRequest.h>
+#include <aws/kinesisanalyticsv2/model/ImportSnapshotRequest.h>
 #include <aws/kinesisanalyticsv2/model/ListApplicationOperationsRequest.h>
 #include <aws/kinesisanalyticsv2/model/ListApplicationSnapshotsRequest.h>
 #include <aws/kinesisanalyticsv2/model/ListApplicationVersionsRequest.h>
 #include <aws/kinesisanalyticsv2/model/ListApplicationsRequest.h>
+#include <aws/kinesisanalyticsv2/model/ListSnapshotOperationsRequest.h>
+#include <aws/kinesisanalyticsv2/model/ListSnapshotsRequest.h>
 #include <aws/kinesisanalyticsv2/model/ListTagsForResourceRequest.h>
 #include <aws/kinesisanalyticsv2/model/RollbackApplicationRequest.h>
 #include <aws/kinesisanalyticsv2/model/StartApplicationRequest.h>
@@ -270,6 +278,11 @@ CreateApplicationSnapshotOutcome KinesisAnalyticsV2Client::CreateApplicationSnap
                             : CreateApplicationSnapshotOutcome(std::move(result.GetError()));
 }
 
+CreateSnapshotOutcome KinesisAnalyticsV2Client::CreateSnapshot(const CreateSnapshotRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSnapshotOutcome(result.GetResultWithOwnership()) : CreateSnapshotOutcome(std::move(result.GetError()));
+}
+
 DeleteApplicationOutcome KinesisAnalyticsV2Client::DeleteApplication(const DeleteApplicationRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteApplicationOutcome(result.GetResultWithOwnership())
@@ -317,6 +330,11 @@ DeleteApplicationVpcConfigurationOutcome KinesisAnalyticsV2Client::DeleteApplica
                             : DeleteApplicationVpcConfigurationOutcome(std::move(result.GetError()));
 }
 
+DeleteSnapshotOutcome KinesisAnalyticsV2Client::DeleteSnapshot(const DeleteSnapshotRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSnapshotOutcome(result.GetResultWithOwnership()) : DeleteSnapshotOutcome(std::move(result.GetError()));
+}
+
 DescribeApplicationOutcome KinesisAnalyticsV2Client::DescribeApplication(const DescribeApplicationRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeApplicationOutcome(result.GetResultWithOwnership())
@@ -344,10 +362,33 @@ DescribeApplicationVersionOutcome KinesisAnalyticsV2Client::DescribeApplicationV
                             : DescribeApplicationVersionOutcome(std::move(result.GetError()));
 }
 
+DescribeSnapshotOutcome KinesisAnalyticsV2Client::DescribeSnapshot(const DescribeSnapshotRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSnapshotOutcome(result.GetResultWithOwnership())
+                            : DescribeSnapshotOutcome(std::move(result.GetError()));
+}
+
+DescribeSnapshotOperationOutcome KinesisAnalyticsV2Client::DescribeSnapshotOperation(
+    const DescribeSnapshotOperationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeSnapshotOperationOutcome(result.GetResultWithOwnership())
+                            : DescribeSnapshotOperationOutcome(std::move(result.GetError()));
+}
+
 DiscoverInputSchemaOutcome KinesisAnalyticsV2Client::DiscoverInputSchema(const DiscoverInputSchemaRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DiscoverInputSchemaOutcome(result.GetResultWithOwnership())
                             : DiscoverInputSchemaOutcome(std::move(result.GetError()));
+}
+
+ExportSnapshotOutcome KinesisAnalyticsV2Client::ExportSnapshot(const ExportSnapshotRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ExportSnapshotOutcome(result.GetResultWithOwnership()) : ExportSnapshotOutcome(std::move(result.GetError()));
+}
+
+ImportSnapshotOutcome KinesisAnalyticsV2Client::ImportSnapshot(const ImportSnapshotRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ImportSnapshotOutcome(result.GetResultWithOwnership()) : ImportSnapshotOutcome(std::move(result.GetError()));
 }
 
 ListApplicationOperationsOutcome KinesisAnalyticsV2Client::ListApplicationOperations(
@@ -373,6 +414,17 @@ ListApplicationsOutcome KinesisAnalyticsV2Client::ListApplications(const ListApp
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListApplicationsOutcome(result.GetResultWithOwnership())
                             : ListApplicationsOutcome(std::move(result.GetError()));
+}
+
+ListSnapshotOperationsOutcome KinesisAnalyticsV2Client::ListSnapshotOperations(const ListSnapshotOperationsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSnapshotOperationsOutcome(result.GetResultWithOwnership())
+                            : ListSnapshotOperationsOutcome(std::move(result.GetError()));
+}
+
+ListSnapshotsOutcome KinesisAnalyticsV2Client::ListSnapshots(const ListSnapshotsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListSnapshotsOutcome(result.GetResultWithOwnership()) : ListSnapshotsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome KinesisAnalyticsV2Client::ListTagsForResource(const ListTagsForResourceRequest& request) const {

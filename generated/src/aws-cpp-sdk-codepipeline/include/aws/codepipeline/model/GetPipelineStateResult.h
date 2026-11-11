@@ -10,17 +10,17 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
-
 namespace Aws {
 template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
 namespace Utils {
-namespace Json {
-class JsonValue;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace CodePipeline {
 namespace Model {
@@ -33,8 +33,8 @@ namespace Model {
 class GetPipelineStateResult {
  public:
   AWS_CODEPIPELINE_API GetPipelineStateResult() = default;
-  AWS_CODEPIPELINE_API GetPipelineStateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-  AWS_CODEPIPELINE_API GetPipelineStateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_CODEPIPELINE_API GetPipelineStateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
+  AWS_CODEPIPELINE_API GetPipelineStateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
 
   ///@{
   /**
@@ -58,12 +58,12 @@ class GetPipelineStateResult {
    * <p>The version number of the pipeline.</p>  <p>A newly created pipeline is
    * always assigned a version number of <code>1</code>.</p>
    */
-  inline int GetPipelineVersion() const { return m_pipelineVersion; }
-  inline void SetPipelineVersion(int value) {
+  inline int64_t GetPipelineVersion() const { return m_pipelineVersion; }
+  inline void SetPipelineVersion(int64_t value) {
     m_pipelineVersionHasBeenSet = true;
     m_pipelineVersion = value;
   }
-  inline GetPipelineStateResult& WithPipelineVersion(int value) {
+  inline GetPipelineStateResult& WithPipelineVersion(int64_t value) {
     SetPipelineVersion(value);
     return *this;
   }
@@ -146,7 +146,7 @@ class GetPipelineStateResult {
  private:
   Aws::String m_pipelineName;
 
-  int m_pipelineVersion{0};
+  int64_t m_pipelineVersion{0};
 
   Aws::Vector<StageState> m_stageStates;
 

@@ -4,50 +4,160 @@
  */
 
 #include <aws/codepipeline/model/ConditionState.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace CodePipeline {
 namespace Model {
 
-ConditionState::ConditionState(JsonView jsonValue) { *this = jsonValue; }
+ConditionState::ConditionState(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-ConditionState& ConditionState::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("latestExecution")) {
-    m_latestExecution = jsonValue.GetObject("latestExecution");
-    m_latestExecutionHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ruleStates")) {
-    Aws::Utils::Array<JsonView> ruleStatesJsonList = jsonValue.GetArray("ruleStates");
-    for (unsigned ruleStatesIndex = 0; ruleStatesIndex < ruleStatesJsonList.GetLength(); ++ruleStatesIndex) {
-      m_ruleStates.push_back(ruleStatesJsonList[ruleStatesIndex].AsObject());
+ConditionState& ConditionState::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "latestExecution") {
+                m_latestExecution = ConditionExecution(decoder);
+                m_latestExecutionHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "ruleStates") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_ruleStates.push_back(RuleState(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_ruleStates.push_back(RuleState(decoder));
+                    }
+                  }
+                }
+                m_ruleStatesHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("ConditionState", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "latestExecution") {
+              m_latestExecution = ConditionExecution(decoder);
+              m_latestExecutionHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "ruleStates") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_ruleStates.push_back(RuleState(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_ruleStates.push_back(RuleState(decoder));
+                  }
+                }
+              }
+              m_ruleStatesHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
     }
-    m_ruleStatesHasBeenSet = true;
   }
+
   return *this;
 }
 
-JsonValue ConditionState::Jsonize() const {
-  JsonValue payload;
+void ConditionState::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_latestExecutionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_ruleStatesHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_latestExecutionHasBeenSet) {
-    payload.WithObject("latestExecution", m_latestExecution.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("latestExecution"));
+    m_latestExecution.CborEncode(encoder);
   }
 
   if (m_ruleStatesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> ruleStatesJsonList(m_ruleStates.size());
-    for (unsigned ruleStatesIndex = 0; ruleStatesIndex < ruleStatesJsonList.GetLength(); ++ruleStatesIndex) {
-      ruleStatesJsonList[ruleStatesIndex].AsObject(m_ruleStates[ruleStatesIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ruleStates"));
+    encoder.WriteArrayStart(m_ruleStates.size());
+    for (const auto& item_0 : m_ruleStates) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("ruleStates", std::move(ruleStatesJsonList));
   }
-
-  return payload;
 }
 
 }  // namespace Model

@@ -5,16 +5,16 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/memorydb/MemoryDB_EXPORTS.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace MemoryDB {
 namespace Model {
@@ -28,9 +28,9 @@ namespace Model {
 class ShardConfiguration {
  public:
   AWS_MEMORYDB_API ShardConfiguration() = default;
-  AWS_MEMORYDB_API ShardConfiguration(Aws::Utils::Json::JsonView jsonValue);
-  AWS_MEMORYDB_API ShardConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_MEMORYDB_API ShardConfiguration(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_MEMORYDB_API ShardConfiguration& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_MEMORYDB_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -55,13 +55,13 @@ class ShardConfiguration {
   /**
    * <p>The number of read replica nodes in this shard.</p>
    */
-  inline int GetReplicaCount() const { return m_replicaCount; }
+  inline int64_t GetReplicaCount() const { return m_replicaCount; }
   inline bool ReplicaCountHasBeenSet() const { return m_replicaCountHasBeenSet; }
-  inline void SetReplicaCount(int value) {
+  inline void SetReplicaCount(int64_t value) {
     m_replicaCountHasBeenSet = true;
     m_replicaCount = value;
   }
-  inline ShardConfiguration& WithReplicaCount(int value) {
+  inline ShardConfiguration& WithReplicaCount(int64_t value) {
     SetReplicaCount(value);
     return *this;
   }
@@ -69,7 +69,7 @@ class ShardConfiguration {
  private:
   Aws::String m_slots;
 
-  int m_replicaCount{0};
+  int64_t m_replicaCount{0};
   bool m_slotsHasBeenSet = false;
   bool m_replicaCountHasBeenSet = false;
 };

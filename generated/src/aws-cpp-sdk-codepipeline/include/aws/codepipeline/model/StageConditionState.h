@@ -8,15 +8,15 @@
 #include <aws/codepipeline/model/ConditionState.h>
 #include <aws/codepipeline/model/StageConditionsExecution.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace CodePipeline {
 namespace Model {
@@ -29,9 +29,9 @@ namespace Model {
 class StageConditionState {
  public:
   AWS_CODEPIPELINE_API StageConditionState() = default;
-  AWS_CODEPIPELINE_API StageConditionState(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CODEPIPELINE_API StageConditionState& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_CODEPIPELINE_API StageConditionState(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CODEPIPELINE_API StageConditionState& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CODEPIPELINE_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

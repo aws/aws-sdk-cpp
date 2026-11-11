@@ -436,6 +436,7 @@
 #include <aws/bedrock-agentcore-control/model/HarnessOpenAiApiFormat.h>
 #include <aws/bedrock-agentcore-control/model/HarnessOpenAiModelConfig.h>
 #include <aws/bedrock-agentcore-control/model/HarnessRemoteMcpConfig.h>
+#include <aws/bedrock-agentcore-control/model/HarnessRemoteMcpOutboundAuth.h>
 #include <aws/bedrock-agentcore-control/model/HarnessSkill.h>
 #include <aws/bedrock-agentcore-control/model/HarnessSkillAwsSkillsSource.h>
 #include <aws/bedrock-agentcore-control/model/HarnessSkillGitAuth.h>

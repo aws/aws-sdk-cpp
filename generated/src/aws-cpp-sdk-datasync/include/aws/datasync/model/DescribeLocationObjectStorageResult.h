@@ -9,6 +9,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/datasync/DataSync_EXPORTS.h>
 #include <aws/datasync/model/CmkSecretConfig.h>
 #include <aws/datasync/model/CustomSecretConfig.h>
@@ -17,15 +18,14 @@
 #include <aws/datasync/model/ObjectStorageServerProtocol.h>
 
 #include <utility>
-
 namespace Aws {
 template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
 namespace Utils {
-namespace Json {
-class JsonValue;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace DataSync {
 namespace Model {
@@ -37,8 +37,8 @@ namespace Model {
 class DescribeLocationObjectStorageResult {
  public:
   AWS_DATASYNC_API DescribeLocationObjectStorageResult() = default;
-  AWS_DATASYNC_API DescribeLocationObjectStorageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-  AWS_DATASYNC_API DescribeLocationObjectStorageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_DATASYNC_API DescribeLocationObjectStorageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
+  AWS_DATASYNC_API DescribeLocationObjectStorageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
 
   ///@{
   /**
@@ -115,12 +115,12 @@ class DescribeLocationObjectStorageResult {
    * <p>The port that your object storage server accepts inbound network traffic on
    * (for example, port 443).</p>
    */
-  inline int GetServerPort() const { return m_serverPort; }
-  inline void SetServerPort(int value) {
+  inline int64_t GetServerPort() const { return m_serverPort; }
+  inline void SetServerPort(int64_t value) {
     m_serverPortHasBeenSet = true;
     m_serverPort = value;
   }
-  inline DescribeLocationObjectStorageResult& WithServerPort(int value) {
+  inline DescribeLocationObjectStorageResult& WithServerPort(int64_t value) {
     SetServerPort(value);
     return *this;
   }
@@ -285,7 +285,7 @@ class DescribeLocationObjectStorageResult {
 
   ObjectStorageFederatedIdentityConfig m_federatedIdentity;
 
-  int m_serverPort{0};
+  int64_t m_serverPort{0};
 
   ObjectStorageServerProtocol m_serverProtocol{ObjectStorageServerProtocol::NOT_SET};
 

@@ -3,39 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/textract/model/UpdateAdapterRequest.h>
 
 #include <utility>
 
 using namespace Aws::Textract::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String UpdateAdapterRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_adapterIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_descriptionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_adapterNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_autoUpdateHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_adapterIdHasBeenSet) {
-    payload.WithString("AdapterId", m_adapterId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AdapterId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_adapterId.c_str()));
   }
 
   if (m_descriptionHasBeenSet) {
-    payload.WithString("Description", m_description);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Description"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_description.c_str()));
   }
 
   if (m_adapterNameHasBeenSet) {
-    payload.WithString("AdapterName", m_adapterName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AdapterName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_adapterName.c_str()));
   }
 
   if (m_autoUpdateHasBeenSet) {
-    payload.WithString("AutoUpdate", AutoUpdateMapper::GetNameForAutoUpdate(m_autoUpdate));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AutoUpdate"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(AutoUpdateMapper::GetNameForAutoUpdate(m_autoUpdate).c_str()));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection UpdateAdapterRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Textract.UpdateAdapter"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

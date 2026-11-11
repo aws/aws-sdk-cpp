@@ -4,126 +4,205 @@
  */
 
 #include <aws/codedeploy/model/UpdateDeploymentGroupRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 using namespace Aws::CodeDeploy::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String UpdateDeploymentGroupRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_applicationNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_currentDeploymentGroupNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_newDeploymentGroupNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_deploymentConfigNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_ec2TagFiltersHasBeenSet) {
+    mapSize++;
+  }
+  if (m_onPremisesInstanceTagFiltersHasBeenSet) {
+    mapSize++;
+  }
+  if (m_autoScalingGroupsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_serviceRoleArnHasBeenSet) {
+    mapSize++;
+  }
+  if (m_triggerConfigurationsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_alarmConfigurationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_autoRollbackConfigurationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_outdatedInstancesStrategyHasBeenSet) {
+    mapSize++;
+  }
+  if (m_deploymentStyleHasBeenSet) {
+    mapSize++;
+  }
+  if (m_blueGreenDeploymentConfigurationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_loadBalancerInfoHasBeenSet) {
+    mapSize++;
+  }
+  if (m_ec2TagSetHasBeenSet) {
+    mapSize++;
+  }
+  if (m_ecsServicesHasBeenSet) {
+    mapSize++;
+  }
+  if (m_onPremisesTagSetHasBeenSet) {
+    mapSize++;
+  }
+  if (m_ec2DeploymentOptionsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_terminationHookEnabledHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_applicationNameHasBeenSet) {
-    payload.WithString("applicationName", m_applicationName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("applicationName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_applicationName.c_str()));
   }
 
   if (m_currentDeploymentGroupNameHasBeenSet) {
-    payload.WithString("currentDeploymentGroupName", m_currentDeploymentGroupName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("currentDeploymentGroupName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_currentDeploymentGroupName.c_str()));
   }
 
   if (m_newDeploymentGroupNameHasBeenSet) {
-    payload.WithString("newDeploymentGroupName", m_newDeploymentGroupName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("newDeploymentGroupName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_newDeploymentGroupName.c_str()));
   }
 
   if (m_deploymentConfigNameHasBeenSet) {
-    payload.WithString("deploymentConfigName", m_deploymentConfigName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("deploymentConfigName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_deploymentConfigName.c_str()));
   }
 
   if (m_ec2TagFiltersHasBeenSet) {
-    Aws::Utils::Array<JsonValue> ec2TagFiltersJsonList(m_ec2TagFilters.size());
-    for (unsigned ec2TagFiltersIndex = 0; ec2TagFiltersIndex < ec2TagFiltersJsonList.GetLength(); ++ec2TagFiltersIndex) {
-      ec2TagFiltersJsonList[ec2TagFiltersIndex].AsObject(m_ec2TagFilters[ec2TagFiltersIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ec2TagFilters"));
+    encoder.WriteArrayStart(m_ec2TagFilters.size());
+    for (const auto& item_0 : m_ec2TagFilters) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("ec2TagFilters", std::move(ec2TagFiltersJsonList));
   }
 
   if (m_onPremisesInstanceTagFiltersHasBeenSet) {
-    Aws::Utils::Array<JsonValue> onPremisesInstanceTagFiltersJsonList(m_onPremisesInstanceTagFilters.size());
-    for (unsigned onPremisesInstanceTagFiltersIndex = 0;
-         onPremisesInstanceTagFiltersIndex < onPremisesInstanceTagFiltersJsonList.GetLength(); ++onPremisesInstanceTagFiltersIndex) {
-      onPremisesInstanceTagFiltersJsonList[onPremisesInstanceTagFiltersIndex].AsObject(
-          m_onPremisesInstanceTagFilters[onPremisesInstanceTagFiltersIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("onPremisesInstanceTagFilters"));
+    encoder.WriteArrayStart(m_onPremisesInstanceTagFilters.size());
+    for (const auto& item_0 : m_onPremisesInstanceTagFilters) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("onPremisesInstanceTagFilters", std::move(onPremisesInstanceTagFiltersJsonList));
   }
 
   if (m_autoScalingGroupsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> autoScalingGroupsJsonList(m_autoScalingGroups.size());
-    for (unsigned autoScalingGroupsIndex = 0; autoScalingGroupsIndex < autoScalingGroupsJsonList.GetLength(); ++autoScalingGroupsIndex) {
-      autoScalingGroupsJsonList[autoScalingGroupsIndex].AsString(m_autoScalingGroups[autoScalingGroupsIndex]);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("autoScalingGroups"));
+    encoder.WriteArrayStart(m_autoScalingGroups.size());
+    for (const auto& item_0 : m_autoScalingGroups) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
     }
-    payload.WithArray("autoScalingGroups", std::move(autoScalingGroupsJsonList));
   }
 
   if (m_serviceRoleArnHasBeenSet) {
-    payload.WithString("serviceRoleArn", m_serviceRoleArn);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("serviceRoleArn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_serviceRoleArn.c_str()));
   }
 
   if (m_triggerConfigurationsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> triggerConfigurationsJsonList(m_triggerConfigurations.size());
-    for (unsigned triggerConfigurationsIndex = 0; triggerConfigurationsIndex < triggerConfigurationsJsonList.GetLength();
-         ++triggerConfigurationsIndex) {
-      triggerConfigurationsJsonList[triggerConfigurationsIndex].AsObject(m_triggerConfigurations[triggerConfigurationsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("triggerConfigurations"));
+    encoder.WriteArrayStart(m_triggerConfigurations.size());
+    for (const auto& item_0 : m_triggerConfigurations) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("triggerConfigurations", std::move(triggerConfigurationsJsonList));
   }
 
   if (m_alarmConfigurationHasBeenSet) {
-    payload.WithObject("alarmConfiguration", m_alarmConfiguration.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("alarmConfiguration"));
+    m_alarmConfiguration.CborEncode(encoder);
   }
 
   if (m_autoRollbackConfigurationHasBeenSet) {
-    payload.WithObject("autoRollbackConfiguration", m_autoRollbackConfiguration.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("autoRollbackConfiguration"));
+    m_autoRollbackConfiguration.CborEncode(encoder);
   }
 
   if (m_outdatedInstancesStrategyHasBeenSet) {
-    payload.WithString("outdatedInstancesStrategy",
-                       OutdatedInstancesStrategyMapper::GetNameForOutdatedInstancesStrategy(m_outdatedInstancesStrategy));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("outdatedInstancesStrategy"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(
+        OutdatedInstancesStrategyMapper::GetNameForOutdatedInstancesStrategy(m_outdatedInstancesStrategy).c_str()));
   }
 
   if (m_deploymentStyleHasBeenSet) {
-    payload.WithObject("deploymentStyle", m_deploymentStyle.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("deploymentStyle"));
+    m_deploymentStyle.CborEncode(encoder);
   }
 
   if (m_blueGreenDeploymentConfigurationHasBeenSet) {
-    payload.WithObject("blueGreenDeploymentConfiguration", m_blueGreenDeploymentConfiguration.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("blueGreenDeploymentConfiguration"));
+    m_blueGreenDeploymentConfiguration.CborEncode(encoder);
   }
 
   if (m_loadBalancerInfoHasBeenSet) {
-    payload.WithObject("loadBalancerInfo", m_loadBalancerInfo.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("loadBalancerInfo"));
+    m_loadBalancerInfo.CborEncode(encoder);
   }
 
   if (m_ec2TagSetHasBeenSet) {
-    payload.WithObject("ec2TagSet", m_ec2TagSet.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ec2TagSet"));
+    m_ec2TagSet.CborEncode(encoder);
   }
 
   if (m_ecsServicesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> ecsServicesJsonList(m_ecsServices.size());
-    for (unsigned ecsServicesIndex = 0; ecsServicesIndex < ecsServicesJsonList.GetLength(); ++ecsServicesIndex) {
-      ecsServicesJsonList[ecsServicesIndex].AsObject(m_ecsServices[ecsServicesIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ecsServices"));
+    encoder.WriteArrayStart(m_ecsServices.size());
+    for (const auto& item_0 : m_ecsServices) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("ecsServices", std::move(ecsServicesJsonList));
   }
 
   if (m_onPremisesTagSetHasBeenSet) {
-    payload.WithObject("onPremisesTagSet", m_onPremisesTagSet.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("onPremisesTagSet"));
+    m_onPremisesTagSet.CborEncode(encoder);
   }
 
   if (m_ec2DeploymentOptionsHasBeenSet) {
-    payload.WithObject("ec2DeploymentOptions", m_ec2DeploymentOptions.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ec2DeploymentOptions"));
+    m_ec2DeploymentOptions.CborEncode(encoder);
   }
 
   if (m_terminationHookEnabledHasBeenSet) {
-    payload.WithBool("terminationHookEnabled", m_terminationHookEnabled);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("terminationHookEnabled"));
+    encoder.WriteBool(m_terminationHookEnabled);
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection UpdateDeploymentGroupRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeDeploy_20141006.UpdateDeploymentGroup"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

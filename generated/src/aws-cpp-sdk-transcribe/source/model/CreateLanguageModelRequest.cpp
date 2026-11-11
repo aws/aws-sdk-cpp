@@ -3,51 +3,81 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/transcribe/model/CreateLanguageModelRequest.h>
 
 #include <utility>
 
 using namespace Aws::TranscribeService::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String CreateLanguageModelRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_languageCodeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_baseModelNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_modelNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_inputDataConfigHasBeenSet) {
+    mapSize++;
+  }
+  if (m_encryptionConfigurationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_tagsHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_languageCodeHasBeenSet) {
-    payload.WithString("LanguageCode", CLMLanguageCodeMapper::GetNameForCLMLanguageCode(m_languageCode));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("LanguageCode"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(CLMLanguageCodeMapper::GetNameForCLMLanguageCode(m_languageCode).c_str()));
   }
 
   if (m_baseModelNameHasBeenSet) {
-    payload.WithString("BaseModelName", BaseModelNameMapper::GetNameForBaseModelName(m_baseModelName));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("BaseModelName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(BaseModelNameMapper::GetNameForBaseModelName(m_baseModelName).c_str()));
   }
 
   if (m_modelNameHasBeenSet) {
-    payload.WithString("ModelName", m_modelName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ModelName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_modelName.c_str()));
   }
 
   if (m_inputDataConfigHasBeenSet) {
-    payload.WithObject("InputDataConfig", m_inputDataConfig.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("InputDataConfig"));
+    m_inputDataConfig.CborEncode(encoder);
   }
 
   if (m_encryptionConfigurationHasBeenSet) {
-    payload.WithObject("EncryptionConfiguration", m_encryptionConfiguration.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("EncryptionConfiguration"));
+    m_encryptionConfiguration.CborEncode(encoder);
   }
 
   if (m_tagsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
-      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Tags"));
+    encoder.WriteArrayStart(m_tags.size());
+    for (const auto& item_0 : m_tags) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("Tags", std::move(tagsJsonList));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection CreateLanguageModelRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Transcribe.CreateLanguageModel"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

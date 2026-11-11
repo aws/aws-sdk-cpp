@@ -10,15 +10,15 @@
 #include <aws/comprehend/model/DatasetDocumentClassifierInputDataConfig.h>
 #include <aws/comprehend/model/DatasetEntityRecognizerInputDataConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace Comprehend {
 namespace Model {
@@ -32,9 +32,9 @@ namespace Model {
 class DatasetInputDataConfig {
  public:
   AWS_COMPREHEND_API DatasetInputDataConfig() = default;
-  AWS_COMPREHEND_API DatasetInputDataConfig(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPREHEND_API DatasetInputDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_COMPREHEND_API DatasetInputDataConfig(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPREHEND_API DatasetInputDataConfig& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPREHEND_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

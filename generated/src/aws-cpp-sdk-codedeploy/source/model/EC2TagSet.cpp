@@ -4,52 +4,249 @@
  */
 
 #include <aws/codedeploy/model/EC2TagSet.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace CodeDeploy {
 namespace Model {
 
-EC2TagSet::EC2TagSet(JsonView jsonValue) { *this = jsonValue; }
+EC2TagSet::EC2TagSet(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-EC2TagSet& EC2TagSet::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("ec2TagSetList")) {
-    Aws::Utils::Array<JsonView> ec2TagSetListJsonList = jsonValue.GetArray("ec2TagSetList");
-    for (unsigned ec2TagSetListIndex = 0; ec2TagSetListIndex < ec2TagSetListJsonList.GetLength(); ++ec2TagSetListIndex) {
-      Aws::Utils::Array<JsonView> eC2TagFilterList2JsonList = ec2TagSetListJsonList[ec2TagSetListIndex].AsArray();
-      Aws::Vector<EC2TagFilter> eC2TagFilterList2List;
-      eC2TagFilterList2List.reserve((size_t)eC2TagFilterList2JsonList.GetLength());
-      for (unsigned eC2TagFilterList2Index = 0; eC2TagFilterList2Index < eC2TagFilterList2JsonList.GetLength(); ++eC2TagFilterList2Index) {
-        eC2TagFilterList2List.push_back(eC2TagFilterList2JsonList[eC2TagFilterList2Index].AsObject());
+EC2TagSet& EC2TagSet::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "ec2TagSetList") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        auto nestedList_1 = Vector<EC2TagFilter>();
+                        auto peekType_1 = decoder->PeekType();
+                        if (peekType_1.has_value() &&
+                            (peekType_1.value() == CborType::ArrayStart || peekType_1.value() == CborType::IndefArrayStart)) {
+                          if (peekType_1.value() == CborType::ArrayStart) {
+                            auto listSize_1 = decoder->PopNextArrayStart();
+                            if (listSize_1.has_value()) {
+                              for (size_t j_1 = 0; j_1 < listSize_1.value(); j_1++) {
+                                nestedList_1.push_back(EC2TagFilter(decoder));
+                              }
+                            }
+                          } else  // IndefArrayStart
+                          {
+                            decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                            while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                              auto nextType_1 = decoder->PeekType();
+                              if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
+                                if (nextType_1.has_value()) {
+                                  decoder->ConsumeNextSingleElement();  // consume the Break
+                                }
+                                break;
+                              }
+                              nestedList_1.push_back(EC2TagFilter(decoder));
+                            }
+                          }
+                          m_ec2TagSetList.push_back(nestedList_1);
+                        }
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto nestedList_1 = Vector<EC2TagFilter>();
+                      auto peekType_1 = decoder->PeekType();
+                      if (peekType_1.has_value() &&
+                          (peekType_1.value() == CborType::ArrayStart || peekType_1.value() == CborType::IndefArrayStart)) {
+                        if (peekType_1.value() == CborType::ArrayStart) {
+                          auto listSize_1 = decoder->PopNextArrayStart();
+                          if (listSize_1.has_value()) {
+                            for (size_t j_1 = 0; j_1 < listSize_1.value(); j_1++) {
+                              nestedList_1.push_back(EC2TagFilter(decoder));
+                            }
+                          }
+                        } else  // IndefArrayStart
+                        {
+                          decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                          while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                            auto nextType_1 = decoder->PeekType();
+                            if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
+                              if (nextType_1.has_value()) {
+                                decoder->ConsumeNextSingleElement();  // consume the Break
+                              }
+                              break;
+                            }
+                            nestedList_1.push_back(EC2TagFilter(decoder));
+                          }
+                        }
+                        m_ec2TagSetList.push_back(nestedList_1);
+                      }
+                    }
+                  }
+                }
+                m_ec2TagSetListHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("EC2TagSet", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "ec2TagSetList") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      auto nestedList_1 = Vector<EC2TagFilter>();
+                      auto peekType_1 = decoder->PeekType();
+                      if (peekType_1.has_value() &&
+                          (peekType_1.value() == CborType::ArrayStart || peekType_1.value() == CborType::IndefArrayStart)) {
+                        if (peekType_1.value() == CborType::ArrayStart) {
+                          auto listSize_1 = decoder->PopNextArrayStart();
+                          if (listSize_1.has_value()) {
+                            for (size_t j_1 = 0; j_1 < listSize_1.value(); j_1++) {
+                              nestedList_1.push_back(EC2TagFilter(decoder));
+                            }
+                          }
+                        } else  // IndefArrayStart
+                        {
+                          decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                          while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                            auto nextType_1 = decoder->PeekType();
+                            if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
+                              if (nextType_1.has_value()) {
+                                decoder->ConsumeNextSingleElement();  // consume the Break
+                              }
+                              break;
+                            }
+                            nestedList_1.push_back(EC2TagFilter(decoder));
+                          }
+                        }
+                        m_ec2TagSetList.push_back(nestedList_1);
+                      }
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto nestedList_1 = Vector<EC2TagFilter>();
+                    auto peekType_1 = decoder->PeekType();
+                    if (peekType_1.has_value() &&
+                        (peekType_1.value() == CborType::ArrayStart || peekType_1.value() == CborType::IndefArrayStart)) {
+                      if (peekType_1.value() == CborType::ArrayStart) {
+                        auto listSize_1 = decoder->PopNextArrayStart();
+                        if (listSize_1.has_value()) {
+                          for (size_t j_1 = 0; j_1 < listSize_1.value(); j_1++) {
+                            nestedList_1.push_back(EC2TagFilter(decoder));
+                          }
+                        }
+                      } else  // IndefArrayStart
+                      {
+                        decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                          auto nextType_1 = decoder->PeekType();
+                          if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
+                            if (nextType_1.has_value()) {
+                              decoder->ConsumeNextSingleElement();  // consume the Break
+                            }
+                            break;
+                          }
+                          nestedList_1.push_back(EC2TagFilter(decoder));
+                        }
+                      }
+                      m_ec2TagSetList.push_back(nestedList_1);
+                    }
+                  }
+                }
+              }
+              m_ec2TagSetListHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
       }
-      m_ec2TagSetList.push_back(std::move(eC2TagFilterList2List));
     }
-    m_ec2TagSetListHasBeenSet = true;
   }
+
   return *this;
 }
 
-JsonValue EC2TagSet::Jsonize() const {
-  JsonValue payload;
-
+void EC2TagSet::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
   if (m_ec2TagSetListHasBeenSet) {
-    Aws::Utils::Array<JsonValue> ec2TagSetListJsonList(m_ec2TagSetList.size());
-    for (unsigned ec2TagSetListIndex = 0; ec2TagSetListIndex < ec2TagSetListJsonList.GetLength(); ++ec2TagSetListIndex) {
-      Aws::Utils::Array<JsonValue> eC2TagFilterListJsonList(m_ec2TagSetList[ec2TagSetListIndex].size());
-      for (unsigned eC2TagFilterListIndex = 0; eC2TagFilterListIndex < eC2TagFilterListJsonList.GetLength(); ++eC2TagFilterListIndex) {
-        eC2TagFilterListJsonList[eC2TagFilterListIndex].AsObject(m_ec2TagSetList[ec2TagSetListIndex][eC2TagFilterListIndex].Jsonize());
-      }
-      ec2TagSetListJsonList[ec2TagSetListIndex].AsArray(std::move(eC2TagFilterListJsonList));
-    }
-    payload.WithArray("ec2TagSetList", std::move(ec2TagSetListJsonList));
+    mapSize++;
   }
 
-  return payload;
+  encoder.WriteMapStart(mapSize);
+
+  if (m_ec2TagSetListHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ec2TagSetList"));
+    encoder.WriteArrayStart(m_ec2TagSetList.size());
+    for (const auto& item_0 : m_ec2TagSetList) {
+      encoder.WriteArrayStart(item_0.size());
+      for (const auto& item_1 : item_0) {
+        item_1.CborEncode(encoder);
+      }
+    }
+  }
 }
 
 }  // namespace Model

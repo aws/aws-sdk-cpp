@@ -5,13 +5,13 @@
 
 #pragma once
 #include <aws/acm-pca/ACMPCA_EXPORTS.h>
+#include <aws/crt/cbor/Cbor.h>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace ACMPCA {
 namespace Model {
@@ -25,9 +25,9 @@ namespace Model {
 class KeyUsage {
  public:
   AWS_ACMPCA_API KeyUsage() = default;
-  AWS_ACMPCA_API KeyUsage(Aws::Utils::Json::JsonView jsonValue);
-  AWS_ACMPCA_API KeyUsage& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_ACMPCA_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_ACMPCA_API KeyUsage(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_ACMPCA_API KeyUsage& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_ACMPCA_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

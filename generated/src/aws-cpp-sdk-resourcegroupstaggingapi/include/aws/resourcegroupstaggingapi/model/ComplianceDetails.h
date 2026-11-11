@@ -6,16 +6,16 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPI_EXPORTS.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace ResourceGroupsTaggingAPI {
 namespace Model {
@@ -30,9 +30,9 @@ namespace Model {
 class ComplianceDetails {
  public:
   AWS_RESOURCEGROUPSTAGGINGAPI_API ComplianceDetails() = default;
-  AWS_RESOURCEGROUPSTAGGINGAPI_API ComplianceDetails(Aws::Utils::Json::JsonView jsonValue);
-  AWS_RESOURCEGROUPSTAGGINGAPI_API ComplianceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_RESOURCEGROUPSTAGGINGAPI_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_RESOURCEGROUPSTAGGINGAPI_API ComplianceDetails(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_RESOURCEGROUPSTAGGINGAPI_API ComplianceDetails& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_RESOURCEGROUPSTAGGINGAPI_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

@@ -3,47 +3,78 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/memorydb/model/DescribeEngineVersionsRequest.h>
 
 #include <utility>
 
 using namespace Aws::MemoryDB::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String DescribeEngineVersionsRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_engineHasBeenSet) {
+    mapSize++;
+  }
+  if (m_engineVersionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_parameterGroupFamilyHasBeenSet) {
+    mapSize++;
+  }
+  if (m_maxResultsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_nextTokenHasBeenSet) {
+    mapSize++;
+  }
+  if (m_defaultOnlyHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_engineHasBeenSet) {
-    payload.WithString("Engine", m_engine);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Engine"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_engine.c_str()));
   }
 
   if (m_engineVersionHasBeenSet) {
-    payload.WithString("EngineVersion", m_engineVersion);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("EngineVersion"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_engineVersion.c_str()));
   }
 
   if (m_parameterGroupFamilyHasBeenSet) {
-    payload.WithString("ParameterGroupFamily", m_parameterGroupFamily);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ParameterGroupFamily"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_parameterGroupFamily.c_str()));
   }
 
   if (m_maxResultsHasBeenSet) {
-    payload.WithInteger("MaxResults", m_maxResults);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("MaxResults"));
+    (m_maxResults >= 0) ? encoder.WriteUInt(m_maxResults) : encoder.WriteNegInt(m_maxResults);
   }
 
   if (m_nextTokenHasBeenSet) {
-    payload.WithString("NextToken", m_nextToken);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("NextToken"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_nextToken.c_str()));
   }
 
   if (m_defaultOnlyHasBeenSet) {
-    payload.WithBool("DefaultOnly", m_defaultOnly);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("DefaultOnly"));
+    encoder.WriteBool(m_defaultOnly);
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection DescribeEngineVersionsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonMemoryDB.DescribeEngineVersions"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

@@ -3,117 +3,468 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/directconnect/model/DirectConnectGatewayAssociationProposal.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace DirectConnect {
 namespace Model {
 
-DirectConnectGatewayAssociationProposal::DirectConnectGatewayAssociationProposal(JsonView jsonValue) { *this = jsonValue; }
+DirectConnectGatewayAssociationProposal::DirectConnectGatewayAssociationProposal(
+    const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  *this = decoder;
+}
 
-DirectConnectGatewayAssociationProposal& DirectConnectGatewayAssociationProposal::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("proposalId")) {
-    m_proposalId = jsonValue.GetString("proposalId");
-    m_proposalIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("directConnectGatewayId")) {
-    m_directConnectGatewayId = jsonValue.GetString("directConnectGatewayId");
-    m_directConnectGatewayIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("directConnectGatewayOwnerAccount")) {
-    m_directConnectGatewayOwnerAccount = jsonValue.GetString("directConnectGatewayOwnerAccount");
-    m_directConnectGatewayOwnerAccountHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("proposalState")) {
-    m_proposalState = DirectConnectGatewayAssociationProposalStateMapper::GetDirectConnectGatewayAssociationProposalStateForName(
-        jsonValue.GetString("proposalState"));
-    m_proposalStateHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("associatedGateway")) {
-    m_associatedGateway = jsonValue.GetObject("associatedGateway");
-    m_associatedGatewayHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("existingAllowedPrefixesToDirectConnectGateway")) {
-    Aws::Utils::Array<JsonView> existingAllowedPrefixesToDirectConnectGatewayJsonList =
-        jsonValue.GetArray("existingAllowedPrefixesToDirectConnectGateway");
-    for (unsigned existingAllowedPrefixesToDirectConnectGatewayIndex = 0;
-         existingAllowedPrefixesToDirectConnectGatewayIndex < existingAllowedPrefixesToDirectConnectGatewayJsonList.GetLength();
-         ++existingAllowedPrefixesToDirectConnectGatewayIndex) {
-      m_existingAllowedPrefixesToDirectConnectGateway.push_back(
-          existingAllowedPrefixesToDirectConnectGatewayJsonList[existingAllowedPrefixesToDirectConnectGatewayIndex].AsObject());
+DirectConnectGatewayAssociationProposal& DirectConnectGatewayAssociationProposal::operator=(
+    const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "proposalId") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_proposalId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_proposalId = ss.str();
+                  }
+                }
+                m_proposalIdHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "directConnectGatewayId") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_directConnectGatewayId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_directConnectGatewayId = ss.str();
+                  }
+                }
+                m_directConnectGatewayIdHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "directConnectGatewayOwnerAccount") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_directConnectGatewayOwnerAccount = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_directConnectGatewayOwnerAccount = ss.str();
+                  }
+                }
+                m_directConnectGatewayOwnerAccountHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "proposalState") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_proposalState =
+                      DirectConnectGatewayAssociationProposalStateMapper::GetDirectConnectGatewayAssociationProposalStateForName(
+                          Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_proposalStateHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "associatedGateway") {
+                m_associatedGateway = AssociatedGateway(decoder);
+                m_associatedGatewayHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "existingAllowedPrefixesToDirectConnectGateway") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_existingAllowedPrefixesToDirectConnectGateway.push_back(RouteFilterPrefix(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_existingAllowedPrefixesToDirectConnectGateway.push_back(RouteFilterPrefix(decoder));
+                    }
+                  }
+                }
+                m_existingAllowedPrefixesToDirectConnectGatewayHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "requestedAllowedPrefixesToDirectConnectGateway") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_requestedAllowedPrefixesToDirectConnectGateway.push_back(RouteFilterPrefix(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_requestedAllowedPrefixesToDirectConnectGateway.push_back(RouteFilterPrefix(decoder));
+                    }
+                  }
+                }
+                m_requestedAllowedPrefixesToDirectConnectGatewayHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("DirectConnectGatewayAssociationProposal", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "proposalId") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_proposalId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_proposalId = ss.str();
+                }
+              }
+              m_proposalIdHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "directConnectGatewayId") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_directConnectGatewayId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_directConnectGatewayId = ss.str();
+                }
+              }
+              m_directConnectGatewayIdHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "directConnectGatewayOwnerAccount") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_directConnectGatewayOwnerAccount = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_directConnectGatewayOwnerAccount = ss.str();
+                }
+              }
+              m_directConnectGatewayOwnerAccountHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "proposalState") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_proposalState =
+                    DirectConnectGatewayAssociationProposalStateMapper::GetDirectConnectGatewayAssociationProposalStateForName(
+                        Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_proposalStateHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "associatedGateway") {
+              m_associatedGateway = AssociatedGateway(decoder);
+              m_associatedGatewayHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "existingAllowedPrefixesToDirectConnectGateway") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_existingAllowedPrefixesToDirectConnectGateway.push_back(RouteFilterPrefix(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_existingAllowedPrefixesToDirectConnectGateway.push_back(RouteFilterPrefix(decoder));
+                  }
+                }
+              }
+              m_existingAllowedPrefixesToDirectConnectGatewayHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "requestedAllowedPrefixesToDirectConnectGateway") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_requestedAllowedPrefixesToDirectConnectGateway.push_back(RouteFilterPrefix(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_requestedAllowedPrefixesToDirectConnectGateway.push_back(RouteFilterPrefix(decoder));
+                  }
+                }
+              }
+              m_requestedAllowedPrefixesToDirectConnectGatewayHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
     }
-    m_existingAllowedPrefixesToDirectConnectGatewayHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("requestedAllowedPrefixesToDirectConnectGateway")) {
-    Aws::Utils::Array<JsonView> requestedAllowedPrefixesToDirectConnectGatewayJsonList =
-        jsonValue.GetArray("requestedAllowedPrefixesToDirectConnectGateway");
-    for (unsigned requestedAllowedPrefixesToDirectConnectGatewayIndex = 0;
-         requestedAllowedPrefixesToDirectConnectGatewayIndex < requestedAllowedPrefixesToDirectConnectGatewayJsonList.GetLength();
-         ++requestedAllowedPrefixesToDirectConnectGatewayIndex) {
-      m_requestedAllowedPrefixesToDirectConnectGateway.push_back(
-          requestedAllowedPrefixesToDirectConnectGatewayJsonList[requestedAllowedPrefixesToDirectConnectGatewayIndex].AsObject());
-    }
-    m_requestedAllowedPrefixesToDirectConnectGatewayHasBeenSet = true;
-  }
+
   return *this;
 }
 
-JsonValue DirectConnectGatewayAssociationProposal::Jsonize() const {
-  JsonValue payload;
+void DirectConnectGatewayAssociationProposal::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_proposalIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_directConnectGatewayIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_directConnectGatewayOwnerAccountHasBeenSet) {
+    mapSize++;
+  }
+  if (m_proposalStateHasBeenSet) {
+    mapSize++;
+  }
+  if (m_associatedGatewayHasBeenSet) {
+    mapSize++;
+  }
+  if (m_existingAllowedPrefixesToDirectConnectGatewayHasBeenSet) {
+    mapSize++;
+  }
+  if (m_requestedAllowedPrefixesToDirectConnectGatewayHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_proposalIdHasBeenSet) {
-    payload.WithString("proposalId", m_proposalId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("proposalId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_proposalId.c_str()));
   }
 
   if (m_directConnectGatewayIdHasBeenSet) {
-    payload.WithString("directConnectGatewayId", m_directConnectGatewayId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("directConnectGatewayId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_directConnectGatewayId.c_str()));
   }
 
   if (m_directConnectGatewayOwnerAccountHasBeenSet) {
-    payload.WithString("directConnectGatewayOwnerAccount", m_directConnectGatewayOwnerAccount);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("directConnectGatewayOwnerAccount"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_directConnectGatewayOwnerAccount.c_str()));
   }
 
   if (m_proposalStateHasBeenSet) {
-    payload.WithString(
-        "proposalState",
-        DirectConnectGatewayAssociationProposalStateMapper::GetNameForDirectConnectGatewayAssociationProposalState(m_proposalState));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("proposalState"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(
+        DirectConnectGatewayAssociationProposalStateMapper::GetNameForDirectConnectGatewayAssociationProposalState(m_proposalState)
+            .c_str()));
   }
 
   if (m_associatedGatewayHasBeenSet) {
-    payload.WithObject("associatedGateway", m_associatedGateway.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("associatedGateway"));
+    m_associatedGateway.CborEncode(encoder);
   }
 
   if (m_existingAllowedPrefixesToDirectConnectGatewayHasBeenSet) {
-    Aws::Utils::Array<JsonValue> existingAllowedPrefixesToDirectConnectGatewayJsonList(
-        m_existingAllowedPrefixesToDirectConnectGateway.size());
-    for (unsigned existingAllowedPrefixesToDirectConnectGatewayIndex = 0;
-         existingAllowedPrefixesToDirectConnectGatewayIndex < existingAllowedPrefixesToDirectConnectGatewayJsonList.GetLength();
-         ++existingAllowedPrefixesToDirectConnectGatewayIndex) {
-      existingAllowedPrefixesToDirectConnectGatewayJsonList[existingAllowedPrefixesToDirectConnectGatewayIndex].AsObject(
-          m_existingAllowedPrefixesToDirectConnectGateway[existingAllowedPrefixesToDirectConnectGatewayIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("existingAllowedPrefixesToDirectConnectGateway"));
+    encoder.WriteArrayStart(m_existingAllowedPrefixesToDirectConnectGateway.size());
+    for (const auto& item_0 : m_existingAllowedPrefixesToDirectConnectGateway) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("existingAllowedPrefixesToDirectConnectGateway", std::move(existingAllowedPrefixesToDirectConnectGatewayJsonList));
   }
 
   if (m_requestedAllowedPrefixesToDirectConnectGatewayHasBeenSet) {
-    Aws::Utils::Array<JsonValue> requestedAllowedPrefixesToDirectConnectGatewayJsonList(
-        m_requestedAllowedPrefixesToDirectConnectGateway.size());
-    for (unsigned requestedAllowedPrefixesToDirectConnectGatewayIndex = 0;
-         requestedAllowedPrefixesToDirectConnectGatewayIndex < requestedAllowedPrefixesToDirectConnectGatewayJsonList.GetLength();
-         ++requestedAllowedPrefixesToDirectConnectGatewayIndex) {
-      requestedAllowedPrefixesToDirectConnectGatewayJsonList[requestedAllowedPrefixesToDirectConnectGatewayIndex].AsObject(
-          m_requestedAllowedPrefixesToDirectConnectGateway[requestedAllowedPrefixesToDirectConnectGatewayIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("requestedAllowedPrefixesToDirectConnectGateway"));
+    encoder.WriteArrayStart(m_requestedAllowedPrefixesToDirectConnectGateway.size());
+    for (const auto& item_0 : m_requestedAllowedPrefixesToDirectConnectGateway) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("requestedAllowedPrefixesToDirectConnectGateway", std::move(requestedAllowedPrefixesToDirectConnectGatewayJsonList));
   }
-
-  return payload;
 }
 
 }  // namespace Model

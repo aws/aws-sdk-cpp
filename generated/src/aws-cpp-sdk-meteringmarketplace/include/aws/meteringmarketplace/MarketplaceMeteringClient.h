@@ -201,8 +201,10 @@ class AWS_MARKETPLACEMETERING_API MarketplaceMeteringClient : public Aws::Client
    * tagging</a> and <a
    * href="https://docs.aws.amazon.com/marketplace/latest/userguide/saas-code-examples.html#saas-batchmeterusage-tagging">BatchMeterUsage
    * with usage allocation tagging code example</a> in the <i>Amazon Web Services
-   * Marketplace Seller Guide</i>.</p> <p> <code>BatchMeterUsage</code> returns a
-   * list of <code>UsageRecordResult</code> objects, which have each
+   * Marketplace Seller Guide</i>.</p> <p>To report fractional usage, use
+   * <code>QuantityAsDecimal</code> instead of <code>Quantity</code> in each
+   * <code>UsageRecord</code>.</p> <p> <code>BatchMeterUsage</code> returns a list of
+   * <code>UsageRecordResult</code> objects, which have each
    * <code>UsageRecord</code>. It also returns a list of
    * <code>UnprocessedRecords</code>, which indicate errors on the service side that
    * should be retried.</p> <p>For Amazon Web Services Regions that support
@@ -283,10 +285,12 @@ class AWS_MARKETPLACEMETERING_API MarketplaceMeteringClient : public Aws::Client
    * <code>Timestamps</code> are aggregated as long as the <code>ClientToken</code>
    * is unique.</p> </li> </ul> <p>If you submit records more than six hours after
    * events occur, the records won't be accepted. The timestamp in your request
-   * determines when an event is recorded.</p> <p>You can optionally include multiple
-   * usage allocations, to provide customers with usage data split into buckets by
-   * tags that you define or allow the customer to define.</p> <p>For Amazon Web
-   * Services Regions that support <code>MeterUsage</code>, see <a
+   * determines when an event is recorded.</p> <p>To report fractional usage, use
+   * <code>UsageQuantityAsDecimal</code> instead of <code>UsageQuantity</code>.</p>
+   * <p>You can optionally include multiple usage allocations, to provide customers
+   * with usage data split into buckets by tags that you define or allow the customer
+   * to define.</p> <p>For Amazon Web Services Regions that support
+   * <code>MeterUsage</code>, see <a
    * href="https://docs.aws.amazon.com/marketplace/latest/APIReference/metering-regions.html#meterusage-region-support-ec2">MeterUsage
    * Region support for Amazon EC2</a> and <a
    * href="https://docs.aws.amazon.com/marketplace/latest/APIReference/metering-regions.html#meterusage-region-support-ecs-eks">MeterUsage

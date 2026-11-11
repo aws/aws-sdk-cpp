@@ -4,52 +4,80 @@
  */
 
 #include <aws/codedeploy/model/ListDeploymentsRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 using namespace Aws::CodeDeploy::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String ListDeploymentsRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_applicationNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_deploymentGroupNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_externalIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_includeOnlyStatusesHasBeenSet) {
+    mapSize++;
+  }
+  if (m_createTimeRangeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_nextTokenHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_applicationNameHasBeenSet) {
-    payload.WithString("applicationName", m_applicationName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("applicationName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_applicationName.c_str()));
   }
 
   if (m_deploymentGroupNameHasBeenSet) {
-    payload.WithString("deploymentGroupName", m_deploymentGroupName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("deploymentGroupName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_deploymentGroupName.c_str()));
   }
 
   if (m_externalIdHasBeenSet) {
-    payload.WithString("externalId", m_externalId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("externalId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_externalId.c_str()));
   }
 
   if (m_includeOnlyStatusesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> includeOnlyStatusesJsonList(m_includeOnlyStatuses.size());
-    for (unsigned includeOnlyStatusesIndex = 0; includeOnlyStatusesIndex < includeOnlyStatusesJsonList.GetLength();
-         ++includeOnlyStatusesIndex) {
-      includeOnlyStatusesJsonList[includeOnlyStatusesIndex].AsString(
-          DeploymentStatusMapper::GetNameForDeploymentStatus(m_includeOnlyStatuses[includeOnlyStatusesIndex]));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("includeOnlyStatuses"));
+    encoder.WriteArrayStart(m_includeOnlyStatuses.size());
+    for (const auto& item_0 : m_includeOnlyStatuses) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(DeploymentStatusMapper::GetNameForDeploymentStatus(item_0).c_str()));
     }
-    payload.WithArray("includeOnlyStatuses", std::move(includeOnlyStatusesJsonList));
   }
 
   if (m_createTimeRangeHasBeenSet) {
-    payload.WithObject("createTimeRange", m_createTimeRange.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("createTimeRange"));
+    m_createTimeRange.CborEncode(encoder);
   }
 
   if (m_nextTokenHasBeenSet) {
-    payload.WithString("nextToken", m_nextToken);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("nextToken"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_nextToken.c_str()));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection ListDeploymentsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeDeploy_20141006.ListDeployments"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

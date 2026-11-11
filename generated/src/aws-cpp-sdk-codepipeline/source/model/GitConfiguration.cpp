@@ -4,65 +4,279 @@
  */
 
 #include <aws/codepipeline/model/GitConfiguration.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace CodePipeline {
 namespace Model {
 
-GitConfiguration::GitConfiguration(JsonView jsonValue) { *this = jsonValue; }
+GitConfiguration::GitConfiguration(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-GitConfiguration& GitConfiguration::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("sourceActionName")) {
-    m_sourceActionName = jsonValue.GetString("sourceActionName");
-    m_sourceActionNameHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("push")) {
-    Aws::Utils::Array<JsonView> pushJsonList = jsonValue.GetArray("push");
-    for (unsigned pushIndex = 0; pushIndex < pushJsonList.GetLength(); ++pushIndex) {
-      m_push.push_back(pushJsonList[pushIndex].AsObject());
+GitConfiguration& GitConfiguration::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "sourceActionName") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_sourceActionName = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_sourceActionName = ss.str();
+                  }
+                }
+                m_sourceActionNameHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "push") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_push.push_back(GitPushFilter(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_push.push_back(GitPushFilter(decoder));
+                    }
+                  }
+                }
+                m_pushHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "pullRequest") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_pullRequest.push_back(GitPullRequestFilter(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_pullRequest.push_back(GitPullRequestFilter(decoder));
+                    }
+                  }
+                }
+                m_pullRequestHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("GitConfiguration", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "sourceActionName") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_sourceActionName = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_sourceActionName = ss.str();
+                }
+              }
+              m_sourceActionNameHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "push") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_push.push_back(GitPushFilter(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_push.push_back(GitPushFilter(decoder));
+                  }
+                }
+              }
+              m_pushHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "pullRequest") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_pullRequest.push_back(GitPullRequestFilter(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_pullRequest.push_back(GitPullRequestFilter(decoder));
+                  }
+                }
+              }
+              m_pullRequestHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
     }
-    m_pushHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("pullRequest")) {
-    Aws::Utils::Array<JsonView> pullRequestJsonList = jsonValue.GetArray("pullRequest");
-    for (unsigned pullRequestIndex = 0; pullRequestIndex < pullRequestJsonList.GetLength(); ++pullRequestIndex) {
-      m_pullRequest.push_back(pullRequestJsonList[pullRequestIndex].AsObject());
-    }
-    m_pullRequestHasBeenSet = true;
-  }
+
   return *this;
 }
 
-JsonValue GitConfiguration::Jsonize() const {
-  JsonValue payload;
+void GitConfiguration::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_sourceActionNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_pushHasBeenSet) {
+    mapSize++;
+  }
+  if (m_pullRequestHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_sourceActionNameHasBeenSet) {
-    payload.WithString("sourceActionName", m_sourceActionName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("sourceActionName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_sourceActionName.c_str()));
   }
 
   if (m_pushHasBeenSet) {
-    Aws::Utils::Array<JsonValue> pushJsonList(m_push.size());
-    for (unsigned pushIndex = 0; pushIndex < pushJsonList.GetLength(); ++pushIndex) {
-      pushJsonList[pushIndex].AsObject(m_push[pushIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("push"));
+    encoder.WriteArrayStart(m_push.size());
+    for (const auto& item_0 : m_push) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("push", std::move(pushJsonList));
   }
 
   if (m_pullRequestHasBeenSet) {
-    Aws::Utils::Array<JsonValue> pullRequestJsonList(m_pullRequest.size());
-    for (unsigned pullRequestIndex = 0; pullRequestIndex < pullRequestJsonList.GetLength(); ++pullRequestIndex) {
-      pullRequestJsonList[pullRequestIndex].AsObject(m_pullRequest[pullRequestIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("pullRequest"));
+    encoder.WriteArrayStart(m_pullRequest.size());
+    for (const auto& item_0 : m_pullRequest) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("pullRequest", std::move(pullRequestJsonList));
   }
-
-  return payload;
 }
 
 }  // namespace Model

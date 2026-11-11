@@ -3,85 +3,349 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/textract/model/DocumentGroup.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace Textract {
 namespace Model {
 
-DocumentGroup::DocumentGroup(JsonView jsonValue) { *this = jsonValue; }
+DocumentGroup::DocumentGroup(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-DocumentGroup& DocumentGroup::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("Type")) {
-    m_type = jsonValue.GetString("Type");
-    m_typeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("SplitDocuments")) {
-    Aws::Utils::Array<JsonView> splitDocumentsJsonList = jsonValue.GetArray("SplitDocuments");
-    for (unsigned splitDocumentsIndex = 0; splitDocumentsIndex < splitDocumentsJsonList.GetLength(); ++splitDocumentsIndex) {
-      m_splitDocuments.push_back(splitDocumentsJsonList[splitDocumentsIndex].AsObject());
+DocumentGroup& DocumentGroup::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "Type") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_type = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_type = ss.str();
+                  }
+                }
+                m_typeHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "SplitDocuments") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_splitDocuments.push_back(SplitDocument(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_splitDocuments.push_back(SplitDocument(decoder));
+                    }
+                  }
+                }
+                m_splitDocumentsHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "DetectedSignatures") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_detectedSignatures.push_back(DetectedSignature(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_detectedSignatures.push_back(DetectedSignature(decoder));
+                    }
+                  }
+                }
+                m_detectedSignaturesHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "UndetectedSignatures") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_undetectedSignatures.push_back(UndetectedSignature(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_undetectedSignatures.push_back(UndetectedSignature(decoder));
+                    }
+                  }
+                }
+                m_undetectedSignaturesHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("DocumentGroup", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "Type") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_type = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_type = ss.str();
+                }
+              }
+              m_typeHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "SplitDocuments") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_splitDocuments.push_back(SplitDocument(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_splitDocuments.push_back(SplitDocument(decoder));
+                  }
+                }
+              }
+              m_splitDocumentsHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "DetectedSignatures") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_detectedSignatures.push_back(DetectedSignature(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_detectedSignatures.push_back(DetectedSignature(decoder));
+                  }
+                }
+              }
+              m_detectedSignaturesHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "UndetectedSignatures") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_undetectedSignatures.push_back(UndetectedSignature(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_undetectedSignatures.push_back(UndetectedSignature(decoder));
+                  }
+                }
+              }
+              m_undetectedSignaturesHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
     }
-    m_splitDocumentsHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("DetectedSignatures")) {
-    Aws::Utils::Array<JsonView> detectedSignaturesJsonList = jsonValue.GetArray("DetectedSignatures");
-    for (unsigned detectedSignaturesIndex = 0; detectedSignaturesIndex < detectedSignaturesJsonList.GetLength();
-         ++detectedSignaturesIndex) {
-      m_detectedSignatures.push_back(detectedSignaturesJsonList[detectedSignaturesIndex].AsObject());
-    }
-    m_detectedSignaturesHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("UndetectedSignatures")) {
-    Aws::Utils::Array<JsonView> undetectedSignaturesJsonList = jsonValue.GetArray("UndetectedSignatures");
-    for (unsigned undetectedSignaturesIndex = 0; undetectedSignaturesIndex < undetectedSignaturesJsonList.GetLength();
-         ++undetectedSignaturesIndex) {
-      m_undetectedSignatures.push_back(undetectedSignaturesJsonList[undetectedSignaturesIndex].AsObject());
-    }
-    m_undetectedSignaturesHasBeenSet = true;
-  }
+
   return *this;
 }
 
-JsonValue DocumentGroup::Jsonize() const {
-  JsonValue payload;
+void DocumentGroup::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_typeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_splitDocumentsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_detectedSignaturesHasBeenSet) {
+    mapSize++;
+  }
+  if (m_undetectedSignaturesHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_typeHasBeenSet) {
-    payload.WithString("Type", m_type);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Type"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_type.c_str()));
   }
 
   if (m_splitDocumentsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> splitDocumentsJsonList(m_splitDocuments.size());
-    for (unsigned splitDocumentsIndex = 0; splitDocumentsIndex < splitDocumentsJsonList.GetLength(); ++splitDocumentsIndex) {
-      splitDocumentsJsonList[splitDocumentsIndex].AsObject(m_splitDocuments[splitDocumentsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("SplitDocuments"));
+    encoder.WriteArrayStart(m_splitDocuments.size());
+    for (const auto& item_0 : m_splitDocuments) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("SplitDocuments", std::move(splitDocumentsJsonList));
   }
 
   if (m_detectedSignaturesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> detectedSignaturesJsonList(m_detectedSignatures.size());
-    for (unsigned detectedSignaturesIndex = 0; detectedSignaturesIndex < detectedSignaturesJsonList.GetLength();
-         ++detectedSignaturesIndex) {
-      detectedSignaturesJsonList[detectedSignaturesIndex].AsObject(m_detectedSignatures[detectedSignaturesIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("DetectedSignatures"));
+    encoder.WriteArrayStart(m_detectedSignatures.size());
+    for (const auto& item_0 : m_detectedSignatures) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("DetectedSignatures", std::move(detectedSignaturesJsonList));
   }
 
   if (m_undetectedSignaturesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> undetectedSignaturesJsonList(m_undetectedSignatures.size());
-    for (unsigned undetectedSignaturesIndex = 0; undetectedSignaturesIndex < undetectedSignaturesJsonList.GetLength();
-         ++undetectedSignaturesIndex) {
-      undetectedSignaturesJsonList[undetectedSignaturesIndex].AsObject(m_undetectedSignatures[undetectedSignaturesIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("UndetectedSignatures"));
+    encoder.WriteArrayStart(m_undetectedSignatures.size());
+    for (const auto& item_0 : m_undetectedSignatures) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("UndetectedSignatures", std::move(undetectedSignaturesJsonList));
   }
-
-  return payload;
 }
 
 }  // namespace Model

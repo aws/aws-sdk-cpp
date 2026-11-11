@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 #include <aws/network-firewall/model/Address.h>
 #include <aws/network-firewall/model/PortRange.h>
@@ -13,10 +14,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace NetworkFirewall {
 namespace Model {
@@ -31,9 +31,9 @@ namespace Model {
 class ServerCertificateScope {
  public:
   AWS_NETWORKFIREWALL_API ServerCertificateScope() = default;
-  AWS_NETWORKFIREWALL_API ServerCertificateScope(Aws::Utils::Json::JsonView jsonValue);
-  AWS_NETWORKFIREWALL_API ServerCertificateScope& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_NETWORKFIREWALL_API ServerCertificateScope(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_NETWORKFIREWALL_API ServerCertificateScope& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_NETWORKFIREWALL_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -145,19 +145,19 @@ class ServerCertificateScope {
    * number (IANA) for each protocol. If not specified, this matches with any
    * protocol.</p> <p>Network Firewall currently supports only TCP.</p>
    */
-  inline const Aws::Vector<int>& GetProtocols() const { return m_protocols; }
+  inline const Aws::Vector<int64_t>& GetProtocols() const { return m_protocols; }
   inline bool ProtocolsHasBeenSet() const { return m_protocolsHasBeenSet; }
-  template <typename ProtocolsT = Aws::Vector<int>>
+  template <typename ProtocolsT = Aws::Vector<int64_t>>
   void SetProtocols(ProtocolsT&& value) {
     m_protocolsHasBeenSet = true;
     m_protocols = std::forward<ProtocolsT>(value);
   }
-  template <typename ProtocolsT = Aws::Vector<int>>
+  template <typename ProtocolsT = Aws::Vector<int64_t>>
   ServerCertificateScope& WithProtocols(ProtocolsT&& value) {
     SetProtocols(std::forward<ProtocolsT>(value));
     return *this;
   }
-  inline ServerCertificateScope& AddProtocols(int value) {
+  inline ServerCertificateScope& AddProtocols(int64_t value) {
     m_protocolsHasBeenSet = true;
     m_protocols.push_back(value);
     return *this;
@@ -172,7 +172,7 @@ class ServerCertificateScope {
 
   Aws::Vector<PortRange> m_destinationPorts;
 
-  Aws::Vector<int> m_protocols;
+  Aws::Vector<int64_t> m_protocols;
   bool m_sourcesHasBeenSet = false;
   bool m_destinationsHasBeenSet = false;
   bool m_sourcePortsHasBeenSet = false;

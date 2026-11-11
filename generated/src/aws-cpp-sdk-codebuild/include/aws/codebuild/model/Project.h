@@ -21,15 +21,15 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace CodeBuild {
 namespace Model {
@@ -42,9 +42,9 @@ namespace Model {
 class Project {
  public:
   AWS_CODEBUILD_API Project() = default;
-  AWS_CODEBUILD_API Project(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CODEBUILD_API Project& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_CODEBUILD_API Project(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CODEBUILD_API Project& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CODEBUILD_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -308,13 +308,13 @@ class Project {
    * timing out any related build that did not get marked as completed. The default
    * is 60 minutes.</p>
    */
-  inline int GetTimeoutInMinutes() const { return m_timeoutInMinutes; }
+  inline int64_t GetTimeoutInMinutes() const { return m_timeoutInMinutes; }
   inline bool TimeoutInMinutesHasBeenSet() const { return m_timeoutInMinutesHasBeenSet; }
-  inline void SetTimeoutInMinutes(int value) {
+  inline void SetTimeoutInMinutes(int64_t value) {
     m_timeoutInMinutesHasBeenSet = true;
     m_timeoutInMinutes = value;
   }
-  inline Project& WithTimeoutInMinutes(int value) {
+  inline Project& WithTimeoutInMinutes(int64_t value) {
     SetTimeoutInMinutes(value);
     return *this;
   }
@@ -325,13 +325,13 @@ class Project {
    * <p>The number of minutes a build is allowed to be queued before it times out.
    * </p>
    */
-  inline int GetQueuedTimeoutInMinutes() const { return m_queuedTimeoutInMinutes; }
+  inline int64_t GetQueuedTimeoutInMinutes() const { return m_queuedTimeoutInMinutes; }
   inline bool QueuedTimeoutInMinutesHasBeenSet() const { return m_queuedTimeoutInMinutesHasBeenSet; }
-  inline void SetQueuedTimeoutInMinutes(int value) {
+  inline void SetQueuedTimeoutInMinutes(int64_t value) {
     m_queuedTimeoutInMinutesHasBeenSet = true;
     m_queuedTimeoutInMinutes = value;
   }
-  inline Project& WithQueuedTimeoutInMinutes(int value) {
+  inline Project& WithQueuedTimeoutInMinutes(int64_t value) {
     SetQueuedTimeoutInMinutes(value);
     return *this;
   }
@@ -553,13 +553,13 @@ class Project {
    * less than or equal to this limit. If the current build count meets this limit,
    * new builds are throttled and are not run.</p>
    */
-  inline int GetConcurrentBuildLimit() const { return m_concurrentBuildLimit; }
+  inline int64_t GetConcurrentBuildLimit() const { return m_concurrentBuildLimit; }
   inline bool ConcurrentBuildLimitHasBeenSet() const { return m_concurrentBuildLimitHasBeenSet; }
-  inline void SetConcurrentBuildLimit(int value) {
+  inline void SetConcurrentBuildLimit(int64_t value) {
     m_concurrentBuildLimitHasBeenSet = true;
     m_concurrentBuildLimit = value;
   }
-  inline Project& WithConcurrentBuildLimit(int value) {
+  inline Project& WithConcurrentBuildLimit(int64_t value) {
     SetConcurrentBuildLimit(value);
     return *this;
   }
@@ -623,13 +623,13 @@ class Project {
    * <code>RetryBuild</code> API to automatically retry your build for up to 2
    * additional times.</p>
    */
-  inline int GetAutoRetryLimit() const { return m_autoRetryLimit; }
+  inline int64_t GetAutoRetryLimit() const { return m_autoRetryLimit; }
   inline bool AutoRetryLimitHasBeenSet() const { return m_autoRetryLimitHasBeenSet; }
-  inline void SetAutoRetryLimit(int value) {
+  inline void SetAutoRetryLimit(int64_t value) {
     m_autoRetryLimitHasBeenSet = true;
     m_autoRetryLimit = value;
   }
-  inline Project& WithAutoRetryLimit(int value) {
+  inline Project& WithAutoRetryLimit(int64_t value) {
     SetAutoRetryLimit(value);
     return *this;
   }
@@ -659,9 +659,9 @@ class Project {
 
   Aws::String m_serviceRole;
 
-  int m_timeoutInMinutes{0};
+  int64_t m_timeoutInMinutes{0};
 
-  int m_queuedTimeoutInMinutes{0};
+  int64_t m_queuedTimeoutInMinutes{0};
 
   Aws::String m_encryptionKey;
 
@@ -683,7 +683,7 @@ class Project {
 
   ProjectBuildBatchConfig m_buildBatchConfig;
 
-  int m_concurrentBuildLimit{0};
+  int64_t m_concurrentBuildLimit{0};
 
   ProjectVisibilityType m_projectVisibility{ProjectVisibilityType::NOT_SET};
 
@@ -691,7 +691,7 @@ class Project {
 
   Aws::String m_resourceAccessRole;
 
-  int m_autoRetryLimit{0};
+  int64_t m_autoRetryLimit{0};
   bool m_nameHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

@@ -960,6 +960,37 @@ class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderClient
   }
 
   /**
+   * <p>Lists the active sessions for a specified user as an administrator. The
+   * response includes both token sessions and SSO sessions. Only active sessions are
+   * returned; revoked and expired sessions aren't included. Amazon Cognito returns
+   * all of a user's sessions in a single page of up to 125 sessions. The results are
+   * eventually consistent, and new sessions are typically included within a few
+   * seconds.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminListUserSessions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::AdminListUserSessionsOutcome AdminListUserSessions(const Model::AdminListUserSessionsRequest& request) const;
+
+  /**
+   * A Callable wrapper for AdminListUserSessions that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename AdminListUserSessionsRequestT = Model::AdminListUserSessionsRequest>
+  Model::AdminListUserSessionsOutcomeCallable AdminListUserSessionsCallable(const AdminListUserSessionsRequestT& request) const {
+    return SubmitCallable(&CognitoIdentityProviderClient::AdminListUserSessions, request);
+  }
+
+  /**
+   * An Async wrapper for AdminListUserSessions that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename AdminListUserSessionsRequestT = Model::AdminListUserSessionsRequest>
+  void AdminListUserSessionsAsync(const AdminListUserSessionsRequestT& request, const AdminListUserSessionsResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CognitoIdentityProviderClient::AdminListUserSessions, request, handler, context);
+  }
+
+  /**
    * <p>Given a username and a group name, removes them from the group. User pool
    * groups are identifiers that you can reference from the contents of ID and access
    * tokens, and set preferred IAM roles for identity-pool authentication. For more
@@ -1121,6 +1152,37 @@ class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderClient
                                         const AdminRespondToAuthChallengeResponseReceivedHandler& handler,
                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CognitoIdentityProviderClient::AdminRespondToAuthChallenge, request, handler, context);
+  }
+
+  /**
+   * <p>Revokes a specific user session as an administrator. Amazon Cognito revokes
+   * all refresh and access tokens that are associated with the session and deletes
+   * the session record. You can revoke either a token session or an SSO session, and
+   * you can optionally cascade the revocation to linked sessions.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminRevokeUserSession">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::AdminRevokeUserSessionOutcome AdminRevokeUserSession(const Model::AdminRevokeUserSessionRequest& request) const;
+
+  /**
+   * A Callable wrapper for AdminRevokeUserSession that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename AdminRevokeUserSessionRequestT = Model::AdminRevokeUserSessionRequest>
+  Model::AdminRevokeUserSessionOutcomeCallable AdminRevokeUserSessionCallable(const AdminRevokeUserSessionRequestT& request) const {
+    return SubmitCallable(&CognitoIdentityProviderClient::AdminRevokeUserSession, request);
+  }
+
+  /**
+   * An Async wrapper for AdminRevokeUserSession that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename AdminRevokeUserSessionRequestT = Model::AdminRevokeUserSessionRequest>
+  void AdminRevokeUserSessionAsync(const AdminRevokeUserSessionRequestT& request,
+                                   const AdminRevokeUserSessionResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CognitoIdentityProviderClient::AdminRevokeUserSession, request, handler, context);
   }
 
   /**
@@ -3566,6 +3628,38 @@ class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderClient
   }
 
   /**
+   * <p>Retrieves the session configuration for a user pool app client. If you have
+   * never called <code>SetUserPoolClientSessionConfiguration</code> for the app
+   * client, this operation returns the default SSO session maximum validity of
+   * <code>60</code> minutes.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUserPoolClientSessionConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetUserPoolClientSessionConfigurationOutcome GetUserPoolClientSessionConfiguration(
+      const Model::GetUserPoolClientSessionConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetUserPoolClientSessionConfiguration that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename GetUserPoolClientSessionConfigurationRequestT = Model::GetUserPoolClientSessionConfigurationRequest>
+  Model::GetUserPoolClientSessionConfigurationOutcomeCallable GetUserPoolClientSessionConfigurationCallable(
+      const GetUserPoolClientSessionConfigurationRequestT& request) const {
+    return SubmitCallable(&CognitoIdentityProviderClient::GetUserPoolClientSessionConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for GetUserPoolClientSessionConfiguration that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename GetUserPoolClientSessionConfigurationRequestT = Model::GetUserPoolClientSessionConfigurationRequest>
+  void GetUserPoolClientSessionConfigurationAsync(const GetUserPoolClientSessionConfigurationRequestT& request,
+                                                  const GetUserPoolClientSessionConfigurationResponseReceivedHandler& handler,
+                                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CognitoIdentityProviderClient::GetUserPoolClientSessionConfiguration, request, handler, context);
+  }
+
+  /**
    * <p>Given a user pool ID, returns configuration for sign-in with WebAuthn
    * authenticators and for multi-factor authentication (MFA). This operation
    * describes the following:</p> <ul> <li> <p>The WebAuthn relying party (RP) ID and
@@ -3604,6 +3698,41 @@ class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderClient
   void GetUserPoolMfaConfigAsync(const GetUserPoolMfaConfigRequestT& request, const GetUserPoolMfaConfigResponseReceivedHandler& handler,
                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CognitoIdentityProviderClient::GetUserPoolMfaConfig, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the session tracking configuration for a user pool, including
+   * whether session tracking is enabled and the pool-wide maximum number of active
+   * token sessions for each user. If you have never called
+   * <code>SetUserPoolSessionConfiguration</code> for the user pool, this operation
+   * returns the default values: <code>UserSessionTracking</code> as
+   * <code>DISABLED</code> and a <code>MaxPerUser</code> value of
+   * <code>20</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUserPoolSessionConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetUserPoolSessionConfigurationOutcome GetUserPoolSessionConfiguration(
+      const Model::GetUserPoolSessionConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetUserPoolSessionConfiguration that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetUserPoolSessionConfigurationRequestT = Model::GetUserPoolSessionConfigurationRequest>
+  Model::GetUserPoolSessionConfigurationOutcomeCallable GetUserPoolSessionConfigurationCallable(
+      const GetUserPoolSessionConfigurationRequestT& request) const {
+    return SubmitCallable(&CognitoIdentityProviderClient::GetUserPoolSessionConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for GetUserPoolSessionConfiguration that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename GetUserPoolSessionConfigurationRequestT = Model::GetUserPoolSessionConfigurationRequest>
+  void GetUserPoolSessionConfigurationAsync(const GetUserPoolSessionConfigurationRequestT& request,
+                                            const GetUserPoolSessionConfigurationResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CognitoIdentityProviderClient::GetUserPoolSessionConfiguration, request, handler, context);
   }
 
   /**
@@ -4111,6 +4240,38 @@ class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderClient
   }
 
   /**
+   * <p>Lists the active sessions for the currently signed-in user. Amazon Cognito
+   * authorizes this operation with the user's access token and returns all of the
+   * user's active sessions across every app client in the user pool, including both
+   * token sessions and SSO sessions. The <code>IsCurrentSession</code> field
+   * identifies the session that the calling access token belongs to. The results are
+   * eventually consistent, and new sessions are typically included within a few
+   * seconds.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListUserSessions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListUserSessionsOutcome ListUserSessions(const Model::ListUserSessionsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListUserSessions that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListUserSessionsRequestT = Model::ListUserSessionsRequest>
+  Model::ListUserSessionsOutcomeCallable ListUserSessionsCallable(const ListUserSessionsRequestT& request) const {
+    return SubmitCallable(&CognitoIdentityProviderClient::ListUserSessions, request);
+  }
+
+  /**
+   * An Async wrapper for ListUserSessions that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListUserSessionsRequestT = Model::ListUserSessionsRequest>
+  void ListUserSessionsAsync(const ListUserSessionsRequestT& request, const ListUserSessionsResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CognitoIdentityProviderClient::ListUserSessions, request, handler, context);
+  }
+
+  /**
    * <p>Given a user pool ID, returns a list of users and their basic details in a
    * user pool.</p> <p>This operation is eventually consistent. You might experience
    * a delay before results are up-to-date. To validate the existence or
@@ -4371,6 +4532,36 @@ class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderClient
   }
 
   /**
+   * <p>Revokes a specific session for the currently signed-in user. Amazon Cognito
+   * authorizes this operation with the user's access token, revokes all refresh and
+   * access tokens that are associated with the session, and deletes the session
+   * record. You can't revoke the session that the calling access token belongs
+   * to.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/RevokeUserSession">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::RevokeUserSessionOutcome RevokeUserSession(const Model::RevokeUserSessionRequest& request) const;
+
+  /**
+   * A Callable wrapper for RevokeUserSession that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename RevokeUserSessionRequestT = Model::RevokeUserSessionRequest>
+  Model::RevokeUserSessionOutcomeCallable RevokeUserSessionCallable(const RevokeUserSessionRequestT& request) const {
+    return SubmitCallable(&CognitoIdentityProviderClient::RevokeUserSession, request);
+  }
+
+  /**
+   * An Async wrapper for RevokeUserSession that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename RevokeUserSessionRequestT = Model::RevokeUserSessionRequest>
+  void RevokeUserSessionAsync(const RevokeUserSessionRequestT& request, const RevokeUserSessionResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CognitoIdentityProviderClient::RevokeUserSession, request, handler, context);
+  }
+
+  /**
    * <p>Sets up or modifies the logging configuration of a user pool. User pools can
    * export user notification logs and, when threat protection is active,
    * user-activity logs. For more information, see <a
@@ -4532,6 +4723,41 @@ class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderClient
   }
 
   /**
+   * <p>Sets the session configuration for a user pool app client. The configurable
+   * client-level setting is the maximum validity period for silent reuse of an SSO
+   * session. This operation performs a full replacement of the client-level session
+   * configuration; every request parameter is required, and session tracking must be
+   * enabled for the user pool. The user pool must be in the Essentials or Plus tier.
+   * Otherwise, this operation returns a
+   * <code>FeatureUnavailableInTierException</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserPoolClientSessionConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SetUserPoolClientSessionConfigurationOutcome SetUserPoolClientSessionConfiguration(
+      const Model::SetUserPoolClientSessionConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for SetUserPoolClientSessionConfiguration that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename SetUserPoolClientSessionConfigurationRequestT = Model::SetUserPoolClientSessionConfigurationRequest>
+  Model::SetUserPoolClientSessionConfigurationOutcomeCallable SetUserPoolClientSessionConfigurationCallable(
+      const SetUserPoolClientSessionConfigurationRequestT& request) const {
+    return SubmitCallable(&CognitoIdentityProviderClient::SetUserPoolClientSessionConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for SetUserPoolClientSessionConfiguration that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename SetUserPoolClientSessionConfigurationRequestT = Model::SetUserPoolClientSessionConfigurationRequest>
+  void SetUserPoolClientSessionConfigurationAsync(const SetUserPoolClientSessionConfigurationRequestT& request,
+                                                  const SetUserPoolClientSessionConfigurationResponseReceivedHandler& handler,
+                                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CognitoIdentityProviderClient::SetUserPoolClientSessionConfiguration, request, handler, context);
+  }
+
+  /**
    * <p>Sets user pool multi-factor authentication (MFA) and passkey configuration.
    * For more information about user pool MFA, see <a
    * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-mfa.html">Adding
@@ -4577,6 +4803,40 @@ class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderClient
   void SetUserPoolMfaConfigAsync(const SetUserPoolMfaConfigRequestT& request, const SetUserPoolMfaConfigResponseReceivedHandler& handler,
                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CognitoIdentityProviderClient::SetUserPoolMfaConfig, request, handler, context);
+  }
+
+  /**
+   * <p>Enables or disables session tracking for a user pool, and sets the pool-wide
+   * maximum number of active token sessions that each user can have. This operation
+   * performs a full replacement of the pool-level session configuration; every
+   * request parameter is required. The user pool must be in the Essentials or Plus
+   * tier. Otherwise, this operation returns a
+   * <code>FeatureUnavailableInTierException</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserPoolSessionConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SetUserPoolSessionConfigurationOutcome SetUserPoolSessionConfiguration(
+      const Model::SetUserPoolSessionConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for SetUserPoolSessionConfiguration that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename SetUserPoolSessionConfigurationRequestT = Model::SetUserPoolSessionConfigurationRequest>
+  Model::SetUserPoolSessionConfigurationOutcomeCallable SetUserPoolSessionConfigurationCallable(
+      const SetUserPoolSessionConfigurationRequestT& request) const {
+    return SubmitCallable(&CognitoIdentityProviderClient::SetUserPoolSessionConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for SetUserPoolSessionConfiguration that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename SetUserPoolSessionConfigurationRequestT = Model::SetUserPoolSessionConfigurationRequest>
+  void SetUserPoolSessionConfigurationAsync(const SetUserPoolSessionConfigurationRequestT& request,
+                                            const SetUserPoolSessionConfigurationResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CognitoIdentityProviderClient::SetUserPoolSessionConfiguration, request, handler, context);
   }
 
   /**

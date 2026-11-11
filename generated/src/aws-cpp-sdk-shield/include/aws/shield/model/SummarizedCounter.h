@@ -5,16 +5,16 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/shield/Shield_EXPORTS.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace Shield {
 namespace Model {
@@ -27,9 +27,9 @@ namespace Model {
 class SummarizedCounter {
  public:
   AWS_SHIELD_API SummarizedCounter() = default;
-  AWS_SHIELD_API SummarizedCounter(Aws::Utils::Json::JsonView jsonValue);
-  AWS_SHIELD_API SummarizedCounter& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_SHIELD_API SummarizedCounter(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_SHIELD_API SummarizedCounter& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_SHIELD_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -101,13 +101,13 @@ class SummarizedCounter {
   /**
    * <p>The number of counters for a specified time period.</p>
    */
-  inline int GetN() const { return m_n; }
+  inline int64_t GetN() const { return m_n; }
   inline bool NHasBeenSet() const { return m_nHasBeenSet; }
-  inline void SetN(int value) {
+  inline void SetN(int64_t value) {
     m_nHasBeenSet = true;
     m_n = value;
   }
-  inline SummarizedCounter& WithN(int value) {
+  inline SummarizedCounter& WithN(int64_t value) {
     SetN(value);
     return *this;
   }
@@ -139,7 +139,7 @@ class SummarizedCounter {
 
   double m_sum{0.0};
 
-  int m_n{0};
+  int64_t m_n{0};
 
   Aws::String m_unit;
   bool m_nameHasBeenSet = false;

@@ -95,17 +95,27 @@ class MeterUsageRequest : public MarketplaceMeteringRequest {
 
   ///@{
   /**
-   * <p>Consumption value for the hour. Defaults to <code>0</code> if not
-   * specified.</p>
+   * <p>The consumption value for the hour, as a decimal string. Use this instead of
+   * <code>UsageQuantity</code> to report fractional usage.</p> <p>A non-negative
+   * decimal number, for example <code>17.42</code>.</p> <p>You can't specify both
+   * <code>UsageQuantity</code> and <code>UsageQuantityAsDecimal</code>. If you
+   * provide <code>UsageAllocations</code>, each allocation must use
+   * <code>AllocatedUsageQuantityAsDecimal</code>.</p> <p>Quantities are compared by
+   * value when checking for duplicate or retried requests, so <code>17</code>,
+   * <code>17.0</code>, and <code>17.00</code> are the same quantity, whether you
+   * send it in <code>UsageQuantity</code> or
+   * <code>UsageQuantityAsDecimal</code>.</p>
    */
-  inline int GetUsageQuantity() const { return m_usageQuantity; }
-  inline bool UsageQuantityHasBeenSet() const { return m_usageQuantityHasBeenSet; }
-  inline void SetUsageQuantity(int value) {
-    m_usageQuantityHasBeenSet = true;
-    m_usageQuantity = value;
+  inline const Aws::String& GetUsageQuantityAsDecimal() const { return m_usageQuantityAsDecimal; }
+  inline bool UsageQuantityAsDecimalHasBeenSet() const { return m_usageQuantityAsDecimalHasBeenSet; }
+  template <typename UsageQuantityAsDecimalT = Aws::String>
+  void SetUsageQuantityAsDecimal(UsageQuantityAsDecimalT&& value) {
+    m_usageQuantityAsDecimalHasBeenSet = true;
+    m_usageQuantityAsDecimal = std::forward<UsageQuantityAsDecimalT>(value);
   }
-  inline MeterUsageRequest& WithUsageQuantity(int value) {
-    SetUsageQuantity(value);
+  template <typename UsageQuantityAsDecimalT = Aws::String>
+  MeterUsageRequest& WithUsageQuantityAsDecimal(UsageQuantityAsDecimalT&& value) {
+    SetUsageQuantityAsDecimal(std::forward<UsageQuantityAsDecimalT>(value));
     return *this;
   }
   ///@}
@@ -133,10 +143,13 @@ class MeterUsageRequest : public MarketplaceMeteringRequest {
   ///@{
   /**
    * <p>The set of <code>UsageAllocations</code> to submit.</p> <p>The sum of all
-   * <code>UsageAllocation</code> quantities must equal the
-   * <code>UsageQuantity</code> of the <code>MeterUsage</code> request, and each
-   * <code>UsageAllocation</code> must have a unique set of tags (include no
-   * tags).</p>
+   * <code>UsageAllocation</code> quantities must equal the usage quantity of the
+   * <code>MeterUsage</code> request (<code>UsageQuantity</code> or
+   * <code>UsageQuantityAsDecimal</code>), and each <code>UsageAllocation</code> must
+   * have a unique set of tags (include no tags). Allocations must use the same type
+   * of quantity as the request: <code>AllocatedUsageQuantity</code> with
+   * <code>UsageQuantity</code>, or <code>AllocatedUsageQuantityAsDecimal</code> with
+   * <code>UsageQuantityAsDecimal</code>.</p>
    */
   inline const Aws::Vector<UsageAllocation>& GetUsageAllocations() const { return m_usageAllocations; }
   inline bool UsageAllocationsHasBeenSet() const { return m_usageAllocationsHasBeenSet; }
@@ -191,7 +204,7 @@ class MeterUsageRequest : public MarketplaceMeteringRequest {
 
   Aws::String m_usageDimension;
 
-  int m_usageQuantity{0};
+  Aws::String m_usageQuantityAsDecimal;
 
   bool m_dryRun{false};
 
@@ -201,7 +214,7 @@ class MeterUsageRequest : public MarketplaceMeteringRequest {
   bool m_productCodeHasBeenSet = false;
   bool m_timestampHasBeenSet = false;
   bool m_usageDimensionHasBeenSet = false;
-  bool m_usageQuantityHasBeenSet = false;
+  bool m_usageQuantityAsDecimalHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
   bool m_usageAllocationsHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;

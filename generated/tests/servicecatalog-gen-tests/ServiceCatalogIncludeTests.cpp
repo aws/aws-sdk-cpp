@@ -173,6 +173,7 @@
 #include <aws/servicecatalog/model/ListPrincipalsForPortfolioPaginationTraits.h>
 #include <aws/servicecatalog/model/ListPrincipalsForPortfolioRequest.h>
 #include <aws/servicecatalog/model/ListPrincipalsForPortfolioResult.h>
+#include <aws/servicecatalog/model/ListProvisionedProductPlansPaginationTraits.h>
 #include <aws/servicecatalog/model/ListProvisionedProductPlansRequest.h>
 #include <aws/servicecatalog/model/ListProvisionedProductPlansResult.h>
 #include <aws/servicecatalog/model/ListProvisioningArtifactsForServiceActionPaginationTraits.h>
@@ -180,6 +181,7 @@
 #include <aws/servicecatalog/model/ListProvisioningArtifactsForServiceActionResult.h>
 #include <aws/servicecatalog/model/ListProvisioningArtifactsRequest.h>
 #include <aws/servicecatalog/model/ListProvisioningArtifactsResult.h>
+#include <aws/servicecatalog/model/ListRecordHistoryPaginationTraits.h>
 #include <aws/servicecatalog/model/ListRecordHistoryRequest.h>
 #include <aws/servicecatalog/model/ListRecordHistoryResult.h>
 #include <aws/servicecatalog/model/ListRecordHistorySearchFilter.h>
@@ -192,6 +194,7 @@
 #include <aws/servicecatalog/model/ListServiceActionsPaginationTraits.h>
 #include <aws/servicecatalog/model/ListServiceActionsRequest.h>
 #include <aws/servicecatalog/model/ListServiceActionsResult.h>
+#include <aws/servicecatalog/model/ListStackInstancesForProvisionedProductPaginationTraits.h>
 #include <aws/servicecatalog/model/ListStackInstancesForProvisionedProductRequest.h>
 #include <aws/servicecatalog/model/ListStackInstancesForProvisionedProductResult.h>
 #include <aws/servicecatalog/model/ListTagOptionsFilters.h>
@@ -257,6 +260,7 @@
 #include <aws/servicecatalog/model/ResourceChangeDetail.h>
 #include <aws/servicecatalog/model/ResourceDetail.h>
 #include <aws/servicecatalog/model/ResourceTargetDefinition.h>
+#include <aws/servicecatalog/model/ScanProvisionedProductsPaginationTraits.h>
 #include <aws/servicecatalog/model/ScanProvisionedProductsRequest.h>
 #include <aws/servicecatalog/model/ScanProvisionedProductsResult.h>
 #include <aws/servicecatalog/model/SearchProductsAsAdminPaginationTraits.h>

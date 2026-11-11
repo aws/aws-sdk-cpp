@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/datasync/DataSync_EXPORTS.h>
 #include <aws/datasync/model/SmbVersion.h>
 
@@ -11,10 +12,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace DataSync {
 namespace Model {
@@ -28,9 +28,9 @@ namespace Model {
 class SmbMountOptions {
  public:
   AWS_DATASYNC_API SmbMountOptions() = default;
-  AWS_DATASYNC_API SmbMountOptions(Aws::Utils::Json::JsonView jsonValue);
-  AWS_DATASYNC_API SmbMountOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_DATASYNC_API SmbMountOptions(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_DATASYNC_API SmbMountOptions& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_DATASYNC_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

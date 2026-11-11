@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/meteringmarketplace/MarketplaceMetering_EXPORTS.h>
 #include <aws/meteringmarketplace/model/Tag.h>
@@ -36,16 +37,24 @@ class UsageAllocation {
 
   ///@{
   /**
-   * <p>The total quantity allocated to this bucket of usage.</p>
+   * <p>The total quantity allocated to this bucket of usage, as a decimal string.
+   * Use this when the usage quantity of the request or usage record is specified as
+   * a decimal (<code>UsageQuantityAsDecimal</code> or
+   * <code>QuantityAsDecimal</code>).</p> <p>A non-negative decimal number, for
+   * example <code>17.42</code>.</p> <p>Each allocation must specify exactly one of
+   * <code>AllocatedUsageQuantity</code> or
+   * <code>AllocatedUsageQuantityAsDecimal</code>.</p>
    */
-  inline int GetAllocatedUsageQuantity() const { return m_allocatedUsageQuantity; }
-  inline bool AllocatedUsageQuantityHasBeenSet() const { return m_allocatedUsageQuantityHasBeenSet; }
-  inline void SetAllocatedUsageQuantity(int value) {
-    m_allocatedUsageQuantityHasBeenSet = true;
-    m_allocatedUsageQuantity = value;
+  inline const Aws::String& GetAllocatedUsageQuantityAsDecimal() const { return m_allocatedUsageQuantityAsDecimal; }
+  inline bool AllocatedUsageQuantityAsDecimalHasBeenSet() const { return m_allocatedUsageQuantityAsDecimalHasBeenSet; }
+  template <typename AllocatedUsageQuantityAsDecimalT = Aws::String>
+  void SetAllocatedUsageQuantityAsDecimal(AllocatedUsageQuantityAsDecimalT&& value) {
+    m_allocatedUsageQuantityAsDecimalHasBeenSet = true;
+    m_allocatedUsageQuantityAsDecimal = std::forward<AllocatedUsageQuantityAsDecimalT>(value);
   }
-  inline UsageAllocation& WithAllocatedUsageQuantity(int value) {
-    SetAllocatedUsageQuantity(value);
+  template <typename AllocatedUsageQuantityAsDecimalT = Aws::String>
+  UsageAllocation& WithAllocatedUsageQuantityAsDecimal(AllocatedUsageQuantityAsDecimalT&& value) {
+    SetAllocatedUsageQuantityAsDecimal(std::forward<AllocatedUsageQuantityAsDecimalT>(value));
     return *this;
   }
   ///@}
@@ -75,10 +84,10 @@ class UsageAllocation {
   }
   ///@}
  private:
-  int m_allocatedUsageQuantity{0};
+  Aws::String m_allocatedUsageQuantityAsDecimal;
 
   Aws::Vector<Tag> m_tags;
-  bool m_allocatedUsageQuantityHasBeenSet = false;
+  bool m_allocatedUsageQuantityAsDecimalHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

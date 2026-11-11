@@ -3,43 +3,65 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/route53domains/model/ListDomainsRequest.h>
 
 #include <utility>
 
 using namespace Aws::Route53Domains::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String ListDomainsRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_filterConditionsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_sortConditionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_markerHasBeenSet) {
+    mapSize++;
+  }
+  if (m_maxItemsHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_filterConditionsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> filterConditionsJsonList(m_filterConditions.size());
-    for (unsigned filterConditionsIndex = 0; filterConditionsIndex < filterConditionsJsonList.GetLength(); ++filterConditionsIndex) {
-      filterConditionsJsonList[filterConditionsIndex].AsObject(m_filterConditions[filterConditionsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("FilterConditions"));
+    encoder.WriteArrayStart(m_filterConditions.size());
+    for (const auto& item_0 : m_filterConditions) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("FilterConditions", std::move(filterConditionsJsonList));
   }
 
   if (m_sortConditionHasBeenSet) {
-    payload.WithObject("SortCondition", m_sortCondition.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("SortCondition"));
+    m_sortCondition.CborEncode(encoder);
   }
 
   if (m_markerHasBeenSet) {
-    payload.WithString("Marker", m_marker);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Marker"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_marker.c_str()));
   }
 
   if (m_maxItemsHasBeenSet) {
-    payload.WithInteger("MaxItems", m_maxItems);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("MaxItems"));
+    (m_maxItems >= 0) ? encoder.WriteUInt(m_maxItems) : encoder.WriteNegInt(m_maxItems);
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection ListDomainsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Route53Domains_v20140515.ListDomains"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

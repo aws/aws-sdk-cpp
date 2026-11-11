@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/servicediscovery/ServiceDiscovery_EXPORTS.h>
 #include <aws/servicediscovery/model/DnsConfig.h>
 #include <aws/servicediscovery/model/HealthCheckConfig.h>
@@ -16,10 +17,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace ServiceDiscovery {
 namespace Model {
@@ -33,9 +33,9 @@ namespace Model {
 class Service {
  public:
   AWS_SERVICEDISCOVERY_API Service() = default;
-  AWS_SERVICEDISCOVERY_API Service(Aws::Utils::Json::JsonView jsonValue);
-  AWS_SERVICEDISCOVERY_API Service& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_SERVICEDISCOVERY_API Service(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_SERVICEDISCOVERY_API Service& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_SERVICEDISCOVERY_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -158,13 +158,13 @@ class Service {
    * aren't included in the count. The count might not reflect pending registrations
    * and deregistrations.</p>
    */
-  inline int GetInstanceCount() const { return m_instanceCount; }
+  inline int64_t GetInstanceCount() const { return m_instanceCount; }
   inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
-  inline void SetInstanceCount(int value) {
+  inline void SetInstanceCount(int64_t value) {
     m_instanceCountHasBeenSet = true;
     m_instanceCount = value;
   }
-  inline Service& WithInstanceCount(int value) {
+  inline Service& WithInstanceCount(int64_t value) {
     SetInstanceCount(value);
     return *this;
   }
@@ -333,7 +333,7 @@ class Service {
 
   Aws::String m_description;
 
-  int m_instanceCount{0};
+  int64_t m_instanceCount{0};
 
   DnsConfig m_dnsConfig;
 

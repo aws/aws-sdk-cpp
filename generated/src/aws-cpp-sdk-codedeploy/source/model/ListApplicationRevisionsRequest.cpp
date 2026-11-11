@@ -4,50 +4,86 @@
  */
 
 #include <aws/codedeploy/model/ListApplicationRevisionsRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 using namespace Aws::CodeDeploy::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String ListApplicationRevisionsRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_applicationNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_sortByHasBeenSet) {
+    mapSize++;
+  }
+  if (m_sortOrderHasBeenSet) {
+    mapSize++;
+  }
+  if (m_s3BucketHasBeenSet) {
+    mapSize++;
+  }
+  if (m_s3KeyPrefixHasBeenSet) {
+    mapSize++;
+  }
+  if (m_deployedHasBeenSet) {
+    mapSize++;
+  }
+  if (m_nextTokenHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_applicationNameHasBeenSet) {
-    payload.WithString("applicationName", m_applicationName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("applicationName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_applicationName.c_str()));
   }
 
   if (m_sortByHasBeenSet) {
-    payload.WithString("sortBy", ApplicationRevisionSortByMapper::GetNameForApplicationRevisionSortBy(m_sortBy));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("sortBy"));
+    encoder.WriteText(
+        Aws::Crt::ByteCursorFromCString(ApplicationRevisionSortByMapper::GetNameForApplicationRevisionSortBy(m_sortBy).c_str()));
   }
 
   if (m_sortOrderHasBeenSet) {
-    payload.WithString("sortOrder", SortOrderMapper::GetNameForSortOrder(m_sortOrder));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("sortOrder"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(SortOrderMapper::GetNameForSortOrder(m_sortOrder).c_str()));
   }
 
   if (m_s3BucketHasBeenSet) {
-    payload.WithString("s3Bucket", m_s3Bucket);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("s3Bucket"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_s3Bucket.c_str()));
   }
 
   if (m_s3KeyPrefixHasBeenSet) {
-    payload.WithString("s3KeyPrefix", m_s3KeyPrefix);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("s3KeyPrefix"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_s3KeyPrefix.c_str()));
   }
 
   if (m_deployedHasBeenSet) {
-    payload.WithString("deployed", ListStateFilterActionMapper::GetNameForListStateFilterAction(m_deployed));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("deployed"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(ListStateFilterActionMapper::GetNameForListStateFilterAction(m_deployed).c_str()));
   }
 
   if (m_nextTokenHasBeenSet) {
-    payload.WithString("nextToken", m_nextToken);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("nextToken"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_nextToken.c_str()));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection ListApplicationRevisionsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeDeploy_20141006.ListApplicationRevisions"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

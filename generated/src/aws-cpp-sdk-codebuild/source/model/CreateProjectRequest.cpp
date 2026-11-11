@@ -4,134 +4,220 @@
  */
 
 #include <aws/codebuild/model/CreateProjectRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 using namespace Aws::CodeBuild::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String CreateProjectRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_nameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_descriptionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_sourceHasBeenSet) {
+    mapSize++;
+  }
+  if (m_secondarySourcesHasBeenSet) {
+    mapSize++;
+  }
+  if (m_sourceVersionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_secondarySourceVersionsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_artifactsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_secondaryArtifactsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_cacheHasBeenSet) {
+    mapSize++;
+  }
+  if (m_environmentHasBeenSet) {
+    mapSize++;
+  }
+  if (m_serviceRoleHasBeenSet) {
+    mapSize++;
+  }
+  if (m_timeoutInMinutesHasBeenSet) {
+    mapSize++;
+  }
+  if (m_queuedTimeoutInMinutesHasBeenSet) {
+    mapSize++;
+  }
+  if (m_encryptionKeyHasBeenSet) {
+    mapSize++;
+  }
+  if (m_tagsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_vpcConfigHasBeenSet) {
+    mapSize++;
+  }
+  if (m_badgeEnabledHasBeenSet) {
+    mapSize++;
+  }
+  if (m_logsConfigHasBeenSet) {
+    mapSize++;
+  }
+  if (m_fileSystemLocationsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_buildBatchConfigHasBeenSet) {
+    mapSize++;
+  }
+  if (m_concurrentBuildLimitHasBeenSet) {
+    mapSize++;
+  }
+  if (m_autoRetryLimitHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_nameHasBeenSet) {
-    payload.WithString("name", m_name);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("name"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_name.c_str()));
   }
 
   if (m_descriptionHasBeenSet) {
-    payload.WithString("description", m_description);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("description"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_description.c_str()));
   }
 
   if (m_sourceHasBeenSet) {
-    payload.WithObject("source", m_source.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("source"));
+    m_source.CborEncode(encoder);
   }
 
   if (m_secondarySourcesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> secondarySourcesJsonList(m_secondarySources.size());
-    for (unsigned secondarySourcesIndex = 0; secondarySourcesIndex < secondarySourcesJsonList.GetLength(); ++secondarySourcesIndex) {
-      secondarySourcesJsonList[secondarySourcesIndex].AsObject(m_secondarySources[secondarySourcesIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("secondarySources"));
+    encoder.WriteArrayStart(m_secondarySources.size());
+    for (const auto& item_0 : m_secondarySources) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("secondarySources", std::move(secondarySourcesJsonList));
   }
 
   if (m_sourceVersionHasBeenSet) {
-    payload.WithString("sourceVersion", m_sourceVersion);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("sourceVersion"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_sourceVersion.c_str()));
   }
 
   if (m_secondarySourceVersionsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> secondarySourceVersionsJsonList(m_secondarySourceVersions.size());
-    for (unsigned secondarySourceVersionsIndex = 0; secondarySourceVersionsIndex < secondarySourceVersionsJsonList.GetLength();
-         ++secondarySourceVersionsIndex) {
-      secondarySourceVersionsJsonList[secondarySourceVersionsIndex].AsObject(
-          m_secondarySourceVersions[secondarySourceVersionsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("secondarySourceVersions"));
+    encoder.WriteArrayStart(m_secondarySourceVersions.size());
+    for (const auto& item_0 : m_secondarySourceVersions) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("secondarySourceVersions", std::move(secondarySourceVersionsJsonList));
   }
 
   if (m_artifactsHasBeenSet) {
-    payload.WithObject("artifacts", m_artifacts.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("artifacts"));
+    m_artifacts.CborEncode(encoder);
   }
 
   if (m_secondaryArtifactsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> secondaryArtifactsJsonList(m_secondaryArtifacts.size());
-    for (unsigned secondaryArtifactsIndex = 0; secondaryArtifactsIndex < secondaryArtifactsJsonList.GetLength();
-         ++secondaryArtifactsIndex) {
-      secondaryArtifactsJsonList[secondaryArtifactsIndex].AsObject(m_secondaryArtifacts[secondaryArtifactsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("secondaryArtifacts"));
+    encoder.WriteArrayStart(m_secondaryArtifacts.size());
+    for (const auto& item_0 : m_secondaryArtifacts) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("secondaryArtifacts", std::move(secondaryArtifactsJsonList));
   }
 
   if (m_cacheHasBeenSet) {
-    payload.WithObject("cache", m_cache.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("cache"));
+    m_cache.CborEncode(encoder);
   }
 
   if (m_environmentHasBeenSet) {
-    payload.WithObject("environment", m_environment.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("environment"));
+    m_environment.CborEncode(encoder);
   }
 
   if (m_serviceRoleHasBeenSet) {
-    payload.WithString("serviceRole", m_serviceRole);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("serviceRole"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_serviceRole.c_str()));
   }
 
   if (m_timeoutInMinutesHasBeenSet) {
-    payload.WithInteger("timeoutInMinutes", m_timeoutInMinutes);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("timeoutInMinutes"));
+    (m_timeoutInMinutes >= 0) ? encoder.WriteUInt(m_timeoutInMinutes) : encoder.WriteNegInt(m_timeoutInMinutes);
   }
 
   if (m_queuedTimeoutInMinutesHasBeenSet) {
-    payload.WithInteger("queuedTimeoutInMinutes", m_queuedTimeoutInMinutes);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("queuedTimeoutInMinutes"));
+    (m_queuedTimeoutInMinutes >= 0) ? encoder.WriteUInt(m_queuedTimeoutInMinutes) : encoder.WriteNegInt(m_queuedTimeoutInMinutes);
   }
 
   if (m_encryptionKeyHasBeenSet) {
-    payload.WithString("encryptionKey", m_encryptionKey);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("encryptionKey"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_encryptionKey.c_str()));
   }
 
   if (m_tagsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
-      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("tags"));
+    encoder.WriteArrayStart(m_tags.size());
+    for (const auto& item_0 : m_tags) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("tags", std::move(tagsJsonList));
   }
 
   if (m_vpcConfigHasBeenSet) {
-    payload.WithObject("vpcConfig", m_vpcConfig.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("vpcConfig"));
+    m_vpcConfig.CborEncode(encoder);
   }
 
   if (m_badgeEnabledHasBeenSet) {
-    payload.WithBool("badgeEnabled", m_badgeEnabled);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("badgeEnabled"));
+    encoder.WriteBool(m_badgeEnabled);
   }
 
   if (m_logsConfigHasBeenSet) {
-    payload.WithObject("logsConfig", m_logsConfig.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("logsConfig"));
+    m_logsConfig.CborEncode(encoder);
   }
 
   if (m_fileSystemLocationsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> fileSystemLocationsJsonList(m_fileSystemLocations.size());
-    for (unsigned fileSystemLocationsIndex = 0; fileSystemLocationsIndex < fileSystemLocationsJsonList.GetLength();
-         ++fileSystemLocationsIndex) {
-      fileSystemLocationsJsonList[fileSystemLocationsIndex].AsObject(m_fileSystemLocations[fileSystemLocationsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("fileSystemLocations"));
+    encoder.WriteArrayStart(m_fileSystemLocations.size());
+    for (const auto& item_0 : m_fileSystemLocations) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("fileSystemLocations", std::move(fileSystemLocationsJsonList));
   }
 
   if (m_buildBatchConfigHasBeenSet) {
-    payload.WithObject("buildBatchConfig", m_buildBatchConfig.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("buildBatchConfig"));
+    m_buildBatchConfig.CborEncode(encoder);
   }
 
   if (m_concurrentBuildLimitHasBeenSet) {
-    payload.WithInteger("concurrentBuildLimit", m_concurrentBuildLimit);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("concurrentBuildLimit"));
+    (m_concurrentBuildLimit >= 0) ? encoder.WriteUInt(m_concurrentBuildLimit) : encoder.WriteNegInt(m_concurrentBuildLimit);
   }
 
   if (m_autoRetryLimitHasBeenSet) {
-    payload.WithInteger("autoRetryLimit", m_autoRetryLimit);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("autoRetryLimit"));
+    (m_autoRetryLimit >= 0) ? encoder.WriteUInt(m_autoRetryLimit) : encoder.WriteNegInt(m_autoRetryLimit);
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection CreateProjectRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeBuild_20161006.CreateProject"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

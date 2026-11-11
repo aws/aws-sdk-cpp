@@ -3,40 +3,57 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/workspaces/model/ListAccountLinksRequest.h>
 
 #include <utility>
 
 using namespace Aws::WorkSpaces::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String ListAccountLinksRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_linkStatusFilterHasBeenSet) {
+    mapSize++;
+  }
+  if (m_nextTokenHasBeenSet) {
+    mapSize++;
+  }
+  if (m_maxResultsHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_linkStatusFilterHasBeenSet) {
-    Aws::Utils::Array<JsonValue> linkStatusFilterJsonList(m_linkStatusFilter.size());
-    for (unsigned linkStatusFilterIndex = 0; linkStatusFilterIndex < linkStatusFilterJsonList.GetLength(); ++linkStatusFilterIndex) {
-      linkStatusFilterJsonList[linkStatusFilterIndex].AsString(
-          AccountLinkStatusEnumMapper::GetNameForAccountLinkStatusEnum(m_linkStatusFilter[linkStatusFilterIndex]));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("LinkStatusFilter"));
+    encoder.WriteArrayStart(m_linkStatusFilter.size());
+    for (const auto& item_0 : m_linkStatusFilter) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(AccountLinkStatusEnumMapper::GetNameForAccountLinkStatusEnum(item_0).c_str()));
     }
-    payload.WithArray("LinkStatusFilter", std::move(linkStatusFilterJsonList));
   }
 
   if (m_nextTokenHasBeenSet) {
-    payload.WithString("NextToken", m_nextToken);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("NextToken"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_nextToken.c_str()));
   }
 
   if (m_maxResultsHasBeenSet) {
-    payload.WithInteger("MaxResults", m_maxResults);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("MaxResults"));
+    (m_maxResults >= 0) ? encoder.WriteUInt(m_maxResults) : encoder.WriteNegInt(m_maxResults);
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection ListAccountLinksRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "WorkspacesService.ListAccountLinks"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

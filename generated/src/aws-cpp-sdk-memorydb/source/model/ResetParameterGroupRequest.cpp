@@ -3,39 +3,57 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/memorydb/model/ResetParameterGroupRequest.h>
 
 #include <utility>
 
 using namespace Aws::MemoryDB::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String ResetParameterGroupRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_parameterGroupNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_allParametersHasBeenSet) {
+    mapSize++;
+  }
+  if (m_parameterNamesHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_parameterGroupNameHasBeenSet) {
-    payload.WithString("ParameterGroupName", m_parameterGroupName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ParameterGroupName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_parameterGroupName.c_str()));
   }
 
   if (m_allParametersHasBeenSet) {
-    payload.WithBool("AllParameters", m_allParameters);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AllParameters"));
+    encoder.WriteBool(m_allParameters);
   }
 
   if (m_parameterNamesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> parameterNamesJsonList(m_parameterNames.size());
-    for (unsigned parameterNamesIndex = 0; parameterNamesIndex < parameterNamesJsonList.GetLength(); ++parameterNamesIndex) {
-      parameterNamesJsonList[parameterNamesIndex].AsString(m_parameterNames[parameterNamesIndex]);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ParameterNames"));
+    encoder.WriteArrayStart(m_parameterNames.size());
+    for (const auto& item_0 : m_parameterNames) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
     }
-    payload.WithArray("ParameterNames", std::move(parameterNamesJsonList));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection ResetParameterGroupRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonMemoryDB.ResetParameterGroup"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

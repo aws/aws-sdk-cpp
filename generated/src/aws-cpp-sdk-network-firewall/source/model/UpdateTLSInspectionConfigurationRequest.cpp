@@ -3,47 +3,78 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/network-firewall/model/UpdateTLSInspectionConfigurationRequest.h>
 
 #include <utility>
 
 using namespace Aws::NetworkFirewall::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String UpdateTLSInspectionConfigurationRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_tLSInspectionConfigurationArnHasBeenSet) {
+    mapSize++;
+  }
+  if (m_tLSInspectionConfigurationNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_tLSInspectionConfigurationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_descriptionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_encryptionConfigurationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_updateTokenHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_tLSInspectionConfigurationArnHasBeenSet) {
-    payload.WithString("TLSInspectionConfigurationArn", m_tLSInspectionConfigurationArn);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("TLSInspectionConfigurationArn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_tLSInspectionConfigurationArn.c_str()));
   }
 
   if (m_tLSInspectionConfigurationNameHasBeenSet) {
-    payload.WithString("TLSInspectionConfigurationName", m_tLSInspectionConfigurationName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("TLSInspectionConfigurationName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_tLSInspectionConfigurationName.c_str()));
   }
 
   if (m_tLSInspectionConfigurationHasBeenSet) {
-    payload.WithObject("TLSInspectionConfiguration", m_tLSInspectionConfiguration.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("TLSInspectionConfiguration"));
+    m_tLSInspectionConfiguration.CborEncode(encoder);
   }
 
   if (m_descriptionHasBeenSet) {
-    payload.WithString("Description", m_description);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Description"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_description.c_str()));
   }
 
   if (m_encryptionConfigurationHasBeenSet) {
-    payload.WithObject("EncryptionConfiguration", m_encryptionConfiguration.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("EncryptionConfiguration"));
+    m_encryptionConfiguration.CborEncode(encoder);
   }
 
   if (m_updateTokenHasBeenSet) {
-    payload.WithString("UpdateToken", m_updateToken);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("UpdateToken"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_updateToken.c_str()));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection UpdateTLSInspectionConfigurationRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "NetworkFirewall_20201112.UpdateTLSInspectionConfiguration"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

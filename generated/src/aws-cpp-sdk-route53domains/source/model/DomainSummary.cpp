@@ -3,60 +3,245 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/route53domains/model/DomainSummary.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace Route53Domains {
 namespace Model {
 
-DomainSummary::DomainSummary(JsonView jsonValue) { *this = jsonValue; }
+DomainSummary::DomainSummary(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-DomainSummary& DomainSummary::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("DomainName")) {
-    m_domainName = jsonValue.GetString("DomainName");
-    m_domainNameHasBeenSet = true;
+DomainSummary& DomainSummary::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "DomainName") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_domainName = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_domainName = ss.str();
+                  }
+                }
+                m_domainNameHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "AutoRenew") {
+                auto val = decoder->PopNextBooleanVal();
+                if (val.has_value()) {
+                  m_autoRenew = val.value();
+                }
+                m_autoRenewHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "TransferLock") {
+                auto val = decoder->PopNextBooleanVal();
+                if (val.has_value()) {
+                  m_transferLock = val.value();
+                }
+                m_transferLockHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "Expiry") {
+                auto tag = decoder->PopNextTagVal();
+                if (tag.has_value() &&
+                    tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+                {
+                  auto dateType = decoder->PeekType();
+                  if (dateType.has_value()) {
+                    if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                      auto val = decoder->PopNextFloatVal();
+                      if (val.has_value()) {
+                        m_expiry = Aws::Utils::DateTime(val.value());
+                      }
+                    } else {
+                      auto val = decoder->PopNextUnsignedIntVal();
+                      if (val.has_value()) {
+                        m_expiry = Aws::Utils::DateTime(val.value());
+                      }
+                    }
+                  }
+                }
+                m_expiryHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("DomainSummary", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "DomainName") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_domainName = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_domainName = ss.str();
+                }
+              }
+              m_domainNameHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "AutoRenew") {
+              auto val = decoder->PopNextBooleanVal();
+              if (val.has_value()) {
+                m_autoRenew = val.value();
+              }
+              m_autoRenewHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "TransferLock") {
+              auto val = decoder->PopNextBooleanVal();
+              if (val.has_value()) {
+                m_transferLock = val.value();
+              }
+              m_transferLockHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "Expiry") {
+              auto tag = decoder->PopNextTagVal();
+              if (tag.has_value() &&
+                  tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+              {
+                auto dateType = decoder->PeekType();
+                if (dateType.has_value()) {
+                  if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                    auto val = decoder->PopNextFloatVal();
+                    if (val.has_value()) {
+                      m_expiry = Aws::Utils::DateTime(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_expiry = Aws::Utils::DateTime(val.value());
+                    }
+                  }
+                }
+              }
+              m_expiryHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
+    }
   }
-  if (jsonValue.ValueExists("AutoRenew")) {
-    m_autoRenew = jsonValue.GetBool("AutoRenew");
-    m_autoRenewHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("TransferLock")) {
-    m_transferLock = jsonValue.GetBool("TransferLock");
-    m_transferLockHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("Expiry")) {
-    m_expiry = jsonValue.GetDouble("Expiry");
-    m_expiryHasBeenSet = true;
-  }
+
   return *this;
 }
 
-JsonValue DomainSummary::Jsonize() const {
-  JsonValue payload;
+void DomainSummary::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_domainNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_autoRenewHasBeenSet) {
+    mapSize++;
+  }
+  if (m_transferLockHasBeenSet) {
+    mapSize++;
+  }
+  if (m_expiryHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_domainNameHasBeenSet) {
-    payload.WithString("DomainName", m_domainName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("DomainName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_domainName.c_str()));
   }
 
   if (m_autoRenewHasBeenSet) {
-    payload.WithBool("AutoRenew", m_autoRenew);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AutoRenew"));
+    encoder.WriteBool(m_autoRenew);
   }
 
   if (m_transferLockHasBeenSet) {
-    payload.WithBool("TransferLock", m_transferLock);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("TransferLock"));
+    encoder.WriteBool(m_transferLock);
   }
 
   if (m_expiryHasBeenSet) {
-    payload.WithDouble("Expiry", m_expiry.SecondsWithMSPrecision());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Expiry"));
+    encoder.WriteTag(1);  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+    encoder.WriteUInt(m_expiry.Seconds());
   }
-
-  return payload;
 }
 
 }  // namespace Model

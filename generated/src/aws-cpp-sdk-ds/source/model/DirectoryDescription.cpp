@@ -3,274 +3,1485 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/ds/model/DirectoryDescription.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace DirectoryService {
 namespace Model {
 
-DirectoryDescription::DirectoryDescription(JsonView jsonValue) { *this = jsonValue; }
+DirectoryDescription::DirectoryDescription(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-DirectoryDescription& DirectoryDescription::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("DirectoryId")) {
-    m_directoryId = jsonValue.GetString("DirectoryId");
-    m_directoryIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("Name")) {
-    m_name = jsonValue.GetString("Name");
-    m_nameHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ShortName")) {
-    m_shortName = jsonValue.GetString("ShortName");
-    m_shortNameHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("Size")) {
-    m_size = DirectorySizeMapper::GetDirectorySizeForName(jsonValue.GetString("Size"));
-    m_sizeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("Edition")) {
-    m_edition = DirectoryEditionMapper::GetDirectoryEditionForName(jsonValue.GetString("Edition"));
-    m_editionHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("Alias")) {
-    m_alias = jsonValue.GetString("Alias");
-    m_aliasHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("AccessUrl")) {
-    m_accessUrl = jsonValue.GetString("AccessUrl");
-    m_accessUrlHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("Description")) {
-    m_description = jsonValue.GetString("Description");
-    m_descriptionHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("DnsIpAddrs")) {
-    Aws::Utils::Array<JsonView> dnsIpAddrsJsonList = jsonValue.GetArray("DnsIpAddrs");
-    for (unsigned dnsIpAddrsIndex = 0; dnsIpAddrsIndex < dnsIpAddrsJsonList.GetLength(); ++dnsIpAddrsIndex) {
-      m_dnsIpAddrs.push_back(dnsIpAddrsJsonList[dnsIpAddrsIndex].AsString());
+DirectoryDescription& DirectoryDescription::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "DirectoryId") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_directoryId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_directoryId = ss.str();
+                  }
+                }
+                m_directoryIdHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "Name") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_name = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_name = ss.str();
+                  }
+                }
+                m_nameHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "ShortName") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_shortName = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_shortName = ss.str();
+                  }
+                }
+                m_shortNameHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "Size") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_size = DirectorySizeMapper::GetDirectorySizeForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_sizeHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "Edition") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_edition = DirectoryEditionMapper::GetDirectoryEditionForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_editionHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "Alias") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_alias = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_alias = ss.str();
+                  }
+                }
+                m_aliasHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "AccessUrl") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_accessUrl = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_accessUrl = ss.str();
+                  }
+                }
+                m_accessUrlHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "Description") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_description = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_description = ss.str();
+                  }
+                }
+                m_descriptionHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "DnsIpAddrs") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        auto peekType_1 = decoder->PeekType();
+                        if (peekType_1.has_value()) {
+                          if (peekType_1.value() == Aws::Crt::Cbor::CborType::Text) {
+                            auto val = decoder->PopNextTextVal();
+                            if (val.has_value()) {
+                              m_dnsIpAddrs.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                            }
+                          } else {
+                            decoder->ConsumeNextSingleElement();
+                            Aws::StringStream ss_1;
+                            while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                              auto nextType_1 = decoder->PeekType();
+                              if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
+                                if (nextType_1.has_value()) {
+                                  decoder->ConsumeNextSingleElement();  // consume the Break
+                                }
+                                break;
+                              }
+                              auto val = decoder->PopNextTextVal();
+                              if (val.has_value()) {
+                                ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                              }
+                            }
+                            m_dnsIpAddrs.push_back(ss_1.str());
+                            ss_1.clear();
+                          }
+                        }
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto peekType_1 = decoder->PeekType();
+                      if (peekType_1.has_value()) {
+                        if (peekType_1.value() == Aws::Crt::Cbor::CborType::Text) {
+                          auto val = decoder->PopNextTextVal();
+                          if (val.has_value()) {
+                            m_dnsIpAddrs.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                          }
+                        } else {
+                          decoder->ConsumeNextSingleElement();
+                          Aws::StringStream ss_1;
+                          while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                            auto nextType_1 = decoder->PeekType();
+                            if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
+                              if (nextType_1.has_value()) {
+                                decoder->ConsumeNextSingleElement();  // consume the Break
+                              }
+                              break;
+                            }
+                            auto val = decoder->PopNextTextVal();
+                            if (val.has_value()) {
+                              ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                            }
+                          }
+                          m_dnsIpAddrs.push_back(ss_1.str());
+                          ss_1.clear();
+                        }
+                      }
+                    }
+                  }
+                }
+                m_dnsIpAddrsHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "DnsIpv6Addrs") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        auto peekType_1 = decoder->PeekType();
+                        if (peekType_1.has_value()) {
+                          if (peekType_1.value() == Aws::Crt::Cbor::CborType::Text) {
+                            auto val = decoder->PopNextTextVal();
+                            if (val.has_value()) {
+                              m_dnsIpv6Addrs.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                            }
+                          } else {
+                            decoder->ConsumeNextSingleElement();
+                            Aws::StringStream ss_1;
+                            while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                              auto nextType_1 = decoder->PeekType();
+                              if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
+                                if (nextType_1.has_value()) {
+                                  decoder->ConsumeNextSingleElement();  // consume the Break
+                                }
+                                break;
+                              }
+                              auto val = decoder->PopNextTextVal();
+                              if (val.has_value()) {
+                                ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                              }
+                            }
+                            m_dnsIpv6Addrs.push_back(ss_1.str());
+                            ss_1.clear();
+                          }
+                        }
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto peekType_1 = decoder->PeekType();
+                      if (peekType_1.has_value()) {
+                        if (peekType_1.value() == Aws::Crt::Cbor::CborType::Text) {
+                          auto val = decoder->PopNextTextVal();
+                          if (val.has_value()) {
+                            m_dnsIpv6Addrs.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                          }
+                        } else {
+                          decoder->ConsumeNextSingleElement();
+                          Aws::StringStream ss_1;
+                          while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                            auto nextType_1 = decoder->PeekType();
+                            if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
+                              if (nextType_1.has_value()) {
+                                decoder->ConsumeNextSingleElement();  // consume the Break
+                              }
+                              break;
+                            }
+                            auto val = decoder->PopNextTextVal();
+                            if (val.has_value()) {
+                              ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                            }
+                          }
+                          m_dnsIpv6Addrs.push_back(ss_1.str());
+                          ss_1.clear();
+                        }
+                      }
+                    }
+                  }
+                }
+                m_dnsIpv6AddrsHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "Stage") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_stage = DirectoryStageMapper::GetDirectoryStageForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_stageHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "ShareStatus") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_shareStatus = ShareStatusMapper::GetShareStatusForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_shareStatusHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "ShareMethod") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_shareMethod = ShareMethodMapper::GetShareMethodForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_shareMethodHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "ShareNotes") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_shareNotes = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_shareNotes = ss.str();
+                  }
+                }
+                m_shareNotesHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "LaunchTime") {
+                auto tag = decoder->PopNextTagVal();
+                if (tag.has_value() &&
+                    tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+                {
+                  auto dateType = decoder->PeekType();
+                  if (dateType.has_value()) {
+                    if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                      auto val = decoder->PopNextFloatVal();
+                      if (val.has_value()) {
+                        m_launchTime = Aws::Utils::DateTime(val.value());
+                      }
+                    } else {
+                      auto val = decoder->PopNextUnsignedIntVal();
+                      if (val.has_value()) {
+                        m_launchTime = Aws::Utils::DateTime(val.value());
+                      }
+                    }
+                  }
+                }
+                m_launchTimeHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "StageLastUpdatedDateTime") {
+                auto tag = decoder->PopNextTagVal();
+                if (tag.has_value() &&
+                    tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+                {
+                  auto dateType = decoder->PeekType();
+                  if (dateType.has_value()) {
+                    if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                      auto val = decoder->PopNextFloatVal();
+                      if (val.has_value()) {
+                        m_stageLastUpdatedDateTime = Aws::Utils::DateTime(val.value());
+                      }
+                    } else {
+                      auto val = decoder->PopNextUnsignedIntVal();
+                      if (val.has_value()) {
+                        m_stageLastUpdatedDateTime = Aws::Utils::DateTime(val.value());
+                      }
+                    }
+                  }
+                }
+                m_stageLastUpdatedDateTimeHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "Type") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_type = DirectoryTypeMapper::GetDirectoryTypeForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_typeHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "VpcSettings") {
+                m_vpcSettings = DirectoryVpcSettingsDescription(decoder);
+                m_vpcSettingsHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "ConnectSettings") {
+                m_connectSettings = DirectoryConnectSettingsDescription(decoder);
+                m_connectSettingsHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "RadiusSettings") {
+                m_radiusSettings = RadiusSettings(decoder);
+                m_radiusSettingsHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "RadiusStatus") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_radiusStatus = RadiusStatusMapper::GetRadiusStatusForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_radiusStatusHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "StageReason") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_stageReason = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_stageReason = ss.str();
+                  }
+                }
+                m_stageReasonHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "SsoEnabled") {
+                auto val = decoder->PopNextBooleanVal();
+                if (val.has_value()) {
+                  m_ssoEnabled = val.value();
+                }
+                m_ssoEnabledHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "DesiredNumberOfDomainControllers") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_desiredNumberOfDomainControllers = static_cast<int64_t>(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextNegativeIntVal();
+                    if (val.has_value()) {
+                      m_desiredNumberOfDomainControllers = static_cast<int64_t>(1 - val.value());
+                    }
+                  }
+                }
+                m_desiredNumberOfDomainControllersHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "OwnerDirectoryDescription") {
+                m_ownerDirectoryDescription = OwnerDirectoryDescription(decoder);
+                m_ownerDirectoryDescriptionHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "RegionsInfo") {
+                m_regionsInfo = RegionsInfo(decoder);
+                m_regionsInfoHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "OsVersion") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_osVersion =
+                      OSVersionMapper::GetOSVersionForName(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_osVersionHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "HybridSettings") {
+                m_hybridSettings = HybridSettingsDescription(decoder);
+                m_hybridSettingsHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "NetworkType") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_networkType = NetworkTypeMapper::GetNetworkTypeForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_networkTypeHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("DirectoryDescription", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "DirectoryId") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_directoryId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_directoryId = ss.str();
+                }
+              }
+              m_directoryIdHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "Name") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_name = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_name = ss.str();
+                }
+              }
+              m_nameHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "ShortName") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_shortName = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_shortName = ss.str();
+                }
+              }
+              m_shortNameHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "Size") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_size = DirectorySizeMapper::GetDirectorySizeForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_sizeHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "Edition") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_edition = DirectoryEditionMapper::GetDirectoryEditionForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_editionHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "Alias") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_alias = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_alias = ss.str();
+                }
+              }
+              m_aliasHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "AccessUrl") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_accessUrl = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_accessUrl = ss.str();
+                }
+              }
+              m_accessUrlHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "Description") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_description = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_description = ss.str();
+                }
+              }
+              m_descriptionHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "DnsIpAddrs") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      auto peekType_1 = decoder->PeekType();
+                      if (peekType_1.has_value()) {
+                        if (peekType_1.value() == Aws::Crt::Cbor::CborType::Text) {
+                          auto val = decoder->PopNextTextVal();
+                          if (val.has_value()) {
+                            m_dnsIpAddrs.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                          }
+                        } else {
+                          decoder->ConsumeNextSingleElement();
+                          Aws::StringStream ss_1;
+                          while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                            auto nextType_1 = decoder->PeekType();
+                            if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
+                              if (nextType_1.has_value()) {
+                                decoder->ConsumeNextSingleElement();  // consume the Break
+                              }
+                              break;
+                            }
+                            auto val = decoder->PopNextTextVal();
+                            if (val.has_value()) {
+                              ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                            }
+                          }
+                          m_dnsIpAddrs.push_back(ss_1.str());
+                          ss_1.clear();
+                        }
+                      }
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto peekType_1 = decoder->PeekType();
+                    if (peekType_1.has_value()) {
+                      if (peekType_1.value() == Aws::Crt::Cbor::CborType::Text) {
+                        auto val = decoder->PopNextTextVal();
+                        if (val.has_value()) {
+                          m_dnsIpAddrs.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                        }
+                      } else {
+                        decoder->ConsumeNextSingleElement();
+                        Aws::StringStream ss_1;
+                        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                          auto nextType_1 = decoder->PeekType();
+                          if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
+                            if (nextType_1.has_value()) {
+                              decoder->ConsumeNextSingleElement();  // consume the Break
+                            }
+                            break;
+                          }
+                          auto val = decoder->PopNextTextVal();
+                          if (val.has_value()) {
+                            ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                          }
+                        }
+                        m_dnsIpAddrs.push_back(ss_1.str());
+                        ss_1.clear();
+                      }
+                    }
+                  }
+                }
+              }
+              m_dnsIpAddrsHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "DnsIpv6Addrs") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      auto peekType_1 = decoder->PeekType();
+                      if (peekType_1.has_value()) {
+                        if (peekType_1.value() == Aws::Crt::Cbor::CborType::Text) {
+                          auto val = decoder->PopNextTextVal();
+                          if (val.has_value()) {
+                            m_dnsIpv6Addrs.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                          }
+                        } else {
+                          decoder->ConsumeNextSingleElement();
+                          Aws::StringStream ss_1;
+                          while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                            auto nextType_1 = decoder->PeekType();
+                            if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
+                              if (nextType_1.has_value()) {
+                                decoder->ConsumeNextSingleElement();  // consume the Break
+                              }
+                              break;
+                            }
+                            auto val = decoder->PopNextTextVal();
+                            if (val.has_value()) {
+                              ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                            }
+                          }
+                          m_dnsIpv6Addrs.push_back(ss_1.str());
+                          ss_1.clear();
+                        }
+                      }
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto peekType_1 = decoder->PeekType();
+                    if (peekType_1.has_value()) {
+                      if (peekType_1.value() == Aws::Crt::Cbor::CborType::Text) {
+                        auto val = decoder->PopNextTextVal();
+                        if (val.has_value()) {
+                          m_dnsIpv6Addrs.push_back(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                        }
+                      } else {
+                        decoder->ConsumeNextSingleElement();
+                        Aws::StringStream ss_1;
+                        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                          auto nextType_1 = decoder->PeekType();
+                          if (!nextType_1.has_value() || nextType_1.value() == CborType::Break) {
+                            if (nextType_1.has_value()) {
+                              decoder->ConsumeNextSingleElement();  // consume the Break
+                            }
+                            break;
+                          }
+                          auto val = decoder->PopNextTextVal();
+                          if (val.has_value()) {
+                            ss_1 << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                          }
+                        }
+                        m_dnsIpv6Addrs.push_back(ss_1.str());
+                        ss_1.clear();
+                      }
+                    }
+                  }
+                }
+              }
+              m_dnsIpv6AddrsHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "Stage") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_stage = DirectoryStageMapper::GetDirectoryStageForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_stageHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "ShareStatus") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_shareStatus =
+                    ShareStatusMapper::GetShareStatusForName(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_shareStatusHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "ShareMethod") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_shareMethod =
+                    ShareMethodMapper::GetShareMethodForName(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_shareMethodHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "ShareNotes") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_shareNotes = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_shareNotes = ss.str();
+                }
+              }
+              m_shareNotesHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "LaunchTime") {
+              auto tag = decoder->PopNextTagVal();
+              if (tag.has_value() &&
+                  tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+              {
+                auto dateType = decoder->PeekType();
+                if (dateType.has_value()) {
+                  if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                    auto val = decoder->PopNextFloatVal();
+                    if (val.has_value()) {
+                      m_launchTime = Aws::Utils::DateTime(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_launchTime = Aws::Utils::DateTime(val.value());
+                    }
+                  }
+                }
+              }
+              m_launchTimeHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "StageLastUpdatedDateTime") {
+              auto tag = decoder->PopNextTagVal();
+              if (tag.has_value() &&
+                  tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+              {
+                auto dateType = decoder->PeekType();
+                if (dateType.has_value()) {
+                  if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                    auto val = decoder->PopNextFloatVal();
+                    if (val.has_value()) {
+                      m_stageLastUpdatedDateTime = Aws::Utils::DateTime(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_stageLastUpdatedDateTime = Aws::Utils::DateTime(val.value());
+                    }
+                  }
+                }
+              }
+              m_stageLastUpdatedDateTimeHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "Type") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_type = DirectoryTypeMapper::GetDirectoryTypeForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_typeHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "VpcSettings") {
+              m_vpcSettings = DirectoryVpcSettingsDescription(decoder);
+              m_vpcSettingsHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "ConnectSettings") {
+              m_connectSettings = DirectoryConnectSettingsDescription(decoder);
+              m_connectSettingsHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "RadiusSettings") {
+              m_radiusSettings = RadiusSettings(decoder);
+              m_radiusSettingsHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "RadiusStatus") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_radiusStatus = RadiusStatusMapper::GetRadiusStatusForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_radiusStatusHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "StageReason") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_stageReason = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_stageReason = ss.str();
+                }
+              }
+              m_stageReasonHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "SsoEnabled") {
+              auto val = decoder->PopNextBooleanVal();
+              if (val.has_value()) {
+                m_ssoEnabled = val.value();
+              }
+              m_ssoEnabledHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "DesiredNumberOfDomainControllers") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
+                  auto val = decoder->PopNextUnsignedIntVal();
+                  if (val.has_value()) {
+                    m_desiredNumberOfDomainControllers = static_cast<int64_t>(val.value());
+                  }
+                } else {
+                  auto val = decoder->PopNextNegativeIntVal();
+                  if (val.has_value()) {
+                    m_desiredNumberOfDomainControllers = static_cast<int64_t>(1 - val.value());
+                  }
+                }
+              }
+              m_desiredNumberOfDomainControllersHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "OwnerDirectoryDescription") {
+              m_ownerDirectoryDescription = OwnerDirectoryDescription(decoder);
+              m_ownerDirectoryDescriptionHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "RegionsInfo") {
+              m_regionsInfo = RegionsInfo(decoder);
+              m_regionsInfoHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "OsVersion") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_osVersion =
+                    OSVersionMapper::GetOSVersionForName(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_osVersionHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "HybridSettings") {
+              m_hybridSettings = HybridSettingsDescription(decoder);
+              m_hybridSettingsHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "NetworkType") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_networkType =
+                    NetworkTypeMapper::GetNetworkTypeForName(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_networkTypeHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
     }
-    m_dnsIpAddrsHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("DnsIpv6Addrs")) {
-    Aws::Utils::Array<JsonView> dnsIpv6AddrsJsonList = jsonValue.GetArray("DnsIpv6Addrs");
-    for (unsigned dnsIpv6AddrsIndex = 0; dnsIpv6AddrsIndex < dnsIpv6AddrsJsonList.GetLength(); ++dnsIpv6AddrsIndex) {
-      m_dnsIpv6Addrs.push_back(dnsIpv6AddrsJsonList[dnsIpv6AddrsIndex].AsString());
-    }
-    m_dnsIpv6AddrsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("Stage")) {
-    m_stage = DirectoryStageMapper::GetDirectoryStageForName(jsonValue.GetString("Stage"));
-    m_stageHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ShareStatus")) {
-    m_shareStatus = ShareStatusMapper::GetShareStatusForName(jsonValue.GetString("ShareStatus"));
-    m_shareStatusHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ShareMethod")) {
-    m_shareMethod = ShareMethodMapper::GetShareMethodForName(jsonValue.GetString("ShareMethod"));
-    m_shareMethodHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ShareNotes")) {
-    m_shareNotes = jsonValue.GetString("ShareNotes");
-    m_shareNotesHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("LaunchTime")) {
-    m_launchTime = jsonValue.GetDouble("LaunchTime");
-    m_launchTimeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("StageLastUpdatedDateTime")) {
-    m_stageLastUpdatedDateTime = jsonValue.GetDouble("StageLastUpdatedDateTime");
-    m_stageLastUpdatedDateTimeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("Type")) {
-    m_type = DirectoryTypeMapper::GetDirectoryTypeForName(jsonValue.GetString("Type"));
-    m_typeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("VpcSettings")) {
-    m_vpcSettings = jsonValue.GetObject("VpcSettings");
-    m_vpcSettingsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ConnectSettings")) {
-    m_connectSettings = jsonValue.GetObject("ConnectSettings");
-    m_connectSettingsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("RadiusSettings")) {
-    m_radiusSettings = jsonValue.GetObject("RadiusSettings");
-    m_radiusSettingsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("RadiusStatus")) {
-    m_radiusStatus = RadiusStatusMapper::GetRadiusStatusForName(jsonValue.GetString("RadiusStatus"));
-    m_radiusStatusHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("StageReason")) {
-    m_stageReason = jsonValue.GetString("StageReason");
-    m_stageReasonHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("SsoEnabled")) {
-    m_ssoEnabled = jsonValue.GetBool("SsoEnabled");
-    m_ssoEnabledHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("DesiredNumberOfDomainControllers")) {
-    m_desiredNumberOfDomainControllers = jsonValue.GetInteger("DesiredNumberOfDomainControllers");
-    m_desiredNumberOfDomainControllersHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("OwnerDirectoryDescription")) {
-    m_ownerDirectoryDescription = jsonValue.GetObject("OwnerDirectoryDescription");
-    m_ownerDirectoryDescriptionHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("RegionsInfo")) {
-    m_regionsInfo = jsonValue.GetObject("RegionsInfo");
-    m_regionsInfoHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("OsVersion")) {
-    m_osVersion = OSVersionMapper::GetOSVersionForName(jsonValue.GetString("OsVersion"));
-    m_osVersionHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("HybridSettings")) {
-    m_hybridSettings = jsonValue.GetObject("HybridSettings");
-    m_hybridSettingsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("NetworkType")) {
-    m_networkType = NetworkTypeMapper::GetNetworkTypeForName(jsonValue.GetString("NetworkType"));
-    m_networkTypeHasBeenSet = true;
-  }
+
   return *this;
 }
 
-JsonValue DirectoryDescription::Jsonize() const {
-  JsonValue payload;
+void DirectoryDescription::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_directoryIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_nameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_shortNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_sizeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_editionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_aliasHasBeenSet) {
+    mapSize++;
+  }
+  if (m_accessUrlHasBeenSet) {
+    mapSize++;
+  }
+  if (m_descriptionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_dnsIpAddrsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_dnsIpv6AddrsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_stageHasBeenSet) {
+    mapSize++;
+  }
+  if (m_shareStatusHasBeenSet) {
+    mapSize++;
+  }
+  if (m_shareMethodHasBeenSet) {
+    mapSize++;
+  }
+  if (m_shareNotesHasBeenSet) {
+    mapSize++;
+  }
+  if (m_launchTimeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_stageLastUpdatedDateTimeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_typeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_vpcSettingsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_connectSettingsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_radiusSettingsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_radiusStatusHasBeenSet) {
+    mapSize++;
+  }
+  if (m_stageReasonHasBeenSet) {
+    mapSize++;
+  }
+  if (m_ssoEnabledHasBeenSet) {
+    mapSize++;
+  }
+  if (m_desiredNumberOfDomainControllersHasBeenSet) {
+    mapSize++;
+  }
+  if (m_ownerDirectoryDescriptionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_regionsInfoHasBeenSet) {
+    mapSize++;
+  }
+  if (m_osVersionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_hybridSettingsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_networkTypeHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_directoryIdHasBeenSet) {
-    payload.WithString("DirectoryId", m_directoryId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("DirectoryId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_directoryId.c_str()));
   }
 
   if (m_nameHasBeenSet) {
-    payload.WithString("Name", m_name);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Name"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_name.c_str()));
   }
 
   if (m_shortNameHasBeenSet) {
-    payload.WithString("ShortName", m_shortName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ShortName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_shortName.c_str()));
   }
 
   if (m_sizeHasBeenSet) {
-    payload.WithString("Size", DirectorySizeMapper::GetNameForDirectorySize(m_size));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Size"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(DirectorySizeMapper::GetNameForDirectorySize(m_size).c_str()));
   }
 
   if (m_editionHasBeenSet) {
-    payload.WithString("Edition", DirectoryEditionMapper::GetNameForDirectoryEdition(m_edition));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Edition"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(DirectoryEditionMapper::GetNameForDirectoryEdition(m_edition).c_str()));
   }
 
   if (m_aliasHasBeenSet) {
-    payload.WithString("Alias", m_alias);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Alias"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_alias.c_str()));
   }
 
   if (m_accessUrlHasBeenSet) {
-    payload.WithString("AccessUrl", m_accessUrl);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AccessUrl"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_accessUrl.c_str()));
   }
 
   if (m_descriptionHasBeenSet) {
-    payload.WithString("Description", m_description);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Description"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_description.c_str()));
   }
 
   if (m_dnsIpAddrsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> dnsIpAddrsJsonList(m_dnsIpAddrs.size());
-    for (unsigned dnsIpAddrsIndex = 0; dnsIpAddrsIndex < dnsIpAddrsJsonList.GetLength(); ++dnsIpAddrsIndex) {
-      dnsIpAddrsJsonList[dnsIpAddrsIndex].AsString(m_dnsIpAddrs[dnsIpAddrsIndex]);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("DnsIpAddrs"));
+    encoder.WriteArrayStart(m_dnsIpAddrs.size());
+    for (const auto& item_0 : m_dnsIpAddrs) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
     }
-    payload.WithArray("DnsIpAddrs", std::move(dnsIpAddrsJsonList));
   }
 
   if (m_dnsIpv6AddrsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> dnsIpv6AddrsJsonList(m_dnsIpv6Addrs.size());
-    for (unsigned dnsIpv6AddrsIndex = 0; dnsIpv6AddrsIndex < dnsIpv6AddrsJsonList.GetLength(); ++dnsIpv6AddrsIndex) {
-      dnsIpv6AddrsJsonList[dnsIpv6AddrsIndex].AsString(m_dnsIpv6Addrs[dnsIpv6AddrsIndex]);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("DnsIpv6Addrs"));
+    encoder.WriteArrayStart(m_dnsIpv6Addrs.size());
+    for (const auto& item_0 : m_dnsIpv6Addrs) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
     }
-    payload.WithArray("DnsIpv6Addrs", std::move(dnsIpv6AddrsJsonList));
   }
 
   if (m_stageHasBeenSet) {
-    payload.WithString("Stage", DirectoryStageMapper::GetNameForDirectoryStage(m_stage));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Stage"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(DirectoryStageMapper::GetNameForDirectoryStage(m_stage).c_str()));
   }
 
   if (m_shareStatusHasBeenSet) {
-    payload.WithString("ShareStatus", ShareStatusMapper::GetNameForShareStatus(m_shareStatus));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ShareStatus"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(ShareStatusMapper::GetNameForShareStatus(m_shareStatus).c_str()));
   }
 
   if (m_shareMethodHasBeenSet) {
-    payload.WithString("ShareMethod", ShareMethodMapper::GetNameForShareMethod(m_shareMethod));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ShareMethod"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(ShareMethodMapper::GetNameForShareMethod(m_shareMethod).c_str()));
   }
 
   if (m_shareNotesHasBeenSet) {
-    payload.WithString("ShareNotes", m_shareNotes);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ShareNotes"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_shareNotes.c_str()));
   }
 
   if (m_launchTimeHasBeenSet) {
-    payload.WithDouble("LaunchTime", m_launchTime.SecondsWithMSPrecision());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("LaunchTime"));
+    encoder.WriteTag(1);  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+    encoder.WriteUInt(m_launchTime.Seconds());
   }
 
   if (m_stageLastUpdatedDateTimeHasBeenSet) {
-    payload.WithDouble("StageLastUpdatedDateTime", m_stageLastUpdatedDateTime.SecondsWithMSPrecision());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("StageLastUpdatedDateTime"));
+    encoder.WriteTag(1);  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+    encoder.WriteUInt(m_stageLastUpdatedDateTime.Seconds());
   }
 
   if (m_typeHasBeenSet) {
-    payload.WithString("Type", DirectoryTypeMapper::GetNameForDirectoryType(m_type));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Type"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(DirectoryTypeMapper::GetNameForDirectoryType(m_type).c_str()));
   }
 
   if (m_vpcSettingsHasBeenSet) {
-    payload.WithObject("VpcSettings", m_vpcSettings.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("VpcSettings"));
+    m_vpcSettings.CborEncode(encoder);
   }
 
   if (m_connectSettingsHasBeenSet) {
-    payload.WithObject("ConnectSettings", m_connectSettings.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ConnectSettings"));
+    m_connectSettings.CborEncode(encoder);
   }
 
   if (m_radiusSettingsHasBeenSet) {
-    payload.WithObject("RadiusSettings", m_radiusSettings.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("RadiusSettings"));
+    m_radiusSettings.CborEncode(encoder);
   }
 
   if (m_radiusStatusHasBeenSet) {
-    payload.WithString("RadiusStatus", RadiusStatusMapper::GetNameForRadiusStatus(m_radiusStatus));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("RadiusStatus"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(RadiusStatusMapper::GetNameForRadiusStatus(m_radiusStatus).c_str()));
   }
 
   if (m_stageReasonHasBeenSet) {
-    payload.WithString("StageReason", m_stageReason);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("StageReason"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_stageReason.c_str()));
   }
 
   if (m_ssoEnabledHasBeenSet) {
-    payload.WithBool("SsoEnabled", m_ssoEnabled);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("SsoEnabled"));
+    encoder.WriteBool(m_ssoEnabled);
   }
 
   if (m_desiredNumberOfDomainControllersHasBeenSet) {
-    payload.WithInteger("DesiredNumberOfDomainControllers", m_desiredNumberOfDomainControllers);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("DesiredNumberOfDomainControllers"));
+    (m_desiredNumberOfDomainControllers >= 0) ? encoder.WriteUInt(m_desiredNumberOfDomainControllers)
+                                              : encoder.WriteNegInt(m_desiredNumberOfDomainControllers);
   }
 
   if (m_ownerDirectoryDescriptionHasBeenSet) {
-    payload.WithObject("OwnerDirectoryDescription", m_ownerDirectoryDescription.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("OwnerDirectoryDescription"));
+    m_ownerDirectoryDescription.CborEncode(encoder);
   }
 
   if (m_regionsInfoHasBeenSet) {
-    payload.WithObject("RegionsInfo", m_regionsInfo.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("RegionsInfo"));
+    m_regionsInfo.CborEncode(encoder);
   }
 
   if (m_osVersionHasBeenSet) {
-    payload.WithString("OsVersion", OSVersionMapper::GetNameForOSVersion(m_osVersion));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("OsVersion"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(OSVersionMapper::GetNameForOSVersion(m_osVersion).c_str()));
   }
 
   if (m_hybridSettingsHasBeenSet) {
-    payload.WithObject("HybridSettings", m_hybridSettings.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("HybridSettings"));
+    m_hybridSettings.CborEncode(encoder);
   }
 
   if (m_networkTypeHasBeenSet) {
-    payload.WithString("NetworkType", NetworkTypeMapper::GetNameForNetworkType(m_networkType));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("NetworkType"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(NetworkTypeMapper::GetNameForNetworkType(m_networkType).c_str()));
   }
-
-  return payload;
 }
 
 }  // namespace Model

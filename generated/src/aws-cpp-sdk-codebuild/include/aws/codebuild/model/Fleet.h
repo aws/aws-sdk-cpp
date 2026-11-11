@@ -17,15 +17,15 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace CodeBuild {
 namespace Model {
@@ -39,9 +39,9 @@ namespace Model {
 class Fleet {
  public:
   AWS_CODEBUILD_API Fleet() = default;
-  AWS_CODEBUILD_API Fleet(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CODEBUILD_API Fleet& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_CODEBUILD_API Fleet(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CODEBUILD_API Fleet& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CODEBUILD_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -156,13 +156,13 @@ class Fleet {
    * <p>The initial number of machines allocated to the compute ﬂeet, which deﬁnes
    * the number of builds that can run in parallel.</p>
    */
-  inline int GetBaseCapacity() const { return m_baseCapacity; }
+  inline int64_t GetBaseCapacity() const { return m_baseCapacity; }
   inline bool BaseCapacityHasBeenSet() const { return m_baseCapacityHasBeenSet; }
-  inline void SetBaseCapacity(int value) {
+  inline void SetBaseCapacity(int64_t value) {
     m_baseCapacityHasBeenSet = true;
     m_baseCapacity = value;
   }
-  inline Fleet& WithBaseCapacity(int value) {
+  inline Fleet& WithBaseCapacity(int64_t value) {
     SetBaseCapacity(value);
     return *this;
   }
@@ -464,7 +464,7 @@ class Fleet {
 
   FleetStatus m_status;
 
-  int m_baseCapacity{0};
+  int64_t m_baseCapacity{0};
 
   EnvironmentType m_environmentType{EnvironmentType::NOT_SET};
 

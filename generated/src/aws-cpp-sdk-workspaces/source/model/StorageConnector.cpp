@@ -3,44 +3,128 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/workspaces/model/StorageConnector.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace WorkSpaces {
 namespace Model {
 
-StorageConnector::StorageConnector(JsonView jsonValue) { *this = jsonValue; }
+StorageConnector::StorageConnector(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-StorageConnector& StorageConnector::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("ConnectorType")) {
-    m_connectorType = StorageConnectorTypeEnumMapper::GetStorageConnectorTypeEnumForName(jsonValue.GetString("ConnectorType"));
-    m_connectorTypeHasBeenSet = true;
+StorageConnector& StorageConnector::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "ConnectorType") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_connectorType = StorageConnectorTypeEnumMapper::GetStorageConnectorTypeEnumForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_connectorTypeHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "Status") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_status = StorageConnectorStatusEnumMapper::GetStorageConnectorStatusEnumForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_statusHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("StorageConnector", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "ConnectorType") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_connectorType = StorageConnectorTypeEnumMapper::GetStorageConnectorTypeEnumForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_connectorTypeHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "Status") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_status = StorageConnectorStatusEnumMapper::GetStorageConnectorStatusEnumForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_statusHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
+    }
   }
-  if (jsonValue.ValueExists("Status")) {
-    m_status = StorageConnectorStatusEnumMapper::GetStorageConnectorStatusEnumForName(jsonValue.GetString("Status"));
-    m_statusHasBeenSet = true;
-  }
+
   return *this;
 }
 
-JsonValue StorageConnector::Jsonize() const {
-  JsonValue payload;
+void StorageConnector::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_connectorTypeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_statusHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_connectorTypeHasBeenSet) {
-    payload.WithString("ConnectorType", StorageConnectorTypeEnumMapper::GetNameForStorageConnectorTypeEnum(m_connectorType));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ConnectorType"));
+    encoder.WriteText(
+        Aws::Crt::ByteCursorFromCString(StorageConnectorTypeEnumMapper::GetNameForStorageConnectorTypeEnum(m_connectorType).c_str()));
   }
 
   if (m_statusHasBeenSet) {
-    payload.WithString("Status", StorageConnectorStatusEnumMapper::GetNameForStorageConnectorStatusEnum(m_status));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Status"));
+    encoder.WriteText(
+        Aws::Crt::ByteCursorFromCString(StorageConnectorStatusEnumMapper::GetNameForStorageConnectorStatusEnum(m_status).c_str()));
   }
-
-  return payload;
 }
 
 }  // namespace Model

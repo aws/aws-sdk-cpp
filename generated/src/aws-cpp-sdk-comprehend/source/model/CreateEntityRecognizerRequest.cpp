@@ -4,70 +4,120 @@
  */
 
 #include <aws/comprehend/model/CreateEntityRecognizerRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 using namespace Aws::Comprehend::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String CreateEntityRecognizerRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_recognizerNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_versionNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_dataAccessRoleArnHasBeenSet) {
+    mapSize++;
+  }
+  if (m_tagsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_inputDataConfigHasBeenSet) {
+    mapSize++;
+  }
+  if (m_clientRequestTokenHasBeenSet) {
+    mapSize++;
+  }
+  if (m_languageCodeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_volumeKmsKeyIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_vpcConfigHasBeenSet) {
+    mapSize++;
+  }
+  if (m_modelKmsKeyIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_modelPolicyHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_recognizerNameHasBeenSet) {
-    payload.WithString("RecognizerName", m_recognizerName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("RecognizerName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_recognizerName.c_str()));
   }
 
   if (m_versionNameHasBeenSet) {
-    payload.WithString("VersionName", m_versionName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("VersionName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_versionName.c_str()));
   }
 
   if (m_dataAccessRoleArnHasBeenSet) {
-    payload.WithString("DataAccessRoleArn", m_dataAccessRoleArn);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("DataAccessRoleArn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_dataAccessRoleArn.c_str()));
   }
 
   if (m_tagsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
-      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Tags"));
+    encoder.WriteArrayStart(m_tags.size());
+    for (const auto& item_0 : m_tags) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("Tags", std::move(tagsJsonList));
   }
 
   if (m_inputDataConfigHasBeenSet) {
-    payload.WithObject("InputDataConfig", m_inputDataConfig.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("InputDataConfig"));
+    m_inputDataConfig.CborEncode(encoder);
   }
 
   if (m_clientRequestTokenHasBeenSet) {
-    payload.WithString("ClientRequestToken", m_clientRequestToken);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ClientRequestToken"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_clientRequestToken.c_str()));
   }
 
   if (m_languageCodeHasBeenSet) {
-    payload.WithString("LanguageCode", LanguageCodeMapper::GetNameForLanguageCode(m_languageCode));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("LanguageCode"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(LanguageCodeMapper::GetNameForLanguageCode(m_languageCode).c_str()));
   }
 
   if (m_volumeKmsKeyIdHasBeenSet) {
-    payload.WithString("VolumeKmsKeyId", m_volumeKmsKeyId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("VolumeKmsKeyId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_volumeKmsKeyId.c_str()));
   }
 
   if (m_vpcConfigHasBeenSet) {
-    payload.WithObject("VpcConfig", m_vpcConfig.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("VpcConfig"));
+    m_vpcConfig.CborEncode(encoder);
   }
 
   if (m_modelKmsKeyIdHasBeenSet) {
-    payload.WithString("ModelKmsKeyId", m_modelKmsKeyId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ModelKmsKeyId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_modelKmsKeyId.c_str()));
   }
 
   if (m_modelPolicyHasBeenSet) {
-    payload.WithString("ModelPolicy", m_modelPolicy);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ModelPolicy"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_modelPolicy.c_str()));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection CreateEntityRecognizerRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Comprehend_20171127.CreateEntityRecognizer"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

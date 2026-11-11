@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 #include <aws/network-firewall/model/ProxyRuleCondition.h>
 #include <aws/network-firewall/model/ProxyRulePhaseAction.h>
@@ -14,10 +15,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace NetworkFirewall {
 namespace Model {
@@ -33,9 +33,9 @@ namespace Model {
 class CreateProxyRule {
  public:
   AWS_NETWORKFIREWALL_API CreateProxyRule() = default;
-  AWS_NETWORKFIREWALL_API CreateProxyRule(Aws::Utils::Json::JsonView jsonValue);
-  AWS_NETWORKFIREWALL_API CreateProxyRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_NETWORKFIREWALL_API CreateProxyRule(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_NETWORKFIREWALL_API CreateProxyRule& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_NETWORKFIREWALL_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -119,13 +119,13 @@ class CreateProxyRule {
   /**
    * <p>Where to insert a proxy rule in a proxy rule group. </p>
    */
-  inline int GetInsertPosition() const { return m_insertPosition; }
+  inline int64_t GetInsertPosition() const { return m_insertPosition; }
   inline bool InsertPositionHasBeenSet() const { return m_insertPositionHasBeenSet; }
-  inline void SetInsertPosition(int value) {
+  inline void SetInsertPosition(int64_t value) {
     m_insertPositionHasBeenSet = true;
     m_insertPosition = value;
   }
-  inline CreateProxyRule& WithInsertPosition(int value) {
+  inline CreateProxyRule& WithInsertPosition(int64_t value) {
     SetInsertPosition(value);
     return *this;
   }
@@ -139,7 +139,7 @@ class CreateProxyRule {
 
   Aws::Vector<ProxyRuleCondition> m_conditions;
 
-  int m_insertPosition{0};
+  int64_t m_insertPosition{0};
   bool m_proxyRuleNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_actionHasBeenSet = false;

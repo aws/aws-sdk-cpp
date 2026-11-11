@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/transcribe/TranscribeService_EXPORTS.h>
 #include <aws/transcribe/model/SubtitleFormat.h>
 
@@ -12,10 +13,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace TranscribeService {
 namespace Model {
@@ -32,9 +32,9 @@ namespace Model {
 class Subtitles {
  public:
   AWS_TRANSCRIBESERVICE_API Subtitles() = default;
-  AWS_TRANSCRIBESERVICE_API Subtitles(Aws::Utils::Json::JsonView jsonValue);
-  AWS_TRANSCRIBESERVICE_API Subtitles& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_TRANSCRIBESERVICE_API Subtitles(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_TRANSCRIBESERVICE_API Subtitles& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_TRANSCRIBESERVICE_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -69,13 +69,13 @@ class Subtitles {
    * uncertain which value to use, we recommend choosing <code>1</code>, as this may
    * improve compatibility with other services.</p>
    */
-  inline int GetOutputStartIndex() const { return m_outputStartIndex; }
+  inline int64_t GetOutputStartIndex() const { return m_outputStartIndex; }
   inline bool OutputStartIndexHasBeenSet() const { return m_outputStartIndexHasBeenSet; }
-  inline void SetOutputStartIndex(int value) {
+  inline void SetOutputStartIndex(int64_t value) {
     m_outputStartIndexHasBeenSet = true;
     m_outputStartIndex = value;
   }
-  inline Subtitles& WithOutputStartIndex(int value) {
+  inline Subtitles& WithOutputStartIndex(int64_t value) {
     SetOutputStartIndex(value);
     return *this;
   }
@@ -83,7 +83,7 @@ class Subtitles {
  private:
   Aws::Vector<SubtitleFormat> m_formats;
 
-  int m_outputStartIndex{0};
+  int64_t m_outputStartIndex{0};
   bool m_formatsHasBeenSet = false;
   bool m_outputStartIndexHasBeenSet = false;
 };

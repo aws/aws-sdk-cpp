@@ -3,68 +3,204 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/workspaces/model/SelfservicePermissions.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace WorkSpaces {
 namespace Model {
 
-SelfservicePermissions::SelfservicePermissions(JsonView jsonValue) { *this = jsonValue; }
+SelfservicePermissions::SelfservicePermissions(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-SelfservicePermissions& SelfservicePermissions::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("RestartWorkspace")) {
-    m_restartWorkspace = ReconnectEnumMapper::GetReconnectEnumForName(jsonValue.GetString("RestartWorkspace"));
-    m_restartWorkspaceHasBeenSet = true;
+SelfservicePermissions& SelfservicePermissions::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "RestartWorkspace") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_restartWorkspace = ReconnectEnumMapper::GetReconnectEnumForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_restartWorkspaceHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "IncreaseVolumeSize") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_increaseVolumeSize = ReconnectEnumMapper::GetReconnectEnumForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_increaseVolumeSizeHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "ChangeComputeType") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_changeComputeType = ReconnectEnumMapper::GetReconnectEnumForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_changeComputeTypeHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "SwitchRunningMode") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_switchRunningMode = ReconnectEnumMapper::GetReconnectEnumForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_switchRunningModeHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "RebuildWorkspace") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_rebuildWorkspace = ReconnectEnumMapper::GetReconnectEnumForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_rebuildWorkspaceHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("SelfservicePermissions", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "RestartWorkspace") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_restartWorkspace = ReconnectEnumMapper::GetReconnectEnumForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_restartWorkspaceHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "IncreaseVolumeSize") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_increaseVolumeSize = ReconnectEnumMapper::GetReconnectEnumForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_increaseVolumeSizeHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "ChangeComputeType") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_changeComputeType = ReconnectEnumMapper::GetReconnectEnumForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_changeComputeTypeHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "SwitchRunningMode") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_switchRunningMode = ReconnectEnumMapper::GetReconnectEnumForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_switchRunningModeHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "RebuildWorkspace") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_rebuildWorkspace = ReconnectEnumMapper::GetReconnectEnumForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_rebuildWorkspaceHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
+    }
   }
-  if (jsonValue.ValueExists("IncreaseVolumeSize")) {
-    m_increaseVolumeSize = ReconnectEnumMapper::GetReconnectEnumForName(jsonValue.GetString("IncreaseVolumeSize"));
-    m_increaseVolumeSizeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ChangeComputeType")) {
-    m_changeComputeType = ReconnectEnumMapper::GetReconnectEnumForName(jsonValue.GetString("ChangeComputeType"));
-    m_changeComputeTypeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("SwitchRunningMode")) {
-    m_switchRunningMode = ReconnectEnumMapper::GetReconnectEnumForName(jsonValue.GetString("SwitchRunningMode"));
-    m_switchRunningModeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("RebuildWorkspace")) {
-    m_rebuildWorkspace = ReconnectEnumMapper::GetReconnectEnumForName(jsonValue.GetString("RebuildWorkspace"));
-    m_rebuildWorkspaceHasBeenSet = true;
-  }
+
   return *this;
 }
 
-JsonValue SelfservicePermissions::Jsonize() const {
-  JsonValue payload;
+void SelfservicePermissions::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_restartWorkspaceHasBeenSet) {
+    mapSize++;
+  }
+  if (m_increaseVolumeSizeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_changeComputeTypeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_switchRunningModeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_rebuildWorkspaceHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_restartWorkspaceHasBeenSet) {
-    payload.WithString("RestartWorkspace", ReconnectEnumMapper::GetNameForReconnectEnum(m_restartWorkspace));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("RestartWorkspace"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(ReconnectEnumMapper::GetNameForReconnectEnum(m_restartWorkspace).c_str()));
   }
 
   if (m_increaseVolumeSizeHasBeenSet) {
-    payload.WithString("IncreaseVolumeSize", ReconnectEnumMapper::GetNameForReconnectEnum(m_increaseVolumeSize));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("IncreaseVolumeSize"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(ReconnectEnumMapper::GetNameForReconnectEnum(m_increaseVolumeSize).c_str()));
   }
 
   if (m_changeComputeTypeHasBeenSet) {
-    payload.WithString("ChangeComputeType", ReconnectEnumMapper::GetNameForReconnectEnum(m_changeComputeType));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ChangeComputeType"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(ReconnectEnumMapper::GetNameForReconnectEnum(m_changeComputeType).c_str()));
   }
 
   if (m_switchRunningModeHasBeenSet) {
-    payload.WithString("SwitchRunningMode", ReconnectEnumMapper::GetNameForReconnectEnum(m_switchRunningMode));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("SwitchRunningMode"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(ReconnectEnumMapper::GetNameForReconnectEnum(m_switchRunningMode).c_str()));
   }
 
   if (m_rebuildWorkspaceHasBeenSet) {
-    payload.WithString("RebuildWorkspace", ReconnectEnumMapper::GetNameForReconnectEnum(m_rebuildWorkspace));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("RebuildWorkspace"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(ReconnectEnumMapper::GetNameForReconnectEnum(m_rebuildWorkspace).c_str()));
   }
-
-  return payload;
 }
 
 }  // namespace Model

@@ -5,13 +5,13 @@
 
 #pragma once
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
+#include <aws/crt/cbor/Cbor.h>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace CodePipeline {
 namespace Model {
@@ -25,21 +25,21 @@ namespace Model {
 class ArtifactDetails {
  public:
   AWS_CODEPIPELINE_API ArtifactDetails() = default;
-  AWS_CODEPIPELINE_API ArtifactDetails(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CODEPIPELINE_API ArtifactDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_CODEPIPELINE_API ArtifactDetails(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CODEPIPELINE_API ArtifactDetails& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CODEPIPELINE_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
    * <p>The minimum number of artifacts allowed for the action type.</p>
    */
-  inline int GetMinimumCount() const { return m_minimumCount; }
+  inline int64_t GetMinimumCount() const { return m_minimumCount; }
   inline bool MinimumCountHasBeenSet() const { return m_minimumCountHasBeenSet; }
-  inline void SetMinimumCount(int value) {
+  inline void SetMinimumCount(int64_t value) {
     m_minimumCountHasBeenSet = true;
     m_minimumCount = value;
   }
-  inline ArtifactDetails& WithMinimumCount(int value) {
+  inline ArtifactDetails& WithMinimumCount(int64_t value) {
     SetMinimumCount(value);
     return *this;
   }
@@ -49,21 +49,21 @@ class ArtifactDetails {
   /**
    * <p>The maximum number of artifacts allowed for the action type.</p>
    */
-  inline int GetMaximumCount() const { return m_maximumCount; }
+  inline int64_t GetMaximumCount() const { return m_maximumCount; }
   inline bool MaximumCountHasBeenSet() const { return m_maximumCountHasBeenSet; }
-  inline void SetMaximumCount(int value) {
+  inline void SetMaximumCount(int64_t value) {
     m_maximumCountHasBeenSet = true;
     m_maximumCount = value;
   }
-  inline ArtifactDetails& WithMaximumCount(int value) {
+  inline ArtifactDetails& WithMaximumCount(int64_t value) {
     SetMaximumCount(value);
     return *this;
   }
   ///@}
  private:
-  int m_minimumCount{0};
+  int64_t m_minimumCount{0};
 
-  int m_maximumCount{0};
+  int64_t m_maximumCount{0};
   bool m_minimumCountHasBeenSet = false;
   bool m_maximumCountHasBeenSet = false;
 };

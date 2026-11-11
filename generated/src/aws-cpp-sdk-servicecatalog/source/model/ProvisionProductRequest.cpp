@@ -3,88 +3,143 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/servicecatalog/model/ProvisionProductRequest.h>
 
 #include <utility>
 
 using namespace Aws::ServiceCatalog::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String ProvisionProductRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_acceptLanguageHasBeenSet) {
+    mapSize++;
+  }
+  if (m_productIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_productNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_provisioningArtifactIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_provisioningArtifactNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_pathIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_pathNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_provisionedProductNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_provisioningParametersHasBeenSet) {
+    mapSize++;
+  }
+  if (m_provisioningPreferencesHasBeenSet) {
+    mapSize++;
+  }
+  if (m_tagsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_notificationArnsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_provisionTokenHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_acceptLanguageHasBeenSet) {
-    payload.WithString("AcceptLanguage", m_acceptLanguage);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AcceptLanguage"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_acceptLanguage.c_str()));
   }
 
   if (m_productIdHasBeenSet) {
-    payload.WithString("ProductId", m_productId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ProductId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_productId.c_str()));
   }
 
   if (m_productNameHasBeenSet) {
-    payload.WithString("ProductName", m_productName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ProductName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_productName.c_str()));
   }
 
   if (m_provisioningArtifactIdHasBeenSet) {
-    payload.WithString("ProvisioningArtifactId", m_provisioningArtifactId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ProvisioningArtifactId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_provisioningArtifactId.c_str()));
   }
 
   if (m_provisioningArtifactNameHasBeenSet) {
-    payload.WithString("ProvisioningArtifactName", m_provisioningArtifactName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ProvisioningArtifactName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_provisioningArtifactName.c_str()));
   }
 
   if (m_pathIdHasBeenSet) {
-    payload.WithString("PathId", m_pathId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("PathId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_pathId.c_str()));
   }
 
   if (m_pathNameHasBeenSet) {
-    payload.WithString("PathName", m_pathName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("PathName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_pathName.c_str()));
   }
 
   if (m_provisionedProductNameHasBeenSet) {
-    payload.WithString("ProvisionedProductName", m_provisionedProductName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ProvisionedProductName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_provisionedProductName.c_str()));
   }
 
   if (m_provisioningParametersHasBeenSet) {
-    Aws::Utils::Array<JsonValue> provisioningParametersJsonList(m_provisioningParameters.size());
-    for (unsigned provisioningParametersIndex = 0; provisioningParametersIndex < provisioningParametersJsonList.GetLength();
-         ++provisioningParametersIndex) {
-      provisioningParametersJsonList[provisioningParametersIndex].AsObject(m_provisioningParameters[provisioningParametersIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ProvisioningParameters"));
+    encoder.WriteArrayStart(m_provisioningParameters.size());
+    for (const auto& item_0 : m_provisioningParameters) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("ProvisioningParameters", std::move(provisioningParametersJsonList));
   }
 
   if (m_provisioningPreferencesHasBeenSet) {
-    payload.WithObject("ProvisioningPreferences", m_provisioningPreferences.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ProvisioningPreferences"));
+    m_provisioningPreferences.CborEncode(encoder);
   }
 
   if (m_tagsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
-      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Tags"));
+    encoder.WriteArrayStart(m_tags.size());
+    for (const auto& item_0 : m_tags) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("Tags", std::move(tagsJsonList));
   }
 
   if (m_notificationArnsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> notificationArnsJsonList(m_notificationArns.size());
-    for (unsigned notificationArnsIndex = 0; notificationArnsIndex < notificationArnsJsonList.GetLength(); ++notificationArnsIndex) {
-      notificationArnsJsonList[notificationArnsIndex].AsString(m_notificationArns[notificationArnsIndex]);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("NotificationArns"));
+    encoder.WriteArrayStart(m_notificationArns.size());
+    for (const auto& item_0 : m_notificationArns) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
     }
-    payload.WithArray("NotificationArns", std::move(notificationArnsJsonList));
   }
 
   if (m_provisionTokenHasBeenSet) {
-    payload.WithString("ProvisionToken", m_provisionToken);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ProvisionToken"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_provisionToken.c_str()));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection ProvisionProductRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWS242ServiceCatalogService.ProvisionProduct"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

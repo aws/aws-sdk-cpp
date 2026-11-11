@@ -55,7 +55,11 @@ class Filter {
 
   ///@{
   /**
-   * <p>The filter values. Filter values are case-sensitive.</p>
+   * <p>The filter values. Filter values are case-sensitive.</p> <p>The
+   * <code>name</code> filter can use a wildcard: <code>web*</code> matches names
+   * that begin with <code>web</code>, and <code>*web*</code> matches names that
+   * contain <code>web</code>. The wildcard isn't supported in other positions or in
+   * other filters.</p>
    */
   inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
   inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }

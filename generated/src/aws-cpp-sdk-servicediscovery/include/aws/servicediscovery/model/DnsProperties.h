@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/servicediscovery/ServiceDiscovery_EXPORTS.h>
 #include <aws/servicediscovery/model/SOA.h>
 
@@ -12,10 +13,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace ServiceDiscovery {
 namespace Model {
@@ -29,9 +29,9 @@ namespace Model {
 class DnsProperties {
  public:
   AWS_SERVICEDISCOVERY_API DnsProperties() = default;
-  AWS_SERVICEDISCOVERY_API DnsProperties(Aws::Utils::Json::JsonView jsonValue);
-  AWS_SERVICEDISCOVERY_API DnsProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_SERVICEDISCOVERY_API DnsProperties(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_SERVICEDISCOVERY_API DnsProperties& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_SERVICEDISCOVERY_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

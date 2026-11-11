@@ -9,15 +9,15 @@
 #include <aws/acm-pca/model/CsrExtensions.h>
 #include <aws/acm-pca/model/KeyAlgorithm.h>
 #include <aws/acm-pca/model/SigningAlgorithm.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace ACMPCA {
 namespace Model {
@@ -36,9 +36,9 @@ namespace Model {
 class CertificateAuthorityConfiguration {
  public:
   AWS_ACMPCA_API CertificateAuthorityConfiguration() = default;
-  AWS_ACMPCA_API CertificateAuthorityConfiguration(Aws::Utils::Json::JsonView jsonValue);
-  AWS_ACMPCA_API CertificateAuthorityConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_ACMPCA_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_ACMPCA_API CertificateAuthorityConfiguration(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_ACMPCA_API CertificateAuthorityConfiguration& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_ACMPCA_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

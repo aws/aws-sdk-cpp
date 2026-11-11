@@ -97,6 +97,11 @@ GetDashManifestConfiguration& GetDashManifestConfiguration::operator=(JsonView j
     m_compactness = DashCompactnessMapper::GetDashCompactnessForName(jsonValue.GetString("Compactness"));
     m_compactnessHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("BandwidthReportingMode")) {
+    m_bandwidthReportingMode =
+        DashBandwidthReportingModeMapper::GetDashBandwidthReportingModeForName(jsonValue.GetString("BandwidthReportingMode"));
+    m_bandwidthReportingModeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("AudioTimelinePattern")) {
     m_audioTimelinePattern =
         DashAudioTimelinePatternMapper::GetDashAudioTimelinePatternForName(jsonValue.GetString("AudioTimelinePattern"));
@@ -200,6 +205,11 @@ JsonValue GetDashManifestConfiguration::Jsonize() const {
 
   if (m_compactnessHasBeenSet) {
     payload.WithString("Compactness", DashCompactnessMapper::GetNameForDashCompactness(m_compactness));
+  }
+
+  if (m_bandwidthReportingModeHasBeenSet) {
+    payload.WithString("BandwidthReportingMode",
+                       DashBandwidthReportingModeMapper::GetNameForDashBandwidthReportingMode(m_bandwidthReportingMode));
   }
 
   if (m_audioTimelinePatternHasBeenSet) {

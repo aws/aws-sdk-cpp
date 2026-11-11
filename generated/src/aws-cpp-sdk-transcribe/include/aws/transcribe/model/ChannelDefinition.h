@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/transcribe/TranscribeService_EXPORTS.h>
 #include <aws/transcribe/model/ParticipantRole.h>
 
@@ -11,10 +12,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace TranscribeService {
 namespace Model {
@@ -31,21 +31,21 @@ namespace Model {
 class ChannelDefinition {
  public:
   AWS_TRANSCRIBESERVICE_API ChannelDefinition() = default;
-  AWS_TRANSCRIBESERVICE_API ChannelDefinition(Aws::Utils::Json::JsonView jsonValue);
-  AWS_TRANSCRIBESERVICE_API ChannelDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_TRANSCRIBESERVICE_API ChannelDefinition(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_TRANSCRIBESERVICE_API ChannelDefinition& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_TRANSCRIBESERVICE_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
    * <p>Specify the audio channel you want to define.</p>
    */
-  inline int GetChannelId() const { return m_channelId; }
+  inline int64_t GetChannelId() const { return m_channelId; }
   inline bool ChannelIdHasBeenSet() const { return m_channelIdHasBeenSet; }
-  inline void SetChannelId(int value) {
+  inline void SetChannelId(int64_t value) {
     m_channelIdHasBeenSet = true;
     m_channelId = value;
   }
-  inline ChannelDefinition& WithChannelId(int value) {
+  inline ChannelDefinition& WithChannelId(int64_t value) {
     SetChannelId(value);
     return *this;
   }
@@ -68,7 +68,7 @@ class ChannelDefinition {
   }
   ///@}
  private:
-  int m_channelId{0};
+  int64_t m_channelId{0};
 
   ParticipantRole m_participantRole{ParticipantRole::NOT_SET};
   bool m_channelIdHasBeenSet = false;

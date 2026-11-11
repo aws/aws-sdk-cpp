@@ -27,8 +27,8 @@ Aws::String MeterUsageRequest::SerializePayload() const {
     payload.WithString("UsageDimension", m_usageDimension);
   }
 
-  if (m_usageQuantityHasBeenSet) {
-    payload.WithInteger("UsageQuantity", m_usageQuantity);
+  if (m_usageQuantityAsDecimalHasBeenSet) {
+    payload.WithString("UsageQuantityAsDecimal", m_usageQuantityAsDecimal);
   }
 
   if (m_dryRunHasBeenSet) {

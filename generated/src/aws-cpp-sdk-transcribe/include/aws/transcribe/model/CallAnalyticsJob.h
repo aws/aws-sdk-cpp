@@ -7,6 +7,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/transcribe/TranscribeService_EXPORTS.h>
 #include <aws/transcribe/model/CallAnalyticsJobDetails.h>
 #include <aws/transcribe/model/CallAnalyticsJobSettings.h>
@@ -22,10 +23,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace TranscribeService {
 namespace Model {
@@ -48,9 +48,9 @@ namespace Model {
 class CallAnalyticsJob {
  public:
   AWS_TRANSCRIBESERVICE_API CallAnalyticsJob() = default;
-  AWS_TRANSCRIBESERVICE_API CallAnalyticsJob(Aws::Utils::Json::JsonView jsonValue);
-  AWS_TRANSCRIBESERVICE_API CallAnalyticsJob& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_TRANSCRIBESERVICE_API CallAnalyticsJob(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_TRANSCRIBESERVICE_API CallAnalyticsJob& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_TRANSCRIBESERVICE_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -138,13 +138,13 @@ class CallAnalyticsJob {
   /**
    * <p>The sample rate, in hertz, of the audio track in your input media file.</p>
    */
-  inline int GetMediaSampleRateHertz() const { return m_mediaSampleRateHertz; }
+  inline int64_t GetMediaSampleRateHertz() const { return m_mediaSampleRateHertz; }
   inline bool MediaSampleRateHertzHasBeenSet() const { return m_mediaSampleRateHertzHasBeenSet; }
-  inline void SetMediaSampleRateHertz(int value) {
+  inline void SetMediaSampleRateHertz(int64_t value) {
     m_mediaSampleRateHertzHasBeenSet = true;
     m_mediaSampleRateHertz = value;
   }
-  inline CallAnalyticsJob& WithMediaSampleRateHertz(int value) {
+  inline CallAnalyticsJob& WithMediaSampleRateHertz(int64_t value) {
     SetMediaSampleRateHertz(value);
     return *this;
   }
@@ -420,7 +420,7 @@ class CallAnalyticsJob {
 
   LanguageCode m_languageCode{LanguageCode::NOT_SET};
 
-  int m_mediaSampleRateHertz{0};
+  int64_t m_mediaSampleRateHertz{0};
 
   MediaFormat m_mediaFormat{MediaFormat::NOT_SET};
 

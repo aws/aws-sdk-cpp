@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 #include <aws/servicecatalog/model/ProductViewSummary.h>
 #include <aws/servicecatalog/model/ProvisioningArtifact.h>
@@ -12,10 +13,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace ServiceCatalog {
 namespace Model {
@@ -29,9 +29,9 @@ namespace Model {
 class ProvisioningArtifactView {
  public:
   AWS_SERVICECATALOG_API ProvisioningArtifactView() = default;
-  AWS_SERVICECATALOG_API ProvisioningArtifactView(Aws::Utils::Json::JsonView jsonValue);
-  AWS_SERVICECATALOG_API ProvisioningArtifactView& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_SERVICECATALOG_API ProvisioningArtifactView(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_SERVICECATALOG_API ProvisioningArtifactView& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_SERVICECATALOG_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

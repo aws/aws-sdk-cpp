@@ -3,76 +3,300 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/network-firewall/model/ServerCertificateConfiguration.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace NetworkFirewall {
 namespace Model {
 
-ServerCertificateConfiguration::ServerCertificateConfiguration(JsonView jsonValue) { *this = jsonValue; }
+ServerCertificateConfiguration::ServerCertificateConfiguration(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  *this = decoder;
+}
 
-ServerCertificateConfiguration& ServerCertificateConfiguration::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("ServerCertificates")) {
-    Aws::Utils::Array<JsonView> serverCertificatesJsonList = jsonValue.GetArray("ServerCertificates");
-    for (unsigned serverCertificatesIndex = 0; serverCertificatesIndex < serverCertificatesJsonList.GetLength();
-         ++serverCertificatesIndex) {
-      m_serverCertificates.push_back(serverCertificatesJsonList[serverCertificatesIndex].AsObject());
+ServerCertificateConfiguration& ServerCertificateConfiguration::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "ServerCertificates") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_serverCertificates.push_back(ServerCertificate(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_serverCertificates.push_back(ServerCertificate(decoder));
+                    }
+                  }
+                }
+                m_serverCertificatesHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "Scopes") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_scopes.push_back(ServerCertificateScope(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_scopes.push_back(ServerCertificateScope(decoder));
+                    }
+                  }
+                }
+                m_scopesHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "CertificateAuthorityArn") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_certificateAuthorityArn = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_certificateAuthorityArn = ss.str();
+                  }
+                }
+                m_certificateAuthorityArnHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "CheckCertificateRevocationStatus") {
+                m_checkCertificateRevocationStatus = CheckCertificateRevocationStatusActions(decoder);
+                m_checkCertificateRevocationStatusHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("ServerCertificateConfiguration", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "ServerCertificates") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_serverCertificates.push_back(ServerCertificate(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_serverCertificates.push_back(ServerCertificate(decoder));
+                  }
+                }
+              }
+              m_serverCertificatesHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "Scopes") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_scopes.push_back(ServerCertificateScope(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_scopes.push_back(ServerCertificateScope(decoder));
+                  }
+                }
+              }
+              m_scopesHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "CertificateAuthorityArn") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_certificateAuthorityArn = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_certificateAuthorityArn = ss.str();
+                }
+              }
+              m_certificateAuthorityArnHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "CheckCertificateRevocationStatus") {
+              m_checkCertificateRevocationStatus = CheckCertificateRevocationStatusActions(decoder);
+              m_checkCertificateRevocationStatusHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
     }
-    m_serverCertificatesHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("Scopes")) {
-    Aws::Utils::Array<JsonView> scopesJsonList = jsonValue.GetArray("Scopes");
-    for (unsigned scopesIndex = 0; scopesIndex < scopesJsonList.GetLength(); ++scopesIndex) {
-      m_scopes.push_back(scopesJsonList[scopesIndex].AsObject());
-    }
-    m_scopesHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("CertificateAuthorityArn")) {
-    m_certificateAuthorityArn = jsonValue.GetString("CertificateAuthorityArn");
-    m_certificateAuthorityArnHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("CheckCertificateRevocationStatus")) {
-    m_checkCertificateRevocationStatus = jsonValue.GetObject("CheckCertificateRevocationStatus");
-    m_checkCertificateRevocationStatusHasBeenSet = true;
-  }
+
   return *this;
 }
 
-JsonValue ServerCertificateConfiguration::Jsonize() const {
-  JsonValue payload;
+void ServerCertificateConfiguration::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_serverCertificatesHasBeenSet) {
+    mapSize++;
+  }
+  if (m_scopesHasBeenSet) {
+    mapSize++;
+  }
+  if (m_certificateAuthorityArnHasBeenSet) {
+    mapSize++;
+  }
+  if (m_checkCertificateRevocationStatusHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_serverCertificatesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> serverCertificatesJsonList(m_serverCertificates.size());
-    for (unsigned serverCertificatesIndex = 0; serverCertificatesIndex < serverCertificatesJsonList.GetLength();
-         ++serverCertificatesIndex) {
-      serverCertificatesJsonList[serverCertificatesIndex].AsObject(m_serverCertificates[serverCertificatesIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ServerCertificates"));
+    encoder.WriteArrayStart(m_serverCertificates.size());
+    for (const auto& item_0 : m_serverCertificates) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("ServerCertificates", std::move(serverCertificatesJsonList));
   }
 
   if (m_scopesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> scopesJsonList(m_scopes.size());
-    for (unsigned scopesIndex = 0; scopesIndex < scopesJsonList.GetLength(); ++scopesIndex) {
-      scopesJsonList[scopesIndex].AsObject(m_scopes[scopesIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Scopes"));
+    encoder.WriteArrayStart(m_scopes.size());
+    for (const auto& item_0 : m_scopes) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("Scopes", std::move(scopesJsonList));
   }
 
   if (m_certificateAuthorityArnHasBeenSet) {
-    payload.WithString("CertificateAuthorityArn", m_certificateAuthorityArn);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("CertificateAuthorityArn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_certificateAuthorityArn.c_str()));
   }
 
   if (m_checkCertificateRevocationStatusHasBeenSet) {
-    payload.WithObject("CheckCertificateRevocationStatus", m_checkCertificateRevocationStatus.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("CheckCertificateRevocationStatus"));
+    m_checkCertificateRevocationStatus.CborEncode(encoder);
   }
-
-  return payload;
 }
 
 }  // namespace Model

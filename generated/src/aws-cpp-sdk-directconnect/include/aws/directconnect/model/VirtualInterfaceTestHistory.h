@@ -7,16 +7,16 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace DirectConnect {
 namespace Model {
@@ -30,9 +30,9 @@ namespace Model {
 class VirtualInterfaceTestHistory {
  public:
   AWS_DIRECTCONNECT_API VirtualInterfaceTestHistory() = default;
-  AWS_DIRECTCONNECT_API VirtualInterfaceTestHistory(Aws::Utils::Json::JsonView jsonValue);
-  AWS_DIRECTCONNECT_API VirtualInterfaceTestHistory& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_DIRECTCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_DIRECTCONNECT_API VirtualInterfaceTestHistory(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_DIRECTCONNECT_API VirtualInterfaceTestHistory& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_DIRECTCONNECT_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -135,13 +135,13 @@ class VirtualInterfaceTestHistory {
   /**
    * <p>The time that the virtual interface failover test ran in minutes.</p>
    */
-  inline int GetTestDurationInMinutes() const { return m_testDurationInMinutes; }
+  inline int64_t GetTestDurationInMinutes() const { return m_testDurationInMinutes; }
   inline bool TestDurationInMinutesHasBeenSet() const { return m_testDurationInMinutesHasBeenSet; }
-  inline void SetTestDurationInMinutes(int value) {
+  inline void SetTestDurationInMinutes(int64_t value) {
     m_testDurationInMinutesHasBeenSet = true;
     m_testDurationInMinutes = value;
   }
-  inline VirtualInterfaceTestHistory& WithTestDurationInMinutes(int value) {
+  inline VirtualInterfaceTestHistory& WithTestDurationInMinutes(int64_t value) {
     SetTestDurationInMinutes(value);
     return *this;
   }
@@ -193,7 +193,7 @@ class VirtualInterfaceTestHistory {
 
   Aws::String m_ownerAccount;
 
-  int m_testDurationInMinutes{0};
+  int64_t m_testDurationInMinutes{0};
 
   Aws::Utils::DateTime m_startTime{};
 

@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 #include <aws/network-firewall/model/Address.h>
 
@@ -12,10 +13,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace NetworkFirewall {
 namespace Model {
@@ -30,9 +30,9 @@ namespace Model {
 class Flow {
  public:
   AWS_NETWORKFIREWALL_API Flow() = default;
-  AWS_NETWORKFIREWALL_API Flow(Aws::Utils::Json::JsonView jsonValue);
-  AWS_NETWORKFIREWALL_API Flow& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_NETWORKFIREWALL_API Flow(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_NETWORKFIREWALL_API Flow& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_NETWORKFIREWALL_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
 
@@ -130,13 +130,13 @@ class Flow {
   /**
    * <p>Returned as info about age of the flows identified by the flow operation.</p>
    */
-  inline int GetAge() const { return m_age; }
+  inline int64_t GetAge() const { return m_age; }
   inline bool AgeHasBeenSet() const { return m_ageHasBeenSet; }
-  inline void SetAge(int value) {
+  inline void SetAge(int64_t value) {
     m_ageHasBeenSet = true;
     m_age = value;
   }
-  inline Flow& WithAge(int value) {
+  inline Flow& WithAge(int64_t value) {
     SetAge(value);
     return *this;
   }
@@ -147,13 +147,13 @@ class Flow {
    * <p>Returns the total number of data packets received or transmitted in a
    * flow.</p>
    */
-  inline int GetPacketCount() const { return m_packetCount; }
+  inline int64_t GetPacketCount() const { return m_packetCount; }
   inline bool PacketCountHasBeenSet() const { return m_packetCountHasBeenSet; }
-  inline void SetPacketCount(int value) {
+  inline void SetPacketCount(int64_t value) {
     m_packetCountHasBeenSet = true;
     m_packetCount = value;
   }
-  inline Flow& WithPacketCount(int value) {
+  inline Flow& WithPacketCount(int64_t value) {
     SetPacketCount(value);
     return *this;
   }
@@ -185,9 +185,9 @@ class Flow {
 
   Aws::String m_protocol;
 
-  int m_age{0};
+  int64_t m_age{0};
 
-  int m_packetCount{0};
+  int64_t m_packetCount{0};
 
   long long m_byteCount{0};
   bool m_sourceAddressHasBeenSet = false;

@@ -7,7 +7,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/ds/DirectoryServicePaginationBase.h>
 #include <aws/ds/DirectoryServiceServiceClientModel.h>
 #include <aws/ds/DirectoryServiceWaiter.h>
@@ -33,12 +33,12 @@ namespace DirectoryService {
  * href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.</p>
  *
  */
-class AWS_DIRECTORYSERVICE_API DirectoryServiceClient : public Aws::Client::AWSJsonClient,
+class AWS_DIRECTORYSERVICE_API DirectoryServiceClient : public Aws::Client::AWSRpcV2CborClient,
                                                         public Aws::Client::ClientWithAsyncTemplateMethods<DirectoryServiceClient>,
                                                         public DirectoryServicePaginationBase<DirectoryServiceClient>,
                                                         public DirectoryServiceWaiter<DirectoryServiceClient> {
  public:
-  typedef Aws::Client::AWSJsonClient BASECLASS;
+  typedef Aws::Client::AWSRpcV2CborClient BASECLASS;
   static const char* GetServiceName();
   static const char* GetAllocationTag();
 

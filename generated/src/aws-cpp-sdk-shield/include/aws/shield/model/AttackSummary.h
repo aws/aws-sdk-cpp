@@ -7,6 +7,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/shield/Shield_EXPORTS.h>
 #include <aws/shield/model/AttackVectorDescription.h>
 
@@ -14,10 +15,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace Shield {
 namespace Model {
@@ -31,9 +31,9 @@ namespace Model {
 class AttackSummary {
  public:
   AWS_SHIELD_API AttackSummary() = default;
-  AWS_SHIELD_API AttackSummary(Aws::Utils::Json::JsonView jsonValue);
-  AWS_SHIELD_API AttackSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_SHIELD_API AttackSummary(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_SHIELD_API AttackSummary& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_SHIELD_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

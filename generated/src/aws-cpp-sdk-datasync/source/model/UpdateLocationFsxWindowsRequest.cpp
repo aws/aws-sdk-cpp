@@ -3,51 +3,86 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/datasync/model/UpdateLocationFsxWindowsRequest.h>
 
 #include <utility>
 
 using namespace Aws::DataSync::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String UpdateLocationFsxWindowsRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_locationArnHasBeenSet) {
+    mapSize++;
+  }
+  if (m_subdirectoryHasBeenSet) {
+    mapSize++;
+  }
+  if (m_domainHasBeenSet) {
+    mapSize++;
+  }
+  if (m_userHasBeenSet) {
+    mapSize++;
+  }
+  if (m_passwordHasBeenSet) {
+    mapSize++;
+  }
+  if (m_cmkSecretConfigHasBeenSet) {
+    mapSize++;
+  }
+  if (m_customSecretConfigHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_locationArnHasBeenSet) {
-    payload.WithString("LocationArn", m_locationArn);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("LocationArn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_locationArn.c_str()));
   }
 
   if (m_subdirectoryHasBeenSet) {
-    payload.WithString("Subdirectory", m_subdirectory);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Subdirectory"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_subdirectory.c_str()));
   }
 
   if (m_domainHasBeenSet) {
-    payload.WithString("Domain", m_domain);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Domain"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_domain.c_str()));
   }
 
   if (m_userHasBeenSet) {
-    payload.WithString("User", m_user);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("User"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_user.c_str()));
   }
 
   if (m_passwordHasBeenSet) {
-    payload.WithString("Password", m_password);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Password"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_password.c_str()));
   }
 
   if (m_cmkSecretConfigHasBeenSet) {
-    payload.WithObject("CmkSecretConfig", m_cmkSecretConfig.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("CmkSecretConfig"));
+    m_cmkSecretConfig.CborEncode(encoder);
   }
 
   if (m_customSecretConfigHasBeenSet) {
-    payload.WithObject("CustomSecretConfig", m_customSecretConfig.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("CustomSecretConfig"));
+    m_customSecretConfig.CborEncode(encoder);
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection UpdateLocationFsxWindowsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "FmrsService.UpdateLocationFsxWindows"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

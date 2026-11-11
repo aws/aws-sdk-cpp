@@ -4,64 +4,99 @@
  */
 
 #include <aws/codepipeline/model/CreateCustomActionTypeRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 using namespace Aws::CodePipeline::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String CreateCustomActionTypeRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_categoryHasBeenSet) {
+    mapSize++;
+  }
+  if (m_providerHasBeenSet) {
+    mapSize++;
+  }
+  if (m_versionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_settingsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_configurationPropertiesHasBeenSet) {
+    mapSize++;
+  }
+  if (m_inputArtifactDetailsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_outputArtifactDetailsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_tagsHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_categoryHasBeenSet) {
-    payload.WithString("category", ActionCategoryMapper::GetNameForActionCategory(m_category));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("category"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(ActionCategoryMapper::GetNameForActionCategory(m_category).c_str()));
   }
 
   if (m_providerHasBeenSet) {
-    payload.WithString("provider", m_provider);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("provider"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_provider.c_str()));
   }
 
   if (m_versionHasBeenSet) {
-    payload.WithString("version", m_version);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("version"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_version.c_str()));
   }
 
   if (m_settingsHasBeenSet) {
-    payload.WithObject("settings", m_settings.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("settings"));
+    m_settings.CborEncode(encoder);
   }
 
   if (m_configurationPropertiesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> configurationPropertiesJsonList(m_configurationProperties.size());
-    for (unsigned configurationPropertiesIndex = 0; configurationPropertiesIndex < configurationPropertiesJsonList.GetLength();
-         ++configurationPropertiesIndex) {
-      configurationPropertiesJsonList[configurationPropertiesIndex].AsObject(
-          m_configurationProperties[configurationPropertiesIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("configurationProperties"));
+    encoder.WriteArrayStart(m_configurationProperties.size());
+    for (const auto& item_0 : m_configurationProperties) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("configurationProperties", std::move(configurationPropertiesJsonList));
   }
 
   if (m_inputArtifactDetailsHasBeenSet) {
-    payload.WithObject("inputArtifactDetails", m_inputArtifactDetails.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("inputArtifactDetails"));
+    m_inputArtifactDetails.CborEncode(encoder);
   }
 
   if (m_outputArtifactDetailsHasBeenSet) {
-    payload.WithObject("outputArtifactDetails", m_outputArtifactDetails.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("outputArtifactDetails"));
+    m_outputArtifactDetails.CborEncode(encoder);
   }
 
   if (m_tagsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
-      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("tags"));
+    encoder.WriteArrayStart(m_tags.size());
+    for (const auto& item_0 : m_tags) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("tags", std::move(tagsJsonList));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection CreateCustomActionTypeRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodePipeline_20150709.CreateCustomActionType"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

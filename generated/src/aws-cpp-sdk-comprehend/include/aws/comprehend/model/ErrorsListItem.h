@@ -7,15 +7,15 @@
 #include <aws/comprehend/Comprehend_EXPORTS.h>
 #include <aws/comprehend/model/PageBasedErrorCode.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace Comprehend {
 namespace Model {
@@ -43,21 +43,21 @@ namespace Model {
 class ErrorsListItem {
  public:
   AWS_COMPREHEND_API ErrorsListItem() = default;
-  AWS_COMPREHEND_API ErrorsListItem(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPREHEND_API ErrorsListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_COMPREHEND_API ErrorsListItem(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPREHEND_API ErrorsListItem& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPREHEND_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
    * <p>Page number where the error occurred.</p>
    */
-  inline int GetPage() const { return m_page; }
+  inline int64_t GetPage() const { return m_page; }
   inline bool PageHasBeenSet() const { return m_pageHasBeenSet; }
-  inline void SetPage(int value) {
+  inline void SetPage(int64_t value) {
     m_pageHasBeenSet = true;
     m_page = value;
   }
-  inline ErrorsListItem& WithPage(int value) {
+  inline ErrorsListItem& WithPage(int64_t value) {
     SetPage(value);
     return *this;
   }
@@ -97,7 +97,7 @@ class ErrorsListItem {
   }
   ///@}
  private:
-  int m_page{0};
+  int64_t m_page{0};
 
   PageBasedErrorCode m_errorCode{PageBasedErrorCode::NOT_SET};
 

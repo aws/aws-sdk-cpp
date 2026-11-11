@@ -3,35 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/memorydb/model/UpdateUserRequest.h>
 
 #include <utility>
 
 using namespace Aws::MemoryDB::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String UpdateUserRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_userNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_authenticationModeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_accessStringHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_userNameHasBeenSet) {
-    payload.WithString("UserName", m_userName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("UserName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_userName.c_str()));
   }
 
   if (m_authenticationModeHasBeenSet) {
-    payload.WithObject("AuthenticationMode", m_authenticationMode.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AuthenticationMode"));
+    m_authenticationMode.CborEncode(encoder);
   }
 
   if (m_accessStringHasBeenSet) {
-    payload.WithString("AccessString", m_accessString);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AccessString"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_accessString.c_str()));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection UpdateUserRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonMemoryDB.UpdateUser"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

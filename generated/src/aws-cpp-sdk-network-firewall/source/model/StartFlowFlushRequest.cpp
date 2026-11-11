@@ -3,55 +3,89 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/network-firewall/model/StartFlowFlushRequest.h>
 
 #include <utility>
 
 using namespace Aws::NetworkFirewall::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String StartFlowFlushRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_firewallArnHasBeenSet) {
+    mapSize++;
+  }
+  if (m_availabilityZoneHasBeenSet) {
+    mapSize++;
+  }
+  if (m_availabilityZoneIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_vpcEndpointAssociationArnHasBeenSet) {
+    mapSize++;
+  }
+  if (m_vpcEndpointIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_minimumFlowAgeInSecondsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_flowFiltersHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_firewallArnHasBeenSet) {
-    payload.WithString("FirewallArn", m_firewallArn);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("FirewallArn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_firewallArn.c_str()));
   }
 
   if (m_availabilityZoneHasBeenSet) {
-    payload.WithString("AvailabilityZone", m_availabilityZone);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AvailabilityZone"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_availabilityZone.c_str()));
   }
 
   if (m_availabilityZoneIdHasBeenSet) {
-    payload.WithString("AvailabilityZoneId", m_availabilityZoneId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AvailabilityZoneId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_availabilityZoneId.c_str()));
   }
 
   if (m_vpcEndpointAssociationArnHasBeenSet) {
-    payload.WithString("VpcEndpointAssociationArn", m_vpcEndpointAssociationArn);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("VpcEndpointAssociationArn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_vpcEndpointAssociationArn.c_str()));
   }
 
   if (m_vpcEndpointIdHasBeenSet) {
-    payload.WithString("VpcEndpointId", m_vpcEndpointId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("VpcEndpointId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_vpcEndpointId.c_str()));
   }
 
   if (m_minimumFlowAgeInSecondsHasBeenSet) {
-    payload.WithInteger("MinimumFlowAgeInSeconds", m_minimumFlowAgeInSeconds);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("MinimumFlowAgeInSeconds"));
+    (m_minimumFlowAgeInSeconds >= 0) ? encoder.WriteUInt(m_minimumFlowAgeInSeconds) : encoder.WriteNegInt(m_minimumFlowAgeInSeconds);
   }
 
   if (m_flowFiltersHasBeenSet) {
-    Aws::Utils::Array<JsonValue> flowFiltersJsonList(m_flowFilters.size());
-    for (unsigned flowFiltersIndex = 0; flowFiltersIndex < flowFiltersJsonList.GetLength(); ++flowFiltersIndex) {
-      flowFiltersJsonList[flowFiltersIndex].AsObject(m_flowFilters[flowFiltersIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("FlowFilters"));
+    encoder.WriteArrayStart(m_flowFilters.size());
+    for (const auto& item_0 : m_flowFilters) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("FlowFilters", std::move(flowFiltersJsonList));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection StartFlowFlushRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "NetworkFirewall_20201112.StartFlowFlush"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }
