@@ -15,7 +15,7 @@ using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
 using namespace Aws::RestJsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(HttpRequestWithFloatLabels, RestJsonSupportsNaNFloatLabels) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -32,7 +32,7 @@ AWS_PROTOCOL_TEST(HttpRequestWithFloatLabels, RestJsonSupportsNaNFloatLabels) {
 }
 
 AWS_PROTOCOL_TEST(HttpRequestWithFloatLabels, RestJsonSupportsInfinityFloatLabels) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -49,7 +49,7 @@ AWS_PROTOCOL_TEST(HttpRequestWithFloatLabels, RestJsonSupportsInfinityFloatLabel
 }
 
 AWS_PROTOCOL_TEST(HttpRequestWithFloatLabels, RestJsonSupportsNegativeInfinityFloatLabels) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 

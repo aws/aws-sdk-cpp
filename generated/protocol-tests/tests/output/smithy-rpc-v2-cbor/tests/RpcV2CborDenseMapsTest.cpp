@@ -12,7 +12,7 @@ using RpcV2ProtocolClient = Aws::RpcV2Protocol::RpcV2ProtocolClient;
 using namespace Aws::RpcV2Protocol::Model;
 
 AWS_PROTOCOL_TEST(RpcV2CborDenseMaps, RpcV2CborMaps) {
-  RpcV2ProtocolClient client(mockCredentials, mockConfig);
+  RpcV2ProtocolClient client(mockCredentials, nullptr, Aws::RpcV2Protocol::RpcV2ProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -43,7 +43,7 @@ AWS_PROTOCOL_TEST(RpcV2CborDenseMaps, RpcV2CborMaps) {
 }
 
 AWS_PROTOCOL_TEST(RpcV2CborDenseMaps, RpcV2CborDeserializesZeroValuesInMaps) {
-  RpcV2ProtocolClient client(mockCredentials, mockConfig);
+  RpcV2ProtocolClient client(mockCredentials, nullptr, Aws::RpcV2Protocol::RpcV2ProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -70,7 +70,7 @@ AWS_PROTOCOL_TEST(RpcV2CborDenseMaps, RpcV2CborDeserializesZeroValuesInMaps) {
 }
 
 AWS_PROTOCOL_TEST(RpcV2CborDenseMaps, RpcV2CborDeserializesDenseSetMap) {
-  RpcV2ProtocolClient client(mockCredentials, mockConfig);
+  RpcV2ProtocolClient client(mockCredentials, nullptr, Aws::RpcV2Protocol::RpcV2ProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;

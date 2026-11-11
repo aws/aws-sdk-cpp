@@ -12,7 +12,7 @@ using JSONRPC10Client = Aws::JSONRPC10::JSONRPC10Client;
 using namespace Aws::JSONRPC10::Model;
 
 AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson10FooErrorUsingXAmznErrorType) {
-  JSONRPC10Client client(mockCredentials, mockConfig);
+  JSONRPC10Client client(mockCredentials, nullptr, Aws::JSONRPC10::JSONRPC10ClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 500;
@@ -26,7 +26,7 @@ AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson10FooErrorUsingXAmznErrorType) {
 }
 
 AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson10FooErrorUsingXAmznErrorTypeWithUri) {
-  JSONRPC10Client client(mockCredentials, mockConfig);
+  JSONRPC10Client client(mockCredentials, nullptr, Aws::JSONRPC10::JSONRPC10ClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 500;
@@ -40,7 +40,7 @@ AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson10FooErrorUsingXAmznErrorTypeWithU
 }
 
 AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson10FooErrorUsingXAmznErrorTypeWithUriAndNamespace) {
-  JSONRPC10Client client(mockCredentials, mockConfig);
+  JSONRPC10Client client(mockCredentials, nullptr, Aws::JSONRPC10::JSONRPC10ClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 500;
@@ -55,7 +55,7 @@ AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson10FooErrorUsingXAmznErrorTypeWithU
 }
 
 AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson10FooErrorUsingCode) {
-  JSONRPC10Client client(mockCredentials, mockConfig);
+  JSONRPC10Client client(mockCredentials, nullptr, Aws::JSONRPC10::JSONRPC10ClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 500;
@@ -70,7 +70,7 @@ AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson10FooErrorUsingCode) {
 }
 
 AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson10FooErrorUsingCodeAndNamespace) {
-  JSONRPC10Client client(mockCredentials, mockConfig);
+  JSONRPC10Client client(mockCredentials, nullptr, Aws::JSONRPC10::JSONRPC10ClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 500;
@@ -85,7 +85,7 @@ AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson10FooErrorUsingCodeAndNamespace) {
 }
 
 AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson10FooErrorUsingCodeUriAndNamespace) {
-  JSONRPC10Client client(mockCredentials, mockConfig);
+  JSONRPC10Client client(mockCredentials, nullptr, Aws::JSONRPC10::JSONRPC10ClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 500;
@@ -102,7 +102,7 @@ AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson10FooErrorUsingCodeUriAndNamespace
 }
 
 AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson10FooErrorWithDunderType) {
-  JSONRPC10Client client(mockCredentials, mockConfig);
+  JSONRPC10Client client(mockCredentials, nullptr, Aws::JSONRPC10::JSONRPC10ClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 500;
@@ -117,7 +117,7 @@ AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson10FooErrorWithDunderType) {
 }
 
 AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson10FooErrorWithDunderTypeAndNamespace) {
-  JSONRPC10Client client(mockCredentials, mockConfig);
+  JSONRPC10Client client(mockCredentials, nullptr, Aws::JSONRPC10::JSONRPC10ClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 500;
@@ -132,7 +132,7 @@ AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson10FooErrorWithDunderTypeAndNamespa
 }
 
 AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson10FooErrorWithDunderTypeAndDifferentNamespace) {
-  JSONRPC10Client client(mockCredentials, mockConfig);
+  JSONRPC10Client client(mockCredentials, nullptr, Aws::JSONRPC10::JSONRPC10ClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 500;
@@ -147,7 +147,7 @@ AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson10FooErrorWithDunderTypeAndDiffere
 }
 
 AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson10FooErrorWithDunderTypeUriAndNamespace) {
-  JSONRPC10Client client(mockCredentials, mockConfig);
+  JSONRPC10Client client(mockCredentials, nullptr, Aws::JSONRPC10::JSONRPC10ClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 500;
@@ -164,7 +164,7 @@ AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson10FooErrorWithDunderTypeUriAndName
 }
 
 AWS_PROTOCOL_TEST(GreetingWithErrors1, AwsJson10FooErrorWithNestedTypeProperty) {
-  JSONRPC10Client client(mockCredentials, mockConfig);
+  JSONRPC10Client client(mockCredentials, nullptr, Aws::JSONRPC10::JSONRPC10ClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 500;

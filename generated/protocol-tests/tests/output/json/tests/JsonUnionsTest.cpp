@@ -12,7 +12,7 @@ using JsonProtocolClient = Aws::JsonProtocol::JsonProtocolClient;
 using namespace Aws::JsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson11DeserializeStringUnionValue) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -35,7 +35,7 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson11DeserializeStringUnionValue) {
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson11DeserializeBooleanUnionValue) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -58,7 +58,7 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson11DeserializeBooleanUnionValue) {
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson11DeserializeNumberUnionValue) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -81,7 +81,7 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson11DeserializeNumberUnionValue) {
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson11DeserializeBlobUnionValue) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -104,7 +104,7 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson11DeserializeBlobUnionValue) {
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson11DeserializeTimestampUnionValue) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -127,7 +127,7 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson11DeserializeTimestampUnionValue) {
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson11DeserializeEnumUnionValue) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -150,7 +150,7 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson11DeserializeEnumUnionValue) {
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson11DeserializeListUnionValue) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -176,7 +176,7 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson11DeserializeListUnionValue) {
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson11DeserializeMapUnionValue) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -206,7 +206,7 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson11DeserializeMapUnionValue) {
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson11DeserializeStructureUnionValue) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -233,7 +233,7 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson11DeserializeStructureUnionValue) {
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson11DeserializeIgnoreType) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;

@@ -25,7 +25,7 @@ Aws::String PutWithContentEncodingRequest::SerializePayload() const {
     dataNode.SetText(m_data);
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToCompactString();
 }
 
 Aws::Http::HeaderValueCollection PutWithContentEncodingRequest::GetRequestSpecificHeaders() const {

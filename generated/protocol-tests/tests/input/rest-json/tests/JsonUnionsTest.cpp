@@ -12,7 +12,7 @@ using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
 using namespace Aws::RestJsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(JsonUnions, RestJsonSerializeStringUnionValue) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -34,7 +34,7 @@ AWS_PROTOCOL_TEST(JsonUnions, RestJsonSerializeStringUnionValue) {
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, RestJsonSerializeBooleanUnionValue) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -56,7 +56,7 @@ AWS_PROTOCOL_TEST(JsonUnions, RestJsonSerializeBooleanUnionValue) {
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, RestJsonSerializeNumberUnionValue) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -78,7 +78,7 @@ AWS_PROTOCOL_TEST(JsonUnions, RestJsonSerializeNumberUnionValue) {
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, RestJsonSerializeBlobUnionValue) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -100,7 +100,7 @@ AWS_PROTOCOL_TEST(JsonUnions, RestJsonSerializeBlobUnionValue) {
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, RestJsonSerializeTimestampUnionValue) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -122,7 +122,7 @@ AWS_PROTOCOL_TEST(JsonUnions, RestJsonSerializeTimestampUnionValue) {
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, RestJsonSerializeEnumUnionValue) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -144,7 +144,7 @@ AWS_PROTOCOL_TEST(JsonUnions, RestJsonSerializeEnumUnionValue) {
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, RestJsonSerializeListUnionValue) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -166,7 +166,7 @@ AWS_PROTOCOL_TEST(JsonUnions, RestJsonSerializeListUnionValue) {
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, RestJsonSerializeMapUnionValue) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -190,7 +190,7 @@ AWS_PROTOCOL_TEST(JsonUnions, RestJsonSerializeMapUnionValue) {
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, RestJsonSerializeStructureUnionValue) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -217,7 +217,7 @@ AWS_PROTOCOL_TEST(JsonUnions, RestJsonSerializeStructureUnionValue) {
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, RestJsonSerializeRenamedStructureUnionValue) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -245,7 +245,7 @@ AWS_PROTOCOL_TEST(JsonUnions, RestJsonSerializeRenamedStructureUnionValue) {
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, RestJsonSerializeNestedUnionValue) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 

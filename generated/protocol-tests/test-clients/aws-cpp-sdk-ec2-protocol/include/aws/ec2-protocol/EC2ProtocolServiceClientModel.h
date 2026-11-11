@@ -87,7 +87,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace EC2Protocol {
-using EC2ProtocolClientConfiguration = Aws::Client::GenericClientConfiguration;
 using EC2ProtocolEndpointProviderBase = Aws::EC2Protocol::Endpoint::EC2ProtocolEndpointProviderBase;
 using EC2ProtocolEndpointProvider = Aws::EC2Protocol::Endpoint::EC2ProtocolEndpointProvider;
 

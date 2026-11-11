@@ -15,7 +15,7 @@ using JSONRPC10Client = Aws::JSONRPC10::JSONRPC10Client;
 using namespace Aws::JSONRPC10::Model;
 
 AWS_PROTOCOL_TEST(SimpleScalarProperties, AwsJson10SupportsNaNFloatInputs) {
-  JSONRPC10Client client(mockCredentials, mockConfig);
+  JSONRPC10Client client(mockCredentials, nullptr, Aws::JSONRPC10::JSONRPC10ClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -34,7 +34,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, AwsJson10SupportsNaNFloatInputs) {
 }
 
 AWS_PROTOCOL_TEST(SimpleScalarProperties, AwsJson10SupportsInfinityFloatInputs) {
-  JSONRPC10Client client(mockCredentials, mockConfig);
+  JSONRPC10Client client(mockCredentials, nullptr, Aws::JSONRPC10::JSONRPC10ClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -53,7 +53,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, AwsJson10SupportsInfinityFloatInputs) 
 }
 
 AWS_PROTOCOL_TEST(SimpleScalarProperties, AwsJson10SupportsNegativeInfinityFloatInputs) {
-  JSONRPC10Client client(mockCredentials, mockConfig);
+  JSONRPC10Client client(mockCredentials, nullptr, Aws::JSONRPC10::JSONRPC10ClientConfiguration(mockConfig));
 
   SetMockResponse();
 

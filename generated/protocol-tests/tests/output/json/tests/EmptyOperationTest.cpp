@@ -12,7 +12,7 @@ using JsonProtocolClient = Aws::JsonProtocol::JsonProtocolClient;
 using namespace Aws::JsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(EmptyOperation, handles_empty_output_shape) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -30,7 +30,7 @@ AWS_PROTOCOL_TEST(EmptyOperation, handles_empty_output_shape) {
 }
 
 AWS_PROTOCOL_TEST(EmptyOperation, handles_unexpected_json_output) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -48,7 +48,7 @@ AWS_PROTOCOL_TEST(EmptyOperation, handles_unexpected_json_output) {
 }
 
 AWS_PROTOCOL_TEST(EmptyOperation, json_1_1_service_responds_with_no_payload) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;

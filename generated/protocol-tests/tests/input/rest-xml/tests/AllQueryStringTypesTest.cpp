@@ -15,7 +15,7 @@ using RestXmlProtocolClient = Aws::RestXmlProtocol::RestXmlProtocolClient;
 using namespace Aws::RestXmlProtocol::Model;
 
 AWS_PROTOCOL_TEST(AllQueryStringTypes, AllQueryStringTypes) {
-  RestXmlProtocolClient client(mockCredentials, mockConfig);
+  RestXmlProtocolClient client(mockCredentials, nullptr, Aws::RestXmlProtocol::RestXmlProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -57,7 +57,7 @@ AWS_PROTOCOL_TEST(AllQueryStringTypes, AllQueryStringTypes) {
 }
 
 AWS_PROTOCOL_TEST(AllQueryStringTypes, RestXmlQueryStringMap) {
-  RestXmlProtocolClient client(mockCredentials, mockConfig);
+  RestXmlProtocolClient client(mockCredentials, nullptr, Aws::RestXmlProtocol::RestXmlProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -73,7 +73,7 @@ AWS_PROTOCOL_TEST(AllQueryStringTypes, RestXmlQueryStringMap) {
 }
 
 AWS_PROTOCOL_TEST(AllQueryStringTypes, RestXmlQueryStringEscaping) {
-  RestXmlProtocolClient client(mockCredentials, mockConfig);
+  RestXmlProtocolClient client(mockCredentials, nullptr, Aws::RestXmlProtocol::RestXmlProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -89,7 +89,7 @@ AWS_PROTOCOL_TEST(AllQueryStringTypes, RestXmlQueryStringEscaping) {
 }
 
 AWS_PROTOCOL_TEST(AllQueryStringTypes, RestXmlSupportsNaNFloatQueryValues) {
-  RestXmlProtocolClient client(mockCredentials, mockConfig);
+  RestXmlProtocolClient client(mockCredentials, nullptr, Aws::RestXmlProtocol::RestXmlProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -106,7 +106,7 @@ AWS_PROTOCOL_TEST(AllQueryStringTypes, RestXmlSupportsNaNFloatQueryValues) {
 }
 
 AWS_PROTOCOL_TEST(AllQueryStringTypes, RestXmlSupportsInfinityFloatQueryValues) {
-  RestXmlProtocolClient client(mockCredentials, mockConfig);
+  RestXmlProtocolClient client(mockCredentials, nullptr, Aws::RestXmlProtocol::RestXmlProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -123,7 +123,7 @@ AWS_PROTOCOL_TEST(AllQueryStringTypes, RestXmlSupportsInfinityFloatQueryValues) 
 }
 
 AWS_PROTOCOL_TEST(AllQueryStringTypes, RestXmlSupportsNegativeInfinityFloatQueryValues) {
-  RestXmlProtocolClient client(mockCredentials, mockConfig);
+  RestXmlProtocolClient client(mockCredentials, nullptr, Aws::RestXmlProtocol::RestXmlProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -140,7 +140,7 @@ AWS_PROTOCOL_TEST(AllQueryStringTypes, RestXmlSupportsNegativeInfinityFloatQuery
 }
 
 AWS_PROTOCOL_TEST(AllQueryStringTypes, RestXmlZeroAndFalseQueryValues) {
-  RestXmlProtocolClient client(mockCredentials, mockConfig);
+  RestXmlProtocolClient client(mockCredentials, nullptr, Aws::RestXmlProtocol::RestXmlProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 

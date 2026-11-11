@@ -64,7 +64,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace JSONRPC10 {
-using JSONRPC10ClientConfiguration = Aws::Client::GenericClientConfiguration;
 using JSONRPC10EndpointProviderBase = Aws::JSONRPC10::Endpoint::JSONRPC10EndpointProviderBase;
 using JSONRPC10EndpointProvider = Aws::JSONRPC10::Endpoint::JSONRPC10EndpointProvider;
 

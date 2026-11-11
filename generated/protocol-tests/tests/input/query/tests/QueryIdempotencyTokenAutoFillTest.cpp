@@ -12,7 +12,7 @@ using QueryProtocolClient = Aws::QueryProtocol::QueryProtocolClient;
 using namespace Aws::QueryProtocol::Model;
 
 AWS_PROTOCOL_TEST(QueryIdempotencyTokenAutoFill, QueryProtocolIdempotencyTokenAutoFill) {
-  QueryProtocolClient client(mockCredentials, mockConfig);
+  QueryProtocolClient client(mockCredentials, nullptr, Aws::QueryProtocol::QueryProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -32,7 +32,7 @@ AWS_PROTOCOL_TEST(QueryIdempotencyTokenAutoFill, QueryProtocolIdempotencyTokenAu
 }
 
 AWS_PROTOCOL_TEST(QueryIdempotencyTokenAutoFill, QueryProtocolIdempotencyTokenAutoFillIsSet) {
-  QueryProtocolClient client(mockCredentials, mockConfig);
+  QueryProtocolClient client(mockCredentials, nullptr, Aws::QueryProtocol::QueryProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 

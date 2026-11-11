@@ -12,7 +12,7 @@ using JSONRPC10Client = Aws::JSONRPC10::JSONRPC10Client;
 using namespace Aws::JSONRPC10::Model;
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson10DeserializeStringUnionValue) {
-  JSONRPC10Client client(mockCredentials, mockConfig);
+  JSONRPC10Client client(mockCredentials, nullptr, Aws::JSONRPC10::JSONRPC10ClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -35,7 +35,7 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson10DeserializeStringUnionValue) {
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson10DeserializeBooleanUnionValue) {
-  JSONRPC10Client client(mockCredentials, mockConfig);
+  JSONRPC10Client client(mockCredentials, nullptr, Aws::JSONRPC10::JSONRPC10ClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -58,7 +58,7 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson10DeserializeBooleanUnionValue) {
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson10DeserializeNumberUnionValue) {
-  JSONRPC10Client client(mockCredentials, mockConfig);
+  JSONRPC10Client client(mockCredentials, nullptr, Aws::JSONRPC10::JSONRPC10ClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -81,7 +81,7 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson10DeserializeNumberUnionValue) {
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson10DeserializeBlobUnionValue) {
-  JSONRPC10Client client(mockCredentials, mockConfig);
+  JSONRPC10Client client(mockCredentials, nullptr, Aws::JSONRPC10::JSONRPC10ClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -104,7 +104,7 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson10DeserializeBlobUnionValue) {
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson10DeserializeTimestampUnionValue) {
-  JSONRPC10Client client(mockCredentials, mockConfig);
+  JSONRPC10Client client(mockCredentials, nullptr, Aws::JSONRPC10::JSONRPC10ClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -127,7 +127,7 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson10DeserializeTimestampUnionValue) {
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson10DeserializeEnumUnionValue) {
-  JSONRPC10Client client(mockCredentials, mockConfig);
+  JSONRPC10Client client(mockCredentials, nullptr, Aws::JSONRPC10::JSONRPC10ClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -150,7 +150,7 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson10DeserializeEnumUnionValue) {
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson10DeserializeIntEnumUnionValue) {
-  JSONRPC10Client client(mockCredentials, mockConfig);
+  JSONRPC10Client client(mockCredentials, nullptr, Aws::JSONRPC10::JSONRPC10ClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -173,7 +173,7 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson10DeserializeIntEnumUnionValue) {
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson10DeserializeListUnionValue) {
-  JSONRPC10Client client(mockCredentials, mockConfig);
+  JSONRPC10Client client(mockCredentials, nullptr, Aws::JSONRPC10::JSONRPC10ClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -199,7 +199,7 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson10DeserializeListUnionValue) {
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson10DeserializeMapUnionValue) {
-  JSONRPC10Client client(mockCredentials, mockConfig);
+  JSONRPC10Client client(mockCredentials, nullptr, Aws::JSONRPC10::JSONRPC10ClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -229,7 +229,7 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson10DeserializeMapUnionValue) {
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson10DeserializeStructureUnionValue) {
-  JSONRPC10Client client(mockCredentials, mockConfig);
+  JSONRPC10Client client(mockCredentials, nullptr, Aws::JSONRPC10::JSONRPC10ClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -256,7 +256,7 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson10DeserializeStructureUnionValue) {
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson10DeserializeIgnoreType) {
-  JSONRPC10Client client(mockCredentials, mockConfig);
+  JSONRPC10Client client(mockCredentials, nullptr, Aws::JSONRPC10::JSONRPC10ClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -284,7 +284,7 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson10DeserializeIgnoreType) {
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson10DeserializeAllowNulls) {
-  JSONRPC10Client client(mockCredentials, mockConfig);
+  JSONRPC10Client client(mockCredentials, nullptr, Aws::JSONRPC10::JSONRPC10ClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;

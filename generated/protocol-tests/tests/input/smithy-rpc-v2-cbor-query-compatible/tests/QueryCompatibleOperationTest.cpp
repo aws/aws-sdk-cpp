@@ -12,7 +12,8 @@ using QueryCompatibleRpcV2ProtocolClient = Aws::QueryCompatibleRpcV2Protocol::Qu
 using namespace Aws::QueryCompatibleRpcV2Protocol::Model;
 
 AWS_PROTOCOL_TEST(QueryCompatibleOperation, QueryCompatibleRpcV2CborSendsQueryModeHeader) {
-  QueryCompatibleRpcV2ProtocolClient client(mockCredentials, mockConfig);
+  QueryCompatibleRpcV2ProtocolClient client(mockCredentials, nullptr,
+                                            Aws::QueryCompatibleRpcV2Protocol::QueryCompatibleRpcV2ProtocolClientConfiguration(mockConfig));
 
   // Cbor specific
   OutputResponse mockRs;

@@ -12,7 +12,7 @@ using JsonProtocolClient = Aws::JsonProtocol::JsonProtocolClient;
 using namespace Aws::JsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, parses_operations_with_empty_json_bodies) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -30,7 +30,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, parses_operations_with_empty_json_bodies
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, parses_string_shapes) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -50,7 +50,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, parses_string_shapes) {
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, parses_integer_shapes) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -70,7 +70,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, parses_integer_shapes) {
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, parses_long_shapes) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -90,7 +90,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, parses_long_shapes) {
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, parses_float_shapes) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -110,7 +110,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, parses_float_shapes) {
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, parses_double_shapes) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -130,7 +130,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, parses_double_shapes) {
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, parses_boolean_shapes_true) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -150,7 +150,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, parses_boolean_shapes_true) {
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, parses_boolean_false) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -170,7 +170,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, parses_boolean_false) {
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, parses_blob_shapes) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -190,7 +190,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, parses_blob_shapes) {
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, parses_timestamp_shapes) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -210,7 +210,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, parses_timestamp_shapes) {
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, parses_iso8601_timestamps) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -230,7 +230,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, parses_iso8601_timestamps) {
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, parses_httpdate_timestamps) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -250,7 +250,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, parses_httpdate_timestamps) {
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, parses_list_shapes) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -274,7 +274,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, parses_list_shapes) {
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, parses_list_of_map_shapes) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -306,7 +306,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, parses_list_of_map_shapes) {
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, parses_list_of_list_shapes) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -340,7 +340,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, parses_list_of_list_shapes) {
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, parses_list_of_structure_shapes) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -368,7 +368,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, parses_list_of_structure_shapes) {
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, parses_list_of_recursive_structure_shapes) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -401,7 +401,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, parses_list_of_recursive_structure_shape
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, parses_map_shapes) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -426,7 +426,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, parses_map_shapes) {
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, parses_map_of_list_shapes) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -461,7 +461,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, parses_map_of_list_shapes) {
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, parses_map_of_map_shapes) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -500,7 +500,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, parses_map_of_map_shapes) {
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, parses_map_of_structure_shapes) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -531,7 +531,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, parses_map_of_structure_shapes) {
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, parses_map_of_recursive_structure_shapes) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -574,7 +574,7 @@ AWS_PROTOCOL_TEST(KitchenSinkOperation, parses_map_of_recursive_structure_shapes
 }
 
 AWS_PROTOCOL_TEST(KitchenSinkOperation, parses_the_request_id_from_the_response) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;

@@ -15,7 +15,7 @@ using RpcV2ProtocolClient = Aws::RpcV2Protocol::RpcV2ProtocolClient;
 using namespace Aws::RpcV2Protocol::Model;
 
 AWS_PROTOCOL_TEST(SimpleScalarProperties, RpcV2CborSimpleScalarProperties) {
-  RpcV2ProtocolClient client(mockCredentials, mockConfig);
+  RpcV2ProtocolClient client(mockCredentials, nullptr, Aws::RpcV2Protocol::RpcV2ProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -47,7 +47,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, RpcV2CborSimpleScalarProperties) {
 }
 
 AWS_PROTOCOL_TEST(SimpleScalarProperties, RpcV2CborSimpleScalarPropertiesUsingDefiniteLength) {
-  RpcV2ProtocolClient client(mockCredentials, mockConfig);
+  RpcV2ProtocolClient client(mockCredentials, nullptr, Aws::RpcV2Protocol::RpcV2ProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -79,7 +79,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, RpcV2CborSimpleScalarPropertiesUsingDe
 }
 
 AWS_PROTOCOL_TEST(SimpleScalarProperties, RpcV2CborClientDoesntDeserializeNullStructureValues) {
-  RpcV2ProtocolClient client(mockCredentials, mockConfig);
+  RpcV2ProtocolClient client(mockCredentials, nullptr, Aws::RpcV2Protocol::RpcV2ProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -97,7 +97,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, RpcV2CborClientDoesntDeserializeNullSt
 }
 
 AWS_PROTOCOL_TEST(SimpleScalarProperties, RpcV2CborSupportsNaNFloatOutputs) {
-  RpcV2ProtocolClient client(mockCredentials, mockConfig);
+  RpcV2ProtocolClient client(mockCredentials, nullptr, Aws::RpcV2Protocol::RpcV2ProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -118,7 +118,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, RpcV2CborSupportsNaNFloatOutputs) {
 }
 
 AWS_PROTOCOL_TEST(SimpleScalarProperties, RpcV2CborSupportsInfinityFloatOutputs) {
-  RpcV2ProtocolClient client(mockCredentials, mockConfig);
+  RpcV2ProtocolClient client(mockCredentials, nullptr, Aws::RpcV2Protocol::RpcV2ProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -139,7 +139,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, RpcV2CborSupportsInfinityFloatOutputs)
 }
 
 AWS_PROTOCOL_TEST(SimpleScalarProperties, RpcV2CborSupportsNegativeInfinityFloatOutputs) {
-  RpcV2ProtocolClient client(mockCredentials, mockConfig);
+  RpcV2ProtocolClient client(mockCredentials, nullptr, Aws::RpcV2Protocol::RpcV2ProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -160,7 +160,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, RpcV2CborSupportsNegativeInfinityFloat
 }
 
 AWS_PROTOCOL_TEST(SimpleScalarProperties, RpcV2CborSupportsUpcastingDataOnDeserialize) {
-  RpcV2ProtocolClient client(mockCredentials, mockConfig);
+  RpcV2ProtocolClient client(mockCredentials, nullptr, Aws::RpcV2Protocol::RpcV2ProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -184,7 +184,7 @@ AWS_PROTOCOL_TEST(SimpleScalarProperties, RpcV2CborSupportsUpcastingDataOnDeseri
 }
 
 AWS_PROTOCOL_TEST(SimpleScalarProperties, RpcV2CborExtraFieldsInTheBodyShouldBeSkippedByClients) {
-  RpcV2ProtocolClient client(mockCredentials, mockConfig);
+  RpcV2ProtocolClient client(mockCredentials, nullptr, Aws::RpcV2Protocol::RpcV2ProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;

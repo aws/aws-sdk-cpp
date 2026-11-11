@@ -53,28 +53,6 @@ class AWS_QUERYCOMPATIBLERPCV2PROTOCOL_API QueryCompatibleRpcV2ProtocolClient
       const Aws::QueryCompatibleRpcV2Protocol::QueryCompatibleRpcV2ProtocolClientConfiguration& clientConfiguration =
           Aws::QueryCompatibleRpcV2Protocol::QueryCompatibleRpcV2ProtocolClientConfiguration());
 
-  /* Legacy constructors due deprecation */
-  /**
-   * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client
-   * config is not specified, it will be initialized to default values.
-   */
-  QueryCompatibleRpcV2ProtocolClient(const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /**
-   * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
-   * is not specified, it will be initialized to default values.
-   */
-  QueryCompatibleRpcV2ProtocolClient(const Aws::Auth::AWSCredentials& credentials,
-                                     const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /**
-   * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
-   * the default http client factory will be used
-   */
-  QueryCompatibleRpcV2ProtocolClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                     const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /* End of legacy constructors due deprecation */
   virtual ~QueryCompatibleRpcV2ProtocolClient();
 
   /**
@@ -103,7 +81,6 @@ class AWS_QUERYCOMPATIBLERPCV2PROTOCOL_API QueryCompatibleRpcV2ProtocolClient
     return SubmitAsync(&QueryCompatibleRpcV2ProtocolClient::QueryCompatibleOperation, request, handler, context);
   }
 
-  virtual void OverrideEndpoint(const Aws::String& endpoint);
   virtual std::shared_ptr<QueryCompatibleRpcV2ProtocolEndpointProviderBase>& accessEndpointProvider();
 
  private:
