@@ -1,0 +1,6 @@
+{
+  "type": "bugfix",
+  "category": "tools, protocol-tests",
+  "contributor": "sbiscigl",
+  "description": "Decode rpcv2Cbor initial-response members and add event stream protocol tests"
+}

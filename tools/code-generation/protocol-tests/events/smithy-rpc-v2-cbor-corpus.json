@@ -1,0 +1,99 @@
+{
+    "version": 1,
+    "testCases": [
+        {
+            "documentation": "Non-stream output members are delivered ahead of the stream. Under\nrpcv2Cbor the operation's @httpHeader bindings are ignored, so\nevery non-stream output member travels in the CBOR payload of an\ninitial-response event rather than in HTTP response headers. This\noutput has non-stream members and values are provided for them, so\nthe initial-response event must be sent and the question the file\nheader leaves open does not arise here.",
+            "events": [
+                {
+                    "body": "omlzZXNzaW9uSWRrc2Vzc2lvbjRhMmZndGltZW91dBge",
+                    "bodyMediaType": "application/cbor",
+                    "headers": {
+                        ":event-type": {
+                            "string": "initial-response"
+                        },
+                        ":content-type": {
+                            "string": "application/cbor"
+                        },
+                        ":message-type": {
+                            "string": "event"
+                        }
+                    },
+                    "type": "response"
+                },
+                {
+                    "body": "omxzdHJpbmdNZW1iZXJ4Hm1lc3NhZ2UgYWZ0ZXIgaW5pdGlhbCByZXNwb25zZW1pbnRlZ2VyTWVtYmVyGE0=",
+                    "bodyMediaType": "application/cbor",
+                    "headers": {
+                        ":event-type": {
+                            "string": "scalarsEvent"
+                        },
+                        ":content-type": {
+                            "string": "application/cbor"
+                        },
+                        ":message-type": {
+                            "string": "event"
+                        }
+                    },
+                    "params": {
+                        "scalarsEvent": {
+                            "stringMember": "message after initial response",
+                            "integerMember": 77
+                        }
+                    },
+                    "type": "response"
+                }
+            ],
+            "expectation": {
+                "success": {}
+            },
+            "id": "RpcV2CborEventStreamInitialResponse",
+            "initialResponse": {
+                "code": 200,
+                "headers": {
+                    "smithy-protocol": "rpc-v2-cbor",
+                    "Content-Type": "application/vnd.amazon.eventstream"
+                },
+                "forbidHeaders": [
+                    "X-Session-Id",
+                    "X-Timeout"
+                ]
+            },
+            "initialResponseParams": {
+                "sessionId": "session4a2f",
+                "timeout": 30
+            },
+            "initialResponseShape": "smithy.test#InitialHttpResponse",
+            "operationName": "EventStreamInitialResponse"
+        },
+        {
+            "documentation": "A buffered request that expects a streaming response sets Accept\nto the event stream media type while its own Content-Type stays\napplication/cbor. Content-Length is permitted here, and indeed\nexpected, because the request itself is buffered. The response\nenvelope carries the event stream media type as its Content-Type,\nand the stream's own frames are covered elsewhere.",
+            "expectation": {
+                "success": {}
+            },
+            "id": "RpcV2CborEventStreamResponseEnvelope",
+            "initialRequest": {
+                "method": "POST",
+                "uri": "/service/RpcV2CborCorpusTests/operation/EventStreamResponse",
+                "headers": {
+                    "smithy-protocol": "rpc-v2-cbor",
+                    "Content-Type": "application/cbor",
+                    "Accept": "application/vnd.amazon.eventstream"
+                },
+                "forbidHeaders": [
+                    "X-Amz-Target",
+                    "X-Amzn-Target"
+                ]
+            },
+            "initialRequestShape": "smithy.test#InitialHttpRequest",
+            "initialResponse": {
+                "code": 200,
+                "headers": {
+                    "smithy-protocol": "rpc-v2-cbor",
+                    "Content-Type": "application/vnd.amazon.eventstream"
+                }
+            },
+            "initialResponseShape": "smithy.test#InitialHttpResponse",
+            "operationName": "EventStreamResponse"
+        }
+    ]
+}

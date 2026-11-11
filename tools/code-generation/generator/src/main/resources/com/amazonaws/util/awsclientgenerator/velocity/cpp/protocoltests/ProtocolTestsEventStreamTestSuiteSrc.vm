@@ -1,0 +1,108 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/protocoltests/result/ValidateParamsMacro.vm")
+#set($serviceNs = $serviceModel.metadata.namespace)
+#set($serviceClient = "${serviceModel.metadata.classNamePrefix}Client")
+#set($serviceError = "Aws::Client::AWSError<Aws::${serviceNs}::${serviceModel.metadata.classNamePrefix}Errors>")
+\#include <aws/core/utils/memory/stl/AWSVector.h>
+\#include <aws/testing/AwsProtocolTestHelpers.h>
+\#include <aws/${serviceModel.metadata.projectName}/${serviceClient}.h>
+#foreach($header in $sourceIncludes)
+\#include $header
+#end
+
+using $testSuite.name = AWS_PROTOCOL_TEST_SUITE;
+using $serviceClient = Aws::$serviceNs::$serviceClient;
+using namespace Aws::$serviceNs::Model;
+#foreach($case in $testSuite.cases)
+#set($resultShape = $serviceModel.operations.get($case.operationName).result.shape)
+#foreach($resultMember in $resultShape.members.entrySet())
+#if($resultMember.value.shape.eventStream)
+#set($eventStreamShape = $resultMember.value.shape)
+#end
+#end
+
+AWS_PROTOCOL_TEST($testSuite.name, $case.id) {
+  $serviceClient client(mockCredentials, mockConfig);
+
+  OutputResponse mockRs;
+  mockRs.statusCode = ${case.responseStatusCode};
+  mockRs.headers = {##
+#foreach($headerEntry in $case.responseHeaders.entrySet())
+{"${headerEntry.key}", R"(${headerEntry.value})"}#if($foreach.hasNext), #end##
+#end
+};
+  mockRs.body = "${case.responseBody}";
+  SetMockResponse(mockRs);
+
+  Aws::Vector<${case.operationName}InitialResponse> initialResponses;
+#foreach($group in $case.expectedEventGroups)
+#set($eventShape = $eventStreamShape.members.get($group.memberName).shape)
+  Aws::Vector<${eventShape.name}> ${group.memberName}Events;
+#end
+  Aws::Vector<${serviceError}> streamErrors;
+  ${case.operationName}Handler handler;
+  handler.SetInitialResponseCallbackEx([&initialResponses](const ${case.operationName}InitialResponse& initialResponse,
+                                                           const Aws::Utils::Event::InitialResponseType type) {
+    if (type == Aws::Utils::Event::InitialResponseType::ON_EVENT) {
+      initialResponses.push_back(initialResponse);
+    }
+  });
+#foreach($group in $case.expectedEventGroups)
+#set($eventShape = $eventStreamShape.members.get($group.memberName).shape)
+  handler.Set${eventShape.name}Callback([&${group.memberName}Events](const ${eventShape.name}& event) { ${group.memberName}Events.push_back(event); });
+#end
+  handler.SetOnErrorCallback([&streamErrors](const ${serviceError}& error) { streamErrors.push_back(error); });
+
+  ${case.operationName}Request request;
+  request.SetEventStreamHandler(handler);
+  auto outcome = client.${case.operationName}(request);
+#if($case.initialRequest)
+#set($serialized = $case.initialRequest)
+
+  ExpectedRequest expectedRq;
+#if($serialized.method)
+  expectedRq.method = "${serialized.method}";
+#end
+#if($serialized.uri)
+  expectedRq.uri = "${serialized.uri}";
+#end
+#if($serialized.headers)
+  expectedRq.headers = {##
+#foreach($headerEntry in $serialized.headers.entrySet())
+{"${headerEntry.key}", R"(${headerEntry.value})"}#if($foreach.hasNext), #end##
+#end
+};
+#end
+#if($serialized.forbidHeaders)
+  expectedRq.forbidHeaders = {##
+#foreach($forbidHeader in $serialized.forbidHeaders)
+"$forbidHeader"#if($foreach.hasNext), #end##
+#end
+};
+#end
+  ValidateRequestSent(expectedRq);
+#end
+
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+  EXPECT_TRUE(streamErrors.empty()) << (streamErrors.empty() ? Aws::String() : streamErrors.front().GetMessage());
+#if($case.initialResponseParams)
+  ASSERT_EQ(1u, initialResponses.size());
+  const ${case.operationName}InitialResponse& initialResponse = initialResponses.front();
+#foreach($param in $case.initialResponseParams.fields())
+#ValidateParamsMacro("  ", "initialResponse", $resultShape, $param)
+#end
+#end
+#foreach($group in $case.expectedEventGroups)
+#set($eventShape = $eventStreamShape.members.get($group.memberName).shape)
+  ASSERT_EQ(${group.params.size()}u, ${group.memberName}Events.size());
+#foreach($eventParams in $group.params)
+  {
+    const ${eventShape.name}& ${group.memberName}Event = ${group.memberName}Events[$foreach.index];
+#foreach($param in $eventParams.fields())
+#ValidateParamsMacro("    ", "${group.memberName}Event", $eventShape, $param)
+#end
+  }
+#end
+#end
+}
+#end

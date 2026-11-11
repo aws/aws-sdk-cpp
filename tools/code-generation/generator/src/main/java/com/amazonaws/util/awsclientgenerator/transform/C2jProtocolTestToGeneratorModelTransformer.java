@@ -6,21 +6,31 @@
 package com.amazonaws.util.awsclientgenerator.transform;
 
 import com.amazonaws.util.awsclientgenerator.domainmodels.c2j_protocol_test.*;
+import com.amazonaws.util.awsclientgenerator.domainmodels.protocol_test.EventStreamTestCase;
+import com.amazonaws.util.awsclientgenerator.domainmodels.protocol_test.EventStreamTestSuite;
 import com.amazonaws.util.awsclientgenerator.domainmodels.protocol_test.ProtocolTestCase;
 import com.amazonaws.util.awsclientgenerator.domainmodels.protocol_test.ProtocolTestModel;
 import com.amazonaws.util.awsclientgenerator.domainmodels.protocol_test.ProtocolTestSuite;
 
+import com.fasterxml.jackson.databind.JsonNode;
+
 import java.util.ArrayList;
 import java.util.Base64;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 
 public class C2jProtocolTestToGeneratorModelTransformer {
 
+    private static final String EVENT_STREAM_CONTENT_TYPE = "application/vnd.amazon.eventstream";
     private static final Pattern TEST_SUITE_PATTERN = Pattern.compile("Test cases for ([a-zA-Z0-9]+) operation");
     private HashMap<String, Integer> alreadyUsedTestSuiteNames = new HashMap<>();
 
@@ -131,6 +141,65 @@ public class C2jProtocolTestToGeneratorModelTransformer {
             }
         }
 
+        model.setEventStreamTestSuites(Optional.ofNullable(c2jTestSuite.getEventStreamTestSuite())
+                .map(C2jProtocolTestToGeneratorModelTransformer::toEventStreamTestSuites)
+                .orElseGet(ArrayList::new));
+
         return model;
+    }
+
+    /**
+     * Groups the event stream test cases by operation, preserving the order in which the operations first appear.
+     */
+    private static List<EventStreamTestSuite> toEventStreamTestSuites(final C2jEventStreamTestSuite c2jSuite) {
+        return Optional.ofNullable(c2jSuite.getTestCases()).orElse(Collections.emptyList()).stream()
+                .map(C2jProtocolTestToGeneratorModelTransformer::toEventStreamTestCase)
+                .collect(Collectors.groupingBy(EventStreamTestCase::getOperationName, LinkedHashMap::new, Collectors.toList()))
+                .entrySet().stream()
+                .map(operationCases -> {
+                    EventStreamTestSuite suite = new EventStreamTestSuite();
+                    suite.setName(operationCases.getKey());
+                    suite.setCases(operationCases.getValue());
+                    return suite;
+                })
+                .collect(Collectors.toList());
+    }
+
+    private static EventStreamTestCase toEventStreamTestCase(final C2jEventStreamTestCase c2jCase) {
+        List<C2jEventStreamTestEvent> responseEvents = Optional.ofNullable(c2jCase.getEvents()).orElse(Collections.emptyList()).stream()
+                .filter(event -> "response".equalsIgnoreCase(event.getType()))
+                .collect(Collectors.toList());
+        Optional<C2jEventStreamInitialResponse> initialResponse = Optional.ofNullable(c2jCase.getInitialResponse());
+
+        EventStreamTestCase testCase = new EventStreamTestCase();
+        testCase.setId(c2jCase.getId());
+        testCase.setOperationName(c2jCase.getOperationName());
+        testCase.setInitialRequest(c2jCase.getInitialRequest());
+        testCase.setResponseStatusCode(initialResponse.map(C2jEventStreamInitialResponse::getCode).orElse(200));
+        testCase.setResponseHeaders(initialResponse.map(C2jEventStreamInitialResponse::getHeaders)
+                .orElse(Collections.singletonMap("Content-Type", EVENT_STREAM_CONTENT_TYPE)));
+        testCase.setResponseBody(Base64.getEncoder().encodeToString(EventStreamMessageEncoder.encode(responseEvents)));
+        testCase.setInitialResponseParams(c2jCase.getInitialResponseParams());
+        testCase.setExpectedEventGroups(toExpectedEventGroups(responseEvents));
+        return testCase;
+    }
+
+    /**
+     * Collects the params of every response event that carries them, keyed by the event stream union member they target.
+     */
+    private static List<EventStreamTestCase.ExpectedEventGroup> toExpectedEventGroups(final List<C2jEventStreamTestEvent> responseEvents) {
+        Map<String, List<JsonNode>> paramsByMember = responseEvents.stream()
+                .filter(event -> event.getParams() != null && event.getParams().size() == 1)
+                .map(C2jEventStreamTestEvent::getParams)
+                .collect(Collectors.groupingBy(params -> params.fieldNames().next(), LinkedHashMap::new,
+                        Collectors.mapping(params -> params.elements().next(), Collectors.toList())));
+        return paramsByMember.entrySet().stream()
+                .map(memberParams -> {
+                    EventStreamTestCase.ExpectedEventGroup group = new EventStreamTestCase.ExpectedEventGroup();
+                    group.setMemberName(memberParams.getKey());
+                    group.setParams(memberParams.getValue());
+                    return group;
+                })
+                .collect(Collectors.toList());
     }
 }

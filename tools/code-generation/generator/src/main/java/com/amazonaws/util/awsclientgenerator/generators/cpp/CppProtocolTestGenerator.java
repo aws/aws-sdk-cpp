@@ -12,6 +12,8 @@ import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Service
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Shape;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.ShapeMember;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppViewHelper;
+import com.amazonaws.util.awsclientgenerator.domainmodels.protocol_test.EventStreamTestCase;
+import com.amazonaws.util.awsclientgenerator.domainmodels.protocol_test.EventStreamTestSuite;
 import com.amazonaws.util.awsclientgenerator.domainmodels.protocol_test.ProtocolTestCase;
 import com.amazonaws.util.awsclientgenerator.domainmodels.protocol_test.ProtocolTestModel;
 import com.amazonaws.util.awsclientgenerator.domainmodels.protocol_test.ProtocolTestSuite;
@@ -31,6 +33,7 @@ import java.io.StringWriter;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static com.amazonaws.util.awsclientgenerator.generators.cpp.ec2.Ec2CppClientGenerator.legacyPatchEc2Model;
 
@@ -39,6 +42,7 @@ public class CppProtocolTestGenerator implements ClientGenerator {
     private static String CMAKE_LISTS_TEMPLATE = "/com/amazonaws/util/awsclientgenerator/velocity/cpp/protocoltests/ProtocolTestsCMakeLists.vm";
     private static String RUN_TESTS_TEMPLATE = "/com/amazonaws/util/awsclientgenerator/velocity/cpp/protocoltests/ProtocolTestsRunTestsSrc.vm";
     private static String TEST_SUITE_TEMPLATE = "/com/amazonaws/util/awsclientgenerator/velocity/cpp/protocoltests/ProtocolTestsTestSuiteSrc.vm";
+    private static String EVENT_STREAM_TEST_SUITE_TEMPLATE = "/com/amazonaws/util/awsclientgenerator/velocity/cpp/protocoltests/ProtocolTestsEventStreamTestSuiteSrc.vm";
 
     protected final VelocityEngine velocityEngine;
     private final ServiceModel serviceModel;
@@ -74,15 +78,49 @@ public class CppProtocolTestGenerator implements ClientGenerator {
         return makeFile(template, context, fileName, true);
     }
 
+    /**
+     * Generates the gtest source of the event stream protocol tests of a single operation.
+     */
+    protected SdkFileEntry generateEventStreamTestSuiteSourceFile(EventStreamTestSuite testSuite) throws IOException {
+        VelocityContext context = createContext();
+        context.put("testSuite", testSuite);
+        context.put("sourceIncludes", computeEventStreamTestSourceIncludes(testSuite));
+        Template template = velocityEngine.getTemplate(EVENT_STREAM_TEST_SUITE_TEMPLATE, StandardCharsets.UTF_8.name());
+        String fileName = String.format("tests/%sTest.cpp", testSuite.getName());
+
+        return makeFile(template, context, fileName, true);
+    }
+
     protected List<SdkFileEntry> generateTestSuiteSourceFiles() throws IOException {
-        return testModel.getTestSuites().stream()
+        Stream<SdkFileEntry> testSuites = testModel.getTestSuites().stream()
                 .map(entry -> {
                     try {
                         return generateTestSuiteSourceFile(entry);
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     }
-                })
+                });
+        Stream<SdkFileEntry> eventStreamTestSuites = Optional.ofNullable(testModel.getEventStreamTestSuites())
+                .orElse(Collections.emptyList()).stream()
+                .map(entry -> {
+                    try {
+                        return generateEventStreamTestSuiteSourceFile(entry);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                });
+        return Stream.concat(testSuites, eventStreamTestSuites).collect(Collectors.toList());
+    }
+
+    private List<String> computeEventStreamTestSourceIncludes(EventStreamTestSuite testSuite) {
+        String projectName = serviceModel.getMetadata().getProjectName();
+        return testSuite.getCases().stream()
+                .map(EventStreamTestCase::getOperationName)
+                .distinct()
+                .flatMap(operationName -> Stream.of(
+                        String.format("<aws/%s/model/%sRequest.h>", projectName, operationName),
+                        String.format("<aws/%s/model/%sHandler.h>", projectName, operationName)))
+                .sorted()
                 .collect(Collectors.toList());
     }
 

@@ -23,7 +23,8 @@ from codegen.model_utils import SERVICE_MODEL_FILENAME_PATTERN, ServiceModel, Mo
 PROTOCOL_TESTS_BASE_DIR = "tools/code-generation/protocol-tests"
 PROTOCOL_TESTS_CLIENT_MODELS = PROTOCOL_TESTS_BASE_DIR + "/api-descriptions"
 PROTOCOL_TESTS_ENDPOINT_RULES = "endpoint-rule-set.json"  # Dummy endpoint ruleset
-PROTOCOL_TESTS_DEFINITION_SETS = ["input", "output"]
+PROTOCOL_TESTS_DEFINITION_SETS = ["input", "output", "events"]
+PROTOCOL_TESTS_EVENT_STREAM_SET = "events"
 PROTOCOL_TESTS_MOCK_TEST_CLIENT = "protocol-mock"
 PROTOCOL_TESTS_MOCK_TEST_RULES = "protocol-mock-endpoint-rule-set.json"
 
@@ -46,10 +47,11 @@ class ProtocolTestsGen(object):
     """
 
     class ProtoTestC2jClientModelMetadata:
-        def __init__(self, filename: str, model_path: str, md: dict):
+        def __init__(self, filename: str, model_path: str, md: dict, operations: dict = None):
             self.service_name = SERVICE_MODEL_FILENAME_PATTERN.match(filename).group("service")
             self.model_path = model_path
             self.md = md
+            self.operations = set(operations or {})
 
     class ProtocolTestModel:
         def __init__(self, test_type: str, test_name: str, c2j_test_model: str, c2j_client_md):
@@ -232,7 +234,8 @@ class ProtocolTestsGen(object):
                 try:
                     c2j_model = json.load(file_content)
                     model_metadata = self.ProtoTestC2jClientModelMetadata(filename, model_abspath,
-                                                                          c2j_model.get("metadata"))
+                                                                          c2j_model.get("metadata"),
+                                                                          c2j_model.get("operations"))
                     models.append(model_metadata)
                 except Exception as exc:
                     print(f"ERROR: unexpected file content in protocol tests clients dir {self.client_models_dir}. "
@@ -277,7 +280,10 @@ class ProtocolTestsGen(object):
                                   f"Expected c2j protocol test, but json metadata kew is missing: {exc}")
                     return result
 
-                test_clients_for_suite = _get_corresponding_test_client(all_test_clients_md, test_def_path)
+                if test_def_group == PROTOCOL_TESTS_EVENT_STREAM_SET:
+                    test_clients_for_suite = self._get_event_stream_test_clients(all_test_clients_md, test_def_path)
+                else:
+                    test_clients_for_suite = _get_corresponding_test_client(all_test_clients_md, test_def_path)
 
                 if test_clients_for_suite is None or len(test_clients_for_suite) == 0:
                     raise Exception(f"ERROR: Unable to find C2J client model for the test suite: {test_def_path}")
@@ -299,6 +305,17 @@ class ProtocolTestsGen(object):
                                                                                        c2j_test_model=test_def_path,
                                                                                        c2j_client_md=client_md)
         return test_models
+
+    @staticmethod
+    def _get_event_stream_test_clients(test_clients_md: list, test_path: str) -> list:
+        """Get the c2j client models defining the operations of an event stream test suite.
+
+        Event stream protocol tests have no metadata block, so they are matched on the operations they test.
+        """
+        with open(test_path, 'r') as file_content:
+            test_cases = json.load(file_content).get("testCases", [])
+        tested_operations = {test_case.get("operationName") for test_case in test_cases}
+        return [c2j_md for c2j_md in test_clients_md if tested_operations & c2j_md.operations]
 
     def _generate_tests(self, executor: ProcessPoolExecutor, max_workers: int):
         test_models = self._collect_test_definition_models()

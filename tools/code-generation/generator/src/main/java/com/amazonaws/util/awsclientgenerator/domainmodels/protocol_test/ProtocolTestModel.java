@@ -20,4 +20,5 @@ public class ProtocolTestModel {
     }
     C2jTestSuite.TestSuiteType type;
     private List<ProtocolTestSuite> testSuites;
+    private List<EventStreamTestSuite> eventStreamTestSuites;
 }

@@ -9,6 +9,7 @@ import com.amazonaws.util.awsclientgenerator.domainmodels.c2j.C2jServiceModel;
 import com.amazonaws.util.awsclientgenerator.domainmodels.c2j.C2jXmlNamespace;
 import com.amazonaws.util.awsclientgenerator.domainmodels.c2j.C2jXmlNamespaceDeserializer;
 import com.amazonaws.util.awsclientgenerator.domainmodels.c2j.JsonNodeDeserializer;
+import com.amazonaws.util.awsclientgenerator.domainmodels.c2j_protocol_test.C2jEventStreamTestSuite;
 import com.amazonaws.util.awsclientgenerator.domainmodels.c2j_protocol_test.C2jInputTestSuite;
 import com.amazonaws.util.awsclientgenerator.domainmodels.c2j_protocol_test.C2jOutputTestSuite;
 import com.amazonaws.util.awsclientgenerator.domainmodels.c2j_protocol_test.C2jTestSuite;
@@ -209,6 +210,9 @@ public class DirectFromC2jGenerator {
             Type listType = new TypeToken<List<C2jOutputTestSuite>>() {}.getType();
             List<C2jOutputTestSuite> testSuite = gson.fromJson(protocolTestsJson, listType);
             c2jProtocolTestModel.setOutputTestSuites(testSuite);
+        } else if (protocolTestsType.equalsIgnoreCase("events")) {
+            c2jProtocolTestModel.setType(C2jTestSuite.TestSuiteType.EVENTS);
+            c2jProtocolTestModel.setEventStreamTestSuite(gson.fromJson(protocolTestsJson, C2jEventStreamTestSuite.class));
         } else {
             throw new RuntimeException("Unknown protocol test type: " + protocolTestsType);
         }

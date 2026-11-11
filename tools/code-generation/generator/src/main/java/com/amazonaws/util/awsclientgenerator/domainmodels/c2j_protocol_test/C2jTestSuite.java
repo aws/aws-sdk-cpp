@@ -18,9 +18,11 @@ public class C2jTestSuite {
     private String serviceToUse;
     public enum TestSuiteType {
         INPUT,
-        OUTPUT
+        OUTPUT,
+        EVENTS
     }
     TestSuiteType type; // only can be present.
     private List<C2jInputTestSuite> inputTestSuites;
     private List<C2jOutputTestSuite> outputTestSuites;
+    private C2jEventStreamTestSuite eventStreamTestSuite;
 }
