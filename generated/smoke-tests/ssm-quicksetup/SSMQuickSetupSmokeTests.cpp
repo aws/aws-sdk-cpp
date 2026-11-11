@@ -35,8 +35,6 @@ TEST_F(SSMQuickSetupSmokeTestSuite, GetConfigurationManagerFailure )
 {
     Aws::SSMQuickSetup::SSMQuickSetupClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-east-1";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<SSMQuickSetupClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     
@@ -49,8 +47,6 @@ TEST_F(SSMQuickSetupSmokeTestSuite, ListConfigurationManagersSuccess )
 {
     Aws::SSMQuickSetup::SSMQuickSetupClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-east-1";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<SSMQuickSetupClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     

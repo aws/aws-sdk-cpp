@@ -35,8 +35,6 @@ TEST_F(EMRSmokeTestSuite, DescribeClusterFailure )
 {
     Aws::EMR::EMRClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<EMRClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     
@@ -49,8 +47,6 @@ TEST_F(EMRSmokeTestSuite, ListClustersSuccess )
 {
     Aws::EMR::EMRClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<EMRClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     

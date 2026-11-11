@@ -34,8 +34,6 @@ TEST_F(SESSmokeTestSuite, ListIdentitiesSuccess )
 {
     Aws::SES::SESClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<SESClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     

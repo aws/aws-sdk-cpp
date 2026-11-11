@@ -35,8 +35,6 @@ TEST_F(Route53SmokeTestSuite, GetHostedZoneFailure )
 {
     Aws::Route53::Route53ClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-east-1";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<Route53Client>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     
@@ -49,8 +47,6 @@ TEST_F(Route53SmokeTestSuite, ListHostedZonesSuccess )
 {
     Aws::Route53::Route53ClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-east-1";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<Route53Client>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     

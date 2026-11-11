@@ -34,8 +34,6 @@ TEST_F(CognitoIdentityProviderSmokeTestSuite, ListUserPoolsSuccess )
 {
     Aws::CognitoIdentityProvider::CognitoIdentityProviderClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<CognitoIdentityProviderClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     

@@ -34,8 +34,6 @@ TEST_F(DatabaseMigrationServiceSmokeTestSuite, DescribeEndpointsSuccess )
 {
     Aws::DatabaseMigrationService::DatabaseMigrationServiceClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<DatabaseMigrationServiceClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     

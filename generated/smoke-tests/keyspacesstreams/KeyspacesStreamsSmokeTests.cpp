@@ -34,8 +34,6 @@ TEST_F(KeyspacesStreamsSmokeTestSuite, ListStreamsSuccess )
 {
     Aws::KeyspacesStreams::KeyspacesStreamsClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-east-1";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<KeyspacesStreamsClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     

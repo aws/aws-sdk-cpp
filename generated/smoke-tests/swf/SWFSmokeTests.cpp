@@ -34,8 +34,6 @@ TEST_F(SWFSmokeTestSuite, ListDomainsSuccess )
 {
     Aws::SWF::SWFClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<SWFClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     

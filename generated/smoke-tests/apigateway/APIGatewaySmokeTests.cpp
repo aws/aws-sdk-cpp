@@ -34,8 +34,6 @@ TEST_F(APIGatewaySmokeTestSuite, GetDomainNamesSuccess )
 {
     Aws::APIGateway::APIGatewayClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<APIGatewayClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     

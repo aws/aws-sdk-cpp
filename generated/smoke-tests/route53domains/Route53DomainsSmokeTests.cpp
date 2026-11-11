@@ -35,8 +35,6 @@ TEST_F(Route53DomainsSmokeTestSuite, GetDomainDetailFailure )
 {
     Aws::Route53Domains::Route53DomainsClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-east-1";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<Route53DomainsClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     
@@ -49,8 +47,6 @@ TEST_F(Route53DomainsSmokeTestSuite, ListDomainsSuccess )
 {
     Aws::Route53Domains::Route53DomainsClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-east-1";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<Route53DomainsClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     

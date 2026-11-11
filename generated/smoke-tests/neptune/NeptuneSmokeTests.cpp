@@ -36,8 +36,6 @@ TEST_F(NeptuneSmokeTestSuite, DescribeDBEngineVersionsSuccess )
 {
     Aws::Neptune::NeptuneClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<NeptuneClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     
@@ -49,8 +47,6 @@ TEST_F(NeptuneSmokeTestSuite, DescribeDBInstancesFailure )
 {
     Aws::Neptune::NeptuneClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<NeptuneClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     

@@ -35,8 +35,6 @@ TEST_F(EventBridgeSmokeTestSuite, DescribeRuleFailure )
 {
     Aws::EventBridge::EventBridgeClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<EventBridgeClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     
@@ -49,8 +47,6 @@ TEST_F(EventBridgeSmokeTestSuite, ListRulesSuccess )
 {
     Aws::EventBridge::EventBridgeClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<EventBridgeClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     

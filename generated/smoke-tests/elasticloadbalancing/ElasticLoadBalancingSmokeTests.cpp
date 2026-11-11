@@ -35,8 +35,6 @@ TEST_F(ElasticLoadBalancingSmokeTestSuite, DescribeLoadBalancersSuccess )
 {
     Aws::ElasticLoadBalancing::ElasticLoadBalancingClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<ElasticLoadBalancingClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     
@@ -48,8 +46,6 @@ TEST_F(ElasticLoadBalancingSmokeTestSuite, DescribeLoadBalancersFailure )
 {
     Aws::ElasticLoadBalancing::ElasticLoadBalancingClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<ElasticLoadBalancingClient>(ALLOCATION_TAG, clientConfiguration);
     //Prepare test data
     auto GetdescribeloadbalancersElemLvl0Idx0 = [&]() -> Aws::Vector<Aws::String>

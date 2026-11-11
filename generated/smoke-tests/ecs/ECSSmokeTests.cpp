@@ -34,8 +34,6 @@ TEST_F(ECSSmokeTestSuite, ListClustersSuccess )
 {
     Aws::ECS::ECSClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<ECSClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     
