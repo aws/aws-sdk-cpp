@@ -648,6 +648,11 @@ public class CppViewHelper {
                 .orElse(functionName);
     }
 
+    public static String getRequestTypeName(final ServiceModel serviceModel, final Operation operation) {
+        final String requestName = operation.getRequest().getShape().getName();
+        return serviceModel.getOperations().containsKey(requestName) ? "Model::" + requestName : requestName;
+    }
+
     public static boolean hasListMemberUsedForHeader(final Shape shape) {
         return shape.getMembers().values().stream()
                 .anyMatch(shapeMember -> shapeMember.getShape().isList() && shapeMember.isUsedForHeader());

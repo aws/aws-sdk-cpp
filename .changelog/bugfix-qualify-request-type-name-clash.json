@@ -1,0 +1,6 @@
+{
+  "type": "bugfix",
+  "category": "tools",
+  "contributor": "sbiscigl",
+  "description": "Qualify request types that clash with an operation name"
+}
