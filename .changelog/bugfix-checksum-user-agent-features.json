@@ -1,0 +1,6 @@
+{
+  "type": "bugfix",
+  "category": "aws-cpp-sdk-core",
+  "contributor": "jonathan343",
+  "description": "Fix the flexible checksum business metrics reported in the User-Agent. CRC32 was reported as CRC32C, CRC64NVME was never reported, and the SHA512, XXHASH3, XXHASH64 and XXHASH128 metric IDs were wrong."
+}
