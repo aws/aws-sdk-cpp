@@ -154,14 +154,15 @@ std::shared_ptr<Route53EndpointProviderBase>& Route53Client::accessEndpointProvi
 
 void Route53Client::init(const Route53::Route53ClientConfiguration& config) {
   AWSClient::SetServiceClientName("Route 53");
-  if (!m_clientConfiguration.executor) {
-    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
-      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
-      m_isInitialized = false;
-      return;
-    }
+  if (!m_clientConfiguration.executor && m_clientConfiguration.configFactories.executorCreateFn) {
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
+  if (!m_clientConfiguration.executor) {
+    AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
+    m_isInitialized = false;
+    return;
+  }
+  AWSClient::SetUserAgentExecutor(*m_clientConfiguration.executor);
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config, "route53");
   ApplyServiceOptions(GetServiceClientOptions(m_clientConfiguration));

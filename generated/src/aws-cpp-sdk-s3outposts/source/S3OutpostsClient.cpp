@@ -88,14 +88,15 @@ std::shared_ptr<S3OutpostsEndpointProviderBase>& S3OutpostsClient::accessEndpoin
 
 void S3OutpostsClient::init(const S3Outposts::S3OutpostsClientConfiguration& config) {
   AWSClient::SetServiceClientName("S3Outposts");
-  if (!m_clientConfiguration.executor) {
-    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
-      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
-      m_isInitialized = false;
-      return;
-    }
+  if (!m_clientConfiguration.executor && m_clientConfiguration.configFactories.executorCreateFn) {
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
+  if (!m_clientConfiguration.executor) {
+    AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
+    m_isInitialized = false;
+    return;
+  }
+  AWSClient::SetUserAgentExecutor(*m_clientConfiguration.executor);
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config, "s3-outposts");
   ApplyServiceOptions(GetServiceClientOptions(m_clientConfiguration));

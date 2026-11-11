@@ -41,6 +41,8 @@ class UserAgentInterceptor : public interceptor::Interceptor {
 
   void SetAccountIdEndpointMode(const Aws::String& accountIdEndpointMode) { m_userAgent.SetAccountIdEndpointMode(accountIdEndpointMode); }
 
+  void SetExecutor(const Aws::Utils::Threading::Executor& executor) { m_userAgent.SetExecutor(executor); }
+
  private:
   Aws::Client::UserAgent m_userAgent;
 };

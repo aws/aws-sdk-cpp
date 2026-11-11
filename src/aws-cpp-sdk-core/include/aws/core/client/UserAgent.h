@@ -8,6 +8,12 @@
 #include <aws/core/utils/memory/stl/AWSSet.h>
 
 namespace Aws {
+namespace Utils {
+namespace Threading {
+class Executor;
+}  // namespace Threading
+}  // namespace Utils
+
 namespace Client {
 
 enum class UserAgentFeature {
@@ -62,6 +68,10 @@ class AWS_CORE_API UserAgent {
   void AddLegacyFeature(const Aws::String& legacyFeature);
   /** Records the account ID endpoint mode for services that support account-based endpoints. */
   void SetAccountIdEndpointMode(const Aws::String& accountIdEndpointMode);
+  /**
+   * Names the executor the client runs on. Clients that create their executor after the user agent call this.
+   */
+  void SetExecutor(const Aws::Utils::Threading::Executor& executor);
 
  private:
   const Aws::String m_sdkVersion;
@@ -77,6 +87,7 @@ class AWS_CORE_API UserAgent {
   const Aws::String m_appId;
   const Aws::String m_overrideUserAgent;
   const Aws::String m_customizations;
+  Aws::String m_executorName;
   Aws::Set<UserAgentFeature> m_features;
 };
 }  // namespace Client

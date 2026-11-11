@@ -183,14 +183,15 @@ std::shared_ptr<QuickSightEndpointProviderBase>& QuickSightClient::accessEndpoin
 
 void QuickSightClient::init(const QuickSight::QuickSightClientConfiguration& config) {
   AWSClient::SetServiceClientName("QuickSight");
-  if (!m_clientConfiguration.executor) {
-    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
-      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
-      m_isInitialized = false;
-      return;
-    }
+  if (!m_clientConfiguration.executor && m_clientConfiguration.configFactories.executorCreateFn) {
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
+  if (!m_clientConfiguration.executor) {
+    AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
+    m_isInitialized = false;
+    return;
+  }
+  AWSClient::SetUserAgentExecutor(*m_clientConfiguration.executor);
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config, "quicksight");
   ApplyServiceOptions(GetServiceClientOptions(m_clientConfiguration));

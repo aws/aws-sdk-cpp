@@ -1,0 +1,6 @@
+{
+  "type": "breaking-change",
+  "category": "aws-cpp-sdk-core",
+  "contributor": "sbiscigl",
+  "description": "Each client's default executor is now a PooledThreadExecutor sized to the machine's hardware threads, instead of a new thread for every async call. The thread-per-call executor is renamed UnboundedExecutor, and DefaultExecutor still compiles as a deprecated alias. Set the client configuration's executor to an UnboundedExecutor to keep a thread per call. Each request's user agent now names the executor its client runs on."
+}

@@ -47,6 +47,7 @@ protected:
         streamName = BuildResourceName("stream");
         Aws::Kinesis::KinesisClientConfiguration config;
         config.region = AWS_TEST_REGION;
+        config.requestTimeoutMs = 10000;
         m_client.reset(Aws::New<KinesisClient>(ALLOC_TAG, config));
 
         // Create stream

@@ -113,14 +113,15 @@ std::shared_ptr<GreengrassV2EndpointProviderBase>& GreengrassV2Client::accessEnd
 
 void GreengrassV2Client::init(const GreengrassV2::GreengrassV2ClientConfiguration& config) {
   AWSClient::SetServiceClientName("GreengrassV2");
-  if (!m_clientConfiguration.executor) {
-    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
-      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
-      m_isInitialized = false;
-      return;
-    }
+  if (!m_clientConfiguration.executor && m_clientConfiguration.configFactories.executorCreateFn) {
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
+  if (!m_clientConfiguration.executor) {
+    AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
+    m_isInitialized = false;
+    return;
+  }
+  AWSClient::SetUserAgentExecutor(*m_clientConfiguration.executor);
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config, "greengrass");
   ApplyServiceOptions(GetServiceClientOptions(m_clientConfiguration));

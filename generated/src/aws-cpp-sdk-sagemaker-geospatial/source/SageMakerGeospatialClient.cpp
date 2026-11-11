@@ -106,14 +106,15 @@ std::shared_ptr<SageMakerGeospatialEndpointProviderBase>& SageMakerGeospatialCli
 
 void SageMakerGeospatialClient::init(const SageMakerGeospatial::SageMakerGeospatialClientConfiguration& config) {
   AWSClient::SetServiceClientName("SageMaker Geospatial");
-  if (!m_clientConfiguration.executor) {
-    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
-      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
-      m_isInitialized = false;
-      return;
-    }
+  if (!m_clientConfiguration.executor && m_clientConfiguration.configFactories.executorCreateFn) {
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
+  if (!m_clientConfiguration.executor) {
+    AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
+    m_isInitialized = false;
+    return;
+  }
+  AWSClient::SetUserAgentExecutor(*m_clientConfiguration.executor);
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config, "sagemaker-geospatial");
   ApplyServiceOptions(GetServiceClientOptions(m_clientConfiguration));

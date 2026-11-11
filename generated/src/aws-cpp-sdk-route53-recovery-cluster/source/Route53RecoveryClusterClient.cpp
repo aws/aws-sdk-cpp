@@ -95,14 +95,15 @@ std::shared_ptr<Route53RecoveryClusterEndpointProviderBase>& Route53RecoveryClus
 
 void Route53RecoveryClusterClient::init(const Route53RecoveryCluster::Route53RecoveryClusterClientConfiguration& config) {
   AWSClient::SetServiceClientName("Route53 Recovery Cluster");
-  if (!m_clientConfiguration.executor) {
-    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
-      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
-      m_isInitialized = false;
-      return;
-    }
+  if (!m_clientConfiguration.executor && m_clientConfiguration.configFactories.executorCreateFn) {
     m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
   }
+  if (!m_clientConfiguration.executor) {
+    AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
+    m_isInitialized = false;
+    return;
+  }
+  AWSClient::SetUserAgentExecutor(*m_clientConfiguration.executor);
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config, "route53-recovery-cluster");
   ApplyServiceOptions(GetServiceClientOptions(m_clientConfiguration));

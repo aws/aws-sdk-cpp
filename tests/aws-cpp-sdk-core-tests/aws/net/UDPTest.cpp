@@ -3,13 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-
-#include <aws/testing/AwsCppSdkGTestSuite.h>
-#include <aws/core/utils/threading/DefaultExecutor.h>
-#include <aws/core/utils/threading/Semaphore.h>
 #include <aws/core/net/SimpleUDP.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/AWSMemory.h>
+#include <aws/core/utils/threading/Semaphore.h>
+#include <aws/core/utils/threading/UnboundedExecutor.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 
 #if 0
 using namespace Aws::Utils::Threading;
@@ -39,7 +38,7 @@ TEST_F(UDPTEST, TestBlockingUDPSendReceivePacketsSequencialy)
         }
     }
 
-    DefaultExecutor exec;
+    UnboundedExecutor exec;
     auto receiver = [&] {
         Aws::Net::SimpleUDP serverUDP(true/*IPV4*/, Aws::Net::UDP_BUFFER_SIZE/*SENDBUF*/, Aws::Net::UDP_BUFFER_SIZE * counter/*RECVBUF*/, false/*BLOCKING*/);
         ASSERT_EQ(0, serverUDP.BindToLocalHost(udpPort));
@@ -94,7 +93,7 @@ TEST_F(UDPTEST, TestUDPSendReceivePacketsNonblockingBatch)
         }
     }
 
-    DefaultExecutor exec;
+    UnboundedExecutor exec;
     auto receiver = [&] {
         Aws::Net::SimpleUDP serverUDP(true/*IPV4*/, Aws::Net::UDP_BUFFER_SIZE/*SENDBUF*/, Aws::Net::UDP_BUFFER_SIZE * counter/*RECVBUF*/, true/*Non-Blocking*/);
         ASSERT_EQ(0, serverUDP.BindToLocalHost(udpPort));

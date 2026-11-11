@@ -30,7 +30,7 @@ protected:
     AsyncHttpRequestIntegrationTest()
     {
         InitAPI(m_options);
-        m_executor = Aws::MakeShared<Aws::Utils::Threading::DefaultExecutor>("AsyncHttpRequestIntegrationTest");
+        m_executor = Aws::MakeShared<Aws::Utils::Threading::UnboundedExecutor>("AsyncHttpRequestIntegrationTest");
     }
 
     ~AsyncHttpRequestIntegrationTest()
@@ -360,7 +360,7 @@ TEST_F(AsyncHttpRequestIntegrationTest, RequestTimeoutClosesConnectionAndDrains)
     });
 
     ClientConfiguration config;
-    config.requestTimeoutMs = 500;
+    config.httpRequestTimeoutMs = 500;
     config.connectTimeoutMs = 5000;
 
     std::string uri = "http://127.0.0.1:" + std::to_string(port) + "/";
@@ -410,7 +410,7 @@ TEST_F(AsyncHttpRequestIntegrationTest, AsynchronousRequestTimeoutDeliversTimeou
     });
 
     ClientConfiguration config;
-    config.requestTimeoutMs = 500;
+    config.httpRequestTimeoutMs = 500;
     config.connectTimeoutMs = 5000;
 
     std::string uri = "http://127.0.0.1:" + std::to_string(port) + "/";

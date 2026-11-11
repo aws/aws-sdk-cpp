@@ -8,6 +8,7 @@
 #include <aws/core/platform/OSVersionInfo.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/threading/Executor.h>
 #include <aws/crt/Config.h>
 #include <aws/crt/Optional.h>
 
@@ -102,6 +103,7 @@ const char* CPP = "c++";
 const char* EXEC_ENV = "exec-env";
 const char* APP_ID = "app";
 const char* BUSINESS_METRICS = "m";
+const char* EXECUTOR = "executor";
 }  // namespace
 
 Aws::String UserAgent::BusinessMetricForFeature(UserAgentFeature feature) {
@@ -138,6 +140,9 @@ UserAgent::UserAgent(const ClientConfiguration& clientConfiguration,
 #undef XSTR
 #endif
 {
+  if (clientConfiguration.executor) {
+    SetExecutor(*clientConfiguration.executor);
+  }
 }
 
 void UserAgent::SetAccountIdEndpointMode(const Aws::String& accountIdEndpointMode) {
@@ -178,6 +183,7 @@ Aws::String UserAgent::SerializeWithFeatures(const Aws::Set<UserAgentFeature>& f
   SerializeMetadata(OS_VERSION, m_osVersion);
   SerializeMetadataWithVersion(LANG, CPP, m_cppVersion);
   SerializeMetadataWithVersion(METADATA, CRT_VERSION, m_crtVersion);
+  SerializeMetadataWithVersion(METADATA, EXECUTOR, m_executorName);
   if (!m_execEnv.empty()) {
     SerializeMetadata(EXEC_ENV, m_execEnv);
   }
@@ -246,6 +252,10 @@ const std::pair<const char*, UserAgentFeature> LEGACY_FEATURE_MAPPING[] = {
     {"ft/S3CryptoV1n", UserAgentFeature::S3_CRYPTO_V1N},
     {"ft/S3CryptoV2", UserAgentFeature::S3_CRYPTO_V2},
 };
+}
+
+void UserAgent::SetExecutor(const Aws::Utils::Threading::Executor& executor) {
+  m_executorName = FilterUserAgentToken(executor.GetUserAgentName());
 }
 
 void UserAgent::AddLegacyFeature(const Aws::String& legacyFeature) {

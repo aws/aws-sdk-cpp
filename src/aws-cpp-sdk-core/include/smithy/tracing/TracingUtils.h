@@ -30,7 +30,7 @@ namespace smithy {
                     Aws::String description
                 );
             public:
-                class ScopedMetricTimer {
+                class SMITHY_API ScopedMetricTimer {
                 public:
                     ScopedMetricTimer(Aws::String metricName, std::shared_ptr<Meter> meter, Aws::Map<Aws::String, Aws::String> attributes);
                     ~ScopedMetricTimer();

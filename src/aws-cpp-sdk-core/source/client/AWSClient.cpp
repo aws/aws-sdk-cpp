@@ -250,6 +250,11 @@ void AWSClient::ApplyServiceOptions(const Aws::Client::ServiceClientOptions& opt
     m_userAgentInterceptor->SetAccountIdEndpointMode(options.accountIdEndpointMode);
 }
 
+void AWSClient::SetUserAgentExecutor(const Aws::Utils::Threading::Executor& executor) {
+  assert(m_userAgentInterceptor);
+  m_userAgentInterceptor->SetExecutor(executor);
+}
+
 Aws::Client::AWSAuthSigner* AWSClient::GetSignerByName(const char* name) const
 {
     const auto& signer =  m_signerProvider->GetSigner(name);
