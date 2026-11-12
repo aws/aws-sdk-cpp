@@ -1,0 +1,6 @@
+{
+  "type": "bugfix",
+  "category": "tools",
+  "contributor": "sbiscigl",
+  "description": "Decode rpcv2Cbor initial-response members and send the event stream Accept header"
+}
