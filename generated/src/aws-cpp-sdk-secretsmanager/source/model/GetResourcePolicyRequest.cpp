@@ -19,6 +19,10 @@ Aws::String GetResourcePolicyRequest::SerializePayload() const {
     payload.WithString("SecretId", m_secretId);
   }
 
+  if (m_policyNameHasBeenSet) {
+    payload.WithString("PolicyName", m_policyName);
+  }
+
   return payload.View().WriteReadable();
 }
 

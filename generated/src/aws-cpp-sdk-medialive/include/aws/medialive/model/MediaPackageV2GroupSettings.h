@@ -14,6 +14,7 @@
 #include <aws/medialive/model/CmafTimedMetadataId3Frame.h>
 #include <aws/medialive/model/CmafTimedMetadataPassthrough.h>
 #include <aws/medialive/model/MediaPackageAdditionalDestinations.h>
+#include <aws/medialive/model/MediaPackageV2CaptionLanguageSetting.h>
 #include <aws/medialive/model/MediaPackageV2WatermarkingSettings.h>
 #include <aws/medialive/model/Scte35Type.h>
 
@@ -269,6 +270,32 @@ class MediaPackageV2GroupSettings {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * Applies only to 608 Embedded output captions. Controls the CLOSED-CAPTIONS
+   * signaling that MediaPackage v2 writes into the HLS manifest it delivers.
+auto:
+   * The default. If captionLanguageMappings is non-empty, the HLS manifest includes
+   * a CLOSED-CAPTIONS line for each mapped caption channel. If
+   * captionLanguageMappings is empty, the HLS manifest omits any CLOSED-CAPTIONS
+   * line.
+none: The HLS manifest carries CLOSED-CAPTIONS=NONE on each
+   * EXT-X-STREAM-INF tag, which signals to players that the stream has no closed
+   * captions, so they stop offering a CC track. The API rejects none combined with a
+   * non-empty captionLanguageMappings.
+   */
+  inline MediaPackageV2CaptionLanguageSetting GetCaptionLanguageSetting() const { return m_captionLanguageSetting; }
+  inline bool CaptionLanguageSettingHasBeenSet() const { return m_captionLanguageSettingHasBeenSet; }
+  inline void SetCaptionLanguageSetting(MediaPackageV2CaptionLanguageSetting value) {
+    m_captionLanguageSettingHasBeenSet = true;
+    m_captionLanguageSetting = value;
+  }
+  inline MediaPackageV2GroupSettings& WithCaptionLanguageSetting(MediaPackageV2CaptionLanguageSetting value) {
+    SetCaptionLanguageSetting(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<CaptionLanguageMapping> m_captionLanguageMappings;
 
@@ -293,6 +320,8 @@ class MediaPackageV2GroupSettings {
   Aws::Vector<MediaPackageAdditionalDestinations> m_additionalDestinations;
 
   MediaPackageV2WatermarkingSettings m_watermarkingSettings;
+
+  MediaPackageV2CaptionLanguageSetting m_captionLanguageSetting{MediaPackageV2CaptionLanguageSetting::NOT_SET};
   bool m_captionLanguageMappingsHasBeenSet = false;
   bool m_id3BehaviorHasBeenSet = false;
   bool m_klvBehaviorHasBeenSet = false;
@@ -305,6 +334,7 @@ class MediaPackageV2GroupSettings {
   bool m_timedMetadataPassthroughHasBeenSet = false;
   bool m_additionalDestinationsHasBeenSet = false;
   bool m_watermarkingSettingsHasBeenSet = false;
+  bool m_captionLanguageSettingHasBeenSet = false;
 };
 
 }  // namespace Model

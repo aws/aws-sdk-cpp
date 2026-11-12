@@ -8,6 +8,7 @@
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
 #include <aws/mediaconnect/model/ColorInformation.h>
 #include <aws/mediaconnect/model/FrameResolution.h>
+#include <aws/mediaconnect/model/ScanMode.h>
 
 #include <utility>
 
@@ -172,6 +173,22 @@ class TransportStream {
 
   ///@{
   /**
+   * <p>The scan mode used by the video stream.</p>
+   */
+  inline ScanMode GetScanMode() const { return m_scanMode; }
+  inline bool ScanModeHasBeenSet() const { return m_scanModeHasBeenSet; }
+  inline void SetScanMode(ScanMode value) {
+    m_scanModeHasBeenSet = true;
+    m_scanMode = value;
+  }
+  inline TransportStream& WithScanMode(ScanMode value) {
+    SetScanMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p> The Stream Type as it is reported in the Program Map Table.</p>
    */
   inline const Aws::String& GetStreamType() const { return m_streamType; }
@@ -184,6 +201,24 @@ class TransportStream {
   template <typename StreamTypeT = Aws::String>
   TransportStream& WithStreamType(StreamTypeT&& value) {
     SetStreamType(std::forward<StreamTypeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The language of the elementary stream.</p>
+   */
+  inline const Aws::String& GetLanguage() const { return m_language; }
+  inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }
+  template <typename LanguageT = Aws::String>
+  void SetLanguage(LanguageT&& value) {
+    m_languageHasBeenSet = true;
+    m_language = std::forward<LanguageT>(value);
+  }
+  template <typename LanguageT = Aws::String>
+  TransportStream& WithLanguage(LanguageT&& value) {
+    SetLanguage(std::forward<LanguageT>(value));
     return *this;
   }
   ///@}
@@ -204,7 +239,11 @@ class TransportStream {
 
   int m_sampleSize{0};
 
+  ScanMode m_scanMode{ScanMode::NOT_SET};
+
   Aws::String m_streamType;
+
+  Aws::String m_language;
   bool m_channelsHasBeenSet = false;
   bool m_codecHasBeenSet = false;
   bool m_colorHasBeenSet = false;
@@ -213,7 +252,9 @@ class TransportStream {
   bool m_pidHasBeenSet = false;
   bool m_sampleRateHasBeenSet = false;
   bool m_sampleSizeHasBeenSet = false;
+  bool m_scanModeHasBeenSet = false;
   bool m_streamTypeHasBeenSet = false;
+  bool m_languageHasBeenSet = false;
 };
 
 }  // namespace Model

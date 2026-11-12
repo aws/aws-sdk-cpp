@@ -47,6 +47,10 @@ Aws::String PutFunctionRequest::SerializePayload() const {
     payload.WithObject("VastRequestConfiguration", m_vastRequestConfiguration.Jsonize());
   }
 
+  if (m_hlsTagProcessorConfigurationHasBeenSet) {
+    payload.WithObject("HlsTagProcessorConfiguration", m_hlsTagProcessorConfiguration.Jsonize());
+  }
+
   if (m_tagsHasBeenSet) {
     JsonValue tagsJsonMap;
     for (auto& tagsItem : m_tags) {

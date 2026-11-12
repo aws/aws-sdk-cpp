@@ -117,6 +117,8 @@
 #include <aws/mediatailor/model/GetPrefetchScheduleResult.h>
 #include <aws/mediatailor/model/HlsConfiguration.h>
 #include <aws/mediatailor/model/HlsPlaylistSettings.h>
+#include <aws/mediatailor/model/HlsTagName.h>
+#include <aws/mediatailor/model/HlsTagProcessorConfiguration.h>
 #include <aws/mediatailor/model/HttpConfiguration.h>
 #include <aws/mediatailor/model/HttpPackageConfiguration.h>
 #include <aws/mediatailor/model/HttpRequest.h>

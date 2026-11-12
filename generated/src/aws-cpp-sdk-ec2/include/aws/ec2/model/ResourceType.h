@@ -123,7 +123,8 @@ enum class ResourceType {
   ipam_pool_allocation,
   capacity_reservation_cancellation_quote,
   application_status_check,
-  capacity_reservation_modification_quote
+  capacity_reservation_modification_quote,
+  metric_category
 };
 
 namespace ResourceTypeMapper {

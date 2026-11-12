@@ -55,8 +55,10 @@ class UpdateVirtualClusterRequest : public EMRContainersRequest {
   ///@{
   /**
    * <p>The scheduler configuration to apply to the virtual cluster. The new
-   * configuration fully replaces the existing one. If you omit a field, the
-   * corresponding limit is removed.</p>
+   * configuration fully replaces the existing one. If you omit
+   * <code>maxInQueueJobRuns</code>, the service removes the queue-depth limit. If
+   * you omit <code>maxConcurrentJobRuns</code>, the service applies the default
+   * limit of 1,000 concurrent job runs.</p>
    */
   inline const SchedulerConfiguration& GetSchedulerConfiguration() const { return m_schedulerConfiguration; }
   inline bool SchedulerConfigurationHasBeenSet() const { return m_schedulerConfigurationHasBeenSet; }

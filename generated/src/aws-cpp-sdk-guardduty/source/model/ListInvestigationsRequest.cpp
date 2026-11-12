@@ -15,6 +15,10 @@ using namespace Aws::Utils;
 Aws::String ListInvestigationsRequest::SerializePayload() const {
   JsonValue payload;
 
+  if (m_filterCriteriaHasBeenSet) {
+    payload.WithObject("filterCriteria", m_filterCriteria.Jsonize());
+  }
+
   if (m_sortCriteriaHasBeenSet) {
     payload.WithObject("sortCriteria", m_sortCriteria.Jsonize());
   }

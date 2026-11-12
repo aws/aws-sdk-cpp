@@ -8,6 +8,7 @@
 
 #include <aws/route53/Route53ClientPagination.h>
 #include <aws/route53/Route53PaginationBase.h>
+#include <aws/route53/model/ListResourceRecordSetProtectionsPaginationTraits.h>
 #include <aws/route53/model/ListCidrLocationsPaginationTraits.h>
 #include <aws/route53/model/ListHostedZonesPaginationTraits.h>
 #include <aws/route53/model/ListCidrCollectionsPaginationTraits.h>

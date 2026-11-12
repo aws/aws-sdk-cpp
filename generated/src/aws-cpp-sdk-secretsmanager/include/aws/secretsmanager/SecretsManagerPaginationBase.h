@@ -8,6 +8,7 @@
 #include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/secretsmanager/model/BatchGetSecretValuePaginationTraits.h>
+#include <aws/secretsmanager/model/ListResourcePoliciesPaginationTraits.h>
 #include <aws/secretsmanager/model/ListSecretVersionIdsPaginationTraits.h>
 #include <aws/secretsmanager/model/ListSecretsPaginationTraits.h>
 
@@ -28,6 +29,18 @@ class SecretsManagerPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::BatchGetSecretValueRequest,
                                              Pagination::BatchGetSecretValuePaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListResourcePolicies operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResourcePoliciesRequest,
+                                    Pagination::ListResourcePoliciesPaginationTraits<DerivedClient>>
+  ListResourcePoliciesPaginator(const Model::ListResourcePoliciesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResourcePoliciesRequest,
+                                             Pagination::ListResourcePoliciesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

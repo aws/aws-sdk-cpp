@@ -50,6 +50,8 @@
 #include <aws/monitoring/model/DeleteDashboardsResult.h>
 #include <aws/monitoring/model/DeleteInsightRulesRequest.h>
 #include <aws/monitoring/model/DeleteInsightRulesResult.h>
+#include <aws/monitoring/model/DeleteMetricDataQueryDefinitionRequest.h>
+#include <aws/monitoring/model/DeleteMetricDataQueryDefinitionResult.h>
 #include <aws/monitoring/model/DeleteMetricStreamRequest.h>
 #include <aws/monitoring/model/DeleteMetricStreamResult.h>
 #include <aws/monitoring/model/DeleteResourceMetricsConfigurationRequest.h>
@@ -94,6 +96,8 @@
 #include <aws/monitoring/model/GetInsightRuleReportRequest.h>
 #include <aws/monitoring/model/GetInsightRuleReportResult.h>
 #include <aws/monitoring/model/GetMetricDataPaginationTraits.h>
+#include <aws/monitoring/model/GetMetricDataQueryDefinitionRequest.h>
+#include <aws/monitoring/model/GetMetricDataQueryDefinitionResult.h>
 #include <aws/monitoring/model/GetMetricDataRequest.h>
 #include <aws/monitoring/model/GetMetricDataResult.h>
 #include <aws/monitoring/model/GetMetricStatisticsRequest.h>
@@ -121,6 +125,9 @@
 #include <aws/monitoring/model/ListManagedInsightRulesPaginationTraits.h>
 #include <aws/monitoring/model/ListManagedInsightRulesRequest.h>
 #include <aws/monitoring/model/ListManagedInsightRulesResult.h>
+#include <aws/monitoring/model/ListMetricDataQueryDefinitionsPaginationTraits.h>
+#include <aws/monitoring/model/ListMetricDataQueryDefinitionsRequest.h>
+#include <aws/monitoring/model/ListMetricDataQueryDefinitionsResult.h>
 #include <aws/monitoring/model/ListMetricStreamsPaginationTraits.h>
 #include <aws/monitoring/model/ListMetricStreamsRequest.h>
 #include <aws/monitoring/model/ListMetricStreamsResult.h>
@@ -138,6 +145,7 @@
 #include <aws/monitoring/model/MetricAlarm.h>
 #include <aws/monitoring/model/MetricCharacteristics.h>
 #include <aws/monitoring/model/MetricDataQuery.h>
+#include <aws/monitoring/model/MetricDataQueryDefinitionSummary.h>
 #include <aws/monitoring/model/MetricDataResult.h>
 #include <aws/monitoring/model/MetricDatum.h>
 #include <aws/monitoring/model/MetricMathAnomalyDetector.h>
@@ -163,9 +171,12 @@
 #include <aws/monitoring/model/PutManagedInsightRulesRequest.h>
 #include <aws/monitoring/model/PutManagedInsightRulesResult.h>
 #include <aws/monitoring/model/PutMetricAlarmRequest.h>
+#include <aws/monitoring/model/PutMetricDataQueryDefinitionRequest.h>
+#include <aws/monitoring/model/PutMetricDataQueryDefinitionResult.h>
 #include <aws/monitoring/model/PutMetricDataRequest.h>
 #include <aws/monitoring/model/PutMetricStreamRequest.h>
 #include <aws/monitoring/model/PutMetricStreamResult.h>
+#include <aws/monitoring/model/QueryType.h>
 #include <aws/monitoring/model/Range.h>
 #include <aws/monitoring/model/RecentlyActive.h>
 #include <aws/monitoring/model/ResourceMetricSelection.h>

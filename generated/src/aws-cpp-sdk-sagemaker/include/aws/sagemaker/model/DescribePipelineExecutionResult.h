@@ -307,8 +307,8 @@ class DescribePipelineExecutionResult {
   ///@{
   /**
    * <p>The Amazon Resource Name (ARN) of the IAM role that the execution uses.
-   * SageMaker returns this value only for executions of pipelines that AWS
-   * manages.</p>
+   * SageMaker returns this value only for executions of pipelines that Amazon Web
+   * Services manages.</p>
    */
   inline const Aws::String& GetRoleArn() const { return m_roleArn; }
   template <typename RoleArnT = Aws::String>

@@ -13,6 +13,7 @@
 #include <aws/route53/model/ListHealthChecksPaginationTraits.h>
 #include <aws/route53/model/ListHostedZonesPaginationTraits.h>
 #include <aws/route53/model/ListQueryLoggingConfigsPaginationTraits.h>
+#include <aws/route53/model/ListResourceRecordSetProtectionsPaginationTraits.h>
 
 #include <memory>
 
@@ -90,6 +91,18 @@ class Route53PaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListQueryLoggingConfigsRequest,
                                              Pagination::ListQueryLoggingConfigsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListResourceRecordSetProtections operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResourceRecordSetProtectionsRequest,
+                                    Pagination::ListResourceRecordSetProtectionsPaginationTraits<DerivedClient>>
+  ListResourceRecordSetProtectionsPaginator(const Model::ListResourceRecordSetProtectionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListResourceRecordSetProtectionsRequest,
+                                             Pagination::ListResourceRecordSetProtectionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 };

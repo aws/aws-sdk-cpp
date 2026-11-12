@@ -10,7 +10,7 @@
 namespace Aws {
 namespace SecretsManager {
 namespace Model {
-enum class StatusType { NOT_SET, InSync, Failed, InProgress };
+enum class StatusType { NOT_SET, InSync, Failed, InProgress, Pending, Detached };
 
 namespace StatusTypeMapper {
 AWS_SECRETSMANAGER_API StatusType GetStatusTypeForName(const Aws::String& name);

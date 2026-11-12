@@ -28,6 +28,7 @@
 #include <aws/guardduty/model/ListIPSetsPaginationTraits.h>
 #include <aws/guardduty/model/DescribeOrganizationConfigurationPaginationTraits.h>
 #include <aws/guardduty/model/ListCustomDetectionRuleOrgConfigurationsPaginationTraits.h>
+#include <aws/guardduty/model/ListInvestigationRecordsPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 

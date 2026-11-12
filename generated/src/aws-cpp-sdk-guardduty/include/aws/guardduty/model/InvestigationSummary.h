@@ -9,6 +9,7 @@
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
 #include <aws/guardduty/model/Confidence.h>
 #include <aws/guardduty/model/InvestigationStatus.h>
+#include <aws/guardduty/model/InvestigationType.h>
 #include <aws/guardduty/model/RiskLevel.h>
 
 #include <utility>
@@ -140,6 +141,44 @@ class InvestigationSummary {
 
   ///@{
   /**
+   * <p>The type of investigation. Possible values are <code>FINDING</code>,
+   * <code>ACCOUNT</code>, and <code>ORGANIZATION</code>. GuardDuty sets this field
+   * when the investigation completes.</p>
+   */
+  inline InvestigationType GetInvestigationType() const { return m_investigationType; }
+  inline bool InvestigationTypeHasBeenSet() const { return m_investigationTypeHasBeenSet; }
+  inline void SetInvestigationType(InvestigationType value) {
+    m_investigationTypeHasBeenSet = true;
+    m_investigationType = value;
+  }
+  inline InvestigationSummary& WithInvestigationType(InvestigationType value) {
+    SetInvestigationType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>For a <code>FINDING</code> investigation, the ID of the finding that the
+   * investigation analyzed. GuardDuty sets this field when the investigation
+   * completes.</p>
+   */
+  inline const Aws::String& GetFindingId() const { return m_findingId; }
+  inline bool FindingIdHasBeenSet() const { return m_findingIdHasBeenSet; }
+  template <typename FindingIdT = Aws::String>
+  void SetFindingId(FindingIdT&& value) {
+    m_findingIdHasBeenSet = true;
+    m_findingId = std::forward<FindingIdT>(value);
+  }
+  template <typename FindingIdT = Aws::String>
+  InvestigationSummary& WithFindingId(FindingIdT&& value) {
+    SetFindingId(std::forward<FindingIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The Amazon Web Services account ID associated with the investigation.</p>
    */
   inline const Aws::String& GetAccountId() const { return m_accountId; }
@@ -152,6 +191,26 @@ class InvestigationSummary {
   template <typename AccountIdT = Aws::String>
   InvestigationSummary& WithAccountId(AccountIdT&& value) {
     SetAccountId(std::forward<AccountIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>For an <code>ORGANIZATION</code> investigation, the ID of the administrator
+   * account of the organization that the investigation analyzed. GuardDuty sets this
+   * field when the investigation completes.</p>
+   */
+  inline const Aws::String& GetAdminAccountId() const { return m_adminAccountId; }
+  inline bool AdminAccountIdHasBeenSet() const { return m_adminAccountIdHasBeenSet; }
+  template <typename AdminAccountIdT = Aws::String>
+  void SetAdminAccountId(AdminAccountIdT&& value) {
+    m_adminAccountIdHasBeenSet = true;
+    m_adminAccountId = std::forward<AdminAccountIdT>(value);
+  }
+  template <typename AdminAccountIdT = Aws::String>
+  InvestigationSummary& WithAdminAccountId(AdminAccountIdT&& value) {
+    SetAdminAccountId(std::forward<AdminAccountIdT>(value));
     return *this;
   }
   ///@}
@@ -204,7 +263,13 @@ class InvestigationSummary {
 
   Aws::String m_title;
 
+  InvestigationType m_investigationType{InvestigationType::NOT_SET};
+
+  Aws::String m_findingId;
+
   Aws::String m_accountId;
+
+  Aws::String m_adminAccountId;
 
   Aws::Utils::DateTime m_startTime{};
 
@@ -215,7 +280,10 @@ class InvestigationSummary {
   bool m_riskLevelHasBeenSet = false;
   bool m_confidenceHasBeenSet = false;
   bool m_titleHasBeenSet = false;
+  bool m_investigationTypeHasBeenSet = false;
+  bool m_findingIdHasBeenSet = false;
   bool m_accountIdHasBeenSet = false;
+  bool m_adminAccountIdHasBeenSet = false;
   bool m_startTimeHasBeenSet = false;
   bool m_endTimeHasBeenSet = false;
 };

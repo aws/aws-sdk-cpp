@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
+#include <aws/mediaconnect/model/RtmpSourceMetadataInfo.h>
 #include <aws/mediaconnect/model/TransportMediaInfo.h>
 
 #include <utility>
@@ -47,9 +48,32 @@ class RouterInputMetadata {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The RTMP (Real-Time Messaging Protocol) specific information about the router
+   * input's source. This includes the application name, the stream name, and the
+   * associated audio and video streams.</p>
+   */
+  inline const RtmpSourceMetadataInfo& GetRtmpInfo() const { return m_rtmpInfo; }
+  inline bool RtmpInfoHasBeenSet() const { return m_rtmpInfoHasBeenSet; }
+  template <typename RtmpInfoT = RtmpSourceMetadataInfo>
+  void SetRtmpInfo(RtmpInfoT&& value) {
+    m_rtmpInfoHasBeenSet = true;
+    m_rtmpInfo = std::forward<RtmpInfoT>(value);
+  }
+  template <typename RtmpInfoT = RtmpSourceMetadataInfo>
+  RouterInputMetadata& WithRtmpInfo(RtmpInfoT&& value) {
+    SetRtmpInfo(std::forward<RtmpInfoT>(value));
+    return *this;
+  }
+  ///@}
  private:
   TransportMediaInfo m_transportStreamMediaInfo;
+
+  RtmpSourceMetadataInfo m_rtmpInfo;
   bool m_transportStreamMediaInfoHasBeenSet = false;
+  bool m_rtmpInfoHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -77,6 +77,7 @@
 #include <aws/ec2/model/DescribeMacHostsPaginationTraits.h>
 #include <aws/ec2/model/DescribeMacModificationTasksPaginationTraits.h>
 #include <aws/ec2/model/DescribeManagedPrefixListsPaginationTraits.h>
+#include <aws/ec2/model/DescribeMetricCategoriesPaginationTraits.h>
 #include <aws/ec2/model/DescribeMovingAddressesPaginationTraits.h>
 #include <aws/ec2/model/DescribeNatGatewaysPaginationTraits.h>
 #include <aws/ec2/model/DescribeNetworkAclsPaginationTraits.h>
@@ -1024,6 +1025,18 @@ class EC2PaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeManagedPrefixListsRequest,
                                              Pagination::DescribeManagedPrefixListsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for DescribeMetricCategories operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeMetricCategoriesRequest,
+                                    Pagination::DescribeMetricCategoriesPaginationTraits<DerivedClient>>
+  DescribeMetricCategoriesPaginator(const Model::DescribeMetricCategoriesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeMetricCategoriesRequest,
+                                             Pagination::DescribeMetricCategoriesPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

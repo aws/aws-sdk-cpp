@@ -20,6 +20,9 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/DisableSerialConsoleAccessRequest.h>
+#include <aws/ec2/model/DisableSnapshotBlockPublicAccessRequest.h>
+#include <aws/ec2/model/DisableTransitGatewayRouteTablePropagationRequest.h>
 #include <aws/ec2/model/DisableVgwRoutePropagationRequest.h>
 #include <aws/ec2/model/DisableVpcClassicLinkDnsSupportRequest.h>
 #include <aws/ec2/model/DisableVpcClassicLinkRequest.h>
@@ -117,9 +120,6 @@
 #include <aws/ec2/model/GetIpamPrefixListResolverVersionEntriesRequest.h>
 #include <aws/ec2/model/GetIpamPrefixListResolverVersionsRequest.h>
 #include <aws/ec2/model/GetIpamResourceCidrsRequest.h>
-#include <aws/ec2/model/GetIpamRouteOriginAuthorizationsRequest.h>
-#include <aws/ec2/model/GetIpamRouteProtectionFindingsRequest.h>
-#include <aws/ec2/model/GetIpamRoutingPolicyRegistrationDeltasRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,26 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DisableSerialConsoleAccessOutcome EC2Client::DisableSerialConsoleAccess(const DisableSerialConsoleAccessRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableSerialConsoleAccessOutcome(result.GetResultWithOwnership())
+                            : DisableSerialConsoleAccessOutcome(std::move(result.GetError()));
+}
+
+DisableSnapshotBlockPublicAccessOutcome EC2Client::DisableSnapshotBlockPublicAccess(
+    const DisableSnapshotBlockPublicAccessRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableSnapshotBlockPublicAccessOutcome(result.GetResultWithOwnership())
+                            : DisableSnapshotBlockPublicAccessOutcome(std::move(result.GetError()));
+}
+
+DisableTransitGatewayRouteTablePropagationOutcome EC2Client::DisableTransitGatewayRouteTablePropagation(
+    const DisableTransitGatewayRouteTablePropagationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableTransitGatewayRouteTablePropagationOutcome(result.GetResultWithOwnership())
+                            : DisableTransitGatewayRouteTablePropagationOutcome(std::move(result.GetError()));
+}
 
 DisableVgwRoutePropagationOutcome EC2Client::DisableVgwRoutePropagation(const DisableVgwRoutePropagationRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -752,25 +772,4 @@ GetIpamResourceCidrsOutcome EC2Client::GetIpamResourceCidrs(const GetIpamResourc
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetIpamResourceCidrsOutcome(result.GetResultWithOwnership())
                             : GetIpamResourceCidrsOutcome(std::move(result.GetError()));
-}
-
-GetIpamRouteOriginAuthorizationsOutcome EC2Client::GetIpamRouteOriginAuthorizations(
-    const GetIpamRouteOriginAuthorizationsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? GetIpamRouteOriginAuthorizationsOutcome(result.GetResultWithOwnership())
-                            : GetIpamRouteOriginAuthorizationsOutcome(std::move(result.GetError()));
-}
-
-GetIpamRouteProtectionFindingsOutcome EC2Client::GetIpamRouteProtectionFindings(
-    const GetIpamRouteProtectionFindingsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? GetIpamRouteProtectionFindingsOutcome(result.GetResultWithOwnership())
-                            : GetIpamRouteProtectionFindingsOutcome(std::move(result.GetError()));
-}
-
-GetIpamRoutingPolicyRegistrationDeltasOutcome EC2Client::GetIpamRoutingPolicyRegistrationDeltas(
-    const GetIpamRoutingPolicyRegistrationDeltasRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? GetIpamRoutingPolicyRegistrationDeltasOutcome(result.GetResultWithOwnership())
-                            : GetIpamRoutingPolicyRegistrationDeltasOutcome(std::move(result.GetError()));
 }

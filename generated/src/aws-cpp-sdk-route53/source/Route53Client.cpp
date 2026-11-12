@@ -30,6 +30,7 @@
 #include <aws/route53/model/CreateHostedZoneRequest.h>
 #include <aws/route53/model/CreateKeySigningKeyRequest.h>
 #include <aws/route53/model/CreateQueryLoggingConfigRequest.h>
+#include <aws/route53/model/CreateResourceRecordSetProtectionsRequest.h>
 #include <aws/route53/model/CreateReusableDelegationSetRequest.h>
 #include <aws/route53/model/CreateTrafficPolicyInstanceRequest.h>
 #include <aws/route53/model/CreateTrafficPolicyRequest.h>
@@ -41,6 +42,7 @@
 #include <aws/route53/model/DeleteHostedZoneRequest.h>
 #include <aws/route53/model/DeleteKeySigningKeyRequest.h>
 #include <aws/route53/model/DeleteQueryLoggingConfigRequest.h>
+#include <aws/route53/model/DeleteResourceRecordSetProtectionsRequest.h>
 #include <aws/route53/model/DeleteReusableDelegationSetRequest.h>
 #include <aws/route53/model/DeleteTrafficPolicyInstanceRequest.h>
 #include <aws/route53/model/DeleteTrafficPolicyRequest.h>
@@ -75,6 +77,7 @@
 #include <aws/route53/model/ListHostedZonesByVPCRequest.h>
 #include <aws/route53/model/ListHostedZonesRequest.h>
 #include <aws/route53/model/ListQueryLoggingConfigsRequest.h>
+#include <aws/route53/model/ListResourceRecordSetProtectionsRequest.h>
 #include <aws/route53/model/ListResourceRecordSetsRequest.h>
 #include <aws/route53/model/ListReusableDelegationSetsRequest.h>
 #include <aws/route53/model/ListTagsForResourceRequest.h>
@@ -406,6 +409,26 @@ CreateQueryLoggingConfigOutcome Route53Client::CreateQueryLoggingConfig(const Cr
                             : CreateQueryLoggingConfigOutcome(std::move(result.GetError()));
 }
 
+CreateResourceRecordSetProtectionsOutcome Route53Client::CreateResourceRecordSetProtections(
+    const CreateResourceRecordSetProtectionsRequest& request) const {
+  if (!request.HostedZoneIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CreateResourceRecordSetProtections", "Required field: HostedZoneId, is not set");
+    return CreateResourceRecordSetProtectionsOutcome(Aws::Client::AWSError<Route53Errors>(
+        Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HostedZoneId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/hostedzone/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHostedZoneId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/rrsetprotection");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateResourceRecordSetProtectionsOutcome(result.GetResultWithOwnership())
+                            : CreateResourceRecordSetProtectionsOutcome(std::move(result.GetError()));
+}
+
 CreateReusableDelegationSetOutcome Route53Client::CreateReusableDelegationSet(const CreateReusableDelegationSetRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -596,6 +619,26 @@ DeleteQueryLoggingConfigOutcome Route53Client::DeleteQueryLoggingConfig(const De
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? DeleteQueryLoggingConfigOutcome(result.GetResultWithOwnership())
                             : DeleteQueryLoggingConfigOutcome(std::move(result.GetError()));
+}
+
+DeleteResourceRecordSetProtectionsOutcome Route53Client::DeleteResourceRecordSetProtections(
+    const DeleteResourceRecordSetProtectionsRequest& request) const {
+  if (!request.HostedZoneIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteResourceRecordSetProtections", "Required field: HostedZoneId, is not set");
+    return DeleteResourceRecordSetProtectionsOutcome(Aws::Client::AWSError<Route53Errors>(
+        Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HostedZoneId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/hostedzone/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHostedZoneId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/rrsetprotection/delete");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteResourceRecordSetProtectionsOutcome(result.GetResultWithOwnership())
+                            : DeleteResourceRecordSetProtectionsOutcome(std::move(result.GetError()));
 }
 
 DeleteReusableDelegationSetOutcome Route53Client::DeleteReusableDelegationSet(const DeleteReusableDelegationSetRequest& request) const {
@@ -1167,6 +1210,26 @@ ListQueryLoggingConfigsOutcome Route53Client::ListQueryLoggingConfigs(const List
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListQueryLoggingConfigsOutcome(result.GetResultWithOwnership())
                             : ListQueryLoggingConfigsOutcome(std::move(result.GetError()));
+}
+
+ListResourceRecordSetProtectionsOutcome Route53Client::ListResourceRecordSetProtections(
+    const ListResourceRecordSetProtectionsRequest& request) const {
+  if (!request.HostedZoneIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListResourceRecordSetProtections", "Required field: HostedZoneId, is not set");
+    return ListResourceRecordSetProtectionsOutcome(Aws::Client::AWSError<Route53Errors>(
+        Route53Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HostedZoneId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2013-04-01/hostedzone/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHostedZoneId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/rrsetprotection");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListResourceRecordSetProtectionsOutcome(result.GetResultWithOwnership())
+                            : ListResourceRecordSetProtectionsOutcome(std::move(result.GetError()));
 }
 
 ListResourceRecordSetsOutcome Route53Client::ListResourceRecordSets(const ListResourceRecordSetsRequest& request) const {

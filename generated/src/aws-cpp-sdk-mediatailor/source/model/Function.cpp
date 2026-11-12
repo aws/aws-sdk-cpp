@@ -54,6 +54,10 @@ Function& Function::operator=(JsonView jsonValue) {
     m_vastRequestConfiguration = jsonValue.GetObject("VastRequestConfiguration");
     m_vastRequestConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("HlsTagProcessorConfiguration")) {
+    m_hlsTagProcessorConfiguration = jsonValue.GetObject("HlsTagProcessorConfiguration");
+    m_hlsTagProcessorConfigurationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
     for (auto& tagsItem : tagsJsonMap) {
@@ -105,6 +109,10 @@ JsonValue Function::Jsonize() const {
 
   if (m_vastRequestConfigurationHasBeenSet) {
     payload.WithObject("VastRequestConfiguration", m_vastRequestConfiguration.Jsonize());
+  }
+
+  if (m_hlsTagProcessorConfigurationHasBeenSet) {
+    payload.WithObject("HlsTagProcessorConfiguration", m_hlsTagProcessorConfiguration.Jsonize());
   }
 
   if (m_tagsHasBeenSet) {

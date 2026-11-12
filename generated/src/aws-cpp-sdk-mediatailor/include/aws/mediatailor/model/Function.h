@@ -11,6 +11,7 @@
 #include <aws/mediatailor/model/ConcurrentExecutorConfiguration.h>
 #include <aws/mediatailor/model/CustomOutputConfiguration.h>
 #include <aws/mediatailor/model/FunctionType.h>
+#include <aws/mediatailor/model/HlsTagProcessorConfiguration.h>
 #include <aws/mediatailor/model/HttpRequestConfiguration.h>
 #include <aws/mediatailor/model/SequentialExecutorConfiguration.h>
 #include <aws/mediatailor/model/VastRequestConfiguration.h>
@@ -207,6 +208,24 @@ class Function {
 
   ///@{
   /**
+   * <p>The configuration for an <code>HLS_TAG_PROCESSOR</code> function.</p>
+   */
+  inline const HlsTagProcessorConfiguration& GetHlsTagProcessorConfiguration() const { return m_hlsTagProcessorConfiguration; }
+  inline bool HlsTagProcessorConfigurationHasBeenSet() const { return m_hlsTagProcessorConfigurationHasBeenSet; }
+  template <typename HlsTagProcessorConfigurationT = HlsTagProcessorConfiguration>
+  void SetHlsTagProcessorConfiguration(HlsTagProcessorConfigurationT&& value) {
+    m_hlsTagProcessorConfigurationHasBeenSet = true;
+    m_hlsTagProcessorConfiguration = std::forward<HlsTagProcessorConfigurationT>(value);
+  }
+  template <typename HlsTagProcessorConfigurationT = HlsTagProcessorConfiguration>
+  Function& WithHlsTagProcessorConfiguration(HlsTagProcessorConfigurationT&& value) {
+    SetHlsTagProcessorConfiguration(std::forward<HlsTagProcessorConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The tags assigned to the function. Tags are key-value pairs that you can
    * associate with Amazon resources to help with organization, access control, and
    * cost tracking. For more information, see <a
@@ -269,6 +288,8 @@ class Function {
 
   VastRequestConfiguration m_vastRequestConfiguration;
 
+  HlsTagProcessorConfiguration m_hlsTagProcessorConfiguration;
+
   Aws::Map<Aws::String, Aws::String> m_tags;
 
   Aws::String m_arn;
@@ -281,6 +302,7 @@ class Function {
   bool m_concurrentExecutorConfigurationHasBeenSet = false;
   bool m_sequentialExecutorConfigurationHasBeenSet = false;
   bool m_vastRequestConfigurationHasBeenSet = false;
+  bool m_hlsTagProcessorConfigurationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_arnHasBeenSet = false;
 };

@@ -50,6 +50,14 @@ IntegrationAssociationSummary& IntegrationAssociationSummary::operator=(JsonView
     m_sourceType = SourceTypeMapper::GetSourceTypeForName(jsonValue.GetString("SourceType"));
     m_sourceTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("LastModifiedTime")) {
+    m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
+    m_lastModifiedTimeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("LastModifiedRegion")) {
+    m_lastModifiedRegion = jsonValue.GetString("LastModifiedRegion");
+    m_lastModifiedRegionHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -86,6 +94,14 @@ JsonValue IntegrationAssociationSummary::Jsonize() const {
 
   if (m_sourceTypeHasBeenSet) {
     payload.WithString("SourceType", SourceTypeMapper::GetNameForSourceType(m_sourceType));
+  }
+
+  if (m_lastModifiedTimeHasBeenSet) {
+    payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
+  }
+
+  if (m_lastModifiedRegionHasBeenSet) {
+    payload.WithString("LastModifiedRegion", m_lastModifiedRegion);
   }
 
   return payload;

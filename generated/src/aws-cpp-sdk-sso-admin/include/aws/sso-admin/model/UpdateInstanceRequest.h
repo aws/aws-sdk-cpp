@@ -8,6 +8,7 @@
 #include <aws/sso-admin/SSOAdminRequest.h>
 #include <aws/sso-admin/SSOAdmin_EXPORTS.h>
 #include <aws/sso-admin/model/EncryptionConfiguration.h>
+#include <aws/sso-admin/model/NetworkConfigurationInfo.h>
 
 #include <utility>
 
@@ -75,7 +76,12 @@ class UpdateInstanceRequest : public SSOAdminRequest {
   /**
    * <p>Specifies the encryption configuration for your IAM Identity Center instance.
    * You can use this to configure customer managed KMS keys or Amazon Web Services
-   * owned KMS keys for encrypting your instance data.</p>
+   * owned KMS keys for encrypting your instance data.</p>  <p>You can't set
+   * more than one of <code>EncryptionConfiguration</code>,
+   * <code>PermissionSetsEnabled</code>, and <code>NetworkConfiguration</code> in the
+   * same request. To configure more than one of them, make a separate
+   * <code>UpdateInstance</code> call for each. These calls can be made in
+   * parallel.</p>
    */
   inline const EncryptionConfiguration& GetEncryptionConfiguration() const { return m_encryptionConfiguration; }
   inline bool EncryptionConfigurationHasBeenSet() const { return m_encryptionConfigurationHasBeenSet; }
@@ -95,10 +101,7 @@ class UpdateInstanceRequest : public SSOAdminRequest {
   /**
    * <p>Enables permission sets for this Identity Center instance. The only accepted
    * value is <code>true </code>. After permission sets are enabled, they cannot be
-   * disabled.</p>  <p>You can't set <code>EncryptionConfiguration</code> and
-   * <code>PermissionSetsEnabled</code> in the same request. To configure both, make
-   * two separate <code>UpdateInstance</code> calls. You can make these calls in
-   * parallel.</p>
+   * disabled.</p>
    */
   inline bool GetPermissionSetsEnabled() const { return m_permissionSetsEnabled; }
   inline bool PermissionSetsEnabledHasBeenSet() const { return m_permissionSetsEnabledHasBeenSet; }
@@ -111,6 +114,32 @@ class UpdateInstanceRequest : public SSOAdminRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the network access controls for your Identity Center instance. Use
+   * this to require that access to your instance and to applications originates from
+   * VPC endpoints, and to optionally restrict which VPCs are permitted, allow
+   * specific IP address ranges that bypass the VPC endpoint requirement, or exempt
+   * specific applications from the controls.</p> <p>If you omit
+   * <code>NetworkConfiguration</code>, the stored network configuration is
+   * preserved. If you specify <code>NetworkConfiguration</code>, it replaces the
+   * stored network configuration in its entirety. Any list that you omit from the
+   * object, or include as an empty list, is cleared.</p>
+   */
+  inline const NetworkConfigurationInfo& GetNetworkConfiguration() const { return m_networkConfiguration; }
+  inline bool NetworkConfigurationHasBeenSet() const { return m_networkConfigurationHasBeenSet; }
+  template <typename NetworkConfigurationT = NetworkConfigurationInfo>
+  void SetNetworkConfiguration(NetworkConfigurationT&& value) {
+    m_networkConfigurationHasBeenSet = true;
+    m_networkConfiguration = std::forward<NetworkConfigurationT>(value);
+  }
+  template <typename NetworkConfigurationT = NetworkConfigurationInfo>
+  UpdateInstanceRequest& WithNetworkConfiguration(NetworkConfigurationT&& value) {
+    SetNetworkConfiguration(std::forward<NetworkConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -119,10 +148,13 @@ class UpdateInstanceRequest : public SSOAdminRequest {
   EncryptionConfiguration m_encryptionConfiguration;
 
   bool m_permissionSetsEnabled{false};
+
+  NetworkConfigurationInfo m_networkConfiguration;
   bool m_nameHasBeenSet = false;
   bool m_instanceArnHasBeenSet = false;
   bool m_encryptionConfigurationHasBeenSet = false;
   bool m_permissionSetsEnabledHasBeenSet = false;
+  bool m_networkConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

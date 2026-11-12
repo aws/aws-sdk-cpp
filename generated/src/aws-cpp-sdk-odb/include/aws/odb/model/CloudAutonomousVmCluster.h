@@ -710,6 +710,22 @@ class CloudAutonomousVmCluster {
 
   ///@{
   /**
+   * <p>The minimum value to which you can scale down the number of CPU cores.</p>
+   */
+  inline int GetOcpusLowestScaledValue() const { return m_ocpusLowestScaledValue; }
+  inline bool OcpusLowestScaledValueHasBeenSet() const { return m_ocpusLowestScaledValueHasBeenSet; }
+  inline void SetOcpusLowestScaledValue(int value) {
+    m_ocpusLowestScaledValueHasBeenSet = true;
+    m_ocpusLowestScaledValue = value;
+  }
+  inline CloudAutonomousVmCluster& WithOcpusLowestScaledValue(int value) {
+    SetOcpusLowestScaledValue(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The number of Autonomous CDBs that can be provisioned in the Autonomous VM
    * cluster.</p>
    */
@@ -1033,6 +1049,8 @@ class CloudAutonomousVmCluster {
 
   int m_nonProvisionableAutonomousContainerDatabases{0};
 
+  int m_ocpusLowestScaledValue{0};
+
   int m_provisionableAutonomousContainerDatabases{0};
 
   int m_provisionedAutonomousContainerDatabases{0};
@@ -1098,6 +1116,7 @@ class CloudAutonomousVmCluster {
   bool m_memorySizeInGBsHasBeenSet = false;
   bool m_nodeCountHasBeenSet = false;
   bool m_nonProvisionableAutonomousContainerDatabasesHasBeenSet = false;
+  bool m_ocpusLowestScaledValueHasBeenSet = false;
   bool m_provisionableAutonomousContainerDatabasesHasBeenSet = false;
   bool m_provisionedAutonomousContainerDatabasesHasBeenSet = false;
   bool m_provisionedCpusHasBeenSet = false;

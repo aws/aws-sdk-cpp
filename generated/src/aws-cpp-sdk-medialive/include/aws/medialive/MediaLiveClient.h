@@ -1133,7 +1133,12 @@ class AWS_MEDIALIVE_API MediaLiveClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * Delete an expired reservation.<p><h3>See Also:</h3>   <a
+   * Delete an expired reservation, or cancel an active reservation during the
+   * calendar month (UTC) in which you purchased it. You can't cancel an active
+   * reservation that you purchased in an earlier month, including one that renewed
+   * automatically. You also can't cancel an active reservation during the last hour
+   * of the month, from 23:00 UTC on the last day of the month.<p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteReservation">AWS
    * API Reference</a></p>
    */

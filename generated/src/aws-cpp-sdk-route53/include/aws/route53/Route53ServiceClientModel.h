@@ -29,6 +29,7 @@
 #include <aws/route53/model/CreateHostedZoneResult.h>
 #include <aws/route53/model/CreateKeySigningKeyResult.h>
 #include <aws/route53/model/CreateQueryLoggingConfigResult.h>
+#include <aws/route53/model/CreateResourceRecordSetProtectionsResult.h>
 #include <aws/route53/model/CreateReusableDelegationSetResult.h>
 #include <aws/route53/model/CreateTrafficPolicyInstanceResult.h>
 #include <aws/route53/model/CreateTrafficPolicyResult.h>
@@ -40,6 +41,7 @@
 #include <aws/route53/model/DeleteHostedZoneResult.h>
 #include <aws/route53/model/DeleteKeySigningKeyResult.h>
 #include <aws/route53/model/DeleteQueryLoggingConfigResult.h>
+#include <aws/route53/model/DeleteResourceRecordSetProtectionsResult.h>
 #include <aws/route53/model/DeleteReusableDelegationSetResult.h>
 #include <aws/route53/model/DeleteTrafficPolicyInstanceResult.h>
 #include <aws/route53/model/DeleteTrafficPolicyResult.h>
@@ -85,6 +87,7 @@
 #include <aws/route53/model/ListHostedZonesResult.h>
 #include <aws/route53/model/ListQueryLoggingConfigsRequest.h>
 #include <aws/route53/model/ListQueryLoggingConfigsResult.h>
+#include <aws/route53/model/ListResourceRecordSetProtectionsResult.h>
 #include <aws/route53/model/ListResourceRecordSetsResult.h>
 #include <aws/route53/model/ListReusableDelegationSetsRequest.h>
 #include <aws/route53/model/ListReusableDelegationSetsResult.h>
@@ -147,6 +150,7 @@ class CreateHealthCheckRequest;
 class CreateHostedZoneRequest;
 class CreateKeySigningKeyRequest;
 class CreateQueryLoggingConfigRequest;
+class CreateResourceRecordSetProtectionsRequest;
 class CreateReusableDelegationSetRequest;
 class CreateTrafficPolicyRequest;
 class CreateTrafficPolicyInstanceRequest;
@@ -158,6 +162,7 @@ class DeleteHealthCheckRequest;
 class DeleteHostedZoneRequest;
 class DeleteKeySigningKeyRequest;
 class DeleteQueryLoggingConfigRequest;
+class DeleteResourceRecordSetProtectionsRequest;
 class DeleteReusableDelegationSetRequest;
 class DeleteTrafficPolicyRequest;
 class DeleteTrafficPolicyInstanceRequest;
@@ -192,6 +197,7 @@ class ListHostedZonesRequest;
 class ListHostedZonesByNameRequest;
 class ListHostedZonesByVPCRequest;
 class ListQueryLoggingConfigsRequest;
+class ListResourceRecordSetProtectionsRequest;
 class ListResourceRecordSetsRequest;
 class ListReusableDelegationSetsRequest;
 class ListTagsForResourceRequest;
@@ -221,6 +227,7 @@ typedef Aws::Utils::Outcome<CreateHealthCheckResult, Route53Error> CreateHealthC
 typedef Aws::Utils::Outcome<CreateHostedZoneResult, Route53Error> CreateHostedZoneOutcome;
 typedef Aws::Utils::Outcome<CreateKeySigningKeyResult, Route53Error> CreateKeySigningKeyOutcome;
 typedef Aws::Utils::Outcome<CreateQueryLoggingConfigResult, Route53Error> CreateQueryLoggingConfigOutcome;
+typedef Aws::Utils::Outcome<CreateResourceRecordSetProtectionsResult, Route53Error> CreateResourceRecordSetProtectionsOutcome;
 typedef Aws::Utils::Outcome<CreateReusableDelegationSetResult, Route53Error> CreateReusableDelegationSetOutcome;
 typedef Aws::Utils::Outcome<CreateTrafficPolicyResult, Route53Error> CreateTrafficPolicyOutcome;
 typedef Aws::Utils::Outcome<CreateTrafficPolicyInstanceResult, Route53Error> CreateTrafficPolicyInstanceOutcome;
@@ -232,6 +239,7 @@ typedef Aws::Utils::Outcome<DeleteHealthCheckResult, Route53Error> DeleteHealthC
 typedef Aws::Utils::Outcome<DeleteHostedZoneResult, Route53Error> DeleteHostedZoneOutcome;
 typedef Aws::Utils::Outcome<DeleteKeySigningKeyResult, Route53Error> DeleteKeySigningKeyOutcome;
 typedef Aws::Utils::Outcome<DeleteQueryLoggingConfigResult, Route53Error> DeleteQueryLoggingConfigOutcome;
+typedef Aws::Utils::Outcome<DeleteResourceRecordSetProtectionsResult, Route53Error> DeleteResourceRecordSetProtectionsOutcome;
 typedef Aws::Utils::Outcome<DeleteReusableDelegationSetResult, Route53Error> DeleteReusableDelegationSetOutcome;
 typedef Aws::Utils::Outcome<DeleteTrafficPolicyResult, Route53Error> DeleteTrafficPolicyOutcome;
 typedef Aws::Utils::Outcome<DeleteTrafficPolicyInstanceResult, Route53Error> DeleteTrafficPolicyInstanceOutcome;
@@ -266,6 +274,7 @@ typedef Aws::Utils::Outcome<ListHostedZonesResult, Route53Error> ListHostedZones
 typedef Aws::Utils::Outcome<ListHostedZonesByNameResult, Route53Error> ListHostedZonesByNameOutcome;
 typedef Aws::Utils::Outcome<ListHostedZonesByVPCResult, Route53Error> ListHostedZonesByVPCOutcome;
 typedef Aws::Utils::Outcome<ListQueryLoggingConfigsResult, Route53Error> ListQueryLoggingConfigsOutcome;
+typedef Aws::Utils::Outcome<ListResourceRecordSetProtectionsResult, Route53Error> ListResourceRecordSetProtectionsOutcome;
 typedef Aws::Utils::Outcome<ListResourceRecordSetsResult, Route53Error> ListResourceRecordSetsOutcome;
 typedef Aws::Utils::Outcome<ListReusableDelegationSetsResult, Route53Error> ListReusableDelegationSetsOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, Route53Error> ListTagsForResourceOutcome;
@@ -295,6 +304,7 @@ typedef std::future<CreateHealthCheckOutcome> CreateHealthCheckOutcomeCallable;
 typedef std::future<CreateHostedZoneOutcome> CreateHostedZoneOutcomeCallable;
 typedef std::future<CreateKeySigningKeyOutcome> CreateKeySigningKeyOutcomeCallable;
 typedef std::future<CreateQueryLoggingConfigOutcome> CreateQueryLoggingConfigOutcomeCallable;
+typedef std::future<CreateResourceRecordSetProtectionsOutcome> CreateResourceRecordSetProtectionsOutcomeCallable;
 typedef std::future<CreateReusableDelegationSetOutcome> CreateReusableDelegationSetOutcomeCallable;
 typedef std::future<CreateTrafficPolicyOutcome> CreateTrafficPolicyOutcomeCallable;
 typedef std::future<CreateTrafficPolicyInstanceOutcome> CreateTrafficPolicyInstanceOutcomeCallable;
@@ -306,6 +316,7 @@ typedef std::future<DeleteHealthCheckOutcome> DeleteHealthCheckOutcomeCallable;
 typedef std::future<DeleteHostedZoneOutcome> DeleteHostedZoneOutcomeCallable;
 typedef std::future<DeleteKeySigningKeyOutcome> DeleteKeySigningKeyOutcomeCallable;
 typedef std::future<DeleteQueryLoggingConfigOutcome> DeleteQueryLoggingConfigOutcomeCallable;
+typedef std::future<DeleteResourceRecordSetProtectionsOutcome> DeleteResourceRecordSetProtectionsOutcomeCallable;
 typedef std::future<DeleteReusableDelegationSetOutcome> DeleteReusableDelegationSetOutcomeCallable;
 typedef std::future<DeleteTrafficPolicyOutcome> DeleteTrafficPolicyOutcomeCallable;
 typedef std::future<DeleteTrafficPolicyInstanceOutcome> DeleteTrafficPolicyInstanceOutcomeCallable;
@@ -340,6 +351,7 @@ typedef std::future<ListHostedZonesOutcome> ListHostedZonesOutcomeCallable;
 typedef std::future<ListHostedZonesByNameOutcome> ListHostedZonesByNameOutcomeCallable;
 typedef std::future<ListHostedZonesByVPCOutcome> ListHostedZonesByVPCOutcomeCallable;
 typedef std::future<ListQueryLoggingConfigsOutcome> ListQueryLoggingConfigsOutcomeCallable;
+typedef std::future<ListResourceRecordSetProtectionsOutcome> ListResourceRecordSetProtectionsOutcomeCallable;
 typedef std::future<ListResourceRecordSetsOutcome> ListResourceRecordSetsOutcomeCallable;
 typedef std::future<ListReusableDelegationSetsOutcome> ListReusableDelegationSetsOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
@@ -392,6 +404,10 @@ typedef std::function<void(const Route53Client*, const Model::CreateKeySigningKe
 typedef std::function<void(const Route53Client*, const Model::CreateQueryLoggingConfigRequest&,
                            const Model::CreateQueryLoggingConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateQueryLoggingConfigResponseReceivedHandler;
+typedef std::function<void(const Route53Client*, const Model::CreateResourceRecordSetProtectionsRequest&,
+                           const Model::CreateResourceRecordSetProtectionsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateResourceRecordSetProtectionsResponseReceivedHandler;
 typedef std::function<void(const Route53Client*, const Model::CreateReusableDelegationSetRequest&,
                            const Model::CreateReusableDelegationSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateReusableDelegationSetResponseReceivedHandler;
@@ -426,6 +442,10 @@ typedef std::function<void(const Route53Client*, const Model::DeleteKeySigningKe
 typedef std::function<void(const Route53Client*, const Model::DeleteQueryLoggingConfigRequest&,
                            const Model::DeleteQueryLoggingConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteQueryLoggingConfigResponseReceivedHandler;
+typedef std::function<void(const Route53Client*, const Model::DeleteResourceRecordSetProtectionsRequest&,
+                           const Model::DeleteResourceRecordSetProtectionsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteResourceRecordSetProtectionsResponseReceivedHandler;
 typedef std::function<void(const Route53Client*, const Model::DeleteReusableDelegationSetRequest&,
                            const Model::DeleteReusableDelegationSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteReusableDelegationSetResponseReceivedHandler;
@@ -533,6 +553,10 @@ typedef std::function<void(const Route53Client*, const Model::ListHostedZonesByV
 typedef std::function<void(const Route53Client*, const Model::ListQueryLoggingConfigsRequest&, const Model::ListQueryLoggingConfigsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListQueryLoggingConfigsResponseReceivedHandler;
+typedef std::function<void(const Route53Client*, const Model::ListResourceRecordSetProtectionsRequest&,
+                           const Model::ListResourceRecordSetProtectionsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListResourceRecordSetProtectionsResponseReceivedHandler;
 typedef std::function<void(const Route53Client*, const Model::ListResourceRecordSetsRequest&, const Model::ListResourceRecordSetsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListResourceRecordSetsResponseReceivedHandler;

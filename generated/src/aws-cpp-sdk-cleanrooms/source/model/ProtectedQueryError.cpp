@@ -26,6 +26,10 @@ ProtectedQueryError& ProtectedQueryError::operator=(JsonView jsonValue) {
     m_code = jsonValue.GetString("code");
     m_codeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("retry")) {
+    m_retry = jsonValue.GetObject("retry");
+    m_retryHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue ProtectedQueryError::Jsonize() const {
 
   if (m_codeHasBeenSet) {
     payload.WithString("code", m_code);
+  }
+
+  if (m_retryHasBeenSet) {
+    payload.WithObject("retry", m_retry.Jsonize());
   }
 
   return payload;

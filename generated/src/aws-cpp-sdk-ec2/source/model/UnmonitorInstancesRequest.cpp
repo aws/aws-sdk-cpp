@@ -21,6 +21,14 @@ Aws::String UnmonitorInstancesRequest::SerializePayload() const {
     }
   }
 
+  if (m_metricCategoryIdsHasBeenSet) {
+    unsigned metricCategoryIdsCount = 1;
+    for (auto& item : m_metricCategoryIds) {
+      ss << "MetricCategoryId." << metricCategoryIdsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      metricCategoryIdsCount++;
+    }
+  }
+
   if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }

@@ -15,6 +15,7 @@
 #include <aws/monitoring/model/ListAlarmMuteRulesPaginationTraits.h>
 #include <aws/monitoring/model/ListDashboardsPaginationTraits.h>
 #include <aws/monitoring/model/ListManagedInsightRulesPaginationTraits.h>
+#include <aws/monitoring/model/ListMetricDataQueryDefinitionsPaginationTraits.h>
 #include <aws/monitoring/model/ListMetricStreamsPaginationTraits.h>
 #include <aws/monitoring/model/ListMetricsPaginationTraits.h>
 
@@ -116,6 +117,18 @@ class CloudWatchPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListManagedInsightRulesRequest,
                                              Pagination::ListManagedInsightRulesPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListMetricDataQueryDefinitions operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMetricDataQueryDefinitionsRequest,
+                                    Pagination::ListMetricDataQueryDefinitionsPaginationTraits<DerivedClient>>
+  ListMetricDataQueryDefinitionsPaginator(const Model::ListMetricDataQueryDefinitionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMetricDataQueryDefinitionsRequest,
+                                             Pagination::ListMetricDataQueryDefinitionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

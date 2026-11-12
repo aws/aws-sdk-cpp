@@ -49,6 +49,8 @@ static const int ERROR_BUMPER_START_INTERPOLATION_HASH = HashingUtils::HashStrin
 static const int ERROR_BUMPER_END_INTERPOLATION_HASH = HashingUtils::HashString("ERROR_BUMPER_END_INTERPOLATION");
 static const int PRE_SESSION_INIT_HOOK_ERROR_HASH = HashingUtils::HashString("PRE_SESSION_INIT_HOOK_ERROR");
 static const int PRE_SESSION_INIT_FUNCTION_ERROR_HASH = HashingUtils::HashString("PRE_SESSION_INIT_FUNCTION_ERROR");
+static const int POST_ORIGIN_RESPONSE_HOOK_ERROR_HASH = HashingUtils::HashString("POST_ORIGIN_RESPONSE_HOOK_ERROR");
+static const int POST_ORIGIN_RESPONSE_FUNCTION_ERROR_HASH = HashingUtils::HashString("POST_ORIGIN_RESPONSE_FUNCTION_ERROR");
 
 ManifestServiceExcludeEventType GetManifestServiceExcludeEventTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -120,6 +122,10 @@ ManifestServiceExcludeEventType GetManifestServiceExcludeEventTypeForName(const 
     return ManifestServiceExcludeEventType::PRE_SESSION_INIT_HOOK_ERROR;
   } else if (hashCode == PRE_SESSION_INIT_FUNCTION_ERROR_HASH) {
     return ManifestServiceExcludeEventType::PRE_SESSION_INIT_FUNCTION_ERROR;
+  } else if (hashCode == POST_ORIGIN_RESPONSE_HOOK_ERROR_HASH) {
+    return ManifestServiceExcludeEventType::POST_ORIGIN_RESPONSE_HOOK_ERROR;
+  } else if (hashCode == POST_ORIGIN_RESPONSE_FUNCTION_ERROR_HASH) {
+    return ManifestServiceExcludeEventType::POST_ORIGIN_RESPONSE_FUNCTION_ERROR;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -202,6 +208,10 @@ Aws::String GetNameForManifestServiceExcludeEventType(ManifestServiceExcludeEven
       return "PRE_SESSION_INIT_HOOK_ERROR";
     case ManifestServiceExcludeEventType::PRE_SESSION_INIT_FUNCTION_ERROR:
       return "PRE_SESSION_INIT_FUNCTION_ERROR";
+    case ManifestServiceExcludeEventType::POST_ORIGIN_RESPONSE_HOOK_ERROR:
+      return "POST_ORIGIN_RESPONSE_HOOK_ERROR";
+    case ManifestServiceExcludeEventType::POST_ORIGIN_RESPONSE_FUNCTION_ERROR:
+      return "POST_ORIGIN_RESPONSE_FUNCTION_ERROR";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

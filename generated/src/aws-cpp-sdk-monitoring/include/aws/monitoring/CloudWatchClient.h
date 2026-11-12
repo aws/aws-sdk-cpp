@@ -393,6 +393,41 @@ class AWS_CLOUDWATCH_API CloudWatchClient : public Aws::Client::AWSRpcV2CborClie
   }
 
   /**
+   * <p>Deletes a metric data query definition.</p> <p>This operation is idempotent.
+   * If the definition doesn't exist, the operation succeeds without returning an
+   * error.</p> <p> <b>Permissions</b> </p> <p>To delete a definition, you need the
+   * <code>cloudwatch:DeleteMetricDataQueryDefinition</code> permission on the metric
+   * data query definition resource. You can use the
+   * <code>aws:ResourceTag/${TagKey}</code> condition key to control access based on
+   * the tags of the definition.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteMetricDataQueryDefinition">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteMetricDataQueryDefinitionOutcome DeleteMetricDataQueryDefinition(
+      const Model::DeleteMetricDataQueryDefinitionRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteMetricDataQueryDefinition that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DeleteMetricDataQueryDefinitionRequestT = Model::DeleteMetricDataQueryDefinitionRequest>
+  Model::DeleteMetricDataQueryDefinitionOutcomeCallable DeleteMetricDataQueryDefinitionCallable(
+      const DeleteMetricDataQueryDefinitionRequestT& request) const {
+    return SubmitCallable(&CloudWatchClient::DeleteMetricDataQueryDefinition, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteMetricDataQueryDefinition that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DeleteMetricDataQueryDefinitionRequestT = Model::DeleteMetricDataQueryDefinitionRequest>
+  void DeleteMetricDataQueryDefinitionAsync(const DeleteMetricDataQueryDefinitionRequestT& request,
+                                            const DeleteMetricDataQueryDefinitionResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudWatchClient::DeleteMetricDataQueryDefinition, request, handler, context);
+  }
+
+  /**
    * <p>Permanently deletes the metric stream that you specify.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteMetricStream">AWS
@@ -1051,6 +1086,40 @@ class AWS_CLOUDWATCH_API CloudWatchClient : public Aws::Client::AWSRpcV2CborClie
   }
 
   /**
+   * <p>Returns a metric data query definition, including its expression.</p> <p>
+   * <b>Permissions</b> </p> <p>To get a definition, you need the
+   * <code>cloudwatch:GetMetricDataQueryDefinition</code> permission on the metric
+   * data query definition resource. You can use the
+   * <code>aws:ResourceTag/${TagKey}</code> condition key to control access based on
+   * the tags of the definition.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricDataQueryDefinition">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetMetricDataQueryDefinitionOutcome GetMetricDataQueryDefinition(
+      const Model::GetMetricDataQueryDefinitionRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetMetricDataQueryDefinition that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetMetricDataQueryDefinitionRequestT = Model::GetMetricDataQueryDefinitionRequest>
+  Model::GetMetricDataQueryDefinitionOutcomeCallable GetMetricDataQueryDefinitionCallable(
+      const GetMetricDataQueryDefinitionRequestT& request) const {
+    return SubmitCallable(&CloudWatchClient::GetMetricDataQueryDefinition, request);
+  }
+
+  /**
+   * An Async wrapper for GetMetricDataQueryDefinition that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetMetricDataQueryDefinitionRequestT = Model::GetMetricDataQueryDefinitionRequest>
+  void GetMetricDataQueryDefinitionAsync(const GetMetricDataQueryDefinitionRequestT& request,
+                                         const GetMetricDataQueryDefinitionResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudWatchClient::GetMetricDataQueryDefinition, request, handler, context);
+  }
+
+  /**
    * <p>Gets statistics for the specified metric.</p> <p>The maximum number of data
    * points returned from a single call is 1,440. If you request more than 1,440 data
    * points, CloudWatch returns an error. To reduce the number of data points, you
@@ -1353,6 +1422,43 @@ class AWS_CLOUDWATCH_API CloudWatchClient : public Aws::Client::AWSRpcV2CborClie
                                     const ListManagedInsightRulesResponseReceivedHandler& handler,
                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CloudWatchClient::ListManagedInsightRules, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the metric data query definitions in your account and Region.</p>
+   * <p>The results are summaries that don't include the expression. To get the full
+   * definition, call <code>GetMetricDataQueryDefinition</code> with its ID.</p>
+   * <p>This operation supports pagination. Use the <code>MaxResults</code> and
+   * <code>NextToken</code> parameters to retrieve results in multiple calls.</p> <p>
+   * <b>Permissions</b> </p> <p>To list definitions, you need the
+   * <code>cloudwatch:ListMetricDataQueryDefinitions</code> permission. This
+   * permission applies to all definitions in the account and Region. The results
+   * aren't filtered by tags.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListMetricDataQueryDefinitions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListMetricDataQueryDefinitionsOutcome ListMetricDataQueryDefinitions(
+      const Model::ListMetricDataQueryDefinitionsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListMetricDataQueryDefinitions that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListMetricDataQueryDefinitionsRequestT = Model::ListMetricDataQueryDefinitionsRequest>
+  Model::ListMetricDataQueryDefinitionsOutcomeCallable ListMetricDataQueryDefinitionsCallable(
+      const ListMetricDataQueryDefinitionsRequestT& request = {}) const {
+    return SubmitCallable(&CloudWatchClient::ListMetricDataQueryDefinitions, request);
+  }
+
+  /**
+   * An Async wrapper for ListMetricDataQueryDefinitions that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename ListMetricDataQueryDefinitionsRequestT = Model::ListMetricDataQueryDefinitionsRequest>
+  void ListMetricDataQueryDefinitionsAsync(const ListMetricDataQueryDefinitionsResponseReceivedHandler& handler,
+                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                           const ListMetricDataQueryDefinitionsRequestT& request = {}) const {
+    return SubmitAsync(&CloudWatchClient::ListMetricDataQueryDefinitions, request, handler, context);
   }
 
   /**
@@ -1905,6 +2011,54 @@ class AWS_CLOUDWATCH_API CloudWatchClient : public Aws::Client::AWSRpcV2CborClie
   void PutMetricDataAsync(const PutMetricDataRequestT& request, const PutMetricDataResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CloudWatchClient::PutMetricData, request, handler, context);
+  }
+
+  /**
+   * <p>Creates or updates a metric data query definition.</p> <p>A metric data query
+   * definition saves a metric query so that you can reuse it later. It includes the
+   * query expression, the query language, and a path that names the definition and
+   * can organize it into folders. When you save a definition, CloudWatch doesn't
+   * validate or run its expression.</p> <p>To create a definition, omit
+   * <code>Id</code>. CloudWatch generates the ID and returns it. To update a
+   * definition, specify its <code>Id</code>. An update replaces the path,
+   * expression, and type, and keeps the creation time.</p> <p>The path must be
+   * unique in your account and Region. If another definition already uses the path,
+   * the request fails with a <code>ConflictException</code>.</p> <p>You can have up
+   * to 1,000 metric data query definitions in each Region of your account. A request
+   * that would create more fails with a <code>LimitExceededException</code>.</p> <p>
+   * <b>Permissions</b> </p> <p>To create or update a definition, you need the
+   * <code>cloudwatch:PutMetricDataQueryDefinition</code> permission on the metric
+   * data query definition resource. The resource ARN has the format
+   * <code>arn:aws:cloudwatch:Region:account-id:metric-query-definition/Id</code>.</p>
+   * <p>To add tags when you create a definition, you also need the
+   * <code>cloudwatch:TagResource</code> permission. You can use the
+   * <code>aws:RequestTag/${TagKey}</code> and <code>aws:TagKeys</code> condition
+   * keys to control which tags can be added.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricDataQueryDefinition">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::PutMetricDataQueryDefinitionOutcome PutMetricDataQueryDefinition(
+      const Model::PutMetricDataQueryDefinitionRequest& request) const;
+
+  /**
+   * A Callable wrapper for PutMetricDataQueryDefinition that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename PutMetricDataQueryDefinitionRequestT = Model::PutMetricDataQueryDefinitionRequest>
+  Model::PutMetricDataQueryDefinitionOutcomeCallable PutMetricDataQueryDefinitionCallable(
+      const PutMetricDataQueryDefinitionRequestT& request) const {
+    return SubmitCallable(&CloudWatchClient::PutMetricDataQueryDefinition, request);
+  }
+
+  /**
+   * An Async wrapper for PutMetricDataQueryDefinition that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename PutMetricDataQueryDefinitionRequestT = Model::PutMetricDataQueryDefinitionRequest>
+  void PutMetricDataQueryDefinitionAsync(const PutMetricDataQueryDefinitionRequestT& request,
+                                         const PutMetricDataQueryDefinitionResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudWatchClient::PutMetricDataQueryDefinition, request, handler, context);
   }
 
   /**

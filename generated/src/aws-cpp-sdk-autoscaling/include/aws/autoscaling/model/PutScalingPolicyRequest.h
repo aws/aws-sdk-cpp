@@ -282,6 +282,7 @@ class PutScalingPolicyRequest : public AutoScalingRequest {
    * <p>A target tracking scaling policy. Provides support for predefined or custom
    * metrics.</p> <p>The following predefined metrics are available:</p> <ul> <li>
    * <p> <code>ASGAverageCPUUtilization</code> </p> </li> <li> <p>
+   * <code>ASGAverageCPUUtilizationHighResolution</code> </p> </li> <li> <p>
    * <code>ASGAverageNetworkIn</code> </p> </li> <li> <p>
    * <code>ASGAverageNetworkOut</code> </p> </li> <li> <p>
    * <code>ALBRequestCountPerTarget</code> </p> </li> </ul> <p>If you specify

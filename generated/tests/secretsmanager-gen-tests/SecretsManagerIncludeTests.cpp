@@ -18,6 +18,8 @@
 #include <aws/secretsmanager/SecretsManager_EXPORTS.h>
 #include <aws/secretsmanager/internal/SecretsManagerEndpointRules.h>
 #include <aws/secretsmanager/model/APIErrorType.h>
+#include <aws/secretsmanager/model/AssociateCrossAccountReplicaRequest.h>
+#include <aws/secretsmanager/model/AssociateCrossAccountReplicaResult.h>
 #include <aws/secretsmanager/model/BatchGetSecretValuePaginationTraits.h>
 #include <aws/secretsmanager/model/BatchGetSecretValueRequest.h>
 #include <aws/secretsmanager/model/BatchGetSecretValueResult.h>
@@ -25,12 +27,16 @@
 #include <aws/secretsmanager/model/CancelRotateSecretResult.h>
 #include <aws/secretsmanager/model/CreateSecretRequest.h>
 #include <aws/secretsmanager/model/CreateSecretResult.h>
+#include <aws/secretsmanager/model/CrossAccountPrimaryType.h>
+#include <aws/secretsmanager/model/CrossAccountReplicaEntry.h>
 #include <aws/secretsmanager/model/DeleteResourcePolicyRequest.h>
 #include <aws/secretsmanager/model/DeleteResourcePolicyResult.h>
 #include <aws/secretsmanager/model/DeleteSecretRequest.h>
 #include <aws/secretsmanager/model/DeleteSecretResult.h>
 #include <aws/secretsmanager/model/DescribeSecretRequest.h>
 #include <aws/secretsmanager/model/DescribeSecretResult.h>
+#include <aws/secretsmanager/model/DisassociateCrossAccountReplicaRequest.h>
+#include <aws/secretsmanager/model/DisassociateCrossAccountReplicaResult.h>
 #include <aws/secretsmanager/model/ExternalSecretRotationMetadataItem.h>
 #include <aws/secretsmanager/model/Filter.h>
 #include <aws/secretsmanager/model/FilterNameStringType.h>
@@ -40,6 +46,9 @@
 #include <aws/secretsmanager/model/GetResourcePolicyResult.h>
 #include <aws/secretsmanager/model/GetSecretValueRequest.h>
 #include <aws/secretsmanager/model/GetSecretValueResult.h>
+#include <aws/secretsmanager/model/ListResourcePoliciesPaginationTraits.h>
+#include <aws/secretsmanager/model/ListResourcePoliciesRequest.h>
+#include <aws/secretsmanager/model/ListResourcePoliciesResult.h>
 #include <aws/secretsmanager/model/ListSecretVersionIdsPaginationTraits.h>
 #include <aws/secretsmanager/model/ListSecretVersionIdsRequest.h>
 #include <aws/secretsmanager/model/ListSecretVersionIdsResult.h>
@@ -53,9 +62,11 @@
 #include <aws/secretsmanager/model/RemoveRegionsFromReplicationRequest.h>
 #include <aws/secretsmanager/model/RemoveRegionsFromReplicationResult.h>
 #include <aws/secretsmanager/model/ReplicaRegionType.h>
+#include <aws/secretsmanager/model/ReplicaRestrictionType.h>
 #include <aws/secretsmanager/model/ReplicateSecretToRegionsRequest.h>
 #include <aws/secretsmanager/model/ReplicateSecretToRegionsResult.h>
 #include <aws/secretsmanager/model/ReplicationStatusType.h>
+#include <aws/secretsmanager/model/ResourcePolicySummary.h>
 #include <aws/secretsmanager/model/RestoreSecretRequest.h>
 #include <aws/secretsmanager/model/RestoreSecretResult.h>
 #include <aws/secretsmanager/model/RotateSecretRequest.h>

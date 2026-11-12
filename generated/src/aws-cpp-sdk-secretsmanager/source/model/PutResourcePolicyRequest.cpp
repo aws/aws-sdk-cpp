@@ -23,6 +23,10 @@ Aws::String PutResourcePolicyRequest::SerializePayload() const {
     payload.WithString("ResourcePolicy", m_resourcePolicy);
   }
 
+  if (m_policyNameHasBeenSet) {
+    payload.WithString("PolicyName", m_policyName);
+  }
+
   if (m_blockPublicPolicyHasBeenSet) {
     payload.WithBool("BlockPublicPolicy", m_blockPublicPolicy);
   }

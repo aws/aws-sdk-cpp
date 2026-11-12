@@ -14,6 +14,7 @@
 #include <aws/monitoring/model/ListAlarmMuteRulesPaginationTraits.h>
 #include <aws/monitoring/model/ListDashboardsPaginationTraits.h>
 #include <aws/monitoring/model/ListManagedInsightRulesPaginationTraits.h>
+#include <aws/monitoring/model/ListMetricDataQueryDefinitionsPaginationTraits.h>
 #include <aws/monitoring/model/ListMetricStreamsPaginationTraits.h>
 #include <aws/monitoring/model/ListMetricsPaginationTraits.h>
 
@@ -38,6 +39,9 @@ using ListDashboardsPaginator = Aws::Utils::Pagination::Paginator<CloudWatchClie
 using ListManagedInsightRulesPaginator =
     Aws::Utils::Pagination::Paginator<CloudWatchClient, Model::ListManagedInsightRulesRequest,
                                       Pagination::ListManagedInsightRulesPaginationTraits<CloudWatchClient>>;
+using ListMetricDataQueryDefinitionsPaginator =
+    Aws::Utils::Pagination::Paginator<CloudWatchClient, Model::ListMetricDataQueryDefinitionsRequest,
+                                      Pagination::ListMetricDataQueryDefinitionsPaginationTraits<CloudWatchClient>>;
 using ListMetricsPaginator = Aws::Utils::Pagination::Paginator<CloudWatchClient, Model::ListMetricsRequest,
                                                                Pagination::ListMetricsPaginationTraits<CloudWatchClient>>;
 using ListMetricStreamsPaginator = Aws::Utils::Pagination::Paginator<CloudWatchClient, Model::ListMetricStreamsRequest,

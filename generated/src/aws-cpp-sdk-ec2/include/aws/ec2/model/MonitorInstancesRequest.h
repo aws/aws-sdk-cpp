@@ -59,6 +59,32 @@ class MonitorInstancesRequest : public EC2Request {
 
   ///@{
   /**
+   * <p>The IDs of the metric categories to associate with the instances. The
+   * specified metric categories are added to any metric categories that are already
+   * associated with the instances.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetMetricCategoryIds() const { return m_metricCategoryIds; }
+  inline bool MetricCategoryIdsHasBeenSet() const { return m_metricCategoryIdsHasBeenSet; }
+  template <typename MetricCategoryIdsT = Aws::Vector<Aws::String>>
+  void SetMetricCategoryIds(MetricCategoryIdsT&& value) {
+    m_metricCategoryIdsHasBeenSet = true;
+    m_metricCategoryIds = std::forward<MetricCategoryIdsT>(value);
+  }
+  template <typename MetricCategoryIdsT = Aws::Vector<Aws::String>>
+  MonitorInstancesRequest& WithMetricCategoryIds(MetricCategoryIdsT&& value) {
+    SetMetricCategoryIds(std::forward<MetricCategoryIdsT>(value));
+    return *this;
+  }
+  template <typename MetricCategoryIdsT = Aws::String>
+  MonitorInstancesRequest& AddMetricCategoryIds(MetricCategoryIdsT&& value) {
+    m_metricCategoryIdsHasBeenSet = true;
+    m_metricCategoryIds.emplace_back(std::forward<MetricCategoryIdsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Checks whether you have the required permissions for the operation, without
    * actually making the request, and provides an error response. If you have the
    * required permissions, the error response is <code>DryRunOperation</code>.
@@ -78,8 +104,11 @@ class MonitorInstancesRequest : public EC2Request {
  private:
   Aws::Vector<Aws::String> m_instanceIds;
 
+  Aws::Vector<Aws::String> m_metricCategoryIds;
+
   bool m_dryRun{false};
   bool m_instanceIdsHasBeenSet = false;
+  bool m_metricCategoryIdsHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

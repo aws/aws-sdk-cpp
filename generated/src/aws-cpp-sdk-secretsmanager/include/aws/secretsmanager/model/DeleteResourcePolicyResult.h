@@ -62,6 +62,24 @@ class DeleteResourcePolicyResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The name of the deleted resource policy. If you didn't specify
+   * <code>PolicyName</code> in the request, this is <code>default</code>.</p>
+   */
+  inline const Aws::String& GetPolicyName() const { return m_policyName; }
+  template <typename PolicyNameT = Aws::String>
+  void SetPolicyName(PolicyNameT&& value) {
+    m_policyNameHasBeenSet = true;
+    m_policyName = std::forward<PolicyNameT>(value);
+  }
+  template <typename PolicyNameT = Aws::String>
+  DeleteResourcePolicyResult& WithPolicyName(PolicyNameT&& value) {
+    SetPolicyName(std::forward<PolicyNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -82,10 +100,13 @@ class DeleteResourcePolicyResult {
 
   Aws::String m_name;
 
+  Aws::String m_policyName;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_aRNHasBeenSet = false;
   bool m_nameHasBeenSet = false;
+  bool m_policyNameHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

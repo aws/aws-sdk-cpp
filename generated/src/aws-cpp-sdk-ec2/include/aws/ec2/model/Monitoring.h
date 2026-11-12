@@ -5,6 +5,8 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/MonitoringState.h>
 
@@ -35,6 +37,30 @@ class Monitoring {
 
   ///@{
   /**
+   * <p>The IDs of the metric categories that are associated with the instance.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetMetricCategoryIds() const { return m_metricCategoryIds; }
+  inline bool MetricCategoryIdsHasBeenSet() const { return m_metricCategoryIdsHasBeenSet; }
+  template <typename MetricCategoryIdsT = Aws::Vector<Aws::String>>
+  void SetMetricCategoryIds(MetricCategoryIdsT&& value) {
+    m_metricCategoryIdsHasBeenSet = true;
+    m_metricCategoryIds = std::forward<MetricCategoryIdsT>(value);
+  }
+  template <typename MetricCategoryIdsT = Aws::Vector<Aws::String>>
+  Monitoring& WithMetricCategoryIds(MetricCategoryIdsT&& value) {
+    SetMetricCategoryIds(std::forward<MetricCategoryIdsT>(value));
+    return *this;
+  }
+  template <typename MetricCategoryIdsT = Aws::String>
+  Monitoring& AddMetricCategoryIds(MetricCategoryIdsT&& value) {
+    m_metricCategoryIdsHasBeenSet = true;
+    m_metricCategoryIds.emplace_back(std::forward<MetricCategoryIdsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring
    * is enabled.</p>
    */
@@ -50,7 +76,10 @@ class Monitoring {
   }
   ///@}
  private:
+  Aws::Vector<Aws::String> m_metricCategoryIds;
+
   MonitoringState m_state{MonitoringState::NOT_SET};
+  bool m_metricCategoryIdsHasBeenSet = false;
   bool m_stateHasBeenSet = false;
 };
 

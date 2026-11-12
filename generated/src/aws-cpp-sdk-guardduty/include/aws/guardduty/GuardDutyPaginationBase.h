@@ -18,6 +18,7 @@
 #include <aws/guardduty/model/ListFiltersPaginationTraits.h>
 #include <aws/guardduty/model/ListFindingsPaginationTraits.h>
 #include <aws/guardduty/model/ListIPSetsPaginationTraits.h>
+#include <aws/guardduty/model/ListInvestigationRecordsPaginationTraits.h>
 #include <aws/guardduty/model/ListInvestigationsPaginationTraits.h>
 #include <aws/guardduty/model/ListInvitationsPaginationTraits.h>
 #include <aws/guardduty/model/ListMalwareScansPaginationTraits.h>
@@ -150,6 +151,18 @@ class GuardDutyPaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFindingsRequest,
                                              Pagination::ListFindingsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                       request};
+  }
+
+  /**
+   * Create a paginator for ListInvestigationRecords operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListInvestigationRecordsRequest,
+                                    Pagination::ListInvestigationRecordsPaginationTraits<DerivedClient>>
+  ListInvestigationRecordsPaginator(const Model::ListInvestigationRecordsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListInvestigationRecordsRequest,
+                                             Pagination::ListInvestigationRecordsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
   }
 
   /**

@@ -59,6 +59,33 @@ class UnmonitorInstancesRequest : public EC2Request {
 
   ///@{
   /**
+   * <p>The IDs of the metric categories to remove from the instances. If you specify
+   * metric categories, only those metric categories are removed and detailed
+   * monitoring remains enabled. If you don't specify metric categories, detailed
+   * monitoring and all metric categories are turned off.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetMetricCategoryIds() const { return m_metricCategoryIds; }
+  inline bool MetricCategoryIdsHasBeenSet() const { return m_metricCategoryIdsHasBeenSet; }
+  template <typename MetricCategoryIdsT = Aws::Vector<Aws::String>>
+  void SetMetricCategoryIds(MetricCategoryIdsT&& value) {
+    m_metricCategoryIdsHasBeenSet = true;
+    m_metricCategoryIds = std::forward<MetricCategoryIdsT>(value);
+  }
+  template <typename MetricCategoryIdsT = Aws::Vector<Aws::String>>
+  UnmonitorInstancesRequest& WithMetricCategoryIds(MetricCategoryIdsT&& value) {
+    SetMetricCategoryIds(std::forward<MetricCategoryIdsT>(value));
+    return *this;
+  }
+  template <typename MetricCategoryIdsT = Aws::String>
+  UnmonitorInstancesRequest& AddMetricCategoryIds(MetricCategoryIdsT&& value) {
+    m_metricCategoryIdsHasBeenSet = true;
+    m_metricCategoryIds.emplace_back(std::forward<MetricCategoryIdsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Checks whether you have the required permissions for the operation, without
    * actually making the request, and provides an error response. If you have the
    * required permissions, the error response is <code>DryRunOperation</code>.
@@ -78,8 +105,11 @@ class UnmonitorInstancesRequest : public EC2Request {
  private:
   Aws::Vector<Aws::String> m_instanceIds;
 
+  Aws::Vector<Aws::String> m_metricCategoryIds;
+
   bool m_dryRun{false};
   bool m_instanceIdsHasBeenSet = false;
+  bool m_metricCategoryIdsHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
 };
 

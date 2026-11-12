@@ -11,6 +11,7 @@
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
 #include <aws/mediaconnect/model/MessageDetail.h>
 #include <aws/mediaconnect/model/NdiSourceMetadataInfo.h>
+#include <aws/mediaconnect/model/RtmpSourceMetadataInfo.h>
 #include <aws/mediaconnect/model/TransportMediaInfo.h>
 
 #include <utility>
@@ -128,6 +129,25 @@ class DescribeFlowSourceMetadataResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The RTMP (Real-Time Messaging Protocol) specific information about the flow's
+   * source. This includes the application name, the stream name, and the associated
+   * audio and video streams.</p>
+   */
+  inline const RtmpSourceMetadataInfo& GetRtmpInfo() const { return m_rtmpInfo; }
+  template <typename RtmpInfoT = RtmpSourceMetadataInfo>
+  void SetRtmpInfo(RtmpInfoT&& value) {
+    m_rtmpInfoHasBeenSet = true;
+    m_rtmpInfo = std::forward<RtmpInfoT>(value);
+  }
+  template <typename RtmpInfoT = RtmpSourceMetadataInfo>
+  DescribeFlowSourceMetadataResult& WithRtmpInfo(RtmpInfoT&& value) {
+    SetRtmpInfo(std::forward<RtmpInfoT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -154,6 +174,8 @@ class DescribeFlowSourceMetadataResult {
 
   NdiSourceMetadataInfo m_ndiInfo;
 
+  RtmpSourceMetadataInfo m_rtmpInfo;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_flowArnHasBeenSet = false;
@@ -161,6 +183,7 @@ class DescribeFlowSourceMetadataResult {
   bool m_timestampHasBeenSet = false;
   bool m_transportMediaInfoHasBeenSet = false;
   bool m_ndiInfoHasBeenSet = false;
+  bool m_rtmpInfoHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -31,6 +31,7 @@
 #include <aws/mwaa/model/EnvironmentStatus.h>
 #include <aws/mwaa/model/GetEnvironmentRequest.h>
 #include <aws/mwaa/model/GetEnvironmentResult.h>
+#include <aws/mwaa/model/IdentityCenterConfiguration.h>
 #include <aws/mwaa/model/InvokeRestApiRequest.h>
 #include <aws/mwaa/model/InvokeRestApiResult.h>
 #include <aws/mwaa/model/LastUpdate.h>
@@ -52,6 +53,7 @@
 #include <aws/mwaa/model/StatisticSet.h>
 #include <aws/mwaa/model/TagResourceRequest.h>
 #include <aws/mwaa/model/TagResourceResult.h>
+#include <aws/mwaa/model/TeamConfig.h>
 #include <aws/mwaa/model/Unit.h>
 #include <aws/mwaa/model/UntagResourceRequest.h>
 #include <aws/mwaa/model/UntagResourceResult.h>
@@ -60,6 +62,7 @@
 #include <aws/mwaa/model/UpdateError.h>
 #include <aws/mwaa/model/UpdateNetworkConfigurationInput.h>
 #include <aws/mwaa/model/UpdateStatus.h>
+#include <aws/mwaa/model/UpdateTeamsInput.h>
 #include <aws/mwaa/model/WebserverAccessMode.h>
 #include <aws/mwaa/model/WorkerReplacementStrategy.h>
 

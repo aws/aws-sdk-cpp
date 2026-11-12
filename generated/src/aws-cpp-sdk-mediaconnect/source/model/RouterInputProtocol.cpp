@@ -19,6 +19,7 @@ static const int RTP_HASH = HashingUtils::HashString("RTP");
 static const int RIST_HASH = HashingUtils::HashString("RIST");
 static const int SRT_CALLER_HASH = HashingUtils::HashString("SRT_CALLER");
 static const int SRT_LISTENER_HASH = HashingUtils::HashString("SRT_LISTENER");
+static const int RTMP_PUSH_HASH = HashingUtils::HashString("RTMP_PUSH");
 
 RouterInputProtocol GetRouterInputProtocolForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -30,6 +31,8 @@ RouterInputProtocol GetRouterInputProtocolForName(const Aws::String& name) {
     return RouterInputProtocol::SRT_CALLER;
   } else if (hashCode == SRT_LISTENER_HASH) {
     return RouterInputProtocol::SRT_LISTENER;
+  } else if (hashCode == RTMP_PUSH_HASH) {
+    return RouterInputProtocol::RTMP_PUSH;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -52,6 +55,8 @@ Aws::String GetNameForRouterInputProtocol(RouterInputProtocol enumValue) {
       return "SRT_CALLER";
     case RouterInputProtocol::SRT_LISTENER:
       return "SRT_LISTENER";
+    case RouterInputProtocol::RTMP_PUSH:
+      return "RTMP_PUSH";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

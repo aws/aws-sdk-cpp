@@ -19,6 +19,8 @@
 /* End of generic header includes */
 
 /* Service model headers required in MWAAServerlessClient header */
+#include <aws/mwaa-serverless/model/CreateAirflowUiUrlRequest.h>
+#include <aws/mwaa-serverless/model/CreateAirflowUiUrlResult.h>
 #include <aws/mwaa-serverless/model/CreateWorkflowResult.h>
 #include <aws/mwaa-serverless/model/DeleteWorkflowResult.h>
 #include <aws/mwaa-serverless/model/GetTaskInstanceResult.h>
@@ -68,6 +70,7 @@ using MWAAServerlessEndpointProvider = Aws::MWAAServerless::Endpoint::MWAAServer
 
 namespace Model {
 /* Service model forward declarations required in MWAAServerlessClient header */
+class CreateAirflowUiUrlRequest;
 class CreateWorkflowRequest;
 class DeleteWorkflowRequest;
 class GetTaskInstanceRequest;
@@ -86,6 +89,7 @@ class UpdateWorkflowRequest;
 /* End of service model forward declarations required in MWAAServerlessClient header */
 
 /* Service model Outcome class definitions */
+typedef Aws::Utils::Outcome<CreateAirflowUiUrlResult, MWAAServerlessError> CreateAirflowUiUrlOutcome;
 typedef Aws::Utils::Outcome<CreateWorkflowResult, MWAAServerlessError> CreateWorkflowOutcome;
 typedef Aws::Utils::Outcome<DeleteWorkflowResult, MWAAServerlessError> DeleteWorkflowOutcome;
 typedef Aws::Utils::Outcome<GetTaskInstanceResult, MWAAServerlessError> GetTaskInstanceOutcome;
@@ -104,6 +108,7 @@ typedef Aws::Utils::Outcome<UpdateWorkflowResult, MWAAServerlessError> UpdateWor
 /* End of service model Outcome class definitions */
 
 /* Service model Outcome callable definitions */
+typedef std::future<CreateAirflowUiUrlOutcome> CreateAirflowUiUrlOutcomeCallable;
 typedef std::future<CreateWorkflowOutcome> CreateWorkflowOutcomeCallable;
 typedef std::future<DeleteWorkflowOutcome> DeleteWorkflowOutcomeCallable;
 typedef std::future<GetTaskInstanceOutcome> GetTaskInstanceOutcomeCallable;
@@ -125,6 +130,9 @@ typedef std::future<UpdateWorkflowOutcome> UpdateWorkflowOutcomeCallable;
 class MWAAServerlessClient;
 
 /* Service model async handlers definitions */
+typedef std::function<void(const MWAAServerlessClient*, const Model::CreateAirflowUiUrlRequest&, const Model::CreateAirflowUiUrlOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateAirflowUiUrlResponseReceivedHandler;
 typedef std::function<void(const MWAAServerlessClient*, const Model::CreateWorkflowRequest&, const Model::CreateWorkflowOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateWorkflowResponseReceivedHandler;

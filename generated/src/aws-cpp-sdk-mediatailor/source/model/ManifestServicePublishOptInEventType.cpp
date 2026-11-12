@@ -17,6 +17,8 @@ namespace ManifestServicePublishOptInEventTypeMapper {
 
 static const int PRE_SESSION_INIT_HOOK_SUMMARY_HASH = HashingUtils::HashString("PRE_SESSION_INIT_HOOK_SUMMARY");
 static const int PRE_SESSION_INIT_FUNCTION_COMPLETED_HASH = HashingUtils::HashString("PRE_SESSION_INIT_FUNCTION_COMPLETED");
+static const int POST_ORIGIN_RESPONSE_HOOK_SUMMARY_HASH = HashingUtils::HashString("POST_ORIGIN_RESPONSE_HOOK_SUMMARY");
+static const int POST_ORIGIN_RESPONSE_FUNCTION_COMPLETED_HASH = HashingUtils::HashString("POST_ORIGIN_RESPONSE_FUNCTION_COMPLETED");
 
 ManifestServicePublishOptInEventType GetManifestServicePublishOptInEventTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +26,10 @@ ManifestServicePublishOptInEventType GetManifestServicePublishOptInEventTypeForN
     return ManifestServicePublishOptInEventType::PRE_SESSION_INIT_HOOK_SUMMARY;
   } else if (hashCode == PRE_SESSION_INIT_FUNCTION_COMPLETED_HASH) {
     return ManifestServicePublishOptInEventType::PRE_SESSION_INIT_FUNCTION_COMPLETED;
+  } else if (hashCode == POST_ORIGIN_RESPONSE_HOOK_SUMMARY_HASH) {
+    return ManifestServicePublishOptInEventType::POST_ORIGIN_RESPONSE_HOOK_SUMMARY;
+  } else if (hashCode == POST_ORIGIN_RESPONSE_FUNCTION_COMPLETED_HASH) {
+    return ManifestServicePublishOptInEventType::POST_ORIGIN_RESPONSE_FUNCTION_COMPLETED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +48,10 @@ Aws::String GetNameForManifestServicePublishOptInEventType(ManifestServicePublis
       return "PRE_SESSION_INIT_HOOK_SUMMARY";
     case ManifestServicePublishOptInEventType::PRE_SESSION_INIT_FUNCTION_COMPLETED:
       return "PRE_SESSION_INIT_FUNCTION_COMPLETED";
+    case ManifestServicePublishOptInEventType::POST_ORIGIN_RESPONSE_HOOK_SUMMARY:
+      return "POST_ORIGIN_RESPONSE_HOOK_SUMMARY";
+    case ManifestServicePublishOptInEventType::POST_ORIGIN_RESPONSE_FUNCTION_COMPLETED:
+      return "POST_ORIGIN_RESPONSE_FUNCTION_COMPLETED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

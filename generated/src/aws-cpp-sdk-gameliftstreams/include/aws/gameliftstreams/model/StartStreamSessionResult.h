@@ -542,6 +542,64 @@ class StartStreamSessionResult {
   ///@}
 
   ///@{
+  /**
+   * <p>A timestamp that indicates when the application launched for this stream
+   * session. Timestamps are expressed using in ISO8601 format, such as:
+   * <code>2022-12-27T22:29:40+00:00</code> (UTC).</p>
+   */
+  inline const Aws::Utils::DateTime& GetApplicationStartedAt() const { return m_applicationStartedAt; }
+  template <typename ApplicationStartedAtT = Aws::Utils::DateTime>
+  void SetApplicationStartedAt(ApplicationStartedAtT&& value) {
+    m_applicationStartedAtHasBeenSet = true;
+    m_applicationStartedAt = std::forward<ApplicationStartedAtT>(value);
+  }
+  template <typename ApplicationStartedAtT = Aws::Utils::DateTime>
+  StartStreamSessionResult& WithApplicationStartedAt(ApplicationStartedAtT&& value) {
+    SetApplicationStartedAt(std::forward<ApplicationStartedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A timestamp that indicates when streaming started for this stream session,
+   * which is when a client connected to the stream session. Timestamps are expressed
+   * using in ISO8601 format, such as: <code>2022-12-27T22:29:40+00:00</code>
+   * (UTC).</p>
+   */
+  inline const Aws::Utils::DateTime& GetStreamingStartedAt() const { return m_streamingStartedAt; }
+  template <typename StreamingStartedAtT = Aws::Utils::DateTime>
+  void SetStreamingStartedAt(StreamingStartedAtT&& value) {
+    m_streamingStartedAtHasBeenSet = true;
+    m_streamingStartedAt = std::forward<StreamingStartedAtT>(value);
+  }
+  template <typename StreamingStartedAtT = Aws::Utils::DateTime>
+  StartStreamSessionResult& WithStreamingStartedAt(StreamingStartedAtT&& value) {
+    SetStreamingStartedAt(std::forward<StreamingStartedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A timestamp that indicates when streaming ended for this stream session.
+   * Timestamps are expressed using in ISO8601 format, such as:
+   * <code>2022-12-27T22:29:40+00:00</code> (UTC).</p>
+   */
+  inline const Aws::Utils::DateTime& GetStreamingEndedAt() const { return m_streamingEndedAt; }
+  template <typename StreamingEndedAtT = Aws::Utils::DateTime>
+  void SetStreamingEndedAt(StreamingEndedAtT&& value) {
+    m_streamingEndedAtHasBeenSet = true;
+    m_streamingEndedAt = std::forward<StreamingEndedAtT>(value);
+  }
+  template <typename StreamingEndedAtT = Aws::Utils::DateTime>
+  StartStreamSessionResult& WithStreamingEndedAt(StreamingEndedAtT&& value) {
+    SetStreamingEndedAt(std::forward<StreamingEndedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -604,6 +662,12 @@ class StartStreamSessionResult {
 
   DisplayConfiguration m_displayConfiguration;
 
+  Aws::Utils::DateTime m_applicationStartedAt{};
+
+  Aws::Utils::DateTime m_streamingStartedAt{};
+
+  Aws::Utils::DateTime m_streamingEndedAt{};
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_arnHasBeenSet = false;
@@ -629,6 +693,9 @@ class StartStreamSessionResult {
   bool m_exportFilesMetadataHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
   bool m_displayConfigurationHasBeenSet = false;
+  bool m_applicationStartedAtHasBeenSet = false;
+  bool m_streamingStartedAtHasBeenSet = false;
+  bool m_streamingEndedAtHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -57,6 +57,8 @@
 #include <aws/route53/model/CreateKeySigningKeyResult.h>
 #include <aws/route53/model/CreateQueryLoggingConfigRequest.h>
 #include <aws/route53/model/CreateQueryLoggingConfigResult.h>
+#include <aws/route53/model/CreateResourceRecordSetProtectionsRequest.h>
+#include <aws/route53/model/CreateResourceRecordSetProtectionsResult.h>
 #include <aws/route53/model/CreateReusableDelegationSetRequest.h>
 #include <aws/route53/model/CreateReusableDelegationSetResult.h>
 #include <aws/route53/model/CreateTrafficPolicyInstanceRequest.h>
@@ -81,6 +83,8 @@
 #include <aws/route53/model/DeleteKeySigningKeyResult.h>
 #include <aws/route53/model/DeleteQueryLoggingConfigRequest.h>
 #include <aws/route53/model/DeleteQueryLoggingConfigResult.h>
+#include <aws/route53/model/DeleteResourceRecordSetProtectionsRequest.h>
+#include <aws/route53/model/DeleteResourceRecordSetProtectionsResult.h>
 #include <aws/route53/model/DeleteReusableDelegationSetRequest.h>
 #include <aws/route53/model/DeleteReusableDelegationSetResult.h>
 #include <aws/route53/model/DeleteTrafficPolicyInstanceRequest.h>
@@ -151,6 +155,7 @@
 #include <aws/route53/model/HostedZoneType.h>
 #include <aws/route53/model/InsufficientDataHealthStatus.h>
 #include <aws/route53/model/InvalidChangeBatch.h>
+#include <aws/route53/model/InvalidResourceRecordSetProtectionBatch.h>
 #include <aws/route53/model/KeySigningKey.h>
 #include <aws/route53/model/LinkedService.h>
 #include <aws/route53/model/ListCidrBlocksPaginationTraits.h>
@@ -177,6 +182,9 @@
 #include <aws/route53/model/ListQueryLoggingConfigsPaginationTraits.h>
 #include <aws/route53/model/ListQueryLoggingConfigsRequest.h>
 #include <aws/route53/model/ListQueryLoggingConfigsResult.h>
+#include <aws/route53/model/ListResourceRecordSetProtectionsPaginationTraits.h>
+#include <aws/route53/model/ListResourceRecordSetProtectionsRequest.h>
+#include <aws/route53/model/ListResourceRecordSetProtectionsResult.h>
 #include <aws/route53/model/ListResourceRecordSetsRequest.h>
 #include <aws/route53/model/ListResourceRecordSetsResult.h>
 #include <aws/route53/model/ListReusableDelegationSetsRequest.h>
@@ -198,12 +206,17 @@
 #include <aws/route53/model/ListVPCAssociationAuthorizationsRequest.h>
 #include <aws/route53/model/ListVPCAssociationAuthorizationsResult.h>
 #include <aws/route53/model/LocationSummary.h>
+#include <aws/route53/model/ProtectionAlreadyExists.h>
+#include <aws/route53/model/ProtectionError.h>
 #include <aws/route53/model/QueryLoggingConfig.h>
 #include <aws/route53/model/RRType.h>
 #include <aws/route53/model/ResettableElementName.h>
 #include <aws/route53/model/ResourceRecord.h>
 #include <aws/route53/model/ResourceRecordSet.h>
 #include <aws/route53/model/ResourceRecordSetFailover.h>
+#include <aws/route53/model/ResourceRecordSetProtection.h>
+#include <aws/route53/model/ResourceRecordSetProtectionConfig.h>
+#include <aws/route53/model/ResourceRecordSetProtectionKey.h>
 #include <aws/route53/model/ResourceRecordSetRegion.h>
 #include <aws/route53/model/ResourceTagSet.h>
 #include <aws/route53/model/ReusableDelegationSetLimit.h>

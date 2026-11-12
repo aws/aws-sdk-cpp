@@ -19,8 +19,20 @@ Aws::String UpdateCloudExadataInfrastructureRequest::SerializePayload() const {
     payload.WithString("cloudExadataInfrastructureId", m_cloudExadataInfrastructureId);
   }
 
+  if (m_displayNameHasBeenSet) {
+    payload.WithString("displayName", m_displayName);
+  }
+
+  if (m_computeCountHasBeenSet) {
+    payload.WithInteger("computeCount", m_computeCount);
+  }
+
   if (m_maintenanceWindowHasBeenSet) {
     payload.WithObject("maintenanceWindow", m_maintenanceWindow.Jsonize());
+  }
+
+  if (m_storageCountHasBeenSet) {
+    payload.WithInteger("storageCount", m_storageCount);
   }
 
   return payload.View().WriteReadable();

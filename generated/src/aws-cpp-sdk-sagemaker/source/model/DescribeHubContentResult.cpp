@@ -110,6 +110,14 @@ DescribeHubContentResult& DescribeHubContentResult::operator=(const Aws::AmazonW
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
     m_lastModifiedTimeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("CreatedBy")) {
+    m_createdBy = jsonValue.GetObject("CreatedBy");
+    m_createdByHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("LastModifiedBy")) {
+    m_lastModifiedBy = jsonValue.GetObject("LastModifiedBy");
+    m_lastModifiedByHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -26,6 +26,7 @@
 #include <aws/monitoring/model/DeleteAnomalyDetectorResult.h>
 #include <aws/monitoring/model/DeleteDashboardsResult.h>
 #include <aws/monitoring/model/DeleteInsightRulesResult.h>
+#include <aws/monitoring/model/DeleteMetricDataQueryDefinitionResult.h>
 #include <aws/monitoring/model/DeleteMetricStreamResult.h>
 #include <aws/monitoring/model/DeleteResourceMetricsConfigurationResult.h>
 #include <aws/monitoring/model/DescribeAlarmContributorsResult.h>
@@ -45,6 +46,7 @@
 #include <aws/monitoring/model/GetDashboardResult.h>
 #include <aws/monitoring/model/GetDatasetResult.h>
 #include <aws/monitoring/model/GetInsightRuleReportResult.h>
+#include <aws/monitoring/model/GetMetricDataQueryDefinitionResult.h>
 #include <aws/monitoring/model/GetMetricDataResult.h>
 #include <aws/monitoring/model/GetMetricStatisticsResult.h>
 #include <aws/monitoring/model/GetMetricStreamResult.h>
@@ -57,6 +59,8 @@
 #include <aws/monitoring/model/ListDashboardsRequest.h>
 #include <aws/monitoring/model/ListDashboardsResult.h>
 #include <aws/monitoring/model/ListManagedInsightRulesResult.h>
+#include <aws/monitoring/model/ListMetricDataQueryDefinitionsRequest.h>
+#include <aws/monitoring/model/ListMetricDataQueryDefinitionsResult.h>
 #include <aws/monitoring/model/ListMetricStreamsRequest.h>
 #include <aws/monitoring/model/ListMetricStreamsResult.h>
 #include <aws/monitoring/model/ListMetricsRequest.h>
@@ -67,6 +71,7 @@
 #include <aws/monitoring/model/PutDashboardResult.h>
 #include <aws/monitoring/model/PutInsightRuleResult.h>
 #include <aws/monitoring/model/PutManagedInsightRulesResult.h>
+#include <aws/monitoring/model/PutMetricDataQueryDefinitionResult.h>
 #include <aws/monitoring/model/PutMetricStreamResult.h>
 #include <aws/monitoring/model/StartMetricStreamsResult.h>
 #include <aws/monitoring/model/StartOTelEnrichmentRequest.h>
@@ -119,6 +124,7 @@ class DeleteAlarmsRequest;
 class DeleteAnomalyDetectorRequest;
 class DeleteDashboardsRequest;
 class DeleteInsightRulesRequest;
+class DeleteMetricDataQueryDefinitionRequest;
 class DeleteMetricStreamRequest;
 class DeleteResourceMetricsConfigurationRequest;
 class DescribeAlarmContributorsRequest;
@@ -137,6 +143,7 @@ class GetDashboardRequest;
 class GetDatasetRequest;
 class GetInsightRuleReportRequest;
 class GetMetricDataRequest;
+class GetMetricDataQueryDefinitionRequest;
 class GetMetricStatisticsRequest;
 class GetMetricStreamRequest;
 class GetMetricWidgetImageRequest;
@@ -145,6 +152,7 @@ class GetResourceMetricsConfigurationRequest;
 class ListAlarmMuteRulesRequest;
 class ListDashboardsRequest;
 class ListManagedInsightRulesRequest;
+class ListMetricDataQueryDefinitionsRequest;
 class ListMetricStreamsRequest;
 class ListMetricsRequest;
 class ListTagsForResourceRequest;
@@ -157,6 +165,7 @@ class PutLogAlarmRequest;
 class PutManagedInsightRulesRequest;
 class PutMetricAlarmRequest;
 class PutMetricDataRequest;
+class PutMetricDataQueryDefinitionRequest;
 class PutMetricStreamRequest;
 class SetAlarmStateRequest;
 class StartMetricStreamsRequest;
@@ -177,6 +186,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchError> DeleteAlarmsOutcome;
 typedef Aws::Utils::Outcome<DeleteAnomalyDetectorResult, CloudWatchError> DeleteAnomalyDetectorOutcome;
 typedef Aws::Utils::Outcome<DeleteDashboardsResult, CloudWatchError> DeleteDashboardsOutcome;
 typedef Aws::Utils::Outcome<DeleteInsightRulesResult, CloudWatchError> DeleteInsightRulesOutcome;
+typedef Aws::Utils::Outcome<DeleteMetricDataQueryDefinitionResult, CloudWatchError> DeleteMetricDataQueryDefinitionOutcome;
 typedef Aws::Utils::Outcome<DeleteMetricStreamResult, CloudWatchError> DeleteMetricStreamOutcome;
 typedef Aws::Utils::Outcome<DeleteResourceMetricsConfigurationResult, CloudWatchError> DeleteResourceMetricsConfigurationOutcome;
 typedef Aws::Utils::Outcome<DescribeAlarmContributorsResult, CloudWatchError> DescribeAlarmContributorsOutcome;
@@ -195,6 +205,7 @@ typedef Aws::Utils::Outcome<GetDashboardResult, CloudWatchError> GetDashboardOut
 typedef Aws::Utils::Outcome<GetDatasetResult, CloudWatchError> GetDatasetOutcome;
 typedef Aws::Utils::Outcome<GetInsightRuleReportResult, CloudWatchError> GetInsightRuleReportOutcome;
 typedef Aws::Utils::Outcome<GetMetricDataResult, CloudWatchError> GetMetricDataOutcome;
+typedef Aws::Utils::Outcome<GetMetricDataQueryDefinitionResult, CloudWatchError> GetMetricDataQueryDefinitionOutcome;
 typedef Aws::Utils::Outcome<GetMetricStatisticsResult, CloudWatchError> GetMetricStatisticsOutcome;
 typedef Aws::Utils::Outcome<GetMetricStreamResult, CloudWatchError> GetMetricStreamOutcome;
 typedef Aws::Utils::Outcome<GetMetricWidgetImageResult, CloudWatchError> GetMetricWidgetImageOutcome;
@@ -203,6 +214,7 @@ typedef Aws::Utils::Outcome<GetResourceMetricsConfigurationResult, CloudWatchErr
 typedef Aws::Utils::Outcome<ListAlarmMuteRulesResult, CloudWatchError> ListAlarmMuteRulesOutcome;
 typedef Aws::Utils::Outcome<ListDashboardsResult, CloudWatchError> ListDashboardsOutcome;
 typedef Aws::Utils::Outcome<ListManagedInsightRulesResult, CloudWatchError> ListManagedInsightRulesOutcome;
+typedef Aws::Utils::Outcome<ListMetricDataQueryDefinitionsResult, CloudWatchError> ListMetricDataQueryDefinitionsOutcome;
 typedef Aws::Utils::Outcome<ListMetricStreamsResult, CloudWatchError> ListMetricStreamsOutcome;
 typedef Aws::Utils::Outcome<ListMetricsResult, CloudWatchError> ListMetricsOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, CloudWatchError> ListTagsForResourceOutcome;
@@ -215,6 +227,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchError> PutLogAlarmOutcome;
 typedef Aws::Utils::Outcome<PutManagedInsightRulesResult, CloudWatchError> PutManagedInsightRulesOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchError> PutMetricAlarmOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchError> PutMetricDataOutcome;
+typedef Aws::Utils::Outcome<PutMetricDataQueryDefinitionResult, CloudWatchError> PutMetricDataQueryDefinitionOutcome;
 typedef Aws::Utils::Outcome<PutMetricStreamResult, CloudWatchError> PutMetricStreamOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchError> SetAlarmStateOutcome;
 typedef Aws::Utils::Outcome<StartMetricStreamsResult, CloudWatchError> StartMetricStreamsOutcome;
@@ -235,6 +248,7 @@ typedef std::future<DeleteAlarmsOutcome> DeleteAlarmsOutcomeCallable;
 typedef std::future<DeleteAnomalyDetectorOutcome> DeleteAnomalyDetectorOutcomeCallable;
 typedef std::future<DeleteDashboardsOutcome> DeleteDashboardsOutcomeCallable;
 typedef std::future<DeleteInsightRulesOutcome> DeleteInsightRulesOutcomeCallable;
+typedef std::future<DeleteMetricDataQueryDefinitionOutcome> DeleteMetricDataQueryDefinitionOutcomeCallable;
 typedef std::future<DeleteMetricStreamOutcome> DeleteMetricStreamOutcomeCallable;
 typedef std::future<DeleteResourceMetricsConfigurationOutcome> DeleteResourceMetricsConfigurationOutcomeCallable;
 typedef std::future<DescribeAlarmContributorsOutcome> DescribeAlarmContributorsOutcomeCallable;
@@ -253,6 +267,7 @@ typedef std::future<GetDashboardOutcome> GetDashboardOutcomeCallable;
 typedef std::future<GetDatasetOutcome> GetDatasetOutcomeCallable;
 typedef std::future<GetInsightRuleReportOutcome> GetInsightRuleReportOutcomeCallable;
 typedef std::future<GetMetricDataOutcome> GetMetricDataOutcomeCallable;
+typedef std::future<GetMetricDataQueryDefinitionOutcome> GetMetricDataQueryDefinitionOutcomeCallable;
 typedef std::future<GetMetricStatisticsOutcome> GetMetricStatisticsOutcomeCallable;
 typedef std::future<GetMetricStreamOutcome> GetMetricStreamOutcomeCallable;
 typedef std::future<GetMetricWidgetImageOutcome> GetMetricWidgetImageOutcomeCallable;
@@ -261,6 +276,7 @@ typedef std::future<GetResourceMetricsConfigurationOutcome> GetResourceMetricsCo
 typedef std::future<ListAlarmMuteRulesOutcome> ListAlarmMuteRulesOutcomeCallable;
 typedef std::future<ListDashboardsOutcome> ListDashboardsOutcomeCallable;
 typedef std::future<ListManagedInsightRulesOutcome> ListManagedInsightRulesOutcomeCallable;
+typedef std::future<ListMetricDataQueryDefinitionsOutcome> ListMetricDataQueryDefinitionsOutcomeCallable;
 typedef std::future<ListMetricStreamsOutcome> ListMetricStreamsOutcomeCallable;
 typedef std::future<ListMetricsOutcome> ListMetricsOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
@@ -273,6 +289,7 @@ typedef std::future<PutLogAlarmOutcome> PutLogAlarmOutcomeCallable;
 typedef std::future<PutManagedInsightRulesOutcome> PutManagedInsightRulesOutcomeCallable;
 typedef std::future<PutMetricAlarmOutcome> PutMetricAlarmOutcomeCallable;
 typedef std::future<PutMetricDataOutcome> PutMetricDataOutcomeCallable;
+typedef std::future<PutMetricDataQueryDefinitionOutcome> PutMetricDataQueryDefinitionOutcomeCallable;
 typedef std::future<PutMetricStreamOutcome> PutMetricStreamOutcomeCallable;
 typedef std::future<SetAlarmStateOutcome> SetAlarmStateOutcomeCallable;
 typedef std::future<StartMetricStreamsOutcome> StartMetricStreamsOutcomeCallable;
@@ -311,6 +328,10 @@ typedef std::function<void(const CloudWatchClient*, const Model::DeleteDashboard
 typedef std::function<void(const CloudWatchClient*, const Model::DeleteInsightRulesRequest&, const Model::DeleteInsightRulesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteInsightRulesResponseReceivedHandler;
+typedef std::function<void(const CloudWatchClient*, const Model::DeleteMetricDataQueryDefinitionRequest&,
+                           const Model::DeleteMetricDataQueryDefinitionOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteMetricDataQueryDefinitionResponseReceivedHandler;
 typedef std::function<void(const CloudWatchClient*, const Model::DeleteMetricStreamRequest&, const Model::DeleteMetricStreamOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteMetricStreamResponseReceivedHandler;
@@ -366,6 +387,10 @@ typedef std::function<void(const CloudWatchClient*, const Model::GetInsightRuleR
 typedef std::function<void(const CloudWatchClient*, const Model::GetMetricDataRequest&, const Model::GetMetricDataOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetMetricDataResponseReceivedHandler;
+typedef std::function<void(const CloudWatchClient*, const Model::GetMetricDataQueryDefinitionRequest&,
+                           const Model::GetMetricDataQueryDefinitionOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetMetricDataQueryDefinitionResponseReceivedHandler;
 typedef std::function<void(const CloudWatchClient*, const Model::GetMetricStatisticsRequest&, const Model::GetMetricStatisticsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetMetricStatisticsResponseReceivedHandler;
@@ -391,6 +416,10 @@ typedef std::function<void(const CloudWatchClient*, const Model::ListDashboardsR
 typedef std::function<void(const CloudWatchClient*, const Model::ListManagedInsightRulesRequest&,
                            const Model::ListManagedInsightRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListManagedInsightRulesResponseReceivedHandler;
+typedef std::function<void(const CloudWatchClient*, const Model::ListMetricDataQueryDefinitionsRequest&,
+                           const Model::ListMetricDataQueryDefinitionsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListMetricDataQueryDefinitionsResponseReceivedHandler;
 typedef std::function<void(const CloudWatchClient*, const Model::ListMetricStreamsRequest&, const Model::ListMetricStreamsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListMetricStreamsResponseReceivedHandler;
@@ -427,6 +456,10 @@ typedef std::function<void(const CloudWatchClient*, const Model::PutMetricAlarmR
 typedef std::function<void(const CloudWatchClient*, const Model::PutMetricDataRequest&, const Model::PutMetricDataOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutMetricDataResponseReceivedHandler;
+typedef std::function<void(const CloudWatchClient*, const Model::PutMetricDataQueryDefinitionRequest&,
+                           const Model::PutMetricDataQueryDefinitionOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    PutMetricDataQueryDefinitionResponseReceivedHandler;
 typedef std::function<void(const CloudWatchClient*, const Model::PutMetricStreamRequest&, const Model::PutMetricStreamOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     PutMetricStreamResponseReceivedHandler;

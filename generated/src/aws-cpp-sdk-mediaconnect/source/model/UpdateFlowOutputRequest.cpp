@@ -115,5 +115,9 @@ Aws::String UpdateFlowOutputRequest::SerializePayload() const {
     payload.WithInteger("ndiAudioReferenceLevel", m_ndiAudioReferenceLevel);
   }
 
+  if (m_rtmpPushSettingsHasBeenSet) {
+    payload.WithObject("rtmpPushSettings", m_rtmpPushSettings.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

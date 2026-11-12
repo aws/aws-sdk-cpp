@@ -35,6 +35,7 @@ static const int ContactMethod_HASH = HashingUtils::HashString("ContactMethod");
 static const int Distribution_HASH = HashingUtils::HashString("Distribution");
 static const int Certificate_HASH = HashingUtils::HashString("Certificate");
 static const int Bucket_HASH = HashingUtils::HashString("Bucket");
+static const int Subdomain_HASH = HashingUtils::HashString("Subdomain");
 
 ResourceType GetResourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -78,6 +79,8 @@ ResourceType GetResourceTypeForName(const Aws::String& name) {
     return ResourceType::Certificate;
   } else if (hashCode == Bucket_HASH) {
     return ResourceType::Bucket;
+  } else if (hashCode == Subdomain_HASH) {
+    return ResourceType::Subdomain;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -132,6 +135,8 @@ Aws::String GetNameForResourceType(ResourceType enumValue) {
       return "Certificate";
     case ResourceType::Bucket:
       return "Bucket";
+    case ResourceType::Subdomain:
+      return "Subdomain";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

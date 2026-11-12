@@ -23,6 +23,17 @@ RunInstancesMonitoringEnabled& RunInstancesMonitoringEnabled::operator=(const Xm
   XmlNode resultNode = xmlNode;
 
   if (!resultNode.IsNull()) {
+    XmlNode metricCategoryIdsNode = resultNode.FirstChild("MetricCategoryId");
+    if (!metricCategoryIdsNode.IsNull()) {
+      XmlNode metricCategoryIdsMember = metricCategoryIdsNode.FirstChild("item");
+      m_metricCategoryIdsHasBeenSet = !metricCategoryIdsMember.IsNull();
+      while (!metricCategoryIdsMember.IsNull()) {
+        m_metricCategoryIds.push_back(metricCategoryIdsMember.GetText());
+        metricCategoryIdsMember = metricCategoryIdsMember.NextNode("item");
+      }
+
+      m_metricCategoryIdsHasBeenSet = true;
+    }
     XmlNode enabledNode = resultNode.FirstChild("enabled");
     if (!enabledNode.IsNull()) {
       m_enabled =
@@ -36,12 +47,26 @@ RunInstancesMonitoringEnabled& RunInstancesMonitoringEnabled::operator=(const Xm
 
 void RunInstancesMonitoringEnabled::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index,
                                                    const char* locationValue) const {
+  if (m_metricCategoryIdsHasBeenSet) {
+    unsigned metricCategoryIdsIdx = 1;
+    for (auto& item : m_metricCategoryIds) {
+      oStream << location << index << locationValue << ".MetricCategoryId." << metricCategoryIdsIdx++ << "="
+              << StringUtils::URLEncode(item.c_str()) << "&";
+    }
+  }
+
   if (m_enabledHasBeenSet) {
     oStream << location << index << locationValue << ".Enabled=" << std::boolalpha << m_enabled << "&";
   }
 }
 
 void RunInstancesMonitoringEnabled::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_metricCategoryIdsHasBeenSet) {
+    unsigned metricCategoryIdsIdx = 1;
+    for (auto& item : m_metricCategoryIds) {
+      oStream << location << ".MetricCategoryId." << metricCategoryIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+    }
+  }
   if (m_enabledHasBeenSet) {
     oStream << location << ".Enabled=" << std::boolalpha << m_enabled << "&";
   }

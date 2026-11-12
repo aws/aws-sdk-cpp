@@ -16,6 +16,7 @@ namespace Model {
 namespace MetricTypeMapper {
 
 static const int ASGAverageCPUUtilization_HASH = HashingUtils::HashString("ASGAverageCPUUtilization");
+static const int ASGAverageCPUUtilizationHighResolution_HASH = HashingUtils::HashString("ASGAverageCPUUtilizationHighResolution");
 static const int ASGAverageNetworkIn_HASH = HashingUtils::HashString("ASGAverageNetworkIn");
 static const int ASGAverageNetworkOut_HASH = HashingUtils::HashString("ASGAverageNetworkOut");
 static const int ALBRequestCountPerTarget_HASH = HashingUtils::HashString("ALBRequestCountPerTarget");
@@ -24,6 +25,8 @@ MetricType GetMetricTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == ASGAverageCPUUtilization_HASH) {
     return MetricType::ASGAverageCPUUtilization;
+  } else if (hashCode == ASGAverageCPUUtilizationHighResolution_HASH) {
+    return MetricType::ASGAverageCPUUtilizationHighResolution;
   } else if (hashCode == ASGAverageNetworkIn_HASH) {
     return MetricType::ASGAverageNetworkIn;
   } else if (hashCode == ASGAverageNetworkOut_HASH) {
@@ -46,6 +49,8 @@ Aws::String GetNameForMetricType(MetricType enumValue) {
       return {};
     case MetricType::ASGAverageCPUUtilization:
       return "ASGAverageCPUUtilization";
+    case MetricType::ASGAverageCPUUtilizationHighResolution:
+      return "ASGAverageCPUUtilizationHighResolution";
     case MetricType::ASGAverageNetworkIn:
       return "ASGAverageNetworkIn";
     case MetricType::ASGAverageNetworkOut:

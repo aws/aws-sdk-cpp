@@ -19,7 +19,8 @@ namespace Model {
 /**
  * <p>The scheduler configuration for a virtual cluster on Amazon EMR on EKS. It
  * controls how many job runs can run concurrently and how many can wait in the
- * queue. When not set, no concurrency or queue limits are applied.</p><p><h3>See
+ * queue. If you omit this configuration, the service applies a default limit of
+ * 1,000 concurrent job runs and does not limit queue depth.</p><p><h3>See
  * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/SchedulerConfiguration">AWS
  * API Reference</a></p>
@@ -55,8 +56,8 @@ class SchedulerConfiguration {
   /**
    * <p>The maximum number of job runs that can be in the <code>RUNNING</code> state
    * at any time for the virtual cluster. As running slots free up, queued job runs
-   * start automatically. If you omit this field, the service applies no concurrency
-   * limit.</p>
+   * start automatically. If you omit this field, the service applies a default limit
+   * of 1,000 concurrent job runs to the virtual cluster.</p>
    */
   inline int GetMaxConcurrentJobRuns() const { return m_maxConcurrentJobRuns; }
   inline bool MaxConcurrentJobRunsHasBeenSet() const { return m_maxConcurrentJobRunsHasBeenSet; }

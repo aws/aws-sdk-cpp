@@ -20,14 +20,9 @@ namespace MWAAServerless {
 namespace Model {
 
 /**
- * <p>The configuration to use to schedule automated workflow execution using cron
- * expressions. Amazon Managed Workflows for Apache Airflow Serverless integrates
- * with EventBridge Scheduler to provide cost-effective, timezone-aware scheduling
- * capabilities. The service supports both time-based and event-based scheduling
- * (event-based scheduling available post-GA). When a workflow definition includes
- * scheduling information, Amazon Managed Workflows for Apache Airflow Serverless
- * automatically configures the appropriate triggers and ensures only one version
- * of a workflow has an active schedule at any time.</p><p><h3>See Also:</h3>   <a
+ * <p>Contains the configuration used to schedule automated workflow execution.
+ * Only one version of a workflow can have an active schedule at any
+ * time.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-serverless-2024-07-26/ScheduleConfiguration">AWS
  * API Reference</a></p>
  */
@@ -40,8 +35,18 @@ class ScheduleConfiguration {
 
   ///@{
   /**
-   * <p>A cron expression that defines when the workflow is automatically executed.
-   * Uses standard cron syntax.</p>
+   * <p>The schedule expression that determines when the workflow runs, as specified
+   * in the <code>schedule</code> parameter of the workflow's YAML definition. You
+   * can specify one of the following types of schedule expressions:</p> <ul> <li>
+   * <p>Apache Airflow cron expression – Five fields, such as <code>0 12 1 *
+   * *</code>.</p> </li> <li> <p>Apache Airflow schedule preset –
+   * <code>@hourly</code>, <code>@daily</code>, <code>@weekly</code>,
+   * <code>@monthly</code>, <code>@yearly</code>, or <code>@annually</code>.</p>
+   * </li> <li> <p>EventBridge Scheduler rate expression – For example, <code>rate(5
+   * minutes)</code>. Supported units are minutes, hours, and days.</p> </li> <li>
+   * <p>EventBridge Scheduler cron expression – Six fields, such as <code>cron(0 12 *
+   * * ? *)</code>.</p> </li> </ul> <p>In a cron expression, specify either a
+   * day-of-month or a day-of-week, not both.</p>
    */
   inline const Aws::String& GetCronExpression() const { return m_cronExpression; }
   inline bool CronExpressionHasBeenSet() const { return m_cronExpressionHasBeenSet; }

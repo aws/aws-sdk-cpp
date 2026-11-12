@@ -11,6 +11,7 @@
 #include <aws/sso-admin/SSOAdmin_EXPORTS.h>
 #include <aws/sso-admin/model/EncryptionConfigurationDetails.h>
 #include <aws/sso-admin/model/InstanceStatus.h>
+#include <aws/sso-admin/model/NetworkConfigurationInfo.h>
 #include <aws/sso-admin/model/RegionMetadata.h>
 
 #include <utility>
@@ -240,6 +241,26 @@ class DescribeInstanceResult {
 
   ///@{
   /**
+   * <p>The network access controls configured for your Identity Center instance,
+   * including whether VPC endpoint access is required, and any VPC, IP address
+   * range, or application controls applied to instance traffic. Present only after a
+   * network configuration has been set on the instance.</p>
+   */
+  inline const NetworkConfigurationInfo& GetNetworkConfigurationDetails() const { return m_networkConfigurationDetails; }
+  template <typename NetworkConfigurationDetailsT = NetworkConfigurationInfo>
+  void SetNetworkConfigurationDetails(NetworkConfigurationDetailsT&& value) {
+    m_networkConfigurationDetailsHasBeenSet = true;
+    m_networkConfigurationDetails = std::forward<NetworkConfigurationDetailsT>(value);
+  }
+  template <typename NetworkConfigurationDetailsT = NetworkConfigurationInfo>
+  DescribeInstanceResult& WithNetworkConfigurationDetails(NetworkConfigurationDetailsT&& value) {
+    SetNetworkConfigurationDetails(std::forward<NetworkConfigurationDetailsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Indicates whether permission sets are enabled for this Identity Center
    * instance.</p>
    */
@@ -293,6 +314,8 @@ class DescribeInstanceResult {
 
   EncryptionConfigurationDetails m_encryptionConfigurationDetails;
 
+  NetworkConfigurationInfo m_networkConfigurationDetails;
+
   bool m_permissionSetsEnabled{false};
 
   Aws::String m_requestId;
@@ -308,6 +331,7 @@ class DescribeInstanceResult {
   bool m_primaryRegionHasBeenSet = false;
   bool m_regionsHasBeenSet = false;
   bool m_encryptionConfigurationDetailsHasBeenSet = false;
+  bool m_networkConfigurationDetailsHasBeenSet = false;
   bool m_permissionSetsEnabledHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

@@ -75,6 +75,27 @@ class PutResourcePolicyRequest : public SecretsManagerRequest {
 
   ///@{
   /**
+   * <p>The name of the resource policy to attach. If you don't specify this field,
+   * Secrets Manager uses <code>default</code>. You can only attach the
+   * <code>default</code> policy; if you specify any other name, the operation
+   * returns an <code>InvalidParameterException</code>.</p>
+   */
+  inline const Aws::String& GetPolicyName() const { return m_policyName; }
+  inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
+  template <typename PolicyNameT = Aws::String>
+  void SetPolicyName(PolicyNameT&& value) {
+    m_policyNameHasBeenSet = true;
+    m_policyName = std::forward<PolicyNameT>(value);
+  }
+  template <typename PolicyNameT = Aws::String>
+  PutResourcePolicyRequest& WithPolicyName(PolicyNameT&& value) {
+    SetPolicyName(std::forward<PolicyNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Specifies whether to block resource-based policies that allow broad access to
    * the secret, for example those that use a wildcard for the principal. By default,
    * public policies aren't blocked.</p>  <p>Resource policy validation
@@ -106,9 +127,12 @@ class PutResourcePolicyRequest : public SecretsManagerRequest {
 
   Aws::String m_resourcePolicy;
 
+  Aws::String m_policyName;
+
   bool m_blockPublicPolicy{false};
   bool m_secretIdHasBeenSet = false;
   bool m_resourcePolicyHasBeenSet = false;
+  bool m_policyNameHasBeenSet = false;
   bool m_blockPublicPolicyHasBeenSet = false;
 };
 

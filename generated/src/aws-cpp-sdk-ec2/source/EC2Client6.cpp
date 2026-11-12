@@ -20,6 +20,9 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/GetIpamRouteOriginAuthorizationsRequest.h>
+#include <aws/ec2/model/GetIpamRouteProtectionFindingsRequest.h>
+#include <aws/ec2/model/GetIpamRoutingPolicyRegistrationDeltasRequest.h>
 #include <aws/ec2/model/GetIpamRoutingPolicyRegistrationsRequest.h>
 #include <aws/ec2/model/GetLaunchTemplateDataRequest.h>
 #include <aws/ec2/model/GetManagedPrefixListAssociationsRequest.h>
@@ -105,6 +108,7 @@
 #include <aws/ec2/model/ModifyLocalGatewayRouteRequest.h>
 #include <aws/ec2/model/ModifyManagedPrefixListRequest.h>
 #include <aws/ec2/model/ModifyManagedResourceVisibilityRequest.h>
+#include <aws/ec2/model/ModifyMetricCategoryRequest.h>
 #include <aws/ec2/model/ModifyNetworkInterfaceAttributeRequest.h>
 #include <aws/ec2/model/ModifyPrivateDnsNameOptionsRequest.h>
 #include <aws/ec2/model/ModifyPublicIpDnsNameOptionsRequest.h>
@@ -116,10 +120,6 @@
 #include <aws/ec2/model/ModifySpotFleetRequestRequest.h>
 #include <aws/ec2/model/ModifySubnetAttributeRequest.h>
 #include <aws/ec2/model/ModifyTrafficMirrorFilterNetworkServicesRequest.h>
-#include <aws/ec2/model/ModifyTrafficMirrorFilterRuleRequest.h>
-#include <aws/ec2/model/ModifyTrafficMirrorSessionRequest.h>
-#include <aws/ec2/model/ModifyTransitGatewayAttachmentNatConfigurationRequest.h>
-#include <aws/ec2/model/ModifyTransitGatewayRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,27 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+GetIpamRouteOriginAuthorizationsOutcome EC2Client::GetIpamRouteOriginAuthorizations(
+    const GetIpamRouteOriginAuthorizationsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetIpamRouteOriginAuthorizationsOutcome(result.GetResultWithOwnership())
+                            : GetIpamRouteOriginAuthorizationsOutcome(std::move(result.GetError()));
+}
+
+GetIpamRouteProtectionFindingsOutcome EC2Client::GetIpamRouteProtectionFindings(
+    const GetIpamRouteProtectionFindingsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetIpamRouteProtectionFindingsOutcome(result.GetResultWithOwnership())
+                            : GetIpamRouteProtectionFindingsOutcome(std::move(result.GetError()));
+}
+
+GetIpamRoutingPolicyRegistrationDeltasOutcome EC2Client::GetIpamRoutingPolicyRegistrationDeltas(
+    const GetIpamRoutingPolicyRegistrationDeltasRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetIpamRoutingPolicyRegistrationDeltasOutcome(result.GetResultWithOwnership())
+                            : GetIpamRoutingPolicyRegistrationDeltasOutcome(std::move(result.GetError()));
+}
 
 GetIpamRoutingPolicyRegistrationsOutcome EC2Client::GetIpamRoutingPolicyRegistrations(
     const GetIpamRoutingPolicyRegistrationsRequest& request) const {
@@ -664,6 +685,12 @@ ModifyManagedResourceVisibilityOutcome EC2Client::ModifyManagedResourceVisibilit
                             : ModifyManagedResourceVisibilityOutcome(std::move(result.GetError()));
 }
 
+ModifyMetricCategoryOutcome EC2Client::ModifyMetricCategory(const ModifyMetricCategoryRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyMetricCategoryOutcome(result.GetResultWithOwnership())
+                            : ModifyMetricCategoryOutcome(std::move(result.GetError()));
+}
+
 ModifyNetworkInterfaceAttributeOutcome EC2Client::ModifyNetworkInterfaceAttribute(
     const ModifyNetworkInterfaceAttributeRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -730,29 +757,4 @@ ModifyTrafficMirrorFilterNetworkServicesOutcome EC2Client::ModifyTrafficMirrorFi
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ModifyTrafficMirrorFilterNetworkServicesOutcome(result.GetResultWithOwnership())
                             : ModifyTrafficMirrorFilterNetworkServicesOutcome(std::move(result.GetError()));
-}
-
-ModifyTrafficMirrorFilterRuleOutcome EC2Client::ModifyTrafficMirrorFilterRule(const ModifyTrafficMirrorFilterRuleRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ModifyTrafficMirrorFilterRuleOutcome(result.GetResultWithOwnership())
-                            : ModifyTrafficMirrorFilterRuleOutcome(std::move(result.GetError()));
-}
-
-ModifyTrafficMirrorSessionOutcome EC2Client::ModifyTrafficMirrorSession(const ModifyTrafficMirrorSessionRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ModifyTrafficMirrorSessionOutcome(result.GetResultWithOwnership())
-                            : ModifyTrafficMirrorSessionOutcome(std::move(result.GetError()));
-}
-
-ModifyTransitGatewayOutcome EC2Client::ModifyTransitGateway(const ModifyTransitGatewayRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ModifyTransitGatewayOutcome(result.GetResultWithOwnership())
-                            : ModifyTransitGatewayOutcome(std::move(result.GetError()));
-}
-
-ModifyTransitGatewayAttachmentNatConfigurationOutcome EC2Client::ModifyTransitGatewayAttachmentNatConfiguration(
-    const ModifyTransitGatewayAttachmentNatConfigurationRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ModifyTransitGatewayAttachmentNatConfigurationOutcome(result.GetResultWithOwnership())
-                            : ModifyTransitGatewayAttachmentNatConfigurationOutcome(std::move(result.GetError()));
 }

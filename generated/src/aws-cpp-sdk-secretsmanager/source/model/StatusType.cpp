@@ -18,6 +18,8 @@ namespace StatusTypeMapper {
 static const int InSync_HASH = HashingUtils::HashString("InSync");
 static const int Failed_HASH = HashingUtils::HashString("Failed");
 static const int InProgress_HASH = HashingUtils::HashString("InProgress");
+static const int Pending_HASH = HashingUtils::HashString("Pending");
+static const int Detached_HASH = HashingUtils::HashString("Detached");
 
 StatusType GetStatusTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +29,10 @@ StatusType GetStatusTypeForName(const Aws::String& name) {
     return StatusType::Failed;
   } else if (hashCode == InProgress_HASH) {
     return StatusType::InProgress;
+  } else if (hashCode == Pending_HASH) {
+    return StatusType::Pending;
+  } else if (hashCode == Detached_HASH) {
+    return StatusType::Detached;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +53,10 @@ Aws::String GetNameForStatusType(StatusType enumValue) {
       return "Failed";
     case StatusType::InProgress:
       return "InProgress";
+    case StatusType::Pending:
+      return "Pending";
+    case StatusType::Detached:
+      return "Detached";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

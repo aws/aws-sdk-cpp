@@ -8,8 +8,10 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mwaa/MWAARequest.h>
 #include <aws/mwaa/MWAA_EXPORTS.h>
+#include <aws/mwaa/model/IdentityCenterConfiguration.h>
 #include <aws/mwaa/model/LoggingConfigurationInput.h>
 #include <aws/mwaa/model/UpdateNetworkConfigurationInput.h>
+#include <aws/mwaa/model/UpdateTeamsInput.h>
 #include <aws/mwaa/model/WebserverAccessMode.h>
 #include <aws/mwaa/model/WorkerReplacementStrategy.h>
 
@@ -553,6 +555,48 @@ class UpdateEnvironmentRequest : public MWAARequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Web Services IAM Identity Center configuration used to
+   * authenticate users to the Apache Airflow web UI for your environment.</p>
+   */
+  inline const IdentityCenterConfiguration& GetIdentityCenterConfiguration() const { return m_identityCenterConfiguration; }
+  inline bool IdentityCenterConfigurationHasBeenSet() const { return m_identityCenterConfigurationHasBeenSet; }
+  template <typename IdentityCenterConfigurationT = IdentityCenterConfiguration>
+  void SetIdentityCenterConfiguration(IdentityCenterConfigurationT&& value) {
+    m_identityCenterConfigurationHasBeenSet = true;
+    m_identityCenterConfiguration = std::forward<IdentityCenterConfigurationT>(value);
+  }
+  template <typename IdentityCenterConfigurationT = IdentityCenterConfiguration>
+  UpdateEnvironmentRequest& WithIdentityCenterConfiguration(IdentityCenterConfigurationT&& value) {
+    SetIdentityCenterConfiguration(std::forward<IdentityCenterConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Updates the teams configured for Apache Airflow multi-team support on your
+   * Amazon MWAA environment. Use <code>AddOrUpdate</code> to add new teams or change
+   * the configuration of existing teams, and <code>Remove</code> to remove teams by
+   * name. For more information, refer to <a
+   * href="https://docs.aws.amazon.com/mwaa/latest/userguide/multi-team-environments.html">Apache
+   * Airflow multi-team environments</a>.</p>
+   */
+  inline const UpdateTeamsInput& GetTeams() const { return m_teams; }
+  inline bool TeamsHasBeenSet() const { return m_teamsHasBeenSet; }
+  template <typename TeamsT = UpdateTeamsInput>
+  void SetTeams(TeamsT&& value) {
+    m_teamsHasBeenSet = true;
+    m_teams = std::forward<TeamsT>(value);
+  }
+  template <typename TeamsT = UpdateTeamsInput>
+  UpdateEnvironmentRequest& WithTeams(TeamsT&& value) {
+    SetTeams(std::forward<TeamsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -599,6 +643,10 @@ class UpdateEnvironmentRequest : public MWAARequest {
   WebserverAccessMode m_webserverAccessMode{WebserverAccessMode::NOT_SET};
 
   Aws::String m_weeklyMaintenanceWindowStart;
+
+  IdentityCenterConfiguration m_identityCenterConfiguration;
+
+  UpdateTeamsInput m_teams;
   bool m_nameHasBeenSet = false;
   bool m_executionRoleArnHasBeenSet = false;
   bool m_airflowConfigurationOptionsHasBeenSet = false;
@@ -622,6 +670,8 @@ class UpdateEnvironmentRequest : public MWAARequest {
   bool m_startupScriptS3ObjectVersionHasBeenSet = false;
   bool m_webserverAccessModeHasBeenSet = false;
   bool m_weeklyMaintenanceWindowStartHasBeenSet = false;
+  bool m_identityCenterConfigurationHasBeenSet = false;
+  bool m_teamsHasBeenSet = false;
 };
 
 }  // namespace Model

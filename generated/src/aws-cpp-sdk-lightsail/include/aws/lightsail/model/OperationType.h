@@ -95,7 +95,10 @@ enum class OperationType {
   StartGUISession,
   StopGUISession,
   SetupInstanceHttps,
-  GetProfile
+  GetProfile,
+  CreateSubdomain,
+  UpdateSubdomainAssociation,
+  DeleteSubdomain
 };
 
 namespace OperationTypeMapper {

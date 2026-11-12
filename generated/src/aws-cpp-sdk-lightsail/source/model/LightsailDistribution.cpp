@@ -128,6 +128,10 @@ LightsailDistribution& LightsailDistribution::operator=(JsonView jsonValue) {
     m_waf = jsonValue.GetObject("waf");
     m_wafHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("subdomain")) {
+    m_subdomain = jsonValue.GetObject("subdomain");
+    m_subdomainHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -246,6 +250,10 @@ JsonValue LightsailDistribution::Jsonize() const {
 
   if (m_wafHasBeenSet) {
     payload.WithObject("waf", m_waf.Jsonize());
+  }
+
+  if (m_subdomainHasBeenSet) {
+    payload.WithObject("subdomain", m_subdomain.Jsonize());
   }
 
   return payload;

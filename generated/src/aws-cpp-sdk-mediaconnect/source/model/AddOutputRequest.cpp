@@ -122,6 +122,10 @@ AddOutputRequest& AddOutputRequest::operator=(JsonView jsonValue) {
     m_ndiAudioReferenceLevel = jsonValue.GetInteger("ndiAudioReferenceLevel");
     m_ndiAudioReferenceLevelHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("rtmpPushSettings")) {
+    m_rtmpPushSettings = jsonValue.GetObject("rtmpPushSettings");
+    m_rtmpPushSettingsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -234,6 +238,10 @@ JsonValue AddOutputRequest::Jsonize() const {
 
   if (m_ndiAudioReferenceLevelHasBeenSet) {
     payload.WithInteger("ndiAudioReferenceLevel", m_ndiAudioReferenceLevel);
+  }
+
+  if (m_rtmpPushSettingsHasBeenSet) {
+    payload.WithObject("rtmpPushSettings", m_rtmpPushSettings.Jsonize());
   }
 
   return payload;

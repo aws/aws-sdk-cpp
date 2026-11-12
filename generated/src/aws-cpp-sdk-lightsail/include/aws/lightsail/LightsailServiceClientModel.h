@@ -25,6 +25,7 @@
 #include <aws/lightsail/model/AttachInstancesToLoadBalancerResult.h>
 #include <aws/lightsail/model/AttachLoadBalancerTlsCertificateResult.h>
 #include <aws/lightsail/model/AttachStaticIpResult.h>
+#include <aws/lightsail/model/CheckSubdomainAvailabilityResult.h>
 #include <aws/lightsail/model/CloseInstancePublicPortsResult.h>
 #include <aws/lightsail/model/CopySnapshotResult.h>
 #include <aws/lightsail/model/CreateBucketAccessKeyResult.h>
@@ -52,6 +53,7 @@
 #include <aws/lightsail/model/CreateRelationalDatabaseFromSnapshotResult.h>
 #include <aws/lightsail/model/CreateRelationalDatabaseResult.h>
 #include <aws/lightsail/model/CreateRelationalDatabaseSnapshotResult.h>
+#include <aws/lightsail/model/CreateSubdomainResult.h>
 #include <aws/lightsail/model/DeleteAlarmResult.h>
 #include <aws/lightsail/model/DeleteAutoSnapshotResult.h>
 #include <aws/lightsail/model/DeleteBucketAccessKeyResult.h>
@@ -74,6 +76,7 @@
 #include <aws/lightsail/model/DeleteLoadBalancerTlsCertificateResult.h>
 #include <aws/lightsail/model/DeleteRelationalDatabaseResult.h>
 #include <aws/lightsail/model/DeleteRelationalDatabaseSnapshotResult.h>
+#include <aws/lightsail/model/DeleteSubdomainResult.h>
 #include <aws/lightsail/model/DetachCertificateFromDistributionResult.h>
 #include <aws/lightsail/model/DetachDiskResult.h>
 #include <aws/lightsail/model/DetachInstancesFromLoadBalancerResult.h>
@@ -181,6 +184,8 @@
 #include <aws/lightsail/model/GetStaticIpResult.h>
 #include <aws/lightsail/model/GetStaticIpsRequest.h>
 #include <aws/lightsail/model/GetStaticIpsResult.h>
+#include <aws/lightsail/model/GetSubdomainsRequest.h>
+#include <aws/lightsail/model/GetSubdomainsResult.h>
 #include <aws/lightsail/model/ImportKeyPairResult.h>
 #include <aws/lightsail/model/IsVpcPeeredRequest.h>
 #include <aws/lightsail/model/IsVpcPeeredResult.h>
@@ -221,6 +226,7 @@
 #include <aws/lightsail/model/UpdateLoadBalancerAttributeResult.h>
 #include <aws/lightsail/model/UpdateRelationalDatabaseParametersResult.h>
 #include <aws/lightsail/model/UpdateRelationalDatabaseResult.h>
+#include <aws/lightsail/model/UpdateSubdomainAssociationResult.h>
 /* End of service model headers required in LightsailClient header */
 
 namespace Aws {
@@ -260,6 +266,7 @@ class AttachDiskRequest;
 class AttachInstancesToLoadBalancerRequest;
 class AttachLoadBalancerTlsCertificateRequest;
 class AttachStaticIpRequest;
+class CheckSubdomainAvailabilityRequest;
 class CloseInstancePublicPortsRequest;
 class CopySnapshotRequest;
 class CreateBucketRequest;
@@ -286,6 +293,7 @@ class CreateLoadBalancerTlsCertificateRequest;
 class CreateRelationalDatabaseRequest;
 class CreateRelationalDatabaseFromSnapshotRequest;
 class CreateRelationalDatabaseSnapshotRequest;
+class CreateSubdomainRequest;
 class DeleteAlarmRequest;
 class DeleteAutoSnapshotRequest;
 class DeleteBucketRequest;
@@ -307,6 +315,7 @@ class DeleteLoadBalancerRequest;
 class DeleteLoadBalancerTlsCertificateRequest;
 class DeleteRelationalDatabaseRequest;
 class DeleteRelationalDatabaseSnapshotRequest;
+class DeleteSubdomainRequest;
 class DetachCertificateFromDistributionRequest;
 class DetachDiskRequest;
 class DetachInstancesFromLoadBalancerRequest;
@@ -381,6 +390,7 @@ class GetRelationalDatabasesRequest;
 class GetSetupHistoryRequest;
 class GetStaticIpRequest;
 class GetStaticIpsRequest;
+class GetSubdomainsRequest;
 class ImportKeyPairRequest;
 class IsVpcPeeredRequest;
 class OpenInstancePublicPortsRequest;
@@ -416,6 +426,7 @@ class UpdateInstanceMetadataOptionsRequest;
 class UpdateLoadBalancerAttributeRequest;
 class UpdateRelationalDatabaseRequest;
 class UpdateRelationalDatabaseParametersRequest;
+class UpdateSubdomainAssociationRequest;
 /* End of service model forward declarations required in LightsailClient header */
 
 /* Service model Outcome class definitions */
@@ -425,6 +436,7 @@ typedef Aws::Utils::Outcome<AttachDiskResult, LightsailError> AttachDiskOutcome;
 typedef Aws::Utils::Outcome<AttachInstancesToLoadBalancerResult, LightsailError> AttachInstancesToLoadBalancerOutcome;
 typedef Aws::Utils::Outcome<AttachLoadBalancerTlsCertificateResult, LightsailError> AttachLoadBalancerTlsCertificateOutcome;
 typedef Aws::Utils::Outcome<AttachStaticIpResult, LightsailError> AttachStaticIpOutcome;
+typedef Aws::Utils::Outcome<CheckSubdomainAvailabilityResult, LightsailError> CheckSubdomainAvailabilityOutcome;
 typedef Aws::Utils::Outcome<CloseInstancePublicPortsResult, LightsailError> CloseInstancePublicPortsOutcome;
 typedef Aws::Utils::Outcome<CopySnapshotResult, LightsailError> CopySnapshotOutcome;
 typedef Aws::Utils::Outcome<CreateBucketResult, LightsailError> CreateBucketOutcome;
@@ -451,6 +463,7 @@ typedef Aws::Utils::Outcome<CreateLoadBalancerTlsCertificateResult, LightsailErr
 typedef Aws::Utils::Outcome<CreateRelationalDatabaseResult, LightsailError> CreateRelationalDatabaseOutcome;
 typedef Aws::Utils::Outcome<CreateRelationalDatabaseFromSnapshotResult, LightsailError> CreateRelationalDatabaseFromSnapshotOutcome;
 typedef Aws::Utils::Outcome<CreateRelationalDatabaseSnapshotResult, LightsailError> CreateRelationalDatabaseSnapshotOutcome;
+typedef Aws::Utils::Outcome<CreateSubdomainResult, LightsailError> CreateSubdomainOutcome;
 typedef Aws::Utils::Outcome<DeleteAlarmResult, LightsailError> DeleteAlarmOutcome;
 typedef Aws::Utils::Outcome<DeleteAutoSnapshotResult, LightsailError> DeleteAutoSnapshotOutcome;
 typedef Aws::Utils::Outcome<DeleteBucketResult, LightsailError> DeleteBucketOutcome;
@@ -472,6 +485,7 @@ typedef Aws::Utils::Outcome<DeleteLoadBalancerResult, LightsailError> DeleteLoad
 typedef Aws::Utils::Outcome<DeleteLoadBalancerTlsCertificateResult, LightsailError> DeleteLoadBalancerTlsCertificateOutcome;
 typedef Aws::Utils::Outcome<DeleteRelationalDatabaseResult, LightsailError> DeleteRelationalDatabaseOutcome;
 typedef Aws::Utils::Outcome<DeleteRelationalDatabaseSnapshotResult, LightsailError> DeleteRelationalDatabaseSnapshotOutcome;
+typedef Aws::Utils::Outcome<DeleteSubdomainResult, LightsailError> DeleteSubdomainOutcome;
 typedef Aws::Utils::Outcome<DetachCertificateFromDistributionResult, LightsailError> DetachCertificateFromDistributionOutcome;
 typedef Aws::Utils::Outcome<DetachDiskResult, LightsailError> DetachDiskOutcome;
 typedef Aws::Utils::Outcome<DetachInstancesFromLoadBalancerResult, LightsailError> DetachInstancesFromLoadBalancerOutcome;
@@ -546,6 +560,7 @@ typedef Aws::Utils::Outcome<GetRelationalDatabasesResult, LightsailError> GetRel
 typedef Aws::Utils::Outcome<GetSetupHistoryResult, LightsailError> GetSetupHistoryOutcome;
 typedef Aws::Utils::Outcome<GetStaticIpResult, LightsailError> GetStaticIpOutcome;
 typedef Aws::Utils::Outcome<GetStaticIpsResult, LightsailError> GetStaticIpsOutcome;
+typedef Aws::Utils::Outcome<GetSubdomainsResult, LightsailError> GetSubdomainsOutcome;
 typedef Aws::Utils::Outcome<ImportKeyPairResult, LightsailError> ImportKeyPairOutcome;
 typedef Aws::Utils::Outcome<IsVpcPeeredResult, LightsailError> IsVpcPeeredOutcome;
 typedef Aws::Utils::Outcome<OpenInstancePublicPortsResult, LightsailError> OpenInstancePublicPortsOutcome;
@@ -581,6 +596,7 @@ typedef Aws::Utils::Outcome<UpdateInstanceMetadataOptionsResult, LightsailError>
 typedef Aws::Utils::Outcome<UpdateLoadBalancerAttributeResult, LightsailError> UpdateLoadBalancerAttributeOutcome;
 typedef Aws::Utils::Outcome<UpdateRelationalDatabaseResult, LightsailError> UpdateRelationalDatabaseOutcome;
 typedef Aws::Utils::Outcome<UpdateRelationalDatabaseParametersResult, LightsailError> UpdateRelationalDatabaseParametersOutcome;
+typedef Aws::Utils::Outcome<UpdateSubdomainAssociationResult, LightsailError> UpdateSubdomainAssociationOutcome;
 /* End of service model Outcome class definitions */
 
 /* Service model Outcome callable definitions */
@@ -590,6 +606,7 @@ typedef std::future<AttachDiskOutcome> AttachDiskOutcomeCallable;
 typedef std::future<AttachInstancesToLoadBalancerOutcome> AttachInstancesToLoadBalancerOutcomeCallable;
 typedef std::future<AttachLoadBalancerTlsCertificateOutcome> AttachLoadBalancerTlsCertificateOutcomeCallable;
 typedef std::future<AttachStaticIpOutcome> AttachStaticIpOutcomeCallable;
+typedef std::future<CheckSubdomainAvailabilityOutcome> CheckSubdomainAvailabilityOutcomeCallable;
 typedef std::future<CloseInstancePublicPortsOutcome> CloseInstancePublicPortsOutcomeCallable;
 typedef std::future<CopySnapshotOutcome> CopySnapshotOutcomeCallable;
 typedef std::future<CreateBucketOutcome> CreateBucketOutcomeCallable;
@@ -616,6 +633,7 @@ typedef std::future<CreateLoadBalancerTlsCertificateOutcome> CreateLoadBalancerT
 typedef std::future<CreateRelationalDatabaseOutcome> CreateRelationalDatabaseOutcomeCallable;
 typedef std::future<CreateRelationalDatabaseFromSnapshotOutcome> CreateRelationalDatabaseFromSnapshotOutcomeCallable;
 typedef std::future<CreateRelationalDatabaseSnapshotOutcome> CreateRelationalDatabaseSnapshotOutcomeCallable;
+typedef std::future<CreateSubdomainOutcome> CreateSubdomainOutcomeCallable;
 typedef std::future<DeleteAlarmOutcome> DeleteAlarmOutcomeCallable;
 typedef std::future<DeleteAutoSnapshotOutcome> DeleteAutoSnapshotOutcomeCallable;
 typedef std::future<DeleteBucketOutcome> DeleteBucketOutcomeCallable;
@@ -637,6 +655,7 @@ typedef std::future<DeleteLoadBalancerOutcome> DeleteLoadBalancerOutcomeCallable
 typedef std::future<DeleteLoadBalancerTlsCertificateOutcome> DeleteLoadBalancerTlsCertificateOutcomeCallable;
 typedef std::future<DeleteRelationalDatabaseOutcome> DeleteRelationalDatabaseOutcomeCallable;
 typedef std::future<DeleteRelationalDatabaseSnapshotOutcome> DeleteRelationalDatabaseSnapshotOutcomeCallable;
+typedef std::future<DeleteSubdomainOutcome> DeleteSubdomainOutcomeCallable;
 typedef std::future<DetachCertificateFromDistributionOutcome> DetachCertificateFromDistributionOutcomeCallable;
 typedef std::future<DetachDiskOutcome> DetachDiskOutcomeCallable;
 typedef std::future<DetachInstancesFromLoadBalancerOutcome> DetachInstancesFromLoadBalancerOutcomeCallable;
@@ -711,6 +730,7 @@ typedef std::future<GetRelationalDatabasesOutcome> GetRelationalDatabasesOutcome
 typedef std::future<GetSetupHistoryOutcome> GetSetupHistoryOutcomeCallable;
 typedef std::future<GetStaticIpOutcome> GetStaticIpOutcomeCallable;
 typedef std::future<GetStaticIpsOutcome> GetStaticIpsOutcomeCallable;
+typedef std::future<GetSubdomainsOutcome> GetSubdomainsOutcomeCallable;
 typedef std::future<ImportKeyPairOutcome> ImportKeyPairOutcomeCallable;
 typedef std::future<IsVpcPeeredOutcome> IsVpcPeeredOutcomeCallable;
 typedef std::future<OpenInstancePublicPortsOutcome> OpenInstancePublicPortsOutcomeCallable;
@@ -746,6 +766,7 @@ typedef std::future<UpdateInstanceMetadataOptionsOutcome> UpdateInstanceMetadata
 typedef std::future<UpdateLoadBalancerAttributeOutcome> UpdateLoadBalancerAttributeOutcomeCallable;
 typedef std::future<UpdateRelationalDatabaseOutcome> UpdateRelationalDatabaseOutcomeCallable;
 typedef std::future<UpdateRelationalDatabaseParametersOutcome> UpdateRelationalDatabaseParametersOutcomeCallable;
+typedef std::future<UpdateSubdomainAssociationOutcome> UpdateSubdomainAssociationOutcomeCallable;
 /* End of service model Outcome callable definitions */
 }  // namespace Model
 
@@ -773,6 +794,9 @@ typedef std::function<void(const LightsailClient*, const Model::AttachLoadBalanc
 typedef std::function<void(const LightsailClient*, const Model::AttachStaticIpRequest&, const Model::AttachStaticIpOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     AttachStaticIpResponseReceivedHandler;
+typedef std::function<void(const LightsailClient*, const Model::CheckSubdomainAvailabilityRequest&,
+                           const Model::CheckSubdomainAvailabilityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CheckSubdomainAvailabilityResponseReceivedHandler;
 typedef std::function<void(const LightsailClient*, const Model::CloseInstancePublicPortsRequest&,
                            const Model::CloseInstancePublicPortsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CloseInstancePublicPortsResponseReceivedHandler;
@@ -857,6 +881,9 @@ typedef std::function<void(const LightsailClient*, const Model::CreateRelational
                            const Model::CreateRelationalDatabaseSnapshotOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateRelationalDatabaseSnapshotResponseReceivedHandler;
+typedef std::function<void(const LightsailClient*, const Model::CreateSubdomainRequest&, const Model::CreateSubdomainOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateSubdomainResponseReceivedHandler;
 typedef std::function<void(const LightsailClient*, const Model::DeleteAlarmRequest&, const Model::DeleteAlarmOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteAlarmResponseReceivedHandler;
@@ -922,6 +949,9 @@ typedef std::function<void(const LightsailClient*, const Model::DeleteRelational
                            const Model::DeleteRelationalDatabaseSnapshotOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteRelationalDatabaseSnapshotResponseReceivedHandler;
+typedef std::function<void(const LightsailClient*, const Model::DeleteSubdomainRequest&, const Model::DeleteSubdomainOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteSubdomainResponseReceivedHandler;
 typedef std::function<void(const LightsailClient*, const Model::DetachCertificateFromDistributionRequest&,
                            const Model::DetachCertificateFromDistributionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -1160,6 +1190,9 @@ typedef std::function<void(const LightsailClient*, const Model::GetStaticIpReque
 typedef std::function<void(const LightsailClient*, const Model::GetStaticIpsRequest&, const Model::GetStaticIpsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetStaticIpsResponseReceivedHandler;
+typedef std::function<void(const LightsailClient*, const Model::GetSubdomainsRequest&, const Model::GetSubdomainsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetSubdomainsResponseReceivedHandler;
 typedef std::function<void(const LightsailClient*, const Model::ImportKeyPairRequest&, const Model::ImportKeyPairOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ImportKeyPairResponseReceivedHandler;
@@ -1268,6 +1301,9 @@ typedef std::function<void(const LightsailClient*, const Model::UpdateRelational
                            const Model::UpdateRelationalDatabaseParametersOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateRelationalDatabaseParametersResponseReceivedHandler;
+typedef std::function<void(const LightsailClient*, const Model::UpdateSubdomainAssociationRequest&,
+                           const Model::UpdateSubdomainAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateSubdomainAssociationResponseReceivedHandler;
 /* End of service model async handlers definitions */
 }  // namespace Lightsail
 }  // namespace Aws

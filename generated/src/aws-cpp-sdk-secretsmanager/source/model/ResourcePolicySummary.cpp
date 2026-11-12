@@ -1,0 +1,40 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/secretsmanager/model/ResourcePolicySummary.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace SecretsManager {
+namespace Model {
+
+ResourcePolicySummary::ResourcePolicySummary(JsonView jsonValue) { *this = jsonValue; }
+
+ResourcePolicySummary& ResourcePolicySummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("PolicyName")) {
+    m_policyName = jsonValue.GetString("PolicyName");
+    m_policyNameHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue ResourcePolicySummary::Jsonize() const {
+  JsonValue payload;
+
+  if (m_policyNameHasBeenSet) {
+    payload.WithString("PolicyName", m_policyName);
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace SecretsManager
+}  // namespace Aws

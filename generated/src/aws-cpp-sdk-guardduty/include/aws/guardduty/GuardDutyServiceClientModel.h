@@ -92,6 +92,7 @@
 #include <aws/guardduty/model/ListFiltersResult.h>
 #include <aws/guardduty/model/ListFindingsResult.h>
 #include <aws/guardduty/model/ListIPSetsResult.h>
+#include <aws/guardduty/model/ListInvestigationRecordsResult.h>
 #include <aws/guardduty/model/ListInvestigationsResult.h>
 #include <aws/guardduty/model/ListInvitationsRequest.h>
 #include <aws/guardduty/model/ListInvitationsResult.h>
@@ -228,6 +229,7 @@ class ListDetectorsRequest;
 class ListFiltersRequest;
 class ListFindingsRequest;
 class ListIPSetsRequest;
+class ListInvestigationRecordsRequest;
 class ListInvestigationsRequest;
 class ListInvitationsRequest;
 class ListMalwareProtectionPlansRequest;
@@ -332,6 +334,7 @@ typedef Aws::Utils::Outcome<ListDetectorsResult, GuardDutyError> ListDetectorsOu
 typedef Aws::Utils::Outcome<ListFiltersResult, GuardDutyError> ListFiltersOutcome;
 typedef Aws::Utils::Outcome<ListFindingsResult, GuardDutyError> ListFindingsOutcome;
 typedef Aws::Utils::Outcome<ListIPSetsResult, GuardDutyError> ListIPSetsOutcome;
+typedef Aws::Utils::Outcome<ListInvestigationRecordsResult, GuardDutyError> ListInvestigationRecordsOutcome;
 typedef Aws::Utils::Outcome<ListInvestigationsResult, GuardDutyError> ListInvestigationsOutcome;
 typedef Aws::Utils::Outcome<ListInvitationsResult, GuardDutyError> ListInvitationsOutcome;
 typedef Aws::Utils::Outcome<ListMalwareProtectionPlansResult, GuardDutyError> ListMalwareProtectionPlansOutcome;
@@ -435,6 +438,7 @@ typedef std::future<ListDetectorsOutcome> ListDetectorsOutcomeCallable;
 typedef std::future<ListFiltersOutcome> ListFiltersOutcomeCallable;
 typedef std::future<ListFindingsOutcome> ListFindingsOutcomeCallable;
 typedef std::future<ListIPSetsOutcome> ListIPSetsOutcomeCallable;
+typedef std::future<ListInvestigationRecordsOutcome> ListInvestigationRecordsOutcomeCallable;
 typedef std::future<ListInvestigationsOutcome> ListInvestigationsOutcomeCallable;
 typedef std::future<ListInvitationsOutcome> ListInvitationsOutcomeCallable;
 typedef std::future<ListMalwareProtectionPlansOutcome> ListMalwareProtectionPlansOutcomeCallable;
@@ -688,6 +692,9 @@ typedef std::function<void(const GuardDutyClient*, const Model::ListFindingsRequ
 typedef std::function<void(const GuardDutyClient*, const Model::ListIPSetsRequest&, const Model::ListIPSetsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListIPSetsResponseReceivedHandler;
+typedef std::function<void(const GuardDutyClient*, const Model::ListInvestigationRecordsRequest&,
+                           const Model::ListInvestigationRecordsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListInvestigationRecordsResponseReceivedHandler;
 typedef std::function<void(const GuardDutyClient*, const Model::ListInvestigationsRequest&, const Model::ListInvestigationsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListInvestigationsResponseReceivedHandler;

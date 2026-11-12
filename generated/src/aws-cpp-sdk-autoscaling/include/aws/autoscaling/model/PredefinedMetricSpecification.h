@@ -39,12 +39,19 @@ class PredefinedMetricSpecification {
   /**
    * <p>The metric type. The following predefined metrics are available:</p> <ul>
    * <li> <p> <code>ASGAverageCPUUtilization</code> - Average CPU utilization of the
-   * Auto Scaling group.</p> </li> <li> <p> <code>ASGAverageNetworkIn</code> -
-   * Average number of bytes received on all network interfaces by the Auto Scaling
-   * group.</p> </li> <li> <p> <code>ASGAverageNetworkOut</code> - Average number of
-   * bytes sent out on all network interfaces by the Auto Scaling group.</p> </li>
-   * <li> <p> <code>ALBRequestCountPerTarget</code> - Average Application Load
-   * Balancer request count per target for your Auto Scaling group.</p> </li> </ul>
+   * Auto Scaling group.</p> </li> <li> <p>
+   * <code>ASGAverageCPUUtilizationHighResolution</code> - Average CPU utilization of
+   * the Auto Scaling group using a high-resolution metric.</p> </li> <li> <p>
+   * <code>ASGAverageNetworkIn</code> - Average number of bytes received on all
+   * network interfaces by the Auto Scaling group.</p> </li> <li> <p>
+   * <code>ASGAverageNetworkOut</code> - Average number of bytes sent out on all
+   * network interfaces by the Auto Scaling group.</p> </li> <li> <p>
+   * <code>ALBRequestCountPerTarget</code> - Average Application Load Balancer
+   * request count per target for your Auto Scaling group.</p> </li> </ul>
+   *  <p>To help ensure that target tracking has metric data to use for
+   * the <code>ASGAverageCPUUtilizationHighResolution</code> metric type, configure
+   * the Auto Scaling group's launch template and existing instances to publish
+   * high-resolution CPU utilization metrics.</p>
    */
   inline MetricType GetPredefinedMetricType() const { return m_predefinedMetricType; }
   inline bool PredefinedMetricTypeHasBeenSet() const { return m_predefinedMetricTypeHasBeenSet; }

@@ -76,6 +76,7 @@
 #include <aws/ec2/model/DescribeMacHostsPaginationTraits.h>
 #include <aws/ec2/model/DescribeMacModificationTasksPaginationTraits.h>
 #include <aws/ec2/model/DescribeManagedPrefixListsPaginationTraits.h>
+#include <aws/ec2/model/DescribeMetricCategoriesPaginationTraits.h>
 #include <aws/ec2/model/DescribeMovingAddressesPaginationTraits.h>
 #include <aws/ec2/model/DescribeNatGatewaysPaginationTraits.h>
 #include <aws/ec2/model/DescribeNetworkAclsPaginationTraits.h>
@@ -370,6 +371,9 @@ using DescribeMacModificationTasksPaginator =
 using DescribeManagedPrefixListsPaginator =
     Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeManagedPrefixListsRequest,
                                       Pagination::DescribeManagedPrefixListsPaginationTraits<EC2Client>>;
+using DescribeMetricCategoriesPaginator =
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeMetricCategoriesRequest,
+                                      Pagination::DescribeMetricCategoriesPaginationTraits<EC2Client>>;
 using DescribeMovingAddressesPaginator = Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeMovingAddressesRequest,
                                                                            Pagination::DescribeMovingAddressesPaginationTraits<EC2Client>>;
 using DescribeNatGatewaysPaginator = Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeNatGatewaysRequest,

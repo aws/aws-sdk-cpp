@@ -108,5 +108,13 @@ Aws::String UpdateEnvironmentRequest::SerializePayload() const {
     payload.WithString("WeeklyMaintenanceWindowStart", m_weeklyMaintenanceWindowStart);
   }
 
+  if (m_identityCenterConfigurationHasBeenSet) {
+    payload.WithObject("IdentityCenterConfiguration", m_identityCenterConfiguration.Jsonize());
+  }
+
+  if (m_teamsHasBeenSet) {
+    payload.WithObject("Teams", m_teams.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

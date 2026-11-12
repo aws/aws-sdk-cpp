@@ -31,6 +31,10 @@ Aws::String UpdateInstanceRequest::SerializePayload() const {
     payload.WithBool("PermissionSetsEnabled", m_permissionSetsEnabled);
   }
 
+  if (m_networkConfigurationHasBeenSet) {
+    payload.WithObject("NetworkConfiguration", m_networkConfiguration.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

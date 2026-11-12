@@ -224,6 +224,40 @@ class ModifyVpcEncryptionControlRequest : public EC2Request {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether to exclude AWS Global Accelerator traffic from encryption
+   * enforcement.</p>
+   */
+  inline VpcEncryptionControlExclusionStateInput GetGlobalAcceleratorExclusion() const { return m_globalAcceleratorExclusion; }
+  inline bool GlobalAcceleratorExclusionHasBeenSet() const { return m_globalAcceleratorExclusionHasBeenSet; }
+  inline void SetGlobalAcceleratorExclusion(VpcEncryptionControlExclusionStateInput value) {
+    m_globalAcceleratorExclusionHasBeenSet = true;
+    m_globalAcceleratorExclusion = value;
+  }
+  inline ModifyVpcEncryptionControlRequest& WithGlobalAcceleratorExclusion(VpcEncryptionControlExclusionStateInput value) {
+    SetGlobalAcceleratorExclusion(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether to exclude Amazon API Gateway V2 traffic from encryption
+   * enforcement.</p>
+   */
+  inline VpcEncryptionControlExclusionStateInput GetApiGatewayV2Exclusion() const { return m_apiGatewayV2Exclusion; }
+  inline bool ApiGatewayV2ExclusionHasBeenSet() const { return m_apiGatewayV2ExclusionHasBeenSet; }
+  inline void SetApiGatewayV2Exclusion(VpcEncryptionControlExclusionStateInput value) {
+    m_apiGatewayV2ExclusionHasBeenSet = true;
+    m_apiGatewayV2Exclusion = value;
+  }
+  inline ModifyVpcEncryptionControlRequest& WithApiGatewayV2Exclusion(VpcEncryptionControlExclusionStateInput value) {
+    SetApiGatewayV2Exclusion(value);
+    return *this;
+  }
+  ///@}
  private:
   bool m_dryRun{false};
 
@@ -246,6 +280,10 @@ class ModifyVpcEncryptionControlRequest : public EC2Request {
   VpcEncryptionControlExclusionStateInput m_vpcLatticeExclusion{VpcEncryptionControlExclusionStateInput::NOT_SET};
 
   VpcEncryptionControlExclusionStateInput m_elasticFileSystemExclusion{VpcEncryptionControlExclusionStateInput::NOT_SET};
+
+  VpcEncryptionControlExclusionStateInput m_globalAcceleratorExclusion{VpcEncryptionControlExclusionStateInput::NOT_SET};
+
+  VpcEncryptionControlExclusionStateInput m_apiGatewayV2Exclusion{VpcEncryptionControlExclusionStateInput::NOT_SET};
   bool m_dryRunHasBeenSet = false;
   bool m_vpcEncryptionControlIdHasBeenSet = false;
   bool m_modeHasBeenSet = false;
@@ -257,6 +295,8 @@ class ModifyVpcEncryptionControlRequest : public EC2Request {
   bool m_lambdaExclusionHasBeenSet = false;
   bool m_vpcLatticeExclusionHasBeenSet = false;
   bool m_elasticFileSystemExclusionHasBeenSet = false;
+  bool m_globalAcceleratorExclusionHasBeenSet = false;
+  bool m_apiGatewayV2ExclusionHasBeenSet = false;
 };
 
 }  // namespace Model

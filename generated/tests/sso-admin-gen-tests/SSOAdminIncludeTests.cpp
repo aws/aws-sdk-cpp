@@ -201,6 +201,7 @@
 #include <aws/sso-admin/model/ListTrustedTokenIssuersPaginationTraits.h>
 #include <aws/sso-admin/model/ListTrustedTokenIssuersRequest.h>
 #include <aws/sso-admin/model/ListTrustedTokenIssuersResult.h>
+#include <aws/sso-admin/model/NetworkConfigurationInfo.h>
 #include <aws/sso-admin/model/OidcJwtConfiguration.h>
 #include <aws/sso-admin/model/OidcJwtUpdateConfiguration.h>
 #include <aws/sso-admin/model/OperationStatusFilter.h>

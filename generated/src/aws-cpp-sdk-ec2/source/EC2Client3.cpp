@@ -20,6 +20,8 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/DescribeCapacityBlocksRequest.h>
+#include <aws/ec2/model/DescribeCapacityManagerDataExportsRequest.h>
 #include <aws/ec2/model/DescribeCapacityReservationBillingRequestsRequest.h>
 #include <aws/ec2/model/DescribeCapacityReservationCancellationQuotesRequest.h>
 #include <aws/ec2/model/DescribeCapacityReservationDateChangeQuotesRequest.h>
@@ -103,6 +105,7 @@
 #include <aws/ec2/model/DescribeMacHostsRequest.h>
 #include <aws/ec2/model/DescribeMacModificationTasksRequest.h>
 #include <aws/ec2/model/DescribeManagedPrefixListsRequest.h>
+#include <aws/ec2/model/DescribeMetricCategoriesRequest.h>
 #include <aws/ec2/model/DescribeMovingAddressesRequest.h>
 #include <aws/ec2/model/DescribeNatGatewaysRequest.h>
 #include <aws/ec2/model/DescribeNetworkAclsRequest.h>
@@ -117,9 +120,6 @@
 #include <aws/ec2/model/DescribePlacementGroupsRequest.h>
 #include <aws/ec2/model/DescribePrefixListsRequest.h>
 #include <aws/ec2/model/DescribePrincipalIdFormatRequest.h>
-#include <aws/ec2/model/DescribePublicIpv4PoolsRequest.h>
-#include <aws/ec2/model/DescribeRegionsRequest.h>
-#include <aws/ec2/model/DescribeReplaceRootVolumeTasksRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,19 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DescribeCapacityBlocksOutcome EC2Client::DescribeCapacityBlocks(const DescribeCapacityBlocksRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCapacityBlocksOutcome(result.GetResultWithOwnership())
+                            : DescribeCapacityBlocksOutcome(std::move(result.GetError()));
+}
+
+DescribeCapacityManagerDataExportsOutcome EC2Client::DescribeCapacityManagerDataExports(
+    const DescribeCapacityManagerDataExportsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCapacityManagerDataExportsOutcome(result.GetResultWithOwnership())
+                            : DescribeCapacityManagerDataExportsOutcome(std::move(result.GetError()));
+}
 
 DescribeCapacityReservationBillingRequestsOutcome EC2Client::DescribeCapacityReservationBillingRequests(
     const DescribeCapacityReservationBillingRequestsRequest& request) const {
@@ -655,6 +668,12 @@ DescribeManagedPrefixListsOutcome EC2Client::DescribeManagedPrefixLists(const De
                             : DescribeManagedPrefixListsOutcome(std::move(result.GetError()));
 }
 
+DescribeMetricCategoriesOutcome EC2Client::DescribeMetricCategories(const DescribeMetricCategoriesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeMetricCategoriesOutcome(result.GetResultWithOwnership())
+                            : DescribeMetricCategoriesOutcome(std::move(result.GetError()));
+}
+
 DescribeMovingAddressesOutcome EC2Client::DescribeMovingAddresses(const DescribeMovingAddressesRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeMovingAddressesOutcome(result.GetResultWithOwnership())
@@ -742,23 +761,4 @@ DescribePrincipalIdFormatOutcome EC2Client::DescribePrincipalIdFormat(const Desc
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribePrincipalIdFormatOutcome(result.GetResultWithOwnership())
                             : DescribePrincipalIdFormatOutcome(std::move(result.GetError()));
-}
-
-DescribePublicIpv4PoolsOutcome EC2Client::DescribePublicIpv4Pools(const DescribePublicIpv4PoolsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribePublicIpv4PoolsOutcome(result.GetResultWithOwnership())
-                            : DescribePublicIpv4PoolsOutcome(std::move(result.GetError()));
-}
-
-DescribeRegionsOutcome EC2Client::DescribeRegions(const DescribeRegionsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeRegionsOutcome(result.GetResultWithOwnership())
-                            : DescribeRegionsOutcome(std::move(result.GetError()));
-}
-
-DescribeReplaceRootVolumeTasksOutcome EC2Client::DescribeReplaceRootVolumeTasks(
-    const DescribeReplaceRootVolumeTasksRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeReplaceRootVolumeTasksOutcome(result.GetResultWithOwnership())
-                            : DescribeReplaceRootVolumeTasksOutcome(std::move(result.GetError()));
 }

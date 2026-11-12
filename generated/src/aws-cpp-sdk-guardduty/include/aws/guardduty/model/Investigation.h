@@ -10,7 +10,9 @@
 #include <aws/guardduty/model/CloudDetails.h>
 #include <aws/guardduty/model/Confidence.h>
 #include <aws/guardduty/model/InvestigationMetadata.h>
+#include <aws/guardduty/model/InvestigationScope.h>
 #include <aws/guardduty/model/InvestigationStatus.h>
+#include <aws/guardduty/model/InvestigationSummaryData.h>
 #include <aws/guardduty/model/RiskLevel.h>
 
 #include <utility>
@@ -202,8 +204,11 @@ class Investigation {
 
   ///@{
   /**
-   * <p>A structured summary of the investigation findings, including affected
-   * resources, threat assessment, and recommended remediation steps.</p>
+   * <p>A summary of the investigation results as text, up to 262,144 characters.
+   * Returned only when the investigation status is <code>COMPLETED</code>. When you
+   * set <code>SummaryFormat</code> to <code>STRUCTURED</code>, the summary is
+   * returned in <code>SummaryData</code> instead, unless it isn't available in a
+   * structured form, in which case it's returned in this field.</p>
    */
   inline const Aws::String& GetSummary() const { return m_summary; }
   inline bool SummaryHasBeenSet() const { return m_summaryHasBeenSet; }
@@ -215,6 +220,50 @@ class Investigation {
   template <typename SummaryT = Aws::String>
   Investigation& WithSummary(SummaryT&& value) {
     SetSummary(std::forward<SummaryT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A structured summary of the investigation results. GuardDuty returns this
+   * field only when you set <code>SummaryFormat</code> to <code>STRUCTURED</code>,
+   * the investigation status is <code>COMPLETED</code>, and the summary is available
+   * in a structured form. When this field is returned, <code>Summary</code> isn't
+   * returned.</p>
+   */
+  inline const InvestigationSummaryData& GetSummaryData() const { return m_summaryData; }
+  inline bool SummaryDataHasBeenSet() const { return m_summaryDataHasBeenSet; }
+  template <typename SummaryDataT = InvestigationSummaryData>
+  void SetSummaryData(SummaryDataT&& value) {
+    m_summaryDataHasBeenSet = true;
+    m_summaryData = std::forward<SummaryDataT>(value);
+  }
+  template <typename SummaryDataT = InvestigationSummaryData>
+  Investigation& WithSummaryData(SummaryDataT&& value) {
+    SetSummaryData(std::forward<SummaryDataT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Information about what the investigation analyzed, including the
+   * investigation type, the finding, account, or organization that was analyzed,
+   * and, for <code>ACCOUNT</code> and <code>ORGANIZATION</code> investigations, the
+   * time window over which the investigation queried data. Returned only when the
+   * investigation status is <code>COMPLETED</code>.</p>
+   */
+  inline const InvestigationScope& GetScope() const { return m_scope; }
+  inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
+  template <typename ScopeT = InvestigationScope>
+  void SetScope(ScopeT&& value) {
+    m_scopeHasBeenSet = true;
+    m_scope = std::forward<ScopeT>(value);
+  }
+  template <typename ScopeT = InvestigationScope>
+  Investigation& WithScope(ScopeT&& value) {
+    SetScope(std::forward<ScopeT>(value));
     return *this;
   }
   ///@}
@@ -294,6 +343,10 @@ class Investigation {
 
   Aws::String m_summary;
 
+  InvestigationSummaryData m_summaryData;
+
+  InvestigationScope m_scope;
+
   Aws::Utils::DateTime m_startTime{};
 
   Aws::Utils::DateTime m_endTime{};
@@ -309,6 +362,8 @@ class Investigation {
   bool m_riskHasBeenSet = false;
   bool m_confidenceHasBeenSet = false;
   bool m_summaryHasBeenSet = false;
+  bool m_summaryDataHasBeenSet = false;
+  bool m_scopeHasBeenSet = false;
   bool m_startTimeHasBeenSet = false;
   bool m_endTimeHasBeenSet = false;
   bool m_errorHasBeenSet = false;

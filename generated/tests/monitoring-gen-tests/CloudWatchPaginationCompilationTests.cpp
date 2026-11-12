@@ -10,6 +10,7 @@
 #include <aws/monitoring/CloudWatchPaginationBase.h>
 #include <aws/monitoring/model/DescribeAlarmHistoryPaginationTraits.h>
 #include <aws/monitoring/model/ListManagedInsightRulesPaginationTraits.h>
+#include <aws/monitoring/model/ListMetricDataQueryDefinitionsPaginationTraits.h>
 #include <aws/monitoring/model/ListMetricsPaginationTraits.h>
 #include <aws/monitoring/model/ListMetricStreamsPaginationTraits.h>
 #include <aws/monitoring/model/DescribeAnomalyDetectorsPaginationTraits.h>

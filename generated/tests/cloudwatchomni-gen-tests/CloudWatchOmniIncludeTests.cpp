@@ -179,7 +179,9 @@
 #include <aws/cloudwatchomni/model/ListViewsResult.h>
 #include <aws/cloudwatchomni/model/LogMetadata.h>
 #include <aws/cloudwatchomni/model/Metadata.h>
+#include <aws/cloudwatchomni/model/MetricAggregationTemporality.h>
 #include <aws/cloudwatchomni/model/MetricMetadata.h>
+#include <aws/cloudwatchomni/model/MetricMonotonicity.h>
 #include <aws/cloudwatchomni/model/MetricSemantics.h>
 #include <aws/cloudwatchomni/model/NoData.h>
 #include <aws/cloudwatchomni/model/Node.h>

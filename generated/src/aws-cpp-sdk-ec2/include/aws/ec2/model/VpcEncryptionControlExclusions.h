@@ -180,6 +180,42 @@ class VpcEncryptionControlExclusions {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The exclusion configuration for AWS Global Accelerator traffic.</p>
+   */
+  inline const VpcEncryptionControlExclusion& GetGlobalAccelerator() const { return m_globalAccelerator; }
+  inline bool GlobalAcceleratorHasBeenSet() const { return m_globalAcceleratorHasBeenSet; }
+  template <typename GlobalAcceleratorT = VpcEncryptionControlExclusion>
+  void SetGlobalAccelerator(GlobalAcceleratorT&& value) {
+    m_globalAcceleratorHasBeenSet = true;
+    m_globalAccelerator = std::forward<GlobalAcceleratorT>(value);
+  }
+  template <typename GlobalAcceleratorT = VpcEncryptionControlExclusion>
+  VpcEncryptionControlExclusions& WithGlobalAccelerator(GlobalAcceleratorT&& value) {
+    SetGlobalAccelerator(std::forward<GlobalAcceleratorT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The exclusion configuration for Amazon API Gateway V2 traffic.</p>
+   */
+  inline const VpcEncryptionControlExclusion& GetApiGatewayV2() const { return m_apiGatewayV2; }
+  inline bool ApiGatewayV2HasBeenSet() const { return m_apiGatewayV2HasBeenSet; }
+  template <typename ApiGatewayV2T = VpcEncryptionControlExclusion>
+  void SetApiGatewayV2(ApiGatewayV2T&& value) {
+    m_apiGatewayV2HasBeenSet = true;
+    m_apiGatewayV2 = std::forward<ApiGatewayV2T>(value);
+  }
+  template <typename ApiGatewayV2T = VpcEncryptionControlExclusion>
+  VpcEncryptionControlExclusions& WithApiGatewayV2(ApiGatewayV2T&& value) {
+    SetApiGatewayV2(std::forward<ApiGatewayV2T>(value));
+    return *this;
+  }
+  ///@}
  private:
   VpcEncryptionControlExclusion m_internetGateway;
 
@@ -196,6 +232,10 @@ class VpcEncryptionControlExclusions {
   VpcEncryptionControlExclusion m_vpcLattice;
 
   VpcEncryptionControlExclusion m_elasticFileSystem;
+
+  VpcEncryptionControlExclusion m_globalAccelerator;
+
+  VpcEncryptionControlExclusion m_apiGatewayV2;
   bool m_internetGatewayHasBeenSet = false;
   bool m_egressOnlyInternetGatewayHasBeenSet = false;
   bool m_natGatewayHasBeenSet = false;
@@ -204,6 +244,8 @@ class VpcEncryptionControlExclusions {
   bool m_lambdaHasBeenSet = false;
   bool m_vpcLatticeHasBeenSet = false;
   bool m_elasticFileSystemHasBeenSet = false;
+  bool m_globalAcceleratorHasBeenSet = false;
+  bool m_apiGatewayV2HasBeenSet = false;
 };
 
 }  // namespace Model

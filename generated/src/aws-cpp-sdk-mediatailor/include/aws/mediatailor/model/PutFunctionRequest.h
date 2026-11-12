@@ -12,6 +12,7 @@
 #include <aws/mediatailor/model/ConcurrentExecutorConfiguration.h>
 #include <aws/mediatailor/model/CustomOutputConfiguration.h>
 #include <aws/mediatailor/model/FunctionType.h>
+#include <aws/mediatailor/model/HlsTagProcessorConfiguration.h>
 #include <aws/mediatailor/model/HttpRequestConfiguration.h>
 #include <aws/mediatailor/model/SequentialExecutorConfiguration.h>
 #include <aws/mediatailor/model/VastRequestConfiguration.h>
@@ -67,9 +68,11 @@ class PutFunctionRequest : public MediaTailorRequest {
    * evaluates output expressions that can reference the response.</p> </li> <li> <p>
    * <code>AWS_SERVICE_REQUEST</code> – Makes an authenticated request to a supported
    * AWS service API and evaluates output expressions that can reference the
-   * response.</p> </li> <li> <p> <code>VAST_REQUEST</code> – Calls a VAST endpoint,
-   * parses the response as VAST, and makes the parsed ads available to output
-   * expressions.</p> </li> <li> <p> <code>SEQUENTIAL_EXECUTOR</code> – Runs a
+   * response.</p> </li> <li> <p> <code>HLS_TAG_PROCESSOR</code> – Reads and changes
+   * HLS tags in the origin manifest at the <code>POST_ORIGIN_RESPONSE</code>
+   * lifecycle hook.</p> </li> <li> <p> <code>VAST_REQUEST</code> – Calls a VAST
+   * endpoint, parses the response as VAST, and makes the parsed ads available to
+   * output expressions.</p> </li> <li> <p> <code>SEQUENTIAL_EXECUTOR</code> – Runs a
    * sequence of child functions in order, passing data between steps through
    * temporary data.</p> </li> <li> <p> <code>CONCURRENT_EXECUTOR</code> – Runs a set
    * of child functions in parallel, up to a maximum concurrency, and combines their
@@ -232,6 +235,26 @@ class PutFunctionRequest : public MediaTailorRequest {
 
   ///@{
   /**
+   * <p>The configuration for an <code>HLS_TAG_PROCESSOR</code> function. Specifies
+   * the runtime, tag filter, optional run condition, and output expressions.
+   * Required when <code>FunctionType</code> is <code>HLS_TAG_PROCESSOR</code>.</p>
+   */
+  inline const HlsTagProcessorConfiguration& GetHlsTagProcessorConfiguration() const { return m_hlsTagProcessorConfiguration; }
+  inline bool HlsTagProcessorConfigurationHasBeenSet() const { return m_hlsTagProcessorConfigurationHasBeenSet; }
+  template <typename HlsTagProcessorConfigurationT = HlsTagProcessorConfiguration>
+  void SetHlsTagProcessorConfiguration(HlsTagProcessorConfigurationT&& value) {
+    m_hlsTagProcessorConfigurationHasBeenSet = true;
+    m_hlsTagProcessorConfiguration = std::forward<HlsTagProcessorConfigurationT>(value);
+  }
+  template <typename HlsTagProcessorConfigurationT = HlsTagProcessorConfiguration>
+  PutFunctionRequest& WithHlsTagProcessorConfiguration(HlsTagProcessorConfigurationT&& value) {
+    SetHlsTagProcessorConfiguration(std::forward<HlsTagProcessorConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The tags to assign to the function. Tags are key-value pairs that you can
    * associate with Amazon resources to help with organization, access control, and
    * cost tracking. For more information, see <a
@@ -276,6 +299,8 @@ class PutFunctionRequest : public MediaTailorRequest {
 
   VastRequestConfiguration m_vastRequestConfiguration;
 
+  HlsTagProcessorConfiguration m_hlsTagProcessorConfiguration;
+
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_functionIdHasBeenSet = false;
   bool m_functionTypeHasBeenSet = false;
@@ -286,6 +311,7 @@ class PutFunctionRequest : public MediaTailorRequest {
   bool m_concurrentExecutorConfigurationHasBeenSet = false;
   bool m_sequentialExecutorConfigurationHasBeenSet = false;
   bool m_vastRequestConfigurationHasBeenSet = false;
+  bool m_hlsTagProcessorConfigurationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 
