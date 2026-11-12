@@ -1,0 +1,6 @@
+{
+  "type": "dependency",
+  "category": "crt",
+  "contributor": "sbiscigl",
+  "description": "Update CRT to v0.44.4"
+}
