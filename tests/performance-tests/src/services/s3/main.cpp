@@ -52,7 +52,7 @@ int main(int argc, char** argv) {
 
   {
     for (const auto& testConfig : PerformanceTest::Services::S3::TestConfig::TestMatrix) {
-      Aws::Client::ClientConfiguration clientConfig;
+      Aws::S3::S3ClientConfiguration clientConfig;
       clientConfig.region = region;
       PerformanceTest::Services::S3::S3PerformanceTest performanceTest(clientConfig, testConfig, iterations, availabilityZoneId);
       auto setupOutcome = performanceTest.Setup();
