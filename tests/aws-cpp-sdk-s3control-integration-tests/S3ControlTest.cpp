@@ -558,6 +558,8 @@ namespace
 
         // The following tests are using region in ARN when making requests.
         Aws::Environment::SetEnv("AWS_S3_USE_ARN_REGION", "true", 1);
+        // S3ClientConfiguration reads the environment when it is constructed; set the option on this config too.
+        config.useArnRegion = true;
 
         config.region = Aws::Region::US_EAST_1;
         S3::S3Client s3ClientInUsEast1usingArnRegion(config);
@@ -664,6 +666,8 @@ namespace
 
         // The following tests are using region in ARN when making requests.
         Aws::Environment::SetEnv("AWS_S3_USE_ARN_REGION", "true", 1);
+        // S3ClientConfiguration reads the environment when it is constructed; set the option on this config too.
+        config.useArnRegion = true;
 
         S3::S3Client s3ClientInUsEast1UsingArnRegion(config);
         presignedUrlPut = s3ClientInUsEast1UsingArnRegion.GeneratePresignedUrl(accessPointArn, TEST_OBJECT_KEY, HttpMethod::HTTP_PUT);

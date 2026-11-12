@@ -2262,6 +2262,8 @@ namespace
         // Use arn region, Access Point Arn with virtual addressing
         Aws::String awsS3UseArnRegion = Aws::Environment::GetEnv("AWS_S3_USE_ARN_REGION");
         Aws::Environment::SetEnv("AWS_S3_USE_ARN_REGION", "true", 1);
+        // S3ClientConfiguration reads the environment when it is constructed; set the option on this config too.
+        config.useArnRegion = true;
         config.region = Aws::Region::EU_WEST_1;
         config.payloadSigningPolicy = AWSAuthV4Signer::PayloadSigningPolicy::Never;
         config.useVirtualAddressing = true;
@@ -2358,6 +2360,8 @@ namespace
 
         // Use ARN region
         Aws::Environment::SetEnv("AWS_S3_USE_ARN_REGION", "true", 1);
+        // S3ClientConfiguration reads the environment when it is constructed; set the option on this config too.
+        config.useArnRegion = true;
 
         // US regions
         config.region = Aws::Region::US_WEST_2;
@@ -2470,6 +2474,8 @@ namespace
 
         // Disable S3 Multi Region Access Points ARN
         Aws::Environment::SetEnv("AWS_S3_DISABLE_MULTIREGION_ACCESS_POINTS", "true", 1);
+        // S3ClientConfiguration reads the environment when it is constructed; set the option on this config too.
+        config.disableMultiRegionAccessPoints = true;
 
         config.region = Aws::Region::US_WEST_2;
         DoTestGetObjectWithBucketARN(config, "arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap", "", "", "", false);
