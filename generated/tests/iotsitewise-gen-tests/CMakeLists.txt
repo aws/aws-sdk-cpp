@@ -1,5 +1,5 @@
 add_project(iotsitewise-gen-tests
-    "Tests for the AWS IOTSITEWISE C++ SDK"
+    "Tests for the AWS IoT SiteWise C++ SDK"
     testing-resources
     aws-cpp-sdk-iotsitewise
     aws-cpp-sdk-core)

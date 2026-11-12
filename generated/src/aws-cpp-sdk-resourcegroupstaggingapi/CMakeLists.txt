@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-resourcegroupstaggingapi "C++ SDK for the AWS resourcegroupstaggingapi service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-resourcegroupstaggingapi "C++ SDK for AWS Resource Groups Tagging API" aws-cpp-sdk-core)
 
 file(GLOB AWS_RESOURCEGROUPSTAGGINGAPI_HEADERS
     "include/aws/resourcegroupstaggingapi/*.h"

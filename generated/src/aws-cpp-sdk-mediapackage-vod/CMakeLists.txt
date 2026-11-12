@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-mediapackage-vod "C++ SDK for the AWS mediapackage-vod service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-mediapackage-vod "C++ SDK for AWS Elemental MediaPackage VOD" aws-cpp-sdk-core)
 
 file(GLOB AWS_MEDIAPACKAGE-VOD_HEADERS
     "include/aws/mediapackage-vod/*.h"

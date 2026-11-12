@@ -1,5 +1,5 @@
 add_project(sagemakerjobruntime-gen-tests
-    "Tests for the AWS SAGEMAKERJOBRUNTIME C++ SDK"
+    "Tests for the Sagemaker Job Runtime Service C++ SDK"
     testing-resources
     aws-cpp-sdk-sagemakerjobruntime
     aws-cpp-sdk-core)

@@ -1,5 +1,5 @@
 add_project(es-gen-tests
-    "Tests for the AWS ES C++ SDK"
+    "Tests for the Amazon Elasticsearch Service C++ SDK"
     testing-resources
     aws-cpp-sdk-es
     aws-cpp-sdk-core)

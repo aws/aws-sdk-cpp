@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-autoscaling-plans "C++ SDK for the AWS autoscaling-plans service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-autoscaling-plans "C++ SDK for AWS Auto Scaling Plans" aws-cpp-sdk-core)
 
 file(GLOB AWS_AUTOSCALING-PLANS_HEADERS
     "include/aws/autoscaling-plans/*.h"

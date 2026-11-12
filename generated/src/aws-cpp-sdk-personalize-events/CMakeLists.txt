@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-personalize-events "C++ SDK for the AWS personalize-events service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-personalize-events "C++ SDK for Amazon Personalize Events" aws-cpp-sdk-core)
 
 file(GLOB AWS_PERSONALIZE-EVENTS_HEADERS
     "include/aws/personalize-events/*.h"

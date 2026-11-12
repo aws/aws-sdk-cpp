@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-cloudsearchdomain "C++ SDK for the AWS cloudsearchdomain service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-cloudsearchdomain "C++ SDK for Amazon CloudSearch Domain" aws-cpp-sdk-core)
 
 file(GLOB AWS_CLOUDSEARCHDOMAIN_HEADERS
     "include/aws/cloudsearchdomain/*.h"

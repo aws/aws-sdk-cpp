@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-snowball "C++ SDK for the AWS snowball service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-snowball "C++ SDK for Amazon Import/Export Snowball" aws-cpp-sdk-core)
 
 file(GLOB AWS_SNOWBALL_HEADERS
     "include/aws/snowball/*.h"

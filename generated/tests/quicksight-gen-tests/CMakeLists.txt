@@ -1,5 +1,5 @@
 add_project(quicksight-gen-tests
-    "Tests for the AWS QUICKSIGHT C++ SDK"
+    "Tests for the Amazon QuickSight C++ SDK"
     testing-resources
     aws-cpp-sdk-quicksight
     aws-cpp-sdk-core)

@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-s3-crt "C++ SDK for the AWS s3-crt service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-s3-crt "C++ SDK for Amazon Simple Storage Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_S3-CRT_HEADERS
     "include/aws/s3-crt/*.h"

@@ -1,5 +1,5 @@
 add_project(rbin-gen-tests
-    "Tests for the AWS RBIN C++ SDK"
+    "Tests for the Amazon Recycle Bin C++ SDK"
     testing-resources
     aws-cpp-sdk-rbin
     aws-cpp-sdk-core)

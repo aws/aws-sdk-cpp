@@ -1,5 +1,5 @@
 add_project(bcm-data-exports-gen-tests
-    "Tests for the AWS BCM-DATA-EXPORTS C++ SDK"
+    "Tests for the AWS Billing and Cost Management Data Exports C++ SDK"
     testing-resources
     aws-cpp-sdk-bcm-data-exports
     aws-cpp-sdk-core)

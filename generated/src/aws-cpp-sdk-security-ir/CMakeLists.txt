@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-security-ir "C++ SDK for the AWS security-ir service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-security-ir "C++ SDK for Security Incident Response" aws-cpp-sdk-core)
 
 file(GLOB AWS_SECURITY-IR_HEADERS
     "include/aws/security-ir/*.h"

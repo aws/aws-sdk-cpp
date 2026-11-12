@@ -1,5 +1,5 @@
 add_project(signer-gen-tests
-    "Tests for the AWS SIGNER C++ SDK"
+    "Tests for the AWS Signer C++ SDK"
     testing-resources
     aws-cpp-sdk-signer
     aws-cpp-sdk-core)

@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-billing "C++ SDK for the AWS billing service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-billing "C++ SDK for AWS Billing" aws-cpp-sdk-core)
 
 file(GLOB AWS_BILLING_HEADERS
     "include/aws/billing/*.h"

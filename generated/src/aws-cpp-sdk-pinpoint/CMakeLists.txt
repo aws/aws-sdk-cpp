@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-pinpoint "C++ SDK for the AWS pinpoint service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-pinpoint "C++ SDK for Amazon Pinpoint" aws-cpp-sdk-core)
 
 file(GLOB AWS_PINPOINT_HEADERS
     "include/aws/pinpoint/*.h"

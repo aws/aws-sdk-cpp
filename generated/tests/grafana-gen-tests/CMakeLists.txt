@@ -1,5 +1,5 @@
 add_project(grafana-gen-tests
-    "Tests for the AWS GRAFANA C++ SDK"
+    "Tests for the Amazon Managed Grafana C++ SDK"
     testing-resources
     aws-cpp-sdk-grafana
     aws-cpp-sdk-core)

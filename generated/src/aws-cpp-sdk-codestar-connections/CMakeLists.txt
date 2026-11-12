@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-codestar-connections "C++ SDK for the AWS codestar-connections service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-codestar-connections "C++ SDK for AWS CodeStar connections" aws-cpp-sdk-core)
 
 file(GLOB AWS_CODESTAR-CONNECTIONS_HEADERS
     "include/aws/codestar-connections/*.h"

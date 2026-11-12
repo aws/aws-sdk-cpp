@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-omics "C++ SDK for the AWS omics service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-omics "C++ SDK for Amazon Omics" aws-cpp-sdk-core)
 
 file(GLOB AWS_OMICS_HEADERS
     "include/aws/omics/*.h"

@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-application-insights "C++ SDK for the AWS application-insights service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-application-insights "C++ SDK for Amazon CloudWatch Application Insights" aws-cpp-sdk-core)
 
 file(GLOB AWS_APPLICATION-INSIGHTS_HEADERS
     "include/aws/application-insights/*.h"

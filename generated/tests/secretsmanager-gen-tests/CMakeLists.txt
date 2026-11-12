@@ -1,5 +1,5 @@
 add_project(secretsmanager-gen-tests
-    "Tests for the AWS SECRETSMANAGER C++ SDK"
+    "Tests for the AWS Secrets Manager C++ SDK"
     testing-resources
     aws-cpp-sdk-secretsmanager
     aws-cpp-sdk-core)

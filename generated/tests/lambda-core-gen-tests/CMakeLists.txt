@@ -1,5 +1,5 @@
 add_project(lambda-core-gen-tests
-    "Tests for the AWS LAMBDA-CORE C++ SDK"
+    "Tests for the AWS Lambda Core C++ SDK"
     testing-resources
     aws-cpp-sdk-lambda-core
     aws-cpp-sdk-core)

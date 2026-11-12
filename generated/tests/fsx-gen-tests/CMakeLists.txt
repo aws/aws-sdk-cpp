@@ -1,5 +1,5 @@
 add_project(fsx-gen-tests
-    "Tests for the AWS FSX C++ SDK"
+    "Tests for the Amazon FSx C++ SDK"
     testing-resources
     aws-cpp-sdk-fsx
     aws-cpp-sdk-core)

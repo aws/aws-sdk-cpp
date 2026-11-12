@@ -1,5 +1,5 @@
 add_project(comprehend-gen-tests
-    "Tests for the AWS COMPREHEND C++ SDK"
+    "Tests for the Amazon Comprehend C++ SDK"
     testing-resources
     aws-cpp-sdk-comprehend
     aws-cpp-sdk-core)

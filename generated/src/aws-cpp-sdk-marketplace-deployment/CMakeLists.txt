@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-marketplace-deployment "C++ SDK for the AWS marketplace-deployment service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-marketplace-deployment "C++ SDK for AWS Marketplace Deployment Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_MARKETPLACE-DEPLOYMENT_HEADERS
     "include/aws/marketplace-deployment/*.h"

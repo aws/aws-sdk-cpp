@@ -1,5 +1,5 @@
 add_project(iot-jobs-data-gen-tests
-    "Tests for the AWS IOT-JOBS-DATA C++ SDK"
+    "Tests for the AWS IoT Jobs Data Plane C++ SDK"
     testing-resources
     aws-cpp-sdk-iot-jobs-data
     aws-cpp-sdk-core)

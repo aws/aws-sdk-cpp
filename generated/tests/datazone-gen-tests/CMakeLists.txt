@@ -1,5 +1,5 @@
 add_project(datazone-gen-tests
-    "Tests for the AWS DATAZONE C++ SDK"
+    "Tests for the Amazon DataZone C++ SDK"
     testing-resources
     aws-cpp-sdk-datazone
     aws-cpp-sdk-core)

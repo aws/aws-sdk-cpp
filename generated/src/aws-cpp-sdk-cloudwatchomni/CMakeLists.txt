@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-cloudwatchomni "C++ SDK for the AWS cloudwatchomni service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-cloudwatchomni "C++ SDK for CloudWatch Omni" aws-cpp-sdk-core)
 
 file(GLOB AWS_CLOUDWATCHOMNI_HEADERS
     "include/aws/cloudwatchomni/*.h"

@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-chime-sdk-media-pipelines "C++ SDK for the AWS chime-sdk-media-pipelines service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-chime-sdk-media-pipelines "C++ SDK for Amazon Chime SDK Media Pipelines" aws-cpp-sdk-core)
 
 file(GLOB AWS_CHIME-SDK-MEDIA-PIPELINES_HEADERS
     "include/aws/chime-sdk-media-pipelines/*.h"

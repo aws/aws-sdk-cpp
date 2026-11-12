@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-eks "C++ SDK for the AWS eks service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-eks "C++ SDK for Amazon Elastic Kubernetes Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_EKS_HEADERS
     "include/aws/eks/*.h"

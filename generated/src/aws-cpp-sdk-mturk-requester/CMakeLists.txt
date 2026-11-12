@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-mturk-requester "C++ SDK for the AWS mturk-requester service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-mturk-requester "C++ SDK for Amazon Mechanical Turk" aws-cpp-sdk-core)
 
 file(GLOB AWS_MTURK-REQUESTER_HEADERS
     "include/aws/mturk-requester/*.h"

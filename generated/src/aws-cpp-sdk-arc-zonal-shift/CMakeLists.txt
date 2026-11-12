@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-arc-zonal-shift "C++ SDK for the AWS arc-zonal-shift service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-arc-zonal-shift "C++ SDK for AWS ARC - Zonal Shift" aws-cpp-sdk-core)
 
 file(GLOB AWS_ARC-ZONAL-SHIFT_HEADERS
     "include/aws/arc-zonal-shift/*.h"

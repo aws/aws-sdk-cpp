@@ -1,5 +1,5 @@
 add_project(launch-wizard-gen-tests
-    "Tests for the AWS LAUNCH-WIZARD C++ SDK"
+    "Tests for the AWS Launch Wizard C++ SDK"
     testing-resources
     aws-cpp-sdk-launch-wizard
     aws-cpp-sdk-core)

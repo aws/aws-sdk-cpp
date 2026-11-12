@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-m2 "C++ SDK for the AWS m2 service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-m2 "C++ SDK for AWSMainframeModernization" aws-cpp-sdk-core)
 
 file(GLOB AWS_M2_HEADERS
     "include/aws/m2/*.h"

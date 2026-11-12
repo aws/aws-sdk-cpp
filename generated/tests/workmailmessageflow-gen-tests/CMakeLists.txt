@@ -1,5 +1,5 @@
 add_project(workmailmessageflow-gen-tests
-    "Tests for the AWS WORKMAILMESSAGEFLOW C++ SDK"
+    "Tests for the Amazon WorkMail Message Flow C++ SDK"
     testing-resources
     aws-cpp-sdk-workmailmessageflow
     aws-cpp-sdk-core)

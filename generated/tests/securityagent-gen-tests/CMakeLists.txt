@@ -1,5 +1,5 @@
 add_project(securityagent-gen-tests
-    "Tests for the AWS SECURITYAGENT C++ SDK"
+    "Tests for the AWS Security Agent C++ SDK"
     testing-resources
     aws-cpp-sdk-securityagent
     aws-cpp-sdk-core)

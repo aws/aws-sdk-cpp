@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-notifications "C++ SDK for the AWS notifications service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-notifications "C++ SDK for AWS User Notifications" aws-cpp-sdk-core)
 
 file(GLOB AWS_NOTIFICATIONS_HEADERS
     "include/aws/notifications/*.h"

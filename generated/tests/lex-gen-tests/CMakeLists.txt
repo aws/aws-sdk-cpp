@@ -1,5 +1,5 @@
 add_project(lex-gen-tests
-    "Tests for the AWS LEX C++ SDK"
+    "Tests for the Amazon Lex Runtime Service C++ SDK"
     testing-resources
     aws-cpp-sdk-lex
     aws-cpp-sdk-core)

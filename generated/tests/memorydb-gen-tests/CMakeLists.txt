@@ -1,5 +1,5 @@
 add_project(memorydb-gen-tests
-    "Tests for the AWS MEMORYDB C++ SDK"
+    "Tests for the Amazon MemoryDB C++ SDK"
     testing-resources
     aws-cpp-sdk-memorydb
     aws-cpp-sdk-core)

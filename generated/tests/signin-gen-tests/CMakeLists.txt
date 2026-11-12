@@ -1,5 +1,5 @@
 add_project(signin-gen-tests
-    "Tests for the AWS SIGNIN C++ SDK"
+    "Tests for the AWS Sign-In Service C++ SDK"
     testing-resources
     aws-cpp-sdk-signin
     aws-cpp-sdk-core)

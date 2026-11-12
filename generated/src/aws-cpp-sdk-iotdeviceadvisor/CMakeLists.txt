@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-iotdeviceadvisor "C++ SDK for the AWS iotdeviceadvisor service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-iotdeviceadvisor "C++ SDK for AWS IoT Core Device Advisor" aws-cpp-sdk-core)
 
 file(GLOB AWS_IOTDEVICEADVISOR_HEADERS
     "include/aws/iotdeviceadvisor/*.h"

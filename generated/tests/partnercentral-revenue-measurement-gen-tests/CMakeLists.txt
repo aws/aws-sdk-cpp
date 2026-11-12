@@ -1,5 +1,5 @@
 add_project(partnercentral-revenue-measurement-gen-tests
-    "Tests for the AWS PARTNERCENTRAL-REVENUE-MEASUREMENT C++ SDK"
+    "Tests for the Partner Central Revenue Measurement API C++ SDK"
     testing-resources
     aws-cpp-sdk-partnercentral-revenue-measurement
     aws-cpp-sdk-core)

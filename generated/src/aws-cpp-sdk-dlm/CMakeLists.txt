@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-dlm "C++ SDK for the AWS dlm service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-dlm "C++ SDK for Amazon Data Lifecycle Manager" aws-cpp-sdk-core)
 
 file(GLOB AWS_DLM_HEADERS
     "include/aws/dlm/*.h"

@@ -1,5 +1,5 @@
 add_project(security-ir-gen-tests
-    "Tests for the AWS SECURITY-IR C++ SDK"
+    "Tests for the Security Incident Response C++ SDK"
     testing-resources
     aws-cpp-sdk-security-ir
     aws-cpp-sdk-core)

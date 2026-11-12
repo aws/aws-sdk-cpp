@@ -1,5 +1,5 @@
 add_project(ssm-guiconnect-gen-tests
-    "Tests for the AWS SSM-GUICONNECT C++ SDK"
+    "Tests for the AWS SSM-GUIConnect C++ SDK"
     testing-resources
     aws-cpp-sdk-ssm-guiconnect
     aws-cpp-sdk-core)

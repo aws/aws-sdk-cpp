@@ -1,5 +1,5 @@
 add_project(route53profiles-gen-tests
-    "Tests for the AWS ROUTE53PROFILES C++ SDK"
+    "Tests for the Route 53 Profiles C++ SDK"
     testing-resources
     aws-cpp-sdk-route53profiles
     aws-cpp-sdk-core)

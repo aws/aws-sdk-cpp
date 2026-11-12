@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-cognito-idp "C++ SDK for the AWS cognito-idp service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-cognito-idp "C++ SDK for Amazon Cognito Identity Provider" aws-cpp-sdk-core)
 
 file(GLOB AWS_COGNITO-IDP_HEADERS
     "include/aws/cognito-idp/*.h"

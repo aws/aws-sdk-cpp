@@ -1,5 +1,5 @@
 add_project(qconnect-gen-tests
-    "Tests for the AWS QCONNECT C++ SDK"
+    "Tests for the Amazon Q Connect C++ SDK"
     testing-resources
     aws-cpp-sdk-qconnect
     aws-cpp-sdk-core)

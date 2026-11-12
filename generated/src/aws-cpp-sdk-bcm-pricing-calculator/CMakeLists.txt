@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-bcm-pricing-calculator "C++ SDK for the AWS bcm-pricing-calculator service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-bcm-pricing-calculator "C++ SDK for AWS Billing and Cost Management Pricing Calculator" aws-cpp-sdk-core)
 
 file(GLOB AWS_BCM-PRICING-CALCULATOR_HEADERS
     "include/aws/bcm-pricing-calculator/*.h"

@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-memorydb "C++ SDK for the AWS memorydb service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-memorydb "C++ SDK for Amazon MemoryDB" aws-cpp-sdk-core)
 
 file(GLOB AWS_MEMORYDB_HEADERS
     "include/aws/memorydb/*.h"

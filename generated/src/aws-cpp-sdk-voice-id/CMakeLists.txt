@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-voice-id "C++ SDK for the AWS voice-id service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-voice-id "C++ SDK for Amazon Voice ID" aws-cpp-sdk-core)
 
 file(GLOB AWS_VOICE-ID_HEADERS
     "include/aws/voice-id/*.h"

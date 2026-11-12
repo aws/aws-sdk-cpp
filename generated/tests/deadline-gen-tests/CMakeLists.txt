@@ -1,5 +1,5 @@
 add_project(deadline-gen-tests
-    "Tests for the AWS DEADLINE C++ SDK"
+    "Tests for the AWSDeadlineCloud C++ SDK"
     testing-resources
     aws-cpp-sdk-deadline
     aws-cpp-sdk-core)

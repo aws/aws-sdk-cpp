@@ -1,5 +1,5 @@
 add_project(pipes-gen-tests
-    "Tests for the AWS PIPES C++ SDK"
+    "Tests for the Amazon EventBridge Pipes C++ SDK"
     testing-resources
     aws-cpp-sdk-pipes
     aws-cpp-sdk-core)

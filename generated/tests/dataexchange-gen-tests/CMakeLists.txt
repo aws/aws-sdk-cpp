@@ -1,5 +1,5 @@
 add_project(dataexchange-gen-tests
-    "Tests for the AWS DATAEXCHANGE C++ SDK"
+    "Tests for the AWS Data Exchange C++ SDK"
     testing-resources
     aws-cpp-sdk-dataexchange
     aws-cpp-sdk-core)

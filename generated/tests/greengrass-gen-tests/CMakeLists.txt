@@ -1,5 +1,5 @@
 add_project(greengrass-gen-tests
-    "Tests for the AWS GREENGRASS C++ SDK"
+    "Tests for the AWS Greengrass C++ SDK"
     testing-resources
     aws-cpp-sdk-greengrass
     aws-cpp-sdk-core)

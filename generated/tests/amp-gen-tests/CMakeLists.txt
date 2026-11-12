@@ -1,5 +1,5 @@
 add_project(amp-gen-tests
-    "Tests for the AWS AMP C++ SDK"
+    "Tests for the Amazon Prometheus Service C++ SDK"
     testing-resources
     aws-cpp-sdk-amp
     aws-cpp-sdk-core)

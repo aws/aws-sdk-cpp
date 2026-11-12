@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-lambda-web "C++ SDK for the AWS lambda-web service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-lambda-web "C++ SDK for Lambda Web" aws-cpp-sdk-core)
 
 file(GLOB AWS_LAMBDA-WEB_HEADERS
     "include/aws/lambda-web/*.h"

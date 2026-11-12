@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-partnercentral-account "C++ SDK for the AWS partnercentral-account service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-partnercentral-account "C++ SDK for Partner Central Account API" aws-cpp-sdk-core)
 
 file(GLOB AWS_PARTNERCENTRAL-ACCOUNT_HEADERS
     "include/aws/partnercentral-account/*.h"

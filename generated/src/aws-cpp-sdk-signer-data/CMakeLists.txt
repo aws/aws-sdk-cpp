@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-signer-data "C++ SDK for the AWS signer-data service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-signer-data "C++ SDK for AWS Signer Data Plane" aws-cpp-sdk-core)
 
 file(GLOB AWS_SIGNER-DATA_HEADERS
     "include/aws/signer-data/*.h"

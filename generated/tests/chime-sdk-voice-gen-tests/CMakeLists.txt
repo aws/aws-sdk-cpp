@@ -1,5 +1,5 @@
 add_project(chime-sdk-voice-gen-tests
-    "Tests for the AWS CHIME-SDK-VOICE C++ SDK"
+    "Tests for the Amazon Chime SDK Voice C++ SDK"
     testing-resources
     aws-cpp-sdk-chime-sdk-voice
     aws-cpp-sdk-core)

@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-aiops "C++ SDK for the AWS aiops service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-aiops "C++ SDK for AWS AI Ops" aws-cpp-sdk-core)
 
 file(GLOB AWS_AIOPS_HEADERS
     "include/aws/aiops/*.h"

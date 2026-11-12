@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-ssm "C++ SDK for the AWS ssm service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-ssm "C++ SDK for Amazon Simple Systems Manager (SSM)" aws-cpp-sdk-core)
 
 file(GLOB AWS_SSM_HEADERS
     "include/aws/ssm/*.h"

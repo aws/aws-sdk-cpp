@@ -1,5 +1,5 @@
 add_project(pcs-gen-tests
-    "Tests for the AWS PCS C++ SDK"
+    "Tests for the AWS Parallel Computing Service C++ SDK"
     testing-resources
     aws-cpp-sdk-pcs
     aws-cpp-sdk-core)

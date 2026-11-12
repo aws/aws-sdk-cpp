@@ -1,5 +1,5 @@
 add_project(appintegrations-gen-tests
-    "Tests for the AWS APPINTEGRATIONS C++ SDK"
+    "Tests for the Amazon AppIntegrations Service C++ SDK"
     testing-resources
     aws-cpp-sdk-appintegrations
     aws-cpp-sdk-core)

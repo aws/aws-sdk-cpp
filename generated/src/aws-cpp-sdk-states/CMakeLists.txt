@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-states "C++ SDK for the AWS states service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-states "C++ SDK for AWS Step Functions" aws-cpp-sdk-core)
 
 file(GLOB AWS_STATES_HEADERS
     "include/aws/states/*.h"

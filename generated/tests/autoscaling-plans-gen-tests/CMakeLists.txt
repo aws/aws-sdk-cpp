@@ -1,5 +1,5 @@
 add_project(autoscaling-plans-gen-tests
-    "Tests for the AWS AUTOSCALING-PLANS C++ SDK"
+    "Tests for the AWS Auto Scaling Plans C++ SDK"
     testing-resources
     aws-cpp-sdk-autoscaling-plans
     aws-cpp-sdk-core)

@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-sts "C++ SDK for the AWS sts service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-sts "C++ SDK for AWS Security Token Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_STS_HEADERS
     "include/aws/sts/*.h"

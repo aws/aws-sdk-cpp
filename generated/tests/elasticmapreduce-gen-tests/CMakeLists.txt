@@ -1,5 +1,5 @@
 add_project(elasticmapreduce-gen-tests
-    "Tests for the AWS ELASTICMAPREDUCE C++ SDK"
+    "Tests for the Amazon EMR C++ SDK"
     testing-resources
     aws-cpp-sdk-elasticmapreduce
     aws-cpp-sdk-core)

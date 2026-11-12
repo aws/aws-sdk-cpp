@@ -1,5 +1,5 @@
 add_project(sso-admin-gen-tests
-    "Tests for the AWS SSO-ADMIN C++ SDK"
+    "Tests for the AWS Single Sign-On Admin C++ SDK"
     testing-resources
     aws-cpp-sdk-sso-admin
     aws-cpp-sdk-core)

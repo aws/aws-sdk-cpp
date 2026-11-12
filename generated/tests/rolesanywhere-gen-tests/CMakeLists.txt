@@ -1,5 +1,5 @@
 add_project(rolesanywhere-gen-tests
-    "Tests for the AWS ROLESANYWHERE C++ SDK"
+    "Tests for the IAM Roles Anywhere C++ SDK"
     testing-resources
     aws-cpp-sdk-rolesanywhere
     aws-cpp-sdk-core)

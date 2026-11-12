@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-inspector "C++ SDK for the AWS inspector service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-inspector "C++ SDK for Amazon Inspector" aws-cpp-sdk-core)
 
 file(GLOB AWS_INSPECTOR_HEADERS
     "include/aws/inspector/*.h"

@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-verifiedpermissions "C++ SDK for the AWS verifiedpermissions service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-verifiedpermissions "C++ SDK for Amazon Verified Permissions" aws-cpp-sdk-core)
 
 file(GLOB AWS_VERIFIEDPERMISSIONS_HEADERS
     "include/aws/verifiedpermissions/*.h"

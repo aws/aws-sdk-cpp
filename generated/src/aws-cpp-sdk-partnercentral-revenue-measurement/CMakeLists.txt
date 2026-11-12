@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-partnercentral-revenue-measurement "C++ SDK for the AWS partnercentral-revenue-measurement service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-partnercentral-revenue-measurement "C++ SDK for Partner Central Revenue Measurement API" aws-cpp-sdk-core)
 
 file(GLOB AWS_PARTNERCENTRAL-REVENUE-MEASUREMENT_HEADERS
     "include/aws/partnercentral-revenue-measurement/*.h"

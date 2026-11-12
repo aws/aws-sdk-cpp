@@ -1,5 +1,5 @@
 add_project(route53-recovery-cluster-gen-tests
-    "Tests for the AWS ROUTE53-RECOVERY-CLUSTER C++ SDK"
+    "Tests for the Route53 Recovery Cluster C++ SDK"
     testing-resources
     aws-cpp-sdk-route53-recovery-cluster
     aws-cpp-sdk-core)

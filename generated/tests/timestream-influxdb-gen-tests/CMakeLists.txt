@@ -1,5 +1,5 @@
 add_project(timestream-influxdb-gen-tests
-    "Tests for the AWS TIMESTREAM-INFLUXDB C++ SDK"
+    "Tests for the Timestream InfluxDB C++ SDK"
     testing-resources
     aws-cpp-sdk-timestream-influxdb
     aws-cpp-sdk-core)

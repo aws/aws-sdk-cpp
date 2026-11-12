@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-serverlessrepo "C++ SDK for the AWS serverlessrepo service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-serverlessrepo "C++ SDK for AWSServerlessApplicationRepository" aws-cpp-sdk-core)
 
 file(GLOB AWS_SERVERLESSREPO_HEADERS
     "include/aws/serverlessrepo/*.h"

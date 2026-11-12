@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-uxc "C++ SDK for the AWS uxc service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-uxc "C++ SDK for AWS User Experience Customization" aws-cpp-sdk-core)
 
 file(GLOB AWS_UXC_HEADERS
     "include/aws/uxc/*.h"

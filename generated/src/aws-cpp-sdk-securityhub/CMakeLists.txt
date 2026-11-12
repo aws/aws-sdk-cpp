@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-securityhub "C++ SDK for the AWS securityhub service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-securityhub "C++ SDK for AWS SecurityHub" aws-cpp-sdk-core)
 
 file(GLOB AWS_SECURITYHUB_HEADERS
     "include/aws/securityhub/*.h"

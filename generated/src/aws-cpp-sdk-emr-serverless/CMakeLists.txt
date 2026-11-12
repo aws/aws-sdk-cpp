@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-emr-serverless "C++ SDK for the AWS emr-serverless service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-emr-serverless "C++ SDK for EMR Serverless" aws-cpp-sdk-core)
 
 file(GLOB AWS_EMR-SERVERLESS_HEADERS
     "include/aws/emr-serverless/*.h"

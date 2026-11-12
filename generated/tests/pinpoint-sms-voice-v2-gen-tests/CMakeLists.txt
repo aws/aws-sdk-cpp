@@ -1,5 +1,5 @@
 add_project(pinpoint-sms-voice-v2-gen-tests
-    "Tests for the AWS PINPOINT-SMS-VOICE-V2 C++ SDK"
+    "Tests for the Amazon Pinpoint SMS Voice V2 C++ SDK"
     testing-resources
     aws-cpp-sdk-pinpoint-sms-voice-v2
     aws-cpp-sdk-core)

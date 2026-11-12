@@ -1,5 +1,5 @@
 add_project(ec2-instance-connect-gen-tests
-    "Tests for the AWS EC2-INSTANCE-CONNECT C++ SDK"
+    "Tests for the AWS EC2 Instance Connect C++ SDK"
     testing-resources
     aws-cpp-sdk-ec2-instance-connect
     aws-cpp-sdk-core)

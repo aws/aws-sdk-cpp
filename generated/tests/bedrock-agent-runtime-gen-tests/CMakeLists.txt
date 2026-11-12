@@ -1,5 +1,5 @@
 add_project(bedrock-agent-runtime-gen-tests
-    "Tests for the AWS BEDROCK-AGENT-RUNTIME C++ SDK"
+    "Tests for the Agents for Amazon Bedrock Runtime C++ SDK"
     testing-resources
     aws-cpp-sdk-bedrock-agent-runtime
     aws-cpp-sdk-core)

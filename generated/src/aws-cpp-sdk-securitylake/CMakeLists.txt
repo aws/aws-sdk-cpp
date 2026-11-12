@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-securitylake "C++ SDK for the AWS securitylake service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-securitylake "C++ SDK for Amazon Security Lake" aws-cpp-sdk-core)
 
 file(GLOB AWS_SECURITYLAKE_HEADERS
     "include/aws/securitylake/*.h"

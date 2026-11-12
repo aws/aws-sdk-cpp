@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-schemas "C++ SDK for the AWS schemas service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-schemas "C++ SDK for Schemas" aws-cpp-sdk-core)
 
 file(GLOB AWS_SCHEMAS_HEADERS
     "include/aws/schemas/*.h"

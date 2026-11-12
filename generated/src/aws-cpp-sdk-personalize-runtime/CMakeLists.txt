@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-personalize-runtime "C++ SDK for the AWS personalize-runtime service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-personalize-runtime "C++ SDK for Amazon Personalize Runtime" aws-cpp-sdk-core)
 
 file(GLOB AWS_PERSONALIZE-RUNTIME_HEADERS
     "include/aws/personalize-runtime/*.h"

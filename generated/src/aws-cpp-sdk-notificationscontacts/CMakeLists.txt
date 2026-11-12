@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-notificationscontacts "C++ SDK for the AWS notificationscontacts service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-notificationscontacts "C++ SDK for AWS User Notifications Contacts" aws-cpp-sdk-core)
 
 file(GLOB AWS_NOTIFICATIONSCONTACTS_HEADERS
     "include/aws/notificationscontacts/*.h"

@@ -1,5 +1,5 @@
 add_project(sesv2-gen-tests
-    "Tests for the AWS SESV2 C++ SDK"
+    "Tests for the Amazon Simple Email Service C++ SDK"
     testing-resources
     aws-cpp-sdk-sesv2
     aws-cpp-sdk-core)

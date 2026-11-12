@@ -1,5 +1,5 @@
 add_project(personalize-runtime-gen-tests
-    "Tests for the AWS PERSONALIZE-RUNTIME C++ SDK"
+    "Tests for the Amazon Personalize Runtime C++ SDK"
     testing-resources
     aws-cpp-sdk-personalize-runtime
     aws-cpp-sdk-core)

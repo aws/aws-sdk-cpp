@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-support "C++ SDK for the AWS support service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-support "C++ SDK for AWS Support" aws-cpp-sdk-core)
 
 file(GLOB AWS_SUPPORT_HEADERS
     "include/aws/support/*.h"

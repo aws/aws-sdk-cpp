@@ -1,5 +1,5 @@
 add_project(internetmonitor-gen-tests
-    "Tests for the AWS INTERNETMONITOR C++ SDK"
+    "Tests for the Amazon CloudWatch Internet Monitor C++ SDK"
     testing-resources
     aws-cpp-sdk-internetmonitor
     aws-cpp-sdk-core)

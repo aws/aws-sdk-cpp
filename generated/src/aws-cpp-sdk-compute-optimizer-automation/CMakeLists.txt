@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-compute-optimizer-automation "C++ SDK for the AWS compute-optimizer-automation service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-compute-optimizer-automation "C++ SDK for Compute Optimizer Automation" aws-cpp-sdk-core)
 
 file(GLOB AWS_COMPUTE-OPTIMIZER-AUTOMATION_HEADERS
     "include/aws/compute-optimizer-automation/*.h"

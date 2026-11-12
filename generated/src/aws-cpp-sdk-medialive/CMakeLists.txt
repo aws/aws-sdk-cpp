@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-medialive "C++ SDK for the AWS medialive service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-medialive "C++ SDK for AWS Elemental MediaLive" aws-cpp-sdk-core)
 
 file(GLOB AWS_MEDIALIVE_HEADERS
     "include/aws/medialive/*.h"

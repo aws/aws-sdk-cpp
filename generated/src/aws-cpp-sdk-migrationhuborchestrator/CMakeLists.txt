@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-migrationhuborchestrator "C++ SDK for the AWS migrationhuborchestrator service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-migrationhuborchestrator "C++ SDK for AWS Migration Hub Orchestrator" aws-cpp-sdk-core)
 
 file(GLOB AWS_MIGRATIONHUBORCHESTRATOR_HEADERS
     "include/aws/migrationhuborchestrator/*.h"

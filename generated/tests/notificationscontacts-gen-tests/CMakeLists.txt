@@ -1,5 +1,5 @@
 add_project(notificationscontacts-gen-tests
-    "Tests for the AWS NOTIFICATIONSCONTACTS C++ SDK"
+    "Tests for the AWS User Notifications Contacts C++ SDK"
     testing-resources
     aws-cpp-sdk-notificationscontacts
     aws-cpp-sdk-core)

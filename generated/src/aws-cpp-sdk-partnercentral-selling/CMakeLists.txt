@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-partnercentral-selling "C++ SDK for the AWS partnercentral-selling service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-partnercentral-selling "C++ SDK for Partner Central Selling API" aws-cpp-sdk-core)
 
 file(GLOB AWS_PARTNERCENTRAL-SELLING_HEADERS
     "include/aws/partnercentral-selling/*.h"

@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-eventbridge "C++ SDK for the AWS eventbridge service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-eventbridge "C++ SDK for Amazon EventBridge" aws-cpp-sdk-core)
 
 file(GLOB AWS_EVENTBRIDGE_HEADERS
     "include/aws/eventbridge/*.h"

@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-route53profiles "C++ SDK for the AWS route53profiles service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-route53profiles "C++ SDK for Route 53 Profiles" aws-cpp-sdk-core)
 
 file(GLOB AWS_ROUTE53PROFILES_HEADERS
     "include/aws/route53profiles/*.h"

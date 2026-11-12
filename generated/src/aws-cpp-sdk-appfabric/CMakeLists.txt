@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-appfabric "C++ SDK for the AWS appfabric service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-appfabric "C++ SDK for AppFabric" aws-cpp-sdk-core)
 
 file(GLOB AWS_APPFABRIC_HEADERS
     "include/aws/appfabric/*.h"

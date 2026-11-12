@@ -1,5 +1,5 @@
 add_project(mgn-gen-tests
-    "Tests for the AWS MGN C++ SDK"
+    "Tests for the Application Migration Service C++ SDK"
     testing-resources
     aws-cpp-sdk-mgn
     aws-cpp-sdk-core)

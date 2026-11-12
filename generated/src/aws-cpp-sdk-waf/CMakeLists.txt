@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-waf "C++ SDK for the AWS waf service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-waf "C++ SDK for AWS WAF" aws-cpp-sdk-core)
 
 file(GLOB AWS_WAF_HEADERS
     "include/aws/waf/*.h"

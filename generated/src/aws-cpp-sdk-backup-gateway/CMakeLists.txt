@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-backup-gateway "C++ SDK for the AWS backup-gateway service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-backup-gateway "C++ SDK for AWS Backup Gateway" aws-cpp-sdk-core)
 
 file(GLOB AWS_BACKUP-GATEWAY_HEADERS
     "include/aws/backup-gateway/*.h"

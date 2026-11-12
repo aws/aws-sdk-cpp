@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-eks-auth "C++ SDK for the AWS eks-auth service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-eks-auth "C++ SDK for Amazon EKS Auth" aws-cpp-sdk-core)
 
 file(GLOB AWS_EKS-AUTH_HEADERS
     "include/aws/eks-auth/*.h"

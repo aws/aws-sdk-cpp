@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-iottwinmaker "C++ SDK for the AWS iottwinmaker service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-iottwinmaker "C++ SDK for AWS IoT TwinMaker" aws-cpp-sdk-core)
 
 file(GLOB AWS_IOTTWINMAKER_HEADERS
     "include/aws/iottwinmaker/*.h"

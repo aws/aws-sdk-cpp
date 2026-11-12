@@ -1,5 +1,5 @@
 add_project(codepipeline-gen-tests
-    "Tests for the AWS CODEPIPELINE C++ SDK"
+    "Tests for the AWS CodePipeline C++ SDK"
     testing-resources
     aws-cpp-sdk-codepipeline
     aws-cpp-sdk-core)

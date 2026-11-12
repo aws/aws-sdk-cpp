@@ -1,5 +1,5 @@
 add_project(ssm-sap-gen-tests
-    "Tests for the AWS SSM-SAP C++ SDK"
+    "Tests for the AWS Systems Manager for SAP C++ SDK"
     testing-resources
     aws-cpp-sdk-ssm-sap
     aws-cpp-sdk-core)

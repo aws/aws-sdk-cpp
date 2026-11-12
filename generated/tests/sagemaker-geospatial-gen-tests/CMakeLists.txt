@@ -1,5 +1,5 @@
 add_project(sagemaker-geospatial-gen-tests
-    "Tests for the AWS SAGEMAKER-GEOSPATIAL C++ SDK"
+    "Tests for the Amazon SageMaker geospatial capabilities C++ SDK"
     testing-resources
     aws-cpp-sdk-sagemaker-geospatial
     aws-cpp-sdk-core)

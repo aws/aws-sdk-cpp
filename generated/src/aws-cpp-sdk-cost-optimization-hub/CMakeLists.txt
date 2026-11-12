@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-cost-optimization-hub "C++ SDK for the AWS cost-optimization-hub service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-cost-optimization-hub "C++ SDK for Cost Optimization Hub" aws-cpp-sdk-core)
 
 file(GLOB AWS_COST-OPTIMIZATION-HUB_HEADERS
     "include/aws/cost-optimization-hub/*.h"

@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-continuum "C++ SDK for the AWS continuum service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-continuum "C++ SDK for AWS Continuum" aws-cpp-sdk-core)
 
 file(GLOB AWS_CONTINUUM_HEADERS
     "include/aws/continuum/*.h"

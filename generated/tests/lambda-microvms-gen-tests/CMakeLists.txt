@@ -1,5 +1,5 @@
 add_project(lambda-microvms-gen-tests
-    "Tests for the AWS LAMBDA-MICROVMS C++ SDK"
+    "Tests for the Lambda MicroVMs C++ SDK"
     testing-resources
     aws-cpp-sdk-lambda-microvms
     aws-cpp-sdk-core)

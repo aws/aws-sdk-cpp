@@ -1,5 +1,5 @@
 add_project(rekognition-gen-tests
-    "Tests for the AWS REKOGNITION C++ SDK"
+    "Tests for the Amazon Rekognition C++ SDK"
     testing-resources
     aws-cpp-sdk-rekognition
     aws-cpp-sdk-core)

@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-gamelift "C++ SDK for the AWS gamelift service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-gamelift "C++ SDK for Amazon GameLift" aws-cpp-sdk-core)
 
 file(GLOB AWS_GAMELIFT_HEADERS
     "include/aws/gamelift/*.h"

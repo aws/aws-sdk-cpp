@@ -1,5 +1,5 @@
 add_project(bedrock-data-automation-runtime-gen-tests
-    "Tests for the AWS BEDROCK-DATA-AUTOMATION-RUNTIME C++ SDK"
+    "Tests for the Runtime for Amazon Bedrock Data Automation C++ SDK"
     testing-resources
     aws-cpp-sdk-bedrock-data-automation-runtime
     aws-cpp-sdk-core)

@@ -1,5 +1,5 @@
 add_project(iot-gen-tests
-    "Tests for the AWS IOT C++ SDK"
+    "Tests for the AWS IoT C++ SDK"
     testing-resources
     aws-cpp-sdk-iot
     aws-cpp-sdk-core)

@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-mediaconnect "C++ SDK for the AWS mediaconnect service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-mediaconnect "C++ SDK for AWS MediaConnect" aws-cpp-sdk-core)
 
 file(GLOB AWS_MEDIACONNECT_HEADERS
     "include/aws/mediaconnect/*.h"

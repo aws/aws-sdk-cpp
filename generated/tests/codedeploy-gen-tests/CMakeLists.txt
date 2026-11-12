@@ -1,5 +1,5 @@
 add_project(codedeploy-gen-tests
-    "Tests for the AWS CODEDEPLOY C++ SDK"
+    "Tests for the AWS CodeDeploy C++ SDK"
     testing-resources
     aws-cpp-sdk-codedeploy
     aws-cpp-sdk-core)

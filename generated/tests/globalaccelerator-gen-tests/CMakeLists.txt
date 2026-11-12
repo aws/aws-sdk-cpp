@@ -1,5 +1,5 @@
 add_project(globalaccelerator-gen-tests
-    "Tests for the AWS GLOBALACCELERATOR C++ SDK"
+    "Tests for the AWS Global Accelerator C++ SDK"
     testing-resources
     aws-cpp-sdk-globalaccelerator
     aws-cpp-sdk-core)

@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-mediapackagev2 "C++ SDK for the AWS mediapackagev2 service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-mediapackagev2 "C++ SDK for AWS Elemental MediaPackage v2" aws-cpp-sdk-core)
 
 file(GLOB AWS_MEDIAPACKAGEV2_HEADERS
     "include/aws/mediapackagev2/*.h"

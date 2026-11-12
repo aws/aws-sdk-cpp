@@ -1,5 +1,5 @@
 add_project(codestar-notifications-gen-tests
-    "Tests for the AWS CODESTAR-NOTIFICATIONS C++ SDK"
+    "Tests for the AWS CodeStar Notifications C++ SDK"
     testing-resources
     aws-cpp-sdk-codestar-notifications
     aws-cpp-sdk-core)

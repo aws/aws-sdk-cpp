@@ -1,5 +1,5 @@
 add_project(lightsail-gen-tests
-    "Tests for the AWS LIGHTSAIL C++ SDK"
+    "Tests for the Amazon Lightsail C++ SDK"
     testing-resources
     aws-cpp-sdk-lightsail
     aws-cpp-sdk-core)

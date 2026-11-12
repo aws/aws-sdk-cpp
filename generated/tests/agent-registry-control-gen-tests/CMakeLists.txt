@@ -1,5 +1,5 @@
 add_project(agent-registry-control-gen-tests
-    "Tests for the AWS AGENT-REGISTRY-CONTROL C++ SDK"
+    "Tests for the Agent Registry Control C++ SDK"
     testing-resources
     aws-cpp-sdk-agent-registry-control
     aws-cpp-sdk-core)

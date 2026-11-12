@@ -1,5 +1,5 @@
 add_project(polly-gen-tests
-    "Tests for the AWS POLLY C++ SDK"
+    "Tests for the Amazon Polly C++ SDK"
     testing-resources
     aws-cpp-sdk-polly
     aws-cpp-sdk-core)

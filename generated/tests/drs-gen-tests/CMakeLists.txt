@@ -1,5 +1,5 @@
 add_project(drs-gen-tests
-    "Tests for the AWS DRS C++ SDK"
+    "Tests for the Elastic Disaster Recovery Service C++ SDK"
     testing-resources
     aws-cpp-sdk-drs
     aws-cpp-sdk-core)

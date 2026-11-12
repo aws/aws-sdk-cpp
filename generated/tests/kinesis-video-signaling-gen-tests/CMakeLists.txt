@@ -1,5 +1,5 @@
 add_project(kinesis-video-signaling-gen-tests
-    "Tests for the AWS KINESIS-VIDEO-SIGNALING C++ SDK"
+    "Tests for the Amazon Kinesis Video Signaling Channels C++ SDK"
     testing-resources
     aws-cpp-sdk-kinesis-video-signaling
     aws-cpp-sdk-core)

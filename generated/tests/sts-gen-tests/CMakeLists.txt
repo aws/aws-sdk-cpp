@@ -1,5 +1,5 @@
 add_project(sts-gen-tests
-    "Tests for the AWS STS C++ SDK"
+    "Tests for the AWS Security Token Service C++ SDK"
     testing-resources
     aws-cpp-sdk-sts
     aws-cpp-sdk-core)

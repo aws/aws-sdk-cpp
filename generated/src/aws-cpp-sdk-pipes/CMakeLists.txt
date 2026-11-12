@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-pipes "C++ SDK for the AWS pipes service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-pipes "C++ SDK for Amazon EventBridge Pipes" aws-cpp-sdk-core)
 
 file(GLOB AWS_PIPES_HEADERS
     "include/aws/pipes/*.h"

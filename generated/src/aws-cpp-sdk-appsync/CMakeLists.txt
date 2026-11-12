@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-appsync "C++ SDK for the AWS appsync service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-appsync "C++ SDK for AWS AppSync" aws-cpp-sdk-core)
 
 file(GLOB AWS_APPSYNC_HEADERS
     "include/aws/appsync/*.h"

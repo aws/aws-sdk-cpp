@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-sso "C++ SDK for the AWS sso service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-sso "C++ SDK for AWS Single Sign-On" aws-cpp-sdk-core)
 
 file(GLOB AWS_SSO_HEADERS
     "include/aws/sso/*.h"

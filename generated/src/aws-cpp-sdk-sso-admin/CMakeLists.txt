@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-sso-admin "C++ SDK for the AWS sso-admin service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-sso-admin "C++ SDK for AWS Single Sign-On Admin" aws-cpp-sdk-core)
 
 file(GLOB AWS_SSO-ADMIN_HEADERS
     "include/aws/sso-admin/*.h"

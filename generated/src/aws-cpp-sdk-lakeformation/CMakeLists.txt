@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-lakeformation "C++ SDK for the AWS lakeformation service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-lakeformation "C++ SDK for AWS Lake Formation" aws-cpp-sdk-core)
 
 file(GLOB AWS_LAKEFORMATION_HEADERS
     "include/aws/lakeformation/*.h"

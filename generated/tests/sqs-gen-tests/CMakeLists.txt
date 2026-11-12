@@ -1,5 +1,5 @@
 add_project(sqs-gen-tests
-    "Tests for the AWS SQS C++ SDK"
+    "Tests for the Amazon Simple Queue Service C++ SDK"
     testing-resources
     aws-cpp-sdk-sqs
     aws-cpp-sdk-core)

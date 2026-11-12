@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-managedblockchain "C++ SDK for the AWS managedblockchain service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-managedblockchain "C++ SDK for Amazon Managed Blockchain" aws-cpp-sdk-core)
 
 file(GLOB AWS_MANAGEDBLOCKCHAIN_HEADERS
     "include/aws/managedblockchain/*.h"

@@ -1,5 +1,5 @@
 add_project(importexport-gen-tests
-    "Tests for the AWS IMPORTEXPORT C++ SDK"
+    "Tests for the AWS Import/Export C++ SDK"
     testing-resources
     aws-cpp-sdk-importexport
     aws-cpp-sdk-core)

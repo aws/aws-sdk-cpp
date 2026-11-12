@@ -1,5 +1,5 @@
 add_project(m2-gen-tests
-    "Tests for the AWS M2 C++ SDK"
+    "Tests for the AWSMainframeModernization C++ SDK"
     testing-resources
     aws-cpp-sdk-m2
     aws-cpp-sdk-core)

@@ -1,5 +1,5 @@
 add_project(marketplace-deployment-gen-tests
-    "Tests for the AWS MARKETPLACE-DEPLOYMENT C++ SDK"
+    "Tests for the AWS Marketplace Deployment Service C++ SDK"
     testing-resources
     aws-cpp-sdk-marketplace-deployment
     aws-cpp-sdk-core)

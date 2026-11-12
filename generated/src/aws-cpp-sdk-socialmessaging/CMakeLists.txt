@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-socialmessaging "C++ SDK for the AWS socialmessaging service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-socialmessaging "C++ SDK for AWS End User Messaging Social" aws-cpp-sdk-core)
 
 file(GLOB AWS_SOCIALMESSAGING_HEADERS
     "include/aws/socialmessaging/*.h"

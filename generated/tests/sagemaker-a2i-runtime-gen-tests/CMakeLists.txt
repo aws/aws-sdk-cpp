@@ -1,5 +1,5 @@
 add_project(sagemaker-a2i-runtime-gen-tests
-    "Tests for the AWS SAGEMAKER-A2I-RUNTIME C++ SDK"
+    "Tests for the Amazon Augmented AI Runtime C++ SDK"
     testing-resources
     aws-cpp-sdk-sagemaker-a2i-runtime
     aws-cpp-sdk-core)

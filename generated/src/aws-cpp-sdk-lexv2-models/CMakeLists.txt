@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-lexv2-models "C++ SDK for the AWS lexv2-models service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-lexv2-models "C++ SDK for Amazon Lex Model Building V2" aws-cpp-sdk-core)
 
 file(GLOB AWS_LEXV2-MODELS_HEADERS
     "include/aws/lexv2-models/*.h"

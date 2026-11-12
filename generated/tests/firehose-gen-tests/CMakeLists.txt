@@ -1,5 +1,5 @@
 add_project(firehose-gen-tests
-    "Tests for the AWS FIREHOSE C++ SDK"
+    "Tests for the Amazon Kinesis Firehose C++ SDK"
     testing-resources
     aws-cpp-sdk-firehose
     aws-cpp-sdk-core)

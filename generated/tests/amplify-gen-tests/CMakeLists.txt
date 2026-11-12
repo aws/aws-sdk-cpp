@@ -1,5 +1,5 @@
 add_project(amplify-gen-tests
-    "Tests for the AWS AMPLIFY C++ SDK"
+    "Tests for the AWS Amplify C++ SDK"
     testing-resources
     aws-cpp-sdk-amplify
     aws-cpp-sdk-core)

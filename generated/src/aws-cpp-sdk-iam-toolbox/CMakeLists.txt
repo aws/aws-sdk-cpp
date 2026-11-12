@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-iam-toolbox "C++ SDK for the AWS iam-toolbox service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-iam-toolbox "C++ SDK for IAM Toolbox (Preview)" aws-cpp-sdk-core)
 
 file(GLOB AWS_IAM-TOOLBOX_HEADERS
     "include/aws/iam-toolbox/*.h"

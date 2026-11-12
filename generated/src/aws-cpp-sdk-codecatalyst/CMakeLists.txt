@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-codecatalyst "C++ SDK for the AWS codecatalyst service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-codecatalyst "C++ SDK for Amazon CodeCatalyst" aws-cpp-sdk-core)
 
 file(GLOB AWS_CODECATALYST_HEADERS
     "include/aws/codecatalyst/*.h"

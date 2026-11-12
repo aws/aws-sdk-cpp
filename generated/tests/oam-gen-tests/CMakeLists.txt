@@ -1,5 +1,5 @@
 add_project(oam-gen-tests
-    "Tests for the AWS OAM C++ SDK"
+    "Tests for the CloudWatch Observability Access Manager C++ SDK"
     testing-resources
     aws-cpp-sdk-oam
     aws-cpp-sdk-core)

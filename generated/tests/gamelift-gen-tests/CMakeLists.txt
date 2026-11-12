@@ -1,5 +1,5 @@
 add_project(gamelift-gen-tests
-    "Tests for the AWS GAMELIFT C++ SDK"
+    "Tests for the Amazon GameLift C++ SDK"
     testing-resources
     aws-cpp-sdk-gamelift
     aws-cpp-sdk-core)

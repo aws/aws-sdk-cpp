@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-discovery "C++ SDK for the AWS discovery service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-discovery "C++ SDK for AWS Application Discovery Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_DISCOVERY_HEADERS
     "include/aws/discovery/*.h"

@@ -1,5 +1,5 @@
 add_project(waf-regional-gen-tests
-    "Tests for the AWS WAF-REGIONAL C++ SDK"
+    "Tests for the AWS WAF Regional C++ SDK"
     testing-resources
     aws-cpp-sdk-waf-regional
     aws-cpp-sdk-core)

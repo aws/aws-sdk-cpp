@@ -1,5 +1,5 @@
 add_project(xray-gen-tests
-    "Tests for the AWS XRAY C++ SDK"
+    "Tests for the AWS X-Ray C++ SDK"
     testing-resources
     aws-cpp-sdk-xray
     aws-cpp-sdk-core)

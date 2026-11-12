@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-connectparticipant "C++ SDK for the AWS connectparticipant service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-connectparticipant "C++ SDK for Amazon Connect Participant Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_CONNECTPARTICIPANT_HEADERS
     "include/aws/connectparticipant/*.h"

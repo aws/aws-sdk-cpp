@@ -1,5 +1,5 @@
 add_project(s3files-gen-tests
-    "Tests for the AWS S3FILES C++ SDK"
+    "Tests for the Amazon S3 Files C++ SDK"
     testing-resources
     aws-cpp-sdk-s3files
     aws-cpp-sdk-core)

@@ -1,5 +1,5 @@
 add_project(cloudfront-keyvaluestore-gen-tests
-    "Tests for the AWS CLOUDFRONT-KEYVALUESTORE C++ SDK"
+    "Tests for the Amazon CloudFront KeyValueStore C++ SDK"
     testing-resources
     aws-cpp-sdk-cloudfront-keyvaluestore
     aws-cpp-sdk-core)

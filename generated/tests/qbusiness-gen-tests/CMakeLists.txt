@@ -1,5 +1,5 @@
 add_project(qbusiness-gen-tests
-    "Tests for the AWS QBUSINESS C++ SDK"
+    "Tests for the QBusiness C++ SDK"
     testing-resources
     aws-cpp-sdk-qbusiness
     aws-cpp-sdk-core)

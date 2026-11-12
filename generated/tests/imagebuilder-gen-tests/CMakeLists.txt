@@ -1,5 +1,5 @@
 add_project(imagebuilder-gen-tests
-    "Tests for the AWS IMAGEBUILDER C++ SDK"
+    "Tests for the EC2 Image Builder C++ SDK"
     testing-resources
     aws-cpp-sdk-imagebuilder
     aws-cpp-sdk-core)

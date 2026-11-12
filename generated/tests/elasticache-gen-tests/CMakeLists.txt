@@ -1,5 +1,5 @@
 add_project(elasticache-gen-tests
-    "Tests for the AWS ELASTICACHE C++ SDK"
+    "Tests for the Amazon ElastiCache C++ SDK"
     testing-resources
     aws-cpp-sdk-elasticache
     aws-cpp-sdk-core)

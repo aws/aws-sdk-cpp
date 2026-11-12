@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-scheduler "C++ SDK for the AWS scheduler service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-scheduler "C++ SDK for Amazon EventBridge Scheduler" aws-cpp-sdk-core)
 
 file(GLOB AWS_SCHEDULER_HEADERS
     "include/aws/scheduler/*.h"

@@ -1,5 +1,5 @@
 add_project(cognito-sync-gen-tests
-    "Tests for the AWS COGNITO-SYNC C++ SDK"
+    "Tests for the Amazon Cognito Sync C++ SDK"
     testing-resources
     aws-cpp-sdk-cognito-sync
     aws-cpp-sdk-core)

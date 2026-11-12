@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-resource-groups "C++ SDK for the AWS resource-groups service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-resource-groups "C++ SDK for AWS Resource Groups" aws-cpp-sdk-core)
 
 file(GLOB AWS_RESOURCE-GROUPS_HEADERS
     "include/aws/resource-groups/*.h"

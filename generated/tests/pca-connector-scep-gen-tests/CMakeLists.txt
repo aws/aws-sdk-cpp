@@ -1,5 +1,5 @@
 add_project(pca-connector-scep-gen-tests
-    "Tests for the AWS PCA-CONNECTOR-SCEP C++ SDK"
+    "Tests for the Private CA Connector for SCEP C++ SDK"
     testing-resources
     aws-cpp-sdk-pca-connector-scep
     aws-cpp-sdk-core)

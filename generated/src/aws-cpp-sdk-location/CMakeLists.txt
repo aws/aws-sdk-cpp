@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-location "C++ SDK for the AWS location service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-location "C++ SDK for Amazon Location Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_LOCATION_HEADERS
     "include/aws/location/*.h"

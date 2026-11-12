@@ -1,5 +1,5 @@
 add_project(servicecatalog-appregistry-gen-tests
-    "Tests for the AWS SERVICECATALOG-APPREGISTRY C++ SDK"
+    "Tests for the AWS Service Catalog App Registry C++ SDK"
     testing-resources
     aws-cpp-sdk-servicecatalog-appregistry
     aws-cpp-sdk-core)

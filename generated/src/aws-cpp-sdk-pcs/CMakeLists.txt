@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-pcs "C++ SDK for the AWS pcs service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-pcs "C++ SDK for AWS Parallel Computing Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_PCS_HEADERS
     "include/aws/pcs/*.h"

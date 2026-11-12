@@ -1,5 +1,5 @@
 add_project(backup-gen-tests
-    "Tests for the AWS BACKUP C++ SDK"
+    "Tests for the AWS Backup C++ SDK"
     testing-resources
     aws-cpp-sdk-backup
     aws-cpp-sdk-core)

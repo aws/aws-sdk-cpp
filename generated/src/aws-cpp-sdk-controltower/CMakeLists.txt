@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-controltower "C++ SDK for the AWS controltower service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-controltower "C++ SDK for AWS Control Tower" aws-cpp-sdk-core)
 
 file(GLOB AWS_CONTROLTOWER_HEADERS
     "include/aws/controltower/*.h"

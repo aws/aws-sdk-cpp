@@ -1,5 +1,5 @@
 add_project(bcm-dashboards-gen-tests
-    "Tests for the AWS BCM-DASHBOARDS C++ SDK"
+    "Tests for the AWS Billing and Cost Management Dashboards C++ SDK"
     testing-resources
     aws-cpp-sdk-bcm-dashboards
     aws-cpp-sdk-core)

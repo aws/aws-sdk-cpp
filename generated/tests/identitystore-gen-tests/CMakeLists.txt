@@ -1,5 +1,5 @@
 add_project(identitystore-gen-tests
-    "Tests for the AWS IDENTITYSTORE C++ SDK"
+    "Tests for the AWS SSO Identity Store C++ SDK"
     testing-resources
     aws-cpp-sdk-identitystore
     aws-cpp-sdk-core)

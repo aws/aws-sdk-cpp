@@ -1,5 +1,5 @@
 add_project(marketplace-agreement-gen-tests
-    "Tests for the AWS MARKETPLACE-AGREEMENT C++ SDK"
+    "Tests for the AWS Marketplace Agreement Service C++ SDK"
     testing-resources
     aws-cpp-sdk-marketplace-agreement
     aws-cpp-sdk-core)

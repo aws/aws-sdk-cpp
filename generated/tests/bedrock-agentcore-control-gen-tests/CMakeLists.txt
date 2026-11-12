@@ -1,5 +1,5 @@
 add_project(bedrock-agentcore-control-gen-tests
-    "Tests for the AWS BEDROCK-AGENTCORE-CONTROL C++ SDK"
+    "Tests for the Amazon Bedrock AgentCore Control C++ SDK"
     testing-resources
     aws-cpp-sdk-bedrock-agentcore-control
     aws-cpp-sdk-core)

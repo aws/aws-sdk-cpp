@@ -1,5 +1,5 @@
 add_project(payment-cryptography-data-gen-tests
-    "Tests for the AWS PAYMENT-CRYPTOGRAPHY-DATA C++ SDK"
+    "Tests for the Payment Cryptography Data Plane C++ SDK"
     testing-resources
     aws-cpp-sdk-payment-cryptography-data
     aws-cpp-sdk-core)

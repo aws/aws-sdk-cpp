@@ -1,5 +1,5 @@
 add_project(redshift-data-gen-tests
-    "Tests for the AWS REDSHIFT-DATA C++ SDK"
+    "Tests for the Redshift Data API Service C++ SDK"
     testing-resources
     aws-cpp-sdk-redshift-data
     aws-cpp-sdk-core)

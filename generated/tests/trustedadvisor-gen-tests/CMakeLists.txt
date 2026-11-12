@@ -1,5 +1,5 @@
 add_project(trustedadvisor-gen-tests
-    "Tests for the AWS TRUSTEDADVISOR C++ SDK"
+    "Tests for the TrustedAdvisor Public API C++ SDK"
     testing-resources
     aws-cpp-sdk-trustedadvisor
     aws-cpp-sdk-core)

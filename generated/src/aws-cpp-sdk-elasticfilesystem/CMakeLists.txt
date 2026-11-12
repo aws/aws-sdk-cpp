@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-elasticfilesystem "C++ SDK for the AWS elasticfilesystem service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-elasticfilesystem "C++ SDK for Amazon Elastic File System" aws-cpp-sdk-core)
 
 file(GLOB AWS_ELASTICFILESYSTEM_HEADERS
     "include/aws/elasticfilesystem/*.h"

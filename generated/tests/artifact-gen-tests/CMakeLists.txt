@@ -1,5 +1,5 @@
 add_project(artifact-gen-tests
-    "Tests for the AWS ARTIFACT C++ SDK"
+    "Tests for the AWS Artifact C++ SDK"
     testing-resources
     aws-cpp-sdk-artifact
     aws-cpp-sdk-core)

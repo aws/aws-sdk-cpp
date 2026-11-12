@@ -1,5 +1,5 @@
 add_project(snowball-gen-tests
-    "Tests for the AWS SNOWBALL C++ SDK"
+    "Tests for the Amazon Import/Export Snowball C++ SDK"
     testing-resources
     aws-cpp-sdk-snowball
     aws-cpp-sdk-core)

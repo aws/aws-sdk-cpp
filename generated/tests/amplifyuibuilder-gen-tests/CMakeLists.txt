@@ -1,5 +1,5 @@
 add_project(amplifyuibuilder-gen-tests
-    "Tests for the AWS AMPLIFYUIBUILDER C++ SDK"
+    "Tests for the AWS Amplify UI Builder C++ SDK"
     testing-resources
     aws-cpp-sdk-amplifyuibuilder
     aws-cpp-sdk-core)

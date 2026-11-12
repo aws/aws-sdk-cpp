@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-kendra "C++ SDK for the AWS kendra service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-kendra "C++ SDK for AWSKendraFrontendService" aws-cpp-sdk-core)
 
 file(GLOB AWS_KENDRA_HEADERS
     "include/aws/kendra/*.h"

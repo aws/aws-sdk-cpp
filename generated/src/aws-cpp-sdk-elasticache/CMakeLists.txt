@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-elasticache "C++ SDK for the AWS elasticache service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-elasticache "C++ SDK for Amazon ElastiCache" aws-cpp-sdk-core)
 
 file(GLOB AWS_ELASTICACHE_HEADERS
     "include/aws/elasticache/*.h"

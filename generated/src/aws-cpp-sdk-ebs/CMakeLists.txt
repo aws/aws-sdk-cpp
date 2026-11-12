@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-ebs "C++ SDK for the AWS ebs service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-ebs "C++ SDK for Amazon Elastic Block Store" aws-cpp-sdk-core)
 
 file(GLOB AWS_EBS_HEADERS
     "include/aws/ebs/*.h"

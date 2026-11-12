@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-bcm-data-exports "C++ SDK for the AWS bcm-data-exports service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-bcm-data-exports "C++ SDK for AWS Billing and Cost Management Data Exports" aws-cpp-sdk-core)
 
 file(GLOB AWS_BCM-DATA-EXPORTS_HEADERS
     "include/aws/bcm-data-exports/*.h"

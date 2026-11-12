@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-workspaces-thin-client "C++ SDK for the AWS workspaces-thin-client service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-workspaces-thin-client "C++ SDK for Amazon WorkSpaces Thin Client" aws-cpp-sdk-core)
 
 file(GLOB AWS_WORKSPACES-THIN-CLIENT_HEADERS
     "include/aws/workspaces-thin-client/*.h"

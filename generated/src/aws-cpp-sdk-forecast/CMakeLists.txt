@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-forecast "C++ SDK for the AWS forecast service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-forecast "C++ SDK for Amazon Forecast Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_FORECAST_HEADERS
     "include/aws/forecast/*.h"

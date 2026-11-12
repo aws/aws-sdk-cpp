@@ -1,5 +1,5 @@
 add_project(budgets-gen-tests
-    "Tests for the AWS BUDGETS C++ SDK"
+    "Tests for the AWS Budgets C++ SDK"
     testing-resources
     aws-cpp-sdk-budgets
     aws-cpp-sdk-core)

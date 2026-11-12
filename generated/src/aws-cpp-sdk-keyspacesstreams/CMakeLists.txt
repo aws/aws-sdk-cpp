@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-keyspacesstreams "C++ SDK for the AWS keyspacesstreams service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-keyspacesstreams "C++ SDK for Amazon Keyspaces Streams" aws-cpp-sdk-core)
 
 file(GLOB AWS_KEYSPACESSTREAMS_HEADERS
     "include/aws/keyspacesstreams/*.h"

@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-auditmanager "C++ SDK for the AWS auditmanager service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-auditmanager "C++ SDK for AWS Audit Manager" aws-cpp-sdk-core)
 
 file(GLOB AWS_AUDITMANAGER_HEADERS
     "include/aws/auditmanager/*.h"

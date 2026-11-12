@@ -1,5 +1,5 @@
 add_project(sdb-gen-tests
-    "Tests for the AWS SDB C++ SDK"
+    "Tests for the Amazon SimpleDB C++ SDK"
     testing-resources
     aws-cpp-sdk-sdb
     aws-cpp-sdk-core)

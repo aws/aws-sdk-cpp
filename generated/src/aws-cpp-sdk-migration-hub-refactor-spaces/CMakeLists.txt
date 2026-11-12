@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-migration-hub-refactor-spaces "C++ SDK for the AWS migration-hub-refactor-spaces service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-migration-hub-refactor-spaces "C++ SDK for AWS Migration Hub Refactor Spaces" aws-cpp-sdk-core)
 
 file(GLOB AWS_MIGRATION-HUB-REFACTOR-SPACES_HEADERS
     "include/aws/migration-hub-refactor-spaces/*.h"

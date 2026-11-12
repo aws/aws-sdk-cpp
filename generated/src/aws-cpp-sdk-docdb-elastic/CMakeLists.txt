@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-docdb-elastic "C++ SDK for the AWS docdb-elastic service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-docdb-elastic "C++ SDK for Amazon DocumentDB Elastic Clusters" aws-cpp-sdk-core)
 
 file(GLOB AWS_DOCDB-ELASTIC_HEADERS
     "include/aws/docdb-elastic/*.h"

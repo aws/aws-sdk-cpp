@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-deadline "C++ SDK for the AWS deadline service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-deadline "C++ SDK for AWSDeadlineCloud" aws-cpp-sdk-core)
 
 file(GLOB AWS_DEADLINE_HEADERS
     "include/aws/deadline/*.h"

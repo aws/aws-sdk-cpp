@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-odb "C++ SDK for the AWS odb service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-odb "C++ SDK for odb" aws-cpp-sdk-core)
 
 file(GLOB AWS_ODB_HEADERS
     "include/aws/odb/*.h"

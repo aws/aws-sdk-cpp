@@ -1,5 +1,5 @@
 add_project(pca-connector-ad-gen-tests
-    "Tests for the AWS PCA-CONNECTOR-AD C++ SDK"
+    "Tests for the PcaConnectorAd C++ SDK"
     testing-resources
     aws-cpp-sdk-pca-connector-ad
     aws-cpp-sdk-core)

@@ -1,5 +1,5 @@
 add_project(lakeformation-gen-tests
-    "Tests for the AWS LAKEFORMATION C++ SDK"
+    "Tests for the AWS Lake Formation C++ SDK"
     testing-resources
     aws-cpp-sdk-lakeformation
     aws-cpp-sdk-core)

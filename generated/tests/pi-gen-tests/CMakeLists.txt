@@ -1,5 +1,5 @@
 add_project(pi-gen-tests
-    "Tests for the AWS PI C++ SDK"
+    "Tests for the AWS Performance Insights C++ SDK"
     testing-resources
     aws-cpp-sdk-pi
     aws-cpp-sdk-core)

@@ -1,5 +1,5 @@
 add_project(kinesisanalyticsv2-gen-tests
-    "Tests for the AWS KINESISANALYTICSV2 C++ SDK"
+    "Tests for the Amazon Kinesis Analytics C++ SDK"
     testing-resources
     aws-cpp-sdk-kinesisanalyticsv2
     aws-cpp-sdk-core)

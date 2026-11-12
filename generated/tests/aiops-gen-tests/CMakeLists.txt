@@ -1,5 +1,5 @@
 add_project(aiops-gen-tests
-    "Tests for the AWS AIOPS C++ SDK"
+    "Tests for the AWS AI Ops C++ SDK"
     testing-resources
     aws-cpp-sdk-aiops
     aws-cpp-sdk-core)

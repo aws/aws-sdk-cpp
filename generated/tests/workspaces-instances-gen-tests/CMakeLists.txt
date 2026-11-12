@@ -1,5 +1,5 @@
 add_project(workspaces-instances-gen-tests
-    "Tests for the AWS WORKSPACES-INSTANCES C++ SDK"
+    "Tests for the Amazon Workspaces Instances C++ SDK"
     testing-resources
     aws-cpp-sdk-workspaces-instances
     aws-cpp-sdk-core)

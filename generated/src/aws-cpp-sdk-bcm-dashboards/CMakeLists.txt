@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-bcm-dashboards "C++ SDK for the AWS bcm-dashboards service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-bcm-dashboards "C++ SDK for AWS Billing and Cost Management Dashboards" aws-cpp-sdk-core)
 
 file(GLOB AWS_BCM-DASHBOARDS_HEADERS
     "include/aws/bcm-dashboards/*.h"

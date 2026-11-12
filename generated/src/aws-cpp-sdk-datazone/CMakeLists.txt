@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-datazone "C++ SDK for the AWS datazone service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-datazone "C++ SDK for Amazon DataZone" aws-cpp-sdk-core)
 
 file(GLOB AWS_DATAZONE_HEADERS
     "include/aws/datazone/*.h"

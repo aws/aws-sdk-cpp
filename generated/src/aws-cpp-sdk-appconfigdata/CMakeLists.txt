@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-appconfigdata "C++ SDK for the AWS appconfigdata service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-appconfigdata "C++ SDK for AWS AppConfig Data" aws-cpp-sdk-core)
 
 file(GLOB AWS_APPCONFIGDATA_HEADERS
     "include/aws/appconfigdata/*.h"

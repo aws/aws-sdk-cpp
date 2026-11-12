@@ -1,5 +1,5 @@
 add_project(snow-device-management-gen-tests
-    "Tests for the AWS SNOW-DEVICE-MANAGEMENT C++ SDK"
+    "Tests for the AWS Snow Device Management C++ SDK"
     testing-resources
     aws-cpp-sdk-snow-device-management
     aws-cpp-sdk-core)

@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-rekognition "C++ SDK for the AWS rekognition service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-rekognition "C++ SDK for Amazon Rekognition" aws-cpp-sdk-core)
 
 file(GLOB AWS_REKOGNITION_HEADERS
     "include/aws/rekognition/*.h"

@@ -1,5 +1,5 @@
 add_project(detective-gen-tests
-    "Tests for the AWS DETECTIVE C++ SDK"
+    "Tests for the Amazon Detective C++ SDK"
     testing-resources
     aws-cpp-sdk-detective
     aws-cpp-sdk-core)

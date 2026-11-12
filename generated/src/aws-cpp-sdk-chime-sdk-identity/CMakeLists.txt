@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-chime-sdk-identity "C++ SDK for the AWS chime-sdk-identity service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-chime-sdk-identity "C++ SDK for Amazon Chime SDK Identity" aws-cpp-sdk-core)
 
 file(GLOB AWS_CHIME-SDK-IDENTITY_HEADERS
     "include/aws/chime-sdk-identity/*.h"

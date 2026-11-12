@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-events "C++ SDK for the AWS events service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-events "C++ SDK for Amazon CloudWatch Events" aws-cpp-sdk-core)
 
 file(GLOB AWS_EVENTS_HEADERS
     "include/aws/events/*.h"
