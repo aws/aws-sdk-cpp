@@ -5,14 +5,48 @@
 
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/cbor/CborValue.h>
 #include <aws/servicediscovery/ServiceDiscoveryErrors.h>
+#include <aws/servicediscovery/model/DuplicateRequest.h>
+#include <aws/servicediscovery/model/NamespaceAlreadyExists.h>
+#include <aws/servicediscovery/model/ServiceAlreadyExists.h>
+#include <aws/servicediscovery/model/TooManyTagsException.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::ServiceDiscovery;
+using namespace Aws::ServiceDiscovery::Model;
 
 namespace Aws {
 namespace ServiceDiscovery {
+template <>
+AWS_SERVICEDISCOVERY_API NamespaceAlreadyExists ServiceDiscoveryError::GetModeledError() {
+  assert(this->GetErrorType() == ServiceDiscoveryErrors::NAMESPACE_ALREADY_EXISTS);
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return NamespaceAlreadyExists(payload.GetDecoder());
+}
+
+template <>
+AWS_SERVICEDISCOVERY_API DuplicateRequest ServiceDiscoveryError::GetModeledError() {
+  assert(this->GetErrorType() == ServiceDiscoveryErrors::DUPLICATE_REQUEST);
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return DuplicateRequest(payload.GetDecoder());
+}
+
+template <>
+AWS_SERVICEDISCOVERY_API ServiceAlreadyExists ServiceDiscoveryError::GetModeledError() {
+  assert(this->GetErrorType() == ServiceDiscoveryErrors::SERVICE_ALREADY_EXISTS);
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return ServiceAlreadyExists(payload.GetDecoder());
+}
+
+template <>
+AWS_SERVICEDISCOVERY_API TooManyTagsException ServiceDiscoveryError::GetModeledError() {
+  assert(this->GetErrorType() == ServiceDiscoveryErrors::TOO_MANY_TAGS);
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return TooManyTagsException(payload.GetDecoder());
+}
+
 namespace ServiceDiscoveryErrorMapper {
 
 static const int NAMESPACE_ALREADY_EXISTS_HASH = HashingUtils::HashString("NamespaceAlreadyExists");

@@ -4,15 +4,25 @@
  */
 
 #include <aws/application-insights/ApplicationInsightsErrors.h>
+#include <aws/application-insights/model/TooManyTagsException.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/cbor/CborValue.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::ApplicationInsights;
+using namespace Aws::ApplicationInsights::Model;
 
 namespace Aws {
 namespace ApplicationInsights {
+template <>
+AWS_APPLICATIONINSIGHTS_API TooManyTagsException ApplicationInsightsError::GetModeledError() {
+  assert(this->GetErrorType() == ApplicationInsightsErrors::TOO_MANY_TAGS);
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return TooManyTagsException(payload.GetDecoder());
+}
+
 namespace ApplicationInsightsErrorMapper {
 
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");

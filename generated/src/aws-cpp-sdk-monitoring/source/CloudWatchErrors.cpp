@@ -5,14 +5,32 @@
 
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/cbor/CborValue.h>
 #include <aws/monitoring/CloudWatchErrors.h>
+#include <aws/monitoring/model/DashboardInvalidInputError.h>
+#include <aws/monitoring/model/ResourceNotFoundException.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::CloudWatch;
+using namespace Aws::CloudWatch::Model;
 
 namespace Aws {
 namespace CloudWatch {
+template <>
+AWS_CLOUDWATCH_API ResourceNotFoundException CloudWatchError::GetModeledError() {
+  assert(this->GetErrorType() == CloudWatchErrors::RESOURCE_NOT_FOUND);
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return ResourceNotFoundException(payload.GetDecoder());
+}
+
+template <>
+AWS_CLOUDWATCH_API DashboardInvalidInputError CloudWatchError::GetModeledError() {
+  assert(this->GetErrorType() == CloudWatchErrors::DASHBOARD_INVALID_INPUT);
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return DashboardInvalidInputError(payload.GetDecoder());
+}
+
 namespace CloudWatchErrorMapper {
 
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");

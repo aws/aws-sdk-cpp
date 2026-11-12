@@ -19,12 +19,14 @@ namespace Aws
         enum class CoreErrors;
         class XmlErrorMarshaller;
         class JsonErrorMarshaller;
+        class RpcV2ErrorMarshaller;
 
         enum class ErrorPayloadType
         {
             NOT_SET,
             XML,
-            JSON
+            JSON,
+            CBOR
         };
 
         enum class RetryableType
@@ -44,6 +46,7 @@ namespace Aws
         friend class XmlErrorMarshaller;
         friend class JsonErrorMarshaller;
         friend class JsonErrorMarshallerQueryCompatible;
+        friend class RpcV2ErrorMarshaller;
         template<typename T> friend class AWSError;
         public:
             /**
@@ -103,6 +106,7 @@ namespace Aws
                 m_errorPayloadType(rhs.m_errorPayloadType),
                 m_xmlPayload(std::move(rhs.m_xmlPayload)),
                 m_jsonPayload(std::move(rhs.m_jsonPayload)),
+                m_cborPayload(std::move(rhs.m_cborPayload)),
                 m_retryableType(rhs.m_retryableType)
             {}
 
@@ -118,6 +122,7 @@ namespace Aws
                 m_errorPayloadType(rhs.m_errorPayloadType),
                 m_xmlPayload(rhs.m_xmlPayload),
                 m_jsonPayload(rhs.m_jsonPayload),
+                m_cborPayload(rhs.m_cborPayload),
                 m_retryableType(rhs.m_retryableType)
             {}
 
@@ -246,6 +251,16 @@ namespace Aws
                 assert(m_errorPayloadType != ErrorPayloadType::XML);
                 return m_jsonPayload;
             }
+            inline void SetCborPayload(Aws::String&& cborPayload)
+            {
+                m_errorPayloadType = ErrorPayloadType::CBOR;
+                m_cborPayload = std::move(cborPayload);
+            }
+            inline const Aws::String& GetCborPayload() const
+            {
+                assert(m_errorPayloadType != ErrorPayloadType::XML && m_errorPayloadType != ErrorPayloadType::JSON);
+                return m_cborPayload;
+            }
 
             ERROR_TYPE m_errorType;
             Aws::String m_exceptionName;
@@ -258,6 +273,7 @@ namespace Aws
             ErrorPayloadType m_errorPayloadType = ErrorPayloadType::NOT_SET;
             Aws::Utils::Xml::XmlDocument m_xmlPayload;
             Aws::Utils::Json::JsonValue m_jsonPayload;
+            Aws::String m_cborPayload;
             RetryableType m_retryableType;
         };
 

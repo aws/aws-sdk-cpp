@@ -5,14 +5,72 @@
 
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/cbor/CborValue.h>
 #include <aws/workspaces-instances/WorkspacesInstancesErrors.h>
+#include <aws/workspaces-instances/model/ConflictException.h>
+#include <aws/workspaces-instances/model/InternalServerException.h>
+#include <aws/workspaces-instances/model/ResourceNotFoundException.h>
+#include <aws/workspaces-instances/model/ServiceQuotaExceededException.h>
+#include <aws/workspaces-instances/model/ThrottlingException.h>
+#include <aws/workspaces-instances/model/ValidationException.h>
+#include <aws/workspaces-instances/model/VolumeModificationRateExceededException.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::WorkspacesInstances;
+using namespace Aws::WorkspacesInstances::Model;
 
 namespace Aws {
 namespace WorkspacesInstances {
+template <>
+AWS_WORKSPACESINSTANCES_API ConflictException WorkspacesInstancesError::GetModeledError() {
+  assert(this->GetErrorType() == WorkspacesInstancesErrors::CONFLICT);
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return ConflictException(payload.GetDecoder());
+}
+
+template <>
+AWS_WORKSPACESINSTANCES_API ThrottlingException WorkspacesInstancesError::GetModeledError() {
+  assert(this->GetErrorType() == WorkspacesInstancesErrors::THROTTLING);
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return ThrottlingException(payload.GetDecoder());
+}
+
+template <>
+AWS_WORKSPACESINSTANCES_API ServiceQuotaExceededException WorkspacesInstancesError::GetModeledError() {
+  assert(this->GetErrorType() == WorkspacesInstancesErrors::SERVICE_QUOTA_EXCEEDED);
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return ServiceQuotaExceededException(payload.GetDecoder());
+}
+
+template <>
+AWS_WORKSPACESINSTANCES_API VolumeModificationRateExceededException WorkspacesInstancesError::GetModeledError() {
+  assert(this->GetErrorType() == WorkspacesInstancesErrors::VOLUME_MODIFICATION_RATE_EXCEEDED);
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return VolumeModificationRateExceededException(payload.GetDecoder());
+}
+
+template <>
+AWS_WORKSPACESINSTANCES_API ResourceNotFoundException WorkspacesInstancesError::GetModeledError() {
+  assert(this->GetErrorType() == WorkspacesInstancesErrors::RESOURCE_NOT_FOUND);
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return ResourceNotFoundException(payload.GetDecoder());
+}
+
+template <>
+AWS_WORKSPACESINSTANCES_API InternalServerException WorkspacesInstancesError::GetModeledError() {
+  assert(this->GetErrorType() == WorkspacesInstancesErrors::INTERNAL_SERVER);
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return InternalServerException(payload.GetDecoder());
+}
+
+template <>
+AWS_WORKSPACESINSTANCES_API ValidationException WorkspacesInstancesError::GetModeledError() {
+  assert(this->GetErrorType() == WorkspacesInstancesErrors::VALIDATION);
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return ValidationException(payload.GetDecoder());
+}
+
 namespace WorkspacesInstancesErrorMapper {
 
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");

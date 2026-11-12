@@ -5,14 +5,32 @@
 
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/cbor/CborValue.h>
 #include <aws/snowball/SnowballErrors.h>
+#include <aws/snowball/model/ConflictException.h>
+#include <aws/snowball/model/InvalidResourceException.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::Snowball;
+using namespace Aws::Snowball::Model;
 
 namespace Aws {
 namespace Snowball {
+template <>
+AWS_SNOWBALL_API ConflictException SnowballError::GetModeledError() {
+  assert(this->GetErrorType() == SnowballErrors::CONFLICT);
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return ConflictException(payload.GetDecoder());
+}
+
+template <>
+AWS_SNOWBALL_API InvalidResourceException SnowballError::GetModeledError() {
+  assert(this->GetErrorType() == SnowballErrors::INVALID_RESOURCE);
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return InvalidResourceException(payload.GetDecoder());
+}
+
 namespace SnowballErrorMapper {
 
 static const int CLUSTER_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ClusterLimitExceededException");

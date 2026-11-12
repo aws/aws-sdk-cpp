@@ -4,15 +4,30 @@
  */
 
 #include <aws/arc-region-switch/ARCRegionswitchErrors.h>
+#include <aws/arc-region-switch/model/ConflictException.h>
+#include <aws/arc-region-switch/model/RetryableConflictException.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::ARCRegionswitch;
+using namespace Aws::ARCRegionswitch::Model;
 
 namespace Aws {
 namespace ARCRegionswitch {
+template <>
+AWS_ARCREGIONSWITCH_API ConflictException ARCRegionswitchError::GetModeledError() {
+  assert(this->GetErrorType() == ARCRegionswitchErrors::CONFLICT);
+  return ConflictException(this->GetJsonPayload().View());
+}
+
+template <>
+AWS_ARCREGIONSWITCH_API RetryableConflictException ARCRegionswitchError::GetModeledError() {
+  assert(this->GetErrorType() == ARCRegionswitchErrors::RETRYABLE_CONFLICT);
+  return RetryableConflictException(this->GetJsonPayload().View());
+}
+
 namespace ARCRegionswitchErrorMapper {
 
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");

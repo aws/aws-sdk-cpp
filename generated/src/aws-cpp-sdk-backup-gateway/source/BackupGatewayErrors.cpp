@@ -4,15 +4,65 @@
  */
 
 #include <aws/backup-gateway/BackupGatewayErrors.h>
+#include <aws/backup-gateway/model/AccessDeniedException.h>
+#include <aws/backup-gateway/model/ConflictException.h>
+#include <aws/backup-gateway/model/InternalServerException.h>
+#include <aws/backup-gateway/model/ResourceNotFoundException.h>
+#include <aws/backup-gateway/model/ThrottlingException.h>
+#include <aws/backup-gateway/model/ValidationException.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/cbor/CborValue.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::BackupGateway;
+using namespace Aws::BackupGateway::Model;
 
 namespace Aws {
 namespace BackupGateway {
+template <>
+AWS_BACKUPGATEWAY_API ConflictException BackupGatewayError::GetModeledError() {
+  assert(this->GetErrorType() == BackupGatewayErrors::CONFLICT);
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return ConflictException(payload.GetDecoder());
+}
+
+template <>
+AWS_BACKUPGATEWAY_API ThrottlingException BackupGatewayError::GetModeledError() {
+  assert(this->GetErrorType() == BackupGatewayErrors::THROTTLING);
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return ThrottlingException(payload.GetDecoder());
+}
+
+template <>
+AWS_BACKUPGATEWAY_API InternalServerException BackupGatewayError::GetModeledError() {
+  assert(this->GetErrorType() == BackupGatewayErrors::INTERNAL_SERVER);
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return InternalServerException(payload.GetDecoder());
+}
+
+template <>
+AWS_BACKUPGATEWAY_API ResourceNotFoundException BackupGatewayError::GetModeledError() {
+  assert(this->GetErrorType() == BackupGatewayErrors::RESOURCE_NOT_FOUND);
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return ResourceNotFoundException(payload.GetDecoder());
+}
+
+template <>
+AWS_BACKUPGATEWAY_API ValidationException BackupGatewayError::GetModeledError() {
+  assert(this->GetErrorType() == BackupGatewayErrors::VALIDATION);
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return ValidationException(payload.GetDecoder());
+}
+
+template <>
+AWS_BACKUPGATEWAY_API AccessDeniedException BackupGatewayError::GetModeledError() {
+  assert(this->GetErrorType() == BackupGatewayErrors::ACCESS_DENIED);
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return AccessDeniedException(payload.GetDecoder());
+}
+
 namespace BackupGatewayErrorMapper {
 
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");

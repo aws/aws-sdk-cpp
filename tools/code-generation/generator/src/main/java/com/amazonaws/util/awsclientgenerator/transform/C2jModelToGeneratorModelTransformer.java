@@ -947,7 +947,8 @@ public class C2jModelToGeneratorModelTransformer {
                     .build();
             String errorPayloadType = CppViewHelper.computeServicePayloadType(protocols);
             if (errorPayloadType.equals("xml") && referencedShape.isXmlModeledException() ||
-                errorPayloadType.equals("json") && referencedShape.isJsonModeledException()) {
+                errorPayloadType.equals("json") && referencedShape.isJsonModeledException() ||
+                errorPayloadType.equals("smithy-rpc-v2-cbor") && referencedShape.isCborModeledException()) {
                 error.setModeled(true);
             }
 

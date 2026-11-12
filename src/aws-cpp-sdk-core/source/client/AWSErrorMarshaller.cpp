@@ -413,7 +413,10 @@ CborValue RpcV2ErrorMarshaller::GetCborPayloadHttpResponse(const Http::HttpRespo
 }
 
 AWSError<CoreErrors> RpcV2ErrorMarshaller::Marshall(const Aws::Http::HttpResponse& httpResponse) const {
-  auto exceptionPayload = GetCborPayloadHttpResponse(httpResponse);
+  Aws::StringStream bodyStream;
+  bodyStream << httpResponse.GetResponseBody().rdbuf();
+  Aws::String body = bodyStream.str();
+  CborValue exceptionPayload(body);
   AWSError<CoreErrors> error;
 
   if (exceptionPayload.WasParseSuccessful()) {
@@ -494,6 +497,7 @@ AWSError<CoreErrors> RpcV2ErrorMarshaller::Marshall(const Aws::Http::HttpRespons
       error = FindErrorByHttpResponseCode(httpResponse.GetResponseCode());
       error.SetMessage(message);
     }
+    error.SetCborPayload(std::move(body));
   } else {
     bool isRetryable = IsRetryableHttpResponseCode(httpResponse.GetResponseCode());
     AWS_LOGSTREAM_ERROR(AWS_ERROR_MARSHALLER_LOG_TAG, "Failed to parse CBOR error payload: " << httpResponse.GetResponseCode());

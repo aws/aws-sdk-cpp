@@ -1,0 +1,6 @@
+{
+  "type": "bugfix",
+  "category": "aws-cpp-sdk-core",
+  "contributor": "sbiscigl",
+  "description": "Generate GetModeledError for rpcv2Cbor errors that have members beyond Message"
+}
