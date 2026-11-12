@@ -297,8 +297,12 @@ TEST_F(AWSConfigTestSuite, TestCoreDoesNotApplyDualStackAndFipsFromEnv){
 
   Aws::Endpoint::BuiltInParameters params;
   params.SetFromClientConfiguration(config);
-  EXPECT_EQ("PARAMETER_NOT_SET", params.GetParameter("UseDualStack").GetName());
-  EXPECT_EQ("PARAMETER_NOT_SET", params.GetParameter("UseFIPS").GetName());
+  // Check the parameter list directly: GetParameter() on a missing name returns a function-local static
+  // that allocates on first use, which the custom memory management leak check reports.
+  for (const auto& parameter : params.GetAllParameters()) {
+    EXPECT_NE("UseDualStack", parameter.GetName());
+    EXPECT_NE("UseFIPS", parameter.GetName());
+  }
 
   Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str());
 }
