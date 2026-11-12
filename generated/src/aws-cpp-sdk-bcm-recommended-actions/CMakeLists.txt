@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-bcm-recommended-actions "C++ SDK for the AWS bcm-recommended-actions service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-bcm-recommended-actions "C++ SDK for AWS Billing and Cost Management Recommended Actions" aws-cpp-sdk-core)
 
 file(GLOB AWS_BCM-RECOMMENDED-ACTIONS_HEADERS
     "include/aws/bcm-recommended-actions/*.h"

@@ -1,5 +1,5 @@
 add_project(forecast-gen-tests
-    "Tests for the AWS FORECAST C++ SDK"
+    "Tests for the Amazon Forecast Service C++ SDK"
     testing-resources
     aws-cpp-sdk-forecast
     aws-cpp-sdk-core)

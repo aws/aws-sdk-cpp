@@ -1,5 +1,5 @@
 add_project(route53domains-gen-tests
-    "Tests for the AWS ROUTE53DOMAINS C++ SDK"
+    "Tests for the Amazon Route 53 Domains C++ SDK"
     testing-resources
     aws-cpp-sdk-route53domains
     aws-cpp-sdk-core)

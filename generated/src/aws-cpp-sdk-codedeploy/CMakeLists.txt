@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-codedeploy "C++ SDK for the AWS codedeploy service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-codedeploy "C++ SDK for AWS CodeDeploy" aws-cpp-sdk-core)
 
 file(GLOB AWS_CODEDEPLOY_HEADERS
     "include/aws/codedeploy/*.h"

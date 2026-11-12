@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-cleanrooms "C++ SDK for the AWS cleanrooms service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-cleanrooms "C++ SDK for AWS Clean Rooms Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_CLEANROOMS_HEADERS
     "include/aws/cleanrooms/*.h"

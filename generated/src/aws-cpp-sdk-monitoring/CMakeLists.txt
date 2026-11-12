@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-monitoring "C++ SDK for the AWS monitoring service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-monitoring "C++ SDK for Amazon CloudWatch" aws-cpp-sdk-core)
 
 file(GLOB AWS_MONITORING_HEADERS
     "include/aws/monitoring/*.h"

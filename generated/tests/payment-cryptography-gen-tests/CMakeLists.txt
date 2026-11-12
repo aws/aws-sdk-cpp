@@ -1,5 +1,5 @@
 add_project(payment-cryptography-gen-tests
-    "Tests for the AWS PAYMENT-CRYPTOGRAPHY C++ SDK"
+    "Tests for the Payment Cryptography Control Plane C++ SDK"
     testing-resources
     aws-cpp-sdk-payment-cryptography
     aws-cpp-sdk-core)

@@ -1,5 +1,5 @@
 add_project(billingconductor-gen-tests
-    "Tests for the AWS BILLINGCONDUCTOR C++ SDK"
+    "Tests for the AWSBillingConductor C++ SDK"
     testing-resources
     aws-cpp-sdk-billingconductor
     aws-cpp-sdk-core)

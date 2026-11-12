@@ -1,5 +1,5 @@
 add_project(ivs-gen-tests
-    "Tests for the AWS IVS C++ SDK"
+    "Tests for the Amazon Interactive Video Service C++ SDK"
     testing-resources
     aws-cpp-sdk-ivs
     aws-cpp-sdk-core)

@@ -1,5 +1,5 @@
 add_project(codeartifact-gen-tests
-    "Tests for the AWS CODEARTIFACT C++ SDK"
+    "Tests for the CodeArtifact C++ SDK"
     testing-resources
     aws-cpp-sdk-codeartifact
     aws-cpp-sdk-core)

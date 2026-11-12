@@ -1,5 +1,5 @@
 add_project(qapps-gen-tests
-    "Tests for the AWS QAPPS C++ SDK"
+    "Tests for the QApps C++ SDK"
     testing-resources
     aws-cpp-sdk-qapps
     aws-cpp-sdk-core)

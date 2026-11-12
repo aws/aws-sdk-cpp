@@ -1,5 +1,5 @@
 add_project(iam-toolbox-gen-tests
-    "Tests for the AWS IAM-TOOLBOX C++ SDK"
+    "Tests for the IAM Toolbox (Preview) C++ SDK"
     testing-resources
     aws-cpp-sdk-iam-toolbox
     aws-cpp-sdk-core)

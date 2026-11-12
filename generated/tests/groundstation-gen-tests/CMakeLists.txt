@@ -1,5 +1,5 @@
 add_project(groundstation-gen-tests
-    "Tests for the AWS GROUNDSTATION C++ SDK"
+    "Tests for the AWS Ground Station C++ SDK"
     testing-resources
     aws-cpp-sdk-groundstation
     aws-cpp-sdk-core)

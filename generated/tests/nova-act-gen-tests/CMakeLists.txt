@@ -1,5 +1,5 @@
 add_project(nova-act-gen-tests
-    "Tests for the AWS NOVA-ACT C++ SDK"
+    "Tests for the Nova Act Service C++ SDK"
     testing-resources
     aws-cpp-sdk-nova-act
     aws-cpp-sdk-core)

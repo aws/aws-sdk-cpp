@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-comprehendmedical "C++ SDK for the AWS comprehendmedical service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-comprehendmedical "C++ SDK for AWS Comprehend Medical" aws-cpp-sdk-core)
 
 file(GLOB AWS_COMPREHENDMEDICAL_HEADERS
     "include/aws/comprehendmedical/*.h"

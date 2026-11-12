@@ -1,5 +1,5 @@
 add_project(machinelearning-gen-tests
-    "Tests for the AWS MACHINELEARNING C++ SDK"
+    "Tests for the Amazon Machine Learning C++ SDK"
     testing-resources
     aws-cpp-sdk-machinelearning
     aws-cpp-sdk-core)

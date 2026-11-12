@@ -1,5 +1,5 @@
 add_project(network-security-manager-gen-tests
-    "Tests for the AWS NETWORK-SECURITY-MANAGER C++ SDK"
+    "Tests for the AWS Network Security Manager Customer API C++ SDK"
     testing-resources
     aws-cpp-sdk-network-security-manager
     aws-cpp-sdk-core)

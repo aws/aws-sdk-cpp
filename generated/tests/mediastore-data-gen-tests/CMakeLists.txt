@@ -1,5 +1,5 @@
 add_project(mediastore-data-gen-tests
-    "Tests for the AWS MEDIASTORE-DATA C++ SDK"
+    "Tests for the AWS Elemental MediaStore Data Plane C++ SDK"
     testing-resources
     aws-cpp-sdk-mediastore-data
     aws-cpp-sdk-core)

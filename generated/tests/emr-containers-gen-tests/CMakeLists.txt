@@ -1,5 +1,5 @@
 add_project(emr-containers-gen-tests
-    "Tests for the AWS EMR-CONTAINERS C++ SDK"
+    "Tests for the Amazon EMR Containers C++ SDK"
     testing-resources
     aws-cpp-sdk-emr-containers
     aws-cpp-sdk-core)

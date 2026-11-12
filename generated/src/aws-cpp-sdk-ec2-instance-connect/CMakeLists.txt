@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-ec2-instance-connect "C++ SDK for the AWS ec2-instance-connect service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-ec2-instance-connect "C++ SDK for AWS EC2 Instance Connect" aws-cpp-sdk-core)
 
 file(GLOB AWS_EC2-INSTANCE-CONNECT_HEADERS
     "include/aws/ec2-instance-connect/*.h"

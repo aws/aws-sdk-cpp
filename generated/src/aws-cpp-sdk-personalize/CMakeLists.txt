@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-personalize "C++ SDK for the AWS personalize service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-personalize "C++ SDK for Amazon Personalize" aws-cpp-sdk-core)
 
 file(GLOB AWS_PERSONALIZE_HEADERS
     "include/aws/personalize/*.h"

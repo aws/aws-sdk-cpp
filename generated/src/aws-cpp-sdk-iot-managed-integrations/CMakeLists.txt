@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-iot-managed-integrations "C++ SDK for the AWS iot-managed-integrations service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-iot-managed-integrations "C++ SDK for Managed integrations for AWS IoT Device Management" aws-cpp-sdk-core)
 
 file(GLOB AWS_IOT-MANAGED-INTEGRATIONS_HEADERS
     "include/aws/iot-managed-integrations/*.h"

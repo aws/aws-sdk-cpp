@@ -1,5 +1,5 @@
 add_project(rds-data-gen-tests
-    "Tests for the AWS RDS-DATA C++ SDK"
+    "Tests for the AWS RDS DataService C++ SDK"
     testing-resources
     aws-cpp-sdk-rds-data
     aws-cpp-sdk-core)

@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-kinesis-video-signaling "C++ SDK for the AWS kinesis-video-signaling service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-kinesis-video-signaling "C++ SDK for Amazon Kinesis Video Signaling Channels" aws-cpp-sdk-core)
 
 file(GLOB AWS_KINESIS-VIDEO-SIGNALING_HEADERS
     "include/aws/kinesis-video-signaling/*.h"

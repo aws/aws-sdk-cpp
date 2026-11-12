@@ -1,5 +1,5 @@
 add_project(datasync-gen-tests
-    "Tests for the AWS DATASYNC C++ SDK"
+    "Tests for the AWS DataSync C++ SDK"
     testing-resources
     aws-cpp-sdk-datasync
     aws-cpp-sdk-core)

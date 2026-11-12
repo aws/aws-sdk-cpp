@@ -1,5 +1,5 @@
 add_project(taxsettings-gen-tests
-    "Tests for the AWS TAXSETTINGS C++ SDK"
+    "Tests for the Tax Settings C++ SDK"
     testing-resources
     aws-cpp-sdk-taxsettings
     aws-cpp-sdk-core)

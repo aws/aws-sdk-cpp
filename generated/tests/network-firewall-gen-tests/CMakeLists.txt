@@ -1,5 +1,5 @@
 add_project(network-firewall-gen-tests
-    "Tests for the AWS NETWORK-FIREWALL C++ SDK"
+    "Tests for the AWS Network Firewall C++ SDK"
     testing-resources
     aws-cpp-sdk-network-firewall
     aws-cpp-sdk-core)

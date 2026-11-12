@@ -1,5 +1,5 @@
 add_project(customer-profiles-gen-tests
-    "Tests for the AWS CUSTOMER-PROFILES C++ SDK"
+    "Tests for the Amazon Connect Customer Profiles C++ SDK"
     testing-resources
     aws-cpp-sdk-customer-profiles
     aws-cpp-sdk-core)

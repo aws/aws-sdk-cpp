@@ -1,5 +1,5 @@
 add_project(iot-data-gen-tests
-    "Tests for the AWS IOT-DATA C++ SDK"
+    "Tests for the AWS IoT Data Plane C++ SDK"
     testing-resources
     aws-cpp-sdk-iot-data
     aws-cpp-sdk-core)

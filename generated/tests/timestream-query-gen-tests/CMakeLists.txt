@@ -1,5 +1,5 @@
 add_project(timestream-query-gen-tests
-    "Tests for the AWS TIMESTREAM-QUERY C++ SDK"
+    "Tests for the Amazon Timestream Query C++ SDK"
     testing-resources
     aws-cpp-sdk-timestream-query
     aws-cpp-sdk-core)

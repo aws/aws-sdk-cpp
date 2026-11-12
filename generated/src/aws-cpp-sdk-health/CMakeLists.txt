@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-health "C++ SDK for the AWS health service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-health "C++ SDK for AWS Health APIs and Notifications" aws-cpp-sdk-core)
 
 file(GLOB AWS_HEALTH_HEADERS
     "include/aws/health/*.h"

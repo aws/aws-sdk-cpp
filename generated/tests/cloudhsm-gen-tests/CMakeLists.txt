@@ -1,5 +1,5 @@
 add_project(cloudhsm-gen-tests
-    "Tests for the AWS CLOUDHSM C++ SDK"
+    "Tests for the Amazon CloudHSM C++ SDK"
     testing-resources
     aws-cpp-sdk-cloudhsm
     aws-cpp-sdk-core)

@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-sagemaker-metrics "C++ SDK for the AWS sagemaker-metrics service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-sagemaker-metrics "C++ SDK for Amazon SageMaker Metrics Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_SAGEMAKER-METRICS_HEADERS
     "include/aws/sagemaker-metrics/*.h"

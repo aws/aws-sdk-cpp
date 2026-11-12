@@ -1,5 +1,5 @@
 add_project(chime-sdk-messaging-gen-tests
-    "Tests for the AWS CHIME-SDK-MESSAGING C++ SDK"
+    "Tests for the Amazon Chime SDK Messaging C++ SDK"
     testing-resources
     aws-cpp-sdk-chime-sdk-messaging
     aws-cpp-sdk-core)

@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-dax "C++ SDK for the AWS dax service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-dax "C++ SDK for Amazon DynamoDB Accelerator (DAX)" aws-cpp-sdk-core)
 
 file(GLOB AWS_DAX_HEADERS
     "include/aws/dax/*.h"

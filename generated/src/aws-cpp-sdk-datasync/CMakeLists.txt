@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-datasync "C++ SDK for the AWS datasync service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-datasync "C++ SDK for AWS DataSync" aws-cpp-sdk-core)
 
 file(GLOB AWS_DATASYNC_HEADERS
     "include/aws/datasync/*.h"

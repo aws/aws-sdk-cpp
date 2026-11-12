@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-amplify "C++ SDK for the AWS amplify service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-amplify "C++ SDK for AWS Amplify" aws-cpp-sdk-core)
 
 file(GLOB AWS_AMPLIFY_HEADERS
     "include/aws/amplify/*.h"

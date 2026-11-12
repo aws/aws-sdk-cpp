@@ -1,5 +1,5 @@
 add_project(bcm-pricing-calculator-gen-tests
-    "Tests for the AWS BCM-PRICING-CALCULATOR C++ SDK"
+    "Tests for the AWS Billing and Cost Management Pricing Calculator C++ SDK"
     testing-resources
     aws-cpp-sdk-bcm-pricing-calculator
     aws-cpp-sdk-core)

@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-networkmonitor "C++ SDK for the AWS networkmonitor service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-networkmonitor "C++ SDK for Amazon CloudWatch Network Monitor" aws-cpp-sdk-core)
 
 file(GLOB AWS_NETWORKMONITOR_HEADERS
     "include/aws/networkmonitor/*.h"

@@ -1,5 +1,5 @@
 add_project(service-quotas-gen-tests
-    "Tests for the AWS SERVICE-QUOTAS C++ SDK"
+    "Tests for the Service Quotas C++ SDK"
     testing-resources
     aws-cpp-sdk-service-quotas
     aws-cpp-sdk-core)

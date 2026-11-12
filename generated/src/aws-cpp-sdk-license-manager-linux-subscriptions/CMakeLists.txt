@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-license-manager-linux-subscriptions "C++ SDK for the AWS license-manager-linux-subscriptions service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-license-manager-linux-subscriptions "C++ SDK for AWS License Manager Linux Subscriptions" aws-cpp-sdk-core)
 
 file(GLOB AWS_LICENSE-MANAGER-LINUX-SUBSCRIPTIONS_HEADERS
     "include/aws/license-manager-linux-subscriptions/*.h"

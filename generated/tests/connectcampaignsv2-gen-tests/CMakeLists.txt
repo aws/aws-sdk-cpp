@@ -1,5 +1,5 @@
 add_project(connectcampaignsv2-gen-tests
-    "Tests for the AWS CONNECTCAMPAIGNSV2 C++ SDK"
+    "Tests for the AmazonConnectCampaignServiceV2 C++ SDK"
     testing-resources
     aws-cpp-sdk-connectcampaignsv2
     aws-cpp-sdk-core)

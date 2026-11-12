@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-service-quotas "C++ SDK for the AWS service-quotas service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-service-quotas "C++ SDK for Service Quotas" aws-cpp-sdk-core)
 
 file(GLOB AWS_SERVICE-QUOTAS_HEADERS
     "include/aws/service-quotas/*.h"

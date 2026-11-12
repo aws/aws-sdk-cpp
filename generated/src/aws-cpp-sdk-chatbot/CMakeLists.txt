@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-chatbot "C++ SDK for the AWS chatbot service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-chatbot "C++ SDK for AWS Chatbot" aws-cpp-sdk-core)
 
 file(GLOB AWS_CHATBOT_HEADERS
     "include/aws/chatbot/*.h"

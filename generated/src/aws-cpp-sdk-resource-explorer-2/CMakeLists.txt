@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-resource-explorer-2 "C++ SDK for the AWS resource-explorer-2 service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-resource-explorer-2 "C++ SDK for AWS Resource Explorer" aws-cpp-sdk-core)
 
 file(GLOB AWS_RESOURCE-EXPLORER-2_HEADERS
     "include/aws/resource-explorer-2/*.h"

@@ -1,5 +1,5 @@
 add_project(auditmanager-gen-tests
-    "Tests for the AWS AUDITMANAGER C++ SDK"
+    "Tests for the AWS Audit Manager C++ SDK"
     testing-resources
     aws-cpp-sdk-auditmanager
     aws-cpp-sdk-core)

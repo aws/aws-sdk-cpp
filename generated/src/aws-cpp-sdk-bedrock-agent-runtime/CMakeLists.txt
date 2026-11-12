@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-bedrock-agent-runtime "C++ SDK for the AWS bedrock-agent-runtime service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-bedrock-agent-runtime "C++ SDK for Agents for Amazon Bedrock Runtime" aws-cpp-sdk-core)
 
 file(GLOB AWS_BEDROCK-AGENT-RUNTIME_HEADERS
     "include/aws/bedrock-agent-runtime/*.h"

@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-appstream "C++ SDK for the AWS appstream service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-appstream "C++ SDK for Amazon AppStream" aws-cpp-sdk-core)
 
 file(GLOB AWS_APPSTREAM_HEADERS
     "include/aws/appstream/*.h"

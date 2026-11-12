@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-machinelearning "C++ SDK for the AWS machinelearning service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-machinelearning "C++ SDK for Amazon Machine Learning" aws-cpp-sdk-core)
 
 file(GLOB AWS_MACHINELEARNING_HEADERS
     "include/aws/machinelearning/*.h"

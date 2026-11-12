@@ -1,5 +1,5 @@
 add_project(bcm-recommended-actions-gen-tests
-    "Tests for the AWS BCM-RECOMMENDED-ACTIONS C++ SDK"
+    "Tests for the AWS Billing and Cost Management Recommended Actions C++ SDK"
     testing-resources
     aws-cpp-sdk-bcm-recommended-actions
     aws-cpp-sdk-core)

@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-cur "C++ SDK for the AWS cur service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-cur "C++ SDK for AWS Cost and Usage Report Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_CUR_HEADERS
     "include/aws/cur/*.h"

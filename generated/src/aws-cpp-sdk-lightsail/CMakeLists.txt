@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-lightsail "C++ SDK for the AWS lightsail service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-lightsail "C++ SDK for Amazon Lightsail" aws-cpp-sdk-core)
 
 file(GLOB AWS_LIGHTSAIL_HEADERS
     "include/aws/lightsail/*.h"

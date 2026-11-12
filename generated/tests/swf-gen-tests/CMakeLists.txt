@@ -1,5 +1,5 @@
 add_project(swf-gen-tests
-    "Tests for the AWS SWF C++ SDK"
+    "Tests for the Amazon Simple Workflow Service C++ SDK"
     testing-resources
     aws-cpp-sdk-swf
     aws-cpp-sdk-core)

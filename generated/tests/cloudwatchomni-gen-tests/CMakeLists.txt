@@ -1,5 +1,5 @@
 add_project(cloudwatchomni-gen-tests
-    "Tests for the AWS CLOUDWATCHOMNI C++ SDK"
+    "Tests for the CloudWatch Omni C++ SDK"
     testing-resources
     aws-cpp-sdk-cloudwatchomni
     aws-cpp-sdk-core)

@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-migrationhubstrategy "C++ SDK for the AWS migrationhubstrategy service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-migrationhubstrategy "C++ SDK for Migration Hub Strategy Recommendations" aws-cpp-sdk-core)
 
 file(GLOB AWS_MIGRATIONHUBSTRATEGY_HEADERS
     "include/aws/migrationhubstrategy/*.h"

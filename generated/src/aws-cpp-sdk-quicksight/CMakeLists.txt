@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-quicksight "C++ SDK for the AWS quicksight service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-quicksight "C++ SDK for Amazon QuickSight" aws-cpp-sdk-core)
 
 file(GLOB AWS_QUICKSIGHT_HEADERS
     "include/aws/quicksight/*.h"

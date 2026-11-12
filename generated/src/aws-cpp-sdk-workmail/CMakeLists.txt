@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-workmail "C++ SDK for the AWS workmail service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-workmail "C++ SDK for Amazon WorkMail" aws-cpp-sdk-core)
 
 file(GLOB AWS_WORKMAIL_HEADERS
     "include/aws/workmail/*.h"

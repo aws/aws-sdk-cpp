@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-ecr "C++ SDK for the AWS ecr service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-ecr "C++ SDK for Amazon Elastic Container Registry" aws-cpp-sdk-core)
 
 file(GLOB AWS_ECR_HEADERS
     "include/aws/ecr/*.h"

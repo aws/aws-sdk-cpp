@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-managedblockchain-query "C++ SDK for the AWS managedblockchain-query service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-managedblockchain-query "C++ SDK for Amazon Managed Blockchain Query" aws-cpp-sdk-core)
 
 file(GLOB AWS_MANAGEDBLOCKCHAIN-QUERY_HEADERS
     "include/aws/managedblockchain-query/*.h"

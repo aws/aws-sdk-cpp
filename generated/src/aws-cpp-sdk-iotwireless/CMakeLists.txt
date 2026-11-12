@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-iotwireless "C++ SDK for the AWS iotwireless service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-iotwireless "C++ SDK for AWS IoT Wireless" aws-cpp-sdk-core)
 
 file(GLOB AWS_IOTWIRELESS_HEADERS
     "include/aws/iotwireless/*.h"

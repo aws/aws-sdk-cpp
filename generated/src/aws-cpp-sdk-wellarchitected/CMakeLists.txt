@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-wellarchitected "C++ SDK for the AWS wellarchitected service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-wellarchitected "C++ SDK for AWS Well-Architected Tool" aws-cpp-sdk-core)
 
 file(GLOB AWS_WELLARCHITECTED_HEADERS
     "include/aws/wellarchitected/*.h"

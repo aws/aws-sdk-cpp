@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-firehose "C++ SDK for the AWS firehose service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-firehose "C++ SDK for Amazon Kinesis Firehose" aws-cpp-sdk-core)
 
 file(GLOB AWS_FIREHOSE_HEADERS
     "include/aws/firehose/*.h"

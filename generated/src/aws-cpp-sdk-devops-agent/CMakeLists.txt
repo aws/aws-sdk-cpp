@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-devops-agent "C++ SDK for the AWS devops-agent service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-devops-agent "C++ SDK for AWS DevOps Agent Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_DEVOPS-AGENT_HEADERS
     "include/aws/devops-agent/*.h"

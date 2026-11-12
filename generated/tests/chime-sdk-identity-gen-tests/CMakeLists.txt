@@ -1,5 +1,5 @@
 add_project(chime-sdk-identity-gen-tests
-    "Tests for the AWS CHIME-SDK-IDENTITY C++ SDK"
+    "Tests for the Amazon Chime SDK Identity C++ SDK"
     testing-resources
     aws-cpp-sdk-chime-sdk-identity
     aws-cpp-sdk-core)

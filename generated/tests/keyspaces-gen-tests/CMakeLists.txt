@@ -1,5 +1,5 @@
 add_project(keyspaces-gen-tests
-    "Tests for the AWS KEYSPACES C++ SDK"
+    "Tests for the Amazon Keyspaces C++ SDK"
     testing-resources
     aws-cpp-sdk-keyspaces
     aws-cpp-sdk-core)

@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-observabilityadmin "C++ SDK for the AWS observabilityadmin service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-observabilityadmin "C++ SDK for CloudWatch Observability Admin Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_OBSERVABILITYADMIN_HEADERS
     "include/aws/observabilityadmin/*.h"

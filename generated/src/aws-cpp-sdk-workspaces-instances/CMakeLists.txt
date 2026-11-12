@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-workspaces-instances "C++ SDK for the AWS workspaces-instances service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-workspaces-instances "C++ SDK for Amazon Workspaces Instances" aws-cpp-sdk-core)
 
 file(GLOB AWS_WORKSPACES-INSTANCES_HEADERS
     "include/aws/workspaces-instances/*.h"

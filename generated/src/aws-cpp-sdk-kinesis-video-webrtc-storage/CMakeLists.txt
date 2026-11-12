@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-kinesis-video-webrtc-storage "C++ SDK for the AWS kinesis-video-webrtc-storage service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-kinesis-video-webrtc-storage "C++ SDK for Amazon Kinesis Video WebRTC Storage" aws-cpp-sdk-core)
 
 file(GLOB AWS_KINESIS-VIDEO-WEBRTC-STORAGE_HEADERS
     "include/aws/kinesis-video-webrtc-storage/*.h"

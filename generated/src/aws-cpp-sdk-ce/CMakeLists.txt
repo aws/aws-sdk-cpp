@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-ce "C++ SDK for the AWS ce service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-ce "C++ SDK for AWS Cost Explorer Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_CE_HEADERS
     "include/aws/ce/*.h"

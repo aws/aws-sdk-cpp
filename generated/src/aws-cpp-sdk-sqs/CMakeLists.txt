@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-sqs "C++ SDK for the AWS sqs service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-sqs "C++ SDK for Amazon Simple Queue Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_SQS_HEADERS
     "include/aws/sqs/*.h"

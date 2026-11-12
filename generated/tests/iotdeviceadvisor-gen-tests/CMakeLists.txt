@@ -1,5 +1,5 @@
 add_project(iotdeviceadvisor-gen-tests
-    "Tests for the AWS IOTDEVICEADVISOR C++ SDK"
+    "Tests for the AWS IoT Core Device Advisor C++ SDK"
     testing-resources
     aws-cpp-sdk-iotdeviceadvisor
     aws-cpp-sdk-core)

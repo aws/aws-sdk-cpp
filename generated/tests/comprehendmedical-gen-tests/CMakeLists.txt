@@ -1,5 +1,5 @@
 add_project(comprehendmedical-gen-tests
-    "Tests for the AWS COMPREHENDMEDICAL C++ SDK"
+    "Tests for the AWS Comprehend Medical C++ SDK"
     testing-resources
     aws-cpp-sdk-comprehendmedical
     aws-cpp-sdk-core)

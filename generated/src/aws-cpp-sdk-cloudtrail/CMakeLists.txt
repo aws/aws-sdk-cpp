@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-cloudtrail "C++ SDK for the AWS cloudtrail service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-cloudtrail "C++ SDK for AWS CloudTrail" aws-cpp-sdk-core)
 
 file(GLOB AWS_CLOUDTRAIL_HEADERS
     "include/aws/cloudtrail/*.h"

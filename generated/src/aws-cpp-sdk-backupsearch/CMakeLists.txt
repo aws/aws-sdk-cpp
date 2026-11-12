@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-backupsearch "C++ SDK for the AWS backupsearch service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-backupsearch "C++ SDK for AWS Backup Search" aws-cpp-sdk-core)
 
 file(GLOB AWS_BACKUPSEARCH_HEADERS
     "include/aws/backupsearch/*.h"

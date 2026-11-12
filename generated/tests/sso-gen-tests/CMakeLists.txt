@@ -1,5 +1,5 @@
 add_project(sso-gen-tests
-    "Tests for the AWS SSO C++ SDK"
+    "Tests for the AWS Single Sign-On C++ SDK"
     testing-resources
     aws-cpp-sdk-sso
     aws-cpp-sdk-core)

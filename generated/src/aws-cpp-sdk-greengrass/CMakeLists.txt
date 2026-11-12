@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-greengrass "C++ SDK for the AWS greengrass service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-greengrass "C++ SDK for AWS Greengrass" aws-cpp-sdk-core)
 
 file(GLOB AWS_GREENGRASS_HEADERS
     "include/aws/greengrass/*.h"

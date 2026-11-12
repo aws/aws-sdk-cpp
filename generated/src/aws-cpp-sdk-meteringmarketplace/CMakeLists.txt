@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-meteringmarketplace "C++ SDK for the AWS meteringmarketplace service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-meteringmarketplace "C++ SDK for AWSMarketplace Metering" aws-cpp-sdk-core)
 
 file(GLOB AWS_METERINGMARKETPLACE_HEADERS
     "include/aws/meteringmarketplace/*.h"

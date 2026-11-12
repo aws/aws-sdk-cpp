@@ -1,5 +1,5 @@
 add_project(shield-gen-tests
-    "Tests for the AWS SHIELD C++ SDK"
+    "Tests for the AWS Shield C++ SDK"
     testing-resources
     aws-cpp-sdk-shield
     aws-cpp-sdk-core)

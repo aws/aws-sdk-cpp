@@ -1,5 +1,5 @@
 add_project(docdb-gen-tests
-    "Tests for the AWS DOCDB C++ SDK"
+    "Tests for the Amazon DocumentDB with MongoDB compatibility C++ SDK"
     testing-resources
     aws-cpp-sdk-docdb
     aws-cpp-sdk-core)

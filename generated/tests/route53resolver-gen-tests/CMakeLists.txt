@@ -1,5 +1,5 @@
 add_project(route53resolver-gen-tests
-    "Tests for the AWS ROUTE53RESOLVER C++ SDK"
+    "Tests for the Amazon Route 53 Resolver C++ SDK"
     testing-resources
     aws-cpp-sdk-route53resolver
     aws-cpp-sdk-core)

@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-frauddetector "C++ SDK for the AWS frauddetector service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-frauddetector "C++ SDK for Amazon Fraud Detector" aws-cpp-sdk-core)
 
 file(GLOB AWS_FRAUDDETECTOR_HEADERS
     "include/aws/frauddetector/*.h"

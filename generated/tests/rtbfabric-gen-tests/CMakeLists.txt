@@ -1,5 +1,5 @@
 add_project(rtbfabric-gen-tests
-    "Tests for the AWS RTBFABRIC C++ SDK"
+    "Tests for the RTBFabric C++ SDK"
     testing-resources
     aws-cpp-sdk-rtbfabric
     aws-cpp-sdk-core)

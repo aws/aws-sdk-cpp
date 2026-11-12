@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-guardduty "C++ SDK for the AWS guardduty service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-guardduty "C++ SDK for Amazon GuardDuty" aws-cpp-sdk-core)
 
 file(GLOB AWS_GUARDDUTY_HEADERS
     "include/aws/guardduty/*.h"

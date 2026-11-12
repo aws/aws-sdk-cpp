@@ -1,5 +1,5 @@
 add_project(lookoutequipment-gen-tests
-    "Tests for the AWS LOOKOUTEQUIPMENT C++ SDK"
+    "Tests for the Amazon Lookout for Equipment C++ SDK"
     testing-resources
     aws-cpp-sdk-lookoutequipment
     aws-cpp-sdk-core)

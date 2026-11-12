@@ -1,5 +1,5 @@
 add_project(support-gen-tests
-    "Tests for the AWS SUPPORT C++ SDK"
+    "Tests for the AWS Support C++ SDK"
     testing-resources
     aws-cpp-sdk-support
     aws-cpp-sdk-core)

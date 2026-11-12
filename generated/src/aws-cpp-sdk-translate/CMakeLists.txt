@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-translate "C++ SDK for the AWS translate service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-translate "C++ SDK for Amazon Translate" aws-cpp-sdk-core)
 
 file(GLOB AWS_TRANSLATE_HEADERS
     "include/aws/translate/*.h"

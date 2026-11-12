@@ -1,5 +1,5 @@
 add_project(appfabric-gen-tests
-    "Tests for the AWS APPFABRIC C++ SDK"
+    "Tests for the AppFabric C++ SDK"
     testing-resources
     aws-cpp-sdk-appfabric
     aws-cpp-sdk-core)

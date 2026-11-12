@@ -1,5 +1,5 @@
 add_project(observabilityadmin-gen-tests
-    "Tests for the AWS OBSERVABILITYADMIN C++ SDK"
+    "Tests for the CloudWatch Observability Admin Service C++ SDK"
     testing-resources
     aws-cpp-sdk-observabilityadmin
     aws-cpp-sdk-core)

@@ -1,5 +1,5 @@
 add_project(marketplace-catalog-gen-tests
-    "Tests for the AWS MARKETPLACE-CATALOG C++ SDK"
+    "Tests for the AWS Marketplace Catalog Service C++ SDK"
     testing-resources
     aws-cpp-sdk-marketplace-catalog
     aws-cpp-sdk-core)

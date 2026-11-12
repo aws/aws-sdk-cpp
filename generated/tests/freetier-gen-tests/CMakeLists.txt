@@ -1,5 +1,5 @@
 add_project(freetier-gen-tests
-    "Tests for the AWS FREETIER C++ SDK"
+    "Tests for the AWS Free Tier C++ SDK"
     testing-resources
     aws-cpp-sdk-freetier
     aws-cpp-sdk-core)

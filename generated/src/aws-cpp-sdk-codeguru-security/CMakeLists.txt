@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-codeguru-security "C++ SDK for the AWS codeguru-security service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-codeguru-security "C++ SDK for Amazon CodeGuru Security" aws-cpp-sdk-core)
 
 file(GLOB AWS_CODEGURU-SECURITY_HEADERS
     "include/aws/codeguru-security/*.h"

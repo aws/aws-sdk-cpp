@@ -1,5 +1,5 @@
 add_project(meteringmarketplace-gen-tests
-    "Tests for the AWS METERINGMARKETPLACE C++ SDK"
+    "Tests for the AWSMarketplace Metering C++ SDK"
     testing-resources
     aws-cpp-sdk-meteringmarketplace
     aws-cpp-sdk-core)

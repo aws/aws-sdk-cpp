@@ -1,5 +1,5 @@
 add_project(dsql-gen-tests
-    "Tests for the AWS DSQL C++ SDK"
+    "Tests for the Amazon Aurora DSQL C++ SDK"
     testing-resources
     aws-cpp-sdk-dsql
     aws-cpp-sdk-core)

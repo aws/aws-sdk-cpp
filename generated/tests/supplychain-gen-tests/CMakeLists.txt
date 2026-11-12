@@ -1,5 +1,5 @@
 add_project(supplychain-gen-tests
-    "Tests for the AWS SUPPLYCHAIN C++ SDK"
+    "Tests for the AWS Supply Chain C++ SDK"
     testing-resources
     aws-cpp-sdk-supplychain
     aws-cpp-sdk-core)

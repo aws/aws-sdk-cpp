@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-endusermessaging "C++ SDK for the AWS endusermessaging service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-endusermessaging "C++ SDK for AWS End User Messaging" aws-cpp-sdk-core)
 
 file(GLOB AWS_ENDUSERMESSAGING_HEADERS
     "include/aws/endusermessaging/*.h"

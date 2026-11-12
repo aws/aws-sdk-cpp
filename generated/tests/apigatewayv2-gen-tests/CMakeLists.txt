@@ -1,5 +1,5 @@
 add_project(apigatewayv2-gen-tests
-    "Tests for the AWS APIGATEWAYV2 C++ SDK"
+    "Tests for the AmazonApiGatewayV2 C++ SDK"
     testing-resources
     aws-cpp-sdk-apigatewayv2
     aws-cpp-sdk-core)

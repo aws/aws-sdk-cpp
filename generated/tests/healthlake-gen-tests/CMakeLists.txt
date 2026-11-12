@@ -1,5 +1,5 @@
 add_project(healthlake-gen-tests
-    "Tests for the AWS HEALTHLAKE C++ SDK"
+    "Tests for the Amazon HealthLake C++ SDK"
     testing-resources
     aws-cpp-sdk-healthlake
     aws-cpp-sdk-core)

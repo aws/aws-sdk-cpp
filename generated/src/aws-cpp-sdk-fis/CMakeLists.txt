@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-fis "C++ SDK for the AWS fis service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-fis "C++ SDK for AWS Fault Injection Simulator" aws-cpp-sdk-core)
 
 file(GLOB AWS_FIS_HEADERS
     "include/aws/fis/*.h"

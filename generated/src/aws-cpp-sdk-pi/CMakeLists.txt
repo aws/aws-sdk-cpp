@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-pi "C++ SDK for the AWS pi service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-pi "C++ SDK for AWS Performance Insights" aws-cpp-sdk-core)
 
 file(GLOB AWS_PI_HEADERS
     "include/aws/pi/*.h"

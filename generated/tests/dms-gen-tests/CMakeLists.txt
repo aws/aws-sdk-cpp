@@ -1,5 +1,5 @@
 add_project(dms-gen-tests
-    "Tests for the AWS DMS C++ SDK"
+    "Tests for the AWS Database Migration Service C++ SDK"
     testing-resources
     aws-cpp-sdk-dms
     aws-cpp-sdk-core)

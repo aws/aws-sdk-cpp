@@ -1,5 +1,5 @@
 add_project(datapipeline-gen-tests
-    "Tests for the AWS DATAPIPELINE C++ SDK"
+    "Tests for the AWS Data Pipeline C++ SDK"
     testing-resources
     aws-cpp-sdk-datapipeline
     aws-cpp-sdk-core)

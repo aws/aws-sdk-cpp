@@ -1,5 +1,5 @@
 add_project(cost-optimization-hub-gen-tests
-    "Tests for the AWS COST-OPTIMIZATION-HUB C++ SDK"
+    "Tests for the Cost Optimization Hub C++ SDK"
     testing-resources
     aws-cpp-sdk-cost-optimization-hub
     aws-cpp-sdk-core)

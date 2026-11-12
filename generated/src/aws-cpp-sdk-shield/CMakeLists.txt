@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-shield "C++ SDK for the AWS shield service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-shield "C++ SDK for AWS Shield" aws-cpp-sdk-core)
 
 file(GLOB AWS_SHIELD_HEADERS
     "include/aws/shield/*.h"

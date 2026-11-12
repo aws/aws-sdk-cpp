@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-identitystore "C++ SDK for the AWS identitystore service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-identitystore "C++ SDK for AWS SSO Identity Store" aws-cpp-sdk-core)
 
 file(GLOB AWS_IDENTITYSTORE_HEADERS
     "include/aws/identitystore/*.h"

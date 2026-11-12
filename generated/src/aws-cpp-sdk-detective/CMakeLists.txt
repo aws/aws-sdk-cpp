@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-detective "C++ SDK for the AWS detective service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-detective "C++ SDK for Amazon Detective" aws-cpp-sdk-core)
 
 file(GLOB AWS_DETECTIVE_HEADERS
     "include/aws/detective/*.h"

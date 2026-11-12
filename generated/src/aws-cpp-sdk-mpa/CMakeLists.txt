@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-mpa "C++ SDK for the AWS mpa service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-mpa "C++ SDK for AWS Multi-party Approval" aws-cpp-sdk-core)
 
 file(GLOB AWS_MPA_HEADERS
     "include/aws/mpa/*.h"

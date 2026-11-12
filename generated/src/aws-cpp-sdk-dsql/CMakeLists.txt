@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-dsql "C++ SDK for the AWS dsql service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-dsql "C++ SDK for Amazon Aurora DSQL" aws-cpp-sdk-core)
 
 file(GLOB AWS_DSQL_HEADERS
     "include/aws/dsql/*.h"

@@ -1,5 +1,5 @@
 add_project(logs-gen-tests
-    "Tests for the AWS LOGS C++ SDK"
+    "Tests for the Amazon CloudWatch Logs C++ SDK"
     testing-resources
     aws-cpp-sdk-logs
     aws-cpp-sdk-core)

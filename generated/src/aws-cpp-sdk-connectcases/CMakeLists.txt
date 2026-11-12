@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-connectcases "C++ SDK for the AWS connectcases service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-connectcases "C++ SDK for Amazon Connect Cases" aws-cpp-sdk-core)
 
 file(GLOB AWS_CONNECTCASES_HEADERS
     "include/aws/connectcases/*.h"

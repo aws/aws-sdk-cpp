@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-route53-recovery-cluster "C++ SDK for the AWS route53-recovery-cluster service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-route53-recovery-cluster "C++ SDK for Route53 Recovery Cluster" aws-cpp-sdk-core)
 
 file(GLOB AWS_ROUTE53-RECOVERY-CLUSTER_HEADERS
     "include/aws/route53-recovery-cluster/*.h"

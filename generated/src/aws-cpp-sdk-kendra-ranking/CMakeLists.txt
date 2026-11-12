@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-kendra-ranking "C++ SDK for the AWS kendra-ranking service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-kendra-ranking "C++ SDK for Amazon Kendra Intelligent Ranking" aws-cpp-sdk-core)
 
 file(GLOB AWS_KENDRA-RANKING_HEADERS
     "include/aws/kendra-ranking/*.h"

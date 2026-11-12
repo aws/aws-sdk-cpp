@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-ivs "C++ SDK for the AWS ivs service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-ivs "C++ SDK for Amazon Interactive Video Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_IVS_HEADERS
     "include/aws/ivs/*.h"

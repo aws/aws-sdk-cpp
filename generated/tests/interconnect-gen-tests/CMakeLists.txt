@@ -1,5 +1,5 @@
 add_project(interconnect-gen-tests
-    "Tests for the AWS INTERCONNECT C++ SDK"
+    "Tests for the Interconnect C++ SDK"
     testing-resources
     aws-cpp-sdk-interconnect
     aws-cpp-sdk-core)

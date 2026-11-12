@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-connectcampaignsv2 "C++ SDK for the AWS connectcampaignsv2 service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-connectcampaignsv2 "C++ SDK for AmazonConnectCampaignServiceV2" aws-cpp-sdk-core)
 
 file(GLOB AWS_CONNECTCAMPAIGNSV2_HEADERS
     "include/aws/connectcampaignsv2/*.h"

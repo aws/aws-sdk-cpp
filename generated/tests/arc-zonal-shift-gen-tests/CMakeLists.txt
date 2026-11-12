@@ -1,5 +1,5 @@
 add_project(arc-zonal-shift-gen-tests
-    "Tests for the AWS ARC-ZONAL-SHIFT C++ SDK"
+    "Tests for the AWS ARC - Zonal Shift C++ SDK"
     testing-resources
     aws-cpp-sdk-arc-zonal-shift
     aws-cpp-sdk-core)

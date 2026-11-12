@@ -1,5 +1,5 @@
 add_project(ivschat-gen-tests
-    "Tests for the AWS IVSCHAT C++ SDK"
+    "Tests for the Amazon Interactive Video Service Chat C++ SDK"
     testing-resources
     aws-cpp-sdk-ivschat
     aws-cpp-sdk-core)

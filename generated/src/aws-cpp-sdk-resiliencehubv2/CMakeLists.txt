@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-resiliencehubv2 "C++ SDK for the AWS resiliencehubv2 service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-resiliencehubv2 "C++ SDK for AWS Resilience Hub V2" aws-cpp-sdk-core)
 
 file(GLOB AWS_RESILIENCEHUBV2_HEADERS
     "include/aws/resiliencehubv2/*.h"

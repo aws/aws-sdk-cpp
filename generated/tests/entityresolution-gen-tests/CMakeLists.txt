@@ -1,5 +1,5 @@
 add_project(entityresolution-gen-tests
-    "Tests for the AWS ENTITYRESOLUTION C++ SDK"
+    "Tests for the AWS EntityResolution C++ SDK"
     testing-resources
     aws-cpp-sdk-entityresolution
     aws-cpp-sdk-core)

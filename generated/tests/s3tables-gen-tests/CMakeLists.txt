@@ -1,5 +1,5 @@
 add_project(s3tables-gen-tests
-    "Tests for the AWS S3TABLES C++ SDK"
+    "Tests for the Amazon S3 Tables C++ SDK"
     testing-resources
     aws-cpp-sdk-s3tables
     aws-cpp-sdk-core)

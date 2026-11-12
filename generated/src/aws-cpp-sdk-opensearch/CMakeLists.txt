@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-opensearch "C++ SDK for the AWS opensearch service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-opensearch "C++ SDK for Amazon OpenSearch Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_OPENSEARCH_HEADERS
     "include/aws/opensearch/*.h"

@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-redshift-data "C++ SDK for the AWS redshift-data service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-redshift-data "C++ SDK for Redshift Data API Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_REDSHIFT-DATA_HEADERS
     "include/aws/redshift-data/*.h"

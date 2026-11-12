@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-qbusiness "C++ SDK for the AWS qbusiness service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-qbusiness "C++ SDK for QBusiness" aws-cpp-sdk-core)
 
 file(GLOB AWS_QBUSINESS_HEADERS
     "include/aws/qbusiness/*.h"

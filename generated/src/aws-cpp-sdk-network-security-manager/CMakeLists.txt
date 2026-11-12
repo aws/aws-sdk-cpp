@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-network-security-manager "C++ SDK for the AWS network-security-manager service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-network-security-manager "C++ SDK for AWS Network Security Manager Customer API" aws-cpp-sdk-core)
 
 file(GLOB AWS_NETWORK-SECURITY-MANAGER_HEADERS
     "include/aws/network-security-manager/*.h"

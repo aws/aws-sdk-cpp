@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-codestar-notifications "C++ SDK for the AWS codestar-notifications service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-codestar-notifications "C++ SDK for AWS CodeStar Notifications" aws-cpp-sdk-core)
 
 file(GLOB AWS_CODESTAR-NOTIFICATIONS_HEADERS
     "include/aws/codestar-notifications/*.h"

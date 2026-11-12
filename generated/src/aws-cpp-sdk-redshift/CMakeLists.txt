@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-redshift "C++ SDK for the AWS redshift service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-redshift "C++ SDK for Amazon Redshift" aws-cpp-sdk-core)
 
 file(GLOB AWS_REDSHIFT_HEADERS
     "include/aws/redshift/*.h"

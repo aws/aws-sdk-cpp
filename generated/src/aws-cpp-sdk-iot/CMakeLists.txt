@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-iot "C++ SDK for the AWS iot service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-iot "C++ SDK for AWS IoT" aws-cpp-sdk-core)
 
 file(GLOB AWS_IOT_HEADERS
     "include/aws/iot/*.h"

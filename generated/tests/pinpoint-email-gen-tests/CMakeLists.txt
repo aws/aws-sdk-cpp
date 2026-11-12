@@ -1,5 +1,5 @@
 add_project(pinpoint-email-gen-tests
-    "Tests for the AWS PINPOINT-EMAIL C++ SDK"
+    "Tests for the Amazon Pinpoint Email Service C++ SDK"
     testing-resources
     aws-cpp-sdk-pinpoint-email
     aws-cpp-sdk-core)

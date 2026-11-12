@@ -1,5 +1,5 @@
 add_project(s3control-gen-tests
-    "Tests for the AWS S3CONTROL C++ SDK"
+    "Tests for the AWS S3 Control C++ SDK"
     testing-resources
     aws-cpp-sdk-s3control
     aws-cpp-sdk-core)

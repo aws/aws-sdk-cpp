@@ -1,5 +1,5 @@
 add_project(servicediscovery-gen-tests
-    "Tests for the AWS SERVICEDISCOVERY C++ SDK"
+    "Tests for the AWS Cloud Map C++ SDK"
     testing-resources
     aws-cpp-sdk-servicediscovery
     aws-cpp-sdk-core)

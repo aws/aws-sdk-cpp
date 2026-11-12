@@ -1,5 +1,5 @@
 add_project(timestream-write-gen-tests
-    "Tests for the AWS TIMESTREAM-WRITE C++ SDK"
+    "Tests for the Amazon Timestream Write C++ SDK"
     testing-resources
     aws-cpp-sdk-timestream-write
     aws-cpp-sdk-core)

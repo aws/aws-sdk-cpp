@@ -1,5 +1,5 @@
 add_project(inspector-gen-tests
-    "Tests for the AWS INSPECTOR C++ SDK"
+    "Tests for the Amazon Inspector C++ SDK"
     testing-resources
     aws-cpp-sdk-inspector
     aws-cpp-sdk-core)

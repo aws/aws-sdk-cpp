@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-account-access "C++ SDK for the AWS account-access service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-account-access "C++ SDK for Account Access" aws-cpp-sdk-core)
 
 file(GLOB AWS_ACCOUNT-ACCESS_HEADERS
     "include/aws/account-access/*.h"

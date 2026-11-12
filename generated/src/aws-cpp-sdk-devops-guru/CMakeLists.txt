@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-devops-guru "C++ SDK for the AWS devops-guru service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-devops-guru "C++ SDK for Amazon DevOps Guru" aws-cpp-sdk-core)
 
 file(GLOB AWS_DEVOPS-GURU_HEADERS
     "include/aws/devops-guru/*.h"

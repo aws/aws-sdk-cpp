@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-launch-wizard "C++ SDK for the AWS launch-wizard service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-launch-wizard "C++ SDK for AWS Launch Wizard" aws-cpp-sdk-core)
 
 file(GLOB AWS_LAUNCH-WIZARD_HEADERS
     "include/aws/launch-wizard/*.h"

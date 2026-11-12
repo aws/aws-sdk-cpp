@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-appconfig "C++ SDK for the AWS appconfig service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-appconfig "C++ SDK for Amazon AppConfig" aws-cpp-sdk-core)
 
 file(GLOB AWS_APPCONFIG_HEADERS
     "include/aws/appconfig/*.h"

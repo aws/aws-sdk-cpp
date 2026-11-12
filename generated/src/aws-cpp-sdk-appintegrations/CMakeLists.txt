@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-appintegrations "C++ SDK for the AWS appintegrations service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-appintegrations "C++ SDK for Amazon AppIntegrations Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_APPINTEGRATIONS_HEADERS
     "include/aws/appintegrations/*.h"

@@ -1,5 +1,5 @@
 add_project(vpc-lattice-gen-tests
-    "Tests for the AWS VPC-LATTICE C++ SDK"
+    "Tests for the Amazon VPC Lattice C++ SDK"
     testing-resources
     aws-cpp-sdk-vpc-lattice
     aws-cpp-sdk-core)

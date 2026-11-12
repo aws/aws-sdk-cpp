@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-dynamodbstreams "C++ SDK for the AWS dynamodbstreams service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-dynamodbstreams "C++ SDK for Amazon DynamoDB Streams" aws-cpp-sdk-core)
 
 file(GLOB AWS_DYNAMODBSTREAMS_HEADERS
     "include/aws/dynamodbstreams/*.h"

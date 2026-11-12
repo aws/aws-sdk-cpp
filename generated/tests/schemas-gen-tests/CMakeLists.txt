@@ -1,5 +1,5 @@
 add_project(schemas-gen-tests
-    "Tests for the AWS SCHEMAS C++ SDK"
+    "Tests for the Schemas C++ SDK"
     testing-resources
     aws-cpp-sdk-schemas
     aws-cpp-sdk-core)

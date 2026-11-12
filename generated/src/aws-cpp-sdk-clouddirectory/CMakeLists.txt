@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-clouddirectory "C++ SDK for the AWS clouddirectory service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-clouddirectory "C++ SDK for Amazon CloudDirectory" aws-cpp-sdk-core)
 
 file(GLOB AWS_CLOUDDIRECTORY_HEADERS
     "include/aws/clouddirectory/*.h"

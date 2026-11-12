@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-importexport "C++ SDK for the AWS importexport service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-importexport "C++ SDK for AWS Import/Export" aws-cpp-sdk-core)
 
 file(GLOB AWS_IMPORTEXPORT_HEADERS
     "include/aws/importexport/*.h"

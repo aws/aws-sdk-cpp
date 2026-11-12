@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-apprunner "C++ SDK for the AWS apprunner service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-apprunner "C++ SDK for AWS App Runner" aws-cpp-sdk-core)
 
 file(GLOB AWS_APPRUNNER_HEADERS
     "include/aws/apprunner/*.h"

@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-savingsplans "C++ SDK for the AWS savingsplans service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-savingsplans "C++ SDK for AWS Savings Plans" aws-cpp-sdk-core)
 
 file(GLOB AWS_SAVINGSPLANS_HEADERS
     "include/aws/savingsplans/*.h"

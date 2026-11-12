@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-polly "C++ SDK for the AWS polly service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-polly "C++ SDK for Amazon Polly" aws-cpp-sdk-core)
 
 file(GLOB AWS_POLLY_HEADERS
     "include/aws/polly/*.h"

@@ -1,5 +1,5 @@
 add_project(mediapackage-vod-gen-tests
-    "Tests for the AWS MEDIAPACKAGE-VOD C++ SDK"
+    "Tests for the AWS Elemental MediaPackage VOD C++ SDK"
     testing-resources
     aws-cpp-sdk-mediapackage-vod
     aws-cpp-sdk-core)

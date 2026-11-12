@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-bedrock "C++ SDK for the AWS bedrock service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-bedrock "C++ SDK for Amazon Bedrock" aws-cpp-sdk-core)
 
 file(GLOB AWS_BEDROCK_HEADERS
     "include/aws/bedrock/*.h"

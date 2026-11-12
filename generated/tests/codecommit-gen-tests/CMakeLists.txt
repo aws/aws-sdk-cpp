@@ -1,5 +1,5 @@
 add_project(codecommit-gen-tests
-    "Tests for the AWS CODECOMMIT C++ SDK"
+    "Tests for the AWS CodeCommit C++ SDK"
     testing-resources
     aws-cpp-sdk-codecommit
     aws-cpp-sdk-core)

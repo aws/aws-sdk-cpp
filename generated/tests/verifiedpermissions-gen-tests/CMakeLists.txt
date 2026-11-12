@@ -1,5 +1,5 @@
 add_project(verifiedpermissions-gen-tests
-    "Tests for the AWS VERIFIEDPERMISSIONS C++ SDK"
+    "Tests for the Amazon Verified Permissions C++ SDK"
     testing-resources
     aws-cpp-sdk-verifiedpermissions
     aws-cpp-sdk-core)

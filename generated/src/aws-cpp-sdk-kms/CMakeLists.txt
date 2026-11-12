@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-kms "C++ SDK for the AWS kms service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-kms "C++ SDK for AWS Key Management Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_KMS_HEADERS
     "include/aws/kms/*.h"

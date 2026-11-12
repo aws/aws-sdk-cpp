@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-partnercentral-benefits "C++ SDK for the AWS partnercentral-benefits service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-partnercentral-benefits "C++ SDK for Partner Central Benefits API" aws-cpp-sdk-core)
 
 file(GLOB AWS_PARTNERCENTRAL-BENEFITS_HEADERS
     "include/aws/partnercentral-benefits/*.h"

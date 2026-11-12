@@ -1,5 +1,5 @@
 add_project(wisdom-gen-tests
-    "Tests for the AWS WISDOM C++ SDK"
+    "Tests for the Amazon Connect Wisdom Service C++ SDK"
     testing-resources
     aws-cpp-sdk-wisdom
     aws-cpp-sdk-core)

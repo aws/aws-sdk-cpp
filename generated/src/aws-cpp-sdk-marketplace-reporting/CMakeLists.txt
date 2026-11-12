@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-marketplace-reporting "C++ SDK for the AWS marketplace-reporting service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-marketplace-reporting "C++ SDK for AWS Marketplace Reporting Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_MARKETPLACE-REPORTING_HEADERS
     "include/aws/marketplace-reporting/*.h"

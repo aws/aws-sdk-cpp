@@ -1,5 +1,5 @@
 add_project(cloudfront-gen-tests
-    "Tests for the AWS CLOUDFRONT C++ SDK"
+    "Tests for the Amazon CloudFront C++ SDK"
     testing-resources
     aws-cpp-sdk-cloudfront
     aws-cpp-sdk-core)

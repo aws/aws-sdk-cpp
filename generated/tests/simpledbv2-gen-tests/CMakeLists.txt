@@ -1,5 +1,5 @@
 add_project(simpledbv2-gen-tests
-    "Tests for the AWS SIMPLEDBV2 C++ SDK"
+    "Tests for the Amazon SimpleDB v2 C++ SDK"
     testing-resources
     aws-cpp-sdk-simpledbv2
     aws-cpp-sdk-core)

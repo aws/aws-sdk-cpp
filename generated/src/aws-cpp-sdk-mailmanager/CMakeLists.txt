@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-mailmanager "C++ SDK for the AWS mailmanager service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-mailmanager "C++ SDK for MailManager" aws-cpp-sdk-core)
 
 file(GLOB AWS_MAILMANAGER_HEADERS
     "include/aws/mailmanager/*.h"

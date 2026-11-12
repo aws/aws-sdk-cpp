@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-neptune-graph "C++ SDK for the AWS neptune-graph service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-neptune-graph "C++ SDK for Amazon Neptune Graph" aws-cpp-sdk-core)
 
 file(GLOB AWS_NEPTUNE-GRAPH_HEADERS
     "include/aws/neptune-graph/*.h"

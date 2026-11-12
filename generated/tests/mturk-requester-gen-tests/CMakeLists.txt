@@ -1,5 +1,5 @@
 add_project(mturk-requester-gen-tests
-    "Tests for the AWS MTURK-REQUESTER C++ SDK"
+    "Tests for the Amazon Mechanical Turk C++ SDK"
     testing-resources
     aws-cpp-sdk-mturk-requester
     aws-cpp-sdk-core)

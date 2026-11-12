@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-amp "C++ SDK for the AWS amp service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-amp "C++ SDK for Amazon Prometheus Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_AMP_HEADERS
     "include/aws/amp/*.h"

@@ -1,5 +1,5 @@
 add_project(medialive-gen-tests
-    "Tests for the AWS MEDIALIVE C++ SDK"
+    "Tests for the AWS Elemental MediaLive C++ SDK"
     testing-resources
     aws-cpp-sdk-medialive
     aws-cpp-sdk-core)

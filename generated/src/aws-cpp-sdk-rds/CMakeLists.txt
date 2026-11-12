@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-rds "C++ SDK for the AWS rds service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-rds "C++ SDK for Amazon Relational Database Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_RDS_HEADERS
     "include/aws/rds/*.h"

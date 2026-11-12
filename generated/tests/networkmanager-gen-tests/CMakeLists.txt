@@ -1,5 +1,5 @@
 add_project(networkmanager-gen-tests
-    "Tests for the AWS NETWORKMANAGER C++ SDK"
+    "Tests for the AWS Network Manager C++ SDK"
     testing-resources
     aws-cpp-sdk-networkmanager
     aws-cpp-sdk-core)

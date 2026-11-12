@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-controlcatalog "C++ SDK for the AWS controlcatalog service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-controlcatalog "C++ SDK for AWS Control Catalog" aws-cpp-sdk-core)
 
 file(GLOB AWS_CONTROLCATALOG_HEADERS
     "include/aws/controlcatalog/*.h"

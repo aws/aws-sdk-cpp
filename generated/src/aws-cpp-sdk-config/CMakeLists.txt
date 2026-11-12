@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-config "C++ SDK for the AWS config service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-config "C++ SDK for AWS Config" aws-cpp-sdk-core)
 
 file(GLOB AWS_CONFIG_HEADERS
     "include/aws/config/*.h"

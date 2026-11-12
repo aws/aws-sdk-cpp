@@ -1,5 +1,5 @@
 add_project(codeconnections-gen-tests
-    "Tests for the AWS CODECONNECTIONS C++ SDK"
+    "Tests for the AWS CodeConnections C++ SDK"
     testing-resources
     aws-cpp-sdk-codeconnections
     aws-cpp-sdk-core)

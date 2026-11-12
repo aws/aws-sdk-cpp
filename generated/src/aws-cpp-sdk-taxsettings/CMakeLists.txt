@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-taxsettings "C++ SDK for the AWS taxsettings service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-taxsettings "C++ SDK for Tax Settings" aws-cpp-sdk-core)
 
 file(GLOB AWS_TAXSETTINGS_HEADERS
     "include/aws/taxsettings/*.h"

@@ -1,5 +1,5 @@
 add_project(sustainability-gen-tests
-    "Tests for the AWS SUSTAINABILITY C++ SDK"
+    "Tests for the AWS Sustainability C++ SDK"
     testing-resources
     aws-cpp-sdk-sustainability
     aws-cpp-sdk-core)

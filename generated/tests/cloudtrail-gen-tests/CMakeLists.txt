@@ -1,5 +1,5 @@
 add_project(cloudtrail-gen-tests
-    "Tests for the AWS CLOUDTRAIL C++ SDK"
+    "Tests for the AWS CloudTrail C++ SDK"
     testing-resources
     aws-cpp-sdk-cloudtrail
     aws-cpp-sdk-core)

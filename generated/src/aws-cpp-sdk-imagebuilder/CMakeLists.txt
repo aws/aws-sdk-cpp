@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-imagebuilder "C++ SDK for the AWS imagebuilder service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-imagebuilder "C++ SDK for EC2 Image Builder" aws-cpp-sdk-core)
 
 file(GLOB AWS_IMAGEBUILDER_HEADERS
     "include/aws/imagebuilder/*.h"

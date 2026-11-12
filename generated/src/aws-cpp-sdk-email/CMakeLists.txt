@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-email "C++ SDK for the AWS email service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-email "C++ SDK for Amazon Simple Email Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_EMAIL_HEADERS
     "include/aws/email/*.h"

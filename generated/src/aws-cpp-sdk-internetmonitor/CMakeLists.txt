@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-internetmonitor "C++ SDK for the AWS internetmonitor service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-internetmonitor "C++ SDK for Amazon CloudWatch Internet Monitor" aws-cpp-sdk-core)
 
 file(GLOB AWS_INTERNETMONITOR_HEADERS
     "include/aws/internetmonitor/*.h"
