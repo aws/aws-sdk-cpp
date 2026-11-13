@@ -1,0 +1,6 @@
+{
+  "type": "bugfix",
+  "category": "smithy-cpp-codegen",
+  "contributor": "sbiscigl",
+  "description": "Fix generated waiters to call the renamed getter when an output member's getter name matches its result class name."
+}
