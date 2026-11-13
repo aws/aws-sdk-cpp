@@ -4,6 +4,7 @@
  */
 package com.amazonaws.util.awsclientsmithygenerator.generators.waiters.jmespath;
 
+import com.amazonaws.util.awsclientsmithygenerator.generators.ShapeUtil;
 import software.amazon.smithy.jmespath.JmespathExpression;
 import software.amazon.smithy.jmespath.ast.AndExpression;
 import software.amazon.smithy.jmespath.ast.ComparatorExpression;
@@ -20,6 +21,7 @@ import software.amazon.smithy.model.shapes.OperationShape;
 import software.amazon.smithy.model.shapes.Shape;
 import software.amazon.smithy.waiters.PathComparator;
 
+import java.util.Optional;
 import java.util.Set;
 
 /**
@@ -196,7 +198,9 @@ public class TopLevelVisitor extends UnsupportedExpressionVisitor<String> {
         EnumInfo enumInfo = EnumResolver.resolveEnumInfo(expr, model, operation);
 
         if (projectionLevels == 0) {
-            String access = "result" + expr.accept(new GetterChainEmitter());
+            Optional<String> resultClassName = Optional.ofNullable(operation)
+                    .map(op -> op.getId().getName() + ShapeUtil.getResultSuffix(model, op, smithyServiceName));
+            String access = "result" + expr.accept(new GetterChainEmitter(resultClassName));
             if (enumInfo != null) {
                 access = enumInfo.wrapAccess(access);
                 enumIncludes.add(enumInfo.shapeName);
