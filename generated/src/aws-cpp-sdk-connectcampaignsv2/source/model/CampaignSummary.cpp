@@ -57,6 +57,10 @@ CampaignSummary& CampaignSummary::operator=(JsonView jsonValue) {
     m_connectCampaignFlowArn = jsonValue.GetString("connectCampaignFlowArn");
     m_connectCampaignFlowArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("lastModifiedTime")) {
+    m_lastModifiedTime = jsonValue.GetString("lastModifiedTime");
+    m_lastModifiedTimeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -102,6 +106,10 @@ JsonValue CampaignSummary::Jsonize() const {
 
   if (m_connectCampaignFlowArnHasBeenSet) {
     payload.WithString("connectCampaignFlowArn", m_connectCampaignFlowArn);
+  }
+
+  if (m_lastModifiedTimeHasBeenSet) {
+    payload.WithString("lastModifiedTime", m_lastModifiedTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

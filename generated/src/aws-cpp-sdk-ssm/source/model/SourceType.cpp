@@ -19,6 +19,7 @@ static const int AWS_EC2_Instance_HASH = HashingUtils::HashString("AWS::EC2::Ins
 static const int AWS_IoT_Thing_HASH = HashingUtils::HashString("AWS::IoT::Thing");
 static const int AWS_SSM_ManagedInstance_HASH = HashingUtils::HashString("AWS::SSM::ManagedInstance");
 static const int Microsoft_Compute_virtualMachines_HASH = HashingUtils::HashString("Microsoft.Compute/virtualMachines");
+static const int compute_googleapis_com_Instance_HASH = HashingUtils::HashString("compute.googleapis.com/Instance");
 
 SourceType GetSourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -30,6 +31,8 @@ SourceType GetSourceTypeForName(const Aws::String& name) {
     return SourceType::AWS_SSM_ManagedInstance;
   } else if (hashCode == Microsoft_Compute_virtualMachines_HASH) {
     return SourceType::Microsoft_Compute_virtualMachines;
+  } else if (hashCode == compute_googleapis_com_Instance_HASH) {
+    return SourceType::compute_googleapis_com_Instance;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -52,6 +55,8 @@ Aws::String GetNameForSourceType(SourceType enumValue) {
       return "AWS::SSM::ManagedInstance";
     case SourceType::Microsoft_Compute_virtualMachines:
       return "Microsoft.Compute/virtualMachines";
+    case SourceType::compute_googleapis_com_Instance:
+      return "compute.googleapis.com/Instance";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

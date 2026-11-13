@@ -10,7 +10,7 @@
 namespace Aws {
 namespace SSM {
 namespace Model {
-enum class ValidationFindingScopeType { NOT_SET, azure_tenant, azure_subscription };
+enum class ValidationFindingScopeType { NOT_SET, azure_tenant, azure_subscription, gcp_organization, gcp_project };
 
 namespace ValidationFindingScopeTypeMapper {
 AWS_SSM_API ValidationFindingScopeType GetValidationFindingScopeTypeForName(const Aws::String& name);

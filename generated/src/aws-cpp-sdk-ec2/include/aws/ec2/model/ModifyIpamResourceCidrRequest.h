@@ -144,8 +144,8 @@ class ModifyIpamResourceCidrRequest : public EC2Request {
   ///@{
   /**
    * <p>Determines if the resource is monitored by IPAM. If a resource is monitored,
-   * the resource is discovered by IPAM and you can view details about the
-   * resource���s CIDR.</p>
+   * the resource is discovered by IPAM and you can view details about the resource’s
+   * CIDR.</p>
    */
   inline bool GetMonitored() const { return m_monitored; }
   inline bool MonitoredHasBeenSet() const { return m_monitoredHasBeenSet; }

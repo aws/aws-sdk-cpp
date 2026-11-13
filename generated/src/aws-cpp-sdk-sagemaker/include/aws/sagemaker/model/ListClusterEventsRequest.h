@@ -183,6 +183,27 @@ class ListClusterEventsRequest : public SageMakerRequest {
 
   ///@{
   /**
+   * <p>The unique identifier (UUID) of a cluster operation for which to filter
+   * events. If specified, only events associated with this operation are returned.
+   * This ID can be obtained from the <code>ListClusterOperations</code>
+   * operation.</p>
+   */
+  inline const Aws::String& GetOperationId() const { return m_operationId; }
+  inline bool OperationIdHasBeenSet() const { return m_operationIdHasBeenSet; }
+  template <typename OperationIdT = Aws::String>
+  void SetOperationId(OperationIdT&& value) {
+    m_operationIdHasBeenSet = true;
+    m_operationId = std::forward<OperationIdT>(value);
+  }
+  template <typename OperationIdT = Aws::String>
+  ListClusterEventsRequest& WithOperationId(OperationIdT&& value) {
+    SetOperationId(std::forward<OperationIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The maximum number of events to return in the response. Valid range is 1 to
    * 100.</p>
    */
@@ -233,6 +254,8 @@ class ListClusterEventsRequest : public SageMakerRequest {
 
   ClusterEventResourceType m_resourceType{ClusterEventResourceType::NOT_SET};
 
+  Aws::String m_operationId;
+
   int m_maxResults{0};
 
   Aws::String m_nextToken;
@@ -244,6 +267,7 @@ class ListClusterEventsRequest : public SageMakerRequest {
   bool m_sortByHasBeenSet = false;
   bool m_sortOrderHasBeenSet = false;
   bool m_resourceTypeHasBeenSet = false;
+  bool m_operationIdHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
 };

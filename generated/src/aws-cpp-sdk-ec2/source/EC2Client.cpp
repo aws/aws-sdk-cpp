@@ -48,6 +48,7 @@
 #include <aws/ec2/model/AssociateIpamByoasnRequest.h>
 #include <aws/ec2/model/AssociateIpamResourceDiscoveryRequest.h>
 #include <aws/ec2/model/AssociateNatGatewayAddressRequest.h>
+#include <aws/ec2/model/AssociateNetworkingFlexCostAllocationPolicyRequest.h>
 #include <aws/ec2/model/AssociateRouteServerRequest.h>
 #include <aws/ec2/model/AssociateRouteTableRequest.h>
 #include <aws/ec2/model/AssociateSecurityGroupVpcRequest.h>
@@ -118,7 +119,6 @@
 #include <aws/ec2/model/CreateIpamPolicyRequest.h>
 #include <aws/ec2/model/CreateIpamPoolRequest.h>
 #include <aws/ec2/model/CreateIpamPrefixListResolverRequest.h>
-#include <aws/ec2/model/CreateIpamPrefixListResolverTargetRequest.h>
 #include <aws/ec2/model/CreateIpamRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
@@ -448,6 +448,13 @@ AssociateNatGatewayAddressOutcome EC2Client::AssociateNatGatewayAddress(const As
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? AssociateNatGatewayAddressOutcome(result.GetResultWithOwnership())
                             : AssociateNatGatewayAddressOutcome(std::move(result.GetError()));
+}
+
+AssociateNetworkingFlexCostAllocationPolicyOutcome EC2Client::AssociateNetworkingFlexCostAllocationPolicy(
+    const AssociateNetworkingFlexCostAllocationPolicyRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? AssociateNetworkingFlexCostAllocationPolicyOutcome(result.GetResultWithOwnership())
+                            : AssociateNetworkingFlexCostAllocationPolicyOutcome(std::move(result.GetError()));
 }
 
 AssociateRouteServerOutcome EC2Client::AssociateRouteServer(const AssociateRouteServerRequest& request) const {
@@ -894,11 +901,4 @@ CreateIpamPrefixListResolverOutcome EC2Client::CreateIpamPrefixListResolver(cons
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateIpamPrefixListResolverOutcome(result.GetResultWithOwnership())
                             : CreateIpamPrefixListResolverOutcome(std::move(result.GetError()));
-}
-
-CreateIpamPrefixListResolverTargetOutcome EC2Client::CreateIpamPrefixListResolverTarget(
-    const CreateIpamPrefixListResolverTargetRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? CreateIpamPrefixListResolverTargetOutcome(result.GetResultWithOwnership())
-                            : CreateIpamPrefixListResolverTargetOutcome(std::move(result.GetError()));
 }

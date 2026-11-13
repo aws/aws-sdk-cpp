@@ -214,6 +214,26 @@ class ClusterEventDetail {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The unique identifier (UUID) of the cluster operation that the event is
+   * associated with, such as a scaling operation. This field is not returned when
+   * the event is not associated with an operation.</p>
+   */
+  inline const Aws::String& GetOperationId() const { return m_operationId; }
+  inline bool OperationIdHasBeenSet() const { return m_operationIdHasBeenSet; }
+  template <typename OperationIdT = Aws::String>
+  void SetOperationId(OperationIdT&& value) {
+    m_operationIdHasBeenSet = true;
+    m_operationId = std::forward<OperationIdT>(value);
+  }
+  template <typename OperationIdT = Aws::String>
+  ClusterEventDetail& WithOperationId(OperationIdT&& value) {
+    SetOperationId(std::forward<OperationIdT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_eventId;
 
@@ -234,6 +254,8 @@ class ClusterEventDetail {
   Aws::String m_description;
 
   ClusterEventLevel m_eventLevel{ClusterEventLevel::NOT_SET};
+
+  Aws::String m_operationId;
   bool m_eventIdHasBeenSet = false;
   bool m_clusterArnHasBeenSet = false;
   bool m_clusterNameHasBeenSet = false;
@@ -244,6 +266,7 @@ class ClusterEventDetail {
   bool m_eventDetailsHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_eventLevelHasBeenSet = false;
+  bool m_operationIdHasBeenSet = false;
 };
 
 }  // namespace Model

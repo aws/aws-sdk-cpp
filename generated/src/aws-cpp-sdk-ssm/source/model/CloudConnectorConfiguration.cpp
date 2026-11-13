@@ -22,6 +22,10 @@ CloudConnectorConfiguration& CloudConnectorConfiguration::operator=(JsonView jso
     m_azureConfiguration = jsonValue.GetObject("AzureConfiguration");
     m_azureConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("GcpConfiguration")) {
+    m_gcpConfiguration = jsonValue.GetObject("GcpConfiguration");
+    m_gcpConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue CloudConnectorConfiguration::Jsonize() const {
 
   if (m_azureConfigurationHasBeenSet) {
     payload.WithObject("AzureConfiguration", m_azureConfiguration.Jsonize());
+  }
+
+  if (m_gcpConfigurationHasBeenSet) {
+    payload.WithObject("GcpConfiguration", m_gcpConfiguration.Jsonize());
   }
 
   return payload;

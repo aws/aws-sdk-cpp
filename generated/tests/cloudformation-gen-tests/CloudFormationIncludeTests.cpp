@@ -271,6 +271,7 @@
 #include <aws/cloudformation/model/RegisterTypeResult.h>
 #include <aws/cloudformation/model/RegistrationStatus.h>
 #include <aws/cloudformation/model/RegistryType.h>
+#include <aws/cloudformation/model/RemoveAliasRequest.h>
 #include <aws/cloudformation/model/Replacement.h>
 #include <aws/cloudformation/model/RequiredActivatedType.h>
 #include <aws/cloudformation/model/RequiresRecreation.h>
@@ -298,6 +299,7 @@
 #include <aws/cloudformation/model/ScanType.h>
 #include <aws/cloudformation/model/ScannedResource.h>
 #include <aws/cloudformation/model/ScannedResourceIdentifier.h>
+#include <aws/cloudformation/model/SetAliasRequest.h>
 #include <aws/cloudformation/model/SetStackPolicyRequest.h>
 #include <aws/cloudformation/model/SetTypeConfigurationRequest.h>
 #include <aws/cloudformation/model/SetTypeConfigurationResult.h>

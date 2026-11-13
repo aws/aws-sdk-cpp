@@ -93,7 +93,7 @@ class UpdateProxySettingsResult {
 
   ///@{
   /**
-   * <p>The updated proxy listener configuration on the firewall. </p>
+   * <p>The updated proxy settings for the firewall. </p>
    */
   inline const ProxySettings& GetProxySettings() const { return m_proxySettings; }
   template <typename ProxySettingsT = ProxySettings>

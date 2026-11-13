@@ -17,6 +17,8 @@ namespace ValidationFindingScopeTypeMapper {
 
 static const int azure_tenant_HASH = HashingUtils::HashString("azure:tenant");
 static const int azure_subscription_HASH = HashingUtils::HashString("azure:subscription");
+static const int gcp_organization_HASH = HashingUtils::HashString("gcp:organization");
+static const int gcp_project_HASH = HashingUtils::HashString("gcp:project");
 
 ValidationFindingScopeType GetValidationFindingScopeTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +26,10 @@ ValidationFindingScopeType GetValidationFindingScopeTypeForName(const Aws::Strin
     return ValidationFindingScopeType::azure_tenant;
   } else if (hashCode == azure_subscription_HASH) {
     return ValidationFindingScopeType::azure_subscription;
+  } else if (hashCode == gcp_organization_HASH) {
+    return ValidationFindingScopeType::gcp_organization;
+  } else if (hashCode == gcp_project_HASH) {
+    return ValidationFindingScopeType::gcp_project;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +48,10 @@ Aws::String GetNameForValidationFindingScopeType(ValidationFindingScopeType enum
       return "azure:tenant";
     case ValidationFindingScopeType::azure_subscription:
       return "azure:subscription";
+    case ValidationFindingScopeType::gcp_organization:
+      return "gcp:organization";
+    case ValidationFindingScopeType::gcp_project:
+      return "gcp:project";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

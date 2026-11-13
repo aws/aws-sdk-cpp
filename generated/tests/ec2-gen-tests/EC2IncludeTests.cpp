@@ -142,6 +142,8 @@
 #include <aws/ec2/model/AssociateIpamResourceDiscoveryResponse.h>
 #include <aws/ec2/model/AssociateNatGatewayAddressRequest.h>
 #include <aws/ec2/model/AssociateNatGatewayAddressResponse.h>
+#include <aws/ec2/model/AssociateNetworkingFlexCostAllocationPolicyRequest.h>
+#include <aws/ec2/model/AssociateNetworkingFlexCostAllocationPolicyResponse.h>
 #include <aws/ec2/model/AssociateRouteServerRequest.h>
 #include <aws/ec2/model/AssociateRouteServerResponse.h>
 #include <aws/ec2/model/AssociateRouteTableRequest.h>
@@ -506,6 +508,8 @@
 #include <aws/ec2/model/CreateNetworkInterfacePermissionResponse.h>
 #include <aws/ec2/model/CreateNetworkInterfaceRequest.h>
 #include <aws/ec2/model/CreateNetworkInterfaceResponse.h>
+#include <aws/ec2/model/CreateNetworkingFlexCostAllocationPolicyRequest.h>
+#include <aws/ec2/model/CreateNetworkingFlexCostAllocationPolicyResponse.h>
 #include <aws/ec2/model/CreatePlacementGroupRequest.h>
 #include <aws/ec2/model/CreatePlacementGroupResponse.h>
 #include <aws/ec2/model/CreatePublicIpv4PoolRequest.h>
@@ -741,6 +745,8 @@
 #include <aws/ec2/model/DeleteNetworkInterfacePermissionRequest.h>
 #include <aws/ec2/model/DeleteNetworkInterfacePermissionResponse.h>
 #include <aws/ec2/model/DeleteNetworkInterfaceRequest.h>
+#include <aws/ec2/model/DeleteNetworkingFlexCostAllocationPoliciesRequest.h>
+#include <aws/ec2/model/DeleteNetworkingFlexCostAllocationPoliciesResponse.h>
 #include <aws/ec2/model/DeletePlacementGroupRequest.h>
 #include <aws/ec2/model/DeletePublicIpv4PoolRequest.h>
 #include <aws/ec2/model/DeletePublicIpv4PoolResponse.h>
@@ -1163,6 +1169,12 @@
 #include <aws/ec2/model/DescribeNetworkInterfacesPaginationTraits.h>
 #include <aws/ec2/model/DescribeNetworkInterfacesRequest.h>
 #include <aws/ec2/model/DescribeNetworkInterfacesResponse.h>
+#include <aws/ec2/model/DescribeNetworkingFlexCostAllocationPoliciesPaginationTraits.h>
+#include <aws/ec2/model/DescribeNetworkingFlexCostAllocationPoliciesRequest.h>
+#include <aws/ec2/model/DescribeNetworkingFlexCostAllocationPoliciesResponse.h>
+#include <aws/ec2/model/DescribeNetworkingFlexCostAllocationPolicyAssociationsPaginationTraits.h>
+#include <aws/ec2/model/DescribeNetworkingFlexCostAllocationPolicyAssociationsRequest.h>
+#include <aws/ec2/model/DescribeNetworkingFlexCostAllocationPolicyAssociationsResponse.h>
 #include <aws/ec2/model/DescribeOutpostLagsRequest.h>
 #include <aws/ec2/model/DescribeOutpostLagsResponse.h>
 #include <aws/ec2/model/DescribePlacementGroupsRequest.h>
@@ -1473,6 +1485,8 @@
 #include <aws/ec2/model/DisassociateIpamResourceDiscoveryResponse.h>
 #include <aws/ec2/model/DisassociateNatGatewayAddressRequest.h>
 #include <aws/ec2/model/DisassociateNatGatewayAddressResponse.h>
+#include <aws/ec2/model/DisassociateNetworkingFlexCostAllocationPolicyRequest.h>
+#include <aws/ec2/model/DisassociateNetworkingFlexCostAllocationPolicyResponse.h>
 #include <aws/ec2/model/DisassociateRouteServerRequest.h>
 #include <aws/ec2/model/DisassociateRouteServerResponse.h>
 #include <aws/ec2/model/DisassociateRouteTableRequest.h>
@@ -1669,6 +1683,18 @@
 #include <aws/ec2/model/FleetSpotMaintenanceStrategiesRequest.h>
 #include <aws/ec2/model/FleetStateCode.h>
 #include <aws/ec2/model/FleetType.h>
+#include <aws/ec2/model/FlexCostAllocationAssociationMode.h>
+#include <aws/ec2/model/FlexCostAllocationCidrMapping.h>
+#include <aws/ec2/model/FlexCostAllocationCidrRangeSpecifications.h>
+#include <aws/ec2/model/FlexCostAllocationCostDimension.h>
+#include <aws/ec2/model/FlexCostAllocationNetworkResourceScope.h>
+#include <aws/ec2/model/FlexCostAllocationNetworkResourceScopeType.h>
+#include <aws/ec2/model/FlexCostAllocationNetworkResourceType.h>
+#include <aws/ec2/model/FlexCostAllocationOperationFailure.h>
+#include <aws/ec2/model/FlexCostAllocationPolicyAssociationDescription.h>
+#include <aws/ec2/model/FlexCostAllocationPolicyDescription.h>
+#include <aws/ec2/model/FlexCostAllocationPolicyVersion.h>
+#include <aws/ec2/model/FlexCostAllocationReportingGranularity.h>
 #include <aws/ec2/model/FlexibleEnaQueuesSupport.h>
 #include <aws/ec2/model/FlowLog.h>
 #include <aws/ec2/model/FlowLogsResourceType.h>
@@ -1812,6 +1838,8 @@
 #include <aws/ec2/model/GetNetworkInsightsAccessScopeAnalysisFindingsResponse.h>
 #include <aws/ec2/model/GetNetworkInsightsAccessScopeContentRequest.h>
 #include <aws/ec2/model/GetNetworkInsightsAccessScopeContentResponse.h>
+#include <aws/ec2/model/GetNetworkingFlexCostAllocationPolicyVersionsRequest.h>
+#include <aws/ec2/model/GetNetworkingFlexCostAllocationPolicyVersionsResponse.h>
 #include <aws/ec2/model/GetPasswordDataRequest.h>
 #include <aws/ec2/model/GetPasswordDataResponse.h>
 #include <aws/ec2/model/GetReservedInstancesExchangeQuoteRequest.h>
@@ -1991,6 +2019,7 @@
 #include <aws/ec2/model/InstanceEventWindowTimeRangeRequest.h>
 #include <aws/ec2/model/InstanceExportDetails.h>
 #include <aws/ec2/model/InstanceFamilyCreditSpecification.h>
+#include <aws/ec2/model/InstanceFlexCostAllocationPolicyDocument.h>
 #include <aws/ec2/model/InstanceGeneration.h>
 #include <aws/ec2/model/InstanceHealthStatus.h>
 #include <aws/ec2/model/InstanceImageMetadata.h>
@@ -2385,6 +2414,8 @@
 #include <aws/ec2/model/ModifyMetricCategoryRequest.h>
 #include <aws/ec2/model/ModifyMetricCategoryResponse.h>
 #include <aws/ec2/model/ModifyNetworkInterfaceAttributeRequest.h>
+#include <aws/ec2/model/ModifyNetworkingFlexCostAllocationPolicyRequest.h>
+#include <aws/ec2/model/ModifyNetworkingFlexCostAllocationPolicyResponse.h>
 #include <aws/ec2/model/ModifyPrivateDnsNameOptionsRequest.h>
 #include <aws/ec2/model/ModifyPrivateDnsNameOptionsResponse.h>
 #include <aws/ec2/model/ModifyPublicIpDnsNameOptionsRequest.h>
@@ -2491,6 +2522,7 @@
 #include <aws/ec2/model/MoveStatus.h>
 #include <aws/ec2/model/MovingAddressStatus.h>
 #include <aws/ec2/model/MulticastSupportValue.h>
+#include <aws/ec2/model/NatFlexCostAllocationPolicyDocument.h>
 #include <aws/ec2/model/NatGateway.h>
 #include <aws/ec2/model/NatGatewayAddress.h>
 #include <aws/ec2/model/NatGatewayAddressStatus.h>
@@ -2563,6 +2595,7 @@
 #include <aws/ec2/model/PayerResponsibilityType.h>
 #include <aws/ec2/model/PaymentOption.h>
 #include <aws/ec2/model/PciId.h>
+#include <aws/ec2/model/PcxFlexCostAllocationPolicyDocument.h>
 #include <aws/ec2/model/PeeringAttachmentStatus.h>
 #include <aws/ec2/model/PeeringConnectionOptions.h>
 #include <aws/ec2/model/PeeringConnectionOptionsRequest.h>

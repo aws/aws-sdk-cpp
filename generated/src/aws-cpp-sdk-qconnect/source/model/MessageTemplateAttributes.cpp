@@ -37,6 +37,13 @@ MessageTemplateAttributes& MessageTemplateAttributes::operator=(JsonView jsonVal
     }
     m_customAttributesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("caseAttributes")) {
+    Aws::Map<Aws::String, JsonView> caseAttributesJsonMap = jsonValue.GetObject("caseAttributes").GetAllObjects();
+    for (auto& caseAttributesItem : caseAttributesJsonMap) {
+      m_caseAttributes[caseAttributesItem.first] = caseAttributesItem.second.AsString();
+    }
+    m_caseAttributesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -61,6 +68,14 @@ JsonValue MessageTemplateAttributes::Jsonize() const {
       customAttributesJsonMap.WithString(customAttributesItem.first, customAttributesItem.second);
     }
     payload.WithObject("customAttributes", std::move(customAttributesJsonMap));
+  }
+
+  if (m_caseAttributesHasBeenSet) {
+    JsonValue caseAttributesJsonMap;
+    for (auto& caseAttributesItem : m_caseAttributes) {
+      caseAttributesJsonMap.WithString(caseAttributesItem.first, caseAttributesItem.second);
+    }
+    payload.WithObject("caseAttributes", std::move(caseAttributesJsonMap));
   }
 
   return payload;

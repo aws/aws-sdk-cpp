@@ -37,6 +37,10 @@ ResourceServerType& ResourceServerType::operator=(JsonView jsonValue) {
     }
     m_scopesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ManagedBy")) {
+    m_managedBy = ResourceServerManagedByTypeMapper::GetResourceServerManagedByTypeForName(jsonValue.GetString("ManagedBy"));
+    m_managedByHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -61,6 +65,10 @@ JsonValue ResourceServerType::Jsonize() const {
       scopesJsonList[scopesIndex].AsObject(m_scopes[scopesIndex].Jsonize());
     }
     payload.WithArray("Scopes", std::move(scopesJsonList));
+  }
+
+  if (m_managedByHasBeenSet) {
+    payload.WithString("ManagedBy", ResourceServerManagedByTypeMapper::GetNameForResourceServerManagedByType(m_managedBy));
   }
 
   return payload;

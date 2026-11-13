@@ -274,8 +274,10 @@ class UpdateImagePipelineRequest : public ImagebuilderRequest {
   ///@{
   /**
    * <p>The array of workflow configuration objects for builds that this pipeline
-   * starts. You must also specify <code>executionRole</code> when you provide
-   * workflows.</p>
+   * starts. If you specify workflows, they replace the default workflows that Image
+   * Builder otherwise runs for the pipeline's builds. For example, if your list
+   * doesn't include a test workflow, the pipeline's builds don't run one. You must
+   * also specify <code>executionRole</code> when you provide workflows.</p>
    */
   inline const Aws::Vector<WorkflowConfiguration>& GetWorkflows() const { return m_workflows; }
   inline bool WorkflowsHasBeenSet() const { return m_workflowsHasBeenSet; }

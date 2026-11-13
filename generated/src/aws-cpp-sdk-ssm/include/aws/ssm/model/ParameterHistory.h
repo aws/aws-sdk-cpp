@@ -266,8 +266,10 @@ class ParameterHistory {
 
   ///@{
   /**
-   * <p>The data type of the parameter, such as <code>text</code> or
-   * <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
+   * <p>The data type of the parameter, such as <code>text</code>,
+   * <code>aws:ec2:image</code>, or <code>json</code>. The default is
+   * <code>text</code>. For the list of data types, see the <code>DataType</code>
+   * parameter of <code>PutParameter</code>.</p>
    */
   inline const Aws::String& GetDataType() const { return m_dataType; }
   inline bool DataTypeHasBeenSet() const { return m_dataTypeHasBeenSet; }

@@ -72,12 +72,12 @@ class QueueFleetAssociationSummary {
   ///@{
   /**
    * <p>The status of task scheduling in the queue-fleet association.</p> <ul> <li>
-   * <p> <code>ACTIVE</code>–Association is active.</p> </li> <li> <p>
-   * <code>STOP_SCHEDULING_AND_COMPLETE_TASKS</code>–Association has stopped
+   * <p> <code>ACTIVE</code> - Association is active.</p> </li> <li> <p>
+   * <code>STOP_SCHEDULING_AND_COMPLETE_TASKS</code> - Association has stopped
    * scheduling new tasks and is completing current tasks.</p> </li> <li> <p>
-   * <code>STOP_SCHEDULING_AND_CANCEL_TASKS</code>–Association has stopped scheduling
-   * new tasks and is canceling current tasks.</p> </li> <li> <p>
-   * <code>STOPPED</code>–Association has been stopped.</p> </li> </ul>
+   * <code>STOP_SCHEDULING_AND_CANCEL_TASKS</code> - Association has stopped
+   * scheduling new tasks and is canceling current tasks.</p> </li> <li> <p>
+   * <code>STOPPED</code> - Association has been stopped.</p> </li> </ul>
    */
   inline QueueFleetAssociationStatus GetStatus() const { return m_status; }
   inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }

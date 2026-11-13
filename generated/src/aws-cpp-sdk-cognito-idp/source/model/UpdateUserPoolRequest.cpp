@@ -97,6 +97,10 @@ Aws::String UpdateUserPoolRequest::SerializePayload() const {
     payload.WithObject("UserPoolAddOns", m_userPoolAddOns.Jsonize());
   }
 
+  if (m_dcrConfigurationHasBeenSet) {
+    payload.WithObject("DcrConfiguration", m_dcrConfiguration.Jsonize());
+  }
+
   if (m_accountRecoverySettingHasBeenSet) {
     payload.WithObject("AccountRecoverySetting", m_accountRecoverySetting.Jsonize());
   }

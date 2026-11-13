@@ -10,7 +10,7 @@
 namespace Aws {
 namespace SSM {
 namespace Model {
-enum class CloudConnectorFilterKey { NOT_SET, SubscriptionId, TenantId };
+enum class CloudConnectorFilterKey { NOT_SET, SubscriptionId, TenantId, ProjectId, OrganizationId };
 
 namespace CloudConnectorFilterKeyMapper {
 AWS_SSM_API CloudConnectorFilterKey GetCloudConnectorFilterKeyForName(const Aws::String& name);

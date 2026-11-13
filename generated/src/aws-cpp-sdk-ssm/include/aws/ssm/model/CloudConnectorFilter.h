@@ -55,7 +55,14 @@ class CloudConnectorFilter {
    * <dt>SubscriptionId</dt> <dd> <p>The Azure subscription ID to filter by. To
    * return only tenant-level connectors, specify <code>NONE</code>.</p> </dd>
    * <dt>TenantId</dt> <dd> <p>The Azure tenant ID to filter by. Filters the results
-   * to connectors that target the specified tenant.</p> </dd> </dl>
+   * to connectors that target the specified tenant.</p> </dd> <dt>ProjectId</dt>
+   * <dd> <p>The Google Cloud Platform (GCP) project ID to filter by. Filters the
+   * results to connectors that target the specified project.</p> </dd>
+   * <dt>OrganizationId</dt> <dd> <p>The GCP organization ID to filter by. Filters
+   * the results to connectors that target the entire specified organization.</p>
+   * </dd> </dl> <p>You can't combine Azure filter keys (<code>SubscriptionId</code>
+   * and <code>TenantId</code>) with GCP filter keys (<code>ProjectId</code> and
+   * <code>OrganizationId</code>) in the same request.</p>
    */
   inline const Aws::Vector<Aws::String>& GetFilterValues() const { return m_filterValues; }
   inline bool FilterValuesHasBeenSet() const { return m_filterValuesHasBeenSet; }

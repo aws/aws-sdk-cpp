@@ -20,6 +20,8 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/DeleteIpamPoolRequest.h>
+#include <aws/ec2/model/DeleteIpamPrefixListResolverRequest.h>
 #include <aws/ec2/model/DeleteIpamPrefixListResolverTargetRequest.h>
 #include <aws/ec2/model/DeleteIpamResourceDiscoveryRequest.h>
 #include <aws/ec2/model/DeleteIpamRoutingPolicyRegistrationRequest.h>
@@ -44,6 +46,7 @@
 #include <aws/ec2/model/DeleteNetworkInsightsPathRequest.h>
 #include <aws/ec2/model/DeleteNetworkInterfacePermissionRequest.h>
 #include <aws/ec2/model/DeleteNetworkInterfaceRequest.h>
+#include <aws/ec2/model/DeleteNetworkingFlexCostAllocationPoliciesRequest.h>
 #include <aws/ec2/model/DeletePlacementGroupRequest.h>
 #include <aws/ec2/model/DeletePublicIpv4PoolRequest.h>
 #include <aws/ec2/model/DeleteQueuedReservedInstancesRequest.h>
@@ -117,9 +120,6 @@
 #include <aws/ec2/model/DescribeBundleTasksRequest.h>
 #include <aws/ec2/model/DescribeByoipCidrsRequest.h>
 #include <aws/ec2/model/DescribeCapacityBlockExtensionHistoryRequest.h>
-#include <aws/ec2/model/DescribeCapacityBlockExtensionOfferingsRequest.h>
-#include <aws/ec2/model/DescribeCapacityBlockOfferingsRequest.h>
-#include <aws/ec2/model/DescribeCapacityBlockStatusRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,17 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DeleteIpamPoolOutcome EC2Client::DeleteIpamPool(const DeleteIpamPoolRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteIpamPoolOutcome(result.GetResultWithOwnership()) : DeleteIpamPoolOutcome(std::move(result.GetError()));
+}
+
+DeleteIpamPrefixListResolverOutcome EC2Client::DeleteIpamPrefixListResolver(const DeleteIpamPrefixListResolverRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteIpamPrefixListResolverOutcome(result.GetResultWithOwnership())
+                            : DeleteIpamPrefixListResolverOutcome(std::move(result.GetError()));
+}
 
 DeleteIpamPrefixListResolverTargetOutcome EC2Client::DeleteIpamPrefixListResolverTarget(
     const DeleteIpamPrefixListResolverTargetRequest& request) const {
@@ -282,6 +293,13 @@ DeleteNetworkInterfacePermissionOutcome EC2Client::DeleteNetworkInterfacePermiss
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteNetworkInterfacePermissionOutcome(result.GetResultWithOwnership())
                             : DeleteNetworkInterfacePermissionOutcome(std::move(result.GetError()));
+}
+
+DeleteNetworkingFlexCostAllocationPoliciesOutcome EC2Client::DeleteNetworkingFlexCostAllocationPolicies(
+    const DeleteNetworkingFlexCostAllocationPoliciesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteNetworkingFlexCostAllocationPoliciesOutcome(result.GetResultWithOwnership())
+                            : DeleteNetworkingFlexCostAllocationPoliciesOutcome(std::move(result.GetError()));
 }
 
 DeletePlacementGroupOutcome EC2Client::DeletePlacementGroup(const DeletePlacementGroupRequest& request) const {
@@ -739,24 +757,4 @@ DescribeCapacityBlockExtensionHistoryOutcome EC2Client::DescribeCapacityBlockExt
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeCapacityBlockExtensionHistoryOutcome(result.GetResultWithOwnership())
                             : DescribeCapacityBlockExtensionHistoryOutcome(std::move(result.GetError()));
-}
-
-DescribeCapacityBlockExtensionOfferingsOutcome EC2Client::DescribeCapacityBlockExtensionOfferings(
-    const DescribeCapacityBlockExtensionOfferingsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeCapacityBlockExtensionOfferingsOutcome(result.GetResultWithOwnership())
-                            : DescribeCapacityBlockExtensionOfferingsOutcome(std::move(result.GetError()));
-}
-
-DescribeCapacityBlockOfferingsOutcome EC2Client::DescribeCapacityBlockOfferings(
-    const DescribeCapacityBlockOfferingsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeCapacityBlockOfferingsOutcome(result.GetResultWithOwnership())
-                            : DescribeCapacityBlockOfferingsOutcome(std::move(result.GetError()));
-}
-
-DescribeCapacityBlockStatusOutcome EC2Client::DescribeCapacityBlockStatus(const DescribeCapacityBlockStatusRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeCapacityBlockStatusOutcome(result.GetResultWithOwnership())
-                            : DescribeCapacityBlockStatusOutcome(std::move(result.GetError()));
 }

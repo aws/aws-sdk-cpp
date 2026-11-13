@@ -20,6 +20,12 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/GetIpamPoolAllocationsRequest.h>
+#include <aws/ec2/model/GetIpamPoolCidrsRequest.h>
+#include <aws/ec2/model/GetIpamPrefixListResolverRulesRequest.h>
+#include <aws/ec2/model/GetIpamPrefixListResolverVersionEntriesRequest.h>
+#include <aws/ec2/model/GetIpamPrefixListResolverVersionsRequest.h>
+#include <aws/ec2/model/GetIpamResourceCidrsRequest.h>
 #include <aws/ec2/model/GetIpamRouteOriginAuthorizationsRequest.h>
 #include <aws/ec2/model/GetIpamRouteProtectionFindingsRequest.h>
 #include <aws/ec2/model/GetIpamRoutingPolicyRegistrationDeltasRequest.h>
@@ -30,6 +36,7 @@
 #include <aws/ec2/model/GetManagedResourceVisibilityRequest.h>
 #include <aws/ec2/model/GetNetworkInsightsAccessScopeAnalysisFindingsRequest.h>
 #include <aws/ec2/model/GetNetworkInsightsAccessScopeContentRequest.h>
+#include <aws/ec2/model/GetNetworkingFlexCostAllocationPolicyVersionsRequest.h>
 #include <aws/ec2/model/GetPasswordDataRequest.h>
 #include <aws/ec2/model/GetReservedInstancesExchangeQuoteRequest.h>
 #include <aws/ec2/model/GetRouteServerAssociationsRequest.h>
@@ -110,16 +117,9 @@
 #include <aws/ec2/model/ModifyManagedResourceVisibilityRequest.h>
 #include <aws/ec2/model/ModifyMetricCategoryRequest.h>
 #include <aws/ec2/model/ModifyNetworkInterfaceAttributeRequest.h>
+#include <aws/ec2/model/ModifyNetworkingFlexCostAllocationPolicyRequest.h>
 #include <aws/ec2/model/ModifyPrivateDnsNameOptionsRequest.h>
 #include <aws/ec2/model/ModifyPublicIpDnsNameOptionsRequest.h>
-#include <aws/ec2/model/ModifyReservedInstancesRequest.h>
-#include <aws/ec2/model/ModifyRouteServerRequest.h>
-#include <aws/ec2/model/ModifySecurityGroupRulesRequest.h>
-#include <aws/ec2/model/ModifySnapshotAttributeRequest.h>
-#include <aws/ec2/model/ModifySnapshotTierRequest.h>
-#include <aws/ec2/model/ModifySpotFleetRequestRequest.h>
-#include <aws/ec2/model/ModifySubnetAttributeRequest.h>
-#include <aws/ec2/model/ModifyTrafficMirrorFilterNetworkServicesRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,45 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+GetIpamPoolAllocationsOutcome EC2Client::GetIpamPoolAllocations(const GetIpamPoolAllocationsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetIpamPoolAllocationsOutcome(result.GetResultWithOwnership())
+                            : GetIpamPoolAllocationsOutcome(std::move(result.GetError()));
+}
+
+GetIpamPoolCidrsOutcome EC2Client::GetIpamPoolCidrs(const GetIpamPoolCidrsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetIpamPoolCidrsOutcome(result.GetResultWithOwnership())
+                            : GetIpamPoolCidrsOutcome(std::move(result.GetError()));
+}
+
+GetIpamPrefixListResolverRulesOutcome EC2Client::GetIpamPrefixListResolverRules(
+    const GetIpamPrefixListResolverRulesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetIpamPrefixListResolverRulesOutcome(result.GetResultWithOwnership())
+                            : GetIpamPrefixListResolverRulesOutcome(std::move(result.GetError()));
+}
+
+GetIpamPrefixListResolverVersionEntriesOutcome EC2Client::GetIpamPrefixListResolverVersionEntries(
+    const GetIpamPrefixListResolverVersionEntriesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetIpamPrefixListResolverVersionEntriesOutcome(result.GetResultWithOwnership())
+                            : GetIpamPrefixListResolverVersionEntriesOutcome(std::move(result.GetError()));
+}
+
+GetIpamPrefixListResolverVersionsOutcome EC2Client::GetIpamPrefixListResolverVersions(
+    const GetIpamPrefixListResolverVersionsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetIpamPrefixListResolverVersionsOutcome(result.GetResultWithOwnership())
+                            : GetIpamPrefixListResolverVersionsOutcome(std::move(result.GetError()));
+}
+
+GetIpamResourceCidrsOutcome EC2Client::GetIpamResourceCidrs(const GetIpamResourceCidrsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetIpamResourceCidrsOutcome(result.GetResultWithOwnership())
+                            : GetIpamResourceCidrsOutcome(std::move(result.GetError()));
+}
 
 GetIpamRouteOriginAuthorizationsOutcome EC2Client::GetIpamRouteOriginAuthorizations(
     const GetIpamRouteOriginAuthorizationsRequest& request) const {
@@ -197,6 +236,13 @@ GetNetworkInsightsAccessScopeContentOutcome EC2Client::GetNetworkInsightsAccessS
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetNetworkInsightsAccessScopeContentOutcome(result.GetResultWithOwnership())
                             : GetNetworkInsightsAccessScopeContentOutcome(std::move(result.GetError()));
+}
+
+GetNetworkingFlexCostAllocationPolicyVersionsOutcome EC2Client::GetNetworkingFlexCostAllocationPolicyVersions(
+    const GetNetworkingFlexCostAllocationPolicyVersionsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetNetworkingFlexCostAllocationPolicyVersionsOutcome(result.GetResultWithOwnership())
+                            : GetNetworkingFlexCostAllocationPolicyVersionsOutcome(std::move(result.GetError()));
 }
 
 GetPasswordDataOutcome EC2Client::GetPasswordData(const GetPasswordDataRequest& request) const {
@@ -698,6 +744,13 @@ ModifyNetworkInterfaceAttributeOutcome EC2Client::ModifyNetworkInterfaceAttribut
                             : ModifyNetworkInterfaceAttributeOutcome(std::move(result.GetError()));
 }
 
+ModifyNetworkingFlexCostAllocationPolicyOutcome EC2Client::ModifyNetworkingFlexCostAllocationPolicy(
+    const ModifyNetworkingFlexCostAllocationPolicyRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyNetworkingFlexCostAllocationPolicyOutcome(result.GetResultWithOwnership())
+                            : ModifyNetworkingFlexCostAllocationPolicyOutcome(std::move(result.GetError()));
+}
+
 ModifyPrivateDnsNameOptionsOutcome EC2Client::ModifyPrivateDnsNameOptions(const ModifyPrivateDnsNameOptionsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ModifyPrivateDnsNameOptionsOutcome(result.GetResultWithOwnership())
@@ -708,53 +761,4 @@ ModifyPublicIpDnsNameOptionsOutcome EC2Client::ModifyPublicIpDnsNameOptions(cons
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ModifyPublicIpDnsNameOptionsOutcome(result.GetResultWithOwnership())
                             : ModifyPublicIpDnsNameOptionsOutcome(std::move(result.GetError()));
-}
-
-ModifyReservedInstancesOutcome EC2Client::ModifyReservedInstances(const ModifyReservedInstancesRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ModifyReservedInstancesOutcome(result.GetResultWithOwnership())
-                            : ModifyReservedInstancesOutcome(std::move(result.GetError()));
-}
-
-ModifyRouteServerOutcome EC2Client::ModifyRouteServer(const ModifyRouteServerRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ModifyRouteServerOutcome(result.GetResultWithOwnership())
-                            : ModifyRouteServerOutcome(std::move(result.GetError()));
-}
-
-ModifySecurityGroupRulesOutcome EC2Client::ModifySecurityGroupRules(const ModifySecurityGroupRulesRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ModifySecurityGroupRulesOutcome(result.GetResultWithOwnership())
-                            : ModifySecurityGroupRulesOutcome(std::move(result.GetError()));
-}
-
-ModifySnapshotAttributeOutcome EC2Client::ModifySnapshotAttribute(const ModifySnapshotAttributeRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ModifySnapshotAttributeOutcome(result.GetResultWithOwnership())
-                            : ModifySnapshotAttributeOutcome(std::move(result.GetError()));
-}
-
-ModifySnapshotTierOutcome EC2Client::ModifySnapshotTier(const ModifySnapshotTierRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ModifySnapshotTierOutcome(result.GetResultWithOwnership())
-                            : ModifySnapshotTierOutcome(std::move(result.GetError()));
-}
-
-ModifySpotFleetRequestOutcome EC2Client::ModifySpotFleetRequest(const ModifySpotFleetRequestRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ModifySpotFleetRequestOutcome(result.GetResultWithOwnership())
-                            : ModifySpotFleetRequestOutcome(std::move(result.GetError()));
-}
-
-ModifySubnetAttributeOutcome EC2Client::ModifySubnetAttribute(const ModifySubnetAttributeRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ModifySubnetAttributeOutcome(result.GetResultWithOwnership())
-                            : ModifySubnetAttributeOutcome(std::move(result.GetError()));
-}
-
-ModifyTrafficMirrorFilterNetworkServicesOutcome EC2Client::ModifyTrafficMirrorFilterNetworkServices(
-    const ModifyTrafficMirrorFilterNetworkServicesRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ModifyTrafficMirrorFilterNetworkServicesOutcome(result.GetResultWithOwnership())
-                            : ModifyTrafficMirrorFilterNetworkServicesOutcome(std::move(result.GetError()));
 }

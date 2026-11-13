@@ -58,7 +58,8 @@ class ApplyPendingMaintenanceActionRequest : public DocDBRequest {
   ///@{
   /**
    * <p>The pending maintenance action to apply to this resource.</p> <p>Valid
-   * values: <code>system-update</code>, <code>db-upgrade</code> </p>
+   * values: <code>system-update</code>, <code>db-upgrade</code>,
+   * <code>serverless-platform-version-update</code> </p>
    */
   inline const Aws::String& GetApplyAction() const { return m_applyAction; }
   inline bool ApplyActionHasBeenSet() const { return m_applyActionHasBeenSet; }

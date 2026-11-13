@@ -24,5 +24,9 @@ Aws::String UpdateCrlRequest::SerializePayload() const {
     payload.WithString("crlData", HashingUtils::Base64Encode(m_crlData));
   }
 
+  if (m_aliasNameHasBeenSet) {
+    payload.WithString("aliasName", m_aliasName);
+  }
+
   return payload.View().WriteReadable();
 }

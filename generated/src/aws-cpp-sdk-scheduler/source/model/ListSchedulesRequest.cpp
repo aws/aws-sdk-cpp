@@ -25,15 +25,15 @@ void ListSchedulesRequest::AddQueryStringParameters(URI& uri) const {
     ss.str("");
   }
 
-  if (m_maxResultsHasBeenSet) {
-    ss << m_maxResults;
-    uri.AddQueryStringParameter("MaxResults", ss.str());
-    ss.str("");
-  }
-
   if (m_namePrefixHasBeenSet) {
     ss << m_namePrefix;
     uri.AddQueryStringParameter("NamePrefix", ss.str());
+    ss.str("");
+  }
+
+  if (m_stateHasBeenSet) {
+    ss << ScheduleStateMapper::GetNameForScheduleState(m_state);
+    uri.AddQueryStringParameter("State", ss.str());
     ss.str("");
   }
 
@@ -43,9 +43,9 @@ void ListSchedulesRequest::AddQueryStringParameters(URI& uri) const {
     ss.str("");
   }
 
-  if (m_stateHasBeenSet) {
-    ss << ScheduleStateMapper::GetNameForScheduleState(m_state);
-    uri.AddQueryStringParameter("State", ss.str());
+  if (m_maxResultsHasBeenSet) {
+    ss << m_maxResults;
+    uri.AddQueryStringParameter("MaxResults", ss.str());
     ss.str("");
   }
 }

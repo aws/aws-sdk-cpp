@@ -30,6 +30,14 @@ ClusterAutoPatchConfig& ClusterAutoPatchConfig::operator=(JsonView jsonValue) {
     m_deploymentConfig = jsonValue.GetObject("DeploymentConfig");
     m_deploymentConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("IdleWaitWindowInSeconds")) {
+    m_idleWaitWindowInSeconds = jsonValue.GetInteger("IdleWaitWindowInSeconds");
+    m_idleWaitWindowInSecondsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("DrainPolicy")) {
+    m_drainPolicy = jsonValue.GetObject("DrainPolicy");
+    m_drainPolicyHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +54,14 @@ JsonValue ClusterAutoPatchConfig::Jsonize() const {
 
   if (m_deploymentConfigHasBeenSet) {
     payload.WithObject("DeploymentConfig", m_deploymentConfig.Jsonize());
+  }
+
+  if (m_idleWaitWindowInSecondsHasBeenSet) {
+    payload.WithInteger("IdleWaitWindowInSeconds", m_idleWaitWindowInSeconds);
+  }
+
+  if (m_drainPolicyHasBeenSet) {
+    payload.WithObject("DrainPolicy", m_drainPolicy.Jsonize());
   }
 
   return payload;

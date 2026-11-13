@@ -18,6 +18,7 @@ namespace OrganizationConfigurationStatusMapper {
 static const int PENDING_HASH = HashingUtils::HashString("PENDING");
 static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
 static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
 
 OrganizationConfigurationStatus GetOrganizationConfigurationStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ OrganizationConfigurationStatus GetOrganizationConfigurationStatusForName(const 
     return OrganizationConfigurationStatus::ENABLED;
   } else if (hashCode == FAILED_HASH) {
     return OrganizationConfigurationStatus::FAILED;
+  } else if (hashCode == DISABLED_HASH) {
+    return OrganizationConfigurationStatus::DISABLED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForOrganizationConfigurationStatus(OrganizationConfigurationS
       return "ENABLED";
     case OrganizationConfigurationStatus::FAILED:
       return "FAILED";
+    case OrganizationConfigurationStatus::DISABLED:
+      return "DISABLED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

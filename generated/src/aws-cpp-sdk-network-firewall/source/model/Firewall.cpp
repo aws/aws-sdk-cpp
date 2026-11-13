@@ -449,7 +449,7 @@ Firewall& Firewall::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>
                 m_availabilityZoneChangeProtectionHasBeenSet = true;
               }
 
-              else if (initialKeyStr == "NatGatewayMappings") {
+              else if (initialKeyStr == "NatGatewayCreateMappings") {
                 auto peekType_0 = decoder->PeekType();
                 if (peekType_0.has_value() &&
                     (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
@@ -457,7 +457,7 @@ Firewall& Firewall::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>
                     auto listSize_0 = decoder->PopNextArrayStart();
                     if (listSize_0.has_value()) {
                       for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
-                        m_natGatewayMappings.push_back(NatGatewayMapping(decoder));
+                        m_natGatewayCreateMappings.push_back(NatGatewayCreateMapping(decoder));
                       }
                     }
                   } else  // IndefArrayStart
@@ -471,11 +471,11 @@ Firewall& Firewall::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>
                         }
                         break;
                       }
-                      m_natGatewayMappings.push_back(NatGatewayMapping(decoder));
+                      m_natGatewayCreateMappings.push_back(NatGatewayCreateMapping(decoder));
                     }
                   }
                 }
-                m_natGatewayMappingsHasBeenSet = true;
+                m_natGatewayCreateMappingsHasBeenSet = true;
               }
 
               else if (initialKeyStr == "ProxySettings") {
@@ -483,17 +483,18 @@ Firewall& Firewall::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>
                 m_proxySettingsHasBeenSet = true;
               }
 
-              else if (initialKeyStr == "NoSourcePreservation") {
-                auto val = decoder->PopNextBooleanVal();
-                if (val.has_value()) {
-                  m_noSourcePreservation = val.value();
-                }
-                m_noSourcePreservationHasBeenSet = true;
-              }
-
               else if (initialKeyStr == "VpcEndpoint") {
                 m_vpcEndpoint = VpcEndpoint(decoder);
                 m_vpcEndpointHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "TransparentFilteringNatScope") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_transparentFilteringNatScope = TransparentFilteringNatScopeMapper::GetTransparentFilteringNatScopeForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_transparentFilteringNatScopeHasBeenSet = true;
               } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
@@ -940,7 +941,7 @@ Firewall& Firewall::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>
               m_availabilityZoneChangeProtectionHasBeenSet = true;
             }
 
-            else if (initialKeyStr == "NatGatewayMappings") {
+            else if (initialKeyStr == "NatGatewayCreateMappings") {
               auto peekType_0 = decoder->PeekType();
               if (peekType_0.has_value() &&
                   (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
@@ -948,7 +949,7 @@ Firewall& Firewall::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>
                   auto listSize_0 = decoder->PopNextArrayStart();
                   if (listSize_0.has_value()) {
                     for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
-                      m_natGatewayMappings.push_back(NatGatewayMapping(decoder));
+                      m_natGatewayCreateMappings.push_back(NatGatewayCreateMapping(decoder));
                     }
                   }
                 } else  // IndefArrayStart
@@ -962,11 +963,11 @@ Firewall& Firewall::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>
                       }
                       break;
                     }
-                    m_natGatewayMappings.push_back(NatGatewayMapping(decoder));
+                    m_natGatewayCreateMappings.push_back(NatGatewayCreateMapping(decoder));
                   }
                 }
               }
-              m_natGatewayMappingsHasBeenSet = true;
+              m_natGatewayCreateMappingsHasBeenSet = true;
             }
 
             else if (initialKeyStr == "ProxySettings") {
@@ -974,17 +975,18 @@ Firewall& Firewall::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>
               m_proxySettingsHasBeenSet = true;
             }
 
-            else if (initialKeyStr == "NoSourcePreservation") {
-              auto val = decoder->PopNextBooleanVal();
-              if (val.has_value()) {
-                m_noSourcePreservation = val.value();
-              }
-              m_noSourcePreservationHasBeenSet = true;
-            }
-
             else if (initialKeyStr == "VpcEndpoint") {
               m_vpcEndpoint = VpcEndpoint(decoder);
               m_vpcEndpointHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "TransparentFilteringNatScope") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_transparentFilteringNatScope = TransparentFilteringNatScopeMapper::GetTransparentFilteringNatScopeForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_transparentFilteringNatScopeHasBeenSet = true;
             } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
@@ -1055,16 +1057,16 @@ void Firewall::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
   if (m_availabilityZoneChangeProtectionHasBeenSet) {
     mapSize++;
   }
-  if (m_natGatewayMappingsHasBeenSet) {
+  if (m_natGatewayCreateMappingsHasBeenSet) {
     mapSize++;
   }
   if (m_proxySettingsHasBeenSet) {
     mapSize++;
   }
-  if (m_noSourcePreservationHasBeenSet) {
+  if (m_vpcEndpointHasBeenSet) {
     mapSize++;
   }
-  if (m_vpcEndpointHasBeenSet) {
+  if (m_transparentFilteringNatScopeHasBeenSet) {
     mapSize++;
   }
 
@@ -1172,10 +1174,10 @@ void Firewall::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
     encoder.WriteBool(m_availabilityZoneChangeProtection);
   }
 
-  if (m_natGatewayMappingsHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("NatGatewayMappings"));
-    encoder.WriteArrayStart(m_natGatewayMappings.size());
-    for (const auto& item_0 : m_natGatewayMappings) {
+  if (m_natGatewayCreateMappingsHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("NatGatewayCreateMappings"));
+    encoder.WriteArrayStart(m_natGatewayCreateMappings.size());
+    for (const auto& item_0 : m_natGatewayCreateMappings) {
       item_0.CborEncode(encoder);
     }
   }
@@ -1185,14 +1187,15 @@ void Firewall::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
     m_proxySettings.CborEncode(encoder);
   }
 
-  if (m_noSourcePreservationHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("NoSourcePreservation"));
-    encoder.WriteBool(m_noSourcePreservation);
-  }
-
   if (m_vpcEndpointHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("VpcEndpoint"));
     m_vpcEndpoint.CborEncode(encoder);
+  }
+
+  if (m_transparentFilteringNatScopeHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("TransparentFilteringNatScope"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(
+        TransparentFilteringNatScopeMapper::GetNameForTransparentFilteringNatScope(m_transparentFilteringNatScope).c_str()));
   }
 }
 

@@ -66,6 +66,7 @@ static const int python3_15_HASH = HashingUtils::HashString("python3.15");
 static const int java8_al2023_HASH = HashingUtils::HashString("java8.al2023");
 static const int java11_al2023_HASH = HashingUtils::HashString("java11.al2023");
 static const int java17_al2023_HASH = HashingUtils::HashString("java17.al2023");
+static const int custom_HASH = HashingUtils::HashString("custom");
 
 Runtime GetRuntimeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -171,6 +172,8 @@ Runtime GetRuntimeForName(const Aws::String& name) {
     return Runtime::java11_al2023;
   } else if (hashCode == java17_al2023_HASH) {
     return Runtime::java17_al2023;
+  } else if (hashCode == custom_HASH) {
+    return Runtime::custom;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -287,6 +290,8 @@ Aws::String GetNameForRuntime(Runtime enumValue) {
       return "java11.al2023";
     case Runtime::java17_al2023:
       return "java17.al2023";
+    case Runtime::custom:
+      return "custom";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

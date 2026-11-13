@@ -35,6 +35,7 @@
 #include <aws/sagemaker/model/ListTrialsPaginationTraits.h>
 #include <aws/sagemaker/model/ListModelMetadataPaginationTraits.h>
 #include <aws/sagemaker/model/ListComputeQuotasPaginationTraits.h>
+#include <aws/sagemaker/model/ListClusterExtensionVersionsPaginationTraits.h>
 #include <aws/sagemaker/model/ListArtifactsPaginationTraits.h>
 #include <aws/sagemaker/model/ListTagsPaginationTraits.h>
 #include <aws/sagemaker/model/ListModelCardExportJobsPaginationTraits.h>
@@ -70,6 +71,7 @@
 #include <aws/sagemaker/model/ListModelCardsPaginationTraits.h>
 #include <aws/sagemaker/model/ListStageDevicesPaginationTraits.h>
 #include <aws/sagemaker/model/ListSubscribedWorkteamsPaginationTraits.h>
+#include <aws/sagemaker/model/ListClusterOperationsPaginationTraits.h>
 #include <aws/sagemaker/model/ListCodeRepositoriesPaginationTraits.h>
 #include <aws/sagemaker/model/ListPipelinesPaginationTraits.h>
 #include <aws/sagemaker/model/ListTrainingSessionsPaginationTraits.h>

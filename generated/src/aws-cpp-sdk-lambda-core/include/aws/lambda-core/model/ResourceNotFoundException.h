@@ -20,8 +20,8 @@ namespace LambdaCore {
 namespace Model {
 
 /**
- * <p>The specified network connector does not exist. Verify the identifier (ID,
- * name, or ARN) and Region.</p><p><h3>See Also:</h3>   <a
+ * <p>The specified resource does not exist. Verify the identifier and
+ * Region.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-core-2026-04-30/ResourceNotFoundException">AWS
  * API Reference</a></p>
  */
@@ -51,7 +51,9 @@ class ResourceNotFoundException {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The error message that describes the exception.</p>
+   */
   inline const Aws::String& GetMessage() const { return m_message; }
   inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
   template <typename MessageT = Aws::String>

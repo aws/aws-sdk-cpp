@@ -10,7 +10,7 @@
 namespace Aws {
 namespace SecurityHub {
 namespace Model {
-enum class ConfigurationPolicyAssociationStatus { NOT_SET, PENDING, SUCCESS, FAILED };
+enum class ConfigurationPolicyAssociationStatus { NOT_SET, PENDING, SUCCESS, FAILED, DISABLED };
 
 namespace ConfigurationPolicyAssociationStatusMapper {
 AWS_SECURITYHUB_API ConfigurationPolicyAssociationStatus GetConfigurationPolicyAssociationStatusForName(const Aws::String& name);

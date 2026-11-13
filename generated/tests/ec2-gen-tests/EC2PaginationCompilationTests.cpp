@@ -49,6 +49,7 @@
 #include <aws/ec2/model/DescribeNetworkInsightsAccessScopeAnalysesPaginationTraits.h>
 #include <aws/ec2/model/GetVpnConnectionDeviceTypesPaginationTraits.h>
 #include <aws/ec2/model/DescribeFastSnapshotRestoresPaginationTraits.h>
+#include <aws/ec2/model/DescribeNetworkingFlexCostAllocationPoliciesPaginationTraits.h>
 #include <aws/ec2/model/GetTransitGatewayAttachmentPropagationsPaginationTraits.h>
 #include <aws/ec2/model/DescribeIpamPrefixListResolversPaginationTraits.h>
 #include <aws/ec2/model/DescribeVpcClassicLinkDnsSupportPaginationTraits.h>
@@ -179,6 +180,7 @@
 #include <aws/ec2/model/DescribeImagesPaginationTraits.h>
 #include <aws/ec2/model/DescribeIpamResourceDiscoveryAssociationsPaginationTraits.h>
 #include <aws/ec2/model/GetInstanceTypesFromInstanceRequirementsPaginationTraits.h>
+#include <aws/ec2/model/DescribeNetworkingFlexCostAllocationPolicyAssociationsPaginationTraits.h>
 #include <aws/ec2/model/DescribeHostReservationOfferingsPaginationTraits.h>
 #include <aws/ec2/model/DescribeSecurityGroupsPaginationTraits.h>
 

@@ -18,13 +18,13 @@ namespace Model {
 PlacementConstraint::PlacementConstraint(JsonView jsonValue) { *this = jsonValue; }
 
 PlacementConstraint& PlacementConstraint::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("expression")) {
-    m_expression = jsonValue.GetString("expression");
-    m_expressionHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("type")) {
     m_type = PlacementConstraintTypeMapper::GetPlacementConstraintTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("expression")) {
+    m_expression = jsonValue.GetString("expression");
+    m_expressionHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ PlacementConstraint& PlacementConstraint::operator=(JsonView jsonValue) {
 JsonValue PlacementConstraint::Jsonize() const {
   JsonValue payload;
 
-  if (m_expressionHasBeenSet) {
-    payload.WithString("expression", m_expression);
-  }
-
   if (m_typeHasBeenSet) {
     payload.WithString("type", PlacementConstraintTypeMapper::GetNameForPlacementConstraintType(m_type));
+  }
+
+  if (m_expressionHasBeenSet) {
+    payload.WithString("expression", m_expression);
   }
 
   return payload;

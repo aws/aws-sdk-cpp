@@ -48,6 +48,38 @@ class GetScheduleGroupResult {
 
   ///@{
   /**
+   * <p>The name of the schedule group.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  GetScheduleGroupResult& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the state of the schedule group.</p>
+   */
+  inline ScheduleGroupState GetState() const { return m_state; }
+  inline void SetState(ScheduleGroupState value) {
+    m_stateHasBeenSet = true;
+    m_state = value;
+  }
+  inline GetScheduleGroupResult& WithState(ScheduleGroupState value) {
+    SetState(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The time at which the schedule group was created.</p>
    */
   inline const Aws::Utils::DateTime& GetCreationDate() const { return m_creationDate; }
@@ -81,38 +113,6 @@ class GetScheduleGroupResult {
   ///@}
 
   ///@{
-  /**
-   * <p>The name of the schedule group.</p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  GetScheduleGroupResult& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Specifies the state of the schedule group.</p>
-   */
-  inline ScheduleGroupState GetState() const { return m_state; }
-  inline void SetState(ScheduleGroupState value) {
-    m_stateHasBeenSet = true;
-    m_state = value;
-  }
-  inline GetScheduleGroupResult& WithState(ScheduleGroupState value) {
-    SetState(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -131,21 +131,21 @@ class GetScheduleGroupResult {
  private:
   Aws::String m_arn;
 
-  Aws::Utils::DateTime m_creationDate{};
-
-  Aws::Utils::DateTime m_lastModificationDate{};
-
   Aws::String m_name;
 
   ScheduleGroupState m_state{ScheduleGroupState::NOT_SET};
 
+  Aws::Utils::DateTime m_creationDate{};
+
+  Aws::Utils::DateTime m_lastModificationDate{};
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_arnHasBeenSet = false;
-  bool m_creationDateHasBeenSet = false;
-  bool m_lastModificationDateHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_stateHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_lastModificationDateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

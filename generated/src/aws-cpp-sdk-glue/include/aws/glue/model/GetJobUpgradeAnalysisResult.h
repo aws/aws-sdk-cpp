@@ -132,9 +132,10 @@ class GetJobUpgradeAnalysisResult {
 
   ///@{
   /**
-   * <p>The Amazon S3 URI of the terminal-state evaluation summary, available once
-   * the analysis reaches a terminal status (<code>SUCCEEDED</code> or
-   * <code>FAILED</code>).</p>
+   * <p>A presigned URL for downloading the auto upgrade evaluation summary for the
+   * analysis. Available once the analysis reaches a terminal status
+   * (<code>SUCCEEDED</code> or <code>FAILED</code>). The URL expires after 1 hour.
+   * Calling <code>GetJobUpgradeAnalysis</code> again returns a new URL.</p>
    */
   inline const Aws::String& GetAutoUpgradeEvaluationSummary() const { return m_autoUpgradeEvaluationSummary; }
   template <typename AutoUpgradeEvaluationSummaryT = Aws::String>
@@ -168,9 +169,11 @@ class GetJobUpgradeAnalysisResult {
 
   ///@{
   /**
-   * <p>The Amazon S3 URI of the consent report summarizing upgrade assessment
-   * findings. Populated when the analysis reaches <code>WAITING_FOR_CONSENT</code>
-   * and remains available in all subsequent states.</p>
+   * <p>A presigned URL for downloading the auto upgrade eligibility summary, which
+   * lists the compatibility results for the job. Available once the analysis reaches
+   * <code>WAITING_FOR_CONSENT</code> and in all subsequent states. The URL expires
+   * after 1 hour. Calling <code>GetJobUpgradeAnalysis</code> again returns a new
+   * URL.</p>
    */
   inline const Aws::String& GetAutoUpgradeEligibilitySummary() const { return m_autoUpgradeEligibilitySummary; }
   template <typename AutoUpgradeEligibilitySummaryT = Aws::String>

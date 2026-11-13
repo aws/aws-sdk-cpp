@@ -50,8 +50,11 @@ class ExtensionNodeSummary {
   ///@{
   /**
    * <p>The number of nodes that are running the extension's current version and
-   * configuration. While SageMaker HyperPod creates or updates the extension,
-   * <code>ActiveCount</code> is lower than <code>TotalCount</code>.</p>
+   * configuration. Nodes that report the extension as unhealthy aren't counted.
+   * While SageMaker HyperPod creates or updates the extension,
+   * <code>ActiveCount</code> is lower than <code>TotalCount</code>. To see why nodes
+   * aren't counted, see <code>Health</code> in
+   * <code>DescribeClusterExtension</code>.</p>
    */
   inline int GetActiveCount() const { return m_activeCount; }
   inline bool ActiveCountHasBeenSet() const { return m_activeCountHasBeenSet; }

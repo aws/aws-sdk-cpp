@@ -14,6 +14,7 @@
 #include <aws/lambda/model/Environment.h>
 #include <aws/lambda/model/EphemeralStorage.h>
 #include <aws/lambda/model/FileSystemConfig.h>
+#include <aws/lambda/model/FunctionRuntimeConfig.h>
 #include <aws/lambda/model/ImageConfig.h>
 #include <aws/lambda/model/LoggingConfig.h>
 #include <aws/lambda/model/Runtime.h>
@@ -511,6 +512,25 @@ class UpdateFunctionConfigurationRequest : public LambdaRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The customer-managed runtime configuration for your function. Specifies the
+   * customer-managed runtime and the runtime alias that your function uses.</p>
+   */
+  inline const FunctionRuntimeConfig& GetRuntimeConfig() const { return m_runtimeConfig; }
+  inline bool RuntimeConfigHasBeenSet() const { return m_runtimeConfigHasBeenSet; }
+  template <typename RuntimeConfigT = FunctionRuntimeConfig>
+  void SetRuntimeConfig(RuntimeConfigT&& value) {
+    m_runtimeConfigHasBeenSet = true;
+    m_runtimeConfig = std::forward<RuntimeConfigT>(value);
+  }
+  template <typename RuntimeConfigT = FunctionRuntimeConfig>
+  UpdateFunctionConfigurationRequest& WithRuntimeConfig(RuntimeConfigT&& value) {
+    SetRuntimeConfig(std::forward<RuntimeConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_functionName;
 
@@ -553,6 +573,8 @@ class UpdateFunctionConfigurationRequest : public LambdaRequest {
   CapacityProviderConfig m_capacityProviderConfig;
 
   DurableConfig m_durableConfig;
+
+  FunctionRuntimeConfig m_runtimeConfig;
   bool m_functionNameHasBeenSet = false;
   bool m_roleHasBeenSet = false;
   bool m_handlerHasBeenSet = false;
@@ -574,6 +596,7 @@ class UpdateFunctionConfigurationRequest : public LambdaRequest {
   bool m_loggingConfigHasBeenSet = false;
   bool m_capacityProviderConfigHasBeenSet = false;
   bool m_durableConfigHasBeenSet = false;
+  bool m_runtimeConfigHasBeenSet = false;
 };
 
 }  // namespace Model

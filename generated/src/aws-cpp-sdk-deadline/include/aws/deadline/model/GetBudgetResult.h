@@ -70,9 +70,10 @@ class GetBudgetResult {
 
   ///@{
   /**
-   * <p>The status of the budget.</p> <ul> <li> <p> <code>ACTIVE</code>–Get a budget
-   * being evaluated.</p> </li> <li> <p> <code>INACTIVE</code>–Get an inactive
-   * budget. This can include expired, canceled, or deleted statuses.</p> </li> </ul>
+   * <p>The status of the budget.</p> <ul> <li> <p> <code>ACTIVE</code> - Get a
+   * budget being evaluated.</p> </li> <li> <p> <code>INACTIVE</code> - Get an
+   * inactive budget. This can include expired, canceled, or deleted statuses.</p>
+   * </li> </ul>
    */
   inline BudgetStatus GetStatus() const { return m_status; }
   inline void SetStatus(BudgetStatus value) {

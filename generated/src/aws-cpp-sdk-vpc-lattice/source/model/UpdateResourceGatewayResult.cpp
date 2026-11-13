@@ -60,6 +60,11 @@ UpdateResourceGatewayResult& UpdateResourceGatewayResult::operator=(const Aws::A
     m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(jsonValue.GetString("ipAddressType"));
     m_ipAddressTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("resourceConfigDnsResolution")) {
+    m_resourceConfigDnsResolution =
+        ResourceConfigDnsResolutionMapper::GetResourceConfigDnsResolutionForName(jsonValue.GetString("resourceConfigDnsResolution"));
+    m_resourceConfigDnsResolutionHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

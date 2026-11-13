@@ -35,6 +35,24 @@ class GetScheduleRequest : public SchedulerRequest {
 
   ///@{
   /**
+   * <p>The name of the schedule to retrieve.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  GetScheduleRequest& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The name of the schedule group associated with this schedule. If you omit
    * this, EventBridge Scheduler assumes that the schedule is associated with the
    * default group.</p>
@@ -52,30 +70,12 @@ class GetScheduleRequest : public SchedulerRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The name of the schedule to retrieve.</p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  GetScheduleRequest& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
-    return *this;
-  }
-  ///@}
  private:
-  Aws::String m_groupName;
-
   Aws::String m_name;
-  bool m_groupNameHasBeenSet = false;
+
+  Aws::String m_groupName;
   bool m_nameHasBeenSet = false;
+  bool m_groupNameHasBeenSet = false;
 };
 
 }  // namespace Model

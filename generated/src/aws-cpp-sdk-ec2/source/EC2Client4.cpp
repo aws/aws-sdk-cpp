@@ -20,6 +20,11 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/DescribeNetworkingFlexCostAllocationPolicyAssociationsRequest.h>
+#include <aws/ec2/model/DescribeOutpostLagsRequest.h>
+#include <aws/ec2/model/DescribePlacementGroupsRequest.h>
+#include <aws/ec2/model/DescribePrefixListsRequest.h>
+#include <aws/ec2/model/DescribePrincipalIdFormatRequest.h>
 #include <aws/ec2/model/DescribePublicIpv4PoolsRequest.h>
 #include <aws/ec2/model/DescribeRegionsRequest.h>
 #include <aws/ec2/model/DescribeReplaceRootVolumeTasksRequest.h>
@@ -114,12 +119,7 @@
 #include <aws/ec2/model/DisableFastSnapshotRestoresRequest.h>
 #include <aws/ec2/model/DisableImageBlockPublicAccessRequest.h>
 #include <aws/ec2/model/DisableImageDeprecationRequest.h>
-#include <aws/ec2/model/DisableImageDeregistrationProtectionRequest.h>
 #include <aws/ec2/model/DisableImageRequest.h>
-#include <aws/ec2/model/DisableInstanceSqlHaStandbyDetectionsRequest.h>
-#include <aws/ec2/model/DisableIpamOrganizationAdminAccountRequest.h>
-#include <aws/ec2/model/DisableIpamPolicyRequest.h>
-#include <aws/ec2/model/DisableRouteServerPropagationRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,37 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DescribeNetworkingFlexCostAllocationPolicyAssociationsOutcome EC2Client::DescribeNetworkingFlexCostAllocationPolicyAssociations(
+    const DescribeNetworkingFlexCostAllocationPolicyAssociationsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeNetworkingFlexCostAllocationPolicyAssociationsOutcome(result.GetResultWithOwnership())
+                            : DescribeNetworkingFlexCostAllocationPolicyAssociationsOutcome(std::move(result.GetError()));
+}
+
+DescribeOutpostLagsOutcome EC2Client::DescribeOutpostLags(const DescribeOutpostLagsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeOutpostLagsOutcome(result.GetResultWithOwnership())
+                            : DescribeOutpostLagsOutcome(std::move(result.GetError()));
+}
+
+DescribePlacementGroupsOutcome EC2Client::DescribePlacementGroups(const DescribePlacementGroupsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribePlacementGroupsOutcome(result.GetResultWithOwnership())
+                            : DescribePlacementGroupsOutcome(std::move(result.GetError()));
+}
+
+DescribePrefixListsOutcome EC2Client::DescribePrefixLists(const DescribePrefixListsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribePrefixListsOutcome(result.GetResultWithOwnership())
+                            : DescribePrefixListsOutcome(std::move(result.GetError()));
+}
+
+DescribePrincipalIdFormatOutcome EC2Client::DescribePrincipalIdFormat(const DescribePrincipalIdFormatRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribePrincipalIdFormatOutcome(result.GetResultWithOwnership())
+                            : DescribePrincipalIdFormatOutcome(std::move(result.GetError()));
+}
 
 DescribePublicIpv4PoolsOutcome EC2Client::DescribePublicIpv4Pools(const DescribePublicIpv4PoolsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -733,37 +764,4 @@ DisableImageDeprecationOutcome EC2Client::DisableImageDeprecation(const DisableI
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DisableImageDeprecationOutcome(result.GetResultWithOwnership())
                             : DisableImageDeprecationOutcome(std::move(result.GetError()));
-}
-
-DisableImageDeregistrationProtectionOutcome EC2Client::DisableImageDeregistrationProtection(
-    const DisableImageDeregistrationProtectionRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DisableImageDeregistrationProtectionOutcome(result.GetResultWithOwnership())
-                            : DisableImageDeregistrationProtectionOutcome(std::move(result.GetError()));
-}
-
-DisableInstanceSqlHaStandbyDetectionsOutcome EC2Client::DisableInstanceSqlHaStandbyDetections(
-    const DisableInstanceSqlHaStandbyDetectionsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DisableInstanceSqlHaStandbyDetectionsOutcome(result.GetResultWithOwnership())
-                            : DisableInstanceSqlHaStandbyDetectionsOutcome(std::move(result.GetError()));
-}
-
-DisableIpamOrganizationAdminAccountOutcome EC2Client::DisableIpamOrganizationAdminAccount(
-    const DisableIpamOrganizationAdminAccountRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DisableIpamOrganizationAdminAccountOutcome(result.GetResultWithOwnership())
-                            : DisableIpamOrganizationAdminAccountOutcome(std::move(result.GetError()));
-}
-
-DisableIpamPolicyOutcome EC2Client::DisableIpamPolicy(const DisableIpamPolicyRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DisableIpamPolicyOutcome(result.GetResultWithOwnership())
-                            : DisableIpamPolicyOutcome(std::move(result.GetError()));
-}
-
-DisableRouteServerPropagationOutcome EC2Client::DisableRouteServerPropagation(const DisableRouteServerPropagationRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DisableRouteServerPropagationOutcome(result.GetResultWithOwnership())
-                            : DisableRouteServerPropagationOutcome(std::move(result.GetError()));
 }

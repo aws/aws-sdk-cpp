@@ -17,6 +17,7 @@ namespace ClusterPatchingStrategyMapper {
 
 static const int WhenIdle_HASH = HashingUtils::HashString("WhenIdle");
 static const int WhenAllIdle_HASH = HashingUtils::HashString("WhenAllIdle");
+static const int DrainFirst_HASH = HashingUtils::HashString("DrainFirst");
 
 ClusterPatchingStrategy GetClusterPatchingStrategyForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ ClusterPatchingStrategy GetClusterPatchingStrategyForName(const Aws::String& nam
     return ClusterPatchingStrategy::WhenIdle;
   } else if (hashCode == WhenAllIdle_HASH) {
     return ClusterPatchingStrategy::WhenAllIdle;
+  } else if (hashCode == DrainFirst_HASH) {
+    return ClusterPatchingStrategy::DrainFirst;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForClusterPatchingStrategy(ClusterPatchingStrategy enumValue)
       return "WhenIdle";
     case ClusterPatchingStrategy::WhenAllIdle:
       return "WhenAllIdle";
+    case ClusterPatchingStrategy::DrainFirst:
+      return "DrainFirst";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

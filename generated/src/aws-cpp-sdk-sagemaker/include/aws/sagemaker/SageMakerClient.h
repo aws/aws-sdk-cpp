@@ -5342,7 +5342,9 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
    * <p>Retrieves information about an extension installed on a SageMaker HyperPod
    * cluster. The information includes the extension's version, configuration, and
    * status, and a summary of how many cluster nodes are running the current version
-   * and configuration of the extension.</p><p><h3>See Also:</h3>   <a
+   * and configuration of the extension. If the extension has problems on some nodes,
+   * the response also lists the problems and how many nodes each one
+   * affects.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeClusterExtension">AWS
    * API Reference</a></p>
    */
@@ -5393,6 +5395,36 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
   void DescribeClusterNodeAsync(const DescribeClusterNodeRequestT& request, const DescribeClusterNodeResponseReceivedHandler& handler,
                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SageMakerClient::DescribeClusterNode, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves detailed information about a specific operation for a given
+   * HyperPod cluster, such as a scaling operation or a deep health check. Use the
+   * <code>OperationId</code> returned by the <code>ListClusterOperations</code>
+   * operation to identify the operation to describe.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeClusterOperation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeClusterOperationOutcome DescribeClusterOperation(const Model::DescribeClusterOperationRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeClusterOperation that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeClusterOperationRequestT = Model::DescribeClusterOperationRequest>
+  Model::DescribeClusterOperationOutcomeCallable DescribeClusterOperationCallable(const DescribeClusterOperationRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::DescribeClusterOperation, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeClusterOperation that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeClusterOperationRequestT = Model::DescribeClusterOperationRequest>
+  void DescribeClusterOperationAsync(const DescribeClusterOperationRequestT& request,
+                                     const DescribeClusterOperationResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::DescribeClusterOperation, request, handler, context);
   }
 
   /**
@@ -7951,6 +7983,42 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Lists the versions of an extension that you can install on a SageMaker
+   * HyperPod cluster, from the highest version to the lowest. Use a version from
+   * this list as the <code>ExtensionVersion</code> in
+   * <code>CreateClusterExtension</code> or <code>UpdateClusterExtension</code>.</p>
+   * <p>The list contains only versions that you can install. Versions that SageMaker
+   * HyperPod no longer offers for new installations don't appear. If SageMaker
+   * HyperPod doesn't offer an extension with the name that you specify, the response
+   * contains an empty list.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListClusterExtensionVersions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListClusterExtensionVersionsOutcome ListClusterExtensionVersions(
+      const Model::ListClusterExtensionVersionsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListClusterExtensionVersions that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListClusterExtensionVersionsRequestT = Model::ListClusterExtensionVersionsRequest>
+  Model::ListClusterExtensionVersionsOutcomeCallable ListClusterExtensionVersionsCallable(
+      const ListClusterExtensionVersionsRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::ListClusterExtensionVersions, request);
+  }
+
+  /**
+   * An Async wrapper for ListClusterExtensionVersions that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListClusterExtensionVersionsRequestT = Model::ListClusterExtensionVersionsRequest>
+  void ListClusterExtensionVersionsAsync(const ListClusterExtensionVersionsRequestT& request,
+                                         const ListClusterExtensionVersionsResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::ListClusterExtensionVersions, request, handler, context);
+  }
+
+  /**
    * <p>Lists the extensions installed on a SageMaker HyperPod cluster.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListClusterExtensions">AWS
@@ -8002,6 +8070,34 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
   void ListClusterNodesAsync(const ListClusterNodesRequestT& request, const ListClusterNodesResponseReceivedHandler& handler,
                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SageMakerClient::ListClusterNodes, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves a list of operation summaries for a specified HyperPod cluster,
+   * such as scaling operations and deep health checks. The operation supports
+   * filtering, sorting, and pagination of results.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListClusterOperations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListClusterOperationsOutcome ListClusterOperations(const Model::ListClusterOperationsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListClusterOperations that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListClusterOperationsRequestT = Model::ListClusterOperationsRequest>
+  Model::ListClusterOperationsOutcomeCallable ListClusterOperationsCallable(const ListClusterOperationsRequestT& request) const {
+    return SubmitCallable(&SageMakerClient::ListClusterOperations, request);
+  }
+
+  /**
+   * An Async wrapper for ListClusterOperations that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListClusterOperationsRequestT = Model::ListClusterOperationsRequest>
+  void ListClusterOperationsAsync(const ListClusterOperationsRequestT& request, const ListClusterOperationsResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SageMakerClient::ListClusterOperations, request, handler, context);
   }
 
   /**
@@ -11402,8 +11498,12 @@ class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient,
    * <code>null</code> is removed and returns to its default value.</p> </li> <li>
    * <p> <b>Version:</b> You can update to a later version. You can't update to an
    * earlier version. To use an earlier version, delete the extension and create it
-   * again with that version.</p> </li> </ul> <p>You can't update an extension while
-   * it is being deleted.</p><p><h3>See Also:</h3>   <a
+   * again with that version.</p> </li> </ul> <p>To retry the operation on nodes
+   * where it failed, fix the cause that <code>DescribeClusterExtension</code>
+   * reports in <code>Health</code>, and then send an
+   * <code>UpdateClusterExtension</code> request that doesn't change the version or
+   * the configuration.</p> <p>You can't update an extension while it is being
+   * deleted.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateClusterExtension">AWS
    * API Reference</a></p>
    */

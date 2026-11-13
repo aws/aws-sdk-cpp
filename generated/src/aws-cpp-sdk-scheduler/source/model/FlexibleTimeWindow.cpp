@@ -18,13 +18,13 @@ namespace Model {
 FlexibleTimeWindow::FlexibleTimeWindow(JsonView jsonValue) { *this = jsonValue; }
 
 FlexibleTimeWindow& FlexibleTimeWindow::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("MaximumWindowInMinutes")) {
-    m_maximumWindowInMinutes = jsonValue.GetInteger("MaximumWindowInMinutes");
-    m_maximumWindowInMinutesHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("Mode")) {
     m_mode = FlexibleTimeWindowModeMapper::GetFlexibleTimeWindowModeForName(jsonValue.GetString("Mode"));
     m_modeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("MaximumWindowInMinutes")) {
+    m_maximumWindowInMinutes = jsonValue.GetInteger("MaximumWindowInMinutes");
+    m_maximumWindowInMinutesHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ FlexibleTimeWindow& FlexibleTimeWindow::operator=(JsonView jsonValue) {
 JsonValue FlexibleTimeWindow::Jsonize() const {
   JsonValue payload;
 
-  if (m_maximumWindowInMinutesHasBeenSet) {
-    payload.WithInteger("MaximumWindowInMinutes", m_maximumWindowInMinutes);
-  }
-
   if (m_modeHasBeenSet) {
     payload.WithString("Mode", FlexibleTimeWindowModeMapper::GetNameForFlexibleTimeWindowMode(m_mode));
+  }
+
+  if (m_maximumWindowInMinutesHasBeenSet) {
+    payload.WithInteger("MaximumWindowInMinutes", m_maximumWindowInMinutes);
   }
 
   return payload;

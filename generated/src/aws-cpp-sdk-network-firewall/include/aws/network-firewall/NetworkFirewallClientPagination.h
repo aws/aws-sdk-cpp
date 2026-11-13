@@ -14,9 +14,6 @@
 #include <aws/network-firewall/model/ListFirewallsPaginationTraits.h>
 #include <aws/network-firewall/model/ListFlowOperationResultsPaginationTraits.h>
 #include <aws/network-firewall/model/ListFlowOperationsPaginationTraits.h>
-#include <aws/network-firewall/model/ListProxiesPaginationTraits.h>
-#include <aws/network-firewall/model/ListProxyConfigurationsPaginationTraits.h>
-#include <aws/network-firewall/model/ListProxyRuleGroupsPaginationTraits.h>
 #include <aws/network-firewall/model/ListRuleGroupsPaginationTraits.h>
 #include <aws/network-firewall/model/ListTLSInspectionConfigurationsPaginationTraits.h>
 #include <aws/network-firewall/model/ListTagsForResourcePaginationTraits.h>
@@ -48,14 +45,6 @@ using ListFlowOperationResultsPaginator =
 using ListFlowOperationsPaginator =
     Aws::Utils::Pagination::Paginator<NetworkFirewallClient, Model::ListFlowOperationsRequest,
                                       Pagination::ListFlowOperationsPaginationTraits<NetworkFirewallClient>>;
-using ListProxiesPaginator = Aws::Utils::Pagination::Paginator<NetworkFirewallClient, Model::ListProxiesRequest,
-                                                               Pagination::ListProxiesPaginationTraits<NetworkFirewallClient>>;
-using ListProxyConfigurationsPaginator =
-    Aws::Utils::Pagination::Paginator<NetworkFirewallClient, Model::ListProxyConfigurationsRequest,
-                                      Pagination::ListProxyConfigurationsPaginationTraits<NetworkFirewallClient>>;
-using ListProxyRuleGroupsPaginator =
-    Aws::Utils::Pagination::Paginator<NetworkFirewallClient, Model::ListProxyRuleGroupsRequest,
-                                      Pagination::ListProxyRuleGroupsPaginationTraits<NetworkFirewallClient>>;
 using ListRuleGroupsPaginator = Aws::Utils::Pagination::Paginator<NetworkFirewallClient, Model::ListRuleGroupsRequest,
                                                                   Pagination::ListRuleGroupsPaginationTraits<NetworkFirewallClient>>;
 using ListTagsForResourcePaginator =

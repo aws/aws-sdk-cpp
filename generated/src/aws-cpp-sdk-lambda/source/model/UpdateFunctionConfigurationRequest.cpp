@@ -103,5 +103,9 @@ Aws::String UpdateFunctionConfigurationRequest::SerializePayload() const {
     payload.WithObject("DurableConfig", m_durableConfig.Jsonize());
   }
 
+  if (m_runtimeConfigHasBeenSet) {
+    payload.WithObject("RuntimeConfig", m_runtimeConfig.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

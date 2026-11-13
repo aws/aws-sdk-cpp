@@ -14,6 +14,7 @@
 #include <aws/lambda/model/EnvironmentResponse.h>
 #include <aws/lambda/model/EphemeralStorage.h>
 #include <aws/lambda/model/FileSystemConfig.h>
+#include <aws/lambda/model/FunctionRuntimeConfig.h>
 #include <aws/lambda/model/ImageConfigResponse.h>
 #include <aws/lambda/model/LastUpdateStatus.h>
 #include <aws/lambda/model/LastUpdateStatusReasonCode.h>
@@ -832,6 +833,25 @@ class FunctionConfiguration {
   ///@}
 
   ///@{
+  /**
+   * <p>The customer-managed runtime configuration for your function. Specifies the
+   * customer-managed runtime and the runtime alias that your function uses.</p>
+   */
+  inline const FunctionRuntimeConfig& GetRuntimeConfig() const { return m_runtimeConfig; }
+  inline bool RuntimeConfigHasBeenSet() const { return m_runtimeConfigHasBeenSet; }
+  template <typename RuntimeConfigT = FunctionRuntimeConfig>
+  void SetRuntimeConfig(RuntimeConfigT&& value) {
+    m_runtimeConfigHasBeenSet = true;
+    m_runtimeConfig = std::forward<RuntimeConfigT>(value);
+  }
+  template <typename RuntimeConfigT = FunctionRuntimeConfig>
+  FunctionConfiguration& WithRuntimeConfig(RuntimeConfigT&& value) {
+    SetRuntimeConfig(std::forward<RuntimeConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
@@ -927,6 +947,8 @@ class FunctionConfiguration {
 
   DurableConfig m_durableConfig;
 
+  FunctionRuntimeConfig m_runtimeConfig;
+
   Aws::String m_requestId;
   bool m_functionNameHasBeenSet = false;
   bool m_functionArnHasBeenSet = false;
@@ -968,6 +990,7 @@ class FunctionConfiguration {
   bool m_capacityProviderConfigHasBeenSet = false;
   bool m_configSha256HasBeenSet = false;
   bool m_durableConfigHasBeenSet = false;
+  bool m_runtimeConfigHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

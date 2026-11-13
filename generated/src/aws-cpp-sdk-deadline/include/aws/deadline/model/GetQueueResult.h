@@ -90,10 +90,10 @@ class GetQueueResult {
 
   ///@{
   /**
-   * <p>The status of the queue.</p> <ul> <li> <p> <code>ACTIVE</code>–The queue is
-   * active.</p> </li> <li> <p> <code>SCHEDULING</code>–The queue is scheduling.</p>
-   * </li> <li> <p> <code>SCHEDULING_BLOCKED</code>–The queue scheduling is blocked.
-   * See the provided reason.</p> </li> </ul>
+   * <p>The status of the queue.</p> <ul> <li> <p> <code>ACTIVE</code> - The queue is
+   * active.</p> </li> <li> <p> <code>SCHEDULING</code> - The queue is
+   * scheduling.</p> </li> <li> <p> <code>SCHEDULING_BLOCKED</code> - The queue
+   * scheduling is blocked. See the provided reason.</p> </li> </ul>
    */
   inline QueueStatus GetStatus() const { return m_status; }
   inline void SetStatus(QueueStatus value) {

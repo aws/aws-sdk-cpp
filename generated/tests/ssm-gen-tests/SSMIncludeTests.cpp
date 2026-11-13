@@ -282,6 +282,9 @@
 #include <aws/ssm/model/FailedCreateAssociation.h>
 #include <aws/ssm/model/FailureDetails.h>
 #include <aws/ssm/model/Fault.h>
+#include <aws/ssm/model/GcpConfiguration.h>
+#include <aws/ssm/model/GcpConfigurationTargets.h>
+#include <aws/ssm/model/GcpProject.h>
 #include <aws/ssm/model/GetAccessTokenRequest.h>
 #include <aws/ssm/model/GetAccessTokenResult.h>
 #include <aws/ssm/model/GetAutomationExecutionRequest.h>
@@ -541,6 +544,7 @@
 #include <aws/ssm/model/PingStatus.h>
 #include <aws/ssm/model/PlatformType.h>
 #include <aws/ssm/model/ProgressCounters.h>
+#include <aws/ssm/model/Provider.h>
 #include <aws/ssm/model/PutComplianceItemsRequest.h>
 #include <aws/ssm/model/PutComplianceItemsResult.h>
 #include <aws/ssm/model/PutInventoryRequest.h>
@@ -628,6 +632,7 @@
 #include <aws/ssm/model/Target.h>
 #include <aws/ssm/model/TargetLocation.h>
 #include <aws/ssm/model/TargetPreview.h>
+#include <aws/ssm/model/TargetsSummary.h>
 #include <aws/ssm/model/TerminateSessionRequest.h>
 #include <aws/ssm/model/TerminateSessionResult.h>
 #include <aws/ssm/model/ThrottlingException.h>

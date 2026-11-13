@@ -124,6 +124,10 @@ Aws::String CreateUserPoolRequest::SerializePayload() const {
     payload.WithObject("UserPoolAddOns", m_userPoolAddOns.Jsonize());
   }
 
+  if (m_dcrConfigurationHasBeenSet) {
+    payload.WithObject("DcrConfiguration", m_dcrConfiguration.Jsonize());
+  }
+
   if (m_usernameConfigurationHasBeenSet) {
     payload.WithObject("UsernameConfiguration", m_usernameConfiguration.Jsonize());
   }

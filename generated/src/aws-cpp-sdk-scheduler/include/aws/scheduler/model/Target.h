@@ -9,6 +9,8 @@
 #include <aws/scheduler/model/DeadLetterConfig.h>
 #include <aws/scheduler/model/EcsParameters.h>
 #include <aws/scheduler/model/EventBridgeParameters.h>
+#include <aws/scheduler/model/EventBridgePutEventsV2Parameters.h>
+#include <aws/scheduler/model/EventBridgePutRawEventsParameters.h>
 #include <aws/scheduler/model/KinesisParameters.h>
 #include <aws/scheduler/model/RetryPolicy.h>
 #include <aws/scheduler/model/SageMakerPipelineParameters.h>
@@ -62,6 +64,25 @@ class Target {
 
   ///@{
   /**
+   * <p>The Amazon Resource Name (ARN) of the IAM role that EventBridge Scheduler
+   * will use for this target when the schedule is invoked.</p>
+   */
+  inline const Aws::String& GetRoleArn() const { return m_roleArn; }
+  inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
+  template <typename RoleArnT = Aws::String>
+  void SetRoleArn(RoleArnT&& value) {
+    m_roleArnHasBeenSet = true;
+    m_roleArn = std::forward<RoleArnT>(value);
+  }
+  template <typename RoleArnT = Aws::String>
+  Target& WithRoleArn(RoleArnT&& value) {
+    SetRoleArn(std::forward<RoleArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>An object that contains information about an Amazon SQS queue that
    * EventBridge Scheduler uses as a dead-letter queue for your schedule. If
    * specified, EventBridge Scheduler delivers failed events that could not be
@@ -77,6 +98,49 @@ class Target {
   template <typename DeadLetterConfigT = DeadLetterConfig>
   Target& WithDeadLetterConfig(DeadLetterConfigT&& value) {
     SetDeadLetterConfig(std::forward<DeadLetterConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A <code>RetryPolicy</code> object that includes information about the retry
+   * policy settings, including the maximum age of an event, and the maximum number
+   * of times EventBridge Scheduler will try to deliver the event to a target.</p>
+   */
+  inline const RetryPolicy& GetRetryPolicy() const { return m_retryPolicy; }
+  inline bool RetryPolicyHasBeenSet() const { return m_retryPolicyHasBeenSet; }
+  template <typename RetryPolicyT = RetryPolicy>
+  void SetRetryPolicy(RetryPolicyT&& value) {
+    m_retryPolicyHasBeenSet = true;
+    m_retryPolicy = std::forward<RetryPolicyT>(value);
+  }
+  template <typename RetryPolicyT = RetryPolicy>
+  Target& WithRetryPolicy(RetryPolicyT&& value) {
+    SetRetryPolicy(std::forward<RetryPolicyT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The text, or well-formed JSON, passed to the target. If you are configuring a
+   * templated Lambda, Amazon Web Services Step Functions, or Amazon EventBridge
+   * target, the input must be a well-formed JSON. For all other target types, a JSON
+   * is not required. If you do not specify anything for this field, EventBridge
+   * Scheduler delivers a default notification to the target. The maximum size of the
+   * <code>Input</code> field is 256 KB.</p>
+   */
+  inline const Aws::String& GetInput() const { return m_input; }
+  inline bool InputHasBeenSet() const { return m_inputHasBeenSet; }
+  template <typename InputT = Aws::String>
+  void SetInput(InputT&& value) {
+    m_inputHasBeenSet = true;
+    m_input = std::forward<InputT>(value);
+  }
+  template <typename InputT = Aws::String>
+  Target& WithInput(InputT&& value) {
+    SetInput(std::forward<InputT>(value));
     return *this;
   }
   ///@}
@@ -123,22 +187,42 @@ class Target {
 
   ///@{
   /**
-   * <p>The text, or well-formed JSON, passed to the target. If you are configuring a
-   * templated Lambda, AWS Step Functions, or Amazon EventBridge target, the input
-   * must be a well-formed JSON. For all other target types, a JSON is not required.
-   * If you do not specify anything for this field, EventBridge Scheduler delivers a
-   * default notification to the target.</p>
+   * <p>The templated target type for the EventBridge event bus v2 <a
+   * href="https://docs.aws.amazon.com/eventbridgev2/latest/APIReference/API_PutEvents.html">
+   * <code>PutEvents</code> </a> API operation.</p>
    */
-  inline const Aws::String& GetInput() const { return m_input; }
-  inline bool InputHasBeenSet() const { return m_inputHasBeenSet; }
-  template <typename InputT = Aws::String>
-  void SetInput(InputT&& value) {
-    m_inputHasBeenSet = true;
-    m_input = std::forward<InputT>(value);
+  inline const EventBridgePutEventsV2Parameters& GetEventBridgePutEventsV2Parameters() const { return m_eventBridgePutEventsV2Parameters; }
+  inline bool EventBridgePutEventsV2ParametersHasBeenSet() const { return m_eventBridgePutEventsV2ParametersHasBeenSet; }
+  template <typename EventBridgePutEventsV2ParametersT = EventBridgePutEventsV2Parameters>
+  void SetEventBridgePutEventsV2Parameters(EventBridgePutEventsV2ParametersT&& value) {
+    m_eventBridgePutEventsV2ParametersHasBeenSet = true;
+    m_eventBridgePutEventsV2Parameters = std::forward<EventBridgePutEventsV2ParametersT>(value);
   }
-  template <typename InputT = Aws::String>
-  Target& WithInput(InputT&& value) {
-    SetInput(std::forward<InputT>(value));
+  template <typename EventBridgePutEventsV2ParametersT = EventBridgePutEventsV2Parameters>
+  Target& WithEventBridgePutEventsV2Parameters(EventBridgePutEventsV2ParametersT&& value) {
+    SetEventBridgePutEventsV2Parameters(std::forward<EventBridgePutEventsV2ParametersT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The templated target type for the EventBridge event bus v2 <a
+   * href="https://docs.aws.amazon.com/eventbridgev2/latest/APIReference/API_PutRawEvents.html">
+   * <code>PutRawEvents</code> </a> API operation.</p>
+   */
+  inline const EventBridgePutRawEventsParameters& GetEventBridgePutRawEventsParameters() const {
+    return m_eventBridgePutRawEventsParameters;
+  }
+  inline bool EventBridgePutRawEventsParametersHasBeenSet() const { return m_eventBridgePutRawEventsParametersHasBeenSet; }
+  template <typename EventBridgePutRawEventsParametersT = EventBridgePutRawEventsParameters>
+  void SetEventBridgePutRawEventsParameters(EventBridgePutRawEventsParametersT&& value) {
+    m_eventBridgePutRawEventsParametersHasBeenSet = true;
+    m_eventBridgePutRawEventsParameters = std::forward<EventBridgePutRawEventsParametersT>(value);
+  }
+  template <typename EventBridgePutRawEventsParametersT = EventBridgePutRawEventsParameters>
+  Target& WithEventBridgePutRawEventsParameters(EventBridgePutRawEventsParametersT&& value) {
+    SetEventBridgePutRawEventsParameters(std::forward<EventBridgePutRawEventsParametersT>(value));
     return *this;
   }
   ///@}
@@ -146,8 +230,8 @@ class Target {
   ///@{
   /**
    * <p>The templated target type for the Amazon Kinesis <a
-   * href="kinesis/latest/APIReference/API_PutRecord.html"> <code>PutRecord</code>
-   * </a> API operation.</p>
+   * href="https://docs.aws.amazon.com/kinesis/latest/APIReference/API_PutRecord.html">
+   * <code>PutRecord</code> </a> API operation.</p>
    */
   inline const KinesisParameters& GetKinesisParameters() const { return m_kinesisParameters; }
   inline bool KinesisParametersHasBeenSet() const { return m_kinesisParametersHasBeenSet; }
@@ -159,45 +243,6 @@ class Target {
   template <typename KinesisParametersT = KinesisParameters>
   Target& WithKinesisParameters(KinesisParametersT&& value) {
     SetKinesisParameters(std::forward<KinesisParametersT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>A <code>RetryPolicy</code> object that includes information about the retry
-   * policy settings, including the maximum age of an event, and the maximum number
-   * of times EventBridge Scheduler will try to deliver the event to a target.</p>
-   */
-  inline const RetryPolicy& GetRetryPolicy() const { return m_retryPolicy; }
-  inline bool RetryPolicyHasBeenSet() const { return m_retryPolicyHasBeenSet; }
-  template <typename RetryPolicyT = RetryPolicy>
-  void SetRetryPolicy(RetryPolicyT&& value) {
-    m_retryPolicyHasBeenSet = true;
-    m_retryPolicy = std::forward<RetryPolicyT>(value);
-  }
-  template <typename RetryPolicyT = RetryPolicy>
-  Target& WithRetryPolicy(RetryPolicyT&& value) {
-    SetRetryPolicy(std::forward<RetryPolicyT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The Amazon Resource Name (ARN) of the IAM role that EventBridge Scheduler
-   * will use for this target when the schedule is invoked.</p>
-   */
-  inline const Aws::String& GetRoleArn() const { return m_roleArn; }
-  inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-  template <typename RoleArnT = Aws::String>
-  void SetRoleArn(RoleArnT&& value) {
-    m_roleArnHasBeenSet = true;
-    m_roleArn = std::forward<RoleArnT>(value);
-  }
-  template <typename RoleArnT = Aws::String>
-  Target& WithRoleArn(RoleArnT&& value) {
-    SetRoleArn(std::forward<RoleArnT>(value));
     return *this;
   }
   ///@}
@@ -250,31 +295,37 @@ class Target {
  private:
   Aws::String m_arn;
 
+  Aws::String m_roleArn;
+
   DeadLetterConfig m_deadLetterConfig;
+
+  RetryPolicy m_retryPolicy;
+
+  Aws::String m_input;
 
   EcsParameters m_ecsParameters;
 
   EventBridgeParameters m_eventBridgeParameters;
 
-  Aws::String m_input;
+  EventBridgePutEventsV2Parameters m_eventBridgePutEventsV2Parameters;
+
+  EventBridgePutRawEventsParameters m_eventBridgePutRawEventsParameters;
 
   KinesisParameters m_kinesisParameters;
-
-  RetryPolicy m_retryPolicy;
-
-  Aws::String m_roleArn;
 
   SageMakerPipelineParameters m_sageMakerPipelineParameters;
 
   SqsParameters m_sqsParameters;
   bool m_arnHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
   bool m_deadLetterConfigHasBeenSet = false;
+  bool m_retryPolicyHasBeenSet = false;
+  bool m_inputHasBeenSet = false;
   bool m_ecsParametersHasBeenSet = false;
   bool m_eventBridgeParametersHasBeenSet = false;
-  bool m_inputHasBeenSet = false;
+  bool m_eventBridgePutEventsV2ParametersHasBeenSet = false;
+  bool m_eventBridgePutRawEventsParametersHasBeenSet = false;
   bool m_kinesisParametersHasBeenSet = false;
-  bool m_retryPolicyHasBeenSet = false;
-  bool m_roleArnHasBeenSet = false;
   bool m_sageMakerPipelineParametersHasBeenSet = false;
   bool m_sqsParametersHasBeenSet = false;
 };

@@ -593,6 +593,26 @@ class Stack {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The alias assigned to the stack, if one has been set. An alias is an
+   * alternative name that can be used in place of the stack name in any
+   * CloudFormation API call that accepts the <code>StackName</code> parameter.</p>
+   */
+  inline const Aws::String& GetAliasName() const { return m_aliasName; }
+  inline bool AliasNameHasBeenSet() const { return m_aliasNameHasBeenSet; }
+  template <typename AliasNameT = Aws::String>
+  void SetAliasName(AliasNameT&& value) {
+    m_aliasNameHasBeenSet = true;
+    m_aliasName = std::forward<AliasNameT>(value);
+  }
+  template <typename AliasNameT = Aws::String>
+  Stack& WithAliasName(AliasNameT&& value) {
+    SetAliasName(std::forward<AliasNameT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_stackId;
 
@@ -647,6 +667,8 @@ class Stack {
   DetailedStatus m_detailedStatus{DetailedStatus::NOT_SET};
 
   Aws::Vector<OperationEntry> m_lastOperations;
+
+  Aws::String m_aliasName;
   bool m_stackIdHasBeenSet = false;
   bool m_stackNameHasBeenSet = false;
   bool m_changeSetIdHasBeenSet = false;
@@ -674,6 +696,7 @@ class Stack {
   bool m_deletionModeHasBeenSet = false;
   bool m_detailedStatusHasBeenSet = false;
   bool m_lastOperationsHasBeenSet = false;
+  bool m_aliasNameHasBeenSet = false;
 };
 
 }  // namespace Model

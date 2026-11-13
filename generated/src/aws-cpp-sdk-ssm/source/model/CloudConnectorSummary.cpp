@@ -42,6 +42,14 @@ CloudConnectorSummary& CloudConnectorSummary::operator=(JsonView jsonValue) {
     m_updatedAt = jsonValue.GetDouble("UpdatedAt");
     m_updatedAtHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Provider")) {
+    m_provider = ProviderMapper::GetProviderForName(jsonValue.GetString("Provider"));
+    m_providerHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ConfigConnectorArn")) {
+    m_configConnectorArn = jsonValue.GetString("ConfigConnectorArn");
+    m_configConnectorArnHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -70,6 +78,14 @@ JsonValue CloudConnectorSummary::Jsonize() const {
 
   if (m_updatedAtHasBeenSet) {
     payload.WithDouble("UpdatedAt", m_updatedAt.SecondsWithMSPrecision());
+  }
+
+  if (m_providerHasBeenSet) {
+    payload.WithString("Provider", ProviderMapper::GetNameForProvider(m_provider));
+  }
+
+  if (m_configConnectorArnHasBeenSet) {
+    payload.WithString("ConfigConnectorArn", m_configConnectorArn);
   }
 
   return payload;

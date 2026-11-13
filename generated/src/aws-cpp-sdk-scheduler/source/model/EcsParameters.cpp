@@ -18,6 +18,30 @@ namespace Model {
 EcsParameters::EcsParameters(JsonView jsonValue) { *this = jsonValue; }
 
 EcsParameters& EcsParameters::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("TaskDefinitionArn")) {
+    m_taskDefinitionArn = jsonValue.GetString("TaskDefinitionArn");
+    m_taskDefinitionArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("TaskCount")) {
+    m_taskCount = jsonValue.GetInteger("TaskCount");
+    m_taskCountHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("LaunchType")) {
+    m_launchType = LaunchTypeMapper::GetLaunchTypeForName(jsonValue.GetString("LaunchType"));
+    m_launchTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("NetworkConfiguration")) {
+    m_networkConfiguration = jsonValue.GetObject("NetworkConfiguration");
+    m_networkConfigurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("PlatformVersion")) {
+    m_platformVersion = jsonValue.GetString("PlatformVersion");
+    m_platformVersionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Group")) {
+    m_group = jsonValue.GetString("Group");
+    m_groupHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("CapacityProviderStrategy")) {
     Aws::Utils::Array<JsonView> capacityProviderStrategyJsonList = jsonValue.GetArray("CapacityProviderStrategy");
     for (unsigned capacityProviderStrategyIndex = 0; capacityProviderStrategyIndex < capacityProviderStrategyJsonList.GetLength();
@@ -34,18 +58,6 @@ EcsParameters& EcsParameters::operator=(JsonView jsonValue) {
     m_enableExecuteCommand = jsonValue.GetBool("EnableExecuteCommand");
     m_enableExecuteCommandHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("Group")) {
-    m_group = jsonValue.GetString("Group");
-    m_groupHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("LaunchType")) {
-    m_launchType = LaunchTypeMapper::GetLaunchTypeForName(jsonValue.GetString("LaunchType"));
-    m_launchTypeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("NetworkConfiguration")) {
-    m_networkConfiguration = jsonValue.GetObject("NetworkConfiguration");
-    m_networkConfigurationHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("PlacementConstraints")) {
     Aws::Utils::Array<JsonView> placementConstraintsJsonList = jsonValue.GetArray("PlacementConstraints");
     for (unsigned placementConstraintsIndex = 0; placementConstraintsIndex < placementConstraintsJsonList.GetLength();
@@ -60,10 +72,6 @@ EcsParameters& EcsParameters::operator=(JsonView jsonValue) {
       m_placementStrategy.push_back(placementStrategyJsonList[placementStrategyIndex].AsObject());
     }
     m_placementStrategyHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("PlatformVersion")) {
-    m_platformVersion = jsonValue.GetString("PlatformVersion");
-    m_platformVersionHasBeenSet = true;
   }
   if (jsonValue.ValueExists("PropagateTags")) {
     m_propagateTags = PropagateTagsMapper::GetPropagateTagsForName(jsonValue.GetString("PropagateTags"));
@@ -85,19 +93,35 @@ EcsParameters& EcsParameters::operator=(JsonView jsonValue) {
     }
     m_tagsHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("TaskCount")) {
-    m_taskCount = jsonValue.GetInteger("TaskCount");
-    m_taskCountHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("TaskDefinitionArn")) {
-    m_taskDefinitionArn = jsonValue.GetString("TaskDefinitionArn");
-    m_taskDefinitionArnHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue EcsParameters::Jsonize() const {
   JsonValue payload;
+
+  if (m_taskDefinitionArnHasBeenSet) {
+    payload.WithString("TaskDefinitionArn", m_taskDefinitionArn);
+  }
+
+  if (m_taskCountHasBeenSet) {
+    payload.WithInteger("TaskCount", m_taskCount);
+  }
+
+  if (m_launchTypeHasBeenSet) {
+    payload.WithString("LaunchType", LaunchTypeMapper::GetNameForLaunchType(m_launchType));
+  }
+
+  if (m_networkConfigurationHasBeenSet) {
+    payload.WithObject("NetworkConfiguration", m_networkConfiguration.Jsonize());
+  }
+
+  if (m_platformVersionHasBeenSet) {
+    payload.WithString("PlatformVersion", m_platformVersion);
+  }
+
+  if (m_groupHasBeenSet) {
+    payload.WithString("Group", m_group);
+  }
 
   if (m_capacityProviderStrategyHasBeenSet) {
     Aws::Utils::Array<JsonValue> capacityProviderStrategyJsonList(m_capacityProviderStrategy.size());
@@ -117,18 +141,6 @@ JsonValue EcsParameters::Jsonize() const {
     payload.WithBool("EnableExecuteCommand", m_enableExecuteCommand);
   }
 
-  if (m_groupHasBeenSet) {
-    payload.WithString("Group", m_group);
-  }
-
-  if (m_launchTypeHasBeenSet) {
-    payload.WithString("LaunchType", LaunchTypeMapper::GetNameForLaunchType(m_launchType));
-  }
-
-  if (m_networkConfigurationHasBeenSet) {
-    payload.WithObject("NetworkConfiguration", m_networkConfiguration.Jsonize());
-  }
-
   if (m_placementConstraintsHasBeenSet) {
     Aws::Utils::Array<JsonValue> placementConstraintsJsonList(m_placementConstraints.size());
     for (unsigned placementConstraintsIndex = 0; placementConstraintsIndex < placementConstraintsJsonList.GetLength();
@@ -144,10 +156,6 @@ JsonValue EcsParameters::Jsonize() const {
       placementStrategyJsonList[placementStrategyIndex].AsObject(m_placementStrategy[placementStrategyIndex].Jsonize());
     }
     payload.WithArray("PlacementStrategy", std::move(placementStrategyJsonList));
-  }
-
-  if (m_platformVersionHasBeenSet) {
-    payload.WithString("PlatformVersion", m_platformVersion);
   }
 
   if (m_propagateTagsHasBeenSet) {
@@ -168,14 +176,6 @@ JsonValue EcsParameters::Jsonize() const {
       tagsJsonList[tagsIndex].AsObject(std::move(tagMapJsonMap));
     }
     payload.WithArray("Tags", std::move(tagsJsonList));
-  }
-
-  if (m_taskCountHasBeenSet) {
-    payload.WithInteger("TaskCount", m_taskCount);
-  }
-
-  if (m_taskDefinitionArnHasBeenSet) {
-    payload.WithString("TaskDefinitionArn", m_taskDefinitionArn);
   }
 
   return payload;

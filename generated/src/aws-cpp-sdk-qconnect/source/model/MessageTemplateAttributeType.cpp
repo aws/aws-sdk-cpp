@@ -19,6 +19,7 @@ static const int SYSTEM_HASH = HashingUtils::HashString("SYSTEM");
 static const int AGENT_HASH = HashingUtils::HashString("AGENT");
 static const int CUSTOMER_PROFILE_HASH = HashingUtils::HashString("CUSTOMER_PROFILE");
 static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
+static const int CASE_HASH = HashingUtils::HashString("CASE");
 
 MessageTemplateAttributeType GetMessageTemplateAttributeTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -30,6 +31,8 @@ MessageTemplateAttributeType GetMessageTemplateAttributeTypeForName(const Aws::S
     return MessageTemplateAttributeType::CUSTOMER_PROFILE;
   } else if (hashCode == CUSTOM_HASH) {
     return MessageTemplateAttributeType::CUSTOM;
+  } else if (hashCode == CASE_HASH) {
+    return MessageTemplateAttributeType::CASE;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -52,6 +55,8 @@ Aws::String GetNameForMessageTemplateAttributeType(MessageTemplateAttributeType 
       return "CUSTOMER_PROFILE";
     case MessageTemplateAttributeType::CUSTOM:
       return "CUSTOM";
+    case MessageTemplateAttributeType::CASE:
+      return "CASE";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

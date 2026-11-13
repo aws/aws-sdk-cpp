@@ -10,7 +10,7 @@
 namespace Aws {
 namespace SecurityHub {
 namespace Model {
-enum class OrganizationConfigurationStatus { NOT_SET, PENDING, ENABLED, FAILED };
+enum class OrganizationConfigurationStatus { NOT_SET, PENDING, ENABLED, FAILED, DISABLED };
 
 namespace OrganizationConfigurationStatusMapper {
 AWS_SECURITYHUB_API OrganizationConfigurationStatus GetOrganizationConfigurationStatusForName(const Aws::String& name);

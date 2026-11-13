@@ -27,6 +27,10 @@ Aws::String ListUserPoolClientsRequest::SerializePayload() const {
     payload.WithString("NextToken", m_nextToken);
   }
 
+  if (m_clientTypeHasBeenSet) {
+    payload.WithString("ClientType", ClientTypeTypeMapper::GetNameForClientTypeType(m_clientType));
+  }
+
   return payload.View().WriteReadable();
 }
 

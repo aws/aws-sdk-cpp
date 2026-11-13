@@ -22,8 +22,10 @@
 #include <aws/sagemaker/model/ListAutoMLJobsPaginationTraits.h>
 #include <aws/sagemaker/model/ListCandidatesForAutoMLJobPaginationTraits.h>
 #include <aws/sagemaker/model/ListClusterEventsPaginationTraits.h>
+#include <aws/sagemaker/model/ListClusterExtensionVersionsPaginationTraits.h>
 #include <aws/sagemaker/model/ListClusterExtensionsPaginationTraits.h>
 #include <aws/sagemaker/model/ListClusterNodesPaginationTraits.h>
+#include <aws/sagemaker/model/ListClusterOperationsPaginationTraits.h>
 #include <aws/sagemaker/model/ListClusterSchedulerConfigsPaginationTraits.h>
 #include <aws/sagemaker/model/ListClustersPaginationTraits.h>
 #include <aws/sagemaker/model/ListCodeRepositoriesPaginationTraits.h>
@@ -295,6 +297,18 @@ class SageMakerPaginationBase {
   }
 
   /**
+   * Create a paginator for ListClusterExtensionVersions operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListClusterExtensionVersionsRequest,
+                                    Pagination::ListClusterExtensionVersionsPaginationTraits<DerivedClient>>
+  ListClusterExtensionVersionsPaginator(const Model::ListClusterExtensionVersionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListClusterExtensionVersionsRequest,
+                                             Pagination::ListClusterExtensionVersionsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
    * Create a paginator for ListClusterNodes operation
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListClusterNodesRequest,
@@ -304,6 +318,18 @@ class SageMakerPaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListClusterNodesRequest,
                                              Pagination::ListClusterNodesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                           request};
+  }
+
+  /**
+   * Create a paginator for ListClusterOperations operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListClusterOperationsRequest,
+                                    Pagination::ListClusterOperationsPaginationTraits<DerivedClient>>
+  ListClusterOperationsPaginator(const Model::ListClusterOperationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListClusterOperationsRequest,
+                                             Pagination::ListClusterOperationsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
   }
 
   /**

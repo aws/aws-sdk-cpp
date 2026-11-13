@@ -353,6 +353,8 @@
 #include <aws/qconnect/model/Participant.h>
 #include <aws/qconnect/model/Priority.h>
 #include <aws/qconnect/model/ProactiveRecommendationDataDetails.h>
+#include <aws/qconnect/model/ProfileCatalogItem.h>
+#include <aws/qconnect/model/ProfileRecommendation.h>
 #include <aws/qconnect/model/PushADMMessageTemplateContent.h>
 #include <aws/qconnect/model/PushAPNSMessageTemplateContent.h>
 #include <aws/qconnect/model/PushBaiduMessageTemplateContent.h>

@@ -29,6 +29,9 @@ Aws::String AssociateSubnetsRequest::SerializePayload() const {
   if (m_subnetMappingsHasBeenSet) {
     mapSize++;
   }
+  if (m_natGatewayCreateMappingsHasBeenSet) {
+    mapSize++;
+  }
 
   encoder.WriteMapStart(mapSize);
 
@@ -51,6 +54,14 @@ Aws::String AssociateSubnetsRequest::SerializePayload() const {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("SubnetMappings"));
     encoder.WriteArrayStart(m_subnetMappings.size());
     for (const auto& item_0 : m_subnetMappings) {
+      item_0.CborEncode(encoder);
+    }
+  }
+
+  if (m_natGatewayCreateMappingsHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("NatGatewayCreateMappings"));
+    encoder.WriteArrayStart(m_natGatewayCreateMappings.size());
+    for (const auto& item_0 : m_natGatewayCreateMappings) {
       item_0.CborEncode(encoder);
     }
   }

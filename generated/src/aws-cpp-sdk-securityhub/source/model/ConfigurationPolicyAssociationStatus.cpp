@@ -18,6 +18,7 @@ namespace ConfigurationPolicyAssociationStatusMapper {
 static const int PENDING_HASH = HashingUtils::HashString("PENDING");
 static const int SUCCESS_HASH = HashingUtils::HashString("SUCCESS");
 static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
 
 ConfigurationPolicyAssociationStatus GetConfigurationPolicyAssociationStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ ConfigurationPolicyAssociationStatus GetConfigurationPolicyAssociationStatusForN
     return ConfigurationPolicyAssociationStatus::SUCCESS;
   } else if (hashCode == FAILED_HASH) {
     return ConfigurationPolicyAssociationStatus::FAILED;
+  } else if (hashCode == DISABLED_HASH) {
+    return ConfigurationPolicyAssociationStatus::DISABLED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForConfigurationPolicyAssociationStatus(ConfigurationPolicyAs
       return "SUCCESS";
     case ConfigurationPolicyAssociationStatus::FAILED:
       return "FAILED";
+    case ConfigurationPolicyAssociationStatus::DISABLED:
+      return "DISABLED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

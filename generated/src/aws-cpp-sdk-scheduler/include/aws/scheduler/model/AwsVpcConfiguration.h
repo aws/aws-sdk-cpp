@@ -37,18 +37,25 @@ class AwsVpcConfiguration {
 
   ///@{
   /**
-   * <p>Specifies whether the task's elastic network interface receives a public IP
-   * address. You can specify <code>ENABLED</code> only when <code>LaunchType</code>
-   * in <code>EcsParameters</code> is set to <code>FARGATE</code>.</p>
+   * <p>Specifies the subnets associated with the task. These subnets must all be in
+   * the same VPC. You can specify as many as 16 subnets.</p>
    */
-  inline AssignPublicIp GetAssignPublicIp() const { return m_assignPublicIp; }
-  inline bool AssignPublicIpHasBeenSet() const { return m_assignPublicIpHasBeenSet; }
-  inline void SetAssignPublicIp(AssignPublicIp value) {
-    m_assignPublicIpHasBeenSet = true;
-    m_assignPublicIp = value;
+  inline const Aws::Vector<Aws::String>& GetSubnets() const { return m_subnets; }
+  inline bool SubnetsHasBeenSet() const { return m_subnetsHasBeenSet; }
+  template <typename SubnetsT = Aws::Vector<Aws::String>>
+  void SetSubnets(SubnetsT&& value) {
+    m_subnetsHasBeenSet = true;
+    m_subnets = std::forward<SubnetsT>(value);
   }
-  inline AwsVpcConfiguration& WithAssignPublicIp(AssignPublicIp value) {
-    SetAssignPublicIp(value);
+  template <typename SubnetsT = Aws::Vector<Aws::String>>
+  AwsVpcConfiguration& WithSubnets(SubnetsT&& value) {
+    SetSubnets(std::forward<SubnetsT>(value));
+    return *this;
+  }
+  template <typename SubnetsT = Aws::String>
+  AwsVpcConfiguration& AddSubnets(SubnetsT&& value) {
+    m_subnetsHasBeenSet = true;
+    m_subnets.emplace_back(std::forward<SubnetsT>(value));
     return *this;
   }
   ///@}
@@ -82,37 +89,30 @@ class AwsVpcConfiguration {
 
   ///@{
   /**
-   * <p>Specifies the subnets associated with the task. These subnets must all be in
-   * the same VPC. You can specify as many as 16 subnets.</p>
+   * <p>Specifies whether the task's elastic network interface receives a public IP
+   * address. You can specify <code>ENABLED</code> only when <code>LaunchType</code>
+   * in <code>EcsParameters</code> is set to <code>FARGATE</code>.</p>
    */
-  inline const Aws::Vector<Aws::String>& GetSubnets() const { return m_subnets; }
-  inline bool SubnetsHasBeenSet() const { return m_subnetsHasBeenSet; }
-  template <typename SubnetsT = Aws::Vector<Aws::String>>
-  void SetSubnets(SubnetsT&& value) {
-    m_subnetsHasBeenSet = true;
-    m_subnets = std::forward<SubnetsT>(value);
+  inline AssignPublicIp GetAssignPublicIp() const { return m_assignPublicIp; }
+  inline bool AssignPublicIpHasBeenSet() const { return m_assignPublicIpHasBeenSet; }
+  inline void SetAssignPublicIp(AssignPublicIp value) {
+    m_assignPublicIpHasBeenSet = true;
+    m_assignPublicIp = value;
   }
-  template <typename SubnetsT = Aws::Vector<Aws::String>>
-  AwsVpcConfiguration& WithSubnets(SubnetsT&& value) {
-    SetSubnets(std::forward<SubnetsT>(value));
-    return *this;
-  }
-  template <typename SubnetsT = Aws::String>
-  AwsVpcConfiguration& AddSubnets(SubnetsT&& value) {
-    m_subnetsHasBeenSet = true;
-    m_subnets.emplace_back(std::forward<SubnetsT>(value));
+  inline AwsVpcConfiguration& WithAssignPublicIp(AssignPublicIp value) {
+    SetAssignPublicIp(value);
     return *this;
   }
   ///@}
  private:
-  AssignPublicIp m_assignPublicIp{AssignPublicIp::NOT_SET};
+  Aws::Vector<Aws::String> m_subnets;
 
   Aws::Vector<Aws::String> m_securityGroups;
 
-  Aws::Vector<Aws::String> m_subnets;
-  bool m_assignPublicIpHasBeenSet = false;
-  bool m_securityGroupsHasBeenSet = false;
+  AssignPublicIp m_assignPublicIp{AssignPublicIp::NOT_SET};
   bool m_subnetsHasBeenSet = false;
+  bool m_securityGroupsHasBeenSet = false;
+  bool m_assignPublicIpHasBeenSet = false;
 };
 
 }  // namespace Model

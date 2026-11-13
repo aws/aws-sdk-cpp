@@ -2216,8 +2216,9 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
    * <p>Updates a distribution configuration. Distribution configurations define and
    * configure the outputs for your images, including the target Regions, accounts,
    * and settings for each Region.</p>  <p>This operation doesn't support
-   * selective updates. The request replaces the stored configuration, so include
-   * every setting that you want to keep.</p> <p><h3>See Also:</h3>   <a
+   * selective updates. The request replaces the entire distribution configuration,
+   * so include every setting that you want to keep. Any optional property that you
+   * omit is removed or reset to its default.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/UpdateDistributionConfiguration">AWS
    * API Reference</a></p>
    */
@@ -2250,8 +2251,8 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
    * distribution of images. You must specify exactly one recipe for your image,
    * using either a <code>containerRecipeArn</code> or an
    * <code>imageRecipeArn</code>. The recipe must be the same type, image or
-   * container, as the pipeline's current recipe.</p>  <p>UpdateImagePipeline
-   * does not support selective updates. The request replaces the pipeline's entire
+   * container, as the pipeline's current recipe.</p>  <p>This operation
+   * doesn't support selective updates. The request replaces the entire pipeline
    * configuration, so include every setting that you want to keep. Any optional
    * property that you omit is removed or reset to its default.</p> <p><h3>See
    * Also:</h3>   <a
@@ -2283,8 +2284,9 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
    * <p>Updates an infrastructure configuration. An infrastructure configuration
    * defines the environment in which Image Builder builds and tests your image.</p>
    *  <p>This operation doesn't support selective updates. The request replaces
-   * the configuration, so include every setting that you want to keep. Omitted
-   * optional properties are cleared.</p> <p><h3>See Also:</h3>   <a
+   * the entire infrastructure configuration, so include every setting that you want
+   * to keep. Any optional property that you omit is removed or reset to its
+   * default.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/UpdateInfrastructureConfiguration">AWS
    * API Reference</a></p>
    */
@@ -2313,10 +2315,12 @@ class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClien
   }
 
   /**
-   * <p>Updates the specified lifecycle policy. The request replaces the existing
-   * policy configuration rather than merging changes, so re-specify every setting
-   * that you want to keep. The <code>resourceType</code> must match the existing
-   * policy's value.</p><p><h3>See Also:</h3>   <a
+   * <p>Updates the specified lifecycle policy. The <code>resourceType</code> must
+   * match the existing policy's value.</p>  <p>This operation doesn't support
+   * selective updates. The request replaces the entire lifecycle policy
+   * configuration, so include every setting that you want to keep. Any optional
+   * property that you omit is removed or reset to its default.</p> <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/UpdateLifecyclePolicy">AWS
    * API Reference</a></p>
    */

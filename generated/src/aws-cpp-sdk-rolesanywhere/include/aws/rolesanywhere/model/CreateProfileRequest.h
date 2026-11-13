@@ -210,6 +210,37 @@ class CreateProfileRequest : public RolesAnywhereRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>An alias for the profile. When you set an alias, the response includes the
+   * alias ARN of the profile in <code>aliasArn</code>.</p> <p>An alias name contains
+   * 1 to 256 characters. It must begin with a letter (A-Z or a-z). It can contain
+   * only letters (A-Z and a-z), numbers (0-9), underscores (_), hyphens (-), and
+   * forward slashes (/). A forward slash can appear only between two other
+   * characters, so an alias name can't end with a forward slash or contain two in a
+   * row. Alias names that begin with <code>aws/</code>, in any combination of
+   * uppercase and lowercase letters, are reserved. Alias names are case
+   * sensitive.</p> <p>The alias name must be unique among resources of the same type
+   * in your account and Region. If another resource of the same type already has the
+   * alias, the request fails with a <code>ValidationException</code>. An invalid or
+   * reserved alias name also causes a <code>ValidationException</code>.</p> <p>If
+   * you omit this parameter or specify an empty string, the resource is created
+   * without an alias.</p>
+   */
+  inline const Aws::String& GetAliasName() const { return m_aliasName; }
+  inline bool AliasNameHasBeenSet() const { return m_aliasNameHasBeenSet; }
+  template <typename AliasNameT = Aws::String>
+  void SetAliasName(AliasNameT&& value) {
+    m_aliasNameHasBeenSet = true;
+    m_aliasName = std::forward<AliasNameT>(value);
+  }
+  template <typename AliasNameT = Aws::String>
+  CreateProfileRequest& WithAliasName(AliasNameT&& value) {
+    SetAliasName(std::forward<AliasNameT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -228,6 +259,8 @@ class CreateProfileRequest : public RolesAnywhereRequest {
   Aws::Vector<Tag> m_tags;
 
   bool m_acceptRoleSessionName{false};
+
+  Aws::String m_aliasName;
   bool m_nameHasBeenSet = false;
   bool m_requireInstancePropertiesHasBeenSet = false;
   bool m_sessionPolicyHasBeenSet = false;
@@ -237,6 +270,7 @@ class CreateProfileRequest : public RolesAnywhereRequest {
   bool m_enabledHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_acceptRoleSessionNameHasBeenSet = false;
+  bool m_aliasNameHasBeenSet = false;
 };
 
 }  // namespace Model

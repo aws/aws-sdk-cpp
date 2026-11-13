@@ -35,28 +35,6 @@ class PlacementConstraint {
 
   ///@{
   /**
-   * <p>A cluster query language expression to apply to the constraint. You cannot
-   * specify an expression if the constraint type is <code>distinctInstance</code>.
-   * For more information, see <a
-   * href="https://docs.aws.amazon.com/latest/developerguide/cluster-query-language.html">Cluster
-   * query language</a> in the <i>Amazon ECS Developer Guide</i>.</p>
-   */
-  inline const Aws::String& GetExpression() const { return m_expression; }
-  inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
-  template <typename ExpressionT = Aws::String>
-  void SetExpression(ExpressionT&& value) {
-    m_expressionHasBeenSet = true;
-    m_expression = std::forward<ExpressionT>(value);
-  }
-  template <typename ExpressionT = Aws::String>
-  PlacementConstraint& WithExpression(ExpressionT&& value) {
-    SetExpression(std::forward<ExpressionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The type of constraint. Use <code>distinctInstance</code> to ensure that each
    * task in a particular group is running on a different container instance. Use
    * <code>memberOf</code> to restrict the selection to a group of valid
@@ -73,12 +51,34 @@ class PlacementConstraint {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_expression;
 
+  ///@{
+  /**
+   * <p>A cluster query language expression to apply to the constraint. You cannot
+   * specify an expression if the constraint type is <code>distinctInstance</code>.
+   * For more information, see <a
+   * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+   * query language</a> in the <i>Amazon ECS Developer Guide</i>.</p>
+   */
+  inline const Aws::String& GetExpression() const { return m_expression; }
+  inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
+  template <typename ExpressionT = Aws::String>
+  void SetExpression(ExpressionT&& value) {
+    m_expressionHasBeenSet = true;
+    m_expression = std::forward<ExpressionT>(value);
+  }
+  template <typename ExpressionT = Aws::String>
+  PlacementConstraint& WithExpression(ExpressionT&& value) {
+    SetExpression(std::forward<ExpressionT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   PlacementConstraintType m_type{PlacementConstraintType::NOT_SET};
-  bool m_expressionHasBeenSet = false;
+
+  Aws::String m_expression;
   bool m_typeHasBeenSet = false;
+  bool m_expressionHasBeenSet = false;
 };
 
 }  // namespace Model

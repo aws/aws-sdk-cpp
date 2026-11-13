@@ -9,6 +9,7 @@
 #include <aws/connectcampaignsv2/model/EntryLimitsConfig.h>
 #include <aws/connectcampaignsv2/model/ExternalCampaignType.h>
 #include <aws/connectcampaignsv2/model/Schedule.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -182,6 +183,25 @@ class CampaignSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp of the most recent modification to the campaign or its
+   * configuration. Null for campaigns created before this field was introduced.</p>
+   */
+  inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
+  inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
+  template <typename LastModifiedTimeT = Aws::Utils::DateTime>
+  void SetLastModifiedTime(LastModifiedTimeT&& value) {
+    m_lastModifiedTimeHasBeenSet = true;
+    m_lastModifiedTime = std::forward<LastModifiedTimeT>(value);
+  }
+  template <typename LastModifiedTimeT = Aws::Utils::DateTime>
+  CampaignSummary& WithLastModifiedTime(LastModifiedTimeT&& value) {
+    SetLastModifiedTime(std::forward<LastModifiedTimeT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -200,6 +220,8 @@ class CampaignSummary {
   EntryLimitsConfig m_entryLimitsConfig;
 
   Aws::String m_connectCampaignFlowArn;
+
+  Aws::Utils::DateTime m_lastModifiedTime{};
   bool m_idHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
@@ -209,6 +231,7 @@ class CampaignSummary {
   bool m_scheduleHasBeenSet = false;
   bool m_entryLimitsConfigHasBeenSet = false;
   bool m_connectCampaignFlowArnHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
 };
 
 }  // namespace Model

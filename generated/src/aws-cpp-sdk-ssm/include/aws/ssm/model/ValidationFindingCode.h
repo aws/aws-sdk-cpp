@@ -14,6 +14,8 @@ enum class ValidationFindingCode {
   NOT_SET,
   TargetInaccessible,
   TargetUnusable,
+  TargetMissingPermissions,
+  TargetApiDisabled,
   TargetStateWarning,
   AwsRoleAssumptionFailed,
   WebIdentityTokenFailed,

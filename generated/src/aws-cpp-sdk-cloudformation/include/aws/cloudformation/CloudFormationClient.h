@@ -2599,6 +2599,33 @@ class AWS_CLOUDFORMATION_API CloudFormationClient : public Aws::Client::AWSXMLCl
   }
 
   /**
+   * <p>Removes an alias from a stack. After the alias is removed successfully, it
+   * can no longer be used to reference the stack in API calls.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RemoveAlias">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::RemoveAliasOutcome RemoveAlias(const Model::RemoveAliasRequest& request) const;
+
+  /**
+   * A Callable wrapper for RemoveAlias that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename RemoveAliasRequestT = Model::RemoveAliasRequest>
+  Model::RemoveAliasOutcomeCallable RemoveAliasCallable(const RemoveAliasRequestT& request) const {
+    return SubmitCallable(&CloudFormationClient::RemoveAlias, request);
+  }
+
+  /**
+   * An Async wrapper for RemoveAlias that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename RemoveAliasRequestT = Model::RemoveAliasRequest>
+  void RemoveAliasAsync(const RemoveAliasRequestT& request, const RemoveAliasResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudFormationClient::RemoveAlias, request, handler, context);
+  }
+
+  /**
    * <p>When specifying <code>RollbackStack</code>, you preserve the state of
    * previously provisioned resources when an operation fails. You can check the
    * status of the stack through the <a>DescribeStacks</a> operation.</p> <p>Rolls
@@ -2633,6 +2660,39 @@ class AWS_CLOUDFORMATION_API CloudFormationClient : public Aws::Client::AWSXMLCl
   void RollbackStackAsync(const RollbackStackRequestT& request, const RollbackStackResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&CloudFormationClient::RollbackStack, request, handler, context);
+  }
+
+  /**
+   * <p>Assigns an alias to an existing stack. An alias is an alternative name for a
+   * stack that can be used in place of the stack name in any CloudFormation API call
+   * that accepts the <code>StackName</code> parameter. This enables you to
+   * effectively rename a stack without recreating it.</p> <p>After setting an alias,
+   * both the original stack name and the alias resolve to the same stack. Setting an
+   * alias does not change the stack's ARN, physical resource IDs, or any deployed
+   * resources.</p>  <p>Each stack can have at most one alias. To change a
+   * stack's alias, first remove the existing alias using <a>RemoveAlias</a>, then
+   * set a new one.</p> <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SetAlias">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SetAliasOutcome SetAlias(const Model::SetAliasRequest& request) const;
+
+  /**
+   * A Callable wrapper for SetAlias that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename SetAliasRequestT = Model::SetAliasRequest>
+  Model::SetAliasOutcomeCallable SetAliasCallable(const SetAliasRequestT& request) const {
+    return SubmitCallable(&CloudFormationClient::SetAlias, request);
+  }
+
+  /**
+   * An Async wrapper for SetAlias that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename SetAliasRequestT = Model::SetAliasRequest>
+  void SetAliasAsync(const SetAliasRequestT& request, const SetAliasResponseReceivedHandler& handler,
+                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudFormationClient::SetAlias, request, handler, context);
   }
 
   /**

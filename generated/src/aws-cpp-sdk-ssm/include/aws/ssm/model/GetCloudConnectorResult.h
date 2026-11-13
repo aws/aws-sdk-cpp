@@ -118,7 +118,8 @@ class GetCloudConnectorResult {
   ///@{
   /**
    * <p>The ARN of the Amazon Web Services Config connector associated with this
-   * cloud connector.</p>
+   * cloud connector. This value is returned only if the cloud connector was created
+   * with an Amazon Web Services Config connector.</p>
    */
   inline const Aws::String& GetConfigConnectorArn() const { return m_configConnectorArn; }
   template <typename ConfigConnectorArnT = Aws::String>

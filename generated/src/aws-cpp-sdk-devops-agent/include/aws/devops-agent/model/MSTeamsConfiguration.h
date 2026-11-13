@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/devops-agent/DevOpsAgent_EXPORTS.h>
+#include <aws/devops-agent/model/MSTeamsBidirectionalConfiguration.h>
 #include <aws/devops-agent/model/MSTeamsTransmissionTarget.h>
 
 #include <utility>
@@ -90,15 +91,39 @@ class MSTeamsConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The bidirectional communication configuration for the Microsoft Teams
+   * integration. Provide this configuration with <code>enabled</code> set to
+   * <code>true</code> to allow users to interact with the agent directly from
+   * Microsoft Teams.</p>
+   */
+  inline const MSTeamsBidirectionalConfiguration& GetBidirectional() const { return m_bidirectional; }
+  inline bool BidirectionalHasBeenSet() const { return m_bidirectionalHasBeenSet; }
+  template <typename BidirectionalT = MSTeamsBidirectionalConfiguration>
+  void SetBidirectional(BidirectionalT&& value) {
+    m_bidirectionalHasBeenSet = true;
+    m_bidirectional = std::forward<BidirectionalT>(value);
+  }
+  template <typename BidirectionalT = MSTeamsBidirectionalConfiguration>
+  MSTeamsConfiguration& WithBidirectional(BidirectionalT&& value) {
+    SetBidirectional(std::forward<BidirectionalT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_teamId;
 
   Aws::String m_teamName;
 
   MSTeamsTransmissionTarget m_transmissionTarget;
+
+  MSTeamsBidirectionalConfiguration m_bidirectional;
   bool m_teamIdHasBeenSet = false;
   bool m_teamNameHasBeenSet = false;
   bool m_transmissionTargetHasBeenSet = false;
+  bool m_bidirectionalHasBeenSet = false;
 };
 
 }  // namespace Model

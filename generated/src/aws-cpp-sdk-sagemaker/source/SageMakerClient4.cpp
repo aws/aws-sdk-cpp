@@ -20,6 +20,9 @@
 #include <aws/sagemaker/SageMakerClient.h>
 #include <aws/sagemaker/SageMakerEndpointProvider.h>
 #include <aws/sagemaker/SageMakerErrorMarshaller.h>
+#include <aws/sagemaker/model/UpdateModelPackageRequest.h>
+#include <aws/sagemaker/model/UpdateMonitoringAlertRequest.h>
+#include <aws/sagemaker/model/UpdateMonitoringScheduleRequest.h>
 #include <aws/sagemaker/model/UpdateNotebookInstanceLifecycleConfigRequest.h>
 #include <aws/sagemaker/model/UpdateNotebookInstanceRequest.h>
 #include <aws/sagemaker/model/UpdatePartnerAppRequest.h>
@@ -45,6 +48,24 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+UpdateModelPackageOutcome SageMakerClient::UpdateModelPackage(const UpdateModelPackageRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateModelPackageOutcome(result.GetResultWithOwnership())
+                            : UpdateModelPackageOutcome(std::move(result.GetError()));
+}
+
+UpdateMonitoringAlertOutcome SageMakerClient::UpdateMonitoringAlert(const UpdateMonitoringAlertRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateMonitoringAlertOutcome(result.GetResultWithOwnership())
+                            : UpdateMonitoringAlertOutcome(std::move(result.GetError()));
+}
+
+UpdateMonitoringScheduleOutcome SageMakerClient::UpdateMonitoringSchedule(const UpdateMonitoringScheduleRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateMonitoringScheduleOutcome(result.GetResultWithOwnership())
+                            : UpdateMonitoringScheduleOutcome(std::move(result.GetError()));
+}
 
 UpdateNotebookInstanceOutcome SageMakerClient::UpdateNotebookInstance(const UpdateNotebookInstanceRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);

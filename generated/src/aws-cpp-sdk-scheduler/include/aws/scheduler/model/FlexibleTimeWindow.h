@@ -34,22 +34,6 @@ class FlexibleTimeWindow {
 
   ///@{
   /**
-   * <p>The maximum time window during which a schedule can be invoked.</p>
-   */
-  inline int GetMaximumWindowInMinutes() const { return m_maximumWindowInMinutes; }
-  inline bool MaximumWindowInMinutesHasBeenSet() const { return m_maximumWindowInMinutesHasBeenSet; }
-  inline void SetMaximumWindowInMinutes(int value) {
-    m_maximumWindowInMinutesHasBeenSet = true;
-    m_maximumWindowInMinutes = value;
-  }
-  inline FlexibleTimeWindow& WithMaximumWindowInMinutes(int value) {
-    SetMaximumWindowInMinutes(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Determines whether the schedule is invoked within a flexible time window.</p>
    */
   inline FlexibleTimeWindowMode GetMode() const { return m_mode; }
@@ -63,12 +47,28 @@ class FlexibleTimeWindow {
     return *this;
   }
   ///@}
- private:
-  int m_maximumWindowInMinutes{0};
 
+  ///@{
+  /**
+   * <p>The maximum time window during which a schedule can be invoked.</p>
+   */
+  inline int GetMaximumWindowInMinutes() const { return m_maximumWindowInMinutes; }
+  inline bool MaximumWindowInMinutesHasBeenSet() const { return m_maximumWindowInMinutesHasBeenSet; }
+  inline void SetMaximumWindowInMinutes(int value) {
+    m_maximumWindowInMinutesHasBeenSet = true;
+    m_maximumWindowInMinutes = value;
+  }
+  inline FlexibleTimeWindow& WithMaximumWindowInMinutes(int value) {
+    SetMaximumWindowInMinutes(value);
+    return *this;
+  }
+  ///@}
+ private:
   FlexibleTimeWindowMode m_mode{FlexibleTimeWindowMode::NOT_SET};
-  bool m_maximumWindowInMinutesHasBeenSet = false;
+
+  int m_maximumWindowInMinutes{0};
   bool m_modeHasBeenSet = false;
+  bool m_maximumWindowInMinutesHasBeenSet = false;
 };
 
 }  // namespace Model

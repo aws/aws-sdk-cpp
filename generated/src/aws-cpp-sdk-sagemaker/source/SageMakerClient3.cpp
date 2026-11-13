@@ -20,6 +20,9 @@
 #include <aws/sagemaker/SageMakerClient.h>
 #include <aws/sagemaker/SageMakerEndpointProvider.h>
 #include <aws/sagemaker/SageMakerErrorMarshaller.h>
+#include <aws/sagemaker/model/ListModelQualityJobDefinitionsRequest.h>
+#include <aws/sagemaker/model/ListModelsRequest.h>
+#include <aws/sagemaker/model/ListMonitoringAlertHistoryRequest.h>
 #include <aws/sagemaker/model/ListMonitoringAlertsRequest.h>
 #include <aws/sagemaker/model/ListMonitoringExecutionsRequest.h>
 #include <aws/sagemaker/model/ListMonitoringSchedulesRequest.h>
@@ -117,9 +120,6 @@
 #include <aws/sagemaker/model/UpdateMlflowAppRequest.h>
 #include <aws/sagemaker/model/UpdateMlflowTrackingServerRequest.h>
 #include <aws/sagemaker/model/UpdateModelCardRequest.h>
-#include <aws/sagemaker/model/UpdateModelPackageRequest.h>
-#include <aws/sagemaker/model/UpdateMonitoringAlertRequest.h>
-#include <aws/sagemaker/model/UpdateMonitoringScheduleRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,24 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+ListModelQualityJobDefinitionsOutcome SageMakerClient::ListModelQualityJobDefinitions(
+    const ListModelQualityJobDefinitionsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListModelQualityJobDefinitionsOutcome(result.GetResultWithOwnership())
+                            : ListModelQualityJobDefinitionsOutcome(std::move(result.GetError()));
+}
+
+ListModelsOutcome SageMakerClient::ListModels(const ListModelsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListModelsOutcome(result.GetResultWithOwnership()) : ListModelsOutcome(std::move(result.GetError()));
+}
+
+ListMonitoringAlertHistoryOutcome SageMakerClient::ListMonitoringAlertHistory(const ListMonitoringAlertHistoryRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListMonitoringAlertHistoryOutcome(result.GetResultWithOwnership())
+                            : ListMonitoringAlertHistoryOutcome(std::move(result.GetError()));
+}
 
 ListMonitoringAlertsOutcome SageMakerClient::ListMonitoringAlerts(const ListMonitoringAlertsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -701,22 +719,4 @@ UpdateModelCardOutcome SageMakerClient::UpdateModelCard(const UpdateModelCardReq
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UpdateModelCardOutcome(result.GetResultWithOwnership())
                             : UpdateModelCardOutcome(std::move(result.GetError()));
-}
-
-UpdateModelPackageOutcome SageMakerClient::UpdateModelPackage(const UpdateModelPackageRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? UpdateModelPackageOutcome(result.GetResultWithOwnership())
-                            : UpdateModelPackageOutcome(std::move(result.GetError()));
-}
-
-UpdateMonitoringAlertOutcome SageMakerClient::UpdateMonitoringAlert(const UpdateMonitoringAlertRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? UpdateMonitoringAlertOutcome(result.GetResultWithOwnership())
-                            : UpdateMonitoringAlertOutcome(std::move(result.GetError()));
-}
-
-UpdateMonitoringScheduleOutcome SageMakerClient::UpdateMonitoringSchedule(const UpdateMonitoringScheduleRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? UpdateMonitoringScheduleOutcome(result.GetResultWithOwnership())
-                            : UpdateMonitoringScheduleOutcome(std::move(result.GetError()));
 }

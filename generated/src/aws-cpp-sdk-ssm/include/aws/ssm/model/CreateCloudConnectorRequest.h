@@ -109,8 +109,9 @@ class CreateCloudConnectorRequest : public SSMRequest {
 
   ///@{
   /**
-   * <p>The ARN of the Amazon Web Services Config connector associated with this
-   * cloud connector.</p>
+   * <p>The ARN of the Amazon Web Services Config connector to associate with this
+   * cloud connector. If you omit it, the cloud connector is created without Amazon
+   * Web Services Config integration.</p>
    */
   inline const Aws::String& GetConfigConnectorArn() const { return m_configConnectorArn; }
   inline bool ConfigConnectorArnHasBeenSet() const { return m_configConnectorArnHasBeenSet; }

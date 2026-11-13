@@ -41,7 +41,9 @@ class AcceleratorSelection {
    * GPU (24 GiB memory)</p> </li> <li> <p> <code>l4</code> - NVIDIA L4 Tensor Core
    * GPU (24 GiB memory)</p> </li> <li> <p> <code>l40s</code> - NVIDIA L40S Tensor
    * Core GPU (48 GiB memory)</p> </li> <li> <p> <code>rtx-pro-server-6000</code> -
-   * NVIDIA RTX PRO Server 6000 GPU (96 GiB memory)</p> </li> </ul>
+   * NVIDIA RTX PRO Server 6000 GPU (96 GiB memory)</p> </li> <li> <p>
+   * <code>rtx-pro-4500</code> - NVIDIA RTX PRO 4500 GPU (32 GiB memory)</p> </li>
+   * </ul>
    */
   inline AcceleratorName GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -62,17 +64,19 @@ class AcceleratorSelection {
    * runtimes:</p> <ul> <li> <p> <code>latest</code> - Use the latest runtime
    * available for the chip. If you specify <code>latest</code> and a new version of
    * the runtime is released, the new version of the runtime is used.</p> </li> <li>
-   * <p> <code>grid:r580</code> - <a
+   * <p> <code>grid:r595</code> - <a
+   * href="https://docs.nvidia.com/vgpu/20.0/index.html">NVIDIA vGPU software 20</a>
+   * </p> </li> <li> <p> <code>grid:r580</code> - <a
    * href="https://docs.nvidia.com/vgpu/19.0/index.html">NVIDIA vGPU software 19</a>
    * </p> </li> </ul> <p>If you don't specify a runtime, Amazon Web Services Deadline
    * Cloud uses <code>latest</code> as the default. However, if you have multiple
    * accelerators and specify <code>latest</code> for some and leave others blank,
    * Amazon Web Services Deadline Cloud raises an exception.</p>  <p>All
-   * accelerator types support <code>grid:r580</code>.</p> <p>All accelerators in a
-   * fleet must use the same runtime version. You cannot mix different runtime
-   * versions within a single fleet.</p>   <p>When you specify
-   * <code>latest</code>, it resolves to <code>grid:r580</code> for all currently
-   * supported accelerators.</p>
+   * accelerator types support <code>grid:r595</code> and <code>grid:r580</code>.</p>
+   * <p>All accelerators in a fleet must use the same runtime version. You cannot mix
+   * different runtime versions within a single fleet.</p>
+   * <p>When you specify <code>latest</code>, it resolves to <code>grid:r595</code>
+   * for all currently supported accelerators.</p>
    */
   inline const Aws::String& GetRuntime() const { return m_runtime; }
   inline bool RuntimeHasBeenSet() const { return m_runtimeHasBeenSet; }

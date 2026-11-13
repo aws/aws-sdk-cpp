@@ -35,6 +35,28 @@ class PlacementStrategy {
 
   ///@{
   /**
+   * <p>The type of placement strategy. The random placement strategy randomly places
+   * tasks on available candidates. The spread placement strategy spreads placement
+   * across available candidates evenly based on the field parameter. The binpack
+   * strategy places tasks on available candidates that have the least available
+   * amount of the resource that is specified with the field parameter. For example,
+   * if you binpack on memory, a task is placed on the instance with the least amount
+   * of remaining memory (but still enough to run the task).</p>
+   */
+  inline PlacementStrategyType GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  inline void SetType(PlacementStrategyType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline PlacementStrategy& WithType(PlacementStrategyType value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The field to apply the placement strategy against. For the spread placement
    * strategy, valid values are <code>instanceId</code> (or <code>instanceId</code>,
    * which has the same effect), or any platform or custom attribute that is applied
@@ -56,34 +78,12 @@ class PlacementStrategy {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The type of placement strategy. The random placement strategy randomly places
-   * tasks on available candidates. The spread placement strategy spreads placement
-   * across available candidates evenly based on the field parameter. The binpack
-   * strategy places tasks on available candidates that have the least available
-   * amount of the resource that is specified with the field parameter. For example,
-   * if you binpack on memory, a task is placed on the instance with the least amount
-   * of remaining memory (but still enough to run the task).</p>
-   */
-  inline PlacementStrategyType GetType() const { return m_type; }
-  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-  inline void SetType(PlacementStrategyType value) {
-    m_typeHasBeenSet = true;
-    m_type = value;
-  }
-  inline PlacementStrategy& WithType(PlacementStrategyType value) {
-    SetType(value);
-    return *this;
-  }
-  ///@}
  private:
-  Aws::String m_field;
-
   PlacementStrategyType m_type{PlacementStrategyType::NOT_SET};
-  bool m_fieldHasBeenSet = false;
+
+  Aws::String m_field;
   bool m_typeHasBeenSet = false;
+  bool m_fieldHasBeenSet = false;
 };
 
 }  // namespace Model

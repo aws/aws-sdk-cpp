@@ -2745,12 +2745,15 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
    * To narrow the results to one version of the package, include
    * <code>PackageVersion</code>.</p> <p>You can use the <code>Scopes</code>
    * parameter to define the data boundary for the query. Currently,
-   * <code>Scopes</code> supports <code>AwsOrganizations</code>, which lets you
-   * retrieve resources from your entire organization or from specific organizational
-   * units. Only the delegated administrator account can use <code>Scopes</code>.</p>
-   * <p>You can use the <code>Filters</code> parameter to further refine results
-   * based on resource attributes, such as <code>ResourceType</code> or
-   * <code>Region</code>.</p><p><h3>See Also:</h3>   <a
+   * <code>Scopes</code> supports <code>AwsOrganizations</code>. With
+   * <code>AwsOrganizations</code>, you can retrieve resources from your entire
+   * organization or from specific organizational units. Only the delegated
+   * administrator account can use <code>Scopes</code>.</p> <p>You can use the
+   * <code>Filters</code> parameter to further refine results based on resource
+   * attributes, such as <code>ResourceType</code> or <code>Region</code>.</p>
+   * <p>This operation returns paginated results. To retrieve additional results, use
+   * the <code>NextToken</code> value from the previous response.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetSoftwareResourcesV2">AWS
    * API Reference</a></p>
    */
@@ -2784,11 +2787,11 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
    * A package installed on three resources contributes three to the count.</p>
    * <p>You can use the <code>Scopes</code> parameter to define the data boundary for
    * the query. Currently, <code>Scopes</code> supports
-   * <code>AwsOrganizations</code>, which lets you aggregate software from your
-   * entire organization or from specific organizational units. Only the delegated
-   * administrator account can use <code>Scopes</code>.</p> <p>This operation doesn't
-   * paginate. Use <code>MaxStatisticResults</code> to control how many grouping
-   * values are returned.</p><p><h3>See Also:</h3>   <a
+   * <code>AwsOrganizations</code>. With <code>AwsOrganizations</code>, you can
+   * aggregate software from your entire organization or from specific organizational
+   * units. Only the delegated administrator account can use <code>Scopes</code>.</p>
+   * <p>This operation doesn't paginate. Use <code>MaxStatisticResults</code> to
+   * control how many grouping values are returned.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetSoftwareStatisticsV2">AWS
    * API Reference</a></p>
    */
@@ -2819,17 +2822,20 @@ class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient,
    * identifies a package by name, version, and type, and includes the number of
    * resources that contain that package.</p> <p>You can use the <code>Scopes</code>
    * parameter to define the data boundary for the query. Currently,
-   * <code>Scopes</code> supports <code>AwsOrganizations</code>, which lets you
-   * retrieve software from your entire organization or from specific organizational
-   * units. Only the delegated administrator account can use <code>Scopes</code>.</p>
-   * <p>You can use the <code>Filters</code> parameter to refine results based on
-   * package and resource attributes. You can use <code>Scopes</code> and
-   * <code>Filters</code> independently or together. When both are provided,
-   * <code>Scopes</code> narrows the data set first, and then <code>Filters</code>
-   * refines results within that scoped data set.</p> <p>To list the resources that
-   * contain a specific package, use <code>GetSoftwareResourcesV2</code>. To get
-   * counts of software grouped by a field, use
-   * <code>GetSoftwareStatisticsV2</code>.</p><p><h3>See Also:</h3>   <a
+   * <code>Scopes</code> supports <code>AwsOrganizations</code>. With
+   * <code>AwsOrganizations</code>, you can retrieve software from your entire
+   * organization or from specific organizational units. Only the delegated
+   * administrator account can use <code>Scopes</code>.</p> <p>You can use the
+   * <code>Filters</code> parameter to refine results based on package and resource
+   * attributes. You can use <code>Scopes</code> and <code>Filters</code>
+   * independently or together. When both are provided, <code>Scopes</code> narrows
+   * the data set first, and then <code>Filters</code> refines results within that
+   * scoped data set.</p> <p>To list the resources that contain a specific package,
+   * use <code>GetSoftwareResourcesV2</code>. To get counts of software grouped by a
+   * field, use <code>GetSoftwareStatisticsV2</code>.</p> <p>This operation returns
+   * paginated results. To retrieve additional results, use the
+   * <code>NextToken</code> value from the previous response.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetSoftwareV2">AWS
    * API Reference</a></p>
    */

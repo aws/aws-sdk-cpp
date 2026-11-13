@@ -151,6 +151,10 @@ UserPoolClientType& UserPoolClientType::operator=(JsonView jsonValue) {
     m_refreshTokenRotation = jsonValue.GetObject("RefreshTokenRotation");
     m_refreshTokenRotationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ClientType")) {
+    m_clientType = ClientTypeTypeMapper::GetClientTypeTypeForName(jsonValue.GetString("ClientType"));
+    m_clientTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -297,6 +301,10 @@ JsonValue UserPoolClientType::Jsonize() const {
 
   if (m_refreshTokenRotationHasBeenSet) {
     payload.WithObject("RefreshTokenRotation", m_refreshTokenRotation.Jsonize());
+  }
+
+  if (m_clientTypeHasBeenSet) {
+    payload.WithString("ClientType", ClientTypeTypeMapper::GetNameForClientTypeType(m_clientType));
   }
 
   return payload;

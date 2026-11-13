@@ -53,7 +53,8 @@ class StringListFilterExpression {
 
   ///@{
   /**
-   * <p>The type of comparison to use for this search.</p>
+   * <p>The type of comparison to use for this search. Only <code>ANY_EQUALS</code>
+   * and <code>ALL_NOT_EQUALS</code> are supported.</p>
    */
   inline ComparisonOperator GetOperator() const { return m_operator; }
   inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }

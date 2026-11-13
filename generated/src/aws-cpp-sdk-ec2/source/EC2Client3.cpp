@@ -20,6 +20,9 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/DescribeCapacityBlockExtensionOfferingsRequest.h>
+#include <aws/ec2/model/DescribeCapacityBlockOfferingsRequest.h>
+#include <aws/ec2/model/DescribeCapacityBlockStatusRequest.h>
 #include <aws/ec2/model/DescribeCapacityBlocksRequest.h>
 #include <aws/ec2/model/DescribeCapacityManagerDataExportsRequest.h>
 #include <aws/ec2/model/DescribeCapacityReservationBillingRequestsRequest.h>
@@ -116,10 +119,7 @@
 #include <aws/ec2/model/DescribeNetworkInterfaceAttributeRequest.h>
 #include <aws/ec2/model/DescribeNetworkInterfacePermissionsRequest.h>
 #include <aws/ec2/model/DescribeNetworkInterfacesRequest.h>
-#include <aws/ec2/model/DescribeOutpostLagsRequest.h>
-#include <aws/ec2/model/DescribePlacementGroupsRequest.h>
-#include <aws/ec2/model/DescribePrefixListsRequest.h>
-#include <aws/ec2/model/DescribePrincipalIdFormatRequest.h>
+#include <aws/ec2/model/DescribeNetworkingFlexCostAllocationPoliciesRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,26 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DescribeCapacityBlockExtensionOfferingsOutcome EC2Client::DescribeCapacityBlockExtensionOfferings(
+    const DescribeCapacityBlockExtensionOfferingsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCapacityBlockExtensionOfferingsOutcome(result.GetResultWithOwnership())
+                            : DescribeCapacityBlockExtensionOfferingsOutcome(std::move(result.GetError()));
+}
+
+DescribeCapacityBlockOfferingsOutcome EC2Client::DescribeCapacityBlockOfferings(
+    const DescribeCapacityBlockOfferingsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCapacityBlockOfferingsOutcome(result.GetResultWithOwnership())
+                            : DescribeCapacityBlockOfferingsOutcome(std::move(result.GetError()));
+}
+
+DescribeCapacityBlockStatusOutcome EC2Client::DescribeCapacityBlockStatus(const DescribeCapacityBlockStatusRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeCapacityBlockStatusOutcome(result.GetResultWithOwnership())
+                            : DescribeCapacityBlockStatusOutcome(std::move(result.GetError()));
+}
 
 DescribeCapacityBlocksOutcome EC2Client::DescribeCapacityBlocks(const DescribeCapacityBlocksRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -739,26 +759,9 @@ DescribeNetworkInterfacesOutcome EC2Client::DescribeNetworkInterfaces(const Desc
                             : DescribeNetworkInterfacesOutcome(std::move(result.GetError()));
 }
 
-DescribeOutpostLagsOutcome EC2Client::DescribeOutpostLags(const DescribeOutpostLagsRequest& request) const {
+DescribeNetworkingFlexCostAllocationPoliciesOutcome EC2Client::DescribeNetworkingFlexCostAllocationPolicies(
+    const DescribeNetworkingFlexCostAllocationPoliciesRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeOutpostLagsOutcome(result.GetResultWithOwnership())
-                            : DescribeOutpostLagsOutcome(std::move(result.GetError()));
-}
-
-DescribePlacementGroupsOutcome EC2Client::DescribePlacementGroups(const DescribePlacementGroupsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribePlacementGroupsOutcome(result.GetResultWithOwnership())
-                            : DescribePlacementGroupsOutcome(std::move(result.GetError()));
-}
-
-DescribePrefixListsOutcome EC2Client::DescribePrefixLists(const DescribePrefixListsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribePrefixListsOutcome(result.GetResultWithOwnership())
-                            : DescribePrefixListsOutcome(std::move(result.GetError()));
-}
-
-DescribePrincipalIdFormatOutcome EC2Client::DescribePrincipalIdFormat(const DescribePrincipalIdFormatRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribePrincipalIdFormatOutcome(result.GetResultWithOwnership())
-                            : DescribePrincipalIdFormatOutcome(std::move(result.GetError()));
+  return result.IsSuccess() ? DescribeNetworkingFlexCostAllocationPoliciesOutcome(result.GetResultWithOwnership())
+                            : DescribeNetworkingFlexCostAllocationPoliciesOutcome(std::move(result.GetError()));
 }

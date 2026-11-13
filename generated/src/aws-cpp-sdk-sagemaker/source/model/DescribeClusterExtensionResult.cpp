@@ -30,6 +30,10 @@ DescribeClusterExtensionResult& DescribeClusterExtensionResult::operator=(const 
     m_nodeSummary = jsonValue.GetObject("NodeSummary");
     m_nodeSummaryHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Health")) {
+    m_health = jsonValue.GetObject("Health");
+    m_healthHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

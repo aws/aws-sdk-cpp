@@ -1,3 +1,34 @@
+# 1.11.929 (2026-11-13)
+
+## SDK Highlights
+* **Bug Fix**: Generate GetModeledError for rpcv2Cbor errors that have members beyond Message
+* **Bug Fix**: S3CrtClient::CopyObject no longer reads and rewrites annotations itself for objects under 1 GiB, because S3's single-part CopyObject already copies them. Small copies with AnnotationDirective::COPY no longer make extra annotation calls or need annotation permissions.
+* **Dependency Update**: Update CRT to v0.44.4
+
+## Service Updates
+* **AppStream**: Amazon WorkSpaces Agent Access now supports image builders, so AI agents can install, configure, and test applications before you create an image. New Replay Session delivers a video of screenshots, a transcript, and a report for each agent session, optionally encrypted with your own KMS key.
+* **CloudFormation**: AWS CloudFormation introduces stack aliases, which let you refer to an existing stack by a new name without deleting and recreating it. Manage aliases with SetAlias and RemoveAlias, and use an alias in place of the stack name in operations such as UpdateStack.
+* **Cognito Identity Provider**: Adding support for dynamic client registration.
+* **ConnectCampaignsV2**: Adds LastModifiedTime to DescribeCampaign and ListCampaigns responses.
+* **DevOps Agent**: AWS DevOps Agent adds bidirectional communication for Microsoft Teams associations. Set msteams.bidirectional with an IAM role so the agent answers mentions in your Teams channels.
+* **DocDB**: Update the documentation for the --engine-version flag for cluster creation
+* **EC2**: Adds support for Networking Flexible Cost Allocation APIs, enabling Network Admin, Architect, and Engineers to break down shared networking costs by the resources that generated the traffic.
+* **Glue**: Field description update for auto upgrade summaries
+* **IAM**: Minor documentation updates only
+* **Lambda Core**: Initial release of the customer-managed runtime APIs. Runtime publishers can now create, version, and manage custom runtimes, and use aliases to roll out new runtime versions to the functions that use them.
+* **Lambda**: Adds support for customer-managed runtimes in the CreateFunction and UpdateFunctionConfiguration APIs. Functions can now use a customer-managed runtime and receive its updates automatically, or pin to a specific runtime version using the existing runtime controls.
+* **Network Firewall**: Releasing Firewall Proxy API and deprecating Egress Proxy API.
+* **Organizations**: Add support for policy operations on the SECURITYHUB CSPM POLICY policy type.
+* **QConnect**: Amazon Q in Connect now supports additional message template attributes. You can personalize message templates using case fields, Amazon Connect Customer Profiles calculated attributes, and product recommendations.
+* **RolesAnywhere**: This release adds resource aliases for IAM Roles Anywhere trust anchors, profiles, and certificate revocation lists (CRLs). Assign an optional, unique alias name to a resource and use its alias ARN wherever an identifier is accepted, including CreateSession.
+* **SSM**: Adding Google Cloud Platform (GCP) support to SSM Cloud Connector to enable onboarding of GCP Compute Engine instances to AWS Systems Manager. Customers can now optionally create an SSM Cloud Connector without an AWS Config connector.
+* **SageMaker**: New feature for Sagemaker Hyperpod Slurm clusters to install Extensions and view cluster operations.
+* **Scheduler**: Adds EventBridgePutEventsV2Parameters and EventBridgePutRawEventsParameters to Target so schedules can publish to Amazon EventBridge event bus v2 with PutEvents or PutRawEvents.
+* **SecurityHub**: New DISABLED status for Security Hub CSPM Central Configuration.
+* **VPC Lattice**: Amazon VPC Lattice now supports modification of resource configuration DNS resolution on Resource Gateways
+* **deadline**: AWS Deadline Cloud now supports the NVIDIA RTX PRO 4500 GPU accelerator (rtx-pro-4500) for service-managed fleets running Amazon EC2 G7 instances.
+* **imagebuilder**: Add documentation clarification around List API behavior, and add image available waiter
+
 # 1.11.928 (2026-11-12)
 
 ## SDK Highlights

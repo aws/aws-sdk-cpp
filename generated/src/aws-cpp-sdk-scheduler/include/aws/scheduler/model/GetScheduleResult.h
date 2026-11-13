@@ -34,22 +34,6 @@ class GetScheduleResult {
 
   ///@{
   /**
-   * <p>Indicates the action that EventBridge Scheduler applies to the schedule after
-   * the schedule completes invoking the target.</p>
-   */
-  inline ActionAfterCompletion GetActionAfterCompletion() const { return m_actionAfterCompletion; }
-  inline void SetActionAfterCompletion(ActionAfterCompletion value) {
-    m_actionAfterCompletionHasBeenSet = true;
-    m_actionAfterCompletion = value;
-  }
-  inline GetScheduleResult& WithActionAfterCompletion(ActionAfterCompletion value) {
-    SetActionAfterCompletion(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The Amazon Resource Name (ARN) of the schedule.</p>
    */
   inline const Aws::String& GetArn() const { return m_arn; }
@@ -67,78 +51,6 @@ class GetScheduleResult {
 
   ///@{
   /**
-   * <p>The time at which the schedule was created.</p>
-   */
-  inline const Aws::Utils::DateTime& GetCreationDate() const { return m_creationDate; }
-  template <typename CreationDateT = Aws::Utils::DateTime>
-  void SetCreationDate(CreationDateT&& value) {
-    m_creationDateHasBeenSet = true;
-    m_creationDate = std::forward<CreationDateT>(value);
-  }
-  template <typename CreationDateT = Aws::Utils::DateTime>
-  GetScheduleResult& WithCreationDate(CreationDateT&& value) {
-    SetCreationDate(std::forward<CreationDateT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The description of the schedule.</p>
-   */
-  inline const Aws::String& GetDescription() const { return m_description; }
-  template <typename DescriptionT = Aws::String>
-  void SetDescription(DescriptionT&& value) {
-    m_descriptionHasBeenSet = true;
-    m_description = std::forward<DescriptionT>(value);
-  }
-  template <typename DescriptionT = Aws::String>
-  GetScheduleResult& WithDescription(DescriptionT&& value) {
-    SetDescription(std::forward<DescriptionT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The date, in UTC, before which the schedule can invoke its target. Depending
-   * on the schedule's recurrence expression, invocations might stop on, or before,
-   * the <code>EndDate</code> you specify. EventBridge Scheduler ignores
-   * <code>EndDate</code> for one-time schedules.</p>
-   */
-  inline const Aws::Utils::DateTime& GetEndDate() const { return m_endDate; }
-  template <typename EndDateT = Aws::Utils::DateTime>
-  void SetEndDate(EndDateT&& value) {
-    m_endDateHasBeenSet = true;
-    m_endDate = std::forward<EndDateT>(value);
-  }
-  template <typename EndDateT = Aws::Utils::DateTime>
-  GetScheduleResult& WithEndDate(EndDateT&& value) {
-    SetEndDate(std::forward<EndDateT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Allows you to configure a time window during which EventBridge Scheduler
-   * invokes the schedule.</p>
-   */
-  inline const FlexibleTimeWindow& GetFlexibleTimeWindow() const { return m_flexibleTimeWindow; }
-  template <typename FlexibleTimeWindowT = FlexibleTimeWindow>
-  void SetFlexibleTimeWindow(FlexibleTimeWindowT&& value) {
-    m_flexibleTimeWindowHasBeenSet = true;
-    m_flexibleTimeWindow = std::forward<FlexibleTimeWindowT>(value);
-  }
-  template <typename FlexibleTimeWindowT = FlexibleTimeWindow>
-  GetScheduleResult& WithFlexibleTimeWindow(FlexibleTimeWindowT&& value) {
-    SetFlexibleTimeWindow(std::forward<FlexibleTimeWindowT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The name of the schedule group associated with this schedule.</p>
    */
   inline const Aws::String& GetGroupName() const { return m_groupName; }
@@ -150,41 +62,6 @@ class GetScheduleResult {
   template <typename GroupNameT = Aws::String>
   GetScheduleResult& WithGroupName(GroupNameT&& value) {
     SetGroupName(std::forward<GroupNameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The ARN for a customer managed KMS Key that is be used to encrypt and decrypt
-   * your data.</p>
-   */
-  inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
-  template <typename KmsKeyArnT = Aws::String>
-  void SetKmsKeyArn(KmsKeyArnT&& value) {
-    m_kmsKeyArnHasBeenSet = true;
-    m_kmsKeyArn = std::forward<KmsKeyArnT>(value);
-  }
-  template <typename KmsKeyArnT = Aws::String>
-  GetScheduleResult& WithKmsKeyArn(KmsKeyArnT&& value) {
-    SetKmsKeyArn(std::forward<KmsKeyArnT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The time at which the schedule was last modified.</p>
-   */
-  inline const Aws::Utils::DateTime& GetLastModificationDate() const { return m_lastModificationDate; }
-  template <typename LastModificationDateT = Aws::Utils::DateTime>
-  void SetLastModificationDate(LastModificationDateT&& value) {
-    m_lastModificationDateHasBeenSet = true;
-    m_lastModificationDate = std::forward<LastModificationDateT>(value);
-  }
-  template <typename LastModificationDateT = Aws::Utils::DateTime>
-  GetScheduleResult& WithLastModificationDate(LastModificationDateT&& value) {
-    SetLastModificationDate(std::forward<LastModificationDateT>(value));
     return *this;
   }
   ///@}
@@ -245,23 +122,6 @@ class GetScheduleResult {
 
   ///@{
   /**
-   * <p>The timezone in which the scheduling expression is evaluated.</p>
-   */
-  inline const Aws::String& GetScheduleExpressionTimezone() const { return m_scheduleExpressionTimezone; }
-  template <typename ScheduleExpressionTimezoneT = Aws::String>
-  void SetScheduleExpressionTimezone(ScheduleExpressionTimezoneT&& value) {
-    m_scheduleExpressionTimezoneHasBeenSet = true;
-    m_scheduleExpressionTimezone = std::forward<ScheduleExpressionTimezoneT>(value);
-  }
-  template <typename ScheduleExpressionTimezoneT = Aws::String>
-  GetScheduleResult& WithScheduleExpressionTimezone(ScheduleExpressionTimezoneT&& value) {
-    SetScheduleExpressionTimezone(std::forward<ScheduleExpressionTimezoneT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The date, in UTC, after which the schedule can begin invoking its target.
    * Depending on the schedule's recurrence expression, invocations might occur on,
    * or after, the <code>StartDate</code> you specify. EventBridge Scheduler ignores
@@ -282,6 +142,60 @@ class GetScheduleResult {
 
   ///@{
   /**
+   * <p>The date, in UTC, before which the schedule can invoke its target. Depending
+   * on the schedule's recurrence expression, invocations might stop on, or before,
+   * the <code>EndDate</code> you specify. EventBridge Scheduler ignores
+   * <code>EndDate</code> for one-time schedules.</p>
+   */
+  inline const Aws::Utils::DateTime& GetEndDate() const { return m_endDate; }
+  template <typename EndDateT = Aws::Utils::DateTime>
+  void SetEndDate(EndDateT&& value) {
+    m_endDateHasBeenSet = true;
+    m_endDate = std::forward<EndDateT>(value);
+  }
+  template <typename EndDateT = Aws::Utils::DateTime>
+  GetScheduleResult& WithEndDate(EndDateT&& value) {
+    SetEndDate(std::forward<EndDateT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The description of the schedule.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  GetScheduleResult& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The timezone in which the scheduling expression is evaluated.</p>
+   */
+  inline const Aws::String& GetScheduleExpressionTimezone() const { return m_scheduleExpressionTimezone; }
+  template <typename ScheduleExpressionTimezoneT = Aws::String>
+  void SetScheduleExpressionTimezone(ScheduleExpressionTimezoneT&& value) {
+    m_scheduleExpressionTimezoneHasBeenSet = true;
+    m_scheduleExpressionTimezone = std::forward<ScheduleExpressionTimezoneT>(value);
+  }
+  template <typename ScheduleExpressionTimezoneT = Aws::String>
+  GetScheduleResult& WithScheduleExpressionTimezone(ScheduleExpressionTimezoneT&& value) {
+    SetScheduleExpressionTimezone(std::forward<ScheduleExpressionTimezoneT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Specifies whether the schedule is enabled or disabled.</p>
    */
   inline ScheduleState GetState() const { return m_state; }
@@ -291,6 +205,58 @@ class GetScheduleResult {
   }
   inline GetScheduleResult& WithState(ScheduleState value) {
     SetState(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The time at which the schedule was created.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCreationDate() const { return m_creationDate; }
+  template <typename CreationDateT = Aws::Utils::DateTime>
+  void SetCreationDate(CreationDateT&& value) {
+    m_creationDateHasBeenSet = true;
+    m_creationDate = std::forward<CreationDateT>(value);
+  }
+  template <typename CreationDateT = Aws::Utils::DateTime>
+  GetScheduleResult& WithCreationDate(CreationDateT&& value) {
+    SetCreationDate(std::forward<CreationDateT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The time at which the schedule was last modified.</p>
+   */
+  inline const Aws::Utils::DateTime& GetLastModificationDate() const { return m_lastModificationDate; }
+  template <typename LastModificationDateT = Aws::Utils::DateTime>
+  void SetLastModificationDate(LastModificationDateT&& value) {
+    m_lastModificationDateHasBeenSet = true;
+    m_lastModificationDate = std::forward<LastModificationDateT>(value);
+  }
+  template <typename LastModificationDateT = Aws::Utils::DateTime>
+  GetScheduleResult& WithLastModificationDate(LastModificationDateT&& value) {
+    SetLastModificationDate(std::forward<LastModificationDateT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ARN for a customer managed KMS Key that is be used to encrypt and decrypt
+   * your data.</p>
+   */
+  inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
+  template <typename KmsKeyArnT = Aws::String>
+  void SetKmsKeyArn(KmsKeyArnT&& value) {
+    m_kmsKeyArnHasBeenSet = true;
+    m_kmsKeyArn = std::forward<KmsKeyArnT>(value);
+  }
+  template <typename KmsKeyArnT = Aws::String>
+  GetScheduleResult& WithKmsKeyArn(KmsKeyArnT&& value) {
+    SetKmsKeyArn(std::forward<KmsKeyArnT>(value));
     return *this;
   }
   ///@}
@@ -313,6 +279,40 @@ class GetScheduleResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Allows you to configure a time window during which EventBridge Scheduler
+   * invokes the schedule.</p>
+   */
+  inline const FlexibleTimeWindow& GetFlexibleTimeWindow() const { return m_flexibleTimeWindow; }
+  template <typename FlexibleTimeWindowT = FlexibleTimeWindow>
+  void SetFlexibleTimeWindow(FlexibleTimeWindowT&& value) {
+    m_flexibleTimeWindowHasBeenSet = true;
+    m_flexibleTimeWindow = std::forward<FlexibleTimeWindowT>(value);
+  }
+  template <typename FlexibleTimeWindowT = FlexibleTimeWindow>
+  GetScheduleResult& WithFlexibleTimeWindow(FlexibleTimeWindowT&& value) {
+    SetFlexibleTimeWindow(std::forward<FlexibleTimeWindowT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Indicates the action that EventBridge Scheduler applies to the schedule after
+   * the schedule completes invoking the target.</p>
+   */
+  inline ActionAfterCompletion GetActionAfterCompletion() const { return m_actionAfterCompletion; }
+  inline void SetActionAfterCompletion(ActionAfterCompletion value) {
+    m_actionAfterCompletionHasBeenSet = true;
+    m_actionAfterCompletion = value;
+  }
+  inline GetScheduleResult& WithActionAfterCompletion(ActionAfterCompletion value) {
+    SetActionAfterCompletion(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -329,53 +329,53 @@ class GetScheduleResult {
   inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
-  ActionAfterCompletion m_actionAfterCompletion{ActionAfterCompletion::NOT_SET};
-
   Aws::String m_arn;
 
-  Aws::Utils::DateTime m_creationDate{};
-
-  Aws::String m_description;
-
-  Aws::Utils::DateTime m_endDate{};
-
-  FlexibleTimeWindow m_flexibleTimeWindow;
-
   Aws::String m_groupName;
-
-  Aws::String m_kmsKeyArn;
-
-  Aws::Utils::DateTime m_lastModificationDate{};
 
   Aws::String m_name;
 
   Aws::String m_scheduleExpression;
 
-  Aws::String m_scheduleExpressionTimezone;
-
   Aws::Utils::DateTime m_startDate{};
+
+  Aws::Utils::DateTime m_endDate{};
+
+  Aws::String m_description;
+
+  Aws::String m_scheduleExpressionTimezone;
 
   ScheduleState m_state{ScheduleState::NOT_SET};
 
+  Aws::Utils::DateTime m_creationDate{};
+
+  Aws::Utils::DateTime m_lastModificationDate{};
+
+  Aws::String m_kmsKeyArn;
+
   Target m_target;
+
+  FlexibleTimeWindow m_flexibleTimeWindow;
+
+  ActionAfterCompletion m_actionAfterCompletion{ActionAfterCompletion::NOT_SET};
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
-  bool m_actionAfterCompletionHasBeenSet = false;
   bool m_arnHasBeenSet = false;
-  bool m_creationDateHasBeenSet = false;
-  bool m_descriptionHasBeenSet = false;
-  bool m_endDateHasBeenSet = false;
-  bool m_flexibleTimeWindowHasBeenSet = false;
   bool m_groupNameHasBeenSet = false;
-  bool m_kmsKeyArnHasBeenSet = false;
-  bool m_lastModificationDateHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_scheduleExpressionHasBeenSet = false;
-  bool m_scheduleExpressionTimezoneHasBeenSet = false;
   bool m_startDateHasBeenSet = false;
+  bool m_endDateHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_scheduleExpressionTimezoneHasBeenSet = false;
   bool m_stateHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_lastModificationDateHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
   bool m_targetHasBeenSet = false;
+  bool m_flexibleTimeWindowHasBeenSet = false;
+  bool m_actionAfterCompletionHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

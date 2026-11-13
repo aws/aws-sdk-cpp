@@ -18,13 +18,13 @@ namespace Model {
 PlacementStrategy::PlacementStrategy(JsonView jsonValue) { *this = jsonValue; }
 
 PlacementStrategy& PlacementStrategy::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("field")) {
-    m_field = jsonValue.GetString("field");
-    m_fieldHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("type")) {
     m_type = PlacementStrategyTypeMapper::GetPlacementStrategyTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("field")) {
+    m_field = jsonValue.GetString("field");
+    m_fieldHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ PlacementStrategy& PlacementStrategy::operator=(JsonView jsonValue) {
 JsonValue PlacementStrategy::Jsonize() const {
   JsonValue payload;
 
-  if (m_fieldHasBeenSet) {
-    payload.WithString("field", m_field);
-  }
-
   if (m_typeHasBeenSet) {
     payload.WithString("type", PlacementStrategyTypeMapper::GetNameForPlacementStrategyType(m_type));
+  }
+
+  if (m_fieldHasBeenSet) {
+    payload.WithString("field", m_field);
   }
 
   return payload;

@@ -43,6 +43,120 @@ class EcsParameters {
 
   ///@{
   /**
+   * <p>The Amazon Resource Name (ARN) of the task definition to use if the event
+   * target is an Amazon ECS task.</p>
+   */
+  inline const Aws::String& GetTaskDefinitionArn() const { return m_taskDefinitionArn; }
+  inline bool TaskDefinitionArnHasBeenSet() const { return m_taskDefinitionArnHasBeenSet; }
+  template <typename TaskDefinitionArnT = Aws::String>
+  void SetTaskDefinitionArn(TaskDefinitionArnT&& value) {
+    m_taskDefinitionArnHasBeenSet = true;
+    m_taskDefinitionArn = std::forward<TaskDefinitionArnT>(value);
+  }
+  template <typename TaskDefinitionArnT = Aws::String>
+  EcsParameters& WithTaskDefinitionArn(TaskDefinitionArnT&& value) {
+    SetTaskDefinitionArn(std::forward<TaskDefinitionArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The number of tasks to create based on <code>TaskDefinition</code>. The
+   * default is <code>1</code>.</p>
+   */
+  inline int GetTaskCount() const { return m_taskCount; }
+  inline bool TaskCountHasBeenSet() const { return m_taskCountHasBeenSet; }
+  inline void SetTaskCount(int value) {
+    m_taskCountHasBeenSet = true;
+    m_taskCount = value;
+  }
+  inline EcsParameters& WithTaskCount(int value) {
+    SetTaskCount(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the launch type on which your task is running. The launch type that
+   * you specify here must match one of the launch type (compatibilities) of the
+   * target task. The <code>FARGATE</code> value is supported only in the Regions
+   * where Fargate with Amazon ECS is supported. For more information, see <a
+   * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html">Amazon
+   * Web Services Fargate on Amazon ECS</a> in the <i>Amazon ECS Developer
+   * Guide</i>.</p>
+   */
+  inline LaunchType GetLaunchType() const { return m_launchType; }
+  inline bool LaunchTypeHasBeenSet() const { return m_launchTypeHasBeenSet; }
+  inline void SetLaunchType(LaunchType value) {
+    m_launchTypeHasBeenSet = true;
+    m_launchType = value;
+  }
+  inline EcsParameters& WithLaunchType(LaunchType value) {
+    SetLaunchType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>This structure specifies the network configuration for an ECS task.</p>
+   */
+  inline const NetworkConfiguration& GetNetworkConfiguration() const { return m_networkConfiguration; }
+  inline bool NetworkConfigurationHasBeenSet() const { return m_networkConfigurationHasBeenSet; }
+  template <typename NetworkConfigurationT = NetworkConfiguration>
+  void SetNetworkConfiguration(NetworkConfigurationT&& value) {
+    m_networkConfigurationHasBeenSet = true;
+    m_networkConfiguration = std::forward<NetworkConfigurationT>(value);
+  }
+  template <typename NetworkConfigurationT = NetworkConfiguration>
+  EcsParameters& WithNetworkConfiguration(NetworkConfigurationT&& value) {
+    SetNetworkConfiguration(std::forward<NetworkConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the platform version for the task. Specify only the numeric portion
+   * of the platform version, such as <code>1.1.0</code>.</p>
+   */
+  inline const Aws::String& GetPlatformVersion() const { return m_platformVersion; }
+  inline bool PlatformVersionHasBeenSet() const { return m_platformVersionHasBeenSet; }
+  template <typename PlatformVersionT = Aws::String>
+  void SetPlatformVersion(PlatformVersionT&& value) {
+    m_platformVersionHasBeenSet = true;
+    m_platformVersion = std::forward<PlatformVersionT>(value);
+  }
+  template <typename PlatformVersionT = Aws::String>
+  EcsParameters& WithPlatformVersion(PlatformVersionT&& value) {
+    SetPlatformVersion(std::forward<PlatformVersionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies an ECS task group for the task. The maximum length is 255
+   * characters.</p>
+   */
+  inline const Aws::String& GetGroup() const { return m_group; }
+  inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
+  template <typename GroupT = Aws::String>
+  void SetGroup(GroupT&& value) {
+    m_groupHasBeenSet = true;
+    m_group = std::forward<GroupT>(value);
+  }
+  template <typename GroupT = Aws::String>
+  EcsParameters& WithGroup(GroupT&& value) {
+    SetGroup(std::forward<GroupT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The capacity provider strategy to use for the task.</p>
    */
   inline const Aws::Vector<CapacityProviderStrategyItem>& GetCapacityProviderStrategy() const { return m_capacityProviderStrategy; }
@@ -104,64 +218,6 @@ class EcsParameters {
 
   ///@{
   /**
-   * <p>Specifies an ECS task group for the task. The maximum length is 255
-   * characters.</p>
-   */
-  inline const Aws::String& GetGroup() const { return m_group; }
-  inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
-  template <typename GroupT = Aws::String>
-  void SetGroup(GroupT&& value) {
-    m_groupHasBeenSet = true;
-    m_group = std::forward<GroupT>(value);
-  }
-  template <typename GroupT = Aws::String>
-  EcsParameters& WithGroup(GroupT&& value) {
-    SetGroup(std::forward<GroupT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Specifies the launch type on which your task is running. The launch type that
-   * you specify here must match one of the launch type (compatibilities) of the
-   * target task. The <code>FARGATE</code> value is supported only in the Regions
-   * where Fargate with Amazon ECS is supported. For more information, see <a
-   * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html">AWS
-   * Fargate on Amazon ECS</a> in the <i>Amazon ECS Developer Guide</i>.</p>
-   */
-  inline LaunchType GetLaunchType() const { return m_launchType; }
-  inline bool LaunchTypeHasBeenSet() const { return m_launchTypeHasBeenSet; }
-  inline void SetLaunchType(LaunchType value) {
-    m_launchTypeHasBeenSet = true;
-    m_launchType = value;
-  }
-  inline EcsParameters& WithLaunchType(LaunchType value) {
-    SetLaunchType(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>This structure specifies the network configuration for an ECS task.</p>
-   */
-  inline const NetworkConfiguration& GetNetworkConfiguration() const { return m_networkConfiguration; }
-  inline bool NetworkConfigurationHasBeenSet() const { return m_networkConfigurationHasBeenSet; }
-  template <typename NetworkConfigurationT = NetworkConfiguration>
-  void SetNetworkConfiguration(NetworkConfigurationT&& value) {
-    m_networkConfigurationHasBeenSet = true;
-    m_networkConfiguration = std::forward<NetworkConfigurationT>(value);
-  }
-  template <typename NetworkConfigurationT = NetworkConfiguration>
-  EcsParameters& WithNetworkConfiguration(NetworkConfigurationT&& value) {
-    SetNetworkConfiguration(std::forward<NetworkConfigurationT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>An array of placement constraint objects to use for the task. You can specify
    * up to 10 constraints per task (including constraints in the task definition and
    * those specified at runtime).</p>
@@ -206,25 +262,6 @@ class EcsParameters {
   EcsParameters& AddPlacementStrategy(PlacementStrategyT&& value) {
     m_placementStrategyHasBeenSet = true;
     m_placementStrategy.emplace_back(std::forward<PlacementStrategyT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Specifies the platform version for the task. Specify only the numeric portion
-   * of the platform version, such as <code>1.1.0</code>.</p>
-   */
-  inline const Aws::String& GetPlatformVersion() const { return m_platformVersion; }
-  inline bool PlatformVersionHasBeenSet() const { return m_platformVersionHasBeenSet; }
-  template <typename PlatformVersionT = Aws::String>
-  void SetPlatformVersion(PlatformVersionT&& value) {
-    m_platformVersionHasBeenSet = true;
-    m_platformVersion = std::forward<PlatformVersionT>(value);
-  }
-  template <typename PlatformVersionT = Aws::String>
-  EcsParameters& WithPlatformVersion(PlatformVersionT&& value) {
-    SetPlatformVersion(std::forward<PlatformVersionT>(value));
     return *this;
   }
   ///@}
@@ -295,84 +332,48 @@ class EcsParameters {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The number of tasks to create based on <code>TaskDefinition</code>. The
-   * default is <code>1</code>.</p>
-   */
-  inline int GetTaskCount() const { return m_taskCount; }
-  inline bool TaskCountHasBeenSet() const { return m_taskCountHasBeenSet; }
-  inline void SetTaskCount(int value) {
-    m_taskCountHasBeenSet = true;
-    m_taskCount = value;
-  }
-  inline EcsParameters& WithTaskCount(int value) {
-    SetTaskCount(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The Amazon Resource Name (ARN) of the task definition to use if the event
-   * target is an Amazon ECS task.</p>
-   */
-  inline const Aws::String& GetTaskDefinitionArn() const { return m_taskDefinitionArn; }
-  inline bool TaskDefinitionArnHasBeenSet() const { return m_taskDefinitionArnHasBeenSet; }
-  template <typename TaskDefinitionArnT = Aws::String>
-  void SetTaskDefinitionArn(TaskDefinitionArnT&& value) {
-    m_taskDefinitionArnHasBeenSet = true;
-    m_taskDefinitionArn = std::forward<TaskDefinitionArnT>(value);
-  }
-  template <typename TaskDefinitionArnT = Aws::String>
-  EcsParameters& WithTaskDefinitionArn(TaskDefinitionArnT&& value) {
-    SetTaskDefinitionArn(std::forward<TaskDefinitionArnT>(value));
-    return *this;
-  }
-  ///@}
  private:
+  Aws::String m_taskDefinitionArn;
+
+  int m_taskCount{0};
+
+  LaunchType m_launchType{LaunchType::NOT_SET};
+
+  NetworkConfiguration m_networkConfiguration;
+
+  Aws::String m_platformVersion;
+
+  Aws::String m_group;
+
   Aws::Vector<CapacityProviderStrategyItem> m_capacityProviderStrategy;
 
   bool m_enableECSManagedTags{false};
 
   bool m_enableExecuteCommand{false};
 
-  Aws::String m_group;
-
-  LaunchType m_launchType{LaunchType::NOT_SET};
-
-  NetworkConfiguration m_networkConfiguration;
-
   Aws::Vector<PlacementConstraint> m_placementConstraints;
 
   Aws::Vector<PlacementStrategy> m_placementStrategy;
-
-  Aws::String m_platformVersion;
 
   PropagateTags m_propagateTags{PropagateTags::NOT_SET};
 
   Aws::String m_referenceId;
 
   Aws::Vector<Aws::Map<Aws::String, Aws::String>> m_tags;
-
-  int m_taskCount{0};
-
-  Aws::String m_taskDefinitionArn;
+  bool m_taskDefinitionArnHasBeenSet = false;
+  bool m_taskCountHasBeenSet = false;
+  bool m_launchTypeHasBeenSet = false;
+  bool m_networkConfigurationHasBeenSet = false;
+  bool m_platformVersionHasBeenSet = false;
+  bool m_groupHasBeenSet = false;
   bool m_capacityProviderStrategyHasBeenSet = false;
   bool m_enableECSManagedTagsHasBeenSet = false;
   bool m_enableExecuteCommandHasBeenSet = false;
-  bool m_groupHasBeenSet = false;
-  bool m_launchTypeHasBeenSet = false;
-  bool m_networkConfigurationHasBeenSet = false;
   bool m_placementConstraintsHasBeenSet = false;
   bool m_placementStrategyHasBeenSet = false;
-  bool m_platformVersionHasBeenSet = false;
   bool m_propagateTagsHasBeenSet = false;
   bool m_referenceIdHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
-  bool m_taskCountHasBeenSet = false;
-  bool m_taskDefinitionArnHasBeenSet = false;
 };
 
 }  // namespace Model

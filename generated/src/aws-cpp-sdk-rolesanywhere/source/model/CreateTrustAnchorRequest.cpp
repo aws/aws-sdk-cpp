@@ -48,5 +48,9 @@ Aws::String CreateTrustAnchorRequest::SerializePayload() const {
     payload.WithArray("notificationSettings", std::move(notificationSettingsJsonList));
   }
 
+  if (m_aliasNameHasBeenSet) {
+    payload.WithString("aliasName", m_aliasName);
+  }
+
   return payload.View().WriteReadable();
 }

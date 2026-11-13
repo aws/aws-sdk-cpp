@@ -130,9 +130,15 @@ class Attachment {
 
   ///@{
   /**
-   * <p>The DNS name that resolves to the firewall endpoint in the subnet. This is
-   * populated for proxy mode firewalls, where clients direct traffic to the
-   * firewall's proxy using this name. </p>
+   * <p>The proxy DNS name of a proxy mode firewall. Your clients send proxy requests
+   * to the firewall at this name. It's your <code>ProxySettings</code>
+   * <code>DomainName</code> if you specified one, or a name that Network Firewall
+   * generates in the format
+   * <code>proxy-<i>id</i>.nfw.<i>region</i>.amazonaws.com</code>.</p> <p>The
+   * firewall has one proxy DNS name for every Availability Zone and VPC that it
+   * serves. In each Availability Zone, the name resolves to the firewall endpoint in
+   * that Availability Zone, so traffic stays in your client's Availability Zone.
+   * Your clients must use the VPC's Route 53 Resolver.</p>
    */
   inline const Aws::String& GetDnsName() const { return m_dnsName; }
   inline bool DnsNameHasBeenSet() const { return m_dnsNameHasBeenSet; }

@@ -33,26 +33,6 @@ class CreateScheduleGroupRequest : public SchedulerRequest {
 
   ///@{
   /**
-   * <p> Unique, case-sensitive identifier you provide to ensure the idempotency of
-   * the request. If you do not specify a client token, EventBridge Scheduler uses a
-   * randomly generated token for the request to ensure idempotency. </p>
-   */
-  inline const Aws::String& GetClientToken() const { return m_clientToken; }
-  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-  template <typename ClientTokenT = Aws::String>
-  void SetClientToken(ClientTokenT&& value) {
-    m_clientTokenHasBeenSet = true;
-    m_clientToken = std::forward<ClientTokenT>(value);
-  }
-  template <typename ClientTokenT = Aws::String>
-  CreateScheduleGroupRequest& WithClientToken(ClientTokenT&& value) {
-    SetClientToken(std::forward<ClientTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The name of the schedule group that you are creating.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
@@ -92,15 +72,35 @@ class CreateScheduleGroupRequest : public SchedulerRequest {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
+  ///@{
+  /**
+   * <p> Unique, case-sensitive identifier you provide to ensure the idempotency of
+   * the request. If you do not specify a client token, EventBridge Scheduler uses a
+   * randomly generated token for the request to ensure idempotency. </p>
+   */
+  inline const Aws::String& GetClientToken() const { return m_clientToken; }
+  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+  template <typename ClientTokenT = Aws::String>
+  void SetClientToken(ClientTokenT&& value) {
+    m_clientTokenHasBeenSet = true;
+    m_clientToken = std::forward<ClientTokenT>(value);
+  }
+  template <typename ClientTokenT = Aws::String>
+  CreateScheduleGroupRequest& WithClientToken(ClientTokenT&& value) {
+    SetClientToken(std::forward<ClientTokenT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_name;
 
   Aws::Vector<Tag> m_tags;
-  bool m_clientTokenHasBeenSet = true;
+
+  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_nameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
 };
 
 }  // namespace Model

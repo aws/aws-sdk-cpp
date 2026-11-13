@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/cognito-idp/model/AnalyticsConfigurationType.h>
+#include <aws/cognito-idp/model/ClientTypeType.h>
 #include <aws/cognito-idp/model/ExplicitAuthFlowsType.h>
 #include <aws/cognito-idp/model/OAuthFlowType.h>
 #include <aws/cognito-idp/model/PreventUserExistenceErrorTypes.h>
@@ -737,6 +738,28 @@ class UserPoolClientType {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>How the app client was created.</p> <dl> <dt>REGULAR</dt> <dd> <p>The app
+   * client wasn't created through dynamic client registration. For example, you
+   * created it with <code>CreateUserPoolClient</code>.</p> </dd> <dt>DCR</dt> <dd>
+   * <p>An application registered the app client through dynamic client registration.
+   * These app clients don't support client secret operations such as
+   * <code>AddUserPoolClientSecret</code>, and they can't hold the
+   * <code>aws.cognito/dcr/register</code> scope.</p> </dd> </dl>
+   */
+  inline ClientTypeType GetClientType() const { return m_clientType; }
+  inline bool ClientTypeHasBeenSet() const { return m_clientTypeHasBeenSet; }
+  inline void SetClientType(ClientTypeType value) {
+    m_clientTypeHasBeenSet = true;
+    m_clientType = value;
+  }
+  inline UserPoolClientType& WithClientType(ClientTypeType value) {
+    SetClientType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_userPoolId;
 
@@ -789,6 +812,8 @@ class UserPoolClientType {
   int m_authSessionValidity{0};
 
   RefreshTokenRotationType m_refreshTokenRotation;
+
+  ClientTypeType m_clientType{ClientTypeType::NOT_SET};
   bool m_userPoolIdHasBeenSet = false;
   bool m_clientNameHasBeenSet = false;
   bool m_clientIdHasBeenSet = false;
@@ -815,6 +840,7 @@ class UserPoolClientType {
   bool m_enablePropagateAdditionalUserContextDataHasBeenSet = false;
   bool m_authSessionValidityHasBeenSet = false;
   bool m_refreshTokenRotationHasBeenSet = false;
+  bool m_clientTypeHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -18,10 +18,6 @@ namespace Model {
 CapacityProviderStrategyItem::CapacityProviderStrategyItem(JsonView jsonValue) { *this = jsonValue; }
 
 CapacityProviderStrategyItem& CapacityProviderStrategyItem::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("base")) {
-    m_base = jsonValue.GetInteger("base");
-    m_baseHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("capacityProvider")) {
     m_capacityProvider = jsonValue.GetString("capacityProvider");
     m_capacityProviderHasBeenSet = true;
@@ -30,15 +26,15 @@ CapacityProviderStrategyItem& CapacityProviderStrategyItem::operator=(JsonView j
     m_weight = jsonValue.GetInteger("weight");
     m_weightHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("base")) {
+    m_base = jsonValue.GetInteger("base");
+    m_baseHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue CapacityProviderStrategyItem::Jsonize() const {
   JsonValue payload;
-
-  if (m_baseHasBeenSet) {
-    payload.WithInteger("base", m_base);
-  }
 
   if (m_capacityProviderHasBeenSet) {
     payload.WithString("capacityProvider", m_capacityProvider);
@@ -46,6 +42,10 @@ JsonValue CapacityProviderStrategyItem::Jsonize() const {
 
   if (m_weightHasBeenSet) {
     payload.WithInteger("weight", m_weight);
+  }
+
+  if (m_baseHasBeenSet) {
+    payload.WithInteger("base", m_base);
   }
 
   return payload;

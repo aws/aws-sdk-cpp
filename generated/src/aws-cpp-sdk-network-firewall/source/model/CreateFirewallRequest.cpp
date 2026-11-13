@@ -59,16 +59,16 @@ Aws::String CreateFirewallRequest::SerializePayload() const {
   if (m_availabilityZoneChangeProtectionHasBeenSet) {
     mapSize++;
   }
-  if (m_natGatewayMappingsHasBeenSet) {
+  if (m_natGatewayCreateMappingsHasBeenSet) {
     mapSize++;
   }
   if (m_proxySettingsHasBeenSet) {
     mapSize++;
   }
-  if (m_noSourcePreservationHasBeenSet) {
+  if (m_vpcEndpointHasBeenSet) {
     mapSize++;
   }
-  if (m_vpcEndpointHasBeenSet) {
+  if (m_transparentFilteringNatScopeHasBeenSet) {
     mapSize++;
   }
 
@@ -156,10 +156,10 @@ Aws::String CreateFirewallRequest::SerializePayload() const {
     encoder.WriteBool(m_availabilityZoneChangeProtection);
   }
 
-  if (m_natGatewayMappingsHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("NatGatewayMappings"));
-    encoder.WriteArrayStart(m_natGatewayMappings.size());
-    for (const auto& item_0 : m_natGatewayMappings) {
+  if (m_natGatewayCreateMappingsHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("NatGatewayCreateMappings"));
+    encoder.WriteArrayStart(m_natGatewayCreateMappings.size());
+    for (const auto& item_0 : m_natGatewayCreateMappings) {
       item_0.CborEncode(encoder);
     }
   }
@@ -169,14 +169,15 @@ Aws::String CreateFirewallRequest::SerializePayload() const {
     m_proxySettings.CborEncode(encoder);
   }
 
-  if (m_noSourcePreservationHasBeenSet) {
-    encoder.WriteText(Aws::Crt::ByteCursorFromCString("NoSourcePreservation"));
-    encoder.WriteBool(m_noSourcePreservation);
-  }
-
   if (m_vpcEndpointHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("VpcEndpoint"));
     m_vpcEndpoint.CborEncode(encoder);
+  }
+
+  if (m_transparentFilteringNatScopeHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("TransparentFilteringNatScope"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(
+        TransparentFilteringNatScopeMapper::GetNameForTransparentFilteringNatScope(m_transparentFilteringNatScope).c_str()));
   }
   const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
   return str;

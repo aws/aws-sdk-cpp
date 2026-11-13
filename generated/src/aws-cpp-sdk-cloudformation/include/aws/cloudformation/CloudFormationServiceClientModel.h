@@ -245,7 +245,9 @@ class PublishTypeRequest;
 class RecordHandlerProgressRequest;
 class RegisterPublisherRequest;
 class RegisterTypeRequest;
+class RemoveAliasRequest;
 class RollbackStackRequest;
+class SetAliasRequest;
 class SetStackPolicyRequest;
 class SetTypeConfigurationRequest;
 class SetTypeDefaultVersionRequest;
@@ -338,7 +340,9 @@ typedef Aws::Utils::Outcome<PublishTypeResult, CloudFormationError> PublishTypeO
 typedef Aws::Utils::Outcome<RecordHandlerProgressResult, CloudFormationError> RecordHandlerProgressOutcome;
 typedef Aws::Utils::Outcome<RegisterPublisherResult, CloudFormationError> RegisterPublisherOutcome;
 typedef Aws::Utils::Outcome<RegisterTypeResult, CloudFormationError> RegisterTypeOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, CloudFormationError> RemoveAliasOutcome;
 typedef Aws::Utils::Outcome<RollbackStackResult, CloudFormationError> RollbackStackOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, CloudFormationError> SetAliasOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, CloudFormationError> SetStackPolicyOutcome;
 typedef Aws::Utils::Outcome<SetTypeConfigurationResult, CloudFormationError> SetTypeConfigurationOutcome;
 typedef Aws::Utils::Outcome<SetTypeDefaultVersionResult, CloudFormationError> SetTypeDefaultVersionOutcome;
@@ -431,7 +435,9 @@ typedef std::future<PublishTypeOutcome> PublishTypeOutcomeCallable;
 typedef std::future<RecordHandlerProgressOutcome> RecordHandlerProgressOutcomeCallable;
 typedef std::future<RegisterPublisherOutcome> RegisterPublisherOutcomeCallable;
 typedef std::future<RegisterTypeOutcome> RegisterTypeOutcomeCallable;
+typedef std::future<RemoveAliasOutcome> RemoveAliasOutcomeCallable;
 typedef std::future<RollbackStackOutcome> RollbackStackOutcomeCallable;
+typedef std::future<SetAliasOutcome> SetAliasOutcomeCallable;
 typedef std::future<SetStackPolicyOutcome> SetStackPolicyOutcomeCallable;
 typedef std::future<SetTypeConfigurationOutcome> SetTypeConfigurationOutcomeCallable;
 typedef std::future<SetTypeDefaultVersionOutcome> SetTypeDefaultVersionOutcomeCallable;
@@ -686,9 +692,15 @@ typedef std::function<void(const CloudFormationClient*, const Model::RegisterPub
 typedef std::function<void(const CloudFormationClient*, const Model::RegisterTypeRequest&, const Model::RegisterTypeOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     RegisterTypeResponseReceivedHandler;
+typedef std::function<void(const CloudFormationClient*, const Model::RemoveAliasRequest&, const Model::RemoveAliasOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    RemoveAliasResponseReceivedHandler;
 typedef std::function<void(const CloudFormationClient*, const Model::RollbackStackRequest&, const Model::RollbackStackOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     RollbackStackResponseReceivedHandler;
+typedef std::function<void(const CloudFormationClient*, const Model::SetAliasRequest&, const Model::SetAliasOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    SetAliasResponseReceivedHandler;
 typedef std::function<void(const CloudFormationClient*, const Model::SetStackPolicyRequest&, const Model::SetStackPolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     SetStackPolicyResponseReceivedHandler;

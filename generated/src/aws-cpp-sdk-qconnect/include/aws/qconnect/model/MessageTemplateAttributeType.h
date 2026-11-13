@@ -10,7 +10,7 @@
 namespace Aws {
 namespace QConnect {
 namespace Model {
-enum class MessageTemplateAttributeType { NOT_SET, SYSTEM, AGENT, CUSTOMER_PROFILE, CUSTOM };
+enum class MessageTemplateAttributeType { NOT_SET, SYSTEM, AGENT, CUSTOMER_PROFILE, CUSTOM, CASE };
 
 namespace MessageTemplateAttributeTypeMapper {
 AWS_QCONNECT_API MessageTemplateAttributeType GetMessageTemplateAttributeTypeForName(const Aws::String& name);

@@ -189,7 +189,9 @@ class UpdateFleetRequest : public DeadlineRequest {
 
   ///@{
   /**
-   * <p>The fleet configuration to update.</p>
+   * <p>The fleet configuration to update. The new configuration replaces the
+   * existing one, so include every setting you want to keep. Settings that you omit
+   * revert to their defaults.</p>
    */
   inline const FleetConfiguration& GetConfiguration() const { return m_configuration; }
   inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }

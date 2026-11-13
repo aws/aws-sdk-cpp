@@ -199,6 +199,29 @@ ServerCertificateScope& ServerCertificateScope::operator=(const std::shared_ptr<
                   }
                 }
                 m_protocolsHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "DomainMatch") {
+                m_domainMatch = DomainMatch(decoder);
+                m_domainMatchHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "DecryptionAction") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_decryptionAction = DecryptionActionMapper::GetDecryptionActionForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_decryptionActionHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "DeploymentMode") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_deploymentMode = TLSInspectionScopeDeploymentModeMapper::GetTLSInspectionScopeDeploymentModeForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_deploymentModeHasBeenSet = true;
               } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
@@ -395,6 +418,29 @@ ServerCertificateScope& ServerCertificateScope::operator=(const std::shared_ptr<
                 }
               }
               m_protocolsHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "DomainMatch") {
+              m_domainMatch = DomainMatch(decoder);
+              m_domainMatchHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "DecryptionAction") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_decryptionAction = DecryptionActionMapper::GetDecryptionActionForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_decryptionActionHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "DeploymentMode") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_deploymentMode = TLSInspectionScopeDeploymentModeMapper::GetTLSInspectionScopeDeploymentModeForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_deploymentModeHasBeenSet = true;
             } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
@@ -424,6 +470,15 @@ void ServerCertificateScope::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) co
     mapSize++;
   }
   if (m_protocolsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_domainMatchHasBeenSet) {
+    mapSize++;
+  }
+  if (m_decryptionActionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_deploymentModeHasBeenSet) {
     mapSize++;
   }
 
@@ -467,6 +522,22 @@ void ServerCertificateScope::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) co
     for (const auto& item_0 : m_protocols) {
       (item_0 >= 0) ? encoder.WriteUInt(item_0) : encoder.WriteNegInt(item_0);
     }
+  }
+
+  if (m_domainMatchHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("DomainMatch"));
+    m_domainMatch.CborEncode(encoder);
+  }
+
+  if (m_decryptionActionHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("DecryptionAction"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(DecryptionActionMapper::GetNameForDecryptionAction(m_decryptionAction).c_str()));
+  }
+
+  if (m_deploymentModeHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("DeploymentMode"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(
+        TLSInspectionScopeDeploymentModeMapper::GetNameForTLSInspectionScopeDeploymentMode(m_deploymentMode).c_str()));
   }
 }
 

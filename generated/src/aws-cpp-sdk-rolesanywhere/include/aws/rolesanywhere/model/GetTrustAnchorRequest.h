@@ -30,7 +30,10 @@ class GetTrustAnchorRequest : public RolesAnywhereRequest {
 
   ///@{
   /**
-   * <p>The unique identifier of the trust anchor.</p>
+   * <p>The trust anchor to act on. You can specify one of the following:</p> <ul>
+   * <li> <p>The trust anchor ID.</p> </li> <li> <p>The trust anchor ARN.</p> </li>
+   * <li> <p>The alias ARN of the trust anchor.</p> </li> </ul> <p>An ARN must be for
+   * a trust anchor in your account and Region.</p>
    */
   inline const Aws::String& GetTrustAnchorId() const { return m_trustAnchorId; }
   inline bool TrustAnchorIdHasBeenSet() const { return m_trustAnchorIdHasBeenSet; }

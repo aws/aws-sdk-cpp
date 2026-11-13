@@ -40,5 +40,9 @@ Aws::String ImportCrlRequest::SerializePayload() const {
     payload.WithString("trustAnchorArn", m_trustAnchorArn);
   }
 
+  if (m_aliasNameHasBeenSet) {
+    payload.WithString("aliasName", m_aliasName);
+  }
+
   return payload.View().WriteReadable();
 }

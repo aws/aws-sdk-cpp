@@ -17,6 +17,8 @@ namespace CloudConnectorFilterKeyMapper {
 
 static const int SubscriptionId_HASH = HashingUtils::HashString("SubscriptionId");
 static const int TenantId_HASH = HashingUtils::HashString("TenantId");
+static const int ProjectId_HASH = HashingUtils::HashString("ProjectId");
+static const int OrganizationId_HASH = HashingUtils::HashString("OrganizationId");
 
 CloudConnectorFilterKey GetCloudConnectorFilterKeyForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +26,10 @@ CloudConnectorFilterKey GetCloudConnectorFilterKeyForName(const Aws::String& nam
     return CloudConnectorFilterKey::SubscriptionId;
   } else if (hashCode == TenantId_HASH) {
     return CloudConnectorFilterKey::TenantId;
+  } else if (hashCode == ProjectId_HASH) {
+    return CloudConnectorFilterKey::ProjectId;
+  } else if (hashCode == OrganizationId_HASH) {
+    return CloudConnectorFilterKey::OrganizationId;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +48,10 @@ Aws::String GetNameForCloudConnectorFilterKey(CloudConnectorFilterKey enumValue)
       return "SubscriptionId";
     case CloudConnectorFilterKey::TenantId:
       return "TenantId";
+    case CloudConnectorFilterKey::ProjectId:
+      return "ProjectId";
+    case CloudConnectorFilterKey::OrganizationId:
+      return "OrganizationId";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

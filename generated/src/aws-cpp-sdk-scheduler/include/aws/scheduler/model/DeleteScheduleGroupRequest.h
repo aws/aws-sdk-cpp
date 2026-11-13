@@ -36,6 +36,24 @@ class DeleteScheduleGroupRequest : public SchedulerRequest {
 
   ///@{
   /**
+   * <p>The name of the schedule group to delete.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  DeleteScheduleGroupRequest& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p> Unique, case-sensitive identifier you provide to ensure the idempotency of
    * the request. If you do not specify a client token, EventBridge Scheduler uses a
    * randomly generated token for the request to ensure idempotency. </p>
@@ -53,30 +71,12 @@ class DeleteScheduleGroupRequest : public SchedulerRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The name of the schedule group to delete.</p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  DeleteScheduleGroupRequest& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
-    return *this;
-  }
-  ///@}
  private:
-  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
-
   Aws::String m_name;
-  bool m_clientTokenHasBeenSet = true;
+
+  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_nameHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
 };
 
 }  // namespace Model

@@ -20,6 +20,7 @@
 #include <aws/ssm/model/StepExecution.h>
 #include <aws/ssm/model/Target.h>
 #include <aws/ssm/model/TargetLocation.h>
+#include <aws/ssm/model/TargetsSummary.h>
 
 #include <utility>
 
@@ -758,6 +759,25 @@ class AutomationExecution {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A summary of the child executions that a rate control execution started for
+   * its targets. This field is returned only for rate control executions.</p>
+   */
+  inline const TargetsSummary& GetTargetsSummary() const { return m_targetsSummary; }
+  inline bool TargetsSummaryHasBeenSet() const { return m_targetsSummaryHasBeenSet; }
+  template <typename TargetsSummaryT = TargetsSummary>
+  void SetTargetsSummary(TargetsSummaryT&& value) {
+    m_targetsSummaryHasBeenSet = true;
+    m_targetsSummary = std::forward<TargetsSummaryT>(value);
+  }
+  template <typename TargetsSummaryT = TargetsSummary>
+  AutomationExecution& WithTargetsSummary(TargetsSummaryT&& value) {
+    SetTargetsSummary(std::forward<TargetsSummaryT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_automationExecutionId;
 
@@ -830,6 +850,8 @@ class AutomationExecution {
   Aws::String m_changeRequestName;
 
   Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_variables;
+
+  TargetsSummary m_targetsSummary;
   bool m_automationExecutionIdHasBeenSet = false;
   bool m_documentNameHasBeenSet = false;
   bool m_documentVersionHasBeenSet = false;
@@ -866,6 +888,7 @@ class AutomationExecution {
   bool m_associationIdHasBeenSet = false;
   bool m_changeRequestNameHasBeenSet = false;
   bool m_variablesHasBeenSet = false;
+  bool m_targetsSummaryHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -25,6 +25,7 @@ enum class ResourceType {
   elastic_gpu,
   export_image_task,
   export_instance_task,
+  fca_policy,
   fleet,
   fpga_image,
   host_reservation,

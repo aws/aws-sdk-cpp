@@ -53,6 +53,40 @@ class ScheduleGroupSummary {
 
   ///@{
   /**
+   * <p>The name of the schedule group.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  ScheduleGroupSummary& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the state of the schedule group.</p>
+   */
+  inline ScheduleGroupState GetState() const { return m_state; }
+  inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+  inline void SetState(ScheduleGroupState value) {
+    m_stateHasBeenSet = true;
+    m_state = value;
+  }
+  inline ScheduleGroupSummary& WithState(ScheduleGroupState value) {
+    SetState(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The time at which the schedule group was created.</p>
    */
   inline const Aws::Utils::DateTime& GetCreationDate() const { return m_creationDate; }
@@ -86,55 +120,21 @@ class ScheduleGroupSummary {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The name of the schedule group.</p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  ScheduleGroupSummary& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Specifies the state of the schedule group.</p>
-   */
-  inline ScheduleGroupState GetState() const { return m_state; }
-  inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-  inline void SetState(ScheduleGroupState value) {
-    m_stateHasBeenSet = true;
-    m_state = value;
-  }
-  inline ScheduleGroupSummary& WithState(ScheduleGroupState value) {
-    SetState(value);
-    return *this;
-  }
-  ///@}
  private:
   Aws::String m_arn;
-
-  Aws::Utils::DateTime m_creationDate{};
-
-  Aws::Utils::DateTime m_lastModificationDate{};
 
   Aws::String m_name;
 
   ScheduleGroupState m_state{ScheduleGroupState::NOT_SET};
+
+  Aws::Utils::DateTime m_creationDate{};
+
+  Aws::Utils::DateTime m_lastModificationDate{};
   bool m_arnHasBeenSet = false;
-  bool m_creationDateHasBeenSet = false;
-  bool m_lastModificationDateHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_stateHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_lastModificationDateHasBeenSet = false;
 };
 
 }  // namespace Model

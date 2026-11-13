@@ -395,11 +395,11 @@ class CreateEventSourceMappingRequest : public LambdaRequest {
    * <p>(Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Apache Kafka)
    * Discard records after the specified number of retries. The default value is
    * infinite (-1). When set to infinite (-1), failed records are retried until the
-   * record expires.</p> <p>For Kafka <code>Stream</code> consumption mode, the
-   * default is <code>-1</code> (infinite retries; capped at 10 when an on-failure
-   * destination is configured). For Kafka <code>Queue</code> consumption mode, the
-   * default is <code>0</code>, and if no on-failure destination is configured the
-   * Kafka broker performs retries.</p>
+   * record expires.</p> <p>For Kafka event source mappings with
+   * <code>ConsumptionMode</code> set to <code>Queue</code>, the value -1 (infinite
+   * retries) is not supported and the default is 0 (no retries). Lambda releases
+   * failed records back to the broker, which redelivers them up to the share group's
+   * <code>group.share.delivery.count.limit</code>.</p>
    */
   inline int GetMaximumRetryAttempts() const { return m_maximumRetryAttempts; }
   inline bool MaximumRetryAttemptsHasBeenSet() const { return m_maximumRetryAttemptsHasBeenSet; }

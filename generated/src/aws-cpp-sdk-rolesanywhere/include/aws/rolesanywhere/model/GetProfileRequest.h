@@ -30,7 +30,10 @@ class GetProfileRequest : public RolesAnywhereRequest {
 
   ///@{
   /**
-   * <p>The unique identifier of the profile.</p>
+   * <p>The profile to act on. You can specify one of the following:</p> <ul> <li>
+   * <p>The profile ID.</p> </li> <li> <p>The profile ARN.</p> </li> <li> <p>The
+   * alias ARN of the profile.</p> </li> </ul> <p>An ARN must be for a profile in
+   * your account and Region.</p>
    */
   inline const Aws::String& GetProfileId() const { return m_profileId; }
   inline bool ProfileIdHasBeenSet() const { return m_profileIdHasBeenSet; }

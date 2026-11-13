@@ -95,9 +95,11 @@ class SyncState {
 
   ///@{
   /**
-   * <p>The status of the NAT gateway attachments for a proxy mode firewall in the
-   * Availability Zone. This reflects the attachment of the firewall to each NAT
-   * gateway that proxies its traffic. </p>
+   * <p>The NAT gateway that's attached to a proxy mode firewall in the Availability
+   * Zone, and the status of the attachment. To get NAT gateway details, such as IP
+   * addresses, use the Amazon EC2 <code>DescribeNatGateways</code> action.</p> <p>A
+   * proxy mode firewall is <code>READY</code> when at least one Availability Zone's
+   * firewall endpoint and NAT gateway attachment are <code>READY</code>.</p>
    */
   inline const Aws::Vector<NatGatewayAttachment>& GetNatGatewayAttachments() const { return m_natGatewayAttachments; }
   inline bool NatGatewayAttachmentsHasBeenSet() const { return m_natGatewayAttachmentsHasBeenSet; }

@@ -17,7 +17,7 @@
 namespace Aws {
 namespace IAM {
 /**
- * <fullname>Identity and Access Management</fullname> <p>Identity and Access
+ * <p><fullname>Identity and Access Management</fullname> <p>Identity and Access
  * Management (IAM) is a web service for securely controlling access to Amazon Web
  * Services services. With IAM, you can centrally manage users, security
  * credentials such as access keys, and permissions that control which Amazon Web
@@ -65,7 +65,7 @@ namespace IAM {
  * href="https://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
  * Amazon Web Services API requests</a>. This set of topics walk you through the
  * process of signing a request using an access key ID and secret access key.</p>
- * </li> </ul>
+ * </li> </ul></p>
  */
 class AWS_IAM_API IAMClient : public Aws::Client::AWSXMLClient,
                               public Aws::Client::ClientWithAsyncTemplateMethods<IAMClient>,

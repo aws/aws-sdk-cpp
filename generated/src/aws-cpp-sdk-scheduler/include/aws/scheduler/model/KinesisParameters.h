@@ -21,8 +21,8 @@ namespace Model {
 
 /**
  * <p>The templated target type for the Amazon Kinesis <a
- * href="kinesis/latest/APIReference/API_PutRecord.html"> <code>PutRecord</code>
- * </a> API operation.</p><p><h3>See Also:</h3>   <a
+ * href="https://docs.aws.amazon.com/kinesis/latest/APIReference/API_PutRecord.html">
+ * <code>PutRecord</code> </a> API operation.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/scheduler-2021-06-30/KinesisParameters">AWS
  * API Reference</a></p>
  */

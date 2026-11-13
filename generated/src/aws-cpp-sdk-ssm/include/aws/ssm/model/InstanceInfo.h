@@ -231,7 +231,11 @@ class InstanceInfo {
   ///@{
   /**
    * <p>The type of the source resource. For IoT Greengrass devices,
-   * <code>SourceType</code> is <code>AWS::IoT::Thing</code>.</p>
+   * <code>SourceType</code> is <code>AWS::IoT::Thing</code>. For Azure Virtual
+   * Machines, <code>SourceType</code> is
+   * <code>Microsoft.Compute/virtualMachines</code>. For Google Cloud Platform (GCP)
+   * Compute Engine Virtual Machines, <code>SourceType</code> is
+   * <code>compute.googleapis.com/Instance</code>.</p>
    */
   inline SourceType GetSourceType() const { return m_sourceType; }
   inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }

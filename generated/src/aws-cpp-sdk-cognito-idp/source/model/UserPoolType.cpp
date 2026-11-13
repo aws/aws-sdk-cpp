@@ -154,6 +154,10 @@ UserPoolType& UserPoolType::operator=(JsonView jsonValue) {
     m_userPoolAddOns = jsonValue.GetObject("UserPoolAddOns");
     m_userPoolAddOnsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("DcrConfiguration")) {
+    m_dcrConfiguration = jsonValue.GetObject("DcrConfiguration");
+    m_dcrConfigurationHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("UsernameConfiguration")) {
     m_usernameConfiguration = jsonValue.GetObject("UsernameConfiguration");
     m_usernameConfigurationHasBeenSet = true;
@@ -330,6 +334,10 @@ JsonValue UserPoolType::Jsonize() const {
 
   if (m_userPoolAddOnsHasBeenSet) {
     payload.WithObject("UserPoolAddOns", m_userPoolAddOns.Jsonize());
+  }
+
+  if (m_dcrConfigurationHasBeenSet) {
+    payload.WithObject("DcrConfiguration", m_dcrConfiguration.Jsonize());
   }
 
   if (m_usernameConfigurationHasBeenSet) {

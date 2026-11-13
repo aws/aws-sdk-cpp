@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
+#include <aws/cognito-idp/model/ResourceServerManagedByType.h>
 #include <aws/cognito-idp/model/ResourceServerScopeType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -116,6 +117,23 @@ class ResourceServerType {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>This value is reserved for resource servers that Amazon Cognito manages.
+   * Resource servers that you create don't have this value.</p>
+   */
+  inline ResourceServerManagedByType GetManagedBy() const { return m_managedBy; }
+  inline bool ManagedByHasBeenSet() const { return m_managedByHasBeenSet; }
+  inline void SetManagedBy(ResourceServerManagedByType value) {
+    m_managedByHasBeenSet = true;
+    m_managedBy = value;
+  }
+  inline ResourceServerType& WithManagedBy(ResourceServerManagedByType value) {
+    SetManagedBy(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_userPoolId;
 
@@ -124,10 +142,13 @@ class ResourceServerType {
   Aws::String m_name;
 
   Aws::Vector<ResourceServerScopeType> m_scopes;
+
+  ResourceServerManagedByType m_managedBy{ResourceServerManagedByType::NOT_SET};
   bool m_userPoolIdHasBeenSet = false;
   bool m_identifierHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_scopesHasBeenSet = false;
+  bool m_managedByHasBeenSet = false;
 };
 
 }  // namespace Model

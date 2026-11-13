@@ -199,7 +199,8 @@ class BatchGetJobItem {
 
   ///@{
   /**
-   * <p>The date and time the resource was updated.</p>
+   * <p>The date and time the resource was updated. Task status changes don't update
+   * this value.</p>
    */
   inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
   inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
@@ -235,7 +236,8 @@ class BatchGetJobItem {
 
   ///@{
   /**
-   * <p>The date and time the resource started running.</p>
+   * <p>The date and time the resource started running. Requeuing the job doesn't
+   * change this value.</p>
    */
   inline const Aws::Utils::DateTime& GetStartedAt() const { return m_startedAt; }
   inline bool StartedAtHasBeenSet() const { return m_startedAtHasBeenSet; }
@@ -253,7 +255,8 @@ class BatchGetJobItem {
 
   ///@{
   /**
-   * <p>The date and time the resource ended running.</p>
+   * <p>The date and time the resource ended running. Returned only when the job has
+   * finished.</p>
    */
   inline const Aws::Utils::DateTime& GetEndedAt() const { return m_endedAt; }
   inline bool EndedAtHasBeenSet() const { return m_endedAtHasBeenSet; }

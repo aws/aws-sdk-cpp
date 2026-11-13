@@ -113,6 +113,30 @@ class MessageTemplateAttributes {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The case attributes that are used with the message template.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetCaseAttributes() const { return m_caseAttributes; }
+  inline bool CaseAttributesHasBeenSet() const { return m_caseAttributesHasBeenSet; }
+  template <typename CaseAttributesT = Aws::Map<Aws::String, Aws::String>>
+  void SetCaseAttributes(CaseAttributesT&& value) {
+    m_caseAttributesHasBeenSet = true;
+    m_caseAttributes = std::forward<CaseAttributesT>(value);
+  }
+  template <typename CaseAttributesT = Aws::Map<Aws::String, Aws::String>>
+  MessageTemplateAttributes& WithCaseAttributes(CaseAttributesT&& value) {
+    SetCaseAttributes(std::forward<CaseAttributesT>(value));
+    return *this;
+  }
+  template <typename CaseAttributesKeyT = Aws::String, typename CaseAttributesValueT = Aws::String>
+  MessageTemplateAttributes& AddCaseAttributes(CaseAttributesKeyT&& key, CaseAttributesValueT&& value) {
+    m_caseAttributesHasBeenSet = true;
+    m_caseAttributes.emplace(std::forward<CaseAttributesKeyT>(key), std::forward<CaseAttributesValueT>(value));
+    return *this;
+  }
+  ///@}
  private:
   SystemAttributes m_systemAttributes;
 
@@ -121,10 +145,13 @@ class MessageTemplateAttributes {
   CustomerProfileAttributes m_customerProfileAttributes;
 
   Aws::Map<Aws::String, Aws::String> m_customAttributes;
+
+  Aws::Map<Aws::String, Aws::String> m_caseAttributes;
   bool m_systemAttributesHasBeenSet = false;
   bool m_agentAttributesHasBeenSet = false;
   bool m_customerProfileAttributesHasBeenSet = false;
   bool m_customAttributesHasBeenSet = false;
+  bool m_caseAttributesHasBeenSet = false;
 };
 
 }  // namespace Model

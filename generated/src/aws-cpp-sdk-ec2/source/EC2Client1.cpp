@@ -20,6 +20,7 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/CreateIpamPrefixListResolverTargetRequest.h>
 #include <aws/ec2/model/CreateIpamResourceDiscoveryRequest.h>
 #include <aws/ec2/model/CreateIpamRoutingPolicyRegistrationRequest.h>
 #include <aws/ec2/model/CreateIpamScopeRequest.h>
@@ -42,6 +43,7 @@
 #include <aws/ec2/model/CreateNetworkInsightsPathRequest.h>
 #include <aws/ec2/model/CreateNetworkInterfacePermissionRequest.h>
 #include <aws/ec2/model/CreateNetworkInterfaceRequest.h>
+#include <aws/ec2/model/CreateNetworkingFlexCostAllocationPolicyRequest.h>
 #include <aws/ec2/model/CreatePlacementGroupRequest.h>
 #include <aws/ec2/model/CreatePublicIpv4PoolRequest.h>
 #include <aws/ec2/model/CreateReplaceRootVolumeTaskRequest.h>
@@ -117,8 +119,6 @@
 #include <aws/ec2/model/DeleteIpamExternalResourceVerificationTokenRequest.h>
 #include <aws/ec2/model/DeleteIpamInternetRegistryAssociationRequest.h>
 #include <aws/ec2/model/DeleteIpamPolicyRequest.h>
-#include <aws/ec2/model/DeleteIpamPoolRequest.h>
-#include <aws/ec2/model/DeleteIpamPrefixListResolverRequest.h>
 #include <aws/ec2/model/DeleteIpamRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
@@ -131,6 +131,13 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+CreateIpamPrefixListResolverTargetOutcome EC2Client::CreateIpamPrefixListResolverTarget(
+    const CreateIpamPrefixListResolverTargetRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateIpamPrefixListResolverTargetOutcome(result.GetResultWithOwnership())
+                            : CreateIpamPrefixListResolverTargetOutcome(std::move(result.GetError()));
+}
 
 CreateIpamResourceDiscoveryOutcome EC2Client::CreateIpamResourceDiscovery(const CreateIpamResourceDiscoveryRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -269,6 +276,13 @@ CreateNetworkInterfacePermissionOutcome EC2Client::CreateNetworkInterfacePermiss
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateNetworkInterfacePermissionOutcome(result.GetResultWithOwnership())
                             : CreateNetworkInterfacePermissionOutcome(std::move(result.GetError()));
+}
+
+CreateNetworkingFlexCostAllocationPolicyOutcome EC2Client::CreateNetworkingFlexCostAllocationPolicy(
+    const CreateNetworkingFlexCostAllocationPolicyRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateNetworkingFlexCostAllocationPolicyOutcome(result.GetResultWithOwnership())
+                            : CreateNetworkingFlexCostAllocationPolicyOutcome(std::move(result.GetError()));
 }
 
 CreatePlacementGroupOutcome EC2Client::CreatePlacementGroup(const CreatePlacementGroupRequest& request) const {
@@ -736,15 +750,4 @@ DeleteIpamPolicyOutcome EC2Client::DeleteIpamPolicy(const DeleteIpamPolicyReques
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteIpamPolicyOutcome(result.GetResultWithOwnership())
                             : DeleteIpamPolicyOutcome(std::move(result.GetError()));
-}
-
-DeleteIpamPoolOutcome EC2Client::DeleteIpamPool(const DeleteIpamPoolRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DeleteIpamPoolOutcome(result.GetResultWithOwnership()) : DeleteIpamPoolOutcome(std::move(result.GetError()));
-}
-
-DeleteIpamPrefixListResolverOutcome EC2Client::DeleteIpamPrefixListResolver(const DeleteIpamPrefixListResolverRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DeleteIpamPrefixListResolverOutcome(result.GetResultWithOwnership())
-                            : DeleteIpamPrefixListResolverOutcome(std::move(result.GetError()));
 }

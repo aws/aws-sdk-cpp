@@ -51,7 +51,9 @@ class ServiceException {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The error message that describes the exception.</p>
+   */
   inline const Aws::String& GetMessage() const { return m_message; }
   inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
   template <typename MessageT = Aws::String>

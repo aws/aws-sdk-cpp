@@ -20,6 +20,14 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/ModifyReservedInstancesRequest.h>
+#include <aws/ec2/model/ModifyRouteServerRequest.h>
+#include <aws/ec2/model/ModifySecurityGroupRulesRequest.h>
+#include <aws/ec2/model/ModifySnapshotAttributeRequest.h>
+#include <aws/ec2/model/ModifySnapshotTierRequest.h>
+#include <aws/ec2/model/ModifySpotFleetRequestRequest.h>
+#include <aws/ec2/model/ModifySubnetAttributeRequest.h>
+#include <aws/ec2/model/ModifyTrafficMirrorFilterNetworkServicesRequest.h>
 #include <aws/ec2/model/ModifyTrafficMirrorFilterRuleRequest.h>
 #include <aws/ec2/model/ModifyTrafficMirrorSessionRequest.h>
 #include <aws/ec2/model/ModifyTransitGatewayAttachmentNatConfigurationRequest.h>
@@ -112,14 +120,6 @@
 #include <aws/ec2/model/RunInstancesRequest.h>
 #include <aws/ec2/model/RunScheduledInstancesRequest.h>
 #include <aws/ec2/model/SearchLocalGatewayRoutesRequest.h>
-#include <aws/ec2/model/SearchTransitGatewayMulticastGroupsRequest.h>
-#include <aws/ec2/model/SearchTransitGatewayRoutesRequest.h>
-#include <aws/ec2/model/SendDiagnosticInterruptRequest.h>
-#include <aws/ec2/model/StartDeclarativePoliciesReportRequest.h>
-#include <aws/ec2/model/StartInstancesRequest.h>
-#include <aws/ec2/model/StartNetworkInsightsAccessScopeAnalysisRequest.h>
-#include <aws/ec2/model/StartNetworkInsightsAnalysisRequest.h>
-#include <aws/ec2/model/StartVpcEndpointServicePrivateDnsVerificationRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,55 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+ModifyReservedInstancesOutcome EC2Client::ModifyReservedInstances(const ModifyReservedInstancesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyReservedInstancesOutcome(result.GetResultWithOwnership())
+                            : ModifyReservedInstancesOutcome(std::move(result.GetError()));
+}
+
+ModifyRouteServerOutcome EC2Client::ModifyRouteServer(const ModifyRouteServerRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyRouteServerOutcome(result.GetResultWithOwnership())
+                            : ModifyRouteServerOutcome(std::move(result.GetError()));
+}
+
+ModifySecurityGroupRulesOutcome EC2Client::ModifySecurityGroupRules(const ModifySecurityGroupRulesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifySecurityGroupRulesOutcome(result.GetResultWithOwnership())
+                            : ModifySecurityGroupRulesOutcome(std::move(result.GetError()));
+}
+
+ModifySnapshotAttributeOutcome EC2Client::ModifySnapshotAttribute(const ModifySnapshotAttributeRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifySnapshotAttributeOutcome(result.GetResultWithOwnership())
+                            : ModifySnapshotAttributeOutcome(std::move(result.GetError()));
+}
+
+ModifySnapshotTierOutcome EC2Client::ModifySnapshotTier(const ModifySnapshotTierRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifySnapshotTierOutcome(result.GetResultWithOwnership())
+                            : ModifySnapshotTierOutcome(std::move(result.GetError()));
+}
+
+ModifySpotFleetRequestOutcome EC2Client::ModifySpotFleetRequest(const ModifySpotFleetRequestRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifySpotFleetRequestOutcome(result.GetResultWithOwnership())
+                            : ModifySpotFleetRequestOutcome(std::move(result.GetError()));
+}
+
+ModifySubnetAttributeOutcome EC2Client::ModifySubnetAttribute(const ModifySubnetAttributeRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifySubnetAttributeOutcome(result.GetResultWithOwnership())
+                            : ModifySubnetAttributeOutcome(std::move(result.GetError()));
+}
+
+ModifyTrafficMirrorFilterNetworkServicesOutcome EC2Client::ModifyTrafficMirrorFilterNetworkServices(
+    const ModifyTrafficMirrorFilterNetworkServicesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyTrafficMirrorFilterNetworkServicesOutcome(result.GetResultWithOwnership())
+                            : ModifyTrafficMirrorFilterNetworkServicesOutcome(std::move(result.GetError()));
+}
 
 ModifyTrafficMirrorFilterRuleOutcome EC2Client::ModifyTrafficMirrorFilterRule(const ModifyTrafficMirrorFilterRuleRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -709,55 +758,4 @@ SearchLocalGatewayRoutesOutcome EC2Client::SearchLocalGatewayRoutes(const Search
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? SearchLocalGatewayRoutesOutcome(result.GetResultWithOwnership())
                             : SearchLocalGatewayRoutesOutcome(std::move(result.GetError()));
-}
-
-SearchTransitGatewayMulticastGroupsOutcome EC2Client::SearchTransitGatewayMulticastGroups(
-    const SearchTransitGatewayMulticastGroupsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? SearchTransitGatewayMulticastGroupsOutcome(result.GetResultWithOwnership())
-                            : SearchTransitGatewayMulticastGroupsOutcome(std::move(result.GetError()));
-}
-
-SearchTransitGatewayRoutesOutcome EC2Client::SearchTransitGatewayRoutes(const SearchTransitGatewayRoutesRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? SearchTransitGatewayRoutesOutcome(result.GetResultWithOwnership())
-                            : SearchTransitGatewayRoutesOutcome(std::move(result.GetError()));
-}
-
-SendDiagnosticInterruptOutcome EC2Client::SendDiagnosticInterrupt(const SendDiagnosticInterruptRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? SendDiagnosticInterruptOutcome(result.GetResultWithOwnership())
-                            : SendDiagnosticInterruptOutcome(std::move(result.GetError()));
-}
-
-StartDeclarativePoliciesReportOutcome EC2Client::StartDeclarativePoliciesReport(
-    const StartDeclarativePoliciesReportRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? StartDeclarativePoliciesReportOutcome(result.GetResultWithOwnership())
-                            : StartDeclarativePoliciesReportOutcome(std::move(result.GetError()));
-}
-
-StartInstancesOutcome EC2Client::StartInstances(const StartInstancesRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? StartInstancesOutcome(result.GetResultWithOwnership()) : StartInstancesOutcome(std::move(result.GetError()));
-}
-
-StartNetworkInsightsAccessScopeAnalysisOutcome EC2Client::StartNetworkInsightsAccessScopeAnalysis(
-    const StartNetworkInsightsAccessScopeAnalysisRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? StartNetworkInsightsAccessScopeAnalysisOutcome(result.GetResultWithOwnership())
-                            : StartNetworkInsightsAccessScopeAnalysisOutcome(std::move(result.GetError()));
-}
-
-StartNetworkInsightsAnalysisOutcome EC2Client::StartNetworkInsightsAnalysis(const StartNetworkInsightsAnalysisRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? StartNetworkInsightsAnalysisOutcome(result.GetResultWithOwnership())
-                            : StartNetworkInsightsAnalysisOutcome(std::move(result.GetError()));
-}
-
-StartVpcEndpointServicePrivateDnsVerificationOutcome EC2Client::StartVpcEndpointServicePrivateDnsVerification(
-    const StartVpcEndpointServicePrivateDnsVerificationRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? StartVpcEndpointServicePrivateDnsVerificationOutcome(result.GetResultWithOwnership())
-                            : StartVpcEndpointServicePrivateDnsVerificationOutcome(std::move(result.GetError()));
 }

@@ -16,20 +16,27 @@
 namespace Aws {
 namespace LambdaCore {
 /**
- * <p><fullname>Lambda</fullname> <p> <b>Overview</b> </p> <p>AWS Lambda Core is a
- * set of APIs for managing shared infrastructure resources used by Lambda. The
- * Lambda Core API provides operations for creating and managing network connectors
- * that enable Lambda compute resources to access resources in your Amazon Virtual
- * Private Cloud (Amazon VPC).</p> <p>Network connectors provision elastic network
+ * <p><fullname>Lambda</fullname> <p> <b>Overview</b> </p> <p>Lambda Core is a set
+ * of APIs for managing shared infrastructure resources used by Lambda. The Lambda
+ * Core API provides operations for:</p> <ol> <li> <p>Creating and managing network
+ * connectors that enable Lambda MicroVMs and Lambda Web Functions to access
+ * resources in your Amazon Virtual Private Cloud (Amazon VPC).</p> </li> <li>
+ * <p>Creating customer-managed runtimes which can be used with Lambda Event
+ * Functions.</p> </li> </ol> <p>Network connectors provision elastic network
  * interfaces (ENIs) in your VPC subnets, providing a managed network path from
  * Lambda compute environments to private resources such as Amazon RDS databases,
  * Amazon ElastiCache clusters, and internal APIs. You create a network connector
- * once and attach it to one or more Lambda compute resources at run time.</p>
- * <p>The <i>Lambda Core API Reference</i> provides information about each of the
- * API methods, including details about the parameters in each API request and
- * response.</p> <p/> <p>You can use Software Development Kits (SDKs), Integrated
- * Development Environment (IDE) Toolkits, and command line tools to access the
- * API. For installation instructions, see <a
+ * once and attach it to one or more Lambda MicroVMs or Lambda Web Functions at run
+ * time.</p> <p>A customer-managed runtime is a Lambda runtime that you create and
+ * manage as a standalone resource. Lambda Event Functions can use your
+ * customer-managed runtime instead of using one of the built-in Lambda-managed
+ * runtimes. Customer-managed runtimes enable you to create customized runtimes for
+ * your workloads, and give you control over runtime updates and the deprecation
+ * lifecycle.</p> <p>The <i>Lambda Core API Reference</i> provides information
+ * about each of the API methods, including details about the parameters in each
+ * API request and response.</p> <p>You can use Software Development Kits (SDKs),
+ * Integrated Development Environment (IDE) Toolkits, and command line tools to
+ * access the API. For installation instructions, see <a
  * href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.</p>
  * <p>For a list of Region-specific endpoints that Lambda supports, see <a
  * href="https://docs.aws.amazon.com/general/latest/gr/lambda-service.html">Lambda
@@ -143,6 +150,92 @@ class AWS_LAMBDACORE_API LambdaCoreClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Creates a customer-managed runtime, a resource providing a centrally managed
+   * execution environment for your Lambda functions. The runtime resource is the
+   * parent of the runtime version and runtime alias child resources.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-core-2026-04-30/CreateRuntime">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateRuntimeOutcome CreateRuntime(const Model::CreateRuntimeRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateRuntime that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename CreateRuntimeRequestT = Model::CreateRuntimeRequest>
+  Model::CreateRuntimeOutcomeCallable CreateRuntimeCallable(const CreateRuntimeRequestT& request) const {
+    return SubmitCallable(&LambdaCoreClient::CreateRuntime, request);
+  }
+
+  /**
+   * An Async wrapper for CreateRuntime that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename CreateRuntimeRequestT = Model::CreateRuntimeRequest>
+  void CreateRuntimeAsync(const CreateRuntimeRequestT& request, const CreateRuntimeResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LambdaCoreClient::CreateRuntime, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a new customer-managed runtime alias. The alias is a named pointer to
+   * a runtime version. Functions consume the customer-managed runtime through the
+   * runtime alias.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-core-2026-04-30/CreateRuntimeAlias">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateRuntimeAliasOutcome CreateRuntimeAlias(const Model::CreateRuntimeAliasRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateRuntimeAlias that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateRuntimeAliasRequestT = Model::CreateRuntimeAliasRequest>
+  Model::CreateRuntimeAliasOutcomeCallable CreateRuntimeAliasCallable(const CreateRuntimeAliasRequestT& request) const {
+    return SubmitCallable(&LambdaCoreClient::CreateRuntimeAlias, request);
+  }
+
+  /**
+   * An Async wrapper for CreateRuntimeAlias that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename CreateRuntimeAliasRequestT = Model::CreateRuntimeAliasRequest>
+  void CreateRuntimeAliasAsync(const CreateRuntimeAliasRequestT& request, const CreateRuntimeAliasResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LambdaCoreClient::CreateRuntimeAlias, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a new runtime version. A runtime version defines the function
+   * execution environment by referencing a container image. Runtime versions are
+   * immutable. To update the runtime, create a new runtime version and migrate
+   * functions by updating the runtime aliases to point to the new runtime
+   * version.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-core-2026-04-30/CreateRuntimeVersion">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateRuntimeVersionOutcome CreateRuntimeVersion(const Model::CreateRuntimeVersionRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateRuntimeVersion that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateRuntimeVersionRequestT = Model::CreateRuntimeVersionRequest>
+  Model::CreateRuntimeVersionOutcomeCallable CreateRuntimeVersionCallable(const CreateRuntimeVersionRequestT& request) const {
+    return SubmitCallable(&LambdaCoreClient::CreateRuntimeVersion, request);
+  }
+
+  /**
+   * An Async wrapper for CreateRuntimeVersion that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateRuntimeVersionRequestT = Model::CreateRuntimeVersionRequest>
+  void CreateRuntimeVersionAsync(const CreateRuntimeVersionRequestT& request, const CreateRuntimeVersionResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LambdaCoreClient::CreateRuntimeVersion, request, handler, context);
+  }
+
+  /**
    * <p>Initiates deletion of a network connector. The connector transitions to
    * <code>DELETING</code> state while elastic network interfaces are cleaned up
    * asynchronously. After deletion completes, subsequent calls to
@@ -183,6 +276,94 @@ class AWS_LAMBDACORE_API LambdaCoreClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Schedules a customer-managed runtime to be deleted. Runtimes scheduled for
+   * deletion enter the PENDING_DELETION state and can be restored during the
+   * scheduled deletion window. Runtime versions and aliases must be deleted or
+   * scheduled for deletion before deleting the runtime. Function invokes fail for
+   * functions using runtime versions or aliases that are deleted or pending
+   * deletion.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-core-2026-04-30/DeleteRuntime">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteRuntimeOutcome DeleteRuntime(const Model::DeleteRuntimeRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteRuntime that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DeleteRuntimeRequestT = Model::DeleteRuntimeRequest>
+  Model::DeleteRuntimeOutcomeCallable DeleteRuntimeCallable(const DeleteRuntimeRequestT& request) const {
+    return SubmitCallable(&LambdaCoreClient::DeleteRuntime, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteRuntime that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DeleteRuntimeRequestT = Model::DeleteRuntimeRequest>
+  void DeleteRuntimeAsync(const DeleteRuntimeRequestT& request, const DeleteRuntimeResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LambdaCoreClient::DeleteRuntime, request, handler, context);
+  }
+
+  /**
+   * <p>Schedules a runtime alias to be deleted. Runtime aliases scheduled for
+   * deletion enter the PENDING_DELETION state and can be restored during the
+   * scheduled deletion window. Function invokes fail for functions using runtime
+   * aliases that are deleted or pending deletion.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-core-2026-04-30/DeleteRuntimeAlias">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteRuntimeAliasOutcome DeleteRuntimeAlias(const Model::DeleteRuntimeAliasRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteRuntimeAlias that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteRuntimeAliasRequestT = Model::DeleteRuntimeAliasRequest>
+  Model::DeleteRuntimeAliasOutcomeCallable DeleteRuntimeAliasCallable(const DeleteRuntimeAliasRequestT& request) const {
+    return SubmitCallable(&LambdaCoreClient::DeleteRuntimeAlias, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteRuntimeAlias that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DeleteRuntimeAliasRequestT = Model::DeleteRuntimeAliasRequest>
+  void DeleteRuntimeAliasAsync(const DeleteRuntimeAliasRequestT& request, const DeleteRuntimeAliasResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LambdaCoreClient::DeleteRuntimeAlias, request, handler, context);
+  }
+
+  /**
+   * <p>Schedules a runtime version to be deleted. Runtime versions scheduled for
+   * deletion enter the PENDING_DELETION state and can be restored during the
+   * scheduled deletion window. Function invokes fail for functions using a runtime
+   * version that is deleted or pending deletion.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-core-2026-04-30/DeleteRuntimeVersion">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteRuntimeVersionOutcome DeleteRuntimeVersion(const Model::DeleteRuntimeVersionRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteRuntimeVersion that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteRuntimeVersionRequestT = Model::DeleteRuntimeVersionRequest>
+  Model::DeleteRuntimeVersionOutcomeCallable DeleteRuntimeVersionCallable(const DeleteRuntimeVersionRequestT& request) const {
+    return SubmitCallable(&LambdaCoreClient::DeleteRuntimeVersion, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteRuntimeVersion that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteRuntimeVersionRequestT = Model::DeleteRuntimeVersionRequest>
+  void DeleteRuntimeVersionAsync(const DeleteRuntimeVersionRequestT& request, const DeleteRuntimeVersionResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LambdaCoreClient::DeleteRuntimeVersion, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves the current configuration, state, and metadata of a network
    * connector. The <code>Identifier</code> parameter accepts the connector ID, name,
    * or full ARN. Use this operation to poll connector state after creation or
@@ -213,6 +394,85 @@ class AWS_LAMBDACORE_API LambdaCoreClient : public Aws::Client::AWSJsonClient,
   void GetNetworkConnectorAsync(const GetNetworkConnectorRequestT& request, const GetNetworkConnectorResponseReceivedHandler& handler,
                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&LambdaCoreClient::GetNetworkConnector, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the configuration and metadata of a runtime.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-core-2026-04-30/GetRuntime">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetRuntimeOutcome GetRuntime(const Model::GetRuntimeRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetRuntime that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetRuntimeRequestT = Model::GetRuntimeRequest>
+  Model::GetRuntimeOutcomeCallable GetRuntimeCallable(const GetRuntimeRequestT& request) const {
+    return SubmitCallable(&LambdaCoreClient::GetRuntime, request);
+  }
+
+  /**
+   * An Async wrapper for GetRuntime that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetRuntimeRequestT = Model::GetRuntimeRequest>
+  void GetRuntimeAsync(const GetRuntimeRequestT& request, const GetRuntimeResponseReceivedHandler& handler,
+                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LambdaCoreClient::GetRuntime, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the configuration, state, and metadata of a runtime
+   * alias.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-core-2026-04-30/GetRuntimeAlias">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetRuntimeAliasOutcome GetRuntimeAlias(const Model::GetRuntimeAliasRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetRuntimeAlias that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetRuntimeAliasRequestT = Model::GetRuntimeAliasRequest>
+  Model::GetRuntimeAliasOutcomeCallable GetRuntimeAliasCallable(const GetRuntimeAliasRequestT& request) const {
+    return SubmitCallable(&LambdaCoreClient::GetRuntimeAlias, request);
+  }
+
+  /**
+   * An Async wrapper for GetRuntimeAlias that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetRuntimeAliasRequestT = Model::GetRuntimeAliasRequest>
+  void GetRuntimeAliasAsync(const GetRuntimeAliasRequestT& request, const GetRuntimeAliasResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LambdaCoreClient::GetRuntimeAlias, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the configuration, state, and metadata of a runtime
+   * version.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-core-2026-04-30/GetRuntimeVersion">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetRuntimeVersionOutcome GetRuntimeVersion(const Model::GetRuntimeVersionRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetRuntimeVersion that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetRuntimeVersionRequestT = Model::GetRuntimeVersionRequest>
+  Model::GetRuntimeVersionOutcomeCallable GetRuntimeVersionCallable(const GetRuntimeVersionRequestT& request) const {
+    return SubmitCallable(&LambdaCoreClient::GetRuntimeVersion, request);
+  }
+
+  /**
+   * An Async wrapper for GetRuntimeVersion that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetRuntimeVersionRequestT = Model::GetRuntimeVersionRequest>
+  void GetRuntimeVersionAsync(const GetRuntimeVersionRequestT& request, const GetRuntimeVersionResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LambdaCoreClient::GetRuntimeVersion, request, handler, context);
   }
 
   /**
@@ -287,6 +547,119 @@ class AWS_LAMBDACORE_API LambdaCoreClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Returns a paginated list of aliases for the specified runtime.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-core-2026-04-30/ListRuntimeAliases">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListRuntimeAliasesOutcome ListRuntimeAliases(const Model::ListRuntimeAliasesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListRuntimeAliases that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListRuntimeAliasesRequestT = Model::ListRuntimeAliasesRequest>
+  Model::ListRuntimeAliasesOutcomeCallable ListRuntimeAliasesCallable(const ListRuntimeAliasesRequestT& request) const {
+    return SubmitCallable(&LambdaCoreClient::ListRuntimeAliases, request);
+  }
+
+  /**
+   * An Async wrapper for ListRuntimeAliases that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListRuntimeAliasesRequestT = Model::ListRuntimeAliasesRequest>
+  void ListRuntimeAliasesAsync(const ListRuntimeAliasesRequestT& request, const ListRuntimeAliasesResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LambdaCoreClient::ListRuntimeAliases, request, handler, context);
+  }
+
+  /**
+   * <p>Returns a paginated list of versions for the specified runtime.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-core-2026-04-30/ListRuntimeVersions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListRuntimeVersionsOutcome ListRuntimeVersions(const Model::ListRuntimeVersionsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListRuntimeVersions that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListRuntimeVersionsRequestT = Model::ListRuntimeVersionsRequest>
+  Model::ListRuntimeVersionsOutcomeCallable ListRuntimeVersionsCallable(const ListRuntimeVersionsRequestT& request) const {
+    return SubmitCallable(&LambdaCoreClient::ListRuntimeVersions, request);
+  }
+
+  /**
+   * An Async wrapper for ListRuntimeVersions that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListRuntimeVersionsRequestT = Model::ListRuntimeVersionsRequest>
+  void ListRuntimeVersionsAsync(const ListRuntimeVersionsRequestT& request, const ListRuntimeVersionsResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LambdaCoreClient::ListRuntimeVersions, request, handler, context);
+  }
+
+  /**
+   * <p>Returns a paginated list of runtimes in your account for the current
+   * Region.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-core-2026-04-30/ListRuntimes">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListRuntimesOutcome ListRuntimes(const Model::ListRuntimesRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListRuntimes that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListRuntimesRequestT = Model::ListRuntimesRequest>
+  Model::ListRuntimesOutcomeCallable ListRuntimesCallable(const ListRuntimesRequestT& request = {}) const {
+    return SubmitCallable(&LambdaCoreClient::ListRuntimes, request);
+  }
+
+  /**
+   * An Async wrapper for ListRuntimes that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListRuntimesRequestT = Model::ListRuntimesRequest>
+  void ListRuntimesAsync(const ListRuntimesResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                         const ListRuntimesRequestT& request = {}) const {
+    return SubmitAsync(&LambdaCoreClient::ListRuntimes, request, handler, context);
+  }
+
+  /**
+   * <p>Cancels a pending scheduled deletion, returning the resource to the ACTIVE
+   * state. Scope is determined by the RuntimeName path parameter plus an optional,
+   * mutually exclusive RuntimeVersion or RuntimeAlias query parameter: with neither,
+   * the runtime itself is restored; with RuntimeVersion, the named runtime version;
+   * with RuntimeAlias, the named runtime alias. Restoring a resource that is already
+   * ACTIVE is a no-op success. Restore only works while the target is
+   * PENDING_DELETION; once the scheduled deletion has begun executing (DELETING) or
+   * has completed, the call fails.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-core-2026-04-30/RestoreRuntime">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::RestoreRuntimeOutcome RestoreRuntime(const Model::RestoreRuntimeRequest& request) const;
+
+  /**
+   * A Callable wrapper for RestoreRuntime that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename RestoreRuntimeRequestT = Model::RestoreRuntimeRequest>
+  Model::RestoreRuntimeOutcomeCallable RestoreRuntimeCallable(const RestoreRuntimeRequestT& request) const {
+    return SubmitCallable(&LambdaCoreClient::RestoreRuntime, request);
+  }
+
+  /**
+   * An Async wrapper for RestoreRuntime that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename RestoreRuntimeRequestT = Model::RestoreRuntimeRequest>
+  void RestoreRuntimeAsync(const RestoreRuntimeRequestT& request, const RestoreRuntimeResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LambdaCoreClient::RestoreRuntime, request, handler, context);
+  }
+
+  /**
    * <p>Updates the VPC configuration or operator role of an existing network
    * connector. You can modify the subnet IDs, security group IDs, network protocol,
    * or operator role. The connector must be in <code>ACTIVE</code> state to accept
@@ -325,6 +698,89 @@ class AWS_LAMBDACORE_API LambdaCoreClient : public Aws::Client::AWSJsonClient,
                                    const UpdateNetworkConnectorResponseReceivedHandler& handler,
                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&LambdaCoreClient::UpdateNetworkConnector, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the properties of an existing customer-managed runtime, such as its
+   * description, license information, or lifecycle information.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-core-2026-04-30/UpdateRuntime">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateRuntimeOutcome UpdateRuntime(const Model::UpdateRuntimeRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateRuntime that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename UpdateRuntimeRequestT = Model::UpdateRuntimeRequest>
+  Model::UpdateRuntimeOutcomeCallable UpdateRuntimeCallable(const UpdateRuntimeRequestT& request) const {
+    return SubmitCallable(&LambdaCoreClient::UpdateRuntime, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateRuntime that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename UpdateRuntimeRequestT = Model::UpdateRuntimeRequest>
+  void UpdateRuntimeAsync(const UpdateRuntimeRequestT& request, const UpdateRuntimeResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LambdaCoreClient::UpdateRuntime, request, handler, context);
+  }
+
+  /**
+   * <p>Updates an existing runtime alias to point to a different runtime version or
+   * to change its description or lifecycle information.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-core-2026-04-30/UpdateRuntimeAlias">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateRuntimeAliasOutcome UpdateRuntimeAlias(const Model::UpdateRuntimeAliasRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateRuntimeAlias that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateRuntimeAliasRequestT = Model::UpdateRuntimeAliasRequest>
+  Model::UpdateRuntimeAliasOutcomeCallable UpdateRuntimeAliasCallable(const UpdateRuntimeAliasRequestT& request) const {
+    return SubmitCallable(&LambdaCoreClient::UpdateRuntimeAlias, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateRuntimeAlias that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename UpdateRuntimeAliasRequestT = Model::UpdateRuntimeAliasRequest>
+  void UpdateRuntimeAliasAsync(const UpdateRuntimeAliasRequestT& request, const UpdateRuntimeAliasResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LambdaCoreClient::UpdateRuntimeAlias, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the runtime version release notes. The runtime version must be in the
+   * ACTIVE state. The runtime version image is immutable. To change the runtime
+   * contents, create a new runtime version.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-core-2026-04-30/UpdateRuntimeVersion">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateRuntimeVersionOutcome UpdateRuntimeVersion(const Model::UpdateRuntimeVersionRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateRuntimeVersion that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateRuntimeVersionRequestT = Model::UpdateRuntimeVersionRequest>
+  Model::UpdateRuntimeVersionOutcomeCallable UpdateRuntimeVersionCallable(const UpdateRuntimeVersionRequestT& request) const {
+    return SubmitCallable(&LambdaCoreClient::UpdateRuntimeVersion, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateRuntimeVersion that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateRuntimeVersionRequestT = Model::UpdateRuntimeVersionRequest>
+  void UpdateRuntimeVersionAsync(const UpdateRuntimeVersionRequestT& request, const UpdateRuntimeVersionResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LambdaCoreClient::UpdateRuntimeVersion, request, handler, context);
   }
 
   virtual void OverrideEndpoint(const Aws::String& endpoint);

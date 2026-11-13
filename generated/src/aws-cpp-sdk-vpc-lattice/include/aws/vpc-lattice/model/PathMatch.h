@@ -52,7 +52,9 @@ class PathMatch {
 
   ///@{
   /**
-   * <p>Indicates whether the match is case sensitive.</p>
+   * <p>Specifies whether the match is case sensitive. Defaults to <code>true</code>
+   * (case-sensitive matching). Set to <code>false</code> to match the path
+   * case-insensitively.</p>
    */
   inline bool GetCaseSensitive() const { return m_caseSensitive; }
   inline bool CaseSensitiveHasBeenSet() const { return m_caseSensitiveHasBeenSet; }

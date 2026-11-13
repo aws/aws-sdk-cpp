@@ -1109,6 +1109,45 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p>Associates a flex cost allocation policy with one or more network resources.
+   * You can associate the policy directly with specific resources by resource ID, or
+   * you can associate it with a scope of resources in an account, Amazon VPC, or
+   * subnet.</p> <p>The following limits apply:</p> <ul> <li> <p>A request can
+   * associate up to 20 resources.</p> </li> <li> <p>A policy can have up to 100
+   * active associations.</p> </li> <li> <p>A network resource can have only one
+   * active association, across all policies. If a resource is already associated,
+   * the response includes it in the failures with the code
+   * <code>ResourceAlreadyAssociated</code>.</p> </li> </ul><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateNetworkingFlexCostAllocationPolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::AssociateNetworkingFlexCostAllocationPolicyOutcome AssociateNetworkingFlexCostAllocationPolicy(
+      const Model::AssociateNetworkingFlexCostAllocationPolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for AssociateNetworkingFlexCostAllocationPolicy that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename AssociateNetworkingFlexCostAllocationPolicyRequestT = Model::AssociateNetworkingFlexCostAllocationPolicyRequest>
+  Model::AssociateNetworkingFlexCostAllocationPolicyOutcomeCallable AssociateNetworkingFlexCostAllocationPolicyCallable(
+      const AssociateNetworkingFlexCostAllocationPolicyRequestT& request) const {
+    return SubmitCallable(&EC2Client::AssociateNetworkingFlexCostAllocationPolicy, request);
+  }
+
+  /**
+   * An Async wrapper for AssociateNetworkingFlexCostAllocationPolicy that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename AssociateNetworkingFlexCostAllocationPolicyRequestT = Model::AssociateNetworkingFlexCostAllocationPolicyRequest>
+  void AssociateNetworkingFlexCostAllocationPolicyAsync(
+      const AssociateNetworkingFlexCostAllocationPolicyRequestT& request,
+      const AssociateNetworkingFlexCostAllocationPolicyResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::AssociateNetworkingFlexCostAllocationPolicy, request, handler, context);
+  }
+
+  /**
    * <p>Associates a route server with a VPC to enable dynamic route updates.</p>
    * <p>A route server association is the connection established between a route
    * server and a VPC.</p> <p>For more information see <a
@@ -4385,6 +4424,45 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
                                              const CreateNetworkInterfacePermissionResponseReceivedHandler& handler,
                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EC2Client::CreateNetworkInterfacePermission, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a flex cost allocation policy for Networking Flexible Cost Allocation
+   * (FCA), a feature of Amazon Virtual Private Cloud (Amazon VPC). The policy
+   * allocates the charges of a shared networking resource at the reporting
+   * granularity that you specify. You can create a policy for one of the following
+   * resource types: NAT gateways, Amazon VPC peering connections, or EC2 instances.
+   * Policies can allocate data transfer charges for all three types, and data
+   * processing charges for NAT gateways.</p> <p>You can have up to 100 policies per
+   * account in each Amazon Web Services Region, plus one additional policy per
+   * network resource type created by a declarative policy, for a maximum of 103
+   * policies in an Amazon Web Services Region.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkingFlexCostAllocationPolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateNetworkingFlexCostAllocationPolicyOutcome CreateNetworkingFlexCostAllocationPolicy(
+      const Model::CreateNetworkingFlexCostAllocationPolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateNetworkingFlexCostAllocationPolicy that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename CreateNetworkingFlexCostAllocationPolicyRequestT = Model::CreateNetworkingFlexCostAllocationPolicyRequest>
+  Model::CreateNetworkingFlexCostAllocationPolicyOutcomeCallable CreateNetworkingFlexCostAllocationPolicyCallable(
+      const CreateNetworkingFlexCostAllocationPolicyRequestT& request) const {
+    return SubmitCallable(&EC2Client::CreateNetworkingFlexCostAllocationPolicy, request);
+  }
+
+  /**
+   * An Async wrapper for CreateNetworkingFlexCostAllocationPolicy that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename CreateNetworkingFlexCostAllocationPolicyRequestT = Model::CreateNetworkingFlexCostAllocationPolicyRequest>
+  void CreateNetworkingFlexCostAllocationPolicyAsync(
+      const CreateNetworkingFlexCostAllocationPolicyRequestT& request,
+      const CreateNetworkingFlexCostAllocationPolicyResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::CreateNetworkingFlexCostAllocationPolicy, request, handler, context);
   }
 
   /**
@@ -7752,6 +7830,37 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
                                              const DeleteNetworkInterfacePermissionResponseReceivedHandler& handler,
                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EC2Client::DeleteNetworkInterfacePermission, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes one or more flex cost allocation policies.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteNetworkingFlexCostAllocationPolicies">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteNetworkingFlexCostAllocationPoliciesOutcome DeleteNetworkingFlexCostAllocationPolicies(
+      const Model::DeleteNetworkingFlexCostAllocationPoliciesRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteNetworkingFlexCostAllocationPolicies that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename DeleteNetworkingFlexCostAllocationPoliciesRequestT = Model::DeleteNetworkingFlexCostAllocationPoliciesRequest>
+  Model::DeleteNetworkingFlexCostAllocationPoliciesOutcomeCallable DeleteNetworkingFlexCostAllocationPoliciesCallable(
+      const DeleteNetworkingFlexCostAllocationPoliciesRequestT& request) const {
+    return SubmitCallable(&EC2Client::DeleteNetworkingFlexCostAllocationPolicies, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteNetworkingFlexCostAllocationPolicies that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename DeleteNetworkingFlexCostAllocationPoliciesRequestT = Model::DeleteNetworkingFlexCostAllocationPoliciesRequest>
+  void DeleteNetworkingFlexCostAllocationPoliciesAsync(
+      const DeleteNetworkingFlexCostAllocationPoliciesRequestT& request,
+      const DeleteNetworkingFlexCostAllocationPoliciesResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::DeleteNetworkingFlexCostAllocationPolicies, request, handler, context);
   }
 
   /**
@@ -13278,7 +13387,8 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
    * <p>Describes the specified network interfaces or all your network
    * interfaces.</p> <p>If you have a large number of network interfaces, the
    * operation fails unless you use pagination or one of the following filters:
-   * <code>group-id</code>, <code>mac-address</code>, <code>private-dns-name</code>,
+   * <code>attachment.instance-id</code>, <code>group-id</code>,
+   * <code>mac-address</code>, <code>private-dns-name</code>,
    * <code>private-ip-address</code>, <code>subnet-id</code>, or
    * <code>vpc-id</code>.</p>  <p>We strongly recommend using only
    * paginated requests. Unpaginated requests are susceptible to throttling and
@@ -13308,6 +13418,72 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                       const DescribeNetworkInterfacesRequestT& request = {}) const {
     return SubmitAsync(&EC2Client::DescribeNetworkInterfaces, request, handler, context);
+  }
+
+  /**
+   * <p>Describes one or more of your flex cost allocation policies. We recommend
+   * using pagination to ensure that the operation returns quickly and
+   * successfully.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkingFlexCostAllocationPolicies">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeNetworkingFlexCostAllocationPoliciesOutcome DescribeNetworkingFlexCostAllocationPolicies(
+      const Model::DescribeNetworkingFlexCostAllocationPoliciesRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeNetworkingFlexCostAllocationPolicies that returns a future to the operation so that it can be executed
+   * in parallel to other requests.
+   */
+  template <typename DescribeNetworkingFlexCostAllocationPoliciesRequestT = Model::DescribeNetworkingFlexCostAllocationPoliciesRequest>
+  Model::DescribeNetworkingFlexCostAllocationPoliciesOutcomeCallable DescribeNetworkingFlexCostAllocationPoliciesCallable(
+      const DescribeNetworkingFlexCostAllocationPoliciesRequestT& request = {}) const {
+    return SubmitCallable(&EC2Client::DescribeNetworkingFlexCostAllocationPolicies, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeNetworkingFlexCostAllocationPolicies that queues the request into a thread executor and triggers
+   * associated callback when operation has finished.
+   */
+  template <typename DescribeNetworkingFlexCostAllocationPoliciesRequestT = Model::DescribeNetworkingFlexCostAllocationPoliciesRequest>
+  void DescribeNetworkingFlexCostAllocationPoliciesAsync(const DescribeNetworkingFlexCostAllocationPoliciesResponseReceivedHandler& handler,
+                                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                                         const DescribeNetworkingFlexCostAllocationPoliciesRequestT& request = {}) const {
+    return SubmitAsync(&EC2Client::DescribeNetworkingFlexCostAllocationPolicies, request, handler, context);
+  }
+
+  /**
+   * <p>Describes the associations between your flex cost allocation policies and
+   * network resources. We recommend using pagination to ensure that the operation
+   * returns quickly and successfully.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkingFlexCostAllocationPolicyAssociations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeNetworkingFlexCostAllocationPolicyAssociationsOutcome DescribeNetworkingFlexCostAllocationPolicyAssociations(
+      const Model::DescribeNetworkingFlexCostAllocationPolicyAssociationsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeNetworkingFlexCostAllocationPolicyAssociations that returns a future to the operation so that it can be
+   * executed in parallel to other requests.
+   */
+  template <typename DescribeNetworkingFlexCostAllocationPolicyAssociationsRequestT =
+                Model::DescribeNetworkingFlexCostAllocationPolicyAssociationsRequest>
+  Model::DescribeNetworkingFlexCostAllocationPolicyAssociationsOutcomeCallable
+  DescribeNetworkingFlexCostAllocationPolicyAssociationsCallable(
+      const DescribeNetworkingFlexCostAllocationPolicyAssociationsRequestT& request = {}) const {
+    return SubmitCallable(&EC2Client::DescribeNetworkingFlexCostAllocationPolicyAssociations, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeNetworkingFlexCostAllocationPolicyAssociations that queues the request into a thread executor and triggers
+   * associated callback when operation has finished.
+   */
+  template <typename DescribeNetworkingFlexCostAllocationPolicyAssociationsRequestT =
+                Model::DescribeNetworkingFlexCostAllocationPolicyAssociationsRequest>
+  void DescribeNetworkingFlexCostAllocationPolicyAssociationsAsync(
+      const DescribeNetworkingFlexCostAllocationPolicyAssociationsResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+      const DescribeNetworkingFlexCostAllocationPolicyAssociationsRequestT& request = {}) const {
+    return SubmitAsync(&EC2Client::DescribeNetworkingFlexCostAllocationPolicyAssociations, request, handler, context);
   }
 
   /**
@@ -17306,6 +17482,37 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p>Disassociates a flex cost allocation policy from one or more network
+   * resources.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateNetworkingFlexCostAllocationPolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DisassociateNetworkingFlexCostAllocationPolicyOutcome DisassociateNetworkingFlexCostAllocationPolicy(
+      const Model::DisassociateNetworkingFlexCostAllocationPolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for DisassociateNetworkingFlexCostAllocationPolicy that returns a future to the operation so that it can be executed
+   * in parallel to other requests.
+   */
+  template <typename DisassociateNetworkingFlexCostAllocationPolicyRequestT = Model::DisassociateNetworkingFlexCostAllocationPolicyRequest>
+  Model::DisassociateNetworkingFlexCostAllocationPolicyOutcomeCallable DisassociateNetworkingFlexCostAllocationPolicyCallable(
+      const DisassociateNetworkingFlexCostAllocationPolicyRequestT& request) const {
+    return SubmitCallable(&EC2Client::DisassociateNetworkingFlexCostAllocationPolicy, request);
+  }
+
+  /**
+   * An Async wrapper for DisassociateNetworkingFlexCostAllocationPolicy that queues the request into a thread executor and triggers
+   * associated callback when operation has finished.
+   */
+  template <typename DisassociateNetworkingFlexCostAllocationPolicyRequestT = Model::DisassociateNetworkingFlexCostAllocationPolicyRequest>
+  void DisassociateNetworkingFlexCostAllocationPolicyAsync(
+      const DisassociateNetworkingFlexCostAllocationPolicyRequestT& request,
+      const DisassociateNetworkingFlexCostAllocationPolicyResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::DisassociateNetworkingFlexCostAllocationPolicy, request, handler, context);
+  }
+
+  /**
    * <p>Disassociates a route server from a VPC.</p> <p>A route server association is
    * the connection established between a route server and a VPC.</p> <p>For more
    * information see <a
@@ -19279,8 +19486,9 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
    * table partitioned between two timestamps in the past</p> </li> <li> <p>Create a
    * set of named queries in Athena that you can use to get started quickly</p> </li>
    * </ul>  <p> <code>GetFlowLogsIntegrationTemplate</code> does not support
-   * integration between Amazon Web Services Transit Gateway Flow Logs and Amazon
-   * Athena.</p> <p><h3>See Also:</h3>   <a
+   * integration between Amazon Web Services Transit Gateway Flow Logs or Amazon Web
+   * Services Cloud WAN Flow Logs and Amazon Athena.</p> <p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetFlowLogsIntegrationTemplate">AWS
    * API Reference</a></p>
    */
@@ -20414,6 +20622,37 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
                                                  const GetNetworkInsightsAccessScopeContentResponseReceivedHandler& handler,
                                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EC2Client::GetNetworkInsightsAccessScopeContent, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the versions of a flex cost allocation policy.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetNetworkingFlexCostAllocationPolicyVersions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetNetworkingFlexCostAllocationPolicyVersionsOutcome GetNetworkingFlexCostAllocationPolicyVersions(
+      const Model::GetNetworkingFlexCostAllocationPolicyVersionsRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetNetworkingFlexCostAllocationPolicyVersions that returns a future to the operation so that it can be executed
+   * in parallel to other requests.
+   */
+  template <typename GetNetworkingFlexCostAllocationPolicyVersionsRequestT = Model::GetNetworkingFlexCostAllocationPolicyVersionsRequest>
+  Model::GetNetworkingFlexCostAllocationPolicyVersionsOutcomeCallable GetNetworkingFlexCostAllocationPolicyVersionsCallable(
+      const GetNetworkingFlexCostAllocationPolicyVersionsRequestT& request) const {
+    return SubmitCallable(&EC2Client::GetNetworkingFlexCostAllocationPolicyVersions, request);
+  }
+
+  /**
+   * An Async wrapper for GetNetworkingFlexCostAllocationPolicyVersions that queues the request into a thread executor and triggers
+   * associated callback when operation has finished.
+   */
+  template <typename GetNetworkingFlexCostAllocationPolicyVersionsRequestT = Model::GetNetworkingFlexCostAllocationPolicyVersionsRequest>
+  void GetNetworkingFlexCostAllocationPolicyVersionsAsync(
+      const GetNetworkingFlexCostAllocationPolicyVersionsRequestT& request,
+      const GetNetworkingFlexCostAllocationPolicyVersionsResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::GetNetworkingFlexCostAllocationPolicyVersions, request, handler, context);
   }
 
   /**
@@ -23124,6 +23363,42 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
                                             const ModifyNetworkInterfaceAttributeResponseReceivedHandler& handler,
                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EC2Client::ModifyNetworkInterfaceAttribute, request, handler, context);
+  }
+
+  /**
+   * <p>Modifies a flex cost allocation policy. Changing a policy document or
+   * <code>ShowBackEnabled</code> creates a new version of the policy. Changing only
+   * the description doesn't create a new version.</p> <p>A policy can have up to 100
+   * versions. Versions are never removed, so after a policy reaches 100 versions,
+   * you can't change its policy document or <code>ShowBackEnabled</code>. Policies
+   * that are managed by a declarative policy aren't subject to this
+   * limit.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyNetworkingFlexCostAllocationPolicy">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ModifyNetworkingFlexCostAllocationPolicyOutcome ModifyNetworkingFlexCostAllocationPolicy(
+      const Model::ModifyNetworkingFlexCostAllocationPolicyRequest& request) const;
+
+  /**
+   * A Callable wrapper for ModifyNetworkingFlexCostAllocationPolicy that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename ModifyNetworkingFlexCostAllocationPolicyRequestT = Model::ModifyNetworkingFlexCostAllocationPolicyRequest>
+  Model::ModifyNetworkingFlexCostAllocationPolicyOutcomeCallable ModifyNetworkingFlexCostAllocationPolicyCallable(
+      const ModifyNetworkingFlexCostAllocationPolicyRequestT& request) const {
+    return SubmitCallable(&EC2Client::ModifyNetworkingFlexCostAllocationPolicy, request);
+  }
+
+  /**
+   * An Async wrapper for ModifyNetworkingFlexCostAllocationPolicy that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename ModifyNetworkingFlexCostAllocationPolicyRequestT = Model::ModifyNetworkingFlexCostAllocationPolicyRequest>
+  void ModifyNetworkingFlexCostAllocationPolicyAsync(
+      const ModifyNetworkingFlexCostAllocationPolicyRequestT& request,
+      const ModifyNetworkingFlexCostAllocationPolicyResponseReceivedHandler& handler,
+      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::ModifyNetworkingFlexCostAllocationPolicy, request, handler, context);
   }
 
   /**

@@ -66,6 +66,10 @@ Campaign& Campaign::operator=(JsonView jsonValue) {
     m_communicationLimitsOverride = jsonValue.GetObject("communicationLimitsOverride");
     m_communicationLimitsOverrideHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("lastModifiedTime")) {
+    m_lastModifiedTime = jsonValue.GetString("lastModifiedTime");
+    m_lastModifiedTimeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("tags")) {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
     for (auto& tagsItem : tagsJsonMap) {
@@ -125,6 +129,10 @@ JsonValue Campaign::Jsonize() const {
 
   if (m_communicationLimitsOverrideHasBeenSet) {
     payload.WithObject("communicationLimitsOverride", m_communicationLimitsOverride.Jsonize());
+  }
+
+  if (m_lastModifiedTimeHasBeenSet) {
+    payload.WithString("lastModifiedTime", m_lastModifiedTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if (m_tagsHasBeenSet) {

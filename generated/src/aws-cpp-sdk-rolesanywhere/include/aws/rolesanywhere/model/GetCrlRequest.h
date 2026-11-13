@@ -30,7 +30,10 @@ class GetCrlRequest : public RolesAnywhereRequest {
 
   ///@{
   /**
-   * <p>The unique identifier of the certificate revocation list (CRL).</p>
+   * <p>The certificate revocation list (CRL) to act on. You can specify one of the
+   * following:</p> <ul> <li> <p>The CRL ID.</p> </li> <li> <p>The CRL ARN.</p> </li>
+   * <li> <p>The alias ARN of the CRL.</p> </li> </ul> <p>An ARN must be for a CRL in
+   * your account and Region.</p>
    */
   inline const Aws::String& GetCrlId() const { return m_crlId; }
   inline bool CrlIdHasBeenSet() const { return m_crlIdHasBeenSet; }

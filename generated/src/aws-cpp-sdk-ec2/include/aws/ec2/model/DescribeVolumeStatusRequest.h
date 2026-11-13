@@ -140,12 +140,16 @@ class DescribeVolumeStatusRequest : public EC2Request {
    * the event (for example, <code>enable-volume-io</code>).</p> </li> <li> <p>
    * <code>action.description</code> - A description of the action.</p> </li> <li>
    * <p> <code>action.event-id</code> - The event ID associated with the action.</p>
-   * </li> <li> <p> <code>availability-zone</code> - The Availability Zone of the
-   * instance.</p> </li> <li> <p> <code>event.description</code> - A description of
-   * the event.</p> </li> <li> <p> <code>event.event-id</code> - The event ID.</p>
-   * </li> <li> <p> <code>event.event-type</code> - The event type (for
-   * <code>io-enabled</code>: <code>passed</code> | <code>failed</code>; for
-   * <code>io-performance</code>: <code>io-performance:degraded</code> |
+   * </li> <li> <p> <code>attachment-status.instance-id</code> - The ID of the
+   * instance that the volume is attached to.</p> </li> <li> <p>
+   * <code>attachment-status.io-performance</code> - The I/O performance status of
+   * the volume's attachment to the instance.</p> </li> <li> <p>
+   * <code>availability-zone</code> - The Availability Zone of the instance.</p>
+   * </li> <li> <p> <code>event.description</code> - A description of the event.</p>
+   * </li> <li> <p> <code>event.event-id</code> - The event ID.</p> </li> <li> <p>
+   * <code>event.event-type</code> - The event type (for <code>io-enabled</code>:
+   * <code>passed</code> | <code>failed</code>; for <code>io-performance</code>:
+   * <code>io-performance:degraded</code> |
    * <code>io-performance:severely-degraded</code> |
    * <code>io-performance:stalled</code>).</p> </li> <li> <p>
    * <code>event.not-after</code> - The latest end time for the event.</p> </li> <li>

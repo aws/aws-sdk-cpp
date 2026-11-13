@@ -31,7 +31,10 @@ class UpdateProfileRequest : public RolesAnywhereRequest {
 
   ///@{
   /**
-   * <p>The unique identifier of the profile.</p>
+   * <p>The profile to act on. You can specify one of the following:</p> <ul> <li>
+   * <p>The profile ID.</p> </li> <li> <p>The profile ARN.</p> </li> <li> <p>The
+   * alias ARN of the profile.</p> </li> </ul> <p>An ARN must be for a profile in
+   * your account and Region.</p>
    */
   inline const Aws::String& GetProfileId() const { return m_profileId; }
   inline bool ProfileIdHasBeenSet() const { return m_profileIdHasBeenSet; }
@@ -170,6 +173,40 @@ class UpdateProfileRequest : public RolesAnywhereRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The alias for the profile.</p> <p>You can use this parameter in the following
+   * ways:</p> <ul> <li> <p>To set or change the alias, specify the new alias name.
+   * After the change, the previous alias ARN no longer identifies the resource. You
+   * can then assign the previous alias to another resource of the same type. A
+   * change can take a short time to take effect for requests that use an alias
+   * ARN.</p> </li> <li> <p>To remove the alias, specify an empty string.</p> </li>
+   * <li> <p>To keep the current alias, omit this parameter.</p> </li> </ul> <p>An
+   * alias name contains 1 to 256 characters. It must begin with a letter (A-Z or
+   * a-z). It can contain only letters (A-Z and a-z), numbers (0-9), underscores (_),
+   * hyphens (-), and forward slashes (/). A forward slash can appear only between
+   * two other characters, so an alias name can't end with a forward slash or contain
+   * two in a row. Alias names that begin with <code>aws/</code>, in any combination
+   * of uppercase and lowercase letters, are reserved. Alias names are case
+   * sensitive.</p> <p>The alias name must be unique among resources of the same type
+   * in your account and Region. If another resource of the same type already has the
+   * alias, the request fails with a <code>ValidationException</code>. An invalid or
+   * reserved alias name also causes a <code>ValidationException</code>.</p>
+   */
+  inline const Aws::String& GetAliasName() const { return m_aliasName; }
+  inline bool AliasNameHasBeenSet() const { return m_aliasNameHasBeenSet; }
+  template <typename AliasNameT = Aws::String>
+  void SetAliasName(AliasNameT&& value) {
+    m_aliasNameHasBeenSet = true;
+    m_aliasName = std::forward<AliasNameT>(value);
+  }
+  template <typename AliasNameT = Aws::String>
+  UpdateProfileRequest& WithAliasName(AliasNameT&& value) {
+    SetAliasName(std::forward<AliasNameT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_profileId;
 
@@ -184,6 +221,8 @@ class UpdateProfileRequest : public RolesAnywhereRequest {
   int m_durationSeconds{0};
 
   bool m_acceptRoleSessionName{false};
+
+  Aws::String m_aliasName;
   bool m_profileIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_sessionPolicyHasBeenSet = false;
@@ -191,6 +230,7 @@ class UpdateProfileRequest : public RolesAnywhereRequest {
   bool m_managedPolicyArnsHasBeenSet = false;
   bool m_durationSecondsHasBeenSet = false;
   bool m_acceptRoleSessionNameHasBeenSet = false;
+  bool m_aliasNameHasBeenSet = false;
 };
 
 }  // namespace Model

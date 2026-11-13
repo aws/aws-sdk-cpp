@@ -24,15 +24,10 @@
 #include <aws/network-firewall/model/AssociateAvailabilityZonesRequest.h>
 #include <aws/network-firewall/model/AssociateFirewallPolicyRequest.h>
 #include <aws/network-firewall/model/AssociateSubnetsRequest.h>
-#include <aws/network-firewall/model/AttachRuleGroupsToProxyConfigurationRequest.h>
 #include <aws/network-firewall/model/CreateContainerAssociationRequest.h>
 #include <aws/network-firewall/model/CreateFirewallPolicyRequest.h>
 #include <aws/network-firewall/model/CreateFirewallPolicyV2Request.h>
 #include <aws/network-firewall/model/CreateFirewallRequest.h>
-#include <aws/network-firewall/model/CreateProxyConfigurationRequest.h>
-#include <aws/network-firewall/model/CreateProxyRequest.h>
-#include <aws/network-firewall/model/CreateProxyRuleGroupRequest.h>
-#include <aws/network-firewall/model/CreateProxyRulesRequest.h>
 #include <aws/network-firewall/model/CreateRuleGroupRequest.h>
 #include <aws/network-firewall/model/CreateTLSInspectionConfigurationRequest.h>
 #include <aws/network-firewall/model/CreateVpcEndpointAssociationRequest.h>
@@ -41,10 +36,7 @@
 #include <aws/network-firewall/model/DeleteFirewallPolicyV2Request.h>
 #include <aws/network-firewall/model/DeleteFirewallRequest.h>
 #include <aws/network-firewall/model/DeleteNetworkFirewallTransitGatewayAttachmentRequest.h>
-#include <aws/network-firewall/model/DeleteProxyConfigurationRequest.h>
 #include <aws/network-firewall/model/DeleteProxyRequest.h>
-#include <aws/network-firewall/model/DeleteProxyRuleGroupRequest.h>
-#include <aws/network-firewall/model/DeleteProxyRulesRequest.h>
 #include <aws/network-firewall/model/DeleteResourcePolicyRequest.h>
 #include <aws/network-firewall/model/DeleteRuleGroupRequest.h>
 #include <aws/network-firewall/model/DeleteTLSInspectionConfigurationRequest.h>
@@ -56,17 +48,13 @@
 #include <aws/network-firewall/model/DescribeFirewallRequest.h>
 #include <aws/network-firewall/model/DescribeFlowOperationRequest.h>
 #include <aws/network-firewall/model/DescribeLoggingConfigurationRequest.h>
-#include <aws/network-firewall/model/DescribeProxyConfigurationRequest.h>
 #include <aws/network-firewall/model/DescribeProxyRequest.h>
-#include <aws/network-firewall/model/DescribeProxyRuleGroupRequest.h>
-#include <aws/network-firewall/model/DescribeProxyRuleRequest.h>
 #include <aws/network-firewall/model/DescribeResourcePolicyRequest.h>
 #include <aws/network-firewall/model/DescribeRuleGroupMetadataRequest.h>
 #include <aws/network-firewall/model/DescribeRuleGroupRequest.h>
 #include <aws/network-firewall/model/DescribeRuleGroupSummaryRequest.h>
 #include <aws/network-firewall/model/DescribeTLSInspectionConfigurationRequest.h>
 #include <aws/network-firewall/model/DescribeVpcEndpointAssociationRequest.h>
-#include <aws/network-firewall/model/DetachRuleGroupsFromProxyConfigurationRequest.h>
 #include <aws/network-firewall/model/DisassociateAvailabilityZonesRequest.h>
 #include <aws/network-firewall/model/DisassociateSubnetsRequest.h>
 #include <aws/network-firewall/model/GetAnalysisReportResultsRequest.h>
@@ -77,9 +65,6 @@
 #include <aws/network-firewall/model/ListFirewallsRequest.h>
 #include <aws/network-firewall/model/ListFlowOperationResultsRequest.h>
 #include <aws/network-firewall/model/ListFlowOperationsRequest.h>
-#include <aws/network-firewall/model/ListProxiesRequest.h>
-#include <aws/network-firewall/model/ListProxyConfigurationsRequest.h>
-#include <aws/network-firewall/model/ListProxyRuleGroupsRequest.h>
 #include <aws/network-firewall/model/ListRuleGroupsRequest.h>
 #include <aws/network-firewall/model/ListTLSInspectionConfigurationsRequest.h>
 #include <aws/network-firewall/model/ListTagsForResourceRequest.h>
@@ -101,11 +86,6 @@
 #include <aws/network-firewall/model/UpdateFirewallPolicyRequest.h>
 #include <aws/network-firewall/model/UpdateFirewallPolicyV2Request.h>
 #include <aws/network-firewall/model/UpdateLoggingConfigurationRequest.h>
-#include <aws/network-firewall/model/UpdateProxyConfigurationRequest.h>
-#include <aws/network-firewall/model/UpdateProxyRequest.h>
-#include <aws/network-firewall/model/UpdateProxyRuleGroupPrioritiesRequest.h>
-#include <aws/network-firewall/model/UpdateProxyRulePrioritiesRequest.h>
-#include <aws/network-firewall/model/UpdateProxyRuleRequest.h>
 #include <aws/network-firewall/model/UpdateProxySettingsRequest.h>
 #include <aws/network-firewall/model/UpdateRuleGroupRequest.h>
 #include <aws/network-firewall/model/UpdateSubnetChangeProtectionRequest.h>
@@ -295,13 +275,6 @@ AssociateSubnetsOutcome NetworkFirewallClient::AssociateSubnets(const AssociateS
                             : AssociateSubnetsOutcome(std::move(result.GetError()));
 }
 
-AttachRuleGroupsToProxyConfigurationOutcome NetworkFirewallClient::AttachRuleGroupsToProxyConfiguration(
-    const AttachRuleGroupsToProxyConfigurationRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? AttachRuleGroupsToProxyConfigurationOutcome(result.GetResultWithOwnership())
-                            : AttachRuleGroupsToProxyConfigurationOutcome(std::move(result.GetError()));
-}
-
 CreateContainerAssociationOutcome NetworkFirewallClient::CreateContainerAssociation(
     const CreateContainerAssociationRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -324,29 +297,6 @@ CreateFirewallPolicyV2Outcome NetworkFirewallClient::CreateFirewallPolicyV2(cons
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateFirewallPolicyV2Outcome(result.GetResultWithOwnership())
                             : CreateFirewallPolicyV2Outcome(std::move(result.GetError()));
-}
-
-CreateProxyOutcome NetworkFirewallClient::CreateProxy(const CreateProxyRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? CreateProxyOutcome(result.GetResultWithOwnership()) : CreateProxyOutcome(std::move(result.GetError()));
-}
-
-CreateProxyConfigurationOutcome NetworkFirewallClient::CreateProxyConfiguration(const CreateProxyConfigurationRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? CreateProxyConfigurationOutcome(result.GetResultWithOwnership())
-                            : CreateProxyConfigurationOutcome(std::move(result.GetError()));
-}
-
-CreateProxyRuleGroupOutcome NetworkFirewallClient::CreateProxyRuleGroup(const CreateProxyRuleGroupRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? CreateProxyRuleGroupOutcome(result.GetResultWithOwnership())
-                            : CreateProxyRuleGroupOutcome(std::move(result.GetError()));
-}
-
-CreateProxyRulesOutcome NetworkFirewallClient::CreateProxyRules(const CreateProxyRulesRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? CreateProxyRulesOutcome(result.GetResultWithOwnership())
-                            : CreateProxyRulesOutcome(std::move(result.GetError()));
 }
 
 CreateRuleGroupOutcome NetworkFirewallClient::CreateRuleGroup(const CreateRuleGroupRequest& request) const {
@@ -403,24 +353,6 @@ DeleteNetworkFirewallTransitGatewayAttachmentOutcome NetworkFirewallClient::Dele
 DeleteProxyOutcome NetworkFirewallClient::DeleteProxy(const DeleteProxyRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteProxyOutcome(result.GetResultWithOwnership()) : DeleteProxyOutcome(std::move(result.GetError()));
-}
-
-DeleteProxyConfigurationOutcome NetworkFirewallClient::DeleteProxyConfiguration(const DeleteProxyConfigurationRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DeleteProxyConfigurationOutcome(result.GetResultWithOwnership())
-                            : DeleteProxyConfigurationOutcome(std::move(result.GetError()));
-}
-
-DeleteProxyRuleGroupOutcome NetworkFirewallClient::DeleteProxyRuleGroup(const DeleteProxyRuleGroupRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DeleteProxyRuleGroupOutcome(result.GetResultWithOwnership())
-                            : DeleteProxyRuleGroupOutcome(std::move(result.GetError()));
-}
-
-DeleteProxyRulesOutcome NetworkFirewallClient::DeleteProxyRules(const DeleteProxyRulesRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DeleteProxyRulesOutcome(result.GetResultWithOwnership())
-                            : DeleteProxyRulesOutcome(std::move(result.GetError()));
 }
 
 DeleteResourcePolicyOutcome NetworkFirewallClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const {
@@ -498,25 +430,6 @@ DescribeProxyOutcome NetworkFirewallClient::DescribeProxy(const DescribeProxyReq
   return result.IsSuccess() ? DescribeProxyOutcome(result.GetResultWithOwnership()) : DescribeProxyOutcome(std::move(result.GetError()));
 }
 
-DescribeProxyConfigurationOutcome NetworkFirewallClient::DescribeProxyConfiguration(
-    const DescribeProxyConfigurationRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeProxyConfigurationOutcome(result.GetResultWithOwnership())
-                            : DescribeProxyConfigurationOutcome(std::move(result.GetError()));
-}
-
-DescribeProxyRuleOutcome NetworkFirewallClient::DescribeProxyRule(const DescribeProxyRuleRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeProxyRuleOutcome(result.GetResultWithOwnership())
-                            : DescribeProxyRuleOutcome(std::move(result.GetError()));
-}
-
-DescribeProxyRuleGroupOutcome NetworkFirewallClient::DescribeProxyRuleGroup(const DescribeProxyRuleGroupRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeProxyRuleGroupOutcome(result.GetResultWithOwnership())
-                            : DescribeProxyRuleGroupOutcome(std::move(result.GetError()));
-}
-
 DescribeResourcePolicyOutcome NetworkFirewallClient::DescribeResourcePolicy(const DescribeResourcePolicyRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeResourcePolicyOutcome(result.GetResultWithOwnership())
@@ -553,13 +466,6 @@ DescribeVpcEndpointAssociationOutcome NetworkFirewallClient::DescribeVpcEndpoint
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeVpcEndpointAssociationOutcome(result.GetResultWithOwnership())
                             : DescribeVpcEndpointAssociationOutcome(std::move(result.GetError()));
-}
-
-DetachRuleGroupsFromProxyConfigurationOutcome NetworkFirewallClient::DetachRuleGroupsFromProxyConfiguration(
-    const DetachRuleGroupsFromProxyConfigurationRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DetachRuleGroupsFromProxyConfigurationOutcome(result.GetResultWithOwnership())
-                            : DetachRuleGroupsFromProxyConfigurationOutcome(std::move(result.GetError()));
 }
 
 DisassociateAvailabilityZonesOutcome NetworkFirewallClient::DisassociateAvailabilityZones(
@@ -620,23 +526,6 @@ ListFlowOperationsOutcome NetworkFirewallClient::ListFlowOperations(const ListFl
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListFlowOperationsOutcome(result.GetResultWithOwnership())
                             : ListFlowOperationsOutcome(std::move(result.GetError()));
-}
-
-ListProxiesOutcome NetworkFirewallClient::ListProxies(const ListProxiesRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ListProxiesOutcome(result.GetResultWithOwnership()) : ListProxiesOutcome(std::move(result.GetError()));
-}
-
-ListProxyConfigurationsOutcome NetworkFirewallClient::ListProxyConfigurations(const ListProxyConfigurationsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ListProxyConfigurationsOutcome(result.GetResultWithOwnership())
-                            : ListProxyConfigurationsOutcome(std::move(result.GetError()));
-}
-
-ListProxyRuleGroupsOutcome NetworkFirewallClient::ListProxyRuleGroups(const ListProxyRuleGroupsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ListProxyRuleGroupsOutcome(result.GetResultWithOwnership())
-                            : ListProxyRuleGroupsOutcome(std::move(result.GetError()));
 }
 
 ListRuleGroupsOutcome NetworkFirewallClient::ListRuleGroups(const ListRuleGroupsRequest& request) const {
@@ -769,36 +658,6 @@ UpdateLoggingConfigurationOutcome NetworkFirewallClient::UpdateLoggingConfigurat
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UpdateLoggingConfigurationOutcome(result.GetResultWithOwnership())
                             : UpdateLoggingConfigurationOutcome(std::move(result.GetError()));
-}
-
-UpdateProxyOutcome NetworkFirewallClient::UpdateProxy(const UpdateProxyRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? UpdateProxyOutcome(result.GetResultWithOwnership()) : UpdateProxyOutcome(std::move(result.GetError()));
-}
-
-UpdateProxyConfigurationOutcome NetworkFirewallClient::UpdateProxyConfiguration(const UpdateProxyConfigurationRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? UpdateProxyConfigurationOutcome(result.GetResultWithOwnership())
-                            : UpdateProxyConfigurationOutcome(std::move(result.GetError()));
-}
-
-UpdateProxyRuleOutcome NetworkFirewallClient::UpdateProxyRule(const UpdateProxyRuleRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? UpdateProxyRuleOutcome(result.GetResultWithOwnership())
-                            : UpdateProxyRuleOutcome(std::move(result.GetError()));
-}
-
-UpdateProxyRuleGroupPrioritiesOutcome NetworkFirewallClient::UpdateProxyRuleGroupPriorities(
-    const UpdateProxyRuleGroupPrioritiesRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? UpdateProxyRuleGroupPrioritiesOutcome(result.GetResultWithOwnership())
-                            : UpdateProxyRuleGroupPrioritiesOutcome(std::move(result.GetError()));
-}
-
-UpdateProxyRulePrioritiesOutcome NetworkFirewallClient::UpdateProxyRulePriorities(const UpdateProxyRulePrioritiesRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? UpdateProxyRulePrioritiesOutcome(result.GetResultWithOwnership())
-                            : UpdateProxyRulePrioritiesOutcome(std::move(result.GetError()));
 }
 
 UpdateProxySettingsOutcome NetworkFirewallClient::UpdateProxySettings(const UpdateProxySettingsRequest& request) const {

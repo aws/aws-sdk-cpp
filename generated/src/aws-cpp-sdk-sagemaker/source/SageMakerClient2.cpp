@@ -20,6 +20,7 @@
 #include <aws/sagemaker/SageMakerClient.h>
 #include <aws/sagemaker/SageMakerEndpointProvider.h>
 #include <aws/sagemaker/SageMakerErrorMarshaller.h>
+#include <aws/sagemaker/model/DescribeModelExplainabilityJobDefinitionRequest.h>
 #include <aws/sagemaker/model/DescribeModelPackageGroupRequest.h>
 #include <aws/sagemaker/model/DescribeModelPackageRequest.h>
 #include <aws/sagemaker/model/DescribeModelQualityJobDefinitionRequest.h>
@@ -72,8 +73,10 @@
 #include <aws/sagemaker/model/ListAutoMLJobsRequest.h>
 #include <aws/sagemaker/model/ListCandidatesForAutoMLJobRequest.h>
 #include <aws/sagemaker/model/ListClusterEventsRequest.h>
+#include <aws/sagemaker/model/ListClusterExtensionVersionsRequest.h>
 #include <aws/sagemaker/model/ListClusterExtensionsRequest.h>
 #include <aws/sagemaker/model/ListClusterNodesRequest.h>
+#include <aws/sagemaker/model/ListClusterOperationsRequest.h>
 #include <aws/sagemaker/model/ListClusterSchedulerConfigsRequest.h>
 #include <aws/sagemaker/model/ListClustersRequest.h>
 #include <aws/sagemaker/model/ListCodeRepositoriesRequest.h>
@@ -117,9 +120,6 @@
 #include <aws/sagemaker/model/ListModelMetadataRequest.h>
 #include <aws/sagemaker/model/ListModelPackageGroupsRequest.h>
 #include <aws/sagemaker/model/ListModelPackagesRequest.h>
-#include <aws/sagemaker/model/ListModelQualityJobDefinitionsRequest.h>
-#include <aws/sagemaker/model/ListModelsRequest.h>
-#include <aws/sagemaker/model/ListMonitoringAlertHistoryRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,13 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DescribeModelExplainabilityJobDefinitionOutcome SageMakerClient::DescribeModelExplainabilityJobDefinition(
+    const DescribeModelExplainabilityJobDefinitionRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeModelExplainabilityJobDefinitionOutcome(result.GetResultWithOwnership())
+                            : DescribeModelExplainabilityJobDefinitionOutcome(std::move(result.GetError()));
+}
 
 DescribeModelPackageOutcome SageMakerClient::DescribeModelPackage(const DescribeModelPackageRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -445,6 +452,13 @@ ListClusterEventsOutcome SageMakerClient::ListClusterEvents(const ListClusterEve
                             : ListClusterEventsOutcome(std::move(result.GetError()));
 }
 
+ListClusterExtensionVersionsOutcome SageMakerClient::ListClusterExtensionVersions(
+    const ListClusterExtensionVersionsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListClusterExtensionVersionsOutcome(result.GetResultWithOwnership())
+                            : ListClusterExtensionVersionsOutcome(std::move(result.GetError()));
+}
+
 ListClusterExtensionsOutcome SageMakerClient::ListClusterExtensions(const ListClusterExtensionsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListClusterExtensionsOutcome(result.GetResultWithOwnership())
@@ -455,6 +469,12 @@ ListClusterNodesOutcome SageMakerClient::ListClusterNodes(const ListClusterNodes
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListClusterNodesOutcome(result.GetResultWithOwnership())
                             : ListClusterNodesOutcome(std::move(result.GetError()));
+}
+
+ListClusterOperationsOutcome SageMakerClient::ListClusterOperations(const ListClusterOperationsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListClusterOperationsOutcome(result.GetResultWithOwnership())
+                            : ListClusterOperationsOutcome(std::move(result.GetError()));
 }
 
 ListClusterSchedulerConfigsOutcome SageMakerClient::ListClusterSchedulerConfigs(const ListClusterSchedulerConfigsRequest& request) const {
@@ -708,22 +728,4 @@ ListModelPackagesOutcome SageMakerClient::ListModelPackages(const ListModelPacka
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListModelPackagesOutcome(result.GetResultWithOwnership())
                             : ListModelPackagesOutcome(std::move(result.GetError()));
-}
-
-ListModelQualityJobDefinitionsOutcome SageMakerClient::ListModelQualityJobDefinitions(
-    const ListModelQualityJobDefinitionsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ListModelQualityJobDefinitionsOutcome(result.GetResultWithOwnership())
-                            : ListModelQualityJobDefinitionsOutcome(std::move(result.GetError()));
-}
-
-ListModelsOutcome SageMakerClient::ListModels(const ListModelsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ListModelsOutcome(result.GetResultWithOwnership()) : ListModelsOutcome(std::move(result.GetError()));
-}
-
-ListMonitoringAlertHistoryOutcome SageMakerClient::ListMonitoringAlertHistory(const ListMonitoringAlertHistoryRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? ListMonitoringAlertHistoryOutcome(result.GetResultWithOwnership())
-                            : ListMonitoringAlertHistoryOutcome(std::move(result.GetError()));
 }

@@ -21,8 +21,10 @@
 #include <aws/sagemaker/model/ListAutoMLJobsPaginationTraits.h>
 #include <aws/sagemaker/model/ListCandidatesForAutoMLJobPaginationTraits.h>
 #include <aws/sagemaker/model/ListClusterEventsPaginationTraits.h>
+#include <aws/sagemaker/model/ListClusterExtensionVersionsPaginationTraits.h>
 #include <aws/sagemaker/model/ListClusterExtensionsPaginationTraits.h>
 #include <aws/sagemaker/model/ListClusterNodesPaginationTraits.h>
+#include <aws/sagemaker/model/ListClusterOperationsPaginationTraits.h>
 #include <aws/sagemaker/model/ListClusterSchedulerConfigsPaginationTraits.h>
 #include <aws/sagemaker/model/ListClustersPaginationTraits.h>
 #include <aws/sagemaker/model/ListCodeRepositoriesPaginationTraits.h>
@@ -141,8 +143,14 @@ using ListClusterEventsPaginator = Aws::Utils::Pagination::Paginator<SageMakerCl
 using ListClusterExtensionsPaginator =
     Aws::Utils::Pagination::Paginator<SageMakerClient, Model::ListClusterExtensionsRequest,
                                       Pagination::ListClusterExtensionsPaginationTraits<SageMakerClient>>;
+using ListClusterExtensionVersionsPaginator =
+    Aws::Utils::Pagination::Paginator<SageMakerClient, Model::ListClusterExtensionVersionsRequest,
+                                      Pagination::ListClusterExtensionVersionsPaginationTraits<SageMakerClient>>;
 using ListClusterNodesPaginator = Aws::Utils::Pagination::Paginator<SageMakerClient, Model::ListClusterNodesRequest,
                                                                     Pagination::ListClusterNodesPaginationTraits<SageMakerClient>>;
+using ListClusterOperationsPaginator =
+    Aws::Utils::Pagination::Paginator<SageMakerClient, Model::ListClusterOperationsRequest,
+                                      Pagination::ListClusterOperationsPaginationTraits<SageMakerClient>>;
 using ListClustersPaginator = Aws::Utils::Pagination::Paginator<SageMakerClient, Model::ListClustersRequest,
                                                                 Pagination::ListClustersPaginationTraits<SageMakerClient>>;
 using ListClusterSchedulerConfigsPaginator =

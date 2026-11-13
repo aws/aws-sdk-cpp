@@ -63,5 +63,9 @@ Aws::String CreateProfileRequest::SerializePayload() const {
     payload.WithBool("acceptRoleSessionName", m_acceptRoleSessionName);
   }
 
+  if (m_aliasNameHasBeenSet) {
+    payload.WithString("aliasName", m_aliasName);
+  }
+
   return payload.View().WriteReadable();
 }

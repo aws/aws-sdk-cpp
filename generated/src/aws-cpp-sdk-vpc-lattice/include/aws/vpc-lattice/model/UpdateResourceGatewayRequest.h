@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/vpc-lattice/VPCLatticeRequest.h>
 #include <aws/vpc-lattice/VPCLattice_EXPORTS.h>
+#include <aws/vpc-lattice/model/ResourceConfigDnsResolution.h>
 
 #include <utility>
 
@@ -70,12 +71,37 @@ class UpdateResourceGatewayRequest : public VPCLatticeRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates how DNS is resolved for resource configurations associated with
+   * this resource gateway.</p> <ul> <li> <p> <code>IN_VPC</code> - DNS resolution
+   * occurs privately within the resource gateway's VPC. Use this when your resource
+   * domain names are hosted in private Route 53 hosted zones or on-premises DNS
+   * servers reachable from the VPC.</p> </li> <li> <p> <code>PUBLIC</code> - DNS
+   * resolution occurs against public DNS resolvers. Use this when your resource
+   * domain names are publicly resolvable.</p> </li> </ul>
+   */
+  inline ResourceConfigDnsResolution GetResourceConfigDnsResolution() const { return m_resourceConfigDnsResolution; }
+  inline bool ResourceConfigDnsResolutionHasBeenSet() const { return m_resourceConfigDnsResolutionHasBeenSet; }
+  inline void SetResourceConfigDnsResolution(ResourceConfigDnsResolution value) {
+    m_resourceConfigDnsResolutionHasBeenSet = true;
+    m_resourceConfigDnsResolution = value;
+  }
+  inline UpdateResourceGatewayRequest& WithResourceConfigDnsResolution(ResourceConfigDnsResolution value) {
+    SetResourceConfigDnsResolution(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_resourceGatewayIdentifier;
 
   Aws::Vector<Aws::String> m_securityGroupIds;
+
+  ResourceConfigDnsResolution m_resourceConfigDnsResolution{ResourceConfigDnsResolution::NOT_SET};
   bool m_resourceGatewayIdentifierHasBeenSet = false;
   bool m_securityGroupIdsHasBeenSet = false;
+  bool m_resourceConfigDnsResolutionHasBeenSet = false;
 };
 
 }  // namespace Model

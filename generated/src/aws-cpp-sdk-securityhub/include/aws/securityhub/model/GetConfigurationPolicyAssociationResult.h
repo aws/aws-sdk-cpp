@@ -122,7 +122,13 @@ class GetConfigurationPolicyAssociationResult {
   ///@{
   /**
    * <p> The current status of the association between the specified target and the
-   * configuration. </p>
+   * configuration. Possible values are: </p> <ul> <li> <p> <code>PENDING</code> -
+   * The association is in progress.</p> </li> <li> <p> <code>SUCCESS</code> - The
+   * association succeeded.</p> </li> <li> <p> <code>FAILED</code> - The association
+   * failed. For details, see <code>AssociationStatusMessage</code>.</p> </li> <li>
+   * <p> <code>DISABLED</code> - Central configuration is disabled because the
+   * organization is managed by Security Hub CSPM policies in Organizations.</p>
+   * </li> </ul>
    */
   inline ConfigurationPolicyAssociationStatus GetAssociationStatus() const { return m_associationStatus; }
   inline void SetAssociationStatus(ConfigurationPolicyAssociationStatus value) {

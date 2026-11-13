@@ -493,8 +493,8 @@ class InstanceProperty {
   /**
    * <p>The type of the source resource. Valid values:
    * <code>AWS::EC2::Instance</code> | <code>AWS::SSM::ManagedInstance</code> |
-   * <code>AWS::IoT::Thing</code> |
-   * <code>Microsoft.Compute/virtualMachines</code>.</p>
+   * <code>AWS::IoT::Thing</code> | <code>Microsoft.Compute/virtualMachines</code> |
+   * <code>compute.googleapis.com/Instance</code>.</p>
    */
   inline SourceType GetSourceType() const { return m_sourceType; }
   inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }

@@ -135,8 +135,8 @@ class UpdateBudgetRequest : public DeadlineRequest {
 
   ///@{
   /**
-   * <p>Updates the status of the budget.</p> <ul> <li> <p> <code>ACTIVE</code>–The
-   * budget is being evaluated.</p> </li> <li> <p> <code>INACTIVE</code>–The budget
+   * <p>Updates the status of the budget.</p> <ul> <li> <p> <code>ACTIVE</code> - The
+   * budget is being evaluated.</p> </li> <li> <p> <code>INACTIVE</code> - The budget
    * is inactive. This can include Expired, Canceled, or deleted Deleted
    * statuses.</p> </li> </ul>
    */

@@ -68,7 +68,10 @@ class OrganizationConfiguration {
    * <p> Describes whether central configuration could be enabled as the
    * <code>ConfigurationType</code> for the organization. If your
    * <code>ConfigurationType</code> is local configuration, then the value of
-   * <code>Status</code> is always <code>ENABLED</code>. </p>
+   * <code>Status</code> is always <code>ENABLED</code>. </p> <p> If the value of
+   * <code>Status</code> is <code>DISABLED</code>, central configuration is disabled
+   * because the organization is managed by Security Hub CSPM policies in
+   * Organizations. </p>
    */
   inline OrganizationConfigurationStatus GetStatus() const { return m_status; }
   inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }

@@ -22,12 +22,11 @@ namespace NetworkFirewall {
 namespace Model {
 
 /**
- * <p>Contains the VPC and subnets for a proxy mode firewall endpoint. You use it
- * in <code>CreateFirewall</code> when <code>NoSourcePreservation</code> is
- * <code>TRUE</code>, to specify where Network Firewall creates the firewall
- * endpoint. </p> <p>This differs from <code>VpcEndpointAssociation</code>, which
- * defines additional secondary endpoints for a firewall in other VPCs.
- * </p><p><h3>See Also:</h3>   <a
+ * <p>The VPC and subnets for the endpoints of a proxy mode firewall. You use this
+ * in <code>CreateFirewall</code>. Network Firewall creates the firewall endpoints
+ * and the firewall's NAT gateways in this VPC.</p> <p>This differs from
+ * <code>VpcEndpointAssociation</code>, which defines additional endpoints for a
+ * firewall in other VPCs.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/VpcEndpoint">AWS
  * API Reference</a></p>
  */
@@ -40,8 +39,8 @@ class VpcEndpoint {
 
   ///@{
   /**
-   * <p>The unique identifier of the VPC where Network Firewall creates the proxy
-   * mode firewall endpoint. </p>
+   * <p>The ID of the VPC where Network Firewall creates the endpoints and NAT
+   * gateways of a proxy mode firewall.</p>
    */
   inline const Aws::String& GetVpcId() const { return m_vpcId; }
   inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
@@ -59,9 +58,9 @@ class VpcEndpoint {
 
   ///@{
   /**
-   * <p>The subnets in which Network Firewall creates the firewall endpoint for a
-   * proxy mode firewall. Each subnet must belong to a different Availability Zone in
-   * the VPC. </p>
+   * <p>The subnets where Network Firewall creates the firewall endpoints of a proxy
+   * mode firewall. Specify one subnet for each Availability Zone, and a NAT gateway
+   * mapping in each of those Availability Zones.</p>
    */
   inline const Aws::Vector<SubnetMapping>& GetSubnetMappings() const { return m_subnetMappings; }
   inline bool SubnetMappingsHasBeenSet() const { return m_subnetMappingsHasBeenSet; }

@@ -155,7 +155,8 @@ class IpamRoutingPolicyRegistration {
    * <code>pending-activate</code> | <code>activate-failed</code> |
    * <code>create-in-progress</code> | <code>create-complete</code> |
    * <code>update-in-progress</code> | <code>update-complete</code> |
-   * <code>delete-in-progress</code> | <code>delete-complete</code>.</p>
+   * <code>delete-in-progress</code> | <code>delete-complete</code> |
+   * <code>disable-complete</code>.</p>
    */
   inline IpamRoutingPolicyRegistrationState GetState() const { return m_state; }
   inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }

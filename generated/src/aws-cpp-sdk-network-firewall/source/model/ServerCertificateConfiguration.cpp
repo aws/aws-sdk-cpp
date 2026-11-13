@@ -123,6 +123,15 @@ ServerCertificateConfiguration& ServerCertificateConfiguration::operator=(const 
               else if (initialKeyStr == "CheckCertificateRevocationStatus") {
                 m_checkCertificateRevocationStatus = CheckCertificateRevocationStatusActions(decoder);
                 m_checkCertificateRevocationStatusHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "DefaultDecryptionBehavior") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_defaultDecryptionBehavior = DecryptionActionMapper::GetDecryptionActionForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_defaultDecryptionBehaviorHasBeenSet = true;
               } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
@@ -241,6 +250,15 @@ ServerCertificateConfiguration& ServerCertificateConfiguration::operator=(const 
             else if (initialKeyStr == "CheckCertificateRevocationStatus") {
               m_checkCertificateRevocationStatus = CheckCertificateRevocationStatusActions(decoder);
               m_checkCertificateRevocationStatusHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "DefaultDecryptionBehavior") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_defaultDecryptionBehavior = DecryptionActionMapper::GetDecryptionActionForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_defaultDecryptionBehaviorHasBeenSet = true;
             } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
@@ -267,6 +285,9 @@ void ServerCertificateConfiguration::CborEncode(Aws::Crt::Cbor::CborEncoder& enc
     mapSize++;
   }
   if (m_checkCertificateRevocationStatusHasBeenSet) {
+    mapSize++;
+  }
+  if (m_defaultDecryptionBehaviorHasBeenSet) {
     mapSize++;
   }
 
@@ -296,6 +317,12 @@ void ServerCertificateConfiguration::CborEncode(Aws::Crt::Cbor::CborEncoder& enc
   if (m_checkCertificateRevocationStatusHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("CheckCertificateRevocationStatus"));
     m_checkCertificateRevocationStatus.CborEncode(encoder);
+  }
+
+  if (m_defaultDecryptionBehaviorHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("DefaultDecryptionBehavior"));
+    encoder.WriteText(
+        Aws::Crt::ByteCursorFromCString(DecryptionActionMapper::GetNameForDecryptionAction(m_defaultDecryptionBehavior).c_str()));
   }
 }
 

@@ -204,6 +204,11 @@ Stack& Stack::operator=(const XmlNode& xmlNode) {
 
       m_lastOperationsHasBeenSet = true;
     }
+    XmlNode aliasNameNode = resultNode.FirstChild("AliasName");
+    if (!aliasNameNode.IsNull()) {
+      m_aliasName = Aws::Utils::Xml::DecodeEscapedXmlText(aliasNameNode.GetText());
+      m_aliasNameHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -359,6 +364,10 @@ void Stack::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
       item.OutputToStream(oStream, lastOperationsSs.str().c_str());
     }
   }
+
+  if (m_aliasNameHasBeenSet) {
+    oStream << location << index << locationValue << ".AliasName=" << StringUtils::URLEncode(m_aliasName.c_str()) << "&";
+  }
 }
 
 void Stack::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -480,6 +489,9 @@ void Stack::OutputToStream(Aws::OStream& oStream, const char* location) const {
       lastOperationsSs << location << ".LastOperations.member." << lastOperationsIdx++;
       item.OutputToStream(oStream, lastOperationsSs.str().c_str());
     }
+  }
+  if (m_aliasNameHasBeenSet) {
+    oStream << location << ".AliasName=" << StringUtils::URLEncode(m_aliasName.c_str()) << "&";
   }
 }
 

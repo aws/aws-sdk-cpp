@@ -51,6 +51,18 @@ CrlDetail& CrlDetail::operator=(JsonView jsonValue) {
     m_updatedAt = jsonValue.GetString("updatedAt");
     m_updatedAtHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("aliasName")) {
+    m_aliasName = jsonValue.GetString("aliasName");
+    m_aliasNameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("aliasArn")) {
+    m_aliasArn = jsonValue.GetString("aliasArn");
+    m_aliasArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("previousAliasName")) {
+    m_previousAliasName = jsonValue.GetString("previousAliasName");
+    m_previousAliasNameHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -87,6 +99,18 @@ JsonValue CrlDetail::Jsonize() const {
 
   if (m_updatedAtHasBeenSet) {
     payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if (m_aliasNameHasBeenSet) {
+    payload.WithString("aliasName", m_aliasName);
+  }
+
+  if (m_aliasArnHasBeenSet) {
+    payload.WithString("aliasArn", m_aliasArn);
+  }
+
+  if (m_previousAliasNameHasBeenSet) {
+    payload.WithString("previousAliasName", m_previousAliasName);
   }
 
   return payload;

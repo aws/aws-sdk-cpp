@@ -427,7 +427,14 @@ class JobUpdate {
    * versions, see <a
    * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
    * in the developer guide.</p> <p>If not provided in the update request, the Glue
-   * version retains the value from the existing job definition.</p>
+   * version retains the value from the existing job definition.</p> <p>Set
+   * <code>GlueVersion</code> to <code>auto</code> to turn on automatic version
+   * upgrades for the job. For more information, see <a
+   * href="https://docs.aws.amazon.com/glue/latest/dg/auto-version-upgrades.html">Automatic
+   * version upgrades for Glue jobs</a> in the developer guide. For the job
+   * requirements, see <a
+   * href="https://docs.aws.amazon.com/glue/latest/dg/auto-version-upgrades.html#auto-version-upgrades-before-you-start">Before
+   * you start</a>.</p>
    */
   inline const Aws::String& GetGlueVersion() const { return m_glueVersion; }
   inline bool GlueVersionHasBeenSet() const { return m_glueVersionHasBeenSet; }

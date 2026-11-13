@@ -7,6 +7,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/SSM_EXPORTS.h>
+#include <aws/ssm/model/Provider.h>
 
 #include <utility>
 
@@ -139,6 +140,43 @@ class CloudConnectorSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The third-party cloud provider that the cloud connector connects to. Valid
+   * values: <code>Azure</code> | <code>GCP</code>.</p>
+   */
+  inline Provider GetProvider() const { return m_provider; }
+  inline bool ProviderHasBeenSet() const { return m_providerHasBeenSet; }
+  inline void SetProvider(Provider value) {
+    m_providerHasBeenSet = true;
+    m_provider = value;
+  }
+  inline CloudConnectorSummary& WithProvider(Provider value) {
+    SetProvider(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ARN of the Amazon Web Services Config connector associated with this
+   * cloud connector. This value is returned only if the cloud connector was created
+   * with an Amazon Web Services Config connector.</p>
+   */
+  inline const Aws::String& GetConfigConnectorArn() const { return m_configConnectorArn; }
+  inline bool ConfigConnectorArnHasBeenSet() const { return m_configConnectorArnHasBeenSet; }
+  template <typename ConfigConnectorArnT = Aws::String>
+  void SetConfigConnectorArn(ConfigConnectorArnT&& value) {
+    m_configConnectorArnHasBeenSet = true;
+    m_configConnectorArn = std::forward<ConfigConnectorArnT>(value);
+  }
+  template <typename ConfigConnectorArnT = Aws::String>
+  CloudConnectorSummary& WithConfigConnectorArn(ConfigConnectorArnT&& value) {
+    SetConfigConnectorArn(std::forward<ConfigConnectorArnT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_cloudConnectorId;
 
@@ -151,12 +189,18 @@ class CloudConnectorSummary {
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::Utils::DateTime m_updatedAt{};
+
+  Provider m_provider{Provider::NOT_SET};
+
+  Aws::String m_configConnectorArn;
   bool m_cloudConnectorIdHasBeenSet = false;
   bool m_displayNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
+  bool m_providerHasBeenSet = false;
+  bool m_configConnectorArnHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -965,7 +965,7 @@ class AWS_DEADLINE_API DeadlineClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Creates a worker. A worker tells your instance how much processing power
-   * (vCPU), and memory (GiB) you’ll need to assemble the digital assets held within
+   * (vCPU), and memory (GiB) you'll need to assemble the digital assets held within
    * a particular instance. You can specify certain instance types to use, or let the
    * worker know which instances types to exclude.</p> <p>Deadline Cloud limits the
    * number of workers to less than or equal to the fleet's maximum worker count. The

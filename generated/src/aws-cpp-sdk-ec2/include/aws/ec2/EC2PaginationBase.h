@@ -87,6 +87,8 @@
 #include <aws/ec2/model/DescribeNetworkInsightsPathsPaginationTraits.h>
 #include <aws/ec2/model/DescribeNetworkInterfacePermissionsPaginationTraits.h>
 #include <aws/ec2/model/DescribeNetworkInterfacesPaginationTraits.h>
+#include <aws/ec2/model/DescribeNetworkingFlexCostAllocationPoliciesPaginationTraits.h>
+#include <aws/ec2/model/DescribeNetworkingFlexCostAllocationPolicyAssociationsPaginationTraits.h>
 #include <aws/ec2/model/DescribePrefixListsPaginationTraits.h>
 #include <aws/ec2/model/DescribePrincipalIdFormatPaginationTraits.h>
 #include <aws/ec2/model/DescribePublicIpv4PoolsPaginationTraits.h>
@@ -1073,6 +1075,32 @@ class EC2PaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeNetworkAclsRequest,
                                              Pagination::DescribeNetworkAclsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for DescribeNetworkingFlexCostAllocationPolicies operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeNetworkingFlexCostAllocationPoliciesRequest,
+                                    Pagination::DescribeNetworkingFlexCostAllocationPoliciesPaginationTraits<DerivedClient>>
+  DescribeNetworkingFlexCostAllocationPoliciesPaginator(const Model::DescribeNetworkingFlexCostAllocationPoliciesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeNetworkingFlexCostAllocationPoliciesRequest,
+                                             Pagination::DescribeNetworkingFlexCostAllocationPoliciesPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for DescribeNetworkingFlexCostAllocationPolicyAssociations operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::DescribeNetworkingFlexCostAllocationPolicyAssociationsRequest,
+                                    Pagination::DescribeNetworkingFlexCostAllocationPolicyAssociationsPaginationTraits<DerivedClient>>
+  DescribeNetworkingFlexCostAllocationPolicyAssociationsPaginator(
+      const Model::DescribeNetworkingFlexCostAllocationPolicyAssociationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<
+        DerivedClient, Model::DescribeNetworkingFlexCostAllocationPolicyAssociationsRequest,
+        Pagination::DescribeNetworkingFlexCostAllocationPolicyAssociationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

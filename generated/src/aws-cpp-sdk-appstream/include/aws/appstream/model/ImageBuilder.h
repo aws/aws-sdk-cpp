@@ -7,6 +7,7 @@
 #include <aws/appstream/AppStream_EXPORTS.h>
 #include <aws/appstream/model/AccessEndpoint.h>
 #include <aws/appstream/model/DomainJoinInfo.h>
+#include <aws/appstream/model/ImageBuilderAgentAccessConfig.h>
 #include <aws/appstream/model/ImageBuilderState.h>
 #include <aws/appstream/model/ImageBuilderStateChangeReason.h>
 #include <aws/appstream/model/LatestAppstreamAgentVersion.h>
@@ -469,6 +470,25 @@ class ImageBuilder {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The agent access configuration of the image builder, if agent access is
+   * enabled.</p>
+   */
+  inline const ImageBuilderAgentAccessConfig& GetAgentAccessConfig() const { return m_agentAccessConfig; }
+  inline bool AgentAccessConfigHasBeenSet() const { return m_agentAccessConfigHasBeenSet; }
+  template <typename AgentAccessConfigT = ImageBuilderAgentAccessConfig>
+  void SetAgentAccessConfig(AgentAccessConfigT&& value) {
+    m_agentAccessConfigHasBeenSet = true;
+    m_agentAccessConfig = std::forward<AgentAccessConfigT>(value);
+  }
+  template <typename AgentAccessConfigT = ImageBuilderAgentAccessConfig>
+  ImageBuilder& WithAgentAccessConfig(AgentAccessConfigT&& value) {
+    SetAgentAccessConfig(std::forward<AgentAccessConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -511,6 +531,8 @@ class ImageBuilder {
   LatestAppstreamAgentVersion m_latestAppstreamAgentVersion{LatestAppstreamAgentVersion::NOT_SET};
 
   bool m_disableIMDSV1{false};
+
+  ImageBuilderAgentAccessConfig m_agentAccessConfig;
   bool m_nameHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_imageArnHasBeenSet = false;
@@ -532,6 +554,7 @@ class ImageBuilder {
   bool m_rootVolumeConfigHasBeenSet = false;
   bool m_latestAppstreamAgentVersionHasBeenSet = false;
   bool m_disableIMDSV1HasBeenSet = false;
+  bool m_agentAccessConfigHasBeenSet = false;
 };
 
 }  // namespace Model

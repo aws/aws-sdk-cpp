@@ -75,11 +75,12 @@ class CreateIpamInternetRegistryAssociationRequest : public EC2Request {
 
   ///@{
   /**
-   * <p>The Regional Internet Registry to associate with. Possible values:</p> <ul>
-   * <li> <p> <code>ripe</code> - RIPE NCC (Europe, the Middle East, and Central
-   * Asia).</p> </li> <li> <p> <code>apnic</code> - APNIC (Asia Pacific).</p> </li>
-   * <li> <p> <code>arin</code> - ARIN (North America).</p> </li> <li> <p>
-   * <code>lacnic</code> - LACNIC (Latin America and the Caribbean).</p> </li> </ul>
+   * <p>The internet registry to associate with. Possible values:</p> <ul> <li> <p>
+   * <code>ripe</code> - RIPE NCC (Europe, the Middle East, and Central Asia).</p>
+   * </li> <li> <p> <code>apnic</code> - APNIC (Asia Pacific).</p> </li> <li> <p>
+   * <code>arin</code> - ARIN (North America).</p> </li> <li> <p> <code>lacnic</code>
+   * - LACNIC (Latin America and the Caribbean).</p> </li> <li> <p>
+   * <code>nicbr</code> - NIC.br (Brazil).</p> </li> </ul>
    */
   inline Rir GetRir() const { return m_rir; }
   inline bool RirHasBeenSet() const { return m_rirHasBeenSet; }

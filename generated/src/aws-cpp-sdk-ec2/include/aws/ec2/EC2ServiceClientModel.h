@@ -51,6 +51,7 @@
 #include <aws/ec2/model/AssociateIpamByoasnResponse.h>
 #include <aws/ec2/model/AssociateIpamResourceDiscoveryResponse.h>
 #include <aws/ec2/model/AssociateNatGatewayAddressResponse.h>
+#include <aws/ec2/model/AssociateNetworkingFlexCostAllocationPolicyResponse.h>
 #include <aws/ec2/model/AssociateRouteServerResponse.h>
 #include <aws/ec2/model/AssociateRouteTableResponse.h>
 #include <aws/ec2/model/AssociateSecurityGroupVpcResponse.h>
@@ -150,6 +151,7 @@
 #include <aws/ec2/model/CreateNetworkInsightsPathResponse.h>
 #include <aws/ec2/model/CreateNetworkInterfacePermissionResponse.h>
 #include <aws/ec2/model/CreateNetworkInterfaceResponse.h>
+#include <aws/ec2/model/CreateNetworkingFlexCostAllocationPolicyResponse.h>
 #include <aws/ec2/model/CreatePlacementGroupRequest.h>
 #include <aws/ec2/model/CreatePlacementGroupResponse.h>
 #include <aws/ec2/model/CreatePublicIpv4PoolRequest.h>
@@ -255,6 +257,7 @@
 #include <aws/ec2/model/DeleteNetworkInsightsAnalysisResponse.h>
 #include <aws/ec2/model/DeleteNetworkInsightsPathResponse.h>
 #include <aws/ec2/model/DeleteNetworkInterfacePermissionResponse.h>
+#include <aws/ec2/model/DeleteNetworkingFlexCostAllocationPoliciesResponse.h>
 #include <aws/ec2/model/DeletePublicIpv4PoolResponse.h>
 #include <aws/ec2/model/DeleteQueuedReservedInstancesResponse.h>
 #include <aws/ec2/model/DeleteRouteServerEndpointResponse.h>
@@ -516,6 +519,10 @@
 #include <aws/ec2/model/DescribeNetworkInterfacePermissionsResponse.h>
 #include <aws/ec2/model/DescribeNetworkInterfacesRequest.h>
 #include <aws/ec2/model/DescribeNetworkInterfacesResponse.h>
+#include <aws/ec2/model/DescribeNetworkingFlexCostAllocationPoliciesRequest.h>
+#include <aws/ec2/model/DescribeNetworkingFlexCostAllocationPoliciesResponse.h>
+#include <aws/ec2/model/DescribeNetworkingFlexCostAllocationPolicyAssociationsRequest.h>
+#include <aws/ec2/model/DescribeNetworkingFlexCostAllocationPolicyAssociationsResponse.h>
 #include <aws/ec2/model/DescribeOutpostLagsRequest.h>
 #include <aws/ec2/model/DescribeOutpostLagsResponse.h>
 #include <aws/ec2/model/DescribePlacementGroupsRequest.h>
@@ -713,6 +720,7 @@
 #include <aws/ec2/model/DisassociateIpamByoasnResponse.h>
 #include <aws/ec2/model/DisassociateIpamResourceDiscoveryResponse.h>
 #include <aws/ec2/model/DisassociateNatGatewayAddressResponse.h>
+#include <aws/ec2/model/DisassociateNetworkingFlexCostAllocationPolicyResponse.h>
 #include <aws/ec2/model/DisassociateRouteServerResponse.h>
 #include <aws/ec2/model/DisassociateSecurityGroupVpcResponse.h>
 #include <aws/ec2/model/DisassociateSubnetCidrBlockResponse.h>
@@ -821,6 +829,7 @@
 #include <aws/ec2/model/GetManagedResourceVisibilityResponse.h>
 #include <aws/ec2/model/GetNetworkInsightsAccessScopeAnalysisFindingsResponse.h>
 #include <aws/ec2/model/GetNetworkInsightsAccessScopeContentResponse.h>
+#include <aws/ec2/model/GetNetworkingFlexCostAllocationPolicyVersionsResponse.h>
 #include <aws/ec2/model/GetPasswordDataResponse.h>
 #include <aws/ec2/model/GetReservedInstancesExchangeQuoteResponse.h>
 #include <aws/ec2/model/GetRouteServerAssociationsResponse.h>
@@ -907,6 +916,7 @@
 #include <aws/ec2/model/ModifyManagedPrefixListResponse.h>
 #include <aws/ec2/model/ModifyManagedResourceVisibilityResponse.h>
 #include <aws/ec2/model/ModifyMetricCategoryResponse.h>
+#include <aws/ec2/model/ModifyNetworkingFlexCostAllocationPolicyResponse.h>
 #include <aws/ec2/model/ModifyPrivateDnsNameOptionsResponse.h>
 #include <aws/ec2/model/ModifyPublicIpDnsNameOptionsResponse.h>
 #include <aws/ec2/model/ModifyReservedInstancesResponse.h>
@@ -1087,6 +1097,7 @@ class AssociateInstanceEventWindowRequest;
 class AssociateIpamByoasnRequest;
 class AssociateIpamResourceDiscoveryRequest;
 class AssociateNatGatewayAddressRequest;
+class AssociateNetworkingFlexCostAllocationPolicyRequest;
 class AssociateRouteServerRequest;
 class AssociateRouteTableRequest;
 class AssociateSecurityGroupVpcRequest;
@@ -1181,6 +1192,7 @@ class CreateNetworkInsightsAccessScopeRequest;
 class CreateNetworkInsightsPathRequest;
 class CreateNetworkInterfaceRequest;
 class CreateNetworkInterfacePermissionRequest;
+class CreateNetworkingFlexCostAllocationPolicyRequest;
 class CreatePlacementGroupRequest;
 class CreatePublicIpv4PoolRequest;
 class CreateReplaceRootVolumeTaskRequest;
@@ -1283,6 +1295,7 @@ class DeleteNetworkInsightsAnalysisRequest;
 class DeleteNetworkInsightsPathRequest;
 class DeleteNetworkInterfaceRequest;
 class DeleteNetworkInterfacePermissionRequest;
+class DeleteNetworkingFlexCostAllocationPoliciesRequest;
 class DeletePlacementGroupRequest;
 class DeletePublicIpv4PoolRequest;
 class DeleteQueuedReservedInstancesRequest;
@@ -1455,6 +1468,8 @@ class DescribeNetworkInsightsPathsRequest;
 class DescribeNetworkInterfaceAttributeRequest;
 class DescribeNetworkInterfacePermissionsRequest;
 class DescribeNetworkInterfacesRequest;
+class DescribeNetworkingFlexCostAllocationPoliciesRequest;
+class DescribeNetworkingFlexCostAllocationPolicyAssociationsRequest;
 class DescribeOutpostLagsRequest;
 class DescribePlacementGroupsRequest;
 class DescribePrefixListsRequest;
@@ -1575,6 +1590,7 @@ class DisassociateInstanceEventWindowRequest;
 class DisassociateIpamByoasnRequest;
 class DisassociateIpamResourceDiscoveryRequest;
 class DisassociateNatGatewayAddressRequest;
+class DisassociateNetworkingFlexCostAllocationPolicyRequest;
 class DisassociateRouteServerRequest;
 class DisassociateRouteTableRequest;
 class DisassociateSecurityGroupVpcRequest;
@@ -1669,6 +1685,7 @@ class GetManagedPrefixListEntriesRequest;
 class GetManagedResourceVisibilityRequest;
 class GetNetworkInsightsAccessScopeAnalysisFindingsRequest;
 class GetNetworkInsightsAccessScopeContentRequest;
+class GetNetworkingFlexCostAllocationPolicyVersionsRequest;
 class GetPasswordDataRequest;
 class GetReservedInstancesExchangeQuoteRequest;
 class GetRouteServerAssociationsRequest;
@@ -1749,6 +1766,7 @@ class ModifyManagedPrefixListRequest;
 class ModifyManagedResourceVisibilityRequest;
 class ModifyMetricCategoryRequest;
 class ModifyNetworkInterfaceAttributeRequest;
+class ModifyNetworkingFlexCostAllocationPolicyRequest;
 class ModifyPrivateDnsNameOptionsRequest;
 class ModifyPublicIpDnsNameOptionsRequest;
 class ModifyReservedInstancesRequest;
@@ -1907,6 +1925,8 @@ typedef Aws::Utils::Outcome<AssociateInstanceEventWindowResponse, EC2Error> Asso
 typedef Aws::Utils::Outcome<AssociateIpamByoasnResponse, EC2Error> AssociateIpamByoasnOutcome;
 typedef Aws::Utils::Outcome<AssociateIpamResourceDiscoveryResponse, EC2Error> AssociateIpamResourceDiscoveryOutcome;
 typedef Aws::Utils::Outcome<AssociateNatGatewayAddressResponse, EC2Error> AssociateNatGatewayAddressOutcome;
+typedef Aws::Utils::Outcome<AssociateNetworkingFlexCostAllocationPolicyResponse, EC2Error>
+    AssociateNetworkingFlexCostAllocationPolicyOutcome;
 typedef Aws::Utils::Outcome<AssociateRouteServerResponse, EC2Error> AssociateRouteServerOutcome;
 typedef Aws::Utils::Outcome<AssociateRouteTableResponse, EC2Error> AssociateRouteTableOutcome;
 typedef Aws::Utils::Outcome<AssociateSecurityGroupVpcResponse, EC2Error> AssociateSecurityGroupVpcOutcome;
@@ -2005,6 +2025,7 @@ typedef Aws::Utils::Outcome<CreateNetworkInsightsAccessScopeResponse, EC2Error> 
 typedef Aws::Utils::Outcome<CreateNetworkInsightsPathResponse, EC2Error> CreateNetworkInsightsPathOutcome;
 typedef Aws::Utils::Outcome<CreateNetworkInterfaceResponse, EC2Error> CreateNetworkInterfaceOutcome;
 typedef Aws::Utils::Outcome<CreateNetworkInterfacePermissionResponse, EC2Error> CreateNetworkInterfacePermissionOutcome;
+typedef Aws::Utils::Outcome<CreateNetworkingFlexCostAllocationPolicyResponse, EC2Error> CreateNetworkingFlexCostAllocationPolicyOutcome;
 typedef Aws::Utils::Outcome<CreatePlacementGroupResponse, EC2Error> CreatePlacementGroupOutcome;
 typedef Aws::Utils::Outcome<CreatePublicIpv4PoolResponse, EC2Error> CreatePublicIpv4PoolOutcome;
 typedef Aws::Utils::Outcome<CreateReplaceRootVolumeTaskResponse, EC2Error> CreateReplaceRootVolumeTaskOutcome;
@@ -2109,6 +2130,7 @@ typedef Aws::Utils::Outcome<DeleteNetworkInsightsAnalysisResponse, EC2Error> Del
 typedef Aws::Utils::Outcome<DeleteNetworkInsightsPathResponse, EC2Error> DeleteNetworkInsightsPathOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DeleteNetworkInterfaceOutcome;
 typedef Aws::Utils::Outcome<DeleteNetworkInterfacePermissionResponse, EC2Error> DeleteNetworkInterfacePermissionOutcome;
+typedef Aws::Utils::Outcome<DeleteNetworkingFlexCostAllocationPoliciesResponse, EC2Error> DeleteNetworkingFlexCostAllocationPoliciesOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DeletePlacementGroupOutcome;
 typedef Aws::Utils::Outcome<DeletePublicIpv4PoolResponse, EC2Error> DeletePublicIpv4PoolOutcome;
 typedef Aws::Utils::Outcome<DeleteQueuedReservedInstancesResponse, EC2Error> DeleteQueuedReservedInstancesOutcome;
@@ -2291,6 +2313,10 @@ typedef Aws::Utils::Outcome<DescribeNetworkInsightsPathsResponse, EC2Error> Desc
 typedef Aws::Utils::Outcome<DescribeNetworkInterfaceAttributeResponse, EC2Error> DescribeNetworkInterfaceAttributeOutcome;
 typedef Aws::Utils::Outcome<DescribeNetworkInterfacePermissionsResponse, EC2Error> DescribeNetworkInterfacePermissionsOutcome;
 typedef Aws::Utils::Outcome<DescribeNetworkInterfacesResponse, EC2Error> DescribeNetworkInterfacesOutcome;
+typedef Aws::Utils::Outcome<DescribeNetworkingFlexCostAllocationPoliciesResponse, EC2Error>
+    DescribeNetworkingFlexCostAllocationPoliciesOutcome;
+typedef Aws::Utils::Outcome<DescribeNetworkingFlexCostAllocationPolicyAssociationsResponse, EC2Error>
+    DescribeNetworkingFlexCostAllocationPolicyAssociationsOutcome;
 typedef Aws::Utils::Outcome<DescribeOutpostLagsResponse, EC2Error> DescribeOutpostLagsOutcome;
 typedef Aws::Utils::Outcome<DescribePlacementGroupsResponse, EC2Error> DescribePlacementGroupsOutcome;
 typedef Aws::Utils::Outcome<DescribePrefixListsResponse, EC2Error> DescribePrefixListsOutcome;
@@ -2415,6 +2441,8 @@ typedef Aws::Utils::Outcome<DisassociateInstanceEventWindowResponse, EC2Error> D
 typedef Aws::Utils::Outcome<DisassociateIpamByoasnResponse, EC2Error> DisassociateIpamByoasnOutcome;
 typedef Aws::Utils::Outcome<DisassociateIpamResourceDiscoveryResponse, EC2Error> DisassociateIpamResourceDiscoveryOutcome;
 typedef Aws::Utils::Outcome<DisassociateNatGatewayAddressResponse, EC2Error> DisassociateNatGatewayAddressOutcome;
+typedef Aws::Utils::Outcome<DisassociateNetworkingFlexCostAllocationPolicyResponse, EC2Error>
+    DisassociateNetworkingFlexCostAllocationPolicyOutcome;
 typedef Aws::Utils::Outcome<DisassociateRouteServerResponse, EC2Error> DisassociateRouteServerOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DisassociateRouteTableOutcome;
 typedef Aws::Utils::Outcome<DisassociateSecurityGroupVpcResponse, EC2Error> DisassociateSecurityGroupVpcOutcome;
@@ -2514,6 +2542,8 @@ typedef Aws::Utils::Outcome<GetManagedResourceVisibilityResponse, EC2Error> GetM
 typedef Aws::Utils::Outcome<GetNetworkInsightsAccessScopeAnalysisFindingsResponse, EC2Error>
     GetNetworkInsightsAccessScopeAnalysisFindingsOutcome;
 typedef Aws::Utils::Outcome<GetNetworkInsightsAccessScopeContentResponse, EC2Error> GetNetworkInsightsAccessScopeContentOutcome;
+typedef Aws::Utils::Outcome<GetNetworkingFlexCostAllocationPolicyVersionsResponse, EC2Error>
+    GetNetworkingFlexCostAllocationPolicyVersionsOutcome;
 typedef Aws::Utils::Outcome<GetPasswordDataResponse, EC2Error> GetPasswordDataOutcome;
 typedef Aws::Utils::Outcome<GetReservedInstancesExchangeQuoteResponse, EC2Error> GetReservedInstancesExchangeQuoteOutcome;
 typedef Aws::Utils::Outcome<GetRouteServerAssociationsResponse, EC2Error> GetRouteServerAssociationsOutcome;
@@ -2599,6 +2629,7 @@ typedef Aws::Utils::Outcome<ModifyManagedPrefixListResponse, EC2Error> ModifyMan
 typedef Aws::Utils::Outcome<ModifyManagedResourceVisibilityResponse, EC2Error> ModifyManagedResourceVisibilityOutcome;
 typedef Aws::Utils::Outcome<ModifyMetricCategoryResponse, EC2Error> ModifyMetricCategoryOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> ModifyNetworkInterfaceAttributeOutcome;
+typedef Aws::Utils::Outcome<ModifyNetworkingFlexCostAllocationPolicyResponse, EC2Error> ModifyNetworkingFlexCostAllocationPolicyOutcome;
 typedef Aws::Utils::Outcome<ModifyPrivateDnsNameOptionsResponse, EC2Error> ModifyPrivateDnsNameOptionsOutcome;
 typedef Aws::Utils::Outcome<ModifyPublicIpDnsNameOptionsResponse, EC2Error> ModifyPublicIpDnsNameOptionsOutcome;
 typedef Aws::Utils::Outcome<ModifyReservedInstancesResponse, EC2Error> ModifyReservedInstancesOutcome;
@@ -2765,6 +2796,7 @@ typedef std::future<AssociateInstanceEventWindowOutcome> AssociateInstanceEventW
 typedef std::future<AssociateIpamByoasnOutcome> AssociateIpamByoasnOutcomeCallable;
 typedef std::future<AssociateIpamResourceDiscoveryOutcome> AssociateIpamResourceDiscoveryOutcomeCallable;
 typedef std::future<AssociateNatGatewayAddressOutcome> AssociateNatGatewayAddressOutcomeCallable;
+typedef std::future<AssociateNetworkingFlexCostAllocationPolicyOutcome> AssociateNetworkingFlexCostAllocationPolicyOutcomeCallable;
 typedef std::future<AssociateRouteServerOutcome> AssociateRouteServerOutcomeCallable;
 typedef std::future<AssociateRouteTableOutcome> AssociateRouteTableOutcomeCallable;
 typedef std::future<AssociateSecurityGroupVpcOutcome> AssociateSecurityGroupVpcOutcomeCallable;
@@ -2862,6 +2894,7 @@ typedef std::future<CreateNetworkInsightsAccessScopeOutcome> CreateNetworkInsigh
 typedef std::future<CreateNetworkInsightsPathOutcome> CreateNetworkInsightsPathOutcomeCallable;
 typedef std::future<CreateNetworkInterfaceOutcome> CreateNetworkInterfaceOutcomeCallable;
 typedef std::future<CreateNetworkInterfacePermissionOutcome> CreateNetworkInterfacePermissionOutcomeCallable;
+typedef std::future<CreateNetworkingFlexCostAllocationPolicyOutcome> CreateNetworkingFlexCostAllocationPolicyOutcomeCallable;
 typedef std::future<CreatePlacementGroupOutcome> CreatePlacementGroupOutcomeCallable;
 typedef std::future<CreatePublicIpv4PoolOutcome> CreatePublicIpv4PoolOutcomeCallable;
 typedef std::future<CreateReplaceRootVolumeTaskOutcome> CreateReplaceRootVolumeTaskOutcomeCallable;
@@ -2965,6 +2998,7 @@ typedef std::future<DeleteNetworkInsightsAnalysisOutcome> DeleteNetworkInsightsA
 typedef std::future<DeleteNetworkInsightsPathOutcome> DeleteNetworkInsightsPathOutcomeCallable;
 typedef std::future<DeleteNetworkInterfaceOutcome> DeleteNetworkInterfaceOutcomeCallable;
 typedef std::future<DeleteNetworkInterfacePermissionOutcome> DeleteNetworkInterfacePermissionOutcomeCallable;
+typedef std::future<DeleteNetworkingFlexCostAllocationPoliciesOutcome> DeleteNetworkingFlexCostAllocationPoliciesOutcomeCallable;
 typedef std::future<DeletePlacementGroupOutcome> DeletePlacementGroupOutcomeCallable;
 typedef std::future<DeletePublicIpv4PoolOutcome> DeletePublicIpv4PoolOutcomeCallable;
 typedef std::future<DeleteQueuedReservedInstancesOutcome> DeleteQueuedReservedInstancesOutcomeCallable;
@@ -3139,6 +3173,9 @@ typedef std::future<DescribeNetworkInsightsPathsOutcome> DescribeNetworkInsights
 typedef std::future<DescribeNetworkInterfaceAttributeOutcome> DescribeNetworkInterfaceAttributeOutcomeCallable;
 typedef std::future<DescribeNetworkInterfacePermissionsOutcome> DescribeNetworkInterfacePermissionsOutcomeCallable;
 typedef std::future<DescribeNetworkInterfacesOutcome> DescribeNetworkInterfacesOutcomeCallable;
+typedef std::future<DescribeNetworkingFlexCostAllocationPoliciesOutcome> DescribeNetworkingFlexCostAllocationPoliciesOutcomeCallable;
+typedef std::future<DescribeNetworkingFlexCostAllocationPolicyAssociationsOutcome>
+    DescribeNetworkingFlexCostAllocationPolicyAssociationsOutcomeCallable;
 typedef std::future<DescribeOutpostLagsOutcome> DescribeOutpostLagsOutcomeCallable;
 typedef std::future<DescribePlacementGroupsOutcome> DescribePlacementGroupsOutcomeCallable;
 typedef std::future<DescribePrefixListsOutcome> DescribePrefixListsOutcomeCallable;
@@ -3260,6 +3297,7 @@ typedef std::future<DisassociateInstanceEventWindowOutcome> DisassociateInstance
 typedef std::future<DisassociateIpamByoasnOutcome> DisassociateIpamByoasnOutcomeCallable;
 typedef std::future<DisassociateIpamResourceDiscoveryOutcome> DisassociateIpamResourceDiscoveryOutcomeCallable;
 typedef std::future<DisassociateNatGatewayAddressOutcome> DisassociateNatGatewayAddressOutcomeCallable;
+typedef std::future<DisassociateNetworkingFlexCostAllocationPolicyOutcome> DisassociateNetworkingFlexCostAllocationPolicyOutcomeCallable;
 typedef std::future<DisassociateRouteServerOutcome> DisassociateRouteServerOutcomeCallable;
 typedef std::future<DisassociateRouteTableOutcome> DisassociateRouteTableOutcomeCallable;
 typedef std::future<DisassociateSecurityGroupVpcOutcome> DisassociateSecurityGroupVpcOutcomeCallable;
@@ -3354,6 +3392,7 @@ typedef std::future<GetManagedPrefixListEntriesOutcome> GetManagedPrefixListEntr
 typedef std::future<GetManagedResourceVisibilityOutcome> GetManagedResourceVisibilityOutcomeCallable;
 typedef std::future<GetNetworkInsightsAccessScopeAnalysisFindingsOutcome> GetNetworkInsightsAccessScopeAnalysisFindingsOutcomeCallable;
 typedef std::future<GetNetworkInsightsAccessScopeContentOutcome> GetNetworkInsightsAccessScopeContentOutcomeCallable;
+typedef std::future<GetNetworkingFlexCostAllocationPolicyVersionsOutcome> GetNetworkingFlexCostAllocationPolicyVersionsOutcomeCallable;
 typedef std::future<GetPasswordDataOutcome> GetPasswordDataOutcomeCallable;
 typedef std::future<GetReservedInstancesExchangeQuoteOutcome> GetReservedInstancesExchangeQuoteOutcomeCallable;
 typedef std::future<GetRouteServerAssociationsOutcome> GetRouteServerAssociationsOutcomeCallable;
@@ -3434,6 +3473,7 @@ typedef std::future<ModifyManagedPrefixListOutcome> ModifyManagedPrefixListOutco
 typedef std::future<ModifyManagedResourceVisibilityOutcome> ModifyManagedResourceVisibilityOutcomeCallable;
 typedef std::future<ModifyMetricCategoryOutcome> ModifyMetricCategoryOutcomeCallable;
 typedef std::future<ModifyNetworkInterfaceAttributeOutcome> ModifyNetworkInterfaceAttributeOutcomeCallable;
+typedef std::future<ModifyNetworkingFlexCostAllocationPolicyOutcome> ModifyNetworkingFlexCostAllocationPolicyOutcomeCallable;
 typedef std::future<ModifyPrivateDnsNameOptionsOutcome> ModifyPrivateDnsNameOptionsOutcomeCallable;
 typedef std::future<ModifyPublicIpDnsNameOptionsOutcome> ModifyPublicIpDnsNameOptionsOutcomeCallable;
 typedef std::future<ModifyReservedInstancesOutcome> ModifyReservedInstancesOutcomeCallable;
@@ -3666,6 +3706,10 @@ typedef std::function<void(const EC2Client*, const Model::AssociateIpamResourceD
 typedef std::function<void(const EC2Client*, const Model::AssociateNatGatewayAddressRequest&,
                            const Model::AssociateNatGatewayAddressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     AssociateNatGatewayAddressResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::AssociateNetworkingFlexCostAllocationPolicyRequest&,
+                           const Model::AssociateNetworkingFlexCostAllocationPolicyOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    AssociateNetworkingFlexCostAllocationPolicyResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::AssociateRouteServerRequest&, const Model::AssociateRouteServerOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     AssociateRouteServerResponseReceivedHandler;
@@ -3981,6 +4025,10 @@ typedef std::function<void(const EC2Client*, const Model::CreateNetworkInterface
                            const Model::CreateNetworkInterfacePermissionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateNetworkInterfacePermissionResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::CreateNetworkingFlexCostAllocationPolicyRequest&,
+                           const Model::CreateNetworkingFlexCostAllocationPolicyOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateNetworkingFlexCostAllocationPolicyResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::CreatePlacementGroupRequest&, const Model::CreatePlacementGroupOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreatePlacementGroupResponseReceivedHandler;
@@ -4327,6 +4375,10 @@ typedef std::function<void(const EC2Client*, const Model::DeleteNetworkInterface
                            const Model::DeleteNetworkInterfacePermissionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteNetworkInterfacePermissionResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::DeleteNetworkingFlexCostAllocationPoliciesRequest&,
+                           const Model::DeleteNetworkingFlexCostAllocationPoliciesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteNetworkingFlexCostAllocationPoliciesResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::DeletePlacementGroupRequest&, const Model::DeletePlacementGroupOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeletePlacementGroupResponseReceivedHandler;
@@ -4918,6 +4970,14 @@ typedef std::function<void(const EC2Client*, const Model::DescribeNetworkInterfa
 typedef std::function<void(const EC2Client*, const Model::DescribeNetworkInterfacesRequest&, const Model::DescribeNetworkInterfacesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeNetworkInterfacesResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::DescribeNetworkingFlexCostAllocationPoliciesRequest&,
+                           const Model::DescribeNetworkingFlexCostAllocationPoliciesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeNetworkingFlexCostAllocationPoliciesResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::DescribeNetworkingFlexCostAllocationPolicyAssociationsRequest&,
+                           const Model::DescribeNetworkingFlexCostAllocationPolicyAssociationsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeNetworkingFlexCostAllocationPolicyAssociationsResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::DescribeOutpostLagsRequest&, const Model::DescribeOutpostLagsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeOutpostLagsResponseReceivedHandler;
@@ -5342,6 +5402,10 @@ typedef std::function<void(const EC2Client*, const Model::DisassociateNatGateway
                            const Model::DisassociateNatGatewayAddressOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DisassociateNatGatewayAddressResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::DisassociateNetworkingFlexCostAllocationPolicyRequest&,
+                           const Model::DisassociateNetworkingFlexCostAllocationPolicyOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DisassociateNetworkingFlexCostAllocationPolicyResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::DisassociateRouteServerRequest&, const Model::DisassociateRouteServerOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DisassociateRouteServerResponseReceivedHandler;
@@ -5676,6 +5740,10 @@ typedef std::function<void(const EC2Client*, const Model::GetNetworkInsightsAcce
                            const Model::GetNetworkInsightsAccessScopeContentOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetNetworkInsightsAccessScopeContentResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::GetNetworkingFlexCostAllocationPolicyVersionsRequest&,
+                           const Model::GetNetworkingFlexCostAllocationPolicyVersionsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetNetworkingFlexCostAllocationPolicyVersionsResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::GetPasswordDataRequest&, const Model::GetPasswordDataOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetPasswordDataResponseReceivedHandler;
@@ -5955,6 +6023,10 @@ typedef std::function<void(const EC2Client*, const Model::ModifyNetworkInterface
                            const Model::ModifyNetworkInterfaceAttributeOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ModifyNetworkInterfaceAttributeResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::ModifyNetworkingFlexCostAllocationPolicyRequest&,
+                           const Model::ModifyNetworkingFlexCostAllocationPolicyOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ModifyNetworkingFlexCostAllocationPolicyResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::ModifyPrivateDnsNameOptionsRequest&,
                            const Model::ModifyPrivateDnsNameOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ModifyPrivateDnsNameOptionsResponseReceivedHandler;

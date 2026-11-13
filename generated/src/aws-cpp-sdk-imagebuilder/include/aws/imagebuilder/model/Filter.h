@@ -37,7 +37,13 @@ class Filter {
 
   ///@{
   /**
-   * <p>The name of the filter. Filter names are case-sensitive.</p>
+   * <p>The name of the filter. Filter names are case-sensitive.</p> <p>The
+   * <code>name</code> filter matches the name that you gave the resource when you
+   * created it, exactly as you entered it. It doesn't match the name segment of the
+   * resource ARN, which Image Builder converts to lowercase with hyphens in place of
+   * spaces and underscores. For example, a resource named <code>My Image</code> has
+   * an ARN that contains <code>my-image</code> – filter on <code>My Image</code> to
+   * find it.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }

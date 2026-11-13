@@ -15,16 +15,16 @@ using namespace Aws::Utils;
 Aws::String CreateScheduleGroupRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_clientTokenHasBeenSet) {
-    payload.WithString("ClientToken", m_clientToken);
-  }
-
   if (m_tagsHasBeenSet) {
     Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
     for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
       tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
     }
     payload.WithArray("Tags", std::move(tagsJsonList));
+  }
+
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("ClientToken", m_clientToken);
   }
 
   return payload.View().WriteReadable();

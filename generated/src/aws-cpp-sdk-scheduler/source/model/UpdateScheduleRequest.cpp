@@ -15,52 +15,52 @@ using namespace Aws::Utils;
 Aws::String UpdateScheduleRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_actionAfterCompletionHasBeenSet) {
-    payload.WithString("ActionAfterCompletion", ActionAfterCompletionMapper::GetNameForActionAfterCompletion(m_actionAfterCompletion));
-  }
-
-  if (m_clientTokenHasBeenSet) {
-    payload.WithString("ClientToken", m_clientToken);
-  }
-
-  if (m_descriptionHasBeenSet) {
-    payload.WithString("Description", m_description);
-  }
-
-  if (m_endDateHasBeenSet) {
-    payload.WithDouble("EndDate", m_endDate.SecondsWithMSPrecision());
-  }
-
-  if (m_flexibleTimeWindowHasBeenSet) {
-    payload.WithObject("FlexibleTimeWindow", m_flexibleTimeWindow.Jsonize());
-  }
-
   if (m_groupNameHasBeenSet) {
     payload.WithString("GroupName", m_groupName);
-  }
-
-  if (m_kmsKeyArnHasBeenSet) {
-    payload.WithString("KmsKeyArn", m_kmsKeyArn);
   }
 
   if (m_scheduleExpressionHasBeenSet) {
     payload.WithString("ScheduleExpression", m_scheduleExpression);
   }
 
-  if (m_scheduleExpressionTimezoneHasBeenSet) {
-    payload.WithString("ScheduleExpressionTimezone", m_scheduleExpressionTimezone);
-  }
-
   if (m_startDateHasBeenSet) {
     payload.WithDouble("StartDate", m_startDate.SecondsWithMSPrecision());
+  }
+
+  if (m_endDateHasBeenSet) {
+    payload.WithDouble("EndDate", m_endDate.SecondsWithMSPrecision());
+  }
+
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
+  }
+
+  if (m_scheduleExpressionTimezoneHasBeenSet) {
+    payload.WithString("ScheduleExpressionTimezone", m_scheduleExpressionTimezone);
   }
 
   if (m_stateHasBeenSet) {
     payload.WithString("State", ScheduleStateMapper::GetNameForScheduleState(m_state));
   }
 
+  if (m_kmsKeyArnHasBeenSet) {
+    payload.WithString("KmsKeyArn", m_kmsKeyArn);
+  }
+
   if (m_targetHasBeenSet) {
     payload.WithObject("Target", m_target.Jsonize());
+  }
+
+  if (m_flexibleTimeWindowHasBeenSet) {
+    payload.WithObject("FlexibleTimeWindow", m_flexibleTimeWindow.Jsonize());
+  }
+
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("ClientToken", m_clientToken);
+  }
+
+  if (m_actionAfterCompletionHasBeenSet) {
+    payload.WithString("ActionAfterCompletion", ActionAfterCompletionMapper::GetNameForActionAfterCompletion(m_actionAfterCompletion));
   }
 
   return payload.View().WriteReadable();

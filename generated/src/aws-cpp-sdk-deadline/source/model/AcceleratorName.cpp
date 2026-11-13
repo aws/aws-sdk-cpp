@@ -20,6 +20,7 @@ static const int a10g_HASH = HashingUtils::HashString("a10g");
 static const int l4_HASH = HashingUtils::HashString("l4");
 static const int l40s_HASH = HashingUtils::HashString("l40s");
 static const int rtx_pro_server_6000_HASH = HashingUtils::HashString("rtx-pro-server-6000");
+static const int rtx_pro_4500_HASH = HashingUtils::HashString("rtx-pro-4500");
 
 AcceleratorName GetAcceleratorNameForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -33,6 +34,8 @@ AcceleratorName GetAcceleratorNameForName(const Aws::String& name) {
     return AcceleratorName::l40s;
   } else if (hashCode == rtx_pro_server_6000_HASH) {
     return AcceleratorName::rtx_pro_server_6000;
+  } else if (hashCode == rtx_pro_4500_HASH) {
+    return AcceleratorName::rtx_pro_4500;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -57,6 +60,8 @@ Aws::String GetNameForAcceleratorName(AcceleratorName enumValue) {
       return "l40s";
     case AcceleratorName::rtx_pro_server_6000:
       return "rtx-pro-server-6000";
+    case AcceleratorName::rtx_pro_4500:
+      return "rtx-pro-4500";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

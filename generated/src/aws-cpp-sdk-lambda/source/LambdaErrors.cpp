@@ -49,6 +49,8 @@
 #include <aws/lambda/model/ResourceInUseException.h>
 #include <aws/lambda/model/ResourceNotFoundException.h>
 #include <aws/lambda/model/ResourceNotReadyException.h>
+#include <aws/lambda/model/RuntimeAliasDeletedException.h>
+#include <aws/lambda/model/RuntimeVersionDeletedException.h>
 #include <aws/lambda/model/S3FilesMountConnectivityException.h>
 #include <aws/lambda/model/S3FilesMountFailureException.h>
 #include <aws/lambda/model/S3FilesMountTimeoutException.h>
@@ -122,6 +124,12 @@ template <>
 AWS_LAMBDA_API CodeVerificationFailedException LambdaError::GetModeledError() {
   assert(this->GetErrorType() == LambdaErrors::CODE_VERIFICATION_FAILED);
   return CodeVerificationFailedException(this->GetJsonPayload().View());
+}
+
+template <>
+AWS_LAMBDA_API RuntimeAliasDeletedException LambdaError::GetModeledError() {
+  assert(this->GetErrorType() == LambdaErrors::RUNTIME_ALIAS_DELETED);
+  return RuntimeAliasDeletedException(this->GetJsonPayload().View());
 }
 
 template <>
@@ -317,6 +325,12 @@ AWS_LAMBDA_API ResourceInUseException LambdaError::GetModeledError() {
 }
 
 template <>
+AWS_LAMBDA_API RuntimeVersionDeletedException LambdaError::GetModeledError() {
+  assert(this->GetErrorType() == LambdaErrors::RUNTIME_VERSION_DELETED);
+  return RuntimeVersionDeletedException(this->GetJsonPayload().View());
+}
+
+template <>
 AWS_LAMBDA_API FunctionVersionsPerCapacityProviderLimitExceededException LambdaError::GetModeledError() {
   assert(this->GetErrorType() == LambdaErrors::FUNCTION_VERSIONS_PER_CAPACITY_PROVIDER_LIMIT_EXCEEDED);
   return FunctionVersionsPerCapacityProviderLimitExceededException(this->GetJsonPayload().View());
@@ -417,6 +431,7 @@ static const int POLICY_LENGTH_EXCEEDED_HASH = HashingUtils::HashString("PolicyL
 static const int K_M_S_NOT_FOUND_HASH = HashingUtils::HashString("KMSNotFoundException");
 static const int PRECONDITION_FAILED_HASH = HashingUtils::HashString("PreconditionFailedException");
 static const int CODE_VERIFICATION_FAILED_HASH = HashingUtils::HashString("CodeVerificationFailedException");
+static const int RUNTIME_ALIAS_DELETED_HASH = HashingUtils::HashString("RuntimeAliasDeletedException");
 static const int SUBNET_I_P_ADDRESS_LIMIT_REACHED_HASH = HashingUtils::HashString("SubnetIPAddressLimitReachedException");
 static const int SNAP_START_NOT_READY_HASH = HashingUtils::HashString("SnapStartNotReadyException");
 static const int INVALID_REQUEST_CONTENT_HASH = HashingUtils::HashString("InvalidRequestContentException");
@@ -447,6 +462,7 @@ static const int SERIALIZED_REQUEST_ENTITY_TOO_LARGE_HASH = HashingUtils::HashSt
 static const int RECURSIVE_INVOCATION_HASH = HashingUtils::HashString("RecursiveInvocationException");
 static const int SNAP_START_HASH = HashingUtils::HashString("SnapStartException");
 static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
+static const int RUNTIME_VERSION_DELETED_HASH = HashingUtils::HashString("RuntimeVersionDeletedException");
 static const int FUNCTION_VERSIONS_PER_CAPACITY_PROVIDER_LIMIT_EXCEEDED_HASH =
     HashingUtils::HashString("FunctionVersionsPerCapacityProviderLimitExceededException");
 static const int CODE_ARTIFACT_USER_DELETED_HASH = HashingUtils::HashString("CodeArtifactUserDeletedException");
@@ -485,6 +501,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::PRECONDITION_FAILED), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == CODE_VERIFICATION_FAILED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::CODE_VERIFICATION_FAILED), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == RUNTIME_ALIAS_DELETED_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::RUNTIME_ALIAS_DELETED), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == SUBNET_I_P_ADDRESS_LIMIT_REACHED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::SUBNET_I_P_ADDRESS_LIMIT_REACHED), RetryableType::RETRYABLE);
   } else if (hashCode == SNAP_START_NOT_READY_HASH) {
@@ -546,6 +564,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::SNAP_START), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == RESOURCE_IN_USE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::RESOURCE_IN_USE), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == RUNTIME_VERSION_DELETED_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::RUNTIME_VERSION_DELETED), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == FUNCTION_VERSIONS_PER_CAPACITY_PROVIDER_LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::FUNCTION_VERSIONS_PER_CAPACITY_PROVIDER_LIMIT_EXCEEDED),
                                 RetryableType::NOT_RETRYABLE);

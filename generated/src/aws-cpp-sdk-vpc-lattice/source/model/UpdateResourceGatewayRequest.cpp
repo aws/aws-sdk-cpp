@@ -23,5 +23,10 @@ Aws::String UpdateResourceGatewayRequest::SerializePayload() const {
     payload.WithArray("securityGroupIds", std::move(securityGroupIdsJsonList));
   }
 
+  if (m_resourceConfigDnsResolutionHasBeenSet) {
+    payload.WithString("resourceConfigDnsResolution",
+                       ResourceConfigDnsResolutionMapper::GetNameForResourceConfigDnsResolution(m_resourceConfigDnsResolution));
+  }
+
   return payload.View().WriteReadable();
 }

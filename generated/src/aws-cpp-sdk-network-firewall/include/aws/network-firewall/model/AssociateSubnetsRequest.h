@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/network-firewall/NetworkFirewallRequest.h>
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
+#include <aws/network-firewall/model/NatGatewayCreateMapping.h>
 #include <aws/network-firewall/model/SubnetMapping.h>
 
 #include <utility>
@@ -123,6 +124,35 @@ class AssociateSubnetsRequest : public NetworkFirewallRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The NAT gateways that Network Firewall creates for the Availability Zones
+   * that you add to a proxy mode firewall. For a proxy mode firewall, you must
+   * specify one mapping for each Availability Zone in <code>SubnetMappings</code>,
+   * and no other Availability Zones. Each NAT gateway subnet must be in the
+   * firewall's VPC and can't be one of the firewall endpoint subnets.</p> <p>You
+   * can't specify this for a firewall that isn't a proxy mode firewall.</p>
+   */
+  inline const Aws::Vector<NatGatewayCreateMapping>& GetNatGatewayCreateMappings() const { return m_natGatewayCreateMappings; }
+  inline bool NatGatewayCreateMappingsHasBeenSet() const { return m_natGatewayCreateMappingsHasBeenSet; }
+  template <typename NatGatewayCreateMappingsT = Aws::Vector<NatGatewayCreateMapping>>
+  void SetNatGatewayCreateMappings(NatGatewayCreateMappingsT&& value) {
+    m_natGatewayCreateMappingsHasBeenSet = true;
+    m_natGatewayCreateMappings = std::forward<NatGatewayCreateMappingsT>(value);
+  }
+  template <typename NatGatewayCreateMappingsT = Aws::Vector<NatGatewayCreateMapping>>
+  AssociateSubnetsRequest& WithNatGatewayCreateMappings(NatGatewayCreateMappingsT&& value) {
+    SetNatGatewayCreateMappings(std::forward<NatGatewayCreateMappingsT>(value));
+    return *this;
+  }
+  template <typename NatGatewayCreateMappingsT = NatGatewayCreateMapping>
+  AssociateSubnetsRequest& AddNatGatewayCreateMappings(NatGatewayCreateMappingsT&& value) {
+    m_natGatewayCreateMappingsHasBeenSet = true;
+    m_natGatewayCreateMappings.emplace_back(std::forward<NatGatewayCreateMappingsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_updateToken;
 
@@ -131,10 +161,13 @@ class AssociateSubnetsRequest : public NetworkFirewallRequest {
   Aws::String m_firewallName;
 
   Aws::Vector<SubnetMapping> m_subnetMappings;
+
+  Aws::Vector<NatGatewayCreateMapping> m_natGatewayCreateMappings;
   bool m_updateTokenHasBeenSet = false;
   bool m_firewallArnHasBeenSet = false;
   bool m_firewallNameHasBeenSet = false;
   bool m_subnetMappingsHasBeenSet = false;
+  bool m_natGatewayCreateMappingsHasBeenSet = false;
 };
 
 }  // namespace Model

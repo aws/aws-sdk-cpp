@@ -20,6 +20,11 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/DisableImageDeregistrationProtectionRequest.h>
+#include <aws/ec2/model/DisableInstanceSqlHaStandbyDetectionsRequest.h>
+#include <aws/ec2/model/DisableIpamOrganizationAdminAccountRequest.h>
+#include <aws/ec2/model/DisableIpamPolicyRequest.h>
+#include <aws/ec2/model/DisableRouteServerPropagationRequest.h>
 #include <aws/ec2/model/DisableSerialConsoleAccessRequest.h>
 #include <aws/ec2/model/DisableSnapshotBlockPublicAccessRequest.h>
 #include <aws/ec2/model/DisableTransitGatewayRouteTablePropagationRequest.h>
@@ -36,6 +41,7 @@
 #include <aws/ec2/model/DisassociateIpamByoasnRequest.h>
 #include <aws/ec2/model/DisassociateIpamResourceDiscoveryRequest.h>
 #include <aws/ec2/model/DisassociateNatGatewayAddressRequest.h>
+#include <aws/ec2/model/DisassociateNetworkingFlexCostAllocationPolicyRequest.h>
 #include <aws/ec2/model/DisassociateRouteServerRequest.h>
 #include <aws/ec2/model/DisassociateRouteTableRequest.h>
 #include <aws/ec2/model/DisassociateSecurityGroupVpcRequest.h>
@@ -114,12 +120,6 @@
 #include <aws/ec2/model/GetIpamInternetRegistryAssociationCidrsRequest.h>
 #include <aws/ec2/model/GetIpamPolicyAllocationRulesRequest.h>
 #include <aws/ec2/model/GetIpamPolicyOrganizationTargetsRequest.h>
-#include <aws/ec2/model/GetIpamPoolAllocationsRequest.h>
-#include <aws/ec2/model/GetIpamPoolCidrsRequest.h>
-#include <aws/ec2/model/GetIpamPrefixListResolverRulesRequest.h>
-#include <aws/ec2/model/GetIpamPrefixListResolverVersionEntriesRequest.h>
-#include <aws/ec2/model/GetIpamPrefixListResolverVersionsRequest.h>
-#include <aws/ec2/model/GetIpamResourceCidrsRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,39 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DisableImageDeregistrationProtectionOutcome EC2Client::DisableImageDeregistrationProtection(
+    const DisableImageDeregistrationProtectionRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableImageDeregistrationProtectionOutcome(result.GetResultWithOwnership())
+                            : DisableImageDeregistrationProtectionOutcome(std::move(result.GetError()));
+}
+
+DisableInstanceSqlHaStandbyDetectionsOutcome EC2Client::DisableInstanceSqlHaStandbyDetections(
+    const DisableInstanceSqlHaStandbyDetectionsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableInstanceSqlHaStandbyDetectionsOutcome(result.GetResultWithOwnership())
+                            : DisableInstanceSqlHaStandbyDetectionsOutcome(std::move(result.GetError()));
+}
+
+DisableIpamOrganizationAdminAccountOutcome EC2Client::DisableIpamOrganizationAdminAccount(
+    const DisableIpamOrganizationAdminAccountRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableIpamOrganizationAdminAccountOutcome(result.GetResultWithOwnership())
+                            : DisableIpamOrganizationAdminAccountOutcome(std::move(result.GetError()));
+}
+
+DisableIpamPolicyOutcome EC2Client::DisableIpamPolicy(const DisableIpamPolicyRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableIpamPolicyOutcome(result.GetResultWithOwnership())
+                            : DisableIpamPolicyOutcome(std::move(result.GetError()));
+}
+
+DisableRouteServerPropagationOutcome EC2Client::DisableRouteServerPropagation(const DisableRouteServerPropagationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisableRouteServerPropagationOutcome(result.GetResultWithOwnership())
+                            : DisableRouteServerPropagationOutcome(std::move(result.GetError()));
+}
 
 DisableSerialConsoleAccessOutcome EC2Client::DisableSerialConsoleAccess(const DisableSerialConsoleAccessRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -236,6 +269,13 @@ DisassociateNatGatewayAddressOutcome EC2Client::DisassociateNatGatewayAddress(co
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DisassociateNatGatewayAddressOutcome(result.GetResultWithOwnership())
                             : DisassociateNatGatewayAddressOutcome(std::move(result.GetError()));
+}
+
+DisassociateNetworkingFlexCostAllocationPolicyOutcome EC2Client::DisassociateNetworkingFlexCostAllocationPolicy(
+    const DisassociateNetworkingFlexCostAllocationPolicyRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DisassociateNetworkingFlexCostAllocationPolicyOutcome(result.GetResultWithOwnership())
+                            : DisassociateNetworkingFlexCostAllocationPolicyOutcome(std::move(result.GetError()));
 }
 
 DisassociateRouteServerOutcome EC2Client::DisassociateRouteServer(const DisassociateRouteServerRequest& request) const {
@@ -733,43 +773,4 @@ GetIpamPolicyOrganizationTargetsOutcome EC2Client::GetIpamPolicyOrganizationTarg
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetIpamPolicyOrganizationTargetsOutcome(result.GetResultWithOwnership())
                             : GetIpamPolicyOrganizationTargetsOutcome(std::move(result.GetError()));
-}
-
-GetIpamPoolAllocationsOutcome EC2Client::GetIpamPoolAllocations(const GetIpamPoolAllocationsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? GetIpamPoolAllocationsOutcome(result.GetResultWithOwnership())
-                            : GetIpamPoolAllocationsOutcome(std::move(result.GetError()));
-}
-
-GetIpamPoolCidrsOutcome EC2Client::GetIpamPoolCidrs(const GetIpamPoolCidrsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? GetIpamPoolCidrsOutcome(result.GetResultWithOwnership())
-                            : GetIpamPoolCidrsOutcome(std::move(result.GetError()));
-}
-
-GetIpamPrefixListResolverRulesOutcome EC2Client::GetIpamPrefixListResolverRules(
-    const GetIpamPrefixListResolverRulesRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? GetIpamPrefixListResolverRulesOutcome(result.GetResultWithOwnership())
-                            : GetIpamPrefixListResolverRulesOutcome(std::move(result.GetError()));
-}
-
-GetIpamPrefixListResolverVersionEntriesOutcome EC2Client::GetIpamPrefixListResolverVersionEntries(
-    const GetIpamPrefixListResolverVersionEntriesRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? GetIpamPrefixListResolverVersionEntriesOutcome(result.GetResultWithOwnership())
-                            : GetIpamPrefixListResolverVersionEntriesOutcome(std::move(result.GetError()));
-}
-
-GetIpamPrefixListResolverVersionsOutcome EC2Client::GetIpamPrefixListResolverVersions(
-    const GetIpamPrefixListResolverVersionsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? GetIpamPrefixListResolverVersionsOutcome(result.GetResultWithOwnership())
-                            : GetIpamPrefixListResolverVersionsOutcome(std::move(result.GetError()));
-}
-
-GetIpamResourceCidrsOutcome EC2Client::GetIpamResourceCidrs(const GetIpamResourceCidrsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? GetIpamResourceCidrsOutcome(result.GetResultWithOwnership())
-                            : GetIpamResourceCidrsOutcome(std::move(result.GetError()));
 }

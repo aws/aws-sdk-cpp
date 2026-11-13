@@ -1,0 +1,54 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lambda-core/LambdaCore_EXPORTS.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace LambdaCore {
+namespace Model {
+class DeleteRuntimeAliasResult {
+ public:
+  AWS_LAMBDACORE_API DeleteRuntimeAliasResult() = default;
+  AWS_LAMBDACORE_API DeleteRuntimeAliasResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_LAMBDACORE_API DeleteRuntimeAliasResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  DeleteRuntimeAliasResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace LambdaCore
+}  // namespace Aws

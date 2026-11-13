@@ -35,24 +35,6 @@ class ListScheduleGroupsRequest : public SchedulerRequest {
 
   ///@{
   /**
-   * <p>If specified, limits the number of results returned by this operation. The
-   * operation also returns a <code>NextToken</code> which you can use in a
-   * subsequent operation to retrieve the next set of results.</p>
-   */
-  inline int GetMaxResults() const { return m_maxResults; }
-  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-  inline void SetMaxResults(int value) {
-    m_maxResultsHasBeenSet = true;
-    m_maxResults = value;
-  }
-  inline ListScheduleGroupsRequest& WithMaxResults(int value) {
-    SetMaxResults(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The name prefix that you can use to return a filtered list of your schedule
    * groups.</p>
    */
@@ -88,15 +70,33 @@ class ListScheduleGroupsRequest : public SchedulerRequest {
     return *this;
   }
   ///@}
- private:
-  int m_maxResults{0};
 
+  ///@{
+  /**
+   * <p>If specified, limits the number of results returned by this operation. The
+   * operation also returns a <code>NextToken</code> which you can use in a
+   * subsequent operation to retrieve the next set of results.</p>
+   */
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
+  }
+  inline ListScheduleGroupsRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_namePrefix;
 
   Aws::String m_nextToken;
-  bool m_maxResultsHasBeenSet = false;
+
+  int m_maxResults{0};
   bool m_namePrefixHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -122,6 +122,7 @@
 #include <aws/appstream/model/UpdateEntitlementResult.h>
 #include <aws/appstream/model/UpdateFleetRequest.h>
 #include <aws/appstream/model/UpdateFleetResult.h>
+#include <aws/appstream/model/UpdateImageBuilderResult.h>
 #include <aws/appstream/model/UpdateImagePermissionsResult.h>
 #include <aws/appstream/model/UpdateStackResult.h>
 #include <aws/appstream/model/UpdateThemeForStackResult.h>
@@ -244,6 +245,7 @@ class UpdateApplicationRequest;
 class UpdateDirectoryConfigRequest;
 class UpdateEntitlementRequest;
 class UpdateFleetRequest;
+class UpdateImageBuilderRequest;
 class UpdateImagePermissionsRequest;
 class UpdateStackRequest;
 class UpdateThemeForStackRequest;
@@ -337,6 +339,7 @@ typedef Aws::Utils::Outcome<UpdateApplicationResult, AppStreamError> UpdateAppli
 typedef Aws::Utils::Outcome<UpdateDirectoryConfigResult, AppStreamError> UpdateDirectoryConfigOutcome;
 typedef Aws::Utils::Outcome<UpdateEntitlementResult, AppStreamError> UpdateEntitlementOutcome;
 typedef Aws::Utils::Outcome<UpdateFleetResult, AppStreamError> UpdateFleetOutcome;
+typedef Aws::Utils::Outcome<UpdateImageBuilderResult, AppStreamError> UpdateImageBuilderOutcome;
 typedef Aws::Utils::Outcome<UpdateImagePermissionsResult, AppStreamError> UpdateImagePermissionsOutcome;
 typedef Aws::Utils::Outcome<UpdateStackResult, AppStreamError> UpdateStackOutcome;
 typedef Aws::Utils::Outcome<UpdateThemeForStackResult, AppStreamError> UpdateThemeForStackOutcome;
@@ -429,6 +432,7 @@ typedef std::future<UpdateApplicationOutcome> UpdateApplicationOutcomeCallable;
 typedef std::future<UpdateDirectoryConfigOutcome> UpdateDirectoryConfigOutcomeCallable;
 typedef std::future<UpdateEntitlementOutcome> UpdateEntitlementOutcomeCallable;
 typedef std::future<UpdateFleetOutcome> UpdateFleetOutcomeCallable;
+typedef std::future<UpdateImageBuilderOutcome> UpdateImageBuilderOutcomeCallable;
 typedef std::future<UpdateImagePermissionsOutcome> UpdateImagePermissionsOutcomeCallable;
 typedef std::future<UpdateStackOutcome> UpdateStackOutcomeCallable;
 typedef std::future<UpdateThemeForStackOutcome> UpdateThemeForStackOutcomeCallable;
@@ -713,6 +717,9 @@ typedef std::function<void(const AppStreamClient*, const Model::UpdateEntitlemen
 typedef std::function<void(const AppStreamClient*, const Model::UpdateFleetRequest&, const Model::UpdateFleetOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateFleetResponseReceivedHandler;
+typedef std::function<void(const AppStreamClient*, const Model::UpdateImageBuilderRequest&, const Model::UpdateImageBuilderOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateImageBuilderResponseReceivedHandler;
 typedef std::function<void(const AppStreamClient*, const Model::UpdateImagePermissionsRequest&, const Model::UpdateImagePermissionsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateImagePermissionsResponseReceivedHandler;

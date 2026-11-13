@@ -10,7 +10,7 @@
 namespace Aws {
 namespace SageMaker {
 namespace Model {
-enum class ClusterPatchingStrategy { NOT_SET, WhenIdle, WhenAllIdle };
+enum class ClusterPatchingStrategy { NOT_SET, WhenIdle, WhenAllIdle, DrainFirst };
 
 namespace ClusterPatchingStrategyMapper {
 AWS_SAGEMAKER_API ClusterPatchingStrategy GetClusterPatchingStrategyForName(const Aws::String& name);

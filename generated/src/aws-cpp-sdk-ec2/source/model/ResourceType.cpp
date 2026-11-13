@@ -28,6 +28,7 @@ static const int elastic_ip_HASH = HashingUtils::HashString("elastic-ip");
 static const int elastic_gpu_HASH = HashingUtils::HashString("elastic-gpu");
 static const int export_image_task_HASH = HashingUtils::HashString("export-image-task");
 static const int export_instance_task_HASH = HashingUtils::HashString("export-instance-task");
+static const int fca_policy_HASH = HashingUtils::HashString("fca-policy");
 static const int fleet_HASH = HashingUtils::HashString("fleet");
 static const int fpga_image_HASH = HashingUtils::HashString("fpga-image");
 static const int host_reservation_HASH = HashingUtils::HashString("host-reservation");
@@ -158,6 +159,8 @@ ResourceType GetResourceTypeForName(const Aws::String& name) {
     return ResourceType::export_image_task;
   } else if (hashCode == export_instance_task_HASH) {
     return ResourceType::export_instance_task;
+  } else if (hashCode == fca_policy_HASH) {
+    return ResourceType::fca_policy;
   } else if (hashCode == fleet_HASH) {
     return ResourceType::fleet;
   } else if (hashCode == fpga_image_HASH) {
@@ -398,6 +401,8 @@ Aws::String GetNameForResourceType(ResourceType enumValue) {
       return "export-image-task";
     case ResourceType::export_instance_task:
       return "export-instance-task";
+    case ResourceType::fca_policy:
+      return "fca-policy";
     case ResourceType::fleet:
       return "fleet";
     case ResourceType::fpga_image:

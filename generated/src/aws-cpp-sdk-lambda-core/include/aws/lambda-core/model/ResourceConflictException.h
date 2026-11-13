@@ -21,8 +21,8 @@ namespace Model {
 
 /**
  * <p>The request could not be completed due to a conflict with the current state
- * of the resource. For example, attempting to update a connector that is not in
- * <code>ACTIVE</code> state.</p><p><h3>See Also:</h3>   <a
+ * of the resource. For example, attempting to modify a resource that is not in a
+ * state that permits the operation.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-core-2026-04-30/ResourceConflictException">AWS
  * API Reference</a></p>
  */
@@ -52,7 +52,9 @@ class ResourceConflictException {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The error message that describes the exception.</p>
+   */
   inline const Aws::String& GetMessage() const { return m_message; }
   inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
   template <typename MessageT = Aws::String>

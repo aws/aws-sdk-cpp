@@ -11,10 +11,11 @@
 #include <aws/network-firewall/model/AvailabilityZoneMapping.h>
 #include <aws/network-firewall/model/EnabledAnalysisType.h>
 #include <aws/network-firewall/model/EncryptionConfiguration.h>
-#include <aws/network-firewall/model/NatGatewayMapping.h>
+#include <aws/network-firewall/model/NatGatewayCreateMapping.h>
 #include <aws/network-firewall/model/ProxySettings.h>
 #include <aws/network-firewall/model/SubnetMapping.h>
 #include <aws/network-firewall/model/Tag.h>
+#include <aws/network-firewall/model/TransparentFilteringNatScope.h>
 #include <aws/network-firewall/model/VpcEndpoint.h>
 
 #include <utility>
@@ -426,35 +427,36 @@ class Firewall {
 
   ///@{
   /**
-   * <p>The NAT gateways that the firewall uses to proxy traffic. This is set for
-   * proxy mode firewalls, where <code>NoSourcePreservation</code> is
-   * <code>TRUE</code>. </p>
+   * <p>The NAT gateways that you specified for Network Firewall to create for a
+   * proxy mode firewall. To get the IDs and status of the NAT gateways that are
+   * attached to the firewall, see <code>NatGatewayAttachments</code> in the
+   * firewall's <code>SyncStates</code>.</p>
    */
-  inline const Aws::Vector<NatGatewayMapping>& GetNatGatewayMappings() const { return m_natGatewayMappings; }
-  inline bool NatGatewayMappingsHasBeenSet() const { return m_natGatewayMappingsHasBeenSet; }
-  template <typename NatGatewayMappingsT = Aws::Vector<NatGatewayMapping>>
-  void SetNatGatewayMappings(NatGatewayMappingsT&& value) {
-    m_natGatewayMappingsHasBeenSet = true;
-    m_natGatewayMappings = std::forward<NatGatewayMappingsT>(value);
+  inline const Aws::Vector<NatGatewayCreateMapping>& GetNatGatewayCreateMappings() const { return m_natGatewayCreateMappings; }
+  inline bool NatGatewayCreateMappingsHasBeenSet() const { return m_natGatewayCreateMappingsHasBeenSet; }
+  template <typename NatGatewayCreateMappingsT = Aws::Vector<NatGatewayCreateMapping>>
+  void SetNatGatewayCreateMappings(NatGatewayCreateMappingsT&& value) {
+    m_natGatewayCreateMappingsHasBeenSet = true;
+    m_natGatewayCreateMappings = std::forward<NatGatewayCreateMappingsT>(value);
   }
-  template <typename NatGatewayMappingsT = Aws::Vector<NatGatewayMapping>>
-  Firewall& WithNatGatewayMappings(NatGatewayMappingsT&& value) {
-    SetNatGatewayMappings(std::forward<NatGatewayMappingsT>(value));
+  template <typename NatGatewayCreateMappingsT = Aws::Vector<NatGatewayCreateMapping>>
+  Firewall& WithNatGatewayCreateMappings(NatGatewayCreateMappingsT&& value) {
+    SetNatGatewayCreateMappings(std::forward<NatGatewayCreateMappingsT>(value));
     return *this;
   }
-  template <typename NatGatewayMappingsT = NatGatewayMapping>
-  Firewall& AddNatGatewayMappings(NatGatewayMappingsT&& value) {
-    m_natGatewayMappingsHasBeenSet = true;
-    m_natGatewayMappings.emplace_back(std::forward<NatGatewayMappingsT>(value));
+  template <typename NatGatewayCreateMappingsT = NatGatewayCreateMapping>
+  Firewall& AddNatGatewayCreateMappings(NatGatewayCreateMappingsT&& value) {
+    m_natGatewayCreateMappingsHasBeenSet = true;
+    m_natGatewayCreateMappings.emplace_back(std::forward<NatGatewayCreateMappingsT>(value));
     return *this;
   }
   ///@}
 
   ///@{
   /**
-   * <p>The listener configuration for the firewall's proxy. This is set for proxy
-   * mode firewalls, where <code>NoSourcePreservation</code> is <code>TRUE</code>.
-   * </p>
+   * <p>The proxy settings of a proxy mode firewall: its listeners and, if you
+   * specified them, your own <code>CertificateArn</code> and
+   * <code>DomainName</code>.</p>
    */
   inline const ProxySettings& GetProxySettings() const { return m_proxySettings; }
   inline bool ProxySettingsHasBeenSet() const { return m_proxySettingsHasBeenSet; }
@@ -472,27 +474,7 @@ class Firewall {
 
   ///@{
   /**
-   * <p>Indicates whether the firewall operates in proxy mode, in which the source IP
-   * address of the traffic is not preserved. When this value is <code>TRUE</code>,
-   * the firewall proxies traffic through a NAT gateway and uses the NAT gateway's IP
-   * address as the source for traffic reaching the destination. </p>
-   */
-  inline bool GetNoSourcePreservation() const { return m_noSourcePreservation; }
-  inline bool NoSourcePreservationHasBeenSet() const { return m_noSourcePreservationHasBeenSet; }
-  inline void SetNoSourcePreservation(bool value) {
-    m_noSourcePreservationHasBeenSet = true;
-    m_noSourcePreservation = value;
-  }
-  inline Firewall& WithNoSourcePreservation(bool value) {
-    SetNoSourcePreservation(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The VPC and subnets for the firewall endpoint. This is set for proxy mode
-   * firewalls, where <code>NoSourcePreservation</code> is <code>TRUE</code>. </p>
+   * <p>The VPC and subnets for the endpoints of a proxy mode firewall.</p>
    */
   inline const VpcEndpoint& GetVpcEndpoint() const { return m_vpcEndpoint; }
   inline bool VpcEndpointHasBeenSet() const { return m_vpcEndpointHasBeenSet; }
@@ -504,6 +486,25 @@ class Firewall {
   template <typename VpcEndpointT = VpcEndpoint>
   Firewall& WithVpcEndpoint(VpcEndpointT&& value) {
     SetVpcEndpoint(std::forward<VpcEndpointT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>How a proxy mode firewall handles traffic that isn't sent to its proxy
+   * listener. <code>NAT_ALL</code> sends this traffic out through the firewall's NAT
+   * gateway after inspection. <code>NAT_NONE</code> returns it to the firewall
+   * endpoint without address translation.</p>
+   */
+  inline TransparentFilteringNatScope GetTransparentFilteringNatScope() const { return m_transparentFilteringNatScope; }
+  inline bool TransparentFilteringNatScopeHasBeenSet() const { return m_transparentFilteringNatScopeHasBeenSet; }
+  inline void SetTransparentFilteringNatScope(TransparentFilteringNatScope value) {
+    m_transparentFilteringNatScopeHasBeenSet = true;
+    m_transparentFilteringNatScope = value;
+  }
+  inline Firewall& WithTransparentFilteringNatScope(TransparentFilteringNatScope value) {
+    SetTransparentFilteringNatScope(value);
     return *this;
   }
   ///@}
@@ -544,13 +545,13 @@ class Firewall {
 
   bool m_availabilityZoneChangeProtection{false};
 
-  Aws::Vector<NatGatewayMapping> m_natGatewayMappings;
+  Aws::Vector<NatGatewayCreateMapping> m_natGatewayCreateMappings;
 
   ProxySettings m_proxySettings;
 
-  bool m_noSourcePreservation{false};
-
   VpcEndpoint m_vpcEndpoint;
+
+  TransparentFilteringNatScope m_transparentFilteringNatScope{TransparentFilteringNatScope::NOT_SET};
   bool m_firewallNameHasBeenSet = false;
   bool m_firewallArnHasBeenSet = false;
   bool m_firewallPolicyArnHasBeenSet = false;
@@ -569,10 +570,10 @@ class Firewall {
   bool m_transitGatewayOwnerAccountIdHasBeenSet = false;
   bool m_availabilityZoneMappingsHasBeenSet = false;
   bool m_availabilityZoneChangeProtectionHasBeenSet = false;
-  bool m_natGatewayMappingsHasBeenSet = false;
+  bool m_natGatewayCreateMappingsHasBeenSet = false;
   bool m_proxySettingsHasBeenSet = false;
-  bool m_noSourcePreservationHasBeenSet = false;
   bool m_vpcEndpointHasBeenSet = false;
+  bool m_transparentFilteringNatScopeHasBeenSet = false;
 };
 
 }  // namespace Model

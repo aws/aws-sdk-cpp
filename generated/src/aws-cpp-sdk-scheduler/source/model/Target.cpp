@@ -22,9 +22,21 @@ Target& Target::operator=(JsonView jsonValue) {
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("RoleArn")) {
+    m_roleArn = jsonValue.GetString("RoleArn");
+    m_roleArnHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("DeadLetterConfig")) {
     m_deadLetterConfig = jsonValue.GetObject("DeadLetterConfig");
     m_deadLetterConfigHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("RetryPolicy")) {
+    m_retryPolicy = jsonValue.GetObject("RetryPolicy");
+    m_retryPolicyHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Input")) {
+    m_input = jsonValue.GetString("Input");
+    m_inputHasBeenSet = true;
   }
   if (jsonValue.ValueExists("EcsParameters")) {
     m_ecsParameters = jsonValue.GetObject("EcsParameters");
@@ -34,21 +46,17 @@ Target& Target::operator=(JsonView jsonValue) {
     m_eventBridgeParameters = jsonValue.GetObject("EventBridgeParameters");
     m_eventBridgeParametersHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("Input")) {
-    m_input = jsonValue.GetString("Input");
-    m_inputHasBeenSet = true;
+  if (jsonValue.ValueExists("EventBridgePutEventsV2Parameters")) {
+    m_eventBridgePutEventsV2Parameters = jsonValue.GetObject("EventBridgePutEventsV2Parameters");
+    m_eventBridgePutEventsV2ParametersHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("EventBridgePutRawEventsParameters")) {
+    m_eventBridgePutRawEventsParameters = jsonValue.GetObject("EventBridgePutRawEventsParameters");
+    m_eventBridgePutRawEventsParametersHasBeenSet = true;
   }
   if (jsonValue.ValueExists("KinesisParameters")) {
     m_kinesisParameters = jsonValue.GetObject("KinesisParameters");
     m_kinesisParametersHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("RetryPolicy")) {
-    m_retryPolicy = jsonValue.GetObject("RetryPolicy");
-    m_retryPolicyHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("RoleArn")) {
-    m_roleArn = jsonValue.GetString("RoleArn");
-    m_roleArnHasBeenSet = true;
   }
   if (jsonValue.ValueExists("SageMakerPipelineParameters")) {
     m_sageMakerPipelineParameters = jsonValue.GetObject("SageMakerPipelineParameters");
@@ -68,8 +76,20 @@ JsonValue Target::Jsonize() const {
     payload.WithString("Arn", m_arn);
   }
 
+  if (m_roleArnHasBeenSet) {
+    payload.WithString("RoleArn", m_roleArn);
+  }
+
   if (m_deadLetterConfigHasBeenSet) {
     payload.WithObject("DeadLetterConfig", m_deadLetterConfig.Jsonize());
+  }
+
+  if (m_retryPolicyHasBeenSet) {
+    payload.WithObject("RetryPolicy", m_retryPolicy.Jsonize());
+  }
+
+  if (m_inputHasBeenSet) {
+    payload.WithString("Input", m_input);
   }
 
   if (m_ecsParametersHasBeenSet) {
@@ -80,20 +100,16 @@ JsonValue Target::Jsonize() const {
     payload.WithObject("EventBridgeParameters", m_eventBridgeParameters.Jsonize());
   }
 
-  if (m_inputHasBeenSet) {
-    payload.WithString("Input", m_input);
+  if (m_eventBridgePutEventsV2ParametersHasBeenSet) {
+    payload.WithObject("EventBridgePutEventsV2Parameters", m_eventBridgePutEventsV2Parameters.Jsonize());
+  }
+
+  if (m_eventBridgePutRawEventsParametersHasBeenSet) {
+    payload.WithObject("EventBridgePutRawEventsParameters", m_eventBridgePutRawEventsParameters.Jsonize());
   }
 
   if (m_kinesisParametersHasBeenSet) {
     payload.WithObject("KinesisParameters", m_kinesisParameters.Jsonize());
-  }
-
-  if (m_retryPolicyHasBeenSet) {
-    payload.WithObject("RetryPolicy", m_retryPolicy.Jsonize());
-  }
-
-  if (m_roleArnHasBeenSet) {
-    payload.WithString("RoleArn", m_roleArn);
   }
 
   if (m_sageMakerPipelineParametersHasBeenSet) {

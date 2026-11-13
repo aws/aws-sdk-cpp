@@ -57,6 +57,66 @@ ProxySettings& ProxySettings::operator=(const std::shared_ptr<Aws::Crt::Cbor::Cb
                   }
                 }
                 m_listenerPropertiesHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "CertificateArn") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_certificateArn = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_certificateArn = ss.str();
+                  }
+                }
+                m_certificateArnHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "DomainName") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_domainName = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_domainName = ss.str();
+                  }
+                }
+                m_domainNameHasBeenSet = true;
               } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
@@ -111,6 +171,66 @@ ProxySettings& ProxySettings::operator=(const std::shared_ptr<Aws::Crt::Cbor::Cb
                 }
               }
               m_listenerPropertiesHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "CertificateArn") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_certificateArn = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_certificateArn = ss.str();
+                }
+              }
+              m_certificateArnHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "DomainName") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_domainName = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_domainName = ss.str();
+                }
+              }
+              m_domainNameHasBeenSet = true;
             } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
@@ -130,6 +250,12 @@ void ProxySettings::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
   if (m_listenerPropertiesHasBeenSet) {
     mapSize++;
   }
+  if (m_certificateArnHasBeenSet) {
+    mapSize++;
+  }
+  if (m_domainNameHasBeenSet) {
+    mapSize++;
+  }
 
   encoder.WriteMapStart(mapSize);
 
@@ -139,6 +265,16 @@ void ProxySettings::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
     for (const auto& item_0 : m_listenerProperties) {
       item_0.CborEncode(encoder);
     }
+  }
+
+  if (m_certificateArnHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("CertificateArn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_certificateArn.c_str()));
+  }
+
+  if (m_domainNameHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("DomainName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_domainName.c_str()));
   }
 }
 

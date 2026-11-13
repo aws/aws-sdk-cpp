@@ -417,6 +417,11 @@ ImageBuilder& ImageBuilder::operator=(const std::shared_ptr<Aws::Crt::Cbor::Cbor
                   m_disableIMDSV1 = val.value();
                 }
                 m_disableIMDSV1HasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "AgentAccessConfig") {
+                m_agentAccessConfig = ImageBuilderAgentAccessConfig(decoder);
+                m_agentAccessConfigHasBeenSet = true;
               } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
@@ -831,6 +836,11 @@ ImageBuilder& ImageBuilder::operator=(const std::shared_ptr<Aws::Crt::Cbor::Cbor
                 m_disableIMDSV1 = val.value();
               }
               m_disableIMDSV1HasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "AgentAccessConfig") {
+              m_agentAccessConfig = ImageBuilderAgentAccessConfig(decoder);
+              m_agentAccessConfigHasBeenSet = true;
             } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
@@ -908,6 +918,9 @@ void ImageBuilder::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
     mapSize++;
   }
   if (m_disableIMDSV1HasBeenSet) {
+    mapSize++;
+  }
+  if (m_agentAccessConfigHasBeenSet) {
     mapSize++;
   }
 
@@ -1024,6 +1037,11 @@ void ImageBuilder::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
   if (m_disableIMDSV1HasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("DisableIMDSV1"));
     encoder.WriteBool(m_disableIMDSV1);
+  }
+
+  if (m_agentAccessConfigHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AgentAccessConfig"));
+    m_agentAccessConfig.CborEncode(encoder);
   }
 }
 

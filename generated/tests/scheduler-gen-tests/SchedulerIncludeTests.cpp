@@ -32,6 +32,8 @@
 #include <aws/scheduler/model/DeleteScheduleResult.h>
 #include <aws/scheduler/model/EcsParameters.h>
 #include <aws/scheduler/model/EventBridgeParameters.h>
+#include <aws/scheduler/model/EventBridgePutEventsV2Parameters.h>
+#include <aws/scheduler/model/EventBridgePutRawEventsParameters.h>
 #include <aws/scheduler/model/FlexibleTimeWindow.h>
 #include <aws/scheduler/model/FlexibleTimeWindowMode.h>
 #include <aws/scheduler/model/GetScheduleGroupRequest.h>

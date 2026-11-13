@@ -86,6 +86,8 @@
 #include <aws/ec2/model/DescribeNetworkInsightsPathsPaginationTraits.h>
 #include <aws/ec2/model/DescribeNetworkInterfacePermissionsPaginationTraits.h>
 #include <aws/ec2/model/DescribeNetworkInterfacesPaginationTraits.h>
+#include <aws/ec2/model/DescribeNetworkingFlexCostAllocationPoliciesPaginationTraits.h>
+#include <aws/ec2/model/DescribeNetworkingFlexCostAllocationPolicyAssociationsPaginationTraits.h>
 #include <aws/ec2/model/DescribePrefixListsPaginationTraits.h>
 #include <aws/ec2/model/DescribePrincipalIdFormatPaginationTraits.h>
 #include <aws/ec2/model/DescribePublicIpv4PoolsPaginationTraits.h>
@@ -380,6 +382,12 @@ using DescribeNatGatewaysPaginator = Aws::Utils::Pagination::Paginator<EC2Client
                                                                        Pagination::DescribeNatGatewaysPaginationTraits<EC2Client>>;
 using DescribeNetworkAclsPaginator = Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeNetworkAclsRequest,
                                                                        Pagination::DescribeNetworkAclsPaginationTraits<EC2Client>>;
+using DescribeNetworkingFlexCostAllocationPoliciesPaginator =
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeNetworkingFlexCostAllocationPoliciesRequest,
+                                      Pagination::DescribeNetworkingFlexCostAllocationPoliciesPaginationTraits<EC2Client>>;
+using DescribeNetworkingFlexCostAllocationPolicyAssociationsPaginator =
+    Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeNetworkingFlexCostAllocationPolicyAssociationsRequest,
+                                      Pagination::DescribeNetworkingFlexCostAllocationPolicyAssociationsPaginationTraits<EC2Client>>;
 using DescribeNetworkInsightsAccessScopeAnalysesPaginator =
     Aws::Utils::Pagination::Paginator<EC2Client, Model::DescribeNetworkInsightsAccessScopeAnalysesRequest,
                                       Pagination::DescribeNetworkInsightsAccessScopeAnalysesPaginationTraits<EC2Client>>;

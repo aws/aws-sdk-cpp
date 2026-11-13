@@ -223,6 +223,10 @@ AutomationExecution& AutomationExecution::operator=(JsonView jsonValue) {
     }
     m_variablesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("TargetsSummary")) {
+    m_targetsSummary = jsonValue.GetObject("TargetsSummary");
+    m_targetsSummaryHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -435,6 +439,10 @@ JsonValue AutomationExecution::Jsonize() const {
       variablesJsonMap.WithArray(variablesItem.first, std::move(automationParameterValueListJsonList));
     }
     payload.WithObject("Variables", std::move(variablesJsonMap));
+  }
+
+  if (m_targetsSummaryHasBeenSet) {
+    payload.WithObject("TargetsSummary", m_targetsSummary.Jsonize());
   }
 
   return payload;

@@ -12,6 +12,7 @@
 #include <aws/connectcampaignsv2/model/ExternalCampaignType.h>
 #include <aws/connectcampaignsv2/model/Schedule.h>
 #include <aws/connectcampaignsv2/model/Source.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -230,6 +231,25 @@ class Campaign {
   ///@}
 
   ///@{
+  /**
+   * <p>The timestamp of the most recent modification to the campaign or its
+   * configuration. Null for campaigns created before this field was introduced.</p>
+   */
+  inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
+  inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
+  template <typename LastModifiedTimeT = Aws::Utils::DateTime>
+  void SetLastModifiedTime(LastModifiedTimeT&& value) {
+    m_lastModifiedTimeHasBeenSet = true;
+    m_lastModifiedTime = std::forward<LastModifiedTimeT>(value);
+  }
+  template <typename LastModifiedTimeT = Aws::Utils::DateTime>
+  Campaign& WithLastModifiedTime(LastModifiedTimeT&& value) {
+    SetLastModifiedTime(std::forward<LastModifiedTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
   inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
@@ -275,6 +295,8 @@ class Campaign {
 
   CommunicationLimitsConfig m_communicationLimitsOverride;
 
+  Aws::Utils::DateTime m_lastModifiedTime{};
+
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_idHasBeenSet = false;
   bool m_arnHasBeenSet = false;
@@ -288,6 +310,7 @@ class Campaign {
   bool m_entryLimitsConfigHasBeenSet = false;
   bool m_communicationTimeConfigHasBeenSet = false;
   bool m_communicationLimitsOverrideHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

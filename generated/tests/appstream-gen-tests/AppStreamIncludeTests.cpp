@@ -204,6 +204,9 @@
 #include <aws/appstream/model/GetExportImageTaskResult.h>
 #include <aws/appstream/model/Image.h>
 #include <aws/appstream/model/ImageBuilder.h>
+#include <aws/appstream/model/ImageBuilderAgentAccessConfig.h>
+#include <aws/appstream/model/ImageBuilderAgentAccessConfigForUpdate.h>
+#include <aws/appstream/model/ImageBuilderAttribute.h>
 #include <aws/appstream/model/ImageBuilderState.h>
 #include <aws/appstream/model/ImageBuilderStateChangeReason.h>
 #include <aws/appstream/model/ImageBuilderStateChangeReasonCode.h>
@@ -288,6 +291,8 @@
 #include <aws/appstream/model/UpdateEntitlementResult.h>
 #include <aws/appstream/model/UpdateFleetRequest.h>
 #include <aws/appstream/model/UpdateFleetResult.h>
+#include <aws/appstream/model/UpdateImageBuilderRequest.h>
+#include <aws/appstream/model/UpdateImageBuilderResult.h>
 #include <aws/appstream/model/UpdateImagePermissionsRequest.h>
 #include <aws/appstream/model/UpdateImagePermissionsResult.h>
 #include <aws/appstream/model/UpdateStackRequest.h>

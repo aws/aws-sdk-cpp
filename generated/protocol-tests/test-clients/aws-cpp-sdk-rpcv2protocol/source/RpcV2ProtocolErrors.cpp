@@ -5,14 +5,32 @@
 
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/cbor/CborValue.h>
 #include <aws/rpcv2protocol/RpcV2ProtocolErrors.h>
+#include <aws/rpcv2protocol/model/ComplexError.h>
+#include <aws/rpcv2protocol/model/ValidationException.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::RpcV2Protocol;
+using namespace Aws::RpcV2Protocol::Model;
 
 namespace Aws {
 namespace RpcV2Protocol {
+template <>
+AWS_RPCV2PROTOCOL_API ValidationException RpcV2ProtocolError::GetModeledError() {
+  assert(this->GetErrorType() == RpcV2ProtocolErrors::VALIDATION);
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return ValidationException(payload.GetDecoder());
+}
+
+template <>
+AWS_RPCV2PROTOCOL_API ComplexError RpcV2ProtocolError::GetModeledError() {
+  assert(this->GetErrorType() == RpcV2ProtocolErrors::COMPLEX);
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return ComplexError(payload.GetDecoder());
+}
+
 namespace RpcV2ProtocolErrorMapper {
 
 static const int COMPLEX_HASH = HashingUtils::HashString("ComplexError");

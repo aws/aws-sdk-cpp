@@ -82,6 +82,7 @@
 #include <aws/sagemaker/model/DescribeClusterEventRequest.h>
 #include <aws/sagemaker/model/DescribeClusterExtensionRequest.h>
 #include <aws/sagemaker/model/DescribeClusterNodeRequest.h>
+#include <aws/sagemaker/model/DescribeClusterOperationRequest.h>
 #include <aws/sagemaker/model/DescribeClusterRequest.h>
 #include <aws/sagemaker/model/DescribeClusterSchedulerConfigRequest.h>
 #include <aws/sagemaker/model/DescribeCodeRepositoryRequest.h>
@@ -118,7 +119,6 @@
 #include <aws/sagemaker/model/DescribeModelBiasJobDefinitionRequest.h>
 #include <aws/sagemaker/model/DescribeModelCardExportJobRequest.h>
 #include <aws/sagemaker/model/DescribeModelCardRequest.h>
-#include <aws/sagemaker/model/DescribeModelExplainabilityJobDefinitionRequest.h>
 #include <aws/sagemaker/model/DescribeModelRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
@@ -503,6 +503,12 @@ DescribeClusterNodeOutcome SageMakerClient::DescribeClusterNode(const DescribeCl
                             : DescribeClusterNodeOutcome(std::move(result.GetError()));
 }
 
+DescribeClusterOperationOutcome SageMakerClient::DescribeClusterOperation(const DescribeClusterOperationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeClusterOperationOutcome(result.GetResultWithOwnership())
+                            : DescribeClusterOperationOutcome(std::move(result.GetError()));
+}
+
 DescribeClusterSchedulerConfigOutcome SageMakerClient::DescribeClusterSchedulerConfig(
     const DescribeClusterSchedulerConfigRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -717,11 +723,4 @@ DescribeModelCardExportJobOutcome SageMakerClient::DescribeModelCardExportJob(co
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeModelCardExportJobOutcome(result.GetResultWithOwnership())
                             : DescribeModelCardExportJobOutcome(std::move(result.GetError()));
-}
-
-DescribeModelExplainabilityJobDefinitionOutcome SageMakerClient::DescribeModelExplainabilityJobDefinition(
-    const DescribeModelExplainabilityJobDefinitionRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeModelExplainabilityJobDefinitionOutcome(result.GetResultWithOwnership())
-                            : DescribeModelExplainabilityJobDefinitionOutcome(std::move(result.GetError()));
 }

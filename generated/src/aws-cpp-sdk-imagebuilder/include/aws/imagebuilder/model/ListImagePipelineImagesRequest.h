@@ -33,7 +33,8 @@ class ListImagePipelineImagesRequest : public ImagebuilderRequest {
   ///@{
   /**
    * <p>The Amazon Resource Name (ARN) of the image pipeline whose images you want to
-   * view.</p>
+   * view.</p> <p>If the ARN that you specify doesn't exist, Image Builder returns an
+   * empty list rather than a <code>ResourceNotFoundException</code> error.</p>
    */
   inline const Aws::String& GetImagePipelineArn() const { return m_imagePipelineArn; }
   inline bool ImagePipelineArnHasBeenSet() const { return m_imagePipelineArnHasBeenSet; }

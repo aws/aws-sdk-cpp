@@ -26,14 +26,6 @@ GetScheduleGroupResult& GetScheduleGroupResult::operator=(const Aws::AmazonWebSe
     m_arn = jsonValue.GetString("Arn");
     m_arnHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("CreationDate")) {
-    m_creationDate = jsonValue.GetDouble("CreationDate");
-    m_creationDateHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("LastModificationDate")) {
-    m_lastModificationDate = jsonValue.GetDouble("LastModificationDate");
-    m_lastModificationDateHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
     m_nameHasBeenSet = true;
@@ -41,6 +33,14 @@ GetScheduleGroupResult& GetScheduleGroupResult::operator=(const Aws::AmazonWebSe
   if (jsonValue.ValueExists("State")) {
     m_state = ScheduleGroupStateMapper::GetScheduleGroupStateForName(jsonValue.GetString("State"));
     m_stateHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CreationDate")) {
+    m_creationDate = jsonValue.GetDouble("CreationDate");
+    m_creationDateHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("LastModificationDate")) {
+    m_lastModificationDate = jsonValue.GetDouble("LastModificationDate");
+    m_lastModificationDateHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

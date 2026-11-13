@@ -78,14 +78,14 @@ class SelfManagedKafkaEventSourceConfig {
   ///@{
   /**
    * <p>The mode that Lambda uses to consume records from your self-managed Apache
-   * Kafka topic. The default is <code>Stream</code>.</p> <ul> <li> <p>
-   * <code>Stream</code> – Lambda consumes records using a Kafka consumer group and
-   * preserves the order of records within each partition. This is the default when
-   * you omit <code>ConsumptionMode</code>.</p> </li> <li> <p> <code>Queue</code> –
-   * Lambda consumes records using a Kafka share group. Multiple consumers can
-   * process records from the same partitions concurrently. Queue mode does not
-   * preserve per-partition order. Queue mode requires an Apache Kafka cluster
-   * running version 4.2 or later with share groups enabled.</p> </li> </ul> <p>You
+   * Kafka topic. Valid values are the following:</p> <ul> <li> <p>
+   * <code>Stream</code> (default) – Lambda consumes records using a Kafka consumer
+   * group and preserves the order of records within each partition.</p> </li> <li>
+   * <p> <code>Queue</code> – Lambda consumes records using a Kafka share group.
+   * Multiple consumers can process records from the same partition concurrently, so
+   * Lambda doesn't preserve per-partition order. To use Queue mode, your cluster
+   * must run Apache Kafka version 4.2 or later with share groups enabled.</p> </li>
+   * </ul> <p>If you omit this parameter, Lambda uses <code>Stream</code>.</p> <p>You
    * cannot change <code>ConsumptionMode</code> after you create the event source
    * mapping. To use a different consumption mode, create a new event source
    * mapping.</p> <p>When <code>ConsumptionMode</code> is <code>Queue</code>, the

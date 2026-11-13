@@ -132,11 +132,12 @@ class IpamInternetRegistryAssociation {
 
   ///@{
   /**
-   * <p>The Regional Internet Registry. Possible values:</p> <ul> <li> <p>
-   * <code>ripe</code> - RIPE NCC (Europe, the Middle East, and Central Asia).</p>
-   * </li> <li> <p> <code>apnic</code> - APNIC (Asia Pacific).</p> </li> <li> <p>
-   * <code>arin</code> - ARIN (North America).</p> </li> <li> <p> <code>lacnic</code>
-   * - LACNIC (Latin America and the Caribbean).</p> </li> </ul>
+   * <p>The internet registry. Possible values:</p> <ul> <li> <p> <code>ripe</code> -
+   * RIPE NCC (Europe, the Middle East, and Central Asia).</p> </li> <li> <p>
+   * <code>apnic</code> - APNIC (Asia Pacific).</p> </li> <li> <p> <code>arin</code>
+   * - ARIN (North America).</p> </li> <li> <p> <code>lacnic</code> - LACNIC (Latin
+   * America and the Caribbean).</p> </li> <li> <p> <code>nicbr</code> - NIC.br
+   * (Brazil).</p> </li> </ul>
    */
   inline Rir GetRir() const { return m_rir; }
   inline bool RirHasBeenSet() const { return m_rirHasBeenSet; }
@@ -189,10 +190,11 @@ class IpamInternetRegistryAssociation {
   ///@{
   /**
    * <p>The state of the internet registry association. Valid values:
-   * <code>pending-activation</code> | <code>pending-enable</code> |
-   * <code>create-in-progress</code> | <code>create-failed</code> |
-   * <code>enable-in-progress</code> | <code>enable-complete</code> |
-   * <code>enable-failed</code> | <code>delete-in-progress</code> |
+   * <code>pending-enable</code> | <code>create-in-progress</code> |
+   * <code>create-failed</code> | <code>enable-in-progress</code> |
+   * <code>enable-complete</code> | <code>enable-failed</code> |
+   * <code>disable-in-progress</code> | <code>disable-complete</code> |
+   * <code>disable-failed</code> | <code>delete-in-progress</code> |
    * <code>delete-complete</code> | <code>delete-failed</code>.</p>
    */
   inline IpamInternetRegistryAssociationState GetState() const { return m_state; }

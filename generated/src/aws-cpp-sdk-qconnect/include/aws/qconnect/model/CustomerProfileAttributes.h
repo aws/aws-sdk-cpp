@@ -6,7 +6,9 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/qconnect/QConnect_EXPORTS.h>
+#include <aws/qconnect/model/ProfileRecommendation.h>
 
 #include <utility>
 
@@ -1084,6 +1086,55 @@ class CustomerProfileAttributes {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The recommendations that are associated with the customer profile.</p>
+   */
+  inline const Aws::Vector<ProfileRecommendation>& GetRecommendations() const { return m_recommendations; }
+  inline bool RecommendationsHasBeenSet() const { return m_recommendationsHasBeenSet; }
+  template <typename RecommendationsT = Aws::Vector<ProfileRecommendation>>
+  void SetRecommendations(RecommendationsT&& value) {
+    m_recommendationsHasBeenSet = true;
+    m_recommendations = std::forward<RecommendationsT>(value);
+  }
+  template <typename RecommendationsT = Aws::Vector<ProfileRecommendation>>
+  CustomerProfileAttributes& WithRecommendations(RecommendationsT&& value) {
+    SetRecommendations(std::forward<RecommendationsT>(value));
+    return *this;
+  }
+  template <typename RecommendationsT = ProfileRecommendation>
+  CustomerProfileAttributes& AddRecommendations(RecommendationsT&& value) {
+    m_recommendationsHasBeenSet = true;
+    m_recommendations.emplace_back(std::forward<RecommendationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The calculated attributes from the customer profile that are used with the
+   * message template.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetCalculatedAttributes() const { return m_calculatedAttributes; }
+  inline bool CalculatedAttributesHasBeenSet() const { return m_calculatedAttributesHasBeenSet; }
+  template <typename CalculatedAttributesT = Aws::Map<Aws::String, Aws::String>>
+  void SetCalculatedAttributes(CalculatedAttributesT&& value) {
+    m_calculatedAttributesHasBeenSet = true;
+    m_calculatedAttributes = std::forward<CalculatedAttributesT>(value);
+  }
+  template <typename CalculatedAttributesT = Aws::Map<Aws::String, Aws::String>>
+  CustomerProfileAttributes& WithCalculatedAttributes(CalculatedAttributesT&& value) {
+    SetCalculatedAttributes(std::forward<CalculatedAttributesT>(value));
+    return *this;
+  }
+  template <typename CalculatedAttributesKeyT = Aws::String, typename CalculatedAttributesValueT = Aws::String>
+  CustomerProfileAttributes& AddCalculatedAttributes(CalculatedAttributesKeyT&& key, CalculatedAttributesValueT&& value) {
+    m_calculatedAttributesHasBeenSet = true;
+    m_calculatedAttributes.emplace(std::forward<CalculatedAttributesKeyT>(key), std::forward<CalculatedAttributesValueT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_profileId;
 
@@ -1200,6 +1251,10 @@ class CustomerProfileAttributes {
   Aws::String m_billingState;
 
   Aws::Map<Aws::String, Aws::String> m_custom;
+
+  Aws::Vector<ProfileRecommendation> m_recommendations;
+
+  Aws::Map<Aws::String, Aws::String> m_calculatedAttributes;
   bool m_profileIdHasBeenSet = false;
   bool m_profileARNHasBeenSet = false;
   bool m_firstNameHasBeenSet = false;
@@ -1258,6 +1313,8 @@ class CustomerProfileAttributes {
   bool m_billingProvinceHasBeenSet = false;
   bool m_billingStateHasBeenSet = false;
   bool m_customHasBeenSet = false;
+  bool m_recommendationsHasBeenSet = false;
+  bool m_calculatedAttributesHasBeenSet = false;
 };
 
 }  // namespace Model

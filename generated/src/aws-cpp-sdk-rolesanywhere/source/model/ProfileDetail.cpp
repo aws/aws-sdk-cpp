@@ -83,6 +83,18 @@ ProfileDetail& ProfileDetail::operator=(JsonView jsonValue) {
     }
     m_attributeMappingsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("aliasName")) {
+    m_aliasName = jsonValue.GetString("aliasName");
+    m_aliasNameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("aliasArn")) {
+    m_aliasArn = jsonValue.GetString("aliasArn");
+    m_aliasArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("previousAliasName")) {
+    m_previousAliasName = jsonValue.GetString("previousAliasName");
+    m_previousAliasNameHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -155,6 +167,18 @@ JsonValue ProfileDetail::Jsonize() const {
       attributeMappingsJsonList[attributeMappingsIndex].AsObject(m_attributeMappings[attributeMappingsIndex].Jsonize());
     }
     payload.WithArray("attributeMappings", std::move(attributeMappingsJsonList));
+  }
+
+  if (m_aliasNameHasBeenSet) {
+    payload.WithString("aliasName", m_aliasName);
+  }
+
+  if (m_aliasArnHasBeenSet) {
+    payload.WithString("aliasArn", m_aliasArn);
+  }
+
+  if (m_previousAliasNameHasBeenSet) {
+    payload.WithString("previousAliasName", m_previousAliasName);
   }
 
   return payload;

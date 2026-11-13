@@ -153,6 +153,7 @@
 #include <aws/lambda/model/FunctionConfiguration.h>
 #include <aws/lambda/model/FunctionEventInvokeConfig.h>
 #include <aws/lambda/model/FunctionResponseType.h>
+#include <aws/lambda/model/FunctionRuntimeConfig.h>
 #include <aws/lambda/model/FunctionScalingConfig.h>
 #include <aws/lambda/model/FunctionUrlAuthType.h>
 #include <aws/lambda/model/FunctionUrlConfig.h>
@@ -347,7 +348,9 @@
 #include <aws/lambda/model/ResponseStreamingInvocationType.h>
 #include <aws/lambda/model/RetryDetails.h>
 #include <aws/lambda/model/Runtime.h>
+#include <aws/lambda/model/RuntimeAliasDeletedException.h>
 #include <aws/lambda/model/RuntimeVersionConfig.h>
+#include <aws/lambda/model/RuntimeVersionDeletedException.h>
 #include <aws/lambda/model/RuntimeVersionError.h>
 #include <aws/lambda/model/S3FilesConfig.h>
 #include <aws/lambda/model/S3FilesMountConnectivityException.h>

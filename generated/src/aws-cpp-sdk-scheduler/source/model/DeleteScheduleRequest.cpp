@@ -19,15 +19,15 @@ Aws::String DeleteScheduleRequest::SerializePayload() const { return {}; }
 
 void DeleteScheduleRequest::AddQueryStringParameters(URI& uri) const {
   Aws::StringStream ss;
-  if (m_clientTokenHasBeenSet) {
-    ss << m_clientToken;
-    uri.AddQueryStringParameter("clientToken", ss.str());
-    ss.str("");
-  }
-
   if (m_groupNameHasBeenSet) {
     ss << m_groupName;
     uri.AddQueryStringParameter("groupName", ss.str());
+    ss.str("");
+  }
+
+  if (m_clientTokenHasBeenSet) {
+    ss << m_clientToken;
+    uri.AddQueryStringParameter("clientToken", ss.str());
     ss.str("");
   }
 }

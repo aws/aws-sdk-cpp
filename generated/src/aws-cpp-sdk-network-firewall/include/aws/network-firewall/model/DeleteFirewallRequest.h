@@ -68,12 +68,39 @@ class DeleteFirewallRequest : public NetworkFirewallRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether to delete the NAT gateways that Network Firewall created
+   * for a proxy mode firewall when you delete the firewall. You can choose from the
+   * following values:</p> <ul> <li> <p> <code>FALSE</code> - Network Firewall
+   * detaches the NAT gateways from the firewall and keeps them. This is the
+   * default.</p> </li> <li> <p> <code>TRUE</code> - Network Firewall also deletes
+   * the NAT gateways. The firewall status stays <code>DELETING</code> until they're
+   * deleted. You need permission to call the Amazon EC2
+   * <code>DeleteNatGateway</code> action.</p> </li> </ul> <p>You can't specify
+   * <code>TRUE</code> for a firewall that isn't a proxy mode firewall.</p>
+   */
+  inline bool GetDeleteAssociatedNatGateways() const { return m_deleteAssociatedNatGateways; }
+  inline bool DeleteAssociatedNatGatewaysHasBeenSet() const { return m_deleteAssociatedNatGatewaysHasBeenSet; }
+  inline void SetDeleteAssociatedNatGateways(bool value) {
+    m_deleteAssociatedNatGatewaysHasBeenSet = true;
+    m_deleteAssociatedNatGateways = value;
+  }
+  inline DeleteFirewallRequest& WithDeleteAssociatedNatGateways(bool value) {
+    SetDeleteAssociatedNatGateways(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_firewallName;
 
   Aws::String m_firewallArn;
+
+  bool m_deleteAssociatedNatGateways{false};
   bool m_firewallNameHasBeenSet = false;
   bool m_firewallArnHasBeenSet = false;
+  bool m_deleteAssociatedNatGatewaysHasBeenSet = false;
 };
 
 }  // namespace Model

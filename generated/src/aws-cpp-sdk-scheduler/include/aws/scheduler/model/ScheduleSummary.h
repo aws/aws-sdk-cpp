@@ -54,18 +54,18 @@ class ScheduleSummary {
 
   ///@{
   /**
-   * <p>The time at which the schedule was created.</p>
+   * <p>The name of the schedule.</p>
    */
-  inline const Aws::Utils::DateTime& GetCreationDate() const { return m_creationDate; }
-  inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
-  template <typename CreationDateT = Aws::Utils::DateTime>
-  void SetCreationDate(CreationDateT&& value) {
-    m_creationDateHasBeenSet = true;
-    m_creationDate = std::forward<CreationDateT>(value);
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
   }
-  template <typename CreationDateT = Aws::Utils::DateTime>
-  ScheduleSummary& WithCreationDate(CreationDateT&& value) {
-    SetCreationDate(std::forward<CreationDateT>(value));
+  template <typename NameT = Aws::String>
+  ScheduleSummary& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
     return *this;
   }
   ///@}
@@ -90,6 +90,40 @@ class ScheduleSummary {
 
   ///@{
   /**
+   * <p>Specifies whether the schedule is enabled or disabled.</p>
+   */
+  inline ScheduleState GetState() const { return m_state; }
+  inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+  inline void SetState(ScheduleState value) {
+    m_stateHasBeenSet = true;
+    m_state = value;
+  }
+  inline ScheduleSummary& WithState(ScheduleState value) {
+    SetState(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The time at which the schedule was created.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCreationDate() const { return m_creationDate; }
+  inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
+  template <typename CreationDateT = Aws::Utils::DateTime>
+  void SetCreationDate(CreationDateT&& value) {
+    m_creationDateHasBeenSet = true;
+    m_creationDate = std::forward<CreationDateT>(value);
+  }
+  template <typename CreationDateT = Aws::Utils::DateTime>
+  ScheduleSummary& WithCreationDate(CreationDateT&& value) {
+    SetCreationDate(std::forward<CreationDateT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The time at which the schedule was last modified.</p>
    */
   inline const Aws::Utils::DateTime& GetLastModificationDate() const { return m_lastModificationDate; }
@@ -102,40 +136,6 @@ class ScheduleSummary {
   template <typename LastModificationDateT = Aws::Utils::DateTime>
   ScheduleSummary& WithLastModificationDate(LastModificationDateT&& value) {
     SetLastModificationDate(std::forward<LastModificationDateT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The name of the schedule.</p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  ScheduleSummary& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Specifies whether the schedule is enabled or disabled.</p>
-   */
-  inline ScheduleState GetState() const { return m_state; }
-  inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-  inline void SetState(ScheduleState value) {
-    m_stateHasBeenSet = true;
-    m_state = value;
-  }
-  inline ScheduleSummary& WithState(ScheduleState value) {
-    SetState(value);
     return *this;
   }
   ///@}
@@ -160,23 +160,23 @@ class ScheduleSummary {
  private:
   Aws::String m_arn;
 
-  Aws::Utils::DateTime m_creationDate{};
+  Aws::String m_name;
 
   Aws::String m_groupName;
 
-  Aws::Utils::DateTime m_lastModificationDate{};
-
-  Aws::String m_name;
-
   ScheduleState m_state{ScheduleState::NOT_SET};
+
+  Aws::Utils::DateTime m_creationDate{};
+
+  Aws::Utils::DateTime m_lastModificationDate{};
 
   TargetSummary m_target;
   bool m_arnHasBeenSet = false;
-  bool m_creationDateHasBeenSet = false;
-  bool m_groupNameHasBeenSet = false;
-  bool m_lastModificationDateHasBeenSet = false;
   bool m_nameHasBeenSet = false;
+  bool m_groupNameHasBeenSet = false;
   bool m_stateHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_lastModificationDateHasBeenSet = false;
   bool m_targetHasBeenSet = false;
 };
 

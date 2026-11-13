@@ -68,6 +68,9 @@ Aws::String CreateImageBuilderRequest::SerializePayload() const {
   if (m_disableIMDSV1HasBeenSet) {
     mapSize++;
   }
+  if (m_agentAccessConfigHasBeenSet) {
+    mapSize++;
+  }
 
   encoder.WriteMapStart(mapSize);
 
@@ -167,6 +170,11 @@ Aws::String CreateImageBuilderRequest::SerializePayload() const {
   if (m_disableIMDSV1HasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("DisableIMDSV1"));
     encoder.WriteBool(m_disableIMDSV1);
+  }
+
+  if (m_agentAccessConfigHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AgentAccessConfig"));
+    m_agentAccessConfig.CborEncode(encoder);
   }
   const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
   return str;

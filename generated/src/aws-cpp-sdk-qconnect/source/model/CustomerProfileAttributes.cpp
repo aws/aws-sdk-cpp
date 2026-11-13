@@ -253,6 +253,20 @@ CustomerProfileAttributes& CustomerProfileAttributes::operator=(JsonView jsonVal
     }
     m_customHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("recommendations")) {
+    Aws::Utils::Array<JsonView> recommendationsJsonList = jsonValue.GetArray("recommendations");
+    for (unsigned recommendationsIndex = 0; recommendationsIndex < recommendationsJsonList.GetLength(); ++recommendationsIndex) {
+      m_recommendations.push_back(recommendationsJsonList[recommendationsIndex].AsObject());
+    }
+    m_recommendationsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("calculatedAttributes")) {
+    Aws::Map<Aws::String, JsonView> calculatedAttributesJsonMap = jsonValue.GetObject("calculatedAttributes").GetAllObjects();
+    for (auto& calculatedAttributesItem : calculatedAttributesJsonMap) {
+      m_calculatedAttributes[calculatedAttributesItem.first] = calculatedAttributesItem.second.AsString();
+    }
+    m_calculatedAttributesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -493,6 +507,22 @@ JsonValue CustomerProfileAttributes::Jsonize() const {
       customJsonMap.WithString(customItem.first, customItem.second);
     }
     payload.WithObject("custom", std::move(customJsonMap));
+  }
+
+  if (m_recommendationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> recommendationsJsonList(m_recommendations.size());
+    for (unsigned recommendationsIndex = 0; recommendationsIndex < recommendationsJsonList.GetLength(); ++recommendationsIndex) {
+      recommendationsJsonList[recommendationsIndex].AsObject(m_recommendations[recommendationsIndex].Jsonize());
+    }
+    payload.WithArray("recommendations", std::move(recommendationsJsonList));
+  }
+
+  if (m_calculatedAttributesHasBeenSet) {
+    JsonValue calculatedAttributesJsonMap;
+    for (auto& calculatedAttributesItem : m_calculatedAttributes) {
+      calculatedAttributesJsonMap.WithString(calculatedAttributesItem.first, calculatedAttributesItem.second);
+    }
+    payload.WithObject("calculatedAttributes", std::move(calculatedAttributesJsonMap));
   }
 
   return payload;

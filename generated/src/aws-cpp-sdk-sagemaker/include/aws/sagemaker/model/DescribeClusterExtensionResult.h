@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/ExtensionDetails.h>
+#include <aws/sagemaker/model/ExtensionHealth.h>
 #include <aws/sagemaker/model/ExtensionNodeSummary.h>
 
 #include <utility>
@@ -65,6 +66,30 @@ class DescribeClusterExtensionResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The problems that affect the extension on the cluster's nodes, grouped by
+   * cause, with the number of nodes that each problem affects. Use it to find out
+   * why <code>ActiveCount</code> is lower than <code>TotalCount</code>, or why the
+   * status is <code>Degraded</code>, <code>CreateFailed</code>, or
+   * <code>UpdateFailed</code>. SageMaker HyperPod omits <code>Health</code> when no
+   * node has a problem. Nodes where SageMaker HyperPod hasn't finished installing or
+   * updating the extension aren't counted in any issue, unless an earlier attempt
+   * failed on them.</p>
+   */
+  inline const ExtensionHealth& GetHealth() const { return m_health; }
+  template <typename HealthT = ExtensionHealth>
+  void SetHealth(HealthT&& value) {
+    m_healthHasBeenSet = true;
+    m_health = std::forward<HealthT>(value);
+  }
+  template <typename HealthT = ExtensionHealth>
+  DescribeClusterExtensionResult& WithHealth(HealthT&& value) {
+    SetHealth(std::forward<HealthT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -85,10 +110,13 @@ class DescribeClusterExtensionResult {
 
   ExtensionNodeSummary m_nodeSummary;
 
+  ExtensionHealth m_health;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_extensionDetailsHasBeenSet = false;
   bool m_nodeSummaryHasBeenSet = false;
+  bool m_healthHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

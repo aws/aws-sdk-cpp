@@ -47,6 +47,10 @@ Aws::String ListClusterEventsRequest::SerializePayload() const {
     payload.WithString("ResourceType", ClusterEventResourceTypeMapper::GetNameForClusterEventResourceType(m_resourceType));
   }
 
+  if (m_operationIdHasBeenSet) {
+    payload.WithString("OperationId", m_operationId);
+  }
+
   if (m_maxResultsHasBeenSet) {
     payload.WithInteger("MaxResults", m_maxResults);
   }

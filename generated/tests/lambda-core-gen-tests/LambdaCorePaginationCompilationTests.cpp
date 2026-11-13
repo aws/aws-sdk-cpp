@@ -9,7 +9,10 @@
 #include <aws/lambda-core/LambdaCoreClientPagination.h>
 #include <aws/lambda-core/LambdaCorePaginationBase.h>
 #include <aws/lambda-core/model/ListNetworkConnectorVersionsPaginationTraits.h>
+#include <aws/lambda-core/model/ListRuntimeAliasesPaginationTraits.h>
 #include <aws/lambda-core/model/ListNetworkConnectorsPaginationTraits.h>
+#include <aws/lambda-core/model/ListRuntimeVersionsPaginationTraits.h>
+#include <aws/lambda-core/model/ListRuntimesPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 

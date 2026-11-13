@@ -112,6 +112,7 @@
 #include <aws/cognito-idp/model/ClientAuthenticationResultType.h>
 #include <aws/cognito-idp/model/ClientSSOSessionConfigType.h>
 #include <aws/cognito-idp/model/ClientSecretDescriptorType.h>
+#include <aws/cognito-idp/model/ClientTypeType.h>
 #include <aws/cognito-idp/model/CloudWatchLogsConfigurationType.h>
 #include <aws/cognito-idp/model/CodeDeliveryDetailsType.h>
 #include <aws/cognito-idp/model/ColorSchemeModeType.h>
@@ -152,6 +153,7 @@
 #include <aws/cognito-idp/model/CustomEmailSenderLambdaVersionType.h>
 #include <aws/cognito-idp/model/CustomSMSLambdaVersionConfigType.h>
 #include <aws/cognito-idp/model/CustomSMSSenderLambdaVersionType.h>
+#include <aws/cognito-idp/model/DcrConfigurationType.h>
 #include <aws/cognito-idp/model/DefaultEmailOptionType.h>
 #include <aws/cognito-idp/model/DeleteGroupRequest.h>
 #include <aws/cognito-idp/model/DeleteIdentityProviderRequest.h>
@@ -335,6 +337,7 @@
 #include <aws/cognito-idp/model/ReplicaStatusType.h>
 #include <aws/cognito-idp/model/ResendConfirmationCodeRequest.h>
 #include <aws/cognito-idp/model/ResendConfirmationCodeResult.h>
+#include <aws/cognito-idp/model/ResourceServerManagedByType.h>
 #include <aws/cognito-idp/model/ResourceServerScopeType.h>
 #include <aws/cognito-idp/model/ResourceServerType.h>
 #include <aws/cognito-idp/model/RespondToAuthChallengeRequest.h>
@@ -383,6 +386,7 @@
 #include <aws/cognito-idp/model/StartUserImportJobResult.h>
 #include <aws/cognito-idp/model/StartWebAuthnRegistrationRequest.h>
 #include <aws/cognito-idp/model/StartWebAuthnRegistrationResult.h>
+#include <aws/cognito-idp/model/StatusType.h>
 #include <aws/cognito-idp/model/StopUserImportJobRequest.h>
 #include <aws/cognito-idp/model/StopUserImportJobResult.h>
 #include <aws/cognito-idp/model/StringAttributeConstraintsType.h>

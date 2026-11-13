@@ -17,6 +17,8 @@ namespace ValidationFindingCodeMapper {
 
 static const int TargetInaccessible_HASH = HashingUtils::HashString("TargetInaccessible");
 static const int TargetUnusable_HASH = HashingUtils::HashString("TargetUnusable");
+static const int TargetMissingPermissions_HASH = HashingUtils::HashString("TargetMissingPermissions");
+static const int TargetApiDisabled_HASH = HashingUtils::HashString("TargetApiDisabled");
 static const int TargetStateWarning_HASH = HashingUtils::HashString("TargetStateWarning");
 static const int AwsRoleAssumptionFailed_HASH = HashingUtils::HashString("AwsRoleAssumptionFailed");
 static const int WebIdentityTokenFailed_HASH = HashingUtils::HashString("WebIdentityTokenFailed");
@@ -31,6 +33,10 @@ ValidationFindingCode GetValidationFindingCodeForName(const Aws::String& name) {
     return ValidationFindingCode::TargetInaccessible;
   } else if (hashCode == TargetUnusable_HASH) {
     return ValidationFindingCode::TargetUnusable;
+  } else if (hashCode == TargetMissingPermissions_HASH) {
+    return ValidationFindingCode::TargetMissingPermissions;
+  } else if (hashCode == TargetApiDisabled_HASH) {
+    return ValidationFindingCode::TargetApiDisabled;
   } else if (hashCode == TargetStateWarning_HASH) {
     return ValidationFindingCode::TargetStateWarning;
   } else if (hashCode == AwsRoleAssumptionFailed_HASH) {
@@ -63,6 +69,10 @@ Aws::String GetNameForValidationFindingCode(ValidationFindingCode enumValue) {
       return "TargetInaccessible";
     case ValidationFindingCode::TargetUnusable:
       return "TargetUnusable";
+    case ValidationFindingCode::TargetMissingPermissions:
+      return "TargetMissingPermissions";
+    case ValidationFindingCode::TargetApiDisabled:
+      return "TargetApiDisabled";
     case ValidationFindingCode::TargetStateWarning:
       return "TargetStateWarning";
     case ValidationFindingCode::AwsRoleAssumptionFailed:

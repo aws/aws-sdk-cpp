@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
+#include <aws/sagemaker/model/ClusterDrainPolicy.h>
 #include <aws/sagemaker/model/ClusterPatchScheduleDetails.h>
 #include <aws/sagemaker/model/ClusterPatchingStrategy.h>
 #include <aws/sagemaker/model/DeploymentConfiguration.h>
@@ -46,7 +47,13 @@ class ClusterAutoPatchConfigDetails {
    * all instances and waits for all to become idle before patching. All instances
    * are uncordoned after patching completes. If not all instances become idle, no
    * patching occurs and all instances remain on the previous AMI version.</p> </li>
-   * </ul>
+   * <li> <p> <code>DrainFirst</code>: Designed for workloads that never become idle,
+   * such as inference. Cordons instances, evicts the running pods, and then patches
+   * each instance in batches. Each instance is uncordoned after patching. Use
+   * <code>DrainPolicy</code> to control how long to wait for pods to drain and what
+   * happens if the drain times out. Requires <code>MaximumBatchSize</code> in
+   * <code>DeploymentConfig</code>. Available only for clusters that use Amazon EKS
+   * as the orchestrator.</p> </li> </ul>
    */
   inline ClusterPatchingStrategy GetPatchingStrategy() const { return m_patchingStrategy; }
   inline bool PatchingStrategyHasBeenSet() const { return m_patchingStrategyHasBeenSet; }
@@ -114,6 +121,45 @@ class ClusterAutoPatchConfigDetails {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The maximum time, in seconds, that automatic patching waits for instances to
+   * become idle after a scheduled patch starts. Automatic patching uncordons
+   * instances that don't become idle within this window, and they remain on the
+   * previous AMI version. The default is 86400 (24 hours).</p>
+   */
+  inline int GetIdleWaitWindowInSeconds() const { return m_idleWaitWindowInSeconds; }
+  inline bool IdleWaitWindowInSecondsHasBeenSet() const { return m_idleWaitWindowInSecondsHasBeenSet; }
+  inline void SetIdleWaitWindowInSeconds(int value) {
+    m_idleWaitWindowInSecondsHasBeenSet = true;
+    m_idleWaitWindowInSeconds = value;
+  }
+  inline ClusterAutoPatchConfigDetails& WithIdleWaitWindowInSeconds(int value) {
+    SetIdleWaitWindowInSeconds(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The policy that controls how pods are evicted from an instance before it is
+   * patched. Applies only when <code>PatchingStrategy</code> is
+   * <code>DrainFirst</code>.</p>
+   */
+  inline const ClusterDrainPolicy& GetDrainPolicy() const { return m_drainPolicy; }
+  inline bool DrainPolicyHasBeenSet() const { return m_drainPolicyHasBeenSet; }
+  template <typename DrainPolicyT = ClusterDrainPolicy>
+  void SetDrainPolicy(DrainPolicyT&& value) {
+    m_drainPolicyHasBeenSet = true;
+    m_drainPolicy = std::forward<DrainPolicyT>(value);
+  }
+  template <typename DrainPolicyT = ClusterDrainPolicy>
+  ClusterAutoPatchConfigDetails& WithDrainPolicy(DrainPolicyT&& value) {
+    SetDrainPolicy(std::forward<DrainPolicyT>(value));
+    return *this;
+  }
+  ///@}
  private:
   ClusterPatchingStrategy m_patchingStrategy{ClusterPatchingStrategy::NOT_SET};
 
@@ -122,10 +168,16 @@ class ClusterAutoPatchConfigDetails {
   ClusterPatchScheduleDetails m_desiredPatchSchedule;
 
   DeploymentConfiguration m_deploymentConfig;
+
+  int m_idleWaitWindowInSeconds{0};
+
+  ClusterDrainPolicy m_drainPolicy;
   bool m_patchingStrategyHasBeenSet = false;
   bool m_currentPatchScheduleHasBeenSet = false;
   bool m_desiredPatchScheduleHasBeenSet = false;
   bool m_deploymentConfigHasBeenSet = false;
+  bool m_idleWaitWindowInSecondsHasBeenSet = false;
+  bool m_drainPolicyHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -58,6 +58,10 @@ ClusterEventDetail& ClusterEventDetail::operator=(JsonView jsonValue) {
     m_eventLevel = ClusterEventLevelMapper::GetClusterEventLevelForName(jsonValue.GetString("EventLevel"));
     m_eventLevelHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("OperationId")) {
+    m_operationId = jsonValue.GetString("OperationId");
+    m_operationIdHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -102,6 +106,10 @@ JsonValue ClusterEventDetail::Jsonize() const {
 
   if (m_eventLevelHasBeenSet) {
     payload.WithString("EventLevel", ClusterEventLevelMapper::GetNameForClusterEventLevel(m_eventLevel));
+  }
+
+  if (m_operationIdHasBeenSet) {
+    payload.WithString("OperationId", m_operationId);
   }
 
   return payload;

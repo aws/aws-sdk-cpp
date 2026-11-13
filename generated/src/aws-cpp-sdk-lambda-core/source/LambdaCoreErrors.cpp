@@ -11,6 +11,7 @@
 #include <aws/lambda-core/model/ResourceConflictException.h>
 #include <aws/lambda-core/model/ResourceNotFoundException.h>
 #include <aws/lambda-core/model/ServiceException.h>
+#include <aws/lambda-core/model/ServiceQuotaExceededException.h>
 #include <aws/lambda-core/model/TooManyRequestsException.h>
 
 using namespace Aws::Client;
@@ -20,6 +21,12 @@ using namespace Aws::LambdaCore::Model;
 
 namespace Aws {
 namespace LambdaCore {
+template <>
+AWS_LAMBDACORE_API ServiceQuotaExceededException LambdaCoreError::GetModeledError() {
+  assert(this->GetErrorType() == LambdaCoreErrors::SERVICE_QUOTA_EXCEEDED);
+  return ServiceQuotaExceededException(this->GetJsonPayload().View());
+}
+
 template <>
 AWS_LAMBDACORE_API ResourceNotFoundException LambdaCoreError::GetModeledError() {
   assert(this->GetErrorType() == LambdaCoreErrors::RESOURCE_NOT_FOUND);
@@ -58,6 +65,7 @@ AWS_LAMBDACORE_API InvalidParameterValueException LambdaCoreError::GetModeledErr
 
 namespace LambdaCoreErrorMapper {
 
+static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
 static const int RESOURCE_CONFLICT_HASH = HashingUtils::HashString("ResourceConflictException");
 static const int NETWORK_CONNECTOR_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("NetworkConnectorLimitExceededException");
 static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
@@ -66,7 +74,9 @@ static const int SERVICE_HASH = HashingUtils::HashString("ServiceException");
 AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == RESOURCE_CONFLICT_HASH) {
+  if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaCoreErrors::SERVICE_QUOTA_EXCEEDED), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == RESOURCE_CONFLICT_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaCoreErrors::RESOURCE_CONFLICT), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == NETWORK_CONNECTOR_LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaCoreErrors::NETWORK_CONNECTOR_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);

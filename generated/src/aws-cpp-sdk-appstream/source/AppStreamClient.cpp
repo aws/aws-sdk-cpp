@@ -92,6 +92,7 @@
 #include <aws/appstream/model/UpdateDirectoryConfigRequest.h>
 #include <aws/appstream/model/UpdateEntitlementRequest.h>
 #include <aws/appstream/model/UpdateFleetRequest.h>
+#include <aws/appstream/model/UpdateImageBuilderRequest.h>
 #include <aws/appstream/model/UpdateImagePermissionsRequest.h>
 #include <aws/appstream/model/UpdateStackRequest.h>
 #include <aws/appstream/model/UpdateThemeForStackRequest.h>
@@ -772,6 +773,12 @@ UpdateEntitlementOutcome AppStreamClient::UpdateEntitlement(const UpdateEntitlem
 UpdateFleetOutcome AppStreamClient::UpdateFleet(const UpdateFleetRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UpdateFleetOutcome(result.GetResultWithOwnership()) : UpdateFleetOutcome(std::move(result.GetError()));
+}
+
+UpdateImageBuilderOutcome AppStreamClient::UpdateImageBuilder(const UpdateImageBuilderRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateImageBuilderOutcome(result.GetResultWithOwnership())
+                            : UpdateImageBuilderOutcome(std::move(result.GetError()));
 }
 
 UpdateImagePermissionsOutcome AppStreamClient::UpdateImagePermissions(const UpdateImagePermissionsRequest& request) const {

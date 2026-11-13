@@ -192,6 +192,10 @@ GetFunctionConfigurationResult& GetFunctionConfigurationResult::operator=(const 
     m_durableConfig = jsonValue.GetObject("DurableConfig");
     m_durableConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("RuntimeConfig")) {
+    m_runtimeConfig = jsonValue.GetObject("RuntimeConfig");
+    m_runtimeConfigHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

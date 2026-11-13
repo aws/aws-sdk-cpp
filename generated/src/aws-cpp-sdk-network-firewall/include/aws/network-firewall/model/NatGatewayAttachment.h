@@ -21,8 +21,9 @@ namespace NetworkFirewall {
 namespace Model {
 
 /**
- * <p>The definition and status of the attachment between a proxy mode firewall and
- * a NAT gateway that proxies its traffic. </p><p><h3>See Also:</h3>   <a
+ * <p>The NAT gateway that's attached to a proxy mode firewall in an Availability
+ * Zone, and the status of the attachment. Traffic that the firewall allows in the
+ * Availability Zone leaves through this NAT gateway.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/NatGatewayAttachment">AWS
  * API Reference</a></p>
  */
@@ -35,7 +36,7 @@ class NatGatewayAttachment {
 
   ///@{
   /**
-   * <p>A unique identifier for the NAT gateway to use with proxy resources.</p>
+   * <p>The ID of the NAT gateway.</p>
    */
   inline const Aws::String& GetNatGatewayId() const { return m_natGatewayId; }
   inline bool NatGatewayIdHasBeenSet() const { return m_natGatewayIdHasBeenSet; }
@@ -53,10 +54,10 @@ class NatGatewayAttachment {
 
   ///@{
   /**
-   * <p>The current status of the NAT gateway attachment. </p> <p>When this value is
-   * <code>READY</code>, the attachment is available to proxy traffic. Otherwise,
-   * this value reflects its state, for example <code>CREATING</code> or
-   * <code>DELETING</code>.</p>
+   * <p>The status of the NAT gateway attachment. <code>READY</code> means that the
+   * NAT gateway is attached and the firewall can send traffic through it. Other
+   * values are <code>CREATING</code>, <code>UPDATING</code>, <code>DELETING</code>,
+   * and <code>FAILED</code>.</p>
    */
   inline NatGatewayAttachmentStatus GetStatus() const { return m_status; }
   inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
@@ -72,8 +73,8 @@ class NatGatewayAttachment {
 
   ///@{
   /**
-   * <p>If Network Firewall encounters an issue with the NAT gateway attachment, it
-   * populates this with an explanation of the problem. </p>
+   * <p>The reason that Network Firewall couldn't create or attach the NAT gateway,
+   * if it couldn't.</p>
    */
   inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
   inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
@@ -91,8 +92,8 @@ class NatGatewayAttachment {
 
   ///@{
   /**
-   * <p>The DNS name that resolves to the firewall's proxy for traffic sent through
-   * this NAT gateway attachment. </p>
+   * <p>The proxy DNS name of the firewall in this Availability Zone. This is the
+   * same as the <code>DnsName</code> of the firewall's <code>Attachment</code>.</p>
    */
   inline const Aws::String& GetDnsName() const { return m_dnsName; }
   inline bool DnsNameHasBeenSet() const { return m_dnsNameHasBeenSet; }

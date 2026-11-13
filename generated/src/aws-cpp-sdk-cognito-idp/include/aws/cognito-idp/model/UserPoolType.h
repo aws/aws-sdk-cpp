@@ -9,6 +9,7 @@
 #include <aws/cognito-idp/model/AcrLevelConfigType.h>
 #include <aws/cognito-idp/model/AdminCreateUserConfigType.h>
 #include <aws/cognito-idp/model/AliasAttributeType.h>
+#include <aws/cognito-idp/model/DcrConfigurationType.h>
 #include <aws/cognito-idp/model/DeletionProtectionType.h>
 #include <aws/cognito-idp/model/DeviceConfigurationType.h>
 #include <aws/cognito-idp/model/EmailConfigurationType.h>
@@ -676,6 +677,29 @@ class UserPoolType {
 
   ///@{
   /**
+   * <p>The dynamic client registration configuration for the user pool. With dynamic
+   * client registration, applications can register their own app clients at runtime
+   * through the registration endpoint of your user pool domain. To activate this
+   * setting, your user pool must be in the <a
+   * href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html">
+   * Essentials tier</a> or higher.</p>
+   */
+  inline const DcrConfigurationType& GetDcrConfiguration() const { return m_dcrConfiguration; }
+  inline bool DcrConfigurationHasBeenSet() const { return m_dcrConfigurationHasBeenSet; }
+  template <typename DcrConfigurationT = DcrConfigurationType>
+  void SetDcrConfiguration(DcrConfigurationT&& value) {
+    m_dcrConfigurationHasBeenSet = true;
+    m_dcrConfiguration = std::forward<DcrConfigurationT>(value);
+  }
+  template <typename DcrConfigurationT = DcrConfigurationType>
+  UserPoolType& WithDcrConfiguration(DcrConfigurationT&& value) {
+    SetDcrConfiguration(std::forward<DcrConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Case sensitivity of the username input for the selected sign-in option. When
    * case sensitivity is set to <code>False</code> (case insensitive), users can sign
    * in with any combination of capital and lowercase letters. For example,
@@ -887,6 +911,8 @@ class UserPoolType {
 
   UserPoolAddOnsType m_userPoolAddOns;
 
+  DcrConfigurationType m_dcrConfiguration;
+
   UsernameConfigurationType m_usernameConfiguration;
 
   Aws::String m_arn;
@@ -929,6 +955,7 @@ class UserPoolType {
   bool m_customDomainHasBeenSet = false;
   bool m_adminCreateUserConfigHasBeenSet = false;
   bool m_userPoolAddOnsHasBeenSet = false;
+  bool m_dcrConfigurationHasBeenSet = false;
   bool m_usernameConfigurationHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_accountRecoverySettingHasBeenSet = false;

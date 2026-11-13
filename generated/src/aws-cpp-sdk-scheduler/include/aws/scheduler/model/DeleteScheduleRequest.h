@@ -36,20 +36,18 @@ class DeleteScheduleRequest : public SchedulerRequest {
 
   ///@{
   /**
-   * <p> Unique, case-sensitive identifier you provide to ensure the idempotency of
-   * the request. If you do not specify a client token, EventBridge Scheduler uses a
-   * randomly generated token for the request to ensure idempotency. </p>
+   * <p>The name of the schedule to delete.</p>
    */
-  inline const Aws::String& GetClientToken() const { return m_clientToken; }
-  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-  template <typename ClientTokenT = Aws::String>
-  void SetClientToken(ClientTokenT&& value) {
-    m_clientTokenHasBeenSet = true;
-    m_clientToken = std::forward<ClientTokenT>(value);
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
   }
-  template <typename ClientTokenT = Aws::String>
-  DeleteScheduleRequest& WithClientToken(ClientTokenT&& value) {
-    SetClientToken(std::forward<ClientTokenT>(value));
+  template <typename NameT = Aws::String>
+  DeleteScheduleRequest& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
     return *this;
   }
   ///@}
@@ -75,30 +73,32 @@ class DeleteScheduleRequest : public SchedulerRequest {
 
   ///@{
   /**
-   * <p>The name of the schedule to delete.</p>
+   * <p> Unique, case-sensitive identifier you provide to ensure the idempotency of
+   * the request. If you do not specify a client token, EventBridge Scheduler uses a
+   * randomly generated token for the request to ensure idempotency. </p>
    */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
+  inline const Aws::String& GetClientToken() const { return m_clientToken; }
+  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+  template <typename ClientTokenT = Aws::String>
+  void SetClientToken(ClientTokenT&& value) {
+    m_clientTokenHasBeenSet = true;
+    m_clientToken = std::forward<ClientTokenT>(value);
   }
-  template <typename NameT = Aws::String>
-  DeleteScheduleRequest& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
+  template <typename ClientTokenT = Aws::String>
+  DeleteScheduleRequest& WithClientToken(ClientTokenT&& value) {
+    SetClientToken(std::forward<ClientTokenT>(value));
     return *this;
   }
   ///@}
  private:
-  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  Aws::String m_name;
 
   Aws::String m_groupName;
 
-  Aws::String m_name;
-  bool m_clientTokenHasBeenSet = true;
-  bool m_groupNameHasBeenSet = false;
+  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
   bool m_nameHasBeenSet = false;
+  bool m_groupNameHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
 };
 
 }  // namespace Model

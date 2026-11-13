@@ -305,6 +305,70 @@ class ProfileDetail {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The alias of the profile. Present only if the profile has an alias.</p>
+   */
+  inline const Aws::String& GetAliasName() const { return m_aliasName; }
+  inline bool AliasNameHasBeenSet() const { return m_aliasNameHasBeenSet; }
+  template <typename AliasNameT = Aws::String>
+  void SetAliasName(AliasNameT&& value) {
+    m_aliasNameHasBeenSet = true;
+    m_aliasName = std::forward<AliasNameT>(value);
+  }
+  template <typename AliasNameT = Aws::String>
+  ProfileDetail& WithAliasName(AliasNameT&& value) {
+    SetAliasName(std::forward<AliasNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The alias ARN of the profile, in the form
+   * <code>arn:<i>partition</i>:rolesanywhere:<i>region</i>:<i>account</i>:alias/profile/<i>alias-name</i>
+   * </code>. Present only if the profile has an alias.</p> <p>You can use the alias
+   * ARN in place of the resource ID or ARN in the request parameters whose
+   * descriptions say that they accept an alias ARN. Don't use the alias ARN in
+   * Identity and Access Management (IAM) policies. A policy statement that names an
+   * alias ARN doesn't apply to the resource that holds the alias. Write policies
+   * with the ARN that contains the resource ID instead.</p>
+   */
+  inline const Aws::String& GetAliasArn() const { return m_aliasArn; }
+  inline bool AliasArnHasBeenSet() const { return m_aliasArnHasBeenSet; }
+  template <typename AliasArnT = Aws::String>
+  void SetAliasArn(AliasArnT&& value) {
+    m_aliasArnHasBeenSet = true;
+    m_aliasArn = std::forward<AliasArnT>(value);
+  }
+  template <typename AliasArnT = Aws::String>
+  ProfileDetail& WithAliasArn(AliasArnT&& value) {
+    SetAliasArn(std::forward<AliasArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The alias that the resource had before the update request. IAM Roles Anywhere
+   * returns this value only in the response to an update request that changed or
+   * removed an existing alias. It isn't returned when the alias was unchanged, when
+   * the resource had no alias before the request, or by other operations.</p>
+   */
+  inline const Aws::String& GetPreviousAliasName() const { return m_previousAliasName; }
+  inline bool PreviousAliasNameHasBeenSet() const { return m_previousAliasNameHasBeenSet; }
+  template <typename PreviousAliasNameT = Aws::String>
+  void SetPreviousAliasName(PreviousAliasNameT&& value) {
+    m_previousAliasNameHasBeenSet = true;
+    m_previousAliasName = std::forward<PreviousAliasNameT>(value);
+  }
+  template <typename PreviousAliasNameT = Aws::String>
+  ProfileDetail& WithPreviousAliasName(PreviousAliasNameT&& value) {
+    SetPreviousAliasName(std::forward<PreviousAliasNameT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_profileId;
 
@@ -333,6 +397,12 @@ class ProfileDetail {
   bool m_acceptRoleSessionName{false};
 
   Aws::Vector<AttributeMapping> m_attributeMappings;
+
+  Aws::String m_aliasName;
+
+  Aws::String m_aliasArn;
+
+  Aws::String m_previousAliasName;
   bool m_profileIdHasBeenSet = false;
   bool m_profileArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
@@ -347,6 +417,9 @@ class ProfileDetail {
   bool m_durationSecondsHasBeenSet = false;
   bool m_acceptRoleSessionNameHasBeenSet = false;
   bool m_attributeMappingsHasBeenSet = false;
+  bool m_aliasNameHasBeenSet = false;
+  bool m_aliasArnHasBeenSet = false;
+  bool m_previousAliasNameHasBeenSet = false;
 };
 
 }  // namespace Model

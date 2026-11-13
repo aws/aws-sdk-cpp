@@ -41,7 +41,8 @@ class AgentAccessConfig {
   ///@{
   /**
    * <p>The list of agent access settings that define permissions for each agent
-   * action. You must specify at least one setting.</p>
+   * action. You must specify at least one setting, and at least one agent action
+   * must be enabled.</p>
    */
   inline const Aws::Vector<AgentAccessSetting>& GetSettings() const { return m_settings; }
   inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
@@ -66,7 +67,8 @@ class AgentAccessConfig {
   ///@{
   /**
    * <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket where agent
-   * screenshots are stored. Required when ScreenshotsUploadEnabled is true.</p>
+   * screenshots and Replay Session artifacts are stored. Required when
+   * ScreenshotsUploadEnabled or ReplaySessionEnabled is true.</p>
    */
   inline const Aws::String& GetS3BucketArn() const { return m_s3BucketArn; }
   inline bool S3BucketArnHasBeenSet() const { return m_s3BucketArnHasBeenSet; }
@@ -95,6 +97,45 @@ class AgentAccessConfig {
   }
   inline AgentAccessConfig& WithScreenshotsUploadEnabled(bool value) {
     SetScreenshotsUploadEnabled(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether Replay Session is enabled for agent sessions. WorkSpaces
+   * Applications delivers a video combining session screenshots, a transcript, and a
+   * report for each session. Requires the COMPUTER_VISION agent action.</p>
+   */
+  inline bool GetReplaySessionEnabled() const { return m_replaySessionEnabled; }
+  inline bool ReplaySessionEnabledHasBeenSet() const { return m_replaySessionEnabledHasBeenSet; }
+  inline void SetReplaySessionEnabled(bool value) {
+    m_replaySessionEnabledHasBeenSet = true;
+    m_replaySessionEnabled = value;
+  }
+  inline AgentAccessConfig& WithReplaySessionEnabled(bool value) {
+    SetReplaySessionEnabled(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the customer managed symmetric encryption
+   * KMS key that encrypts Replay Session artifacts while WorkSpaces Applications
+   * processes them. The key must be in the same Region as the stack, and
+   * ReplaySessionEnabled must be true.</p>
+   */
+  inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
+  inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
+  template <typename KmsKeyArnT = Aws::String>
+  void SetKmsKeyArn(KmsKeyArnT&& value) {
+    m_kmsKeyArnHasBeenSet = true;
+    m_kmsKeyArn = std::forward<KmsKeyArnT>(value);
+  }
+  template <typename KmsKeyArnT = Aws::String>
+  AgentAccessConfig& WithKmsKeyArn(KmsKeyArnT&& value) {
+    SetKmsKeyArn(std::forward<KmsKeyArnT>(value));
     return *this;
   }
   ///@}
@@ -154,6 +195,10 @@ class AgentAccessConfig {
 
   bool m_screenshotsUploadEnabled{false};
 
+  bool m_replaySessionEnabled{false};
+
+  Aws::String m_kmsKeyArn;
+
   ScreenResolution m_screenResolution{ScreenResolution::NOT_SET};
 
   ScreenImageFormat m_screenImageFormat{ScreenImageFormat::NOT_SET};
@@ -162,6 +207,8 @@ class AgentAccessConfig {
   bool m_settingsHasBeenSet = false;
   bool m_s3BucketArnHasBeenSet = false;
   bool m_screenshotsUploadEnabledHasBeenSet = false;
+  bool m_replaySessionEnabledHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
   bool m_screenResolutionHasBeenSet = false;
   bool m_screenImageFormatHasBeenSet = false;
   bool m_userControlModeHasBeenSet = false;

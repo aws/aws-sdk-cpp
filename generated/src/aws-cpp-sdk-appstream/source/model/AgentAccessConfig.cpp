@@ -97,6 +97,44 @@ AgentAccessConfig& AgentAccessConfig::operator=(const std::shared_ptr<Aws::Crt::
                 m_screenshotsUploadEnabledHasBeenSet = true;
               }
 
+              else if (initialKeyStr == "ReplaySessionEnabled") {
+                auto val = decoder->PopNextBooleanVal();
+                if (val.has_value()) {
+                  m_replaySessionEnabled = val.value();
+                }
+                m_replaySessionEnabledHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "KmsKeyArn") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_kmsKeyArn = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_kmsKeyArn = ss.str();
+                  }
+                }
+                m_kmsKeyArnHasBeenSet = true;
+              }
+
               else if (initialKeyStr == "ScreenResolution") {
                 auto val = decoder->PopNextTextVal();
                 if (val.has_value()) {
@@ -216,6 +254,44 @@ AgentAccessConfig& AgentAccessConfig::operator=(const std::shared_ptr<Aws::Crt::
               m_screenshotsUploadEnabledHasBeenSet = true;
             }
 
+            else if (initialKeyStr == "ReplaySessionEnabled") {
+              auto val = decoder->PopNextBooleanVal();
+              if (val.has_value()) {
+                m_replaySessionEnabled = val.value();
+              }
+              m_replaySessionEnabledHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "KmsKeyArn") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_kmsKeyArn = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_kmsKeyArn = ss.str();
+                }
+              }
+              m_kmsKeyArnHasBeenSet = true;
+            }
+
             else if (initialKeyStr == "ScreenResolution") {
               auto val = decoder->PopNextTextVal();
               if (val.has_value()) {
@@ -266,6 +342,12 @@ void AgentAccessConfig::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
   if (m_screenshotsUploadEnabledHasBeenSet) {
     mapSize++;
   }
+  if (m_replaySessionEnabledHasBeenSet) {
+    mapSize++;
+  }
+  if (m_kmsKeyArnHasBeenSet) {
+    mapSize++;
+  }
   if (m_screenResolutionHasBeenSet) {
     mapSize++;
   }
@@ -294,6 +376,16 @@ void AgentAccessConfig::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
   if (m_screenshotsUploadEnabledHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("ScreenshotsUploadEnabled"));
     encoder.WriteBool(m_screenshotsUploadEnabled);
+  }
+
+  if (m_replaySessionEnabledHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ReplaySessionEnabled"));
+    encoder.WriteBool(m_replaySessionEnabled);
+  }
+
+  if (m_kmsKeyArnHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("KmsKeyArn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_kmsKeyArn.c_str()));
   }
 
   if (m_screenResolutionHasBeenSet) {

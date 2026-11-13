@@ -8,6 +8,7 @@
 #include <aws/appstream/AppStream_EXPORTS.h>
 #include <aws/appstream/model/AccessEndpoint.h>
 #include <aws/appstream/model/DomainJoinInfo.h>
+#include <aws/appstream/model/ImageBuilderAgentAccessConfig.h>
 #include <aws/appstream/model/VolumeConfig.h>
 #include <aws/appstream/model/VpcConfig.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -472,6 +473,25 @@ class CreateImageBuilderRequest : public AppStreamRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The configuration for agent access on the image builder. If specified, agent
+   * access is enabled for the image builder.</p>
+   */
+  inline const ImageBuilderAgentAccessConfig& GetAgentAccessConfig() const { return m_agentAccessConfig; }
+  inline bool AgentAccessConfigHasBeenSet() const { return m_agentAccessConfigHasBeenSet; }
+  template <typename AgentAccessConfigT = ImageBuilderAgentAccessConfig>
+  void SetAgentAccessConfig(AgentAccessConfigT&& value) {
+    m_agentAccessConfigHasBeenSet = true;
+    m_agentAccessConfig = std::forward<AgentAccessConfigT>(value);
+  }
+  template <typename AgentAccessConfigT = ImageBuilderAgentAccessConfig>
+  CreateImageBuilderRequest& WithAgentAccessConfig(AgentAccessConfigT&& value) {
+    SetAgentAccessConfig(std::forward<AgentAccessConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -506,6 +526,8 @@ class CreateImageBuilderRequest : public AppStreamRequest {
   Aws::Vector<Aws::String> m_softwaresToUninstall;
 
   bool m_disableIMDSV1{false};
+
+  ImageBuilderAgentAccessConfig m_agentAccessConfig;
   bool m_nameHasBeenSet = false;
   bool m_imageNameHasBeenSet = false;
   bool m_imageArnHasBeenSet = false;
@@ -523,6 +545,7 @@ class CreateImageBuilderRequest : public AppStreamRequest {
   bool m_softwaresToInstallHasBeenSet = false;
   bool m_softwaresToUninstallHasBeenSet = false;
   bool m_disableIMDSV1HasBeenSet = false;
+  bool m_agentAccessConfigHasBeenSet = false;
 };
 
 }  // namespace Model
