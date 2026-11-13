@@ -4,15 +4,25 @@
  */
 
 #include <aws/comprehend/ComprehendErrors.h>
+#include <aws/comprehend/model/InvalidRequestException.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/cbor/CborValue.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::Comprehend;
+using namespace Aws::Comprehend::Model;
 
 namespace Aws {
 namespace Comprehend {
+template <>
+AWS_COMPREHEND_API InvalidRequestException ComprehendError::GetModeledError() {
+  assert(this->GetErrorType() == ComprehendErrors::INVALID_REQUEST);
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return InvalidRequestException(payload.GetDecoder());
+}
+
 namespace ComprehendErrorMapper {
 
 static const int UNSUPPORTED_LANGUAGE_HASH = HashingUtils::HashString("UnsupportedLanguageException");

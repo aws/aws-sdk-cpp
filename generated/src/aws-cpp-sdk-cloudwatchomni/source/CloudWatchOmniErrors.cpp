@@ -4,15 +4,57 @@
  */
 
 #include <aws/cloudwatchomni/CloudWatchOmniErrors.h>
+#include <aws/cloudwatchomni/model/ConflictException.h>
+#include <aws/cloudwatchomni/model/InternalServerException.h>
+#include <aws/cloudwatchomni/model/ResourceNotFoundException.h>
+#include <aws/cloudwatchomni/model/ThrottlingException.h>
+#include <aws/cloudwatchomni/model/ValidationException.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/cbor/CborValue.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::CloudWatchOmni;
+using namespace Aws::CloudWatchOmni::Model;
 
 namespace Aws {
 namespace CloudWatchOmni {
+template <>
+AWS_CLOUDWATCHOMNI_API ConflictException CloudWatchOmniError::GetModeledError() {
+  assert(this->GetErrorType() == CloudWatchOmniErrors::CONFLICT);
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return ConflictException(payload.GetDecoder());
+}
+
+template <>
+AWS_CLOUDWATCHOMNI_API ThrottlingException CloudWatchOmniError::GetModeledError() {
+  assert(this->GetErrorType() == CloudWatchOmniErrors::THROTTLING);
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return ThrottlingException(payload.GetDecoder());
+}
+
+template <>
+AWS_CLOUDWATCHOMNI_API ResourceNotFoundException CloudWatchOmniError::GetModeledError() {
+  assert(this->GetErrorType() == CloudWatchOmniErrors::RESOURCE_NOT_FOUND);
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return ResourceNotFoundException(payload.GetDecoder());
+}
+
+template <>
+AWS_CLOUDWATCHOMNI_API InternalServerException CloudWatchOmniError::GetModeledError() {
+  assert(this->GetErrorType() == CloudWatchOmniErrors::INTERNAL_SERVER);
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return InternalServerException(payload.GetDecoder());
+}
+
+template <>
+AWS_CLOUDWATCHOMNI_API ValidationException CloudWatchOmniError::GetModeledError() {
+  assert(this->GetErrorType() == CloudWatchOmniErrors::VALIDATION);
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return ValidationException(payload.GetDecoder());
+}
+
 namespace CloudWatchOmniErrorMapper {
 
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");

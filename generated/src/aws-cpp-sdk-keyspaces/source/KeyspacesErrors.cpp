@@ -5,14 +5,24 @@
 
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/cbor/CborValue.h>
 #include <aws/keyspaces/KeyspacesErrors.h>
+#include <aws/keyspaces/model/ResourceNotFoundException.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::Keyspaces;
+using namespace Aws::Keyspaces::Model;
 
 namespace Aws {
 namespace Keyspaces {
+template <>
+AWS_KEYSPACES_API ResourceNotFoundException KeyspacesError::GetModeledError() {
+  assert(this->GetErrorType() == KeyspacesErrors::RESOURCE_NOT_FOUND);
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return ResourceNotFoundException(payload.GetDecoder());
+}
+
 namespace KeyspacesErrorMapper {
 
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
