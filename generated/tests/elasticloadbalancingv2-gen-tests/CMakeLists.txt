@@ -1,5 +1,5 @@
 add_project(elasticloadbalancingv2-gen-tests
-    "Tests for the AWS ELASTICLOADBALANCINGV2 C++ SDK"
+    "Tests for the Elastic Load Balancing C++ SDK"
     testing-resources
     aws-cpp-sdk-elasticloadbalancingv2
     aws-cpp-sdk-core)

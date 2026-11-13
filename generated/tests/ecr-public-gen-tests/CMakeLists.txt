@@ -1,5 +1,5 @@
 add_project(ecr-public-gen-tests
-    "Tests for the AWS ECR-PUBLIC C++ SDK"
+    "Tests for the Amazon Elastic Container Registry Public C++ SDK"
     testing-resources
     aws-cpp-sdk-ecr-public
     aws-cpp-sdk-core)

@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-organizations "C++ SDK for the AWS organizations service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-organizations "C++ SDK for AWS Organizations" aws-cpp-sdk-core)
 
 file(GLOB AWS_ORGANIZATIONS_HEADERS
     "include/aws/organizations/*.h"

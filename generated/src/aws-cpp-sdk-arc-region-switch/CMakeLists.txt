@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-arc-region-switch "C++ SDK for the AWS arc-region-switch service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-arc-region-switch "C++ SDK for ARC - Region switch" aws-cpp-sdk-core)
 
 file(GLOB AWS_ARC-REGION-SWITCH_HEADERS
     "include/aws/arc-region-switch/*.h"

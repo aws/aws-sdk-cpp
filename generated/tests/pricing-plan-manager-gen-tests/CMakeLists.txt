@@ -1,5 +1,5 @@
 add_project(pricing-plan-manager-gen-tests
-    "Tests for the AWS PRICING-PLAN-MANAGER C++ SDK"
+    "Tests for the PricingPlanManager C++ SDK"
     testing-resources
     aws-cpp-sdk-pricing-plan-manager
     aws-cpp-sdk-core)

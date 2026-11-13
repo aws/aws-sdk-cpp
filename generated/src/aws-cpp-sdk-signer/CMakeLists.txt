@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-signer "C++ SDK for the AWS signer service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-signer "C++ SDK for AWS Signer" aws-cpp-sdk-core)
 
 file(GLOB AWS_SIGNER_HEADERS
     "include/aws/signer/*.h"

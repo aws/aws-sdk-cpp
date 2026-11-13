@@ -1,5 +1,5 @@
 add_project(elasticfilesystem-gen-tests
-    "Tests for the AWS ELASTICFILESYSTEM C++ SDK"
+    "Tests for the Amazon Elastic File System C++ SDK"
     testing-resources
     aws-cpp-sdk-elasticfilesystem
     aws-cpp-sdk-core)

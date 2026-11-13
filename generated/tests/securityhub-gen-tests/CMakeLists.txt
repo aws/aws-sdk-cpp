@@ -1,5 +1,5 @@
 add_project(securityhub-gen-tests
-    "Tests for the AWS SECURITYHUB C++ SDK"
+    "Tests for the AWS SecurityHub C++ SDK"
     testing-resources
     aws-cpp-sdk-securityhub
     aws-cpp-sdk-core)

@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-secretsmanager "C++ SDK for the AWS secretsmanager service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-secretsmanager "C++ SDK for AWS Secrets Manager" aws-cpp-sdk-core)
 
 file(GLOB AWS_SECRETSMANAGER_HEADERS
     "include/aws/secretsmanager/*.h"

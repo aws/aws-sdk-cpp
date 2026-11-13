@@ -1,5 +1,5 @@
 add_project(fms-gen-tests
-    "Tests for the AWS FMS C++ SDK"
+    "Tests for the Firewall Management Service C++ SDK"
     testing-resources
     aws-cpp-sdk-fms
     aws-cpp-sdk-core)

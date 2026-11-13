@@ -1,5 +1,5 @@
 add_project(iam-gen-tests
-    "Tests for the AWS IAM C++ SDK"
+    "Tests for the AWS Identity and Access Management C++ SDK"
     testing-resources
     aws-cpp-sdk-iam
     aws-cpp-sdk-core)

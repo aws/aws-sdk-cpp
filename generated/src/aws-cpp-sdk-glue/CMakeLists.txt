@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-glue "C++ SDK for the AWS glue service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-glue "C++ SDK for AWS Glue" aws-cpp-sdk-core)
 
 file(GLOB AWS_GLUE_HEADERS
     "include/aws/glue/*.h"

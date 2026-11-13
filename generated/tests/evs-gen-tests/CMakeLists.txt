@@ -1,5 +1,5 @@
 add_project(evs-gen-tests
-    "Tests for the AWS EVS C++ SDK"
+    "Tests for the Amazon Elastic VMware Service C++ SDK"
     testing-resources
     aws-cpp-sdk-evs
     aws-cpp-sdk-core)

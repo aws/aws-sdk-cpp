@@ -1,5 +1,5 @@
 add_project(cloudcontrol-gen-tests
-    "Tests for the AWS CLOUDCONTROL C++ SDK"
+    "Tests for the AWS Cloud Control API C++ SDK"
     testing-resources
     aws-cpp-sdk-cloudcontrol
     aws-cpp-sdk-core)

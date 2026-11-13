@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-cloudcontrol "C++ SDK for the AWS cloudcontrol service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-cloudcontrol "C++ SDK for AWS Cloud Control API" aws-cpp-sdk-core)
 
 file(GLOB AWS_CLOUDCONTROL_HEADERS
     "include/aws/cloudcontrol/*.h"

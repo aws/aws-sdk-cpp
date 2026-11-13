@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-rum "C++ SDK for the AWS rum service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-rum "C++ SDK for CloudWatch RUM" aws-cpp-sdk-core)
 
 file(GLOB AWS_RUM_HEADERS
     "include/aws/rum/*.h"

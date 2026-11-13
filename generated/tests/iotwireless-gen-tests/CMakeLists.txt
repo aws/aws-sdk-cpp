@@ -1,5 +1,5 @@
 add_project(iotwireless-gen-tests
-    "Tests for the AWS IOTWIRELESS C++ SDK"
+    "Tests for the AWS IoT Wireless C++ SDK"
     testing-resources
     aws-cpp-sdk-iotwireless
     aws-cpp-sdk-core)

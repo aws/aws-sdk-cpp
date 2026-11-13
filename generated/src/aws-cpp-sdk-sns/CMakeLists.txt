@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-sns "C++ SDK for the AWS sns service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-sns "C++ SDK for Amazon Simple Notification Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_SNS_HEADERS
     "include/aws/sns/*.h"

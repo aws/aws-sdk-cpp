@@ -1,5 +1,5 @@
 add_project(redshift-serverless-gen-tests
-    "Tests for the AWS REDSHIFT-SERVERLESS C++ SDK"
+    "Tests for the Redshift Serverless C++ SDK"
     testing-resources
     aws-cpp-sdk-redshift-serverless
     aws-cpp-sdk-core)

@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-healthlake "C++ SDK for the AWS healthlake service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-healthlake "C++ SDK for Amazon HealthLake" aws-cpp-sdk-core)
 
 file(GLOB AWS_HEALTHLAKE_HEADERS
     "include/aws/healthlake/*.h"

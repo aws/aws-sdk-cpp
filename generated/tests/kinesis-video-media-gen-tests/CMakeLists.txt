@@ -1,5 +1,5 @@
 add_project(kinesis-video-media-gen-tests
-    "Tests for the AWS KINESIS-VIDEO-MEDIA C++ SDK"
+    "Tests for the Amazon Kinesis Video Streams Media C++ SDK"
     testing-resources
     aws-cpp-sdk-kinesis-video-media
     aws-cpp-sdk-core)

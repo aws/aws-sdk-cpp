@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-mgn "C++ SDK for the AWS mgn service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-mgn "C++ SDK for Application Migration Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_MGN_HEADERS
     "include/aws/mgn/*.h"

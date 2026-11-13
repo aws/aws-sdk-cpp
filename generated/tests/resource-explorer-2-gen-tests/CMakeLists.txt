@@ -1,5 +1,5 @@
 add_project(resource-explorer-2-gen-tests
-    "Tests for the AWS RESOURCE-EXPLORER-2 C++ SDK"
+    "Tests for the AWS Resource Explorer C++ SDK"
     testing-resources
     aws-cpp-sdk-resource-explorer-2
     aws-cpp-sdk-core)

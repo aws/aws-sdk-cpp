@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-marketplace-agreement "C++ SDK for the AWS marketplace-agreement service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-marketplace-agreement "C++ SDK for AWS Marketplace Agreement Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_MARKETPLACE-AGREEMENT_HEADERS
     "include/aws/marketplace-agreement/*.h"

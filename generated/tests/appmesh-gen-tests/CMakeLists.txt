@@ -1,5 +1,5 @@
 add_project(appmesh-gen-tests
-    "Tests for the AWS APPMESH C++ SDK"
+    "Tests for the AWS App Mesh C++ SDK"
     testing-resources
     aws-cpp-sdk-appmesh
     aws-cpp-sdk-core)

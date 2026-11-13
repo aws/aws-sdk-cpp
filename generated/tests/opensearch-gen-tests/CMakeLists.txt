@@ -1,5 +1,5 @@
 add_project(opensearch-gen-tests
-    "Tests for the AWS OPENSEARCH C++ SDK"
+    "Tests for the Amazon OpenSearch Service C++ SDK"
     testing-resources
     aws-cpp-sdk-opensearch
     aws-cpp-sdk-core)

@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-codepipeline "C++ SDK for the AWS codepipeline service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-codepipeline "C++ SDK for AWS CodePipeline" aws-cpp-sdk-core)
 
 file(GLOB AWS_CODEPIPELINE_HEADERS
     "include/aws/codepipeline/*.h"

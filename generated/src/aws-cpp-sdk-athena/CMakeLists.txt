@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-athena "C++ SDK for the AWS athena service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-athena "C++ SDK for Amazon Athena" aws-cpp-sdk-core)
 
 file(GLOB AWS_ATHENA_HEADERS
     "include/aws/athena/*.h"

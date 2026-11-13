@@ -1,5 +1,5 @@
 add_project(iotthingsgraph-gen-tests
-    "Tests for the AWS IOTTHINGSGRAPH C++ SDK"
+    "Tests for the AWS IoT Things Graph C++ SDK"
     testing-resources
     aws-cpp-sdk-iotthingsgraph
     aws-cpp-sdk-core)

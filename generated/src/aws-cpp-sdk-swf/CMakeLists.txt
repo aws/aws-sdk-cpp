@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-swf "C++ SDK for the AWS swf service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-swf "C++ SDK for Amazon Simple Workflow Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_SWF_HEADERS
     "include/aws/swf/*.h"

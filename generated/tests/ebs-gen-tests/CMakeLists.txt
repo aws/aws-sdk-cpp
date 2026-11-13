@@ -1,5 +1,5 @@
 add_project(ebs-gen-tests
-    "Tests for the AWS EBS C++ SDK"
+    "Tests for the Amazon Elastic Block Store C++ SDK"
     testing-resources
     aws-cpp-sdk-ebs
     aws-cpp-sdk-core)

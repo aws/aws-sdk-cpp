@@ -1,5 +1,5 @@
 add_project(bedrock-gen-tests
-    "Tests for the AWS BEDROCK C++ SDK"
+    "Tests for the Amazon Bedrock C++ SDK"
     testing-resources
     aws-cpp-sdk-bedrock
     aws-cpp-sdk-core)

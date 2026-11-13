@@ -1,5 +1,5 @@
 add_project(route53-recovery-control-config-gen-tests
-    "Tests for the AWS ROUTE53-RECOVERY-CONTROL-CONFIG C++ SDK"
+    "Tests for the AWS Route53 Recovery Control Config C++ SDK"
     testing-resources
     aws-cpp-sdk-route53-recovery-control-config
     aws-cpp-sdk-core)

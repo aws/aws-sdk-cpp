@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-budgets "C++ SDK for the AWS budgets service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-budgets "C++ SDK for AWS Budgets" aws-cpp-sdk-core)
 
 file(GLOB AWS_BUDGETS_HEADERS
     "include/aws/budgets/*.h"

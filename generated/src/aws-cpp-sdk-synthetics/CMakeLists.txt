@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-synthetics "C++ SDK for the AWS synthetics service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-synthetics "C++ SDK for Synthetics" aws-cpp-sdk-core)
 
 file(GLOB AWS_SYNTHETICS_HEADERS
     "include/aws/synthetics/*.h"

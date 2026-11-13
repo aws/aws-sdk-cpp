@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-fsx "C++ SDK for the AWS fsx service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-fsx "C++ SDK for Amazon FSx" aws-cpp-sdk-core)
 
 file(GLOB AWS_FSX_HEADERS
     "include/aws/fsx/*.h"

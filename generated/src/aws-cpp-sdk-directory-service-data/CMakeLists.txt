@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-directory-service-data "C++ SDK for the AWS directory-service-data service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-directory-service-data "C++ SDK for AWS Directory Service Data" aws-cpp-sdk-core)
 
 file(GLOB AWS_DIRECTORY-SERVICE-DATA_HEADERS
     "include/aws/directory-service-data/*.h"

@@ -1,5 +1,5 @@
 add_project(chatbot-gen-tests
-    "Tests for the AWS CHATBOT C++ SDK"
+    "Tests for the AWS Chatbot C++ SDK"
     testing-resources
     aws-cpp-sdk-chatbot
     aws-cpp-sdk-core)

@@ -1,5 +1,5 @@
 add_project(codestar-connections-gen-tests
-    "Tests for the AWS CODESTAR-CONNECTIONS C++ SDK"
+    "Tests for the AWS CodeStar connections C++ SDK"
     testing-resources
     aws-cpp-sdk-codestar-connections
     aws-cpp-sdk-core)

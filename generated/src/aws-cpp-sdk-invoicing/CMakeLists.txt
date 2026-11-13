@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-invoicing "C++ SDK for the AWS invoicing service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-invoicing "C++ SDK for AWS Invoicing" aws-cpp-sdk-core)
 
 file(GLOB AWS_INVOICING_HEADERS
     "include/aws/invoicing/*.h"

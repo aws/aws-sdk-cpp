@@ -1,5 +1,5 @@
 add_project(scheduler-gen-tests
-    "Tests for the AWS SCHEDULER C++ SDK"
+    "Tests for the Amazon EventBridge Scheduler C++ SDK"
     testing-resources
     aws-cpp-sdk-scheduler
     aws-cpp-sdk-core)

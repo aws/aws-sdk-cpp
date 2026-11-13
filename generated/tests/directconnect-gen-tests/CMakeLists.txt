@@ -1,5 +1,5 @@
 add_project(directconnect-gen-tests
-    "Tests for the AWS DIRECTCONNECT C++ SDK"
+    "Tests for the AWS Direct Connect C++ SDK"
     testing-resources
     aws-cpp-sdk-directconnect
     aws-cpp-sdk-core)

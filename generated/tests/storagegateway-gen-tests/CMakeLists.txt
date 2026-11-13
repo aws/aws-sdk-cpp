@@ -1,5 +1,5 @@
 add_project(storagegateway-gen-tests
-    "Tests for the AWS STORAGEGATEWAY C++ SDK"
+    "Tests for the AWS Storage Gateway C++ SDK"
     testing-resources
     aws-cpp-sdk-storagegateway
     aws-cpp-sdk-core)

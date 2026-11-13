@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-ivs-realtime "C++ SDK for the AWS ivs-realtime service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-ivs-realtime "C++ SDK for Amazon Interactive Video Service RealTime" aws-cpp-sdk-core)
 
 file(GLOB AWS_IVS-REALTIME_HEADERS
     "include/aws/ivs-realtime/*.h"

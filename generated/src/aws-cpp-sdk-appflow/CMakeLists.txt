@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-appflow "C++ SDK for the AWS appflow service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-appflow "C++ SDK for Amazon Appflow" aws-cpp-sdk-core)
 
 file(GLOB AWS_APPFLOW_HEADERS
     "include/aws/appflow/*.h"

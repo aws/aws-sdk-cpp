@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-route53resolver "C++ SDK for the AWS route53resolver service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-route53resolver "C++ SDK for Amazon Route 53 Resolver" aws-cpp-sdk-core)
 
 file(GLOB AWS_ROUTE53RESOLVER_HEADERS
     "include/aws/route53resolver/*.h"

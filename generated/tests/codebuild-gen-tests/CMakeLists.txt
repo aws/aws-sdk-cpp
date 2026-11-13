@@ -1,5 +1,5 @@
 add_project(codebuild-gen-tests
-    "Tests for the AWS CODEBUILD C++ SDK"
+    "Tests for the AWS CodeBuild C++ SDK"
     testing-resources
     aws-cpp-sdk-codebuild
     aws-cpp-sdk-core)

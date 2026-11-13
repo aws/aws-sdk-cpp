@@ -1,5 +1,5 @@
 add_project(fis-gen-tests
-    "Tests for the AWS FIS C++ SDK"
+    "Tests for the AWS Fault Injection Simulator C++ SDK"
     testing-resources
     aws-cpp-sdk-fis
     aws-cpp-sdk-core)

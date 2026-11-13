@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-codecommit "C++ SDK for the AWS codecommit service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-codecommit "C++ SDK for AWS CodeCommit" aws-cpp-sdk-core)
 
 file(GLOB AWS_CODECOMMIT_HEADERS
     "include/aws/codecommit/*.h"

@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-securityagent "C++ SDK for the AWS securityagent service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-securityagent "C++ SDK for AWS Security Agent" aws-cpp-sdk-core)
 
 file(GLOB AWS_SECURITYAGENT_HEADERS
     "include/aws/securityagent/*.h"

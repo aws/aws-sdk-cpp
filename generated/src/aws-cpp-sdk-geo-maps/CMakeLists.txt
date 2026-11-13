@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-geo-maps "C++ SDK for the AWS geo-maps service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-geo-maps "C++ SDK for Amazon Location Service Maps V2" aws-cpp-sdk-core)
 
 file(GLOB AWS_GEO-MAPS_HEADERS
     "include/aws/geo-maps/*.h"

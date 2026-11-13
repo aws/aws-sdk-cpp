@@ -1,5 +1,5 @@
 add_project(cloudformation-gen-tests
-    "Tests for the AWS CLOUDFORMATION C++ SDK"
+    "Tests for the AWS CloudFormation C++ SDK"
     testing-resources
     aws-cpp-sdk-cloudformation
     aws-cpp-sdk-core)

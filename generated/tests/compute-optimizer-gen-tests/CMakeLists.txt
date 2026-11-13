@@ -1,5 +1,5 @@
 add_project(compute-optimizer-gen-tests
-    "Tests for the AWS COMPUTE-OPTIMIZER C++ SDK"
+    "Tests for the AWS Compute Optimizer C++ SDK"
     testing-resources
     aws-cpp-sdk-compute-optimizer
     aws-cpp-sdk-core)

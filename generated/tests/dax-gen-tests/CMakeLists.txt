@@ -1,5 +1,5 @@
 add_project(dax-gen-tests
-    "Tests for the AWS DAX C++ SDK"
+    "Tests for the Amazon DynamoDB Accelerator (DAX) C++ SDK"
     testing-resources
     aws-cpp-sdk-dax
     aws-cpp-sdk-core)

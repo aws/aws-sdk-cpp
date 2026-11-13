@@ -1,5 +1,5 @@
 add_project(appflow-gen-tests
-    "Tests for the AWS APPFLOW C++ SDK"
+    "Tests for the Amazon Appflow C++ SDK"
     testing-resources
     aws-cpp-sdk-appflow
     aws-cpp-sdk-core)

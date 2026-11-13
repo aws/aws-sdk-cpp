@@ -1,5 +1,5 @@
 add_project(codeguruprofiler-gen-tests
-    "Tests for the AWS CODEGURUPROFILER C++ SDK"
+    "Tests for the Amazon CodeGuru Profiler C++ SDK"
     testing-resources
     aws-cpp-sdk-codeguruprofiler
     aws-cpp-sdk-core)

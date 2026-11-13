@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-databrew "C++ SDK for the AWS databrew service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-databrew "C++ SDK for AWS Glue DataBrew" aws-cpp-sdk-core)
 
 file(GLOB AWS_DATABREW_HEADERS
     "include/aws/databrew/*.h"

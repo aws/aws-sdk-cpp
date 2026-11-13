@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-kinesis-video-media "C++ SDK for the AWS kinesis-video-media service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-kinesis-video-media "C++ SDK for Amazon Kinesis Video Streams Media" aws-cpp-sdk-core)
 
 file(GLOB AWS_KINESIS-VIDEO-MEDIA_HEADERS
     "include/aws/kinesis-video-media/*.h"

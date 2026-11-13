@@ -1,5 +1,5 @@
 add_project(appstream-gen-tests
-    "Tests for the AWS APPSTREAM C++ SDK"
+    "Tests for the Amazon AppStream C++ SDK"
     testing-resources
     aws-cpp-sdk-appstream
     aws-cpp-sdk-core)

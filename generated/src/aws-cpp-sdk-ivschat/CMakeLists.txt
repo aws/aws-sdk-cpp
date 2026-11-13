@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-ivschat "C++ SDK for the AWS ivschat service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-ivschat "C++ SDK for Amazon Interactive Video Service Chat" aws-cpp-sdk-core)
 
 file(GLOB AWS_IVSCHAT_HEADERS
     "include/aws/ivschat/*.h"

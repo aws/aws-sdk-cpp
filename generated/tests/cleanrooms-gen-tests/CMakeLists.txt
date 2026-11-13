@@ -1,5 +1,5 @@
 add_project(cleanrooms-gen-tests
-    "Tests for the AWS CLEANROOMS C++ SDK"
+    "Tests for the AWS Clean Rooms Service C++ SDK"
     testing-resources
     aws-cpp-sdk-cleanrooms
     aws-cpp-sdk-core)

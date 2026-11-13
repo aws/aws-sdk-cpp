@@ -1,5 +1,5 @@
 add_project(osis-gen-tests
-    "Tests for the AWS OSIS C++ SDK"
+    "Tests for the Amazon OpenSearch Ingestion C++ SDK"
     testing-resources
     aws-cpp-sdk-osis
     aws-cpp-sdk-core)

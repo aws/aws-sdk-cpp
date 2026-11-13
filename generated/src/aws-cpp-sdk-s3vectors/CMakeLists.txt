@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-s3vectors "C++ SDK for the AWS s3vectors service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-s3vectors "C++ SDK for Amazon S3 Vectors" aws-cpp-sdk-core)
 
 file(GLOB AWS_S3VECTORS_HEADERS
     "include/aws/s3vectors/*.h"

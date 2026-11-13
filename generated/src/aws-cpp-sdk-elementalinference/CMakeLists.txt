@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-elementalinference "C++ SDK for the AWS elementalinference service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-elementalinference "C++ SDK for AWS Elemental Inference" aws-cpp-sdk-core)
 
 file(GLOB AWS_ELEMENTALINFERENCE_HEADERS
     "include/aws/elementalinference/*.h"

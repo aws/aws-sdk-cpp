@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-b2bi "C++ SDK for the AWS b2bi service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-b2bi "C++ SDK for AWS B2B Data Interchange" aws-cpp-sdk-core)
 
 file(GLOB AWS_B2BI_HEADERS
     "include/aws/b2bi/*.h"

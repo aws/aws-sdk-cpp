@@ -1,5 +1,5 @@
 add_project(s3outposts-gen-tests
-    "Tests for the AWS S3OUTPOSTS C++ SDK"
+    "Tests for the Amazon S3 on Outposts C++ SDK"
     testing-resources
     aws-cpp-sdk-s3outposts
     aws-cpp-sdk-core)

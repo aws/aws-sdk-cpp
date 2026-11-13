@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-devicefarm "C++ SDK for the AWS devicefarm service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-devicefarm "C++ SDK for AWS Device Farm" aws-cpp-sdk-core)
 
 file(GLOB AWS_DEVICEFARM_HEADERS
     "include/aws/devicefarm/*.h"

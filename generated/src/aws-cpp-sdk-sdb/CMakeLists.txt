@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-sdb "C++ SDK for the AWS sdb service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-sdb "C++ SDK for Amazon SimpleDB" aws-cpp-sdk-core)
 
 file(GLOB AWS_SDB_HEADERS
     "include/aws/sdb/*.h"

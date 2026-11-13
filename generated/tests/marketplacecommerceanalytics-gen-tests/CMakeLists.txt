@@ -1,5 +1,5 @@
 add_project(marketplacecommerceanalytics-gen-tests
-    "Tests for the AWS MARKETPLACECOMMERCEANALYTICS C++ SDK"
+    "Tests for the AWS Marketplace Commerce Analytics C++ SDK"
     testing-resources
     aws-cpp-sdk-marketplacecommerceanalytics
     aws-cpp-sdk-core)

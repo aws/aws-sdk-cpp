@@ -1,5 +1,5 @@
 add_project(marketplace-reporting-gen-tests
-    "Tests for the AWS MARKETPLACE-REPORTING C++ SDK"
+    "Tests for the AWS Marketplace Reporting Service C++ SDK"
     testing-resources
     aws-cpp-sdk-marketplace-reporting
     aws-cpp-sdk-core)

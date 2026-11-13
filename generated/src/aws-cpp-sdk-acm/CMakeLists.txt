@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-acm "C++ SDK for the AWS acm service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-acm "C++ SDK for AWS Certificate Manager" aws-cpp-sdk-core)
 
 file(GLOB AWS_ACM_HEADERS
     "include/aws/acm/*.h"

@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-bedrock-agent "C++ SDK for the AWS bedrock-agent service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-bedrock-agent "C++ SDK for Agents for Amazon Bedrock" aws-cpp-sdk-core)
 
 file(GLOB AWS_BEDROCK-AGENT_HEADERS
     "include/aws/bedrock-agent/*.h"

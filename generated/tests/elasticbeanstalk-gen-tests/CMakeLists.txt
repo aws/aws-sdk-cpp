@@ -1,5 +1,5 @@
 add_project(elasticbeanstalk-gen-tests
-    "Tests for the AWS ELASTICBEANSTALK C++ SDK"
+    "Tests for the AWS Elastic Beanstalk C++ SDK"
     testing-resources
     aws-cpp-sdk-elasticbeanstalk
     aws-cpp-sdk-core)

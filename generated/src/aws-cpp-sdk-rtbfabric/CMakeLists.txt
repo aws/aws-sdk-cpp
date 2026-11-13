@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-rtbfabric "C++ SDK for the AWS rtbfabric service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-rtbfabric "C++ SDK for RTBFabric" aws-cpp-sdk-core)
 
 file(GLOB AWS_RTBFABRIC_HEADERS
     "include/aws/rtbfabric/*.h"

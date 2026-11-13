@@ -1,5 +1,5 @@
 add_project(lexv2-runtime-gen-tests
-    "Tests for the AWS LEXV2-RUNTIME C++ SDK"
+    "Tests for the Amazon Lex Runtime V2 C++ SDK"
     testing-resources
     aws-cpp-sdk-lexv2-runtime
     aws-cpp-sdk-core)

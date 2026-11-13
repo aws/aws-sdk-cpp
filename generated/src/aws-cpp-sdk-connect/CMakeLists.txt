@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-connect "C++ SDK for the AWS connect service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-connect "C++ SDK for Amazon Connect Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_CONNECT_HEADERS
     "include/aws/connect/*.h"

@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-sagemaker-runtime-http2 "C++ SDK for the AWS sagemaker-runtime-http2 service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-sagemaker-runtime-http2 "C++ SDK for Amazon SageMaker Runtime HTTP2" aws-cpp-sdk-core)
 
 file(GLOB AWS_SAGEMAKER-RUNTIME-HTTP2_HEADERS
     "include/aws/sagemaker-runtime-http2/*.h"

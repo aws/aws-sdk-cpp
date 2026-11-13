@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-docdb "C++ SDK for the AWS docdb service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-docdb "C++ SDK for Amazon DocumentDB with MongoDB compatibility" aws-cpp-sdk-core)
 
 file(GLOB AWS_DOCDB_HEADERS
     "include/aws/docdb/*.h"

@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-macie2 "C++ SDK for the AWS macie2 service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-macie2 "C++ SDK for Amazon Macie 2" aws-cpp-sdk-core)
 
 file(GLOB AWS_MACIE2_HEADERS
     "include/aws/macie2/*.h"

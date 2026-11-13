@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-apigatewaymanagementapi "C++ SDK for the AWS apigatewaymanagementapi service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-apigatewaymanagementapi "C++ SDK for AmazonApiGatewayManagementApi" aws-cpp-sdk-core)
 
 file(GLOB AWS_APIGATEWAYMANAGEMENTAPI_HEADERS
     "include/aws/apigatewaymanagementapi/*.h"

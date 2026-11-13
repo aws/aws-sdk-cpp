@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-iotthingsgraph "C++ SDK for the AWS iotthingsgraph service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-iotthingsgraph "C++ SDK for AWS IoT Things Graph" aws-cpp-sdk-core)
 
 file(GLOB AWS_IOTTHINGSGRAPH_HEADERS
     "include/aws/iotthingsgraph/*.h"

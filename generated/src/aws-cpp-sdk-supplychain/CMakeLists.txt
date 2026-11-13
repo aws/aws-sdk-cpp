@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-supplychain "C++ SDK for the AWS supplychain service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-supplychain "C++ SDK for AWS Supply Chain" aws-cpp-sdk-core)
 
 file(GLOB AWS_SUPPLYCHAIN_HEADERS
     "include/aws/supplychain/*.h"

@@ -1,5 +1,5 @@
 add_project(continuum-gen-tests
-    "Tests for the AWS CONTINUUM C++ SDK"
+    "Tests for the AWS Continuum C++ SDK"
     testing-resources
     aws-cpp-sdk-continuum
     aws-cpp-sdk-core)

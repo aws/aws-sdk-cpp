@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-entityresolution "C++ SDK for the AWS entityresolution service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-entityresolution "C++ SDK for AWS EntityResolution" aws-cpp-sdk-core)
 
 file(GLOB AWS_ENTITYRESOLUTION_HEADERS
     "include/aws/entityresolution/*.h"

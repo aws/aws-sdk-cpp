@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-servicecatalog "C++ SDK for the AWS servicecatalog service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-servicecatalog "C++ SDK for AWS Service Catalog" aws-cpp-sdk-core)
 
 file(GLOB AWS_SERVICECATALOG_HEADERS
     "include/aws/servicecatalog/*.h"

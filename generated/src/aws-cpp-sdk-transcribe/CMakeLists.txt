@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-transcribe "C++ SDK for the AWS transcribe service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-transcribe "C++ SDK for Amazon Transcribe Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_TRANSCRIBE_HEADERS
     "include/aws/transcribe/*.h"

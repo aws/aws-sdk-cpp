@@ -1,5 +1,5 @@
 add_project(sagemaker-runtime-http2-gen-tests
-    "Tests for the AWS SAGEMAKER-RUNTIME-HTTP2 C++ SDK"
+    "Tests for the Amazon SageMaker Runtime HTTP2 C++ SDK"
     testing-resources
     aws-cpp-sdk-sagemaker-runtime-http2
     aws-cpp-sdk-core)

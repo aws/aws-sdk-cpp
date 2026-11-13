@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-servicediscovery "C++ SDK for the AWS servicediscovery service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-servicediscovery "C++ SDK for AWS Cloud Map" aws-cpp-sdk-core)
 
 file(GLOB AWS_SERVICEDISCOVERY_HEADERS
     "include/aws/servicediscovery/*.h"

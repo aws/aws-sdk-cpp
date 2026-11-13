@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-glacier "C++ SDK for the AWS glacier service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-glacier "C++ SDK for Amazon Glacier" aws-cpp-sdk-core)
 
 file(GLOB AWS_GLACIER_HEADERS
     "include/aws/glacier/*.h"

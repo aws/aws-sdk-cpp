@@ -1,5 +1,5 @@
 add_project(rds-gen-tests
-    "Tests for the AWS RDS C++ SDK"
+    "Tests for the Amazon Relational Database Service C++ SDK"
     testing-resources
     aws-cpp-sdk-rds
     aws-cpp-sdk-core)

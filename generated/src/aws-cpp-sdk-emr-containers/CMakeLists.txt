@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-emr-containers "C++ SDK for the AWS emr-containers service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-emr-containers "C++ SDK for Amazon EMR Containers" aws-cpp-sdk-core)
 
 file(GLOB AWS_EMR-CONTAINERS_HEADERS
     "include/aws/emr-containers/*.h"

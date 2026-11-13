@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-chime "C++ SDK for the AWS chime service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-chime "C++ SDK for Amazon Chime" aws-cpp-sdk-core)
 
 file(GLOB AWS_CHIME_HEADERS
     "include/aws/chime/*.h"

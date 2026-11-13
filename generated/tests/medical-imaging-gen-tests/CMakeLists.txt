@@ -1,5 +1,5 @@
 add_project(medical-imaging-gen-tests
-    "Tests for the AWS MEDICAL-IMAGING C++ SDK"
+    "Tests for the AWS Health Imaging C++ SDK"
     testing-resources
     aws-cpp-sdk-medical-imaging
     aws-cpp-sdk-core)

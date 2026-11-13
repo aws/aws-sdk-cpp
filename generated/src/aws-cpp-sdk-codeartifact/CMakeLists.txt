@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-codeartifact "C++ SDK for the AWS codeartifact service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-codeartifact "C++ SDK for CodeArtifact" aws-cpp-sdk-core)
 
 file(GLOB AWS_CODEARTIFACT_HEADERS
     "include/aws/codeartifact/*.h"

@@ -1,5 +1,5 @@
 add_project(wickr-gen-tests
-    "Tests for the AWS WICKR C++ SDK"
+    "Tests for the AWS Wickr Admin API C++ SDK"
     testing-resources
     aws-cpp-sdk-wickr
     aws-cpp-sdk-core)

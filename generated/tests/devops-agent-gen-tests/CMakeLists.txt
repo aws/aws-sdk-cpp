@@ -1,5 +1,5 @@
 add_project(devops-agent-gen-tests
-    "Tests for the AWS DEVOPS-AGENT C++ SDK"
+    "Tests for the AWS DevOps Agent Service C++ SDK"
     testing-resources
     aws-cpp-sdk-devops-agent
     aws-cpp-sdk-core)

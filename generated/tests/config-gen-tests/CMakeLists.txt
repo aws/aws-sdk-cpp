@@ -1,5 +1,5 @@
 add_project(config-gen-tests
-    "Tests for the AWS CONFIG C++ SDK"
+    "Tests for the AWS Config C++ SDK"
     testing-resources
     aws-cpp-sdk-config
     aws-cpp-sdk-core)

@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-vpc-lattice "C++ SDK for the AWS vpc-lattice service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-vpc-lattice "C++ SDK for Amazon VPC Lattice" aws-cpp-sdk-core)
 
 file(GLOB AWS_VPC-LATTICE_HEADERS
     "include/aws/vpc-lattice/*.h"

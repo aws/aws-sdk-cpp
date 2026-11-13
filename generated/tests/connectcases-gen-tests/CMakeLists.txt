@@ -1,5 +1,5 @@
 add_project(connectcases-gen-tests
-    "Tests for the AWS CONNECTCASES C++ SDK"
+    "Tests for the Amazon Connect Cases C++ SDK"
     testing-resources
     aws-cpp-sdk-connectcases
     aws-cpp-sdk-core)

@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-kinesis "C++ SDK for the AWS kinesis service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-kinesis "C++ SDK for Amazon Kinesis" aws-cpp-sdk-core)
 
 file(GLOB AWS_KINESIS_HEADERS
     "include/aws/kinesis/*.h"

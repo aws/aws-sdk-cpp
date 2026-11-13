@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-timestream-write "C++ SDK for the AWS timestream-write service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-timestream-write "C++ SDK for Amazon Timestream Write" aws-cpp-sdk-core)
 
 file(GLOB AWS_TIMESTREAM-WRITE_HEADERS
     "include/aws/timestream-write/*.h"

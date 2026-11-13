@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-codeguru-reviewer "C++ SDK for the AWS codeguru-reviewer service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-codeguru-reviewer "C++ SDK for Amazon CodeGuru Reviewer" aws-cpp-sdk-core)
 
 file(GLOB AWS_CODEGURU-REVIEWER_HEADERS
     "include/aws/codeguru-reviewer/*.h"

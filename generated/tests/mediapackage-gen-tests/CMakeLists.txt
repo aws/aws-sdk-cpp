@@ -1,5 +1,5 @@
 add_project(mediapackage-gen-tests
-    "Tests for the AWS MEDIAPACKAGE C++ SDK"
+    "Tests for the AWS Elemental MediaPackage C++ SDK"
     testing-resources
     aws-cpp-sdk-mediapackage
     aws-cpp-sdk-core)

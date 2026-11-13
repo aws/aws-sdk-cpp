@@ -1,5 +1,5 @@
 add_project(discovery-gen-tests
-    "Tests for the AWS DISCOVERY C++ SDK"
+    "Tests for the AWS Application Discovery Service C++ SDK"
     testing-resources
     aws-cpp-sdk-discovery
     aws-cpp-sdk-core)

@@ -1,5 +1,5 @@
 add_project(resourcegroupstaggingapi-gen-tests
-    "Tests for the AWS RESOURCEGROUPSTAGGINGAPI C++ SDK"
+    "Tests for the AWS Resource Groups Tagging API C++ SDK"
     testing-resources
     aws-cpp-sdk-resourcegroupstaggingapi
     aws-cpp-sdk-core)

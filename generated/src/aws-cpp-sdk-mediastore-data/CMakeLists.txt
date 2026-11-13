@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-mediastore-data "C++ SDK for the AWS mediastore-data service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-mediastore-data "C++ SDK for AWS Elemental MediaStore Data Plane" aws-cpp-sdk-core)
 
 file(GLOB AWS_MEDIASTORE-DATA_HEADERS
     "include/aws/mediastore-data/*.h"

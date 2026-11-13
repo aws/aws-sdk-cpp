@@ -1,5 +1,5 @@
 add_project(marketplace-entitlement-gen-tests
-    "Tests for the AWS MARKETPLACE-ENTITLEMENT C++ SDK"
+    "Tests for the AWS Marketplace Entitlement Service C++ SDK"
     testing-resources
     aws-cpp-sdk-marketplace-entitlement
     aws-cpp-sdk-core)

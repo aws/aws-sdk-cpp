@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-ssm-contacts "C++ SDK for the AWS ssm-contacts service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-ssm-contacts "C++ SDK for AWS Systems Manager Incident Manager Contacts" aws-cpp-sdk-core)
 
 file(GLOB AWS_SSM-CONTACTS_HEADERS
     "include/aws/ssm-contacts/*.h"

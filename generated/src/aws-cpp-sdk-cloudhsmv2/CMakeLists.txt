@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-cloudhsmv2 "C++ SDK for the AWS cloudhsmv2 service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-cloudhsmv2 "C++ SDK for AWS CloudHSM V2" aws-cpp-sdk-core)
 
 file(GLOB AWS_CLOUDHSMV2_HEADERS
     "include/aws/cloudhsmv2/*.h"

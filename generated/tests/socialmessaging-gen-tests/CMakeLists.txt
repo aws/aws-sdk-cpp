@@ -1,5 +1,5 @@
 add_project(socialmessaging-gen-tests
-    "Tests for the AWS SOCIALMESSAGING C++ SDK"
+    "Tests for the AWS End User Messaging Social C++ SDK"
     testing-resources
     aws-cpp-sdk-socialmessaging
     aws-cpp-sdk-core)

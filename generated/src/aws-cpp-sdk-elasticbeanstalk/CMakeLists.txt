@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-elasticbeanstalk "C++ SDK for the AWS elasticbeanstalk service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-elasticbeanstalk "C++ SDK for AWS Elastic Beanstalk" aws-cpp-sdk-core)
 
 file(GLOB AWS_ELASTICBEANSTALK_HEADERS
     "include/aws/elasticbeanstalk/*.h"

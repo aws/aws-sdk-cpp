@@ -1,5 +1,5 @@
 add_project(controltower-gen-tests
-    "Tests for the AWS CONTROLTOWER C++ SDK"
+    "Tests for the AWS Control Tower C++ SDK"
     testing-resources
     aws-cpp-sdk-controltower
     aws-cpp-sdk-core)

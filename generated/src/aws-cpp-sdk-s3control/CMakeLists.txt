@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-s3control "C++ SDK for the AWS s3control service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-s3control "C++ SDK for AWS S3 Control" aws-cpp-sdk-core)
 
 file(GLOB AWS_S3CONTROL_HEADERS
     "include/aws/s3control/*.h"

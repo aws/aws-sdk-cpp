@@ -1,5 +1,5 @@
 add_project(ce-gen-tests
-    "Tests for the AWS CE C++ SDK"
+    "Tests for the AWS Cost Explorer Service C++ SDK"
     testing-resources
     aws-cpp-sdk-ce
     aws-cpp-sdk-core)

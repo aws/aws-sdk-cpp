@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-lookoutequipment "C++ SDK for the AWS lookoutequipment service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-lookoutequipment "C++ SDK for Amazon Lookout for Equipment" aws-cpp-sdk-core)
 
 file(GLOB AWS_LOOKOUTEQUIPMENT_HEADERS
     "include/aws/lookoutequipment/*.h"

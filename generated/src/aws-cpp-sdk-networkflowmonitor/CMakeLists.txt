@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-networkflowmonitor "C++ SDK for the AWS networkflowmonitor service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-networkflowmonitor "C++ SDK for Network Flow Monitor" aws-cpp-sdk-core)
 
 file(GLOB AWS_NETWORKFLOWMONITOR_HEADERS
     "include/aws/networkflowmonitor/*.h"

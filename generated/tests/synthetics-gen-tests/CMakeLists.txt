@@ -1,5 +1,5 @@
 add_project(synthetics-gen-tests
-    "Tests for the AWS SYNTHETICS C++ SDK"
+    "Tests for the Synthetics C++ SDK"
     testing-resources
     aws-cpp-sdk-synthetics
     aws-cpp-sdk-core)

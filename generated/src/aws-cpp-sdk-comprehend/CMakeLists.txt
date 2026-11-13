@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-comprehend "C++ SDK for the AWS comprehend service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-comprehend "C++ SDK for Amazon Comprehend" aws-cpp-sdk-core)
 
 file(GLOB AWS_COMPREHEND_HEADERS
     "include/aws/comprehend/*.h"

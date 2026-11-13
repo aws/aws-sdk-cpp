@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-bedrock-agentcore-control "C++ SDK for the AWS bedrock-agentcore-control service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-bedrock-agentcore-control "C++ SDK for Amazon Bedrock AgentCore Control" aws-cpp-sdk-core)
 
 file(GLOB AWS_BEDROCK-AGENTCORE-CONTROL_HEADERS
     "include/aws/bedrock-agentcore-control/*.h"

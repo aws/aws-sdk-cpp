@@ -1,5 +1,5 @@
 add_project(securitylake-gen-tests
-    "Tests for the AWS SECURITYLAKE C++ SDK"
+    "Tests for the Amazon Security Lake C++ SDK"
     testing-resources
     aws-cpp-sdk-securitylake
     aws-cpp-sdk-core)

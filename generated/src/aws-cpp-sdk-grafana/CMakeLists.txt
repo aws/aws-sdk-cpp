@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-grafana "C++ SDK for the AWS grafana service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-grafana "C++ SDK for Amazon Managed Grafana" aws-cpp-sdk-core)
 
 file(GLOB AWS_GRAFANA_HEADERS
     "include/aws/grafana/*.h"

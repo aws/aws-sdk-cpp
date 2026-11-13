@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-iotsitewise "C++ SDK for the AWS iotsitewise service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-iotsitewise "C++ SDK for AWS IoT SiteWise" aws-cpp-sdk-core)
 
 file(GLOB AWS_IOTSITEWISE_HEADERS
     "include/aws/iotsitewise/*.h"

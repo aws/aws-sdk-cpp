@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-sagemakertrainingsessionruntime "C++ SDK for the AWS sagemakertrainingsessionruntime service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-sagemakertrainingsessionruntime "C++ SDK for SageMaker Training Session Runtime" aws-cpp-sdk-core)
 
 file(GLOB AWS_SAGEMAKERTRAININGSESSIONRUNTIME_HEADERS
     "include/aws/sagemakertrainingsessionruntime/*.h"

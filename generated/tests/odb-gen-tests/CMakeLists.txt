@@ -1,5 +1,5 @@
 add_project(odb-gen-tests
-    "Tests for the AWS ODB C++ SDK"
+    "Tests for the odb C++ SDK"
     testing-resources
     aws-cpp-sdk-odb
     aws-cpp-sdk-core)

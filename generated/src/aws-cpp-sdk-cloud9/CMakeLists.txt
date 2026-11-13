@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-cloud9 "C++ SDK for the AWS cloud9 service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-cloud9 "C++ SDK for AWS Cloud9" aws-cpp-sdk-core)
 
 file(GLOB AWS_CLOUD9_HEADERS
     "include/aws/cloud9/*.h"

@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-ssm-guiconnect "C++ SDK for the AWS ssm-guiconnect service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-ssm-guiconnect "C++ SDK for AWS SSM-GUIConnect" aws-cpp-sdk-core)
 
 file(GLOB AWS_SSM-GUICONNECT_HEADERS
     "include/aws/ssm-guiconnect/*.h"

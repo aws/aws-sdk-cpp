@@ -1,5 +1,5 @@
 add_project(translate-gen-tests
-    "Tests for the AWS TRANSLATE C++ SDK"
+    "Tests for the Amazon Translate C++ SDK"
     testing-resources
     aws-cpp-sdk-translate
     aws-cpp-sdk-core)

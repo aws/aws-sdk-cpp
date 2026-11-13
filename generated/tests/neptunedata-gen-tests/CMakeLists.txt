@@ -1,5 +1,5 @@
 add_project(neptunedata-gen-tests
-    "Tests for the AWS NEPTUNEDATA C++ SDK"
+    "Tests for the Amazon NeptuneData C++ SDK"
     testing-resources
     aws-cpp-sdk-neptunedata
     aws-cpp-sdk-core)

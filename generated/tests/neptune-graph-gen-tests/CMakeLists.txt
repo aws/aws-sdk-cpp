@@ -1,5 +1,5 @@
 add_project(neptune-graph-gen-tests
-    "Tests for the AWS NEPTUNE-GRAPH C++ SDK"
+    "Tests for the Amazon Neptune Graph C++ SDK"
     testing-resources
     aws-cpp-sdk-neptune-graph
     aws-cpp-sdk-core)

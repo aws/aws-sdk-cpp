@@ -1,5 +1,5 @@
 add_project(email-gen-tests
-    "Tests for the AWS EMAIL C++ SDK"
+    "Tests for the Amazon Simple Email Service C++ SDK"
     testing-resources
     aws-cpp-sdk-email
     aws-cpp-sdk-core)

@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-route53domains "C++ SDK for the AWS route53domains service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-route53domains "C++ SDK for Amazon Route 53 Domains" aws-cpp-sdk-core)
 
 file(GLOB AWS_ROUTE53DOMAINS_HEADERS
     "include/aws/route53domains/*.h"

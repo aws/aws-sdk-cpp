@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-evs "C++ SDK for the AWS evs service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-evs "C++ SDK for Amazon Elastic VMware Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_EVS_HEADERS
     "include/aws/evs/*.h"

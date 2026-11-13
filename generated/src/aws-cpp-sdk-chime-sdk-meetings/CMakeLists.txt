@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-chime-sdk-meetings "C++ SDK for the AWS chime-sdk-meetings service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-chime-sdk-meetings "C++ SDK for Amazon Chime SDK Meetings" aws-cpp-sdk-core)
 
 file(GLOB AWS_CHIME-SDK-MEETINGS_HEADERS
     "include/aws/chime-sdk-meetings/*.h"

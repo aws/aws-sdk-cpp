@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-customer-profiles "C++ SDK for the AWS customer-profiles service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-customer-profiles "C++ SDK for Amazon Connect Customer Profiles" aws-cpp-sdk-core)
 
 file(GLOB AWS_CUSTOMER-PROFILES_HEADERS
     "include/aws/customer-profiles/*.h"

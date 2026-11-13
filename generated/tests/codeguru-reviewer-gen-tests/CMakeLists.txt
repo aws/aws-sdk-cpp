@@ -1,5 +1,5 @@
 add_project(codeguru-reviewer-gen-tests
-    "Tests for the AWS CODEGURU-REVIEWER C++ SDK"
+    "Tests for the Amazon CodeGuru Reviewer C++ SDK"
     testing-resources
     aws-cpp-sdk-codeguru-reviewer
     aws-cpp-sdk-core)

@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-dms "C++ SDK for the AWS dms service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-dms "C++ SDK for AWS Database Migration Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_DMS_HEADERS
     "include/aws/dms/*.h"

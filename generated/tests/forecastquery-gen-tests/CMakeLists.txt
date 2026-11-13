@@ -1,5 +1,5 @@
 add_project(forecastquery-gen-tests
-    "Tests for the AWS FORECASTQUERY C++ SDK"
+    "Tests for the Amazon Forecast Query Service C++ SDK"
     testing-resources
     aws-cpp-sdk-forecastquery
     aws-cpp-sdk-core)

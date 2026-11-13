@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-greengrassv2 "C++ SDK for the AWS greengrassv2 service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-greengrassv2 "C++ SDK for AWS IoT Greengrass V2" aws-cpp-sdk-core)
 
 file(GLOB AWS_GREENGRASSV2_HEADERS
     "include/aws/greengrassv2/*.h"

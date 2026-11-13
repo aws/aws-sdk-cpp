@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-marketplacecommerceanalytics "C++ SDK for the AWS marketplacecommerceanalytics service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-marketplacecommerceanalytics "C++ SDK for AWS Marketplace Commerce Analytics" aws-cpp-sdk-core)
 
 file(GLOB AWS_MARKETPLACECOMMERCEANALYTICS_HEADERS
     "include/aws/marketplacecommerceanalytics/*.h"

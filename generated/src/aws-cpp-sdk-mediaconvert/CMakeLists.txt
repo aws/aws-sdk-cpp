@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-mediaconvert "C++ SDK for the AWS mediaconvert service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-mediaconvert "C++ SDK for AWS Elemental MediaConvert" aws-cpp-sdk-core)
 
 file(GLOB AWS_MEDIACONVERT_HEADERS
     "include/aws/mediaconvert/*.h"

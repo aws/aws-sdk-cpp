@@ -1,5 +1,5 @@
 add_project(kendra-gen-tests
-    "Tests for the AWS KENDRA C++ SDK"
+    "Tests for the AWSKendraFrontendService C++ SDK"
     testing-resources
     aws-cpp-sdk-kendra
     aws-cpp-sdk-core)

@@ -1,5 +1,5 @@
 add_project(applicationcostprofiler-gen-tests
-    "Tests for the AWS APPLICATIONCOSTPROFILER C++ SDK"
+    "Tests for the AWS Application Cost Profiler C++ SDK"
     testing-resources
     aws-cpp-sdk-applicationcostprofiler
     aws-cpp-sdk-core)

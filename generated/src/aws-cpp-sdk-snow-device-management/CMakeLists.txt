@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-snow-device-management "C++ SDK for the AWS snow-device-management service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-snow-device-management "C++ SDK for AWS Snow Device Management" aws-cpp-sdk-core)
 
 file(GLOB AWS_SNOW-DEVICE-MANAGEMENT_HEADERS
     "include/aws/snow-device-management/*.h"

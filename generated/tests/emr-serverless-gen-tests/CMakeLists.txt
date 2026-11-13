@@ -1,5 +1,5 @@
 add_project(emr-serverless-gen-tests
-    "Tests for the AWS EMR-SERVERLESS C++ SDK"
+    "Tests for the EMR Serverless C++ SDK"
     testing-resources
     aws-cpp-sdk-emr-serverless
     aws-cpp-sdk-core)

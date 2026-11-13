@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-mediastore "C++ SDK for the AWS mediastore service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-mediastore "C++ SDK for AWS Elemental MediaStore" aws-cpp-sdk-core)
 
 file(GLOB AWS_MEDIASTORE_HEADERS
     "include/aws/mediastore/*.h"

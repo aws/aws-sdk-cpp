@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-migrationhub-config "C++ SDK for the AWS migrationhub-config service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-migrationhub-config "C++ SDK for AWS Migration Hub Config" aws-cpp-sdk-core)
 
 file(GLOB AWS_MIGRATIONHUB-CONFIG_HEADERS
     "include/aws/migrationhub-config/*.h"

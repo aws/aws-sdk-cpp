@@ -1,5 +1,5 @@
 add_project(backupsearch-gen-tests
-    "Tests for the AWS BACKUPSEARCH C++ SDK"
+    "Tests for the AWS Backup Search C++ SDK"
     testing-resources
     aws-cpp-sdk-backupsearch
     aws-cpp-sdk-core)

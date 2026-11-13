@@ -1,5 +1,5 @@
 add_project(sagemaker-metrics-gen-tests
-    "Tests for the AWS SAGEMAKER-METRICS C++ SDK"
+    "Tests for the Amazon SageMaker Metrics Service C++ SDK"
     testing-resources
     aws-cpp-sdk-sagemaker-metrics
     aws-cpp-sdk-core)

@@ -1,5 +1,5 @@
 add_project(mq-gen-tests
-    "Tests for the AWS MQ C++ SDK"
+    "Tests for the AmazonMQ C++ SDK"
     testing-resources
     aws-cpp-sdk-mq
     aws-cpp-sdk-core)

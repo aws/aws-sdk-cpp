@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-proton "C++ SDK for the AWS proton service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-proton "C++ SDK for AWS Proton" aws-cpp-sdk-core)
 
 file(GLOB AWS_PROTON_HEADERS
     "include/aws/proton/*.h"

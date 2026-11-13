@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-acm-pca "C++ SDK for the AWS acm-pca service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-acm-pca "C++ SDK for AWS Certificate Manager Private Certificate Authority" aws-cpp-sdk-core)
 
 file(GLOB AWS_ACM-PCA_HEADERS
     "include/aws/acm-pca/*.h"

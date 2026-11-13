@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-workdocs "C++ SDK for the AWS workdocs service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-workdocs "C++ SDK for Amazon WorkDocs" aws-cpp-sdk-core)
 
 file(GLOB AWS_WORKDOCS_HEADERS
     "include/aws/workdocs/*.h"

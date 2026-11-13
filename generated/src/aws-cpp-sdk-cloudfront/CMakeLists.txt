@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-cloudfront "C++ SDK for the AWS cloudfront service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-cloudfront "C++ SDK for Amazon CloudFront" aws-cpp-sdk-core)
 
 file(GLOB AWS_CLOUDFRONT_HEADERS
     "include/aws/cloudfront/*.h"

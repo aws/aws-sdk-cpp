@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-account-access-runtime "C++ SDK for the AWS account-access-runtime service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-account-access-runtime "C++ SDK for Account Access Runtime" aws-cpp-sdk-core)
 
 file(GLOB AWS_ACCOUNT-ACCESS-RUNTIME_HEADERS
     "include/aws/account-access-runtime/*.h"

@@ -40,7 +40,6 @@
     "route-53-domains": "route53domains",
     "route-53": "route53",
     "s3-control": "s3control",
-    "sagemaker-runtime": "sagemaker-runtime",
     "secrets-manager": "secretsmanager",
     "serverlessapplicationrepository": "serverlessrepo",
     "service-catalog-appregistry": "servicecatalog-appregistry",
@@ -61,8 +60,6 @@
     "cloudwatch-logs":"logs",
     "directory-service":"ds",
     "elasticsearch-service":"es",
-    "importexport":"importexport",
-    "sdb":"sdb",
     "transcribe-streaming":"transcribestreaming"
   }
   

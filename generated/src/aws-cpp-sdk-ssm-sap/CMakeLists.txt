@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-ssm-sap "C++ SDK for the AWS ssm-sap service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-ssm-sap "C++ SDK for AWS Systems Manager for SAP" aws-cpp-sdk-core)
 
 file(GLOB AWS_SSM-SAP_HEADERS
     "include/aws/ssm-sap/*.h"

@@ -1,5 +1,5 @@
 add_project(connect-contact-lens-gen-tests
-    "Tests for the AWS CONNECT-CONTACT-LENS C++ SDK"
+    "Tests for the Amazon Connect Contact Lens C++ SDK"
     testing-resources
     aws-cpp-sdk-connect-contact-lens
     aws-cpp-sdk-core)

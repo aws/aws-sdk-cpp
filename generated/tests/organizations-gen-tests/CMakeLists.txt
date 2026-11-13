@@ -1,5 +1,5 @@
 add_project(organizations-gen-tests
-    "Tests for the AWS ORGANIZATIONS C++ SDK"
+    "Tests for the AWS Organizations C++ SDK"
     testing-resources
     aws-cpp-sdk-organizations
     aws-cpp-sdk-core)

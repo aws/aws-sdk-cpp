@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-xray "C++ SDK for the AWS xray service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-xray "C++ SDK for AWS X-Ray" aws-cpp-sdk-core)
 
 file(GLOB AWS_XRAY_HEADERS
     "include/aws/xray/*.h"

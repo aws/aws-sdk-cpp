@@ -1,5 +1,5 @@
 add_project(clouddirectory-gen-tests
-    "Tests for the AWS CLOUDDIRECTORY C++ SDK"
+    "Tests for the Amazon CloudDirectory C++ SDK"
     testing-resources
     aws-cpp-sdk-clouddirectory
     aws-cpp-sdk-core)

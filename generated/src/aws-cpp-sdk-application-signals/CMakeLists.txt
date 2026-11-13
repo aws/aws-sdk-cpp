@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-application-signals "C++ SDK for the AWS application-signals service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-application-signals "C++ SDK for Amazon CloudWatch Application Signals" aws-cpp-sdk-core)
 
 file(GLOB AWS_APPLICATION-SIGNALS_HEADERS
     "include/aws/application-signals/*.h"

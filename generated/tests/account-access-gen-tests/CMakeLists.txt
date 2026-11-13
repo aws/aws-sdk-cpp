@@ -1,5 +1,5 @@
 add_project(account-access-gen-tests
-    "Tests for the AWS ACCOUNT-ACCESS C++ SDK"
+    "Tests for the Account Access C++ SDK"
     testing-resources
     aws-cpp-sdk-account-access
     aws-cpp-sdk-core)

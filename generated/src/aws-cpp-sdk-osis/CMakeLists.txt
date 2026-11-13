@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-osis "C++ SDK for the AWS osis service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-osis "C++ SDK for Amazon OpenSearch Ingestion" aws-cpp-sdk-core)
 
 file(GLOB AWS_OSIS_HEADERS
     "include/aws/osis/*.h"

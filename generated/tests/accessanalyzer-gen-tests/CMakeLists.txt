@@ -1,5 +1,5 @@
 add_project(accessanalyzer-gen-tests
-    "Tests for the AWS ACCESSANALYZER C++ SDK"
+    "Tests for the Access Analyzer C++ SDK"
     testing-resources
     aws-cpp-sdk-accessanalyzer
     aws-cpp-sdk-core)

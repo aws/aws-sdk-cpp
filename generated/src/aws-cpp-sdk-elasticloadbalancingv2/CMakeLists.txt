@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-elasticloadbalancingv2 "C++ SDK for the AWS elasticloadbalancingv2 service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-elasticloadbalancingv2 "C++ SDK for Elastic Load Balancing" aws-cpp-sdk-core)
 
 file(GLOB AWS_ELASTICLOADBALANCINGV2_HEADERS
     "include/aws/elasticloadbalancingv2/*.h"

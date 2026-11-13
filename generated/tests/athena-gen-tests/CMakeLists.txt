@@ -1,5 +1,5 @@
 add_project(athena-gen-tests
-    "Tests for the AWS ATHENA C++ SDK"
+    "Tests for the Amazon Athena C++ SDK"
     testing-resources
     aws-cpp-sdk-athena
     aws-cpp-sdk-core)

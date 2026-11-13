@@ -1,5 +1,5 @@
 add_project(endusermessaging-gen-tests
-    "Tests for the AWS ENDUSERMESSAGING C++ SDK"
+    "Tests for the AWS End User Messaging C++ SDK"
     testing-resources
     aws-cpp-sdk-endusermessaging
     aws-cpp-sdk-core)

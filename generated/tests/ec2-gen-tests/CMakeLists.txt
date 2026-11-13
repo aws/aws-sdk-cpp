@@ -1,5 +1,5 @@
 add_project(ec2-gen-tests
-    "Tests for the AWS EC2 C++ SDK"
+    "Tests for the Amazon Elastic Compute Cloud C++ SDK"
     testing-resources
     aws-cpp-sdk-ec2
     aws-cpp-sdk-core)

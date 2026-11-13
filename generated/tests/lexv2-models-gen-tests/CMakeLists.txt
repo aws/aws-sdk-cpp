@@ -1,5 +1,5 @@
 add_project(lexv2-models-gen-tests
-    "Tests for the AWS LEXV2-MODELS C++ SDK"
+    "Tests for the Amazon Lex Model Building V2 C++ SDK"
     testing-resources
     aws-cpp-sdk-lexv2-models
     aws-cpp-sdk-core)

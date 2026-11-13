@@ -1,5 +1,5 @@
 add_project(migrationhubstrategy-gen-tests
-    "Tests for the AWS MIGRATIONHUBSTRATEGY C++ SDK"
+    "Tests for the Migration Hub Strategy Recommendations C++ SDK"
     testing-resources
     aws-cpp-sdk-migrationhubstrategy
     aws-cpp-sdk-core)

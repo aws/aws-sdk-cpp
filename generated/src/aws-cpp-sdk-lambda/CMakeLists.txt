@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-lambda "C++ SDK for the AWS lambda service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-lambda "C++ SDK for AWS Lambda" aws-cpp-sdk-core)
 
 file(GLOB AWS_LAMBDA_HEADERS
     "include/aws/lambda/*.h"

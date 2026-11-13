@@ -1,5 +1,5 @@
 add_project(omics-gen-tests
-    "Tests for the AWS OMICS C++ SDK"
+    "Tests for the Amazon Omics C++ SDK"
     testing-resources
     aws-cpp-sdk-omics
     aws-cpp-sdk-core)

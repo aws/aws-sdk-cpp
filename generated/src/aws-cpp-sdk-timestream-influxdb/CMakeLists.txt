@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-timestream-influxdb "C++ SDK for the AWS timestream-influxdb service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-timestream-influxdb "C++ SDK for Timestream InfluxDB" aws-cpp-sdk-core)
 
 file(GLOB AWS_TIMESTREAM-INFLUXDB_HEADERS
     "include/aws/timestream-influxdb/*.h"

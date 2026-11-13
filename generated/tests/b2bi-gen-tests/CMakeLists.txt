@@ -1,5 +1,5 @@
 add_project(b2bi-gen-tests
-    "Tests for the AWS B2BI C++ SDK"
+    "Tests for the AWS B2B Data Interchange C++ SDK"
     testing-resources
     aws-cpp-sdk-b2bi
     aws-cpp-sdk-core)

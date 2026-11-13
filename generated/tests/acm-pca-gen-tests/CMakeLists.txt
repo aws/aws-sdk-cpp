@@ -1,5 +1,5 @@
 add_project(acm-pca-gen-tests
-    "Tests for the AWS ACM-PCA C++ SDK"
+    "Tests for the AWS Certificate Manager Private Certificate Authority C++ SDK"
     testing-resources
     aws-cpp-sdk-acm-pca
     aws-cpp-sdk-core)

@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-dataexchange "C++ SDK for the AWS dataexchange service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-dataexchange "C++ SDK for AWS Data Exchange" aws-cpp-sdk-core)
 
 file(GLOB AWS_DATAEXCHANGE_HEADERS
     "include/aws/dataexchange/*.h"

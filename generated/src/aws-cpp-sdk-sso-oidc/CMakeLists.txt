@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-sso-oidc "C++ SDK for the AWS sso-oidc service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-sso-oidc "C++ SDK for AWS SSO OIDC" aws-cpp-sdk-core)
 
 file(GLOB AWS_SSO-OIDC_HEADERS
     "include/aws/sso-oidc/*.h"

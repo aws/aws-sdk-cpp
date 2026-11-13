@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-bedrock-data-automation-runtime "C++ SDK for the AWS bedrock-data-automation-runtime service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-bedrock-data-automation-runtime "C++ SDK for Runtime for Amazon Bedrock Data Automation" aws-cpp-sdk-core)
 
 file(GLOB AWS_BEDROCK-DATA-AUTOMATION-RUNTIME_HEADERS
     "include/aws/bedrock-data-automation-runtime/*.h"

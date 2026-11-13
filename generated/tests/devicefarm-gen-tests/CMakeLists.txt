@@ -1,5 +1,5 @@
 add_project(devicefarm-gen-tests
-    "Tests for the AWS DEVICEFARM C++ SDK"
+    "Tests for the AWS Device Farm C++ SDK"
     testing-resources
     aws-cpp-sdk-devicefarm
     aws-cpp-sdk-core)

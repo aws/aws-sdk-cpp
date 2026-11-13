@@ -1,5 +1,5 @@
 add_project(cognito-identity-gen-tests
-    "Tests for the AWS COGNITO-IDENTITY C++ SDK"
+    "Tests for the Amazon Cognito Identity C++ SDK"
     testing-resources
     aws-cpp-sdk-cognito-identity
     aws-cpp-sdk-core)

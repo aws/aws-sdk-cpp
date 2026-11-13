@@ -1,5 +1,5 @@
 add_project(supportauthz-gen-tests
-    "Tests for the AWS SUPPORTAUTHZ C++ SDK"
+    "Tests for the SupportAuthZ C++ SDK"
     testing-resources
     aws-cpp-sdk-supportauthz
     aws-cpp-sdk-core)

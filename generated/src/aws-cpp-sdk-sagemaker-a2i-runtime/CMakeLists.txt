@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-sagemaker-a2i-runtime "C++ SDK for the AWS sagemaker-a2i-runtime service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-sagemaker-a2i-runtime "C++ SDK for Amazon Augmented AI Runtime" aws-cpp-sdk-core)
 
 file(GLOB AWS_SAGEMAKER-A2I-RUNTIME_HEADERS
     "include/aws/sagemaker-a2i-runtime/*.h"

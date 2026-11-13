@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-ssm-incidents "C++ SDK for the AWS ssm-incidents service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-ssm-incidents "C++ SDK for AWS Systems Manager Incident Manager" aws-cpp-sdk-core)
 
 file(GLOB AWS_SSM-INCIDENTS_HEADERS
     "include/aws/ssm-incidents/*.h"

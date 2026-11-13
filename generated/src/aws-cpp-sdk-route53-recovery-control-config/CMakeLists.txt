@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-route53-recovery-control-config "C++ SDK for the AWS route53-recovery-control-config service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-route53-recovery-control-config "C++ SDK for AWS Route53 Recovery Control Config" aws-cpp-sdk-core)
 
 file(GLOB AWS_ROUTE53-RECOVERY-CONTROL-CONFIG_HEADERS
     "include/aws/route53-recovery-control-config/*.h"

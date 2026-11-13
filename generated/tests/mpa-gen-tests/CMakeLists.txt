@@ -1,5 +1,5 @@
 add_project(mpa-gen-tests
-    "Tests for the AWS MPA C++ SDK"
+    "Tests for the AWS Multi-party Approval C++ SDK"
     testing-resources
     aws-cpp-sdk-mpa
     aws-cpp-sdk-core)

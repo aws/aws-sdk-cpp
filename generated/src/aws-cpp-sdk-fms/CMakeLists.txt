@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-fms "C++ SDK for the AWS fms service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-fms "C++ SDK for Firewall Management Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_FMS_HEADERS
     "include/aws/fms/*.h"

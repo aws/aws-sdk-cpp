@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-logs "C++ SDK for the AWS logs service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-logs "C++ SDK for Amazon CloudWatch Logs" aws-cpp-sdk-core)
 
 file(GLOB AWS_LOGS_HEADERS
     "include/aws/logs/*.h"

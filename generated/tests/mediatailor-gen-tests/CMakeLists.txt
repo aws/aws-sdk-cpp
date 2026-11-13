@@ -1,5 +1,5 @@
 add_project(mediatailor-gen-tests
-    "Tests for the AWS MEDIATAILOR C++ SDK"
+    "Tests for the AWS MediaTailor C++ SDK"
     testing-resources
     aws-cpp-sdk-mediatailor
     aws-cpp-sdk-core)

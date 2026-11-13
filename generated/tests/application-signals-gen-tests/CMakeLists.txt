@@ -1,5 +1,5 @@
 add_project(application-signals-gen-tests
-    "Tests for the AWS APPLICATION-SIGNALS C++ SDK"
+    "Tests for the Amazon CloudWatch Application Signals C++ SDK"
     testing-resources
     aws-cpp-sdk-application-signals
     aws-cpp-sdk-core)

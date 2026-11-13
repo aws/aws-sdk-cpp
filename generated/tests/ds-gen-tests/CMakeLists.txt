@@ -1,5 +1,5 @@
 add_project(ds-gen-tests
-    "Tests for the AWS DS C++ SDK"
+    "Tests for the AWS Directory Service C++ SDK"
     testing-resources
     aws-cpp-sdk-ds
     aws-cpp-sdk-core)

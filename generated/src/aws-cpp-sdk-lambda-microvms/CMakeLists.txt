@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-lambda-microvms "C++ SDK for the AWS lambda-microvms service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-lambda-microvms "C++ SDK for Lambda MicroVMs" aws-cpp-sdk-core)
 
 file(GLOB AWS_LAMBDA-MICROVMS_HEADERS
     "include/aws/lambda-microvms/*.h"

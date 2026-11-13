@@ -1,5 +1,5 @@
 add_project(serverlessrepo-gen-tests
-    "Tests for the AWS SERVERLESSREPO C++ SDK"
+    "Tests for the AWSServerlessApplicationRepository C++ SDK"
     testing-resources
     aws-cpp-sdk-serverlessrepo
     aws-cpp-sdk-core)

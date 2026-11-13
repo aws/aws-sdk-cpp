@@ -1,5 +1,5 @@
 add_project(dynamodb-gen-tests
-    "Tests for the AWS DYNAMODB C++ SDK"
+    "Tests for the Amazon DynamoDB C++ SDK"
     testing-resources
     aws-cpp-sdk-dynamodb
     aws-cpp-sdk-core)

@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-codeguruprofiler "C++ SDK for the AWS codeguruprofiler service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-codeguruprofiler "C++ SDK for Amazon CodeGuru Profiler" aws-cpp-sdk-core)
 
 file(GLOB AWS_CODEGURUPROFILER_HEADERS
     "include/aws/codeguruprofiler/*.h"

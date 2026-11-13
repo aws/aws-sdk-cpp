@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-codeconnections "C++ SDK for the AWS codeconnections service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-codeconnections "C++ SDK for AWS CodeConnections" aws-cpp-sdk-core)
 
 file(GLOB AWS_CODECONNECTIONS_HEADERS
     "include/aws/codeconnections/*.h"

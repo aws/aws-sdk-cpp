@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-forecastquery "C++ SDK for the AWS forecastquery service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-forecastquery "C++ SDK for Amazon Forecast Query Service" aws-cpp-sdk-core)
 
 file(GLOB AWS_FORECASTQUERY_HEADERS
     "include/aws/forecastquery/*.h"

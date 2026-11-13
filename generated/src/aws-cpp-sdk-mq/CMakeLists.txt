@@ -1,4 +1,4 @@
-add_project(aws-cpp-sdk-mq "C++ SDK for the AWS mq service" aws-cpp-sdk-core)
+add_project(aws-cpp-sdk-mq "C++ SDK for AmazonMQ" aws-cpp-sdk-core)
 
 file(GLOB AWS_MQ_HEADERS
     "include/aws/mq/*.h"

@@ -1,5 +1,5 @@
 add_project(migrationhuborchestrator-gen-tests
-    "Tests for the AWS MIGRATIONHUBORCHESTRATOR C++ SDK"
+    "Tests for the AWS Migration Hub Orchestrator C++ SDK"
     testing-resources
     aws-cpp-sdk-migrationhuborchestrator
     aws-cpp-sdk-core)

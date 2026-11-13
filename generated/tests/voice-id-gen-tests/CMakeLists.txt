@@ -1,5 +1,5 @@
 add_project(voice-id-gen-tests
-    "Tests for the AWS VOICE-ID C++ SDK"
+    "Tests for the Amazon Voice ID C++ SDK"
     testing-resources
     aws-cpp-sdk-voice-id
     aws-cpp-sdk-core)
