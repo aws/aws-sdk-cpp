@@ -87,7 +87,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace MainframeModernization {
-using MainframeModernizationClientConfiguration = Aws::Client::GenericClientConfiguration;
 using MainframeModernizationEndpointProviderBase = Aws::MainframeModernization::Endpoint::MainframeModernizationEndpointProviderBase;
 using MainframeModernizationEndpointProvider = Aws::MainframeModernization::Endpoint::MainframeModernizationEndpointProvider;
 

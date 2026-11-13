@@ -51,7 +51,6 @@ Aws::Utils::Outcome<String, ${metadata.classNamePrefix}Error> ${presigner.functi
 #set($cbor_virtual = "virtual ")
 #end
 
-${cbor_virtual}void OverrideEndpoint(const Aws::String& endpoint);
 #if($serviceModel.endpointRules)
 ${cbor_virtual}std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase>& accessEndpointProvider();
 #end

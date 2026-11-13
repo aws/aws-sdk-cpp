@@ -12,7 +12,7 @@ using RestXmlProtocolClient = Aws::RestXmlProtocol::RestXmlProtocolClient;
 using namespace Aws::RestXmlProtocol::Model;
 
 AWS_PROTOCOL_TEST(OmitsNullSerializesEmptyString, RestXmlOmitsNullQuery) {
-  RestXmlProtocolClient client(mockCredentials, mockConfig);
+  RestXmlProtocolClient client(mockCredentials, nullptr, Aws::RestXmlProtocol::RestXmlProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -27,7 +27,7 @@ AWS_PROTOCOL_TEST(OmitsNullSerializesEmptyString, RestXmlOmitsNullQuery) {
 }
 
 AWS_PROTOCOL_TEST(OmitsNullSerializesEmptyString, RestXmlSerializesEmptyString) {
-  RestXmlProtocolClient client(mockCredentials, mockConfig);
+  RestXmlProtocolClient client(mockCredentials, nullptr, Aws::RestXmlProtocol::RestXmlProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 

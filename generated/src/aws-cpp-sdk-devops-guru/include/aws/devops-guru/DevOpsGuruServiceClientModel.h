@@ -87,7 +87,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace DevOpsGuru {
-using DevOpsGuruClientConfiguration = Aws::Client::GenericClientConfiguration;
 using DevOpsGuruEndpointProviderBase = Aws::DevOpsGuru::Endpoint::DevOpsGuruEndpointProviderBase;
 using DevOpsGuruEndpointProvider = Aws::DevOpsGuru::Endpoint::DevOpsGuruEndpointProvider;
 

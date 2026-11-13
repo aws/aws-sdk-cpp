@@ -15,7 +15,7 @@ using QueryProtocolClient = Aws::QueryProtocol::QueryProtocolClient;
 using namespace Aws::QueryProtocol::Model;
 
 AWS_PROTOCOL_TEST(SimpleInputParams, QuerySimpleInputParamsStrings) {
-  QueryProtocolClient client(mockCredentials, mockConfig);
+  QueryProtocolClient client(mockCredentials, nullptr, Aws::QueryProtocol::QueryProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -35,7 +35,7 @@ AWS_PROTOCOL_TEST(SimpleInputParams, QuerySimpleInputParamsStrings) {
 }
 
 AWS_PROTOCOL_TEST(SimpleInputParams, QuerySimpleInputParamsStringAndBooleanTrue) {
-  QueryProtocolClient client(mockCredentials, mockConfig);
+  QueryProtocolClient client(mockCredentials, nullptr, Aws::QueryProtocol::QueryProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -55,7 +55,7 @@ AWS_PROTOCOL_TEST(SimpleInputParams, QuerySimpleInputParamsStringAndBooleanTrue)
 }
 
 AWS_PROTOCOL_TEST(SimpleInputParams, QuerySimpleInputParamsStringsAndBooleanFalse) {
-  QueryProtocolClient client(mockCredentials, mockConfig);
+  QueryProtocolClient client(mockCredentials, nullptr, Aws::QueryProtocol::QueryProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -74,7 +74,7 @@ AWS_PROTOCOL_TEST(SimpleInputParams, QuerySimpleInputParamsStringsAndBooleanFals
 }
 
 AWS_PROTOCOL_TEST(SimpleInputParams, QuerySimpleInputParamsInteger) {
-  QueryProtocolClient client(mockCredentials, mockConfig);
+  QueryProtocolClient client(mockCredentials, nullptr, Aws::QueryProtocol::QueryProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -93,7 +93,7 @@ AWS_PROTOCOL_TEST(SimpleInputParams, QuerySimpleInputParamsInteger) {
 }
 
 AWS_PROTOCOL_TEST(SimpleInputParams, QuerySimpleInputParamsFloat) {
-  QueryProtocolClient client(mockCredentials, mockConfig);
+  QueryProtocolClient client(mockCredentials, nullptr, Aws::QueryProtocol::QueryProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -112,7 +112,7 @@ AWS_PROTOCOL_TEST(SimpleInputParams, QuerySimpleInputParamsFloat) {
 }
 
 AWS_PROTOCOL_TEST(SimpleInputParams, QuerySimpleInputParamsBlob) {
-  QueryProtocolClient client(mockCredentials, mockConfig);
+  QueryProtocolClient client(mockCredentials, nullptr, Aws::QueryProtocol::QueryProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -131,7 +131,7 @@ AWS_PROTOCOL_TEST(SimpleInputParams, QuerySimpleInputParamsBlob) {
 }
 
 AWS_PROTOCOL_TEST(SimpleInputParams, QueryEnums) {
-  QueryProtocolClient client(mockCredentials, mockConfig);
+  QueryProtocolClient client(mockCredentials, nullptr, Aws::QueryProtocol::QueryProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -150,7 +150,7 @@ AWS_PROTOCOL_TEST(SimpleInputParams, QueryEnums) {
 }
 
 AWS_PROTOCOL_TEST(SimpleInputParams, QueryIntEnums) {
-  QueryProtocolClient client(mockCredentials, mockConfig);
+  QueryProtocolClient client(mockCredentials, nullptr, Aws::QueryProtocol::QueryProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -169,7 +169,7 @@ AWS_PROTOCOL_TEST(SimpleInputParams, QueryIntEnums) {
 }
 
 AWS_PROTOCOL_TEST(SimpleInputParams, AwsQuerySupportsNaNFloatInputs) {
-  QueryProtocolClient client(mockCredentials, mockConfig);
+  QueryProtocolClient client(mockCredentials, nullptr, Aws::QueryProtocol::QueryProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -189,7 +189,7 @@ AWS_PROTOCOL_TEST(SimpleInputParams, AwsQuerySupportsNaNFloatInputs) {
 }
 
 AWS_PROTOCOL_TEST(SimpleInputParams, AwsQuerySupportsInfinityFloatInputs) {
-  QueryProtocolClient client(mockCredentials, mockConfig);
+  QueryProtocolClient client(mockCredentials, nullptr, Aws::QueryProtocol::QueryProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -209,7 +209,7 @@ AWS_PROTOCOL_TEST(SimpleInputParams, AwsQuerySupportsInfinityFloatInputs) {
 }
 
 AWS_PROTOCOL_TEST(SimpleInputParams, AwsQuerySupportsNegativeInfinityFloatInputs) {
-  QueryProtocolClient client(mockCredentials, mockConfig);
+  QueryProtocolClient client(mockCredentials, nullptr, Aws::QueryProtocol::QueryProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 

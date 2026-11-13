@@ -50,7 +50,7 @@ int main(int argc, char** argv) {
 
   {
     for (const auto& testConfig : PerformanceTest::Services::DynamoDB::TestConfig::TestMatrix) {
-      Aws::Client::ClientConfiguration clientConfig;
+      Aws::DynamoDB::DynamoDBClientConfiguration clientConfig;
       clientConfig.region = region;
       PerformanceTest::Services::DynamoDB::DynamoDBPerformanceTest performanceTest(clientConfig, testConfig, iterations);
       auto setupOutcome = performanceTest.Setup();

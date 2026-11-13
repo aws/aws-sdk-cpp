@@ -4,24 +4,33 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/route53resolver/Route53ResolverClientConfiguration.h>
 #include <aws/route53resolver/Route53Resolver_EXPORTS.h>
 
 namespace Aws {
 namespace Route53Resolver {
 namespace Endpoint {
+using Route53ResolverClientConfiguration = Aws::Route53Resolver::Route53ResolverClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using Route53ResolverClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using Route53ResolverClientConfiguration = Aws::Client::GenericClientConfiguration;
-using Route53ResolverBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_ROUTE53RESOLVER_API Route53ResolverBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~Route53ResolverBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const Route53ResolverClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const Route53ResolverClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const Route53ResolverClientConfiguration& config);
+};
 
 /**
  * The type for the Route53Resolver Client Endpoint Provider.
@@ -34,6 +43,24 @@ using Route53ResolverEndpointProviderBase =
 using Route53ResolverDefaultEpProviderBase =
     BDDEndpointProvider<Route53ResolverClientConfiguration, Route53ResolverBuiltInParameters, Route53ResolverClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace Route53Resolver
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_ROUTE53RESOLVER_EXTERN template class AWS_ROUTE53RESOLVER_API Aws::Endpoint::EndpointProviderBase<
+    Route53Resolver::Endpoint::Route53ResolverClientConfiguration, Route53Resolver::Endpoint::Route53ResolverBuiltInParameters,
+    Route53Resolver::Endpoint::Route53ResolverClientContextParameters>;
+
+AWS_ROUTE53RESOLVER_EXTERN template class AWS_ROUTE53RESOLVER_API Aws::Endpoint::BDDEndpointProvider<
+    Route53Resolver::Endpoint::Route53ResolverClientConfiguration, Route53Resolver::Endpoint::Route53ResolverBuiltInParameters,
+    Route53Resolver::Endpoint::Route53ResolverClientContextParameters>;
+}  // namespace Endpoint
+
+namespace Route53Resolver {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

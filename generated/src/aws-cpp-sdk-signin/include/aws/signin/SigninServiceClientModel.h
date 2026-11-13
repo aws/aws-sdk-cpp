@@ -64,7 +64,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace Signin {
-using SigninClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SigninEndpointProviderBase = Aws::Signin::Endpoint::SigninEndpointProviderBase;
 using SigninEndpointProvider = Aws::Signin::Endpoint::SigninEndpointProvider;
 

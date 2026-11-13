@@ -89,42 +89,6 @@ ApplicationCostProfilerClient::ApplicationCostProfilerClient(
   init(m_clientConfiguration);
 }
 
-/* Legacy constructors due deprecation */
-ApplicationCostProfilerClient::ApplicationCostProfilerClient(const Aws::Client::ClientConfiguration& clientConfiguration)
-    : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                                 Aws::MakeShared<DefaultAWSCredentialsProviderChain>(
-                                                     ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
-                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-                Aws::MakeShared<ApplicationCostProfilerErrorMarshaller>(ALLOCATION_TAG)),
-      m_clientConfiguration(clientConfiguration),
-      m_endpointProvider(Aws::MakeShared<ApplicationCostProfilerEndpointProvider>(ALLOCATION_TAG)) {
-  init(m_clientConfiguration);
-}
-
-ApplicationCostProfilerClient::ApplicationCostProfilerClient(const AWSCredentials& credentials,
-                                                             const Aws::Client::ClientConfiguration& clientConfiguration)
-    : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-                Aws::MakeShared<ApplicationCostProfilerErrorMarshaller>(ALLOCATION_TAG)),
-      m_clientConfiguration(clientConfiguration),
-      m_endpointProvider(Aws::MakeShared<ApplicationCostProfilerEndpointProvider>(ALLOCATION_TAG)) {
-  init(m_clientConfiguration);
-}
-
-ApplicationCostProfilerClient::ApplicationCostProfilerClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                             const Aws::Client::ClientConfiguration& clientConfiguration)
-    : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
-                                                 Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-                Aws::MakeShared<ApplicationCostProfilerErrorMarshaller>(ALLOCATION_TAG)),
-      m_clientConfiguration(clientConfiguration),
-      m_endpointProvider(Aws::MakeShared<ApplicationCostProfilerEndpointProvider>(ALLOCATION_TAG)) {
-  init(m_clientConfiguration);
-}
-
-/* End of legacy constructors due deprecation */
 ApplicationCostProfilerClient::~ApplicationCostProfilerClient() { ShutdownSdkClient(this, -1); }
 
 std::shared_ptr<ApplicationCostProfilerEndpointProviderBase>& ApplicationCostProfilerClient::accessEndpointProvider() {
@@ -144,12 +108,7 @@ void ApplicationCostProfilerClient::init(const ApplicationCostProfiler::Applicat
   AWSClient::SetUserAgentExecutor(*m_clientConfiguration.executor);
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config, "application-cost-profiler");
-}
-
-void ApplicationCostProfilerClient::OverrideEndpoint(const Aws::String& endpoint) {
-  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_clientConfiguration.endpointOverride = endpoint;
-  m_endpointProvider->OverrideEndpoint(endpoint);
+  ApplyServiceOptions(GetServiceClientOptions(m_clientConfiguration));
 }
 ApplicationCostProfilerClient::InvokeOperationOutcome ApplicationCostProfilerClient::InvokeServiceOperation(
     const AmazonWebServiceRequest& request, const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,

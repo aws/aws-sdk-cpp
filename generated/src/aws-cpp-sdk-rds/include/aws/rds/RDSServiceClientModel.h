@@ -242,7 +242,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace RDS {
-using RDSClientConfiguration = Aws::Client::GenericClientConfiguration;
 using RDSEndpointProviderBase = Aws::RDS::Endpoint::RDSEndpointProviderBase;
 using RDSEndpointProvider = Aws::RDS::Endpoint::RDSEndpointProvider;
 

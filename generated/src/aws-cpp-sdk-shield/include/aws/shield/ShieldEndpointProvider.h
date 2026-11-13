@@ -4,24 +4,33 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/shield/ShieldClientConfiguration.h>
 #include <aws/shield/Shield_EXPORTS.h>
 
 namespace Aws {
 namespace Shield {
 namespace Endpoint {
+using ShieldClientConfiguration = Aws::Shield::ShieldClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using ShieldClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ShieldClientConfiguration = Aws::Client::GenericClientConfiguration;
-using ShieldBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_SHIELD_API ShieldBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~ShieldBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const ShieldClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const ShieldClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const ShieldClientConfiguration& config);
+};
 
 /**
  * The type for the Shield Client Endpoint Provider.
@@ -32,6 +41,24 @@ using ShieldEndpointProviderBase = EndpointProviderBase<ShieldClientConfiguratio
 
 using ShieldDefaultEpProviderBase = BDDEndpointProvider<ShieldClientConfiguration, ShieldBuiltInParameters, ShieldClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace Shield
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_SHIELD_EXTERN template class AWS_SHIELD_API
+    Aws::Endpoint::EndpointProviderBase<Shield::Endpoint::ShieldClientConfiguration, Shield::Endpoint::ShieldBuiltInParameters,
+                                        Shield::Endpoint::ShieldClientContextParameters>;
+
+AWS_SHIELD_EXTERN template class AWS_SHIELD_API
+    Aws::Endpoint::BDDEndpointProvider<Shield::Endpoint::ShieldClientConfiguration, Shield::Endpoint::ShieldBuiltInParameters,
+                                       Shield::Endpoint::ShieldClientContextParameters>;
+}  // namespace Endpoint
+
+namespace Shield {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

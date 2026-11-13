@@ -59,7 +59,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace SavingsPlans {
-using SavingsPlansClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SavingsPlansEndpointProviderBase = Aws::SavingsPlans::Endpoint::SavingsPlansEndpointProviderBase;
 using SavingsPlansEndpointProvider = Aws::SavingsPlans::Endpoint::SavingsPlansEndpointProvider;
 

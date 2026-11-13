@@ -4,24 +4,33 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/savingsplans/SavingsPlansClientConfiguration.h>
 #include <aws/savingsplans/SavingsPlans_EXPORTS.h>
 
 namespace Aws {
 namespace SavingsPlans {
 namespace Endpoint {
+using SavingsPlansClientConfiguration = Aws::SavingsPlans::SavingsPlansClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using SavingsPlansClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using SavingsPlansClientConfiguration = Aws::Client::GenericClientConfiguration;
-using SavingsPlansBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_SAVINGSPLANS_API SavingsPlansBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~SavingsPlansBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const SavingsPlansClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const SavingsPlansClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const SavingsPlansClientConfiguration& config);
+};
 
 /**
  * The type for the SavingsPlans Client Endpoint Provider.
@@ -34,6 +43,24 @@ using SavingsPlansEndpointProviderBase =
 using SavingsPlansDefaultEpProviderBase =
     BDDEndpointProvider<SavingsPlansClientConfiguration, SavingsPlansBuiltInParameters, SavingsPlansClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace SavingsPlans
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_SAVINGSPLANS_EXTERN template class AWS_SAVINGSPLANS_API Aws::Endpoint::EndpointProviderBase<
+    SavingsPlans::Endpoint::SavingsPlansClientConfiguration, SavingsPlans::Endpoint::SavingsPlansBuiltInParameters,
+    SavingsPlans::Endpoint::SavingsPlansClientContextParameters>;
+
+AWS_SAVINGSPLANS_EXTERN template class AWS_SAVINGSPLANS_API Aws::Endpoint::BDDEndpointProvider<
+    SavingsPlans::Endpoint::SavingsPlansClientConfiguration, SavingsPlans::Endpoint::SavingsPlansBuiltInParameters,
+    SavingsPlans::Endpoint::SavingsPlansClientContextParameters>;
+}  // namespace Endpoint
+
+namespace SavingsPlans {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

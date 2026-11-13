@@ -15,7 +15,7 @@ using RestXmlProtocolClient = Aws::RestXmlProtocol::RestXmlProtocolClient;
 using namespace Aws::RestXmlProtocol::Model;
 
 AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, InputAndOutputWithStringHeaders) {
-  RestXmlProtocolClient client(mockCredentials, mockConfig);
+  RestXmlProtocolClient client(mockCredentials, nullptr, Aws::RestXmlProtocol::RestXmlProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -34,7 +34,7 @@ AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, InputAndOutputWithStringHeaders) {
 }
 
 AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, InputAndOutputWithNumericHeaders) {
-  RestXmlProtocolClient client(mockCredentials, mockConfig);
+  RestXmlProtocolClient client(mockCredentials, nullptr, Aws::RestXmlProtocol::RestXmlProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -59,7 +59,7 @@ AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, InputAndOutputWithNumericHeaders) {
 }
 
 AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, InputAndOutputWithBooleanHeaders) {
-  RestXmlProtocolClient client(mockCredentials, mockConfig);
+  RestXmlProtocolClient client(mockCredentials, nullptr, Aws::RestXmlProtocol::RestXmlProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -78,7 +78,7 @@ AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, InputAndOutputWithBooleanHeaders) {
 }
 
 AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, InputAndOutputWithTimestampHeaders) {
-  RestXmlProtocolClient client(mockCredentials, mockConfig);
+  RestXmlProtocolClient client(mockCredentials, nullptr, Aws::RestXmlProtocol::RestXmlProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -96,7 +96,7 @@ AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, InputAndOutputWithTimestampHeaders)
 }
 
 AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, InputAndOutputWithEnumHeaders) {
-  RestXmlProtocolClient client(mockCredentials, mockConfig);
+  RestXmlProtocolClient client(mockCredentials, nullptr, Aws::RestXmlProtocol::RestXmlProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -115,7 +115,7 @@ AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, InputAndOutputWithEnumHeaders) {
 }
 
 AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, RestXmlSupportsNaNFloatHeaderInputs) {
-  RestXmlProtocolClient client(mockCredentials, mockConfig);
+  RestXmlProtocolClient client(mockCredentials, nullptr, Aws::RestXmlProtocol::RestXmlProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -133,7 +133,7 @@ AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, RestXmlSupportsNaNFloatHeaderInputs
 }
 
 AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, RestXmlSupportsInfinityFloatHeaderInputs) {
-  RestXmlProtocolClient client(mockCredentials, mockConfig);
+  RestXmlProtocolClient client(mockCredentials, nullptr, Aws::RestXmlProtocol::RestXmlProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -151,7 +151,7 @@ AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, RestXmlSupportsInfinityFloatHeaderI
 }
 
 AWS_PROTOCOL_TEST(InputAndOutputWithHeaders, RestXmlSupportsNegativeInfinityFloatHeaderInputs) {
-  RestXmlProtocolClient client(mockCredentials, mockConfig);
+  RestXmlProtocolClient client(mockCredentials, nullptr, Aws::RestXmlProtocol::RestXmlProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 

@@ -4,24 +4,33 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/uxc/UxcClientConfiguration.h>
 #include <aws/uxc/Uxc_EXPORTS.h>
 
 namespace Aws {
 namespace uxc {
 namespace Endpoint {
+using UxcClientConfiguration = Aws::uxc::UxcClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using UxcClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using UxcClientConfiguration = Aws::Client::GenericClientConfiguration;
-using UxcBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_UXC_API UxcBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~UxcBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const UxcClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const UxcClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const UxcClientConfiguration& config);
+};
 
 /**
  * The type for the uxc Client Endpoint Provider.
@@ -32,6 +41,22 @@ using UxcEndpointProviderBase = EndpointProviderBase<UxcClientConfiguration, Uxc
 
 using UxcDefaultEpProviderBase = BDDEndpointProvider<UxcClientConfiguration, UxcBuiltInParameters, UxcClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace uxc
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_UXC_EXTERN template class AWS_UXC_API Aws::Endpoint::EndpointProviderBase<
+    uxc::Endpoint::UxcClientConfiguration, uxc::Endpoint::UxcBuiltInParameters, uxc::Endpoint::UxcClientContextParameters>;
+
+AWS_UXC_EXTERN template class AWS_UXC_API Aws::Endpoint::BDDEndpointProvider<
+    uxc::Endpoint::UxcClientConfiguration, uxc::Endpoint::UxcBuiltInParameters, uxc::Endpoint::UxcClientContextParameters>;
+}  // namespace Endpoint
+
+namespace uxc {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

@@ -108,42 +108,6 @@ Route53RecoveryControlConfigClient::Route53RecoveryControlConfigClient(
   init(m_clientConfiguration);
 }
 
-/* Legacy constructors due deprecation */
-Route53RecoveryControlConfigClient::Route53RecoveryControlConfigClient(const Aws::Client::ClientConfiguration& clientConfiguration)
-    : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                                 Aws::MakeShared<DefaultAWSCredentialsProviderChain>(
-                                                     ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
-                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-                Aws::MakeShared<Route53RecoveryControlConfigErrorMarshaller>(ALLOCATION_TAG)),
-      m_clientConfiguration(clientConfiguration),
-      m_endpointProvider(Aws::MakeShared<Route53RecoveryControlConfigEndpointProvider>(ALLOCATION_TAG)) {
-  init(m_clientConfiguration);
-}
-
-Route53RecoveryControlConfigClient::Route53RecoveryControlConfigClient(const AWSCredentials& credentials,
-                                                                       const Aws::Client::ClientConfiguration& clientConfiguration)
-    : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-                Aws::MakeShared<Route53RecoveryControlConfigErrorMarshaller>(ALLOCATION_TAG)),
-      m_clientConfiguration(clientConfiguration),
-      m_endpointProvider(Aws::MakeShared<Route53RecoveryControlConfigEndpointProvider>(ALLOCATION_TAG)) {
-  init(m_clientConfiguration);
-}
-
-Route53RecoveryControlConfigClient::Route53RecoveryControlConfigClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                                       const Aws::Client::ClientConfiguration& clientConfiguration)
-    : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
-                                                 Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-                Aws::MakeShared<Route53RecoveryControlConfigErrorMarshaller>(ALLOCATION_TAG)),
-      m_clientConfiguration(clientConfiguration),
-      m_endpointProvider(Aws::MakeShared<Route53RecoveryControlConfigEndpointProvider>(ALLOCATION_TAG)) {
-  init(m_clientConfiguration);
-}
-
-/* End of legacy constructors due deprecation */
 Route53RecoveryControlConfigClient::~Route53RecoveryControlConfigClient() { ShutdownSdkClient(this, -1); }
 
 std::shared_ptr<Route53RecoveryControlConfigEndpointProviderBase>& Route53RecoveryControlConfigClient::accessEndpointProvider() {
@@ -163,12 +127,7 @@ void Route53RecoveryControlConfigClient::init(const Route53RecoveryControlConfig
   AWSClient::SetUserAgentExecutor(*m_clientConfiguration.executor);
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config, "route53-recovery-control-config");
-}
-
-void Route53RecoveryControlConfigClient::OverrideEndpoint(const Aws::String& endpoint) {
-  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_clientConfiguration.endpointOverride = endpoint;
-  m_endpointProvider->OverrideEndpoint(endpoint);
+  ApplyServiceOptions(GetServiceClientOptions(m_clientConfiguration));
 }
 Route53RecoveryControlConfigClient::InvokeOperationOutcome Route53RecoveryControlConfigClient::InvokeServiceOperation(
     const AmazonWebServiceRequest& request, const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,

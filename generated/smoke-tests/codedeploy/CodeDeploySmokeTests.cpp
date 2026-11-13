@@ -34,8 +34,6 @@ TEST_F(CodeDeploySmokeTestSuite, ListApplicationsSuccess )
 {
     Aws::CodeDeploy::CodeDeployClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<CodeDeployClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     

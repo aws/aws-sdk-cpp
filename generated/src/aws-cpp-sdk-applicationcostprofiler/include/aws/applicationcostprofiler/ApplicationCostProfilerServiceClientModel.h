@@ -53,7 +53,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace ApplicationCostProfiler {
-using ApplicationCostProfilerClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ApplicationCostProfilerEndpointProviderBase = Aws::ApplicationCostProfiler::Endpoint::ApplicationCostProfilerEndpointProviderBase;
 using ApplicationCostProfilerEndpointProvider = Aws::ApplicationCostProfiler::Endpoint::ApplicationCostProfilerEndpointProvider;
 

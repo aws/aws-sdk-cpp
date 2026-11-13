@@ -9,6 +9,8 @@ namespace Aws {
 namespace DynamoDBStreams {
 
 void DynamoDBStreamsClientConfiguration::LoadDynamoDBStreamsSpecificConfig(const Aws::String& inputProfileName) {
+  useFIPS = Aws::Client::LoadUseFIPSFromEnvOrProfile(this->profileName);
+  useDualStack = Aws::Client::LoadUseDualStackFromEnvOrProfile(this->profileName);
   this->configFactories.retryStrategyCreateFn = []() -> std::shared_ptr<Client::RetryStrategy> {
     return Client::InitRetryStrategy(4, "", 0.025);
   };
@@ -35,9 +37,15 @@ DynamoDBStreamsClientConfiguration::DynamoDBStreamsClientConfiguration(bool useS
   LoadDynamoDBStreamsSpecificConfig(this->profileName);
 }
 
-DynamoDBStreamsClientConfiguration::DynamoDBStreamsClientConfiguration(const Aws::Client::ClientConfiguration& config)
-    : BaseClientConfigClass(config) {
+DynamoDBStreamsClientConfiguration::DynamoDBStreamsClientConfiguration(const Aws::Client::ClientConfiguration& sharedConfig)
+    : BaseClientConfigClass(sharedConfig) {
   LoadDynamoDBStreamsSpecificConfig(this->profileName);
+}
+
+Aws::Client::ServiceClientOptions GetServiceClientOptions(const DynamoDBStreamsClientConfiguration& config) {
+  Aws::Client::ServiceClientOptions options;
+  (void)(config);
+  return options;
 }
 
 }  // namespace DynamoDBStreams

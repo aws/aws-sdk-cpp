@@ -11,6 +11,8 @@ namespace BedrockAgentRuntime {
 static const char AWS_BEARER_TOKEN_BEDROCK[] = "AWS_BEARER_TOKEN_BEDROCK";
 
 void BedrockAgentRuntimeClientConfiguration::LoadBedrockAgentRuntimeSpecificConfig(const Aws::String& inputProfileName) {
+  useFIPS = Aws::Client::LoadUseFIPSFromEnvOrProfile(this->profileName);
+  useDualStack = Aws::Client::LoadUseDualStackFromEnvOrProfile(this->profileName);
   const Aws::String& bedrockToken =
       BaseClientConfigClass::LoadConfigFromEnvOrProfile(AWS_BEARER_TOKEN_BEDROCK, inputProfileName, AWS_BEARER_TOKEN_BEDROCK, {}, "");
   if (!bedrockToken.empty()) {
@@ -39,9 +41,15 @@ BedrockAgentRuntimeClientConfiguration::BedrockAgentRuntimeClientConfiguration(b
   LoadBedrockAgentRuntimeSpecificConfig(this->profileName);
 }
 
-BedrockAgentRuntimeClientConfiguration::BedrockAgentRuntimeClientConfiguration(const Aws::Client::ClientConfiguration& config)
-    : BaseClientConfigClass(config) {
+BedrockAgentRuntimeClientConfiguration::BedrockAgentRuntimeClientConfiguration(const Aws::Client::ClientConfiguration& sharedConfig)
+    : BaseClientConfigClass(sharedConfig) {
   LoadBedrockAgentRuntimeSpecificConfig(this->profileName);
+}
+
+Aws::Client::ServiceClientOptions GetServiceClientOptions(const BedrockAgentRuntimeClientConfiguration& config) {
+  Aws::Client::ServiceClientOptions options;
+  (void)(config);
+  return options;
 }
 
 }  // namespace BedrockAgentRuntime

@@ -117,7 +117,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace ResilienceHub {
-using ResilienceHubClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ResilienceHubEndpointProviderBase = Aws::ResilienceHub::Endpoint::ResilienceHubEndpointProviderBase;
 using ResilienceHubEndpointProvider = Aws::ResilienceHub::Endpoint::ResilienceHubEndpointProvider;
 

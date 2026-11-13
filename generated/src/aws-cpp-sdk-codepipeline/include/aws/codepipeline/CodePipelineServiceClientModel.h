@@ -87,7 +87,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace CodePipeline {
-using CodePipelineClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CodePipelineEndpointProviderBase = Aws::CodePipeline::Endpoint::CodePipelineEndpointProviderBase;
 using CodePipelineEndpointProvider = Aws::CodePipeline::Endpoint::CodePipelineEndpointProvider;
 

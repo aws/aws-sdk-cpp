@@ -12,7 +12,7 @@ using QueryProtocolClient = Aws::QueryProtocol::QueryProtocolClient;
 using namespace Aws::QueryProtocol::Model;
 
 AWS_PROTOCOL_TEST(NestedStructures, NestedStructures) {
-  QueryProtocolClient client(mockCredentials, mockConfig);
+  QueryProtocolClient client(mockCredentials, nullptr, Aws::QueryProtocol::QueryProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 

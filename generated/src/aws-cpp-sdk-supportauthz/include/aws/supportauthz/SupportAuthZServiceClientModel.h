@@ -59,7 +59,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace SupportAuthZ {
-using SupportAuthZClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SupportAuthZEndpointProviderBase = Aws::SupportAuthZ::Endpoint::SupportAuthZEndpointProviderBase;
 using SupportAuthZEndpointProvider = Aws::SupportAuthZ::Endpoint::SupportAuthZEndpointProvider;
 

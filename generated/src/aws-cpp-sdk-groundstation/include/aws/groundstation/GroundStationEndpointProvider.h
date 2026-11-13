@@ -4,24 +4,33 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/groundstation/GroundStationClientConfiguration.h>
 #include <aws/groundstation/GroundStation_EXPORTS.h>
 
 namespace Aws {
 namespace GroundStation {
 namespace Endpoint {
+using GroundStationClientConfiguration = Aws::GroundStation::GroundStationClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using GroundStationClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using GroundStationClientConfiguration = Aws::Client::GenericClientConfiguration;
-using GroundStationBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_GROUNDSTATION_API GroundStationBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~GroundStationBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const GroundStationClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const GroundStationClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const GroundStationClientConfiguration& config);
+};
 
 /**
  * The type for the GroundStation Client Endpoint Provider.
@@ -34,6 +43,24 @@ using GroundStationEndpointProviderBase =
 using GroundStationDefaultEpProviderBase =
     BDDEndpointProvider<GroundStationClientConfiguration, GroundStationBuiltInParameters, GroundStationClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace GroundStation
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_GROUNDSTATION_EXTERN template class AWS_GROUNDSTATION_API Aws::Endpoint::EndpointProviderBase<
+    GroundStation::Endpoint::GroundStationClientConfiguration, GroundStation::Endpoint::GroundStationBuiltInParameters,
+    GroundStation::Endpoint::GroundStationClientContextParameters>;
+
+AWS_GROUNDSTATION_EXTERN template class AWS_GROUNDSTATION_API Aws::Endpoint::BDDEndpointProvider<
+    GroundStation::Endpoint::GroundStationClientConfiguration, GroundStation::Endpoint::GroundStationBuiltInParameters,
+    GroundStation::Endpoint::GroundStationClientContextParameters>;
+}  // namespace Endpoint
+
+namespace GroundStation {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

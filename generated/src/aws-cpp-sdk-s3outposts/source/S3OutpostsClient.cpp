@@ -82,41 +82,6 @@ S3OutpostsClient::S3OutpostsClient(const std::shared_ptr<AWSCredentialsProvider>
   init(m_clientConfiguration);
 }
 
-/* Legacy constructors due deprecation */
-S3OutpostsClient::S3OutpostsClient(const Aws::Client::ClientConfiguration& clientConfiguration)
-    : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                                 Aws::MakeShared<DefaultAWSCredentialsProviderChain>(
-                                                     ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
-                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-                Aws::MakeShared<S3OutpostsErrorMarshaller>(ALLOCATION_TAG)),
-      m_clientConfiguration(clientConfiguration),
-      m_endpointProvider(Aws::MakeShared<S3OutpostsEndpointProvider>(ALLOCATION_TAG)) {
-  init(m_clientConfiguration);
-}
-
-S3OutpostsClient::S3OutpostsClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
-    : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-                Aws::MakeShared<S3OutpostsErrorMarshaller>(ALLOCATION_TAG)),
-      m_clientConfiguration(clientConfiguration),
-      m_endpointProvider(Aws::MakeShared<S3OutpostsEndpointProvider>(ALLOCATION_TAG)) {
-  init(m_clientConfiguration);
-}
-
-S3OutpostsClient::S3OutpostsClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                   const Aws::Client::ClientConfiguration& clientConfiguration)
-    : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
-                                                 Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-                Aws::MakeShared<S3OutpostsErrorMarshaller>(ALLOCATION_TAG)),
-      m_clientConfiguration(clientConfiguration),
-      m_endpointProvider(Aws::MakeShared<S3OutpostsEndpointProvider>(ALLOCATION_TAG)) {
-  init(m_clientConfiguration);
-}
-
-/* End of legacy constructors due deprecation */
 S3OutpostsClient::~S3OutpostsClient() { ShutdownSdkClient(this, -1); }
 
 std::shared_ptr<S3OutpostsEndpointProviderBase>& S3OutpostsClient::accessEndpointProvider() { return m_endpointProvider; }
@@ -134,12 +99,7 @@ void S3OutpostsClient::init(const S3Outposts::S3OutpostsClientConfiguration& con
   AWSClient::SetUserAgentExecutor(*m_clientConfiguration.executor);
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config, "s3-outposts");
-}
-
-void S3OutpostsClient::OverrideEndpoint(const Aws::String& endpoint) {
-  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_clientConfiguration.endpointOverride = endpoint;
-  m_endpointProvider->OverrideEndpoint(endpoint);
+  ApplyServiceOptions(GetServiceClientOptions(m_clientConfiguration));
 }
 S3OutpostsClient::InvokeOperationOutcome S3OutpostsClient::InvokeServiceOperation(
     const AmazonWebServiceRequest& request, const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,

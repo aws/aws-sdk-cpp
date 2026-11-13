@@ -76,7 +76,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace GameLiftStreams {
-using GameLiftStreamsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using GameLiftStreamsEndpointProviderBase = Aws::GameLiftStreams::Endpoint::GameLiftStreamsEndpointProviderBase;
 using GameLiftStreamsEndpointProvider = Aws::GameLiftStreams::Endpoint::GameLiftStreamsEndpointProvider;
 

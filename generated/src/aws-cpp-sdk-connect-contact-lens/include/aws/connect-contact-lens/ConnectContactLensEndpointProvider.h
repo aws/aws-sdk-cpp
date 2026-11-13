@@ -4,8 +4,8 @@
  */
 
 #pragma once
+#include <aws/connect-contact-lens/ConnectContactLensClientConfiguration.h>
 #include <aws/connect-contact-lens/ConnectContactLens_EXPORTS.h>
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -14,14 +14,23 @@
 namespace Aws {
 namespace ConnectContactLens {
 namespace Endpoint {
+using ConnectContactLensClientConfiguration = Aws::ConnectContactLens::ConnectContactLensClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using ConnectContactLensClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ConnectContactLensClientConfiguration = Aws::Client::GenericClientConfiguration;
-using ConnectContactLensBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_CONNECTCONTACTLENS_API ConnectContactLensBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~ConnectContactLensBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const ConnectContactLensClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const ConnectContactLensClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const ConnectContactLensClientConfiguration& config);
+};
 
 /**
  * The type for the ConnectContactLens Client Endpoint Provider.
@@ -36,6 +45,24 @@ using ConnectContactLensDefaultEpProviderBase =
     BDDEndpointProvider<ConnectContactLensClientConfiguration, ConnectContactLensBuiltInParameters,
                         ConnectContactLensClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace ConnectContactLens
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_CONNECTCONTACTLENS_EXTERN template class AWS_CONNECTCONTACTLENS_API Aws::Endpoint::EndpointProviderBase<
+    ConnectContactLens::Endpoint::ConnectContactLensClientConfiguration, ConnectContactLens::Endpoint::ConnectContactLensBuiltInParameters,
+    ConnectContactLens::Endpoint::ConnectContactLensClientContextParameters>;
+
+AWS_CONNECTCONTACTLENS_EXTERN template class AWS_CONNECTCONTACTLENS_API Aws::Endpoint::BDDEndpointProvider<
+    ConnectContactLens::Endpoint::ConnectContactLensClientConfiguration, ConnectContactLens::Endpoint::ConnectContactLensBuiltInParameters,
+    ConnectContactLens::Endpoint::ConnectContactLensClientContextParameters>;
+}  // namespace Endpoint
+
+namespace ConnectContactLens {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

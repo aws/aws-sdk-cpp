@@ -57,8 +57,16 @@ public final class SmokeTestsSourceWriter extends SymbolWriter<SmokeTestsSourceW
             {
                 write("clientConfiguration.region = \"$L\";",configParams.getRegion());
             }
-            write("clientConfiguration.useFIPS = $L;",configParams.useFips())
-            .write("clientConfiguration.useDualStack = $L;",configParams.useDualstack());
+            // Only emit options that are turned on: false is the default, and a service's configuration
+            // only has useFIPS/useDualStack when its endpoint rules support them.
+            if (configParams.useFips())
+            {
+                write("clientConfiguration.useFIPS = true;");
+            }
+            if (configParams.useDualstack())
+            {
+                write("clientConfiguration.useDualStack = true;");
+            }
         }
         //for s3, needs to be handled when client code is ready to use the parameters passed in client configuration
 

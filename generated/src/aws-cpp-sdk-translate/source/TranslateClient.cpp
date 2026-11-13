@@ -96,41 +96,6 @@ TranslateClient::TranslateClient(const std::shared_ptr<AWSCredentialsProvider>& 
   init(m_clientConfiguration);
 }
 
-/* Legacy constructors due deprecation */
-TranslateClient::TranslateClient(const Aws::Client::ClientConfiguration& clientConfiguration)
-    : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                                 Aws::MakeShared<DefaultAWSCredentialsProviderChain>(
-                                                     ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
-                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-                Aws::MakeShared<TranslateErrorMarshaller>(ALLOCATION_TAG)),
-      m_clientConfiguration(clientConfiguration),
-      m_endpointProvider(Aws::MakeShared<TranslateEndpointProvider>(ALLOCATION_TAG)) {
-  init(m_clientConfiguration);
-}
-
-TranslateClient::TranslateClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
-    : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-                Aws::MakeShared<TranslateErrorMarshaller>(ALLOCATION_TAG)),
-      m_clientConfiguration(clientConfiguration),
-      m_endpointProvider(Aws::MakeShared<TranslateEndpointProvider>(ALLOCATION_TAG)) {
-  init(m_clientConfiguration);
-}
-
-TranslateClient::TranslateClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                 const Aws::Client::ClientConfiguration& clientConfiguration)
-    : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
-                                                 Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-                Aws::MakeShared<TranslateErrorMarshaller>(ALLOCATION_TAG)),
-      m_clientConfiguration(clientConfiguration),
-      m_endpointProvider(Aws::MakeShared<TranslateEndpointProvider>(ALLOCATION_TAG)) {
-  init(m_clientConfiguration);
-}
-
-/* End of legacy constructors due deprecation */
 TranslateClient::~TranslateClient() { ShutdownSdkClient(this, -1); }
 
 std::shared_ptr<TranslateEndpointProviderBase>& TranslateClient::accessEndpointProvider() { return m_endpointProvider; }
@@ -148,12 +113,7 @@ void TranslateClient::init(const Translate::TranslateClientConfiguration& config
   AWSClient::SetUserAgentExecutor(*m_clientConfiguration.executor);
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config, "translate");
-}
-
-void TranslateClient::OverrideEndpoint(const Aws::String& endpoint) {
-  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_clientConfiguration.endpointOverride = endpoint;
-  m_endpointProvider->OverrideEndpoint(endpoint);
+  ApplyServiceOptions(GetServiceClientOptions(m_clientConfiguration));
 }
 TranslateClient::InvokeOperationOutcome TranslateClient::InvokeServiceOperation(const AmazonWebServiceRequest& request,
                                                                                 Aws::Http::HttpMethod httpMethod) const {

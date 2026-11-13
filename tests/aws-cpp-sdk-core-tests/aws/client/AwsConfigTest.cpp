@@ -138,7 +138,7 @@ TEST_F(AWSConfigTestSuite, TestNoEnvNoConfigSetsUseRequestCompressionToTrue){
 
   Aws::Client::ClientConfiguration config;
 
-  EXPECT_EQ(Aws::Client::UseRequestCompression::ENABLE, config.requestCompressionConfig.useRequestCompression);
+  EXPECT_EQ(Aws::Client::UseRequestCompression::ENABLE, Aws::Client::LoadRequestCompressionConfigFromEnvOrProfile(config.profileName).useRequestCompression);
 
   // cleanup
   Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str());
@@ -156,7 +156,7 @@ TEST_F(AWSConfigTestSuite, TestEnvToFalseAndNoConfigSetsUseRequestCompressionToF
 
   Aws::Client::ClientConfiguration config;
 
-  EXPECT_EQ(Aws::Client::UseRequestCompression::DISABLE, config.requestCompressionConfig.useRequestCompression);
+  EXPECT_EQ(Aws::Client::UseRequestCompression::DISABLE, Aws::Client::LoadRequestCompressionConfigFromEnvOrProfile(config.profileName).useRequestCompression);
 
   // cleanup
   Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str());
@@ -176,7 +176,7 @@ TEST_F(AWSConfigTestSuite, TestEnvToTrueAndConfigSetToFalseSetsUseRequestCompres
 
   Aws::Client::ClientConfiguration config("Dijkstra");
 
-  EXPECT_EQ(Aws::Client::UseRequestCompression::ENABLE, config.requestCompressionConfig.useRequestCompression);
+  EXPECT_EQ(Aws::Client::UseRequestCompression::ENABLE, Aws::Client::LoadRequestCompressionConfigFromEnvOrProfile(config.profileName).useRequestCompression);
 
   // cleanup
   Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str());
@@ -194,7 +194,7 @@ TEST_F(AWSConfigTestSuite, TestNoEnvAndConfigSetToFalseSetsUseRequestCompression
 
   Aws::Client::ClientConfiguration config;
 
-  EXPECT_EQ(Aws::Client::UseRequestCompression::DISABLE, config.requestCompressionConfig.useRequestCompression);
+  EXPECT_EQ(Aws::Client::UseRequestCompression::DISABLE, Aws::Client::LoadRequestCompressionConfigFromEnvOrProfile(config.profileName).useRequestCompression);
 
   // cleanup
   Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str());
@@ -208,8 +208,8 @@ TEST_F(AWSConfigTestSuite, TestNoEnvNoConfigLeavesDualStackAndFipsDisabled){
 
   Aws::Client::ClientConfiguration config;
 
-  EXPECT_FALSE(config.useDualStack);
-  EXPECT_FALSE(config.useFIPS);
+  EXPECT_FALSE(Aws::Client::LoadUseDualStackFromEnvOrProfile(config.profileName));
+  EXPECT_FALSE(Aws::Client::LoadUseFIPSFromEnvOrProfile(config.profileName));
 
   Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str());
 }
@@ -224,8 +224,8 @@ TEST_F(AWSConfigTestSuite, TestEnvEnablesDualStackAndFips){
 
   Aws::Client::ClientConfiguration config;
 
-  EXPECT_TRUE(config.useDualStack);
-  EXPECT_TRUE(config.useFIPS);
+  EXPECT_TRUE(Aws::Client::LoadUseDualStackFromEnvOrProfile(config.profileName));
+  EXPECT_TRUE(Aws::Client::LoadUseFIPSFromEnvOrProfile(config.profileName));
 
   Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str());
 }
@@ -241,8 +241,8 @@ TEST_F(AWSConfigTestSuite, TestProfileEnablesDualStackAndFips){
 
   Aws::Client::ClientConfiguration config("Dijkstra");
 
-  EXPECT_TRUE(config.useDualStack);
-  EXPECT_TRUE(config.useFIPS);
+  EXPECT_TRUE(Aws::Client::LoadUseDualStackFromEnvOrProfile(config.profileName));
+  EXPECT_TRUE(Aws::Client::LoadUseFIPSFromEnvOrProfile(config.profileName));
 
   Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str());
 }
@@ -260,8 +260,8 @@ TEST_F(AWSConfigTestSuite, TestEnvFalseOverridesProfileTrueForDualStackAndFips){
 
   Aws::Client::ClientConfiguration config("Dijkstra");
 
-  EXPECT_FALSE(config.useDualStack);
-  EXPECT_FALSE(config.useFIPS);
+  EXPECT_FALSE(Aws::Client::LoadUseDualStackFromEnvOrProfile(config.profileName));
+  EXPECT_FALSE(Aws::Client::LoadUseFIPSFromEnvOrProfile(config.profileName));
 
   Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str());
 }
@@ -277,13 +277,15 @@ TEST_F(AWSConfigTestSuite, TestInvalidValueLeavesDualStackAndFipsDisabled){
 
   Aws::Client::ClientConfiguration config;
 
-  EXPECT_FALSE(config.useDualStack);
-  EXPECT_FALSE(config.useFIPS);
+  EXPECT_FALSE(Aws::Client::LoadUseDualStackFromEnvOrProfile(config.profileName));
+  EXPECT_FALSE(Aws::Client::LoadUseFIPSFromEnvOrProfile(config.profileName));
 
   Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str());
 }
 
-TEST_F(AWSConfigTestSuite, TestCodeOverridesEnvForDualStackAndFips){
+TEST_F(AWSConfigTestSuite, TestCoreDoesNotApplyDualStackAndFipsFromEnv){
+  // UseDualStack and UseFIPS are now set by each service's generated BuiltInParameters, only for services
+  // whose endpoint rules support them. Core must not apply them from the environment for every client.
   Aws::Environment::SetEnv("AWS_USE_DUALSTACK_ENDPOINT", "true", 1/*overwrite*/);
   Aws::Environment::SetEnv("AWS_USE_FIPS_ENDPOINT", "true", 1/*overwrite*/);
   Aws::OFStream configFileNew(m_configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
@@ -292,19 +294,15 @@ TEST_F(AWSConfigTestSuite, TestCodeOverridesEnvForDualStackAndFips){
   Aws::Config::ReloadCachedConfigFile();
 
   Aws::Client::ClientConfiguration config;
-  config.useDualStack = false;
-  config.useFIPS = false;
 
   Aws::Endpoint::BuiltInParameters params;
   params.SetFromClientConfiguration(config);
-  const auto& dualStack = params.GetParameter("UseDualStack");
-  const auto& fips = params.GetParameter("UseFIPS");
-  bool dualStackValue = true;
-  bool fipsValue = true;
-  ASSERT_EQ(Aws::Endpoint::EndpointParameter::GetSetResult::SUCCESS, dualStack.GetBool(dualStackValue));
-  ASSERT_EQ(Aws::Endpoint::EndpointParameter::GetSetResult::SUCCESS, fips.GetBool(fipsValue));
-  EXPECT_FALSE(dualStackValue);
-  EXPECT_FALSE(fipsValue);
+  // Check the parameter list directly: GetParameter() on a missing name returns a function-local static
+  // that allocates on first use, which the custom memory management leak check reports.
+  for (const auto& parameter : params.GetAllParameters()) {
+    EXPECT_NE("UseDualStack", parameter.GetName());
+    EXPECT_NE("UseFIPS", parameter.GetName());
+  }
 
   Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str());
 }

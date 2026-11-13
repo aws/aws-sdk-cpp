@@ -12,7 +12,7 @@ using QueryProtocolClient = Aws::QueryProtocol::QueryProtocolClient;
 using namespace Aws::QueryProtocol::Model;
 
 AWS_PROTOCOL_TEST(QueryLists, QueryLists) {
-  QueryProtocolClient client(mockCredentials, mockConfig);
+  QueryProtocolClient client(mockCredentials, nullptr, Aws::QueryProtocol::QueryProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -42,7 +42,7 @@ AWS_PROTOCOL_TEST(QueryLists, QueryLists) {
 }
 
 AWS_PROTOCOL_TEST(QueryLists, EmptyQueryLists) {
-  QueryProtocolClient client(mockCredentials, mockConfig);
+  QueryProtocolClient client(mockCredentials, nullptr, Aws::QueryProtocol::QueryProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -60,7 +60,7 @@ AWS_PROTOCOL_TEST(QueryLists, EmptyQueryLists) {
 }
 
 AWS_PROTOCOL_TEST(QueryLists, FlattenedQueryLists) {
-  QueryProtocolClient client(mockCredentials, mockConfig);
+  QueryProtocolClient client(mockCredentials, nullptr, Aws::QueryProtocol::QueryProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -78,7 +78,7 @@ AWS_PROTOCOL_TEST(QueryLists, FlattenedQueryLists) {
 }
 
 AWS_PROTOCOL_TEST(QueryLists, QueryListArgWithXmlNameMember) {
-  QueryProtocolClient client(mockCredentials, mockConfig);
+  QueryProtocolClient client(mockCredentials, nullptr, Aws::QueryProtocol::QueryProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -98,7 +98,7 @@ AWS_PROTOCOL_TEST(QueryLists, QueryListArgWithXmlNameMember) {
 }
 
 AWS_PROTOCOL_TEST(QueryLists, QueryFlattenedListArgWithXmlName) {
-  QueryProtocolClient client(mockCredentials, mockConfig);
+  QueryProtocolClient client(mockCredentials, nullptr, Aws::QueryProtocol::QueryProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -116,7 +116,7 @@ AWS_PROTOCOL_TEST(QueryLists, QueryFlattenedListArgWithXmlName) {
 }
 
 AWS_PROTOCOL_TEST(QueryLists, QueryNestedStructWithList) {
-  QueryProtocolClient client(mockCredentials, mockConfig);
+  QueryProtocolClient client(mockCredentials, nullptr, Aws::QueryProtocol::QueryProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 

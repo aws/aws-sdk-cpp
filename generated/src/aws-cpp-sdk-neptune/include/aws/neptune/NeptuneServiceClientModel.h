@@ -124,7 +124,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace Neptune {
-using NeptuneClientConfiguration = Aws::Client::GenericClientConfiguration;
 using NeptuneEndpointProviderBase = Aws::Neptune::Endpoint::NeptuneEndpointProviderBase;
 using NeptuneEndpointProvider = Aws::Neptune::Endpoint::NeptuneEndpointProvider;
 

@@ -154,7 +154,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace WorkSpaces {
-using WorkSpacesClientConfiguration = Aws::Client::GenericClientConfiguration;
 using WorkSpacesEndpointProviderBase = Aws::WorkSpaces::Endpoint::WorkSpacesEndpointProviderBase;
 using WorkSpacesEndpointProvider = Aws::WorkSpaces::Endpoint::WorkSpacesEndpointProvider;
 

@@ -4,24 +4,33 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/support-app/SupportAppClientConfiguration.h>
 #include <aws/support-app/SupportApp_EXPORTS.h>
 
 namespace Aws {
 namespace SupportApp {
 namespace Endpoint {
+using SupportAppClientConfiguration = Aws::SupportApp::SupportAppClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using SupportAppClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using SupportAppClientConfiguration = Aws::Client::GenericClientConfiguration;
-using SupportAppBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_SUPPORTAPP_API SupportAppBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~SupportAppBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const SupportAppClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const SupportAppClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const SupportAppClientConfiguration& config);
+};
 
 /**
  * The type for the SupportApp Client Endpoint Provider.
@@ -34,6 +43,24 @@ using SupportAppEndpointProviderBase =
 using SupportAppDefaultEpProviderBase =
     BDDEndpointProvider<SupportAppClientConfiguration, SupportAppBuiltInParameters, SupportAppClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace SupportApp
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_SUPPORTAPP_EXTERN template class AWS_SUPPORTAPP_API Aws::Endpoint::EndpointProviderBase<
+    SupportApp::Endpoint::SupportAppClientConfiguration, SupportApp::Endpoint::SupportAppBuiltInParameters,
+    SupportApp::Endpoint::SupportAppClientContextParameters>;
+
+AWS_SUPPORTAPP_EXTERN template class AWS_SUPPORTAPP_API Aws::Endpoint::BDDEndpointProvider<
+    SupportApp::Endpoint::SupportAppClientConfiguration, SupportApp::Endpoint::SupportAppBuiltInParameters,
+    SupportApp::Endpoint::SupportAppClientContextParameters>;
+}  // namespace Endpoint
+
+namespace SupportApp {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

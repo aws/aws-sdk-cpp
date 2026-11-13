@@ -52,7 +52,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace uxc {
-using UxcClientConfiguration = Aws::Client::GenericClientConfiguration;
 using UxcEndpointProviderBase = Aws::uxc::Endpoint::UxcEndpointProviderBase;
 using UxcEndpointProvider = Aws::uxc::Endpoint::UxcEndpointProvider;
 

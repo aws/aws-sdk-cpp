@@ -60,7 +60,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace ResourceGroupsTaggingAPI {
-using ResourceGroupsTaggingAPIClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ResourceGroupsTaggingAPIEndpointProviderBase = Aws::ResourceGroupsTaggingAPI::Endpoint::ResourceGroupsTaggingAPIEndpointProviderBase;
 using ResourceGroupsTaggingAPIEndpointProvider = Aws::ResourceGroupsTaggingAPI::Endpoint::ResourceGroupsTaggingAPIEndpointProvider;
 

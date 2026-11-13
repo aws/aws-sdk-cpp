@@ -15,7 +15,7 @@ using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
 using namespace Aws::RestJsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(AllQueryStringTypes, RestJsonAllQueryStringTypes) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -78,7 +78,7 @@ AWS_PROTOCOL_TEST(AllQueryStringTypes, RestJsonAllQueryStringTypes) {
 }
 
 AWS_PROTOCOL_TEST(AllQueryStringTypes, RestJsonQueryStringMap) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -94,7 +94,7 @@ AWS_PROTOCOL_TEST(AllQueryStringTypes, RestJsonQueryStringMap) {
 }
 
 AWS_PROTOCOL_TEST(AllQueryStringTypes, RestJsonQueryStringEscaping) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -111,7 +111,7 @@ AWS_PROTOCOL_TEST(AllQueryStringTypes, RestJsonQueryStringEscaping) {
 }
 
 AWS_PROTOCOL_TEST(AllQueryStringTypes, RestJsonSupportsNaNFloatQueryValues) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -129,7 +129,7 @@ AWS_PROTOCOL_TEST(AllQueryStringTypes, RestJsonSupportsNaNFloatQueryValues) {
 }
 
 AWS_PROTOCOL_TEST(AllQueryStringTypes, RestJsonSupportsInfinityFloatQueryValues) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -147,7 +147,7 @@ AWS_PROTOCOL_TEST(AllQueryStringTypes, RestJsonSupportsInfinityFloatQueryValues)
 }
 
 AWS_PROTOCOL_TEST(AllQueryStringTypes, RestJsonSupportsNegativeInfinityFloatQueryValues) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -165,7 +165,7 @@ AWS_PROTOCOL_TEST(AllQueryStringTypes, RestJsonSupportsNegativeInfinityFloatQuer
 }
 
 AWS_PROTOCOL_TEST(AllQueryStringTypes, RestJsonZeroAndFalseQueryValues) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 

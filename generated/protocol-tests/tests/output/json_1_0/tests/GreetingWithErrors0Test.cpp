@@ -12,7 +12,7 @@ using JSONRPC10Client = Aws::JSONRPC10::JSONRPC10Client;
 using namespace Aws::JSONRPC10::Model;
 
 AWS_PROTOCOL_TEST(GreetingWithErrors0, AwsJson10ComplexError) {
-  JSONRPC10Client client(mockCredentials, mockConfig);
+  JSONRPC10Client client(mockCredentials, nullptr, Aws::JSONRPC10::JSONRPC10ClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 400;
@@ -29,7 +29,7 @@ AWS_PROTOCOL_TEST(GreetingWithErrors0, AwsJson10ComplexError) {
 }
 
 AWS_PROTOCOL_TEST(GreetingWithErrors0, AwsJson10EmptyComplexError) {
-  JSONRPC10Client client(mockCredentials, mockConfig);
+  JSONRPC10Client client(mockCredentials, nullptr, Aws::JSONRPC10::JSONRPC10ClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 400;

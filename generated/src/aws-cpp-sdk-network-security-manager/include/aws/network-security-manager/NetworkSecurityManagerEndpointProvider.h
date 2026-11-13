@@ -4,24 +4,33 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/network-security-manager/NetworkSecurityManagerClientConfiguration.h>
 #include <aws/network-security-manager/NetworkSecurityManager_EXPORTS.h>
 
 namespace Aws {
 namespace NetworkSecurityManager {
 namespace Endpoint {
+using NetworkSecurityManagerClientConfiguration = Aws::NetworkSecurityManager::NetworkSecurityManagerClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using NetworkSecurityManagerClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using NetworkSecurityManagerClientConfiguration = Aws::Client::GenericClientConfiguration;
-using NetworkSecurityManagerBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_NETWORKSECURITYMANAGER_API NetworkSecurityManagerBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~NetworkSecurityManagerBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const NetworkSecurityManagerClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const NetworkSecurityManagerClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const NetworkSecurityManagerClientConfiguration& config);
+};
 
 /**
  * The type for the NetworkSecurityManager Client Endpoint Provider.
@@ -36,6 +45,26 @@ using NetworkSecurityManagerDefaultEpProviderBase =
     BDDEndpointProvider<NetworkSecurityManagerClientConfiguration, NetworkSecurityManagerBuiltInParameters,
                         NetworkSecurityManagerClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace NetworkSecurityManager
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_NETWORKSECURITYMANAGER_EXTERN template class AWS_NETWORKSECURITYMANAGER_API
+    Aws::Endpoint::EndpointProviderBase<NetworkSecurityManager::Endpoint::NetworkSecurityManagerClientConfiguration,
+                                        NetworkSecurityManager::Endpoint::NetworkSecurityManagerBuiltInParameters,
+                                        NetworkSecurityManager::Endpoint::NetworkSecurityManagerClientContextParameters>;
+
+AWS_NETWORKSECURITYMANAGER_EXTERN template class AWS_NETWORKSECURITYMANAGER_API
+    Aws::Endpoint::BDDEndpointProvider<NetworkSecurityManager::Endpoint::NetworkSecurityManagerClientConfiguration,
+                                       NetworkSecurityManager::Endpoint::NetworkSecurityManagerBuiltInParameters,
+                                       NetworkSecurityManager::Endpoint::NetworkSecurityManagerClientContextParameters>;
+}  // namespace Endpoint
+
+namespace NetworkSecurityManager {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

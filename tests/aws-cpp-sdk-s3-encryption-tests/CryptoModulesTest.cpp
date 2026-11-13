@@ -75,8 +75,8 @@ namespace
     class MockKMSClient : public KMSClient
     {
     public:
-        MockKMSClient(ClientConfiguration clientConfiguration = ClientConfiguration()) :
-            KMSClient(Aws::Auth::AWSCredentials("", ""), clientConfiguration), m_encryptCalledCount(0), m_genDataKeyCalledCount(0), m_decryptCalledCount(0),
+        MockKMSClient(Aws::KMS::KMSClientConfiguration clientConfiguration = Aws::KMS::KMSClientConfiguration()) :
+            KMSClient(Aws::Auth::AWSCredentials("", ""), nullptr, clientConfiguration), m_encryptCalledCount(0), m_genDataKeyCalledCount(0), m_decryptCalledCount(0),
             m_encryptedKey(Aws::Utils::Crypto::SymmetricCipher::GenerateKey()), m_decryptedKey(Aws::Utils::Crypto::SymmetricCipher::GenerateKey()),
             m_triggerDecryptFailure(false), m_triggerCorruptedDecryption(false)
         {
@@ -170,7 +170,7 @@ namespace
     class MockS3Client : public Aws::S3::S3Client
     {
     public:
-        MockS3Client(Aws::Client::ClientConfiguration clientConfiguration = Aws::Client::ClientConfiguration()) :
+        MockS3Client(Aws::S3::S3ClientConfiguration clientConfiguration = Aws::S3::S3ClientConfiguration()) :
                 S3Client(Aws::Auth::AWSCredentials("", ""),
                          Aws::MakeShared<Aws::S3::Endpoint::S3EndpointProvider>(ALLOCATION_TAG),
                          clientConfiguration), m_putObjectCalled(0), m_getObjectCalled(0), m_body(nullptr)
@@ -673,7 +673,7 @@ namespace
 
     TEST_F(CryptoModulesTest, EncryptionOnlyOperationsTestWithKMSWithContextEncryptionMaterials)
     {
-        auto kmsClient = Aws::MakeShared<MockKMSClient>(ALLOCATION_TAG, ClientConfiguration());
+        auto kmsClient = Aws::MakeShared<MockKMSClient>(ALLOCATION_TAG, Aws::KMS::KMSClientConfiguration());
         KMSWithContextEncryptionMaterials materials(TEST_CMK_ID, kmsClient);
         CryptoConfiguration cryptoConfig(StorageMethod::METADATA, CryptoMode::ENCRYPTION_ONLY);
 
@@ -742,7 +742,7 @@ namespace
 
     TEST_F(CryptoModulesTest, EncryptionOnlyOperationsTestWithKMSEncryptionMaterials)
     {
-        auto kmsClient = Aws::MakeShared<MockKMSClient>(ALLOCATION_TAG, ClientConfiguration());
+        auto kmsClient = Aws::MakeShared<MockKMSClient>(ALLOCATION_TAG, Aws::KMS::KMSClientConfiguration());
         KMSEncryptionMaterials materials(TEST_CMK_ID, kmsClient);
         CryptoConfiguration cryptoConfig(StorageMethod::METADATA, CryptoMode::ENCRYPTION_ONLY);
 
@@ -812,7 +812,7 @@ namespace
 
     TEST_F(CryptoModulesTest, AuthenticatedEncryptionOperationsTestWithKMSEncryptionMaterials)
     {
-        auto kmsClient = Aws::MakeShared<MockKMSClient>(ALLOCATION_TAG, ClientConfiguration());
+        auto kmsClient = Aws::MakeShared<MockKMSClient>(ALLOCATION_TAG, Aws::KMS::KMSClientConfiguration());
         KMSEncryptionMaterials materials(TEST_CMK_ID, kmsClient);
         CryptoConfiguration cryptoConfig(StorageMethod::METADATA, CryptoMode::AUTHENTICATED_ENCRYPTION);
 
@@ -880,7 +880,7 @@ namespace
 
     TEST_F(CryptoModulesTest, AuthenticatedEncryptionOperationsTestWithKMSWithContextEncryptionMaterials)
     {
-        auto kmsClient = Aws::MakeShared<MockKMSClient>(ALLOCATION_TAG, ClientConfiguration());
+        auto kmsClient = Aws::MakeShared<MockKMSClient>(ALLOCATION_TAG, Aws::KMS::KMSClientConfiguration());
         KMSWithContextEncryptionMaterials materials(TEST_CMK_ID, kmsClient);
         CryptoConfiguration cryptoConfig(StorageMethod::METADATA, CryptoMode::AUTHENTICATED_ENCRYPTION);
 
@@ -947,7 +947,7 @@ namespace
 
     TEST_F(CryptoModulesTest, AuthenticatedEncryptionOperationsTestWithKMSWithContextEncryptionMaterialsWithFailedKMSDecryption)
     {
-        auto kmsClient = Aws::MakeShared<MockKMSClient>(ALLOCATION_TAG, ClientConfiguration());
+        auto kmsClient = Aws::MakeShared<MockKMSClient>(ALLOCATION_TAG, Aws::KMS::KMSClientConfiguration());
         kmsClient->m_triggerDecryptFailure = true;
         KMSWithContextEncryptionMaterials materials(TEST_CMK_ID, kmsClient);
         CryptoConfiguration cryptoConfig(StorageMethod::METADATA, CryptoMode::AUTHENTICATED_ENCRYPTION);
@@ -1010,7 +1010,7 @@ namespace
 
     TEST_F(CryptoModulesTest, AuthenticatedEncryptionOperationsTestWithKMSWithContextEncryptionMaterialsWithCorruptedKMSDecryption)
     {
-        auto kmsClient = Aws::MakeShared<MockKMSClient>(ALLOCATION_TAG, ClientConfiguration());
+        auto kmsClient = Aws::MakeShared<MockKMSClient>(ALLOCATION_TAG, Aws::KMS::KMSClientConfiguration());
         kmsClient->m_triggerCorruptedDecryption = true;
         KMSWithContextEncryptionMaterials materials(TEST_CMK_ID, kmsClient);
         CryptoConfiguration cryptoConfig(StorageMethod::METADATA, CryptoMode::AUTHENTICATED_ENCRYPTION);
@@ -1141,7 +1141,7 @@ namespace
 
     TEST_F(CryptoModulesTest, StrictAuthenticatedEncryptionOperationsTestWithKMSWithContextEncryptionMaterials)
     {
-        auto kmsClient = Aws::MakeShared<MockKMSClient>(ALLOCATION_TAG, ClientConfiguration());
+        auto kmsClient = Aws::MakeShared<MockKMSClient>(ALLOCATION_TAG, Aws::KMS::KMSClientConfiguration());
         KMSWithContextEncryptionMaterials materials(TEST_CMK_ID, kmsClient);
         CryptoConfiguration cryptoConfig(StorageMethod::METADATA, CryptoMode::STRICT_AUTHENTICATED_ENCRYPTION);
 

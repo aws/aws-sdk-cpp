@@ -4,8 +4,8 @@
  */
 
 #pragma once
+#include <aws/awstransfer/TransferClientConfiguration.h>
 #include <aws/awstransfer/Transfer_EXPORTS.h>
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -14,14 +14,23 @@
 namespace Aws {
 namespace Transfer {
 namespace Endpoint {
+using TransferClientConfiguration = Aws::Transfer::TransferClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using TransferClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using TransferClientConfiguration = Aws::Client::GenericClientConfiguration;
-using TransferBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_TRANSFER_API TransferBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~TransferBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const TransferClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const TransferClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const TransferClientConfiguration& config);
+};
 
 /**
  * The type for the Transfer Client Endpoint Provider.
@@ -34,6 +43,24 @@ using TransferEndpointProviderBase =
 using TransferDefaultEpProviderBase =
     BDDEndpointProvider<TransferClientConfiguration, TransferBuiltInParameters, TransferClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace Transfer
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_TRANSFER_EXTERN template class AWS_TRANSFER_API
+    Aws::Endpoint::EndpointProviderBase<Transfer::Endpoint::TransferClientConfiguration, Transfer::Endpoint::TransferBuiltInParameters,
+                                        Transfer::Endpoint::TransferClientContextParameters>;
+
+AWS_TRANSFER_EXTERN template class AWS_TRANSFER_API
+    Aws::Endpoint::BDDEndpointProvider<Transfer::Endpoint::TransferClientConfiguration, Transfer::Endpoint::TransferBuiltInParameters,
+                                       Transfer::Endpoint::TransferClientContextParameters>;
+}  // namespace Endpoint
+
+namespace Transfer {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

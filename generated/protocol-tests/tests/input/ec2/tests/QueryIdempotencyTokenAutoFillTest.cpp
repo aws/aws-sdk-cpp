@@ -12,7 +12,7 @@ using EC2ProtocolClient = Aws::EC2Protocol::EC2ProtocolClient;
 using namespace Aws::EC2Protocol::Model;
 
 AWS_PROTOCOL_TEST(QueryIdempotencyTokenAutoFill, Ec2ProtocolIdempotencyTokenAutoFill) {
-  EC2ProtocolClient client(mockCredentials, mockConfig);
+  EC2ProtocolClient client(mockCredentials, nullptr, Aws::EC2Protocol::EC2ProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -32,7 +32,7 @@ AWS_PROTOCOL_TEST(QueryIdempotencyTokenAutoFill, Ec2ProtocolIdempotencyTokenAuto
 }
 
 AWS_PROTOCOL_TEST(QueryIdempotencyTokenAutoFill, Ec2ProtocolIdempotencyTokenAutoFillIsSet) {
-  EC2ProtocolClient client(mockCredentials, mockConfig);
+  EC2ProtocolClient client(mockCredentials, nullptr, Aws::EC2Protocol::EC2ProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 

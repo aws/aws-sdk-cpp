@@ -96,41 +96,6 @@ KeyspacesClient::KeyspacesClient(const std::shared_ptr<AWSCredentialsProvider>& 
   init(m_clientConfiguration);
 }
 
-/* Legacy constructors due deprecation */
-KeyspacesClient::KeyspacesClient(const Aws::Client::ClientConfiguration& clientConfiguration)
-    : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                                 Aws::MakeShared<DefaultAWSCredentialsProviderChain>(
-                                                     ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
-                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-                Aws::MakeShared<KeyspacesErrorMarshaller>(ALLOCATION_TAG)),
-      m_clientConfiguration(clientConfiguration),
-      m_endpointProvider(Aws::MakeShared<KeyspacesEndpointProvider>(ALLOCATION_TAG)) {
-  init(m_clientConfiguration);
-}
-
-KeyspacesClient::KeyspacesClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
-    : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-                Aws::MakeShared<KeyspacesErrorMarshaller>(ALLOCATION_TAG)),
-      m_clientConfiguration(clientConfiguration),
-      m_endpointProvider(Aws::MakeShared<KeyspacesEndpointProvider>(ALLOCATION_TAG)) {
-  init(m_clientConfiguration);
-}
-
-KeyspacesClient::KeyspacesClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                 const Aws::Client::ClientConfiguration& clientConfiguration)
-    : BASECLASS(clientConfiguration,
-                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
-                                                 Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-                Aws::MakeShared<KeyspacesErrorMarshaller>(ALLOCATION_TAG)),
-      m_clientConfiguration(clientConfiguration),
-      m_endpointProvider(Aws::MakeShared<KeyspacesEndpointProvider>(ALLOCATION_TAG)) {
-  init(m_clientConfiguration);
-}
-
-/* End of legacy constructors due deprecation */
 KeyspacesClient::~KeyspacesClient() { ShutdownSdkClient(this, -1); }
 
 std::shared_ptr<KeyspacesEndpointProviderBase>& KeyspacesClient::accessEndpointProvider() { return m_endpointProvider; }
@@ -148,12 +113,7 @@ void KeyspacesClient::init(const Keyspaces::KeyspacesClientConfiguration& config
   AWSClient::SetUserAgentExecutor(*m_clientConfiguration.executor);
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config, "cassandra");
-}
-
-void KeyspacesClient::OverrideEndpoint(const Aws::String& endpoint) {
-  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_clientConfiguration.endpointOverride = endpoint;
-  m_endpointProvider->OverrideEndpoint(endpoint);
+  ApplyServiceOptions(GetServiceClientOptions(m_clientConfiguration));
 }
 KeyspacesClient::InvokeOperationOutcome KeyspacesClient::InvokeServiceOperation(const AmazonWebServiceRequest& request,
                                                                                 Aws::Http::HttpMethod httpMethod) const {

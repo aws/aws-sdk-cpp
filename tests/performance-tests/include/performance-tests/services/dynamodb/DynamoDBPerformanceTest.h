@@ -6,7 +6,7 @@
 #pragma once
 
 #include <aws/core/NoResult.h>
-#include <aws/core/client/ClientConfiguration.h>
+#include <aws/dynamodb/DynamoDBClientConfiguration.h>
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -24,7 +24,7 @@ namespace DynamoDB {
  */
 class DynamoDBPerformanceTest : public PerformanceTestBase {
  public:
-  DynamoDBPerformanceTest(const Aws::Client::ClientConfiguration& clientConfig, const TestConfig::TestCase& testConfig,
+  DynamoDBPerformanceTest(const Aws::DynamoDB::DynamoDBClientConfiguration& clientConfig, const TestConfig::TestCase& testConfig,
                           int iterations = 10);
 
   Aws::Utils::Outcome<Aws::NoResult, Aws::String> Setup() override;

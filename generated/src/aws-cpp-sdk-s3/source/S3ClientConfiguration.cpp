@@ -47,6 +47,10 @@ void S3ClientConfiguration::LoadS3SpecificConfig(const Aws::String& inputProfile
   if (useArnRegionCfg == "true") {
     useArnRegion = true;
   }
+  useFIPS = Aws::Client::LoadUseFIPSFromEnvOrProfile(this->profileName);
+  useDualStack = Aws::Client::LoadUseDualStackFromEnvOrProfile(this->profileName);
+  checksumConfig = Aws::Client::LoadChecksumConfigFromEnvOrProfile(this->profileName);
+  sigV4aSigningRegionSet = Aws::Client::LoadSigV4aSigningRegionSetFromEnvOrProfile(this->profileName);
 }
 
 S3ClientConfiguration::S3ClientConfiguration(const Aws::Client::ClientConfigurationInitValues& configuration)
@@ -64,15 +68,18 @@ S3ClientConfiguration::S3ClientConfiguration(bool useSmartDefaults, const char* 
   LoadS3SpecificConfig(this->profileName);
 }
 
-S3ClientConfiguration::S3ClientConfiguration(const Aws::Client::ClientConfiguration& config,
-                                             Client::AWSAuthV4Signer::PayloadSigningPolicy iPayloadSigningPolicy,
-                                             bool iUseVirtualAddressing,
-                                             US_EAST_1_REGIONAL_ENDPOINT_OPTION iUseUSEast1RegionalEndPointOption)
-    : BaseClientConfigClass(config),
-      useVirtualAddressing(iUseVirtualAddressing),
-      useUSEast1RegionalEndPointOption(iUseUSEast1RegionalEndPointOption),
-      payloadSigningPolicy(iPayloadSigningPolicy) {
+S3ClientConfiguration::S3ClientConfiguration(const Aws::Client::ClientConfiguration& sharedConfig) : BaseClientConfigClass(sharedConfig) {
   LoadS3SpecificConfig(this->profileName);
+}
+
+Aws::Client::ServiceClientOptions GetServiceClientOptions(const S3ClientConfiguration& config) {
+  Aws::Client::ServiceClientOptions options;
+  options.checksumConfig = config.checksumConfig;
+  options.disableExpectHeader = config.disableExpectHeader;
+  options.httpClientChunkedMode = config.httpClientChunkedMode;
+  options.awsChunkedBufferSize = config.awsChunkedBufferSize;
+  options.sigV4aSigningRegionSet = config.sigV4aSigningRegionSet;
+  return options;
 }
 
 }  // namespace S3

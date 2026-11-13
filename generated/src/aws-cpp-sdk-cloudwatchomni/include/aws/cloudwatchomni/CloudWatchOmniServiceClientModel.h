@@ -118,7 +118,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace CloudWatchOmni {
-using CloudWatchOmniClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CloudWatchOmniEndpointProviderBase = Aws::CloudWatchOmni::Endpoint::CloudWatchOmniEndpointProviderBase;
 using CloudWatchOmniEndpointProvider = Aws::CloudWatchOmni::Endpoint::CloudWatchOmniEndpointProvider;
 

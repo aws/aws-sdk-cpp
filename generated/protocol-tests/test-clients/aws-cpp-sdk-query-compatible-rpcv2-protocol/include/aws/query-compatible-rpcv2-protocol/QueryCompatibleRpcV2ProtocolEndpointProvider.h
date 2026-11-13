@@ -4,24 +4,30 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/query-compatible-rpcv2-protocol/QueryCompatibleRpcV2ProtocolClientConfiguration.h>
 #include <aws/query-compatible-rpcv2-protocol/QueryCompatibleRpcV2Protocol_EXPORTS.h>
 
 namespace Aws {
 namespace QueryCompatibleRpcV2Protocol {
 namespace Endpoint {
+using QueryCompatibleRpcV2ProtocolClientConfiguration = Aws::QueryCompatibleRpcV2Protocol::QueryCompatibleRpcV2ProtocolClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::DefaultEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using QueryCompatibleRpcV2ProtocolClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using QueryCompatibleRpcV2ProtocolClientConfiguration = Aws::Client::GenericClientConfiguration;
-using QueryCompatibleRpcV2ProtocolBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_QUERYCOMPATIBLERPCV2PROTOCOL_API QueryCompatibleRpcV2ProtocolBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~QueryCompatibleRpcV2ProtocolBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const QueryCompatibleRpcV2ProtocolClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const QueryCompatibleRpcV2ProtocolClientConfiguration& config, const Aws::String& serviceName);
+};
 
 /**
  * The type for the QueryCompatibleRpcV2Protocol Client Endpoint Provider.
@@ -36,6 +42,26 @@ using QueryCompatibleRpcV2ProtocolDefaultEpProviderBase =
     DefaultEndpointProvider<QueryCompatibleRpcV2ProtocolClientConfiguration, QueryCompatibleRpcV2ProtocolBuiltInParameters,
                             QueryCompatibleRpcV2ProtocolClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace QueryCompatibleRpcV2Protocol
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_QUERYCOMPATIBLERPCV2PROTOCOL_EXTERN template class AWS_QUERYCOMPATIBLERPCV2PROTOCOL_API
+    Aws::Endpoint::EndpointProviderBase<QueryCompatibleRpcV2Protocol::Endpoint::QueryCompatibleRpcV2ProtocolClientConfiguration,
+                                        QueryCompatibleRpcV2Protocol::Endpoint::QueryCompatibleRpcV2ProtocolBuiltInParameters,
+                                        QueryCompatibleRpcV2Protocol::Endpoint::QueryCompatibleRpcV2ProtocolClientContextParameters>;
+
+AWS_QUERYCOMPATIBLERPCV2PROTOCOL_EXTERN template class AWS_QUERYCOMPATIBLERPCV2PROTOCOL_API
+    Aws::Endpoint::DefaultEndpointProvider<QueryCompatibleRpcV2Protocol::Endpoint::QueryCompatibleRpcV2ProtocolClientConfiguration,
+                                           QueryCompatibleRpcV2Protocol::Endpoint::QueryCompatibleRpcV2ProtocolBuiltInParameters,
+                                           QueryCompatibleRpcV2Protocol::Endpoint::QueryCompatibleRpcV2ProtocolClientContextParameters>;
+}  // namespace Endpoint
+
+namespace QueryCompatibleRpcV2Protocol {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

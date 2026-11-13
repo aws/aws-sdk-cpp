@@ -9,6 +9,9 @@ namespace Aws {
 namespace EventBridgeV2 {
 
 void EventBridgeV2ClientConfiguration::LoadEventBridgeV2SpecificConfig(const Aws::String& inputProfileName) {
+  useFIPS = Aws::Client::LoadUseFIPSFromEnvOrProfile(this->profileName);
+  useDualStack = Aws::Client::LoadUseDualStackFromEnvOrProfile(this->profileName);
+  accountIdEndpointMode = Aws::Client::LoadAccountIdEndpointModeFromEnvOrProfile(this->profileName);
 #if defined(_MSC_VER)
   (&reinterpret_cast<const int&>(inputProfileName));
 #else
@@ -31,9 +34,16 @@ EventBridgeV2ClientConfiguration::EventBridgeV2ClientConfiguration(bool useSmart
   LoadEventBridgeV2SpecificConfig(this->profileName);
 }
 
-EventBridgeV2ClientConfiguration::EventBridgeV2ClientConfiguration(const Aws::Client::ClientConfiguration& config)
-    : BaseClientConfigClass(config) {
+EventBridgeV2ClientConfiguration::EventBridgeV2ClientConfiguration(const Aws::Client::ClientConfiguration& sharedConfig)
+    : BaseClientConfigClass(sharedConfig) {
   LoadEventBridgeV2SpecificConfig(this->profileName);
+}
+
+Aws::Client::ServiceClientOptions GetServiceClientOptions(const EventBridgeV2ClientConfiguration& config) {
+  Aws::Client::ServiceClientOptions options;
+  options.accountId = config.accountId;
+  options.accountIdEndpointMode = config.accountIdEndpointMode;
+  return options;
 }
 
 }  // namespace EventBridgeV2

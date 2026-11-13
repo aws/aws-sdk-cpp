@@ -11,6 +11,8 @@ namespace BedrockDataAutomationRuntime {
 static const char AWS_BEARER_TOKEN_BEDROCK[] = "AWS_BEARER_TOKEN_BEDROCK";
 
 void BedrockDataAutomationRuntimeClientConfiguration::LoadBedrockDataAutomationRuntimeSpecificConfig(const Aws::String& inputProfileName) {
+  useFIPS = Aws::Client::LoadUseFIPSFromEnvOrProfile(this->profileName);
+  useDualStack = Aws::Client::LoadUseDualStackFromEnvOrProfile(this->profileName);
   const Aws::String& bedrockToken =
       BaseClientConfigClass::LoadConfigFromEnvOrProfile(AWS_BEARER_TOKEN_BEDROCK, inputProfileName, AWS_BEARER_TOKEN_BEDROCK, {}, "");
   if (!bedrockToken.empty()) {
@@ -42,9 +44,15 @@ BedrockDataAutomationRuntimeClientConfiguration::BedrockDataAutomationRuntimeCli
 }
 
 BedrockDataAutomationRuntimeClientConfiguration::BedrockDataAutomationRuntimeClientConfiguration(
-    const Aws::Client::ClientConfiguration& config)
-    : BaseClientConfigClass(config) {
+    const Aws::Client::ClientConfiguration& sharedConfig)
+    : BaseClientConfigClass(sharedConfig) {
   LoadBedrockDataAutomationRuntimeSpecificConfig(this->profileName);
+}
+
+Aws::Client::ServiceClientOptions GetServiceClientOptions(const BedrockDataAutomationRuntimeClientConfiguration& config) {
+  Aws::Client::ServiceClientOptions options;
+  (void)(config);
+  return options;
 }
 
 }  // namespace BedrockDataAutomationRuntime

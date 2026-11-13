@@ -35,8 +35,6 @@ TEST_F(BillingSmokeTestSuite, ListBillingViewsSuccess )
 {
     Aws::Billing::BillingClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-east-1";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<BillingClient>(ALLOCATION_TAG, clientConfiguration);
     //Prepare test data
     auto GetlistbillingviewsElemLvl0Idx0 = [&]() -> ActiveTimeRange

@@ -48,7 +48,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace ForecastQueryService {
-using ForecastQueryServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ForecastQueryServiceEndpointProviderBase = Aws::ForecastQueryService::Endpoint::ForecastQueryServiceEndpointProviderBase;
 using ForecastQueryServiceEndpointProvider = Aws::ForecastQueryService::Endpoint::ForecastQueryServiceEndpointProvider;
 

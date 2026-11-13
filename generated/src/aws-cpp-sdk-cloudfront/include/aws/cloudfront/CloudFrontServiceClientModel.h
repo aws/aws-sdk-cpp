@@ -216,7 +216,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace CloudFront {
-using CloudFrontClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CloudFrontEndpointProviderBase = Aws::CloudFront::Endpoint::CloudFrontEndpointProviderBase;
 using CloudFrontEndpointProvider = Aws::CloudFront::Endpoint::CloudFrontEndpointProvider;
 

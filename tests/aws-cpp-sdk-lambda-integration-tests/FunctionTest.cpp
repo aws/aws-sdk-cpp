@@ -123,12 +123,12 @@ protected:
         config.writeRateLimiter = m_limiter;
 
         //to test proxy functionality, uncomment the next two lines.
-        m_client = Aws::MakeShared<LambdaClient>(ALLOCATION_TAG, config);
-        m_kinesis_client = Aws::MakeShared<KinesisClient>(ALLOCATION_TAG, config);
+        m_client = Aws::MakeShared<LambdaClient>(ALLOCATION_TAG, Aws::Lambda::LambdaClientConfiguration(config));
+        m_kinesis_client = Aws::MakeShared<KinesisClient>(ALLOCATION_TAG, Aws::Kinesis::KinesisClientConfiguration(config));
 
         //Create our IAM Role, so that the Lambda tests have the right policies.
         m_role = Aws::MakeShared<Aws::IAM::Model::Role>(ALLOCATION_TAG);
-        ClientConfiguration clientConfig;
+        Aws::IAM::IAMClientConfiguration clientConfig;
         clientConfig.region = Aws::Region::US_EAST_1;
         m_iamClient = Aws::MakeShared<Aws::IAM::IAMClient>(ALLOCATION_TAG, clientConfig);
         auto cognitoClient = Aws::MakeShared<CognitoIdentityClient>(ALLOCATION_TAG);

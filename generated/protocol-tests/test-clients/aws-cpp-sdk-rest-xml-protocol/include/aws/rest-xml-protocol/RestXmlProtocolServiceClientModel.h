@@ -152,7 +152,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace RestXmlProtocol {
-using RestXmlProtocolClientConfiguration = Aws::Client::GenericClientConfiguration;
 using RestXmlProtocolEndpointProviderBase = Aws::RestXmlProtocol::Endpoint::RestXmlProtocolEndpointProviderBase;
 using RestXmlProtocolEndpointProvider = Aws::RestXmlProtocol::Endpoint::RestXmlProtocolEndpointProvider;
 

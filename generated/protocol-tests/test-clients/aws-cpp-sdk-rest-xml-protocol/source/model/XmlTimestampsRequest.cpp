@@ -55,5 +55,5 @@ Aws::String XmlTimestampsRequest::SerializePayload() const {
     httpDateOnTargetNode.SetText(m_httpDateOnTarget.ToGmtString(Aws::Utils::DateFormat::RFC822));
   }
 
-  return payloadDoc.ConvertToString();
+  return payloadDoc.ConvertToCompactString();
 }

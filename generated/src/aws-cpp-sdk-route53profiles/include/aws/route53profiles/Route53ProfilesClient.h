@@ -57,27 +57,6 @@ class AWS_ROUTE53PROFILES_API Route53ProfilesClient : public Aws::Client::AWSJso
                         const Aws::Route53Profiles::Route53ProfilesClientConfiguration& clientConfiguration =
                             Aws::Route53Profiles::Route53ProfilesClientConfiguration());
 
-  /* Legacy constructors due deprecation */
-  /**
-   * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client
-   * config is not specified, it will be initialized to default values.
-   */
-  Route53ProfilesClient(const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /**
-   * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
-   * is not specified, it will be initialized to default values.
-   */
-  Route53ProfilesClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /**
-   * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
-   * the default http client factory will be used
-   */
-  Route53ProfilesClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                        const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /* End of legacy constructors due deprecation */
   virtual ~Route53ProfilesClient();
 
   /**
@@ -527,7 +506,6 @@ class AWS_ROUTE53PROFILES_API Route53ProfilesClient : public Aws::Client::AWSJso
     return SubmitAsync(&Route53ProfilesClient::UpdateProfileResourceAssociation, request, handler, context);
   }
 
-  virtual void OverrideEndpoint(const Aws::String& endpoint);
   virtual std::shared_ptr<Route53ProfilesEndpointProviderBase>& accessEndpointProvider();
 
  private:

@@ -81,7 +81,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace WorkDocs {
-using WorkDocsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using WorkDocsEndpointProviderBase = Aws::WorkDocs::Endpoint::WorkDocsEndpointProviderBase;
 using WorkDocsEndpointProvider = Aws::WorkDocs::Endpoint::WorkDocsEndpointProvider;
 

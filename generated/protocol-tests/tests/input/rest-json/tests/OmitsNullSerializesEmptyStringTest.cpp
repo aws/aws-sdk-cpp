@@ -12,7 +12,7 @@ using RestJsonProtocolClient = Aws::RestJsonProtocol::RestJsonProtocolClient;
 using namespace Aws::RestJsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(OmitsNullSerializesEmptyString, RestJsonOmitsNullQuery) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -27,7 +27,7 @@ AWS_PROTOCOL_TEST(OmitsNullSerializesEmptyString, RestJsonOmitsNullQuery) {
 }
 
 AWS_PROTOCOL_TEST(OmitsNullSerializesEmptyString, RestJsonSerializesEmptyQueryValue) {
-  RestJsonProtocolClient client(mockCredentials, mockConfig);
+  RestJsonProtocolClient client(mockCredentials, nullptr, Aws::RestJsonProtocol::RestJsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 

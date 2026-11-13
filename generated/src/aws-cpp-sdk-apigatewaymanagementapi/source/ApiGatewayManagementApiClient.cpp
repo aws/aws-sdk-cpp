@@ -88,44 +88,6 @@ ApiGatewayManagementApiClient::ApiGatewayManagementApiClient(
   init(m_clientConfiguration);
 }
 
-/* Legacy constructors due deprecation */
-ApiGatewayManagementApiClient::ApiGatewayManagementApiClient(const Aws::Client::ClientConfiguration& clientConfiguration)
-    : BASECLASS(
-          clientConfiguration,
-          Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
-              ALLOCATION_TAG,
-              Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
-              SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-          Aws::MakeShared<ApiGatewayManagementApiErrorMarshaller>(ALLOCATION_TAG)),
-      m_clientConfiguration(clientConfiguration),
-      m_endpointProvider(Aws::MakeShared<ApiGatewayManagementApiEndpointProvider>(ALLOCATION_TAG)) {
-  init(m_clientConfiguration);
-}
-
-ApiGatewayManagementApiClient::ApiGatewayManagementApiClient(const AWSCredentials& credentials,
-                                                             const Aws::Client::ClientConfiguration& clientConfiguration)
-    : BASECLASS(clientConfiguration,
-                Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
-                    ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials), SERVICE_NAME,
-                    Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-                Aws::MakeShared<ApiGatewayManagementApiErrorMarshaller>(ALLOCATION_TAG)),
-      m_clientConfiguration(clientConfiguration),
-      m_endpointProvider(Aws::MakeShared<ApiGatewayManagementApiEndpointProvider>(ALLOCATION_TAG)) {
-  init(m_clientConfiguration);
-}
-
-ApiGatewayManagementApiClient::ApiGatewayManagementApiClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                             const Aws::Client::ClientConfiguration& clientConfiguration)
-    : BASECLASS(clientConfiguration,
-                Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
-                                                                      Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-                Aws::MakeShared<ApiGatewayManagementApiErrorMarshaller>(ALLOCATION_TAG)),
-      m_clientConfiguration(clientConfiguration),
-      m_endpointProvider(Aws::MakeShared<ApiGatewayManagementApiEndpointProvider>(ALLOCATION_TAG)) {
-  init(m_clientConfiguration);
-}
-
-/* End of legacy constructors due deprecation */
 ApiGatewayManagementApiClient::~ApiGatewayManagementApiClient() { ShutdownSdkClient(this, -1); }
 
 std::shared_ptr<ApiGatewayManagementApiEndpointProviderBase>& ApiGatewayManagementApiClient::accessEndpointProvider() {
@@ -145,12 +107,7 @@ void ApiGatewayManagementApiClient::init(const ApiGatewayManagementApi::ApiGatew
   AWSClient::SetUserAgentExecutor(*m_clientConfiguration.executor);
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config, "execute-api");
-}
-
-void ApiGatewayManagementApiClient::OverrideEndpoint(const Aws::String& endpoint) {
-  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_clientConfiguration.endpointOverride = endpoint;
-  m_endpointProvider->OverrideEndpoint(endpoint);
+  ApplyServiceOptions(GetServiceClientOptions(m_clientConfiguration));
 }
 ApiGatewayManagementApiClient::InvokeOperationOutcome ApiGatewayManagementApiClient::InvokeServiceOperation(
     const AmazonWebServiceRequest& request, const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,

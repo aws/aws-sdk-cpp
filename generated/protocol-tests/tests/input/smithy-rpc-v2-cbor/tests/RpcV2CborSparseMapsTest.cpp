@@ -12,7 +12,7 @@ using RpcV2ProtocolClient = Aws::RpcV2Protocol::RpcV2ProtocolClient;
 using namespace Aws::RpcV2Protocol::Model;
 
 AWS_PROTOCOL_TEST(RpcV2CborSparseMaps, RpcV2CborSparseMaps) {
-  RpcV2ProtocolClient client(mockCredentials, mockConfig);
+  RpcV2ProtocolClient client(mockCredentials, nullptr, Aws::RpcV2Protocol::RpcV2ProtocolClientConfiguration(mockConfig));
 
   // Cbor specific
   OutputResponse mockRs;
@@ -61,7 +61,7 @@ AWS_PROTOCOL_TEST(RpcV2CborSparseMaps, RpcV2CborSparseMaps) {
 }
 
 AWS_PROTOCOL_TEST(RpcV2CborSparseMaps, RpcV2CborSerializesNullMapValues) {
-  RpcV2ProtocolClient client(mockCredentials, mockConfig);
+  RpcV2ProtocolClient client(mockCredentials, nullptr, Aws::RpcV2Protocol::RpcV2ProtocolClientConfiguration(mockConfig));
 
   // Cbor specific
   OutputResponse mockRs;
@@ -109,7 +109,7 @@ AWS_PROTOCOL_TEST(RpcV2CborSparseMaps, RpcV2CborSerializesNullMapValues) {
 }
 
 AWS_PROTOCOL_TEST(RpcV2CborSparseMaps, RpcV2CborSerializesSparseSetMap) {
-  RpcV2ProtocolClient client(mockCredentials, mockConfig);
+  RpcV2ProtocolClient client(mockCredentials, nullptr, Aws::RpcV2Protocol::RpcV2ProtocolClientConfiguration(mockConfig));
 
   // Cbor specific
   OutputResponse mockRs;
@@ -144,7 +144,7 @@ AWS_PROTOCOL_TEST(RpcV2CborSparseMaps, RpcV2CborSerializesSparseSetMap) {
 }
 
 AWS_PROTOCOL_TEST(RpcV2CborSparseMaps, RpcV2CborSerializesSparseSetMapAndRetainsNull) {
-  RpcV2ProtocolClient client(mockCredentials, mockConfig);
+  RpcV2ProtocolClient client(mockCredentials, nullptr, Aws::RpcV2Protocol::RpcV2ProtocolClientConfiguration(mockConfig));
 
   // Cbor specific
   OutputResponse mockRs;
@@ -182,7 +182,7 @@ AWS_PROTOCOL_TEST(RpcV2CborSparseMaps, RpcV2CborSerializesSparseSetMapAndRetains
 }
 
 AWS_PROTOCOL_TEST(RpcV2CborSparseMaps, RpcV2CborSerializesZeroValuesInSparseMaps) {
-  RpcV2ProtocolClient client(mockCredentials, mockConfig);
+  RpcV2ProtocolClient client(mockCredentials, nullptr, Aws::RpcV2Protocol::RpcV2ProtocolClientConfiguration(mockConfig));
 
   // Cbor specific
   OutputResponse mockRs;

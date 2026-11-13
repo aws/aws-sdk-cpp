@@ -4,8 +4,8 @@
  */
 
 #pragma once
+#include <aws/cloudfront-keyvaluestore/CloudFrontKeyValueStoreClientConfiguration.h>
 #include <aws/cloudfront-keyvaluestore/CloudFrontKeyValueStore_EXPORTS.h>
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -14,14 +14,23 @@
 namespace Aws {
 namespace CloudFrontKeyValueStore {
 namespace Endpoint {
+using CloudFrontKeyValueStoreClientConfiguration = Aws::CloudFrontKeyValueStore::CloudFrontKeyValueStoreClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using CloudFrontKeyValueStoreClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using CloudFrontKeyValueStoreClientConfiguration = Aws::Client::GenericClientConfiguration;
-using CloudFrontKeyValueStoreBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_CLOUDFRONTKEYVALUESTORE_API CloudFrontKeyValueStoreBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~CloudFrontKeyValueStoreBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const CloudFrontKeyValueStoreClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const CloudFrontKeyValueStoreClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const CloudFrontKeyValueStoreClientConfiguration& config);
+};
 
 /**
  * The type for the CloudFrontKeyValueStore Client Endpoint Provider.
@@ -36,6 +45,26 @@ using CloudFrontKeyValueStoreDefaultEpProviderBase =
     BDDEndpointProvider<CloudFrontKeyValueStoreClientConfiguration, CloudFrontKeyValueStoreBuiltInParameters,
                         CloudFrontKeyValueStoreClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace CloudFrontKeyValueStore
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_CLOUDFRONTKEYVALUESTORE_EXTERN template class AWS_CLOUDFRONTKEYVALUESTORE_API
+    Aws::Endpoint::EndpointProviderBase<CloudFrontKeyValueStore::Endpoint::CloudFrontKeyValueStoreClientConfiguration,
+                                        CloudFrontKeyValueStore::Endpoint::CloudFrontKeyValueStoreBuiltInParameters,
+                                        CloudFrontKeyValueStore::Endpoint::CloudFrontKeyValueStoreClientContextParameters>;
+
+AWS_CLOUDFRONTKEYVALUESTORE_EXTERN template class AWS_CLOUDFRONTKEYVALUESTORE_API
+    Aws::Endpoint::BDDEndpointProvider<CloudFrontKeyValueStore::Endpoint::CloudFrontKeyValueStoreClientConfiguration,
+                                       CloudFrontKeyValueStore::Endpoint::CloudFrontKeyValueStoreBuiltInParameters,
+                                       CloudFrontKeyValueStore::Endpoint::CloudFrontKeyValueStoreClientContextParameters>;
+}  // namespace Endpoint
+
+namespace CloudFrontKeyValueStore {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

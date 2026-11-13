@@ -4,24 +4,33 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/payment-cryptography/PaymentCryptographyClientConfiguration.h>
 #include <aws/payment-cryptography/PaymentCryptography_EXPORTS.h>
 
 namespace Aws {
 namespace PaymentCryptography {
 namespace Endpoint {
+using PaymentCryptographyClientConfiguration = Aws::PaymentCryptography::PaymentCryptographyClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using PaymentCryptographyClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using PaymentCryptographyClientConfiguration = Aws::Client::GenericClientConfiguration;
-using PaymentCryptographyBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_PAYMENTCRYPTOGRAPHY_API PaymentCryptographyBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~PaymentCryptographyBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const PaymentCryptographyClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const PaymentCryptographyClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const PaymentCryptographyClientConfiguration& config);
+};
 
 /**
  * The type for the PaymentCryptography Client Endpoint Provider.
@@ -36,6 +45,26 @@ using PaymentCryptographyDefaultEpProviderBase =
     BDDEndpointProvider<PaymentCryptographyClientConfiguration, PaymentCryptographyBuiltInParameters,
                         PaymentCryptographyClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace PaymentCryptography
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_PAYMENTCRYPTOGRAPHY_EXTERN template class AWS_PAYMENTCRYPTOGRAPHY_API
+    Aws::Endpoint::EndpointProviderBase<PaymentCryptography::Endpoint::PaymentCryptographyClientConfiguration,
+                                        PaymentCryptography::Endpoint::PaymentCryptographyBuiltInParameters,
+                                        PaymentCryptography::Endpoint::PaymentCryptographyClientContextParameters>;
+
+AWS_PAYMENTCRYPTOGRAPHY_EXTERN template class AWS_PAYMENTCRYPTOGRAPHY_API
+    Aws::Endpoint::BDDEndpointProvider<PaymentCryptography::Endpoint::PaymentCryptographyClientConfiguration,
+                                       PaymentCryptography::Endpoint::PaymentCryptographyBuiltInParameters,
+                                       PaymentCryptography::Endpoint::PaymentCryptographyClientContextParameters>;
+}  // namespace Endpoint
+
+namespace PaymentCryptography {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

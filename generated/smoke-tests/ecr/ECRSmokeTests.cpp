@@ -36,8 +36,6 @@ TEST_F(ECRSmokeTestSuite, DescribeRepositoriesSuccess )
 {
     Aws::ECR::ECRClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<ECRClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     
@@ -49,8 +47,6 @@ TEST_F(ECRSmokeTestSuite, ListImagesFailure )
 {
     Aws::ECR::ECRClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<ECRClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     

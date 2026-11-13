@@ -47,7 +47,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace SignerData {
-using SignerDataClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SignerDataEndpointProviderBase = Aws::SignerData::Endpoint::SignerDataEndpointProviderBase;
 using SignerDataEndpointProvider = Aws::SignerData::Endpoint::SignerDataEndpointProvider;
 

@@ -413,7 +413,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace Glue {
-using GlueClientConfiguration = Aws::Client::GenericClientConfiguration;
 using GlueEndpointProviderBase = Aws::Glue::Endpoint::GlueEndpointProviderBase;
 using GlueEndpointProvider = Aws::Glue::Endpoint::GlueEndpointProvider;
 

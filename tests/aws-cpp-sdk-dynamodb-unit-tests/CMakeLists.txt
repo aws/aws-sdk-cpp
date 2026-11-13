@@ -14,9 +14,9 @@ endif()
 enable_testing()
 
 if(PLATFORM_ANDROID AND BUILD_SHARED_LIBS)
-    add_library(${PROJECT_NAME} ${CMAKE_CURRENT_SOURCE_DIR}/DynamoDBUnitTests.cpp)
+    add_library(${PROJECT_NAME} ${CMAKE_CURRENT_SOURCE_DIR}/DynamoDBUnitTests.cpp ${CMAKE_CURRENT_SOURCE_DIR}/DynamoDBClientConfigurationTest.cpp)
 else()
-    add_executable(${PROJECT_NAME} ${CMAKE_CURRENT_SOURCE_DIR}/DynamoDBUnitTests.cpp)
+    add_executable(${PROJECT_NAME} ${CMAKE_CURRENT_SOURCE_DIR}/DynamoDBUnitTests.cpp ${CMAKE_CURRENT_SOURCE_DIR}/DynamoDBClientConfigurationTest.cpp)
 endif()
 
 set_compiler_flags(${PROJECT_NAME})

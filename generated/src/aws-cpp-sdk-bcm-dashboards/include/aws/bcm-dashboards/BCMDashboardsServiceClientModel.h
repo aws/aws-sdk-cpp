@@ -63,7 +63,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace BCMDashboards {
-using BCMDashboardsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using BCMDashboardsEndpointProviderBase = Aws::BCMDashboards::Endpoint::BCMDashboardsEndpointProviderBase;
 using BCMDashboardsEndpointProvider = Aws::BCMDashboards::Endpoint::BCMDashboardsEndpointProvider;
 

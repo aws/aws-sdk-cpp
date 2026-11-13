@@ -34,8 +34,6 @@ TEST_F(DirectoryServiceSmokeTestSuite, DescribeDirectoriesSuccess )
 {
     Aws::DirectoryService::DirectoryServiceClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<DirectoryServiceClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     

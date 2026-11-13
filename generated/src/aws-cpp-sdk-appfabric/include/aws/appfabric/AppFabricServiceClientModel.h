@@ -74,7 +74,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace AppFabric {
-using AppFabricClientConfiguration = Aws::Client::GenericClientConfiguration;
 using AppFabricEndpointProviderBase = Aws::AppFabric::Endpoint::AppFabricEndpointProviderBase;
 using AppFabricEndpointProvider = Aws::AppFabric::Endpoint::AppFabricEndpointProvider;
 

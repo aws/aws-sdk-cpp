@@ -46,6 +46,12 @@ void S3ControlBuiltInParameters::SetFromClientConfiguration(const S3ControlClien
 void S3ControlBuiltInParameters::SetServiceSpecificParameters(const S3ControlClientConfiguration& config) {
   static const char* AWS_S3_USE_ARN_REGION = "UseArnRegion";
   SetBooleanParameter(AWS_S3_USE_ARN_REGION, config.useArnRegion);
+  if (config.useFIPS) {
+    SetBooleanParameter("UseFIPS", true);
+  }
+  if (config.useDualStack) {
+    SetBooleanParameter("UseDualStack", true);
+  }
   if (!config.accountId.empty()) {
     SetStringParameter("AccountId", config.accountId);
   }

@@ -124,7 +124,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace ChimeSDKVoice {
-using ChimeSDKVoiceClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ChimeSDKVoiceEndpointProviderBase = Aws::ChimeSDKVoice::Endpoint::ChimeSDKVoiceEndpointProviderBase;
 using ChimeSDKVoiceEndpointProvider = Aws::ChimeSDKVoice::Endpoint::ChimeSDKVoiceEndpointProvider;
 

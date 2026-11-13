@@ -127,11 +127,8 @@ public abstract class CppClientGenerator implements ClientGenerator {
             }
             fileList.add(generateEndpointProviderHeaderFile(serviceModel));
             fileList.add(generateEndpointProviderSourceFile(serviceModel));
-
-            if (serviceModel.hasServiceSpecificClientConfig()) {
-                fileList.add(generateServiceClientConfigurationHeaderFile(serviceModel));
-                fileList.add(generateServiceClientConfigurationSourceFile(serviceModel));
-            }
+            fileList.add(generateServiceClientConfigurationHeaderFile(serviceModel));
+            fileList.add(generateServiceClientConfigurationSourceFile(serviceModel));
         } else {
             fileList.add(generateRegionHeaderFile(serviceModel));
             fileList.add(generateRegionSourceFile(serviceModel));

@@ -48,7 +48,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace AppConfigData {
-using AppConfigDataClientConfiguration = Aws::Client::GenericClientConfiguration;
 using AppConfigDataEndpointProviderBase = Aws::AppConfigData::Endpoint::AppConfigDataEndpointProviderBase;
 using AppConfigDataEndpointProvider = Aws::AppConfigData::Endpoint::AppConfigDataEndpointProvider;
 

@@ -4,24 +4,33 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/invoicing/InvoicingClientConfiguration.h>
 #include <aws/invoicing/Invoicing_EXPORTS.h>
 
 namespace Aws {
 namespace Invoicing {
 namespace Endpoint {
+using InvoicingClientConfiguration = Aws::Invoicing::InvoicingClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using InvoicingClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using InvoicingClientConfiguration = Aws::Client::GenericClientConfiguration;
-using InvoicingBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_INVOICING_API InvoicingBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~InvoicingBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const InvoicingClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const InvoicingClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const InvoicingClientConfiguration& config);
+};
 
 /**
  * The type for the Invoicing Client Endpoint Provider.
@@ -34,6 +43,24 @@ using InvoicingEndpointProviderBase =
 using InvoicingDefaultEpProviderBase =
     BDDEndpointProvider<InvoicingClientConfiguration, InvoicingBuiltInParameters, InvoicingClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace Invoicing
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_INVOICING_EXTERN template class AWS_INVOICING_API
+    Aws::Endpoint::EndpointProviderBase<Invoicing::Endpoint::InvoicingClientConfiguration, Invoicing::Endpoint::InvoicingBuiltInParameters,
+                                        Invoicing::Endpoint::InvoicingClientContextParameters>;
+
+AWS_INVOICING_EXTERN template class AWS_INVOICING_API
+    Aws::Endpoint::BDDEndpointProvider<Invoicing::Endpoint::InvoicingClientConfiguration, Invoicing::Endpoint::InvoicingBuiltInParameters,
+                                       Invoicing::Endpoint::InvoicingClientContextParameters>;
+}  // namespace Endpoint
+
+namespace Invoicing {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

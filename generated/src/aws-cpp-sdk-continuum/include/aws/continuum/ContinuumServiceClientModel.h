@@ -80,7 +80,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace Continuum {
-using ContinuumClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ContinuumEndpointProviderBase = Aws::Continuum::Endpoint::ContinuumEndpointProviderBase;
 using ContinuumEndpointProvider = Aws::Continuum::Endpoint::ContinuumEndpointProvider;
 

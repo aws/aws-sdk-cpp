@@ -4,24 +4,33 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/marketplace-deployment/MarketplaceDeploymentClientConfiguration.h>
 #include <aws/marketplace-deployment/MarketplaceDeployment_EXPORTS.h>
 
 namespace Aws {
 namespace MarketplaceDeployment {
 namespace Endpoint {
+using MarketplaceDeploymentClientConfiguration = Aws::MarketplaceDeployment::MarketplaceDeploymentClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using MarketplaceDeploymentClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using MarketplaceDeploymentClientConfiguration = Aws::Client::GenericClientConfiguration;
-using MarketplaceDeploymentBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_MARKETPLACEDEPLOYMENT_API MarketplaceDeploymentBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~MarketplaceDeploymentBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const MarketplaceDeploymentClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const MarketplaceDeploymentClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const MarketplaceDeploymentClientConfiguration& config);
+};
 
 /**
  * The type for the MarketplaceDeployment Client Endpoint Provider.
@@ -36,6 +45,26 @@ using MarketplaceDeploymentDefaultEpProviderBase =
     BDDEndpointProvider<MarketplaceDeploymentClientConfiguration, MarketplaceDeploymentBuiltInParameters,
                         MarketplaceDeploymentClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace MarketplaceDeployment
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_MARKETPLACEDEPLOYMENT_EXTERN template class AWS_MARKETPLACEDEPLOYMENT_API
+    Aws::Endpoint::EndpointProviderBase<MarketplaceDeployment::Endpoint::MarketplaceDeploymentClientConfiguration,
+                                        MarketplaceDeployment::Endpoint::MarketplaceDeploymentBuiltInParameters,
+                                        MarketplaceDeployment::Endpoint::MarketplaceDeploymentClientContextParameters>;
+
+AWS_MARKETPLACEDEPLOYMENT_EXTERN template class AWS_MARKETPLACEDEPLOYMENT_API
+    Aws::Endpoint::BDDEndpointProvider<MarketplaceDeployment::Endpoint::MarketplaceDeploymentClientConfiguration,
+                                       MarketplaceDeployment::Endpoint::MarketplaceDeploymentBuiltInParameters,
+                                       MarketplaceDeployment::Endpoint::MarketplaceDeploymentClientContextParameters>;
+}  // namespace Endpoint
+
+namespace MarketplaceDeployment {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

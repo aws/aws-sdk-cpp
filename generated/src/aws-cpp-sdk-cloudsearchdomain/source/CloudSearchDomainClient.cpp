@@ -86,44 +86,6 @@ CloudSearchDomainClient::CloudSearchDomainClient(const std::shared_ptr<AWSCreden
   init(m_clientConfiguration);
 }
 
-/* Legacy constructors due deprecation */
-CloudSearchDomainClient::CloudSearchDomainClient(const Aws::Client::ClientConfiguration& clientConfiguration)
-    : BASECLASS(
-          clientConfiguration,
-          Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
-              ALLOCATION_TAG,
-              Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
-              SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-          Aws::MakeShared<CloudSearchDomainErrorMarshaller>(ALLOCATION_TAG)),
-      m_clientConfiguration(clientConfiguration),
-      m_endpointProvider(Aws::MakeShared<CloudSearchDomainEndpointProvider>(ALLOCATION_TAG)) {
-  init(m_clientConfiguration);
-}
-
-CloudSearchDomainClient::CloudSearchDomainClient(const AWSCredentials& credentials,
-                                                 const Aws::Client::ClientConfiguration& clientConfiguration)
-    : BASECLASS(clientConfiguration,
-                Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
-                    ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials), SERVICE_NAME,
-                    Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-                Aws::MakeShared<CloudSearchDomainErrorMarshaller>(ALLOCATION_TAG)),
-      m_clientConfiguration(clientConfiguration),
-      m_endpointProvider(Aws::MakeShared<CloudSearchDomainEndpointProvider>(ALLOCATION_TAG)) {
-  init(m_clientConfiguration);
-}
-
-CloudSearchDomainClient::CloudSearchDomainClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                                 const Aws::Client::ClientConfiguration& clientConfiguration)
-    : BASECLASS(clientConfiguration,
-                Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
-                                                                      Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-                Aws::MakeShared<CloudSearchDomainErrorMarshaller>(ALLOCATION_TAG)),
-      m_clientConfiguration(clientConfiguration),
-      m_endpointProvider(Aws::MakeShared<CloudSearchDomainEndpointProvider>(ALLOCATION_TAG)) {
-  init(m_clientConfiguration);
-}
-
-/* End of legacy constructors due deprecation */
 CloudSearchDomainClient::~CloudSearchDomainClient() { ShutdownSdkClient(this, -1); }
 
 std::shared_ptr<CloudSearchDomainEndpointProviderBase>& CloudSearchDomainClient::accessEndpointProvider() { return m_endpointProvider; }
@@ -141,12 +103,7 @@ void CloudSearchDomainClient::init(const CloudSearchDomain::CloudSearchDomainCli
   AWSClient::SetUserAgentExecutor(*m_clientConfiguration.executor);
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config, "cloudsearch");
-}
-
-void CloudSearchDomainClient::OverrideEndpoint(const Aws::String& endpoint) {
-  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_clientConfiguration.endpointOverride = endpoint;
-  m_endpointProvider->OverrideEndpoint(endpoint);
+  ApplyServiceOptions(GetServiceClientOptions(m_clientConfiguration));
 }
 CloudSearchDomainClient::InvokeOperationOutcome CloudSearchDomainClient::InvokeServiceOperation(
     const AmazonWebServiceRequest& request, const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,

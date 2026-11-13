@@ -240,8 +240,6 @@ Aws::Vector<Aws::String> calculateSigV4aSigningRegionSet(const Aws::String& prof
 void setLegacyClientConfigurationParameters(ClientConfiguration& clientConfig)
 {
     clientConfig.scheme = Aws::Http::Scheme::HTTPS;
-    clientConfig.useDualStack = false;
-    clientConfig.useFIPS = false;
     clientConfig.maxConnections = 25;
     clientConfig.httpRequestTimeoutMs = 0;
     clientConfig.requestTimeoutMs = 3000;
@@ -255,54 +253,19 @@ void setLegacyClientConfigurationParameters(ClientConfiguration& clientConfig)
     clientConfig.writeRateLimiter = nullptr;
     clientConfig.readRateLimiter = nullptr;
     clientConfig.httpLibOverride = Aws::Http::TransferLibType::DEFAULT_CLIENT;
-    clientConfig.httpClientChunkedMode = HttpClientChunkedMode::CLIENT_IMPLEMENTATION;
     clientConfig.followRedirects = FollowRedirectsPolicy::DEFAULT;
-    clientConfig.disableExpectHeader = false;
     clientConfig.enableClockSkewAdjustment = true;
-    clientConfig.enableHostPrefixInjection = true;
     clientConfig.enableHttpClientTrace = false;
     if (clientConfig.profileName.empty())
     {
         clientConfig.profileName = Aws::Auth::GetConfigProfileName();
     }
 
-    Aws::String disableCompressionConfig = clientConfig.LoadConfigFromEnvOrProfile(
-        DISABLE_REQUEST_COMPRESSION_ENV_VAR,
-        clientConfig.profileName,
-        DISABLE_REQUEST_COMPRESSION_CONFIG_VAR,
-        {"TRUE", "FALSE", "true", "false"},
-        "false"
-        );
-
-    if (Aws::Utils::StringUtils::ToLower(disableCompressionConfig.c_str())  == "true") {
-      clientConfig.requestCompressionConfig.useRequestCompression = Aws::Client::UseRequestCompression::DISABLE;
-      AWS_LOGSTREAM_DEBUG(CLIENT_CONFIG_TAG, "Request Compression disabled");
-    } else {
-      //Using default to true for forward compatibility in case new config is added but SDK is not updated.
-      clientConfig.requestCompressionConfig.useRequestCompression = Aws::Client::UseRequestCompression::ENABLE;
-      AWS_LOGSTREAM_DEBUG(CLIENT_CONFIG_TAG, "Request Compression enabled");
-    }
-
-    // Getting min request compression length
-    Aws::String minRequestCompressionString = Aws::Environment::GetEnv(REQUEST_MIN_COMPRESSION_SIZE_BYTES_ENV_VAR);
-    if (minRequestCompressionString.empty())
-    {
-      minRequestCompressionString = Aws::Config::GetCachedConfigValue(REQUEST_MIN_COMPRESSION_SIZE_BYTES_CONFIG_VAR);
-    }
-    if (!minRequestCompressionString.empty()) {
-      clientConfig.requestCompressionConfig.requestMinCompressionSizeBytes = static_cast<int>(Aws::Utils::StringUtils::ConvertToInt32(minRequestCompressionString.c_str()));
-      if (clientConfig.requestCompressionConfig.requestMinCompressionSizeBytes > 10485760) {
-        AWS_LOGSTREAM_ERROR(CLIENT_CONFIG_TAG, "ClientConfiguration for MinReqCompression is unsupported, received: " << clientConfig.requestCompressionConfig.requestMinCompressionSizeBytes);
-      }
-    }
-    AWS_LOGSTREAM_DEBUG(CLIENT_CONFIG_TAG, "ClientConfiguration will use MinReqCompression: " << clientConfig.requestCompressionConfig.requestMinCompressionSizeBytes);
-
     AWS_LOGSTREAM_DEBUG(CLIENT_CONFIG_TAG, "ClientConfiguration will use SDK Auto Resolved profile: [" << clientConfig.profileName << "] if not specified by users.");
 
     clientConfig.region = calculateRegion();
     clientConfig.credentialProviderConfig.region = clientConfig.region;
     clientConfig.authPreferences = calculateAuthPreferences();
-    clientConfig.sigV4aSigningRegionSet = calculateSigV4aSigningRegionSet(clientConfig.profileName);
 
     // Set the endpoint to interact with EC2 instance's metadata service
     Aws::String ec2MetadataServiceEndpoint = Aws::Environment::GetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT");
@@ -317,22 +280,6 @@ void setLegacyClientConfigurationParameters(ClientConfiguration& clientConfig)
     }
 
     clientConfig.appId = clientConfig.LoadConfigFromEnvOrProfile("AWS_SDK_UA_APP_ID", clientConfig.profileName, "sdk_ua_app_id", {}, "");
-
-    clientConfig.checksumConfig.requestChecksumCalculation =
-        LoadEnumFromString(REQUEST_CHECKSUM_CONFIG_MAPPING,
-                           ClientConfiguration::LoadConfigFromEnvOrProfile("AWS_REQUEST_CHECKSUM_CALCULATION", clientConfig.profileName,
-                                                                           "request_checksum_calculation",
-                                                                           {"when_supported", "when_required"}, "when_supported")
-                               .c_str(),
-                           RequestChecksumCalculation::WHEN_SUPPORTED);
-
-    clientConfig.checksumConfig.responseChecksumValidation =
-        LoadEnumFromString(RESPONSE_CHECKSUM_CONFIG_MAPPING,
-                           ClientConfiguration::LoadConfigFromEnvOrProfile("AWS_RESPONSE_CHECKSUM_VALIDATION", clientConfig.profileName,
-                                                                           "response_checksum_validation",
-                                                                           {"when_supported", "when_required"}, "when_supported")
-                               .c_str(),
-                           ResponseChecksumValidation::WHEN_SUPPORTED);
 }
 
 void setConfigFromEnvOrProfile(ClientConfiguration &config)
@@ -357,26 +304,6 @@ void setConfigFromEnvOrProfile(ClientConfiguration &config)
         config.enableClockSkewAdjustment = false;
     }
 
-    config.useDualStack = ClientConfiguration::LoadConfigFromEnvOrProfile(AWS_USE_DUALSTACK_ENDPOINT_ENV_VAR,
-        config.profileName,
-        AWS_USE_DUALSTACK_ENDPOINT_CONFIG_VAR,
-        {"true", "false"},
-        "false") == "true";
-
-    config.useFIPS = ClientConfiguration::LoadConfigFromEnvOrProfile(AWS_USE_FIPS_ENDPOINT_ENV_VAR,
-        config.profileName,
-        AWS_USE_FIPS_ENDPOINT_CONFIG_VAR,
-        {"true", "false"},
-        "false") == "true";
-
-    // accountId is intentionally not set here: AWS_ACCOUNT_ID env variable may not match the provided credentials.
-    // it must be set by an auth provider / identity resolver or by an SDK user.
-    config.accountIdEndpointMode = ClientConfiguration::LoadConfigFromEnvOrProfile(AWS_ACCOUNT_ID_ENDPOINT_MODE_ENVIRONMENT_VARIABLE,
-        config.profileName,
-        AWS_ACCOUNT_ID_ENDPOINT_MODE_CONFIG_FILE_OPTION,
-        {"required", "disabled", "preferred"}, /* allowed values */
-        "preferred" /* default value */);
-    
     // Load IMDS configuration from environment variables and config file
     Aws::String timeoutStr = ClientConfiguration::LoadConfigFromEnvOrProfile(AWS_METADATA_SERVICE_TIMEOUT_ENV_VAR,
         config.profileName,
@@ -574,6 +501,97 @@ ClientConfiguration::ClientConfiguration(bool /*useSmartDefaults*/, const char* 
     }
 
     Aws::Config::Defaults::SetSmartDefaultsConfigurationParameters(*this, defaultMode, hasEc2MetadataRegion, ec2MetadataRegion);
+}
+
+bool LoadUseFIPSFromEnvOrProfile(const Aws::String& profileName)
+{
+    return ClientConfiguration::LoadConfigFromEnvOrProfile(AWS_USE_FIPS_ENDPOINT_ENV_VAR,
+        profileName,
+        AWS_USE_FIPS_ENDPOINT_CONFIG_VAR,
+        {"true", "false"},
+        "false") == "true";
+}
+
+bool LoadUseDualStackFromEnvOrProfile(const Aws::String& profileName)
+{
+    return ClientConfiguration::LoadConfigFromEnvOrProfile(AWS_USE_DUALSTACK_ENDPOINT_ENV_VAR,
+        profileName,
+        AWS_USE_DUALSTACK_ENDPOINT_CONFIG_VAR,
+        {"true", "false"},
+        "false") == "true";
+}
+
+Aws::String LoadAccountIdEndpointModeFromEnvOrProfile(const Aws::String& profileName)
+{
+    // accountId is intentionally not loaded: AWS_ACCOUNT_ID env variable may not match the provided credentials.
+    // it must be set by an auth provider / identity resolver or by an SDK user.
+    return ClientConfiguration::LoadConfigFromEnvOrProfile(AWS_ACCOUNT_ID_ENDPOINT_MODE_ENVIRONMENT_VARIABLE,
+        profileName,
+        AWS_ACCOUNT_ID_ENDPOINT_MODE_CONFIG_FILE_OPTION,
+        {"required", "disabled", "preferred"}, /* allowed values */
+        "preferred" /* default value */);
+}
+
+RequestCompressionConfig LoadRequestCompressionConfigFromEnvOrProfile(const Aws::String& profileName)
+{
+    RequestCompressionConfig requestCompressionConfig;
+    Aws::String disableCompressionConfig = ClientConfiguration::LoadConfigFromEnvOrProfile(
+        DISABLE_REQUEST_COMPRESSION_ENV_VAR,
+        profileName,
+        DISABLE_REQUEST_COMPRESSION_CONFIG_VAR,
+        {"TRUE", "FALSE", "true", "false"},
+        "false"
+        );
+
+    if (Aws::Utils::StringUtils::ToLower(disableCompressionConfig.c_str())  == "true") {
+      requestCompressionConfig.useRequestCompression = Aws::Client::UseRequestCompression::DISABLE;
+      AWS_LOGSTREAM_DEBUG(CLIENT_CONFIG_TAG, "Request Compression disabled");
+    } else {
+      //Using default to true for forward compatibility in case new config is added but SDK is not updated.
+      requestCompressionConfig.useRequestCompression = Aws::Client::UseRequestCompression::ENABLE;
+      AWS_LOGSTREAM_DEBUG(CLIENT_CONFIG_TAG, "Request Compression enabled");
+    }
+
+    // Getting min request compression length
+    Aws::String minRequestCompressionString = Aws::Environment::GetEnv(REQUEST_MIN_COMPRESSION_SIZE_BYTES_ENV_VAR);
+    if (minRequestCompressionString.empty())
+    {
+      minRequestCompressionString = Aws::Config::GetCachedConfigValue(REQUEST_MIN_COMPRESSION_SIZE_BYTES_CONFIG_VAR);
+    }
+    if (!minRequestCompressionString.empty()) {
+      requestCompressionConfig.requestMinCompressionSizeBytes = static_cast<int>(Aws::Utils::StringUtils::ConvertToInt32(minRequestCompressionString.c_str()));
+      if (requestCompressionConfig.requestMinCompressionSizeBytes > 10485760) {
+        AWS_LOGSTREAM_ERROR(CLIENT_CONFIG_TAG, "ClientConfiguration for MinReqCompression is unsupported, received: " << requestCompressionConfig.requestMinCompressionSizeBytes);
+      }
+    }
+    AWS_LOGSTREAM_DEBUG(CLIENT_CONFIG_TAG, "ClientConfiguration will use MinReqCompression: " << requestCompressionConfig.requestMinCompressionSizeBytes);
+    return requestCompressionConfig;
+}
+
+ChecksumConfig LoadChecksumConfigFromEnvOrProfile(const Aws::String& profileName)
+{
+    ChecksumConfig checksumConfig;
+    checksumConfig.requestChecksumCalculation =
+        LoadEnumFromString(REQUEST_CHECKSUM_CONFIG_MAPPING,
+                           ClientConfiguration::LoadConfigFromEnvOrProfile("AWS_REQUEST_CHECKSUM_CALCULATION", profileName,
+                                                                           "request_checksum_calculation",
+                                                                           {"when_supported", "when_required"}, "when_supported")
+                               .c_str(),
+                           RequestChecksumCalculation::WHEN_SUPPORTED);
+
+    checksumConfig.responseChecksumValidation =
+        LoadEnumFromString(RESPONSE_CHECKSUM_CONFIG_MAPPING,
+                           ClientConfiguration::LoadConfigFromEnvOrProfile("AWS_RESPONSE_CHECKSUM_VALIDATION", profileName,
+                                                                           "response_checksum_validation",
+                                                                           {"when_supported", "when_required"}, "when_supported")
+                               .c_str(),
+                           ResponseChecksumValidation::WHEN_SUPPORTED);
+    return checksumConfig;
+}
+
+Aws::Vector<Aws::String> LoadSigV4aSigningRegionSetFromEnvOrProfile(const Aws::String& profileName)
+{
+    return calculateSigV4aSigningRegionSet(profileName);
 }
 
 static Aws::String ResolveRetryMode(Aws::String retryMode) {

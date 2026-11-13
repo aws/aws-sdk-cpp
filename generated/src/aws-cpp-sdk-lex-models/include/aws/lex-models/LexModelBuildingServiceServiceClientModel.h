@@ -46,7 +46,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace LexModelBuildingService {
-using LexModelBuildingServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
 using LexModelBuildingServiceEndpointProviderBase = Aws::LexModelBuildingService::Endpoint::LexModelBuildingServiceEndpointProviderBase;
 using LexModelBuildingServiceEndpointProvider = Aws::LexModelBuildingService::Endpoint::LexModelBuildingServiceEndpointProvider;
 

@@ -4,8 +4,8 @@
  */
 
 #pragma once
+#include <aws/appconfigdata/AppConfigDataClientConfiguration.h>
 #include <aws/appconfigdata/AppConfigData_EXPORTS.h>
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -14,14 +14,23 @@
 namespace Aws {
 namespace AppConfigData {
 namespace Endpoint {
+using AppConfigDataClientConfiguration = Aws::AppConfigData::AppConfigDataClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using AppConfigDataClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using AppConfigDataClientConfiguration = Aws::Client::GenericClientConfiguration;
-using AppConfigDataBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_APPCONFIGDATA_API AppConfigDataBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~AppConfigDataBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const AppConfigDataClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const AppConfigDataClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const AppConfigDataClientConfiguration& config);
+};
 
 /**
  * The type for the AppConfigData Client Endpoint Provider.
@@ -34,6 +43,24 @@ using AppConfigDataEndpointProviderBase =
 using AppConfigDataDefaultEpProviderBase =
     BDDEndpointProvider<AppConfigDataClientConfiguration, AppConfigDataBuiltInParameters, AppConfigDataClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace AppConfigData
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_APPCONFIGDATA_EXTERN template class AWS_APPCONFIGDATA_API Aws::Endpoint::EndpointProviderBase<
+    AppConfigData::Endpoint::AppConfigDataClientConfiguration, AppConfigData::Endpoint::AppConfigDataBuiltInParameters,
+    AppConfigData::Endpoint::AppConfigDataClientContextParameters>;
+
+AWS_APPCONFIGDATA_EXTERN template class AWS_APPCONFIGDATA_API Aws::Endpoint::BDDEndpointProvider<
+    AppConfigData::Endpoint::AppConfigDataClientConfiguration, AppConfigData::Endpoint::AppConfigDataBuiltInParameters,
+    AppConfigData::Endpoint::AppConfigDataClientContextParameters>;
+}  // namespace Endpoint
+
+namespace AppConfigData {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

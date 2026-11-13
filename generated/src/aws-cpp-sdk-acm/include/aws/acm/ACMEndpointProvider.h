@@ -4,8 +4,8 @@
  */
 
 #pragma once
+#include <aws/acm/ACMClientConfiguration.h>
 #include <aws/acm/ACM_EXPORTS.h>
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -14,6 +14,7 @@
 namespace Aws {
 namespace ACM {
 namespace Endpoint {
+using ACMClientConfiguration = Aws::ACM::ACMClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
@@ -29,8 +30,16 @@ class AWS_ACM_API ACMClientContextParameters : public Aws::Endpoint::ClientConte
   const ClientContextParameters::EndpointParameter& GetServiceType() const;
 };
 
-using ACMClientConfiguration = Aws::Client::GenericClientConfiguration;
-using ACMBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_ACM_API ACMBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~ACMBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const ACMClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const ACMClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const ACMClientConfiguration& config);
+};
 
 /**
  * The type for the ACM Client Endpoint Provider.

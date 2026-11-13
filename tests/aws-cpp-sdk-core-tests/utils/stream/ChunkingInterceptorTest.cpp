@@ -128,15 +128,15 @@ public:
 TEST_F(ChunkingInterceptorTest, ShouldNotApplyChunkingForCustomHttpClient) {
     // Simulate the GetChunkingConfig behavior from AWSClient.cpp
     // When IsDefaultAwsHttpClient() returns false, httpClientChunkedMode is set to CLIENT_IMPLEMENTATION
-    Aws::Client::ClientConfiguration config;
+    Aws::Client::ServiceClientOptions options;
     auto customHttpClient = Aws::MakeShared<CustomHttpClient>(CHUNKING_TEST_LOG_TAG);
     
     // This simulates the logic in GetChunkingConfig function
     if (!customHttpClient->IsDefaultAwsHttpClient()) {
-        config.httpClientChunkedMode = Aws::Client::HttpClientChunkedMode::CLIENT_IMPLEMENTATION;
+        options.httpClientChunkedMode = Aws::Client::HttpClientChunkedMode::CLIENT_IMPLEMENTATION;
     }
     
-    ChunkingInterceptor interceptor(config.httpClientChunkedMode);
+    ChunkingInterceptor interceptor(options.httpClientChunkedMode);
     
     // Create request with checksum (would normally trigger chunking)
     auto request = Aws::MakeShared<StandardHttpRequest>(CHUNKING_TEST_LOG_TAG, "test.com", Http::HttpMethod::HTTP_POST);
@@ -162,8 +162,8 @@ TEST_F(ChunkingInterceptorTest, ShouldNotApplyChunkingForCustomHttpClient) {
 }
 
 TEST_F(ChunkingInterceptorTest, ShouldFailWhenBufferIsTooShort) {
-  const Aws::Client::ClientConfiguration config;
-  ChunkingInterceptor interceptor(config.httpClientChunkedMode, 7UL * 1024);
+  const Aws::Client::ServiceClientOptions options;
+  ChunkingInterceptor interceptor(options.httpClientChunkedMode, 7UL * 1024);
 
   // Create interceptor context with a mock request
   const MockRequest mockRequest;

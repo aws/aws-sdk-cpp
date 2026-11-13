@@ -4,24 +4,33 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/qapps/QAppsClientConfiguration.h>
 #include <aws/qapps/QApps_EXPORTS.h>
 
 namespace Aws {
 namespace QApps {
 namespace Endpoint {
+using QAppsClientConfiguration = Aws::QApps::QAppsClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using QAppsClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using QAppsClientConfiguration = Aws::Client::GenericClientConfiguration;
-using QAppsBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_QAPPS_API QAppsBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~QAppsBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const QAppsClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const QAppsClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const QAppsClientConfiguration& config);
+};
 
 /**
  * The type for the QApps Client Endpoint Provider.
@@ -32,6 +41,22 @@ using QAppsEndpointProviderBase = EndpointProviderBase<QAppsClientConfiguration,
 
 using QAppsDefaultEpProviderBase = BDDEndpointProvider<QAppsClientConfiguration, QAppsBuiltInParameters, QAppsClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace QApps
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_QAPPS_EXTERN template class AWS_QAPPS_API Aws::Endpoint::EndpointProviderBase<
+    QApps::Endpoint::QAppsClientConfiguration, QApps::Endpoint::QAppsBuiltInParameters, QApps::Endpoint::QAppsClientContextParameters>;
+
+AWS_QAPPS_EXTERN template class AWS_QAPPS_API Aws::Endpoint::BDDEndpointProvider<
+    QApps::Endpoint::QAppsClientConfiguration, QApps::Endpoint::QAppsBuiltInParameters, QApps::Endpoint::QAppsClientContextParameters>;
+}  // namespace Endpoint
+
+namespace QApps {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

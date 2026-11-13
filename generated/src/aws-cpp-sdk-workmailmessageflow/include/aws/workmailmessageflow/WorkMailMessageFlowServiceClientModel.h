@@ -48,7 +48,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace WorkMailMessageFlow {
-using WorkMailMessageFlowClientConfiguration = Aws::Client::GenericClientConfiguration;
 using WorkMailMessageFlowEndpointProviderBase = Aws::WorkMailMessageFlow::Endpoint::WorkMailMessageFlowEndpointProviderBase;
 using WorkMailMessageFlowEndpointProvider = Aws::WorkMailMessageFlow::Endpoint::WorkMailMessageFlowEndpointProvider;
 

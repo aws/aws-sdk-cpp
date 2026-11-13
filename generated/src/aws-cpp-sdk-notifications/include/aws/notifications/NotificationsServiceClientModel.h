@@ -94,7 +94,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace Notifications {
-using NotificationsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using NotificationsEndpointProviderBase = Aws::Notifications::Endpoint::NotificationsEndpointProviderBase;
 using NotificationsEndpointProvider = Aws::Notifications::Endpoint::NotificationsEndpointProvider;
 

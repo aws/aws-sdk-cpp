@@ -49,7 +49,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace SageMakerRuntime {
-using SageMakerRuntimeClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SageMakerRuntimeEndpointProviderBase = Aws::SageMakerRuntime::Endpoint::SageMakerRuntimeEndpointProviderBase;
 using SageMakerRuntimeEndpointProvider = Aws::SageMakerRuntime::Endpoint::SageMakerRuntimeEndpointProvider;
 

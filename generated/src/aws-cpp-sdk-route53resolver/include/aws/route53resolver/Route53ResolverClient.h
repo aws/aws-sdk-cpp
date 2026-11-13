@@ -84,27 +84,6 @@ class AWS_ROUTE53RESOLVER_API Route53ResolverClient : public Aws::Client::AWSJso
                         const Aws::Route53Resolver::Route53ResolverClientConfiguration& clientConfiguration =
                             Aws::Route53Resolver::Route53ResolverClientConfiguration());
 
-  /* Legacy constructors due deprecation */
-  /**
-   * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client
-   * config is not specified, it will be initialized to default values.
-   */
-  Route53ResolverClient(const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /**
-   * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
-   * is not specified, it will be initialized to default values.
-   */
-  Route53ResolverClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /**
-   * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
-   * the default http client factory will be used
-   */
-  Route53ResolverClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                        const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /* End of legacy constructors due deprecation */
   virtual ~Route53ResolverClient();
 
   /**
@@ -2305,7 +2284,6 @@ class AWS_ROUTE53RESOLVER_API Route53ResolverClient : public Aws::Client::AWSJso
     return SubmitAsync(&Route53ResolverClient::UpdateResolverRule, request, handler, context);
   }
 
-  virtual void OverrideEndpoint(const Aws::String& endpoint);
   virtual std::shared_ptr<Route53ResolverEndpointProviderBase>& accessEndpointProvider();
 
  private:

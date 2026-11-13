@@ -4,24 +4,33 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/redshift/RedshiftClientConfiguration.h>
 #include <aws/redshift/Redshift_EXPORTS.h>
 
 namespace Aws {
 namespace Redshift {
 namespace Endpoint {
+using RedshiftClientConfiguration = Aws::Redshift::RedshiftClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using RedshiftClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using RedshiftClientConfiguration = Aws::Client::GenericClientConfiguration;
-using RedshiftBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_REDSHIFT_API RedshiftBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~RedshiftBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const RedshiftClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const RedshiftClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const RedshiftClientConfiguration& config);
+};
 
 /**
  * The type for the Redshift Client Endpoint Provider.
@@ -34,6 +43,24 @@ using RedshiftEndpointProviderBase =
 using RedshiftDefaultEpProviderBase =
     BDDEndpointProvider<RedshiftClientConfiguration, RedshiftBuiltInParameters, RedshiftClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace Redshift
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_REDSHIFT_EXTERN template class AWS_REDSHIFT_API
+    Aws::Endpoint::EndpointProviderBase<Redshift::Endpoint::RedshiftClientConfiguration, Redshift::Endpoint::RedshiftBuiltInParameters,
+                                        Redshift::Endpoint::RedshiftClientContextParameters>;
+
+AWS_REDSHIFT_EXTERN template class AWS_REDSHIFT_API
+    Aws::Endpoint::BDDEndpointProvider<Redshift::Endpoint::RedshiftClientConfiguration, Redshift::Endpoint::RedshiftBuiltInParameters,
+                                       Redshift::Endpoint::RedshiftClientContextParameters>;
+}  // namespace Endpoint
+
+namespace Redshift {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

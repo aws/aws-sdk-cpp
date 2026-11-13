@@ -62,7 +62,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace MWAAServerless {
-using MWAAServerlessClientConfiguration = Aws::Client::GenericClientConfiguration;
 using MWAAServerlessEndpointProviderBase = Aws::MWAAServerless::Endpoint::MWAAServerlessEndpointProviderBase;
 using MWAAServerlessEndpointProvider = Aws::MWAAServerless::Endpoint::MWAAServerlessEndpointProvider;
 

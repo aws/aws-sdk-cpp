@@ -134,7 +134,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace QBusiness {
-using QBusinessClientConfiguration = Aws::Client::GenericClientConfiguration;
 using QBusinessEndpointProviderBase = Aws::QBusiness::Endpoint::QBusinessEndpointProviderBase;
 using QBusinessEndpointProvider = Aws::QBusiness::Endpoint::QBusinessEndpointProvider;
 

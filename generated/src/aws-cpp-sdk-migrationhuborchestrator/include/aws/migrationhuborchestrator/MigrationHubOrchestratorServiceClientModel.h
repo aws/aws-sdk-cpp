@@ -80,7 +80,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace MigrationHubOrchestrator {
-using MigrationHubOrchestratorClientConfiguration = Aws::Client::GenericClientConfiguration;
 using MigrationHubOrchestratorEndpointProviderBase = Aws::MigrationHubOrchestrator::Endpoint::MigrationHubOrchestratorEndpointProviderBase;
 using MigrationHubOrchestratorEndpointProvider = Aws::MigrationHubOrchestrator::Endpoint::MigrationHubOrchestratorEndpointProvider;
 

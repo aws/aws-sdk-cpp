@@ -149,6 +149,8 @@ namespace client
         friend class SmithyBidirectionalStreamingWriteDataTask;
 
         void initClient() {
+          // GetServiceClientOptions is generated in each service's namespace and found by argument-dependent lookup.
+          this->ApplyServiceOptions(GetServiceClientOptions(m_clientConfiguration));
           if (m_endpointProvider && m_authSchemeResolver) {
             m_endpointProvider->InitBuiltInParameters(m_clientConfiguration, m_serviceName);
             m_authSchemeResolver->Init(m_clientConfiguration);
@@ -387,7 +389,7 @@ namespace client
             ctx.m_pRequest->AddUserAgentFeature(Aws::Client::UserAgentFeature::RESOLVED_ACCOUNT_ID);
           }
           // Only set EP param if client configuration does not have a configured account ID and we resolved a account id
-          if (resolvedNonEmptyAccountId && m_clientConfiguration.accountId.empty()) {
+          if (resolvedNonEmptyAccountId && m_serviceOptions.accountId.empty()) {
             endpointParameters.emplace_back("AccountId", resolvedAccountId.value(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
           }
           return endpointParameters;

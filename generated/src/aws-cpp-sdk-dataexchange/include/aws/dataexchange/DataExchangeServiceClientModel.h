@@ -81,7 +81,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace DataExchange {
-using DataExchangeClientConfiguration = Aws::Client::GenericClientConfiguration;
 using DataExchangeEndpointProviderBase = Aws::DataExchange::Endpoint::DataExchangeEndpointProviderBase;
 using DataExchangeEndpointProvider = Aws::DataExchange::Endpoint::DataExchangeEndpointProvider;
 

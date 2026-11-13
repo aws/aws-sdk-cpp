@@ -48,27 +48,6 @@ class AWS_JSONPROTOCOL_API JsonProtocolClient : public Aws::Client::AWSJsonClien
       std::shared_ptr<JsonProtocolEndpointProviderBase> endpointProvider = nullptr,
       const Aws::JsonProtocol::JsonProtocolClientConfiguration& clientConfiguration = Aws::JsonProtocol::JsonProtocolClientConfiguration());
 
-  /* Legacy constructors due deprecation */
-  /**
-   * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client
-   * config is not specified, it will be initialized to default values.
-   */
-  JsonProtocolClient(const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /**
-   * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
-   * is not specified, it will be initialized to default values.
-   */
-  JsonProtocolClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /**
-   * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
-   * the default http client factory will be used
-   */
-  JsonProtocolClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                     const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /* End of legacy constructors due deprecation */
   virtual ~JsonProtocolClient();
 
   /**
@@ -541,7 +520,6 @@ class AWS_JSONPROTOCOL_API JsonProtocolClient : public Aws::Client::AWSJsonClien
     return SubmitAsync(&JsonProtocolClient::SparseNullsOperation, request, handler, context);
   }
 
-  virtual void OverrideEndpoint(const Aws::String& endpoint);
   virtual std::shared_ptr<JsonProtocolEndpointProviderBase>& accessEndpointProvider();
 
  private:

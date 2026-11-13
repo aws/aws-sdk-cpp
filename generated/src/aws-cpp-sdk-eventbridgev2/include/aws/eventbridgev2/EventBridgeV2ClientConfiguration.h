@@ -32,12 +32,46 @@ struct AWS_EVENTBRIDGEV2_API EventBridgeV2ClientConfiguration : public Aws::Clie
   EventBridgeV2ClientConfiguration(bool useSmartDefaults, const char* defaultMode = "legacy", bool shouldDisableIMDS = false);
 
   /**
-   * Converting constructors for compatibility with a legacy code
+   * Create a configuration that starts from shared settings (region, timeouts, proxy, retry, ...),
+   * then loads this service's options from the environment and profile.
+   * Explicit, so a client is never built from the shared configuration implicitly.
    */
-  EventBridgeV2ClientConfiguration(const Aws::Client::ClientConfiguration& config);
+  explicit EventBridgeV2ClientConfiguration(const Aws::Client::ClientConfiguration& sharedConfig);
+
+  /**
+   * Use FIPS endpoint in the endpoint calculation. Please check first that the service supports FIPS in a selected region.
+   */
+  bool useFIPS = false;
+
+  /**
+   * Use dual stack endpoint in the endpoint calculation. It is your responsibility to verify that the service supports ipv6 in the region
+   * you select.
+   */
+  bool useDualStack = false;
+
+  /**
+   * The AWS account ID. Used for account-based endpoint routing. An AWS account ID has a format like 111122223333.
+   * Account-based endpoint routing provides better request performance for some services.
+   *
+   * https://docs.aws.amazon.com/sdkref/latest/guide/feature-account-endpoints.html
+   */
+  Aws::String accountId;
+
+  /**
+   * This setting is used to turn off account-based endpoint routing if necessary, and bypass account-based rules.
+   * Can be the case sensitive string values "required", "disabled", or "preferred". Defaults to "preferred".
+   *
+   * https://docs.aws.amazon.com/sdkref/latest/guide/feature-account-endpoints.html
+   */
+  Aws::String accountIdEndpointMode = "preferred";
 
  private:
   void LoadEventBridgeV2SpecificConfig(const Aws::String& profileName);
 };
+
+/**
+ * Values of this service's supported options that the client hands to core.
+ */
+AWS_EVENTBRIDGEV2_API Aws::Client::ServiceClientOptions GetServiceClientOptions(const EventBridgeV2ClientConfiguration& config);
 }  // namespace EventBridgeV2
 }  // namespace Aws

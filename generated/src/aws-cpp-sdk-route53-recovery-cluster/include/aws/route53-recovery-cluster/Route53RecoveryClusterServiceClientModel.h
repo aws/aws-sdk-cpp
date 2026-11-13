@@ -51,7 +51,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace Route53RecoveryCluster {
-using Route53RecoveryClusterClientConfiguration = Aws::Client::GenericClientConfiguration;
 using Route53RecoveryClusterEndpointProviderBase = Aws::Route53RecoveryCluster::Endpoint::Route53RecoveryClusterEndpointProviderBase;
 using Route53RecoveryClusterEndpointProvider = Aws::Route53RecoveryCluster::Endpoint::Route53RecoveryClusterEndpointProvider;
 

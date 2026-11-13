@@ -12,7 +12,7 @@ using EC2ProtocolClient = Aws::EC2Protocol::EC2ProtocolClient;
 using namespace Aws::EC2Protocol::Model;
 
 AWS_PROTOCOL_TEST(QueryLists, Ec2Lists) {
-  EC2ProtocolClient client(mockCredentials, mockConfig);
+  EC2ProtocolClient client(mockCredentials, nullptr, Aws::EC2Protocol::EC2ProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -42,7 +42,7 @@ AWS_PROTOCOL_TEST(QueryLists, Ec2Lists) {
 }
 
 AWS_PROTOCOL_TEST(QueryLists, Ec2EmptyQueryLists) {
-  EC2ProtocolClient client(mockCredentials, mockConfig);
+  EC2ProtocolClient client(mockCredentials, nullptr, Aws::EC2Protocol::EC2ProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -60,7 +60,7 @@ AWS_PROTOCOL_TEST(QueryLists, Ec2EmptyQueryLists) {
 }
 
 AWS_PROTOCOL_TEST(QueryLists, Ec2ListArgWithXmlNameMember) {
-  EC2ProtocolClient client(mockCredentials, mockConfig);
+  EC2ProtocolClient client(mockCredentials, nullptr, Aws::EC2Protocol::EC2ProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -79,7 +79,7 @@ AWS_PROTOCOL_TEST(QueryLists, Ec2ListArgWithXmlNameMember) {
 }
 
 AWS_PROTOCOL_TEST(QueryLists, Ec2ListMemberWithXmlName) {
-  EC2ProtocolClient client(mockCredentials, mockConfig);
+  EC2ProtocolClient client(mockCredentials, nullptr, Aws::EC2Protocol::EC2ProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -97,7 +97,7 @@ AWS_PROTOCOL_TEST(QueryLists, Ec2ListMemberWithXmlName) {
 }
 
 AWS_PROTOCOL_TEST(QueryLists, Ec2ListNestedStructWithList) {
-  EC2ProtocolClient client(mockCredentials, mockConfig);
+  EC2ProtocolClient client(mockCredentials, nullptr, Aws::EC2Protocol::EC2ProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 

@@ -51,7 +51,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace SageMakerRuntimeHTTP2 {
-using SageMakerRuntimeHTTP2ClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SageMakerRuntimeHTTP2EndpointProviderBase = Aws::SageMakerRuntimeHTTP2::Endpoint::SageMakerRuntimeHTTP2EndpointProviderBase;
 using SageMakerRuntimeHTTP2EndpointProvider = Aws::SageMakerRuntimeHTTP2::Endpoint::SageMakerRuntimeHTTP2EndpointProvider;
 

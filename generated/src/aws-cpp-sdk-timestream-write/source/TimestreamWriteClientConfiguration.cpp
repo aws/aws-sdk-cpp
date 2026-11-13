@@ -34,31 +34,38 @@ bool IsEndpointDiscoveryEnabled(const Aws::String& endpointOverride, const Aws::
 }
 
 void TimestreamWriteClientConfiguration::LoadTimestreamWriteSpecificConfig(const Aws::String& inputProfileName) {
+  useFIPS = Aws::Client::LoadUseFIPSFromEnvOrProfile(this->profileName);
+  useDualStack = Aws::Client::LoadUseDualStackFromEnvOrProfile(this->profileName);
   if (!enableEndpointDiscovery) {
     enableEndpointDiscovery = IsEndpointDiscoveryEnabled(this->endpointOverride, inputProfileName);
   }
 }
 
 TimestreamWriteClientConfiguration::TimestreamWriteClientConfiguration(const Aws::Client::ClientConfigurationInitValues& configuration)
-    : BaseClientConfigClass(configuration), enableEndpointDiscovery(ClientConfiguration::enableEndpointDiscovery) {
+    : BaseClientConfigClass(configuration) {
   LoadTimestreamWriteSpecificConfig(this->profileName);
 }
 
 TimestreamWriteClientConfiguration::TimestreamWriteClientConfiguration(const char* inputProfileName, bool shouldDisableIMDS)
-    : BaseClientConfigClass(inputProfileName, shouldDisableIMDS), enableEndpointDiscovery(ClientConfiguration::enableEndpointDiscovery) {
+    : BaseClientConfigClass(inputProfileName, shouldDisableIMDS) {
   LoadTimestreamWriteSpecificConfig(Aws::String(inputProfileName));
 }
 
 TimestreamWriteClientConfiguration::TimestreamWriteClientConfiguration(bool useSmartDefaults, const char* defaultMode,
                                                                        bool shouldDisableIMDS)
-    : BaseClientConfigClass(useSmartDefaults, defaultMode, shouldDisableIMDS),
-      enableEndpointDiscovery(ClientConfiguration::enableEndpointDiscovery) {
+    : BaseClientConfigClass(useSmartDefaults, defaultMode, shouldDisableIMDS) {
   LoadTimestreamWriteSpecificConfig(this->profileName);
 }
 
-TimestreamWriteClientConfiguration::TimestreamWriteClientConfiguration(const Aws::Client::ClientConfiguration& config)
-    : BaseClientConfigClass(config), enableEndpointDiscovery(ClientConfiguration::enableEndpointDiscovery) {
+TimestreamWriteClientConfiguration::TimestreamWriteClientConfiguration(const Aws::Client::ClientConfiguration& sharedConfig)
+    : BaseClientConfigClass(sharedConfig) {
   LoadTimestreamWriteSpecificConfig(this->profileName);
+}
+
+Aws::Client::ServiceClientOptions GetServiceClientOptions(const TimestreamWriteClientConfiguration& config) {
+  Aws::Client::ServiceClientOptions options;
+  (void)(config);
+  return options;
 }
 
 }  // namespace TimestreamWrite

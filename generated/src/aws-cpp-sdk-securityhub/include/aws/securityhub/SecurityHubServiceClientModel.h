@@ -203,7 +203,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace SecurityHub {
-using SecurityHubClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SecurityHubEndpointProviderBase = Aws::SecurityHub::Endpoint::SecurityHubEndpointProviderBase;
 using SecurityHubEndpointProvider = Aws::SecurityHub::Endpoint::SecurityHubEndpointProvider;
 

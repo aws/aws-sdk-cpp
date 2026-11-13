@@ -4,24 +4,33 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/launch-wizard/LaunchWizardClientConfiguration.h>
 #include <aws/launch-wizard/LaunchWizard_EXPORTS.h>
 
 namespace Aws {
 namespace LaunchWizard {
 namespace Endpoint {
+using LaunchWizardClientConfiguration = Aws::LaunchWizard::LaunchWizardClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using LaunchWizardClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using LaunchWizardClientConfiguration = Aws::Client::GenericClientConfiguration;
-using LaunchWizardBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_LAUNCHWIZARD_API LaunchWizardBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~LaunchWizardBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const LaunchWizardClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const LaunchWizardClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const LaunchWizardClientConfiguration& config);
+};
 
 /**
  * The type for the LaunchWizard Client Endpoint Provider.
@@ -34,6 +43,24 @@ using LaunchWizardEndpointProviderBase =
 using LaunchWizardDefaultEpProviderBase =
     BDDEndpointProvider<LaunchWizardClientConfiguration, LaunchWizardBuiltInParameters, LaunchWizardClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace LaunchWizard
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_LAUNCHWIZARD_EXTERN template class AWS_LAUNCHWIZARD_API Aws::Endpoint::EndpointProviderBase<
+    LaunchWizard::Endpoint::LaunchWizardClientConfiguration, LaunchWizard::Endpoint::LaunchWizardBuiltInParameters,
+    LaunchWizard::Endpoint::LaunchWizardClientContextParameters>;
+
+AWS_LAUNCHWIZARD_EXTERN template class AWS_LAUNCHWIZARD_API Aws::Endpoint::BDDEndpointProvider<
+    LaunchWizard::Endpoint::LaunchWizardClientConfiguration, LaunchWizard::Endpoint::LaunchWizardBuiltInParameters,
+    LaunchWizard::Endpoint::LaunchWizardClientContextParameters>;
+}  // namespace Endpoint
+
+namespace LaunchWizard {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

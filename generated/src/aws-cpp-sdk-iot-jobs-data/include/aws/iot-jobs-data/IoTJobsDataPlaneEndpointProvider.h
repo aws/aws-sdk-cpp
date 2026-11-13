@@ -4,24 +4,33 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/iot-jobs-data/IoTJobsDataPlaneClientConfiguration.h>
 #include <aws/iot-jobs-data/IoTJobsDataPlane_EXPORTS.h>
 
 namespace Aws {
 namespace IoTJobsDataPlane {
 namespace Endpoint {
+using IoTJobsDataPlaneClientConfiguration = Aws::IoTJobsDataPlane::IoTJobsDataPlaneClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using IoTJobsDataPlaneClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using IoTJobsDataPlaneClientConfiguration = Aws::Client::GenericClientConfiguration;
-using IoTJobsDataPlaneBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_IOTJOBSDATAPLANE_API IoTJobsDataPlaneBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~IoTJobsDataPlaneBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const IoTJobsDataPlaneClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const IoTJobsDataPlaneClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const IoTJobsDataPlaneClientConfiguration& config);
+};
 
 /**
  * The type for the IoTJobsDataPlane Client Endpoint Provider.
@@ -34,6 +43,24 @@ using IoTJobsDataPlaneEndpointProviderBase =
 using IoTJobsDataPlaneDefaultEpProviderBase =
     BDDEndpointProvider<IoTJobsDataPlaneClientConfiguration, IoTJobsDataPlaneBuiltInParameters, IoTJobsDataPlaneClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace IoTJobsDataPlane
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_IOTJOBSDATAPLANE_EXTERN template class AWS_IOTJOBSDATAPLANE_API Aws::Endpoint::EndpointProviderBase<
+    IoTJobsDataPlane::Endpoint::IoTJobsDataPlaneClientConfiguration, IoTJobsDataPlane::Endpoint::IoTJobsDataPlaneBuiltInParameters,
+    IoTJobsDataPlane::Endpoint::IoTJobsDataPlaneClientContextParameters>;
+
+AWS_IOTJOBSDATAPLANE_EXTERN template class AWS_IOTJOBSDATAPLANE_API Aws::Endpoint::BDDEndpointProvider<
+    IoTJobsDataPlane::Endpoint::IoTJobsDataPlaneClientConfiguration, IoTJobsDataPlane::Endpoint::IoTJobsDataPlaneBuiltInParameters,
+    IoTJobsDataPlane::Endpoint::IoTJobsDataPlaneClientContextParameters>;
+}  // namespace Endpoint
+
+namespace IoTJobsDataPlane {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

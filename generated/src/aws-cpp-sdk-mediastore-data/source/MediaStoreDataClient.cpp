@@ -85,43 +85,6 @@ MediaStoreDataClient::MediaStoreDataClient(const std::shared_ptr<AWSCredentialsP
   init(m_clientConfiguration);
 }
 
-/* Legacy constructors due deprecation */
-MediaStoreDataClient::MediaStoreDataClient(const Aws::Client::ClientConfiguration& clientConfiguration)
-    : BASECLASS(
-          clientConfiguration,
-          Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
-              ALLOCATION_TAG,
-              Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
-              SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-          Aws::MakeShared<MediaStoreDataErrorMarshaller>(ALLOCATION_TAG)),
-      m_clientConfiguration(clientConfiguration),
-      m_endpointProvider(Aws::MakeShared<MediaStoreDataEndpointProvider>(ALLOCATION_TAG)) {
-  init(m_clientConfiguration);
-}
-
-MediaStoreDataClient::MediaStoreDataClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
-    : BASECLASS(clientConfiguration,
-                Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
-                    ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials), SERVICE_NAME,
-                    Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-                Aws::MakeShared<MediaStoreDataErrorMarshaller>(ALLOCATION_TAG)),
-      m_clientConfiguration(clientConfiguration),
-      m_endpointProvider(Aws::MakeShared<MediaStoreDataEndpointProvider>(ALLOCATION_TAG)) {
-  init(m_clientConfiguration);
-}
-
-MediaStoreDataClient::MediaStoreDataClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                           const Aws::Client::ClientConfiguration& clientConfiguration)
-    : BASECLASS(clientConfiguration,
-                Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
-                                                                      Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-                Aws::MakeShared<MediaStoreDataErrorMarshaller>(ALLOCATION_TAG)),
-      m_clientConfiguration(clientConfiguration),
-      m_endpointProvider(Aws::MakeShared<MediaStoreDataEndpointProvider>(ALLOCATION_TAG)) {
-  init(m_clientConfiguration);
-}
-
-/* End of legacy constructors due deprecation */
 MediaStoreDataClient::~MediaStoreDataClient() { ShutdownSdkClient(this, -1); }
 
 std::shared_ptr<MediaStoreDataEndpointProviderBase>& MediaStoreDataClient::accessEndpointProvider() { return m_endpointProvider; }
@@ -139,12 +102,7 @@ void MediaStoreDataClient::init(const MediaStoreData::MediaStoreDataClientConfig
   AWSClient::SetUserAgentExecutor(*m_clientConfiguration.executor);
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config, "mediastore");
-}
-
-void MediaStoreDataClient::OverrideEndpoint(const Aws::String& endpoint) {
-  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_clientConfiguration.endpointOverride = endpoint;
-  m_endpointProvider->OverrideEndpoint(endpoint);
+  ApplyServiceOptions(GetServiceClientOptions(m_clientConfiguration));
 }
 MediaStoreDataClient::InvokeOperationOutcome MediaStoreDataClient::InvokeServiceOperation(
     const AmazonWebServiceRequest& request, const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,

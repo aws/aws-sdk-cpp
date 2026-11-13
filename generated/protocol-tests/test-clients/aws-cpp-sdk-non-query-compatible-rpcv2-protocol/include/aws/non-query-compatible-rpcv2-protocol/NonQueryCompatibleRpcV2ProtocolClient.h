@@ -53,28 +53,6 @@ class AWS_NONQUERYCOMPATIBLERPCV2PROTOCOL_API NonQueryCompatibleRpcV2ProtocolCli
       const Aws::NonQueryCompatibleRpcV2Protocol::NonQueryCompatibleRpcV2ProtocolClientConfiguration& clientConfiguration =
           Aws::NonQueryCompatibleRpcV2Protocol::NonQueryCompatibleRpcV2ProtocolClientConfiguration());
 
-  /* Legacy constructors due deprecation */
-  /**
-   * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client
-   * config is not specified, it will be initialized to default values.
-   */
-  NonQueryCompatibleRpcV2ProtocolClient(const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /**
-   * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
-   * is not specified, it will be initialized to default values.
-   */
-  NonQueryCompatibleRpcV2ProtocolClient(const Aws::Auth::AWSCredentials& credentials,
-                                        const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /**
-   * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
-   * the default http client factory will be used
-   */
-  NonQueryCompatibleRpcV2ProtocolClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                        const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /* End of legacy constructors due deprecation */
   virtual ~NonQueryCompatibleRpcV2ProtocolClient();
 
   /**
@@ -104,7 +82,6 @@ class AWS_NONQUERYCOMPATIBLERPCV2PROTOCOL_API NonQueryCompatibleRpcV2ProtocolCli
     return SubmitAsync(&NonQueryCompatibleRpcV2ProtocolClient::NonQueryCompatibleOperation, request, handler, context);
   }
 
-  virtual void OverrideEndpoint(const Aws::String& endpoint);
   virtual std::shared_ptr<NonQueryCompatibleRpcV2ProtocolEndpointProviderBase>& accessEndpointProvider();
 
  private:

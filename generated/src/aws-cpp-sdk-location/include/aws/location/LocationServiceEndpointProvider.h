@@ -4,24 +4,33 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/location/LocationServiceClientConfiguration.h>
 #include <aws/location/LocationService_EXPORTS.h>
 
 namespace Aws {
 namespace LocationService {
 namespace Endpoint {
+using LocationServiceClientConfiguration = Aws::LocationService::LocationServiceClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using LocationServiceClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using LocationServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
-using LocationServiceBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_LOCATIONSERVICE_API LocationServiceBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~LocationServiceBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const LocationServiceClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const LocationServiceClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const LocationServiceClientConfiguration& config);
+};
 
 /**
  * The type for the LocationService Client Endpoint Provider.
@@ -34,6 +43,24 @@ using LocationServiceEndpointProviderBase =
 using LocationServiceDefaultEpProviderBase =
     BDDEndpointProvider<LocationServiceClientConfiguration, LocationServiceBuiltInParameters, LocationServiceClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace LocationService
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_LOCATIONSERVICE_EXTERN template class AWS_LOCATIONSERVICE_API Aws::Endpoint::EndpointProviderBase<
+    LocationService::Endpoint::LocationServiceClientConfiguration, LocationService::Endpoint::LocationServiceBuiltInParameters,
+    LocationService::Endpoint::LocationServiceClientContextParameters>;
+
+AWS_LOCATIONSERVICE_EXTERN template class AWS_LOCATIONSERVICE_API Aws::Endpoint::BDDEndpointProvider<
+    LocationService::Endpoint::LocationServiceClientConfiguration, LocationService::Endpoint::LocationServiceBuiltInParameters,
+    LocationService::Endpoint::LocationServiceClientContextParameters>;
+}  // namespace Endpoint
+
+namespace LocationService {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

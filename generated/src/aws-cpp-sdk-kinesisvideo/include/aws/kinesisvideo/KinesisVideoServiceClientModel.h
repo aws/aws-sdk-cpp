@@ -92,7 +92,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace KinesisVideo {
-using KinesisVideoClientConfiguration = Aws::Client::GenericClientConfiguration;
 using KinesisVideoEndpointProviderBase = Aws::KinesisVideo::Endpoint::KinesisVideoEndpointProviderBase;
 using KinesisVideoEndpointProvider = Aws::KinesisVideo::Endpoint::KinesisVideoEndpointProvider;
 

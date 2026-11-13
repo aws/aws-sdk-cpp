@@ -4,24 +4,33 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/docdb/DocDBClientConfiguration.h>
 #include <aws/docdb/DocDB_EXPORTS.h>
 
 namespace Aws {
 namespace DocDB {
 namespace Endpoint {
+using DocDBClientConfiguration = Aws::DocDB::DocDBClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using DocDBClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using DocDBClientConfiguration = Aws::Client::GenericClientConfiguration;
-using DocDBBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_DOCDB_API DocDBBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~DocDBBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const DocDBClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const DocDBClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const DocDBClientConfiguration& config);
+};
 
 /**
  * The type for the DocDB Client Endpoint Provider.
@@ -32,6 +41,22 @@ using DocDBEndpointProviderBase = EndpointProviderBase<DocDBClientConfiguration,
 
 using DocDBDefaultEpProviderBase = BDDEndpointProvider<DocDBClientConfiguration, DocDBBuiltInParameters, DocDBClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace DocDB
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_DOCDB_EXTERN template class AWS_DOCDB_API Aws::Endpoint::EndpointProviderBase<
+    DocDB::Endpoint::DocDBClientConfiguration, DocDB::Endpoint::DocDBBuiltInParameters, DocDB::Endpoint::DocDBClientContextParameters>;
+
+AWS_DOCDB_EXTERN template class AWS_DOCDB_API Aws::Endpoint::BDDEndpointProvider<
+    DocDB::Endpoint::DocDBClientConfiguration, DocDB::Endpoint::DocDBBuiltInParameters, DocDB::Endpoint::DocDBClientContextParameters>;
+}  // namespace Endpoint
+
+namespace DocDB {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

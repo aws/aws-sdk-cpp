@@ -88,27 +88,6 @@ class AWS_TRANSFER_API TransferClient : public Aws::Client::AWSJsonClient,
                  std::shared_ptr<TransferEndpointProviderBase> endpointProvider = nullptr,
                  const Aws::Transfer::TransferClientConfiguration& clientConfiguration = Aws::Transfer::TransferClientConfiguration());
 
-  /* Legacy constructors due deprecation */
-  /**
-   * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client
-   * config is not specified, it will be initialized to default values.
-   */
-  TransferClient(const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /**
-   * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
-   * is not specified, it will be initialized to default values.
-   */
-  TransferClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /**
-   * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
-   * the default http client factory will be used
-   */
-  TransferClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                 const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /* End of legacy constructors due deprecation */
   virtual ~TransferClient();
 
   /**
@@ -2225,7 +2204,6 @@ class AWS_TRANSFER_API TransferClient : public Aws::Client::AWSJsonClient,
     return SubmitAsync(&TransferClient::UpdateWebAppCustomization, request, handler, context);
   }
 
-  virtual void OverrideEndpoint(const Aws::String& endpoint);
   virtual std::shared_ptr<TransferEndpointProviderBase>& accessEndpointProvider();
 
  private:

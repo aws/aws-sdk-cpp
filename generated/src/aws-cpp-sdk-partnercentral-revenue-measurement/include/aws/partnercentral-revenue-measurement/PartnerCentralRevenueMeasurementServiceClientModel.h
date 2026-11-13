@@ -63,7 +63,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace PartnerCentralRevenueMeasurement {
-using PartnerCentralRevenueMeasurementClientConfiguration = Aws::Client::GenericClientConfiguration;
 using PartnerCentralRevenueMeasurementEndpointProviderBase =
     Aws::PartnerCentralRevenueMeasurement::Endpoint::PartnerCentralRevenueMeasurementEndpointProviderBase;
 using PartnerCentralRevenueMeasurementEndpointProvider =

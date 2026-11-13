@@ -47,7 +47,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace KinesisVideoWebRTCStorage {
-using KinesisVideoWebRTCStorageClientConfiguration = Aws::Client::GenericClientConfiguration;
 using KinesisVideoWebRTCStorageEndpointProviderBase =
     Aws::KinesisVideoWebRTCStorage::Endpoint::KinesisVideoWebRTCStorageEndpointProviderBase;
 using KinesisVideoWebRTCStorageEndpointProvider = Aws::KinesisVideoWebRTCStorage::Endpoint::KinesisVideoWebRTCStorageEndpointProvider;

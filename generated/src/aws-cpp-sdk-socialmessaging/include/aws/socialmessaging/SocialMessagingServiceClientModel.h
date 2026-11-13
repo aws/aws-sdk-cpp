@@ -86,7 +86,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace SocialMessaging {
-using SocialMessagingClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SocialMessagingEndpointProviderBase = Aws::SocialMessaging::Endpoint::SocialMessagingEndpointProviderBase;
 using SocialMessagingEndpointProvider = Aws::SocialMessaging::Endpoint::SocialMessagingEndpointProvider;
 

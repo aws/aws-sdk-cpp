@@ -138,7 +138,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace imagebuilder {
-using ImagebuilderClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ImagebuilderEndpointProviderBase = Aws::imagebuilder::Endpoint::ImagebuilderEndpointProviderBase;
 using ImagebuilderEndpointProvider = Aws::imagebuilder::Endpoint::ImagebuilderEndpointProvider;
 

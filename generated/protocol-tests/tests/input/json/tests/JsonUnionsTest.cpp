@@ -12,7 +12,7 @@ using JsonProtocolClient = Aws::JsonProtocol::JsonProtocolClient;
 using namespace Aws::JsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson11SerializeStringUnionValue) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -34,7 +34,7 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson11SerializeStringUnionValue) {
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson11SerializeBooleanUnionValue) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -56,7 +56,7 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson11SerializeBooleanUnionValue) {
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson11SerializeNumberUnionValue) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -78,7 +78,7 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson11SerializeNumberUnionValue) {
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson11SerializeBlobUnionValue) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -100,7 +100,7 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson11SerializeBlobUnionValue) {
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson11SerializeTimestampUnionValue) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -122,7 +122,7 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson11SerializeTimestampUnionValue) {
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson11SerializeEnumUnionValue) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -144,7 +144,7 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson11SerializeEnumUnionValue) {
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson11SerializeListUnionValue) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -166,7 +166,7 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson11SerializeListUnionValue) {
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson11SerializeMapUnionValue) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -190,7 +190,7 @@ AWS_PROTOCOL_TEST(JsonUnions, AwsJson11SerializeMapUnionValue) {
 }
 
 AWS_PROTOCOL_TEST(JsonUnions, AwsJson11SerializeStructureUnionValue) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 

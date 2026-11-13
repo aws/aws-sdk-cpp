@@ -40,6 +40,12 @@ void EventBridgeV2BuiltInParameters::SetFromClientConfiguration(const EventBridg
 }
 
 void EventBridgeV2BuiltInParameters::SetServiceSpecificParameters(const EventBridgeV2ClientConfiguration& config) {
+  if (config.useFIPS) {
+    SetBooleanParameter("UseFIPS", true);
+  }
+  if (config.useDualStack) {
+    SetBooleanParameter("UseDualStack", true);
+  }
   if (!config.accountId.empty()) {
     SetStringParameter("AccountId", config.accountId);
   }

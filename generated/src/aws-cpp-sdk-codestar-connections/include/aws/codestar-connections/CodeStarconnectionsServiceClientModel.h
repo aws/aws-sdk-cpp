@@ -76,7 +76,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace CodeStarconnections {
-using CodeStarconnectionsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CodeStarconnectionsEndpointProviderBase = Aws::CodeStarconnections::Endpoint::CodeStarconnectionsEndpointProviderBase;
 using CodeStarconnectionsEndpointProvider = Aws::CodeStarconnections::Endpoint::CodeStarconnectionsEndpointProvider;
 

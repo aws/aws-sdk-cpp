@@ -153,7 +153,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace CloudWatchLogs {
-using CloudWatchLogsClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CloudWatchLogsEndpointProviderBase = Aws::CloudWatchLogs::Endpoint::CloudWatchLogsEndpointProviderBase;
 using CloudWatchLogsEndpointProvider = Aws::CloudWatchLogs::Endpoint::CloudWatchLogsEndpointProvider;
 

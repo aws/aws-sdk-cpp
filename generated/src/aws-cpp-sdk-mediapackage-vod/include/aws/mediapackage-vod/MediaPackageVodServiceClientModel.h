@@ -65,7 +65,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace MediaPackageVod {
-using MediaPackageVodClientConfiguration = Aws::Client::GenericClientConfiguration;
 using MediaPackageVodEndpointProviderBase = Aws::MediaPackageVod::Endpoint::MediaPackageVodEndpointProviderBase;
 using MediaPackageVodEndpointProvider = Aws::MediaPackageVod::Endpoint::MediaPackageVodEndpointProvider;
 

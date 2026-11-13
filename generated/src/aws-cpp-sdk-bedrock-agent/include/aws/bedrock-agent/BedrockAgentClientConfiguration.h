@@ -32,12 +32,30 @@ struct AWS_BEDROCKAGENT_API BedrockAgentClientConfiguration : public Aws::Client
   BedrockAgentClientConfiguration(bool useSmartDefaults, const char* defaultMode = "legacy", bool shouldDisableIMDS = false);
 
   /**
-   * Converting constructors for compatibility with a legacy code
+   * Create a configuration that starts from shared settings (region, timeouts, proxy, retry, ...),
+   * then loads this service's options from the environment and profile.
+   * Explicit, so a client is never built from the shared configuration implicitly.
    */
-  BedrockAgentClientConfiguration(const Aws::Client::ClientConfiguration& config);
+  explicit BedrockAgentClientConfiguration(const Aws::Client::ClientConfiguration& sharedConfig);
+
+  /**
+   * Use FIPS endpoint in the endpoint calculation. Please check first that the service supports FIPS in a selected region.
+   */
+  bool useFIPS = false;
+
+  /**
+   * Use dual stack endpoint in the endpoint calculation. It is your responsibility to verify that the service supports ipv6 in the region
+   * you select.
+   */
+  bool useDualStack = false;
 
  private:
   void LoadBedrockAgentSpecificConfig(const Aws::String& profileName);
 };
+
+/**
+ * Values of this service's supported options that the client hands to core.
+ */
+AWS_BEDROCKAGENT_API Aws::Client::ServiceClientOptions GetServiceClientOptions(const BedrockAgentClientConfiguration& config);
 }  // namespace BedrockAgent
 }  // namespace Aws

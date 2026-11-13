@@ -111,15 +111,19 @@ void AwsSmithyClientBase::baseCopyAssign(const AwsSmithyClientBase& other,
   m_enableNewRetries = other.m_enableNewRetries;
   m_httpClient = std::move(httpClient);
   m_errorMarshaller = std::move(errorMarshaller);
-  
+  m_serviceOptions = other.m_serviceOptions;
+
   m_interceptors = Aws::Vector<std::shared_ptr<interceptor::Interceptor>>{
-      Aws::MakeShared<ChecksumInterceptor>("AwsSmithyClientBase", *m_clientConfig),
-      Aws::MakeShared<features::ChunkingInterceptor>("AwsSmithyClientBase", 
-          m_httpClient->IsDefaultAwsHttpClient() ? Aws::Client::HttpClientChunkedMode::DEFAULT : m_clientConfig->httpClientChunkedMode,
-          m_clientConfig->awsChunkedBufferSize)
+      Aws::MakeShared<ChecksumInterceptor>("AwsSmithyClientBase", m_serviceOptions.checksumConfig),
+      Aws::MakeShared<features::ChunkingInterceptor>("AwsSmithyClientBase",
+          m_httpClient->IsDefaultAwsHttpClient() ? Aws::Client::HttpClientChunkedMode::DEFAULT : m_serviceOptions.httpClientChunkedMode,
+          m_serviceOptions.awsChunkedBufferSize)
   };
 
   baseCopyInit();
+  if (m_userAgentInterceptor) {
+    m_userAgentInterceptor->SetAccountIdEndpointMode(m_serviceOptions.accountIdEndpointMode);
+  }
 }
 
 void AwsSmithyClientBase::baseMoveAssign(AwsSmithyClientBase&& other) {
@@ -128,6 +132,7 @@ void AwsSmithyClientBase::baseMoveAssign(AwsSmithyClientBase&& other) {
   m_serviceUserAgentName = std::move(other.m_serviceUserAgentName);
   m_httpClient = std::move(other.m_httpClient);
   m_errorMarshaller = std::move(other.m_errorMarshaller);
+  m_serviceOptions = std::move(other.m_serviceOptions);
   m_interceptors = std::move(other.m_interceptors);
   m_userAgentInterceptor = std::move(other.m_userAgentInterceptor);
   m_enableNewRetries = other.m_enableNewRetries;
@@ -172,7 +177,7 @@ AwsSmithyClientBase::BuildHttpRequest(const std::shared_ptr<AwsSmithyClientAsync
         else
         {
             //Check if compression is required
-            Aws::Client::CompressionAlgorithm selectedCompressionAlgorithm = pRequest->GetSelectedCompressionAlgorithm(m_clientConfig->requestCompressionConfig);
+            Aws::Client::CompressionAlgorithm selectedCompressionAlgorithm = pRequest->GetSelectedCompressionAlgorithm(m_serviceOptions.requestCompressionConfig);
             if (Aws::Client::CompressionAlgorithm::NONE != selectedCompressionAlgorithm) {
                 RequestPayloadCompression::AddCompressedContentBodyToRequest(pRequest, httpRequest, selectedCompressionAlgorithm, m_httpClient);
             } else {
@@ -181,7 +186,7 @@ AwsSmithyClientBase::BuildHttpRequest(const std::shared_ptr<AwsSmithyClientAsync
             }
         }
 
-        if (pRequest->IsStreaming() && !m_clientConfig->disableExpectHeader)
+        if (pRequest->IsStreaming() && !m_serviceOptions.disableExpectHeader)
         {
             httpRequest->SetHeaderValue(Aws::Http::EXPECT_HEADER, Aws::Http::EXPECT_100_CONTINUE_VALUE);
         }
@@ -433,9 +438,9 @@ void AwsSmithyClientBase::UpdateAuthSchemeFromEndpoint(const Aws::Endpoint::AWSE
         }
     }
     // If a value is explicitly set in configuration, it must be used over values defined anywhere else (ONLY FOR SigV4a)
-    if (strcmp(authscheme.schemeId, SigV4aAuthSchemeOption::sigV4aAuthSchemeOption.schemeId) == 0 && !m_clientConfig->sigV4aSigningRegionSet.empty()) {
+    if (strcmp(authscheme.schemeId, SigV4aAuthSchemeOption::sigV4aAuthSchemeOption.schemeId) == 0 && !m_serviceOptions.sigV4aSigningRegionSet.empty()) {
         authscheme.putSignerProperty(smithy::SIGNER_REGION_PROPERTY,
-            Aws::Crt::Variant<Aws::String, bool>(Aws::Utils::StringUtils::Join(m_clientConfig->sigV4aSigningRegionSet, ',')));
+            Aws::Crt::Variant<Aws::String, bool>(Aws::Utils::StringUtils::Join(m_serviceOptions.sigV4aSigningRegionSet, ',')));
     }
 }
 
@@ -831,6 +836,19 @@ AwsSmithyClientBase::StreamOutcome AwsSmithyClientBase::ProcessUnparsedResponse(
     }
 
     return StreamOutcome(std::move(httpResponseOutcome));
+}
+
+void AwsSmithyClientBase::ApplyServiceOptions(const Aws::Client::ServiceClientOptions& options)
+{
+    m_serviceOptions = options;
+    // m_interceptors starts as {checksum, chunking, ...}; replace the two built from option values.
+    m_interceptors[0] = Aws::MakeShared<ChecksumInterceptor>(AWS_SMITHY_CLIENT_LOG, m_serviceOptions.checksumConfig);
+    m_interceptors[1] = Aws::MakeShared<features::ChunkingInterceptor>(AWS_SMITHY_CLIENT_LOG,
+        m_httpClient->IsDefaultAwsHttpClient() ? Aws::Client::HttpClientChunkedMode::DEFAULT : m_serviceOptions.httpClientChunkedMode,
+        m_serviceOptions.awsChunkedBufferSize);
+    if (m_userAgentInterceptor) {
+        m_userAgentInterceptor->SetAccountIdEndpointMode(m_serviceOptions.accountIdEndpointMode);
+    }
 }
 
 void AwsSmithyClientBase::AppendToUserAgent(const Aws::String& valueToAppend)

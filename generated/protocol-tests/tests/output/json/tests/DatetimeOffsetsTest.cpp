@@ -12,7 +12,7 @@ using JsonProtocolClient = Aws::JsonProtocol::JsonProtocolClient;
 using namespace Aws::JsonProtocol::Model;
 
 AWS_PROTOCOL_TEST(DatetimeOffsets, AwsJson11DateTimeWithNegativeOffset) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -32,7 +32,7 @@ AWS_PROTOCOL_TEST(DatetimeOffsets, AwsJson11DateTimeWithNegativeOffset) {
 }
 
 AWS_PROTOCOL_TEST(DatetimeOffsets, AwsJson11DateTimeWithPositiveOffset) {
-  JsonProtocolClient client(mockCredentials, mockConfig);
+  JsonProtocolClient client(mockCredentials, nullptr, Aws::JsonProtocol::JsonProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;

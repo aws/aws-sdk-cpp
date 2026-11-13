@@ -217,6 +217,12 @@ namespace Aws
             void AppendToUserAgent(const Aws::String& valueToAppend);
         protected:
             /**
+             * Applies the values of the service-specific options this client's service supports.
+             * Called by generated service clients during initialization; unsupported options keep their defaults.
+             */
+            void ApplyServiceOptions(const Aws::Client::ServiceClientOptions& options);
+
+            /**
              * Calls AttemptOneRequest until it either, succeeds, runs out of retries from the retry strategy,
              * or encounters and error that is not retryable.
              */

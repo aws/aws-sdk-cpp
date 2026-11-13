@@ -96,7 +96,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace XRay {
-using XRayClientConfiguration = Aws::Client::GenericClientConfiguration;
 using XRayEndpointProviderBase = Aws::XRay::Endpoint::XRayEndpointProviderBase;
 using XRayEndpointProvider = Aws::XRay::Endpoint::XRayEndpointProvider;
 

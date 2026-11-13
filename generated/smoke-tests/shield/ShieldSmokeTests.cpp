@@ -34,8 +34,6 @@ TEST_F(ShieldSmokeTestSuite, ListAttacksSuccess )
 {
     Aws::Shield::ShieldClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-east-1";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<ShieldClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     

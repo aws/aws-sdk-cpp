@@ -50,21 +50,21 @@ namespace Aws
             * the default client configuration will be used.
             */
             S3EncryptionClientBase(const std::shared_ptr<Aws::Utils::Crypto::EncryptionMaterials>& encryptionMaterials, const Aws::S3Encryption::CryptoConfiguration& cryptoConfig,
-                const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                const Aws::S3::S3ClientConfiguration& clientConfiguration = Aws::S3::S3ClientConfiguration());
 
             /*
             * Initialize the S3EncryptionClientBase with encryption materials, crypto configuration, AWS credentials and a client configuration. If no client configuration is supplied,
             * the default client configuration will be used.
             */
             S3EncryptionClientBase(const std::shared_ptr<Aws::Utils::Crypto::EncryptionMaterials>& encryptionMaterials, const Aws::S3Encryption::CryptoConfiguration& cryptoConfig,
-                const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                const Aws::Auth::AWSCredentials& credentials, const Aws::S3::S3ClientConfiguration& clientConfiguration = Aws::S3::S3ClientConfiguration());
 
             /*
             * Initialize the S3EncryptionClientBase with encryption materials, crypto configuration, AWS credentials provider and a client configuration. If no client configuration is supplied,
             * the default client configuration will be used.
             */
             S3EncryptionClientBase(const std::shared_ptr<Aws::Utils::Crypto::EncryptionMaterials>& encryptionMaterials, const Aws::S3Encryption::CryptoConfiguration& cryptoConfig,
-                const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+                const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider, const Aws::S3::S3ClientConfiguration& clientConfiguration = Aws::S3::S3ClientConfiguration());
 
             /*
              * Initialize the S3EncryptionClientBase with encryption materials, crypto configuration, and a s3 client factory.
@@ -146,7 +146,7 @@ namespace Aws
             * the default client configuration will be used.
             */
             S3EncryptionClient(const std::shared_ptr<Aws::Utils::Crypto::EncryptionMaterials>& encryptionMaterials, const Aws::S3Encryption::CryptoConfiguration& cryptoConfig,
-                const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration())
+                const Aws::S3::S3ClientConfiguration& clientConfiguration = Aws::S3::S3ClientConfiguration())
                 : S3EncryptionClientBase(encryptionMaterials, cryptoConfig, clientConfiguration)
             {}
 
@@ -155,7 +155,7 @@ namespace Aws
             * the default client configuration will be used.
             */
             S3EncryptionClient(const std::shared_ptr<Aws::Utils::Crypto::EncryptionMaterials>& encryptionMaterials, const Aws::S3Encryption::CryptoConfiguration& cryptoConfig,
-                const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration())
+                const Aws::Auth::AWSCredentials& credentials, const Aws::S3::S3ClientConfiguration& clientConfiguration = Aws::S3::S3ClientConfiguration())
                 : S3EncryptionClientBase(encryptionMaterials, cryptoConfig, credentials, clientConfiguration)
             {}
 
@@ -164,7 +164,7 @@ namespace Aws
             * the default client configuration will be used.
             */
             S3EncryptionClient(const std::shared_ptr<Aws::Utils::Crypto::EncryptionMaterials>& encryptionMaterials, const Aws::S3Encryption::CryptoConfiguration& cryptoConfig,
-                const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration())
+                const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider, const Aws::S3::S3ClientConfiguration& clientConfiguration = Aws::S3::S3ClientConfiguration())
                 : S3EncryptionClientBase(encryptionMaterials, cryptoConfig, credentialsProvider, clientConfiguration)
             {}
 
@@ -191,7 +191,7 @@ namespace Aws
             * the default client configuration will be used.
             */
             S3EncryptionClientV2(const Aws::S3Encryption::CryptoConfigurationV2& cryptoConfig,
-                const Aws::Client::ClientConfiguration& clientConfig = Aws::Client::ClientConfiguration())
+                const Aws::S3::S3ClientConfiguration& clientConfig = Aws::S3::S3ClientConfiguration())
                 : S3EncryptionClientBase(cryptoConfig.GetEncryptionMaterials(), CryptoConfiguration(), clientConfig)
             {
                 Init(cryptoConfig);
@@ -203,7 +203,7 @@ namespace Aws
             * the default client configuration will be used.
             */
             S3EncryptionClientV2(const Aws::S3Encryption::CryptoConfigurationV2& cryptoConfig, const Aws::Auth::AWSCredentials& credentials,
-                const Aws::Client::ClientConfiguration& clientConfig = Aws::Client::ClientConfiguration())
+                const Aws::S3::S3ClientConfiguration& clientConfig = Aws::S3::S3ClientConfiguration())
                 : S3EncryptionClientBase(cryptoConfig.GetEncryptionMaterials(), CryptoConfiguration(), credentials, clientConfig)
             {
                 Init(cryptoConfig);
@@ -214,7 +214,7 @@ namespace Aws
             * the default client configuration will be used.
             */
             S3EncryptionClientV2(const Aws::S3Encryption::CryptoConfigurationV2& cryptoConfig, const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                const Aws::Client::ClientConfiguration& clientConfig = Aws::Client::ClientConfiguration())
+                const Aws::S3::S3ClientConfiguration& clientConfig = Aws::S3::S3ClientConfiguration())
                 : S3EncryptionClientBase(cryptoConfig.GetEncryptionMaterials(), CryptoConfiguration(), credentialsProvider, clientConfig)
             {
                 Init(cryptoConfig);
@@ -256,7 +256,7 @@ namespace Aws
             //# If the S3EC accepts SDK client configuration, the configuration MUST be applied to all wrapped S3 clients.
             // There's only one client, so it's safe to say "all"
             S3EncryptionClientV3(const Aws::S3Encryption::CryptoConfigurationV3& cryptoConfig,
-                const Aws::Client::ClientConfiguration& clientConfig = Aws::Client::ClientConfiguration())
+                const Aws::S3::S3ClientConfiguration& clientConfig = Aws::S3::S3ClientConfiguration())
                 : S3EncryptionClientBase(cryptoConfig.GetEncryptionMaterials(), CryptoConfiguration(), clientConfig)
             {
                 Init(cryptoConfig);
@@ -268,7 +268,7 @@ namespace Aws
             * the default client configuration will be used.
             */
             S3EncryptionClientV3(const Aws::S3Encryption::CryptoConfigurationV3& cryptoConfig, const Aws::Auth::AWSCredentials& credentials,
-                const Aws::Client::ClientConfiguration& clientConfig = Aws::Client::ClientConfiguration())
+                const Aws::S3::S3ClientConfiguration& clientConfig = Aws::S3::S3ClientConfiguration())
                 : S3EncryptionClientBase(cryptoConfig.GetEncryptionMaterials(), CryptoConfiguration(), credentials, clientConfig)
             {
                 Init(cryptoConfig);
@@ -279,7 +279,7 @@ namespace Aws
             * the default client configuration will be used.
             */
             S3EncryptionClientV3(const Aws::S3Encryption::CryptoConfigurationV3& cryptoConfig, const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                const Aws::Client::ClientConfiguration& clientConfig = Aws::Client::ClientConfiguration())
+                const Aws::S3::S3ClientConfiguration& clientConfig = Aws::S3::S3ClientConfiguration())
                 : S3EncryptionClientBase(cryptoConfig.GetEncryptionMaterials(), CryptoConfiguration(), credentialsProvider, clientConfig)
             {
                 Init(cryptoConfig);

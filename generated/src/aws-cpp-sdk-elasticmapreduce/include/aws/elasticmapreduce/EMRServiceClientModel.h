@@ -107,7 +107,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace EMR {
-using EMRClientConfiguration = Aws::Client::GenericClientConfiguration;
 using EMREndpointProviderBase = Aws::EMR::Endpoint::EMREndpointProviderBase;
 using EMREndpointProvider = Aws::EMR::Endpoint::EMREndpointProvider;
 

@@ -60,7 +60,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace ACMPCA {
-using ACMPCAClientConfiguration = Aws::Client::GenericClientConfiguration;
 using ACMPCAEndpointProviderBase = Aws::ACMPCA::Endpoint::ACMPCAEndpointProviderBase;
 using ACMPCAEndpointProvider = Aws::ACMPCA::Endpoint::ACMPCAEndpointProvider;
 

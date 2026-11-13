@@ -4,24 +4,33 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ssm-guiconnect/SSMGuiConnectClientConfiguration.h>
 #include <aws/ssm-guiconnect/SSMGuiConnect_EXPORTS.h>
 
 namespace Aws {
 namespace SSMGuiConnect {
 namespace Endpoint {
+using SSMGuiConnectClientConfiguration = Aws::SSMGuiConnect::SSMGuiConnectClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using SSMGuiConnectClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using SSMGuiConnectClientConfiguration = Aws::Client::GenericClientConfiguration;
-using SSMGuiConnectBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_SSMGUICONNECT_API SSMGuiConnectBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~SSMGuiConnectBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const SSMGuiConnectClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const SSMGuiConnectClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const SSMGuiConnectClientConfiguration& config);
+};
 
 /**
  * The type for the SSMGuiConnect Client Endpoint Provider.
@@ -34,6 +43,24 @@ using SSMGuiConnectEndpointProviderBase =
 using SSMGuiConnectDefaultEpProviderBase =
     BDDEndpointProvider<SSMGuiConnectClientConfiguration, SSMGuiConnectBuiltInParameters, SSMGuiConnectClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace SSMGuiConnect
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_SSMGUICONNECT_EXTERN template class AWS_SSMGUICONNECT_API Aws::Endpoint::EndpointProviderBase<
+    SSMGuiConnect::Endpoint::SSMGuiConnectClientConfiguration, SSMGuiConnect::Endpoint::SSMGuiConnectBuiltInParameters,
+    SSMGuiConnect::Endpoint::SSMGuiConnectClientContextParameters>;
+
+AWS_SSMGUICONNECT_EXTERN template class AWS_SSMGUICONNECT_API Aws::Endpoint::BDDEndpointProvider<
+    SSMGuiConnect::Endpoint::SSMGuiConnectClientConfiguration, SSMGuiConnect::Endpoint::SSMGuiConnectBuiltInParameters,
+    SSMGuiConnect::Endpoint::SSMGuiConnectClientContextParameters>;
+}  // namespace Endpoint
+
+namespace SSMGuiConnect {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

@@ -78,7 +78,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace MachineLearning {
-using MachineLearningClientConfiguration = Aws::Client::GenericClientConfiguration;
 using MachineLearningEndpointProviderBase = Aws::MachineLearning::Endpoint::MachineLearningEndpointProviderBase;
 using MachineLearningEndpointProvider = Aws::MachineLearning::Endpoint::MachineLearningEndpointProvider;
 

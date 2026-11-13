@@ -91,7 +91,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace GroundStation {
-using GroundStationClientConfiguration = Aws::Client::GenericClientConfiguration;
 using GroundStationEndpointProviderBase = Aws::GroundStation::Endpoint::GroundStationEndpointProviderBase;
 using GroundStationEndpointProvider = Aws::GroundStation::Endpoint::GroundStationEndpointProvider;
 

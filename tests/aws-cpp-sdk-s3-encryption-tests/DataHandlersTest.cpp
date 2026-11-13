@@ -32,7 +32,7 @@ static size_t IV_SIZE = 12;
 class MockS3Client : public Aws::S3::S3Client
 {
 public:
-    MockS3Client(Aws::Client::ClientConfiguration clientConfiguration = Aws::Client::ClientConfiguration()) :
+    MockS3Client(Aws::S3::S3ClientConfiguration clientConfiguration = Aws::S3::S3ClientConfiguration()) :
         S3Client(Aws::Auth::AWSCredentials("", ""),
                  Aws::MakeShared<Aws::S3::Endpoint::S3EndpointProvider>(Aws::S3::S3Client::GetAllocationTag()),
                          clientConfiguration), m_putObjectCalled(0), m_getObjectCalled(0), m_headObjectCalled(0), m_body(nullptr)
@@ -242,7 +242,7 @@ namespace
     //  uses the metadata to populate a get object result.
     TEST_F(HandlerTest, MetadataS3OperationsTest)
     {
-        auto myClient = Aws::MakeShared<MockS3Client>(ALLOCATION_TAG, ClientConfiguration());
+        auto myClient = Aws::MakeShared<MockS3Client>(ALLOCATION_TAG, Aws::S3::S3ClientConfiguration());
         Aws::String fullBucketName = TEST_BUCKET_NAME;
 
         PutObjectRequest putObjectRequest;
@@ -412,7 +412,7 @@ namespace
     //This tests the instruction file read/write functionality by using a mock S3 client.
     TEST_F(HandlerTest, InstructionFileS3OperationsTest)
     {
-        auto myClient = Aws::MakeShared<MockS3Client>(ALLOCATION_TAG, ClientConfiguration());
+        auto myClient = Aws::MakeShared<MockS3Client>(ALLOCATION_TAG, Aws::S3::S3ClientConfiguration());
         Aws::String fullBucketName = TEST_BUCKET_NAME;
 
         PutObjectRequest instructionPutObjectRequest;

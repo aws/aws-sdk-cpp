@@ -38,7 +38,7 @@ namespace
         ElasticFileSystemTest()
         {
             // Create a client
-            ClientConfiguration config;
+            Aws::EFS::EFSClientConfiguration config;
             config.region = AWS_TEST_REGION;
             config.scheme = Scheme::HTTPS;
             config.connectTimeoutMs = 30000;

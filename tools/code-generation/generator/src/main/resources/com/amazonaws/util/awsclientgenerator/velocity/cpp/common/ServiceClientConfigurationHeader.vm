@@ -50,60 +50,6 @@ namespace ${rootNamespace}
 #end
 #end
 
-#set($copyCtorStatements = [])
-#set($moveCtorStatements = [])
-#set($copyAssignmentStatements = [])
-#set($moveAssignemntStatements = [])
-#if($metadata.hasEndpointDiscoveryTrait)
-#set($addArgDummy = $copyCtorStatements.add("enableEndpointDiscovery(BaseClientConfigClass::enableEndpointDiscovery)"))
-#set($addArgDummy = $moveCtorStatements.add("enableEndpointDiscovery(BaseClientConfigClass::enableEndpointDiscovery)"))
-#end
-#if(!$copyCtorStatements.isEmpty())
-            ${metadata.classNamePrefix}ClientConfiguration(const ${metadata.classNamePrefix}ClientConfiguration& other)
-                : Aws::Client::GenericClientConfiguration(other),
-                  #foreach($statement in $copyCtorStatements)$statement#if($foreach.hasNext),
-                  #end#end
-
-            {
-            }
-
-#end
-#if(!$moveCtorStatements.isEmpty())
-            ${metadata.classNamePrefix}ClientConfiguration(${metadata.classNamePrefix}ClientConfiguration&& other) noexcept
-                : Aws::Client::GenericClientConfiguration(std::move(other)),
-                  #foreach($statement in $moveCtorStatements)$statement#if($foreach.hasNext),
-                  #end#end
-
-            {
-            }
-
-#end
-#if(!$copyAssignmentStatements.isEmpty() || $metadata.hasEndpointDiscoveryTrait)
-            ${metadata.classNamePrefix}ClientConfiguration& operator=(const ${metadata.classNamePrefix}ClientConfiguration& other)
-            {
-                if (this == &other)
-                    return *this;
-                Aws::Client::GenericClientConfiguration::operator =(other);
-#foreach($statment in ${copyAssignmentStatements})
-                ${statment}
-#end
-                return *this;
-            }
-
-#end
-#if(!$moveAssignemntStatements.isEmpty() || $metadata.hasEndpointDiscoveryTrait)
-            ${metadata.classNamePrefix}ClientConfiguration& operator=(${metadata.classNamePrefix}ClientConfiguration&& other) noexcept
-            {
-                if (this == &other)
-                    return *this;
-                Aws::Client::GenericClientConfiguration::operator =(std::move(other));
-#foreach($statment in ${moveAssignemntStatements})
-                ${statment}
-#end
-                return *this;
-            }
-
-#end
             ${metadata.classNamePrefix}ClientConfiguration(const Aws::Client::ClientConfigurationInitValues &configuration = {});
 
             /**
@@ -123,18 +69,11 @@ namespace ${rootNamespace}
             ${metadata.classNamePrefix}ClientConfiguration(bool useSmartDefaults, const char* defaultMode = "legacy", bool shouldDisableIMDS = false);
 
             /**
-            * Converting constructors for compatibility with a legacy code
+            * Create a configuration that starts from shared settings (region, timeouts, proxy, retry, ...),
+            * then loads this service's options from the environment and profile.
+            * Explicit, so a client is never built from the shared configuration implicitly.
             */
-#set($classNamePrefix = $metadata.classNamePrefix)
-#set($clsPrefixWSpace = $classNamePrefix.replaceAll(".", " "))
-#set($earlyClose = $serviceModel.metadata.serviceId != "S3")
-            ${classNamePrefix}ClientConfiguration(const Aws::Client::ClientConfiguration& config#if($earlyClose));#else,
-#end
-#if($serviceModel.metadata.serviceId == "S3")
-            ${clsPrefixWSpace}                    Client::AWSAuthV4Signer::PayloadSigningPolicy iPayloadSigningPolicy = Client::AWSAuthV4Signer::PayloadSigningPolicy::Never,
-            ${clsPrefixWSpace}                    bool iUseVirtualAddressing = true,
-            ${clsPrefixWSpace}                    US_EAST_1_REGIONAL_ENDPOINT_OPTION iUseUSEast1RegionalEndPointOption = US_EAST_1_REGIONAL_ENDPOINT_OPTION::NOT_SET);
-#end
+            explicit ${metadata.classNamePrefix}ClientConfiguration(const Aws::Client::ClientConfiguration& sharedConfig);
 
 #if($serviceModel.metadata.serviceId == "S3")
             bool useVirtualAddressing = true;
@@ -156,30 +95,17 @@ namespace ${rootNamespace}
                 return Aws::MakeShared<DefaultS3ExpressIdentityProvider>("${metadata.classNamePrefix}ClientConfiguration", client);
             };
 #end
-#if($metadata.hasEndpointDiscoveryTrait)
-
-            /**
-             * Enable endpoint discovery
-             * For some services to dynamically set up their endpoints for different requests.
-             * By default, service clients will decide if endpoint discovery is enabled or not.
-             * If disabled, regional or overridden endpoint will be used instead.
-             * If a request requires endpoint discovery, but it was disabled then the request will never succeed.
-             * A boolean value is either true of false, use Optional here to have an instance does not contain a value,
-             * such that SDK will decide the default behavior as stated before, if no value specified.
-#if($metadata.requireEndpointDiscovery)
-             * $serviceModel.metadata.serviceId service client requires endpoint discovery. The default value for this setting is Enabled.
-#else
-             * $serviceModel.metadata.serviceId service client does not require endpoint discovery. The default value for this setting is Disabled.
-#end
-             */
-            Aws::Crt::Optional<bool>& enableEndpointDiscovery;
-
-#end
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientConfigurationOptionMembers.vm")
 #if($serviceNamespace == "S3Crt")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/s3-crt/S3CrtClientConfigHeader.vm")
 #end
         private:
             void Load${serviceNamespace}SpecificConfig(const Aws::String& profileName);
         };
+
+        /**
+         * Values of this service's supported options that the client hands to core.
+         */
+        ${exportValue} Aws::Client::ServiceClientOptions GetServiceClientOptions(const ${metadata.classNamePrefix}ClientConfiguration& config);
     }
 }

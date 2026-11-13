@@ -73,7 +73,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace AppRegistry {
-using AppRegistryClientConfiguration = Aws::Client::GenericClientConfiguration;
 using AppRegistryEndpointProviderBase = Aws::AppRegistry::Endpoint::AppRegistryEndpointProviderBase;
 using AppRegistryEndpointProvider = Aws::AppRegistry::Endpoint::AppRegistryEndpointProvider;
 

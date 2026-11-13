@@ -185,7 +185,8 @@
 #end
 #end##-#if($serviceModel.endpointRules && $serviceNamespace != "S3Crt")
 
-#if($serviceModel.endpointRules)
+#if($serviceModel.endpointRules && $serviceNamespace == "S3Crt")
+## S3Crt only: S3CrtClient keeps its legacy constructors until it becomes an alias of S3Client.
         /* Legacy constructors due deprecation */
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderLegacyConstructors.vm")
         /* End of legacy constructors due deprecation */

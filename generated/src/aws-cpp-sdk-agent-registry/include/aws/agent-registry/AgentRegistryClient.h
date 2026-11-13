@@ -57,27 +57,6 @@ class AWS_AGENTREGISTRY_API AgentRegistryClient : public Aws::Client::AWSJsonCli
                       const Aws::AgentRegistry::AgentRegistryClientConfiguration& clientConfiguration =
                           Aws::AgentRegistry::AgentRegistryClientConfiguration());
 
-  /* Legacy constructors due deprecation */
-  /**
-   * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client
-   * config is not specified, it will be initialized to default values.
-   */
-  AgentRegistryClient(const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /**
-   * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
-   * is not specified, it will be initialized to default values.
-   */
-  AgentRegistryClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /**
-   * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
-   * the default http client factory will be used
-   */
-  AgentRegistryClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                      const Aws::Client::ClientConfiguration& clientConfiguration);
-
-  /* End of legacy constructors due deprecation */
   virtual ~AgentRegistryClient();
 
   /**
@@ -173,7 +152,6 @@ class AWS_AGENTREGISTRY_API AgentRegistryClient : public Aws::Client::AWSJsonCli
     return SubmitAsync(&AgentRegistryClient::SearchDiscoverableRegistryRecords, request, handler, context);
   }
 
-  virtual void OverrideEndpoint(const Aws::String& endpoint);
   virtual std::shared_ptr<AgentRegistryEndpointProviderBase>& accessEndpointProvider();
 
  private:

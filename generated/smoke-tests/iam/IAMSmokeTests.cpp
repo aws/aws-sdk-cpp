@@ -35,8 +35,6 @@ TEST_F(IAMSmokeTestSuite, GetUserFailure )
 {
     Aws::IAM::IAMClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-east-1";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<IAMClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     
@@ -49,8 +47,6 @@ TEST_F(IAMSmokeTestSuite, ListUsersSuccess )
 {
     Aws::IAM::IAMClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-east-1";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<IAMClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     

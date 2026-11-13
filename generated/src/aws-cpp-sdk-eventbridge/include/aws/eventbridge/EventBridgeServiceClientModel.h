@@ -107,7 +107,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace EventBridge {
-using EventBridgeClientConfiguration = Aws::Client::GenericClientConfiguration;
 using EventBridgeEndpointProviderBase = Aws::EventBridge::Endpoint::EventBridgeEndpointProviderBase;
 using EventBridgeEndpointProvider = Aws::EventBridge::Endpoint::EventBridgeEndpointProvider;
 

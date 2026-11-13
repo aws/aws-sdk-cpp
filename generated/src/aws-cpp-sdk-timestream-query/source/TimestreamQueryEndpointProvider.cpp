@@ -30,13 +30,23 @@ TimestreamQueryEndpointProvider::TimestreamQueryEndpointProvider()
 
 void TimestreamQueryBuiltInParameters::SetFromClientConfiguration(const TimestreamQueryClientConfiguration& config) {
   SetFromClientConfiguration(static_cast<const TimestreamQueryClientConfiguration::BaseClientConfigClass&>(config));
+  SetServiceSpecificParameters(config);
 }
 
 void TimestreamQueryBuiltInParameters::SetFromClientConfiguration(const TimestreamQueryClientConfiguration& config,
                                                                   const Aws::String& serviceName) {
   SetFromClientConfiguration(static_cast<const TimestreamQueryClientConfiguration::BaseClientConfigClass&>(config), serviceName);
+  SetServiceSpecificParameters(config);
 }
 
+void TimestreamQueryBuiltInParameters::SetServiceSpecificParameters(const TimestreamQueryClientConfiguration& config) {
+  if (config.useFIPS) {
+    SetBooleanParameter("UseFIPS", true);
+  }
+  if (config.useDualStack) {
+    SetBooleanParameter("UseDualStack", true);
+  }
+}
 }  // namespace Endpoint
 }  // namespace TimestreamQuery
 }  // namespace Aws

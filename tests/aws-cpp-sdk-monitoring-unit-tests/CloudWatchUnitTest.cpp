@@ -61,13 +61,13 @@ TEST_F(CloudWatchTest, TestUserAgentCompressionTracking) {
   // Create client with compression enabled
   Aws::Client::ClientConfigurationInitValues cfgInit;
   cfgInit.shouldDisableIMDS = true;
-  Aws::Client::ClientConfiguration clientConfig(cfgInit);
+  Aws::CloudWatch::CloudWatchClientConfiguration clientConfig(cfgInit);
   clientConfig.region = Aws::Region::US_EAST_1;
   clientConfig.requestCompressionConfig.useRequestCompression = UseRequestCompression::ENABLE;
   clientConfig.requestCompressionConfig.requestMinCompressionSizeBytes = 10240;
   
   AWSCredentials credentials{"mock", "credentials"};
-  CloudWatchClient client(credentials, clientConfig);
+  CloudWatchClient client(credentials, nullptr, clientConfig);
   
   // Create request with large payload to trigger compression
   PutMetricDataRequest request;

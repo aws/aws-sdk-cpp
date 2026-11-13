@@ -318,11 +318,6 @@ ${clsWSpace}  ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else) :#end
 }
 
 #end
-#if($serviceModel.endpointRules)
-    /* Legacy constructors due deprecation */
-  #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientSourceLegacyConstructors.vm")
-    /* End of legacy constructors due deprecation */
-#end
 ${className}::~${className}()
 {
   ShutdownSdkClient(this, -1);
@@ -350,6 +345,7 @@ void ${className}::init(const ${clientConfigurationCls}& config)
 #if($serviceModel.endpointRules)
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config, "${metadata.signingName}");
+  ApplyServiceOptions(GetServiceClientOptions(m_clientConfiguration));
 #if($AdditionalServiceSpecificConfigLoadString)
   ${AdditionalServiceSpecificConfigLoadString}
 #end##if($AdditionalServiceSpecificConfigLoadString)
@@ -447,43 +443,4 @@ void ${className}::Load${metadata.classNamePrefix}SpecificConfig(const Aws::Clie
   }
 }
 #end
-
-void ${className}::OverrideEndpoint(const Aws::String& endpoint)
-{
-#if($serviceModel.endpointRules)
-  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_clientConfiguration.endpointOverride = endpoint;
-  m_endpointProvider->OverrideEndpoint(endpoint);
-#else##-#if($serviceModel.endpointRules)
-#if($virtualAddressingSupported || $arnEndpointSupported || $metadata.hasEndpointTrait)
-  if (endpoint.compare(0, 7, "http://") == 0)
-  {
-      m_scheme = "http";
-      m_baseUri = endpoint.substr(7);
-  }
-  else if (endpoint.compare(0, 8, "https://") == 0)
-  {
-      m_scheme = "https";
-      m_baseUri = endpoint.substr(8);
-  }
-  else
-  {
-      m_scheme = m_configScheme;
-      m_baseUri = endpoint;
-  }
-#else
-  if (endpoint.compare(0, 7, "http://") == 0 || endpoint.compare(0, 8, "https://") == 0)
-  {
-      m_uri = endpoint;
-  }
-  else
-  {
-      m_uri = m_configScheme + "://" + endpoint;
-  }
-#end
-#if($metadata.hasEndpointDiscoveryTrait)
-  m_enableEndpointDiscovery = false;
-#end
-#end##-#if($serviceModel.endpointRules)
-}
 #end

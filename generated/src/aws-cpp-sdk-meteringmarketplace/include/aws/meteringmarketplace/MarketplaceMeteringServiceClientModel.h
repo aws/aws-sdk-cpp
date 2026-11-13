@@ -50,7 +50,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace MarketplaceMetering {
-using MarketplaceMeteringClientConfiguration = Aws::Client::GenericClientConfiguration;
 using MarketplaceMeteringEndpointProviderBase = Aws::MarketplaceMetering::Endpoint::MarketplaceMeteringEndpointProviderBase;
 using MarketplaceMeteringEndpointProvider = Aws::MarketplaceMetering::Endpoint::MarketplaceMeteringEndpointProvider;
 

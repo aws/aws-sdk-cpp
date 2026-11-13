@@ -60,7 +60,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace PI {
-using PIClientConfiguration = Aws::Client::GenericClientConfiguration;
 using PIEndpointProviderBase = Aws::PI::Endpoint::PIEndpointProviderBase;
 using PIEndpointProvider = Aws::PI::Endpoint::PIEndpointProvider;
 

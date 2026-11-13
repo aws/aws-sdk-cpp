@@ -9,6 +9,9 @@ namespace Aws {
 namespace Kinesis {
 
 void KinesisClientConfiguration::LoadKinesisSpecificConfig(const Aws::String& inputProfileName) {
+  useFIPS = Aws::Client::LoadUseFIPSFromEnvOrProfile(this->profileName);
+  useDualStack = Aws::Client::LoadUseDualStackFromEnvOrProfile(this->profileName);
+  accountIdEndpointMode = Aws::Client::LoadAccountIdEndpointModeFromEnvOrProfile(this->profileName);
 #if defined(_MSC_VER)
   (&reinterpret_cast<const int&>(inputProfileName));
 #else
@@ -31,8 +34,16 @@ KinesisClientConfiguration::KinesisClientConfiguration(bool useSmartDefaults, co
   LoadKinesisSpecificConfig(this->profileName);
 }
 
-KinesisClientConfiguration::KinesisClientConfiguration(const Aws::Client::ClientConfiguration& config) : BaseClientConfigClass(config) {
+KinesisClientConfiguration::KinesisClientConfiguration(const Aws::Client::ClientConfiguration& sharedConfig)
+    : BaseClientConfigClass(sharedConfig) {
   LoadKinesisSpecificConfig(this->profileName);
+}
+
+Aws::Client::ServiceClientOptions GetServiceClientOptions(const KinesisClientConfiguration& config) {
+  Aws::Client::ServiceClientOptions options;
+  options.accountId = config.accountId;
+  options.accountIdEndpointMode = config.accountIdEndpointMode;
+  return options;
 }
 
 }  // namespace Kinesis

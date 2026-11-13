@@ -4,24 +4,33 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/internetmonitor/InternetMonitorClientConfiguration.h>
 #include <aws/internetmonitor/InternetMonitor_EXPORTS.h>
 
 namespace Aws {
 namespace InternetMonitor {
 namespace Endpoint {
+using InternetMonitorClientConfiguration = Aws::InternetMonitor::InternetMonitorClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using InternetMonitorClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using InternetMonitorClientConfiguration = Aws::Client::GenericClientConfiguration;
-using InternetMonitorBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_INTERNETMONITOR_API InternetMonitorBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~InternetMonitorBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const InternetMonitorClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const InternetMonitorClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const InternetMonitorClientConfiguration& config);
+};
 
 /**
  * The type for the InternetMonitor Client Endpoint Provider.
@@ -34,6 +43,24 @@ using InternetMonitorEndpointProviderBase =
 using InternetMonitorDefaultEpProviderBase =
     BDDEndpointProvider<InternetMonitorClientConfiguration, InternetMonitorBuiltInParameters, InternetMonitorClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace InternetMonitor
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_INTERNETMONITOR_EXTERN template class AWS_INTERNETMONITOR_API Aws::Endpoint::EndpointProviderBase<
+    InternetMonitor::Endpoint::InternetMonitorClientConfiguration, InternetMonitor::Endpoint::InternetMonitorBuiltInParameters,
+    InternetMonitor::Endpoint::InternetMonitorClientContextParameters>;
+
+AWS_INTERNETMONITOR_EXTERN template class AWS_INTERNETMONITOR_API Aws::Endpoint::BDDEndpointProvider<
+    InternetMonitor::Endpoint::InternetMonitorClientConfiguration, InternetMonitor::Endpoint::InternetMonitorBuiltInParameters,
+    InternetMonitor::Endpoint::InternetMonitorClientContextParameters>;
+}  // namespace Endpoint
+
+namespace InternetMonitor {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

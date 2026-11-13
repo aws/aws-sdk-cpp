@@ -12,7 +12,7 @@ using QueryProtocolClient = Aws::QueryProtocol::QueryProtocolClient;
 using namespace Aws::QueryProtocol::Model;
 
 AWS_PROTOCOL_TEST(QueryMaps, QuerySimpleQueryMaps) {
-  QueryProtocolClient client(mockCredentials, mockConfig);
+  QueryProtocolClient client(mockCredentials, nullptr, Aws::QueryProtocol::QueryProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -32,7 +32,7 @@ AWS_PROTOCOL_TEST(QueryMaps, QuerySimpleQueryMaps) {
 }
 
 AWS_PROTOCOL_TEST(QueryMaps, QuerySimpleQueryMapsWithXmlName) {
-  QueryProtocolClient client(mockCredentials, mockConfig);
+  QueryProtocolClient client(mockCredentials, nullptr, Aws::QueryProtocol::QueryProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -50,7 +50,7 @@ AWS_PROTOCOL_TEST(QueryMaps, QuerySimpleQueryMapsWithXmlName) {
 }
 
 AWS_PROTOCOL_TEST(QueryMaps, QueryComplexQueryMaps) {
-  QueryProtocolClient client(mockCredentials, mockConfig);
+  QueryProtocolClient client(mockCredentials, nullptr, Aws::QueryProtocol::QueryProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -79,7 +79,7 @@ AWS_PROTOCOL_TEST(QueryMaps, QueryComplexQueryMaps) {
 }
 
 AWS_PROTOCOL_TEST(QueryMaps, QueryEmptyQueryMaps) {
-  QueryProtocolClient client(mockCredentials, mockConfig);
+  QueryProtocolClient client(mockCredentials, nullptr, Aws::QueryProtocol::QueryProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -97,7 +97,7 @@ AWS_PROTOCOL_TEST(QueryMaps, QueryEmptyQueryMaps) {
 }
 
 AWS_PROTOCOL_TEST(QueryMaps, QueryQueryMapWithMemberXmlName) {
-  QueryProtocolClient client(mockCredentials, mockConfig);
+  QueryProtocolClient client(mockCredentials, nullptr, Aws::QueryProtocol::QueryProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -117,7 +117,7 @@ AWS_PROTOCOL_TEST(QueryMaps, QueryQueryMapWithMemberXmlName) {
 }
 
 AWS_PROTOCOL_TEST(QueryMaps, QueryFlattenedQueryMaps) {
-  QueryProtocolClient client(mockCredentials, mockConfig);
+  QueryProtocolClient client(mockCredentials, nullptr, Aws::QueryProtocol::QueryProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -137,7 +137,7 @@ AWS_PROTOCOL_TEST(QueryMaps, QueryFlattenedQueryMaps) {
 }
 
 AWS_PROTOCOL_TEST(QueryMaps, QueryFlattenedQueryMapsWithXmlName) {
-  QueryProtocolClient client(mockCredentials, mockConfig);
+  QueryProtocolClient client(mockCredentials, nullptr, Aws::QueryProtocol::QueryProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -155,7 +155,7 @@ AWS_PROTOCOL_TEST(QueryMaps, QueryFlattenedQueryMapsWithXmlName) {
 }
 
 AWS_PROTOCOL_TEST(QueryMaps, QueryQueryMapOfLists) {
-  QueryProtocolClient client(mockCredentials, mockConfig);
+  QueryProtocolClient client(mockCredentials, nullptr, Aws::QueryProtocol::QueryProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 
@@ -176,7 +176,7 @@ AWS_PROTOCOL_TEST(QueryMaps, QueryQueryMapOfLists) {
 }
 
 AWS_PROTOCOL_TEST(QueryMaps, QueryNestedStructWithMap) {
-  QueryProtocolClient client(mockCredentials, mockConfig);
+  QueryProtocolClient client(mockCredentials, nullptr, Aws::QueryProtocol::QueryProtocolClientConfiguration(mockConfig));
 
   SetMockResponse();
 

@@ -63,7 +63,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace LaunchWizard {
-using LaunchWizardClientConfiguration = Aws::Client::GenericClientConfiguration;
 using LaunchWizardEndpointProviderBase = Aws::LaunchWizard::Endpoint::LaunchWizardEndpointProviderBase;
 using LaunchWizardEndpointProvider = Aws::LaunchWizard::Endpoint::LaunchWizardEndpointProvider;
 

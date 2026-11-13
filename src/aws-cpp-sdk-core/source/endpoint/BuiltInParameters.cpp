@@ -58,11 +58,12 @@ namespace Endpoint
             }
         }
 
+        // UseFIPS and UseDualStack are set by the service's generated BuiltInParameters,
+        // only for services whose endpoint rules support them.
         static const char* AWS_USE_FIPS = "UseFIPS";
-        SetBooleanParameter(AWS_USE_FIPS, config.useFIPS || forceFIPS);
-
-        static const char* AWS_USE_DUAL_STACK = "UseDualStack";
-        SetBooleanParameter(AWS_USE_DUAL_STACK, config.useDualStack);
+        if (forceFIPS) {
+            SetBooleanParameter(AWS_USE_FIPS, true);  // legacy "fips-" region prefix/suffix
+        }
 
         if (!config.endpointOverride.empty()) {
             OverrideEndpoint(config.endpointOverride, config.scheme);

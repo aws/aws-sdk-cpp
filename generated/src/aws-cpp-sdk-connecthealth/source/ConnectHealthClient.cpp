@@ -99,43 +99,6 @@ ConnectHealthClient::ConnectHealthClient(const std::shared_ptr<AWSCredentialsPro
   init(m_clientConfiguration);
 }
 
-/* Legacy constructors due deprecation */
-ConnectHealthClient::ConnectHealthClient(const Aws::Client::ClientConfiguration& clientConfiguration)
-    : BASECLASS(
-          clientConfiguration,
-          Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
-              ALLOCATION_TAG,
-              Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
-              SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-          Aws::MakeShared<ConnectHealthErrorMarshaller>(ALLOCATION_TAG)),
-      m_clientConfiguration(clientConfiguration),
-      m_endpointProvider(Aws::MakeShared<ConnectHealthEndpointProvider>(ALLOCATION_TAG)) {
-  init(m_clientConfiguration);
-}
-
-ConnectHealthClient::ConnectHealthClient(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
-    : BASECLASS(clientConfiguration,
-                Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
-                    ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials), SERVICE_NAME,
-                    Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-                Aws::MakeShared<ConnectHealthErrorMarshaller>(ALLOCATION_TAG)),
-      m_clientConfiguration(clientConfiguration),
-      m_endpointProvider(Aws::MakeShared<ConnectHealthEndpointProvider>(ALLOCATION_TAG)) {
-  init(m_clientConfiguration);
-}
-
-ConnectHealthClient::ConnectHealthClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                         const Aws::Client::ClientConfiguration& clientConfiguration)
-    : BASECLASS(clientConfiguration,
-                Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
-                                                                      Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-                Aws::MakeShared<ConnectHealthErrorMarshaller>(ALLOCATION_TAG)),
-      m_clientConfiguration(clientConfiguration),
-      m_endpointProvider(Aws::MakeShared<ConnectHealthEndpointProvider>(ALLOCATION_TAG)) {
-  init(m_clientConfiguration);
-}
-
-/* End of legacy constructors due deprecation */
 ConnectHealthClient::~ConnectHealthClient() { ShutdownSdkClient(this, -1); }
 
 std::shared_ptr<ConnectHealthEndpointProviderBase>& ConnectHealthClient::accessEndpointProvider() { return m_endpointProvider; }
@@ -153,12 +116,7 @@ void ConnectHealthClient::init(const ConnectHealth::ConnectHealthClientConfigura
   AWSClient::SetUserAgentExecutor(*m_clientConfiguration.executor);
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config, "health-agent");
-}
-
-void ConnectHealthClient::OverrideEndpoint(const Aws::String& endpoint) {
-  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_clientConfiguration.endpointOverride = endpoint;
-  m_endpointProvider->OverrideEndpoint(endpoint);
+  ApplyServiceOptions(GetServiceClientOptions(m_clientConfiguration));
 }
 ConnectHealthClient::InvokeOperationOutcome ConnectHealthClient::InvokeServiceOperation(
     const AmazonWebServiceRequest& request, const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,

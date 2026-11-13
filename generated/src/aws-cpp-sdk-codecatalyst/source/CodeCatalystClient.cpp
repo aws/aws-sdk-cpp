@@ -91,17 +91,6 @@ CodeCatalystClient::CodeCatalystClient(const Aws::Auth::BearerTokenAuthSignerPro
   init(m_clientConfiguration);
 }
 
-/* Legacy constructors due deprecation */
-CodeCatalystClient::CodeCatalystClient(const Aws::Auth::BearerTokenAuthSignerProvider& bearerTokenProvider,
-                                       const Aws::Client::ClientConfiguration& clientConfiguration)
-    : BASECLASS(clientConfiguration, Aws::MakeShared<Aws::Auth::BearerTokenAuthSignerProvider>(ALLOCATION_TAG, bearerTokenProvider),
-                Aws::MakeShared<CodeCatalystErrorMarshaller>(ALLOCATION_TAG)),
-      m_clientConfiguration(clientConfiguration),
-      m_endpointProvider(Aws::MakeShared<CodeCatalystEndpointProvider>(ALLOCATION_TAG)) {
-  init(m_clientConfiguration);
-}
-
-/* End of legacy constructors due deprecation */
 CodeCatalystClient::~CodeCatalystClient() { ShutdownSdkClient(this, -1); }
 
 std::shared_ptr<CodeCatalystEndpointProviderBase>& CodeCatalystClient::accessEndpointProvider() { return m_endpointProvider; }
@@ -119,12 +108,7 @@ void CodeCatalystClient::init(const CodeCatalyst::CodeCatalystClientConfiguratio
   AWSClient::SetUserAgentExecutor(*m_clientConfiguration.executor);
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config, "codecatalyst");
-}
-
-void CodeCatalystClient::OverrideEndpoint(const Aws::String& endpoint) {
-  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_clientConfiguration.endpointOverride = endpoint;
-  m_endpointProvider->OverrideEndpoint(endpoint);
+  ApplyServiceOptions(GetServiceClientOptions(m_clientConfiguration));
 }
 CodeCatalystClient::InvokeOperationOutcome CodeCatalystClient::InvokeServiceOperation(
     const AmazonWebServiceRequest& request, const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,

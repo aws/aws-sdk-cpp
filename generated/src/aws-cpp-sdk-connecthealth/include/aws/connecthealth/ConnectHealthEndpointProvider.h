@@ -4,8 +4,8 @@
  */
 
 #pragma once
+#include <aws/connecthealth/ConnectHealthClientConfiguration.h>
 #include <aws/connecthealth/ConnectHealth_EXPORTS.h>
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -14,14 +14,23 @@
 namespace Aws {
 namespace ConnectHealth {
 namespace Endpoint {
+using ConnectHealthClientConfiguration = Aws::ConnectHealth::ConnectHealthClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using ConnectHealthClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using ConnectHealthClientConfiguration = Aws::Client::GenericClientConfiguration;
-using ConnectHealthBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_CONNECTHEALTH_API ConnectHealthBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~ConnectHealthBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const ConnectHealthClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const ConnectHealthClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const ConnectHealthClientConfiguration& config);
+};
 
 /**
  * The type for the ConnectHealth Client Endpoint Provider.
@@ -34,6 +43,24 @@ using ConnectHealthEndpointProviderBase =
 using ConnectHealthDefaultEpProviderBase =
     BDDEndpointProvider<ConnectHealthClientConfiguration, ConnectHealthBuiltInParameters, ConnectHealthClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace ConnectHealth
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_CONNECTHEALTH_EXTERN template class AWS_CONNECTHEALTH_API Aws::Endpoint::EndpointProviderBase<
+    ConnectHealth::Endpoint::ConnectHealthClientConfiguration, ConnectHealth::Endpoint::ConnectHealthBuiltInParameters,
+    ConnectHealth::Endpoint::ConnectHealthClientContextParameters>;
+
+AWS_CONNECTHEALTH_EXTERN template class AWS_CONNECTHEALTH_API Aws::Endpoint::BDDEndpointProvider<
+    ConnectHealth::Endpoint::ConnectHealthClientConfiguration, ConnectHealth::Endpoint::ConnectHealthBuiltInParameters,
+    ConnectHealth::Endpoint::ConnectHealthClientContextParameters>;
+}  // namespace Endpoint
+
+namespace ConnectHealth {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

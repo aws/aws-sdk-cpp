@@ -81,7 +81,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace Snowball {
-using SnowballClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SnowballEndpointProviderBase = Aws::Snowball::Endpoint::SnowballEndpointProviderBase;
 using SnowballEndpointProvider = Aws::Snowball::Endpoint::SnowballEndpointProvider;
 

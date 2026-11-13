@@ -89,7 +89,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace AppRunner {
-using AppRunnerClientConfiguration = Aws::Client::GenericClientConfiguration;
 using AppRunnerEndpointProviderBase = Aws::AppRunner::Endpoint::AppRunnerEndpointProviderBase;
 using AppRunnerEndpointProvider = Aws::AppRunner::Endpoint::AppRunnerEndpointProvider;
 

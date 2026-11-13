@@ -4,24 +4,33 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/iotsecuretunneling/IoTSecureTunnelingClientConfiguration.h>
 #include <aws/iotsecuretunneling/IoTSecureTunneling_EXPORTS.h>
 
 namespace Aws {
 namespace IoTSecureTunneling {
 namespace Endpoint {
+using IoTSecureTunnelingClientConfiguration = Aws::IoTSecureTunneling::IoTSecureTunnelingClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using IoTSecureTunnelingClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using IoTSecureTunnelingClientConfiguration = Aws::Client::GenericClientConfiguration;
-using IoTSecureTunnelingBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_IOTSECURETUNNELING_API IoTSecureTunnelingBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~IoTSecureTunnelingBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const IoTSecureTunnelingClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const IoTSecureTunnelingClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const IoTSecureTunnelingClientConfiguration& config);
+};
 
 /**
  * The type for the IoTSecureTunneling Client Endpoint Provider.
@@ -36,6 +45,24 @@ using IoTSecureTunnelingDefaultEpProviderBase =
     BDDEndpointProvider<IoTSecureTunnelingClientConfiguration, IoTSecureTunnelingBuiltInParameters,
                         IoTSecureTunnelingClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace IoTSecureTunneling
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_IOTSECURETUNNELING_EXTERN template class AWS_IOTSECURETUNNELING_API Aws::Endpoint::EndpointProviderBase<
+    IoTSecureTunneling::Endpoint::IoTSecureTunnelingClientConfiguration, IoTSecureTunneling::Endpoint::IoTSecureTunnelingBuiltInParameters,
+    IoTSecureTunneling::Endpoint::IoTSecureTunnelingClientContextParameters>;
+
+AWS_IOTSECURETUNNELING_EXTERN template class AWS_IOTSECURETUNNELING_API Aws::Endpoint::BDDEndpointProvider<
+    IoTSecureTunneling::Endpoint::IoTSecureTunnelingClientConfiguration, IoTSecureTunneling::Endpoint::IoTSecureTunnelingBuiltInParameters,
+    IoTSecureTunneling::Endpoint::IoTSecureTunnelingClientContextParameters>;
+}  // namespace Endpoint
+
+namespace IoTSecureTunneling {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

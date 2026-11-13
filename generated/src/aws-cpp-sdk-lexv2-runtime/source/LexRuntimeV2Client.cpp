@@ -89,43 +89,6 @@ LexRuntimeV2Client::LexRuntimeV2Client(const std::shared_ptr<AWSCredentialsProvi
   init(m_clientConfiguration);
 }
 
-/* Legacy constructors due deprecation */
-LexRuntimeV2Client::LexRuntimeV2Client(const Aws::Client::ClientConfiguration& clientConfiguration)
-    : BASECLASS(
-          clientConfiguration,
-          Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
-              ALLOCATION_TAG,
-              Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.ResolveCredentialProviderConfig()),
-              SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-          Aws::MakeShared<LexRuntimeV2ErrorMarshaller>(ALLOCATION_TAG)),
-      m_clientConfiguration(clientConfiguration),
-      m_endpointProvider(Aws::MakeShared<LexRuntimeV2EndpointProvider>(ALLOCATION_TAG)) {
-  init(m_clientConfiguration);
-}
-
-LexRuntimeV2Client::LexRuntimeV2Client(const AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration)
-    : BASECLASS(clientConfiguration,
-                Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(
-                    ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials), SERVICE_NAME,
-                    Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-                Aws::MakeShared<LexRuntimeV2ErrorMarshaller>(ALLOCATION_TAG)),
-      m_clientConfiguration(clientConfiguration),
-      m_endpointProvider(Aws::MakeShared<LexRuntimeV2EndpointProvider>(ALLOCATION_TAG)) {
-  init(m_clientConfiguration);
-}
-
-LexRuntimeV2Client::LexRuntimeV2Client(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                                       const Aws::Client::ClientConfiguration& clientConfiguration)
-    : BASECLASS(clientConfiguration,
-                Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
-                                                                      Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
-                Aws::MakeShared<LexRuntimeV2ErrorMarshaller>(ALLOCATION_TAG)),
-      m_clientConfiguration(clientConfiguration),
-      m_endpointProvider(Aws::MakeShared<LexRuntimeV2EndpointProvider>(ALLOCATION_TAG)) {
-  init(m_clientConfiguration);
-}
-
-/* End of legacy constructors due deprecation */
 LexRuntimeV2Client::~LexRuntimeV2Client() { ShutdownSdkClient(this, -1); }
 
 std::shared_ptr<LexRuntimeV2EndpointProviderBase>& LexRuntimeV2Client::accessEndpointProvider() { return m_endpointProvider; }
@@ -143,12 +106,7 @@ void LexRuntimeV2Client::init(const LexRuntimeV2::LexRuntimeV2ClientConfiguratio
   AWSClient::SetUserAgentExecutor(*m_clientConfiguration.executor);
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->InitBuiltInParameters(config, "lex");
-}
-
-void LexRuntimeV2Client::OverrideEndpoint(const Aws::String& endpoint) {
-  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
-  m_clientConfiguration.endpointOverride = endpoint;
-  m_endpointProvider->OverrideEndpoint(endpoint);
+  ApplyServiceOptions(GetServiceClientOptions(m_clientConfiguration));
 }
 LexRuntimeV2Client::InvokeOperationOutcome LexRuntimeV2Client::InvokeServiceOperation(
     const AmazonWebServiceRequest& request, const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,

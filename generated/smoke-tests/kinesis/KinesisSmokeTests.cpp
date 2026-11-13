@@ -35,8 +35,6 @@ TEST_F(KinesisSmokeTestSuite, DescribeStreamFailure )
 {
     Aws::Kinesis::KinesisClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<KinesisClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     
@@ -49,8 +47,6 @@ TEST_F(KinesisSmokeTestSuite, ListStreamsSuccess )
 {
     Aws::Kinesis::KinesisClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-west-2";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<KinesisClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     

@@ -75,7 +75,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace B2BI {
-using B2BIClientConfiguration = Aws::Client::GenericClientConfiguration;
 using B2BIEndpointProviderBase = Aws::B2BI::Endpoint::B2BIEndpointProviderBase;
 using B2BIEndpointProvider = Aws::B2BI::Endpoint::B2BIEndpointProvider;
 

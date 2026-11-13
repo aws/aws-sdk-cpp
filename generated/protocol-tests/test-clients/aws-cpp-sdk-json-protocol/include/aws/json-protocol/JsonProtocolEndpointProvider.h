@@ -4,24 +4,30 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/DefaultEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/json-protocol/JsonProtocolClientConfiguration.h>
 #include <aws/json-protocol/JsonProtocol_EXPORTS.h>
 
 namespace Aws {
 namespace JsonProtocol {
 namespace Endpoint {
+using JsonProtocolClientConfiguration = Aws::JsonProtocol::JsonProtocolClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::DefaultEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using JsonProtocolClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using JsonProtocolClientConfiguration = Aws::Client::GenericClientConfiguration;
-using JsonProtocolBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_JSONPROTOCOL_API JsonProtocolBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~JsonProtocolBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const JsonProtocolClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const JsonProtocolClientConfiguration& config, const Aws::String& serviceName);
+};
 
 /**
  * The type for the JsonProtocol Client Endpoint Provider.
@@ -34,6 +40,24 @@ using JsonProtocolEndpointProviderBase =
 using JsonProtocolDefaultEpProviderBase =
     DefaultEndpointProvider<JsonProtocolClientConfiguration, JsonProtocolBuiltInParameters, JsonProtocolClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace JsonProtocol
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_JSONPROTOCOL_EXTERN template class AWS_JSONPROTOCOL_API Aws::Endpoint::EndpointProviderBase<
+    JsonProtocol::Endpoint::JsonProtocolClientConfiguration, JsonProtocol::Endpoint::JsonProtocolBuiltInParameters,
+    JsonProtocol::Endpoint::JsonProtocolClientContextParameters>;
+
+AWS_JSONPROTOCOL_EXTERN template class AWS_JSONPROTOCOL_API Aws::Endpoint::DefaultEndpointProvider<
+    JsonProtocol::Endpoint::JsonProtocolClientConfiguration, JsonProtocol::Endpoint::JsonProtocolBuiltInParameters,
+    JsonProtocol::Endpoint::JsonProtocolClientContextParameters>;
+}  // namespace Endpoint
+
+namespace JsonProtocol {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

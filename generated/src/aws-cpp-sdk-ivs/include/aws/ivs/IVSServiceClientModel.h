@@ -96,7 +96,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace IVS {
-using IVSClientConfiguration = Aws::Client::GenericClientConfiguration;
 using IVSEndpointProviderBase = Aws::IVS::Endpoint::IVSEndpointProviderBase;
 using IVSEndpointProvider = Aws::IVS::Endpoint::IVSEndpointProvider;
 

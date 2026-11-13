@@ -34,8 +34,6 @@ TEST_F(CostandUsageReportServiceSmokeTestSuite, DescribeReportDefinitionsSuccess
 {
     Aws::CostandUsageReportService::CostandUsageReportServiceClientConfiguration clientConfiguration;
     clientConfiguration.region = "us-east-1";
-    clientConfiguration.useFIPS = false;
-    clientConfiguration.useDualStack = false;
     auto clientSp = Aws::MakeShared<CostandUsageReportServiceClient>(ALLOCATION_TAG, clientConfiguration);
     //populate input params
     

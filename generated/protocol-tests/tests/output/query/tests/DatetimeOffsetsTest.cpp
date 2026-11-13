@@ -12,7 +12,7 @@ using QueryProtocolClient = Aws::QueryProtocol::QueryProtocolClient;
 using namespace Aws::QueryProtocol::Model;
 
 AWS_PROTOCOL_TEST(DatetimeOffsets, AwsQueryDateTimeWithNegativeOffset) {
-  QueryProtocolClient client(mockCredentials, mockConfig);
+  QueryProtocolClient client(mockCredentials, nullptr, Aws::QueryProtocol::QueryProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;
@@ -35,7 +35,7 @@ AWS_PROTOCOL_TEST(DatetimeOffsets, AwsQueryDateTimeWithNegativeOffset) {
 }
 
 AWS_PROTOCOL_TEST(DatetimeOffsets, AwsQueryDateTimeWithPositiveOffset) {
-  QueryProtocolClient client(mockCredentials, mockConfig);
+  QueryProtocolClient client(mockCredentials, nullptr, Aws::QueryProtocol::QueryProtocolClientConfiguration(mockConfig));
 
   OutputResponse mockRs;
   mockRs.statusCode = 200;

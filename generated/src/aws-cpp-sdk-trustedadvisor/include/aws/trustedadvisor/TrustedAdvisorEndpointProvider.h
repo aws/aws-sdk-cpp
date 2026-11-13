@@ -4,24 +4,33 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/trustedadvisor/TrustedAdvisorClientConfiguration.h>
 #include <aws/trustedadvisor/TrustedAdvisor_EXPORTS.h>
 
 namespace Aws {
 namespace TrustedAdvisor {
 namespace Endpoint {
+using TrustedAdvisorClientConfiguration = Aws::TrustedAdvisor::TrustedAdvisorClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using TrustedAdvisorClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using TrustedAdvisorClientConfiguration = Aws::Client::GenericClientConfiguration;
-using TrustedAdvisorBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_TRUSTEDADVISOR_API TrustedAdvisorBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~TrustedAdvisorBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const TrustedAdvisorClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const TrustedAdvisorClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const TrustedAdvisorClientConfiguration& config);
+};
 
 /**
  * The type for the TrustedAdvisor Client Endpoint Provider.
@@ -34,6 +43,24 @@ using TrustedAdvisorEndpointProviderBase =
 using TrustedAdvisorDefaultEpProviderBase =
     BDDEndpointProvider<TrustedAdvisorClientConfiguration, TrustedAdvisorBuiltInParameters, TrustedAdvisorClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace TrustedAdvisor
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_TRUSTEDADVISOR_EXTERN template class AWS_TRUSTEDADVISOR_API Aws::Endpoint::EndpointProviderBase<
+    TrustedAdvisor::Endpoint::TrustedAdvisorClientConfiguration, TrustedAdvisor::Endpoint::TrustedAdvisorBuiltInParameters,
+    TrustedAdvisor::Endpoint::TrustedAdvisorClientContextParameters>;
+
+AWS_TRUSTEDADVISOR_EXTERN template class AWS_TRUSTEDADVISOR_API Aws::Endpoint::BDDEndpointProvider<
+    TrustedAdvisor::Endpoint::TrustedAdvisorClientConfiguration, TrustedAdvisor::Endpoint::TrustedAdvisorBuiltInParameters,
+    TrustedAdvisor::Endpoint::TrustedAdvisorClientContextParameters>;
+}  // namespace Endpoint
+
+namespace TrustedAdvisor {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

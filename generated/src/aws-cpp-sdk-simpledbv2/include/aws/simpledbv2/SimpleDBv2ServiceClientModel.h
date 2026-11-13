@@ -50,7 +50,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace SimpleDBv2 {
-using SimpleDBv2ClientConfiguration = Aws::Client::GenericClientConfiguration;
 using SimpleDBv2EndpointProviderBase = Aws::SimpleDBv2::Endpoint::SimpleDBv2EndpointProviderBase;
 using SimpleDBv2EndpointProvider = Aws::SimpleDBv2::Endpoint::SimpleDBv2EndpointProvider;
 

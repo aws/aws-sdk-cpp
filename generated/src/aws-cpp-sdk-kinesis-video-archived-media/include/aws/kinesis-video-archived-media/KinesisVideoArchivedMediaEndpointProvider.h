@@ -4,24 +4,33 @@
  */
 
 #pragma once
-#include <aws/core/client/GenericClientConfiguration.h>
 #include <aws/core/endpoint/BDDEndpointProvider.h>
 #include <aws/core/endpoint/EndpointParameter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/kinesis-video-archived-media/KinesisVideoArchivedMediaClientConfiguration.h>
 #include <aws/kinesis-video-archived-media/KinesisVideoArchivedMedia_EXPORTS.h>
 
 namespace Aws {
 namespace KinesisVideoArchivedMedia {
 namespace Endpoint {
+using KinesisVideoArchivedMediaClientConfiguration = Aws::KinesisVideoArchivedMedia::KinesisVideoArchivedMediaClientConfiguration;
 using EndpointParameters = Aws::Endpoint::EndpointParameters;
 using Aws::Endpoint::BDDEndpointProvider;
 using Aws::Endpoint::EndpointProviderBase;
 
 using KinesisVideoArchivedMediaClientContextParameters = Aws::Endpoint::ClientContextParameters;
 
-using KinesisVideoArchivedMediaClientConfiguration = Aws::Client::GenericClientConfiguration;
-using KinesisVideoArchivedMediaBuiltInParameters = Aws::Endpoint::BuiltInParameters;
+class AWS_KINESISVIDEOARCHIVEDMEDIA_API KinesisVideoArchivedMediaBuiltInParameters : public Aws::Endpoint::BuiltInParameters {
+ public:
+  virtual ~KinesisVideoArchivedMediaBuiltInParameters() {};
+  using Aws::Endpoint::BuiltInParameters::SetFromClientConfiguration;
+  virtual void SetFromClientConfiguration(const KinesisVideoArchivedMediaClientConfiguration& config);
+  virtual void SetFromClientConfiguration(const KinesisVideoArchivedMediaClientConfiguration& config, const Aws::String& serviceName);
+
+ private:
+  void SetServiceSpecificParameters(const KinesisVideoArchivedMediaClientConfiguration& config);
+};
 
 /**
  * The type for the KinesisVideoArchivedMedia Client Endpoint Provider.
@@ -36,6 +45,26 @@ using KinesisVideoArchivedMediaDefaultEpProviderBase =
     BDDEndpointProvider<KinesisVideoArchivedMediaClientConfiguration, KinesisVideoArchivedMediaBuiltInParameters,
                         KinesisVideoArchivedMediaClientContextParameters>;
 
+}  // namespace Endpoint
+}  // namespace KinesisVideoArchivedMedia
+
+namespace Endpoint {
+/**
+ * Export endpoint provider symbols for Windows DLL, otherwise declare as extern
+ */
+AWS_KINESISVIDEOARCHIVEDMEDIA_EXTERN template class AWS_KINESISVIDEOARCHIVEDMEDIA_API
+    Aws::Endpoint::EndpointProviderBase<KinesisVideoArchivedMedia::Endpoint::KinesisVideoArchivedMediaClientConfiguration,
+                                        KinesisVideoArchivedMedia::Endpoint::KinesisVideoArchivedMediaBuiltInParameters,
+                                        KinesisVideoArchivedMedia::Endpoint::KinesisVideoArchivedMediaClientContextParameters>;
+
+AWS_KINESISVIDEOARCHIVEDMEDIA_EXTERN template class AWS_KINESISVIDEOARCHIVEDMEDIA_API
+    Aws::Endpoint::BDDEndpointProvider<KinesisVideoArchivedMedia::Endpoint::KinesisVideoArchivedMediaClientConfiguration,
+                                       KinesisVideoArchivedMedia::Endpoint::KinesisVideoArchivedMediaBuiltInParameters,
+                                       KinesisVideoArchivedMedia::Endpoint::KinesisVideoArchivedMediaClientContextParameters>;
+}  // namespace Endpoint
+
+namespace KinesisVideoArchivedMedia {
+namespace Endpoint {
 /**
  * Default endpoint provider used for this service
  */

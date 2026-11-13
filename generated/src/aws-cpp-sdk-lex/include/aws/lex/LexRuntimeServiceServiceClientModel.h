@@ -51,7 +51,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace LexRuntimeService {
-using LexRuntimeServiceClientConfiguration = Aws::Client::GenericClientConfiguration;
 using LexRuntimeServiceEndpointProviderBase = Aws::LexRuntimeService::Endpoint::LexRuntimeServiceEndpointProviderBase;
 using LexRuntimeServiceEndpointProvider = Aws::LexRuntimeService::Endpoint::LexRuntimeServiceEndpointProvider;
 

@@ -67,7 +67,6 @@ class RetryStrategy;
 }  // namespace Client
 
 namespace CloudWatchRUM {
-using CloudWatchRUMClientConfiguration = Aws::Client::GenericClientConfiguration;
 using CloudWatchRUMEndpointProviderBase = Aws::CloudWatchRUM::Endpoint::CloudWatchRUMEndpointProviderBase;
 using CloudWatchRUMEndpointProvider = Aws::CloudWatchRUM::Endpoint::CloudWatchRUMEndpointProvider;
 
