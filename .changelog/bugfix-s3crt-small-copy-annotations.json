@@ -1,0 +1,6 @@
+{
+  "type": "bugfix",
+  "category": "aws-cpp-sdk-s3-crt",
+  "contributor": "sbiscigl",
+  "description": "S3CrtClient::CopyObject no longer reads and rewrites annotations itself for objects under 1 GiB, because S3's single-part CopyObject already copies them. Small copies with AnnotationDirective::COPY no longer make extra annotation calls or need annotation permissions."
+}

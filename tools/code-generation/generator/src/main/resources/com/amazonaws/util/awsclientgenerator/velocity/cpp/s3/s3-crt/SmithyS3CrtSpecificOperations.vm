@@ -374,11 +374,15 @@ S3CrtClient::CopyObjectPropertiesOutcome S3CrtClient::PopulateCopyObjectProperti
     httpRequest->SetHeaderValue("x-amz-copy-source-if-match", sourceETag);
   }
 
+  // Below the multipart threshold S3's single-part CopyObject honors the metadata, tagging and
+  // annotation directives natively, so skip copying them here.
+  if (head.GetContentLength() < (1LL * 1024 * 1024 * 1024))
+  {
+    return annotations;
+  }
+
   if (copyAnnotations)
   {
-    // Neither the multipart copy nor S3's single-part CopyObject carries annotations, so always
-    // read them from the source here (regardless of size) and return them to be written to the
-    // destination after the copy completes (see the wrapped completion handler).
     Aws::String continuationToken;
     do
     {
@@ -422,13 +426,6 @@ S3CrtClient::CopyObjectPropertiesOutcome S3CrtClient::PopulateCopyObjectProperti
       }
       continuationToken = listOutcome.GetResult().GetNextContinuationToken();
     } while (!continuationToken.empty());
-  }
-
-  // Below the multipart threshold S3's single-part CopyObject honors the metadata/tagging directives
-  // natively, so skip header injection (annotations are handled above regardless of size).
-  if (head.GetContentLength() < (1LL * 1024 * 1024 * 1024))
-  {
-    return annotations;
   }
 
   if (copyMetadata)
