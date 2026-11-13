@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/transcribe/TranscribeService_EXPORTS.h>
 #include <aws/transcribe/model/CallAnalyticsFeature.h>
 #include <aws/transcribe/model/CallAnalyticsSkippedReasonCode.h>
@@ -13,10 +14,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace TranscribeService {
 namespace Model {
@@ -35,9 +35,9 @@ namespace Model {
 class CallAnalyticsSkippedFeature {
  public:
   AWS_TRANSCRIBESERVICE_API CallAnalyticsSkippedFeature() = default;
-  AWS_TRANSCRIBESERVICE_API CallAnalyticsSkippedFeature(Aws::Utils::Json::JsonView jsonValue);
-  AWS_TRANSCRIBESERVICE_API CallAnalyticsSkippedFeature& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_TRANSCRIBESERVICE_API CallAnalyticsSkippedFeature(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_TRANSCRIBESERVICE_API CallAnalyticsSkippedFeature& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_TRANSCRIBESERVICE_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

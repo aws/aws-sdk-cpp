@@ -12,6 +12,7 @@
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/glue/model/DataQualityAggregatedMetrics.h>
 #include <aws/glue/model/DataQualityAnalyzerResult.h>
+#include <aws/glue/model/DataQualityEvaluationRunMode.h>
 #include <aws/glue/model/DataQualityObservation.h>
 #include <aws/glue/model/DataQualityRuleResult.h>
 #include <aws/glue/model/DataSource.h>
@@ -48,6 +49,45 @@ class GetDataQualityResultV2Result {
   template <typename ResultIdT = Aws::String>
   GetDataQualityResultV2Result& WithResultId(ResultIdT&& value) {
     SetResultId(std::forward<ResultIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>How the evaluation run that produced the result started:
+   * <code>ON_DEMAND</code> for a run started by
+   * <code>StartDataQualityRulesetEvaluationRun</code>, or
+   * <code>EVALUATION_CONFIG</code> for a run started by a data quality evaluation
+   * configuration. Not returned for results that no evaluation run produced, such as
+   * results from any ETL job.</p>
+   */
+  inline DataQualityEvaluationRunMode GetEvaluationRunMode() const { return m_evaluationRunMode; }
+  inline void SetEvaluationRunMode(DataQualityEvaluationRunMode value) {
+    m_evaluationRunModeHasBeenSet = true;
+    m_evaluationRunMode = value;
+  }
+  inline GetDataQualityResultV2Result& WithEvaluationRunMode(DataQualityEvaluationRunMode value) {
+    SetEvaluationRunMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the data quality evaluation configuration that started the
+   * evaluation run, returned when <code>EvaluationRunMode</code> is
+   * <code>EVALUATION_CONFIG</code>.</p>
+   */
+  inline const Aws::String& GetDataQualityEvaluationConfig() const { return m_dataQualityEvaluationConfig; }
+  template <typename DataQualityEvaluationConfigT = Aws::String>
+  void SetDataQualityEvaluationConfig(DataQualityEvaluationConfigT&& value) {
+    m_dataQualityEvaluationConfigHasBeenSet = true;
+    m_dataQualityEvaluationConfig = std::forward<DataQualityEvaluationConfigT>(value);
+  }
+  template <typename DataQualityEvaluationConfigT = Aws::String>
+  GetDataQualityResultV2Result& WithDataQualityEvaluationConfig(DataQualityEvaluationConfigT&& value) {
+    SetDataQualityEvaluationConfig(std::forward<DataQualityEvaluationConfigT>(value));
     return *this;
   }
   ///@}
@@ -372,6 +412,10 @@ class GetDataQualityResultV2Result {
  private:
   Aws::String m_resultId;
 
+  DataQualityEvaluationRunMode m_evaluationRunMode{DataQualityEvaluationRunMode::NOT_SET};
+
+  Aws::String m_dataQualityEvaluationConfig;
+
   DataSource m_dataSource;
 
   Aws::String m_profileId;
@@ -405,6 +449,8 @@ class GetDataQualityResultV2Result {
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_resultIdHasBeenSet = false;
+  bool m_evaluationRunModeHasBeenSet = false;
+  bool m_dataQualityEvaluationConfigHasBeenSet = false;
   bool m_dataSourceHasBeenSet = false;
   bool m_profileIdHasBeenSet = false;
   bool m_dimensionsHasBeenSet = false;

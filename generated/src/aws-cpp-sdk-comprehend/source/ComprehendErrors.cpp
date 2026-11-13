@@ -7,6 +7,7 @@
 #include <aws/comprehend/model/InvalidRequestException.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/cbor/CborValue.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
@@ -18,7 +19,8 @@ namespace Comprehend {
 template <>
 AWS_COMPREHEND_API InvalidRequestException ComprehendError::GetModeledError() {
   assert(this->GetErrorType() == ComprehendErrors::INVALID_REQUEST);
-  return InvalidRequestException(this->GetJsonPayload().View());
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return InvalidRequestException(payload.GetDecoder());
 }
 
 namespace ComprehendErrorMapper {
@@ -45,7 +47,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   if (hashCode == UNSUPPORTED_LANGUAGE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ComprehendErrors::UNSUPPORTED_LANGUAGE), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INTERNAL_SERVER_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ComprehendErrors::INTERNAL_SERVER), RetryableType::NOT_RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ComprehendErrors::INTERNAL_SERVER), RetryableType::RETRYABLE);
   } else if (hashCode == CONCURRENT_MODIFICATION_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ComprehendErrors::CONCURRENT_MODIFICATION), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == BATCH_SIZE_LIMIT_EXCEEDED_HASH) {

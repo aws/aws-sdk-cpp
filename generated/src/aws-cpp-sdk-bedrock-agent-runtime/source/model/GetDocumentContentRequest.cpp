@@ -15,6 +15,10 @@ using namespace Aws::Utils;
 Aws::String GetDocumentContentRequest::SerializePayload() const {
   JsonValue payload;
 
+  if (m_mediaIdHasBeenSet) {
+    payload.WithString("mediaId", m_mediaId);
+  }
+
   if (m_outputFormatHasBeenSet) {
     payload.WithString("outputFormat", DocumentOutputFormatMapper::GetNameForDocumentOutputFormat(m_outputFormat));
   }

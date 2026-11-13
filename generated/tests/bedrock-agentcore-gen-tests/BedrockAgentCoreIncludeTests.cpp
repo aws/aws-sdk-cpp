@@ -120,6 +120,7 @@
 #include <aws/bedrock-agentcore/model/DeleteRecommendationResult.h>
 #include <aws/bedrock-agentcore/model/DescriptorType.h>
 #include <aws/bedrock-agentcore/model/Descriptors.h>
+#include <aws/bedrock-agentcore/model/DomainFilter.h>
 #include <aws/bedrock-agentcore/model/EfsConfiguration.h>
 #include <aws/bedrock-agentcore/model/EmbeddedCryptoWallet.h>
 #include <aws/bedrock-agentcore/model/EvaluateRequest.h>
@@ -225,6 +226,7 @@
 #include <aws/bedrock-agentcore/model/HarnessReasoningContentBlockDelta.h>
 #include <aws/bedrock-agentcore/model/HarnessReasoningTextBlock.h>
 #include <aws/bedrock-agentcore/model/HarnessRemoteMcpConfig.h>
+#include <aws/bedrock-agentcore/model/HarnessRemoteMcpOutboundAuth.h>
 #include <aws/bedrock-agentcore/model/HarnessSkill.h>
 #include <aws/bedrock-agentcore/model/HarnessSkillAwsSkillsSource.h>
 #include <aws/bedrock-agentcore/model/HarnessSkillGitAuth.h>
@@ -247,6 +249,7 @@
 #include <aws/bedrock-agentcore/model/HarnessToolUseBlockStart.h>
 #include <aws/bedrock-agentcore/model/HarnessToolUseStatus.h>
 #include <aws/bedrock-agentcore/model/HarnessToolUseType.h>
+#include <aws/bedrock-agentcore/model/IamCredentialProvider.h>
 #include <aws/bedrock-agentcore/model/IngestDataRequest.h>
 #include <aws/bedrock-agentcore/model/IngestDataResult.h>
 #include <aws/bedrock-agentcore/model/IngestPayloadType.h>
@@ -276,6 +279,8 @@
 #include <aws/bedrock-agentcore/model/InvokeHarnessInitialResponse.h>
 #include <aws/bedrock-agentcore/model/InvokeHarnessRequest.h>
 #include <aws/bedrock-agentcore/model/InvokeHarnessStreamOutput.h>
+#include <aws/bedrock-agentcore/model/InvokeWebSearchRequest.h>
+#include <aws/bedrock-agentcore/model/InvokeWebSearchResult.h>
 #include <aws/bedrock-agentcore/model/KeyPressArguments.h>
 #include <aws/bedrock-agentcore/model/KeyPressResult.h>
 #include <aws/bedrock-agentcore/model/KeyShortcutArguments.h>
@@ -384,6 +389,7 @@
 #include <aws/bedrock-agentcore/model/ProxyBypass.h>
 #include <aws/bedrock-agentcore/model/ProxyConfiguration.h>
 #include <aws/bedrock-agentcore/model/ProxyCredentials.h>
+#include <aws/bedrock-agentcore/model/PublishedDateFilter.h>
 #include <aws/bedrock-agentcore/model/RecommendationConfig.h>
 #include <aws/bedrock-agentcore/model/RecommendationEvaluationConfig.h>
 #include <aws/bedrock-agentcore/model/RecommendationEvaluatorReference.h>
@@ -420,6 +426,7 @@
 #include <aws/bedrock-agentcore/model/SearchRegistryRecordsResult.h>
 #include <aws/bedrock-agentcore/model/SecretsManagerLocation.h>
 #include <aws/bedrock-agentcore/model/ServerDefinition.h>
+#include <aws/bedrock-agentcore/model/ServiceUnavailableException.h>
 #include <aws/bedrock-agentcore/model/SessionFilter.h>
 #include <aws/bedrock-agentcore/model/SessionFilterConfig.h>
 #include <aws/bedrock-agentcore/model/SessionFinding.h>
@@ -490,6 +497,8 @@
 #include <aws/bedrock-agentcore/model/VariantConfiguration.h>
 #include <aws/bedrock-agentcore/model/VariantResult.h>
 #include <aws/bedrock-agentcore/model/ViewPort.h>
+#include <aws/bedrock-agentcore/model/WebSearchFilters.h>
+#include <aws/bedrock-agentcore/model/WebSearchResult.h>
 
 using BedrockAgentCoreIncludeTest = ::testing::Test;
 

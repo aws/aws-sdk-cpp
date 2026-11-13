@@ -4,14 +4,14 @@
  */
 
 #pragma once
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/workspaces/WorkSpaces_EXPORTS.h>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace WorkSpaces {
 namespace Model {
@@ -25,22 +25,22 @@ namespace Model {
 class CapacityStatus {
  public:
   AWS_WORKSPACES_API CapacityStatus() = default;
-  AWS_WORKSPACES_API CapacityStatus(Aws::Utils::Json::JsonView jsonValue);
-  AWS_WORKSPACES_API CapacityStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_WORKSPACES_API CapacityStatus(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_WORKSPACES_API CapacityStatus& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_WORKSPACES_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
    * <p>The number of user sessions currently available for streaming from your
    * pool.</p> <p>AvailableUserSessions = ActualUserSessions - ActiveUserSessions</p>
    */
-  inline int GetAvailableUserSessions() const { return m_availableUserSessions; }
+  inline int64_t GetAvailableUserSessions() const { return m_availableUserSessions; }
   inline bool AvailableUserSessionsHasBeenSet() const { return m_availableUserSessionsHasBeenSet; }
-  inline void SetAvailableUserSessions(int value) {
+  inline void SetAvailableUserSessions(int64_t value) {
     m_availableUserSessionsHasBeenSet = true;
     m_availableUserSessions = value;
   }
-  inline CapacityStatus& WithAvailableUserSessions(int value) {
+  inline CapacityStatus& WithAvailableUserSessions(int64_t value) {
     SetAvailableUserSessions(value);
     return *this;
   }
@@ -52,13 +52,13 @@ class CapacityStatus {
    * represents the total number of concurrent streaming sessions your pool can
    * support in a steady state.</p>
    */
-  inline int GetDesiredUserSessions() const { return m_desiredUserSessions; }
+  inline int64_t GetDesiredUserSessions() const { return m_desiredUserSessions; }
   inline bool DesiredUserSessionsHasBeenSet() const { return m_desiredUserSessionsHasBeenSet; }
-  inline void SetDesiredUserSessions(int value) {
+  inline void SetDesiredUserSessions(int64_t value) {
     m_desiredUserSessionsHasBeenSet = true;
     m_desiredUserSessions = value;
   }
-  inline CapacityStatus& WithDesiredUserSessions(int value) {
+  inline CapacityStatus& WithDesiredUserSessions(int64_t value) {
     SetDesiredUserSessions(value);
     return *this;
   }
@@ -70,13 +70,13 @@ class CapacityStatus {
    * currently streaming in your pool.</p> <p>ActualUserSessions =
    * AvailableUserSessions + ActiveUserSessions</p>
    */
-  inline int GetActualUserSessions() const { return m_actualUserSessions; }
+  inline int64_t GetActualUserSessions() const { return m_actualUserSessions; }
   inline bool ActualUserSessionsHasBeenSet() const { return m_actualUserSessionsHasBeenSet; }
-  inline void SetActualUserSessions(int value) {
+  inline void SetActualUserSessions(int64_t value) {
     m_actualUserSessionsHasBeenSet = true;
     m_actualUserSessions = value;
   }
-  inline CapacityStatus& WithActualUserSessions(int value) {
+  inline CapacityStatus& WithActualUserSessions(int64_t value) {
     SetActualUserSessions(value);
     return *this;
   }
@@ -86,25 +86,25 @@ class CapacityStatus {
   /**
    * <p>The number of user sessions currently being used for your pool.</p>
    */
-  inline int GetActiveUserSessions() const { return m_activeUserSessions; }
+  inline int64_t GetActiveUserSessions() const { return m_activeUserSessions; }
   inline bool ActiveUserSessionsHasBeenSet() const { return m_activeUserSessionsHasBeenSet; }
-  inline void SetActiveUserSessions(int value) {
+  inline void SetActiveUserSessions(int64_t value) {
     m_activeUserSessionsHasBeenSet = true;
     m_activeUserSessions = value;
   }
-  inline CapacityStatus& WithActiveUserSessions(int value) {
+  inline CapacityStatus& WithActiveUserSessions(int64_t value) {
     SetActiveUserSessions(value);
     return *this;
   }
   ///@}
  private:
-  int m_availableUserSessions{0};
+  int64_t m_availableUserSessions{0};
 
-  int m_desiredUserSessions{0};
+  int64_t m_desiredUserSessions{0};
 
-  int m_actualUserSessions{0};
+  int64_t m_actualUserSessions{0};
 
-  int m_activeUserSessions{0};
+  int64_t m_activeUserSessions{0};
   bool m_availableUserSessionsHasBeenSet = false;
   bool m_desiredUserSessionsHasBeenSet = false;
   bool m_actualUserSessionsHasBeenSet = false;

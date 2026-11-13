@@ -38,8 +38,9 @@ class ImageUsageReportEntry {
 
   ///@{
   /**
-   * <p>The type of resource (<code>ec2:Instance</code> or
-   * <code>ec2:LaunchTemplate</code>).</p>
+   * <p>The type of resource (<code>ec2:Instance</code> |
+   * <code>ec2:LaunchTemplate</code> | <code>imagebuilder:ImageRecipe</code> |
+   * <code>imagebuilder:ContainerRecipe</code>).</p>
    */
   inline const Aws::String& GetResourceType() const { return m_resourceType; }
   inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }

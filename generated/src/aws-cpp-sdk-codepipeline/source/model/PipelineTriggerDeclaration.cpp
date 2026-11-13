@@ -4,43 +4,118 @@
  */
 
 #include <aws/codepipeline/model/PipelineTriggerDeclaration.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace CodePipeline {
 namespace Model {
 
-PipelineTriggerDeclaration::PipelineTriggerDeclaration(JsonView jsonValue) { *this = jsonValue; }
+PipelineTriggerDeclaration::PipelineTriggerDeclaration(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-PipelineTriggerDeclaration& PipelineTriggerDeclaration::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("providerType")) {
-    m_providerType = PipelineTriggerProviderTypeMapper::GetPipelineTriggerProviderTypeForName(jsonValue.GetString("providerType"));
-    m_providerTypeHasBeenSet = true;
+PipelineTriggerDeclaration& PipelineTriggerDeclaration::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "providerType") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_providerType = PipelineTriggerProviderTypeMapper::GetPipelineTriggerProviderTypeForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_providerTypeHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "gitConfiguration") {
+                m_gitConfiguration = GitConfiguration(decoder);
+                m_gitConfigurationHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("PipelineTriggerDeclaration", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "providerType") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_providerType = PipelineTriggerProviderTypeMapper::GetPipelineTriggerProviderTypeForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_providerTypeHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "gitConfiguration") {
+              m_gitConfiguration = GitConfiguration(decoder);
+              m_gitConfigurationHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
+    }
   }
-  if (jsonValue.ValueExists("gitConfiguration")) {
-    m_gitConfiguration = jsonValue.GetObject("gitConfiguration");
-    m_gitConfigurationHasBeenSet = true;
-  }
+
   return *this;
 }
 
-JsonValue PipelineTriggerDeclaration::Jsonize() const {
-  JsonValue payload;
+void PipelineTriggerDeclaration::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_providerTypeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_gitConfigurationHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_providerTypeHasBeenSet) {
-    payload.WithString("providerType", PipelineTriggerProviderTypeMapper::GetNameForPipelineTriggerProviderType(m_providerType));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("providerType"));
+    encoder.WriteText(
+        Aws::Crt::ByteCursorFromCString(PipelineTriggerProviderTypeMapper::GetNameForPipelineTriggerProviderType(m_providerType).c_str()));
   }
 
   if (m_gitConfigurationHasBeenSet) {
-    payload.WithObject("gitConfiguration", m_gitConfiguration.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("gitConfiguration"));
+    m_gitConfiguration.CborEncode(encoder);
   }
-
-  return payload;
 }
 
 }  // namespace Model

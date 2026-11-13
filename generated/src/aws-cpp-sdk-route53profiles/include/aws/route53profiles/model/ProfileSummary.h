@@ -34,24 +34,6 @@ class ProfileSummary {
 
   ///@{
   /**
-   * <p> The Amazon Resource Name (ARN) of the Profile. </p>
-   */
-  inline const Aws::String& GetArn() const { return m_arn; }
-  inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-  template <typename ArnT = Aws::String>
-  void SetArn(ArnT&& value) {
-    m_arnHasBeenSet = true;
-    m_arn = std::forward<ArnT>(value);
-  }
-  template <typename ArnT = Aws::String>
-  ProfileSummary& WithArn(ArnT&& value) {
-    SetArn(std::forward<ArnT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p> ID of the Profile. </p>
    */
   inline const Aws::String& GetId() const { return m_id; }
@@ -64,6 +46,24 @@ class ProfileSummary {
   template <typename IdT = Aws::String>
   ProfileSummary& WithId(IdT&& value) {
     SetId(std::forward<IdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The Amazon Resource Name (ARN) of the Profile. </p>
+   */
+  inline const Aws::String& GetArn() const { return m_arn; }
+  inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+  template <typename ArnT = Aws::String>
+  void SetArn(ArnT&& value) {
+    m_arnHasBeenSet = true;
+    m_arn = std::forward<ArnT>(value);
+  }
+  template <typename ArnT = Aws::String>
+  ProfileSummary& WithArn(ArnT&& value) {
+    SetArn(std::forward<ArnT>(value));
     return *this;
   }
   ///@}
@@ -102,15 +102,15 @@ class ProfileSummary {
   }
   ///@}
  private:
-  Aws::String m_arn;
-
   Aws::String m_id;
+
+  Aws::String m_arn;
 
   Aws::String m_name;
 
   ShareStatus m_shareStatus{ShareStatus::NOT_SET};
-  bool m_arnHasBeenSet = false;
   bool m_idHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_shareStatusHasBeenSet = false;
 };

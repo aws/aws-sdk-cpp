@@ -5,6 +5,7 @@
 
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/cbor/CborValue.h>
 #include <aws/textract/TextractErrors.h>
 #include <aws/textract/model/HumanLoopQuotaExceededException.h>
 
@@ -18,7 +19,8 @@ namespace Textract {
 template <>
 AWS_TEXTRACT_API HumanLoopQuotaExceededException TextractError::GetModeledError() {
   assert(this->GetErrorType() == TextractErrors::HUMAN_LOOP_QUOTA_EXCEEDED);
-  return HumanLoopQuotaExceededException(this->GetJsonPayload().View());
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return HumanLoopQuotaExceededException(payload.GetDecoder());
 }
 
 namespace TextractErrorMapper {

@@ -4,35 +4,48 @@
  */
 
 #include <aws/codebuild/model/BatchGetCommandExecutionsRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 using namespace Aws::CodeBuild::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String BatchGetCommandExecutionsRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_sandboxIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_commandExecutionIdsHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_sandboxIdHasBeenSet) {
-    payload.WithString("sandboxId", m_sandboxId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("sandboxId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_sandboxId.c_str()));
   }
 
   if (m_commandExecutionIdsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> commandExecutionIdsJsonList(m_commandExecutionIds.size());
-    for (unsigned commandExecutionIdsIndex = 0; commandExecutionIdsIndex < commandExecutionIdsJsonList.GetLength();
-         ++commandExecutionIdsIndex) {
-      commandExecutionIdsJsonList[commandExecutionIdsIndex].AsString(m_commandExecutionIds[commandExecutionIdsIndex]);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("commandExecutionIds"));
+    encoder.WriteArrayStart(m_commandExecutionIds.size());
+    for (const auto& item_0 : m_commandExecutionIds) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
     }
-    payload.WithArray("commandExecutionIds", std::move(commandExecutionIdsJsonList));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection BatchGetCommandExecutionsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeBuild_20161006.BatchGetCommandExecutions"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

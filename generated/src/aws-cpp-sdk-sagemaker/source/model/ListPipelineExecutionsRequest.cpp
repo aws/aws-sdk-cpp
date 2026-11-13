@@ -43,6 +43,10 @@ Aws::String ListPipelineExecutionsRequest::SerializePayload() const {
     payload.WithInteger("MaxResults", m_maxResults);
   }
 
+  if (m_pipelineVersionAliasHasBeenSet) {
+    payload.WithString("PipelineVersionAlias", m_pipelineVersionAlias);
+  }
+
   return payload.View().WriteReadable();
 }
 

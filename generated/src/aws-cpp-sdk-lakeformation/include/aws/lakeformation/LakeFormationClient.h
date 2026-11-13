@@ -954,6 +954,43 @@ class AWS_LAKEFORMATION_API LakeFormationClient : public Aws::Client::AWSJsonCli
   }
 
   /**
+   * <p>Returns a session context for one or more user-defined functions that an
+   * integrated analytics engine runs together in a job. You must have the
+   * <code>EXECUTE</code> permission on every function in the list.</p> <p>While the
+   * session context is in use, if you don't have full <code>SELECT</code> permission
+   * on a table, the job can read the table only if every function in the session has
+   * the <code>SELECT</code> permission on it. Lake Formation enforces this
+   * check.</p> <p>To use this operation, you must have the
+   * <code>lakeformation:GetDataAccess</code> permission.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetGlueFunctionSessionContext">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetGlueFunctionSessionContextOutcome GetGlueFunctionSessionContext(
+      const Model::GetGlueFunctionSessionContextRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetGlueFunctionSessionContext that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetGlueFunctionSessionContextRequestT = Model::GetGlueFunctionSessionContextRequest>
+  Model::GetGlueFunctionSessionContextOutcomeCallable GetGlueFunctionSessionContextCallable(
+      const GetGlueFunctionSessionContextRequestT& request) const {
+    return SubmitCallable(&LakeFormationClient::GetGlueFunctionSessionContext, request);
+  }
+
+  /**
+   * An Async wrapper for GetGlueFunctionSessionContext that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetGlueFunctionSessionContextRequestT = Model::GetGlueFunctionSessionContextRequest>
+  void GetGlueFunctionSessionContextAsync(const GetGlueFunctionSessionContextRequestT& request,
+                                          const GetGlueFunctionSessionContextResponseReceivedHandler& handler,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LakeFormationClient::GetGlueFunctionSessionContext, request, handler, context);
+  }
+
+  /**
    * <p>Returns an LF-tag definition.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetLFTag">AWS
    * API Reference</a></p>
@@ -1187,6 +1224,41 @@ class AWS_LAKEFORMATION_API LakeFormationClient : public Aws::Client::AWSJsonCli
                                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                                 const GetTemporaryDataLocationCredentialsRequestT& request = {}) const {
     return SubmitAsync(&LakeFormationClient::GetTemporaryDataLocationCredentials, request, handler, context);
+  }
+
+  /**
+   * <p>Returns temporary credentials that you can use to download the artifacts of a
+   * user-defined function whose <code>GovernanceMode</code> is
+   * <code>LAKE_FORMATION</code>. Lake Formation assumes the role that you registered
+   * for the function's <code>ArtifactLocation</code>. The credentials have read-only
+   * access to that location in Amazon S3.</p> <p>To use this operation, you must
+   * have the <code>EXECUTE</code> permission on the function.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetTemporaryGlueFunctionCredentials">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetTemporaryGlueFunctionCredentialsOutcome GetTemporaryGlueFunctionCredentials(
+      const Model::GetTemporaryGlueFunctionCredentialsRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetTemporaryGlueFunctionCredentials that returns a future to the operation so that it can be executed in
+   * parallel to other requests.
+   */
+  template <typename GetTemporaryGlueFunctionCredentialsRequestT = Model::GetTemporaryGlueFunctionCredentialsRequest>
+  Model::GetTemporaryGlueFunctionCredentialsOutcomeCallable GetTemporaryGlueFunctionCredentialsCallable(
+      const GetTemporaryGlueFunctionCredentialsRequestT& request) const {
+    return SubmitCallable(&LakeFormationClient::GetTemporaryGlueFunctionCredentials, request);
+  }
+
+  /**
+   * An Async wrapper for GetTemporaryGlueFunctionCredentials that queues the request into a thread executor and triggers associated
+   * callback when operation has finished.
+   */
+  template <typename GetTemporaryGlueFunctionCredentialsRequestT = Model::GetTemporaryGlueFunctionCredentialsRequest>
+  void GetTemporaryGlueFunctionCredentialsAsync(const GetTemporaryGlueFunctionCredentialsRequestT& request,
+                                                const GetTemporaryGlueFunctionCredentialsResponseReceivedHandler& handler,
+                                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LakeFormationClient::GetTemporaryGlueFunctionCredentials, request, handler, context);
   }
 
   /**

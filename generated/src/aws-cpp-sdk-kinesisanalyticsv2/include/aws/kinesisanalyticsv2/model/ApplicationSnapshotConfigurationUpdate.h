@@ -5,6 +5,9 @@
 
 #pragma once
 #include <aws/kinesisanalyticsv2/KinesisAnalyticsV2_EXPORTS.h>
+#include <aws/kinesisanalyticsv2/model/SnapshotMode.h>
+
+#include <utility>
 
 namespace Aws {
 namespace Utils {
@@ -44,9 +47,37 @@ class ApplicationSnapshotConfigurationUpdate {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Describes updates to the snapshot mode of a Managed Service for Apache Flink
+   * application. You can update the snapshot mode from
+   * <code>APPLICATION_SNAPSHOTS_LEGACY</code> to <code>ENHANCED_SNAPSHOTS</code>.
+   * You can't use <code>UpdateApplication</code> to change the snapshot mode back to
+   * <code>APPLICATION_SNAPSHOTS_LEGACY</code>.</p> <p>To return to
+   * <code>APPLICATION_SNAPSHOTS_LEGACY</code>, use <code>RollbackApplication</code>.
+   * After you update an application that uses <code>ENHANCED_SNAPSHOTS</code>, you
+   * can't roll it back to <code>APPLICATION_SNAPSHOTS_LEGACY</code>.</p> <p>To use
+   * <code>ENHANCED_SNAPSHOTS</code>, the application must use Apache Flink version
+   * 1.20 or later.</p>
+   */
+  inline SnapshotMode GetSnapshotModeUpdate() const { return m_snapshotModeUpdate; }
+  inline bool SnapshotModeUpdateHasBeenSet() const { return m_snapshotModeUpdateHasBeenSet; }
+  inline void SetSnapshotModeUpdate(SnapshotMode value) {
+    m_snapshotModeUpdateHasBeenSet = true;
+    m_snapshotModeUpdate = value;
+  }
+  inline ApplicationSnapshotConfigurationUpdate& WithSnapshotModeUpdate(SnapshotMode value) {
+    SetSnapshotModeUpdate(value);
+    return *this;
+  }
+  ///@}
  private:
   bool m_snapshotsEnabledUpdate{false};
+
+  SnapshotMode m_snapshotModeUpdate{SnapshotMode::NOT_SET};
   bool m_snapshotsEnabledUpdateHasBeenSet = false;
+  bool m_snapshotModeUpdateHasBeenSet = false;
 };
 
 }  // namespace Model

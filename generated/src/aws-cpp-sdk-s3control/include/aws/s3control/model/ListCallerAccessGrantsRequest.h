@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3control/S3ControlRequest.h>
 #include <aws/s3control/S3Control_EXPORTS.h>
+#include <aws/s3control/model/InstanceScope.h>
 
 #include <utility>
 
@@ -138,6 +139,27 @@ class ListCallerAccessGrantsRequest : public S3ControlRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The scope of S3 Access Grants instances to list grants from.</p> <ul> <li>
+   * <p> <code>SELF</code> – Lists grants from the instance of the Amazon Web
+   * Services account ID in the request.</p> </li> <li> <p> <code>ALL</code> – Lists
+   * grants from the instance of the Amazon Web Services account ID in the request
+   * and all instances shared with the caller's account through Amazon Web Services
+   * Resource Access Manager (RAM).</p> </li> </ul>
+   */
+  inline InstanceScope GetInstanceScope() const { return m_instanceScope; }
+  inline bool InstanceScopeHasBeenSet() const { return m_instanceScopeHasBeenSet; }
+  inline void SetInstanceScope(InstanceScope value) {
+    m_instanceScopeHasBeenSet = true;
+    m_instanceScope = value;
+  }
+  inline ListCallerAccessGrantsRequest& WithInstanceScope(InstanceScope value) {
+    SetInstanceScope(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_accountId;
 
@@ -148,11 +170,14 @@ class ListCallerAccessGrantsRequest : public S3ControlRequest {
   int m_maxResults{0};
 
   bool m_allowedByApplication{false};
+
+  InstanceScope m_instanceScope{InstanceScope::NOT_SET};
   bool m_accountIdHasBeenSet = false;
   bool m_grantScopeHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_allowedByApplicationHasBeenSet = false;
+  bool m_instanceScopeHasBeenSet = false;
 };
 
 }  // namespace Model

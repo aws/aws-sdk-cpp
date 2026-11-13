@@ -13,6 +13,7 @@
 #include <aws/mediaconvert/model/AccelerationStatus.h>
 #include <aws/mediaconvert/model/BillingTagsSource.h>
 #include <aws/mediaconvert/model/ElementalInferenceConfiguration.h>
+#include <aws/mediaconvert/model/ElementalInferenceSettings.h>
 #include <aws/mediaconvert/model/HopDestination.h>
 #include <aws/mediaconvert/model/JobMessages.h>
 #include <aws/mediaconvert/model/JobPhase.h>
@@ -204,6 +205,24 @@ class Job {
   template <typename ElementalInferenceConfigurationT = ElementalInferenceConfiguration>
   Job& WithElementalInferenceConfiguration(ElementalInferenceConfigurationT&& value) {
     SetElementalInferenceConfiguration(std::forward<ElementalInferenceConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * The Elemental Inference settings used in this job.
+   */
+  inline const ElementalInferenceSettings& GetElementalInferenceSettings() const { return m_elementalInferenceSettings; }
+  inline bool ElementalInferenceSettingsHasBeenSet() const { return m_elementalInferenceSettingsHasBeenSet; }
+  template <typename ElementalInferenceSettingsT = ElementalInferenceSettings>
+  void SetElementalInferenceSettings(ElementalInferenceSettingsT&& value) {
+    m_elementalInferenceSettingsHasBeenSet = true;
+    m_elementalInferenceSettings = std::forward<ElementalInferenceSettingsT>(value);
+  }
+  template <typename ElementalInferenceSettingsT = ElementalInferenceSettings>
+  Job& WithElementalInferenceSettings(ElementalInferenceSettingsT&& value) {
+    SetElementalInferenceSettings(std::forward<ElementalInferenceSettingsT>(value));
     return *this;
   }
   ///@}
@@ -705,6 +724,8 @@ class Job {
 
   ElementalInferenceConfiguration m_elementalInferenceConfiguration;
 
+  ElementalInferenceSettings m_elementalInferenceSettings;
+
   int m_errorCode{0};
 
   Aws::String m_errorMessage;
@@ -760,6 +781,7 @@ class Job {
   bool m_createdAtHasBeenSet = false;
   bool m_currentPhaseHasBeenSet = false;
   bool m_elementalInferenceConfigurationHasBeenSet = false;
+  bool m_elementalInferenceSettingsHasBeenSet = false;
   bool m_errorCodeHasBeenSet = false;
   bool m_errorMessageHasBeenSet = false;
   bool m_hopDestinationsHasBeenSet = false;

@@ -16,12 +16,15 @@ namespace Model {
 namespace MembershipTypeFilterMapper {
 
 static const int USER_HASH = HashingUtils::HashString("USER");
+static const int GROUP_HASH = HashingUtils::HashString("GROUP");
 static const int ALL_HASH = HashingUtils::HashString("ALL");
 
 MembershipTypeFilter GetMembershipTypeFilterForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == USER_HASH) {
     return MembershipTypeFilter::USER;
+  } else if (hashCode == GROUP_HASH) {
+    return MembershipTypeFilter::GROUP;
   } else if (hashCode == ALL_HASH) {
     return MembershipTypeFilter::ALL;
   }
@@ -40,6 +43,8 @@ Aws::String GetNameForMembershipTypeFilter(MembershipTypeFilter enumValue) {
       return {};
     case MembershipTypeFilter::USER:
       return "USER";
+    case MembershipTypeFilter::GROUP:
+      return "GROUP";
     case MembershipTypeFilter::ALL:
       return "ALL";
     default:

@@ -7,6 +7,8 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/route53/Route53Errors.h>
 #include <aws/route53/model/InvalidChangeBatch.h>
+#include <aws/route53/model/InvalidResourceRecordSetProtectionBatch.h>
+#include <aws/route53/model/ProtectionAlreadyExists.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
@@ -19,6 +21,18 @@ template <>
 AWS_ROUTE53_API InvalidChangeBatch Route53Error::GetModeledError() {
   assert(this->GetErrorType() == Route53Errors::INVALID_CHANGE_BATCH);
   return InvalidChangeBatch(this->GetXmlPayload().GetRootElement());
+}
+
+template <>
+AWS_ROUTE53_API InvalidResourceRecordSetProtectionBatch Route53Error::GetModeledError() {
+  assert(this->GetErrorType() == Route53Errors::INVALID_RESOURCE_RECORD_SET_PROTECTION_BATCH);
+  return InvalidResourceRecordSetProtectionBatch(this->GetXmlPayload().GetRootElement());
+}
+
+template <>
+AWS_ROUTE53_API ProtectionAlreadyExists Route53Error::GetModeledError() {
+  assert(this->GetErrorType() == Route53Errors::PROTECTION_ALREADY_EXISTS);
+  return ProtectionAlreadyExists(this->GetXmlPayload().GetRootElement());
 }
 
 namespace Route53ErrorMapper {
@@ -34,6 +48,7 @@ static const int HOSTED_ZONE_NOT_EMPTY_HASH = HashingUtils::HashString("HostedZo
 static const int TOO_MANY_TRAFFIC_POLICY_INSTANCES_HASH = HashingUtils::HashString("TooManyTrafficPolicyInstances");
 static const int KEY_SIGNING_KEY_ALREADY_EXISTS_HASH = HashingUtils::HashString("KeySigningKeyAlreadyExists");
 static const int INVALID_CHANGE_BATCH_HASH = HashingUtils::HashString("InvalidChangeBatch");
+static const int INVALID_RESOURCE_RECORD_SET_PROTECTION_BATCH_HASH = HashingUtils::HashString("InvalidResourceRecordSetProtectionBatch");
 static const int NO_SUCH_CLOUD_WATCH_LOGS_LOG_GROUP_HASH = HashingUtils::HashString("NoSuchCloudWatchLogsLogGroup");
 static const int INVALID_V_P_C_ID_HASH = HashingUtils::HashString("InvalidVPCId");
 static const int CIDR_BLOCK_IN_USE_HASH = HashingUtils::HashString("CidrBlockInUseException");
@@ -61,6 +76,7 @@ static const int INVALID_K_M_S_ARN_HASH = HashingUtils::HashString("InvalidKMSAr
 static const int DELEGATION_SET_NOT_REUSABLE_HASH = HashingUtils::HashString("DelegationSetNotReusable");
 static const int INVALID_KEY_SIGNING_KEY_STATUS_HASH = HashingUtils::HashString("InvalidKeySigningKeyStatus");
 static const int TOO_MANY_HEALTH_CHECKS_HASH = HashingUtils::HashString("TooManyHealthChecks");
+static const int PROTECTION_ALREADY_EXISTS_HASH = HashingUtils::HashString("ProtectionAlreadyExists");
 static const int DELEGATION_SET_IN_USE_HASH = HashingUtils::HashString("DelegationSetInUse");
 static const int INVALID_SIGNING_STATUS_HASH = HashingUtils::HashString("InvalidSigningStatus");
 static const int HEALTH_CHECK_IN_USE_HASH = HashingUtils::HashString("HealthCheckInUse");
@@ -119,6 +135,9 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53Errors::KEY_SIGNING_KEY_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INVALID_CHANGE_BATCH_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53Errors::INVALID_CHANGE_BATCH), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == INVALID_RESOURCE_RECORD_SET_PROTECTION_BATCH_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53Errors::INVALID_RESOURCE_RECORD_SET_PROTECTION_BATCH),
+                                RetryableType::NOT_RETRYABLE);
   } else if (hashCode == NO_SUCH_CLOUD_WATCH_LOGS_LOG_GROUP_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53Errors::NO_SUCH_CLOUD_WATCH_LOGS_LOG_GROUP), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INVALID_V_P_C_ID_HASH) {
@@ -172,6 +191,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53Errors::INVALID_KEY_SIGNING_KEY_STATUS), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == TOO_MANY_HEALTH_CHECKS_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53Errors::TOO_MANY_HEALTH_CHECKS), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == PROTECTION_ALREADY_EXISTS_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53Errors::PROTECTION_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == DELEGATION_SET_IN_USE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53Errors::DELEGATION_SET_IN_USE), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == INVALID_SIGNING_STATUS_HASH) {

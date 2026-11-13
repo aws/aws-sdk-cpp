@@ -60,6 +60,7 @@
 #include <aws/ram/model/SetDefaultPermissionVersionResult.h>
 #include <aws/ram/model/TagResourceResult.h>
 #include <aws/ram/model/UntagResourceResult.h>
+#include <aws/ram/model/UpdatePermissionResult.h>
 #include <aws/ram/model/UpdateResourceShareResult.h>
 /* End of service model headers required in RAMClient header */
 
@@ -128,6 +129,7 @@ class ReplacePermissionAssociationsRequest;
 class SetDefaultPermissionVersionRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
+class UpdatePermissionRequest;
 class UpdateResourceShareRequest;
 /* End of service model forward declarations required in RAMClient header */
 
@@ -166,6 +168,7 @@ typedef Aws::Utils::Outcome<ReplacePermissionAssociationsResult, RAMError> Repla
 typedef Aws::Utils::Outcome<SetDefaultPermissionVersionResult, RAMError> SetDefaultPermissionVersionOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, RAMError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, RAMError> UntagResourceOutcome;
+typedef Aws::Utils::Outcome<UpdatePermissionResult, RAMError> UpdatePermissionOutcome;
 typedef Aws::Utils::Outcome<UpdateResourceShareResult, RAMError> UpdateResourceShareOutcome;
 /* End of service model Outcome class definitions */
 
@@ -204,6 +207,7 @@ typedef std::future<ReplacePermissionAssociationsOutcome> ReplacePermissionAssoc
 typedef std::future<SetDefaultPermissionVersionOutcome> SetDefaultPermissionVersionOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+typedef std::future<UpdatePermissionOutcome> UpdatePermissionOutcomeCallable;
 typedef std::future<UpdateResourceShareOutcome> UpdateResourceShareOutcomeCallable;
 /* End of service model Outcome callable definitions */
 }  // namespace Model
@@ -325,6 +329,9 @@ typedef std::function<void(const RAMClient*, const Model::TagResourceRequest&, c
 typedef std::function<void(const RAMClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UntagResourceResponseReceivedHandler;
+typedef std::function<void(const RAMClient*, const Model::UpdatePermissionRequest&, const Model::UpdatePermissionOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdatePermissionResponseReceivedHandler;
 typedef std::function<void(const RAMClient*, const Model::UpdateResourceShareRequest&, const Model::UpdateResourceShareOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateResourceShareResponseReceivedHandler;

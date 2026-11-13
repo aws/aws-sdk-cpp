@@ -46,6 +46,7 @@
 #include <aws/bedrock-agentcore/model/InvokeBrowserRequest.h>
 #include <aws/bedrock-agentcore/model/InvokeCodeInterpreterRequest.h>
 #include <aws/bedrock-agentcore/model/InvokeHarnessRequest.h>
+#include <aws/bedrock-agentcore/model/InvokeWebSearchRequest.h>
 #include <aws/bedrock-agentcore/model/ListABTestsRequest.h>
 #include <aws/bedrock-agentcore/model/ListActorsRequest.h>
 #include <aws/bedrock-agentcore/model/ListBatchEvaluationsRequest.h>
@@ -1069,6 +1070,25 @@ InvokeHarnessOutcome BedrockAgentCoreClient::InvokeHarness(InvokeHarnessRequest&
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+InvokeWebSearchOutcome BedrockAgentCoreClient::InvokeWebSearch(const InvokeWebSearchRequest& request) const {
+  if (!request.WebSearchIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("InvokeWebSearch", "Required field: WebSearchId, is not set");
+    return InvokeWebSearchOutcome(Aws::Client::AWSError<BedrockAgentCoreErrors>(
+        BedrockAgentCoreErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WebSearchId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/web-search/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetWebSearchId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/invoke");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? InvokeWebSearchOutcome(result.GetResultWithOwnership())
+                            : InvokeWebSearchOutcome(std::move(result.GetError()));
 }
 
 ListABTestsOutcome BedrockAgentCoreClient::ListABTests(const ListABTestsRequest& request) const {

@@ -315,7 +315,8 @@
     "eusc",
     "EUSC",
     "CBOR",
-    "cbor"
+    "cbor",
+    "dualstack"
   ],
   "ignoreWords": [
     // variables defined in ConcurrentStreamBuf
@@ -336,6 +337,8 @@
     "dtmp",
     "ytmpe",
     "dtmpe",
-    "isleapyear"
+    "isleapyear",
+    // ClassifyUnmodeledTooManyRequests
+    "Unmodeled"
   ]
 }

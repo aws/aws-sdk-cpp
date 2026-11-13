@@ -8,30 +8,30 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/workspaces/WorkSpaces_EXPORTS.h>
 #include <aws/workspaces/model/CustomWorkspaceImageImportErrorDetails.h>
 #include <aws/workspaces/model/CustomWorkspaceImageImportState.h>
 #include <aws/workspaces/model/ImageSourceIdentifier.h>
 
 #include <utility>
-
 namespace Aws {
 template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
 namespace Utils {
-namespace Json {
-class JsonValue;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace WorkSpaces {
 namespace Model {
 class DescribeCustomWorkspaceImageImportResult {
  public:
   AWS_WORKSPACES_API DescribeCustomWorkspaceImageImportResult() = default;
-  AWS_WORKSPACES_API DescribeCustomWorkspaceImageImportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_WORKSPACES_API DescribeCustomWorkspaceImageImportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
   AWS_WORKSPACES_API DescribeCustomWorkspaceImageImportResult& operator=(
-      const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+      const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
 
   ///@{
   /**
@@ -104,12 +104,12 @@ class DescribeCustomWorkspaceImageImportResult {
   /**
    * <p>The estimated progress percentage of the WorkSpace image import workflow.</p>
    */
-  inline int GetProgressPercentage() const { return m_progressPercentage; }
-  inline void SetProgressPercentage(int value) {
+  inline int64_t GetProgressPercentage() const { return m_progressPercentage; }
+  inline void SetProgressPercentage(int64_t value) {
     m_progressPercentageHasBeenSet = true;
     m_progressPercentage = value;
   }
-  inline DescribeCustomWorkspaceImageImportResult& WithProgressPercentage(int value) {
+  inline DescribeCustomWorkspaceImageImportResult& WithProgressPercentage(int64_t value) {
     SetProgressPercentage(value);
     return *this;
   }
@@ -232,7 +232,7 @@ class DescribeCustomWorkspaceImageImportResult {
 
   Aws::String m_stateMessage;
 
-  int m_progressPercentage{0};
+  int64_t m_progressPercentage{0};
 
   Aws::Utils::DateTime m_created{};
 

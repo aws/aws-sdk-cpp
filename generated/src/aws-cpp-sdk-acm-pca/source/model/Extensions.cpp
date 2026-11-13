@@ -4,100 +4,367 @@
  */
 
 #include <aws/acm-pca/model/Extensions.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace ACMPCA {
 namespace Model {
 
-Extensions::Extensions(JsonView jsonValue) { *this = jsonValue; }
+Extensions::Extensions(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-Extensions& Extensions::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("CertificatePolicies")) {
-    Aws::Utils::Array<JsonView> certificatePoliciesJsonList = jsonValue.GetArray("CertificatePolicies");
-    for (unsigned certificatePoliciesIndex = 0; certificatePoliciesIndex < certificatePoliciesJsonList.GetLength();
-         ++certificatePoliciesIndex) {
-      m_certificatePolicies.push_back(certificatePoliciesJsonList[certificatePoliciesIndex].AsObject());
+Extensions& Extensions::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "CertificatePolicies") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_certificatePolicies.push_back(PolicyInformation(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_certificatePolicies.push_back(PolicyInformation(decoder));
+                    }
+                  }
+                }
+                m_certificatePoliciesHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "ExtendedKeyUsage") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_extendedKeyUsage.push_back(ExtendedKeyUsage(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_extendedKeyUsage.push_back(ExtendedKeyUsage(decoder));
+                    }
+                  }
+                }
+                m_extendedKeyUsageHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "KeyUsage") {
+                m_keyUsage = KeyUsage(decoder);
+                m_keyUsageHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "SubjectAlternativeNames") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_subjectAlternativeNames.push_back(GeneralName(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_subjectAlternativeNames.push_back(GeneralName(decoder));
+                    }
+                  }
+                }
+                m_subjectAlternativeNamesHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "CustomExtensions") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_customExtensions.push_back(CustomExtension(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_customExtensions.push_back(CustomExtension(decoder));
+                    }
+                  }
+                }
+                m_customExtensionsHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("Extensions", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "CertificatePolicies") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_certificatePolicies.push_back(PolicyInformation(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_certificatePolicies.push_back(PolicyInformation(decoder));
+                  }
+                }
+              }
+              m_certificatePoliciesHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "ExtendedKeyUsage") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_extendedKeyUsage.push_back(ExtendedKeyUsage(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_extendedKeyUsage.push_back(ExtendedKeyUsage(decoder));
+                  }
+                }
+              }
+              m_extendedKeyUsageHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "KeyUsage") {
+              m_keyUsage = KeyUsage(decoder);
+              m_keyUsageHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "SubjectAlternativeNames") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_subjectAlternativeNames.push_back(GeneralName(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_subjectAlternativeNames.push_back(GeneralName(decoder));
+                  }
+                }
+              }
+              m_subjectAlternativeNamesHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "CustomExtensions") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_customExtensions.push_back(CustomExtension(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_customExtensions.push_back(CustomExtension(decoder));
+                  }
+                }
+              }
+              m_customExtensionsHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
     }
-    m_certificatePoliciesHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("ExtendedKeyUsage")) {
-    Aws::Utils::Array<JsonView> extendedKeyUsageJsonList = jsonValue.GetArray("ExtendedKeyUsage");
-    for (unsigned extendedKeyUsageIndex = 0; extendedKeyUsageIndex < extendedKeyUsageJsonList.GetLength(); ++extendedKeyUsageIndex) {
-      m_extendedKeyUsage.push_back(extendedKeyUsageJsonList[extendedKeyUsageIndex].AsObject());
-    }
-    m_extendedKeyUsageHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("KeyUsage")) {
-    m_keyUsage = jsonValue.GetObject("KeyUsage");
-    m_keyUsageHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("SubjectAlternativeNames")) {
-    Aws::Utils::Array<JsonView> subjectAlternativeNamesJsonList = jsonValue.GetArray("SubjectAlternativeNames");
-    for (unsigned subjectAlternativeNamesIndex = 0; subjectAlternativeNamesIndex < subjectAlternativeNamesJsonList.GetLength();
-         ++subjectAlternativeNamesIndex) {
-      m_subjectAlternativeNames.push_back(subjectAlternativeNamesJsonList[subjectAlternativeNamesIndex].AsObject());
-    }
-    m_subjectAlternativeNamesHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("CustomExtensions")) {
-    Aws::Utils::Array<JsonView> customExtensionsJsonList = jsonValue.GetArray("CustomExtensions");
-    for (unsigned customExtensionsIndex = 0; customExtensionsIndex < customExtensionsJsonList.GetLength(); ++customExtensionsIndex) {
-      m_customExtensions.push_back(customExtensionsJsonList[customExtensionsIndex].AsObject());
-    }
-    m_customExtensionsHasBeenSet = true;
-  }
+
   return *this;
 }
 
-JsonValue Extensions::Jsonize() const {
-  JsonValue payload;
+void Extensions::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_certificatePoliciesHasBeenSet) {
+    mapSize++;
+  }
+  if (m_extendedKeyUsageHasBeenSet) {
+    mapSize++;
+  }
+  if (m_keyUsageHasBeenSet) {
+    mapSize++;
+  }
+  if (m_subjectAlternativeNamesHasBeenSet) {
+    mapSize++;
+  }
+  if (m_customExtensionsHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_certificatePoliciesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> certificatePoliciesJsonList(m_certificatePolicies.size());
-    for (unsigned certificatePoliciesIndex = 0; certificatePoliciesIndex < certificatePoliciesJsonList.GetLength();
-         ++certificatePoliciesIndex) {
-      certificatePoliciesJsonList[certificatePoliciesIndex].AsObject(m_certificatePolicies[certificatePoliciesIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("CertificatePolicies"));
+    encoder.WriteArrayStart(m_certificatePolicies.size());
+    for (const auto& item_0 : m_certificatePolicies) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("CertificatePolicies", std::move(certificatePoliciesJsonList));
   }
 
   if (m_extendedKeyUsageHasBeenSet) {
-    Aws::Utils::Array<JsonValue> extendedKeyUsageJsonList(m_extendedKeyUsage.size());
-    for (unsigned extendedKeyUsageIndex = 0; extendedKeyUsageIndex < extendedKeyUsageJsonList.GetLength(); ++extendedKeyUsageIndex) {
-      extendedKeyUsageJsonList[extendedKeyUsageIndex].AsObject(m_extendedKeyUsage[extendedKeyUsageIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ExtendedKeyUsage"));
+    encoder.WriteArrayStart(m_extendedKeyUsage.size());
+    for (const auto& item_0 : m_extendedKeyUsage) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("ExtendedKeyUsage", std::move(extendedKeyUsageJsonList));
   }
 
   if (m_keyUsageHasBeenSet) {
-    payload.WithObject("KeyUsage", m_keyUsage.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("KeyUsage"));
+    m_keyUsage.CborEncode(encoder);
   }
 
   if (m_subjectAlternativeNamesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> subjectAlternativeNamesJsonList(m_subjectAlternativeNames.size());
-    for (unsigned subjectAlternativeNamesIndex = 0; subjectAlternativeNamesIndex < subjectAlternativeNamesJsonList.GetLength();
-         ++subjectAlternativeNamesIndex) {
-      subjectAlternativeNamesJsonList[subjectAlternativeNamesIndex].AsObject(
-          m_subjectAlternativeNames[subjectAlternativeNamesIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("SubjectAlternativeNames"));
+    encoder.WriteArrayStart(m_subjectAlternativeNames.size());
+    for (const auto& item_0 : m_subjectAlternativeNames) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("SubjectAlternativeNames", std::move(subjectAlternativeNamesJsonList));
   }
 
   if (m_customExtensionsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> customExtensionsJsonList(m_customExtensions.size());
-    for (unsigned customExtensionsIndex = 0; customExtensionsIndex < customExtensionsJsonList.GetLength(); ++customExtensionsIndex) {
-      customExtensionsJsonList[customExtensionsIndex].AsObject(m_customExtensions[customExtensionsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("CustomExtensions"));
+    encoder.WriteArrayStart(m_customExtensions.size());
+    for (const auto& item_0 : m_customExtensions) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("CustomExtensions", std::move(customExtensionsJsonList));
   }
-
-  return payload;
 }
 
 }  // namespace Model

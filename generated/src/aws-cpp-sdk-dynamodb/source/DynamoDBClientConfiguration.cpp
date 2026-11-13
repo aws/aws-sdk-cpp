@@ -37,8 +37,13 @@ void DynamoDBClientConfiguration::LoadDynamoDBSpecificConfig(const Aws::String& 
   if (!enableEndpointDiscovery) {
     enableEndpointDiscovery = IsEndpointDiscoveryEnabled(this->endpointOverride, inputProfileName);
   }
-  this->configFactories.retryStrategyCreateFn = []() -> std::shared_ptr<Client::RetryStrategy> {
-    return Client::InitRetryStrategy(4, "", 0.025);
+  const Aws::String retryProfileName = this->profileName;
+  this->configFactories.retryStrategyCreateFn = [retryProfileName]() -> std::shared_ptr<Client::RetryStrategy> {
+    Client::InitRetryStrategyOptions options;
+    options.maxAttempts = 4;
+    options.transientBackoffBaseSec = 0.025;
+    options.profileName = retryProfileName;
+    return Client::InitRetryStrategy(options);
   };
 }
 

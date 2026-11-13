@@ -491,6 +491,8 @@
 #include <aws/ec2/model/CreateMacSystemIntegrityProtectionModificationTaskResponse.h>
 #include <aws/ec2/model/CreateManagedPrefixListRequest.h>
 #include <aws/ec2/model/CreateManagedPrefixListResponse.h>
+#include <aws/ec2/model/CreateMetricCategoryRequest.h>
+#include <aws/ec2/model/CreateMetricCategoryResponse.h>
 #include <aws/ec2/model/CreateNatGatewayRequest.h>
 #include <aws/ec2/model/CreateNatGatewayResponse.h>
 #include <aws/ec2/model/CreateNetworkAclEntryRequest.h>
@@ -722,6 +724,8 @@
 #include <aws/ec2/model/DeleteLocalGatewayVirtualInterfaceResponse.h>
 #include <aws/ec2/model/DeleteManagedPrefixListRequest.h>
 #include <aws/ec2/model/DeleteManagedPrefixListResponse.h>
+#include <aws/ec2/model/DeleteMetricCategoryRequest.h>
+#include <aws/ec2/model/DeleteMetricCategoryResponse.h>
 #include <aws/ec2/model/DeleteNatGatewayRequest.h>
 #include <aws/ec2/model/DeleteNatGatewayResponse.h>
 #include <aws/ec2/model/DeleteNetworkAclEntryRequest.h>
@@ -1127,6 +1131,9 @@
 #include <aws/ec2/model/DescribeManagedPrefixListsPaginationTraits.h>
 #include <aws/ec2/model/DescribeManagedPrefixListsRequest.h>
 #include <aws/ec2/model/DescribeManagedPrefixListsResponse.h>
+#include <aws/ec2/model/DescribeMetricCategoriesPaginationTraits.h>
+#include <aws/ec2/model/DescribeMetricCategoriesRequest.h>
+#include <aws/ec2/model/DescribeMetricCategoriesResponse.h>
 #include <aws/ec2/model/DescribeMovingAddressesPaginationTraits.h>
 #include <aws/ec2/model/DescribeMovingAddressesRequest.h>
 #include <aws/ec2/model/DescribeMovingAddressesResponse.h>
@@ -2286,6 +2293,7 @@
 #include <aws/ec2/model/MemoryMiBRequest.h>
 #include <aws/ec2/model/MetadataDefaultHttpTokensState.h>
 #include <aws/ec2/model/Metric.h>
+#include <aws/ec2/model/MetricCategory.h>
 #include <aws/ec2/model/MetricDataResponse.h>
 #include <aws/ec2/model/MetricPoint.h>
 #include <aws/ec2/model/MetricType.h>
@@ -2374,6 +2382,8 @@
 #include <aws/ec2/model/ModifyManagedPrefixListResponse.h>
 #include <aws/ec2/model/ModifyManagedResourceVisibilityRequest.h>
 #include <aws/ec2/model/ModifyManagedResourceVisibilityResponse.h>
+#include <aws/ec2/model/ModifyMetricCategoryRequest.h>
+#include <aws/ec2/model/ModifyMetricCategoryResponse.h>
 #include <aws/ec2/model/ModifyNetworkInterfaceAttributeRequest.h>
 #include <aws/ec2/model/ModifyPrivateDnsNameOptionsRequest.h>
 #include <aws/ec2/model/ModifyPrivateDnsNameOptionsResponse.h>

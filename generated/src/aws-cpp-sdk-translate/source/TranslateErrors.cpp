@@ -5,14 +5,48 @@
 
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/cbor/CborValue.h>
 #include <aws/translate/TranslateErrors.h>
+#include <aws/translate/model/DetectedLanguageLowConfidenceException.h>
+#include <aws/translate/model/TooManyTagsException.h>
+#include <aws/translate/model/UnsupportedDisplayLanguageCodeException.h>
+#include <aws/translate/model/UnsupportedLanguagePairException.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::Translate;
+using namespace Aws::Translate::Model;
 
 namespace Aws {
 namespace Translate {
+template <>
+AWS_TRANSLATE_API UnsupportedLanguagePairException TranslateError::GetModeledError() {
+  assert(this->GetErrorType() == TranslateErrors::UNSUPPORTED_LANGUAGE_PAIR);
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return UnsupportedLanguagePairException(payload.GetDecoder());
+}
+
+template <>
+AWS_TRANSLATE_API DetectedLanguageLowConfidenceException TranslateError::GetModeledError() {
+  assert(this->GetErrorType() == TranslateErrors::DETECTED_LANGUAGE_LOW_CONFIDENCE);
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return DetectedLanguageLowConfidenceException(payload.GetDecoder());
+}
+
+template <>
+AWS_TRANSLATE_API UnsupportedDisplayLanguageCodeException TranslateError::GetModeledError() {
+  assert(this->GetErrorType() == TranslateErrors::UNSUPPORTED_DISPLAY_LANGUAGE_CODE);
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return UnsupportedDisplayLanguageCodeException(payload.GetDecoder());
+}
+
+template <>
+AWS_TRANSLATE_API TooManyTagsException TranslateError::GetModeledError() {
+  assert(this->GetErrorType() == TranslateErrors::TOO_MANY_TAGS);
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return TooManyTagsException(payload.GetDecoder());
+}
+
 namespace TranslateErrorMapper {
 
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");

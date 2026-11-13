@@ -7,6 +7,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/directconnect/model/AddressFamily.h>
 #include <aws/directconnect/model/AsPathSegment.h>
@@ -16,10 +17,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace DirectConnect {
 namespace Model {
@@ -33,9 +33,9 @@ namespace Model {
 class Route {
  public:
   AWS_DIRECTCONNECT_API Route() = default;
-  AWS_DIRECTCONNECT_API Route(Aws::Utils::Json::JsonView jsonValue);
-  AWS_DIRECTCONNECT_API Route& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_DIRECTCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_DIRECTCONNECT_API Route(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_DIRECTCONNECT_API Route& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_DIRECTCONNECT_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

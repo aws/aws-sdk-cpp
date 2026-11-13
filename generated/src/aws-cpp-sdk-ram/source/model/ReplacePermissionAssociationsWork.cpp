@@ -38,6 +38,14 @@ ReplacePermissionAssociationsWork& ReplacePermissionAssociationsWork::operator=(
     m_toPermissionVersion = jsonValue.GetString("toPermissionVersion");
     m_toPermissionVersionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("permissionTemplateParameters")) {
+    Aws::Utils::Array<JsonView> permissionTemplateParametersJsonList = jsonValue.GetArray("permissionTemplateParameters");
+    for (unsigned permissionTemplateParametersIndex = 0;
+         permissionTemplateParametersIndex < permissionTemplateParametersJsonList.GetLength(); ++permissionTemplateParametersIndex) {
+      m_permissionTemplateParameters.push_back(permissionTemplateParametersJsonList[permissionTemplateParametersIndex].AsObject());
+    }
+    m_permissionTemplateParametersHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("status")) {
     m_status =
         ReplacePermissionAssociationsWorkStatusMapper::GetReplacePermissionAssociationsWorkStatusForName(jsonValue.GetString("status"));
@@ -79,6 +87,16 @@ JsonValue ReplacePermissionAssociationsWork::Jsonize() const {
 
   if (m_toPermissionVersionHasBeenSet) {
     payload.WithString("toPermissionVersion", m_toPermissionVersion);
+  }
+
+  if (m_permissionTemplateParametersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> permissionTemplateParametersJsonList(m_permissionTemplateParameters.size());
+    for (unsigned permissionTemplateParametersIndex = 0;
+         permissionTemplateParametersIndex < permissionTemplateParametersJsonList.GetLength(); ++permissionTemplateParametersIndex) {
+      permissionTemplateParametersJsonList[permissionTemplateParametersIndex].AsObject(
+          m_permissionTemplateParameters[permissionTemplateParametersIndex].Jsonize());
+    }
+    payload.WithArray("permissionTemplateParameters", std::move(permissionTemplateParametersJsonList));
   }
 
   if (m_statusHasBeenSet) {

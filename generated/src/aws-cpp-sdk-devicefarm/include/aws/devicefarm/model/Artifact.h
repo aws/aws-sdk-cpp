@@ -82,7 +82,7 @@ class Artifact {
    * <p>APPIUM_PYTHON_XML_OUTPUT</p> </li> <li> <p>APPLICATION_CRASH_REPORT</p> </li>
    * <li> <p>XCTEST_LOG</p> </li> <li> <p>VIDEO</p> </li> <li>
    * <p>CUSTOMER_ARTIFACT</p> </li> <li> <p>CUSTOMER_ARTIFACT_LOG</p> </li> <li>
-   * <p>TESTSPEC_OUTPUT</p> </li> </ul>
+   * <p>TESTSPEC_OUTPUT</p> </li> <li> <p>DEVICE_CONNECT_COMMAND_LOG</p> </li> </ul>
    */
   inline ArtifactType GetType() const { return m_type; }
   inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }

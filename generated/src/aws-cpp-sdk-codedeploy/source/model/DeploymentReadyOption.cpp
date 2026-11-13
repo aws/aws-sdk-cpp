@@ -4,43 +4,144 @@
  */
 
 #include <aws/codedeploy/model/DeploymentReadyOption.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace CodeDeploy {
 namespace Model {
 
-DeploymentReadyOption::DeploymentReadyOption(JsonView jsonValue) { *this = jsonValue; }
+DeploymentReadyOption::DeploymentReadyOption(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-DeploymentReadyOption& DeploymentReadyOption::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("actionOnTimeout")) {
-    m_actionOnTimeout = DeploymentReadyActionMapper::GetDeploymentReadyActionForName(jsonValue.GetString("actionOnTimeout"));
-    m_actionOnTimeoutHasBeenSet = true;
+DeploymentReadyOption& DeploymentReadyOption::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "actionOnTimeout") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_actionOnTimeout = DeploymentReadyActionMapper::GetDeploymentReadyActionForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_actionOnTimeoutHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "waitTimeInMinutes") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_waitTimeInMinutes = static_cast<int64_t>(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextNegativeIntVal();
+                    if (val.has_value()) {
+                      m_waitTimeInMinutes = static_cast<int64_t>(1 - val.value());
+                    }
+                  }
+                }
+                m_waitTimeInMinutesHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("DeploymentReadyOption", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "actionOnTimeout") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_actionOnTimeout = DeploymentReadyActionMapper::GetDeploymentReadyActionForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_actionOnTimeoutHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "waitTimeInMinutes") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
+                  auto val = decoder->PopNextUnsignedIntVal();
+                  if (val.has_value()) {
+                    m_waitTimeInMinutes = static_cast<int64_t>(val.value());
+                  }
+                } else {
+                  auto val = decoder->PopNextNegativeIntVal();
+                  if (val.has_value()) {
+                    m_waitTimeInMinutes = static_cast<int64_t>(1 - val.value());
+                  }
+                }
+              }
+              m_waitTimeInMinutesHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
+    }
   }
-  if (jsonValue.ValueExists("waitTimeInMinutes")) {
-    m_waitTimeInMinutes = jsonValue.GetInteger("waitTimeInMinutes");
-    m_waitTimeInMinutesHasBeenSet = true;
-  }
+
   return *this;
 }
 
-JsonValue DeploymentReadyOption::Jsonize() const {
-  JsonValue payload;
+void DeploymentReadyOption::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_actionOnTimeoutHasBeenSet) {
+    mapSize++;
+  }
+  if (m_waitTimeInMinutesHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_actionOnTimeoutHasBeenSet) {
-    payload.WithString("actionOnTimeout", DeploymentReadyActionMapper::GetNameForDeploymentReadyAction(m_actionOnTimeout));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("actionOnTimeout"));
+    encoder.WriteText(
+        Aws::Crt::ByteCursorFromCString(DeploymentReadyActionMapper::GetNameForDeploymentReadyAction(m_actionOnTimeout).c_str()));
   }
 
   if (m_waitTimeInMinutesHasBeenSet) {
-    payload.WithInteger("waitTimeInMinutes", m_waitTimeInMinutes);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("waitTimeInMinutes"));
+    (m_waitTimeInMinutes >= 0) ? encoder.WriteUInt(m_waitTimeInMinutes) : encoder.WriteNegInt(m_waitTimeInMinutes);
   }
-
-  return payload;
 }
 
 }  // namespace Model

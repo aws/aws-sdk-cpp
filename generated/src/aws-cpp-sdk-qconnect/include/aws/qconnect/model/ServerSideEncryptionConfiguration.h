@@ -5,7 +5,9 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/qconnect/QConnect_EXPORTS.h>
+#include <aws/qconnect/model/ReplicaKmsKey.h>
 
 #include <utility>
 
@@ -55,9 +57,38 @@ class ServerSideEncryptionConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The list of KMS keys used to encrypt data for this resource's replicas in
+   * other Amazon Web Services Regions. Each entry corresponds to a Region where a
+   * replica is configured.</p>
+   */
+  inline const Aws::Vector<ReplicaKmsKey>& GetReplicaKmsKeys() const { return m_replicaKmsKeys; }
+  inline bool ReplicaKmsKeysHasBeenSet() const { return m_replicaKmsKeysHasBeenSet; }
+  template <typename ReplicaKmsKeysT = Aws::Vector<ReplicaKmsKey>>
+  void SetReplicaKmsKeys(ReplicaKmsKeysT&& value) {
+    m_replicaKmsKeysHasBeenSet = true;
+    m_replicaKmsKeys = std::forward<ReplicaKmsKeysT>(value);
+  }
+  template <typename ReplicaKmsKeysT = Aws::Vector<ReplicaKmsKey>>
+  ServerSideEncryptionConfiguration& WithReplicaKmsKeys(ReplicaKmsKeysT&& value) {
+    SetReplicaKmsKeys(std::forward<ReplicaKmsKeysT>(value));
+    return *this;
+  }
+  template <typename ReplicaKmsKeysT = ReplicaKmsKey>
+  ServerSideEncryptionConfiguration& AddReplicaKmsKeys(ReplicaKmsKeysT&& value) {
+    m_replicaKmsKeysHasBeenSet = true;
+    m_replicaKmsKeys.emplace_back(std::forward<ReplicaKmsKeysT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_kmsKeyId;
+
+  Aws::Vector<ReplicaKmsKey> m_replicaKmsKeys;
   bool m_kmsKeyIdHasBeenSet = false;
+  bool m_replicaKmsKeysHasBeenSet = false;
 };
 
 }  // namespace Model

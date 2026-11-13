@@ -3,35 +3,54 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/network-firewall/model/DescribeProxyRuleRequest.h>
 
 #include <utility>
 
 using namespace Aws::NetworkFirewall::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String DescribeProxyRuleRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_proxyRuleNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_proxyRuleGroupNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_proxyRuleGroupArnHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_proxyRuleNameHasBeenSet) {
-    payload.WithString("ProxyRuleName", m_proxyRuleName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ProxyRuleName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_proxyRuleName.c_str()));
   }
 
   if (m_proxyRuleGroupNameHasBeenSet) {
-    payload.WithString("ProxyRuleGroupName", m_proxyRuleGroupName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ProxyRuleGroupName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_proxyRuleGroupName.c_str()));
   }
 
   if (m_proxyRuleGroupArnHasBeenSet) {
-    payload.WithString("ProxyRuleGroupArn", m_proxyRuleGroupArn);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ProxyRuleGroupArn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_proxyRuleGroupArn.c_str()));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection DescribeProxyRuleRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "NetworkFirewall_20201112.DescribeProxyRule"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

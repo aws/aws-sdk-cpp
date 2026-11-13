@@ -4,184 +4,315 @@
  */
 
 #include <aws/codebuild/model/StartBuildRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 using namespace Aws::CodeBuild::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String StartBuildRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_projectNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_secondarySourcesOverrideHasBeenSet) {
+    mapSize++;
+  }
+  if (m_secondarySourcesVersionOverrideHasBeenSet) {
+    mapSize++;
+  }
+  if (m_sourceVersionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_artifactsOverrideHasBeenSet) {
+    mapSize++;
+  }
+  if (m_secondaryArtifactsOverrideHasBeenSet) {
+    mapSize++;
+  }
+  if (m_environmentVariablesOverrideHasBeenSet) {
+    mapSize++;
+  }
+  if (m_sourceTypeOverrideHasBeenSet) {
+    mapSize++;
+  }
+  if (m_sourceLocationOverrideHasBeenSet) {
+    mapSize++;
+  }
+  if (m_sourceAuthOverrideHasBeenSet) {
+    mapSize++;
+  }
+  if (m_gitCloneDepthOverrideHasBeenSet) {
+    mapSize++;
+  }
+  if (m_gitSubmodulesConfigOverrideHasBeenSet) {
+    mapSize++;
+  }
+  if (m_buildspecOverrideHasBeenSet) {
+    mapSize++;
+  }
+  if (m_insecureSslOverrideHasBeenSet) {
+    mapSize++;
+  }
+  if (m_reportBuildStatusOverrideHasBeenSet) {
+    mapSize++;
+  }
+  if (m_buildStatusConfigOverrideHasBeenSet) {
+    mapSize++;
+  }
+  if (m_environmentTypeOverrideHasBeenSet) {
+    mapSize++;
+  }
+  if (m_imageOverrideHasBeenSet) {
+    mapSize++;
+  }
+  if (m_computeTypeOverrideHasBeenSet) {
+    mapSize++;
+  }
+  if (m_certificateOverrideHasBeenSet) {
+    mapSize++;
+  }
+  if (m_cacheOverrideHasBeenSet) {
+    mapSize++;
+  }
+  if (m_serviceRoleOverrideHasBeenSet) {
+    mapSize++;
+  }
+  if (m_privilegedModeOverrideHasBeenSet) {
+    mapSize++;
+  }
+  if (m_timeoutInMinutesOverrideHasBeenSet) {
+    mapSize++;
+  }
+  if (m_queuedTimeoutInMinutesOverrideHasBeenSet) {
+    mapSize++;
+  }
+  if (m_encryptionKeyOverrideHasBeenSet) {
+    mapSize++;
+  }
+  if (m_idempotencyTokenHasBeenSet) {
+    mapSize++;
+  }
+  if (m_logsConfigOverrideHasBeenSet) {
+    mapSize++;
+  }
+  if (m_registryCredentialOverrideHasBeenSet) {
+    mapSize++;
+  }
+  if (m_imagePullCredentialsTypeOverrideHasBeenSet) {
+    mapSize++;
+  }
+  if (m_debugSessionEnabledHasBeenSet) {
+    mapSize++;
+  }
+  if (m_fleetOverrideHasBeenSet) {
+    mapSize++;
+  }
+  if (m_autoRetryLimitOverrideHasBeenSet) {
+    mapSize++;
+  }
+  if (m_hostKernelOverrideHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_projectNameHasBeenSet) {
-    payload.WithString("projectName", m_projectName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("projectName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_projectName.c_str()));
   }
 
   if (m_secondarySourcesOverrideHasBeenSet) {
-    Aws::Utils::Array<JsonValue> secondarySourcesOverrideJsonList(m_secondarySourcesOverride.size());
-    for (unsigned secondarySourcesOverrideIndex = 0; secondarySourcesOverrideIndex < secondarySourcesOverrideJsonList.GetLength();
-         ++secondarySourcesOverrideIndex) {
-      secondarySourcesOverrideJsonList[secondarySourcesOverrideIndex].AsObject(
-          m_secondarySourcesOverride[secondarySourcesOverrideIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("secondarySourcesOverride"));
+    encoder.WriteArrayStart(m_secondarySourcesOverride.size());
+    for (const auto& item_0 : m_secondarySourcesOverride) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("secondarySourcesOverride", std::move(secondarySourcesOverrideJsonList));
   }
 
   if (m_secondarySourcesVersionOverrideHasBeenSet) {
-    Aws::Utils::Array<JsonValue> secondarySourcesVersionOverrideJsonList(m_secondarySourcesVersionOverride.size());
-    for (unsigned secondarySourcesVersionOverrideIndex = 0;
-         secondarySourcesVersionOverrideIndex < secondarySourcesVersionOverrideJsonList.GetLength();
-         ++secondarySourcesVersionOverrideIndex) {
-      secondarySourcesVersionOverrideJsonList[secondarySourcesVersionOverrideIndex].AsObject(
-          m_secondarySourcesVersionOverride[secondarySourcesVersionOverrideIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("secondarySourcesVersionOverride"));
+    encoder.WriteArrayStart(m_secondarySourcesVersionOverride.size());
+    for (const auto& item_0 : m_secondarySourcesVersionOverride) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("secondarySourcesVersionOverride", std::move(secondarySourcesVersionOverrideJsonList));
   }
 
   if (m_sourceVersionHasBeenSet) {
-    payload.WithString("sourceVersion", m_sourceVersion);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("sourceVersion"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_sourceVersion.c_str()));
   }
 
   if (m_artifactsOverrideHasBeenSet) {
-    payload.WithObject("artifactsOverride", m_artifactsOverride.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("artifactsOverride"));
+    m_artifactsOverride.CborEncode(encoder);
   }
 
   if (m_secondaryArtifactsOverrideHasBeenSet) {
-    Aws::Utils::Array<JsonValue> secondaryArtifactsOverrideJsonList(m_secondaryArtifactsOverride.size());
-    for (unsigned secondaryArtifactsOverrideIndex = 0; secondaryArtifactsOverrideIndex < secondaryArtifactsOverrideJsonList.GetLength();
-         ++secondaryArtifactsOverrideIndex) {
-      secondaryArtifactsOverrideJsonList[secondaryArtifactsOverrideIndex].AsObject(
-          m_secondaryArtifactsOverride[secondaryArtifactsOverrideIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("secondaryArtifactsOverride"));
+    encoder.WriteArrayStart(m_secondaryArtifactsOverride.size());
+    for (const auto& item_0 : m_secondaryArtifactsOverride) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("secondaryArtifactsOverride", std::move(secondaryArtifactsOverrideJsonList));
   }
 
   if (m_environmentVariablesOverrideHasBeenSet) {
-    Aws::Utils::Array<JsonValue> environmentVariablesOverrideJsonList(m_environmentVariablesOverride.size());
-    for (unsigned environmentVariablesOverrideIndex = 0;
-         environmentVariablesOverrideIndex < environmentVariablesOverrideJsonList.GetLength(); ++environmentVariablesOverrideIndex) {
-      environmentVariablesOverrideJsonList[environmentVariablesOverrideIndex].AsObject(
-          m_environmentVariablesOverride[environmentVariablesOverrideIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("environmentVariablesOverride"));
+    encoder.WriteArrayStart(m_environmentVariablesOverride.size());
+    for (const auto& item_0 : m_environmentVariablesOverride) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("environmentVariablesOverride", std::move(environmentVariablesOverrideJsonList));
   }
 
   if (m_sourceTypeOverrideHasBeenSet) {
-    payload.WithString("sourceTypeOverride", SourceTypeMapper::GetNameForSourceType(m_sourceTypeOverride));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("sourceTypeOverride"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(SourceTypeMapper::GetNameForSourceType(m_sourceTypeOverride).c_str()));
   }
 
   if (m_sourceLocationOverrideHasBeenSet) {
-    payload.WithString("sourceLocationOverride", m_sourceLocationOverride);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("sourceLocationOverride"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_sourceLocationOverride.c_str()));
   }
 
   if (m_sourceAuthOverrideHasBeenSet) {
-    payload.WithObject("sourceAuthOverride", m_sourceAuthOverride.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("sourceAuthOverride"));
+    m_sourceAuthOverride.CborEncode(encoder);
   }
 
   if (m_gitCloneDepthOverrideHasBeenSet) {
-    payload.WithInteger("gitCloneDepthOverride", m_gitCloneDepthOverride);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("gitCloneDepthOverride"));
+    (m_gitCloneDepthOverride >= 0) ? encoder.WriteUInt(m_gitCloneDepthOverride) : encoder.WriteNegInt(m_gitCloneDepthOverride);
   }
 
   if (m_gitSubmodulesConfigOverrideHasBeenSet) {
-    payload.WithObject("gitSubmodulesConfigOverride", m_gitSubmodulesConfigOverride.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("gitSubmodulesConfigOverride"));
+    m_gitSubmodulesConfigOverride.CborEncode(encoder);
   }
 
   if (m_buildspecOverrideHasBeenSet) {
-    payload.WithString("buildspecOverride", m_buildspecOverride);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("buildspecOverride"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_buildspecOverride.c_str()));
   }
 
   if (m_insecureSslOverrideHasBeenSet) {
-    payload.WithBool("insecureSslOverride", m_insecureSslOverride);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("insecureSslOverride"));
+    encoder.WriteBool(m_insecureSslOverride);
   }
 
   if (m_reportBuildStatusOverrideHasBeenSet) {
-    payload.WithBool("reportBuildStatusOverride", m_reportBuildStatusOverride);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("reportBuildStatusOverride"));
+    encoder.WriteBool(m_reportBuildStatusOverride);
   }
 
   if (m_buildStatusConfigOverrideHasBeenSet) {
-    payload.WithObject("buildStatusConfigOverride", m_buildStatusConfigOverride.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("buildStatusConfigOverride"));
+    m_buildStatusConfigOverride.CborEncode(encoder);
   }
 
   if (m_environmentTypeOverrideHasBeenSet) {
-    payload.WithString("environmentTypeOverride", EnvironmentTypeMapper::GetNameForEnvironmentType(m_environmentTypeOverride));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("environmentTypeOverride"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(EnvironmentTypeMapper::GetNameForEnvironmentType(m_environmentTypeOverride).c_str()));
   }
 
   if (m_imageOverrideHasBeenSet) {
-    payload.WithString("imageOverride", m_imageOverride);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("imageOverride"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_imageOverride.c_str()));
   }
 
   if (m_computeTypeOverrideHasBeenSet) {
-    payload.WithString("computeTypeOverride", ComputeTypeMapper::GetNameForComputeType(m_computeTypeOverride));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("computeTypeOverride"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(ComputeTypeMapper::GetNameForComputeType(m_computeTypeOverride).c_str()));
   }
 
   if (m_certificateOverrideHasBeenSet) {
-    payload.WithString("certificateOverride", m_certificateOverride);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("certificateOverride"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_certificateOverride.c_str()));
   }
 
   if (m_cacheOverrideHasBeenSet) {
-    payload.WithObject("cacheOverride", m_cacheOverride.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("cacheOverride"));
+    m_cacheOverride.CborEncode(encoder);
   }
 
   if (m_serviceRoleOverrideHasBeenSet) {
-    payload.WithString("serviceRoleOverride", m_serviceRoleOverride);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("serviceRoleOverride"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_serviceRoleOverride.c_str()));
   }
 
   if (m_privilegedModeOverrideHasBeenSet) {
-    payload.WithBool("privilegedModeOverride", m_privilegedModeOverride);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("privilegedModeOverride"));
+    encoder.WriteBool(m_privilegedModeOverride);
   }
 
   if (m_timeoutInMinutesOverrideHasBeenSet) {
-    payload.WithInteger("timeoutInMinutesOverride", m_timeoutInMinutesOverride);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("timeoutInMinutesOverride"));
+    (m_timeoutInMinutesOverride >= 0) ? encoder.WriteUInt(m_timeoutInMinutesOverride) : encoder.WriteNegInt(m_timeoutInMinutesOverride);
   }
 
   if (m_queuedTimeoutInMinutesOverrideHasBeenSet) {
-    payload.WithInteger("queuedTimeoutInMinutesOverride", m_queuedTimeoutInMinutesOverride);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("queuedTimeoutInMinutesOverride"));
+    (m_queuedTimeoutInMinutesOverride >= 0) ? encoder.WriteUInt(m_queuedTimeoutInMinutesOverride)
+                                            : encoder.WriteNegInt(m_queuedTimeoutInMinutesOverride);
   }
 
   if (m_encryptionKeyOverrideHasBeenSet) {
-    payload.WithString("encryptionKeyOverride", m_encryptionKeyOverride);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("encryptionKeyOverride"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_encryptionKeyOverride.c_str()));
   }
 
   if (m_idempotencyTokenHasBeenSet) {
-    payload.WithString("idempotencyToken", m_idempotencyToken);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("idempotencyToken"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_idempotencyToken.c_str()));
   }
 
   if (m_logsConfigOverrideHasBeenSet) {
-    payload.WithObject("logsConfigOverride", m_logsConfigOverride.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("logsConfigOverride"));
+    m_logsConfigOverride.CborEncode(encoder);
   }
 
   if (m_registryCredentialOverrideHasBeenSet) {
-    payload.WithObject("registryCredentialOverride", m_registryCredentialOverride.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("registryCredentialOverride"));
+    m_registryCredentialOverride.CborEncode(encoder);
   }
 
   if (m_imagePullCredentialsTypeOverrideHasBeenSet) {
-    payload.WithString("imagePullCredentialsTypeOverride",
-                       ImagePullCredentialsTypeMapper::GetNameForImagePullCredentialsType(m_imagePullCredentialsTypeOverride));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("imagePullCredentialsTypeOverride"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(
+        ImagePullCredentialsTypeMapper::GetNameForImagePullCredentialsType(m_imagePullCredentialsTypeOverride).c_str()));
   }
 
   if (m_debugSessionEnabledHasBeenSet) {
-    payload.WithBool("debugSessionEnabled", m_debugSessionEnabled);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("debugSessionEnabled"));
+    encoder.WriteBool(m_debugSessionEnabled);
   }
 
   if (m_fleetOverrideHasBeenSet) {
-    payload.WithObject("fleetOverride", m_fleetOverride.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("fleetOverride"));
+    m_fleetOverride.CborEncode(encoder);
   }
 
   if (m_autoRetryLimitOverrideHasBeenSet) {
-    payload.WithInteger("autoRetryLimitOverride", m_autoRetryLimitOverride);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("autoRetryLimitOverride"));
+    (m_autoRetryLimitOverride >= 0) ? encoder.WriteUInt(m_autoRetryLimitOverride) : encoder.WriteNegInt(m_autoRetryLimitOverride);
   }
 
   if (m_hostKernelOverrideHasBeenSet) {
-    payload.WithString("hostKernelOverride", HostKernelMapper::GetNameForHostKernel(m_hostKernelOverride));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("hostKernelOverride"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(HostKernelMapper::GetNameForHostKernel(m_hostKernelOverride).c_str()));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection StartBuildRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeBuild_20161006.StartBuild"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

@@ -16,6 +16,7 @@
 #include <aws/mediaconnect/model/MaintenanceType.h>
 #include <aws/mediaconnect/model/RouterOutputConfiguration.h>
 #include <aws/mediaconnect/model/RouterOutputMessage.h>
+#include <aws/mediaconnect/model/RouterOutputProcessors.h>
 #include <aws/mediaconnect/model/RouterOutputRoutedState.h>
 #include <aws/mediaconnect/model/RouterOutputState.h>
 #include <aws/mediaconnect/model/RouterOutputStreamDetails.h>
@@ -485,6 +486,24 @@ class RouterOutput {
 
   ///@{
   /**
+   * <p>The processor settings for the router output.</p>
+   */
+  inline const RouterOutputProcessors& GetProcessors() const { return m_processors; }
+  inline bool ProcessorsHasBeenSet() const { return m_processorsHasBeenSet; }
+  template <typename ProcessorsT = RouterOutputProcessors>
+  void SetProcessors(ProcessorsT&& value) {
+    m_processorsHasBeenSet = true;
+    m_processors = std::forward<ProcessorsT>(value);
+  }
+  template <typename ProcessorsT = RouterOutputProcessors>
+  RouterOutput& WithProcessors(ProcessorsT&& value) {
+    SetProcessors(std::forward<ProcessorsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The Amazon Resource Names (ARNs) of one or more source endpoints that are
    * associated with this router output.</p>
    */
@@ -556,6 +575,8 @@ class RouterOutput {
 
   FabricConfiguration m_fabricConfiguration;
 
+  RouterOutputProcessors m_processors;
+
   Aws::Vector<Aws::String> m_associatedSourceEndpointArns;
   bool m_nameHasBeenSet = false;
   bool m_arnHasBeenSet = false;
@@ -581,6 +602,7 @@ class RouterOutput {
   bool m_maintenanceScheduleTypeHasBeenSet = false;
   bool m_maintenanceScheduleHasBeenSet = false;
   bool m_fabricConfigurationHasBeenSet = false;
+  bool m_processorsHasBeenSet = false;
   bool m_associatedSourceEndpointArnsHasBeenSet = false;
 };
 

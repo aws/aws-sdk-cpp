@@ -30,8 +30,8 @@ class GetProfileResourceAssociationRequest : public Route53ProfilesRequest {
 
   ///@{
   /**
-   * <p> <p>The ID of the profile resource association that you want to get
-   * information about.</p> </p>
+   * <p> The ID of the profile resource association that you want to get information
+   * about. </p>
    */
   inline const Aws::String& GetProfileResourceAssociationId() const { return m_profileResourceAssociationId; }
   inline bool ProfileResourceAssociationIdHasBeenSet() const { return m_profileResourceAssociationIdHasBeenSet; }

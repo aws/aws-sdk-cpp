@@ -91,7 +91,13 @@ class HarnessAgentCoreRuntimeEnvironment {
   ///@}
 
   ///@{
-
+  /**
+   * <p>The lifecycle configuration for the harness's runtime environment. For a
+   * harness, <code>idleRuntimeSessionTimeout</code> and <code>maxLifetime</code>
+   * each accept a value between 60 and 28800 seconds (8 hours), and
+   * <code>idleRuntimeSessionTimeout</code> must be less than or equal to
+   * <code>maxLifetime</code>.</p>
+   */
   inline const LifecycleConfiguration& GetLifecycleConfiguration() const { return m_lifecycleConfiguration; }
   inline bool LifecycleConfigurationHasBeenSet() const { return m_lifecycleConfigurationHasBeenSet; }
   template <typename LifecycleConfigurationT = LifecycleConfiguration>

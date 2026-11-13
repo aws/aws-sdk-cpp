@@ -47,6 +47,14 @@ CustomOauth2ProviderConfigOutput& CustomOauth2ProviderConfigOutput::operator=(Js
     }
     m_privateEndpointOverridesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("certificateConfigurations")) {
+    Aws::Utils::Array<JsonView> certificateConfigurationsJsonList = jsonValue.GetArray("certificateConfigurations");
+    for (unsigned certificateConfigurationsIndex = 0; certificateConfigurationsIndex < certificateConfigurationsJsonList.GetLength();
+         ++certificateConfigurationsIndex) {
+      m_certificateConfigurations.push_back(certificateConfigurationsJsonList[certificateConfigurationsIndex].AsObject());
+    }
+    m_certificateConfigurationsHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("privateKeyJwtConfig")) {
     m_privateKeyJwtConfig = jsonValue.GetObject("privateKeyJwtConfig");
     m_privateKeyJwtConfigHasBeenSet = true;
@@ -86,6 +94,16 @@ JsonValue CustomOauth2ProviderConfigOutput::Jsonize() const {
           m_privateEndpointOverrides[privateEndpointOverridesIndex].Jsonize());
     }
     payload.WithArray("privateEndpointOverrides", std::move(privateEndpointOverridesJsonList));
+  }
+
+  if (m_certificateConfigurationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> certificateConfigurationsJsonList(m_certificateConfigurations.size());
+    for (unsigned certificateConfigurationsIndex = 0; certificateConfigurationsIndex < certificateConfigurationsJsonList.GetLength();
+         ++certificateConfigurationsIndex) {
+      certificateConfigurationsJsonList[certificateConfigurationsIndex].AsObject(
+          m_certificateConfigurations[certificateConfigurationsIndex].Jsonize());
+    }
+    payload.WithArray("certificateConfigurations", std::move(certificateConfigurationsJsonList));
   }
 
   if (m_privateKeyJwtConfigHasBeenSet) {

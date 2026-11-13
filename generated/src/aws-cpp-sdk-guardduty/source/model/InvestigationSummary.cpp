@@ -42,9 +42,21 @@ InvestigationSummary& InvestigationSummary::operator=(JsonView jsonValue) {
     m_title = jsonValue.GetString("title");
     m_titleHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("investigationType")) {
+    m_investigationType = InvestigationTypeMapper::GetInvestigationTypeForName(jsonValue.GetString("investigationType"));
+    m_investigationTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("findingId")) {
+    m_findingId = jsonValue.GetString("findingId");
+    m_findingIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("accountId")) {
     m_accountId = jsonValue.GetString("accountId");
     m_accountIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("adminAccountId")) {
+    m_adminAccountId = jsonValue.GetString("adminAccountId");
+    m_adminAccountIdHasBeenSet = true;
   }
   if (jsonValue.ValueExists("startTime")) {
     m_startTime = jsonValue.GetDouble("startTime");
@@ -84,8 +96,20 @@ JsonValue InvestigationSummary::Jsonize() const {
     payload.WithString("title", m_title);
   }
 
+  if (m_investigationTypeHasBeenSet) {
+    payload.WithString("investigationType", InvestigationTypeMapper::GetNameForInvestigationType(m_investigationType));
+  }
+
+  if (m_findingIdHasBeenSet) {
+    payload.WithString("findingId", m_findingId);
+  }
+
   if (m_accountIdHasBeenSet) {
     payload.WithString("accountId", m_accountId);
+  }
+
+  if (m_adminAccountIdHasBeenSet) {
+    payload.WithString("adminAccountId", m_adminAccountId);
   }
 
   if (m_startTimeHasBeenSet) {

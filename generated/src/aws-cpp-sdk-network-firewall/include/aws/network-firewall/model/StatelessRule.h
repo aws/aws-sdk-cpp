@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 #include <aws/network-firewall/model/RuleDefinition.h>
 
@@ -11,10 +12,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace NetworkFirewall {
 namespace Model {
@@ -28,9 +28,9 @@ namespace Model {
 class StatelessRule {
  public:
   AWS_NETWORKFIREWALL_API StatelessRule() = default;
-  AWS_NETWORKFIREWALL_API StatelessRule(Aws::Utils::Json::JsonView jsonValue);
-  AWS_NETWORKFIREWALL_API StatelessRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_NETWORKFIREWALL_API StatelessRule(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_NETWORKFIREWALL_API StatelessRule& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_NETWORKFIREWALL_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -66,13 +66,13 @@ class StatelessRule {
    * later, number them so there's a wide range in between, for example use 100, 200,
    * and so on. </p>
    */
-  inline int GetPriority() const { return m_priority; }
+  inline int64_t GetPriority() const { return m_priority; }
   inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
-  inline void SetPriority(int value) {
+  inline void SetPriority(int64_t value) {
     m_priorityHasBeenSet = true;
     m_priority = value;
   }
-  inline StatelessRule& WithPriority(int value) {
+  inline StatelessRule& WithPriority(int64_t value) {
     SetPriority(value);
     return *this;
   }
@@ -80,7 +80,7 @@ class StatelessRule {
  private:
   RuleDefinition m_ruleDefinition;
 
-  int m_priority{0};
+  int64_t m_priority{0};
   bool m_ruleDefinitionHasBeenSet = false;
   bool m_priorityHasBeenSet = false;
 };

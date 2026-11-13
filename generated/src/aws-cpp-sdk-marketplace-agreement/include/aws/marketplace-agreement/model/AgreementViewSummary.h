@@ -328,6 +328,27 @@ class AgreementViewSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The date and time when the free trial of the agreement ends. This field is
+   * present only when the agreement includes a free trial.</p> <p>For an agreement
+   * that includes both a free trial and usage-based pricing, the agreement converts
+   * to paid usage at this time.</p>
+   */
+  inline const Aws::Utils::DateTime& GetFreeTrialEndTime() const { return m_freeTrialEndTime; }
+  inline bool FreeTrialEndTimeHasBeenSet() const { return m_freeTrialEndTimeHasBeenSet; }
+  template <typename FreeTrialEndTimeT = Aws::Utils::DateTime>
+  void SetFreeTrialEndTime(FreeTrialEndTimeT&& value) {
+    m_freeTrialEndTimeHasBeenSet = true;
+    m_freeTrialEndTime = std::forward<FreeTrialEndTimeT>(value);
+  }
+  template <typename FreeTrialEndTimeT = Aws::Utils::DateTime>
+  AgreementViewSummary& WithFreeTrialEndTime(FreeTrialEndTimeT&& value) {
+    SetFreeTrialEndTime(std::forward<FreeTrialEndTimeT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_agreementId;
 
@@ -356,6 +377,8 @@ class AgreementViewSummary {
   EndTimeBehaviorType m_endTimeBehaviorType{EndTimeBehaviorType::NOT_SET};
 
   EndTimeBehaviorReasonCode m_endTimeBehaviorReasonCode{EndTimeBehaviorReasonCode::NOT_SET};
+
+  Aws::Utils::DateTime m_freeTrialEndTime{};
   bool m_agreementIdHasBeenSet = false;
   bool m_acceptanceTimeHasBeenSet = false;
   bool m_startTimeHasBeenSet = false;
@@ -370,6 +393,7 @@ class AgreementViewSummary {
   bool m_initialAgreementIdHasBeenSet = false;
   bool m_endTimeBehaviorTypeHasBeenSet = false;
   bool m_endTimeBehaviorReasonCodeHasBeenSet = false;
+  bool m_freeTrialEndTimeHasBeenSet = false;
 };
 
 }  // namespace Model

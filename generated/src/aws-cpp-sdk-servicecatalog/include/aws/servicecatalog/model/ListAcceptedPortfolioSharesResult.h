@@ -7,28 +7,28 @@
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 #include <aws/servicecatalog/model/PortfolioDetail.h>
 
 #include <utility>
-
 namespace Aws {
 template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
 namespace Utils {
-namespace Json {
-class JsonValue;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace ServiceCatalog {
 namespace Model {
 class ListAcceptedPortfolioSharesResult {
  public:
   AWS_SERVICECATALOG_API ListAcceptedPortfolioSharesResult() = default;
-  AWS_SERVICECATALOG_API ListAcceptedPortfolioSharesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_SERVICECATALOG_API ListAcceptedPortfolioSharesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
   AWS_SERVICECATALOG_API ListAcceptedPortfolioSharesResult& operator=(
-      const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+      const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
 
   ///@{
   /**

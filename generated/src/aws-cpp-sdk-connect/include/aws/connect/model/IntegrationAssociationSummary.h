@@ -7,6 +7,7 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/IntegrationType.h>
 #include <aws/connect/model/SourceType.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -175,6 +176,43 @@ class IntegrationAssociationSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp when the integration association was last modified.</p>
+   */
+  inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
+  inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
+  template <typename LastModifiedTimeT = Aws::Utils::DateTime>
+  void SetLastModifiedTime(LastModifiedTimeT&& value) {
+    m_lastModifiedTimeHasBeenSet = true;
+    m_lastModifiedTime = std::forward<LastModifiedTimeT>(value);
+  }
+  template <typename LastModifiedTimeT = Aws::Utils::DateTime>
+  IntegrationAssociationSummary& WithLastModifiedTime(LastModifiedTimeT&& value) {
+    SetLastModifiedTime(std::forward<LastModifiedTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Web Services Region where the integration association was last
+   * modified.</p>
+   */
+  inline const Aws::String& GetLastModifiedRegion() const { return m_lastModifiedRegion; }
+  inline bool LastModifiedRegionHasBeenSet() const { return m_lastModifiedRegionHasBeenSet; }
+  template <typename LastModifiedRegionT = Aws::String>
+  void SetLastModifiedRegion(LastModifiedRegionT&& value) {
+    m_lastModifiedRegionHasBeenSet = true;
+    m_lastModifiedRegion = std::forward<LastModifiedRegionT>(value);
+  }
+  template <typename LastModifiedRegionT = Aws::String>
+  IntegrationAssociationSummary& WithLastModifiedRegion(LastModifiedRegionT&& value) {
+    SetLastModifiedRegion(std::forward<LastModifiedRegionT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_integrationAssociationId;
 
@@ -191,6 +229,10 @@ class IntegrationAssociationSummary {
   Aws::String m_sourceApplicationName;
 
   SourceType m_sourceType{SourceType::NOT_SET};
+
+  Aws::Utils::DateTime m_lastModifiedTime{};
+
+  Aws::String m_lastModifiedRegion;
   bool m_integrationAssociationIdHasBeenSet = false;
   bool m_integrationAssociationArnHasBeenSet = false;
   bool m_instanceIdHasBeenSet = false;
@@ -199,6 +241,8 @@ class IntegrationAssociationSummary {
   bool m_sourceApplicationUrlHasBeenSet = false;
   bool m_sourceApplicationNameHasBeenSet = false;
   bool m_sourceTypeHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_lastModifiedRegionHasBeenSet = false;
 };
 
 }  // namespace Model

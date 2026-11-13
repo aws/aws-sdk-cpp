@@ -82,6 +82,14 @@ DescribePipelineResult& DescribePipelineResult::operator=(const Aws::AmazonWebSe
     m_pipelineVersionDescription = jsonValue.GetString("PipelineVersionDescription");
     m_pipelineVersionDescriptionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("PipelineVersionAliases")) {
+    Aws::Utils::Array<JsonView> pipelineVersionAliasesJsonList = jsonValue.GetArray("PipelineVersionAliases");
+    for (unsigned pipelineVersionAliasesIndex = 0; pipelineVersionAliasesIndex < pipelineVersionAliasesJsonList.GetLength();
+         ++pipelineVersionAliasesIndex) {
+      m_pipelineVersionAliases.push_back(pipelineVersionAliasesJsonList[pipelineVersionAliasesIndex].AsString());
+    }
+    m_pipelineVersionAliasesHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

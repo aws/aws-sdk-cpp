@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/directconnect/model/AddressFamily.h>
 
@@ -12,10 +13,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace DirectConnect {
 namespace Model {
@@ -28,9 +28,9 @@ namespace Model {
 class NewBGPPeer {
  public:
   AWS_DIRECTCONNECT_API NewBGPPeer() = default;
-  AWS_DIRECTCONNECT_API NewBGPPeer(Aws::Utils::Json::JsonView jsonValue);
-  AWS_DIRECTCONNECT_API NewBGPPeer& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_DIRECTCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_DIRECTCONNECT_API NewBGPPeer(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_DIRECTCONNECT_API NewBGPPeer& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_DIRECTCONNECT_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -38,13 +38,13 @@ class NewBGPPeer {
    * for Border Gateway Protocol (BGP) configuration. If you provide a number greater
    * than the maximum, an error is returned. Use <code>asnLong</code> instead.</p>
    */
-  inline int GetAsn() const { return m_asn; }
+  inline int64_t GetAsn() const { return m_asn; }
   inline bool AsnHasBeenSet() const { return m_asnHasBeenSet; }
-  inline void SetAsn(int value) {
+  inline void SetAsn(int64_t value) {
     m_asnHasBeenSet = true;
     m_asn = value;
   }
-  inline NewBGPPeer& WithAsn(int value) {
+  inline NewBGPPeer& WithAsn(int64_t value) {
     SetAsn(value);
     return *this;
   }
@@ -137,7 +137,7 @@ class NewBGPPeer {
   }
   ///@}
  private:
-  int m_asn{0};
+  int64_t m_asn{0};
 
   long long m_asnLong{0};
 

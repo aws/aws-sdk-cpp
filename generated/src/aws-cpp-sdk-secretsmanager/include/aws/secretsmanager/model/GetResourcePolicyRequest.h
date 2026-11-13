@@ -51,9 +51,33 @@ class GetResourcePolicyRequest : public SecretsManagerRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The name of the resource policy to retrieve. If you don't specify this field,
+   * Secrets Manager uses <code>default</code>. If you specify a name other than
+   * <code>default</code> and no policy with that name exists, the operation returns
+   * a <code>ResourceNotFoundException</code>.</p>
+   */
+  inline const Aws::String& GetPolicyName() const { return m_policyName; }
+  inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
+  template <typename PolicyNameT = Aws::String>
+  void SetPolicyName(PolicyNameT&& value) {
+    m_policyNameHasBeenSet = true;
+    m_policyName = std::forward<PolicyNameT>(value);
+  }
+  template <typename PolicyNameT = Aws::String>
+  GetResourcePolicyRequest& WithPolicyName(PolicyNameT&& value) {
+    SetPolicyName(std::forward<PolicyNameT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_secretId;
+
+  Aws::String m_policyName;
   bool m_secretIdHasBeenSet = false;
+  bool m_policyNameHasBeenSet = false;
 };
 
 }  // namespace Model

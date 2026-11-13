@@ -9,6 +9,8 @@
 #include <aws/network-firewall/NetworkFirewallRequest.h>
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 #include <aws/network-firewall/model/EncryptionConfiguration.h>
+#include <aws/network-firewall/model/FirewallRuleGroup.h>
+#include <aws/network-firewall/model/IpsRuleGroup.h>
 #include <aws/network-firewall/model/RuleGroup.h>
 #include <aws/network-firewall/model/RuleGroupType.h>
 #include <aws/network-firewall/model/SourceMetadata.h>
@@ -78,6 +80,44 @@ class CreateRuleGroupRequest : public NetworkFirewallRequest {
 
   ///@{
   /**
+   * <p>An object that defines the rules in a firewall engine rule group, for use in
+   * a Next Generation policy.</p>
+   */
+  inline const FirewallRuleGroup& GetFirewallRuleGroup() const { return m_firewallRuleGroup; }
+  inline bool FirewallRuleGroupHasBeenSet() const { return m_firewallRuleGroupHasBeenSet; }
+  template <typename FirewallRuleGroupT = FirewallRuleGroup>
+  void SetFirewallRuleGroup(FirewallRuleGroupT&& value) {
+    m_firewallRuleGroupHasBeenSet = true;
+    m_firewallRuleGroup = std::forward<FirewallRuleGroupT>(value);
+  }
+  template <typename FirewallRuleGroupT = FirewallRuleGroup>
+  CreateRuleGroupRequest& WithFirewallRuleGroup(FirewallRuleGroupT&& value) {
+    SetFirewallRuleGroup(std::forward<FirewallRuleGroupT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>An object that defines the rules in an IPS engine rule group, for use in a
+   * Next Generation policy.</p>
+   */
+  inline const IpsRuleGroup& GetIpsRuleGroup() const { return m_ipsRuleGroup; }
+  inline bool IpsRuleGroupHasBeenSet() const { return m_ipsRuleGroupHasBeenSet; }
+  template <typename IpsRuleGroupT = IpsRuleGroup>
+  void SetIpsRuleGroup(IpsRuleGroupT&& value) {
+    m_ipsRuleGroupHasBeenSet = true;
+    m_ipsRuleGroup = std::forward<IpsRuleGroupT>(value);
+  }
+  template <typename IpsRuleGroupT = IpsRuleGroup>
+  CreateRuleGroupRequest& WithIpsRuleGroup(IpsRuleGroupT&& value) {
+    SetIpsRuleGroup(std::forward<IpsRuleGroupT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A string containing stateful rule group rules specifications in Suricata flat
    * format, with one rule per line. Use this to import your existing Suricata
    * compatible rule groups. </p>  <p>You must provide either this rules
@@ -103,9 +143,13 @@ class CreateRuleGroupRequest : public NetworkFirewallRequest {
 
   ///@{
   /**
-   * <p>Indicates whether the rule group is stateless or stateful. If the rule group
-   * is stateless, it contains stateless rules. If it is stateful, it contains
-   * stateful rules. </p>
+   * <p>Indicates the type of the rule group. Valid values are:</p> <ul> <li> <p>
+   * <code>STATELESS</code> - Stateless rules, for use in a Classic Network Firewall
+   * policy.</p> </li> <li> <p> <code>STATEFUL</code> - Stateful rules, for use in a
+   * Classic Network Firewall policy.</p> </li> <li> <p> <code>FIREWALL</code> -
+   * Firewall engine rules, for use in a Next Generation policy.</p> </li> <li> <p>
+   * <code>IPS</code> - IPS engine rules, for use in a Next Generation policy.</p>
+   * </li> </ul>
    */
   inline RuleGroupType GetType() const { return m_type; }
   inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
@@ -311,6 +355,10 @@ class CreateRuleGroupRequest : public NetworkFirewallRequest {
 
   RuleGroup m_ruleGroup;
 
+  FirewallRuleGroup m_firewallRuleGroup;
+
+  IpsRuleGroup m_ipsRuleGroup;
+
   Aws::String m_rules;
 
   RuleGroupType m_type{RuleGroupType::NOT_SET};
@@ -332,6 +380,8 @@ class CreateRuleGroupRequest : public NetworkFirewallRequest {
   SummaryConfiguration m_summaryConfiguration;
   bool m_ruleGroupNameHasBeenSet = false;
   bool m_ruleGroupHasBeenSet = false;
+  bool m_firewallRuleGroupHasBeenSet = false;
+  bool m_ipsRuleGroupHasBeenSet = false;
   bool m_rulesHasBeenSet = false;
   bool m_typeHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;

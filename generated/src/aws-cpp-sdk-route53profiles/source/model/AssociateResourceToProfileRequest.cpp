@@ -15,16 +15,16 @@ using namespace Aws::Utils;
 Aws::String AssociateResourceToProfileRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_nameHasBeenSet) {
-    payload.WithString("Name", m_name);
-  }
-
   if (m_profileIdHasBeenSet) {
     payload.WithString("ProfileId", m_profileId);
   }
 
   if (m_resourceArnHasBeenSet) {
     payload.WithString("ResourceArn", m_resourceArn);
+  }
+
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
   if (m_resourcePropertiesHasBeenSet) {

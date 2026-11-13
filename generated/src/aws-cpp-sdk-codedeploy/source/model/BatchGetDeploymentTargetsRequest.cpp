@@ -4,34 +4,48 @@
  */
 
 #include <aws/codedeploy/model/BatchGetDeploymentTargetsRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 using namespace Aws::CodeDeploy::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String BatchGetDeploymentTargetsRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_deploymentIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_targetIdsHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_deploymentIdHasBeenSet) {
-    payload.WithString("deploymentId", m_deploymentId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("deploymentId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_deploymentId.c_str()));
   }
 
   if (m_targetIdsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> targetIdsJsonList(m_targetIds.size());
-    for (unsigned targetIdsIndex = 0; targetIdsIndex < targetIdsJsonList.GetLength(); ++targetIdsIndex) {
-      targetIdsJsonList[targetIdsIndex].AsString(m_targetIds[targetIdsIndex]);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("targetIds"));
+    encoder.WriteArrayStart(m_targetIds.size());
+    for (const auto& item_0 : m_targetIds) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
     }
-    payload.WithArray("targetIds", std::move(targetIdsJsonList));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection BatchGetDeploymentTargetsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeDeploy_20141006.BatchGetDeploymentTargets"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

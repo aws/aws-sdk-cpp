@@ -7,7 +7,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/datasync/DataSyncPaginationBase.h>
 #include <aws/datasync/DataSyncServiceClientModel.h>
 #include <aws/datasync/DataSyncWaiter.h>
@@ -28,12 +28,12 @@ namespace DataSync {
  * href="https://docs.aws.amazon.com/datasync/latest/userguide/what-is-datasync.html">DataSync
  * User Guide</a> </i>.</p>
  */
-class AWS_DATASYNC_API DataSyncClient : public Aws::Client::AWSJsonClient,
+class AWS_DATASYNC_API DataSyncClient : public Aws::Client::AWSRpcV2CborClient,
                                         public Aws::Client::ClientWithAsyncTemplateMethods<DataSyncClient>,
                                         public DataSyncPaginationBase<DataSyncClient>,
                                         public DataSyncWaiter<DataSyncClient> {
  public:
-  typedef Aws::Client::AWSJsonClient BASECLASS;
+  typedef Aws::Client::AWSRpcV2CborClient BASECLASS;
   static const char* GetServiceName();
   static const char* GetAllocationTag();
 
@@ -1029,16 +1029,8 @@ class AWS_DATASYNC_API DataSyncClient : public Aws::Client::AWSJsonClient,
    * account in the Amazon Web Services Region specified in the request.</p> <p>With
    * pagination, you can reduce the number of agents returned in a response. If you
    * get a truncated list of agents in a response, the response contains a marker
-   * that you can specify in your next request to fetch the next page of agents.</p>
-   * <p> <code>ListAgents</code> is eventually consistent. This means the result of
-   * running the operation might not reflect that you just created or deleted an
-   * agent. For example, if you create an agent with <a
-   * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateAgent.html">CreateAgent</a>
-   * and then immediately run <code>ListAgents</code>, that agent might not show up
-   * in the list right away. In situations like this, you can always confirm whether
-   * an agent has been created (or deleted) by using <a
-   * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeAgent.html">DescribeAgent</a>.</p><p><h3>See
-   * Also:</h3>   <a
+   * that you can specify in your next request to fetch the next page of
+   * agents.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/ListAgents">AWS
    * API Reference</a></p>
    */

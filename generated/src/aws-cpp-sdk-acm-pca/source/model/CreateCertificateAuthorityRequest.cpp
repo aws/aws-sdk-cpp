@@ -4,56 +4,91 @@
  */
 
 #include <aws/acm-pca/model/CreateCertificateAuthorityRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 using namespace Aws::ACMPCA::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String CreateCertificateAuthorityRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_certificateAuthorityConfigurationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_revocationConfigurationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_certificateAuthorityTypeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_idempotencyTokenHasBeenSet) {
+    mapSize++;
+  }
+  if (m_keyStorageSecurityStandardHasBeenSet) {
+    mapSize++;
+  }
+  if (m_tagsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_usageModeHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_certificateAuthorityConfigurationHasBeenSet) {
-    payload.WithObject("CertificateAuthorityConfiguration", m_certificateAuthorityConfiguration.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("CertificateAuthorityConfiguration"));
+    m_certificateAuthorityConfiguration.CborEncode(encoder);
   }
 
   if (m_revocationConfigurationHasBeenSet) {
-    payload.WithObject("RevocationConfiguration", m_revocationConfiguration.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("RevocationConfiguration"));
+    m_revocationConfiguration.CborEncode(encoder);
   }
 
   if (m_certificateAuthorityTypeHasBeenSet) {
-    payload.WithString("CertificateAuthorityType",
-                       CertificateAuthorityTypeMapper::GetNameForCertificateAuthorityType(m_certificateAuthorityType));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("CertificateAuthorityType"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(
+        CertificateAuthorityTypeMapper::GetNameForCertificateAuthorityType(m_certificateAuthorityType).c_str()));
   }
 
   if (m_idempotencyTokenHasBeenSet) {
-    payload.WithString("IdempotencyToken", m_idempotencyToken);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("IdempotencyToken"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_idempotencyToken.c_str()));
   }
 
   if (m_keyStorageSecurityStandardHasBeenSet) {
-    payload.WithString("KeyStorageSecurityStandard",
-                       KeyStorageSecurityStandardMapper::GetNameForKeyStorageSecurityStandard(m_keyStorageSecurityStandard));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("KeyStorageSecurityStandard"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(
+        KeyStorageSecurityStandardMapper::GetNameForKeyStorageSecurityStandard(m_keyStorageSecurityStandard).c_str()));
   }
 
   if (m_tagsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
-      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Tags"));
+    encoder.WriteArrayStart(m_tags.size());
+    for (const auto& item_0 : m_tags) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("Tags", std::move(tagsJsonList));
   }
 
   if (m_usageModeHasBeenSet) {
-    payload.WithString("UsageMode", CertificateAuthorityUsageModeMapper::GetNameForCertificateAuthorityUsageMode(m_usageMode));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("UsageMode"));
+    encoder.WriteText(
+        Aws::Crt::ByteCursorFromCString(CertificateAuthorityUsageModeMapper::GetNameForCertificateAuthorityUsageMode(m_usageMode).c_str()));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection CreateCertificateAuthorityRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "ACMPrivateCA.CreateCertificateAuthority"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

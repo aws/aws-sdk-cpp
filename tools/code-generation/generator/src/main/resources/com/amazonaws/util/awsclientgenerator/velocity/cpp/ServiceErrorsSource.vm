@@ -18,6 +18,9 @@
 #set($hasModeledErrors = true)
 #end
 #end
+#if($hasModeledErrors && $payloadType.equals("smithy-rpc-v2-cbor"))
+\#include <aws/core/utils/cbor/CborValue.h>
+#end
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
@@ -42,8 +45,11 @@ template<> ${CppViewHelper.computeExportValue($metadata.classNamePrefix)} ${erro
   assert(this->GetErrorType() == ${metadata.classNamePrefix}Errors::$constName);
 #if($payloadType.equals("xml"))
   return ${error.name}(this->GetXmlPayload().GetRootElement());
-#elseif($$payloadType.equals("json"))
+#elseif($payloadType.equals("json"))
   return ${error.name}(this->GetJsonPayload().View());
+#elseif($payloadType.equals("smithy-rpc-v2-cbor"))
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return ${error.name}(payload.GetDecoder());
 #end
 }
 

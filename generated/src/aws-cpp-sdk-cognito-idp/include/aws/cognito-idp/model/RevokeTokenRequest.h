@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cognito-idp/CognitoIdentityProviderRequest.h>
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
+#include <aws/cognito-idp/model/RevokeAssociatedSessionsType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -85,15 +86,40 @@ class RevokeTokenRequest : public CognitoIdentityProviderRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether to also revoke the SSO session that is linked to the token
+   * session being revoked. <code>NONE</code>, the default, revokes only the token
+   * session that is associated with the refresh token. <code>LINKED</code> also
+   * revokes the parent SSO session that the token session came through; the other
+   * token sessions that came through that SSO session aren't revoked.
+   * <code>LINKED</code> has no effect when session tracking is disabled or when the
+   * token session has no parent SSO session.</p>
+   */
+  inline RevokeAssociatedSessionsType GetRevokeAssociatedSessions() const { return m_revokeAssociatedSessions; }
+  inline bool RevokeAssociatedSessionsHasBeenSet() const { return m_revokeAssociatedSessionsHasBeenSet; }
+  inline void SetRevokeAssociatedSessions(RevokeAssociatedSessionsType value) {
+    m_revokeAssociatedSessionsHasBeenSet = true;
+    m_revokeAssociatedSessions = value;
+  }
+  inline RevokeTokenRequest& WithRevokeAssociatedSessions(RevokeAssociatedSessionsType value) {
+    SetRevokeAssociatedSessions(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_token;
 
   Aws::String m_clientId;
 
   Aws::String m_clientSecret;
+
+  RevokeAssociatedSessionsType m_revokeAssociatedSessions{RevokeAssociatedSessionsType::NOT_SET};
   bool m_tokenHasBeenSet = false;
   bool m_clientIdHasBeenSet = false;
   bool m_clientSecretHasBeenSet = false;
+  bool m_revokeAssociatedSessionsHasBeenSet = false;
 };
 
 }  // namespace Model

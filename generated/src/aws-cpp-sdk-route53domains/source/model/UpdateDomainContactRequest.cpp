@@ -3,47 +3,78 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/route53domains/model/UpdateDomainContactRequest.h>
 
 #include <utility>
 
 using namespace Aws::Route53Domains::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String UpdateDomainContactRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_domainNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_adminContactHasBeenSet) {
+    mapSize++;
+  }
+  if (m_registrantContactHasBeenSet) {
+    mapSize++;
+  }
+  if (m_techContactHasBeenSet) {
+    mapSize++;
+  }
+  if (m_consentHasBeenSet) {
+    mapSize++;
+  }
+  if (m_billingContactHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_domainNameHasBeenSet) {
-    payload.WithString("DomainName", m_domainName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("DomainName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_domainName.c_str()));
   }
 
   if (m_adminContactHasBeenSet) {
-    payload.WithObject("AdminContact", m_adminContact.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AdminContact"));
+    m_adminContact.CborEncode(encoder);
   }
 
   if (m_registrantContactHasBeenSet) {
-    payload.WithObject("RegistrantContact", m_registrantContact.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("RegistrantContact"));
+    m_registrantContact.CborEncode(encoder);
   }
 
   if (m_techContactHasBeenSet) {
-    payload.WithObject("TechContact", m_techContact.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("TechContact"));
+    m_techContact.CborEncode(encoder);
   }
 
   if (m_consentHasBeenSet) {
-    payload.WithObject("Consent", m_consent.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Consent"));
+    m_consent.CborEncode(encoder);
   }
 
   if (m_billingContactHasBeenSet) {
-    payload.WithObject("BillingContact", m_billingContact.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("BillingContact"));
+    m_billingContact.CborEncode(encoder);
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection UpdateDomainContactRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Route53Domains_v20140515.UpdateDomainContact"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
+#include <aws/mediaconnect/model/RtmpPushStreamDetails.h>
 
 #include <utility>
 
@@ -49,9 +50,31 @@ class StandardRouterInputStreamDetails {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The RTMP stream details for the standard router input stream, including the
+   * application and stream names.</p>
+   */
+  inline const RtmpPushStreamDetails& GetRtmpPush() const { return m_rtmpPush; }
+  inline bool RtmpPushHasBeenSet() const { return m_rtmpPushHasBeenSet; }
+  template <typename RtmpPushT = RtmpPushStreamDetails>
+  void SetRtmpPush(RtmpPushT&& value) {
+    m_rtmpPushHasBeenSet = true;
+    m_rtmpPush = std::forward<RtmpPushT>(value);
+  }
+  template <typename RtmpPushT = RtmpPushStreamDetails>
+  StandardRouterInputStreamDetails& WithRtmpPush(RtmpPushT&& value) {
+    SetRtmpPush(std::forward<RtmpPushT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_sourceIpAddress;
+
+  RtmpPushStreamDetails m_rtmpPush;
   bool m_sourceIpAddressHasBeenSet = false;
+  bool m_rtmpPushHasBeenSet = false;
 };
 
 }  // namespace Model

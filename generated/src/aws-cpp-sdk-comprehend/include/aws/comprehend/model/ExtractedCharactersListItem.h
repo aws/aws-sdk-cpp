@@ -5,13 +5,13 @@
 
 #pragma once
 #include <aws/comprehend/Comprehend_EXPORTS.h>
+#include <aws/crt/cbor/Cbor.h>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace Comprehend {
 namespace Model {
@@ -25,21 +25,21 @@ namespace Model {
 class ExtractedCharactersListItem {
  public:
   AWS_COMPREHEND_API ExtractedCharactersListItem() = default;
-  AWS_COMPREHEND_API ExtractedCharactersListItem(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPREHEND_API ExtractedCharactersListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_COMPREHEND_API ExtractedCharactersListItem(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPREHEND_API ExtractedCharactersListItem& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPREHEND_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
    * <p>Page number.</p>
    */
-  inline int GetPage() const { return m_page; }
+  inline int64_t GetPage() const { return m_page; }
   inline bool PageHasBeenSet() const { return m_pageHasBeenSet; }
-  inline void SetPage(int value) {
+  inline void SetPage(int64_t value) {
     m_pageHasBeenSet = true;
     m_page = value;
   }
-  inline ExtractedCharactersListItem& WithPage(int value) {
+  inline ExtractedCharactersListItem& WithPage(int64_t value) {
     SetPage(value);
     return *this;
   }
@@ -49,21 +49,21 @@ class ExtractedCharactersListItem {
   /**
    * <p>Number of characters extracted from each page.</p>
    */
-  inline int GetCount() const { return m_count; }
+  inline int64_t GetCount() const { return m_count; }
   inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
-  inline void SetCount(int value) {
+  inline void SetCount(int64_t value) {
     m_countHasBeenSet = true;
     m_count = value;
   }
-  inline ExtractedCharactersListItem& WithCount(int value) {
+  inline ExtractedCharactersListItem& WithCount(int64_t value) {
     SetCount(value);
     return *this;
   }
   ///@}
  private:
-  int m_page{0};
+  int64_t m_page{0};
 
-  int m_count{0};
+  int64_t m_count{0};
   bool m_pageHasBeenSet = false;
   bool m_countHasBeenSet = false;
 };

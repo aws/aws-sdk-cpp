@@ -5,6 +5,7 @@
 
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/cbor/CborValue.h>
 #include <aws/ds/DirectoryServiceErrors.h>
 #include <aws/ds/model/ADAssessmentLimitExceededException.h>
 #include <aws/ds/model/AccessDeniedException.h>
@@ -57,241 +58,281 @@ namespace DirectoryService {
 template <>
 AWS_DIRECTORYSERVICE_API ClientException DirectoryServiceError::GetModeledError() {
   assert(this->GetErrorType() == DirectoryServiceErrors::CLIENT);
-  return ClientException(this->GetJsonPayload().View());
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return ClientException(payload.GetDecoder());
 }
 
 template <>
 AWS_DIRECTORYSERVICE_API EntityAlreadyExistsException DirectoryServiceError::GetModeledError() {
   assert(this->GetErrorType() == DirectoryServiceErrors::ENTITY_ALREADY_EXISTS);
-  return EntityAlreadyExistsException(this->GetJsonPayload().View());
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return EntityAlreadyExistsException(payload.GetDecoder());
 }
 
 template <>
 AWS_DIRECTORYSERVICE_API DisableAlreadyInProgressException DirectoryServiceError::GetModeledError() {
   assert(this->GetErrorType() == DirectoryServiceErrors::DISABLE_ALREADY_IN_PROGRESS);
-  return DisableAlreadyInProgressException(this->GetJsonPayload().View());
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return DisableAlreadyInProgressException(payload.GetDecoder());
 }
 
 template <>
 AWS_DIRECTORYSERVICE_API UnsupportedSettingsException DirectoryServiceError::GetModeledError() {
   assert(this->GetErrorType() == DirectoryServiceErrors::UNSUPPORTED_SETTINGS);
-  return UnsupportedSettingsException(this->GetJsonPayload().View());
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return UnsupportedSettingsException(payload.GetDecoder());
 }
 
 template <>
 AWS_DIRECTORYSERVICE_API DirectoryAlreadySharedException DirectoryServiceError::GetModeledError() {
   assert(this->GetErrorType() == DirectoryServiceErrors::DIRECTORY_ALREADY_SHARED);
-  return DirectoryAlreadySharedException(this->GetJsonPayload().View());
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return DirectoryAlreadySharedException(payload.GetDecoder());
 }
 
 template <>
 AWS_DIRECTORYSERVICE_API DirectoryAlreadyInRegionException DirectoryServiceError::GetModeledError() {
   assert(this->GetErrorType() == DirectoryServiceErrors::DIRECTORY_ALREADY_IN_REGION);
-  return DirectoryAlreadyInRegionException(this->GetJsonPayload().View());
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return DirectoryAlreadyInRegionException(payload.GetDecoder());
 }
 
 template <>
 AWS_DIRECTORYSERVICE_API InvalidLDAPSStatusException DirectoryServiceError::GetModeledError() {
   assert(this->GetErrorType() == DirectoryServiceErrors::INVALID_L_D_A_P_S_STATUS);
-  return InvalidLDAPSStatusException(this->GetJsonPayload().View());
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return InvalidLDAPSStatusException(payload.GetDecoder());
 }
 
 template <>
 AWS_DIRECTORYSERVICE_API DirectoryUnavailableException DirectoryServiceError::GetModeledError() {
   assert(this->GetErrorType() == DirectoryServiceErrors::DIRECTORY_UNAVAILABLE);
-  return DirectoryUnavailableException(this->GetJsonPayload().View());
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return DirectoryUnavailableException(payload.GetDecoder());
 }
 
 template <>
 AWS_DIRECTORYSERVICE_API UserDoesNotExistException DirectoryServiceError::GetModeledError() {
   assert(this->GetErrorType() == DirectoryServiceErrors::USER_DOES_NOT_EXIST);
-  return UserDoesNotExistException(this->GetJsonPayload().View());
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return UserDoesNotExistException(payload.GetDecoder());
 }
 
 template <>
 AWS_DIRECTORYSERVICE_API EntityDoesNotExistException DirectoryServiceError::GetModeledError() {
   assert(this->GetErrorType() == DirectoryServiceErrors::ENTITY_DOES_NOT_EXIST);
-  return EntityDoesNotExistException(this->GetJsonPayload().View());
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return EntityDoesNotExistException(payload.GetDecoder());
 }
 
 template <>
 AWS_DIRECTORYSERVICE_API AuthenticationFailedException DirectoryServiceError::GetModeledError() {
   assert(this->GetErrorType() == DirectoryServiceErrors::AUTHENTICATION_FAILED);
-  return AuthenticationFailedException(this->GetJsonPayload().View());
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return AuthenticationFailedException(payload.GetDecoder());
 }
 
 template <>
 AWS_DIRECTORYSERVICE_API EnableAlreadyInProgressException DirectoryServiceError::GetModeledError() {
   assert(this->GetErrorType() == DirectoryServiceErrors::ENABLE_ALREADY_IN_PROGRESS);
-  return EnableAlreadyInProgressException(this->GetJsonPayload().View());
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return EnableAlreadyInProgressException(payload.GetDecoder());
 }
 
 template <>
 AWS_DIRECTORYSERVICE_API InsufficientPermissionsException DirectoryServiceError::GetModeledError() {
   assert(this->GetErrorType() == DirectoryServiceErrors::INSUFFICIENT_PERMISSIONS);
-  return InsufficientPermissionsException(this->GetJsonPayload().View());
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return InsufficientPermissionsException(payload.GetDecoder());
 }
 
 template <>
 AWS_DIRECTORYSERVICE_API InvalidNextTokenException DirectoryServiceError::GetModeledError() {
   assert(this->GetErrorType() == DirectoryServiceErrors::INVALID_NEXT_TOKEN);
-  return InvalidNextTokenException(this->GetJsonPayload().View());
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return InvalidNextTokenException(payload.GetDecoder());
 }
 
 template <>
 AWS_DIRECTORYSERVICE_API DirectoryInDesiredStateException DirectoryServiceError::GetModeledError() {
   assert(this->GetErrorType() == DirectoryServiceErrors::DIRECTORY_IN_DESIRED_STATE);
-  return DirectoryInDesiredStateException(this->GetJsonPayload().View());
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return DirectoryInDesiredStateException(payload.GetDecoder());
 }
 
 template <>
 AWS_DIRECTORYSERVICE_API ADAssessmentLimitExceededException DirectoryServiceError::GetModeledError() {
   assert(this->GetErrorType() == DirectoryServiceErrors::A_D_ASSESSMENT_LIMIT_EXCEEDED);
-  return ADAssessmentLimitExceededException(this->GetJsonPayload().View());
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return ADAssessmentLimitExceededException(payload.GetDecoder());
 }
 
 template <>
 AWS_DIRECTORYSERVICE_API InvalidParameterException DirectoryServiceError::GetModeledError() {
   assert(this->GetErrorType() == DirectoryServiceErrors::INVALID_PARAMETER);
-  return InvalidParameterException(this->GetJsonPayload().View());
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return InvalidParameterException(payload.GetDecoder());
 }
 
 template <>
 AWS_DIRECTORYSERVICE_API TagLimitExceededException DirectoryServiceError::GetModeledError() {
   assert(this->GetErrorType() == DirectoryServiceErrors::TAG_LIMIT_EXCEEDED);
-  return TagLimitExceededException(this->GetJsonPayload().View());
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return TagLimitExceededException(payload.GetDecoder());
 }
 
 template <>
 AWS_DIRECTORYSERVICE_API InvalidCertificateException DirectoryServiceError::GetModeledError() {
   assert(this->GetErrorType() == DirectoryServiceErrors::INVALID_CERTIFICATE);
-  return InvalidCertificateException(this->GetJsonPayload().View());
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return InvalidCertificateException(payload.GetDecoder());
 }
 
 template <>
 AWS_DIRECTORYSERVICE_API AccessDeniedException DirectoryServiceError::GetModeledError() {
   assert(this->GetErrorType() == DirectoryServiceErrors::ACCESS_DENIED);
-  return AccessDeniedException(this->GetJsonPayload().View());
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return AccessDeniedException(payload.GetDecoder());
 }
 
 template <>
 AWS_DIRECTORYSERVICE_API UnsupportedOperationException DirectoryServiceError::GetModeledError() {
   assert(this->GetErrorType() == DirectoryServiceErrors::UNSUPPORTED_OPERATION);
-  return UnsupportedOperationException(this->GetJsonPayload().View());
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return UnsupportedOperationException(payload.GetDecoder());
 }
 
 template <>
 AWS_DIRECTORYSERVICE_API CertificateDoesNotExistException DirectoryServiceError::GetModeledError() {
   assert(this->GetErrorType() == DirectoryServiceErrors::CERTIFICATE_DOES_NOT_EXIST);
-  return CertificateDoesNotExistException(this->GetJsonPayload().View());
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return CertificateDoesNotExistException(payload.GetDecoder());
 }
 
 template <>
 AWS_DIRECTORYSERVICE_API CertificateAlreadyExistsException DirectoryServiceError::GetModeledError() {
   assert(this->GetErrorType() == DirectoryServiceErrors::CERTIFICATE_ALREADY_EXISTS);
-  return CertificateAlreadyExistsException(this->GetJsonPayload().View());
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return CertificateAlreadyExistsException(payload.GetDecoder());
 }
 
 template <>
 AWS_DIRECTORYSERVICE_API InvalidPasswordException DirectoryServiceError::GetModeledError() {
   assert(this->GetErrorType() == DirectoryServiceErrors::INVALID_PASSWORD);
-  return InvalidPasswordException(this->GetJsonPayload().View());
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return InvalidPasswordException(payload.GetDecoder());
 }
 
 template <>
 AWS_DIRECTORYSERVICE_API IncompatibleSettingsException DirectoryServiceError::GetModeledError() {
   assert(this->GetErrorType() == DirectoryServiceErrors::INCOMPATIBLE_SETTINGS);
-  return IncompatibleSettingsException(this->GetJsonPayload().View());
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return IncompatibleSettingsException(payload.GetDecoder());
 }
 
 template <>
 AWS_DIRECTORYSERVICE_API DirectoryLimitExceededException DirectoryServiceError::GetModeledError() {
   assert(this->GetErrorType() == DirectoryServiceErrors::DIRECTORY_LIMIT_EXCEEDED);
-  return DirectoryLimitExceededException(this->GetJsonPayload().View());
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return DirectoryLimitExceededException(payload.GetDecoder());
 }
 
 template <>
 AWS_DIRECTORYSERVICE_API DirectoryNotSharedException DirectoryServiceError::GetModeledError() {
   assert(this->GetErrorType() == DirectoryServiceErrors::DIRECTORY_NOT_SHARED);
-  return DirectoryNotSharedException(this->GetJsonPayload().View());
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return DirectoryNotSharedException(payload.GetDecoder());
 }
 
 template <>
 AWS_DIRECTORYSERVICE_API CertificateInUseException DirectoryServiceError::GetModeledError() {
   assert(this->GetErrorType() == DirectoryServiceErrors::CERTIFICATE_IN_USE);
-  return CertificateInUseException(this->GetJsonPayload().View());
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return CertificateInUseException(payload.GetDecoder());
 }
 
 template <>
 AWS_DIRECTORYSERVICE_API ShareLimitExceededException DirectoryServiceError::GetModeledError() {
   assert(this->GetErrorType() == DirectoryServiceErrors::SHARE_LIMIT_EXCEEDED);
-  return ShareLimitExceededException(this->GetJsonPayload().View());
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return ShareLimitExceededException(payload.GetDecoder());
 }
 
 template <>
 AWS_DIRECTORYSERVICE_API DirectoryDoesNotExistException DirectoryServiceError::GetModeledError() {
   assert(this->GetErrorType() == DirectoryServiceErrors::DIRECTORY_DOES_NOT_EXIST);
-  return DirectoryDoesNotExistException(this->GetJsonPayload().View());
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return DirectoryDoesNotExistException(payload.GetDecoder());
 }
 
 template <>
 AWS_DIRECTORYSERVICE_API NoAvailableCertificateException DirectoryServiceError::GetModeledError() {
   assert(this->GetErrorType() == DirectoryServiceErrors::NO_AVAILABLE_CERTIFICATE);
-  return NoAvailableCertificateException(this->GetJsonPayload().View());
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return NoAvailableCertificateException(payload.GetDecoder());
 }
 
 template <>
 AWS_DIRECTORYSERVICE_API InvalidClientAuthStatusException DirectoryServiceError::GetModeledError() {
   assert(this->GetErrorType() == DirectoryServiceErrors::INVALID_CLIENT_AUTH_STATUS);
-  return InvalidClientAuthStatusException(this->GetJsonPayload().View());
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return InvalidClientAuthStatusException(payload.GetDecoder());
 }
 
 template <>
 AWS_DIRECTORYSERVICE_API OrganizationsException DirectoryServiceError::GetModeledError() {
   assert(this->GetErrorType() == DirectoryServiceErrors::ORGANIZATIONS);
-  return OrganizationsException(this->GetJsonPayload().View());
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return OrganizationsException(payload.GetDecoder());
 }
 
 template <>
 AWS_DIRECTORYSERVICE_API InvalidTargetException DirectoryServiceError::GetModeledError() {
   assert(this->GetErrorType() == DirectoryServiceErrors::INVALID_TARGET);
-  return InvalidTargetException(this->GetJsonPayload().View());
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return InvalidTargetException(payload.GetDecoder());
 }
 
 template <>
 AWS_DIRECTORYSERVICE_API DomainControllerLimitExceededException DirectoryServiceError::GetModeledError() {
   assert(this->GetErrorType() == DirectoryServiceErrors::DOMAIN_CONTROLLER_LIMIT_EXCEEDED);
-  return DomainControllerLimitExceededException(this->GetJsonPayload().View());
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return DomainControllerLimitExceededException(payload.GetDecoder());
 }
 
 template <>
 AWS_DIRECTORYSERVICE_API RegionLimitExceededException DirectoryServiceError::GetModeledError() {
   assert(this->GetErrorType() == DirectoryServiceErrors::REGION_LIMIT_EXCEEDED);
-  return RegionLimitExceededException(this->GetJsonPayload().View());
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return RegionLimitExceededException(payload.GetDecoder());
 }
 
 template <>
 AWS_DIRECTORYSERVICE_API ServiceException DirectoryServiceError::GetModeledError() {
   assert(this->GetErrorType() == DirectoryServiceErrors::SERVICE);
-  return ServiceException(this->GetJsonPayload().View());
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return ServiceException(payload.GetDecoder());
 }
 
 template <>
 AWS_DIRECTORYSERVICE_API IpRouteLimitExceededException DirectoryServiceError::GetModeledError() {
   assert(this->GetErrorType() == DirectoryServiceErrors::IP_ROUTE_LIMIT_EXCEEDED);
-  return IpRouteLimitExceededException(this->GetJsonPayload().View());
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return IpRouteLimitExceededException(payload.GetDecoder());
 }
 
 template <>
 AWS_DIRECTORYSERVICE_API SnapshotLimitExceededException DirectoryServiceError::GetModeledError() {
   assert(this->GetErrorType() == DirectoryServiceErrors::SNAPSHOT_LIMIT_EXCEEDED);
-  return SnapshotLimitExceededException(this->GetJsonPayload().View());
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return SnapshotLimitExceededException(payload.GetDecoder());
 }
 
 template <>
 AWS_DIRECTORYSERVICE_API CertificateLimitExceededException DirectoryServiceError::GetModeledError() {
   assert(this->GetErrorType() == DirectoryServiceErrors::CERTIFICATE_LIMIT_EXCEEDED);
-  return CertificateLimitExceededException(this->GetJsonPayload().View());
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return CertificateLimitExceededException(payload.GetDecoder());
 }
 
 namespace DirectoryServiceErrorMapper {

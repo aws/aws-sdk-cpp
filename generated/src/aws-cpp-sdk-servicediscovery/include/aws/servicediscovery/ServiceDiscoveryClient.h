@@ -7,7 +7,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/servicediscovery/ServiceDiscoveryPaginationBase.h>
 #include <aws/servicediscovery/ServiceDiscoveryServiceClientModel.h>
 #include <aws/servicediscovery/ServiceDiscoveryWaiter.h>
@@ -24,12 +24,12 @@ namespace ServiceDiscovery {
  * submit public or private DNS queries, or HTTP requests, for the service receive
  * an answer that contains up to eight healthy records. </p>
  */
-class AWS_SERVICEDISCOVERY_API ServiceDiscoveryClient : public Aws::Client::AWSJsonClient,
+class AWS_SERVICEDISCOVERY_API ServiceDiscoveryClient : public Aws::Client::AWSRpcV2CborClient,
                                                         public Aws::Client::ClientWithAsyncTemplateMethods<ServiceDiscoveryClient>,
                                                         public ServiceDiscoveryPaginationBase<ServiceDiscoveryClient>,
                                                         public ServiceDiscoveryWaiter<ServiceDiscoveryClient> {
  public:
-  typedef Aws::Client::AWSJsonClient BASECLASS;
+  typedef Aws::Client::AWSRpcV2CborClient BASECLASS;
   static const char* GetServiceName();
   static const char* GetAllocationTag();
 

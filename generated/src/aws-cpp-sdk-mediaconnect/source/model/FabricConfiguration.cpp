@@ -22,6 +22,14 @@ FabricConfiguration& FabricConfiguration::operator=(JsonView jsonValue) {
     m_recoveryLatencyMode = FabricLatencyModeMapper::GetFabricLatencyModeForName(jsonValue.GetString("recoveryLatencyMode"));
     m_recoveryLatencyModeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("switchingMode")) {
+    m_switchingMode = FabricSwitchingModeMapper::GetFabricSwitchingModeForName(jsonValue.GetString("switchingMode"));
+    m_switchingModeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("switchingConfiguration")) {
+    m_switchingConfiguration = jsonValue.GetObject("switchingConfiguration");
+    m_switchingConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +38,14 @@ JsonValue FabricConfiguration::Jsonize() const {
 
   if (m_recoveryLatencyModeHasBeenSet) {
     payload.WithString("recoveryLatencyMode", FabricLatencyModeMapper::GetNameForFabricLatencyMode(m_recoveryLatencyMode));
+  }
+
+  if (m_switchingModeHasBeenSet) {
+    payload.WithString("switchingMode", FabricSwitchingModeMapper::GetNameForFabricSwitchingMode(m_switchingMode));
+  }
+
+  if (m_switchingConfigurationHasBeenSet) {
+    payload.WithObject("switchingConfiguration", m_switchingConfiguration.Jsonize());
   }
 
   return payload;

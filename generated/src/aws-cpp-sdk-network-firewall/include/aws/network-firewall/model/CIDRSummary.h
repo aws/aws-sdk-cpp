@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 #include <aws/network-firewall/model/IPSetMetadata.h>
 
@@ -13,10 +14,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace NetworkFirewall {
 namespace Model {
@@ -31,22 +31,22 @@ namespace Model {
 class CIDRSummary {
  public:
   AWS_NETWORKFIREWALL_API CIDRSummary() = default;
-  AWS_NETWORKFIREWALL_API CIDRSummary(Aws::Utils::Json::JsonView jsonValue);
-  AWS_NETWORKFIREWALL_API CIDRSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_NETWORKFIREWALL_API CIDRSummary(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_NETWORKFIREWALL_API CIDRSummary& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_NETWORKFIREWALL_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
    * <p>The number of CIDR blocks available for use by the IP set references in a
    * firewall.</p>
    */
-  inline int GetAvailableCIDRCount() const { return m_availableCIDRCount; }
+  inline int64_t GetAvailableCIDRCount() const { return m_availableCIDRCount; }
   inline bool AvailableCIDRCountHasBeenSet() const { return m_availableCIDRCountHasBeenSet; }
-  inline void SetAvailableCIDRCount(int value) {
+  inline void SetAvailableCIDRCount(int64_t value) {
     m_availableCIDRCountHasBeenSet = true;
     m_availableCIDRCount = value;
   }
-  inline CIDRSummary& WithAvailableCIDRCount(int value) {
+  inline CIDRSummary& WithAvailableCIDRCount(int64_t value) {
     SetAvailableCIDRCount(value);
     return *this;
   }
@@ -56,13 +56,13 @@ class CIDRSummary {
   /**
    * <p>The number of CIDR blocks used by the IP set references in a firewall.</p>
    */
-  inline int GetUtilizedCIDRCount() const { return m_utilizedCIDRCount; }
+  inline int64_t GetUtilizedCIDRCount() const { return m_utilizedCIDRCount; }
   inline bool UtilizedCIDRCountHasBeenSet() const { return m_utilizedCIDRCountHasBeenSet; }
-  inline void SetUtilizedCIDRCount(int value) {
+  inline void SetUtilizedCIDRCount(int64_t value) {
     m_utilizedCIDRCountHasBeenSet = true;
     m_utilizedCIDRCount = value;
   }
-  inline CIDRSummary& WithUtilizedCIDRCount(int value) {
+  inline CIDRSummary& WithUtilizedCIDRCount(int64_t value) {
     SetUtilizedCIDRCount(value);
     return *this;
   }
@@ -92,9 +92,9 @@ class CIDRSummary {
   }
   ///@}
  private:
-  int m_availableCIDRCount{0};
+  int64_t m_availableCIDRCount{0};
 
-  int m_utilizedCIDRCount{0};
+  int64_t m_utilizedCIDRCount{0};
 
   Aws::Map<Aws::String, IPSetMetadata> m_iPSetReferences;
   bool m_availableCIDRCountHasBeenSet = false;

@@ -63,7 +63,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   } else if (hashCode == LIMIT_EXCEEDED_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53ProfilesErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE_THROTTLING);
   } else if (hashCode == INTERNAL_SERVICE_ERROR_HASH) {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53ProfilesErrors::INTERNAL_SERVICE_ERROR), RetryableType::NOT_RETRYABLE);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53ProfilesErrors::INTERNAL_SERVICE_ERROR), RetryableType::RETRYABLE);
   } else if (hashCode == INVALID_NEXT_TOKEN_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53ProfilesErrors::INVALID_NEXT_TOKEN), RetryableType::NOT_RETRYABLE);
   }

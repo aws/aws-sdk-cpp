@@ -13,6 +13,7 @@
 #include <aws/sagemaker/model/HubContentStatus.h>
 #include <aws/sagemaker/model/HubContentSupportStatus.h>
 #include <aws/sagemaker/model/HubContentType.h>
+#include <aws/sagemaker/model/UserContext.h>
 
 #include <utility>
 
@@ -383,6 +384,40 @@ class DescribeHubContentResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Information about the user who created the hub content.</p>
+   */
+  inline const UserContext& GetCreatedBy() const { return m_createdBy; }
+  template <typename CreatedByT = UserContext>
+  void SetCreatedBy(CreatedByT&& value) {
+    m_createdByHasBeenSet = true;
+    m_createdBy = std::forward<CreatedByT>(value);
+  }
+  template <typename CreatedByT = UserContext>
+  DescribeHubContentResult& WithCreatedBy(CreatedByT&& value) {
+    SetCreatedBy(std::forward<CreatedByT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Information about the user who last modified the hub content.</p>
+   */
+  inline const UserContext& GetLastModifiedBy() const { return m_lastModifiedBy; }
+  template <typename LastModifiedByT = UserContext>
+  void SetLastModifiedBy(LastModifiedByT&& value) {
+    m_lastModifiedByHasBeenSet = true;
+    m_lastModifiedBy = std::forward<LastModifiedByT>(value);
+  }
+  template <typename LastModifiedByT = UserContext>
+  DescribeHubContentResult& WithLastModifiedBy(LastModifiedByT&& value) {
+    SetLastModifiedBy(std::forward<LastModifiedByT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -439,6 +474,10 @@ class DescribeHubContentResult {
 
   Aws::Utils::DateTime m_lastModifiedTime{};
 
+  UserContext m_createdBy;
+
+  UserContext m_lastModifiedBy;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_hubContentNameHasBeenSet = false;
@@ -461,6 +500,8 @@ class DescribeHubContentResult {
   bool m_failureReasonHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;
   bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_lastModifiedByHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

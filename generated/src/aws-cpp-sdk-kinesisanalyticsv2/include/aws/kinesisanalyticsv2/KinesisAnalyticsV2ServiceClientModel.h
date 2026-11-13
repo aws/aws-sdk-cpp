@@ -28,6 +28,7 @@
 #include <aws/kinesisanalyticsv2/model/CreateApplicationPresignedUrlResult.h>
 #include <aws/kinesisanalyticsv2/model/CreateApplicationResult.h>
 #include <aws/kinesisanalyticsv2/model/CreateApplicationSnapshotResult.h>
+#include <aws/kinesisanalyticsv2/model/CreateSnapshotResult.h>
 #include <aws/kinesisanalyticsv2/model/DeleteApplicationCloudWatchLoggingOptionResult.h>
 #include <aws/kinesisanalyticsv2/model/DeleteApplicationInputProcessingConfigurationResult.h>
 #include <aws/kinesisanalyticsv2/model/DeleteApplicationOutputResult.h>
@@ -35,16 +36,24 @@
 #include <aws/kinesisanalyticsv2/model/DeleteApplicationResult.h>
 #include <aws/kinesisanalyticsv2/model/DeleteApplicationSnapshotResult.h>
 #include <aws/kinesisanalyticsv2/model/DeleteApplicationVpcConfigurationResult.h>
+#include <aws/kinesisanalyticsv2/model/DeleteSnapshotResult.h>
 #include <aws/kinesisanalyticsv2/model/DescribeApplicationOperationResult.h>
 #include <aws/kinesisanalyticsv2/model/DescribeApplicationResult.h>
 #include <aws/kinesisanalyticsv2/model/DescribeApplicationSnapshotResult.h>
 #include <aws/kinesisanalyticsv2/model/DescribeApplicationVersionResult.h>
+#include <aws/kinesisanalyticsv2/model/DescribeSnapshotOperationResult.h>
+#include <aws/kinesisanalyticsv2/model/DescribeSnapshotResult.h>
 #include <aws/kinesisanalyticsv2/model/DiscoverInputSchemaResult.h>
+#include <aws/kinesisanalyticsv2/model/ExportSnapshotResult.h>
+#include <aws/kinesisanalyticsv2/model/ImportSnapshotResult.h>
 #include <aws/kinesisanalyticsv2/model/ListApplicationOperationsResult.h>
 #include <aws/kinesisanalyticsv2/model/ListApplicationSnapshotsResult.h>
 #include <aws/kinesisanalyticsv2/model/ListApplicationVersionsResult.h>
 #include <aws/kinesisanalyticsv2/model/ListApplicationsRequest.h>
 #include <aws/kinesisanalyticsv2/model/ListApplicationsResult.h>
+#include <aws/kinesisanalyticsv2/model/ListSnapshotOperationsResult.h>
+#include <aws/kinesisanalyticsv2/model/ListSnapshotsRequest.h>
+#include <aws/kinesisanalyticsv2/model/ListSnapshotsResult.h>
 #include <aws/kinesisanalyticsv2/model/ListTagsForResourceResult.h>
 #include <aws/kinesisanalyticsv2/model/RollbackApplicationResult.h>
 #include <aws/kinesisanalyticsv2/model/StartApplicationResult.h>
@@ -95,6 +104,7 @@ class AddApplicationVpcConfigurationRequest;
 class CreateApplicationRequest;
 class CreateApplicationPresignedUrlRequest;
 class CreateApplicationSnapshotRequest;
+class CreateSnapshotRequest;
 class DeleteApplicationRequest;
 class DeleteApplicationCloudWatchLoggingOptionRequest;
 class DeleteApplicationInputProcessingConfigurationRequest;
@@ -102,15 +112,22 @@ class DeleteApplicationOutputRequest;
 class DeleteApplicationReferenceDataSourceRequest;
 class DeleteApplicationSnapshotRequest;
 class DeleteApplicationVpcConfigurationRequest;
+class DeleteSnapshotRequest;
 class DescribeApplicationRequest;
 class DescribeApplicationOperationRequest;
 class DescribeApplicationSnapshotRequest;
 class DescribeApplicationVersionRequest;
+class DescribeSnapshotRequest;
+class DescribeSnapshotOperationRequest;
 class DiscoverInputSchemaRequest;
+class ExportSnapshotRequest;
+class ImportSnapshotRequest;
 class ListApplicationOperationsRequest;
 class ListApplicationSnapshotsRequest;
 class ListApplicationVersionsRequest;
 class ListApplicationsRequest;
+class ListSnapshotOperationsRequest;
+class ListSnapshotsRequest;
 class ListTagsForResourceRequest;
 class RollbackApplicationRequest;
 class StartApplicationRequest;
@@ -133,6 +150,7 @@ typedef Aws::Utils::Outcome<AddApplicationVpcConfigurationResult, KinesisAnalyti
 typedef Aws::Utils::Outcome<CreateApplicationResult, KinesisAnalyticsV2Error> CreateApplicationOutcome;
 typedef Aws::Utils::Outcome<CreateApplicationPresignedUrlResult, KinesisAnalyticsV2Error> CreateApplicationPresignedUrlOutcome;
 typedef Aws::Utils::Outcome<CreateApplicationSnapshotResult, KinesisAnalyticsV2Error> CreateApplicationSnapshotOutcome;
+typedef Aws::Utils::Outcome<CreateSnapshotResult, KinesisAnalyticsV2Error> CreateSnapshotOutcome;
 typedef Aws::Utils::Outcome<DeleteApplicationResult, KinesisAnalyticsV2Error> DeleteApplicationOutcome;
 typedef Aws::Utils::Outcome<DeleteApplicationCloudWatchLoggingOptionResult, KinesisAnalyticsV2Error>
     DeleteApplicationCloudWatchLoggingOptionOutcome;
@@ -143,15 +161,22 @@ typedef Aws::Utils::Outcome<DeleteApplicationReferenceDataSourceResult, KinesisA
     DeleteApplicationReferenceDataSourceOutcome;
 typedef Aws::Utils::Outcome<DeleteApplicationSnapshotResult, KinesisAnalyticsV2Error> DeleteApplicationSnapshotOutcome;
 typedef Aws::Utils::Outcome<DeleteApplicationVpcConfigurationResult, KinesisAnalyticsV2Error> DeleteApplicationVpcConfigurationOutcome;
+typedef Aws::Utils::Outcome<DeleteSnapshotResult, KinesisAnalyticsV2Error> DeleteSnapshotOutcome;
 typedef Aws::Utils::Outcome<DescribeApplicationResult, KinesisAnalyticsV2Error> DescribeApplicationOutcome;
 typedef Aws::Utils::Outcome<DescribeApplicationOperationResult, KinesisAnalyticsV2Error> DescribeApplicationOperationOutcome;
 typedef Aws::Utils::Outcome<DescribeApplicationSnapshotResult, KinesisAnalyticsV2Error> DescribeApplicationSnapshotOutcome;
 typedef Aws::Utils::Outcome<DescribeApplicationVersionResult, KinesisAnalyticsV2Error> DescribeApplicationVersionOutcome;
+typedef Aws::Utils::Outcome<DescribeSnapshotResult, KinesisAnalyticsV2Error> DescribeSnapshotOutcome;
+typedef Aws::Utils::Outcome<DescribeSnapshotOperationResult, KinesisAnalyticsV2Error> DescribeSnapshotOperationOutcome;
 typedef Aws::Utils::Outcome<DiscoverInputSchemaResult, KinesisAnalyticsV2Error> DiscoverInputSchemaOutcome;
+typedef Aws::Utils::Outcome<ExportSnapshotResult, KinesisAnalyticsV2Error> ExportSnapshotOutcome;
+typedef Aws::Utils::Outcome<ImportSnapshotResult, KinesisAnalyticsV2Error> ImportSnapshotOutcome;
 typedef Aws::Utils::Outcome<ListApplicationOperationsResult, KinesisAnalyticsV2Error> ListApplicationOperationsOutcome;
 typedef Aws::Utils::Outcome<ListApplicationSnapshotsResult, KinesisAnalyticsV2Error> ListApplicationSnapshotsOutcome;
 typedef Aws::Utils::Outcome<ListApplicationVersionsResult, KinesisAnalyticsV2Error> ListApplicationVersionsOutcome;
 typedef Aws::Utils::Outcome<ListApplicationsResult, KinesisAnalyticsV2Error> ListApplicationsOutcome;
+typedef Aws::Utils::Outcome<ListSnapshotOperationsResult, KinesisAnalyticsV2Error> ListSnapshotOperationsOutcome;
+typedef Aws::Utils::Outcome<ListSnapshotsResult, KinesisAnalyticsV2Error> ListSnapshotsOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, KinesisAnalyticsV2Error> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<RollbackApplicationResult, KinesisAnalyticsV2Error> RollbackApplicationOutcome;
 typedef Aws::Utils::Outcome<StartApplicationResult, KinesisAnalyticsV2Error> StartApplicationOutcome;
@@ -173,6 +198,7 @@ typedef std::future<AddApplicationVpcConfigurationOutcome> AddApplicationVpcConf
 typedef std::future<CreateApplicationOutcome> CreateApplicationOutcomeCallable;
 typedef std::future<CreateApplicationPresignedUrlOutcome> CreateApplicationPresignedUrlOutcomeCallable;
 typedef std::future<CreateApplicationSnapshotOutcome> CreateApplicationSnapshotOutcomeCallable;
+typedef std::future<CreateSnapshotOutcome> CreateSnapshotOutcomeCallable;
 typedef std::future<DeleteApplicationOutcome> DeleteApplicationOutcomeCallable;
 typedef std::future<DeleteApplicationCloudWatchLoggingOptionOutcome> DeleteApplicationCloudWatchLoggingOptionOutcomeCallable;
 typedef std::future<DeleteApplicationInputProcessingConfigurationOutcome> DeleteApplicationInputProcessingConfigurationOutcomeCallable;
@@ -180,15 +206,22 @@ typedef std::future<DeleteApplicationOutputOutcome> DeleteApplicationOutputOutco
 typedef std::future<DeleteApplicationReferenceDataSourceOutcome> DeleteApplicationReferenceDataSourceOutcomeCallable;
 typedef std::future<DeleteApplicationSnapshotOutcome> DeleteApplicationSnapshotOutcomeCallable;
 typedef std::future<DeleteApplicationVpcConfigurationOutcome> DeleteApplicationVpcConfigurationOutcomeCallable;
+typedef std::future<DeleteSnapshotOutcome> DeleteSnapshotOutcomeCallable;
 typedef std::future<DescribeApplicationOutcome> DescribeApplicationOutcomeCallable;
 typedef std::future<DescribeApplicationOperationOutcome> DescribeApplicationOperationOutcomeCallable;
 typedef std::future<DescribeApplicationSnapshotOutcome> DescribeApplicationSnapshotOutcomeCallable;
 typedef std::future<DescribeApplicationVersionOutcome> DescribeApplicationVersionOutcomeCallable;
+typedef std::future<DescribeSnapshotOutcome> DescribeSnapshotOutcomeCallable;
+typedef std::future<DescribeSnapshotOperationOutcome> DescribeSnapshotOperationOutcomeCallable;
 typedef std::future<DiscoverInputSchemaOutcome> DiscoverInputSchemaOutcomeCallable;
+typedef std::future<ExportSnapshotOutcome> ExportSnapshotOutcomeCallable;
+typedef std::future<ImportSnapshotOutcome> ImportSnapshotOutcomeCallable;
 typedef std::future<ListApplicationOperationsOutcome> ListApplicationOperationsOutcomeCallable;
 typedef std::future<ListApplicationSnapshotsOutcome> ListApplicationSnapshotsOutcomeCallable;
 typedef std::future<ListApplicationVersionsOutcome> ListApplicationVersionsOutcomeCallable;
 typedef std::future<ListApplicationsOutcome> ListApplicationsOutcomeCallable;
+typedef std::future<ListSnapshotOperationsOutcome> ListSnapshotOperationsOutcomeCallable;
+typedef std::future<ListSnapshotsOutcome> ListSnapshotsOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<RollbackApplicationOutcome> RollbackApplicationOutcomeCallable;
 typedef std::future<StartApplicationOutcome> StartApplicationOutcomeCallable;
@@ -235,6 +268,9 @@ typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::CreateA
 typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::CreateApplicationSnapshotRequest&,
                            const Model::CreateApplicationSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateApplicationSnapshotResponseReceivedHandler;
+typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::CreateSnapshotRequest&, const Model::CreateSnapshotOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateSnapshotResponseReceivedHandler;
 typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::DeleteApplicationRequest&, const Model::DeleteApplicationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteApplicationResponseReceivedHandler;
@@ -260,6 +296,9 @@ typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::DeleteA
                            const Model::DeleteApplicationVpcConfigurationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteApplicationVpcConfigurationResponseReceivedHandler;
+typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::DeleteSnapshotRequest&, const Model::DeleteSnapshotOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteSnapshotResponseReceivedHandler;
 typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::DescribeApplicationRequest&,
                            const Model::DescribeApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeApplicationResponseReceivedHandler;
@@ -273,9 +312,21 @@ typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::Describ
 typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::DescribeApplicationVersionRequest&,
                            const Model::DescribeApplicationVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeApplicationVersionResponseReceivedHandler;
+typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::DescribeSnapshotRequest&, const Model::DescribeSnapshotOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeSnapshotResponseReceivedHandler;
+typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::DescribeSnapshotOperationRequest&,
+                           const Model::DescribeSnapshotOperationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeSnapshotOperationResponseReceivedHandler;
 typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::DiscoverInputSchemaRequest&,
                            const Model::DiscoverInputSchemaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DiscoverInputSchemaResponseReceivedHandler;
+typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::ExportSnapshotRequest&, const Model::ExportSnapshotOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ExportSnapshotResponseReceivedHandler;
+typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::ImportSnapshotRequest&, const Model::ImportSnapshotOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ImportSnapshotResponseReceivedHandler;
 typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::ListApplicationOperationsRequest&,
                            const Model::ListApplicationOperationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListApplicationOperationsResponseReceivedHandler;
@@ -288,6 +339,12 @@ typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::ListApp
 typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::ListApplicationsRequest&, const Model::ListApplicationsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListApplicationsResponseReceivedHandler;
+typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::ListSnapshotOperationsRequest&,
+                           const Model::ListSnapshotOperationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListSnapshotOperationsResponseReceivedHandler;
+typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::ListSnapshotsRequest&, const Model::ListSnapshotsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListSnapshotsResponseReceivedHandler;
 typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::ListTagsForResourceRequest&,
                            const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListTagsForResourceResponseReceivedHandler;

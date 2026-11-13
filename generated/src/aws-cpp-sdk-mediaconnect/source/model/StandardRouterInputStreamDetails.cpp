@@ -22,6 +22,10 @@ StandardRouterInputStreamDetails& StandardRouterInputStreamDetails::operator=(Js
     m_sourceIpAddress = jsonValue.GetString("sourceIpAddress");
     m_sourceIpAddressHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("rtmpPush")) {
+    m_rtmpPush = jsonValue.GetObject("rtmpPush");
+    m_rtmpPushHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue StandardRouterInputStreamDetails::Jsonize() const {
 
   if (m_sourceIpAddressHasBeenSet) {
     payload.WithString("sourceIpAddress", m_sourceIpAddress);
+  }
+
+  if (m_rtmpPushHasBeenSet) {
+    payload.WithObject("rtmpPush", m_rtmpPush.Jsonize());
   }
 
   return payload;

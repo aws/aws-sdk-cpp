@@ -222,8 +222,17 @@ class AWS_ROUTE53_API Route53Client : public Aws::Client::AWSXMLClient,
    * <code>CREATE</code> action fails, then the request is canceled, and the original
    * <code>CNAME</code> record continues to exist.</p>  <p>If you try to delete
    * the same resource record set more than once in a single change batch, Route 53
-   * returns an <code>InvalidChangeBatch</code> error.</p>  <p> <b>Traffic
-   * Flow</b> </p> <p>To create resource record sets for complex routing
+   * returns an <code>InvalidChangeBatch</code> error.</p>  <p> <b>Protected
+   * Resource Record Sets</b> </p> <p>If a resource record set protection exists for
+   * a name and type, Route 53 rejects any change in the change batch that creates,
+   * updates, or deletes a resource record set with that name and type. Because
+   * change batches are transactional, Route 53 rejects the entire request and
+   * returns an <code>InvalidChangeBatch</code> error. Route 53 identifies each
+   * protected resource record set in the error message and includes the protection's
+   * comment, if any. To make the change, first delete the protection by using
+   * <code>DeleteResourceRecordSetProtections</code>. To see which resource record
+   * sets are protected, use <code>ListResourceRecordSetProtections</code>.</p> <p>
+   * <b>Traffic Flow</b> </p> <p>To create resource record sets for complex routing
    * configurations, use either the traffic flow visual editor in the Route 53
    * console or the API actions for traffic policies and traffic policy instances.
    * Save the configuration as a traffic policy, then associate the traffic policy
@@ -602,6 +611,60 @@ class AWS_ROUTE53_API Route53Client : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p>Creates one or more resource record set protections in a hosted zone. A
+   * protection applies to every resource record set in the hosted zone that has the
+   * specified name and type. While a protection exists, Route 53 rejects any
+   * <code>ChangeResourceRecordSets</code> request that creates, updates, or deletes
+   * a resource record set with that name and type, and returns an
+   * <code>InvalidChangeBatch</code> error. To change a protected resource record
+   * set, first delete its protection by using
+   * <code>DeleteResourceRecordSetProtections</code>.</p> <p>You can create a
+   * protection for a name and type that doesn't have a resource record set yet. In
+   * that case, Route 53 also rejects requests to create that resource record
+   * set.</p> <p>You can't delete a hosted zone that has protections. To delete the
+   * hosted zone, first delete all of its protections by using
+   * <code>DeleteResourceRecordSetProtections</code>.</p> <p>The request is atomic.
+   * Route 53 either creates all of the protections in the request or none of them.
+   * If one or more entries fail, the response is an error that lists the failing
+   * entries and the reason that each one failed. Route 53 checks for invalid entries
+   * before it checks for existing protections, so if any entry is invalid, the error
+   * lists only the invalid entries.</p> <p>The error that Route 53 returns depends
+   * on the failures:</p> <ul> <li> <p>If every entry already has a protection, Route
+   * 53 returns a <code>ProtectionAlreadyExists</code> error.</p> </li> <li> <p>For
+   * any other combination of failures, Route 53 returns an
+   * <code>InvalidResourceRecordSetProtectionBatch</code> error.</p> </li> </ul>
+   * <p>You can specify up to 100 protections in one request. The number of
+   * protections that you can have in a hosted zone is limited by a quota. If the
+   * request would exceed that quota, Route 53 returns a <code>LimitsExceeded</code>
+   * error.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateResourceRecordSetProtections">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateResourceRecordSetProtectionsOutcome CreateResourceRecordSetProtections(
+      const Model::CreateResourceRecordSetProtectionsRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateResourceRecordSetProtections that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename CreateResourceRecordSetProtectionsRequestT = Model::CreateResourceRecordSetProtectionsRequest>
+  Model::CreateResourceRecordSetProtectionsOutcomeCallable CreateResourceRecordSetProtectionsCallable(
+      const CreateResourceRecordSetProtectionsRequestT& request) const {
+    return SubmitCallable(&Route53Client::CreateResourceRecordSetProtections, request);
+  }
+
+  /**
+   * An Async wrapper for CreateResourceRecordSetProtections that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename CreateResourceRecordSetProtectionsRequestT = Model::CreateResourceRecordSetProtectionsRequest>
+  void CreateResourceRecordSetProtectionsAsync(const CreateResourceRecordSetProtectionsRequestT& request,
+                                               const CreateResourceRecordSetProtectionsResponseReceivedHandler& handler,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&Route53Client::CreateResourceRecordSetProtections, request, handler, context);
+  }
+
+  /**
    * <p>Creates a delegation set (a group of four name servers) that can be reused by
    * multiple hosted zones that were created by the same Amazon Web Services account.
    * </p> <p>You can also create a reusable delegation set that uses the four name
@@ -932,12 +995,15 @@ class AWS_ROUTE53_API Route53Client : public Aws::Client::AWSXMLClient,
    * additional records or DNSSEC enabled returns a <code>HostedZoneNotEmpty</code>
    * error. For information about deleting records, see <a
    * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ChangeResourceRecordSets.html">ChangeResourceRecordSets</a>.
-   * </p> <p>To verify that the hosted zone has been deleted, do one of the
-   * following:</p> <ul> <li> <p>Use the <code>GetHostedZone</code> action to request
-   * information about the hosted zone.</p> </li> <li> <p>Use the
-   * <code>ListHostedZones</code> action to get a list of the hosted zones associated
-   * with the current Amazon Web Services account.</p> </li> </ul><p><h3>See
-   * Also:</h3>   <a
+   * </p> <p>You also can't delete a hosted zone that has resource record set
+   * protections. To see the protections in a hosted zone, use
+   * <code>ListResourceRecordSetProtections</code>. To delete them, use
+   * <code>DeleteResourceRecordSetProtections</code>.</p> <p>To verify that the
+   * hosted zone has been deleted, do one of the following:</p> <ul> <li> <p>Use the
+   * <code>GetHostedZone</code> action to request information about the hosted
+   * zone.</p> </li> <li> <p>Use the <code>ListHostedZones</code> action to get a
+   * list of the hosted zones associated with the current Amazon Web Services
+   * account.</p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteHostedZone">AWS
    * API Reference</a></p>
    */
@@ -1025,6 +1091,43 @@ class AWS_ROUTE53_API Route53Client : public Aws::Client::AWSXMLClient,
                                      const DeleteQueryLoggingConfigResponseReceivedHandler& handler,
                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&Route53Client::DeleteQueryLoggingConfig, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes one or more resource record set protections from a hosted zone. After
+   * a protection is deleted, you can change the resource record sets that have that
+   * name and type by using <code>ChangeResourceRecordSets</code>.</p> <p>The request
+   * is atomic. Route 53 either deletes all of the protections in the request or none
+   * of them. If one or more entries fail, for example because no protection exists
+   * for the specified name and type, Route 53 returns an
+   * <code>InvalidResourceRecordSetProtectionBatch</code> error that lists the
+   * failing entries and the reason that each one failed.</p> <p>You can specify up
+   * to 100 protections in one request.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteResourceRecordSetProtections">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteResourceRecordSetProtectionsOutcome DeleteResourceRecordSetProtections(
+      const Model::DeleteResourceRecordSetProtectionsRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteResourceRecordSetProtections that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename DeleteResourceRecordSetProtectionsRequestT = Model::DeleteResourceRecordSetProtectionsRequest>
+  Model::DeleteResourceRecordSetProtectionsOutcomeCallable DeleteResourceRecordSetProtectionsCallable(
+      const DeleteResourceRecordSetProtectionsRequestT& request) const {
+    return SubmitCallable(&Route53Client::DeleteResourceRecordSetProtections, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteResourceRecordSetProtections that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DeleteResourceRecordSetProtectionsRequestT = Model::DeleteResourceRecordSetProtectionsRequest>
+  void DeleteResourceRecordSetProtectionsAsync(const DeleteResourceRecordSetProtectionsRequestT& request,
+                                               const DeleteResourceRecordSetProtectionsResponseReceivedHandler& handler,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&Route53Client::DeleteResourceRecordSetProtections, request, handler, context);
   }
 
   /**
@@ -2161,6 +2264,40 @@ class AWS_ROUTE53_API Route53Client : public Aws::Client::AWSXMLClient,
                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                     const ListQueryLoggingConfigsRequestT& request = {}) const {
     return SubmitAsync(&Route53Client::ListQueryLoggingConfigs, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the resource record set protections in a hosted zone. We recommend
+   * using pagination to ensure that the operation returns quickly and
+   * successfully.</p> <p>If the response includes a <code>NextToken</code> element,
+   * there are more protections to list. To get the next page of results, submit
+   * another request and specify the value of <code>NextToken</code> in the
+   * <code>NextToken</code> parameter.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListResourceRecordSetProtections">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListResourceRecordSetProtectionsOutcome ListResourceRecordSetProtections(
+      const Model::ListResourceRecordSetProtectionsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListResourceRecordSetProtections that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename ListResourceRecordSetProtectionsRequestT = Model::ListResourceRecordSetProtectionsRequest>
+  Model::ListResourceRecordSetProtectionsOutcomeCallable ListResourceRecordSetProtectionsCallable(
+      const ListResourceRecordSetProtectionsRequestT& request) const {
+    return SubmitCallable(&Route53Client::ListResourceRecordSetProtections, request);
+  }
+
+  /**
+   * An Async wrapper for ListResourceRecordSetProtections that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename ListResourceRecordSetProtectionsRequestT = Model::ListResourceRecordSetProtectionsRequest>
+  void ListResourceRecordSetProtectionsAsync(const ListResourceRecordSetProtectionsRequestT& request,
+                                             const ListResourceRecordSetProtectionsResponseReceivedHandler& handler,
+                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&Route53Client::ListResourceRecordSetProtections, request, handler, context);
   }
 
   /**

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/directconnect/model/AddressFamily.h>
 #include <aws/directconnect/model/RouteFilterPrefix.h>
@@ -15,10 +16,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace DirectConnect {
 namespace Model {
@@ -32,9 +32,9 @@ namespace Model {
 class NewPublicVirtualInterfaceAllocation {
  public:
   AWS_DIRECTCONNECT_API NewPublicVirtualInterfaceAllocation() = default;
-  AWS_DIRECTCONNECT_API NewPublicVirtualInterfaceAllocation(Aws::Utils::Json::JsonView jsonValue);
-  AWS_DIRECTCONNECT_API NewPublicVirtualInterfaceAllocation& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_DIRECTCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_DIRECTCONNECT_API NewPublicVirtualInterfaceAllocation(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_DIRECTCONNECT_API NewPublicVirtualInterfaceAllocation& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_DIRECTCONNECT_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -60,13 +60,13 @@ class NewPublicVirtualInterfaceAllocation {
   /**
    * <p>The ID of the VLAN.</p>
    */
-  inline int GetVlan() const { return m_vlan; }
+  inline int64_t GetVlan() const { return m_vlan; }
   inline bool VlanHasBeenSet() const { return m_vlanHasBeenSet; }
-  inline void SetVlan(int value) {
+  inline void SetVlan(int64_t value) {
     m_vlanHasBeenSet = true;
     m_vlan = value;
   }
-  inline NewPublicVirtualInterfaceAllocation& WithVlan(int value) {
+  inline NewPublicVirtualInterfaceAllocation& WithVlan(int64_t value) {
     SetVlan(value);
     return *this;
   }
@@ -87,13 +87,13 @@ class NewPublicVirtualInterfaceAllocation {
    * the <code>asn</code> and <code>asnLong</code> fields.</p> </li> </ul> <p>The
    * valid values are 1-2147483646.</p>
    */
-  inline int GetAsn() const { return m_asn; }
+  inline int64_t GetAsn() const { return m_asn; }
   inline bool AsnHasBeenSet() const { return m_asnHasBeenSet; }
-  inline void SetAsn(int value) {
+  inline void SetAsn(int64_t value) {
     m_asnHasBeenSet = true;
     m_asn = value;
   }
-  inline NewPublicVirtualInterfaceAllocation& WithAsn(int value) {
+  inline NewPublicVirtualInterfaceAllocation& WithAsn(int64_t value) {
     SetAsn(value);
     return *this;
   }
@@ -270,9 +270,9 @@ class NewPublicVirtualInterfaceAllocation {
  private:
   Aws::String m_virtualInterfaceName;
 
-  int m_vlan{0};
+  int64_t m_vlan{0};
 
-  int m_asn{0};
+  int64_t m_asn{0};
 
   long long m_asnLong{0};
 

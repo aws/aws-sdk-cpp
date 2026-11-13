@@ -39,7 +39,8 @@ enum class ArtifactType {
   VIDEO,
   CUSTOMER_ARTIFACT,
   CUSTOMER_ARTIFACT_LOG,
-  TESTSPEC_OUTPUT
+  TESTSPEC_OUTPUT,
+  DEVICE_CONNECT_COMMAND_LOG
 };
 
 namespace ArtifactTypeMapper {

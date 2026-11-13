@@ -5,6 +5,9 @@
 
 #pragma once
 #include <aws/kinesisanalyticsv2/KinesisAnalyticsV2_EXPORTS.h>
+#include <aws/kinesisanalyticsv2/model/SnapshotMode.h>
+
+#include <utility>
 
 namespace Aws {
 namespace Utils {
@@ -45,9 +48,29 @@ class ApplicationSnapshotConfigurationDescription {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Describes the snapshot mode of a Managed Service for Apache Flink
+   * application.</p>
+   */
+  inline SnapshotMode GetSnapshotMode() const { return m_snapshotMode; }
+  inline bool SnapshotModeHasBeenSet() const { return m_snapshotModeHasBeenSet; }
+  inline void SetSnapshotMode(SnapshotMode value) {
+    m_snapshotModeHasBeenSet = true;
+    m_snapshotMode = value;
+  }
+  inline ApplicationSnapshotConfigurationDescription& WithSnapshotMode(SnapshotMode value) {
+    SetSnapshotMode(value);
+    return *this;
+  }
+  ///@}
  private:
   bool m_snapshotsEnabled{false};
+
+  SnapshotMode m_snapshotMode{SnapshotMode::NOT_SET};
   bool m_snapshotsEnabledHasBeenSet = false;
+  bool m_snapshotModeHasBeenSet = false;
 };
 
 }  // namespace Model

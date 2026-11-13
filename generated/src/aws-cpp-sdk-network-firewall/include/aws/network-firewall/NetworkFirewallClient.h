@@ -7,7 +7,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/network-firewall/NetworkFirewallPaginationBase.h>
 #include <aws/network-firewall/NetworkFirewallServiceClientModel.h>
 #include <aws/network-firewall/NetworkFirewallWaiter.h>
@@ -80,12 +80,12 @@ namespace NetworkFirewall {
  * for another VPC, by following the prior steps for the Amazon VPC setup, and
  * defining the new VPC subnets as VPC endpoint associations. </p>
  */
-class AWS_NETWORKFIREWALL_API NetworkFirewallClient : public Aws::Client::AWSJsonClient,
+class AWS_NETWORKFIREWALL_API NetworkFirewallClient : public Aws::Client::AWSRpcV2CborClient,
                                                       public Aws::Client::ClientWithAsyncTemplateMethods<NetworkFirewallClient>,
                                                       public NetworkFirewallPaginationBase<NetworkFirewallClient>,
                                                       public NetworkFirewallWaiter<NetworkFirewallClient> {
  public:
-  typedef Aws::Client::AWSJsonClient BASECLASS;
+  typedef Aws::Client::AWSRpcV2CborClient BASECLASS;
   static const char* GetServiceName();
   static const char* GetAllocationTag();
 
@@ -410,6 +410,39 @@ class AWS_NETWORKFIREWALL_API NetworkFirewallClient : public Aws::Client::AWSJso
   void CreateFirewallPolicyAsync(const CreateFirewallPolicyRequestT& request, const CreateFirewallPolicyResponseReceivedHandler& handler,
                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&NetworkFirewallClient::CreateFirewallPolicy, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a Next Generation policy according to the specifications.</p> <p>A
+   * Next Generation policy defines the behavior of a firewall in a collection of
+   * firewall engine and IPS engine rule groups and other settings. You can use one
+   * firewall policy for multiple firewalls. For more information, see <a
+   * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/firewall-policies-v2.html">Next
+   * Generation policies</a> in the <i>Network Firewall Developer
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateFirewallPolicyV2">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateFirewallPolicyV2Outcome CreateFirewallPolicyV2(const Model::CreateFirewallPolicyV2Request& request) const;
+
+  /**
+   * A Callable wrapper for CreateFirewallPolicyV2 that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateFirewallPolicyV2RequestT = Model::CreateFirewallPolicyV2Request>
+  Model::CreateFirewallPolicyV2OutcomeCallable CreateFirewallPolicyV2Callable(const CreateFirewallPolicyV2RequestT& request) const {
+    return SubmitCallable(&NetworkFirewallClient::CreateFirewallPolicyV2, request);
+  }
+
+  /**
+   * An Async wrapper for CreateFirewallPolicyV2 that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateFirewallPolicyV2RequestT = Model::CreateFirewallPolicyV2Request>
+  void CreateFirewallPolicyV2Async(const CreateFirewallPolicyV2RequestT& request,
+                                   const CreateFirewallPolicyV2ResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&NetworkFirewallClient::CreateFirewallPolicyV2, request, handler, context);
   }
 
   /**
@@ -744,6 +777,33 @@ class AWS_NETWORKFIREWALL_API NetworkFirewallClient : public Aws::Client::AWSJso
                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                  const DeleteFirewallPolicyRequestT& request = {}) const {
     return SubmitAsync(&NetworkFirewallClient::DeleteFirewallPolicy, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes the specified <a>FirewallPolicyV2</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteFirewallPolicyV2">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteFirewallPolicyV2Outcome DeleteFirewallPolicyV2(const Model::DeleteFirewallPolicyV2Request& request = {}) const;
+
+  /**
+   * A Callable wrapper for DeleteFirewallPolicyV2 that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteFirewallPolicyV2RequestT = Model::DeleteFirewallPolicyV2Request>
+  Model::DeleteFirewallPolicyV2OutcomeCallable DeleteFirewallPolicyV2Callable(const DeleteFirewallPolicyV2RequestT& request = {}) const {
+    return SubmitCallable(&NetworkFirewallClient::DeleteFirewallPolicyV2, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteFirewallPolicyV2 that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteFirewallPolicyV2RequestT = Model::DeleteFirewallPolicyV2Request>
+  void DeleteFirewallPolicyV2Async(const DeleteFirewallPolicyV2ResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                   const DeleteFirewallPolicyV2RequestT& request = {}) const {
+    return SubmitAsync(&NetworkFirewallClient::DeleteFirewallPolicyV2, request, handler, context);
   }
 
   /**
@@ -1123,6 +1183,35 @@ class AWS_NETWORKFIREWALL_API NetworkFirewallClient : public Aws::Client::AWSJso
                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                    const DescribeFirewallPolicyRequestT& request = {}) const {
     return SubmitAsync(&NetworkFirewallClient::DescribeFirewallPolicy, request, handler, context);
+  }
+
+  /**
+   * <p>Returns the data objects for the specified Next Generation
+   * policy.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeFirewallPolicyV2">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeFirewallPolicyV2Outcome DescribeFirewallPolicyV2(const Model::DescribeFirewallPolicyV2Request& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeFirewallPolicyV2 that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeFirewallPolicyV2RequestT = Model::DescribeFirewallPolicyV2Request>
+  Model::DescribeFirewallPolicyV2OutcomeCallable DescribeFirewallPolicyV2Callable(
+      const DescribeFirewallPolicyV2RequestT& request = {}) const {
+    return SubmitCallable(&NetworkFirewallClient::DescribeFirewallPolicyV2, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeFirewallPolicyV2 that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeFirewallPolicyV2RequestT = Model::DescribeFirewallPolicyV2Request>
+  void DescribeFirewallPolicyV2Async(const DescribeFirewallPolicyV2ResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                     const DescribeFirewallPolicyV2RequestT& request = {}) const {
+    return SubmitAsync(&NetworkFirewallClient::DescribeFirewallPolicyV2, request, handler, context);
   }
 
   /**
@@ -1689,6 +1778,36 @@ class AWS_NETWORKFIREWALL_API NetworkFirewallClient : public Aws::Client::AWSJso
                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                  const ListFirewallPoliciesRequestT& request = {}) const {
     return SubmitAsync(&NetworkFirewallClient::ListFirewallPolicies, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the metadata for the Next Generation policies that you have
+   * defined. Depending on your setting for max results and the number of firewall
+   * policies, a single call might not return the full list.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListFirewallPoliciesV2">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListFirewallPoliciesV2Outcome ListFirewallPoliciesV2(const Model::ListFirewallPoliciesV2Request& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListFirewallPoliciesV2 that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListFirewallPoliciesV2RequestT = Model::ListFirewallPoliciesV2Request>
+  Model::ListFirewallPoliciesV2OutcomeCallable ListFirewallPoliciesV2Callable(const ListFirewallPoliciesV2RequestT& request = {}) const {
+    return SubmitCallable(&NetworkFirewallClient::ListFirewallPoliciesV2, request);
+  }
+
+  /**
+   * An Async wrapper for ListFirewallPoliciesV2 that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListFirewallPoliciesV2RequestT = Model::ListFirewallPoliciesV2Request>
+  void ListFirewallPoliciesV2Async(const ListFirewallPoliciesV2ResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                   const ListFirewallPoliciesV2RequestT& request = {}) const {
+    return SubmitAsync(&NetworkFirewallClient::ListFirewallPoliciesV2, request, handler, context);
   }
 
   /**
@@ -2492,6 +2611,34 @@ class AWS_NETWORKFIREWALL_API NetworkFirewallClient : public Aws::Client::AWSJso
                                                  const UpdateFirewallPolicyChangeProtectionResponseReceivedHandler& handler,
                                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&NetworkFirewallClient::UpdateFirewallPolicyChangeProtection, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the properties of the specified Next Generation policy.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateFirewallPolicyV2">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateFirewallPolicyV2Outcome UpdateFirewallPolicyV2(const Model::UpdateFirewallPolicyV2Request& request) const;
+
+  /**
+   * A Callable wrapper for UpdateFirewallPolicyV2 that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateFirewallPolicyV2RequestT = Model::UpdateFirewallPolicyV2Request>
+  Model::UpdateFirewallPolicyV2OutcomeCallable UpdateFirewallPolicyV2Callable(const UpdateFirewallPolicyV2RequestT& request) const {
+    return SubmitCallable(&NetworkFirewallClient::UpdateFirewallPolicyV2, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateFirewallPolicyV2 that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateFirewallPolicyV2RequestT = Model::UpdateFirewallPolicyV2Request>
+  void UpdateFirewallPolicyV2Async(const UpdateFirewallPolicyV2RequestT& request,
+                                   const UpdateFirewallPolicyV2ResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&NetworkFirewallClient::UpdateFirewallPolicyV2, request, handler, context);
   }
 
   /**

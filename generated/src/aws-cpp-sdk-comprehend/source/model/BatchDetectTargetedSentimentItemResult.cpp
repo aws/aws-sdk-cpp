@@ -4,50 +4,190 @@
  */
 
 #include <aws/comprehend/model/BatchDetectTargetedSentimentItemResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace Comprehend {
 namespace Model {
 
-BatchDetectTargetedSentimentItemResult::BatchDetectTargetedSentimentItemResult(JsonView jsonValue) { *this = jsonValue; }
+BatchDetectTargetedSentimentItemResult::BatchDetectTargetedSentimentItemResult(
+    const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  *this = decoder;
+}
 
-BatchDetectTargetedSentimentItemResult& BatchDetectTargetedSentimentItemResult::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("Index")) {
-    m_index = jsonValue.GetInteger("Index");
-    m_indexHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("Entities")) {
-    Aws::Utils::Array<JsonView> entitiesJsonList = jsonValue.GetArray("Entities");
-    for (unsigned entitiesIndex = 0; entitiesIndex < entitiesJsonList.GetLength(); ++entitiesIndex) {
-      m_entities.push_back(entitiesJsonList[entitiesIndex].AsObject());
+BatchDetectTargetedSentimentItemResult& BatchDetectTargetedSentimentItemResult::operator=(
+    const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "Index") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_index = static_cast<int64_t>(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextNegativeIntVal();
+                    if (val.has_value()) {
+                      m_index = static_cast<int64_t>(1 - val.value());
+                    }
+                  }
+                }
+                m_indexHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "Entities") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_entities.push_back(TargetedSentimentEntity(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_entities.push_back(TargetedSentimentEntity(decoder));
+                    }
+                  }
+                }
+                m_entitiesHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("BatchDetectTargetedSentimentItemResult", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "Index") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
+                  auto val = decoder->PopNextUnsignedIntVal();
+                  if (val.has_value()) {
+                    m_index = static_cast<int64_t>(val.value());
+                  }
+                } else {
+                  auto val = decoder->PopNextNegativeIntVal();
+                  if (val.has_value()) {
+                    m_index = static_cast<int64_t>(1 - val.value());
+                  }
+                }
+              }
+              m_indexHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "Entities") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_entities.push_back(TargetedSentimentEntity(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_entities.push_back(TargetedSentimentEntity(decoder));
+                  }
+                }
+              }
+              m_entitiesHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
     }
-    m_entitiesHasBeenSet = true;
   }
+
   return *this;
 }
 
-JsonValue BatchDetectTargetedSentimentItemResult::Jsonize() const {
-  JsonValue payload;
+void BatchDetectTargetedSentimentItemResult::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_indexHasBeenSet) {
+    mapSize++;
+  }
+  if (m_entitiesHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_indexHasBeenSet) {
-    payload.WithInteger("Index", m_index);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Index"));
+    (m_index >= 0) ? encoder.WriteUInt(m_index) : encoder.WriteNegInt(m_index);
   }
 
   if (m_entitiesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> entitiesJsonList(m_entities.size());
-    for (unsigned entitiesIndex = 0; entitiesIndex < entitiesJsonList.GetLength(); ++entitiesIndex) {
-      entitiesJsonList[entitiesIndex].AsObject(m_entities[entitiesIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Entities"));
+    encoder.WriteArrayStart(m_entities.size());
+    for (const auto& item_0 : m_entities) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("Entities", std::move(entitiesJsonList));
   }
-
-  return payload;
 }
 
 }  // namespace Model

@@ -119,5 +119,17 @@ Aws::String CreateEnvironmentRequest::SerializePayload() const {
     payload.WithInteger("MaxWebservers", m_maxWebservers);
   }
 
+  if (m_identityCenterConfigurationHasBeenSet) {
+    payload.WithObject("IdentityCenterConfiguration", m_identityCenterConfiguration.Jsonize());
+  }
+
+  if (m_teamsHasBeenSet) {
+    JsonValue teamsJsonMap;
+    for (auto& teamsItem : m_teams) {
+      teamsJsonMap.WithObject(teamsItem.first, teamsItem.second.Jsonize());
+    }
+    payload.WithObject("Teams", std::move(teamsJsonMap));
+  }
+
   return payload.View().WriteReadable();
 }

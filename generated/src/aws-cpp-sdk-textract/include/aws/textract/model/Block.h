@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/textract/Textract_EXPORTS.h>
 #include <aws/textract/model/BlockType.h>
 #include <aws/textract/model/EntityType.h>
@@ -19,10 +20,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace Textract {
 namespace Model {
@@ -48,9 +48,9 @@ namespace Model {
 class Block {
  public:
   AWS_TEXTRACT_API Block() = default;
-  AWS_TEXTRACT_API Block(Aws::Utils::Json::JsonView jsonValue);
-  AWS_TEXTRACT_API Block& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_TEXTRACT_API Block(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_TEXTRACT_API Block& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_TEXTRACT_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -179,13 +179,13 @@ class Block {
    * <code>RowIndex</code> isn't returned by <code>DetectDocumentText</code> and
    * <code>GetDocumentTextDetection</code>.</p>
    */
-  inline int GetRowIndex() const { return m_rowIndex; }
+  inline int64_t GetRowIndex() const { return m_rowIndex; }
   inline bool RowIndexHasBeenSet() const { return m_rowIndexHasBeenSet; }
-  inline void SetRowIndex(int value) {
+  inline void SetRowIndex(int64_t value) {
     m_rowIndexHasBeenSet = true;
     m_rowIndex = value;
   }
-  inline Block& WithRowIndex(int value) {
+  inline Block& WithRowIndex(int64_t value) {
     SetRowIndex(value);
     return *this;
   }
@@ -197,13 +197,13 @@ class Block {
    * <code>ColumnIndex</code> isn't returned by <code>DetectDocumentText</code> and
    * <code>GetDocumentTextDetection</code>.</p>
    */
-  inline int GetColumnIndex() const { return m_columnIndex; }
+  inline int64_t GetColumnIndex() const { return m_columnIndex; }
   inline bool ColumnIndexHasBeenSet() const { return m_columnIndexHasBeenSet; }
-  inline void SetColumnIndex(int value) {
+  inline void SetColumnIndex(int64_t value) {
     m_columnIndexHasBeenSet = true;
     m_columnIndex = value;
   }
-  inline Block& WithColumnIndex(int value) {
+  inline Block& WithColumnIndex(int64_t value) {
     SetColumnIndex(value);
     return *this;
   }
@@ -215,13 +215,13 @@ class Block {
    * returned by <code>DetectDocumentText</code> and
    * <code>GetDocumentTextDetection</code>.</p>
    */
-  inline int GetRowSpan() const { return m_rowSpan; }
+  inline int64_t GetRowSpan() const { return m_rowSpan; }
   inline bool RowSpanHasBeenSet() const { return m_rowSpanHasBeenSet; }
-  inline void SetRowSpan(int value) {
+  inline void SetRowSpan(int64_t value) {
     m_rowSpanHasBeenSet = true;
     m_rowSpan = value;
   }
-  inline Block& WithRowSpan(int value) {
+  inline Block& WithRowSpan(int64_t value) {
     SetRowSpan(value);
     return *this;
   }
@@ -233,13 +233,13 @@ class Block {
    * returned by <code>DetectDocumentText</code> and
    * <code>GetDocumentTextDetection</code>. </p>
    */
-  inline int GetColumnSpan() const { return m_columnSpan; }
+  inline int64_t GetColumnSpan() const { return m_columnSpan; }
   inline bool ColumnSpanHasBeenSet() const { return m_columnSpanHasBeenSet; }
-  inline void SetColumnSpan(int value) {
+  inline void SetColumnSpan(int64_t value) {
     m_columnSpanHasBeenSet = true;
     m_columnSpan = value;
   }
-  inline Block& WithColumnSpan(int value) {
+  inline Block& WithColumnSpan(int64_t value) {
     SetColumnSpan(value);
     return *this;
   }
@@ -378,13 +378,13 @@ class Block {
    * document pages, is considered a single-page document. This means that for
    * scanned images the value of <code>Page</code> is always 1. </p>
    */
-  inline int GetPage() const { return m_page; }
+  inline int64_t GetPage() const { return m_page; }
   inline bool PageHasBeenSet() const { return m_pageHasBeenSet; }
-  inline void SetPage(int value) {
+  inline void SetPage(int64_t value) {
     m_pageHasBeenSet = true;
     m_page = value;
   }
-  inline Block& WithPage(int value) {
+  inline Block& WithPage(int64_t value) {
     SetPage(value);
     return *this;
   }
@@ -416,13 +416,13 @@ class Block {
 
   TextType m_textType{TextType::NOT_SET};
 
-  int m_rowIndex{0};
+  int64_t m_rowIndex{0};
 
-  int m_columnIndex{0};
+  int64_t m_columnIndex{0};
 
-  int m_rowSpan{0};
+  int64_t m_rowSpan{0};
 
-  int m_columnSpan{0};
+  int64_t m_columnSpan{0};
 
   Geometry m_geometry;
 
@@ -434,7 +434,7 @@ class Block {
 
   SelectionStatus m_selectionStatus{SelectionStatus::NOT_SET};
 
-  int m_page{0};
+  int64_t m_page{0};
 
   Query m_query;
   bool m_blockTypeHasBeenSet = false;

@@ -94,6 +94,10 @@ Aws::String CreateDistributionRequest::SerializePayload() const {
     payload.WithArray("wafRules", std::move(wafRulesJsonList));
   }
 
+  if (m_subdomainNameHasBeenSet) {
+    payload.WithString("subdomainName", m_subdomainName);
+  }
+
   return payload.View().WriteReadable();
 }
 

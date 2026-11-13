@@ -10,6 +10,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/secretsmanager/SecretsManager_EXPORTS.h>
+#include <aws/secretsmanager/model/CrossAccountPrimaryType.h>
+#include <aws/secretsmanager/model/CrossAccountReplicaEntry.h>
 #include <aws/secretsmanager/model/ExternalSecretRotationMetadataItem.h>
 #include <aws/secretsmanager/model/ReplicationStatusType.h>
 #include <aws/secretsmanager/model/RotationRulesType.h>
@@ -475,6 +477,51 @@ class DescribeSecretResult {
   ///@}
 
   ///@{
+  /**
+   * <p>Information about the primary secret in the other Amazon Web Services account
+   * that this cross-account replica secret replicates from, including the primary
+   * secret ARN and the replication status. This field is omitted if the secret is
+   * not a cross-account replica.</p>
+   */
+  inline const CrossAccountPrimaryType& GetCrossAccountPrimary() const { return m_crossAccountPrimary; }
+  template <typename CrossAccountPrimaryT = CrossAccountPrimaryType>
+  void SetCrossAccountPrimary(CrossAccountPrimaryT&& value) {
+    m_crossAccountPrimaryHasBeenSet = true;
+    m_crossAccountPrimary = std::forward<CrossAccountPrimaryT>(value);
+  }
+  template <typename CrossAccountPrimaryT = CrossAccountPrimaryType>
+  DescribeSecretResult& WithCrossAccountPrimary(CrossAccountPrimaryT&& value) {
+    SetCrossAccountPrimary(std::forward<CrossAccountPrimaryT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A list of this secret's cross-account replica secrets and their replication
+   * status, if this secret is the primary for cross-account replication. This field
+   * is omitted if the secret has no cross-account replicas.</p>
+   */
+  inline const Aws::Vector<CrossAccountReplicaEntry>& GetCrossAccountReplicas() const { return m_crossAccountReplicas; }
+  template <typename CrossAccountReplicasT = Aws::Vector<CrossAccountReplicaEntry>>
+  void SetCrossAccountReplicas(CrossAccountReplicasT&& value) {
+    m_crossAccountReplicasHasBeenSet = true;
+    m_crossAccountReplicas = std::forward<CrossAccountReplicasT>(value);
+  }
+  template <typename CrossAccountReplicasT = Aws::Vector<CrossAccountReplicaEntry>>
+  DescribeSecretResult& WithCrossAccountReplicas(CrossAccountReplicasT&& value) {
+    SetCrossAccountReplicas(std::forward<CrossAccountReplicasT>(value));
+    return *this;
+  }
+  template <typename CrossAccountReplicasT = CrossAccountReplicaEntry>
+  DescribeSecretResult& AddCrossAccountReplicas(CrossAccountReplicasT&& value) {
+    m_crossAccountReplicasHasBeenSet = true;
+    m_crossAccountReplicas.emplace_back(std::forward<CrossAccountReplicasT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -533,6 +580,10 @@ class DescribeSecretResult {
 
   Aws::Vector<ReplicationStatusType> m_replicationStatus;
 
+  CrossAccountPrimaryType m_crossAccountPrimary;
+
+  Aws::Vector<CrossAccountReplicaEntry> m_crossAccountReplicas;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_aRNHasBeenSet = false;
@@ -556,6 +607,8 @@ class DescribeSecretResult {
   bool m_createdDateHasBeenSet = false;
   bool m_primaryRegionHasBeenSet = false;
   bool m_replicationStatusHasBeenSet = false;
+  bool m_crossAccountPrimaryHasBeenSet = false;
+  bool m_crossAccountReplicasHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

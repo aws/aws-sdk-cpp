@@ -1,4 +1,4 @@
-${operation.name}Outcome ${className}::${operation.name}(${constText}${operation.request.shape.name}& request) const
+${operation.name}Outcome ${className}::${operation.name}(${constText}${CppViewHelper.getRequestTypeName($serviceModel, $operation)}& request) const
 {
 #if(!$operation.result.shape.hasEventStreamMembers() && !$operation.result.shape.hasStreamMembers())
       #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceInvokeOperationMethod.vm")

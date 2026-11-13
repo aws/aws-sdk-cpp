@@ -5,16 +5,16 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/route53domains/Route53Domains_EXPORTS.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace Route53Domains {
 namespace Model {
@@ -27,9 +27,9 @@ namespace Model {
 class Tag {
  public:
   AWS_ROUTE53DOMAINS_API Tag() = default;
-  AWS_ROUTE53DOMAINS_API Tag(Aws::Utils::Json::JsonView jsonValue);
-  AWS_ROUTE53DOMAINS_API Tag& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_ROUTE53DOMAINS_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_ROUTE53DOMAINS_API Tag(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_ROUTE53DOMAINS_API Tag& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_ROUTE53DOMAINS_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

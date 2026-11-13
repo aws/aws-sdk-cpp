@@ -4,14 +4,14 @@
  */
 
 #pragma once
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/textract/Textract_EXPORTS.h>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace Textract {
 namespace Model {
@@ -31,9 +31,9 @@ namespace Model {
 class Point {
  public:
   AWS_TEXTRACT_API Point() = default;
-  AWS_TEXTRACT_API Point(Aws::Utils::Json::JsonView jsonValue);
-  AWS_TEXTRACT_API Point& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_TEXTRACT_API Point(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_TEXTRACT_API Point& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_TEXTRACT_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

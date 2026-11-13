@@ -52,6 +52,7 @@
 #include <aws/cloudwatchomni/model/GetIntelligenceConfigurationResult.h>
 #include <aws/cloudwatchomni/model/GetOmniDashboardResult.h>
 #include <aws/cloudwatchomni/model/GetSpaceCredentialsForOrganizationResult.h>
+#include <aws/cloudwatchomni/model/GetSpaceDataAccessResult.h>
 #include <aws/cloudwatchomni/model/GetSpaceResult.h>
 #include <aws/cloudwatchomni/model/GetTelemetryQueryResultsResult.h>
 #include <aws/cloudwatchomni/model/GetViewResult.h>
@@ -157,6 +158,7 @@ class GetIntelligenceConfigurationRequest;
 class GetOmniDashboardRequest;
 class GetSpaceRequest;
 class GetSpaceCredentialsForOrganizationRequest;
+class GetSpaceDataAccessRequest;
 class GetTelemetryQueryResultsRequest;
 class GetViewRequest;
 class ListAccessGrantsRequest;
@@ -223,6 +225,7 @@ typedef Aws::Utils::Outcome<GetIntelligenceConfigurationResult, CloudWatchOmniEr
 typedef Aws::Utils::Outcome<GetOmniDashboardResult, CloudWatchOmniError> GetOmniDashboardOutcome;
 typedef Aws::Utils::Outcome<GetSpaceResult, CloudWatchOmniError> GetSpaceOutcome;
 typedef Aws::Utils::Outcome<GetSpaceCredentialsForOrganizationResult, CloudWatchOmniError> GetSpaceCredentialsForOrganizationOutcome;
+typedef Aws::Utils::Outcome<GetSpaceDataAccessResult, CloudWatchOmniError> GetSpaceDataAccessOutcome;
 typedef Aws::Utils::Outcome<GetTelemetryQueryResultsResult, CloudWatchOmniError> GetTelemetryQueryResultsOutcome;
 typedef Aws::Utils::Outcome<GetViewResult, CloudWatchOmniError> GetViewOutcome;
 typedef Aws::Utils::Outcome<ListAccessGrantsResult, CloudWatchOmniError> ListAccessGrantsOutcome;
@@ -287,6 +290,7 @@ typedef std::future<GetIntelligenceConfigurationOutcome> GetIntelligenceConfigur
 typedef std::future<GetOmniDashboardOutcome> GetOmniDashboardOutcomeCallable;
 typedef std::future<GetSpaceOutcome> GetSpaceOutcomeCallable;
 typedef std::future<GetSpaceCredentialsForOrganizationOutcome> GetSpaceCredentialsForOrganizationOutcomeCallable;
+typedef std::future<GetSpaceDataAccessOutcome> GetSpaceDataAccessOutcomeCallable;
 typedef std::future<GetTelemetryQueryResultsOutcome> GetTelemetryQueryResultsOutcomeCallable;
 typedef std::future<GetViewOutcome> GetViewOutcomeCallable;
 typedef std::future<ListAccessGrantsOutcome> ListAccessGrantsOutcomeCallable;
@@ -425,6 +429,9 @@ typedef std::function<void(const CloudWatchOmniClient*, const Model::GetSpaceCre
                            const Model::GetSpaceCredentialsForOrganizationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetSpaceCredentialsForOrganizationResponseReceivedHandler;
+typedef std::function<void(const CloudWatchOmniClient*, const Model::GetSpaceDataAccessRequest&, const Model::GetSpaceDataAccessOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetSpaceDataAccessResponseReceivedHandler;
 typedef std::function<void(const CloudWatchOmniClient*, const Model::GetTelemetryQueryResultsRequest&,
                            const Model::GetTelemetryQueryResultsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetTelemetryQueryResultsResponseReceivedHandler;

@@ -162,6 +162,10 @@ namespace Aws
                 StandardRetryStrategy(retryQuotaContainer, maxAttempts)
         {}
 
+        AdaptiveRetryStrategy::AdaptiveRetryStrategy(const StandardRetryStrategyOptions& options) :
+                StandardRetryStrategy(options)
+        {}
+
         bool AdaptiveRetryStrategy::HasSendToken()
         {
             return m_retryTokenBucket.Acquire(1, m_fastFail);

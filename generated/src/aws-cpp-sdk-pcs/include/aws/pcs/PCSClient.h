@@ -136,11 +136,16 @@ class AWS_PCS_API PCSClient : public Aws::Client::AWSJsonClient,
    * lifecycle management. PCS uses the information you provide to this API action to
    * launch compute nodes in your account. You can only specify subnets in the same
    * Amazon VPC as your cluster. You receive billing charges for the compute nodes
-   * that PCS launches in your account. You must already have a launch template
-   * before you call this API. For more information, see <a
-   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">Launch
-   * an instance from a launch template</a> in the <i>Amazon Elastic Compute Cloud
-   * User Guide for Linux Instances</i>.</p><p><h3>See Also:</h3>   <a
+   * that PCS launches in your account. You can configure common instance settings,
+   * such as the AMI, security groups, and SSH key pair, directly on the compute node
+   * group, or you can provide a custom EC2 launch template. To use a launch template
+   * that PCS manages, set <code>launchTemplateMode</code> to <code>MANAGED</code>
+   * and don't provide <code>customLaunchTemplate</code>. In this case, you must
+   * specify <code>amiId</code> and <code>securityGroupIds</code>. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/pcs/latest/userguide/working-with_cng_instance-settings.html">Configuring
+   * instance settings for compute node groups in PCS</a> in the <i>PCS User
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/CreateComputeNodeGroup">AWS
    * API Reference</a></p>
    */

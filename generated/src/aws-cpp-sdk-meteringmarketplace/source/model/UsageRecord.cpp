@@ -30,9 +30,9 @@ UsageRecord& UsageRecord::operator=(JsonView jsonValue) {
     m_dimension = jsonValue.GetString("Dimension");
     m_dimensionHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("Quantity")) {
-    m_quantity = jsonValue.GetInteger("Quantity");
-    m_quantityHasBeenSet = true;
+  if (jsonValue.ValueExists("QuantityAsDecimal")) {
+    m_quantityAsDecimal = jsonValue.GetString("QuantityAsDecimal");
+    m_quantityAsDecimalHasBeenSet = true;
   }
   if (jsonValue.ValueExists("UsageAllocations")) {
     Aws::Utils::Array<JsonView> usageAllocationsJsonList = jsonValue.GetArray("UsageAllocations");
@@ -67,8 +67,8 @@ JsonValue UsageRecord::Jsonize() const {
     payload.WithString("Dimension", m_dimension);
   }
 
-  if (m_quantityHasBeenSet) {
-    payload.WithInteger("Quantity", m_quantity);
+  if (m_quantityAsDecimalHasBeenSet) {
+    payload.WithString("QuantityAsDecimal", m_quantityAsDecimal);
   }
 
   if (m_usageAllocationsHasBeenSet) {

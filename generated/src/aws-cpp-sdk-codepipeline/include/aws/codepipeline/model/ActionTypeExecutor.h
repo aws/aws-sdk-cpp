@@ -8,15 +8,15 @@
 #include <aws/codepipeline/model/ExecutorConfiguration.h>
 #include <aws/codepipeline/model/ExecutorType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace CodePipeline {
 namespace Model {
@@ -32,9 +32,9 @@ namespace Model {
 class ActionTypeExecutor {
  public:
   AWS_CODEPIPELINE_API ActionTypeExecutor() = default;
-  AWS_CODEPIPELINE_API ActionTypeExecutor(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CODEPIPELINE_API ActionTypeExecutor& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_CODEPIPELINE_API ActionTypeExecutor(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CODEPIPELINE_API ActionTypeExecutor& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CODEPIPELINE_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -100,13 +100,13 @@ class ActionTypeExecutor {
    * <p>The timeout in seconds for the job. An action execution can have multiple
    * jobs. This is the timeout for a single job, not the entire action execution.</p>
    */
-  inline int GetJobTimeout() const { return m_jobTimeout; }
+  inline int64_t GetJobTimeout() const { return m_jobTimeout; }
   inline bool JobTimeoutHasBeenSet() const { return m_jobTimeoutHasBeenSet; }
-  inline void SetJobTimeout(int value) {
+  inline void SetJobTimeout(int64_t value) {
     m_jobTimeoutHasBeenSet = true;
     m_jobTimeout = value;
   }
-  inline ActionTypeExecutor& WithJobTimeout(int value) {
+  inline ActionTypeExecutor& WithJobTimeout(int64_t value) {
     SetJobTimeout(value);
     return *this;
   }
@@ -118,7 +118,7 @@ class ActionTypeExecutor {
 
   Aws::String m_policyStatementsTemplate;
 
-  int m_jobTimeout{0};
+  int64_t m_jobTimeout{0};
   bool m_configurationHasBeenSet = false;
   bool m_typeHasBeenSet = false;
   bool m_policyStatementsTemplateHasBeenSet = false;

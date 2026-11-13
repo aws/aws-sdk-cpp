@@ -4,42 +4,69 @@
  */
 
 #include <aws/codepipeline/model/PutThirdPartyJobSuccessResultRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 using namespace Aws::CodePipeline::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String PutThirdPartyJobSuccessResultRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_jobIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_clientTokenHasBeenSet) {
+    mapSize++;
+  }
+  if (m_currentRevisionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_continuationTokenHasBeenSet) {
+    mapSize++;
+  }
+  if (m_executionDetailsHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_jobIdHasBeenSet) {
-    payload.WithString("jobId", m_jobId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("jobId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_jobId.c_str()));
   }
 
   if (m_clientTokenHasBeenSet) {
-    payload.WithString("clientToken", m_clientToken);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("clientToken"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_clientToken.c_str()));
   }
 
   if (m_currentRevisionHasBeenSet) {
-    payload.WithObject("currentRevision", m_currentRevision.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("currentRevision"));
+    m_currentRevision.CborEncode(encoder);
   }
 
   if (m_continuationTokenHasBeenSet) {
-    payload.WithString("continuationToken", m_continuationToken);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("continuationToken"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_continuationToken.c_str()));
   }
 
   if (m_executionDetailsHasBeenSet) {
-    payload.WithObject("executionDetails", m_executionDetails.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("executionDetails"));
+    m_executionDetails.CborEncode(encoder);
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection PutThirdPartyJobSuccessResultRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodePipeline_20150709.PutThirdPartyJobSuccessResult"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

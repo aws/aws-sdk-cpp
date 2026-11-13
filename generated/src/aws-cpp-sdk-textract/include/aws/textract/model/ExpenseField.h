@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/textract/Textract_EXPORTS.h>
 #include <aws/textract/model/ExpenseCurrency.h>
 #include <aws/textract/model/ExpenseDetection.h>
@@ -15,10 +16,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace Textract {
 namespace Model {
@@ -32,9 +32,9 @@ namespace Model {
 class ExpenseField {
  public:
   AWS_TEXTRACT_API ExpenseField() = default;
-  AWS_TEXTRACT_API ExpenseField(Aws::Utils::Json::JsonView jsonValue);
-  AWS_TEXTRACT_API ExpenseField& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_TEXTRACT_API ExpenseField(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_TEXTRACT_API ExpenseField& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_TEXTRACT_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -96,13 +96,13 @@ class ExpenseField {
   /**
    * <p>The page number the value was detected on.</p>
    */
-  inline int GetPageNumber() const { return m_pageNumber; }
+  inline int64_t GetPageNumber() const { return m_pageNumber; }
   inline bool PageNumberHasBeenSet() const { return m_pageNumberHasBeenSet; }
-  inline void SetPageNumber(int value) {
+  inline void SetPageNumber(int64_t value) {
     m_pageNumberHasBeenSet = true;
     m_pageNumber = value;
   }
-  inline ExpenseField& WithPageNumber(int value) {
+  inline ExpenseField& WithPageNumber(int64_t value) {
     SetPageNumber(value);
     return *this;
   }
@@ -158,7 +158,7 @@ class ExpenseField {
 
   ExpenseDetection m_valueDetection;
 
-  int m_pageNumber{0};
+  int64_t m_pageNumber{0};
 
   ExpenseCurrency m_currency;
 

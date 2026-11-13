@@ -17,6 +17,7 @@ namespace ManagedMicrovmImageVersionStatusMapper {
 
 static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
 static const int DEPRECATED_HASH = HashingUtils::HashString("DEPRECATED");
+static const int RECALLED_HASH = HashingUtils::HashString("RECALLED");
 
 ManagedMicrovmImageVersionStatus GetManagedMicrovmImageVersionStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ ManagedMicrovmImageVersionStatus GetManagedMicrovmImageVersionStatusForName(cons
     return ManagedMicrovmImageVersionStatus::AVAILABLE;
   } else if (hashCode == DEPRECATED_HASH) {
     return ManagedMicrovmImageVersionStatus::DEPRECATED;
+  } else if (hashCode == RECALLED_HASH) {
+    return ManagedMicrovmImageVersionStatus::RECALLED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForManagedMicrovmImageVersionStatus(ManagedMicrovmImageVersio
       return "AVAILABLE";
     case ManagedMicrovmImageVersionStatus::DEPRECATED:
       return "DEPRECATED";
+    case ManagedMicrovmImageVersionStatus::RECALLED:
+      return "RECALLED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

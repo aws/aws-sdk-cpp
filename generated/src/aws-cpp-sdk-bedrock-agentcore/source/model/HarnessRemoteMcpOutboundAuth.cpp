@@ -1,0 +1,48 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/bedrock-agentcore/model/HarnessRemoteMcpOutboundAuth.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace BedrockAgentCore {
+namespace Model {
+
+HarnessRemoteMcpOutboundAuth::HarnessRemoteMcpOutboundAuth(JsonView jsonValue) { *this = jsonValue; }
+
+HarnessRemoteMcpOutboundAuth& HarnessRemoteMcpOutboundAuth::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("awsIam")) {
+    m_awsIam = jsonValue.GetObject("awsIam");
+    m_awsIamHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("none")) {
+    m_none = jsonValue.GetObject("none");
+    m_noneHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue HarnessRemoteMcpOutboundAuth::Jsonize() const {
+  JsonValue payload;
+
+  if (m_awsIamHasBeenSet) {
+    payload.WithObject("awsIam", m_awsIam.Jsonize());
+  }
+
+  if (m_noneHasBeenSet) {
+    payload.WithObject("none", m_none.Jsonize());
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace BedrockAgentCore
+}  // namespace Aws

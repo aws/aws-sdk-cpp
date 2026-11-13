@@ -673,6 +673,7 @@
 #include <aws/medialive/model/MediaPackageOutputDestinationSettings.h>
 #include <aws/medialive/model/MediaPackageOutputSettings.h>
 #include <aws/medialive/model/MediaPackageV2AbWatermarkerIrdetoSettings.h>
+#include <aws/medialive/model/MediaPackageV2CaptionLanguageSetting.h>
 #include <aws/medialive/model/MediaPackageV2DestinationSettings.h>
 #include <aws/medialive/model/MediaPackageV2GroupSettings.h>
 #include <aws/medialive/model/MediaPackageV2WatermarkingSettings.h>

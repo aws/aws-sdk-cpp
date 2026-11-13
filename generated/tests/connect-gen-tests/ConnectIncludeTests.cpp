@@ -182,6 +182,7 @@
 #include <aws/connect/model/Contact.h>
 #include <aws/connect/model/ContactAnalysis.h>
 #include <aws/connect/model/ContactAnalysisReference.h>
+#include <aws/connect/model/ContactAnalysisReferenceState.h>
 #include <aws/connect/model/ContactConfiguration.h>
 #include <aws/connect/model/ContactDataRequest.h>
 #include <aws/connect/model/ContactDetails.h>
@@ -218,6 +219,11 @@
 #include <aws/connect/model/ContactFlowVersionSummary.h>
 #include <aws/connect/model/ContactInitiationMethod.h>
 #include <aws/connect/model/ContactInteractionType.h>
+#include <aws/connect/model/ContactLens.h>
+#include <aws/connect/model/ContactLensChannelConfiguration.h>
+#include <aws/connect/model/ContactLensRedactionConfiguration.h>
+#include <aws/connect/model/ContactLensSentimentConfiguration.h>
+#include <aws/connect/model/ContactLensSummaryConfiguration.h>
 #include <aws/connect/model/ContactMediaProcessingFailureMode.h>
 #include <aws/connect/model/ContactMetricInfo.h>
 #include <aws/connect/model/ContactMetricName.h>
@@ -236,6 +242,8 @@
 #include <aws/connect/model/ControlPlaneAttributeFilter.h>
 #include <aws/connect/model/ControlPlaneTagFilter.h>
 #include <aws/connect/model/ControlPlaneUserAttributeFilter.h>
+#include <aws/connect/model/ConversationalAnalytics.h>
+#include <aws/connect/model/ConversationalAnalyticsConfiguration.h>
 #include <aws/connect/model/CreateAgentStatusRequest.h>
 #include <aws/connect/model/CreateAgentStatusResult.h>
 #include <aws/connect/model/CreateAttachedFileRequest.h>
@@ -547,6 +555,7 @@
 #include <aws/connect/model/EmptyFieldValue.h>
 #include <aws/connect/model/EncryptionConfig.h>
 #include <aws/connect/model/EncryptionType.h>
+#include <aws/connect/model/EndAssociatedEmailsActionDefinition.h>
 #include <aws/connect/model/EndAssociatedTasksActionDefinition.h>
 #include <aws/connect/model/Endpoint.h>
 #include <aws/connect/model/EndpointInfo.h>

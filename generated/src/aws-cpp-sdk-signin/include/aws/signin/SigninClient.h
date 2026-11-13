@@ -77,6 +77,34 @@ class AWS_SIGNIN_API SigninClient : public Aws::Client::AWSJsonClient,
   virtual ~SigninClient();
 
   /**
+   * <p>Creates a bearer token that represents your IAM credentials and can be used
+   * to access a supported AWS service. By default, the token is valid for 12
+   * hours.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/signin-2023-01-01/CreateBearerToken">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateBearerTokenOutcome CreateBearerToken(const Model::CreateBearerTokenRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateBearerToken that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateBearerTokenRequestT = Model::CreateBearerTokenRequest>
+  Model::CreateBearerTokenOutcomeCallable CreateBearerTokenCallable(const CreateBearerTokenRequestT& request) const {
+    return SubmitCallable(&SigninClient::CreateBearerToken, request);
+  }
+
+  /**
+   * An Async wrapper for CreateBearerToken that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename CreateBearerTokenRequestT = Model::CreateBearerTokenRequest>
+  void CreateBearerTokenAsync(const CreateBearerTokenRequestT& request, const CreateBearerTokenResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SigninClient::CreateBearerToken, request, handler, context);
+  }
+
+  /**
    * <p>Exchanges an authorization code or refresh token for an OAuth 2.0 access
    * token and refresh token.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/signin-2023-01-01/CreateOAuth2Token">AWS

@@ -99,6 +99,9 @@ static const int StartGUISession_HASH = HashingUtils::HashString("StartGUISessio
 static const int StopGUISession_HASH = HashingUtils::HashString("StopGUISession");
 static const int SetupInstanceHttps_HASH = HashingUtils::HashString("SetupInstanceHttps");
 static const int GetProfile_HASH = HashingUtils::HashString("GetProfile");
+static const int CreateSubdomain_HASH = HashingUtils::HashString("CreateSubdomain");
+static const int UpdateSubdomainAssociation_HASH = HashingUtils::HashString("UpdateSubdomainAssociation");
+static const int DeleteSubdomain_HASH = HashingUtils::HashString("DeleteSubdomain");
 
 OperationType GetOperationTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -270,6 +273,12 @@ OperationType GetOperationTypeForName(const Aws::String& name) {
     return OperationType::SetupInstanceHttps;
   } else if (hashCode == GetProfile_HASH) {
     return OperationType::GetProfile;
+  } else if (hashCode == CreateSubdomain_HASH) {
+    return OperationType::CreateSubdomain;
+  } else if (hashCode == UpdateSubdomainAssociation_HASH) {
+    return OperationType::UpdateSubdomainAssociation;
+  } else if (hashCode == DeleteSubdomain_HASH) {
+    return OperationType::DeleteSubdomain;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -452,6 +461,12 @@ Aws::String GetNameForOperationType(OperationType enumValue) {
       return "SetupInstanceHttps";
     case OperationType::GetProfile:
       return "GetProfile";
+    case OperationType::CreateSubdomain:
+      return "CreateSubdomain";
+    case OperationType::UpdateSubdomainAssociation:
+      return "UpdateSubdomainAssociation";
+    case OperationType::DeleteSubdomain:
+      return "DeleteSubdomain";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

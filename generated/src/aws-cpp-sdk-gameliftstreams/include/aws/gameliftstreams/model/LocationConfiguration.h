@@ -27,8 +27,12 @@ namespace Model {
  * for an existing stream group, call <a
  * href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_UpdateStreamGroup.html">UpdateStreamGroup</a>.
  * To add a new location and specify its capacity, call <a
- * href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_AddStreamGroupLocations.html">AddStreamGroupLocations</a>.</p><p><h3>See
- * Also:</h3>   <a
+ * href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_AddStreamGroupLocations.html">AddStreamGroupLocations</a>.</p>
+ * <p>When you modify capacity for an existing location, always specify
+ * <code>AlwaysOnCapacity</code>, <code>MaximumCapacity</code>, and
+ * <code>TargetIdleCapacity</code> in the same request. If you omit one or more of
+ * these values, the service applies internal defaults for the missing values.
+ * These defaults might not match what you intend.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/LocationConfiguration">AWS
  * API Reference</a></p>
  */

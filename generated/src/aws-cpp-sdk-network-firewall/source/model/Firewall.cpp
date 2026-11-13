@@ -3,248 +3,1197 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/network-firewall/model/Firewall.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace NetworkFirewall {
 namespace Model {
 
-Firewall::Firewall(JsonView jsonValue) { *this = jsonValue; }
+Firewall::Firewall(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-Firewall& Firewall::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("FirewallName")) {
-    m_firewallName = jsonValue.GetString("FirewallName");
-    m_firewallNameHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("FirewallArn")) {
-    m_firewallArn = jsonValue.GetString("FirewallArn");
-    m_firewallArnHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("FirewallPolicyArn")) {
-    m_firewallPolicyArn = jsonValue.GetString("FirewallPolicyArn");
-    m_firewallPolicyArnHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("VpcId")) {
-    m_vpcId = jsonValue.GetString("VpcId");
-    m_vpcIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("SubnetMappings")) {
-    Aws::Utils::Array<JsonView> subnetMappingsJsonList = jsonValue.GetArray("SubnetMappings");
-    for (unsigned subnetMappingsIndex = 0; subnetMappingsIndex < subnetMappingsJsonList.GetLength(); ++subnetMappingsIndex) {
-      m_subnetMappings.push_back(subnetMappingsJsonList[subnetMappingsIndex].AsObject());
+Firewall& Firewall::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "FirewallName") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_firewallName = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_firewallName = ss.str();
+                  }
+                }
+                m_firewallNameHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "FirewallArn") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_firewallArn = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_firewallArn = ss.str();
+                  }
+                }
+                m_firewallArnHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "FirewallPolicyArn") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_firewallPolicyArn = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_firewallPolicyArn = ss.str();
+                  }
+                }
+                m_firewallPolicyArnHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "VpcId") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_vpcId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_vpcId = ss.str();
+                  }
+                }
+                m_vpcIdHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "SubnetMappings") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_subnetMappings.push_back(SubnetMapping(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_subnetMappings.push_back(SubnetMapping(decoder));
+                    }
+                  }
+                }
+                m_subnetMappingsHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "DeleteProtection") {
+                auto val = decoder->PopNextBooleanVal();
+                if (val.has_value()) {
+                  m_deleteProtection = val.value();
+                }
+                m_deleteProtectionHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "SubnetChangeProtection") {
+                auto val = decoder->PopNextBooleanVal();
+                if (val.has_value()) {
+                  m_subnetChangeProtection = val.value();
+                }
+                m_subnetChangeProtectionHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "FirewallPolicyChangeProtection") {
+                auto val = decoder->PopNextBooleanVal();
+                if (val.has_value()) {
+                  m_firewallPolicyChangeProtection = val.value();
+                }
+                m_firewallPolicyChangeProtectionHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "Description") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_description = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_description = ss.str();
+                  }
+                }
+                m_descriptionHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "FirewallId") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_firewallId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_firewallId = ss.str();
+                  }
+                }
+                m_firewallIdHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "Tags") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_tags.push_back(Tag(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_tags.push_back(Tag(decoder));
+                    }
+                  }
+                }
+                m_tagsHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "EncryptionConfiguration") {
+                m_encryptionConfiguration = EncryptionConfiguration(decoder);
+                m_encryptionConfigurationHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "NumberOfAssociations") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_numberOfAssociations = static_cast<int64_t>(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextNegativeIntVal();
+                    if (val.has_value()) {
+                      m_numberOfAssociations = static_cast<int64_t>(1 - val.value());
+                    }
+                  }
+                }
+                m_numberOfAssociationsHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "EnabledAnalysisTypes") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        auto val = decoder->PopNextTextVal();
+                        if (val.has_value()) {
+                          m_enabledAnalysisTypes.push_back(EnabledAnalysisTypeMapper::GetEnabledAnalysisTypeForName(
+                              Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len)));
+                        }
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        m_enabledAnalysisTypes.push_back(EnabledAnalysisTypeMapper::GetEnabledAnalysisTypeForName(
+                            Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len)));
+                      }
+                    }
+                  }
+                }
+                m_enabledAnalysisTypesHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "TransitGatewayId") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_transitGatewayId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_transitGatewayId = ss.str();
+                  }
+                }
+                m_transitGatewayIdHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "TransitGatewayOwnerAccountId") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_transitGatewayOwnerAccountId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_transitGatewayOwnerAccountId = ss.str();
+                  }
+                }
+                m_transitGatewayOwnerAccountIdHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "AvailabilityZoneMappings") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_availabilityZoneMappings.push_back(AvailabilityZoneMapping(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_availabilityZoneMappings.push_back(AvailabilityZoneMapping(decoder));
+                    }
+                  }
+                }
+                m_availabilityZoneMappingsHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "AvailabilityZoneChangeProtection") {
+                auto val = decoder->PopNextBooleanVal();
+                if (val.has_value()) {
+                  m_availabilityZoneChangeProtection = val.value();
+                }
+                m_availabilityZoneChangeProtectionHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "NatGatewayMappings") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_natGatewayMappings.push_back(NatGatewayMapping(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_natGatewayMappings.push_back(NatGatewayMapping(decoder));
+                    }
+                  }
+                }
+                m_natGatewayMappingsHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "ProxySettings") {
+                m_proxySettings = ProxySettings(decoder);
+                m_proxySettingsHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "NoSourcePreservation") {
+                auto val = decoder->PopNextBooleanVal();
+                if (val.has_value()) {
+                  m_noSourcePreservation = val.value();
+                }
+                m_noSourcePreservationHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "VpcEndpoint") {
+                m_vpcEndpoint = VpcEndpoint(decoder);
+                m_vpcEndpointHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("Firewall", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "FirewallName") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_firewallName = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_firewallName = ss.str();
+                }
+              }
+              m_firewallNameHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "FirewallArn") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_firewallArn = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_firewallArn = ss.str();
+                }
+              }
+              m_firewallArnHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "FirewallPolicyArn") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_firewallPolicyArn = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_firewallPolicyArn = ss.str();
+                }
+              }
+              m_firewallPolicyArnHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "VpcId") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_vpcId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_vpcId = ss.str();
+                }
+              }
+              m_vpcIdHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "SubnetMappings") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_subnetMappings.push_back(SubnetMapping(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_subnetMappings.push_back(SubnetMapping(decoder));
+                  }
+                }
+              }
+              m_subnetMappingsHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "DeleteProtection") {
+              auto val = decoder->PopNextBooleanVal();
+              if (val.has_value()) {
+                m_deleteProtection = val.value();
+              }
+              m_deleteProtectionHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "SubnetChangeProtection") {
+              auto val = decoder->PopNextBooleanVal();
+              if (val.has_value()) {
+                m_subnetChangeProtection = val.value();
+              }
+              m_subnetChangeProtectionHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "FirewallPolicyChangeProtection") {
+              auto val = decoder->PopNextBooleanVal();
+              if (val.has_value()) {
+                m_firewallPolicyChangeProtection = val.value();
+              }
+              m_firewallPolicyChangeProtectionHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "Description") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_description = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_description = ss.str();
+                }
+              }
+              m_descriptionHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "FirewallId") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_firewallId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_firewallId = ss.str();
+                }
+              }
+              m_firewallIdHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "Tags") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_tags.push_back(Tag(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_tags.push_back(Tag(decoder));
+                  }
+                }
+              }
+              m_tagsHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "EncryptionConfiguration") {
+              m_encryptionConfiguration = EncryptionConfiguration(decoder);
+              m_encryptionConfigurationHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "NumberOfAssociations") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
+                  auto val = decoder->PopNextUnsignedIntVal();
+                  if (val.has_value()) {
+                    m_numberOfAssociations = static_cast<int64_t>(val.value());
+                  }
+                } else {
+                  auto val = decoder->PopNextNegativeIntVal();
+                  if (val.has_value()) {
+                    m_numberOfAssociations = static_cast<int64_t>(1 - val.value());
+                  }
+                }
+              }
+              m_numberOfAssociationsHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "EnabledAnalysisTypes") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        m_enabledAnalysisTypes.push_back(EnabledAnalysisTypeMapper::GetEnabledAnalysisTypeForName(
+                            Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len)));
+                      }
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_enabledAnalysisTypes.push_back(EnabledAnalysisTypeMapper::GetEnabledAnalysisTypeForName(
+                          Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len)));
+                    }
+                  }
+                }
+              }
+              m_enabledAnalysisTypesHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "TransitGatewayId") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_transitGatewayId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_transitGatewayId = ss.str();
+                }
+              }
+              m_transitGatewayIdHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "TransitGatewayOwnerAccountId") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_transitGatewayOwnerAccountId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_transitGatewayOwnerAccountId = ss.str();
+                }
+              }
+              m_transitGatewayOwnerAccountIdHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "AvailabilityZoneMappings") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_availabilityZoneMappings.push_back(AvailabilityZoneMapping(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_availabilityZoneMappings.push_back(AvailabilityZoneMapping(decoder));
+                  }
+                }
+              }
+              m_availabilityZoneMappingsHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "AvailabilityZoneChangeProtection") {
+              auto val = decoder->PopNextBooleanVal();
+              if (val.has_value()) {
+                m_availabilityZoneChangeProtection = val.value();
+              }
+              m_availabilityZoneChangeProtectionHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "NatGatewayMappings") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_natGatewayMappings.push_back(NatGatewayMapping(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_natGatewayMappings.push_back(NatGatewayMapping(decoder));
+                  }
+                }
+              }
+              m_natGatewayMappingsHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "ProxySettings") {
+              m_proxySettings = ProxySettings(decoder);
+              m_proxySettingsHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "NoSourcePreservation") {
+              auto val = decoder->PopNextBooleanVal();
+              if (val.has_value()) {
+                m_noSourcePreservation = val.value();
+              }
+              m_noSourcePreservationHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "VpcEndpoint") {
+              m_vpcEndpoint = VpcEndpoint(decoder);
+              m_vpcEndpointHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
     }
-    m_subnetMappingsHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("DeleteProtection")) {
-    m_deleteProtection = jsonValue.GetBool("DeleteProtection");
-    m_deleteProtectionHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("SubnetChangeProtection")) {
-    m_subnetChangeProtection = jsonValue.GetBool("SubnetChangeProtection");
-    m_subnetChangeProtectionHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("FirewallPolicyChangeProtection")) {
-    m_firewallPolicyChangeProtection = jsonValue.GetBool("FirewallPolicyChangeProtection");
-    m_firewallPolicyChangeProtectionHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("Description")) {
-    m_description = jsonValue.GetString("Description");
-    m_descriptionHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("FirewallId")) {
-    m_firewallId = jsonValue.GetString("FirewallId");
-    m_firewallIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("Tags")) {
-    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
-    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
-      m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
-    }
-    m_tagsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("EncryptionConfiguration")) {
-    m_encryptionConfiguration = jsonValue.GetObject("EncryptionConfiguration");
-    m_encryptionConfigurationHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("NumberOfAssociations")) {
-    m_numberOfAssociations = jsonValue.GetInteger("NumberOfAssociations");
-    m_numberOfAssociationsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("EnabledAnalysisTypes")) {
-    Aws::Utils::Array<JsonView> enabledAnalysisTypesJsonList = jsonValue.GetArray("EnabledAnalysisTypes");
-    for (unsigned enabledAnalysisTypesIndex = 0; enabledAnalysisTypesIndex < enabledAnalysisTypesJsonList.GetLength();
-         ++enabledAnalysisTypesIndex) {
-      m_enabledAnalysisTypes.push_back(
-          EnabledAnalysisTypeMapper::GetEnabledAnalysisTypeForName(enabledAnalysisTypesJsonList[enabledAnalysisTypesIndex].AsString()));
-    }
-    m_enabledAnalysisTypesHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("TransitGatewayId")) {
-    m_transitGatewayId = jsonValue.GetString("TransitGatewayId");
-    m_transitGatewayIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("TransitGatewayOwnerAccountId")) {
-    m_transitGatewayOwnerAccountId = jsonValue.GetString("TransitGatewayOwnerAccountId");
-    m_transitGatewayOwnerAccountIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("AvailabilityZoneMappings")) {
-    Aws::Utils::Array<JsonView> availabilityZoneMappingsJsonList = jsonValue.GetArray("AvailabilityZoneMappings");
-    for (unsigned availabilityZoneMappingsIndex = 0; availabilityZoneMappingsIndex < availabilityZoneMappingsJsonList.GetLength();
-         ++availabilityZoneMappingsIndex) {
-      m_availabilityZoneMappings.push_back(availabilityZoneMappingsJsonList[availabilityZoneMappingsIndex].AsObject());
-    }
-    m_availabilityZoneMappingsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("AvailabilityZoneChangeProtection")) {
-    m_availabilityZoneChangeProtection = jsonValue.GetBool("AvailabilityZoneChangeProtection");
-    m_availabilityZoneChangeProtectionHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("NatGatewayMappings")) {
-    Aws::Utils::Array<JsonView> natGatewayMappingsJsonList = jsonValue.GetArray("NatGatewayMappings");
-    for (unsigned natGatewayMappingsIndex = 0; natGatewayMappingsIndex < natGatewayMappingsJsonList.GetLength();
-         ++natGatewayMappingsIndex) {
-      m_natGatewayMappings.push_back(natGatewayMappingsJsonList[natGatewayMappingsIndex].AsObject());
-    }
-    m_natGatewayMappingsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ProxySettings")) {
-    m_proxySettings = jsonValue.GetObject("ProxySettings");
-    m_proxySettingsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("NoSourcePreservation")) {
-    m_noSourcePreservation = jsonValue.GetBool("NoSourcePreservation");
-    m_noSourcePreservationHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("VpcEndpoint")) {
-    m_vpcEndpoint = jsonValue.GetObject("VpcEndpoint");
-    m_vpcEndpointHasBeenSet = true;
-  }
+
   return *this;
 }
 
-JsonValue Firewall::Jsonize() const {
-  JsonValue payload;
+void Firewall::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_firewallNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_firewallArnHasBeenSet) {
+    mapSize++;
+  }
+  if (m_firewallPolicyArnHasBeenSet) {
+    mapSize++;
+  }
+  if (m_vpcIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_subnetMappingsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_deleteProtectionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_subnetChangeProtectionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_firewallPolicyChangeProtectionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_descriptionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_firewallIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_tagsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_encryptionConfigurationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_numberOfAssociationsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_enabledAnalysisTypesHasBeenSet) {
+    mapSize++;
+  }
+  if (m_transitGatewayIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_transitGatewayOwnerAccountIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_availabilityZoneMappingsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_availabilityZoneChangeProtectionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_natGatewayMappingsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_proxySettingsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_noSourcePreservationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_vpcEndpointHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_firewallNameHasBeenSet) {
-    payload.WithString("FirewallName", m_firewallName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("FirewallName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_firewallName.c_str()));
   }
 
   if (m_firewallArnHasBeenSet) {
-    payload.WithString("FirewallArn", m_firewallArn);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("FirewallArn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_firewallArn.c_str()));
   }
 
   if (m_firewallPolicyArnHasBeenSet) {
-    payload.WithString("FirewallPolicyArn", m_firewallPolicyArn);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("FirewallPolicyArn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_firewallPolicyArn.c_str()));
   }
 
   if (m_vpcIdHasBeenSet) {
-    payload.WithString("VpcId", m_vpcId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("VpcId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_vpcId.c_str()));
   }
 
   if (m_subnetMappingsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> subnetMappingsJsonList(m_subnetMappings.size());
-    for (unsigned subnetMappingsIndex = 0; subnetMappingsIndex < subnetMappingsJsonList.GetLength(); ++subnetMappingsIndex) {
-      subnetMappingsJsonList[subnetMappingsIndex].AsObject(m_subnetMappings[subnetMappingsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("SubnetMappings"));
+    encoder.WriteArrayStart(m_subnetMappings.size());
+    for (const auto& item_0 : m_subnetMappings) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("SubnetMappings", std::move(subnetMappingsJsonList));
   }
 
   if (m_deleteProtectionHasBeenSet) {
-    payload.WithBool("DeleteProtection", m_deleteProtection);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("DeleteProtection"));
+    encoder.WriteBool(m_deleteProtection);
   }
 
   if (m_subnetChangeProtectionHasBeenSet) {
-    payload.WithBool("SubnetChangeProtection", m_subnetChangeProtection);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("SubnetChangeProtection"));
+    encoder.WriteBool(m_subnetChangeProtection);
   }
 
   if (m_firewallPolicyChangeProtectionHasBeenSet) {
-    payload.WithBool("FirewallPolicyChangeProtection", m_firewallPolicyChangeProtection);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("FirewallPolicyChangeProtection"));
+    encoder.WriteBool(m_firewallPolicyChangeProtection);
   }
 
   if (m_descriptionHasBeenSet) {
-    payload.WithString("Description", m_description);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Description"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_description.c_str()));
   }
 
   if (m_firewallIdHasBeenSet) {
-    payload.WithString("FirewallId", m_firewallId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("FirewallId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_firewallId.c_str()));
   }
 
   if (m_tagsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
-      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Tags"));
+    encoder.WriteArrayStart(m_tags.size());
+    for (const auto& item_0 : m_tags) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("Tags", std::move(tagsJsonList));
   }
 
   if (m_encryptionConfigurationHasBeenSet) {
-    payload.WithObject("EncryptionConfiguration", m_encryptionConfiguration.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("EncryptionConfiguration"));
+    m_encryptionConfiguration.CborEncode(encoder);
   }
 
   if (m_numberOfAssociationsHasBeenSet) {
-    payload.WithInteger("NumberOfAssociations", m_numberOfAssociations);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("NumberOfAssociations"));
+    (m_numberOfAssociations >= 0) ? encoder.WriteUInt(m_numberOfAssociations) : encoder.WriteNegInt(m_numberOfAssociations);
   }
 
   if (m_enabledAnalysisTypesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> enabledAnalysisTypesJsonList(m_enabledAnalysisTypes.size());
-    for (unsigned enabledAnalysisTypesIndex = 0; enabledAnalysisTypesIndex < enabledAnalysisTypesJsonList.GetLength();
-         ++enabledAnalysisTypesIndex) {
-      enabledAnalysisTypesJsonList[enabledAnalysisTypesIndex].AsString(
-          EnabledAnalysisTypeMapper::GetNameForEnabledAnalysisType(m_enabledAnalysisTypes[enabledAnalysisTypesIndex]));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("EnabledAnalysisTypes"));
+    encoder.WriteArrayStart(m_enabledAnalysisTypes.size());
+    for (const auto& item_0 : m_enabledAnalysisTypes) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(EnabledAnalysisTypeMapper::GetNameForEnabledAnalysisType(item_0).c_str()));
     }
-    payload.WithArray("EnabledAnalysisTypes", std::move(enabledAnalysisTypesJsonList));
   }
 
   if (m_transitGatewayIdHasBeenSet) {
-    payload.WithString("TransitGatewayId", m_transitGatewayId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("TransitGatewayId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_transitGatewayId.c_str()));
   }
 
   if (m_transitGatewayOwnerAccountIdHasBeenSet) {
-    payload.WithString("TransitGatewayOwnerAccountId", m_transitGatewayOwnerAccountId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("TransitGatewayOwnerAccountId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_transitGatewayOwnerAccountId.c_str()));
   }
 
   if (m_availabilityZoneMappingsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> availabilityZoneMappingsJsonList(m_availabilityZoneMappings.size());
-    for (unsigned availabilityZoneMappingsIndex = 0; availabilityZoneMappingsIndex < availabilityZoneMappingsJsonList.GetLength();
-         ++availabilityZoneMappingsIndex) {
-      availabilityZoneMappingsJsonList[availabilityZoneMappingsIndex].AsObject(
-          m_availabilityZoneMappings[availabilityZoneMappingsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AvailabilityZoneMappings"));
+    encoder.WriteArrayStart(m_availabilityZoneMappings.size());
+    for (const auto& item_0 : m_availabilityZoneMappings) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("AvailabilityZoneMappings", std::move(availabilityZoneMappingsJsonList));
   }
 
   if (m_availabilityZoneChangeProtectionHasBeenSet) {
-    payload.WithBool("AvailabilityZoneChangeProtection", m_availabilityZoneChangeProtection);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AvailabilityZoneChangeProtection"));
+    encoder.WriteBool(m_availabilityZoneChangeProtection);
   }
 
   if (m_natGatewayMappingsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> natGatewayMappingsJsonList(m_natGatewayMappings.size());
-    for (unsigned natGatewayMappingsIndex = 0; natGatewayMappingsIndex < natGatewayMappingsJsonList.GetLength();
-         ++natGatewayMappingsIndex) {
-      natGatewayMappingsJsonList[natGatewayMappingsIndex].AsObject(m_natGatewayMappings[natGatewayMappingsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("NatGatewayMappings"));
+    encoder.WriteArrayStart(m_natGatewayMappings.size());
+    for (const auto& item_0 : m_natGatewayMappings) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("NatGatewayMappings", std::move(natGatewayMappingsJsonList));
   }
 
   if (m_proxySettingsHasBeenSet) {
-    payload.WithObject("ProxySettings", m_proxySettings.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ProxySettings"));
+    m_proxySettings.CborEncode(encoder);
   }
 
   if (m_noSourcePreservationHasBeenSet) {
-    payload.WithBool("NoSourcePreservation", m_noSourcePreservation);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("NoSourcePreservation"));
+    encoder.WriteBool(m_noSourcePreservation);
   }
 
   if (m_vpcEndpointHasBeenSet) {
-    payload.WithObject("VpcEndpoint", m_vpcEndpoint.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("VpcEndpoint"));
+    m_vpcEndpoint.CborEncode(encoder);
   }
-
-  return payload;
 }
 
 }  // namespace Model

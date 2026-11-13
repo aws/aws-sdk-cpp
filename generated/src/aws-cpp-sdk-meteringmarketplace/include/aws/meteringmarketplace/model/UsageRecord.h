@@ -105,16 +105,28 @@ class UsageRecord {
   ///@{
   /**
    * <p>The quantity of usage consumed by the customer for the given dimension and
-   * time. Defaults to <code>0</code> if not specified.</p>
+   * time, as a decimal string. Use this instead of <code>Quantity</code> to report
+   * fractional usage.</p> <p>A non-negative decimal number, for example
+   * <code>17.42</code>.</p> <p>You can't specify both <code>Quantity</code> and
+   * <code>QuantityAsDecimal</code> in a usage record. If you provide
+   * <code>UsageAllocations</code>, each allocation must use
+   * <code>AllocatedUsageQuantityAsDecimal</code>. If any usage record fails these
+   * checks, the entire <code>BatchMeterUsage</code> request fails and no records are
+   * processed.</p> <p>Quantities are compared by value when checking for duplicate
+   * records, so <code>17</code>, <code>17.0</code>, and <code>17.00</code> are the
+   * same quantity, whether you send it in <code>Quantity</code> or
+   * <code>QuantityAsDecimal</code>.</p>
    */
-  inline int GetQuantity() const { return m_quantity; }
-  inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
-  inline void SetQuantity(int value) {
-    m_quantityHasBeenSet = true;
-    m_quantity = value;
+  inline const Aws::String& GetQuantityAsDecimal() const { return m_quantityAsDecimal; }
+  inline bool QuantityAsDecimalHasBeenSet() const { return m_quantityAsDecimalHasBeenSet; }
+  template <typename QuantityAsDecimalT = Aws::String>
+  void SetQuantityAsDecimal(QuantityAsDecimalT&& value) {
+    m_quantityAsDecimalHasBeenSet = true;
+    m_quantityAsDecimal = std::forward<QuantityAsDecimalT>(value);
   }
-  inline UsageRecord& WithQuantity(int value) {
-    SetQuantity(value);
+  template <typename QuantityAsDecimalT = Aws::String>
+  UsageRecord& WithQuantityAsDecimal(QuantityAsDecimalT&& value) {
+    SetQuantityAsDecimal(std::forward<QuantityAsDecimalT>(value));
     return *this;
   }
   ///@}
@@ -122,8 +134,12 @@ class UsageRecord {
   ///@{
   /**
    * <p>The set of <code>UsageAllocations</code> to submit. The sum of all
-   * <code>UsageAllocation</code> quantities must equal the Quantity of the
-   * <code>UsageRecord</code>.</p>
+   * <code>UsageAllocation</code> quantities must equal the quantity of the
+   * <code>UsageRecord</code> (<code>Quantity</code> or
+   * <code>QuantityAsDecimal</code>). Allocations must use the same type of quantity
+   * as the usage record: <code>AllocatedUsageQuantity</code> with
+   * <code>Quantity</code>, or <code>AllocatedUsageQuantityAsDecimal</code> with
+   * <code>QuantityAsDecimal</code>.</p>
    */
   inline const Aws::Vector<UsageAllocation>& GetUsageAllocations() const { return m_usageAllocations; }
   inline bool UsageAllocationsHasBeenSet() const { return m_usageAllocationsHasBeenSet; }
@@ -200,7 +216,7 @@ class UsageRecord {
 
   Aws::String m_dimension;
 
-  int m_quantity{0};
+  Aws::String m_quantityAsDecimal;
 
   Aws::Vector<UsageAllocation> m_usageAllocations;
 
@@ -210,7 +226,7 @@ class UsageRecord {
   bool m_timestampHasBeenSet = false;
   bool m_customerIdentifierHasBeenSet = false;
   bool m_dimensionHasBeenSet = false;
-  bool m_quantityHasBeenSet = false;
+  bool m_quantityAsDecimalHasBeenSet = false;
   bool m_usageAllocationsHasBeenSet = false;
   bool m_customerAWSAccountIdHasBeenSet = false;
   bool m_licenseArnHasBeenSet = false;

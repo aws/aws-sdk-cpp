@@ -120,7 +120,22 @@ class PutAccountPolicyRequest : public CloudWatchLogsRequest {
    * \"FACET\"}}}"</code> </p> <p>You can use <code>FieldsV2</code> to specify the
    * type for each field. Supported types are <code>FIELD_INDEX</code> and
    * <code>FACET</code>. Field names within <code>Fields</code> and
-   * <code>FieldsV2</code> must be mutually exclusive.</p>
+   * <code>FieldsV2</code> must be mutually exclusive.</p> <p> <b>Retention
+   * policy</b> </p> <p>A retention policy must include the following attributes in a
+   * JSON block:</p> <dl> <dt>retentionInDays</dt> <dd> <p>The number of days to
+   * retain log events. Valid values are 30, 60, 90, 120, 150, 180, 365, 400, 545,
+   * 731, 1096, 1827, 2192, 2557, 2922, 3288, and 3653. To retain log events
+   * indefinitely, specify the string <code>NEVER_EXPIRE</code>.</p> </dd>
+   * <dt>enforcementMode</dt> <dd> <p>Specifies which log groups the policy applies
+   * to. Valid values are <code>NEW_ONLY</code> and <code>RETROACTIVE</code>.</p> <p>
+   * <code>RETROACTIVE</code> applies the policy to every log group that matches the
+   * selection criteria, including log groups that existed before you created the
+   * policy.</p> <p> <code>NEW_ONLY</code> applies the policy only to log groups that
+   * are created after you create the policy. Log groups that already existed when
+   * you created the policy keep their own retention period.</p> </dd> </dl> <p>The
+   * following is an example of a retention policy document.</p> <p>
+   * <code>"policyDocument": "{\"retentionInDays\": 90, \"enforcementMode\":
+   * \"RETROACTIVE\"}"</code> </p>
    */
   inline const Aws::String& GetPolicyDocument() const { return m_policyDocument; }
   inline bool PolicyDocumentHasBeenSet() const { return m_policyDocumentHasBeenSet; }
@@ -176,11 +191,12 @@ class PutAccountPolicyRequest : public CloudWatchLogsRequest {
    * <p>Use this parameter to apply the new policy to a subset of log groups in the
    * account or a data source name and type combination. </p> <p>Specifying
    * <code>selectionCriteria</code> is valid only when you specify
-   * <code>SUBSCRIPTION_FILTER_POLICY</code>, <code>FIELD_INDEX_POLICY</code> or
-   * <code>TRANSFORMER_POLICY</code>for <code>policyType</code>.</p> <ul> <li> <p>If
-   * <code>policyType</code> is <code>SUBSCRIPTION_FILTER_POLICY</code>, the only
-   * supported <code>selectionCriteria</code> filter is <code>LogGroupName NOT IN
-   * []</code> </p> </li> <li> <p>If <code>policyType</code> is
+   * <code>SUBSCRIPTION_FILTER_POLICY</code>, <code>FIELD_INDEX_POLICY</code>,
+   * <code>TRANSFORMER_POLICY</code>, or <code>RETENTION_POLICY</code> for
+   * <code>policyType</code>.</p> <ul> <li> <p>If <code>policyType</code> is
+   * <code>SUBSCRIPTION_FILTER_POLICY</code>, the only supported
+   * <code>selectionCriteria</code> filter is <code>LogGroupName NOT IN []</code>
+   * </p> </li> <li> <p>If <code>policyType</code> is
    * <code>TRANSFORMER_POLICY</code>, the only supported
    * <code>selectionCriteria</code> filter is <code>LogGroupNamePrefix</code> </p>
    * </li> <li> <p>If <code>policyType</code> is <code>FIELD_INDEX_POLICY</code>, the
@@ -189,10 +205,13 @@ class PutAccountPolicyRequest : public CloudWatchLogsRequest {
    * AND <code>DataSourceType</code> </p> </li> </ul> <p>When you specify
    * <code>selectionCriteria</code> for a field index policy you can use either
    * <code>LogGroupNamePrefix</code> by itself or <code>DataSourceName</code> and
-   * <code>DataSourceType</code> together.</p> </li> </ul> <p>The
-   * <code>selectionCriteria</code> string can be up to 25KB in length. The length is
-   * determined by using its UTF-8 bytes.</p> <p>Using the
-   * <code>selectionCriteria</code> parameter with
+   * <code>DataSourceType</code> together.</p> </li> <li> <p>If
+   * <code>policyType</code> is <code>RETENTION_POLICY</code>, the only supported
+   * <code>selectionCriteria</code> filter is <code>LogGroupNamePrefix</code>. If you
+   * omit <code>selectionCriteria</code>, the retention policy applies to all log
+   * groups in the account.</p> </li> </ul> <p>The <code>selectionCriteria</code>
+   * string can be up to 25KB in length. The length is determined by using its UTF-8
+   * bytes.</p> <p>Using the <code>selectionCriteria</code> parameter with
    * <code>SUBSCRIPTION_FILTER_POLICY</code> is useful to help prevent infinite
    * loops. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions-recursion-prevention.html">Log

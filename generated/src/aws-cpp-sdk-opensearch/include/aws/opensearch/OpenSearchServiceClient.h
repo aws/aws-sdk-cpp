@@ -2799,6 +2799,36 @@ class AWS_OPENSEARCHSERVICE_API OpenSearchServiceClient : public Aws::Client::AW
   }
 
   /**
+   * <p>Manages a cloned blue/green upgrade that is in progress on a domain. Use it
+   * to shift a percentage of search traffic to the cloned cluster, to cut over to
+   * the cloned cluster or back to the primary cluster, or to change the retention
+   * period. Specify exactly one of <code>TrafficSplitOptions</code>,
+   * <code>CutoverOptions</code>, or <code>RetentionOptions</code> in each
+   * request.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdateClone">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateCloneOutcome UpdateClone(const Model::UpdateCloneRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateClone that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename UpdateCloneRequestT = Model::UpdateCloneRequest>
+  Model::UpdateCloneOutcomeCallable UpdateCloneCallable(const UpdateCloneRequestT& request) const {
+    return SubmitCallable(&OpenSearchServiceClient::UpdateClone, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateClone that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename UpdateCloneRequestT = Model::UpdateCloneRequest>
+  void UpdateCloneAsync(const UpdateCloneRequestT& request, const UpdateCloneResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OpenSearchServiceClient::UpdateClone, request, handler, context);
+  }
+
+  /**
    * <p>Updates a direct-query data source. For more information, see <a
    * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/direct-query-s3-creating.html">Working
    * with Amazon OpenSearch Service data source integrations with Amazon

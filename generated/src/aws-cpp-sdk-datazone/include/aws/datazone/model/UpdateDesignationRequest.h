@@ -105,7 +105,7 @@ class UpdateDesignationRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>The updated Cedar permit policy.</p>
+   * <p>The updated Cedar permit policy. Omit to keep the existing policy.</p>
    */
   inline const Aws::String& GetPolicy() const { return m_policy; }
   inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
@@ -123,8 +123,8 @@ class UpdateDesignationRequest : public DataZoneRequest {
 
   ///@{
   /**
-   * <p>Whether deletion protection is enabled for this designation. Omit to keep the
-   * existing value.</p>
+   * <p>Specifies whether deletion protection is enabled for this designation. Omit
+   * to keep the existing value.</p>
    */
   inline bool GetDeletionProtection() const { return m_deletionProtection; }
   inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }

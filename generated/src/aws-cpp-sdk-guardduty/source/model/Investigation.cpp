@@ -58,6 +58,14 @@ Investigation& Investigation::operator=(JsonView jsonValue) {
     m_summary = jsonValue.GetString("summary");
     m_summaryHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("summaryData")) {
+    m_summaryData = jsonValue.GetObject("summaryData");
+    m_summaryDataHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("scope")) {
+    m_scope = jsonValue.GetObject("scope");
+    m_scopeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("startTime")) {
     m_startTime = jsonValue.GetDouble("startTime");
     m_startTimeHasBeenSet = true;
@@ -114,6 +122,14 @@ JsonValue Investigation::Jsonize() const {
 
   if (m_summaryHasBeenSet) {
     payload.WithString("summary", m_summary);
+  }
+
+  if (m_summaryDataHasBeenSet) {
+    payload.WithObject("summaryData", m_summaryData.Jsonize());
+  }
+
+  if (m_scopeHasBeenSet) {
+    payload.WithObject("scope", m_scope.Jsonize());
   }
 
   if (m_startTimeHasBeenSet) {

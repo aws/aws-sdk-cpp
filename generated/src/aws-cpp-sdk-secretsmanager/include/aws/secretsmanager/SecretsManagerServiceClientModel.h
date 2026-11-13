@@ -20,6 +20,7 @@
 
 /* Service model headers required in SecretsManagerClient header */
 #include <aws/core/NoResult.h>
+#include <aws/secretsmanager/model/AssociateCrossAccountReplicaResult.h>
 #include <aws/secretsmanager/model/BatchGetSecretValueRequest.h>
 #include <aws/secretsmanager/model/BatchGetSecretValueResult.h>
 #include <aws/secretsmanager/model/CancelRotateSecretResult.h>
@@ -27,10 +28,12 @@
 #include <aws/secretsmanager/model/DeleteResourcePolicyResult.h>
 #include <aws/secretsmanager/model/DeleteSecretResult.h>
 #include <aws/secretsmanager/model/DescribeSecretResult.h>
+#include <aws/secretsmanager/model/DisassociateCrossAccountReplicaResult.h>
 #include <aws/secretsmanager/model/GetRandomPasswordRequest.h>
 #include <aws/secretsmanager/model/GetRandomPasswordResult.h>
 #include <aws/secretsmanager/model/GetResourcePolicyResult.h>
 #include <aws/secretsmanager/model/GetSecretValueResult.h>
+#include <aws/secretsmanager/model/ListResourcePoliciesResult.h>
 #include <aws/secretsmanager/model/ListSecretVersionIdsResult.h>
 #include <aws/secretsmanager/model/ListSecretsRequest.h>
 #include <aws/secretsmanager/model/ListSecretsResult.h>
@@ -77,15 +80,18 @@ using SecretsManagerEndpointProvider = Aws::SecretsManager::Endpoint::SecretsMan
 
 namespace Model {
 /* Service model forward declarations required in SecretsManagerClient header */
+class AssociateCrossAccountReplicaRequest;
 class BatchGetSecretValueRequest;
 class CancelRotateSecretRequest;
 class CreateSecretRequest;
 class DeleteResourcePolicyRequest;
 class DeleteSecretRequest;
 class DescribeSecretRequest;
+class DisassociateCrossAccountReplicaRequest;
 class GetRandomPasswordRequest;
 class GetResourcePolicyRequest;
 class GetSecretValueRequest;
+class ListResourcePoliciesRequest;
 class ListSecretVersionIdsRequest;
 class ListSecretsRequest;
 class PutResourcePolicyRequest;
@@ -103,15 +109,18 @@ class ValidateResourcePolicyRequest;
 /* End of service model forward declarations required in SecretsManagerClient header */
 
 /* Service model Outcome class definitions */
+typedef Aws::Utils::Outcome<AssociateCrossAccountReplicaResult, SecretsManagerError> AssociateCrossAccountReplicaOutcome;
 typedef Aws::Utils::Outcome<BatchGetSecretValueResult, SecretsManagerError> BatchGetSecretValueOutcome;
 typedef Aws::Utils::Outcome<CancelRotateSecretResult, SecretsManagerError> CancelRotateSecretOutcome;
 typedef Aws::Utils::Outcome<CreateSecretResult, SecretsManagerError> CreateSecretOutcome;
 typedef Aws::Utils::Outcome<DeleteResourcePolicyResult, SecretsManagerError> DeleteResourcePolicyOutcome;
 typedef Aws::Utils::Outcome<DeleteSecretResult, SecretsManagerError> DeleteSecretOutcome;
 typedef Aws::Utils::Outcome<DescribeSecretResult, SecretsManagerError> DescribeSecretOutcome;
+typedef Aws::Utils::Outcome<DisassociateCrossAccountReplicaResult, SecretsManagerError> DisassociateCrossAccountReplicaOutcome;
 typedef Aws::Utils::Outcome<GetRandomPasswordResult, SecretsManagerError> GetRandomPasswordOutcome;
 typedef Aws::Utils::Outcome<GetResourcePolicyResult, SecretsManagerError> GetResourcePolicyOutcome;
 typedef Aws::Utils::Outcome<GetSecretValueResult, SecretsManagerError> GetSecretValueOutcome;
+typedef Aws::Utils::Outcome<ListResourcePoliciesResult, SecretsManagerError> ListResourcePoliciesOutcome;
 typedef Aws::Utils::Outcome<ListSecretVersionIdsResult, SecretsManagerError> ListSecretVersionIdsOutcome;
 typedef Aws::Utils::Outcome<ListSecretsResult, SecretsManagerError> ListSecretsOutcome;
 typedef Aws::Utils::Outcome<PutResourcePolicyResult, SecretsManagerError> PutResourcePolicyOutcome;
@@ -129,15 +138,18 @@ typedef Aws::Utils::Outcome<ValidateResourcePolicyResult, SecretsManagerError> V
 /* End of service model Outcome class definitions */
 
 /* Service model Outcome callable definitions */
+typedef std::future<AssociateCrossAccountReplicaOutcome> AssociateCrossAccountReplicaOutcomeCallable;
 typedef std::future<BatchGetSecretValueOutcome> BatchGetSecretValueOutcomeCallable;
 typedef std::future<CancelRotateSecretOutcome> CancelRotateSecretOutcomeCallable;
 typedef std::future<CreateSecretOutcome> CreateSecretOutcomeCallable;
 typedef std::future<DeleteResourcePolicyOutcome> DeleteResourcePolicyOutcomeCallable;
 typedef std::future<DeleteSecretOutcome> DeleteSecretOutcomeCallable;
 typedef std::future<DescribeSecretOutcome> DescribeSecretOutcomeCallable;
+typedef std::future<DisassociateCrossAccountReplicaOutcome> DisassociateCrossAccountReplicaOutcomeCallable;
 typedef std::future<GetRandomPasswordOutcome> GetRandomPasswordOutcomeCallable;
 typedef std::future<GetResourcePolicyOutcome> GetResourcePolicyOutcomeCallable;
 typedef std::future<GetSecretValueOutcome> GetSecretValueOutcomeCallable;
+typedef std::future<ListResourcePoliciesOutcome> ListResourcePoliciesOutcomeCallable;
 typedef std::future<ListSecretVersionIdsOutcome> ListSecretVersionIdsOutcomeCallable;
 typedef std::future<ListSecretsOutcome> ListSecretsOutcomeCallable;
 typedef std::future<PutResourcePolicyOutcome> PutResourcePolicyOutcomeCallable;
@@ -158,6 +170,10 @@ typedef std::future<ValidateResourcePolicyOutcome> ValidateResourcePolicyOutcome
 class SecretsManagerClient;
 
 /* Service model async handlers definitions */
+typedef std::function<void(const SecretsManagerClient*, const Model::AssociateCrossAccountReplicaRequest&,
+                           const Model::AssociateCrossAccountReplicaOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    AssociateCrossAccountReplicaResponseReceivedHandler;
 typedef std::function<void(const SecretsManagerClient*, const Model::BatchGetSecretValueRequest&, const Model::BatchGetSecretValueOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     BatchGetSecretValueResponseReceivedHandler;
@@ -176,6 +192,10 @@ typedef std::function<void(const SecretsManagerClient*, const Model::DeleteSecre
 typedef std::function<void(const SecretsManagerClient*, const Model::DescribeSecretRequest&, const Model::DescribeSecretOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeSecretResponseReceivedHandler;
+typedef std::function<void(const SecretsManagerClient*, const Model::DisassociateCrossAccountReplicaRequest&,
+                           const Model::DisassociateCrossAccountReplicaOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DisassociateCrossAccountReplicaResponseReceivedHandler;
 typedef std::function<void(const SecretsManagerClient*, const Model::GetRandomPasswordRequest&, const Model::GetRandomPasswordOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetRandomPasswordResponseReceivedHandler;
@@ -185,6 +205,9 @@ typedef std::function<void(const SecretsManagerClient*, const Model::GetResource
 typedef std::function<void(const SecretsManagerClient*, const Model::GetSecretValueRequest&, const Model::GetSecretValueOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetSecretValueResponseReceivedHandler;
+typedef std::function<void(const SecretsManagerClient*, const Model::ListResourcePoliciesRequest&,
+                           const Model::ListResourcePoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListResourcePoliciesResponseReceivedHandler;
 typedef std::function<void(const SecretsManagerClient*, const Model::ListSecretVersionIdsRequest&,
                            const Model::ListSecretVersionIdsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListSecretVersionIdsResponseReceivedHandler;

@@ -38,6 +38,15 @@ DataQualityResultFilterCriteria& DataQualityResultFilterCriteria::operator=(Json
     m_startedBefore = jsonValue.GetDouble("StartedBefore");
     m_startedBeforeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("EvaluationRunMode")) {
+    m_evaluationRunMode =
+        DataQualityEvaluationRunModeMapper::GetDataQualityEvaluationRunModeForName(jsonValue.GetString("EvaluationRunMode"));
+    m_evaluationRunModeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("DataQualityEvaluationConfig")) {
+    m_dataQualityEvaluationConfig = jsonValue.GetString("DataQualityEvaluationConfig");
+    m_dataQualityEvaluationConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +71,15 @@ JsonValue DataQualityResultFilterCriteria::Jsonize() const {
 
   if (m_startedBeforeHasBeenSet) {
     payload.WithDouble("StartedBefore", m_startedBefore.SecondsWithMSPrecision());
+  }
+
+  if (m_evaluationRunModeHasBeenSet) {
+    payload.WithString("EvaluationRunMode",
+                       DataQualityEvaluationRunModeMapper::GetNameForDataQualityEvaluationRunMode(m_evaluationRunMode));
+  }
+
+  if (m_dataQualityEvaluationConfigHasBeenSet) {
+    payload.WithString("DataQualityEvaluationConfig", m_dataQualityEvaluationConfig);
   }
 
   return payload;

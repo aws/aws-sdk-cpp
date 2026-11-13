@@ -7,15 +7,15 @@
 #include <aws/comprehend/Comprehend_EXPORTS.h>
 #include <aws/comprehend/model/PartOfSpeechTag.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace Comprehend {
 namespace Model {
@@ -30,21 +30,21 @@ namespace Model {
 class SyntaxToken {
  public:
   AWS_COMPREHEND_API SyntaxToken() = default;
-  AWS_COMPREHEND_API SyntaxToken(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPREHEND_API SyntaxToken& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_COMPREHEND_API SyntaxToken(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPREHEND_API SyntaxToken& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPREHEND_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
    * <p>A unique identifier for a token.</p>
    */
-  inline int GetTokenId() const { return m_tokenId; }
+  inline int64_t GetTokenId() const { return m_tokenId; }
   inline bool TokenIdHasBeenSet() const { return m_tokenIdHasBeenSet; }
-  inline void SetTokenId(int value) {
+  inline void SetTokenId(int64_t value) {
     m_tokenIdHasBeenSet = true;
     m_tokenId = value;
   }
-  inline SyntaxToken& WithTokenId(int value) {
+  inline SyntaxToken& WithTokenId(int64_t value) {
     SetTokenId(value);
     return *this;
   }
@@ -73,13 +73,13 @@ class SyntaxToken {
    * <p>The zero-based offset from the beginning of the source text to the first
    * character in the word.</p>
    */
-  inline int GetBeginOffset() const { return m_beginOffset; }
+  inline int64_t GetBeginOffset() const { return m_beginOffset; }
   inline bool BeginOffsetHasBeenSet() const { return m_beginOffsetHasBeenSet; }
-  inline void SetBeginOffset(int value) {
+  inline void SetBeginOffset(int64_t value) {
     m_beginOffsetHasBeenSet = true;
     m_beginOffset = value;
   }
-  inline SyntaxToken& WithBeginOffset(int value) {
+  inline SyntaxToken& WithBeginOffset(int64_t value) {
     SetBeginOffset(value);
     return *this;
   }
@@ -90,13 +90,13 @@ class SyntaxToken {
    * <p>The zero-based offset from the beginning of the source text to the last
    * character in the word.</p>
    */
-  inline int GetEndOffset() const { return m_endOffset; }
+  inline int64_t GetEndOffset() const { return m_endOffset; }
   inline bool EndOffsetHasBeenSet() const { return m_endOffsetHasBeenSet; }
-  inline void SetEndOffset(int value) {
+  inline void SetEndOffset(int64_t value) {
     m_endOffsetHasBeenSet = true;
     m_endOffset = value;
   }
-  inline SyntaxToken& WithEndOffset(int value) {
+  inline SyntaxToken& WithEndOffset(int64_t value) {
     SetEndOffset(value);
     return *this;
   }
@@ -124,13 +124,13 @@ class SyntaxToken {
   }
   ///@}
  private:
-  int m_tokenId{0};
+  int64_t m_tokenId{0};
 
   Aws::String m_text;
 
-  int m_beginOffset{0};
+  int64_t m_beginOffset{0};
 
-  int m_endOffset{0};
+  int64_t m_endOffset{0};
 
   PartOfSpeechTag m_partOfSpeech;
   bool m_tokenIdHasBeenSet = false;

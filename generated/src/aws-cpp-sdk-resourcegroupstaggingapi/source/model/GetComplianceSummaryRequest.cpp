@@ -3,72 +3,101 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/resourcegroupstaggingapi/model/GetComplianceSummaryRequest.h>
 
 #include <utility>
 
 using namespace Aws::ResourceGroupsTaggingAPI::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String GetComplianceSummaryRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_targetIdFiltersHasBeenSet) {
+    mapSize++;
+  }
+  if (m_regionFiltersHasBeenSet) {
+    mapSize++;
+  }
+  if (m_resourceTypeFiltersHasBeenSet) {
+    mapSize++;
+  }
+  if (m_tagKeyFiltersHasBeenSet) {
+    mapSize++;
+  }
+  if (m_groupByHasBeenSet) {
+    mapSize++;
+  }
+  if (m_maxResultsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_paginationTokenHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_targetIdFiltersHasBeenSet) {
-    Aws::Utils::Array<JsonValue> targetIdFiltersJsonList(m_targetIdFilters.size());
-    for (unsigned targetIdFiltersIndex = 0; targetIdFiltersIndex < targetIdFiltersJsonList.GetLength(); ++targetIdFiltersIndex) {
-      targetIdFiltersJsonList[targetIdFiltersIndex].AsString(m_targetIdFilters[targetIdFiltersIndex]);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("TargetIdFilters"));
+    encoder.WriteArrayStart(m_targetIdFilters.size());
+    for (const auto& item_0 : m_targetIdFilters) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
     }
-    payload.WithArray("TargetIdFilters", std::move(targetIdFiltersJsonList));
   }
 
   if (m_regionFiltersHasBeenSet) {
-    Aws::Utils::Array<JsonValue> regionFiltersJsonList(m_regionFilters.size());
-    for (unsigned regionFiltersIndex = 0; regionFiltersIndex < regionFiltersJsonList.GetLength(); ++regionFiltersIndex) {
-      regionFiltersJsonList[regionFiltersIndex].AsString(m_regionFilters[regionFiltersIndex]);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("RegionFilters"));
+    encoder.WriteArrayStart(m_regionFilters.size());
+    for (const auto& item_0 : m_regionFilters) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
     }
-    payload.WithArray("RegionFilters", std::move(regionFiltersJsonList));
   }
 
   if (m_resourceTypeFiltersHasBeenSet) {
-    Aws::Utils::Array<JsonValue> resourceTypeFiltersJsonList(m_resourceTypeFilters.size());
-    for (unsigned resourceTypeFiltersIndex = 0; resourceTypeFiltersIndex < resourceTypeFiltersJsonList.GetLength();
-         ++resourceTypeFiltersIndex) {
-      resourceTypeFiltersJsonList[resourceTypeFiltersIndex].AsString(m_resourceTypeFilters[resourceTypeFiltersIndex]);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ResourceTypeFilters"));
+    encoder.WriteArrayStart(m_resourceTypeFilters.size());
+    for (const auto& item_0 : m_resourceTypeFilters) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
     }
-    payload.WithArray("ResourceTypeFilters", std::move(resourceTypeFiltersJsonList));
   }
 
   if (m_tagKeyFiltersHasBeenSet) {
-    Aws::Utils::Array<JsonValue> tagKeyFiltersJsonList(m_tagKeyFilters.size());
-    for (unsigned tagKeyFiltersIndex = 0; tagKeyFiltersIndex < tagKeyFiltersJsonList.GetLength(); ++tagKeyFiltersIndex) {
-      tagKeyFiltersJsonList[tagKeyFiltersIndex].AsString(m_tagKeyFilters[tagKeyFiltersIndex]);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("TagKeyFilters"));
+    encoder.WriteArrayStart(m_tagKeyFilters.size());
+    for (const auto& item_0 : m_tagKeyFilters) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
     }
-    payload.WithArray("TagKeyFilters", std::move(tagKeyFiltersJsonList));
   }
 
   if (m_groupByHasBeenSet) {
-    Aws::Utils::Array<JsonValue> groupByJsonList(m_groupBy.size());
-    for (unsigned groupByIndex = 0; groupByIndex < groupByJsonList.GetLength(); ++groupByIndex) {
-      groupByJsonList[groupByIndex].AsString(GroupByAttributeMapper::GetNameForGroupByAttribute(m_groupBy[groupByIndex]));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("GroupBy"));
+    encoder.WriteArrayStart(m_groupBy.size());
+    for (const auto& item_0 : m_groupBy) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(GroupByAttributeMapper::GetNameForGroupByAttribute(item_0).c_str()));
     }
-    payload.WithArray("GroupBy", std::move(groupByJsonList));
   }
 
   if (m_maxResultsHasBeenSet) {
-    payload.WithInteger("MaxResults", m_maxResults);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("MaxResults"));
+    (m_maxResults >= 0) ? encoder.WriteUInt(m_maxResults) : encoder.WriteNegInt(m_maxResults);
   }
 
   if (m_paginationTokenHasBeenSet) {
-    payload.WithString("PaginationToken", m_paginationToken);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("PaginationToken"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_paginationToken.c_str()));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection GetComplianceSummaryRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "ResourceGroupsTaggingAPI_20170126.GetComplianceSummary"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

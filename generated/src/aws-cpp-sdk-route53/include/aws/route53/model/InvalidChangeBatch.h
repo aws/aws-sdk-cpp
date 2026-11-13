@@ -21,8 +21,11 @@ namespace Model {
 
 /**
  * <p>This exception contains a list of messages that might contain one or more
- * error messages. Each error message indicates one error in the change
- * batch.</p><p><h3>See Also:</h3>   <a
+ * error messages. Each error message indicates one error in the change batch.</p>
+ * <p>Route 53 also returns this error when the change batch creates, updates, or
+ * deletes a resource record set whose name and type have a resource record set
+ * protection. To make the change, first delete the protection by using
+ * <code>DeleteResourceRecordSetProtections</code>.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/InvalidChangeBatch">AWS
  * API Reference</a></p>
  */

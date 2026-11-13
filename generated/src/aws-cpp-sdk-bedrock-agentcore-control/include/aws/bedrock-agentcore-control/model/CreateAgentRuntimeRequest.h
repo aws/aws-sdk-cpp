@@ -15,6 +15,8 @@
 #include <aws/bedrock-agentcore-control/model/NetworkConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/ProtocolConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/RequestHeaderConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/ResourceConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/RuntimeHooksConfiguration.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -224,6 +226,26 @@ class CreateAgentRuntimeRequest : public BedrockAgentCoreControlRequest {
 
   ///@{
   /**
+   * <p>The lifecycle hooks configuration for the AgentCore Runtime. Use lifecycle
+   * hooks to run actions in the agent's container at fixed points in the runtime's
+   * lifecycle, such as warming up the agent before sessions are created.</p>
+   */
+  inline const RuntimeHooksConfiguration& GetHooksConfiguration() const { return m_hooksConfiguration; }
+  inline bool HooksConfigurationHasBeenSet() const { return m_hooksConfigurationHasBeenSet; }
+  template <typename HooksConfigurationT = RuntimeHooksConfiguration>
+  void SetHooksConfiguration(HooksConfigurationT&& value) {
+    m_hooksConfigurationHasBeenSet = true;
+    m_hooksConfiguration = std::forward<HooksConfigurationT>(value);
+  }
+  template <typename HooksConfigurationT = RuntimeHooksConfiguration>
+  CreateAgentRuntimeRequest& WithHooksConfiguration(HooksConfigurationT&& value) {
+    SetHooksConfiguration(std::forward<HooksConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Environment variables to set in the AgentCore Runtime environment.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetEnvironmentVariables() const { return m_environmentVariables; }
@@ -363,6 +385,32 @@ class CreateAgentRuntimeRequest : public BedrockAgentCoreControlRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The resource configurations for the AgentCore Runtime, such as the minimum
+   * amount of memory to allocate to the runtime. You can specify at most one
+   * resource configuration.</p>
+   */
+  inline const Aws::Vector<ResourceConfiguration>& GetResourceConfigurations() const { return m_resourceConfigurations; }
+  inline bool ResourceConfigurationsHasBeenSet() const { return m_resourceConfigurationsHasBeenSet; }
+  template <typename ResourceConfigurationsT = Aws::Vector<ResourceConfiguration>>
+  void SetResourceConfigurations(ResourceConfigurationsT&& value) {
+    m_resourceConfigurationsHasBeenSet = true;
+    m_resourceConfigurations = std::forward<ResourceConfigurationsT>(value);
+  }
+  template <typename ResourceConfigurationsT = Aws::Vector<ResourceConfiguration>>
+  CreateAgentRuntimeRequest& WithResourceConfigurations(ResourceConfigurationsT&& value) {
+    SetResourceConfigurations(std::forward<ResourceConfigurationsT>(value));
+    return *this;
+  }
+  template <typename ResourceConfigurationsT = ResourceConfiguration>
+  CreateAgentRuntimeRequest& AddResourceConfigurations(ResourceConfigurationsT&& value) {
+    m_resourceConfigurationsHasBeenSet = true;
+    m_resourceConfigurations.emplace_back(std::forward<ResourceConfigurationsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_agentRuntimeName;
 
@@ -384,6 +432,8 @@ class CreateAgentRuntimeRequest : public BedrockAgentCoreControlRequest {
 
   LifecycleConfiguration m_lifecycleConfiguration;
 
+  RuntimeHooksConfiguration m_hooksConfiguration;
+
   Aws::Map<Aws::String, Aws::String> m_environmentVariables;
 
   Aws::Vector<FilesystemConfiguration> m_filesystemConfigurations;
@@ -395,6 +445,8 @@ class CreateAgentRuntimeRequest : public BedrockAgentCoreControlRequest {
   Aws::String m_platformVersion;
 
   Aws::Vector<AllowedPort> m_allowedPorts;
+
+  Aws::Vector<ResourceConfiguration> m_resourceConfigurations;
   bool m_agentRuntimeNameHasBeenSet = false;
   bool m_agentRuntimeArtifactHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
@@ -405,12 +457,14 @@ class CreateAgentRuntimeRequest : public BedrockAgentCoreControlRequest {
   bool m_requestHeaderConfigurationHasBeenSet = false;
   bool m_protocolConfigurationHasBeenSet = false;
   bool m_lifecycleConfigurationHasBeenSet = false;
+  bool m_hooksConfigurationHasBeenSet = false;
   bool m_environmentVariablesHasBeenSet = false;
   bool m_filesystemConfigurationsHasBeenSet = false;
   bool m_capacityProviderConfigurationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_platformVersionHasBeenSet = false;
   bool m_allowedPortsHasBeenSet = false;
+  bool m_resourceConfigurationsHasBeenSet = false;
 };
 
 }  // namespace Model

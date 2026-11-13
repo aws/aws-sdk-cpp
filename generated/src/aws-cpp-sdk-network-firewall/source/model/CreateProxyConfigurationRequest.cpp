@@ -3,59 +3,87 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/network-firewall/model/CreateProxyConfigurationRequest.h>
 
 #include <utility>
 
 using namespace Aws::NetworkFirewall::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String CreateProxyConfigurationRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_proxyConfigurationNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_descriptionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_ruleGroupNamesHasBeenSet) {
+    mapSize++;
+  }
+  if (m_ruleGroupArnsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_defaultRulePhaseActionsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_tagsHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_proxyConfigurationNameHasBeenSet) {
-    payload.WithString("ProxyConfigurationName", m_proxyConfigurationName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ProxyConfigurationName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_proxyConfigurationName.c_str()));
   }
 
   if (m_descriptionHasBeenSet) {
-    payload.WithString("Description", m_description);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Description"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_description.c_str()));
   }
 
   if (m_ruleGroupNamesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> ruleGroupNamesJsonList(m_ruleGroupNames.size());
-    for (unsigned ruleGroupNamesIndex = 0; ruleGroupNamesIndex < ruleGroupNamesJsonList.GetLength(); ++ruleGroupNamesIndex) {
-      ruleGroupNamesJsonList[ruleGroupNamesIndex].AsString(m_ruleGroupNames[ruleGroupNamesIndex]);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("RuleGroupNames"));
+    encoder.WriteArrayStart(m_ruleGroupNames.size());
+    for (const auto& item_0 : m_ruleGroupNames) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
     }
-    payload.WithArray("RuleGroupNames", std::move(ruleGroupNamesJsonList));
   }
 
   if (m_ruleGroupArnsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> ruleGroupArnsJsonList(m_ruleGroupArns.size());
-    for (unsigned ruleGroupArnsIndex = 0; ruleGroupArnsIndex < ruleGroupArnsJsonList.GetLength(); ++ruleGroupArnsIndex) {
-      ruleGroupArnsJsonList[ruleGroupArnsIndex].AsString(m_ruleGroupArns[ruleGroupArnsIndex]);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("RuleGroupArns"));
+    encoder.WriteArrayStart(m_ruleGroupArns.size());
+    for (const auto& item_0 : m_ruleGroupArns) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
     }
-    payload.WithArray("RuleGroupArns", std::move(ruleGroupArnsJsonList));
   }
 
   if (m_defaultRulePhaseActionsHasBeenSet) {
-    payload.WithObject("DefaultRulePhaseActions", m_defaultRulePhaseActions.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("DefaultRulePhaseActions"));
+    m_defaultRulePhaseActions.CborEncode(encoder);
   }
 
   if (m_tagsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
-      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Tags"));
+    encoder.WriteArrayStart(m_tags.size());
+    for (const auto& item_0 : m_tags) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("Tags", std::move(tagsJsonList));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection CreateProxyConfigurationRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "NetworkFirewall_20201112.CreateProxyConfiguration"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

@@ -11,7 +11,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 
 namespace Aws {
 namespace CodePipeline {
@@ -97,12 +97,12 @@ namespace CodePipeline {
  * failure.</p> </li> <li> <p> <a>PutThirdPartyJobSuccessResult</a>, which provides
  * details of a job success.</p> </li> </ul>
  */
-class AWS_CODEPIPELINE_API CodePipelineClient : public Aws::Client::AWSJsonClient,
+class AWS_CODEPIPELINE_API CodePipelineClient : public Aws::Client::AWSRpcV2CborClient,
                                                 public Aws::Client::ClientWithAsyncTemplateMethods<CodePipelineClient>,
                                                 public CodePipelinePaginationBase<CodePipelineClient>,
                                                 public CodePipelineWaiter<CodePipelineClient> {
  public:
-  typedef Aws::Client::AWSJsonClient BASECLASS;
+  typedef Aws::Client::AWSRpcV2CborClient BASECLASS;
   static const char* GetServiceName();
   static const char* GetAllocationTag();
 

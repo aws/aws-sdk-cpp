@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/es/ElasticsearchService_EXPORTS.h>
 #include <aws/es/model/ChangeProgressStage.h>
+#include <aws/es/model/ClonedBlueGreenUpgradeDetails.h>
 #include <aws/es/model/ConfigChangeStatus.h>
 #include <aws/es/model/InitiatedBy.h>
 #include <aws/es/model/OverallChangeStatus.h>
@@ -233,6 +234,24 @@ class ChangeProgressStatusDetails {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Details about a cloned blue/green upgrade, when the change is one.</p>
+   */
+  inline const ClonedBlueGreenUpgradeDetails& GetClonedBlueGreenUpgradeDetails() const { return m_clonedBlueGreenUpgradeDetails; }
+  inline bool ClonedBlueGreenUpgradeDetailsHasBeenSet() const { return m_clonedBlueGreenUpgradeDetailsHasBeenSet; }
+  template <typename ClonedBlueGreenUpgradeDetailsT = ClonedBlueGreenUpgradeDetails>
+  void SetClonedBlueGreenUpgradeDetails(ClonedBlueGreenUpgradeDetailsT&& value) {
+    m_clonedBlueGreenUpgradeDetailsHasBeenSet = true;
+    m_clonedBlueGreenUpgradeDetails = std::forward<ClonedBlueGreenUpgradeDetailsT>(value);
+  }
+  template <typename ClonedBlueGreenUpgradeDetailsT = ClonedBlueGreenUpgradeDetails>
+  ChangeProgressStatusDetails& WithClonedBlueGreenUpgradeDetails(ClonedBlueGreenUpgradeDetailsT&& value) {
+    SetClonedBlueGreenUpgradeDetails(std::forward<ClonedBlueGreenUpgradeDetailsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_changeId;
 
@@ -253,6 +272,8 @@ class ChangeProgressStatusDetails {
   Aws::Utils::DateTime m_lastUpdatedTime{};
 
   InitiatedBy m_initiatedBy{InitiatedBy::NOT_SET};
+
+  ClonedBlueGreenUpgradeDetails m_clonedBlueGreenUpgradeDetails;
   bool m_changeIdHasBeenSet = false;
   bool m_startTimeHasBeenSet = false;
   bool m_statusHasBeenSet = false;
@@ -263,6 +284,7 @@ class ChangeProgressStatusDetails {
   bool m_configChangeStatusHasBeenSet = false;
   bool m_lastUpdatedTimeHasBeenSet = false;
   bool m_initiatedByHasBeenSet = false;
+  bool m_clonedBlueGreenUpgradeDetailsHasBeenSet = false;
 };
 
 }  // namespace Model

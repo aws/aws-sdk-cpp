@@ -6,15 +6,15 @@
 #pragma once
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/codedeploy/model/MinimumHealthyHostsPerZoneType.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace CodeDeploy {
 namespace Model {
@@ -28,9 +28,9 @@ namespace Model {
 class MinimumHealthyHostsPerZone {
  public:
   AWS_CODEDEPLOY_API MinimumHealthyHostsPerZone() = default;
-  AWS_CODEDEPLOY_API MinimumHealthyHostsPerZone(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CODEDEPLOY_API MinimumHealthyHostsPerZone& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_CODEDEPLOY_API MinimumHealthyHostsPerZone(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CODEDEPLOY_API MinimumHealthyHostsPerZone& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CODEDEPLOY_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -54,13 +54,13 @@ class MinimumHealthyHostsPerZone {
    * <p>The <code>value</code> associated with the
    * <code>MinimumHealthyHostsPerZone</code> option.</p>
    */
-  inline int GetValue() const { return m_value; }
+  inline int64_t GetValue() const { return m_value; }
   inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-  inline void SetValue(int value) {
+  inline void SetValue(int64_t value) {
     m_valueHasBeenSet = true;
     m_value = value;
   }
-  inline MinimumHealthyHostsPerZone& WithValue(int value) {
+  inline MinimumHealthyHostsPerZone& WithValue(int64_t value) {
     SetValue(value);
     return *this;
   }
@@ -68,7 +68,7 @@ class MinimumHealthyHostsPerZone {
  private:
   MinimumHealthyHostsPerZoneType m_type{MinimumHealthyHostsPerZoneType::NOT_SET};
 
-  int m_value{0};
+  int64_t m_value{0};
   bool m_typeHasBeenSet = false;
   bool m_valueHasBeenSet = false;
 };

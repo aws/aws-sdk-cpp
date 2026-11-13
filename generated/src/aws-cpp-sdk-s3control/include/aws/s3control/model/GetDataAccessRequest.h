@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/s3control/S3ControlRequest.h>
 #include <aws/s3control/S3Control_EXPORTS.h>
+#include <aws/s3control/model/InstanceScope.h>
 #include <aws/s3control/model/Permission.h>
 #include <aws/s3control/model/Privilege.h>
 #include <aws/s3control/model/S3PrefixType.h>
@@ -183,6 +184,27 @@ class GetDataAccessRequest : public S3ControlRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The scope of S3 Access Grants instances to search for a grant matching the
+   * requested S3 URI path.</p> <ul> <li> <p> <code>SELF</code> – Searches only the
+   * instance of the Amazon Web Services account ID in the request.</p> </li> <li>
+   * <p> <code>ALL</code> – Searches the instance of the Amazon Web Services account
+   * ID in the request and all instances shared with the caller's account through
+   * Amazon Web Services Resource Access Manager (RAM).</p> </li> </ul>
+   */
+  inline InstanceScope GetInstanceScope() const { return m_instanceScope; }
+  inline bool InstanceScopeHasBeenSet() const { return m_instanceScopeHasBeenSet; }
+  inline void SetInstanceScope(InstanceScope value) {
+    m_instanceScopeHasBeenSet = true;
+    m_instanceScope = value;
+  }
+  inline GetDataAccessRequest& WithInstanceScope(InstanceScope value) {
+    SetInstanceScope(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_accountId;
 
@@ -197,6 +219,8 @@ class GetDataAccessRequest : public S3ControlRequest {
   S3PrefixType m_targetType{S3PrefixType::NOT_SET};
 
   Aws::String m_auditContext;
+
+  InstanceScope m_instanceScope{InstanceScope::NOT_SET};
   bool m_accountIdHasBeenSet = false;
   bool m_targetHasBeenSet = false;
   bool m_permissionHasBeenSet = false;
@@ -204,6 +228,7 @@ class GetDataAccessRequest : public S3ControlRequest {
   bool m_privilegeHasBeenSet = false;
   bool m_targetTypeHasBeenSet = false;
   bool m_auditContextHasBeenSet = false;
+  bool m_instanceScopeHasBeenSet = false;
 };
 
 }  // namespace Model

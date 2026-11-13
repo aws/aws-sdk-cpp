@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/memorydb/MemoryDB_EXPORTS.h>
 #include <aws/memorydb/model/ShardDetail.h>
 
@@ -13,10 +14,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace MemoryDB {
 namespace Model {
@@ -29,9 +29,9 @@ namespace Model {
 class ClusterConfiguration {
  public:
   AWS_MEMORYDB_API ClusterConfiguration() = default;
-  AWS_MEMORYDB_API ClusterConfiguration(Aws::Utils::Json::JsonView jsonValue);
-  AWS_MEMORYDB_API ClusterConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_MEMORYDB_API ClusterConfiguration(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_MEMORYDB_API ClusterConfiguration& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_MEMORYDB_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -164,13 +164,13 @@ class ClusterConfiguration {
   /**
    * <p>The port used by the cluster</p>
    */
-  inline int GetPort() const { return m_port; }
+  inline int64_t GetPort() const { return m_port; }
   inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
-  inline void SetPort(int value) {
+  inline void SetPort(int64_t value) {
     m_portHasBeenSet = true;
     m_port = value;
   }
-  inline ClusterConfiguration& WithPort(int value) {
+  inline ClusterConfiguration& WithPort(int64_t value) {
     SetPort(value);
     return *this;
   }
@@ -234,13 +234,13 @@ class ClusterConfiguration {
   /**
    * <p>The snapshot retention limit set by the cluster</p>
    */
-  inline int GetSnapshotRetentionLimit() const { return m_snapshotRetentionLimit; }
+  inline int64_t GetSnapshotRetentionLimit() const { return m_snapshotRetentionLimit; }
   inline bool SnapshotRetentionLimitHasBeenSet() const { return m_snapshotRetentionLimitHasBeenSet; }
-  inline void SetSnapshotRetentionLimit(int value) {
+  inline void SetSnapshotRetentionLimit(int64_t value) {
     m_snapshotRetentionLimitHasBeenSet = true;
     m_snapshotRetentionLimit = value;
   }
-  inline ClusterConfiguration& WithSnapshotRetentionLimit(int value) {
+  inline ClusterConfiguration& WithSnapshotRetentionLimit(int64_t value) {
     SetSnapshotRetentionLimit(value);
     return *this;
   }
@@ -268,13 +268,13 @@ class ClusterConfiguration {
   /**
    * <p>The number of shards in the cluster</p>
    */
-  inline int GetNumShards() const { return m_numShards; }
+  inline int64_t GetNumShards() const { return m_numShards; }
   inline bool NumShardsHasBeenSet() const { return m_numShardsHasBeenSet; }
-  inline void SetNumShards(int value) {
+  inline void SetNumShards(int64_t value) {
     m_numShardsHasBeenSet = true;
     m_numShards = value;
   }
-  inline ClusterConfiguration& WithNumShards(int value) {
+  inline ClusterConfiguration& WithNumShards(int64_t value) {
     SetNumShards(value);
     return *this;
   }
@@ -356,7 +356,7 @@ class ClusterConfiguration {
 
   Aws::String m_topicArn;
 
-  int m_port{0};
+  int64_t m_port{0};
 
   Aws::String m_parameterGroupName;
 
@@ -364,11 +364,11 @@ class ClusterConfiguration {
 
   Aws::String m_vpcId;
 
-  int m_snapshotRetentionLimit{0};
+  int64_t m_snapshotRetentionLimit{0};
 
   Aws::String m_snapshotWindow;
 
-  int m_numShards{0};
+  int64_t m_numShards{0};
 
   Aws::Vector<ShardDetail> m_shards;
 

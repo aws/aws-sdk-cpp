@@ -206,6 +206,12 @@
                         "smithy.api#enumValue": "END_ASSOCIATED_TASKS"
                     }
                 },
+                "END_ASSOCIATED_EMAILS": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "END_ASSOCIATED_EMAILS"
+                    }
+                },
                 "SUBMIT_AUTO_EVALUATION": {
                     "target": "smithy.api#Unit",
                     "traits": {
@@ -364,7 +370,7 @@
                     "target": "com.amazonaws.connect#AfterContactWorkTimeLimit",
                     "traits": {
                         "smithy.api#default": 0,
-                        "smithy.api#documentation": "<p>The ACW timeout duration in seconds. Minimum: 1 second. Maximum: 2,000,000 seconds (24 days). Enter 0 for indefinite ACW time.</p>"
+                        "smithy.api#documentation": "<p>The after contact work (ACW) timeout duration in seconds. Minimum: 1 second. Maximum: 2,000,000 seconds (24 days). For the CHAT channel, the maximum for a specific duration is 5,400 seconds (90 minutes); higher values end ACW after 90 minutes. For all channels, including chat, you can enter 0 for an indefinite amount of time, meaning agents must manually choose to end ACW.</p>"
                     }
                 }
             },
@@ -9136,6 +9142,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p>Information about the global resiliency configuration for the contact, including traffic distribution details.</p>"
                     }
+                },
+                "ContactLens": {
+                    "target": "com.amazonaws.connect#ContactLens",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Information about the conversational analytics configuration applied to the contact. This field is present only for contacts\n   where conversational analytics is enabled in the contact flow.</p>"
+                    }
                 }
             },
             "traits": {
@@ -9198,6 +9210,26 @@
             },
             "traits": {
                 "smithy.api#documentation": "<p>Information about a reference when the <code>referenceType</code> is <code>CONTACT_ANALYSIS</code>. Otherwise,\n   null.</p>"
+            }
+        },
+        "com.amazonaws.connect#ContactAnalysisReferenceState": {
+            "type": "structure",
+            "members": {
+                "Status": {
+                    "target": "com.amazonaws.connect#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The status of conversational analytics processing for the contact. Valid values:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>REQUESTED</code> – Analysis has been requested for the contact and has not finished.</p>\n            </li>\n            <li>\n               <p>\n                  <code>COMPLETED</code> – Analysis finished successfully.</p>\n            </li>\n            <li>\n               <p>\n                  <code>FAILED</code> – Analysis did not finish successfully. See <code>StatusReason</code> for the cause.</p>\n            </li>\n         </ul>"
+                    }
+                },
+                "StatusReason": {
+                    "target": "com.amazonaws.connect#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The reason for the current analysis status. This value is populated only when the status is\n   <code>FAILED</code>.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The current processing state of conversational analytics for a contact, including the analysis status and, when\n   applicable, the reason for that status.</p>"
             }
         },
         "com.amazonaws.connect#ContactConfiguration": {
@@ -10651,6 +10683,112 @@
                 }
             }
         },
+        "com.amazonaws.connect#ContactLens": {
+            "type": "structure",
+            "members": {
+                "ConversationalAnalytics": {
+                    "target": "com.amazonaws.connect#ConversationalAnalytics",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The conversational analytics configuration applied to the contact.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Information about the conversational analytics configuration applied to the contact. This field is present only for contacts\n   where conversational analytics is enabled in the contact flow.</p>"
+            }
+        },
+        "com.amazonaws.connect#ContactLensAnalyticsModeList": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.connect#String"
+            }
+        },
+        "com.amazonaws.connect#ContactLensChannelConfiguration": {
+            "type": "structure",
+            "members": {
+                "AnalyticsModes": {
+                    "target": "com.amazonaws.connect#ContactLensAnalyticsModeList",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The conversational analytics modes enabled for the channel. Valid values:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>RealTime</code> – Real-time analysis is enabled during the contact. Voice channel only.</p>\n            </li>\n            <li>\n               <p>\n                  <code>PostContact</code> – Post-contact analysis is enabled after the contact ends. Voice channel only.</p>\n            </li>\n            <li>\n               <p>\n                  <code>ContactLens</code> – Conversational analytics is enabled for the contact. Chat channel only.</p>\n            </li>\n         </ul>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The per-channel conversational analytics configuration for a contact.</p>"
+            }
+        },
+        "com.amazonaws.connect#ContactLensRedactionConfiguration": {
+            "type": "structure",
+            "members": {
+                "Behavior": {
+                    "target": "com.amazonaws.connect#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies whether redaction is enabled for sensitive data, such as personal information, in the conversational analytics\n   output. Valid values:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>Enable</code> – Redaction is applied according to the other values in this object.</p>\n            </li>\n            <li>\n               <p>\n                  <code>Disable</code> – Redaction is not applied, and all other values in this object are ignored.</p>\n            </li>\n         </ul>"
+                    }
+                },
+                "Policy": {
+                    "target": "com.amazonaws.connect#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The redaction policy that determines which versions of the transcript are stored. Valid values:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>None</code> – No redaction is applied.</p>\n            </li>\n            <li>\n               <p>\n                  <code>RedactedOnly</code> – Only the redacted transcript is stored.</p>\n            </li>\n            <li>\n               <p>\n                  <code>RedactedAndOriginal</code> – Both the redacted and the original transcript are stored.</p>\n            </li>\n         </ul>"
+                    }
+                },
+                "Entities": {
+                    "target": "com.amazonaws.connect#ContactLensRedactionEntitiesList",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The entity types to redact from the transcript (for example, <code>NAME</code>, <code>EMAIL</code>,\n   <code>ADDRESS</code>).</p>"
+                    }
+                },
+                "MaskMode": {
+                    "target": "com.amazonaws.connect#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>How sensitive information is masked in the transcript. Valid values:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>PII</code> – All redacted entities are replaced with the <code>[PII]</code> string.</p>\n            </li>\n            <li>\n               <p>\n                  <code>EntityType</code> – All redacted entities are replaced with the label of the entity. For example, when\n     the <code>EMAIL</code> entity is configured for redaction, emails in the transcript are replaced with the\n     <code>[EMAIL]</code> string.</p>\n            </li>\n         </ul>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The redaction configuration for conversational analytics transcripts.</p>"
+            }
+        },
+        "com.amazonaws.connect#ContactLensRedactionEntitiesList": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.connect#String"
+            }
+        },
+        "com.amazonaws.connect#ContactLensSentimentConfiguration": {
+            "type": "structure",
+            "members": {
+                "Behavior": {
+                    "target": "com.amazonaws.connect#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies whether sentiment analysis is enabled for the contact. The default value is <code>Disable</code>. Valid\n   values:</p>\n         <ul>\n            <li>\n               <p>\n                  <code>Enable</code> – Sentiment analysis is performed on the contact.</p>\n            </li>\n            <li>\n               <p>\n                  <code>Disable</code> – Sentiment analysis is not performed on the contact.</p>\n            </li>\n         </ul>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The conversational analytics sentiment analysis configuration for a contact.</p>"
+            }
+        },
+        "com.amazonaws.connect#ContactLensSummaryConfiguration": {
+            "type": "structure",
+            "members": {
+                "SummaryModes": {
+                    "target": "com.amazonaws.connect#ContactLensSummaryModeList",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The conversational analytics summary modes enabled for the contact. Valid values: <code>PostContact</code> |\n   <code>AutomatedInteraction</code> | <code>ContactChain</code>.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The conversational analytics summary configuration for a contact.</p>"
+            }
+        },
+        "com.amazonaws.connect#ContactLensSummaryModeList": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.connect#String"
+            }
+        },
         "com.amazonaws.connect#ContactMediaProcessingFailureMode": {
             "type": "enum",
             "members": {
@@ -11304,6 +11442,77 @@
             },
             "traits": {
                 "smithy.api#documentation": "<p>An object that can be used to specify Tag conditions or Hierarchy Group conditions inside the\n    <code>SearchFilter</code>.</p>\n         <p>This accepts an <code>OR</code> of <code>AND</code> (List of List) input where:</p>\n         <ul>\n            <li>\n               <p>The top level list specifies conditions that need to be applied with <code>OR</code> operator</p>\n            </li>\n            <li>\n               <p>The inner list specifies conditions that need to be applied with <code>AND</code> operator.</p>\n            </li>\n         </ul>\n         <note>\n            <p>Only one field can be populated. Maximum number of allowed Tag conditions is 25. Maximum number of allowed\n    Hierarchy Group conditions is 20.</p>\n         </note>"
+            }
+        },
+        "com.amazonaws.connect#ConversationalAnalytics": {
+            "type": "structure",
+            "members": {
+                "Configuration": {
+                    "target": "com.amazonaws.connect#ConversationalAnalyticsConfiguration",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The conversational analytics settings that apply to the contact.</p>"
+                    }
+                },
+                "ContactAnalysisReferenceState": {
+                    "target": "com.amazonaws.connect#ContactAnalysisReferenceState",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The current state of conversational analytics processing for the contact.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Contains the conversational analytics configuration and state for a contact.</p>"
+            }
+        },
+        "com.amazonaws.connect#ConversationalAnalyticsConfiguration": {
+            "type": "structure",
+            "members": {
+                "Enabled": {
+                    "target": "com.amazonaws.connect#Boolean",
+                    "traits": {
+                        "smithy.api#default": null,
+                        "smithy.api#documentation": "<p>Specifies whether conversational analytics is enabled for the contact.</p>"
+                    }
+                },
+                "LanguageLocale": {
+                    "target": "com.amazonaws.connect#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The language locale that conversational analytics uses to analyze the contact (for example, <code>en-US</code>).</p>"
+                    }
+                },
+                "LanguageLocales": {
+                    "target": "com.amazonaws.connect#LanguageLocales",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The language locales that conversational analytics uses to analyze the contact (for example, <code>en-US</code> and <code>es-ES</code>).</p>"
+                    }
+                },
+                "ChannelConfiguration": {
+                    "target": "com.amazonaws.connect#ContactLensChannelConfiguration",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The per-channel conversational analytics settings for the contact.</p>"
+                    }
+                },
+                "RedactionConfiguration": {
+                    "target": "com.amazonaws.connect#ContactLensRedactionConfiguration",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The redaction configuration for the contact transcript.</p>"
+                    }
+                },
+                "SummaryConfiguration": {
+                    "target": "com.amazonaws.connect#ContactLensSummaryConfiguration",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The summary configuration for the contact.</p>"
+                    }
+                },
+                "SentimentConfiguration": {
+                    "target": "com.amazonaws.connect#ContactLensSentimentConfiguration",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The sentiment analysis configuration for the contact.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The conversational analytics configuration settings for a contact.</p>"
             }
         },
         "com.amazonaws.connect#Count": {
@@ -25579,6 +25788,13 @@
                 }
             }
         },
+        "com.amazonaws.connect#EndAssociatedEmailsActionDefinition": {
+            "type": "structure",
+            "members": {},
+            "traits": {
+                "smithy.api#documentation": "<p>End associated emails related to a case.</p>"
+            }
+        },
         "com.amazonaws.connect#EndAssociatedTasksActionDefinition": {
             "type": "structure",
             "members": {},
@@ -26918,6 +27134,582 @@
                     "target": "smithy.api#Unit",
                     "traits": {
                         "smithy.api#enumValue": "ms-MY"
+                    }
+                },
+                "AF_ZA": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "af-ZA"
+                    }
+                },
+                "SQ_AL": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "sq-AL"
+                    }
+                },
+                "AM_ET": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "am-ET"
+                    }
+                },
+                "AR_AE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ar-AE"
+                    }
+                },
+                "AR_SA": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ar-SA"
+                    }
+                },
+                "HY_AM": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "hy-AM"
+                    }
+                },
+                "EU_ES": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "eu-ES"
+                    }
+                },
+                "BE_BY": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "be-BY"
+                    }
+                },
+                "BS_BA": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "bs-BA"
+                    }
+                },
+                "BG_BG": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "bg-BG"
+                    }
+                },
+                "CA_ES": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ca-ES"
+                    }
+                },
+                "CKB_IR": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ckb-IR"
+                    }
+                },
+                "CKB_IQ": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ckb-IQ"
+                    }
+                },
+                "ZH_TW": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "zh-TW"
+                    }
+                },
+                "HR_HR": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "hr-HR"
+                    }
+                },
+                "CS_CZ": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "cs-CZ"
+                    }
+                },
+                "DA_DK": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "da-DK"
+                    }
+                },
+                "NL_BE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "nl-BE"
+                    }
+                },
+                "NL_NL": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "nl-NL"
+                    }
+                },
+                "EN_AU": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "en-AU"
+                    }
+                },
+                "EN_IN": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "en-IN"
+                    }
+                },
+                "EN_IE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "en-IE"
+                    }
+                },
+                "EN_NZ": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "en-NZ"
+                    }
+                },
+                "EN_AB": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "en-AB"
+                    }
+                },
+                "EN_SG": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "en-SG"
+                    }
+                },
+                "EN_ZA": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "en-ZA"
+                    }
+                },
+                "EN_GB": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "en-GB"
+                    }
+                },
+                "EN_WL": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "en-WL"
+                    }
+                },
+                "FA_IR": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "fa-IR"
+                    }
+                },
+                "FA_AF": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "fa-AF"
+                    }
+                },
+                "FI_FI": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "fi-FI"
+                    }
+                },
+                "FR_BE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "fr-BE"
+                    }
+                },
+                "FR_CA": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "fr-CA"
+                    }
+                },
+                "GA_IE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ga-IE"
+                    }
+                },
+                "GL_ES": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "gl-ES"
+                    }
+                },
+                "KA_GE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ka-GE"
+                    }
+                },
+                "DE_AT": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "de-AT"
+                    }
+                },
+                "DE_CH": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "de-CH"
+                    }
+                },
+                "EL_GR": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "el-GR"
+                    }
+                },
+                "GU_IN": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "gu-IN"
+                    }
+                },
+                "HT_HT": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ht-HT"
+                    }
+                },
+                "HE_IL": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "he-IL"
+                    }
+                },
+                "HI_IN": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "hi-IN"
+                    }
+                },
+                "HU_HU": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "hu-HU"
+                    }
+                },
+                "IS_IS": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "is-IS"
+                    }
+                },
+                "ID_ID": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "id-ID"
+                    }
+                },
+                "JV_ID": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "jv-ID"
+                    }
+                },
+                "KM_KH": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "km-KH"
+                    }
+                },
+                "KN_IN": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "kn-IN"
+                    }
+                },
+                "KK_KZ": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "kk-KZ"
+                    }
+                },
+                "LO_LA": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "lo-LA"
+                    }
+                },
+                "LV_LV": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "lv-LV"
+                    }
+                },
+                "LT_LT": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "lt-LT"
+                    }
+                },
+                "MK_MK": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "mk-MK"
+                    }
+                },
+                "ML_IN": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml-IN"
+                    }
+                },
+                "MR_IN": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "mr-IN"
+                    }
+                },
+                "NE_NP": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ne-NP"
+                    }
+                },
+                "NO_NO": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "no-NO"
+                    }
+                },
+                "OR_IN": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "or-IN"
+                    }
+                },
+                "PS_AF": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ps-AF"
+                    }
+                },
+                "PL_PL": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "pl-PL"
+                    }
+                },
+                "PT_PT": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "pt-PT"
+                    }
+                },
+                "PA_IN": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "pa-IN"
+                    }
+                },
+                "RO_RO": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ro-RO"
+                    }
+                },
+                "RU_RU": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ru-RU"
+                    }
+                },
+                "SR_RS": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "sr-RS"
+                    }
+                },
+                "SI_LK": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "si-LK"
+                    }
+                },
+                "SK_SK": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "sk-SK"
+                    }
+                },
+                "SL_SI": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "sl-SI"
+                    }
+                },
+                "ES_MX": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "es-MX"
+                    }
+                },
+                "ES_US": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "es-US"
+                    }
+                },
+                "SU_ID": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "su-ID"
+                    }
+                },
+                "SW_BI": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "sw-BI"
+                    }
+                },
+                "SW_KE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "sw-KE"
+                    }
+                },
+                "SW_RW": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "sw-RW"
+                    }
+                },
+                "SW_TZ": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "sw-TZ"
+                    }
+                },
+                "SW_UG": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "sw-UG"
+                    }
+                },
+                "SV_SE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "sv-SE"
+                    }
+                },
+                "TL_PH": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "tl-PH"
+                    }
+                },
+                "TA_IN": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ta-IN"
+                    }
+                },
+                "TE_IN": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "te-IN"
+                    }
+                },
+                "TH_TH": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "th-TH"
+                    }
+                },
+                "TR_TR": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "tr-TR"
+                    }
+                },
+                "UK_UA": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "uk-UA"
+                    }
+                },
+                "UZ_UZ": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "uz-UZ"
+                    }
+                },
+                "VI_VN": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "vi-VN"
+                    }
+                },
+                "ZU_ZA": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "zu-ZA"
+                    }
+                },
+                "MY_MM": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "my-MM"
+                    }
+                },
+                "SO_SO": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "so-SO"
+                    }
+                },
+                "YUE_HK": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "yue-HK"
+                    }
+                },
+                "ET_EE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "et-EE"
+                    }
+                },
+                "HMN": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "hmn"
+                    }
+                },
+                "LG_UG": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "lg-UG"
+                    }
+                },
+                "CY_GB": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "cy-GB"
+                    }
+                },
+                "XH_ZA": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "xh-ZA"
+                    }
+                },
+                "BN_BD": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "bn-BD"
                     }
                 }
             }
@@ -34518,6 +35310,18 @@
                     "traits": {
                         "smithy.api#documentation": "<p>The name of the source.</p>"
                     }
+                },
+                "LastModifiedTime": {
+                    "target": "com.amazonaws.connect#Timestamp",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The timestamp when the integration association was last modified.</p>"
+                    }
+                },
+                "LastModifiedRegion": {
+                    "target": "com.amazonaws.connect#RegionName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The Amazon Web Services Region where the integration association was last modified.</p>"
+                    }
                 }
             },
             "traits": {
@@ -34968,6 +35772,18 @@
         },
         "com.amazonaws.connect#LanguageLocale": {
             "type": "string"
+        },
+        "com.amazonaws.connect#LanguageLocales": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.connect#LanguageLocale"
+            },
+            "traits": {
+                "smithy.api#length": {
+                    "min": 0,
+                    "max": 5
+                }
+            }
         },
         "com.amazonaws.connect#LargeNextToken": {
             "type": "string",
@@ -44669,7 +45485,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "Additional recipients for UpdateContact, allowing an empty list to clear CC recipients."
+                "smithy.api#documentation": "<p>The additional recipients of an outbound email that you can update. An empty list of\n   <code>CcEmailAddresses</code> clears the existing CC recipients.</p>"
             }
         },
         "com.amazonaws.connect#NullableBoolean": {
@@ -45986,7 +46802,7 @@
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<p>Allows pausing an ongoing task contact.</p>",
+                "smithy.api#documentation": "<p>Pauses an ongoing task or email contact.</p>",
                 "smithy.api#http": {
                     "method": "POST",
                     "uri": "/contact/pause",
@@ -51917,7 +52733,7 @@
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<p>Allows resuming a task contact in a paused state.</p>",
+                "smithy.api#documentation": "<p>Resumes a task or email contact in a paused state.</p>",
                 "smithy.api#http": {
                     "method": "POST",
                     "uri": "/contact/resume",
@@ -52776,6 +53592,12 @@
                     "target": "com.amazonaws.connect#EndAssociatedTasksActionDefinition",
                     "traits": {
                         "smithy.api#documentation": "<p>Information about the end associated tasks action.</p>\n         <p>Supported only for <code>TriggerEventSource</code> values: <code>OnCaseUpdate</code>.</p>"
+                    }
+                },
+                "EndAssociatedEmailsAction": {
+                    "target": "com.amazonaws.connect#EndAssociatedEmailsActionDefinition",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Information about the end associated emails action.</p>\n         <p>Supported only for <code>TriggerEventSource</code> values: <code>OnCaseUpdate</code>.</p>"
                     }
                 },
                 "SubmitAutoEvaluationAction": {
@@ -68028,7 +68850,7 @@
                 "AfterContactWorkConfigs": {
                     "target": "com.amazonaws.connect#AfterContactWorkConfigs",
                     "traits": {
-                        "smithy.api#documentation": "<p>The list of after contact work (ACW) timeout configuration settings for each channel. ACW timeout specifies how many seconds agents have for after contact work, such as entering notes about the contact. The minimum setting is 1 second, and the maximum is 2,000,000 seconds (24 days). Enter 0 for an indefinite amount of time, meaning agents must manually choose to end ACW.</p>"
+                        "smithy.api#documentation": "<p>The list of after contact work (ACW) timeout configuration settings for each channel. ACW timeout specifies how many seconds agents have for after contact work, such as entering notes about the contact. The minimum setting is 1 second, and the maximum is 2,000,000 seconds (24 days). For the CHAT channel, the maximum for a specific duration is 5,400 seconds (90 minutes); higher values end ACW after 90 minutes. For all channels, including chat, you can enter 0 for an indefinite amount of time, meaning agents must manually choose to end ACW.</p>"
                     }
                 },
                 "PhoneNumberConfigs": {
@@ -69808,7 +70630,7 @@
                     "target": "com.amazonaws.connect#AfterContactWorkTimeLimit",
                     "traits": {
                         "smithy.api#default": 0,
-                        "smithy.api#documentation": "<p>The After Call Work (ACW) timeout setting, in seconds. This parameter has a minimum value of 0 and a maximum\n   value of 2,000,000 seconds (24 days). Enter 0 if you don't want to allocate a specific amount of ACW time. It\n   essentially means an indefinite amount of time. When the conversation ends, ACW starts; the agent must choose Close\n   contact to end ACW. </p>\n         <note>\n            <p>When returned by a <code>SearchUsers</code> call, <code>AfterContactWorkTimeLimit</code> is returned in\n    milliseconds. </p>\n         </note>"
+                        "smithy.api#documentation": "<p>The After Call Work (ACW) timeout setting, in seconds. This parameter has a minimum value of 0 and a maximum\n   value of 2,000,000 seconds (24 days). For the CHAT channel, the maximum for a specific duration is 5,400 seconds (90 minutes); higher values end ACW after 90 minutes.\n   For all channels, including chat, you can enter 0 if you don't want to allocate a specific amount of ACW time. It\n   essentially means an indefinite amount of time. When the conversation ends, ACW starts; the agent must choose Close\n   contact to end ACW. </p>\n         <note>\n            <p>When returned by a <code>SearchUsers</code> call, <code>AfterContactWorkTimeLimit</code> is returned in\n    milliseconds. </p>\n         </note>"
                     }
                 },
                 "DeskPhoneNumber": {

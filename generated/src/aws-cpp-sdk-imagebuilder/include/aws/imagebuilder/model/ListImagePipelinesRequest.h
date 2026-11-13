@@ -61,7 +61,10 @@ class ListImagePipelinesRequest : public ImagebuilderRequest {
 
   ///@{
   /**
-   * <p>The maximum number of items to return in a single request.</p>
+   * <p>The maximum number of items to return in a single request. If you don't
+   * specify a value, Image Builder returns up to 25 items. The largest page size
+   * that you can request is 100 items. A page can contain fewer items than the
+   * maximum, with a <code>nextToken</code> to continue paging.</p>
    */
   inline int GetMaxResults() const { return m_maxResults; }
   inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }

@@ -20,9 +20,13 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/ModifyTrafficMirrorFilterRuleRequest.h>
+#include <aws/ec2/model/ModifyTrafficMirrorSessionRequest.h>
+#include <aws/ec2/model/ModifyTransitGatewayAttachmentNatConfigurationRequest.h>
 #include <aws/ec2/model/ModifyTransitGatewayMeteringPolicyRequest.h>
 #include <aws/ec2/model/ModifyTransitGatewayPolicyTableEntryRequest.h>
 #include <aws/ec2/model/ModifyTransitGatewayPrefixListReferenceRequest.h>
+#include <aws/ec2/model/ModifyTransitGatewayRequest.h>
 #include <aws/ec2/model/ModifyTransitGatewayVpcAttachmentRequest.h>
 #include <aws/ec2/model/ModifyVerifiedAccessEndpointPolicyRequest.h>
 #include <aws/ec2/model/ModifyVerifiedAccessEndpointRequest.h>
@@ -116,10 +120,6 @@
 #include <aws/ec2/model/StartNetworkInsightsAccessScopeAnalysisRequest.h>
 #include <aws/ec2/model/StartNetworkInsightsAnalysisRequest.h>
 #include <aws/ec2/model/StartVpcEndpointServicePrivateDnsVerificationRequest.h>
-#include <aws/ec2/model/StopInstancesRequest.h>
-#include <aws/ec2/model/TerminateClientVpnConnectionsRequest.h>
-#include <aws/ec2/model/TerminateInstancesRequest.h>
-#include <aws/ec2/model/UnassignIpv6AddressesRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,31 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+ModifyTrafficMirrorFilterRuleOutcome EC2Client::ModifyTrafficMirrorFilterRule(const ModifyTrafficMirrorFilterRuleRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyTrafficMirrorFilterRuleOutcome(result.GetResultWithOwnership())
+                            : ModifyTrafficMirrorFilterRuleOutcome(std::move(result.GetError()));
+}
+
+ModifyTrafficMirrorSessionOutcome EC2Client::ModifyTrafficMirrorSession(const ModifyTrafficMirrorSessionRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyTrafficMirrorSessionOutcome(result.GetResultWithOwnership())
+                            : ModifyTrafficMirrorSessionOutcome(std::move(result.GetError()));
+}
+
+ModifyTransitGatewayOutcome EC2Client::ModifyTransitGateway(const ModifyTransitGatewayRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyTransitGatewayOutcome(result.GetResultWithOwnership())
+                            : ModifyTransitGatewayOutcome(std::move(result.GetError()));
+}
+
+ModifyTransitGatewayAttachmentNatConfigurationOutcome EC2Client::ModifyTransitGatewayAttachmentNatConfiguration(
+    const ModifyTransitGatewayAttachmentNatConfigurationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyTransitGatewayAttachmentNatConfigurationOutcome(result.GetResultWithOwnership())
+                            : ModifyTransitGatewayAttachmentNatConfigurationOutcome(std::move(result.GetError()));
+}
 
 ModifyTransitGatewayMeteringPolicyOutcome EC2Client::ModifyTransitGatewayMeteringPolicy(
     const ModifyTransitGatewayMeteringPolicyRequest& request) const {
@@ -735,27 +760,4 @@ StartVpcEndpointServicePrivateDnsVerificationOutcome EC2Client::StartVpcEndpoint
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? StartVpcEndpointServicePrivateDnsVerificationOutcome(result.GetResultWithOwnership())
                             : StartVpcEndpointServicePrivateDnsVerificationOutcome(std::move(result.GetError()));
-}
-
-StopInstancesOutcome EC2Client::StopInstances(const StopInstancesRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? StopInstancesOutcome(result.GetResultWithOwnership()) : StopInstancesOutcome(std::move(result.GetError()));
-}
-
-TerminateClientVpnConnectionsOutcome EC2Client::TerminateClientVpnConnections(const TerminateClientVpnConnectionsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? TerminateClientVpnConnectionsOutcome(result.GetResultWithOwnership())
-                            : TerminateClientVpnConnectionsOutcome(std::move(result.GetError()));
-}
-
-TerminateInstancesOutcome EC2Client::TerminateInstances(const TerminateInstancesRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? TerminateInstancesOutcome(result.GetResultWithOwnership())
-                            : TerminateInstancesOutcome(std::move(result.GetError()));
-}
-
-UnassignIpv6AddressesOutcome EC2Client::UnassignIpv6Addresses(const UnassignIpv6AddressesRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? UnassignIpv6AddressesOutcome(result.GetResultWithOwnership())
-                            : UnassignIpv6AddressesOutcome(std::move(result.GetError()));
 }

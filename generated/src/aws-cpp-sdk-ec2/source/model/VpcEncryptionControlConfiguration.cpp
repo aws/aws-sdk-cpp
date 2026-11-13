@@ -78,6 +78,18 @@ VpcEncryptionControlConfiguration& VpcEncryptionControlConfiguration::operator=(
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(elasticFileSystemExclusionNode.GetText()).c_str()));
       m_elasticFileSystemExclusionHasBeenSet = true;
     }
+    XmlNode globalAcceleratorExclusionNode = resultNode.FirstChild("GlobalAcceleratorExclusion");
+    if (!globalAcceleratorExclusionNode.IsNull()) {
+      m_globalAcceleratorExclusion = VpcEncryptionControlExclusionStateInputMapper::GetVpcEncryptionControlExclusionStateInputForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(globalAcceleratorExclusionNode.GetText()).c_str()));
+      m_globalAcceleratorExclusionHasBeenSet = true;
+    }
+    XmlNode apiGatewayV2ExclusionNode = resultNode.FirstChild("ApiGatewayV2Exclusion");
+    if (!apiGatewayV2ExclusionNode.IsNull()) {
+      m_apiGatewayV2Exclusion = VpcEncryptionControlExclusionStateInputMapper::GetVpcEncryptionControlExclusionStateInputForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(apiGatewayV2ExclusionNode.GetText()).c_str()));
+      m_apiGatewayV2ExclusionHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -145,6 +157,20 @@ void VpcEncryptionControlConfiguration::OutputToStream(Aws::OStream& oStream, co
                    m_elasticFileSystemExclusion))
             << "&";
   }
+
+  if (m_globalAcceleratorExclusionHasBeenSet) {
+    oStream << location << index << locationValue << ".GlobalAcceleratorExclusion="
+            << StringUtils::URLEncode(VpcEncryptionControlExclusionStateInputMapper::GetNameForVpcEncryptionControlExclusionStateInput(
+                   m_globalAcceleratorExclusion))
+            << "&";
+  }
+
+  if (m_apiGatewayV2ExclusionHasBeenSet) {
+    oStream << location << index << locationValue << ".ApiGatewayV2Exclusion="
+            << StringUtils::URLEncode(VpcEncryptionControlExclusionStateInputMapper::GetNameForVpcEncryptionControlExclusionStateInput(
+                   m_apiGatewayV2Exclusion))
+            << "&";
+  }
 }
 
 void VpcEncryptionControlConfiguration::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -198,6 +224,18 @@ void VpcEncryptionControlConfiguration::OutputToStream(Aws::OStream& oStream, co
     oStream << location << ".ElasticFileSystemExclusion="
             << StringUtils::URLEncode(VpcEncryptionControlExclusionStateInputMapper::GetNameForVpcEncryptionControlExclusionStateInput(
                    m_elasticFileSystemExclusion))
+            << "&";
+  }
+  if (m_globalAcceleratorExclusionHasBeenSet) {
+    oStream << location << ".GlobalAcceleratorExclusion="
+            << StringUtils::URLEncode(VpcEncryptionControlExclusionStateInputMapper::GetNameForVpcEncryptionControlExclusionStateInput(
+                   m_globalAcceleratorExclusion))
+            << "&";
+  }
+  if (m_apiGatewayV2ExclusionHasBeenSet) {
+    oStream << location << ".ApiGatewayV2Exclusion="
+            << StringUtils::URLEncode(VpcEncryptionControlExclusionStateInputMapper::GetNameForVpcEncryptionControlExclusionStateInput(
+                   m_apiGatewayV2Exclusion))
             << "&";
   }
 }

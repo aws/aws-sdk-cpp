@@ -27,6 +27,10 @@ ApplicationRestoreConfiguration& ApplicationRestoreConfiguration::operator=(Json
     m_snapshotName = jsonValue.GetString("SnapshotName");
     m_snapshotNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("SnapshotArn")) {
+    m_snapshotArn = jsonValue.GetString("SnapshotArn");
+    m_snapshotArnHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -39,6 +43,10 @@ JsonValue ApplicationRestoreConfiguration::Jsonize() const {
 
   if (m_snapshotNameHasBeenSet) {
     payload.WithString("SnapshotName", m_snapshotName);
+  }
+
+  if (m_snapshotArnHasBeenSet) {
+    payload.WithString("SnapshotArn", m_snapshotArn);
   }
 
   return payload;

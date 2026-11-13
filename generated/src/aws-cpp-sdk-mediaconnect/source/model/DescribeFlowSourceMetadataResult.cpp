@@ -45,6 +45,10 @@ DescribeFlowSourceMetadataResult& DescribeFlowSourceMetadataResult::operator=(co
     m_ndiInfo = jsonValue.GetObject("ndiInfo");
     m_ndiInfoHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("rtmpInfo")) {
+    m_rtmpInfo = jsonValue.GetObject("rtmpInfo");
+    m_rtmpInfoHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

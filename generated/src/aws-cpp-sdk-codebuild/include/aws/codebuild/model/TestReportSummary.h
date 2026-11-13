@@ -7,15 +7,15 @@
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace CodeBuild {
 namespace Model {
@@ -28,22 +28,22 @@ namespace Model {
 class TestReportSummary {
  public:
   AWS_CODEBUILD_API TestReportSummary() = default;
-  AWS_CODEBUILD_API TestReportSummary(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CODEBUILD_API TestReportSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_CODEBUILD_API TestReportSummary(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CODEBUILD_API TestReportSummary& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CODEBUILD_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
    * <p> The number of test cases in this <code>TestReportSummary</code>. The total
    * includes truncated test cases. </p>
    */
-  inline int GetTotal() const { return m_total; }
+  inline int64_t GetTotal() const { return m_total; }
   inline bool TotalHasBeenSet() const { return m_totalHasBeenSet; }
-  inline void SetTotal(int value) {
+  inline void SetTotal(int64_t value) {
     m_totalHasBeenSet = true;
     m_total = value;
   }
-  inline TestReportSummary& WithTotal(int value) {
+  inline TestReportSummary& WithTotal(int64_t value) {
     SetTotal(value);
     return *this;
   }
@@ -54,19 +54,19 @@ class TestReportSummary {
    * <p> A map that contains the number of each type of status returned by the test
    * results in this <code>TestReportSummary</code>. </p>
    */
-  inline const Aws::Map<Aws::String, int>& GetStatusCounts() const { return m_statusCounts; }
+  inline const Aws::Map<Aws::String, int64_t>& GetStatusCounts() const { return m_statusCounts; }
   inline bool StatusCountsHasBeenSet() const { return m_statusCountsHasBeenSet; }
-  template <typename StatusCountsT = Aws::Map<Aws::String, int>>
+  template <typename StatusCountsT = Aws::Map<Aws::String, int64_t>>
   void SetStatusCounts(StatusCountsT&& value) {
     m_statusCountsHasBeenSet = true;
     m_statusCounts = std::forward<StatusCountsT>(value);
   }
-  template <typename StatusCountsT = Aws::Map<Aws::String, int>>
+  template <typename StatusCountsT = Aws::Map<Aws::String, int64_t>>
   TestReportSummary& WithStatusCounts(StatusCountsT&& value) {
     SetStatusCounts(std::forward<StatusCountsT>(value));
     return *this;
   }
-  inline TestReportSummary& AddStatusCounts(Aws::String key, int value) {
+  inline TestReportSummary& AddStatusCounts(Aws::String key, int64_t value) {
     m_statusCountsHasBeenSet = true;
     m_statusCounts.emplace(key, value);
     return *this;
@@ -90,9 +90,9 @@ class TestReportSummary {
   }
   ///@}
  private:
-  int m_total{0};
+  int64_t m_total{0};
 
-  Aws::Map<Aws::String, int> m_statusCounts;
+  Aws::Map<Aws::String, int64_t> m_statusCounts;
 
   long long m_durationInNanoSeconds{0};
   bool m_totalHasBeenSet = false;

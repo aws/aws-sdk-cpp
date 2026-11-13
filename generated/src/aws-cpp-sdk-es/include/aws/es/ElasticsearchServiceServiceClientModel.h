@@ -74,6 +74,7 @@
 #include <aws/es/model/RejectInboundCrossClusterSearchConnectionResult.h>
 #include <aws/es/model/RevokeVpcEndpointAccessResult.h>
 #include <aws/es/model/StartElasticsearchServiceSoftwareUpdateResult.h>
+#include <aws/es/model/UpdateCloneResult.h>
 #include <aws/es/model/UpdateElasticsearchDomainConfigResult.h>
 #include <aws/es/model/UpdatePackageResult.h>
 #include <aws/es/model/UpdateVpcEndpointResult.h>
@@ -158,6 +159,7 @@ class RejectInboundCrossClusterSearchConnectionRequest;
 class RemoveTagsRequest;
 class RevokeVpcEndpointAccessRequest;
 class StartElasticsearchServiceSoftwareUpdateRequest;
+class UpdateCloneRequest;
 class UpdateElasticsearchDomainConfigRequest;
 class UpdatePackageRequest;
 class UpdateVpcEndpointRequest;
@@ -225,6 +227,7 @@ typedef Aws::Utils::Outcome<Aws::NoResult, ElasticsearchServiceError> RemoveTags
 typedef Aws::Utils::Outcome<RevokeVpcEndpointAccessResult, ElasticsearchServiceError> RevokeVpcEndpointAccessOutcome;
 typedef Aws::Utils::Outcome<StartElasticsearchServiceSoftwareUpdateResult, ElasticsearchServiceError>
     StartElasticsearchServiceSoftwareUpdateOutcome;
+typedef Aws::Utils::Outcome<UpdateCloneResult, ElasticsearchServiceError> UpdateCloneOutcome;
 typedef Aws::Utils::Outcome<UpdateElasticsearchDomainConfigResult, ElasticsearchServiceError> UpdateElasticsearchDomainConfigOutcome;
 typedef Aws::Utils::Outcome<UpdatePackageResult, ElasticsearchServiceError> UpdatePackageOutcome;
 typedef Aws::Utils::Outcome<UpdateVpcEndpointResult, ElasticsearchServiceError> UpdateVpcEndpointOutcome;
@@ -279,6 +282,7 @@ typedef std::future<RejectInboundCrossClusterSearchConnectionOutcome> RejectInbo
 typedef std::future<RemoveTagsOutcome> RemoveTagsOutcomeCallable;
 typedef std::future<RevokeVpcEndpointAccessOutcome> RevokeVpcEndpointAccessOutcomeCallable;
 typedef std::future<StartElasticsearchServiceSoftwareUpdateOutcome> StartElasticsearchServiceSoftwareUpdateOutcomeCallable;
+typedef std::future<UpdateCloneOutcome> UpdateCloneOutcomeCallable;
 typedef std::future<UpdateElasticsearchDomainConfigOutcome> UpdateElasticsearchDomainConfigOutcomeCallable;
 typedef std::future<UpdatePackageOutcome> UpdatePackageOutcomeCallable;
 typedef std::future<UpdateVpcEndpointOutcome> UpdateVpcEndpointOutcomeCallable;
@@ -449,6 +453,9 @@ typedef std::function<void(const ElasticsearchServiceClient*, const Model::Start
                            const Model::StartElasticsearchServiceSoftwareUpdateOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartElasticsearchServiceSoftwareUpdateResponseReceivedHandler;
+typedef std::function<void(const ElasticsearchServiceClient*, const Model::UpdateCloneRequest&, const Model::UpdateCloneOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateCloneResponseReceivedHandler;
 typedef std::function<void(const ElasticsearchServiceClient*, const Model::UpdateElasticsearchDomainConfigRequest&,
                            const Model::UpdateElasticsearchDomainConfigOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

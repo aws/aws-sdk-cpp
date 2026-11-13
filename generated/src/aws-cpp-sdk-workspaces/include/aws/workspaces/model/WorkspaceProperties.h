@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/workspaces/WorkSpaces_EXPORTS.h>
 #include <aws/workspaces/model/Compute.h>
 #include <aws/workspaces/model/GlobalAcceleratorForWorkSpace.h>
@@ -16,10 +17,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace WorkSpaces {
 namespace Model {
@@ -32,9 +32,9 @@ namespace Model {
 class WorkspaceProperties {
  public:
   AWS_WORKSPACES_API WorkspaceProperties() = default;
-  AWS_WORKSPACES_API WorkspaceProperties(Aws::Utils::Json::JsonView jsonValue);
-  AWS_WORKSPACES_API WorkspaceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_WORKSPACES_API WorkspaceProperties(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_WORKSPACES_API WorkspaceProperties& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_WORKSPACES_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -67,13 +67,13 @@ class WorkspaceProperties {
    * <p>The time after a user logs off when WorkSpaces are automatically stopped.
    * Configured in 60-minute intervals.</p>
    */
-  inline int GetRunningModeAutoStopTimeoutInMinutes() const { return m_runningModeAutoStopTimeoutInMinutes; }
+  inline int64_t GetRunningModeAutoStopTimeoutInMinutes() const { return m_runningModeAutoStopTimeoutInMinutes; }
   inline bool RunningModeAutoStopTimeoutInMinutesHasBeenSet() const { return m_runningModeAutoStopTimeoutInMinutesHasBeenSet; }
-  inline void SetRunningModeAutoStopTimeoutInMinutes(int value) {
+  inline void SetRunningModeAutoStopTimeoutInMinutes(int64_t value) {
     m_runningModeAutoStopTimeoutInMinutesHasBeenSet = true;
     m_runningModeAutoStopTimeoutInMinutes = value;
   }
-  inline WorkspaceProperties& WithRunningModeAutoStopTimeoutInMinutes(int value) {
+  inline WorkspaceProperties& WithRunningModeAutoStopTimeoutInMinutes(int64_t value) {
     SetRunningModeAutoStopTimeoutInMinutes(value);
     return *this;
   }
@@ -86,13 +86,13 @@ class WorkspaceProperties {
    * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify
    * a WorkSpace</a>.</p>
    */
-  inline int GetRootVolumeSizeGib() const { return m_rootVolumeSizeGib; }
+  inline int64_t GetRootVolumeSizeGib() const { return m_rootVolumeSizeGib; }
   inline bool RootVolumeSizeGibHasBeenSet() const { return m_rootVolumeSizeGibHasBeenSet; }
-  inline void SetRootVolumeSizeGib(int value) {
+  inline void SetRootVolumeSizeGib(int64_t value) {
     m_rootVolumeSizeGibHasBeenSet = true;
     m_rootVolumeSizeGib = value;
   }
-  inline WorkspaceProperties& WithRootVolumeSizeGib(int value) {
+  inline WorkspaceProperties& WithRootVolumeSizeGib(int64_t value) {
     SetRootVolumeSizeGib(value);
     return *this;
   }
@@ -105,13 +105,13 @@ class WorkspaceProperties {
    * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify
    * a WorkSpace</a>.</p>
    */
-  inline int GetUserVolumeSizeGib() const { return m_userVolumeSizeGib; }
+  inline int64_t GetUserVolumeSizeGib() const { return m_userVolumeSizeGib; }
   inline bool UserVolumeSizeGibHasBeenSet() const { return m_userVolumeSizeGibHasBeenSet; }
-  inline void SetUserVolumeSizeGib(int value) {
+  inline void SetUserVolumeSizeGib(int64_t value) {
     m_userVolumeSizeGibHasBeenSet = true;
     m_userVolumeSizeGib = value;
   }
-  inline WorkspaceProperties& WithUserVolumeSizeGib(int value) {
+  inline WorkspaceProperties& WithUserVolumeSizeGib(int64_t value) {
     SetUserVolumeSizeGib(value);
     return *this;
   }
@@ -221,11 +221,11 @@ class WorkspaceProperties {
  private:
   RunningMode m_runningMode{RunningMode::NOT_SET};
 
-  int m_runningModeAutoStopTimeoutInMinutes{0};
+  int64_t m_runningModeAutoStopTimeoutInMinutes{0};
 
-  int m_rootVolumeSizeGib{0};
+  int64_t m_rootVolumeSizeGib{0};
 
-  int m_userVolumeSizeGib{0};
+  int64_t m_userVolumeSizeGib{0};
 
   Compute m_computeTypeName{Compute::NOT_SET};
 

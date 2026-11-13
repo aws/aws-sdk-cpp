@@ -203,6 +203,40 @@ class ModifyAccountVpcEncryptionControlRequest : public EC2Request {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether to exclude AWS Global Accelerator from account-level
+   * encryption enforcement.</p>
+   */
+  inline VpcEncryptionControlExclusionStateInput GetGlobalAccelerator() const { return m_globalAccelerator; }
+  inline bool GlobalAcceleratorHasBeenSet() const { return m_globalAcceleratorHasBeenSet; }
+  inline void SetGlobalAccelerator(VpcEncryptionControlExclusionStateInput value) {
+    m_globalAcceleratorHasBeenSet = true;
+    m_globalAccelerator = value;
+  }
+  inline ModifyAccountVpcEncryptionControlRequest& WithGlobalAccelerator(VpcEncryptionControlExclusionStateInput value) {
+    SetGlobalAccelerator(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether to exclude Amazon API Gateway V2 from account-level
+   * encryption enforcement.</p>
+   */
+  inline VpcEncryptionControlExclusionStateInput GetApiGatewayV2() const { return m_apiGatewayV2; }
+  inline bool ApiGatewayV2HasBeenSet() const { return m_apiGatewayV2HasBeenSet; }
+  inline void SetApiGatewayV2(VpcEncryptionControlExclusionStateInput value) {
+    m_apiGatewayV2HasBeenSet = true;
+    m_apiGatewayV2 = value;
+  }
+  inline ModifyAccountVpcEncryptionControlRequest& WithApiGatewayV2(VpcEncryptionControlExclusionStateInput value) {
+    SetApiGatewayV2(value);
+    return *this;
+  }
+  ///@}
  private:
   bool m_dryRun{false};
 
@@ -223,6 +257,10 @@ class ModifyAccountVpcEncryptionControlRequest : public EC2Request {
   VpcEncryptionControlExclusionStateInput m_vpcLattice{VpcEncryptionControlExclusionStateInput::NOT_SET};
 
   VpcEncryptionControlExclusionStateInput m_elasticFileSystem{VpcEncryptionControlExclusionStateInput::NOT_SET};
+
+  VpcEncryptionControlExclusionStateInput m_globalAccelerator{VpcEncryptionControlExclusionStateInput::NOT_SET};
+
+  VpcEncryptionControlExclusionStateInput m_apiGatewayV2{VpcEncryptionControlExclusionStateInput::NOT_SET};
   bool m_dryRunHasBeenSet = false;
   bool m_modeHasBeenSet = false;
   bool m_internetGatewayHasBeenSet = false;
@@ -233,6 +271,8 @@ class ModifyAccountVpcEncryptionControlRequest : public EC2Request {
   bool m_lambdaHasBeenSet = false;
   bool m_vpcLatticeHasBeenSet = false;
   bool m_elasticFileSystemHasBeenSet = false;
+  bool m_globalAcceleratorHasBeenSet = false;
+  bool m_apiGatewayV2HasBeenSet = false;
 };
 
 }  // namespace Model

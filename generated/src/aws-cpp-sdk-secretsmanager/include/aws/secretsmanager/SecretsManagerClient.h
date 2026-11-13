@@ -111,6 +111,64 @@ class AWS_SECRETSMANAGER_API SecretsManagerClient : public Aws::Client::AWSJsonC
   virtual ~SecretsManagerClient();
 
   /**
+   * <p>Links a primary secret in your account to a replica secret in a different
+   * Amazon Web Services account and starts replication to this replica. The replica
+   * secret must already exist in the other Amazon Web Services account. Create the
+   * replica with <a>CreateSecret</a> and set its <code>CrossAccountPrimaryARN</code>
+   * field set to this primary secret's ARN. When you call
+   * AssociateCrossAccountReplica, Secrets Manager calls
+   * AcceptCrossAccountReplication on the replica secret on your behalf.</p> <p>The
+   * primary and replica secrets must be in the same Amazon Web Services Region and
+   * partition, and you must call this operation from the account that owns the
+   * primary secret. A primary secret can have at most one cross-account replica.
+   * This operation is idempotent, so you can call it again for the same replica to
+   * repair replication. If the association fails, Secrets Manager does not modify
+   * either the primary or replica secret.</p> <p>Secrets Manager generates a
+   * CloudTrail log entry when you call this action. Do not include sensitive
+   * information in request parameters because it might be logged. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging
+   * Secrets Manager events with CloudTrail</a>.</p> <p> <b>Required permissions:
+   * </b> <code>secretsmanager:AssociateCrossAccountReplica</code>,
+   * <code>secretsmanager:GetSecretValue</code> on the primary secret, and
+   * <code>secretsmanager:AcceptCrossAccountReplication</code> on the replica secret.
+   * You must also have <code>kms:Decrypt</code> permission for the Key Management
+   * Service (KMS) key that encrypts the primary secret, and <code>kms:Encrypt</code>
+   * permission for the Amazon Web Services KMS key that encrypts the replica secret.
+   * If you supply <code>ReplicationRoleARN</code>, you also need
+   * <code>iam:PassRole</code> for that role. For more information, see <a
+   * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
+   * IAM policy actions for Secrets Manager</a> and <a
+   * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+   * and access control in Secrets Manager</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/AssociateCrossAccountReplica">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::AssociateCrossAccountReplicaOutcome AssociateCrossAccountReplica(
+      const Model::AssociateCrossAccountReplicaRequest& request) const;
+
+  /**
+   * A Callable wrapper for AssociateCrossAccountReplica that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename AssociateCrossAccountReplicaRequestT = Model::AssociateCrossAccountReplicaRequest>
+  Model::AssociateCrossAccountReplicaOutcomeCallable AssociateCrossAccountReplicaCallable(
+      const AssociateCrossAccountReplicaRequestT& request) const {
+    return SubmitCallable(&SecretsManagerClient::AssociateCrossAccountReplica, request);
+  }
+
+  /**
+   * An Async wrapper for AssociateCrossAccountReplica that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename AssociateCrossAccountReplicaRequestT = Model::AssociateCrossAccountReplicaRequest>
+  void AssociateCrossAccountReplicaAsync(const AssociateCrossAccountReplicaRequestT& request,
+                                         const AssociateCrossAccountReplicaResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecretsManagerClient::AssociateCrossAccountReplica, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves the contents of the encrypted fields <code>SecretString</code> or
    * <code>SecretBinary</code> for up to 20 secrets. To retrieve a single secret,
    * call <a>GetSecretValue</a>. </p> <p>To choose which secrets to retrieve, you can
@@ -166,7 +224,7 @@ class AWS_SECRETSMANAGER_API SecretsManagerClient : public Aws::Client::AWSJsonC
    * version. You also need to determine whether to roll back to the previous version
    * of the secret by moving the staging label <code>AWSCURRENT</code> to the version
    * that has <code>AWSPENDING</code>. To determine which version has a specific
-   * staging label, call <a>ListSecretVersionIds</a>. Then use
+   * staging label, call <a>DescribeSecret</a>. Then use
    * <a>UpdateSecretVersionStage</a> to change staging labels. For more information,
    * see <a
    * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">How
@@ -210,11 +268,12 @@ class AWS_SECRETSMANAGER_API SecretsManagerClient : public Aws::Client::AWSJsonC
    * <p>Creates a new secret. A <i>secret</i> can be a password, a set of credentials
    * such as a user name and password, an OAuth token, or other secret information
    * that you store in an encrypted form in Secrets Manager. The secret also includes
-   * the connection information to access a database or other service, which Secrets
-   * Manager doesn't encrypt. A secret in Secrets Manager consists of both the
-   * protected secret data and the important information needed to manage the
-   * secret.</p> <p>For secrets that use <i>managed rotation</i>, you need to create
-   * the secret through the managing service. For more information, see <a
+   * the connection information to access a database or other service. Secrets
+   * Manager does not encrypt this connection information. A secret in Secrets
+   * Manager consists of both the encrypted secret versions and the metadata that
+   * Secrets Manager uses to manage the secret.</p> <p>For secrets that use
+   * <i>managed rotation</i>, you need to create the secret through the managing
+   * service. For more information, see <a
    * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/service-linked-secrets.html">Secrets
    * Manager secrets managed by other Amazon Web Services services</a>. </p> <p>For
    * information about creating a secret in the console, see <a
@@ -222,7 +281,7 @@ class AWS_SECRETSMANAGER_API SecretsManagerClient : public Aws::Client::AWSJsonC
    * a secret</a>.</p> <p>To create a secret, you can provide the secret value to be
    * encrypted in either the <code>SecretString</code> parameter or the
    * <code>SecretBinary</code> parameter, but not both. If you include
-   * <code>SecretString</code> or <code>SecretBinary</code> then Secrets Manager
+   * <code>SecretString</code> or <code>SecretBinary</code>, then Secrets Manager
    * creates an initial secret version and automatically attaches the staging label
    * <code>AWSCURRENT</code> to it.</p> <p>For database credentials you want to
    * rotate, for Secrets Manager to be able to rotate the secret, you must make sure
@@ -234,10 +293,14 @@ class AWS_SECRETSMANAGER_API SecretsManagerClient : public Aws::Client::AWSJsonC
    * account, then Secrets Manager creates it for you automatically. All users and
    * roles in the Amazon Web Services account automatically have access to use
    * <code>aws/secretsmanager</code>. Creating <code>aws/secretsmanager</code> can
-   * result in a one-time significant delay in returning the result.</p> <p>If the
-   * secret is in a different Amazon Web Services account from the credentials
-   * calling the API, then you can't use <code>aws/secretsmanager</code> to encrypt
-   * the secret, and you must create and use a customer managed KMS key. </p>
+   * result in a one-time delay to complete the secret creation.</p> <p>If the secret
+   * is in a different Amazon Web Services account from the credentials calling the
+   * API, then you can't use <code>aws/secretsmanager</code> to encrypt the secret,
+   * and you must create and use a customer managed KMS key. </p> <p>To create a
+   * cross-account replica secret, include <code>CrossAccountPrimaryARN</code>. The
+   * replica must use a customer managed KMS key, and can't include
+   * <code>AddReplicaRegions</code>, <code>Description</code>,
+   * <code>SecretBinary</code>, <code>SecretString</code>, or <code>Type</code>.</p>
    * <p>Secrets Manager generates a CloudTrail log entry when you call this action.
    * Do not include sensitive information in request parameters except
    * <code>SecretBinary</code> or <code>SecretString</code> because it might be
@@ -247,8 +310,9 @@ class AWS_SECRETSMANAGER_API SecretsManagerClient : public Aws::Client::AWSJsonC
    * </b> <code>secretsmanager:CreateSecret</code>. If you include tags in the
    * secret, you also need <code>secretsmanager:TagResource</code>. To add replica
    * Regions, you must also have
-   * <code>secretsmanager:ReplicateSecretToRegions</code>. For more information, see
-   * <a
+   * <code>secretsmanager:ReplicateSecretToRegions</code>. To create a cross-account
+   * replica secret, you must also have <code>secretsmanager:PutResourcePolicy</code>
+   * permissions. For more information, see <a
    * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
    * IAM policy actions for Secrets Manager</a> and <a
    * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
@@ -332,13 +396,19 @@ class AWS_SECRETSMANAGER_API SecretsManagerClient : public Aws::Client::AWSJsonC
    * secret permanently.</p> <p>You can't delete a primary secret that is replicated
    * to other Regions. You must first delete the replicas using
    * <a>RemoveRegionsFromReplication</a>, and then delete the primary secret. When
-   * you delete a replica, it is deleted immediately.</p> <p>You can't directly
-   * delete a version of a secret. Instead, you remove all staging labels from the
-   * version using <a>UpdateSecretVersionStage</a>. This marks the version as
-   * deprecated, and then Secrets Manager can automatically delete the version in the
-   * background.</p> <p>To determine whether an application still uses a secret, you
-   * can create an Amazon CloudWatch alarm to alert you to any attempts to access a
-   * secret during the recovery window. For more information, see <a
+   * you delete a replica, it is deleted immediately.</p> <p>You can't delete a
+   * cross-account primary secret that is associated with a cross-account replica
+   * secret. You must first disassociate each of the replicas using
+   * <a>DisassociateCrossAccountReplica</a>, before deleting the primary secret.
+   * Similarly, you can't delete a cross-account replica secret without first
+   * stopping replication. Call <a>StopReplicationToReplica</a> to stop replication,
+   * and then you can delete the secret.</p> <p>You can't directly delete a version
+   * of a secret. Instead, you remove all staging labels from the version using
+   * <a>UpdateSecretVersionStage</a>. This marks the version as deprecated, and then
+   * Secrets Manager can automatically delete the version in the background.</p>
+   * <p>To determine whether an application still uses a secret, you can create an
+   * Amazon CloudWatch alarm to alert you to any attempts to access a secret during
+   * the recovery window. For more information, see <a
    * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/monitoring_cloudwatch_deleted-secrets.html">
    * Monitor secrets scheduled for deletion</a>.</p> <p>Secrets Manager performs the
    * permanent secret deletion at the end of the waiting period as a background task
@@ -384,9 +454,14 @@ class AWS_SECRETSMANAGER_API SecretsManagerClient : public Aws::Client::AWSJsonC
   /**
    * <p>Retrieves the details of a secret. It does not include the encrypted secret
    * value. Secrets Manager only returns fields that have a value in the response.
-   * </p> <p>Secrets Manager generates a CloudTrail log entry when you call this
-   * action. Do not include sensitive information in request parameters because it
-   * might be logged. For more information, see <a
+   * </p>  <p>The <code>VersionIdsToStages</code> field in the response
+   * includes every version ID that has a staging label attached, even if that
+   * version doesn't contain a secret value. In contrast,
+   * <code>ListSecretVersionIds</code> only returns versions that contain a secret
+   * value. To check whether a secret version contains a value, call
+   * <a>GetSecretValue</a>.</p>  <p>Secrets Manager generates a CloudTrail log
+   * entry when you call this action. Do not include sensitive information in request
+   * parameters because it might be logged. For more information, see <a
    * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging
    * Secrets Manager events with CloudTrail</a>.</p> <p> <b>Required permissions:
    * </b> <code>secretsmanager:DescribeSecret</code>. For more information, see <a
@@ -415,6 +490,58 @@ class AWS_SECRETSMANAGER_API SecretsManagerClient : public Aws::Client::AWSJsonC
   void DescribeSecretAsync(const DescribeSecretRequestT& request, const DescribeSecretResponseReceivedHandler& handler,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&SecretsManagerClient::DescribeSecret, request, handler, context);
+  }
+
+  /**
+   * <p>Removes the link between a primary secret in your account and a cross-account
+   * replica secret, and stops replication to the replica secret. Call this operation
+   * on the primary secret. This action removes the replica association created by
+   * <a>AssociateCrossAccountReplica</a>.</p> <p>Disassociating the replica from the
+   * primary does not delete the replica secret or convert the replica secret to a
+   * standalone secret. The replica secret remains in the other account and its
+   * replication status changes to <code>Detached</code>. Secrets Manager no longer
+   * sends updates from the primary secret to the replica secret after
+   * disassociation. To convert a detached replica into a standalone secret, call
+   * <a>StopReplicationToReplica</a> on the replica secret.</p> <p>You must
+   * disassociate a cross-account replica before you call <a>DeleteSecret</a> for the
+   * primary secret. The <a>DeleteSecret</a> call fails if any replicas are still
+   * associated with the primary secret.</p> <p>Secrets Manager generates a
+   * CloudTrail log entry when you call this action. Do not include sensitive
+   * information in request parameters because it might be logged. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging
+   * Secrets Manager events with CloudTrail</a>.</p> <p> <b>Required permissions:
+   * </b> <code>secretsmanager:DisassociateCrossAccountReplica</code>. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
+   * IAM policy actions for Secrets Manager</a> and <a
+   * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+   * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/DisassociateCrossAccountReplica">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DisassociateCrossAccountReplicaOutcome DisassociateCrossAccountReplica(
+      const Model::DisassociateCrossAccountReplicaRequest& request) const;
+
+  /**
+   * A Callable wrapper for DisassociateCrossAccountReplica that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DisassociateCrossAccountReplicaRequestT = Model::DisassociateCrossAccountReplicaRequest>
+  Model::DisassociateCrossAccountReplicaOutcomeCallable DisassociateCrossAccountReplicaCallable(
+      const DisassociateCrossAccountReplicaRequestT& request) const {
+    return SubmitCallable(&SecretsManagerClient::DisassociateCrossAccountReplica, request);
+  }
+
+  /**
+   * An Async wrapper for DisassociateCrossAccountReplica that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DisassociateCrossAccountReplicaRequestT = Model::DisassociateCrossAccountReplicaRequest>
+  void DisassociateCrossAccountReplicaAsync(const DisassociateCrossAccountReplicaRequestT& request,
+                                            const DisassociateCrossAccountReplicaResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecretsManagerClient::DisassociateCrossAccountReplica, request, handler, context);
   }
 
   /**
@@ -543,13 +670,59 @@ class AWS_SECRETSMANAGER_API SecretsManagerClient : public Aws::Client::AWSJsonC
   }
 
   /**
+   * <p>Lists the resource-based policies attached to a secret. The response contains
+   * only the names of the policies, not their contents. Secrets Manager lists
+   * <code>default</code> first, followed by any other policies in alphabetical
+   * order. To get the contents of a policy, use <a>GetResourcePolicy</a>. You can
+   * modify only the <code>default</code> policy.</p> <p>Secrets Manager generates a
+   * CloudTrail log entry when you call this action. Do not include sensitive
+   * information in request parameters because it might be logged. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging
+   * Secrets Manager events with CloudTrail</a>.</p> <p> <b>Required permissions:
+   * </b> <code>secretsmanager:ListResourcePolicies</code>. For more information, see
+   * <a
+   * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
+   * IAM policy actions for Secrets Manager</a> and <a
+   * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
+   * and access control in Secrets Manager</a>. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/ListResourcePolicies">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListResourcePoliciesOutcome ListResourcePolicies(const Model::ListResourcePoliciesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListResourcePolicies that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListResourcePoliciesRequestT = Model::ListResourcePoliciesRequest>
+  Model::ListResourcePoliciesOutcomeCallable ListResourcePoliciesCallable(const ListResourcePoliciesRequestT& request) const {
+    return SubmitCallable(&SecretsManagerClient::ListResourcePolicies, request);
+  }
+
+  /**
+   * An Async wrapper for ListResourcePolicies that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListResourcePoliciesRequestT = Model::ListResourcePoliciesRequest>
+  void ListResourcePoliciesAsync(const ListResourcePoliciesRequestT& request, const ListResourcePoliciesResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&SecretsManagerClient::ListResourcePolicies, request, handler, context);
+  }
+
+  /**
    * <p>Lists the versions of a secret. Secrets Manager uses staging labels to
    * indicate the different versions of a secret. For more information, see <a
    * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/getting-started.html#term_version">
    * Secrets Manager concepts: Versions</a>.</p> <p>To list the secrets in the
-   * account, use <a>ListSecrets</a>.</p> <p>Secrets Manager generates a CloudTrail
-   * log entry when you call this action. Do not include sensitive information in
-   * request parameters because it might be logged. For more information, see <a
+   * account, use <a>ListSecrets</a>.</p>  <p>
+   * <code>ListSecretVersionIds</code> only returns versions that contain a secret
+   * value. To see all version IDs that have staging labels attached, including ones
+   * without a secret value, call <code>DescribeSecret</code> and check
+   * <code>VersionIdsToStages</code>.</p>  <p>Secrets Manager generates a
+   * CloudTrail log entry when you call this action. Do not include sensitive
+   * information in request parameters because it might be logged. For more
+   * information, see <a
    * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging
    * Secrets Manager events with CloudTrail</a>.</p> <p> <b>Required permissions:
    * </b> <code>secretsmanager:ListSecretVersionIds</code>. For more information, see
@@ -909,16 +1082,25 @@ class AWS_SECRETSMANAGER_API SecretsManagerClient : public Aws::Client::AWSJsonC
   }
 
   /**
-   * <p>Removes the link between the replica secret and the primary secret and
-   * promotes the replica to a primary secret in the replica Region.</p> <p>You must
-   * call this operation from the Region in which you want to promote the replica to
-   * a primary secret.</p> <p>Secrets Manager generates a CloudTrail log entry when
-   * you call this action. Do not include sensitive information in request parameters
-   * because it might be logged. For more information, see <a
+   * <p>Removes the link between a replica secret and its primary secret, and stops
+   * replication to the replica. You call this operation from the replica account or
+   * Region. Depending on the type of replica, the behavior is:</p> <ul> <li> <p>
+   * <b>Cross-Region replica</b>: promotes the replica to a standalone primary secret
+   * in the replica Region.</p> </li> <li> <p> <b>Cross-account replica</b>: promotes
+   * the replica in your account to a standalone secret and stops replication from
+   * its primary secret in the other account. Secrets Manager updates the primary
+   * secret's replication status to <code>Detached</code> for this replica.</p> </li>
+   * </ul> <p>To stop cross-account replication from the primary account instead, use
+   * <a>DisassociateCrossAccountReplica</a>.</p> <p>Secrets Manager generates a
+   * CloudTrail log entry when you call this action. Do not include sensitive
+   * information in request parameters because it might be logged. For more
+   * information, see <a
    * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging
    * Secrets Manager events with CloudTrail</a>.</p> <p> <b>Required permissions:
-   * </b> <code>secretsmanager:StopReplicationToReplica</code>. For more information,
-   * see <a
+   * </b> <code>secretsmanager:StopReplicationToReplica</code>. For cross-account
+   * replica secrets, you must also have
+   * <code>secretsmanager:DeleteResourcePolicy</code> permissions. For more
+   * information, see <a
    * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
    * IAM policy actions for Secrets Manager</a> and <a
    * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication

@@ -20,6 +20,9 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/DescribePublicIpv4PoolsRequest.h>
+#include <aws/ec2/model/DescribeRegionsRequest.h>
+#include <aws/ec2/model/DescribeReplaceRootVolumeTasksRequest.h>
 #include <aws/ec2/model/DescribeReservedInstancesListingsRequest.h>
 #include <aws/ec2/model/DescribeReservedInstancesModificationsRequest.h>
 #include <aws/ec2/model/DescribeReservedInstancesOfferingsRequest.h>
@@ -117,9 +120,6 @@
 #include <aws/ec2/model/DisableIpamOrganizationAdminAccountRequest.h>
 #include <aws/ec2/model/DisableIpamPolicyRequest.h>
 #include <aws/ec2/model/DisableRouteServerPropagationRequest.h>
-#include <aws/ec2/model/DisableSerialConsoleAccessRequest.h>
-#include <aws/ec2/model/DisableSnapshotBlockPublicAccessRequest.h>
-#include <aws/ec2/model/DisableTransitGatewayRouteTablePropagationRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,25 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DescribePublicIpv4PoolsOutcome EC2Client::DescribePublicIpv4Pools(const DescribePublicIpv4PoolsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribePublicIpv4PoolsOutcome(result.GetResultWithOwnership())
+                            : DescribePublicIpv4PoolsOutcome(std::move(result.GetError()));
+}
+
+DescribeRegionsOutcome EC2Client::DescribeRegions(const DescribeRegionsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeRegionsOutcome(result.GetResultWithOwnership())
+                            : DescribeRegionsOutcome(std::move(result.GetError()));
+}
+
+DescribeReplaceRootVolumeTasksOutcome EC2Client::DescribeReplaceRootVolumeTasks(
+    const DescribeReplaceRootVolumeTasksRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeReplaceRootVolumeTasksOutcome(result.GetResultWithOwnership())
+                            : DescribeReplaceRootVolumeTasksOutcome(std::move(result.GetError()));
+}
 
 DescribeReservedInstancesOutcome EC2Client::DescribeReservedInstances(const DescribeReservedInstancesRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -747,24 +766,4 @@ DisableRouteServerPropagationOutcome EC2Client::DisableRouteServerPropagation(co
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DisableRouteServerPropagationOutcome(result.GetResultWithOwnership())
                             : DisableRouteServerPropagationOutcome(std::move(result.GetError()));
-}
-
-DisableSerialConsoleAccessOutcome EC2Client::DisableSerialConsoleAccess(const DisableSerialConsoleAccessRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DisableSerialConsoleAccessOutcome(result.GetResultWithOwnership())
-                            : DisableSerialConsoleAccessOutcome(std::move(result.GetError()));
-}
-
-DisableSnapshotBlockPublicAccessOutcome EC2Client::DisableSnapshotBlockPublicAccess(
-    const DisableSnapshotBlockPublicAccessRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DisableSnapshotBlockPublicAccessOutcome(result.GetResultWithOwnership())
-                            : DisableSnapshotBlockPublicAccessOutcome(std::move(result.GetError()));
-}
-
-DisableTransitGatewayRouteTablePropagationOutcome EC2Client::DisableTransitGatewayRouteTablePropagation(
-    const DisableTransitGatewayRouteTablePropagationRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DisableTransitGatewayRouteTablePropagationOutcome(result.GetResultWithOwnership())
-                            : DisableTransitGatewayRouteTablePropagationOutcome(std::move(result.GetError()));
 }

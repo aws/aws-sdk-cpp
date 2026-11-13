@@ -6,15 +6,15 @@
 #pragma once
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/codepipeline/model/RetryTrigger.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace CodePipeline {
 namespace Model {
@@ -28,22 +28,22 @@ namespace Model {
 class RetryStageMetadata {
  public:
   AWS_CODEPIPELINE_API RetryStageMetadata() = default;
-  AWS_CODEPIPELINE_API RetryStageMetadata(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CODEPIPELINE_API RetryStageMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_CODEPIPELINE_API RetryStageMetadata(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CODEPIPELINE_API RetryStageMetadata& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CODEPIPELINE_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
    * <p>The number of attempts for a specific stage with automatic retry on stage
    * failure. One attempt is allowed for automatic stage retry on failure.</p>
    */
-  inline int GetAutoStageRetryAttempt() const { return m_autoStageRetryAttempt; }
+  inline int64_t GetAutoStageRetryAttempt() const { return m_autoStageRetryAttempt; }
   inline bool AutoStageRetryAttemptHasBeenSet() const { return m_autoStageRetryAttemptHasBeenSet; }
-  inline void SetAutoStageRetryAttempt(int value) {
+  inline void SetAutoStageRetryAttempt(int64_t value) {
     m_autoStageRetryAttemptHasBeenSet = true;
     m_autoStageRetryAttempt = value;
   }
-  inline RetryStageMetadata& WithAutoStageRetryAttempt(int value) {
+  inline RetryStageMetadata& WithAutoStageRetryAttempt(int64_t value) {
     SetAutoStageRetryAttempt(value);
     return *this;
   }
@@ -54,13 +54,13 @@ class RetryStageMetadata {
    * <p>The number of attempts for a specific stage where manual retries have been
    * made upon stage failure.</p>
    */
-  inline int GetManualStageRetryAttempt() const { return m_manualStageRetryAttempt; }
+  inline int64_t GetManualStageRetryAttempt() const { return m_manualStageRetryAttempt; }
   inline bool ManualStageRetryAttemptHasBeenSet() const { return m_manualStageRetryAttemptHasBeenSet; }
-  inline void SetManualStageRetryAttempt(int value) {
+  inline void SetManualStageRetryAttempt(int64_t value) {
     m_manualStageRetryAttemptHasBeenSet = true;
     m_manualStageRetryAttempt = value;
   }
-  inline RetryStageMetadata& WithManualStageRetryAttempt(int value) {
+  inline RetryStageMetadata& WithManualStageRetryAttempt(int64_t value) {
     SetManualStageRetryAttempt(value);
     return *this;
   }
@@ -83,9 +83,9 @@ class RetryStageMetadata {
   }
   ///@}
  private:
-  int m_autoStageRetryAttempt{0};
+  int64_t m_autoStageRetryAttempt{0};
 
-  int m_manualStageRetryAttempt{0};
+  int64_t m_manualStageRetryAttempt{0};
 
   RetryTrigger m_latestRetryTrigger{RetryTrigger::NOT_SET};
   bool m_autoStageRetryAttemptHasBeenSet = false;

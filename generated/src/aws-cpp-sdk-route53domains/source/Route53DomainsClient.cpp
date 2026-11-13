@@ -47,6 +47,7 @@
 #include <aws/route53domains/model/RenewDomainRequest.h>
 #include <aws/route53domains/model/ResendContactReachabilityEmailRequest.h>
 #include <aws/route53domains/model/ResendOperationAuthorizationRequest.h>
+#include <aws/route53domains/model/RestoreDomainRequest.h>
 #include <aws/route53domains/model/RetrieveDomainAuthCodeRequest.h>
 #include <aws/route53domains/model/TransferDomainRequest.h>
 #include <aws/route53domains/model/TransferDomainToAnotherAwsAccountRequest.h>
@@ -201,6 +202,9 @@ Route53DomainsClient::InvokeOperationOutcome Route53DomainsClient::InvokeService
 
         AWS_OPERATION_CHECK_SUCCESS_DYNAMIC(endpointResolutionOutcome, operationName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
                                             endpointResolutionOutcome.GetError().GetMessage());
+
+        endpointResolutionOutcome.GetResult().AddPathSegments("/service/Route53Domains_v20140515/operation/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(operationName);
 
         return InvokeOperationOutcome{MakeRequest(request, endpointResolutionOutcome.GetResult(), httpMethod, Aws::Auth::SIGV4_SIGNER)};
       },
@@ -369,6 +373,11 @@ ResendOperationAuthorizationOutcome Route53DomainsClient::ResendOperationAuthori
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ResendOperationAuthorizationOutcome(result.GetResultWithOwnership())
                             : ResendOperationAuthorizationOutcome(std::move(result.GetError()));
+}
+
+RestoreDomainOutcome Route53DomainsClient::RestoreDomain(const RestoreDomainRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RestoreDomainOutcome(result.GetResultWithOwnership()) : RestoreDomainOutcome(std::move(result.GetError()));
 }
 
 RetrieveDomainAuthCodeOutcome Route53DomainsClient::RetrieveDomainAuthCode(const RetrieveDomainAuthCodeRequest& request) const {

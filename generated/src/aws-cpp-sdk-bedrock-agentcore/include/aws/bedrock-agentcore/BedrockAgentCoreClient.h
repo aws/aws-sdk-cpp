@@ -1268,6 +1268,36 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
   }
 
   /**
+   * <p>Searches the web and returns a ranked list of results. Each result includes a
+   * text extract from the page.</p> <p>You can filter the results by domain and by
+   * publication date.</p> <p>To use this operation, you must have the
+   * <code>bedrock-agentcore:InvokeWebSearch</code> permission on the resource
+   * <code>arn:${Partition}:bedrock-agentcore:${Region}:aws:tool/web-search.v1</code>.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/InvokeWebSearch">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::InvokeWebSearchOutcome InvokeWebSearch(const Model::InvokeWebSearchRequest& request) const;
+
+  /**
+   * A Callable wrapper for InvokeWebSearch that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename InvokeWebSearchRequestT = Model::InvokeWebSearchRequest>
+  Model::InvokeWebSearchOutcomeCallable InvokeWebSearchCallable(const InvokeWebSearchRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreClient::InvokeWebSearch, request);
+  }
+
+  /**
+   * An Async wrapper for InvokeWebSearch that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename InvokeWebSearchRequestT = Model::InvokeWebSearchRequest>
+  void InvokeWebSearchAsync(const InvokeWebSearchRequestT& request, const InvokeWebSearchResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreClient::InvokeWebSearch, request, handler, context);
+  }
+
+  /**
    * <p>Lists all A/B tests in the account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListABTests">AWS
    * API Reference</a></p>

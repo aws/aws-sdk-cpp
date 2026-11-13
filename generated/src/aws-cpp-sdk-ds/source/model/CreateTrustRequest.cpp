@@ -3,67 +3,100 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/ds/model/CreateTrustRequest.h>
 
 #include <utility>
 
 using namespace Aws::DirectoryService::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String CreateTrustRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_directoryIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_remoteDomainNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_trustPasswordHasBeenSet) {
+    mapSize++;
+  }
+  if (m_trustDirectionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_trustTypeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_conditionalForwarderIpAddrsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_conditionalForwarderIpv6AddrsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_selectiveAuthHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_directoryIdHasBeenSet) {
-    payload.WithString("DirectoryId", m_directoryId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("DirectoryId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_directoryId.c_str()));
   }
 
   if (m_remoteDomainNameHasBeenSet) {
-    payload.WithString("RemoteDomainName", m_remoteDomainName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("RemoteDomainName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_remoteDomainName.c_str()));
   }
 
   if (m_trustPasswordHasBeenSet) {
-    payload.WithString("TrustPassword", m_trustPassword);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("TrustPassword"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_trustPassword.c_str()));
   }
 
   if (m_trustDirectionHasBeenSet) {
-    payload.WithString("TrustDirection", TrustDirectionMapper::GetNameForTrustDirection(m_trustDirection));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("TrustDirection"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(TrustDirectionMapper::GetNameForTrustDirection(m_trustDirection).c_str()));
   }
 
   if (m_trustTypeHasBeenSet) {
-    payload.WithString("TrustType", TrustTypeMapper::GetNameForTrustType(m_trustType));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("TrustType"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(TrustTypeMapper::GetNameForTrustType(m_trustType).c_str()));
   }
 
   if (m_conditionalForwarderIpAddrsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> conditionalForwarderIpAddrsJsonList(m_conditionalForwarderIpAddrs.size());
-    for (unsigned conditionalForwarderIpAddrsIndex = 0; conditionalForwarderIpAddrsIndex < conditionalForwarderIpAddrsJsonList.GetLength();
-         ++conditionalForwarderIpAddrsIndex) {
-      conditionalForwarderIpAddrsJsonList[conditionalForwarderIpAddrsIndex].AsString(
-          m_conditionalForwarderIpAddrs[conditionalForwarderIpAddrsIndex]);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ConditionalForwarderIpAddrs"));
+    encoder.WriteArrayStart(m_conditionalForwarderIpAddrs.size());
+    for (const auto& item_0 : m_conditionalForwarderIpAddrs) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
     }
-    payload.WithArray("ConditionalForwarderIpAddrs", std::move(conditionalForwarderIpAddrsJsonList));
   }
 
   if (m_conditionalForwarderIpv6AddrsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> conditionalForwarderIpv6AddrsJsonList(m_conditionalForwarderIpv6Addrs.size());
-    for (unsigned conditionalForwarderIpv6AddrsIndex = 0;
-         conditionalForwarderIpv6AddrsIndex < conditionalForwarderIpv6AddrsJsonList.GetLength(); ++conditionalForwarderIpv6AddrsIndex) {
-      conditionalForwarderIpv6AddrsJsonList[conditionalForwarderIpv6AddrsIndex].AsString(
-          m_conditionalForwarderIpv6Addrs[conditionalForwarderIpv6AddrsIndex]);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ConditionalForwarderIpv6Addrs"));
+    encoder.WriteArrayStart(m_conditionalForwarderIpv6Addrs.size());
+    for (const auto& item_0 : m_conditionalForwarderIpv6Addrs) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
     }
-    payload.WithArray("ConditionalForwarderIpv6Addrs", std::move(conditionalForwarderIpv6AddrsJsonList));
   }
 
   if (m_selectiveAuthHasBeenSet) {
-    payload.WithString("SelectiveAuth", SelectiveAuthMapper::GetNameForSelectiveAuth(m_selectiveAuth));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("SelectiveAuth"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(SelectiveAuthMapper::GetNameForSelectiveAuth(m_selectiveAuth).c_str()));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection CreateTrustRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "DirectoryService_20150416.CreateTrust"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

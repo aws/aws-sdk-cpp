@@ -20,6 +20,7 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/DeleteIpamPrefixListResolverTargetRequest.h>
 #include <aws/ec2/model/DeleteIpamResourceDiscoveryRequest.h>
 #include <aws/ec2/model/DeleteIpamRoutingPolicyRegistrationRequest.h>
 #include <aws/ec2/model/DeleteIpamScopeRequest.h>
@@ -33,6 +34,7 @@
 #include <aws/ec2/model/DeleteLocalGatewayVirtualInterfaceGroupRequest.h>
 #include <aws/ec2/model/DeleteLocalGatewayVirtualInterfaceRequest.h>
 #include <aws/ec2/model/DeleteManagedPrefixListRequest.h>
+#include <aws/ec2/model/DeleteMetricCategoryRequest.h>
 #include <aws/ec2/model/DeleteNatGatewayRequest.h>
 #include <aws/ec2/model/DeleteNetworkAclEntryRequest.h>
 #include <aws/ec2/model/DeleteNetworkAclRequest.h>
@@ -118,8 +120,6 @@
 #include <aws/ec2/model/DescribeCapacityBlockExtensionOfferingsRequest.h>
 #include <aws/ec2/model/DescribeCapacityBlockOfferingsRequest.h>
 #include <aws/ec2/model/DescribeCapacityBlockStatusRequest.h>
-#include <aws/ec2/model/DescribeCapacityBlocksRequest.h>
-#include <aws/ec2/model/DescribeCapacityManagerDataExportsRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,13 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+DeleteIpamPrefixListResolverTargetOutcome EC2Client::DeleteIpamPrefixListResolverTarget(
+    const DeleteIpamPrefixListResolverTargetRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteIpamPrefixListResolverTargetOutcome(result.GetResultWithOwnership())
+                            : DeleteIpamPrefixListResolverTargetOutcome(std::move(result.GetError()));
+}
 
 DeleteIpamResourceDiscoveryOutcome EC2Client::DeleteIpamResourceDiscovery(const DeleteIpamResourceDiscoveryRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -212,6 +219,12 @@ DeleteManagedPrefixListOutcome EC2Client::DeleteManagedPrefixList(const DeleteMa
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteManagedPrefixListOutcome(result.GetResultWithOwnership())
                             : DeleteManagedPrefixListOutcome(std::move(result.GetError()));
+}
+
+DeleteMetricCategoryOutcome EC2Client::DeleteMetricCategory(const DeleteMetricCategoryRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteMetricCategoryOutcome(result.GetResultWithOwnership())
+                            : DeleteMetricCategoryOutcome(std::move(result.GetError()));
 }
 
 DeleteNatGatewayOutcome EC2Client::DeleteNatGateway(const DeleteNatGatewayRequest& request) const {
@@ -746,17 +759,4 @@ DescribeCapacityBlockStatusOutcome EC2Client::DescribeCapacityBlockStatus(const 
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeCapacityBlockStatusOutcome(result.GetResultWithOwnership())
                             : DescribeCapacityBlockStatusOutcome(std::move(result.GetError()));
-}
-
-DescribeCapacityBlocksOutcome EC2Client::DescribeCapacityBlocks(const DescribeCapacityBlocksRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeCapacityBlocksOutcome(result.GetResultWithOwnership())
-                            : DescribeCapacityBlocksOutcome(std::move(result.GetError()));
-}
-
-DescribeCapacityManagerDataExportsOutcome EC2Client::DescribeCapacityManagerDataExports(
-    const DescribeCapacityManagerDataExportsRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DescribeCapacityManagerDataExportsOutcome(result.GetResultWithOwnership())
-                            : DescribeCapacityManagerDataExportsOutcome(std::move(result.GetError()));
 }

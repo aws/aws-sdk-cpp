@@ -29,12 +29,14 @@
 #include <aws/athena/model/CreateNotebookResult.h>
 #include <aws/athena/model/CreatePreparedStatementResult.h>
 #include <aws/athena/model/CreatePresignedNotebookUrlResult.h>
+#include <aws/athena/model/CreateSystemTableConfigurationResult.h>
 #include <aws/athena/model/CreateWorkGroupResult.h>
 #include <aws/athena/model/DeleteCapacityReservationResult.h>
 #include <aws/athena/model/DeleteDataCatalogResult.h>
 #include <aws/athena/model/DeleteNamedQueryResult.h>
 #include <aws/athena/model/DeleteNotebookResult.h>
 #include <aws/athena/model/DeletePreparedStatementResult.h>
+#include <aws/athena/model/DeleteSystemTableConfigurationResult.h>
 #include <aws/athena/model/DeleteWorkGroupResult.h>
 #include <aws/athena/model/ExportNotebookResult.h>
 #include <aws/athena/model/GetCalculationExecutionCodeResult.h>
@@ -54,6 +56,7 @@
 #include <aws/athena/model/GetSessionEndpointResult.h>
 #include <aws/athena/model/GetSessionResult.h>
 #include <aws/athena/model/GetSessionStatusResult.h>
+#include <aws/athena/model/GetSystemTableConfigurationResult.h>
 #include <aws/athena/model/GetTableMetadataResult.h>
 #include <aws/athena/model/GetWorkGroupResult.h>
 #include <aws/athena/model/ImportNotebookResult.h>
@@ -76,6 +79,8 @@
 #include <aws/athena/model/ListQueryExecutionsRequest.h>
 #include <aws/athena/model/ListQueryExecutionsResult.h>
 #include <aws/athena/model/ListSessionsResult.h>
+#include <aws/athena/model/ListSystemTableStatusesRequest.h>
+#include <aws/athena/model/ListSystemTableStatusesResult.h>
 #include <aws/athena/model/ListTableMetadataResult.h>
 #include <aws/athena/model/ListTagsForResourceResult.h>
 #include <aws/athena/model/ListWorkGroupsRequest.h>
@@ -95,6 +100,7 @@
 #include <aws/athena/model/UpdateNotebookMetadataResult.h>
 #include <aws/athena/model/UpdateNotebookResult.h>
 #include <aws/athena/model/UpdatePreparedStatementResult.h>
+#include <aws/athena/model/UpdateSystemTableConfigurationResult.h>
 #include <aws/athena/model/UpdateWorkGroupResult.h>
 /* End of service model headers required in AthenaClient header */
 
@@ -139,12 +145,14 @@ class CreateNamedQueryRequest;
 class CreateNotebookRequest;
 class CreatePreparedStatementRequest;
 class CreatePresignedNotebookUrlRequest;
+class CreateSystemTableConfigurationRequest;
 class CreateWorkGroupRequest;
 class DeleteCapacityReservationRequest;
 class DeleteDataCatalogRequest;
 class DeleteNamedQueryRequest;
 class DeleteNotebookRequest;
 class DeletePreparedStatementRequest;
+class DeleteSystemTableConfigurationRequest;
 class DeleteWorkGroupRequest;
 class ExportNotebookRequest;
 class GetCalculationExecutionRequest;
@@ -164,6 +172,7 @@ class GetResourceDashboardRequest;
 class GetSessionRequest;
 class GetSessionEndpointRequest;
 class GetSessionStatusRequest;
+class GetSystemTableConfigurationRequest;
 class GetTableMetadataRequest;
 class GetWorkGroupRequest;
 class ImportNotebookRequest;
@@ -180,6 +189,7 @@ class ListNotebookSessionsRequest;
 class ListPreparedStatementsRequest;
 class ListQueryExecutionsRequest;
 class ListSessionsRequest;
+class ListSystemTableStatusesRequest;
 class ListTableMetadataRequest;
 class ListTagsForResourceRequest;
 class ListWorkGroupsRequest;
@@ -198,6 +208,7 @@ class UpdateNamedQueryRequest;
 class UpdateNotebookRequest;
 class UpdateNotebookMetadataRequest;
 class UpdatePreparedStatementRequest;
+class UpdateSystemTableConfigurationRequest;
 class UpdateWorkGroupRequest;
 /* End of service model forward declarations required in AthenaClient header */
 
@@ -212,12 +223,14 @@ typedef Aws::Utils::Outcome<CreateNamedQueryResult, Aws::Athena::AthenaError> Cr
 typedef Aws::Utils::Outcome<CreateNotebookResult, Aws::Athena::AthenaError> CreateNotebookOutcome;
 typedef Aws::Utils::Outcome<CreatePreparedStatementResult, Aws::Athena::AthenaError> CreatePreparedStatementOutcome;
 typedef Aws::Utils::Outcome<CreatePresignedNotebookUrlResult, Aws::Athena::AthenaError> CreatePresignedNotebookUrlOutcome;
+typedef Aws::Utils::Outcome<CreateSystemTableConfigurationResult, Aws::Athena::AthenaError> CreateSystemTableConfigurationOutcome;
 typedef Aws::Utils::Outcome<CreateWorkGroupResult, Aws::Athena::AthenaError> CreateWorkGroupOutcome;
 typedef Aws::Utils::Outcome<DeleteCapacityReservationResult, Aws::Athena::AthenaError> DeleteCapacityReservationOutcome;
 typedef Aws::Utils::Outcome<DeleteDataCatalogResult, Aws::Athena::AthenaError> DeleteDataCatalogOutcome;
 typedef Aws::Utils::Outcome<DeleteNamedQueryResult, Aws::Athena::AthenaError> DeleteNamedQueryOutcome;
 typedef Aws::Utils::Outcome<DeleteNotebookResult, Aws::Athena::AthenaError> DeleteNotebookOutcome;
 typedef Aws::Utils::Outcome<DeletePreparedStatementResult, Aws::Athena::AthenaError> DeletePreparedStatementOutcome;
+typedef Aws::Utils::Outcome<DeleteSystemTableConfigurationResult, Aws::Athena::AthenaError> DeleteSystemTableConfigurationOutcome;
 typedef Aws::Utils::Outcome<DeleteWorkGroupResult, Aws::Athena::AthenaError> DeleteWorkGroupOutcome;
 typedef Aws::Utils::Outcome<ExportNotebookResult, Aws::Athena::AthenaError> ExportNotebookOutcome;
 typedef Aws::Utils::Outcome<GetCalculationExecutionResult, Aws::Athena::AthenaError> GetCalculationExecutionOutcome;
@@ -237,6 +250,7 @@ typedef Aws::Utils::Outcome<GetResourceDashboardResult, Aws::Athena::AthenaError
 typedef Aws::Utils::Outcome<GetSessionResult, Aws::Athena::AthenaError> GetSessionOutcome;
 typedef Aws::Utils::Outcome<GetSessionEndpointResult, Aws::Athena::AthenaError> GetSessionEndpointOutcome;
 typedef Aws::Utils::Outcome<GetSessionStatusResult, Aws::Athena::AthenaError> GetSessionStatusOutcome;
+typedef Aws::Utils::Outcome<GetSystemTableConfigurationResult, Aws::Athena::AthenaError> GetSystemTableConfigurationOutcome;
 typedef Aws::Utils::Outcome<GetTableMetadataResult, Aws::Athena::AthenaError> GetTableMetadataOutcome;
 typedef Aws::Utils::Outcome<GetWorkGroupResult, Aws::Athena::AthenaError> GetWorkGroupOutcome;
 typedef Aws::Utils::Outcome<ImportNotebookResult, Aws::Athena::AthenaError> ImportNotebookOutcome;
@@ -253,6 +267,7 @@ typedef Aws::Utils::Outcome<ListNotebookSessionsResult, Aws::Athena::AthenaError
 typedef Aws::Utils::Outcome<ListPreparedStatementsResult, Aws::Athena::AthenaError> ListPreparedStatementsOutcome;
 typedef Aws::Utils::Outcome<ListQueryExecutionsResult, Aws::Athena::AthenaError> ListQueryExecutionsOutcome;
 typedef Aws::Utils::Outcome<ListSessionsResult, Aws::Athena::AthenaError> ListSessionsOutcome;
+typedef Aws::Utils::Outcome<ListSystemTableStatusesResult, Aws::Athena::AthenaError> ListSystemTableStatusesOutcome;
 typedef Aws::Utils::Outcome<ListTableMetadataResult, Aws::Athena::AthenaError> ListTableMetadataOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Athena::AthenaError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<ListWorkGroupsResult, Aws::Athena::AthenaError> ListWorkGroupsOutcome;
@@ -271,6 +286,7 @@ typedef Aws::Utils::Outcome<UpdateNamedQueryResult, Aws::Athena::AthenaError> Up
 typedef Aws::Utils::Outcome<UpdateNotebookResult, Aws::Athena::AthenaError> UpdateNotebookOutcome;
 typedef Aws::Utils::Outcome<UpdateNotebookMetadataResult, Aws::Athena::AthenaError> UpdateNotebookMetadataOutcome;
 typedef Aws::Utils::Outcome<UpdatePreparedStatementResult, Aws::Athena::AthenaError> UpdatePreparedStatementOutcome;
+typedef Aws::Utils::Outcome<UpdateSystemTableConfigurationResult, Aws::Athena::AthenaError> UpdateSystemTableConfigurationOutcome;
 typedef Aws::Utils::Outcome<UpdateWorkGroupResult, Aws::Athena::AthenaError> UpdateWorkGroupOutcome;
 /* End of service model Outcome class definitions */
 
@@ -285,12 +301,14 @@ typedef std::future<CreateNamedQueryOutcome> CreateNamedQueryOutcomeCallable;
 typedef std::future<CreateNotebookOutcome> CreateNotebookOutcomeCallable;
 typedef std::future<CreatePreparedStatementOutcome> CreatePreparedStatementOutcomeCallable;
 typedef std::future<CreatePresignedNotebookUrlOutcome> CreatePresignedNotebookUrlOutcomeCallable;
+typedef std::future<CreateSystemTableConfigurationOutcome> CreateSystemTableConfigurationOutcomeCallable;
 typedef std::future<CreateWorkGroupOutcome> CreateWorkGroupOutcomeCallable;
 typedef std::future<DeleteCapacityReservationOutcome> DeleteCapacityReservationOutcomeCallable;
 typedef std::future<DeleteDataCatalogOutcome> DeleteDataCatalogOutcomeCallable;
 typedef std::future<DeleteNamedQueryOutcome> DeleteNamedQueryOutcomeCallable;
 typedef std::future<DeleteNotebookOutcome> DeleteNotebookOutcomeCallable;
 typedef std::future<DeletePreparedStatementOutcome> DeletePreparedStatementOutcomeCallable;
+typedef std::future<DeleteSystemTableConfigurationOutcome> DeleteSystemTableConfigurationOutcomeCallable;
 typedef std::future<DeleteWorkGroupOutcome> DeleteWorkGroupOutcomeCallable;
 typedef std::future<ExportNotebookOutcome> ExportNotebookOutcomeCallable;
 typedef std::future<GetCalculationExecutionOutcome> GetCalculationExecutionOutcomeCallable;
@@ -310,6 +328,7 @@ typedef std::future<GetResourceDashboardOutcome> GetResourceDashboardOutcomeCall
 typedef std::future<GetSessionOutcome> GetSessionOutcomeCallable;
 typedef std::future<GetSessionEndpointOutcome> GetSessionEndpointOutcomeCallable;
 typedef std::future<GetSessionStatusOutcome> GetSessionStatusOutcomeCallable;
+typedef std::future<GetSystemTableConfigurationOutcome> GetSystemTableConfigurationOutcomeCallable;
 typedef std::future<GetTableMetadataOutcome> GetTableMetadataOutcomeCallable;
 typedef std::future<GetWorkGroupOutcome> GetWorkGroupOutcomeCallable;
 typedef std::future<ImportNotebookOutcome> ImportNotebookOutcomeCallable;
@@ -326,6 +345,7 @@ typedef std::future<ListNotebookSessionsOutcome> ListNotebookSessionsOutcomeCall
 typedef std::future<ListPreparedStatementsOutcome> ListPreparedStatementsOutcomeCallable;
 typedef std::future<ListQueryExecutionsOutcome> ListQueryExecutionsOutcomeCallable;
 typedef std::future<ListSessionsOutcome> ListSessionsOutcomeCallable;
+typedef std::future<ListSystemTableStatusesOutcome> ListSystemTableStatusesOutcomeCallable;
 typedef std::future<ListTableMetadataOutcome> ListTableMetadataOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<ListWorkGroupsOutcome> ListWorkGroupsOutcomeCallable;
@@ -344,6 +364,7 @@ typedef std::future<UpdateNamedQueryOutcome> UpdateNamedQueryOutcomeCallable;
 typedef std::future<UpdateNotebookOutcome> UpdateNotebookOutcomeCallable;
 typedef std::future<UpdateNotebookMetadataOutcome> UpdateNotebookMetadataOutcomeCallable;
 typedef std::future<UpdatePreparedStatementOutcome> UpdatePreparedStatementOutcomeCallable;
+typedef std::future<UpdateSystemTableConfigurationOutcome> UpdateSystemTableConfigurationOutcomeCallable;
 typedef std::future<UpdateWorkGroupOutcome> UpdateWorkGroupOutcomeCallable;
 /* End of service model Outcome callable definitions */
 }  // namespace Model
@@ -381,6 +402,10 @@ typedef std::function<void(const AthenaClient*, const Model::CreatePreparedState
 typedef std::function<void(const AthenaClient*, const Model::CreatePresignedNotebookUrlRequest&,
                            const Model::CreatePresignedNotebookUrlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreatePresignedNotebookUrlResponseReceivedHandler;
+typedef std::function<void(const AthenaClient*, const Model::CreateSystemTableConfigurationRequest&,
+                           const Model::CreateSystemTableConfigurationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateSystemTableConfigurationResponseReceivedHandler;
 typedef std::function<void(const AthenaClient*, const Model::CreateWorkGroupRequest&, const Model::CreateWorkGroupOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateWorkGroupResponseReceivedHandler;
@@ -399,6 +424,10 @@ typedef std::function<void(const AthenaClient*, const Model::DeleteNotebookReque
 typedef std::function<void(const AthenaClient*, const Model::DeletePreparedStatementRequest&, const Model::DeletePreparedStatementOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeletePreparedStatementResponseReceivedHandler;
+typedef std::function<void(const AthenaClient*, const Model::DeleteSystemTableConfigurationRequest&,
+                           const Model::DeleteSystemTableConfigurationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteSystemTableConfigurationResponseReceivedHandler;
 typedef std::function<void(const AthenaClient*, const Model::DeleteWorkGroupRequest&, const Model::DeleteWorkGroupOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteWorkGroupResponseReceivedHandler;
@@ -458,6 +487,9 @@ typedef std::function<void(const AthenaClient*, const Model::GetSessionEndpointR
 typedef std::function<void(const AthenaClient*, const Model::GetSessionStatusRequest&, const Model::GetSessionStatusOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetSessionStatusResponseReceivedHandler;
+typedef std::function<void(const AthenaClient*, const Model::GetSystemTableConfigurationRequest&,
+                           const Model::GetSystemTableConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetSystemTableConfigurationResponseReceivedHandler;
 typedef std::function<void(const AthenaClient*, const Model::GetTableMetadataRequest&, const Model::GetTableMetadataOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetTableMetadataResponseReceivedHandler;
@@ -506,6 +538,9 @@ typedef std::function<void(const AthenaClient*, const Model::ListQueryExecutions
 typedef std::function<void(const AthenaClient*, const Model::ListSessionsRequest&, const Model::ListSessionsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListSessionsResponseReceivedHandler;
+typedef std::function<void(const AthenaClient*, const Model::ListSystemTableStatusesRequest&, const Model::ListSystemTableStatusesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListSystemTableStatusesResponseReceivedHandler;
 typedef std::function<void(const AthenaClient*, const Model::ListTableMetadataRequest&, const Model::ListTableMetadataOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListTableMetadataResponseReceivedHandler;
@@ -561,6 +596,10 @@ typedef std::function<void(const AthenaClient*, const Model::UpdateNotebookMetad
 typedef std::function<void(const AthenaClient*, const Model::UpdatePreparedStatementRequest&, const Model::UpdatePreparedStatementOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdatePreparedStatementResponseReceivedHandler;
+typedef std::function<void(const AthenaClient*, const Model::UpdateSystemTableConfigurationRequest&,
+                           const Model::UpdateSystemTableConfigurationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateSystemTableConfigurationResponseReceivedHandler;
 typedef std::function<void(const AthenaClient*, const Model::UpdateWorkGroupRequest&, const Model::UpdateWorkGroupOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateWorkGroupResponseReceivedHandler;

@@ -5,6 +5,9 @@
 
 #pragma once
 #include <aws/kinesisanalyticsv2/KinesisAnalyticsV2_EXPORTS.h>
+#include <aws/kinesisanalyticsv2/model/SnapshotMode.h>
+
+#include <utility>
 
 namespace Aws {
 namespace Utils {
@@ -45,9 +48,34 @@ class ApplicationSnapshotConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the snapshot mode for a Managed Service for Apache Flink
+   * application. To use enhanced snapshots, specify <code>ENHANCED_SNAPSHOTS</code>.
+   * If you don't specify this parameter, the application uses
+   * <code>APPLICATION_SNAPSHOTS_LEGACY</code>. For more information, see <a
+   * href="https://docs.aws.amazon.com/managed-flink/latest/java/how-snapshots.html">Enhanced
+   * Snapshots</a>.</p> <p>To use <code>ENHANCED_SNAPSHOTS</code>, the application
+   * must use Apache Flink version 1.20 or later.</p>
+   */
+  inline SnapshotMode GetSnapshotMode() const { return m_snapshotMode; }
+  inline bool SnapshotModeHasBeenSet() const { return m_snapshotModeHasBeenSet; }
+  inline void SetSnapshotMode(SnapshotMode value) {
+    m_snapshotModeHasBeenSet = true;
+    m_snapshotMode = value;
+  }
+  inline ApplicationSnapshotConfiguration& WithSnapshotMode(SnapshotMode value) {
+    SetSnapshotMode(value);
+    return *this;
+  }
+  ///@}
  private:
   bool m_snapshotsEnabled{false};
+
+  SnapshotMode m_snapshotMode{SnapshotMode::NOT_SET};
   bool m_snapshotsEnabledHasBeenSet = false;
+  bool m_snapshotModeHasBeenSet = false;
 };
 
 }  // namespace Model

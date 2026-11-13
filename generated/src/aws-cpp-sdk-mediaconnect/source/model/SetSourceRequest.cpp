@@ -118,6 +118,10 @@ SetSourceRequest& SetSourceRequest::operator=(JsonView jsonValue) {
     m_routerIntegrationTransitDecryption = jsonValue.GetObject("routerIntegrationTransitDecryption");
     m_routerIntegrationTransitDecryptionHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("rtmpPushSettings")) {
+    m_rtmpPushSettings = jsonValue.GetObject("rtmpPushSettings");
+    m_rtmpPushSettingsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -225,6 +229,10 @@ JsonValue SetSourceRequest::Jsonize() const {
 
   if (m_routerIntegrationTransitDecryptionHasBeenSet) {
     payload.WithObject("routerIntegrationTransitDecryption", m_routerIntegrationTransitDecryption.Jsonize());
+  }
+
+  if (m_rtmpPushSettingsHasBeenSet) {
+    payload.WithObject("rtmpPushSettings", m_rtmpPushSettings.Jsonize());
   }
 
   return payload;

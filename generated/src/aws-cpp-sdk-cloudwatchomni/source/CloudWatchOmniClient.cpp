@@ -38,6 +38,7 @@
 #include <aws/cloudwatchomni/model/GetIntelligenceConfigurationRequest.h>
 #include <aws/cloudwatchomni/model/GetOmniDashboardRequest.h>
 #include <aws/cloudwatchomni/model/GetSpaceCredentialsForOrganizationRequest.h>
+#include <aws/cloudwatchomni/model/GetSpaceDataAccessRequest.h>
 #include <aws/cloudwatchomni/model/GetSpaceRequest.h>
 #include <aws/cloudwatchomni/model/GetTelemetryQueryResultsRequest.h>
 #include <aws/cloudwatchomni/model/GetViewRequest.h>
@@ -427,6 +428,12 @@ GetSpaceCredentialsForOrganizationOutcome CloudWatchOmniClient::GetSpaceCredenti
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetSpaceCredentialsForOrganizationOutcome(result.GetResultWithOwnership())
                             : GetSpaceCredentialsForOrganizationOutcome(std::move(result.GetError()));
+}
+
+GetSpaceDataAccessOutcome CloudWatchOmniClient::GetSpaceDataAccess(const GetSpaceDataAccessRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetSpaceDataAccessOutcome(result.GetResultWithOwnership())
+                            : GetSpaceDataAccessOutcome(std::move(result.GetError()));
 }
 
 GetTelemetryQueryResultsOutcome CloudWatchOmniClient::GetTelemetryQueryResults(const GetTelemetryQueryResultsRequest& request) const {

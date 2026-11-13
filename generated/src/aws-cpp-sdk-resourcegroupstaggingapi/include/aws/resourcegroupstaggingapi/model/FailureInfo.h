@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPI_EXPORTS.h>
 #include <aws/resourcegroupstaggingapi/model/ErrorCode.h>
 
@@ -12,10 +13,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace ResourceGroupsTaggingAPI {
 namespace Model {
@@ -50,21 +50,21 @@ namespace Model {
 class FailureInfo {
  public:
   AWS_RESOURCEGROUPSTAGGINGAPI_API FailureInfo() = default;
-  AWS_RESOURCEGROUPSTAGGINGAPI_API FailureInfo(Aws::Utils::Json::JsonView jsonValue);
-  AWS_RESOURCEGROUPSTAGGINGAPI_API FailureInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_RESOURCEGROUPSTAGGINGAPI_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_RESOURCEGROUPSTAGGINGAPI_API FailureInfo(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_RESOURCEGROUPSTAGGINGAPI_API FailureInfo& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_RESOURCEGROUPSTAGGINGAPI_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
    * <p>The HTTP status code of the common error.</p>
    */
-  inline int GetStatusCode() const { return m_statusCode; }
+  inline int64_t GetStatusCode() const { return m_statusCode; }
   inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
-  inline void SetStatusCode(int value) {
+  inline void SetStatusCode(int64_t value) {
     m_statusCodeHasBeenSet = true;
     m_statusCode = value;
   }
-  inline FailureInfo& WithStatusCode(int value) {
+  inline FailureInfo& WithStatusCode(int64_t value) {
     SetStatusCode(value);
     return *this;
   }
@@ -107,7 +107,7 @@ class FailureInfo {
   }
   ///@}
  private:
-  int m_statusCode{0};
+  int64_t m_statusCode{0};
 
   ErrorCode m_errorCode{ErrorCode::NOT_SET};
 

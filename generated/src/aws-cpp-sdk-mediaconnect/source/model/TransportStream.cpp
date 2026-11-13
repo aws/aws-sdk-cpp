@@ -50,9 +50,17 @@ TransportStream& TransportStream::operator=(JsonView jsonValue) {
     m_sampleSize = jsonValue.GetInteger("sampleSize");
     m_sampleSizeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("scanMode")) {
+    m_scanMode = ScanModeMapper::GetScanModeForName(jsonValue.GetString("scanMode"));
+    m_scanModeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("streamType")) {
     m_streamType = jsonValue.GetString("streamType");
     m_streamTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("language")) {
+    m_language = jsonValue.GetString("language");
+    m_languageHasBeenSet = true;
   }
   return *this;
 }
@@ -92,8 +100,16 @@ JsonValue TransportStream::Jsonize() const {
     payload.WithInteger("sampleSize", m_sampleSize);
   }
 
+  if (m_scanModeHasBeenSet) {
+    payload.WithString("scanMode", ScanModeMapper::GetNameForScanMode(m_scanMode));
+  }
+
   if (m_streamTypeHasBeenSet) {
     payload.WithString("streamType", m_streamType);
+  }
+
+  if (m_languageHasBeenSet) {
+    payload.WithString("language", m_language);
   }
 
   return payload;

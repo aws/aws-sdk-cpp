@@ -171,6 +171,7 @@
 #include <aws/bedrock-agent/model/EnrichmentStrategyConfiguration.h>
 #include <aws/bedrock-agent/model/EnrichmentStrategyMethod.h>
 #include <aws/bedrock-agent/model/FieldForReranking.h>
+#include <aws/bedrock-agent/model/FieldType.h>
 #include <aws/bedrock-agent/model/FixedSizeChunkingConfiguration.h>
 #include <aws/bedrock-agent/model/FlowAliasConcurrencyConfiguration.h>
 #include <aws/bedrock-agent/model/FlowAliasRoutingConfigurationListItem.h>
@@ -342,6 +343,7 @@
 #include <aws/bedrock-agent/model/Message.h>
 #include <aws/bedrock-agent/model/MetadataAttribute.h>
 #include <aws/bedrock-agent/model/MetadataAttributeValue.h>
+#include <aws/bedrock-agent/model/MetadataConfiguration.h>
 #include <aws/bedrock-agent/model/MetadataConfigurationForReranking.h>
 #include <aws/bedrock-agent/model/MetadataSourceType.h>
 #include <aws/bedrock-agent/model/MetadataValueType.h>
@@ -452,6 +454,7 @@
 #include <aws/bedrock-agent/model/SalesforceCrawlerConfiguration.h>
 #include <aws/bedrock-agent/model/SalesforceDataSourceConfiguration.h>
 #include <aws/bedrock-agent/model/SalesforceSourceConfiguration.h>
+#include <aws/bedrock-agent/model/SearchableStatus.h>
 #include <aws/bedrock-agent/model/SeedUrl.h>
 #include <aws/bedrock-agent/model/SemanticChunkingConfiguration.h>
 #include <aws/bedrock-agent/model/ServerSideEncryptionConfiguration.h>

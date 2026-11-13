@@ -4,34 +4,53 @@
  */
 
 #include <aws/cloudhsmv2/model/ModifyClusterRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 using namespace Aws::CloudHSMV2::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String ModifyClusterRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_hsmTypeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_backupRetentionPolicyHasBeenSet) {
+    mapSize++;
+  }
+  if (m_clusterIdHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_hsmTypeHasBeenSet) {
-    payload.WithString("HsmType", m_hsmType);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("HsmType"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_hsmType.c_str()));
   }
 
   if (m_backupRetentionPolicyHasBeenSet) {
-    payload.WithObject("BackupRetentionPolicy", m_backupRetentionPolicy.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("BackupRetentionPolicy"));
+    m_backupRetentionPolicy.CborEncode(encoder);
   }
 
   if (m_clusterIdHasBeenSet) {
-    payload.WithString("ClusterId", m_clusterId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ClusterId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_clusterId.c_str()));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection ModifyClusterRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "BaldrApiService.ModifyCluster"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

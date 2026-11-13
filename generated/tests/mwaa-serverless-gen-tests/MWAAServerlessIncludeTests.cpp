@@ -19,6 +19,8 @@
 #include <aws/mwaa-serverless/internal/MWAAServerlessEndpointRules.h>
 #include <aws/mwaa-serverless/model/Code.h>
 #include <aws/mwaa-serverless/model/ConflictException.h>
+#include <aws/mwaa-serverless/model/CreateAirflowUiUrlRequest.h>
+#include <aws/mwaa-serverless/model/CreateAirflowUiUrlResult.h>
 #include <aws/mwaa-serverless/model/CreateWorkflowRequest.h>
 #include <aws/mwaa-serverless/model/CreateWorkflowResult.h>
 #include <aws/mwaa-serverless/model/DefinitionS3Location.h>

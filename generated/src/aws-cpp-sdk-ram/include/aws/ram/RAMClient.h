@@ -470,8 +470,14 @@ class AWS_RAM_API RAMClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Retrieves the contents of a managed permission in JSON format.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Retrieves the contents of a managed permission in JSON format.</p> <p>If the
+   * permission has template parameters, you can include the
+   * <code>permissionTemplateParameters</code> parameter in your request. The
+   * operation then renders the returned policy with the specified values in place of
+   * the template parameter placeholders. If you omit
+   * <code>permissionTemplateParameters</code>, the operation returns the raw policy
+   * template with <code>@{parameterName}</code> placeholders
+   * unchanged.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetPermission">AWS
    * API Reference</a></p>
    */
@@ -1216,6 +1222,36 @@ class AWS_RAM_API RAMClient : public Aws::Client::AWSJsonClient,
   void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&RAMClient::UntagResource, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the status of the specified customer managed permission.</p>
+   * <p>Setting the status to <code>DEPRECATED</code> prevents new resource share
+   * associations. Setting it to <code>ATTACHABLE</code> restores a previously
+   * deprecated permission. Existing resource shares that use the permission continue
+   * to function.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/UpdatePermission">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdatePermissionOutcome UpdatePermission(const Model::UpdatePermissionRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdatePermission that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdatePermissionRequestT = Model::UpdatePermissionRequest>
+  Model::UpdatePermissionOutcomeCallable UpdatePermissionCallable(const UpdatePermissionRequestT& request) const {
+    return SubmitCallable(&RAMClient::UpdatePermission, request);
+  }
+
+  /**
+   * An Async wrapper for UpdatePermission that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename UpdatePermissionRequestT = Model::UpdatePermissionRequest>
+  void UpdatePermissionAsync(const UpdatePermissionRequestT& request, const UpdatePermissionResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&RAMClient::UpdatePermission, request, handler, context);
   }
 
   /**

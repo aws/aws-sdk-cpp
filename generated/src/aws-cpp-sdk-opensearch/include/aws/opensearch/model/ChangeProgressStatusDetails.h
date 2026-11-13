@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/opensearch/OpenSearchService_EXPORTS.h>
 #include <aws/opensearch/model/ChangeProgressStage.h>
+#include <aws/opensearch/model/ClonedBlueGreenUpgradeDetails.h>
 #include <aws/opensearch/model/ConfigChangeStatus.h>
 #include <aws/opensearch/model/InitiatedBy.h>
 #include <aws/opensearch/model/OverallChangeStatus.h>
@@ -235,6 +236,24 @@ class ChangeProgressStatusDetails {
 
   ///@{
   /**
+   * <p>Details about a cloned blue/green upgrade, when the change is one.</p>
+   */
+  inline const ClonedBlueGreenUpgradeDetails& GetClonedBlueGreenUpgradeDetails() const { return m_clonedBlueGreenUpgradeDetails; }
+  inline bool ClonedBlueGreenUpgradeDetailsHasBeenSet() const { return m_clonedBlueGreenUpgradeDetailsHasBeenSet; }
+  template <typename ClonedBlueGreenUpgradeDetailsT = ClonedBlueGreenUpgradeDetails>
+  void SetClonedBlueGreenUpgradeDetails(ClonedBlueGreenUpgradeDetailsT&& value) {
+    m_clonedBlueGreenUpgradeDetailsHasBeenSet = true;
+    m_clonedBlueGreenUpgradeDetails = std::forward<ClonedBlueGreenUpgradeDetailsT>(value);
+  }
+  template <typename ClonedBlueGreenUpgradeDetailsT = ClonedBlueGreenUpgradeDetails>
+  ChangeProgressStatusDetails& WithClonedBlueGreenUpgradeDetails(ClonedBlueGreenUpgradeDetailsT&& value) {
+    SetClonedBlueGreenUpgradeDetails(std::forward<ClonedBlueGreenUpgradeDetailsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The validation failures that occurred as a result of the configuration
    * change.</p>
    */
@@ -303,6 +322,8 @@ class ChangeProgressStatusDetails {
 
   InitiatedBy m_initiatedBy{InitiatedBy::NOT_SET};
 
+  ClonedBlueGreenUpgradeDetails m_clonedBlueGreenUpgradeDetails;
+
   Aws::Vector<ValidationFailure> m_validationFailures;
 
   Aws::Vector<Aws::String> m_acceptedWarnings;
@@ -316,6 +337,7 @@ class ChangeProgressStatusDetails {
   bool m_lastUpdatedTimeHasBeenSet = false;
   bool m_configChangeStatusHasBeenSet = false;
   bool m_initiatedByHasBeenSet = false;
+  bool m_clonedBlueGreenUpgradeDetailsHasBeenSet = false;
   bool m_validationFailuresHasBeenSet = false;
   bool m_acceptedWarningsHasBeenSet = false;
 };

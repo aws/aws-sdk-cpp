@@ -8,6 +8,7 @@
 #include <aws/qconnect/QConnectErrors.h>
 #include <aws/qconnect/model/ResourceNotFoundException.h>
 #include <aws/qconnect/model/TooManyTagsException.h>
+#include <aws/qconnect/model/UnprocessableContentException.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
@@ -26,6 +27,12 @@ template <>
 AWS_QCONNECT_API TooManyTagsException QConnectError::GetModeledError() {
   assert(this->GetErrorType() == QConnectErrors::TOO_MANY_TAGS);
   return TooManyTagsException(this->GetJsonPayload().View());
+}
+
+template <>
+AWS_QCONNECT_API UnprocessableContentException QConnectError::GetModeledError() {
+  assert(this->GetErrorType() == QConnectErrors::UNPROCESSABLE_CONTENT);
+  return UnprocessableContentException(this->GetJsonPayload().View());
 }
 
 namespace QConnectErrorMapper {

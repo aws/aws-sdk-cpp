@@ -4,14 +4,14 @@
  */
 
 #pragma once
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace NetworkFirewall {
 namespace Model {
@@ -24,9 +24,9 @@ namespace Model {
 class IPSetMetadata {
  public:
   AWS_NETWORKFIREWALL_API IPSetMetadata() = default;
-  AWS_NETWORKFIREWALL_API IPSetMetadata(Aws::Utils::Json::JsonView jsonValue);
-  AWS_NETWORKFIREWALL_API IPSetMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_NETWORKFIREWALL_API IPSetMetadata(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_NETWORKFIREWALL_API IPSetMetadata& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_NETWORKFIREWALL_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -34,19 +34,19 @@ class IPSetMetadata {
    * references in a firewall. To determine how many CIDR blocks are available for
    * you to use in a firewall, you can call <code>AvailableCIDRCount</code>.</p>
    */
-  inline int GetResolvedCIDRCount() const { return m_resolvedCIDRCount; }
+  inline int64_t GetResolvedCIDRCount() const { return m_resolvedCIDRCount; }
   inline bool ResolvedCIDRCountHasBeenSet() const { return m_resolvedCIDRCountHasBeenSet; }
-  inline void SetResolvedCIDRCount(int value) {
+  inline void SetResolvedCIDRCount(int64_t value) {
     m_resolvedCIDRCountHasBeenSet = true;
     m_resolvedCIDRCount = value;
   }
-  inline IPSetMetadata& WithResolvedCIDRCount(int value) {
+  inline IPSetMetadata& WithResolvedCIDRCount(int64_t value) {
     SetResolvedCIDRCount(value);
     return *this;
   }
   ///@}
  private:
-  int m_resolvedCIDRCount{0};
+  int64_t m_resolvedCIDRCount{0};
   bool m_resolvedCIDRCountHasBeenSet = false;
 };
 

@@ -15,12 +15,12 @@ using namespace Aws::Utils;
 Aws::String CreateProfileRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_clientTokenHasBeenSet) {
-    payload.WithString("ClientToken", m_clientToken);
-  }
-
   if (m_nameHasBeenSet) {
     payload.WithString("Name", m_name);
+  }
+
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("ClientToken", m_clientToken);
   }
 
   if (m_tagsHasBeenSet) {

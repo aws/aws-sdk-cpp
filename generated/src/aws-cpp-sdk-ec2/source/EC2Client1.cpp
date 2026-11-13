@@ -34,6 +34,7 @@
 #include <aws/ec2/model/CreateLocalGatewayVirtualInterfaceRequest.h>
 #include <aws/ec2/model/CreateMacSystemIntegrityProtectionModificationTaskRequest.h>
 #include <aws/ec2/model/CreateManagedPrefixListRequest.h>
+#include <aws/ec2/model/CreateMetricCategoryRequest.h>
 #include <aws/ec2/model/CreateNatGatewayRequest.h>
 #include <aws/ec2/model/CreateNetworkAclEntryRequest.h>
 #include <aws/ec2/model/CreateNetworkAclRequest.h>
@@ -118,7 +119,6 @@
 #include <aws/ec2/model/DeleteIpamPolicyRequest.h>
 #include <aws/ec2/model/DeleteIpamPoolRequest.h>
 #include <aws/ec2/model/DeleteIpamPrefixListResolverRequest.h>
-#include <aws/ec2/model/DeleteIpamPrefixListResolverTargetRequest.h>
 #include <aws/ec2/model/DeleteIpamRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
@@ -219,6 +219,12 @@ CreateManagedPrefixListOutcome EC2Client::CreateManagedPrefixList(const CreateMa
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateManagedPrefixListOutcome(result.GetResultWithOwnership())
                             : CreateManagedPrefixListOutcome(std::move(result.GetError()));
+}
+
+CreateMetricCategoryOutcome EC2Client::CreateMetricCategory(const CreateMetricCategoryRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateMetricCategoryOutcome(result.GetResultWithOwnership())
+                            : CreateMetricCategoryOutcome(std::move(result.GetError()));
 }
 
 CreateNatGatewayOutcome EC2Client::CreateNatGateway(const CreateNatGatewayRequest& request) const {
@@ -741,11 +747,4 @@ DeleteIpamPrefixListResolverOutcome EC2Client::DeleteIpamPrefixListResolver(cons
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteIpamPrefixListResolverOutcome(result.GetResultWithOwnership())
                             : DeleteIpamPrefixListResolverOutcome(std::move(result.GetError()));
-}
-
-DeleteIpamPrefixListResolverTargetOutcome EC2Client::DeleteIpamPrefixListResolverTarget(
-    const DeleteIpamPrefixListResolverTargetRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? DeleteIpamPrefixListResolverTargetOutcome(result.GetResultWithOwnership())
-                            : DeleteIpamPrefixListResolverTargetOutcome(std::move(result.GetError()));
 }

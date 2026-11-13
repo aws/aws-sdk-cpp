@@ -20,6 +20,7 @@ static const int Case_Updated_HASH = HashingUtils::HashString("Case.Updated");
 static const int RelatedItem_Created_HASH = HashingUtils::HashString("RelatedItem.Created");
 static const int RelatedItem_Deleted_HASH = HashingUtils::HashString("RelatedItem.Deleted");
 static const int RelatedItem_Updated_HASH = HashingUtils::HashString("RelatedItem.Updated");
+static const int Case_Merged_HASH = HashingUtils::HashString("Case.Merged");
 
 AuditEventType GetAuditEventTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -33,6 +34,8 @@ AuditEventType GetAuditEventTypeForName(const Aws::String& name) {
     return AuditEventType::RelatedItem_Deleted;
   } else if (hashCode == RelatedItem_Updated_HASH) {
     return AuditEventType::RelatedItem_Updated;
+  } else if (hashCode == Case_Merged_HASH) {
+    return AuditEventType::Case_Merged;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -57,6 +60,8 @@ Aws::String GetNameForAuditEventType(AuditEventType enumValue) {
       return "RelatedItem.Deleted";
     case AuditEventType::RelatedItem_Updated:
       return "RelatedItem.Updated";
+    case AuditEventType::Case_Merged:
+      return "Case.Merged";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -10,9 +10,11 @@
 #include <aws/mwaa/MWAA_EXPORTS.h>
 #include <aws/mwaa/model/EndpointManagement.h>
 #include <aws/mwaa/model/EnvironmentStatus.h>
+#include <aws/mwaa/model/IdentityCenterConfiguration.h>
 #include <aws/mwaa/model/LastUpdate.h>
 #include <aws/mwaa/model/LoggingConfiguration.h>
 #include <aws/mwaa/model/NetworkConfiguration.h>
+#include <aws/mwaa/model/TeamConfig.h>
 #include <aws/mwaa/model/WebserverAccessMode.h>
 
 #include <utility>
@@ -802,6 +804,55 @@ class Environment {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Web Services IAM Identity Center configuration used to
+   * authenticate users to the Apache Airflow web UI for your environment.</p>
+   */
+  inline const IdentityCenterConfiguration& GetIdentityCenterConfiguration() const { return m_identityCenterConfiguration; }
+  inline bool IdentityCenterConfigurationHasBeenSet() const { return m_identityCenterConfigurationHasBeenSet; }
+  template <typename IdentityCenterConfigurationT = IdentityCenterConfiguration>
+  void SetIdentityCenterConfiguration(IdentityCenterConfigurationT&& value) {
+    m_identityCenterConfigurationHasBeenSet = true;
+    m_identityCenterConfiguration = std::forward<IdentityCenterConfigurationT>(value);
+  }
+  template <typename IdentityCenterConfigurationT = IdentityCenterConfiguration>
+  Environment& WithIdentityCenterConfiguration(IdentityCenterConfigurationT&& value) {
+    SetIdentityCenterConfiguration(std::forward<IdentityCenterConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The teams configured for Apache Airflow multi-team support on your Amazon
+   * MWAA environment. Each entry maps a team name to its settings, which define the
+   * Amazon S3 location of that team's DAG code. Each team name matches the display
+   * name of the Amazon Web Services IAM Identity Center group associated with the
+   * team. For more information, refer to <a
+   * href="https://docs.aws.amazon.com/mwaa/latest/userguide/multi-team-environments.html">Apache
+   * Airflow multi-team environments</a>.</p>
+   */
+  inline const Aws::Map<Aws::String, TeamConfig>& GetTeams() const { return m_teams; }
+  inline bool TeamsHasBeenSet() const { return m_teamsHasBeenSet; }
+  template <typename TeamsT = Aws::Map<Aws::String, TeamConfig>>
+  void SetTeams(TeamsT&& value) {
+    m_teamsHasBeenSet = true;
+    m_teams = std::forward<TeamsT>(value);
+  }
+  template <typename TeamsT = Aws::Map<Aws::String, TeamConfig>>
+  Environment& WithTeams(TeamsT&& value) {
+    SetTeams(std::forward<TeamsT>(value));
+    return *this;
+  }
+  template <typename TeamsKeyT = Aws::String, typename TeamsValueT = TeamConfig>
+  Environment& AddTeams(TeamsKeyT&& key, TeamsValueT&& value) {
+    m_teamsHasBeenSet = true;
+    m_teams.emplace(std::forward<TeamsKeyT>(key), std::forward<TeamsValueT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -870,6 +921,10 @@ class Environment {
   int m_minWebservers{0};
 
   int m_maxWebservers{0};
+
+  IdentityCenterConfiguration m_identityCenterConfiguration;
+
+  Aws::Map<Aws::String, TeamConfig> m_teams;
   bool m_nameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_arnHasBeenSet = false;
@@ -904,6 +959,8 @@ class Environment {
   bool m_endpointManagementHasBeenSet = false;
   bool m_minWebserversHasBeenSet = false;
   bool m_maxWebserversHasBeenSet = false;
+  bool m_identityCenterConfigurationHasBeenSet = false;
+  bool m_teamsHasBeenSet = false;
 };
 
 }  // namespace Model

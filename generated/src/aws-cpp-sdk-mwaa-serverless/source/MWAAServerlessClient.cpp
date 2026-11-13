@@ -20,6 +20,7 @@
 #include <aws/mwaa-serverless/MWAAServerlessClient.h>
 #include <aws/mwaa-serverless/MWAAServerlessEndpointProvider.h>
 #include <aws/mwaa-serverless/MWAAServerlessErrorMarshaller.h>
+#include <aws/mwaa-serverless/model/CreateAirflowUiUrlRequest.h>
 #include <aws/mwaa-serverless/model/CreateWorkflowRequest.h>
 #include <aws/mwaa-serverless/model/DeleteWorkflowRequest.h>
 #include <aws/mwaa-serverless/model/GetTaskInstanceRequest.h>
@@ -186,6 +187,12 @@ MWAAServerlessClient::InvokeOperationOutcome MWAAServerlessClient::InvokeService
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
+}
+
+CreateAirflowUiUrlOutcome MWAAServerlessClient::CreateAirflowUiUrl(const CreateAirflowUiUrlRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAirflowUiUrlOutcome(result.GetResultWithOwnership())
+                            : CreateAirflowUiUrlOutcome(std::move(result.GetError()));
 }
 
 CreateWorkflowOutcome MWAAServerlessClient::CreateWorkflow(const CreateWorkflowRequest& request) const {

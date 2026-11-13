@@ -211,6 +211,24 @@ MetricMetadata& MetricMetadata::operator=(const std::shared_ptr<Aws::Crt::Cbor::
               else if (initialKeyStr == "semantics") {
                 m_semantics = MetricSemantics(decoder);
                 m_semanticsHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "aggregationTemporality") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_aggregationTemporality = MetricAggregationTemporalityMapper::GetMetricAggregationTemporalityForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_aggregationTemporalityHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "monotonicity") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_monotonicity = MetricMonotonicityMapper::GetMetricMonotonicityForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_monotonicityHasBeenSet = true;
               } else {
                 // Unknown key, skip the value
                 decoder->ConsumeNextWholeDataItem();
@@ -419,6 +437,24 @@ MetricMetadata& MetricMetadata::operator=(const std::shared_ptr<Aws::Crt::Cbor::
             else if (initialKeyStr == "semantics") {
               m_semantics = MetricSemantics(decoder);
               m_semanticsHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "aggregationTemporality") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_aggregationTemporality = MetricAggregationTemporalityMapper::GetMetricAggregationTemporalityForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_aggregationTemporalityHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "monotonicity") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_monotonicity = MetricMonotonicityMapper::GetMetricMonotonicityForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_monotonicityHasBeenSet = true;
             } else {
               // Unknown key, skip the value
               decoder->ConsumeNextWholeDataItem();
@@ -448,6 +484,12 @@ void MetricMetadata::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
     mapSize++;
   }
   if (m_semanticsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_aggregationTemporalityHasBeenSet) {
+    mapSize++;
+  }
+  if (m_monotonicityHasBeenSet) {
     mapSize++;
   }
 
@@ -480,6 +522,17 @@ void MetricMetadata::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
   if (m_semanticsHasBeenSet) {
     encoder.WriteText(Aws::Crt::ByteCursorFromCString("semantics"));
     m_semantics.CborEncode(encoder);
+  }
+
+  if (m_aggregationTemporalityHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("aggregationTemporality"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(
+        MetricAggregationTemporalityMapper::GetNameForMetricAggregationTemporality(m_aggregationTemporality).c_str()));
+  }
+
+  if (m_monotonicityHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("monotonicity"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(MetricMonotonicityMapper::GetNameForMetricMonotonicity(m_monotonicity).c_str()));
   }
 }
 

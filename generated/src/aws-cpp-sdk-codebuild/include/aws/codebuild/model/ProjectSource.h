@@ -10,15 +10,15 @@
 #include <aws/codebuild/model/SourceAuth.h>
 #include <aws/codebuild/model/SourceType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace CodeBuild {
 namespace Model {
@@ -32,9 +32,9 @@ namespace Model {
 class ProjectSource {
  public:
   AWS_CODEBUILD_API ProjectSource() = default;
-  AWS_CODEBUILD_API ProjectSource(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CODEBUILD_API ProjectSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_CODEBUILD_API ProjectSource(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CODEBUILD_API ProjectSource& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CODEBUILD_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -137,13 +137,13 @@ class ProjectSource {
   /**
    * <p>Information about the Git clone depth for the build project.</p>
    */
-  inline int GetGitCloneDepth() const { return m_gitCloneDepth; }
+  inline int64_t GetGitCloneDepth() const { return m_gitCloneDepth; }
   inline bool GitCloneDepthHasBeenSet() const { return m_gitCloneDepthHasBeenSet; }
-  inline void SetGitCloneDepth(int value) {
+  inline void SetGitCloneDepth(int64_t value) {
     m_gitCloneDepthHasBeenSet = true;
     m_gitCloneDepth = value;
   }
-  inline ProjectSource& WithGitCloneDepth(int value) {
+  inline ProjectSource& WithGitCloneDepth(int64_t value) {
     SetGitCloneDepth(value);
     return *this;
   }
@@ -305,7 +305,7 @@ class ProjectSource {
 
   Aws::String m_location;
 
-  int m_gitCloneDepth{0};
+  int64_t m_gitCloneDepth{0};
 
   GitSubmodulesConfig m_gitSubmodulesConfig;
 

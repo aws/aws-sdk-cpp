@@ -18,13 +18,13 @@ namespace Model {
 ProfileSummary::ProfileSummary(JsonView jsonValue) { *this = jsonValue; }
 
 ProfileSummary& ProfileSummary::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("Arn")) {
-    m_arn = jsonValue.GetString("Arn");
-    m_arnHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("Id")) {
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Arn")) {
+    m_arn = jsonValue.GetString("Arn");
+    m_arnHasBeenSet = true;
   }
   if (jsonValue.ValueExists("Name")) {
     m_name = jsonValue.GetString("Name");
@@ -40,12 +40,12 @@ ProfileSummary& ProfileSummary::operator=(JsonView jsonValue) {
 JsonValue ProfileSummary::Jsonize() const {
   JsonValue payload;
 
-  if (m_arnHasBeenSet) {
-    payload.WithString("Arn", m_arn);
-  }
-
   if (m_idHasBeenSet) {
     payload.WithString("Id", m_id);
+  }
+
+  if (m_arnHasBeenSet) {
+    payload.WithString("Arn", m_arn);
   }
 
   if (m_nameHasBeenSet) {

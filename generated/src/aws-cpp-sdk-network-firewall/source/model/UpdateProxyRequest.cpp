@@ -3,63 +3,92 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/network-firewall/model/UpdateProxyRequest.h>
 
 #include <utility>
 
 using namespace Aws::NetworkFirewall::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String UpdateProxyRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_natGatewayIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_proxyNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_proxyArnHasBeenSet) {
+    mapSize++;
+  }
+  if (m_listenerPropertiesToAddHasBeenSet) {
+    mapSize++;
+  }
+  if (m_listenerPropertiesToRemoveHasBeenSet) {
+    mapSize++;
+  }
+  if (m_tlsInterceptPropertiesHasBeenSet) {
+    mapSize++;
+  }
+  if (m_updateTokenHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_natGatewayIdHasBeenSet) {
-    payload.WithString("NatGatewayId", m_natGatewayId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("NatGatewayId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_natGatewayId.c_str()));
   }
 
   if (m_proxyNameHasBeenSet) {
-    payload.WithString("ProxyName", m_proxyName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ProxyName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_proxyName.c_str()));
   }
 
   if (m_proxyArnHasBeenSet) {
-    payload.WithString("ProxyArn", m_proxyArn);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ProxyArn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_proxyArn.c_str()));
   }
 
   if (m_listenerPropertiesToAddHasBeenSet) {
-    Aws::Utils::Array<JsonValue> listenerPropertiesToAddJsonList(m_listenerPropertiesToAdd.size());
-    for (unsigned listenerPropertiesToAddIndex = 0; listenerPropertiesToAddIndex < listenerPropertiesToAddJsonList.GetLength();
-         ++listenerPropertiesToAddIndex) {
-      listenerPropertiesToAddJsonList[listenerPropertiesToAddIndex].AsObject(
-          m_listenerPropertiesToAdd[listenerPropertiesToAddIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ListenerPropertiesToAdd"));
+    encoder.WriteArrayStart(m_listenerPropertiesToAdd.size());
+    for (const auto& item_0 : m_listenerPropertiesToAdd) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("ListenerPropertiesToAdd", std::move(listenerPropertiesToAddJsonList));
   }
 
   if (m_listenerPropertiesToRemoveHasBeenSet) {
-    Aws::Utils::Array<JsonValue> listenerPropertiesToRemoveJsonList(m_listenerPropertiesToRemove.size());
-    for (unsigned listenerPropertiesToRemoveIndex = 0; listenerPropertiesToRemoveIndex < listenerPropertiesToRemoveJsonList.GetLength();
-         ++listenerPropertiesToRemoveIndex) {
-      listenerPropertiesToRemoveJsonList[listenerPropertiesToRemoveIndex].AsObject(
-          m_listenerPropertiesToRemove[listenerPropertiesToRemoveIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ListenerPropertiesToRemove"));
+    encoder.WriteArrayStart(m_listenerPropertiesToRemove.size());
+    for (const auto& item_0 : m_listenerPropertiesToRemove) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("ListenerPropertiesToRemove", std::move(listenerPropertiesToRemoveJsonList));
   }
 
   if (m_tlsInterceptPropertiesHasBeenSet) {
-    payload.WithObject("TlsInterceptProperties", m_tlsInterceptProperties.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("TlsInterceptProperties"));
+    m_tlsInterceptProperties.CborEncode(encoder);
   }
 
   if (m_updateTokenHasBeenSet) {
-    payload.WithString("UpdateToken", m_updateToken);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("UpdateToken"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_updateToken.c_str()));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection UpdateProxyRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "NetworkFirewall_20201112.UpdateProxy"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

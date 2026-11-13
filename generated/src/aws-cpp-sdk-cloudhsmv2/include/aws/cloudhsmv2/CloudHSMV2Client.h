@@ -11,7 +11,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 
 namespace Aws {
 namespace CloudHSMV2 {
@@ -21,12 +21,12 @@ namespace CloudHSMV2 {
  * href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/"> CloudHSM User
  * Guide</a>.</p>
  */
-class AWS_CLOUDHSMV2_API CloudHSMV2Client : public Aws::Client::AWSJsonClient,
+class AWS_CLOUDHSMV2_API CloudHSMV2Client : public Aws::Client::AWSRpcV2CborClient,
                                             public Aws::Client::ClientWithAsyncTemplateMethods<CloudHSMV2Client>,
                                             public CloudHSMV2PaginationBase<CloudHSMV2Client>,
                                             public CloudHSMV2Waiter<CloudHSMV2Client> {
  public:
-  typedef Aws::Client::AWSJsonClient BASECLASS;
+  typedef Aws::Client::AWSRpcV2CborClient BASECLASS;
   static const char* GetServiceName();
   static const char* GetAllocationTag();
 

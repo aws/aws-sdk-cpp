@@ -7,6 +7,8 @@
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
 #include <aws/mediaconnect/model/RistRouterInputConfiguration.h>
 #include <aws/mediaconnect/model/RtpRouterInputConfiguration.h>
+#include <aws/mediaconnect/model/SrtCallerRouterInputConfiguration.h>
+#include <aws/mediaconnect/model/SrtListenerRouterInputConfiguration.h>
 
 #include <utility>
 
@@ -64,12 +66,50 @@ class MergeRouterInputProtocolConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const SrtListenerRouterInputConfiguration& GetSrtListener() const { return m_srtListener; }
+  inline bool SrtListenerHasBeenSet() const { return m_srtListenerHasBeenSet; }
+  template <typename SrtListenerT = SrtListenerRouterInputConfiguration>
+  void SetSrtListener(SrtListenerT&& value) {
+    m_srtListenerHasBeenSet = true;
+    m_srtListener = std::forward<SrtListenerT>(value);
+  }
+  template <typename SrtListenerT = SrtListenerRouterInputConfiguration>
+  MergeRouterInputProtocolConfiguration& WithSrtListener(SrtListenerT&& value) {
+    SetSrtListener(std::forward<SrtListenerT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const SrtCallerRouterInputConfiguration& GetSrtCaller() const { return m_srtCaller; }
+  inline bool SrtCallerHasBeenSet() const { return m_srtCallerHasBeenSet; }
+  template <typename SrtCallerT = SrtCallerRouterInputConfiguration>
+  void SetSrtCaller(SrtCallerT&& value) {
+    m_srtCallerHasBeenSet = true;
+    m_srtCaller = std::forward<SrtCallerT>(value);
+  }
+  template <typename SrtCallerT = SrtCallerRouterInputConfiguration>
+  MergeRouterInputProtocolConfiguration& WithSrtCaller(SrtCallerT&& value) {
+    SetSrtCaller(std::forward<SrtCallerT>(value));
+    return *this;
+  }
+  ///@}
  private:
   RtpRouterInputConfiguration m_rtp;
 
   RistRouterInputConfiguration m_rist;
+
+  SrtListenerRouterInputConfiguration m_srtListener;
+
+  SrtCallerRouterInputConfiguration m_srtCaller;
   bool m_rtpHasBeenSet = false;
   bool m_ristHasBeenSet = false;
+  bool m_srtListenerHasBeenSet = false;
+  bool m_srtCallerHasBeenSet = false;
 };
 
 }  // namespace Model

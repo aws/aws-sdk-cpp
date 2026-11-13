@@ -55,6 +55,10 @@ Aws::String CreateAgentRuntimeRequest::SerializePayload() const {
     payload.WithObject("lifecycleConfiguration", m_lifecycleConfiguration.Jsonize());
   }
 
+  if (m_hooksConfigurationHasBeenSet) {
+    payload.WithObject("hooksConfiguration", m_hooksConfiguration.Jsonize());
+  }
+
   if (m_environmentVariablesHasBeenSet) {
     JsonValue environmentVariablesJsonMap;
     for (auto& environmentVariablesItem : m_environmentVariables) {
@@ -95,6 +99,15 @@ Aws::String CreateAgentRuntimeRequest::SerializePayload() const {
       allowedPortsJsonList[allowedPortsIndex].AsObject(m_allowedPorts[allowedPortsIndex].Jsonize());
     }
     payload.WithArray("allowedPorts", std::move(allowedPortsJsonList));
+  }
+
+  if (m_resourceConfigurationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> resourceConfigurationsJsonList(m_resourceConfigurations.size());
+    for (unsigned resourceConfigurationsIndex = 0; resourceConfigurationsIndex < resourceConfigurationsJsonList.GetLength();
+         ++resourceConfigurationsIndex) {
+      resourceConfigurationsJsonList[resourceConfigurationsIndex].AsObject(m_resourceConfigurations[resourceConfigurationsIndex].Jsonize());
+    }
+    payload.WithArray("resourceConfigurations", std::move(resourceConfigurationsJsonList));
   }
 
   return payload.View().WriteReadable();

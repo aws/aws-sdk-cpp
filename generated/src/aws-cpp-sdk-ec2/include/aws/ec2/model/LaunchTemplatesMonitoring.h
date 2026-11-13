@@ -5,7 +5,11 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/EC2_EXPORTS.h>
+
+#include <utility>
 
 namespace Aws {
 namespace Utils {
@@ -46,9 +50,36 @@ class LaunchTemplatesMonitoring {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The IDs of the metric categories to associate with the instance.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetMetricCategoryIds() const { return m_metricCategoryIds; }
+  inline bool MetricCategoryIdsHasBeenSet() const { return m_metricCategoryIdsHasBeenSet; }
+  template <typename MetricCategoryIdsT = Aws::Vector<Aws::String>>
+  void SetMetricCategoryIds(MetricCategoryIdsT&& value) {
+    m_metricCategoryIdsHasBeenSet = true;
+    m_metricCategoryIds = std::forward<MetricCategoryIdsT>(value);
+  }
+  template <typename MetricCategoryIdsT = Aws::Vector<Aws::String>>
+  LaunchTemplatesMonitoring& WithMetricCategoryIds(MetricCategoryIdsT&& value) {
+    SetMetricCategoryIds(std::forward<MetricCategoryIdsT>(value));
+    return *this;
+  }
+  template <typename MetricCategoryIdsT = Aws::String>
+  LaunchTemplatesMonitoring& AddMetricCategoryIds(MetricCategoryIdsT&& value) {
+    m_metricCategoryIdsHasBeenSet = true;
+    m_metricCategoryIds.emplace_back(std::forward<MetricCategoryIdsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   bool m_enabled{false};
+
+  Aws::Vector<Aws::String> m_metricCategoryIds;
   bool m_enabledHasBeenSet = false;
+  bool m_metricCategoryIdsHasBeenSet = false;
 };
 
 }  // namespace Model

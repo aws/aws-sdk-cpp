@@ -3,35 +3,49 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/route53domains/model/UpdateTagsForDomainRequest.h>
 
 #include <utility>
 
 using namespace Aws::Route53Domains::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String UpdateTagsForDomainRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_domainNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_tagsToUpdateHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_domainNameHasBeenSet) {
-    payload.WithString("DomainName", m_domainName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("DomainName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_domainName.c_str()));
   }
 
   if (m_tagsToUpdateHasBeenSet) {
-    Aws::Utils::Array<JsonValue> tagsToUpdateJsonList(m_tagsToUpdate.size());
-    for (unsigned tagsToUpdateIndex = 0; tagsToUpdateIndex < tagsToUpdateJsonList.GetLength(); ++tagsToUpdateIndex) {
-      tagsToUpdateJsonList[tagsToUpdateIndex].AsObject(m_tagsToUpdate[tagsToUpdateIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("TagsToUpdate"));
+    encoder.WriteArrayStart(m_tagsToUpdate.size());
+    for (const auto& item_0 : m_tagsToUpdate) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("TagsToUpdate", std::move(tagsToUpdateJsonList));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection UpdateTagsForDomainRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Route53Domains_v20140515.UpdateTagsForDomain"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

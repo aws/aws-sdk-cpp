@@ -21,7 +21,7 @@ namespace ConnectCases {
 namespace Model {
 
 /**
- * <p>Boolean operands for a condition. In the Amazon Connect admin website, case
+ * <p>Boolean operands for a condition. In the Connect Customer admin website, case
  * rules are known as <i>case field conditions</i>. For more information about case
  * field conditions, see <a
  * href="https://docs.aws.amazon.com/connect/latest/adminguide/case-field-conditions.html">Add

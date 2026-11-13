@@ -31,7 +31,7 @@ class AssociateProfileResult {
   ///@{
   /**
    * <p> The association that you just created. The association has an ID that you
-   * can use to identify it in other requests, like update and delete. </p>
+   * can use to identify it in other requests, such as update and delete. </p>
    */
   inline const ProfileAssociation& GetProfileAssociation() const { return m_profileAssociation; }
   template <typename ProfileAssociationT = ProfileAssociation>

@@ -15,10 +15,6 @@ using namespace Aws::Utils;
 Aws::String AssociateProfileRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_nameHasBeenSet) {
-    payload.WithString("Name", m_name);
-  }
-
   if (m_profileIdHasBeenSet) {
     payload.WithString("ProfileId", m_profileId);
   }
@@ -27,12 +23,20 @@ Aws::String AssociateProfileRequest::SerializePayload() const {
     payload.WithString("ResourceId", m_resourceId);
   }
 
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
+  }
+
   if (m_tagsHasBeenSet) {
     Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
     for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
       tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
     }
     payload.WithArray("Tags", std::move(tagsJsonList));
+  }
+
+  if (m_priorityHasBeenSet) {
+    payload.WithInteger("Priority", m_priority);
   }
 
   return payload.View().WriteReadable();

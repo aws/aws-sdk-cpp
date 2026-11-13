@@ -4,21 +4,37 @@
  */
 
 #include <aws/arc-region-switch/ARCRegionswitchErrors.h>
+#include <aws/arc-region-switch/model/ConflictException.h>
+#include <aws/arc-region-switch/model/RetryableConflictException.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::ARCRegionswitch;
+using namespace Aws::ARCRegionswitch::Model;
 
 namespace Aws {
 namespace ARCRegionswitch {
+template <>
+AWS_ARCREGIONSWITCH_API ConflictException ARCRegionswitchError::GetModeledError() {
+  assert(this->GetErrorType() == ARCRegionswitchErrors::CONFLICT);
+  return ConflictException(this->GetJsonPayload().View());
+}
+
+template <>
+AWS_ARCREGIONSWITCH_API RetryableConflictException ARCRegionswitchError::GetModeledError() {
+  assert(this->GetErrorType() == ARCRegionswitchErrors::RETRYABLE_CONFLICT);
+  return RetryableConflictException(this->GetJsonPayload().View());
+}
+
 namespace ARCRegionswitchErrorMapper {
 
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
 static const int ILLEGAL_ARGUMENT_HASH = HashingUtils::HashString("IllegalArgumentException");
 static const int ILLEGAL_STATE_HASH = HashingUtils::HashString("IllegalStateException");
+static const int RETRYABLE_CONFLICT_HASH = HashingUtils::HashString("RetryableConflictException");
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName) {
   int hashCode = HashingUtils::HashString(errorName);
@@ -31,6 +47,8 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ARCRegionswitchErrors::ILLEGAL_ARGUMENT), RetryableType::NOT_RETRYABLE);
   } else if (hashCode == ILLEGAL_STATE_HASH) {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ARCRegionswitchErrors::ILLEGAL_STATE), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == RETRYABLE_CONFLICT_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ARCRegionswitchErrors::RETRYABLE_CONFLICT), RetryableType::RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

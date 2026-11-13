@@ -126,6 +126,18 @@ DescribeSecretResult& DescribeSecretResult::operator=(const Aws::AmazonWebServic
     }
     m_replicationStatusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("CrossAccountPrimary")) {
+    m_crossAccountPrimary = jsonValue.GetObject("CrossAccountPrimary");
+    m_crossAccountPrimaryHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CrossAccountReplicas")) {
+    Aws::Utils::Array<JsonView> crossAccountReplicasJsonList = jsonValue.GetArray("CrossAccountReplicas");
+    for (unsigned crossAccountReplicasIndex = 0; crossAccountReplicasIndex < crossAccountReplicasJsonList.GetLength();
+         ++crossAccountReplicasIndex) {
+      m_crossAccountReplicas.push_back(crossAccountReplicasJsonList[crossAccountReplicasIndex].AsObject());
+    }
+    m_crossAccountReplicasHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

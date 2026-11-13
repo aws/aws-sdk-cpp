@@ -32,9 +32,10 @@ class StopReplicationToReplicaRequest : public SecretsManagerRequest {
 
   ///@{
   /**
-   * <p>The name of the secret or the replica ARN. The replica ARN is the same as the
-   * original primary secret ARN expect the Region is changed to the replica Region.
-   * </p>
+   * <p>The ARN or name of the replica secret.</p> <p>For a cross-region replica, the
+   * replica ARN is the same as the original primary secret ARN except that the
+   * Region is changed to the replica Region. For a cross-account replica, this is
+   * the ARN or name of the replica secret in your account.</p>
    */
   inline const Aws::String& GetSecretId() const { return m_secretId; }
   inline bool SecretIdHasBeenSet() const { return m_secretIdHasBeenSet; }

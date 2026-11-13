@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/guardduty/GuardDutyRequest.h>
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
+#include <aws/guardduty/model/InvestigationFilterCriteria.h>
 #include <aws/guardduty/model/InvestigationSortCriteria.h>
 
 #include <utility>
@@ -47,6 +48,25 @@ class ListInvestigationsRequest : public GuardDutyRequest {
   template <typename DetectorIdT = Aws::String>
   ListInvestigationsRequest& WithDetectorId(DetectorIdT&& value) {
     SetDetectorId(std::forward<DetectorIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The criteria used to filter investigations. GuardDuty returns only the
+   * investigations that match all of the specified criteria.</p>
+   */
+  inline const InvestigationFilterCriteria& GetFilterCriteria() const { return m_filterCriteria; }
+  inline bool FilterCriteriaHasBeenSet() const { return m_filterCriteriaHasBeenSet; }
+  template <typename FilterCriteriaT = InvestigationFilterCriteria>
+  void SetFilterCriteria(FilterCriteriaT&& value) {
+    m_filterCriteriaHasBeenSet = true;
+    m_filterCriteria = std::forward<FilterCriteriaT>(value);
+  }
+  template <typename FilterCriteriaT = InvestigationFilterCriteria>
+  ListInvestigationsRequest& WithFilterCriteria(FilterCriteriaT&& value) {
+    SetFilterCriteria(std::forward<FilterCriteriaT>(value));
     return *this;
   }
   ///@}
@@ -109,12 +129,15 @@ class ListInvestigationsRequest : public GuardDutyRequest {
  private:
   Aws::String m_detectorId;
 
+  InvestigationFilterCriteria m_filterCriteria;
+
   InvestigationSortCriteria m_sortCriteria;
 
   int m_maxResults{0};
 
   Aws::String m_nextToken;
   bool m_detectorIdHasBeenSet = false;
+  bool m_filterCriteriaHasBeenSet = false;
   bool m_sortCriteriaHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

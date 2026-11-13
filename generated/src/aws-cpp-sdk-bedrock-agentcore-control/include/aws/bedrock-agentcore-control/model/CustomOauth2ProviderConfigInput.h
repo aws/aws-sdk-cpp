@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/bedrock-agentcore-control/model/CertificateConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/ClientAuthenticationMethodType.h>
 #include <aws/bedrock-agentcore-control/model/Oauth2Discovery.h>
 #include <aws/bedrock-agentcore-control/model/OnBehalfOfTokenExchangeConfigType.h>
@@ -234,6 +235,36 @@ class CustomOauth2ProviderConfigInput {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The private certificate authority (CA) configurations for the identity
+   * provider. Use this to have AgentCore Identity trust a private CA when
+   * establishing TLS connections to identity provider endpoints. You can specify
+   * only one certificate authority configuration in this list. Provide the
+   * certificate by reference to an Amazon S3 object or an Amazon Web Services
+   * Secrets Manager secret. You can use this only together with
+   * <code>privateEndpoint</code>.</p>
+   */
+  inline const Aws::Vector<CertificateConfiguration>& GetCertificateConfigurations() const { return m_certificateConfigurations; }
+  inline bool CertificateConfigurationsHasBeenSet() const { return m_certificateConfigurationsHasBeenSet; }
+  template <typename CertificateConfigurationsT = Aws::Vector<CertificateConfiguration>>
+  void SetCertificateConfigurations(CertificateConfigurationsT&& value) {
+    m_certificateConfigurationsHasBeenSet = true;
+    m_certificateConfigurations = std::forward<CertificateConfigurationsT>(value);
+  }
+  template <typename CertificateConfigurationsT = Aws::Vector<CertificateConfiguration>>
+  CustomOauth2ProviderConfigInput& WithCertificateConfigurations(CertificateConfigurationsT&& value) {
+    SetCertificateConfigurations(std::forward<CertificateConfigurationsT>(value));
+    return *this;
+  }
+  template <typename CertificateConfigurationsT = CertificateConfiguration>
+  CustomOauth2ProviderConfigInput& AddCertificateConfigurations(CertificateConfigurationsT&& value) {
+    m_certificateConfigurationsHasBeenSet = true;
+    m_certificateConfigurations.emplace_back(std::forward<CertificateConfigurationsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Oauth2Discovery m_oauthDiscovery;
 
@@ -254,6 +285,8 @@ class CustomOauth2ProviderConfigInput {
   PrivateEndpoint m_privateEndpoint;
 
   Aws::Vector<PrivateEndpointOverride> m_privateEndpointOverrides;
+
+  Aws::Vector<CertificateConfiguration> m_certificateConfigurations;
   bool m_oauthDiscoveryHasBeenSet = false;
   bool m_clientIdHasBeenSet = false;
   bool m_clientSecretHasBeenSet = false;
@@ -264,6 +297,7 @@ class CustomOauth2ProviderConfigInput {
   bool m_privateKeyJwtConfigHasBeenSet = false;
   bool m_privateEndpointHasBeenSet = false;
   bool m_privateEndpointOverridesHasBeenSet = false;
+  bool m_certificateConfigurationsHasBeenSet = false;
 };
 
 }  // namespace Model

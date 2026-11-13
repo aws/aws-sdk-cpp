@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/textract/Textract_EXPORTS.h>
 #include <aws/textract/model/Block.h>
 #include <aws/textract/model/IdentityDocumentField.h>
@@ -13,10 +14,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace Textract {
 namespace Model {
@@ -30,22 +30,22 @@ namespace Model {
 class IdentityDocument {
  public:
   AWS_TEXTRACT_API IdentityDocument() = default;
-  AWS_TEXTRACT_API IdentityDocument(Aws::Utils::Json::JsonView jsonValue);
-  AWS_TEXTRACT_API IdentityDocument& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_TEXTRACT_API IdentityDocument(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_TEXTRACT_API IdentityDocument& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_TEXTRACT_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
    * <p>Denotes the placement of a document in the IdentityDocument list. The first
    * document is marked 1, the second 2 and so on.</p>
    */
-  inline int GetDocumentIndex() const { return m_documentIndex; }
+  inline int64_t GetDocumentIndex() const { return m_documentIndex; }
   inline bool DocumentIndexHasBeenSet() const { return m_documentIndexHasBeenSet; }
-  inline void SetDocumentIndex(int value) {
+  inline void SetDocumentIndex(int64_t value) {
     m_documentIndexHasBeenSet = true;
     m_documentIndex = value;
   }
-  inline IdentityDocument& WithDocumentIndex(int value) {
+  inline IdentityDocument& WithDocumentIndex(int64_t value) {
     SetDocumentIndex(value);
     return *this;
   }
@@ -100,7 +100,7 @@ class IdentityDocument {
   }
   ///@}
  private:
-  int m_documentIndex{0};
+  int64_t m_documentIndex{0};
 
   Aws::Vector<IdentityDocumentField> m_identityDocumentFields;
 

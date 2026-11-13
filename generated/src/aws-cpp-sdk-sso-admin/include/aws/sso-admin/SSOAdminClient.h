@@ -2461,11 +2461,13 @@ class AWS_SSOADMIN_API SSOAdminClient : public Aws::Client::AWSJsonClient,
    * <p>Update the encryption configuration of the instance by specifying
    * <code>EncryptionConfiguration</code>.</p> </li> <li> <p>Enable permission sets
    * for the instance by specifying <code>PermissionSetsEnabled</code>.</p> </li>
-   * </ul> <p>If you specify both <code>EncryptionConfiguration</code> and
-   * <code>PermissionSetsEnabled</code> in a request, the request returns a
-   * <code>ValidationException</code>. To perform both operations, call
-   * <code>UpdateInstance</code> separately for each. You can make the two calls in
-   * parallel.</p><p><h3>See Also:</h3>   <a
+   * <li> <p>Update the network configuration of the instance by specifying
+   * <code>NetworkConfiguration</code>.</p> </li> </ul> <p>A request that specifies
+   * more than one of <code>EncryptionConfiguration</code>,
+   * <code>PermissionSetsEnabled</code>, and <code>NetworkConfiguration</code>
+   * returns a <code>ValidationException</code>. To perform more than one of these
+   * operations, call <code>UpdateInstance</code> separately for each. The calls can
+   * be made in parallel.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/UpdateInstance">AWS
    * API Reference</a></p>
    */

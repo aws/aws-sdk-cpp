@@ -35,5 +35,9 @@ Aws::String UpgradeDomainRequest::SerializePayload() const {
     payload.WithObject("AdvancedOptions", std::move(advancedOptionsJsonMap));
   }
 
+  if (m_deploymentStrategyOptionsHasBeenSet) {
+    payload.WithObject("DeploymentStrategyOptions", m_deploymentStrategyOptions.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

@@ -5,16 +5,16 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace NetworkFirewall {
 namespace Model {
@@ -22,19 +22,20 @@ namespace Model {
 /**
  * <p>Defines the mapping between an Availability Zone and a firewall endpoint for
  * a transit gateway-attached firewall. Each mapping represents where the firewall
- * can process traffic. You use these mappings when calling <a>CreateFirewall</a>,
- * <a>AssociateAvailabilityZones</a>, and <a>DisassociateAvailabilityZones</a>.</p>
- * <p>To retrieve the current Availability Zone mappings for a firewall, use
- * <a>DescribeFirewall</a>.</p><p><h3>See Also:</h3>   <a
+ * can process traffic. You use these mappings when calling
+ * <code>CreateFirewall</code>, <code>AssociateAvailabilityZones</code>, and
+ * <code>DisassociateAvailabilityZones</code>.</p> <p>To retrieve the current
+ * Availability Zone mappings for a firewall, use
+ * <code>DescribeFirewall</code>.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/AvailabilityZoneMapping">AWS
  * API Reference</a></p>
  */
 class AvailabilityZoneMapping {
  public:
   AWS_NETWORKFIREWALL_API AvailabilityZoneMapping() = default;
-  AWS_NETWORKFIREWALL_API AvailabilityZoneMapping(Aws::Utils::Json::JsonView jsonValue);
-  AWS_NETWORKFIREWALL_API AvailabilityZoneMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_NETWORKFIREWALL_API AvailabilityZoneMapping(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_NETWORKFIREWALL_API AvailabilityZoneMapping& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_NETWORKFIREWALL_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

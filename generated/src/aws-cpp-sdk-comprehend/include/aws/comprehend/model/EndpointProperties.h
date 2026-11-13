@@ -8,15 +8,15 @@
 #include <aws/comprehend/model/EndpointStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace Comprehend {
 namespace Model {
@@ -32,9 +32,9 @@ namespace Model {
 class EndpointProperties {
  public:
   AWS_COMPREHEND_API EndpointProperties() = default;
-  AWS_COMPREHEND_API EndpointProperties(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPREHEND_API EndpointProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_COMPREHEND_API EndpointProperties(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPREHEND_API EndpointProperties& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPREHEND_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -134,13 +134,13 @@ class EndpointProperties {
    * endpoint. Each inference unit represents of a throughput of 100 characters per
    * second.</p>
    */
-  inline int GetDesiredInferenceUnits() const { return m_desiredInferenceUnits; }
+  inline int64_t GetDesiredInferenceUnits() const { return m_desiredInferenceUnits; }
   inline bool DesiredInferenceUnitsHasBeenSet() const { return m_desiredInferenceUnitsHasBeenSet; }
-  inline void SetDesiredInferenceUnits(int value) {
+  inline void SetDesiredInferenceUnits(int64_t value) {
     m_desiredInferenceUnitsHasBeenSet = true;
     m_desiredInferenceUnits = value;
   }
-  inline EndpointProperties& WithDesiredInferenceUnits(int value) {
+  inline EndpointProperties& WithDesiredInferenceUnits(int64_t value) {
     SetDesiredInferenceUnits(value);
     return *this;
   }
@@ -151,13 +151,13 @@ class EndpointProperties {
    * <p>The number of inference units currently used by the model using this
    * endpoint.</p>
    */
-  inline int GetCurrentInferenceUnits() const { return m_currentInferenceUnits; }
+  inline int64_t GetCurrentInferenceUnits() const { return m_currentInferenceUnits; }
   inline bool CurrentInferenceUnitsHasBeenSet() const { return m_currentInferenceUnitsHasBeenSet; }
-  inline void SetCurrentInferenceUnits(int value) {
+  inline void SetCurrentInferenceUnits(int64_t value) {
     m_currentInferenceUnitsHasBeenSet = true;
     m_currentInferenceUnits = value;
   }
-  inline EndpointProperties& WithCurrentInferenceUnits(int value) {
+  inline EndpointProperties& WithCurrentInferenceUnits(int64_t value) {
     SetCurrentInferenceUnits(value);
     return *this;
   }
@@ -266,9 +266,9 @@ class EndpointProperties {
 
   Aws::String m_desiredModelArn;
 
-  int m_desiredInferenceUnits{0};
+  int64_t m_desiredInferenceUnits{0};
 
-  int m_currentInferenceUnits{0};
+  int64_t m_currentInferenceUnits{0};
 
   Aws::Utils::DateTime m_creationTime{};
 

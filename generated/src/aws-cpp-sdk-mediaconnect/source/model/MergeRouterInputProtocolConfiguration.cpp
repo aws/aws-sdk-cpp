@@ -26,6 +26,14 @@ MergeRouterInputProtocolConfiguration& MergeRouterInputProtocolConfiguration::op
     m_rist = jsonValue.GetObject("rist");
     m_ristHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("srtListener")) {
+    m_srtListener = jsonValue.GetObject("srtListener");
+    m_srtListenerHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("srtCaller")) {
+    m_srtCaller = jsonValue.GetObject("srtCaller");
+    m_srtCallerHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +46,14 @@ JsonValue MergeRouterInputProtocolConfiguration::Jsonize() const {
 
   if (m_ristHasBeenSet) {
     payload.WithObject("rist", m_rist.Jsonize());
+  }
+
+  if (m_srtListenerHasBeenSet) {
+    payload.WithObject("srtListener", m_srtListener.Jsonize());
+  }
+
+  if (m_srtCallerHasBeenSet) {
+    payload.WithObject("srtCaller", m_srtCaller.Jsonize());
   }
 
   return payload;

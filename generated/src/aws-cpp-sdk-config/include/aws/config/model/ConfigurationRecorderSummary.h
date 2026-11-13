@@ -113,8 +113,10 @@ class ConfigurationRecorderSummary {
   ///@{
   /**
    * <p>For service-linked configuration recorders that record resources from a
-   * third-party cloud service provider, indicates the cloud service provider.
-   * Currently, <code>AZURE</code> is supported.</p>
+   * third-party cloud service provider, indicates the cloud service provider. Valid
+   * values:</p> <ul> <li> <p> <code>AZURE</code> – The recorder records resources
+   * from Microsoft Azure</p> </li> <li> <p> <code>GCP</code> – The recorder records
+   * resources from Google Cloud</p> </li> </ul>
    */
   inline Provider GetProvider() const { return m_provider; }
   inline bool ProviderHasBeenSet() const { return m_providerHasBeenSet; }

@@ -5,6 +5,7 @@
 
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/cbor/CborValue.h>
 #include <aws/route53domains/Route53DomainsErrors.h>
 #include <aws/route53domains/model/DuplicateRequest.h>
 #include <aws/route53domains/model/TLDInMaintenance.h>
@@ -19,13 +20,15 @@ namespace Route53Domains {
 template <>
 AWS_ROUTE53DOMAINS_API DuplicateRequest Route53DomainsError::GetModeledError() {
   assert(this->GetErrorType() == Route53DomainsErrors::DUPLICATE_REQUEST);
-  return DuplicateRequest(this->GetJsonPayload().View());
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return DuplicateRequest(payload.GetDecoder());
 }
 
 template <>
 AWS_ROUTE53DOMAINS_API TLDInMaintenance Route53DomainsError::GetModeledError() {
   assert(this->GetErrorType() == Route53DomainsErrors::T_L_D_IN_MAINTENANCE);
-  return TLDInMaintenance(this->GetJsonPayload().View());
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return TLDInMaintenance(payload.GetDecoder());
 }
 
 namespace Route53DomainsErrorMapper {

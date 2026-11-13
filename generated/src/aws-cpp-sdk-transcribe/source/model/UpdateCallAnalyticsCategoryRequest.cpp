@@ -3,39 +3,57 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/transcribe/model/UpdateCallAnalyticsCategoryRequest.h>
 
 #include <utility>
 
 using namespace Aws::TranscribeService::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String UpdateCallAnalyticsCategoryRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_categoryNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_rulesHasBeenSet) {
+    mapSize++;
+  }
+  if (m_inputTypeHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_categoryNameHasBeenSet) {
-    payload.WithString("CategoryName", m_categoryName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("CategoryName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_categoryName.c_str()));
   }
 
   if (m_rulesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> rulesJsonList(m_rules.size());
-    for (unsigned rulesIndex = 0; rulesIndex < rulesJsonList.GetLength(); ++rulesIndex) {
-      rulesJsonList[rulesIndex].AsObject(m_rules[rulesIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Rules"));
+    encoder.WriteArrayStart(m_rules.size());
+    for (const auto& item_0 : m_rules) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("Rules", std::move(rulesJsonList));
   }
 
   if (m_inputTypeHasBeenSet) {
-    payload.WithString("InputType", InputTypeMapper::GetNameForInputType(m_inputType));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("InputType"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(InputTypeMapper::GetNameForInputType(m_inputType).c_str()));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection UpdateCallAnalyticsCategoryRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Transcribe.UpdateCallAnalyticsCategory"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

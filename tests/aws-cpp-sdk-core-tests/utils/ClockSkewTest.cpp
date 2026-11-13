@@ -54,7 +54,7 @@ class ClockSkewTest : public Aws::Testing::AwsCppSdkGTestSuite, public testing::
 public:
     static const size_t TEST_CASE_COUNT;
 };
-const size_t ClockSkewTest::TEST_CASE_COUNT = 10;
+const size_t ClockSkewTest::TEST_CASE_COUNT = 12;
 
 TEST_P(ClockSkewTest, RunTestCase)
 {

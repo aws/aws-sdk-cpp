@@ -4,146 +4,859 @@
  */
 
 #include <aws/cloudhsmv2/model/Backup.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace CloudHSMV2 {
 namespace Model {
 
-Backup::Backup(JsonView jsonValue) { *this = jsonValue; }
+Backup::Backup(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-Backup& Backup::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("BackupId")) {
-    m_backupId = jsonValue.GetString("BackupId");
-    m_backupIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("BackupArn")) {
-    m_backupArn = jsonValue.GetString("BackupArn");
-    m_backupArnHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("BackupState")) {
-    m_backupState = BackupStateMapper::GetBackupStateForName(jsonValue.GetString("BackupState"));
-    m_backupStateHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ClusterId")) {
-    m_clusterId = jsonValue.GetString("ClusterId");
-    m_clusterIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("CreateTimestamp")) {
-    m_createTimestamp = jsonValue.GetDouble("CreateTimestamp");
-    m_createTimestampHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("CopyTimestamp")) {
-    m_copyTimestamp = jsonValue.GetDouble("CopyTimestamp");
-    m_copyTimestampHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("NeverExpires")) {
-    m_neverExpires = jsonValue.GetBool("NeverExpires");
-    m_neverExpiresHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("SourceRegion")) {
-    m_sourceRegion = jsonValue.GetString("SourceRegion");
-    m_sourceRegionHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("SourceBackup")) {
-    m_sourceBackup = jsonValue.GetString("SourceBackup");
-    m_sourceBackupHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("SourceCluster")) {
-    m_sourceCluster = jsonValue.GetString("SourceCluster");
-    m_sourceClusterHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("DeleteTimestamp")) {
-    m_deleteTimestamp = jsonValue.GetDouble("DeleteTimestamp");
-    m_deleteTimestampHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("TagList")) {
-    Aws::Utils::Array<JsonView> tagListJsonList = jsonValue.GetArray("TagList");
-    for (unsigned tagListIndex = 0; tagListIndex < tagListJsonList.GetLength(); ++tagListIndex) {
-      m_tagList.push_back(tagListJsonList[tagListIndex].AsObject());
+Backup& Backup::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "BackupId") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_backupId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_backupId = ss.str();
+                  }
+                }
+                m_backupIdHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "BackupArn") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_backupArn = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_backupArn = ss.str();
+                  }
+                }
+                m_backupArnHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "BackupState") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_backupState = BackupStateMapper::GetBackupStateForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_backupStateHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "ClusterId") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_clusterId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_clusterId = ss.str();
+                  }
+                }
+                m_clusterIdHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "CreateTimestamp") {
+                auto tag = decoder->PopNextTagVal();
+                if (tag.has_value() &&
+                    tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+                {
+                  auto dateType = decoder->PeekType();
+                  if (dateType.has_value()) {
+                    if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                      auto val = decoder->PopNextFloatVal();
+                      if (val.has_value()) {
+                        m_createTimestamp = Aws::Utils::DateTime(val.value());
+                      }
+                    } else {
+                      auto val = decoder->PopNextUnsignedIntVal();
+                      if (val.has_value()) {
+                        m_createTimestamp = Aws::Utils::DateTime(val.value());
+                      }
+                    }
+                  }
+                }
+                m_createTimestampHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "CopyTimestamp") {
+                auto tag = decoder->PopNextTagVal();
+                if (tag.has_value() &&
+                    tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+                {
+                  auto dateType = decoder->PeekType();
+                  if (dateType.has_value()) {
+                    if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                      auto val = decoder->PopNextFloatVal();
+                      if (val.has_value()) {
+                        m_copyTimestamp = Aws::Utils::DateTime(val.value());
+                      }
+                    } else {
+                      auto val = decoder->PopNextUnsignedIntVal();
+                      if (val.has_value()) {
+                        m_copyTimestamp = Aws::Utils::DateTime(val.value());
+                      }
+                    }
+                  }
+                }
+                m_copyTimestampHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "NeverExpires") {
+                auto val = decoder->PopNextBooleanVal();
+                if (val.has_value()) {
+                  m_neverExpires = val.value();
+                }
+                m_neverExpiresHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "SourceRegion") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_sourceRegion = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_sourceRegion = ss.str();
+                  }
+                }
+                m_sourceRegionHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "SourceBackup") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_sourceBackup = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_sourceBackup = ss.str();
+                  }
+                }
+                m_sourceBackupHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "SourceCluster") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_sourceCluster = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_sourceCluster = ss.str();
+                  }
+                }
+                m_sourceClusterHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "DeleteTimestamp") {
+                auto tag = decoder->PopNextTagVal();
+                if (tag.has_value() &&
+                    tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+                {
+                  auto dateType = decoder->PeekType();
+                  if (dateType.has_value()) {
+                    if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                      auto val = decoder->PopNextFloatVal();
+                      if (val.has_value()) {
+                        m_deleteTimestamp = Aws::Utils::DateTime(val.value());
+                      }
+                    } else {
+                      auto val = decoder->PopNextUnsignedIntVal();
+                      if (val.has_value()) {
+                        m_deleteTimestamp = Aws::Utils::DateTime(val.value());
+                      }
+                    }
+                  }
+                }
+                m_deleteTimestampHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "TagList") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_tagList.push_back(Tag(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_tagList.push_back(Tag(decoder));
+                    }
+                  }
+                }
+                m_tagListHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "HsmType") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_hsmType = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_hsmType = ss.str();
+                  }
+                }
+                m_hsmTypeHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "Mode") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_mode = ClusterModeMapper::GetClusterModeForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_modeHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("Backup", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "BackupId") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_backupId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_backupId = ss.str();
+                }
+              }
+              m_backupIdHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "BackupArn") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_backupArn = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_backupArn = ss.str();
+                }
+              }
+              m_backupArnHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "BackupState") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_backupState =
+                    BackupStateMapper::GetBackupStateForName(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_backupStateHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "ClusterId") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_clusterId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_clusterId = ss.str();
+                }
+              }
+              m_clusterIdHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "CreateTimestamp") {
+              auto tag = decoder->PopNextTagVal();
+              if (tag.has_value() &&
+                  tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+              {
+                auto dateType = decoder->PeekType();
+                if (dateType.has_value()) {
+                  if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                    auto val = decoder->PopNextFloatVal();
+                    if (val.has_value()) {
+                      m_createTimestamp = Aws::Utils::DateTime(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_createTimestamp = Aws::Utils::DateTime(val.value());
+                    }
+                  }
+                }
+              }
+              m_createTimestampHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "CopyTimestamp") {
+              auto tag = decoder->PopNextTagVal();
+              if (tag.has_value() &&
+                  tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+              {
+                auto dateType = decoder->PeekType();
+                if (dateType.has_value()) {
+                  if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                    auto val = decoder->PopNextFloatVal();
+                    if (val.has_value()) {
+                      m_copyTimestamp = Aws::Utils::DateTime(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_copyTimestamp = Aws::Utils::DateTime(val.value());
+                    }
+                  }
+                }
+              }
+              m_copyTimestampHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "NeverExpires") {
+              auto val = decoder->PopNextBooleanVal();
+              if (val.has_value()) {
+                m_neverExpires = val.value();
+              }
+              m_neverExpiresHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "SourceRegion") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_sourceRegion = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_sourceRegion = ss.str();
+                }
+              }
+              m_sourceRegionHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "SourceBackup") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_sourceBackup = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_sourceBackup = ss.str();
+                }
+              }
+              m_sourceBackupHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "SourceCluster") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_sourceCluster = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_sourceCluster = ss.str();
+                }
+              }
+              m_sourceClusterHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "DeleteTimestamp") {
+              auto tag = decoder->PopNextTagVal();
+              if (tag.has_value() &&
+                  tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+              {
+                auto dateType = decoder->PeekType();
+                if (dateType.has_value()) {
+                  if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                    auto val = decoder->PopNextFloatVal();
+                    if (val.has_value()) {
+                      m_deleteTimestamp = Aws::Utils::DateTime(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_deleteTimestamp = Aws::Utils::DateTime(val.value());
+                    }
+                  }
+                }
+              }
+              m_deleteTimestampHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "TagList") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_tagList.push_back(Tag(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_tagList.push_back(Tag(decoder));
+                  }
+                }
+              }
+              m_tagListHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "HsmType") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_hsmType = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_hsmType = ss.str();
+                }
+              }
+              m_hsmTypeHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "Mode") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_mode =
+                    ClusterModeMapper::GetClusterModeForName(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_modeHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
     }
-    m_tagListHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("HsmType")) {
-    m_hsmType = jsonValue.GetString("HsmType");
-    m_hsmTypeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("Mode")) {
-    m_mode = ClusterModeMapper::GetClusterModeForName(jsonValue.GetString("Mode"));
-    m_modeHasBeenSet = true;
-  }
+
   return *this;
 }
 
-JsonValue Backup::Jsonize() const {
-  JsonValue payload;
+void Backup::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_backupIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_backupArnHasBeenSet) {
+    mapSize++;
+  }
+  if (m_backupStateHasBeenSet) {
+    mapSize++;
+  }
+  if (m_clusterIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_createTimestampHasBeenSet) {
+    mapSize++;
+  }
+  if (m_copyTimestampHasBeenSet) {
+    mapSize++;
+  }
+  if (m_neverExpiresHasBeenSet) {
+    mapSize++;
+  }
+  if (m_sourceRegionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_sourceBackupHasBeenSet) {
+    mapSize++;
+  }
+  if (m_sourceClusterHasBeenSet) {
+    mapSize++;
+  }
+  if (m_deleteTimestampHasBeenSet) {
+    mapSize++;
+  }
+  if (m_tagListHasBeenSet) {
+    mapSize++;
+  }
+  if (m_hsmTypeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_modeHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_backupIdHasBeenSet) {
-    payload.WithString("BackupId", m_backupId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("BackupId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_backupId.c_str()));
   }
 
   if (m_backupArnHasBeenSet) {
-    payload.WithString("BackupArn", m_backupArn);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("BackupArn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_backupArn.c_str()));
   }
 
   if (m_backupStateHasBeenSet) {
-    payload.WithString("BackupState", BackupStateMapper::GetNameForBackupState(m_backupState));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("BackupState"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(BackupStateMapper::GetNameForBackupState(m_backupState).c_str()));
   }
 
   if (m_clusterIdHasBeenSet) {
-    payload.WithString("ClusterId", m_clusterId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ClusterId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_clusterId.c_str()));
   }
 
   if (m_createTimestampHasBeenSet) {
-    payload.WithDouble("CreateTimestamp", m_createTimestamp.SecondsWithMSPrecision());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("CreateTimestamp"));
+    encoder.WriteTag(1);  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+    encoder.WriteUInt(m_createTimestamp.Seconds());
   }
 
   if (m_copyTimestampHasBeenSet) {
-    payload.WithDouble("CopyTimestamp", m_copyTimestamp.SecondsWithMSPrecision());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("CopyTimestamp"));
+    encoder.WriteTag(1);  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+    encoder.WriteUInt(m_copyTimestamp.Seconds());
   }
 
   if (m_neverExpiresHasBeenSet) {
-    payload.WithBool("NeverExpires", m_neverExpires);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("NeverExpires"));
+    encoder.WriteBool(m_neverExpires);
   }
 
   if (m_sourceRegionHasBeenSet) {
-    payload.WithString("SourceRegion", m_sourceRegion);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("SourceRegion"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_sourceRegion.c_str()));
   }
 
   if (m_sourceBackupHasBeenSet) {
-    payload.WithString("SourceBackup", m_sourceBackup);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("SourceBackup"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_sourceBackup.c_str()));
   }
 
   if (m_sourceClusterHasBeenSet) {
-    payload.WithString("SourceCluster", m_sourceCluster);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("SourceCluster"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_sourceCluster.c_str()));
   }
 
   if (m_deleteTimestampHasBeenSet) {
-    payload.WithDouble("DeleteTimestamp", m_deleteTimestamp.SecondsWithMSPrecision());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("DeleteTimestamp"));
+    encoder.WriteTag(1);  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+    encoder.WriteUInt(m_deleteTimestamp.Seconds());
   }
 
   if (m_tagListHasBeenSet) {
-    Aws::Utils::Array<JsonValue> tagListJsonList(m_tagList.size());
-    for (unsigned tagListIndex = 0; tagListIndex < tagListJsonList.GetLength(); ++tagListIndex) {
-      tagListJsonList[tagListIndex].AsObject(m_tagList[tagListIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("TagList"));
+    encoder.WriteArrayStart(m_tagList.size());
+    for (const auto& item_0 : m_tagList) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("TagList", std::move(tagListJsonList));
   }
 
   if (m_hsmTypeHasBeenSet) {
-    payload.WithString("HsmType", m_hsmType);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("HsmType"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_hsmType.c_str()));
   }
 
   if (m_modeHasBeenSet) {
-    payload.WithString("Mode", ClusterModeMapper::GetNameForClusterMode(m_mode));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Mode"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(ClusterModeMapper::GetNameForClusterMode(m_mode).c_str()));
   }
-
-  return payload;
 }
 
 }  // namespace Model

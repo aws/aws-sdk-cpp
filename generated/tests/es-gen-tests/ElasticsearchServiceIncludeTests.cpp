@@ -53,6 +53,10 @@
 #include <aws/es/model/ChangeProgressDetails.h>
 #include <aws/es/model/ChangeProgressStage.h>
 #include <aws/es/model/ChangeProgressStatusDetails.h>
+#include <aws/es/model/ClonedBlueGreenOptions.h>
+#include <aws/es/model/ClonedBlueGreenScheduledAction.h>
+#include <aws/es/model/ClonedBlueGreenScheduledActionType.h>
+#include <aws/es/model/ClonedBlueGreenUpgradeDetails.h>
 #include <aws/es/model/CognitoOptions.h>
 #include <aws/es/model/CognitoOptionsStatus.h>
 #include <aws/es/model/ColdStorageOptions.h>
@@ -66,6 +70,10 @@
 #include <aws/es/model/CreatePackageResult.h>
 #include <aws/es/model/CreateVpcEndpointRequest.h>
 #include <aws/es/model/CreateVpcEndpointResult.h>
+#include <aws/es/model/CutoverOptions.h>
+#include <aws/es/model/CutoverRequestOptions.h>
+#include <aws/es/model/CutoverStatus.h>
+#include <aws/es/model/CutoverTarget.h>
 #include <aws/es/model/DeleteElasticsearchDomainRequest.h>
 #include <aws/es/model/DeleteElasticsearchDomainResult.h>
 #include <aws/es/model/DeleteElasticsearchServiceRoleRequest.h>
@@ -81,6 +89,8 @@
 #include <aws/es/model/DeploymentStrategy.h>
 #include <aws/es/model/DeploymentStrategyOptions.h>
 #include <aws/es/model/DeploymentStrategyOptionsStatus.h>
+#include <aws/es/model/DeploymentStrategyOverride.h>
+#include <aws/es/model/DeploymentStrategyOverrideOptions.h>
 #include <aws/es/model/DescribeDomainAutoTunesPaginationTraits.h>
 #include <aws/es/model/DescribeDomainAutoTunesRequest.h>
 #include <aws/es/model/DescribeDomainAutoTunesResult.h>
@@ -210,6 +220,8 @@
 #include <aws/es/model/ReservedElasticsearchInstance.h>
 #include <aws/es/model/ReservedElasticsearchInstanceOffering.h>
 #include <aws/es/model/ReservedElasticsearchInstancePaymentOption.h>
+#include <aws/es/model/RetentionAction.h>
+#include <aws/es/model/RetentionOptions.h>
 #include <aws/es/model/RevokeVpcEndpointAccessRequest.h>
 #include <aws/es/model/RevokeVpcEndpointAccessResult.h>
 #include <aws/es/model/RollbackOnDisable.h>
@@ -229,6 +241,13 @@
 #include <aws/es/model/TLSSecurityPolicy.h>
 #include <aws/es/model/Tag.h>
 #include <aws/es/model/TimeUnit.h>
+#include <aws/es/model/TrafficPercents.h>
+#include <aws/es/model/TrafficSplitOptions.h>
+#include <aws/es/model/TrafficSplitRequestOptions.h>
+#include <aws/es/model/TrafficSplitStatus.h>
+#include <aws/es/model/TrafficStrategy.h>
+#include <aws/es/model/UpdateCloneRequest.h>
+#include <aws/es/model/UpdateCloneResult.h>
 #include <aws/es/model/UpdateElasticsearchDomainConfigRequest.h>
 #include <aws/es/model/UpdateElasticsearchDomainConfigResult.h>
 #include <aws/es/model/UpdatePackageRequest.h>

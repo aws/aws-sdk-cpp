@@ -160,6 +160,17 @@ Environment& Environment::operator=(JsonView jsonValue) {
     m_maxWebservers = jsonValue.GetInteger("MaxWebservers");
     m_maxWebserversHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("IdentityCenterConfiguration")) {
+    m_identityCenterConfiguration = jsonValue.GetObject("IdentityCenterConfiguration");
+    m_identityCenterConfigurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Teams")) {
+    Aws::Map<Aws::String, JsonView> teamsJsonMap = jsonValue.GetObject("Teams").GetAllObjects();
+    for (auto& teamsItem : teamsJsonMap) {
+      m_teams[teamsItem.first] = teamsItem.second.AsObject();
+    }
+    m_teamsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -308,6 +319,18 @@ JsonValue Environment::Jsonize() const {
 
   if (m_maxWebserversHasBeenSet) {
     payload.WithInteger("MaxWebservers", m_maxWebservers);
+  }
+
+  if (m_identityCenterConfigurationHasBeenSet) {
+    payload.WithObject("IdentityCenterConfiguration", m_identityCenterConfiguration.Jsonize());
+  }
+
+  if (m_teamsHasBeenSet) {
+    JsonValue teamsJsonMap;
+    for (auto& teamsItem : m_teams) {
+      teamsJsonMap.WithObject(teamsItem.first, teamsItem.second.Jsonize());
+    }
+    payload.WithObject("Teams", std::move(teamsJsonMap));
   }
 
   return payload;

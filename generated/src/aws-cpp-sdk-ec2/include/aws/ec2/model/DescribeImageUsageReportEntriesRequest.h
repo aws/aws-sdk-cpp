@@ -110,8 +110,9 @@ class DescribeImageUsageReportEntriesRequest : public EC2Request {
    * (YYYY-MM-DDThh:mm:ss.sssZ), for example, <code>2025-11-29T11:04:43.305Z</code>.
    * You can use a wildcard (<code>*</code>), for example, <code>2025-11-29T*</code>,
    * which matches an entire day.</p> </li> <li> <p> <code>resource-type</code> - The
-   * resource type (<code>ec2:Instance</code> | <code>ec2:LaunchTemplate</code>).</p>
-   * </li> </ul>
+   * resource type (<code>ec2:Instance</code> | <code>ec2:LaunchTemplate</code> |
+   * <code>imagebuilder:ImageRecipe</code> |
+   * <code>imagebuilder:ContainerRecipe</code>).</p> </li> </ul>
    */
   inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
   inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }

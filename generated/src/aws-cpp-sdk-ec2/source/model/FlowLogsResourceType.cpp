@@ -21,6 +21,9 @@ static const int NetworkInterface_HASH = HashingUtils::HashString("NetworkInterf
 static const int TransitGateway_HASH = HashingUtils::HashString("TransitGateway");
 static const int TransitGatewayAttachment_HASH = HashingUtils::HashString("TransitGatewayAttachment");
 static const int RegionalNatGateway_HASH = HashingUtils::HashString("RegionalNatGateway");
+static const int CoreNetwork_HASH = HashingUtils::HashString("CoreNetwork");
+static const int CoreNetworkEdge_HASH = HashingUtils::HashString("CoreNetworkEdge");
+static const int CoreNetworkAttachment_HASH = HashingUtils::HashString("CoreNetworkAttachment");
 
 FlowLogsResourceType GetFlowLogsResourceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -36,6 +39,12 @@ FlowLogsResourceType GetFlowLogsResourceTypeForName(const Aws::String& name) {
     return FlowLogsResourceType::TransitGatewayAttachment;
   } else if (hashCode == RegionalNatGateway_HASH) {
     return FlowLogsResourceType::RegionalNatGateway;
+  } else if (hashCode == CoreNetwork_HASH) {
+    return FlowLogsResourceType::CoreNetwork;
+  } else if (hashCode == CoreNetworkEdge_HASH) {
+    return FlowLogsResourceType::CoreNetworkEdge;
+  } else if (hashCode == CoreNetworkAttachment_HASH) {
+    return FlowLogsResourceType::CoreNetworkAttachment;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -62,6 +71,12 @@ Aws::String GetNameForFlowLogsResourceType(FlowLogsResourceType enumValue) {
       return "TransitGatewayAttachment";
     case FlowLogsResourceType::RegionalNatGateway:
       return "RegionalNatGateway";
+    case FlowLogsResourceType::CoreNetwork:
+      return "CoreNetwork";
+    case FlowLogsResourceType::CoreNetworkEdge:
+      return "CoreNetworkEdge";
+    case FlowLogsResourceType::CoreNetworkAttachment:
+      return "CoreNetworkAttachment";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

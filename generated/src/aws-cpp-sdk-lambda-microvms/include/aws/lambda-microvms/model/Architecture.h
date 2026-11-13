@@ -10,7 +10,7 @@
 namespace Aws {
 namespace LambdaMicrovms {
 namespace Model {
-enum class Architecture { NOT_SET, ARM_64 };
+enum class Architecture { NOT_SET, ARM_64, X86_64 };
 
 namespace ArchitectureMapper {
 AWS_LAMBDAMICROVMS_API Architecture GetArchitectureForName(const Aws::String& name);

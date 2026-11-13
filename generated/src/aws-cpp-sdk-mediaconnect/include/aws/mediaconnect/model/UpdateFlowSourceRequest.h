@@ -12,6 +12,7 @@
 #include <aws/mediaconnect/model/MediaStreamSourceConfigurationRequest.h>
 #include <aws/mediaconnect/model/NdiSourceSettings.h>
 #include <aws/mediaconnect/model/Protocol.h>
+#include <aws/mediaconnect/model/SetRtmpPushSourceSettings.h>
 #include <aws/mediaconnect/model/State.h>
 #include <aws/mediaconnect/model/UpdateEncryption.h>
 #include <aws/mediaconnect/model/UpdateGatewayBridgeSourceRequest.h>
@@ -462,6 +463,24 @@ class UpdateFlowSourceRequest : public MediaConnectRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The settings for the RTMP (Real-Time Messaging Protocol) source.</p>
+   */
+  inline const SetRtmpPushSourceSettings& GetRtmpPushSettings() const { return m_rtmpPushSettings; }
+  inline bool RtmpPushSettingsHasBeenSet() const { return m_rtmpPushSettingsHasBeenSet; }
+  template <typename RtmpPushSettingsT = SetRtmpPushSourceSettings>
+  void SetRtmpPushSettings(RtmpPushSettingsT&& value) {
+    m_rtmpPushSettingsHasBeenSet = true;
+    m_rtmpPushSettings = std::forward<RtmpPushSettingsT>(value);
+  }
+  template <typename RtmpPushSettingsT = SetRtmpPushSourceSettings>
+  UpdateFlowSourceRequest& WithRtmpPushSettings(RtmpPushSettingsT&& value) {
+    SetRtmpPushSettings(std::forward<RtmpPushSettingsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   UpdateEncryption m_decryption;
 
@@ -508,6 +527,8 @@ class UpdateFlowSourceRequest : public MediaConnectRequest {
   State m_routerIntegrationState{State::NOT_SET};
 
   FlowTransitEncryption m_routerIntegrationTransitDecryption;
+
+  SetRtmpPushSourceSettings m_rtmpPushSettings;
   bool m_decryptionHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_entitlementArnHasBeenSet = false;
@@ -531,6 +552,7 @@ class UpdateFlowSourceRequest : public MediaConnectRequest {
   bool m_ndiSourceSettingsHasBeenSet = false;
   bool m_routerIntegrationStateHasBeenSet = false;
   bool m_routerIntegrationTransitDecryptionHasBeenSet = false;
+  bool m_rtmpPushSettingsHasBeenSet = false;
 };
 
 }  // namespace Model

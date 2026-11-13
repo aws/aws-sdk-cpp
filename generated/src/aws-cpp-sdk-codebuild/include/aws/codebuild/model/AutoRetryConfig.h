@@ -6,15 +6,15 @@
 #pragma once
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace CodeBuild {
 namespace Model {
@@ -28,9 +28,9 @@ namespace Model {
 class AutoRetryConfig {
  public:
   AWS_CODEBUILD_API AutoRetryConfig() = default;
-  AWS_CODEBUILD_API AutoRetryConfig(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CODEBUILD_API AutoRetryConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_CODEBUILD_API AutoRetryConfig(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CODEBUILD_API AutoRetryConfig& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CODEBUILD_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -39,13 +39,13 @@ class AutoRetryConfig {
    * <code>RetryBuild</code> API to automatically retry your build for up to 2
    * additional times.</p>
    */
-  inline int GetAutoRetryLimit() const { return m_autoRetryLimit; }
+  inline int64_t GetAutoRetryLimit() const { return m_autoRetryLimit; }
   inline bool AutoRetryLimitHasBeenSet() const { return m_autoRetryLimitHasBeenSet; }
-  inline void SetAutoRetryLimit(int value) {
+  inline void SetAutoRetryLimit(int64_t value) {
     m_autoRetryLimitHasBeenSet = true;
     m_autoRetryLimit = value;
   }
-  inline AutoRetryConfig& WithAutoRetryLimit(int value) {
+  inline AutoRetryConfig& WithAutoRetryLimit(int64_t value) {
     SetAutoRetryLimit(value);
     return *this;
   }
@@ -56,13 +56,13 @@ class AutoRetryConfig {
    * <p>The number of times that the build has been retried. The initial build will
    * have an auto-retry number of 0.</p>
    */
-  inline int GetAutoRetryNumber() const { return m_autoRetryNumber; }
+  inline int64_t GetAutoRetryNumber() const { return m_autoRetryNumber; }
   inline bool AutoRetryNumberHasBeenSet() const { return m_autoRetryNumberHasBeenSet; }
-  inline void SetAutoRetryNumber(int value) {
+  inline void SetAutoRetryNumber(int64_t value) {
     m_autoRetryNumberHasBeenSet = true;
     m_autoRetryNumber = value;
   }
-  inline AutoRetryConfig& WithAutoRetryNumber(int value) {
+  inline AutoRetryConfig& WithAutoRetryNumber(int64_t value) {
     SetAutoRetryNumber(value);
     return *this;
   }
@@ -107,9 +107,9 @@ class AutoRetryConfig {
   }
   ///@}
  private:
-  int m_autoRetryLimit{0};
+  int64_t m_autoRetryLimit{0};
 
-  int m_autoRetryNumber{0};
+  int64_t m_autoRetryNumber{0};
 
   Aws::String m_nextAutoRetry;
 

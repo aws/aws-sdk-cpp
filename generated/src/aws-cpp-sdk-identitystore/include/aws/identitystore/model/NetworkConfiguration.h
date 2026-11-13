@@ -55,7 +55,7 @@ class NetworkConfiguration {
 
   ///@{
   /**
-   * <p>A list of virtual private cloud (VPC) IDs that are allowed to access the
+   * <p>A list of virtual private cloud (VPC) ARNs that are allowed to access the
    * identity store API operations. A request is denied unless it originates from a
    * VPC in this list, or from an IP address in <code>ApiAllowSourceIps</code> if you
    * specified one. If you don't specify a value, access isn't restricted to specific

@@ -4,59 +4,171 @@
  */
 
 #include <aws/comprehend/model/FlywheelModelEvaluationMetrics.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace Comprehend {
 namespace Model {
 
-FlywheelModelEvaluationMetrics::FlywheelModelEvaluationMetrics(JsonView jsonValue) { *this = jsonValue; }
+FlywheelModelEvaluationMetrics::FlywheelModelEvaluationMetrics(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  *this = decoder;
+}
 
-FlywheelModelEvaluationMetrics& FlywheelModelEvaluationMetrics::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("AverageF1Score")) {
-    m_averageF1Score = jsonValue.GetDouble("AverageF1Score");
-    m_averageF1ScoreHasBeenSet = true;
+FlywheelModelEvaluationMetrics& FlywheelModelEvaluationMetrics::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "AverageF1Score") {
+                auto val = decoder->PopNextFloatVal();
+                if (val.has_value()) {
+                  m_averageF1Score = val.value();
+                }
+                m_averageF1ScoreHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "AveragePrecision") {
+                auto val = decoder->PopNextFloatVal();
+                if (val.has_value()) {
+                  m_averagePrecision = val.value();
+                }
+                m_averagePrecisionHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "AverageRecall") {
+                auto val = decoder->PopNextFloatVal();
+                if (val.has_value()) {
+                  m_averageRecall = val.value();
+                }
+                m_averageRecallHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "AverageAccuracy") {
+                auto val = decoder->PopNextFloatVal();
+                if (val.has_value()) {
+                  m_averageAccuracy = val.value();
+                }
+                m_averageAccuracyHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("FlywheelModelEvaluationMetrics", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "AverageF1Score") {
+              auto val = decoder->PopNextFloatVal();
+              if (val.has_value()) {
+                m_averageF1Score = val.value();
+              }
+              m_averageF1ScoreHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "AveragePrecision") {
+              auto val = decoder->PopNextFloatVal();
+              if (val.has_value()) {
+                m_averagePrecision = val.value();
+              }
+              m_averagePrecisionHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "AverageRecall") {
+              auto val = decoder->PopNextFloatVal();
+              if (val.has_value()) {
+                m_averageRecall = val.value();
+              }
+              m_averageRecallHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "AverageAccuracy") {
+              auto val = decoder->PopNextFloatVal();
+              if (val.has_value()) {
+                m_averageAccuracy = val.value();
+              }
+              m_averageAccuracyHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
+    }
   }
-  if (jsonValue.ValueExists("AveragePrecision")) {
-    m_averagePrecision = jsonValue.GetDouble("AveragePrecision");
-    m_averagePrecisionHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("AverageRecall")) {
-    m_averageRecall = jsonValue.GetDouble("AverageRecall");
-    m_averageRecallHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("AverageAccuracy")) {
-    m_averageAccuracy = jsonValue.GetDouble("AverageAccuracy");
-    m_averageAccuracyHasBeenSet = true;
-  }
+
   return *this;
 }
 
-JsonValue FlywheelModelEvaluationMetrics::Jsonize() const {
-  JsonValue payload;
+void FlywheelModelEvaluationMetrics::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_averageF1ScoreHasBeenSet) {
+    mapSize++;
+  }
+  if (m_averagePrecisionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_averageRecallHasBeenSet) {
+    mapSize++;
+  }
+  if (m_averageAccuracyHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_averageF1ScoreHasBeenSet) {
-    payload.WithDouble("AverageF1Score", m_averageF1Score);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AverageF1Score"));
+    encoder.WriteFloat(m_averageF1Score);
   }
 
   if (m_averagePrecisionHasBeenSet) {
-    payload.WithDouble("AveragePrecision", m_averagePrecision);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AveragePrecision"));
+    encoder.WriteFloat(m_averagePrecision);
   }
 
   if (m_averageRecallHasBeenSet) {
-    payload.WithDouble("AverageRecall", m_averageRecall);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AverageRecall"));
+    encoder.WriteFloat(m_averageRecall);
   }
 
   if (m_averageAccuracyHasBeenSet) {
-    payload.WithDouble("AverageAccuracy", m_averageAccuracy);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AverageAccuracy"));
+    encoder.WriteFloat(m_averageAccuracy);
   }
-
-  return payload;
 }
 
 }  // namespace Model

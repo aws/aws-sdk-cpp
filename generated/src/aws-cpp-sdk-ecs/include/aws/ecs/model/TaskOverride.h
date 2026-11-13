@@ -171,7 +171,6 @@ class TaskOverride {
    * <p>The ephemeral storage setting override for the task.</p>  <p>This
    * parameter is only supported for tasks hosted on Fargate that use the following
    * platform versions:</p> <ul> <li> <p>Linux platform version <code>1.4.0</code> or
-   * later.</p> </li> <li> <p>Windows platform version <code>1.0.0</code> or
    * later.</p> </li> </ul>
    */
   inline const EphemeralStorage& GetEphemeralStorage() const { return m_ephemeralStorage; }

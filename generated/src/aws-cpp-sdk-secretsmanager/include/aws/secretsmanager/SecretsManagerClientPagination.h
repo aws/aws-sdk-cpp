@@ -7,6 +7,7 @@
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/secretsmanager/SecretsManagerClient.h>
 #include <aws/secretsmanager/model/BatchGetSecretValuePaginationTraits.h>
+#include <aws/secretsmanager/model/ListResourcePoliciesPaginationTraits.h>
 #include <aws/secretsmanager/model/ListSecretVersionIdsPaginationTraits.h>
 #include <aws/secretsmanager/model/ListSecretsPaginationTraits.h>
 
@@ -16,6 +17,9 @@ namespace SecretsManager {
 using BatchGetSecretValuePaginator =
     Aws::Utils::Pagination::Paginator<SecretsManagerClient, Model::BatchGetSecretValueRequest,
                                       Pagination::BatchGetSecretValuePaginationTraits<SecretsManagerClient>>;
+using ListResourcePoliciesPaginator =
+    Aws::Utils::Pagination::Paginator<SecretsManagerClient, Model::ListResourcePoliciesRequest,
+                                      Pagination::ListResourcePoliciesPaginationTraits<SecretsManagerClient>>;
 using ListSecretsPaginator = Aws::Utils::Pagination::Paginator<SecretsManagerClient, Model::ListSecretsRequest,
                                                                Pagination::ListSecretsPaginationTraits<SecretsManagerClient>>;
 using ListSecretVersionIdsPaginator =

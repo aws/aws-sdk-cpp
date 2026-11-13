@@ -7,6 +7,7 @@
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/directconnect/model/AddressFamily.h>
 #include <aws/directconnect/model/BGPPeer.h>
@@ -15,15 +16,14 @@
 #include <aws/directconnect/model/VirtualInterfaceState.h>
 
 #include <utility>
-
 namespace Aws {
 template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
 namespace Utils {
-namespace Json {
-class JsonValue;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace DirectConnect {
 namespace Model {
@@ -35,8 +35,8 @@ namespace Model {
 class AssociateVirtualInterfaceResult {
  public:
   AWS_DIRECTCONNECT_API AssociateVirtualInterfaceResult() = default;
-  AWS_DIRECTCONNECT_API AssociateVirtualInterfaceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-  AWS_DIRECTCONNECT_API AssociateVirtualInterfaceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_DIRECTCONNECT_API AssociateVirtualInterfaceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
+  AWS_DIRECTCONNECT_API AssociateVirtualInterfaceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
 
   ///@{
   /**
@@ -148,12 +148,12 @@ class AssociateVirtualInterfaceResult {
   /**
    * <p>The ID of the VLAN.</p>
    */
-  inline int GetVlan() const { return m_vlan; }
-  inline void SetVlan(int value) {
+  inline int64_t GetVlan() const { return m_vlan; }
+  inline void SetVlan(int64_t value) {
     m_vlanHasBeenSet = true;
     m_vlan = value;
   }
-  inline AssociateVirtualInterfaceResult& WithVlan(int value) {
+  inline AssociateVirtualInterfaceResult& WithVlan(int64_t value) {
     SetVlan(value);
     return *this;
   }
@@ -173,12 +173,12 @@ class AssociateVirtualInterfaceResult {
    * are using a 2-byte ASN, the API response will include the 2-byte value for both
    * the <code>asn</code> and <code>asnLong</code> fields.</p> </li> </ul>
    */
-  inline int GetAsn() const { return m_asn; }
-  inline void SetAsn(int value) {
+  inline int64_t GetAsn() const { return m_asn; }
+  inline void SetAsn(int64_t value) {
     m_asnHasBeenSet = true;
     m_asn = value;
   }
-  inline AssociateVirtualInterfaceResult& WithAsn(int value) {
+  inline AssociateVirtualInterfaceResult& WithAsn(int64_t value) {
     SetAsn(value);
     return *this;
   }
@@ -354,12 +354,12 @@ class AssociateVirtualInterfaceResult {
    * <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500
    * and 8500. The default value is 1500</p>
    */
-  inline int GetMtu() const { return m_mtu; }
-  inline void SetMtu(int value) {
+  inline int64_t GetMtu() const { return m_mtu; }
+  inline void SetMtu(int64_t value) {
     m_mtuHasBeenSet = true;
     m_mtu = value;
   }
-  inline AssociateVirtualInterfaceResult& WithMtu(int value) {
+  inline AssociateVirtualInterfaceResult& WithMtu(int64_t value) {
     SetMtu(value);
     return *this;
   }
@@ -558,12 +558,12 @@ class AssociateVirtualInterfaceResult {
    * <p>The number of inbound IPv4 route prefixes allocated to the virtual interface.
    * Not applicable to public virtual interfaces.</p>
    */
-  inline int GetPrefixPoolAllocatedCountIpv4() const { return m_prefixPoolAllocatedCountIpv4; }
-  inline void SetPrefixPoolAllocatedCountIpv4(int value) {
+  inline int64_t GetPrefixPoolAllocatedCountIpv4() const { return m_prefixPoolAllocatedCountIpv4; }
+  inline void SetPrefixPoolAllocatedCountIpv4(int64_t value) {
     m_prefixPoolAllocatedCountIpv4HasBeenSet = true;
     m_prefixPoolAllocatedCountIpv4 = value;
   }
-  inline AssociateVirtualInterfaceResult& WithPrefixPoolAllocatedCountIpv4(int value) {
+  inline AssociateVirtualInterfaceResult& WithPrefixPoolAllocatedCountIpv4(int64_t value) {
     SetPrefixPoolAllocatedCountIpv4(value);
     return *this;
   }
@@ -574,12 +574,12 @@ class AssociateVirtualInterfaceResult {
    * <p>The number of inbound IPv6 route prefixes allocated to the virtual interface.
    * Not applicable to public virtual interfaces.</p>
    */
-  inline int GetPrefixPoolAllocatedCountIpv6() const { return m_prefixPoolAllocatedCountIpv6; }
-  inline void SetPrefixPoolAllocatedCountIpv6(int value) {
+  inline int64_t GetPrefixPoolAllocatedCountIpv6() const { return m_prefixPoolAllocatedCountIpv6; }
+  inline void SetPrefixPoolAllocatedCountIpv6(int64_t value) {
     m_prefixPoolAllocatedCountIpv6HasBeenSet = true;
     m_prefixPoolAllocatedCountIpv6 = value;
   }
-  inline AssociateVirtualInterfaceResult& WithPrefixPoolAllocatedCountIpv6(int value) {
+  inline AssociateVirtualInterfaceResult& WithPrefixPoolAllocatedCountIpv6(int64_t value) {
     SetPrefixPoolAllocatedCountIpv6(value);
     return *this;
   }
@@ -656,9 +656,9 @@ class AssociateVirtualInterfaceResult {
 
   Aws::String m_virtualInterfaceName;
 
-  int m_vlan{0};
+  int64_t m_vlan{0};
 
-  int m_asn{0};
+  int64_t m_asn{0};
 
   long long m_asnLong{0};
 
@@ -676,7 +676,7 @@ class AssociateVirtualInterfaceResult {
 
   Aws::String m_customerRouterConfig;
 
-  int m_mtu{0};
+  int64_t m_mtu{0};
 
   bool m_jumboFrameCapable{false};
 
@@ -698,9 +698,9 @@ class AssociateVirtualInterfaceResult {
 
   bool m_siteLinkEnabled{false};
 
-  int m_prefixPoolAllocatedCountIpv4{0};
+  int64_t m_prefixPoolAllocatedCountIpv4{0};
 
-  int m_prefixPoolAllocatedCountIpv6{0};
+  int64_t m_prefixPoolAllocatedCountIpv6{0};
 
   Aws::String m_rateLimit;
 

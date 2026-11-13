@@ -106,5 +106,9 @@ Aws::String UpdateFlowSourceRequest::SerializePayload() const {
     payload.WithObject("routerIntegrationTransitDecryption", m_routerIntegrationTransitDecryption.Jsonize());
   }
 
+  if (m_rtmpPushSettingsHasBeenSet) {
+    payload.WithObject("rtmpPushSettings", m_rtmpPushSettings.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

@@ -12,6 +12,7 @@ namespace LakeFormation {
 namespace Model {
 enum class DataLakeResourceType {
   NOT_SET,
+  ANY_RESOURCE,
   CATALOG,
   DATABASE,
   TABLE,
@@ -20,7 +21,8 @@ enum class DataLakeResourceType {
   LF_TAG_POLICY,
   LF_TAG_POLICY_DATABASE,
   LF_TAG_POLICY_TABLE,
-  LF_NAMED_TAG_EXPRESSION
+  LF_NAMED_TAG_EXPRESSION,
+  USER_DEFINED_FUNCTION
 };
 
 namespace DataLakeResourceTypeMapper {

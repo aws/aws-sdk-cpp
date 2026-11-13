@@ -390,6 +390,45 @@ class AWS_KINESISANALYTICSV2_API KinesisAnalyticsV2Client : public Aws::Client::
   }
 
   /**
+   * <p>Creates an enhanced snapshot of the state data of a running Managed Service
+   * for Apache Flink application. The application must be in the
+   * <code>RUNNING</code> status, use Apache Flink version 1.20 or later, and use the
+   * <code>ENHANCED_SNAPSHOTS</code> snapshot mode.</p> <p>This operation is
+   * asynchronous. The response returns the snapshot ARN with the
+   * <code>CREATING</code> status. To check the status of the snapshot, use
+   * <code>DescribeSnapshot</code>. To track the progress of the operation, use
+   * <code>DescribeSnapshotOperation</code>.</p> <p>An application can have only one
+   * <code>CreateSnapshot</code> operation in progress at a time. For information
+   * about limits, see <a
+   * href="https://docs.aws.amazon.com/managed-flink/latest/java/limits.html">Managed
+   * Service for Apache Flink Quotas</a>. For more information about snapshots, see
+   * <a
+   * href="https://docs.aws.amazon.com/managed-flink/latest/java/how-snapshots.html">Enhanced
+   * Snapshots</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CreateSnapshot">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateSnapshotOutcome CreateSnapshot(const Model::CreateSnapshotRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename CreateSnapshotRequestT = Model::CreateSnapshotRequest>
+  Model::CreateSnapshotOutcomeCallable CreateSnapshotCallable(const CreateSnapshotRequestT& request) const {
+    return SubmitCallable(&KinesisAnalyticsV2Client::CreateSnapshot, request);
+  }
+
+  /**
+   * An Async wrapper for CreateSnapshot that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename CreateSnapshotRequestT = Model::CreateSnapshotRequest>
+  void CreateSnapshotAsync(const CreateSnapshotRequestT& request, const CreateSnapshotResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KinesisAnalyticsV2Client::CreateSnapshot, request, handler, context);
+  }
+
+  /**
    * <p>Deletes the specified application. Managed Service for Apache Flink halts
    * application execution and deletes the application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplication">AWS
@@ -600,6 +639,40 @@ class AWS_KINESISANALYTICSV2_API KinesisAnalyticsV2Client : public Aws::Client::
   }
 
   /**
+   * <p>Deletes an enhanced snapshot. Snapshots are not scoped to an application, so
+   * you can delete a snapshot independently of the application that it was created
+   * from.</p> <p>This operation is asynchronous. The response returns the snapshot
+   * ARN with the <code>DELETING</code> status. To track the progress of the
+   * operation, use <code>DescribeSnapshotOperation</code>.</p> <p>You can delete a
+   * snapshot in the <code>READY</code> or <code>FAILED</code> status. If a snapshot
+   * operation, such as an export, uses the snapshot, Managed Service for Apache
+   * Flink waits for that operation to finish before it deletes the snapshot. For a
+   * snapshot in any other status, <code>ResourceInUseException</code> is
+   * returned.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteSnapshot">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteSnapshotOutcome DeleteSnapshot(const Model::DeleteSnapshotRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DeleteSnapshotRequestT = Model::DeleteSnapshotRequest>
+  Model::DeleteSnapshotOutcomeCallable DeleteSnapshotCallable(const DeleteSnapshotRequestT& request) const {
+    return SubmitCallable(&KinesisAnalyticsV2Client::DeleteSnapshot, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteSnapshot that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DeleteSnapshotRequestT = Model::DeleteSnapshotRequest>
+  void DeleteSnapshotAsync(const DeleteSnapshotRequestT& request, const DeleteSnapshotResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KinesisAnalyticsV2Client::DeleteSnapshot, request, handler, context);
+  }
+
+  /**
    * <p>Returns information about a specific Managed Service for Apache Flink
    * application.</p> <p>If you want to retrieve a list of all applications in your
    * account, use the <a>ListApplications</a> operation.</p><p><h3>See Also:</h3>
@@ -725,6 +798,65 @@ class AWS_KINESISANALYTICSV2_API KinesisAnalyticsV2Client : public Aws::Client::
   }
 
   /**
+   * <p>Returns information about an enhanced snapshot. To see a list of the
+   * snapshots in your account, use <code>ListSnapshots</code>.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DescribeSnapshot">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeSnapshotOutcome DescribeSnapshot(const Model::DescribeSnapshotRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeSnapshot that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeSnapshotRequestT = Model::DescribeSnapshotRequest>
+  Model::DescribeSnapshotOutcomeCallable DescribeSnapshotCallable(const DescribeSnapshotRequestT& request) const {
+    return SubmitCallable(&KinesisAnalyticsV2Client::DescribeSnapshot, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeSnapshot that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DescribeSnapshotRequestT = Model::DescribeSnapshotRequest>
+  void DescribeSnapshotAsync(const DescribeSnapshotRequestT& request, const DescribeSnapshotResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KinesisAnalyticsV2Client::DescribeSnapshot, request, handler, context);
+  }
+
+  /**
+   * <p>Provides a detailed description of a specified operation that was performed
+   * on an enhanced snapshot. To see a list of the operations of a snapshot, use
+   * <code>ListSnapshotOperations</code>.</p> <p>Snapshot operations are available
+   * for 90 days after they are created.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DescribeSnapshotOperation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeSnapshotOperationOutcome DescribeSnapshotOperation(const Model::DescribeSnapshotOperationRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeSnapshotOperation that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeSnapshotOperationRequestT = Model::DescribeSnapshotOperationRequest>
+  Model::DescribeSnapshotOperationOutcomeCallable DescribeSnapshotOperationCallable(
+      const DescribeSnapshotOperationRequestT& request) const {
+    return SubmitCallable(&KinesisAnalyticsV2Client::DescribeSnapshotOperation, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeSnapshotOperation that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeSnapshotOperationRequestT = Model::DescribeSnapshotOperationRequest>
+  void DescribeSnapshotOperationAsync(const DescribeSnapshotOperationRequestT& request,
+                                      const DescribeSnapshotOperationResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KinesisAnalyticsV2Client::DescribeSnapshotOperation, request, handler, context);
+  }
+
+  /**
    * <p>Infers a schema for a SQL-based Kinesis Data Analytics application by
    * evaluating sample records on the specified streaming source (Kinesis data stream
    * or Kinesis Data Firehose delivery stream) or Amazon S3 object. In the response,
@@ -756,6 +888,73 @@ class AWS_KINESISANALYTICSV2_API KinesisAnalyticsV2Client : public Aws::Client::
   void DiscoverInputSchemaAsync(const DiscoverInputSchemaRequestT& request, const DiscoverInputSchemaResponseReceivedHandler& handler,
                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&KinesisAnalyticsV2Client::DiscoverInputSchema, request, handler, context);
+  }
+
+  /**
+   * <p>Exports the data of an enhanced snapshot to an Amazon S3 location. Managed
+   * Service for Apache Flink assumes the IAM role that you specify in
+   * <code>ExportDestinationConfiguration</code> to write the snapshot data. The
+   * snapshot must be in the <code>READY</code> status.</p> <p>This operation is
+   * asynchronous. To track the progress of the export, use
+   * <code>DescribeSnapshotOperation</code>.</p> <p>A snapshot can have only one
+   * export in progress at a time. If an export of the snapshot is already in
+   * progress, <code>LimitExceededException</code> is returned.</p> <p>For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/managed-flink/latest/java/snapshots-import-export.html">Import
+   * and export</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ExportSnapshot">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ExportSnapshotOutcome ExportSnapshot(const Model::ExportSnapshotRequest& request) const;
+
+  /**
+   * A Callable wrapper for ExportSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ExportSnapshotRequestT = Model::ExportSnapshotRequest>
+  Model::ExportSnapshotOutcomeCallable ExportSnapshotCallable(const ExportSnapshotRequestT& request) const {
+    return SubmitCallable(&KinesisAnalyticsV2Client::ExportSnapshot, request);
+  }
+
+  /**
+   * An Async wrapper for ExportSnapshot that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ExportSnapshotRequestT = Model::ExportSnapshotRequest>
+  void ExportSnapshotAsync(const ExportSnapshotRequestT& request, const ExportSnapshotResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KinesisAnalyticsV2Client::ExportSnapshot, request, handler, context);
+  }
+
+  /**
+   * <p>Imports an Apache Flink savepoint from an Amazon S3 location as an enhanced
+   * snapshot. Managed Service for Apache Flink assumes the IAM role that you specify
+   * in <code>ImportSourceConfiguration</code> to read the savepoint data.</p>
+   * <p>This operation is asynchronous. The response returns the snapshot ARN with
+   * the <code>CREATING</code> status. To track the progress of the import, use
+   * <code>DescribeSnapshotOperation</code>.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/managed-flink/latest/java/snapshots-import-export.html">Import
+   * and export</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ImportSnapshot">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ImportSnapshotOutcome ImportSnapshot(const Model::ImportSnapshotRequest& request) const;
+
+  /**
+   * A Callable wrapper for ImportSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ImportSnapshotRequestT = Model::ImportSnapshotRequest>
+  Model::ImportSnapshotOutcomeCallable ImportSnapshotCallable(const ImportSnapshotRequestT& request) const {
+    return SubmitCallable(&KinesisAnalyticsV2Client::ImportSnapshot, request);
+  }
+
+  /**
+   * An Async wrapper for ImportSnapshot that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ImportSnapshotRequestT = Model::ImportSnapshotRequest>
+  void ImportSnapshotAsync(const ImportSnapshotRequestT& request, const ImportSnapshotResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KinesisAnalyticsV2Client::ImportSnapshot, request, handler, context);
   }
 
   /**
@@ -880,6 +1079,76 @@ class AWS_KINESISANALYTICSV2_API KinesisAnalyticsV2Client : public Aws::Client::
                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                              const ListApplicationsRequestT& request = {}) const {
     return SubmitAsync(&KinesisAnalyticsV2Client::ListApplications, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the operations that were performed on the specified enhanced snapshot,
+   * such as <code>CreateSnapshot</code>, <code>ImportSnapshot</code>, and
+   * <code>ExportSnapshot</code>. The response includes a summary of each
+   * operation.</p> <p>You can specify only one of the <code>SnapshotOperation</code>
+   * or <code>SnapshotOperationStatus</code> filters in a request. If you specify
+   * both, <code>InvalidArgumentException</code> is returned.</p> <p>To get the
+   * complete description of a specific operation, use
+   * <code>DescribeSnapshotOperation</code>. Snapshot operations are available for 90
+   * days after they are created.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListSnapshotOperations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListSnapshotOperationsOutcome ListSnapshotOperations(const Model::ListSnapshotOperationsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListSnapshotOperations that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListSnapshotOperationsRequestT = Model::ListSnapshotOperationsRequest>
+  Model::ListSnapshotOperationsOutcomeCallable ListSnapshotOperationsCallable(const ListSnapshotOperationsRequestT& request) const {
+    return SubmitCallable(&KinesisAnalyticsV2Client::ListSnapshotOperations, request);
+  }
+
+  /**
+   * An Async wrapper for ListSnapshotOperations that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListSnapshotOperationsRequestT = Model::ListSnapshotOperationsRequest>
+  void ListSnapshotOperationsAsync(const ListSnapshotOperationsRequestT& request,
+                                   const ListSnapshotOperationsResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KinesisAnalyticsV2Client::ListSnapshotOperations, request, handler, context);
+  }
+
+  /**
+   * <p>Lists the enhanced snapshots in your account. Snapshots are not scoped to an
+   * application. To list the snapshots that were created from a specific
+   * application, use the <code>SourceApplicationName</code> parameter.</p> <p>You
+   * can specify only one of the following filters in a request:
+   * <code>SourceApplicationName</code>, <code>SnapshotInitiator</code>,
+   * <code>SnapshotInitiatorOperation</code>, or <code>SnapshotStatus</code>. If you
+   * specify more than one filter, <code>InvalidArgumentException</code> is
+   * returned.</p> <p>The results are sorted in descending order of snapshot creation
+   * timestamp. To get detailed information about a specific snapshot, use
+   * <code>DescribeSnapshot</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListSnapshots">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListSnapshotsOutcome ListSnapshots(const Model::ListSnapshotsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListSnapshots that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListSnapshotsRequestT = Model::ListSnapshotsRequest>
+  Model::ListSnapshotsOutcomeCallable ListSnapshotsCallable(const ListSnapshotsRequestT& request = {}) const {
+    return SubmitCallable(&KinesisAnalyticsV2Client::ListSnapshots, request);
+  }
+
+  /**
+   * An Async wrapper for ListSnapshots that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListSnapshotsRequestT = Model::ListSnapshotsRequest>
+  void ListSnapshotsAsync(const ListSnapshotsResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                          const ListSnapshotsRequestT& request = {}) const {
+    return SubmitAsync(&KinesisAnalyticsV2Client::ListSnapshots, request, handler, context);
   }
 
   /**

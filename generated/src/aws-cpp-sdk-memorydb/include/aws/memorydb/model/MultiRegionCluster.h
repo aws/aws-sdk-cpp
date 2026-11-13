@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/memorydb/MemoryDB_EXPORTS.h>
 #include <aws/memorydb/model/RegionalCluster.h>
 
@@ -13,10 +14,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace MemoryDB {
 namespace Model {
@@ -29,9 +29,9 @@ namespace Model {
 class MultiRegionCluster {
  public:
   AWS_MEMORYDB_API MultiRegionCluster() = default;
-  AWS_MEMORYDB_API MultiRegionCluster(Aws::Utils::Json::JsonView jsonValue);
-  AWS_MEMORYDB_API MultiRegionCluster& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_MEMORYDB_API MultiRegionCluster(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_MEMORYDB_API MultiRegionCluster& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_MEMORYDB_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -145,13 +145,13 @@ class MultiRegionCluster {
   /**
    * <p>The number of shards in the multi-Region cluster.</p>
    */
-  inline int GetNumberOfShards() const { return m_numberOfShards; }
+  inline int64_t GetNumberOfShards() const { return m_numberOfShards; }
   inline bool NumberOfShardsHasBeenSet() const { return m_numberOfShardsHasBeenSet; }
-  inline void SetNumberOfShards(int value) {
+  inline void SetNumberOfShards(int64_t value) {
     m_numberOfShardsHasBeenSet = true;
     m_numberOfShards = value;
   }
-  inline MultiRegionCluster& WithNumberOfShards(int value) {
+  inline MultiRegionCluster& WithNumberOfShards(int64_t value) {
     SetNumberOfShards(value);
     return *this;
   }
@@ -245,7 +245,7 @@ class MultiRegionCluster {
 
   Aws::String m_engineVersion;
 
-  int m_numberOfShards{0};
+  int64_t m_numberOfShards{0};
 
   Aws::Vector<RegionalCluster> m_clusters;
 

@@ -83,6 +83,18 @@ DescribePipelineExecutionResult& DescribePipelineExecutionResult::operator=(cons
     m_mLflowConfig = jsonValue.GetObject("MLflowConfig");
     m_mLflowConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("PipelineVersionAliases")) {
+    Aws::Utils::Array<JsonView> pipelineVersionAliasesJsonList = jsonValue.GetArray("PipelineVersionAliases");
+    for (unsigned pipelineVersionAliasesIndex = 0; pipelineVersionAliasesIndex < pipelineVersionAliasesJsonList.GetLength();
+         ++pipelineVersionAliasesIndex) {
+      m_pipelineVersionAliases.push_back(pipelineVersionAliasesJsonList[pipelineVersionAliasesIndex].AsString());
+    }
+    m_pipelineVersionAliasesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("RoleArn")) {
+    m_roleArn = jsonValue.GetString("RoleArn");
+    m_roleArnHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

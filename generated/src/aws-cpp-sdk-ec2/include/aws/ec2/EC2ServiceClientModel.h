@@ -142,6 +142,7 @@
 #include <aws/ec2/model/CreateLocalGatewayVirtualInterfaceResponse.h>
 #include <aws/ec2/model/CreateMacSystemIntegrityProtectionModificationTaskResponse.h>
 #include <aws/ec2/model/CreateManagedPrefixListResponse.h>
+#include <aws/ec2/model/CreateMetricCategoryResponse.h>
 #include <aws/ec2/model/CreateNatGatewayRequest.h>
 #include <aws/ec2/model/CreateNatGatewayResponse.h>
 #include <aws/ec2/model/CreateNetworkAclResponse.h>
@@ -247,6 +248,7 @@
 #include <aws/ec2/model/DeleteLocalGatewayVirtualInterfaceGroupResponse.h>
 #include <aws/ec2/model/DeleteLocalGatewayVirtualInterfaceResponse.h>
 #include <aws/ec2/model/DeleteManagedPrefixListResponse.h>
+#include <aws/ec2/model/DeleteMetricCategoryResponse.h>
 #include <aws/ec2/model/DeleteNatGatewayResponse.h>
 #include <aws/ec2/model/DeleteNetworkInsightsAccessScopeAnalysisResponse.h>
 #include <aws/ec2/model/DeleteNetworkInsightsAccessScopeResponse.h>
@@ -493,6 +495,8 @@
 #include <aws/ec2/model/DescribeMacModificationTasksResponse.h>
 #include <aws/ec2/model/DescribeManagedPrefixListsRequest.h>
 #include <aws/ec2/model/DescribeManagedPrefixListsResponse.h>
+#include <aws/ec2/model/DescribeMetricCategoriesRequest.h>
+#include <aws/ec2/model/DescribeMetricCategoriesResponse.h>
 #include <aws/ec2/model/DescribeMovingAddressesRequest.h>
 #include <aws/ec2/model/DescribeMovingAddressesResponse.h>
 #include <aws/ec2/model/DescribeNatGatewaysRequest.h>
@@ -902,6 +906,7 @@
 #include <aws/ec2/model/ModifyLocalGatewayRouteResponse.h>
 #include <aws/ec2/model/ModifyManagedPrefixListResponse.h>
 #include <aws/ec2/model/ModifyManagedResourceVisibilityResponse.h>
+#include <aws/ec2/model/ModifyMetricCategoryResponse.h>
 #include <aws/ec2/model/ModifyPrivateDnsNameOptionsResponse.h>
 #include <aws/ec2/model/ModifyPublicIpDnsNameOptionsResponse.h>
 #include <aws/ec2/model/ModifyReservedInstancesResponse.h>
@@ -1168,6 +1173,7 @@ class CreateLocalGatewayVirtualInterfaceRequest;
 class CreateLocalGatewayVirtualInterfaceGroupRequest;
 class CreateMacSystemIntegrityProtectionModificationTaskRequest;
 class CreateManagedPrefixListRequest;
+class CreateMetricCategoryRequest;
 class CreateNatGatewayRequest;
 class CreateNetworkAclRequest;
 class CreateNetworkAclEntryRequest;
@@ -1267,6 +1273,7 @@ class DeleteLocalGatewayRouteTableVpcAssociationRequest;
 class DeleteLocalGatewayVirtualInterfaceRequest;
 class DeleteLocalGatewayVirtualInterfaceGroupRequest;
 class DeleteManagedPrefixListRequest;
+class DeleteMetricCategoryRequest;
 class DeleteNatGatewayRequest;
 class DeleteNetworkAclRequest;
 class DeleteNetworkAclEntryRequest;
@@ -1437,6 +1444,7 @@ class DescribeLockedSnapshotsRequest;
 class DescribeMacHostsRequest;
 class DescribeMacModificationTasksRequest;
 class DescribeManagedPrefixListsRequest;
+class DescribeMetricCategoriesRequest;
 class DescribeMovingAddressesRequest;
 class DescribeNatGatewaysRequest;
 class DescribeNetworkAclsRequest;
@@ -1739,6 +1747,7 @@ class ModifyLaunchTemplateRequest;
 class ModifyLocalGatewayRouteRequest;
 class ModifyManagedPrefixListRequest;
 class ModifyManagedResourceVisibilityRequest;
+class ModifyMetricCategoryRequest;
 class ModifyNetworkInterfaceAttributeRequest;
 class ModifyPrivateDnsNameOptionsRequest;
 class ModifyPublicIpDnsNameOptionsRequest;
@@ -1988,6 +1997,7 @@ typedef Aws::Utils::Outcome<CreateLocalGatewayVirtualInterfaceGroupResponse, EC2
 typedef Aws::Utils::Outcome<CreateMacSystemIntegrityProtectionModificationTaskResponse, EC2Error>
     CreateMacSystemIntegrityProtectionModificationTaskOutcome;
 typedef Aws::Utils::Outcome<CreateManagedPrefixListResponse, EC2Error> CreateManagedPrefixListOutcome;
+typedef Aws::Utils::Outcome<CreateMetricCategoryResponse, EC2Error> CreateMetricCategoryOutcome;
 typedef Aws::Utils::Outcome<CreateNatGatewayResponse, EC2Error> CreateNatGatewayOutcome;
 typedef Aws::Utils::Outcome<CreateNetworkAclResponse, EC2Error> CreateNetworkAclOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> CreateNetworkAclEntryOutcome;
@@ -2089,6 +2099,7 @@ typedef Aws::Utils::Outcome<DeleteLocalGatewayRouteTableVpcAssociationResponse, 
 typedef Aws::Utils::Outcome<DeleteLocalGatewayVirtualInterfaceResponse, EC2Error> DeleteLocalGatewayVirtualInterfaceOutcome;
 typedef Aws::Utils::Outcome<DeleteLocalGatewayVirtualInterfaceGroupResponse, EC2Error> DeleteLocalGatewayVirtualInterfaceGroupOutcome;
 typedef Aws::Utils::Outcome<DeleteManagedPrefixListResponse, EC2Error> DeleteManagedPrefixListOutcome;
+typedef Aws::Utils::Outcome<DeleteMetricCategoryResponse, EC2Error> DeleteMetricCategoryOutcome;
 typedef Aws::Utils::Outcome<DeleteNatGatewayResponse, EC2Error> DeleteNatGatewayOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DeleteNetworkAclOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> DeleteNetworkAclEntryOutcome;
@@ -2269,6 +2280,7 @@ typedef Aws::Utils::Outcome<DescribeLockedSnapshotsResponse, EC2Error> DescribeL
 typedef Aws::Utils::Outcome<DescribeMacHostsResponse, EC2Error> DescribeMacHostsOutcome;
 typedef Aws::Utils::Outcome<DescribeMacModificationTasksResponse, EC2Error> DescribeMacModificationTasksOutcome;
 typedef Aws::Utils::Outcome<DescribeManagedPrefixListsResponse, EC2Error> DescribeManagedPrefixListsOutcome;
+typedef Aws::Utils::Outcome<DescribeMetricCategoriesResponse, EC2Error> DescribeMetricCategoriesOutcome;
 typedef Aws::Utils::Outcome<DescribeMovingAddressesResponse, EC2Error> DescribeMovingAddressesOutcome;
 typedef Aws::Utils::Outcome<DescribeNatGatewaysResponse, EC2Error> DescribeNatGatewaysOutcome;
 typedef Aws::Utils::Outcome<DescribeNetworkAclsResponse, EC2Error> DescribeNetworkAclsOutcome;
@@ -2585,6 +2597,7 @@ typedef Aws::Utils::Outcome<ModifyLaunchTemplateResponse, EC2Error> ModifyLaunch
 typedef Aws::Utils::Outcome<ModifyLocalGatewayRouteResponse, EC2Error> ModifyLocalGatewayRouteOutcome;
 typedef Aws::Utils::Outcome<ModifyManagedPrefixListResponse, EC2Error> ModifyManagedPrefixListOutcome;
 typedef Aws::Utils::Outcome<ModifyManagedResourceVisibilityResponse, EC2Error> ModifyManagedResourceVisibilityOutcome;
+typedef Aws::Utils::Outcome<ModifyMetricCategoryResponse, EC2Error> ModifyMetricCategoryOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> ModifyNetworkInterfaceAttributeOutcome;
 typedef Aws::Utils::Outcome<ModifyPrivateDnsNameOptionsResponse, EC2Error> ModifyPrivateDnsNameOptionsOutcome;
 typedef Aws::Utils::Outcome<ModifyPublicIpDnsNameOptionsResponse, EC2Error> ModifyPublicIpDnsNameOptionsOutcome;
@@ -2841,6 +2854,7 @@ typedef std::future<CreateLocalGatewayVirtualInterfaceGroupOutcome> CreateLocalG
 typedef std::future<CreateMacSystemIntegrityProtectionModificationTaskOutcome>
     CreateMacSystemIntegrityProtectionModificationTaskOutcomeCallable;
 typedef std::future<CreateManagedPrefixListOutcome> CreateManagedPrefixListOutcomeCallable;
+typedef std::future<CreateMetricCategoryOutcome> CreateMetricCategoryOutcomeCallable;
 typedef std::future<CreateNatGatewayOutcome> CreateNatGatewayOutcomeCallable;
 typedef std::future<CreateNetworkAclOutcome> CreateNetworkAclOutcomeCallable;
 typedef std::future<CreateNetworkAclEntryOutcome> CreateNetworkAclEntryOutcomeCallable;
@@ -2941,6 +2955,7 @@ typedef std::future<DeleteLocalGatewayRouteTableVpcAssociationOutcome> DeleteLoc
 typedef std::future<DeleteLocalGatewayVirtualInterfaceOutcome> DeleteLocalGatewayVirtualInterfaceOutcomeCallable;
 typedef std::future<DeleteLocalGatewayVirtualInterfaceGroupOutcome> DeleteLocalGatewayVirtualInterfaceGroupOutcomeCallable;
 typedef std::future<DeleteManagedPrefixListOutcome> DeleteManagedPrefixListOutcomeCallable;
+typedef std::future<DeleteMetricCategoryOutcome> DeleteMetricCategoryOutcomeCallable;
 typedef std::future<DeleteNatGatewayOutcome> DeleteNatGatewayOutcomeCallable;
 typedef std::future<DeleteNetworkAclOutcome> DeleteNetworkAclOutcomeCallable;
 typedef std::future<DeleteNetworkAclEntryOutcome> DeleteNetworkAclEntryOutcomeCallable;
@@ -3113,6 +3128,7 @@ typedef std::future<DescribeLockedSnapshotsOutcome> DescribeLockedSnapshotsOutco
 typedef std::future<DescribeMacHostsOutcome> DescribeMacHostsOutcomeCallable;
 typedef std::future<DescribeMacModificationTasksOutcome> DescribeMacModificationTasksOutcomeCallable;
 typedef std::future<DescribeManagedPrefixListsOutcome> DescribeManagedPrefixListsOutcomeCallable;
+typedef std::future<DescribeMetricCategoriesOutcome> DescribeMetricCategoriesOutcomeCallable;
 typedef std::future<DescribeMovingAddressesOutcome> DescribeMovingAddressesOutcomeCallable;
 typedef std::future<DescribeNatGatewaysOutcome> DescribeNatGatewaysOutcomeCallable;
 typedef std::future<DescribeNetworkAclsOutcome> DescribeNetworkAclsOutcomeCallable;
@@ -3416,6 +3432,7 @@ typedef std::future<ModifyLaunchTemplateOutcome> ModifyLaunchTemplateOutcomeCall
 typedef std::future<ModifyLocalGatewayRouteOutcome> ModifyLocalGatewayRouteOutcomeCallable;
 typedef std::future<ModifyManagedPrefixListOutcome> ModifyManagedPrefixListOutcomeCallable;
 typedef std::future<ModifyManagedResourceVisibilityOutcome> ModifyManagedResourceVisibilityOutcomeCallable;
+typedef std::future<ModifyMetricCategoryOutcome> ModifyMetricCategoryOutcomeCallable;
 typedef std::future<ModifyNetworkInterfaceAttributeOutcome> ModifyNetworkInterfaceAttributeOutcomeCallable;
 typedef std::future<ModifyPrivateDnsNameOptionsOutcome> ModifyPrivateDnsNameOptionsOutcomeCallable;
 typedef std::future<ModifyPublicIpDnsNameOptionsOutcome> ModifyPublicIpDnsNameOptionsOutcomeCallable;
@@ -3938,6 +3955,9 @@ typedef std::function<void(const EC2Client*, const Model::CreateMacSystemIntegri
 typedef std::function<void(const EC2Client*, const Model::CreateManagedPrefixListRequest&, const Model::CreateManagedPrefixListOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateManagedPrefixListResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::CreateMetricCategoryRequest&, const Model::CreateMetricCategoryOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateMetricCategoryResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::CreateNatGatewayRequest&, const Model::CreateNatGatewayOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateNatGatewayResponseReceivedHandler;
@@ -4273,6 +4293,9 @@ typedef std::function<void(const EC2Client*, const Model::DeleteLocalGatewayVirt
 typedef std::function<void(const EC2Client*, const Model::DeleteManagedPrefixListRequest&, const Model::DeleteManagedPrefixListOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteManagedPrefixListResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::DeleteMetricCategoryRequest&, const Model::DeleteMetricCategoryOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteMetricCategoryResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::DeleteNatGatewayRequest&, const Model::DeleteNatGatewayOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteNatGatewayResponseReceivedHandler;
@@ -4856,6 +4879,9 @@ typedef std::function<void(const EC2Client*, const Model::DescribeMacModificatio
 typedef std::function<void(const EC2Client*, const Model::DescribeManagedPrefixListsRequest&,
                            const Model::DescribeManagedPrefixListsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeManagedPrefixListsResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::DescribeMetricCategoriesRequest&, const Model::DescribeMetricCategoriesOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeMetricCategoriesResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::DescribeMovingAddressesRequest&, const Model::DescribeMovingAddressesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeMovingAddressesResponseReceivedHandler;
@@ -5922,6 +5948,9 @@ typedef std::function<void(const EC2Client*, const Model::ModifyManagedResourceV
                            const Model::ModifyManagedResourceVisibilityOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ModifyManagedResourceVisibilityResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::ModifyMetricCategoryRequest&, const Model::ModifyMetricCategoryOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ModifyMetricCategoryResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::ModifyNetworkInterfaceAttributeRequest&,
                            const Model::ModifyNetworkInterfaceAttributeOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

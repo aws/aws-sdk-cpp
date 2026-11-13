@@ -26,6 +26,7 @@
 #include <aws/lightsail/model/AttachInstancesToLoadBalancerRequest.h>
 #include <aws/lightsail/model/AttachLoadBalancerTlsCertificateRequest.h>
 #include <aws/lightsail/model/AttachStaticIpRequest.h>
+#include <aws/lightsail/model/CheckSubdomainAvailabilityRequest.h>
 #include <aws/lightsail/model/CloseInstancePublicPortsRequest.h>
 #include <aws/lightsail/model/CopySnapshotRequest.h>
 #include <aws/lightsail/model/CreateBucketAccessKeyRequest.h>
@@ -52,6 +53,7 @@
 #include <aws/lightsail/model/CreateRelationalDatabaseFromSnapshotRequest.h>
 #include <aws/lightsail/model/CreateRelationalDatabaseRequest.h>
 #include <aws/lightsail/model/CreateRelationalDatabaseSnapshotRequest.h>
+#include <aws/lightsail/model/CreateSubdomainRequest.h>
 #include <aws/lightsail/model/DeleteAlarmRequest.h>
 #include <aws/lightsail/model/DeleteAutoSnapshotRequest.h>
 #include <aws/lightsail/model/DeleteBucketAccessKeyRequest.h>
@@ -73,6 +75,7 @@
 #include <aws/lightsail/model/DeleteLoadBalancerTlsCertificateRequest.h>
 #include <aws/lightsail/model/DeleteRelationalDatabaseRequest.h>
 #include <aws/lightsail/model/DeleteRelationalDatabaseSnapshotRequest.h>
+#include <aws/lightsail/model/DeleteSubdomainRequest.h>
 #include <aws/lightsail/model/DetachCertificateFromDistributionRequest.h>
 #include <aws/lightsail/model/DetachDiskRequest.h>
 #include <aws/lightsail/model/DetachInstancesFromLoadBalancerRequest.h>
@@ -147,6 +150,7 @@
 #include <aws/lightsail/model/GetSetupHistoryRequest.h>
 #include <aws/lightsail/model/GetStaticIpRequest.h>
 #include <aws/lightsail/model/GetStaticIpsRequest.h>
+#include <aws/lightsail/model/GetSubdomainsRequest.h>
 #include <aws/lightsail/model/ImportKeyPairRequest.h>
 #include <aws/lightsail/model/IsVpcPeeredRequest.h>
 #include <aws/lightsail/model/OpenInstancePublicPortsRequest.h>
@@ -182,6 +186,7 @@
 #include <aws/lightsail/model/UpdateLoadBalancerAttributeRequest.h>
 #include <aws/lightsail/model/UpdateRelationalDatabaseParametersRequest.h>
 #include <aws/lightsail/model/UpdateRelationalDatabaseRequest.h>
+#include <aws/lightsail/model/UpdateSubdomainAssociationRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -371,6 +376,12 @@ AttachStaticIpOutcome LightsailClient::AttachStaticIp(const AttachStaticIpReques
   return result.IsSuccess() ? AttachStaticIpOutcome(result.GetResultWithOwnership()) : AttachStaticIpOutcome(std::move(result.GetError()));
 }
 
+CheckSubdomainAvailabilityOutcome LightsailClient::CheckSubdomainAvailability(const CheckSubdomainAvailabilityRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CheckSubdomainAvailabilityOutcome(result.GetResultWithOwnership())
+                            : CheckSubdomainAvailabilityOutcome(std::move(result.GetError()));
+}
+
 CloseInstancePublicPortsOutcome LightsailClient::CloseInstancePublicPorts(const CloseInstancePublicPortsRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CloseInstancePublicPortsOutcome(result.GetResultWithOwnership())
@@ -528,6 +539,12 @@ CreateRelationalDatabaseSnapshotOutcome LightsailClient::CreateRelationalDatabas
                             : CreateRelationalDatabaseSnapshotOutcome(std::move(result.GetError()));
 }
 
+CreateSubdomainOutcome LightsailClient::CreateSubdomain(const CreateSubdomainRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateSubdomainOutcome(result.GetResultWithOwnership())
+                            : CreateSubdomainOutcome(std::move(result.GetError()));
+}
+
 DeleteAlarmOutcome LightsailClient::DeleteAlarm(const DeleteAlarmRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteAlarmOutcome(result.GetResultWithOwnership()) : DeleteAlarmOutcome(std::move(result.GetError()));
@@ -648,6 +665,12 @@ DeleteRelationalDatabaseSnapshotOutcome LightsailClient::DeleteRelationalDatabas
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteRelationalDatabaseSnapshotOutcome(result.GetResultWithOwnership())
                             : DeleteRelationalDatabaseSnapshotOutcome(std::move(result.GetError()));
+}
+
+DeleteSubdomainOutcome LightsailClient::DeleteSubdomain(const DeleteSubdomainRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteSubdomainOutcome(result.GetResultWithOwnership())
+                            : DeleteSubdomainOutcome(std::move(result.GetError()));
 }
 
 DetachCertificateFromDistributionOutcome LightsailClient::DetachCertificateFromDistribution(
@@ -1086,6 +1109,11 @@ GetStaticIpsOutcome LightsailClient::GetStaticIps(const GetStaticIpsRequest& req
   return result.IsSuccess() ? GetStaticIpsOutcome(result.GetResultWithOwnership()) : GetStaticIpsOutcome(std::move(result.GetError()));
 }
 
+GetSubdomainsOutcome LightsailClient::GetSubdomains(const GetSubdomainsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetSubdomainsOutcome(result.GetResultWithOwnership()) : GetSubdomainsOutcome(std::move(result.GetError()));
+}
+
 ImportKeyPairOutcome LightsailClient::ImportKeyPair(const ImportKeyPairRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ImportKeyPairOutcome(result.GetResultWithOwnership()) : ImportKeyPairOutcome(std::move(result.GetError()));
@@ -1284,4 +1312,10 @@ UpdateRelationalDatabaseParametersOutcome LightsailClient::UpdateRelationalDatab
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UpdateRelationalDatabaseParametersOutcome(result.GetResultWithOwnership())
                             : UpdateRelationalDatabaseParametersOutcome(std::move(result.GetError()));
+}
+
+UpdateSubdomainAssociationOutcome LightsailClient::UpdateSubdomainAssociation(const UpdateSubdomainAssociationRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateSubdomainAssociationOutcome(result.GetResultWithOwnership())
+                            : UpdateSubdomainAssociationOutcome(std::move(result.GetError()));
 }

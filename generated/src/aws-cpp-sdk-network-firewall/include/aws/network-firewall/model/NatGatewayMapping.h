@@ -5,23 +5,23 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace NetworkFirewall {
 namespace Model {
 
 /**
  * <p>A NAT gateway that a proxy mode firewall uses to proxy traffic. This is used
- * in <a>CreateFirewall</a> when <code>NoSourcePreservation</code> is
+ * in <code>CreateFirewall</code> when <code>NoSourcePreservation</code> is
  * <code>TRUE</code>. </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/NatGatewayMapping">AWS
  * API Reference</a></p>
@@ -29,9 +29,9 @@ namespace Model {
 class NatGatewayMapping {
  public:
   AWS_NETWORKFIREWALL_API NatGatewayMapping() = default;
-  AWS_NETWORKFIREWALL_API NatGatewayMapping(Aws::Utils::Json::JsonView jsonValue);
-  AWS_NETWORKFIREWALL_API NatGatewayMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_NETWORKFIREWALL_API NatGatewayMapping(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_NETWORKFIREWALL_API NatGatewayMapping& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_NETWORKFIREWALL_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

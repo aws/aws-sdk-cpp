@@ -23,7 +23,8 @@ enum class Protocol {
   srt_caller,
   fujitsu_qos,
   udp,
-  ndi_speed_hq
+  ndi_speed_hq,
+  rtmp_push
 };
 
 namespace ProtocolMapper {

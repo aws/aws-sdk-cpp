@@ -142,6 +142,10 @@ Run& Run::operator=(JsonView jsonValue) {
     m_testSpecArn = jsonValue.GetString("testSpecArn");
     m_testSpecArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("testPackageArn")) {
+    m_testPackageArn = jsonValue.GetString("testPackageArn");
+    m_testPackageArnHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("deviceSelectionResult")) {
     m_deviceSelectionResult = jsonValue.GetObject("deviceSelectionResult");
     m_deviceSelectionResultHasBeenSet = true;
@@ -301,6 +305,10 @@ JsonValue Run::Jsonize() const {
 
   if (m_testSpecArnHasBeenSet) {
     payload.WithString("testSpecArn", m_testSpecArn);
+  }
+
+  if (m_testPackageArnHasBeenSet) {
+    payload.WithString("testPackageArn", m_testPackageArn);
   }
 
   if (m_deviceSelectionResultHasBeenSet) {

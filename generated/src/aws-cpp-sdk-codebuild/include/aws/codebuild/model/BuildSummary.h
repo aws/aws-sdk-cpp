@@ -10,15 +10,15 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace CodeBuild {
 namespace Model {
@@ -32,9 +32,9 @@ namespace Model {
 class BuildSummary {
  public:
   AWS_CODEBUILD_API BuildSummary() = default;
-  AWS_CODEBUILD_API BuildSummary(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CODEBUILD_API BuildSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_CODEBUILD_API BuildSummary(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CODEBUILD_API BuildSummary& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CODEBUILD_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

@@ -143,6 +143,24 @@ class ApplicationSummary {
 
   ///@{
   /**
+   * <p>The Amazon Web Services Region where the application was last modified.</p>
+   */
+  inline const Aws::String& GetLastModifiedRegion() const { return m_lastModifiedRegion; }
+  inline bool LastModifiedRegionHasBeenSet() const { return m_lastModifiedRegionHasBeenSet; }
+  template <typename LastModifiedRegionT = Aws::String>
+  void SetLastModifiedRegion(LastModifiedRegionT&& value) {
+    m_lastModifiedRegionHasBeenSet = true;
+    m_lastModifiedRegion = std::forward<LastModifiedRegionT>(value);
+  }
+  template <typename LastModifiedRegionT = Aws::String>
+  ApplicationSummary& WithLastModifiedRegion(LastModifiedRegionT&& value) {
+    SetLastModifiedRegion(std::forward<LastModifiedRegionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The type of application.</p>
    */
   inline ApplicationType GetApplicationType() const { return m_applicationType; }
@@ -169,6 +187,8 @@ class ApplicationSummary {
 
   Aws::Utils::DateTime m_lastModifiedTime{};
 
+  Aws::String m_lastModifiedRegion;
+
   ApplicationType m_applicationType{ApplicationType::NOT_SET};
   bool m_arnHasBeenSet = false;
   bool m_idHasBeenSet = false;
@@ -176,6 +196,7 @@ class ApplicationSummary {
   bool m_namespaceHasBeenSet = false;
   bool m_createdTimeHasBeenSet = false;
   bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_lastModifiedRegionHasBeenSet = false;
   bool m_applicationTypeHasBeenSet = false;
 };
 

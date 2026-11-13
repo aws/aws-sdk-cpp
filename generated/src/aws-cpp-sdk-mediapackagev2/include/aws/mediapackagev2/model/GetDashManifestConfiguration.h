@@ -9,6 +9,7 @@
 #include <aws/mediapackagev2/Mediapackagev2_EXPORTS.h>
 #include <aws/mediapackagev2/model/DashAudioTimelinePattern.h>
 #include <aws/mediapackagev2/model/DashAvailabilityStartTimeConfiguration.h>
+#include <aws/mediapackagev2/model/DashBandwidthReportingMode.h>
 #include <aws/mediapackagev2/model/DashBaseUrl.h>
 #include <aws/mediapackagev2/model/DashCompactness.h>
 #include <aws/mediapackagev2/model/DashDrmSignaling.h>
@@ -378,6 +379,31 @@ class GetDashManifestConfiguration {
 
   ///@{
   /**
+   * <p>Specifies how MediaPackage calculates the <code>bandwidth</code> attribute of
+   * regular (non-iFrame) video <code>Representation</code> elements in the DASH
+   * manifest. Audio, subtitle, image, and iFrame-only (trick-play) representations
+   * are unchanged.</p> <p>The allowed values are:</p> <ul> <li> <p>
+   * <code>AVERAGE</code> – MediaPackage reports the average bitrate of the source
+   * video track. This is the default.</p> </li> <li> <p> <code>MAX</code> –
+   * MediaPackage reports the peak bitrate of the video stream.</p> </li> </ul>
+   * <p>For information about bandwidth reporting, see <a
+   * href="https://docs.aws.amazon.com/mediapackage/latest/userguide/dash-bandwidth-reporting.html">DASH
+   * bandwidth reporting</a> in the <i>Elemental MediaPackage v2 User Guide</i>.</p>
+   */
+  inline DashBandwidthReportingMode GetBandwidthReportingMode() const { return m_bandwidthReportingMode; }
+  inline bool BandwidthReportingModeHasBeenSet() const { return m_bandwidthReportingModeHasBeenSet; }
+  inline void SetBandwidthReportingMode(DashBandwidthReportingMode value) {
+    m_bandwidthReportingModeHasBeenSet = true;
+    m_bandwidthReportingMode = value;
+  }
+  inline GetDashManifestConfiguration& WithBandwidthReportingMode(DashBandwidthReportingMode value) {
+    SetBandwidthReportingMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>How MediaPackage represents the audio timeline in the DASH manifest, using
    * DASH Segment Duration Patternization for audio adaptation sets.
    * <code>PATTERNED</code> indicates that MediaPackage uses a pattern-based segment
@@ -487,6 +513,8 @@ class GetDashManifestConfiguration {
 
   DashCompactness m_compactness{DashCompactness::NOT_SET};
 
+  DashBandwidthReportingMode m_bandwidthReportingMode{DashBandwidthReportingMode::NOT_SET};
+
   DashAudioTimelinePattern m_audioTimelinePattern{DashAudioTimelinePattern::NOT_SET};
 
   DashSubtitleConfiguration m_subtitleConfiguration;
@@ -511,6 +539,7 @@ class GetDashManifestConfiguration {
   bool m_programInformationHasBeenSet = false;
   bool m_dvbSettingsHasBeenSet = false;
   bool m_compactnessHasBeenSet = false;
+  bool m_bandwidthReportingModeHasBeenSet = false;
   bool m_audioTimelinePatternHasBeenSet = false;
   bool m_subtitleConfigurationHasBeenSet = false;
   bool m_uriPathTypeHasBeenSet = false;

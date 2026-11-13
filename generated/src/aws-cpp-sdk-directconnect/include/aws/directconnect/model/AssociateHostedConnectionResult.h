@@ -8,6 +8,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/directconnect/model/BillingMode.h>
 #include <aws/directconnect/model/ConnectionState.h>
@@ -17,15 +18,14 @@
 #include <aws/directconnect/model/Tag.h>
 
 #include <utility>
-
 namespace Aws {
 template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
 namespace Utils {
-namespace Json {
-class JsonValue;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace DirectConnect {
 namespace Model {
@@ -37,8 +37,8 @@ namespace Model {
 class AssociateHostedConnectionResult {
  public:
   AWS_DIRECTCONNECT_API AssociateHostedConnectionResult() = default;
-  AWS_DIRECTCONNECT_API AssociateHostedConnectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-  AWS_DIRECTCONNECT_API AssociateHostedConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_DIRECTCONNECT_API AssociateHostedConnectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
+  AWS_DIRECTCONNECT_API AssociateHostedConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
 
   ///@{
   /**
@@ -176,12 +176,12 @@ class AssociateHostedConnectionResult {
   /**
    * <p>The ID of the VLAN.</p>
    */
-  inline int GetVlan() const { return m_vlan; }
-  inline void SetVlan(int value) {
+  inline int64_t GetVlan() const { return m_vlan; }
+  inline void SetVlan(int64_t value) {
     m_vlanHasBeenSet = true;
     m_vlan = value;
   }
-  inline AssociateHostedConnectionResult& WithVlan(int value) {
+  inline AssociateHostedConnectionResult& WithVlan(int64_t value) {
     SetVlan(value);
     return *this;
   }
@@ -480,12 +480,12 @@ class AssociateHostedConnectionResult {
    * virtual interfaces on the connection. Not applicable to hosted connections or
    * interconnects.</p>
    */
-  inline int GetPrefixPoolSizeIpv4() const { return m_prefixPoolSizeIpv4; }
-  inline void SetPrefixPoolSizeIpv4(int value) {
+  inline int64_t GetPrefixPoolSizeIpv4() const { return m_prefixPoolSizeIpv4; }
+  inline void SetPrefixPoolSizeIpv4(int64_t value) {
     m_prefixPoolSizeIpv4HasBeenSet = true;
     m_prefixPoolSizeIpv4 = value;
   }
-  inline AssociateHostedConnectionResult& WithPrefixPoolSizeIpv4(int value) {
+  inline AssociateHostedConnectionResult& WithPrefixPoolSizeIpv4(int64_t value) {
     SetPrefixPoolSizeIpv4(value);
     return *this;
   }
@@ -497,12 +497,12 @@ class AssociateHostedConnectionResult {
    * virtual interfaces on the connection. Not applicable to hosted connections or
    * interconnects.</p>
    */
-  inline int GetPrefixPoolSizeIpv6() const { return m_prefixPoolSizeIpv6; }
-  inline void SetPrefixPoolSizeIpv6(int value) {
+  inline int64_t GetPrefixPoolSizeIpv6() const { return m_prefixPoolSizeIpv6; }
+  inline void SetPrefixPoolSizeIpv6(int64_t value) {
     m_prefixPoolSizeIpv6HasBeenSet = true;
     m_prefixPoolSizeIpv6 = value;
   }
-  inline AssociateHostedConnectionResult& WithPrefixPoolSizeIpv6(int value) {
+  inline AssociateHostedConnectionResult& WithPrefixPoolSizeIpv6(int64_t value) {
     SetPrefixPoolSizeIpv6(value);
     return *this;
   }
@@ -514,12 +514,12 @@ class AssociateHostedConnectionResult {
    * yet allocated to a virtual interface. Not applicable to hosted connections or
    * interconnects.</p>
    */
-  inline int GetPrefixPoolUnallocatedCountIpv4() const { return m_prefixPoolUnallocatedCountIpv4; }
-  inline void SetPrefixPoolUnallocatedCountIpv4(int value) {
+  inline int64_t GetPrefixPoolUnallocatedCountIpv4() const { return m_prefixPoolUnallocatedCountIpv4; }
+  inline void SetPrefixPoolUnallocatedCountIpv4(int64_t value) {
     m_prefixPoolUnallocatedCountIpv4HasBeenSet = true;
     m_prefixPoolUnallocatedCountIpv4 = value;
   }
-  inline AssociateHostedConnectionResult& WithPrefixPoolUnallocatedCountIpv4(int value) {
+  inline AssociateHostedConnectionResult& WithPrefixPoolUnallocatedCountIpv4(int64_t value) {
     SetPrefixPoolUnallocatedCountIpv4(value);
     return *this;
   }
@@ -531,12 +531,12 @@ class AssociateHostedConnectionResult {
    * yet allocated to a virtual interface. Not applicable to hosted connections or
    * interconnects.</p>
    */
-  inline int GetPrefixPoolUnallocatedCountIpv6() const { return m_prefixPoolUnallocatedCountIpv6; }
-  inline void SetPrefixPoolUnallocatedCountIpv6(int value) {
+  inline int64_t GetPrefixPoolUnallocatedCountIpv6() const { return m_prefixPoolUnallocatedCountIpv6; }
+  inline void SetPrefixPoolUnallocatedCountIpv6(int64_t value) {
     m_prefixPoolUnallocatedCountIpv6HasBeenSet = true;
     m_prefixPoolUnallocatedCountIpv6 = value;
   }
-  inline AssociateHostedConnectionResult& WithPrefixPoolUnallocatedCountIpv6(int value) {
+  inline AssociateHostedConnectionResult& WithPrefixPoolUnallocatedCountIpv6(int64_t value) {
     SetPrefixPoolUnallocatedCountIpv6(value);
     return *this;
   }
@@ -588,7 +588,7 @@ class AssociateHostedConnectionResult {
 
   Aws::String m_bandwidth;
 
-  int m_vlan{0};
+  int64_t m_vlan{0};
 
   Aws::String m_partnerName;
 
@@ -622,13 +622,13 @@ class AssociateHostedConnectionResult {
 
   bool m_partnerInterconnectMacSecCapable{false};
 
-  int m_prefixPoolSizeIpv4{0};
+  int64_t m_prefixPoolSizeIpv4{0};
 
-  int m_prefixPoolSizeIpv6{0};
+  int64_t m_prefixPoolSizeIpv6{0};
 
-  int m_prefixPoolUnallocatedCountIpv4{0};
+  int64_t m_prefixPoolUnallocatedCountIpv4{0};
 
-  int m_prefixPoolUnallocatedCountIpv6{0};
+  int64_t m_prefixPoolUnallocatedCountIpv6{0};
 
   BillingMode m_billingMode{BillingMode::NOT_SET};
 

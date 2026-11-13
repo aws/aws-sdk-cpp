@@ -5,16 +5,16 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace NetworkFirewall {
 namespace Model {
@@ -28,9 +28,9 @@ namespace Model {
 class ProxyConfigRuleGroup {
  public:
   AWS_NETWORKFIREWALL_API ProxyConfigRuleGroup() = default;
-  AWS_NETWORKFIREWALL_API ProxyConfigRuleGroup(Aws::Utils::Json::JsonView jsonValue);
-  AWS_NETWORKFIREWALL_API ProxyConfigRuleGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_NETWORKFIREWALL_API ProxyConfigRuleGroup(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_NETWORKFIREWALL_API ProxyConfigRuleGroup& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_NETWORKFIREWALL_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -91,13 +91,13 @@ class ProxyConfigRuleGroup {
   /**
    * <p>Priority of the proxy rule group in the proxy configuration. </p>
    */
-  inline int GetPriority() const { return m_priority; }
+  inline int64_t GetPriority() const { return m_priority; }
   inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
-  inline void SetPriority(int value) {
+  inline void SetPriority(int64_t value) {
     m_priorityHasBeenSet = true;
     m_priority = value;
   }
-  inline ProxyConfigRuleGroup& WithPriority(int value) {
+  inline ProxyConfigRuleGroup& WithPriority(int64_t value) {
     SetPriority(value);
     return *this;
   }
@@ -109,7 +109,7 @@ class ProxyConfigRuleGroup {
 
   Aws::String m_type;
 
-  int m_priority{0};
+  int64_t m_priority{0};
   bool m_proxyRuleGroupNameHasBeenSet = false;
   bool m_proxyRuleGroupArnHasBeenSet = false;
   bool m_typeHasBeenSet = false;

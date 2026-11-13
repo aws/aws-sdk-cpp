@@ -36,6 +36,7 @@
 #include <aws/route53profiles/model/ListTagsForResourceResult.h>
 #include <aws/route53profiles/model/TagResourceResult.h>
 #include <aws/route53profiles/model/UntagResourceResult.h>
+#include <aws/route53profiles/model/UpdateProfileAssociationResult.h>
 #include <aws/route53profiles/model/UpdateProfileResourceAssociationResult.h>
 /* End of service model headers required in Route53ProfilesClient header */
 
@@ -85,6 +86,7 @@ class ListProfilesRequest;
 class ListTagsForResourceRequest;
 class TagResourceRequest;
 class UntagResourceRequest;
+class UpdateProfileAssociationRequest;
 class UpdateProfileResourceAssociationRequest;
 /* End of service model forward declarations required in Route53ProfilesClient header */
 
@@ -104,6 +106,7 @@ typedef Aws::Utils::Outcome<ListProfilesResult, Route53ProfilesError> ListProfil
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, Route53ProfilesError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, Route53ProfilesError> TagResourceOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, Route53ProfilesError> UntagResourceOutcome;
+typedef Aws::Utils::Outcome<UpdateProfileAssociationResult, Route53ProfilesError> UpdateProfileAssociationOutcome;
 typedef Aws::Utils::Outcome<UpdateProfileResourceAssociationResult, Route53ProfilesError> UpdateProfileResourceAssociationOutcome;
 /* End of service model Outcome class definitions */
 
@@ -123,6 +126,7 @@ typedef std::future<ListProfilesOutcome> ListProfilesOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+typedef std::future<UpdateProfileAssociationOutcome> UpdateProfileAssociationOutcomeCallable;
 typedef std::future<UpdateProfileResourceAssociationOutcome> UpdateProfileResourceAssociationOutcomeCallable;
 /* End of service model Outcome callable definitions */
 }  // namespace Model
@@ -178,6 +182,9 @@ typedef std::function<void(const Route53ProfilesClient*, const Model::TagResourc
 typedef std::function<void(const Route53ProfilesClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UntagResourceResponseReceivedHandler;
+typedef std::function<void(const Route53ProfilesClient*, const Model::UpdateProfileAssociationRequest&,
+                           const Model::UpdateProfileAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateProfileAssociationResponseReceivedHandler;
 typedef std::function<void(const Route53ProfilesClient*, const Model::UpdateProfileResourceAssociationRequest&,
                            const Model::UpdateProfileResourceAssociationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

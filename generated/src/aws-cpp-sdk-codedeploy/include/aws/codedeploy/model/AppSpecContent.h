@@ -6,15 +6,15 @@
 #pragma once
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace CodeDeploy {
 namespace Model {
@@ -30,9 +30,9 @@ namespace Model {
 class AppSpecContent {
  public:
   AWS_CODEDEPLOY_API AppSpecContent() = default;
-  AWS_CODEDEPLOY_API AppSpecContent(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CODEDEPLOY_API AppSpecContent& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_CODEDEPLOY_API AppSpecContent(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CODEDEPLOY_API AppSpecContent& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CODEDEPLOY_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

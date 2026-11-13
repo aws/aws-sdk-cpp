@@ -5,13 +5,13 @@
 
 #pragma once
 #include <aws/acm-pca/ACMPCA_EXPORTS.h>
+#include <aws/crt/cbor/Cbor.h>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace ACMPCA {
 namespace Model {
@@ -29,9 +29,9 @@ namespace Model {
 class CrlDistributionPointExtensionConfiguration {
  public:
   AWS_ACMPCA_API CrlDistributionPointExtensionConfiguration() = default;
-  AWS_ACMPCA_API CrlDistributionPointExtensionConfiguration(Aws::Utils::Json::JsonView jsonValue);
-  AWS_ACMPCA_API CrlDistributionPointExtensionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_ACMPCA_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_ACMPCA_API CrlDistributionPointExtensionConfiguration(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_ACMPCA_API CrlDistributionPointExtensionConfiguration& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_ACMPCA_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

@@ -12,6 +12,7 @@
 #include <aws/route53/model/ListHealthChecksPaginationTraits.h>
 #include <aws/route53/model/ListHostedZonesPaginationTraits.h>
 #include <aws/route53/model/ListQueryLoggingConfigsPaginationTraits.h>
+#include <aws/route53/model/ListResourceRecordSetProtectionsPaginationTraits.h>
 
 namespace Aws {
 namespace Route53 {
@@ -29,6 +30,9 @@ using ListHostedZonesPaginator = Aws::Utils::Pagination::Paginator<Route53Client
 using ListQueryLoggingConfigsPaginator =
     Aws::Utils::Pagination::Paginator<Route53Client, Model::ListQueryLoggingConfigsRequest,
                                       Pagination::ListQueryLoggingConfigsPaginationTraits<Route53Client>>;
+using ListResourceRecordSetProtectionsPaginator =
+    Aws::Utils::Pagination::Paginator<Route53Client, Model::ListResourceRecordSetProtectionsRequest,
+                                      Pagination::ListResourceRecordSetProtectionsPaginationTraits<Route53Client>>;
 
 }  // namespace Route53
 }  // namespace Aws

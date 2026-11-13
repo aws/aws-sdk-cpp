@@ -1,0 +1,79 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/kinesisanalyticsv2/KinesisAnalyticsV2Request.h>
+#include <aws/kinesisanalyticsv2/KinesisAnalyticsV2_EXPORTS.h>
+
+#include <utility>
+
+namespace Aws {
+namespace KinesisAnalyticsV2 {
+namespace Model {
+
+/**
+ */
+class DescribeSnapshotOperationRequest : public KinesisAnalyticsV2Request {
+ public:
+  AWS_KINESISANALYTICSV2_API DescribeSnapshotOperationRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DescribeSnapshotOperation"; }
+
+  AWS_KINESISANALYTICSV2_API Aws::String SerializePayload() const override;
+
+  AWS_KINESISANALYTICSV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
+  /**
+   * <p>The name of the enhanced snapshot.</p>
+   */
+  inline const Aws::String& GetSnapshotName() const { return m_snapshotName; }
+  inline bool SnapshotNameHasBeenSet() const { return m_snapshotNameHasBeenSet; }
+  template <typename SnapshotNameT = Aws::String>
+  void SetSnapshotName(SnapshotNameT&& value) {
+    m_snapshotNameHasBeenSet = true;
+    m_snapshotName = std::forward<SnapshotNameT>(value);
+  }
+  template <typename SnapshotNameT = Aws::String>
+  DescribeSnapshotOperationRequest& WithSnapshotName(SnapshotNameT&& value) {
+    SetSnapshotName(std::forward<SnapshotNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the snapshot operation. You can retrieve this value using
+   * <code>ListSnapshotOperations</code>.</p>
+   */
+  inline const Aws::String& GetSnapshotOperationId() const { return m_snapshotOperationId; }
+  inline bool SnapshotOperationIdHasBeenSet() const { return m_snapshotOperationIdHasBeenSet; }
+  template <typename SnapshotOperationIdT = Aws::String>
+  void SetSnapshotOperationId(SnapshotOperationIdT&& value) {
+    m_snapshotOperationIdHasBeenSet = true;
+    m_snapshotOperationId = std::forward<SnapshotOperationIdT>(value);
+  }
+  template <typename SnapshotOperationIdT = Aws::String>
+  DescribeSnapshotOperationRequest& WithSnapshotOperationId(SnapshotOperationIdT&& value) {
+    SetSnapshotOperationId(std::forward<SnapshotOperationIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_snapshotName;
+
+  Aws::String m_snapshotOperationId;
+  bool m_snapshotNameHasBeenSet = false;
+  bool m_snapshotOperationIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace KinesisAnalyticsV2
+}  // namespace Aws

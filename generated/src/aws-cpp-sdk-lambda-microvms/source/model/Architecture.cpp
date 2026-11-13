@@ -16,11 +16,14 @@ namespace Model {
 namespace ArchitectureMapper {
 
 static const int ARM_64_HASH = HashingUtils::HashString("ARM_64");
+static const int X86_64_HASH = HashingUtils::HashString("X86_64");
 
 Architecture GetArchitectureForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == ARM_64_HASH) {
     return Architecture::ARM_64;
+  } else if (hashCode == X86_64_HASH) {
+    return Architecture::X86_64;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +40,8 @@ Aws::String GetNameForArchitecture(Architecture enumValue) {
       return {};
     case Architecture::ARM_64:
       return "ARM_64";
+    case Architecture::X86_64:
+      return "X86_64";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

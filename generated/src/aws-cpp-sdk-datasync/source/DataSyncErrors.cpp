@@ -5,6 +5,7 @@
 
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/cbor/CborValue.h>
 #include <aws/datasync/DataSyncErrors.h>
 #include <aws/datasync/model/InternalException.h>
 #include <aws/datasync/model/InvalidRequestException.h>
@@ -19,13 +20,15 @@ namespace DataSync {
 template <>
 AWS_DATASYNC_API InternalException DataSyncError::GetModeledError() {
   assert(this->GetErrorType() == DataSyncErrors::INTERNAL);
-  return InternalException(this->GetJsonPayload().View());
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return InternalException(payload.GetDecoder());
 }
 
 template <>
 AWS_DATASYNC_API InvalidRequestException DataSyncError::GetModeledError() {
   assert(this->GetErrorType() == DataSyncErrors::INVALID_REQUEST);
-  return InvalidRequestException(this->GetJsonPayload().View());
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return InvalidRequestException(payload.GetDecoder());
 }
 
 namespace DataSyncErrorMapper {

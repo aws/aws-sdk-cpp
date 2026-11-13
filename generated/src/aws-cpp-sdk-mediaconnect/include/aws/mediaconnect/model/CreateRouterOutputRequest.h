@@ -12,6 +12,7 @@
 #include <aws/mediaconnect/model/FabricConfiguration.h>
 #include <aws/mediaconnect/model/MaintenanceConfiguration.h>
 #include <aws/mediaconnect/model/RouterOutputConfiguration.h>
+#include <aws/mediaconnect/model/RouterOutputProcessors.h>
 #include <aws/mediaconnect/model/RouterOutputTier.h>
 #include <aws/mediaconnect/model/RoutingScope.h>
 
@@ -245,6 +246,24 @@ class CreateRouterOutputRequest : public MediaConnectRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The processor settings for the router output.</p>
+   */
+  inline const RouterOutputProcessors& GetProcessors() const { return m_processors; }
+  inline bool ProcessorsHasBeenSet() const { return m_processorsHasBeenSet; }
+  template <typename ProcessorsT = RouterOutputProcessors>
+  void SetProcessors(ProcessorsT&& value) {
+    m_processorsHasBeenSet = true;
+    m_processors = std::forward<ProcessorsT>(value);
+  }
+  template <typename ProcessorsT = RouterOutputProcessors>
+  CreateRouterOutputRequest& WithProcessors(ProcessorsT&& value) {
+    SetProcessors(std::forward<ProcessorsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -267,6 +286,8 @@ class CreateRouterOutputRequest : public MediaConnectRequest {
   FabricConfiguration m_fabricConfiguration;
 
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+
+  RouterOutputProcessors m_processors;
   bool m_nameHasBeenSet = false;
   bool m_configurationHasBeenSet = false;
   bool m_maximumBitrateHasBeenSet = false;
@@ -278,6 +299,7 @@ class CreateRouterOutputRequest : public MediaConnectRequest {
   bool m_tagsHasBeenSet = false;
   bool m_fabricConfigurationHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
+  bool m_processorsHasBeenSet = false;
 };
 
 }  // namespace Model

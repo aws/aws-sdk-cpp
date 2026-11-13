@@ -8,9 +8,11 @@
 
 #include <aws/kinesisanalyticsv2/KinesisAnalyticsV2ClientPagination.h>
 #include <aws/kinesisanalyticsv2/KinesisAnalyticsV2PaginationBase.h>
+#include <aws/kinesisanalyticsv2/model/ListSnapshotsPaginationTraits.h>
 #include <aws/kinesisanalyticsv2/model/ListApplicationSnapshotsPaginationTraits.h>
 #include <aws/kinesisanalyticsv2/model/ListApplicationVersionsPaginationTraits.h>
 #include <aws/kinesisanalyticsv2/model/ListApplicationOperationsPaginationTraits.h>
+#include <aws/kinesisanalyticsv2/model/ListSnapshotOperationsPaginationTraits.h>
 #include <aws/kinesisanalyticsv2/model/ListApplicationsPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>

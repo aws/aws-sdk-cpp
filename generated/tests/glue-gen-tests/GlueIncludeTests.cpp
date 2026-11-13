@@ -28,6 +28,7 @@
 #include <aws/glue/model/AmazonRedshiftNodeData.h>
 #include <aws/glue/model/AmazonRedshiftSource.h>
 #include <aws/glue/model/AmazonRedshiftTarget.h>
+#include <aws/glue/model/AnalysisType.h>
 #include <aws/glue/model/AnnotationError.h>
 #include <aws/glue/model/ApplyMapping.h>
 #include <aws/glue/model/AssetFormEntry.h>
@@ -43,6 +44,8 @@
 #include <aws/glue/model/AuthenticationType.h>
 #include <aws/glue/model/AuthorizationCodeProperties.h>
 #include <aws/glue/model/AutoDataQuality.h>
+#include <aws/glue/model/AutoUpgradeMetadata.h>
+#include <aws/glue/model/AutoUpgradeStatus.h>
 #include <aws/glue/model/BackfillError.h>
 #include <aws/glue/model/BackfillErrorCode.h>
 #include <aws/glue/model/BasicAuthenticationCredentials.h>
@@ -209,6 +212,8 @@
 #include <aws/glue/model/CreateCsvClassifierRequest.h>
 #include <aws/glue/model/CreateCustomEntityTypeRequest.h>
 #include <aws/glue/model/CreateCustomEntityTypeResult.h>
+#include <aws/glue/model/CreateDataQualityEvaluationConfigRequest.h>
+#include <aws/glue/model/CreateDataQualityEvaluationConfigResult.h>
 #include <aws/glue/model/CreateDataQualityRulesetRequest.h>
 #include <aws/glue/model/CreateDataQualityRulesetResult.h>
 #include <aws/glue/model/CreateDatabaseRequest.h>
@@ -287,7 +292,17 @@
 #include <aws/glue/model/DataQualityEncryption.h>
 #include <aws/glue/model/DataQualityEncryptionMode.h>
 #include <aws/glue/model/DataQualityEngine.h>
+#include <aws/glue/model/DataQualityEvaluationConfigAdditionalRunOptions.h>
+#include <aws/glue/model/DataQualityEvaluationConfigDataSource.h>
+#include <aws/glue/model/DataQualityEvaluationConfigGlueTables.h>
+#include <aws/glue/model/DataQualityEvaluationConfigLevel.h>
+#include <aws/glue/model/DataQualityEvaluationConfigListDataSource.h>
+#include <aws/glue/model/DataQualityEvaluationConfigListDetails.h>
+#include <aws/glue/model/DataQualityEvaluationConfigListGlueTables.h>
+#include <aws/glue/model/DataQualityEvaluationConfigManagedRuleset.h>
+#include <aws/glue/model/DataQualityEvaluationConfigTrigger.h>
 #include <aws/glue/model/DataQualityEvaluationRunAdditionalRunOptions.h>
+#include <aws/glue/model/DataQualityEvaluationRunMode.h>
 #include <aws/glue/model/DataQualityGlueTable.h>
 #include <aws/glue/model/DataQualityMetricValues.h>
 #include <aws/glue/model/DataQualityModelStatus.h>
@@ -349,6 +364,8 @@
 #include <aws/glue/model/DeleteCrawlerResult.h>
 #include <aws/glue/model/DeleteCustomEntityTypeRequest.h>
 #include <aws/glue/model/DeleteCustomEntityTypeResult.h>
+#include <aws/glue/model/DeleteDataQualityEvaluationConfigRequest.h>
+#include <aws/glue/model/DeleteDataQualityEvaluationConfigResult.h>
 #include <aws/glue/model/DeleteDataQualityRulesetRequest.h>
 #include <aws/glue/model/DeleteDataQualityRulesetResult.h>
 #include <aws/glue/model/DeleteDatabaseRequest.h>
@@ -538,6 +555,8 @@
 #include <aws/glue/model/GetDataCatalogEncryptionSettingsResult.h>
 #include <aws/glue/model/GetDataCatalogExportConfigurationRequest.h>
 #include <aws/glue/model/GetDataCatalogExportConfigurationResult.h>
+#include <aws/glue/model/GetDataQualityEvaluationConfigRequest.h>
+#include <aws/glue/model/GetDataQualityEvaluationConfigResult.h>
 #include <aws/glue/model/GetDataQualityModelRequest.h>
 #include <aws/glue/model/GetDataQualityModelResult.h>
 #include <aws/glue/model/GetDataQualityModelResultRequest.h>
@@ -587,6 +606,8 @@
 #include <aws/glue/model/GetJobRunsPaginationTraits.h>
 #include <aws/glue/model/GetJobRunsRequest.h>
 #include <aws/glue/model/GetJobRunsResult.h>
+#include <aws/glue/model/GetJobUpgradeAnalysisRequest.h>
+#include <aws/glue/model/GetJobUpgradeAnalysisResult.h>
 #include <aws/glue/model/GetJobsPaginationTraits.h>
 #include <aws/glue/model/GetJobsRequest.h>
 #include <aws/glue/model/GetJobsResult.h>
@@ -694,6 +715,7 @@
 #include <aws/glue/model/GlueSchema.h>
 #include <aws/glue/model/GlueStudioSchemaColumn.h>
 #include <aws/glue/model/GlueTable.h>
+#include <aws/glue/model/GovernanceMode.h>
 #include <aws/glue/model/GovernedCatalogSource.h>
 #include <aws/glue/model/GovernedCatalogTarget.h>
 #include <aws/glue/model/GrokClassifier.h>
@@ -800,6 +822,9 @@
 #include <aws/glue/model/ListCustomEntityTypesPaginationTraits.h>
 #include <aws/glue/model/ListCustomEntityTypesRequest.h>
 #include <aws/glue/model/ListCustomEntityTypesResult.h>
+#include <aws/glue/model/ListDataQualityEvaluationConfigsPaginationTraits.h>
+#include <aws/glue/model/ListDataQualityEvaluationConfigsRequest.h>
+#include <aws/glue/model/ListDataQualityEvaluationConfigsResult.h>
 #include <aws/glue/model/ListDataQualityResultsPaginationTraits.h>
 #include <aws/glue/model/ListDataQualityResultsRequest.h>
 #include <aws/glue/model/ListDataQualityResultsResult.h>
@@ -1122,6 +1147,8 @@
 #include <aws/glue/model/StartImportLabelsTaskRunResult.h>
 #include <aws/glue/model/StartJobRunRequest.h>
 #include <aws/glue/model/StartJobRunResult.h>
+#include <aws/glue/model/StartJobUpgradeAnalysisRequest.h>
+#include <aws/glue/model/StartJobUpgradeAnalysisResult.h>
 #include <aws/glue/model/StartMLEvaluationTaskRunRequest.h>
 #include <aws/glue/model/StartMLEvaluationTaskRunResult.h>
 #include <aws/glue/model/StartMLLabelingSetGenerationTaskRunRequest.h>
@@ -1142,6 +1169,7 @@
 #include <aws/glue/model/StatisticEvaluationLevel.h>
 #include <aws/glue/model/StatisticModelResult.h>
 #include <aws/glue/model/StatisticSummary.h>
+#include <aws/glue/model/Status.h>
 #include <aws/glue/model/StatusDetails.h>
 #include <aws/glue/model/StopColumnStatisticsTaskRunRequest.h>
 #include <aws/glue/model/StopColumnStatisticsTaskRunResult.h>
@@ -1151,6 +1179,8 @@
 #include <aws/glue/model/StopCrawlerResult.h>
 #include <aws/glue/model/StopCrawlerScheduleRequest.h>
 #include <aws/glue/model/StopCrawlerScheduleResult.h>
+#include <aws/glue/model/StopJobUpgradeAnalysisRequest.h>
+#include <aws/glue/model/StopJobUpgradeAnalysisResult.h>
 #include <aws/glue/model/StopMaterializedViewRefreshTaskRunRequest.h>
 #include <aws/glue/model/StopMaterializedViewRefreshTaskRunResult.h>
 #include <aws/glue/model/StopSessionRequest.h>
@@ -1241,6 +1271,8 @@
 #include <aws/glue/model/UpdateCrawlerScheduleRequest.h>
 #include <aws/glue/model/UpdateCrawlerScheduleResult.h>
 #include <aws/glue/model/UpdateCsvClassifierRequest.h>
+#include <aws/glue/model/UpdateDataQualityEvaluationConfigRequest.h>
+#include <aws/glue/model/UpdateDataQualityEvaluationConfigResult.h>
 #include <aws/glue/model/UpdateDataQualityRulesetRequest.h>
 #include <aws/glue/model/UpdateDataQualityRulesetResult.h>
 #include <aws/glue/model/UpdateDatabaseRequest.h>
@@ -1289,6 +1321,7 @@
 #include <aws/glue/model/UpdateWorkflowRequest.h>
 #include <aws/glue/model/UpdateWorkflowResult.h>
 #include <aws/glue/model/UpdateXMLClassifierRequest.h>
+#include <aws/glue/model/UpgradeConsent.h>
 #include <aws/glue/model/UpsertRedshiftTargetOptions.h>
 #include <aws/glue/model/UsageProfileDefinition.h>
 #include <aws/glue/model/UserDefinedFunction.h>

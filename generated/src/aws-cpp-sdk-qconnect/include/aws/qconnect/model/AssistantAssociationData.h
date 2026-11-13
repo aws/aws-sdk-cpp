@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/qconnect/QConnect_EXPORTS.h>
@@ -163,6 +164,43 @@ class AssistantAssociationData {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp when the assistant association was last modified.</p>
+   */
+  inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
+  inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
+  template <typename LastModifiedTimeT = Aws::Utils::DateTime>
+  void SetLastModifiedTime(LastModifiedTimeT&& value) {
+    m_lastModifiedTimeHasBeenSet = true;
+    m_lastModifiedTime = std::forward<LastModifiedTimeT>(value);
+  }
+  template <typename LastModifiedTimeT = Aws::Utils::DateTime>
+  AssistantAssociationData& WithLastModifiedTime(LastModifiedTimeT&& value) {
+    SetLastModifiedTime(std::forward<LastModifiedTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Web Services Region where the assistant association was last
+   * modified.</p>
+   */
+  inline const Aws::String& GetLastModifiedRegion() const { return m_lastModifiedRegion; }
+  inline bool LastModifiedRegionHasBeenSet() const { return m_lastModifiedRegionHasBeenSet; }
+  template <typename LastModifiedRegionT = Aws::String>
+  void SetLastModifiedRegion(LastModifiedRegionT&& value) {
+    m_lastModifiedRegionHasBeenSet = true;
+    m_lastModifiedRegion = std::forward<LastModifiedRegionT>(value);
+  }
+  template <typename LastModifiedRegionT = Aws::String>
+  AssistantAssociationData& WithLastModifiedRegion(LastModifiedRegionT&& value) {
+    SetLastModifiedRegion(std::forward<LastModifiedRegionT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_assistantAssociationId;
 
@@ -177,6 +215,10 @@ class AssistantAssociationData {
   AssistantAssociationOutputData m_associationData;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+
+  Aws::Utils::DateTime m_lastModifiedTime{};
+
+  Aws::String m_lastModifiedRegion;
   bool m_assistantAssociationIdHasBeenSet = false;
   bool m_assistantAssociationArnHasBeenSet = false;
   bool m_assistantIdHasBeenSet = false;
@@ -184,6 +226,8 @@ class AssistantAssociationData {
   bool m_associationTypeHasBeenSet = false;
   bool m_associationDataHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_lastModifiedRegionHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -3,47 +3,68 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/workspaces/model/DescribeWorkspacesPoolsRequest.h>
 
 #include <utility>
 
 using namespace Aws::WorkSpaces::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String DescribeWorkspacesPoolsRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_poolIdsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_filtersHasBeenSet) {
+    mapSize++;
+  }
+  if (m_limitHasBeenSet) {
+    mapSize++;
+  }
+  if (m_nextTokenHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_poolIdsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> poolIdsJsonList(m_poolIds.size());
-    for (unsigned poolIdsIndex = 0; poolIdsIndex < poolIdsJsonList.GetLength(); ++poolIdsIndex) {
-      poolIdsJsonList[poolIdsIndex].AsString(m_poolIds[poolIdsIndex]);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("PoolIds"));
+    encoder.WriteArrayStart(m_poolIds.size());
+    for (const auto& item_0 : m_poolIds) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
     }
-    payload.WithArray("PoolIds", std::move(poolIdsJsonList));
   }
 
   if (m_filtersHasBeenSet) {
-    Aws::Utils::Array<JsonValue> filtersJsonList(m_filters.size());
-    for (unsigned filtersIndex = 0; filtersIndex < filtersJsonList.GetLength(); ++filtersIndex) {
-      filtersJsonList[filtersIndex].AsObject(m_filters[filtersIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Filters"));
+    encoder.WriteArrayStart(m_filters.size());
+    for (const auto& item_0 : m_filters) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("Filters", std::move(filtersJsonList));
   }
 
   if (m_limitHasBeenSet) {
-    payload.WithInteger("Limit", m_limit);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Limit"));
+    (m_limit >= 0) ? encoder.WriteUInt(m_limit) : encoder.WriteNegInt(m_limit);
   }
 
   if (m_nextTokenHasBeenSet) {
-    payload.WithString("NextToken", m_nextToken);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("NextToken"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_nextToken.c_str()));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection DescribeWorkspacesPoolsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "WorkspacesService.DescribeWorkspacesPools"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

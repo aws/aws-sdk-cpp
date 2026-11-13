@@ -13,6 +13,7 @@
 #include <aws/lightsail/model/CacheSettings.h>
 #include <aws/lightsail/model/DistributionCustomErrorResponse.h>
 #include <aws/lightsail/model/IpAddressType.h>
+#include <aws/lightsail/model/LightsailDistributionSubdomain.h>
 #include <aws/lightsail/model/Origin.h>
 #include <aws/lightsail/model/ResourceLocation.h>
 #include <aws/lightsail/model/ResourceType.h>
@@ -454,7 +455,10 @@ class LightsailDistribution {
   /**
    * <p>The object (for example, <code>index.html</code>) that the distribution
    * returns when a viewer requests the root URL of the distribution (<code>/</code>)
-   * instead of a specific object.</p>
+   * instead of a specific object.</p> <p>This value is returned only when you
+   * specify <code>distributionName</code> in your <code>GetDistributions</code>
+   * request. It isn't included in the response when you list all of your
+   * distributions.</p>
    */
   inline const Aws::String& GetDefaultRootObject() const { return m_defaultRootObject; }
   inline bool DefaultRootObjectHasBeenSet() const { return m_defaultRootObjectHasBeenSet; }
@@ -473,7 +477,9 @@ class LightsailDistribution {
   ///@{
   /**
    * <p>An array of objects that describe the custom error responses configured for
-   * the distribution.</p>
+   * the distribution.</p> <p>This value is returned only when you specify
+   * <code>distributionName</code> in your <code>GetDistributions</code> request. It
+   * isn't included in the response when you list all of your distributions.</p>
    */
   inline const Aws::Vector<DistributionCustomErrorResponse>& GetCustomErrorResponses() const { return m_customErrorResponses; }
   inline bool CustomErrorResponsesHasBeenSet() const { return m_customErrorResponsesHasBeenSet; }
@@ -510,6 +516,25 @@ class LightsailDistribution {
   template <typename WafT = WafConfig>
   LightsailDistribution& WithWaf(WafT&& value) {
     SetWaf(std::forward<WafT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>An object that describes the Lightsail subdomain that's associated with the
+   * distribution, or is being associated with it.</p>
+   */
+  inline const LightsailDistributionSubdomain& GetSubdomain() const { return m_subdomain; }
+  inline bool SubdomainHasBeenSet() const { return m_subdomainHasBeenSet; }
+  template <typename SubdomainT = LightsailDistributionSubdomain>
+  void SetSubdomain(SubdomainT&& value) {
+    m_subdomainHasBeenSet = true;
+    m_subdomain = std::forward<SubdomainT>(value);
+  }
+  template <typename SubdomainT = LightsailDistributionSubdomain>
+  LightsailDistribution& WithSubdomain(SubdomainT&& value) {
+    SetSubdomain(std::forward<SubdomainT>(value));
     return *this;
   }
   ///@}
@@ -561,6 +586,8 @@ class LightsailDistribution {
   Aws::Vector<DistributionCustomErrorResponse> m_customErrorResponses;
 
   WafConfig m_waf;
+
+  LightsailDistributionSubdomain m_subdomain;
   bool m_nameHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_supportCodeHasBeenSet = false;
@@ -585,6 +612,7 @@ class LightsailDistribution {
   bool m_defaultRootObjectHasBeenSet = false;
   bool m_customErrorResponsesHasBeenSet = false;
   bool m_wafHasBeenSet = false;
+  bool m_subdomainHasBeenSet = false;
 };
 
 }  // namespace Model

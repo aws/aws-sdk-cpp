@@ -115,8 +115,7 @@ namespace client
               Aws::MakeShared<features::ChunkingInterceptor>("AwsSmithyClientBase", 
                   m_httpClient->IsDefaultAwsHttpClient() ? Aws::Client::HttpClientChunkedMode::DEFAULT : m_clientConfig->httpClientChunkedMode,
                   m_clientConfig->awsChunkedBufferSize)
-          }),
-          m_enableNewRetries{Aws::Utils::StringUtils::ToLower(Aws::Environment::GetEnv("AWS_NEW_RETRIES_2026").c_str()) == "true"}
+          })
         {
             
             baseInit();
@@ -267,7 +266,7 @@ namespace client
             ResponseHandlerFunc&& responseHandler,
             EndpointUpdateCallback&& endpointCallback
         ) const;
-        bool m_enableNewRetries = false;
+        bool m_isLegacyRetryStrategy = false;
     };
 } // namespace client
 } // namespace smithy

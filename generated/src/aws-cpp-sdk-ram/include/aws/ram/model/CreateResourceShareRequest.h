@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ram/RAMRequest.h>
 #include <aws/ram/RAM_EXPORTS.h>
+#include <aws/ram/model/PermissionArnAndTemplateParameters.h>
 #include <aws/ram/model/ResourceShareConfiguration.h>
 #include <aws/ram/model/Tag.h>
 
@@ -249,6 +250,36 @@ class CreateResourceShareRequest : public RAMRequest {
 
   ///@{
   /**
+   * <p>Specifies the template parameter values for each permission being associated
+   * that has template parameters. Each entry maps a permission ARN to the parameter
+   * values to use when rendering the permission template for this resource share.
+   * You must provide values for all parameters declared in each permission
+   * template.</p>
+   */
+  inline const Aws::Vector<PermissionArnAndTemplateParameters>& GetPermissionTemplateParameters() const {
+    return m_permissionTemplateParameters;
+  }
+  inline bool PermissionTemplateParametersHasBeenSet() const { return m_permissionTemplateParametersHasBeenSet; }
+  template <typename PermissionTemplateParametersT = Aws::Vector<PermissionArnAndTemplateParameters>>
+  void SetPermissionTemplateParameters(PermissionTemplateParametersT&& value) {
+    m_permissionTemplateParametersHasBeenSet = true;
+    m_permissionTemplateParameters = std::forward<PermissionTemplateParametersT>(value);
+  }
+  template <typename PermissionTemplateParametersT = Aws::Vector<PermissionArnAndTemplateParameters>>
+  CreateResourceShareRequest& WithPermissionTemplateParameters(PermissionTemplateParametersT&& value) {
+    SetPermissionTemplateParameters(std::forward<PermissionTemplateParametersT>(value));
+    return *this;
+  }
+  template <typename PermissionTemplateParametersT = PermissionArnAndTemplateParameters>
+  CreateResourceShareRequest& AddPermissionTemplateParameters(PermissionTemplateParametersT&& value) {
+    m_permissionTemplateParametersHasBeenSet = true;
+    m_permissionTemplateParameters.emplace_back(std::forward<PermissionTemplateParametersT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Specifies the configuration of this resource share.</p>
    */
   inline const ResourceShareConfiguration& GetResourceShareConfiguration() const { return m_resourceShareConfiguration; }
@@ -281,6 +312,8 @@ class CreateResourceShareRequest : public RAMRequest {
 
   Aws::Vector<Aws::String> m_sources;
 
+  Aws::Vector<PermissionArnAndTemplateParameters> m_permissionTemplateParameters;
+
   ResourceShareConfiguration m_resourceShareConfiguration;
   bool m_nameHasBeenSet = false;
   bool m_resourceArnsHasBeenSet = false;
@@ -290,6 +323,7 @@ class CreateResourceShareRequest : public RAMRequest {
   bool m_clientTokenHasBeenSet = false;
   bool m_permissionArnsHasBeenSet = false;
   bool m_sourcesHasBeenSet = false;
+  bool m_permissionTemplateParametersHasBeenSet = false;
   bool m_resourceShareConfigurationHasBeenSet = false;
 };
 

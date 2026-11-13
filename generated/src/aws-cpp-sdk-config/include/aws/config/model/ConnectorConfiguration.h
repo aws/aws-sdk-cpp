@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/config/ConfigService_EXPORTS.h>
 #include <aws/config/model/AzureConnectorConfiguration.h>
+#include <aws/config/model/GcpConnectorConfiguration.h>
 
 #include <utility>
 
@@ -50,9 +51,30 @@ class ConnectorConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The configuration for a Google Cloud connector.</p>
+   */
+  inline const GcpConnectorConfiguration& GetGcp() const { return m_gcp; }
+  inline bool GcpHasBeenSet() const { return m_gcpHasBeenSet; }
+  template <typename GcpT = GcpConnectorConfiguration>
+  void SetGcp(GcpT&& value) {
+    m_gcpHasBeenSet = true;
+    m_gcp = std::forward<GcpT>(value);
+  }
+  template <typename GcpT = GcpConnectorConfiguration>
+  ConnectorConfiguration& WithGcp(GcpT&& value) {
+    SetGcp(std::forward<GcpT>(value));
+    return *this;
+  }
+  ///@}
  private:
   AzureConnectorConfiguration m_azure;
+
+  GcpConnectorConfiguration m_gcp;
   bool m_azureHasBeenSet = false;
+  bool m_gcpHasBeenSet = false;
 };
 
 }  // namespace Model

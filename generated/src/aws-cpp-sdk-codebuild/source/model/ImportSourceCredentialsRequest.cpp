@@ -4,42 +4,69 @@
  */
 
 #include <aws/codebuild/model/ImportSourceCredentialsRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 using namespace Aws::CodeBuild::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String ImportSourceCredentialsRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_usernameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_tokenHasBeenSet) {
+    mapSize++;
+  }
+  if (m_serverTypeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_authTypeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_shouldOverwriteHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_usernameHasBeenSet) {
-    payload.WithString("username", m_username);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("username"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_username.c_str()));
   }
 
   if (m_tokenHasBeenSet) {
-    payload.WithString("token", m_token);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("token"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_token.c_str()));
   }
 
   if (m_serverTypeHasBeenSet) {
-    payload.WithString("serverType", ServerTypeMapper::GetNameForServerType(m_serverType));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("serverType"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(ServerTypeMapper::GetNameForServerType(m_serverType).c_str()));
   }
 
   if (m_authTypeHasBeenSet) {
-    payload.WithString("authType", AuthTypeMapper::GetNameForAuthType(m_authType));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("authType"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(AuthTypeMapper::GetNameForAuthType(m_authType).c_str()));
   }
 
   if (m_shouldOverwriteHasBeenSet) {
-    payload.WithBool("shouldOverwrite", m_shouldOverwrite);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("shouldOverwrite"));
+    encoder.WriteBool(m_shouldOverwrite);
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection ImportSourceCredentialsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeBuild_20161006.ImportSourceCredentials"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

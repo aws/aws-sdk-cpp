@@ -3,51 +3,87 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/servicecatalog/model/UpdateProvisioningArtifactRequest.h>
 
 #include <utility>
 
 using namespace Aws::ServiceCatalog::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String UpdateProvisioningArtifactRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_acceptLanguageHasBeenSet) {
+    mapSize++;
+  }
+  if (m_productIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_provisioningArtifactIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_nameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_descriptionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_activeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_guidanceHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_acceptLanguageHasBeenSet) {
-    payload.WithString("AcceptLanguage", m_acceptLanguage);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AcceptLanguage"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_acceptLanguage.c_str()));
   }
 
   if (m_productIdHasBeenSet) {
-    payload.WithString("ProductId", m_productId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ProductId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_productId.c_str()));
   }
 
   if (m_provisioningArtifactIdHasBeenSet) {
-    payload.WithString("ProvisioningArtifactId", m_provisioningArtifactId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ProvisioningArtifactId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_provisioningArtifactId.c_str()));
   }
 
   if (m_nameHasBeenSet) {
-    payload.WithString("Name", m_name);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Name"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_name.c_str()));
   }
 
   if (m_descriptionHasBeenSet) {
-    payload.WithString("Description", m_description);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Description"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_description.c_str()));
   }
 
   if (m_activeHasBeenSet) {
-    payload.WithBool("Active", m_active);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Active"));
+    encoder.WriteBool(m_active);
   }
 
   if (m_guidanceHasBeenSet) {
-    payload.WithString("Guidance", ProvisioningArtifactGuidanceMapper::GetNameForProvisioningArtifactGuidance(m_guidance));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Guidance"));
+    encoder.WriteText(
+        Aws::Crt::ByteCursorFromCString(ProvisioningArtifactGuidanceMapper::GetNameForProvisioningArtifactGuidance(m_guidance).c_str()));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection UpdateProvisioningArtifactRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWS242ServiceCatalogService.UpdateProvisioningArtifact"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

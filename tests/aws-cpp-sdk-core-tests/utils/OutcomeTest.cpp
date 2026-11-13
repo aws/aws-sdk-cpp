@@ -13,6 +13,7 @@
 #include <aws/core/http/standard/StandardHttpResponse.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/NoResult.h>
 
@@ -255,6 +256,71 @@ public:
     }
 };
 
+class CborServiceSpecificException
+{
+public:
+    CborServiceSpecificException(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder)
+    {
+        auto mapSize = decoder->PopNextMapStart();
+        for (uint64_t i = 0; mapSize.has_value() && i < mapSize.value(); ++i)
+        {
+            auto key = decoder->PopNextTextVal();
+            if (key.has_value() && Aws::String(reinterpret_cast<const char*>(key.value().ptr), key.value().len) == "ExceptionInfo")
+            {
+                auto value = decoder->PopNextTextVal();
+                if (value.has_value())
+                {
+                    m_exceptionInfo = Aws::String(reinterpret_cast<const char*>(value.value().ptr), value.value().len);
+                }
+            }
+            else
+            {
+                decoder->ConsumeNextWholeDataItem();
+            }
+        }
+    }
+    inline const Aws::String& GetExceptionInfo() const{ return m_exceptionInfo; }
+private:
+    Aws::String m_exceptionInfo;
+};
+
+class CborServiceError : public Aws::Client::AWSError<ServiceErrors>
+{
+public:
+    CborServiceError() {}
+    CborServiceError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ServiceErrors>(rhs) {}
+    CborServiceError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ServiceErrors>(rhs) {}
+    CborServiceError(const Aws::Client::AWSError<ServiceErrors>& rhs) : Aws::Client::AWSError<ServiceErrors>(rhs) {}
+    CborServiceError(Aws::Client::AWSError<ServiceErrors>&& rhs) : Aws::Client::AWSError<ServiceErrors>(rhs) {}
+
+    template <typename T>
+    T GetModeledError();
+};
+
+template<>
+CborServiceSpecificException CborServiceError::GetModeledError()
+{
+    assert(this->GetErrorType() == ServiceErrors::SERVICE_SPECIFIC_EXCEPTION);
+    Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+    return CborServiceSpecificException(payload.GetDecoder());
+}
+
+class CborServiceErrorMarshaller : public RpcV2ErrorMarshaller
+{
+public:
+    AWSError<CoreErrors> FindErrorByName(const char* errorName) const override
+    {
+        if (Aws::String(errorName) == Aws::String("ServiceSpecificException"))
+        {
+            return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceErrors::SERVICE_SPECIFIC_EXCEPTION), false);
+        }
+        else
+        {
+            return AWSErrorMarshaller::FindErrorByName(errorName);
+        }
+    }
+};
+
 static std::shared_ptr<HttpResponse> CreateHttpResponse(const char* payloadString = "", HttpResponseCode httpResponseCode = HttpResponseCode::OK)
 {
     std::shared_ptr<HttpRequest> httpRequest = CreateHttpRequest(URI("http://www.uri.com/path/to/res"),
@@ -265,6 +331,23 @@ static std::shared_ptr<HttpResponse> CreateHttpResponse(const char* payloadStrin
     HeaderValueCollection headerValues;
     httpResponse->AddHeader(HEADER_KEY_1, HEADER_VALUE_1);
     httpResponse->AddHeader(HEADER_KEY_2, HEADER_VALUE_2);
+    return httpResponse;
+}
+
+static std::shared_ptr<HttpResponse> CreateCborErrorHttpResponse()
+{
+    Aws::Crt::Cbor::CborEncoder encoder;
+    encoder.WriteMapStart(3);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("__type"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ServiceSpecificException"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("message"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(ERROR_MESSAGE));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ExceptionInfo"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Detailed info"));
+    auto encodedData = encoder.GetEncodedData();
+
+    auto httpResponse = CreateHttpResponse("", HttpResponseCode::BAD_REQUEST);
+    httpResponse->GetResponseBody().write(reinterpret_cast<const char*>(encodedData.ptr), encodedData.len);
     return httpResponse;
 }
 
@@ -290,6 +373,8 @@ typedef Outcome<XmlServiceOperationResult, XmlServiceError> XmlServiceOperationO
 typedef Outcome<JsonServiceOperationResult, JsonServiceError> JsonServiceOperationOutcome;
 typedef Outcome<NoResult, XmlServiceError> XmlServiceNoResultOperationOutcome;
 typedef Outcome<NoResult, JsonServiceError> JsonServiceNoResultOperationOutcome;
+typedef Outcome<AmazonWebServiceResult<Cbor::CborValue>, AWSError<CoreErrors>> CborOutcome;
+typedef Outcome<NoResult, CborServiceError> CborServiceNoResultOperationOutcome;
 
 class OutcomeTest : public Aws::Testing::AwsCppSdkGTestSuite
 {
@@ -467,4 +552,17 @@ TEST_F(OutcomeTest, JsonServiceNoResultOperationOutcomeTestMoveFromJsonOutcome)
     ASSERT_STREQ("ServiceSpecificException", serviceError.GetExceptionName().c_str());
     ASSERT_STREQ("Error message", serviceError.GetMessage().c_str());
     ASSERT_STREQ("Detailed info", jsonServiceNoResultOperationOutcome.GetError<JsonServiceSpecificException>().GetExceptionInfo().c_str());
+}
+
+TEST_F(OutcomeTest, CborServiceNoResultOperationOutcomeTestMoveFromCborOutcome)
+{
+    CborServiceErrorMarshaller errorMarshaller;
+    CborServiceNoResultOperationOutcome cborServiceNoResultOperationOutcome(CborOutcome(errorMarshaller.Marshall(*CreateCborErrorHttpResponse())));
+    ASSERT_FALSE(cborServiceNoResultOperationOutcome.IsSuccess());
+    CborServiceError serviceError = cborServiceNoResultOperationOutcome.GetError();
+    ASSERT_EQ(ServiceErrors::SERVICE_SPECIFIC_EXCEPTION, serviceError.GetErrorType());
+    ASSERT_STREQ("ServiceSpecificException", serviceError.GetExceptionName().c_str());
+    ASSERT_STREQ("Error message", serviceError.GetMessage().c_str());
+    ASSERT_STREQ("Detailed info", cborServiceNoResultOperationOutcome.GetError<CborServiceSpecificException>().GetExceptionInfo().c_str());
+    ASSERT_STREQ("Detailed info", cborServiceNoResultOperationOutcome.GetError<CborServiceSpecificException>().GetExceptionInfo().c_str());
 }

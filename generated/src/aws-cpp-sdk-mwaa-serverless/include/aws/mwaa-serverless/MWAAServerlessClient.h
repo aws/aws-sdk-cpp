@@ -87,6 +87,42 @@ class AWS_MWAASERVERLESS_API MWAAServerlessClient : public Aws::Client::AWSJsonC
   virtual ~MWAAServerlessClient();
 
   /**
+   * <p>Creates a launch URL that opens the Apache Airflow UI for your workflows in
+   * Amazon Managed Workflows for Apache Airflow Serverless. The UI shows the
+   * workflows in your account in the current AWS Region. To start a UI session, open
+   * the URL in a browser before it expires.</p> <p>The UI runs with the permissions
+   * of the IAM identity that you use to call this operation. You see only the
+   * workflows, workflow runs, and logs that the identity can read, and you can start
+   * a workflow run only if the identity has permission to start one.</p> <p>The UI
+   * session uses the caller's permissions. The session works only from the network
+   * address that opened the URL. It ends at <code>SessionExpiresAt</code> or when
+   * you sign out from the UI.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-serverless-2024-07-26/CreateAirflowUiUrl">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateAirflowUiUrlOutcome CreateAirflowUiUrl(const Model::CreateAirflowUiUrlRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for CreateAirflowUiUrl that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateAirflowUiUrlRequestT = Model::CreateAirflowUiUrlRequest>
+  Model::CreateAirflowUiUrlOutcomeCallable CreateAirflowUiUrlCallable(const CreateAirflowUiUrlRequestT& request = {}) const {
+    return SubmitCallable(&MWAAServerlessClient::CreateAirflowUiUrl, request);
+  }
+
+  /**
+   * An Async wrapper for CreateAirflowUiUrl that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename CreateAirflowUiUrlRequestT = Model::CreateAirflowUiUrlRequest>
+  void CreateAirflowUiUrlAsync(const CreateAirflowUiUrlResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                               const CreateAirflowUiUrlRequestT& request = {}) const {
+    return SubmitAsync(&MWAAServerlessClient::CreateAirflowUiUrl, request, handler, context);
+  }
+
+  /**
    * <p>Creates a new workflow in Amazon Managed Workflows for Apache Airflow
    * Serverless. This operation initializes a workflow with the specified
    * configuration including the workflow definition, execution role, and optional

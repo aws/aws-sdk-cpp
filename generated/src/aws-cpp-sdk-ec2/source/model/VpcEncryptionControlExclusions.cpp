@@ -63,6 +63,16 @@ VpcEncryptionControlExclusions& VpcEncryptionControlExclusions::operator=(const 
       m_elasticFileSystem = elasticFileSystemNode;
       m_elasticFileSystemHasBeenSet = true;
     }
+    XmlNode globalAcceleratorNode = resultNode.FirstChild("globalAccelerator");
+    if (!globalAcceleratorNode.IsNull()) {
+      m_globalAccelerator = globalAcceleratorNode;
+      m_globalAcceleratorHasBeenSet = true;
+    }
+    XmlNode apiGatewayV2Node = resultNode.FirstChild("apiGatewayV2");
+    if (!apiGatewayV2Node.IsNull()) {
+      m_apiGatewayV2 = apiGatewayV2Node;
+      m_apiGatewayV2HasBeenSet = true;
+    }
   }
 
   return *this;
@@ -117,6 +127,18 @@ void VpcEncryptionControlExclusions::OutputToStream(Aws::OStream& oStream, const
     elasticFileSystemLocationAndMemberSs << location << index << locationValue << ".ElasticFileSystem";
     m_elasticFileSystem.OutputToStream(oStream, elasticFileSystemLocationAndMemberSs.str().c_str());
   }
+
+  if (m_globalAcceleratorHasBeenSet) {
+    Aws::StringStream globalAcceleratorLocationAndMemberSs;
+    globalAcceleratorLocationAndMemberSs << location << index << locationValue << ".GlobalAccelerator";
+    m_globalAccelerator.OutputToStream(oStream, globalAcceleratorLocationAndMemberSs.str().c_str());
+  }
+
+  if (m_apiGatewayV2HasBeenSet) {
+    Aws::StringStream apiGatewayV2LocationAndMemberSs;
+    apiGatewayV2LocationAndMemberSs << location << index << locationValue << ".ApiGatewayV2";
+    m_apiGatewayV2.OutputToStream(oStream, apiGatewayV2LocationAndMemberSs.str().c_str());
+  }
 }
 
 void VpcEncryptionControlExclusions::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -159,6 +181,16 @@ void VpcEncryptionControlExclusions::OutputToStream(Aws::OStream& oStream, const
     Aws::String elasticFileSystemLocationAndMember(location);
     elasticFileSystemLocationAndMember += ".ElasticFileSystem";
     m_elasticFileSystem.OutputToStream(oStream, elasticFileSystemLocationAndMember.c_str());
+  }
+  if (m_globalAcceleratorHasBeenSet) {
+    Aws::String globalAcceleratorLocationAndMember(location);
+    globalAcceleratorLocationAndMember += ".GlobalAccelerator";
+    m_globalAccelerator.OutputToStream(oStream, globalAcceleratorLocationAndMember.c_str());
+  }
+  if (m_apiGatewayV2HasBeenSet) {
+    Aws::String apiGatewayV2LocationAndMember(location);
+    apiGatewayV2LocationAndMember += ".ApiGatewayV2";
+    m_apiGatewayV2.OutputToStream(oStream, apiGatewayV2LocationAndMember.c_str());
   }
 }
 

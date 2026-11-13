@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/textract/Textract_EXPORTS.h>
 #include <aws/textract/model/Block.h>
 #include <aws/textract/model/ExpenseField.h>
@@ -14,10 +15,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace Textract {
 namespace Model {
@@ -31,22 +31,22 @@ namespace Model {
 class ExpenseDocument {
  public:
   AWS_TEXTRACT_API ExpenseDocument() = default;
-  AWS_TEXTRACT_API ExpenseDocument(Aws::Utils::Json::JsonView jsonValue);
-  AWS_TEXTRACT_API ExpenseDocument& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_TEXTRACT_API ExpenseDocument(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_TEXTRACT_API ExpenseDocument& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_TEXTRACT_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
    * <p>Denotes which invoice or receipt in the document the information is coming
    * from. First document will be 1, the second 2, and so on.</p>
    */
-  inline int GetExpenseIndex() const { return m_expenseIndex; }
+  inline int64_t GetExpenseIndex() const { return m_expenseIndex; }
   inline bool ExpenseIndexHasBeenSet() const { return m_expenseIndexHasBeenSet; }
-  inline void SetExpenseIndex(int value) {
+  inline void SetExpenseIndex(int64_t value) {
     m_expenseIndexHasBeenSet = true;
     m_expenseIndex = value;
   }
-  inline ExpenseDocument& WithExpenseIndex(int value) {
+  inline ExpenseDocument& WithExpenseIndex(int64_t value) {
     SetExpenseIndex(value);
     return *this;
   }
@@ -126,7 +126,7 @@ class ExpenseDocument {
   }
   ///@}
  private:
-  int m_expenseIndex{0};
+  int64_t m_expenseIndex{0};
 
   Aws::Vector<ExpenseField> m_summaryFields;
 

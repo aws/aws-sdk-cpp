@@ -4,14 +4,14 @@
  */
 
 #pragma once
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/memorydb/MemoryDB_EXPORTS.h>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace MemoryDB {
 namespace Model {
@@ -25,27 +25,27 @@ namespace Model {
 class ReplicaConfigurationRequest {
  public:
   AWS_MEMORYDB_API ReplicaConfigurationRequest() = default;
-  AWS_MEMORYDB_API ReplicaConfigurationRequest(Aws::Utils::Json::JsonView jsonValue);
-  AWS_MEMORYDB_API ReplicaConfigurationRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_MEMORYDB_API ReplicaConfigurationRequest(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_MEMORYDB_API ReplicaConfigurationRequest& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_MEMORYDB_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
    * <p>The number of replicas to scale up or down to</p>
    */
-  inline int GetReplicaCount() const { return m_replicaCount; }
+  inline int64_t GetReplicaCount() const { return m_replicaCount; }
   inline bool ReplicaCountHasBeenSet() const { return m_replicaCountHasBeenSet; }
-  inline void SetReplicaCount(int value) {
+  inline void SetReplicaCount(int64_t value) {
     m_replicaCountHasBeenSet = true;
     m_replicaCount = value;
   }
-  inline ReplicaConfigurationRequest& WithReplicaCount(int value) {
+  inline ReplicaConfigurationRequest& WithReplicaCount(int64_t value) {
     SetReplicaCount(value);
     return *this;
   }
   ///@}
  private:
-  int m_replicaCount{0};
+  int64_t m_replicaCount{0};
   bool m_replicaCountHasBeenSet = false;
 };
 

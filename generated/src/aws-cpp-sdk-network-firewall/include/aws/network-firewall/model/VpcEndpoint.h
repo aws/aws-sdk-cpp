@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 #include <aws/network-firewall/model/SubnetMapping.h>
 
@@ -13,30 +14,29 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace NetworkFirewall {
 namespace Model {
 
 /**
- * <p>The VPC and subnets for a proxy mode firewall endpoint. This is used in
- * <a>CreateFirewall</a> when <code>NoSourcePreservation</code> is
+ * <p>Contains the VPC and subnets for a proxy mode firewall endpoint. You use it
+ * in <code>CreateFirewall</code> when <code>NoSourcePreservation</code> is
  * <code>TRUE</code>, to specify where Network Firewall creates the firewall
- * endpoint. </p> <p>This differs from <a>VpcEndpointAssociation</a>, which defines
- * additional secondary endpoints for a firewall in other VPCs. </p><p><h3>See
- * Also:</h3>   <a
+ * endpoint. </p> <p>This differs from <code>VpcEndpointAssociation</code>, which
+ * defines additional secondary endpoints for a firewall in other VPCs.
+ * </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/VpcEndpoint">AWS
  * API Reference</a></p>
  */
 class VpcEndpoint {
  public:
   AWS_NETWORKFIREWALL_API VpcEndpoint() = default;
-  AWS_NETWORKFIREWALL_API VpcEndpoint(Aws::Utils::Json::JsonView jsonValue);
-  AWS_NETWORKFIREWALL_API VpcEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_NETWORKFIREWALL_API VpcEndpoint(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_NETWORKFIREWALL_API VpcEndpoint& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_NETWORKFIREWALL_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

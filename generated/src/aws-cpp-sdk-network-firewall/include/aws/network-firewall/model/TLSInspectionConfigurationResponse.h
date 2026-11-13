@@ -7,6 +7,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 #include <aws/network-firewall/model/EncryptionConfiguration.h>
 #include <aws/network-firewall/model/ResourceStatus.h>
@@ -17,10 +18,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace NetworkFirewall {
 namespace Model {
@@ -37,9 +37,9 @@ namespace Model {
 class TLSInspectionConfigurationResponse {
  public:
   AWS_NETWORKFIREWALL_API TLSInspectionConfigurationResponse() = default;
-  AWS_NETWORKFIREWALL_API TLSInspectionConfigurationResponse(Aws::Utils::Json::JsonView jsonValue);
-  AWS_NETWORKFIREWALL_API TLSInspectionConfigurationResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_NETWORKFIREWALL_API TLSInspectionConfigurationResponse(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_NETWORKFIREWALL_API TLSInspectionConfigurationResponse& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_NETWORKFIREWALL_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -182,13 +182,13 @@ class TLSInspectionConfigurationResponse {
    * <p>The number of firewall policies that use this TLS inspection
    * configuration.</p>
    */
-  inline int GetNumberOfAssociations() const { return m_numberOfAssociations; }
+  inline int64_t GetNumberOfAssociations() const { return m_numberOfAssociations; }
   inline bool NumberOfAssociationsHasBeenSet() const { return m_numberOfAssociationsHasBeenSet; }
-  inline void SetNumberOfAssociations(int value) {
+  inline void SetNumberOfAssociations(int64_t value) {
     m_numberOfAssociationsHasBeenSet = true;
     m_numberOfAssociations = value;
   }
-  inline TLSInspectionConfigurationResponse& WithNumberOfAssociations(int value) {
+  inline TLSInspectionConfigurationResponse& WithNumberOfAssociations(int64_t value) {
     SetNumberOfAssociations(value);
     return *this;
   }
@@ -268,7 +268,7 @@ class TLSInspectionConfigurationResponse {
 
   Aws::Utils::DateTime m_lastModifiedTime{};
 
-  int m_numberOfAssociations{0};
+  int64_t m_numberOfAssociations{0};
 
   EncryptionConfiguration m_encryptionConfiguration;
 

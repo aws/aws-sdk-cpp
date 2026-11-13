@@ -3,51 +3,76 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/network-firewall/model/DetachRuleGroupsFromProxyConfigurationRequest.h>
 
 #include <utility>
 
 using namespace Aws::NetworkFirewall::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String DetachRuleGroupsFromProxyConfigurationRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_proxyConfigurationNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_proxyConfigurationArnHasBeenSet) {
+    mapSize++;
+  }
+  if (m_ruleGroupNamesHasBeenSet) {
+    mapSize++;
+  }
+  if (m_ruleGroupArnsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_updateTokenHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_proxyConfigurationNameHasBeenSet) {
-    payload.WithString("ProxyConfigurationName", m_proxyConfigurationName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ProxyConfigurationName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_proxyConfigurationName.c_str()));
   }
 
   if (m_proxyConfigurationArnHasBeenSet) {
-    payload.WithString("ProxyConfigurationArn", m_proxyConfigurationArn);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ProxyConfigurationArn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_proxyConfigurationArn.c_str()));
   }
 
   if (m_ruleGroupNamesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> ruleGroupNamesJsonList(m_ruleGroupNames.size());
-    for (unsigned ruleGroupNamesIndex = 0; ruleGroupNamesIndex < ruleGroupNamesJsonList.GetLength(); ++ruleGroupNamesIndex) {
-      ruleGroupNamesJsonList[ruleGroupNamesIndex].AsString(m_ruleGroupNames[ruleGroupNamesIndex]);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("RuleGroupNames"));
+    encoder.WriteArrayStart(m_ruleGroupNames.size());
+    for (const auto& item_0 : m_ruleGroupNames) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
     }
-    payload.WithArray("RuleGroupNames", std::move(ruleGroupNamesJsonList));
   }
 
   if (m_ruleGroupArnsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> ruleGroupArnsJsonList(m_ruleGroupArns.size());
-    for (unsigned ruleGroupArnsIndex = 0; ruleGroupArnsIndex < ruleGroupArnsJsonList.GetLength(); ++ruleGroupArnsIndex) {
-      ruleGroupArnsJsonList[ruleGroupArnsIndex].AsString(m_ruleGroupArns[ruleGroupArnsIndex]);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("RuleGroupArns"));
+    encoder.WriteArrayStart(m_ruleGroupArns.size());
+    for (const auto& item_0 : m_ruleGroupArns) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
     }
-    payload.WithArray("RuleGroupArns", std::move(ruleGroupArnsJsonList));
   }
 
   if (m_updateTokenHasBeenSet) {
-    payload.WithString("UpdateToken", m_updateToken);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("UpdateToken"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_updateToken.c_str()));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection DetachRuleGroupsFromProxyConfigurationRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "NetworkFirewall_20201112.DetachRuleGroupsFromProxyConfiguration"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
+#include <aws/mediaconnect/model/RtmpPushStreamDetails.h>
 
 #include <utility>
 
@@ -66,12 +67,34 @@ class FailoverRouterInputIndexedStreamDetails {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The RTMP stream details for this indexed stream, including the application
+   * and stream names.</p>
+   */
+  inline const RtmpPushStreamDetails& GetRtmpPush() const { return m_rtmpPush; }
+  inline bool RtmpPushHasBeenSet() const { return m_rtmpPushHasBeenSet; }
+  template <typename RtmpPushT = RtmpPushStreamDetails>
+  void SetRtmpPush(RtmpPushT&& value) {
+    m_rtmpPushHasBeenSet = true;
+    m_rtmpPush = std::forward<RtmpPushT>(value);
+  }
+  template <typename RtmpPushT = RtmpPushStreamDetails>
+  FailoverRouterInputIndexedStreamDetails& WithRtmpPush(RtmpPushT&& value) {
+    SetRtmpPush(std::forward<RtmpPushT>(value));
+    return *this;
+  }
+  ///@}
  private:
   int m_sourceIndex{0};
 
   Aws::String m_sourceIpAddress;
+
+  RtmpPushStreamDetails m_rtmpPush;
   bool m_sourceIndexHasBeenSet = false;
   bool m_sourceIpAddressHasBeenSet = false;
+  bool m_rtmpPushHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -4,107 +4,556 @@
  */
 
 #include <aws/codebuild/model/CodeCoverage.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace CodeBuild {
 namespace Model {
 
-CodeCoverage::CodeCoverage(JsonView jsonValue) { *this = jsonValue; }
+CodeCoverage::CodeCoverage(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-CodeCoverage& CodeCoverage::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("id")) {
-    m_id = jsonValue.GetString("id");
-    m_idHasBeenSet = true;
+CodeCoverage& CodeCoverage::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "id") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_id = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_id = ss.str();
+                  }
+                }
+                m_idHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "reportARN") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_reportARN = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_reportARN = ss.str();
+                  }
+                }
+                m_reportARNHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "filePath") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_filePath = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_filePath = ss.str();
+                  }
+                }
+                m_filePathHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "lineCoveragePercentage") {
+                auto val = decoder->PopNextFloatVal();
+                if (val.has_value()) {
+                  m_lineCoveragePercentage = val.value();
+                }
+                m_lineCoveragePercentageHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "linesCovered") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_linesCovered = static_cast<int64_t>(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextNegativeIntVal();
+                    if (val.has_value()) {
+                      m_linesCovered = static_cast<int64_t>(1 - val.value());
+                    }
+                  }
+                }
+                m_linesCoveredHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "linesMissed") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_linesMissed = static_cast<int64_t>(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextNegativeIntVal();
+                    if (val.has_value()) {
+                      m_linesMissed = static_cast<int64_t>(1 - val.value());
+                    }
+                  }
+                }
+                m_linesMissedHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "branchCoveragePercentage") {
+                auto val = decoder->PopNextFloatVal();
+                if (val.has_value()) {
+                  m_branchCoveragePercentage = val.value();
+                }
+                m_branchCoveragePercentageHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "branchesCovered") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_branchesCovered = static_cast<int64_t>(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextNegativeIntVal();
+                    if (val.has_value()) {
+                      m_branchesCovered = static_cast<int64_t>(1 - val.value());
+                    }
+                  }
+                }
+                m_branchesCoveredHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "branchesMissed") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_branchesMissed = static_cast<int64_t>(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextNegativeIntVal();
+                    if (val.has_value()) {
+                      m_branchesMissed = static_cast<int64_t>(1 - val.value());
+                    }
+                  }
+                }
+                m_branchesMissedHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "expired") {
+                auto tag = decoder->PopNextTagVal();
+                if (tag.has_value() &&
+                    tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+                {
+                  auto dateType = decoder->PeekType();
+                  if (dateType.has_value()) {
+                    if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                      auto val = decoder->PopNextFloatVal();
+                      if (val.has_value()) {
+                        m_expired = Aws::Utils::DateTime(val.value());
+                      }
+                    } else {
+                      auto val = decoder->PopNextUnsignedIntVal();
+                      if (val.has_value()) {
+                        m_expired = Aws::Utils::DateTime(val.value());
+                      }
+                    }
+                  }
+                }
+                m_expiredHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("CodeCoverage", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "id") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_id = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_id = ss.str();
+                }
+              }
+              m_idHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "reportARN") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_reportARN = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_reportARN = ss.str();
+                }
+              }
+              m_reportARNHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "filePath") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_filePath = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_filePath = ss.str();
+                }
+              }
+              m_filePathHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "lineCoveragePercentage") {
+              auto val = decoder->PopNextFloatVal();
+              if (val.has_value()) {
+                m_lineCoveragePercentage = val.value();
+              }
+              m_lineCoveragePercentageHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "linesCovered") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
+                  auto val = decoder->PopNextUnsignedIntVal();
+                  if (val.has_value()) {
+                    m_linesCovered = static_cast<int64_t>(val.value());
+                  }
+                } else {
+                  auto val = decoder->PopNextNegativeIntVal();
+                  if (val.has_value()) {
+                    m_linesCovered = static_cast<int64_t>(1 - val.value());
+                  }
+                }
+              }
+              m_linesCoveredHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "linesMissed") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
+                  auto val = decoder->PopNextUnsignedIntVal();
+                  if (val.has_value()) {
+                    m_linesMissed = static_cast<int64_t>(val.value());
+                  }
+                } else {
+                  auto val = decoder->PopNextNegativeIntVal();
+                  if (val.has_value()) {
+                    m_linesMissed = static_cast<int64_t>(1 - val.value());
+                  }
+                }
+              }
+              m_linesMissedHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "branchCoveragePercentage") {
+              auto val = decoder->PopNextFloatVal();
+              if (val.has_value()) {
+                m_branchCoveragePercentage = val.value();
+              }
+              m_branchCoveragePercentageHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "branchesCovered") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
+                  auto val = decoder->PopNextUnsignedIntVal();
+                  if (val.has_value()) {
+                    m_branchesCovered = static_cast<int64_t>(val.value());
+                  }
+                } else {
+                  auto val = decoder->PopNextNegativeIntVal();
+                  if (val.has_value()) {
+                    m_branchesCovered = static_cast<int64_t>(1 - val.value());
+                  }
+                }
+              }
+              m_branchesCoveredHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "branchesMissed") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
+                  auto val = decoder->PopNextUnsignedIntVal();
+                  if (val.has_value()) {
+                    m_branchesMissed = static_cast<int64_t>(val.value());
+                  }
+                } else {
+                  auto val = decoder->PopNextNegativeIntVal();
+                  if (val.has_value()) {
+                    m_branchesMissed = static_cast<int64_t>(1 - val.value());
+                  }
+                }
+              }
+              m_branchesMissedHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "expired") {
+              auto tag = decoder->PopNextTagVal();
+              if (tag.has_value() &&
+                  tag.value() == 1)  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+              {
+                auto dateType = decoder->PeekType();
+                if (dateType.has_value()) {
+                  if (dateType.value() == Aws::Crt::Cbor::CborType::Float) {
+                    auto val = decoder->PopNextFloatVal();
+                    if (val.has_value()) {
+                      m_expired = Aws::Utils::DateTime(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_expired = Aws::Utils::DateTime(val.value());
+                    }
+                  }
+                }
+              }
+              m_expiredHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
+    }
   }
-  if (jsonValue.ValueExists("reportARN")) {
-    m_reportARN = jsonValue.GetString("reportARN");
-    m_reportARNHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("filePath")) {
-    m_filePath = jsonValue.GetString("filePath");
-    m_filePathHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("lineCoveragePercentage")) {
-    m_lineCoveragePercentage = jsonValue.GetDouble("lineCoveragePercentage");
-    m_lineCoveragePercentageHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("linesCovered")) {
-    m_linesCovered = jsonValue.GetInteger("linesCovered");
-    m_linesCoveredHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("linesMissed")) {
-    m_linesMissed = jsonValue.GetInteger("linesMissed");
-    m_linesMissedHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("branchCoveragePercentage")) {
-    m_branchCoveragePercentage = jsonValue.GetDouble("branchCoveragePercentage");
-    m_branchCoveragePercentageHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("branchesCovered")) {
-    m_branchesCovered = jsonValue.GetInteger("branchesCovered");
-    m_branchesCoveredHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("branchesMissed")) {
-    m_branchesMissed = jsonValue.GetInteger("branchesMissed");
-    m_branchesMissedHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("expired")) {
-    m_expired = jsonValue.GetDouble("expired");
-    m_expiredHasBeenSet = true;
-  }
+
   return *this;
 }
 
-JsonValue CodeCoverage::Jsonize() const {
-  JsonValue payload;
+void CodeCoverage::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_idHasBeenSet) {
+    mapSize++;
+  }
+  if (m_reportARNHasBeenSet) {
+    mapSize++;
+  }
+  if (m_filePathHasBeenSet) {
+    mapSize++;
+  }
+  if (m_lineCoveragePercentageHasBeenSet) {
+    mapSize++;
+  }
+  if (m_linesCoveredHasBeenSet) {
+    mapSize++;
+  }
+  if (m_linesMissedHasBeenSet) {
+    mapSize++;
+  }
+  if (m_branchCoveragePercentageHasBeenSet) {
+    mapSize++;
+  }
+  if (m_branchesCoveredHasBeenSet) {
+    mapSize++;
+  }
+  if (m_branchesMissedHasBeenSet) {
+    mapSize++;
+  }
+  if (m_expiredHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_idHasBeenSet) {
-    payload.WithString("id", m_id);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("id"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_id.c_str()));
   }
 
   if (m_reportARNHasBeenSet) {
-    payload.WithString("reportARN", m_reportARN);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("reportARN"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_reportARN.c_str()));
   }
 
   if (m_filePathHasBeenSet) {
-    payload.WithString("filePath", m_filePath);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("filePath"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_filePath.c_str()));
   }
 
   if (m_lineCoveragePercentageHasBeenSet) {
-    payload.WithDouble("lineCoveragePercentage", m_lineCoveragePercentage);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("lineCoveragePercentage"));
+    encoder.WriteFloat(m_lineCoveragePercentage);
   }
 
   if (m_linesCoveredHasBeenSet) {
-    payload.WithInteger("linesCovered", m_linesCovered);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("linesCovered"));
+    (m_linesCovered >= 0) ? encoder.WriteUInt(m_linesCovered) : encoder.WriteNegInt(m_linesCovered);
   }
 
   if (m_linesMissedHasBeenSet) {
-    payload.WithInteger("linesMissed", m_linesMissed);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("linesMissed"));
+    (m_linesMissed >= 0) ? encoder.WriteUInt(m_linesMissed) : encoder.WriteNegInt(m_linesMissed);
   }
 
   if (m_branchCoveragePercentageHasBeenSet) {
-    payload.WithDouble("branchCoveragePercentage", m_branchCoveragePercentage);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("branchCoveragePercentage"));
+    encoder.WriteFloat(m_branchCoveragePercentage);
   }
 
   if (m_branchesCoveredHasBeenSet) {
-    payload.WithInteger("branchesCovered", m_branchesCovered);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("branchesCovered"));
+    (m_branchesCovered >= 0) ? encoder.WriteUInt(m_branchesCovered) : encoder.WriteNegInt(m_branchesCovered);
   }
 
   if (m_branchesMissedHasBeenSet) {
-    payload.WithInteger("branchesMissed", m_branchesMissed);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("branchesMissed"));
+    (m_branchesMissed >= 0) ? encoder.WriteUInt(m_branchesMissed) : encoder.WriteNegInt(m_branchesMissed);
   }
 
   if (m_expiredHasBeenSet) {
-    payload.WithDouble("expired", m_expired.SecondsWithMSPrecision());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("expired"));
+    encoder.WriteTag(1);  // 1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+    encoder.WriteUInt(m_expired.Seconds());
   }
-
-  return payload;
 }
 
 }  // namespace Model

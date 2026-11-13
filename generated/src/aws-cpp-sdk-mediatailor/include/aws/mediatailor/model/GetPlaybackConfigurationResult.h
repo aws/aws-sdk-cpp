@@ -536,8 +536,9 @@ class GetPlaybackConfigurationResult {
    * <p>A map of lifecycle hook event names to function identifiers. The function
    * mapping specifies which function MediaTailor executes at each lifecycle hook
    * during ad insertion. Valid keys are <code>PRE_SESSION_INITIALIZATION</code>,
-   * <code>PRE_ADS_REQUEST</code>, <code>POST_ADS_RESPONSE</code>, and
-   * <code>PRE_MANIFEST_INSERTION</code>. For more information, see <a
+   * <code>POST_ORIGIN_RESPONSE</code>, <code>PRE_ADS_REQUEST</code>,
+   * <code>POST_ADS_RESPONSE</code>, and <code>PRE_MANIFEST_INSERTION</code>. For
+   * more information, see <a
    * href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions-hooks.html">Functions
    * lifecycle hooks</a> in the <i>MediaTailor User Guide</i>.</p>
    */

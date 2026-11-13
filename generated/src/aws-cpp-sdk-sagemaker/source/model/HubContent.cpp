@@ -106,6 +106,14 @@ HubContent& HubContent::operator=(JsonView jsonValue) {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
     m_lastModifiedTimeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("CreatedBy")) {
+    m_createdBy = jsonValue.GetObject("CreatedBy");
+    m_createdByHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("LastModifiedBy")) {
+    m_lastModifiedBy = jsonValue.GetObject("LastModifiedBy");
+    m_lastModifiedByHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Tags")) {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
     for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
@@ -207,6 +215,14 @@ JsonValue HubContent::Jsonize() const {
 
   if (m_lastModifiedTimeHasBeenSet) {
     payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
+  }
+
+  if (m_createdByHasBeenSet) {
+    payload.WithObject("CreatedBy", m_createdBy.Jsonize());
+  }
+
+  if (m_lastModifiedByHasBeenSet) {
+    payload.WithObject("LastModifiedBy", m_lastModifiedBy.Jsonize());
   }
 
   if (m_tagsHasBeenSet) {

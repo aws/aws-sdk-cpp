@@ -26,6 +26,8 @@
 #include <aws/odb/model/AdminPasswordSourceSummary.h>
 #include <aws/odb/model/AssociateIamRoleToResourceRequest.h>
 #include <aws/odb/model/AssociateIamRoleToResourceResult.h>
+#include <aws/odb/model/AssociateVirtualMachinesToCloudVmClusterRequest.h>
+#include <aws/odb/model/AssociateVirtualMachinesToCloudVmClusterResult.h>
 #include <aws/odb/model/AssociateVirtualMachinesToExadbVmClusterRequest.h>
 #include <aws/odb/model/AssociateVirtualMachinesToExadbVmClusterResult.h>
 #include <aws/odb/model/AutonomousDatabase.h>
@@ -129,6 +131,8 @@
 #include <aws/odb/model/DeleteOdbPeeringConnectionResult.h>
 #include <aws/odb/model/DisassociateIamRoleFromResourceRequest.h>
 #include <aws/odb/model/DisassociateIamRoleFromResourceResult.h>
+#include <aws/odb/model/DisassociateVirtualMachinesFromCloudVmClusterRequest.h>
+#include <aws/odb/model/DisassociateVirtualMachinesFromCloudVmClusterResult.h>
 #include <aws/odb/model/DisassociateVirtualMachinesFromExadbVmClusterRequest.h>
 #include <aws/odb/model/DisassociateVirtualMachinesFromExadbVmClusterResult.h>
 #include <aws/odb/model/DisasterRecoveryConfiguration.h>
@@ -335,8 +339,14 @@
 #include <aws/odb/model/UpdateAutonomousDatabaseBackupResult.h>
 #include <aws/odb/model/UpdateAutonomousDatabaseRequest.h>
 #include <aws/odb/model/UpdateAutonomousDatabaseResult.h>
+#include <aws/odb/model/UpdateCloudAutonomousVmClusterRequest.h>
+#include <aws/odb/model/UpdateCloudAutonomousVmClusterResult.h>
 #include <aws/odb/model/UpdateCloudExadataInfrastructureRequest.h>
 #include <aws/odb/model/UpdateCloudExadataInfrastructureResult.h>
+#include <aws/odb/model/UpdateCloudExadataInfrastructureStorageCapacityRequest.h>
+#include <aws/odb/model/UpdateCloudExadataInfrastructureStorageCapacityResult.h>
+#include <aws/odb/model/UpdateCloudVmClusterRequest.h>
+#include <aws/odb/model/UpdateCloudVmClusterResult.h>
 #include <aws/odb/model/UpdateExadbVmClusterRequest.h>
 #include <aws/odb/model/UpdateExadbVmClusterResult.h>
 #include <aws/odb/model/UpdateExascaleCloudExadataInfrastructureRequest.h>

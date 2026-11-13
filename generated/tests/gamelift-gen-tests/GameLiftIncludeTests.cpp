@@ -250,6 +250,7 @@
 #include <aws/gamelift/model/GameSessionPlacementState.h>
 #include <aws/gamelift/model/GameSessionQueue.h>
 #include <aws/gamelift/model/GameSessionQueueDestination.h>
+#include <aws/gamelift/model/GameSessionQueueLogConfiguration.h>
 #include <aws/gamelift/model/GameSessionStatus.h>
 #include <aws/gamelift/model/GameSessionStatusReason.h>
 #include <aws/gamelift/model/GetComputeAccessRequest.h>
@@ -320,6 +321,8 @@
 #include <aws/gamelift/model/LocationUpdateStatus.h>
 #include <aws/gamelift/model/LocationalDeployment.h>
 #include <aws/gamelift/model/LogConfiguration.h>
+#include <aws/gamelift/model/LogDeliveryDestination.h>
+#include <aws/gamelift/model/LogDeliveryDestinationType.h>
 #include <aws/gamelift/model/LogDestination.h>
 #include <aws/gamelift/model/ManagedCapacityConfiguration.h>
 #include <aws/gamelift/model/MatchedPlayerSession.h>

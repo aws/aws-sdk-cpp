@@ -9,6 +9,7 @@
 #include <aws/secretsmanager/SecretsManagerClientPagination.h>
 #include <aws/secretsmanager/SecretsManagerPaginationBase.h>
 #include <aws/secretsmanager/model/BatchGetSecretValuePaginationTraits.h>
+#include <aws/secretsmanager/model/ListResourcePoliciesPaginationTraits.h>
 #include <aws/secretsmanager/model/ListSecretsPaginationTraits.h>
 #include <aws/secretsmanager/model/ListSecretVersionIdsPaginationTraits.h>
 

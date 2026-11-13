@@ -1008,6 +1008,36 @@ class AWS_CLOUDWATCHOMNI_API CloudWatchOmniClient : public Aws::Client::AWSRpcV2
   }
 
   /**
+   * <p>Returns temporary credentials for working with data in a space, limited to
+   * the actions you request.</p> <p>The credentials allow only the requested actions
+   * that can be granted in the space and that your access grants allow. Requested
+   * actions that cannot be conferred are ignored rather than rejected.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudwatchomni-2025-01-01/GetSpaceDataAccess">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetSpaceDataAccessOutcome GetSpaceDataAccess(const Model::GetSpaceDataAccessRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetSpaceDataAccess that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetSpaceDataAccessRequestT = Model::GetSpaceDataAccessRequest>
+  Model::GetSpaceDataAccessOutcomeCallable GetSpaceDataAccessCallable(const GetSpaceDataAccessRequestT& request) const {
+    return SubmitCallable(&CloudWatchOmniClient::GetSpaceDataAccess, request);
+  }
+
+  /**
+   * An Async wrapper for GetSpaceDataAccess that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetSpaceDataAccessRequestT = Model::GetSpaceDataAccessRequest>
+  void GetSpaceDataAccessAsync(const GetSpaceDataAccessRequestT& request, const GetSpaceDataAccessResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&CloudWatchOmniClient::GetSpaceDataAccess, request, handler, context);
+  }
+
+  /**
    * <p>Returns the results for the specified query.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudwatchomni-2025-01-01/GetTelemetryQueryResults">AWS
    * API Reference</a></p>

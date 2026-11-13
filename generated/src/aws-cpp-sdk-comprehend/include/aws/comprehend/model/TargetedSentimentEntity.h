@@ -7,15 +7,15 @@
 #include <aws/comprehend/Comprehend_EXPORTS.h>
 #include <aws/comprehend/model/TargetedSentimentMention.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace Comprehend {
 namespace Model {
@@ -32,28 +32,28 @@ namespace Model {
 class TargetedSentimentEntity {
  public:
   AWS_COMPREHEND_API TargetedSentimentEntity() = default;
-  AWS_COMPREHEND_API TargetedSentimentEntity(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPREHEND_API TargetedSentimentEntity& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_COMPREHEND_API TargetedSentimentEntity(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPREHEND_API TargetedSentimentEntity& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPREHEND_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
    * <p>One or more index into the Mentions array that provides the best name for the
    * entity group.</p>
    */
-  inline const Aws::Vector<int>& GetDescriptiveMentionIndex() const { return m_descriptiveMentionIndex; }
+  inline const Aws::Vector<int64_t>& GetDescriptiveMentionIndex() const { return m_descriptiveMentionIndex; }
   inline bool DescriptiveMentionIndexHasBeenSet() const { return m_descriptiveMentionIndexHasBeenSet; }
-  template <typename DescriptiveMentionIndexT = Aws::Vector<int>>
+  template <typename DescriptiveMentionIndexT = Aws::Vector<int64_t>>
   void SetDescriptiveMentionIndex(DescriptiveMentionIndexT&& value) {
     m_descriptiveMentionIndexHasBeenSet = true;
     m_descriptiveMentionIndex = std::forward<DescriptiveMentionIndexT>(value);
   }
-  template <typename DescriptiveMentionIndexT = Aws::Vector<int>>
+  template <typename DescriptiveMentionIndexT = Aws::Vector<int64_t>>
   TargetedSentimentEntity& WithDescriptiveMentionIndex(DescriptiveMentionIndexT&& value) {
     SetDescriptiveMentionIndex(std::forward<DescriptiveMentionIndexT>(value));
     return *this;
   }
-  inline TargetedSentimentEntity& AddDescriptiveMentionIndex(int value) {
+  inline TargetedSentimentEntity& AddDescriptiveMentionIndex(int64_t value) {
     m_descriptiveMentionIndexHasBeenSet = true;
     m_descriptiveMentionIndex.push_back(value);
     return *this;
@@ -87,7 +87,7 @@ class TargetedSentimentEntity {
   }
   ///@}
  private:
-  Aws::Vector<int> m_descriptiveMentionIndex;
+  Aws::Vector<int64_t> m_descriptiveMentionIndex;
 
   Aws::Vector<TargetedSentimentMention> m_mentions;
   bool m_descriptiveMentionIndexHasBeenSet = false;

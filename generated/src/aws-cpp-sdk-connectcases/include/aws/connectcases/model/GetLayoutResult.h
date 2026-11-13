@@ -102,8 +102,8 @@ class GetLayoutResult {
 
   ///@{
   /**
-   * <p>A map of of key-value pairs that represent tags on a resource. Tags are used
-   * to organize, track, or control access for this resource.</p>
+   * <p>A map of key-value pairs that represent tags on a resource. Tags are used to
+   * organize, track, or control access for this resource.</p>
    */
   inline const Aws::Map<Aws::String, Aws::Crt::Optional<Aws::String>>& GetTags() const { return m_tags; }
   template <typename TagsT = Aws::Map<Aws::String, Aws::Crt::Optional<Aws::String>>>

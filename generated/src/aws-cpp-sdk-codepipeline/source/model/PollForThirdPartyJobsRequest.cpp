@@ -4,30 +4,45 @@
  */
 
 #include <aws/codepipeline/model/PollForThirdPartyJobsRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 using namespace Aws::CodePipeline::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String PollForThirdPartyJobsRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_actionTypeIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_maxBatchSizeHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_actionTypeIdHasBeenSet) {
-    payload.WithObject("actionTypeId", m_actionTypeId.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("actionTypeId"));
+    m_actionTypeId.CborEncode(encoder);
   }
 
   if (m_maxBatchSizeHasBeenSet) {
-    payload.WithInteger("maxBatchSize", m_maxBatchSize);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("maxBatchSize"));
+    (m_maxBatchSize >= 0) ? encoder.WriteUInt(m_maxBatchSize) : encoder.WriteNegInt(m_maxBatchSize);
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection PollForThirdPartyJobsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodePipeline_20150709.PollForThirdPartyJobs"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

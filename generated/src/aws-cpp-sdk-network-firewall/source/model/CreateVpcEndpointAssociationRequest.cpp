@@ -3,47 +3,73 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/network-firewall/model/CreateVpcEndpointAssociationRequest.h>
 
 #include <utility>
 
 using namespace Aws::NetworkFirewall::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String CreateVpcEndpointAssociationRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_firewallArnHasBeenSet) {
+    mapSize++;
+  }
+  if (m_vpcIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_subnetMappingHasBeenSet) {
+    mapSize++;
+  }
+  if (m_descriptionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_tagsHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_firewallArnHasBeenSet) {
-    payload.WithString("FirewallArn", m_firewallArn);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("FirewallArn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_firewallArn.c_str()));
   }
 
   if (m_vpcIdHasBeenSet) {
-    payload.WithString("VpcId", m_vpcId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("VpcId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_vpcId.c_str()));
   }
 
   if (m_subnetMappingHasBeenSet) {
-    payload.WithObject("SubnetMapping", m_subnetMapping.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("SubnetMapping"));
+    m_subnetMapping.CborEncode(encoder);
   }
 
   if (m_descriptionHasBeenSet) {
-    payload.WithString("Description", m_description);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Description"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_description.c_str()));
   }
 
   if (m_tagsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
-      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Tags"));
+    encoder.WriteArrayStart(m_tags.size());
+    for (const auto& item_0 : m_tags) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("Tags", std::move(tagsJsonList));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection CreateVpcEndpointAssociationRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "NetworkFirewall_20201112.CreateVpcEndpointAssociation"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

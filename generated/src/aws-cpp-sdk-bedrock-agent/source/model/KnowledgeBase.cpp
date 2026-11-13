@@ -65,6 +65,14 @@ KnowledgeBase& KnowledgeBase::operator=(JsonView jsonValue) {
     }
     m_failureReasonsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("metadataConfigurations")) {
+    Aws::Utils::Array<JsonView> metadataConfigurationsJsonList = jsonValue.GetArray("metadataConfigurations");
+    for (unsigned metadataConfigurationsIndex = 0; metadataConfigurationsIndex < metadataConfigurationsJsonList.GetLength();
+         ++metadataConfigurationsIndex) {
+      m_metadataConfigurations.push_back(metadataConfigurationsJsonList[metadataConfigurationsIndex].AsObject());
+    }
+    m_metadataConfigurationsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -117,6 +125,15 @@ JsonValue KnowledgeBase::Jsonize() const {
       failureReasonsJsonList[failureReasonsIndex].AsString(m_failureReasons[failureReasonsIndex]);
     }
     payload.WithArray("failureReasons", std::move(failureReasonsJsonList));
+  }
+
+  if (m_metadataConfigurationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> metadataConfigurationsJsonList(m_metadataConfigurations.size());
+    for (unsigned metadataConfigurationsIndex = 0; metadataConfigurationsIndex < metadataConfigurationsJsonList.GetLength();
+         ++metadataConfigurationsIndex) {
+      metadataConfigurationsJsonList[metadataConfigurationsIndex].AsObject(m_metadataConfigurations[metadataConfigurationsIndex].Jsonize());
+    }
+    payload.WithArray("metadataConfigurations", std::move(metadataConfigurationsJsonList));
   }
 
   return payload;

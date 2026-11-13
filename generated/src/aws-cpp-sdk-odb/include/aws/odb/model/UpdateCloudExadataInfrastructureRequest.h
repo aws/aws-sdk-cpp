@@ -50,7 +50,45 @@ class UpdateCloudExadataInfrastructureRequest : public OdbRequest {
   ///@}
 
   ///@{
+  /**
+   * <p>A new user-friendly name for the Exadata infrastructure.</p>
+   */
+  inline const Aws::String& GetDisplayName() const { return m_displayName; }
+  inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
+  template <typename DisplayNameT = Aws::String>
+  void SetDisplayName(DisplayNameT&& value) {
+    m_displayNameHasBeenSet = true;
+    m_displayName = std::forward<DisplayNameT>(value);
+  }
+  template <typename DisplayNameT = Aws::String>
+  UpdateCloudExadataInfrastructureRequest& WithDisplayName(DisplayNameT&& value) {
+    SetDisplayName(std::forward<DisplayNameT>(value));
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The number of database servers for the Exadata infrastructure.</p>
+   */
+  inline int GetComputeCount() const { return m_computeCount; }
+  inline bool ComputeCountHasBeenSet() const { return m_computeCountHasBeenSet; }
+  inline void SetComputeCount(int value) {
+    m_computeCountHasBeenSet = true;
+    m_computeCount = value;
+  }
+  inline UpdateCloudExadataInfrastructureRequest& WithComputeCount(int value) {
+    SetComputeCount(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The maintenance window configuration for the Exadata Cloud
+   * infrastructure.</p> <p>This allows you to define when maintenance operations
+   * such as patching and updates can be performed on the infrastructure.</p>
+   */
   inline const MaintenanceWindow& GetMaintenanceWindow() const { return m_maintenanceWindow; }
   inline bool MaintenanceWindowHasBeenSet() const { return m_maintenanceWindowHasBeenSet; }
   template <typename MaintenanceWindowT = MaintenanceWindow>
@@ -64,12 +102,37 @@ class UpdateCloudExadataInfrastructureRequest : public OdbRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The number of storage servers to activate for the Exadata infrastructure.</p>
+   */
+  inline int GetStorageCount() const { return m_storageCount; }
+  inline bool StorageCountHasBeenSet() const { return m_storageCountHasBeenSet; }
+  inline void SetStorageCount(int value) {
+    m_storageCountHasBeenSet = true;
+    m_storageCount = value;
+  }
+  inline UpdateCloudExadataInfrastructureRequest& WithStorageCount(int value) {
+    SetStorageCount(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_cloudExadataInfrastructureId;
 
+  Aws::String m_displayName;
+
+  int m_computeCount{0};
+
   MaintenanceWindow m_maintenanceWindow;
+
+  int m_storageCount{0};
   bool m_cloudExadataInfrastructureIdHasBeenSet = false;
+  bool m_displayNameHasBeenSet = false;
+  bool m_computeCountHasBeenSet = false;
   bool m_maintenanceWindowHasBeenSet = false;
+  bool m_storageCountHasBeenSet = false;
 };
 
 }  // namespace Model

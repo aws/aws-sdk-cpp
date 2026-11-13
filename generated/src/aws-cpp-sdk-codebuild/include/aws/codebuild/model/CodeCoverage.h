@@ -7,15 +7,15 @@
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace CodeBuild {
 namespace Model {
@@ -32,9 +32,9 @@ namespace Model {
 class CodeCoverage {
  public:
   AWS_CODEBUILD_API CodeCoverage() = default;
-  AWS_CODEBUILD_API CodeCoverage(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CODEBUILD_API CodeCoverage& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_CODEBUILD_API CodeCoverage(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CODEBUILD_API CodeCoverage& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CODEBUILD_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -110,13 +110,13 @@ class CodeCoverage {
   /**
    * <p>The number of lines that are covered by your tests.</p>
    */
-  inline int GetLinesCovered() const { return m_linesCovered; }
+  inline int64_t GetLinesCovered() const { return m_linesCovered; }
   inline bool LinesCoveredHasBeenSet() const { return m_linesCoveredHasBeenSet; }
-  inline void SetLinesCovered(int value) {
+  inline void SetLinesCovered(int64_t value) {
     m_linesCoveredHasBeenSet = true;
     m_linesCovered = value;
   }
-  inline CodeCoverage& WithLinesCovered(int value) {
+  inline CodeCoverage& WithLinesCovered(int64_t value) {
     SetLinesCovered(value);
     return *this;
   }
@@ -126,13 +126,13 @@ class CodeCoverage {
   /**
    * <p>The number of lines that are not covered by your tests.</p>
    */
-  inline int GetLinesMissed() const { return m_linesMissed; }
+  inline int64_t GetLinesMissed() const { return m_linesMissed; }
   inline bool LinesMissedHasBeenSet() const { return m_linesMissedHasBeenSet; }
-  inline void SetLinesMissed(int value) {
+  inline void SetLinesMissed(int64_t value) {
     m_linesMissedHasBeenSet = true;
     m_linesMissed = value;
   }
-  inline CodeCoverage& WithLinesMissed(int value) {
+  inline CodeCoverage& WithLinesMissed(int64_t value) {
     SetLinesMissed(value);
     return *this;
   }
@@ -158,13 +158,13 @@ class CodeCoverage {
   /**
    * <p>The number of conditional branches that are covered by your tests.</p>
    */
-  inline int GetBranchesCovered() const { return m_branchesCovered; }
+  inline int64_t GetBranchesCovered() const { return m_branchesCovered; }
   inline bool BranchesCoveredHasBeenSet() const { return m_branchesCoveredHasBeenSet; }
-  inline void SetBranchesCovered(int value) {
+  inline void SetBranchesCovered(int64_t value) {
     m_branchesCoveredHasBeenSet = true;
     m_branchesCovered = value;
   }
-  inline CodeCoverage& WithBranchesCovered(int value) {
+  inline CodeCoverage& WithBranchesCovered(int64_t value) {
     SetBranchesCovered(value);
     return *this;
   }
@@ -174,13 +174,13 @@ class CodeCoverage {
   /**
    * <p>The number of conditional branches that are not covered by your tests.</p>
    */
-  inline int GetBranchesMissed() const { return m_branchesMissed; }
+  inline int64_t GetBranchesMissed() const { return m_branchesMissed; }
   inline bool BranchesMissedHasBeenSet() const { return m_branchesMissedHasBeenSet; }
-  inline void SetBranchesMissed(int value) {
+  inline void SetBranchesMissed(int64_t value) {
     m_branchesMissedHasBeenSet = true;
     m_branchesMissed = value;
   }
-  inline CodeCoverage& WithBranchesMissed(int value) {
+  inline CodeCoverage& WithBranchesMissed(int64_t value) {
     SetBranchesMissed(value);
     return *this;
   }
@@ -212,15 +212,15 @@ class CodeCoverage {
 
   double m_lineCoveragePercentage{0.0};
 
-  int m_linesCovered{0};
+  int64_t m_linesCovered{0};
 
-  int m_linesMissed{0};
+  int64_t m_linesMissed{0};
 
   double m_branchCoveragePercentage{0.0};
 
-  int m_branchesCovered{0};
+  int64_t m_branchesCovered{0};
 
-  int m_branchesMissed{0};
+  int64_t m_branchesMissed{0};
 
   Aws::Utils::DateTime m_expired{};
   bool m_idHasBeenSet = false;

@@ -147,7 +147,8 @@ class CreateVirtualClusterRequest : public EMRContainersRequest {
   ///@{
   /**
    * <p>The scheduler configuration (concurrency and queue limits) to apply to the
-   * virtual cluster at creation time. When omitted, no limits are applied.</p>
+   * virtual cluster at creation time. If you omit this field, the service applies a
+   * default limit of 1,000 concurrent job runs and does not limit queue depth.</p>
    */
   inline const SchedulerConfiguration& GetSchedulerConfiguration() const { return m_schedulerConfiguration; }
   inline bool SchedulerConfigurationHasBeenSet() const { return m_schedulerConfigurationHasBeenSet; }

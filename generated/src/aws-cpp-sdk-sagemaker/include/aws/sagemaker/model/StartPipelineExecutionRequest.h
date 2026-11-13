@@ -172,7 +172,8 @@ class StartPipelineExecutionRequest : public SageMakerRequest {
 
   ///@{
   /**
-   * <p>The ID of the pipeline version to start execution from.</p>
+   * <p>The ID of the pipeline version to start execution from. You can't specify
+   * this with <code>PipelineVersionAlias</code>.</p>
    */
   inline long long GetPipelineVersionId() const { return m_pipelineVersionId; }
   inline bool PipelineVersionIdHasBeenSet() const { return m_pipelineVersionIdHasBeenSet; }
@@ -203,6 +204,48 @@ class StartPipelineExecutionRequest : public SageMakerRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The alias of the pipeline version to start the execution from. You can't
+   * specify this with <code>PipelineVersionId</code>. If no version of the pipeline
+   * has this alias, the request fails with a <code>ResourceNotFound</code>
+   * error.</p>
+   */
+  inline const Aws::String& GetPipelineVersionAlias() const { return m_pipelineVersionAlias; }
+  inline bool PipelineVersionAliasHasBeenSet() const { return m_pipelineVersionAliasHasBeenSet; }
+  template <typename PipelineVersionAliasT = Aws::String>
+  void SetPipelineVersionAlias(PipelineVersionAliasT&& value) {
+    m_pipelineVersionAliasHasBeenSet = true;
+    m_pipelineVersionAlias = std::forward<PipelineVersionAliasT>(value);
+  }
+  template <typename PipelineVersionAliasT = Aws::String>
+  StartPipelineExecutionRequest& WithPipelineVersionAlias(PipelineVersionAliasT&& value) {
+    SetPipelineVersionAlias(std::forward<PipelineVersionAliasT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the IAM role that the execution uses. You
+   * must specify this parameter when you start an execution of a pipeline that
+   * Amazon Web Services manages. You can't specify it for a pipeline that you
+   * create, because its executions use the pipeline's role.</p>
+   */
+  inline const Aws::String& GetRoleArn() const { return m_roleArn; }
+  inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
+  template <typename RoleArnT = Aws::String>
+  void SetRoleArn(RoleArnT&& value) {
+    m_roleArnHasBeenSet = true;
+    m_roleArn = std::forward<RoleArnT>(value);
+  }
+  template <typename RoleArnT = Aws::String>
+  StartPipelineExecutionRequest& WithRoleArn(RoleArnT&& value) {
+    SetRoleArn(std::forward<RoleArnT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_pipelineName;
 
@@ -221,6 +264,10 @@ class StartPipelineExecutionRequest : public SageMakerRequest {
   long long m_pipelineVersionId{0};
 
   Aws::String m_mlflowExperimentName;
+
+  Aws::String m_pipelineVersionAlias;
+
+  Aws::String m_roleArn;
   bool m_pipelineNameHasBeenSet = false;
   bool m_pipelineExecutionDisplayNameHasBeenSet = false;
   bool m_pipelineParametersHasBeenSet = false;
@@ -230,6 +277,8 @@ class StartPipelineExecutionRequest : public SageMakerRequest {
   bool m_selectiveExecutionConfigHasBeenSet = false;
   bool m_pipelineVersionIdHasBeenSet = false;
   bool m_mlflowExperimentNameHasBeenSet = false;
+  bool m_pipelineVersionAliasHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
 };
 
 }  // namespace Model

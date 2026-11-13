@@ -7,6 +7,7 @@
 #include <aws/batch/Batch_EXPORTS.h>
 #include <aws/batch/model/EksContainerDetail.h>
 #include <aws/batch/model/EksMetadata.h>
+#include <aws/batch/model/EksPodSecurityContext.h>
 #include <aws/batch/model/EksVolume.h>
 #include <aws/batch/model/ImagePullSecret.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -297,6 +298,25 @@ class EksPodPropertiesDetail {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The security context applied to the pod. The settings apply to all containers
+   * in the pod unless an individual container specifies an overriding value.</p>
+   */
+  inline const EksPodSecurityContext& GetSecurityContext() const { return m_securityContext; }
+  inline bool SecurityContextHasBeenSet() const { return m_securityContextHasBeenSet; }
+  template <typename SecurityContextT = EksPodSecurityContext>
+  void SetSecurityContext(SecurityContextT&& value) {
+    m_securityContextHasBeenSet = true;
+    m_securityContext = std::forward<SecurityContextT>(value);
+  }
+  template <typename SecurityContextT = EksPodSecurityContext>
+  EksPodPropertiesDetail& WithSecurityContext(SecurityContextT&& value) {
+    SetSecurityContext(std::forward<SecurityContextT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_serviceAccountName;
 
@@ -319,6 +339,8 @@ class EksPodPropertiesDetail {
   EksMetadata m_metadata;
 
   bool m_shareProcessNamespace{false};
+
+  EksPodSecurityContext m_securityContext;
   bool m_serviceAccountNameHasBeenSet = false;
   bool m_hostNetworkHasBeenSet = false;
   bool m_dnsPolicyHasBeenSet = false;
@@ -330,6 +352,7 @@ class EksPodPropertiesDetail {
   bool m_nodeNameHasBeenSet = false;
   bool m_metadataHasBeenSet = false;
   bool m_shareProcessNamespaceHasBeenSet = false;
+  bool m_securityContextHasBeenSet = false;
 };
 
 }  // namespace Model

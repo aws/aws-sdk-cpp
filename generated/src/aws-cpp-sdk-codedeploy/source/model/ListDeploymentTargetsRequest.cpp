@@ -4,43 +4,60 @@
  */
 
 #include <aws/codedeploy/model/ListDeploymentTargetsRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 using namespace Aws::CodeDeploy::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String ListDeploymentTargetsRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_deploymentIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_nextTokenHasBeenSet) {
+    mapSize++;
+  }
+  if (m_targetFiltersHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_deploymentIdHasBeenSet) {
-    payload.WithString("deploymentId", m_deploymentId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("deploymentId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_deploymentId.c_str()));
   }
 
   if (m_nextTokenHasBeenSet) {
-    payload.WithString("nextToken", m_nextToken);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("nextToken"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_nextToken.c_str()));
   }
 
   if (m_targetFiltersHasBeenSet) {
-    JsonValue targetFiltersJsonMap;
-    for (auto& targetFiltersItem : m_targetFilters) {
-      Aws::Utils::Array<JsonValue> filterValueListJsonList(targetFiltersItem.second.size());
-      for (unsigned filterValueListIndex = 0; filterValueListIndex < filterValueListJsonList.GetLength(); ++filterValueListIndex) {
-        filterValueListJsonList[filterValueListIndex].AsString(targetFiltersItem.second[filterValueListIndex]);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("targetFilters"));
+    encoder.WriteMapStart(m_targetFilters.size());
+    for (const auto& item_0 : m_targetFilters) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(TargetFilterNameMapper::GetNameForTargetFilterName(item_0.first).c_str()));
+      encoder.WriteArrayStart(item_0.second.size());
+      for (const auto& item_1 : item_0.second) {
+        encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_1.c_str()));
       }
-      targetFiltersJsonMap.WithArray(TargetFilterNameMapper::GetNameForTargetFilterName(targetFiltersItem.first),
-                                     std::move(filterValueListJsonList));
     }
-    payload.WithObject("targetFilters", std::move(targetFiltersJsonMap));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection ListDeploymentTargetsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeDeploy_20141006.ListDeploymentTargets"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

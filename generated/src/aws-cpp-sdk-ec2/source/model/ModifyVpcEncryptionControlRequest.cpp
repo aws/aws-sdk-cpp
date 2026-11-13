@@ -81,6 +81,20 @@ Aws::String ModifyVpcEncryptionControlRequest::SerializePayload() const {
        << "&";
   }
 
+  if (m_globalAcceleratorExclusionHasBeenSet) {
+    ss << "GlobalAcceleratorExclusion="
+       << StringUtils::URLEncode(VpcEncryptionControlExclusionStateInputMapper::GetNameForVpcEncryptionControlExclusionStateInput(
+              m_globalAcceleratorExclusion))
+       << "&";
+  }
+
+  if (m_apiGatewayV2ExclusionHasBeenSet) {
+    ss << "ApiGatewayV2Exclusion="
+       << StringUtils::URLEncode(
+              VpcEncryptionControlExclusionStateInputMapper::GetNameForVpcEncryptionControlExclusionStateInput(m_apiGatewayV2Exclusion))
+       << "&";
+  }
+
   ss << "Version=2016-11-15";
   return ss.str();
 }

@@ -5,6 +5,7 @@
 
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/cbor/CborValue.h>
 #include <aws/shield/ShieldErrors.h>
 #include <aws/shield/model/InvalidParameterException.h>
 #include <aws/shield/model/LimitsExceededException.h>
@@ -21,25 +22,29 @@ namespace Shield {
 template <>
 AWS_SHIELD_API ResourceNotFoundException ShieldError::GetModeledError() {
   assert(this->GetErrorType() == ShieldErrors::RESOURCE_NOT_FOUND);
-  return ResourceNotFoundException(this->GetJsonPayload().View());
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return ResourceNotFoundException(payload.GetDecoder());
 }
 
 template <>
 AWS_SHIELD_API ResourceAlreadyExistsException ShieldError::GetModeledError() {
   assert(this->GetErrorType() == ShieldErrors::RESOURCE_ALREADY_EXISTS);
-  return ResourceAlreadyExistsException(this->GetJsonPayload().View());
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return ResourceAlreadyExistsException(payload.GetDecoder());
 }
 
 template <>
 AWS_SHIELD_API LimitsExceededException ShieldError::GetModeledError() {
   assert(this->GetErrorType() == ShieldErrors::LIMITS_EXCEEDED);
-  return LimitsExceededException(this->GetJsonPayload().View());
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return LimitsExceededException(payload.GetDecoder());
 }
 
 template <>
 AWS_SHIELD_API InvalidParameterException ShieldError::GetModeledError() {
   assert(this->GetErrorType() == ShieldErrors::INVALID_PARAMETER);
-  return InvalidParameterException(this->GetJsonPayload().View());
+  Aws::Utils::Cbor::CborValue payload(this->GetCborPayload());
+  return InvalidParameterException(payload.GetDecoder());
 }
 
 namespace ShieldErrorMapper {

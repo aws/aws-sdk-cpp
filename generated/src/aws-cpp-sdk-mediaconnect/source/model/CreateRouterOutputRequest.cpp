@@ -63,5 +63,9 @@ Aws::String CreateRouterOutputRequest::SerializePayload() const {
     payload.WithString("clientToken", m_clientToken);
   }
 
+  if (m_processorsHasBeenSet) {
+    payload.WithObject("processors", m_processors.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

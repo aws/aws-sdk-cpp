@@ -4,6 +4,7 @@
  */
 
 #pragma once
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -11,6 +12,7 @@
 #include <aws/qconnect/model/AIAgentConfigurationData.h>
 #include <aws/qconnect/model/AIAgentType.h>
 #include <aws/qconnect/model/AssistantCapabilityConfiguration.h>
+#include <aws/qconnect/model/AssistantGlobalResiliencyStatus.h>
 #include <aws/qconnect/model/AssistantIntegrationConfiguration.h>
 #include <aws/qconnect/model/AssistantStatus.h>
 #include <aws/qconnect/model/AssistantType.h>
@@ -287,6 +289,65 @@ class AssistantData {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp when the assistant was last modified.</p>
+   */
+  inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
+  inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
+  template <typename LastModifiedTimeT = Aws::Utils::DateTime>
+  void SetLastModifiedTime(LastModifiedTimeT&& value) {
+    m_lastModifiedTimeHasBeenSet = true;
+    m_lastModifiedTime = std::forward<LastModifiedTimeT>(value);
+  }
+  template <typename LastModifiedTimeT = Aws::Utils::DateTime>
+  AssistantData& WithLastModifiedTime(LastModifiedTimeT&& value) {
+    SetLastModifiedTime(std::forward<LastModifiedTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Web Services Region where the assistant was last modified.</p>
+   */
+  inline const Aws::String& GetLastModifiedRegion() const { return m_lastModifiedRegion; }
+  inline bool LastModifiedRegionHasBeenSet() const { return m_lastModifiedRegionHasBeenSet; }
+  template <typename LastModifiedRegionT = Aws::String>
+  void SetLastModifiedRegion(LastModifiedRegionT&& value) {
+    m_lastModifiedRegionHasBeenSet = true;
+    m_lastModifiedRegion = std::forward<LastModifiedRegionT>(value);
+  }
+  template <typename LastModifiedRegionT = Aws::String>
+  AssistantData& WithLastModifiedRegion(LastModifiedRegionT&& value) {
+    SetLastModifiedRegion(std::forward<LastModifiedRegionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Whether Amazon Connect Global Resiliency replicates the Connect instance this
+   * assistant is associated with, and so whether resources created under this
+   * assistant must satisfy the replication group's model parity constraint. Answered
+   * from the ACGR side per request rather than stored, so it reflects the customer's
+   * replication state now.</p> <p>Absent means &quot;not applicable or not
+   * known&quot; - never read an absent field as DISABLED. It is absent on the
+   * operations that return an assistant which is not yet associated with a Connect
+   * instance, because replication cannot be established until it is.</p>
+   */
+  inline AssistantGlobalResiliencyStatus GetAssistantGlobalResiliencyStatus() const { return m_assistantGlobalResiliencyStatus; }
+  inline bool AssistantGlobalResiliencyStatusHasBeenSet() const { return m_assistantGlobalResiliencyStatusHasBeenSet; }
+  inline void SetAssistantGlobalResiliencyStatus(AssistantGlobalResiliencyStatus value) {
+    m_assistantGlobalResiliencyStatusHasBeenSet = true;
+    m_assistantGlobalResiliencyStatus = value;
+  }
+  inline AssistantData& WithAssistantGlobalResiliencyStatus(AssistantGlobalResiliencyStatus value) {
+    SetAssistantGlobalResiliencyStatus(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_assistantId;
 
@@ -311,6 +372,12 @@ class AssistantData {
   Aws::Map<AIAgentType, AIAgentConfigurationData> m_aiAgentConfiguration;
 
   Aws::Vector<OrchestratorConfigurationEntry> m_orchestratorConfigurationList;
+
+  Aws::Utils::DateTime m_lastModifiedTime{};
+
+  Aws::String m_lastModifiedRegion;
+
+  AssistantGlobalResiliencyStatus m_assistantGlobalResiliencyStatus{AssistantGlobalResiliencyStatus::NOT_SET};
   bool m_assistantIdHasBeenSet = false;
   bool m_assistantArnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
@@ -323,6 +390,9 @@ class AssistantData {
   bool m_capabilityConfigurationHasBeenSet = false;
   bool m_aiAgentConfigurationHasBeenSet = false;
   bool m_orchestratorConfigurationListHasBeenSet = false;
+  bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_lastModifiedRegionHasBeenSet = false;
+  bool m_assistantGlobalResiliencyStatusHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -7,15 +7,15 @@
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace CodeBuild {
 namespace Model {
@@ -28,21 +28,21 @@ namespace Model {
 class BatchRestrictions {
  public:
   AWS_CODEBUILD_API BatchRestrictions() = default;
-  AWS_CODEBUILD_API BatchRestrictions(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CODEBUILD_API BatchRestrictions& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_CODEBUILD_API BatchRestrictions(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CODEBUILD_API BatchRestrictions& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CODEBUILD_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
    * <p>Specifies the maximum number of builds allowed.</p>
    */
-  inline int GetMaximumBuildsAllowed() const { return m_maximumBuildsAllowed; }
+  inline int64_t GetMaximumBuildsAllowed() const { return m_maximumBuildsAllowed; }
   inline bool MaximumBuildsAllowedHasBeenSet() const { return m_maximumBuildsAllowedHasBeenSet; }
-  inline void SetMaximumBuildsAllowed(int value) {
+  inline void SetMaximumBuildsAllowed(int64_t value) {
     m_maximumBuildsAllowedHasBeenSet = true;
     m_maximumBuildsAllowed = value;
   }
-  inline BatchRestrictions& WithMaximumBuildsAllowed(int value) {
+  inline BatchRestrictions& WithMaximumBuildsAllowed(int64_t value) {
     SetMaximumBuildsAllowed(value);
     return *this;
   }
@@ -104,7 +104,7 @@ class BatchRestrictions {
   }
   ///@}
  private:
-  int m_maximumBuildsAllowed{0};
+  int64_t m_maximumBuildsAllowed{0};
 
   Aws::Vector<Aws::String> m_computeTypesAllowed;
 

@@ -3,76 +3,353 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/workspaces/model/DefaultWorkspaceCreationProperties.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace WorkSpaces {
 namespace Model {
 
-DefaultWorkspaceCreationProperties::DefaultWorkspaceCreationProperties(JsonView jsonValue) { *this = jsonValue; }
+DefaultWorkspaceCreationProperties::DefaultWorkspaceCreationProperties(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  *this = decoder;
+}
 
-DefaultWorkspaceCreationProperties& DefaultWorkspaceCreationProperties::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("EnableInternetAccess")) {
-    m_enableInternetAccess = jsonValue.GetBool("EnableInternetAccess");
-    m_enableInternetAccessHasBeenSet = true;
+DefaultWorkspaceCreationProperties& DefaultWorkspaceCreationProperties::operator=(
+    const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "EnableInternetAccess") {
+                auto val = decoder->PopNextBooleanVal();
+                if (val.has_value()) {
+                  m_enableInternetAccess = val.value();
+                }
+                m_enableInternetAccessHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "DefaultOu") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_defaultOu = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_defaultOu = ss.str();
+                  }
+                }
+                m_defaultOuHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "CustomSecurityGroupId") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_customSecurityGroupId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_customSecurityGroupId = ss.str();
+                  }
+                }
+                m_customSecurityGroupIdHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "UserEnabledAsLocalAdministrator") {
+                auto val = decoder->PopNextBooleanVal();
+                if (val.has_value()) {
+                  m_userEnabledAsLocalAdministrator = val.value();
+                }
+                m_userEnabledAsLocalAdministratorHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "EnableMaintenanceMode") {
+                auto val = decoder->PopNextBooleanVal();
+                if (val.has_value()) {
+                  m_enableMaintenanceMode = val.value();
+                }
+                m_enableMaintenanceModeHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "InstanceIamRoleArn") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_instanceIamRoleArn = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_instanceIamRoleArn = ss.str();
+                  }
+                }
+                m_instanceIamRoleArnHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("DefaultWorkspaceCreationProperties", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "EnableInternetAccess") {
+              auto val = decoder->PopNextBooleanVal();
+              if (val.has_value()) {
+                m_enableInternetAccess = val.value();
+              }
+              m_enableInternetAccessHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "DefaultOu") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_defaultOu = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_defaultOu = ss.str();
+                }
+              }
+              m_defaultOuHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "CustomSecurityGroupId") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_customSecurityGroupId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_customSecurityGroupId = ss.str();
+                }
+              }
+              m_customSecurityGroupIdHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "UserEnabledAsLocalAdministrator") {
+              auto val = decoder->PopNextBooleanVal();
+              if (val.has_value()) {
+                m_userEnabledAsLocalAdministrator = val.value();
+              }
+              m_userEnabledAsLocalAdministratorHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "EnableMaintenanceMode") {
+              auto val = decoder->PopNextBooleanVal();
+              if (val.has_value()) {
+                m_enableMaintenanceMode = val.value();
+              }
+              m_enableMaintenanceModeHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "InstanceIamRoleArn") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_instanceIamRoleArn = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_instanceIamRoleArn = ss.str();
+                }
+              }
+              m_instanceIamRoleArnHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
+    }
   }
-  if (jsonValue.ValueExists("DefaultOu")) {
-    m_defaultOu = jsonValue.GetString("DefaultOu");
-    m_defaultOuHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("CustomSecurityGroupId")) {
-    m_customSecurityGroupId = jsonValue.GetString("CustomSecurityGroupId");
-    m_customSecurityGroupIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("UserEnabledAsLocalAdministrator")) {
-    m_userEnabledAsLocalAdministrator = jsonValue.GetBool("UserEnabledAsLocalAdministrator");
-    m_userEnabledAsLocalAdministratorHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("EnableMaintenanceMode")) {
-    m_enableMaintenanceMode = jsonValue.GetBool("EnableMaintenanceMode");
-    m_enableMaintenanceModeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("InstanceIamRoleArn")) {
-    m_instanceIamRoleArn = jsonValue.GetString("InstanceIamRoleArn");
-    m_instanceIamRoleArnHasBeenSet = true;
-  }
+
   return *this;
 }
 
-JsonValue DefaultWorkspaceCreationProperties::Jsonize() const {
-  JsonValue payload;
+void DefaultWorkspaceCreationProperties::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_enableInternetAccessHasBeenSet) {
+    mapSize++;
+  }
+  if (m_defaultOuHasBeenSet) {
+    mapSize++;
+  }
+  if (m_customSecurityGroupIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_userEnabledAsLocalAdministratorHasBeenSet) {
+    mapSize++;
+  }
+  if (m_enableMaintenanceModeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_instanceIamRoleArnHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_enableInternetAccessHasBeenSet) {
-    payload.WithBool("EnableInternetAccess", m_enableInternetAccess);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("EnableInternetAccess"));
+    encoder.WriteBool(m_enableInternetAccess);
   }
 
   if (m_defaultOuHasBeenSet) {
-    payload.WithString("DefaultOu", m_defaultOu);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("DefaultOu"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_defaultOu.c_str()));
   }
 
   if (m_customSecurityGroupIdHasBeenSet) {
-    payload.WithString("CustomSecurityGroupId", m_customSecurityGroupId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("CustomSecurityGroupId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_customSecurityGroupId.c_str()));
   }
 
   if (m_userEnabledAsLocalAdministratorHasBeenSet) {
-    payload.WithBool("UserEnabledAsLocalAdministrator", m_userEnabledAsLocalAdministrator);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("UserEnabledAsLocalAdministrator"));
+    encoder.WriteBool(m_userEnabledAsLocalAdministrator);
   }
 
   if (m_enableMaintenanceModeHasBeenSet) {
-    payload.WithBool("EnableMaintenanceMode", m_enableMaintenanceMode);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("EnableMaintenanceMode"));
+    encoder.WriteBool(m_enableMaintenanceMode);
   }
 
   if (m_instanceIamRoleArnHasBeenSet) {
-    payload.WithString("InstanceIamRoleArn", m_instanceIamRoleArn);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("InstanceIamRoleArn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_instanceIamRoleArn.c_str()));
   }
-
-  return payload;
 }
 
 }  // namespace Model

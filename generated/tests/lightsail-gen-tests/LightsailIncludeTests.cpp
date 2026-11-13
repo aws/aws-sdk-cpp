@@ -69,6 +69,8 @@
 #include <aws/lightsail/model/CertificateProvider.h>
 #include <aws/lightsail/model/CertificateStatus.h>
 #include <aws/lightsail/model/CertificateSummary.h>
+#include <aws/lightsail/model/CheckSubdomainAvailabilityRequest.h>
+#include <aws/lightsail/model/CheckSubdomainAvailabilityResult.h>
 #include <aws/lightsail/model/CloseInstancePublicPortsRequest.h>
 #include <aws/lightsail/model/CloseInstancePublicPortsResult.h>
 #include <aws/lightsail/model/CloudFormationStackRecord.h>
@@ -150,6 +152,8 @@
 #include <aws/lightsail/model/CreateRelationalDatabaseResult.h>
 #include <aws/lightsail/model/CreateRelationalDatabaseSnapshotRequest.h>
 #include <aws/lightsail/model/CreateRelationalDatabaseSnapshotResult.h>
+#include <aws/lightsail/model/CreateSubdomainRequest.h>
+#include <aws/lightsail/model/CreateSubdomainResult.h>
 #include <aws/lightsail/model/Currency.h>
 #include <aws/lightsail/model/DeleteAlarmRequest.h>
 #include <aws/lightsail/model/DeleteAlarmResult.h>
@@ -193,6 +197,8 @@
 #include <aws/lightsail/model/DeleteRelationalDatabaseResult.h>
 #include <aws/lightsail/model/DeleteRelationalDatabaseSnapshotRequest.h>
 #include <aws/lightsail/model/DeleteRelationalDatabaseSnapshotResult.h>
+#include <aws/lightsail/model/DeleteSubdomainRequest.h>
+#include <aws/lightsail/model/DeleteSubdomainResult.h>
 #include <aws/lightsail/model/DestinationInfo.h>
 #include <aws/lightsail/model/DetachCertificateFromDistributionRequest.h>
 #include <aws/lightsail/model/DetachCertificateFromDistributionResult.h>
@@ -363,6 +369,8 @@
 #include <aws/lightsail/model/GetStaticIpResult.h>
 #include <aws/lightsail/model/GetStaticIpsRequest.h>
 #include <aws/lightsail/model/GetStaticIpsResult.h>
+#include <aws/lightsail/model/GetSubdomainsRequest.h>
+#include <aws/lightsail/model/GetSubdomainsResult.h>
 #include <aws/lightsail/model/HeaderEnum.h>
 #include <aws/lightsail/model/HeaderObject.h>
 #include <aws/lightsail/model/HostKeyAttributes.h>
@@ -403,6 +411,8 @@
 #include <aws/lightsail/model/IsVpcPeeredResult.h>
 #include <aws/lightsail/model/KeyPair.h>
 #include <aws/lightsail/model/LightsailDistribution.h>
+#include <aws/lightsail/model/LightsailDistributionSubdomain.h>
+#include <aws/lightsail/model/LightsailDistributionSubdomainStateEnum.h>
 #include <aws/lightsail/model/LoadBalancer.h>
 #include <aws/lightsail/model/LoadBalancerAttributeName.h>
 #include <aws/lightsail/model/LoadBalancerMetricName.h>
@@ -528,6 +538,10 @@
 #include <aws/lightsail/model/StopInstanceResult.h>
 #include <aws/lightsail/model/StopRelationalDatabaseRequest.h>
 #include <aws/lightsail/model/StopRelationalDatabaseResult.h>
+#include <aws/lightsail/model/Subdomain.h>
+#include <aws/lightsail/model/SubdomainAssociationAction.h>
+#include <aws/lightsail/model/SubdomainAttachableResource.h>
+#include <aws/lightsail/model/SubdomainState.h>
 #include <aws/lightsail/model/Tag.h>
 #include <aws/lightsail/model/TagResourceRequest.h>
 #include <aws/lightsail/model/TagResourceResult.h>
@@ -561,6 +575,8 @@
 #include <aws/lightsail/model/UpdateRelationalDatabaseParametersResult.h>
 #include <aws/lightsail/model/UpdateRelationalDatabaseRequest.h>
 #include <aws/lightsail/model/UpdateRelationalDatabaseResult.h>
+#include <aws/lightsail/model/UpdateSubdomainAssociationRequest.h>
+#include <aws/lightsail/model/UpdateSubdomainAssociationResult.h>
 #include <aws/lightsail/model/ViewerMinimumTlsProtocolVersionEnum.h>
 #include <aws/lightsail/model/WafAcfpConfig.h>
 #include <aws/lightsail/model/WafAtpConfig.h>

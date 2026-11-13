@@ -3,67 +3,114 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/workspaces/model/ImportCustomWorkspaceImageRequest.h>
 
 #include <utility>
 
 using namespace Aws::WorkSpaces::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String ImportCustomWorkspaceImageRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_imageNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_imageDescriptionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_computeTypeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_protocolHasBeenSet) {
+    mapSize++;
+  }
+  if (m_imageSourceHasBeenSet) {
+    mapSize++;
+  }
+  if (m_infrastructureConfigurationArnHasBeenSet) {
+    mapSize++;
+  }
+  if (m_platformHasBeenSet) {
+    mapSize++;
+  }
+  if (m_osVersionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_tagsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_imageValidationModeHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_imageNameHasBeenSet) {
-    payload.WithString("ImageName", m_imageName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ImageName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_imageName.c_str()));
   }
 
   if (m_imageDescriptionHasBeenSet) {
-    payload.WithString("ImageDescription", m_imageDescription);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ImageDescription"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_imageDescription.c_str()));
   }
 
   if (m_computeTypeHasBeenSet) {
-    payload.WithString("ComputeType", ImageComputeTypeMapper::GetNameForImageComputeType(m_computeType));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ComputeType"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(ImageComputeTypeMapper::GetNameForImageComputeType(m_computeType).c_str()));
   }
 
   if (m_protocolHasBeenSet) {
-    payload.WithString("Protocol", CustomImageProtocolMapper::GetNameForCustomImageProtocol(m_protocol));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Protocol"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(CustomImageProtocolMapper::GetNameForCustomImageProtocol(m_protocol).c_str()));
   }
 
   if (m_imageSourceHasBeenSet) {
-    payload.WithObject("ImageSource", m_imageSource.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ImageSource"));
+    m_imageSource.CborEncode(encoder);
   }
 
   if (m_infrastructureConfigurationArnHasBeenSet) {
-    payload.WithString("InfrastructureConfigurationArn", m_infrastructureConfigurationArn);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("InfrastructureConfigurationArn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_infrastructureConfigurationArn.c_str()));
   }
 
   if (m_platformHasBeenSet) {
-    payload.WithString("Platform", PlatformMapper::GetNameForPlatform(m_platform));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Platform"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(PlatformMapper::GetNameForPlatform(m_platform).c_str()));
   }
 
   if (m_osVersionHasBeenSet) {
-    payload.WithString("OsVersion", OSVersionMapper::GetNameForOSVersion(m_osVersion));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("OsVersion"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(OSVersionMapper::GetNameForOSVersion(m_osVersion).c_str()));
   }
 
   if (m_tagsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
-      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Tags"));
+    encoder.WriteArrayStart(m_tags.size());
+    for (const auto& item_0 : m_tags) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("Tags", std::move(tagsJsonList));
   }
 
   if (m_imageValidationModeHasBeenSet) {
-    payload.WithString("ImageValidationMode", ImageValidationModeMapper::GetNameForImageValidationMode(m_imageValidationMode));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ImageValidationMode"));
+    encoder.WriteText(
+        Aws::Crt::ByteCursorFromCString(ImageValidationModeMapper::GetNameForImageValidationMode(m_imageValidationMode).c_str()));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection ImportCustomWorkspaceImageRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "WorkspacesService.ImportCustomWorkspaceImage"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

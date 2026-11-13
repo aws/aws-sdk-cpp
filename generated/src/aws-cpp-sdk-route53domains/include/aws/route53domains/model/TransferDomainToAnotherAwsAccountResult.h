@@ -6,18 +6,18 @@
 #pragma once
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/route53domains/Route53Domains_EXPORTS.h>
 
 #include <utility>
-
 namespace Aws {
 template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
 namespace Utils {
-namespace Json {
-class JsonValue;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace Route53Domains {
 namespace Model {
@@ -30,9 +30,9 @@ namespace Model {
 class TransferDomainToAnotherAwsAccountResult {
  public:
   AWS_ROUTE53DOMAINS_API TransferDomainToAnotherAwsAccountResult() = default;
-  AWS_ROUTE53DOMAINS_API TransferDomainToAnotherAwsAccountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_ROUTE53DOMAINS_API TransferDomainToAnotherAwsAccountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
   AWS_ROUTE53DOMAINS_API TransferDomainToAnotherAwsAccountResult& operator=(
-      const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+      const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
 
   ///@{
   /**

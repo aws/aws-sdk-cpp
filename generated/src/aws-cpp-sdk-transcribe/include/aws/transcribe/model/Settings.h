@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/transcribe/TranscribeService_EXPORTS.h>
 #include <aws/transcribe/model/VocabularyFilterMethod.h>
 
@@ -12,10 +13,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace TranscribeService {
 namespace Model {
@@ -31,9 +31,9 @@ namespace Model {
 class Settings {
  public:
   AWS_TRANSCRIBESERVICE_API Settings() = default;
-  AWS_TRANSCRIBESERVICE_API Settings(Aws::Utils::Json::JsonView jsonValue);
-  AWS_TRANSCRIBESERVICE_API Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_TRANSCRIBESERVICE_API Settings(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_TRANSCRIBESERVICE_API Settings& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_TRANSCRIBESERVICE_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -85,13 +85,13 @@ class Settings {
    * the <code>MaxSpeakerLabels</code> field, you must set the
    * <code>ShowSpeakerLabels</code> field to true.</p>
    */
-  inline int GetMaxSpeakerLabels() const { return m_maxSpeakerLabels; }
+  inline int64_t GetMaxSpeakerLabels() const { return m_maxSpeakerLabels; }
   inline bool MaxSpeakerLabelsHasBeenSet() const { return m_maxSpeakerLabelsHasBeenSet; }
-  inline void SetMaxSpeakerLabels(int value) {
+  inline void SetMaxSpeakerLabels(int64_t value) {
     m_maxSpeakerLabelsHasBeenSet = true;
     m_maxSpeakerLabels = value;
   }
-  inline Settings& WithMaxSpeakerLabels(int value) {
+  inline Settings& WithMaxSpeakerLabels(int64_t value) {
     SetMaxSpeakerLabels(value);
     return *this;
   }
@@ -156,13 +156,13 @@ class Settings {
    * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-alternatives.html">Alternative
    * transcriptions</a>.</p>
    */
-  inline int GetMaxAlternatives() const { return m_maxAlternatives; }
+  inline int64_t GetMaxAlternatives() const { return m_maxAlternatives; }
   inline bool MaxAlternativesHasBeenSet() const { return m_maxAlternativesHasBeenSet; }
-  inline void SetMaxAlternatives(int value) {
+  inline void SetMaxAlternatives(int64_t value) {
     m_maxAlternativesHasBeenSet = true;
     m_maxAlternatives = value;
   }
-  inline Settings& WithMaxAlternatives(int value) {
+  inline Settings& WithMaxAlternatives(int64_t value) {
     SetMaxAlternatives(value);
     return *this;
   }
@@ -213,13 +213,13 @@ class Settings {
 
   bool m_showSpeakerLabels{false};
 
-  int m_maxSpeakerLabels{0};
+  int64_t m_maxSpeakerLabels{0};
 
   bool m_channelIdentification{false};
 
   bool m_showAlternatives{false};
 
-  int m_maxAlternatives{0};
+  int64_t m_maxAlternatives{0};
 
   Aws::String m_vocabularyFilterName;
 

@@ -3,59 +3,92 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/transcribe/model/CreateVocabularyFilterRequest.h>
 
 #include <utility>
 
 using namespace Aws::TranscribeService::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String CreateVocabularyFilterRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_vocabularyFilterNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_languageCodeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_wordsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_vocabularyFilterFileUriHasBeenSet) {
+    mapSize++;
+  }
+  if (m_tagsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_dataAccessRoleArnHasBeenSet) {
+    mapSize++;
+  }
+  if (m_encryptionConfigurationHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_vocabularyFilterNameHasBeenSet) {
-    payload.WithString("VocabularyFilterName", m_vocabularyFilterName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("VocabularyFilterName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_vocabularyFilterName.c_str()));
   }
 
   if (m_languageCodeHasBeenSet) {
-    payload.WithString("LanguageCode", LanguageCodeMapper::GetNameForLanguageCode(m_languageCode));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("LanguageCode"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(LanguageCodeMapper::GetNameForLanguageCode(m_languageCode).c_str()));
   }
 
   if (m_wordsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> wordsJsonList(m_words.size());
-    for (unsigned wordsIndex = 0; wordsIndex < wordsJsonList.GetLength(); ++wordsIndex) {
-      wordsJsonList[wordsIndex].AsString(m_words[wordsIndex]);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Words"));
+    encoder.WriteArrayStart(m_words.size());
+    for (const auto& item_0 : m_words) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
     }
-    payload.WithArray("Words", std::move(wordsJsonList));
   }
 
   if (m_vocabularyFilterFileUriHasBeenSet) {
-    payload.WithString("VocabularyFilterFileUri", m_vocabularyFilterFileUri);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("VocabularyFilterFileUri"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_vocabularyFilterFileUri.c_str()));
   }
 
   if (m_tagsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
-      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Tags"));
+    encoder.WriteArrayStart(m_tags.size());
+    for (const auto& item_0 : m_tags) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("Tags", std::move(tagsJsonList));
   }
 
   if (m_dataAccessRoleArnHasBeenSet) {
-    payload.WithString("DataAccessRoleArn", m_dataAccessRoleArn);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("DataAccessRoleArn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_dataAccessRoleArn.c_str()));
   }
 
   if (m_encryptionConfigurationHasBeenSet) {
-    payload.WithObject("EncryptionConfiguration", m_encryptionConfiguration.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("EncryptionConfiguration"));
+    m_encryptionConfiguration.CborEncode(encoder);
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection CreateVocabularyFilterRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Transcribe.CreateVocabularyFilter"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

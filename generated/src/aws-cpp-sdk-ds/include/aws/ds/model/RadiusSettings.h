@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/ds/model/RadiusAuthenticationProtocol.h>
 
@@ -13,10 +14,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace DirectoryService {
 namespace Model {
@@ -30,9 +30,9 @@ namespace Model {
 class RadiusSettings {
  public:
   AWS_DIRECTORYSERVICE_API RadiusSettings() = default;
-  AWS_DIRECTORYSERVICE_API RadiusSettings(Aws::Utils::Json::JsonView jsonValue);
-  AWS_DIRECTORYSERVICE_API RadiusSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_DIRECTORYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_DIRECTORYSERVICE_API RadiusSettings(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_DIRECTORYSERVICE_API RadiusSettings& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_DIRECTORYSERVICE_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -90,13 +90,13 @@ class RadiusSettings {
    * self-managed network must allow inbound traffic over this port from the
    * Directory Service servers.</p>
    */
-  inline int GetRadiusPort() const { return m_radiusPort; }
+  inline int64_t GetRadiusPort() const { return m_radiusPort; }
   inline bool RadiusPortHasBeenSet() const { return m_radiusPortHasBeenSet; }
-  inline void SetRadiusPort(int value) {
+  inline void SetRadiusPort(int64_t value) {
     m_radiusPortHasBeenSet = true;
     m_radiusPort = value;
   }
-  inline RadiusSettings& WithRadiusPort(int value) {
+  inline RadiusSettings& WithRadiusPort(int64_t value) {
     SetRadiusPort(value);
     return *this;
   }
@@ -106,13 +106,13 @@ class RadiusSettings {
   /**
    * <p>The amount of time, in seconds, to wait for the RADIUS server to respond.</p>
    */
-  inline int GetRadiusTimeout() const { return m_radiusTimeout; }
+  inline int64_t GetRadiusTimeout() const { return m_radiusTimeout; }
   inline bool RadiusTimeoutHasBeenSet() const { return m_radiusTimeoutHasBeenSet; }
-  inline void SetRadiusTimeout(int value) {
+  inline void SetRadiusTimeout(int64_t value) {
     m_radiusTimeoutHasBeenSet = true;
     m_radiusTimeout = value;
   }
-  inline RadiusSettings& WithRadiusTimeout(int value) {
+  inline RadiusSettings& WithRadiusTimeout(int64_t value) {
     SetRadiusTimeout(value);
     return *this;
   }
@@ -123,13 +123,13 @@ class RadiusSettings {
    * <p>The maximum number of times that communication with the RADIUS server is
    * retried after the initial attempt.</p>
    */
-  inline int GetRadiusRetries() const { return m_radiusRetries; }
+  inline int64_t GetRadiusRetries() const { return m_radiusRetries; }
   inline bool RadiusRetriesHasBeenSet() const { return m_radiusRetriesHasBeenSet; }
-  inline void SetRadiusRetries(int value) {
+  inline void SetRadiusRetries(int64_t value) {
     m_radiusRetriesHasBeenSet = true;
     m_radiusRetries = value;
   }
-  inline RadiusSettings& WithRadiusRetries(int value) {
+  inline RadiusSettings& WithRadiusRetries(int64_t value) {
     SetRadiusRetries(value);
     return *this;
   }
@@ -207,11 +207,11 @@ class RadiusSettings {
 
   Aws::Vector<Aws::String> m_radiusServersIpv6;
 
-  int m_radiusPort{0};
+  int64_t m_radiusPort{0};
 
-  int m_radiusTimeout{0};
+  int64_t m_radiusTimeout{0};
 
-  int m_radiusRetries{0};
+  int64_t m_radiusRetries{0};
 
   Aws::String m_sharedSecret;
 

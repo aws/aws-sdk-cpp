@@ -40,6 +40,14 @@ Aws::String ListPermissionAssociationsRequest::SerializePayload() const {
     payload.WithBool("defaultVersion", m_defaultVersion);
   }
 
+  if (m_resourceOwnerHasBeenSet) {
+    payload.WithString("resourceOwner", ResourceOwnerMapper::GetNameForResourceOwner(m_resourceOwner));
+  }
+
+  if (m_resourceShareArnHasBeenSet) {
+    payload.WithString("resourceShareArn", m_resourceShareArn);
+  }
+
   if (m_nextTokenHasBeenSet) {
     payload.WithString("nextToken", m_nextToken);
   }

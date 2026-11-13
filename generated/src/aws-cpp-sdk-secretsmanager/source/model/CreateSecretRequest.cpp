@@ -64,6 +64,10 @@ Aws::String CreateSecretRequest::SerializePayload() const {
     payload.WithString("Type", m_type);
   }
 
+  if (m_crossAccountPrimaryARNHasBeenSet) {
+    payload.WithString("CrossAccountPrimaryARN", m_crossAccountPrimaryARN);
+  }
+
   return payload.View().WriteReadable();
 }
 

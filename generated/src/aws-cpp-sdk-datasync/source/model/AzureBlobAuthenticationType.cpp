@@ -17,6 +17,7 @@ namespace AzureBlobAuthenticationTypeMapper {
 
 static const int SAS_HASH = HashingUtils::HashString("SAS");
 static const int NONE_HASH = HashingUtils::HashString("NONE");
+static const int OIDC_HASH = HashingUtils::HashString("OIDC");
 
 AzureBlobAuthenticationType GetAzureBlobAuthenticationTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ AzureBlobAuthenticationType GetAzureBlobAuthenticationTypeForName(const Aws::Str
     return AzureBlobAuthenticationType::SAS;
   } else if (hashCode == NONE_HASH) {
     return AzureBlobAuthenticationType::NONE;
+  } else if (hashCode == OIDC_HASH) {
+    return AzureBlobAuthenticationType::OIDC;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForAzureBlobAuthenticationType(AzureBlobAuthenticationType en
       return "SAS";
     case AzureBlobAuthenticationType::NONE:
       return "NONE";
+    case AzureBlobAuthenticationType::OIDC:
+      return "OIDC";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

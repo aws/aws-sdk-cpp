@@ -3,39 +3,70 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/network-firewall/model/DescribeRuleGroupRequest.h>
 
 #include <utility>
 
 using namespace Aws::NetworkFirewall::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String DescribeRuleGroupRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_ruleGroupNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_ruleGroupArnHasBeenSet) {
+    mapSize++;
+  }
+  if (m_typeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_analyzeRuleGroupHasBeenSet) {
+    mapSize++;
+  }
+  if (m_ruleOutputFormatHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_ruleGroupNameHasBeenSet) {
-    payload.WithString("RuleGroupName", m_ruleGroupName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("RuleGroupName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_ruleGroupName.c_str()));
   }
 
   if (m_ruleGroupArnHasBeenSet) {
-    payload.WithString("RuleGroupArn", m_ruleGroupArn);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("RuleGroupArn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_ruleGroupArn.c_str()));
   }
 
   if (m_typeHasBeenSet) {
-    payload.WithString("Type", RuleGroupTypeMapper::GetNameForRuleGroupType(m_type));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Type"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(RuleGroupTypeMapper::GetNameForRuleGroupType(m_type).c_str()));
   }
 
   if (m_analyzeRuleGroupHasBeenSet) {
-    payload.WithBool("AnalyzeRuleGroup", m_analyzeRuleGroup);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AnalyzeRuleGroup"));
+    encoder.WriteBool(m_analyzeRuleGroup);
   }
 
-  return payload.View().WriteReadable();
+  if (m_ruleOutputFormatHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("RuleOutputFormat"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(RuleOutputFormatMapper::GetNameForRuleOutputFormat(m_ruleOutputFormat).c_str()));
+  }
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection DescribeRuleGroupRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "NetworkFirewall_20201112.DescribeRuleGroup"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

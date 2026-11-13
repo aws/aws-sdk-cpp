@@ -11,6 +11,7 @@
 #include <aws/network-firewall/model/ListAnalysisReportsPaginationTraits.h>
 #include <aws/network-firewall/model/ListContainerAssociationsPaginationTraits.h>
 #include <aws/network-firewall/model/ListFirewallPoliciesPaginationTraits.h>
+#include <aws/network-firewall/model/ListFirewallPoliciesV2PaginationTraits.h>
 #include <aws/network-firewall/model/ListFirewallsPaginationTraits.h>
 #include <aws/network-firewall/model/ListFlowOperationResultsPaginationTraits.h>
 #include <aws/network-firewall/model/ListFlowOperationsPaginationTraits.h>
@@ -75,6 +76,18 @@ class NetworkFirewallPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFirewallPoliciesRequest,
                                              Pagination::ListFirewallPoliciesPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListFirewallPoliciesV2 operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFirewallPoliciesV2Request,
+                                    Pagination::ListFirewallPoliciesV2PaginationTraits<DerivedClient>>
+  ListFirewallPoliciesV2Paginator(const Model::ListFirewallPoliciesV2Request& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListFirewallPoliciesV2Request,
+                                             Pagination::ListFirewallPoliciesV2PaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

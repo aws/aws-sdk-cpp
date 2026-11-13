@@ -8,6 +8,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 #include <aws/network-firewall/model/ContainerAssociationStatus.h>
 #include <aws/network-firewall/model/ContainerMonitoringConfiguration.h>
@@ -15,24 +16,23 @@
 #include <aws/network-firewall/model/Tag.h>
 
 #include <utility>
-
 namespace Aws {
 template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
 namespace Utils {
-namespace Json {
-class JsonValue;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace NetworkFirewall {
 namespace Model {
 class DescribeContainerAssociationResult {
  public:
   AWS_NETWORKFIREWALL_API DescribeContainerAssociationResult() = default;
-  AWS_NETWORKFIREWALL_API DescribeContainerAssociationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_NETWORKFIREWALL_API DescribeContainerAssociationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
   AWS_NETWORKFIREWALL_API DescribeContainerAssociationResult& operator=(
-      const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+      const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
 
   ///@{
   /**
@@ -146,12 +146,12 @@ class DescribeContainerAssociationResult {
   /**
    * <p>The number of CIDR blocks resolved from the monitored containers.</p>
    */
-  inline int GetResolvedCidrCount() const { return m_resolvedCidrCount; }
-  inline void SetResolvedCidrCount(int value) {
+  inline int64_t GetResolvedCidrCount() const { return m_resolvedCidrCount; }
+  inline void SetResolvedCidrCount(int64_t value) {
     m_resolvedCidrCountHasBeenSet = true;
     m_resolvedCidrCount = value;
   }
-  inline DescribeContainerAssociationResult& WithResolvedCidrCount(int value) {
+  inline DescribeContainerAssociationResult& WithResolvedCidrCount(int64_t value) {
     SetResolvedCidrCount(value);
     return *this;
   }
@@ -252,7 +252,7 @@ class DescribeContainerAssociationResult {
 
   ContainerAssociationStatus m_status{ContainerAssociationStatus::NOT_SET};
 
-  int m_resolvedCidrCount{0};
+  int64_t m_resolvedCidrCount{0};
 
   Aws::Utils::DateTime m_lastUpdatedTime{};
 

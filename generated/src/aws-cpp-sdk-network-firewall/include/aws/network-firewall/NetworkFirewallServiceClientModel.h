@@ -26,6 +26,7 @@
 #include <aws/network-firewall/model/AttachRuleGroupsToProxyConfigurationResult.h>
 #include <aws/network-firewall/model/CreateContainerAssociationResult.h>
 #include <aws/network-firewall/model/CreateFirewallPolicyResult.h>
+#include <aws/network-firewall/model/CreateFirewallPolicyV2Result.h>
 #include <aws/network-firewall/model/CreateFirewallResult.h>
 #include <aws/network-firewall/model/CreateProxyConfigurationResult.h>
 #include <aws/network-firewall/model/CreateProxyResult.h>
@@ -38,6 +39,8 @@
 #include <aws/network-firewall/model/DeleteContainerAssociationResult.h>
 #include <aws/network-firewall/model/DeleteFirewallPolicyRequest.h>
 #include <aws/network-firewall/model/DeleteFirewallPolicyResult.h>
+#include <aws/network-firewall/model/DeleteFirewallPolicyV2Request.h>
+#include <aws/network-firewall/model/DeleteFirewallPolicyV2Result.h>
 #include <aws/network-firewall/model/DeleteFirewallRequest.h>
 #include <aws/network-firewall/model/DeleteFirewallResult.h>
 #include <aws/network-firewall/model/DeleteNetworkFirewallTransitGatewayAttachmentResult.h>
@@ -59,6 +62,8 @@
 #include <aws/network-firewall/model/DescribeFirewallMetadataResult.h>
 #include <aws/network-firewall/model/DescribeFirewallPolicyRequest.h>
 #include <aws/network-firewall/model/DescribeFirewallPolicyResult.h>
+#include <aws/network-firewall/model/DescribeFirewallPolicyV2Request.h>
+#include <aws/network-firewall/model/DescribeFirewallPolicyV2Result.h>
 #include <aws/network-firewall/model/DescribeFirewallRequest.h>
 #include <aws/network-firewall/model/DescribeFirewallResult.h>
 #include <aws/network-firewall/model/DescribeFlowOperationResult.h>
@@ -91,6 +96,8 @@
 #include <aws/network-firewall/model/ListContainerAssociationsResult.h>
 #include <aws/network-firewall/model/ListFirewallPoliciesRequest.h>
 #include <aws/network-firewall/model/ListFirewallPoliciesResult.h>
+#include <aws/network-firewall/model/ListFirewallPoliciesV2Request.h>
+#include <aws/network-firewall/model/ListFirewallPoliciesV2Result.h>
 #include <aws/network-firewall/model/ListFirewallsRequest.h>
 #include <aws/network-firewall/model/ListFirewallsResult.h>
 #include <aws/network-firewall/model/ListFlowOperationResultsResult.h>
@@ -126,6 +133,7 @@
 #include <aws/network-firewall/model/UpdateFirewallEncryptionConfigurationResult.h>
 #include <aws/network-firewall/model/UpdateFirewallPolicyChangeProtectionResult.h>
 #include <aws/network-firewall/model/UpdateFirewallPolicyResult.h>
+#include <aws/network-firewall/model/UpdateFirewallPolicyV2Result.h>
 #include <aws/network-firewall/model/UpdateLoggingConfigurationRequest.h>
 #include <aws/network-firewall/model/UpdateLoggingConfigurationResult.h>
 #include <aws/network-firewall/model/UpdateProxyConfigurationResult.h>
@@ -179,6 +187,7 @@ class AttachRuleGroupsToProxyConfigurationRequest;
 class CreateContainerAssociationRequest;
 class CreateFirewallRequest;
 class CreateFirewallPolicyRequest;
+class CreateFirewallPolicyV2Request;
 class CreateProxyRequest;
 class CreateProxyConfigurationRequest;
 class CreateProxyRuleGroupRequest;
@@ -189,6 +198,7 @@ class CreateVpcEndpointAssociationRequest;
 class DeleteContainerAssociationRequest;
 class DeleteFirewallRequest;
 class DeleteFirewallPolicyRequest;
+class DeleteFirewallPolicyV2Request;
 class DeleteNetworkFirewallTransitGatewayAttachmentRequest;
 class DeleteProxyRequest;
 class DeleteProxyConfigurationRequest;
@@ -202,6 +212,7 @@ class DescribeContainerAssociationRequest;
 class DescribeFirewallRequest;
 class DescribeFirewallMetadataRequest;
 class DescribeFirewallPolicyRequest;
+class DescribeFirewallPolicyV2Request;
 class DescribeFlowOperationRequest;
 class DescribeLoggingConfigurationRequest;
 class DescribeProxyRequest;
@@ -221,6 +232,7 @@ class GetAnalysisReportResultsRequest;
 class ListAnalysisReportsRequest;
 class ListContainerAssociationsRequest;
 class ListFirewallPoliciesRequest;
+class ListFirewallPoliciesV2Request;
 class ListFirewallsRequest;
 class ListFlowOperationResultsRequest;
 class ListFlowOperationsRequest;
@@ -246,6 +258,7 @@ class UpdateFirewallDescriptionRequest;
 class UpdateFirewallEncryptionConfigurationRequest;
 class UpdateFirewallPolicyRequest;
 class UpdateFirewallPolicyChangeProtectionRequest;
+class UpdateFirewallPolicyV2Request;
 class UpdateLoggingConfigurationRequest;
 class UpdateProxyRequest;
 class UpdateProxyConfigurationRequest;
@@ -268,6 +281,7 @@ typedef Aws::Utils::Outcome<AttachRuleGroupsToProxyConfigurationResult, NetworkF
 typedef Aws::Utils::Outcome<CreateContainerAssociationResult, NetworkFirewallError> CreateContainerAssociationOutcome;
 typedef Aws::Utils::Outcome<CreateFirewallResult, NetworkFirewallError> CreateFirewallOutcome;
 typedef Aws::Utils::Outcome<CreateFirewallPolicyResult, NetworkFirewallError> CreateFirewallPolicyOutcome;
+typedef Aws::Utils::Outcome<CreateFirewallPolicyV2Result, NetworkFirewallError> CreateFirewallPolicyV2Outcome;
 typedef Aws::Utils::Outcome<CreateProxyResult, NetworkFirewallError> CreateProxyOutcome;
 typedef Aws::Utils::Outcome<CreateProxyConfigurationResult, NetworkFirewallError> CreateProxyConfigurationOutcome;
 typedef Aws::Utils::Outcome<CreateProxyRuleGroupResult, NetworkFirewallError> CreateProxyRuleGroupOutcome;
@@ -278,6 +292,7 @@ typedef Aws::Utils::Outcome<CreateVpcEndpointAssociationResult, NetworkFirewallE
 typedef Aws::Utils::Outcome<DeleteContainerAssociationResult, NetworkFirewallError> DeleteContainerAssociationOutcome;
 typedef Aws::Utils::Outcome<DeleteFirewallResult, NetworkFirewallError> DeleteFirewallOutcome;
 typedef Aws::Utils::Outcome<DeleteFirewallPolicyResult, NetworkFirewallError> DeleteFirewallPolicyOutcome;
+typedef Aws::Utils::Outcome<DeleteFirewallPolicyV2Result, NetworkFirewallError> DeleteFirewallPolicyV2Outcome;
 typedef Aws::Utils::Outcome<DeleteNetworkFirewallTransitGatewayAttachmentResult, NetworkFirewallError>
     DeleteNetworkFirewallTransitGatewayAttachmentOutcome;
 typedef Aws::Utils::Outcome<DeleteProxyResult, NetworkFirewallError> DeleteProxyOutcome;
@@ -292,6 +307,7 @@ typedef Aws::Utils::Outcome<DescribeContainerAssociationResult, NetworkFirewallE
 typedef Aws::Utils::Outcome<DescribeFirewallResult, NetworkFirewallError> DescribeFirewallOutcome;
 typedef Aws::Utils::Outcome<DescribeFirewallMetadataResult, NetworkFirewallError> DescribeFirewallMetadataOutcome;
 typedef Aws::Utils::Outcome<DescribeFirewallPolicyResult, NetworkFirewallError> DescribeFirewallPolicyOutcome;
+typedef Aws::Utils::Outcome<DescribeFirewallPolicyV2Result, NetworkFirewallError> DescribeFirewallPolicyV2Outcome;
 typedef Aws::Utils::Outcome<DescribeFlowOperationResult, NetworkFirewallError> DescribeFlowOperationOutcome;
 typedef Aws::Utils::Outcome<DescribeLoggingConfigurationResult, NetworkFirewallError> DescribeLoggingConfigurationOutcome;
 typedef Aws::Utils::Outcome<DescribeProxyResult, NetworkFirewallError> DescribeProxyOutcome;
@@ -312,6 +328,7 @@ typedef Aws::Utils::Outcome<GetAnalysisReportResultsResult, NetworkFirewallError
 typedef Aws::Utils::Outcome<ListAnalysisReportsResult, NetworkFirewallError> ListAnalysisReportsOutcome;
 typedef Aws::Utils::Outcome<ListContainerAssociationsResult, NetworkFirewallError> ListContainerAssociationsOutcome;
 typedef Aws::Utils::Outcome<ListFirewallPoliciesResult, NetworkFirewallError> ListFirewallPoliciesOutcome;
+typedef Aws::Utils::Outcome<ListFirewallPoliciesV2Result, NetworkFirewallError> ListFirewallPoliciesV2Outcome;
 typedef Aws::Utils::Outcome<ListFirewallsResult, NetworkFirewallError> ListFirewallsOutcome;
 typedef Aws::Utils::Outcome<ListFlowOperationResultsResult, NetworkFirewallError> ListFlowOperationResultsOutcome;
 typedef Aws::Utils::Outcome<ListFlowOperationsResult, NetworkFirewallError> ListFlowOperationsOutcome;
@@ -339,6 +356,7 @@ typedef Aws::Utils::Outcome<UpdateFirewallDescriptionResult, NetworkFirewallErro
 typedef Aws::Utils::Outcome<UpdateFirewallEncryptionConfigurationResult, NetworkFirewallError> UpdateFirewallEncryptionConfigurationOutcome;
 typedef Aws::Utils::Outcome<UpdateFirewallPolicyResult, NetworkFirewallError> UpdateFirewallPolicyOutcome;
 typedef Aws::Utils::Outcome<UpdateFirewallPolicyChangeProtectionResult, NetworkFirewallError> UpdateFirewallPolicyChangeProtectionOutcome;
+typedef Aws::Utils::Outcome<UpdateFirewallPolicyV2Result, NetworkFirewallError> UpdateFirewallPolicyV2Outcome;
 typedef Aws::Utils::Outcome<UpdateLoggingConfigurationResult, NetworkFirewallError> UpdateLoggingConfigurationOutcome;
 typedef Aws::Utils::Outcome<UpdateProxyResult, NetworkFirewallError> UpdateProxyOutcome;
 typedef Aws::Utils::Outcome<UpdateProxyConfigurationResult, NetworkFirewallError> UpdateProxyConfigurationOutcome;
@@ -360,6 +378,7 @@ typedef std::future<AttachRuleGroupsToProxyConfigurationOutcome> AttachRuleGroup
 typedef std::future<CreateContainerAssociationOutcome> CreateContainerAssociationOutcomeCallable;
 typedef std::future<CreateFirewallOutcome> CreateFirewallOutcomeCallable;
 typedef std::future<CreateFirewallPolicyOutcome> CreateFirewallPolicyOutcomeCallable;
+typedef std::future<CreateFirewallPolicyV2Outcome> CreateFirewallPolicyV2OutcomeCallable;
 typedef std::future<CreateProxyOutcome> CreateProxyOutcomeCallable;
 typedef std::future<CreateProxyConfigurationOutcome> CreateProxyConfigurationOutcomeCallable;
 typedef std::future<CreateProxyRuleGroupOutcome> CreateProxyRuleGroupOutcomeCallable;
@@ -370,6 +389,7 @@ typedef std::future<CreateVpcEndpointAssociationOutcome> CreateVpcEndpointAssoci
 typedef std::future<DeleteContainerAssociationOutcome> DeleteContainerAssociationOutcomeCallable;
 typedef std::future<DeleteFirewallOutcome> DeleteFirewallOutcomeCallable;
 typedef std::future<DeleteFirewallPolicyOutcome> DeleteFirewallPolicyOutcomeCallable;
+typedef std::future<DeleteFirewallPolicyV2Outcome> DeleteFirewallPolicyV2OutcomeCallable;
 typedef std::future<DeleteNetworkFirewallTransitGatewayAttachmentOutcome> DeleteNetworkFirewallTransitGatewayAttachmentOutcomeCallable;
 typedef std::future<DeleteProxyOutcome> DeleteProxyOutcomeCallable;
 typedef std::future<DeleteProxyConfigurationOutcome> DeleteProxyConfigurationOutcomeCallable;
@@ -383,6 +403,7 @@ typedef std::future<DescribeContainerAssociationOutcome> DescribeContainerAssoci
 typedef std::future<DescribeFirewallOutcome> DescribeFirewallOutcomeCallable;
 typedef std::future<DescribeFirewallMetadataOutcome> DescribeFirewallMetadataOutcomeCallable;
 typedef std::future<DescribeFirewallPolicyOutcome> DescribeFirewallPolicyOutcomeCallable;
+typedef std::future<DescribeFirewallPolicyV2Outcome> DescribeFirewallPolicyV2OutcomeCallable;
 typedef std::future<DescribeFlowOperationOutcome> DescribeFlowOperationOutcomeCallable;
 typedef std::future<DescribeLoggingConfigurationOutcome> DescribeLoggingConfigurationOutcomeCallable;
 typedef std::future<DescribeProxyOutcome> DescribeProxyOutcomeCallable;
@@ -402,6 +423,7 @@ typedef std::future<GetAnalysisReportResultsOutcome> GetAnalysisReportResultsOut
 typedef std::future<ListAnalysisReportsOutcome> ListAnalysisReportsOutcomeCallable;
 typedef std::future<ListContainerAssociationsOutcome> ListContainerAssociationsOutcomeCallable;
 typedef std::future<ListFirewallPoliciesOutcome> ListFirewallPoliciesOutcomeCallable;
+typedef std::future<ListFirewallPoliciesV2Outcome> ListFirewallPoliciesV2OutcomeCallable;
 typedef std::future<ListFirewallsOutcome> ListFirewallsOutcomeCallable;
 typedef std::future<ListFlowOperationResultsOutcome> ListFlowOperationResultsOutcomeCallable;
 typedef std::future<ListFlowOperationsOutcome> ListFlowOperationsOutcomeCallable;
@@ -427,6 +449,7 @@ typedef std::future<UpdateFirewallDescriptionOutcome> UpdateFirewallDescriptionO
 typedef std::future<UpdateFirewallEncryptionConfigurationOutcome> UpdateFirewallEncryptionConfigurationOutcomeCallable;
 typedef std::future<UpdateFirewallPolicyOutcome> UpdateFirewallPolicyOutcomeCallable;
 typedef std::future<UpdateFirewallPolicyChangeProtectionOutcome> UpdateFirewallPolicyChangeProtectionOutcomeCallable;
+typedef std::future<UpdateFirewallPolicyV2Outcome> UpdateFirewallPolicyV2OutcomeCallable;
 typedef std::future<UpdateLoggingConfigurationOutcome> UpdateLoggingConfigurationOutcomeCallable;
 typedef std::future<UpdateProxyOutcome> UpdateProxyOutcomeCallable;
 typedef std::future<UpdateProxyConfigurationOutcome> UpdateProxyConfigurationOutcomeCallable;
@@ -469,6 +492,9 @@ typedef std::function<void(const NetworkFirewallClient*, const Model::CreateFire
 typedef std::function<void(const NetworkFirewallClient*, const Model::CreateFirewallPolicyRequest&,
                            const Model::CreateFirewallPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateFirewallPolicyResponseReceivedHandler;
+typedef std::function<void(const NetworkFirewallClient*, const Model::CreateFirewallPolicyV2Request&,
+                           const Model::CreateFirewallPolicyV2Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreateFirewallPolicyV2ResponseReceivedHandler;
 typedef std::function<void(const NetworkFirewallClient*, const Model::CreateProxyRequest&, const Model::CreateProxyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateProxyResponseReceivedHandler;
@@ -501,6 +527,9 @@ typedef std::function<void(const NetworkFirewallClient*, const Model::DeleteFire
 typedef std::function<void(const NetworkFirewallClient*, const Model::DeleteFirewallPolicyRequest&,
                            const Model::DeleteFirewallPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteFirewallPolicyResponseReceivedHandler;
+typedef std::function<void(const NetworkFirewallClient*, const Model::DeleteFirewallPolicyV2Request&,
+                           const Model::DeleteFirewallPolicyV2Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeleteFirewallPolicyV2ResponseReceivedHandler;
 typedef std::function<void(const NetworkFirewallClient*, const Model::DeleteNetworkFirewallTransitGatewayAttachmentRequest&,
                            const Model::DeleteNetworkFirewallTransitGatewayAttachmentOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -544,6 +573,9 @@ typedef std::function<void(const NetworkFirewallClient*, const Model::DescribeFi
 typedef std::function<void(const NetworkFirewallClient*, const Model::DescribeFirewallPolicyRequest&,
                            const Model::DescribeFirewallPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeFirewallPolicyResponseReceivedHandler;
+typedef std::function<void(const NetworkFirewallClient*, const Model::DescribeFirewallPolicyV2Request&,
+                           const Model::DescribeFirewallPolicyV2Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeFirewallPolicyV2ResponseReceivedHandler;
 typedef std::function<void(const NetworkFirewallClient*, const Model::DescribeFlowOperationRequest&,
                            const Model::DescribeFlowOperationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeFlowOperationResponseReceivedHandler;
@@ -606,6 +638,9 @@ typedef std::function<void(const NetworkFirewallClient*, const Model::ListContai
 typedef std::function<void(const NetworkFirewallClient*, const Model::ListFirewallPoliciesRequest&,
                            const Model::ListFirewallPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListFirewallPoliciesResponseReceivedHandler;
+typedef std::function<void(const NetworkFirewallClient*, const Model::ListFirewallPoliciesV2Request&,
+                           const Model::ListFirewallPoliciesV2Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListFirewallPoliciesV2ResponseReceivedHandler;
 typedef std::function<void(const NetworkFirewallClient*, const Model::ListFirewallsRequest&, const Model::ListFirewallsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListFirewallsResponseReceivedHandler;
@@ -688,6 +723,9 @@ typedef std::function<void(const NetworkFirewallClient*, const Model::UpdateFire
                            const Model::UpdateFirewallPolicyChangeProtectionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateFirewallPolicyChangeProtectionResponseReceivedHandler;
+typedef std::function<void(const NetworkFirewallClient*, const Model::UpdateFirewallPolicyV2Request&,
+                           const Model::UpdateFirewallPolicyV2Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateFirewallPolicyV2ResponseReceivedHandler;
 typedef std::function<void(const NetworkFirewallClient*, const Model::UpdateLoggingConfigurationRequest&,
                            const Model::UpdateLoggingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateLoggingConfigurationResponseReceivedHandler;

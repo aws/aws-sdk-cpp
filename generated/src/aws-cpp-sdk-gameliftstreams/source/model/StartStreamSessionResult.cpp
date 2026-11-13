@@ -122,6 +122,18 @@ StartStreamSessionResult& StartStreamSessionResult::operator=(const Aws::AmazonW
     m_displayConfiguration = jsonValue.GetObject("DisplayConfiguration");
     m_displayConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ApplicationStartedAt")) {
+    m_applicationStartedAt = jsonValue.GetDouble("ApplicationStartedAt");
+    m_applicationStartedAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("StreamingStartedAt")) {
+    m_streamingStartedAt = jsonValue.GetDouble("StreamingStartedAt");
+    m_streamingStartedAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("StreamingEndedAt")) {
+    m_streamingEndedAt = jsonValue.GetDouble("StreamingEndedAt");
+    m_streamingEndedAtHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

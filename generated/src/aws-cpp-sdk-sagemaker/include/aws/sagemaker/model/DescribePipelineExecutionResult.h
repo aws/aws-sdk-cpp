@@ -7,6 +7,7 @@
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/MLflowConfiguration.h>
 #include <aws/sagemaker/model/ParallelismConfiguration.h>
@@ -280,6 +281,49 @@ class DescribePipelineExecutionResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The aliases currently assigned to the pipeline version that the execution
+   * ran.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetPipelineVersionAliases() const { return m_pipelineVersionAliases; }
+  template <typename PipelineVersionAliasesT = Aws::Vector<Aws::String>>
+  void SetPipelineVersionAliases(PipelineVersionAliasesT&& value) {
+    m_pipelineVersionAliasesHasBeenSet = true;
+    m_pipelineVersionAliases = std::forward<PipelineVersionAliasesT>(value);
+  }
+  template <typename PipelineVersionAliasesT = Aws::Vector<Aws::String>>
+  DescribePipelineExecutionResult& WithPipelineVersionAliases(PipelineVersionAliasesT&& value) {
+    SetPipelineVersionAliases(std::forward<PipelineVersionAliasesT>(value));
+    return *this;
+  }
+  template <typename PipelineVersionAliasesT = Aws::String>
+  DescribePipelineExecutionResult& AddPipelineVersionAliases(PipelineVersionAliasesT&& value) {
+    m_pipelineVersionAliasesHasBeenSet = true;
+    m_pipelineVersionAliases.emplace_back(std::forward<PipelineVersionAliasesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the IAM role that the execution uses.
+   * SageMaker returns this value only for executions of pipelines that Amazon Web
+   * Services manages.</p>
+   */
+  inline const Aws::String& GetRoleArn() const { return m_roleArn; }
+  template <typename RoleArnT = Aws::String>
+  void SetRoleArn(RoleArnT&& value) {
+    m_roleArnHasBeenSet = true;
+    m_roleArn = std::forward<RoleArnT>(value);
+  }
+  template <typename RoleArnT = Aws::String>
+  DescribePipelineExecutionResult& WithRoleArn(RoleArnT&& value) {
+    SetRoleArn(std::forward<RoleArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -326,6 +370,10 @@ class DescribePipelineExecutionResult {
 
   MLflowConfiguration m_mLflowConfig;
 
+  Aws::Vector<Aws::String> m_pipelineVersionAliases;
+
+  Aws::String m_roleArn;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_pipelineArnHasBeenSet = false;
@@ -343,6 +391,8 @@ class DescribePipelineExecutionResult {
   bool m_selectiveExecutionConfigHasBeenSet = false;
   bool m_pipelineVersionIdHasBeenSet = false;
   bool m_mLflowConfigHasBeenSet = false;
+  bool m_pipelineVersionAliasesHasBeenSet = false;
+  bool m_roleArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

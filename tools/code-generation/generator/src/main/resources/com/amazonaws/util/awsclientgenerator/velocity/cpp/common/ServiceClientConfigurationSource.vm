@@ -132,8 +132,13 @@ void ${metadata.classNamePrefix}ClientConfiguration::Load${serviceNamespace}Spec
 #end
 ## DynamoDB and DynamoDB Streams tune retry 2.1: maxAttempts=4 and a 25ms non-throttling backoff base
 #if($serviceModel.metadata.serviceId == "DynamoDB" || $serviceModel.metadata.serviceId == "DynamoDB Streams")
-  this->configFactories.retryStrategyCreateFn = []() -> std::shared_ptr<Client::RetryStrategy> {
-    return Client::InitRetryStrategy(4, "", 0.025);
+  const Aws::String retryProfileName = this->profileName;
+  this->configFactories.retryStrategyCreateFn = [retryProfileName]() -> std::shared_ptr<Client::RetryStrategy> {
+    Client::InitRetryStrategyOptions options;
+    options.maxAttempts = 4;
+    options.transientBackoffBaseSec = 0.025;
+    options.profileName = retryProfileName;
+    return Client::InitRetryStrategy(options);
   };
 #end
 ## Bedrock API key auth 

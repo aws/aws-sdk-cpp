@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/memorydb/MemoryDB_EXPORTS.h>
 #include <aws/memorydb/model/AZStatus.h>
 #include <aws/memorydb/model/ClusterPendingUpdates.h>
@@ -20,10 +21,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace MemoryDB {
 namespace Model {
@@ -37,9 +37,9 @@ namespace Model {
 class Cluster {
  public:
   AWS_MEMORYDB_API Cluster() = default;
-  AWS_MEMORYDB_API Cluster(Aws::Utils::Json::JsonView jsonValue);
-  AWS_MEMORYDB_API Cluster& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_MEMORYDB_API Cluster(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_MEMORYDB_API Cluster& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_MEMORYDB_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -136,13 +136,13 @@ class Cluster {
   /**
    * <p>The number of shards in the cluster</p>
    */
-  inline int GetNumberOfShards() const { return m_numberOfShards; }
+  inline int64_t GetNumberOfShards() const { return m_numberOfShards; }
   inline bool NumberOfShardsHasBeenSet() const { return m_numberOfShardsHasBeenSet; }
-  inline void SetNumberOfShards(int value) {
+  inline void SetNumberOfShards(int64_t value) {
     m_numberOfShardsHasBeenSet = true;
     m_numberOfShards = value;
   }
-  inline Cluster& WithNumberOfShards(int value) {
+  inline Cluster& WithNumberOfShards(int64_t value) {
     SetNumberOfShards(value);
     return *this;
   }
@@ -452,13 +452,13 @@ class Cluster {
    * deleting them. For example, if you set SnapshotRetentionLimit to 5, a snapshot
    * that was taken today is retained for 5 days before being deleted.</p>
    */
-  inline int GetSnapshotRetentionLimit() const { return m_snapshotRetentionLimit; }
+  inline int64_t GetSnapshotRetentionLimit() const { return m_snapshotRetentionLimit; }
   inline bool SnapshotRetentionLimitHasBeenSet() const { return m_snapshotRetentionLimitHasBeenSet; }
-  inline void SetSnapshotRetentionLimit(int value) {
+  inline void SetSnapshotRetentionLimit(int64_t value) {
     m_snapshotRetentionLimitHasBeenSet = true;
     m_snapshotRetentionLimit = value;
   }
-  inline Cluster& WithSnapshotRetentionLimit(int value) {
+  inline Cluster& WithSnapshotRetentionLimit(int64_t value) {
     SetSnapshotRetentionLimit(value);
     return *this;
   }
@@ -605,7 +605,7 @@ class Cluster {
 
   Aws::String m_multiRegionClusterName;
 
-  int m_numberOfShards{0};
+  int64_t m_numberOfShards{0};
 
   Aws::Vector<Shard> m_shards;
 
@@ -639,7 +639,7 @@ class Cluster {
 
   Aws::String m_snsTopicStatus;
 
-  int m_snapshotRetentionLimit{0};
+  int64_t m_snapshotRetentionLimit{0};
 
   Aws::String m_maintenanceWindow;
 

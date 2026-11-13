@@ -7,7 +7,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/memorydb/MemoryDBPaginationBase.h>
 #include <aws/memorydb/MemoryDBServiceClientModel.h>
 #include <aws/memorydb/MemoryDBWaiter.h>
@@ -24,12 +24,12 @@ namespace MemoryDB {
  * leverage Redis OSS’ flexible and friendly data structures, APIs, and
  * commands.</p>
  */
-class AWS_MEMORYDB_API MemoryDBClient : public Aws::Client::AWSJsonClient,
+class AWS_MEMORYDB_API MemoryDBClient : public Aws::Client::AWSRpcV2CborClient,
                                         public Aws::Client::ClientWithAsyncTemplateMethods<MemoryDBClient>,
                                         public MemoryDBPaginationBase<MemoryDBClient>,
                                         public MemoryDBWaiter<MemoryDBClient> {
  public:
-  typedef Aws::Client::AWSJsonClient BASECLASS;
+  typedef Aws::Client::AWSRpcV2CborClient BASECLASS;
   static const char* GetServiceName();
   static const char* GetAllocationTag();
 

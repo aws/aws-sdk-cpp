@@ -11,15 +11,15 @@
 #include <aws/comprehend/model/VpcConfig.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace Comprehend {
 namespace Model {
@@ -33,9 +33,9 @@ namespace Model {
 class TopicsDetectionJobProperties {
  public:
   AWS_COMPREHEND_API TopicsDetectionJobProperties() = default;
-  AWS_COMPREHEND_API TopicsDetectionJobProperties(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPREHEND_API TopicsDetectionJobProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_COMPREHEND_API TopicsDetectionJobProperties(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPREHEND_API TopicsDetectionJobProperties& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPREHEND_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -213,13 +213,13 @@ class TopicsDetectionJobProperties {
    * <p>The number of topics to detect supplied when you created the topic detection
    * job. The default is 10. </p>
    */
-  inline int GetNumberOfTopics() const { return m_numberOfTopics; }
+  inline int64_t GetNumberOfTopics() const { return m_numberOfTopics; }
   inline bool NumberOfTopicsHasBeenSet() const { return m_numberOfTopicsHasBeenSet; }
-  inline void SetNumberOfTopics(int value) {
+  inline void SetNumberOfTopics(int64_t value) {
     m_numberOfTopicsHasBeenSet = true;
     m_numberOfTopics = value;
   }
-  inline TopicsDetectionJobProperties& WithNumberOfTopics(int value) {
+  inline TopicsDetectionJobProperties& WithNumberOfTopics(int64_t value) {
     SetNumberOfTopics(value);
     return *this;
   }
@@ -309,7 +309,7 @@ class TopicsDetectionJobProperties {
 
   OutputDataConfig m_outputDataConfig;
 
-  int m_numberOfTopics{0};
+  int64_t m_numberOfTopics{0};
 
   Aws::String m_dataAccessRoleArn;
 

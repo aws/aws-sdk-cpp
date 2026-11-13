@@ -11,6 +11,7 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/utils/cbor/CborValue.h>
+#include <aws/core/internal/RetryErrorClassification.h>
 
 using namespace Aws::Utils::Logging;
 using namespace Aws::Utils::Json;
@@ -104,6 +105,7 @@ AWSError<CoreErrors> JsonErrorMarshaller::BuildAWSError(const std::shared_ptr<Ht
 
   error.SetResponseHeaders(httpResponse->GetHeaders());
   error.SetResponseCode(httpResponse->GetResponseCode());
+  Aws::Client::Internal::ClassifyUnmodeledTooManyRequests(error);
   error.SetRemoteHostIpAddress(httpResponse->GetOriginatingRequest().GetResolvedRemoteHost());
   AWS_LOGSTREAM_ERROR(AWS_ERROR_MARSHALLER_LOG_TAG, error);
   return error;
@@ -197,6 +199,7 @@ AWSError<CoreErrors> XmlErrorMarshaller::BuildAWSError(const std::shared_ptr<Htt
 
     error.SetResponseHeaders(httpResponse->GetHeaders());
     error.SetResponseCode(httpResponse->GetResponseCode());
+    Aws::Client::Internal::ClassifyUnmodeledTooManyRequests(error);
     error.SetRemoteHostIpAddress(httpResponse->GetOriginatingRequest().GetResolvedRemoteHost());
     AWS_LOGSTREAM_ERROR(AWS_ERROR_MARSHALLER_LOG_TAG, error);
     return error;
@@ -410,7 +413,10 @@ CborValue RpcV2ErrorMarshaller::GetCborPayloadHttpResponse(const Http::HttpRespo
 }
 
 AWSError<CoreErrors> RpcV2ErrorMarshaller::Marshall(const Aws::Http::HttpResponse& httpResponse) const {
-  auto exceptionPayload = GetCborPayloadHttpResponse(httpResponse);
+  Aws::StringStream bodyStream;
+  bodyStream << httpResponse.GetResponseBody().rdbuf();
+  Aws::String body = bodyStream.str();
+  CborValue exceptionPayload(body);
   AWSError<CoreErrors> error;
 
   if (exceptionPayload.WasParseSuccessful()) {
@@ -491,6 +497,7 @@ AWSError<CoreErrors> RpcV2ErrorMarshaller::Marshall(const Aws::Http::HttpRespons
       error = FindErrorByHttpResponseCode(httpResponse.GetResponseCode());
       error.SetMessage(message);
     }
+    error.SetCborPayload(std::move(body));
   } else {
     bool isRetryable = IsRetryableHttpResponseCode(httpResponse.GetResponseCode());
     AWS_LOGSTREAM_ERROR(AWS_ERROR_MARSHALLER_LOG_TAG, "Failed to parse CBOR error payload: " << httpResponse.GetResponseCode());
@@ -522,6 +529,7 @@ AWSError<CoreErrors> RpcV2ErrorMarshaller::BuildAWSError(const std::shared_ptr<H
 
   error.SetResponseHeaders(httpResponse->GetHeaders());
   error.SetResponseCode(httpResponse->GetResponseCode());
+  Aws::Client::Internal::ClassifyUnmodeledTooManyRequests(error);
   error.SetRemoteHostIpAddress(httpResponse->GetOriginatingRequest().GetResolvedRemoteHost());
   AWS_LOGSTREAM_ERROR(AWS_ERROR_MARSHALLER_LOG_TAG, error);
   return error;

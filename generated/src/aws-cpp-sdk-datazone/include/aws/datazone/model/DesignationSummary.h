@@ -22,8 +22,10 @@ namespace DataZone {
 namespace Model {
 
 /**
- * <p>Summary representation of a designation returned by list
- * operations.</p><p><h3>See Also:</h3>   <a
+ * <p>The summary representation of a designation returned by
+ * <code>ListDesignations</code>. The summary omits the Cedar permit policy. Call
+ * <code>GetDesignation</code> to retrieve the full designation record including
+ * the policy.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DesignationSummary">AWS
  * API Reference</a></p>
  */
@@ -109,7 +111,9 @@ class DesignationSummary {
 
   ///@{
   /**
-   * <p>The classification of this designation.</p>
+   * <p>The classification of this designation. Valid values:</p> <ul> <li> <p>
+   * <code>MANAGED</code> — System-defined designation.</p> </li> <li> <p>
+   * <code>USER_CREATED</code> — User-created designation.</p> </li> </ul>
    */
   inline DesignationType GetDesignationType() const { return m_designationType; }
   inline bool DesignationTypeHasBeenSet() const { return m_designationTypeHasBeenSet; }
@@ -125,7 +129,9 @@ class DesignationSummary {
 
   ///@{
   /**
-   * <p>Whether deletion protection is enabled for this designation.</p>
+   * <p>Specifies whether deletion protection is enabled for this designation. When
+   * <code>true</code>, <code>DeleteDesignation</code> is rejected until protection
+   * is disabled through <code>UpdateDesignation</code>.</p>
    */
   inline bool GetDeletionProtection() const { return m_deletionProtection; }
   inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }

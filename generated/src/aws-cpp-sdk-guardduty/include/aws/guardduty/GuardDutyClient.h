@@ -1525,9 +1525,14 @@ class AWS_GUARDDUTY_API GuardDutyClient : public Aws::Client::AWSJsonClient,
    * (Ohio), US West (Oregon), Canada (Central), Europe (Frankfurt), Europe
    * (Ireland), Europe (London), Europe (Paris), Europe (Stockholm), and Asia Pacific
    * (Tokyo).</p> <p>Retrieves the results and status of a specific GuardDuty
-   * investigation.</p> <p>An administrator account can retrieve any investigation
-   * within the organization. Member accounts can only retrieve investigations that
-   * belong to them.</p><p><h3>See Also:</h3>   <a
+   * investigation.</p> <p>GuardDuty returns the results, including the summary and
+   * the scope of the investigation, only when the investigation status is
+   * <code>COMPLETED</code>. By default, GuardDuty returns the summary as text in
+   * <code>Summary</code>. To return a typed summary in <code>SummaryData</code>
+   * instead, set <code>SummaryFormat</code> to <code>STRUCTURED</code>.</p> <p>An
+   * administrator account can retrieve any investigation within the organization.
+   * Member accounts can only retrieve investigations that belong to
+   * them.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetInvestigation">AWS
    * API Reference</a></p>
    */
@@ -2199,10 +2204,47 @@ class AWS_GUARDDUTY_API GuardDutyClient : public Aws::Client::AWSJsonClient,
    * the following Amazon Web Services Regions: US East (N. Virginia), US East
    * (Ohio), US West (Oregon), Canada (Central), Europe (Frankfurt), Europe
    * (Ireland), Europe (London), Europe (Paris), Europe (Stockholm), and Asia Pacific
+   * (Tokyo).</p> <p>Returns the records for a specific GuardDuty investigation. Each
+   * record is one step in the reasoning that GuardDuty followed to reach the results
+   * of the investigation.</p> <p>An administrator account can list the records of
+   * any investigation within the organization. Member accounts can only list the
+   * records of investigations that belong to them.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListInvestigationRecords">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListInvestigationRecordsOutcome ListInvestigationRecords(const Model::ListInvestigationRecordsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListInvestigationRecords that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListInvestigationRecordsRequestT = Model::ListInvestigationRecordsRequest>
+  Model::ListInvestigationRecordsOutcomeCallable ListInvestigationRecordsCallable(const ListInvestigationRecordsRequestT& request) const {
+    return SubmitCallable(&GuardDutyClient::ListInvestigationRecords, request);
+  }
+
+  /**
+   * An Async wrapper for ListInvestigationRecords that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListInvestigationRecordsRequestT = Model::ListInvestigationRecordsRequest>
+  void ListInvestigationRecordsAsync(const ListInvestigationRecordsRequestT& request,
+                                     const ListInvestigationRecordsResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GuardDutyClient::ListInvestigationRecords, request, handler, context);
+  }
+
+  /**
+   * <p>This API is currently available as a preview. This feature is available in
+   * the following Amazon Web Services Regions: US East (N. Virginia), US East
+   * (Ohio), US West (Oregon), Canada (Central), Europe (Frankfurt), Europe
+   * (Ireland), Europe (London), Europe (Paris), Europe (Stockholm), and Asia Pacific
    * (Tokyo).</p> <p>Returns a list of investigations associated with the specified
-   * GuardDuty detector.</p> <p>An administrator account sees all investigations
-   * across the organization. Member accounts see only the investigations that belong
-   * to them.</p><p><h3>See Also:</h3>   <a
+   * GuardDuty detector. You can filter the investigations by status, risk level,
+   * confidence, finding ID, and investigation type, and sort them by start time, end
+   * time, status, risk level, or confidence.</p> <p>An administrator account sees
+   * all investigations across the organization. Member accounts see only the
+   * investigations that belong to them.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListInvestigations">AWS
    * API Reference</a></p>
    */

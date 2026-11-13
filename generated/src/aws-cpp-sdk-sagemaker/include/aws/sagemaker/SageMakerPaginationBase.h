@@ -22,6 +22,7 @@
 #include <aws/sagemaker/model/ListAutoMLJobsPaginationTraits.h>
 #include <aws/sagemaker/model/ListCandidatesForAutoMLJobPaginationTraits.h>
 #include <aws/sagemaker/model/ListClusterEventsPaginationTraits.h>
+#include <aws/sagemaker/model/ListClusterExtensionsPaginationTraits.h>
 #include <aws/sagemaker/model/ListClusterNodesPaginationTraits.h>
 #include <aws/sagemaker/model/ListClusterSchedulerConfigsPaginationTraits.h>
 #include <aws/sagemaker/model/ListClustersPaginationTraits.h>
@@ -278,6 +279,18 @@ class SageMakerPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListClusterEventsRequest,
                                              Pagination::ListClusterEventsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListClusterExtensions operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListClusterExtensionsRequest,
+                                    Pagination::ListClusterExtensionsPaginationTraits<DerivedClient>>
+  ListClusterExtensionsPaginator(const Model::ListClusterExtensionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListClusterExtensionsRequest,
+                                             Pagination::ListClusterExtensionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

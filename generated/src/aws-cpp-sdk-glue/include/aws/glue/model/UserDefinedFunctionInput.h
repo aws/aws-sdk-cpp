@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/glue/model/FunctionType.h>
+#include <aws/glue/model/GovernanceMode.h>
 #include <aws/glue/model/PrincipalType.h>
 #include <aws/glue/model/ResourceUri.h>
 
@@ -145,6 +146,54 @@ class UserDefinedFunctionInput {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon S3 location that contains the function's artifacts. Required when
+   * <code>GovernanceMode</code> is <code>LAKE_FORMATION</code>. You must register
+   * the location with Lake Formation, and every resource URI must be under this
+   * location.</p>
+   */
+  inline const Aws::String& GetArtifactLocation() const { return m_artifactLocation; }
+  inline bool ArtifactLocationHasBeenSet() const { return m_artifactLocationHasBeenSet; }
+  template <typename ArtifactLocationT = Aws::String>
+  void SetArtifactLocation(ArtifactLocationT&& value) {
+    m_artifactLocationHasBeenSet = true;
+    m_artifactLocation = std::forward<ArtifactLocationT>(value);
+  }
+  template <typename ArtifactLocationT = Aws::String>
+  UserDefinedFunctionInput& WithArtifactLocation(ArtifactLocationT&& value) {
+    SetArtifactLocation(std::forward<ArtifactLocationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>How access to the function is governed. Specify <code>LAKE_FORMATION</code>
+   * to manage access to the function with Lake Formation permissions. If you don't
+   * specify a value, the default is <code>IAM_ONLY</code>. You can't change the
+   * governance mode after the function is created.</p> <p>When
+   * <code>GovernanceMode</code> is <code>LAKE_FORMATION</code>:</p> <ul> <li> <p>You
+   * must be a data lake administrator or have all permissions on the Data Catalog
+   * with the grant option.</p> </li> <li> <p>You must have the
+   * <code>DATA_LOCATION_ACCESS</code> permission on the
+   * <code>ArtifactLocation</code>, unless you're a data lake administrator.</p>
+   * </li> <li> <p>You must specify from 1 to 10 resource URIs, each under the
+   * <code>ArtifactLocation</code>.</p> </li> <li> <p>You can't rename the
+   * function.</p> </li> </ul>
+   */
+  inline GovernanceMode GetGovernanceMode() const { return m_governanceMode; }
+  inline bool GovernanceModeHasBeenSet() const { return m_governanceModeHasBeenSet; }
+  inline void SetGovernanceMode(GovernanceMode value) {
+    m_governanceModeHasBeenSet = true;
+    m_governanceMode = value;
+  }
+  inline UserDefinedFunctionInput& WithGovernanceMode(GovernanceMode value) {
+    SetGovernanceMode(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_functionName;
 
@@ -157,12 +206,18 @@ class UserDefinedFunctionInput {
   PrincipalType m_ownerType{PrincipalType::NOT_SET};
 
   Aws::Vector<ResourceUri> m_resourceUris;
+
+  Aws::String m_artifactLocation;
+
+  GovernanceMode m_governanceMode{GovernanceMode::NOT_SET};
   bool m_functionNameHasBeenSet = false;
   bool m_classNameHasBeenSet = false;
   bool m_ownerNameHasBeenSet = false;
   bool m_functionTypeHasBeenSet = false;
   bool m_ownerTypeHasBeenSet = false;
   bool m_resourceUrisHasBeenSet = false;
+  bool m_artifactLocationHasBeenSet = false;
+  bool m_governanceModeHasBeenSet = false;
 };
 
 }  // namespace Model

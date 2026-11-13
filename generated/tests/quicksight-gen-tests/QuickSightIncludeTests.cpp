@@ -770,6 +770,8 @@
 #include <aws/quicksight/model/DescribeQuickSightQSearchConfigurationResult.h>
 #include <aws/quicksight/model/DescribeRefreshScheduleRequest.h>
 #include <aws/quicksight/model/DescribeRefreshScheduleResult.h>
+#include <aws/quicksight/model/DescribeResourcePermissionsRequest.h>
+#include <aws/quicksight/model/DescribeResourcePermissionsResult.h>
 #include <aws/quicksight/model/DescribeRoleCustomPermissionRequest.h>
 #include <aws/quicksight/model/DescribeRoleCustomPermissionResult.h>
 #include <aws/quicksight/model/DescribeSelfUpgradeConfigurationRequest.h>
@@ -1657,6 +1659,7 @@
 #include <aws/quicksight/model/SeriesItem.h>
 #include <aws/quicksight/model/ServiceAccountCredentials.h>
 #include <aws/quicksight/model/ServiceNowParameters.h>
+#include <aws/quicksight/model/ServiceRoleType.h>
 #include <aws/quicksight/model/ServiceType.h>
 #include <aws/quicksight/model/SessionLifetimeInMinutesInvalidException.h>
 #include <aws/quicksight/model/SessionTag.h>
@@ -2041,6 +2044,8 @@
 #include <aws/quicksight/model/UpdateQuickSightQSearchConfigurationResult.h>
 #include <aws/quicksight/model/UpdateRefreshScheduleRequest.h>
 #include <aws/quicksight/model/UpdateRefreshScheduleResult.h>
+#include <aws/quicksight/model/UpdateResourcePermissionsRequest.h>
+#include <aws/quicksight/model/UpdateResourcePermissionsResult.h>
 #include <aws/quicksight/model/UpdateRoleCustomPermissionRequest.h>
 #include <aws/quicksight/model/UpdateRoleCustomPermissionResult.h>
 #include <aws/quicksight/model/UpdateSPICECapacityConfigurationRequest.h>

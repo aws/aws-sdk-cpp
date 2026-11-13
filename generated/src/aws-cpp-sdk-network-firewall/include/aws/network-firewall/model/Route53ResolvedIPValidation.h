@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 #include <aws/network-firewall/model/Address.h>
 #include <aws/network-firewall/model/DNSExpiryExceptionPolicy.h>
@@ -15,10 +16,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace NetworkFirewall {
 namespace Model {
@@ -33,17 +33,24 @@ namespace Model {
  * the destination IP address was resolved for some domain. To match specific
  * domains, also configure stateful rule groups that use the
  * <code>AWS_ROUTE_53_RESOLVED_DOMAIN</code> target type or the
- * <code>aws_route_53_resolved_domain</code> rule keyword.</p><p><h3>See Also:</h3>
- * <a
+ * <code>aws_route_53_resolved_domain</code> rule keyword.</p>
+ * <p>Enabling or disabling resolved IP validation, or changing
+ * <code>DNSFirewallRuleGroupId</code>, may require a restart of the stateful
+ * engine in order to apply the change. When this occurs, existing connections will
+ * be treated according to your stream exception policy configuration. Changes to
+ * <code>Action</code>, <code>DNSExpiryExceptionPolicy</code>,
+ * <code>SourceIPRanges</code>, and
+ * <code>BypassDestinationValidationIPRanges</code> don't require a restart.</p>
+ * <p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/Route53ResolvedIPValidation">AWS
  * API Reference</a></p>
  */
 class Route53ResolvedIPValidation {
  public:
   AWS_NETWORKFIREWALL_API Route53ResolvedIPValidation() = default;
-  AWS_NETWORKFIREWALL_API Route53ResolvedIPValidation(Aws::Utils::Json::JsonView jsonValue);
-  AWS_NETWORKFIREWALL_API Route53ResolvedIPValidation& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_NETWORKFIREWALL_API Route53ResolvedIPValidation(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_NETWORKFIREWALL_API Route53ResolvedIPValidation& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_NETWORKFIREWALL_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -84,7 +91,9 @@ class Route53ResolvedIPValidation {
    * association. Network Firewall processes the swap asynchronously. Each policy can
    * have only one managed Route 53 Resolver DNS Firewall association. While a swap
    * is in progress, Network Firewall rejects further changes to this setting. Wait
-   * until the swap completes, then retry.</p>
+   * until the swap completes, then retry. The change may also require a restart of
+   * the stateful engine. When this occurs, existing connections will be treated
+   * according to your stream exception policy configuration.</p>
    */
   inline const Aws::String& GetDNSFirewallRuleGroupId() const { return m_dNSFirewallRuleGroupId; }
   inline bool DNSFirewallRuleGroupIdHasBeenSet() const { return m_dNSFirewallRuleGroupIdHasBeenSet; }

@@ -165,6 +165,38 @@ class AccountVpcEncryptionControlExclusions {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The exclusion configuration for AWS Global Accelerator.</p>
+   */
+  inline VpcEncryptionControlExclusionState GetGlobalAccelerator() const { return m_globalAccelerator; }
+  inline bool GlobalAcceleratorHasBeenSet() const { return m_globalAcceleratorHasBeenSet; }
+  inline void SetGlobalAccelerator(VpcEncryptionControlExclusionState value) {
+    m_globalAcceleratorHasBeenSet = true;
+    m_globalAccelerator = value;
+  }
+  inline AccountVpcEncryptionControlExclusions& WithGlobalAccelerator(VpcEncryptionControlExclusionState value) {
+    SetGlobalAccelerator(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The exclusion configuration for Amazon API Gateway V2.</p>
+   */
+  inline VpcEncryptionControlExclusionState GetApiGatewayV2() const { return m_apiGatewayV2; }
+  inline bool ApiGatewayV2HasBeenSet() const { return m_apiGatewayV2HasBeenSet; }
+  inline void SetApiGatewayV2(VpcEncryptionControlExclusionState value) {
+    m_apiGatewayV2HasBeenSet = true;
+    m_apiGatewayV2 = value;
+  }
+  inline AccountVpcEncryptionControlExclusions& WithApiGatewayV2(VpcEncryptionControlExclusionState value) {
+    SetApiGatewayV2(value);
+    return *this;
+  }
+  ///@}
  private:
   VpcEncryptionControlExclusionState m_internetGateway{VpcEncryptionControlExclusionState::NOT_SET};
 
@@ -181,6 +213,10 @@ class AccountVpcEncryptionControlExclusions {
   VpcEncryptionControlExclusionState m_vpcLattice{VpcEncryptionControlExclusionState::NOT_SET};
 
   VpcEncryptionControlExclusionState m_elasticFileSystem{VpcEncryptionControlExclusionState::NOT_SET};
+
+  VpcEncryptionControlExclusionState m_globalAccelerator{VpcEncryptionControlExclusionState::NOT_SET};
+
+  VpcEncryptionControlExclusionState m_apiGatewayV2{VpcEncryptionControlExclusionState::NOT_SET};
   bool m_internetGatewayHasBeenSet = false;
   bool m_egressOnlyInternetGatewayHasBeenSet = false;
   bool m_natGatewayHasBeenSet = false;
@@ -189,6 +225,8 @@ class AccountVpcEncryptionControlExclusions {
   bool m_lambdaHasBeenSet = false;
   bool m_vpcLatticeHasBeenSet = false;
   bool m_elasticFileSystemHasBeenSet = false;
+  bool m_globalAcceleratorHasBeenSet = false;
+  bool m_apiGatewayV2HasBeenSet = false;
 };
 
 }  // namespace Model

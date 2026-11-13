@@ -18,6 +18,21 @@ namespace Model {
 ComputeNodeGroup::ComputeNodeGroup(JsonView jsonValue) { *this = jsonValue; }
 
 ComputeNodeGroup& ComputeNodeGroup::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("amiId")) {
+    m_amiId = jsonValue.GetString("amiId");
+    m_amiIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("securityGroupIds")) {
+    Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("securityGroupIds");
+    for (unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex) {
+      m_securityGroupIds.push_back(securityGroupIdsJsonList[securityGroupIdsIndex].AsString());
+    }
+    m_securityGroupIdsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("sshKeyName")) {
+    m_sshKeyName = jsonValue.GetString("sshKeyName");
+    m_sshKeyNameHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
@@ -46,10 +61,6 @@ ComputeNodeGroup& ComputeNodeGroup::operator=(JsonView jsonValue) {
     m_status = ComputeNodeGroupStatusMapper::GetComputeNodeGroupStatusForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("amiId")) {
-    m_amiId = jsonValue.GetString("amiId");
-    m_amiIdHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("subnetIds")) {
     Aws::Utils::Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("subnetIds");
     for (unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex) {
@@ -60,6 +71,10 @@ ComputeNodeGroup& ComputeNodeGroup::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("purchaseOption")) {
     m_purchaseOption = PurchaseOptionMapper::GetPurchaseOptionForName(jsonValue.GetString("purchaseOption"));
     m_purchaseOptionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("launchTemplateMode")) {
+    m_launchTemplateMode = LaunchTemplateModeMapper::GetLaunchTemplateModeForName(jsonValue.GetString("launchTemplateMode"));
+    m_launchTemplateModeHasBeenSet = true;
   }
   if (jsonValue.ValueExists("customLaunchTemplate")) {
     m_customLaunchTemplate = jsonValue.GetObject("customLaunchTemplate");
@@ -105,6 +120,22 @@ ComputeNodeGroup& ComputeNodeGroup::operator=(JsonView jsonValue) {
 JsonValue ComputeNodeGroup::Jsonize() const {
   JsonValue payload;
 
+  if (m_amiIdHasBeenSet) {
+    payload.WithString("amiId", m_amiId);
+  }
+
+  if (m_securityGroupIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> securityGroupIdsJsonList(m_securityGroupIds.size());
+    for (unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex) {
+      securityGroupIdsJsonList[securityGroupIdsIndex].AsString(m_securityGroupIds[securityGroupIdsIndex]);
+    }
+    payload.WithArray("securityGroupIds", std::move(securityGroupIdsJsonList));
+  }
+
+  if (m_sshKeyNameHasBeenSet) {
+    payload.WithString("sshKeyName", m_sshKeyName);
+  }
+
   if (m_nameHasBeenSet) {
     payload.WithString("name", m_name);
   }
@@ -133,10 +164,6 @@ JsonValue ComputeNodeGroup::Jsonize() const {
     payload.WithString("status", ComputeNodeGroupStatusMapper::GetNameForComputeNodeGroupStatus(m_status));
   }
 
-  if (m_amiIdHasBeenSet) {
-    payload.WithString("amiId", m_amiId);
-  }
-
   if (m_subnetIdsHasBeenSet) {
     Aws::Utils::Array<JsonValue> subnetIdsJsonList(m_subnetIds.size());
     for (unsigned subnetIdsIndex = 0; subnetIdsIndex < subnetIdsJsonList.GetLength(); ++subnetIdsIndex) {
@@ -147,6 +174,10 @@ JsonValue ComputeNodeGroup::Jsonize() const {
 
   if (m_purchaseOptionHasBeenSet) {
     payload.WithString("purchaseOption", PurchaseOptionMapper::GetNameForPurchaseOption(m_purchaseOption));
+  }
+
+  if (m_launchTemplateModeHasBeenSet) {
+    payload.WithString("launchTemplateMode", LaunchTemplateModeMapper::GetNameForLaunchTemplateMode(m_launchTemplateMode));
   }
 
   if (m_customLaunchTemplateHasBeenSet) {

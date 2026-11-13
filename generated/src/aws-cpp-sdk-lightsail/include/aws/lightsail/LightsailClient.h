@@ -290,6 +290,38 @@ class AWS_LIGHTSAIL_API LightsailClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Checks whether a Lightsail subdomain is available to create. Optionally,
+   * reserves the subdomain for your account for 15 minutes.</p> <p>If you don't
+   * reserve the subdomain, another account can create it before you
+   * do.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CheckSubdomainAvailability">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CheckSubdomainAvailabilityOutcome CheckSubdomainAvailability(
+      const Model::CheckSubdomainAvailabilityRequest& request) const;
+
+  /**
+   * A Callable wrapper for CheckSubdomainAvailability that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename CheckSubdomainAvailabilityRequestT = Model::CheckSubdomainAvailabilityRequest>
+  Model::CheckSubdomainAvailabilityOutcomeCallable CheckSubdomainAvailabilityCallable(
+      const CheckSubdomainAvailabilityRequestT& request) const {
+    return SubmitCallable(&LightsailClient::CheckSubdomainAvailability, request);
+  }
+
+  /**
+   * An Async wrapper for CheckSubdomainAvailability that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CheckSubdomainAvailabilityRequestT = Model::CheckSubdomainAvailabilityRequest>
+  void CheckSubdomainAvailabilityAsync(const CheckSubdomainAvailabilityRequestT& request,
+                                       const CheckSubdomainAvailabilityResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LightsailClient::CheckSubdomainAvailability, request, handler, context);
+  }
+
+  /**
    * <p>Closes ports for a specific Amazon Lightsail instance.</p> <p>The
    * <code>CloseInstancePublicPorts</code> action supports tag-based access control
    * via resource tags applied to the resource identified by
@@ -1197,6 +1229,41 @@ class AWS_LIGHTSAIL_API LightsailClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Creates a Lightsail subdomain, such as <code>mysite</code>, with the web
+   * address <code>mysite.amazonlightsail.com</code>. After the subdomain is created,
+   * use the <code>UpdateSubdomainAssociation</code> action to associate it with a
+   * Lightsail resource.</p> <p>When you create a nested subdomain, such as
+   * <code>blog.mysite</code>, and you don't already have the top-level subdomain
+   * (<code>mysite</code>), Lightsail adds the top-level subdomain to your account in
+   * the <code>IMPLICIT</code> state.</p> <p>You can have up to 30 subdomains in your
+   * account. Nested subdomains, subdomains in the <code>CREATE_FAILED</code> state,
+   * and deleted subdomains that other accounts can't create yet count toward this
+   * quota. Subdomains in the <code>IMPLICIT</code> state don't count toward this
+   * quota.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateSubdomain">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateSubdomainOutcome CreateSubdomain(const Model::CreateSubdomainRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateSubdomain that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename CreateSubdomainRequestT = Model::CreateSubdomainRequest>
+  Model::CreateSubdomainOutcomeCallable CreateSubdomainCallable(const CreateSubdomainRequestT& request) const {
+    return SubmitCallable(&LightsailClient::CreateSubdomain, request);
+  }
+
+  /**
+   * An Async wrapper for CreateSubdomain that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename CreateSubdomainRequestT = Model::CreateSubdomainRequest>
+  void CreateSubdomainAsync(const CreateSubdomainRequestT& request, const CreateSubdomainResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LightsailClient::CreateSubdomain, request, handler, context);
+  }
+
+  /**
    * <p>Deletes an alarm.</p> <p>An alarm is used to monitor a single metric for one
    * of your resources. When a metric condition is met, the alarm can notify you by
    * email, SMS text message, and a banner displayed on the Amazon Lightsail console.
@@ -1855,6 +1922,39 @@ class AWS_LIGHTSAIL_API LightsailClient : public Aws::Client::AWSJsonClient,
                                              const DeleteRelationalDatabaseSnapshotResponseReceivedHandler& handler,
                                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&LightsailClient::DeleteRelationalDatabaseSnapshot, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a Lightsail subdomain.</p> <p>The subdomain must be in the
+   * <code>UNATTACHED</code> or <code>CREATE_FAILED</code> state. To delete a
+   * subdomain that's associated with a resource, first disassociate it by using the
+   * <code>UpdateSubdomainAssociation</code> action.</p> <p>When you delete a
+   * top-level subdomain that has nested subdomains, the nested subdomains continue
+   * to work, and the top-level subdomain changes to the <code>IMPLICIT</code>
+   * state.</p>  <p>After you delete a subdomain that was associated with a
+   * resource, the subdomain isn't available to other accounts for at least 30
+   * days.</p> <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteSubdomain">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteSubdomainOutcome DeleteSubdomain(const Model::DeleteSubdomainRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteSubdomain that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DeleteSubdomainRequestT = Model::DeleteSubdomainRequest>
+  Model::DeleteSubdomainOutcomeCallable DeleteSubdomainCallable(const DeleteSubdomainRequestT& request) const {
+    return SubmitCallable(&LightsailClient::DeleteSubdomain, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteSubdomain that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DeleteSubdomainRequestT = Model::DeleteSubdomainRequest>
+  void DeleteSubdomainAsync(const DeleteSubdomainRequestT& request, const DeleteSubdomainResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LightsailClient::DeleteSubdomain, request, handler, context);
   }
 
   /**
@@ -2936,7 +3036,12 @@ class AWS_LIGHTSAIL_API LightsailClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Returns information about one or more of your Amazon Lightsail content
-   * delivery network (CDN) distributions.</p><p><h3>See Also:</h3>   <a
+   * delivery network (CDN) distributions.</p>  <p>The
+   * <code>defaultRootObject</code> and <code>customErrorResponses</code> values are
+   * returned only when you specify <code>distributionName</code> to retrieve a
+   * single distribution. When you call <code>GetDistributions</code> without a
+   * distribution name to list all distributions, these two fields aren't included in
+   * the response.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDistributions">AWS
    * API Reference</a></p>
    */
@@ -4067,6 +4172,36 @@ class AWS_LIGHTSAIL_API LightsailClient : public Aws::Client::AWSJsonClient,
                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                          const GetStaticIpsRequestT& request = {}) const {
     return SubmitAsync(&LightsailClient::GetStaticIps, request, handler, context);
+  }
+
+  /**
+   * <p>Returns information about one or more of your Lightsail subdomains.</p>
+   * <p>When you don't specify a subdomain, the response lists your top-level
+   * subdomains, and each top-level subdomain includes its nested subdomains.</p>
+   * <p>The results are paginated. To get the next page of results, use the
+   * <code>pageToken</code> parameter.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetSubdomains">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetSubdomainsOutcome GetSubdomains(const Model::GetSubdomainsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for GetSubdomains that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetSubdomainsRequestT = Model::GetSubdomainsRequest>
+  Model::GetSubdomainsOutcomeCallable GetSubdomainsCallable(const GetSubdomainsRequestT& request = {}) const {
+    return SubmitCallable(&LightsailClient::GetSubdomains, request);
+  }
+
+  /**
+   * An Async wrapper for GetSubdomains that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetSubdomainsRequestT = Model::GetSubdomainsRequest>
+  void GetSubdomainsAsync(const GetSubdomainsResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                          const GetSubdomainsRequestT& request = {}) const {
+    return SubmitAsync(&LightsailClient::GetSubdomains, request, handler, context);
   }
 
   /**
@@ -5204,6 +5339,47 @@ class AWS_LIGHTSAIL_API LightsailClient : public Aws::Client::AWSJsonClient,
                                                const UpdateRelationalDatabaseParametersResponseReceivedHandler& handler,
                                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&LightsailClient::UpdateRelationalDatabaseParameters, request, handler, context);
+  }
+
+  /**
+   * <p>Associates a Lightsail subdomain with a resource, disassociates it from a
+   * resource, or moves it from one resource to another resource.</p> <p>Currently,
+   * you can associate a subdomain only with a Lightsail content delivery network
+   * (CDN) distribution. A resource can be associated with only one subdomain at a
+   * time.</p> <p>When you associate a subdomain with a distribution, Lightsail
+   * attaches the subdomain's certificate to the distribution. You can't associate a
+   * subdomain with a distribution that uses a custom domain, which is a distribution
+   * that has a Lightsail certificate attached.</p> <p>You can transfer each
+   * subdomain to another resource only once in a 24-hour period.</p> <p>The update
+   * is asynchronous. The response returns the subdomain in the
+   * <code>ATTACHING</code>, <code>DETACHING</code>, or <code>TRANSFERRING</code>
+   * state, and an operation. To check when the update is complete, use the
+   * <code>GetSubdomains</code> action.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateSubdomainAssociation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateSubdomainAssociationOutcome UpdateSubdomainAssociation(
+      const Model::UpdateSubdomainAssociationRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateSubdomainAssociation that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename UpdateSubdomainAssociationRequestT = Model::UpdateSubdomainAssociationRequest>
+  Model::UpdateSubdomainAssociationOutcomeCallable UpdateSubdomainAssociationCallable(
+      const UpdateSubdomainAssociationRequestT& request) const {
+    return SubmitCallable(&LightsailClient::UpdateSubdomainAssociation, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateSubdomainAssociation that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateSubdomainAssociationRequestT = Model::UpdateSubdomainAssociationRequest>
+  void UpdateSubdomainAssociationAsync(const UpdateSubdomainAssociationRequestT& request,
+                                       const UpdateSubdomainAssociationResponseReceivedHandler& handler,
+                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&LightsailClient::UpdateSubdomainAssociation, request, handler, context);
   }
 
   virtual void OverrideEndpoint(const Aws::String& endpoint);

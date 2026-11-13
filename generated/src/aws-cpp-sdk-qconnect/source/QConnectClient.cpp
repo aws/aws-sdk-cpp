@@ -88,6 +88,8 @@
 #include <aws/qconnect/model/ListTagsForResourceRequest.h>
 #include <aws/qconnect/model/NotifyRecommendationsReceivedRequest.h>
 #include <aws/qconnect/model/PutFeedbackRequest.h>
+#include <aws/qconnect/model/RegisterAssistantReplicaKeyRequest.h>
+#include <aws/qconnect/model/RegisterKnowledgeBaseReplicaKeyRequest.h>
 #include <aws/qconnect/model/RemoveAssistantAIAgentRequest.h>
 #include <aws/qconnect/model/RemoveKnowledgeBaseTemplateUriRequest.h>
 #include <aws/qconnect/model/RenderMessageTemplateRequest.h>
@@ -1810,6 +1812,45 @@ PutFeedbackOutcome QConnectClient::PutFeedback(const PutFeedbackRequest& request
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
   return result.IsSuccess() ? PutFeedbackOutcome(result.GetResultWithOwnership()) : PutFeedbackOutcome(std::move(result.GetError()));
+}
+
+RegisterAssistantReplicaKeyOutcome QConnectClient::RegisterAssistantReplicaKey(const RegisterAssistantReplicaKeyRequest& request) const {
+  if (!request.AssistantIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("RegisterAssistantReplicaKey", "Required field: AssistantId, is not set");
+    return RegisterAssistantReplicaKeyOutcome(Aws::Client::AWSError<QConnectErrors>(QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                    "Missing required field [AssistantId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/assistants/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssistantId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/replicaKey");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? RegisterAssistantReplicaKeyOutcome(result.GetResultWithOwnership())
+                            : RegisterAssistantReplicaKeyOutcome(std::move(result.GetError()));
+}
+
+RegisterKnowledgeBaseReplicaKeyOutcome QConnectClient::RegisterKnowledgeBaseReplicaKey(
+    const RegisterKnowledgeBaseReplicaKeyRequest& request) const {
+  if (!request.KnowledgeBaseIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("RegisterKnowledgeBaseReplicaKey", "Required field: KnowledgeBaseId, is not set");
+    return RegisterKnowledgeBaseReplicaKeyOutcome(Aws::Client::AWSError<QConnectErrors>(
+        QConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [KnowledgeBaseId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/knowledgeBases/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetKnowledgeBaseId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/replicaKey");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? RegisterKnowledgeBaseReplicaKeyOutcome(result.GetResultWithOwnership())
+                            : RegisterKnowledgeBaseReplicaKeyOutcome(std::move(result.GetError()));
 }
 
 RemoveAssistantAIAgentOutcome QConnectClient::RemoveAssistantAIAgent(const RemoveAssistantAIAgentRequest& request) const {

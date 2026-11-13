@@ -128,6 +128,24 @@ class AssumeRoleForPodIdentityResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The ARN of the workload identity provider for the returned credentials.
+   * Returned only for associations with workload identity enabled.</p>
+   */
+  inline const Aws::String& GetWorkloadIdentityProviderArn() const { return m_workloadIdentityProviderArn; }
+  template <typename WorkloadIdentityProviderArnT = Aws::String>
+  void SetWorkloadIdentityProviderArn(WorkloadIdentityProviderArnT&& value) {
+    m_workloadIdentityProviderArnHasBeenSet = true;
+    m_workloadIdentityProviderArn = std::forward<WorkloadIdentityProviderArnT>(value);
+  }
+  template <typename WorkloadIdentityProviderArnT = Aws::String>
+  AssumeRoleForPodIdentityResult& WithWorkloadIdentityProviderArn(WorkloadIdentityProviderArnT&& value) {
+    SetWorkloadIdentityProviderArn(std::forward<WorkloadIdentityProviderArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -154,6 +172,8 @@ class AssumeRoleForPodIdentityResult {
 
   Credentials m_credentials;
 
+  Aws::String m_workloadIdentityProviderArn;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_subjectHasBeenSet = false;
@@ -161,6 +181,7 @@ class AssumeRoleForPodIdentityResult {
   bool m_podIdentityAssociationHasBeenSet = false;
   bool m_assumedRoleUserHasBeenSet = false;
   bool m_credentialsHasBeenSet = false;
+  bool m_workloadIdentityProviderArnHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

@@ -43,6 +43,10 @@ Aws::String ListPipelinesRequest::SerializePayload() const {
     payload.WithInteger("MaxResults", m_maxResults);
   }
 
+  if (m_managedByHasBeenSet) {
+    payload.WithString("ManagedBy", PipelineManagedByMapper::GetNameForPipelineManagedBy(m_managedBy));
+  }
+
   return payload.View().WriteReadable();
 }
 

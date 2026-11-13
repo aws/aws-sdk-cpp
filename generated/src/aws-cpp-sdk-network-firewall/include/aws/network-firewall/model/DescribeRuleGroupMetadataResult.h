@@ -7,29 +7,29 @@
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 #include <aws/network-firewall/model/RuleGroupType.h>
 #include <aws/network-firewall/model/StatefulRuleOptions.h>
 
 #include <utility>
-
 namespace Aws {
 template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
 namespace Utils {
-namespace Json {
-class JsonValue;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace NetworkFirewall {
 namespace Model {
 class DescribeRuleGroupMetadataResult {
  public:
   AWS_NETWORKFIREWALL_API DescribeRuleGroupMetadataResult() = default;
-  AWS_NETWORKFIREWALL_API DescribeRuleGroupMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_NETWORKFIREWALL_API DescribeRuleGroupMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
   AWS_NETWORKFIREWALL_API DescribeRuleGroupMetadataResult& operator=(
-      const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+      const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
 
   ///@{
   /**
@@ -88,10 +88,14 @@ class DescribeRuleGroupMetadataResult {
 
   ///@{
   /**
-   * <p>Indicates whether the rule group is stateless or stateful. If the rule group
-   * is stateless, it contains stateless rules. If it is stateful, it contains
-   * stateful rules. </p>  <p>This setting is required for requests that do not
-   * include the <code>RuleGroupARN</code>.</p>
+   * <p>Indicates the type of the rule group. Valid values are:</p> <ul> <li> <p>
+   * <code>STATELESS</code> - Stateless rules, for use in a Classic Network Firewall
+   * policy.</p> </li> <li> <p> <code>STATEFUL</code> - Stateful rules, for use in a
+   * Classic Network Firewall policy.</p> </li> <li> <p> <code>FIREWALL</code> -
+   * Firewall engine rules, for use in a Next Generation policy.</p> </li> <li> <p>
+   * <code>IPS</code> - IPS engine rules, for use in a Next Generation policy.</p>
+   * </li> </ul>  <p>This setting is required for requests that do not include
+   * the <code>RuleGroupARN</code>.</p>
    */
   inline RuleGroupType GetType() const { return m_type; }
   inline void SetType(RuleGroupType value) {
@@ -114,12 +118,12 @@ class DescribeRuleGroupMetadataResult {
    * group by calling <a>CreateRuleGroup</a> with <code>DryRun</code> set to
    * <code>TRUE</code>. </p>
    */
-  inline int GetCapacity() const { return m_capacity; }
-  inline void SetCapacity(int value) {
+  inline int64_t GetCapacity() const { return m_capacity; }
+  inline void SetCapacity(int64_t value) {
     m_capacityHasBeenSet = true;
     m_capacity = value;
   }
-  inline DescribeRuleGroupMetadataResult& WithCapacity(int value) {
+  inline DescribeRuleGroupMetadataResult& WithCapacity(int64_t value) {
     SetCapacity(value);
     return *this;
   }
@@ -235,7 +239,7 @@ class DescribeRuleGroupMetadataResult {
 
   RuleGroupType m_type{RuleGroupType::NOT_SET};
 
-  int m_capacity{0};
+  int64_t m_capacity{0};
 
   StatefulRuleOptions m_statefulRuleOptions;
 

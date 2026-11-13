@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/bedrock-agentcore-control/model/CertificateConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/ClientAuthenticationMethodType.h>
 #include <aws/bedrock-agentcore-control/model/Oauth2Discovery.h>
 #include <aws/bedrock-agentcore-control/model/OnBehalfOfTokenExchangeConfigType.h>
@@ -156,6 +157,36 @@ class CustomOauth2ProviderConfigOutput {
 
   ///@{
   /**
+   * <p>The private certificate authority (CA) configurations for the identity
+   * provider. Use this to have AgentCore Identity trust a private CA when
+   * establishing TLS connections to identity provider endpoints. You can specify
+   * only one certificate authority configuration in this list. Provide the
+   * certificate by reference to an Amazon S3 object or an Amazon Web Services
+   * Secrets Manager secret. You can use this only together with
+   * <code>privateEndpoint</code>.</p>
+   */
+  inline const Aws::Vector<CertificateConfiguration>& GetCertificateConfigurations() const { return m_certificateConfigurations; }
+  inline bool CertificateConfigurationsHasBeenSet() const { return m_certificateConfigurationsHasBeenSet; }
+  template <typename CertificateConfigurationsT = Aws::Vector<CertificateConfiguration>>
+  void SetCertificateConfigurations(CertificateConfigurationsT&& value) {
+    m_certificateConfigurationsHasBeenSet = true;
+    m_certificateConfigurations = std::forward<CertificateConfigurationsT>(value);
+  }
+  template <typename CertificateConfigurationsT = Aws::Vector<CertificateConfiguration>>
+  CustomOauth2ProviderConfigOutput& WithCertificateConfigurations(CertificateConfigurationsT&& value) {
+    SetCertificateConfigurations(std::forward<CertificateConfigurationsT>(value));
+    return *this;
+  }
+  template <typename CertificateConfigurationsT = CertificateConfiguration>
+  CustomOauth2ProviderConfigOutput& AddCertificateConfigurations(CertificateConfigurationsT&& value) {
+    m_certificateConfigurationsHasBeenSet = true;
+    m_certificateConfigurations.emplace_back(std::forward<CertificateConfigurationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The configuration for private_key_jwt client authentication used by this
    * OAuth2 credential provider.</p>
    */
@@ -185,6 +216,8 @@ class CustomOauth2ProviderConfigOutput {
 
   Aws::Vector<PrivateEndpointOverride> m_privateEndpointOverrides;
 
+  Aws::Vector<CertificateConfiguration> m_certificateConfigurations;
+
   PrivateKeyJwtConfig m_privateKeyJwtConfig;
   bool m_oauthDiscoveryHasBeenSet = false;
   bool m_clientIdHasBeenSet = false;
@@ -192,6 +225,7 @@ class CustomOauth2ProviderConfigOutput {
   bool m_clientAuthenticationMethodHasBeenSet = false;
   bool m_privateEndpointHasBeenSet = false;
   bool m_privateEndpointOverridesHasBeenSet = false;
+  bool m_certificateConfigurationsHasBeenSet = false;
   bool m_privateKeyJwtConfigHasBeenSet = false;
 };
 

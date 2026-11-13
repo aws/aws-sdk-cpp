@@ -7,6 +7,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/memorydb/MemoryDB_EXPORTS.h>
 #include <aws/memorydb/model/RecurringCharge.h>
 
@@ -14,10 +15,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace MemoryDB {
 namespace Model {
@@ -31,9 +31,9 @@ namespace Model {
 class ReservedNode {
  public:
   AWS_MEMORYDB_API ReservedNode() = default;
-  AWS_MEMORYDB_API ReservedNode(Aws::Utils::Json::JsonView jsonValue);
-  AWS_MEMORYDB_API ReservedNode& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_MEMORYDB_API ReservedNode(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_MEMORYDB_API ReservedNode& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_MEMORYDB_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -111,13 +111,13 @@ class ReservedNode {
   /**
    * <p>The duration of the reservation in seconds.</p>
    */
-  inline int GetDuration() const { return m_duration; }
+  inline int64_t GetDuration() const { return m_duration; }
   inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
-  inline void SetDuration(int value) {
+  inline void SetDuration(int64_t value) {
     m_durationHasBeenSet = true;
     m_duration = value;
   }
-  inline ReservedNode& WithDuration(int value) {
+  inline ReservedNode& WithDuration(int64_t value) {
     SetDuration(value);
     return *this;
   }
@@ -143,13 +143,13 @@ class ReservedNode {
   /**
    * <p>The number of nodes that have been reserved.</p>
    */
-  inline int GetNodeCount() const { return m_nodeCount; }
+  inline int64_t GetNodeCount() const { return m_nodeCount; }
   inline bool NodeCountHasBeenSet() const { return m_nodeCountHasBeenSet; }
-  inline void SetNodeCount(int value) {
+  inline void SetNodeCount(int64_t value) {
     m_nodeCountHasBeenSet = true;
     m_nodeCount = value;
   }
-  inline ReservedNode& WithNodeCount(int value) {
+  inline ReservedNode& WithNodeCount(int64_t value) {
     SetNodeCount(value);
     return *this;
   }
@@ -241,11 +241,11 @@ class ReservedNode {
 
   Aws::Utils::DateTime m_startTime{};
 
-  int m_duration{0};
+  int64_t m_duration{0};
 
   double m_fixedPrice{0.0};
 
-  int m_nodeCount{0};
+  int64_t m_nodeCount{0};
 
   Aws::String m_offeringType;
 

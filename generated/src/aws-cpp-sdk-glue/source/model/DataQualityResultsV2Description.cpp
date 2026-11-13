@@ -22,6 +22,15 @@ DataQualityResultsV2Description& DataQualityResultsV2Description::operator=(Json
     m_resultId = jsonValue.GetString("ResultId");
     m_resultIdHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("EvaluationRunMode")) {
+    m_evaluationRunMode =
+        DataQualityEvaluationRunModeMapper::GetDataQualityEvaluationRunModeForName(jsonValue.GetString("EvaluationRunMode"));
+    m_evaluationRunModeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("DataQualityEvaluationConfig")) {
+    m_dataQualityEvaluationConfig = jsonValue.GetString("DataQualityEvaluationConfig");
+    m_dataQualityEvaluationConfigHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("DataSource")) {
     m_dataSource = jsonValue.GetObject("DataSource");
     m_dataSourceHasBeenSet = true;
@@ -56,6 +65,15 @@ JsonValue DataQualityResultsV2Description::Jsonize() const {
 
   if (m_resultIdHasBeenSet) {
     payload.WithString("ResultId", m_resultId);
+  }
+
+  if (m_evaluationRunModeHasBeenSet) {
+    payload.WithString("EvaluationRunMode",
+                       DataQualityEvaluationRunModeMapper::GetNameForDataQualityEvaluationRunMode(m_evaluationRunMode));
+  }
+
+  if (m_dataQualityEvaluationConfigHasBeenSet) {
+    payload.WithString("DataQualityEvaluationConfig", m_dataQualityEvaluationConfig);
   }
 
   if (m_dataSourceHasBeenSet) {

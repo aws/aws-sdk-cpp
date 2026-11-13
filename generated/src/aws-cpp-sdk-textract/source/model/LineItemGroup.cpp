@@ -3,51 +3,187 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/textract/model/LineItemGroup.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace Textract {
 namespace Model {
 
-LineItemGroup::LineItemGroup(JsonView jsonValue) { *this = jsonValue; }
+LineItemGroup::LineItemGroup(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-LineItemGroup& LineItemGroup::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("LineItemGroupIndex")) {
-    m_lineItemGroupIndex = jsonValue.GetInteger("LineItemGroupIndex");
-    m_lineItemGroupIndexHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("LineItems")) {
-    Aws::Utils::Array<JsonView> lineItemsJsonList = jsonValue.GetArray("LineItems");
-    for (unsigned lineItemsIndex = 0; lineItemsIndex < lineItemsJsonList.GetLength(); ++lineItemsIndex) {
-      m_lineItems.push_back(lineItemsJsonList[lineItemsIndex].AsObject());
+LineItemGroup& LineItemGroup::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "LineItemGroupIndex") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
+                    auto val = decoder->PopNextUnsignedIntVal();
+                    if (val.has_value()) {
+                      m_lineItemGroupIndex = static_cast<int64_t>(val.value());
+                    }
+                  } else {
+                    auto val = decoder->PopNextNegativeIntVal();
+                    if (val.has_value()) {
+                      m_lineItemGroupIndex = static_cast<int64_t>(1 - val.value());
+                    }
+                  }
+                }
+                m_lineItemGroupIndexHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "LineItems") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_lineItems.push_back(LineItemFields(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_lineItems.push_back(LineItemFields(decoder));
+                    }
+                  }
+                }
+                m_lineItemsHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("LineItemGroup", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "LineItemGroupIndex") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::UInt) {
+                  auto val = decoder->PopNextUnsignedIntVal();
+                  if (val.has_value()) {
+                    m_lineItemGroupIndex = static_cast<int64_t>(val.value());
+                  }
+                } else {
+                  auto val = decoder->PopNextNegativeIntVal();
+                  if (val.has_value()) {
+                    m_lineItemGroupIndex = static_cast<int64_t>(1 - val.value());
+                  }
+                }
+              }
+              m_lineItemGroupIndexHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "LineItems") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_lineItems.push_back(LineItemFields(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_lineItems.push_back(LineItemFields(decoder));
+                  }
+                }
+              }
+              m_lineItemsHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
     }
-    m_lineItemsHasBeenSet = true;
   }
+
   return *this;
 }
 
-JsonValue LineItemGroup::Jsonize() const {
-  JsonValue payload;
+void LineItemGroup::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_lineItemGroupIndexHasBeenSet) {
+    mapSize++;
+  }
+  if (m_lineItemsHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_lineItemGroupIndexHasBeenSet) {
-    payload.WithInteger("LineItemGroupIndex", m_lineItemGroupIndex);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("LineItemGroupIndex"));
+    (m_lineItemGroupIndex >= 0) ? encoder.WriteUInt(m_lineItemGroupIndex) : encoder.WriteNegInt(m_lineItemGroupIndex);
   }
 
   if (m_lineItemsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> lineItemsJsonList(m_lineItems.size());
-    for (unsigned lineItemsIndex = 0; lineItemsIndex < lineItemsJsonList.GetLength(); ++lineItemsIndex) {
-      lineItemsJsonList[lineItemsIndex].AsObject(m_lineItems[lineItemsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("LineItems"));
+    encoder.WriteArrayStart(m_lineItems.size());
+    for (const auto& item_0 : m_lineItems) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("LineItems", std::move(lineItemsJsonList));
   }
-
-  return payload;
 }
 
 }  // namespace Model

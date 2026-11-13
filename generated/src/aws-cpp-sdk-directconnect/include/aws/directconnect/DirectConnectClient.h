@@ -7,7 +7,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/directconnect/DirectConnectPaginationBase.h>
 #include <aws/directconnect/DirectConnectServiceClientModel.h>
 #include <aws/directconnect/DirectConnectWaiter.h>
@@ -26,12 +26,12 @@ namespace DirectConnect {
  * Regions. Amazon Web Services resources in the China Regions can only be accessed
  * through locations associated with those Regions.</p>
  */
-class AWS_DIRECTCONNECT_API DirectConnectClient : public Aws::Client::AWSJsonClient,
+class AWS_DIRECTCONNECT_API DirectConnectClient : public Aws::Client::AWSRpcV2CborClient,
                                                   public Aws::Client::ClientWithAsyncTemplateMethods<DirectConnectClient>,
                                                   public DirectConnectPaginationBase<DirectConnectClient>,
                                                   public DirectConnectWaiter<DirectConnectClient> {
  public:
-  typedef Aws::Client::AWSJsonClient BASECLASS;
+  typedef Aws::Client::AWSRpcV2CborClient BASECLASS;
   static const char* GetServiceName();
   static const char* GetAllocationTag();
 

@@ -51,9 +51,33 @@ class DeleteResourcePolicyRequest : public SecretsManagerRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The name of the resource policy to delete. If you don't specify this field,
+   * Secrets Manager uses <code>default</code>. You can only delete the
+   * <code>default</code> policy; if you specify any other name, the operation
+   * returns an <code>InvalidParameterException</code>.</p>
+   */
+  inline const Aws::String& GetPolicyName() const { return m_policyName; }
+  inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
+  template <typename PolicyNameT = Aws::String>
+  void SetPolicyName(PolicyNameT&& value) {
+    m_policyNameHasBeenSet = true;
+    m_policyName = std::forward<PolicyNameT>(value);
+  }
+  template <typename PolicyNameT = Aws::String>
+  DeleteResourcePolicyRequest& WithPolicyName(PolicyNameT&& value) {
+    SetPolicyName(std::forward<PolicyNameT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_secretId;
+
+  Aws::String m_policyName;
   bool m_secretIdHasBeenSet = false;
+  bool m_policyNameHasBeenSet = false;
 };
 
 }  // namespace Model

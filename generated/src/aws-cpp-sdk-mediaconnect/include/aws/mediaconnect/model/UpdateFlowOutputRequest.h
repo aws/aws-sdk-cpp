@@ -13,6 +13,7 @@
 #include <aws/mediaconnect/model/NdiOutputTimecodeSource.h>
 #include <aws/mediaconnect/model/OutputStatus.h>
 #include <aws/mediaconnect/model/Protocol.h>
+#include <aws/mediaconnect/model/RtmpPushOutputSettings.h>
 #include <aws/mediaconnect/model/State.h>
 #include <aws/mediaconnect/model/UpdateEncryption.h>
 #include <aws/mediaconnect/model/VpcInterfaceAttachment.h>
@@ -490,6 +491,26 @@ class UpdateFlowOutputRequest : public MediaConnectRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The settings for an output that pushes a stream to a destination using the
+   * RTMP (Real-Time Messaging Protocol) protocol, or RTMPS (RTMP over TLS) when TLS
+   * encryption is specified.</p>
+   */
+  inline const RtmpPushOutputSettings& GetRtmpPushSettings() const { return m_rtmpPushSettings; }
+  inline bool RtmpPushSettingsHasBeenSet() const { return m_rtmpPushSettingsHasBeenSet; }
+  template <typename RtmpPushSettingsT = RtmpPushOutputSettings>
+  void SetRtmpPushSettings(RtmpPushSettingsT&& value) {
+    m_rtmpPushSettingsHasBeenSet = true;
+    m_rtmpPushSettings = std::forward<RtmpPushSettingsT>(value);
+  }
+  template <typename RtmpPushSettingsT = RtmpPushOutputSettings>
+  UpdateFlowOutputRequest& WithRtmpPushSettings(RtmpPushSettingsT&& value) {
+    SetRtmpPushSettings(std::forward<RtmpPushSettingsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_cidrAllowList;
 
@@ -538,6 +559,8 @@ class UpdateFlowOutputRequest : public MediaConnectRequest {
   NdiOutputTimecodeSource m_ndiOutputTimecodeSource{NdiOutputTimecodeSource::NOT_SET};
 
   int m_ndiAudioReferenceLevel{0};
+
+  RtmpPushOutputSettings m_rtmpPushSettings;
   bool m_cidrAllowListHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_destinationHasBeenSet = false;
@@ -562,6 +585,7 @@ class UpdateFlowOutputRequest : public MediaConnectRequest {
   bool m_routerIntegrationTransitEncryptionHasBeenSet = false;
   bool m_ndiOutputTimecodeSourceHasBeenSet = false;
   bool m_ndiAudioReferenceLevelHasBeenSet = false;
+  bool m_rtmpPushSettingsHasBeenSet = false;
 };
 
 }  // namespace Model

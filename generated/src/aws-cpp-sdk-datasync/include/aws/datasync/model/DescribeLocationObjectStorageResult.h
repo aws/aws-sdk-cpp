@@ -9,22 +9,23 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/datasync/DataSync_EXPORTS.h>
 #include <aws/datasync/model/CmkSecretConfig.h>
 #include <aws/datasync/model/CustomSecretConfig.h>
 #include <aws/datasync/model/ManagedSecretConfig.h>
+#include <aws/datasync/model/ObjectStorageFederatedIdentityConfig.h>
 #include <aws/datasync/model/ObjectStorageServerProtocol.h>
 
 #include <utility>
-
 namespace Aws {
 template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
 namespace Utils {
-namespace Json {
-class JsonValue;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace DataSync {
 namespace Model {
@@ -36,8 +37,8 @@ namespace Model {
 class DescribeLocationObjectStorageResult {
  public:
   AWS_DATASYNC_API DescribeLocationObjectStorageResult() = default;
-  AWS_DATASYNC_API DescribeLocationObjectStorageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-  AWS_DATASYNC_API DescribeLocationObjectStorageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_DATASYNC_API DescribeLocationObjectStorageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
+  AWS_DATASYNC_API DescribeLocationObjectStorageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
 
   ///@{
   /**
@@ -93,15 +94,33 @@ class DescribeLocationObjectStorageResult {
 
   ///@{
   /**
+   * <p>The federated identity configuration that DataSync uses to access your object
+   * storage using an OpenID Connect (OIDC) token.</p>
+   */
+  inline const ObjectStorageFederatedIdentityConfig& GetFederatedIdentity() const { return m_federatedIdentity; }
+  template <typename FederatedIdentityT = ObjectStorageFederatedIdentityConfig>
+  void SetFederatedIdentity(FederatedIdentityT&& value) {
+    m_federatedIdentityHasBeenSet = true;
+    m_federatedIdentity = std::forward<FederatedIdentityT>(value);
+  }
+  template <typename FederatedIdentityT = ObjectStorageFederatedIdentityConfig>
+  DescribeLocationObjectStorageResult& WithFederatedIdentity(FederatedIdentityT&& value) {
+    SetFederatedIdentity(std::forward<FederatedIdentityT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The port that your object storage server accepts inbound network traffic on
    * (for example, port 443).</p>
    */
-  inline int GetServerPort() const { return m_serverPort; }
-  inline void SetServerPort(int value) {
+  inline int64_t GetServerPort() const { return m_serverPort; }
+  inline void SetServerPort(int64_t value) {
     m_serverPortHasBeenSet = true;
     m_serverPort = value;
   }
-  inline DescribeLocationObjectStorageResult& WithServerPort(int value) {
+  inline DescribeLocationObjectStorageResult& WithServerPort(int64_t value) {
     SetServerPort(value);
     return *this;
   }
@@ -264,7 +283,9 @@ class DescribeLocationObjectStorageResult {
 
   Aws::String m_accessKey;
 
-  int m_serverPort{0};
+  ObjectStorageFederatedIdentityConfig m_federatedIdentity;
+
+  int64_t m_serverPort{0};
 
   ObjectStorageServerProtocol m_serverProtocol{ObjectStorageServerProtocol::NOT_SET};
 
@@ -285,6 +306,7 @@ class DescribeLocationObjectStorageResult {
   bool m_locationArnHasBeenSet = false;
   bool m_locationUriHasBeenSet = false;
   bool m_accessKeyHasBeenSet = false;
+  bool m_federatedIdentityHasBeenSet = false;
   bool m_serverPortHasBeenSet = false;
   bool m_serverProtocolHasBeenSet = false;
   bool m_agentArnsHasBeenSet = false;

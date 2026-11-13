@@ -4,30 +4,45 @@
  */
 
 #include <aws/codebuild/model/PutResourcePolicyRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 using namespace Aws::CodeBuild::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String PutResourcePolicyRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_policyHasBeenSet) {
+    mapSize++;
+  }
+  if (m_resourceArnHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_policyHasBeenSet) {
-    payload.WithString("policy", m_policy);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("policy"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_policy.c_str()));
   }
 
   if (m_resourceArnHasBeenSet) {
-    payload.WithString("resourceArn", m_resourceArn);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("resourceArn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_resourceArn.c_str()));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection PutResourcePolicyRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeBuild_20161006.PutResourcePolicy"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

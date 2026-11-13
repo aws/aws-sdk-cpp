@@ -4,14 +4,14 @@
  */
 
 #pragma once
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/textract/Textract_EXPORTS.h>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace Textract {
 namespace Model {
@@ -25,27 +25,27 @@ namespace Model {
 class DetectedSignature {
  public:
   AWS_TEXTRACT_API DetectedSignature() = default;
-  AWS_TEXTRACT_API DetectedSignature(Aws::Utils::Json::JsonView jsonValue);
-  AWS_TEXTRACT_API DetectedSignature& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_TEXTRACT_API DetectedSignature(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_TEXTRACT_API DetectedSignature& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_TEXTRACT_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
    * <p>The page a detected signature was found on.</p>
    */
-  inline int GetPage() const { return m_page; }
+  inline int64_t GetPage() const { return m_page; }
   inline bool PageHasBeenSet() const { return m_pageHasBeenSet; }
-  inline void SetPage(int value) {
+  inline void SetPage(int64_t value) {
     m_pageHasBeenSet = true;
     m_page = value;
   }
-  inline DetectedSignature& WithPage(int value) {
+  inline DetectedSignature& WithPage(int64_t value) {
     SetPage(value);
     return *this;
   }
   ///@}
  private:
-  int m_page{0};
+  int64_t m_page{0};
   bool m_pageHasBeenSet = false;
 };
 

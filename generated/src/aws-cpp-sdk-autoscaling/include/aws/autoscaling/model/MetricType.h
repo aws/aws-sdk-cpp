@@ -10,7 +10,14 @@
 namespace Aws {
 namespace AutoScaling {
 namespace Model {
-enum class MetricType { NOT_SET, ASGAverageCPUUtilization, ASGAverageNetworkIn, ASGAverageNetworkOut, ALBRequestCountPerTarget };
+enum class MetricType {
+  NOT_SET,
+  ASGAverageCPUUtilization,
+  ASGAverageCPUUtilizationHighResolution,
+  ASGAverageNetworkIn,
+  ASGAverageNetworkOut,
+  ALBRequestCountPerTarget
+};
 
 namespace MetricTypeMapper {
 AWS_AUTOSCALING_API MetricType GetMetricTypeForName(const Aws::String& name);

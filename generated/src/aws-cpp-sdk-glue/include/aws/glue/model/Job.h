@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glue/Glue_EXPORTS.h>
+#include <aws/glue/model/AutoUpgradeMetadata.h>
 #include <aws/glue/model/CodeGenConfigurationNode.h>
 #include <aws/glue/model/ConnectionsList.h>
 #include <aws/glue/model/ExecutionClass.h>
@@ -610,6 +611,26 @@ class Job {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <text>The auto-upgrade assessment information for a job configured with
+   * glueVersion=auto. This field is null when the job is not configured to
+   * auto.</text>
+   */
+  inline const AutoUpgradeMetadata& GetAutoUpgradeMetadata() const { return m_autoUpgradeMetadata; }
+  inline bool AutoUpgradeMetadataHasBeenSet() const { return m_autoUpgradeMetadataHasBeenSet; }
+  template <typename AutoUpgradeMetadataT = AutoUpgradeMetadata>
+  void SetAutoUpgradeMetadata(AutoUpgradeMetadataT&& value) {
+    m_autoUpgradeMetadataHasBeenSet = true;
+    m_autoUpgradeMetadata = std::forward<AutoUpgradeMetadataT>(value);
+  }
+  template <typename AutoUpgradeMetadataT = AutoUpgradeMetadata>
+  Job& WithAutoUpgradeMetadata(AutoUpgradeMetadataT&& value) {
+    SetAutoUpgradeMetadata(std::forward<AutoUpgradeMetadataT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -662,6 +683,8 @@ class Job {
   Aws::String m_maintenanceWindow;
 
   Aws::String m_profileName;
+
+  AutoUpgradeMetadata m_autoUpgradeMetadata;
   bool m_nameHasBeenSet = false;
   bool m_jobModeHasBeenSet = false;
   bool m_jobRunQueuingEnabledHasBeenSet = false;
@@ -688,6 +711,7 @@ class Job {
   bool m_sourceControlDetailsHasBeenSet = false;
   bool m_maintenanceWindowHasBeenSet = false;
   bool m_profileNameHasBeenSet = false;
+  bool m_autoUpgradeMetadataHasBeenSet = false;
 };
 
 }  // namespace Model

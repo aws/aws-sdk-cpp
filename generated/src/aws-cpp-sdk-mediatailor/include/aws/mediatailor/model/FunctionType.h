@@ -17,7 +17,8 @@ enum class FunctionType {
   CUSTOM_OUTPUT,
   CONCURRENT_EXECUTOR,
   SEQUENTIAL_EXECUTOR,
-  VAST_REQUEST
+  VAST_REQUEST,
+  HLS_TAG_PROCESSOR
 };
 
 namespace FunctionTypeMapper {

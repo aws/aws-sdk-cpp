@@ -8,6 +8,7 @@
 #include <aws/connectcases/model/AuditEventField.h>
 #include <aws/connectcases/model/AuditEventPerformedBy.h>
 #include <aws/connectcases/model/AuditEventType.h>
+#include <aws/connectcases/model/AuditMergeMetadata.h>
 #include <aws/connectcases/model/RelatedItemType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -62,7 +63,9 @@ class AuditEvent {
    * <p>The type of audit history event.</p> <p>Valid Values:
    * <code>Case.Created</code> | <code>Case.Updated</code> |
    * <code>RelatedItem.Created</code> | <code>RelatedItem.Updated</code> |
-   * <code>RelatedItem.Deleted</code> </p>
+   * <code>RelatedItem.Deleted</code> | <code>Case.Merged</code> </p> <p>
+   * <code>Case.Merged</code> summarizes a merge on each of the two cases that took
+   * part in it.</p>
    */
   inline AuditEventType GetType() const { return m_type; }
   inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
@@ -156,6 +159,26 @@ class AuditEvent {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Information about the merge that produced this audit event. Present only on
+   * audit events produced by a merge. For more information, see <a
+   * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_StartMergeCases.html">StartMergeCases</a>.</p>
+   */
+  inline const AuditMergeMetadata& GetMergeMetadata() const { return m_mergeMetadata; }
+  inline bool MergeMetadataHasBeenSet() const { return m_mergeMetadataHasBeenSet; }
+  template <typename MergeMetadataT = AuditMergeMetadata>
+  void SetMergeMetadata(MergeMetadataT&& value) {
+    m_mergeMetadataHasBeenSet = true;
+    m_mergeMetadata = std::forward<MergeMetadataT>(value);
+  }
+  template <typename MergeMetadataT = AuditMergeMetadata>
+  AuditEvent& WithMergeMetadata(MergeMetadataT&& value) {
+    SetMergeMetadata(std::forward<MergeMetadataT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_eventId;
 
@@ -168,12 +191,15 @@ class AuditEvent {
   Aws::Vector<Aws::Crt::Optional<AuditEventField>> m_fields;
 
   AuditEventPerformedBy m_performedBy;
+
+  AuditMergeMetadata m_mergeMetadata;
   bool m_eventIdHasBeenSet = false;
   bool m_typeHasBeenSet = false;
   bool m_relatedItemTypeHasBeenSet = false;
   bool m_performedTimeHasBeenSet = false;
   bool m_fieldsHasBeenSet = false;
   bool m_performedByHasBeenSet = false;
+  bool m_mergeMetadataHasBeenSet = false;
 };
 
 }  // namespace Model

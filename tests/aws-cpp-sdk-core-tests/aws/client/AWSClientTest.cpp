@@ -312,6 +312,49 @@ TEST_F(AWSClientTestSuite, TestClockChangesAfterSkewHasBeenSet)
     ASSERT_EQ(1, client->GetRequestAttemptedRetries());
 }
 
+TEST_F(AWSClientTestSuite, TestClockSkewUsesResponseHeadersReceivedTime) {
+  // The HTTP client stamps the time the headers arrived, 3 seconds before the attempt returns (a slow body).
+  // The skew must be measured from the header time, not from when MakeRequest returned.
+  mockHttpClient->Reset();
+  auto makeResponse = []() {
+    auto httpRequest = CreateHttpRequest(URI("http://www.uri.com/path/to/res"), HttpMethod::HTTP_GET,
+                                         Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+    auto httpResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, httpRequest);
+    httpResponse->SetResponseCode(HttpResponseCode::OK);
+    return httpResponse;
+  };
+  auto firstResponse = makeResponse();
+  mockHttpClient->AddResponseToReturn(
+      firstResponse, [](Aws::IOStream&) -> void {},
+      [firstResponse](const std::shared_ptr<HttpRequest>& httpRequest) -> void {
+        // Whole seconds, so the 1 s resolution Date header carries exactly headersReceived + 1h. Back-dating the
+        // stamp by 3 s stands in for a slow body without sleeping.
+        const DateTime headersReceived(DateTime::Now().Millis() / 1000 * 1000 - 3000);
+        httpRequest->SetResponseHeadersReceivedTime(headersReceived);
+        firstResponse->AddHeader("Date", (headersReceived + std::chrono::hours(1)).ToGmtString(DateFormat::RFC822));
+      });
+  mockHttpClient->AddResponseToReturn(makeResponse(), [](Aws::IOStream&) -> void {}, [](const std::shared_ptr<HttpRequest>&) -> void {});
+
+  AmazonWebServiceRequestMock request;
+  auto outcome = client->MakeRequest(request);
+  AWS_ASSERT_SUCCESS(outcome);
+
+  const DateTime before = DateTime::Now();
+  outcome = client->MakeRequest(request);
+  const DateTime after = DateTime::Now();
+  AWS_ASSERT_SUCCESS(outcome);
+
+  // The second request is signed at its send time + exactly 1h; that send time lies between before and after.
+  // Measuring from when MakeRequest returned would give 1h - 3s instead.
+  const auto& requests = mockHttpClient->GetAllRequestsMade();
+  ASSERT_EQ(2u, requests.size());
+  const auto& signingTime = requests.back().GetSigningTimestampOverride();
+  ASSERT_TRUE(signingTime.has_value());
+  const DateTime sendTime = signingTime.value() - std::chrono::hours(1);
+  EXPECT_TRUE(before.Millis() <= sendTime.Millis() && sendTime.Millis() <= after.Millis())
+      << "signing time should be the send time + exactly 1h";
+}
+
 TEST_F(AWSClientTestSuite, TestRetryHeaders)
 {
     // The first server time is ahead of us by 1 hour.
@@ -447,7 +490,6 @@ static AmazonWebServiceRequestMock MakeLongPollingRequest()
 // SEP Test Case 12: long-polling, retryable error, retry quota exhausted - stops without a normal retry.
 TEST_F(AWSClientTestSuite, LongPollingQuotaExhausted)
 {
-    Aws::Environment::EnvironmentRAII env{{{"AWS_NEW_RETRIES_2026", "true"}}};
     ClientConfiguration config;
     auto quota = Aws::MakeShared<DefaultRetryQuotaContainer>(ALLOCATION_TAG);
     config.retryStrategy = Aws::MakeShared<CountedStandardRetryStrategy>(ALLOCATION_TAG, quota);
@@ -466,7 +508,6 @@ TEST_F(AWSClientTestSuite, LongPollingQuotaExhausted)
 // SEP Test Case 14: long-polling, retryable error, stops at max attempts.
 TEST_F(AWSClientTestSuite, LongPollingMaxAttemptsExceeded)
 {
-    Aws::Environment::EnvironmentRAII env{{{"AWS_NEW_RETRIES_2026", "true"}}};
     ClientConfiguration config;
     auto quota = Aws::MakeShared<DefaultRetryQuotaContainer>(ALLOCATION_TAG);
     config.retryStrategy = Aws::MakeShared<CountedStandardRetryStrategy>(ALLOCATION_TAG, quota);
@@ -487,7 +528,6 @@ TEST_F(AWSClientTestSuite, LongPollingMaxAttemptsExceeded)
 // SEP Test Case 15: long-polling, retryable error then success.
 TEST_F(AWSClientTestSuite, LongPollingRetriesThenSucceeds)
 {
-    Aws::Environment::EnvironmentRAII env{{{"AWS_NEW_RETRIES_2026", "true"}}};
     ClientConfiguration config;
     auto quota = Aws::MakeShared<DefaultRetryQuotaContainer>(ALLOCATION_TAG);
     config.retryStrategy = Aws::MakeShared<CountedStandardRetryStrategy>(ALLOCATION_TAG, quota);
@@ -506,7 +546,6 @@ TEST_F(AWSClientTestSuite, LongPollingRetriesThenSucceeds)
 // SEP Test Case 16: long-polling, non-retryable error, fails without retrying.
 TEST_F(AWSClientTestSuite, LongPollingNonRetryableError)
 {
-    Aws::Environment::EnvironmentRAII env{{{"AWS_NEW_RETRIES_2026", "true"}}};
     ClientConfiguration config;
     auto quota = Aws::MakeShared<DefaultRetryQuotaContainer>(ALLOCATION_TAG);
     config.retryStrategy = Aws::MakeShared<CountedStandardRetryStrategy>(ALLOCATION_TAG, quota);

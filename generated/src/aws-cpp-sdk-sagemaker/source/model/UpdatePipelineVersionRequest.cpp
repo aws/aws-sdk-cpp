@@ -31,6 +31,10 @@ Aws::String UpdatePipelineVersionRequest::SerializePayload() const {
     payload.WithString("PipelineVersionDescription", m_pipelineVersionDescription);
   }
 
+  if (m_pipelineVersionAliasOperationsHasBeenSet) {
+    payload.WithObject("PipelineVersionAliasOperations", m_pipelineVersionAliasOperations.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

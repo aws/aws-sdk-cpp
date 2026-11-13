@@ -29,8 +29,10 @@ class StopReplicationToReplicaResult {
 
   ///@{
   /**
-   * <p>The ARN of the promoted secret. The ARN is the same as the original primary
-   * secret except the Region is changed.</p>
+   * <p>The ARN of the promoted secret. For a cross-region replica, this ARN is the
+   * same as the original primary secret's ARN except that the Region is changed. For
+   * a cross-account replica, this is the ARN of the promoted secret in your
+   * account.</p>
    */
   inline const Aws::String& GetARN() const { return m_aRN; }
   template <typename ARNT = Aws::String>

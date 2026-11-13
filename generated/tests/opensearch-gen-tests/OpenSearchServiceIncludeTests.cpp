@@ -84,6 +84,10 @@
 #include <aws/opensearch/model/ChangeProgressDetails.h>
 #include <aws/opensearch/model/ChangeProgressStage.h>
 #include <aws/opensearch/model/ChangeProgressStatusDetails.h>
+#include <aws/opensearch/model/ClonedBlueGreenOptions.h>
+#include <aws/opensearch/model/ClonedBlueGreenScheduledAction.h>
+#include <aws/opensearch/model/ClonedBlueGreenScheduledActionType.h>
+#include <aws/opensearch/model/ClonedBlueGreenUpgradeDetails.h>
 #include <aws/opensearch/model/CloudWatchDirectQueryDataSource.h>
 #include <aws/opensearch/model/ClusterConfig.h>
 #include <aws/opensearch/model/ClusterConfigStatus.h>
@@ -109,6 +113,10 @@
 #include <aws/opensearch/model/CreateVpcEndpointRequest.h>
 #include <aws/opensearch/model/CreateVpcEndpointResult.h>
 #include <aws/opensearch/model/CrossClusterSearchConnectionProperties.h>
+#include <aws/opensearch/model/CutoverOptions.h>
+#include <aws/opensearch/model/CutoverRequestOptions.h>
+#include <aws/opensearch/model/CutoverStatus.h>
+#include <aws/opensearch/model/CutoverTarget.h>
 #include <aws/opensearch/model/DataSource.h>
 #include <aws/opensearch/model/DataSourceAttachmentStatus.h>
 #include <aws/opensearch/model/DataSourceAttachmentSummary.h>
@@ -136,6 +144,8 @@
 #include <aws/opensearch/model/DeploymentStrategy.h>
 #include <aws/opensearch/model/DeploymentStrategyOptions.h>
 #include <aws/opensearch/model/DeploymentStrategyOptionsStatus.h>
+#include <aws/opensearch/model/DeploymentStrategyOverride.h>
+#include <aws/opensearch/model/DeploymentStrategyOverrideOptions.h>
 #include <aws/opensearch/model/DeregisterCapabilityRequest.h>
 #include <aws/opensearch/model/DeregisterCapabilityResult.h>
 #include <aws/opensearch/model/DescribeDataSourceAttachmentRequest.h>
@@ -401,6 +411,8 @@
 #include <aws/opensearch/model/ReservedInstance.h>
 #include <aws/opensearch/model/ReservedInstanceOffering.h>
 #include <aws/opensearch/model/ReservedInstancePaymentOption.h>
+#include <aws/opensearch/model/RetentionAction.h>
+#include <aws/opensearch/model/RetentionOptions.h>
 #include <aws/opensearch/model/RevokeVpcEndpointAccessRequest.h>
 #include <aws/opensearch/model/RevokeVpcEndpointAccessResult.h>
 #include <aws/opensearch/model/RolesKeyIdCOption.h>
@@ -444,8 +456,15 @@
 #include <aws/opensearch/model/TLSSecurityPolicy.h>
 #include <aws/opensearch/model/Tag.h>
 #include <aws/opensearch/model/TimeUnit.h>
+#include <aws/opensearch/model/TrafficPercents.h>
+#include <aws/opensearch/model/TrafficSplitOptions.h>
+#include <aws/opensearch/model/TrafficSplitRequestOptions.h>
+#include <aws/opensearch/model/TrafficSplitStatus.h>
+#include <aws/opensearch/model/TrafficStrategy.h>
 #include <aws/opensearch/model/UpdateApplicationRequest.h>
 #include <aws/opensearch/model/UpdateApplicationResult.h>
+#include <aws/opensearch/model/UpdateCloneRequest.h>
+#include <aws/opensearch/model/UpdateCloneResult.h>
 #include <aws/opensearch/model/UpdateDataSourceRequest.h>
 #include <aws/opensearch/model/UpdateDataSourceResult.h>
 #include <aws/opensearch/model/UpdateDirectQueryDataSourceRequest.h>

@@ -153,15 +153,26 @@ class FleetDeployment {
 
   ///@{
   /**
-   * <p>The status of fleet deployment activity in the location. </p> <ul> <li> <p>
-   * <code>IN_PROGRESS</code> -- The deployment is in progress.</p> </li> <li> <p>
-   * <code>IMPAIRED</code> -- The deployment failed and the fleet has some impaired
-   * containers. </p> </li> <li> <p> <code>COMPLETE</code> -- The deployment has
-   * completed successfully.</p> </li> <li> <p> <code>ROLLBACK_IN_PROGRESS</code> --
-   * The deployment failed and rollback has been initiated.</p> </li> <li> <p>
-   * <code>ROLLBACK_IN_COMPLETE</code> -- The deployment failed and rollback has been
-   * completed.</p> </li> <li> <p> <code>CANCELLED</code> -- The deployment was
-   * cancelled.</p> </li> </ul>
+   * <p>The status of the fleet deployment. For per-location status, see
+   * <code>LocationalDeployment</code>.</p> <ul> <li> <p> <code>PENDING</code> --
+   * Amazon GameLift Servers has accepted the deployment and hasn't started it
+   * yet.</p> </li> <li> <p> <code>IN_PROGRESS</code> -- The deployment is in
+   * progress. This status covers validation as well as the replacement of the
+   * fleet's containers.</p> </li> <li> <p> <code>IMPAIRED</code> -- The deployment
+   * failed validation, and the fleet kept the containers that failed validation so
+   * that you can inspect them. A deployment reaches this status when its impairment
+   * strategy is <code>MAINTAIN</code>.</p> </li> <li> <p> <code>COMPLETE</code> --
+   * The deployment has completed successfully in every fleet location.</p> </li>
+   * <li> <p> <code>ROLLBACK_IN_PROGRESS</code> -- The deployment failed and rollback
+   * has been initiated. A deployment reaches this status when its impairment
+   * strategy is <code>ROLLBACK</code>.</p> </li> <li> <p>
+   * <code>ROLLBACK_COMPLETE</code> -- The deployment failed and rollback has been
+   * completed. The fleet is running the configuration from the last successful
+   * deployment.</p> </li> <li> <p> <code>CANCELLED</code> -- The deployment was
+   * cancelled because a new deployment started for the same fleet.</p> </li> </ul>
+   * <p>For how to debug an impaired deployment or cancel one, see <a
+   * href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/containers-deployment-validation.html">Container
+   * fleet deployments</a>.</p>
    */
   inline DeploymentStatus GetDeploymentStatus() const { return m_deploymentStatus; }
   inline bool DeploymentStatusHasBeenSet() const { return m_deploymentStatusHasBeenSet; }

@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 #include <aws/network-firewall/model/Header.h>
 #include <aws/network-firewall/model/RuleOption.h>
@@ -14,10 +15,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace NetworkFirewall {
 namespace Model {
@@ -28,16 +28,16 @@ namespace Model {
  * destination, ports, direction, and rule options. For information about the
  * Suricata <code>Rules</code> format, see <a
  * href="https://suricata.readthedocs.io/en/suricata-8.0.3/rules/intro.html">Rules
- * Format</a>. </p><p><h3>See Also:</h3>   <a
+ * Format</a> on the Suricata website. </p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/StatefulRule">AWS
  * API Reference</a></p>
  */
 class StatefulRule {
  public:
   AWS_NETWORKFIREWALL_API StatefulRule() = default;
-  AWS_NETWORKFIREWALL_API StatefulRule(Aws::Utils::Json::JsonView jsonValue);
-  AWS_NETWORKFIREWALL_API StatefulRule& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_NETWORKFIREWALL_API StatefulRule(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_NETWORKFIREWALL_API StatefulRule& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_NETWORKFIREWALL_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

@@ -3,72 +3,116 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/directconnect/model/CreateLagRequest.h>
 
 #include <utility>
 
 using namespace Aws::DirectConnect::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String CreateLagRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_numberOfConnectionsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_locationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_connectionsBandwidthHasBeenSet) {
+    mapSize++;
+  }
+  if (m_lagNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_connectionIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_tagsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_childConnectionTagsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_providerNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_requestMACSecHasBeenSet) {
+    mapSize++;
+  }
+  if (m_billingModeHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_numberOfConnectionsHasBeenSet) {
-    payload.WithInteger("numberOfConnections", m_numberOfConnections);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("numberOfConnections"));
+    (m_numberOfConnections >= 0) ? encoder.WriteUInt(m_numberOfConnections) : encoder.WriteNegInt(m_numberOfConnections);
   }
 
   if (m_locationHasBeenSet) {
-    payload.WithString("location", m_location);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("location"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_location.c_str()));
   }
 
   if (m_connectionsBandwidthHasBeenSet) {
-    payload.WithString("connectionsBandwidth", m_connectionsBandwidth);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("connectionsBandwidth"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_connectionsBandwidth.c_str()));
   }
 
   if (m_lagNameHasBeenSet) {
-    payload.WithString("lagName", m_lagName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("lagName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_lagName.c_str()));
   }
 
   if (m_connectionIdHasBeenSet) {
-    payload.WithString("connectionId", m_connectionId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("connectionId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_connectionId.c_str()));
   }
 
   if (m_tagsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
-      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("tags"));
+    encoder.WriteArrayStart(m_tags.size());
+    for (const auto& item_0 : m_tags) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("tags", std::move(tagsJsonList));
   }
 
   if (m_childConnectionTagsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> childConnectionTagsJsonList(m_childConnectionTags.size());
-    for (unsigned childConnectionTagsIndex = 0; childConnectionTagsIndex < childConnectionTagsJsonList.GetLength();
-         ++childConnectionTagsIndex) {
-      childConnectionTagsJsonList[childConnectionTagsIndex].AsObject(m_childConnectionTags[childConnectionTagsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("childConnectionTags"));
+    encoder.WriteArrayStart(m_childConnectionTags.size());
+    for (const auto& item_0 : m_childConnectionTags) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("childConnectionTags", std::move(childConnectionTagsJsonList));
   }
 
   if (m_providerNameHasBeenSet) {
-    payload.WithString("providerName", m_providerName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("providerName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_providerName.c_str()));
   }
 
   if (m_requestMACSecHasBeenSet) {
-    payload.WithBool("requestMACSec", m_requestMACSec);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("requestMACSec"));
+    encoder.WriteBool(m_requestMACSec);
   }
 
   if (m_billingModeHasBeenSet) {
-    payload.WithString("billingMode", RequestBillingModeMapper::GetNameForRequestBillingMode(m_billingMode));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("billingMode"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(RequestBillingModeMapper::GetNameForRequestBillingMode(m_billingMode).c_str()));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection CreateLagRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "OvertureService.CreateLag"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

@@ -13,6 +13,7 @@
 #include <aws/marketplace-agreement/model/AgreementStatus.h>
 #include <aws/marketplace-agreement/model/EndTimeBehavior.h>
 #include <aws/marketplace-agreement/model/EstimatedCharges.h>
+#include <aws/marketplace-agreement/model/FreeTrialSummary.h>
 #include <aws/marketplace-agreement/model/ProposalSummary.h>
 #include <aws/marketplace-agreement/model/Proposer.h>
 
@@ -197,11 +198,11 @@ class DescribeAgreementResult {
   /**
    * <p>The current status of the agreement.</p> <p>Statuses include:</p> <ul> <li>
    * <p> <code>ACTIVE</code> – The terms of the agreement are active.</p> </li> <li>
-   * <p> <code>CANCELLED</code> ��� The acceptor ended the agreement before the
-   * defined end date.</p> </li> <li> <p> <code>EXPIRED</code> – The agreement ended
-   * on the defined end date.</p> </li> <li> <p> <code>RENEWED</code> – The agreement
-   * was renewed into a new agreement (for example, an auto-renewal).</p> </li> <li>
-   * <p> <code>REPLACED</code> – The agreement was replaced using an agreement
+   * <p> <code>CANCELLED</code> – The acceptor ended the agreement before the defined
+   * end date.</p> </li> <li> <p> <code>EXPIRED</code> – The agreement ended on the
+   * defined end date.</p> </li> <li> <p> <code>RENEWED</code> – The agreement was
+   * renewed into a new agreement (for example, an auto-renewal).</p> </li> <li> <p>
+   * <code>REPLACED</code> – The agreement was replaced using an agreement
    * replacement offer.</p> </li> <li> <p> <code>TERMINATED</code> – The agreement
    * ended before the defined end date because of an AWS termination (for example, a
    * payment failure).</p> </li> </ul>
@@ -261,6 +262,24 @@ class DescribeAgreementResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The free trial details of the agreement. This field is present only when the
+   * agreement includes a free trial.</p>
+   */
+  inline const FreeTrialSummary& GetFreeTrialSummary() const { return m_freeTrialSummary; }
+  template <typename FreeTrialSummaryT = FreeTrialSummary>
+  void SetFreeTrialSummary(FreeTrialSummaryT&& value) {
+    m_freeTrialSummaryHasBeenSet = true;
+    m_freeTrialSummary = std::forward<FreeTrialSummaryT>(value);
+  }
+  template <typename FreeTrialSummaryT = FreeTrialSummary>
+  DescribeAgreementResult& WithFreeTrialSummary(FreeTrialSummaryT&& value) {
+    SetFreeTrialSummary(std::forward<FreeTrialSummaryT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -301,6 +320,8 @@ class DescribeAgreementResult {
 
   EndTimeBehavior m_endTimeBehavior;
 
+  FreeTrialSummary m_freeTrialSummary;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_agreementIdHasBeenSet = false;
@@ -315,6 +336,7 @@ class DescribeAgreementResult {
   bool m_statusHasBeenSet = false;
   bool m_initialAgreementIdHasBeenSet = false;
   bool m_endTimeBehaviorHasBeenSet = false;
+  bool m_freeTrialSummaryHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

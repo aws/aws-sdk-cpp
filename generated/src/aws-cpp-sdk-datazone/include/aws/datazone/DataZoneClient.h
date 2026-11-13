@@ -667,8 +667,9 @@ class AWS_DATAZONE_API DataZoneClient : public Aws::Client::AWSJsonClient,
 
   /**
    * <p>Creates a new user-defined designation with a Cedar permit policy. The
-   * designation defines a named role that can be assigned to project
-   * members.</p><p><h3>See Also:</h3>   <a
+   * designation defines a named role that can be assigned to project members through
+   * <code>CreateProjectMembership</code> or granted through
+   * <code>AddPolicyGrant</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateDesignation">AWS
    * API Reference</a></p>
    */
@@ -1516,8 +1517,10 @@ class AWS_DATAZONE_API DataZoneClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Deletes a designation. Managed designations cannot be deleted. This operation
-   * is idempotent.</p><p><h3>See Also:</h3>   <a
+   * <p>Deletes a user-created designation. Managed designations cannot be deleted.
+   * The call fails if the designation has <code>deletionProtection</code> enabled or
+   * if any project member still holds it. This operation is
+   * idempotent.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteDesignation">AWS
    * API Reference</a></p>
    */
@@ -2452,8 +2455,9 @@ class AWS_DATAZONE_API DataZoneClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Gets the details of a designation, including its Cedar policy.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Gets the details of a designation, including its Cedar permit policy. Returns
+   * the full designation record for both system-managed and user-created
+   * designations.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetDesignation">AWS
    * API Reference</a></p>
    */
@@ -3553,9 +3557,10 @@ class AWS_DATAZONE_API DataZoneClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Lists the designations in a domain. Returns system-managed designations
-   * first, followed by user-created designations sorted alphabetically by
-   * name.</p><p><h3>See Also:</h3>   <a
+   * <p>Lists the designations in a domain. The response returns system-managed
+   * designations first, followed by user-created designations in alphabetical order
+   * by name. Results are paginated. Use <code>nextToken</code> to retrieve
+   * additional pages of results.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListDesignations">AWS
    * API Reference</a></p>
    */
@@ -5158,8 +5163,9 @@ class AWS_DATAZONE_API DataZoneClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Updates an existing designation. Managed designations cannot be
-   * modified.</p><p><h3>See Also:</h3>   <a
+   * <p>Updates an existing user-created designation. Managed designations cannot be
+   * modified. Omit a field to leave its current value unchanged.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/UpdateDesignation">AWS
    * API Reference</a></p>
    */

@@ -4,34 +4,53 @@
  */
 
 #include <aws/codebuild/model/StartCommandExecutionRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 using namespace Aws::CodeBuild::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String StartCommandExecutionRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_sandboxIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_commandHasBeenSet) {
+    mapSize++;
+  }
+  if (m_typeHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_sandboxIdHasBeenSet) {
-    payload.WithString("sandboxId", m_sandboxId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("sandboxId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_sandboxId.c_str()));
   }
 
   if (m_commandHasBeenSet) {
-    payload.WithString("command", m_command);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("command"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_command.c_str()));
   }
 
   if (m_typeHasBeenSet) {
-    payload.WithString("type", CommandTypeMapper::GetNameForCommandType(m_type));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("type"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(CommandTypeMapper::GetNameForCommandType(m_type).c_str()));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection StartCommandExecutionRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeBuild_20161006.StartCommandExecution"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

@@ -3,51 +3,221 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/directconnect/model/AsPathSegment.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace DirectConnect {
 namespace Model {
 
-AsPathSegment::AsPathSegment(JsonView jsonValue) { *this = jsonValue; }
+AsPathSegment::AsPathSegment(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-AsPathSegment& AsPathSegment::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("pathType")) {
-    m_pathType = AsPathTypeMapper::GetAsPathTypeForName(jsonValue.GetString("pathType"));
-    m_pathTypeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("path")) {
-    Aws::Utils::Array<JsonView> pathJsonList = jsonValue.GetArray("path");
-    for (unsigned pathIndex = 0; pathIndex < pathJsonList.GetLength(); ++pathIndex) {
-      m_path.push_back(pathJsonList[pathIndex].AsInt64());
+AsPathSegment& AsPathSegment::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "pathType") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_pathType =
+                      AsPathTypeMapper::GetAsPathTypeForName(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_pathTypeHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "path") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        auto peekType_1 = decoder->PeekType();
+                        if (peekType_1.has_value()) {
+                          if (peekType_1.value() == Aws::Crt::Cbor::CborType::UInt) {
+                            auto val = decoder->PopNextUnsignedIntVal();
+                            if (val.has_value()) {
+                              m_path.push_back(static_cast<int64_t>(val.value()));
+                            }
+                          } else {
+                            auto val = decoder->PopNextNegativeIntVal();
+                            if (val.has_value()) {
+                              m_path.push_back(static_cast<int64_t>(1 - val.value()));
+                            }
+                          }
+                        }
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto peekType_1 = decoder->PeekType();
+                      if (peekType_1.has_value()) {
+                        if (peekType_1.value() == Aws::Crt::Cbor::CborType::UInt) {
+                          auto val = decoder->PopNextUnsignedIntVal();
+                          if (val.has_value()) {
+                            m_path.push_back(static_cast<int64_t>(val.value()));
+                          }
+                        } else {
+                          auto val = decoder->PopNextNegativeIntVal();
+                          if (val.has_value()) {
+                            m_path.push_back(static_cast<int64_t>(1 - val.value()));
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                m_pathHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("AsPathSegment", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "pathType") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_pathType =
+                    AsPathTypeMapper::GetAsPathTypeForName(Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_pathTypeHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "path") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      auto peekType_1 = decoder->PeekType();
+                      if (peekType_1.has_value()) {
+                        if (peekType_1.value() == Aws::Crt::Cbor::CborType::UInt) {
+                          auto val = decoder->PopNextUnsignedIntVal();
+                          if (val.has_value()) {
+                            m_path.push_back(static_cast<int64_t>(val.value()));
+                          }
+                        } else {
+                          auto val = decoder->PopNextNegativeIntVal();
+                          if (val.has_value()) {
+                            m_path.push_back(static_cast<int64_t>(1 - val.value()));
+                          }
+                        }
+                      }
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto peekType_1 = decoder->PeekType();
+                    if (peekType_1.has_value()) {
+                      if (peekType_1.value() == Aws::Crt::Cbor::CborType::UInt) {
+                        auto val = decoder->PopNextUnsignedIntVal();
+                        if (val.has_value()) {
+                          m_path.push_back(static_cast<int64_t>(val.value()));
+                        }
+                      } else {
+                        auto val = decoder->PopNextNegativeIntVal();
+                        if (val.has_value()) {
+                          m_path.push_back(static_cast<int64_t>(1 - val.value()));
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              m_pathHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
     }
-    m_pathHasBeenSet = true;
   }
+
   return *this;
 }
 
-JsonValue AsPathSegment::Jsonize() const {
-  JsonValue payload;
+void AsPathSegment::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_pathTypeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_pathHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_pathTypeHasBeenSet) {
-    payload.WithString("pathType", AsPathTypeMapper::GetNameForAsPathType(m_pathType));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("pathType"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(AsPathTypeMapper::GetNameForAsPathType(m_pathType).c_str()));
   }
 
   if (m_pathHasBeenSet) {
-    Aws::Utils::Array<JsonValue> pathJsonList(m_path.size());
-    for (unsigned pathIndex = 0; pathIndex < pathJsonList.GetLength(); ++pathIndex) {
-      pathJsonList[pathIndex].AsInt64(m_path[pathIndex]);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("path"));
+    encoder.WriteArrayStart(m_path.size());
+    for (const auto& item_0 : m_path) {
+      (item_0 >= 0) ? encoder.WriteUInt(item_0) : encoder.WriteNegInt(item_0);
     }
-    payload.WithArray("path", std::move(pathJsonList));
   }
-
-  return payload;
 }
 
 }  // namespace Model

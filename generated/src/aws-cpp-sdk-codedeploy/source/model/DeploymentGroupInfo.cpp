@@ -4,261 +4,1033 @@
  */
 
 #include <aws/codedeploy/model/DeploymentGroupInfo.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace CodeDeploy {
 namespace Model {
 
-DeploymentGroupInfo::DeploymentGroupInfo(JsonView jsonValue) { *this = jsonValue; }
+DeploymentGroupInfo::DeploymentGroupInfo(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-DeploymentGroupInfo& DeploymentGroupInfo::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("applicationName")) {
-    m_applicationName = jsonValue.GetString("applicationName");
-    m_applicationNameHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("deploymentGroupId")) {
-    m_deploymentGroupId = jsonValue.GetString("deploymentGroupId");
-    m_deploymentGroupIdHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("deploymentGroupName")) {
-    m_deploymentGroupName = jsonValue.GetString("deploymentGroupName");
-    m_deploymentGroupNameHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("deploymentConfigName")) {
-    m_deploymentConfigName = jsonValue.GetString("deploymentConfigName");
-    m_deploymentConfigNameHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ec2TagFilters")) {
-    Aws::Utils::Array<JsonView> ec2TagFiltersJsonList = jsonValue.GetArray("ec2TagFilters");
-    for (unsigned ec2TagFiltersIndex = 0; ec2TagFiltersIndex < ec2TagFiltersJsonList.GetLength(); ++ec2TagFiltersIndex) {
-      m_ec2TagFilters.push_back(ec2TagFiltersJsonList[ec2TagFiltersIndex].AsObject());
+DeploymentGroupInfo& DeploymentGroupInfo::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "applicationName") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_applicationName = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_applicationName = ss.str();
+                  }
+                }
+                m_applicationNameHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "deploymentGroupId") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_deploymentGroupId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_deploymentGroupId = ss.str();
+                  }
+                }
+                m_deploymentGroupIdHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "deploymentGroupName") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_deploymentGroupName = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_deploymentGroupName = ss.str();
+                  }
+                }
+                m_deploymentGroupNameHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "deploymentConfigName") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_deploymentConfigName = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_deploymentConfigName = ss.str();
+                  }
+                }
+                m_deploymentConfigNameHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "ec2TagFilters") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_ec2TagFilters.push_back(EC2TagFilter(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_ec2TagFilters.push_back(EC2TagFilter(decoder));
+                    }
+                  }
+                }
+                m_ec2TagFiltersHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "onPremisesInstanceTagFilters") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_onPremisesInstanceTagFilters.push_back(TagFilter(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_onPremisesInstanceTagFilters.push_back(TagFilter(decoder));
+                    }
+                  }
+                }
+                m_onPremisesInstanceTagFiltersHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "autoScalingGroups") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_autoScalingGroups.push_back(AutoScalingGroup(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_autoScalingGroups.push_back(AutoScalingGroup(decoder));
+                    }
+                  }
+                }
+                m_autoScalingGroupsHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "serviceRoleArn") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_serviceRoleArn = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_serviceRoleArn = ss.str();
+                  }
+                }
+                m_serviceRoleArnHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "targetRevision") {
+                m_targetRevision = RevisionLocation(decoder);
+                m_targetRevisionHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "triggerConfigurations") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_triggerConfigurations.push_back(TriggerConfig(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_triggerConfigurations.push_back(TriggerConfig(decoder));
+                    }
+                  }
+                }
+                m_triggerConfigurationsHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "alarmConfiguration") {
+                m_alarmConfiguration = AlarmConfiguration(decoder);
+                m_alarmConfigurationHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "autoRollbackConfiguration") {
+                m_autoRollbackConfiguration = AutoRollbackConfiguration(decoder);
+                m_autoRollbackConfigurationHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "deploymentStyle") {
+                m_deploymentStyle = DeploymentStyle(decoder);
+                m_deploymentStyleHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "outdatedInstancesStrategy") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_outdatedInstancesStrategy = OutdatedInstancesStrategyMapper::GetOutdatedInstancesStrategyForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_outdatedInstancesStrategyHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "blueGreenDeploymentConfiguration") {
+                m_blueGreenDeploymentConfiguration = BlueGreenDeploymentConfiguration(decoder);
+                m_blueGreenDeploymentConfigurationHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "loadBalancerInfo") {
+                m_loadBalancerInfo = LoadBalancerInfo(decoder);
+                m_loadBalancerInfoHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "lastSuccessfulDeployment") {
+                m_lastSuccessfulDeployment = LastDeploymentInfo(decoder);
+                m_lastSuccessfulDeploymentHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "lastAttemptedDeployment") {
+                m_lastAttemptedDeployment = LastDeploymentInfo(decoder);
+                m_lastAttemptedDeploymentHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "ec2TagSet") {
+                m_ec2TagSet = EC2TagSet(decoder);
+                m_ec2TagSetHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "onPremisesTagSet") {
+                m_onPremisesTagSet = OnPremisesTagSet(decoder);
+                m_onPremisesTagSetHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "computePlatform") {
+                auto val = decoder->PopNextTextVal();
+                if (val.has_value()) {
+                  m_computePlatform = ComputePlatformMapper::GetComputePlatformForName(
+                      Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+                }
+                m_computePlatformHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "ecsServices") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_ecsServices.push_back(ECSService(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_ecsServices.push_back(ECSService(decoder));
+                    }
+                  }
+                }
+                m_ecsServicesHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "ec2DeploymentOptions") {
+                m_ec2DeploymentOptions = EC2DeploymentOptions(decoder);
+                m_ec2DeploymentOptionsHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "terminationHookEnabled") {
+                auto val = decoder->PopNextBooleanVal();
+                if (val.has_value()) {
+                  m_terminationHookEnabled = val.value();
+                }
+                m_terminationHookEnabledHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("DeploymentGroupInfo", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "applicationName") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_applicationName = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_applicationName = ss.str();
+                }
+              }
+              m_applicationNameHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "deploymentGroupId") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_deploymentGroupId = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_deploymentGroupId = ss.str();
+                }
+              }
+              m_deploymentGroupIdHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "deploymentGroupName") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_deploymentGroupName = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_deploymentGroupName = ss.str();
+                }
+              }
+              m_deploymentGroupNameHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "deploymentConfigName") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_deploymentConfigName = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_deploymentConfigName = ss.str();
+                }
+              }
+              m_deploymentConfigNameHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "ec2TagFilters") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_ec2TagFilters.push_back(EC2TagFilter(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_ec2TagFilters.push_back(EC2TagFilter(decoder));
+                  }
+                }
+              }
+              m_ec2TagFiltersHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "onPremisesInstanceTagFilters") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_onPremisesInstanceTagFilters.push_back(TagFilter(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_onPremisesInstanceTagFilters.push_back(TagFilter(decoder));
+                  }
+                }
+              }
+              m_onPremisesInstanceTagFiltersHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "autoScalingGroups") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_autoScalingGroups.push_back(AutoScalingGroup(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_autoScalingGroups.push_back(AutoScalingGroup(decoder));
+                  }
+                }
+              }
+              m_autoScalingGroupsHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "serviceRoleArn") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_serviceRoleArn = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_serviceRoleArn = ss.str();
+                }
+              }
+              m_serviceRoleArnHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "targetRevision") {
+              m_targetRevision = RevisionLocation(decoder);
+              m_targetRevisionHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "triggerConfigurations") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_triggerConfigurations.push_back(TriggerConfig(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_triggerConfigurations.push_back(TriggerConfig(decoder));
+                  }
+                }
+              }
+              m_triggerConfigurationsHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "alarmConfiguration") {
+              m_alarmConfiguration = AlarmConfiguration(decoder);
+              m_alarmConfigurationHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "autoRollbackConfiguration") {
+              m_autoRollbackConfiguration = AutoRollbackConfiguration(decoder);
+              m_autoRollbackConfigurationHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "deploymentStyle") {
+              m_deploymentStyle = DeploymentStyle(decoder);
+              m_deploymentStyleHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "outdatedInstancesStrategy") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_outdatedInstancesStrategy = OutdatedInstancesStrategyMapper::GetOutdatedInstancesStrategyForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_outdatedInstancesStrategyHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "blueGreenDeploymentConfiguration") {
+              m_blueGreenDeploymentConfiguration = BlueGreenDeploymentConfiguration(decoder);
+              m_blueGreenDeploymentConfigurationHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "loadBalancerInfo") {
+              m_loadBalancerInfo = LoadBalancerInfo(decoder);
+              m_loadBalancerInfoHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "lastSuccessfulDeployment") {
+              m_lastSuccessfulDeployment = LastDeploymentInfo(decoder);
+              m_lastSuccessfulDeploymentHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "lastAttemptedDeployment") {
+              m_lastAttemptedDeployment = LastDeploymentInfo(decoder);
+              m_lastAttemptedDeploymentHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "ec2TagSet") {
+              m_ec2TagSet = EC2TagSet(decoder);
+              m_ec2TagSetHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "onPremisesTagSet") {
+              m_onPremisesTagSet = OnPremisesTagSet(decoder);
+              m_onPremisesTagSetHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "computePlatform") {
+              auto val = decoder->PopNextTextVal();
+              if (val.has_value()) {
+                m_computePlatform = ComputePlatformMapper::GetComputePlatformForName(
+                    Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len));
+              }
+              m_computePlatformHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "ecsServices") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_ecsServices.push_back(ECSService(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_ecsServices.push_back(ECSService(decoder));
+                  }
+                }
+              }
+              m_ecsServicesHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "ec2DeploymentOptions") {
+              m_ec2DeploymentOptions = EC2DeploymentOptions(decoder);
+              m_ec2DeploymentOptionsHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "terminationHookEnabled") {
+              auto val = decoder->PopNextBooleanVal();
+              if (val.has_value()) {
+                m_terminationHookEnabled = val.value();
+              }
+              m_terminationHookEnabledHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
     }
-    m_ec2TagFiltersHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("onPremisesInstanceTagFilters")) {
-    Aws::Utils::Array<JsonView> onPremisesInstanceTagFiltersJsonList = jsonValue.GetArray("onPremisesInstanceTagFilters");
-    for (unsigned onPremisesInstanceTagFiltersIndex = 0;
-         onPremisesInstanceTagFiltersIndex < onPremisesInstanceTagFiltersJsonList.GetLength(); ++onPremisesInstanceTagFiltersIndex) {
-      m_onPremisesInstanceTagFilters.push_back(onPremisesInstanceTagFiltersJsonList[onPremisesInstanceTagFiltersIndex].AsObject());
-    }
-    m_onPremisesInstanceTagFiltersHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("autoScalingGroups")) {
-    Aws::Utils::Array<JsonView> autoScalingGroupsJsonList = jsonValue.GetArray("autoScalingGroups");
-    for (unsigned autoScalingGroupsIndex = 0; autoScalingGroupsIndex < autoScalingGroupsJsonList.GetLength(); ++autoScalingGroupsIndex) {
-      m_autoScalingGroups.push_back(autoScalingGroupsJsonList[autoScalingGroupsIndex].AsObject());
-    }
-    m_autoScalingGroupsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("serviceRoleArn")) {
-    m_serviceRoleArn = jsonValue.GetString("serviceRoleArn");
-    m_serviceRoleArnHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("targetRevision")) {
-    m_targetRevision = jsonValue.GetObject("targetRevision");
-    m_targetRevisionHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("triggerConfigurations")) {
-    Aws::Utils::Array<JsonView> triggerConfigurationsJsonList = jsonValue.GetArray("triggerConfigurations");
-    for (unsigned triggerConfigurationsIndex = 0; triggerConfigurationsIndex < triggerConfigurationsJsonList.GetLength();
-         ++triggerConfigurationsIndex) {
-      m_triggerConfigurations.push_back(triggerConfigurationsJsonList[triggerConfigurationsIndex].AsObject());
-    }
-    m_triggerConfigurationsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("alarmConfiguration")) {
-    m_alarmConfiguration = jsonValue.GetObject("alarmConfiguration");
-    m_alarmConfigurationHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("autoRollbackConfiguration")) {
-    m_autoRollbackConfiguration = jsonValue.GetObject("autoRollbackConfiguration");
-    m_autoRollbackConfigurationHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("deploymentStyle")) {
-    m_deploymentStyle = jsonValue.GetObject("deploymentStyle");
-    m_deploymentStyleHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("outdatedInstancesStrategy")) {
-    m_outdatedInstancesStrategy =
-        OutdatedInstancesStrategyMapper::GetOutdatedInstancesStrategyForName(jsonValue.GetString("outdatedInstancesStrategy"));
-    m_outdatedInstancesStrategyHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("blueGreenDeploymentConfiguration")) {
-    m_blueGreenDeploymentConfiguration = jsonValue.GetObject("blueGreenDeploymentConfiguration");
-    m_blueGreenDeploymentConfigurationHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("loadBalancerInfo")) {
-    m_loadBalancerInfo = jsonValue.GetObject("loadBalancerInfo");
-    m_loadBalancerInfoHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("lastSuccessfulDeployment")) {
-    m_lastSuccessfulDeployment = jsonValue.GetObject("lastSuccessfulDeployment");
-    m_lastSuccessfulDeploymentHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("lastAttemptedDeployment")) {
-    m_lastAttemptedDeployment = jsonValue.GetObject("lastAttemptedDeployment");
-    m_lastAttemptedDeploymentHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ec2TagSet")) {
-    m_ec2TagSet = jsonValue.GetObject("ec2TagSet");
-    m_ec2TagSetHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("onPremisesTagSet")) {
-    m_onPremisesTagSet = jsonValue.GetObject("onPremisesTagSet");
-    m_onPremisesTagSetHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("computePlatform")) {
-    m_computePlatform = ComputePlatformMapper::GetComputePlatformForName(jsonValue.GetString("computePlatform"));
-    m_computePlatformHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ecsServices")) {
-    Aws::Utils::Array<JsonView> ecsServicesJsonList = jsonValue.GetArray("ecsServices");
-    for (unsigned ecsServicesIndex = 0; ecsServicesIndex < ecsServicesJsonList.GetLength(); ++ecsServicesIndex) {
-      m_ecsServices.push_back(ecsServicesJsonList[ecsServicesIndex].AsObject());
-    }
-    m_ecsServicesHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("ec2DeploymentOptions")) {
-    m_ec2DeploymentOptions = jsonValue.GetObject("ec2DeploymentOptions");
-    m_ec2DeploymentOptionsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("terminationHookEnabled")) {
-    m_terminationHookEnabled = jsonValue.GetBool("terminationHookEnabled");
-    m_terminationHookEnabledHasBeenSet = true;
-  }
+
   return *this;
 }
 
-JsonValue DeploymentGroupInfo::Jsonize() const {
-  JsonValue payload;
+void DeploymentGroupInfo::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_applicationNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_deploymentGroupIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_deploymentGroupNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_deploymentConfigNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_ec2TagFiltersHasBeenSet) {
+    mapSize++;
+  }
+  if (m_onPremisesInstanceTagFiltersHasBeenSet) {
+    mapSize++;
+  }
+  if (m_autoScalingGroupsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_serviceRoleArnHasBeenSet) {
+    mapSize++;
+  }
+  if (m_targetRevisionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_triggerConfigurationsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_alarmConfigurationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_autoRollbackConfigurationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_deploymentStyleHasBeenSet) {
+    mapSize++;
+  }
+  if (m_outdatedInstancesStrategyHasBeenSet) {
+    mapSize++;
+  }
+  if (m_blueGreenDeploymentConfigurationHasBeenSet) {
+    mapSize++;
+  }
+  if (m_loadBalancerInfoHasBeenSet) {
+    mapSize++;
+  }
+  if (m_lastSuccessfulDeploymentHasBeenSet) {
+    mapSize++;
+  }
+  if (m_lastAttemptedDeploymentHasBeenSet) {
+    mapSize++;
+  }
+  if (m_ec2TagSetHasBeenSet) {
+    mapSize++;
+  }
+  if (m_onPremisesTagSetHasBeenSet) {
+    mapSize++;
+  }
+  if (m_computePlatformHasBeenSet) {
+    mapSize++;
+  }
+  if (m_ecsServicesHasBeenSet) {
+    mapSize++;
+  }
+  if (m_ec2DeploymentOptionsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_terminationHookEnabledHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_applicationNameHasBeenSet) {
-    payload.WithString("applicationName", m_applicationName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("applicationName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_applicationName.c_str()));
   }
 
   if (m_deploymentGroupIdHasBeenSet) {
-    payload.WithString("deploymentGroupId", m_deploymentGroupId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("deploymentGroupId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_deploymentGroupId.c_str()));
   }
 
   if (m_deploymentGroupNameHasBeenSet) {
-    payload.WithString("deploymentGroupName", m_deploymentGroupName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("deploymentGroupName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_deploymentGroupName.c_str()));
   }
 
   if (m_deploymentConfigNameHasBeenSet) {
-    payload.WithString("deploymentConfigName", m_deploymentConfigName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("deploymentConfigName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_deploymentConfigName.c_str()));
   }
 
   if (m_ec2TagFiltersHasBeenSet) {
-    Aws::Utils::Array<JsonValue> ec2TagFiltersJsonList(m_ec2TagFilters.size());
-    for (unsigned ec2TagFiltersIndex = 0; ec2TagFiltersIndex < ec2TagFiltersJsonList.GetLength(); ++ec2TagFiltersIndex) {
-      ec2TagFiltersJsonList[ec2TagFiltersIndex].AsObject(m_ec2TagFilters[ec2TagFiltersIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ec2TagFilters"));
+    encoder.WriteArrayStart(m_ec2TagFilters.size());
+    for (const auto& item_0 : m_ec2TagFilters) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("ec2TagFilters", std::move(ec2TagFiltersJsonList));
   }
 
   if (m_onPremisesInstanceTagFiltersHasBeenSet) {
-    Aws::Utils::Array<JsonValue> onPremisesInstanceTagFiltersJsonList(m_onPremisesInstanceTagFilters.size());
-    for (unsigned onPremisesInstanceTagFiltersIndex = 0;
-         onPremisesInstanceTagFiltersIndex < onPremisesInstanceTagFiltersJsonList.GetLength(); ++onPremisesInstanceTagFiltersIndex) {
-      onPremisesInstanceTagFiltersJsonList[onPremisesInstanceTagFiltersIndex].AsObject(
-          m_onPremisesInstanceTagFilters[onPremisesInstanceTagFiltersIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("onPremisesInstanceTagFilters"));
+    encoder.WriteArrayStart(m_onPremisesInstanceTagFilters.size());
+    for (const auto& item_0 : m_onPremisesInstanceTagFilters) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("onPremisesInstanceTagFilters", std::move(onPremisesInstanceTagFiltersJsonList));
   }
 
   if (m_autoScalingGroupsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> autoScalingGroupsJsonList(m_autoScalingGroups.size());
-    for (unsigned autoScalingGroupsIndex = 0; autoScalingGroupsIndex < autoScalingGroupsJsonList.GetLength(); ++autoScalingGroupsIndex) {
-      autoScalingGroupsJsonList[autoScalingGroupsIndex].AsObject(m_autoScalingGroups[autoScalingGroupsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("autoScalingGroups"));
+    encoder.WriteArrayStart(m_autoScalingGroups.size());
+    for (const auto& item_0 : m_autoScalingGroups) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("autoScalingGroups", std::move(autoScalingGroupsJsonList));
   }
 
   if (m_serviceRoleArnHasBeenSet) {
-    payload.WithString("serviceRoleArn", m_serviceRoleArn);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("serviceRoleArn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_serviceRoleArn.c_str()));
   }
 
   if (m_targetRevisionHasBeenSet) {
-    payload.WithObject("targetRevision", m_targetRevision.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("targetRevision"));
+    m_targetRevision.CborEncode(encoder);
   }
 
   if (m_triggerConfigurationsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> triggerConfigurationsJsonList(m_triggerConfigurations.size());
-    for (unsigned triggerConfigurationsIndex = 0; triggerConfigurationsIndex < triggerConfigurationsJsonList.GetLength();
-         ++triggerConfigurationsIndex) {
-      triggerConfigurationsJsonList[triggerConfigurationsIndex].AsObject(m_triggerConfigurations[triggerConfigurationsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("triggerConfigurations"));
+    encoder.WriteArrayStart(m_triggerConfigurations.size());
+    for (const auto& item_0 : m_triggerConfigurations) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("triggerConfigurations", std::move(triggerConfigurationsJsonList));
   }
 
   if (m_alarmConfigurationHasBeenSet) {
-    payload.WithObject("alarmConfiguration", m_alarmConfiguration.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("alarmConfiguration"));
+    m_alarmConfiguration.CborEncode(encoder);
   }
 
   if (m_autoRollbackConfigurationHasBeenSet) {
-    payload.WithObject("autoRollbackConfiguration", m_autoRollbackConfiguration.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("autoRollbackConfiguration"));
+    m_autoRollbackConfiguration.CborEncode(encoder);
   }
 
   if (m_deploymentStyleHasBeenSet) {
-    payload.WithObject("deploymentStyle", m_deploymentStyle.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("deploymentStyle"));
+    m_deploymentStyle.CborEncode(encoder);
   }
 
   if (m_outdatedInstancesStrategyHasBeenSet) {
-    payload.WithString("outdatedInstancesStrategy",
-                       OutdatedInstancesStrategyMapper::GetNameForOutdatedInstancesStrategy(m_outdatedInstancesStrategy));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("outdatedInstancesStrategy"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(
+        OutdatedInstancesStrategyMapper::GetNameForOutdatedInstancesStrategy(m_outdatedInstancesStrategy).c_str()));
   }
 
   if (m_blueGreenDeploymentConfigurationHasBeenSet) {
-    payload.WithObject("blueGreenDeploymentConfiguration", m_blueGreenDeploymentConfiguration.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("blueGreenDeploymentConfiguration"));
+    m_blueGreenDeploymentConfiguration.CborEncode(encoder);
   }
 
   if (m_loadBalancerInfoHasBeenSet) {
-    payload.WithObject("loadBalancerInfo", m_loadBalancerInfo.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("loadBalancerInfo"));
+    m_loadBalancerInfo.CborEncode(encoder);
   }
 
   if (m_lastSuccessfulDeploymentHasBeenSet) {
-    payload.WithObject("lastSuccessfulDeployment", m_lastSuccessfulDeployment.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("lastSuccessfulDeployment"));
+    m_lastSuccessfulDeployment.CborEncode(encoder);
   }
 
   if (m_lastAttemptedDeploymentHasBeenSet) {
-    payload.WithObject("lastAttemptedDeployment", m_lastAttemptedDeployment.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("lastAttemptedDeployment"));
+    m_lastAttemptedDeployment.CborEncode(encoder);
   }
 
   if (m_ec2TagSetHasBeenSet) {
-    payload.WithObject("ec2TagSet", m_ec2TagSet.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ec2TagSet"));
+    m_ec2TagSet.CborEncode(encoder);
   }
 
   if (m_onPremisesTagSetHasBeenSet) {
-    payload.WithObject("onPremisesTagSet", m_onPremisesTagSet.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("onPremisesTagSet"));
+    m_onPremisesTagSet.CborEncode(encoder);
   }
 
   if (m_computePlatformHasBeenSet) {
-    payload.WithString("computePlatform", ComputePlatformMapper::GetNameForComputePlatform(m_computePlatform));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("computePlatform"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(ComputePlatformMapper::GetNameForComputePlatform(m_computePlatform).c_str()));
   }
 
   if (m_ecsServicesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> ecsServicesJsonList(m_ecsServices.size());
-    for (unsigned ecsServicesIndex = 0; ecsServicesIndex < ecsServicesJsonList.GetLength(); ++ecsServicesIndex) {
-      ecsServicesJsonList[ecsServicesIndex].AsObject(m_ecsServices[ecsServicesIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ecsServices"));
+    encoder.WriteArrayStart(m_ecsServices.size());
+    for (const auto& item_0 : m_ecsServices) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("ecsServices", std::move(ecsServicesJsonList));
   }
 
   if (m_ec2DeploymentOptionsHasBeenSet) {
-    payload.WithObject("ec2DeploymentOptions", m_ec2DeploymentOptions.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ec2DeploymentOptions"));
+    m_ec2DeploymentOptions.CborEncode(encoder);
   }
 
   if (m_terminationHookEnabledHasBeenSet) {
-    payload.WithBool("terminationHookEnabled", m_terminationHookEnabled);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("terminationHookEnabled"));
+    encoder.WriteBool(m_terminationHookEnabled);
   }
-
-  return payload;
 }
 
 }  // namespace Model

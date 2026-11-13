@@ -7,15 +7,15 @@
 #include <aws/cloudhsmv2/CloudHSMV2_EXPORTS.h>
 #include <aws/cloudhsmv2/model/HsmState.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace CloudHSMV2 {
 namespace Model {
@@ -29,9 +29,9 @@ namespace Model {
 class Hsm {
  public:
   AWS_CLOUDHSMV2_API Hsm() = default;
-  AWS_CLOUDHSMV2_API Hsm(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CLOUDHSMV2_API Hsm& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CLOUDHSMV2_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_CLOUDHSMV2_API Hsm(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CLOUDHSMV2_API Hsm& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CLOUDHSMV2_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

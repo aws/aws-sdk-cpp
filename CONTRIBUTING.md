@@ -70,6 +70,19 @@ Valid fragment types:
 - `dependency` - dependency update (e.g. CRT bump)
 - `breaking-change` - ABI/API breaking change
 
+## Checking Your Changes Locally
+
+Pull requests run `clang-tidy` on the lines they add or modify, and fail on any finding that `.clang-tidy` treats as an error (`WarningsAsErrors`). You can run the same check before pushing. You need `git`, `cmake`, `python3`, and `clang-tidy`:
+
+```bash
+pip install clang-tidy                 # or a system clang-tidy: apt install clang-tidy, brew install llvm
+git submodule update --init --recursive
+git fetch origin
+python3 tools/scripts/run_clang_tidy.py
+```
+
+Run it from the repository root. It checks the commits on your branch since `origin/main`, so commit your changes first. The first run configures CMake into `./build`, which takes a few minutes; later runs are faster. It exits with a non-zero status and lists each error, with file and line, if clang-tidy finds problems on your changed lines.
+
 ## Your First Code Change
 Before submitting your pull request, refer to the pull request readiness
 checklist below:
@@ -79,6 +92,7 @@ checklist below:
 * [ ] Git commit message is detailed and includes context behind the change
 * [ ] If the change is related to an existing Bug Report or Feature Request, the issue number is referenced
 * [ ] Includes a changelog fragment (run `tools/scripts/new-change`)
+* [ ] `clang-tidy` reports no errors on your changes (see [Checking Your Changes Locally](#checking-your-changes-locally))
 
 __Note__: Some changes have additional requirements. Refer to the section below
 to see if your change will require additional work to be accepted.

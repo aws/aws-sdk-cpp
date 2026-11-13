@@ -10,6 +10,7 @@
 #include <aws/mediaconnect/model/FabricConfiguration.h>
 #include <aws/mediaconnect/model/MaintenanceConfiguration.h>
 #include <aws/mediaconnect/model/RouterOutputConfiguration.h>
+#include <aws/mediaconnect/model/RouterOutputProcessors.h>
 #include <aws/mediaconnect/model/RouterOutputTier.h>
 #include <aws/mediaconnect/model/RoutingScope.h>
 
@@ -183,6 +184,26 @@ class UpdateRouterOutputRequest : public MediaConnectRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The updated processor settings for the router output. When you update the
+   * processors, include every setting that you want to keep. MediaConnect resets the
+   * settings that you don't specify to their defaults.</p>
+   */
+  inline const RouterOutputProcessors& GetProcessors() const { return m_processors; }
+  inline bool ProcessorsHasBeenSet() const { return m_processorsHasBeenSet; }
+  template <typename ProcessorsT = RouterOutputProcessors>
+  void SetProcessors(ProcessorsT&& value) {
+    m_processorsHasBeenSet = true;
+    m_processors = std::forward<ProcessorsT>(value);
+  }
+  template <typename ProcessorsT = RouterOutputProcessors>
+  UpdateRouterOutputRequest& WithProcessors(ProcessorsT&& value) {
+    SetProcessors(std::forward<ProcessorsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
@@ -199,6 +220,8 @@ class UpdateRouterOutputRequest : public MediaConnectRequest {
   MaintenanceConfiguration m_maintenanceConfiguration;
 
   FabricConfiguration m_fabricConfiguration;
+
+  RouterOutputProcessors m_processors;
   bool m_arnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_configurationHasBeenSet = false;
@@ -207,6 +230,7 @@ class UpdateRouterOutputRequest : public MediaConnectRequest {
   bool m_tierHasBeenSet = false;
   bool m_maintenanceConfigurationHasBeenSet = false;
   bool m_fabricConfigurationHasBeenSet = false;
+  bool m_processorsHasBeenSet = false;
 };
 
 }  // namespace Model

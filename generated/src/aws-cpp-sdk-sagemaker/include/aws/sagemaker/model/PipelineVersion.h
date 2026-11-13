@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/PipelineExecutionStatus.h>
 #include <aws/sagemaker/model/UserContext.h>
@@ -226,6 +227,30 @@ class PipelineVersion {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The aliases assigned to the pipeline version.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetPipelineVersionAliases() const { return m_pipelineVersionAliases; }
+  inline bool PipelineVersionAliasesHasBeenSet() const { return m_pipelineVersionAliasesHasBeenSet; }
+  template <typename PipelineVersionAliasesT = Aws::Vector<Aws::String>>
+  void SetPipelineVersionAliases(PipelineVersionAliasesT&& value) {
+    m_pipelineVersionAliasesHasBeenSet = true;
+    m_pipelineVersionAliases = std::forward<PipelineVersionAliasesT>(value);
+  }
+  template <typename PipelineVersionAliasesT = Aws::Vector<Aws::String>>
+  PipelineVersion& WithPipelineVersionAliases(PipelineVersionAliasesT&& value) {
+    SetPipelineVersionAliases(std::forward<PipelineVersionAliasesT>(value));
+    return *this;
+  }
+  template <typename PipelineVersionAliasesT = Aws::String>
+  PipelineVersion& AddPipelineVersionAliases(PipelineVersionAliasesT&& value) {
+    m_pipelineVersionAliasesHasBeenSet = true;
+    m_pipelineVersionAliases.emplace_back(std::forward<PipelineVersionAliasesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_pipelineArn;
 
@@ -248,6 +273,8 @@ class PipelineVersion {
   Aws::String m_lastExecutedPipelineExecutionDisplayName;
 
   PipelineExecutionStatus m_lastExecutedPipelineExecutionStatus{PipelineExecutionStatus::NOT_SET};
+
+  Aws::Vector<Aws::String> m_pipelineVersionAliases;
   bool m_pipelineArnHasBeenSet = false;
   bool m_pipelineVersionIdHasBeenSet = false;
   bool m_pipelineVersionDisplayNameHasBeenSet = false;
@@ -259,6 +286,7 @@ class PipelineVersion {
   bool m_lastExecutedPipelineExecutionArnHasBeenSet = false;
   bool m_lastExecutedPipelineExecutionDisplayNameHasBeenSet = false;
   bool m_lastExecutedPipelineExecutionStatusHasBeenSet = false;
+  bool m_pipelineVersionAliasesHasBeenSet = false;
 };
 
 }  // namespace Model

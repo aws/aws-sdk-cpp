@@ -308,6 +308,30 @@ class CreateSecretRequest : public SecretsManagerRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The ARN of a primary secret in another Amazon Web Services account. Include
+   * this field to create a cross-account replica secret that receives replicated
+   * data from that primary secret. The primary secret must be in the same Amazon Web
+   * Services Region and partition as the replica, and you must specify a customer
+   * managed KMS key in <code>KmsKeyId</code>. You can't include
+   * <code>SecretString</code>, <code>SecretBinary</code>, <code>Description</code>,
+   * <code>AddReplicaRegions</code>, or <code>Type</code>.</p>
+   */
+  inline const Aws::String& GetCrossAccountPrimaryARN() const { return m_crossAccountPrimaryARN; }
+  inline bool CrossAccountPrimaryARNHasBeenSet() const { return m_crossAccountPrimaryARNHasBeenSet; }
+  template <typename CrossAccountPrimaryARNT = Aws::String>
+  void SetCrossAccountPrimaryARN(CrossAccountPrimaryARNT&& value) {
+    m_crossAccountPrimaryARNHasBeenSet = true;
+    m_crossAccountPrimaryARN = std::forward<CrossAccountPrimaryARNT>(value);
+  }
+  template <typename CrossAccountPrimaryARNT = Aws::String>
+  CreateSecretRequest& WithCrossAccountPrimaryARN(CrossAccountPrimaryARNT&& value) {
+    SetCrossAccountPrimaryARN(std::forward<CrossAccountPrimaryARNT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -328,6 +352,8 @@ class CreateSecretRequest : public SecretsManagerRequest {
   bool m_forceOverwriteReplicaSecret{false};
 
   Aws::String m_type;
+
+  Aws::String m_crossAccountPrimaryARN;
   bool m_nameHasBeenSet = false;
   bool m_clientRequestTokenHasBeenSet = true;
   bool m_descriptionHasBeenSet = false;
@@ -338,6 +364,7 @@ class CreateSecretRequest : public SecretsManagerRequest {
   bool m_addReplicaRegionsHasBeenSet = false;
   bool m_forceOverwriteReplicaSecretHasBeenSet = false;
   bool m_typeHasBeenSet = false;
+  bool m_crossAccountPrimaryARNHasBeenSet = false;
 };
 
 }  // namespace Model

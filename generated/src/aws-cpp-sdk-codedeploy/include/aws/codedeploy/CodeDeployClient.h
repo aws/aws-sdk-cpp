@@ -11,7 +11,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 
 namespace Aws {
 namespace CodeDeploy {
@@ -72,12 +72,12 @@ namespace CodeDeploy {
  * href="https://forums.aws.amazon.com/forum.jspa?forumID=179">CodeDeploy Developer
  * Forum</a> </p> </li> </ul>
  */
-class AWS_CODEDEPLOY_API CodeDeployClient : public Aws::Client::AWSJsonClient,
+class AWS_CODEDEPLOY_API CodeDeployClient : public Aws::Client::AWSRpcV2CborClient,
                                             public Aws::Client::ClientWithAsyncTemplateMethods<CodeDeployClient>,
                                             public CodeDeployPaginationBase<CodeDeployClient>,
                                             public CodeDeployWaiter<CodeDeployClient> {
  public:
-  typedef Aws::Client::AWSJsonClient BASECLASS;
+  typedef Aws::Client::AWSRpcV2CborClient BASECLASS;
   static const char* GetServiceName();
   static const char* GetAllocationTag();
 

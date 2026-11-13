@@ -6,27 +6,27 @@
 #pragma once
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/servicediscovery/ServiceDiscovery_EXPORTS.h>
 #include <aws/servicediscovery/model/ServiceAttributes.h>
 
 #include <utility>
-
 namespace Aws {
 template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
 namespace Utils {
-namespace Json {
-class JsonValue;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace ServiceDiscovery {
 namespace Model {
 class GetServiceAttributesResult {
  public:
   AWS_SERVICEDISCOVERY_API GetServiceAttributesResult() = default;
-  AWS_SERVICEDISCOVERY_API GetServiceAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-  AWS_SERVICEDISCOVERY_API GetServiceAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_SERVICEDISCOVERY_API GetServiceAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
+  AWS_SERVICEDISCOVERY_API GetServiceAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
 
   ///@{
   /**

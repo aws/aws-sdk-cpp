@@ -7,10 +7,14 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/guardduty/GuardDutyRequest.h>
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
+#include <aws/guardduty/model/SummaryFormat.h>
 
 #include <utility>
 
 namespace Aws {
+namespace Http {
+class URI;
+}  // namespace Http
 namespace GuardDuty {
 namespace Model {
 
@@ -27,6 +31,8 @@ class GetInvestigationRequest : public GuardDutyRequest {
   inline virtual const char* GetServiceRequestName() const override { return "GetInvestigation"; }
 
   AWS_GUARDDUTY_API Aws::String SerializePayload() const override;
+
+  AWS_GUARDDUTY_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
   ///@{
   /**
@@ -67,12 +73,35 @@ class GetInvestigationRequest : public GuardDutyRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The format in which to return the investigation summary. Possible values:</p>
+   * <ul> <li> <p> <code>STRING</code> – (Default) Returns the summary as text in
+   * <code>Summary</code>.</p> </li> <li> <p> <code>STRUCTURED</code> – Returns a
+   * typed summary in <code>SummaryData</code>.</p> </li> </ul> <p>GuardDuty returns
+   * a summary only when the investigation status is <code>COMPLETED</code>.</p>
+   */
+  inline SummaryFormat GetSummaryFormat() const { return m_summaryFormat; }
+  inline bool SummaryFormatHasBeenSet() const { return m_summaryFormatHasBeenSet; }
+  inline void SetSummaryFormat(SummaryFormat value) {
+    m_summaryFormatHasBeenSet = true;
+    m_summaryFormat = value;
+  }
+  inline GetInvestigationRequest& WithSummaryFormat(SummaryFormat value) {
+    SetSummaryFormat(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_detectorId;
 
   Aws::String m_investigationId;
+
+  SummaryFormat m_summaryFormat{SummaryFormat::NOT_SET};
   bool m_detectorIdHasBeenSet = false;
   bool m_investigationIdHasBeenSet = false;
+  bool m_summaryFormatHasBeenSet = false;
 };
 
 }  // namespace Model

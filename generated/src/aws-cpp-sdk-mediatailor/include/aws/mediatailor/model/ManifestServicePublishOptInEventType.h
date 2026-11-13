@@ -10,7 +10,13 @@
 namespace Aws {
 namespace MediaTailor {
 namespace Model {
-enum class ManifestServicePublishOptInEventType { NOT_SET, PRE_SESSION_INIT_HOOK_SUMMARY, PRE_SESSION_INIT_FUNCTION_COMPLETED };
+enum class ManifestServicePublishOptInEventType {
+  NOT_SET,
+  PRE_SESSION_INIT_HOOK_SUMMARY,
+  PRE_SESSION_INIT_FUNCTION_COMPLETED,
+  POST_ORIGIN_RESPONSE_HOOK_SUMMARY,
+  POST_ORIGIN_RESPONSE_FUNCTION_COMPLETED
+};
 
 namespace ManifestServicePublishOptInEventTypeMapper {
 AWS_MEDIATAILOR_API ManifestServicePublishOptInEventType GetManifestServicePublishOptInEventTypeForName(const Aws::String& name);

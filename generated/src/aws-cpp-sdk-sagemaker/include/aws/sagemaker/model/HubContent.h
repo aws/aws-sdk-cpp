@@ -13,6 +13,7 @@
 #include <aws/sagemaker/model/HubContentSupportStatus.h>
 #include <aws/sagemaker/model/HubContentType.h>
 #include <aws/sagemaker/model/Tag.h>
+#include <aws/sagemaker/model/UserContext.h>
 
 #include <utility>
 
@@ -411,6 +412,42 @@ class HubContent {
 
   ///@{
   /**
+   * <p>Information about the user who created the hub content.</p>
+   */
+  inline const UserContext& GetCreatedBy() const { return m_createdBy; }
+  inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
+  template <typename CreatedByT = UserContext>
+  void SetCreatedBy(CreatedByT&& value) {
+    m_createdByHasBeenSet = true;
+    m_createdBy = std::forward<CreatedByT>(value);
+  }
+  template <typename CreatedByT = UserContext>
+  HubContent& WithCreatedBy(CreatedByT&& value) {
+    SetCreatedBy(std::forward<CreatedByT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Information about the user who last modified the hub content.</p>
+   */
+  inline const UserContext& GetLastModifiedBy() const { return m_lastModifiedBy; }
+  inline bool LastModifiedByHasBeenSet() const { return m_lastModifiedByHasBeenSet; }
+  template <typename LastModifiedByT = UserContext>
+  void SetLastModifiedBy(LastModifiedByT&& value) {
+    m_lastModifiedByHasBeenSet = true;
+    m_lastModifiedBy = std::forward<LastModifiedByT>(value);
+  }
+  template <typename LastModifiedByT = UserContext>
+  HubContent& WithLastModifiedBy(LastModifiedByT&& value) {
+    SetLastModifiedBy(std::forward<LastModifiedByT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Any tags associated with the hub content.</p>
    */
   inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
@@ -473,6 +510,10 @@ class HubContent {
 
   Aws::Utils::DateTime m_lastModifiedTime{};
 
+  UserContext m_createdBy;
+
+  UserContext m_lastModifiedBy;
+
   Aws::Vector<Tag> m_tags;
   bool m_hubContentNameHasBeenSet = false;
   bool m_hubContentArnHasBeenSet = false;
@@ -494,6 +535,8 @@ class HubContent {
   bool m_failureReasonHasBeenSet = false;
   bool m_creationTimeHasBeenSet = false;
   bool m_lastModifiedTimeHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_lastModifiedByHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -4,14 +4,14 @@
  */
 
 #pragma once
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/textract/Textract_EXPORTS.h>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace Textract {
 namespace Model {
@@ -24,27 +24,27 @@ namespace Model {
 class DocumentMetadata {
  public:
   AWS_TEXTRACT_API DocumentMetadata() = default;
-  AWS_TEXTRACT_API DocumentMetadata(Aws::Utils::Json::JsonView jsonValue);
-  AWS_TEXTRACT_API DocumentMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_TEXTRACT_API DocumentMetadata(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_TEXTRACT_API DocumentMetadata& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_TEXTRACT_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
    * <p>The number of pages that are detected in the document.</p>
    */
-  inline int GetPages() const { return m_pages; }
+  inline int64_t GetPages() const { return m_pages; }
   inline bool PagesHasBeenSet() const { return m_pagesHasBeenSet; }
-  inline void SetPages(int value) {
+  inline void SetPages(int64_t value) {
     m_pagesHasBeenSet = true;
     m_pages = value;
   }
-  inline DocumentMetadata& WithPages(int value) {
+  inline DocumentMetadata& WithPages(int64_t value) {
     SetPages(value);
     return *this;
   }
   ///@}
  private:
-  int m_pages{0};
+  int64_t m_pages{0};
   bool m_pagesHasBeenSet = false;
 };
 

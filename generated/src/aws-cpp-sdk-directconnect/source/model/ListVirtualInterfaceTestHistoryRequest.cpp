@@ -3,51 +3,81 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/directconnect/model/ListVirtualInterfaceTestHistoryRequest.h>
 
 #include <utility>
 
 using namespace Aws::DirectConnect::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String ListVirtualInterfaceTestHistoryRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_testIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_virtualInterfaceIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_bgpPeersHasBeenSet) {
+    mapSize++;
+  }
+  if (m_statusHasBeenSet) {
+    mapSize++;
+  }
+  if (m_maxResultsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_nextTokenHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_testIdHasBeenSet) {
-    payload.WithString("testId", m_testId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("testId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_testId.c_str()));
   }
 
   if (m_virtualInterfaceIdHasBeenSet) {
-    payload.WithString("virtualInterfaceId", m_virtualInterfaceId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("virtualInterfaceId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_virtualInterfaceId.c_str()));
   }
 
   if (m_bgpPeersHasBeenSet) {
-    Aws::Utils::Array<JsonValue> bgpPeersJsonList(m_bgpPeers.size());
-    for (unsigned bgpPeersIndex = 0; bgpPeersIndex < bgpPeersJsonList.GetLength(); ++bgpPeersIndex) {
-      bgpPeersJsonList[bgpPeersIndex].AsString(m_bgpPeers[bgpPeersIndex]);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("bgpPeers"));
+    encoder.WriteArrayStart(m_bgpPeers.size());
+    for (const auto& item_0 : m_bgpPeers) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
     }
-    payload.WithArray("bgpPeers", std::move(bgpPeersJsonList));
   }
 
   if (m_statusHasBeenSet) {
-    payload.WithString("status", m_status);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("status"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_status.c_str()));
   }
 
   if (m_maxResultsHasBeenSet) {
-    payload.WithInteger("maxResults", m_maxResults);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("maxResults"));
+    (m_maxResults >= 0) ? encoder.WriteUInt(m_maxResults) : encoder.WriteNegInt(m_maxResults);
   }
 
   if (m_nextTokenHasBeenSet) {
-    payload.WithString("nextToken", m_nextToken);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("nextToken"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_nextToken.c_str()));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection ListVirtualInterfaceTestHistoryRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "OvertureService.ListVirtualInterfaceTestHistory"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

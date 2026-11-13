@@ -2,7 +2,7 @@ plugins {
     `java-library`
 }
 
-val smithyVersion = "1.73.0"
+val smithyVersion: String by project
 
 java {
     sourceCompatibility = JavaVersion.VERSION_16
@@ -30,4 +30,12 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform()
+}
+
+// Bundle the shared service-id -> namespace identifier table (single source of truth, also consumed
+// by the C2J generator) onto the classpath so ServiceNamespaceTable can load it as a resource.
+tasks.named<ProcessResources>("processResources") {
+    from("$projectDir/../../../shared") {
+        include("service-namespace-table.json")
+    }
 }

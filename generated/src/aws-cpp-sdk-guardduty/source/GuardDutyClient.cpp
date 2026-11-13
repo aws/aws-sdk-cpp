@@ -87,6 +87,7 @@
 #include <aws/guardduty/model/ListFiltersRequest.h>
 #include <aws/guardduty/model/ListFindingsRequest.h>
 #include <aws/guardduty/model/ListIPSetsRequest.h>
+#include <aws/guardduty/model/ListInvestigationRecordsRequest.h>
 #include <aws/guardduty/model/ListInvestigationsRequest.h>
 #include <aws/guardduty/model/ListInvitationsRequest.h>
 #include <aws/guardduty/model/ListMalwareProtectionPlansRequest.h>
@@ -1519,6 +1520,25 @@ ListIPSetsOutcome GuardDutyClient::ListIPSets(const ListIPSetsRequest& request) 
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListIPSetsOutcome(result.GetResultWithOwnership()) : ListIPSetsOutcome(std::move(result.GetError()));
+}
+
+ListInvestigationRecordsOutcome GuardDutyClient::ListInvestigationRecords(const ListInvestigationRecordsRequest& request) const {
+  if (!request.DetectorIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListInvestigationRecords", "Required field: DetectorId, is not set");
+    return ListInvestigationRecordsOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                  "Missing required field [DetectorId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/detector/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDetectorId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/investigation/records");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListInvestigationRecordsOutcome(result.GetResultWithOwnership())
+                            : ListInvestigationRecordsOutcome(std::move(result.GetError()));
 }
 
 ListInvestigationsOutcome GuardDutyClient::ListInvestigations(const ListInvestigationsRequest& request) const {

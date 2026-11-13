@@ -6,22 +6,24 @@
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/UnreferencedParam.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/datasync/model/UpdateLocationSmbResult.h>
 
 #include <utility>
 
 using namespace Aws::DataSync::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
+using namespace Aws::Utils::Cbor;
 using namespace Aws;
 
-UpdateLocationSmbResult::UpdateLocationSmbResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
+UpdateLocationSmbResult::UpdateLocationSmbResult(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result) { *this = result; }
 
-UpdateLocationSmbResult& UpdateLocationSmbResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+UpdateLocationSmbResult& UpdateLocationSmbResult::operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
-  AWS_UNREFERENCED_PARAM(result);
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

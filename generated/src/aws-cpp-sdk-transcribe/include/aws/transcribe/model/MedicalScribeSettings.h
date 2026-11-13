@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/transcribe/TranscribeService_EXPORTS.h>
 #include <aws/transcribe/model/ClinicalNoteGenerationSettings.h>
 #include <aws/transcribe/model/VocabularyFilterMethod.h>
@@ -13,10 +14,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace TranscribeService {
 namespace Model {
@@ -40,9 +40,9 @@ namespace Model {
 class MedicalScribeSettings {
  public:
   AWS_TRANSCRIBESERVICE_API MedicalScribeSettings() = default;
-  AWS_TRANSCRIBESERVICE_API MedicalScribeSettings(Aws::Utils::Json::JsonView jsonValue);
-  AWS_TRANSCRIBESERVICE_API MedicalScribeSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_TRANSCRIBESERVICE_API MedicalScribeSettings(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_TRANSCRIBESERVICE_API MedicalScribeSettings& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_TRANSCRIBESERVICE_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -74,13 +74,13 @@ class MedicalScribeSettings {
    * the <code>MaxSpeakerLabels</code> field, you must set the
    * <code>ShowSpeakerLabels</code> field to true.</p>
    */
-  inline int GetMaxSpeakerLabels() const { return m_maxSpeakerLabels; }
+  inline int64_t GetMaxSpeakerLabels() const { return m_maxSpeakerLabels; }
   inline bool MaxSpeakerLabelsHasBeenSet() const { return m_maxSpeakerLabelsHasBeenSet; }
-  inline void SetMaxSpeakerLabels(int value) {
+  inline void SetMaxSpeakerLabels(int64_t value) {
     m_maxSpeakerLabelsHasBeenSet = true;
     m_maxSpeakerLabels = value;
   }
-  inline MedicalScribeSettings& WithMaxSpeakerLabels(int value) {
+  inline MedicalScribeSettings& WithMaxSpeakerLabels(int64_t value) {
     SetMaxSpeakerLabels(value);
     return *this;
   }
@@ -186,7 +186,7 @@ class MedicalScribeSettings {
  private:
   bool m_showSpeakerLabels{false};
 
-  int m_maxSpeakerLabels{0};
+  int64_t m_maxSpeakerLabels{0};
 
   bool m_channelIdentification{false};
 

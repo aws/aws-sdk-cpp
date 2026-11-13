@@ -57,13 +57,7 @@ class GetParametersByPathRequest : public SSMRequest {
 
   ///@{
   /**
-   * <p>Retrieve all parameters within a hierarchy.</p>  <p>If a user has
-   * access to a path, then the user can access all levels of that path. For example,
-   * if a user has permission to access path <code>/a</code>, then the user can also
-   * access <code>/a/b</code>. Even if a user has explicitly been denied access in
-   * IAM for parameter <code>/a/b</code>, they can still call the GetParametersByPath
-   * API operation recursively for <code>/a</code> and view <code>/a/b</code>.</p>
-   *
+   * <p>Retrieve all parameters within a hierarchy.</p>
    */
   inline bool GetRecursive() const { return m_recursive; }
   inline bool RecursiveHasBeenSet() const { return m_recursiveHasBeenSet; }

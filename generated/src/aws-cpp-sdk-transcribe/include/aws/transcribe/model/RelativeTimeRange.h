@@ -4,14 +4,14 @@
  */
 
 #pragma once
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/transcribe/TranscribeService_EXPORTS.h>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace TranscribeService {
 namespace Model {
@@ -35,9 +35,9 @@ namespace Model {
 class RelativeTimeRange {
  public:
   AWS_TRANSCRIBESERVICE_API RelativeTimeRange() = default;
-  AWS_TRANSCRIBESERVICE_API RelativeTimeRange(Aws::Utils::Json::JsonView jsonValue);
-  AWS_TRANSCRIBESERVICE_API RelativeTimeRange& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_TRANSCRIBESERVICE_API RelativeTimeRange(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_TRANSCRIBESERVICE_API RelativeTimeRange& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_TRANSCRIBESERVICE_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -46,13 +46,13 @@ class RelativeTimeRange {
    * <code>StartPercentage</code> in your request, you must also include
    * <code>EndPercentage</code>.</p>
    */
-  inline int GetStartPercentage() const { return m_startPercentage; }
+  inline int64_t GetStartPercentage() const { return m_startPercentage; }
   inline bool StartPercentageHasBeenSet() const { return m_startPercentageHasBeenSet; }
-  inline void SetStartPercentage(int value) {
+  inline void SetStartPercentage(int64_t value) {
     m_startPercentageHasBeenSet = true;
     m_startPercentage = value;
   }
-  inline RelativeTimeRange& WithStartPercentage(int value) {
+  inline RelativeTimeRange& WithStartPercentage(int64_t value) {
     SetStartPercentage(value);
     return *this;
   }
@@ -64,13 +64,13 @@ class RelativeTimeRange {
    * specified criteria in your media file. If you include <code>EndPercentage</code>
    * in your request, you must also include <code>StartPercentage</code>.</p>
    */
-  inline int GetEndPercentage() const { return m_endPercentage; }
+  inline int64_t GetEndPercentage() const { return m_endPercentage; }
   inline bool EndPercentageHasBeenSet() const { return m_endPercentageHasBeenSet; }
-  inline void SetEndPercentage(int value) {
+  inline void SetEndPercentage(int64_t value) {
     m_endPercentageHasBeenSet = true;
     m_endPercentage = value;
   }
-  inline RelativeTimeRange& WithEndPercentage(int value) {
+  inline RelativeTimeRange& WithEndPercentage(int64_t value) {
     SetEndPercentage(value);
     return *this;
   }
@@ -82,13 +82,13 @@ class RelativeTimeRange {
    * specified value. Amazon Transcribe searches for your specified criteria in this
    * time segment.</p>
    */
-  inline int GetFirst() const { return m_first; }
+  inline int64_t GetFirst() const { return m_first; }
   inline bool FirstHasBeenSet() const { return m_firstHasBeenSet; }
-  inline void SetFirst(int value) {
+  inline void SetFirst(int64_t value) {
     m_firstHasBeenSet = true;
     m_first = value;
   }
-  inline RelativeTimeRange& WithFirst(int value) {
+  inline RelativeTimeRange& WithFirst(int64_t value) {
     SetFirst(value);
     return *this;
   }
@@ -100,25 +100,25 @@ class RelativeTimeRange {
    * file. Amazon Transcribe searches for your specified criteria in this time
    * segment.</p>
    */
-  inline int GetLast() const { return m_last; }
+  inline int64_t GetLast() const { return m_last; }
   inline bool LastHasBeenSet() const { return m_lastHasBeenSet; }
-  inline void SetLast(int value) {
+  inline void SetLast(int64_t value) {
     m_lastHasBeenSet = true;
     m_last = value;
   }
-  inline RelativeTimeRange& WithLast(int value) {
+  inline RelativeTimeRange& WithLast(int64_t value) {
     SetLast(value);
     return *this;
   }
   ///@}
  private:
-  int m_startPercentage{0};
+  int64_t m_startPercentage{0};
 
-  int m_endPercentage{0};
+  int64_t m_endPercentage{0};
 
-  int m_first{0};
+  int64_t m_first{0};
 
-  int m_last{0};
+  int64_t m_last{0};
   bool m_startPercentageHasBeenSet = false;
   bool m_endPercentageHasBeenSet = false;
   bool m_firstHasBeenSet = false;

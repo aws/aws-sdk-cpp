@@ -375,6 +375,32 @@ class CreateDistributionRequest : public LightsailRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The Lightsail subdomain to create and associate with the distribution (for
+   * example, <code>mysite</code>, for the web address
+   * <code>mysite.amazonlightsail.com</code>).</p> <p>After the distribution is
+   * deployed, Lightsail creates the subdomain and associates it with the
+   * distribution. If Lightsail can't create or associate the subdomain, it still
+   * creates the distribution, but the <code>CreateDistribution</code> operation
+   * fails and the <code>state</code> of the distribution's <code>subdomain</code> is
+   * <code>Error</code>. To check the status, use the <code>subdomain</code>
+   * parameter of the distribution.</p>
+   */
+  inline const Aws::String& GetSubdomainName() const { return m_subdomainName; }
+  inline bool SubdomainNameHasBeenSet() const { return m_subdomainNameHasBeenSet; }
+  template <typename SubdomainNameT = Aws::String>
+  void SetSubdomainName(SubdomainNameT&& value) {
+    m_subdomainNameHasBeenSet = true;
+    m_subdomainName = std::forward<SubdomainNameT>(value);
+  }
+  template <typename SubdomainNameT = Aws::String>
+  CreateDistributionRequest& WithSubdomainName(SubdomainNameT&& value) {
+    SetSubdomainName(std::forward<SubdomainNameT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_distributionName;
 
@@ -405,6 +431,8 @@ class CreateDistributionRequest : public LightsailRequest {
   bool m_enableWaf{false};
 
   Aws::Vector<WafRule> m_wafRules;
+
+  Aws::String m_subdomainName;
   bool m_distributionNameHasBeenSet = false;
   bool m_originHasBeenSet = false;
   bool m_defaultCacheBehaviorHasBeenSet = false;
@@ -420,6 +448,7 @@ class CreateDistributionRequest : public LightsailRequest {
   bool m_customErrorResponsesHasBeenSet = false;
   bool m_enableWafHasBeenSet = false;
   bool m_wafRulesHasBeenSet = false;
+  bool m_subdomainNameHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -39,6 +39,8 @@ static const int RECOVERY_POINT_INDEXING_FAILED_HASH = HashingUtils::HashString(
 static const int EKS_RESTORE_OBJECT_FAILED_HASH = HashingUtils::HashString("EKS_RESTORE_OBJECT_FAILED");
 static const int EKS_RESTORE_OBJECT_SKIPPED_HASH = HashingUtils::HashString("EKS_RESTORE_OBJECT_SKIPPED");
 static const int EKS_BACKUP_OBJECT_FAILED_HASH = HashingUtils::HashString("EKS_BACKUP_OBJECT_FAILED");
+static const int EKS_RESTORE_MODIFICATION_SUCCESS_HASH = HashingUtils::HashString("EKS_RESTORE_MODIFICATION_SUCCESS");
+static const int EKS_RESTORE_MODIFICATION_FAILED_HASH = HashingUtils::HashString("EKS_RESTORE_MODIFICATION_FAILED");
 static const int ACCESS_POINT_AVAILABLE_HASH = HashingUtils::HashString("ACCESS_POINT_AVAILABLE");
 static const int ACCESS_POINT_CREATION_FAILED_HASH = HashingUtils::HashString("ACCESS_POINT_CREATION_FAILED");
 static const int ACCESS_POINT_DELETED_HASH = HashingUtils::HashString("ACCESS_POINT_DELETED");
@@ -96,6 +98,10 @@ BackupVaultEvent GetBackupVaultEventForName(const Aws::String& name) {
     return BackupVaultEvent::EKS_RESTORE_OBJECT_SKIPPED;
   } else if (hashCode == EKS_BACKUP_OBJECT_FAILED_HASH) {
     return BackupVaultEvent::EKS_BACKUP_OBJECT_FAILED;
+  } else if (hashCode == EKS_RESTORE_MODIFICATION_SUCCESS_HASH) {
+    return BackupVaultEvent::EKS_RESTORE_MODIFICATION_SUCCESS;
+  } else if (hashCode == EKS_RESTORE_MODIFICATION_FAILED_HASH) {
+    return BackupVaultEvent::EKS_RESTORE_MODIFICATION_FAILED;
   } else if (hashCode == ACCESS_POINT_AVAILABLE_HASH) {
     return BackupVaultEvent::ACCESS_POINT_AVAILABLE;
   } else if (hashCode == ACCESS_POINT_CREATION_FAILED_HASH) {
@@ -170,6 +176,10 @@ Aws::String GetNameForBackupVaultEvent(BackupVaultEvent enumValue) {
       return "EKS_RESTORE_OBJECT_SKIPPED";
     case BackupVaultEvent::EKS_BACKUP_OBJECT_FAILED:
       return "EKS_BACKUP_OBJECT_FAILED";
+    case BackupVaultEvent::EKS_RESTORE_MODIFICATION_SUCCESS:
+      return "EKS_RESTORE_MODIFICATION_SUCCESS";
+    case BackupVaultEvent::EKS_RESTORE_MODIFICATION_FAILED:
+      return "EKS_RESTORE_MODIFICATION_FAILED";
     case BackupVaultEvent::ACCESS_POINT_AVAILABLE:
       return "ACCESS_POINT_AVAILABLE";
     case BackupVaultEvent::ACCESS_POINT_CREATION_FAILED:

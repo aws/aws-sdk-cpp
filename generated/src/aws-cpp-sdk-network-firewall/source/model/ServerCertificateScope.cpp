@@ -3,103 +3,471 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/network-firewall/model/ServerCertificateScope.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace NetworkFirewall {
 namespace Model {
 
-ServerCertificateScope::ServerCertificateScope(JsonView jsonValue) { *this = jsonValue; }
+ServerCertificateScope::ServerCertificateScope(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-ServerCertificateScope& ServerCertificateScope::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("Sources")) {
-    Aws::Utils::Array<JsonView> sourcesJsonList = jsonValue.GetArray("Sources");
-    for (unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex) {
-      m_sources.push_back(sourcesJsonList[sourcesIndex].AsObject());
+ServerCertificateScope& ServerCertificateScope::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "Sources") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_sources.push_back(Address(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_sources.push_back(Address(decoder));
+                    }
+                  }
+                }
+                m_sourcesHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "Destinations") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_destinations.push_back(Address(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_destinations.push_back(Address(decoder));
+                    }
+                  }
+                }
+                m_destinationsHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "SourcePorts") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_sourcePorts.push_back(PortRange(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_sourcePorts.push_back(PortRange(decoder));
+                    }
+                  }
+                }
+                m_sourcePortsHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "DestinationPorts") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_destinationPorts.push_back(PortRange(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_destinationPorts.push_back(PortRange(decoder));
+                    }
+                  }
+                }
+                m_destinationPortsHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "Protocols") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        auto peekType_1 = decoder->PeekType();
+                        if (peekType_1.has_value()) {
+                          if (peekType_1.value() == Aws::Crt::Cbor::CborType::UInt) {
+                            auto val = decoder->PopNextUnsignedIntVal();
+                            if (val.has_value()) {
+                              m_protocols.push_back(static_cast<int64_t>(val.value()));
+                            }
+                          } else {
+                            auto val = decoder->PopNextNegativeIntVal();
+                            if (val.has_value()) {
+                              m_protocols.push_back(static_cast<int64_t>(1 - val.value()));
+                            }
+                          }
+                        }
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto peekType_1 = decoder->PeekType();
+                      if (peekType_1.has_value()) {
+                        if (peekType_1.value() == Aws::Crt::Cbor::CborType::UInt) {
+                          auto val = decoder->PopNextUnsignedIntVal();
+                          if (val.has_value()) {
+                            m_protocols.push_back(static_cast<int64_t>(val.value()));
+                          }
+                        } else {
+                          auto val = decoder->PopNextNegativeIntVal();
+                          if (val.has_value()) {
+                            m_protocols.push_back(static_cast<int64_t>(1 - val.value()));
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                m_protocolsHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("ServerCertificateScope", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "Sources") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_sources.push_back(Address(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_sources.push_back(Address(decoder));
+                  }
+                }
+              }
+              m_sourcesHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "Destinations") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_destinations.push_back(Address(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_destinations.push_back(Address(decoder));
+                  }
+                }
+              }
+              m_destinationsHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "SourcePorts") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_sourcePorts.push_back(PortRange(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_sourcePorts.push_back(PortRange(decoder));
+                  }
+                }
+              }
+              m_sourcePortsHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "DestinationPorts") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_destinationPorts.push_back(PortRange(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_destinationPorts.push_back(PortRange(decoder));
+                  }
+                }
+              }
+              m_destinationPortsHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "Protocols") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      auto peekType_1 = decoder->PeekType();
+                      if (peekType_1.has_value()) {
+                        if (peekType_1.value() == Aws::Crt::Cbor::CborType::UInt) {
+                          auto val = decoder->PopNextUnsignedIntVal();
+                          if (val.has_value()) {
+                            m_protocols.push_back(static_cast<int64_t>(val.value()));
+                          }
+                        } else {
+                          auto val = decoder->PopNextNegativeIntVal();
+                          if (val.has_value()) {
+                            m_protocols.push_back(static_cast<int64_t>(1 - val.value()));
+                          }
+                        }
+                      }
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto peekType_1 = decoder->PeekType();
+                    if (peekType_1.has_value()) {
+                      if (peekType_1.value() == Aws::Crt::Cbor::CborType::UInt) {
+                        auto val = decoder->PopNextUnsignedIntVal();
+                        if (val.has_value()) {
+                          m_protocols.push_back(static_cast<int64_t>(val.value()));
+                        }
+                      } else {
+                        auto val = decoder->PopNextNegativeIntVal();
+                        if (val.has_value()) {
+                          m_protocols.push_back(static_cast<int64_t>(1 - val.value()));
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              m_protocolsHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
     }
-    m_sourcesHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("Destinations")) {
-    Aws::Utils::Array<JsonView> destinationsJsonList = jsonValue.GetArray("Destinations");
-    for (unsigned destinationsIndex = 0; destinationsIndex < destinationsJsonList.GetLength(); ++destinationsIndex) {
-      m_destinations.push_back(destinationsJsonList[destinationsIndex].AsObject());
-    }
-    m_destinationsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("SourcePorts")) {
-    Aws::Utils::Array<JsonView> sourcePortsJsonList = jsonValue.GetArray("SourcePorts");
-    for (unsigned sourcePortsIndex = 0; sourcePortsIndex < sourcePortsJsonList.GetLength(); ++sourcePortsIndex) {
-      m_sourcePorts.push_back(sourcePortsJsonList[sourcePortsIndex].AsObject());
-    }
-    m_sourcePortsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("DestinationPorts")) {
-    Aws::Utils::Array<JsonView> destinationPortsJsonList = jsonValue.GetArray("DestinationPorts");
-    for (unsigned destinationPortsIndex = 0; destinationPortsIndex < destinationPortsJsonList.GetLength(); ++destinationPortsIndex) {
-      m_destinationPorts.push_back(destinationPortsJsonList[destinationPortsIndex].AsObject());
-    }
-    m_destinationPortsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("Protocols")) {
-    Aws::Utils::Array<JsonView> protocolsJsonList = jsonValue.GetArray("Protocols");
-    for (unsigned protocolsIndex = 0; protocolsIndex < protocolsJsonList.GetLength(); ++protocolsIndex) {
-      m_protocols.push_back(protocolsJsonList[protocolsIndex].AsInteger());
-    }
-    m_protocolsHasBeenSet = true;
-  }
+
   return *this;
 }
 
-JsonValue ServerCertificateScope::Jsonize() const {
-  JsonValue payload;
+void ServerCertificateScope::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_sourcesHasBeenSet) {
+    mapSize++;
+  }
+  if (m_destinationsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_sourcePortsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_destinationPortsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_protocolsHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_sourcesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> sourcesJsonList(m_sources.size());
-    for (unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex) {
-      sourcesJsonList[sourcesIndex].AsObject(m_sources[sourcesIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Sources"));
+    encoder.WriteArrayStart(m_sources.size());
+    for (const auto& item_0 : m_sources) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("Sources", std::move(sourcesJsonList));
   }
 
   if (m_destinationsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> destinationsJsonList(m_destinations.size());
-    for (unsigned destinationsIndex = 0; destinationsIndex < destinationsJsonList.GetLength(); ++destinationsIndex) {
-      destinationsJsonList[destinationsIndex].AsObject(m_destinations[destinationsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Destinations"));
+    encoder.WriteArrayStart(m_destinations.size());
+    for (const auto& item_0 : m_destinations) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("Destinations", std::move(destinationsJsonList));
   }
 
   if (m_sourcePortsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> sourcePortsJsonList(m_sourcePorts.size());
-    for (unsigned sourcePortsIndex = 0; sourcePortsIndex < sourcePortsJsonList.GetLength(); ++sourcePortsIndex) {
-      sourcePortsJsonList[sourcePortsIndex].AsObject(m_sourcePorts[sourcePortsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("SourcePorts"));
+    encoder.WriteArrayStart(m_sourcePorts.size());
+    for (const auto& item_0 : m_sourcePorts) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("SourcePorts", std::move(sourcePortsJsonList));
   }
 
   if (m_destinationPortsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> destinationPortsJsonList(m_destinationPorts.size());
-    for (unsigned destinationPortsIndex = 0; destinationPortsIndex < destinationPortsJsonList.GetLength(); ++destinationPortsIndex) {
-      destinationPortsJsonList[destinationPortsIndex].AsObject(m_destinationPorts[destinationPortsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("DestinationPorts"));
+    encoder.WriteArrayStart(m_destinationPorts.size());
+    for (const auto& item_0 : m_destinationPorts) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("DestinationPorts", std::move(destinationPortsJsonList));
   }
 
   if (m_protocolsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> protocolsJsonList(m_protocols.size());
-    for (unsigned protocolsIndex = 0; protocolsIndex < protocolsJsonList.GetLength(); ++protocolsIndex) {
-      protocolsJsonList[protocolsIndex].AsInteger(m_protocols[protocolsIndex]);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Protocols"));
+    encoder.WriteArrayStart(m_protocols.size());
+    for (const auto& item_0 : m_protocols) {
+      (item_0 >= 0) ? encoder.WriteUInt(item_0) : encoder.WriteNegInt(item_0);
     }
-    payload.WithArray("Protocols", std::move(protocolsJsonList));
   }
-
-  return payload;
 }
 
 }  // namespace Model

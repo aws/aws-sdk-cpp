@@ -7,15 +7,15 @@
 #include <aws/comprehend/Comprehend_EXPORTS.h>
 #include <aws/comprehend/model/TargetedSentimentEntity.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace Comprehend {
 namespace Model {
@@ -29,21 +29,21 @@ namespace Model {
 class BatchDetectTargetedSentimentItemResult {
  public:
   AWS_COMPREHEND_API BatchDetectTargetedSentimentItemResult() = default;
-  AWS_COMPREHEND_API BatchDetectTargetedSentimentItemResult(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPREHEND_API BatchDetectTargetedSentimentItemResult& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_COMPREHEND_API BatchDetectTargetedSentimentItemResult(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPREHEND_API BatchDetectTargetedSentimentItemResult& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPREHEND_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
    * <p>The zero-based index of this result in the input list.</p>
    */
-  inline int GetIndex() const { return m_index; }
+  inline int64_t GetIndex() const { return m_index; }
   inline bool IndexHasBeenSet() const { return m_indexHasBeenSet; }
-  inline void SetIndex(int value) {
+  inline void SetIndex(int64_t value) {
     m_indexHasBeenSet = true;
     m_index = value;
   }
-  inline BatchDetectTargetedSentimentItemResult& WithIndex(int value) {
+  inline BatchDetectTargetedSentimentItemResult& WithIndex(int64_t value) {
     SetIndex(value);
     return *this;
   }
@@ -73,7 +73,7 @@ class BatchDetectTargetedSentimentItemResult {
   }
   ///@}
  private:
-  int m_index{0};
+  int64_t m_index{0};
 
   Aws::Vector<TargetedSentimentEntity> m_entities;
   bool m_indexHasBeenSet = false;

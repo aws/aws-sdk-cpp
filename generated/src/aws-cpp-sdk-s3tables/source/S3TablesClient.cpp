@@ -35,6 +35,7 @@
 #include <aws/s3tables/model/DeleteTableRequest.h>
 #include <aws/s3tables/model/GetNamespaceRequest.h>
 #include <aws/s3tables/model/GetTableBucketEncryptionRequest.h>
+#include <aws/s3tables/model/GetTableBucketLoggingRequest.h>
 #include <aws/s3tables/model/GetTableBucketMaintenanceConfigurationRequest.h>
 #include <aws/s3tables/model/GetTableBucketMetricsConfigurationRequest.h>
 #include <aws/s3tables/model/GetTableBucketPolicyRequest.h>
@@ -59,6 +60,7 @@
 #include <aws/s3tables/model/ListTablesRequest.h>
 #include <aws/s3tables/model/ListTagsForResourceRequest.h>
 #include <aws/s3tables/model/PutTableBucketEncryptionRequest.h>
+#include <aws/s3tables/model/PutTableBucketLoggingRequest.h>
 #include <aws/s3tables/model/PutTableBucketMaintenanceConfigurationRequest.h>
 #include <aws/s3tables/model/PutTableBucketMetricsConfigurationRequest.h>
 #include <aws/s3tables/model/PutTableBucketPolicyRequest.h>
@@ -567,6 +569,25 @@ GetTableBucketEncryptionOutcome S3TablesClient::GetTableBucketEncryption(const G
                             : GetTableBucketEncryptionOutcome(std::move(result.GetError()));
 }
 
+GetTableBucketLoggingOutcome S3TablesClient::GetTableBucketLogging(const GetTableBucketLoggingRequest& request) const {
+  if (!request.TableBucketARNHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetTableBucketLogging", "Required field: TableBucketARN, is not set");
+    return GetTableBucketLoggingOutcome(Aws::Client::AWSError<S3TablesErrors>(S3TablesErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                              "Missing required field [TableBucketARN]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/buckets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTableBucketARN());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/logging");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetTableBucketLoggingOutcome(result.GetResultWithOwnership())
+                            : GetTableBucketLoggingOutcome(std::move(result.GetError()));
+}
+
 GetTableBucketMaintenanceConfigurationOutcome S3TablesClient::GetTableBucketMaintenanceConfiguration(
     const GetTableBucketMaintenanceConfigurationRequest& request) const {
   if (!request.TableBucketARNHasBeenSet()) {
@@ -1020,6 +1041,25 @@ PutTableBucketEncryptionOutcome S3TablesClient::PutTableBucketEncryption(const P
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
   return result.IsSuccess() ? PutTableBucketEncryptionOutcome(result.GetResultWithOwnership())
                             : PutTableBucketEncryptionOutcome(std::move(result.GetError()));
+}
+
+PutTableBucketLoggingOutcome S3TablesClient::PutTableBucketLogging(const PutTableBucketLoggingRequest& request) const {
+  if (!request.TableBucketARNHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("PutTableBucketLogging", "Required field: TableBucketARN, is not set");
+    return PutTableBucketLoggingOutcome(Aws::Client::AWSError<S3TablesErrors>(S3TablesErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                              "Missing required field [TableBucketARN]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/buckets/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetTableBucketARN());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/logging");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? PutTableBucketLoggingOutcome(result.GetResultWithOwnership())
+                            : PutTableBucketLoggingOutcome(std::move(result.GetError()));
 }
 
 PutTableBucketMaintenanceConfigurationOutcome S3TablesClient::PutTableBucketMaintenanceConfiguration(

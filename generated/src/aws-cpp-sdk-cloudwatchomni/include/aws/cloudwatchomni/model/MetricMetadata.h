@@ -5,6 +5,8 @@
 
 #pragma once
 #include <aws/cloudwatchomni/CloudWatchOmni_EXPORTS.h>
+#include <aws/cloudwatchomni/model/MetricAggregationTemporality.h>
+#include <aws/cloudwatchomni/model/MetricMonotonicity.h>
 #include <aws/cloudwatchomni/model/MetricSemantics.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -22,8 +24,8 @@ namespace CloudWatchOmni {
 namespace Model {
 
 /**
- * <p>A single metric observed on a context graph node.</p><p><h3>See Also:</h3>
- * <a
+ * <p>A single metric observed on a context graph node or edge.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/cloudwatchomni-2025-01-01/MetricMetadata">AWS
  * API Reference</a></p>
  */
@@ -97,12 +99,12 @@ class MetricMetadata {
    * are the metric store's own label names, not bare OTel attribute names: service
    * identity arrives as &quot;@resource.service.name&quot; and
    * &quot;@resource.service.namespace&quot;, and the instrumentation scope as
-   * &quot;@instrumentation.@name&quot;, while span-derived metrics label the service
-   * as a bare &quot;service.name&quot;. Cloud provider, account and region are not
-   * repeated per metric — read those from the node. Values are RAW, deliberately NOT
-   * the node's normalized or merged identity, so a selector built from them matches
-   * the emitted series. A merged node can carry different values per metric, which
-   * is why these live here rather than on the node.</p>
+   * &quot;@instrumentation.@name&quot;. Span-derived metrics can additionally carry
+   * the service as a bare data point &quot;service.name&quot; label. Cloud provider,
+   * account and region are not repeated per metric — read those from the node.
+   * Values are RAW, deliberately NOT the node's merged identity, so a selector built
+   * from them matches the emitted series. A merged node can carry different values
+   * per metric, which is why these live here rather than on the node.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const { return m_attributes; }
   inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
@@ -141,6 +143,42 @@ class MetricMetadata {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Aggregation temporality for the selected metric stream represented by this
+   * metadata entry. Present when known, including cumulative for OTel Summary
+   * metrics. Absent for Gauge metrics or when the information is unavailable.</p>
+   */
+  inline MetricAggregationTemporality GetAggregationTemporality() const { return m_aggregationTemporality; }
+  inline bool AggregationTemporalityHasBeenSet() const { return m_aggregationTemporalityHasBeenSet; }
+  inline void SetAggregationTemporality(MetricAggregationTemporality value) {
+    m_aggregationTemporalityHasBeenSet = true;
+    m_aggregationTemporality = value;
+  }
+  inline MetricMetadata& WithAggregationTemporality(MetricAggregationTemporality value) {
+    SetAggregationTemporality(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Whether the selected Sum metric stream represented by this metadata entry is
+   * a non-negative accumulation. Absent for metrics other than Sum or when the
+   * information is unavailable.</p>
+   */
+  inline MetricMonotonicity GetMonotonicity() const { return m_monotonicity; }
+  inline bool MonotonicityHasBeenSet() const { return m_monotonicityHasBeenSet; }
+  inline void SetMonotonicity(MetricMonotonicity value) {
+    m_monotonicityHasBeenSet = true;
+    m_monotonicity = value;
+  }
+  inline MetricMetadata& WithMonotonicity(MetricMonotonicity value) {
+    SetMonotonicity(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -151,11 +189,17 @@ class MetricMetadata {
   Aws::Map<Aws::String, Aws::String> m_attributes;
 
   MetricSemantics m_semantics;
+
+  MetricAggregationTemporality m_aggregationTemporality{MetricAggregationTemporality::NOT_SET};
+
+  MetricMonotonicity m_monotonicity{MetricMonotonicity::NOT_SET};
   bool m_nameHasBeenSet = false;
   bool m_preferredStatHasBeenSet = false;
   bool m_metricTypeHasBeenSet = false;
   bool m_attributesHasBeenSet = false;
   bool m_semanticsHasBeenSet = false;
+  bool m_aggregationTemporalityHasBeenSet = false;
+  bool m_monotonicityHasBeenSet = false;
 };
 
 }  // namespace Model

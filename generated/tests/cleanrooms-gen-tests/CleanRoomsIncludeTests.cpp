@@ -484,6 +484,7 @@
 #include <aws/cleanrooms/model/ResourceStatus.h>
 #include <aws/cleanrooms/model/ResourceType.h>
 #include <aws/cleanrooms/model/ResultFormat.h>
+#include <aws/cleanrooms/model/RetryInfo.h>
 #include <aws/cleanrooms/model/S3Location.h>
 #include <aws/cleanrooms/model/ScalarFunctions.h>
 #include <aws/cleanrooms/model/Schema.h>

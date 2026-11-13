@@ -31,7 +31,8 @@ enum class ResourceType {
   ContactMethod,
   Distribution,
   Certificate,
-  Bucket
+  Bucket,
+  Subdomain
 };
 
 namespace ResourceTypeMapper {

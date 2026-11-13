@@ -3,139 +3,247 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/memorydb/model/CreateClusterRequest.h>
 
 #include <utility>
 
 using namespace Aws::MemoryDB::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String CreateClusterRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
+
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_clusterNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_nodeTypeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_multiRegionClusterNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_parameterGroupNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_descriptionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_numShardsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_numReplicasPerShardHasBeenSet) {
+    mapSize++;
+  }
+  if (m_subnetGroupNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_securityGroupIdsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_maintenanceWindowHasBeenSet) {
+    mapSize++;
+  }
+  if (m_portHasBeenSet) {
+    mapSize++;
+  }
+  if (m_snsTopicArnHasBeenSet) {
+    mapSize++;
+  }
+  if (m_tLSEnabledHasBeenSet) {
+    mapSize++;
+  }
+  if (m_kmsKeyIdHasBeenSet) {
+    mapSize++;
+  }
+  if (m_snapshotArnsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_snapshotNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_snapshotRetentionLimitHasBeenSet) {
+    mapSize++;
+  }
+  if (m_tagsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_snapshotWindowHasBeenSet) {
+    mapSize++;
+  }
+  if (m_aCLNameHasBeenSet) {
+    mapSize++;
+  }
+  if (m_engineHasBeenSet) {
+    mapSize++;
+  }
+  if (m_engineVersionHasBeenSet) {
+    mapSize++;
+  }
+  if (m_autoMinorVersionUpgradeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_dataTieringHasBeenSet) {
+    mapSize++;
+  }
+  if (m_networkTypeHasBeenSet) {
+    mapSize++;
+  }
+  if (m_ipDiscoveryHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_clusterNameHasBeenSet) {
-    payload.WithString("ClusterName", m_clusterName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ClusterName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_clusterName.c_str()));
   }
 
   if (m_nodeTypeHasBeenSet) {
-    payload.WithString("NodeType", m_nodeType);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("NodeType"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_nodeType.c_str()));
   }
 
   if (m_multiRegionClusterNameHasBeenSet) {
-    payload.WithString("MultiRegionClusterName", m_multiRegionClusterName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("MultiRegionClusterName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_multiRegionClusterName.c_str()));
   }
 
   if (m_parameterGroupNameHasBeenSet) {
-    payload.WithString("ParameterGroupName", m_parameterGroupName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ParameterGroupName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_parameterGroupName.c_str()));
   }
 
   if (m_descriptionHasBeenSet) {
-    payload.WithString("Description", m_description);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Description"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_description.c_str()));
   }
 
   if (m_numShardsHasBeenSet) {
-    payload.WithInteger("NumShards", m_numShards);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("NumShards"));
+    (m_numShards >= 0) ? encoder.WriteUInt(m_numShards) : encoder.WriteNegInt(m_numShards);
   }
 
   if (m_numReplicasPerShardHasBeenSet) {
-    payload.WithInteger("NumReplicasPerShard", m_numReplicasPerShard);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("NumReplicasPerShard"));
+    (m_numReplicasPerShard >= 0) ? encoder.WriteUInt(m_numReplicasPerShard) : encoder.WriteNegInt(m_numReplicasPerShard);
   }
 
   if (m_subnetGroupNameHasBeenSet) {
-    payload.WithString("SubnetGroupName", m_subnetGroupName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("SubnetGroupName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_subnetGroupName.c_str()));
   }
 
   if (m_securityGroupIdsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> securityGroupIdsJsonList(m_securityGroupIds.size());
-    for (unsigned securityGroupIdsIndex = 0; securityGroupIdsIndex < securityGroupIdsJsonList.GetLength(); ++securityGroupIdsIndex) {
-      securityGroupIdsJsonList[securityGroupIdsIndex].AsString(m_securityGroupIds[securityGroupIdsIndex]);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("SecurityGroupIds"));
+    encoder.WriteArrayStart(m_securityGroupIds.size());
+    for (const auto& item_0 : m_securityGroupIds) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
     }
-    payload.WithArray("SecurityGroupIds", std::move(securityGroupIdsJsonList));
   }
 
   if (m_maintenanceWindowHasBeenSet) {
-    payload.WithString("MaintenanceWindow", m_maintenanceWindow);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("MaintenanceWindow"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_maintenanceWindow.c_str()));
   }
 
   if (m_portHasBeenSet) {
-    payload.WithInteger("Port", m_port);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Port"));
+    (m_port >= 0) ? encoder.WriteUInt(m_port) : encoder.WriteNegInt(m_port);
   }
 
   if (m_snsTopicArnHasBeenSet) {
-    payload.WithString("SnsTopicArn", m_snsTopicArn);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("SnsTopicArn"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_snsTopicArn.c_str()));
   }
 
   if (m_tLSEnabledHasBeenSet) {
-    payload.WithBool("TLSEnabled", m_tLSEnabled);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("TLSEnabled"));
+    encoder.WriteBool(m_tLSEnabled);
   }
 
   if (m_kmsKeyIdHasBeenSet) {
-    payload.WithString("KmsKeyId", m_kmsKeyId);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("KmsKeyId"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_kmsKeyId.c_str()));
   }
 
   if (m_snapshotArnsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> snapshotArnsJsonList(m_snapshotArns.size());
-    for (unsigned snapshotArnsIndex = 0; snapshotArnsIndex < snapshotArnsJsonList.GetLength(); ++snapshotArnsIndex) {
-      snapshotArnsJsonList[snapshotArnsIndex].AsString(m_snapshotArns[snapshotArnsIndex]);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("SnapshotArns"));
+    encoder.WriteArrayStart(m_snapshotArns.size());
+    for (const auto& item_0 : m_snapshotArns) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
     }
-    payload.WithArray("SnapshotArns", std::move(snapshotArnsJsonList));
   }
 
   if (m_snapshotNameHasBeenSet) {
-    payload.WithString("SnapshotName", m_snapshotName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("SnapshotName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_snapshotName.c_str()));
   }
 
   if (m_snapshotRetentionLimitHasBeenSet) {
-    payload.WithInteger("SnapshotRetentionLimit", m_snapshotRetentionLimit);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("SnapshotRetentionLimit"));
+    (m_snapshotRetentionLimit >= 0) ? encoder.WriteUInt(m_snapshotRetentionLimit) : encoder.WriteNegInt(m_snapshotRetentionLimit);
   }
 
   if (m_tagsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
-    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
-      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Tags"));
+    encoder.WriteArrayStart(m_tags.size());
+    for (const auto& item_0 : m_tags) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("Tags", std::move(tagsJsonList));
   }
 
   if (m_snapshotWindowHasBeenSet) {
-    payload.WithString("SnapshotWindow", m_snapshotWindow);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("SnapshotWindow"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_snapshotWindow.c_str()));
   }
 
   if (m_aCLNameHasBeenSet) {
-    payload.WithString("ACLName", m_aCLName);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("ACLName"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_aCLName.c_str()));
   }
 
   if (m_engineHasBeenSet) {
-    payload.WithString("Engine", m_engine);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Engine"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_engine.c_str()));
   }
 
   if (m_engineVersionHasBeenSet) {
-    payload.WithString("EngineVersion", m_engineVersion);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("EngineVersion"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_engineVersion.c_str()));
   }
 
   if (m_autoMinorVersionUpgradeHasBeenSet) {
-    payload.WithBool("AutoMinorVersionUpgrade", m_autoMinorVersionUpgrade);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("AutoMinorVersionUpgrade"));
+    encoder.WriteBool(m_autoMinorVersionUpgrade);
   }
 
   if (m_dataTieringHasBeenSet) {
-    payload.WithBool("DataTiering", m_dataTiering);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("DataTiering"));
+    encoder.WriteBool(m_dataTiering);
   }
 
   if (m_networkTypeHasBeenSet) {
-    payload.WithString("NetworkType", NetworkTypeMapper::GetNameForNetworkType(m_networkType));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("NetworkType"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(NetworkTypeMapper::GetNameForNetworkType(m_networkType).c_str()));
   }
 
   if (m_ipDiscoveryHasBeenSet) {
-    payload.WithString("IpDiscovery", IpDiscoveryMapper::GetNameForIpDiscovery(m_ipDiscovery));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("IpDiscovery"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(IpDiscoveryMapper::GetNameForIpDiscovery(m_ipDiscovery).c_str()));
   }
-
-  return payload.View().WriteReadable();
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection CreateClusterRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonMemoryDB.CreateCluster"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

@@ -4,51 +4,131 @@
  */
 
 #include <aws/comprehend/model/DatasetEntityRecognizerInputDataConfig.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace Comprehend {
 namespace Model {
 
-DatasetEntityRecognizerInputDataConfig::DatasetEntityRecognizerInputDataConfig(JsonView jsonValue) { *this = jsonValue; }
+DatasetEntityRecognizerInputDataConfig::DatasetEntityRecognizerInputDataConfig(
+    const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  *this = decoder;
+}
 
-DatasetEntityRecognizerInputDataConfig& DatasetEntityRecognizerInputDataConfig::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("Annotations")) {
-    m_annotations = jsonValue.GetObject("Annotations");
-    m_annotationsHasBeenSet = true;
+DatasetEntityRecognizerInputDataConfig& DatasetEntityRecognizerInputDataConfig::operator=(
+    const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "Annotations") {
+                m_annotations = DatasetEntityRecognizerAnnotations(decoder);
+                m_annotationsHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "Documents") {
+                m_documents = DatasetEntityRecognizerDocuments(decoder);
+                m_documentsHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "EntityList") {
+                m_entityList = DatasetEntityRecognizerEntityList(decoder);
+                m_entityListHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("DatasetEntityRecognizerInputDataConfig", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "Annotations") {
+              m_annotations = DatasetEntityRecognizerAnnotations(decoder);
+              m_annotationsHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "Documents") {
+              m_documents = DatasetEntityRecognizerDocuments(decoder);
+              m_documentsHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "EntityList") {
+              m_entityList = DatasetEntityRecognizerEntityList(decoder);
+              m_entityListHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
+    }
   }
-  if (jsonValue.ValueExists("Documents")) {
-    m_documents = jsonValue.GetObject("Documents");
-    m_documentsHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("EntityList")) {
-    m_entityList = jsonValue.GetObject("EntityList");
-    m_entityListHasBeenSet = true;
-  }
+
   return *this;
 }
 
-JsonValue DatasetEntityRecognizerInputDataConfig::Jsonize() const {
-  JsonValue payload;
+void DatasetEntityRecognizerInputDataConfig::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_annotationsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_documentsHasBeenSet) {
+    mapSize++;
+  }
+  if (m_entityListHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_annotationsHasBeenSet) {
-    payload.WithObject("Annotations", m_annotations.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Annotations"));
+    m_annotations.CborEncode(encoder);
   }
 
   if (m_documentsHasBeenSet) {
-    payload.WithObject("Documents", m_documents.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("Documents"));
+    m_documents.CborEncode(encoder);
   }
 
   if (m_entityListHasBeenSet) {
-    payload.WithObject("EntityList", m_entityList.Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("EntityList"));
+    m_entityList.CborEncode(encoder);
   }
-
-  return payload;
 }
 
 }  // namespace Model

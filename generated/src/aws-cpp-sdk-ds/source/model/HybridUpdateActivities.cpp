@@ -3,63 +3,212 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/ds/model/HybridUpdateActivities.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace DirectoryService {
 namespace Model {
 
-HybridUpdateActivities::HybridUpdateActivities(JsonView jsonValue) { *this = jsonValue; }
+HybridUpdateActivities::HybridUpdateActivities(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-HybridUpdateActivities& HybridUpdateActivities::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("SelfManagedInstances")) {
-    Aws::Utils::Array<JsonView> selfManagedInstancesJsonList = jsonValue.GetArray("SelfManagedInstances");
-    for (unsigned selfManagedInstancesIndex = 0; selfManagedInstancesIndex < selfManagedInstancesJsonList.GetLength();
-         ++selfManagedInstancesIndex) {
-      m_selfManagedInstances.push_back(selfManagedInstancesJsonList[selfManagedInstancesIndex].AsObject());
+HybridUpdateActivities& HybridUpdateActivities::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "SelfManagedInstances") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_selfManagedInstances.push_back(HybridUpdateInfoEntry(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_selfManagedInstances.push_back(HybridUpdateInfoEntry(decoder));
+                    }
+                  }
+                }
+                m_selfManagedInstancesHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "HybridAdministratorAccount") {
+                auto peekType_0 = decoder->PeekType();
+                if (peekType_0.has_value() &&
+                    (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                  if (peekType_0.value() == CborType::ArrayStart) {
+                    auto listSize_0 = decoder->PopNextArrayStart();
+                    if (listSize_0.has_value()) {
+                      for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                        m_hybridAdministratorAccount.push_back(HybridUpdateInfoEntry(decoder));
+                      }
+                    }
+                  } else  // IndefArrayStart
+                  {
+                    decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType_0 = decoder->PeekType();
+                      if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                        if (nextType_0.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      m_hybridAdministratorAccount.push_back(HybridUpdateInfoEntry(decoder));
+                    }
+                  }
+                }
+                m_hybridAdministratorAccountHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("HybridUpdateActivities", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "SelfManagedInstances") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_selfManagedInstances.push_back(HybridUpdateInfoEntry(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_selfManagedInstances.push_back(HybridUpdateInfoEntry(decoder));
+                  }
+                }
+              }
+              m_selfManagedInstancesHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "HybridAdministratorAccount") {
+              auto peekType_0 = decoder->PeekType();
+              if (peekType_0.has_value() &&
+                  (peekType_0.value() == CborType::ArrayStart || peekType_0.value() == CborType::IndefArrayStart)) {
+                if (peekType_0.value() == CborType::ArrayStart) {
+                  auto listSize_0 = decoder->PopNextArrayStart();
+                  if (listSize_0.has_value()) {
+                    for (size_t j_0 = 0; j_0 < listSize_0.value(); j_0++) {
+                      m_hybridAdministratorAccount.push_back(HybridUpdateInfoEntry(decoder));
+                    }
+                  }
+                } else  // IndefArrayStart
+                {
+                  decoder->ConsumeNextSingleElement();  // consume the IndefArrayStart
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType_0 = decoder->PeekType();
+                    if (!nextType_0.has_value() || nextType_0.value() == CborType::Break) {
+                      if (nextType_0.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    m_hybridAdministratorAccount.push_back(HybridUpdateInfoEntry(decoder));
+                  }
+                }
+              }
+              m_hybridAdministratorAccountHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
     }
-    m_selfManagedInstancesHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("HybridAdministratorAccount")) {
-    Aws::Utils::Array<JsonView> hybridAdministratorAccountJsonList = jsonValue.GetArray("HybridAdministratorAccount");
-    for (unsigned hybridAdministratorAccountIndex = 0; hybridAdministratorAccountIndex < hybridAdministratorAccountJsonList.GetLength();
-         ++hybridAdministratorAccountIndex) {
-      m_hybridAdministratorAccount.push_back(hybridAdministratorAccountJsonList[hybridAdministratorAccountIndex].AsObject());
-    }
-    m_hybridAdministratorAccountHasBeenSet = true;
-  }
+
   return *this;
 }
 
-JsonValue HybridUpdateActivities::Jsonize() const {
-  JsonValue payload;
+void HybridUpdateActivities::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_selfManagedInstancesHasBeenSet) {
+    mapSize++;
+  }
+  if (m_hybridAdministratorAccountHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_selfManagedInstancesHasBeenSet) {
-    Aws::Utils::Array<JsonValue> selfManagedInstancesJsonList(m_selfManagedInstances.size());
-    for (unsigned selfManagedInstancesIndex = 0; selfManagedInstancesIndex < selfManagedInstancesJsonList.GetLength();
-         ++selfManagedInstancesIndex) {
-      selfManagedInstancesJsonList[selfManagedInstancesIndex].AsObject(m_selfManagedInstances[selfManagedInstancesIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("SelfManagedInstances"));
+    encoder.WriteArrayStart(m_selfManagedInstances.size());
+    for (const auto& item_0 : m_selfManagedInstances) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("SelfManagedInstances", std::move(selfManagedInstancesJsonList));
   }
 
   if (m_hybridAdministratorAccountHasBeenSet) {
-    Aws::Utils::Array<JsonValue> hybridAdministratorAccountJsonList(m_hybridAdministratorAccount.size());
-    for (unsigned hybridAdministratorAccountIndex = 0; hybridAdministratorAccountIndex < hybridAdministratorAccountJsonList.GetLength();
-         ++hybridAdministratorAccountIndex) {
-      hybridAdministratorAccountJsonList[hybridAdministratorAccountIndex].AsObject(
-          m_hybridAdministratorAccount[hybridAdministratorAccountIndex].Jsonize());
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("HybridAdministratorAccount"));
+    encoder.WriteArrayStart(m_hybridAdministratorAccount.size());
+    for (const auto& item_0 : m_hybridAdministratorAccount) {
+      item_0.CborEncode(encoder);
     }
-    payload.WithArray("HybridAdministratorAccount", std::move(hybridAdministratorAccountJsonList));
   }
-
-  return payload;
 }
 
 }  // namespace Model

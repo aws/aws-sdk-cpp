@@ -27,7 +27,8 @@ enum class Permission {
   GRANT_WITH_LF_TAG_EXPRESSION,
   CREATE_LF_TAG_EXPRESSION,
   CREATE_CATALOG,
-  SUPER_USER
+  SUPER_USER,
+  EXECUTE
 };
 
 namespace PermissionMapper {

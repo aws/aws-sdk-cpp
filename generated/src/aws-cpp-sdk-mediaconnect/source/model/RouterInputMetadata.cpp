@@ -22,6 +22,10 @@ RouterInputMetadata& RouterInputMetadata::operator=(JsonView jsonValue) {
     m_transportStreamMediaInfo = jsonValue.GetObject("transportStreamMediaInfo");
     m_transportStreamMediaInfoHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("rtmpInfo")) {
+    m_rtmpInfo = jsonValue.GetObject("rtmpInfo");
+    m_rtmpInfoHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue RouterInputMetadata::Jsonize() const {
 
   if (m_transportStreamMediaInfoHasBeenSet) {
     payload.WithObject("transportStreamMediaInfo", m_transportStreamMediaInfo.Jsonize());
+  }
+
+  if (m_rtmpInfoHasBeenSet) {
+    payload.WithObject("rtmpInfo", m_rtmpInfo.Jsonize());
   }
 
   return payload;

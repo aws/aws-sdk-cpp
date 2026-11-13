@@ -13,6 +13,7 @@
 #include <aws/pcs/model/CustomLaunchTemplate.h>
 #include <aws/pcs/model/ErrorInfo.h>
 #include <aws/pcs/model/InstanceConfig.h>
+#include <aws/pcs/model/LaunchTemplateMode.h>
 #include <aws/pcs/model/NodeLifecycleActions.h>
 #include <aws/pcs/model/PurchaseOption.h>
 #include <aws/pcs/model/ScalingConfiguration.h>
@@ -41,6 +42,75 @@ class ComputeNodeGroup {
   AWS_PCS_API ComputeNodeGroup(Aws::Utils::Json::JsonView jsonValue);
   AWS_PCS_API ComputeNodeGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
   AWS_PCS_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p>The ID of the Amazon Machine Image (AMI) that PCS uses to launch instances.
+   * If not present, PCS uses the AMI ID specified in the custom launch template.</p>
+   */
+  inline const Aws::String& GetAmiId() const { return m_amiId; }
+  inline bool AmiIdHasBeenSet() const { return m_amiIdHasBeenSet; }
+  template <typename AmiIdT = Aws::String>
+  void SetAmiId(AmiIdT&& value) {
+    m_amiIdHasBeenSet = true;
+    m_amiId = std::forward<AmiIdT>(value);
+  }
+  template <typename AmiIdT = Aws::String>
+  ComputeNodeGroup& WithAmiId(AmiIdT&& value) {
+    SetAmiId(std::forward<AmiIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The IDs of the EC2 security groups configured directly on the compute node
+   * group. PCS uses these security groups instead of the security groups in the
+   * custom launch template. This value isn't present if security groups aren't
+   * configured directly on the compute node group. In that case, PCS uses the
+   * security groups in the custom launch template.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const { return m_securityGroupIds; }
+  inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
+  template <typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+  void SetSecurityGroupIds(SecurityGroupIdsT&& value) {
+    m_securityGroupIdsHasBeenSet = true;
+    m_securityGroupIds = std::forward<SecurityGroupIdsT>(value);
+  }
+  template <typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+  ComputeNodeGroup& WithSecurityGroupIds(SecurityGroupIdsT&& value) {
+    SetSecurityGroupIds(std::forward<SecurityGroupIdsT>(value));
+    return *this;
+  }
+  template <typename SecurityGroupIdsT = Aws::String>
+  ComputeNodeGroup& AddSecurityGroupIds(SecurityGroupIdsT&& value) {
+    m_securityGroupIdsHasBeenSet = true;
+    m_securityGroupIds.emplace_back(std::forward<SecurityGroupIdsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the EC2 key pair configured directly on the compute node group.
+   * PCS uses this key pair instead of the key pair in the custom launch template.
+   * This value isn't present if a key pair isn't configured directly on the compute
+   * node group. In that case, PCS uses the key pair in the custom launch template,
+   * if one is specified.</p>
+   */
+  inline const Aws::String& GetSshKeyName() const { return m_sshKeyName; }
+  inline bool SshKeyNameHasBeenSet() const { return m_sshKeyNameHasBeenSet; }
+  template <typename SshKeyNameT = Aws::String>
+  void SetSshKeyName(SshKeyNameT&& value) {
+    m_sshKeyNameHasBeenSet = true;
+    m_sshKeyName = std::forward<SshKeyNameT>(value);
+  }
+  template <typename SshKeyNameT = Aws::String>
+  ComputeNodeGroup& WithSshKeyName(SshKeyNameT&& value) {
+    SetSshKeyName(std::forward<SshKeyNameT>(value));
+    return *this;
+  }
+  ///@}
 
   ///@{
   /**
@@ -179,26 +249,6 @@ class ComputeNodeGroup {
 
   ///@{
   /**
-   * <p>The ID of the Amazon Machine Image (AMI) that PCS uses to launch instances.
-   * If not provided, PCS uses the AMI ID specified in the custom launch
-   * template.</p>
-   */
-  inline const Aws::String& GetAmiId() const { return m_amiId; }
-  inline bool AmiIdHasBeenSet() const { return m_amiIdHasBeenSet; }
-  template <typename AmiIdT = Aws::String>
-  void SetAmiId(AmiIdT&& value) {
-    m_amiIdHasBeenSet = true;
-    m_amiId = std::forward<AmiIdT>(value);
-  }
-  template <typename AmiIdT = Aws::String>
-  ComputeNodeGroup& WithAmiId(AmiIdT&& value) {
-    SetAmiId(std::forward<AmiIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The list of subnet IDs where instances are provisioned by the compute node
    * group. The subnets must be in the same VPC as the cluster.</p>
    */
@@ -256,7 +306,33 @@ class ComputeNodeGroup {
   ///@}
 
   ///@{
+  /**
+   * <p>Indicates whether the compute node group uses a custom launch template or a
+   * launch template that PCS manages. The default value is <code>CUSTOM</code>.</p>
+   * <p>Valid values:</p> <ul> <li> <p> <code>CUSTOM</code> – The compute node group
+   * uses the launch template in <code>customLaunchTemplate</code>.</p> </li> <li>
+   * <p> <code>MANAGED</code> – PCS creates and manages the launch template.</p>
+   * </li> </ul>
+   */
+  inline LaunchTemplateMode GetLaunchTemplateMode() const { return m_launchTemplateMode; }
+  inline bool LaunchTemplateModeHasBeenSet() const { return m_launchTemplateModeHasBeenSet; }
+  inline void SetLaunchTemplateMode(LaunchTemplateMode value) {
+    m_launchTemplateModeHasBeenSet = true;
+    m_launchTemplateMode = value;
+  }
+  inline ComputeNodeGroup& WithLaunchTemplateMode(LaunchTemplateMode value) {
+    SetLaunchTemplateMode(value);
+    return *this;
+  }
+  ///@}
 
+  ///@{
+  /**
+   * <p>The custom Amazon EC2 launch template associated with the compute node group.
+   * This value is present when <code>launchTemplateMode</code> is
+   * <code>CUSTOM</code> and isn't present when <code>launchTemplateMode</code> is
+   * <code>MANAGED</code>.</p>
+   */
   inline const CustomLaunchTemplate& GetCustomLaunchTemplate() const { return m_customLaunchTemplate; }
   inline bool CustomLaunchTemplateHasBeenSet() const { return m_customLaunchTemplateHasBeenSet; }
   template <typename CustomLaunchTemplateT = CustomLaunchTemplate>
@@ -413,6 +489,12 @@ class ComputeNodeGroup {
   }
   ///@}
  private:
+  Aws::String m_amiId;
+
+  Aws::Vector<Aws::String> m_securityGroupIds;
+
+  Aws::String m_sshKeyName;
+
   Aws::String m_name;
 
   Aws::String m_id;
@@ -427,11 +509,11 @@ class ComputeNodeGroup {
 
   ComputeNodeGroupStatus m_status{ComputeNodeGroupStatus::NOT_SET};
 
-  Aws::String m_amiId;
-
   Aws::Vector<Aws::String> m_subnetIds;
 
   PurchaseOption m_purchaseOption{PurchaseOption::NOT_SET};
+
+  LaunchTemplateMode m_launchTemplateMode{LaunchTemplateMode::NOT_SET};
 
   CustomLaunchTemplate m_customLaunchTemplate;
 
@@ -448,6 +530,9 @@ class ComputeNodeGroup {
   NodeLifecycleActions m_nodeLifecycleActions;
 
   Aws::Vector<ErrorInfo> m_errorInfo;
+  bool m_amiIdHasBeenSet = false;
+  bool m_securityGroupIdsHasBeenSet = false;
+  bool m_sshKeyNameHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_arnHasBeenSet = false;
@@ -455,9 +540,9 @@ class ComputeNodeGroup {
   bool m_createdAtHasBeenSet = false;
   bool m_modifiedAtHasBeenSet = false;
   bool m_statusHasBeenSet = false;
-  bool m_amiIdHasBeenSet = false;
   bool m_subnetIdsHasBeenSet = false;
   bool m_purchaseOptionHasBeenSet = false;
+  bool m_launchTemplateModeHasBeenSet = false;
   bool m_customLaunchTemplateHasBeenSet = false;
   bool m_iamInstanceProfileArnHasBeenSet = false;
   bool m_scalingConfigurationHasBeenSet = false;

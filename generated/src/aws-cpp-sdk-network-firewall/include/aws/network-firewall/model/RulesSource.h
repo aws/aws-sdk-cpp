@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 #include <aws/network-firewall/model/RulesSourceList.h>
 #include <aws/network-firewall/model/StatefulRule.h>
@@ -15,10 +16,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace NetworkFirewall {
 namespace Model {
@@ -34,9 +34,9 @@ namespace Model {
 class RulesSource {
  public:
   AWS_NETWORKFIREWALL_API RulesSource() = default;
-  AWS_NETWORKFIREWALL_API RulesSource(Aws::Utils::Json::JsonView jsonValue);
-  AWS_NETWORKFIREWALL_API RulesSource& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_NETWORKFIREWALL_API RulesSource(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_NETWORKFIREWALL_API RulesSource& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_NETWORKFIREWALL_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -88,7 +88,7 @@ class RulesSource {
    * protocol, source and destination, ports, direction, and rule options. For
    * information about the Suricata <code>Rules</code> format, see <a
    * href="https://suricata.readthedocs.io/en/suricata-8.0.3/rules/intro.html">Rules
-   * Format</a>. </p>
+   * Format</a> on the Suricata website. </p>
    */
   inline const Aws::Vector<StatefulRule>& GetStatefulRules() const { return m_statefulRules; }
   inline bool StatefulRulesHasBeenSet() const { return m_statefulRulesHasBeenSet; }

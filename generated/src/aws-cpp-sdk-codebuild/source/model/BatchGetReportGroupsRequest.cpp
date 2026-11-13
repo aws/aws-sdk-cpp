@@ -4,30 +4,40 @@
  */
 
 #include <aws/codebuild/model/BatchGetReportGroupsRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 using namespace Aws::CodeBuild::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 Aws::String BatchGetReportGroupsRequest::SerializePayload() const {
-  JsonValue payload;
+  Aws::Crt::Cbor::CborEncoder encoder;
 
+  // Calculate map size
+  size_t mapSize = 0;
   if (m_reportGroupArnsHasBeenSet) {
-    Aws::Utils::Array<JsonValue> reportGroupArnsJsonList(m_reportGroupArns.size());
-    for (unsigned reportGroupArnsIndex = 0; reportGroupArnsIndex < reportGroupArnsJsonList.GetLength(); ++reportGroupArnsIndex) {
-      reportGroupArnsJsonList[reportGroupArnsIndex].AsString(m_reportGroupArns[reportGroupArnsIndex]);
-    }
-    payload.WithArray("reportGroupArns", std::move(reportGroupArnsJsonList));
+    mapSize++;
   }
 
-  return payload.View().WriteReadable();
+  encoder.WriteMapStart(mapSize);
+
+  if (m_reportGroupArnsHasBeenSet) {
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("reportGroupArns"));
+    encoder.WriteArrayStart(m_reportGroupArns.size());
+    for (const auto& item_0 : m_reportGroupArns) {
+      encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_0.c_str()));
+    }
+  }
+  const auto str = Aws::String(reinterpret_cast<char*>(encoder.GetEncodedData().ptr), encoder.GetEncodedData().len);
+  return str;
 }
 
 Aws::Http::HeaderValueCollection BatchGetReportGroupsRequest::GetRequestSpecificHeaders() const {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "CodeBuild_20161006.BatchGetReportGroups"));
+  headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::CBOR_CONTENT_TYPE);
+  headers.emplace(Aws::Http::SMITHY_PROTOCOL_HEADER, Aws::RPC_V2_CBOR);
+  headers.emplace(Aws::Http::ACCEPT_HEADER, Aws::CBOR_CONTENT_TYPE);
   return headers;
 }

@@ -6,16 +6,16 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace ServiceCatalog {
 namespace Model {
@@ -37,9 +37,9 @@ namespace Model {
 class ProvisioningPreferences {
  public:
   AWS_SERVICECATALOG_API ProvisioningPreferences() = default;
-  AWS_SERVICECATALOG_API ProvisioningPreferences(Aws::Utils::Json::JsonView jsonValue);
-  AWS_SERVICECATALOG_API ProvisioningPreferences& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_SERVICECATALOG_API ProvisioningPreferences(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_SERVICECATALOG_API ProvisioningPreferences& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_SERVICECATALOG_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -114,13 +114,13 @@ class ProvisioningPreferences {
    * <code>StackSetFailureTolerancePercentage</code>, but not both.</p> <p>The
    * default value is <code>0</code> if no value is specified.</p>
    */
-  inline int GetStackSetFailureToleranceCount() const { return m_stackSetFailureToleranceCount; }
+  inline int64_t GetStackSetFailureToleranceCount() const { return m_stackSetFailureToleranceCount; }
   inline bool StackSetFailureToleranceCountHasBeenSet() const { return m_stackSetFailureToleranceCountHasBeenSet; }
-  inline void SetStackSetFailureToleranceCount(int value) {
+  inline void SetStackSetFailureToleranceCount(int64_t value) {
     m_stackSetFailureToleranceCountHasBeenSet = true;
     m_stackSetFailureToleranceCount = value;
   }
-  inline ProvisioningPreferences& WithStackSetFailureToleranceCount(int value) {
+  inline ProvisioningPreferences& WithStackSetFailureToleranceCount(int64_t value) {
     SetStackSetFailureToleranceCount(value);
     return *this;
   }
@@ -138,13 +138,13 @@ class ProvisioningPreferences {
    * <code>StackSetFailureToleranceCount</code> or
    * <code>StackSetFailureTolerancePercentage</code>, but not both.</p>
    */
-  inline int GetStackSetFailureTolerancePercentage() const { return m_stackSetFailureTolerancePercentage; }
+  inline int64_t GetStackSetFailureTolerancePercentage() const { return m_stackSetFailureTolerancePercentage; }
   inline bool StackSetFailureTolerancePercentageHasBeenSet() const { return m_stackSetFailureTolerancePercentageHasBeenSet; }
-  inline void SetStackSetFailureTolerancePercentage(int value) {
+  inline void SetStackSetFailureTolerancePercentage(int64_t value) {
     m_stackSetFailureTolerancePercentageHasBeenSet = true;
     m_stackSetFailureTolerancePercentage = value;
   }
-  inline ProvisioningPreferences& WithStackSetFailureTolerancePercentage(int value) {
+  inline ProvisioningPreferences& WithStackSetFailureTolerancePercentage(int64_t value) {
     SetStackSetFailureTolerancePercentage(value);
     return *this;
   }
@@ -164,13 +164,13 @@ class ProvisioningPreferences {
    * <code>StackSetMaxConcurrentCount</code> or
    * <code>StackSetMaxConcurrentPercentage</code>, but not both.</p>
    */
-  inline int GetStackSetMaxConcurrencyCount() const { return m_stackSetMaxConcurrencyCount; }
+  inline int64_t GetStackSetMaxConcurrencyCount() const { return m_stackSetMaxConcurrencyCount; }
   inline bool StackSetMaxConcurrencyCountHasBeenSet() const { return m_stackSetMaxConcurrencyCountHasBeenSet; }
-  inline void SetStackSetMaxConcurrencyCount(int value) {
+  inline void SetStackSetMaxConcurrencyCount(int64_t value) {
     m_stackSetMaxConcurrencyCountHasBeenSet = true;
     m_stackSetMaxConcurrencyCount = value;
   }
-  inline ProvisioningPreferences& WithStackSetMaxConcurrencyCount(int value) {
+  inline ProvisioningPreferences& WithStackSetMaxConcurrencyCount(int64_t value) {
     SetStackSetMaxConcurrencyCount(value);
     return *this;
   }
@@ -190,13 +190,13 @@ class ProvisioningPreferences {
    * specify either <code>StackSetMaxConcurrentCount</code> or
    * <code>StackSetMaxConcurrentPercentage</code>, but not both.</p>
    */
-  inline int GetStackSetMaxConcurrencyPercentage() const { return m_stackSetMaxConcurrencyPercentage; }
+  inline int64_t GetStackSetMaxConcurrencyPercentage() const { return m_stackSetMaxConcurrencyPercentage; }
   inline bool StackSetMaxConcurrencyPercentageHasBeenSet() const { return m_stackSetMaxConcurrencyPercentageHasBeenSet; }
-  inline void SetStackSetMaxConcurrencyPercentage(int value) {
+  inline void SetStackSetMaxConcurrencyPercentage(int64_t value) {
     m_stackSetMaxConcurrencyPercentageHasBeenSet = true;
     m_stackSetMaxConcurrencyPercentage = value;
   }
-  inline ProvisioningPreferences& WithStackSetMaxConcurrencyPercentage(int value) {
+  inline ProvisioningPreferences& WithStackSetMaxConcurrencyPercentage(int64_t value) {
     SetStackSetMaxConcurrencyPercentage(value);
     return *this;
   }
@@ -206,13 +206,13 @@ class ProvisioningPreferences {
 
   Aws::Vector<Aws::String> m_stackSetRegions;
 
-  int m_stackSetFailureToleranceCount{0};
+  int64_t m_stackSetFailureToleranceCount{0};
 
-  int m_stackSetFailureTolerancePercentage{0};
+  int64_t m_stackSetFailureTolerancePercentage{0};
 
-  int m_stackSetMaxConcurrencyCount{0};
+  int64_t m_stackSetMaxConcurrencyCount{0};
 
-  int m_stackSetMaxConcurrencyPercentage{0};
+  int64_t m_stackSetMaxConcurrencyPercentage{0};
   bool m_stackSetAccountsHasBeenSet = false;
   bool m_stackSetRegionsHasBeenSet = false;
   bool m_stackSetFailureToleranceCountHasBeenSet = false;

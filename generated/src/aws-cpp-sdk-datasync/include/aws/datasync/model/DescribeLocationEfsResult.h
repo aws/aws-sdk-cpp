@@ -7,20 +7,20 @@
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/datasync/DataSync_EXPORTS.h>
 #include <aws/datasync/model/Ec2Config.h>
 #include <aws/datasync/model/EfsInTransitEncryption.h>
 
 #include <utility>
-
 namespace Aws {
 template <typename RESULT_TYPE>
 class AmazonWebServiceResult;
 
 namespace Utils {
-namespace Json {
-class JsonValue;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace DataSync {
 namespace Model {
@@ -32,8 +32,8 @@ namespace Model {
 class DescribeLocationEfsResult {
  public:
   AWS_DATASYNC_API DescribeLocationEfsResult() = default;
-  AWS_DATASYNC_API DescribeLocationEfsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-  AWS_DATASYNC_API DescribeLocationEfsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_DATASYNC_API DescribeLocationEfsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
+  AWS_DATASYNC_API DescribeLocationEfsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
 
   ///@{
   /**

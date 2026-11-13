@@ -3174,8 +3174,9 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
   /**
    * <p>Creates a report that shows how your image is used across other Amazon Web
    * Services accounts. The report provides visibility into which accounts are using
-   * the specified image, and how many resources (EC2 instances or launch templates)
-   * are referencing it.</p> <p>For more information, see <a
+   * the specified image, and how many resources (EC2 instances, EC2 launch
+   * templates, Image Builder image recipes, or Image Builder container recipes) are
+   * referencing it.</p> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/your-ec2-ami-usage.html">View
    * your AMI usage</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See Also:</h3>
    * <a
@@ -4105,6 +4106,37 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
                                     const CreateManagedPrefixListResponseReceivedHandler& handler,
                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EC2Client::CreateManagedPrefixList, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a metric category. A metric category is a set of additional metrics
+   * that you can associate with an instance that has detailed monitoring
+   * enabled.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-detailed-monitoring.html#detailed-monitoring-metric-categories">Use
+   * metric categories for additional metrics</a> in the <i>Amazon EC2 User
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateMetricCategory">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateMetricCategoryOutcome CreateMetricCategory(const Model::CreateMetricCategoryRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateMetricCategory that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateMetricCategoryRequestT = Model::CreateMetricCategoryRequest>
+  Model::CreateMetricCategoryOutcomeCallable CreateMetricCategoryCallable(const CreateMetricCategoryRequestT& request) const {
+    return SubmitCallable(&EC2Client::CreateMetricCategory, request);
+  }
+
+  /**
+   * An Async wrapper for CreateMetricCategory that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateMetricCategoryRequestT = Model::CreateMetricCategoryRequest>
+  void CreateMetricCategoryAsync(const CreateMetricCategoryRequestT& request, const CreateMetricCategoryResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::CreateMetricCategory, request, handler, context);
   }
 
   /**
@@ -7427,6 +7459,37 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
                                     const DeleteManagedPrefixListResponseReceivedHandler& handler,
                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EC2Client::DeleteManagedPrefixList, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes the specified metric category. Associations between the metric
+   * category and your instances are removed asynchronously.</p> <p>For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-detailed-monitoring.html#detailed-monitoring-metric-categories">Use
+   * metric categories for additional metrics</a> in the <i>Amazon EC2 User
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteMetricCategory">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteMetricCategoryOutcome DeleteMetricCategory(const Model::DeleteMetricCategoryRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteMetricCategory that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteMetricCategoryRequestT = Model::DeleteMetricCategoryRequest>
+  Model::DeleteMetricCategoryOutcomeCallable DeleteMetricCategoryCallable(const DeleteMetricCategoryRequestT& request) const {
+    return SubmitCallable(&EC2Client::DeleteMetricCategory, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteMetricCategory that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteMetricCategoryRequestT = Model::DeleteMetricCategoryRequest>
+  void DeleteMetricCategoryAsync(const DeleteMetricCategoryRequestT& request, const DeleteMetricCategoryResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::DeleteMetricCategory, request, handler, context);
   }
 
   /**
@@ -12907,6 +12970,38 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                        const DescribeManagedPrefixListsRequestT& request = {}) const {
     return SubmitAsync(&EC2Client::DescribeManagedPrefixLists, request, handler, context);
+  }
+
+  /**
+   * <p>Describes the specified metric categories, or all of your metric
+   * categories.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-detailed-monitoring.html#detailed-monitoring-metric-categories">Use
+   * metric categories for additional metrics</a> in the <i>Amazon EC2 User
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeMetricCategories">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeMetricCategoriesOutcome DescribeMetricCategories(const Model::DescribeMetricCategoriesRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for DescribeMetricCategories that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DescribeMetricCategoriesRequestT = Model::DescribeMetricCategoriesRequest>
+  Model::DescribeMetricCategoriesOutcomeCallable DescribeMetricCategoriesCallable(
+      const DescribeMetricCategoriesRequestT& request = {}) const {
+    return SubmitCallable(&EC2Client::DescribeMetricCategories, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeMetricCategories that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DescribeMetricCategoriesRequestT = Model::DescribeMetricCategoriesRequest>
+  void DescribeMetricCategoriesAsync(const DescribeMetricCategoriesResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                     const DescribeMetricCategoriesRequestT& request = {}) const {
+    return SubmitAsync(&EC2Client::DescribeMetricCategories, request, handler, context);
   }
 
   /**
@@ -22966,6 +23061,38 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
                                             const ModifyManagedResourceVisibilityResponseReceivedHandler& handler,
                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EC2Client::ModifyManagedResourceVisibility, request, handler, context);
+  }
+
+  /**
+   * <p>Modifies the metrics in the specified metric category. The metrics that you
+   * specify replace the existing metrics.</p> <p>Instances that are associated with
+   * the metric category are updated asynchronously.</p> <p>For more information, see
+   * <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-detailed-monitoring.html#detailed-monitoring-metric-categories">Use
+   * metric categories for additional metrics</a> in the <i>Amazon EC2 User
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyMetricCategory">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ModifyMetricCategoryOutcome ModifyMetricCategory(const Model::ModifyMetricCategoryRequest& request) const;
+
+  /**
+   * A Callable wrapper for ModifyMetricCategory that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ModifyMetricCategoryRequestT = Model::ModifyMetricCategoryRequest>
+  Model::ModifyMetricCategoryOutcomeCallable ModifyMetricCategoryCallable(const ModifyMetricCategoryRequestT& request) const {
+    return SubmitCallable(&EC2Client::ModifyMetricCategory, request);
+  }
+
+  /**
+   * An Async wrapper for ModifyMetricCategory that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ModifyMetricCategoryRequestT = Model::ModifyMetricCategoryRequest>
+  void ModifyMetricCategoryAsync(const ModifyMetricCategoryRequestT& request, const ModifyMetricCategoryResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EC2Client::ModifyMetricCategory, request, handler, context);
   }
 
   /**

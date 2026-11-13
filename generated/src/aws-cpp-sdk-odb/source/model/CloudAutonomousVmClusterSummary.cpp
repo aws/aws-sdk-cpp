@@ -173,6 +173,10 @@ CloudAutonomousVmClusterSummary& CloudAutonomousVmClusterSummary::operator=(Json
     m_nonProvisionableAutonomousContainerDatabases = jsonValue.GetInteger("nonProvisionableAutonomousContainerDatabases");
     m_nonProvisionableAutonomousContainerDatabasesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ocpusLowestScaledValue")) {
+    m_ocpusLowestScaledValue = jsonValue.GetInteger("ocpusLowestScaledValue");
+    m_ocpusLowestScaledValueHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("provisionableAutonomousContainerDatabases")) {
     m_provisionableAutonomousContainerDatabases = jsonValue.GetInteger("provisionableAutonomousContainerDatabases");
     m_provisionableAutonomousContainerDatabasesHasBeenSet = true;
@@ -392,6 +396,10 @@ JsonValue CloudAutonomousVmClusterSummary::Jsonize() const {
 
   if (m_nonProvisionableAutonomousContainerDatabasesHasBeenSet) {
     payload.WithInteger("nonProvisionableAutonomousContainerDatabases", m_nonProvisionableAutonomousContainerDatabases);
+  }
+
+  if (m_ocpusLowestScaledValueHasBeenSet) {
+    payload.WithInteger("ocpusLowestScaledValue", m_ocpusLowestScaledValue);
   }
 
   if (m_provisionableAutonomousContainerDatabasesHasBeenSet) {

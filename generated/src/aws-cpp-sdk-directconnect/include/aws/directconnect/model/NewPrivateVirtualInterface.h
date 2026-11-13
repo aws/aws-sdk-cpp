@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/directconnect/model/AddressFamily.h>
 #include <aws/directconnect/model/Tag.h>
@@ -14,10 +15,9 @@
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace DirectConnect {
 namespace Model {
@@ -30,9 +30,9 @@ namespace Model {
 class NewPrivateVirtualInterface {
  public:
   AWS_DIRECTCONNECT_API NewPrivateVirtualInterface() = default;
-  AWS_DIRECTCONNECT_API NewPrivateVirtualInterface(Aws::Utils::Json::JsonView jsonValue);
-  AWS_DIRECTCONNECT_API NewPrivateVirtualInterface& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_DIRECTCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_DIRECTCONNECT_API NewPrivateVirtualInterface(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_DIRECTCONNECT_API NewPrivateVirtualInterface& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_DIRECTCONNECT_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**
@@ -58,13 +58,13 @@ class NewPrivateVirtualInterface {
   /**
    * <p>The ID of the VLAN.</p>
    */
-  inline int GetVlan() const { return m_vlan; }
+  inline int64_t GetVlan() const { return m_vlan; }
   inline bool VlanHasBeenSet() const { return m_vlanHasBeenSet; }
-  inline void SetVlan(int value) {
+  inline void SetVlan(int64_t value) {
     m_vlanHasBeenSet = true;
     m_vlan = value;
   }
-  inline NewPrivateVirtualInterface& WithVlan(int value) {
+  inline NewPrivateVirtualInterface& WithVlan(int64_t value) {
     SetVlan(value);
     return *this;
   }
@@ -85,13 +85,13 @@ class NewPrivateVirtualInterface {
    * the <code>asn</code> and <code>asnLong</code> fields.</p> </li> </ul> <p>The
    * valid values are 1-2147483646.</p>
    */
-  inline int GetAsn() const { return m_asn; }
+  inline int64_t GetAsn() const { return m_asn; }
   inline bool AsnHasBeenSet() const { return m_asnHasBeenSet; }
-  inline void SetAsn(int value) {
+  inline void SetAsn(int64_t value) {
     m_asnHasBeenSet = true;
     m_asn = value;
   }
-  inline NewPrivateVirtualInterface& WithAsn(int value) {
+  inline NewPrivateVirtualInterface& WithAsn(int64_t value) {
     SetAsn(value);
     return *this;
   }
@@ -131,13 +131,13 @@ class NewPrivateVirtualInterface {
    * <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500
    * and 8500. The default value is 1500.</p>
    */
-  inline int GetMtu() const { return m_mtu; }
+  inline int64_t GetMtu() const { return m_mtu; }
   inline bool MtuHasBeenSet() const { return m_mtuHasBeenSet; }
-  inline void SetMtu(int value) {
+  inline void SetMtu(int64_t value) {
     m_mtuHasBeenSet = true;
     m_mtu = value;
   }
-  inline NewPrivateVirtualInterface& WithMtu(int value) {
+  inline NewPrivateVirtualInterface& WithMtu(int64_t value) {
     SetMtu(value);
     return *this;
   }
@@ -295,13 +295,13 @@ class NewPrivateVirtualInterface {
    * <p>The number of inbound IPv4 route prefixes to allocate to the virtual
    * interface.</p>
    */
-  inline int GetPrefixPoolAllocatedCountIpv4() const { return m_prefixPoolAllocatedCountIpv4; }
+  inline int64_t GetPrefixPoolAllocatedCountIpv4() const { return m_prefixPoolAllocatedCountIpv4; }
   inline bool PrefixPoolAllocatedCountIpv4HasBeenSet() const { return m_prefixPoolAllocatedCountIpv4HasBeenSet; }
-  inline void SetPrefixPoolAllocatedCountIpv4(int value) {
+  inline void SetPrefixPoolAllocatedCountIpv4(int64_t value) {
     m_prefixPoolAllocatedCountIpv4HasBeenSet = true;
     m_prefixPoolAllocatedCountIpv4 = value;
   }
-  inline NewPrivateVirtualInterface& WithPrefixPoolAllocatedCountIpv4(int value) {
+  inline NewPrivateVirtualInterface& WithPrefixPoolAllocatedCountIpv4(int64_t value) {
     SetPrefixPoolAllocatedCountIpv4(value);
     return *this;
   }
@@ -312,13 +312,13 @@ class NewPrivateVirtualInterface {
    * <p>The number of inbound IPv6 route prefixes to allocate to the virtual
    * interface.</p>
    */
-  inline int GetPrefixPoolAllocatedCountIpv6() const { return m_prefixPoolAllocatedCountIpv6; }
+  inline int64_t GetPrefixPoolAllocatedCountIpv6() const { return m_prefixPoolAllocatedCountIpv6; }
   inline bool PrefixPoolAllocatedCountIpv6HasBeenSet() const { return m_prefixPoolAllocatedCountIpv6HasBeenSet; }
-  inline void SetPrefixPoolAllocatedCountIpv6(int value) {
+  inline void SetPrefixPoolAllocatedCountIpv6(int64_t value) {
     m_prefixPoolAllocatedCountIpv6HasBeenSet = true;
     m_prefixPoolAllocatedCountIpv6 = value;
   }
-  inline NewPrivateVirtualInterface& WithPrefixPoolAllocatedCountIpv6(int value) {
+  inline NewPrivateVirtualInterface& WithPrefixPoolAllocatedCountIpv6(int64_t value) {
     SetPrefixPoolAllocatedCountIpv6(value);
     return *this;
   }
@@ -346,13 +346,13 @@ class NewPrivateVirtualInterface {
  private:
   Aws::String m_virtualInterfaceName;
 
-  int m_vlan{0};
+  int64_t m_vlan{0};
 
-  int m_asn{0};
+  int64_t m_asn{0};
 
   long long m_asnLong{0};
 
-  int m_mtu{0};
+  int64_t m_mtu{0};
 
   Aws::String m_authKey;
 
@@ -370,9 +370,9 @@ class NewPrivateVirtualInterface {
 
   bool m_enableSiteLink{false};
 
-  int m_prefixPoolAllocatedCountIpv4{0};
+  int64_t m_prefixPoolAllocatedCountIpv4{0};
 
-  int m_prefixPoolAllocatedCountIpv6{0};
+  int64_t m_prefixPoolAllocatedCountIpv6{0};
 
   Aws::String m_rateLimit;
   bool m_virtualInterfaceNameHasBeenSet = false;

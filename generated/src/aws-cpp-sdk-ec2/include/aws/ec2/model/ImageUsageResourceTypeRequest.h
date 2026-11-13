@@ -40,7 +40,8 @@ class ImageUsageResourceTypeRequest {
   ///@{
   /**
    * <p>The resource type.</p> <p>Valid values: <code>ec2:Instance</code> |
-   * <code>ec2:LaunchTemplate</code> </p>
+   * <code>ec2:LaunchTemplate</code> | <code>imagebuilder:ImageRecipe</code> |
+   * <code>imagebuilder:ContainerRecipe</code> </p>
    */
   inline const Aws::String& GetResourceType() const { return m_resourceType; }
   inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }

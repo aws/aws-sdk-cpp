@@ -4,59 +4,345 @@
  */
 
 #include <aws/codepipeline/model/ActionTypeSettings.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/cbor/CborValue.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Crt::Cbor;
 using namespace Aws::Utils;
 
 namespace Aws {
 namespace CodePipeline {
 namespace Model {
 
-ActionTypeSettings::ActionTypeSettings(JsonView jsonValue) { *this = jsonValue; }
+ActionTypeSettings::ActionTypeSettings(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) { *this = decoder; }
 
-ActionTypeSettings& ActionTypeSettings::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("thirdPartyConfigurationUrl")) {
-    m_thirdPartyConfigurationUrl = jsonValue.GetString("thirdPartyConfigurationUrl");
-    m_thirdPartyConfigurationUrlHasBeenSet = true;
+ActionTypeSettings& ActionTypeSettings::operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder) {
+  if (decoder != nullptr) {
+    auto initialMapType = decoder->PeekType();
+    if (initialMapType.has_value() && (initialMapType.value() == CborType::MapStart || initialMapType.value() == CborType::IndefMapStart)) {
+      if (initialMapType.value() == CborType::MapStart) {
+        auto mapSize = decoder->PopNextMapStart();
+        if (mapSize.has_value()) {
+          for (size_t i = 0; i < mapSize.value(); ++i) {
+            auto initialKey = decoder->PopNextTextVal();
+            if (initialKey.has_value()) {
+              Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+              if (initialKeyStr == "thirdPartyConfigurationUrl") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_thirdPartyConfigurationUrl = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_thirdPartyConfigurationUrl = ss.str();
+                  }
+                }
+                m_thirdPartyConfigurationUrlHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "entityUrlTemplate") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_entityUrlTemplate = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_entityUrlTemplate = ss.str();
+                  }
+                }
+                m_entityUrlTemplateHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "executionUrlTemplate") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_executionUrlTemplate = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_executionUrlTemplate = ss.str();
+                  }
+                }
+                m_executionUrlTemplateHasBeenSet = true;
+              }
+
+              else if (initialKeyStr == "revisionUrlTemplate") {
+                auto peekType = decoder->PeekType();
+                if (peekType.has_value()) {
+                  if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      m_revisionUrlTemplate = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  } else {
+                    decoder->ConsumeNextSingleElement();
+                    Aws::StringStream ss;
+                    while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                      auto nextType = decoder->PeekType();
+                      if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                        if (nextType.has_value()) {
+                          decoder->ConsumeNextSingleElement();  // consume the Break
+                        }
+                        break;
+                      }
+                      auto val = decoder->PopNextTextVal();
+                      if (val.has_value()) {
+                        ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                      }
+                    }
+                    m_revisionUrlTemplate = ss.str();
+                  }
+                }
+                m_revisionUrlTemplateHasBeenSet = true;
+              } else {
+                // Unknown key, skip the value
+                decoder->ConsumeNextWholeDataItem();
+              }
+              if ((decoder->LastError() != AWS_ERROR_UNKNOWN)) {
+                AWS_LOG_ERROR("ActionTypeSettings", "Invalid data received for %s", initialKeyStr.c_str());
+                break;
+              }
+            }
+          }
+        }
+      } else  // IndefMapStart
+      {
+        decoder->ConsumeNextSingleElement();  // consume the IndefMapStart
+        while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+          auto outerMapNextType = decoder->PeekType();
+          if (!outerMapNextType.has_value() || outerMapNextType.value() == CborType::Break) {
+            if (outerMapNextType.has_value()) {
+              decoder->ConsumeNextSingleElement();  // consume the Break
+            }
+            break;
+          }
+
+          auto initialKey = decoder->PopNextTextVal();
+          if (initialKey.has_value()) {
+            Aws::String initialKeyStr(reinterpret_cast<const char*>(initialKey.value().ptr), initialKey.value().len);
+
+            if (initialKeyStr == "thirdPartyConfigurationUrl") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_thirdPartyConfigurationUrl = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_thirdPartyConfigurationUrl = ss.str();
+                }
+              }
+              m_thirdPartyConfigurationUrlHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "entityUrlTemplate") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_entityUrlTemplate = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_entityUrlTemplate = ss.str();
+                }
+              }
+              m_entityUrlTemplateHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "executionUrlTemplate") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_executionUrlTemplate = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_executionUrlTemplate = ss.str();
+                }
+              }
+              m_executionUrlTemplateHasBeenSet = true;
+            }
+
+            else if (initialKeyStr == "revisionUrlTemplate") {
+              auto peekType = decoder->PeekType();
+              if (peekType.has_value()) {
+                if (peekType.value() == Aws::Crt::Cbor::CborType::Text) {
+                  auto val = decoder->PopNextTextVal();
+                  if (val.has_value()) {
+                    m_revisionUrlTemplate = Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                  }
+                } else {
+                  decoder->ConsumeNextSingleElement();
+                  Aws::StringStream ss;
+                  while (decoder->LastError() == AWS_ERROR_UNKNOWN) {
+                    auto nextType = decoder->PeekType();
+                    if (!nextType.has_value() || nextType.value() == CborType::Break) {
+                      if (nextType.has_value()) {
+                        decoder->ConsumeNextSingleElement();  // consume the Break
+                      }
+                      break;
+                    }
+                    auto val = decoder->PopNextTextVal();
+                    if (val.has_value()) {
+                      ss << Aws::String(reinterpret_cast<const char*>(val.value().ptr), val.value().len);
+                    }
+                  }
+                  m_revisionUrlTemplate = ss.str();
+                }
+              }
+              m_revisionUrlTemplateHasBeenSet = true;
+            } else {
+              // Unknown key, skip the value
+              decoder->ConsumeNextWholeDataItem();
+            }
+          }
+        }
+      }
+    }
   }
-  if (jsonValue.ValueExists("entityUrlTemplate")) {
-    m_entityUrlTemplate = jsonValue.GetString("entityUrlTemplate");
-    m_entityUrlTemplateHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("executionUrlTemplate")) {
-    m_executionUrlTemplate = jsonValue.GetString("executionUrlTemplate");
-    m_executionUrlTemplateHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("revisionUrlTemplate")) {
-    m_revisionUrlTemplate = jsonValue.GetString("revisionUrlTemplate");
-    m_revisionUrlTemplateHasBeenSet = true;
-  }
+
   return *this;
 }
 
-JsonValue ActionTypeSettings::Jsonize() const {
-  JsonValue payload;
+void ActionTypeSettings::CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const {
+  // Calculate map size
+  size_t mapSize = 0;
+  if (m_thirdPartyConfigurationUrlHasBeenSet) {
+    mapSize++;
+  }
+  if (m_entityUrlTemplateHasBeenSet) {
+    mapSize++;
+  }
+  if (m_executionUrlTemplateHasBeenSet) {
+    mapSize++;
+  }
+  if (m_revisionUrlTemplateHasBeenSet) {
+    mapSize++;
+  }
+
+  encoder.WriteMapStart(mapSize);
 
   if (m_thirdPartyConfigurationUrlHasBeenSet) {
-    payload.WithString("thirdPartyConfigurationUrl", m_thirdPartyConfigurationUrl);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("thirdPartyConfigurationUrl"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_thirdPartyConfigurationUrl.c_str()));
   }
 
   if (m_entityUrlTemplateHasBeenSet) {
-    payload.WithString("entityUrlTemplate", m_entityUrlTemplate);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("entityUrlTemplate"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_entityUrlTemplate.c_str()));
   }
 
   if (m_executionUrlTemplateHasBeenSet) {
-    payload.WithString("executionUrlTemplate", m_executionUrlTemplate);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("executionUrlTemplate"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_executionUrlTemplate.c_str()));
   }
 
   if (m_revisionUrlTemplateHasBeenSet) {
-    payload.WithString("revisionUrlTemplate", m_revisionUrlTemplate);
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("revisionUrlTemplate"));
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(m_revisionUrlTemplate.c_str()));
   }
-
-  return payload;
 }
 
 }  // namespace Model

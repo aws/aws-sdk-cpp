@@ -7,15 +7,15 @@
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/codepipeline/model/FailureType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
 
 #include <utility>
 
 namespace Aws {
 namespace Utils {
-namespace Json {
-class JsonValue;
-class JsonView;
-}  // namespace Json
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
 }  // namespace Utils
 namespace CodePipeline {
 namespace Model {
@@ -28,9 +28,9 @@ namespace Model {
 class FailureDetails {
  public:
   AWS_CODEPIPELINE_API FailureDetails() = default;
-  AWS_CODEPIPELINE_API FailureDetails(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CODEPIPELINE_API FailureDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
-  AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
+  AWS_CODEPIPELINE_API FailureDetails(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CODEPIPELINE_API FailureDetails& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_CODEPIPELINE_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
 
   ///@{
   /**

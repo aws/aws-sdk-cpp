@@ -6,9 +6,11 @@
 #include <aws/connectcases/ConnectCasesClient.h>
 #include <aws/connectcases/ConnectCasesEndpointProvider.h>
 #include <aws/connectcases/ConnectCasesErrorMarshaller.h>
+#include <aws/connectcases/model/BatchCreateRelatedItemRequest.h>
 #include <aws/connectcases/model/BatchGetCaseRuleRequest.h>
 #include <aws/connectcases/model/BatchGetFieldRequest.h>
 #include <aws/connectcases/model/BatchPutFieldOptionsRequest.h>
+#include <aws/connectcases/model/BatchUpdateCaseRequest.h>
 #include <aws/connectcases/model/CreateCaseRequest.h>
 #include <aws/connectcases/model/CreateCaseRuleRequest.h>
 #include <aws/connectcases/model/CreateDomainRequest.h>
@@ -28,6 +30,7 @@
 #include <aws/connectcases/model/GetCaseRequest.h>
 #include <aws/connectcases/model/GetDomainRequest.h>
 #include <aws/connectcases/model/GetLayoutRequest.h>
+#include <aws/connectcases/model/GetMergeCasesStatusRequest.h>
 #include <aws/connectcases/model/GetTemplateRequest.h>
 #include <aws/connectcases/model/ListCaseRulesRequest.h>
 #include <aws/connectcases/model/ListCasesForContactRequest.h>
@@ -41,6 +44,7 @@
 #include <aws/connectcases/model/SearchAllRelatedItemsRequest.h>
 #include <aws/connectcases/model/SearchCasesRequest.h>
 #include <aws/connectcases/model/SearchRelatedItemsRequest.h>
+#include <aws/connectcases/model/StartMergeCasesRequest.h>
 #include <aws/connectcases/model/TagResourceRequest.h>
 #include <aws/connectcases/model/UntagResourceRequest.h>
 #include <aws/connectcases/model/UpdateCaseRequest.h>
@@ -219,6 +223,17 @@ ConnectCasesClient::InvokeOperationOutcome ConnectCasesClient::InvokeServiceOper
       {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
 }
 
+BatchCreateRelatedItemOutcome ConnectCasesClient::BatchCreateRelatedItem(const BatchCreateRelatedItemRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/cases:batchCreateRelatedItem");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? BatchCreateRelatedItemOutcome(result.GetResultWithOwnership())
+                            : BatchCreateRelatedItemOutcome(std::move(result.GetError()));
+}
+
 BatchGetCaseRuleOutcome ConnectCasesClient::BatchGetCaseRule(const BatchGetCaseRuleRequest& request) const {
   if (!request.DomainIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("BatchGetCaseRule", "Required field: DomainId, is not set");
@@ -280,6 +295,17 @@ BatchPutFieldOptionsOutcome ConnectCasesClient::BatchPutFieldOptions(const Batch
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
   return result.IsSuccess() ? BatchPutFieldOptionsOutcome(result.GetResultWithOwnership())
                             : BatchPutFieldOptionsOutcome(std::move(result.GetError()));
+}
+
+BatchUpdateCaseOutcome ConnectCasesClient::BatchUpdateCase(const BatchUpdateCaseRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/cases:batchUpdateCase");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? BatchUpdateCaseOutcome(result.GetResultWithOwnership())
+                            : BatchUpdateCaseOutcome(std::move(result.GetError()));
 }
 
 CreateCaseOutcome ConnectCasesClient::CreateCase(const CreateCaseRequest& request) const {
@@ -687,6 +713,32 @@ GetLayoutOutcome ConnectCasesClient::GetLayout(const GetLayoutRequest& request) 
   return result.IsSuccess() ? GetLayoutOutcome(result.GetResultWithOwnership()) : GetLayoutOutcome(std::move(result.GetError()));
 }
 
+GetMergeCasesStatusOutcome ConnectCasesClient::GetMergeCasesStatus(const GetMergeCasesStatusRequest& request) const {
+  if (!request.DomainIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetMergeCasesStatus", "Required field: DomainId, is not set");
+    return GetMergeCasesStatusOutcome(Aws::Client::AWSError<ConnectCasesErrors>(ConnectCasesErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                "Missing required field [DomainId]", false));
+  }
+  if (!request.CaseIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetMergeCasesStatus", "Required field: CaseId, is not set");
+    return GetMergeCasesStatusOutcome(Aws::Client::AWSError<ConnectCasesErrors>(ConnectCasesErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                "Missing required field [CaseId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/domains/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/cases/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCaseId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/merge-status");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetMergeCasesStatusOutcome(result.GetResultWithOwnership())
+                            : GetMergeCasesStatusOutcome(std::move(result.GetError()));
+}
+
 GetTemplateOutcome ConnectCasesClient::GetTemplate(const GetTemplateRequest& request) const {
   if (!request.DomainIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetTemplate", "Required field: DomainId, is not set");
@@ -936,6 +988,32 @@ SearchRelatedItemsOutcome ConnectCasesClient::SearchRelatedItems(const SearchRel
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? SearchRelatedItemsOutcome(result.GetResultWithOwnership())
                             : SearchRelatedItemsOutcome(std::move(result.GetError()));
+}
+
+StartMergeCasesOutcome ConnectCasesClient::StartMergeCases(const StartMergeCasesRequest& request) const {
+  if (!request.DomainIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StartMergeCases", "Required field: DomainId, is not set");
+    return StartMergeCasesOutcome(Aws::Client::AWSError<ConnectCasesErrors>(ConnectCasesErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                            "Missing required field [DomainId]", false));
+  }
+  if (!request.CaseIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StartMergeCases", "Required field: CaseId, is not set");
+    return StartMergeCasesOutcome(Aws::Client::AWSError<ConnectCasesErrors>(ConnectCasesErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                            "Missing required field [CaseId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/domains/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/cases/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetCaseId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/merge");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartMergeCasesOutcome(result.GetResultWithOwnership())
+                            : StartMergeCasesOutcome(std::move(result.GetError()));
 }
 
 TagResourceOutcome ConnectCasesClient::TagResource(const TagResourceRequest& request) const {

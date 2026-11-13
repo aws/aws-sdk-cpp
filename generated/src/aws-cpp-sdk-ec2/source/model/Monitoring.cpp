@@ -23,6 +23,17 @@ Monitoring& Monitoring::operator=(const XmlNode& xmlNode) {
   XmlNode resultNode = xmlNode;
 
   if (!resultNode.IsNull()) {
+    XmlNode metricCategoryIdsNode = resultNode.FirstChild("metricCategoryIdSet");
+    if (!metricCategoryIdsNode.IsNull()) {
+      XmlNode metricCategoryIdsMember = metricCategoryIdsNode.FirstChild("item");
+      m_metricCategoryIdsHasBeenSet = !metricCategoryIdsMember.IsNull();
+      while (!metricCategoryIdsMember.IsNull()) {
+        m_metricCategoryIds.push_back(metricCategoryIdsMember.GetText());
+        metricCategoryIdsMember = metricCategoryIdsMember.NextNode("item");
+      }
+
+      m_metricCategoryIdsHasBeenSet = true;
+    }
     XmlNode stateNode = resultNode.FirstChild("state");
     if (!stateNode.IsNull()) {
       m_state = MonitoringStateMapper::GetMonitoringStateForName(
@@ -35,6 +46,14 @@ Monitoring& Monitoring::operator=(const XmlNode& xmlNode) {
 }
 
 void Monitoring::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_metricCategoryIdsHasBeenSet) {
+    unsigned metricCategoryIdsIdx = 1;
+    for (auto& item : m_metricCategoryIds) {
+      oStream << location << index << locationValue << ".MetricCategoryIdSet." << metricCategoryIdsIdx++ << "="
+              << StringUtils::URLEncode(item.c_str()) << "&";
+    }
+  }
+
   if (m_stateHasBeenSet) {
     oStream << location << index << locationValue
             << ".State=" << StringUtils::URLEncode(MonitoringStateMapper::GetNameForMonitoringState(m_state)) << "&";
@@ -42,6 +61,12 @@ void Monitoring::OutputToStream(Aws::OStream& oStream, const char* location, uns
 }
 
 void Monitoring::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_metricCategoryIdsHasBeenSet) {
+    unsigned metricCategoryIdsIdx = 1;
+    for (auto& item : m_metricCategoryIds) {
+      oStream << location << ".MetricCategoryIdSet." << metricCategoryIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+    }
+  }
   if (m_stateHasBeenSet) {
     oStream << location << ".State=" << StringUtils::URLEncode(MonitoringStateMapper::GetNameForMonitoringState(m_state)) << "&";
   }

@@ -7,7 +7,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/client/ClientConfiguration.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/crt/cbor/Cbor.h>
 #include <aws/transcribe/TranscribeServicePaginationBase.h>
 #include <aws/transcribe/TranscribeServiceServiceClientModel.h>
 #include <aws/transcribe/TranscribeServiceWaiter.h>
@@ -27,12 +27,12 @@ namespace TranscribeService {
  * looking for insight into customer service calls, use this option. Refer to for
  * details.</p> </li> </ul>
  */
-class AWS_TRANSCRIBESERVICE_API TranscribeServiceClient : public Aws::Client::AWSJsonClient,
+class AWS_TRANSCRIBESERVICE_API TranscribeServiceClient : public Aws::Client::AWSRpcV2CborClient,
                                                           public Aws::Client::ClientWithAsyncTemplateMethods<TranscribeServiceClient>,
                                                           public TranscribeServicePaginationBase<TranscribeServiceClient>,
                                                           public TranscribeServiceWaiter<TranscribeServiceClient> {
  public:
-  typedef Aws::Client::AWSJsonClient BASECLASS;
+  typedef Aws::Client::AWSRpcV2CborClient BASECLASS;
   static const char* GetServiceName();
   static const char* GetAllocationTag();
 
